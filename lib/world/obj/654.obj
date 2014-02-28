@@ -1,0 +1,96 @@
+#65400
+graffiti wall south~
+graffiti~
+Some graffiti is scrawled on the wall to the south.~
+~
+13 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+graffiti wall south~
+   This subdivision was built to use with the TBA housing code since the code
+needs rooms that have already been created.  It's a very simple plan with 38
+houses, meant to simplify the placing of houses.  Feel free to make any changes.
+Look map for a better idea of the layout.
+
+   If you want to use this subdivision but need more than 38 houses, First and
+Second Streets can be continued to the east by changing the room names and some
+of the exit descriptions.  First and Second Avenue would need to be changed to
+Third and Fourth Avenue.  
+ 
+   If you need more space, you might want to change #3 and #8 Second Street to
+continue the Avenues southward and change #3 and #8 First Street of the new
+section to match.  Of course, First and Second Street would become Third and
+Fourth Streets.  
+ 
+Sorry for any errors.  Please wash this wall with zedit.
+
+Hugs,
+Parnassus for TBAmud
+December 12, 2013
+~
+#65402
+keychain subdivision~
+a plain keychain~
+Someone left a keychain lying here.~
+~
+8 a 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0
+T 65400
+E
+keychain subdivision~
+   This keychain, when held in a room away from the subdivision, will bring
+you to the subdivision intersection of First Street and First Avenue to make
+it easier to find your way home.  If you hold it again, anywhere in the
+subdivision, it will take you back to where you came from.
+~
+#65407
+keychain subdivision~
+a plain keychain~
+Someone left a keychain lying here.~
+~
+8 a 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0
+T 65400
+E
+keychain subdivision~
+   This keychain, when held in a room away from the subdivision, will bring
+you to the subdivision intersection of First Street and Second Avenue to
+make it easier to find your way home.  If you hold it again, anywhere in the
+subdivision, it will take you back to where you came from.
+~
+#65412
+keychain subdivision~
+a plain keychain~
+Someone left a keychain lying here.~
+~
+8 a 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0
+T 65400
+E
+keychain subdivision~
+   This keychain, when held in a room away from the subdivision, will bring
+you to the subdivision intersection of Second Street and First Avenue to
+make it easier to find your way home.  If you hold it again, anywhere in the
+subdivision, it will take you back to where you came from.
+~
+#65417
+keychain subdivision~
+a plain keychain~
+Someone left a keychain lying here.~
+~
+8 a 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+1 1 0 0 0
+T 65400
+E
+keychain subdivision~
+   This keychain, when held in a room away from the subdivision, will bring
+you to the subdivision intersection of Second Street and Second Avenue to
+make it easier to find your way home.  If you hold it again, anywhere in the
+subdivision, it will take you back to where you came from.
+~
+$~

@@ -1,0 +1,22 @@
+#211
+Parnassus~
+Tarot~
+21100 21199 30 1 f 0 0 0 1 30
+D 0 21102 0 2 	(A Room For Waiting)
+D 0 21102 1 2 	(A Room For Waiting)
+D 0 21102 2 1 	(A Room For Waiting)
+D 0 21102 3 2 	(A Room For Waiting)
+R 0 21102 21181 -1 	(an urn filled with milk)
+O 1 21181 1 21102 	(an urn filled with milk)
+R 0 21102 21182 -1 	(a piece of bokolyi)
+O 1 21182 100 21102 	(a piece of bokolyi)
+R 0 21102 21180 -1 	(a large glass)
+O 1 21180 100 21102 	(a large glass)
+M 0 21104 1 21102 	(Ana)
+M 0 21101 1 21110 	(Sibyl)
+D 0 21110 4 2 	(Sibyl's office)
+D 0 21101 0 1 	(Outside a small building)
+M 0 21103 1 21150 	(Jaelle)
+M 0 21102 1 21130 	(Esmerelda)
+S
+$

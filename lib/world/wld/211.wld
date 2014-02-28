@@ -1,0 +1,915 @@
+#21100
+Parna's Zone Description Room~
+   This area is trying to recreate the Tarot zone I built for Smaug.  The
+purpose is to have a way of Tarot fortune-telling online.  It has been repeated
+twice to allow different people to have their futures told at the same time.  
+It's a specialized sort of area that, in my experience, most people will stay
+away from, some people will visit occasionally and a few people may visit
+constantly.  There is, of course, no way of telling what the ratio will be on
+any given mud.  
+ 
+   If you have diagonal exits, please remove the corner rooms and use the
+diagonal exits instead.
+
+   There are a lot of triggers to try to keep people from blocking the zone.  
+Please adjust these to your own mud.
+
+   The food and drink in room 21102 are self replicating.  For each bokolyi or
+glass taken, another one appears.  If you don't like this, just take them out.
+This is mainly for zone testers so they won't starve or dehydrate while they're
+reading the cards but it's a convenience to low-levels with no money, too.
+
+   I think it should be attached to the main town.  Since Midgaard is the recall
+town here, room 3121 heading north into 22001 seems like a reasonable spot with
+perhaps an addition of the mention of a house to the north.
+
+November 25, 2013 for tbamud.com - Parnassus
+~
+211 8 0 0 0 0
+D0
+   This way to Tarot!
+~
+~
+0 0 21101
+S
+#21101
+Outside a small building~
+   A tidy-looking three-story building made of red brick waits invitingly for
+customers.  The yard is a peaceful square space with a neat picket fence
+protecting the green lawn from the street while not blocking the view of the
+house.  Bright flowerbeds snuggle against the foot of the fence.  A bright brass
+sign is placed near the door.
+~
+211 20 0 0 0 0
+D0
+The door is rounded on the top instead of the usual rectangle.
+~
+door~
+1 0 21102
+E
+fence picket~
+   It's a normal-looking, pointed-slat fence covered with fresh white paint.  
+The entrance is an open, oval trellis, covered with red roses.
+~
+E
+yard~
+   The yard is neatly manicured, looking like a bright green carpet.
+~
+E
+door~
+   The door is rounded on the top instead of the usual rectangle.
+~
+E
+flowers flowerbeds~
+   Beautiful bright flowers in all colors, but mostly reds, decorate well-kept
+flowerbeds.
+~
+E
+sign brass bright~
+   	w
+	w       Sibyl, Esmerelda and Jaelle  
+	w
+	w              Tarot Readings           
+	n
+~
+S
+#21102
+A Room For Waiting~
+   @R @n@n A receptionist dressed in brightly colored clothes sits at a desk,
+dispensing information and appointments.  The room is lined with seats.  Low
+tables are covered with magazines and newspapers for the entertainment of those
+waiting.  A few paintings decorate the walls.  Doors lead in all directions.  @R @n
+Refreshments are available for the comfort of the clients.
+~
+211 8 0 0 0 0
+D0
+   Sibyl's Office
+~
+door~
+1 0 21110
+D1
+   Jaelle's Office
+~
+door~
+1 0 21150
+D2
+   This way out.
+~
+door~
+1 0 21101
+D3
+   Esmerelda's Office
+~
+door~
+1 0 21130
+E
+paintings~
+   These are the sort of pictures with a young woman standing, looking pensively
+at a forest, field or ocean.  She wears a long dress that blows in the wind.  
+Her long hair, covered with a floppy hat, blows around also.
+~
+E
+seats~
+   These seats look very comfortable for a waiting room.  There are nicely
+padded armchairs and couches, upholstered in a tasteful flowered motif.
+~
+E
+newspapers~
+   There are a few copies of today's editions of various papers, including the
+Sanctus Times and the daily Sanctus.  There's even a copy of your favorite
+hometown paper.
+~
+E
+magazines ~
+   Except for the copies of Tarot World Magazine, these mostly the same
+magazines that you'd find in a doctor's office waiting room.  There are issues
+Reader's Digest, Sports Illustrated, Entertainment Weekly and a few other
+familiar names.  Are Time and Fortune here because they're popular or are they
+some sort of joke?  
+~
+S
+#21103
+A Brightly-Lit Corridor~
+   This is a bright white hallway with large representations of the cards you've
+seen in the previous rooms placed at neat intervals to provide color.
+~
+211 220 0 0 0 0
+D5
+   This way out.  The door you came in by seems to have disappeared.
+~
+stair~
+0 0 21102
+E
+representations cards pictures~
+   If you didn't look before but wanted to see the cards now:
+http://en.wikipedia.org/wiki/Rider-Waite_tarot_deck
+~
+S
+#21110
+Sibyl's office~
+   Sibyl sits behind a large table, running a deck of cards through her hands.
+A large plaque is on the wall behind her and bright pictures cover the other
+walls.  On closer look, the pictures seem to be large representations of some of
+the cards in her hands.  She starts to lay the cards out in a design of a circle
+and a line.
+~
+211 220 0 0 0 0
+D2
+The door is closed and can't be opened.
+~
+~
+0 0 -1
+D4
+~
+door stairs up~
+1 0 21111
+E
+plaque~
+   Sibyl uses the Rider-Waite tarot deck in the Keltic Cross layout.  If you
+would like to see the cards that have been dealt to you, representations can be
+found at:
+http://en.wikipedia.org/wiki/Rider-Waite_tarot_deck
+~
+S
+#21111
+This card covers~
+   This card is placed straight up and represents the question and the general
+atmosphere that surrounds it.
+~
+211 220 0 0 0 0
+D4
+~
+~
+0 0 21112
+S
+T 21102
+#21112
+This card crosses~
+   This card is placed sideways on top of the first card.  It usually shows the
+forces opposing the question or a different choice that may be available.
+~
+211 220 0 0 0 0
+D2
+~
+~
+0 0 21113
+D5
+~
+door backdoor~
+1 0 21111
+S
+T 21102
+#21113
+This card is below~
+   This card is placed below the crossed cards.  It shows the basis of the
+question, things in the past which were leading to the question.
+~
+211 220 0 0 0 0
+D0
+~
+door backdoor~
+1 0 21112
+D3
+~
+~
+0 0 21121
+S
+T 21102
+#21114
+This card is behind~
+   This card is placed to the left of the crossed cards.  It shows an influence
+that was in the past but is now gone or going.
+~
+211 220 0 0 0 0
+D0
+~
+~
+1 0 21122
+D2
+~
+door backdoor~
+1 0 21121
+S
+T 21102
+#21115
+This card is above~
+   This card is placed above the crossed cards.  It shows a future influence or
+possibility.
+~
+211 220 0 0 0 0
+D1
+~
+~
+1 0 21123
+D3
+~
+door backdoor~
+1 0 21122
+S
+T 21102
+#21116
+This card is before~
+   This card is placed to the right of the crossed cards.  It shows a future
+influence or possibility.  It may show a different pathway available.
+~
+211 220 0 0 0 0
+D0
+~
+door backdoor~
+1 0 21123
+D2
+~
+~
+0 0 21124
+S
+T 21102
+#21117
+This card shows fears~
+   Four cards are placed in a straight line to the right of the circle.  This is
+the bottom card.  Any question has good points and bad points.  This card shows
+the fears the questioner has about the question.
+~
+211 220 0 0 0 0
+D0
+~
+~
+0 0 21118
+D3
+~
+door backdoor~
+1 0 21124
+S
+T 21102
+#21118
+This card shows opinions~
+   This card is placed above the previous card.  It shows the opinions of people
+close to the questioner, regarding the question.
+~
+211 220 0 0 0 0
+D0
+~
+~
+0 0 21119
+D2
+~
+door backdoor~
+1 0 21117
+S
+T 21102
+#21119
+This card shows hopes~
+   This card is placed above the previous card.  It shows what the questioner
+hopes from the question.
+~
+211 220 0 0 0 0
+D0
+~
+~
+0 0 21120
+D2
+~
+door backdoor~
+1 0 21118
+S
+T 21102
+#21120
+This card shows the outcome~
+   This card will be modified by the cards which came before and shows a
+possible outcome of the question.  All the cards must be interpreted and
+considered as suggestions, not as definite lines to the future, since the future
+is yet to be written.  Think well before you make any decisions.  Once you go
+down, all cards will be cleared.
+~
+211 220 0 0 0 0
+D0
+~
+~
+0 0 -1
+D2
+~
+door backdoor~
+1 0 21119
+D5
+~
+stair~
+1 0 21103
+S
+T 21102
+T 21103
+#21121
+South-West Corner~
+   Please go North to continue your reading.
+~
+211 8 0 0 0 0
+D0
+~
+~
+0 0 21114
+D1
+~
+door backdoor~
+1 0 21113
+S
+#21122
+North-West Corner~
+   Please go East to continue your reading.
+~
+211 8 0 0 0 0
+D1
+~
+~
+0 0 21115
+D2
+~
+door backdoor~
+1 0 21114
+S
+#21123
+North-East Corner~
+   Please go South to continue your reading.
+~
+211 8 0 0 0 0
+D2
+~
+door~
+0 0 21116
+D3
+~
+door backdoor~
+1 0 21115
+S
+#21124
+South-East Corner~
+   Please go East to continue your reading.
+~
+211 8 0 0 0 0
+D0
+~
+door backdoor~
+1 0 21116
+D1
+~
+~
+0 0 21117
+S
+#21125
+Sibyl's Private Room~
+   This is where Sibyl comes to rest and relax when she just needs to get away
+from the stress of telling fortunes to anybody who asks.  However, sometimes a
+stray card ends up here.
+~
+211 220 0 0 0 0
+S
+#21130
+Esmerelda's office~
+   Esmerelda sits behind a large table, running a deck of cards through her
+hands.  A large plaque is on the wall behind her and bright pictures cover the
+other walls.  On closer look, the pictures seem to be large representations of
+some of the cards in her hands.  She starts to lay the cards out in a design of
+a circle and a line.
+~
+211 220 0 0 0 0
+D2
+The door is closed and can't be opened.
+~
+~
+0 0 -1
+D4
+~
+door~
+1 0 21131
+E
+plaque~
+   Esmerelda uses the Rider-Waite tarot deck in the Keltic Cross layout.  If you
+would like to see the cards that have been dealt to you, representations can be
+found at:
+http://en.wikipedia.org/wiki/Rider-Waite_tarot_deck
+~
+S
+#21131
+This card covers~
+   This card is placed straight up and represents the question and the general
+atmosphere that surrounds it.
+~
+211 220 0 0 0 0
+D4
+~
+door~
+1 0 21132
+S
+T 21102
+#21132
+This card crosses~
+   This card is placed sideways on top of the first card.  It usually shows the
+forces opposing the question or a different choice that may be available.
+~
+211 220 0 0 0 0
+D2
+~
+door~
+1 0 21133
+D5
+~
+door~
+1 0 21131
+S
+T 21102
+#21133
+This card is below~
+   This card is placed below the crossed cards.  It shows the basis of the
+question, things in the past which were leading to the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21132
+D3
+~
+door~
+1 0 21141
+S
+T 21102
+#21134
+This card is behind~
+   This card is placed to the left of the crossed cards.  It shows an influence
+that was in the past but is now gone or going.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21142
+D2
+~
+door~
+1 0 21141
+S
+T 21102
+#21135
+This card is above~
+   This card is placed above the crossed cards.  It shows a future influence or
+possibility.
+~
+211 220 0 0 0 0
+D1
+~
+door~
+1 0 21143
+D3
+~
+door~
+1 0 21142
+S
+T 21102
+#21136
+This card is before~
+   This card is placed to the right of the crossed cards.  It shows a future
+influence or possibility.  It may show a different pathway available.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21143
+D2
+~
+door~
+1 0 21144
+S
+T 21102
+#21137
+This card shows fears~
+   Four cards are placed in a straight line to the right of the circle.  This is
+the bottom card.  Any question has good points and bad points.  This card shows
+the fears the questioner has about the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21138
+D3
+~
+door~
+1 0 21144
+S
+T 21102
+#21138
+This card shows opinions~
+   This card is placed above the previous card.  It shows the opinions of people
+close to the questioner, regarding the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21139
+D2
+~
+door~
+1 0 21137
+S
+T 21102
+#21139
+This card shows hopes~
+   This card is placed above the previous card.  It shows what the questioner
+hopes from the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21140
+D2
+~
+door~
+1 0 21138
+S
+T 21102
+#21140
+This card shows the outcome~
+   This card will be modified by the cards which came before and shows a
+possible outcome of the question.  All the cards must be interpreted and
+considered as suggestions, not as definite lines to the future, since the future
+is yet to be written.  Think well before you make any decisions.  Once you go
+down, all cards will be cleared.
+~
+211 220 0 0 0 0
+D2
+~
+door~
+1 0 21139
+D5
+~
+stair~
+1 0 21103
+S
+T 21103
+T 21102
+#21141
+South-West Corner~
+   Please go North to continue your reading.
+~
+211 8 0 0 0 0
+D0
+~
+~
+1 0 21134
+D1
+~
+~
+1 0 21133
+S
+#21142
+North-West Corner~
+   Please go East to continue your reading.
+~
+211 8 0 0 0 0
+D1
+~
+~
+1 0 21135
+D2
+~
+~
+1 0 21134
+S
+#21143
+North-East Corner~
+   Please go South to continue your reading.
+~
+211 8 0 0 0 0
+D2
+~
+~
+1 0 21136
+D3
+~
+~
+1 0 21135
+S
+#21144
+South-East Corner~
+   Please go East to continue your reading.
+~
+211 8 0 0 0 0
+D0
+~
+~
+1 0 21136
+D1
+~
+~
+1 0 21137
+S
+#21145
+Esmerelda's Private Room~
+   This is where Esmerelda comes to rest and relax when she just needs to get
+away from the stress of telling fortunes to anybody who asks.  However,
+sometimes a stray card ends up here.
+~
+211 220 0 0 0 0
+S
+#21150
+Jaelle's office~
+   Jaelle sits behind a large table, running a deck of cards through her hands.
+A large plaque is on the wall behind her and bright pictures cover the other
+walls.  On closer look, the pictures seem to be large representations of some of
+the cards in her hands.  She starts to lay the cards out in a design of a circle
+and a line.
+~
+211 220 0 0 0 0
+D2
+The door is closed and can't be opened.
+~
+~
+0 0 -1
+D4
+~
+door~
+1 0 21151
+E
+plaque~
+   Jaelle uses the Rider-Waite tarot deck in the Keltic Cross layout.  If you
+would like to see the cards that have been dealt to you, representations can be
+found at:
+http://en.wikipedia.org/wiki/Rider-Waite_tarot_deck
+~
+S
+#21151
+This card covers~
+   This card is placed straight up and represents the question and the general
+atmosphere that surrounds it.
+~
+211 220 0 0 0 0
+D4
+~
+door~
+1 0 21152
+S
+T 21102
+#21152
+This card crosses~
+   This card is placed sideways on top of the first card.  It usually shows the
+forces opposing the question or a different choice that may be available.
+~
+211 220 0 0 0 0
+D2
+~
+door~
+1 0 21153
+D5
+~
+door~
+1 0 21151
+S
+T 21102
+#21153
+This card is below~
+   This card is placed below the crossed cards.  It shows the basis of the
+question, things in the past which were leading to the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21152
+D3
+~
+door~
+1 0 21161
+S
+T 21102
+#21154
+This card is behind~
+   This card is placed to the left of the crossed cards.  It shows an influence
+that was in the past but is now gone or going.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21162
+D2
+~
+door~
+1 0 21161
+S
+T 21102
+#21155
+This card is above~
+   This card is placed above the crossed cards.  It shows a future influence or
+possibility.
+~
+211 220 0 0 0 0
+D1
+~
+door~
+1 0 21163
+D3
+~
+door~
+1 0 21162
+S
+T 21102
+#21156
+This card is before~
+   This card is placed to the right of the crossed cards.  It shows a future
+influence or possibility.  It may show a different pathway available.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21163
+D2
+~
+door~
+1 0 21164
+S
+T 21102
+#21157
+This card shows fears~
+   Four cards are placed in a straight line to the right of the circle.  This is
+the bottom card.  Any question has good points and bad points.  This card shows
+the fears the questioner has about the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21158
+D3
+~
+door~
+1 0 21164
+S
+T 21102
+#21158
+This card shows opinions~
+   This card is placed above the previous card.  It shows the opinions of people
+close to the questioner, regarding the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21159
+D2
+~
+door~
+1 0 21157
+S
+T 21102
+#21159
+This card shows hopes~
+   This card is placed above the previous card.  It shows what the questioner
+hopes from the question.
+~
+211 220 0 0 0 0
+D0
+~
+door~
+1 0 21160
+D2
+~
+door~
+1 0 21158
+S
+T 21102
+#21160
+This card shows the outcome~
+   This card will be modified by the cards which came before and shows a
+possible outcome of the question.  All the cards must be interpreted and
+considered as suggestions, not as definite lines to the future, since the future
+is yet to be written.  Think well before you make any decisions.  Once you go
+down, all cards will be cleared.
+~
+211 220 0 0 0 0
+D2
+~
+door~
+1 0 21159
+D5
+~
+stair~
+1 0 21103
+S
+T 21102
+T 21103
+#21161
+South-West Corner~
+   Please go North to continue your reading.
+~
+211 8 0 0 0 0
+D0
+~
+~
+1 0 21154
+D1
+~
+~
+1 0 21153
+S
+#21162
+North-West Corner~
+   Please go East to continue your reading.
+~
+211 8 0 0 0 0
+D1
+~
+~
+1 0 21155
+D2
+~
+~
+1 0 21154
+S
+#21163
+North-East Corner~
+   Please go South to continue your reading.
+~
+211 8 0 0 0 0
+D2
+~
+~
+1 0 21156
+D3
+~
+~
+1 0 21155
+S
+#21164
+South-East Corner~
+   Please go East to continue your reading.
+~
+211 8 0 0 0 0
+D0
+~
+~
+1 0 21156
+D1
+~
+~
+1 0 21157
+S
+#21165
+Jaelle's Private Room~
+   This is where Jaelle comes to rest and relax when she just needs to get away
+from the stress of telling fortunes to anybody who asks.  However, sometimes a
+stray card ends up here.
+~
+211 220 0 0 0 0
+S
+#21199
+Purge Room~
+   This room is for safely purging things.
+
+BEWARE!
+
+   Trespassers may be PURGED!
+~
+211 0 0 0 0 0
+S
+$~

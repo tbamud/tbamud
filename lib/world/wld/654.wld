@@ -1,0 +1,2231 @@
+#65400
+#1 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+You see the atrium of a small house.
+~
+~
+0 0 65420
+D1
+First Street continues.
+~
+~
+0 0 65401
+D3
+~
+~
+0 0 65397
+E
+map plan~
+	c21 23 25 27 29 31 33 35 37 39	n
+	n|  |  |  |  |  |  |  |  |  |
+	g20 22 24 26 28 30 32 34 36 38	n
+	n|  |  |  |  |  |  |  |  |  |
+	y00	n-	y01	n-	y02	n-	y03	n-	y04	n-	y05	n-	y06	n-	y07	n-	y08	n-	y09	n
+	n      |              |      
+	c61	n-	g60	n-	y92	n-	g62	n-	c63 	c77	n-	g76	n-	y96	n-	g78	n-	c79	n
+	n      |              |      
+	c65	n-	g64	n-	y93	n-	g66	n-	c67 	c81	n-	g80	n-	y97	n-	g82	n-	c83	n
+	n      |              |      
+	c69	n-	g68	n-	y94	n-	g70	n-	c71 	c85	n-	g84	n-	y98	n-	g86	n-	c87	n
+	n      |              |      
+	c73	n-	g72	n-	y95	n-	g74	n-	c75 	c89	n-	g88	n-	y99	n-	g90	n-	c91	n
+	n      |              |      
+	y10	n-	y11	n-	y12	n-	y13	n-	y14	n-	y15	n-	y16	n-	y17	n-	y18	n-	y19	n
+	n|  |  |  |  |  |  |  |  |  |
+	g40 42 44 46 48 50 52 54 56 58	n
+	n|  |  |  |  |  |  |  |  |  |
+	c41 43 45 47 49 51 53 55 57 59	n
+ 
+	yRoads
+	gAtria
+	cHouses
+~
+S
+#65401
+#2 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+You see the atrium of a small house.
+~
+~
+0 0 65422
+D1
+You see an intersection.
+~
+~
+0 0 65402
+D3
+You see the beginning of First Street.
+~
+~
+0 0 65400
+S
+#65402
+#3 First Street~
+   This is a T-shaped intersection.  Calm and shady First Avenue heads south
+while busy First Street runs east and west.  A house to the north overlooks the
+intersection.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65424
+D1
+   First Street continues.
+~
+~
+0 0 65403
+D2
+   First Avenue heads south.
+~
+~
+0 0 65492
+D3
+   First Street continues.
+~
+~
+0 0 65401
+S
+#65403
+#4 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65426
+D1
+   First Street continues.
+~
+~
+0 0 65404
+D3
+   First Street continues.
+~
+~
+0 0 65402
+S
+#65404
+#5 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65428
+D1
+   First Street continues.
+~
+~
+0 0 65405
+D3
+   First Street continues.
+~
+~
+0 0 65403
+S
+#65405
+#6 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65430
+D1
+   First Street continues.
+~
+~
+0 0 65406
+D3
+   First Street continues.
+~
+~
+0 0 65404
+S
+#65406
+#7 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65432
+D1
+   First Street continues.
+~
+~
+0 0 65407
+D3
+   First Street continues.
+~
+~
+0 0 65405
+S
+#65407
+#8 First Street~
+   This is a T-shaped intersection.  Calm and shady Second Avenue heads south
+while busy First Street runs east and west.  A house to the north overlooks the
+intersection.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+   You see the atrium of a small house.
+~
+~
+0 0 65434
+D1
+   First Street continues.
+   First Street continues.
+~
+~
+0 0 65408
+D2
+   Second Avenue heads south.
+   First Street continues.
+   Second Avenue heads south.
+~
+~
+0 0 65496
+D3
+   First Street continues.
+~
+~
+0 0 65406
+S
+#65408
+#9 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65436
+D1
+   First Street ends.
+~
+~
+0 0 65409
+D3
+   First Street continues.
+~
+~
+0 0 65407
+S
+#65409
+#10 First Street~
+   First Street runs east and west.  Rows of houses line the north but the south
+shows the side windows of other houses.  Vehicles race along the street, giving
+it a lively and busy air.
+~
+654 0 0 0 0 1
+D0
+   You see the atrium of a small house.
+~
+~
+0 0 65438
+D3
+   First Street continues.
+~
+~
+0 0 65408
+S
+#65410
+#1 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   Second Street continues.
+~
+~
+0 0 65411
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65440
+S
+#65411
+#2 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   Second Street continues.
+~
+~
+0 0 65412
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65442
+D3
+   Second Street continues.
+~
+~
+0 0 65410
+S
+#65412
+#3 Second Street~
+   This is a T-shaped intersection.  Calm and shady First Avenue ends to the
+north while busy Second Street runs east and west.  A house to the south
+overlooks the intersection.
+~
+654 0 0 0 0 1
+D0
+   First Avenue ends here.
+~
+~
+0 0 65495
+D1
+   Second Street continues.
+~
+~
+0 0 65413
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65444
+D3
+   Second Street continues.
+~
+~
+0 0 65411
+S
+#65413
+#4 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   Second Street continues.
+~
+~
+0 0 65414
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65446
+D3
+   Second Street continues.
+~
+~
+0 0 65412
+S
+#65414
+#5 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   Second Street continues.
+~
+~
+0 0 65415
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65448
+D3
+   Second Street continues.
+~
+~
+0 0 65413
+S
+#65415
+#6 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   Second Street continues.
+~
+~
+0 0 65416
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65450
+D3
+   Second Street continues.
+~
+~
+0 0 65414
+S
+#65416
+#7 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   You see an intersection.
+~
+~
+0 0 65417
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65452
+D3
+   Second Street continues.
+~
+~
+0 0 65415
+S
+#65417
+#8 Second Street~
+   This is a T-shaped intersection.  Calm and shady Second Avenue ends to the
+north while busy Second Street runs east and west.  A house to the south
+overlooks the intersection.
+~
+654 0 0 0 0 1
+D0
+   Second Avenue ends here.
+~
+~
+0 0 65499
+D1
+   Second Street continues.
+~
+~
+0 0 65418
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65454
+D3
+   Second Street continues.
+~
+~
+0 0 65416
+S
+#65418
+#9 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D1
+   Second Street ends.
+~
+~
+0 0 65419
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65456
+D3
+   You see an intersection.
+~
+~
+0 0 65417
+S
+#65419
+#10 Second Street~
+   Second Street runs east and west.  Rows of houses line the south but the
+north shows the side windows of other houses.  Vehicles race along the street,
+giving it a lively and busy air.
+~
+654 0 0 0 0 1
+D2
+   You see the atrium of a small house.
+~
+~
+0 0 65458
+D3
+   Second Street continues.
+~
+~
+0 0 65418
+S
+#65420
+Atrium - 1 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65421
+D2
+   You see a busy street.
+~
+~
+0 0 65400
+S
+#65421
+Inside 1 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65420
+S
+#65422
+Atrium - 2 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65423
+D2
+   You see a busy street.
+~
+~
+0 0 65401
+S
+#65423
+Inside 2 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65422
+S
+#65424
+Atrium - 3 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65425
+D2
+   You see an intersection.
+~
+~
+0 0 65402
+S
+#65425
+Inside 3 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65424
+S
+#65426
+Atrium - 4 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65427
+D2
+   You see a busy street.
+~
+~
+0 0 65403
+S
+#65427
+Inside 4 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65426
+S
+#65428
+Atrium - 5 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65429
+D2
+   You see a busy street.
+~
+~
+0 0 65404
+S
+#65429
+Inside 5 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65428
+S
+#65430
+Atrium - 6 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65431
+D2
+   You see a busy street.
+~
+~
+0 0 65405
+S
+#65431
+Inside 6 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65430
+S
+#65432
+Atrium - 7 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65433
+D2
+   You see a busy street.
+~
+~
+0 0 65406
+S
+#65433
+Inside 7 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65432
+S
+#65434
+Atrium - 8 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65435
+D2
+   You see an intersection.
+~
+~
+0 0 65407
+S
+#65435
+Inside 8 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65434
+S
+#65436
+Atrium - 9 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65437
+D2
+   You see a busy street.
+~
+~
+0 0 65408
+S
+#65437
+Inside 9 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65436
+S
+#65438
+Atrium - 10 First Street~
+   This is the atrium for a compact house on First Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   The inside of the house lies this way.
+~
+~
+0 0 65439
+D2
+   You see a busy street.
+~
+~
+0 0 65409
+S
+#65439
+Inside 10 First Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D2
+   The atrium of the house lies this way.
+~
+~
+0 0 65438
+S
+#65440
+Atrium - 1 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65410
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65441
+S
+#65441
+Inside 1 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65440
+S
+#65442
+Atrium - 2 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65411
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65443
+S
+#65443
+Inside 2 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65442
+S
+#65444
+Atrium - 3 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see an intersection.
+~
+~
+0 0 65412
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65445
+S
+#65445
+Inside 3 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65444
+S
+#65446
+Atrium - 4 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65413
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65447
+S
+#65447
+Inside 4 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65446
+S
+#65448
+Atrium - 5 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65414
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65449
+S
+#65449
+Inside 5 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65448
+S
+#65450
+Atrium - 6 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65415
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65451
+S
+#65451
+Inside 6 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65450
+S
+#65452
+Atrium - 7 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65416
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65453
+S
+#65453
+Inside 7 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65452
+S
+#65454
+Atrium - 8 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see an intersection.
+~
+~
+0 0 65417
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65455
+S
+#65455
+Inside 8 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65454
+S
+#65456
+Atrium - 9 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65418
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65457
+S
+#65457
+Inside 9 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65456
+S
+#65458
+Atrium - 10 Second Street~
+   This is the atrium for a compact house on Second Street.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D0
+   You see a busy street.
+~
+~
+0 0 65419
+D2
+   The inside of the house lies this way.
+~
+~
+0 0 65459
+S
+#65459
+Inside 10 Second Street~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D0
+   The atrium of the house lies this way.
+~
+~
+0 0 65458
+S
+#65460
+Atrium - 1 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65492
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65461
+S
+#65461
+Inside 1 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65460
+S
+#65462
+Atrium - 2 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65463
+D3
+   You see a shady avenue.
+~
+~
+0 0 65492
+S
+#65463
+Inside 2 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65462
+S
+#65464
+Atrium - 3 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65493
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65465
+S
+#65465
+Inside 3 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65464
+S
+#65466
+Atrium - 4 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65467
+D3
+   You see a shady avenue.
+~
+~
+0 0 65493
+S
+#65467
+Inside 4 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65466
+S
+#65468
+Atrium - 5 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65494
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65469
+S
+#65469
+Inside 5 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65468
+S
+#65470
+Atrium - 6 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65471
+D3
+   You see a shady avenue.
+~
+~
+0 0 65494
+S
+#65471
+Inside 6 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65470
+S
+#65472
+Atrium - 7 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65495
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65473
+S
+#65473
+Inside 7 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65472
+S
+#65474
+Atrium - 8 First Avenue~
+   This is the atrium for a compact house on First Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65475
+D3
+   You see a shady avenue.
+~
+~
+0 0 65495
+S
+#65475
+Inside 8 First Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65474
+S
+#65476
+Atrium - 1 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65496
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65477
+S
+#65477
+Inside 1 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65476
+S
+#65478
+Atrium - 2 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65479
+D3
+   You see a shady avenue.
+~
+~
+0 0 65496
+S
+#65479
+Inside 2 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65478
+S
+#65480
+Atrium - 3 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65497
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65481
+S
+#65481
+Inside 3 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65480
+S
+#65482
+Atrium - 4 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65483
+D3
+   You see a shady avenue.
+~
+~
+0 0 65497
+S
+#65483
+Inside 4 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65482
+S
+#65484
+Atrium - 5 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65498
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65485
+S
+#65485
+Inside 5 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65484
+S
+#65486
+Atrium - 6 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65487
+D3
+   You see a shady avenue.
+~
+~
+0 0 65498
+S
+#65487
+Inside 6 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65486
+S
+#65488
+Atrium - 7 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   You see a shady avenue.
+~
+~
+0 0 65499
+D3
+   The inside of the house lies this way.
+~
+~
+0 0 65489
+S
+#65489
+Inside 7 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D1
+   The atrium of the house lies this way.
+~
+~
+0 0 65488
+S
+#65490
+Atrium - 8 Second Avenue~
+   This is the atrium for a compact house on Second Avenue.  It's a small
+room, protected from the elements, where people wait for the owner to let
+them in.  It would not be a good idea to leave your things here because 
+they probably wouldn't be here very long.
+ 
+   What?  You're still here?  Maybe the owner doesn't want to see you.
+~
+654 8 0 0 0 0
+D1
+   The inside of the house lies this way.
+~
+~
+0 0 65491
+D3
+   You see a shady avenue.
+~
+~
+0 0 65499
+S
+#65491
+Inside 8 Second Avenue~
+   This room is a convenient space where the owner of the house can leave things
+to have them protected against crashes and reboots.  If this is a vacant house,
+do not leave your things here.  Only owned houses are protected.  
+ 
+   Guests can also leave things.  If this is your house, typing 'house' with the
+name of a player will add that player to your guest list if the player is not on
+the list, or will remove the player from the guest list if the player is already
+on the list.  The player specified must be in the player database for the MUD,
+Although he or she does not necessarily have to be logged on at the time.  
+Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+654 8 0 0 0 0
+D3
+   The atrium of the house lies this way.
+~
+~
+0 0 65490
+S
+#65492
+First Avenue - #1/#2~
+   First Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   You see an intersection.
+~
+~
+0 0 65402
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65462
+D2
+   First Avenue continues.
+~
+~
+0 0 65493
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65460
+S
+#65493
+First Avenue - #3/#4~
+   First Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   First Avenue continues.
+~
+~
+0 0 65492
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65466
+D2
+   First Avenue continues.
+~
+~
+0 0 65494
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65464
+S
+#65494
+First Avenue - #5/#6~
+   First Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   First Avenue continues.
+~
+~
+0 0 65493
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65470
+D2
+   First Avenue continues.
+~
+~
+0 0 65495
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65468
+S
+#65495
+First Avenue - #7/#8~
+   First Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   First Avenue continues.
+~
+~
+0 0 65494
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65474
+D2
+   You see an intersection.
+~
+~
+0 0 65412
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65472
+S
+#65496
+Second Avenue - #1/#2~
+   Second Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   You see an intersection.
+~
+~
+0 0 65407
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65478
+D2
+   Second Avenue continues.
+~
+~
+0 0 65497
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65476
+S
+#65497
+Second Avenue - #3/#4~
+   Second Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   Second Avenue continues.
+~
+~
+0 0 65496
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65482
+D2
+   Second Avenue continues.
+~
+~
+0 0 65498
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65480
+S
+#65498
+Second Avenue - #5/#6~
+   Second Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   Second Avenue continues.
+~
+~
+0 0 65497
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65486
+D2
+   Second Avenue continues.
+~
+~
+0 0 65499
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65484
+S
+#65499
+Second Avenue - #7/#8~
+   Second Avenue runs north and south.  Rows of houses line both sides of the
+Avenue.  Old oak trees line the sides of the avenue, giving it a comfortably
+shady appearance.
+~
+654 0 0 0 0 1
+D0
+   Second Avenue continues.
+~
+~
+0 0 65498
+D1
+   You see the atrium of a small house.
+~
+~
+0 0 65490
+D2
+   You see an intersection.
+~
+~
+0 0 65417
+D3
+   You see the atrium of a small house.
+~
+~
+0 0 65488
+S
+$~

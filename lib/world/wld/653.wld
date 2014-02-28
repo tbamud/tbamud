@@ -1,0 +1,2316 @@
+#65300
+Utility Room~
+   This is the room where all the work of the building gets done.  For a map of
+the building, look map.  
+ 
+   To assign the rooms, stand in any apartment with the player and use hcontrol.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65398
+E
+map~
+   Map
+ 
+	c      01    02    03	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c15	n-----	wH	n-----	wH	n-----	wH	n----	c04	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c13	n-----	wH	n-	c14  	yE  	c06	n-	wH	n----	c05	n
+       |           |
+       |    	c10	n     |
+       |     |     |
+	c12	n-----	wH	n-----	wH	n-----	wH	n----	c07	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c      11    09    08	n
+	yElevator	n
+	wHalls	n
+	cApartments	n
+~
+E
+Plan~
+   Plan
+
+	r98	n-	y99	n-	r00	n
+    |
+   	r97
+     
+	c      37    38    39       	n .	c        52    53    54      	n
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+	c51	n----	w05	n----	w06	n----	w07	n----	c40  	n.  	c66----	w13----	w14----	w15----	c55	n
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+	c49	n----	w08	n-	c50 	y01 	c42	n-	w09	n----	c41  	n.  	c64	n----	w16	n-	c65 	y02 	c57	n-	w17	n----	c56	n
+       |           |        .         |           |      
+       |    	c46	n     |        .         |    	c61	n     |      
+       |     |     |        .         |     |     |      
+	c48	n----	w10	n----	w11	n----	w12	n----	c43  	n.  	c63	n----	w18	n----	w19	n----	w20	n----	c58	n
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+	c      47    45    44        	n.	c        62    60    59      	n
+.........................................................
+	c      67    68    69        	n.	c        82    83    84      	n
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+	c81	n----	w21	n----	w22	n----	w23	n----	c70  	n.  	c96	n----	w29	n----	w30	n----	w31	n----	c85	n
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+	c79	n----	w24	n-	c80 	y03 	c72	n-	w25	n----	c71  	n.  	c94	n----	w32	n-	c95 	y04 	c87	n-	w33	n----	c86	n
+       |           |        .         |           |      
+       |    	c76	n     |        .         |    	c91	n     |      
+       |     |     |        .         |     |     |      
+	c78	n----	w26	n----	w27	n----	w28	n----	c73  	n.  	c93	n----	w34	n----	w35	n----	w36	n----	c88	n
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+       |     |     |        .         |     |     |      
+	c      77    75    74        	n.	c        92    90    89      	n
+	yElevator: 01-04	n
+	wHalls: 05-36	n
+	cApartments: 37-96	n
+~
+S
+#65301
+The Elevator~
+   It's your run-of-the-mill, everyday, totally normal looking, elevator.  The
+walls are plain metalic silver.  Soft Muzak plays through the speakers.  
+ 
+   A panel with five buttons is here.  Which floor are you looking for?  
+ 
+PUSH       4
+PUSH       3
+PUSH       2
+PUSH       1
+PUSH       G
+~
+653 8 0 0 0 0
+D0
+~
+~
+2 0 65306
+D4
+~
+~
+0 0 65302
+S
+#65302
+Second Floor Elevator~
+   It's your run-of-the-mill, everyday, totally normal looking, elevator.  The
+walls are plain metalic silver.  Soft Muzak plays through the speakers.  
+ 
+   A panel with five buttons is here.  Which floor are you looking for?  
+ 
+PUSH       4
+PUSH       3
+PUSH       2
+PUSH       1
+PUSH       G
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65314
+D4
+~
+~
+0 0 65303
+D5
+~
+~
+0 0 65301
+S
+#65303
+Third Floor Elevator~
+   It's your run-of-the-mill, everyday, totally normal looking, elevator.  The
+walls are plain metalic silver.  Soft Muzak plays through the speakers.  
+ 
+   A panel with five buttons is here.  Which floor are you looking for?  
+ 
+PUSH       4
+PUSH       3
+PUSH       2
+PUSH       1
+PUSH       G
+~
+653 8 0 0 0 0
+D0
+~
+~
+1 0 65306
+D4
+~
+~
+0 0 65304
+D5
+~
+~
+0 0 65302
+S
+#65304
+Fourth Floor Elevator~
+   It's your run-of-the-mill, everyday, totally normal looking, elevator.  The
+walls are plain metalic silver.  Soft Muzak plays through the speakers.  
+ 
+   A panel with five buttons is here.  Which floor are you looking for?  
+ 
+PUSH       4
+PUSH       3
+PUSH       2
+PUSH       1
+PUSH       G
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65330
+D2
+~
+undefined~
+0 0 -1
+D5
+~
+~
+0 0 65303
+S
+#65305
+First Floor North-West Corner~
+   The hall runs to the east and south.  The door to room 101 is north and the
+door to 115 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65337
+D1
+~
+~
+0 0 65306
+D2
+~
+~
+0 0 65312
+D3
+~
+~
+0 0 65351
+S
+#65306
+First Floor North~
+   The hall runs east and west.  The door to room 102 is north.  An elevator
+door is south with a button beside it.  To call the elevator, just PUSH BUTTON.
+There is a display above the elevator.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65338
+D1
+~
+~
+0 0 65307
+D2
+~
+elevator~
+2 0 65399
+D3
+~
+~
+0 0 65305
+S
+T 65302
+#65307
+First Floor North-East Corner~
+   The hall runs to the south and west.  The door to room 103 is north and the
+door to 104 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65339
+D1
+~
+~
+0 0 65340
+D2
+~
+~
+0 0 65308
+D3
+~
+~
+0 0 65306
+S
+#65308
+First Floor East~
+   The hall runs north and south.  The door to room 105 is east and the door to
+room 106 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65307
+D1
+~
+~
+0 0 65341
+D2
+~
+~
+0 0 65309
+D3
+~
+~
+0 0 65342
+S
+#65309
+First Floor South-East Corner~
+   The hall runs to the north and west.  The door to room 107 is east and the
+door to 108 is south.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65308
+D1
+~
+~
+0 0 65343
+D2
+~
+~
+0 0 65344
+D3
+~
+~
+0 0 65310
+S
+#65310
+First Floor South~
+   The hall runs east and west.  The door to room 109 is south and the door to
+room 110 is north.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65346
+D1
+~
+~
+0 0 65309
+D2
+~
+~
+0 0 65345
+D3
+~
+~
+0 0 65311
+S
+#65311
+First Floor South-West Corner~
+   The hall runs to the north and east.  The door to room 111 is south and the
+door to 112 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65312
+D1
+~
+~
+0 0 65310
+D2
+~
+~
+0 0 65347
+D3
+~
+~
+0 0 65348
+S
+#65312
+First Floor West~
+   The hall runs north and south.  The door to room 113 is west and the door to
+room 114 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65305
+D1
+~
+~
+0 0 65350
+D2
+~
+~
+0 0 65311
+D3
+~
+~
+0 0 65349
+S
+#65313
+Second Floor North-West Corner~
+   The hall runs to the east and south.  The door to room 201 is north and the
+door to 215 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65352
+D1
+~
+~
+0 0 65314
+D2
+~
+~
+0 0 65320
+D3
+~
+~
+0 0 65366
+S
+#65314
+Second Floor North~
+   The hall runs east and west.  The door to room 202 is north.  An elevator
+door is south with a button beside it.  To call the elevator, just PUSH BUTTON.
+There is a display above the elevator.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65353
+D1
+~
+~
+0 0 65315
+D2
+~
+elevator~
+2 0 65399
+D3
+~
+~
+0 0 65313
+S
+T 65302
+#65315
+Second Floor North-East Corner~
+   The hall runs to the south and west.  The door to room 203 is north and the
+door to 204 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65354
+D1
+~
+~
+0 0 65355
+D2
+~
+~
+0 0 65316
+D3
+~
+~
+0 0 65314
+S
+#65316
+Second Floor East~
+   The hall runs north and south.  The door to room 205 is east and the door to
+room 206 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65315
+D1
+~
+~
+0 0 65356
+D2
+~
+~
+0 0 65317
+D3
+~
+~
+0 0 65357
+S
+#65317
+Second Floor South-East Corner~
+   The hall runs to the north and west.  The door to room 207 is east and the
+door to 208 is south.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65316
+D1
+~
+~
+0 0 65358
+D2
+~
+~
+0 0 65359
+D3
+~
+~
+0 0 65318
+S
+#65318
+Second Floor South~
+   The hall runs east and west.  The door to room 209 is south and the door to
+room 210 is north.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65361
+D1
+~
+~
+0 0 65317
+D2
+~
+~
+0 0 65360
+D3
+~
+~
+0 0 65319
+S
+#65319
+Second Floor South-West Corner~
+   The hall runs to the north and east.  The door to room 211 is south and the
+door to 212 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65320
+D1
+~
+~
+0 0 65318
+D2
+~
+~
+0 0 65362
+D3
+~
+~
+0 0 65363
+S
+#65320
+Second Floor West~
+   The hall runs north and south.  The door to room 213 is west and the door to
+room 214 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65313
+D1
+~
+~
+0 0 65365
+D2
+~
+~
+0 0 65319
+D3
+~
+~
+0 0 65364
+S
+#65321
+Third Floor North-West Corner~
+   The hall runs to the east and south.  The door to room 301 is north and the
+door to 315 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65367
+D1
+~
+~
+0 0 65322
+D2
+~
+~
+0 0 65328
+D3
+~
+~
+0 0 65381
+S
+#65322
+Third Floor North~
+   The hall runs east and west.  The door to room 302 is north.  An elevator
+door is south with a button beside it.  To call the elevator, just PUSH BUTTON.
+There is a display above the elevator.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65368
+D1
+~
+~
+0 0 65323
+D2
+~
+elevator~
+1 0 65399
+D3
+~
+~
+0 0 65321
+S
+T 65302
+#65323
+Third Floor North-East Corner~
+   The hall runs to the south and west.  The door to room 303 is north and the
+door to 304 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65369
+D1
+~
+~
+0 0 65370
+D2
+~
+~
+0 0 65324
+D3
+~
+~
+0 0 65322
+S
+#65324
+Third Floor East~
+   The hall runs north and south.  The door to room 305 is east and the door to
+room 306 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65323
+D1
+~
+~
+0 0 65371
+D2
+~
+~
+0 0 65325
+D3
+~
+~
+0 0 65372
+S
+#65325
+Third Floor South-East Corner~
+   The hall runs to the north and west.  The door to room 307 is east and the
+door to 308 is south.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65324
+D1
+~
+~
+0 0 65373
+D2
+~
+~
+0 0 65374
+D3
+~
+~
+0 0 65326
+S
+#65326
+Third Floor South~
+   The hall runs east and west.  The door to room 309 is south and the door to
+room 310 is north.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65376
+D1
+~
+~
+0 0 65325
+D2
+~
+~
+0 0 65375
+D3
+~
+~
+0 0 65327
+S
+#65327
+Third Floor South-West Corner~
+   The hall runs to the north and east.  The door to room 311 is south and the
+door to 312 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65328
+D1
+~
+~
+0 0 65326
+D2
+~
+~
+0 0 65377
+D3
+~
+~
+0 0 65378
+S
+#65328
+Third Floor West~
+   The hall runs north and south.  The door to room 313 is west and the door to
+room 314 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65321
+D1
+~
+~
+0 0 65380
+D2
+~
+~
+0 0 65327
+D3
+~
+~
+0 0 65379
+S
+#65329
+Fourth Floor North-West Corner~
+   The hall runs to the east and south.  The door to room 401 is north and the
+door to 415 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65382
+D1
+~
+~
+0 0 65330
+D2
+~
+~
+0 0 65336
+D3
+~
+~
+0 0 65396
+S
+#65330
+Fourth Floor North~
+   The hall runs east and west.  The door to room 402 is north.  An elevator
+door is south with a button beside it.  To call the elevator, just PUSH BUTTON.
+There is a display above the elevator.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65383
+D1
+~
+~
+0 0 65331
+D2
+~
+elevator~
+2 0 65399
+D3
+~
+~
+0 0 65329
+D4
+~
+~
+4 0 65399
+S
+T 65302
+#65331
+Fourth Floor North-East Corner~
+   The hall runs to the south and west.  The door to room 403 is north and the
+door to 404 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65384
+D1
+~
+~
+0 0 65385
+D2
+~
+~
+0 0 65332
+D3
+~
+~
+0 0 65330
+S
+#65332
+Fourth Floor East~
+   The hall runs north and south.  The door to room 405 is east and the door to
+room 406 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65331
+D1
+~
+~
+0 0 65386
+D2
+~
+~
+0 0 65333
+D3
+~
+~
+0 0 65387
+S
+#65333
+Fourth Floor South-East Corner~
+   The hall runs to the north and west.  The door to room 407 is east and the
+door to 408 is south.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65332
+D1
+~
+~
+0 0 65388
+D2
+~
+~
+0 0 65389
+D3
+~
+~
+0 0 65334
+S
+#65334
+Fourth Floor South~
+   The hall runs east and west.  The door to room 409 is south and the door to
+room 410 is north.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65391
+D1
+~
+~
+0 0 65333
+D2
+~
+~
+0 0 65390
+D3
+~
+~
+0 0 65335
+S
+#65335
+Fourth Floor South-West Corner~
+   The hall runs to the north and east.  The door to room 411 is south and the
+door to 412 is west.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65336
+D1
+~
+~
+0 0 65334
+D2
+~
+~
+0 0 65392
+D3
+~
+~
+0 0 65393
+S
+#65336
+Fourth Floor West~
+   The hall runs north and south.  The door to room 413 is west and the door to
+room 414 is east.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65329
+D1
+~
+~
+0 0 65395
+D2
+~
+~
+0 0 65335
+D3
+~
+~
+0 0 65394
+S
+#65337
+Apartment 101~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+undefined~
+0 0 65305
+S
+#65338
+Apartment 102~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65306
+S
+#65339
+Apartment 103~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65307
+S
+#65340
+Apartment 104~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65307
+S
+#65341
+Apartment 105~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65308
+S
+#65342
+Apartment 106~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65308
+S
+#65343
+Apartment 107~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65309
+S
+#65344
+Apartment 108~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65309
+S
+#65345
+Apartment 109~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65310
+S
+#65346
+Apartment 110~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65310
+S
+#65347
+Apartment 111~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65311
+S
+#65348
+Apartment 112~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65311
+S
+#65349
+Apartment 113~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65312
+S
+#65350
+Apartment 114~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65312
+S
+#65351
+Apartment 115~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65305
+S
+#65352
+Apartment 201~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65313
+S
+#65353
+Apartment 202~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65314
+S
+#65354
+Apartment 203~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65315
+S
+#65355
+Apartment 204~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65315
+S
+#65356
+Apartment 205~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65316
+S
+#65357
+Apartment 206~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65316
+S
+#65358
+Apartment 207~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65317
+S
+#65359
+Apartment 208~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65317
+S
+#65360
+Apartment 209~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65318
+S
+#65361
+Apartment 210~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65318
+S
+#65362
+Apartment 211~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65319
+S
+#65363
+Apartment 212~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65319
+S
+#65364
+Apartment 213~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65320
+S
+#65365
+Apartment 214~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65320
+S
+#65366
+Apartment 215~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65313
+S
+#65367
+Apartment 301~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65321
+S
+#65368
+Apartment 302~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65322
+S
+#65369
+Apartment 303~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65323
+S
+#65370
+Apartment 304~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65323
+S
+#65371
+Apartment 305~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65324
+S
+#65372
+Apartment 306~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65324
+S
+#65373
+Apartment 307~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65325
+S
+#65374
+Apartment 308~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65325
+S
+#65375
+Apartment 309~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65326
+S
+#65376
+Apartment 310~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65326
+S
+#65377
+Apartment 311~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65327
+S
+#65378
+Apartment 312~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65327
+S
+#65379
+Apartment 313~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65328
+S
+#65380
+Apartment 314~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65328
+S
+#65381
+Apartment 315~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65321
+S
+#65382
+Apartment 401~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65329
+S
+#65383
+Apartment 402~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65330
+S
+#65384
+Apartment 403~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65331
+S
+#65385
+Apartment 404~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65331
+S
+#65386
+Apartment 405~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65332
+S
+#65387
+Apartment 406~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65332
+S
+#65388
+Apartment 407~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65333
+S
+#65389
+Apartment 408~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65333
+S
+#65390
+Apartment 409~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65334
+S
+#65391
+Apartment 410~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D2
+~
+~
+0 0 65334
+S
+#65392
+Apartment 411~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65335
+S
+#65393
+Apartment 412~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65335
+S
+#65394
+Apartment 413~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65336
+S
+#65395
+Apartment 414~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D3
+~
+~
+0 0 65336
+S
+#65396
+Apartment 415~
+   This room is a convenient space where the legal tenant can leave things to
+have them protected against crashes and reboots.  If this is a vacant apartment,
+do not leave your things here.  Only owned apartments are protected.  
+ 
+   Guests can also leave things.  If this is your apartment, typing 'house' with
+the name of a player will add that player to your guest list if the player is
+not on the list, or will remove the player from the guest list if the player is
+already on the list.  The player specified must be in the player database for
+the MUD, although he or she does not necessarily have to be logged on at the
+time.  
+ 
+   Typing 'house' with no arguments gives a list of the people currently on your
+house's guest list.
+~
+653 8 0 0 0 0
+D1
+~
+~
+0 0 65329
+S
+#65397
+A Generic Sort of Building~
+   This is just a generic sort of guilding made of red brick.  It's a blocky
+looking square, five stories high.
+~
+653 0 0 0 0 1
+D1
+~
+~
+0 0 65400
+D2
+~
+door south apartment~
+1 0 65398
+S
+#65398
+Building Foyer~
+   This is a basic apartment-type foyer.  Mailboxes line one wall.  Another wall
+has a bulletin board with various notes of interest for the tenants.  Hey,
+there's a tenant meeting on Tuesday!  The elevator takes up the south wall.
+There is a button beside the elevator and a display above it.
+~
+653 8 0 0 0 0
+D0
+~
+~
+0 0 65397
+D1
+Utility Room - Employees Only!
+~
+utility door east~
+3 0 65300
+D2
+~
+elevator~
+2 0 65399
+S
+T 65302
+#65399
+Inside the Elevator~
+   It's your run-of-the-mill, everyday, totally normal looking, elevator.  The
+walls are plain metalic silver.  Soft Muzak plays through the speakers.  
+ 
+   A panel with five buttons is here.  Which floor are you looking for?  
+ 
+PUSH       4
+PUSH       3
+PUSH       2
+PUSH       1
+PUSH       G
+~
+653 8 0 0 0 0
+D0
+~
+~
+1 0 65322
+S
+T 65302
+$~
