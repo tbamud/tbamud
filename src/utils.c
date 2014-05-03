@@ -983,7 +983,8 @@ void char_from_furniture(struct char_data *ch)
 */
 void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums)
 {
-   int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len, max_len=0;
+   size_t max_len = 0;
+   int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len;
    char buf[MAX_STRING_LENGTH];
 
    /* Work out the longest list item */
@@ -1010,7 +1011,7 @@ void column_list(struct char_data *ch, int num_cols, const char **list, int list
 
    if (show_nums) col_width-=4;
 
-   if (col_width < max_len)
+   if (col_width < 0 || (size_t)col_width < max_len)
      log("Warning: columns too narrow for correct output to %s in simple_column_list (utils.c)", GET_NAME(ch));
 
    /* Calculate how many list items there should be per column */
