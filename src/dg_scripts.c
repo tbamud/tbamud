@@ -2428,7 +2428,7 @@ static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd)
     return;
   }
 
-  if (num > strlen(string)) {
+  if ((size_t)num > strlen(string)) {
     script_log("Trigger #%d : dg_letter number > strlen!", GET_TRIG_VNUM(trig));
     return;
   }
