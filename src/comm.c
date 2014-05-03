@@ -34,6 +34,7 @@
 #  include <dir.h>
 # else /* MSVC */
 #  include <direct.h>
+#  include <winsock.h>
 # endif
 # include <mmsystem.h>
 #endif /* CIRCLE_WINDOWS */
