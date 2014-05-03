@@ -518,7 +518,7 @@ ACMD(do_ibt)
       } else {
 
         send_to_char(ch, "%s%s by %s%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->name);
-        send_to_char(ch, "%sSubmitted: %s%s", QCYN, QYEL, ibtData->dated ? ctime(&ibtData->dated) : "Unknown\r\n");
+        send_to_char(ch, "%sSubmitted: %s%s", QCYN, QYEL, ibtData->dated ? ctime((const time_t*)&ibtData->dated) : "Unknown\r\n");
         if (GET_LEVEL(ch) >= LVL_IMMORT) {
           send_to_char(ch, "%sLevel: %s%d\r\n",QCYN, QYEL, ibtData->level);
           send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);
