@@ -626,7 +626,7 @@ void script_trigger_check(void)
   char_data *ch;
   obj_data *obj;
   struct room_data *room=NULL;
-  int nr;
+  room_rnum nr;
   struct script_data *sc;
 
   for (ch = character_list; ch; ch = ch->next) {
