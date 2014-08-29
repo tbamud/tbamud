@@ -699,11 +699,7 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
 	write_point += strlen(tokens[num]);
       } else if (*temp == ALIAS_GLOB_CHAR) {
         skip_spaces(&orig);
-<<<<<<< HEAD
-	strcpy(write_point, orig);		/* strcpy: OK */
-=======
         strcpy(write_point, orig);		/* strcpy: OK */
->>>>>>> f81cf2451717859aecaebb3ca07daf7b9d9a45a5
 	write_point += strlen(orig);
       } else if ((*(write_point++) = *temp) == '$')	/* redouble $ for act safety */
 	*(write_point++) = '$';
