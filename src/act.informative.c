@@ -826,8 +826,13 @@ ACMD(do_score)
   if (GET_QUEST(ch) == NOTHING)
     send_to_char(ch, "and you are not on a quest at the moment.\r\n");
   else
-    send_to_char(ch, "and your current quest is %d.\r\n",
-                     GET_QUEST(ch) == NOTHING ? -1 : GET_QUEST(ch));
+  {
+    send_to_char(ch, "and your current quest is %s", QST_DESC(real_quest(GET_QUEST(ch))));
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+        send_to_char(ch, " [%d]\r\n", GET_QUEST(ch));
+    else
+        send_to_char(ch, "\r\n");
+  }
 
   playing_time = *real_time_passed((time(0) - ch->player.time.logon) +
 				  ch->player.time.played, 0);
