@@ -27,6 +27,7 @@
 #include "fight.h"
 #include "modify.h"
 #include "asciimap.h"
+#include "quest.h"
 
 /* prototypes of local functions */
 /* do_diagnose utility functions */
