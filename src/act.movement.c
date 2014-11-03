@@ -970,3 +970,18 @@ ACMD(do_follow)
     }
   }
 }
+
+ACMD(do_unfollow)
+{
+  if (ch->master != (char_data*)  NULL) {
+    if (AFF_FLAGGED(ch, AFF_CHARM) && (ch->master)) {
+       send_to_char(ch, "You feel compelled to follow %s.\r\n",
+         GET_NAME(ch->master));
+    } else {
+      stop_follower(ch);
+    }
+  } else {
+    send_to_char(ch, "You are not following anyone.\r\n");
+  }
+  return;
+}
