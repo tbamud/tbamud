@@ -8835,6 +8835,14 @@ skillset rumble 'magic missile' 100
 
 See also: SET, SKILLS, SPELLS
 #31
+SLAY
+
+Usage: slay <victim>
+
+   This command will instantly put the specified victim to death as long as 
+   the victim's level is less than the person attempting the command.
+
+#32
 SLEEP
 
 SLEEP is both a command and the name of a spell.

@@ -294,6 +294,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "shutdown" , "shutdown", POS_DEAD    , do_shutdown , LVL_IMPL, SCMD_SHUTDOWN },
   { "sip"      , "sip"     , POS_RESTING , do_drink    , 0, SCMD_SIP },
   { "skillset" , "skillset", POS_SLEEPING, do_skillset , LVL_GRGOD, 0 },
+  { "slay"     , "slay"    , POS_FIGHTING, do_slay     , LVL_GRGOD, 0 },
   { "sleep"    , "sl"      , POS_SLEEPING, do_sleep    , 0, 0 },
   { "slist"    , "slist"   , POS_SLEEPING, do_oasis_list, LVL_BUILDER, SCMD_OASIS_SLIST },
   { "sneak"    , "sneak"   , POS_STANDING, do_sneak    , 1, 0 },
