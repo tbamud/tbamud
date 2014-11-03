@@ -32,6 +32,7 @@
 static int compare_spells(const void *x, const void *y);
 static const char *how_good(int percent);
 static void npc_steal(struct char_data *ch, struct char_data *victim);
+static void do_spells_or_skills(int mode, struct char_data *ch);
 
 /* Special procedures for mobiles. */
 static int spell_sort_info[MAX_SKILLS + 1];
@@ -695,5 +696,68 @@ SPECIAL(bank)
     return (TRUE);
   } else
     return (FALSE);
+}
+
+
+void do_spells_or_skills(int mode, struct char_data *ch)
+{
+  const char *overflow = "\r\n**OVERFLOW**\r\n";
+  int i=0, sortpos=0, ret=0;
+  size_t len = 0;
+  char buf2[MAX_STRING_LENGTH];
+  int class=0, level=0;
+
+  if (IS_NPC(ch))
+    return;
+
+  if ((int) GET_LEVEL(ch) < LVL_IMMORT) { 
+    if (mode == 0) {
+      if (!IS_MAGIC_USER(ch) && !IS_CLERIC(ch)) {
+        send_to_char(ch, "You do not know any spells.\r\n");
+        return;
+      }
+    } else if (mode == 1) {
+      if (IS_MAGIC_USER(ch) || IS_CLERIC(ch)) {
+        send_to_char(ch, "You do not know any skills.\r\n");
+        return;
+      }
+    } else {
+      log("do_spells_or_skills called with invalid input (%d).\n", mode);
+      exit(1);
+    }
+  }
+
+  level = (int) GET_LEVEL(ch);
+  class = (int) GET_CLASS(ch);
+
+  for (sortpos = 1; sortpos <= MAX_SKILLS; sortpos++) {
+    i = spell_sort_info[sortpos];
+    if (spell_info[i].min_level[class] >= LVL_IMMORT) {
+       if (level < LVL_IMMORT)
+         continue;
+       if (spell_info[i].min_level[class] > LVL_IMPL)
+         continue;
+    }
+    ret = snprintf(buf2 + len, sizeof(buf2) - len, "%-25smin level: %2d\r\n",
+      spell_info[i].name, spell_info[i].min_level[class]);
+    if (ret < 0 || len + ret >= sizeof(buf2))
+      break;
+    len += ret;
+  }
+
+  if (len >= sizeof(buf2))
+    strcpy(buf2 + sizeof(buf2) - strlen(overflow) - 1, overflow); /* strcpy: OK */
+
+  page_string(ch->desc, buf2, TRUE);
+}
+
+ACMD(do_spells)
+{
+  do_spells_or_skills(0, ch);
+}
+
+ACMD(do_skills)
+{
+  do_spells_or_skills(1, ch);
 }
 
