@@ -109,7 +109,9 @@
 #define SKILL_RESCUE                137 /* Reserved Skill[] DO NOT CHANGE */
 #define SKILL_SNEAK                 138 /* Reserved Skill[] DO NOT CHANGE */
 #define SKILL_STEAL                 139 /* Reserved Skill[] DO NOT CHANGE */
-#define SKILL_TRACK		              140 /* Reserved Skill[] DO NOT CHANGE */
+#define SKILL_TRACK                 140 /* Reserved Skill[] DO NOT CHANGE */
+#define SKILL_BANDAGE               141 /* Reserved Skill[] DO NOT CHANGE */
+
 /* New skills may be added here up to MAX_SKILLS (200) */
 
 /* NON-PLAYER AND OBJECT SPELLS AND SKILLS: The practice levels for the spells
