@@ -28,8 +28,8 @@
 #define MAX_OBJ_LIST 100
  
 struct obj_list_item {
-obj_vnum vobj;
-int val;
+  obj_vnum vobj;
+  int val;
 };
 /* local functions */
 static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
@@ -292,6 +292,8 @@ void perform_obj_aff_list(struct char_data * ch, char *arg)
                   QYEL, item_types[obj_proto[num].obj_flags.type_flag], QNRM,
                   obj_proto[num].proto_script ? " [TRIG]" : "");
         len += tmp_len;
+        if (len > sizeof(buf))
+          break;
       }
     }
     page_string(ch->desc, buf, TRUE);
@@ -344,6 +346,8 @@ void perform_obj_name_list(struct char_data * ch, char *arg)
                 obj_proto[num].short_description, QYEL, item_types[obj_proto[num].obj_flags.type_flag], QNRM,
                 obj_proto[num].proto_script ? " [TRIG]" : "");
       len += tmp_len;
+      if (len > sizeof(buf))
+        break;
     }
   }
 
@@ -580,7 +584,7 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
     if ((world[i].number >= bottom) && (world[i].number <= top)) {
       counter++;
 
-        len += snprintf(buf + len, sizeof(buf) - len, "%4d) [%s%-5d%s] %s%-*s%s %s",
+      len += snprintf(buf + len, sizeof(buf) - len, "%4d) [%s%-5d%s] %s%-*s%s %s",
                           counter, QGRN, world[i].number, QNRM,
                           QCYN, count_color_chars(world[i].name)+44, world[i].name, QNRM,
                           world[i].proto_script ? "[TRIG] " : ""
@@ -643,7 +647,7 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
                    QCYN, count_color_chars(mob_proto[i].player.short_descr)+44, mob_proto[i].player.short_descr,
                    QYEL, mob_proto[i].player.level, QNRM,
                    mob_proto[i].proto_script ? " [TRIG]" : ""
-                   );
+              );
       if (len > sizeof(buf))
 		break;
     }
@@ -689,8 +693,7 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, ob
                    QCYN, count_color_chars(obj_proto[i].short_description)+44, obj_proto[i].short_description, QYEL,
                    item_types[obj_proto[i].obj_flags.type_flag], QNRM,
                    obj_proto[i].proto_script ? " [TRIG]" : ""
-                   );
-                   
+              );
       if (len > sizeof(buf))
 		break;
     }
@@ -780,11 +783,14 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
   for (i = 0; i <= top_of_zone_table; i++) {
     if (zone_table[i].number >= bottom && zone_table[i].number <= top) {
       if ((!use_name) || (is_name(name, zone_table[i].builders))) {
+        counter++;
+
         tmp_len = snprintf(buf+len, sizeof(buf)-len, "[%s%3d%s] %s%-*s %s%-1s%s\r\n",
             QGRN, zone_table[i].number, QNRM, QCYN, count_color_chars(zone_table[i].name)+30, zone_table[i].name,
             QYEL, zone_table[i].builders ? zone_table[i].builders : "None.", QNRM);
         len += tmp_len;
-        counter++;
+        if (len > sizeof(buf))
+          break;
       }
     }
   }
