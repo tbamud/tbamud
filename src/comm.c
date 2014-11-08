@@ -669,8 +669,15 @@ static int get_max_players(void)
     /* set the current to the maximum */
     limit.rlim_cur = limit.rlim_max;
     if (setrlimit(RLIMIT_NOFILE, &limit) < 0) {
-      perror("SYSERR: calling setrlimit");
-      exit(1);
+#if defined(__APPLE__) && defined(RLIMIT_NOFILE) && defined(OPEN_MAX)
+        /* On OS X, setting rlim_cur above OPEN_MAX fails, so try again
+         * with OPEN_MAX. */
+      limit.rlim_cur = OPEN_MAX;
+#endif
+      if (setrlimit(RLIMIT_NOFILE, &limit) < 0) {
+        perror("SYSERR: calling setrlimit");
+        exit(1);
+      }
     }
 #ifdef RLIM_INFINITY
     if (limit.rlim_max == RLIM_INFINITY)

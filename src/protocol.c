@@ -12,7 +12,6 @@
 #endif
 #include <sys/types.h>
 #include "protocol.h"
-#include <malloc.h>
 
 /******************************************************************************
  The following section is for Diku/Merc derivatives.  Replace as needed.

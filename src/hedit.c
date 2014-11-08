@@ -207,7 +207,7 @@ static void hedit_disp_menu(struct descriptor_data *d)
 void hedit_parse(struct descriptor_data *d, char *arg)
 {
   char buf[MAX_STRING_LENGTH];
-  char *oldtext = '\0';
+  char *oldtext = "";
   int number;
 
   switch (OLC_MODE(d)) {
