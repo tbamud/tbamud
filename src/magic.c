@@ -971,7 +971,7 @@ void mag_rooms(int level, struct char_data *ch, int spellnum)
   room_rnum rnum;
   int duration;
   bool failure = FALSE;
-  event_id IdNum = -1;
+  event_id IdNum = eNULL;
   const char *msg = NULL;
   const char *room = NULL;
   
@@ -995,7 +995,7 @@ void mag_rooms(int level, struct char_data *ch, int spellnum)
   
   }
   
-  if (failure || (event_id)IdNum == -1) {
+  if (failure || IdNum == eNULL) {
     send_to_char(ch, "You failed!\r\n");
     return;
   }
