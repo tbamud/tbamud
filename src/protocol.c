@@ -194,7 +194,7 @@ static variable_name_t VariableNameTable[eMSDP_MAX+1] =
    { eMSDP_GAUGE_4,          "GAUGE_4",          STRING_GUI(s_Gauge4) }, 
    { eMSDP_GAUGE_5,          "GAUGE_5",          STRING_GUI(s_Gauge5) }, 
 
-   { eMSDP_MAX,              "", 0 } /* This must always be last. */
+   { eMSDP_MAX,              "", false, false, false, false, 0, 0, 0, NULL } /* This must always be last. */
 };
 
 /******************************************************************************
@@ -2256,12 +2256,12 @@ static void SendMSSP( descriptor_t *apDescriptor )
    static MSSP_t MSSPTable[] =
    {
       /* Required */
-      { "NAME",               MUD_NAME },   /* Change this in protocol.h */
+      { "NAME",               MUD_NAME, NULL },   /* Change this in protocol.h */
       { "PLAYERS",            FUNCTION_CALL( GetMSSP_Players ) },
       { "UPTIME" ,            FUNCTION_CALL( GetMSSP_Uptime ) }, 
 
       /* Generic */
-      { "CRAWL DELAY",        "-1" },
+      { "CRAWL DELAY",        "-1", NULL },
 /*
       { "HOSTNAME",           "" },
       { "PORT",               "" },
@@ -2359,7 +2359,7 @@ static void SendMSSP( descriptor_t *apDescriptor )
       { "SSL",                "0" },
       { "ZMP",                "0" },
 */
-      { NULL, NULL } /* This must always be last. */
+      { NULL, NULL, NULL } /* This must always be last. */
    };
 
    /* Begin the subnegotiation sequence */
