@@ -1282,7 +1282,7 @@ EVENTFUNC(get_protocols)
   struct descriptor_data *d;
   struct mud_event_data *pMudEvent;
   char buf[MAX_STRING_LENGTH];
-  int len;
+  size_t len;
 
   if (event_obj == NULL)
     return 0;
@@ -1298,9 +1298,9 @@ EVENTFUNC(get_protocols)
   if (d->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt)
     len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \tw256\tn | ");
   else if (d->pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt)
-      len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \twAnsi\tn | ");
+    len += snprintf(buf + len, MAX_STRING_LENGTH - len, "\tO[\toColors\tO] \twAnsi\tn | ");
   else
-      len += snprintf(buf + len, MAX_STRING_LENGTH - len, "[Colors] No Color | ");
+    len += snprintf(buf + len, MAX_STRING_LENGTH - len, "[Colors] No Color | ");
  
   len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMXP\tO] \tw%s\tn | ", d->pProtocol->bMXP ? "Yes" : "No");
   len += snprintf(buf + len, MAX_STRING_LENGTH - len,   "\tO[\toMSDP\tO] \tw%s\tn | ", d->pProtocol->bMSDP ? "Yes" : "No");

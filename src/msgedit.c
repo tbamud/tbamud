@@ -133,7 +133,7 @@ static void show_messages(struct char_data *ch)
 {
   int i, half = MAX_MESSAGES / 2, count = 0;
   char buf[MAX_STRING_LENGTH];
-  int len;
+  size_t len;
   
   len = snprintf(buf, sizeof(buf), "\t1Message List:\tn \r\n");
   

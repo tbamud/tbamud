@@ -983,8 +983,8 @@ void char_from_furniture(struct char_data *ch)
 */
 void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums)
 {
-   size_t max_len = 0;
-   int num_per_col, col_width,r,c,i, offset=0, len=0, temp_len;
+   size_t max_len = 0, len = 0, temp_len;
+   int num_per_col, col_width, r, c, i, offset = 0;
    char buf[MAX_STRING_LENGTH];
 
    /* Work out the longest list item */
