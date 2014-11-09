@@ -974,7 +974,7 @@ ACMD(do_follow)
 ACMD(do_unfollow)
 {
   if (ch->master) {
-    if (AFF_FLAGGED(ch, AFF_CHARM)) {
+    if (AFF_FLAGGED(ch, AFF_CHARM)) { 
        send_to_char(ch, "You feel compelled to follow %s.\r\n",
          GET_NAME(ch->master));
     } else {
