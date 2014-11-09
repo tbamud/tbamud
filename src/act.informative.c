@@ -828,7 +828,8 @@ ACMD(do_score)
     send_to_char(ch, "and you are not on a quest at the moment.\r\n");
   else
   {
-    send_to_char(ch, "and your current quest is %s", QST_DESC(real_quest(GET_QUEST(ch))));
+    send_to_char(ch, "and your current quest is: %s", QST_NAME(real_quest(GET_QUEST(ch))));
+
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
         send_to_char(ch, " [%d]\r\n", GET_QUEST(ch));
     else
