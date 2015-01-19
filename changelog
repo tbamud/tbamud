@@ -1174,7 +1174,8 @@ Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
  
 tbaMUD Release history:
-Version 3.65 release: January, 2015
+Version 3.66 release: January, 2015
+Version 3.65 release: January, 2014
 Version 3.64 release: March, 2013
 Version 3.63 release: April, 2012
 Version 3.62 release: September, 2010
