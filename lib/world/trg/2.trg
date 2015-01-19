@@ -464,4 +464,10 @@ else
   say I curse you %actor.name%.
 end
 ~
+#227
+new trigger~
+0 g 100
+~
+%echo% This trigger commandlist is not complete!
+~
 $~

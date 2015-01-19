@@ -2053,51 +2053,51 @@ James Stockdale - 27~
 ~
 * James Stockdale - M27 - T187 By Rumble
 eval max %random.43%
-set txt[1] Francis Bacon once said, "Adversity doth best induce virtue... while luxury doth best induce vice."
-set txt[2] to quote Glenn Gray, "Numberless soldiers have died, more or less willingly, not for country or honor or religious faith or for any other abstract good, but because they realized that by fleeing their posts and rescuing themselves, they would expose their companions to greater danger. Such loyalty to the group is the essence of fighting morale."
+set txt[1] Francis Bacon once said, "Adversity doth best to induce virtue...while luxury doth best induce vice."
+set txt[2] To quote Glenn Gray, "Numberless soldiers have died, more or less willingly, not for country or honor or religious faith or for any other abstract good, but because they realized that by fleeing their posts and rescuing themselves, they would expose their companions to greater danger. Such loyalty to the group is the essence of fighting morale."
 set txt[3] Glenn Gray said, "Nothing is clearer than that men can act contrary to the alleged basic instinct of self-preservation and against all motives of self-interest and egoism. Were it not so, the history of our civilization would be completely different than what it has been."
 set txt[4] At its best, citizenship finds an equilibrium between two essential ingredients-that of rights and that of duties. When the idea of citizenship is losing its grip, one or the other of these elements becomes eroded. Either freedom is on the losing end, or the sense of duty, of obligation, goes down the drain.
-set txt[5] Ariel and Will Durant said it best, "Freedom and equality are sworn enemies, when one prevails the other dies."
+set txt[5] Ariel and Will Durant said it best, "Freedom and equality are sworn and everlasting enemies, and when one prevails the other dies."
 set txt[6] As a people we have become soft. Stress isn't a bad thing. It is actually good for you, particularly the kind that comes from physical exercise.
-set txt[7] The Durants also said, "What determines whether the challenge of history will or will not be met depends upon the presence or absence of creative individuals with a clarity of mind and energy of will, capable of effective responses to new situations.
-set txt[8] once one learns to accomodate the shocks of a stressful existence, his adrenalin, will power, and imagination are going to start churning to provide the maximum performance of the human mind.
-set txt[9] would a good soldier fighting a tough battle stop to say to himself how unhappy he is?
-set txt[10] Remember Herman Melville? " In time of peril, like the needle to the lodestone, obedience, irrespective of rank, generally flies to him who is best fitted to command.
+set txt[7] Ariel and Will Durant said, "What determines whether the challenge of history will or will not be met depends upon the presence or absence of creative individuals with a clarity of mind and energy of will, capable of effective responses to new situations.
+set txt[8] Once one learns to accomodate the shocks of a stressful existence, his adrenalin, will power, and imagination are going to start churning to provide the maximum performance of the human mind.
+set txt[9] Would a good soldier fighting a tough battle stop to say to himself how unhappy he is?
+set txt[10] Remember Herman Melville? "In time of peril, like the needle to the lodestone, obedience, irrespective of rank, generally flies to him who is best fitted to command."
 set txt[11] There is no evidence that the way of the World assures the punishment of evil or the reward of virtue.
 set txt[12] Humans seem to have an inborn need to believe that virtue will be rewarded and evil punished. Often, when they come face to face with the fact that this is not always so, they are crushed.
-set txt[13] from the Book of Ecclesiastes, "I returned and saw that the race is not always to the swift nor the battle to the strong, neither yet bread to the wise nor riches to men of understanding, nor favors to men of skill, but time and chance happeneth to them all."
-set txt[14] the key to our future leaders' merit may not be "hanging in there" when the light at the end of the tunnel is expected. It will be their performance when it looks like the light will never show up."
+set txt[13] From the Book of Ecclesiastes, "I returned and saw that the race is not always to the swift nor the battle to the strong, neither yet bread to the wise nor riches to men of understanding, nor favors to men of skill, but time and chance happeneth to them all."
+set txt[14] The key to our future leaders' merit may not be "hanging in there" when the light at the end of the tunnel is expected. It will be their performance when it looks like the light will never show up.
 set txt[15] Mark Van Doren was right, "Being an educated person means that given the necessity [after doomsday, so to speak], you could refound your own civilization."
 set txt[16] Captain McWhirr said "to go skimming over the years of existence to sink gently into a placid grave, ignorant of life to the last, without ever having been made to see all it may contain of perfidy, of violence, of terror."
 set txt[17] Harry Truman said, "Men make history, and not the other way around."
-set txt[18] Sir Arthur Conan Doyle wrote, "When one tries to rise above nature, one is liable to fall below it. The highest type of man may revert to the animal if he leaves the straight road of destiny. Consider, that the materialists, the sensualists, the worldy would all proplong their worthless lives. The spiritual would now avoid the call to something higher. It would be the survival of the least fit. What sort of cesspool may not our poor world become?
+set txt[18] Sir Arthur Conan Doyle wrote, "When one tries to rise above nature, one is liable to fall below it. The highest type of man may revert to the animal if he leaves the straight road of destiny. Consider, that the materialists, the sensualists, the worldy would all prolong their worthless lives. The spiritual would now avoid the call to something higher. It would be the survival of the least fit. What sort of cesspool may not our poor world become?"
 set txt[19] Remember when you are strung up by the ropes that they can get out of you only what they know you know.
-set txt[20] a hero is a man who will not accept the status quo if it does not meet his standards.
-set txt[21] any officer worth his salt, on detached duty and out of communication, has to have the right to sensibly modify the law, issue rules that fit the conditions, and be prepared to defend himself in court.
-set txt[22] my experience is a perfect example of the hermetic - the alchemical transformation that may occur when a human being is subjected to intense pressure within a crucible of suffering or confinement.
+set txt[20] A hero is a man who will not accept the status quo if it does not meet his standards.
+set txt[21] Any officer worth his salt, on detached duty and out of communication, has to have the right to sensibly modify the law, issue rules that fit the conditions, and be prepared to defend himself in court.
+set txt[22] My experience is a perfect example of the hermetic - the alchemical transformation that may occur when a human being is subjected to intense pressure within a crucible of suffering or confinement.
 set txt[23] Dostoyevsky was a wise man, "You see, gentlemen, reason is an excellent thing, there's no disputing that, but reason is nothing but reason and satisfies only the rational side of man's nature, while will is a manifestation of the whole life, that is, of the whole human life, including reason and all the impulses."
 set txt[24] I once read from Nichmachean Ethics: "There are some instances in which such actions elicit forgiveness rather than praise, for example, when a man acts improperly under a strain greater than human nature can bear, and which no one could endure. Yet there are, perhaps, also acts which no man can possibly be compelled to do, but rather than do them he should accept the most terrible sufferings and death."
-set txt[25] Wittgenstein is know for, "If it comes easy, it ain't worth a damn."
-set txt[26] Fr. Marius recalls someone remarking, "the important thing is not what they've made of you, but what you made of what they've made of you."
+set txt[25] Wittgenstein is known for, "If it comes easy, it ain't worth a damn."
+set txt[26] Fr. Marius recalls someone remarking, "The important thing is not what they've made of you, but what you made of what they've made of you."
 set txt[27] It was only when I lay there on the rotting prison straw that I sensed within myself the first stirrings of good. Gradually it was disclosed to me that the line separating good and evil passes not between states nor between classes nor between political parties, but right through every human heart, through all human hearts. And that is why I turn back to the years of my imprisonment and say, "Bless you, prison, for having been a part of my life."
 set txt[28] my rules are: BACK US: Don't Bow in public, stay off the Air, admit no Crimes, never Kiss them goodbye, Unity over Self. Never negotiate for yourself but only for us all. Not less than significant pain should cause you to submit.
 set txt[29] The lecture-room of the philosopher is a hospital, students ought not to walk out of it in pleasure, but in pain. 
 set txt[30] I knew I could contain material - so long as they didn't know I knew it.
 set txt[31] Opportunities don't roll in as a saturating fog bank. They come as incidents. And you need spontaneity and instinct to capture them.
 set txt[32] Society's main objective is to instill virtue in its citizenry and that specific laws are a secondary concern.
-set txt[33] in prison I have concluded that the pincers of fear and guilt are the destroyers of men. Nothing else.
+set txt[33] In prison I have concluded that the pincers of fear and guilt are the destroyers of men. Nothing else.
 set txt[34] The challenge of education is not to prepare people for success but to prepare them for failure. I think that it's in hardship and failure that the heroes and the bums really get sorted out.
 set txt[35] Solzhenitsyn once commented, "If only there were evil people somewhere insidiously committing evil deeds, and it were necessary only to separate them from the rest of us and destroy them. But the line dividing good and evil cuts through the heart of every human being, and who is willing to destroy a piece of his own heart?"
 set txt[36] Edward Hidalgo once said, "Avoiding failure is not success." How right he was.
-set txt[37] Clemenceau believed that, "War is too important to be left to the general's."
+set txt[37] Clemenceau believed that, "War is too important to be left to the generals."
 set txt[38] I once asked Will Durant what he thought of American foreign policy. He told me, "I think we're all mixed up. We seem to be working on the assumption that if we're nice to other people they'll be nice to us. I can tell you that in the last 4000 years there's practically no evidence to support that view."
 set txt[39] Alfred Thayer Mahan believed that, "the purpose of power is to permit moral ideas to take root."
 set txt[39] The Durants said that "culture is a thin and fragile veneer that superimposes itself on mankind."
 set txt[40] The ones where are in trouble in here are the high school graduates who had enough sense to pick up the innuendo, and yet not enough education to accommodate it properly. A little knowledge is a dangerous thing.
-set txt[41] Prof Hans Morgethau once postulated, "in the world of the intellectual, ideas meet with ideas, and anything goes that is presented cleverly and with assurance. But in the practical world, ideas meet with facts, facts which make mincemeat of wrong ideas and throw the pieces in the ashcan of history."
+set txt[41] Prof Hans Morgethau once postulated, "In the world of the intellectual, ideas meet with ideas, and anything goes that is presented cleverly and with assurance. But in the practical world, ideas meet with facts, facts which make mincemeat of wrong ideas and throw the pieces in the ashcan of history."
 set txt[42] The greatest weapon our interrogators have against us is our own shame. They know how to manipulate it, our only protection is a clear conscience.
 set txt[42] We seem to have burdened ourselves with a national self-consciousness that has become a self-inflicted wound of guilt, a national shame at being strong.
-set txt[43] No one had to remind our founding fathers of the cost of freedom. 56 of them knowingly laid their lives, liberty and honor on the line when they signed that Declaration of Independence. And they paid their dues. In the ensuing war, nine were killed in action, five died as prisoners of war, twelve had their homes burned, several lost sons, one moan's wife died in prison, and seventeen (including Thomas Jefferson) went broke.
+set txt[43] No one had to remind our founding fathers of the cost of freedom. 56 of them knowingly laid their lives, liberty and honor on the line when they signed that Declaration of Independence. And they paid their dues. In the ensuing war, nine were killed in action, five died as prisoners of war, twelve had their homes burned, several lost sons, one man's wife died in prison, and seventeen (including Thomas Jefferson) went broke.
 set speech %%txt[%max%]%%
 eval speech %speech%
 say %speech%

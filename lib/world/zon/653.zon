@@ -2,6 +2,7 @@
 Parnassus~
 Apartment~
 65300 65399 30 0
+D 0 65398 0 1 	(Building Foyer)
 D 0 65306 2 2 	(First Floor North)
 D 0 65301 0 2 	(The Elevator)
 D 0 65397 2 1 	(A Generic Sort of Building)

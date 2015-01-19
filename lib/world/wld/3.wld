@@ -1315,7 +1315,7 @@ building with bales of hay stacked everywhere.  The horses can't reach the hay
 though they all seem to still try.  It is possible to buy a horse for a minimal
 fee, but not all of them are well tamed and have been known to become ornery.
 ~
-3 0 0 0 0 0
+3 8 0 0 0 0
 D1
 ~
 ~
@@ -1370,16 +1370,16 @@ and well kept.  A single door leads down to the shop below.
 D5
 ~
 door~
-1 0 225
-E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
-~
+2 0 225
 E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
+~
+E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 #399

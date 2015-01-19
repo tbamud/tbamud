@@ -227,7 +227,7 @@ void assign_the_quests(void)
       log("SYSERR: Quest #%d has an invalid questmaster.", QST_NUM(rnum));
       continue;
     }
-    if (mob_index[QST_MASTER(rnum)].func &&
+    if (mob_index[(mrnum)].func &&
  mob_index[(mrnum)].func != questmaster)
       QST_FUNC(rnum) = mob_index[(mrnum)].func;
     mob_index[(mrnum)].func = questmaster;

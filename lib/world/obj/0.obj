@@ -31,10 +31,6 @@ The email listing of the gods is pinned against the wall.~
 0 0 0 0
 1 1 0 30 0
 E
-emails listing~
-   HELP CONTACT
-~
-E
 wizlist~
                                  Implementors
                                  ~~~~~~~~~~~ 
@@ -50,6 +46,10 @@ wizlist~
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
        Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+~
+E
+emails listing~
+   HELP CONTACT
 ~
 #5
 foraged berries~
@@ -579,7 +579,7 @@ A
 A
 2 3
 #35
-battleaxe dragonbane quest~
+battleaxe dragonbane quest axe~
 the Battleaxe of Dragonbane~
 The bane of all wyrmkin seeks the heart of a dragon.~
 ~

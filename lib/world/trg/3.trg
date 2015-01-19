@@ -541,10 +541,10 @@ elseif %cmd.mudcommand% == buy
     * Need to load the mob, have it follow the player AND set the affect
     * CHARM so the mob will follow the masters orders.
     %load% mob %pet_vnum%
-    %force% %pet_name% mfollow %actor%
     dg_affect %pet_name% charm on 999
     emote opens the stable door and returns leading a horse by its reins.
     tell %actor.name% here you go. Treat'em well.
+    %force% %pet_name% follow %actor.name%
     nop %actor.gold(-%pet_cost%)%
   end
 elseif %cmd.mudcommand% == sell

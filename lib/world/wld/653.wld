@@ -11,31 +11,6 @@ D3
 ~
 0 0 65398
 E
-map~
-   Map
- 
-	c      01    02    03	n
-       |     |     |
-       |     |     |
-       |     |     |
-	c15	n-----	wH	n-----	wH	n-----	wH	n----	c04	n
-       |     |     |
-       |     |     |
-       |     |     |
-	c13	n-----	wH	n-	c14  	yE  	c06	n-	wH	n----	c05	n
-       |           |
-       |    	c10	n     |
-       |     |     |
-	c12	n-----	wH	n-----	wH	n-----	wH	n----	c07	n
-       |     |     |
-       |     |     |
-       |     |     |
-	c      11    09    08	n
-	yElevator	n
-	wHalls	n
-	cApartments	n
-~
-E
 Plan~
    Plan
 
@@ -81,6 +56,31 @@ Plan~
 	yElevator: 01-04	n
 	wHalls: 05-36	n
 	cApartments: 37-96	n
+~
+E
+map~
+   Map
+ 
+	c      01    02    03	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c15	n-----	wH	n-----	wH	n-----	wH	n----	c04	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c13	n-----	wH	n-	c14  	yE  	c06	n-	wH	n----	c05	n
+       |           |
+       |    	c10	n     |
+       |     |     |
+	c12	n-----	wH	n-----	wH	n-----	wH	n----	c07	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c      11    09    08	n
+	yElevator	n
+	wHalls	n
+	cApartments	n
 ~
 S
 #65301
@@ -234,6 +234,7 @@ D3
 ~
 0 0 65305
 S
+T 65302
 T 65302
 #65307
 First Floor North-East Corner~
@@ -421,6 +422,7 @@ D3
 0 0 65313
 S
 T 65302
+T 65302
 #65315
 Second Floor North-East Corner~
    The hall runs to the south and west.  The door to room 203 is north and the
@@ -600,12 +602,13 @@ D1
 D2
 ~
 elevator~
-1 0 65399
+2 0 65399
 D3
 ~
 ~
 0 0 65321
 S
+T 65302
 T 65302
 #65323
 Third Floor North-East Corner~
@@ -786,7 +789,7 @@ D1
 D2
 ~
 elevator~
-2 0 65399
+1 0 65399
 D3
 ~
 ~
@@ -796,6 +799,7 @@ D4
 ~
 4 0 65399
 S
+T 65302
 T 65302
 #65331
 Fourth Floor North-East Corner~
@@ -2293,6 +2297,7 @@ elevator~
 2 0 65399
 S
 T 65302
+T 65302
 #65399
 Inside the Elevator~
    It's your run-of-the-mill, everyday, totally normal looking, elevator.  The
@@ -2310,7 +2315,8 @@ PUSH       G
 D0
 ~
 ~
-1 0 65322
+1 0 65330
 S
+T 65302
 T 65302
 $~

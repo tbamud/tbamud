@@ -121,19 +121,26 @@ if %cmd.mudcommand% == look || %cmd.mudcommand% == examine
     return 0
     halt
   else
+    * Check for the reverser.  If it is in the room, give
+    *  one meaning.  If it is not, give the other.
+    eval rev %%findobj.%self.vnum%(%zone%99)%%
     * The ~ anchors the comparison to the front of the word.
     * rd /= card but ~rd is not a part of ~card while ~c is.
     set arg ~%arg%
-    if ~card /= %arg%
-      * Check for the reverser.  If it is in the room, give
-      *  one meaning.  If it is not, give the other.
-      eval rev %%findobj.%self.vnum%(%zone%99)%%
+    if ~reverse /= %arg%
       if %rev% < 1
-        %echo% Reverser is not here.
+        %send% %actor% You do not see that here.
+        halt
+      else
+        %send% %actor% The card is upside down.
+        halt
+      end
+    end
+    if ~card /= %arg%
+      if %rev% < 1
         %force% %actor% look card
       else
         %force% %actor% look reverse
-        %echo% Reverser is here.
       end
     else
       return 0
@@ -150,10 +157,10 @@ elseif %cmd.mudcommand% == quit || %cmd.mudcommand% == afk
   wait 1 sec
   %at% %cmdroom% %force% %actor% down
   wait 1 sec
-  %at% %actor% %force% %actor% %cmd%
+  %at% %actor% %force% %actor% %cmd% %arg%
   wait 1 sec
   halt
-elseif %cmd% == return || %cmd% == recall
+elseif %cmd% == return || %cmd% == recall || %cmd% == teleport || %cmd.mudcommand% == goto
   %send% %actor% Because you have decided to %cmd%, you cannot finish the reading.
   %echoaround% %actor% %actor.name% has to leave the reading now.
   wait 1 sec
@@ -164,7 +171,7 @@ elseif %cmd% == return || %cmd% == recall
   wait 1 sec
   %at% %cmdroom% %force% %actor% down
   wait 1 sec
-  %at% %actor% %force% %actor% %cmd%
+  %at% %actor% %force% %actor% %cmd% %arg%
   wait 1 sec
   halt
 else
@@ -181,7 +188,9 @@ if %direction% == down
   wait 2 sec
   %purge%
   set room %self.vnum%
-  eval purgeroom %room% - 9
+  eval purgeroom %room% - 10
+  %door% %purgeroom% up flags abcd
+  eval purgeroom %purgeroom% + 1
   while %purgeroom% < %self.vnum%
     %at% %purgeroom% %purge%
     eval purgeroom %purgeroom% + 1
@@ -206,7 +215,7 @@ if %direction% == up
   rdelete Cards_Dealt %self.id%
   rdelete tarot_reading_started %self.id%
   if %self.room.vnum% == 21110 || %self.room.vnum% == 21130 || %self.room.vnum% == 21150
-    %door% %self.room.vnum% up flags abc
+    * %door% %self.room.vnum% up flags abc
     eval cardroom %self.room.vnum% + 2
     %door% %cardroom% down flags ab
     eval cardroom %cardroom% + 1
@@ -285,11 +294,6 @@ end
 if %actor% == %self% 
   halt
 end
-* Check to see if someone is already trying to get an appointment.
-if %self.has_item(%zone%98)% && !%actor.varexists(Making_Tarot_Appointment_%zone%)%
-  say I'm sorry, %actor.name%.  I'm speaking with someone else right now.
-  halt
-end
 * This loop goes through the entire string of words the actor says. .car is the
 * word and .cdr is the remaining string. 
 eval word %speech.car%
@@ -302,6 +306,11 @@ while %word%
     * Objxxx98 keeps trigger from reacting to other conversations.
     * if %actor.is_pc% && 
     case appointment
+    * Check to see if someone is already trying to get an appointment.
+    if %self.has_item(%zone%98)% && !%actor.varexists(Making_Tarot_Appointment_%zone%)%
+      say I'm sorry, %actor.name%.  I'm speaking with someone else right now.
+      halt
+    end
     if !%self.has_item(%zone%98)%
       %load% o %zone%98
       set Making_Tarot_Appointment_%zone% 1
@@ -451,8 +460,8 @@ while %word%
   default
   break
 done
-* End of the loop we need to take the next word in the string and save the
-* remainder for the next pass.
+* End of the loop we need to take the next word in the string
+* and save the remainder for the next pass.
 eval word %rest.car%
 eval rest %rest.cdr%
 done
@@ -462,15 +471,15 @@ Tarot Receptionist greets - M21104~
 0 h 100
 *~
 if %direction% == south
-  emote looks up from her appointment book.
-  say Would you like to make an appointment with one of our readers?
-  say Before we start, make sure you have enough time to finish your reading.
-  say Please do not go afk or leave the game before you finish the reading.
-  say If you are sure, just say appointment.
+  welcome %actor.name%
+  %send% %actor% Ana says, 'Would you like to make an appointment with one of our readers?'
+  %send% %actor% Ana says, 'Before we start, make sure you have enough time to finish your reading.'
+  %send% %actor% Ana says, 'Please do not go afk or leave the game before you finish the reading.'
+  %send% %actor% Ana says, 'If you are sure, just say appointment.'
 else if %direction% == up
-  smile %actor%
-  say I hope you enjoyed your reading.  Please, come again soon.
-  say Of course, if you want another appointment now, say appointment.
+  smile %actor.name%
+  %send% %actor% Ana says, 'I hope you enjoyed your reading.  Please, come again soon.'
+  %send% %actor% Ana says, 'Of course, if you want another appointment now, say appointment.'
 end
 ~
 #21108

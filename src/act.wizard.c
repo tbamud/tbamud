@@ -52,7 +52,6 @@ static void mod_llog_entry(struct last_entry *llast,int type);
 static int  get_max_recent(void);
 static void clear_recent(struct recent_player *this);
 static struct recent_player *create_recent(void);
-
 const char *get_spec_func_name(SPECIAL(*func));
 bool zedit_get_levels(struct descriptor_data *d, char *buf);
 

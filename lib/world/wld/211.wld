@@ -1,5 +1,5 @@
 #21100
-Parna's Zone Description Room~
+Parna's Tarot Zone Description Room~
    This area is trying to recreate the Tarot zone I built for Smaug.  The
 purpose is to have a way of Tarot fortune-telling online.  It has been repeated
 twice to allow different people to have their futures told at the same time.  
@@ -162,7 +162,7 @@ The door is closed and can't be opened.
 D4
 ~
 door stairs up~
-1 0 21111
+2 0 21111
 E
 plaque~
    Sibyl uses the Rider-Waite tarot deck in the Keltic Cross layout.  If you
@@ -180,7 +180,7 @@ atmosphere that surrounds it.
 D4
 ~
 ~
-0 0 21112
+1 0 21112
 S
 T 21102
 #21112
@@ -189,10 +189,14 @@ This card crosses~
 forces opposing the question or a different choice that may be available.
 ~
 211 220 0 0 0 0
+D0
+~
+~
+0 0 -1
 D2
 ~
 ~
-0 0 21113
+1 0 21113
 D5
 ~
 door backdoor~
@@ -212,7 +216,7 @@ door backdoor~
 D3
 ~
 ~
-0 0 21121
+1 0 21121
 S
 T 21102
 #21114
@@ -260,7 +264,7 @@ door backdoor~
 D2
 ~
 ~
-0 0 21124
+1 0 21124
 S
 T 21102
 #21117
@@ -273,7 +277,7 @@ the fears the questioner has about the question.
 D0
 ~
 ~
-0 0 21118
+1 0 21118
 D3
 ~
 door backdoor~
@@ -289,7 +293,7 @@ close to the questioner, regarding the question.
 D0
 ~
 ~
-0 0 21119
+1 0 21119
 D2
 ~
 door backdoor~
@@ -305,7 +309,7 @@ hopes from the question.
 D0
 ~
 ~
-0 0 21120
+1 0 21120
 D2
 ~
 door backdoor~
@@ -344,7 +348,7 @@ South-West Corner~
 D0
 ~
 ~
-0 0 21114
+1 0 21114
 D1
 ~
 door backdoor~
@@ -358,7 +362,7 @@ North-West Corner~
 D1
 ~
 ~
-0 0 21115
+1 0 21115
 D2
 ~
 door backdoor~
@@ -372,7 +376,7 @@ North-East Corner~
 D2
 ~
 door~
-0 0 21116
+1 0 21116
 D3
 ~
 door backdoor~
@@ -390,7 +394,7 @@ door backdoor~
 D1
 ~
 ~
-0 0 21117
+1 0 21117
 S
 #21125
 Sibyl's Private Room~
@@ -417,7 +421,7 @@ The door is closed and can't be opened.
 D4
 ~
 door~
-1 0 21131
+2 0 21131
 E
 plaque~
    Esmerelda uses the Rider-Waite tarot deck in the Keltic Cross layout.  If you
@@ -450,7 +454,7 @@ door~
 1 0 21133
 D5
 ~
-door~
+door backdoor~
 1 0 21131
 S
 T 21102
@@ -462,7 +466,7 @@ question, things in the past which were leading to the question.
 211 220 0 0 0 0
 D0
 ~
-door~
+door backdoor~
 1 0 21132
 D3
 ~
@@ -482,7 +486,7 @@ door~
 1 0 21142
 D2
 ~
-door~
+door backdoor~
 1 0 21141
 S
 T 21102
@@ -498,7 +502,7 @@ door~
 1 0 21143
 D3
 ~
-door~
+door backdoor~
 1 0 21142
 S
 T 21102
@@ -510,7 +514,7 @@ influence or possibility.  It may show a different pathway available.
 211 220 0 0 0 0
 D0
 ~
-door~
+door backdoor~
 1 0 21143
 D2
 ~
@@ -527,11 +531,15 @@ the fears the questioner has about the question.
 211 220 0 0 0 0
 D0
 ~
-door~
+~
 1 0 21138
+D1
+~
+~
+0 0 -1
 D3
 ~
-door~
+door backdoor~
 1 0 21144
 S
 T 21102
@@ -543,11 +551,11 @@ close to the questioner, regarding the question.
 211 220 0 0 0 0
 D0
 ~
-door~
+~
 1 0 21139
 D2
 ~
-door~
+door backdoor~
 1 0 21137
 S
 T 21102
@@ -563,7 +571,7 @@ door~
 1 0 21140
 D2
 ~
-door~
+door backdoor~
 1 0 21138
 S
 T 21102
@@ -578,7 +586,7 @@ down, all cards will be cleared.
 211 220 0 0 0 0
 D2
 ~
-door~
+door backdoor~
 1 0 21139
 D5
 ~
@@ -598,7 +606,7 @@ D0
 1 0 21134
 D1
 ~
-~
+door backdoor~
 1 0 21133
 S
 #21142
@@ -612,7 +620,7 @@ D1
 1 0 21135
 D2
 ~
-~
+door backdoor~
 1 0 21134
 S
 #21143
@@ -626,7 +634,7 @@ D2
 1 0 21136
 D3
 ~
-~
+door backdoor~
 1 0 21135
 S
 #21144
@@ -636,7 +644,7 @@ South-East Corner~
 211 8 0 0 0 0
 D0
 ~
-~
+door backdoor~
 1 0 21136
 D1
 ~
@@ -668,7 +676,7 @@ The door is closed and can't be opened.
 D4
 ~
 door~
-1 0 21151
+2 0 21151
 E
 plaque~
    Jaelle uses the Rider-Waite tarot deck in the Keltic Cross layout.  If you
@@ -701,7 +709,7 @@ door~
 1 0 21153
 D5
 ~
-door~
+door backdoor~
 1 0 21151
 S
 T 21102
@@ -713,7 +721,7 @@ question, things in the past which were leading to the question.
 211 220 0 0 0 0
 D0
 ~
-door~
+door backdoor~
 1 0 21152
 D3
 ~
@@ -733,7 +741,7 @@ door~
 1 0 21162
 D2
 ~
-door~
+door backdoor~
 1 0 21161
 S
 T 21102
@@ -749,7 +757,7 @@ door~
 1 0 21163
 D3
 ~
-door~
+door backdoor~
 1 0 21162
 S
 T 21102
@@ -761,7 +769,7 @@ influence or possibility.  It may show a different pathway available.
 211 220 0 0 0 0
 D0
 ~
-door~
+door backdoor~
 1 0 21163
 D2
 ~
@@ -782,7 +790,7 @@ door~
 1 0 21158
 D3
 ~
-door~
+door backdoor~
 1 0 21164
 S
 T 21102
@@ -798,7 +806,7 @@ door~
 1 0 21159
 D2
 ~
-door~
+door backdoor~
 1 0 21157
 S
 T 21102
@@ -814,7 +822,7 @@ door~
 1 0 21160
 D2
 ~
-door~
+door backdoor~
 1 0 21158
 S
 T 21102
@@ -829,7 +837,7 @@ down, all cards will be cleared.
 211 220 0 0 0 0
 D2
 ~
-door~
+door backdoor~
 1 0 21159
 D5
 ~
@@ -849,7 +857,7 @@ D0
 1 0 21154
 D1
 ~
-~
+door backdoor~
 1 0 21153
 S
 #21162
@@ -863,7 +871,7 @@ D1
 1 0 21155
 D2
 ~
-~
+door backdoor~
 1 0 21154
 S
 #21163
@@ -877,7 +885,7 @@ D2
 1 0 21156
 D3
 ~
-~
+door backdoor~
 1 0 21155
 S
 #21164
@@ -887,7 +895,7 @@ South-East Corner~
 211 8 0 0 0 0
 D0
 ~
-~
+door backdoor~
 1 0 21156
 D1
 ~

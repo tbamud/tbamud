@@ -85,8 +85,8 @@ marble~
 S
 #30404
 The Temple~
-   The echo of you footsteps reverberates through the temple.  Everything is
-white, the tiled floor, the walls, the ceiling.....    
+   The echo of your footsteps reverberates through the temple.  Everything is
+white, the tiled floor, the walls, the ceiling.....  
 ~
 304 8 0 0 0 0
 D0
@@ -124,7 +124,7 @@ S
 #30406
 The Temple~
    The echo of your footsteps reverberates through the temple.  Everything is
-white, the tiled floor, the walls, the ceiling.....    
+white, the tiled floor, the walls, the ceiling.....  
 ~
 304 8 0 0 0 0
 D0
@@ -183,12 +183,12 @@ You see a room in the temple.
 ~
 0 0 30407
 E
-plants~
-   They seem to be doing very well, someone around here has a green thumb.  
-~
-E
 brook~
    What a nice little bubbling brook!  
+~
+E
+plants~
+   They seem to be doing very well, someone around here has a green thumb.  
 ~
 S
 #30409
@@ -216,7 +216,7 @@ S
 #30410
 The Stairwell~
    There is a beautiful curving stairwell leading upwards.  It seems to have
-been carved directly from stone.    
+been carved directly from stone.  
 ~
 304 8 0 0 0 0
 D2
@@ -293,12 +293,12 @@ You see the bottom of the stairs.
 ~
 0 0 30410
 E
-fur~
-   The fur is brown, short, and coarse.  
-~
-E
 mural~
    The mural shows a great shaggy beast with two pointed horns.  
+~
+E
+fur~
+   The fur is brown, short, and coarse.  
 ~
 S
 #30414
@@ -357,12 +357,12 @@ Woah..looks like a dead end.  You get the chills.
 ~
 0 0 30419
 E
-window~
-   The window overlooks a grassy field.  
-~
-E
 balcony~
    Its a simple piece of polished wood.  You can see the gardens below.  
+~
+E
+window~
+   The window overlooks a grassy field.  
 ~
 S
 #30417
@@ -392,12 +392,12 @@ Can't really see much..its rather dark over there.
 ~
 0 0 30421
 E
-balcony~
-   Its a simple piece of polished wood.  You can see the gardens below.  
-~
-E
 window~
    The window looks down upon a grassy field.  
+~
+E
+balcony~
+   Its a simple piece of polished wood.  You can see the gardens below.  
 ~
 S
 #30419
@@ -431,12 +431,12 @@ You see the balcony over there.
 ~
 0 0 30422
 E
-window~
-   Its a great, big walk-through window.  
-~
-E
 shelves~
    The shelves have been swept clean.  
+~
+E
+window~
+   Its a great, big walk-through window.  
 ~
 S
 #30421

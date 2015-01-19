@@ -32,7 +32,7 @@ T 146
 #202
 horse pets ~
 the horse~
-A beautiful horse shakes it's head and swishes it's tail.
+A beautiful horse shakes his mane and swishes his tail.
 ~
    The horse has been well groomed and seems to be in excellent shape.    
 ~
@@ -62,26 +62,26 @@ horse pets mare~
 the fine mare~
 A gentle and kind horse stares at you.
 ~
-   The horse seems to be well trained and somewhat....  Lazy.  Doesn't look
-like it would be fast, but it probably has some great endurance.    
+   The horse seems to be well trained, but somewhat lazy.  She Doesn't look fast
+though her build shows promise of endurance.
 ~
 10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
-8 8 1
+8 8 2
 E
 #205
 horse pets stallion~
 the stallion~
 A sleek and mean looking horse tramps impatiently.
 ~
-   The horse looks about ready to bolt, a strange gleam in it's eyes makes you
-wonder why this animal is even standing here.  The animal looks wild.    
+   The horse looks about ready to bolt, a strange gleam in its eyes makes you
+wonder why this animal is even standing here.  The animal looks wild.   
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
-8 8 2
+8 8 1
 E
 #206
 chunky philosopher man old~

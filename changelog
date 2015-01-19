@@ -3,11 +3,11 @@ help, find any bugs, or have ideas for improvement please stop by TBA at
 telnet://tbamud.com:9091 or email rumble@tbamud.com --Rumble
 @
 Development moved to Github:
-https://github.com/welcor/tbamud
-Changelog available at:
-https://github.com/welcor/tbamud/commits/master
-[Jun 28, 2013] - Rumble
-  Changelog is now online at: https://github.com/welcor/tbamud/commits/master
+https://github.com/tbamud/tbamud
+Changelog also available on Github:
+https://github.com/tbamud/tbamud/commits/master
+
+Changes prior to Github transition:
 [Jun 21 2013] - Vatiken
   Added 'toupper' as a dg_script command to capitalize the first letter
   of a string.
@@ -1173,7 +1173,9 @@ export (QQ's a zone into a tarball)
 Xlist (mlist, olist, rlist, zlist, slist, tlist, qlist)
 (lots of major bugfixes too)
  
-Release history:
+tbaMUD Release history:
+Version 3.65 release: January, 2015
+Version 3.64 release: March, 2013
 Version 3.63 release: April, 2012
 Version 3.62 release: September, 2010
 Version 3.61 release: January, 2010

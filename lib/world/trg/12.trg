@@ -1137,6 +1137,16 @@ else
   %send% %actor% The switch says, 'Fine... fine.'
 end
 ~
+#1271
+crash test~
+0 g 100
+~
+Trigger Intended Assignment: Mobiles
+Trigger Type: Random , Numeric Arg: 100, Arg list: None
+Commands:
+%echo% %self.name% transforms into a new mob!
+%transform% -1
+~
 #1280
 Mob Raid~
 2 b 100

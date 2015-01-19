@@ -38,7 +38,7 @@ eval stunned %actor.hitp%     - evaluate all hitpoints and then damage
 %damage% %actor% %stunned%    - leaving the player stunned, but will recover 
 
 eval random_up_to_stunned %%random.%stunned%%%
-%damage% %actor %eval random_up_to_stunned%
+%damage% %actor% %random_up_to_stunned%
 
 eval num_hitp %actor.hitp%/2  - calculate half of hitpoints and then damage
 %damage% %actor% %num_hitp% 
@@ -351,9 +351,9 @@ object with vnum in the subfield. If the actor doesn't have the item an empty
 string is returned. * checks for any inventory.
  
 
-Examples: @RTSTAT 94, 19537@n.
+Examples: @RTSTAT 155, 94, 19537@n.
 
-See also: TRIG-EQ, %PURGE%, %LOAD%, CHAR-VAR
+See also: ACTOR.HAS TRIG-EQ, %PURGE%, %LOAD%, CHAR-VAR
 #31
 ACTOR.LEVEL ACTOR-LEVEL %ACTOR.LEVEL%
 
@@ -366,7 +366,7 @@ Note that the level of a player should never be adjusted in a script unless you
 have a very good reason for it.  This simply changes the mortal level and does
 not update any other stats (like max hp or exp).
 
-See Also: CHAR-VAR, ADMLEVEL
+See Also: CHAR-VAR
 #31
 ADVANCE DEMOTE
 
@@ -1549,7 +1549,7 @@ Usage: changelog <text>
 submitter name. To view the changelog use the file command with argument
 changelog.
 
-Changelog: https://github.com/welcor/tbamud/blob/master/changelog
+Changelog: https://github.com/tbamud/tbamud/commits/master
 
 See Also: FILE, CHANGES
 #31
@@ -1820,6 +1820,7 @@ directions under @RHELP CYGWIN@n.
 recommend the book "The C Programming Language" 2nd edition by Brian W. 
 Kernighan and Dennis M. Ritchie. There are also online tools like:
 
+http://blog.ted.com/2013/01/29/10-places-where-anyone-can-learn-to-code/
 http://www.gnu.org/software/libc/manual/html_node/index.html
 http://publications.gbdirect.co.uk/c_book/ 
 http://mindview.net/CDs/ThinkingInC/beta3
@@ -3438,7 +3439,7 @@ GITHUB SVN SUBVERSION
 
 Get started: https://help.github.com/articles/set-up-git
 
-tbamud repository: https://github.com/welcor/tbamud
+tbamud repository: https://github.com/tbamud/tbamud
 #0
 GIVE PAY BRIBE
 
@@ -3699,7 +3700,9 @@ HAS_ITEM ACTOR.HAS_ITEM %ACTOR.HAS_ITEM% TRIG_HAS_ITEM
 
 Checks if actor has item (inventory, equipped and in containers) by subfield name/var/vnum.
 
-@RTSTAT 155@n
+Examples: @RTSTAT 155, 94, 19537@n.
+
+See also: ACTOR.INV TRIG-EQ, %PURGE%, %LOAD%, CHAR-VAR
 #31
 HASATTACHED %HASATTACHED% %ACTOR.HASATTACHED% %ROOM.HASATTACHED% %OBJ.HASATTACHED
 
@@ -5052,11 +5055,13 @@ L) NPC Flags : @cISNPC@n
 13) NOCHARM    Mob cannot be charmed.
 14) NOSUMMON   Mob cannot be summoned.
 15) NOSLEEP    Sleep spell cannot be cast on mob.
-16) NOKILL     Mob cannot be attacked.
+16) NOBASH     Mob cannot be bashed.
 17) NOBLIND    Mob cannot be blinded.
-18) NOTDEADYET Mob being extracted. CAN NOT BE SET.
+18) NOKILL     Mob cannot be attacked.
+19) NOTDEADYET Mob being extracted. CAN NOT BE SET.
 
 See also: MEDIT-AFF-FLAGS
+
 #31
 MEDIT-NUM-HP-DICE MEDIT-SIZE-HP-DICE MEDIT-HP-BONUS HPBONUS NUM-HP-DICE NUMHPDICE HP-DICE
 
@@ -5788,31 +5793,31 @@ the object is worn, not when picked up. An object may have up to 6 different
 applies. Suggested object standards are displayed at the end of each apply 
 (min/max).
 
-0    NONE               No effect - used to quit the menu.
-1    STR                Apply to strength.
-2    DEX                Apply to dexterity.
-3    INT                Apply to intelligence.
-4    WIS                Apply to wisdom. 
-5    CON                Apply to constitution. 
-6    CHA                Apply to charisma. 
-7    CLASS              Unimplemented.  Do not use.
-8    LEVEL              Unimplemented.  Do not use.
-9    AGE                Apply to character's MUD age, in MUD-years. 
-10   CHAR_WEIGHT        Apply to weight. 
-11   CHAR_HEIGHT        Apply to height. 
-12   MAXMANA            Apply to MAX mana points. 
-13   MAXHIT             Apply to MAX hit points.
-14   MAXMOVE            Apply to MAX movement points.
-15   GOLD               Unimplemented.  Do not use.
-16   EXP                Unimplemented.  Do not use.
-17   ARMOR              Apply to armor class (AC). negative is better.
-18   HITROLL            Apply to hitroll. 
-19   DAMROLL            Apply to damage roll bonus. 
-20   SAVING_PARA        Apply to save throw: paralysis. negative is better.
-21   SAVING_ROD         Apply to save throw: rods. negative is better.
-22   SAVING_PETRI       Apply to save throw: petrify. negative is better.
-23   SAVING_BREATH      Apply to save throw: breathe. negative is better.
-24   SAVING_SPELL       Apply to save throw: spells. negative is better.
+ 1)  NONE               No effect - used to quit the menu.
+ 2)  STR                Apply to strength.
+ 3)  DEX                Apply to dexterity.
+ 4)  INT                Apply to intelligence.
+ 5)  WIS                Apply to wisdom. 
+ 6)  CON                Apply to constitution. 
+ 7)  CHA                Apply to charisma. 
+ 8)  CLASS              Unimplemented.  Do not use.
+ 9)  LEVEL              Unimplemented.  Do not use.
+10)  AGE                Apply to character's MUD age, in MUD-years. 
+11)  CHAR_WEIGHT        Apply to weight. 
+12)  CHAR_HEIGHT        Apply to height. 
+13)  MAXMANA            Apply to MAX mana points. 
+14)  MAXHIT             Apply to MAX hit points.
+15)  MAXMOVE            Apply to MAX movement points.
+16)  GOLD               Unimplemented.  Do not use.
+17)  EXP                Unimplemented.  Do not use.
+18)  ARMOR              Apply to armor class (AC). negative is better.
+19)  HITROLL            Apply to hitroll. 
+20)  DAMROLL            Apply to damage roll bonus. 
+21)  SAVING_PARA        Apply to save throw: paralysis. negative is better.
+22)  SAVING_ROD         Apply to save throw: rods. negative is better.
+23)  SAVING_PETRI       Apply to save throw: petrify. negative is better.
+24)  SAVING_BREATH      Apply to save throw: breathe. negative is better.
+25)  SAVING_SPELL       Apply to save throw: spells. negative is better.
 
 See also: STANDARDS
 #31
@@ -5888,6 +5893,7 @@ OEDIT-EXTRA-FLAGS OEDIT-FLAGS OBJECT-FLAGS OBJECTFLAGS GLOW HUM NODROP NO_DROP N
 15)  ANTI_THIEF      Item cannot be used by the Thief class.
 16)  ANTI_WARRIOR    Item cannot be used by the Warrior class.
 17)  NOSELL          Shopkeepers will not buy or sell the item.
+18)  QUEST_ITEM      Shopkeepers will only accept questpoints for this item.
 
    Always try to promote role-playing. The last thing you should do is have 
 Thieves running around wearing dangly bracelets making noise, Clerics and Mages
@@ -5903,7 +5909,6 @@ horns must be showing. Minotaurs also have hooves for feet. It would be tough
 for most to wear regular boots. Use some common sense when creating your 
 equipment. Think about each object you create. Think about who you are creating
 it for. 
-
 #31
 OEDIT-ITEM-NUMBER OEDIT-NUMBER
 
@@ -7761,17 +7766,17 @@ REDIT-SECTOR-TYPE SECTORS SECTOR-TYPE TERRAIN-TYPE FIELDS FORESTS REDIT-SECTOR-F
    This defines movement point, light, and boat requirements.
 The following terrains may be selected (only one):
 
-                                                      Movement Points
-0    INSIDE         Indoors (no light required)             1 
-1    CITY           The streets of a city.                  1
-2    FIELD          An open field.                          2
-3    FOREST         A dense forest.                         3
-4    HILLS          Low foothills.                          4
-5    MOUNTAIN       Steep mountain regions.                 6
-6    WATER_SWIM     Water (swimmable).                      4
-7    WATER_NOSWIM   Unswimmable water. Boat required.       1
-8    FLYING         Wheee! Requires AFF_FLYING.             1
-9    UNDERWATER     Underwater requires AFF_SCUBA.          5 
+                                                       Movement Points
+ 1)  Inside           Indoors (no light required)             1 
+ 2)  City             The streets of a city.                  1
+ 3)  Field            An open field.                          2
+ 4)  Forest           A dense forest.                         3
+ 5)  Hills            Low foothills.                          4
+ 6)  Mountains        Steep mountain regions.                 6
+ 7)  Water (Swim)     Water (swimmable).                      4
+ 8)  Water (No Swim)  Unswimmable water. Boat required.       1
+ 9)  In Flight        Wheee! Requires AFF_FLYING.             1
+10)  Underwater       Underwater requires AFF_SCUBA.          5 
 
 #31
 RELEASES
@@ -9925,7 +9930,8 @@ TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW 
 TBA stands for The Builder Academy. 
 @RGOTO 3@n to enter the Builder Academy tutorial.
 
-The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community into an extensive tutorial zone, help files, and examples
+The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community and evolved into an extensive tutorial zone, help files, 
+nd examples.
 
 
 TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to comple

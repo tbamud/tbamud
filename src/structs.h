@@ -22,7 +22,7 @@
  * on an older version. You are supposed to compare this with the macro
  * TBAMUD_VERSION() in utils.h.
  * It is read as Major/Minor/Patchlevel - MMmmPP */
-#define _TBAMUD    0x030650
+#define _TBAMUD    0x030660
 
 /** If you want equipment to be automatically equipped to the same place
  * it was when players rented, set the define below to 1 because

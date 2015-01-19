@@ -1,8 +1,7 @@
 If you have any additions, corrections, ideas, or bug reports please stop by the
 Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
 
-CircleMUD Release History 
-Originally by Jeremy Elson 
+Circle and tbaMUD Release History 
 
 Abstract 
 
@@ -10,7 +9,9 @@ This document lists the release history of CircleMUD and at the end is the post
 to rec.games.mud.diku which originally anounced CircleMUD as a publically 
 available MUD source code. 
 
-Release history:
+tbaMUD Release history:
+Version 3.65 release: January, 2015
+Version 3.64 release: March, 2013
 Version 3.63 release: April, 2012
 Version 3.62 release: September, 2010
 Version 3.61 release: January, 2010
@@ -25,6 +26,8 @@ Version 3.53 release: July, 2007
 Version 3.52 release: April, 2007
 Version 3.51 release: February, 2007
 Version 3.5 release: December, 2006
+
+CircleMUD Release history:
 Version 3.1  (yes, no beta pl): November 18, 2002
 Version 3.00 beta pl22 release: October 4, 2002
 Version 3.00 beta pl21 release: April 15, 2002

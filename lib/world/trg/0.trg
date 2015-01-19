@@ -30,7 +30,7 @@ Mob Tutorial Example Kill Ogre - 16~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * A very basic 3 trigger receive quest. Trigs 1-3.
-say you got the best of me %actor.name%. But I'll be back.
+say You got the best of me, %actor.name%. But I'll be back.
 * Load the wings to be returned to the questmaster.
 %load% obj 1
 * Reload the mob for the next questor.
@@ -47,7 +47,7 @@ if %object.vnum% == 1
   wait 1 sec
   say Thank you, %actor.name%
   %send% %actor% %self.name% gives you a gold piece.
-  %echoaround% %actor% %actor.name% is rewarded for his valor.
+%echoaround% %actor% %actor.name% is rewarded for %hisher% valor.
   * Reward the actor with an entire gold coin!
   nop %actor.gold(1)%
   wait 5 sec
