@@ -202,6 +202,7 @@ int greet_mtrigger(char_data *actor, int dir)
   char_data *ch;
   char buf[MAX_INPUT_LENGTH];
   int intermediate, final=TRUE;
+  struct trig_data *next_trig;
 
   if (!valid_dg_target(actor, DG_ALLOW_GODS))
     return TRUE;
@@ -212,8 +213,9 @@ int greet_mtrigger(char_data *actor, int dir)
         AFF_FLAGGED(ch, AFF_CHARM))
       continue;
 
-    for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
-      if (((IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET) && CAN_SEE(ch, actor)) ||
+    for (t = TRIGGERS(SCRIPT(ch)); t; t = next_trig) {
+		next_trig = t->next;
+		if (((IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET) && CAN_SEE(ch, actor)) ||
            IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET_ALL)) &&
           !GET_TRIG_DEPTH(t) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
         if (dir>=0 && dir < DIR_COUNT)
