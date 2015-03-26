@@ -38,7 +38,7 @@ struct obj_data *obj, const void *vict_obj, int type)
 These pieces are used as follows: 
 
 str: This is the basic string, a null terminated character array, including 
-control characters (see section 1.4 on ‘Control Characters’), to be sent to 
+control characters (see section 1.4 on 'Control Characters'), to be sent to 
 characters designated by the targets. 
 
 hide_invisible: A TRUE or FALSE value indicating whether or not to hide the 

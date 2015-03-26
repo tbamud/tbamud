@@ -15,7 +15,7 @@ To build this, you need the following:
 
 	.2) A TCP/IP stack for OpenVMS that supports UCX emulation.  I have
             personally only tested out Multinet v4.1B and Multinet v4.2.
-            If you are using a TCP/IP stack that dosen't support UCX 
+            If you are using a TCP/IP stack that doesn't support UCX 
 	    emulation I would suggest getting a copy of Multinet though the
             OpenVMS hobbyist program at http://www.montagar.com/hobbyist.
 

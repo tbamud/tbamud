@@ -208,12 +208,12 @@ Rules:
 
    If you wish to setup a version of DikuMud on any computer system, you
    must send us a message , by snail-mail or e-mail, and inform us where
-   and when you are running the game. (remember to include 
-   your address, name etc.)
+   and when you are running the game. (remember to include your
+   address, name etc.)
 
 
    Any running version of DikuMud must include our names in the login
-   sequence. Furthermore the "credits" command shall always cointain
+   sequence. Furthermore the "credits" command shall always contain
    our name, addresses, and a notice which states we have created DikuMud.
 
    You are allowed to alter DikuMud, source and documentation as long as

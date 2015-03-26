@@ -84,15 +84,16 @@ wrong.
 
 If you want your MUD to succeed and flourish, you’ll have to know how to code in C. 
 Otherwise, your MUD will be exactly like every other MUD out there. You’re not the
-only person who knows how to type make! Although the quality and originality of your areas is also very important, it is the code and trigedit that transforms the
-areas from lifeless text files into a living, breathing virtual world. If you don’t
-know how to code, you won’t be able to add new features, respond to requests of 
-your players, add new world flags for your area builders, or even fix the simplest 
-of bugs. Running a MUD without knowing how to code is certainly a recipe for 
-disaster. If you’re a great game-player and have some terrific ideas about how a
-MUD should work, but don’t know how to code, you should either learn or find a good
-coder who can join your team. Don’t assume that you can get away with running a MUD
-without knowing C – you can’t. Not for very long, anyway. 
+only person who knows how to type make! Although the quality and originality of your
+areas is also very important, it is the code and trigedit that transforms the areas
+from lifeless text files into a living, breathing virtual world. If you don’t know
+how to code, you won’t be able to add new features, respond to requests of your
+players, add new world flags for your area builders, or even fix the simplest of
+bugs. Running a MUD without knowing how to code is certainly a recipe for disaster.
+If you’re a great game-player and have some terrific ideas about how a MUD should
+work, but don’t know how to code, you should either learn or find a good coder who
+can join your team. Don’t assume that you can get away with running a MUD without
+knowing C – you can’t. Not for very long, anyway. 
 
 This document won’t teach you how to program in C; you’ll have to learn that on 
 your own. Instead, it will try to familiarize you with the way tbaMUD’s code is 
@@ -127,7 +128,7 @@ Before getting down to the details of learning how to write code, we will first
 examine generally what a MUD is and what it does, to give you an overview of what 
 type of program you’re working with. 
 
-The first section, “An Internet Server Tutorial”, describes how Internet servers 
+The first section, "An Internet Server Tutorial", describes how Internet servers 
 such as tbaMUD work. It contains interesting background material if you’d like a 
 deeper understanding of how the MUD actually interacts with the Internet and the 
 computer on which it runs, but little practical coding advice. So, if you’re 
@@ -179,7 +180,8 @@ Let’s make this idea more concrete with an example. Imagine that your first
 programming assignment in a C class is to write a simple calculator that gets two 
 numbers from a user as input, multiplies them together, and then prints the product 
 on the screen as output. Your program would probably be quite simple: it would 
-prompt the user for the two numbers, then stop and wait while the user types the numbers in. 
+prompt the user for the two numbers, then stop and wait while the user types the
+numbers in. 
 
 Now, imagine that your project is to write a program that lets 10 people 
 simultaneously connect to your calculator and multiply their own numbers together. 
@@ -219,9 +221,9 @@ say that the MUD receives the string, “Sleep” from a user. What should tbaMUD do
 with this string? Maybe the user is trying to log in, typing her name which happens 
 to be “Sleep”. Maybe the user is typing in her password. Maybe the user is already 
 logged in, and is trying to go to sleep! Just like with our calculator, the MUD 
-knows how to interpret data it receives from users by examining the users’ state. 
+knows how to interpret data it receives from users by examining the users' state. 
 
-You can see a list of all possible players’ states in structs.h (they all start 
+You can see a list of all possible players' states in structs.h (they all start 
 with “CON_”). All users are put into the CON_GET_NAME state when they first connect 
 to the MUD. CON_GET_NAME simply means that the MUD is waiting for the user to type 
 her name, at the “By what name do you wish to be known?” prompt. The normal state 
@@ -346,7 +348,8 @@ redirected to the mortal start room to allow booting to continue. The mortal sta
 room must exist in a room file loaded by lib/world/wld/index.mini file for mini-MUD
 mode to work. 
 
-Mobiles from lib/world/mob/index and objects from lib/world/obj/index are loaded afterward. Mobile and object virtual numbers need not correspond to the zone number 
+Mobiles from lib/world/mob/index and objects from lib/world/obj/index are loaded
+afterwards. Mobile and object virtual numbers need not correspond to the zone number 
 ranges as rooms do but it is encouraged. There are various sanity checks done to 
 mobiles and objects that may be printed during startup. Any warnings issued should 
 be fixed but should not adversely affect the MUD itself. 
@@ -355,10 +358,11 @@ In the same manner as the room number virtual to real translation, the zone rese
 information is also translated. The zone reset structure contains a variety of 
 different records so it takes special care to find the appropriate numbers to 
 translate from virtual to real. Any virtual numbers that cannot be resolved result 
-in that zone command being disabled. Such entries have their type set to ‘*’ to 
+in that zone command being disabled. Such entries have their type set to '*' to 
 avoid the error in the future. 
 
-Triggers from lib/world/trg/index are loaded next. Trigger virtual numbers also do not need to correspond to the zone number ranges as rooms do but it is encouraged. 
+Triggers from lib/world/trg/index are loaded next. Trigger virtual numbers also
+do not need to correspond to the zone number ranges as rooms do but it is encouraged.
 There are various sanity checks done that may be printed during startup. Any 
 warnings issued should be fixed but should not adversely affect the MUD itself. 
 
@@ -402,7 +406,7 @@ The command and spell tables must be sorted for special circumstances. In the ca
 of the command table, it is for the commands input which displays all known 
 commands for that player’s level. The spell table is sorted for the practice 
 command for easier visual searching by the player. Neither are critical to the 
-MUD’s operation but exist for the players’ benefit. 
+MUD’s operation but exist for the players' benefit. 
 
 The tbaMUD mail system saves MUD messages into the players file. It requires an 
 index be built on startup to keep track of which blocks are free and which blocks 
@@ -413,7 +417,8 @@ of messages present in the system is printed when finished.
 The stupid-people prevention code of site banning and invalid name rejection comes 
 next. The site ban code loads a text file list of all sites that have been deemed 
 unworthy to connect to the MUD. Invalid name rejection loads a list of substrings 
-that must not appear in any character’s name that is being created. The invalid name list can be found at lib/misc/xnames.
+that must not appear in any character’s name that is being created. The invalid
+name list can be found at lib/misc/xnames.
 
 After deleting any expired rent files, the house code loads up any abodes defined. 
 It must make sure the rooms still exist and the owner is still in the game before 
@@ -442,7 +447,7 @@ autowizinstances.
 
 From here, the .killscript file is removed since if we’ve made it this far, we can 
 start successfully. The only thing left now is to enter the interactive phase in 
-game_loop(), unless the “Syntax Check” option is enabled. 
+game_loop(), unless the "Syntax Check" option is enabled. 
 
 2.2.2 Interactive Phase 
 
@@ -533,7 +538,7 @@ and could cause unpredictable behavior.
 
 2.2.3 Shutting Down 
 
-The first responsibility on shutdown is to save the players’ characters to disk. 
+The first responsibility on shutdown is to save the players' characters to disk. 
 tbaMUD tracks which characters have been modified with a PLR_CRASH flag so it only 
 needs to save those characters which have changed in the period from the last 
 auto-save to the shutdown. 
@@ -556,7 +561,7 @@ may help prevent an ever-increasing memory usage while running. Memory tracing w
 vary depending on your operating system and may not necessarily be available on 
 your particular platform. 
 
-That’s it, show’s over. “return 0;’’ 
+That's it, show's over. “return 0;’’ 
 
 2.3 Global Variables 
 tbaMUD doesn’t use objects in the sense of object-oriented languages so there are 
@@ -693,9 +698,10 @@ case as part of the process of storing them in the user-supplied buffer.
 
 char *one_word (char *argument, char *first_arg) Peels an argument off from a 
 string like one_argument, but respects grouping via quoting. If the user supplies, 
-‘ "moby dick"’, one_argument() would return an argument of ’"moby’, while one_word() would return an argument of ‘moby dick’. This function converts the 
-peeled off argument(s) to lower case as part of the process of storing them in the 
-user-supplied buffer. 
+‘ "moby dick"’, one_argument() would return an argument of ’"moby’, while one_word()
+would return an argument of ‘moby dick’. This function converts the peeled off
+argument(s) to lower case as part of the process of storing them in the user-supplied
+buffer. 
 
 void half_chop (char *string, char *arg1, char *arg2) Apparently a DikuMud relic. 
 Instead of returning the leftover argument bits in the return value, this copies 
@@ -707,7 +713,7 @@ void log (const char *format, ...) Whenever a piece of information needs to be s
 to the MUD’s logs, this is the function to use. It is especially useful for 
 debugging and supports variable arguments like the printf() and sprintf() 
 functions. To prevent compilation errors due to a conflict with C’s natural 
-logarithm function of the same name, ‘log’ is actually an alias for this function’s 
+logarithm function of the same name, 'log' is actually an alias for this function’s 
 real name, basic_mud_log(). 
 
 void mudlog (const char *str, int type, int level, bool file) In most cases 
@@ -723,7 +729,8 @@ like the C library’s printf() and sprintf()functions.
 void act (const char *str, bool hide_invisible, struct char_data *ch, struct 
 obj_data *obj, const void *vict_obj, int When dealing with character interactions 
 there are frequently three situations to cover: the actor, the target, and the 
-observers. This function takes care of such output along with handy cases for his/her, he/she/it, and other language special cases. 
+observers. This function takes care of such output along with handy cases for
+his/her, he/she/it, and other language special cases. 
 
 See the ’act()’ documentation (act.txt) for more information on what each 
 particular parameter is used for. 
@@ -745,8 +752,9 @@ int get_filename (char *orig_name, char *filename, int mode) Fills in the
 ’filename’ buffer with the name of a file of type ‘mode’ for a player with name 
 ‘orig_name’. The mode parameter can be one of: 
 
-CRASH_FILE, for player object files, PLR_FILE, for player files, The returned filename contains a path to a file in a directory based upon the file type and the 
-first letter of ‘orig_name’. 
+CRASH_FILE, for player object files, PLR_FILE, for player files, The returned filename
+contains a path to a file in a directory based upon the file type and the first letter
+of ‘orig_name’. 
 
 2.4.5 Utility Functions 
 
@@ -987,7 +995,7 @@ substring matching when deciding upon the order in the table.
 
 const char *sort_as the minimum abbreviated command that will match.
 
-byte minimum_position One of the POS_xxx constants #define’d in structs.h. This 
+byte minimum_position One of the POS_xxx constants #define'd in structs.h. This 
 enforces the minimum position, inclusive, the user must be in, in order to execute 
 the command. 
 
@@ -1155,7 +1163,7 @@ spello(SPELL_ARMOR, "armor", 30, 15, 3, POS_FIGHTING, TAR_CHAR_ROOM, FALSE,
 MAG_AFFECTS, "You feel less protected."); 
 
 This spell costs 30 mana at the first level it is learned and decreases in cost by 
-3 mana per level afterward until it reaches the minimum of 15. The spell may be 
+3 mana per level afterwards until it reaches the minimum of 15. The spell may be 
 cast either fighting or standing, but not sitting, resting, sleeping, or otherwise 
 incapacitated. Armor will target anyone in the current room as a non-hostile 
 action. It processes through MAG_AFFECTS so there will be a lingering affection, 
@@ -1471,9 +1479,11 @@ to change the ’byte’ to something larger, like ush_int (65,535) or unsigned int(
 billion). 
 
 Once you’ve changed the number of levels on your MUD, the implementor character you 
-may have already created will now have the wrong level to be an implementor. The first player to login with UID 1 by default has acces to the cheat command and can increase theri level to IMP. If you’ve decreased the levels then a ’set self level 
-XX’ command should work to drop yourself to the proper level, since you’re 
-considered above the new implementor level still. 
+may have already created will now have the wrong level to be an implementor. The first
+player to login with UID 1 by default has acces to the cheat command and can increase
+their level to IMP. If you’ve decreased the levels then a 'set self level XX' command
+should work to drop yourself to the proper level, since you're considered above the
+new implementor level still. 
 
 Now remember to change all the mobiles too so they have proper levels. If you added 
 levels, it’ll make the mobiles weaker unless fixed. If reducing the levels, then 
@@ -1545,7 +1555,7 @@ foreground colors.
 
 4 Writing Special Procedures 
 
-Basic pecial procedures have largely been replaced by trigedit. Thus shifting the 
+Basic special procedures have largely been replaced by trigedit. Thus shifting the 
 workload from the coder to the builder to add life and creativity into their zones. 
 While it is easier, and less time consuming, to make triggers than special 
 procedures they are still used for such functions as banks and guildmasters.
@@ -1643,7 +1653,8 @@ the functions assign_mobiles, assign_objects, and assign_roomsin spec_assign.c.
 
 4.4 The Special Procedure Function Header 
 
-The function header of any special procedure is defined in the macro SPECIAL(<name>) and is as follows: 
+The function header of any special procedure is defined in the macro SPECIAL(<name>)
+and is as follows: 
 
 int (<name>)(struct char\_data *ch, void *me, int cmd, char *argument) 
 

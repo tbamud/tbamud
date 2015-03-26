@@ -6,7 +6,7 @@
 
 Here are some instructions on compiling circlemud using Borland C++ 5.01. 
 These instructions will not work using Turbo C++, or the 4.0 versions of
-Borland C++ as those two products were geared twoards DOS and Windows 3.xx. 
+Borland C++ as those two products were geared towards DOS and Windows 3.xx. 
 
 It will most likely work with versions 5.00, 5.02, and 5.5 of the Borland
 C++ compilers. 
@@ -55,7 +55,7 @@ Click on START and then on RUN.
 
 (Type) telnet localhost 4000 (Enter)
 
-  The first one to logon becomes the Implentor.
+  The first one to logon becomes the Implementor.
   Also remember that you are using Windows95's
   built-in telnet program which is very basic.
 
