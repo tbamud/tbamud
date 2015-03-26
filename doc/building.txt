@@ -1,7 +1,7 @@
 If you have any additions, corrections, ideas, or bug reports please stop by the
 Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
 
-The tbaMUD Builderís Manual 
+The tbaMUD Builder‚Äôs Manual 
 Originall by Jeremy Elson
 
 This document describes how to create tbaMUD areas, and specifies the file 
@@ -85,7 +85,7 @@ As a Tinyworld Architect or Builder, your job is to create the virtual world in
 which players can roam around, solve puzzles, find treasures, and gain 
 experience. A Builder creates the rooms, objects, and monsters with which 
 players will interact, defining their textual descriptions, stats, abilities, 
-and other special properties. A Builder should not be confused with the MUDís 
+and other special properties. A Builder should not be confused with the MUD‚Äôs 
 Coder, whose job it is to modify the C code that makes the tbaMUD server 
 actually run. A Builder does not need to be a programmer, and building is not 
 programming; building is done via online creation in game, which this document 
@@ -105,8 +105,8 @@ is like writing a book. It needs to have a plot, needs to be descriptive, and
 needs to be populated with memorable people and places. 
 
 Writing an area requires inspiration and imagination before all else. Ideas for
-areas often come from literature; for example, an area that traces Aliceís 
-adventures through Wonderland or Danteís trip through the Inferno. Areas 
+areas often come from literature; for example, an area that traces Alice‚Äôs 
+adventures through Wonderland or Dante‚Äôs trip through the Inferno. Areas 
 usually start out on paper long before they reach a computer; a general map of
 the region can help to solidify the idea and a specific map of each individual 
 room is absolutely required so that the rooms can be linked together in a way 
@@ -117,7 +117,7 @@ the monsters should appear can also help when planning an area.
 1.2 Game Balance 
 Game Balance is a term that brings a different thing to mind for every person 
 that hears it. What is most important about game balance is to keep in mind for
-whom each area is designed ñ for example, high level players, newbies, or small
+whom each area is designed ‚Äì for example, high level players, newbies, or small
 groups. The objects and monsters found in the area should match the level, 
 abilities, and needs of the players expected to use the area. Most players do 
 not like to be given vast treasure with no difficulty in getting it, but on the 
@@ -133,31 +133,31 @@ rest of the world. Each area that comes with the MUD or is added later should
 be checked by one or more implementors or builders, and the characteristics 
 of the monsters and objects should be changed to suit to the balance of the 
 MUD. Each new area that becomes part of the world should not be added until it
-has been similarly balanced to the implementorsí satisfaction. Understandably, 
+has been similarly balanced to the implementors‚Äô satisfaction. Understandably, 
 builders want their zones to be popular, but they sometimes attempt to achieve 
 this goal by purposefully making their zone unbalanced, adding powerful weapons 
 or armor with no harmful side-effects or monsters that are easy to kill yet 
 give massive numbers of experience points. Such zones are destined both to 
-become very popular and invariably to bring about the death of your MUDís game
+become very popular and invariably to bring about the death of your MUD‚Äôs game
 balance. 
 
-An areaís balance should be an integral part of the design process, not 
+An area‚Äôs balance should be an integral part of the design process, not 
 something to be tacked on as an afterthought. Too often, an area will be 
 designed with outrageously good weapons and armor which throws off the balance 
 of the game. Naturally, after such zone is added, players complain bitterly if 
 it is ever removed or toned down. Also, because the rent system saves hitrolls,
-damrolls, and ac-applyís, veteran players will be able to hold on to their old, 
+damrolls, and ac-apply‚Äôs, veteran players will be able to hold on to their old, 
 spectacular equipment unless it is explicitly taken from them, even after the
 area has been changed. This does nothing but generate bad feelings on all 
 sides. Therefore, the wise implementor will always carefully check a zone for
 balance before it is added to the production MUD. It is generally not a good 
-idea to ìlet the players balance the areaî by unleashing an unbalanced area on
+idea to ‚Äúlet the players balance the area‚Äù by unleashing an unbalanced area on
 them and watching to see where the hordes of players go. 
 
 1.3 Making Your Areas Interesting 
 An interesting area will always attract more players than a bland one. There 
 are many ways to make an area interesting. Try to be as descriptive as 
-possible; donít hold back on writing extra descriptions. Players are so 
+possible; don‚Äôt hold back on writing extra descriptions. Players are so 
 accustomed to not having richly described areas that finding an extra 
 description can often be a real treat. Also, one oft forgotten thing to 
 describe are the door exits. Describing all of these can give a feel of 
@@ -172,7 +172,7 @@ carefully the first time they walk through an area, and having many extra
 descriptions helps them fill out their idea of what things actually look like. 
 
 One thing that should never be done is to have generic room descriptions like 
-ìYou stand in a big room. It is very dark.î Descriptions like these detract in 
+‚ÄúYou stand in a big room. It is very dark.‚Äù Descriptions like these detract in 
 general from the rest of the world, and if they are found room after room can 
 bore a player to tears. Such a description could be changed to: 
 
@@ -189,7 +189,7 @@ the evil Lord Zygol, simple like ridding the caves of goblins, or anything in
 between. Often the plot in an area can be advanced by some fairly simple 
 puzzles or descriptions. With the addition of triggers, involved puzzles 
 and quest can be readily created. Not all monsters have to be designed to be 
-killed, nor does every shopkeeper have to buy or sell something ñ they could 
+killed, nor does every shopkeeper have to buy or sell something ‚Äì they could 
 just be created so that they refuse to trade with any player characters. The 
 players will then wonder why the shopkeeper exists. Perhaps giving him a jewel
 will make him more friendly. In this way, an area can be made infinitely more
@@ -216,9 +216,9 @@ building as hassle free as possible.
 2 The Mechanics of World Building 
 
 2.1 Overview of the MUD World 
-tbaMUDís world is divided into distinct sections called zones. Each zone 
+tbaMUD‚Äôs world is divided into distinct sections called zones. Each zone 
 typically consists of a single, modular, geographically coherent region of the
-MUDís virtual world with a consistent storyline. Each zone can define its own 
+MUD‚Äôs virtual world with a consistent storyline. Each zone can define its own 
 physical space (the world), monsters (usually called mobiles), objects (such as
 armor, weapons and treasures), triggers (what we use to create interaction 
 with players) and shops, in which a mobile in a particular room can buy and 
@@ -226,7 +226,7 @@ sell objects to players.
 
 A single zone typically contains up to than 100 rooms, 100 monster definitions 
 and 100 object definitions, but a large region can be subdivided into several 
-zones at the authorís discretion. For example, the City of Midgaard is divided 
+zones at the author‚Äôs discretion. For example, the City of Midgaard is divided 
 into two zones, one for the main city and one for the southern residential area. 
 In addition to this, with the new zone system describing top and bottom rooms 
 of a zone, zones can contain very few rooms and indeed can overlap with other 
@@ -263,7 +263,7 @@ which rooms they stand, the equipment that each mobile uses, objects which
 might be on the floor, and the doors which may be initially locked or unlocked.
 
 When the tbaMUD server runs the zone, it sets each zone to its initial state as
-defined by the author, and then makes the zone ìcome aliveî by randomly making
+defined by the author, and then makes the zone ‚Äúcome alive‚Äù by randomly making
 mobiles wander through the zone and, if desired, attack players. While the 
 players are using the zone (killing the mobiles and picking up equipment) the 
 server periodically resets the zone to its initial state (a zone reset) to 
@@ -286,7 +286,7 @@ and are not comprehensive examples of all possible ways to use the features
 that will be described. The most effective way is to learn by example: examine 
 some of the areas that come with tbaMUD and try to figure out the meanings of 
 the numbers in different rooms, objects, mobiles, and zone files, using this 
-manual as a guide. Once youíre proficient at reading world files, youíll find 
+manual as a guide. Once you‚Äôre proficient at reading world files, you‚Äôll find 
 that creating them is a much easier task. 
 
 2.3 tbaMUD World Files 
@@ -295,7 +295,7 @@ object files, shop files, trigger files, and zone files. World files (*.wld)
 define the actual rooms and the links from one room to another. Mobiles (*.mob) 
 are the monsters which inhabit the MUD. Objects (*.obj) are the weapons, armor, 
 treasure, and other objects manipulated by players and monsters. Shop files 
-(*.shp) define the MUDís shopkeepers, controlling what they buy, sell, and say. 
+(*.shp) define the MUD‚Äôs shopkeepers, controlling what they buy, sell, and say. 
 Trigger files (*.trg) allow interaction between players and rooms, mobs, or 
 objects. Finally, Zone files (*.zon) bring all the previous elements together 
 to define the initial state of the zone, describing how monsters should be 
@@ -310,16 +310,16 @@ six types of files are split in a similar manner. tbaMUD has one directory for
 the room files (lib/world/wld/), one directory for the object files 
 (lib/world/obj/), and so forth. 
 
-tbaMUD doesnít care how the world files are split or what the names of the 
+tbaMUD doesn‚Äôt care how the world files are split or what the names of the 
 files are, but certain conventions have developed to make management of the 
 world easier. Each file typically contains information for only a single zone 
 and the filename is typically the zone number, with an extension indicating 
 one of the 6 file types. For example, the file 30.wld contains rooms 3000 to 
 3099 of zone 30; 42.mob contains mobiles 4200 to 4299 of zone 42, etc. 
 
-Also in each of these directories is a file called ìindexî that tells the 
+Also in each of these directories is a file called ‚Äúindex‚Äù that tells the 
 server which files from that directory should be loaded when the server boots 
-and a file called ìindex.miniî which (minimal) set of files should be loaded 
+and a file called ‚Äúindex.mini‚Äù which (minimal) set of files should be loaded 
 when the server is booted with the -m option. 
 
 Every world file used by tbaMUD (including the index files) must be terminated
@@ -327,7 +327,7 @@ by the dollar sign ($) to tell the server that the file has ended. Without the
 dollar sign, the server will not boot properly. 
 
 2.4 Using Bitvectors 
-When learning about the formats of tbaMUD world files, youíll frequently see 
+When learning about the formats of tbaMUD world files, you‚Äôll frequently see 
 references to bitvectors. A bitvector is a group of flags which each can be 
 either on or off. Bitvectors and their flags are used in many ways within 
 tbaMUD, such as to define the personality of mobiles, the characteristics of 
@@ -350,19 +350,19 @@ what the flag does.
 
 There are two ways you can construct a bitvector with the table above: the 
 numeric method and the alphabetic method. The numeric method is to select all 
-flags youíd like to activate, take the numbers of those flags as listed in the 
+flags you‚Äôd like to activate, take the numbers of those flags as listed in the 
 first column of the table, and add them all up. The resulting sum will be the 
 bitvector. The alphabetic method is much easier: just write down all the 
-letters of the flags youíd like to use with no spaces in between. For both 
-numeric and alphabetic bitvectors, use ì0î to indicate a bitvector where none 
+letters of the flags you‚Äôd like to use with no spaces in between. For both 
+numeric and alphabetic bitvectors, use ‚Äú0‚Äù to indicate a bitvector where none 
 of the flags are set. 
 
 For example, imagine you want to create a room that is dirty, mushy, and 
-resembles a swamp, but does not stink. Using the numeric method, youíd look up
+resembles a swamp, but does not stink. Using the numeric method, you‚Äôd look up
 the numbers of those three flags (1 for dirty, 4 for mushy, and 8 for swampy), 
 and add them up to get 13. Using the alphabetic method, the bitvector would 
-simply be ìacdî. Bitvectors are case-sensitive; ìacdî is very different from 
-ìAcdî and ìACDî. 
+simply be ‚Äúacd‚Äù. Bitvectors are case-sensitive; ‚Äúacd‚Äù is very different from 
+‚ÄúAcd‚Äù and ‚ÄúACD‚Äù. 
 
 At every point where the tbaMUD format requires a bitvector, you can write 
 either a numeric bitvector or an alphabetic bitvector. They are completely 
@@ -371,8 +371,8 @@ your area will not be compatible with MUDs based on the original DikuMud.
 Alphabetic bitvectors are a tbaMUD enhancement and may not be supported by 
 MUDs based on Gamma Diku. 
 
-In some bitvector tables, you will see values whose descriptions say ìReserved 
-for internal useî or ìDo not useî. You should never set those flag values in 
+In some bitvector tables, you will see values whose descriptions say ‚ÄúReserved 
+for internal use‚Äù or ‚ÄúDo not use‚Äù. You should never set those flag values in 
 your world files. 
 
 2.5 Adding New Areas to the MUD 
@@ -410,7 +410,7 @@ index.mini file.
 Now you can try to boot the MUD with the new world. Run tbaMUD via "bin/circle"
 and look for any SYSERR messages. If you receive no errors congratulations.
 Otherwise, check the tbaMUD SYSERR List for more information on how to 
-correct the formatting errors. also, see the tbaMUD Administratorís Guide for 
+correct the formatting errors. also, see the tbaMUD Administrator‚Äôs Guide for 
 more information on how to run tbaMUD. 
 
 3 World (Room) Files 
@@ -428,26 +428,26 @@ S
 
 There can be between 0 and 6 direction fields in the standard tbaMUD code. 
 There should not be more than one direction field for a particular direction. 
-For more information on adding directions to the standard ìneswudî, see the 
+For more information on adding directions to the standard ‚Äúneswud‚Äù, see the 
 Coding tbaMUD document. No Extra Descriptions are required but an unlimited 
 number are allowed. Each room is terminated with the literal letter S. 
 
 Virtual Number This number is critical; it is the identity of the room within 
 the game. All other files will use this number to refer to this room. From 
-within the game, this number can be used with ìgotoî to go to this room. The 
+within the game, this number can be used with ‚Äúgoto‚Äù to go to this room. The 
 virtual numbers must appear in increasing order in the world file. 
 
-Room Name This string is the roomís title, which is displayed before the room 
+Room Name This string is the room‚Äôs title, which is displayed before the room 
 description when players look at the room, or displayed alone if players are 
-using ìbrief.î Room Description The description of the room seen when they type
-ìlook,î or when they enter the room with brief mode off. 
+using ‚Äúbrief.‚Äù Room Description The description of the room seen when they type
+‚Äúlook,‚Äù or when they enter the room with brief mode off. 
 
 Zone Number This number is obsolete and no longer used. Historically it 
 contained the zone number of the current room but it is currently ignored for 
 everything except debugging messages. It is maintained as part of the format 
 for backwards compatibility. 
 
-Room Bitvector A bitvector (see section 2.4 on ëUsing Bitvectorsí), with the 
+Room Bitvector A bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô), with the 
 following values: 
 
 1)  DARK       - The room is dark, players need a light source, or infravision.
@@ -494,7 +494,7 @@ The following terrains may be selected (only one):
 8    FLYING         Wheee! Requires AFF_FLYING.             1
 9    UNDERWATER     Underwater requires AFF_SCUBA.          5 
 
-Direction Fields and Extra Descriptions This section defines the roomís exits, 
+Direction Fields and Extra Descriptions This section defines the room‚Äôs exits, 
 if any, as well as any extra descriptions such as signs or strange objects that
 might be in the room. This section can be empty if the room has no exits and no
 extra descriptions. Otherwise, it can have any number of D (Direction Field) 
@@ -522,22 +522,22 @@ must be one of the following numbers:
 4 Up 
 5 Down 
 
-General Description The description shown to the player when she types ìlook 
-<direction>î. This should not be confused with the room description itself. 
+General Description The description shown to the player when she types ‚Äúlook 
+<direction>‚Äù. This should not be confused with the room description itself. 
 Unlike the room description which is automatically viewed when a player walks 
 into a room, the General Description of an exit is only seen when a player 
-looks in the direction of the exit (e.g., ìlook northî). Exit descriptions
-take priority over extra descriptions. So if you creat a extra description for
+looks in the direction of the exit (e.g., ‚Äúlook north‚Äù). Exit descriptions
+take priority over extra descriptions. So if you create a extra description for
 north the player will see the exit description only when they "look north."
 
 Keyword List A list of acceptable terms that can be used to manipulate the door
-with commands such as ìopen,î ìclose,î ìlock,î ìunlock,î etc. The list should 
+with commands such as ‚Äúopen,‚Äù ‚Äúclose,‚Äù ‚Äúlock,‚Äù ‚Äúunlock,‚Äù etc. The list should 
 be separated by spaces, such as: door oak big~ 
 
 Door Flag Can take one of three values (0, 1 or 2): 
 
 0 An unrestricted exit that has no door, or a special door cannot be opened or
-closed with the ìopenî and ìcloseî commands. The latter is useful for secret 
+closed with the ‚Äúopen‚Äù and ‚Äúclose‚Äù commands. The latter is useful for secret 
 doors, trap doors, or other doors that are opened and closed by something other
 than the normal commands, like a trigger assigned to the room or an object in 
 the room. 
@@ -557,16 +557,16 @@ is ignored.
 
 Room Linked The virtual number of the room to which this exit leads. If this 
 number is -1 (NOWHERE), the exit will not actually lead anywhere; useful if 
-youíd like the exit to show up on ìexits,î or if youíd like to add a description
-for ìlook <direction>î without actually adding an exit in that direction. 
+you‚Äôd like the exit to show up on ‚Äúexits,‚Äù or if you‚Äôd like to add a description
+for ‚Äúlook <direction>‚Äù without actually adding an exit in that direction. 
 
 3.3 Room Extra Descriptions 
 Extra descriptions are used to make rooms more interesting, and make them more 
-interactive. Extra descriptions are accessed by players when they type ìlook at
-<thing>î, where <thing> is any word you choose. For example, you might write a 
-room description which includes the tantalizing sentence, ìThe wall looks 
-strange here.î Using extra descriptions, players could then see additional 
-detail by typing ìlook at wall.î There can be an unlimited number of Extra 
+interactive. Extra descriptions are accessed by players when they type ‚Äúlook at
+<thing>‚Äù, where <thing> is any word you choose. For example, you might write a 
+room description which includes the tantalizing sentence, ‚ÄúThe wall looks 
+strange here.‚Äù Using extra descriptions, players could then see additional 
+detail by typing ‚Äúlook at wall.‚Äù There can be an unlimited number of Extra 
 Descriptions in each room. 
 
 The format of an extra description is simple: 
@@ -579,8 +579,8 @@ E
 Keyword List A space-separated list of keywords which will access the 
 description in this E section. 
 
-Description Text The text that will be displayed when a player types ìlook 
-<keyword>,î where <keyword>  is one of the keywords specified in the Keyword 
+Description Text The text that will be displayed when a player types ‚Äúlook 
+<keyword>,‚Äù where <keyword>  is one of the keywords specified in the Keyword 
 List of this Esection. 
 
 3.4 World File Example 
@@ -608,17 +608,17 @@ oak door~
 1 18000 18630 
 E 
 portal floor~ 
-It looks as if you could go down into it... but you canít be 
+It looks as if you could go down into it... but you can‚Äôt be 
 sure of where you will end up, or if you can get back. 
 ~ 
 S 
 
-This room is virtual number 18629, called ìThe Red Roomî. It is dark and 
-indoors, with an ìINDOORSî sector type. It has an exit north and east. The 
-north exit leads to room 18620; if a player types ìlook northî it will say ìYou
-see a big room up there.î The exit east is a normal, pickable door that leads 
+This room is virtual number 18629, called ‚ÄúThe Red Room‚Äù. It is dark and 
+indoors, with an ‚ÄúINDOORS‚Äù sector type. It has an exit north and east. The 
+north exit leads to room 18620; if a player types ‚Äúlook north‚Äù it will say ‚ÄúYou
+see a big room up there.‚Äù The exit east is a normal, pickable door that leads 
 to room 18630 and which takes key number 18000. There is one extra description 
-for ìportalî and ìfloorî. 
+for ‚Äúportal‚Äù and ‚Äúfloor‚Äù. 
 
 4 Mobile (Monster) Files 
 
@@ -637,34 +637,34 @@ The format of a mobile is:
 
 Virtual Number This number is critical; it is the identity of the mobile within
 the game. It is the number that will be used to reference the mobile from zone 
-files and is the number used to ìloadî mobiles from within the game. The 
+files and is the number used to ‚Äúload‚Äù mobiles from within the game. The 
 virtual numbers must appear in increasing order in the mob file. 
 
 Keywords The list of keywords, separated by spaces, that can be used by 
 players to identify the mobile. The mobile can only be identified using the 
 keywords in this list; it cannot be identified by a word that appears only in 
 its name. Great care should be taken to ensure that the spellings of names and 
-keywords match. Fill words such as ìthe,î ìa,î and ìanî should not appear in 
+keywords match. Fill words such as ‚Äúthe,‚Äù ‚Äúa,‚Äù and ‚Äúan‚Äù should not appear in 
 the Keywords List. 
 
 Short Description The description of the mobile used by the MUD when the mobile
-takes some action. For example, a short description of ìThe Beastly Fidoî would
-result in messages such as ìThe Beastly Fido leaves south.î and ìThe Beastly 
-Fido hits you hard.î The Short Description should never end with a punctuation 
+takes some action. For example, a short description of ‚ÄúThe Beastly Fido‚Äù would
+result in messages such as ‚ÄúThe Beastly Fido leaves south.‚Äù and ‚ÄúThe Beastly 
+Fido hits you hard.‚Äù The Short Description should never end with a punctuation 
 mark because it will be inserted into the middle of sentences such as those 
 above. 
 
 Long Description The description displayed when a mobile is in its default 
-position; for example, ìThe Beastly Fido is here, searching through garbage for
-food.î When the mobile is in a position other than its default position, such 
+position; for example, ‚ÄúThe Beastly Fido is here, searching through garbage for
+food.‚Äù When the mobile is in a position other than its default position, such 
 as sleeping or incapacitated, the short description is used instead; for 
-example, ìThe Beastly Fido is lying here, incapacitated.î Unlike the Short 
+example, ‚ÄúThe Beastly Fido is lying here, incapacitated.‚Äù Unlike the Short 
 Description, the Long Description should end with appropriate punctuation. 
 
 Detailed Description The description displayed for a mobile when a player looks
-at the mobile by typing ìlook at <mobile>.î 
+at the mobile by typing ‚Äúlook at <mobile>.‚Äù 
 
-Mob flags bitvector (see section 2.4 on ëUsing Bitvectorsí). With the 128 bit
+Mob flags bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô). With the 128 bit
 expansion you actually have 4 separate bitvectors, i.e. <0 0 0 0> only the
 first bitvector is used and the other three are for future expansion.
 
@@ -703,7 +703,7 @@ L) NPC Flags : ISNPC
 17) NOBASH     Large mobs such as trees that cannot be bashed.
 18) NOBLIND    Mob cannot be blinded.
 
-Affection Flags Bitvector A bitvector (see section 2.4 on ëUsing Bitvectorsí) 
+Affection Flags Bitvector A bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô) 
 which is also 4 bitvectors <0 0 0 0> with only the first being used with the 
 following values: 
 
@@ -732,7 +732,7 @@ M) AFF Flags : NOBITS
 21) UNUSED         Unused (room for future expansion).
 22) CHARM          Reserved for internal use.  Do not set.
 
-Alignment A number from -1000 to 1000 representing the mobís initial alignment. 
+Alignment A number from -1000 to 1000 representing the mob‚Äôs initial alignment. 
 
 -1000.....-350 Evil 
  -349......349 Neutral 
@@ -755,7 +755,7 @@ For type S mobs, the type-specific information should be in the following format
 
 Level The level of the monster, from 1 to 34. 
 
-THAC0 ìTo Hit Armor Class 0î ñ a measure of the ability of the monster to 
+THAC0 ‚ÄúTo Hit Armor Class 0‚Äù ‚Äì a measure of the ability of the monster to 
 penetrate armor and cause damage, ranging from 0 to 20. Lower numbers mean the 
 monster is more likely to penetrate armor. The formal definition of THAC0 is 
 the minimum roll required on a 20-sided die required to hit an opponent of 
@@ -769,16 +769,16 @@ AC 0 Very heavily armored person (full plate mail)
 AC -100 Armored Battle Tank (hopefully impossible for players) 
 
 Note on THAC0 and Armor Class (AC): When an attacker is trying to hit a victim, 
-the attackerís THAC0 and the victimís AC, plus a random roll of the dice, 
+the attacker‚Äôs THAC0 and the victim‚Äôs AC, plus a random roll of the dice, 
 determines whether or not the attacker can hit the victim. (If a hit occurs, a 
 different formula determines how much damage is done.) An attacker with a low 
 THAC0 is theoretically just as likely to hit a victim with a low AC as an 
 attacker with a high THAC0 is to hit a victim with a high AC. Lower attacker 
-THAC0ís and higher victim ACís favor the attacker; higher attacker THAC0ís and 
-lower victim ACís favor the victim. 
+THAC0‚Äôs and higher victim AC‚Äôs favor the attacker; higher attacker THAC0‚Äôs and 
+lower victim AC‚Äôs favor the victim. 
 
 Max Hit Points The maximum number of hit points the mobile is given, which must
-be given in the form ìxdy+zî where x, y, and z are integers. For example, 
+be given in the form ‚Äúxdy+z‚Äù where x, y, and z are integers. For example, 
 4d6+10 would mean sum 4 rolls of a 6 sided die and add 10 to the result. Each 
 individual instance of a mob will have the same max number of hit points from 
 the time it is loaded into the game right up to the time it dies; the dice will 
@@ -787,12 +787,12 @@ words, a particular copy of a mob will always have the same number of max hit
 points during its life, but different copies of the same mob may have different 
 numbers of max hit points. 
 
-Note that all three numbers, the ìdî and the ì+î must always appear, even if 
+Note that all three numbers, the ‚Äúd‚Äù and the ‚Äú+‚Äù must always appear, even if 
 some of the numbers are 0. For example, if you want every copy of a mob to 
 always have exactly 100 hit points, write 0d0+100. 
 
 Bare Hand Damage (BHD) The amount of damage the mob can do per round when not 
-armed with a weapon. Also specified as ìxdy+zî and subject to the same 
+armed with a weapon. Also specified as ‚Äúxdy+z‚Äù and subject to the same 
 formatting rules as Max Hit Points. However, unlike Max Hit Points, the dice 
 are rolled once per round of violence; 
 
@@ -822,8 +822,8 @@ should be one of the following numbers:
 
 Default Position The position to which monsters will return after a fight, 
 which should be one of the same numbers as given above for Load Position. In 
-addition, the Default Position defines when the mobís long description is 
-displayed (see ìLong Descriptionî above). 
+addition, the Default Position defines when the mob‚Äôs long description is 
+displayed (see ‚ÄúLong Description‚Äù above). 
 
 Sex One of the following: 
 
@@ -857,10 +857,10 @@ Type E mobiles are specific to tbaMUD and are designed to provide an easy way
 for MUD implementors to extend the mobile format to fit their own needs. A type
 E mobile is an extension of type S mobiles; a type E mobile is a type S mobile 
 with extra data at the end. After the last line normally found in type S mobs 
-(the one ending with the mobís sex), type E mobiles end with a section called 
+(the one ending with the mob‚Äôs sex), type E mobiles end with a section called 
 the Enhanced section. This section consists of zero or more enhanced mobile 
 specifications (or E-specs), one per line. Each E-spec consists of a keyword 
-followed by a colon (ì:î) and a value. The valid keywords are listed below. The
+followed by a colon (‚Äú:‚Äù) and a value. The valid keywords are listed below. The
 literal letter Emust then come after all E-specs to signal the end of the mob. 
 
 The format of an E mobile is as follows: 
@@ -873,9 +873,9 @@ The format of an E mobile is as follows:
 E 
 
 4.5 Type E Mobile Example 
-Letís say that you wanted to create an enhanced Fido like the one in the 
+Let‚Äôs say that you wanted to create an enhanced Fido like the one in the 
 previous example, but one that has a bare-hand attack type of 4 so that the 
-Fido bites players instead of hitting them. Letís say you also wanted to give 
+Fido bites players instead of hitting them. Let‚Äôs say you also wanted to give 
 this Fido the a strength of 18. You might write: 
 
 #3062
@@ -909,7 +909,7 @@ Con, and Cha. However, the E-Specs have been designed such that new ones are
 quite easy to add.
 
 BareHandAttack This controls the description of violence given during battles,
-in messages such as ìThe Beastly fido bites you very hard.î BareHandAttack 
+in messages such as ‚ÄúThe Beastly fido bites you very hard.‚Äù BareHandAttack 
 should be one of the following numbers: 
 
  0) hit                  6) crush          11) pierce
@@ -927,12 +927,12 @@ changed. Note that adding new attack types requires code changes and cannot be
 accomplished simply by adding new messages to lib/misc/messages (see the tbaMUD
 Coding Manual for more information). 
 
-Str, Int, Wis, Dex, Con, Cha The mobileís Strength, Intelligence, Wisdom, 
+Str, Int, Wis, Dex, Con, Cha The mobile‚Äôs Strength, Intelligence, Wisdom, 
 Dexterity, Constitution and Charisma, respectively. These values should be 
 between 3 and 18, but can be between 1 and 25 (which is the default statistic 
 maximum). 
 
-StrAdd The mobileís strength addition, which can range from 1 to 99. 
+StrAdd The mobile‚Äôs strength addition, which can range from 1 to 99. 
 
 5 Object Files 
 
@@ -952,24 +952,24 @@ Fields.
 
 Virtual Number This number is critical; it is the identity of the object 
 within the game. It is the number that will be used to reference the object 
-from zone files and is the number used to ìloadî objects from within the game. 
+from zone files and is the number used to ‚Äúload‚Äù objects from within the game. 
 The virtual numbers must appear in increasing order in the object file. 
 
 Keywords The list of keywords, separated by spaces, that can be used by players
 to identify the object. The object can only be identified using the keywords 
 that appear in this list; it cannot be identified by a word that appears only 
 in its name. Great care should be taken to ensure that the spellings of names 
-and keywords match. Fill words such as ìthe,î ìa,î and ìanî should not appear 
+and keywords match. Fill words such as ‚Äúthe,‚Äù ‚Äúa,‚Äù and ‚Äúan‚Äù should not appear 
 in the keywords List. 
 
 Short Description The description of the object used by the MUD when the object
-is used. For example, a short description of ìa long, green stickî would result
-in messages such as ìThe Beastly Fido picks up the long, green stick.î The 
+is used. For example, a short description of ‚Äúa long, green stick‚Äù would result
+in messages such as ‚ÄúThe Beastly Fido picks up the long, green stick.‚Äù The 
 Short Description should never end with a punctuation mark because it will be
 inserted into the middle of sentences. 
 
 Long Description The description displayed when the object is seen lying on the
-ground, for example, ìA furled umbrella is lying here.î Unlike the Short 
+ground, for example, ‚ÄúA furled umbrella is lying here.‚Äù Unlike the Short 
 Description, the Long Description should end with appropriate punctuation. 
 
 Action Description Action Descriptions are primarily used for magical objects 
@@ -1019,9 +1019,9 @@ the following numbers:
 22   BOAT           Item is a boat; allows you to traverse water (noswim).
 23   FOUNTAIN       Item is a fountain. Set Values to -1 to make it unlimited.
 
-Extra (Effects) Bitvector A bitvector (see section 2.4 on ëUsing Bitvectorsí), 
-to define the ìspecial effectsî of the object. Flags that are marked as 
-ìcosmeticî merely add an interesting message to the object when it is examined,
+Extra (Effects) Bitvector A bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô), 
+to define the ‚Äúspecial effects‚Äù of the object. Flags that are marked as 
+‚Äúcosmetic‚Äù merely add an interesting message to the object when it is examined,
 but has no substantive effect otherwise. The flags have the following values: 
 
 1)   GLOW            Item is glowing (cosmetic).
@@ -1042,7 +1042,7 @@ but has no substantive effect otherwise. The flags have the following values:
 16)  ANTI_WARRIOR    Item cannot be used by the Warrior class.
 17)  NOSELL          Shopkeepers will not buy or sell the item.
 
-Wear Bitvector A bitvector (see section 2.4 on ëUsing Bitvectorsí) with 
+Wear Bitvector A bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô) with 
 the following values: 
 
  1) TAKE        Item can be taken (picked up off the ground) (DEFAULT).
@@ -1062,12 +1062,12 @@ the following values:
 15) HOLD        Item can be held (the "hold" command).
 
 Note that the TAKE bit controls whether or not an item can be picked up using 
-the ìgetî command, whereas the HOLD bit controls if the object can be worn 
-using the ìholdî command. 
+the ‚Äúget‚Äù command, whereas the HOLD bit controls if the object can be worn 
+using the ‚Äúhold‚Äù command. 
 
 Value 0, Value 1, Value 2, Value 3 These values are very central. They define 
-the objectís abilities based on the Type Flag. See the subsection ìObject Value
-Definitionsî below for a detailed description of the four Value fields. 
+the object‚Äôs abilities based on the Type Flag. See the subsection ‚ÄúObject Value
+Definitions‚Äù below for a detailed description of the four Value fields. 
 
 Weight The weight of the object. The weight controls how many strength points a
 character must have to take the object, and is used to calculate when bags and 
@@ -1078,11 +1078,11 @@ Cost The value of the object in gold coins; used by shopkeepers.
 Rent Per Day The cost per day to rent the object in the Reception. 
 
 5.2 Object Value Definitions 
-The meaning of an objectís four values (value 0 through value 3) vary depending
+The meaning of an object‚Äôs four values (value 0 through value 3) vary depending
 on the Type Flag of the object. 
 
-In the table below, ìunusedî means that the server ignores the value; it can 
-be set to any number (but 0 is always a safe bet). ìunimplementedî indicates a
+In the table below, ‚Äúunused‚Äù means that the server ignores the value; it can 
+be set to any number (but 0 is always a safe bet). ‚Äúunimplemented‚Äù indicates a
 Type Flag currently not recognized by the server. 
 
 An index of spell numbers for use with magical objects can be found in the 
@@ -1096,19 +1096,19 @@ value 2: Capacity of light in hours.
 value 3: unused 
 
 SCROLL: (Type Flag 2) 
-value 0: Level at which scrollís spells are cast. 
+value 0: Level at which scroll‚Äôs spells are cast. 
 value 1: Spell number 1 
 value 2: Spell number 2 
 value 3: Spell number 3 
 
 WAND: (Type Flag 3) 
-value 0: Level at which wandís spell is cast 
+value 0: Level at which wand‚Äôs spell is cast 
 value 1: Charge capacity of wand (>= 1) 
 value 2: Current number of charges remaining 
 value 3: Spell number 
 
 STAFF: (Type Flag 4) 
-value 0: Level at which staffís spell is cast 
+value 0: Level at which staff‚Äôs spell is cast 
 value 1: Charge capacity of staff (>= 1) 
 value 2: Current number of charges remaining 
 value 3: Spell number 
@@ -1142,7 +1142,7 @@ the AC; values <0 damage the AC (cursed armor, for example).
 value 1-3: unused 
 
 POTION: (Type Flag 10) 
-value 0: Level at which the potionís spells are cast. 
+value 0: Level at which the potion‚Äôs spells are cast. 
 value 1: Spell number 1 
 value 2: Spell number 2 
 value 3: Spell number 3 
@@ -1163,7 +1163,7 @@ CONTAINER: (Type Flag 15)
 value 0: Capacity (max containable weight) of container 
 value 1: Container flag bitvector (MUST be a numeric bitvector) 
 1 CLOSEABLE Container can be closed and locked. 
-2 PICKPROOF Lock on container canít be picked. 
+2 PICKPROOF Lock on container can‚Äôt be picked. 
 4 CLOSED Container is closed when loaded. 
 8 LOCKED Container is locked when loaded. 
 value 2: The vnum of the key object that opens this container. -1 if it has 
@@ -1209,8 +1209,8 @@ E
 Keyword List A space-separated list of keywords which will access the 
 description in this E section. 
 
-Description Text The text that will be displayed when a player types ìlook 
-<keyword>,î where <keyword> is one of the keywords specified in the Keyword 
+Description Text The text that will be displayed when a player types ‚Äúlook 
+<keyword>,‚Äù where <keyword> is one of the keywords specified in the Keyword 
 List of this E section. 
 
 5.4 Object Affect Fields 
@@ -1306,7 +1306,7 @@ S
 Lines starting with *are considered comments and ignored. Zone commands 
 themselves may also be followed by a comment which does not need to be 
 delimited by a single *. Please note that the initial lines of a zone file 
-may not have comments on them at all. The zoneís commands must then be 
+may not have comments on them at all. The zone‚Äôs commands must then be 
 terminated by the literal letter S. 
 
 Virtual Number An arbitrary number used to identify the zone. Zone numbers are
@@ -1325,7 +1325,7 @@ to Top Room of that zone.
 
 Lifespan The number of real-time minutes between zone resets for this zone. 
 When the age of the zone (measured in minutes since the last time that zone 
-has been reset) reaches the zoneís lifespan, the zone is queued for reset. The 
+has been reset) reaches the zone‚Äôs lifespan, the zone is queued for reset. The 
 zone is then reset when it reaches the front of the queue, and the conditions 
 of the Reset Mode (see below) are satisfied. 
 
@@ -1337,7 +1337,7 @@ effectively ignored.
 
 1 Reset the zone only after it reaches its Lifespan and after the zone becomes 
 deserted, i.e. as soon as there are no players located within the zone (checked
-once every minute). This can make a zone more ìfairî because it will keep the 
+once every minute). This can make a zone more ‚Äúfair‚Äù because it will keep the 
 hard mobs from reappearing in the zone until everyone leaves, but on a busy MUD
 it can prevent a zone from ever being reset since the zone may never stay empty
 for more than one minute. 
@@ -1348,16 +1348,16 @@ is in it. This is the most commonly used Reset Mode.
 6.2 Zone Commands 
 Each command consists of a letter, identifying the command-type, followed by 
 three or four arguments. The first argument, common to all the commands, is 
-called the ìif-flag.î If the if-flag for a command is 1, that command is only 
+called the ‚Äúif-flag.‚Äù If the if-flag for a command is 1, that command is only 
 executed if the command immediately before it was executed as well. If the 
 if-flag is 0, the command is always executed. If-flags are useful for things 
-like equipping mobiles. You donít want to try to equip a mobile that has not 
+like equipping mobiles. You don‚Äôt want to try to equip a mobile that has not 
 been loaded. 
 
-Commands that load mobiles and objects also include a ìmax existingî argument. 
+Commands that load mobiles and objects also include a ‚Äúmax existing‚Äù argument. 
 This specifies the maximum number of copies of the mobile or object that are 
 allowed to exist in the entire world at once. If the number currently existing 
-is greater than or equal to the ìmax existingî limit, the command is not 
+is greater than or equal to the ‚Äúmax existing‚Äù limit, the command is not 
 executed. 
 
 The valid zone-reset commands are M, O, G, E, P, D, and R. 
@@ -1375,14 +1375,14 @@ be placed. The object will be loaded and left lying on the ground.
 G: give object to mobile 
 Format: G <if-flag><obj vnum><max existing> Obj vnum is the vnum of the obj to 
 be given. The object will be loaded and placed in the inventory of the last 
-mobile loaded with an ìMî command. This command will usually be used with an 
+mobile loaded with an ‚ÄúM‚Äù command. This command will usually be used with an 
 if-flag of 1, since attempting to give an object to a non-existing mobile will 
 result in an error. 
 
 E: equip mobile with object 
 Format: E <if-flag><obj vnum><max existing><equipment position> Obj vnum is the
 vnum of the obj to be equipped. The object will be loaded and added to the 
-equipment list of the last mobile loaded with an ìMî command. Equipment 
+equipment list of the last mobile loaded with an ‚ÄúM‚Äù command. Equipment 
 Position should be one of the following: 
 
 You are using:                                               Trigedit positions
@@ -1475,7 +1475,7 @@ S
 7 Shop Files 
 
 tbaMUD now has a new shop file format. Since the old format is still supported,
-both formats will be documented. If youíd like to convert shop files in the old
+both formats will be documented. If you‚Äôd like to convert shop files in the old
 format to that of the new format, compile and run the utility shopconv. Version
 3 shops must have a special marker (described below) to tell the server that 
 the file is in the new format. 
@@ -1493,8 +1493,8 @@ tbaMUD Shop File~
 $~ 
 
 
-Version 3 shop files start with the literal line ìtbaMUD v3.0 Shop Fileòî,
-followed by any number of shop definitions, and terminated by $ò. The format 
+Version 3 shop files start with the literal line ‚ÄútbaMUD v3.0 Shop FileÀú‚Äù,
+followed by any number of shop definitions, and terminated by $Àú. The format 
 of a shop definition is: 
 
 #<Shop Number>~ 
@@ -1517,8 +1517,8 @@ of a shop definition is:
 <Message when item to buy does not exist>~ 
 <Message when item to sell does not exist>~ 
 <Message when shop does not buy offered item>~ 
-<Message when shop canít afford item>~ 
-<Message when player canít afford item>~ 
+<Message when shop can‚Äôt afford item>~ 
+<Message when player can‚Äôt afford item>~ 
 <Message when successfully buying an item>~ 
 <Message when successfully selling an item>~ 
 <Temper> 
@@ -1544,23 +1544,24 @@ Item Vnum 1...Item Vnum n An arbitrarily long list of the virtual numbers of
 objects that the shop produces (i.e., items which will always be available, no
 matter how many are bought). The list must be terminated with -1. 
 
-Profit When Selling The price of an object when a shopkeeper sells it is the objectís value times Profit When Selling. This is a floating point value. It 
-should be >= 1.0. 
+Profit When Selling The price of an object when a shopkeeper sells it is the
+object‚Äôs value times Profit When Selling. This is a floating point value.
+It should be >= 1.0. 
 
 Profit When Buying The amount of money a shopkeeper will offer when buying an 
-object is the objectís value times Profit When Buying. This is a floating point
+object is the object‚Äôs value times Profit When Buying. This is a floating point
 value. It should be <= 1.0. 
 
 Buy Types and Buy Namelists These lines control what types of items that the 
 shop will buy. There can be an arbitrarily long list of buy types terminated by
--1. The first argument, called ìBuy Typeî is the Type Flag of items the shop 
-will buy (see ìType Flagî under ìFormat of an Objectî in this document). 
+-1. The first argument, called ‚ÄúBuy Type‚Äù is the Type Flag of items the shop 
+will buy (see ‚ÄúType Flag‚Äù under ‚ÄúFormat of an Object‚Äù in this document). 
 Numerical and English forms are both valid (5 or WEAPON, 9 or ARMOR, etc.). 
 
 The second (optional) argument is called a Buy Namelist and allows you to 
 provide optional keywords to define specific keywords that must be present on 
 the objects for the shopkeeper to buy or sell it. For further details on these 
-expressions, see the section ìItem Name Listsî below. 
+expressions, see the section ‚ÄúItem Name Lists‚Äù below. 
 
 Message when item to buy does not exist The message given to a player if he 
 tries to buy an item that the shopkeeper does not have in his inventory. 
@@ -1572,23 +1573,23 @@ Message when shop does not buy offered item The message given to a player if he
 tries to sell an item that the shopkeeper does not want to buy (controlled by 
 the Buy Types and Buy Namelists.) 
 
-Message when shop canít afford item The message given to a player if he tries 
+Message when shop can‚Äôt afford item The message given to a player if he tries 
 to sell an item to a shop, but the shopkeeper does not have enough money to 
 buy it. 
 
-Message when player canít afford item The message given to a player if he 
-tries to buy an item from a shop but doesnít have enough money. 
+Message when player can‚Äôt afford item The message given to a player if he 
+tries to buy an item from a shop but doesn‚Äôt have enough money. 
 
 Message when successfully buying an item The message given to a player when he
 successfully buys an item from a shop. The expression %d can be used in place 
-of the cost of the item (e.g., Thatíll cost you %d coins, thanks for your 
+of the cost of the item (e.g., That‚Äôll cost you %d coins, thanks for your 
 business! 
 
 Message when successfully selling an item The message given to a player when 
 he successfully sells an item to a shop. The expression %d can be used in 
 place of the cost of the item as above. 
 
-Temper When player canít afford an item, the shopkeeper tells them they canít 
+Temper When player can‚Äôt afford an item, the shopkeeper tells them they can‚Äôt 
 afford the item and then can perform an additional action (-1, 0, or 1): 
 
 -1 No action other than the message. 
@@ -1598,7 +1599,7 @@ afford the item and then can perform an additional action (-1, 0, or 1):
 Further actions can be added by your local coder (e.g., attacking a player, 
 stealing his money, etc.) 
 
-Shop Bitvector A bitvector (see section 2.4 on ëUsing Bitvectorsí) with the 
+Shop Bitvector A bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô) with the 
 following values: 
 1 a WILL_START_FIGHT Players can try to kill shopkeeper. 
 2 b WILL_BANK_MONEY Shopkeeper will put money over 15000 coins in the bank. 
@@ -1609,7 +1610,7 @@ monty-haul campaigns.
 
 Shop Keeper Mobile Number Virtual number of the shopkeeper mobile. 
 
-With Who Bitvector A bitvector (see section 2.4 on ëUsing Bitvectorsí) used to 
+With Who Bitvector A bitvector (see section 2.4 on ‚ÄòUsing Bitvectors‚Äô) used to 
 designate certain alignments or classes that the shop will not trade with, with
 the following values: 
 
@@ -1622,7 +1623,7 @@ E) No Trade With  : NOBITS
  7) Warrior                
 
 Shop Room 1...Shop Room n The virtual numbers the mobile must be in for the 
-shop to be effective. (So transferred shopkeepers canít sell in the desert). 
+shop to be effective. (So transferred shopkeepers can‚Äôt sell in the desert). 
 The list can be arbitrarily long but must be terminated by a -1. 
 
 Times when open The times (in MUD-hours) between which the shop is open. Two 
@@ -1636,7 +1637,7 @@ always open, these four values should be
 
 7.2 Item Name Lists for v3 Shops 
 Name lists are formed by boolean expressions. The following operators are 
-available: í,^=Not *,&=And +,|=Or 
+available: ‚Äô,^=Not *,&=And +,|=Or 
 
 The precedence is Parenthesis, Not, And, Or. Take the following line for an 
 example: 
@@ -1648,21 +1649,21 @@ This shop will buy the following items of type WEAPON:
 1. sword long magic 
 2. short magic (the first & is done before the first |) 
 3. warhammer magic 
-4. àgolden bow magic 
+4. ÀÜgolden bow magic 
 
-Note that the à in front of golden affects ONLY golden, and nothing else in the 
+Note that the ÀÜ in front of golden affects ONLY golden, and nothing else in the 
 listing. Basically, the above expression could be written in English as: 
 [(sword and long) or short or warhammer or (not golden and bow)] and magic 
-If you want the shop to only buy ìshort magicî only if they were also swords, 
+If you want the shop to only buy ‚Äúshort magic‚Äù only if they were also swords, 
 you could change the expression to: 
 
 WEAPON [sword & (long|short) | warhammer | ^golden & bow] ^-Changes--^ & magic 
 
-You can also include object extra flags (listed in the section ìFormat of an 
-Objectî above). The previous example used ìmagicî as a keyword that had to be 
+You can also include object extra flags (listed in the section ‚ÄúFormat of an 
+Object‚Äù above). The previous example used ‚Äúmagic‚Äù as a keyword that had to be 
 on the object. If we wanted to make it so that the MAGIC flag had to be set on 
-the item, we would change ìmagicî to ìMAGICî. Similar changes could be made to 
-add other flags such as ìHUMî or ìGLOWî. It should be noted that these 
+the item, we would change ‚Äúmagic‚Äù to ‚ÄúMAGIC‚Äù. Similar changes could be made to 
+add other flags such as ‚ÄúHUM‚Äù or ‚ÄúGLOW‚Äù. It should be noted that these 
 expressions are case sensitive and that all keywords should appear in 
 lower-case, while the flag names should be in all caps. 
 
@@ -1680,7 +1681,7 @@ num4
 num5 
 
 Virtual numbers of the objects that the shop produces. 
--1ís should be inserted in unused slots. 
+-1‚Äôs should be inserted in unused slots. 
 
 Profit when selling 
 
@@ -1704,8 +1705,8 @@ Flags of objects that the shopkeeper will buy).
 Message When Item to buy is non existing~ 
 Message When item trying to sell is non existing~ 
 Message When wrong item-type sold~ 
-Message when shop canít afford item~ 
-Message when player canít afford item~ 
+Message when shop can‚Äôt afford item~ 
+Message when player can‚Äôt afford item~ 
 Message when buying an item~ 
 
 Price is represented by %d. 
@@ -1715,8 +1716,8 @@ Price is represented by %d.
 
 Temper 
 
-When player canít afford an item, the shopkeeper tells 
-them they canít afford the item and then: 
+When player can‚Äôt afford an item, the shopkeeper tells 
+them they can‚Äôt afford the item and then: 
 
 0 -The shopkeeper pukes on the player. 
 1 -The shopkeeper smokes his joint. 
@@ -1724,7 +1725,7 @@ other -No action besides message above.
 
 Shop Bitvector 
 
-A bitvector (see section ëUsing Bitvectorsí) with the following values: 
+A bitvector (see section ‚ÄòUsing Bitvectors‚Äô) with the following values: 
 1 a WILL_START_FIGHT Players can to try to kill this shopkeeper. 
 2 b WILL_BANK_MONEY Shopkeeper will put money over 15000 coins in the bank. 
 
@@ -1735,20 +1736,20 @@ non monty-haul campaigns.
 Shop Keeper Mobile Number Virtual number of the shopkeeper mobile. 
 
 With Who Bitvector 
-A bitvector (see section ëUsing Bitvectorsí) used to designate certain 
+A bitvector (see section ‚ÄòUsing Bitvectors‚Äô) used to designate certain 
 alignments or classes that the shop will not trade with, with the following 
 values: 
-1 a NOGOOD Keeper wonít trade with positively-aligned players. 
-2 b NOEVIL Keeper wonít trade with evilly-aligned players. 
-4 c NONEUTRAL Keeper wonít trade with neutrally-aligned players. 
-8 d NOMAGIC_USER Keeper wonít trade with the Mage class. 
-16 e NOCLERIC Keeper wonít trade with the Cleric class. 
-32 f NOTHIEF Keeper wonít trade with the Thief class. 
-64 g NOWARRIOR Keeper wonít trade with the Warrior class. 
+1 a NOGOOD Keeper won‚Äôt trade with positively-aligned players. 
+2 b NOEVIL Keeper won‚Äôt trade with evilly-aligned players. 
+4 c NONEUTRAL Keeper won‚Äôt trade with neutrally-aligned players. 
+8 d NOMAGIC_USER Keeper won‚Äôt trade with the Mage class. 
+16 e NOCLERIC Keeper won‚Äôt trade with the Cleric class. 
+32 f NOTHIEF Keeper won‚Äôt trade with the Thief class. 
+64 g NOWARRIOR Keeper won‚Äôt trade with the Warrior class. 
 
 Shop Room Number 
 The virtual number the mobile must be in for the shop to be effective. (So 
-transíed shopkeepers canít sell in the desert). 
+trans‚Äôed shopkeepers can‚Äôt sell in the desert). 
 
 Time when open start 1 
 Time when open end 1 
