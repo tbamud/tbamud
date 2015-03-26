@@ -16,7 +16,7 @@ Compiling with MS Visual C++ 8.0:
 3.  Select "Win32 Console Application." Click OK.
 
 4.  On the next screen Select "Application Settings" and check "Empty
-    Project" under the "Additonal Options" heading. Click Finish.
+    Project" under the "Additional Options" heading. Click Finish.
 
 5.  In the solution explorer, right click on the "header" folder, and select
     Add->Existing Item...

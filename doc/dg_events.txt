@@ -299,4 +299,3 @@ Tips for creating events:
 
  o Any place a game object is extracted from the game, any events it points to
    should be canceled and its pointer to the events set to NULL.
-

@@ -65,7 +65,7 @@ within the larger world file. This is done by inserting ‘=filename’ into the
 world file at the appropriate points, where filename is the name of the file 
 for the following section. 
 
-The command line syntax for splitis as follows: 
+The command line syntax for split is as follows: 
 
 split < [filename] 
 
@@ -78,7 +78,7 @@ CircleMUD world file on the world wide web. It converts the world file into a
 series of HTML files, one per room, all named according to the virtual number 
 of the room, and linked via their exits. 
 
-The command line syntax for wld2htmlis as follows: 
+The command line syntax for wld2html is as follows: 
 
 wld2html <wldfile> 
 
@@ -96,7 +96,7 @@ This utility allows you to display some static text on a port when anyone
 connects to it. This is useful when the mud server is moving, changing ports, 
 or is down for maintenance. 
 
-The command line syntax for signis as follows: 
+The command line syntax for sign is as follows: 
 
 sign <port> <filename | -(for stdin)> 
 
@@ -116,7 +116,7 @@ This utility allows you to view player rent files offline. It displays the type
 of rent; Rent, Crash, Cryo, or lost link (TimedOut). It also displays the 
 object vnum and first keyword. 
 
-The command line syntax for listrentis as follows: 
+The command line syntax for listrent is as follows: 
 
 listrent <objfile1> [<objfile2> .. <objfilen>] 
 
@@ -136,7 +136,7 @@ systems, but a solution for all other systems is being designed. If you wish
 to change the text in the headers of the Wizlist or the Immlist, this is 
 the utility to edit. 
 
-The command line syntax for autowizis as follows: 
+The command line syntax for autowiz is as follows: 
 
 autowiz <wizlev> <wizlistfile> <immlev> <immlistfile> [pid to signal] 
 

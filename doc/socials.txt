@@ -54,7 +54,7 @@ The file is formatted as follows:
 <messg to others if body part found>
 <messg to victim if body part found>
 <messg to char if object found>
-<messagee to others if object found>
+<messg to others if object found>
 
 All socials are 14 lines followed by a blank line. After the blank line is 
 either the beginning of the next social or a dollar sign which marks the end of 

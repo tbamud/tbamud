@@ -3,12 +3,12 @@
                              
 You will need:
 The CircleMUD source code.
-!GCC, !UnixLib, drlink and make avaliable from Hensa.
-Acorns sockets library avaliable form the Acorn ftp site.
+!GCC, !UnixLib, drlink and make available from Hensa.
+Acorns sockets library available form the Acorn ftp site.
 A copy of !FreeNet and !FreeTerm.
                              
 1) Firstly obtain a copy of !GCC, !UnixLib, drlink, make and Acorns 
-   sockets libary.
+   sockets library.
 
 2) Place the directory Sockets from the sockets library inside 
    !UnixLib37.src.clib  
@@ -41,12 +41,12 @@ A copy of !FreeNet and !FreeTerm.
 8) Create an obey file called !Compile in the src containing the 
    following lines
    
-   -- begin (don't linclude this line)   
+   -- begin (don't include this line)   
    WimpSlot -min 10000K -max 10000K
    dir <Obey$Dir>
 
    make -r
-   -- end (don't linclude this line)   
+   -- end (don't include this line)   
    
    and set the wimpslot to as much memory as you can afford.
 
@@ -85,4 +85,3 @@ any trouble contact garethduncan@argonet.co.uk.
 Bye.
 
 -Gareth
-

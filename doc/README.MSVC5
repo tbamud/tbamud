@@ -53,4 +53,3 @@ you turned off debug mode, in which case it will be in the circle\release
 directory.  By compiling in this way, instead of using the GNU Win32
 thingy, or embedding the makefile that came with circlemud inside a
 project, allows you to use all of MSVC++'s interesting features.
-

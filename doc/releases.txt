@@ -6,7 +6,7 @@ Circle and tbaMUD Release History
 Abstract 
 
 This document lists the release history of CircleMUD and at the end is the post
-to rec.games.mud.diku which originally anounced CircleMUD as a publically 
+to rec.games.mud.diku which originally announced CircleMUD as a publicly 
 available MUD source code. 
 
 tbaMUD Release history:

@@ -2,7 +2,7 @@ If you have any additions, corrections, ideas, or bug reports please stop by the
 Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
 
 The tbaMUD Builder’s Manual 
-Originall by Jeremy Elson
+Originally by Jeremy Elson
 
 This document describes how to create tbaMUD areas, and specifies the file 
 formats for worlds, monsters, objects, shops, triggers, and zones, as well as 
@@ -581,7 +581,7 @@ description in this E section.
 
 Description Text The text that will be displayed when a player types “look 
 <keyword>,” where <keyword>  is one of the keywords specified in the Keyword 
-List of this Esection. 
+List of this E section. 
 
 3.4 World File Example 
 Here is a sample entry from a tbaMUD world file: 
@@ -1749,7 +1749,7 @@ values:
 
 Shop Room Number 
 The virtual number the mobile must be in for the shop to be effective. (So 
-trans’ed shopkeepers can’t sell in the desert). 
+trans'ed shopkeepers can’t sell in the desert). 
 
 Time when open start 1 
 Time when open end 1 
