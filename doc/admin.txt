@@ -1,7 +1,7 @@
 If you have any additions, corrections, ideas, or bug reports please stop by the
 Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
 
-The tbaMUD Administratorís Manual 
+The tbaMUD Administrator‚Äôs Manual 
 Originally by Jeremy Elson 
 
 This document describes how to configure tbaMUD and how to compile it for the 
@@ -19,7 +19,7 @@ Contents
 
 1.1 Background and Introduction
 1.2 Are you a Player or an Administrator?
-1.3 So, youíre sure you want to run your own MUD?
+1.3 So, you‚Äôre sure you want to run your own MUD?
 1.4 Giving Credit Where Credit is Due
 
 2 Getting Started
@@ -55,13 +55,13 @@ Contents
 tbaMUD is a derivative of DikuMud, the Multi-User Dungeon developed at DIKU, 
 the Department of Computer Science at the University of Copenhagen. The original
 circleMUD, version 1.0, was run by Jeremy Elson at the Johns Hopkins 
-Universityís Department of Computer Science with moderate popularity from 
+University‚Äôs Department of Computer Science with moderate popularity from 
 January until September of 1992. The version 1.0 code, which was never released
 to the public, was archived and remained inactive for several months after the 
 death of the original CircleMUD. In the summer of 1993, it was taken out of 
 storage and cleaned up with the intention of making it a public code base that 
 anyone could freely download and use to start a MUD. Version 2.0, the first 
-publically available version, was released in June of 1993. CircleMUD was
+publicly available version, was released in June of 1993. CircleMUD was
 maintained as a public code base until 2002 with the final release of CircleMUD
 3.1. After development stagnated for 3 years The Builder Academy offered to 
 take over development. After a 4th year of no continued development The Builder 
@@ -71,11 +71,11 @@ agreed and the codebase is now known as tbaMUD. The Builder Academy is open to
 anyone willing to learn how to build or start their own MUD. 
 
 Thousands of carefully spent hours have gone into the development of this 
-codebase, but it is not a finished product ñ it is only a beginning. It has 
+codebase, but it is not a finished product ‚Äì it is only a beginning. It has 
 only a small number of spells and skills, and only the 4 original DikuMud 
-classes. From a gamerís point of view, it pales in comparison to other MUDs 
+classes. From a gamer‚Äôs point of view, it pales in comparison to other MUDs 
 which have dozens of spells spread over a dozen classes, and a rich palette of 
-skills. Yet from a programmerís point of view, tbaMUD is very highly developed.
+skills. Yet from a programmer‚Äôs point of view, tbaMUD is very highly developed.
 While the look and feel of the original DikuMud has been maintained, most of 
 the underlying code and many of the structures have been optimized, reworked, 
 or completely redesigned to be efficient, compact, and easily changeable and 
@@ -84,58 +84,59 @@ world over the past few years, although they were not part of the original
 DikuMud release, were added to tbaMUD as well. 
 
 The result is that tbaMUD is a launching pad for your own MUD ideas. Our hope
-in releasing it is that it will free potential MUD implementors from having to worry about dealing with bug-ridden code or wasting time reinventing the wheel 
+in releasing it is that it will free potential MUD implementors from having to
+worry about dealing with bug-ridden code or wasting time reinventing the wheel 
 by re-coding standard MUD features, allowing them to devote more effort towards
 creatively shaping tbaMUD into their own unique vision of how a MUD should look
 and feel. The reason why tbaMUD has so few specialized spells, skills, classes,
 and races is to encourage implementors just like you to create your own 
 unique system instead of just another stock MUD that everyone has seen before. 
 
-So, it is with this message that we inflict our code on the world: donít just 
-put another generic MUD on the Net ñ give us something new and exciting, and 
+So, it is with this message that we inflict our code on the world: don‚Äôt just 
+put another generic MUD on the Net ‚Äì give us something new and exciting, and 
 have as much fun as possible in the process! 
 
 1.2 Are you a Player or an Administrator? 
-If youíve never played a MUD before, jumping right in and trying to run one of 
+If you‚Äôve never played a MUD before, jumping right in and trying to run one of 
 your own will probably just get you hopelessly confused. Instead of trying to 
-compile and run the tbaMUD package yourself (which is presumably what youíre 
-trying to do if youíre reading this document), you should play someone elseís 
+compile and run the tbaMUD package yourself (which is presumably what you‚Äôre 
+trying to do if you‚Äôre reading this document), you should play someone else‚Äôs 
 copy of tbaMUD first to become familiar with the codebase.
 
-1.3 So, youíre sure you want to run your own MUD? 
-If youíre already an old hand at playing MUDs and youíve decided you want to 
+1.3 So, you‚Äôre sure you want to run your own MUD? 
+If you‚Äôre already an old hand at playing MUDs and you‚Äôve decided you want to 
 start one of your own, here is our advice: sleep on it, try several other MUDs
 first. Work your way up to an admin position and see what running a MUD is 
 really about. It is not all fun and games. You actually have to deal with
 people, you have to babysit the players, and be constantly nagged about things
 you need to do or change. Running a MUD is extremely time consuming if you do
 it well, if you are not going to do it well then don't bother. Just playing 
-MUDs is masochistic enough, isnít it? Or are you trying to shave that extra 
+MUDs is masochistic enough, isn‚Äôt it? Or are you trying to shave that extra 
 point off your GPA, jump down that one last notch on your next job evaluation, 
 or get rid of that pesky Significant Other for good? If you think silly 
 distractions like having friends and seeing daylight are preventing you from 
 realizing your full potential in the MUD world, being a MUD Administrator is
 the job for you. 
 
-Donít get me wrong: running a production MUD can be great fun. It can also be 
+Don‚Äôt get me wrong: running a production MUD can be great fun. It can also be 
 overburdened by politics and plagued by spiteful players devoted to making your
-life difficult, and otherwise be a highly frustrating endeavour. Thatís why I 
+life difficult, and otherwise be a highly frustrating endeavour. That‚Äôs why I 
 started The Builder Academy and develop the tbaMUD codebase. The enjoyment of
 MUDding without the pesky players!
 
 1.4 Giving Credit Where Credit is Due 
-If I havenít scared you away yet, and youíre still sure you want to use tbaMUD,
+If I haven‚Äôt scared you away yet, and you‚Äôre still sure you want to use tbaMUD,
 please stop for a moment and look at the license in the file license.txt. It 
 outlines the terms under which you must use tbaMUD. 
 
-The license is simple. It boils down to the message, ìDonít rip off other 
-peopleís work.î Unfortunately, this simple message ended up becoming somewhat 
+The license is simple. It boils down to the message, ‚ÄúDon‚Äôt rip off other 
+people‚Äôs work.‚Äù Unfortunately, this simple message ended up becoming somewhat 
 long-winded because I am trying to prevent people from abusing DikuMud in the 
 future as they have in the past. 
 
 Also, out of courtesy if nothing else, please keep the credits file intact. You 
-can add your own credits on top of the existing file, but Iíd appreciate it if 
-you would not simply remove it and all references to the word ìCircleî 
+can add your own credits on top of the existing file, but I‚Äôd appreciate it if 
+you would not simply remove it and all references to the word ‚ÄúCircle‚Äù 
 everywhere in the MUD. How would you feel if someone took your code and then 
 took credit for it? 
 
@@ -150,9 +151,9 @@ itself (using GNU autoconf) and compile under most versions of UNIX, both BSD
 and System V derivatives, including Mac OS X. With minor adjustments 
 (documented below), the same source should compile under Microsoft Windows, IBM
 OS/2, and the Amiga. Users have also reported getting tbaMUD to compile and run
-under MkLinux, the port of Linux to the Power Macintosh. tbaMUD will not work under DOS, Windows 3.x, Windows for Workgroups 3.x, or Mac System. 
-Specifically, the following variants of UNIX have been tested and are known to 
-work with tbaMUD: 
+under MkLinux, the port of Linux to the Power Macintosh. tbaMUD will not work
+under DOS, Windows 3.x, Windows for Workgroups 3.x, or Mac System. Specifically,
+the following variants of UNIX have been tested and are known to work with tbaMUD: 
 
 SunOS 4.1.4 
 Solaris 2.3 and above
@@ -164,7 +165,7 @@ Linux 1.x, 2.x
 BSD/OS 2.1 
 Mac OS X (10.0 and above) 
 
-If your system is not listed, donít despair; because of the autoconf program, 
+If your system is not listed, don‚Äôt despair; because of the autoconf program, 
 tbaMUD will compile under most versions of UNIX on its own. A large effort was 
 made to make tbaMUD more portable by converting many of its system calls over
 to POSIX compliance. Converting tbaMUD to POSIX vastly helps portability on 
@@ -173,7 +174,7 @@ on some older systems that are not (such as NextSTEP 2.x), it may be more
 difficult to compile than it was to compile earlier versions of the code. 
 (POSIX stands for Portable Operating System Interface for UNIX and is an effort
 to standardize the way UNIX programs talk to the operating system. For more 
-information, see Stevensí excellent book, Advanced Programming in the UNIX 
+information, see Stevens‚Äô excellent book, Advanced Programming in the UNIX 
 Environment.) 
 
 For a small, private MUD, or a MUD used only for testing and development, about
@@ -184,7 +185,7 @@ tbaMUD uses virtually no CPU time.
 
 Historically, tbaMUD has always been developed under different variants of UNIX.
 The original CircleMUD was run on a DECstation 3100 running Ultrix 4.0, which
-remained Circleís development platform until v2.0. Starting with v2.0, Circle 
+remained Circle‚Äôs development platform until v2.0. Starting with v2.0, Circle 
 was developed under various versions of Linux and Solaris over the years 
 ranging from Linux 0.99.11 through the current Linux 2.2.x and including 
 Solaris x86 5.6. 
@@ -192,10 +193,10 @@ Solaris x86 5.6.
 2.2 Downloading and Unpacking the Source 
 The first step in setting up tbaMUD is to make sure you have the most recent 
 version of the source. You can always find the most recent version of the 
-source at tbaMUDís official website http://tbamud.com.
+source at tbaMUD‚Äôs official website http://tbamud.com.
 
 Next, unpack the archive. If you have the .tar.gz version, unpack it using gzip
-(GNU unzip) and the tar archiver. If you donít already have them, both of these
+(GNU unzip) and the tar archiver. If you don‚Äôt already have them, both of these
 utilities can be downloaded from the GNU FTP site <ftp://ftp.gnu.org/pub/gnu/>.
 To unpack the archive on a UNIX system, type: 
 
@@ -210,27 +211,27 @@ available for the Windows platform, which allow users to use Unix tools on that
 operating system. 
 
 2.3 Configuring tbaMUD 
-Note: This section applies only to UNIX users. If youíre using Windows, OS/2, or
+Note: This section applies only to UNIX users. If you‚Äôre using Windows, OS/2, or
 the Amiga, read README.WIN, README.OS2 or README.AMIGA instead. 
 
 tbaMUD must be configured using the configure program which attempts to guess 
 correct  values for various system-dependent variables used during compilation.
 It uses those values to create Makefiles and a header file called conf.h. 
 
-From tbaMUDís root directory, simply type 
+From tbaMUD‚Äôs root directory, simply type 
 
 ./configure 
 
-If youíre using csh, it may not execute ìconfigureî properly, giving you an
-error message like ìPermission deniedî. If this occurs, try ìsh ./configureî
+If you‚Äôre using csh, it may not execute ‚Äúconfigure‚Äù properly, giving you an
+error message like ‚ÄúPermission denied‚Äù. If this occurs, try ‚Äúsh ./configure‚Äù
 instead. 
 
-configure can take several minutes to run if youíre using a slow computer. It 
+configure can take several minutes to run if you‚Äôre using a slow computer. It 
 will print out various status messages while it works, telling you what 
 characteristics of your computer it has found. It should create two Makefiles 
 (src/Makefile and src/util/Makefile) and one header file (src/conf.h). 
 
-You should only need to run configure once ñ right after you unpack tbaMUD from
+You should only need to run configure once ‚Äì right after you unpack tbaMUD from
 its archive. You will probably compile the source dozens of times as you add 
 new features, but configure only needs to be run before the first time you 
 compile. Please note that there is one exception to this rule: if you move your
@@ -239,26 +240,26 @@ recompile the source code. To rerun configure after moving the source, make
 sure to delete the file called config.cache and then run configure again. 
 
 2.4 Compiling tbaMUD 
-Note: This section applies only to UNIX or Cygwin users. If youíre using
+Note: This section applies only to UNIX or Cygwin users. If you‚Äôre using
 windows, OS/2, or the Amiga, read README.WIN, README.OS2, or README.AMIGA instead. 
 
 The src directory contains the source code for the main MUD server; src/util has
 the source for a dozen or so MUD maintenance utilities. There are two Makefiles,
 one in each source directory, but all compiling is normally performed from the 
-src directory only. To compile the only tbaMUD server itself, type ìmakeî. 
-Use ìmake utilsî to compile the utilities, or ìmake allî to compile both the 
+src directory only. To compile the only tbaMUD server itself, type ‚Äúmake‚Äù. 
+Use ‚Äúmake utils‚Äù to compile the utilities, or ‚Äúmake all‚Äù to compile both the 
 server and the utilities. It is also possible to compile individual 
-utilities from the src/util directory: from src/util, type ìmake 
-[utility-name]î. All compiled binaries go to the bin directory. 
+utilities from the src/util directory: from src/util, type ‚Äúmake 
+[utility-name]‚Äù. All compiled binaries go to the bin directory. 
 
 The stock (unmodified) tbaMUD code should compile with no warnings or errors. 
 
-Despite my best efforts thereís a chance that youíll have problems compiling 
-tbaMUD if youíre using some version of UNIX that Iíve never seen before. Itís 
+Despite my best efforts there‚Äôs a chance that you‚Äôll have problems compiling 
+tbaMUD if you‚Äôre using some version of UNIX that I‚Äôve never seen before. It‚Äôs 
 impossible to give general advice on how to port software, except to say that 
 you should ask a friend who knows a lot about both UNIX and C to help you. 
 Also, if you have problems, you should definitely look at the tbaMUD FAQ 
-(Frequently Asked Questions list with Answers), which youíll find in tbaMUDís 
+(Frequently Asked Questions list with Answers), which you‚Äôll find in tbaMUD‚Äôs 
 /doc directory. 
 
 If you do port tbaMUD to some other platform successfully, please share your 
@@ -268,37 +269,37 @@ specific name of your operating system and hardware. Full details on porting to
 a new system can be found in Porting.txt. 
 
 The Makefile directs all compiled programs to the /bin directory. Although not 
-recommended, you may want to put tbaMUDís /bin directory in your $PATH. The 
+recommended, you may want to put tbaMUD‚Äôs /bin directory in your $PATH. The 
 reason that this is not recommended is that most of the resources are 
 referenced using relative paths, and thus require that you run the programs
 from the base tbaMUD directory. 
 
 3 Running tbaMUD 
-Note: This section applies only to UNIX or Cygwin users. If youíre using 
+Note: This section applies only to UNIX or Cygwin users. If you‚Äôre using 
 Windows, OS/2, or the Amiga, read README.WIN, README.OS2, or EADME.AMIGA
 instead. 
 
 3.1 Execution and autorun 
-1. type íautorun &í 
+1. type ‚Äôautorun &‚Äô 
 2. Wait a few moments for the server to boot. 
 3. type: telnet localhost 4000 
-tbaMUD should always be run from tbaMUDís ìrootî directory, not the /bin 
+tbaMUD should always be run from tbaMUD‚Äôs ‚Äúroot‚Äù directory, not the /bin 
 directory. You can run it manually by typing bin/circle (useful for testing and
-debugging). For running the game ìfor real,î it is better to use the autorun 
-shell script provided in tbaMUDís root directory. 
+debugging). For running the game ‚Äúfor real,‚Äù it is better to use the autorun 
+shell script provided in tbaMUD‚Äôs root directory. 
 
 Autorun lets tbaMUD run itself for long periods of time. It continuously runs 
 the game as well as removing old system logs, moving newer system logs to the 
 log directory, and saving certain log entries to permanent files. 
 
 Autorun can be controlled by creating files with certain names. You can use the 
-ítouchí command to create a file, and, of course, the írmí command to remove a 
-file. If a file called í.fastbootí exists, the tbaMUD will reboot immediately
+‚Äôtouch‚Äô command to create a file, and, of course, the ‚Äôrm‚Äô command to remove a 
+file. If a file called ‚Äô.fastboot‚Äô exists, the tbaMUD will reboot immediately
 if it crashes or is shut down instead of waiting 40 seconds as it normally does.
-A file called í.killscriptí will cause the script to terminate itself; i.e. if 
+A file called ‚Äô.killscript‚Äô will cause the script to terminate itself; i.e. if 
 you want to bring the game down. If you want to temporarily prevent the MUD 
-from rebooting, create a file called ìpauseî; the script will go into a wait 
-loop until ípauseí is removed. 
+from rebooting, create a file called ‚Äúpause‚Äù; the script will go into a wait 
+loop until ‚Äôpause‚Äô is removed. 
 
 Although you can create these files manually, the shutdown command from within 
 the MUD has several options which will create these files for you. See the 
@@ -343,7 +344,7 @@ keep one or more sets of game data in addition to the standard set, and choose
 which set is to be used at runtime. For example, you may wish to make a copy of
 the entire world in a separate directory, so that you can test additions to the 
 world files without subjecting players to unnecessary hazards. The default data 
-directory is ílib.í Any core dumps (may they never happen to you!) will take 
+directory is ‚Äôlib.‚Äô Any core dumps (may they never happen to you!) will take 
 place in the selected data directory. 
 
 -p Port Selection. Allows you to choose on which port the game is to listen 
@@ -355,8 +356,8 @@ precedence over the port specified in CEDIT or config.c.
 
 3.3 Creating an Implementor Character 
 The first character to log in to the MUD will be made the maximum (Implementor)
-level. If you log in and arenít made an implementor, then the playerfile 
-probably is not empty ñ take the MUD down, delete the index at 
+level. If you log in and aren‚Äôt made an implementor, then the playerfile 
+probably is not empty ‚Äì take the MUD down, delete the index at 
 tbamud\lib\plrfiles, and start the MUD again. You should fix your stats using 
 the RESTORE command when you first create the character (i.e. type "RESTORE 
 <your-name>". 
@@ -383,34 +384,34 @@ CEDIT info is saved and takes precedence over settings in config.c
 4.2 TEDIT and Text Files 
 The lib/text directory contains all of the text files read by players. All of 
 these files can be edited online by using the text editor TEDIT. The most
-visible file is ìmotdî, (Message Of The Day), which is the message that mortals 
-see (though not necessarily read!) when they log in. Similarly, the ìimotdî 
+visible file is ‚Äúmotd‚Äù, (Message Of The Day), which is the message that mortals 
+see (though not necessarily read!) when they log in. Similarly, the ‚Äúimotd‚Äù 
 (Immortal MOTD) is seen by immortals when they log in. Other interesting 
-files are ìnewsî (for the NEWS command), ìhelpî (for the HELP command with no 
+files are ‚Äúnews‚Äù (for the NEWS command), ‚Äúhelp‚Äù (for the HELP command with no 
 arguments), and others. 
 
-One file is particularly important: ìpolicyî. Despite what anyone tells you, 
+One file is particularly important: ‚Äúpolicy‚Äù. Despite what anyone tells you, 
 and your best efforts to the contrary, your MUD will have political problems. 
-If anyone tells you that you can run a MUD without politics, theyíre wrong. If
-you tell your players that youíre going to run a revolutionary MUD that doesnít
-have any politics, youíre lying. Every MUD has political problems sooner or 
-later. Unfortunately, this usually occurs ìsoonerî. There are various ways to 
+If anyone tells you that you can run a MUD without politics, they‚Äôre wrong. If
+you tell your players that you‚Äôre going to run a revolutionary MUD that doesn‚Äôt
+have any politics, you‚Äôre lying. Every MUD has political problems sooner or 
+later. Unfortunately, this usually occurs ‚Äúsooner‚Äù. There are various ways to 
 make political problems easier to handle, but the best way is to decide on some 
 ground rules from the very beginning, and then set those decisions down in 
-writing. Thatís what the ìpolicyî file is for. You probably know what kind of 
+writing. That‚Äôs what the ‚Äúpolicy‚Äù file is for. You probably know what kind of 
 political problems MUDs have (you are not trying to run a MUD without ever 
-having played one, are you!?) ñ stuff like playerkilling, thieving, kill 
+having played one, are you!?) ‚Äì stuff like playerkilling, thieving, kill 
 stealing, client use, multiplaying, reimbursements, etc. Decide on your 
 policies early and make sure your characters know what those policies are. 
 
 It is also important to write down a set of rules dictating what immortals are 
-allowed to do and not allowed to do. Thatís what the ìhandbookî (Immortal 
+allowed to do and not allowed to do. That‚Äôs what the ‚Äúhandbook‚Äù (Immortal 
 handbook) is for. Immortals will always try to bend you as far as they can, so 
-itís important for you to decide on answers to questions before those questions 
-come up. Can immortals assist players? What about giving a single ícure lightí 
+it‚Äôs important for you to decide on answers to questions before those questions 
+come up. Can immortals assist players? What about giving a single ‚Äôcure light‚Äô 
 for a player about to die? Can immortals kill mobiles for their own enjoyment? 
 Can they kill players for the same reason? Are they allowed to make policy? 
-Break policy? Moderate disputes? Turn over each othersí decisions? 
+Break policy? Moderate disputes? Turn over each others‚Äô decisions? 
 
 4.3 World Files 
 The root of the area hierarchy is lib/world/. lib/world/ has 6 subdirectories: 
@@ -418,17 +419,17 @@ wld, mob, obj, shp, trg, and zon, which is where the world, mobile, object,
 shop, trigger, and zone files go, respectively. 
 
 Each directory has a set of world files in it with the appropriate extension 
-(i.e. the obj subdir will have a bunch of files ending with ì.objî, such as 
-30.obj, 31.obj, etc.) plus two special files called ìindexî and ìindex.miniî. 
-ìindexî is a list of which world files are to be loaded by tbaMUD. New zones
-can be added in game with the "zedit new" command. ìindex.miniî controls which 
+(i.e. the obj subdir will have a bunch of files ending with ‚Äú.obj‚Äù, such as 
+30.obj, 31.obj, etc.) plus two special files called ‚Äúindex‚Äù and ‚Äúindex.mini‚Äù. 
+‚Äúindex‚Äù is a list of which world files are to be loaded by tbaMUD. New zones
+can be added in game with the "zedit new" command. ‚Äúindex.mini‚Äù controls which 
 (smaller) set of world files should be loaded in the debugging mode (Mini-Mud 
 Mode, explained below.) 
 
 5 System Logs 
 tbaMUD writes a wide variety of information to standard output and standard 
-error. If youíre using the autorun script, the boot messages are put into a 
-file called ìsyslogî. During tbaMUDís boot sequence, the system log keeps a 
+error. If you‚Äôre using the autorun script, the boot messages are put into a 
+file called ‚Äúsyslog‚Äù. During tbaMUD‚Äôs boot sequence, the system log keeps a 
 record of everything the MUD is doing to initialize itself; this can be useful 
 to determine what the problem is if the MUD dies while it is booting. Once the 
 game is up and running, the syslog contains player information, recording when 
@@ -437,13 +438,13 @@ game also records status information about itself, falling generally into two
 categories: usage information and errors. 
 
 5.1 Player Information 
-The player information recorded by tbaMUDís system logs will serve you very well 
+The player information recorded by tbaMUD‚Äôs system logs will serve you very well 
 as your players start to make wild claims about strange bugs resulting in them 
 losing equipment or points. Many mudders prey on the insecurities of a new mud 
 administrator who is terrified that his or her MUD is riddled with bugs and 
-will do anything to satisfy grumpy players ñ donít let yourself fall into that 
+will do anything to satisfy grumpy players ‚Äì don‚Äôt let yourself fall into that 
 trap! tbaMUD is bound to contain bugs, but most of the core systems have been 
-well tested, so you should take claims such as ìI magically lost all my stuff!î
+well tested, so you should take claims such as ‚ÄúI magically lost all my stuff!‚Äù
 with a grain of salt and check your system logs. 
 
 If a player ever asks you for reimbursement of equipment, money, gold, 
@@ -453,33 +454,34 @@ check the logs first.
 As a sidebar, let me point out that the value of system logs is twofold: 1) 
 they actually provide you with valuable information, and 2) they make your 
 players paranoid. When I first started mudding and I heard about this 
-mysterious ìsystem logî, it made me incredibly paranoid. Now that Iíve done a 
-good deal of MUD administration, Iíve seen the same paranoia in many other 
+mysterious ‚Äúsystem log‚Äù, it made me incredibly paranoid. Now that I‚Äôve done a 
+good deal of MUD administration, I‚Äôve seen the same paranoia in many other 
 players. 
 
 That paranoia is a very good thing. The system logs become an abstract and 
-shapeless but omnipresent force on the MUD. Players hear about ìthe System Logî
+shapeless but omnipresent force on the MUD. Players hear about ‚Äúthe System Log‚Äù
 and then get paranoid that everything they do is being recorded, so they tend 
 to behave, lest the evil System Log betray their wrongdoings to the Gods. 
 
-For this reason, when you go to check your logs, itís a good idea to say something like ìHold on... let me go check the system logs, OK?î because it 
-reinforces the syslogís presence in the collective psyche of your players. 
+For this reason, when you go to check your logs, it‚Äôs a good idea to say something
+like ‚ÄúHold on... let me go check the system logs, OK?‚Äù because it reinforces the
+syslog‚Äôs presence in the collective psyche of your players. 
 
-Back to the point. When someone claims that theyíve been wronged by the evil 
-system, always check the logs. The logs give you power to say things like ìWhat
+Back to the point. When someone claims that they‚Äôve been wronged by the evil 
+system, always check the logs. The logs give you power to say things like ‚ÄúWhat
 do you mean your items disappeared in rent? It says right here in the logs 
-ëRasmussen has quit the game.í You did not rent at all, you just quit!î 
+‚ÄòRasmussen has quit the game.‚Äô You did not rent at all, you just quit!‚Äù 
 
-To diffuse disputes such as, ìThe game dumped my stuff, but I had enough 
-money!!î or ìI logged in and my stuff was gone, there must be a bug!!î, two 
+To diffuse disputes such as, ‚ÄúThe game dumped my stuff, but I had enough 
+money!!‚Äù or ‚ÄúI logged in and my stuff was gone, there must be a bug!!‚Äù, two 
 types of log entries are written. First, every time a character rents, the log 
-records the characterís per diem rent rate as well as the total amount of money 
+records the character‚Äôs per diem rent rate as well as the total amount of money 
 on hand and in the bank. Second, the log records makes a record of all 
-charactersí equipment dumped due to insufficient funds. 
+characters‚Äô equipment dumped due to insufficient funds. 
 
 Remember, rent is specified as a daily rate but is amortized on a per-second 
 basis! In other words, if you rent at the rate of 100 coins per day and come 
-back 36 hours later, youíll be charged 150 coins. Or you can be nice and leave
+back 36 hours later, you‚Äôll be charged 150 coins. Or you can be nice and leave
 rent disabled.
 
 The autorunscript saves 6 levels of raw system logs. In addition, it greps the 
@@ -495,10 +497,10 @@ The usage information currently logged by tbaMUD is, as you can see, somewhat
 sparse; local MUD admins are encouraged to add to this code as is appropriate 
 for their particular site. 
 
-Usage information isnít critical, but it is interesting to look at the usage 
-patterns to determine when your peak playing hours are. If youíre good at using
-ëcutí and other Unix utilities, you can even dazzle your friends by graphing 
-your MUDís system usage. 
+Usage information isn‚Äôt critical, but it is interesting to look at the usage 
+patterns to determine when your peak playing hours are. If you‚Äôre good at using
+‚Äòcut‚Äô and other Unix utilities, you can even dazzle your friends by graphing 
+your MUD‚Äôs system usage. 
 
 Note: friends not included with the tbaMUD distribution. 
 
@@ -507,7 +509,7 @@ Just as your first gut instinct should be to look at the logs if a player starts
 begging you for something, your first gut instinct in the event of a crash or 
 unexpected shutdown should also be to look at the system logs. 
 
-A Unix utility called ëtailí is used to look at the last few lines of a text 
+A Unix utility called ‚Äòtail‚Äô is used to look at the last few lines of a text 
 file; it is very useful for looking at the last entries in the system log to 
 see the last thing that happened before the shutdown. This can be done in game
 with the "file" command by using the "file crash" option. Often, tbaMUD will 
@@ -520,38 +522,38 @@ directory, the game probably detected an internal error and killed itself. Such
 shutdowns are always preceded by entries in the system log describing the error.
 
 If there is no error message at the end of the log, then there probably IS a 
-core dump, so you can use ëgdbí to examine the core dump and determine the 
+core dump, so you can use ‚Äògdb‚Äô to examine the core dump and determine the 
 reason for the crash. The file hacker.txt, generously provided by Furey of MERC
-Industries, offers useful insight into the art and science of debugging ñ youíd 
+Industries, offers useful insight into the art and science of debugging ‚Äì you‚Äôd 
 be well advised to give it a look-see. 
 
 tbaMUD sometimes encounters a serious but non-fatal error; in this case, the 
 error will be written to the system log with the prefix SYSERR, but the MUD 
 will not shut itself down. You should always be aware of any SYSERRs which occur
-ñ they are often useful for foreseeing imminent danger or averting problems 
+‚Äì they are often useful for foreseeing imminent danger or averting problems 
 before they become critical. If a SYSERR does occur, try to determine if a 
-change youíve made recently has caused it. Ignoring SYSERRs is like ignoring 
+change you‚Äôve made recently has caused it. Ignoring SYSERRs is like ignoring 
 compiler warnings: you can be tempted to ignore them because the game keeps 
 going even if they exist, but you can easily get yourself into trouble by not 
 listening. The autorun script saves all SYSERRs to the file log/errors. 
 
 6 MUD Maintenance 
 6.1 Technical Maintenance 
-Once you get the MUD up and running, you will surely want to modify it ñ adding
+Once you get the MUD up and running, you will surely want to modify it ‚Äì adding
 new areas, new features, new code, and new ideas, however these topics are 
 beyond the scope of this document. See coding.txt, building.txt, and other 
 documents in the /doc directory and online at http://tbamud.com. This section 
-focuses on some of the simple maintenance thatíll be necessary to keep your MUD 
+focuses on some of the simple maintenance that‚Äôll be necessary to keep your MUD 
 running smoothly. Make sure not to get so caught up in being a God that you 
-forgot youíre also supposed to be acting as a software engineer! 
+forgot you‚Äôre also supposed to be acting as a software engineer! 
 
 First, you should look at the log/errors file regularly to make sure there are 
 no recurring problems, particularly problems that may have been caused by code 
-youíve added. If the MUD crashes, it will usually generate what is called a 
-ìcore dumpî ñ a big file called ìcore.#î in your lib directory, created by the 
+you‚Äôve added. If the MUD crashes, it will usually generate what is called a 
+‚Äúcore dump‚Äù ‚Äì a big file called ‚Äúcore.#‚Äù in your lib directory, created by the 
 operating system to record the state the game was in the moment before it 
-crashed. You should look at the core dump using a debugger such as ìgdbî to
-determine why the MUD crashed. See the file ìhacker.txtî for more information 
+crashed. You should look at the core dump using a debugger such as ‚Äúgdb‚Äù to
+determine why the MUD crashed. See the file ‚Äúhacker.txt‚Äù for more information 
 about debugging. 
 
 6.2 Diplomatic Maintenance 
@@ -562,15 +564,15 @@ Well, technically, right. tbaMUD requires very little day-to-day attention in
 order to keep the program itself running smoothly. But the MUD itself is just a
 series of instructions running on a computer, processing data. Never lose sight
 of the fact that there will be dozens, hundreds, or maybe even thousands of 
-people connecting to your MUD ñ and they are not programs. They are people! 
+people connecting to your MUD ‚Äì and they are not programs. They are people! 
 
 From the technical side, there are relatively few things you have to do to keep 
 the game running. But you cannot just dump a MUD on the Internet and then ignore
 it! Spend time on your MUD. Try to keep up with the boards, and make an effort 
-to respond to the complaints. Take a look at the ëbugí, ëtypoí, and ëideaí files
-from time to time ñ and respond to some of the ideas using Mudmail. Try to 
+to respond to the complaints. Take a look at the ‚Äòbug‚Äô, ‚Äòtypo‚Äô, and ‚Äòidea‚Äô files
+from time to time ‚Äì and respond to some of the ideas using Mudmail. Try to 
 respond to Mudmail you receive from players in a timely manner. Make sure that 
-your ënewsí, ëpolicyí and other text files are up-to date and suit the political
+your ‚Äònews‚Äô, ‚Äòpolicy‚Äô and other text files are up-to date and suit the political
 climate on your MUD. 
 
 If you cannot or just do not want to deal with the player politics, make sure 
@@ -582,11 +584,11 @@ Try to remember that running a MUD should be fun. It can sometimes be easy to
 lose sight of the ultimate goal of personal enjoyment that MUDs are supposed to
 provide, particularly when MUDs start to get crushed under the weight of their 
 own politics or the egos of the administrators. If you find that your MUD is 
-more of a source of frustration than enjoyment, donít be afraid to close it. 
+more of a source of frustration than enjoyment, don‚Äôt be afraid to close it. 
 
 Good luck with your MUD! Always feel free to email or stop by The Builder
 Academy and let us know what you think of the MUD, and the interesting things 
-youíve done with it. We cannot promise a timely response, but we love hearing 
+you‚Äôve done with it. We cannot promise a timely response, but we love hearing 
 from people who are using our code. 
 
 For further information and updates check out http://tbamud.com.
