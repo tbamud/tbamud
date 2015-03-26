@@ -133,7 +133,7 @@ rest of the world. Each area that comes with the MUD or is added later should
 be checked by one or more implementors or builders, and the characteristics 
 of the monsters and objects should be changed to suit to the balance of the 
 MUD. Each new area that becomes part of the world should not be added until it
-has been similarly balanced to the implementors’ satisfaction. Understandably, 
+has been similarly balanced to the implementors' satisfaction. Understandably, 
 builders want their zones to be popular, but they sometimes attempt to achieve 
 this goal by purposefully making their zone unbalanced, adding powerful weapons 
 or armor with no harmful side-effects or monsters that are easy to kill yet 
@@ -146,7 +146,7 @@ something to be tacked on as an afterthought. Too often, an area will be
 designed with outrageously good weapons and armor which throws off the balance 
 of the game. Naturally, after such zone is added, players complain bitterly if 
 it is ever removed or toned down. Also, because the rent system saves hitrolls,
-damrolls, and ac-apply’s, veteran players will be able to hold on to their old, 
+damrolls, and ac-apply's, veteran players will be able to hold on to their old, 
 spectacular equipment unless it is explicitly taken from them, even after the
 area has been changed. This does nothing but generate bad feelings on all 
 sides. Therefore, the wise implementor will always carefully check a zone for
@@ -209,7 +209,7 @@ In the old days, the only tool that was used to write a MUD area was a simple
 text editor. However, in the course of time, various people have written 
 programs to help builders create worlds without having to understand the 
 complex details of the world file format. These World building programs have
-since become outdated and are no longer developed. For todays builders we have
+since become outdated and are no longer developed. For today's builders we have
 a fully integrated menu based on-line creation system (aka OLC) to make
 building as hassle free as possible.
 
@@ -527,7 +527,7 @@ General Description The description shown to the player when she types “look
 Unlike the room description which is automatically viewed when a player walks 
 into a room, the General Description of an exit is only seen when a player 
 looks in the direction of the exit (e.g., “look north”). Exit descriptions
-take priority over extra descriptions. So if you creat a extra description for
+take priority over extra descriptions. So if you create a extra description for
 north the player will see the exit description only when they "look north."
 
 Keyword List A list of acceptable terms that can be used to manipulate the door
@@ -1544,7 +1544,8 @@ Item Vnum 1...Item Vnum n An arbitrarily long list of the virtual numbers of
 objects that the shop produces (i.e., items which will always be available, no
 matter how many are bought). The list must be terminated with -1. 
 
-Profit When Selling The price of an object when a shopkeeper sells it is the object’s value times Profit When Selling. This is a floating point value. It 
+Profit When Selling The price of an object when a shopkeeper sells it is the
+object’s value times Profit When Selling. This is a floating point value. It 
 should be >= 1.0. 
 
 Profit When Buying The amount of money a shopkeeper will offer when buying an 
@@ -1748,7 +1749,7 @@ values:
 
 Shop Room Number 
 The virtual number the mobile must be in for the shop to be effective. (So 
-trans’ed shopkeepers can’t sell in the desert). 
+trans'ed shopkeepers can’t sell in the desert). 
 
 Time when open start 1 
 Time when open end 1 
