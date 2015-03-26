@@ -38,7 +38,7 @@ descriptions. So only delete if there is no exit description.
    Another common error is caused by how shop code handles drink containers 
 poorly. In order for shops to display a jug as "a jug of <drink type>" they 
 must have the drink type as the last alias. It is good practice to put the 
-drink type as the first and last word of an objects namelist (older verions 
+drink type as the first and last word of an objects namelist (older versions 
 of CircleMUD expect it first and once the object is empty it removes one of
 the drink aliases).
 i.e. a shot of whisky should have the namelist: whisky shot whisky

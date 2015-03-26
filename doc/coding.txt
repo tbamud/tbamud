@@ -443,7 +443,7 @@ from their own MUD. A 3-minute timer signal prevents the MUD from being stuck in
 infinite loop forever. The common shutdown signals of SIGHUP (Unix), SIGTERM, and 
 SIGINT are mapped to a function that prints their reception and then quits the 
 program. The children signal, SIGCHLD, is set up to remove finished 
-autowizinstances. 
+autowiz instances. 
 
 From here, the .killscript file is removed since if we’ve made it this far, we can 
 start successfully. The only thing left now is to enter the interactive phase in 
@@ -1229,7 +1229,8 @@ the spell as the recipient of the message.
 
 Group spells simply call another spell on everyone in your current group. If you 
 want a ‘group fly’ spell, then you make a ‘fly’ spell first. Afterward, you make 
-the ‘group fly’ definition and then fill in some template areas of the perform_mag_groups() function. What you write there will depend on how your spell 
+the ‘group fly’ definition and then fill in some template areas of the
+perform_mag_groups() function. What you write there will depend on how your spell
 is designed. 
 
 General summoning spells (not ‘summon’ itself) deal with the conjuration of 
@@ -1399,7 +1400,7 @@ values into consideration. See do_bash() in act.offensive.c.
 3.5 Adding Classes 
 
 Classes are one of the implementors’ most important decisions because the players 
-will constantly deal with them, their advantanges, and their limitations. A good 
+will constantly deal with them, their advantages, and their limitations. A good 
 class should be balanced so that it has its own unique perks and flaws, never 
 making other classes pointless to play. 
 
@@ -1555,7 +1556,7 @@ foreground colors.
 
 4 Writing Special Procedures 
 
-Basic pecial procedures have largely been replaced by trigedit. Thus shifting the 
+Basic special procedures have largely been replaced by trigedit. Thus shifting the 
 workload from the coder to the builder to add life and creativity into their zones. 
 While it is easier, and less time consuming, to make triggers than special 
 procedures they are still used for such functions as banks and guildmasters.

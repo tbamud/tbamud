@@ -62,7 +62,7 @@ The recommended series is the CC series (i.e. CCNRM(), CCRED(), etc.) The CC
 series macros require two arguments – a pointer to the character to whom the 
 string is being sent, and the minimum color level the player must be set to in 
 order to see the color. Color sent as 'brief' (formerly known as sparse it was 
-changed for consistancy with the syslog command) (C_SPR) will be seen by people
+changed for consistency with the syslog command) (C_SPR) will be seen by people
 with color set to sparse, normal, or complete; color sent as ‘normal’ (C_NRM) 
 will be seen only by people with color set to normal or complete; color sent as
 ‘complete’ (C_CMP) will be seen only by people with color set to complete. 

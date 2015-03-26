@@ -213,7 +213,7 @@ Rules:
 
 
    Any running version of DikuMud must include our names in the login
-   sequence. Furthermore the "credits" command shall always cointain
+   sequence. Furthermore the "credits" command shall always contain
    our name, addresses, and a notice which states we have created DikuMud.
 
    You are allowed to alter DikuMud, source and documentation as long as

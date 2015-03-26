@@ -114,7 +114,7 @@ out other tbaMUD's at: http://www.tbamud.com/forum?c=showthread&ThreadID=86
 First, a MUD is not a learning project. It has tens of thousands of lines to 
 it, many of which are obscure and unclear to even moderately skilled 
 programmers.  Those little, ``Hello, world,'' programs are for learning,
-maybe little math tests, etc.  A MUD is a pretty ambitous project to start
+maybe little math tests, etc.  A MUD is a pretty ambitious project to start
 with.  That's like trying to run before you can walk, and while there's more
 difficult things than a MUD to start with, there's a ton of easier things you 
 should start with.  Second, if you are persistent, get a good C reference book 
@@ -152,7 +152,7 @@ By checking out the content at http://www.tbamud.com.
 
 1.4.  What is tbaMUD?
 
-TbaMUD is a DikuMUD derivitave, developed by Jeremy Elson as CircleMUD from
+TbaMUD is a DikuMUD derivative, developed by Jeremy Elson as CircleMUD from
 Gamma v0.0 of DikuMUD created by Hans Henrik Staerfeldt, Katja Nyboe, Tom 
 Madsen, Michael Seifert and Sebastian Hammer at DIKU (Computer Science 
 Instutute at Copenhagen University).  Note that CircleMUD is a Diku 
@@ -269,7 +269,7 @@ how to add new spells, skills, commands, etc. `building.txt' has information
 about the World file formats and how to read the files, etc. There are many 
 other documents in the doc directory with useful information, read them all.
 
-If you still have questions after reading the doucmentation, check out:
+If you still have questions after reading the documentation, check out:
 
 http://tbaMUD.com/
 http://cwg.lazuras.org/modules.php?name=Forums
@@ -356,7 +356,7 @@ have enough time and space.
 3.2.  Why do I get all sorts of errors with ``crypt'' functions and
       header files?
 
-TbaMUD normally uses the UNIX crypt() function to enrypt players' passwords.
+TbaMUD normally uses the UNIX crypt() function to encrypt players' passwords.
 Because of export restrictions imposed by the U.S., some systems do not have
 the crypt() function. ``configure'' will usually be able to figure out
 whether or not your system has crypt(), but if it guesses incorrectly and
@@ -596,10 +596,10 @@ character is sent a message by the mud after connecting, but before the
 socket is flagged with an exception or reads 0 bytes.  By default, tbaMUD
 ignores these SIGPIPEs, with the line my_signal(SIGPIPE, SIG_IGN) in
 signal_setup().  Where most people see the problems with SIGPIPE is while
-debugging with GDB.  By default, GDB responds to a SIGPIPE by stoping the
+debugging with GDB.  By default, GDB responds to a SIGPIPE by stopping the
 program, printing that a SIGPIPE was received, and passing it to the
 program.  You can change the action taken by GDB by using the `handle'
-command. To stop the program from stoping at SIGPIPE, you would give GDB the
+command. To stop the program from stopping at SIGPIPE, you would give GDB the
 command `handle SIGPIPE nostop'
 
 4.6.  When I run tbaMUD under Linux, it tells me ``gethostbyaddr: con-
@@ -658,7 +658,7 @@ UNIX does.  pl12 allows you to direct logs to a specific file instead.
 gives: ``gethostbyaddr: No such file or directory''
 
 This means the MUD can't resolve the IP address of the connecting player's
-source site innto a hostname.  You probably don't have DNS correctly
+source site into a hostname.  You probably don't have DNS correctly
 configured in the Windows Network Control Panel menu (under configuration of
 the TCP protocol).  Make sure you have the IP address of your ISP's DNS
 server listed.

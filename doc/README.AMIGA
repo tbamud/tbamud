@@ -22,12 +22,12 @@ UNIX.  What you need is:
 
 * 6 MB's of RAM, it might work with less but has not been tested.
 
-  You can find it at the local computerstore. :)
+  You can find it at the local computer store. :)
 
 * A 68020 CPU or better is required, I've not been able to compile it without
-  specifying the -m68020 flag, therefor it won't run on a 68000 or 68010 CPU.
+  specifying the -m68020 flag, therefore it won't run on a 68000 or 68010 CPU.
 
-  A1500, A2500, A3000, A4000 and A1200 all come with factoryinstalled 68020-040
+  A1500, A2500, A3000, A4000 and A1200 all come with factory-installed 68020-040
   CPU's. If you own an unexpanded Amiga not listed above you'll need to expand
   it.
 
