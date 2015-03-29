@@ -2665,21 +2665,22 @@ EMAILS ICQ AIM E-MAILS CONTACTS MSN AOL
 
 Name     Email
 
-Welcor   welcor@tbamud.com
-Rumble   rumble@tbamud.com
-Vatiken  joseph.arnusch@gmail.com
-Shamra   shamra@tbamud.com
-Fizban   fizban@tbamud.com
-Amber    amber@tbamud.com
-Detta    detta@tbamud.com
-Elaseth  elaseth@tbamud.com
-Elorien  elorien@tbamud.com
-Ferret   ferret@tbamud.com
-Fyre     fyre@tbamud.com
-Heiach   heiach@tbamud.com
-Random   random@tbamud.com
-Relsqui  relsqui@tbamud.com
-Rhade    rhade@tbamud.com
+Welcor   welcor@*tbamud.com
+Rumble   rumble@*tbamud.com
+Opie     opie@*tbamud.com
+Vatiken  vatiken@*tbamud.com
+Shamra   shamra@*tbamud.com
+Fizban   fizban@*tbamud.com
+Amber    amber@*tbamud.com
+Detta    detta@*tbamud.com
+Elaseth  elaseth@*tbamud.com
+Elorien  elorien@*tbamud.com
+Ferret   ferret@*tbamud.com
+Fyre     fyre@*tbamud.com
+Heiach   heiach@*tbamud.com
+Random   random@*tbamud.com
+Relsqui  relsqui@*tbamud.com
+Rhade    rhade@*tbamud.com
 #0
 EMOTES : EMOTIONS
 
@@ -2882,7 +2883,7 @@ EXAMPLE-PROPOSAL PROGRESS-REPORT REPORT-EXAMPLE EXAMPLE-REPORT
 As a builder on a mud it is important that you are accountable to someone.
 To prepare you for this, and to keep the Builder Academy professional, I 
 request (not mandatory) a report from every builder so I can keep track of 
-everyones progress and give help to those who are serious about learning to
+everyone's progress and give help to those who are serious about learning to
 build. These monthly reports are due the 1st of each month. The report will 
 include at a minimum the info in the example below. A simple mudmail to
 Rumble with this info is sufficient. Here is an example:
@@ -3304,7 +3305,7 @@ FOUNTAINS DRINK-UNITS OEDIT-FOUNTAINS
 
    After selecting object type FOUNTAIN you must then select C) Values to set
 the capacity of the fountain. The first number is max drink units (-1 for 
-unlimited). The second is the intitial drink units (this must be 1 or greater).
+unlimited). The second is the initial drink units (this must be 1 or greater).
 The 3rd number is liquid type from the following:
 
    value 0: Max drink units. -1 for unlimited.
@@ -6876,7 +6877,7 @@ cater to:
 There are no deadlines to work to but your own (though we do 
 occasionally overwrite or erase older work for the sake of making 
 space for newer work). It is my opinion that the staff is mature, 
-service-oriented, and non-judgmental about building abilities.
+service-oriented, and non-judgemental about building abilities.
 
 If you wish to participate in any of the above, I believe we uniquely 
 suit your needs. The only drawback is that while many building 
@@ -9348,7 +9349,7 @@ caster is greater than 18).  Maximum strength is 18/100.
 STYLISTICS ELASETH STYLE
 
 @nunpublished work © 2000 Elizabeth Hoefling Last Modified: Feb 19th, 2004
-     @celaseth@tbamud.com@n
+     @celaseth@*tbamud.com@n
 
 @cDisclaimer@n: The opinions herein belong solely to Elizabeth Hoefling. Some 
 games look for different things when building, but overall any zone made by 
@@ -9862,7 +9863,7 @@ Mud Created: 2000
 The Builder Academy 
 Code Base: [tbaMUD] the latest version 
 Site: tbamud.com 9091 [206.41.252.202] 
-Admin Email: rumble@tbamud.com 
+Admin Email: rumble@*tbamud.com 
 Theme: Teaching Builders and tbaMUD Codebase Development
 http://www.tbamud.com/ 
 telnet://tbamud.com:9091 
@@ -9905,7 +9906,7 @@ the tbaMUD codebase.
 The Builder Academy
 tbamud.com 9091
 http://tbamud.com
-rumble@tbamud.com
+rumble@*tbamud.com
 #0
 TBAMAPS TBA-MAPS
 
@@ -9930,25 +9931,37 @@ TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW 
 TBA stands for The Builder Academy. 
 @RGOTO 3@n to enter the Builder Academy tutorial.
 
-The Builder Acamady (TBA) was created in October of 2000 on the MUD Cruel World. It began with a combination of my own MUDding experience and the work of numerous others from the MUDding community and evolved into an extensive tutorial zone, help files, 
-nd examples.
+The Builder Academy (TBA) was created in October of 2000 on the MUD Cruel World. It began
+with a combination of my own MUDding experience and the work of numerous others from the
+MUDding community and evolved into an extensive tutorial zone, help files, and examples.
 
 
-TBA now has two main missions. It originally was meant to be a training MUD open to anyone willing to learn or teach how to create your own text-based World. 1,000's of builder's have gone through our training and many MUDs require new builders to comple
-e training at TBA before they can apply to their MUD. TBA's other mission is the development of the codebase formerly known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under the name tbaMUD and we have been updat
-ng it tirelessly for over 10 years.
+TBA now has two main missions. It originally was meant to be a training MUD open to anyone
+willing to learn or teach how to create your own text-based World. 1,000's of builder's have
+gone through our training and many MUDs require new builders to complete training at TBA before
+they can apply to their MUD. TBA's other mission is the development of the codebase formerly
+known as CircleMUD. Due to CircleMUD's stagnation TBA staff decided to release our codebase under
+the name tbaMUD and we have been updating it tirelessly for over 10 years.
 
-TBA is a low stress, no deadline, training environment where anyone with motivation can work at their own pace to learn as much or as little as they wish. Numerous people are available to answer questions and give advice.
+TBA is a low stress, no deadline, training environment where anyone with motivation can work at
+their own pace to learn as much or as little as they wish. Numerous people are available to answer
+questions and give advice.
 
 1000's of builders served and counting.
 
-The most challenging aspect of running a MUD is finding good builders. You will hear this from the admin of every MUD that has ever been. In the past it has always been up to each individual MUD to find and usually train their own builders. This works, b
-t I think the MUDing community can come up with something better. That is why we created The Builder's Academy. No pressure, no deadline, just come and learn or help teach. Give something back to the community we have all taken so much from. TBA is a MUD
-ng community resource, please submit any lessons learned or building tips and tricks so we can improve our codebase and training.
+The most challenging aspect of running a MUD is finding good builders. You will hear this from the
+admin of every MUD that has ever been. In the past it has always been up to each individual MUD to
+find and usually train their own builders. This works, but I think the MUDding community can come up
+with something better. That is why we created The Builder's Academy. No pressure, no deadline, just
+come and learn or help teach. Give something back to the community we have all taken so much from.
+TBA is a MUDding community resource, please submit any lessons learned or building tips and tricks
+so we can improve our codebase and training.
 
-TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will teach them and then you can have them back with the zones they built.
+TBA can also be used by other MUDs as a builder's port. Just send us your newbie builders. We will
+teach them and then you can have them back with the zones they built.
 
-We are always open to anyone willing to learn or help teach so we can continue to improve the tbaMUD codebase.
+We are always open to anyone willing to learn or help teach so we can continue to improve the tbaMUD
+codebase.
 
 - Rumble
 The Builder Academy
@@ -12107,6 +12120,8 @@ Up since Fri Jun 27 07:04:55 2008: 209 days, 2:45
 #31
 USAGE
 
+Record high number of players:
+
 Jan 31 19:52:54 :: nusage: 16  sockets connected, 16  sockets playing
 
 Players
@@ -13202,7 +13217,7 @@ typos, ideas, or submissions to:
 Rumble
 The Builder Academy
 tbamud.com 9091
-rumble@tbamud.com
+rumble@*tbamud.com
 
    This is a listing of the current areas available:
  
