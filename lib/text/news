@@ -49,7 +49,7 @@ NEW COMMANDS AND NEW MUD BEHAVIOR:
 
 **  You can now interact with rooms, mobs, and objects through triggers.
 
-**  Multiple objects will now be stacked and preceeded by a quantity so your 
+**  Multiple objects will now be stacked and preceded by a quantity so your 
     inventory won't be as long. i.e. (3) A waybread.
 
 **  Over 100 new socials, and the gemote command to use socials over the gossip
