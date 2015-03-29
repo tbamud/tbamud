@@ -39,7 +39,7 @@ You feel chilled by $n and then you feel no more -- R.I.P.
 $n touches $N who slumps to the ground as a dead lump, rather chilly isn't it?
 The atmosphere turns chilly as you miss $N!
 You dodge $n and $s chill touch!
-$n tries unsuccesfully to chill $N!
+$n tries unsuccessfully to chill $N!
 You chill $N!
 You feel your life flowing away as $n chills you!
 $n chills $N who suddenly seem less lively!
@@ -54,7 +54,7 @@ YOU KILLED $N!!! -- don't you feel ashamed...
 Your head is filled with all the colors of the rainbow before it bursts!
 $n makes $N into a colorful corpse!
 Your spray of color misses $N -- what a dull world...
-$n unsuccesfully tries to add color to your life!
+$n unsuccessfully tries to add color to your life!
 $n splashes color everywhere except $N.
 Your own private rainbow hits $N in the face -- WOWIE!!
 A sudden burst of colors sends you reeling!
@@ -70,13 +70,13 @@ $N is dissolved by your goodness.
 $n dissolves you, you regret having been so evil, and die...
 $n completely dissolves $N!
 $N is unaffected by your goodness!
-$n thinks that $e is really good, and tries to dispell you.
-$N laughs at $n as $e tries to dispell $M!
+$n thinks that $e is really good, and tries to dispel you.
+$N laughs at $n as $e tries to dispel $M!
 $N shivers and suffers from $S evilness!
 $n makes your soul hurt and suffer!
 $n makes $N's evil spirit shiver and suffer!
 Did you really expect $M to suffer?
-$n unfruitfully tries to dispell you.
+$n unfruitfully tries to dispel you.
 $n is stupid...
 
 * earthquake 23
@@ -148,7 +148,7 @@ M
 30
 Your lightning bolt shatters $N to pieces!
 You feel enlightened by the lightning bolt $n sends, and then all is darkness -- R.I.P.!
-$N recieves the full blast of a lightning bolt from $n... and is no more.
+$N receives the full blast of a lightning bolt from $n... and is no more.
 Your aim goes from bad to worse, and your lightning bolt misses $N!
 $n has bad aim and $s lightning bolt misses you!
 $n tries to hit $N with a lightning bolt but only hits the sky!
@@ -198,13 +198,13 @@ $N is dissolved by your evil.
 $n dissolves you -- the price paid for leading a good life -- you die...
 $n completely dissolves $N!
 $N is unaffected by your evil!
-$n thinks that $e is really evil, and tries to dispell you.
-$N laughs at $n as $e tries to dispell $M!
+$n thinks that $e is really evil, and tries to dispel you.
+$N laughs at $n as $e tries to dispel $M!
 $N shivers and suffers from $S goodness!
 $n makes your soul hurt and suffer!
 $n makes $N's good spirit shiver and suffer!
 Did you really expect $M to suffer?
-$n unfruitfully tries to dispell you.
+$n unfruitfully tries to dispel you.
 $n is stupid...
 
 * backstab 131
@@ -304,7 +304,7 @@ $n tries to hit $N but hits $mself instead!
 M
 300
 You punch $N in $S kidneys resulting in $S immediate death!
-You recieve a punch in your kidneys which ends your worldly misery -- R.I.P.!
+You receive a punch in your kidneys which ends your worldly misery -- R.I.P.!
 $n punches $N in the kidneys causing immediate death!
 You wildly punch at the air, missing $N.
 $n misses a wild punch at you.
@@ -365,7 +365,7 @@ $n stings at $N, then looks horrified as $N grins at $m!
 * 302
 M
 302
-Your dextrous whip messily tears $N's torso right off!
+Your dexterous whip messily tears $N's torso right off!
 $n's whip messily tears you right in half!
 With an evil grin, $n messily whips $N in half!
 You try to whip $N but whip the ground instead!
@@ -551,7 +551,7 @@ $n seems to have a crush on $N...
 M
 307
 You pound on $N with reckless abandon when you realize that $E is dead.
-With $s reckless pounding attacks, you succomb to death.
+With $s reckless pounding attacks, you succumb to death.
 $N falls under $n's pounding blows, yet $n continues $s attack!
 You hear the air whistle as you split the air with your pound!
 $n pounds in your direction, causing a whistling sound!
@@ -659,7 +659,7 @@ $N returns $n's pierce with a piercing look, hmmm...
 
 M
 311
-You succesfully pierce $N and $S dead body falls to the ground in a lifeless heap.
+You successfully pierce $N and $S dead body falls to the ground in a lifeless heap.
 $n pierces you.  You are no longer a living member of this world -- R.I.P.!
 $n pierces $N whose suddenly lifeless body falls to the ground!
 You try to pierce $N but pierce the air instead!
@@ -726,7 +726,7 @@ You stab $N through the heart!  Instant death!
 $n drives a stab at you, it pierces your heart!  RIP!
 $n stabs brutally at $N, killing him as $N is impaled by $n!
 You stab at $N, missing!
-$n misses a particularily nasty stab in your direction!
+$n misses a particularly nasty stab in your direction!
 $n stabs at $N!  $e misses!
 #
 #
@@ -780,7 +780,7 @@ You feel burning poison in your blood, and suffer.
 $N looks really sick and shivers uncomfortably.
 #
 You have become poisoned somehow.
-$N has somehow become poisioned.
+$N has somehow become poisoned.
 
 * !UNUSED! 202
 M

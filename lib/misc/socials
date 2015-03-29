@@ -17,7 +17,7 @@ beg 0 0
 You beg the gods for mercy.  (No way you're gonna get it! :-))
 The gods fall down laughing at $n's request for mercy.
 You desperately try to squeeze a few coins from $M.
-$n begs you for money.  You gratiously let $m peep at your fortune.
+$n begs you for money.  You graciously let $m peep at your fortune.
 $n begs $N for a dime or two -- or twenty!
 Your money-lender seems to be out for the moment.
 How? - begging yourself for money doesn't help.
@@ -185,7 +185,7 @@ $n flips head over heels.
 
 flirt 1 5
 You flirt outrageously.
-$n flirts outragously.
+$n flirts outrageously.
 You flirt outrageously with $N.
 $n flirts outrageously with $N.
 $n flirts outrageously with you.
@@ -559,8 +559,8 @@ $n snaps $s fingers.
 #
 
 snarl 0 0
-You snarl like a viscious animal.
-$n snarls like a cornered, viscious animal.
+You snarl like a vicious animal.
+$n snarls like a cornered, vicious animal.
 You snarl at $M angrily.  Control yourself!
 $n snarls angrily at $N.  $e$u seems incapable of controlling $mself.
 $n snarls viciously at you.  $U$s self-control seems to have gone bananas.
@@ -675,13 +675,13 @@ $n sulks in the corner.
 
 tackle 0 5
 You tackle the air.  It stands not a chance.
-$n starts running around $mself in a desparate attempt to tackle the air.
+$n starts running around $mself in a desperate attempt to tackle the air.
 You ruthlessly tackle $M to the ground.
 $n ruthlessly tackles $N, pinning $M to the ground.
 $n suddenly lunges at you and tackles you to the ground!
 That person isn't here (luck for them, it would seem...)
 Tackle yourself?  Yeah, right....
-$n makes a dextrous move and kicks $s left leg away with $s right.
+$n makes a dexterous move and kicks $s left leg away with $s right.
 
 tango 0 8
 With whom would you like to tango?

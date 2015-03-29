@@ -178,7 +178,7 @@ DENMARK
 
 This document contains the rules by which you can use, alter or publish
 parts of DikuMud. DikuMud has been created by the above five listed persons
-in their spare time, at DIKU (Computer Science Instutute at Copenhagen
+in their spare time, at DIKU (Computer Science Institute at Copenhagen
 University). You are legally bound to follow the rules described in this
 document.
 
@@ -213,7 +213,7 @@ Rules:
 
 
    Any running version of DikuMud must include our names in the login
-   sequence. Furthermore the "credits" command shall always cointain
+   sequence. Furthermore the "credits" command shall always contain
    our name, addresses, and a notice which states we have created DikuMud.
 
    You are allowed to alter DikuMud, source and documentation as long as
