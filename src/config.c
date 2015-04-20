@@ -74,7 +74,7 @@ int idle_void = 8;
 int idle_rent_time = 48;
 
 /* This level and up is immune to idling, LVL_IMPL+1 will disable it. */
-int idle_max_level = LVL_GOD;
+int idle_max_level = LVL_IMMORT;
 
 /* Should items in death traps automatically be junked? */
 int dts_are_dumps = YES;
