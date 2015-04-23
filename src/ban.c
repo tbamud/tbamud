@@ -262,7 +262,7 @@ int valid_name(char *newname)
     return (0);
 
   /* return valid if list doesn't exist */
-  if (invalid_list == NULL || num_invalid < 1)
+  if (num_invalid < 1)
     return (1);
 
   /* change to lowercase */

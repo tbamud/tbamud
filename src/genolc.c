@@ -86,7 +86,7 @@ char *str_udupnl(const char *txt)
   ptr = (txt && *txt) ? txt : undef;
   CREATE(str, char, strlen(ptr) + 3);
 
-  strlcpy(str, ptr, strlen(ptr));
+  strlcpy(str, ptr, strlen(str));
   strcat(str, "\r\n");
 
   return str;
