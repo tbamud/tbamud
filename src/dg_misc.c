@@ -169,8 +169,7 @@ void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
   half_chop(cmd, value_p, duration_p);
 
   /* make sure all parameters are present */
-  if (charname == NULL || !*charname || property == NULL || !*property ||
-      value_p == NULL || !*value_p || duration_p == NULL || !*duration_p) {
+  if (!*charname || !*property || !*value_p || !*duration_p) {
     script_log("Trigger: %s, VNum %d. dg_affect usage: <target> <property> <value> <duration>",
       GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig));
     return;

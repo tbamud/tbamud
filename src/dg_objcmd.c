@@ -510,7 +510,7 @@ static OCMD(do_dgoload)
       two_arguments(target, arg1, arg2); /* recycling ... */
       tch = get_char_near_obj(obj, arg1);
       if (tch) {
-        if (arg2 != NULL && *arg2 && (pos = find_eq_pos_script(arg2)) >= 0 &&
+        if (*arg2 && (pos = find_eq_pos_script(arg2)) >= 0 &&
             !GET_EQ(tch, pos) && can_wear_on_pos(object, pos)) {
           equip_char(tch, object, pos);
           load_otrigger(object);
@@ -687,7 +687,7 @@ static OCMD(do_osetval)
   struct char_data *worn_by = NULL;
 
   two_arguments(argument, arg1, arg2);
-  if (arg1 == NULL || !*arg1 || arg2 == NULL || !*arg2 || !is_number(arg1) || !is_number(arg2)) {
+  if (!*arg1 || !*arg2 || !is_number(arg1) || !is_number(arg2)) {
     obj_log(obj, "osetval: bad syntax");
     return;
   }
