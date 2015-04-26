@@ -1321,8 +1321,9 @@ struct game_data
   int minimap_size;       /**< Default size for mini-map (automap)  */
   int script_players;     /**< Is attaching scripts to players allowed? */
 
-  char *OK; /**< When player receives 'Okay.' text.    */
-  char *NOPERSON; /**< 'No one by that name here.'   */
+  char *OK;       /**< When player receives 'Okay.' text.    */
+  char *HUH;      /**< 'Huh!?!'                              */ 
+  char *NOPERSON; /**< 'No one by that name here.'           */
   char *NOEFFECT; /**< 'Nothing seems to happen.'            */
 };
 

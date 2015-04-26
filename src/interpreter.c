@@ -528,7 +528,7 @@ void command_interpreter(struct char_data *ch, char *argument)
 
   if (*complete_cmd_info[cmd].command == '\n') {
     int found = 0;
-    send_to_char(ch, "Huh!?!\r\n");
+    send_to_char(ch, "%s", CONFIG_HUH);
 
     for (cmd = 0; *cmd_info[cmd].command != '\n'; cmd++)
     {

@@ -331,14 +331,15 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define CEDIT_ROOM_NUMBERS_MENU		6
 #define CEDIT_AUTOWIZ_OPTIONS_MENU	7
 #define CEDIT_OK			8
-#define CEDIT_NOPERSON			9
-#define CEDIT_NOEFFECT			10
-#define CEDIT_DFLT_IP			11
-#define CEDIT_DFLT_DIR			12
-#define CEDIT_LOGNAME			13
-#define CEDIT_MENU			14
-#define CEDIT_WELC_MESSG		15
-#define CEDIT_START_MESSG		16
+#define CEDIT_HUH			9
+#define CEDIT_NOPERSON			10
+#define CEDIT_NOEFFECT			11
+#define CEDIT_DFLT_IP			12
+#define CEDIT_DFLT_DIR			13
+#define CEDIT_LOGNAME			14
+#define CEDIT_MENU			15
+#define CEDIT_WELC_MESSG		16
+#define CEDIT_START_MESSG		17
 
 /* Numerical responses. */
 #define CEDIT_NUMERICAL_RESPONSE	20

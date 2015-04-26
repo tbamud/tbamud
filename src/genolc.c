@@ -82,11 +82,13 @@ char *str_udupnl(const char *txt)
 {
   char *str = NULL, undef[] = "undefined";
   const char *ptr = NULL;
+  size_t n;
 
   ptr = (txt && *txt) ? txt : undef;
-  CREATE(str, char, strlen(ptr) + 3);
+  n = strlen(ptr) + 3;
 
-  strlcpy(str, ptr, strlen(str));
+  CREATE(str, char, n);
+  strlcpy(str, ptr, n);
   strcat(str, "\r\n");
 
   return str;

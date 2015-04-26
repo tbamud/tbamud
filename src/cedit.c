@@ -141,6 +141,7 @@ static void cedit_setup(struct descriptor_data *d)
 
   /* Allocate space for the strings. */
   OLC_CONFIG(d)->play.OK       = str_udup(CONFIG_OK);
+  OLC_CONFIG(d)->play.HUH      = str_udup(CONFIG_HUH);
   OLC_CONFIG(d)->play.NOPERSON = str_udup(CONFIG_NOPERSON);
   OLC_CONFIG(d)->play.NOEFFECT = str_udup(CONFIG_NOEFFECT);
 
@@ -245,6 +246,10 @@ static void cedit_save_internally(struct descriptor_data *d)
   if (CONFIG_OK)
     free(CONFIG_OK);
   CONFIG_OK       = str_udup(OLC_CONFIG(d)->play.OK);
+
+  if (CONFIG_HUH)
+    free(CONFIG_HUH);
+  CONFIG_HUH      = str_udup(OLC_CONFIG(d)->play.HUH);
 
   if (CONFIG_NOPERSON)
     free(CONFIG_NOPERSON);
@@ -384,6 +389,12 @@ int save_config( IDXTYPE nowhere )
 
   fprintf(fl, "* Text sent to players when OK is all that is needed.\n"
               "ok = %s\n\n", buf);
+
+  strcpy(buf, CONFIG_HUH);
+  strip_cr(buf);
+
+  fprintf(fl, "* Text sent to players for an unrecognized command.\n"
+              "huh = %s\n\n", buf);
 
   strcpy(buf, CONFIG_NOPERSON);
   strip_cr(buf);
@@ -623,13 +634,14 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sP%s) Display Closed Doors        : %s%s\r\n"
         "%sR%s) Diagonal Directions         : %s%s\r\n"
         "%sS%s) Mortals Level To Immortal   : %s%s\r\n"
-	      "%s1%s) OK Message Text         : %s%s"
-        "%s2%s) NOPERSON Message Text   : %s%s"
-        "%s3%s) NOEFFECT Message Text   : %s%s"
-        "%s4%s) Map/Automap Option      : %s%s\r\n"
-        "%s5%s) Default map size        : %s%d\r\n"
-        "%s6%s) Default minimap size    : %s%d\r\n"
-        "%s7%s) Scripts on PC's         : %s%s\r\n"
+	"%s1%s) OK Message Text         : %s%s"
+	"%s2%s) HUH Message Text        : %s%s"
+        "%s3%s) NOPERSON Message Text   : %s%s"
+        "%s4%s) NOEFFECT Message Text   : %s%s"
+        "%s5%s) Map/Automap Option      : %s%s\r\n"
+        "%s6%s) Default map size        : %s%d\r\n"
+        "%s7%s) Default minimap size    : %s%d\r\n"
+        "%s8%s) Scripts on PC's         : %s%s\r\n"
         "%sQ%s) Exit To The Main Menu\r\n"
         "Enter your choice : ",
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.pk_allowed),
@@ -653,6 +665,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.no_mort_to_immort),
 
         grn, nrm, cyn, OLC_CONFIG(d)->play.OK,
+        grn, nrm, cyn, OLC_CONFIG(d)->play.HUH,
         grn, nrm, cyn, OLC_CONFIG(d)->play.NOPERSON,
         grn, nrm, cyn, OLC_CONFIG(d)->play.NOEFFECT,
         grn, nrm, cyn, m_opt == 0 ? "Off" : (m_opt == 1 ? "On" : (m_opt == 2 ? "Imm-Only" : "Invalid!")),
@@ -974,16 +987,21 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           return;
 
         case '2':
+          write_to_output(d, "Enter the HUH message : ");
+          OLC_MODE(d) = CEDIT_HUH;
+          return;
+
+        case '3':
           write_to_output(d, "Enter the NOPERSON message : ");
           OLC_MODE(d) = CEDIT_NOPERSON;
           return;
 
-        case '3':
+        case '4':
           write_to_output(d, "Enter the NOEFFECT message : ");
           OLC_MODE(d) = CEDIT_NOEFFECT;
           return;
 
-        case '4':
+        case '5':
           write_to_output(d, "1) Disable maps\r\n");
           write_to_output(d, "2) Enable Maps\r\n");
           write_to_output(d, "3) Maps for Immortals only\r\n");
@@ -991,16 +1009,16 @@ void cedit_parse(struct descriptor_data *d, char *arg)
           OLC_MODE(d) = CEDIT_MAP_OPTION;
           return;
 
-        case '5':
+        case '6':
           write_to_output(d, "Enter default map size (1-12) : ");
           OLC_MODE(d) = CEDIT_MAP_SIZE;
           return;
 
-        case '6':
+        case '7':
           write_to_output(d, "Enter default mini-map size (1-12) : ");
           OLC_MODE(d) = CEDIT_MINIMAP_SIZE;
           return;
-        case '7':
+        case '8':
           TOGGLE_VAR(OLC_CONFIG(d)->play.script_players);
           break;
 
@@ -1402,6 +1420,18 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         free(OLC_CONFIG(d)->play.OK);
 
       OLC_CONFIG(d)->play.OK = str_udupnl(arg);
+
+      cedit_disp_game_play_options(d);
+      break;
+
+    case CEDIT_HUH:
+      if (!genolc_checkstring(d, arg))
+        break;
+
+      if (OLC_CONFIG(d)->play.HUH)
+        free(OLC_CONFIG(d)->play.HUH);
+
+      OLC_CONFIG(d)->play.HUH = str_udupnl(arg);
 
       cedit_disp_game_play_options(d);
       break;

@@ -970,8 +970,10 @@ do                                                              \
 #define CONFIG_TRACK_T_DOORS    config_info.play.track_through_doors
 /** Get the permission to level up from mortal to immortal. */
 #define CONFIG_NO_MORT_TO_IMMORT config_info.play.no_mort_to_immort
-/** Get the 'OK' message. */
+/** Get the OK message. */
 #define CONFIG_OK               config_info.play.OK
+/** Get the HUH message. */
+#define CONFIG_HUH              config_info.play.HUH
 /** Get the NOPERSON message. */
 #define CONFIG_NOPERSON         config_info.play.NOPERSON
 /** Get the NOEFFECT message. */
