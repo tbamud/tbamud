@@ -3787,9 +3787,10 @@ static void load_default_config( void )
   CONFIG_IDLE_MAX_LEVEL	        = idle_max_level;
   CONFIG_DTS_ARE_DUMPS	        = dts_are_dumps;
   CONFIG_LOAD_INVENTORY         = load_into_inventory;
-  CONFIG_OK			            = strdup(OK);
-  CONFIG_NOPERSON	          	= strdup(NOPERSON);
-  CONFIG_NOEFFECT	         	= strdup(NOEFFECT);
+  CONFIG_OK			= strdup(OK);
+  CONFIG_HUH			= strdup(HUH);
+  CONFIG_NOPERSON	        = strdup(NOPERSON);
+  CONFIG_NOEFFECT	        = strdup(NOEFFECT);
   CONFIG_TRACK_T_DOORS          = track_through_doors;
   CONFIG_NO_MORT_TO_IMMORT	    = no_mort_to_immort;
   CONFIG_DISP_CLOSED_DOORS      = display_closed_doors;
@@ -3944,6 +3945,13 @@ void load_config( void )
       case 'h':
         if (!str_cmp(tag, "holler_move_cost"))
           CONFIG_HOLLER_MOVE_COST = num;
+        else if (!str_cmp(tag, "huh")) {
+          char tmp[READ_SIZE];
+          if (CONFIG_HUH)
+            free(CONFIG_HUH);
+          snprintf(tmp, sizeof(tmp), "%s\r\n", line);
+          CONFIG_HUH = strdup(tmp);
+        }
         break;
 
       case 'i':

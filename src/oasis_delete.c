@@ -74,6 +74,9 @@ int free_strings(void *data, int type)
       if (config->play.OK)
         free(config->play.OK);
 
+      if (config->play.HUH)
+        free(config->play.HUH);
+
       if (config->play.NOPERSON)
         free(config->play.NOPERSON);
 

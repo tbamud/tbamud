@@ -658,9 +658,7 @@ void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
   char buf[MAX_STRING_LENGTH];
   char targetname[MAX_STRING_LENGTH];
 
-  if (GET_LEVEL(ch) < LVL_IMMORT)
-    send_to_char(ch, "Huh!?!\r\n");
-  else if (!*argument)
+  if (!*argument)
     send_to_char(ch, "%s\r\n", quest_imm_usage);
   else if ((rnum = real_quest(atoi(argument))) == NOTHING )
     send_to_char(ch, "That quest does not exist.\r\n");

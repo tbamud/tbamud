@@ -31,6 +31,7 @@ extern int idle_max_level;
 extern int dts_are_dumps;
 extern int load_into_inventory;
 extern const char *OK;
+extern const char *HUH;
 extern const char *NOPERSON;
 extern const char *NOEFFECT;
 extern int track_through_doors;
