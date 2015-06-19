@@ -75,7 +75,7 @@ ACMD(do_hit)
   if (!*arg)
     send_to_char(ch, "Hit who?\r\n");
   else if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM)))
-    send_to_char(ch, "They don't seem to be here.\r\n");
+    send_to_char(ch, "That player is not here.\r\n");
   else if (vict == ch) {
     send_to_char(ch, "You hit yourself...OUCH!.\r\n");
     act("$n hits $mself, and says OUCH!", FALSE, ch, 0, vict, TO_ROOM);
@@ -110,7 +110,7 @@ ACMD(do_kill)
     send_to_char(ch, "Kill who?\r\n");
   } else {
     if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM)))
-      send_to_char(ch, "They aren't here.\r\n");
+      send_to_char(ch, "That player is not here.\r\n");
     else if (ch == vict)
       send_to_char(ch, "Your mother would be so sad.. :(\r\n");
     else {

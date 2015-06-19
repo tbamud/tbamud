@@ -403,7 +403,7 @@ ACMD(do_group)
       send_to_char(ch, "But you are already part of a group.\r\n");
       return;
     } else if (!GROUP(vict)) {
-      send_to_char(ch, "They are not a part of a group!\r\n");
+      act("$E$u is not a part of a group!", FALSE, ch, 0, vict, TO_CHAR);
       return;
     } else if (!IS_SET(GROUP_FLAGS(GROUP(vict)), GROUP_OPEN)) {
       send_to_char(ch, "That group isn't accepting members.\r\n");
@@ -425,7 +425,7 @@ ACMD(do_group)
       send_to_char(ch, "Only the group's leader can kick members out.\r\n");
       return;
     } else if (GROUP(vict) != GROUP(ch)) {
-      send_to_char(ch, "They are not a member of your group!\r\n");
+      act("$E$u is not a member of your group!", FALSE, ch, 0, vict, TO_CHAR);
       return;
     } 
     send_to_char(ch, "You have kicked %s out of the group.\r\n", GET_NAME(vict));

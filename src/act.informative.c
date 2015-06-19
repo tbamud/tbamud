@@ -2411,7 +2411,7 @@ ACMD(do_whois)
     hours = (time(0) - victim->player.time.logon) / 3600;
 
     if (!got_from_file) {
-      send_to_char(ch, "Last Logon: They're playing now!  (Idle %d Minutes)",
+      send_to_char(ch, "Last Logon: Playing now!  (Idle %d Minutes)",
            victim->char_specials.timer * SECS_PER_MUD_HOUR / SECS_PER_REAL_MIN);
 
       if (!victim->desc)
@@ -2420,7 +2420,7 @@ ACMD(do_whois)
         send_to_char(ch, "\r\n");
 
       if (PRF_FLAGGED(victim, PRF_AFK))
-        send_to_char(ch, "%s%s is afk right now, so %s may not respond to communication.%s\r\n", CBGRN(ch, C_NRM), GET_NAME(victim), GET_SEX(victim) == SEX_NEUTRAL ? "it" : (GET_SEX(victim) == SEX_MALE ? "he" : "she"), CCNRM(ch, C_NRM));
+        send_to_char(ch, "%s%s is afk right now, so %s may not respond to communication.%s\r\n", CBGRN(ch, C_NRM), GET_NAME(victim), HSSH(victim), CCNRM(ch, C_NRM));
     }
     else if (hours > 0)
       send_to_char(ch, "Last Logon: %s (%d days & %d hours ago.)\r\n", buf, hours/24, hours%24);
@@ -2430,9 +2430,9 @@ ACMD(do_whois)
   }
 
   if (has_mail(GET_IDNUM(victim)))
-     send_to_char (ch, "They have mail waiting.\r\n");
+     act("$E$u has mail waiting.", FALSE, ch, 0, victim, TO_CHAR);
   else
-     send_to_char (ch, "They have no mail waiting.\r\n");
+     act("$E$u has no mail waiting.", FALSE, ch, 0, victim, TO_CHAR);
 
   if (PLR_FLAGGED(victim, PLR_DELETED))
     send_to_char (ch, "***DELETED***\r\n");
