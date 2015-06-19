@@ -217,7 +217,7 @@ ACMD(do_reply)
       tch = tch->next;
 
     if (!tch)
-      send_to_char(ch, "They are no longer playing.\r\n");
+      send_to_char(ch, "That player is no longer here.\r\n");
     else if (is_tell_ok(ch, tch)) {
       if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
         parse_at(argument);

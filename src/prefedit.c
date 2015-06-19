@@ -895,6 +895,7 @@ ACMD(do_oasis_prefedit)
   struct descriptor_data *d;
   struct char_data *vict;
   char *buf3;
+  char buf[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
@@ -939,7 +940,8 @@ ACMD(do_oasis_prefedit)
         if (ch == vict)
           send_to_char(ch, "Your preferences are currently being edited by %s.\r\n", PERS(d->character, ch));
         else
-          send_to_char(ch, "Their preferences are currently being edited by %s.\r\n", PERS(d->character, ch));
+          sprintf(buf, "$S$u preferences are currently being edited by %s.", PERS(d->character, ch));
+          act(buf, FALSE, ch, 0, vict, TO_CHAR);
         return;
       }
     }

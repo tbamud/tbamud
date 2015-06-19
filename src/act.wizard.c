@@ -1490,7 +1490,7 @@ ACMD(do_advance)
     return;
   }
   if (newlevel == GET_LEVEL(victim)) {
-    send_to_char(ch, "They are already at that level.\r\n");
+    act("$E is already at that level.", FALSE, ch, 0, victim, TO_CHAR);
     return;
   }
   oldlevel = GET_LEVEL(victim);
@@ -1574,7 +1574,7 @@ ACMD(do_restore)
   else if (!(vict = get_char_vis(ch, buf, NULL, FIND_CHAR_WORLD)))
     send_to_char(ch, "%s", CONFIG_NOPERSON);
   else if (!IS_NPC(vict) && ch != vict && GET_LEVEL(vict) >= GET_LEVEL(ch))
-    send_to_char(ch, "They don't need your help.\r\n");
+    act("$E doesn't need your help.", FALSE, ch, 0, vict, TO_CHAR);
   else {
     GET_HIT(vict) = GET_MAX_HIT(vict);
     GET_MANA(vict) = GET_MAX_MANA(vict);
@@ -1719,7 +1719,7 @@ ACMD(do_dc)
    * get disconnected by two different immortals in the same 1/10th of a
    * second, we have the below 'if' check. -gg */
   if (STATE(d) == CON_DISCONNECT || STATE(d) == CON_CLOSE)
-    send_to_char(ch, "They're already being disconnected.\r\n");
+    act("$E's already being disconnected.", FALSE, ch, 0, d->character, TO_CHAR);
   else {
     /* Remember that we can disconnect people not in the game and that rather
      * confuses the code when it expected there to be a character context. */
