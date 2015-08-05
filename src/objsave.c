@@ -116,7 +116,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
   if (TEST_OBJN(cost_per_day))
     fprintf(fp, "Rent: %d\n", GET_OBJ_RENT(obj));
   if (TEST_OBJN(bitvector))
-    fprintf(fp, "Perm: %d %d %d %d\n", GET_OBJ_PERM(obj)[0], GET_OBJ_PERM(obj)[1], GET_OBJ_PERM(obj)[2], GET_OBJ_PERM(obj)[3]);
+    fprintf(fp, "Perm: %d %d %d %d\n", GET_OBJ_AFFECT(obj)[0], GET_OBJ_AFFECT(obj)[1], GET_OBJ_AFFECT(obj)[2], GET_OBJ_AFFECT(obj)[3]);
   if (TEST_OBJN(wear_flags))
     fprintf(fp, "Wear: %d %d %d %d\n", GET_OBJ_WEAR(obj)[0], GET_OBJ_WEAR(obj)[1], GET_OBJ_WEAR(obj)[2], GET_OBJ_WEAR(obj)[3]);
 
@@ -1131,10 +1131,10 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     case 'P':
       if (!strcmp(tag, "Perm")) {
         sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
-        GET_OBJ_PERM(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_PERM(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_PERM(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_PERM(temp)[3] = asciiflag_conv(f4);
+        GET_OBJ_AFFECT(temp)[0] = asciiflag_conv(f1);
+        GET_OBJ_AFFECT(temp)[1] = asciiflag_conv(f2);
+        GET_OBJ_AFFECT(temp)[2] = asciiflag_conv(f3);
+        GET_OBJ_AFFECT(temp)[3] = asciiflag_conv(f4);
       }
       break;
     case 'R':

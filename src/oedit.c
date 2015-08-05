@@ -587,7 +587,7 @@ static void oedit_disp_perm_menu(struct descriptor_data *d)
   for (counter = 1; counter < NUM_AFF_FLAGS; counter++) {
     write_to_output(d, "%s%2d%s) %-20.20s %s", grn, counter, nrm, affected_bits[counter], !(++columns % 2) ? "\r\n" : "");
   }
-  sprintbitarray(GET_OBJ_PERM(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, bits);
+  sprintbitarray(GET_OBJ_AFFECT(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, bits);
   write_to_output(d, "\r\nObject permanent flags: %s%s%s\r\n"
           "Enter object perm flag (0 to quit) : ", cyn, bits, nrm);
 }
@@ -645,7 +645,7 @@ static void oedit_disp_menu(struct descriptor_data *d)
 	  );
   /* Send first half then build second half of menu. */
   sprintbitarray(GET_OBJ_WEAR(OLC_OBJ(d)), wear_bits, EF_ARRAY_MAX, buf1);
-  sprintbitarray(GET_OBJ_PERM(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, buf2);
+  sprintbitarray(GET_OBJ_AFFECT(OLC_OBJ(d)), affected_bits, EF_ARRAY_MAX, buf2);
 
   write_to_output(d,
 	  "%s7%s) Wear flags  : %s%s\r\n"
@@ -935,7 +935,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     if (number > 0 && number <= NUM_AFF_FLAGS) {
       /* Setting AFF_CHARM on objects like this is dangerous. */
       if (number != AFF_CHARM) {
-        TOGGLE_BIT_AR(GET_OBJ_PERM(OLC_OBJ(d)), number);
+        TOGGLE_BIT_AR(GET_OBJ_AFFECT(OLC_OBJ(d)), number);
       }
     }
     oedit_disp_perm_menu(d);
