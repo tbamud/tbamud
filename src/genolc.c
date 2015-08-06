@@ -787,10 +787,10 @@ static int export_save_objects(zone_rnum zrnum)
       sprintascii(wbuf2, GET_OBJ_WEAR(obj)[1]);
       sprintascii(wbuf3, GET_OBJ_WEAR(obj)[2]);
       sprintascii(wbuf4, GET_OBJ_WEAR(obj)[3]);
-      sprintascii(pbuf1, GET_OBJ_PERM(obj)[0]);
-      sprintascii(pbuf2, GET_OBJ_PERM(obj)[1]);
-      sprintascii(pbuf3, GET_OBJ_PERM(obj)[2]);
-      sprintascii(pbuf4, GET_OBJ_PERM(obj)[3]);
+      sprintascii(pbuf1, GET_OBJ_AFFECT(obj)[0]);
+      sprintascii(pbuf2, GET_OBJ_AFFECT(obj)[1]);
+      sprintascii(pbuf3, GET_OBJ_AFFECT(obj)[2]);
+      sprintascii(pbuf4, GET_OBJ_AFFECT(obj)[3]);
 
       fprintf(obj_file,
           "%d %s %s %s %s %s %s %s %s %s %s %s %s\n",

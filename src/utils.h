@@ -697,8 +697,6 @@ do                                                              \
 
 /** Level of obj. */
 #define GET_OBJ_LEVEL(obj)      ((obj)->obj_flags.level)
-/** Permanent affects on obj. */
-#define GET_OBJ_PERM(obj)       ((obj)->obj_flags.bitvector)
 /** Type of obj. */
 #define GET_OBJ_TYPE(obj)	((obj)->obj_flags.type_flag)
 /** Cost of obj. */

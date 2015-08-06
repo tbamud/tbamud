@@ -1886,10 +1886,10 @@ char *parse_object(FILE *obj_f, int nr)
     GET_OBJ_WEAR(obj_proto + i)[1] = 0;
     GET_OBJ_WEAR(obj_proto + i)[2] = 0;
     GET_OBJ_WEAR(obj_proto + i)[3] = 0;
-    GET_OBJ_PERM(obj_proto + i)[0] = asciiflag_conv_aff(f3);
-    GET_OBJ_PERM(obj_proto + i)[1] = 0;
-    GET_OBJ_PERM(obj_proto + i)[2] = 0;
-    GET_OBJ_PERM(obj_proto + i)[3] = 0;
+    GET_OBJ_AFFECT(obj_proto + i)[0] = asciiflag_conv_aff(f3);
+    GET_OBJ_AFFECT(obj_proto + i)[1] = 0;
+    GET_OBJ_AFFECT(obj_proto + i)[2] = 0;
+    GET_OBJ_AFFECT(obj_proto + i)[3] = 0;
 
     if(bitsavetodisk) {
       add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 1);
@@ -1907,10 +1907,10 @@ char *parse_object(FILE *obj_f, int nr)
     GET_OBJ_WEAR(obj_proto + i)[1] = asciiflag_conv(f6);
     GET_OBJ_WEAR(obj_proto + i)[2] = asciiflag_conv(f7);
     GET_OBJ_WEAR(obj_proto + i)[3] = asciiflag_conv(f8);
-    GET_OBJ_PERM(obj_proto + i)[0] = asciiflag_conv(f9);
-    GET_OBJ_PERM(obj_proto + i)[1] = asciiflag_conv(f10);
-    GET_OBJ_PERM(obj_proto + i)[2] = asciiflag_conv(f11);
-    GET_OBJ_PERM(obj_proto + i)[3] = asciiflag_conv(f12);
+    GET_OBJ_AFFECT(obj_proto + i)[0] = asciiflag_conv(f9);
+    GET_OBJ_AFFECT(obj_proto + i)[1] = asciiflag_conv(f10);
+    GET_OBJ_AFFECT(obj_proto + i)[2] = asciiflag_conv(f11);
+    GET_OBJ_AFFECT(obj_proto + i)[3] = asciiflag_conv(f12);
 
   } else {
     log("SYSERR: Format error in first numeric line (expecting 13 args, got %d), %s", retval, buf2);
