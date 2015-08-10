@@ -2043,11 +2043,6 @@ ACMD(do_last)
       return;
     }
 
-    if ((GET_LEVEL(vict) > GET_LEVEL(ch)) && (GET_LEVEL(ch) < LVL_IMPL)) {
-      send_to_char(ch, "You are not sufficiently godly for that!\r\n");
-      return;
-    }
-
     send_to_char(ch, "[%5ld] [%2d %s] %-12s : %-18s : %-20s\r\n",
     GET_IDNUM(vict), (int) GET_LEVEL(vict),
     class_abbrevs[(int) GET_CLASS(vict)], GET_NAME(vict),
