@@ -458,6 +458,11 @@ ACMD(do_whirlwind)
     return;
   }
   
+  if ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL) {
+    send_to_char(ch, "This room just has such a peaceful, easy feeling...\r\n");
+    return;
+  }
+
   if (GET_POS(ch) < POS_FIGHTING) {
     send_to_char(ch, "You must be on your feet to perform a whirlwind.\r\n");
     return;    
