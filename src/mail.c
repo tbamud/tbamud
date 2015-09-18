@@ -211,10 +211,9 @@ char *read_delete(long recipient)
   if (!record_to_keep)
   	sprintf(buf, "Mail system error - please report");
   else {
-    char *tmstr, *from, *to;
+    char timestr[25], *from, *to;
 
-    tmstr = asctime(localtime(&record_to_keep->sent_time));
-    *(tmstr + strlen(tmstr) - 1) = '\0';
+    strftime(timestr, sizeof(timestr), "%c", localtime(&(record_to_keep->sent_time)));
 
     from = get_name_by_id(record_to_keep->sender);
     to = get_name_by_id(record_to_keep->recipient);
@@ -227,7 +226,7 @@ char *read_delete(long recipient)
              "\r\n"
              "%s",
 
-             tmstr,
+             timestr,
              to ? to : "Unknown",
              from ? from : "Unknown",
              record_to_keep->body ? record_to_keep->body : "No message" );

@@ -764,16 +764,14 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
   if (!IS_NPC(k)) {
     char buf1[64], buf2[64];
 
-    strlcpy(buf1, asctime(localtime(&(k->player.time.birth))), sizeof(buf1));
-    strlcpy(buf2, asctime(localtime(&(k->player.time.logon))), sizeof(buf2));
-    buf1[10] = buf2[10] = '\0';
+    strftime(buf1, sizeof(buf1), "%a %b %d %Y", localtime(&(k->player.time.birth)));
+    strftime(buf2, sizeof(buf2), "%a %b %d %Y", localtime(&(k->player.time.logon)));
 
-    send_to_char(ch, "Created: [%s], Last Logon: [%s], Played [%dh %dm], Age [%d]\r\n",
-	    buf1, buf2, k->player.time.played / 3600,
-	    ((k->player.time.played % 3600) / 60), age(k)->year);
+    send_to_char(ch, "Created: [%s], Last Logon: [%s]\r\n", buf1, buf2);
 
-    send_to_char(ch, "STL[%d]/per[%d]/NSTL[%d]",
-	    GET_PRACTICES(k), int_app[GET_INT(k)].learn,
+    send_to_char(ch, "Played: [%dh %dm], Age: [%d], STL[%d]/per[%d]/NSTL[%d]",
+            k->player.time.played / 3600, (k->player.time.played % 3600) / 60,
+            age(k)->year, GET_PRACTICES(k), int_app[GET_INT(k)].learn,
 	    wis_app[GET_WIS(k)].bonus);
     /* Display OLC zone for immorts. */
     if (GET_LEVEL(k) >= LVL_BUILDER) {
@@ -1766,7 +1764,7 @@ ACMD(do_wizlock)
 
 ACMD(do_date)
 {
-  char *tmstr;
+  char timestr[25];
   time_t mytime;
   int d, h, m;
 
@@ -1775,18 +1773,17 @@ ACMD(do_date)
   else
     mytime = boot_time;
 
-  tmstr = (char *) asctime(localtime(&mytime));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
+  strftime(timestr, sizeof(timestr), "%c", localtime(&mytime));
 
   if (subcmd == SCMD_DATE)
-    send_to_char(ch, "Current machine time: %s\r\n", tmstr);
+    send_to_char(ch, "Current machine time: %s\r\n", timestr);
   else {
     mytime = time(0) - boot_time;
     d = mytime / 86400;
     h = (mytime / 3600) % 24;
     m = (mytime / 60) % 60;
 
-    send_to_char(ch, "Up since %s: %d day%s, %d:%02d\r\n", tmstr, d, d == 1 ? "" : "s", h, m);
+    send_to_char(ch, "Up since %s: %d day%s, %d:%02d\r\n", timestr, d, d == 1 ? "" : "s", h, m);
   }
 }
 
@@ -1977,6 +1974,7 @@ void list_llog_entries(struct char_data *ch)
   FILE *fp;
   struct last_entry llast;
   int i;
+  char timestr[25];
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
     log("bad things.");
@@ -1985,9 +1983,11 @@ void list_llog_entries(struct char_data *ch)
   send_to_char(ch, "Last log\r\n");
   i = fread(&llast, sizeof(struct last_entry), 1, fp);
 
+  strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M:%S", localtime(&llast.time));
+
   while(!feof(fp)) {
-    send_to_char(ch, "%10s\t%d\t%s\t%s", llast.username, llast.punique,
-        last_array[llast.close_type], ctime(&llast.time));
+    send_to_char(ch, "%10s\t%d\t%s\t%s\r\n", llast.username, llast.punique,
+        last_array[llast.close_type], timestr);
     i = fread(&llast, sizeof(struct last_entry), 1, fp);
   }
 }
@@ -2005,12 +2005,13 @@ static struct char_data *is_in_game(long idnum) {
 
 ACMD(do_last)
 {
-  char arg[MAX_INPUT_LENGTH], name[MAX_INPUT_LENGTH];
+  char arg[MAX_INPUT_LENGTH], name[MAX_INPUT_LENGTH], timestr[25], to[6];
+  char deltastr[6];
+  time_t delta;
   struct char_data *vict = NULL;
   struct char_data *temp;
   int recs, i, num = 0;
   FILE *fp;
-  time_t delta;
   struct last_entry mlast;
 
   *name = '\0';
@@ -2018,7 +2019,7 @@ ACMD(do_last)
   if (*argument) { /* parse it */
     half_chop(argument, arg, argument);
     while (*arg) {
-      if ((*arg == '*') && (GET_LEVEL(ch) == LVL_IMPL)) {
+      if ((*arg == '*' || !strcmp(arg, "all")) && (GET_LEVEL(ch) == LVL_IMPL)) {
         list_llog_entries(ch);
         return;
       }
@@ -2043,11 +2044,12 @@ ACMD(do_last)
       return;
     }
 
-    send_to_char(ch, "[%5ld] [%2d %s] %-12s : %-18s : %-20s\r\n",
+    strftime(timestr, sizeof(timestr), "%a %b %d %H:%M:%S %Y", localtime(&(vict->player.time.logon)));
+
+    send_to_char(ch, "[%5ld] [%2d %s] %-12s : %-18s : %-24s\r\n",
     GET_IDNUM(vict), (int) GET_LEVEL(vict),
     class_abbrevs[(int) GET_CLASS(vict)], GET_NAME(vict),
-    GET_HOST(vict) && *GET_HOST(vict) ? GET_HOST(vict) : "(NOHOST)",
-    ctime(&vict->player.time.logon));
+    GET_HOST(vict) && *GET_HOST(vict) ? GET_HOST(vict) : "(NOHOST)", timestr);
     free_char(vict);
     return;
     }
@@ -2069,15 +2071,18 @@ ACMD(do_last)
     i = fread(&mlast,sizeof(struct last_entry),1,fp);
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if(!*name ||(*name && !str_cmp(name, mlast.username))) {
-      send_to_char(ch,"%10.10s %20.20s %16.16s - ",
-        mlast.username, mlast.hostname, ctime(&mlast.time));
+      strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M", localtime(&mlast.time));
+      send_to_char(ch,"%10.10s %20.20s %20.21s - ",
+        mlast.username, mlast.hostname, timestr);
       if((temp=is_in_game(mlast.idnum)) && mlast.punique == GET_PREF(temp)) {
         send_to_char(ch, "Still Playing  ");
       } else {
-        send_to_char(ch, "%5.5s ",ctime(&mlast.close_time)+11);
-        delta=mlast.close_time - mlast.time;
-        send_to_char(ch, "(%5.5s) ",asctime(gmtime(&delta))+11);
-        send_to_char(ch, "%s", last_array[mlast.close_type]);
+        delta = mlast.close_time - mlast.time;
+	strftime(to, sizeof(to), "%H:%M", localtime(&mlast.close_time));
+	strftime(deltastr, sizeof(deltastr), "%H:%M", gmtime(&delta));
+
+        send_to_char(ch, "%5.5s (%5.5s) %s", to, deltastr,
+          last_array[mlast.close_type]);
       }
 
       send_to_char(ch, "\r\n");
@@ -2543,7 +2548,9 @@ ACMD(do_show)
     break;
 
   /* show player */
-  case 2:
+  case 2: {
+    char buf1[64], buf2[64];
+
     if (!*value) {
       send_to_char(ch, "A name would help.\r\n");
       return;
@@ -2558,22 +2565,24 @@ ACMD(do_show)
       free_char(vict);
       return;
     }
+
+    strftime(buf1, sizeof(buf1), "%a %b %d %H:%M:%S %Y", localtime(&(vict->player.time.birth)));
+    strftime(buf2, sizeof(buf2), "%a %b %d %H:%H:%S %Y", localtime(&(vict->player.time.logon)));
+
     send_to_char(ch, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vict),
       genders[(int) GET_SEX(vict)], GET_LEVEL(vict), class_abbrevs[(int)
       GET_CLASS(vict)]);
-    send_to_char(ch, "Au: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n",
-    GET_GOLD(vict), GET_BANK_GOLD(vict), GET_EXP(vict),
-    GET_ALIGNMENT(vict), GET_PRACTICES(vict));
-
-    /* ctime() uses static buffer: do not combine. */
-    send_to_char(ch, "Started: %-20.16s  ", ctime(&vict->player.time.birth));
-    send_to_char(ch, "Last: %-20.16s  Played: %3dh %2dm\r\n",
-      ctime(&vict->player.time.logon),
+    send_to_char(ch, "Gold: %-8d  Bal: %-8d Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n",
+      GET_GOLD(vict), GET_BANK_GOLD(vict), GET_EXP(vict),
+      GET_ALIGNMENT(vict), GET_PRACTICES(vict));
+    send_to_char(ch, "Started: %-25.25s  Last: %-25.25s\r\n", buf1, buf2);
+    send_to_char(ch, "Played: %dh %dm\r\n",
       (int) (vict->player.time.played / 3600),
       (int) (vict->player.time.played / 60 % 60));
+
     free_char(vict);
     break;
-
+  }
   /* show rent */
   case 3:
     if (!*value) {
@@ -4412,7 +4421,7 @@ ACMD(do_file)
 ACMD(do_changelog)
 {
   time_t rawtime;
-  char tmstr[MAX_INPUT_LENGTH], line[READ_SIZE], last_buf[READ_SIZE],
+  char timestr[12], line[READ_SIZE], last_buf[READ_SIZE],
       buf[READ_SIZE];
   FILE *fl, *new;
 
@@ -4452,9 +4461,9 @@ ACMD(do_changelog)
   }
 
   rawtime = time(0);
-  strftime(tmstr, sizeof(tmstr), "%b %d %Y", localtime(&rawtime));
+  strftime(timestr, sizeof(timestr), "%b %d %Y", localtime(&rawtime));
 
-  sprintf(buf, "[%s] - %s", tmstr, GET_NAME(ch));
+  sprintf(buf, "[%s] - %s", timestr, GET_NAME(ch));
 
   fprintf(new, "%s\n", buf);
   fprintf(new, "  %s\n", argument);
@@ -4476,7 +4485,7 @@ ACMD(do_changelog)
 ACMD(do_plist)
 {
   int i, len = 0, count = 0;
-  char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_NAME_LENGTH], time_str[MAX_STRING_LENGTH];
+  char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_NAME_LENGTH], timestr[MAX_STRING_LENGTH];
   struct time_info_data time_away;
   int low = 0, high = LVL_IMPL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
 
@@ -4549,12 +4558,11 @@ ACMD(do_plist)
     if (time_away.hours > high_hr || time_away.hours < low_hr)
       continue;
 
-    strcpy(time_str, asctime(localtime(&player_table[i].last)));
-    time_str[strlen(time_str) - 1] = '\0';
+    strftime(timestr, sizeof(timestr), "%c", localtime(&player_table[i].last));
 
     len += snprintf(buf + len, sizeof(buf) - len, "[%3ld] (%2d) %c%-15s %s\r\n",
                     player_table[i].id, player_table[i].level,
-                    UPPER(*player_table[i].name), player_table[i].name + 1, time_str);
+                    UPPER(*player_table[i].name), player_table[i].name + 1, timestr);
     count++;
   }
   snprintf(buf + len, sizeof(buf) - len, "%s-------------------------------------%s\r\n"
@@ -4949,7 +4957,7 @@ void free_recent_players(void)
 ACMD(do_recent)
 {
   time_t ct;
-  char *tmstr, arg[MAX_INPUT_LENGTH];
+  char timestr[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
   int hits = 0, limit = 0, count = 0;
   struct recent_player *this;
   bool loc;
@@ -4962,9 +4970,9 @@ ACMD(do_recent)
   }
 
   if (GET_LEVEL(ch) >= LVL_GRGOD) {  /* If High-Level Imm, then show Host IP */
-    send_to_char(ch, " ID | DATE/TIME           | HOST IP                               | Player Name\r\n");
+    send_to_char(ch, " ID | DATE/TIME                | HOST IP                          | Player Name\r\n");
   } else {
-    send_to_char(ch, " ID | DATE/TIME           | Player Name\r\n");
+    send_to_char(ch, " ID | DATE/TIME                | Player Name\r\n");
   }
 
   this = recent_list;
@@ -4973,8 +4981,8 @@ ACMD(do_recent)
     loc = FALSE;
     hits++;
     ct = this->time;
-    tmstr = asctime(localtime(&ct));
-    *(tmstr + strlen(tmstr) - 1) = '\0';   /* Cut off last char */
+    strftime(timestr, sizeof(timestr), "%a %b %d %H:%M:%S %Y", localtime(&ct));
+
     if (this->host && *(this->host)) {
       if (!strcmp(this->host, "localhost")) loc = TRUE;
     }
@@ -4984,21 +4992,21 @@ ACMD(do_recent)
       if (GET_LEVEL(ch) >= LVL_GRGOD)   /* If High-Level Imm, then show Host IP */
       {
         if (this->new_player == TRUE) {
-          send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s %s(New Player)%s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name, QYEL, QNRM);
+          send_to_char(ch, "%3d | %-24.24s | %s%-32s%s | %s %s(New Player)%s\r\n", this->vnum, timestr, loc ? QRED : "", this->host, QNRM, this->name, QYEL, QNRM);
         } else if (this->copyover_player == TRUE) {
-          send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s %s(Copyover)%s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name, QCYN, QNRM);
+          send_to_char(ch, "%3d | %-24.24s | %s%-32s%s | %s %s(Copyover)%s\r\n", this->vnum, timestr, loc ? QRED : "", this->host, QNRM, this->name, QCYN, QNRM);
         } else {
-          send_to_char(ch, "%3d | %-19.19s | %s%-37s%s | %s\r\n", this->vnum, tmstr, loc ? QRED : "", this->host, QNRM, this->name);
+          send_to_char(ch, "%3d | %-24.24s | %s%-32s%s | %s\r\n", this->vnum, timestr, loc ? QRED : "", this->host, QNRM, this->name);
         }
       }
       else
       {
         if (this->new_player == TRUE) {
-          send_to_char(ch, "%3d | %-19.19s | %s %s(New Player)%s\r\n", this->vnum, tmstr, this->name, QYEL, QNRM);
+          send_to_char(ch, "%3d | %-24.24s | %s %s(New Player)%s\r\n", this->vnum, timestr, this->name, QYEL, QNRM);
         } else if (this->copyover_player == TRUE) {
-          send_to_char(ch, "%3d | %-19.19s | %s %s(Copyover)%s\r\n", this->vnum, tmstr, this->name, QCYN, QNRM);
+          send_to_char(ch, "%3d | %-24.24s | %s %s(Copyover)%s\r\n", this->vnum, timestr, this->name, QCYN, QNRM);
         } else {
-          send_to_char(ch, "%3d | %-19.19s | %s\r\n", this->vnum, tmstr, this->name);
+          send_to_char(ch, "%3d | %-24.24s | %s\r\n", this->vnum, timestr, this->name);
         }
       }
       count++;
@@ -5012,9 +5020,8 @@ ACMD(do_recent)
   }
 
   ct = time(0);  /* Grab the current time */
-  tmstr = asctime(localtime(&ct));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
-  send_to_char(ch, "Current Server Time: %-19.19s\r\nShowing %d players since last copyover/reboot\r\n", tmstr, hits);
+  strftime(timestr, sizeof(timestr), "%c", localtime(&ct));
+  send_to_char(ch, "Current Server Time: %s\r\nShowing %d players since last copyover/reboot\r\n", timestr, hits);
 }
 
 

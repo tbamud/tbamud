@@ -286,21 +286,21 @@ AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY
 is at protecting you.  When you don armor, any AC apply that armor has is 
 subtracted from your standard (naked) AC value, modified depending on where on
 the body you are wearing the armor.  Some items have a special bonus, and 
-subtract from the AC directly. Negative AC is better. Modifiers: Body X3, 
-head and legs X2.
+subtract from the AC directly. Negative AC is better. 
 
-See also: MEDIT-AC
-#31
+See Also: ARMOR-SPELL
+#0
 AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY 
 
    Your Armor Class (often called AC) is an expression for how good your armor
 is at protecting you.  When you don armor, any AC apply that armor has is 
 subtracted from your standard (naked) AC value, modified depending on where on
 the body you are wearing the armor.  Some items have a special bonus, and 
-subtract from the AC directly. Negative AC is better. 
+subtract from the AC directly. Negative AC is better. Modifiers: Body X3, 
+head and legs X2.
 
-See Also: ARMOR-SPELL
-#0
+See also: MEDIT-AC
+#31
 ACRONYMS TERMINOLOGY VOCABULARY
 
 Here are some common terms used in building, and TBA zone:
@@ -1184,36 +1184,6 @@ NOTE: Buildwalk does not autosave on exit. You must type SAVEALL. This way if
  
 See also: TOGGLE, SAVEALL, REDIT, OLC, RLIST, DIG
 #31
-BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS POSTING
-
-Bulletin boards are the forum of inter-player communication on the MUD.
-There are different bulletin boards for different purposes -- for example,
-a standard mortal board, a board for immortals, a board for fun "social"
-messages, etc.  Naturally, not all players may be allowed to read all
-types of boards.
-
-Type "LOOK BOARD" to see the messages already posted on a board.  Type
-"WRITE <subject>" to post a message to a board; terminate a message with
-a '/s' as the first characters on a line.  Type "READ <number>" to read a
-post.  Type "REMOVE <number>" to remove your own messages.
-
-Examples:
-  > look at board
-  > write Crash Bug I found!
-  [writes the message; terminates with '/s']
-  > look at board
-  > read 6
-  > remove 6
-
-Boards are just a normal object with a special procedure attached in the
-MUD's code. Ask your friendly implementor if you need to make one.
-
-@uRoom - Board@n 
-1204 - Immortal Board
-1290 - Social Board
-
-See also: MAIL, READ, WRITE, SPECIALS
-#31
 BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS
 
 Bulletin boards are the forum of inter-player communication on the MUD.
@@ -1244,6 +1214,36 @@ MUD's code. Ask your friendly implementor if you need to make one.
 
 See also: MAIL, READ, WRITE
 #0
+BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS POSTING
+
+Bulletin boards are the forum of inter-player communication on the MUD.
+There are different bulletin boards for different purposes -- for example,
+a standard mortal board, a board for immortals, a board for fun "social"
+messages, etc.  Naturally, not all players may be allowed to read all
+types of boards.
+
+Type "LOOK BOARD" to see the messages already posted on a board.  Type
+"WRITE <subject>" to post a message to a board; terminate a message with
+a '/s' as the first characters on a line.  Type "READ <number>" to read a
+post.  Type "REMOVE <number>" to remove your own messages.
+
+Examples:
+  > look at board
+  > write Crash Bug I found!
+  [writes the message; terminates with '/s']
+  > look at board
+  > read 6
+  > remove 6
+
+Boards are just a normal object with a special procedure attached in the
+MUD's code. Ask your friendly implementor if you need to make one.
+
+@uRoom - Board@n 
+1204 - Immortal Board
+1290 - Social Board
+
+See also: MAIL, READ, WRITE, SPECIALS
+#31
 BURNING-HANDS
 
 Usage       : cast 'burning hands' <victim>
@@ -1991,29 +1991,6 @@ CONTROL-WEATHER
 
 Usage       : cast 'control weather' <'better' | 'worse'>
 Accumulative: Yes
-
-This spell will change the "course" of the current weather.
-
-Example:
-
-  > cast 'control wea' worse
-See also: %WEATHER%, WEATHER
-#31
-CONTROL-WEATHER
-
-Usage       : cast 'control weather' <'better' | 'worse'>
-Accumulative: Yes
-
-This spell will change the "course" of the current weather.
-
-Example:
-
-  > cast 'control wea' worse
-#0
-CONTROL-WEATHER
-
-Usage       : cast 'control weather' <'better' | 'worse'>
-Accumulative: Yes
 Duration    : -
 Level       : Cleric level 17.
 
@@ -2023,6 +2000,29 @@ Example:
 
   > cast 'control wea' worse
 #0
+CONTROL-WEATHER
+
+Usage       : cast 'control weather' <'better' | 'worse'>
+Accumulative: Yes
+
+This spell will change the "course" of the current weather.
+
+Example:
+
+  > cast 'control wea' worse
+#0
+CONTROL-WEATHER
+
+Usage       : cast 'control weather' <'better' | 'worse'>
+Accumulative: Yes
+
+This spell will change the "course" of the current weather.
+
+Example:
+
+  > cast 'control wea' worse
+See also: %WEATHER%, WEATHER
+#31
 COPYOVERS
 
 Usage: copyover
@@ -4252,7 +4252,7 @@ all the / commands do).
 #31
 LAST LASTLISTS
 
-Usage: last [player_name | all] [#]
+Usage: last [[#] [player_name] | all | *]
  
 For checking the last time(s) a person logged on, their sitename, and their
 ID number. This now works similar to the unix version of 'last'. This will
@@ -10257,6 +10257,27 @@ TNL
 can attain the next level.
 
 #0
+TOGGLES CONFIGURE SETTINGS
+
+Usage: toggle
+       toggle <option> <argument>
+
+TOGGLE shows you the current values of various toggles available on the MUD.
+This command can also be used to change these values, if used with the correct
+argument. When a toggle is set, it will be saved in that state until the next
+time you change it. 
+
+Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
+   Move Display: OFF            Compact: ON               Quest: OFF
+   Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
+      AutoExits: OFF            NoShout: OFF              Wimpy: OFF
+       NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
+       AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
+        AutoSac: ON          AutoAssist: ON                 AFK: OFF
+     Pagelength: 23               Color: off     
+
+See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
+#0
 TOGGLES CONFIGURE SETTINGS 
 
 Usage: toggle
@@ -10280,27 +10301,6 @@ Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
         AutoSac: ON          AutoAssist: ON             AutoMap: ON
      Pagelength: 32         Screenwidth: 80                 AFK: OFF
         Autokey: OFF           Autodoor: OFF              Color: on     
-
-See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
-#0
-TOGGLES CONFIGURE SETTINGS
-
-Usage: toggle
-       toggle <option> <argument>
-
-TOGGLE shows you the current values of various toggles available on the MUD.
-This command can also be used to change these values, if used with the correct
-argument. When a toggle is set, it will be saved in that state until the next
-time you change it. 
-
-Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
-   Move Display: OFF            Compact: ON               Quest: OFF
-   Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
-      AutoExits: OFF            NoShout: OFF              Wimpy: OFF
-       NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
-       AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
-        AutoSac: ON          AutoAssist: ON                 AFK: OFF
-     Pagelength: 23               Color: off     
 
 See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
 #0

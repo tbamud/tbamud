@@ -996,7 +996,6 @@ ACMD(do_time)
       break;
     }
   }
-
   send_to_char(ch, "The %d%s Day of the %s, Year %d.\r\n",
 	  day, suf, month_name[time_info.month], time_info.year);
 }
@@ -1363,7 +1362,7 @@ ACMD(do_who)
 ACMD(do_users)
 {
   char line[200], line2[220], idletime[10], classname[20];
-  char state[30], *timeptr, mode;
+  char state[30], timestr[9], mode;
   char name_search[MAX_INPUT_LENGTH], host_search[MAX_INPUT_LENGTH];
   struct char_data *tch;
   struct descriptor_data *d;
@@ -1463,9 +1462,7 @@ ACMD(do_users)
     } else
       strcpy(classname, "   -   ");
 
-    timeptr = asctime(localtime(&d->login_time));
-    timeptr += 11;
-    *(timeptr + 8) = '\0';
+    strftime(timestr, sizeof(timestr), "%H:%M:%S", localtime(&(d->login_time)));
 
     if (STATE(d) == CON_PLAYING && d->original)
       strcpy(state, "Switched");
@@ -1482,7 +1479,7 @@ ACMD(do_users)
 	d->original && d->original->player.name ? d->original->player.name :
 	d->character && d->character->player.name ? d->character->player.name :
 	"UNDEFINED",
-	state, idletime, timeptr);
+	state, idletime, timestr);
 
     if (d->host && *d->host)
       sprintf(line + strlen(line), "[%s]\r\n", d->host);
@@ -2405,8 +2402,7 @@ ACMD(do_whois)
   send_to_char(ch, "Level: %d\r\n", GET_LEVEL(victim));
 
   if (!(GET_LEVEL(victim) < LVL_IMMORT) || (GET_LEVEL(ch) >= GET_LEVEL(victim))) {
-    strcpy (buf, (char *) asctime(localtime(&(victim->player.time.logon))));
-    buf[10] = '\0';
+    strftime(buf, sizeof(buf), "%a %b %d %Y", localtime(&(victim->player.time.logon)));
 
     hours = (time(0) - victim->player.time.logon) / 3600;
 

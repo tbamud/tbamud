@@ -778,7 +778,7 @@ void tag_argument(char *argument, char *tag)
  * deleted by an immortal, or deleted by the auto-wipe system (if enabled). */
 void remove_player(int pfilepos)
 {
-  char filename[MAX_STRING_LENGTH];
+  char filename[MAX_STRING_LENGTH], timestr[25];
   int i;
 
   if (!*player_table[pfilepos].name)
@@ -790,9 +790,10 @@ void remove_player(int pfilepos)
       unlink(filename);
   }
 
+  strftime(timestr, sizeof(timestr), "%c", localtime(&(player_table[pfilepos].last)));
   log("PCLEAN: %s Lev: %d Last: %s",
 	player_table[pfilepos].name, player_table[pfilepos].level,
-	asctime(localtime(&player_table[pfilepos].last)));
+	timestr);
   player_table[pfilepos].name[0] = '\0';
 
   /* Update index table. */
