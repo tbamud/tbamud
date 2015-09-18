@@ -291,7 +291,7 @@ const char *HCONTROL_FORMAT =
 void hcontrol_list_houses(struct char_data *ch, char *arg)
 {
   int i;
-  char *timestr, *temp;
+  char *temp;
   char built_on[128], last_pay[128], own_name[MAX_NAME_LENGTH + 1];
 
 	if (arg && *arg) {
@@ -315,8 +315,8 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
     return;
   }
   send_to_char(ch,
-	"Address  Atrium  Build Date  Guests  Owner        Last Paymt\r\n"
-	"-------  ------  ----------  ------  ------------ ----------\r\n");
+	"Address  Atrium  Build Date       Guests  Owner        Last Paymt\r\n"
+	"-------  ------  ---------------  ------  ------------ ---------------\r\n");
 
   for (i = 0; i < num_of_houses; i++) {
     /* Avoid seeing <UNDEF> entries from self-deleted people. -gg 6/21/98 */
@@ -324,22 +324,18 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
       continue;
 
     if (house_control[i].built_on) {
-      timestr = asctime(localtime(&(house_control[i].built_on)));
-      *(timestr + 10) = '\0';
-      strlcpy(built_on, timestr, sizeof(built_on));
+      strftime(built_on, sizeof(built_on), "%a %b %d %Y", localtime(&(house_control[i].built_on)));
     } else
-      strcpy(built_on, "Unknown");	/* strcpy: OK (for 'strlen("Unknown") < 128') */
+      strcpy(built_on, "Unknown"); /* strcpy: OK */
 
     if (house_control[i].last_payment) {
-      timestr = asctime(localtime(&(house_control[i].last_payment)));
-      *(timestr + 10) = '\0';
-      strlcpy(last_pay, timestr, sizeof(last_pay));
+      strftime(last_pay, sizeof(last_pay), "%a %b %d %Y", localtime(&(house_control[i].last_payment)));
     } else
-      strcpy(last_pay, "None");	/* strcpy: OK (for 'strlen("None") < 128') */
+      strcpy(last_pay, "None");	/* strcpy: OK */
 
     /* Now we need a copy of the owner's name to capitalize. -gg 6/21/98 */
     strcpy(own_name, temp);	/* strcpy: OK (names guaranteed <= MAX_NAME_LENGTH+1) */
-    send_to_char(ch, "%7d %7d  %-10s    %2d    %-12s %s\r\n",
+    send_to_char(ch, "%7d %7d  %-15s    %2d    %-12s %s\r\n",
 	    house_control[i].vnum, house_control[i].atrium, built_on,
 	    house_control[i].num_of_guests, CAP(own_name), last_pay);
 

@@ -453,7 +453,7 @@ static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch)
 ACMD(do_ibt)
 {
   char arg[MAX_STRING_LENGTH], arg2[MAX_STRING_LENGTH];
-  char buf[MAX_STRING_LENGTH], *arg_text, imp[30];
+  char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[128];
   int  i, num_res, num_unres;
   IBT_DATA *ibtData, *first_ibt, *last_ibt;
   int ano=0;
@@ -516,9 +516,13 @@ ACMD(do_ibt)
       if ((GET_LEVEL(ch) < LVL_IMMORT) && (!is_ibt_logger(ibtData, ch))) {
         send_to_char(ch, "Sorry but you may only view %ss you have posted yourself.\n\r", ibt_types[subcmd]);
       } else {
-
         send_to_char(ch, "%s%s by %s%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->name);
-        send_to_char(ch, "%sSubmitted: %s%s", QCYN, QYEL, ibtData->dated ? ctime((const time_t*)&ibtData->dated) : "Unknown\r\n");
+        if (ibtData->dated != 0) {
+          strftime(timestr, sizeof(timestr), "%c", localtime(&(ibtData->dated)));
+        } else {
+          strcpy(timestr, "Unknown");
+        }
+        send_to_char(ch, "%sSubmitted: %s%s\r\n", QCYN, QYEL, timestr);
         if (GET_LEVEL(ch) >= LVL_IMMORT) {
           send_to_char(ch, "%sLevel: %s%d\r\n",QCYN, QYEL, ibtData->level);
           send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);

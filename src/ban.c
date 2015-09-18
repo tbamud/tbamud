@@ -118,7 +118,7 @@ static void write_ban_list(void)
   return;
 }
 
-#define BAN_LIST_FORMAT "%-25.25s  %-8.8s  %-10.10s  %-16.16s\r\n"
+#define BAN_LIST_FORMAT "%-25.25s  %-8.8s  %-15.15s  %-16.16s\r\n"
 ACMD(do_ban)
 {
   char flag[MAX_INPUT_LENGTH], site[MAX_INPUT_LENGTH], *nextchar;
@@ -144,8 +144,7 @@ ACMD(do_ban)
 
     for (ban_node = ban_list; ban_node; ban_node = ban_node->next) {
       if (ban_node->date) {
-	strlcpy(timestr, asctime(localtime(&(ban_node->date))), 10);
-	timestr[10] = '\0';
+        strftime(timestr, sizeof(timestr), "%a %b %d %Y", localtime(&(ban_node->date)));
       } else
 	strcpy(timestr, "Unknown");	/* strcpy: OK (strlen("Unknown") < 16) */
 
