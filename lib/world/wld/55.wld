@@ -221,7 +221,7 @@ large wrought iron gates lie open before you.  Although they might not
 ever be used the priests in the temple are ready to defend themselves,
 should their city ever come under seige again.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 1
 D0
 ~
 ~
@@ -306,7 +306,7 @@ Around the sides are four wrought iron benches with cushions where the
 mages of the land sit and exchange ideas.  To the west stands a two-story
 tower where the leader of the mages' guild performs his experiments.
 ~
-55 16 0 0 0 0
+55 16 0 0 0 1
 D2
 ~
 ~
@@ -343,7 +343,7 @@ either preaching or listening to their fellows preach.  Huge
 marble steps lead up to the gates of the temple and Main Street
 lies to the south.
 ~
-55 68 0 0 0 0
+55 68 0 0 0 1
 D0
 ~
 ~
@@ -749,7 +749,7 @@ Sultan's choice Arabian Stallions, and each has their own trough
 for drinking.  A small boy wanders in sometimes with a shovel to
 remove the offensive by-product of such beasts.
 ~
-55 8 0 0 0 0
+55 8 0 0 0 1
 D1
 ~
 ~
@@ -783,7 +783,7 @@ The Dump~
 to the constant winds blowing down the moutains the smell is usually blown
 outside the walls and over the desert.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 1
 D2
 ~
 ~
@@ -951,7 +951,7 @@ The ruler of all the eastern lands resides in this fine palace, and he is
 not a poor man.  The grand entrance lies byond the gate, and Sultan's Walk
 is to the east.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 1
 D1
 ~
 ~
@@ -1094,7 +1094,7 @@ Outside The Northern Gate Of New Thalos~
    You stand outside the gate of New Thalos.  The city lies to the south,
 and wilderness to the north.
 ~
-55 4 0 0 0 0
+55 4 0 0 0 1
 D0
 ~
 ~
@@ -1109,7 +1109,7 @@ Outside The Eastern Gate Of New Thalos~
    You stand outside the protective walls of the city.  The massive iron
 gate sits to the west and the unknown awaits you eastward.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 1
 D1
 ~
 ~
@@ -1128,7 +1128,7 @@ Outside The West Gate Of New Thalos~
    You stand outside the city walls, the iron gate to the east.  The city
 lies in that direction and the road to Midgaard lies west.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 1
 D1
 ~
 gate~
@@ -1144,7 +1144,7 @@ Outside The Wall~
 ground seems well trodden but you can see no apparent exit save that
 to the north.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 2
 D0
 ~
 ~
@@ -1309,7 +1309,7 @@ trees, you see a delicate white gazebo.
    A path leads out into the hallway and west towards the gazebo.
 To your right stands a gold sign.
 ~
-55 0 0 0 0 0
+55 0 0 0 0 2
 D1
 ~
 ~

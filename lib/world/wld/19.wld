@@ -108,7 +108,7 @@ and the general decay of time.  It appears as though there were indeed paths
 here long ago, but water has saturated the ground, leaving nothing but
 featureless mud.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    The ground seems to slope downwards in this direction, making it look
 potentially difficult or impossible to get back up.  
@@ -151,7 +151,7 @@ Squelching Ground~
 slightest weight leaves deep imprints that quickly well back up with sloshing
 mud and the few sickly bits of plant life that grow here.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    The ground dips suddenly, substantial flooding and algae rendering it very
 slippery indeed.  
@@ -179,7 +179,7 @@ and casting the boggy ground in shadow.  The air is cooler here, the stone
 itself emitting an almost unnatural chill in contrast to the warmth of the
 surroundings.  
 ~
-19 1 0 0 0 0
+19 1 0 0 0 2
 D1
    The ground seems flatter and more stable toward this direction, an upright
 wooden stick breaking the smoothness of the horizon.  
@@ -213,7 +213,7 @@ Drowned Land~
 heat of some underground current.  Large blisters swell from the ground, popping
 with a hiss and releasing hot, swirling steam into the foggy air.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    It looks as though a large log has sunk into the area to the north, making it
 at least stable to walk on.  
@@ -241,7 +241,7 @@ giving the impression that this place has not recovered from some ancient
 battle.  Glimpses of metal can be seen half-buried in the ground, the armour and
 weapons of some long-decayed army.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    A darkness and chill seem to emanate from this direction, a great rock
 breaking the horizon far to the north.  
@@ -274,7 +274,7 @@ The rust has leached into the water, discolouring it deep red and filling the
 air with the overwhelming stench of decay and the sickly metallic scent of
 blood.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    A rhythmic blast of heat comes from this direction, cloudy steam obscuring
 the view of what lies beyond.  
@@ -314,7 +314,7 @@ Slippery Slope~
 Sloping steeply down from the south, thin rivulets of water trickle their way
 lazily down, accumulating in a watery pool at the base.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D2
    The way south looks too steep and too slippery to even begin trying to climb.
 ~
@@ -339,7 +339,7 @@ Scattered Rocks~
 treacherous path for walking.  Thin layers of slime glisten on the sharp rocks,
 along with various other old and unidentifiable stains.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    More scattered broken rocks can be seen trailing off to the north, water
 deepening steadily around them.  
@@ -386,7 +386,7 @@ soil it nevertheless is so large that it almost completely blocks further
 advancement.  Tiny fungi sprinkle the rotting wood and surrounding mud, products
 of its continuing decomposition.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D1
    Little stony peaks rise from the slippery mud here, providing a somewhat
 stable, albeit dangerous footpath.  
@@ -414,7 +414,7 @@ now it is just a watery bog, its high sloping sides sodden with slime from
 rotting vegetation and the wild overgrowth of algae and desperate creeping swamp
 vines.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    The way to the north grows darker and deeper, a strange ominous feeling
 hanging over the area like an invisible shadow.  
@@ -435,7 +435,7 @@ Dark Waters~
 of scum that floats everywhere.  Insects dart quickly here and there, apparently
 fleeing from the more ominous shadows that slide just beneath the surface.  
 ~
-19 4 0 0 0 0
+19 4 0 0 0 2
 D2
    The way south looks very slippery indeed, difficult to climb out of but not
 impossible.  
@@ -463,7 +463,7 @@ stirred by some unseen current.  Strange things surface with the movement,
 glimpses of shiny metal and splintered bone are all that mark this place as the
 grave it has become.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    The vast splayed roots of a giant tree stand upturned in the air, blocking
 any view of what lies beyond.  
@@ -497,7 +497,7 @@ as though this tree died years ago.  Dark streaks marr the wood, evidence
 perhaps of long past lightning storms, or the use of powerful magic in this
 area.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    This giant tree's trunk continues on into the north, sloping slightly
 downward as it becomes increasingly submerged in the mud.  
@@ -531,7 +531,7 @@ Scorched Trunk~
 huge reaching branches hold it from complete submersion.  Black unnatural burn
 marks weave their way like rotting vines all along the ancient bark.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    Huge splaying branches reach out in every direction, preventing further
 advancement.  
@@ -570,7 +570,7 @@ Stony Path~
 into the air as it laps around this small trail of island rocks, the only path
 through this watery part of the swamp.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D2
    The trail of jagged rocks continues to the south, the stones becoming
 suddenly larger and less natural as though broken off from some designed
@@ -597,7 +597,7 @@ Puddle of Algae~
 water.  Plant life of various kinds tangle and intertwine into each other
 beneath the water, making it very easy to become caught.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D1
    The bleak surface of the dark water is broken here and there with the peak of
 a jagged rock, leading off further to the east.  
@@ -619,7 +619,7 @@ hole leading into darkness beneath, as though some hollow tree has become buried
 just below the surface, the sound of thick mud dripping within a concealed space
 below.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    Thin, mossy trees wave wearily, blocking any further view of what lies to the
 north.  
@@ -732,7 +732,7 @@ creak and groan, swamp moss spreading slowly as if to consume them.  Thin
 grasses lean pathetically against the lanky trunks, almost like weary children
 clinging to their mothers.  
 ~
-19 4 0 0 0 0
+19 4 0 0 0 3
 D0
    A large gathering of trees can be seen extending to the north, a small gap
 opening the way.  
@@ -770,7 +770,7 @@ A Broken Bridge~
 almost natural mosaic walkway through the watery slime.  No river runs through
 here though the presence of this ancient bridge indicates that once there did.
 ~
-19 4 0 0 0 0
+19 4 0 0 0 2
 D1
    The sloping curve of a buried tree can be seen, rising like another small
 wooden bridge out of the watery ground.  
@@ -791,7 +791,7 @@ Sunken Road~
 no naturally formed path and an indication that long ago these grounds saw dry
 land, though now the smooth road is pitted with fungus and shelled creatures.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    The ground slopes downward, jagged rocks standing like little islands amongst
 the murky waters.  
@@ -825,7 +825,7 @@ Peak of the Rock~
 been a spectacular view if not for the waves of heat that cause the air to
 shimmer and swim, making everything seem eerily unreal.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
 ~
 ~
@@ -843,7 +843,7 @@ crevices and jagged stones that break the surface.  To the east and the west,
 large cavernous mouths protrude, though the hollows within appear to be
 underwater.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    A sunken path leads treacherously to the north, looking as though it was
 originally a continuation of the same path that extends to the south.  
@@ -875,7 +875,7 @@ Flooded Cave~
 be seen is slick with swamp slime and mosses, the odd glittering piece of armour
 shining like stars from the inky depths below.  
 ~
-19 13 0 0 0 0
+19 13 0 0 0 9
 D3
    Open air breathes gently from the west, natural light rippling vaguely on the
 surface of the breaking waters.  
@@ -901,7 +901,7 @@ Underwater Enclosure~
 swirling about and creating the apparent illusion of dark shadows and shapes
 swimming cautiously about.  
 ~
-19 13 0 0 0 0
+19 13 0 0 0 9
 D1
    Murky water and spiked rocks travel in a vague north to south path just
 outside the enclosure.  
@@ -916,7 +916,7 @@ of slate and chunks of stone mixing with the wreckage to create an unstable
 surface for walking on, the slick overgrowth of plant life making it even more
 treacherous.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    The path continues wet and treacherous to the north, smooth paved surfaces
 crumbled into broken pieces of stone and grit.  
@@ -1073,7 +1073,7 @@ sand so that everything beneath the surface is cloudy.  Only the feel of laid
 stone and grit indicates the path that lies here, a slight mist hovering over
 the surface of the muggy water.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    A small enclosure can be seen to the north, tiny wisps of smoke escaping into
 the air.  
@@ -1117,7 +1117,7 @@ Wisps of smoke and glowing embers cling to life as the recently used campfire
 slowly dies away.  Various cooking utensils and simple clay pots lie soiled and
 strewn about.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D2
    Muddy, grimey water swirls lazily away, stirring up the gravelly ground as it
 trickles noisily.  
@@ -1150,7 +1150,7 @@ Grassy Hole~
 lengths and echoing slightly as they hit rock surface below.  A deep black hole
 gapes widely in the ground, concealed perfectly until almost falling into it.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    Copious amounts of smoke fill the air thickly, staining the ground and plant
 life darkly black and blocking any further view.  
@@ -1282,7 +1282,7 @@ abandoned path.  From a large crack in the ground, dark smoke billows slowly up
 into the sky, shrouding the place in darkness and creating the claustrophobic
 feeling of being unable to breathe.  
 ~
-19 1 0 0 0 0
+19 1 0 0 0 2
 D0
    The water runs deeper to the north, shimmering fog wafting restlessly and
 clouding any further view.  
@@ -1317,7 +1317,7 @@ giving easily beneath and sending clouds of darkness up into the water.  Broken
 stalks litter the bottom, and deep footprints can be seen imprinted in the
 watery ground, indicating that this way is well travelled.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    Deep waters and eerie blue mists swirl silently around, both almost purposely
 hiding the way from view.  
@@ -1345,7 +1345,7 @@ clouding everything so that only ghosts and shadows can be seen moving about in
 the periphery of vision.  The air is hot and stifling, but the cloudy moisture
 leaves a bone-chilling cold on every surface.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    Some sort of entrance can be seen through the brush, a black stair descending
 into darkness.  
@@ -1378,7 +1378,7 @@ Eerie Wetlands~
 die away as the bluish haze around this place swirls ever thicker.  The water
 slides easily, thick algae blocking any view as to what lies beneath.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D2
    A well travelled way lies to the south, broken reeds and muddy footprints
 left as recent evidence.  
@@ -1405,7 +1405,7 @@ Absolute Darkness~
 life swirling about.  The blackness seems all-encompassing, nothing visible in
 any direction, just the slimey touch of unseen creatures brushing past.  
 ~
-19 13 0 0 0 0
+19 13 0 0 0 9
 D4
    Faint shafts of natural light penetrate the darkness, the stalks of gently
 swaying reeds only just visible through the murkiness.  
@@ -1429,7 +1429,7 @@ Endless Marshlands~
 shadows potentially only the product of imagination.  Almost untouched, the
 quiet water and still reeds can be seen for miles.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D1
    Chilly air breezes from the west, damp and clinging miserably to everything
 like a cold sweat.  
@@ -1456,7 +1456,7 @@ Endless Marshlands~
 here.  Desperate creeping plant life, hovering insects and scummy algae-infested
 water appears to be all there is.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
    A vast and confusing landscape stretches to the north, heavy fog making it
 difficult to see any straight path through.  
@@ -1497,7 +1497,7 @@ Endless Marshlands~
 wearily back and forth, and almost eternally around in the swirling mists
 everything seems to look exactly the same.  
 ~
-19 4 0 0 0 0
+19 4 0 0 0 2
 D1
    A vast and confusing landscape stretches to the east, heavy fog making it
 difficult to see any straight path through.  
@@ -1524,7 +1524,7 @@ Endless Marshlands~
 wearily back and forth, and almost eternally around in the swirling mists
 everything seems to look exactly the same.  
 ~
-19 4 0 0 0 0
+19 4 0 0 0 2
 D0
    A vast and confusing landscape stretches to the north, heavy fog making it
 difficult to see any straight path through.  
@@ -1567,7 +1567,7 @@ odd green shoot of a struggling youngster colouring the gloominess, and the
 scent of new plant life freshening the air, even as fungi consume the rotting
 elders.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D1
    Swaying branches trail leisurely over the murky waters, the sounds of
 rustling and crow's screeching carrying on the air.  
@@ -1595,7 +1595,7 @@ slimy swamp algae covering them with slick green ooze.  Spindly desperate
 branches grasp blindly at the air like the skeletal fingers of some long buried
 giant.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D0
    Thick, brittle treetrunks continue on and around to the north, the sounds of
 wildlife crunching through the leaves.  
@@ -1617,7 +1617,7 @@ mournful screeching of crows can be heard from the swaying branches above.
 Most of the trees here are dead, only one or two trailing green leaves into the
 watery surroundings.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D0
    A vast array of dried branches forms a canopy overhead, a mighty tree
 standing proudly to the north, even as it decays.  
@@ -1638,7 +1638,7 @@ Circle of Trees~
 creating a skeletal leaf-less canopy.  The persistant creep of swamp vines and
 moss coats nearly the entire trunk, as though the bog were trying to reclaim it.
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D0
    Tangled tree roots stretch out to the north, creeping through the treacherous
 mud as though grasping for safety.  
@@ -1680,7 +1680,7 @@ Drowned Path~
 pool.  Dirt and grit settle slowly at the bottom, covering partially what appear
 to be the carefully set slate tiles of an ancient road running north and south.
 ~
-19 0 0 0 0 3
+19 0 0 0 0 2
 D0
    A small junction lies ahead, this path meeting with a larger west-to-east
 trail.
@@ -1713,7 +1713,7 @@ Circle of Trees~
 they seem to be well-tended.  Leaning in on each other, their green waving
 branches seem to rustle uncomfortably, whispering quietly with each other.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D0
    A greenish film of water and slime coats a long-neglected path to the north.
 ~
@@ -1739,7 +1739,7 @@ Circle of Trees~
 trunks.  The beautiful crimson leaves of a black gum tree seem almost to light
 the area as a burning fire illuminates night.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D0
    Younger saplings grow to the north, slender green branches and fresh budding
 leaves adding a sense of freshness to the atmosphere.
@@ -1762,7 +1762,7 @@ enclosed within the trunks of the surrounding trees.  A smoking fire lingers
 here, some burned carcass giving off the smell of cooked flesh.  Before the
 altar, a large metal grid is embedded into the ground.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 3
 D0
    A small water-logged path leads northward, flanked on either side by closely
 hovering trees.
@@ -1805,7 +1805,7 @@ surface of these dark waters.  Small fish dart nervously about, hiding instantly
 at the sight of any shadow, and bulrushes sway gently, spreading ripples
 throughout the pool.  
 ~
-19 4 0 0 0 2
+19 4 0 0 0 6
 D1
 ~
 ~
@@ -1822,7 +1822,7 @@ Bend in an Ancient Path~
 coated slightly with the glassy sheen of an inch or two of clear running water,
 the carefully laid mosaic stones and coloured glass can clearly be seen.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
 ~
 ~
@@ -2398,7 +2398,7 @@ drifting away to join the wandering mist that swirls forlornly about.  Tall
 withered grasses whisper amongst themselves as they bend, almost seeming to
 deliberately make way for passage.  
 ~
-19 0 0 0 0 0
+19 0 0 0 0 2
 D0
 ~
 ~

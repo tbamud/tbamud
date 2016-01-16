@@ -193,7 +193,7 @@ The Beach Head~
 There isn't much to see here and there is no way to cross the steep
 rocky cliffs that wall in this place.
 ~
-9 0 0 0 0 0
+9 0 0 0 0 2
 D2
 ~
 ~
@@ -204,7 +204,7 @@ The North Channel~
    The river splits as runs up against the island and a navigatble
 channel slips off to the north and west.
 ~
-9 4 0 0 0 0
+9 4 0 0 0 7
 D0
 ~
 ~
@@ -243,7 +243,7 @@ Near The Isle~
 appears to be nothing more than a short path that leads to the
 side of a hill.
 ~
-9 4 0 0 0 0
+9 4 0 0 0 7
 D1
 ~
 ~
@@ -260,7 +260,7 @@ will not hear you call here.  Hence they will not answer you.  To the
 south the path ends at a dark cave entrance.
 A sign has been posted beside the entrance.
 ~
-9 0 0 0 0 0
+9 0 0 0 0 1
 D0
 ~
 ~
@@ -282,7 +282,7 @@ The First Trial Of Minos~
 Minos loves to torture his people through these places.  He
 collects the monsters of the world and puts them here.
 ~
-9 9 0 0 0 0
+9 9 0 0 0 1
 D1
 ~
 ~
@@ -296,7 +296,7 @@ the next monster in my playground.  Or are you strong enough?'
    To the south is the entrance to the next challenge of Minos'
 stronghold.
 ~
-9 9 0 0 0 0
+9 9 0 0 0 1
 D2
 ~
 ~
@@ -387,7 +387,7 @@ Above, On The Beach~
 end of the island.  You could clamber down easy enough, but getting
 back up would be another story.
 ~
-9 0 0 0 0 0
+9 0 0 0 0 4
 D5
 ~
 ~

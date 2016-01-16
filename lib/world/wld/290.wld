@@ -7,7 +7,7 @@ the Golden treasure in the depths of the lair of the lizardmen.  If you wish to
 test your luck, you can push your way through the exit to the south...  If not,
 you can leave the Safari Park to the east.  There is a large sign here.    
 ~
-290 12 0 0 0 0
+290 12 0 0 0 4
 D1
 The Real World is to the east.
 ~
@@ -398,7 +398,7 @@ Mr. Hooper's store~
    This is your friendly neighbourhood convenience store and restaurant.  
 There are many interesting things that you can buy here.    
 ~
-290 12 0 0 0 0
+290 12 0 0 0 1
 D2
 The conjuring chamber is still to the south.
 ~

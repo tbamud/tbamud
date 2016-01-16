@@ -94,7 +94,7 @@ white temple to your north.  To the south is a smaller blue temple,
 its doors locked by great bands of magic.  Several people glare at
 you, wondering if you're going to cut through the line.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -141,7 +141,7 @@ citizens of Kerofk are here, bustling and jostling each other in an
 attempt to get all they have to do done as fast as possible.  Bump Oof
 Excuse Me!  There is a Mage's Guild to the north.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -163,7 +163,7 @@ clue how to get across...  Wait, there's an opening!  Sprint, Turn,
 Jab!  Run, Run, Run...  you're across! You look up at the never-ending
 twilight and wonder how so many people could bear to live here.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -188,7 +188,7 @@ Road, and for a moment you forget what kind of strange place you're
 in.  A flowerbox filled with wilted flowers brings you back to
 reality; this city hasn't seen the sun for decades...
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -223,7 +223,7 @@ it would be a good idea to step off, but you've already guessed that,
 haven't you?
    Cliffside Road runs north and south from here.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -251,7 +251,7 @@ the citzenry of Kerofk walk up and down the street, almost oblivious to
 the incredible drop mere feet away.
    Cliffside Road continues North and South.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -278,7 +278,7 @@ further east.  Northwards is Cliffside Road, to the west is Moon Gate
 Road, and to the east a vast expanse of stars shine over the dark
 ocean below.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -300,7 +300,7 @@ picture of a trout in full plate hanging out front.  'Bob's Armoury
 and Tackle' it proclaims.  Armoury? Tackle Shop?!?  How curious!
    Moon Gate Road continues to the east and west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -321,7 +321,7 @@ walk about under the starlight here, in a hurry to get to shops, their
 homes, to work, et cetera.  Citizen's Road is to the north, Moon Gate
 Road continues east and west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -342,7 +342,7 @@ district. It suddenly strikes you how orderly this city is planned...
 done that way on purpose?  Well, it doesn't look like there's anything
 interesting here, but the road continues north and south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -360,7 +360,7 @@ the cliff's edge.  That cliff looks kind of dangerous actually.  The
 Cliffhanger looks good, though.
    Cliff Side Road continues to the north and south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -386,7 +386,7 @@ foot drop off just to your east with the ocean below.  Hmm...something
 tells you not to go east...must be that brain thing, eh?
    Cliffside road leads south, Star Gate Road leads west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -407,7 +407,7 @@ shine down as you look around for the source of the silence.  Ah,
 there's a bookstore/library to your north!  Moon Gate Road continues
 to the east and west as well.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -428,7 +428,7 @@ around and do their business.  Looks like there's some private homes
 on Citizen's Road to your south, and Star Gate Road continues to the
 east and west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -450,7 +450,7 @@ sagging demeanor seem to eminate an air of death and decay and
 cliche's.  Could anyone possibly live in there?
    Citizen's Road continues north and south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -472,7 +472,7 @@ Card'.  The smell wafting out its doors is enough to make a dead man
 turn away in disgust...how about you?
    Star Gate Road continues to the east and west
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -492,7 +492,7 @@ Star Gate Road~
 but not by much.  To the north is a large farmer's stand where a lot
 of the citizenry seem to be going in and out of.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -515,7 +515,7 @@ laughing inside; it's obviously a tavern or an inn, and popular to
 boot.
    Star Gate Road continues east and west
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -536,7 +536,7 @@ street to your south while Star Gate Road continues on its way east
 and west.
    There is an odd feeling of power to your north.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -562,7 +562,7 @@ arrayed outside its doors under heavy lamplight, and a sign proclaims
 assorted types of herbs on special today.
    Business Road continues north and south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -585,7 +585,7 @@ over.  Your reflexes save you, but you feel you better get out of this
 intersection soon.
    Center Road is east-west, Business road is north-south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -612,7 +612,7 @@ chambers, not to mention Mayor Kell's office.  To the east you see a
 huge white temple with a line outside, and a smaller blue temple.
    Center Road continues east and west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -634,7 +634,7 @@ front.  The keep looks like it was built to withstand floods,
 earthquakes, and even acts of God!
    Moon Gate Road continues east and west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -655,7 +655,7 @@ vacant lot to your south.  Also, Moon Gate Road continues east-west.
 The air seems to crackle with energy here, but you can find no source
 for such power.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -677,7 +677,7 @@ on.  There's a few shops along this road, but they don't look terribly
 interesting under this aspect.  Looking around, you notice the
 entrance to the city graveyard to the south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -698,7 +698,7 @@ area as people go about their business.  Along Business Road to the
 north you see many types of different shops lining the street, and
 Moon Gate Road continues east-west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -719,7 +719,7 @@ see the intersection of of Center Road and Business Road, and
 southwards is another intersection--Business Road and Moon Gate Road.
    There is a shop to the west, a dirty sign proclaiming it 'OPEN'.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -741,7 +741,7 @@ be some sort of 'catch-all' general store.  Also, Moon Gate Road
 continues east towards the cliff, and west towards the actual Moon
 Gate.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -763,7 +763,7 @@ has some bustle to it...must be all that night life!  Feeling pleased
 at your prospects, you look around for something to do...
    Wall Side Road leads north, Moon Gate Road leads east.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -784,7 +784,7 @@ raid or war it seems.  There are some signs of construction about, but
 it seems that there is no great need for more buildings right now.
    Wall Side Road continues north and south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -804,7 +804,7 @@ architecture, and the majesty of the starry skies above, you know this
 is a sight you'll never forget.
    Center Road leads east, Wall Side Road continues north-south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -824,7 +824,7 @@ Wall Side Road, North~
 city's wall.  To your east is a recruiting office for the city militia
 of Kerofk.  Wall Side Road continues north and south.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D0
 ~
 ~
@@ -847,7 +847,7 @@ in a world of eternal twilight.  A street sign informs you that this
 is Wall Side Road running south from here, and Star Gate Road leads
 away to the east.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -868,7 +868,7 @@ this busy street between and through them.  It seems that they're used
 to adventurers, or just don't care. Star Gate Road continues east and
 west, intersecting Business Road and Wall Side Road respectively.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -886,7 +886,7 @@ for a temple, this building is big!  Perhaps it would be worth a look
 around?
    Center Road continues to the east and west.
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 D1
 ~
 ~
@@ -1531,9 +1531,9 @@ gave them to Builder_5, smiled, and said,
 these files into a version more suitable for a public release.  This
 is what you have now.
    Both of us hope you enjoy this area, over a year in the making...
-	Amanda Eterniale			Builder_5
+@Amanda Eterniale		@Builder_5
 ~
-292 8 0 0 0 0
+292 8 0 0 0 1
 S
 #29275
 Shrine to the Emperor~

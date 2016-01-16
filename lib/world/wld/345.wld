@@ -23,7 +23,7 @@ it anymore. To the north the road is blocked by a fallen tree. To the south
 the road continues. A vine covered brick wall greets the eye to the east,
 effectively hiding what may lay beyond it.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 1
 D2
 ~
 ~
@@ -42,7 +42,7 @@ north and south. There is a break in the wall to the east. A heavy iron bar
 gate stands there allowing a glimpse of what is behind the wall. Next to it is
 an old bronze plaque.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 1
 D0
 ~
 ~
@@ -81,7 +81,7 @@ A Broken Road~
 better to the north. To the south the road is so bad that its not usable. 
 Your view to the east is blocked by a large vine covered wall.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 1
 D0
 ~
 ~
@@ -105,7 +105,7 @@ gate hangs slightly. To the north and south overgrown bushes and tall grass
 seem to harbor unknown secrets. To the east a dirt road leads to do an old
 abandoned building, shrouded in a fog.
 ~
-345 4 0 0 0 0
+345 4 0 0 0 2
 D1
 ~
 ~
@@ -129,7 +129,7 @@ and saftey. A small over-grown path that leads to south, but its unclear where
 it heads. There is an unnatural fog in the air, making seeing very far
 difficult.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D1
 ~
 ~
@@ -152,7 +152,7 @@ collapse the whole wall. To the south there appears to be headstones, with
 someone moving in among them... Or it could just be the swirling fog playing
 tricks. 
 ~
-345 4 0 0 0 0
+345 4 0 0 0 4
 D1
    A heavy iron reinforced oak door.
 ~
@@ -170,7 +170,7 @@ nature. A black wrought iron fence with a gate leads to a path to the south.
 Northeast is a large building in disrepair. Faintly to west, you can make out a
 high wall. 
 ~
-345 4 0 0 0 0
+345 4 0 0 0 2
 D0
 ~
 ~
@@ -264,7 +264,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 4 0 0 0 0
+345 4 0 0 0 2
 D1
 ~
 ~
@@ -285,7 +285,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -317,7 +317,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D2
 ~
 ~
@@ -341,7 +341,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -368,7 +368,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -396,7 +396,7 @@ foreboding in the air, as if some terribly evil is lurking in the area. All
 around the dead seem to call out from beyond the grave. Although this whole
 place is strange there is something odd about a nearby grave stone.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -428,7 +428,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -453,7 +453,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -474,7 +474,7 @@ that there are creatures and other beings around. The area is over grown with
 grass and weeds. Strangely, there is still a well worn path in amongst the
 graves, as if others have passed through here recently.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~
@@ -496,7 +496,7 @@ exposing the it to the elements. To the north, south, east, and west are entry
 ways into the main building. There are benches, in various states of disrepair,
 scattered throughout the space.
 ~
-345 0 0 0 0 0
+345 0 0 0 0 2
 D0
 ~
 ~

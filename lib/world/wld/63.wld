@@ -12,7 +12,7 @@ humans.  You begin to wonder about what lies ahead.  The air is
 damp here, and even the little light that shines through the
 canopy seems to be absorbed into the webbing.
 ~
-63 4 0 0 0 0
+63 4 0 0 0 1
 D0
 ~
 ~
@@ -29,7 +29,7 @@ limbs are coated with cobwebs and seem unusually strong for tree
 branches.  Paths lead in four directions.  The eastward path goes
 down a bit.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -53,7 +53,7 @@ The Wasp Hive~
 honeycomb in shape and many of the maggots and wasps you see have
 fang-marks on their bodies.  You sense some order in their markings.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -64,7 +64,7 @@ The Webby Passage~
    Another webby passage, all sticky and wet.  Tiny ballooning
 spiders fill the air.  It seems that these young ones are newborns.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -80,7 +80,7 @@ Beneath The Busy Path~
 the footsteps suggest a primitive order in there movement.  The light
 seems brighter upwards.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D3
 ~
 ~
@@ -96,7 +96,7 @@ On The Busy Path~
 with one big difference.  The spiders here are carrying ant-corpses,
 as well as rats, wolves, and humans.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D2
 ~
 ~
@@ -112,7 +112,7 @@ On The Busy Path~
 with one big difference.  The spiders here are carrying ant-corpses,
 as well as cats, wolves, and humans.  
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -128,7 +128,7 @@ On The Busy Path~
 with one big difference.  The spiders here are carrying ant-corpses,
 as well as cats, dogs, and humans.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -153,7 +153,7 @@ cricket feelers.  The other is well-kept and suitable for smooth
 travelling.  The webbing that was prevalent in earlier rooms is almost
 non-existant now.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -173,7 +173,7 @@ A Fuzzy Tree Limb~
 seem to have 'hairs' sprouting from its bark.  As you look closer
 you see millions of aphids covering each limb.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D2
 ~
 ~
@@ -188,7 +188,7 @@ The Tree Trunk~
    You feel that you can rest here safely.  There is evidence of
 webbing here, but it is of a finer quality.
 ~
-63 4 0 0 0 0
+63 4 0 0 0 2
 D1
 ~
 ~
@@ -205,7 +205,7 @@ as evidenced by the remains before you.  The area is cluttered with
 desiccated corpses, apparently bitten but unwebbed, and drained of
 their life juices.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -221,7 +221,7 @@ The Wolf Spider Lair~
 save an exit.  The wolf spider keeps no corpses here, but rather
 throws them out at her leisure.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -233,7 +233,7 @@ The Webless Path~
 The path continues northward, where you find that you may have
 to tightrope your way across a ravine.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -251,7 +251,7 @@ Below you can see a prismatic web with lots of animal bones caught in it:
 some bear and small deer bones in fact.  No human skeletons are visible 
 (yet).
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -271,7 +271,7 @@ The Rainbow Web~
 sharp colors and contrasts.  The resident here seems to have a command
 of light as well.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D4
 ~
 ~
@@ -283,7 +283,7 @@ The Web Forest~
 anymore, but disjointed make-shift silken made shafts, sticky to the
 touch, and webby in texture.  This is another world it would appear.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -299,7 +299,7 @@ The Slave Pit~
 'Get back to work, maggots!'  Rails upon rails of mined gold and silver
 clutter the trail beneath you.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -315,7 +315,7 @@ The Tether Path~
 well-lit by the golden orbs that hang from the sides, you can see
 the paths become finer and finer in quality.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -329,7 +329,7 @@ S
 A Road Crossing~
    Another shifty little strand of webs, almost ethereal in nature.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D3
 ~
 ~
@@ -346,7 +346,7 @@ it.  You are definitely not in the Midgaardian realms anymore.  Just
 where you are you can't tell.  It feels like you're moving through
 ether.  You can still get back down to more surer lands.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -362,7 +362,7 @@ The Entrance Of The Ethereal Web~
 in and out, each strand reveals a different hue from black to green 
 to blue.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D2
 ~
 ~
@@ -376,7 +376,7 @@ here too, and eaten later.  You sense that the maker of this
 place has an appetite for dragon meat, and uses this room as a
 breeding area.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D4
 ~
 ~
@@ -389,7 +389,7 @@ flickers within the ether.  You see many flying creatures --
 insects, pegasi, and dragon wormkins -- navigate the dangerous
 passages of the web.  Exits go in many directions.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -413,7 +413,7 @@ Through The Trees~
 trees.  Various leaves and other debris that the many drones have
 not picked up yet lie here.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -433,7 +433,7 @@ Above The Clouds~
 of the larger dragons that do wish to fly seem to fly away
 from the sticky strands of the web.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -453,7 +453,7 @@ On A Cloud~
 this is not a typical cloud, but it might be the nest of an aerial
 creature.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D5
 ~
 ~
@@ -464,7 +464,7 @@ A Link In The Ethereal Web~
    This is another link in the ethereal web.  Various creatures seem
 to get caught (or hypnotized) by its sticky strands.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -479,7 +479,7 @@ The Tenuous Strand~
    Very windy here since it goes up into the sky somewhat.  Still, it
 is safe enough to move around.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D2
 ~
 ~
@@ -499,7 +499,7 @@ The Elder Wormkin's Room~
 of arcane lore clutter the area, along with shards of armor and
 weaponry.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D5
 ~
 ~
@@ -510,7 +510,7 @@ Another Tree Limb~
    Once again the web crosses another tree limb.  To the side you
 see the possible entrance to another creature's lair.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -530,7 +530,7 @@ The Bird Spider's Lair~
 jewels and weapons suggest the inhabitant must have powerful
 jaws.  Beware!
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D5
 ~
 ~
@@ -541,7 +541,7 @@ A Link In The Ethereal Web~
    This is another link in the ethereal web.  Various creatures
 seem to get caught (or hypnotized) by its sticky strands.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D2
 ~
 ~
@@ -560,7 +560,7 @@ The Quiet Tree Top~
    This is a quiet tree top.  Downwards you can see a familiar path
 that may lead back to Midgaard.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -580,7 +580,7 @@ On The Web~
 of a powerful beast.  Dragon, you think.  You shiver in your boots
 as you tiptoe along this section of the web.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -599,7 +599,7 @@ The Ki-Rin Chamber~
    A wise ki-rin was entrapped here many years ago.  It is from her
 that the ruler of this realm draws magical strength.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -611,7 +611,7 @@ A Link In The Ethereal Web~
 seem to get caught (or hypnotized) by its sticky strands.  To
 the north you sense the heavy breathing of a fiery animal.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -627,7 +627,7 @@ Yevaud's Lair~
 out, 'BEWARE, the Usurper of Midgaard lives here!  FLEE while you can!'
 But even Yevaud has his master... or so you deduce.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D2
 ~
 ~
@@ -640,7 +640,7 @@ seem to get caught (or hypnotized) by its sticky strands.  A
 single spider line lies to the north, while ghastly seemings are
 due southward.  The grim entrance of Arachnos' Lair is downward.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -665,7 +665,7 @@ a torch lit chamber where the souls of unavenged adventurers
 come and gnash their teeth.  The howls and screams of many
 echo through the hall ways.  You see one definite path ahead.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -676,7 +676,7 @@ The Guardian's Room~
    A chair sits here for a tireless guardian who ensures that no
 soul escapes.  Other than that, the room is undecorated.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -693,7 +693,7 @@ They search for those who killed them without warrant, and seek
 the free souls of living beings to inhabit and perhaps adventure
 once more.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -706,7 +706,7 @@ They search for those who killed them without warrant, and seek
 the free souls of living beings to inhabit and perhaps adventure
 once more.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -724,7 +724,7 @@ hear.  The walls are thin and wispy.  The only light you receive is
 the shimmering from the strand of the ethereal web you used to get
 here.  
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -737,7 +737,7 @@ the ether you seen a single shack up ahead with a light in the window.
 You sense a great evil coming from the north and feel inclined to go
 back on the ethereal web and take your chances there.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -752,7 +752,7 @@ The Single Spider Line~
    A single spider line supports you once more.  The shack comes
 closer into view and you are even more inclined to go back now.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -769,7 +769,7 @@ north, if you dare enter it.  You get the sneaking feeling you should
 go back now.  The skies above you darken and roar with the laughter
 of thunder.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D0
 ~
 ~
@@ -800,7 +800,7 @@ The Entrance To The Arachnos' Lair~
    All strands inevitably lead here, the center of the web, the
 entrance to Arachnos' Lair.
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -814,7 +814,7 @@ web, surprisingly unsticky.  The strand does not vibrate like the
 others.  A few ballooning spiders pass by, cackling 'You're gonna
 die, you're gonna fry.  Good bye!'
 ~
-63 0 0 0 0 0
+63 0 0 0 0 2
 D1
 ~
 ~
@@ -830,7 +830,7 @@ The Great Door~
 of ancient runes and names of Midgaard heroes are etched into
 the webwork.  Perhaps lists of victims?  You can't tell.  
 ~
-63 8 0 0 0 0
+63 8 0 0 0 2
 D0
 ~
 door~
@@ -849,7 +849,7 @@ Prime Material Plane.  Coffers upon coffers of gold, magical
 jewels and gems await.  Unfortunately Arachnos is a baggy spider
 too, and webs all her treasures to her beautiful silken body.
 ~
-63 64 0 0 0 0
+63 64 0 0 0 2
 D2
 ~
 door~

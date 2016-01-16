@@ -7,7 +7,7 @@ of you, and small paths lead east and west around the building.  Eastward is
 another smaller building; obviously a stable.  Northward is the main road,
 providing all the traffic and customers for this establishment.    
 ~
-289 4 0 0 0 0
+289 4 0 0 0 2
 D0
 ~
 ~
@@ -80,7 +80,7 @@ voices coming from inside are clearly audible, and by listening hard you can
 almost make out the words.  The path around the building continues to the west
 and south.    
 ~
-289 0 0 0 0 0
+289 0 0 0 0 2
 D1
 ~
 ~
@@ -97,7 +97,7 @@ window spills light onto the trees that block out all available light overhead.
 You hear general merryment and alcoholism from inside, and wonder if being
 inside would be more fun than walking around outside...    
 ~
-289 0 0 0 0 0
+289 0 0 0 0 2
 D0
 ~
 ~
@@ -114,7 +114,7 @@ barrel catches run-off from the roof eaves by the corner of the building, and
 you spy a small white fence cordoning off an herb garden nearby.  The path
 around the building leads to the north and east.    
 ~
-289 0 0 0 0 0
+289 0 0 0 0 2
 D0
 ~
 ~
@@ -132,7 +132,7 @@ unmistakeably an outhouse.  You hear the unmistakeable sound of clanging pots
 and pans from the inside, the warning of an upcoming meal.  The path around the
 building here runs east, and west.    
 ~
-289 4 0 0 0 0
+289 4 0 0 0 2
 D0
 ~
 ~
@@ -154,7 +154,7 @@ alley to the north, with the path leading right in-between.  Westwards is the
 kitchen entrance to the Wayhouse, kept wide open to let the heat inside escape.
   
 ~
-289 0 0 0 0 0
+289 0 0 0 0 2
 D0
 ~
 ~
@@ -174,7 +174,7 @@ Near a Large Building~
 the west, and the wooden planked walls of the stable to the east.  The path
 around the building leads north and south of here.    
 ~
-289 0 0 0 0 0
+289 0 0 0 0 2
 D0
 ~
 ~
@@ -190,7 +190,7 @@ Near a Large Building~
 to the west, and the stables to the east.  Another path breaks off to the
 south, between the two buildings, towards what appears to be an outhouse.    
 ~
-289 0 0 0 0 0
+289 0 0 0 0 2
 D1
 ~
 ~
@@ -211,7 +211,7 @@ open and inviting.  Inside you can hear the snorting of horses, and the
 occasional hoof scraping against the ground.  The path leads to the west,
 towards the Wayhouse.    
 ~
-289 4 0 0 0 0
+289 4 0 0 0 2
 D2
 ~
 ~
@@ -228,7 +228,7 @@ aisle, some with horses, some empty.  A pail filled with water and a stack of
 grain are heaped up against the interior wall, dimly illuminated by a lantern
 hanging from a rafter.  Seems rather quiet in here...    
 ~
-289 8 0 0 0 0
+289 8 0 0 0 2
 D0
 ~
 ~
@@ -249,7 +249,7 @@ aisle, some with horses, some empty.  A pail filled with water and a stack of
 grain are heaped up against the interior wall, dimly illuminated by a lantern
 hanging from a rafter.  Seems rather quiet in here...    
 ~
-289 8 0 0 0 0
+289 8 0 0 0 1
 D0
 ~
 ~
@@ -266,7 +266,7 @@ aisle, some with horses, some empty.  A pail filled with water and a stack of
 grain are heaped up against the interior wall, dimly illuminated by a lantern
 hanging from a rafter.  Seems rather quiet in here...    
 ~
-289 8 0 0 0 0
+289 8 0 0 0 1
 D0
 ~
 ~
@@ -283,7 +283,7 @@ aisle, some with horses, some empty.  A pail filled with water and a stack of
 grain are heaped up against the interior wall, dimly illuminated by a lantern
 hanging from a rafter.  Seems rather quiet in here...    
 ~
-289 8 0 0 0 0
+289 8 0 0 0 1
 D2
 ~
 ~

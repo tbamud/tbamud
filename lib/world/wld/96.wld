@@ -46,7 +46,7 @@ their merry songs, voices intertangling into a mesh of sounds that faintly
 resembles a choir.  The path branches off to the west, but the main path
 continues north.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -71,7 +71,7 @@ decorated with strange runes, and animal skulls hang from the eaves.  The
 doorknob is fashioned from a human thigh bone.  Exits are back to the main
 path, or into the hut.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -107,7 +107,7 @@ The forest animals seem to take no heed of anyone, travelling along the path as
 any human would.  Squirrels, rabbits, hares, foxes, and other animals can be
 seen scurrying about.  The path continues north and south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -125,7 +125,7 @@ are far more active here, and the ground is littered with evidence on their
 passing.  A bird chirps gleefully from a hole in a nearby tree, soon followed
 by a chorus of her chicks.  The path here splits in four directions.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -152,7 +152,7 @@ which accountrs for the increase in noise.  The tree itself is covered in moss
 and lichen, with violets and wildflowers shooting from the rotted wood.  The
 only exit is back to the intersection.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -184,7 +184,7 @@ softer.  The air is beginning to take on an unpleasant odor, but it's not quite
 placeable.  The birdsong is as loud as ever, but the other animals seem to be
 strangely quiet.  The path turns south, or back west.    
 ~
-96 64 0 0 0 0
+96 64 0 0 0 3
 D2
 ~
 ~
@@ -201,7 +201,7 @@ A swampy pit~
 water and muck is in resting in the middle of the path.  The forest is silent,
 except the occasional bird chirping.  The only exit is back north.    
 ~
-96 65 0 0 0 0
+96 65 0 0 0 3
 D0
 ~
 ~
@@ -216,7 +216,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues north and south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -236,7 +236,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues north and south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -254,7 +254,7 @@ many places the path is interrupted by small collapses, due to ants tunneling
 under.  In the underbrush nearby, an animal has burrowed a rather deep hole to
 make it's home.  Exits are west or back to the south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D2
 ~
 ~
@@ -278,7 +278,7 @@ A three-way intersection~
 other hand, doesn't look like any animal uses it.  The path continues west and
 north, and back east.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -302,7 +302,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues north and south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -320,7 +320,7 @@ many places the path is interrupted by small collapses, due to ants tunneling
 under.  In the underbrush nearby, an animal has burrowed a rather deep hole to
 make it's home.  Exits are east or back to the south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -344,7 +344,7 @@ which accountrs for the increase in noise.  The tree itself is covered in moss
 and lichen, with violets and wildflowers shooting from the rotted wood.  The
 only exit is back west.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D3
 ~
 ~
@@ -360,7 +360,7 @@ intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
 the forest a wet sheen.  The path continues east and west.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -378,7 +378,7 @@ dense.  The trees are more spread apart, and flowers come less often.  The
 smaller and weaker animals seem to have disappeared, but the bigger ones seem
 to have grown more plentiful.  The path turns south, and continues back east.
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -398,7 +398,7 @@ of beauty about it.  Small animals scurry about, and birdsong can be heard even
 at the threshold of the forest.  Flowers line the path north into the forest,
 which is the only visible exit.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -422,7 +422,7 @@ someone wants an unobstructed view or someone's property line is near.  Far in
 the distance a cave makes a grey splotch on the horizon.  Exits are west or
 back north.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -440,7 +440,7 @@ the underbrush constantly, and the birdsong grows even fainter.  Loud roars
 come from the west, and the unmistakeable sound of an animal getting ripped in
 half.  The path continues west and east.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -458,7 +458,7 @@ seem to thrive in the silence.  The inhuman roars from the west grow louder,
 and the squelching of dead animals intensifies.  The smell of excrement floats
 through the air.  The path continues west and east.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D1
 ~
 ~
@@ -477,7 +477,7 @@ The shrieks of a dying creature can be heard nearby, and the roaring stops
 momentarily, replaced by a sickening squelch.  The path returns west, or
 continues north.    
 ~
-96 4 0 0 0 0
+96 4 0 0 0 3
 D0
 ~
 ~
@@ -495,7 +495,7 @@ excrement floats through the air, in enough potency to make one vomit.  A pair
 of red eyes peer out of the shroud of darkness in the cave.  The path continues
 north, into the cave west, or returns south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D0
 ~
 ~
@@ -516,7 +516,7 @@ in various stages of decomposition, and piles of animal excrement.  Whether
 it's from what lives in the cave or from the dead animals isn't known.  The
 only exit is back south.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 3
 D2
 ~
 ~
@@ -528,7 +528,7 @@ In the mouth of the cave~
 detected.  Roars from inside the cave signifies that the cave isn't exactly
 empty.  The rest of the cave lies west, and one can exit east.    
 ~
-96 8 0 0 0 0
+96 8 0 0 0 5
 D1
 ~
 ~
@@ -545,7 +545,7 @@ strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits in all
 directions.    
 ~
-96 9 0 0 0 0
+96 9 0 0 0 5
 D0
 ~
 ~
@@ -660,7 +660,7 @@ off of its hinges, and it lies on the ground near the entrance.  To the west
 and east are the stairways into the towers, and north lays the gate.  To the
 south a blue portal stretches between the walls.    
 ~
-96 0 0 0 0 0
+96 0 0 0 0 5
 D0
 ~
 ~
@@ -686,7 +686,7 @@ archers to fire through in case of an attack, and a murder-hole halfway up the
 stairs give soldiers something to pour burning oil or drip heavy objects
 through.  East lies the outer gate and the top of the small tower is upward.  
 ~
-96 0 0 0 0 0
+96 0 0 0 0 5
 D1
 ~
 ~
@@ -704,7 +704,7 @@ archers to fire through in case of an attack, and a murder-hole halfway up the
 stairs give soldiers something to pour burning oil or drip heavy objects
 through.  West lies the outer gate and the top of the small tower is upward.  
 ~
-96 0 0 0 0 0
+96 0 0 0 0 5
 D3
 ~
 ~

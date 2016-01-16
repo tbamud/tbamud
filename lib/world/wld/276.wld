@@ -94,7 +94,7 @@ started building on this section of the road.
    To the east is the intersection of Broadway and Second Ave and to the 
 west you smell something bad.
 ~
-276 0 0 0 0 0
+276 0 0 0 0 1
 D1
 We already told you in the description that Broadway is there.
 ~
@@ -112,7 +112,7 @@ Second Avenue~
 you can't tell whether the smell is coming from the dump to the west,
 the pigs to the south, or from the animals to the north.
 ~
-276 0 0 0 0 0
+276 0 0 0 0 1
 D0
 You hear lots of barking and meowing.
 ~
@@ -180,7 +180,7 @@ trash, radioactive or otherwise.  Go ahead -- feel free to dump here
 too, but don't stay too long 'cause the radiation can be fatal.
    Second Avenue runs east.
 ~
-276 0 0 0 0 0
+276 0 0 0 0 1
 D1
 You see Second Avenue.
 ~
@@ -247,7 +247,7 @@ Goethe.
    To the north is the Statue of Goethe, and to the south is
 Broadway.
 ~
-276 0 0 0 0 0
+276 0 0 0 0 1
 D0
 You see the Statue of Goethe.
 ~
@@ -267,7 +267,7 @@ honour his genius and humanitarianism, and to his contribution
 to the foundation of New Sparta.
    To the south is Goethe's Garden.
 ~
-276 0 0 0 0 0
+276 0 0 0 0 1
 D2
 You see Goethe's Garden.
 ~
@@ -294,7 +294,7 @@ and you wonder if it is safe to find out what's going on.
    The Intersection of First and Broadway is to the east and Hell's
 Kitchen is to the west.
 ~
-276 0 0 0 0 0
+276 0 0 0 0 1
 D1
 You see the Intersection of First and Broadway.
 ~
@@ -318,7 +318,7 @@ rather be than in Hell's Kitchen.
    You decide that the only real exit is to First Avenue which is 
 to the east.
 ~
-276 1 0 0 0 0
+276 1 0 0 0 1
 D1
 You see First Avenue.
 ~

@@ -6,7 +6,7 @@ reason the goblins have not tried to follow you, being too weak to move it.
 You, however, can still shove it aside, should you wish to slither north.  The
 wide passage to the south looks much, much more inviting, however.  
 ~
-287 281 0 0 0 0
+287 281 0 0 0 5
 D0
 The crawlway opens into a large cave, crudely hewn from the stone.
 ~
@@ -65,7 +65,7 @@ small tunnel to the south.  To the east, a larger cave continues to a bend.
 That boulder troubles you.  Anxiously you examine its support, and notice some
 writing on the wall.  There is a NEWLY CARVED SIGN here.  Read it!  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D0
 The tunnel widens and lowers to the north, seemingly to a dead end.
 ~
@@ -110,7 +110,7 @@ narrow for a surefooted cat, and slippery as fish skin.  It is not too late to
 turn back!  A narrow crevasse leads down the cliff, but only an acrobat could
 turn round and descend it.  Your nose brushes an inscription.  
 ~
-287 393 0 0 0 0
+287 393 0 0 0 5
 D0
 The wise (if poor) man may return north to a larger cave.
 ~
@@ -146,7 +146,7 @@ can only read three: one in orcish, another in common, and a third, written
 large by a firm hand, in the secret dwarven tongue.  Looking closer, you see
 another, in ogrish.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D2
 You see a glimmer of daylight, not very far away.
 ~
@@ -220,7 +220,7 @@ and south.  A milestone stands near.  A sign stands at the intersection of this
 fine road, and the path to the mountain cave.  The dirt road to the south used
 to be blocked but now the way has been cleared.  
 ~
-287 64 0 0 0 0
+287 64 0 0 0 1
 D0
 A grass-grown path leads to a cave in the north.
 ~
@@ -255,7 +255,7 @@ in the mountains.  You would need wings to go down there.  This gorge certainly
 serves Ofingia well as a moat; the bridge has a wooden section that may easily
 be removed during a siege.  
 ~
-287 64 0 0 0 0
+287 64 0 0 0 1
 D1
 Ofingia's gate is right across the river.
 ~
@@ -981,7 +981,7 @@ that doing in a water-carved cave?  It has a sign on it that might explain who
 would put a door here.  The floor is quite flat, and the sand which covers it
 everywhere else is absent here.  Maybe it deserves a second look.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D1
 You may go back east. What a boring place.
 ~
@@ -1013,7 +1013,7 @@ Down, Down, to Goblin-Town!~
 yourself in.  There is no escape now but deeper in, and farther down.  There is
 a faint smell of goblins about this place.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D2
 You see a stone hallway.
 ~
@@ -1025,7 +1025,7 @@ The Stone Hallway~
    The walls are carved from limestone, and drip water, so this cave is always
 very damp, and very cold.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D0
 The walls are just as damp to the north.
 ~
@@ -1042,7 +1042,7 @@ The Stone Hallway~
    The walls are carved from limestone, and drip water.  You are beginning to
 fear for your health, and cold is not your greatest worry.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D1
 The walls are just as damp to the east.
 ~
@@ -1059,7 +1059,7 @@ The Stone Hallway~
    You hear a peculiar scratching and tapping coming from a hole in the cave
 floor.  A strong, foul-smelling draft rises from it.  To the west is a door.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D1
 The walls are just as damp to the east.
 ~
@@ -1087,7 +1087,7 @@ Often arms are also stored here, in case of an invasion.  The guards are so bad,
 however, that Goblin town places little trust in this, their first line of
 defense.  
 ~
-287 8 0 0 0 0
+287 8 0 0 0 1
 D1
 You can only go east.
 ~
@@ -1100,7 +1100,7 @@ The Stone Hallway~
 but you can not reach its warm fires now.  Only through worse danger will you
 leave these caves.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D0
 The walls are just as damp to the north.
 ~
@@ -1117,7 +1117,7 @@ The Stone Hallway~
    The limestone walls in this room are cracked and seep icy water.  Your boots
 are soaking wet by the time you have walked twenty-five yards.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D1
 The walls are just as damp to the east.
 ~
@@ -1139,7 +1139,7 @@ The Stone Hallway~
 around you and go on.  No turning back now!  The floor is drier here; the
 seepage drips around a square panel on the floor.  
 ~
-287 8 0 0 0 0
+287 8 0 0 0 2
 D1
 A glowing stone door is balanced on posts of steel and bolted shut.
 ~
@@ -1171,7 +1171,7 @@ storehouse of some sort, for you see no guards.  It is a large room.  The
 door-light does not reach far, and your torch casts long shadows.  Plenty of
 room for creepy things to hide.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D3
 There is a glowing door to the west.
 ~
@@ -1183,7 +1183,7 @@ The Spiral Tunnel~
    This tunnel spirals slowly clockwise, delving deeper into the bowels of the
 mountain.  You must be very far down now.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D4
 Icy water seeps round this stone slab, soaking your jacket.
 ~
@@ -1201,7 +1201,7 @@ The Spiral Tunnel~
 goblin city.  Whatever madness brought you here, it is too late to curse your
 foolishness, for goblins lie both before you and behind.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D4
 A stream of water flows from this direction.
 ~
@@ -1219,7 +1219,7 @@ The Spiral Tunnel~
 still tastes good after walking so far.  The gloom of these caverns is beginning
 to darken your mind, and you long for the common room of the Grunting Boar Inn.
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D4
 The endless tunnel spirals upward.
 ~
@@ -1238,7 +1238,7 @@ still tastes good after walking so far.  The cavern-gloom is beginning to darken
 your mind, and you long for the common room of the Grunting Boar Inn.  Here the
 tunnel jogs to the east.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D1
 The endless spiral runs east.
 ~
@@ -1255,7 +1255,7 @@ The Spiral Tunnel~
    There is no use counting how far this tunnel has spiralled down.  Goblins
 must be near, though; you can smell it.  Here the tunnel jogs down and west.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D3
 The endless spiral runs west.
 ~
@@ -1273,7 +1273,7 @@ The Spiral Tunnel~
 You do not want to know.  The stench of goblin-caves is very bad here, but
 bearable.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D4
 The endless spiral climbs higher.
 ~
@@ -1303,7 +1303,7 @@ strength to keep going and now found an exit from the horrible spiral tunnel.
 It is hotter here than it was higher up, and the filthy stench of goblin caves
 wafts from a hole in the floor.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D4
 The endless spiral climbs upwards.
 ~
@@ -1320,7 +1320,7 @@ Upper Goblin-Town~
    You reach the first level of the goblin city.  Now you must fight for your
 life, adventurer!  Draw your weapon and stay on your guard!  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D2
 A hallway leads south.
 ~
@@ -1346,7 +1346,7 @@ S
 A Small Armory~
    The Goblins keep a few weapons here, perhaps those they do not like to use.
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D1
 An iron door leads east.
 ~
@@ -1358,7 +1358,7 @@ A Dark Hall in Goblin-Town~
    This hall is deadly dangerous.  The goblins try to chase you into a corner,
 but you dart from shadow to shadow.  You must escape!  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D0
 The hallway leads north.
 ~
@@ -1380,7 +1380,7 @@ A Small Storeroom~
    You are not sure what is stored in this room, but there are plenty of crude
 chests to open.  Many appear to be of dwarven make; plunder, no doubt.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D3
 A black door leads back west.
 ~
@@ -1393,7 +1393,7 @@ A Dark Hall in Goblin-Town.~
 But they are locked-wait, perhaps you can pick them, or do you carry the keys?
 If not, stand and fight!  Hope is not lost.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D0
 A hallway continues north.
 ~
@@ -1415,7 +1415,7 @@ A Small Room~
    This is another storeroom, of some sort.  This entire level is, like a ship's
 hold, devoted to storage.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D0
 The only exit is a stone door to the north.
 ~
@@ -1427,7 +1427,7 @@ A Guard Room~
    Not now!  Not another guard room!  But this is where one should be; after
 all, there hasn't been any other on this floor.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D1
 There is a steel door to the east.
 ~
@@ -1444,7 +1444,7 @@ A Landing~
    A stairwell plunges down to the next level here.  To the west, a steel door
 forbids your passage.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D3
 A steel door blocks this way.
 ~
@@ -1833,7 +1833,7 @@ A Rough Tunnel~
 through.  Rubble litters the floor.  This cave is dark, so you must light your
 lantern again.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D0
 The tunnel continues north.
 ~
@@ -1856,7 +1856,7 @@ A Rough Tunnel~
 through.  Rubble litters the floor.  This cave is dark, so you must walk by
 lantern-light if you have not the ability to see in darkness.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D0
 The tunnel continues north.
 ~
@@ -1873,7 +1873,7 @@ A Rough Tunnel~
    Here the walls are roughly hewn, where the goblins mine for iron.  Rubble and
 ore litters the floor.  This cave is still unlit.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D0
 The tunnel continues north.
 ~
@@ -1890,7 +1890,7 @@ A Rough Tunnel~
    Your lamp casts odd shadows on the rough-hewn walls of this passage.  The
 tapping of goblin miners at work can be heard here and there.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D0
 You hear rushing water to the north and feel a faint draft.
 ~
@@ -1917,7 +1917,7 @@ and it is run by several sturdy trolls turning a horse-mill.  Slag heaps lie all
 about this huge cave, and glowing pig iron in trenches threatens to burn the
 soles off your shoes.  
 ~
-287 8 0 0 0 0
+287 8 0 0 0 2
 D0
 A steel door leads north.
 ~
@@ -1935,7 +1935,7 @@ A Corner In the Mines~
 If you wanted to, you could more easily dive in; your lantern glints off the
 surface of a lake not far below.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D1
 The tunnel continues east.
 ~
@@ -1962,7 +1962,7 @@ A Rough Tunnel~
    The walls become slightly smoother here long enough for someone to scratch a
 few words in the common speech into the stone.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D1
 The tunnel continues east.
 ~
@@ -1993,7 +1993,7 @@ smoke hangs in the air.  No doubt the goblins have some strange magic to break
 the stony ore from the walls.  The walls are pockmarked with shallow holes, and
 the rubble is similarly marked.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 3
 D0
 A faint glimmer of light comes from the north.
 ~
@@ -2014,7 +2014,7 @@ The Mine Shaft~
    Here the mine passage ends.  A pale glow shines around a trapdoor in the
 floor.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 2
 D2
 A rubble-strewn tunnel bends round a corner.
 ~
@@ -2040,7 +2040,7 @@ a round inverted bowl, fifty feet across, and about 15 feet high.  To the north
 a small stream flows out through a tunnel.  Of all the numerous influences that
 feed this lake, none are large enough, or low enough, for you to leave through.
 ~
-287 204 0 0 0 0
+287 204 0 0 0 6
 D0
 The stream flows fast, but not too much to swim in.
 ~
@@ -2053,7 +2053,7 @@ On the Underground Stream~
 is darker here, but since the current pushes you east, you don't much need to
 see.  
 ~
-287 201 0 0 0 0
+287 201 0 0 0 6
 D1
 The stream slows slightly to the east.
 ~
@@ -2068,7 +2068,7 @@ You had better leave the stream while you can.  As the walls narrow, the stream
 rushes faster and faster, and you hear a great thrashing noise like a mill wheel
 close by to the east.  
 ~
-287 201 0 0 0 0
+287 201 0 0 0 6
 D0
 Looks like gravel.
 ~
@@ -2087,7 +2087,7 @@ whitewater drowning.  There is no way to turn back now; the current is just too
 strong.  Then you see the ground drop away up ahead, and will soon discover how
 it feels to go over Niagara Falls without even a barrel.  
 ~
-287 200 0 0 0 0
+287 200 0 0 0 6
 S
 #28789
 The Ledge~
@@ -2095,7 +2095,7 @@ The Ledge~
 flank this small stream.  A crevasse nearby looks like it could be chimneyed
 with a lot of effort.  
 ~
-287 9 0 0 0 0
+287 9 0 0 0 1
 D2
 The stream flows quickly east.
 ~
@@ -2112,7 +2112,7 @@ The Crevasse~
    It is rough climbing, and you won't try to go down this way, but you have
 made good progress.  
 ~
-287 201 0 0 0 0
+287 201 0 0 0 5
 D4
 You can keep climbing up.
 ~
@@ -2129,7 +2129,7 @@ The Crevasse~
    Tiring, you climb more slowly, but still go upwards at a good pace.  You are
 nearly half way up.  
 ~
-287 201 0 0 0 0
+287 201 0 0 0 5
 D4
 You can keep climbing up, but you certainly won't do this again!
 ~
@@ -2145,7 +2145,7 @@ S
 The Crevasse~
    Tiring, you climb more slowly, but still go upwards at a good pace.  
 ~
-287 201 0 0 0 0
+287 201 0 0 0 5
 D4
 You can keep climbing up, but you certainly won't do this again!
 ~
@@ -2162,7 +2162,7 @@ Up the Cliff We Go~
    Every move is sheer torture as you haul yourself up this rough crevasse in
 the cliff-face, but you are nearly to the top!  
 ~
-287 201 0 0 0 0
+287 201 0 0 0 5
 D4
 You can keep climbing up, but you will NEVER do this again!
 ~

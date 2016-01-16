@@ -501,7 +501,7 @@ along the edge of a cliff.  Beyond the cliff you see a dark ocean,
 reflecting the starlight above very feebly.  The road continues west
 down the rise, and east, towards the city on the edge.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -519,7 +519,7 @@ surrounding the city seem impassable, but several scorch marks along
 its length tells a different stories about war and raids.  To your
 west is a rise where you may get a better vantage point of the city.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -536,7 +536,7 @@ To the north you see some cultivated fields, and to the south a fork
 in the road.  The sky above seems eerie, especially to the west where
 the glow of the normal sky brightens the horizon...
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D0
 ~
 ~
@@ -555,7 +555,7 @@ you've never seen the likes of before.  From several burned out shells of
 houses you guess the farmers just try to grow what they can before the
 city is put under siege again.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -572,7 +572,7 @@ walled, the other half sprawled directly on the edge of a great cliff
 which drops down into a dark ocean below.  To the east you see a small 
 gate in the city, which farmers are going into and out of sporadically.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -588,7 +588,7 @@ Fields near a City~
 From the smell of charred wood and the sounds of fresh construction,
 you guess that the last raze didn't happen long ago...
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -604,7 +604,7 @@ Near a City~
 out of the city with their produce.  The walls seem indestructible,
 but scorch marks along its length tell a different story...
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -621,7 +621,7 @@ the north out of sight in the starlit sky, one leading up a hill to
 the east, and towards the mountains to the west.
    It seems very quiet and peaceful here.  A breeze caresses your face.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D0
 ~
 ~
@@ -642,7 +642,7 @@ brightness seeping over and between the mountains.  Eastwards the
 strange, unnatural night sky spreads over anything, its permanent
 stars lighting the landscape with an eerie glow.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 2
 D1
 ~
 ~
@@ -659,7 +659,7 @@ leads away under the starry sky to the east, and a mountain pass
 heads up and through to the north.  The scenery on this side of the
 mountains seems bleak and lifeless, probably due to the lack of sun.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 4
 D0
 ~
 ~
@@ -677,7 +677,7 @@ an eerie glow over the stones and shrubberies around.  You can see a
 large dark plain to the east that the sun never seems to have shone
 upon, making it appear to be otherworldly somehow...
 ~
-293 8 0 0 0 0
+293 8 0 0 0 4
 D2
 ~
 ~
@@ -695,7 +695,7 @@ of the night is clearly delineated above you...a sharp edge separating
 night from normal, as it were.  Very odd...you wonder what could be
 causing this unnatural darkness.
 ~
-293 0 0 0 0 0
+293 0 0 0 0 4
 D1
 ~
 ~
@@ -712,7 +712,7 @@ its way up to the north.  The sky seems dark above the mountains,
 as if the mountains were a dividing line keeping back the night.
 The pass also leads back down to the
 ~
-293 0 0 0 0 0
+293 0 0 0 0 4
 D0
 ~
 ~
@@ -740,7 +740,7 @@ the gloom of night and the twinkling stars above, the tombstones seem
 to take a life of their own in a storybook way.  You don't think it
 would be the kind of storybook you would be interested in...
 ~
-293 12 0 0 0 0
+293 12 0 0 0 1
 D0
 ~
 ~
@@ -762,7 +762,7 @@ dug up.  The bones of a dead dwarf lie exposed at the bottom of the
 grave, its hands seemingly to clutch at the sky.  The tombstone at
 the head of the grave is completely unreadable.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 1
 D2
 ~
 ~
@@ -780,7 +780,7 @@ Some grass grows sparsely around the rocks, paled by the lack of sun.
 In this area, you feel the peace of death, instead of the decay usually
 associated with graveyards.
 ~
-293 8 0 0 0 0
+293 8 0 0 0 1
 D0
 ~
 ~
@@ -798,7 +798,7 @@ meeting their ends with dignity and aplomb.  Two pits are dug
 near the wall for a burial yet to take place.  You feel strangely
 chilled by the night air...
 ~
-293 8 0 0 0 0
+293 8 0 0 0 1
 D0
 ~
 ~

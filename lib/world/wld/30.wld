@@ -131,7 +131,7 @@ temple gate.  The entrance to the Clerics' Guild is to the west, and the old
 Grunting Boar Inn, is to the east.  Just south of here you see the market
 square, the center of Midgaard.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the temple.
 ~
@@ -321,7 +321,7 @@ entrance to the Guild of Magic Users.  The street continues east towards the
 market square.  The magic shop is to the north and to the west is the city
 gate.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the magic shop.
 ~
@@ -349,7 +349,7 @@ Main Street~
 here is the entrance to the Armory, and the bakery is to the north.  East of
 here is the market square.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the bakery.
 ~
@@ -378,7 +378,7 @@ A large, peculiar looking statue is standing in the middle of the square.
 Roads lead in every direction, north to the temple square, south to the
 common square, east and westbound is the main street.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the temple square.
 ~
@@ -410,7 +410,7 @@ Main Street~
 general store, and the main street continues east.  To the west you see and
 hear the market place, to the south a small door leads into the Pet Shop.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the general store.
 ~
@@ -438,7 +438,7 @@ Main Street~
 Guild of Swordsmen.  To the east you leave town and to the west the street
 leads to the market square.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the weapon shop.
 ~
@@ -590,7 +590,7 @@ The Eastern End Of Poor Alley~
    You are at the poor alley.  South of here is the Grubby Inn and to the
 east you see common square.  The alley continues further west.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 You see the common square.
 ~
@@ -613,7 +613,7 @@ The Common Square~
 the poor alley and to the east is the dark alley.  To the north, this square
 is connected to the market square.  From the south you notice a nasty smell.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the market square.
 ~
@@ -640,7 +640,7 @@ The Dark Alley~
    The dark alley, to the west is the common square and to the south is the
 Guild of Thieves.  The alley continues east.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 The alley continues east.
 ~
@@ -726,7 +726,7 @@ The Dump~
 garbage you can see a large junction of pipes, looks like the entrance to the
 sewer system.  North of here you see the common square.
 ~
-30 4 0 0 0 0
+30 4 0 0 0 2
 D0
 You see the common square.
 ~
@@ -795,7 +795,7 @@ Inside The West Gate Of Midgaard~
 connected with a footbridge across the heavy wooden gate.  Main Street leads
 east and Wall Road leads south from here.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 You see Main Street.
 ~
@@ -840,7 +840,7 @@ Inside The East Gate Of Midgaard~
 connected with a footbridge across the heavy wooden gate.  Main Street leads
 west from here.  To the south you see the Water Shop.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 You see the city gate.
 ~
@@ -883,7 +883,7 @@ Wall Road~
    You are walking next to the western city wall.  The road continues further
 south and the city gate is just north of here.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the city gate.
 ~
@@ -906,7 +906,7 @@ Wall Road~
 north and south.  A small, poor alley leads east.
 Some letters have been written on the wall here.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 The road continues further north.
 ~
@@ -937,7 +937,7 @@ Poor Alley~
    You are on Poor Alley, which continues further east.  You see the
 city wall to the west.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 The alley leads east.
 ~
@@ -954,7 +954,7 @@ The Dark Alley At The Levee~
    You are standing in the alley which continues east and west.  South of
 here you see the levee.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 The alley leads east.
 ~
@@ -977,7 +977,7 @@ The Eastern End Of The Alley~
 east, blocking any further movement.  A small warehouse is directly south of
 here.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D2
 You see the warehouse.
 ~
@@ -994,7 +994,7 @@ Wall Road~
    You are standing on the road next to the western city wall, which
 continues north.  South of here is a bridge across the river.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the road.
 ~
@@ -1028,7 +1028,7 @@ The Levee~
    You are at the levee.  South of here you see the river gently flowing west.
 The river bank is very low making it possible to enter the river.
 ~
-30 128 0 0 0 0
+30 128 0 0 0 1
 D0
 You see the alley.
 ~
@@ -1058,7 +1058,7 @@ On The Bridge~
 built out from the western city wall and the river flows west through an
 opening in the wall ten feet below the bridge.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the road.
 ~
@@ -1090,7 +1090,7 @@ Outside The West Gate Of Midgaard~
 connected with a footbridge across the heavy wooden gate.  To the west you
 can see the edge of a big forest.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 The city gate is to the east.
 ~
@@ -1129,7 +1129,7 @@ Outside The East Gate Of Midgaard~
 connected with a footbridge across the heavy wooden gate.  To the east the
 plains stretch out in the distance.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D1
 You see the plains.
 ~
@@ -1213,7 +1213,7 @@ Behind The Temple Altar~
 of here.  To the north, the path continues through the lush contryside of
 Midgaard towards the Dragonhelm Mountains far off to the north.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see the lush, green countryside of Midgaard.
 ~
@@ -1238,7 +1238,7 @@ stay here forever, surrounded by powerful beauty in all directions.
    The path you are on continues north through the field and south back
 to Midgaard.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 1
 D0
 You see more of the path through the Great Field.
 ~
@@ -1263,7 +1263,7 @@ stay here forever, surrounded by powerful beauty in all directions.
    There is a strange structure on the eastern side of the path.  A small
 dirt path splits off of the main path and leads off to the west.
 ~
-30 4 0 0 0 0
+30 4 0 0 0 1
 D0
 The path continues northwards bringing you ever closer to the Dragonhelm
 Mountains.
@@ -1294,7 +1294,7 @@ been pried open by curious customs agents, and are now stacked along the west
 wall, hiding plenty of 'WANTED' posters.
 There is a sign posted on the wall here.
 ~
-30 8 0 0 0 0
+30 8 0 0 0 1
 D2
 You see the entrance to the Grunting Boar Inn and Tavern.
 ~
@@ -1349,7 +1349,7 @@ The Midgaard Donation Room~
 are a couple of small wooden benches here where people occasionally sit
 while they wait for items to appear.  The temple is to the west.
 ~
-30 28 0 0 0 0
+30 28 0 0 0 1
 D3
 The busy temple is back west.
 ~
@@ -1362,7 +1362,7 @@ The Cryogenic Center~
 body-length canisters lined up against the walls.  The Reception is to the
 south.
 ~
-30 8 0 0 0 0
+30 8 0 0 0 1
 D2
 The Reception is to the south.
 ~
@@ -1382,7 +1382,7 @@ stay here forever, surrounded by powerful beauty in all directions.
    The way north appears to be blocked by a large plot device and you cannot
 see any way around it.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 2
 D0
 Unfortunately the way north is blocked by a large plot device and there
 does not seem to be any way around it.
@@ -1415,7 +1415,7 @@ in all directions.
    There is a large rusty gate sitting in a stone archway just to the
 west.
 ~
-30 0 0 0 0 0
+30 0 0 0 0 2
 D1
 The path meets up with a larger path just to the east.
 ~

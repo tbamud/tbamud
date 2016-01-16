@@ -6,7 +6,7 @@ shrills coming from within the city.  You think to yourself that you need to be
 ready for anything as you enter the gates.  An old sign is here, depicting a
 map of the city.
 ~
-125 4 0 0 0 0
+125 4 0 0 0 1
 D0
 Nothing.
 ~
@@ -50,7 +50,7 @@ Intersection of Trenton Avenue and Main Street.~
    You have entered what was once the great city of Hannah.  Main street leads
 to the north, while Trenton avenue leads east and west
 ~
-125 0 0 0 0 0
+125 0 0 0 0 1
 D0
 ~
 ~

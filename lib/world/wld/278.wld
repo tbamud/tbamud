@@ -6,7 +6,7 @@ lie along the walk, and the cutting, salty smell of the ocean stings your nose.
 You feel a sense of rejuvenation as you stare out into the sea.  You know many
 adventures lie ahead.    
 ~
-278 0 0 0 0 0
+278 0 0 0 0 1
 D0
 To your north you can see the deep, wide ocean.
 ~
@@ -195,7 +195,7 @@ The Impassible Current~
 what you try to do, it won't stop churning!  Oh NO!  The current drags you and
 the boat down.    
 ~
-278 516 0 0 0 0
+278 516 0 0 0 1
 S
 #27809
 In the ocean~
@@ -1075,6 +1075,6 @@ Schylla's Trap~
    The water here swirls into a churning whirlpool.  Try as you might, you
 cannot escape the boiling mass of water--Schylla has got you.    
 ~
-278 516 0 0 0 0
+278 516 0 0 0 1
 S
 $~

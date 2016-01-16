@@ -3,7 +3,7 @@ The Void~
    You don't think that you are not floating in nothing.  You can see
 a strange portal located above you.
 ~
-0 8 0 0 0 0
+0 8 0 0 0 1
 D4
 ~
 ~
@@ -16,7 +16,7 @@ Limbo~
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
 ~
-0 8 0 0 0 0
+0 8 0 0 0 1
 D5
 A strange portal in the floor is the only exit.
 ~

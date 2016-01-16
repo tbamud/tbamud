@@ -103,7 +103,7 @@ The Forest Arden~
 and unknown wildlife.  A path leads north and south into the forest.  There is a
 gilded plaque affixed to a boulder.  
 ~
-7 0 0 0 0 3
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -146,7 +146,7 @@ about their daily business.  The courtyard extends in all directions except to
 the east which leads to the gate of the castle.  A steady flow of peasants
 merchants and a few nobles pass by.  
 ~
-7 0 0 0 0 2
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -172,7 +172,7 @@ other.  A knight strolls through the courtyard and the peasants and merchants
 stare at his back with a look of hate after he passes.  They do not seem to be
 very happy.  
 ~
-7 0 0 0 0 2
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -198,7 +198,7 @@ overhead providing a sense of security.  A couple of beggars look up imploringly
 hoping for some charity but everyone ignores them.  To the west lies the main
 entrance to the castle.  
 ~
-7 0 0 0 0 2
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -310,7 +310,7 @@ defense in case the castle's defenses can not hold the outer wall.  The outer
 wall is set aside for the poor quarter while the wealthier inhabitants crowd the
 inner circle.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -335,7 +335,7 @@ the castle.  The stone walls shine a bright white from heavy polishing and the
 massive blocks fit together seamlessly.  To the west a fountain flows underneath
 a large statue of Uther Pendragon.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 a door
 ~
@@ -356,7 +356,7 @@ Cobblestone Road~
 statue of Uther Pendragon and three women.  The sounds and smells to the south
 must be from the castle stables.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -380,7 +380,7 @@ Cobblestone Road~
 fly from the towers high above and all of the buildings gleam of white stone.  
 Several knights seem to be coming and going to the North.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -400,7 +400,7 @@ Cobblestone Road~
 breeze on every tower.  The buildings to the south seem to be filled with the
 sounds of women laughing and gossiping.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -421,7 +421,7 @@ snap in the wind.  Everything seems perfect except for the fact that the general
 mood in the castle seem to be depressing.  A tall fence to the south blocks the
 view, but not the sound, of men on horseback.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -442,7 +442,7 @@ be heard and there is some excitement in the crowd.  Several knights in full
 combat gear are among the crowd.  It is easy to pick out those who won and those
 who lost recently.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -466,7 +466,7 @@ Cobblestone Road~
 blocks are placed so precisely that seams are barely visible.  Pennants and
 different seals adorn the spires and walls.
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -482,7 +482,7 @@ Cobblestone Road~
 alleys travelling north and south.  A small, friendly building to the south
 looks inviting.  A nice change from the majority of the people in Camelot.
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -502,7 +502,7 @@ Cobblestone Road~
 Everyone seems subdued and to have accepted some fate they did not want.  It is
 as if the spirit had been taken away from the city.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -522,7 +522,7 @@ Cobblestone Road~
 A drunken ruckus can be heard to the south.  It sounds like it may be the only
 place in Camelot having a good time.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -542,7 +542,7 @@ West Lane~
 rusted and look like they haven't been used for a very long time.  A dirt path
 follows the wall to the north and south.  
 ~
-7 0 0 0 0 1
+7 0 0 0 0 0
 D0
 ~
 ~
@@ -563,7 +563,7 @@ boat is tied up to a small dock here.  A cloaked figure is sitting in the back,
 holding a long pole.  This boat looks to be a ferry between the shore and some
 unseen destination through the fog to the west.
 ~
-7 0 0 0 0 2
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -580,7 +580,7 @@ blows from the north but not enough to dispel the fog.  The owner of the boat
 slowly pushes the boat onward with his pole.  The fog is too thick to discern a
 destination.
 ~
-7 0 0 0 0 2
+7 0 0 0 0 0
 D1
 ~
 ~
@@ -613,7 +613,7 @@ the massive castle resting in the middle of the lake on a small island.  The sky
 looks darker to the north and you catch a scent of death and decay from a gust
 of wind in that direction.
 ~
-7 0 0 0 0 2
+7 0 0 0 0 0
 D0
 ~
 ~

@@ -5,7 +5,7 @@ part of the world.  There are several rumors as to where it leads,
 but no one knows for sure.  Looking south, you gaze into a panorama
 of a rocky, cactus-dotted land, shimmering in the heat of the day.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D2
 A huge cactus-dotted desert spreads out before you.
 ~
@@ -31,7 +31,7 @@ The Beginning Of The Southern Desert~
 appear, you are thankful that they do not grow on the path.
 To the south, you see a desert, teeming with desert life.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -248,7 +248,7 @@ mother nature, you ignore your thirst and plod onward.
    To the south the mountains rise up out of the earth like
 an ill specter.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 To the north you look down onto flatter ground.
 ~
@@ -325,7 +325,7 @@ The Foothills~
 becomes easier. Far off to the east you think you see blue.
 to the south the dusty road continues. 
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 The road leads north into the Southern Desert.
 ~
@@ -343,7 +343,7 @@ A Bend In The Fading Road~
 You are surrounded by sage brush, and heat. You can barely make out 
 a path to the south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 The path leads north into the heart of the desert mountains.
 ~
@@ -360,7 +360,7 @@ A Dusty Road~
    Here the land is harsh and hot, reminding you of your
 4th-grade teacher.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 You see a 'T' in the road to the east. 
 ~
@@ -377,7 +377,7 @@ A Dusty 'T' Intersection~
    The dusty road here splits to the east and to the west. The
 desert continues to the south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 The road leads north into the desert.
 ~
@@ -394,7 +394,7 @@ The Southern Desert~
    The desert stretches out in every direction, a rugged terrain 
 reminding you of the moon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -410,7 +410,7 @@ The Southern Desert~
 reminding you of the moon. You can barely see mountains on the east 
 horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -426,7 +426,7 @@ The Southern Desert~
 reminding you of the moon.  You can barely see mountains on the east 
 horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -442,7 +442,7 @@ The Southern Desert~
 reminding you of the moon.  The mountains to the east are snow-capped,
 and rocky.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D1
 You see mountains to the east.
 ~
@@ -458,7 +458,7 @@ S
 The Southern Desert~
    The desert stretches out in every direction but east.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D3
 The Southern desert stretches out to the western horizon.
 ~
@@ -470,7 +470,7 @@ An Overgrown Trail~
    You are walking down a trail, overgrown with cactus and other dry 
 plants.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see a more-travelled path to the north.
 ~
@@ -487,7 +487,7 @@ Way Out In The Southern Desert~
    Here the air is as dry as your step-mother's humor.
 (Thank God she's not here to watch you mud.)
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -503,7 +503,7 @@ An Overgrown Trail~
 plants.
 A path leads east from here, off into the distance.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -524,7 +524,7 @@ A Faded Footpath~
 The trail leads south, east, and west with no obvious intent 
 or purpose.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -543,7 +543,7 @@ Way Out In The Desert~
    You have travelled out so far now that you have almost forgotten 
 what water looks and tastes like.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -562,7 +562,7 @@ Way Out In The Desert~
    You are nowhere near where everyone else wants to be.
 How do you feel about that?
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see the trail here leads north.
 ~
@@ -579,7 +579,7 @@ The Southern Desert~
 reminding you of the moon.  Far off to the south-west you can 
 barely see a mesa, sitting on the horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -595,7 +595,7 @@ The Southern Desert~
 reminding you of the moon.  Off to the south you can 
 see a mesa, rising up from the horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -612,7 +612,7 @@ The Southern Desert~
 reminding you of the moon.  Off to the south-west you can 
 see a mesa, sitting on the horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -628,7 +628,7 @@ The Southern Desert~
 reminding you of the moon.  A way off to the south-west you can 
 just see a mesa, sitting on the horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -644,7 +644,7 @@ The Southern Desert~
 reminding you of the moon.  Quite a way off to the south-west you can 
 just see a mesa, sitting on the horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -660,7 +660,7 @@ The Southern Desert~
 reminding you of the moon.  Far off to the south-west you can 
 barely see a mesa, sitting on the horizon.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 ~
 ~
@@ -674,7 +674,7 @@ S
 Way Out In The Southern Desert~
    The desert stretches out in every direction.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see more desert to the north.
 ~
@@ -700,7 +700,7 @@ S
 Way Out In The Southern Desert~
    The desert stretches out in every direction.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see more desert to the north.
 ~
@@ -719,7 +719,7 @@ S
 Way Out In The Southern Desert~
    The desert stretches out in every direction.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see more desert to the north.
 ~
@@ -740,7 +740,7 @@ Near A Rocky Mesa~
 reminding you of the moon.  To the south the mesa looms nearer,
 you think you can hear strange singing blowing in the wind.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 ~
 ~
@@ -755,7 +755,7 @@ S
 Way Out In The Southern Desert~
    The desert stretches out in every direction.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see more desert to the north.
 ~
@@ -773,7 +773,7 @@ North Of A Rocky Mesa~
 jut up through the desert floor.
    The mesa to the south seems ominously silent...
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 To the north you see the desert.
 ~
@@ -789,7 +789,7 @@ S
 Way Out In The Southern Desert~
    The desert stretches out in every direction.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see more desert to the north.
 ~
@@ -810,7 +810,7 @@ In The Brush~
    You are completely surrounded by tumbleweeds now, and 
 the world is deathly silent.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 You see more brush to the north.
 ~
@@ -837,7 +837,7 @@ In The Brush~
    Here you decide not to go any further, due to the increasing 
 number of brambles getting caught in your clothes.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 You see more brush to the north.
 ~
@@ -865,7 +865,7 @@ The Mesa~
 to about the height of 200 feet, there is no way you could ever climb
 it. Directly to the south you spot a small hole.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 ~
 ~
@@ -884,7 +884,7 @@ S
 The Southern Desert~
    This is the largest desert you have ever seen...
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -899,7 +899,7 @@ The Southern Desert~
    The path has disappeared completely, leaving you free to
 choose any direction at all.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 This is the largest desert you have ever seen...
 ~
@@ -926,7 +926,7 @@ The Southern Desert~
    The small trail you have been painstakingly following
 leads to the north and south, and a smaller trail wanders to the west.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -941,7 +941,7 @@ The Southern Desert~
    The small trail you have been painstakingly following
 leads to the north and south, with no end in sight. 
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -957,7 +957,7 @@ Cactus Land~
 stay away from all the pricks.
 The trail leads east and south from here.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 You see a desert path, deserted.
 ~
@@ -974,7 +974,7 @@ The Southern Desert~
    The desert stretches out in every direction, and a faint trail
 runs off to the west.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -995,7 +995,7 @@ A Cactus-Infested Area~
 stay away from all the pricks.
 The trail leads north and south from here.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1011,7 +1011,7 @@ A Cactus-Infested Area~
 stay away from all those darn pricks.
 The trail leads north and east from here.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1026,7 +1026,7 @@ The Southern Desert~
    The desert stretches out in every direction, and a faint trail
 runs off to the west. The main path leads north and south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1051,7 +1051,7 @@ In The Brush~
    The sage brush and tumbleweeds here press in all around you,
 making it a bit hard to walk.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 ~
 ~
@@ -1075,7 +1075,7 @@ In The Brush~
    The sage brush and tumbleweeds here press in all around you,
 making it a bit hard to walk.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 4
 D0
 ~
 ~
@@ -1098,7 +1098,7 @@ The Southern Desert~
    The desert stretches out in every direction, and the main
 path leads north and south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1113,7 +1113,7 @@ The Southern Desert~
    The desert stretches out in every direction, and the main
 path leads north and south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1128,7 +1128,7 @@ The Southern Desert~
    The desert stretches out in every direction, and the main
 path leads north and south.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1143,7 +1143,7 @@ The Southern Desert~
    The desert stretches out in every direction, and the main
 path leads north and east.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 ~
 ~
@@ -1159,7 +1159,7 @@ A Brush-Filled Trail~
    The desert stretches out in every direction, and the main
 path leads east; westward it begins to diminish....
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 You can't see far into the silent brush to the east...
 ~
@@ -1175,7 +1175,7 @@ A Brush-Filled Trail~
    The desert stretches out in every direction, and you can no 
 longer make out a path.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see the desert...
 ~
@@ -1202,7 +1202,7 @@ A Clearer Trail~
    The trail here is clearing a little, you carefully notice 
 broken twigs and brush-marks on the desert floor.
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D0
 You see the desert...
 ~
@@ -1234,7 +1234,7 @@ About half way up it you can see the outlines of a sealed door.
    Looking about, you wonder why you begin to 
 hear noises...
 ~
-269 0 0 0 0 0
+269 0 0 0 0 2
 D1
 You see the front end of a stone wigwam of some sort.
 ~

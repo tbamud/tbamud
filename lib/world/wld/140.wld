@@ -5,7 +5,7 @@ and to either side, blowing the dust into a blinding cloud.  The howling of the
 gusts and your own foot steps are all you can hear.  To your left a steep
 outcropping of rock blocks your way.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -42,7 +42,7 @@ The edge of the desert.~
 wind gusts blowing sand up into a blinding cloud.  In front of you a huge whirl
 wind of sand rages obscuring your vision.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -62,7 +62,7 @@ The edge of the desert.~
 wind gusts blowing sand up into a blinding cloud.  In front of you a huge whirl
 wind of sand rages obscuring your vision.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -83,7 +83,7 @@ and to either side, blowing the dust into a blinding cloud.  The howling of the
 gusts and your own foot steps are all you can hear.  To your right a steep
 outcropping of rock blocks your way.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -102,7 +102,7 @@ that storm out there really is?  Behind you the dust still rises in blinding
 clouds.  To your right you find a large smooth face of sand polished stone
 obstructing your path.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -124,7 +124,7 @@ your skin and the heat of the sun is almost unbearable.  You wonder how big
 that storm out there really is?  Behind you the dust still rises in blinding
 clouds.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -150,7 +150,7 @@ your skin and the heat of the sun is almost unbearable.  You wonder how big
 that storm out there really is?  Behind you the dust still rises in blinding
 clouds.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -177,7 +177,7 @@ that storm out there really is?  Behind you the dust still rises in blinding
 clouds.  To your left you find a large smooth face of sand polished stone
 obstructing your path.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -199,7 +199,7 @@ you.  You wonder if you will be able to breathe if this storm gets any worse.
 To your left cold rock blocks your way as far as you can reach in any
 direction.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -243,7 +243,7 @@ The blasted sands.~
 where you are going.  Your skin burns from the heat of the sun somewhere above
 you.  You wonder if you will be able to breathe if this storm gets any worse.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -269,7 +269,7 @@ you.  You wonder if you will be able to breathe if this storm gets any worse.
 To your right cold rock blocks your way as far as you can reach in any
 direction.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -290,7 +290,7 @@ rock dominate the land before you and to either side.  You can see the heat
 rising in shimmering tendrils from the hills to the north, East, and West.  A
 cloud of dust and sand rises into the air to the south.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -311,7 +311,7 @@ rock dominate the land before you and to either side.  You can see the heat
 rising in shimmering tendrils from the hills to the north, East, and West.  A
 cloud of dust and sand rises into the air to the south.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -336,7 +336,7 @@ rock dominate the land before you and to either side.  You can see the heat
 rising in shimmering tendrils from the hills to the north, East, and West.  A
 cloud of dust and sand rises into the air to the south.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -361,7 +361,7 @@ rock dominate the land before you and to either side.  You can see the heat
 rising in shimmering tendrils from the hills to the north, East, and West.  A
 cloud of dust and sand rises into the air to the south.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -382,7 +382,7 @@ even higher.  To the south a desert of swirling sand and dust awaits more
 hopeless wanderers.  The wind gusts, moaning mournfully in your ears.  To the
 left you find yourself looking down a sheer cliff of red veined stone.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 4
 D1
 ~
 ~
@@ -398,7 +398,7 @@ The bad lands.~
 even higher.  To the south a desert of swirling sand and dust awaits more
 hopeless wanderers.  The wind gusts, moaning mournfully in your ears.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 4
 D0
 ~
 ~
@@ -422,7 +422,7 @@ The bad lands.~
 even higher.  To the south a desert of swirling sand and dust awaits more
 hopeless wanderers.  The wind gusts, moaning mournfully in your ears.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 4
 D0
 ~
 ~
@@ -447,7 +447,7 @@ even higher.  To the south a desert of swirling sand and dust awaits more
 hopeless wanderers.  The wind gusts, moaning mournfully in your ears.  To the
 right you find yourself looking into an impassable gorge of red streaked rock.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 4
 D2
 ~
 ~
@@ -465,7 +465,7 @@ into the largest vortex of blowing wind and dust you have ever seen.  The wind
 roars and the sun beats down on you making you wonder if anything could
 possibly survive out here.    
 ~
-140 4 0 0 0 0
+140 4 0 0 0 4
 D0
 ~
 ~
@@ -487,7 +487,7 @@ into the largest vortex of blowing wind and dust you have ever seen.  The wind
 roars and the sun beats down on you making you wonder if anything could
 possibly survive out here.    
 ~
-140 4 0 0 0 0
+140 4 0 0 0 4
 D0
 ~
 ~
@@ -509,7 +509,7 @@ other direction.  The roar of the storm and the sound of your heart in your
 ears is deafening.  The blowing sand scours your exposed skin causing you to
 hunch your shoulders and seek shelter from the storm.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -527,7 +527,7 @@ The blowing sand scours your exposed skin causing you to hunch your shoulders
 and seek shelter from the storm.  You vaguely wonder how you are going to find
 your way through this stuff, and if you are strong enough to fight the winds.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -553,7 +553,7 @@ The blowing sand scours your exposed skin causing you to hunch your shoulders
 and seek shelter from the storm.  You vaguely wonder how you are going to find
 your way through this stuff, and if you are strong enough to fight the winds.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -579,7 +579,7 @@ The blowing sand scours your exposed skin causing you to hunch your shoulders
 and seek shelter from the storm.  The winds pull you to the north and west
 making it impossible to go in any other directions.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -596,7 +596,7 @@ balance.  Clouds of choking dust and sand fill your nostrils and throat making
 it almost impossible to breathe.  The wind pulls you to the North and West
 While to the South you can feel the same natural forces ravaging the land.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -618,7 +618,7 @@ still so strong that you don't dare raise your head to see what may be in that
 direction.  The tornado pulls you to the East and West and you can tell there
 is no better weather to the South.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -644,7 +644,7 @@ still so strong that you don't dare raise your head to see what may be in that
 direction.  The tornado pulls you to the East and West and you can tell there
 is no better weather to the South.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -668,7 +668,7 @@ In the storm.~
 dropping off while powerful winds pull you to the North and South.  Everything
 around you seems to be made of heat, pain, and deafening sound.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -689,7 +689,7 @@ a definite drop in the force of the gusts to the east.  To the North and South,
 the winds pull you toward more blinding sunscorched desert.  While to the west
 you find yourself unable to fight through the power of the storm.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -711,7 +711,7 @@ towering walls of wind and sand that are the funnel of this tornado.  You
 wonder what could be on the other side of those walls and if you should go back
 into them to find out.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -737,7 +737,7 @@ towering walls of wind and sand that are the funnel of this tornado.  You
 wonder what could be on the other side of those walls and if you should go back
 into them to find out.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -762,7 +762,7 @@ a definite drop in the force of the gusts to the east.  To the North and South,
 the winds pull you toward more blinding sunscorched desert.  While to the west
 you find yourself unable to fight through the power of the storm.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -782,7 +782,7 @@ In the storm.~
 Cold rock walls block your way to the north and East, while powerful winds pull
 you to the South and West.  You wonder if you will ever return from this trek.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D2
 ~
 ~
@@ -799,7 +799,7 @@ is your imagination or not, but it seems like there is a moaning sound coming
 from the North.  However all you can really think about is the horrible heat
 and roar of the Storm.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D0
 ~
 ~
@@ -824,7 +824,7 @@ clothes and skin.  For all its force, the wind does not cool you off a bit.
 The storm continues to rage around you, but there seems to be a drop in the
 gusts to the South.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D1
 ~
 ~
@@ -845,7 +845,7 @@ to the South and East.  The force of the storm is so strong to the West that
 you can't move in that direction.  To the North, you encounter smooth stone
 walls.  The sound of sand scratching on rock fills your ears.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 2
 D1
 ~
 ~
@@ -896,7 +896,7 @@ The city opening.~
 low buildings that might be houses.  But what really draws your eye are the
 wyverns.  They are everywhere.  You wonder what you have stumbled across here.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -914,7 +914,7 @@ The large reptilian citizens of this city move by you paying no attention to
 the insignificant creature in their domain.  The stone of this place is the
 same dull gray as the outer tunnels.  What a drab place to live.    
 ~
-140 4 0 0 0 0
+140 4 0 0 0 1
 D0
 ~
 ~
@@ -941,7 +941,7 @@ gates set into the stone wall there.  Some very large and well armored wyverns
 stand in front of the gates: guards?  The citizens keep their heads down as
 they walk through this part of the city, as if not wanting to be recognized.  
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -959,7 +959,7 @@ Two huge wyverns stand in front of the gates to the East.  One of them raises a
 giant claw and motions you to move on.  You realize that all the citizens of
 the city have disappeared leaving you alone before these massive creatures.  
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -982,7 +982,7 @@ road runs East and West to intersections.  As you are looking around one of the
 city guards plods by and gives you a glare from deep-set red eyes.  You begin
 to wonder if you should be here at all.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1000,7 +1000,7 @@ into the wall to the South not to be trampled.  Spike Road runs to the north,
 And Scale way extends to the East.  This entire city is very quiet as if the
 wyverns are communicating through some other means than speech.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1022,7 +1022,7 @@ A sign with a picture of a black staff covered in flames hangs over the door.
 The citizens seem to shy away from the door as if in fear.  Now what could make
 these huge beings afraid?    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1044,7 +1044,7 @@ wyvern child peeks at you from around a corner and then pulls its head back
 when it sees you looking at it.  There seems to be a store of some sort to the
 South East.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1069,7 +1069,7 @@ most of the traffic seems to be to the East at a large intersection.  To the
 west there is a small cave cut into the wall of the main cavern, While the
 walls of buildings form the North and South sides of the street.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1087,7 +1087,7 @@ low buildings you assume to be stores.  A gust of wind from the south blows the
 musky sent of the inhabitants of this city to you, reminding you of what an
 alien society you are really in.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1112,7 +1112,7 @@ activity.  The road runs North and South, While to the East and West you see
 the backs of the low stone buildings that these wyverns seem to favor.  The
 citizens still ignore you as if you weren't even there.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1129,7 +1129,7 @@ West to Fang street and Claw road.  With nothing else to look at you glance up
 to where the roof of the huge city cavern should be.  Far above the darkness
 continues and you wonder just how large this cavern really is?    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1147,7 +1147,7 @@ the long low buildings of the city.  You find yourself having to jump aside to
 avoid being crushed by a pair of workers carrying a long package by you.  A
 third citizen walks by and glares at you but says nothing.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1174,7 +1174,7 @@ a picture of a dragon diving into a barrel.  Many citizens enter and leave the
 building.  One of them leaves carrying a huge barrel.  He bumps into you and
 sends you sprawling, but doesn't seem to notice.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1195,7 +1195,7 @@ take little interest in this part of the city.  There looks to be a small cave
 cut into the rock wall to the North east.  There is a flash of movement from
 the street ahead of you and then it vanishes.  Is someone following you?    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1213,7 +1213,7 @@ can see a line of buildings running from East to West.  The streets here are
 larger and the buildings are more ornate.  Perhaps this is a more affluent part
 of the city?    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1240,7 +1240,7 @@ buildings to the north are the last line of shops in the main cavern.  You
 begin to wonder how these creatures were able to build such a large city when
 there seems to be no craftsman among them.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1258,7 +1258,7 @@ clearly see that the cavern wall opens into a long high tunnel.  In the center
 of the square is a large statue of Ferret the mighty Dragon.  The people that
 pass by all bow respectfully to the image of the all-mighty God.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1286,7 +1286,7 @@ it.  To the East there is a sign with a dragon breathing flames and dripping
 blood.  Citizens walk in out of both stores still saying nothing to you or
 anyone else.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1311,7 +1311,7 @@ cave opening to the West.  A guard marches by and growls at you deep in its
 throat.  Apparently this part of the city is off limits to most people.  The
 street itself is hemmed in by the sides of buildings to the North and South.  
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1329,7 +1329,7 @@ What could be of such value?  To the South and East you can look all the way
 down the streets to the opposite cavern walls.  With the size of the citizens
 it's no wonder they have such a large home.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1353,7 +1353,7 @@ Spike road.~
 quietly walk by in all directions.  There looks to be a small cave off to the
 north west from here.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1372,7 +1372,7 @@ might be the front of a store.  Something flies above you in the darkness
 blowing the sent of ancient dust and mold to you but when you look to see what
 it is nothing is there.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1391,7 +1391,7 @@ the side of the street.  Looking South you can see all the way to the end of
 Spike, where the guards headquarters is.  To the East is the front of a shop
 where several youths practice wielding weapons.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1415,7 +1415,7 @@ these reptiles seem to live in.  A guard wearing a huge crested helm plods by
 and spits at your feet.  There is a distinct feeling of menace about this
 place.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1440,7 +1440,7 @@ has invaded their privacy.  Looking South you can see some sort of statue in a
 small plaza.  Dragon drive extends East and West, while Claw road goes further
 South toward the entrance to the cavern.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1466,7 +1466,7 @@ Directly in front of you is an arched entrance into a long tunnel.  Young
 wyverns enter and leave the tunnel and you can hear the sounds of combat far to
 the North.  For your sake you hope they keep ignoring you.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1487,7 +1487,7 @@ north West a large tunnel opens up easily accommodating several 15 foot long
 citizens abreast.  East and West Dragon drive runs the width of the main city
 cavern.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1508,7 +1508,7 @@ small wyvern house.  Fang street runs the length of the city to the South,
 While to the West you can see two stores and a large cave opening in the North
 wall.  This city seems so inhospitable should you keep traveling here?    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1529,7 +1529,7 @@ citizens around here seem to be carrying weapons or wearing some kind of armor.
 The road you are on runs north and South following the curve of the main
 cavern.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1549,7 +1549,7 @@ sounds of battle and magic can be heard from that direction as well as
 chanting.  The smell of roasting meet comes from the door to the West and your
 mouth begins to water.  To the South is the End of Claw road.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1573,7 +1573,7 @@ chamber that emanates a feeling of magical energy.  The citizens and youth who
 walk through here all bow respectfully to the statuary, acknowledging their
 long lost ancestors as they pass by.    
 ~
-140 112 0 0 0 0
+140 112 0 0 0 1
 D0
 ~
 ~
@@ -1609,7 +1609,7 @@ gray stone floor is splattered with blood from accidental cuts and gashes.
 The room itself is a round arena filled with practice dummies and targets.  A
 huge plaque on one wall holds the names of all the graduates of the guild.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 ~
@@ -1627,7 +1627,7 @@ large statue of their dragon God.  Smoke from burning braziers fills the room
 with a musky scent and candles cast a flickering glow on the smooth stone
 walls.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1641,7 +1641,7 @@ small alcoves around the room.  As you get a better view of the interior of the
 room you are aware of all the eyes, seen and unseen that focus on you.  The
 urge to climb out of this chamber to some place well-lighted is very strong.  
 ~
-140 96 0 0 0 0
+140 96 0 0 0 1
 D4
 ~
 Stone~
@@ -1658,7 +1658,7 @@ knights, Khelben, Lord of the Elements.  Set off in a depression in the floor
 is a old wyvern repairing the dented training armors of the students.  These
 warriors look very professional.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D5
 ~
 ~
@@ -1672,7 +1672,7 @@ and chant with holy symbols and books of wisdom in hand.  Despite the combative
 nature of wyverns, this room feels peaceful, an odd feeling given the general
 air of this city.    
 ~
-140 24 0 0 0 0
+140 24 0 0 0 1
 D0
 ~
 ~
@@ -1696,7 +1696,7 @@ The Viewing.~
 the holy viewing room where gods and mortals write their messages to each
 other.  In one corner a priest stands looking at the board.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D2
 ~
 ~
@@ -1709,7 +1709,7 @@ podium at the front of the hall.  In one corner a few old city officials are
 discussing some point of judicial law in hushed tones, while at one side of the
 hall a few citizens examine the board for news.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1726,7 +1726,7 @@ the items of this store without paying should know the owner does not need them
 to defend himself or his store.  Those who doubt should attempt to walk off
 with a weapon while guessing how many pieces they will be left in soon.  "
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 Door~
@@ -1742,7 +1742,7 @@ portions of roasted meets.  There is a sign hanging over the bar that reads,
 dimly lit making it difficult to see the faces of those in the room.  You
 vaguely think that this would be a good place for an ambush.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 Door~
@@ -1757,7 +1757,7 @@ hanging on it and a low counter separates you from the goods.  A sign on the
 counter reads, "Thieves will become part of the merchandise, those with thick
 hides are particularly encouraged to join those displayed on the wall.  "
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 Door~
@@ -1772,7 +1772,7 @@ reads, "If you're here to buy or sell come right on in, if you're here to
 steal.  Please enjoy our security measures, we'll clean up what's left of you
 later.  "
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 Door~
@@ -1788,7 +1788,7 @@ magical tomes.  There is a sign hanging from the center of the roof.  It says,
 will need them to recover from the beating they will receive from the owner.  
 Please pay for all items and have a nice day.  "
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 Door~
@@ -1802,7 +1802,7 @@ counter of glowing red stone blocks your way before you can get any closer than
 looking at these wonders.  A small sign on the counter reads "do not touch the
 merchandise.  Survivors will be prosecuted.  "
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 Door~
@@ -1816,7 +1816,7 @@ runs the length of the room.  Barrels and all sorts of containers are hung on a
 rack on the other side of the counter.  A small sign reads, "do not drink
 without paying.  Violators will get there drink then be drowned.  "
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 Door~
@@ -1831,7 +1831,7 @@ The roof is polished gray rock set with crystals and precious stones.  To the
 West the gates look like a good way to get out of here, something you are
 continually thinking about now.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1852,7 +1852,7 @@ family history of the royal line of this city.  Large wyverns stand everywhere
 looking at you with distaste, "What are you doing here?  " One of them asks.  
 The roof is polished gray rock set with crystals and precious stones.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1869,7 +1869,7 @@ family history of the royal line of this city.  Large wyverns stand everywhere
 looking at you with distaste, "What are you doing here?  " One of them asks.  
 The roof is polished gray rock set with crystals and precious stones.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1888,7 +1888,7 @@ The roof is polished gray rock set with crystals and precious stones.  To the
 North a natural opening in the rock leads to a second chamber.  All you can see
 within are the backs of worshiping Wyverns.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1910,7 +1910,7 @@ Wyverns kneel all around the chamber bowing their necks toward the throne.
 The room is lit by a huge glowing gem set in the roof.  You wonder what kind of
 wealth it would take to create such a chamber.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D2
 ~
 ~
@@ -1924,7 +1924,7 @@ waiting their turn to register complaints stand in the center of this natural
 cavern.  There is a large arch to the North, which wyverns enter and leave one
 at a time.  To the East a second smaller arch leads back on to Scale way.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D0
 ~
 ~
@@ -1942,7 +1942,7 @@ walls.  The room is lit only by a single candle over the couch.  The light
 flickers making it look as if the pictures on the wall are coming to life.  To
 the south an arch leads back into the waiting area.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D2
 ~
 ~
@@ -1958,7 +1958,7 @@ the room with a smoke hole at the peek of the domed roof to clear the air.
 There are no decorations or other pieces of furniture.  These wyverns don't
 seem to need very much to live comfortably.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 ~
@@ -1974,7 +1974,7 @@ the room with a smoke hole at the peek of the domed roof to clear the air.
 There are no decorations or other pieces of furniture.  These wyverns don't
 seem to need very much to live comfortably.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -1990,7 +1990,7 @@ the room with a smoke hole at the peek of the domed roof to clear the air.
 There are no decorations or other pieces of furniture.  These wyverns don't
 seem to need very much to live comfortably.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -2006,7 +2006,7 @@ the room with a smoke hole at the peek of the domed roof to clear the air.
 There are no decorations or other pieces of furniture.  These wyverns don't
 seem to need very much to live comfortably.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 ~
@@ -2022,7 +2022,7 @@ the room with a smoke hole at the peek of the domed roof to clear the air.
 There are no decorations or other pieces of furniture.  These wyverns don't
 seem to need very much to live comfortably.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 ~
@@ -2038,7 +2038,7 @@ the room with a smoke hole at the peek of the domed roof to clear the air.
 There are no decorations or other pieces of furniture.  These wyverns don't
 seem to need very much to live comfortably.    
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D1
 ~
 ~
@@ -2051,7 +2051,7 @@ for those less fortunate than themselves.  The walls of this room are covered
 with hooks and shelving for more valuable items while barrels and baskets
 litter the floor for more common gifts.
 ~
-140 0 0 0 0 0
+140 0 0 0 0 1
 D3
 ~
 ~

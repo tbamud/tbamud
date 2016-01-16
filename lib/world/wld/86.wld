@@ -31,7 +31,7 @@ casually winds up the steep hill to a dark appearing Keep atop the hill.
 Ravens call from the nearby trees and smoke can be seen to the north.  While a
 small muddy trail leads off to the west.    
 ~
-86 1 0 0 0 0
+86 1 0 0 0 4
 D0
    The trees slowly inch back, revealing more of the road to the north.    
 ~
@@ -55,7 +55,7 @@ the spokes.  The vines have twined themselves tightly but do not hinder
 movement to the north.  The path also curves to the east and fades as it slopes
 down the steep hill.    
 ~
-86 1 0 0 0 0
+86 1 0 0 0 4
 D0
    This old rusted wrought iron fence lays open to the north.    
 ~
@@ -85,7 +85,7 @@ doors hang on their hinges, neither inviting nor imparing entrance.  Thick dust
 lays everywhere and spiderwebs fill the corners dampening the sounds that come
 from deep within the keep.    
 ~
-86 1 0 0 0 0
+86 1 0 0 0 2
 D0
    This old weather beaten wooden door barely keeps the weather and critters
 out.    
@@ -270,7 +270,7 @@ and fill the air with the rustling of their feathers.  The path leads in two
 directions the east and west.  Tall hedges and a wrought iron fence prevent
 movement to the north and south.    
 ~
-86 64 0 0 0 0
+86 64 0 0 0 2
 D1
    A dirt path winds along in this direction.    
 ~
@@ -290,7 +290,7 @@ looms nearby and an old balcony can be seen just above the first floor windows.
 The trees have grown in about the old courtyard making travel in all directions
 impossible, save to the west.    
 ~
-86 1 0 0 0 0
+86 1 0 0 0 2
 D3
 ~
 ~
@@ -434,7 +434,7 @@ the leaves and sway some of the lighter branches along this dirt path.  A break
 in the foliage appears to the north and the dirt path continues on to the west.
   
 ~
-86 1 0 0 0 0
+86 1 0 0 0 2
 D0
    A small clearing lays beyond the tree break.    
 ~
@@ -453,7 +453,7 @@ Grand Duke Kalithorn's Keep.  In every direction trees block the view and low
 growing raspberr and prickly rose bushes block further travel.  A small rock
 formation lay at the very edge of the path.    
 ~
-86 81 0 0 0 0
+86 81 0 0 0 2
 D2
    A dirt path continues on in this direction.    
 ~
@@ -491,7 +491,7 @@ heard.  Thick wooden support posts keep the earth from caving into this small
 tunnel that leads forever downwards.  There is a wooden ladder that leads down
 and up.  
 ~
-86 1 0 0 0 0
+86 1 0 0 0 5
 D4
    There is a large stone door above.    
 ~

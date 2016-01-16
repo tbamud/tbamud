@@ -857,7 +857,7 @@ with glossy sealant so that it shines as though marble.  Creeping plants wind
 their way around each wooden post, bright fuschia and pink clematus flowers
 blossming abundantly.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 5
 D1
    A clear swimmingpool shimmers gently as the watery surface stirs, green
 leaves from the surrounding trees twirling in the air.
@@ -879,7 +879,7 @@ deeper, a small metal ladder attached to the side at the deepest end.  Green,
 blooming plants grow all around, large trees overhanging so that their trailing
 branches caress the water with each breeze.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 6
 D0
    Mountain landscape stretches all around, the gentle babbling of a small
 stream breaking the silence of the air.
@@ -916,7 +916,7 @@ clouds.  Soft open breeze carries the green scent of growth and life, new grass
 and dark fragrant pine trees.  Beautiful untouched landscape spans all around,
 the grassy paths sparkling softly with a sprinkling of fresh dewy tears.  
 ~
-118 4 0 0 0 0
+118 4 0 0 0 5
 D1
    This large oakdoor is as magnificent as the expensive house that lies beyond
 it, carved with beautiful patterning and polished until smooth and glossy.  
@@ -940,7 +940,7 @@ warm and soft one moment before changing to frosty chill the next.  Little
 sparks flicker randomly in the air, murmuring as they linger, only to fade and
 die like half spoken words.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
    A quaint English house lies to the north, a little cobblestone road winding
 its way to the modest front door.
@@ -976,7 +976,7 @@ into a garage at the side.  The sounds of birds chirping can be heard all
 around, and the subtle tinkling of a windchime though the air is still and
 breathtakingly cold.  To the north, a wooden door guards the way.
 ~
-118 0 0 0 0 0
+118 0 0 0 0 1
 D0
    This painted wooden door is relatively unnoteworthy, apart from its bright
 blue colour.  Time and dampness are already making their presence known through
@@ -1005,7 +1005,7 @@ plastic covering every window, and trees growing closely around as though
 huddled in some secret understanding.  A dark black door guards the way to the
 west.
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D1
    A white dome-shaped structure can be seen, adorned with pale green leaves and
 large red blossoms.
@@ -1361,7 +1361,7 @@ the breeze.  A row of bright yellow daffodils dance innocently to the east like
 golden bursts of sunfire, dark red roses spreading like a wound to the west,
 scarlet petals dripping slowly onto the ground as the flowers wilt.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 1
 D0
 ~
 ~
@@ -1395,7 +1395,7 @@ little brick houses can be seen, wisps of smoke unfurling lazily in the crisp
 air.  Distant smokestacks rise high above the horizon, the twinkling of car
 headlights passing through the shadowy air like shooting stars.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 1
 D1
    This large wooden window looks as though it is normally propped open, chips
 of paint peeling off the window frame around.  
@@ -1541,7 +1541,7 @@ A Massive Garden~
 grasses dried brown by the dry climate.  Only the flourishing yellow heads of
 dandelions brighten the place with colour.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -1561,7 +1561,7 @@ A Massive Garden~
 broken bicycles.  The grasses too seem stained with the colour of bleeding
 metal, the copper colour making the place seem even more dry and desert-like.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D2
 ~
 ~
@@ -1579,7 +1579,7 @@ uncertainly in the air, tiny seedlings and leaves wafting dreamily about.  The
 hard ground is slightly cracked, blistering with dryness benath the thick matted
 carpet of dead and dying grass.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D1
 ~
 ~
@@ -1597,7 +1597,7 @@ off to the east surrounded by flat brown grasses.  Few flowers grow here, only
 scattered weeds and a few dark shrubs, most of the land too dry to support much
 growth.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2011,7 +2011,7 @@ trickling along the grassless ground, making it glisten and shine even more.
 The surface slopes gently upward to the south, curving again abruptly down so
 that only horizon can be seen.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 4
 D1
 ~
 ~
@@ -2028,7 +2028,7 @@ On the Tip of a Hill~
 it an almost purposefully polished appearance.  The gently curving surfaces are
 flawless and almost reflective, covered in a fine sheen of moisture.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 4
 D2
 ~
 ~
@@ -2044,7 +2044,7 @@ A Sloping Ridge~
 colour veining through the rock as though mineral rich waters once ran in
 rivulets here, the tinted surface eroded until glossy and flawless.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 4
 D0
 ~
 ~
@@ -2068,7 +2068,7 @@ A Sloping Ridge~
 south, rosy hues of purple mixing with the cool grey.  Splotches of deeper
 colour blossom here and there, permanent stains on the smooth stony canvas.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 4
 D0
 ~
 ~
@@ -2093,7 +2093,7 @@ its surface as if brine water flowed through here at some point.  Perfectly
 eroded, the chalk-like blemishes are all that spoil the smoothness, dulling the
 natural shine of the stone.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 4
 D1
 ~
 ~
@@ -2106,7 +2106,7 @@ here, a faint vibration throbbing through the rock from some unseen source.  A
 feeling of heat rises in the air, the very surface of the stone hot to the touch
 as if warmed from within.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 4
 D3
 ~
 ~
@@ -2118,7 +2118,7 @@ A Grave Plain~
 breeze has stirred it.  No grass, rocks, or other features of any kind can be
 seen, just the ground untouched and bare like a vast sandy canvas.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2139,7 +2139,7 @@ of unused parchment.  Void of all plantlife and rockery, the only things
 noticeable are the slight ripples that work through the fine earth with each
 breeze.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2159,7 +2159,7 @@ A Grave Plain~
 smooth, pale soil.  Gentle heat wafts from all around, a thick muggy humidity
 lingering in the air and coating everything in sight with a subtle sheen.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2180,7 +2180,7 @@ and stubborn against the breezes, almost more like the spines of cacti than any
 green flora.  A deep shadow shrouds the place in gloom, the atmosphere clinging
 and moist.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2204,7 +2204,7 @@ Dark Grasses~
 crisp and dry though the surrounding air is hot and humid.  Thick black grasses
 stand rigidly, covered with a slick shine of moisture.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D2
 ~
 ~
@@ -2220,7 +2220,7 @@ Dark Grasses~
 stubbornly straining against the attempts of the breeze to move them.  Stifling
 muggy air swirls aimlessly about, leaving glistening droplets on every surface.
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2236,7 +2236,7 @@ Dark Grasses~
 too weary to stand tall.  The soft sandy soil is dark and ribbed, alive with the
 dancing shadows of the swaying plant life.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2252,7 +2252,7 @@ Dark Grasses~
 glossy with moisture and shining like black stalactites of oil.  An oppressive
 heat lingers in this place, a greasy film of wetness covering everything.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2276,7 +2276,7 @@ Dark Grasses~
 bend reluctantly to the wafting air.  Sticky and claustrophobic, the damp
 atmosphere seems to smother everything, filling the place with a tangy odour.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D1
 ~
 ~
@@ -2292,7 +2292,7 @@ Dark Grasses~
 seem to infuse this place with any life.  Muggy and clinging the air seems
 almost to coat everything with slime.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2308,7 +2308,7 @@ Dark Grasses~
 Sinewy grasses whisper mournfully, bent and stiff as though aging black ghosts
 that haunt the place.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2324,7 +2324,7 @@ A Grave Plain~
 glistening and stirring gently as the currents of air move, warmer air rising
 from the ground itself as if some heat source lay somewhere far beneath.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2344,7 +2344,7 @@ A Grave Plain~
 like gently rippled icing over the flat terrain.  A subtle heat stirs the air,
 making it shimmer and shift slightly as though part of some mirage.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2365,7 +2365,7 @@ continuous plane.  The air is warm and humid, the sticky atmosphere smelling
 vaguely of salt as if this were at the side of some ocean, though there is no
 sound of waves to be heard.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 2
 D0
 ~
 ~
@@ -2411,7 +2411,7 @@ smooth pebbles and the falling petals from nearby trees.  Clear mountain breezes
 wash cleanly over the land, filling the atmosphere with a peaceful, serene
 feeling; a beautiful jagged view of the mountainsides spreading out below.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 5
 D2
 ~
 ~
@@ -2450,7 +2450,7 @@ few people to be seen scurrying quickly about, faces down as they rush to their
 destinations.  All seems dim and dreary, the only warmth is the subtle glow of
 light coming from a shop to the east.  
 ~
-118 0 0 0 0 0
+118 0 0 0 0 1
 D1
 ~
 ~

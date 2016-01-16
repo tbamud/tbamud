@@ -3,7 +3,7 @@ Entrance to Smurfville~
    You see before you several tiny houses with little blue people scurrying
 about their tasks.  Everyone seems SO happy.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 Onward to smurf village.
 ~
@@ -25,7 +25,7 @@ Smurfberry Patch~
 picket fences block passage to the south and west.  You can continue on to the
 north or east, where more of the smurfberry patch awaits.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see more smurfberries growing in nice neat rows.
 ~
@@ -48,7 +48,7 @@ Everywhere you look there are neat litte smurfberry bushes with ripe
 smurfberries on them.  To the south there is a small picket fence keeping you
 from the wild jungle beyond.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see more smurfberries growing in nice neat rows.
 ~
@@ -74,7 +74,7 @@ Smurfberry Patch~
    You are in the south-east corner of this wonderfully cute smurfberry patch.
   
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see more smurfberries growing in nice neat rows.
 ~
@@ -96,7 +96,7 @@ Smurfy Road~
 smurfy well in the distance and to the east you see some nice smurfy houses
 aligned in a perfect row.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 Smurfy Road leads off to the north.
 ~
@@ -201,7 +201,7 @@ Smurfberry Patch~
    Oh goodie, even more smurfberry patch!  To the east, you see a white picket
 fence.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see more smurfberries growing in nice neat rows.
 ~
@@ -226,7 +226,7 @@ S
 Smurfberry Patch~
    Everywhere you look, there are neat rows of Smurfberry bushes.
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see more smurfberries growing in nice neat rows.
 ~
@@ -257,7 +257,7 @@ Entrance to Smurfberry Patch ~
    You see ordered rows of bushes growing what appear to be Smurfberries.  The
 patch continues to the north, south and west.  To the east lies Smurfy Road.  
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see more smurfberries growing in nice neat rows.
 ~
@@ -289,7 +289,7 @@ Smurfy Road~
 north, you see a cute little smurfy well.  To the west is what appears to be a
 Smurfberry Patch.  To the east, you see yet another row of well-kept houses.  
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 You see the road leading to a smurfy well.
 ~
@@ -393,7 +393,7 @@ Smurfberry Patch~
 more rows of smurfberry bushes, neatly aligned.  To the north and west you see
 a small white picket fence preventing you from going farther.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D1
 You see more smurfberries growing in nice neat rows.
 ~
@@ -414,7 +414,7 @@ Smurfberry Patch~
    The smurfberry patch extends to the south, east, and west.  There is a white
 picket fence to the north, blocking your passage in that direction.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D1
 You see more smurfberries growing in nice neat rows.
 ~
@@ -441,7 +441,7 @@ Smurfberry Patch~
 more rows of smurfberry bushes, neatly aligned.  To the north and east you see
 a small white picket fence preventing you from going farther.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D2
 You see more smurfberries growing in nice neat rows.
 ~
@@ -464,7 +464,7 @@ looks like the central meeting place for the Smurfs.  This appears to be the
 northern end of Smurfville.  There is a sinister-looking road leading off to
 the north.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 The path leading north appears to be rarely used, as it is overgrown with 
 weeds.
@@ -521,7 +521,7 @@ Road to Gargamel's Castle~
    You are on a not-too-well paved road leading to a large sinister-looking
 castle to the north.  Eerie theme music is filtering down from the castle.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D0
 You see Gargamel's castle looming in the distance.
 ~
@@ -537,7 +537,7 @@ S
 A T-intersection~
    You are on a T-intersection of two rarely-used paths.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D1
 You hear the Barney theme song drifting on the wind.
 ~
@@ -560,7 +560,7 @@ Barney's Playland~
 walls of this once well-lit area.  Several indistinguishable corpses litter the
 ground and a putrid stench hangs in the air.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 2
 D3
 You see a path leading away from this disaster.
 ~
@@ -574,7 +574,7 @@ appears to be mostly deserted, with possibly a few inhabitants.  The entrance
 to the castle is unguarded, but you are not sure you want to see what's inside.
   
 ~
-274 1 0 0 0 0
+274 1 0 0 0 2
 D0
 You see a large iron door leading into the abode of Gargamel.
 ~
@@ -628,7 +628,7 @@ Papa Smurf Lane~
    This is a cute, smurfy road with houses to the north and south.  The road
 continues to the east and west.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 You see Vanity Smurf's house.
 ~
@@ -656,7 +656,7 @@ Papa Smurf Lane~
 continues to the west.  To the east you see the formidable house of Papa Smurf.
   
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 You see Athletic Smurf's house.
 ~
@@ -684,7 +684,7 @@ Smurfette Lane~
    This is a cute, smurfy road with houses to the north and south.  The road
 continues to the east and west.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 You see Artistic Smurf's house.
 ~
@@ -711,7 +711,7 @@ Smurfette Lane~
    This is a cute, smurfy road with houses to the north and south.  The road
 continues to the east and west.    
 ~
-274 0 0 0 0 0
+274 0 0 0 0 1
 D0
 You see Fireman Smurf's house.
 ~
