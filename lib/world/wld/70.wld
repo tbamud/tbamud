@@ -4,7 +4,7 @@ The Fissure Under The Ledge~
 pool.  The water trickles quietly down from the ledge above you.  The water
 smells like the water in a sewer.
 ~
-70 13 0 0 0 0
+70 13 0 0 0 5
 D4
 ~
 ~
@@ -20,7 +20,7 @@ The Muddy Sewer~
    You are standing in mud to your knees.  This is not the kind of place
 for a picnic.  The muddy sewer stretches further into the south.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D2
 You see the muddy sewer continuing into the darkness to the south.
 ~
@@ -38,7 +38,7 @@ The Muddy Sewer Junction~
 no person has ever put his foot here before.  It is too muddy for that
 anyway.  The sewer leads north, south and east from here.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 The muddy sewer stretches into the dark to the north.
 ~
@@ -67,7 +67,7 @@ comfortable since you are used to a somewhat different environment.
 The sewer leads to the north of here.  In the middle you can just
 make out an enormous drainpipe leading down.
 ~
-70 13 0 0 0 0
+70 13 0 0 0 5
 D0
 North.  The muddy junction lies in that direction.
 ~
@@ -110,7 +110,7 @@ The Muddy Sewer~
 dark around here and the mud is sticking to your legs, not very pleasant.
 The pipe leads east and south from here.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 4
 D1
 East.  The mud stretches on into the darkness.
 ~
@@ -134,7 +134,7 @@ The Muddy Sewer~
 this has the advantage that it is not hot, it is rather cold actually.
 The pipe bends to the north and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 The muddy sewer pipe leads into a bend that goes east.
 ~
@@ -158,7 +158,7 @@ The Muddy Sewer Bend~
 your knees in something that resembles mud, but you're not quite sure.
 The bend in which you stand leads west and south.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D2
 The pipe leads into a intersection that goes south and east.  The floor here 
 is still covered in mud.
@@ -184,7 +184,7 @@ wrong it is the smell, the sounds, the total darkness that surrounds you.
 Everything here is so depressing.  The pipe leads on with a trail of thick
 mud to the north, east and south.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 4
 D0
 North.  The pipe goes into a bend with a load of mud all the way up the walls.
 The bend leads west.
@@ -217,7 +217,7 @@ The Sewer Junction~
 what you'd think was an air shaft.  The sewer pipes lead to the north,
 south, east and west.  It look quite impossible to force your way up.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 3
 D0
 North.  Mud is the floor basis in that direction.  Yummy.
 ~
@@ -251,7 +251,7 @@ A Bend In The Sewer Pipe~
    You are in a bend in the sewer pipe.  A strong smell seeps in from the
 north.  The sewer goes north and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 2
 D0
 North.  You are staring into a huge junction with exits in all directions.
 ~
@@ -268,7 +268,7 @@ The Muddy Sewer Pipe~
    You have entered a kind of tube intersection that leads south, west
 and east.  Your legs are covered in mud up to the knees.  REAL yucky!  
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D1
 East.  There is less mud in that direction, or that's your impression.
 ~
@@ -297,7 +297,7 @@ The Bend In The Muddy Sewer~
 It is absolutely inconceivable how all this mud could have been placed
 here.  The pipe leads to the west and south.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D2
 South.  There is even more mud that way, incredible!  Although it looks
 like an intersection in the sewer system that leads east and south.
@@ -323,7 +323,7 @@ your hips.  >BWAADR<.  All that fills your mind right now is the dream of
 a hot bath.  This is NOT very clean mud you know, remember you're in the
 sewer!  The pipes leads north, south and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 North.  Sludge and sediment fills this corridor of the sewer that leads
 into a bend going west.
@@ -363,7 +363,7 @@ inappropriate, as the smell would keep any intelligent creature from even
 thinking of anything but getting away from this foul end of the WORLD.
 The bend goes from north to west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 North.  Filled with mud, that place looks like an impassable intersection
 with pipes leading north and east.
@@ -388,7 +388,7 @@ The Old Well~
 sewer leads to the east from here and the well leads down into darkness.
 Metal bars implanted in the side of the well lead down as a ladder.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 3
 D1
 East.  You see, because of the utter darkness that surround you, absolutely
 nothing.  Your light isn't of much use for that kind of distance.
@@ -412,7 +412,7 @@ The Ordinary Bend~
    You are in the middle of a bend in the pipe system of the sewer system, 
 WHAT a place!!!  The pipe leads to the south and the east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D1
 East.  What a quiet place you've found there.  It is an intersection that has
 pipeways going north and east.
@@ -429,7 +429,7 @@ S
 The Sewer Junction~
    You are in a junction that leads north, west and south.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 North.  You see a bend.
 ~
@@ -452,7 +452,7 @@ The Ordinary Junction~
    This looks like an ordinary junction, actually it seems very quiet
 here.  The pipelines lead west, east and north.
 ~
-70 13 0 0 0 0
+70 13 0 0 0 1
 D0
 To the north you can see a junction like this one, leading north and west.
 ~
@@ -475,7 +475,7 @@ A Quiet Pipe Junction~
    This is the kind of place to rest, though the smell could be a LOT
 better than this.  The sewer goes east, north and west from here.
 ~
-70 13 0 0 0 0
+70 13 0 0 0 1
 D0
 In that direction, you can't see anything.  It is just too dark.
 ~
@@ -504,7 +504,7 @@ and fall and fall...
 ... And come to an abrupt end.  THIS is strange indeed.  There is an arched
 entryway leading down.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D5
 Down.  It is utterly dark that way, though you can make out an intersection
 of sewer pipes leading west, north and east.
@@ -517,7 +517,7 @@ The Sewer~
    You are standing in mud up to your ankles.  This is an intersection with 
 sewer pipes leading east, south and west.
 ~
-70 13 0 0 0 0
+70 13 0 0 0 1
 D1
 To the east there is a peculiar looking round room.
 ~
@@ -540,7 +540,7 @@ Another Intersection~
    You have never seen anything so BORING... This is an intersection with
 pipes leading north, south and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 To the north there is an intersection, where the pipes are leading west and
 east.  You notice that the floor to the west is covered in mud.
@@ -593,7 +593,7 @@ S
 The Sewer Junction~
    You stand in a junction of sewer pipes leading north, east and west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 ~
 ~
@@ -614,7 +614,7 @@ The Triple Junction~
    You stand in the middle of a huge junction of concrete sewer pipes.  The 
 pipes lead into three different directions: east, south and west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D1
 East.  You can see a bend in the sewer pipe leading north.
 ~
@@ -640,7 +640,7 @@ There are enormous concrete pipes leading north, south, east and west.
 There is also a metal ladder built into the concrete wall leading up through
 a layer of garbage.  
 ~
-70 13 0 0 0 0
+70 13 0 0 0 1
 D0
 To the north you can see a huge triple junction with sewer pipes leading
 west and east.
@@ -679,7 +679,7 @@ S
 A Triple Junction~
    You stand in a junction with pipes leading west, north and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 To the north there is an ENORMOUS quadruple sewer junction, all lit up by
 an odd light.
@@ -701,7 +701,7 @@ S
 A Bend In The Sewer Pipe~
    You can look in two directions where the pipe leads: south and west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 2
 D2
 To the south you can see another bend leading west.
 ~
@@ -718,7 +718,7 @@ The Sewer Pipe Bend~
    You can look in two different directions where the pipe goes: west and 
 north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 2
 D0
 North.  You see another bend leading west.
 ~
@@ -737,7 +737,7 @@ The Pit~
 there is a pit leading down.  There are bars set in the side of the pit
 wall functioning as a ladder.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D3
 West.  You can see a dimly lit quadruple junction with an exit up.
 ~
@@ -757,7 +757,7 @@ you are certain that the doorway is in the opposite direction of what
 it was when you entered.  It now leads east.  There is only this one
 exit.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D1
 You can just make out a smaller room with a chair.
 ~
@@ -768,7 +768,7 @@ S
 The Three Way Junction~
    You are standing in a junction of pipes that lead west, east and south.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D1
 East.  You can make out a dimly lit Guard Room.
 ~
@@ -790,7 +790,7 @@ The Sewer Store Room~
    You stand in a small room lit by a single torch set in the wall.  The only 
 way out of here is to the north.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D0
 To the north you see a pipe junction.
 ~
@@ -803,7 +803,7 @@ The Shaft~
 ladder is your tool to work your way down if you so wish.  The sewer pipe
 leads south from here.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D2
 To the south you can see the pipe leading further south into darkness.
 ~
@@ -827,7 +827,7 @@ The Sewer Entrance~
 you an air shaft leads up into sunlight.  It seems totally impossible to go
 up that way.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 To the north you can just make out a huge shaft leading down.
 ~
@@ -844,7 +844,7 @@ The Junction Going Three Ways~
    You are in a passageway in the pipes of the sewer system leading north,
 east and west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 You see a sewer pipe leading north.
 ~
@@ -868,7 +868,7 @@ the feeling of being watched.  To the south there is an entrance to a
 larger room.  The room is lit by five torches, also set in the walls.  To
 the west there is a doorway leading out to the sewers.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D2
 You can see an even larger room than this one, filled with light.
 ~
@@ -887,7 +887,7 @@ it. This is strange as it looks as if the glitter lights the whole room.
 It looks very bright.  To the south the floor is covered with yucky water.
 The north leads to a sort of a guard room.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D0
 To the north you can see the guard room.
 ~
@@ -904,7 +904,7 @@ The Pool In The Sewer~
    You stand in water to your waist.  To the north is the entrance to this
 room.  A single door leads east.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D0
 To the north you see the entrance to this room.
 ~
@@ -922,7 +922,7 @@ The Sewers~
 You can see a shaft leading up but it looks too difficult to go up
 that way.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D2
 ~
 ~
@@ -932,7 +932,7 @@ S
 The Junction~
    You stand in a junction leading north, west and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 ~
 ~
@@ -956,7 +956,7 @@ The Small Room~
 to have been bolted to the rock floor.  A doorway leads south and another
 leads east into darkness.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D1
 Utter darkness...
 ~
@@ -973,7 +973,7 @@ The Sewer Pipe~
    You are in what reminds you of a foul sewer, as if you liked being here!  
 You can see two exits leading either north or south.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D0
 ~
 ~
@@ -989,7 +989,7 @@ The Grand Sewer~
    You are in a grand sewer pipe.  This stretches toward the south.  It is
 large indeed!  A doorway leads to the east from here.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D0
 To the north you can see a doorway.
 ~
@@ -1011,7 +1011,7 @@ The South End Of The Grand Pipe~
    You stand in water to your knees.  A doorway leads west from here.  The
 pipe stretches north.
 ~
-70 8 0 0 0 0
+70 8 0 0 0 1
 D0
 You see a lot of pictures decorating the walls.
 ~
@@ -1027,7 +1027,7 @@ The Edge Of The Water Sewer~
    You stand in a room where half of the floor is covered in water.  The
 water leads east and a doorway leads west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 3
 D1
 You can hardly make out much more than that the next place is in a pipe 
 with more water.
@@ -1048,7 +1048,7 @@ The Dark Hallway~
    You can't see much of this, even with a light.  The hallway goes into a
 passageway to the south.  A doorway leads west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D2
 You can see nothing at all because it is completely dark in that direction.
 ~
@@ -1065,7 +1065,7 @@ The Dark Passageway~
    You can't see anything but the ground where you put your feet.  The 
 passageway seems to continue south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1084,7 +1084,7 @@ The Dark Passageway~
    You can't see anything but the ground where you put your feet.  The
 passageway seems to continue south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1103,7 +1103,7 @@ The Dark Passageway~
    You can't see anything but the ground where you put your feet.  The
 passageway seems to continue south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1124,7 +1124,7 @@ The passageway seems to continue west and north.  To the east there
 is water covering the floor and that leads through an arched entry
 to a watery sewer.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 1
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1152,7 +1152,7 @@ The Watery Sewer Bend~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to bend and lead south and west.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D2
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1175,7 +1175,7 @@ The Watery Sewer~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to lead south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1198,7 +1198,7 @@ The Watery Sewer~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to lead south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1221,7 +1221,7 @@ The Watery Sewer Junction~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to lead into a junction going south, north and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1250,7 +1250,7 @@ The Watery Sewer~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to lead south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1273,7 +1273,7 @@ The Watery Sewer Junction~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to lead into a junction that goes north, south and east.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1302,7 +1302,7 @@ The Watery Sewer~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to lead south and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1325,7 +1325,7 @@ The Watery Sewer Bend~
    You can't see anything but the water you're in up to your hips.  The sewer
 seems to bend and lead west and north.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see anything in that direction and your light isn't enough to light
 that far.
@@ -1351,7 +1351,7 @@ mostly because of the trickling of water.  The water from the sewer actually
 washes over this ledge and makes it quite slippery.  From here it drops, 
 like a waterfall, into the pool far down.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D2
 You can't see a thing.  It is too dark.
 ~
@@ -1376,7 +1376,7 @@ washes over this ledge and makes it quite slippery.  From here it drops,
 like a waterfall, into the pool far down.  Under you there is a small fissure
 in the rock.  It seems big enough to contain a few people.
 ~
-70 9 0 0 0 0
+70 9 0 0 0 5
 D0
 You can't see a thing.  It is too dark.
 ~

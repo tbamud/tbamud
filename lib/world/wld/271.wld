@@ -6,7 +6,7 @@ the town of Sundhaven find it their pleasure to lounge here.  The dark marble
 temple rises like a shadow to the north, the vivid colors of roses eastwards,
 and the library lies to the west.  There is a stone arch to the south.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -143,7 +143,7 @@ the temple rises among the town smoke, and a set of steps to the north leads up
 to the northern square before the cliffs edge.  Black willows grow in small
 clusters to the east and west.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D2
 ~
 ~
@@ -170,7 +170,7 @@ The temple garden~
    An impressionistic splash of red, black and gold meets the eye, accompanied
 by the intoxicating fragrance of roses growing nearly wild in this garden.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D3
 ~
 ~
@@ -183,7 +183,7 @@ half grown over with dark green ivy.  Before you to the south are the stone
 steps leading up to the town gallows, and northwards lies the courtyard of the
 temple.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -201,7 +201,7 @@ air.  The cliffs and the northern gate of the town lie north of here, the lane
 paralleling the cliffs runs east and west, and the entrance to the temple is
 southwards.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -228,7 +228,7 @@ foggy wetland.  The graveyard for the dead of Sundhaven lies near the foot of
 the cliffs, and in the far distance you can make out the blue line of the sea
 closing the horizon.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 gate
@@ -245,7 +245,7 @@ A lane bordering the cliffs~
 fills the heavily trafficked lane with a salty scent.  The path is lined with a
 few oaks, and shops lie to the north and south.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -296,7 +296,7 @@ which a pleasant scent is drifting, and the road continues, narrowing, to the
 west towards the homes of the residents.  Eastwards lies shops and the northern
 gate; a shaded lane travels to the south.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -322,7 +322,7 @@ park is a quiet, relaxing place, with the exception of the occasional explosion
 coming from a pale tower rising to the northwest, accompanied by a brilliant
 flash of light.    
 ~
-271 1 0 0 0 0
+271 1 0 0 0 2
 D2
 ~
 ~
@@ -340,7 +340,7 @@ the cliff lane runs east-west.  An occasional explosion from a pale stone tower
 to the north startles you, and piques your curiousity about that strange place.
   
 ~
-271 1 0 0 0 0
+271 1 0 0 0 2
 D0
 ~
 ~
@@ -422,7 +422,7 @@ intervals, to the joy of hidden enemies and law-abiding citizens.  You note
 there is plenty of room for spectators.  Besides the east-west road, a stone
 arch stands to the north, and a well-travelled path leads southwards.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D1
 ~
 ~
@@ -447,7 +447,7 @@ stone is barely holding together.  Moss and weeds have all but overgrown the
 rock-strewn surface.  Balmy, roguish scents are drifting out of a dark,
 ivy-clothed building to the east.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -495,7 +495,7 @@ The southern path~
 black-tipped grass.  By night the moths gather by a fatal instinct round the
 glow of torches lining the way, beating their wings heavily.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -512,7 +512,7 @@ with traces of human filth as you pass into the poorer section of Sundhaven.
 The shanties and town dump add a mild stench to the air, and attest to the
 virtual burglaries of the poor by the rich..  And often by the poor.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -549,7 +549,7 @@ The town dump~
 almost visible brown haze among the heaps of trash, clouding your senses.  
 Those who call it home certainly smell as decayed as it does.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D1
 ~
 ~
@@ -571,7 +571,7 @@ The town dump~
 pleasantries...  Suffice it to say that very little that should be alive here
 is, and vice-versa.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -590,7 +590,7 @@ repelling you in another direction automatically such that it takes a great
 conscious effort for you to turn that way.  The path heads north into the
 town's mainstream, and south closer to the wildlands beyond it.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -611,7 +611,7 @@ coverings on their feet, attracting all sorts of loafers and siteseers who come
 on days off to relax and watch the festivities at the gallows.  A bloody trail
 leads into a building to the south.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D1
 ~
 ~
@@ -637,7 +637,7 @@ A sandy bend before the east gate~
 to be forged from some heavy metal and painted white.  The ground is a mix of
 shuffled black and gold sand where the two roads meet.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -658,7 +658,7 @@ no entrance can be seen from here, and the black stone of the weapons shop is
 westwards.  The road is treeless and wide, the air laiden with smoke and the
 shouts of bartering.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -679,7 +679,7 @@ their business.  The armoury stands to the west, emitting heat from the fires
 of the forge.  Occasional drunken shouts and laughter can be heard from a
 smoking lodge to the east.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -704,7 +704,7 @@ road, reducing the sinking effect of mud during the rains.  The air here is
 heavy with the smell of delicious food, fresh bread baking, and something
 spicier, to the east.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -728,7 +728,7 @@ A bend in the road~
 small, blackened stone structure to the north.  Patches of gold sand are
 scattered about.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -752,7 +752,7 @@ A lane bordering the cliffs~
 travels east and west paralleling the cliffs just around the shops to the
 north.  Faint bird cries are issuing from the building to the south.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -777,7 +777,7 @@ summer fades to autumn.  Between the trees to the west, something sparkles
 tauntingly from the dark doorway of a small shop.  Eastwards the dome of the
 temple can be seen rising.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -799,7 +799,7 @@ pickpocket or two, for the lane is broad and the shadows of the trees leave
 plenty of hiding places.  However, the frequent presence of guards gives a
 feeling of security.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -820,7 +820,7 @@ dappled light on the ground, which shifts languidly back and forth in the
 breeze.  To the west stands the old post office, and the lane continues north
 and south.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -842,7 +842,7 @@ by the din of the town going about its daily business.  The ornate west gate
 lies just to the west, a road paved with black sand runs east and north is a
 lane shaded by oak and ash trees.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -863,7 +863,7 @@ the unpleasant affects of copious mud during the frequent rains and heavy fogs
 of the region.  The road is so heavily travelled it has almost been packed down
 into a hard surface.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D1
 ~
 ~
@@ -911,7 +911,7 @@ The east gate of Sundhaven~
 from iron and painted bone-white.  A hot desert wind blows through the grating
 sporadically, giving hint to the vast regions beyond.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D1
 ~
 gate
@@ -929,7 +929,7 @@ to the west, bordered by slender elms.  The ivy so plentiful in the town is
 twined and braided about its intricate coils and carvings, which consist
 largely of prowling cats and eclipsed circle designs.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D1
 ~
 ~
@@ -1030,7 +1030,7 @@ The rooftop at Mekala's~
 circle about above your head, curious about the food but too shy to descend.  
 A few tables stand adorned with simple white tablecloths and red candles.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D5
 ~
 ~
@@ -1133,7 +1133,7 @@ cliff and the lands beyond in its pale jaws.  Far beyond the whiteness opens
 out to reveal a welcome azure that is the mantle of the sea.  A trail
 disappears downwards into the mist.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 4
 D2
 ~
 gate
@@ -1148,7 +1148,7 @@ graveyard near the foot of the cliff to the north, and beyond it, the pearl
 blue sea, clothing the far horizon.  The mages have made this a favored place
 for recreational studies.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D2
 ~
 ~
@@ -1220,7 +1220,7 @@ wind.  To the west rise the bluffs and gardens of the homes of Sundhaven's
 varied people; citizens can also be seen passing eastwards into the town
 itself.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 1
 D0
 ~
 ~
@@ -1242,7 +1242,7 @@ you bluffs rise, pale grey and dark sandstone, smooth from the sculpturing of
 winds, and dotted with purple heather and green mosses.  A path strays through
 the clifftop hills.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 2
 D1
 ~
 gate
@@ -1260,7 +1260,7 @@ you bluffs rise, pale grey and dark sandstone, smooth from the sculpturing of
 winds, and dotted with purple heather and green mosses.  A path strays through
 the clifftop hills.    
 ~
-271 0 0 0 0 0
+271 0 0 0 0 2
 D1
 ~
 ~

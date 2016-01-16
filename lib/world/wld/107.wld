@@ -61,7 +61,7 @@ changes through weather.  The surroundings show nothing but broken wood and
 moss, eminating a foul smell that gathers into your nostrils and greens your
 thoughts into what may lay ahead of this damned place.    
 ~
-107 1 0 0 0 0
+107 1 0 0 0 1
 D0
 ~
 ~
@@ -195,7 +195,7 @@ decay of the swamp.  A few small stone buildings can be seen struggling to
 remain above the murky waters.  To the north an entire building looks almost
 untouched by the surrounding swamp.    
 ~
-107 8 0 0 0 0
+107 8 0 0 0 6
 D0
 ~
 ~
@@ -216,7 +216,7 @@ rotting overgrowned weedgrass.  A strange stairway of the thick fog looks solid
 enough to walk on.  It rises high above you into a low hanging cloud of white
 vapor.    
 ~
-107 0 0 0 0 0
+107 0 0 0 0 6
 D0
 ~
 ~
@@ -246,7 +246,7 @@ The walls of rock are the only remains of an unkown civilization that has been
 buried and forgotten in the realm of the undead.  To the south you can see a
 faint trail that looks drier than the surrounding area.    
 ~
-107 0 0 0 0 0
+107 0 0 0 0 6
 D0
 ~
 ~
@@ -264,7 +264,7 @@ ceaseless scream in the distance.  The clouds overhead are motionless.  They
 look superficial, the only movement is that of a thin layer of fog rising off
 the murky water.    
 ~
-107 8 0 0 0 0
+107 8 0 0 0 6
 D1
 ~
 ~
@@ -282,7 +282,7 @@ sound.  The waters are an unhealthy shade of black and grey.  Making it
 impossible to judge the depth or see what lies underneath.  A few ripples in
 the water are the only sign of life in this hell hole.    
 ~
-107 12 0 0 0 0
+107 12 0 0 0 6
 D0
 ~
 ~
@@ -299,7 +299,7 @@ fingers trying to claw their way out of their swampy graves.  Large pools dark
 water reflect the strange unchanging sky above.  Small trailers of fog rise off
 the warm water and dissipate into the cool, still air.    
 ~
-107 0 0 0 0 0
+107 0 0 0 0 6
 D1
 ~
 ~
@@ -316,7 +316,7 @@ than reality.  Filthy water, dead trees, rotting debris floating motoinless in
 the still waters.  A large sinkhole has collapsed here.  Revealing a dark
 cavern below.    
 ~
-107 0 0 0 0 0
+107 0 0 0 0 6
 D1
 ~
 ~
@@ -333,7 +333,7 @@ Fluted columns of marble and granite stand naked with no roof to cover them.
 A once marvelous cobblestone road has been desecrated and broken by years of
 neglect.  The remnants of a few small buildings still remain.    
 ~
-107 1 0 0 0 0
+107 1 0 0 0 7
 D1
 ~
 ~
@@ -482,7 +482,7 @@ emitting rank gasses from decaying matter.  Sinkholes threaten to swallow the
 few remaining dead trees and trespassers that remain in the area.  The silence
 is broken only by an occasional shriek or moan from deep within the wastelands.
 ~
-107 8 0 0 0 0
+107 8 0 0 0 6
 D0
 ~
 ~
@@ -765,7 +765,7 @@ expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
 silence.    
 ~
-107 357 0 0 0 0
+107 357 0 0 0 9
 D1
 ~
 ~

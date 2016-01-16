@@ -137,7 +137,7 @@ The River Quickens~
 to make your way back upstream.  The brick walls around you become coarse and
 poorly cut as you move downstream.    
 ~
-175 72 0 0 0 0
+175 72 0 0 0 6
 D1
 To the east, the indoor river turns towards the north.
 ~
@@ -163,7 +163,7 @@ The River Continues~
 see what looks like the exit of a cave's mouth up ahead.  The walls have
 degenerated into uncut stone.    
 ~
-175 8 0 0 0 0
+175 8 0 0 0 6
 D0
 To the north lies the exit from the hallway (tunnel?) you are in, and the river turns to the east.
 ~
@@ -176,7 +176,7 @@ A Bend to the East~
 However, the banks of the river are too steep to climb, and you are forced
 along a tight bend to the east.    
 ~
-175 0 0 0 0 0
+175 0 0 0 0 6
 D1
 To the east, the river pours into a lake.
 ~
@@ -189,7 +189,7 @@ Out on the Lake~
 shimmering white light, and far to the east you can see a door-sized mirror
 hovering vertically above the water.    
 ~
-175 0 0 0 0 0
+175 0 0 0 0 6
 D0
 To the north the flickering white light grows stronger. It seems to be congregating about a point.
 ~
@@ -212,7 +212,7 @@ Beneath you, water laps gently through the void of brightness, and to the south
 you hear the sounds of a lake.  To the west, you can hear the muffled bickering
 of two guards.    
 ~
-175 0 0 0 0 0
+175 0 0 0 0 6
 D2
 ~
 ~
@@ -229,7 +229,7 @@ The Mirror on the Lake~
 symbols.  Within the frame ripples quicksilver, and your warped reflection
 stares back at you.  The mirror could be easily walked through.    
 ~
-175 0 0 0 0 0
+175 0 0 0 0 6
 D2
 The mirror completely restricts your sight to what may possibly lie beyond.
 ~
@@ -272,7 +272,7 @@ The Flowing River~
    The river soon turns out to become to powerful an opponent to battle, and it
 unceremoniously forces you back to the east.    
 ~
-175 0 0 0 0 0
+175 0 0 0 0 6
 D1
 The lake opens before you to the east.
 ~

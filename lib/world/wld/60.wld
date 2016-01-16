@@ -5,7 +5,7 @@ large forest of Haon-Dor.  To the east you see the road heading back to the
 walled city, Midgaard, and to the west is a narrow trail leading through the
 forest.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 2
 D1
 To the east a dusty road takes you back to the walls of Midgaard, and its large
 west gate.
@@ -34,7 +34,7 @@ A Trail Through The Light Forest~
 path leading north into the shadows.  To the east is the forest edge and to
 the west the trail leads further into the forest.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 You see evidence of a small path leading through a break in the trees to the
 north.
@@ -71,7 +71,7 @@ A Trail Through The Light Forest~
 west, the forest gradually becomes more dense.  A small forest path leads off
 to the south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 The trail continues eastwards through the young trees.
 ~
@@ -106,7 +106,7 @@ A Trail Through The Dense Forest~
    You are on a trail winding east and west through the dense forest.  To
 the east, the forest gradually seems to become lighter.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 The trail continues eastwards to the younger part of the forest.
 ~
@@ -133,7 +133,7 @@ A Trail Through The Dense Forest~
 west, the trees are so huge and their crowns so dense that forest remains in
 total darkness.  A small path leads south through the trees.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 The trail continues eastwards through the dense forest.
 ~
@@ -168,7 +168,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues north and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -194,7 +194,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues north and east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -220,7 +220,7 @@ An Intersection In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The forest
 gradually lightens to the east.  Paths lead east, west and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 You can barely make out a clearing to the east.
 ~
@@ -251,7 +251,7 @@ The Forest Clearing~
 protrude from the ground and heavy logs are stacked neatly in a big pile
 supported by stakes set into the ground.  Paths lead north, east and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -295,7 +295,7 @@ Outside A Small Cabin In The Forest~
    You are outside a small cabin built entirely from heavy logs.  There is a
 wooden door to the north and small paths lead west and south through the trees.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The wooden door is quite sturdy but does not appear to be equipped with a lock.
 ~
@@ -365,7 +365,7 @@ A Small Path Through The Light Forest~
    You are on a small path leading through the forest.  The trees are tall and
 slender.  Paths lead north and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path leads north through the young trees.
 ~
@@ -391,7 +391,7 @@ An Intersection In The Dense Forest~
 old trees leave the forest floor in an unreal twilight illumination.  Paths
 lead north, east and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -422,7 +422,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues east and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 The small path leads east through the trees.
 ~
@@ -447,7 +447,7 @@ An Intersection In The Dense Forest~
    You are on a small path leading through the dense forest.  The forest
 gradually lightens to the north.  Paths lead north, east and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path leads north to a lighter part of the forest.
 ~
@@ -479,7 +479,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues south and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D2
 The small path leads south through the trees.
 ~
@@ -505,7 +505,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues north, south and east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -535,7 +535,7 @@ A Small Path In The Dense Forest~
    You are at a turn on a small path leading through the dense forest.  The
 forest seems to become lighter to the west.  The path continues north and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -565,7 +565,7 @@ An Intersection In The Light Forest~
    You are on a small path leading through the forest.  A path leads north to
 a small field and other paths lead east and west into the dense forest.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path leads north to a small, grassy field.
 ~
@@ -596,7 +596,7 @@ A Small Path In The Dense Forest~
    You are on a small path leading through the dense forest.  The forest seems
 to become lighter to the east.  The path continues north and east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -623,7 +623,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues south and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D2
 The small path leads south through the trees.
 ~
@@ -649,7 +649,7 @@ A Small Path In The Dense Forest~
 you see a dark cave entrance, leading into a small hillside.  The path
 continues north and east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The small path leads north through the trees.
 ~
@@ -713,7 +713,7 @@ wall-like thicket on the east side of the field.  To the northeast you can see
 a small lake.  A small path leads south through the trees, and the field opens
 up to the north and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 2
 D0
 Wind blowing in from the north carries with it the smell of a newly killed
 animal, as well as the noise of many birds, which you can see circling there.
@@ -755,7 +755,7 @@ grass here has been trampled by the many animals coming here for water, leaving
 the ground covered in tracks of different types.  To the west you see a break
 in the wall of trees surrounding the field, and to the north is a small lake.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 2
 D0
 The animal tracks lead off to the north, and around the lake there.
 ~
@@ -789,7 +789,7 @@ high in the air, and to the north you see a small lake, surrounded by tall
 reeds.  The field continues to the south, and the forest blocks passage to the
 east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 2
 D0
 The lake looks inviting, and you can see some sort of water fowl floating
 around among the reeds.
@@ -840,7 +840,7 @@ at you.  The grass here has been trampled, and a large area around the carcass
 is stained by blood.  A trail leads down the sloping field to a lake, and to
 the south you see the path back to the forest.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 2
 D1
 A small lake lies down the sloping field to the east.  Some of the animals
 that fled from here have gone there, and are watching, waiting for you to
@@ -919,7 +919,7 @@ A Small Path In The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues to the west and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D2
 ~
 ~
@@ -945,7 +945,7 @@ crowns of the old trees leave the forest in an unreal twilight illumination.
 This rough clearing is dominated by a very large oak tree, probably the
 largest in this part of the forest.  The path leads back to the north.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 3
 D0
 ~
 ~
@@ -1056,7 +1056,7 @@ approach, leaving you alone and swaying slightly with the wind.  To your north
 you can see a small log cabin through the trees, and to the southeast there
 seems to be some sort of clearing, with many birds circling above it.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 3
 D1
 Back to the east you see the tree trunk.  It is much less precarious there
 compared to here... perhaps you should go back.
@@ -1206,7 +1206,7 @@ A Shaded Path Through The Forest~
 gradually lightens to the east.  The path continues to the north, and to the
 south you see the main trail.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1232,7 +1232,7 @@ A Shaded Path Through The Forest~
    You are at a turn on a small shadowed path leading through the forest.  The
 forest seems to become lighter to the west.  The path continues north and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1260,7 +1260,7 @@ crowns of the old trees leave the forest floor in an unreal twililght
 illumination.  To the north you see a small clearing.  Paths lead east and
 west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 Through the underbrush you see a small clearing.
 ~
@@ -1291,7 +1291,7 @@ A Shaded Path Through The Dense Forest~
 the old trees leave the forest in an unreal twilight illumination.  The path
 continues north and east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1317,7 +1317,7 @@ A Shadowy Path Through The Dense Forest~
 crowns of the old trees leave the forest in an unreal twilight illumination.
 The path continues north and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1343,7 +1343,7 @@ A Shaded Path Through The Forest~
 forest gradually becomes more dense to the west.  The path continues west and
 south from here.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D2
 Through the trees to the south you can almost see the main trail leading back
 to Midgaard.
@@ -1370,7 +1370,7 @@ A Fork On The Shaded Path Through The Forest~
 forest gradually becomes more dense to the west.  The path branches to the
 north and south here, and also continues to the east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1401,7 +1401,7 @@ At The Fallen Tree~
 amount of the tree has already decomposed, but some pieces remain, scattered
 about the clearing.  Paths border the clearing to the north and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 A shaded path winds its way northeast between the trees.
 ~
@@ -1442,7 +1442,7 @@ An Intersection On The Shaded Path~
 crowns of the old trees leave the forest in an unreal twilight illumination.
 The path continues north, south, and west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1473,7 +1473,7 @@ A Shadowy Path Through The Dense Forest~
 crowns of the old trees leave the forest in an unreal twilight illumination.
 The path continues south and east.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 The path winds its way between the old trees.
 ~
@@ -1500,7 +1500,7 @@ of a path or trail.  More sunlight trickles through the treetops here, making
 your travel a bit easier.  Small animals scurry away as you approach.  You
 are no longer on a path, so you may go whichever way you please.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The trees seem to part, exposing a trail into the shade.
 ~
@@ -1537,7 +1537,7 @@ A Shaded Path Through The Forest~
 gradually lightens to the east.  Paths lead west and south, and you think you
 see a small path leading eastward.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D1
 It looks like a small path begins between two trees to the east, but you
 aren't quite certain.
@@ -1569,7 +1569,7 @@ A Shaded Path Though The Forest~
 gradually becomes more dense to the west.  Paths lead north and east, and you
 see a small clearing to the south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1601,7 +1601,7 @@ north the terrain becomes quite hilly and rough.  The crowns of the old trees
 leave the forest in an unreal twilight illumination.  The path continues north
 and south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 4
 D0
 The path winds its way into the hills and denser forest.
 ~
@@ -1632,7 +1632,7 @@ a very short trail.  It looks like someone begin clearing away the underbrush
 here, but didn't get finished.  You may leave in any direction, but the path
 is to the west.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The trees seem to part, exposing a trail into the shade.
 ~
@@ -1669,7 +1669,7 @@ gradually becomes more dense to the west, and to the northwest the terrain
 is quite hilly.  The path continues north and south.  To the east you see a
 trail winding through the younger section of the forest.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 3
 D0
 The path winds its way between the trees.
 ~
@@ -1713,7 +1713,7 @@ you.  The ground is very rough and rocky here, and only the most hardy plants
 survive.  The crowns of the old trees leave the hills in an unreal twilight
 illumination.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 4
 D0
 All you see are trees and hillsides.
 ~
@@ -1756,7 +1756,7 @@ you.  The ground is very rough and rocky here, and only the most hardy plants
 survive.  The crowns of the old trees leave the hills in an unreal twilight
 illumination.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 4
 D0
 All you see are trees and hillsides.
 ~
@@ -1797,7 +1797,7 @@ In The Dense Forest Between The Hills~
 forest is quite thick here, and the ground is very rough and hilly, halting
 your progress.  The path lies to the south.
 ~
-60 0 0 0 0 0
+60 0 0 0 0 4
 D2
 The path winds its way between the trees.
 ~
@@ -1825,7 +1825,7 @@ you.  The ground is very rough and rocky here, and only the most hardy plants
 survive.  The crowns of the old trees leave the hills in an unreal twilight
 illumination.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 4
 D0
 All you see are trees and hillsides.
 ~
@@ -1868,7 +1868,7 @@ you.  The ground is very rough and rocky here, and only the most hardy plants
 survive.  The crowns of the old trees leave the hills in an unreal twilight
 illumination.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 4
 D0
 All you see are trees and hillsides.
 ~
@@ -1911,7 +1911,7 @@ you.  The ground is very rough and rocky here, and only the most hardy plants
 survive.  The crowns of the old trees leave the hills in an unreal twilight
 illumination.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 4
 D0
 All you see are trees and hillsides.
 ~
@@ -1952,7 +1952,7 @@ In The Dense Forest Between The Hills~
 dense forest spreads out all around you, and the crowns of the old trees leave
 the hills in an unreal twilight illumination.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 4
 D0
 All you see are trees and hillsides.
 ~
@@ -1984,7 +1984,7 @@ occasional hunter or adventurer can be seen, heading to or from the forest.
 To the east is the walled city, Midgaard, and to the west the road ends at
 the head of a narrow trail into a large forest.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 2
 D1
 Far to the east you see the large walls guarding Midgaard.
 ~
@@ -2016,7 +2016,7 @@ occasional hunter or adventurer can be seen, heading to or from the forest.
 To the east is the walled city, Midgaard, and to the west the road continues 
 towards a large forest.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 2
 D1
 Far to the east you see the walls and western gate of Midgaard.
 ~
@@ -2050,7 +2050,7 @@ Midgaard the forest of Haon-Dor.  An occasional hunter or adventurer can be
 seen, heading to or from the forest.  To the east is the walled city, Midgaard, 
 and to the west the road continues towards a large forest.
 ~
-60 4 0 0 0 0
+60 4 0 0 0 1
 D1
 To the east you see the walls and West Gate of Midgaard.
 ~

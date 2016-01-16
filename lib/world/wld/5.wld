@@ -4,7 +4,7 @@ Small Path~
 scenery here is quite beautiful.  You are surrounded by trees and gorgeous
 flowers that make the air smell sweet.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D3
 ~
 ~
@@ -31,7 +31,7 @@ Small Path~
 you will run into.  The trees shade you from the sun, making the temperature
 feel much cooler.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -51,7 +51,7 @@ Farm Entrance~
 powers you and almost knocks you over.  You can see that the farm spreads out
 more to the west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -70,7 +70,7 @@ Small Path~
    The path comes to an end here.  You find yourself standing at the begining
 of the farm.  Where are all the animals?  Maybe they are all hiding.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -86,7 +86,7 @@ Farm Entrance~
 powers you and almost knocks you over.  You can see that the farm spreads out
 more to the west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -110,7 +110,7 @@ Farm Entrance~
 continues.  If you go back to the east, you will be leaving the farm.  Cracked
 corn covers the ground here.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -125,7 +125,7 @@ Farm~
    You're standing at the begining of the farm.  It continues to the east and
 west.  You begin to wonder where the barn is.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -144,7 +144,7 @@ Farm~
    You're standing on the edge of the farm, overlooking a small field.  You see
 several small critters running through the farm.  Maybe you could catch one.  
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -163,7 +163,7 @@ Farm~
    As you step into the farm, you feel your feet sinking into piles of cracked
 corn.  The chickens must not have eaten all of their breakfast.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -182,7 +182,7 @@ Trail~
    You have stepped onto a small trail, heading south.  The entrance to the
 farm is to the northwest.  You can see a large barn to the southwest.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D2
 ~
 ~
@@ -198,7 +198,7 @@ Trail~
 trail.  There isn't much space here to walk.  Just enough for one person.  The
 trail continues to the south.    
 ~
-5 256 0 0 0 0
+5 256 0 0 0 2
 D0
 ~
 ~
@@ -214,7 +214,7 @@ Field~
 making you feel like you're walking through the jungle.  Bugs buzz past your
 ears, tickling them.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -230,7 +230,7 @@ Field~
 a large corn field off to the west.  A large apple tree loaded with ripe apples
 sways in the breeze.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 1
 D0
 ~
 ~
@@ -249,7 +249,7 @@ Field~
    The grass here seems to get somewhat shorter, but not by much.  You can see
 a large corn field off to the west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -264,7 +264,7 @@ Field~
    There is a dead end here.  The weeds are rather high towering over the top
 of your head.  You suddenly feel very lost.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D2
 ~
 ~
@@ -276,7 +276,7 @@ Trail~
 looks to be in pretty good shape.  Maybe it would be worth your time to go have
 a look.    
 ~
-5 256 0 0 0 0
+5 256 0 0 0 2
 D0
 ~
 ~
@@ -419,7 +419,7 @@ Field~
 end?  In the distance to the northwest you can see a corn field.  It looks to
 be rather large.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -434,7 +434,7 @@ Field~
    You find yourself standing at the edge of a corn field.  The corn goes clear
 up to your chin!  How will you ever see in here?    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -525,7 +525,7 @@ Corn Field~
 your feet.  The corn can be seen in the distance to the west.  To the south,
 there is a big red barn.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D2
 ~
 ~
@@ -541,7 +541,7 @@ Corn Field~
 field.  The sound of dead grass fills your ears as it crunches heavily under
 your weight.  The field continues to the west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D2
 ~
 ~
@@ -557,7 +557,7 @@ Corn Field~
 have cut a path through here to make it easier for adventurers like yourself to
 get through here alive.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -573,7 +573,7 @@ Corn Field~
 have cut a path through here to make it easier for adventurers like yourself to
 get through here alive.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -589,7 +589,7 @@ Corn Field~
 fell off from it's post.  Most of the straw has been picked away from its
 fragile little body, most likely by crows.  The field continues to the south.
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -605,7 +605,7 @@ Corn Field~
 field, you spot a barn off in the distance to the southeast.  Maybe you could
 rest there for a bit.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -621,7 +621,7 @@ Corn Field~
 southeast you can see a barn.  It looks to be in excellent condition.  Maybe
 you could stop there for a while and rest.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -637,7 +637,7 @@ Corn Field~
 distance you can see a large barn.  Some noises are coming from within it, most
 likely caused from the animals that live inside.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -653,7 +653,7 @@ Manure Pit~
 around you, tickling your ears.  The manure is up to your knees.  It looks like
 it gets deeper the farther you walk in.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -669,7 +669,7 @@ Manure Pit~
 now covered up to your thighs!  How gross.  Maybe you should get out of here
 before your entire body gets covered.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -686,7 +686,7 @@ The manure is up to your neck and rising quickly.  No one will want to be
 around you for a very long time, unless you can find a place to wash yourself
 off.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -701,7 +701,7 @@ Manure Pit~
    The manure is quite shallow here, enabling you walk.  To the south you see a
 rather large looking stock yard.  Maybe you would have better luck there.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D2
 ~
 ~
@@ -717,7 +717,7 @@ Gates of the Stock Yard~
 animals are before you, most of them either eating or sleeping.  The yard is
 surprisingly clean, of course anything would be compared to the manure pit.  
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -733,7 +733,7 @@ Stock Yard~
 is fenced in with a newly painted fence.  The aroma from the paint is still in
 the air.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -749,7 +749,7 @@ Stock Yard~
 your feet is damp and slightly squishy, most likely caused from the rain.  The
 stock yard continues to the east and west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -765,7 +765,7 @@ Stock Yard~
 like ones of either a goat or a sheep.  The stock yard continues to the east
 and west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -788,7 +788,7 @@ Dead End~
    You have come to a dead end.  The white picket fence is beside you.  You
 stand there for a moment and look at the view of the farm.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D2
 ~
 ~
@@ -799,7 +799,7 @@ Dead End~
    You have come to a dead end.  The white picket fence is beside you.  You
 stand there for a moment and look at the view of the farm.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -811,7 +811,7 @@ Gopher Hole~
 As you bend down, you look into the hole.  You see nothing but blackness.  
 Would it be worth your time to go have a look?    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -830,7 +830,7 @@ Silo~
    A large silo stands before you, most likely used for storing corn.  There is
 a ladder on one of the inside walls.  Maybe you could climb up it.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -909,7 +909,7 @@ Stock Yard~
    You're standing at the edge of the stock yard, looking at a small field to
 the south.  There is a silo to the north.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -925,7 +925,7 @@ Gopher Hole~
 underneath you, what could it be?  You feel your hands sinking into the dirt.
 Hopefully you can get back out.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D4
 ~
 ~
@@ -940,7 +940,7 @@ Gopher Hole~
    You're almost to the bottom of the hole.  The temperature has dropped quite
 a few degrees making you feel cold and damp.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D4
 ~
 ~
@@ -956,7 +956,7 @@ Gopher Hole~
 cold.  You see a small passageway leading to the west.  Where could it be
 going?  Maybe you should go find out.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D3
 ~
 ~
@@ -971,7 +971,7 @@ Gopher Hole~
    As you begin walking through the passageway, you notice how big the gopher
 hole really is.  An entire family must live in here.  But where is everyone?  
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -987,7 +987,7 @@ Gopher Hole~
 pouring down on you, making you feel slightly warmer.  You hear some birds
 singing in the distance.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1003,7 +1003,7 @@ Stock Yard~
 stables.  You can hear several animals inside shuffling around nervously.  To
 the south there is a large chicken coop.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -1015,7 +1015,7 @@ Stock Yard~
 notice that you're standing at the endge of the stock yard overlooking the
 stables.  The stock yard continues to the west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D3
 ~
 ~
@@ -1030,7 +1030,7 @@ Stock Yard~
    You're standing at the edge of the stock yard.  To the southwest you can see
 the stables.  You can hear the horses inside shuffling around nervously.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1148,7 +1148,7 @@ Field~
 longer in use.  The ground is very rough and full of small holes.  One might
 fall if they don't watch their step!    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -1164,7 +1164,7 @@ Field~
 you can see a large hole.  It looks big enough to climb in.  But is there
 anything in there waiting for you?    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -1180,7 +1180,7 @@ Field~
 large hole with a black bottom.  Is there even a bottom?  Or just eternal
 darkness?    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1196,7 +1196,7 @@ Hole~
 darkness.  Would it be worth the risk to climb in there and see whats down
 there?    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1217,7 +1217,7 @@ alone and lost, almost like a small child.  You look up and see a small beam of
 light.  Can you even get back out of here?  Maybe you should try to "climb up"
 out of the hole.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 S
 T 574
 #575
@@ -1225,7 +1225,7 @@ Field~
    You're standing on the edge of the field.  To the east is a very large hole
 which you could probably fit in.  To the west you see a small chicken coop.  
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1304,7 +1304,7 @@ Dead End~
 the east.  The chickens are busily running around, probably looking for
 something to eat.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -1332,7 +1332,7 @@ Farm~
 is a dead end to the south, but maybe there is something there that would be
 worth making the trip.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1354,7 +1354,7 @@ through one of the windows, you see a man inside sitting in a rocking chair.
 He see's you and waves for you to come in.  He looks like a friendly enough
 gentleman.  Perhaps you could get a bite to eat here.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D1
 ~
 ~
@@ -1403,7 +1403,7 @@ Dirt Path~
 the north you can see a small hunters cabin.  Maybe you could go inside and
 rest for a while.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -1419,7 +1419,7 @@ Dirt Path~
 over the years.  You notice some potholes that are big enough for a cat to fit
 into.  Be careful not to fall!  There is a large well to the east.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D0
 ~
 ~
@@ -1435,7 +1435,7 @@ Farm~
 There isn't any water in it, but you could easily climb down into it.  You
 can't see anything past the well, only a small path to the west.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D3
 ~
 ~
@@ -1614,7 +1614,7 @@ Farm~
 seem to have reached the end of the farm.  You breathe in a breath of fresh air
 and feel a sense of accomplishment.    
 ~
-5 0 0 0 0 0
+5 0 0 0 0 2
 D5
 ~
 ~

@@ -6,7 +6,7 @@ menace permeates the surrounding area.  You have a strange urge to turn
 back and go back the way you've come.
    A small path leads north into the shadows and back south to the plains.
 ~
-25 68 0 0 0 0
+25 68 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -29,7 +29,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -58,7 +58,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 You see a small clearing in the shadows.
 ~
@@ -87,7 +87,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -116,7 +116,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -145,7 +145,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -174,7 +174,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -203,7 +203,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -232,7 +232,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All exits lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -261,7 +261,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All directions lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -290,7 +290,7 @@ from all sides.  The shadowy mist obscures most of your vision.  Strange
 sounds of moaning and growling come from all directions.
    All directions lead into shadows, you are very confused.
 ~
-25 101 0 0 0 0
+25 101 0 0 0 3
 D0
 The shadows obscure your vision.
 ~
@@ -321,7 +321,7 @@ your view into the grove.
    A small path leads north to some shadowy structure.  All other exits are
 shrouded in shadowy mist.
 ~
-25 65 0 0 0 0
+25 65 0 0 0 3
 D0
 You can barely make out some sort of building to the north.
 ~

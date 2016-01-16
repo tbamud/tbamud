@@ -5,7 +5,7 @@ the university stretches as far as the eye can see.  A sign is neatly posted on
 the left pillar of the gateway.  It is made of nicely polished brass.  Because
 of this, it looks rather important (as all signs go).
 ~
-301 4 0 0 0 5
+301 4 0 0 0 1
 D1
 Campus Crescent continues to the east.
 ~
@@ -67,7 +67,7 @@ Campus Crescent~
 conscientious behaviour of the politically correct students (as they all seem
 to be).  The road continues east and west.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D1
 Campus Crescent continues to the east.
 ~
@@ -90,7 +90,7 @@ conscientious behaviour of the politically correct students (as they all seem
 to be).  The road continues east and west.  To the north and south, you can see
 dormitories.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 To the north you see Victoria Hall.
 ~
@@ -127,7 +127,7 @@ conscientious behaviour of the politically correct students (as they all seem
 to be).  The road continues east and west.  A noxious smell permeates from the
 south.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D1
 Campus Crescent crosses University Avenue to the east.
 ~
@@ -158,7 +158,7 @@ The Crossroads~
 (Thus the name Crossroads.  ) University runs north-south whilst Campus runs
 east-west.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 University Avenue heads off to the north.
 ~
@@ -192,7 +192,7 @@ conscientious behaviour of the politically correct students (as they all seem
 to be).  The road continues east and west.  A large building lies south, off
 the road.  You can see another building to the north.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 To the north, lies the Arts faculty building, Corry-Mack.
 ~
@@ -229,7 +229,7 @@ conscientious behaviour of the politically correct students (as they all seem
 to be).  The road continues east and west.  The bookstore is to the north.  An
 odd, round-shaped building lies to the south.    
 ~
-301 0 0 0 0 5
+301 0 0 0 0 1
 D0
 Well, as I said earlier, the bookstore is to the north!  Try looking at it.
 ~
@@ -269,7 +269,7 @@ Division Road~
    Asphalt pavement lies heinously beneath your feet.  The road continues north
 and south.  A nice cobblestone road leads off to the west.    
 ~
-301 0 0 0 0 5
+301 0 0 0 0 1
 D0
 Division Road continues north.
 ~
@@ -299,7 +299,7 @@ University Avenue~
    This nicely crafted dirt road runs north-south.  It is normally filled with
 students.  An awful fog drifts in from the west.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 University Avenue crosses a cobblestone road to the north.
 ~
@@ -334,7 +334,7 @@ University Avenue~
    This nicely crafted dirt road runs north-south.  But it ends here.  It is
 normally filled with students.  There is a dormitory to west.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 2
 D0
 University Avenue continues to the north.
 ~
@@ -360,7 +360,7 @@ University Avenue~
    This nicely crafted dirt road runs north-south.  It is normally filled with
 students.  Buildings lie on either side of the street.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 University Avenue continues to the north.
 ~
@@ -400,7 +400,7 @@ University Avenue~
    This nicely crafted dirt road runs north-south.  It is normally filled with
 students.  Buildings lie on either side of the street.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 University Avenue continues to the north.
 ~
@@ -436,7 +436,7 @@ University Avenue~
    This nicely crafted dirt road runs north-south.  It is normally filled with
 students.  A road branches off to the east.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 University Avenue continues to the north.
 ~
@@ -464,7 +464,7 @@ University Avenue~
 students.  To the north you can see several menacing figures.  There is a sign
 here.  Reading it would be beneficial to your health and general well-being.  
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 Low-income student housing lies to the north.  BEWARE!
 ~
@@ -505,7 +505,7 @@ Union Street~
    This non-descript road segment runs east-west between University Avenue and
 Division Road.  To the north is the student centre.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 The student centre, known as the "J" Dock, stands to the north.
 ~
@@ -535,7 +535,7 @@ Union Street~
    This non-descript road segment runs east-west between University Avenue and
 Division Road.  There are buildings on either side of the street.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 The main entrance to the Jock Hardy Gym lies to the north.
 ~
@@ -571,7 +571,7 @@ Division Road~
 south.  A non-descript road leads off to the west.  A building lies to the
 north.    
 ~
-301 0 0 0 0 5
+301 0 0 0 0 1
 D0
 The Jock Hardy Arena is to the north.
 ~
@@ -601,7 +601,7 @@ Division Road~
    Asphalt pavement lies heinously beneath your feet.  The road continues north
 and south.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 Division Road continues north.
 ~
@@ -626,7 +626,7 @@ Division Road~
    Asphalt pavement lies heinously beneath your feet.  The road continues north
 and south.  A building is off to the west.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 1
 D0
 Division Road continues north.
 ~
@@ -657,7 +657,7 @@ Division Road~
    Asphalt pavement lies heinously beneath your feet.  The road continues north
 and south.    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 3
 D0
 Division Road continues north.
 ~
@@ -709,7 +709,7 @@ Division Road~
 north.  A dormitory sits to the east.  Strange that it's so far from everything
 else...    
 ~
-301 0 0 0 0 0
+301 0 0 0 0 3
 D0
 Division Road continues north.
 ~
@@ -740,7 +740,7 @@ the left pillar of the gateway.  It is made of nicely polished brass.  Because
 of this, it looks rather important (as all signs go).  The road continues north
 and south from your present location.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 1
 D2
 The Student GHETTO...  Beware!
 ~
@@ -767,7 +767,7 @@ The Ghetto~
 run down, almost into the ground in fact.  You can see many furtive shapes
 moving through the darkness.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D0
 The gateway lies to the north.
 ~
@@ -785,7 +785,7 @@ The Ghetto~
 run down, almost into the ground in fact.  You can see many furtive shapes
 moving through the darkness.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D0
 This is the ghetto, do you really need to know what is north of you?
 ~
@@ -817,7 +817,7 @@ Campus Crescent.  To both the east and west you can see locked doors.  The
 floor is decorated with rather ugly, puce tiles.  Beside the east door you can
 see an enormous amount of mailboxes.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D0
 The cobblestoned Campus Crescent lies to the north.
 ~
@@ -937,7 +937,7 @@ Supposedly, if you walk in one direction long enough, you will get to where you
 want to be.  Exits lead in all cardinal directions.  A footnote has been
 attached to this description.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D0
 Campus Crescent can be seen through the glass doors.
 ~
@@ -1002,7 +1002,7 @@ engineering events (like the construction of this area) that have taken place
 in XXX's history.  There are two exits, east to the street and west further
 inside the building.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D1
 University Avenue lies to the east.
 ~
@@ -1104,7 +1104,7 @@ the building you noticed how old this building seemed quite a long time ago.
 There are two exits.  One to the road, which happens to lie to the west and the
 exit to the east leads to a long hallway.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 2
 D1
 A long hallway leads off in this direction.
 ~
@@ -1124,7 +1124,7 @@ Shoppe.  North of you is the back hall with its bank machines, and south is the
 exit to Union Street.  This area is usually rather busy with students as this
 is the University Student Centre.    
 ~
-301 8 0 0 0 5
+301 8 0 0 0 1
 D0
 To the north you can see the back hall, complete with numerous bank
 machines, but of course you already knew that, didn't you?
@@ -1157,7 +1157,7 @@ The Back Hall~
 the north, and a games room to the east.  The Central Annex is located to the
 south whilst the street is located directly to your west.    
 ~
-301 8 0 0 0 5
+301 8 0 0 0 0
 D0
 You can distinctly see a post office here, it might have a message in it, but
 you are not quite sure.
@@ -1186,7 +1186,7 @@ Jock Hardy Lobby~
 achievements of the students and alumni.  Exits branch off in many directions.
 There is a sign here.    
 ~
-301 8 0 0 0 5
+301 8 0 0 0 1
 D0
 There is a stairway to the north.
 ~
@@ -1272,7 +1272,7 @@ Campus, miles away from everything else.  There are three exits from here, west
 to the street and main campus, east to explore the depths of Wally World, and
 north to visit the front office and reception desk.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 3
 D0
 This way leads to the reception desk.
 ~
@@ -1296,7 +1296,7 @@ The food here is mass-produced and cheaply made.  After watching how they cook
 this food you are glad you do not normally eat at the cafeteria.  There is a
 door to the east.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D1
 The doorway leads back out of the kitchen.
 ~
@@ -1322,7 +1322,7 @@ The Kitchen~
 The food here is mass-produced and cheaply made.  After watching how they cook
 this food you are glad you do not normally eat at the cafeteria.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D0
 The kitchen continues north.
 ~
@@ -1340,7 +1340,7 @@ eat this food to subsist.  You feel pity upon them as you watch them fill their
 stomachs with this sorry excuse for food.  The dining hall continues east and
 south.  The exit is to the north.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 4
 D0
 An unknown force draws you north.
 ~
@@ -1372,7 +1372,7 @@ eat this food to subsist.  You feel pity upon them as you watch them fill their
 stomachs with this sorry excuse for food.  The dining hall continues west and
 south.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 4
 D2
 The dining hall continues south.
 ~
@@ -1399,7 +1399,7 @@ eat this food to subsist.  You feel pity upon them as you watch them fill their
 stomachs with this sorry excuse for food.  The dining hall continues north and
 east.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 4
 D0
 The dining hall continues north.
 ~
@@ -1426,7 +1426,7 @@ eat this food to subsist.  You feel pity upon them as you watch them fill their
 stomachs with this sorry excuse for food.  The dining hall continues north and
 west.  The exit is to the east.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 4
 D0
 The dining hall continues north.
 ~
@@ -1458,7 +1458,7 @@ The food here is mass-produced and cheaply made.  After watching how they cook
 this food you are glad you do not normally eat at the cafeteria.  There is a
 door here.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D1
 The kitchen continues east.
 ~
@@ -1484,7 +1484,7 @@ A Storeroom~
 spam and other uninteresting stuff.  But wait!  They keep edible food here too!
 So that's what the staff eats!    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D0
 These stairs lead back to the door to the kitchen.
 ~
@@ -1510,7 +1510,7 @@ The food here is mass-produced and cheaply made.  After watching how they cook
 this food you are glad you do not normally eat at the cafeteria.  There is a
 door to the north.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D0
 The doorway leads back out of the kitchen.
 ~
@@ -1534,7 +1534,7 @@ S
 Stairway~
    As the title implies, there is a set of stairs here which lead up.    
 ~
-301 8 0 0 0 5
+301 8 0 0 0 2
 D2
 The main lobby is to the south.
 ~
@@ -1568,7 +1568,7 @@ Equipment Room~
    The equipment room houses various items used to work out and for sports.  
 There is a set of stairs here which lead down.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 2
 D3
 The Gym is to the west.
 ~
@@ -1585,7 +1585,7 @@ Locker Room~
    The fresh smell of sweat lingers in the locker rooms.  There is a set of
 stairs nearby.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 3
 D1
 A hallway branches off to the east.
 ~
@@ -1793,7 +1793,7 @@ boots trampling up and down it all day (and night).  The exit to the north is
 much less worn but the path to the south has been worn right down.  There is a
 small sign partway up the stairwell.    
 ~
-301 8 0 0 0 0
+301 8 0 0 0 1
 D0
 The Campus Bookstore is located to the north.
 ~
@@ -1964,7 +1964,7 @@ smells pretty bad, it wouldn't be a bad idea to remember where this is so that
 you can rest here later.  You find it rather difficult to manoeuvre in here
 because of the large number of drunks on the floor.  The only exit is north.  
 ~
-301 12 0 0 0 0
+301 12 0 0 0 4
 D0
 Back to the entrance...  out of the bad smells here...
 ~
@@ -1979,7 +1979,7 @@ towards the street whilst the north and west exits are too dark to see the ends
 of.  The stairs on the south side of the room lead up to the second floor and
 whatever might be up there...    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 1
 D0
 You can't tell, it's too dark.
 ~
@@ -2017,7 +2017,7 @@ Hallway~
    This hallway is non-descript and has two exits.  The eastern exit seems to
 lead into a large room while the southern exit leads, well, south.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 1
 D1
 There seems to be a large room to the east.
 ~
@@ -2040,7 +2040,7 @@ Auditorium~
 only exit (west).  There are numerous seats arranged like a theatre would be.
 There is a large stage at the east end of the room.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 3
 D3
 The hallway you probably entered from is handily located to the west.
 ~
@@ -2071,7 +2071,7 @@ Hallway~
 Unfortunately, you can't see what the exits lead to.  Just before you finish
 looking, you notice a door to the north.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 1
 D0
 This seems to lead to a library.
 ~
@@ -2098,7 +2098,7 @@ The Back Exit~
 way to the west.  If you were to go east, though, you would not have a problem
 as the corridor seems to continue that way.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 1
 D1
 The hallway looks to continue in this direction.
 ~
@@ -2135,7 +2135,7 @@ Upper Lobby~
 south which leads down.  You can't see where the stairwell leads.  For that
 matter you can't see where any of the exits lead.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 1
 D0
 It's too dark to see.
 ~
@@ -2163,7 +2163,7 @@ A Classroom~
 tables, no nothing...  Wait, that would mean something is here, wouldn't it?  
 Alright, there is something, there is an exit to the west.    
 ~
-301 13 0 0 0 0
+301 13 0 0 0 1
 D3
 This leads back to the upper lobby.
 ~
@@ -2176,7 +2176,7 @@ A Classroom~
 tables, no nothing...  Ok, you caught me again, there is an exit to the east.
   
 ~
-301 13 0 0 0 0
+301 13 0 0 0 1
 D1
 This leads back to the upper lobby.
 ~
@@ -2188,7 +2188,7 @@ Hallway~
    This hallway has three conventional exits and a door.  East, south and west
 are conventional whilst the north wall holds a door.    
 ~
-301 9 0 0 0 5
+301 9 0 0 0 1
 D0
 This seems to be an office.
 ~
@@ -2215,7 +2215,7 @@ A Classroom~
    This classroom is completely deserted.  There are no desks, no chairs, no
 tables, no nothing...  Except the typical exit to the west of course.    
 ~
-301 13 0 0 0 0
+301 13 0 0 0 1
 D3
 This leads back to the hallway.
 ~
@@ -2228,7 +2228,7 @@ A Classroom~
 tables, no nothing...  Not even an exit to the north, good thing since the
 actual exit is to the east.    
 ~
-301 13 0 0 0 0
+301 13 0 0 0 1
 D1
 This leads back to the hallway.
 ~
@@ -2241,7 +2241,7 @@ Faculty Office~
 student trying to break in.  A huge desk has been toppled over and now rests
 against a wall.    
 ~
-301 9 0 0 0 0
+301 9 0 0 0 1
 D2
 This door leads to the hall.
 ~
@@ -2258,7 +2258,7 @@ Back Path~
 could be at the end of it.  To the north the path continues, to the east, a
 door graces the building next to you.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D0
 The pathway continues.
 ~
@@ -2282,7 +2282,7 @@ S
 A Pathway~
    The path continues north-south.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D0
 The path continues.
 ~
@@ -2303,7 +2303,7 @@ A Pathway~
    The pathway continues north-south.  To the north you can see a tall, thin
 structure sticking up from the ground.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D0
 The pathway continues.
 ~
@@ -2320,7 +2320,7 @@ Approach To The Greasepole~
    The path seems to be taking a direct route to the needle-like structure just
 to the north.  To the south the path continues.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D0
 The path begins to lead to a large pit.
 ~
@@ -2337,7 +2337,7 @@ The Greasepit~
    The tall, needle-like structure stands right in front of you.  There are two
 ways you can go: to the south on the path, or up the greasepole.    
 ~
-301 4 0 0 0 0
+301 4 0 0 0 4
 D2
 The path leads off to the south.
 ~

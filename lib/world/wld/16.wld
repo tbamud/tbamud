@@ -5,7 +5,7 @@ of people must have marched along this trail.  It almost looks like an army was
 marched through here.  A lake shrouded in fog is to the west and the city wall
 is to the east.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -57,7 +57,7 @@ positioned over the main gate.  More guards and lookouts are keeping watch
 above you.  They must be awaiting an attack, but who or what could make it
 across that lake?    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -73,7 +73,7 @@ Courtyard~
 into a smoke filled room.  The courtyard extends to the south and west while to
 the east a path runs along the castle wall.  
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -97,7 +97,7 @@ Courtyard~
 is screaming about the walking undead.  The guards look around nervously then
 club him in the head with the hilt of their swords, knocking him out.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -118,7 +118,7 @@ here asking for money.  You ignore him but then you look at his eyes.  He
 motions you over and you obey, but not of your own will.  He hands you a note
 and tells you to read it which you do without any questions.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -211,7 +211,7 @@ Center Lane~
 the battlements above you.  This area seems to be deserted.  The guards look
 down at you distrustfully.  You get the feeling that they don't want you here.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -313,7 +313,7 @@ sides of the road, with their coats of arms flapping in the breeze.  There are
 available slots for other coats of arms.  A small alley to the west leads into
 darkness.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -334,7 +334,7 @@ how honorable the people in this castle must be, you're sure there are thieves
 among them.  You stop in surprise as you see a tower appear to the west where a
 second before you hadn't seen anything.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -466,7 +466,7 @@ around nervously and don't seem to be enjoying their work very much.  You wonder
 whose land this really is.  The castle sits on an island to the east but you
 don't see any means to reach it.  The path continues north and south.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -483,7 +483,7 @@ footprints that sink deep into the mud.  Whoever went through here was either
 wearing a lot of armor or carrying a lot of weight.  The lake and the city wall
 are still forcing you north or south along the trail.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -500,7 +500,7 @@ over.  You reluctantly kneel down to hear what he has to say.  He immediately
 starts rambling on crazily about his dead friends that are coming back to kill
 him to get back the money he owes them.  You walk away in disgust.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -636,7 +636,7 @@ Center Lane~
 battlements above you stare down distrustfully.  An open doorway to the east
 carries the delicious smell of baking bread and roasted meat.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -737,7 +737,7 @@ Knights Way~
 the breeze.  You look at the coats of arms.  You recognize a few of the devices
 as belonging Gawaine, Tristram and, of course, Lancelot.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -846,7 +846,7 @@ end without falling asleep.  A guard whispers something to one of the
 lookouts, you catch a couple words, something about putting you to work in 
 the army.    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -859,7 +859,7 @@ they are staring at, but all you see are open fields and a decrepit stone
 tower.  Nothing threatening.  You try to strike up a conversation with the 
 guards, but they ignore you.    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -887,7 +887,7 @@ stop occasionally and look to the north in fear as if they expect the devil
 himself to suddenly appear.  The fields are neglected and it seems they are 
 just now starting to prepare it for planting.    
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -904,7 +904,7 @@ supply wagons sit by the side of the trail.  This army must have been moving
 fast to leave all this stuff behind.  The tracks look to be only a couple of
 hours old.  The city wall and the lake still force you north or south.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -921,7 +921,7 @@ lookouts.  They are standing a vigilant watch looking outwards, as if expecting
 an army to try to swim across the lake to attack the castle.  Everyone in this
 castle seems crazy.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -941,7 +941,7 @@ North Lane~
 walk by, one telling the other some outrageous story about the undead.  Then
 you realize he didn't seem to be joking.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -957,7 +957,7 @@ North Lane~
 they are saying.  You just catch a couple of words.  "We cannot keep this up.  
 We will all be dead soon."  Then they see you and order you to move on.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -973,7 +973,7 @@ North Lane~
 this castle and these people?  You try to ask someone but they look at you as if
 you're the stupidest person alive.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -989,7 +989,7 @@ North Lane~
 seen anyone smiling or any children running around playing.  This castle seems
 to be under a siege of some sort, but not physically.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1009,7 +1009,7 @@ North Lane~
 almost seamless.  It would almost seem that this castle was built with the 
 help of some very powerful magic.    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1025,7 +1025,7 @@ North Lane~
 like a small stone building.  Very few people are out traveling this road.  You
 only see a few patrolman and peasants.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1041,7 +1041,7 @@ North Lane~
 chimney juts out of the southern wall and heat waves make the rocks around 
 it shimmer as if alive.    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1058,7 +1058,7 @@ of the north and west walls a small tower sits above you on the
 battlements. Several figures are keeping a sharp look out.  You wonder for 
 what?    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1092,7 +1092,7 @@ jobs, from their never ending battle of fighting for the rights of the common
 folk.  The various flowers and plants are very well tended and the scent of
 spring flowers is refreshing.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1162,7 +1162,7 @@ Knights Way~
 large building to the north has its ornate double doors open wide, inviting you
 to enter.  A tower rises above you to the west.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1244,7 +1244,7 @@ West Lane~
 Few people are walking the streets and even fewer are even acknowledging you.  
 Why is everyone so reclusive?
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D2
 ~
 ~
@@ -1321,7 +1321,7 @@ stench with it and you see vultures circling.  The lake is to the east and the
 path continues north and south.  Further to the north you see a tower and in the
 middle of the lake to the east sits a massive castle on an island.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1337,7 +1337,7 @@ A Wide Dirt Path~
 tracks follow the trail.  To the north you see some foothills with mountains in
 the distance.  The city wall is to the east.
 ~
-16 4 0 0 0 2
+16 4 0 0 0 0
 D2
 ~
 ~
@@ -1354,7 +1354,7 @@ go in one direction.  This army has never come back through here.  The foothills
 to the north look treacherous.  To the south, small waves lap against the shore
 of the lake.  Through the fog blanketing the lake you think you see an island.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1371,7 +1371,7 @@ and opens into a field to the west.  The foothills to the north still look
 impassable.  You hear something to the west but you can't identify it from this
 far away.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1388,7 +1388,7 @@ are coming from the west.  It almost sounds like a battle is being fought.
 Through the fog to the south you finally can see the island and what appears to
 be a castle built on it.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1406,7 +1406,7 @@ were routed.  You start to notice that some of the corpses, about one of every
 ten, are in an advanced state of decomposition, while most of them are just now
 beginning to bloat from the sun.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1423,7 +1423,7 @@ starting to gather.  Strange, the decayed corpses seem to be untouched by the
 vultures, rats and other scavengers that feast on the fresher fare on this
 battlefield.  
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1440,7 +1440,7 @@ their uniforms while the decayed corpses wear clothes and armor that looks
 ancient and is practically falling off them.  Also the decayed corpses seem to
 be mutilated, most of them with their heads actually lopped off.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1457,7 +1457,7 @@ them.  Blood mixed with the dirt from the path covers your boots and the
 stench is beginning to overwhelm you.  The path continues east and west.  
 The lake to the south has a slight tinge of red too it.    
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1473,7 +1473,7 @@ Battle Field~
 overpowering you and you think about turning back.  You hear the clash of steel
 and screams of pain to the west.  A new battle must have just started.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1490,7 +1490,7 @@ slaughtering what's left of the army.  The zombies decimate the last of the
 infantry, turn around, and leave to the west.  Silence once again claims the
 battle field.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D1
 ~
 ~
@@ -1506,7 +1506,7 @@ Foothills~
 north. Bodies are everywhere, most of them from the army.  Hard to 
 believe the number of casualties those zombies inflicted.    
 ~
-16 4 0 0 0 4
+16 4 0 0 0 0
 D0
 ~
 ~
@@ -1635,7 +1635,7 @@ Northwest Tower~
 looking tower.  Fields stretch towards the south where the farmers, 
 peasants and serfs cultivate the fertile fields.    
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D5
 ~
 ~
@@ -1647,7 +1647,7 @@ West Lane~
 You sense strange powers radiating from the towers to the northeast, as if they
 were alive.  The dirt lane turns into cobblestone to the south.
 ~
-16 0 0 0 0 1
+16 0 0 0 0 0
 D0
 ~
 ~
@@ -1712,7 +1712,7 @@ Battle Field~
 above the foothills.  Bodies lie everywhere right up to the base of the tower.
 There must be over a thousand dead.
 ~
-16 0 0 0 0 2
+16 0 0 0 0 0
 D0
 ~
 ~

@@ -118,7 +118,7 @@ On A Rope Bridge~
    The small rope bridge shudders under your weight as you make your
 way across the valley.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -226,7 +226,7 @@ S
 On A Road~
    This long road continues to the east and south.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -240,7 +240,7 @@ S
 On A Road~
    The well kept road continues east and west from here.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -257,7 +257,7 @@ and west towards the Eastern Mountains.  To the north you can see wide
 plains stretching out as far as the eye can see.  South of you begins
 a dark green forest.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -454,7 +454,7 @@ S
 On A Road~
    The road you are on continues east and west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 4
 D1
 ~
 ~
@@ -468,7 +468,7 @@ S
 On A Road~
    The road you are on continues east and west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -482,7 +482,7 @@ S
 On A Road~
    The road you are on continues east and west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -498,7 +498,7 @@ On A Road~
 the River Ishtar.  The road continues north and west from the
 river bank.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D0
 ~
 ~
@@ -995,7 +995,7 @@ and flows west down the mountain.  It looks like there was a terrible
 earthquake here not too long ago, and a path that leads eastwards
 through the mountains is covered with rocks, making passage difficult.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D1
 ~
 ~
@@ -1010,7 +1010,7 @@ On The Dark River~
    The river flows down the mountain through a large crevasse to the west
 and up into the mountains east.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D1
 ~
 ~
@@ -1025,7 +1025,7 @@ On The Dark River~
    The walls of this canyon tower overhead as the river continues east
 and west from here.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D1
 ~
 ~
@@ -1040,7 +1040,7 @@ On The Dark River~
    The walls of rock around you slowly shrink to ground level as the river 
 flows out of the mountains and onto the plains.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D1
 ~
 ~
@@ -1055,7 +1055,7 @@ On The Dark River~
    The river continues east and west from here out of the foothills
 to the east down into the mountains south of here.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D1
 ~
 ~
@@ -1070,7 +1070,7 @@ On The Dark River~
    The river, following a low spot in the foothills, bends and twists.
 Tall mountains can be seen off to the south and east.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D0
 ~
 ~
@@ -1084,7 +1084,7 @@ S
 On The Dark River~
    The river makes a wide sweeping turn here into the mountain.
 ~
-56 1 0 0 0 0
+56 1 0 0 0 7
 D0
 ~
 ~
@@ -1099,7 +1099,7 @@ On The Dark River~
    The river flows west from here into the heart of the mountain and
 east towards the foothills once more.
 ~
-56 9 0 0 0 0
+56 9 0 0 0 7
 D1
 ~
 ~
@@ -1114,7 +1114,7 @@ On The Dark River~
    You can barely make out what is ahead of you as the river flows
 quietly through the passageway.
 ~
-56 9 0 0 0 0
+56 9 0 0 0 7
 D1
 ~
 ~
@@ -1130,7 +1130,7 @@ On The Dark River~
 are small cracks in the passage wall to the north where you might be able
 to get up out of the water.
 ~
-56 9 0 0 0 0
+56 9 0 0 0 7
 D0
 ~
 ~
@@ -1149,7 +1149,7 @@ On The Dark River~
    The river continues east and west from here flowing south of a dark
 ledge high above the water level.
 ~
-56 9 0 0 0 0
+56 9 0 0 0 7
 D1
 ~
 ~
@@ -1164,7 +1164,7 @@ On The Dark River~
    The river flows south through a narrowing part of the passage as it
 progresses deeper into the mountain.
 ~
-56 9 0 0 0 0
+56 9 0 0 0 7
 D1
 ~
 ~
@@ -1181,7 +1181,7 @@ it leads deeper into the mountain.  Unfortunately, the ledge is only
 wide enough to rest upon for a while and there does not appear to be
 any other exits other than rejoining the underground river.
 ~
-56 9 0 0 0 0
+56 9 0 0 0 2
 D2
 ~
 ~
@@ -1194,7 +1194,7 @@ To the south of you stand the might northern gates of New Thalos.  East
 and west of you the grassy fields continue and north, in the distance,
 you see a line of trees.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D0
 ~
 ~
@@ -1218,7 +1218,7 @@ On The Plains~
 closer but still a good distance away.  To the south a small dirt
 path has been trodden into the ground heading towards New Thalos.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D0
 ~
 ~
@@ -1242,7 +1242,7 @@ The Edge Of The Forest~
 continues as far as the eye can see to the east and west.  A
 large expanse of grass spreads out to the south.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -1392,7 +1392,7 @@ the go to great lengths to keep all the roads in order.  Although
 the taxes in New Thalos are higher then other cities in the realm
 most of the money is used for the good of the people.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -1410,7 +1410,7 @@ and the trees lies a great expanse of grassy plains.  South of here,
 beyond the river, lies the Great Eastern Desert.  The road continues
 east and west.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -1426,7 +1426,7 @@ On A Road~
 lands.  The road continues east and west.  To the south you hear the
 sounds of boats traveling the River Ishtar delivering goods.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -1443,7 +1443,7 @@ their goods to the coastline and have them ferried onto ships for
 export.  Travel by foot west will take you through New Thalos up and
 over the Eastern Mountains and down into Midgaard.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -1460,7 +1460,7 @@ beach and onto a dock.  To the north and south you see the coastline
 stretching out before you.  West of here the lowlands roll up into
 huge snow capped mountains.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 2
 D1
 ~
 ~
@@ -1477,7 +1477,7 @@ road to the west.  The dock seems to have been here for quite a long
 time but is still sturdy.  A small ladder has been built on the eastern
 end to allow easy access to and from ships.
 ~
-56 0 0 0 0 0
+56 0 0 0 0 1
 D0
 ~
 ~

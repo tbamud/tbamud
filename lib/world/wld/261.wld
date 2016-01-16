@@ -533,7 +533,7 @@ size of three men side by side rise from the forest floor, towering high above
 you.  Birds sing, branches creak, and you have to wonder...  -What the Hell am I
 doing here?!  -
 ~
-261 0 0 0 0 0
+261 0 0 0 0 3
 S
 T 26100
 #26122
@@ -892,7 +892,7 @@ Entrance to a Large Home~
 definately large by most standards.  The door lies directly west of you or you
 may head back along the path through the forest to the grasslands.  
 ~
-261 0 0 0 0 0
+261 0 0 0 0 1
 D1
 ~
 ~
@@ -908,7 +908,7 @@ A Twisty Path~
 married couple who used to be Head Enchanter and Enchantress to the Lord at
 Lord's Keep, maybe this is it...  The path also heads north through the forest.
 ~
-261 0 0 0 0 0
+261 0 0 0 0 3
 D0
 ~
 ~
@@ -924,7 +924,7 @@ Twisty Path~
 anywhere.  There are a great many leaves strewn in the path, giving you the
 impression that not many people travel this way very often.  
 ~
-261 0 0 0 0 0
+261 0 0 0 0 3
 D1
 ~
 ~
@@ -939,7 +939,7 @@ Start of a Twisty Path~
    You stand at the edge of the field and the edge of a forest.  The way to the
 forest is west, and the grasslands spread out to your east.  
 ~
-261 0 0 0 0 0
+261 0 0 0 0 3
 D1
 ~
 ~

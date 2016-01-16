@@ -31,7 +31,7 @@ as far as you can see.  Hundred of beautifuly garbed women of all shades
 languish on the shore; they have stony-dull eyes that stare right past you.  
 Something looks not-quite-so-right in this pristine place.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 2
 D1
 To your east you can see a huge mound of dirt.
 ~
@@ -56,7 +56,7 @@ Beachside Harem~
 and you can hear screaming from down in the depths.  A large forest lies to
 your east, and a trail can be vaguely seen.    
 ~
-267 1 0 0 0 0
+267 1 0 0 0 4
 D1
 To your east you can see a beach road that leads into the forest.
 ~
@@ -82,7 +82,7 @@ fill every part of the area outside the path.  Strange noises and utterly
 blood-chilling screams fill the air.  It is very dark here.  The path leads on
 to your west, and a strange mound lies to your east.    
 ~
-267 1 0 0 0 0
+267 1 0 0 0 2
 D1
 The beach road continues on.
 ~
@@ -101,7 +101,7 @@ priceless vases, and piles of money and jewelry everywhere.  Beautiful, silent
 women dance before you, twirling in silk gowns that barely hide their beauty.
 A sound can be heard over all the racket, shouting, "Keep working!  "
 ~
-267 521 0 0 0 0
+267 521 0 0 0 1
 D4
 You can just see from the hole in the ground that you are right by a path that leads into the woods.
 ~
@@ -117,7 +117,7 @@ fill every part of the area outside the path.  Strange noises and utterly
 blood-chilling screams fill the air.  It is very dark here.  A large hill rises
 to your east, and the beach road lies to your west.    
 ~
-267 5 0 0 0 0
+267 5 0 0 0 2
 D1
 A large hill rises to your east.
 ~
@@ -135,7 +135,7 @@ Creepy Road~
 Perhaps it's the total and complete silence.  Or perhaps it's the skeletons
 strown haphazardly about.  You just don't know.    
 ~
-267 4 0 0 0 0
+267 4 0 0 0 2
 D1
 The creepy road continues east.
 ~
@@ -157,7 +157,7 @@ Creepy Road~
 Perhaps it's the total and complete silence.  Or perhaps it's the skeletons
 strown haphazardly about.  You just don't know.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 2
 D1
 The creepy road continues east.
 ~
@@ -180,7 +180,7 @@ Perhaps it's the total and complete silence.  Or perhaps it's the skeletons
 strown haphazardly about.  You just don't know.  A large building towers above
 you to the east.    
 ~
-267 4 0 0 0 0
+267 4 0 0 0 2
 D1
 You know, like we said, a large building lieing to your east and all.
 ~
@@ -209,7 +209,7 @@ To your south, you can see the beginnings of a rock-strewn-path...  Continuing
 further down, you can see the end of the hill.  The forest covers up most of
 the view from here.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 4
 D4
 Looking up, you can see the zenith of Vice Hill.
 ~
@@ -229,7 +229,7 @@ your south, you can see the beginnings of a rock-strewn path...  Continuing
 further down, you can see the end of the hill.  The forest covers up most of
 the view from here.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 4
 D4
 Looking up, you can see the zenith of Vice Hill.
 ~
@@ -513,7 +513,7 @@ dark openings of two tunnels to your east and west.  Of course, you could
 always go south up to the relative safety of the hill.  A huge tree here looks
 climbable, and you can vaguely see a net at the top.    
 ~
-267 4 0 0 0 0
+267 4 0 0 0 4
 D0
 You can see a dangerous-looking tarry road to your north.
 ~
@@ -546,7 +546,7 @@ Tarry Road~
 thicker and thicker as you venture north.  If you go south, you'll probably be
 able to turn back before it's too late.    
 ~
-267 517 0 0 0 0
+267 517 0 0 0 2
 D0
 It looks very dangerous and squishy that way, but you could probably survive
 it.
@@ -566,7 +566,7 @@ thicker and thicker as you venture south.  If you go north, you'll probably be
 able to turn back before it's too late.  There is a sign on the side of the
 road here.    
 ~
-267 517 0 0 0 0
+267 517 0 0 0 2
 D0
 The tar looks even more dangerous that way, but survivable.
 ~
@@ -590,7 +590,7 @@ Tarry Road~
 of escape--either go forward, or don't move at all.  Right ahead of you is a
 bubbling, boiling tar pit--it looks quite disgusting.  PANIC!    
 ~
-267 517 0 0 0 0
+267 517 0 0 0 2
 D0
 Looks like that would be a VERY bad idea. I don't think you could escape
 that one.
@@ -611,7 +611,7 @@ you might, you can't get them out!  Each sinks lower and lower until your
 entire legs are encased in the pit.  You scream for help, but no one can hear
 you.    
 ~
-267 548 0 0 0 0
+267 548 0 0 0 2
 S
 #26728
 Vice Hill~
@@ -620,7 +620,7 @@ it still looks quite sinister.  You notice a rocky road to your south, and you
 can ascend the hill to take a look around you.  A road hangs a bit above you to
 your left by no supports!  Hmm...  A beautifuly made road is to your west.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 4
 D0
 You can see the beautiful Vice Hill.
 ~
@@ -655,7 +655,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 5 0 0 0 0
+267 5 0 0 0 1
 D1
 To your east you can see the bottom of Vice Hill.
 ~
@@ -674,7 +674,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 1
 D2
 The strange trail continues on.
 ~
@@ -700,7 +700,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 5 0 0 0 0
+267 5 0 0 0 1
 D0
 The high path continues on.
 ~
@@ -719,7 +719,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 1
 D0
 The strange trail continues on..
 ~
@@ -745,7 +745,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 5 0 0 0 0
+267 5 0 0 0 1
 D0
 The high path continues on.
 ~
@@ -764,7 +764,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 1
 D0
 The strange trail continues on..
 ~
@@ -790,7 +790,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 5 0 0 0 0
+267 5 0 0 0 1
 D0
 The high path continues on.
 ~
@@ -809,7 +809,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 1
 D0
 The strange trail continues on.
 ~
@@ -835,7 +835,7 @@ substance line the path--it doesn't look as if a piece of paper could be
 inserted between them.  The trees have been trimmed back to allow easy passage.
 Even among all this beauty, you sense a sinister presence.    
 ~
-267 5 0 0 0 0
+267 5 0 0 0 1
 D0
 The high path continues on.
 ~
@@ -854,7 +854,7 @@ of diabolocal canopy.  You can hear--drums?  --some sort of pulsing beat in the
 distance.  A soft chanting can be heard in the far distance, but you can see no
 sign of life.  Lonliness sends you into a panicky state.    
 ~
-267 4 0 0 0 0
+267 4 0 0 0 1
 D0
 The strange trail continues on.
 ~
@@ -880,7 +880,7 @@ tarry brine to your north, and to all other directions a sinister, black forest
 is eerily silent.  If you look very carefully, you can see the harbours to your
 north and east.  The exits descend in all directions.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 4
 D0
 The hill descends down into a tarry road, filled with the gooey stuff.
 ~
@@ -1450,7 +1450,7 @@ Most of the island is covered in forest, and extends around a huge hill.  The
 far, far north shows some absolutely huge trees, and a rather large, black pool
 of what can only be tar.  You can go back into the building by going east.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 1
 D1
 You see the creepy hallway.
 ~
@@ -1801,7 +1801,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or down.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 3
 D0
 The netting continues through the trees here.
 ~
@@ -1826,7 +1826,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 3
 D0
 The netting continues through the trees here.
 ~
@@ -1851,7 +1851,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 3
 D0
 The netting continues through the trees here.
 ~
@@ -1877,7 +1877,7 @@ feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.  You can see a very dangerous tar pit
 right below you.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 3
 D0
 The netting continues through the trees here.
 ~
@@ -1902,7 +1902,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north or south on through the trees.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 3
 D0
 The netting continues through the trees here.
 ~
@@ -1927,7 +1927,7 @@ extremely high up from the ground.  You hear birds chirping right by you, and
 feel very peaceful here--that is, as long as you are in the trees.  You may go
 north to a dock, or south on through the trees.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 3
 D0
 The netting ends at a dock.
 ~
@@ -1952,7 +1952,7 @@ to your south, keeping you from falling through the trees.  You can see a large
 tar pit to your south--good thing there's that netting to keep you from falling
 into it.    
 ~
-267 0 0 0 0 0
+267 0 0 0 0 1
 D2
 The netting begins to your south.
 ~

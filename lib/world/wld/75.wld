@@ -6,7 +6,7 @@ singing in them.  North the forest is darker and the trees much larger.  To the
 south the forest comes to an end and expands into a large open field.  A trail
 leads east and south.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 Deep in the Forest.
 ~
@@ -56,7 +56,7 @@ An Open Field~
 tall green grass and wild flowers grow freely only stopping short at a trail
 that runs north and south.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 2
 D0
 The Forest Edge.
 ~
@@ -80,7 +80,7 @@ a calm pool does when disturbed.  The trail disappears under patches of grass,
 it doesn't appear to have been traveled recently.  The trail here runs north
 and south, large enough for a small wagon.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 2
 D0
 An Open Field.
 ~
@@ -104,7 +104,7 @@ side of the trail.  Various areas of the trail are covered with small plants
 and weeds.  The trail here runs north and south, just wide enough for a small
 wagon or a horse and rider.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 2
 D0
 An Open Field.
 ~
@@ -127,7 +127,7 @@ An Open Field~
 In the northern distance the plants growing are more familar.  Something beside
 the road looks out of place.  To the south the trail begins to get thinner.  
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 2
 D0
 An Open Field.
 ~
@@ -174,7 +174,7 @@ and flowers grow everywhere some reaching heights that are as large as trees.
 Perhaps they are trees.  Unusual sounds can be heard in the distance.  The path
 runs north and south.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D0
 An Open Field.
 ~
@@ -192,7 +192,7 @@ A Narrow Path~
 flowers.  Song birds can be heard in the distance but the songs are not ones
 you have heard before.  The path twists and leads to the north and west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D0
 A Narrow Path.
 ~
@@ -211,7 +211,7 @@ been built here.  The stones of the path are old and broken.  The strange
 noises seem to be getting louder.  The air grows thick from the sweet smell of
 the flowers.  The old, stone path leads east and west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 A Narrow Path.
 ~
@@ -236,7 +236,7 @@ of singing, screeching, and calling are becoming familiar.  But there is still a
 bizarre chatter, where it comes from is still unknown.  The stone path runs
 east and west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 The Trail to Zamba.
 ~
@@ -257,7 +257,7 @@ center of the massive gate the trail leads to a small opening.  The air is cool
 and gentle, the strong floral smell begins to weaken.  Several noises escape
 the gate, sounds of civilization.  A small path leads east and west.    
 ~
-75 32772 0 0 0 0
+75 32772 0 0 0 3
 D1
 The Trail to Zamba.
 ~
@@ -282,7 +282,7 @@ here look at you curiously for a moment before returning to their duties.  To
 the east stands the gates of Zamba.  The stone path leads east and west with
 many straw huts scattered about.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 1
 D0
 A Straw Hut.
 ~
@@ -417,7 +417,7 @@ buried under white sand.  Straw huts continue in all directions.  Although you
 still hear the sound of rushing water you also hear the faint sounds of music
 further west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 1
 D0
 A Straw Hut.
 ~
@@ -504,7 +504,7 @@ wood, perhaps not as grand as you are familar with but a much more attractive
 building compared to the small huts.  To the west appears to be the formation
 of mountains.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 1
 D0
 A Straw Hut.
 ~
@@ -561,7 +561,7 @@ mountain or had built a fortress on the surface to appear as a mountain.  The
 huge stone building rises high into the sky, a long set of steps lead upward.
 To the north and south the sand continues.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 1
 D0
 A Sandy Clearing.
 ~
@@ -591,7 +591,7 @@ a primitive machine used to weave cloth has been positioned under a shaded
 tree.  The sounds of crashing water is loud.  The air smells salty with a
 slight aroma of cooked fish.  The sandy track leads north, south and west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Small Street.
 ~
@@ -621,7 +621,7 @@ north, on the string hang several fish of various shapes and sizes.  To the
 west, east and south stands an open sandy path.  North a small path leads into
 a group of large trees with huge wide leaves centered to the tops of the trees.
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Cluster of Fruit Trees.
 ~
@@ -647,7 +647,7 @@ the silence is replaced by loud frantic chattering from all around you high in
 the trees.  A large sandy path leads south.  To the east a narrow path full of
 thick vines leads deeper into the trees.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 Jungle Passage.
 ~
@@ -671,7 +671,7 @@ stretching toward the sky in a oddly tilted fashion.  Other types of trees grow
 here that have sharp pointy bark.  Thick vines twist and turn clinging to
 everything.  A small path leads off to the east and west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 Jungle Passage.
 ~
@@ -694,7 +694,7 @@ The Jungle~
 growing space.  Bright, colorful butterflies flutter high in the trees.  A
 small path leads off to the east and west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 Jungle Passage.
 ~
@@ -718,7 +718,7 @@ slight wind catches the small leaves of the vines making them appear to grow as
 they sway in the wind.  A small path leads west.  Further to the east there
 seems to be a clearing.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D1
 A Clearing in the Jungle.
 ~
@@ -745,7 +745,7 @@ as if ready to bite.  In one of its clawed hands it holds a twisted dagger.
 The dagger is of fine steel and appears to have been placed in the claw after
 the statue was made.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D3
 Jungle Passage.
 ~
@@ -769,7 +769,7 @@ and thick.  A small group of butterflies busily flutter about in a cluster of
 flowers.  A large yellow flower silhouettes one of the patches of light, for
 some reason it stands alone as if the other plants fear to grow beside it.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 3
 D0
 A Sandy Clearing.
 ~
@@ -966,7 +966,7 @@ At this close a distance looking upward all you can see are rows and rows of
 steps all identical as they spirial upward.  Glancing downward there is but one
 step then the sandy ground.
 ~
-75 32772 0 0 0 0
+75 32772 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -992,7 +992,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32772 0 0 0 0
+75 32772 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1018,7 +1018,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1044,7 +1044,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1070,7 +1070,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1096,7 +1096,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1122,7 +1122,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1148,7 +1148,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1174,7 +1174,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Stone Steps.
 ~
@@ -1200,7 +1200,7 @@ smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
 go no other way.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 5
 D4
 Iron Doors.
 ~
@@ -1230,7 +1230,7 @@ The sounds of the water roars as it echos up the mountain side.  A strong wind
 from the west threatens to push you over the side.  Should you climb down or
 should you brave the unknown and enter the doors to the south?    
 ~
-75 32772 0 0 0 0
+75 32772 0 0 0 5
 D2
 Iron Doors.
 ~
@@ -1772,7 +1772,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1815,7 +1815,7 @@ north.  White waves roll in onto the sand washing away some of the bird prints.
 To the east a few small buildings can be seen in the distance..  The sand
 extents off to the north and south.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1835,7 +1835,7 @@ many bird shaped prints seem to run back and forth to the edge of the ocean.
 To the east stands several small buildings made of wood.  The sand leads off to
 the north, south, and east.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1858,7 +1858,7 @@ A Sandy Beach~
 patches of wild grass grows scantly around.  Several trees grow to the north
 and east of the sand.  To the west the ocean spreads far into the distance.  
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1877,7 +1877,7 @@ east.  To the west the ocean washes up the beach and crash onto a group of
 jagged rocks clustered below the trees.  To the south the sandy trail leads off
 to a wider strip of beach.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D2
 A Sandy Beach.
 ~
@@ -1890,7 +1890,7 @@ A Sandy Beach~
 north.  White waves roll in onto the sand washing away some of the bird prints.
 To the east a sandy clearing.  The sand extents off to the north and south.  
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1914,7 +1914,7 @@ layer of sand and leaving behind shells of various sizes most of which are just
 broken pieces.  The air is salty and warm as it blows in from the west.  The
 sand continues to the north and south.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1933,7 +1933,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1953,7 +1953,7 @@ animal tracks lead away from the mounds toward the coast disappearing into the
 water.  The current here is gentle and softly caresses the edge of the bank.  
 The sand leads off to the north and south.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1972,7 +1972,7 @@ sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
 carrying with it the salty smell of the ocean.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -1992,7 +1992,7 @@ a drop off overlooking jagged rocks.  West the ocean rolls in onto the sand
 gently washing away several of the footprints.  East is a large cluster of
 trees.  To the north a sandy path out.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 4
 D0
 A Sandy Beach.
 ~
@@ -2011,7 +2011,7 @@ Market Row~
 out from the shops from all the activity around them.  To the north stands a
 large building made of wood and large stones.  The road leads east and west.  
 ~
-75 32772 0 0 0 0
+75 32772 0 0 0 1
 D0
 A Magic Shop.
 ~
@@ -2034,7 +2034,7 @@ Market Row~
 from the shops from all the activity around them.  To the south a native fruit
 stand sits.  To the east stands a small shop.  To road leads west.    
 ~
-75 32768 0 0 0 0
+75 32768 0 0 0 1
 D1
 A Path.
 ~

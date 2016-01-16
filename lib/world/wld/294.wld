@@ -113,7 +113,7 @@ and the road continues to the east.  Two shops stand across from each other
 here, the north seeming more busy, the south seeming to attract a better
 quality of customer.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 There's a small shop there with a sign above it.  The sign 
 has the form of a cow in silohuette on it.
@@ -155,7 +155,7 @@ identifies it as 'Clay Street'.  A cursory look north and south reveals a shop
 or two, but not much else of interest.  Looking west, you spy a gate in the
 city wall, and Trade Road continues to the east.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -186,7 +186,7 @@ rubbish.  The alley opens up between two buildings on Trade Road southwards,
 and to the north the alley continues.  There is a slight smell of decay that
 teases your nose, making you feel as if it were time to move on...    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -207,7 +207,7 @@ Alley~
 and rubbish grime up your footwear as you tread lightly through the alleyway;
 obviously this is not one of the highlight attractions of XXXX.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -228,7 +228,7 @@ Clay Street~
 the south.  The wall doesn't look too safe, however; what with all those guards
 on top.  The shop to the south looks like a considerably nicer place to go.  
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -267,7 +267,7 @@ from which you hear a lot of laughing and general merryment.  The building
 seems tall and imposing, making the evident good times inside that much more
 out of place...    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 There's a larger building to the north, looking to be some 
 sort of factory.  You smell a faint tinge of alcohol in the 
@@ -303,7 +303,7 @@ marks the rubble of an ancient church.  A sad feeling akin to gloom presses
 down upon your shoulders, making your own load feel that much more heavier to
 bear here.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -332,7 +332,7 @@ guardian or omen.  None of the pedestrians on Trade Road to the north even
 glance in this direction as they pass on by.  The alley continues on to the
 south.  A strong smell of old blood and rot wafts through the area...    
 ~
-294 4 0 0 0 0
+294 4 0 0 0 1
 D0
 You see Trade Road to the north.
 ~
@@ -355,7 +355,7 @@ their relative decay giving their age to be about two weeks dead.  You shift
 your weight uneasily, startling two rats sniffing around the taller corpse.  
 The alley leads north and east from here.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -384,7 +384,7 @@ on the walls, drawn with an unsteady hand and a large supply of fecal material.
 A more sinister smell teases you just below the stench here just before a
 breeze from the east blows it away from you.    
 ~
-294 4 0 0 0 0
+294 4 0 0 0 1
 D1
 ~
 ~
@@ -410,7 +410,7 @@ is back north towards Trade Road.  A small breeze teases you with an awful
 smell, and whisks it away just as quickly.  Something is making you feel rather
 uneasy about this area, but its probably just your imagination.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -432,7 +432,7 @@ here.  To the south, Clay Road continues towards the southern city wall, not
 far away.  A nicely built building with an exquisite architecture is to the
 east, while the distinctive smell of tannin comes from a shop from the west.  
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -474,7 +474,7 @@ east.  Westwards, you see the intersection of Trade Road and Clay Street, which
 runs north-south.  A large open-air building is to the north, and southwards is
 a large open lot; a fairgrounds, closed for the time being.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 A large building with many tethering posts outside is to 
 the north.
@@ -507,7 +507,7 @@ marking the boundries of Trade Road, and this neighborhood.  To the south is a
 large fairgrounds area, closed for the time being.  A building to the north
 seems to be locked up tight, with a large, 'FOR RENT' sign out front...    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -545,7 +545,7 @@ west from here, and there is a largish gatheouse not far to the east.  A
 north-south running road labeled 'Staid Avenue' intersects here, taking much of
 the traffic away from the main road to the south.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -576,7 +576,7 @@ can see farmlands.  The gate looks to be a good defensible point in the city
 wall, an architectural artifact of more dangerous times in these realms.  
 Westwards a large road leads through XXXX.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D3
 ~
 ~
@@ -600,7 +600,7 @@ Most of the buildings seem to be low cost housing for the common populace of
 XXXX; making you guess there is a very high population density in this area.
   
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -617,7 +617,7 @@ another intersection of roads.  There seems to be many buildings used as
 domiciles in this area.  You wouldn't exactly call this neighborhood a 'bad'
 neighborhood yet, but the potential is certainly there.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -639,7 +639,7 @@ residential district.  Harple Road seems to run along part of the length of the
 wall here, lined with apartment buildings and a few duplexed houses.  To the
 north is one particularly bad looking boarding house.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 There is a boarding house to the north.
 ~
@@ -674,7 +674,7 @@ amazing lack of the graffiti typical of other large, heavily populated towns in
 this neighborhood.  Seems as if the average populace in XXXX is considerably
 more well-behaved than most other places.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 An ordinary house is to the north.
 ~
@@ -700,7 +700,7 @@ crooked and warped by the uneven ground.  Just to the west Staid Avenue runs
 south from Harple, towards Trade Road.  The neighborhood seems quiet, pensive
 even.  Strange...    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 A normal-looking house is to the north.
 ~
@@ -722,7 +722,7 @@ Harple Road~
 Avenue leads south from Harple not far from here.  There doesn't seem to be
 much going on around here at all...  A very calm neighborhood.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 A private home is to the east.
 ~
@@ -748,7 +748,7 @@ by much.  The buildings to either side of you rise high up, cutting off most of
 the light available from the sky.  The stench and darkness raises your hackles,
 and you shiver involuntarily.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 Harple Road runs to the east.
 ~
@@ -774,7 +774,7 @@ west.  An ill wind ruffles your hair from the north, carrying a smell of
 sewage, of rot, sickness and decomposition.  Your stomach squirms like a live
 animal in your gut, making you feel distinctly uneasy.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -791,7 +791,7 @@ Staid Avenue~
 the shops and buildings in this area are getting noticeably worse now, and the
 litter in the street is getting thicker the farther south you go.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -825,7 +825,7 @@ Boulevard near the river.  The neighborhood seems to be getting worse and worse
 the closer to the river you actually get.  Westwards is an open shop with a
 monstrous anchor out in front being used for a tethering post.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -858,7 +858,7 @@ north side of Klelk in both directions you see some of the typical dives you
 would expect close to the waterfront.  North from here Staid Avenue heads
 towards Trade Road and the central areas of the city.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -895,7 +895,7 @@ seems to be.  You would guess that the sailors of the river bring money to this
 section of town; hence all the low-grade shops and wayhouses, not to mention
 what might be called a 'tavern' to the north.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 A horrible, disgusting tavern is to the north.  It's open 
 though.
@@ -927,7 +927,7 @@ is especially high here, perhaps to protect the guards above from the rabble
 below.  The wall is stained with trash and refuse, obviously missed shots at
 the guards patrolling on the top...    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 There seems to be an alley to the north...
 ~
@@ -949,7 +949,7 @@ Alley~
 through, in all directions.  The alley continues to the west, and south you see
 Klelk Boulevard.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D2
 You spot Klelk Boulevard to the south.
 ~
@@ -967,7 +967,7 @@ junk lie about, unwanted and thrown away.  This alley seems not to be travelled
 at all, or used for trash and refuse.  The path between buildings continues to
 the east, and west is an opening up onto Clay Street.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -991,7 +991,7 @@ the south are the city docks, extending into the swiftly flowing river.  A lone
 ship sails past, travelling eastward and sporting a merchant's flag.  A ruined
 building nearly stands to the north.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 What appears to have once been a shop is to the north.
 ~
@@ -1099,7 +1099,7 @@ customer describe what they want, whereupon the merchant brings something
 similar from the back through a large metal door.  This strikes you as a fairly
 inefficient method of shop-keeping, but very secure.    
 ~
-294 8 0 0 0 0
+294 8 0 0 0 1
 D0
 Trade Road runs right outside.
 ~
@@ -1146,7 +1146,7 @@ around you...  Images quickly shattered by the rustle of your clothing in the
 wind and a distant sound of someone talking on the street.  A sense of sadness
 consumes you as you stand here, and then you turn to go.    
 ~
-294 4 0 0 0 0
+294 4 0 0 0 4
 D1
 ~
 ~
@@ -1568,7 +1568,7 @@ how to protect themselves.  These strange portals that appear sometimes bring
 with them strange monsters.  Things from the past and even some never thing
 never before even imagined.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1585,7 +1585,7 @@ in ruins.  One of those strange happening took place here.  Some type of portal
 opened in the midst of this building, the strange forces within it brought the
 walls down upon itself.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1602,7 +1602,7 @@ that these people dare sleep at night.  Many casualties occur regularly in this
 area.  By the looks of the people they have come to accept their fate.  The
 street continues to the north and south.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -1619,7 +1619,7 @@ down and in need of some serious repair.  The residential district is not only
 outside the protective dome of XXXX, but also outside of it's rule.  No one
 even attempts to take care of this area or it's people.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1636,7 +1636,7 @@ the now unstable world these people live in.  Safety only lies within the walls
 of XXXX.  The main trade road to the south intersects the avenue you are
 currently on.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D0
 ~
 ~
@@ -1654,7 +1654,7 @@ city.  The road is in decent shape, good enough for the wagons and caravans to
 make good time on.  The road and everything around it is layered in a thick
 dust.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1671,7 +1671,7 @@ citizenry here seem depressed and resigned to some awful fate that only they
 seem to understand or know.  The road continues to the east towards XXXX or
 west out towards the farmlands.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1688,7 +1688,7 @@ stale air.  The wagon passes by quickly, the driver seeming to try to mind his
 own business.  The creak and groan of the wagon wheels reveals it must be
 carrying a heavy load.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 S
 #29463
 Trade Road~
@@ -1697,7 +1697,7 @@ Without them the city would surely starve.  The farmers are well taken care of
 for their sacrifice of living outside of XXXX in harms way just to bring
 food to the city.  The Trade Road stretches to the east and west.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 S
 #29464
 Trade Road~
@@ -1706,7 +1706,7 @@ the residential district.  A few people are about, but not the amount you would
 expect.  Bulidings line the Trade Road to the north and south, but they all
 seem to be empty.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 S
 #29465
 Trade Road~
@@ -1715,7 +1715,7 @@ Many people continue to live here out of stubbornness and tradition.  A few
 moved within the city after the strange happenings began, but many people just
 can't leave where they were born and raised.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1732,7 +1732,7 @@ wagons delivering goods for trade between XXXX, the farmlands, and the lands
 beyond.  With the appearance of portals throughout the realm the possibilities
 for trade are now boundless.  If you dare take the risk of exploring.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1750,7 +1750,7 @@ buildings falling apart and decrepit, but so are the people.  People have now
 seen things that should never be forced upon the mortal eye.  Many of them are
 forever changed from that moment on.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1768,7 +1768,7 @@ Recent studies by the Magi of XXXX have concluded that the number of
 the damage done by Drakkar is far more elaborate than just the tearing of time
 and space.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~
@@ -1785,7 +1785,7 @@ stark relief from the rest of this place.  The road is potted, rutted, and a
 slimy mess.  The buildings are about the same, a wonder they still stand.  The
 boulevard continues east and west.    
 ~
-294 0 0 0 0 0
+294 0 0 0 0 1
 D1
 ~
 ~

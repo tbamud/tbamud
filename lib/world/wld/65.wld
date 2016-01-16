@@ -4,7 +4,7 @@ The Path To The Dwarven Village~
 you, you can see the Turning Point, and to the north the path continues 
 toward the mountains.
 ~
-65 4 0 0 0 0
+65 4 0 0 0 2
 D0
 The path continues.
 ~
@@ -21,7 +21,7 @@ The Path At The Base Of The Mountain~
    Now you are at the bottom of a rugged mountain.  The forest around you
 is very dense, and it seems very dark to the north.
 ~
-65 0 0 0 0 0
+65 0 0 0 0 4
 D0
 The path coninues up the mountain.
 ~
@@ -56,7 +56,7 @@ The Top Of The Mountain~
 leading down the mountain.  To the east and west you see entrances to
 what seems like mines.
 ~
-65 0 0 0 0 0
+65 0 0 0 0 4
 D1
 An entrance to the mountain which seems to lead underground.
 ~
@@ -94,7 +94,7 @@ The Entrance To The Mountain~
    Here is an entrance to the mountain.  The door looks very well built,
 and you can hear noise coming from within.
 ~
-65 0 0 0 0 0
+65 0 0 0 0 2
 D1
 ~
 ~
@@ -839,7 +839,7 @@ The Treasury~
    This room appears to be the Queen's Treasury.  There is one
 exit, back to the east.
 ~
-65 520 0 0 0 0
+65 520 0 0 0 1
 D1
 ~
 door~

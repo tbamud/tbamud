@@ -26,7 +26,7 @@ the east warning you that the desert isn't far off in that direction.  The road
 leads off to the south, and north into the capital.  To the east and west
 farmland stretches as far as you can see.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D2
 ~
 ~
@@ -44,7 +44,7 @@ Fields stretch to the east and west, while the road continues north toward the
 souther gate of the capital which you can just barely see from here, and south
 through the farmland.  A warm wind from the east reminds you of the desert.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -61,7 +61,7 @@ you of the desert not too far off in that direction.  The walls of a large city
 can be seen on the horizon to the north, while farmland to the east and south
 has forced the road to take a turn to the west.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -78,7 +78,7 @@ here, while farmland stretches to the north and west.  A gust of warm wind
 blowing in from the east reminds you of the desert dominating the southeastern
 part of the continent.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -95,7 +95,7 @@ dominates the view to the east and west, while the road continues to the north
 and south.  A gust of warm wind blowing in from the east reminds you that you
 are not as far off from the desert as you might have thought.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -113,7 +113,7 @@ east from here.  A warm gust of wind blows in from the east, and reminds you of
 the desert to the east.  You can faintly hear the sound of running water
 somewhere to the south.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -130,7 +130,7 @@ as far as you can see, while the road continues east and west from here.
 There is a faint sound of running water from somewhere to the south.  A warm
 wind blows in from the desert in the east.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -147,7 +147,7 @@ and east from here, while the road continues south and west.  A warm wind is
 comming from the desert to the east, the sound of running water greets you from
 the south.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D2
 ~
 ~
@@ -163,7 +163,7 @@ The South Road~
 stretches to the east and west from here, while the road continues north and
 south.  You can hear the sound of running water from the south.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -181,7 +181,7 @@ wind from the east reminds you of the desert dominating the southeastern part of
 the continent.  You notice a small trail leading down to the river bank from
 here.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -198,7 +198,7 @@ far as your eyes can see, while the road continues to the east.  To the south a
 bridge crosses the river, connecting with the road on the other side.  A gust
 of warm wind from the east reminds you of the desert not too far off.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -215,7 +215,7 @@ south, while the river flows west toward the ocean somewhere in the distance.
 A gust of warm wind blows in from the east as if to remind you of the desert
 and the secrets it holds.
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -233,7 +233,7 @@ road continues to the south from here.  To the east and west grassland stretch
 as far as you can see.  A warm wind blows in from the east as to remind you of
 the desert dominating the southeastern part of the continent.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -250,7 +250,7 @@ continues north and west from here around a small formation of rocks.  To the
 east grassy plains stretch as far as you can see.  And you can hear the sound of
 running water greeting you from the north.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -267,7 +267,7 @@ continues to the east and south from here.  To the north and west you see grassy
 plains stretching as far as you can see.  You also notice the sound of running
 water to the north.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -284,7 +284,7 @@ continues north and south from here, while to the east a formation of rocks
 blocks your view and passage.  To the west grassy plains stretch as far as you
 can see.  A faint sound of running water can be heard comming from the north.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -301,7 +301,7 @@ continues to the north and south, while to the east your path and view is
 blocked by a formation of rocks.  To the west grassy plains stretch as far as
 you can see.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -319,7 +319,7 @@ rocks.  To the west grassy plains stretch as far as you can see.  A gust of warm
 wind blows down from the rocks to the east, as if to remind you that you are
 still relatively close to the desert.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -336,7 +336,7 @@ south.  The road leads off to the north and east here, while to the south and
 west grassy plains stretch as far as you can see.  A gust of warm wind comes in
 from the east, as if to remind you of the desert and the secrets it holds.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -353,7 +353,7 @@ road continues east and west from here, while to the north your view and path is
 blocked by a small formation of rocks.  In the distance to the south you can
 barely see the beginning of a seemingly ancient dense forest.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -371,7 +371,7 @@ North and east of here grassy plains stretch as far as you can see.  A gust of
 warm wind blows in from the desert in the east as if to remind you of the
 secrets it holds.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D2
 ~
 ~
@@ -389,7 +389,7 @@ traded between the two cities.  The road continues north and south here, a gust
 of warm wind comes in from the desert which can barely be seen somewhere to the
 east, while fertile plains stretch to the west.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -409,7 +409,7 @@ the desert not too far off.  You see fertile grasslands to the east and west,
 while the road itself continues to the north and south, just south of here you
 can barely make out a small path leading off to the west.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -427,7 +427,7 @@ secrets.  The road continues north and south here, while a small trail leads off
 to the west.  Your view to the east is dominated by fertile grasslands, which
 are broken by a fine yellow line in the horizon.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -447,7 +447,7 @@ A Small Trail~
 north and south of you, while the trail continues to the east where it joins a
 busy north south bound road, and to the west deeper into the wilderness.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -465,7 +465,7 @@ forest in the distance, while there is nothing but grass to be seen to the
 north.  The trail continues to the east and to the west where it makes a turn
 south.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -482,7 +482,7 @@ see a dense forest some where in the distance, while vast grasslands stretch as
 far as you can see in all other directions.  The trail leads off to the east
 and to the south where it makes a turn to the west.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -500,7 +500,7 @@ to the south where a dense forest rises near the horizon.  The trail leads off
 to the north where it makes a turn eastward and to the west where it makes a
 turn to the north again.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -518,7 +518,7 @@ to the south where a dense forest rise near the horizon.  The trail leads off
 to the north where it makes a turn to the west, and to the east where it makes
 a turn north.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -534,7 +534,7 @@ A Small Trail~
 here, to the west you can see the trail getting wider, as it continues toward
 what seems to be smoking chimneys.  Maybe there is a village near here.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D2
 ~
 ~
@@ -551,7 +551,7 @@ off to the east, where it makes a turn southward.  Also to the west it turns
 toward an eerie looking village.  An uneasy feeling comes over you as your gaze
 returns to the village.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D1
 ~
 ~
@@ -566,7 +566,7 @@ with it's presence.  The road continues to the north where you can just barely
 make out a small trail leading west, and to the south, closer to the mountains,
 and Haven.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -585,7 +585,7 @@ where a dense forest forces it to make a turn eastward, and north through the
 open land towards the city.  The great southern mountain range towers before you
 in the southeast.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -605,7 +605,7 @@ distance.  The mountains provide some cover for the desert winds, but you can
 just feel it here, warm winds blowing in from the east as if to remind you of
 the mysteries hidden there.  
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D0
 ~
 ~
@@ -625,7 +625,7 @@ shrubs and woods preventing entrance to the adventures which are likely to be
 within.  The wind here is a strange blend of hot dry desert air and biting cold
 from the mountain glaciers.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 2
 D2
 ~
 ~
@@ -642,7 +642,7 @@ through the foothills between the mountains to the east, and a dense forest to
 the west.  Animal sounds can be heard from the forest, which at this point is
 too dense to enter.
 ~
-101 0 0 0 0 0
+101 0 0 0 0 4
 D0
 ~
 ~
@@ -660,7 +660,7 @@ east, gusts of cold wind comes in from the mountains to the east, strangling
 the sounds from the forest.  You barely notice the small trail leading east
 from here towards the mountains.    
 ~
-101 0 0 0 0 0
+101 0 0 0 0 4
 D0
 ~
 ~

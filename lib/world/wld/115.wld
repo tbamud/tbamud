@@ -7,7 +7,7 @@ faint sound of water running near by . Here lies a dirt path leading to the
 north.  To the east is a small garden.  To the west there are trees and a
 forested path.  
 ~
-115 32768 0 0 0 0
+115 32768 0 0 0 3
 D0
 ~
 ~
@@ -288,7 +288,7 @@ Forested Path~
 the trees to the north you can see the southern wall of an old monastery.  To
 the east and west the path continues.    
 ~
-115 32768 0 0 0 0
+115 32768 0 0 0 3
 D0
 ~
 ~
@@ -916,7 +916,7 @@ Entrance to the Battlegrounds~
 monastery but older in many ways.  It looks as if this building wasn't quite
 completed before it was ransacked by someone.    
 ~
-115 32772 0 0 0 0
+115 32772 0 0 0 2
 D0
 ~
 ~

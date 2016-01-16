@@ -25,7 +25,7 @@ power comes DANGER!!"
 A feeling of hope and uneasiness pervades your body as you think about the
 city of New Sparta!
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see a bustling harbourplace.
 ~
@@ -41,7 +41,7 @@ as suddenly as they appeared.
    The harbourplace continues to the east and west.  To the north you 
 see the downtown section of New Sparta.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 To the north lies Broadway, the main street of New Sparta.
 ~
@@ -73,7 +73,7 @@ confident that this city is at least 1000 times better than Midgaard.
 the economically challenged neighborhood (note the PC terminology).
 Broadway continues to the north.
 ~
-275 4 0 0 0 0
+275 4 0 0 0 1
 D0
 You see Broadway continues.
 ~
@@ -102,7 +102,7 @@ of those annoying salespeople here, but there are more and more foreign
 tourists flashing their cameras.
    The harbour continues to the south and west.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D2
 You see the harbour continuing to the south.
 ~
@@ -124,7 +124,7 @@ camera back and the man yells expletives back at you in a strange
 tongue.
    To the harbour continues to the south and east.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 You see the central harbourplace.
 ~
@@ -142,7 +142,7 @@ Broadway~
 entrance to the Cafe.  When you turn to face the west you see the
 entrance to the Pharmacy.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 Broadway continues.
 ~
@@ -187,7 +187,7 @@ to you rich and sheltered people.
    You see the entrance to the thieves guild to the south.  The alley
 continues to the west.  Broadway lies to the east.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 You see Broadway.
 ~
@@ -211,7 +211,7 @@ By The Shore~
 with other various sea vessels.  To the south you can see the river.
    To the north is the east end of the harbourplace.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see the east end of the harbour.
 ~
@@ -226,7 +226,7 @@ here shooting an Old Midgaard beer commercial (It is REALLY too bad
 it is not a topless beach!).  
    To the north is the west end of the harbourplace.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see the west end of the harbour.
 ~
@@ -241,7 +241,7 @@ a bunch of bored college students).
    To the east is the Weapons Shop, and to the west is the Seven-
 Eleven.  Broadway continues north and south of here.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 More Broadway.
 ~
@@ -327,7 +327,7 @@ part of town.  Considering the situation here, you wonder how
 much worse it can get.
    Tin Can Alley continues to the east and west.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 Still Tin Can Alley.
 ~
@@ -348,7 +348,7 @@ stadium.
    Broadway continues north and south; First Avenue extends west
 towards Hell's Kitchen and east to the stadium.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 More Broadway.
 ~
@@ -459,7 +459,7 @@ in New Sparta (like the public beach) and how much you'd rather be there!
    To the south is Baltimore Ave. and Tin Can Alley continues east 
 towards Broadway.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 You see Tin Can Alley.
 ~
@@ -529,7 +529,7 @@ town has one), a wonderful place to spend your money on a rainy day
    To the east is Pee Wee's Peep Show and to the south, Baltimore 
 Avenue continues.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see Tin Can Alley.
 ~
@@ -569,7 +569,7 @@ district, but did you expect the good people of New Sparta to put up with
 anymore!!!).  There is some graffiti on the south wall.
    Baltimore Avenue is to the north.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see Baltimore Avenue.
 ~
@@ -590,7 +590,7 @@ First Avenue~
    You are on the west side of First Avenue.  In the distance to the
 east you can see the WarDome. Broadway is to the west.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 You see the entrance to the WarDome.
 ~
@@ -613,7 +613,7 @@ conditions (rain, sleet, wind and hail).  A large electronic screen
 adorns the side of the edifice, promoting today's event.
    First street is to the west, east takes you into the WarDome.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 You see the inside of WarDome.
 ~
@@ -682,7 +682,7 @@ game.  The stands overlook New Sparta's goal line.
    The West Stands continue north, and the southwest corner of
 the stadium is to the south.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see more of the West Stands.
 ~
@@ -706,7 +706,7 @@ section of WarDome.  Various spectators are here, viewing the
 game.  The stands overlook New Sparta's defensive zone.
    The West Stands continue north and south.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see more of the West Stands.
 ~
@@ -732,7 +732,7 @@ you wonder if you should go down....
    The West Stands continue north and south, stairs go down to the
 field level.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see more of the West Stands.
 ~
@@ -761,7 +761,7 @@ section of WarDome.  Various spectators are here, viewing the
 game.  The stands overlook Orcland's defensive zone.
    The stands continue north and south.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the West Stands.
 ~
@@ -786,7 +786,7 @@ but the best place to eye the hometown cheerleaders.
    The West Stands continue to the south, to the north is the
 northwest corner of WarDome.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the northwest corner of WarDome.
 ~
@@ -994,7 +994,7 @@ this is not the place to be for the faint of heart.
    The Blue Seats continue to the east, to the west is the exit 
 from WarDome.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the corner of the Warriors' end zone.
 ~
@@ -1019,7 +1019,7 @@ climb down the steps leading towards the playing field.
    The Blue Seats continue east and west, stairs go down to the
 field level.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the Warriors' end zone.
 ~
@@ -1052,7 +1052,7 @@ anyone has ever seen or heard.  You Clerics had better cover
 your ears.
    The Blue Seats continue west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the Warriors' end zone.
 ~
@@ -1114,7 +1114,7 @@ The 50-Meter Line~
 game.  To the south is the Warriors' zone, to the north is the
 Raiders'.  Centrefield is east, and the tunnel is west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the Raiders' zone.
 ~
@@ -1142,7 +1142,7 @@ The Warriors' Zone~
 50-Meter Line, to the south is the end zone.  The field also
 continues east.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the 50-Meter Line.
 ~
@@ -1167,7 +1167,7 @@ logo, a fierce warrior.
    The end zone continues to the east.  To the north is the Warriors'
 defensive zone.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the defensive zone.
 ~
@@ -1185,7 +1185,7 @@ The Warriors' Zone~
 field, to the south is the end zone.  The field also continues east 
 and west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see Centrefield.
 ~
@@ -1215,7 +1215,7 @@ logo, a fierce warrior.
    The end zone continues to the east and west.  To the north is 
 the Warriors' defensive zone, to the south is the tunnel.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the defensive zone.
 ~
@@ -1246,7 +1246,7 @@ course, just the Bloodbowl logo painted on the surface of the field.
    The respective defensive zones are to the north and south, and
 the 50-Meter Line runs east-west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see Orcland's defensive zone.
 ~
@@ -1274,7 +1274,7 @@ The Raiders' Zone~
 field, to the north is the end zone.  The field continues east and
 west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see Orcland's end zone.
 ~
@@ -1302,7 +1302,7 @@ The 50-Meter Line~
 game.  To the south is the Warriors' zone, to the north is the
 Raiders'.  Centrefield is to the west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the Raiders' zone.
 ~
@@ -1327,7 +1327,7 @@ logo, a fierce warrior.
    The end zone continues to the west.  To the north is the Warriors'
 defensive zone.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the defensive zone.
 ~
@@ -1345,7 +1345,7 @@ The Warriors' Zone~
 50-Meter Line, to the south is the end zone.  The field also
 continues west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see the 50-Meter Line.
 ~
@@ -1368,7 +1368,7 @@ The Raiders' Zone~
 50-Meter Line, to the north is the end zone.  The field also
 continues west.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see Orcland's end zone.
 ~
@@ -1394,7 +1394,7 @@ of a pirate's flag.
    The end zone continues to the west.  To the south is the Raiders'
 defensive zone.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D2
 You see the defensive zone.
 ~
@@ -1415,7 +1415,7 @@ of a pirate's flag.
    The end zone continues to the east.  To the south is the Raiders'
 defensive zone.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D1
 The end zone continues.
 ~
@@ -1433,7 +1433,7 @@ The Raiders' Zone~
 50-Meter Line, to the north is the end zone.  The field also
 continues east.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D0
 You see Orcland's end zone.
 ~
@@ -1459,7 +1459,7 @@ of a pirate's flag.
    The end zone continues east and west.  To the south is the Raiders'
 defensive zone.
 ~
-275 8 0 0 0 0
+275 8 0 0 0 1
 D1
 The end zone continues.
 ~
@@ -1484,7 +1484,7 @@ everywhere.
    Broadway continues to the north and south. The armoury is to the
 east and the magic shop is to the west.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see Broadway.
 ~
@@ -1548,7 +1548,7 @@ Broadway~
 is to the east and the New Spartan Bank is to the west.  Broadway
 continues to the north and south.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 Broadway continues.
 ~
@@ -1576,7 +1576,7 @@ Intersection of Broadway and Second Avenue~
 Avenue leads west to the dump and east to the church and fire station.    
    Broadway runs north-south and Second Avenue runs east-west.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 Broadway continues.
 ~
@@ -1607,7 +1607,7 @@ upper class neighborhood of New Sparta.
 the entrance to the Museum of National History and to the west
 is the entrance to the Waldorf Astoria.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 Broadway continues.
 ~
@@ -1674,7 +1674,7 @@ Broadway~
 west and the Goethe Library is to the east.  Broadway continues to
 the north and south.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see more of Broadway.
 ~
@@ -1767,7 +1767,7 @@ doubles as the entrance to the park. You see the park to the north,
 Broadway to the south, a department store to the west and the City
 Hall of New Sparta is to the east.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see Goethe's Garden.
 ~
@@ -2146,7 +2146,7 @@ From the condition of the street, it seems that the inhabitants haven't
 been paying their taxes lately.
    Broadway is to the west and the end of Second Avenue is to the east.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D1
 You see the east end of Second Avenue.
 ~
@@ -2163,7 +2163,7 @@ The East End Of Second Avenue~
    This is the east end of the very short Second Avenue.  The Church 
 is to the north and the fire station is to the south.
 ~
-275 0 0 0 0 0
+275 0 0 0 0 1
 D0
 You see the church.
 ~

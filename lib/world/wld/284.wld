@@ -5,7 +5,7 @@ There is no vegetation inside the circle, strangely enough.  A low cumulous of
 swirling mist engulfs you from the knees down, making it look as though you are
 partially buried.    
 ~
-284 5 0 0 0 0
+284 5 0 0 0 3
 D5
 ~
 mound~
@@ -27,7 +27,7 @@ rule of the hubristic Lord Suzerain.  In virtually every corner you see ruins
 of some sort or another intermingled with old, age-whitened bones from all
 manner of beasts.  Exits lead in all cardinal directions.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -61,7 +61,7 @@ has been erected here, abutting the east wall of the city - it looks quite deep
 and wide.  The water is a crystaline blue which exudes holiness, something
 quite strange for such an evil city.  Exits lead West, North and South.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -86,7 +86,7 @@ order.  And the smell, oh boy!  It's all you can do to keep from losing your
 lunch right now.  The corpses are stacked too high to exit East, but you can
 pass North, South or West.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -111,7 +111,7 @@ A culdesac~
 is a large fountain, and a door lies to the North, beneath a large tavern sign
 depicting the unspeakable.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell~
 tavern~
@@ -127,7 +127,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 5 0 0 0 0
+284 5 0 0 0 1
 D0
 The twisting hedges.~
 ~
@@ -150,7 +150,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 The twisting hedges.~
 ~
@@ -177,7 +177,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 The twisting hedges.~
 ~
@@ -204,7 +204,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 The twisting hedges.~
 ~
@@ -227,7 +227,7 @@ The twisting hedges.~
    You are standing amongst a row of twisting hedges about 7 feet tall.  
 Pathways through the hedges lead in all cardinal directions.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 The twisting hedges.~
 ~
@@ -252,7 +252,7 @@ your spine.  The walls, floor and ceiling are a viscous, blood-red mass that
 eludes description.  A rift in the ceiling above you causes a slight breeze to
 ruffle your hair.  A magic portal stands south, leading into the unknown.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -276,7 +276,7 @@ causes you to stagger uncontrollably, while the ceiling rhythmically pumps
 upwards and downwards.  You can feel the lifeblood draining from your body.  
 To stay here long would surely mean the end of you.    
 ~
-284 16389 0 0 0 0
+284 16389 0 0 0 1
 D0
 The bottomless pit.~
 ~
@@ -408,7 +408,7 @@ The streets of Ghenna.~
    You are standing on a non-descript city street in Ghenna.  The road
 continues East and West, rolling gently over a dale.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D1
 Too dark to tell.
 ~
@@ -428,7 +428,7 @@ north which seems to be moving somehow.  Next to the bar a stairwell disappears
 into blackness above.  The ceiling is vaulted, and sports three candeled
 chandeliers, which hang like victims above you.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -452,7 +452,7 @@ sturdy, the bar is very pliant to the touch, and it seems to be MOVING ever so
 slightly, as if it were ALIVE!  A stairwell is here, leading upwards into
 blackness.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D2
 Too dark to tell.
 ~
@@ -826,7 +826,7 @@ The mouth of a large cave.~
 mouth of a large cave about 100 feet in diameter.  A steady trickle of blood
 runs down the stone steps which lead upwards - Dare you enter?    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 A labyrinth of bodies.~
 ~
@@ -1188,7 +1188,7 @@ The streets of Ghenna.~
    You are standing on a city street in Ghenna.  Paved with cobble- stones, the
 road is slick with the blood of many a wayward adventurer.  Watch your step!  
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D1
 Too dark to tell.
 ~
@@ -1237,7 +1237,7 @@ The streets of Ghenna.~
    You are standing on of the many streets in Ghenna.  A high wall blocks the
 passage westward, but you may exit North, South or East.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1261,7 +1261,7 @@ batters your feet unmercifully.  To the west is the city wall, while a
 burnedout building is East of you, barely capable of standing in the slight
 breeze which whips through here.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1285,7 +1285,7 @@ that is bleached white with age.  To the West you can see the cobblestone
 streets of Ghenna.  You might want to exit this building soon, as it could
 crumble at any moment.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D3
 The streets of Ghenna.~
 ~
@@ -1296,7 +1296,7 @@ The streets of Ghenna.~
    You are standing on a corner street in Ghenna.  To the west lies the city
 wall while to the North is a door.  The street continues South, and East.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 ~
 red~
@@ -1318,7 +1318,7 @@ The dominatrix's abode.~
 Whips, chains and handcuffs are displayed prominently on each of the 3 walls.
 A position chair sits in the middle of the room for your hedonistic desires.  
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D2
 Too dark to tell.
 ~
@@ -1331,7 +1331,7 @@ A street in Ghenna.~
 city entrance.  The rubble from fallen buildings has made any other exits
 impossible.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D1
 Too dark to tell.
 ~
@@ -1351,7 +1351,7 @@ the South.  The building to the North, however, looks a bit more intact.  The
 street ends towards the East, near a mountain of rubble.  To the West, the
 street goes on for some distance.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1464,7 +1464,7 @@ A city street in Ghenna.~
 your exit.  You may leave North, South and West.  Be careful not to trip over
 the many corpses that line these streets.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1486,7 +1486,7 @@ A road in Ghenna.~
    This road is quite narrow, but seems to open up towards the South.  A fallen
 building stands to the West, and the city wall blocks the exit north.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D1
 Too dark to tell.
 ~
@@ -1503,7 +1503,7 @@ A north-south street in Ghenna.~
    This narrow lane runs North to South.  The city wall towers above you to the
 east, and a door lies West, beneath a glowing red light.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1525,7 +1525,7 @@ A bend in the road.~
    You are at a bend in the road.  The city wall lies north, and east of you
 prohibiting exits in those directions.  A narrow lane leads Westward.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D2
 Too dark to tell.
 ~
@@ -1690,7 +1690,7 @@ A slimey footpath.~
 ectoplasm - its really gross.  The path is so slippery that you cant ascend to
 where there is a covered walkway above you.  Your only option is to go West.  
 ~
-284 5 0 0 0 0
+284 5 0 0 0 1
 D3
 Too dark to tell.
 ~
@@ -1703,7 +1703,7 @@ A slimey footpath.~
 animals that apparently became bogged down here.  There are exits to the North,
 and East.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1721,7 +1721,7 @@ A slimey footpath.~
 the red slime.  Maybe this wasn't such a good idea...  You can exit towards the
 West, or to the South.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D2
 Too dark to tell.
 ~
@@ -1738,7 +1738,7 @@ A slimey footpath.~
    The slime seems to be lessening a bit here, though the way is still as
 slippery as can be.  A clearing can be seen to the South.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D1
 Too dark to tell.
 ~
@@ -1756,7 +1756,7 @@ consists of red clay dirt, with a few boulders lying around you.  Apparently it
 is a primitive pathway of some sort, for to the South you can see what appears
 to be the mouth of a cave.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 Too dark to tell.
 ~
@@ -1773,7 +1773,7 @@ The mouth of a small cave.~
 promontory.  A rough hewn staircase leads Downwards, while to the North is a
 small clearing.    
 ~
-284 1 0 0 0 0
+284 1 0 0 0 1
 D0
 A small clearing.~
 ~
@@ -1790,7 +1790,7 @@ An underground cavern.~
 Moisture trickles down the smooth rock walls in large rivulets, and water drips
 on your head from the ceiling above.  A passageway leads South.    
 ~
-284 9 0 0 0 0
+284 9 0 0 0 1
 D2
 Too dark to tell.
 ~
@@ -2045,7 +2045,7 @@ A dead end.~
    The street dead ends here in a twisted mass of brambles.  A high city wall
 looms over you to the West.  It seems the only exit is North.    
 ~
-284 9 0 0 0 0
+284 9 0 0 0 1
 D0
 Too dark to tell.
 ~

@@ -92,7 +92,7 @@ A path of black grass~
 black, wiry grass, that at first site gives the place a ravaged, charred look.
 However, the vegetation is living, just endowed with a dark hue.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -113,7 +113,7 @@ is little way to explain the odd feeling of foreboding about this place.  No
 birds sing, no rat scurries in the open, the leaves rustle barely enough to
 break the silence.  Yet an odd presence makes itself felt.    
 ~
-272 1 0 0 0 0
+272 1 0 0 0 3
 D0
 ~
 ~
@@ -200,7 +200,7 @@ white and red colors.  There is a grassy space in the center, circled by smooth
 grey stones, where children play and older residents of the town picnic and
 enjoy themselves.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -272,7 +272,7 @@ Passing through a vine-wreathed gate~
 little-travelling.  You wonder if there is anything of use to you out this
 remote way, apparently passing out of the residential area.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -306,7 +306,7 @@ dense illumination.  Here the lane is lined with poles hung with lanterns
 giving off a mild golden glow, swinging in the breeze.  The wind passes more
 strongly along a lane to the north.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -323,7 +323,7 @@ hanging golden lanterns that provide a bright radiance.  A few white stone
 houses, small but cozy-looking, lie just east and west, enjoying the
 luminescence.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -367,7 +367,7 @@ A wide cart path~
 trade....  Is it a path for wide carts, or a wide path for carts?  Westwards, a
 dense forest is blurred with low-hanging clouds.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 gate~
@@ -383,7 +383,7 @@ An untravelled path~
 between the dull grey stones.  You can only wonder if there is much of note out
 this direction, as a sense of barrenness is prominent.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -403,7 +403,7 @@ An untravelled path~
 between the dull grey stones.  You can only wonder if there is much of note out
 this direction, as a sense of barrenness is prominent.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -419,7 +419,7 @@ An untravelled path~
 between the dull grey stones.  You can only wonder if there is much of note out
 this direction, as a sense of barrenness is prominent.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D2
 ~
 ~
@@ -437,7 +437,7 @@ deserted, it is lonely, yet a particularly green bluff forms a plateau just
 above you.  It calls to you in an eerie way, yet emits a chaotic aura that
 might be best left alone.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 4
 D4
 ~
 ~
@@ -454,7 +454,7 @@ the only sound is that of the wind whistling over the moors.  A haunting,
 otherworldly presence has made this bluff its home, casting what malevolence it
 yet can on the mortal world, and giving the bluff its name.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D5
 ~
 ~
@@ -467,7 +467,7 @@ oaks and maples with leaves the color of honey.  To the north a black gate is
 closed against the clamor of the world, and the road continues east to town,
 and west where it vanishes into a fog banked forest.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 3
 D0
 ~
 ~
@@ -487,7 +487,7 @@ The black orchard gate~
 the shallow wind.  Beyond, rows of brambles are stretching past the range of
 your vision.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 gate~
@@ -504,7 +504,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -525,7 +525,7 @@ blackberry shrubs that seem to form a protective shroud of thorns about the
 area.  Ivy vines hang loose from its many-cornered limbs.  Some images have
 been carved into the oak.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -558,7 +558,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -579,7 +579,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -597,7 +597,7 @@ repelling you in another direction automatically such that it takes a great
 conscious effort for you to turn that way.  The path heads north into the
 town's mainstream, and south closer to the wildlands beyond it.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 1
 D0
 ~
 ~
@@ -635,7 +635,7 @@ in black iron and covered with ivy.  Beyond it, days distant, the mountains of
 black glass rise shrouded in permanent night.  Northwards lies the spread of
 the town of Sundhaven, hooded in wreaths of cooking smoke.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 1
 D0
 ~
 ~
@@ -846,7 +846,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -859,7 +859,7 @@ in lines and stretching their thorny tendrils across your path.  The limbs
 trail low, heavy with fruit in temperate climate.  High stone walls protect
 this precious bower from the destructive noise and thoughts of ordinary humans.
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D2
 ~
 ~
@@ -871,7 +871,7 @@ A wide cart path~
 trade....  Is it a path for wide carts, or a wide path for carts?  Westwards, a
 dense forest is blurred with low-hanging clouds.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -1087,7 +1087,7 @@ the southeast you think you can catch glimpses of the thatched roofs of yet
 another village, this one smaller and more humble.  A trail south along the
 cobblestone wall seems to head in that direction.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D2
 ~
 ~
@@ -1104,7 +1104,7 @@ Sundhaven.  Moss, nourished by frequent rainfall, hides portions of the wall
 under its green tendrils.  A stony path can be made out to the north, and the
 wall makes its way southwards to a corner.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -1121,7 +1121,7 @@ the north and west.  Ivy growing along the wall here brushes your arm as you
 pass.  Dense shrubbery lining the path to the east renders that way
 unnavigable.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 ~
@@ -1138,7 +1138,7 @@ cobblestone wall of Sundhaven, which runs eastwards to a corner.  The gate of
 the town must be somewhere near.  You can make out the buzz of city life,
 hushed by the stone barrier, from the north.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D1
 ~
 ~
@@ -1155,7 +1155,7 @@ town wall of Sundhaven and southwards to a short drop.  Moss completely covers
 and overflows from the oaks, brushing the hair and helms of all but the
 shortest races of beings.    
 ~
-272 1 0 0 0 0
+272 1 0 0 0 3
 D0
 ~
 ~
@@ -1173,7 +1173,7 @@ place looks well-travelled by some hardy population of small-footed creatures.
 One path continues in a north-south vein over the cliff, another breaks off and
 leads east.    
 ~
-272 1 0 0 0 0
+272 1 0 0 0 3
 D2
 ~
 ~
@@ -1190,7 +1190,7 @@ with spanish moss.  (Except this was before Spain.  ) It comes to an end before
 the bubbling ebbs of a tiny stream, pouring gently forth from a hole in the
 rock on which you are poised, and flows southward.    
 ~
-272 1 0 0 0 0
+272 1 0 0 0 3
 D0
 ~
 ~
@@ -1484,7 +1484,7 @@ ivy.  The busy murmur of citylife can be heard from beyond.  Southwards, the
 cobblestone road crosses a meadow of sorts before disappearing into a line of
 dark woods.    
 ~
-272 0 0 0 0 0
+272 0 0 0 0 2
 D0
 ~
 gate~

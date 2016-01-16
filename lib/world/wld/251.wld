@@ -5,7 +5,7 @@ grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest is to the south and west. A dirt path
 is to the east.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -45,7 +45,7 @@ Dirt Path~
 trees scattered about lie to the east and west. The sun is very bright,
 making it almost difficult to see.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -69,7 +69,7 @@ grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest is to the south. A dirt path is to the 
 west.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -92,7 +92,7 @@ Grassy Field~
 grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest is to the south.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -115,7 +115,7 @@ Grassy Field~
 grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest is to the south and east.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -134,7 +134,7 @@ grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest is to the west, and a dirt path is to
 the east.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -157,7 +157,7 @@ Dirt Path~
 trees scattered about lie to the east and west. The sun is very bright,
 making it almost difficult to see.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -185,7 +185,7 @@ Grassy Field~
 You can see the odd willow tree growing amongst the grass. A dirt path is to
 the west.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -213,7 +213,7 @@ Grassy Field~
 You can see the odd willow tree growing amongst the grass.  The wind
 occasionally sweeps across the field swaying the grass and willow gently.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -241,7 +241,7 @@ Grassy Field~
 grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest blocks your way to the east.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -265,7 +265,7 @@ grasses completely surround you. You can see the odd willow tree growing
 amongst the grass. A dense forest is to the west, and a dirt path is to
 the east.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -289,7 +289,7 @@ trees scattered about lie to the east and west. The sun is very bright,
 making it almost difficult to see. Strange, sandy coloured dome shaped
 houses can be made out ahead.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -317,7 +317,7 @@ Grassy Field~
 You can see the odd willow tree growing amongst the grass. A dirt path is to
 the west.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -345,7 +345,7 @@ Grassy Field~
 You can see the odd willow tree growing amongst the grass.  The wind
 occasionally sweeps across the field swaying the grass and willow gently.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -374,7 +374,7 @@ grasses completely surround you. A large sandy coloured building is
 to the north. The grass has been cut around the building, and a small
 stack of firewood is resting beside the door.
 ~
-251 4 0 0 0 0
+251 4 0 0 0 2
 D0
 A sandy coloured building is North.
 ~
@@ -397,7 +397,7 @@ Grassy Field~
 grasses completely surround you. The back of a large sandy coloured 
 building is directly north of you.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The Ape Village Entrance is East.
 ~
@@ -417,7 +417,7 @@ road. A tall steel rod is attached to the side of the booth, and a large
 cloth flag attached to the top flaps in the wind. The flag has a picture
 of a monkey face on it, meaning that this place must be the APE VILLAGE!
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 Ape Road continues North.
 ~
@@ -445,7 +445,7 @@ Grassy Field~
 grasses completely surround you. The back of a large sandy coloured 
 building is directly north of you.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The field continues East.
 ~
@@ -469,7 +469,7 @@ grasses completely surround you. The back of a large sandy coloured
 building is directly north of you, and another sandy coloured building
 is east of you.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D2
 The field continues South.
 ~
@@ -542,7 +542,7 @@ Ape Road South~
 buildings. The Wax Museum lies to the west, and the Weapons Shop is
 to the east. The Town Square is to the north. 
 ~
-251 4 0 0 0 0
+251 4 0 0 0 1
 D0
 Ape Road continues North.
 ~
@@ -592,7 +592,7 @@ field is a huge bamboo cage. Inside this cage are several cavemen, who are
 all climbing, screaming, and fighting each other. The apes find this to be 
 pretty exciting.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 Ape Lane is to the North.
 ~
@@ -674,7 +674,7 @@ Western End of Ape Lane~
 large pond, which must be where the apes get their water. A small park 
 lies North, and the Wax Museum is to the South.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Ape Park is to the North.
 ~
@@ -703,7 +703,7 @@ greatest Ape to ever live, the Law Giver, stands in the centre of the
 square on a stone pedistal. The words "Ape will never kill ape!" are 
 inscribed on the pedistal.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Ape Road continues North.
 ~
@@ -731,7 +731,7 @@ Ape Lane East~
 Weapons Shop is to the South.  The place looks like a typical human town,
 except for the inhabitants.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Simian Public School is to the North.
 ~
@@ -759,7 +759,7 @@ Eastern End of Ape Lane~
 is to the east, Cornelius and Zira's house is to the north, and the Ape Zoo
 is to the south.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Cornelius and Zira's House is to the North.
 ~
@@ -823,7 +823,7 @@ Ape Pond~
 are growing all around.  To the north you can see a dangerous raging whirlpool.
   
 ~
-251 4 0 0 0 0
+251 4 0 0 0 6
 D0
 A raging whirlpool is North.
 ~
@@ -841,7 +841,7 @@ Ape Pond~
 but you probably would not want to drink from it.  To the east is a clearing
 leading to Ape Park.    
 ~
-251 4 0 0 0 0
+251 4 0 0 0 6
 D0
 The pond continues North.
 ~
@@ -864,7 +864,7 @@ Ape Park~
 games.  A large pond is to the west in the middle of the large clearing for
 swimming.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 Ape Road is to the East.
 ~
@@ -887,7 +887,7 @@ Ape Road North~
 the Ape Park and what looks like a lake.  To the east is Simian Public School.
   
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Ape Road continues North.
 ~
@@ -946,7 +946,7 @@ Whirlpool~
 peer down into the water but all you can see is darkness. Maybe going
 down isn't such a good idea.
 ~
-251 5 0 0 0 0
+251 5 0 0 0 6
 D0
 The pond continues North.
 ~
@@ -969,7 +969,7 @@ Ape Pond~
 are growing all around.  To the west you can see a dangerous raging whirlpool.
   
 ~
-251 4 0 0 0 0
+251 4 0 0 0 6
 D0
 The pond contines North.
 ~
@@ -997,7 +997,7 @@ Ape Pond West Shore~
 but you probably wouldn't want to drink from it. To the south is Ape Park,
 while to the east is Ape Road North.
 ~
-251 4 0 0 0 0
+251 4 0 0 0 6
 D1
 Ape Road North is East.
 ~
@@ -1020,7 +1020,7 @@ Ape Road North~
 a large pond and a park.  To the east is the amphitheatre with a few apes
 walking in and out.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Ape Road continues North.
 ~
@@ -1048,7 +1048,7 @@ Ape Amphitheatre~
 with about 6 or 7 levels of seats. The bottom part is where Dr. Zaius and Ursus
 rally all the other apes.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D3
 Ape Road is to the West.
 ~
@@ -1066,7 +1066,7 @@ Ape Pond~
 are growing all around.  To the south you can see a dangerous raging whirlpool.
   
 ~
-251 4 0 0 0 0
+251 4 0 0 0 6
 D1
 The pond continues East.
 ~
@@ -1084,7 +1084,7 @@ Ape Pond~
 are growing all around.  The water is clean and clear all the way to the
 bottom.    
 ~
-251 4 0 0 0 0
+251 4 0 0 0 6
 D2
 The pond continues South.
 ~
@@ -1115,7 +1115,7 @@ Ape Road North~
 Dr.  Zaius's house, and to the east is Dr.  Zaius's lab.  The buildings look
 rather mundane.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 1
 D0
 Ape Road continues North.
 ~
@@ -1255,7 +1255,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way west. The gusting winds blow sand all over you. You don't think 
 anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1274,7 +1274,7 @@ scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.  You can see
 the Ape Village to the south.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1300,7 +1300,7 @@ high cliff blocks your way to the east. The gusting winds blow sand all over
 you. You don't think anything could live out here. You can see the Ape Village 
 to the south.
 ~
-251 4 0 0 0 0
+251 4 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1324,7 +1324,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1347,7 +1347,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1376,7 +1376,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1400,7 +1400,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1423,7 +1423,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1452,7 +1452,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1476,7 +1476,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1499,7 +1499,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1528,7 +1528,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1553,7 +1553,7 @@ your way east, west, and south, and they also stop some of the winds. You
 barely notice an old weather beaten stone table, which is mostly buried in
 sand.  You don't think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1567,7 +1567,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east and west, and they also block some of the winds. You
 don't think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1586,7 +1586,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1609,7 +1609,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1637,7 +1637,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub. The gusting winds 
 blow sand all over you. You don't think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1666,7 +1666,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the south. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1690,7 +1690,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1714,7 +1714,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1737,7 +1737,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1765,7 +1765,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub. The gusting winds 
 blow sand all over you. You don't think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1793,7 +1793,7 @@ Forbidden Zone~
 scattered about, and you can see the odd dead shrub. The gusting winds 
 blow sand all over you. You don't think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1822,7 +1822,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The Forbidden Zone continues North.
 ~
@@ -1846,7 +1846,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The Forbidden Zone continues East.
 ~
@@ -1865,7 +1865,7 @@ scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way north.  The gusting winds blow sand all over you.  You don't think anything
 could live out here.    
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The Forbidden Zone continues East.
 ~
@@ -1889,7 +1889,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the north. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The Forbidden Zone continues East.
 ~
@@ -1913,7 +1913,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the north. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The Forbidden Zone continues East.
 ~
@@ -1937,7 +1937,7 @@ scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the north. The gusting winds blow sand all over you. You don't 
 think anything could live out here. 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The Forbidden Zone continues East.
 ~
@@ -1962,7 +1962,7 @@ your way to the north and south. The gusting winds blow sand all over you.
 You don't think anything could live out here. You can see an ocean and a
 sandy beach to the east.
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D1
 The sandy beach is East.
 ~
@@ -1982,7 +1982,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. Too bad the apes don't like swimming, because this place is
 perfect for it!
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2008,7 +2008,7 @@ shore. A high cliff blocks your way west. You notice a large statue
 located further north. Too bad the apes don't like swimming, because 
 this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2030,7 +2030,7 @@ resting right on the side of the beach. It's a woman wearing a large
 spikey crown holding a book, so it must be the ruins of the Statue of
 Liberty! Damn them all to hell! 
 ~
-251 4 0 0 0 0
+251 4 0 0 0 2
 D2
 The sandy beach continues South.
 ~
@@ -2050,7 +2050,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west and south. Too bad the apes 
 don't like swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2065,7 +2065,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. Too bad the apes don't like 
 swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2085,7 +2085,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A low cave lead into the cliff to the west. Too bad the apes don't 
 like swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2110,7 +2110,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. Too bad the apes don't like 
 swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2130,7 +2130,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. Too bad the apes don't like 
 swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2150,7 +2150,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. Too bad the apes don't like 
 swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~
@@ -2170,7 +2170,7 @@ stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. Too bad the apes don't like 
 swimming, because this place is perfect for it! 
 ~
-251 0 0 0 0 0
+251 0 0 0 0 2
 D0
 The sandy beach continues North.
 ~

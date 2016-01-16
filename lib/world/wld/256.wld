@@ -18,7 +18,7 @@ Cobbled Street~
    The street continues with parks and lush, well-kept grass on either side.  
 To the north you see the Lord's Keep, to the south the city awaits.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 The street continues.~
 ~
@@ -177,7 +177,7 @@ bed, dark oak dresser, and a water basin for light washing.  A window set into
 the eastern wall offers a view of the Alquandon River and the northern reaches
 of Jareth.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D1
 ~
 ~
@@ -458,7 +458,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing the way through the trees.  
 The path leads north, south and east, or you may enter the Keep to the west.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D0
 ~
 ~
@@ -483,7 +483,7 @@ folk, be they Lord's guest or servant.  Beautiful trees dot the yard, all im
 full bloom, with a walk way made from red wood chips showing you the way through
 the trees.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D0
 ~
 ~
@@ -524,7 +524,7 @@ the southwest is beautiful rolling hills.  Looking down on the courtyard, you
 see guards on break, sweethearts strolling hand in hand, and common folk out
 enjoying the sunshine.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -638,7 +638,7 @@ wish that you could stay in its embrace forever.  Such care is given to these
 rows of life, the keeper of this garden must be almost fanactical in their
 attention.  The winding path conitinues north and east from here.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 2
 D0
 ~
 ~
@@ -676,7 +676,7 @@ attention to detail the craftsmen put into it.  The statue sits in the center of
 a fountain upon a dias.  An inscription at the base reads; In loving memory The
 stone path continues to wend it's way north, south, and west.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 2
 D0
 ~
 ~
@@ -696,7 +696,7 @@ Lord's Garden~
 tended paths.  Flowers of all shapes, size and color abound.  The stone path
 meanders east, south, and north from here.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 2
 D0
 ~
 ~
@@ -720,7 +720,7 @@ perfection that gives those flaws their very reason for existance.  A winding
 stone path wends it's way through the garden, heading north and west, and a door
 to your south allows entrance back into the keep.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 2
 D0
 ~
 ~
@@ -820,7 +820,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing you the way through the trees
 to the west and south.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D2
 ~
 ~
@@ -837,7 +837,7 @@ folk, be they Lord's guest or servant.  A small man made pool of clear blue
 water is here, stocked with imported golden fish.  A walk way made from red wood
 chips allows passage through the trees to the north, west and south.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D0
 ~
 ~
@@ -858,7 +858,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing you the way through the trees
 west, north, and south.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D0
 ~
 ~
@@ -911,7 +911,7 @@ folk, be they Lord's guest or servant.  Beautiful trees dot the yard, all in
 full bloom.  A trail made from wood chips wends its way through the trees and
 around benches.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -934,7 +934,7 @@ of an octagon with long planks of flooring running outward from it like long
 spokes.  This looks as if it would be a good place to rest, if that is your
 inclination.  You may leave back into the courtyard to the west or north.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D0
 ~
 ~
@@ -950,7 +950,7 @@ Along the Parapet~
 guard towers.  This narrow stone walkway also provides a means for defense in
 times of war.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 A normal, wooden front door to a normal looking home.  It is
 nothing to write home about.
@@ -986,7 +986,7 @@ Lord's Garden~
 beautiful flowers wreath the wall, lending a timeless look to these already
 beautiful gardens.  The stone path continues east and south from here.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 2
 D1
 ~
 ~
@@ -1002,7 +1002,7 @@ Lord's Garden~
 you can see the top of the wall where the Lord's Guard patrols the parapet.  
 The winding stone path winds west and south here.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 2
 D2
 ~
 ~
@@ -1019,7 +1019,7 @@ folk, be they Lord's guest or servant.  Trees dot the yard, all in full bloom,
 with a walk way made from red wood chips showing you the way through the trees
 to the south and east, or you may enter the Keep to the west.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 4
 D1
 ~
 ~
@@ -1109,7 +1109,7 @@ Along the Parapet~
 walkway connects all the guard towers to one another and allows the Lord's Guard
 to defend their Lord's home.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1125,7 +1125,7 @@ Northeast Guard Tower~
 be seen through arrow holes in the north and east walls.  The parapet continues
 here to the west and south.  
 ~
-256 8 0 0 0 0
+256 8 0 0 0 1
 D2
 ~
 ~
@@ -1141,7 +1141,7 @@ Along the Parapet~
 walkway connects all the guard towers to one another and provides a defendable
 position for the Lord's Guard in times of war.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1159,7 +1159,7 @@ well-kept here, but not as many people lounge on it here as there were closer to
 the city.  Although not threatening in any way, the mood of this street seems to
 get a bit gloomier with each step you take toward the keep.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 The street continues.~
 ~
@@ -1176,7 +1176,7 @@ north here toward the keep.  Just north of here, you see that the street opens
 into a large court and turns to the east, where it enters the majestic halls of
 Lord's Keep.  South of you the city awaits.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 The street opens into a wide court.~
 ~
@@ -1192,7 +1192,7 @@ Lord's Court~
 visiting royalty.  Flags from all royal and noble houses fly bravely here,
 welcoming all to the splendor and majesty that is Jareth and Lord's Keep.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 The Keep looms close by.~
 ~
@@ -1213,7 +1213,7 @@ merriment or laughter, as is usually the case in the entryway of the Lord's
 Keep.  The Lord's Court lies west of you, while the twin guard towers flank your
 entry to the east into Lord's Keep.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 You may enter the Keep to the east.~
 ~
@@ -1256,7 +1256,7 @@ Along the Parapet~
 walkway connects all the guard towers at Lord's Keep.  It also provides a
 defndable position for the Lord's Guard in times of war.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1272,7 +1272,7 @@ Northwest Guard Tower~
 to fire arrows from this height at any would be aggressors in times of war.  
 The parapet continues along to the east and south from here.  
 ~
-256 8 0 0 0 0
+256 8 0 0 0 1
 D1
 ~
 ~
@@ -1305,7 +1305,7 @@ stronger yet.  The claw tracks in the stone stop abruptly here, where there
 seems to be a lot of unearthed dirt and stone around, heaped upon the floor.  
 You feel uneasy about this place.  
 ~
-256 585 0 0 0 0
+256 585 0 0 0 4
 D2
 ~
 ~
@@ -1331,7 +1331,7 @@ the entire perimeter of Lord's Keep, connecting all the guard towers.  It also
 supplies a defendable position for the Lord's Guard so that in times of war,
 they can protect their Lord and his home.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 ~
 ~
@@ -1348,7 +1348,7 @@ and uncomfortably warm, despite the closeness of the cave's entrance above you.
 There's a deep, musky odor in the air, and the giant claw marks continue
 downwards.  
 ~
-256 585 0 0 0 0
+256 585 0 0 0 4
 D0
 ~
 ~
@@ -1367,7 +1367,7 @@ drowning out everything else in the air and making it hard to breathe.
 Something in your gut begins squirming uncomfortably as you wonder what's
 ahead...  
 ~
-256 585 0 0 0 0
+256 585 0 0 0 4
 D0
 ~
 ~
@@ -1382,7 +1382,7 @@ Along the Parapet~
    You stand atop the parapet which runs east to west here.  This narrow walkway
 connects all the guard towers and provides a means for defense in times of war.
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 ~
 ~
@@ -1397,7 +1397,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower
 and the southeast guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1412,7 +1412,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the southeast guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1427,7 +1427,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the southeast guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1442,7 +1442,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the south east guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1457,7 +1457,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower to
 the southeast guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1472,7 +1472,7 @@ Along the Parapet~
    The parapet runs north to south here, connecting the northeast guard tower
 and the southeast guard tower.  The southeast tower is directly south of you.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1488,7 +1488,7 @@ Southeast Guard Tower~
 Small chunks of stone are missing around the arrow slits, and many nicks and
 chunks are missing from the walls themselves.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1503,7 +1503,7 @@ Along the Parapet~
    The parpet runs east to west here, connecting the southeast guard tower to
 the southwest guard tower.  The southeast tower is directly east of you.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 ~
 ~
@@ -1518,7 +1518,7 @@ Along the Parapet~
    The parapet runs east to west here, connecting the southeastern guard tower
 to the southwestern guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 ~
 ~
@@ -1533,7 +1533,7 @@ Along the Parapet~
    The parapet runs east to west here, connecting the southeastern guard tower
 to the southwestern guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D1
 ~
 ~
@@ -1549,7 +1549,7 @@ Southwestern Guard Tower~
 are piled in one corner, and the remains of someone's lunch sits in another.  
 The parapet continues to the east and to the north from here.  
 ~
-256 8 0 0 0 0
+256 8 0 0 0 1
 D0
 ~
 ~
@@ -1565,7 +1565,7 @@ Along the Parapet~
 tower to the southern bridge guard tower.  The southeastern tower is directly
 south of you.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1580,7 +1580,7 @@ Along the Parapet~
    The parapet continues north to south here, connecting the southeastern guard
 tower to the south bridge guard tower.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~
@@ -1596,7 +1596,7 @@ Along the Parapet~
 to the south bridge guard tower.  The south bridge guard tower is directly north
 of you.  
 ~
-256 0 0 0 0 0
+256 0 0 0 0 1
 D0
 ~
 ~

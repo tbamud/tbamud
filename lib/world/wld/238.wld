@@ -51,7 +51,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 64 0 0 0 0
+238 64 0 0 0 6
 D0
    Looking north is nothing but water.    
 ~
@@ -78,7 +78,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 32768 0 0 0 0
+238 32768 0 0 0 6
 D0
 Looking north nothing but fog can be seen
 ~
@@ -166,7 +166,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 64 0 0 0 0
+238 64 0 0 0 6
 D0
 Upon looking north you see nothing but tons of water.    
 ~
@@ -197,7 +197,7 @@ busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.    
 ~
-238 32768 0 0 0 0
+238 32768 0 0 0 6
 D0
 Fog and mist can be seen in the distance.    
 ~
@@ -1191,7 +1191,7 @@ There are small trees scattered about below and a massive lake just south.
 You can see small fish swimming in the lake below.  As you look back you notice
 that you can go up into a cubby hole which is very large.    
 ~
-238 4 0 0 0 0
+238 4 0 0 0 4
 D0
 Looking north reveals the main floor entrance.
 ~
@@ -1419,7 +1419,7 @@ fact that you cannot walk you you have to fly.  There are birds and clouds
 drifting about in the distance.  The only thing you can see is clouds and the
 blue sky above.    
 ~
-238 0 0 0 0 0
+238 0 0 0 0 8
 D0
 Looking north you see what looks like what could be nearing the end of the hallway.
 ~

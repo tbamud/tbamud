@@ -760,7 +760,7 @@ The pool.~
 rise above the water, blocking your way.  South and west the pool continues and
 north you see the mooring.  
 ~
-37 9 0 0 0 0
+37 9 0 0 0 6
 D0
 ~
 ~
@@ -780,7 +780,7 @@ The pool~
 the cliff rise above the water, blocking your way.  North and west the pool
 continues and east you see the mooring.  
 ~
-37 9 0 0 0 0
+37 9 0 0 0 6
 D0
 ~
 ~
@@ -796,7 +796,7 @@ The pool~
 the cliff rise above the water, blocking your way.  North and east the pool
 continues.  
 ~
-37 9 0 0 0 0
+37 9 0 0 0 6
 D0
 ~
 ~
@@ -812,7 +812,7 @@ The pool~
 rise above the water, blocking your way.  To the north, east and south the pool
 continues.  The water looks quite deep here.  
 ~
-37 9 0 0 0 0
+37 9 0 0 0 7
 D0
 ~
 ~
@@ -832,7 +832,7 @@ The pool~
 the cliff rise above the water, blocking your way, south the pool continues and
 east you see the mooring.  
 ~
-37 9 0 0 0 0
+37 9 0 0 0 6
 D1
 ~
 ~
@@ -865,7 +865,7 @@ Outside the cave~
 out around you.  You may enter the cave by going south, but can head back toward
 the city by going west from here.  
 ~
-37 32768 0 0 0 0
+37 32768 0 0 0 5
 D2
 The cave opening looks inviting - kind of like a mouth, waiting to feed..
 ~
@@ -883,7 +883,7 @@ Outside the capital~
 itself.  You're standing in some low foothils near some rocky ground to your
 east.  South of here a gravelled path leads towards the western highway.  
 ~
-37 32768 0 0 0 0
+37 32768 0 0 0 2
 D1
 The gravelled path ends and the ground becomes rocky.
 ~
@@ -900,7 +900,7 @@ On a gravelled path~
    You are walking along a gravelled path.  North of here the gravel path
 continues, while to the south you enter the bustle of the western highway.  
 ~
-37 0 0 0 0 0
+37 0 0 0 0 2
 D0
 The gravelled path continues...
 ~

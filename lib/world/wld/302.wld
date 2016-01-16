@@ -2,7 +2,7 @@
 The Top Of The Greasepole~
    You've made it to the top!  All you have to do now is get down...    
 ~
-302 4 0 0 0 0
+302 4 0 0 0 5
 D5
 It's a long slide down.
 ~
@@ -61,7 +61,7 @@ Reception Desk~
 to see the incoming mail behind the desk as well as hooks for keys to hang
 upon.  To the east there is a door and just south of you is the lobby.    
 ~
-302 136 0 0 0 0
+302 136 0 0 0 1
 D1
 ~
 door~
@@ -85,7 +85,7 @@ Main Office~
 a desk, chair and filing cabinet in the room.  There is only one exit from the
 room, west.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D3
 This way leads back to the reception desk.
 ~
@@ -114,7 +114,7 @@ Lobby~
 that you can find it again.  Just to make it easy to rediscover, exits have
 been handily located to both the east and west.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 4
 D1
 This leads to a handy stairwell.
 ~
@@ -130,7 +130,7 @@ S
 Stairwell~
    This is, as it says, a stairwell.  The exits are west and up.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 4
 D3
 This leads to the lobby.
 ~
@@ -146,7 +146,7 @@ S
 Stairwell~
    This is another stairwell.  The exits are west, up, and down.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 4
 D3
 You can't tell where this leads.
 ~
@@ -168,7 +168,7 @@ Landing~
    This is a landing with halls heading off in all the cardinal directions.  
 The only problem is that, the hall to the west is blocked by a door.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 You can't tell where this leads.
 ~
@@ -196,7 +196,7 @@ Broom Closet~
 nothing, not even brooms.  And there is no other exit to boot, just the one you
 came in!    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 You can't tell where this leads.
 ~
@@ -208,7 +208,7 @@ Hallway~
    The hall continues north-south and there is a doorway on either side of the
 hall.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 You can't tell where this leads.
 ~
@@ -245,7 +245,7 @@ Private Room 205~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D3
 This leads back to the hall.
 ~
@@ -262,7 +262,7 @@ Private Room 206~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 This leads back to the hall.
 ~
@@ -278,7 +278,7 @@ Hallway~
    The hall leads to the south and there is a doorway on either side of the
 hall as well as one to the north.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 You can't tell where this leads.
 ~
@@ -316,7 +316,7 @@ Private Room 203~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D3
 This leads back to the hall.
 ~
@@ -333,7 +333,7 @@ Private Room 204~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 This leads back to the hall.
 ~
@@ -350,7 +350,7 @@ Private Room 201~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D2
 This leads back to the hall.
 ~
@@ -366,7 +366,7 @@ Hallway~
    The hall continues north-south and there is a doorway on either side of the
 hall.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 You can't tell where this leads.
 ~
@@ -403,7 +403,7 @@ Private Room 207~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D3
 This leads back to the hall.
 ~
@@ -420,7 +420,7 @@ Private Room 208~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 This leads back to the hall.
 ~
@@ -436,7 +436,7 @@ Hallway~
    The hall leads to the north and there is a doorway on either side of the
 hall as well as one to the south.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 You can't tell where this leads.
 ~
@@ -474,7 +474,7 @@ Private Room 209~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D3
 This leads back to the hall.
 ~
@@ -491,7 +491,7 @@ Private Room 210~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 This leads back to the hall.
 ~
@@ -508,7 +508,7 @@ Private Room 202~
 The floor is tiled, while the hallways are carpeted.  I wonder why?  There is
 only one exit...  The one you came in...    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 This leads back to the hall.
 ~
@@ -523,7 +523,7 @@ S
 Stairwell~
    This is another stairwell.  The exits are west, up, and down.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 4
 D3
 You can't tell where this leads.
 ~
@@ -545,7 +545,7 @@ Landing~
    This is a landing with halls heading off in all the cardinal directions.  
 The only problem is that, the hall to the west is blocked by a door.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 You can't tell where this leads.
 ~
@@ -573,7 +573,7 @@ Broom Closet~
 nothing, not even brooms.  And to boot there is no other exit, just the one you
 came in!    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 You can't tell where this leads.
 ~
@@ -586,7 +586,7 @@ Hallway~
 to the north.  Coincidentally, there are also doors to the east and west.  The
 only exit without a door in fact is to the south!    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 The door is locked, so therefore you cannot see through it.
 ~
@@ -617,7 +617,7 @@ Private Room 301~
    This room is quite well furnished and could probably comfortably house two
 people.  It is much larger than the rooms downstairs.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D3
 The door leads back into the hallway.
 ~
@@ -629,7 +629,7 @@ Private Room 302~
    This room is quite well furnished and could probably comfortably house two
 people.  It is much larger than the rooms downstairs.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 The door leads back into the hallway.
 ~
@@ -642,7 +642,7 @@ Main Residence Office~
 North XXX.  There is a large desk here as well as two plush chairs.  In the
 north-west corner of the room there is a trapdoor in the ceiling.    
 ~
-302 13 0 0 0 0
+302 13 0 0 0 2
 D2
 The door leads to the hallway.
 ~
@@ -669,7 +669,7 @@ Hallway~
 to the south.  Coincidentally, there are also doors to the east and west.  The
 only exit without a door in fact is to the north!    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 The hallway continues to the north.
 ~
@@ -700,7 +700,7 @@ Private Room 304~
    This room is quite well furnished and could probably comfortably house two
 people.  It is much larger than the rooms downstairs.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 The door leads back into the hallway.
 ~
@@ -712,7 +712,7 @@ Private Room 303~
    This room is quite well furnished and could probably comfortably house two
 people.  It is much larger than the rooms downstairs.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D3
 The door leads back into the hallway.
 ~
@@ -724,7 +724,7 @@ Private Room 300~
    This room is quite well furnished and could probably comfortably house two
 people.  It is much larger than the rooms downstairs.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 The door leads back into the hallway.
 ~
@@ -736,7 +736,7 @@ Attic~
    This attic is carefully hidden away from sight as it is used as a secret
 storeroom.  The only exit is down.    
 ~
-302 13 0 0 0 0
+302 13 0 0 0 4
 D2
 You see nothing special.
 ~
@@ -758,7 +758,7 @@ Small Storage Room~
 exits from it.  The main exit is through the grate to the north but there is a
 chute down to the first floor located in the floor.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 3
 D0
 The attic is just north of here.
 ~
@@ -799,7 +799,7 @@ The Ghetto~
 small obstacle...  An overturned policemobile.  There are houses on either side
 of the road.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 4
 D0
 To escape the ghetto, you can head this way.
 ~
@@ -824,7 +824,7 @@ S
 Ghetto House~
    It's a mess.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 5
 D3
 An exit from this hellhole.
 ~
@@ -839,7 +839,7 @@ S
 Frec House~
    You feel a little apprehensive as you enter this house...  It's a mess.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 5
 D1
 An exit from this hellhole.
 ~
@@ -859,7 +859,7 @@ S
 Ghetto House~
    It looks like a hellhole...  It's a mess.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 5
 D0
 An exit from this hellhole to yet another hellhole.
 ~
@@ -885,7 +885,7 @@ The Ghetto~
 small obstacle...  An overturned policemobile.  There is a house to the west.
   
 ~
-302 1 0 0 0 0
+302 1 0 0 0 4
 D2
 The ghetto continues south.
 ~
@@ -910,7 +910,7 @@ The Ghetto Intersection~
    This intersection is the joining point of what's left of University Avenue
 and Earl Road which heads off to the east.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 4
 D0
 The ghetto continues north.
 ~
@@ -941,7 +941,7 @@ The Ghetto~
    This part of the ghetto has survived in a better condition than the rest of
 the ghetto.  A house lies to the north.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 3
 D0
 A fairly well-kept house is north.
 ~
@@ -967,7 +967,7 @@ The Ghetto~
    Earl Road ends abruptly as there is a house built immediately to the east.
 Another stands to the south.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 3
 D1
 A very well-kept house is east.
 ~
@@ -992,7 +992,7 @@ S
 Gael House~
    This house reminds you of home, your parent's home.  It's mind-boggling.  
 ~
-302 8 0 0 0 0
+302 8 0 0 0 3
 D3
 You may exit to the west.
 ~
@@ -1003,7 +1003,7 @@ S
 Gael House~
    This house reminds you of home, your aunt's home.  Now, that's absurd.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 3
 D0
 You may exit to the north.
 ~
@@ -1015,7 +1015,7 @@ Boss House~
    Papers and calculators litter the room, making an otherwise neat house,
 messy.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 4
 D2
 You may exit to the south.
 ~
@@ -1032,7 +1032,7 @@ The Ghetto~
    This part of the ghetto seems to have survived.  To the west, you can see,
 behind the rubble, the vague outlines of a house.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 3
 D0
 The ghetto continues north.
 ~
@@ -1053,7 +1053,7 @@ The Ghetto~
    This part of the ghetto seems to have survived.  To the east, you can see
 the A & Z Supermarket.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 3
 D0
 The ghetto continues north.
 ~
@@ -1079,7 +1079,7 @@ The Ghetto~
    This part of the ghetto seems to have survived.  There are houses on either
 side of the road.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 3
 D0
 The ghetto continues north.
 ~
@@ -1110,7 +1110,7 @@ The Ghetto~
    This part of the ghetto seems to have survived.  There is a house to the
 east.  South of you, you can see the end of the ghetto.    
 ~
-302 1 0 0 0 0
+302 1 0 0 0 4
 D0
 The ghetto continues north.
 ~
@@ -1136,7 +1136,7 @@ The A & Z Supermarket~
    Aisles and aisles of foodstuffs are waiting to be bought by unknowing
 customers.    
 ~
-302 140 0 0 0 0
+302 140 0 0 0 2
 D3
 The automatic doors hide the ghetto.
 ~
@@ -1152,7 +1152,7 @@ Frec House~
    This house reminds you of your room, only worse.  It seems to be a
 post-holocaust version of it.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 5
 D3
 You will exit to the west.
 ~
@@ -1164,7 +1164,7 @@ Boss House~
    Papers and calculators litter the room, making an otherwise neat house,
 messy.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 4
 D1
 You may exit to the east.
 ~
@@ -1180,7 +1180,7 @@ S
 Gael House~
    This house reminds you of home, your grandma's home.  It's insane.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 3
 D3
 You may exit to the west.
 ~
@@ -1192,7 +1192,7 @@ Boss House~
    Papers and calculators litter the room, making an otherwise neat house,
 messy.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 4
 D1
 You may exit to the east.
 ~
@@ -1214,7 +1214,7 @@ Frec House~
    This house reminds you of your room, only worse.  It seems to be a
 post-holocaust version of it.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 5
 D0
 You will exit to the north.  Even if it is to another ghetto house.
 ~
@@ -1226,7 +1226,7 @@ Stairwell~
    A spiralling stairwell leads both up and down.  To the east, there is an
 exit to the auditorium.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 2
 D1
 As I said, there is an exit to the auditorium.
 ~
@@ -1337,7 +1337,7 @@ painstaking writing of descriptions, if they aren't going to be read?  You
 probably aren't even reading this!  [Editorial :)] Well, anyways, the only exit
 is to the north.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D0
 The auditorium is to the north.
 ~
@@ -1361,7 +1361,7 @@ Upper Stairwell~
    The stairwell spirals upwards and downwards.  The balcony lies to the east.
   
 ~
-302 8 0 0 0 0
+302 8 0 0 0 2
 D1
 As I said, the balcony lies to the east.
 ~
@@ -1418,7 +1418,7 @@ of the Grant Hall clock tower.  You can see lots of little gears connected to
 lots of big gears.  There is absolutely no view seeing that the clock faces are
 opaque.  But, there is an exit that you can use by going down.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 3
 D5
 This leads back into the stairwell.
 ~
@@ -1431,7 +1431,7 @@ Hallway~
 Unfortunately, the building seems to be living up to its name.  The hallway
 leads east-west with a room to the north and a door to the south.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D0
 There is a fairly large room to the north.
 ~
@@ -1462,7 +1462,7 @@ Hallway~
    The hallway continues along here.  In fact it continues both east and west.
 There is however a door to the south.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D1
 The hallway continues.
 ~
@@ -1491,7 +1491,7 @@ Hallway~
 door to the north and stairs leading down, but otherwise this section of the
 hall is no different than the rest.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D0
 A door with the word "OFFICE" emblazoned on it stands to your north.
 ~
@@ -1523,7 +1523,7 @@ that I have to actually get up early after a nice relaxing weekend, but you are
 probably in situation like this, and if you aren't, boy do I ever envy you.  
 Anyways, there is a door to the north.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 2
 D0
 A large, steel door stands to the north.
 ~
@@ -1544,7 +1544,7 @@ technological marvels.  This lab is devoid of personnel but all of the machines
 are making scary humming noises.  You should probably make a beeline out the
 door to the north.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 2
 D0
 A door stands to the north.  This door is made of steel and is fairly
 large.
@@ -1564,7 +1564,7 @@ row coming from below and if you don't mind breezes coming through the large
 gaps in the wall.  Other than that, it does look alright.  There is one exit,
 the one to the south, which just happens to be blocked by a door.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D2
 The door blocking your way is well made.  It seems to be made of Oak with a
 well designed brass doorknob.
@@ -1585,7 +1585,7 @@ however, you have passed through one or two labs on the way, the reason is even
 more obvious, as this room contains all sorts of nice computer equipment.  
 There is a staircase leading up is one corner of the room.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D4
 The staircase in the north-east corner leads up towards the main floor
 of the building.
@@ -1600,7 +1600,7 @@ Of course, you don't expect anything less, this being a university, but I
 presume that you agree with me that enough is enough.  There is a hallway to
 the south.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 1
 D2
 The hallway lies to the south.
 ~
@@ -1611,7 +1611,7 @@ S
 A Hallway~
    This hallway leads through the building in all cardinal directions.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 It is too dark to tell.
 ~
@@ -1642,7 +1642,7 @@ S
 A Hallway~
    This hallway leads through the building in most directions.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 It is too dark to tell.
 ~
@@ -1663,7 +1663,7 @@ S
 A Hallway~
    This hallway leads through the building in most directions.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 It is too dark to tell.
 ~
@@ -1689,7 +1689,7 @@ S
 A Hallway~
    This hallway leads through the building in most directions.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 It is too dark to tell.
 ~
@@ -1715,7 +1715,7 @@ S
 A Hallway~
    This hallway leads through the building in most directions.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 It is too dark to tell.
 ~
@@ -1741,7 +1741,7 @@ S
 A Hallway~
    This hallway leads through the building in most directions.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 It is too dark to tell.
 ~
@@ -1768,7 +1768,7 @@ A Classroom~
    This room suddenly dispels the monotony of the halls you were just passing
 through.  
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D0
 It is too dark to tell.
 ~
@@ -1811,7 +1811,7 @@ A Classroom~
    This room suddenly dispels the monotony of the halls you were just passing
 through.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D1
 It is too dark to tell.
 ~
@@ -1838,7 +1838,7 @@ A Hallway~
 two exits.  One exits to the east towards light, while the other heads west
 back into the darkness.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D1
 This way draws you towards it...probably because you are suffering from
 light withdrawl.
@@ -1863,7 +1863,7 @@ S
 The Exit~
    This long corridor leads out onto the street.    
 ~
-302 8 0 0 0 0
+302 8 0 0 0 5
 D1
 The light beckons you.
 ~
@@ -2165,7 +2165,7 @@ reminds you of movie theatres of old (like when they sat more than 10).  Its
 main purpose seems to exist and collect dust.  Maybe someone is doing some kind
 of study here.  There is a sign on the east wall near the front of the room.  
 ~
-302 9 0 0 0 0
+302 9 0 0 0 3
 D1
 This leads towards the street.
 ~
@@ -2182,7 +2182,7 @@ A Completely Empty Hallway~
    This hallway is not completely empty but looks like it is.  Must be
 something related to the Infinite Improbability Principle.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 3
 D0
 There is a classroom to the north.
 ~
@@ -2204,7 +2204,7 @@ Classroom~
 looked larger on the outside.  Obviously some sort of principle related to the
 TARDIS principle on Doctor Who....    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D2
 A hallway leads off to the south.
 ~
@@ -2220,7 +2220,7 @@ S
 East Stairwell~
    This stairwell leads up into the heights of Leonard Hall.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 3
 D3
 This leads back to the lobby.
 ~
@@ -2236,7 +2236,7 @@ S
 West Stairwell~
    This leads up into the heights of Leonard Hall.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 3
 D1
 This leads back to the lobby.
 ~
@@ -2253,7 +2253,7 @@ Junction~
    This hallway leads north and south and there is a stairwell leading down in
 the place where the western wall should be found.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 The hallway continues north.
 ~
@@ -2274,7 +2274,7 @@ S
 Hallway~
    The hallway turns east-south here and there is an opening to the north.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 There is a room of sorts to the north.
 ~
@@ -2297,7 +2297,7 @@ Dorm Room~
 consists of a bed, and a desk.  Nothing else.  Just a bed and a desk.  But
 there is an exit to the south.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 1
 D2
 The hallway is south of here.
 ~
@@ -2313,7 +2313,7 @@ Hallway~
    This hallway comes to an abrupt end here.  However, there are exits in all
 cardinal directions except up and down.    
 ~
-302 9 0 0 0 0
+302 9 0 0 0 2
 D0
 There seems to be a room to the north.
 ~
