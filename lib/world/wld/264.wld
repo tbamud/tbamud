@@ -4,7 +4,7 @@ On a Forest Slope~
 forest which at this point is not in sight.  To the east is a more level section
 of forest where you at least have a better fighting chance.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -41,7 +41,7 @@ On a Forest Slope~
 even is one at the bottom of this hill.  You realize that although you haven't
 been in the forest that long, you are hopelessly lost.  
 ~
-264 0 0 0 0 0
+264 0 0 0 0 3
 D0
 ~
 ~
@@ -65,7 +65,7 @@ In a Quiet Forest~
 and strength - it's immensity.  Not a bird calls, not a creature skitters, just
 the wind, creaking through the dark branches overhead.  
 ~
-264 0 0 0 0 0
+264 0 0 0 0 3
 D0
 ~
 ~
@@ -89,7 +89,7 @@ In a Quiet Forest~
 and strength - it's immensity.  Not a bird calls, not a creature skitters, just
 the wind, creaking through the dark branches overhead.  
 ~
-264 0 0 0 0 0
+264 0 0 0 0 3
 D0
 ~
 ~
@@ -113,7 +113,7 @@ Downhill in a Forest~
 distance down as well.  All around you, the darkness prohibits any kind of sight
 distance.  Makes it kind of spooky.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -138,7 +138,7 @@ level part of the forest you could hear the occassional skitter of a squirrel,
 the squak of a buzzard, even the cry of a Demon Dog was better than this
 complete silence.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -163,7 +163,7 @@ level part of the forest you could hear the occassional skitter of a squirrel,
 the squak of a buzzard, even the cry of a Demon Dog was better than this
 complete silence.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -188,7 +188,7 @@ level part of the forest you could hear the occassional skitter of a squirrel,
 the squak of a buzzard, even the cry of a Demon Dog was better than this
 complete silence.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -214,7 +214,7 @@ the forest roof and beyond, still as thick as four men at that point.  You hold
 your light a little closer to the tree and see that it has some sort of markings
 on it.  Off to the west, you can see some sort of glow.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -246,7 +246,7 @@ one which looks to be the oldest in this forest, if size is any indicator.  You
 look down into the vines.  It almost looks as if something is moving down there.
 In fact, it appears that something is glowing to the south.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -271,7 +271,7 @@ further travel in any direction.  Down in the ditch, you see something small and
 shiny, although from here you cannot see exactly what the item is.  Is that some
 sort of glow to the east?  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -296,7 +296,7 @@ dig into the soil of the forest feeding out it's life.  Shining your light
 ahead, you think you may see furtive movement behind one of the vines.  You may
 even see some kind of light off to the north.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -319,7 +319,7 @@ Heading Downhill~
    The forest still heads downhill into the fell, the depths of which contain
 only the devil knows what.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -344,7 +344,7 @@ no one home right now, or if there is anyone home, they are being very quiet and
 very still.  Looking around you, you realize that you may be just a little lost.
 Make that a lot lost.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -368,7 +368,7 @@ Lost in the Forest~
 gives some sort of reminder to you where you are, but all you can see in any
 direction is dark, twisted trees and the hill, always leading down.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -392,7 +392,7 @@ A Faint Path~
 floor of this forest, you think you see some sort of trail.  It appears that the
 trail leads east and west, toward something...  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -417,7 +417,7 @@ sort of life.  Although the greenery is only needles, it still gives you pause
 and makes you glad that at least in one part of this awful place, something
 lives in accordance with nature.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -443,7 +443,7 @@ the sun is still shining, where you do not have to fear for your life every step
 of the way.  It is easy to forget there are still places like that - at least
 while you are down here.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -468,7 +468,7 @@ if you could get up on the boulder, you might get a good view of the way
 downhill.  The only other option is to just continue down hill and hope for the
 best.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -493,7 +493,7 @@ your head.  You notice that although they are peeling quite badly, the peeling
 seems to have been scuffed or pulled off in some spots.  What kind of animal
 could climb vines that high and that thin?  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -517,7 +517,7 @@ A Quiet Section of the Forest~
 easier feeling than the parts that were noisy.  In fact, it creeps you out.  
 Where are all the animals?  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -541,7 +541,7 @@ Near a Rabbit Hole~
 know.  Seems strange that a rabbit could survive in a place like this, with the
 lack of greenery anywhere.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -566,7 +566,7 @@ The huge trunk is blasted in half about twenty feet above your head.  The tree
 was so large that when it fell, one of it's branches fell to make a natural
 bridge across a large ditch.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -590,7 +590,7 @@ Leaf Strewn Slope~
 every inch of the way, making it impossible for you to move quietly at all.  So
 much for remaining inconspicuous.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -614,7 +614,7 @@ Leaf Strewn Slope~
 every inch of the way, making it impossible for you to move quietly at all.  So
 much for remaining inconspicuous.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -638,7 +638,7 @@ An Abandoned Campsite on the Hillside~
 have at one time been a firepit for someone or a group of someones.  Or a group
 of its.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -664,7 +664,7 @@ first place.  Most people with some shred of common sense wouldn't even have
 given it a second thought when they saw those rungs in the stone, they would've
 turned right around.  Maybe you should've, too.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -690,7 +690,7 @@ first place.  Most people with some shred of common sense wouldn't even have
 given it a second thought when they saw those rungs in the stone, they would've
 turned right around.  Maybe you should've, too.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -714,7 +714,7 @@ Heading Down a Leaf Strewn Slope~
 valley.  Whatever is down there, it can't be all that appealing, having to hide
 away like this from the rest of the world.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -738,7 +738,7 @@ On a Hill in the Forest~
 valley.  Whatever is down there, it can't be all that appealing, having to hide
 away like this from the rest of the world.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -766,7 +766,7 @@ be considered meager at best out in the world above, here it seems to burn with
 a fierce light, one that makes you squint.  You see that all along the lane
 there are similiar lanterns on posts as well.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 3
 D0
 ~
 ~
@@ -787,7 +787,7 @@ along the street, but try as you might, you cannot see a single business or
 tavern of any sort.  Strange that a village, even one in the middle of nowhere,
 would not have an inn or something.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -807,7 +807,7 @@ Voce Lane~
 There is one, in fact, just east of you now.  To the north is a small bit of the
 lane that leads back out into the forest and back up the hill.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -827,7 +827,7 @@ Voce Lane~
 sort of folk could live in such seclusion.  You think you may hear a bit of
 singing off to the southwest.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -844,7 +844,7 @@ building you have seen thus far in this village.  The singing you have been
 hearing comes from that building, or at least from that general direction.  The
 road runs north and south from you as well.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -865,7 +865,7 @@ comes from the northwest.  It would be quite a beautiful sound were it not
 coming from somewhere in this dark and gloomy village deep in this dark and
 sinister forest.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -881,7 +881,7 @@ Voce Lane~
 To the north the lane runs through the center of the village, south the lane
 leads out into the forest, sloping upward out of this hollow.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -903,7 +903,7 @@ ahead into the village and notice, to your alarm, that there seems to be no inn
 or tavern of any kind.  Strange that a village, even a small one like this,
 would have no place to rest.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -926,7 +926,7 @@ at best, seems to blaze with light down here in the darkest realms of the
 forest.  You may climb back up the slope or investigate this small forest
 village.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~
@@ -1316,7 +1316,7 @@ To the northwest there is another large building of some sort, it almost looks
 to be a temple itself.  Voce Lane, the main street through the village, is just
 east of you.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D1
 ~
 ~
@@ -1335,7 +1335,7 @@ evil forest, almost get killed, search their way into this village through the
 hollow, and then start singing?  Maybe it would be best not to open those doors,
 after all.  
 ~
-264 1 0 0 0 0
+264 1 0 0 0 2
 D0
 ~
 ~

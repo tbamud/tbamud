@@ -26,7 +26,7 @@ is large enough for several carriages to go through it at once.  It's very nice
 masonry work and you can't help thinking about how old it looks.  A sign has
 been posted near the entrance.    
 ~
-236 0 0 0 0 0
+236 0 0 0 0 5
 D0
 A large stone portal, rising from the cave floor
 and in a wide arch above you. In the middle the arch is more than 20' high.
@@ -329,7 +329,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway turns a perfect right angle turn to the north and east here.  Perfect
 walls block your progress to the west and south.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -443,7 +443,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway splits here and branches north, east and west.  To your south another
 perfect wall blocks passage.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -492,7 +492,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway turns a perfect right angle turn to the north and west here.  Perfect
 walls block your progress to the east and south.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -514,7 +514,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads north and south here.  Perfect walls block your progress west and
 east.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -536,7 +536,7 @@ darkness might have given you a clue.  To your north a wooden door with a
 sturdy lock blocks your exit, while you may descend into the mines by going
 down.  A large crane has a very large basket hanging from it over the hole here.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 5
 D0
 A wooden door, almost always closed to keep the noise from the mines in.    
 ~
@@ -576,7 +576,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads north and south here.  Perfect walls block your progress west and
 east.  To your northeast you hear the sound of pickaxe against rock.
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway widens somewhat.
 ~
@@ -597,7 +597,7 @@ small chairs by another, and a small stove in the farthest corner.  To the east
 a small portal, about three feet tall, leads into darkness, and north of here a
 wooden door leads out to the hallway.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 A wooden door leads out of the dwarven home.
 ~
@@ -617,7 +617,7 @@ portal before you realise the place you've fought so hard to get into is
 nothing but a wardrobe for the dwarfs living in this home.  The only way out
 is back west.    
 ~
-236 521 0 0 0 0
+236 521 0 0 0 1
 D3
 The portal looks just as small from this side.
 ~
@@ -632,7 +632,7 @@ hold runs over the edge and through a hole in the floor.  You pause once again
 to marvel at the cleverness of the stonewright who made this once upon a time.
 You can leave the well by going north.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 Up north you see the nice, but also quite boring masonry of the hallways.    
 ~
@@ -649,7 +649,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads north and south here.  Perfect walls block your progress west and
 east.  From your northeast you hear the sound of bubbling water.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -671,7 +671,7 @@ helps you to not think of the terrible weight of the mountain above you.  To
 your east the tunnel widens and looks more used than the ones to the south and
 north.  Another perfect wall blocks the way west.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -698,7 +698,7 @@ helps you to read the sign above the door to the south.  It says 'Beware Of
 Falling Rocks - Use Helmets In The Mine' The wide hallway continues to the west
 and east, and from behind the door to the south you can hear miners at work.  
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The wide hallway continues.
 ~
@@ -725,7 +725,7 @@ makes you feel safe.  To the east and west the wide hallway continues, to the
 south narrows down a little, and to the north a perfect wall blocks your
 progress.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The wide hallways continues.
 ~
@@ -752,7 +752,7 @@ two stones.  Every three feet a torch lights up the corridor and the light
 makes you feel safe.  The wide hallway continues in all directions except
 south, where you see a wooden door.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The wide hallway continues.
 ~
@@ -785,7 +785,7 @@ makes you feel safe.  The wide hallway continues to your west and gets a little
 narrower to your east.  You can hear the sound of running water from the well
 to your south.
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The hallway narrows down a bit.
 ~
@@ -813,7 +813,7 @@ hallway continues north and south here and a somewhat wider hallway leads west.
 A perfect wall blocks your progress to the east.  West of here you hear the
 sound of bubbling water.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -840,7 +840,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads north and south here.  Perfect walls block your progress west and
 east.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -858,7 +858,7 @@ A dwarven home~
 the living area to the east is all that's here.  The floor, walls, and ceiling
 are also unremarkable.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 A portal leads back to the living area.
 ~
@@ -896,7 +896,7 @@ two stones.  Every three feet a torch lights up the corridor and the light
 makes you feel safe.  The wide hallway continues north and south, the east and
 west being blocked by perfect walls.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The wide hallway continues.
 ~
@@ -916,7 +916,7 @@ chairs around it in another.  Judging from the smell, the dwarf who lives here
 doesn't care too much for water, not for taking baths, anyway..  A wooden door
 leads north from here.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 A wooden door leads to the hallways.
 ~
@@ -931,7 +931,7 @@ around it in another.  Judging from the smell, the dwarf who lives here doesn't
 care too much for water, not for taking baths, anyway..  A wooden door leads
 north from here.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 A wooden door leads into the hallways.
 ~
@@ -948,7 +948,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads north and south here.  Perfect walls block your progress west and
 east.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The hallway continues.
 ~
@@ -970,7 +970,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway turns a perfect right angle turn to the south and east here.  Perfect
 walls block your progress to the west and north.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The hallway continues.
 ~
@@ -992,7 +992,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads east and west here.  Perfect walls block your progress north and
 south.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The hallway widens somewhat.
 ~
@@ -1014,7 +1014,7 @@ two stones.  Every three feet a torch lights up the corridor and the light
 makes you feel safe.  The wide hallway continues north and east of here, and a
 somewhat narrower hallway leads west.  To the south you see a wooden door.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The wide hallway continues.
 ~
@@ -1046,7 +1046,7 @@ two stones.  Every three feet a torch lights up the corridor and the light
 makes you feel safe.  East of here, the hallway narrows down a bit, but
 continues to the west and north.  A perfect wall stops you from going north.  
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The hallway narrows down a bit.
 ~
@@ -1073,7 +1073,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway continues to the east, and widens a bit to the west.  North and south
 are wooden doors.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 A wooden door leads to a dwarven home.
 ~
@@ -1105,7 +1105,7 @@ helps you to not think of the terrible weight of the mountain above you.  The
 hallway leads east and west here, and to the south you see a wooden door, while
 north a perfect wall blocks your progress.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The hallway continues.
 ~
@@ -1133,7 +1133,7 @@ hallway turns a perfect right angle turn to the west and south here.  A perfect
 wall blocks your progress to the east.  You could, on the other hand, go north
 into a small dark opening in the north wall.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 You can't see much inthere, but you realise you'll have to crawl on your hands
 and knees to get through.    
@@ -1167,7 +1167,7 @@ makes you feel safe.  To your west a block of pure white marble blocks the
 hallway.  A short inspection reveals it to be a thick magical doorway.  A light
 push makes it turn aside.  You can also follow the wide hallway to the east.  
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The wide hallway continues.
 ~
@@ -1191,7 +1191,7 @@ two stones.  Every three feet a torch lights up the corridor and the light
 makes you feel safe.  The wide hallway continues to your west and east, while
 to the north and south perfect walls block your path.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The wide hallway continues.
 ~
@@ -1213,7 +1213,7 @@ two stones.  Every three feet a torch lights up the corridor and the light
 makes you feel safe.  The wide tunnel turns a perfect right angle here, going
 west and south.  Perfect walls block your path to the north and east.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D2
 The wide hallway continues.
 ~
@@ -1231,7 +1231,7 @@ A dwarven nobles' home~
 from the rich decoration of the walls, the larger than average bed and the
 large ironbound chest in the corner.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 A portal leads to the living area.
 ~
@@ -1248,7 +1248,7 @@ general vocabulary of the dwarves.  Since it isn't, they simply refer to it as
 'the ministers house'.  A portal leads to the sleeping room to the west, while a
 wooden door leads back south.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D2
 A wooden door leads out into the corridors.
 ~
@@ -1268,7 +1268,7 @@ seems the small door to the east only blocks the worst of the wind, not the
 dust or the insects.  You don't see anything of value, but at least you are out
 of the terrible draft from the tunnel outside.    
 ~
-236 73 0 0 0 0
+236 73 0 0 0 1
 D1
 A small door leads out into the drafty tunnel.
 ~
@@ -1286,7 +1286,7 @@ only the dwarves can make them, and a strong wind pushes at you from the north.
 In the west wall a small wooden door leads to what you guess must be the
 dwarves' best suggestion of a tool shed.    
 ~
-236 265 0 0 0 0
+236 265 0 0 0 1
 D0
 You might be able to fight the wind, and move further north into the tunnel.
 ~
@@ -1316,7 +1316,7 @@ court, waiting to be inspected by the kings' watch.  To your east a large white
 marble block serves as a gate and to the east a just as large black granite
 slap serves the same purpose.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 You see the guards' barracks.
 ~
@@ -1349,7 +1349,7 @@ curtain.  The line of beds along the west wall and the small boxes set in front
 bears witness of strong disciplin.  This is a place for the best of the
 fighters among the dwarves - The kings' guard.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The barracks continue.
 ~
@@ -1369,7 +1369,7 @@ curtain.  The line of beds along the west wall and the small boxes set in front
 bears witness of strong disciplin.  This is a place for the best of the
 fighters among the dwarves - The kings' guard.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D2
 The barracks continue.
 ~
@@ -1384,7 +1384,7 @@ curtain.  The line of beds along the west wall and the small boxes set in front
 bears witness of strong disciplin.  This is a place for the best of the
 fighters among the dwarves - The kings' guard.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The checkpoint before the court is here.
 ~
@@ -1404,7 +1404,7 @@ curtain.  The line of beds along the west wall and the small boxes set in front
 bears witness of strong disciplin.  This is a place for the best of the
 fighters among the dwarves - The kings' guard.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The barracks continue.
 ~
@@ -1419,7 +1419,7 @@ it turn aside, you realise quickly that the door can be sealed airtight by
 removing the spells from the slab To your west a brightly lit corridor with
 intricant decoration leads towards the throne room.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 A large granite slab, black as night, blocks your path.  It seems to be
 hovering just barely of the ground, making it easy to turn aside.    
@@ -1439,7 +1439,7 @@ of here the corridor continues, but to the north a very nicely decorated wall
 blacks you path.  The door to your west is ajar, and through it you can see the
 sleeping room of the royal dwarven family.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 The intricantly decorated corridor leads toward the dwarven city.
 ~
@@ -1462,7 +1462,7 @@ Royal sleeping room~
 by s couple of very large beds.  This obviously is where the royal family
 sleep, when they sleep.  A wooden door leads back east.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 A wooden door leads east.
 ~
@@ -1476,7 +1476,7 @@ wooden and very nice door leads to the ministery of trade, the most important
 part of the dwarven kingdom.  To your east a portal open up to the shrine of
 Welcor, the dwarven deity.  South you spot the throne room.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The corridor continues.
 ~
@@ -1505,7 +1505,7 @@ funrniture is mansized, enabling both parts to sit back and relax when the
 important trade regulations are being discussed.  Currently, though no great
 discussion is taking place and nothing of much interest can be found here.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D1
 A wooden door leads beack to the corridor.
 ~
@@ -1521,7 +1521,7 @@ the colours seem to shift a bit, as if the stone were made from suspended
 flames.  In front of a the altar a silver chain shows just how near you're
 supposed to go.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D3
 A portal leads back to the royal court.
 ~
@@ -1550,7 +1550,7 @@ about the height if your chest.  You realise the throne has the obvious
 consequence that everyone has to look up, and consequently feel very small,
 when adressing the king.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D0
 The court continues.
 ~
@@ -1575,7 +1575,7 @@ Gemstones of different fashion, different kinds.  The loot is so large you
 can't grasp it all, ad decide to concentrate on the nearest corner to get an
 overview.  This is what you think can be translated into real money later.    
 ~
-236 8 0 0 0 0
+236 8 0 0 0 1
 D3
 The throne room is just outthere.
 ~
@@ -1590,7 +1590,7 @@ to the south you can barely make out the light from the torches within the
 dwarven city.  A strong draft tries to push you deeper into the tunnel,
 pressing on from the north.    
 ~
-236 265 0 0 0 0
+236 265 0 0 0 1
 D0
 North of here, the tunnel ends and you are under open sky.
 ~
@@ -1630,7 +1630,7 @@ past you into the mine.  Always when one goes down, another goes up, past you.
 You stare downwards, hoping to make out some sort of bottom below you.  You
 have no such luck.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D4
 A ladder stretches upwards toward the dwarven city..
 ~
@@ -1649,7 +1649,7 @@ see nothing but darkness, and looking down, nothing more can be seen.  It seems
 the ladders aren't so used anymore, since the baskets that are lowered into the
 mine can carry more than just gold and rocks.    
 ~
-236 841 0 0 0 0
+236 841 0 0 0 5
 D4
 The seemingly endless ladder continues.
 ~
@@ -1671,7 +1671,7 @@ certain there is a long walk to get to the top of this ladder.  But a very
 brief fall to the bottom.  Baskets pass you by sometimes, some with metals,
 others with people in them.    
 ~
-236 841 0 0 0 0
+236 841 0 0 0 5
 D4
 The seemingly endless ladder leads up into the unknown.
 ~
@@ -1692,7 +1692,7 @@ can't avoid when mining after precious metals.  A ragged opening in the
 northern wall leads into the darkness of the mines.  An extremely large basket
 is hanging from a rope through the opening in the ceiling.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D0
 The mine continues.
 ~
@@ -1719,7 +1719,7 @@ you'd die if you fell in.  A small shelf along the east wall lets you walk
 past it, but walk carefully.  The slightest slip would cost you your life.  
 You may also go south from here.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D0
 You may be able to cross the pit to the north by walking along the eastern
 wall.  But be careful - a fall into the darkness would surely kill you.    
@@ -1739,7 +1739,7 @@ deep pit.  You walk very close to the east wall, to avoid tripping and falling
 into the pit.  While you can't see the bottom of the pit you are certain that
 certain death awaits you in the depths.  The ledge continues north and south.
 ~
-236 265 0 0 0 0
+236 265 0 0 0 5
 D0
 A mine tunnel has been dug into the side of the pit wall. You may enter it here.
 ~
@@ -1765,7 +1765,7 @@ as you can see, the dwarves has struck another vein of ore, leading east from
 here.  The original tunnel continues north and south from here, while a side
 tunnel branches off, following the new vein eastwards.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D0
 The mine tunnel continues.
 ~
@@ -1790,7 +1790,7 @@ bracers made from solid oak.  The face of the rock bears the markings of many a
 pick, and the mine continues northward, following the vein deeper into the
 mountain.  You may go south too, but tread carefully.    
 ~
-236 265 0 0 0 0
+236 265 0 0 0 5
 D0
 The mine tunnel continues.
 ~
@@ -1809,7 +1809,7 @@ vertical stripe at about chest height.  Various mining tools and drills suggest
 you've just arrived at a bad time, seeing no one mining the ore.  The tunnel
 continues south from here.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D2
 The mine tunnel continues.
 ~
@@ -1823,7 +1823,7 @@ Also it twists and turns to follow the ore vein.  The reddish-brown and silvery
 white color on the walls suggest an ore with both titanium and iron.  The
 tunnel continue south and west from here you see the main tunnel.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D2
 The side tunnel leads into total darkness.
 ~
@@ -1842,7 +1842,7 @@ tunnel is unsupported and you feel a little unsafe, considering the chance of a
 cave-in.  All over the mine floor large rocksa have been left where they fell,
 and you feel moreare about to fall down.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D0
 The side tunnel leads towards the main mine tunnel here.
 ~
@@ -1869,7 +1869,7 @@ bell has been connected to the small pile of ore that's stacked here.  You
 immidiately realize that as soon as you touch the pile, the miners will be on
 your neck.  The tunnel leads north from here.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D0
 The tunnel leads north from here.
 ~
@@ -1883,7 +1883,7 @@ you saw at the armourers stall in the trade halls.  The ore is so fine you can
 actually see the glimmer of iron, not just the reddish lump you see everywhere
 else.  The tunnel leads west from here.    
 ~
-236 9 0 0 0 0
+236 9 0 0 0 5
 D3
 The tunnel leads west from here.
 ~
@@ -1913,7 +1913,7 @@ smashing your skull. Your body continues to fall, for several minutes,
 hitting the sides of the pit, until it is reduced to a bloody pulp,
 bearing no resemblance to a person.
 ~
-236 196 0 0 0 0
+236 196 0 0 0 5
 S
 T 23617
 #23685
@@ -1922,7 +1922,7 @@ At the end of the tunnel~
 have nowhere to go except back through the tunnel.  The only other option is to
 jump...    
 ~
-236 64 0 0 0 0
+236 64 0 0 0 5
 D2
 A small tunnel opens up in the side of the mountain.  The walls are perfectly
 smooth and a strong draft at the entrance makes you onder where it all goes.  

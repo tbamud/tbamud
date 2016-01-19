@@ -86,7 +86,7 @@ Kami's Lookout~
 person is kneeling here tending to a well kempt flower garden whistling happily.
 Another person stands here, a tall green man with pointy ears.  
 ~
-103 20 0 0 0 0
+103 20 0 0 0 1
 S
 #10305
 Start of Planet Namek~
@@ -96,7 +96,7 @@ are also here, and many green people are walking around working here.  Some
 tending to the gardens, others training their skills.  But one thing is certain,
 all of them look male.
 ~
-103 0 0 0 0 0
+103 0 0 0 0 1
 D0
 ~
 ~
@@ -113,7 +113,7 @@ Base of Korins Tower~
 allowing the sun in.  Towards the east is a dirt path in which you cannot see
 the end of.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 3
 D1
 ~
 ~
@@ -125,7 +125,7 @@ Forest path~
 air.  @gTrees limit you to this single path, sounds come from the woods and area
 ahead.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D1
 ~
 ~
@@ -141,7 +141,7 @@ Forest Intersection~
 towards the north is another small clearing.  A large gaping hole is in the
 middle of the ground here.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -165,7 +165,7 @@ Gokus' House~
 This is a cleared out space in the forest.  @gThe house seems to make everything
 feel good again, as if it has some magical feeling to it.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D2
 ~
 ~
@@ -177,7 +177,7 @@ A Dark Hole~
 surrounding you.  @gThe walls are sleek, it seems that if one were to fall into
 this hole, they would not be able to escape easily.  
 ~
-103 1 0 0 0 0
+103 1 0 0 0 3
 D4
 ~
 ~
@@ -193,7 +193,7 @@ The Base of the Dark Hole~
 and then, strange plants grow all over the walls here. @gIt is dark, almost so
 dark it makes it hard to see, the only light comes from above you. 
 ~
-103 1 0 0 0 0
+103 1 0 0 0 3
 D4
 ~
 ~
@@ -205,7 +205,7 @@ A Forest Path~
 air.  @gThe trees still cover the area around the path, just limiting you to
 this one spot.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D1
 ~
 ~
@@ -221,7 +221,7 @@ The end of the Forest~
 still inhabbit this area, and the smell of death is still strong, but not as
 strong as it used to be.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D1
 ~
 ~
@@ -239,7 +239,7 @@ like it has been through many storms.  Off to the east you see a small island
 with an even smaller house, to the south is a large dome building marked with a
 large black CC.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 2
 D0
 ~
 ~
@@ -263,7 +263,7 @@ The Entrance to Capsul Corp~
 To the south is a large entrance to the building marked with a CC.  This dome
 shaped building seems a lot bigger than it did before.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 2
 D0
 ~
 ~
@@ -369,7 +369,7 @@ lies amongst the sand here and there, and small birds chirp in the forest.
 This place seems to be perfect to just relax and take a break from the everyday
 life.  @n
 ~
-103 20 0 0 0 0
+103 20 0 0 0 2
 D0
 ~
 ~
@@ -392,7 +392,7 @@ destructive human hand,@n @Bthe trees to the northwest are to thick to see
 through much less walk through.  This also seems to be a perfect place to relax
 from the troubles of everyday.  @n
 ~
-103 20 0 0 0 0
+103 20 0 0 0 3
 D2
 ~
 ~
@@ -440,7 +440,7 @@ Soaring Over the Ocean~
 abundant here then they were on the beach and this does place is not as soothing
 either.  @n
 ~
-103 0 0 0 0 0
+103 0 0 0 0 8
 D1
 ~
 ~
@@ -456,7 +456,7 @@ Soaring Over the Ocean~
 abundant here then they were on the beach and this does place is not as soothing
 either.  @n
 ~
-103 0 0 0 0 0
+103 0 0 0 0 8
 D1
 ~
 ~
@@ -472,7 +472,7 @@ Soaring Over the Ocean~
 abundant here then they were on the beach and this does place is not as soothing
 either.  @n
 ~
-103 0 0 0 0 0
+103 0 0 0 0 8
 D0
 ~
 ~
@@ -488,7 +488,7 @@ Soaring Over the Ocean~
 But the salt still lingers in the air and the Seaguls fly overhead.  @n @gThe
 sun seems to be harsher here then it is any other part of the ocean.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 8
 D1
 ~
 ~
@@ -504,7 +504,7 @@ In Shallow Water~
 a house with 'KAMI' in large red letters.  A bald old man sits out front looking
 at a dirty magazine.  @n
 ~
-103 0 0 0 0 0
+103 0 0 0 0 8
 D0
 ~
 ~
@@ -520,7 +520,7 @@ Infront of Kami House~
 white facial hair and large sunglasses.  He wears a turtle shell on his back.  
 @gWaves wash gentle up onto the shore, and a gentle breeze blows here.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 1
 D0
 ~
 ~
@@ -697,7 +697,7 @@ the arch you are able to see a magnificent lush garden, anything you could
 possibly think of resides in this place, in the its center is a huge oak tree,
 it provides shade for anyone who sits under it.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 3
 D1
 ~
 ~
@@ -731,7 +731,7 @@ area, the sun cannot get through the leaves of this tree, it seems to have been
 placed here on purpose, a magical feeling is coming from the tree, it makes
 your body tingle.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 3
 D0
 ~
 ~
@@ -792,7 +792,7 @@ here are tall with a little fluff of leaves and branches at the very top.
 There are also very few people in this village, and there are less children in
 this village, it seems to be a farming village.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 1
 D0
 ~
 ~
@@ -809,7 +809,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 1
 D0
 ~
 ~
@@ -826,7 +826,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 1
 D0
 ~
 ~
@@ -843,7 +843,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 1
 D1
 ~
 ~
@@ -860,7 +860,7 @@ are tall with a little fluff of leaves and branches at the very top.  There are
 also very few people in this village, and there are less children in this
 village, it seems to be a farming village.  
 ~
-103 16 0 0 0 0
+103 16 0 0 0 1
 D0
 ~
 ~
@@ -877,7 +877,7 @@ road seems to lead off to a tall mountain.  The trees here are even more scarce
 then in the village, on the side of the road, there are many large boulders on
 the side of the road.  
 ~
-103 20 0 0 0 0
+103 20 0 0 0 2
 D0
 ~
 ~
@@ -894,7 +894,7 @@ taller and taller.  You wonder what the significance of the mountain could be.
 The boulders still line the road and there are less and less trees, the ground
 seems to be harder here as well.  
 ~
-103 20 0 0 0 0
+103 20 0 0 0 2
 D0
 ~
 ~
@@ -910,7 +910,7 @@ Namek Road~
 barely see the top of it, and yet there is a tree here and there, and the
 boulders are still on the side of the road.  
 ~
-103 20 0 0 0 0
+103 20 0 0 0 2
 D0
 ~
 ~
@@ -943,7 +943,7 @@ Flying Up the Mountain~
 still far away, it might be easier to go back down.  @gIt seems to be getting a
 little warmer the further you go up.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 8
 D4
 ~
 ~
@@ -960,7 +960,7 @@ Flying Up the Mountain~
 this height, cawing and fluttering about.  @gIt seems to be getting a little
 warmer the further you go up.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 8
 D4
 ~
 ~
@@ -977,7 +977,7 @@ Flying Up the Mountain~
 but is not fully visible yet, it is still a little bit away.  @gIt seems to be
 getting a little warmer the further you go up.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 8
 D4
 ~
 ~
@@ -994,7 +994,7 @@ Flying at the Top of the Mountain~
 the sun pounds down on you.  Towards the north is a large house, with a strange
 picture on the side.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 8
 D0
 ~
 ~
@@ -1058,7 +1058,7 @@ On either side of the gate are two large Dragons, both look so real it is eerie.
 The sound of voices comes from the other side of the gate, it seems there is a
 town there.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 3
 D1
 ~
 ~
@@ -1075,7 +1075,7 @@ A Dirt Path~
 and it feels like it too.  @gNo creatures or people seem to come here anymore,
 it is just one deserted road.  
 ~
-103 4 0 0 0 0
+103 4 0 0 0 3
 D1
 ~
 ~
@@ -1091,7 +1091,7 @@ A Dirt Path~
 and it feels like it too.  @gNo creatures or people seem to come here anymore,
 it is just one deserted road.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D2
 ~
 ~
@@ -1107,7 +1107,7 @@ A Dirt Path~
 and it feels like it too.  @gNo creatures or people seem to come here anymore,
 it is just one deserted road.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -1123,7 +1123,7 @@ A Dirt Path~
 a large lake that seems to fill a large area.  @gNo creatures or people seem to
 come here anymore, it is just one deserted road.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -1140,7 +1140,7 @@ strange smell to it, kind of sweet in nature yet powerful.  No creatures are
 here, not even a bird.  
 @n
 ~
-103 4 0 0 0 0
+103 4 0 0 0 3
 D1
 ~
 ~
@@ -1158,7 +1158,7 @@ cannot see in here because the tree cover is so thick the light cannot penetrate
 it.  The air here smells stagnant and cold.  Sounds fill the area, making it
 impossible to think.  
 ~
-103 1 0 0 0 0
+103 1 0 0 0 3
 D1
 ~
 ~
@@ -1174,7 +1174,7 @@ A Small Clearing~
 cylindricle rock lies in the center of this area, it seems to be the cause of
 the clearing.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D1
 ~
 ~
@@ -1191,7 +1191,7 @@ path are thick, causing the area to be dark.  Sounds emit from this area,
 causing
 an eerie feeling.  
 ~
-103 1 0 0 0 0
+103 1 0 0 0 3
 D0
 ~
 ~
@@ -1207,7 +1207,7 @@ A Large Clearing~
 The grass grows freely and stands about waist high on either side of a short
 dirt path leading to a large dark cave.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D1
 ~
 ~
@@ -1340,7 +1340,7 @@ A Flower Field~
 throught the flowers yet it seems the there is a path to the south leading you
 away from the flowers.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 2
 D0
 ~
 ~
@@ -1356,7 +1356,7 @@ Path To the Villa~
 perfectly round, and they glow beautifully.  The path goes south towards a small
 Villa.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 1
 D0
 ~
 ~
@@ -1372,7 +1372,7 @@ Infront of the Villa~
 door is slightly ajar, the path you stand on has the same circular golden stones
 as to the north.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 1
 D0
 ~
 ~
@@ -1560,7 +1560,7 @@ Going To the Cave~
 here, it is a calm serene place, and the smell of apples lingers in the air all
 around you.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -1576,7 +1576,7 @@ An Apple Orchard~
 it is stronger here then it would be anywhere else.  Apple Trees grow wildly
 here, and there is no other tree to be seen.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D2
 ~
 ~
@@ -1592,7 +1592,7 @@ End of an Apple Orchard~
 it is stronger here then it would be anywhere else.  Apple Trees grow wildly
 here, and there is no other tree to be seen.  To the north is a lot of brush.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -1608,7 +1608,7 @@ Start of the Brush~
 seems to be a path leading straight through it, the sounds of people come from
 the other side of the brush.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -1624,7 +1624,7 @@ Path Through the Brush~
 walking, the brush on both sides of you looks to be dangerious.  @g It looks as
 if there are multiple animals caught in the brush on both sides.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 3
 D0
 ~
 ~
@@ -1640,7 +1640,7 @@ A Dangerous Path~
 seems as though it has grown there over the years, and it grows here as well,
 but not as much, for it seems to have been trodden down by people.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 2
 D2
 ~
 ~
@@ -1656,7 +1656,7 @@ Journeys End Inn~
 the door shows you that this place has been closed for many years.  The windows
 are broken, and a few are just missing.  
 ~
-103 0 0 0 0 0
+103 0 0 0 0 1
 D1
 ~
 ~

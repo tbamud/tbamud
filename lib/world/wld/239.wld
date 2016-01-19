@@ -78,7 +78,7 @@ and heat.  To the west can be seen some kragla birds waiting for something to
 die so that they may finally have a meal.  Eastward dunes of sand expand as far
 as the eye can see.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 2
 D1
    Sands of the Southern Desert
 ~
@@ -112,7 +112,7 @@ south the slopes rise gently to the Southern Mountains.  North is the beginning
 of the desert sands.  Westward and eastward are more hills all converging to
 the foot of the Southern Mountains.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 4
 D0
 Rutted path
 ~
@@ -152,7 +152,7 @@ those which are trodded here.  Climbing these slopes is tedious and tiring on
 the body, mind and soul.  Many adventurers have lost hope here of finding the
 path to the city of NewHaven.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 4
 D3
 Rutted Path
 ~
@@ -176,7 +176,7 @@ penetrates to ones bowels.  To the west and east are more hills.  The Great
 Southern Desert is to the north.  You can see the peaks of the Southern
 Mountains high up in the wispy clouds to the south.    
 ~
-239 64 0 0 0 0
+239 64 0 0 0 4
 D0
 ~
 ~
@@ -200,7 +200,7 @@ fatigue generating slopes that tear at the muscles in ones legs.  Some
 scorpions crawl under the rocks to seek shade and prey on the other denizens of
 the desert that hide there.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 4
 D0
 Rutted Path
 ~
@@ -240,7 +240,7 @@ foreboding Southern Desert.  To the south the hills become peaks of the Southern
 Mountains.  To the east and west are endless jagged hills and ravines of broken
 slate.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D0
 Slated Gorge
 ~
@@ -294,7 +294,7 @@ path leads down from the hills of the Southern Mountains to the north towards
 the Southern Desert.  It appears as if this faint trail may turn into a path
 that actually goes someplace.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D0
 Jutted Path Origin
 ~
@@ -312,7 +312,7 @@ Entrance to a Cave~
 The opening is slightly obscured but there is just enough room that someone
 might be able to squeeze thru to see what is inside if they dared.    
 ~
-239 12 0 0 0 0
+239 12 0 0 0 5
 D2
 To inside the cave
 ~
@@ -331,7 +331,7 @@ Hopefully, no big and scary ones have decided to live here.  Perhaps they may
 be coming back soon and kicking out intruders or eating them for lunch.  There
 is an entrance to the north and south.    
 ~
-239 9 0 0 0 0
+239 9 0 0 0 5
 D0
 Way to the entrance
 ~
@@ -367,7 +367,7 @@ west, while to the south can be seen the hills and summits, marking the beginnin
 of the Southern Mountains.  One can continue their travels to the east and west
 where the dunes are far enough apart to provide a path.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 2
 D1
    A pathless pile of sand to more desert
 ~
@@ -387,7 +387,7 @@ drying their skin in this miserable heat.  Rolling hills of sand surround the
 area.  Impassable hills of slate are to the north and south.  East and west are
 more dunes of sand.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 2
 D1
 Sands of the Southern Desert
 ~
@@ -415,7 +415,7 @@ on this path so some spots are cluttered with boulders of granite partially
 blocking it and other parts have wind hewn ruts that look like they were cut by
 some insane sculptor who was mad at the world.    
 ~
-239 4 0 0 0 0
+239 4 0 0 0 5
 D0
 Exit to lower end of the path.
 ~
@@ -436,7 +436,7 @@ it travels further along the Southern Mountains.  Upwards you can barely make ou
 some sort of ledge.  Slightly upward and to the west is a narrow crumbling path
 that looks too risky to attempt to traverse.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D0
 A steep boulder strewn path up the Southern Mountains.
 ~
@@ -463,7 +463,7 @@ every now and then there is some movement in the shifting dunes of sand.
 Barely visible, the peak of the mountain, which is still quite a way upward
 from here, is crowned by a few wisps of clouds.    
 ~
-239 196 0 0 0 0
+239 196 0 0 0 5
 D5
 Steep decline to the turn in the path
 ~
@@ -479,7 +479,7 @@ white, orange, brown and red.  The narrow ledge crumbles and every now and then
 rocks tumble down the sheer side so far that no one could hear the sound of
 their crash at the base of the towering peak.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D1
 Narrow ledge to the turn in the path.
 ~
@@ -499,7 +499,7 @@ howling around with a frost biting chill.  Here rises a purple granite side of
 the peak, which no one has bothered to name, perhaps they will name it after an
 adventurer, should they fall and die here.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D4
    Climb to the path around the ridge.    
 ~
@@ -519,7 +519,7 @@ below surrounded by dense woods to the south.  To the west you can make out a
 few roads going thru the woods and to the east the trail continues with the
 mountain base blocking the view directly below.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D1
    To a deep drift of snow.    
 ~
@@ -541,7 +541,7 @@ starts again a ways off to the east near a huge tree.  Below is the sheer side
 of the mountain and cannot be traversed.  To the north is the peak of the
 mountain which looks just as omnimous here as it did far below.    
 ~
-239 4 0 0 0 0
+239 4 0 0 0 5
 D3
    A winding trail around the peak.    
 ~
@@ -671,7 +671,7 @@ the side of the mountain.  To the west is a pile of rubble consisting of hides,
 tree trunks, bones of small animals and rocks.  East the trail continues down
 the path.    
 ~
-239 265 0 0 0 0
+239 265 0 0 0 4
 D0
 Path to a Small Cave
 ~
@@ -700,7 +700,7 @@ east-west direction.  To the west there is a short path which turns north into
 a huge pile of rubble.  To the east the path slopes downward towards a large
 pine tree.    
 ~
-239 265 0 0 0 0
+239 265 0 0 0 4
 D1
    Path to ponderosa pine
 ~
@@ -727,7 +727,7 @@ needled limbs sway gently in the breeze far far above.  To the west is a clay
 path with many footprints in it.  To the south a wooden plank path meanders
 down the slope.    
 ~
-239 129 0 0 0 0
+239 129 0 0 0 5
 D2
    Path to below the tree
 ~
@@ -781,7 +781,7 @@ dirty black fireplace in the center of the room.  Around the walls are slits in
 the sides that someone could look out of.  Leading up and down the tree are
 small footholds someone has used to climb the tree.    
 ~
-239 12 0 0 0 0
+239 12 0 0 0 5
 D4
    Ladder from outpost to up in a tree.    
 ~
@@ -824,7 +824,7 @@ ages ago but the branches still grow and are teeming with small animals of all
 types.  There is a sturdy ladder going up and down the tree trunk.  Another
 branch goes from the trunk of the tree to the east.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D1
    From up in a branch to out on a limb.    
 ~
@@ -1067,7 +1067,7 @@ been woven with magical spells of travelling, like they were in the days of
 old.  North the path continues up the trail towards the mountain peak.  Down
 the gently winding road makes it's way to the foothills of the mountains.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 4
 D0
 The path turns gently northward, to a giant ponderosa pine tree.    
 ~
@@ -1095,7 +1095,7 @@ all around the old and decaying ones as nature regenerates itself.  Up there is
 a turn in the path.  West the path slowly dwindles into a lightly wooded area.
   
 ~
-239 0 0 0 0 0
+239 0 0 0 0 5
 D3
    The path slopes downward into some rolling hills and forests.    
 ~
@@ -1123,7 +1123,7 @@ and an occasional deer can be seen grazing on the new grass and bark they can
 find as they forage for food.  East the path seems to widen and is paved with
 brick.  West the trial winds thru the foothills.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 4
 D1
    The path winds upward thru some light forests and hills.    
 ~
@@ -1145,7 +1145,7 @@ important or do they have enough supplies for their journey.  East the path
 continues to climb thru some light woods.  South the path disappears into the
 sands of the desert.    
 ~
-239 0 0 0 0 0
+239 0 0 0 0 4
 D1
    The path continues east thru some hills.    
 ~
@@ -1162,7 +1162,7 @@ chasm.  Periodically a loose rock or boulder dislodges from the side of the
 chasm and crashes below on the sides of the chasm walls resounding for a few
 minutes then no sounds can be heard as it's course takes it from the sides.  
 ~
-239 269 0 0 0 0
+239 269 0 0 0 4
 D0
    Path along the chasm.    
 ~
@@ -1182,7 +1182,7 @@ are growing stronger with each level lower.  There is a thin yellow powder on
 the path, probably condensation of the fumes upon its surface.  The path heads
 deeper into the chasm to the north and climbs up the chasm to the south.    
 ~
-239 265 0 0 0 0
+239 265 0 0 0 5
 D0
    Path along the chasm.    
 ~
@@ -1202,7 +1202,7 @@ the wall of the chasm to the west.  The sides of the chasm seem to glow with a
 soft yellow glow, providing a dull light to see the trail.  To the south the
 path slopes upward and gradually climbs the chasm.    
 ~
-239 268 0 0 0 0
+239 268 0 0 0 5
 D1
    Path to a travelers resting spot.    
 ~
@@ -1248,7 +1248,7 @@ hollowed out cubby holes with places for lanterns, but they are unnecessary
 because of the glow of the walls.  The combination of colors is nauseating and
 the smell here doesn't help.    
 ~
-239 392 0 0 0 0
+239 392 0 0 0 4
 D0
 Path to the entrance of the cave.
 ~
@@ -1490,7 +1490,7 @@ upwards to the west.  There is a fine glowing powder lighting the path with a
 eerie orange-red glow here.  A strong sulfuric smell drifts up from the chasm
 below.    
 ~
-239 12 0 0 0 0
+239 12 0 0 0 4
 D1
    Decending path into the chasm.    
 ~
@@ -1517,7 +1517,7 @@ their endless flight through the depths below.  To the west the path ascends
 with a dull red glow of mineral deposits from the fumes.  To the east is a
 gradual slope deeper into the chasm.    
 ~
-239 264 0 0 0 0
+239 264 0 0 0 4
 D1
    Path descending deeper into the chasm.    
 ~
@@ -1537,7 +1537,7 @@ favorite mineral, obsidian.  The path has a dull red glow from some powder
 caked along the chasm walls.  To the west the path ascends along the side of
 the chasm, lit with the scarlet glow.    
 ~
-239 264 0 0 0 0
+239 264 0 0 0 4
 D2
    An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.  
 There is a red rune in the center of the door which might be a keyhole.    
@@ -1568,7 +1568,7 @@ covered with bricks of shiny black obsidian.  The floor is covered with red
 glowing runes of drow origin and light the path.  There is a huge gate to the
 north.  The cave continues on to the south.    
 ~
-239 140 0 0 0 0
+239 140 0 0 0 4
 D0
    A huge obsidian door carved with drow runes.  The door is about 8 metrons
 high and there is a red rune in the center for a key.    
@@ -1594,7 +1594,7 @@ footprints going in all directions on the passage floor.  There is a soft light
 coming from the north end of the passage and darkness to the east.  Strange
 faint sounds of patting feet can be heard echoing from the darkness.    
 ~
-239 268 0 0 0 0
+239 268 0 0 0 2
 D0
 Towards a red glow in the passage.    
 ~
@@ -1674,7 +1674,7 @@ all around.  The walls are a conglomerate of adamite and obsidian rock and an
 evil force seems to raditate from them.  The floor has been hewn smooth by
 someone and seems to have no signs of wear.    
 ~
-239 265 0 0 0 0
+239 265 0 0 0 4
 D0
 A dark stale cave.
 ~
@@ -1695,7 +1695,7 @@ caverns, niches, slopes.  The floor is smooth here but the walls are sharp to
 the touch with shards of obsidian, adamite protruding from it.  Soft pattering
 sounds can be heard echoing off the walls from all around.    
 ~
-239 265 0 0 0 0
+239 265 0 0 0 4
 D0
 To another part of the cave.
 ~
@@ -1741,7 +1741,7 @@ towards the south but inside the the hallway there are no sounds.  The sounds
 and light seem to be absorbed by the mysterious stone the walls, ceiling, and
 floor are made of.    
 ~
-239 397 0 0 0 0
+239 397 0 0 0 4
 D0
 ~
 door~
@@ -2084,7 +2084,7 @@ radiate from the central chamber within the zone.  One can barely make out
 another chamber directly in the center which is suspended in space by the
 thousands of strands of spiderweb supporting it.    
 ~
-239 137 0 0 0 0
+239 137 0 0 0 5
 D4
 ~
 ~

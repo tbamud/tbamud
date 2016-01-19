@@ -85,7 +85,7 @@ same voice that has saved your life on countless
 occasions, seems to be telling you that something is
 very, very wrong here.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 2
 D1
 It is a normal front door to a house.
 ~
@@ -140,7 +140,7 @@ fireball.  There is nothing here now but blast-marks and
 ashes, and the remains of a trail leading to the east edge
 of this tiny valley.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 2
 D1
 ~
 ~
@@ -240,7 +240,7 @@ traffic in this area, leading into the large depression
 here.  The going looks somewhat dangerous, and you decide 
 to exercise a little caution.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D0
 ~
 ~
@@ -267,7 +267,7 @@ slope to the east, or continue along the flat area to the
 west.  Another slope leads downwards to the south, looking
 unsafe but climbable.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D1
 ~
 ~
@@ -291,7 +291,7 @@ good view of the lower regions of this depression, and you
 think you spot what might be a cave south and down from 
 here...
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D1
 ~
 ~
@@ -332,7 +332,7 @@ a very good idea to try to find a way to get there.
    The only safe way to leave this overlook is to 
 the south.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D2
 ~
 ~
@@ -365,7 +365,7 @@ Looking up, you see sheer rock walls surrounding much
 of the depression, making an effective fortress of
 this place.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D1
 ~
 ~
@@ -383,7 +383,7 @@ of the mountainside.  The whole place seems quiet, too
 quiet in fact.  Your little adventurer's intuition is
 busily warning you of traps.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D0
 ~
 ~
@@ -890,7 +890,7 @@ mountainside, and two open shops made of wood and stone
 are to your north and south.  East-wards this road continues.
    There is a small sign here.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D0
 ~
 ~
@@ -955,7 +955,7 @@ east is an actual road intersection, and to the west you see one
 of the ends of this road.  A large grassy area to the south is
 fenced off for a horse corral.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D1
 ~
 ~
@@ -993,7 +993,7 @@ appears.
 east, and west.  None particularly stand out from the 
 others.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D0
 ~
 ~
@@ -1020,7 +1020,7 @@ building that appears to be a farmer's market.  The road
 you are on continues north, and comes to an intersection 
 just south of here.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D0
 ~
 ~
@@ -1040,7 +1040,7 @@ The Farmer's Market~
 buy the food her family has grown.  She looks bored, but
 not unhappy... no competition!
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D1
 ~
 ~
@@ -1053,7 +1053,7 @@ by the Mountains ends here, curving to become the front
 walk of a private home to the east.  The road runs south
 from this house, towards the center of the village.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D1
 A normal, wooden front door to a normal looking home.  It is
 nothing to write home about.
@@ -1088,7 +1088,7 @@ to the south.  Smoke rises from the chimney in a dark
 stream, and the windows are frosted over with humidity.
 North, you see the main intersection of Stanneg.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D0
 ~
 ~
@@ -1124,7 +1124,7 @@ in the center of the tiny village.  Around you is a rocky
 terrain in the middle of this mountain range...not very 
 many places else to go.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D0
 There is a large set of double doors, made of wood blocking the way.
 ~
@@ -1218,7 +1218,7 @@ the path seems to head towards that dark peak piercing the
 sky.  You notice a few boot-tracks in the earth, seemingly 
 to lead down towards the cottage.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D1
 ~
 ~
@@ -1241,7 +1241,7 @@ place, badly.  You see no signs of life among the wreckage.
 You can enter one of the particularly large holes in the 
 wall to the west, with caution.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 4
 D3
 ~
 ~
@@ -1260,7 +1260,7 @@ dessicated corpse of a man, outstretched and blackened.
 There's not much to see here; whatever decided to destroy 
 this place did it very well.
 ~
-33 0 0 0 0 0
+33 0 0 0 0 1
 D1
 ~
 ~
@@ -1385,7 +1385,7 @@ into the cave.
    Two tunnels lead off from here, one up, one down.  There
 are claw marks leading in either direction.
 ~
-33 585 0 0 0 0
+33 585 0 0 0 4
 D2
 ~
 ~
@@ -1424,7 +1424,7 @@ stone stop abruptly here, where there seems to be a lot
 of unearthed dirt and stone around, heaped upon the floor.  
 You feel uneasy about this place.
 ~
-33 585 0 0 0 0
+33 585 0 0 0 4
 D0
 ~
 ~
@@ -1464,7 +1464,7 @@ closeness of the cave's entrance above you.  There's a
 deep, musky odor in the air, and the giant claw marks 
 continue downwards.
 ~
-33 585 0 0 0 0
+33 585 0 0 0 4
 D4
 ~
 ~
@@ -1484,7 +1484,7 @@ drowning out everything else in the air and making it hard
 to breathe.  Something in your gut begins squirming 
 uncomfortably as you wonder what's ahead...
 ~
-33 585 0 0 0 0
+33 585 0 0 0 4
 D0
 ~
 ~
@@ -1504,7 +1504,7 @@ with tapestries and drapes, and other comforts of human
 life.  There is even a huge-dragon sized bed -- undoubtedly 
 conjured to life by its elder dragon owner.
 ~
-33 584 0 0 0 0
+33 584 0 0 0 4
 D2
 ~
 ~

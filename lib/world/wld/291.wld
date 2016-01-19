@@ -6,7 +6,7 @@ In the middle of the forest, popping out over the trees is the tall spire of
 the Citadel. The symbol of the triangled wheel on the tower's side is there
 for all to see. A trail leads eastward down the hill towards the woods.
 ~
-291 4 0 0 0 0
+291 4 0 0 0 4
 D1
 ~
 ~
@@ -25,7 +25,7 @@ near the outermost trees on a rapidly dwindling trail that winds into the dark
 heart of the woods.  Your know your imagination can only scratch the surface of
 the unholy terrors that lie within.  You have been warned.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 4
 D1
 ~
 ~
@@ -44,7 +44,7 @@ diabolical laugh drifts to your ears.  It drives shivers down your spine.  You
 can make out a trail to the south and east.  To the north there is a cabin.  
 Or you could flee the woods.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -84,7 +84,7 @@ around, a fresh bout of evil laughter comes to your ear.  It echos off the
 trees, refusing to die.  You feel a bead of sweat form on the back of your
 neck.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -98,7 +98,7 @@ S
 The Black Forest~
    You are in the Black Forest.  Have a Nice Day.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -131,7 +131,7 @@ bark is rough and blood stained.  At the roots lie a fallen hero.  His body
 well along in decomposition, but the cause of death is obvious.  This foolish
 hero has been decapitated.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -151,7 +151,7 @@ The dense woods~
 much further.  Every so often one of the trees carries an aged blood stain
 marring one of the trees.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -172,7 +172,7 @@ nearby trees prevent you from exploring the wall.  It is an imposing mass of
 cold, smooth, black granite.  So near the vile citadel, you know in your soul
 this is not a place you want to be caught dead at.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D2
 ~
 ~
@@ -208,7 +208,7 @@ gravely slopes makes for difficult going.  You can surmise that this place
 would fill up rapidly in a heavy rain.  You just hope that dosen't happen while
 you are here.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 5
 D2
 ~
 ~
@@ -223,7 +223,7 @@ Deeper into the Black Forest~
    The deeper into the forest you press, the more you doubt the sanity of your
 choice.  But you know that with great risks come great rewards.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D1
 ~
 ~
@@ -282,7 +282,7 @@ horse.  Around the hoofmarks the earth is scorched as if by a hot flame.
 Looking around there are the signs of a strugle.  Somebody placed his bets
 against whatever made the hoofmarks, and lost.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -303,7 +303,7 @@ quiet around the area.  You look at the clearing you are standing near and you
 recognize it for what it is.  A killing field.  Your boot crunches on the
 headless skeleton of some small woodland creature.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -363,7 +363,7 @@ away your nervousness and trepidation too.  From here you can push on eastward
 or you can flee west to the safety of the bridge.  Your other option is to
 follow the river to its end.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D1
 ~
 ~
@@ -381,7 +381,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D1
 ~
 ~
@@ -395,7 +395,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D2
 ~
 ~
@@ -409,7 +409,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -423,7 +423,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -437,7 +437,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D1
 ~
 ~
@@ -451,7 +451,7 @@ S
 Hopelessly Lost~
    You are Hopelessly Lost!    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D2
 ~
 ~
@@ -468,7 +468,7 @@ eyes off the citadel, but you manage.  To the west lies a small stream.  To the
 north is a clearing, and south of you is a trail that leads to a small keep in
 ruins.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -493,7 +493,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -514,7 +514,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -535,7 +535,7 @@ are smooth to the touch.  The gate is a huge, cast iron affair, emblazoned with
 the symbol of the triangled wheel.  Only the bravest of souls would consider
 entering this dreadful place.  There is a gate to the east.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -557,7 +557,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -578,7 +578,7 @@ making a path around part of the keep belonging to the mistress of the Void Far
 to the south you can see what seems to be the main gate.  To the north the wall
 disappears into the darkness of the Black Forest.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -622,7 +622,7 @@ strain your eyesight you can barely makeout the remains of a ruined keep.  The
 few remaining walls, once a gleeming white are now a dull grey.  Evidently this
 keep was laid waste by the forces of the citadel.  Pity.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -643,7 +643,7 @@ scattered bits of shattered walls remain as testiment to what once was, now
 they are merely waiting for the forest to reclaim them.  At least the ruins
 provide some measure of shelter from the incessent, madening wind.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -670,7 +670,7 @@ when Ilian's black citadel was erected, those protecting beings withdrew their
 protection to flee to safety, or maybe they made their stand with the occupants
 of the castle, and shared their fate.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -690,7 +690,7 @@ fresh hay on the floor.  Although you take note that some of it has been
 scorched by fire of some sort.  There is still water in the trough.  All this
 leads you to believe that someone or something still makes use of this place
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D3
 ~
 ~
@@ -707,7 +707,7 @@ shattered into a million shards of rainbow hued glass strewn over the ground.
 The east wall still seems soundly built, but you have trepidations about the
 south wall It seems like it could come crashing down at any moment.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -789,7 +789,7 @@ More of the black forest~
    The Black forest extends as far as the eye can see.  Granted that's not too
 far, given how dense the forest is.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -839,7 +839,7 @@ pond scum floats in a fine skin over the surface.  This place approaces a swamp
 more than it does a pond.  This place is a prime breeding ground for mosquitoes
 and other stinging insects that buzz about your face.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 3
 D0
 ~
 ~
@@ -856,7 +856,7 @@ mire.  It is little more than a patch of rock that is covered with poison ivy.
 There is little soil, but somehow the vines mamage to find enough food to
 survive.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -867,7 +867,7 @@ Still More of the forest~
    You know the drill.  Can you tell that I was running low on my creative
 inspiration when I made this room?    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -884,7 +884,7 @@ seemingly endless cadre of oak trees that stand as omnious guardians to this
 dark place.  Press much further and you do not know if you will be able to find
 your way back.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~
@@ -1706,7 +1706,7 @@ the western hills where you began this nightmare to the sea which lies FAR to
 the south.  The balcony extends to the south a bit, but be careful There is no
 guardrail, and that first step is a doozy.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 1
 D2
 ~
 ~
@@ -1723,7 +1723,7 @@ clifflike drop at the edge.  An unexpected gust of wind nearly makes you loose
 your footing, but you manage to hang on.  As nervous as you are, this place has
 an unusual serenity to it.    
 ~
-291 0 0 0 0 0
+291 0 0 0 0 1
 D0
 ~
 ~
@@ -1785,7 +1785,7 @@ seemingly endless cadre of oak trees that stand as omnious guardians to this
 dark place.  Press much further and you do not know if you will be able to find
 your way back.    
 ~
-291 1 0 0 0 0
+291 1 0 0 0 3
 D0
 ~
 ~

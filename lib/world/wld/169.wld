@@ -6,7 +6,7 @@ bloodthirsty gibberlings. The area starts out in room 16999 (where it connects
 to the south road) and continues eastward to a mountain cave where you finally
 battle the gibberling chieftain and shaman. 
 ~
-169 0 0 0 0 0
+169 0 0 0 0 2
 S
 #16901
 A Mountain Trail~
@@ -15,7 +15,7 @@ east or west along the trail.  You can see the footprints of small animals and
 something else, here in the dirt.  This trail must be used more often than you
 suspected at first glance.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 2
 D1
 ~
 ~
@@ -34,7 +34,7 @@ south begins a steep drop away from the hills you are walking across, forming a
 valley, however the trees to the north and south are too thick for travel
 anyway.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 2
 D1
 ~
 ~
@@ -51,7 +51,7 @@ continues to the east and west.  The sounds of rustling leaves, and small
 animals in the brush scurrying about reminds you that dangerous creatures could
 be lurking nearby in the shadows, waiting for you to rest until they strike.  
 ~
-169 0 0 0 0 0
+169 0 0 0 0 2
 D1
 ~
 ~
@@ -68,7 +68,7 @@ and the brush is too dense to head north or south.  The only way to continue
 farther into the trees, is to climb a steep BANK covered in vines and tree
 roots, up into the hilly regions to the east.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 4
 D3
 ~
 ~
@@ -93,7 +93,7 @@ soil makes a naturul ladder of sorts, so you would have no trouble climbing
 down.  A small path to the south seems to have been intentionally cleared for
 travel through the unlevel terrain.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D2
 ~
 ~
@@ -111,7 +111,7 @@ cliff with them, over time.  Howling winds occasionally sweep down from the
 eastern mountains, further weathering the stones of the slope, and blowing a
 few more pebbles over the edge.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D0
 ~
 ~
@@ -131,7 +131,7 @@ point, it's apparent that you probably wouldn't survive a fall from this
 height.  The face of the rock appears to have enough deep, natural grooves to
 use as footholds, if you were to decide to climb it.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D3
 ~
 ~
@@ -148,7 +148,7 @@ boulders, which provides a momentary rest from the harsh eastern winds.
 However because of the amount of rocks blocking your path here, you can only
 travel north, or down, to a narrow cliff.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D0
 ~
 ~
@@ -164,7 +164,7 @@ A Mountainside~
 north-east, you can see more mountains on the horizon.  Ths South Road is also
 slighty visible as a small line in the trees, far down to the west.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D1
 ~
 ~
@@ -181,7 +181,7 @@ vegetation, overlooking a steep drop off the side of the mountain.  You have
 two choices to continue from here, up the face of the mountain, to the east, or
 down to the west, in the direction of the South Road, leading to the capitol.
 ~
-169 0 0 0 0 0
+169 0 0 0 0 2
 D1
 ~
 ~
@@ -198,7 +198,7 @@ through the rocky terrain, which is almost barren save for a few small plants
 here and there.  Small humanoid footprints in the soil, trace a winding trail
 up the western face of the mountain, continuing eastward.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D3
 ~
 ~
@@ -215,7 +215,7 @@ from a large cave which lies to the east, in the side of the mountain.  As
 harsh winds blow past you bearing a fine mist, it would probably be wise to
 continue onward, rather than stay here.    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D1
 ~
 ~
@@ -233,7 +233,7 @@ surface, making the cliff even more dangerous.  Through the deafening sound of
 the gusts in your ears, a kind of chattering noise, or perhaps even voices,
 hauntingly fades in and out of existence...  Or was it just the wind?    
 ~
-169 0 0 0 0 0
+169 0 0 0 0 5
 D1
 ~
 ~

@@ -86,7 +86,7 @@ you walk on is creaking with every step, and the shudders and the walls look
 chipped, and just bent out of shape.  Well, going inside would be better than
 staying out here in the rain all night, wouldn't it?    
 ~
-283 192 0 0 0 0
+283 192 0 0 0 1
 D0
 The front door is north.
 ~
@@ -534,7 +534,7 @@ you walk on it, and then it starts to get louder.  The stairs lead down to the
 ground.  When you look over the side you can see a path, and then in the
 distance a small outhouse.    
 ~
-283 69 0 0 0 0
+283 69 0 0 0 1
 D2
 You can go back inside if you wish.
 ~
@@ -553,7 +553,7 @@ north to the outhouse.  A path leads east from here too, which doesn't look to
 be going anywhere.  The lightning is still striking, and therefore the thunder
 is still hurting your ears.    
 ~
-283 69 0 0 0 0
+283 69 0 0 0 2
 D0
 A path leads to the outhouse.
 ~
@@ -577,7 +577,7 @@ really stinks.  The path is getting you all muddy again, as the rain pours down
 harder than before.  The outhouse is north and another path breaks off this one
 and heads east.    
 ~
-283 69 0 0 0 0
+283 69 0 0 0 2
 D0
 The outhouse is north.
 ~
@@ -620,7 +620,7 @@ your eyes.  It is very dark outside, and lightning flashes nearby.  Thunder
 shortly follows, making a very loud "BOOM".  To the east is where the stairs
 lead up to the back deck.    
 ~
-283 69 0 0 0 0
+283 69 0 0 0 2
 D1
 The bottom of the stairs is east.
 ~
@@ -645,7 +645,7 @@ in this area and it's raining pretty hard now.  Suddenly, lightning strikes a
 tree, which makes a loud noise before falling to the ground with a loud "THUD".
   
 ~
-283 65 0 0 0 0
+283 65 0 0 0 2
 D1
 You can go back east if you want to...
 ~
@@ -663,7 +663,7 @@ A Path Through the Forest~
 Winds blow around leaves and other small objects, as lightning and thunder do
 their work.  Rain pours down on you, getting you all wet and very cold.    
 ~
-283 69 0 0 0 0
+283 69 0 0 0 2
 D3
 The path goes east some more.
 ~
@@ -1024,7 +1024,7 @@ passage leading out here.  The night is still very stormy, as you try to walk
 as carefully as you can without fatally falling off.  That might hurt a little,
 don't you agree?    
 ~
-283 193 0 0 0 0
+283 193 0 0 0 1
 D0
 You can travel north on this roof.
 ~
@@ -1043,7 +1043,7 @@ you are going to be picked up and thrown into the ground at any moment, so you
 try to move slowly and steadily.  Carefully you make your way around a section
 of the roof that is unfinished, and try to head north.    
 ~
-283 192 0 0 0 0
+283 192 0 0 0 1
 D0
 The roof goes north more.
 ~
@@ -1063,7 +1063,7 @@ escape from this nightmare.  The roof ends by the looks of it...  North of
 here.  The rain is making it very slippery up here, as you can barely walk
 without slipping a little.    
 ~
-283 129 0 0 0 0
+283 129 0 0 0 1
 D0
 The roof heads north a bit.
 ~
@@ -1087,7 +1087,7 @@ here have been washed away from the rain, making it look bare.  It's beginning
 to get very slipper up here.  By the looks of it, there seems to be nowhere to
 go from here.  A small chimney is directly east of you.    
 ~
-283 65 0 0 0 0
+283 65 0 0 0 1
 D2
 The roof extends south.
 ~
@@ -1106,7 +1106,7 @@ big enough for one to fit in it.  It is made of big red bricks which are also
 chipped.  All over.  No smoke is coming up, so why not check out where it
 leads?    
 ~
-283 449 0 0 0 0
+283 449 0 0 0 1
 D1
 The roof is over there.
 ~
@@ -1125,7 +1125,7 @@ and the ground, as the lightning flashes and the thunder booms.  The porch is
 made of wood just like everything else in this dumb old house.  There is a
 small railing lining the outside of the balcony, so people don't fall off.    
 ~
-283 709 0 0 0 0
+283 709 0 0 0 1
 D2
 Nothing special back there...
 ~
@@ -1178,7 +1178,7 @@ Oops!~
 gust of wind comes along and hits you hard.  Unprepared, you lose your grip on
 the very wet ropes, and fly head first into the ground below you.  OUCH!!!!!  
 ~
-283 741 0 0 0 0
+283 741 0 0 0 1
 D4
 You see nothing special...
 ~
@@ -1190,7 +1190,7 @@ At the Well~
    You are now standing at a well in the back yard of the house.  The
 thunderstorm still rocks on as you examine the well.    
 ~
-283 577 0 0 0 0
+283 577 0 0 0 2
 D1
 Nothing special there...
 ~

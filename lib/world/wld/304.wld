@@ -30,7 +30,7 @@ causing the ripe ends of the grass stalks to bob lazily back and forth.  To the
 north you spy what appears to be some sort of temple, its great white walls
 blazing with the light of the sun.    
 ~
-304 4 0 0 0 0
+304 4 0 0 0 2
 D0
 You see the entrance to the temple.
 ~
@@ -47,7 +47,7 @@ Before the Temple~
 columns are spaced evenly around the perimeter of the temple, and an arch
 beckons you inside.  
 ~
-304 4 0 0 0 0
+304 4 0 0 0 2
 D0
 There is an arch to the north.
 ~
@@ -166,7 +166,7 @@ The Atrium and Gardens~
 catch the sun's rays coming in from the open sky.  The smell of rich dark earth
 overwhelms your senses, and a small brook winds beneath your feet.    
 ~
-304 0 0 0 0 0
+304 0 0 0 0 2
 D0
 You see a room in the temple.
 ~
@@ -463,7 +463,7 @@ The Balcony~
    You sense that you have reached journey's end.  The balcony overlooks a
 great grassy field.  The sun's rays blind you, and you hear a snort.    
 ~
-304 0 0 0 0 0
+304 0 0 0 0 1
 D0
 You see the Bull's Chamber.
 ~

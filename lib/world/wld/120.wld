@@ -66,7 +66,7 @@ everywhere and the smell makes you want to puke.  Stairs lead up to Caesar's
 private box, a small ramp leads down to the playing field and a hallway 
 leads south.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D2
 You see a small hallway that leads to a larger area.
 ~
@@ -96,7 +96,7 @@ here are made of stone and are probably centuries old.  A few scratches on
 one of the benches catch your eye.  An acrid smell is coming from the east
 and a tunnel leads off to the north.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 The tunnel looks like it leads to another seating area.
 ~
@@ -121,7 +121,7 @@ bars, it hasn't been open for years.  Looking through the gate at the barren
 landscape that lies beyond, you can see why.  A dirt road leads off to the east,
 and a store is directly south.  
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D1
 Through the clouds of dust, you can make out a passable road.
 ~
@@ -197,7 +197,7 @@ on here; just bare dirty stone.  The view of the surrounding country is
 spectacular.  Unfortunately you can barely see the playing field.  There is
 a set of steps here, leading down.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D5
 Watch your step!
 ~
@@ -218,7 +218,7 @@ up in preparation for the games.  The dust rising from the parched earth makes
 you want to sneeze.  A short tunnel leads east and the thunder of pounding
 hooves and the clash of weapons can be heard coming from the south.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 2
 D1
 There is a large oval dirt-track in that direction.
 ~
@@ -257,7 +257,7 @@ The Jousting Arena~
 skewered by a gladiator's lance as he makes his charge.  A practicing
 area is due north.
 ~
-120 4 0 0 0 0
+120 4 0 0 0 2
 D0
 Through a small tunnel you can see athletes stretching and warming up for
 the games.
@@ -306,7 +306,7 @@ A Dirt Road~
    You are on a parched and dusty rural road which runs east and west.  There
 is a structure lying to the south.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 2
 D1
 Through the dust, you see a paved road.
 ~
@@ -394,7 +394,7 @@ prints everywhere, and you see a large cloud of dust approaching.  You had
 better move before you get run over.  A small tunnel leads west, you can see
 the crowd to the east.  You can hear loud snarls and roars coming from below.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 2
 D3
 You see athletes warming up and stretching.
 ~
@@ -433,7 +433,7 @@ statue of Caligula the Mad Emperor overlooks the area.  There are long
 lines standing to the east, and an acrid smell is coming from the west.
 A busy road lies to the south.
 ~
-120 4 0 0 0 0
+120 4 0 0 0 1
 D1
 The lines are very long and people look impatient.
 ~
@@ -461,7 +461,7 @@ The Main Highway~
    This is a well built and heavily traveled road running from east to west
 and there is a large structure built entirely of stone to the north.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 You can hear the roar of a large crowd of people coming from that direction.
 ~
@@ -529,7 +529,7 @@ areas, this place could stand extensive renovation and a thorough cleaning.
 This area extends to the south and a much more elegant seating area can be
 seen to the west.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D2
 The common seating area continues.
 ~
@@ -548,7 +548,7 @@ games.  Like the other commoners' areas in the coliseum, it could use
 extensive renovation and cleaning.  This area extends to the north and
 lots of noise can be heard coming from the south.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 The common seating area continues.
 ~
@@ -568,7 +568,7 @@ Emperor of a time long since passed, stands here looking out over the crowd.
 There is a passage to the north, the ticket booth is to the south and a gate 
 opening to the city lies to the east.
 ~
-120 4 0 0 0 0
+120 4 0 0 0 1
 D0
 You see rows upon rows of dilapidated wooden bleachers.
 ~
@@ -621,7 +621,7 @@ A Paved Road~
 looking estate to the south and to the north-west, off in the distance, you
 can see a very large stone structure.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D1
 The road leads off to the east.
 ~
@@ -653,7 +653,7 @@ situated to enhance and adorn the three statues of dedicated to gods Jupiter,
 Venus and Neptune.  A tranquil path leads east and west, there is a paved road
 to the north and an extravagant house lies to the south.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 2
 D0
 You see a paved road in the distance.
 ~
@@ -734,7 +734,7 @@ The Great North Gate~
 to be closed and locked against intrusion.  A large road muddy road runs
 through the gate and into the countryside.  Nero Drive runs south from here.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 The gate is made of solid iron and is well maintained.
 ~
@@ -760,7 +760,7 @@ Nero Drive~
 A great gate is directly north of here.  The Roman citizens are very friendly
 and tip their hats or say hello as you pass.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 To the north, you can see a gate leading out of the city.
 ~
@@ -785,7 +785,7 @@ to say hello.  Most of the people are either coming from or going to the
 town square.  Nero Drive continues to the north, and you can see a large
 open area to the south.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 Nero drive continues in that direction.
 ~
@@ -813,7 +813,7 @@ southeast, off in the distance, you can see the aqueduct and the buildings
 of the Roman government lie to the northwest.  Nero Drive leads north and
 south from here and Clay Avenue runs east.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 Nero Drive heads in the direction of the northern gate.
 ~
@@ -850,7 +850,7 @@ them are either coming from or going to the town square which lies to the
 north.  Nero Drive continues to the south.  There is an observation area
 overlooking the aqueduct to the east and a paved road leads west.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 The town square lies in that direction.
 ~
@@ -880,7 +880,7 @@ the city lies to the south and a small path goes west towards a nobleman's
 estate.  To the east, off in the distance, lies the great mountain.  It is
 rumored that the Gods watch over and protect the empire from there.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 Nero Drive leads in that direction.
 ~
@@ -905,7 +905,7 @@ closed and locked.  Looking through the bars, you see a heavily traveled
 road leading out of the city.  Nero Drive starts here and runs north and
 a wizard's shop lies to the east.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 Nero Drive leads towards the center of town.
 ~
@@ -1014,7 +1014,7 @@ Clay Avenue~
 heart of Rome.  There are large crowds of people to the west and the road
 continues to the east.  The aqueduct is directly south of here.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D1
 Clay Avenue continues in that direction.
 ~
@@ -1044,7 +1044,7 @@ hear the gurgle of water as it is channeled into the city.  Off in
 the distance, you can see the Mountain of the Gods.
 There is a sign mounted to the railing and a ramp leads west.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D3
 You can see a busy street in that direction.
 ~
@@ -1203,7 +1203,7 @@ Building.  There are several statues, none of any real significance,
 at the entrance to the building.  The main entrance to the building
 is at the top of the steps.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D4
 The steps lead into the Capitol Building.
 ~
@@ -1230,7 +1230,7 @@ through the heart of the city.  There are marble steps leading up.  To the
 south, off in the distance, you can see a large stone structure and a mountain
 that is partially obscured by the haze.  There is a general store to the north.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D0
 The general store lies in that direction.
 ~
@@ -1395,7 +1395,7 @@ eastern side of the city.  The gate is currently open and to the east,
 there is a heavily used road, made of packed clay, that leads out of Rome. 
 Another road leads westward into the city.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 1
 D1
 The clay road heads eastwards.
 ~
@@ -1571,7 +1571,7 @@ through the valley and enters a large stone structure that lies to the west.
 There are birds singing and every now and then a ripple breaks the surface
 of the stream.  You can see a path leading through the trees to the up.
 ~
-120 0 0 0 0 0
+120 0 0 0 0 4
 D0
 A small path winds its way through the trees.
 ~
@@ -1689,7 +1689,7 @@ abreast.  It is packed hard through heavy use.  To the west stands the
 Gates of Rome inviting you to enter and partake of all the glory and
 splendor that is Rome.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 1
 D1
 ~
 ~
@@ -1705,7 +1705,7 @@ Clay Road~
 abreast.  It is packed hard through heavy use.  To the west, your eyes
 catch the splendors of a mighty city.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 1
 D1
 ~
 ~
@@ -1720,7 +1720,7 @@ Clay Road~
    You travel upon an East-West road wide enough for 30 men to march
 abreast.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 1
 D1
 ~
 ~
@@ -1736,7 +1736,7 @@ The End Of The Clay Road~
 here.  You feel a surge run through your body as you look East into the
 lands that Rome turned into its mighty empire.
 ~
-120 8 0 0 0 0
+120 8 0 0 0 1
 D1
 A dirt trail leads towards the desert to the east.
 ~
@@ -1758,7 +1758,7 @@ there is a city or settlement in that direction.
    You cannot see any breaks in the horizon of the sand which fills your
 vision as you look to the east, it seems to stretch forever.
 ~
-120 4 0 0 0 0
+120 4 0 0 0 1
 D1
 The expanse of the Great Eastern Desert opens up before you.
 ~

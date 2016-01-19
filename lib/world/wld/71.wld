@@ -6,7 +6,7 @@ The air is damp and the rock on which you stand is slippery.  The pool
 seems too dark to make anything clear.  The pool seems to extend to the
 east.  The rock can be climbed upwards from here.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D1
 The pool extends eastwards, but you cannot find enough room to move in that
 direction.
@@ -26,7 +26,7 @@ smell the foul stench of the slimy sediment as you try not to get covered
 by the falling sludge.  To the east there is an entryway leading out from
 here and it seems absolutely impossible to force the muddy descent.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D1
 East.  You see nothing of interest.
 ~
@@ -43,7 +43,7 @@ Under The Dark Pit~
 with only two exits, up and east.  A tall ladder has been left here so
 that you can climb up through the pit without the use of a rope.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 1
 D1
 ~
 ~
@@ -70,7 +70,7 @@ A Muddy Bend In The Sewer System~
 sewer.  The 'floor' is covered completely by mud!  This includes covering
 your legs up to your knees as well.  The pipe leads west and south.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 4
 D2
 To the south there is less mud than here!  It actually seems to end there!
 You have a felling it would be nice to have your feet free from mud again.
@@ -94,7 +94,7 @@ A Junction In The Sewer Pipes~
    You stand in the middle of what looks like a triple junction of pipes
 going east, west and north.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 1
 D0
 You can see a mud area starting in that direction.
 ~
@@ -118,7 +118,7 @@ up.  The only secure point here is the metal bars that are cemented into the
 sides, the ones that you cling frantically to so that you don't fall.  Who
 knows how deep this well is?  The bars lead down and up and nowhere else.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 5
 D4
 There is a slight, dim light from above, or maybe it is just your imagination.
 Anyway it SEEMS darker down here than up there, if that is possible.
@@ -146,7 +146,7 @@ safe, solid ledge under your feet.  The ledge continues to the east but not
 back south.  It seems that the ledge is too narrow to turn on so you'll have
 to continue forward.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D1
 The ledge continues east.
 ~
@@ -186,7 +186,7 @@ there is no way of turning around on this all too narrow path.  There IS
 another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D0
 North.  The ledge leads into a corner and turns eastward.
 ~
@@ -211,7 +211,7 @@ there is no way of turning around on this all too narrow path.  There IS
 another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D0
 North.  The ledge leads further north.
 ~
@@ -236,7 +236,7 @@ there is no way of turning around on this all too narrow path.  There IS
 another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D0
 North.  The ledge leads further north.
 ~
@@ -261,7 +261,7 @@ there is no way of turning around on this all too narrow path.  There IS
 another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D0
 North.  The ledge leads further north.
 ~
@@ -285,7 +285,7 @@ The Southwestern Corner Of The Ledge~
 the north of here.  The ledge seems to lead around some sort of Abyss of
 total darkness.  The ledge seems to have an odd-looking edge here.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D0
 North.  The ledge leads further north.
 ~
@@ -330,7 +330,7 @@ don't resemble pipes anymore.  They look more like a real stone tunnel,
 or a passageway hewn directly into the rock.  The ways from here lead
 north, east and west.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 1
 D0
 North.  You see a ledge to something that looks like an abyss.
 ~
@@ -352,7 +352,7 @@ there is no way of turning around on this all too narrow path.  There IS
 another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D1
 The ledge leads further east.
 ~
@@ -384,7 +384,7 @@ has an exit going to the south.  Though you could jump into mid-air,
 but it probably wouldn't be such a good idea.  The way south is in
 utter darkness.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 4
 D0
 ~
 ~
@@ -408,7 +408,7 @@ The Northeastern Corner Of The Ledge~
 safe, solid ledge under your feet.  The ledge continues to the west and
 leads south from here into darkness.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D2
 ~
 ~
@@ -446,7 +446,7 @@ another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.  And THAT is west of here
 so watch your step.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D2
 The ledge leads further south.
 ~
@@ -467,7 +467,7 @@ another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.  And THAT is west of here
 so watch your step.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D2
 The ledge leads further south.
 ~
@@ -488,7 +488,7 @@ another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.  And THAT is west of here
 so watch your step.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D2
 The ledge leads further south.
 ~
@@ -509,7 +509,7 @@ another exit from here but that leads right into mid-air and with high
 probability of a free fall session afterwards.  And THAT is west of here
 so watch your step.  You also see a small opening to the east.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D1
 East.  You stare into darkness.
 ~
@@ -533,7 +533,7 @@ The Southeastern Corner Of The Ledge~
 north of here.  The ledge seems to lead around some sort of abyss of total
 darkness.
 ~
-71 13 0 0 0 0
+71 13 0 0 0 5
 D0
 North of here you can see a ledge.
 ~
@@ -586,7 +586,7 @@ Under The Shaft~
    A ladder leads up from here to the Shaft.  A small opening leads west
 from here.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 5
 D3
 You can see a narrow ledge going north and south.
 ~
@@ -603,7 +603,7 @@ The Sewer Line~
    You are in a narrow part of the sewer.  Down the sewer continues and to
 the north is the ledge.
 ~
-71 9 0 0 0 0
+71 9 0 0 0 3
 D0
 You can see the southern part of the ledge.
 ~

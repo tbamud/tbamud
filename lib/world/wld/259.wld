@@ -7,7 +7,7 @@ home in the midst of a forest such as this is beyond your comprehension.  Be
 careful on those steps, they are old and gray and appear to be rotted in many
 places.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D0
 ~
 ~
@@ -44,7 +44,7 @@ Northeast Corner of the House~
 things that appear to be just about to fall into decay.  Listening for any sound
 from within the house reveals nothing, it appears that it may be deserted.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D2
 ~
 ~
@@ -62,7 +62,7 @@ be deserted, however you still have the sensation of being watched.  You cannot
 see any sort of entrance from here, save the windows, and just in case someone
 does live here, it would be best to leave those windows intact.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D0
 ~
 ~
@@ -82,7 +82,7 @@ Northwest Corner of the House~
 must be the doors that lead into the cellar.  No other entrances are visible to
 you from your current vantage point.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D1
 ~
 ~
@@ -100,7 +100,7 @@ mostly chipped or worn away, leaving the doors a sort of dirty, brown and white
 and gray combo color.  Leaves blow past you, the breeze which carries them
 smelling of something familiar - almost like blood.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D0
 ~
 ~
@@ -125,7 +125,7 @@ The walls of the house are of chipped wood siding, the paint that once covered
 the walls flaking and peeling,completely gone even in some places.  You cannot
 see any other ways into the house from here except the cellar.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D0
 ~
 ~
@@ -143,7 +143,7 @@ type which is built for politicians or persons of extreme wealth.  It has long
 since fallen into decay - a crumbling, wasted ruin.  There could be no chance
 that anyone might still live here - could there?  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D1
 ~
 ~
@@ -165,7 +165,7 @@ enter into this place?  There is obviously no one living here anymore - at least
 it seems that way.  You hear a small skittering and a thump from within.  
 Probably just a rat or a squirrel.  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D0
 ~
 ~
@@ -646,7 +646,7 @@ way the entire structure sways beneath you as you climb to the front door, you
 wonder if maybe this wasn't a bad idea.  Better hurry up that front door and get
 inside before the whole thing collapses!  
 ~
-259 0 0 0 0 0
+259 0 0 0 0 3
 D4
 ~
 ~
@@ -662,7 +662,7 @@ Top of the Steps at the Front Door~
 creak and groan under your weight, swaying with every step that you take no
 matter how careful you are.  
 ~
-259 4 0 0 0 0
+259 4 0 0 0 3
 D3
 ~
 door~
@@ -770,7 +770,7 @@ It must be told that many an adventurer has turned from this cellar in fear,
 without humiliation or any feelings of inadequacies - this is not a pleasant
 place.  
 ~
-259 4 0 0 0 0
+259 4 0 0 0 3
 D4
 ~
 door~

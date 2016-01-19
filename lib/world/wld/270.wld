@@ -17,7 +17,7 @@ S
 The Foothills~
    You stand in the foothills surrounding the Icy-Mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -32,7 +32,7 @@ The Foothills~
    You stand in the foothills of the Icy-Mountain.  The mountain 
 rises high towards the sky immediately south of here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -47,7 +47,7 @@ The Foothills~
     You stand in the foothills of the Icy-Mountain.  The mountain 
 rises high towards the sky immediately south of here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -62,7 +62,7 @@ The Foothills~
    You stand in the foothills of the Icy-Mountain.  The mountain 
 rises high towards the sky immediately south and west of here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D2
 ~
 ~
@@ -101,7 +101,7 @@ The Foothills~
    You stand in the foothills of the Icy-Mountain.  The mountain 
 rises high towards the sky immediately east of here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -187,7 +187,7 @@ The Foothills~
    You are in the foothills surrounding the Icy-mountain, which 
 rises towards the sky just west of you.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -254,7 +254,7 @@ The Foothills~
 is a mountain trail leading up along the side of the mountain 
 east of you.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -355,7 +355,7 @@ S
 The Foothills~
    You are in the foothills east of the Icy-mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -370,7 +370,7 @@ The Foothills~
    You are in the foothills.  There is a mountain rising to your 
 easthand side.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -385,7 +385,7 @@ The Foothills~
    You are in the foothills surrounding the Icy-mountain.  There 
 is a trail leading up the montain north of here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -408,7 +408,7 @@ The Foothills~
    You are in the foothills surrounding the Icy-mountain.  There 
 is a path leading up along the mountainside north of you.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -426,7 +426,7 @@ S
 The Foothills~
    You are in the foothills surrounding the Icy-mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -440,7 +440,7 @@ S
 The Foothills~
    You are in the foothills surrounding the Icy-mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -458,7 +458,7 @@ S
 The Foothills~
    You are in the foothills surrounding the Icy-mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D2
 ~
 ~
@@ -487,7 +487,7 @@ The Wasteland Hills~
    You are in some completely wasted, tiresome, boring and 
 totally ugly hills.  There are some droppings left here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -511,7 +511,7 @@ The Wasteland Hills~
 north you barely make out the contours of a pointy mountain and 
 its foothills.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -526,7 +526,7 @@ The Wasteland Hills~
    You are on a path in the hills.  Apart from down to the south 
 there is nothing but brown, dull and wasted hills surrounding you.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D1
 ~
 ~
@@ -547,7 +547,7 @@ hills.  North of here you can barely make out the shape of
 a pointy mountain with some rather large foothills just in
 front of it.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -565,7 +565,7 @@ S
 The Foothills~
    You are in the foothills surrounding the mountainside.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -603,7 +603,7 @@ The Foothills~
    You are in the foothills surrounding the mountain.  A large
 claymore is lying on the ground here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -622,7 +622,7 @@ The Wasteland Hills~
    You are surrounded by smooth hills right in the middle of 
 absolute nowhere.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -637,7 +637,7 @@ The Wasteland hills~
    You are on a little path leaing through the smooth, brown hills 
 of complete waste.  Right beneath you is some wasteland fields.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -655,7 +655,7 @@ S
 The Wasteland Fields~
    You are on the wast, wasted fields in the middle of nowhere.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D1
 ~
 ~
@@ -670,7 +670,7 @@ The Wasteland Fields~
    You are on the vast, wasted fields in the middle of nowhere. 
 Above you is quite clearly some hills.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D2
 ~
 ~
@@ -689,7 +689,7 @@ S
 The Foothills~
    You are in the foothills.  Where else?
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -704,7 +704,7 @@ The Foothills~
    You are in the foothills.  North of here a small path is finding 
 its way up along the Icy-mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -722,7 +722,7 @@ S
 The Foothills~
    You are in the foothills surrounding the large pointy Icy-mountain.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 4
 D0
 ~
 ~
@@ -736,7 +736,7 @@ S
 The Wasteland Fields~
    You are in the brown, tiresome fields.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D2
 ~
 ~
@@ -750,7 +750,7 @@ S
 The Wasteland Fields~
    You are surrounded by fields!!!
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D0
 ~
 ~
@@ -768,7 +768,7 @@ S
 The Wasteland Fields~
    You are on a large field which do not seem to have an end to it.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D2
 ~
 ~
@@ -782,7 +782,7 @@ S
 The Wasteland Fields~
    You are on a large field.  Is there possibly an end to it??
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D0
 ~
 ~
@@ -797,7 +797,7 @@ The Wasteland Fields~
    You are on a large field, which as you clearly can tell is 
 nothing but waste.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D1
 ~
 ~
@@ -812,7 +812,7 @@ The Wasteland Fields~
    You are on a humongous, almost corroded field.  There is a little
 stalk of wheat growing here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D0
 ~
 ~
@@ -834,7 +834,7 @@ S
 The Wasteland fields~
    You are on a vast field and it sure is vast.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D0
 ~
 ~
@@ -852,7 +852,7 @@ S
 The Wasteland Fields~
    You are in the fields to your utter dissatisfaction.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D2
 ~
 ~
@@ -866,7 +866,7 @@ S
 The Wasteland Fields~
    You are in some fields.  They do not look fertile at all.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D0
 ~
 ~
@@ -880,7 +880,7 @@ S
 The Wasteland Fields~
    You are in waste which happens to have the form of fields.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D2
 ~
 ~
@@ -895,7 +895,7 @@ The Wasteland Fields~
    You are in the middle of a large, brown field, not nice 
 looking, but it just isn't.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D1
 ~
 ~
@@ -907,7 +907,7 @@ The Wasteland Fields~
 in complete waste.  Only some aufwuchs on a stone seem to be able 
 to exist here.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D1
 ~
 ~
@@ -928,7 +928,7 @@ ground with the sound of a soft howl.  The vegetation seem to have
 lost the battle to some greater force as it gradually disappears 
 towards the east.
 ~
-270 0 0 0 0 0
+270 0 0 0 0 2
 D0
 ~
 ~

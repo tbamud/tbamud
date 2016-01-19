@@ -66,7 +66,7 @@ People walk to and fro carrying on their day to day business.  The
 Common Square of the people opens up to the south and the Medina
 continues north.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 You see Medina.
 ~
@@ -86,7 +86,7 @@ other such riff-raff wander about hoping to catch those few who
 with open hearts.  The Medina continues to the south and the
 Market Square spreads out to the north.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 You see Market Square.
 ~
@@ -106,7 +106,7 @@ The only hope of making any sense of what is going on here is to wander
 around.  Market Square continues north, west, and east, with the Medina
 trailing off th the south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -130,7 +130,7 @@ The Center Of Market Square~
 of New Thalos.  A large, peculiar looking statue is standing in the
 middle of the square.  The square extends in every direction.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -161,7 +161,7 @@ tower over you.  It is easy to understand why they hang out here once you
 notice the weapon shop and the armoury close by.  Perhaps you might stop
 in and take a look at the wares these shops have to offer.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -187,7 +187,7 @@ South you see the bread stand and west is the entrance to the general
 store.
    The market's sprawl continues east and north of here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -216,7 +216,7 @@ business in the northern end.
    West Main street begins here and heads for the gate, the market's 
 expanse fills the other directions.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -242,7 +242,7 @@ as it passes through the city.  Ishtar drive heads east and west from here
 and the Medina is to the north.  South lies the River Ishtar Bridge and the
 southern gate.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 You see the medina.
 ~
@@ -271,7 +271,7 @@ desert.
    To the south lies the desert and the city of New Thalos is
 to the north.
 ~
-54 4 0 0 0 0
+54 4 0 0 0 1
 D0
 ~
 gate~
@@ -287,7 +287,7 @@ The Southern Bridge~
 Ishtar.  To the south you see the Southern Gate of New Thalos and
 the Common Square stretches out to the north
 ~
-54 4 0 0 0 0
+54 4 0 0 0 1
 D0
 ~
 ~
@@ -309,7 +309,7 @@ of New Thalos.  The makers of the city spared no expense in rebuilding
 the defenses or their home.  The River Ishtar bridge lies to the north
 and the desert to the south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -326,7 +326,7 @@ in New Thalos.  To the north lies the humble store of the merchant
 Ahkeem, his weavings known to be the best in the city.  West of here
 is the entrance to the First Royal Bank of New Thalos.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -350,7 +350,7 @@ Northern Market Square~
 lies the Palace of New Thalos and the Casbah, east west and south of here
 the busy market thrives with life.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -376,7 +376,7 @@ quiet enough so you have to assume the noise comes from the Butchery.
 You have to think for a while before you muster the will to enter this
 shop.  The market continues to the south and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -401,7 +401,7 @@ market is the hub of the city, all trade and commerce of any significance
 is carried on here.  The market spreads out in all directions save east,
 here Main Street heads for the easter gate.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -425,7 +425,7 @@ Sultan's Walk~
 will take you by the Palace and the Dancing Daemon Inn, and south will put
 you on Market Square.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -443,7 +443,7 @@ small window into the Daemon, seeing many people dancing and drinking.
 After you tend to your other chores you plan on visiting the Daemon.
    The walk continues north and south from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -461,7 +461,7 @@ hear the faint sound of trumpets announcing the arrival of some duke or
 duchess to the Palace.  Safe haven awaits you to the east in the halls
 of the Daemon, and Sultan's Walk continues north and south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -486,7 +486,7 @@ by the walls of the Palace and the Daemon.  To the north you see
 the heavily guarded gate and can make out faint sounds of trade
 to the south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -505,7 +505,7 @@ in rebuilding the defenses of their home.
    Sultan's Walk runs to the south and the Casbah stretches out east
 and west.  To the north is wilderness.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 gate~
@@ -533,7 +533,7 @@ of this city spared no expense in protecting their home.
 beckons from the west.  To the south lies the entrance the Warriors'
 Guild.
 ~
-54 4 0 0 0 0
+54 4 0 0 0 1
 D1
 ~
 ~
@@ -553,7 +553,7 @@ West Main Street~
 hear the hammering of the repair shop and to the north is the grassy
 field known as Temple Square.  Main street continues east and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -578,7 +578,7 @@ fixing a pothole.  The road here branches off north and south into
 two alleys behind the stores of the market.  The main street continues
 east and west from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -604,7 +604,7 @@ commerce taking place.  The air is filled with the smell of gold and
 riches.
 On the wall of the store is a poster.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -625,7 +625,7 @@ East Main Street~
 and, hear the pounding of new metal from the armory.  The Square is
 to the west and a junction is to the East.  
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -642,7 +642,7 @@ of Guildsman Row.  To the South is a dark alley.  The road also
 continues to the East.
 There is a small sign on a wire hanging across the junction.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -678,7 +678,7 @@ you see the open doors of the apothecary shop where one may buy many
 magical livations.
    Main Street continues east and west from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -702,7 +702,7 @@ East Main Street~
 westward towards the marketplace.  One of the main gates can be seen
 to the east and Braheem's Magic Shop awaits your business to the north.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -726,7 +726,7 @@ of this city spared no expense in protecting their home.
 beckons from the east.  To the north lies the entrance to the Mages'
 Guild.
 ~
-54 4 0 0 0 0
+54 4 0 0 0 1
 D0
 ~
 ~
@@ -759,7 +759,7 @@ and forth from the docks to the warehouse carrying large crates loading
 and unloading the boats as they sail down the river.  To the north is
 one of the entrances of the warehouse and West Ishtar leads east.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -776,7 +776,7 @@ their business of loading and unloading the boats.  An entrance to one
 of the huge warehouses of New Thalos is to the north and the River Ishtar 
 quietly flows by to the south.  Ishtar Drive continues east and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -797,7 +797,7 @@ the boat ramp.  Catching your balance as you start to slide on the slick
 pavement you grab on to the handrail someone has conveniently placed here.
    To the north is the Shipwright and Ishtar Drive continues east and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -822,7 +822,7 @@ present on your skin.  Orders and sometimes curses can be heard from
 the west in the direction of the warehouses.  The common square opens
 up to the east and Ishtar Drive continues west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -840,7 +840,7 @@ to you with big eyes and, as you return his gaze, runs off down the road.
    The common square can be seen to the west and Ishtar Drive continues
 to the east.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -860,7 +860,7 @@ East Ishtar Drive~
 here, bordered only by the hay-loft to the north and the River Ishtar to
 the south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -877,7 +877,7 @@ that you have reached the stables.  Arabian stallions as well as many
 other  fine breeds of horses can be purchased for a price.  Ishtar Drive
 continues east and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -898,7 +898,7 @@ that begins here and heads north.  Sounds of loud drunken folk and
 the occasional screaming cat emenate from the direction.  Luckily
 you have the choice of going east or west down the drive as well.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 You see murky darkness.
 ~
@@ -921,7 +921,7 @@ and wide selection of aquarian delicacies you wonder how much longer
 you can endure the smell!  The River Ishtar flows alongside to the
 south with the drive running along side it east to west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -942,7 +942,7 @@ a hint of your location.  The River Ishtar flows south of you, but looks
 crystal clear, so it cannot be the source of this putrid smell.
 Looking north you notice a small sign hanging over the dump.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -965,7 +965,7 @@ Ishtar.  Boats are moored to the docks here awaiting their masters to
 return from the warehouses and the pubs.  The waters of the River Ishtar
 lap at your feet to the south and Ishtar Drive is to the north.
 ~
-54 4 0 0 0 0
+54 4 0 0 0 1
 D0
 ~
 ~
@@ -982,7 +982,7 @@ jailhouse of New Thalos.  Hopefully you won't ever see this structure from
 the inside.  The northwest tower stands here with a spiral staircase 
 leading up.  The Avenue ends here, only exiting to the east.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1005,7 +1005,7 @@ marble stairs rise towards the entrance of city hall surrounded by
 massive white pillars.
    The Avenue continues east and west from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1026,7 +1026,7 @@ along it in that direction.  West of here you see the steps of the City
 Hall and notice the increase in the number of guards.
    To the east the Avenue continues.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1046,7 +1046,7 @@ The Casbah~
 at the guards walking along the wall keeping watch.  South of you stands
 the great walls of the Palace and the Avenue goes east and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1061,7 +1061,7 @@ The Casbah~
    The cobblestone pavement runs along the north wall here.  South of you
 stand the great walls of the Palace and the Avenue goes east and west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1078,7 +1078,7 @@ to and fro with stern intent, and older gentleman swagger down the street
 towards the Library.  To the west you can see the tall towers of the
 northern gate, and the Avenue continues east.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1096,7 +1096,7 @@ stone and look up to see a large, strong guard looking out to the north.
    To the east lies the intersection on Guildsman's Row and the northern
 gate is a short walk to the west.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1114,7 +1114,7 @@ and the smoke rising from the smithy all rush up to greet you.
   The Avenue continues east and west from here and the Row leads
 south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1135,7 +1135,7 @@ Masons' Guild.  Young children with their nannies walk around enjoying
 the saftey of the city.
    The Avenue runs east and west from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1154,7 +1154,7 @@ few old men hobbling on canes and young men intent on studies are
 the only travelers of the path to the library on a regular basis.
    The Avenue continues east and west from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D1
 ~
 ~
@@ -1171,7 +1171,7 @@ that direction will take you to the Library and the grand dance hall of
 the city.
    The northeast tower of the wall is accessible here up a spiral staircase.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D2
 ~
 ~
@@ -1192,7 +1192,7 @@ can be entered through the door to the west and the Casbah begins its
 journey a little ways north of here.  The Row and the entrance to the
 dancehall is to the south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1213,7 +1213,7 @@ hall of New Thalos.
    The entrance to the hall is to the west and the Row continues
 northward.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1227,7 +1227,7 @@ S
 Underground~
    The small passage continues north and south.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D0
 ~
 ~
@@ -1242,7 +1242,7 @@ Alley~
    This is a dark alley running between the Palace and City Hall.  Not a
 lot here, unless you're partial to spiders and rats.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1256,7 +1256,7 @@ S
 Alley~
    The alley ends here.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D0
 ~
 ~
@@ -1276,7 +1276,7 @@ are made.  Along this particular stretch of the row lie the Boyer/
 Fletcher to the west and the Masons' to the east.
    The Row leads off to the south and East Casbah is to the north.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1300,7 +1300,7 @@ Guildsman's Row~
 to the east stands the Craftsmans' Guild.  The row of guilds continues
 north and south from here.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1325,7 +1325,7 @@ Guild, to the west.  To the east is a beautifully sculpted marble door
 allowing entrance to the Museum of the Greater Gods.
    The Row of Guilds leads north and south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1350,7 +1350,7 @@ extra space to erect a shrine to their patron saints.  The result of
 this labor became the Museum of the Greater Gods.
    You may enter the sacred hall to the east.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1371,7 +1371,7 @@ guilds run merchandise from the guildhouses to the shops on Market
 Square.
    The guildhouses lie to the north and Main street is to the south.
 ~
-54 0 0 0 0 0
+54 0 0 0 0 1
 D0
 ~
 ~
@@ -1386,7 +1386,7 @@ Alley~
    Even with your light you cannot seem to penetrate the magical cloak of
 darkness covering this alley.
 ~
-54 5 0 0 0 0
+54 5 0 0 0 1
 D0
 ~
 ~
@@ -1401,7 +1401,7 @@ Alley~
    Even with your light you cannot seem to penetrate the magical cloak of
 darkness covering this alley.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D0
 ~
 ~
@@ -1420,7 +1420,7 @@ Alley~
    Even with your light you cannot seem to penetrate the magical cloak of
 darkness covering this alley.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D1
 ~
 ~
@@ -1439,7 +1439,7 @@ Alley~
    Even with your light you cannot seem to penetrate the magical cloak of
 darkness covering this alley.
 ~
-54 5 0 0 0 0
+54 5 0 0 0 1
 D0
 ~
 ~
@@ -1454,7 +1454,7 @@ Alley~
    This is a tiny corner in the alley.  The temple walls are north and
 west.  You notice a fair amount of footprints to the east.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D1
 ~
 ~
@@ -1473,7 +1473,7 @@ Alley~
    This is a dead end to the tiny alley.  There is an unusual amount of
 wear apparent on the ground.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D3
 ~
 ~
@@ -1490,7 +1490,7 @@ Alley~
 some shouting and general roadwork to the south.  The ground is rough
 and in need of repair.  In the road is a small pothole.
 ~
-54 5 0 0 0 0
+54 5 0 0 0 1
 D0
 ~
 ~
@@ -1509,7 +1509,7 @@ Alley~
    You are on a small alley between the repair shop and the general
 store.  Nothing much here but small rodents and dust.
 ~
-54 5 0 0 0 0
+54 5 0 0 0 1
 D0
 ~
 ~
@@ -1524,7 +1524,7 @@ Alley~
    This is a small corner in the alley behind the warehouses and the guild
 of warriors.  You notice some small scrapings to the west.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D0
 ~
 ~
@@ -1538,7 +1538,7 @@ S
 Alley~
    The alley ends here as do the footprints you had noticed earlier.
 ~
-54 1 0 0 0 0
+54 1 0 0 0 1
 D3
 ~
 ~
@@ -1554,7 +1554,7 @@ Underground~
    You are in a small underground passage beneath the city.  You see a
 small glint of light from above and the passage continues south.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D2
 ~
 ~
@@ -1568,7 +1568,7 @@ S
 Underground~
    The passage continues north and south.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D0
 ~
 ~
@@ -1582,7 +1582,7 @@ S
 Underground~
    The tunnel branches here going north, east, and west.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D0
 ~
 ~
@@ -1601,7 +1601,7 @@ Underground~
    The alley turns again here and heads south and west.  You notice a
 small glint of light from above.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D2
 ~
 ~
@@ -1621,7 +1621,7 @@ Underground~
 You also notice the clearing of dust on the ground but can't seem to
 find any door in that direction.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~
@@ -1631,7 +1631,7 @@ S
 Underground~
    The small passage continues north and south from here.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D0
 ~
 ~
@@ -1646,7 +1646,7 @@ Underground~
    The small passage heads north and east from here.  You here the sounds
 of the city above you.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D0
 ~
 ~
@@ -1665,7 +1665,7 @@ Underground~
    The tunnel continues you west and east.  Hopefully you have a good sense
 of direction.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~
@@ -1773,7 +1773,7 @@ A Dark Passage~
 to the west doesn't look quite right but searching it reveals no secret
 doors.  The only exit it seems is east.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~
@@ -1786,7 +1786,7 @@ notice something peculiar about the wall, this time to the north,
 but you fail to find any secret doors.  Voices can be faintly heard
 from the north.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~
@@ -1800,7 +1800,7 @@ S
 A Dark Passage~
    The small passage continues west and east from here.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~
@@ -1821,7 +1821,7 @@ A Dark Passage~
 you find a small ladder half buried in the dirt.  setting it up you find
 a trap door in the ceiling.  The passage continues west from here.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D3
 ~
 ~
@@ -1841,7 +1841,7 @@ S
 Underground~
    The small passage continues west and east.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~
@@ -1855,7 +1855,7 @@ S
 Underground~
    The small passage continues west and east.
 ~
-54 9 0 0 0 0
+54 9 0 0 0 1
 D1
 ~
 ~

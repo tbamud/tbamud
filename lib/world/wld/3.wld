@@ -6,7 +6,7 @@ smell.  The Hall is bare, only a few small paintings cover the walls.  Clerics
 have very little need for decorations of any kind.  A small waiting room is to
 the west.    
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -58,7 +58,7 @@ overturned leaving gaping holes.  No wagons travel down this part of the city.
 Everyone knows clerics have no need for anything besides what they can provide
 by themselves.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -75,7 +75,7 @@ packed dirt.  To the north one may enter the inner city towards the Temple of
 Sanctus or go south towards the southern gate.  The southern half of the city
 consists of the magi and clerics' quarters.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -92,7 +92,7 @@ where the inner city wall turns to the west.  This avenue runs deep within the
 Magi's Quarter.  Accidents have been known to happen around here.  People must
 be careful for who knows what an inexperienced student may do.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -109,7 +109,7 @@ sides of the hallway.  Depicted on these drawings are a myriad of creatures
 ranging from ogres, orcs, goblins, and demons to humans, elves, and dwarves.  
 One of the paintings looks oddly familiar.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -131,7 +131,7 @@ large copper tubs filled with hot water.  A large fire with pots of water
 heating over it fills the eastern wall.  These baths are only to be used by the
 magi whom believe cleanliness is next to godliness.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -152,7 +152,7 @@ from wall to wall.  Every rack is made precisely to standard, every sheet a
 pristine white, without even a speck of dust.  The Cleric's of Sanctus lead a
 disciplined life, second to none, not even the soldiers.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -170,7 +170,7 @@ Sanctus consider decorations, desires, or any form of unnecessary wants to be
 blasphemous.  They dedicate their lives to helping others, never themselves, and
 would all sacrifice their lives for that principle.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -191,7 +191,7 @@ on to the east.  A small road follows along the inner city wall just north of
 the Tower of the High Council which seems to glow because of its glaring
 brightness.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -212,7 +212,7 @@ Even those would be vandals, pickpockets, and thugs shy away out of their
 respect of the clerics.  To be a cleric is to be respected second only to that
 of the Master Magi.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -230,7 +230,7 @@ or maybe three times the average man's height.  One can just make out a small
 walkway on the top of the wall, too bad only the guards know where the entrance
 is.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -248,7 +248,7 @@ smaller.  Far up in the tower you can see people walking by windows in white
 flowing robes.  The healers within are known for their miraculous abilities in
 restoring the wounded.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -265,7 +265,7 @@ runs from the south gate directly to the heart of Sanctus inside the temple.  A
 few apprentice healers in flowing robes rush between the Temple and the Clerics'
 Quarters, no doubt on an errand from the Council.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -283,7 +283,7 @@ clerics' quarters lie to the west while the magi quarters are to the east.
 Within their centers rises the Tower of the High Council of Clerics and the
 Tower of the Magi respectively.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -308,7 +308,7 @@ surroundings and the underlying alley.  Within the tower lie many secrets that
 the average citizen is not privileged enough to be told about.  Rumours abound,
 especially about the Orb of Sanctum the gods left in the Master Magi's care.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -325,7 +325,7 @@ coming either from on top of the inner city wall to the north or from an open
 window of the Tower of the Magi south of here.  The voices are too low to be
 discernable.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -342,7 +342,7 @@ battlefields.  In case of an attack by superior numbers the citizens will fall
 back into the inner city as a last measure of defense.  Luckily, the army has
 been very successful in protecting the city and it has never come to that.    
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -359,7 +359,7 @@ it turns north along the Magi Avenue.  The Tower of the Magi still looms heavy
 over the surroundings oppressively.  The sounds of voices echo between the tower
 and the inner city wall, very disturbing.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -376,7 +376,7 @@ the inner city wall.  The Magi Mansion lies just to the east, so extravagant
 that it is almost at the point of becoming an eyesore.  The Tower contains the
 fabled Orb of Sanctum, but few are ever lucky enough to lay their eyes on it.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -398,7 +398,7 @@ in.  In the one infront of you the army of Sanctus stands on the verge of
 defeat, except for the constant bombardment of fireballs, lightning, and meteors
 hurled from the battlements by the Magi.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -419,7 +419,7 @@ as appetizers, and others in fine silver plates and containers.  The kitchen is
 cramped, too many things and too many people in one area.  The cooks look
 overworked and ready to revolt.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -441,7 +441,7 @@ so that one can give thanks for all that has been given in this simple room of
 prayer.  The walls are unadorned, everything looks to be plain and only used for
 its intended purpose.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -462,7 +462,7 @@ entire building.  The only source of light are lanterns spaced widely apart upon
 the walls which leave much of the hall in shadow.  The bare floor and walls show
 the lifestyle the clerics lead.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -484,7 +484,7 @@ inner city wall begins.  Many people come to this quarter to seek aid from the
 clerics, whether it be healing in the tower or to settle disputes within the
 Hall.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -501,7 +501,7 @@ Very few are selected for this great honor, and even fewer ever achieve a
 mastery in the art of restoring health.  Several of the older clerics are here
 bestowing their knowledge and wisdom to their students.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -517,7 +517,7 @@ A Training Room~
 gray-haired man who is drawing something on a board.  He often uses words of a
 different language that are very hard to follow and impossible to understand.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D1
 ~
 ~
@@ -538,7 +538,7 @@ is shivering in fright.  It seems to have broken its foot and the soon to be
 healers are practicing their skills on it.  Better than expirementing with live
 humans.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -560,7 +560,7 @@ boy to instantly fall asleep.  Another cleric takes the boys arm which has been
 badly bruised and possibly broken and begins chanting mysterious words.  The
 bruises fade away without a trace.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D2
 ~
 ~
@@ -577,7 +577,7 @@ and the oppressive Tower of the Magi.  This section of the city has a very
 solemn feeling overshadowing it.  The magic of healing on one side and the magic
 of power and destruction on the other.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -594,7 +594,7 @@ are held within this tower no matter what time of day.  The Magi are searching
 relentlessly for the next Master Magi.  They are short by two and the five
 existing are all old and nearly finished in their lives.    
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D1
 ~
 ~
@@ -611,7 +611,7 @@ Though the army is generally all that is required to handle most battles, the
 Magi are sometimes called upon to prevent heavy casualties or counter any
 magical abilities the attackers may possess.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D1
 ~
 ~
@@ -632,7 +632,7 @@ that upholds the balance within the city.  Mention of the Orb of Sanctus
 whispers around the room, and of how the gods bestowed it upon the Master Magi
 to preserve and protect.  Without the Orb the city would surely fall.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D1
 ~
 ~
@@ -653,7 +653,7 @@ small flickering ball of light.  The Master Magi casts a stern eye over anyone
 watching and motions them away.  No one disagrees with a Master Magi, at least
 no one that wishes to live.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D2
 ~
 ~
@@ -671,7 +671,7 @@ above the other buildings.  The Magi train young students within to take their
 place, but fewer and fewer meet the requirements and actually survive the
 training.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -689,7 +689,7 @@ the windows.  Rugs of the colors of the Magi line the floors.  Everything is
 spotless and well maintained.  Living here would be what many would consider as
 living the good life.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -707,7 +707,7 @@ extravagant life and hold themselves to be very prestigious and elegant.  No one
 would ever dare call them otherwise.  The hall is unkempt and bare of any
 furnishings.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -725,7 +725,7 @@ arranged assortments.  The rest of the room is filled with empty cots and bunks
 which are used to rehabilitate the injured if there are ever more casualties
 than the tower can hold.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -742,7 +742,7 @@ It is here the High Council convenes to help citizens solve minor disputes.
 The building is barren of any luxuries.  That is the way a cleric must live,
 without desires or wants.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -764,7 +764,7 @@ with multi-colored herbs swings in the gentle breeze.  The Tower rises far
 above, its two spires reaching almost as high as the Temple.  In contrast the
 hall looks very mundane.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -789,7 +789,7 @@ west.  The Tower is bathed in bright white light that reflects off every
 surface.  All around, the soft murmur of healers in training or going about
 their daily routine can be heard.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -814,7 +814,7 @@ tower towards the High Council's chambers.  Many famous healers reside within
 this tower's magical walls.  It is said that just by standing in certain rooms
 of the tower one can heal at unnatural rates.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -842,7 +842,7 @@ The Tower of the Clerics~
 around you is impressive in both size and stature.  Large white pillars support
 high domed ceilings of this spotless white room.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -872,7 +872,7 @@ entrance of the revered Tower of the High Council.  High above is where the
 councillors make many important decisions on how to uphold the welfare and
 health of the city.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -897,7 +897,7 @@ part of the road.  To the west the Tower of the High Council of Clerics, to the
 east the Tower of the Magi.  Both impressive structures were built by both
 master architects and the use of magic.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -922,7 +922,7 @@ oppression, as if something or someone is holding something deliberately back.
 A large doorway to the west leads to the Southern Road or it is possible to
 explore deeper into the temple to the east.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -947,7 +947,7 @@ tinge of sulphur hangs in the air, probably a spell that went haywire.
 Students roam the halls in deep thought, oblivious to the normal reality you
 live in.  Training Rooms lie in all directions.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -975,7 +975,7 @@ The Tower of the Magi~
 sounds of people chanting echo off the pitch black walls that almost appear
 depthless.  Most likely a simple trick of the eye, but then again, maybe not.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1005,7 +1005,7 @@ wood causes one to lose themselves as they peer further and further into the
 blackness.  It is impossible to tell if this is caused by magic or just a simple
 trick of the eye.  To the east is the center of the Magi Quarters.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1029,7 +1029,7 @@ The Magi Quarters~
 found when they are not guarding the orb is to the east.  Also nearby is the
 pure black Tower of the Magi which houses the sacred orb that protects the city.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1054,7 +1054,7 @@ style and design imaginable.  The Magi believe in a life of service to their
 discipline, but they also believe that they should be able to live in comfort.
 This building is one of the most elaborate within the entire city.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1076,7 +1076,7 @@ those who wish to study the fine art of magic to rest comfortably.  Several
 books lay open upon the tables.  Occasional trickles of smoke waft in from under
 the doorway to the east.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1097,7 +1097,7 @@ herbs required for the mixes and salves the clerics require.  They are rumoured
 to sometimes sell some of their remedies, though this is very rare and at a very
 steep price.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 door~
@@ -1110,7 +1110,7 @@ form of antiseptic stings in the air.  All the beds are empty, must be the
 healers here are well-versed in their craft.  The Temple continues to the north
 and west.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1127,7 +1127,7 @@ portraying a woman and children playing on a river's edge surround the edge of
 basin.  The water inside the basin is extremely clean and sterily, likely used
 by the the clerics to tend for the wounded.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1148,7 +1148,7 @@ the north, the center of the tower, holds a set of stairs leading higher up into
 the tower.  Small benches line the walls here, allowing people to rest from
 their adentures.  
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1169,7 +1169,7 @@ apprentice does what he can to aid these poor people, but it is obvious that
 many of them need to be attended to shortly by a real healer or else they may
 perish.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1186,7 +1186,7 @@ its polished surfaces reflecting all light down onto the Clerics' Quarters which
 it protects.  To the west the Tower of the Magi does the exact opposite, seeming
 to absorb all light surrounding it.  There must be balance in all things.  
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1203,7 +1203,7 @@ The smell of dust and musty old papers emanates from them.  Many centuries of
 knowledge lie within these books that were salvaged from the lands beyond.  
 Many more have yet to be found.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1220,7 +1220,7 @@ set of spiral staircases lead to the second floor.  The Orb of Sanctum is
 protected somewhere within this tower.  The Master Magi have been given the task
 of ensuring its safety.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1241,7 +1241,7 @@ fight in battles any longer.  They have instead devoted their time to training
 future Magi to take their places.  But, good students have become even harder
 to come by these days.    
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1263,7 +1263,7 @@ with various books.  This must be some sort of study room for the Magi.  The
 black walls seem to absorb the white light coming from strange bulbs hanging
 from the ceiling.    
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D0
 ~
 ~
@@ -1281,7 +1281,7 @@ bookshelves, tables and the floor of this under sized room.  It is here a vast
 amount of the Magi have left thei findings when delving into the depths of
 their magic.    
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 door~
@@ -1293,7 +1293,7 @@ The Southern Gate~
 well protected against an attack.  Lookouts can be heard above chatting idly
 while the sentinel guards stand at attention waiting to be called into action.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~
@@ -1315,7 +1315,7 @@ building with bales of hay stacked everywhere.  The horses can't reach the hay
 though they all seem to still try.  It is possible to buy a horse for a minimal
 fee, but not all of them are well tamed and have been known to become ornery.
 ~
-3 8 0 0 0 0
+3 8 0 0 0 1
 D1
 ~
 ~
@@ -1331,7 +1331,7 @@ will never be used by mortals. Although a pet shopkeeper is not required it is
 recommended. In order to implement a pet shop the actual mud code has to be
 modified. Just ask Rumble to do it for you. 
 ~
-3 1024 0 0 0 0
+3 1024 0 0 0 1
 S
 #365
 On the Window Ledge~
@@ -1340,7 +1340,7 @@ of the city.  A gust of wind howls past threatening to pull anything along with
 it.  The only exit is back into the tower or a deadly jump to the cobblestone
 road below.
 ~
-3 0 0 0 0 0
+3 0 0 0 0 1
 D0
 ~
 ~

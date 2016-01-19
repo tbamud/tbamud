@@ -5,7 +5,7 @@ cover the valley floor.  It would appear that not many have come here
 in ages.  To the west, the land rises to leave the valley.  To the
 east the vegetation clears to give way to a strange uprising of stone.
 ~
-300 4 0 0 0 0
+300 4 0 0 0 4
 D1
 The uprising looks like some huge beast set to pounce.
 ~
@@ -73,7 +73,7 @@ between its limbs and the huge oaks, dwarfed by the dragon itself,
 which have grown there.  A vague evil emanates from the once-alive
 stone that terrorized nations long ago.
 ~
-300 0 0 0 0 0
+300 0 0 0 0 4
 D1
 The huge maw lies frozen in midsnarl.  You could find enough purchase
 to scale the tongue and enter inside, should you want to.
@@ -352,7 +352,7 @@ dripping off stalactites far above.  Pools of acid fill every crevice
 on the craggy cavern floor.  The cavern continues to the south and
 east.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D1
 ~
 ~
@@ -368,7 +368,7 @@ The Acid Forest~
 jester's garb.  Puddles of weak stomach acid are pooled on the floor.
 The cavern stretches in all directions but north.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D1
 ~
 ~
@@ -388,7 +388,7 @@ The Acid Forest~
 dripping off stalactites far above.  Pools of acid fill every crevice
 on the craggy cavern floor.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D2
 ~
 ~
@@ -405,7 +405,7 @@ on the cavern floor is a forest of oddly shaped stalagmites surrounded
 everywhere by puddles of what must be the remnants of the dragons
 stomach acid.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D0
 ~
 ~
@@ -430,7 +430,7 @@ The Acid Forest~
 bridge passes far overhead.  Sharp stalagmites poise here to meet
 those who would drop from it.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D0
 ~
 ~
@@ -454,7 +454,7 @@ The Acid Forest~
 jester's garb.  Puddles of weak stomach acid are pooled on the floor.
 A steep climb up leads to a large plateau at the end of the cavern.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D0
 ~
 ~
@@ -478,7 +478,7 @@ The Acid Forest~
    Mists swirl around strange crystal egg shells here.  The cavern
 continues to the north and to the east.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D0
 ~
 ~
@@ -494,7 +494,7 @@ The Acid Forest~
 dripping off stalactites far above.  Pools of acid fill every crevice
 on the craggy cavern floor.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D0
 ~
 ~
@@ -514,7 +514,7 @@ The Acid Forest~
 jester's garb.  Puddles of weak stomach acid are pooled on the floor.
 The cavern stretches to the north and west.
 ~
-300 8 0 0 0 0
+300 8 0 0 0 4
 D0
 ~
 ~
@@ -821,7 +821,7 @@ faint path to the south, leading back around the dragon-hill.
 A skull-topped signpost flanks an unused road to the north.
 There is a large plot device blocking the way along the road to the north.
 ~
-300 4 0 0 0 0
+300 4 0 0 0 3
 D0
 A large plot device blocks the unused road to the north.
 ~

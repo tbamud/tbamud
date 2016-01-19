@@ -23,7 +23,7 @@ Pathway~
 with flowers of all colors.  The path takes you through a small forest of red
 leaved trees.  The towers are visible to the north.  
 ~
-117 4 0 0 0 0
+117 4 0 0 0 3
 D0
 ~
 ~
@@ -51,7 +51,7 @@ guards seem to be checking citizens as they enter.  There is a pathway that
 leads east to the second and seemingly taller tower.  This tower seems to be
 much wider than the other tower though.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D0
 ~
 ~
@@ -150,7 +150,7 @@ from one tower of Los Torres to the next.  The path has been travelled on by
 numerous people though it is still in very good shape.  The forest seems endless
 when peered into from here.  This area seems like a nice place to relax.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D1
 ~
 ~
@@ -610,7 +610,7 @@ some strange reason.  Citizens continue to walk past doing their own things and
 occasionally tripping on the various cracks in the path.  There seems to be a
 path to the south past the trees.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D1
 ~
 ~
@@ -645,7 +645,7 @@ why it could be such a bizarre color.  There are many brown footprints along the
 white tile, and the forest is still visible from here.  The sound of rummaging
 animals has been greatly overpowered by the sound of chatting people.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D0
 ~
 ~
@@ -685,7 +685,7 @@ forest is only slightly visible from here, and the tile of the path is clean and
 beautiful flowers line the sides.  The looming gray stone tower is to the north
 and the town plaza is to the south.  
 ~
-117 4 0 0 0 0
+117 4 0 0 0 1
 D0
 ~
 ~
@@ -711,7 +711,7 @@ spruced here and there with windows made of crystal clear glass.  The white
 pathway is kept nice and tidy for the citizens passing through.  The forest of
 red continues north even though the path ends here.
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D0
 ~
 ~
@@ -1243,7 +1243,7 @@ the statue downstairs is for.  There are little extended balconies to relax on
 to the north and to the south.  Other than that, the only place left to go is
 all the way back down.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D0
 ~
 ~
@@ -1271,7 +1271,7 @@ North Balcony~
 calm and there is an endless view of red trees from here.  The forest seems like
 it has so many mysteries...  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D2
 ~
 ~
@@ -1294,7 +1294,7 @@ town below is visible.  Citizens are talking, though the noise doesn't seem to
 echo all the way up to here.  There are a couple chairs here so that people can
 relax in them and take in the view.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 1
 D0
 ~
 ~
@@ -1362,7 +1362,7 @@ Path Behind the Tower~
 path, and to the south is the small opening that the firelace opened up.  The
 forest continues indefinitely in all directions otherwise
 ~
-117 0 0 0 0 0
+117 0 0 0 0 3
 D0
 ~
 ~
@@ -1379,7 +1379,7 @@ except for the tiny row to the south.  The light is totally blocked out from the
 thick canopy, and so is any vision upward.  It is now clear why this spot isn't
 visible from the towers.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 3
 D2
 ~
 ~
@@ -1462,7 +1462,7 @@ things attacking animals, and making them run around.  One stump off of the
 'path' is rather large compared to the other tree stumps.  There is a blockade
 of trees that seems to block any further movement.  
 ~
-117 68 0 0 0 0
+117 68 0 0 0 3
 D0
 ~
 forest~
@@ -1492,7 +1492,7 @@ the community.  A sign etched into a tree trunk reads 'Red Assassins'.  The tree
 trunks stretch up for a long distance and suddenly disappear within an
 impossibly thick canopy.  
 ~
-117 1 0 0 0 0
+117 1 0 0 0 3
 D0
 ~
 ~
@@ -1525,7 +1525,7 @@ side of the path are withered away and a bit dead but the source of the problem
 is not clear.  There is a small squirrel's nest in the branches of a lively tree
 placed over a peculiar patch of yellow sand on the ground.  
 ~
-117 65 0 0 0 0
+117 65 0 0 0 3
 D1
 ~
 ~
@@ -1585,7 +1585,7 @@ outside Los Torres is visible from here!  The 'wall' is enforced with rocks and
 covered with leaves to hide it from anyone seeing it.  The hole is strategically
 placed to maybe spy on anyone walking past.  
 ~
-117 0 0 0 0 0
+117 0 0 0 0 3
 D3
 ~
 ~

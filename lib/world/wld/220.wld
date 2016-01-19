@@ -433,9 +433,9 @@ plastic forks, spoons and thin saucers float around on the surface.
 There are metal utensils sunk to the bottom, though they are covered 
 in @Ggreen @gmold@y.  Unrecognizable chunks of food are also drifting past.@n
 ~
-220 8 0 0 0 0
+220 8 0 0 0 6
 D2
-@DA big cutting board lies to the south.  @n
+	DA big cutting board lies to the south.  	n
 ~
 ~
 0 0 22014

@@ -23,7 +23,7 @@ east you see the eastern highway.  The tents are crude, made of thick cloth and
 dyed green to blend in the shades.  Occasionally you hear the sound of a dove
 or a crow.  Oh yes, and of course the clang of sword against shield.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 The clearing continues.
 ~
@@ -37,7 +37,7 @@ planks and rough linen.  They have been dyed green so they blend in the
 surrounding forest.  North the clearing continues, while to the west and east
 are tents.  You can also go south to the eastern highway.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 The clearing continues.
 ~
@@ -91,7 +91,7 @@ bit larger than the rest, suggest which way to go talk to the Boss.  You can
 also enter a smaller tent with dagger symbol over the entrance to your east.  
 North and south the clearing continues.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 The clearing continues.
 ~
@@ -160,7 +160,7 @@ West of you is a small green tent made from crude planks and rough linen, while
 to the south the clearing continues, a wide path cuts into the forest to the
 north.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 ~
 ~
@@ -214,7 +214,7 @@ on the tent, just over the entrance.  To your south you see the side of a crude
 tent with green linen, and a dagger in relief painted on it, while west a
 thicket blocks your way.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 The tent is a dark shade of purple, and is very well hidden in the shade. 
 Near the entrance a small star has been painted with green paint.
@@ -317,7 +317,7 @@ Deep in the forest.~
    It's totally impossible to get any further into the woods.  All around you
 is dense forest, leaving only one direction to travel, namely back south.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D2
 You think you might be able to push through this way.
 ~
@@ -335,7 +335,7 @@ Behind the shubbery.~
 camp.  To your north you might be able to push through the undergrowth and get
 further into the forest, while both south and east the forest is too dense.  
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 You think you might be able to force your way through here.
 ~
@@ -353,7 +353,7 @@ A wide path through the forest~
 clearing, where some creatures can be seen moving between the trees, while to
 the north faint sounds of battle can be heard in the distance.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D0
 ~
 ~
@@ -370,7 +370,7 @@ the eastern and western side.  Small figures moving between the trees can be
 seen to the south, while lound noises of battle fill the air from the north,
 where the great gates of Hannah can be seen in the distance.    
 ~
-44 0 0 0 0 0
+44 0 0 0 0 3
 D2
 ~
 ~

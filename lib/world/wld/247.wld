@@ -4,7 +4,7 @@ A Gravel Road on the Graveyard~
 graveyard.  On both sides of the road, grave markers poke up out of the ground.
 An iron grate is to the north.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 1
 D1
 Headstones are arranged in neat rows to the east.
 ~
@@ -51,7 +51,7 @@ A Gravel Road on the Graveyard~
 graveyard.  Both sides of the road are lined with grave markers poking up out
 of the ground.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 1
 D0
 The gravel road continues northward.
 ~
@@ -79,7 +79,7 @@ A Gravel Road on the Graveyard~
 graveyard.  Both sides of the road are lined with grave markers poking up out
 of the ground.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 1
 D0
 The gravel road continues northward.
 ~
@@ -107,7 +107,7 @@ A Gravel Road on the Graveyard~
 graveyard.  Both sides of the road are lined with grave markers poking up out
 of the ground.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 1
 D0
 The gravel road continues northward.
 ~
@@ -136,7 +136,7 @@ In front of the Chapel~
 through the graveyard and the chapel entrance is to the south.  A few flowers
 have been trampled into the dirt.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 1
 D0
 The gravel road continues northward.
 ~
@@ -153,7 +153,7 @@ Inside the Chapel~
    You are in a small, dark chapel.  The dark brown glass in the tiny windows
 does not let much light through.  A few rows of worn wooden benches stand here.
 ~
-247 0 0 0 0 0
+247 0 0 0 0 1
 D0
 The chapel door is made of dark wood.
 ~
@@ -174,7 +174,7 @@ A Grave~
 beneath your feet and the smell of freshly dug dirt hits your nostrils.  The
 gravel path is to the west and there are more graves to the east and south.  
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies another cemetery plot.
 ~
@@ -201,7 +201,7 @@ A Grave~
 beneath your feet and the smell of freshly dug dirt hits your nostrils.  The
 gravel path is to the west and there are more graves to the east and south.  
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 A small shack is east of here.
 ~
@@ -241,7 +241,7 @@ A Grave~
 in his work.  The gravel path is to the west and more plots lie to the north,
 east and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -273,7 +273,7 @@ A Grave~
 in his work.  Dark evergreen trees grow to the east.  More plots lie to the
 north, west and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -300,7 +300,7 @@ A Grave~
 in his work.  More plots lie to the north, east and south and the gravel path
 lies west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -331,7 +331,7 @@ A Grave~
 in his work.  Dark evergreen trees grow east of here.  More plots lie to the
 north, west and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -358,7 +358,7 @@ A Grave~
 in his work.  Dark evergreen trees grow to the south.  To the west is the
 gravel path and more plots lie to the north and east.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -388,7 +388,7 @@ evergreen trees grow to the south and east, although there is an opening to
 east where something has smashed through the tree limbs.  More plots lie to the
 north and west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -412,7 +412,7 @@ trees and broken branches litter the ground.  Although the trail is dark, these
 markers clearly show you the path.  The trail continues to the east, the
 cemetery lies west.    
 ~
-247 4 0 0 0 0
+247 4 0 0 0 3
 D1
 Without the broken branches to show you the way, the trail would be impossible
 to follow.
@@ -433,7 +433,7 @@ over creating impassable deadfalls to the north and east.  Similar dead trees
 have form what resembles a cave to the south.  The nauseating stench of decay
 drifts from somewhere and you sense a powerful evil nearby.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D2
 It looks very dark and foreboding in there.
 ~
@@ -465,7 +465,7 @@ path.  A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the west and south.  The gravel path is back to the east.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies the gravel path.
 ~
@@ -492,7 +492,7 @@ A Grave~
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the west, south and east.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies another cemetery plot.
 ~
@@ -519,7 +519,7 @@ A Grave~
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the east, south and west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies the another cemetery plot.
 ~
@@ -548,7 +548,7 @@ sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the north, west and south.  The gravel path is back to the east.
   
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -581,7 +581,7 @@ to take humanoid forms as ghostly apparitions.  You feel a rising power of some
 sort emanating from the southwest.  The cemetery continues in all directions.
   
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -613,7 +613,7 @@ A Grave~
 to take humanoid forms as ghostly apparitions.  You feel a rising power
 emanating from the south.  The cemetery continues in all directions.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -647,7 +647,7 @@ sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the north, west and south.  The gravel path is back to the east.
   
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -679,7 +679,7 @@ A Grave~
 to take humanoid forms as ghostly apparitions.  You feel a rising power
 emanating from the west.  The cemetery continues in all directions.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -712,7 +712,7 @@ take humanoid forms as ghostly apparitions.  There is a very strong power field
 of some sort emanating from a mausoleum to the west.  The cemetery continues to
 the north, east and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -751,7 +751,7 @@ sometimes seems to take humanoid forms as ghostly apparitions.  Dark evergreen
 trees grow to the south.  The cemetery continues north and west.  The gravel
 path is back to the east.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -779,7 +779,7 @@ take humanoid forms as ghostly apparitions.  A rising power emanates from the
 northwest.  Dark evergreen trees grow to the south.  The cemetery continues to
 the north, east and west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -806,7 +806,7 @@ A Grave~
 take humanoid forms as ghostly apparitions.  A rising power emanates from the
 north.  The cemetery continues to the north, east and west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1430,7 +1430,7 @@ A Grave~
 peace.  Figures move through the swirling fog.  The cemetery continues to the
 west east and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies another cemetery plot.
 ~
@@ -1458,7 +1458,7 @@ peace.  Figures move through the swirling fog.  The smooth stone wall of a
 mausoleum is to the south.  The cemetery continues to the north, east and west.
   
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1487,7 +1487,7 @@ swirling fog.  Dark evergreen trees grow to the south.  The smooth stone wall
 of a mausoleum is to the north, and the cemetery continues to the east and
 west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies another cemetery plot.
 ~
@@ -1509,7 +1509,7 @@ A Grave~
 exhale.  The still clam put your thoughts at ease as you stare into the
 swirling fog.  The cemetery continues to the west, north and east.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1537,7 +1537,7 @@ exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  The smooth stone wall of a mausoleum is to the east, and the
 cemetery continues to the north, south and west.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1564,7 +1564,7 @@ A Grave~
 exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  The cemetery continues in all directions.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1597,7 +1597,7 @@ cold clammy feel.  A faint sweet smell of decay hangs in the air, yet you feel
 calm and at peace in this place.  The cemetery continues to the west, east and
 south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies another cemetery plot.
 ~
@@ -1625,7 +1625,7 @@ exhale.  The still calm puts your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the south and west.  The cemetery
 continues to the north and east.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1649,7 +1649,7 @@ swirling fog.  Dark evergreen trees grow to the west.  The smooth stone wall of
 a mausoleum is to the east, and the cemetery continues to the north and south.
   
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1677,7 +1677,7 @@ exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the west.  The cemetery continues
 to the north, east and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D0
 To the north lies another cemetery plot.
 ~
@@ -1705,7 +1705,7 @@ cold clammy feel.  A faint sweet smell of decay hangs in the air, yet you feel
 calm and at peace in this place.  Dark evergreen trees grow to the west and the
 cemetery continues to the east and south.    
 ~
-247 0 0 0 0 0
+247 0 0 0 0 2
 D1
 To the east lies another cemetery plot.
 ~

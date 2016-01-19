@@ -6,7 +6,7 @@ large sign reminds visitors to be sure to visit the cathedral of Paris here.
 The street continues on to the east, the Champs Elysees lies to the north, and
 off to the south the town of Lyon can be seen.   
 ~
-279 4 0 0 0 0
+279 4 0 0 0 1
 D0
 ~
 ~
@@ -33,7 +33,7 @@ branching trees that grow on either side. Delicate flower petals drift lazily
 in the air, partially obscuring the more distant views of this continuing east
 to west path.    
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D1
 ~
 ~
@@ -50,7 +50,7 @@ west. At the side an immense stone wall can be seen, a massive steeple rising
 from above it. No ordinary structure, it is beautifully designed and carefully
 decorated, obviously belonging to a very important cathedral of Paris. 
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D1
 ~
 ~
@@ -68,7 +68,7 @@ evangelists.  Above the door is a breathtakingly huge rose window, alight with
 flickering candlefire from the streets below.  The street continues on to the
 east and the west, the southern way leading into the cathedral.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D1
 ~
 ~
@@ -88,7 +88,7 @@ The End of Notre Dame Street~
 around except for the large steeple visible to the east. Everything is still
 and quiet here, seemingly a way not travelled very often.   
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D3
 ~
 ~
@@ -705,7 +705,7 @@ waters rippling leisurely below. The river of Cena stretches lazily either side
 of the bridge, the water so calm and clean that it mirrors the surroundings
 perfectly. A large crossroads sign stands prominently here. 
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -727,7 +727,7 @@ trickling water and talking people fill the atmosphere, along with delicate
 birdsong. A large board welcomes visitors to this place, proclaiming the town
 as the best maker of wines in all France.
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -745,7 +745,7 @@ People continue quietly about their normal daily living, working at their trade
 or simply bustling about on some errand. The heart of the city seems to stretch
 to the south, and the city of Paris lies to the north.   
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -784,7 +784,7 @@ dogwalkers. Fragile flowers sway in the breezes, filling the atmosphere with a
 heady perfumed aroma and tall, leafy trees stand around, somewhat shielding
 this little grassy area from the paving and concrete of the city around.   
 ~
-279 0 0 0 0 0
+279 0 0 0 0 3
 D1
 ~
 ~
@@ -798,7 +798,7 @@ heard, along with the mellow sounds of chattering people. To the east a small
 magic shop displays its wares in the window, and to the west is a small
 miscellaneous shop.   
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -835,7 +835,7 @@ The End of the Principal Street~
 and the west. The clattering sound of carriages can be heard from the station
 that lies to the south, advertising trips to any city of France.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -911,7 +911,7 @@ their breakfast. Damp and cold, the menacing shadows look like the perfect
 place for ambushers. Little rodents run here and there, beady eyes glistening
 in the dark, the ground wet and mushy with goodness knows what.  
 ~
-279 297 0 0 0 6
+279 297 0 0 0 0
 D1
 ~
 ~
@@ -928,7 +928,7 @@ shadows giving the impression that thieves and criminals are plotting an
 imminent attack. The smell too, is overpowering, stagnating in this airless
 part of the tunnel and decaying into an even fouler stench.  
 ~
-279 361 0 0 0 6
+279 361 0 0 0 0
 D3
 ~
 ~
@@ -943,7 +943,7 @@ their tops can hardly be seen, gigantic trunks planted in the ground like the
 columns of a grand hall. To the north lies a golden gate, a prominent notice
 fixed to the bars.   
 ~
-279 4 0 0 0 0
+279 4 0 0 0 3
 D0
 ~
 gate~
@@ -967,7 +967,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.   
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -993,7 +993,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1019,7 +1019,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1045,7 +1045,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1071,7 +1071,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1097,7 +1097,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1123,7 +1123,7 @@ high children's voices giggling and playing. Flickering fire lights the area,
 casting the surrounding dark trees of Champs Elysees in a welcoming, almost
 protective glow.    
 ~
-279 0 0 0 0 0
+279 0 0 0 0 2
 D2
 ~
 ~
@@ -1141,7 +1141,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1167,7 +1167,7 @@ rustling overhead leaves, cold droplets of moisture glistening on every surface
 like dew. All around, everything appears the same, tall dark trunks and leafy
 plant life fading into darker shadows.
 ~
-279 1 0 0 0 0
+279 1 0 0 0 3
 D0
 ~
 ~
@@ -1192,7 +1192,7 @@ grounded centrally before the plaza of the concorde that lies to the north.
 This is the entrance to the historical center of the city of Paris, where the
 revolution of France started in the XVIII century.  
 ~
-279 4 0 0 0 0
+279 4 0 0 0 2
 D0
 ~
 ~
@@ -1210,7 +1210,7 @@ themselves, cool leafy branches fanning the air as they sway. Two wooden
 benches stand either side of the square, painted a pale white, a little note
 pinned to each.   
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -1239,7 +1239,7 @@ Plaza Louis XIV~
 off from the surrounding houses.  Nearby revolutionaries can be seen running
 through the town, ducking inside open doorways or hiding within the alleyways.
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -1257,7 +1257,7 @@ people's anger toward the monarchy was expressing itself in the atmosphere.
 Fluttering of wings breaks the silence every now and again, pigeons landing to
 gobble dropped seeds before hurrying away.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -1274,7 +1274,7 @@ and crumbs obviously left for the abundant bird population. Patches of neatly
 gardened grass lie here and there, sprinkled with droplets of moisture and
 vibrantly green. 
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -1295,7 +1295,7 @@ from nearby candles avoids it.  A huge statue of the king stands proudly here,
 its once smooth surface worn with the scratchings of birds, one or two nests
 visible in the higher nooks and crannies.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -1320,7 +1320,7 @@ layer of perpetual moisture from the air. The grey granite paving adds to the
 feeling of discontent and misery that hangs in the air, flickering light from
 the candle lamps casting everything in dancing shadows.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 ~
@@ -1343,7 +1343,7 @@ stone ground, creepings of moss beginning to grow like dark green veins along
 the paving. To the west stands a large building, apparently a large
 headquarters or school.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D1
 ~
 ~
@@ -1363,7 +1363,7 @@ The Entrance to Musketeer H.Q.~
 still. There appears to be no security at all, much of the place open to public
 exploration, a little unguarded door lies to the north.   
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D0
 ~
 door~
@@ -1388,7 +1388,7 @@ windows looming from the horizon to the east. Blossoming flowers and shrubbery
 border the paving here, natural hues of grassy green and the colourful splashes
 of red and purple blooms brightening the place.  
 ~
-279 0 0 0 0 0
+279 0 0 0 0 1
 D1
 ~
 ~

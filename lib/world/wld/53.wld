@@ -3,7 +3,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around
 you.  Rising out of the sand to the north you see a mighty pyramid.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D0
 The sands of the desert continue onward towards the pyramid.
 ~
@@ -36,7 +36,7 @@ from huge blocks of stone that have been coated over with a rough sandy
 plaster-like substance.  The face of the pyramid is steep, but you think
 you might be able to climb it.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D2
 Sand as far as the eye can see.
 ~
@@ -188,7 +188,7 @@ pyramid.  The four sides of the pyramid slope sharply down into the
 hot sands in all four cardinal directions.
 A plaque has been set into the sandy stones beneath your feet.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 1
 D0
 The north side of the pyramid slopes down into the sands.
 It looks really dangerous.  I wouldn't go that way.
@@ -339,7 +339,7 @@ The Chamber Of The Efreet~
 Here the flames are nearly as high as your head, singeing your face and 
 evaporating your sweat instantaneously.
 ~
-53 8 0 0 0 0
+53 8 0 0 0 7
 D1
 The pool of fire ends to the east.
 ~
@@ -1240,7 +1240,7 @@ small hole where the stones of the pyramid have collapsed.  Not
 far to the south is a massive roiling sandstorm; the wind from the
 storm howls and bites at your face even here.
 ~
-53 4 0 0 0 0
+53 4 0 0 0 2
 D0
 You see a small hole leading back into the pyramid.
 ~
@@ -1262,7 +1262,7 @@ A Swirling Sandstorm~
 buffet you from all sides, and the sand tears at your skin, blinding
 you and choking you.  You have lost all sense of direction.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D0
 You see only a wall of whirling, blowing, dry sand.
 ~
@@ -1295,7 +1295,7 @@ A Swirling Sandstorm~
 buffet you from all sides, and the sand tears at your skin, blinding
 you and choking you.  You have lost all sense of direction.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D0
 You see only a wall of whirling, blowing, dry sand.
 ~
@@ -1328,7 +1328,7 @@ A Swirling Sandstorm~
 buffet you from all sides, and the sand tears at your skin, blinding
 you and choking you.  You have lost all sense of direction.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D0
 You see only a wall of whirling, blowing, dry sand.
 ~
@@ -1361,7 +1361,7 @@ A Swirling Sandstorm~
 buffet you from all sides, and the sand tears at your skin, blinding
 you and choking you.  You have lost all sense of direction.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D0
 You see only a wall of whirling, blowing, dry sand.
 ~
@@ -1396,7 +1396,7 @@ storm to the north of you, and presumably the pyramid is somewhere
 beyond it.  Nothing but flat, featureless, open dunes of sand lie in
 every other direction.
 ~
-53 0 0 0 0 0
+53 0 0 0 0 2
 D0
 You see only a wall of whirling, blowing, dry sand.
 ~

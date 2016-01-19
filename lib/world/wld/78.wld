@@ -17,7 +17,7 @@ sun.  Strange sounds echo in the trees as animals call out to those of their
 own kind.  Northward lies the Western Highway and to the south you can make out
 what seems to be a small village.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 3
 D2
 ~
 ~
@@ -38,7 +38,7 @@ horizon, tops of chimneys can be seen.  You get an eerie feeling you are being
 watched.  The path runs north and west, westerly you can make out the sounds of
 merchants calling out their wares.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 3
 D0
 ~
 ~
@@ -58,7 +58,7 @@ carefully hand picked and polished before being skillfully laid into the dirt.
 Easterly will take you back to the Western Highway, while just through the gate
 is the Village of Gideon to the south.    
 ~
-78 32772 0 0 0 0
+78 32772 0 0 0 3
 D1
 ~
 ~
@@ -92,7 +92,7 @@ away by the occasional breeze.  To the north lies the village gate, while
 Mahnra Road continues on east and west where you will find various shops and
 merchants.  To the south you hear water bubbling.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -118,7 +118,7 @@ southwest.  A stray cat lies in the middle of the road cleaning itself
 gingerly.  Mahnra road runs easterly and westerly and to the south is Vestra
 Court that leads to the village fountain.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D1
 ~
 ~
@@ -140,7 +140,7 @@ from a front porch with a knowing look on his face.  The homes are modest but
 look well kept and each has a feeling of comfort to them.  Mahnra Road
 continues to the east and west.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D1
 ~
 ~
@@ -158,7 +158,7 @@ stand in groups giggling at the boys as they play in the street.  To the north
 you can see a small park, west will take you back to the gate, and to the south
 lies Shantrell Lane.  
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -180,7 +180,7 @@ into the pond causing a slight splash, as birds sing merrily in the trees.  A
 lone fisherman sits on the opposite bank, nodding off into slumber, waiting for
 the big one to bite.  Southward will take you back to Mahnra Road.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D2
 ~
 ~
@@ -198,7 +198,7 @@ roads of Gideon.  No homes can be found here but yet it is meticulously
 groomed.  The flowers grow tall under the trees that shade them from the noon
 sun.  Northward is Mahnra Road and to the south is Talipia Way.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -216,7 +216,7 @@ from house to house begging for scraps.  A young woman works carefully tending
 her garden, stoping occasionally to fan herself.  Talipia Way continues on
 westward, while to the north lies Shantrell Lane.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -233,7 +233,7 @@ rather close together just as the neighbors seem to be close with each other.
 Two women sit on a veranda sipping refreshing drinks watching their children
 play together.  Talipia Way continues on to the east and west.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D1
 ~
 ~
@@ -251,7 +251,7 @@ birds in the trees.  To the northwest you can just make out the sound of
 bubbling water, while Talipia Way continues on east and west.  Northward will
 lead you to Vestra Court and the village gate.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -274,7 +274,7 @@ themselves.  Houses are scattered here and there each with a small garden to
 the side of them.  Directly north the fountian lies, while Talipia Way
 continues to the east and west.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -295,7 +295,7 @@ northward Mahnra Road and southward Talipia Way.  Westward you can see a row of
 high hedges that border the village fountain.  Along the hedgeline flowers
 bloom scenting the air with a slight fragrance.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -318,7 +318,7 @@ behind trees as the echos of dogs barking ring through the air.  To the west
 you see the baker's shop, eastward the continuation of Mahnra Road and
 southerly Lantoom Court.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D1
 ~
 ~
@@ -339,7 +339,7 @@ blue flowers growing in marble pots.  High hedges can be seen to the east,
 providing privacy for the fountain.  Northward will take you to Mahnra Road,
 while southward is Talipia Way.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -359,7 +359,7 @@ Village of Gideon, Talipia Way~
 water that can be heard to the northeast.  Northward takes you to Vestra Court
 and then on to Mahnra Road, while to the east and west Talipia Way continues.
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -382,7 +382,7 @@ along the ground batting playfully at leaves and twigs, while the birds sing
 their love songs soothingly.  A slight mist rises from the fountain and is
 carried along the air, cooling it slightly.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -409,7 +409,7 @@ spot in the village.  Northward is the door leading to the bakery.  Westward
 you see the general store, while eastward Mahnra Road leads back to the village
 gate and fountain.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 The pine door is open facing the street.  The smells coming from the opening
 entice your olfactory as well as your tummy.    
@@ -449,7 +449,7 @@ to the post.  Villagers rush past you on the way to do errands, each with a
 pleasant smile on their face.  To the south Pinery Lane leads to the west gate
 and Talipia way continues on the east.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -487,7 +487,7 @@ Children run past you laughing merrily.  To the north you can make out what
 looks to be the general store, while on to the south is a residential area.  
 Directly west stands a gate.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -508,7 +508,7 @@ cat they take to flight immediately.  A woman rushes out of her home seemily in
 a grand hurry as she heads northward toward Pinery Lane.  Talipia Way leads
 east back to the residential area of Gideon.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D0
 ~
 ~
@@ -524,7 +524,7 @@ Village of Gideon, Talipia Way ~
 They rise to the sky tall and stately.  Talipia Way continues on easterly and
 westerly, and to the south, there appears to be a forest.    
 ~
-78 32768 0 0 0 0
+78 32768 0 0 0 1
 D1
 ~
 ~
@@ -541,7 +541,7 @@ you will find Pinery Lane that will take you to Talipia Way to the south, the
 residential area of Gideon and to the north Mahnra Road where you can find the
 general store, bakery and the northern gate.    
 ~
-78 32772 0 0 0 0
+78 32772 0 0 0 1
 D1
 ~
 ~

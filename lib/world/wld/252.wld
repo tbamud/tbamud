@@ -9,7 +9,7 @@ from here you cannot be sure.  Your choices seem to be quite limited.  You can
 either head up the winding trail to the castle or head back into this terrible
 forest, taking your chances with the many monsters which roam the trees.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D0
 ~
 ~
@@ -38,7 +38,7 @@ A Winding Mountain Trail~
 castle.  You see no sign of light or life within.  Possibly it is just an old
 empty abandoned castle that doesn't warrant a look around.  Possibly.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D3
 ~
 ~
@@ -56,7 +56,7 @@ the rest of the castle.  You see that the gates are closed, probably locked.
 As you look up at the menacing castle above you, a shiver runs through your very
 soul.  This whole place gives you a very bad feeling.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D3
 ~
 ~
@@ -72,7 +72,7 @@ A Winding Mountain Trail~
 You can now see the top of the turret, where bats circle constantly, as if
 watching, guarding for some unseen master.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D1
 ~
 ~
@@ -89,7 +89,7 @@ a good ways above the forest, high up on the trail.  You see that the entire
 forest is enclosed by the mountains, forming a sort of prison in the form of a
 forest full of horrors.  What an awful place you have come to!  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D1
 ~
 ~
@@ -104,7 +104,7 @@ A Winding Mountain Trail~
    The trail heads and west - east toward the hellish castle and west toward the
 nightmarish forest.  You are not really left with much a choice.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D1
 ~
 ~
@@ -120,7 +120,7 @@ A Winding Mountain Trail~
 of the castle.  You are now extremely high above the forest, looking over the
 tree tops.  Not that you can all that far - it's pretty damn dark out there.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D3
 ~
 ~
@@ -137,7 +137,7 @@ a man's height or so.  To the west is the base of a set of wide stone steps
 which lead directly up to the front gates of the castle.  The trail also leads
 down from here toward the forest below.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D3
 ~
 ~
@@ -154,7 +154,7 @@ built into the mountain itself, leads up to the main entrance to this evil
 looking place.  The trail heads back east, winding it's way down to the forest
 below.  
 ~
-252 1 0 0 0 0
+252 1 0 0 0 3
 D1
 ~
 ~

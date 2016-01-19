@@ -23,7 +23,7 @@ Entrance to the Elven Forest~
 canopies.  A large steel reinforced wooden gate is set into a wall of wood logs
 just to the north.    
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~
@@ -35,7 +35,7 @@ Guarded Path Through the Forest~
 yourself observed by someone.  To the east you see a wooden door in a large
 tree, and to the west you see a rope hanging down from a tree.    
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~
@@ -59,7 +59,7 @@ A Guard Room~
 table.  To the east and west you can see doors.  The sound of footseps can be
 heard in the distance.    
 ~
-248 8 0 0 0 0
+248 8 0 0 0 3
 D1
 ~
 ~
@@ -75,7 +75,7 @@ A Guard Chief's Bedroom~
 and awards line the walls.  In a corner stands a large bed and there is a door
 to the west.    
 ~
-248 8 0 0 0 0
+248 8 0 0 0 3
 D3
 ~
 ~
@@ -87,7 +87,7 @@ A Cellar~
 Filled, almost to the point of collapse, with various dried foods and storage
 containers.    
 ~
-248 9 0 0 0 0
+248 9 0 0 0 3
 D4
 ~
 ~
@@ -99,7 +99,7 @@ On the Platform~
 forest.  From here, above the tree tops, the town of Thewston is visible in the
 distance.    
 ~
-248 4 0 0 0 0
+248 4 0 0 0 5
 D5
 ~
 ~
@@ -111,7 +111,7 @@ A Guarded Path Through the Forest~
 is in good condition and looks well kept.  No dead branches or brush is visible
 between the trees.    
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~
@@ -127,7 +127,7 @@ A Path Crossing~
 the crossing stands a gigantic stone obelisk with some runes engraved into it.
   
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~
@@ -148,7 +148,7 @@ A Fine Path Through the Elven Forest~
 telling you this must be the weapon shop, and over the western door is a
 similar sign telling you it's the armoury.    
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~
@@ -197,7 +197,7 @@ telling you this must be the magic shop of the elven village, and over the
 western door is a similar sign telling you it's Quintors fine shop.  To the
 north the path continues.    
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~
@@ -245,7 +245,7 @@ The End of the Path~
 telling you this must be the tavern of the village, and to the north you see a
 large house, about two stores high.    
 ~
-248 0 0 0 0 0
+248 0 0 0 0 3
 D0
 ~
 ~

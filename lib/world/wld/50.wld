@@ -9,7 +9,7 @@ A Long Tunnel~
    You encounter some rapids as you enter this tunnel cut out of
 the mountains by the river.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 7
 D1
 ~
 ~
@@ -25,7 +25,7 @@ S
 A Long Tunnel~
    The tunnel branches off north.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 7
 D0
 ~
 ~
@@ -43,7 +43,7 @@ S
 A Long Tunnel~
    The tunnel branches off south.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 7
 D1
 ~
 ~
@@ -61,7 +61,7 @@ S
 A Tunnel Intersection~
    The tunnel branches off to the north and south.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 7
 D0
 ~
 ~
@@ -86,7 +86,7 @@ water and lime from above.  The tunnel continues to the east and the
 river leads back west.  Leading upwards to the northwest is a roughly
 hewn hallway.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 7
 D0
 ~
 ~
@@ -109,7 +109,7 @@ A Long Narrow Tunnel~
    The tunnel rises sharply to the east.  Another narrow tunnel
 leads away to the north.
 ~
-50 265 0 0 0 0
+50 265 0 0 0 5
 D0
 ~
 ~
@@ -128,7 +128,7 @@ A Wide Tunnel~
    The tunnel continues east and west.  To the east the tunnel dives
 down into a bright light.  A small passage way opens to the north.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 ~
 ~
@@ -143,7 +143,7 @@ The Cave-In~
    You stand at the edge of a large pile of rubble created from the last
 rockslide.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D2
 ~
 ~
@@ -159,7 +159,7 @@ At The Foot Of The Rubble~
    You are at the bottom of a large pile of rubble.  A tunnel branches
 off to the north and east.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -178,7 +178,7 @@ A Cave Entrance~
    You stand in the middle of a large and beautiful cave.  A path leads
 deeper into the darkness.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D2
 ~
 ~
@@ -195,7 +195,7 @@ A Giant Cave~
 Bones of previous adventurers lie strewn on the cavern floor.  There is
 a passage that spirals downwards in the northeast corner of the cavern.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D4
 ~
 ~
@@ -210,7 +210,7 @@ S
 A Narrow Bend~
    The tunnel turns to the south and west.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D2
 ~
 ~
@@ -224,7 +224,7 @@ S
 A Large Cave~
    You are standing in a large cave.  Many furs are spread out on the floor.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -238,7 +238,7 @@ S
 A Damp Hallway~
    The walls here are extremely damp, as well as the floor.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 You hear drops of water.
 ~
@@ -253,7 +253,7 @@ S
 An Underground Pool~
    You are wading in a knee deep pool of lime-water.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 6
 D1
 ~
 ~
@@ -268,7 +268,7 @@ A Damp Hallway~
    The walls of the tunnel are extremely damp here.  The tunnel
 leads sharply upwards to the south as it starts to get narrow.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D2
 ~
 ~
@@ -284,7 +284,7 @@ A Narrow Crawlway~
    This crawlway is just big enough for a human to crawl through or a
 halfling to walk through.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -304,7 +304,7 @@ A Large Cavern~
    You have entered a very large cavern.  The rock formations would amaze
 almost any dwarf.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -319,7 +319,7 @@ A Fungus Patch~
    As you walk through the fungus patch, you are shot at by many millions of
 spores.  You can hardly breathe.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -335,7 +335,7 @@ The Fungus Path~
    As you walk along the path, millions of spores are shot at you.  It is
 difficult to breathe.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D2
 A giant mushroom temple stands to the south.
 ~
@@ -352,7 +352,7 @@ The Fungus Temple~
    You find yourself standing inside of a giant mushroom.  The inside
 is decorated in the fashion of a temple.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -366,7 +366,7 @@ S
 A Sloping Passage~
    You follow a path sloping down from the fungus temple.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 ~
 ~
@@ -380,7 +380,7 @@ S
 A Sloping Passage~
    You are on a path that gently slopes up from the underground pool.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D0
 You hear sounds of trickling water.
 ~
@@ -397,7 +397,7 @@ The Great Eastern Desert~
 you.  A pyramid lies to the east and a snow-capped mountain range to the 
 west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -420,7 +420,7 @@ The Great Eastern Desert~
 you.  A pyramid lies to the east and a snow-capped mountain range to the 
 west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -443,7 +443,7 @@ The Great Eastern Desert~
 you.  A pyramid lies to the east and a snow-capped mountain range to the
 west.  The hole which you tumbled out of is too high for you to reach.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -466,7 +466,7 @@ The Great Eastern Desert~
 you.  A pyramid lies to the east and a snow-capped mountain range to the
 west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -490,7 +490,7 @@ you.  A pyramid lies to the north-east and a snow-capped mountain range to
 the west.  You spy a narrow dirt trail leading away to the west into the
 foothills.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -519,7 +519,7 @@ The Great Eastern Desert~
 you.  A pyramid lies to the north-east and a snow-capped mountain range to
 the west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -542,7 +542,7 @@ A Small Oasis~
 shade of a few scarce palm trees.  To the north you see a small
 encampment stopped for the day.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 You see three tents and some camels hitched to a stake.  Shadows moving 
 across the tents suggest activity.
@@ -570,7 +570,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -597,7 +597,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -624,7 +624,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north-east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -651,7 +651,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the south-east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -678,7 +678,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the east, it looks enormous, even from this distance.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -706,7 +706,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north-east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -733,7 +733,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north-east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -760,7 +760,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the south.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -788,7 +788,7 @@ The Great Eastern Desert~
 around you.  A pyramid lies to the south.  The gates of a city lie a
 short distance off to the north.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Some city gates stand off to the north.
 ~
@@ -817,7 +817,7 @@ you.  You are standing near a gigantic pyramid located a couple hundred
 meters west of you.  From here you can sense the great evil which resides
 within the massive structure.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -844,7 +844,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Even from here, you can sense a great evil residing within the pyramid
 protruding from the sand to the north.
@@ -872,7 +872,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -899,7 +899,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -926,7 +926,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north and a ruined city to the west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -953,7 +953,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the south.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -980,7 +980,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the south-west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1007,7 +1007,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1035,7 +1035,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1062,7 +1062,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north-west.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1089,7 +1089,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see... and a pyramid in the distance.
 ~
@@ -1116,7 +1116,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the south-west and a deep canyon to the east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1139,7 +1139,7 @@ The Great Eastern Desert~
 you.  A pyramid lies to the south-west and a deep canyon to the east.  Just
 below you can make out a tiny ledge.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1165,7 +1165,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the west and a deep canyon to the east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1192,7 +1192,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the west and a deep canyon to the east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1214,7 +1214,7 @@ The Great Eastern Desert~
    A vast desert stretches for miles, the sands constantly shifting around  
 you.  A pyramid lies to the north-west and a deep canyon to the east.
 ~
-50 0 0 0 0 0
+50 0 0 0 0 2
 D0
 Sand as far as the eye can see.
 ~
@@ -1238,7 +1238,7 @@ and refresh themselves beside this beautiful oasis.  Three tents and some
 camels make up the party.  From within two of the tents you hear muffled
 voices, obviously surprised at your visit.
 ~
-50 64 0 0 0 0
+50 64 0 0 0 2
 D0
 Some camels are tied up to a mass of stakes plugged into the ground.
 ~
@@ -1266,7 +1266,7 @@ Inside A Small Tent~
 here and there are young-looking men and women, possibly slaves to the
 leader of this band.
 ~
-50 72 0 0 0 0
+50 72 0 0 0 2
 D3
 You see the center of the nomad camp.
 ~
@@ -1279,7 +1279,7 @@ Beside The Camels~
 the ground.  To the east you see a small tent while to the north you see a 
 larger, fancier tent.
 ~
-50 64 0 0 0 0
+50 64 0 0 0 2
 D0
 This tent seems to be the temporary abode of the nomad leader.  You make a
 mental note to visit it before you leave.
@@ -1307,7 +1307,7 @@ The Warriors' Tent~
    This tent has a few furnishings, but mainly it holds the band's 
 protectors.  They all stare at you coldly as you enter.
 ~
-50 72 0 0 0 0
+50 72 0 0 0 2
 D3
 Outside you see some peaceful camels.
 ~
@@ -1320,7 +1320,7 @@ The Main Tent~
 outside.  A fancy carpet lies on the sand and numerous baskets line the
 walls.
 ~
-50 72 0 0 0 0
+50 72 0 0 0 2
 D1
 ~
 ~
@@ -1337,7 +1337,7 @@ The Main Tent~
 definitely rich as you inspect the tapestries, baskets, and a few
 paintings as well.
 ~
-50 72 0 0 0 0
+50 72 0 0 0 2
 D3
 You see the entrance to this tent.
 ~
@@ -1353,7 +1353,7 @@ breaks and you fall...
                                and fall
                                     ... to your death on the rocks below.
 ~
-50 12 0 0 0 0
+50 12 0 0 0 5
 D3
 ~
 ~
@@ -1384,7 +1384,7 @@ The Cave Mouth~
 strange sounds, but can see nothing.  The cave slopes down into the 
 darkness.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 Outside is lighter and very windy.
 ~
@@ -1402,7 +1402,7 @@ haphazardly strewn about and the rotting carcasses, you would guess
 that this is a dragon's lair.  As to what type, you can't really say.
 The cave narrows out into a tunnel to the west.
 ~
-50 201 0 0 0 0
+50 201 0 0 0 5
 D1
 ~
 ~
@@ -1417,7 +1417,7 @@ A Wide Tunnel~
    This tunnel seems to go on forever into the darkness.  You carefully
 feel your way along the walls.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 ~
 ~
@@ -1432,7 +1432,7 @@ A Narrower Tunnel~
    The tunnel becomes very narrow and you fight to squeeze your way through.
 The floor seems to level off a little.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 ~
 ~
@@ -1447,7 +1447,7 @@ A Narrow Crack~
    This part of the tunnel is the hardest to move through as the walls
 move in to meet you.
 ~
-50 265 0 0 0 0
+50 265 0 0 0 5
 D0
 ~
 ~
@@ -1462,7 +1462,7 @@ A Small Cavern~
    It is dark and damp and bats hang from the ceiling.  A narrow crack is
 in the east wall.  The floor now slopes upwards.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 ~
 ~
@@ -1477,7 +1477,7 @@ A Small Shaft~
    From within this shaft you can see a narrow hole in the roof just
 large enough for one person.  Back east is the cavern.
 ~
-50 9 0 0 0 0
+50 9 0 0 0 5
 D1
 ~
 ~

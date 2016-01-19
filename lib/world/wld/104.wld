@@ -37,7 +37,7 @@ break through the trees, but is unsuccessful.  The morning dew still sits on the
 forest floor, adding the this serene setting, the trees creep up towards the
 sky, large branches sticking out of its trunk, blocking the sky from view.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D0
 ~
 ~
@@ -67,7 +67,7 @@ seem to hold onto their spirits, these trees seem to be gentle, but at the same
 time they seem to be sinister, their branches seem to lash out and try to catch
 you in their grasp.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D2
 ~
 ~
@@ -83,7 +83,7 @@ place.  Some large branches cover this place, and multiple animal tracks are
 imprinted into the ground here.  Towards the top of the trees, the scratching of
 little squirrels feet bounces off the trees surrounding this place.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D1
 ~
 ~
@@ -106,7 +106,7 @@ shines in from the trees around you, not letting in a lot of light though.  The
 rustling of leaves comes to your ears in the area around you, adding to the
 feeling of being uncomfortable.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D0
 ~
 ~
@@ -126,7 +126,7 @@ were no trees overhead, this is not like the other parts of the forest, it is
 mostly clear, and it seems to have been forced to be this way.  The wind
 whistles through here, rustling leaves and moving branches all around.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D1
 ~
 ~
@@ -163,7 +163,7 @@ trees swaying branches.  A small stream flows gently into the forest.  Small
 fish can be seen in the stream, bolting up and down the stream, distorting the
 image af the pebbles.  The grass is soft and the color is perfect.  @n
 ~
-104 16 0 0 0 0
+104 16 0 0 0 2
 D3
 ~
 ~
@@ -178,7 +178,7 @@ or a rope.  Large plastic bottles cover the ground, and some foam coolers every
 now and then.  A piece of broken wood lies in a large brush pile, it seems to be
 connected to the brush.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D2
 ~
 ~
@@ -197,7 +197,7 @@ sits at the back of the room where the items are and a Elven man sits behind it.
 Light flows in through a small window on the side of the room, it seems to have
 no glass so it a small breeze comes in through it.  @n
 ~
-104 12 0 0 0 0
+104 12 0 0 0 3
 D0
 ~
 ~
@@ -216,7 +216,7 @@ to just rest.  The air is fresh, and the sounds of animals also fills your ears.
 Tall grass grows all around the lake, and large boulders are also here.  It is
 mysterious how they got here, air also has a moist smell in it.  
 ~
-104 20 0 0 0 0
+104 20 0 0 0 3
 D0
 ~
 ~
@@ -234,7 +234,7 @@ To the north is another forest, dark shadows cover it's entrance.  Even larger
 skeletons cover the ground, some human, and some are unknown.  A cold feeling
 emits from the forest, adding an uncomfortable feeling to this area.  @n
 ~
-104 20 0 0 0 0
+104 20 0 0 0 3
 D0
 ~
 ~
@@ -261,7 +261,7 @@ emit from the house, and a horrid smell also comes from the house.  An old
 rusted well sits in front of the house, it seems to have been protected from the
 tree by the house.  
 ~
-104 4 0 0 0 0
+104 4 0 0 0 3
 D0
 ~
 ~
@@ -276,7 +276,7 @@ gate.  At the top of the gate is some weird insigne, this is also on either side
 of the gate.  At the gates entrance the wooden platform stops and the ground
 turns to rock.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D1
 ~
 ~
@@ -294,7 +294,7 @@ to the north the road continues, and it also continues to the south.  Noise
 emits from people walking around on this road, they seem to be in a hurry, and
 don't want to talk to anyone.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D0
 ~
 ~
@@ -317,7 +317,7 @@ house are made of pine wood, each step has been carefully cut, and carefully put
 in to its place.  The door stands open, letting in the fresh air from the
 outside.  @n
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D0
 ~
 ~
@@ -336,7 +336,7 @@ cover the wall towards the back.  Some large swords are placed neatly in a
 little case, also hanging on the wall.  A large round oak table sits in the
 center of the room, with one lone chair sitting at it.  @n
 ~
-104 8 0 0 0 0
+104 8 0 0 0 1
 D2
 ~
 ~
@@ -355,7 +355,7 @@ now and then.  A sign is stuck into the ground on the side of the road, it seems
 to be a direction sign.  A warm feeling seems to be coming from all around you.
 It seems to be coming from the towns people.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D1
 ~
 ~
@@ -373,7 +373,7 @@ others tall.  But every person seems to be Elven.  A warm feeling comes from the
 area around you.  The people seem to be giving this feeling off.  The cobble
 stone road is freshly polished and looks to be brand new.  
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D0
 ~
 ~
@@ -392,7 +392,7 @@ inside of it it has very few maps.  But there are many sheets of parchment.  A
 very beautiful young looking elf sits behind the glass desk, making what seems
 to be a map.  @n
 ~
-104 28 0 0 0 0
+104 28 0 0 0 1
 D2
 ~
 ~
@@ -406,7 +406,7 @@ lies to the west, it seems to be gaining a lot of attention.  A small breeze
 blows through this part of town.  Another sign has been placed neatly on the
 wall beside the buildings opening.  @n
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D0
 ~
 ~
@@ -426,7 +426,7 @@ and it turns out to be coming from a small cobble stone fire place off in the
 other corner of the room.  Each stone has been placed on this fireplace with
 extreme care.  @n
 ~
-104 8 0 0 0 0
+104 8 0 0 0 1
 D0
 ~
 ~
@@ -445,7 +445,7 @@ the room.  Lining the walls is a small assortment of armour, it seems that this
 shop has just opened.  Although there is not much armour, it seems to be
 extremely expensive.  @n
 ~
-104 8 0 0 0 0
+104 8 0 0 0 1
 D2
 ~
 ~
@@ -464,7 +464,7 @@ A large golden statue of some old looking elf is in front of this house.
 Beautiful pine steps are leading up to his house, and the door is nowhere to be
 seen, it seems it has been taken off.  @n
 ~
-104 0 0 0 0 0
+104 0 0 0 0 1
 D0
 ~
 ~
@@ -486,7 +486,7 @@ center of the room.  Heat emits from another well built looking cobble stone
 fireplace.  High in the rafter you notice another red glowing orb.  This orb
 adds another reddish tint, but the color is darker.  @n
 ~
-104 28 0 0 0 0
+104 28 0 0 0 1
 D0
 ~
 ~
@@ -1148,7 +1148,7 @@ A New Zone Description Room~
 @W.''\  /'. .'  \__.`)@y  |- .'|@W .''\  /'.  .'  \__.`_
 @W    '.   `       |'  @y  `\-/@W(                      \@n
 ~
-104 132 0 0 0 0
+104 132 0 0 0 8
 S
 #10460
 Path Through the Forest~
@@ -1156,7 +1156,7 @@ Path Through the Forest~
 The earth is compact and the no shuberry grows near this place. The sky above
 can be seen, but it looks as if the sky fades into the trees ahead. @n
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D0
 ~
 ~
@@ -1173,7 +1173,7 @@ straight path. The brush looks like it is growing away from the road, as if
 some sort of magic is causing it to retreat. The Sky is not able to be seen,
 and the sounds of the forest have become silent now.
 ~
-104 0 0 0 0 0
+104 0 0 0 0 3
 D2
 ~
 ~
@@ -1223,7 +1223,7 @@ cleaned it for months.  Large tools scatter the desk off in the corner, and many
 piles of papers with writing on them scatter this desk as well.  The ceiling 
 above is nothing but a thick looking glass with bars filling in for support.@n
 ~
-104 4 0 0 0 0
+104 4 0 0 0 1
 D2
 ~
 ~

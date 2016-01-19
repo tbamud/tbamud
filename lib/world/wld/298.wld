@@ -791,7 +791,7 @@ The Eastern Side of the Moat~
 end of this side of the moat.  Your only choice is to go back from where you
 came.    
 ~
-298 8 0 0 0 0
+298 8 0 0 0 6
 D3
 ~
 The Castle Moat~
@@ -815,7 +815,7 @@ Under Water in the Moat~
 from the muck that surrounds you.  You have a feeling you should go back from
 where you came.  If you go down futher you will surely die!    
 ~
-298 1 0 0 0 0
+298 1 0 0 0 8
 D4
 ~
 The Castle Moat~
@@ -830,7 +830,7 @@ The Deadly Depths of the Moat~
    The pressure is too much for you to handle.  You better go up before you
 drown.    
 ~
-298 0 0 0 0 0
+298 0 0 0 0 8
 D4
 ~
 Under water in the Moat~

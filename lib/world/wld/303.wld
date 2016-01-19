@@ -4,7 +4,7 @@ Dorm Room~
 in this room as any other dorm room, a desk, bed, and exit...  This time to the
 south.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D2
 The hallway lies to the south.
 ~
@@ -37,7 +37,7 @@ water bottle structure similar to the ones used in modern day hamster and
 gerbil cages.  The only exit is to the west.  Just as you finish looking
 around, your eye spots a SEP.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 4
 D3
 Thank Bob, the hallway is still to the west of here.
 ~
@@ -62,7 +62,7 @@ Hallway~
 there is a room to the south and a door to the east.  The hallway grinds to a
 start when you move northwards though.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 The hallway starts here and runs northwards.  You'd better catch it before
 it gets away.  *Groan*
@@ -100,7 +100,7 @@ would say that they don't have that item.  The logistics just don't work on
 these magnitudes, with more rooms maybe, but definitely not one room.  There is
 an exit to the north.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 This leads back to the hallway out of this stupidity.
 ~
@@ -119,7 +119,7 @@ below you though...  About 60 feet below you that is.  If you go north, you can
 escape back to the real world (the balcony at least, just type exit to see
 where you end up if you go down).    
 ~
-303 0 0 0 0 0
+303 0 0 0 0 4
 D0
 The salvation of the balcony is directly to the north.  All it needs is for
 you to press N and then RETURN.
@@ -155,7 +155,7 @@ Really Narrow Stairwell, Part I~
    This stairwell is just wide enough for one person at a time.  A door lies to
 the west.
 ~
-303 13 0 0 0 0
+303 13 0 0 0 5
 D3
 This is blocked by a door.  Unless you opened it already, which is pretty
 likely.
@@ -173,7 +173,7 @@ S
 Really Narrow Stairwell, Part II~
    The Stairwell's Revenge.  Now there is an exit to the west and one down.  
 ~
-303 13 0 0 0 0
+303 13 0 0 0 5
 D3
 This leads to a nice entrance hall.
 ~
@@ -195,7 +195,7 @@ Entry Hall~
 mudroom.  That is, you remove the mud from your footwear here.  The hall
 continues to the west into a nice, clean room and to the east to a stairwell.
 ~
-303 9 0 0 0 0
+303 9 0 0 0 3
 D1
 The dreaded stairwell is here.
 ~
@@ -219,7 +219,7 @@ furnishing the room, such as a rocking chair, a coffee table, and a couch.
 All of the furnishings are decorated in a somewhat flowery style.  You can
 leave this room by going east to the entrance hall or south to the bedroom.  
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D1
 The entrance hall is directly to the east.
 ~
@@ -248,7 +248,7 @@ Bedroom~
 bedroom furnishings here, a bed (obviously), a night-table, and a dresser.  
 There are exits to the north and to the balcony to the east.    
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D0
 The living room is to the north.
 ~
@@ -283,7 +283,7 @@ does not resemble the real countryside, so you aren't sure what you are seeing
 exactly.  Must be an illusion.  Anyways, there is an exit back to the bedroom
 in the west wall.    
 ~
-303 4 0 0 0 0
+303 4 0 0 0 2
 D2
 This leads to a thin ledge.
 ~
@@ -316,7 +316,7 @@ Hallway Junction~
    This hallway leads north and south and there is a stairwell in the east
 wall.  There is a sign on the wall.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 The hallway continues north.
 ~
@@ -344,7 +344,7 @@ S
 Hallway~
    The hallway turns west-south here and there is an opening to the north.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 There is a room to the north.
 ~
@@ -369,7 +369,7 @@ room, you can see a large collection of CDs and Cassettes...  Exam time must be
 coming up soon.  On the east wall sits a large computer with lots of neat
 accessories.  The only exit is to the south.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D2
 The hallway leads away from here to the south.
 ~
@@ -396,7 +396,7 @@ Hallway~
    This hallway leads east and has an opening to the north and one to the west
 and one to the south.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 Bubbles seem to be coming from the northern entrance.
 ~
@@ -424,7 +424,7 @@ Bubble Land~
 There is only one exit...  To the south (you think).  With all the bubbles you
 can't see anything else in the room.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 5
 D2
 You think the hallway lies to the south.
 ~
@@ -444,7 +444,7 @@ the fact that other than that the room is completely empty of furniture, but
 wait, that pizza box in the corner seems to be acting as a table of sorts with
 all the newspapers supporting it.  There is an exit to the east.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D1
 The hallway extends to the east.
 ~
@@ -477,7 +477,7 @@ this room at least).  There are posters of John all over the walls as well as a
 few of the other Beatles...  Wait you don't see any of Paul...  Strange.  
 There is only one exit, the one to the north.    
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 The hallway is directly to your north.
 ~
@@ -501,7 +501,7 @@ room in a residence is decorated, with a fridge, stove and of course a TV.
 Unfortunately, there does not seem to be any couches or chairs in the room.  
 There is an exit to the north and a door on the east wall with no doorknob.  
 ~
-303 9 0 0 0 0
+303 9 0 0 0 2
 D0
 The hallway leads to the north.
 ~
@@ -534,7 +534,7 @@ Hallway~
 the west and east.  The sound of snoring denotes a lecture hall to the south.
   
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D1
 The hallway continues east.
 ~
@@ -561,7 +561,7 @@ Hallway~
 the west and east.  The sound of snoring denotes a lecture hall to the south.
   
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D1
 The hallway continues east.
 ~
@@ -587,7 +587,7 @@ Hallway~
    The hallway curves around slightly so that you can't quite see what is to
 the west and east.  There is an extraneous exit to the north.    
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D0
 To the north you see... the centre of the building?
 ~
@@ -613,7 +613,7 @@ Hallway~
    The hallway curves around slightly so that you can't quite see what is to
 the est and east.  The sound of snoring denotes a lecture hall to the south.  
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D1
 The hallway continues east.
 ~
@@ -640,7 +640,7 @@ Hallway~
 the west and east.  The sound of snoring denotes a lecture hall to the south.
   
 ~
-303 8 0 0 0 0
+303 8 0 0 0 2
 D1
 The hallway continues east.
 ~
@@ -666,7 +666,7 @@ An Odd Circular Room~
    A small circular room sits in the centre of the building.  There are exits
 to the north and south.    
 ~
-303 8 0 0 0 0
+303 8 0 0 0 1
 D0
 The entrance can been seen to the north.
 ~
@@ -773,7 +773,7 @@ conveyer belt under your feet, and you can see glinting objects ahead, and the
 way back east seems to have disappeared.  The pictures on the walls make you
 feel extremely comfortable.    
 ~
-303 13 0 0 0 0
+303 13 0 0 0 1
 D1
 There isn't an exit in this direction, so don't even bother trying to
 go this way.

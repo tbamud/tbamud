@@ -8,7 +8,7 @@ Ahead is a largish building that seems to block out the sun nearby:
 a big, squat, dark brown building that exudes lifelessness.  You see
 several people going in and out its doors, shoulders slumped in defeat.
 ~
-296 4 0 0 0 0
+296 4 0 0 0 1
 D0
 ~
 ~
@@ -52,7 +52,7 @@ area, where many wagons and carts sit parked.  To the north, you
 see the building, with the logo emblazoned:
               'Froboz's Fun Factory of Doom!'
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D0
 ~
 ~
@@ -73,7 +73,7 @@ wagons and carts parked everywhere, all as close as possible to
 the main building while staying nicely between the little yellow
 lines drawn in the dirt.
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D1
 ~
 ~
@@ -95,7 +95,7 @@ are the more expensive vehicles -- some taking up two parking spaces
 so no one scratches the trim.  Way, way in the back is a huge wagon
 with harness for four animals!  Talk about major horsepower!!!
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D0
 ~
 ~
@@ -113,7 +113,7 @@ lot, and a small access road winds north around the west side
 of the building.  There aren't as many wagons and carts here,
 since the walk to the front entrance is kind of long...
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D0
 ~
 ~
@@ -135,7 +135,7 @@ the entrance of the building.  You do see a couple of old, decrepit
 vehicles around with broken wheels and such, but there just isn't
 much here of interest.
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D0
 ~
 ~
@@ -154,7 +154,7 @@ seemingly impenatrable, and have Froboz's curly-Q sigil worked
 in on the front.  You are not sure if the doors are meant to
 keep intruders out, or workers in...
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D0
 ~
 ~
@@ -820,7 +820,7 @@ still wouldn't want to work there.  Many heavy  carts and
 wagons slowly make their way up and down this road, wearing
 the ruts in the road even deeper into the earth.
 ~
-296 0 0 0 0 0
+296 0 0 0 0 1
 D0
 ~
 ~
@@ -838,7 +838,7 @@ to be loaded or unloaded by the factory workers, and then sent
 on their delivery routes.  As you watch, they all slowly move
 up one cart-length, and then the drivers continue their snoozing.
 ~
-296 4 0 0 0 0
+296 4 0 0 0 1
 D1
 ~
 ~

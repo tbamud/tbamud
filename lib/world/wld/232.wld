@@ -11,7 +11,7 @@ Near the buildings, you see statues of many forms, these statues seem to be
 untouched by time.  At a close glance of the statues, you can make out the Gods
 Rumble, Welcor, Ferret, Detta, Heiach, Shamra, Relsqui, Elaseth, and Fyre.
 ~
-232 144 0 0 0 0
+232 144 0 0 0 1
 D0
 ~
 ~
@@ -51,7 +51,7 @@ it looks like someone took their time to make traveling easy.  The smell of
 fresh baked bread seems to be coming from the north.  To the west you see a
 large fountain.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -72,7 +72,7 @@ are walking on air.  The buildings to the north and south have great Murals on
 them.  You stand back to look at the lovely pictures and wonder where it all
 happened.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -94,7 +94,7 @@ Terringham road~
    This well pathed road seems to have a split in it.  You can go east, west or
 south.  To the north is a wall.  You can see a gate to the far east.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -113,7 +113,7 @@ Terringham road~
    You have come to a cross road.  To the east you see a large gate.  To the
 north, south and west you see a large stretch of road.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -137,7 +137,7 @@ East gate~
 gates.  The guards here make it a point to keep mean old nasty mobs from coming
 inside.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D3
 ~
 ~
@@ -165,7 +165,7 @@ Star trail~
 You get an uneasy feeling from the west, but it somehow calls to you.  The way
 west is well lit.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -228,7 +228,7 @@ Star trail~
 cats roaming the streets looking for somthing to eat.  There are only two exits
 that you can see one going north and the other going South.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -245,7 +245,7 @@ When you walk through the town you get a feeling of profound pride that your
 little town has done so well in the years since it was created.  The only exits
 are North and South .
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -260,7 +260,7 @@ Star trail~
    This is the northeastern corner of the city.  It is very quiet here and has a
 drawing on the group.  The only exits are West and South.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D2
 ~
 ~
@@ -276,7 +276,7 @@ Rumble road~
 clanging still chimes in your ears from the west.  The exits that you can see
 are to the West and North .
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -325,7 +325,7 @@ Terringham avenue~
 the street.  To the North is the Nothern Gate.  Other exits lead to the South,
 East and West.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -349,7 +349,7 @@ North gate~
 entrance to the city.  These guards look very strong and should not be messed
 with.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D2
 ~
 ~
@@ -361,7 +361,7 @@ Rumble road~
 gates to the north east.  The only discenable exits are to the east and the
 west.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -377,7 +377,7 @@ Rumble road~
 the north and south side looms in front of you with no way to leave except east
 or west.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -392,7 +392,7 @@ Rumble road~
    The smooth paved street glides on towards the northwest corner of town.  To
 the north you see a tall wall, while there are exits east, west and south.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -440,7 +440,7 @@ Rumble road~
 traffic as this street would normally have.  To the south you can travel down
 the western wall and to the east you go towards the Northern gate.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -455,7 +455,7 @@ West drive~
    You are walking along the west wall of the spectacular city.  The walls are
 whitewashed and very smooth with no artistic talent to them at all.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -471,7 +471,7 @@ West drive~
 walking on air.  The walls are very tall and have little on them that would not
 give you any indication of where you are located.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -524,7 +524,7 @@ Magic shop~
 throughout this room.  The items here are not limited to mages alone.  A recall
 is recommended for everyone, so don't hesitate to buy them.  
 ~
-232 8 0 0 0 0
+232 8 0 0 0 1
 D3
 ~
 ~
@@ -535,7 +535,7 @@ Terringham street~
    You have come to a crossroad.  To the west you see a large gate.  You also
 see exits to the north, south, and east.  The road here is in great condition.
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -558,7 +558,7 @@ West gate~
    You have entered an area that is guarded well.  There are two guard shacks
 here, just inside of the gate.  The guards watch you suspiciously.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -570,7 +570,7 @@ West drive~
 untouched.  There are no paintings and no wagons lining the streets.  You can go
 East or North.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -601,7 +601,7 @@ West drive~
 that hang down in your face.  It doesn't look like any caretakers come this way.
 The exits go North and West.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -634,7 +634,7 @@ West drive~
 down and some you must push out of the way.  The only exits that you can see are
 North and East.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -649,7 +649,7 @@ South park~
    The road here seems to fade out.  To the east you can see the road, and to
 the west you notice that a jungle or something starts to form.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -665,7 +665,7 @@ South park~
 done, maybe it isn't.  To the North you can hear some clanging.  The only other
 exits are to the East and West.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -685,7 +685,7 @@ A side road~
 something.  You also hear the sound of someone chopping up wood....  Which is a
 weird sound to hear in the City.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -700,7 +700,7 @@ Weapons Shop~
    You see many arms hung up along the wall.  Some items glow and attract the
 attention of everyone.  The prices are steep for the glowing items.  
 ~
-232 8 0 0 0 0
+232 8 0 0 0 1
 D2
 ~
 ~
@@ -712,7 +712,7 @@ South park~
 strain.  The sun seems to beat down more on this part of town than the others.
 Available exits are to the east and west.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -728,7 +728,7 @@ Terringham way~
 To the South you hear boots clanging on the ground and orders being shouted.  
 The other exits are to the East, West and South.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -779,7 +779,7 @@ South park~
 The street is well maintained by a street worker that is here cleaning up the
 street.  The only exits are to the East and the West.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -795,7 +795,7 @@ South park~
 looks like there has been blood spilled here before and someone didn't do there
 job to clean it up.  The other exits are East and West.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -810,7 +810,7 @@ South park~
    You are standing at the SouthEastern corner of the city.  The walls are high
 and almost metallic smooth.  The only exits you can see are North and West.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -826,7 +826,7 @@ Star trail~
 have pictures that stand out more than normal paintings do.  The only exits you
 can see are North and South.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -849,7 +849,7 @@ Star trail~
 see some houses, but the access is blocked off to you.  To the north you can see
 the main street leading from the east gate.  To the south you see a trail.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -864,7 +864,7 @@ An alley~
    This is not your typical alley.  This alley seems to be peaceful and glows
 with a brilliant blue.  You notice a sign on a wall.  
 ~
-232 20 0 0 0 0
+232 20 0 0 0 1
 D0
 ~
 ~
@@ -884,7 +884,7 @@ An alley~
 hassles.  To the west is the don room, to the north is your exit back to the
 city.  
 ~
-232 16 0 0 0 0
+232 16 0 0 0 1
 D0
 ~
 ~
@@ -901,7 +901,7 @@ items here are up for grabs.  Feel free to take what you need.  Please don't
 take everything, let the others get some equipment too.  If there are 3 swords
 here..  Don't take all 3, you can't use 3 swords.  Please be curtious.  
 ~
-232 20 0 0 0 0
+232 20 0 0 0 1
 D1
 ~
 ~
@@ -912,7 +912,7 @@ The board room~
    This is where the mortal board sits.  Please read this board everyday.  It
 may contain new information.  Feel free to make notes on this board.  
 ~
-232 24 0 0 0 0
+232 24 0 0 0 1
 D0
 ~
 ~
@@ -925,7 +925,7 @@ buildings to either side are quite striking as they have been painted with
 pictures of dragons fighting knights.  The only noticeable exits are to the
 north and south.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -940,7 +940,7 @@ Terringham way~
    This is the main street.  To the south is the gates.  There is a crossroads
 which lead to one of the off streets.  The last exit is North.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -960,7 +960,7 @@ A side street~
 something.  You notice that it seems very warm here.  This definately would not
 be a good place to rest, if need be.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -976,7 +976,7 @@ The armoury~
 leather to full plate.  If you need a special item, you have to ask for it.  It
 is not displayed in the open.  
 ~
-232 152 0 0 0 0
+232 152 0 0 0 1
 D2
 ~
 ~
@@ -988,7 +988,7 @@ Terringham street~
 importance.  To the South you see a sign over the exit that says Board room.  
 You can see a large fountain to the east.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -1007,7 +1007,7 @@ Terringham street~
    The road here leads east and west.  The walls to the north and south, sport
 some fabulous pictures.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1033,7 +1033,7 @@ Terringham street~
 untouched, and the lighting here seems to be a bit poor.  It looks as if someone
 tried to rush their job.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -1049,7 +1049,7 @@ Terringham avenue~
 paintings on them.  To the south you notice a large fountain.  To the west you
 see the Bank of Terringham.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1075,7 +1075,7 @@ Terringham Bank~
 you use this bank often.  We would hate to see an accident and you rejoin the
 game with no money.  The commands are easy.  Dep $$$$.  With $$$$.  Or Bal.  
 ~
-232 12 0 0 0 0
+232 12 0 0 0 1
 D1
 ~
 ~
@@ -1087,7 +1087,7 @@ Terringham avenue~
 The road looks like someone took their time to make travelling easy.  To the
 south is the bank and to the east you can smell the scents of leather and oils.
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1106,7 +1106,7 @@ Terringham avenue~
    The smooth easy going road continues north to south.  You notice exits to the
 east and west.  Which path shall you take?  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1130,7 +1130,7 @@ Terringham avenue~
 have paintings of the towns greatest heros.  The only visible exits are to the
 north and south.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1145,7 +1145,7 @@ An Alley~
    You hear something moving behind you, but cannot see anything or anyone.  
 You hear noises coming from the east.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -1161,7 +1161,7 @@ Guild row~
 from the south.  You can guess that these are the cleric guilds and the thieves
 guild.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1181,7 +1181,7 @@ Entrance to the Cleric Guild~
 expand their skills.  The guildmaster awaits your arrival, please don't
 hesitate.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D2
 ~
 ~
@@ -1197,7 +1197,7 @@ Entrance to the Thieves Guild.~
 expand their skills.  The guildmaster awaits your arrival, please don't
 hesitate.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1212,7 +1212,7 @@ Guild row~
    You have found the path to the warriors guild and the mages guild.  Which
 path do you take to reach your guildmaster?  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1232,7 +1232,7 @@ Entrance to the Warriors Guild~
 to expand their fighting skills and swordmanship.  The guildmaster awaits your
 arrival, please don't hesitate.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D2
 ~
 ~
@@ -1248,7 +1248,7 @@ Entrance to the Mage Guild~
 expand their knowledge in the lores of Arcane.  The guildmaster awaits your
 arrival, please don't hesitate.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D0
 ~
 ~
@@ -1280,7 +1280,7 @@ The Bakery~
 counter, surrounding this place.  You see all sorts of breads, pies and cakes.
 Which would you like for your travel.  
 ~
-232 136 0 0 0 0
+232 136 0 0 0 1
 D3
 ~
 ~
@@ -1291,7 +1291,7 @@ An Alley~
    You enter a very clean alley.  There is nothing here polluting the roads.  
 You hear faint noises coming for the west.  To the east is Terringham road.  
 ~
-232 0 0 0 0 0
+232 0 0 0 0 1
 D1
 ~
 ~
@@ -1306,7 +1306,7 @@ Clerics Guild~
    The Cleric Guildsmaster is here waiting to help you.  This room has a very
 peaceful feeling about it.  You feel enlightened when you enter here.  
 ~
-232 156 0 0 0 0
+232 156 0 0 0 1
 D5
 ~
 ~
@@ -1318,7 +1318,7 @@ Thieves Guild~
 knowing that something is afoot.  You listen carefully and Turn about real
 fast....  Your Guildmaster slips out of the Darkness.  
 ~
-232 28 0 0 0 0
+232 28 0 0 0 1
 D5
 ~
 ~
@@ -1331,7 +1331,7 @@ warrior practicing on these dummies.  He does not look like the type to be
 messed with.  The Warrior stops his training and advances towards you with a
 friendly smile, "Fresh meat" he says calmly.  
 ~
-232 28 0 0 0 0
+232 28 0 0 0 1
 D5
 ~
 ~
@@ -1343,7 +1343,7 @@ Mages Guild~
 mixed components.  This is a mage's dream house.  Your guild master sits behind
 a large desk studying a book.  
 ~
-232 28 0 0 0 0
+232 28 0 0 0 1
 D5
 ~
 ~
@@ -1355,7 +1355,7 @@ General Store~
 to go adventuring with is in here.  You have your sacks and bags and lanterns
 all right here.  Please come in and shop around.  
 ~
-232 8 0 0 0 0
+232 8 0 0 0 1
 D3
 ~
 ~

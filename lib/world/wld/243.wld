@@ -9,7 +9,7 @@ chirp quietly to themselves and you can smell the faint scent of flowers
 and freshly cut grass.  You feel like you could lie down in the grass and
 stay here forever, surrounded by powerful beauty in all directions.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -59,7 +59,7 @@ feel like you could lie down in the grass and stay here forever, surrounded
 by powerful beauty in all directions. You can see a large sign on the left
 side of the road.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -88,7 +88,7 @@ you can see some hills to the north.  The grass is no longer cut here, and
 you can feel a cold wind coming from the north. The hills up ahead have a
 bit of snow on them.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The field continues North.
 ~
@@ -106,7 +106,7 @@ Snowy Pass Entrance~
 still grows green,  but the hills straight ahead of you are covered with
 snow. A dirt trail leads north into the hills.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A dirt path leads North.
 ~
@@ -126,7 +126,7 @@ You find yourself at the base of a long hill that spans east and west.
 The grass is no longer cut here, and you can feel a cold wind coming from
 the north.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The field continues East.
 ~
@@ -146,7 +146,7 @@ You find yourself at the base of a long hill that spans east and west.
 The grass is no longer cut here, and you can feel a cold wind coming from
 the north.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D2
 The field continues South.
 ~
@@ -166,7 +166,7 @@ you can see a wide expanse of deep snow. You can see a very small
 hole leading into the eastern hill. A short wooden sign has been shoved
 into the ground beside the hill.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 4
 D0
 The trail continues North.
 ~
@@ -268,7 +268,7 @@ It's snowing heavily, and a strong wind is blowing it all around. Huge
 drifts of snow block your way east and west. The path has several
 inches of snow covering it.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -287,7 +287,7 @@ and a strong wind is blowing it all around. A huge drift of snow blocks your
 way west, but a very narrow path has been shoveled east. The path has 
 several inches of snow covering it.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -311,7 +311,7 @@ and a strong wind is blowing it all around. Huge drifts of snow block your
 way north and south. You can see some old frozen steps leading up to a
 wooden shack to the east.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 An old shack is East.
 ~
@@ -420,7 +420,7 @@ Ski Hill Road~
 hill, which must be the Cooland Ski Hill. To the east you can see a log
 cabin. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The cabin is East.
 ~
@@ -458,7 +458,7 @@ A Snowy Path~
 and a strong wind is blowing it all around. A huge drift of snow blocks your 
 way east, but a huge log cabin lies directly west. The path continues north.
 ~
-243 4 0 0 0 0
+243 4 0 0 0 2
 D0
 The path continues North.
 ~
@@ -481,7 +481,7 @@ A Snowy Path~
 a strong wind is blowing all around.  Huge snow drifts block your way to the
 east, west and north.  
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D2
 The path continues South.
 ~
@@ -809,7 +809,7 @@ A Snowy Path~
 and a strong wind is blowing all around. Huge snow drifts block your way to
 the east and west. The path continues north and south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -827,7 +827,7 @@ A Snowy Path~
 and a strong wind is blowing all around. Huge snow drifts block your way to
 the east and west. The path continues north and south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -845,7 +845,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north and west.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The trail continues East.
 ~
@@ -863,7 +863,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The trail continues East.
 ~
@@ -886,7 +886,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The trail continues East.
 ~
@@ -910,7 +910,7 @@ so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north. You can see the back
 of the chalet to the south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The trail continues East.
 ~
@@ -929,7 +929,7 @@ so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way north. You can see the back
 of the chalet to the south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The trail continues East.
 ~
@@ -949,7 +949,7 @@ by, but this trail is fairly empty. A thick forest blocks your way north
 and east. The chalet is to the southwest. A wide path (almost a road) 
 leads south to the ski hill's main entrance.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D2
 The path continues South.
 ~
@@ -967,7 +967,7 @@ Newbie ski trail~
 so this must be a newbie trail. You see the odd skier go by, but this trail
 is fairly empty. A thick forest blocks your way west.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The trail continues North.
 ~
@@ -990,7 +990,7 @@ Forest~
 see the ski trail to the north and west. Since this place is more hidden
 than the open trails, snowboarders like to come here to smoke up.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The newbie run is North.
 ~
@@ -1019,7 +1019,7 @@ see the ski trail to the north. Since this place is more hidden than the open
 trails, snowboarders like to come here to smoke up. The back of the chalet is
 directly east, blocking your way.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The newbie run is North.
 ~
@@ -1057,7 +1057,7 @@ Main Path~
    You find yourself at the top of the ski hill on a wide path. The chalet 
 blocks your way west, while a thick forest blocks your way east.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -1076,7 +1076,7 @@ too steep, so this must be a newbie trail. You see the odd skier go by, but
 thistrail is fairly empty. A thick forest blocks your way west and south. 
 Since there aren't any ski lifts at this hill, you'll have to walk back up.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The trail continues North.
 ~
@@ -1094,7 +1094,7 @@ Forest~
 see the newbie trail to the west. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The forest continues North.
 ~
@@ -1123,7 +1123,7 @@ see the newbie trail to the west. The chalet blocks your way east. Since this
 place is more hidden than the open trails, snowboarders like to come here to 
 smoke up.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The forest continues North.
 ~
@@ -1194,7 +1194,7 @@ blocks your way east. A large wooden building is built right into the hill to
 the west. Several ski racks sit outside the door, and a huge chimney is 
 billowing out smoke from the side of the chalet.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The path continues North.
 ~
@@ -1218,7 +1218,7 @@ the intermediate trail to the south. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The forest thickens
 and blocks your way west.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The forest continues North.
 ~
@@ -1241,7 +1241,7 @@ Forest~
 the intermediate trail to the south. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The forest continues North.
 ~
@@ -1270,7 +1270,7 @@ see the newbie trail to the west. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The chalet blocks 
 your way north.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The forest continues East.
 ~
@@ -1294,7 +1294,7 @@ see the newbie trail to the west. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The chalet blocks 
 your way north, while you can see the main path east.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The main path is East.
 ~
@@ -1317,7 +1317,7 @@ Main Path~
 north, while the more advanced runs are south. A forest lies west, and the
 steel entrance gate is east.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The main path continues North.
 ~
@@ -1342,7 +1342,7 @@ west and down. except east where the trail leads up. The snow is rather deep
 here, and it isn't groomed. You can see large ape-like footprints in the snow. 
 You get the feeling no one comes down here very often.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The intermediate trail continues East.
 ~
@@ -1361,7 +1361,7 @@ up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. A thick forest blocks your
 way north.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The intermediate trail continues East.
 ~
@@ -1384,7 +1384,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1412,7 +1412,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1440,7 +1440,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1468,7 +1468,7 @@ Intermediate ski trail~
 up through the snow, and many moguls and bumps are all around. This trail is
 obviously made for better skiers and snowboarders. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1495,7 +1495,7 @@ Start of the intermediate trailt~
    You're on the main path of the ski hill, at the entrance to the
 intermediate run. A thick forest blocks your way east.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The main path continues North.
 ~
@@ -1552,7 +1552,7 @@ the intermediate trail to the north. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The forest thickens
 and completely blocks your way west and south. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The intermediate trail is North.
 ~
@@ -1570,7 +1570,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The intermediate trail is North.
 ~
@@ -1598,7 +1598,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The intermediate trail is North.
 ~
@@ -1626,7 +1626,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The intermediate trail is North.
 ~
@@ -1654,7 +1654,7 @@ Forest~
 the intermediate trail to the north. Since this place is more hidden than the 
 open trails, snowboarders like to come here to smoke up. 
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The intermediate trail is North.
 ~
@@ -1681,7 +1681,7 @@ Main Path~
    You're on the main path of the ski hill, at the entrance to the
 intermediate run. A thick forest blocks your way east.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The main path continues North.
 ~
@@ -1706,7 +1706,7 @@ is very steep. This place is definitely not for beginners. A high cliff is
 directly south. A large sign sits on the left side of the trail. (You should 
 read it!)
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1744,7 +1744,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest blocks
 your way south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1768,7 +1768,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest blocks
 your way south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1792,7 +1792,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest blocks
 your way south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 A forest is North.
 ~
@@ -1816,7 +1816,7 @@ snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A thick forest 
 blocks your way west and south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D0
 The main path is North.
 ~
@@ -1836,7 +1836,7 @@ forest below. Hey, now it doesn't look so far anymore. Oh, now you're impaled
 on a tall icy pine tree. Right before you black out, you feel the coldness of
 the wood in your chest.
 ~
-243 4 0 0 0 0
+243 4 0 0 0 3
 S
 T 24300
 #24392
@@ -1849,7 +1849,7 @@ A small booth stands here, where people must buy their lift tickets to get
 in. A small wooden sign has been nailed to the booth. A steel gate lies 
 west.
 ~
-243 68 0 0 0 0
+243 68 0 0 0 2
 D1
 The road continues East.
 ~
@@ -1880,7 +1880,7 @@ Main Path~
 you can see the entry gates, while to the west you can see the ski hill.
 A thick forest blocks your way north and south.
 ~
-243 0 0 0 0 0
+243 0 0 0 0 2
 D1
 The main entrance is East.
 ~

@@ -334,7 +334,7 @@ Toppled Tree House~
 appears that the tree that it was once in has long since toppled and rotted
 away.  This house would be better off as kindling, rather than a place to play.
 ~
-4 8 0 0 0 0
+4 8 0 0 0 3
 D0
 ~
 ~
@@ -384,7 +384,7 @@ logs and leaves.  Small beams of light shine through the roof of the tunnel,
 allowing some glimpse of the many insects and worms that reside here, burrowing
 silently through the decaying pieces of wood.  
 ~
-4 0 0 0 0 0
+4 0 0 0 0 3
 D1
 ~
 ~
@@ -401,7 +401,7 @@ There doesn’t seem to be anywhere in particular that it is coming from though
 stories have often been told of this tunnel being haunted by the spirits who
 died in the great battles that were held here.  
 ~
-4 0 0 0 0 0
+4 0 0 0 0 3
 D0
 ~
 
@@ -423,7 +423,7 @@ lingering heavy in the air.  Blood stains the walls and floor.  Several
 skeletons are scattered about the floor, threatening to trip anyone who passes
 through.  
 ~
-4 0 0 0 0 0
+4 0 0 0 0 3
 D1
 ~
 ~
@@ -547,7 +547,7 @@ forest allowing more to be visible than most would wish to see.  The tunnel
 itself is made up mostly of fungus and rotting bark, its surfaces literally
 crawling with squirming insects and decay.
 ~
-4 0 0 0 0 0
+4 0 0 0 0 3
 D1
 ~
 ~
@@ -677,7 +677,7 @@ A Log Bridge~
 scattered around its edges.  The air is warm and wet, and the slurping sounds of
 a bubbling swamp can be heard nearby.
 ~
-4 0 0 0 0 3
+4 0 0 0 0 2
 D1
 ~
 ~
@@ -919,7 +919,7 @@ more trees begin to appear.  The trees seem to be leaning to one side, almost as
 if they were creating a path for passage.  The pawn shop can be seen to the
 north.  
 ~
-4 8 0 0 0 3
+4 8 0 0 0 0
 D0
 ~
 ~
@@ -936,7 +936,7 @@ Village Pawn Shop~
 items can be seen hanging from the wall, collecting layers of dust and cobwebs.
 A thick, wooden counter bows slightly, its surface cracked with use and age.
 ~
-4 8 0 0 0 0
+4 8 0 0 0 3
 D2
 ~
 ~
@@ -1371,7 +1371,7 @@ of sticky dust and cobwebs.  A few planks have been placed over top, although
 these too are old and rotted.  Insects buzz lazily around, humming contentedly
 as if not often disturbed.
 ~
-4 8 0 0 0 0
+4 8 0 0 0 3
 D1
 ~
 ~

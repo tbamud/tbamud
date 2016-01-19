@@ -4,7 +4,7 @@ The Northwest End Of The Concourse~
 goes east, and the bridge is just north of here.  The concourse continues
 south along the city wall.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 You see the Bridge.
 ~
@@ -27,7 +27,7 @@ The Promenade~
 continues further east and to the west you see the city wall.  Park Road
 leads south from here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 The promenade continues.
 ~
@@ -50,7 +50,7 @@ The Promenade~
 continues both east and west.  South of here you see the entrance to
 the park, and a small building seems to be just west of the entrance.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 You see the promenade.
 ~
@@ -73,7 +73,7 @@ The Promenade~
 continues both east and west.  A small path leads south.  Looking across
 the river you see the levee.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 You see the Concourse.
 ~
@@ -97,7 +97,7 @@ promenade goes west.  Looking across the river you see a building that
 resembles a warehouse.  The Concourse continues south along the city
 wall.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D2
 The Concourse continues south.
 ~
@@ -120,7 +120,7 @@ The Park Entrance~
 the promenade and a small path leads south into the park.  To your east is
 the famous Park Cafe.
 ~
-31 4 0 0 0 0
+31 4 0 0 0 1
 D0
 You see the promenade.
 ~
@@ -155,7 +155,7 @@ A Small Path In The Park~
    You are walking along a small path through the park.  The path continues
 south and east.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 ~
 ~
@@ -171,7 +171,7 @@ A Small Path In The Park~
 just north of here, and Park Cafe is just east of the entrance.  The path
 leads further east and west.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 You see the northern park entrance.
 ~
@@ -191,7 +191,7 @@ A Small Path In The Park~
    You are on a small path running through the park.  It continues west and
 south and just north of here you see the southern wall of Park Cafe.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D2
 ~
 ~
@@ -217,7 +217,7 @@ Park Road~
    The road continues north and south.  A building is just west of here, you
 notice a sign on the door.  The park entrance is to the east.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -250,7 +250,7 @@ The Western Park Entrance~
    You are standing at the western end of the park.  A small path leads east
 into the park and going west through the entrance you will reach Park Road.
 ~
-31 4 0 0 0 0
+31 4 0 0 0 1
 D1
 ~
 ~
@@ -265,7 +265,7 @@ A Path In The Park~
    You are in the park.  The paths lead north and west.  Westward is the
 park entrance and to the east you see a small pond.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -301,7 +301,7 @@ A Path In The Park~
    You are in the park.  The paths lead north and east.  Eastward is the
 park entrance and to the west you see a small pond.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -321,7 +321,7 @@ The Eastern Park Entrance~
 into the park.  Going east through the entrance you will reach Emerald
 Avenue.
 ~
-31 4 0 0 0 0
+31 4 0 0 0 1
 D1
 ~
 ~
@@ -337,7 +337,7 @@ Emerald Avenue~
 promenade and to the west is the park entrance.  To the east is the not very
 big Town Hall of Midgaard.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -359,7 +359,7 @@ S
 Park Road~
    You are on Park Road which leads north and south.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -374,7 +374,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  The road leads north and
 west.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -392,7 +392,7 @@ at the center of the road cross.  Its other end leads directly upwards towards
 the sky.
 A road sign is here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -435,7 +435,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  The road leads south and
 east.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 ~
 ~
@@ -450,7 +450,7 @@ Park Road~
    You are on Park Road which leads south and north.  Elm Street is east of
 here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -469,7 +469,7 @@ Elm Street~
    You are on Elm street.  Park Road is to the west and Elm Street continues
 in eastward direction.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 ~
 ~
@@ -483,7 +483,7 @@ S
 The End Of Elm Street~
    You are at the end of Elm Street.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D3
 ~
 ~
@@ -494,7 +494,7 @@ Emerald Avenue~
    You are on Emerald Avenue which continues north.  The Concourse is south
 of here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -509,7 +509,7 @@ Park Road~
    You are on Park Road which continues north.  The Concourse is south of
 here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -524,7 +524,7 @@ On The Concourse~
    You are at the southwest corner of the city wall.  The Concourse leads
 both north and east.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -544,7 +544,7 @@ On The Concourse~
    The Concourse continues both east and west.  Emerald Avenue is north of
 here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -563,7 +563,7 @@ On The Concourse~
    The Concourse continues both east and west.  Park Road is north of here
 and an iron grate leads south to the graveyard.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -587,7 +587,7 @@ On The Concourse~
    You are at the southeast corner of the city wall.  The Concourse leads
 both north and west.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -601,7 +601,7 @@ S
 Park Road~
    You are at Park Road which continues north and south.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -616,7 +616,7 @@ Emerald Avenue~
    You are at Emerald Avenue which continues north and south.  Penny Lane leads
 east from here.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -635,7 +635,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  To the east the road goes on
 and to the south is the Road Crossing.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 ~
 ~
@@ -650,7 +650,7 @@ Emerald Avenue~
    You are standing at a bend on Emerald Avenue.  To the west the road goes on
 and to the north is the Road Crossing.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -665,7 +665,7 @@ Park Road~
    You are at a bend on Park Road.  To the north the road goes on and to the
 east is the Road Crossing.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -680,7 +680,7 @@ Park Road~
    You are at a bend on Park Road.  To the south the road goes on and to the
 west is the Road Crossing.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D2
 ~
 ~
@@ -753,7 +753,7 @@ Penny Lane~
    You are on Penny Lane.  Emerald Avenue is to the west and Penny Lane
 continues in eastward direction.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D1
 ~
 ~
@@ -767,7 +767,7 @@ S
 Penny Lane~
    You are on Penny Lane.  The narrow road continues north and west.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 ~
 ~
@@ -781,7 +781,7 @@ S
 The End Of Penny Lane~
    You are at the end of Penny Lane.  The only exit appears to be south.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D2
 ~
 ~
@@ -793,7 +793,7 @@ A Gravel Road In The Graveyard~
 graveyard.  On both sides of the road grow dark evergreen trees.  An iron
 grate is to the north.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 2
 D0
 Through the solid iron bars you see the Concourse.
 ~
@@ -810,7 +810,7 @@ A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  
 ~
-31 0 0 0 0 0
+31 0 0 0 0 2
 D0
 The gravel road continues northwards.
 ~
@@ -827,7 +827,7 @@ A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  
 ~
-31 0 0 0 0 0
+31 0 0 0 0 2
 D0
 The gravel road continues northwards.
 ~
@@ -844,7 +844,7 @@ A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  
 ~
-31 0 0 0 0 0
+31 0 0 0 0 1
 D0
 The gravel road continues northwards.
 ~
@@ -862,7 +862,7 @@ In Front Of The Chapel~
    You are on an open space before a small chapel.  A gravel road leads north
 through the graveyard and the chapel entrance is to the south.
 ~
-31 0 0 0 0 0
+31 0 0 0 0 2
 D0
 The gravel road continues northwards.
 ~

@@ -6,7 +6,7 @@ realize that the clay road is completely invisible to you from here.  To the
 east, the path continues.  It appears that the western opening you entered
 through is now impassible.  You are here whether you like it or not....    
 ~
-250 0 0 0 0 0
+250 0 0 0 0 3
 D1
 An Ancient Path through the dense forest
 ~
@@ -31,7 +31,7 @@ if not for the mountain you can now see in the distance, would probably just
 recall to Midgaard.  But then again, who ever said that adventuring was easy?
   
 ~
-250 0 0 0 0 0
+250 0 0 0 0 3
 D1
 End of the Ancient Path
 ~
@@ -50,7 +50,7 @@ the foot of a path.  The path leads north, to the mountain which has, until now
 been your only beacon.  Now that you can better see the ominous mountain
 looming before you, you begin to rethink the idea of recalling to Midgaard.  
 ~
-250 0 0 0 0 0
+250 0 0 0 0 3
 D0
 Path to the Mountain
 ~
@@ -69,7 +69,7 @@ closer you get to the mountain, the worse you feel about the whole thing.  You
 begin to remember hearing old stories about a hidden mountain, which was, for
 some unknown reason, named DragonSpyre.    
 ~
-250 0 0 0 0 0
+250 0 0 0 0 3
 D0
 Path to the Mountain
 ~
@@ -89,7 +89,7 @@ deep stench of dragon is wafting through the air now, and you are starting to
 feel the first tinges of dragon fear stir within you.  Maybe you should go back
 while you still have that option.    
 ~
-250 0 0 0 0 0
+250 0 0 0 0 3
 D0
 At the foot of the Mountain
 ~
@@ -108,7 +108,7 @@ almost strong enough to disable you.  The only way you are able to stand it is
 by ripping of a piece of cloth, and covering your mouth and nose with it as you
 walk.  Far above you, you see what must be the entrance to the cave.    
 ~
-250 0 0 0 0 0
+250 0 0 0 0 3
 D2
 Path to the Mountain
 ~

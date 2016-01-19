@@ -5,7 +5,7 @@ and plants that should have been dead long ago.  A lot of the leaves on the
 trees are missing.  They appear to have been torn off.  Several large foot
 prints linger in the sand.    
 ~
-233 132 0 0 0 0
+233 132 0 0 0 2
 D1
 ~
 ~
@@ -33,7 +33,7 @@ Dragon Plains~
 into the sand, making it difficult for you to walk.  You can see a small stream
 to the south.  But is it really there, or is it a mirage?    
 ~
-233 64 0 0 0 0
+233 64 0 0 0 2
 D1
 ~
 ~
@@ -54,7 +54,7 @@ into the water and see several small pebbles drifting through the current of
 the stream.  You look ahead to see where the stream ends, and notice that it
 disappears into the ground.    
 ~
-233 256 0 0 0 0
+233 256 0 0 0 7
 D0
 ~
 ~
@@ -67,7 +67,7 @@ see the sand swallow the wood.  There is a slight incline here, causing some
 drifts of sand to roll across your feet.  You feel the wind pick up as you
 continue on your way.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -88,7 +88,7 @@ sand begin to fill in the large hole, threatening to trap you inside.  The
 sides of the huge hole are sturdy enough to climb out of, but you'd better
 hurry before you get burried alive.    
 ~
-233 64 0 0 0 0
+233 64 0 0 0 2
 D2
 ~
 ~
@@ -100,7 +100,7 @@ Sand Drift~
 hill, but not as steep.  Some dried up leaves lay at your feet, waiting to be
 blown away in the wind.  You hear some birds singing in the distance.    
 ~
-233 4 0 0 0 0
+233 4 0 0 0 2
 D1
 ~
 ~
@@ -120,7 +120,7 @@ Dragon Plains~
 blow through your hair, making your head tingle with relaxation.  There is a
 large tumbleweed being blown around by the breeze.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -136,7 +136,7 @@ Dragon Plains~
 yourself from the flying grains.  You notice some small footprints in the sand.
 They are much too small to be ones of a dragon.  What could they be from?    
 ~
-233 128 0 0 0 0
+233 128 0 0 0 2
 D1
 ~
 ~
@@ -152,7 +152,7 @@ Skeleton Shack~
 long dead.  The smell of decay fills your nostrils, almost making you gag.  A
 light covering of animal skin is on the the roof to help keep the rain out.  
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -181,7 +181,7 @@ An Abandoned Well~
 could get any water out of here, not that anyone would want to.  The bottom of
 the well is crawling with large black beetles.  Watch out, one might escape!  
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -278,7 +278,7 @@ Dragonscale Tunnel~
 stumble out of the tunnel and fall onto the sand.  You feel your body begin to
 sink into the sand.  Struggling would do you no good.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D2
 ~
 ~
@@ -1047,7 +1047,7 @@ Dragon Plains~
 in the dirt here.  There might be enough to gather and make a small fire.  It
 even looks as if other travellers have camped out here before.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1063,7 +1063,7 @@ Dragon Plains~
 should have been dead long ago.  The land here is very dry and humid.  You
 begin to wonder how anything could possibly grow here.    
 ~
-233 128 0 0 0 0
+233 128 0 0 0 2
 D0
 ~
 ~
@@ -1079,7 +1079,7 @@ Dragon Plains~
 should have been dead long ago.  The land here is very dry and humid.  You
 begin to wonder how anything could possibly grow here.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1095,7 +1095,7 @@ Dragon Plains~
 should have been dead long ago.  The land here is very dry and humid.  You
 begin to wonder how anything could possibly grow here.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1111,7 +1111,7 @@ Dragon Plains~
 should have been dead long ago.  The land here is very dry and humid.  You
 begin to wonder how anything could possibly grow here.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1127,7 +1127,7 @@ Dragon Plains~
 amounts of sand will ever cease.  You feel a small breeeze pick up, threatening
 to blow some sand in your eyes.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1143,7 +1143,7 @@ Sand Drift~
 your knees, making it very difficult for you to walk.  It will take a bit of a
 struggle to get free.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1159,7 +1159,7 @@ Sand Drift~
 feel your legs begin to itch.  Your feet seem to be going deeper into the sand.
 How is that possible?    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1175,7 +1175,7 @@ A Small Path~
 No tracks are visible along the beaten path and there is nothing but sand as
 far as the eye can see.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1191,7 +1191,7 @@ A Small Path~
 you would be better off walking through the sand.  The sand on both sides is
 very fine and makes strange sounds as you walk on it.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1207,7 +1207,7 @@ A Small Path~
 them snapping and crunching under your weight.  Many of the sticks have large
 thorns that look dangerous.  Be careful not to fall.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1223,7 +1223,7 @@ A Small Path~
 anywhere special, but it sure beats walking through the sand.  The path is out
 of place amongst the sand dunes.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1239,7 +1239,7 @@ Dragon Plains~
 vary in color and texture from almost white to a light brown.  Strange bits of
 scales seem to be intermixed.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1260,7 +1260,7 @@ and fall to the ground.  Grains of sand get shoved into your teeth, making you
 feel sick to your stomach.  Maybe you should start watching where you're
 walking.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1276,7 +1276,7 @@ Sand Drift~
 feel your legs begin to itch.  Your feet seem to be going deeper into the sand.
 How is that possible?    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1292,7 +1292,7 @@ Dragon Plains~
 beings, like yourself, creeping around.  It would be easy to become lost or
 disoriented.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1308,7 +1308,7 @@ Dragon Plains~
 ground, swirling around in the wind.  It appears to be almost dancing.  The
 rumors about dust devils may be true.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1324,7 +1324,7 @@ Dragon Plains~
 everything to its core.  The parched and dreary land is barren and scarred.  
 It hardly seems able to support any life.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D2
 ~
 ~
@@ -1336,7 +1336,7 @@ Dragon Plains~
 surroundings.  To the west you can see some sort of burial ground.  Maybe you
 should go have a look.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1352,7 +1352,7 @@ Indian Burial Ground~
 headed and not quite yourself.  Many small pebbles are on the ground, marking
 grave sites.  Be careful not to step on one!    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1369,7 +1369,7 @@ bones lying around.  You wonder how they could have gotten here.  You begin
 looking around, then you see the reason.  Numerous footprints from several
 large dragons have been smashed into the dirt, crushing some of the graves.  
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1385,7 +1385,7 @@ Indian Burial Ground~
 the thundering footsteps of a very large dragon.  Maybe it would be best to
 leave before you turn into someones lunch.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1401,7 +1401,7 @@ Indian Burial Ground~
 where all the dragons are.  The exit is coming up to the east.  Strange piers
 and poles stick up out of the ground in the distance.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1417,7 +1417,7 @@ Gates leading out of the Burial Grounds~
 you can see a large water hole.  You begin to wonder if its really there.  
 Stories of mirages abound in the taverns.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1433,7 +1433,7 @@ Dragon Plains~
 the east you can see a fairly large water hole.  Maybe you could get a drink
 there.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1453,7 +1453,7 @@ Water Hole~
 The water looks clean and drinkable.  Sparse vegetation surrounds the limited
 water supply.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D2
 ~
 ~
@@ -1469,7 +1469,7 @@ Water Hole~
 water thinking about yout long lost childhood.  So many old memories flood your
 mind, making you feel light headed.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1485,7 +1485,7 @@ Water Hole~
 rather murky and wouldn't be very good for drinking.  Something must have
 stirred it up recently.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1501,7 +1501,7 @@ Dragon Plains~
 the distance you can see a few buildings.  What are buildings doing here?  
 They appear to have been destroyed.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1517,7 +1517,7 @@ Dragon Plains~
 the remains of a ransacked village.  Wisps of smoke still rise up from the
 charred remains of what must have been houses.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1534,7 +1534,7 @@ can see several large footprints in the dirt, most likely from a dragon.
 Piles of rubble are everywhere.  You can see a skeleton under one of the piles.
   
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1551,7 +1551,7 @@ race through your mind.  You see several people, probably ones who lived in
 this village, being eaten by the dragons.  You begin feeling sick to your
 stomach.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1567,7 +1567,7 @@ Ransacked Village~
 You feel that you're at the end of the village.  You can see the plains to the
 east.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1583,7 +1583,7 @@ Dragon Plains~
 of battles that took place here fill your mind.  You realize how lucky you are
 to still be alive.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D1
 ~
 ~
@@ -1599,7 +1599,7 @@ Dragon Plains~
 here alone.  No other signs of life exist and the footprints are quickly being
 covered by the blowing sand.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D2
 ~
 ~
@@ -1615,7 +1615,7 @@ Dragon Plains~
 small trees and shrubs.  The heat seems to lessen and a cooler breeze rustles
 through the vegetation.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~
@@ -1631,7 +1631,7 @@ Dragon Plains~
 you've come.  You feel a great sense of accomplishment.  Maybe the journey
 wasn't so bad after all.    
 ~
-233 0 0 0 0 0
+233 0 0 0 0 2
 D0
 ~
 ~

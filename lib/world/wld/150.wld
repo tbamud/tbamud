@@ -8,7 +8,7 @@ that the road seems to be perfectly smooth and perfectly straight.
 surrounds the road at this point.
 A traveller passes by and waves cheerfully at you.
 ~
-150 4 0 0 0 0
+150 4 0 0 0 1
 D1
 The King's Road continues in a straight line to the east towards a grand
 castle.
@@ -36,7 +36,7 @@ The King's Road~
    You stand in the center of the great King's Road.  The road is very well
 built, and goes in a straight line due east-west.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 1
 D1
 The King's Road continues in a straight line to the east.
 ~
@@ -54,7 +54,7 @@ The King's Road~
 skill of the builders is apparent, since it is impossible to notice
 any turn or irregularity in the road.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 1
 D1
 You see a castle in the far east.
 ~
@@ -75,7 +75,7 @@ by a deep moat, and its windows are just narrow slits for archers
 to shoot through.  To the north there is a drawbridge across the
 moat.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 1
 D0
 You see the drawbridge.
 ~
@@ -93,7 +93,7 @@ On The Drawbridge~
 you is a huge, double-doored gate.  It seems very strong.  You see some
 whirls in the moat.
 ~
-150 4 0 0 0 0
+150 4 0 0 0 1
 D0
 The gate has huge, but intricately carved hinges.  As the Castle itself,
 it seems designed not only for strength, but also for beauty.
@@ -1399,7 +1399,7 @@ a peaceful feeling come over you as you realize that mankind
 has not passed this way for some time.
    The faded trail appears to lead north and south.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 4
 D0
 The travel upon the King's Road can be heard off to the north.
 ~
@@ -1423,7 +1423,7 @@ used that it has almost completely grown over with vegitation
 from the woods here.  
    The faded trail appears to lead north and east.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 4
 D0
 The trail continues northwards.
 ~
@@ -1449,7 +1449,7 @@ from the woods here.
 a strange eerie silence seems to hang in the air, almost blocking
 out all the sounds that you can hear from the north and east.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 4
 D2
 The undergrowth begins to open up to the south and you can see what
 appears to be a small village to the south.  It is very quiet, almost
@@ -1476,7 +1476,7 @@ village either.  It is almost as still and silent as the woods
 to the north.
 There is a small sign lying by the side of the road here.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 2
 D0
 An trail leads into the heavy undergrowth to the north.
 ~
@@ -1516,7 +1516,7 @@ as if the village hides a secret which they do not want to be spread
 about.
    There is another house standing on the east side of the road.  
 ~
-150 0 0 0 0 0
+150 0 0 0 0 2
 D0
 The dirt road continues to the north.
 ~
@@ -1549,7 +1549,7 @@ a building to the east with a small sign hanging out front from a black
 and charred chain.
    The dirt road continues north and south.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 2
 D0
 The small dirt road continues towards the north.
 ~
@@ -1593,7 +1593,7 @@ decade ago, but the village seems to have been empty for almost
 that long.
    The dirt road leads away from the carnage to the north.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 2
 D0
 Just near the north edge of the pit a small and narrow trail leads
 away.
@@ -1666,7 +1666,7 @@ near what is left of the north wall seems to indicate that this was
 once a shop.
    The road lies to the west through the blackened wall.
 ~
-150 0 0 0 0 0
+150 0 0 0 0 2
 D3
 You can see the dirt road to the west.
 ~
@@ -1684,7 +1684,7 @@ all around you seems to be almost contrived, and doesn't seem natural
 for this kind of vegitation.
    The path continues west and you can see light to the east.
 ~
-150 9 0 0 0 0
+150 9 0 0 0 1
 D1
 The path continues towards a small intersection with a dirt road.
 ~
@@ -1704,7 +1704,7 @@ as if they didn't want to feel your presence.  The wood is almost totally
 silent and you wonder silently to yourself why this could be.
    The path appears to continue east and west.
 ~
-150 9 0 0 0 0
+150 9 0 0 0 1
 D1
 The path continues through the darkness.
 ~
@@ -1732,7 +1732,7 @@ far above your heads blocking out the sky.
 in colour.  This glow provides enough light for you to see with even
 though the sky above has been blotted out.
 ~
-150 8 0 0 0 0
+150 8 0 0 0 1
 D1
 A narrow path leads away into the darkness.
 ~

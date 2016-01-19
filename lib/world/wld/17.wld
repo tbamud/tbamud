@@ -6,7 +6,7 @@ hooves turning it into a thick muddy slime.  Through the thick forest to the
 east you see the western wall of Bellau City.  Through a thin covering of trees
 to the west you see a massive body of water.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -63,7 +63,7 @@ it to the south or enter the courtyard to the west.  Out in the courtyard
 you see a couple groups of people talking amongst themselves.  Maybe they 
 can give you some answers to what's going on.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -84,7 +84,7 @@ branches off to the east.  Several people are standing around in the courtyard
 looking at the main gate, but no one is leaving.  You notice guards are blocking
 anyone from leaving the castle.  It looks like you might be stuck here.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -104,7 +104,7 @@ Courtyard~
 back and forth.  Everyone in the castle seems to be keeping secrets from each
 other.  They look in your direction and immediately stop talking.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -125,7 +125,7 @@ missing.  Only a few people are walking around through the courtyard and none of
 them are going towards the gate.  They all look at each other and especially at
 the guards distrustfully.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -215,7 +215,7 @@ walking along the lane to the north and south but they don't seem to have
 a purpose other than to be pacing, obviously waiting for something or 
 someone.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -297,7 +297,7 @@ Tourney Yard~
 one another for a claim to a seat on the round table.  You can make out several
 contests underway.  Perhaps you would like to joust?
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D2
 ~
 ~
@@ -315,7 +315,7 @@ Flanking the road are the standards of the other knights of the round table.  A
 strange peace fills the air here.  Knights Way continues to the north and the
 Tourney Yard of Camelot is to the south.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -339,7 +339,7 @@ Tourney Yard~
 one another for a claim to a seat on the round table.  You can make out several
 contests underway.  Perhaps you would like to joust?
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -373,7 +373,7 @@ look to be very proficient.  Several squires and lackeys look on in
 concentration, trying to memorize the complex forms the masterful knights 
 use to try to overcome each other.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -407,7 +407,7 @@ stone look like they could hold back any army, yet this castle already seems
 defeated.  You wonder at how any army could overtake the greatest kingdom and
 ruler ever.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -424,7 +424,7 @@ lake at the small ferry on the shore waiting to carry travellers across.
 Several Archers and guards keep a sharp lookout as if they are expecting 
 a full scale siege at any moment.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -437,7 +437,7 @@ Bellau City to the east and a thick forest to the south.  The lake around
 the castle is smooth as glass and reflects an inverse image of the castle.  
 The stairs lead back down.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -449,7 +449,7 @@ South Tower~
 the distance.  A guard ignores you, dismissing you as harmless, and resumes his
 watch.  You have no idea what he's looking for.  A set of stairs lead back down.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -461,7 +461,7 @@ Open Field~
 them.  The farmer stares at you in disgust as you walk by.  These people 
 don't seem to be very happy about working in these fields.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -480,7 +480,7 @@ right up against the western wall of Bellau City, and to the west, through a
 thin covering of trees, you see a large body of water.  Is it a lake or an
 ocean?  You're not sure.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -497,7 +497,7 @@ building to the west.  The shadows are deep in this corner of the castle
 and it seems like the beggars and unlawful merchants have taken over this 
 area.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -630,7 +630,7 @@ Center Lane~
 to the north.  They look to be mostly nobles and servants.  All of the 
 common folk must be out working the fields.  A tall wall is to the west.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -716,7 +716,7 @@ Tourney Yard~
 a squeal of delight from a spectator.  The black caped knight leans into his
 charge with his weight forward in a low stand on his stirrups.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -736,7 +736,7 @@ Tourney Yard~
 full armor and a bright orange plume.  To the right is a knight in chain mail
 and a trailing black cape.  Arthur signals the knights with a short wave.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -761,7 +761,7 @@ orange plummed knight contorts in his saddle at the last second, delivering a
 thrust high on the shield of the black caped knight.  The black caped knight
 connects with a hard shot to the center of the shield of the orange knight.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -800,7 +800,7 @@ a ball and chain, swinging it around with very little control.  The lead ball is
 too much for him and keeps pulling him off balance.  You decide to quickly move
 on before the inexperienced squire hurts himself or you.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -833,7 +833,7 @@ West Lane~
 the stone walls of a building in that direction.  Somebody still seems to be
 able to celebrate.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -889,7 +889,7 @@ ground here has been plowed and several serfs are dutifully picking rocks out of
 the field and throwing them into the lake.  You duck as they don't seem to care
 whether they hit the lake or you.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -907,7 +907,7 @@ began to reclaim the path as its own.  The western wall of Bellau City is still
 to the east and you hear the gentle lapping of waves on the shoreline to the
 west.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -925,7 +925,7 @@ north or west.  A beggar looks up at you, raising a small tin cup, a glimmer of
 hope in his eyes.  A set of stairs are carved into the wall to the west, leading
 up into the tower.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -946,7 +946,7 @@ the east or west.  Shadows cover a large portion of the road and you try
 unsuccessfully to peer into them.  Beggars seemed to have taken over this part
 of the castle.  This must be the poor sector.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -964,7 +964,7 @@ note that looks to be signed by the king himself.  He starts to tell you what
 it's about, but then a guard rounds a corner to the west and the merchant
 immediately walks away from you.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -981,7 +981,7 @@ position at the Round Table.  All you need to do is purchase the Holy Grail
 from him and present it to the king.  The merchant pulls out a tin cup you 
 saw a beggar using not ten minutes ago and asks for 2000000 gold.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -998,7 +998,7 @@ the center of the castle carries the smell of food and wine to you.  The lane
 you are on is empty except for a scattering of guards in the distance.  Where
 are all the common folk?
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1019,7 +1019,7 @@ traffic that would flow through a castle this size.  The few people that hurry
 past you don't even attempt to be polite to anyone else.  Though the road is
 wide and empty, they still shoulder you out of their way.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1036,7 +1036,7 @@ ordering people into his army to fight the northern army.  No one has come back
 from the battles.'  He emphasizes his words with a long stare that sets your
 nerves on end, then turns and walks away.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1053,7 +1053,7 @@ you as if measuring your abilities against his.  He writes something down on a
 piece of paper and hands it to a page that is walking by.  The guard looks back
 up at you and grins.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1070,7 +1070,7 @@ a merchant about some new tax he's supposed to be collecting.  The merchant
 seemed to think he wouldn't have to pay right up until the guard drew his sword.
 A set of stairs is carved into the wall to the west, leading up into the tower.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1158,7 +1158,7 @@ knight.  She quickly runs over to congratulate the black knight, hanging on to
 him like a leech.  The spectators cheer weakly, hurrying over to shake the
 knights hand.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1178,7 +1178,7 @@ Tourney Yard~
 yard.  The black knight circles and raises his lance in a salute to 
 Arthur.  A few people cheer, but most seem to be preoccupied.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1202,7 +1202,7 @@ Tourney Yard~
 quickly recovers and tosses her favor to the black knight.  The spectators that
 were cheering for the orange knight quietly disperse.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1239,7 +1239,7 @@ Practice Yard~
 all seem to be about equally experienced and it doesn't look like any one person
 will win.  You had better move on before they ask you to join in.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1272,7 +1272,7 @@ West Lane~
 leads up to the watchtower.  The noise from the building to the east is even
 louder here.  You don't see how anyone could possibly make so much noise.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1341,7 +1341,7 @@ castle.  You try to ask the peasants and farmers how to reach it but they ignore
 you.  A farmer is here driving a pair of oxen pulling a plow, furrowing one of
 the fields so it can be planted.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1359,7 +1359,7 @@ silence overcoming the woods.  You quicken your pace.  The western wall of
 Bellau City is to the east and the path turns to the west.  A large uprooted
 tree blocks the forest to the south.
 ~
-17 4 0 0 0 2
+17 4 0 0 0 0
 D0
 ~
 ~
@@ -1377,7 +1377,7 @@ is cloaked in a thick fog.  You see a large shadow on an island in the fog.  It
 looks to be a building of some sort but you can't see it clearly.  The path
 leads east and west.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1394,7 +1394,7 @@ the side of the path.  Those rumours about robbers and thieves hiding in these
 woods must be true.  You check the contents of your purse then move on.  The
 lake still blocks the north and the forest doesn't look very safe to the south.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1412,7 +1412,7 @@ one corpses eye socket.  You hear a crashing sound to the south as a large
 person or animal makes a run for cover.  You should follow the trail east or
 west.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1430,7 +1430,7 @@ A fortress sits on the island looking impregnable.  The trail continues
 east and west with the south still too thick to be worth travelling 
 through.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1448,7 +1448,7 @@ floor.  The lake to the north stretches for almost a mile before reaching
 the island.  The trail is opening up into a road once more and you see 
 people walking along it to the west.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1464,7 +1464,7 @@ A Light Forest~
 produce food for those who live on the island across the lake to the north.  
 The trail continues east and west, into the fields or back towards the forest.
 ~
-17 0 0 0 0 3
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1481,7 +1481,7 @@ being led to pasture, including some sheep and cows.  Peasants are toiling
 in the dirt and mud, planting crops.  The lake extends to the north and the 
 path goes east and west.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1497,7 +1497,7 @@ A Cultivated Field~
 rude!  You don't see how these people travel back and forth from the island.  
 There must be a ferry somewhere, but you can't see it.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1514,7 +1514,7 @@ before you.  It would almost look like they are trying to build up a stock
 of food, maybe they're expecting a siege.  The fields continue along the 
 path to the east and west.    
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D1
 ~
 ~
@@ -1588,7 +1588,7 @@ noblemen and knights walk barefoot in the grass discussing chivalry and wars to
 come.  Everyone seems to be avoiding the subject of the present war, which you
 would think would be the major topic of all the conversations.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1604,7 +1604,7 @@ Court of Camelot~
 thrives and the high ideals of chivalry breathe.  You have a commanding 
 vantage of the Tourney Yard of Camelot to the north from here.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1624,7 +1624,7 @@ Court of Camelot~
 the air, all for a chance of earning the kings favor.  Ladies-in-waiting play
 their love games with young knights and squires.
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1654,7 +1654,7 @@ impressive sword battle you have ever seen.  This knight expertly disarms all
 three knights within seconds.  Your jaw drops in admiration.  The knight bows
 deeply and all the squires cheer, 'Lancelot, Lancelot!'  
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~
@@ -1678,7 +1678,7 @@ Southwest Tower~
 view. Guards solemnly stand their watch, keeping an eye out for the 
 farmers and peasants tending the fields over the lake to the west.    
 ~
-17 0 0 0 0 1
+17 0 0 0 0 0
 D5
 ~
 ~
@@ -1758,7 +1758,7 @@ Open Field~
 it's going to rain.  The trail turns north along the shoreline of the lake.  
 You still can't see any possible way to reach the island.
 ~
-17 0 0 0 0 2
+17 0 0 0 0 0
 D0
 ~
 ~

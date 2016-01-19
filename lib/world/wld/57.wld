@@ -347,7 +347,7 @@ possibly small mountains stretch up to the east and west and they have snow
 covered peaks.  There are exits north back into the portal and south into the
 pass.    
 ~
-57 16 0 0 0 0
+57 16 0 0 0 5
 D0
 ~
 ~
@@ -363,7 +363,7 @@ In the Pass~
 to come through the portal the goat herd raise the alarm and an impenetrable
 mist descends upon the valley thwarting any attempt to lay siege to it.    
 ~
-57 0 0 0 0 0
+57 0 0 0 0 5
 D0
 ~
 ~
@@ -383,7 +383,7 @@ goats are standing under them sleeping and just lazing about.  Rivers
 criss-cross the valley and at the far end is a waterfall.  Exits lead back into
 the pass and down into the valley.    
 ~
-57 0 0 0 0 0
+57 0 0 0 0 4
 D0
 ~
 ~
@@ -403,7 +403,7 @@ the bottom of the waterfall.  Exits lead east and west toward groups of goats
 and and west, further into the valley.  Of course there is also and exit back
 into the pass.    
 ~
-57 0 0 0 0 0
+57 0 0 0 0 2
 D0
 ~
 ~
@@ -424,7 +424,7 @@ the 10th sign of the zodiac.  Bones litter the ground around him, most are
 skulls and spines.  Those strange tracks from before are here and they are more
 discernable.  What could they mean?    
 ~
-57 0 0 0 0 0
+57 0 0 0 0 4
 D1
 ~
 ~
@@ -449,7 +449,7 @@ Capricorns' Hill~
 a couch where the lord of the goats rests, and thick moss cushions his head.  
 The air is fetid with the smell of the dead.    
 ~
-57 0 0 0 0 0
+57 0 0 0 0 4
 D0
 ~
 ~
@@ -465,7 +465,7 @@ Descending towards the Waterfall~
 about 300 feet!  Behind the lower part of of it there seems to be a cave.  A
 faint glow can be seen inside.  Whatever could it be?    
 ~
-57 16 0 0 0 0
+57 16 0 0 0 4
 D0
 ~
 ~
@@ -481,7 +481,7 @@ Outside the Cave~
 shape of a pair of scales.  Could it be Libra?  There is a walkway through here
 and the ground falls away on both sides.    
 ~
-57 4 0 0 0 0
+57 4 0 0 0 5
 D0
 ~
 ~
@@ -502,7 +502,7 @@ all their headbutting and grunting.  This tree is very large and stripes that
 have been scored into the tree form a ladder.  Tree sap oozes down the ladder
 and it has a sweet smell.  Little red eyes can be seen up the ladder.    
 ~
-57 0 0 0 0 0
+57 0 0 0 0 2
 D3
 ~
 ~
@@ -574,7 +574,7 @@ On the oaken ladder~
    This ladder is covered in tree sap, you are almost adhered to the trunk.  
 There are noises coming from the top of the tree, slight but still noticable.
 ~
-57 4 0 0 0 0
+57 4 0 0 0 4
 D4
 The sap is runnier above here, probably because its fresher. There's only one way to find out, and that's to go up.
 ~
@@ -597,7 +597,7 @@ Halfway up the Tree~
 sap below.  It gives off a sweet smell that makes a person want to taste it.  
 The noises are more audible here and those ever staring red eyes look menacing.
 ~
-57 0 0 0 0 0
+57 0 0 0 0 4
 D4
 ~
 ~
@@ -620,7 +620,7 @@ noises are now very loud and mournful.  Maybe somethings hurt!  Whatever it is,
 it doesnt sound too good.  Could the thing with red eyes be the one
 moaning?  Or is it something else?    
 ~
-57 4 0 0 0 0
+57 4 0 0 0 4
 D4
 An feeling of oppression coming from above.
 ~

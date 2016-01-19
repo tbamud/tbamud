@@ -5,7 +5,7 @@ wooden gate is rusted open.
    A narrow dirt path leads eastwards into the thick grass and the
 chessboard opens up to the west.
 ~
-36 4 0 0 0 0
+36 4 0 0 0 1
 D1
 A dirt path leads away through the great field north of Midgaard.
 ~
@@ -22,7 +22,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the Black Queen's Rook.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A black square lies to the east.
 ~
@@ -39,7 +39,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the Black Queen's Knight.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A white square lies to the east.
 ~
@@ -61,7 +61,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the Black Queen's Bishop.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A black square lies to the east.
 ~
@@ -83,7 +83,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the Black Queen.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A white square lies to the east.
 ~
@@ -109,7 +109,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the Black King.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A black square lies to the east.
 ~
@@ -131,7 +131,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the Black King's Bishop.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A white square lies to the east.
 ~
@@ -153,7 +153,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the Black King's Knight.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D1
 A black square lies to the east.
 ~
@@ -175,7 +175,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the Black King's Rook.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D2
 A white square lies to the south.
 ~
@@ -192,7 +192,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the Black Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -214,7 +214,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the Black Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -241,7 +241,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the Black Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -268,7 +268,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the Black Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -295,7 +295,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the Black King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -322,7 +322,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the Black King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -349,7 +349,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the Black King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -376,7 +376,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the Black King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -397,7 +397,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -418,7 +418,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -444,7 +444,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -470,7 +470,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -496,7 +496,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -522,7 +522,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -548,7 +548,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -575,7 +575,7 @@ A Black Square~
    You are standing on a black marble square.  You can see a rusty gate
 to the south.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -596,7 +596,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -617,7 +617,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -643,7 +643,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -669,7 +669,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -695,7 +695,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -721,7 +721,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -748,7 +748,7 @@ A Black Square~
    You are standing on a black marble square.  There is a rusty gate
 a short distance to the east.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -775,7 +775,7 @@ A White Square~
    You are standing on a white marble square.  There is a large rusty
 gate to the east.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -801,7 +801,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -822,7 +822,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -848,7 +848,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -874,7 +874,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -900,7 +900,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -926,7 +926,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -952,7 +952,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -979,7 +979,7 @@ A Black Square~
    You are standing on a black marble square.  There is a rusty gate
 to the north.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1000,7 +1000,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1021,7 +1021,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1047,7 +1047,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1073,7 +1073,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1099,7 +1099,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1125,7 +1125,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1151,7 +1151,7 @@ S
 A Black Square~
    You are standing on a black marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1177,7 +1177,7 @@ S
 A White Square~
    You are standing on a white marble square.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1199,7 +1199,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the White Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1221,7 +1221,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the White Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1248,7 +1248,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the White Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1275,7 +1275,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the White Queen's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1302,7 +1302,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the White King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1329,7 +1329,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the White King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1356,7 +1356,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of one of the White King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1383,7 +1383,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of one of the White King's Pawns.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1405,7 +1405,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the White Queen's Rook.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1422,7 +1422,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the White Queen's Knight.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1444,7 +1444,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the White Queen's Bishop.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1466,7 +1466,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the White Queen.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1492,7 +1492,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the White King.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1514,7 +1514,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the White King's Bishop.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
@@ -1536,7 +1536,7 @@ A Black Square~
    You are standing on a black marble square.  This is usually the home
 of the White King's Knight.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A white square lies to the north.
 ~
@@ -1558,7 +1558,7 @@ A White Square~
    You are standing on a white marble square.  This is usually the home
 of the White King's Rook.
 ~
-36 0 0 0 0 0
+36 0 0 0 0 1
 D0
 A black square lies to the north.
 ~
