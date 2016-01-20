@@ -5,7 +5,7 @@ An orange lies on the ground here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-1 8 8 0
+1 8 8 0 0
 E
 orange~
    You wonder how it got here, seeing how oranges are non-migratory.  
@@ -17,7 +17,7 @@ There is a bale of wheat here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-50 100 10 0
+50 100 10 0 0
 E
 bale wheat~
    It doesn't look appetizing to you, but a horse might enjoy this...  
@@ -29,7 +29,7 @@ A HUGE zither made of gold rests in the corner~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-40 1000 100 0
+40 1000 100 0 0
 E
 zither~
    Someone truly huge with big fingers might be able to play this.  You can't.
@@ -42,7 +42,7 @@ You can smell a barrel on the other side of the room from here.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-20 1000 100 0
+20 1000 100 0 0
 E
 barrel perfume~
    Smells good...  The label reads: "Somewhere between GPA and MUD there lies...
@@ -55,7 +55,7 @@ There is a statue of Aglandiir here, made of solid gold.~
 ~
 8 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-30 900 90 0
+30 900 90 0 0
 E
 statue~
    He's a pretty striking chap, for a dragon.  
@@ -67,7 +67,7 @@ A runed halberd lies on the ground here.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 1 12 3
-16 1000 300 0
+16 1000 300 0 0
 E
 halberd~
    The runes glow with a bright light, making you think that this might be a
@@ -82,7 +82,7 @@ A vial of a dun fluid is here.~
 ~
 10 a 0 0 0 a 0 0 0 0 0 0 0
 20 36 1 3
-1 1000 200 0
+1 1000 200 0 0
 E
 potion protection dun vial~
    Looks thick, and brownish-grey (dun).  Ick!  
@@ -94,7 +94,7 @@ Aglandiir's crown sits here, radiating a shield.~
 ~
 8 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 crown~
    The shield repulses you, making you wonder how you're going to get your hands
@@ -107,7 +107,7 @@ A scrawny red apple sits here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 4 0 0 0
-1 5 2 0
+1 5 2 0 0
 E
 apple~
    It is not wormy...  Yet.  
@@ -119,7 +119,7 @@ A fresh loaf of bread lies here.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-1 10 5 0
+1 10 5 0 0
 E
 bread loaf~
    Mmmm...  Rye!  
@@ -131,7 +131,7 @@ A melon sits here, discarded evidently.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 8 0 0 0
-3 8 3 0
+3 8 3 0 0
 E
 melon~
    Wow!  Look at the size of that melon!  
@@ -143,7 +143,7 @@ An exquisitely crafted knife rests here.~
 ~
 5 dn 0 0 0 ano 0 0 0 0 0 0 0
 0 3 5 11
-8 1000 200 0
+8 1000 200 0 0
 E
 knife~
    The craftsmanship...  It takes your breath away!  This knife...  It had to
@@ -161,7 +161,7 @@ A superb long sword sticks in the earth.~
 ~
 5 dmn 0 0 0 ano 0 0 0 0 0 0 0
 0 2 7 3
-15 750 150 0
+15 750 150 0 0
 E
 sword long~
    This sword is light, but the heft is perfectly balanced.  Such an incredible
@@ -179,7 +179,7 @@ A short sword lies here... a work of art!~
 ~
 5 adimn 0 0 0 ano 0 0 0 0 0 0 0
 0 4 6 3
-10 100 30 0
+10 100 30 0 0
 E
 sword short~
    It brings tears to your eyes.  This must have been Gabadiel the smith's
@@ -196,7 +196,7 @@ A dismembered and burnt cadaver lies on the ground here.~
 ~
 13 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 cadaver~
    It is still smouldering a little; the culprits can't be far off!  
@@ -208,7 +208,7 @@ A scimitar as long as your arm lies here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 7 3
-10 500 50 0
+10 500 50 0 0
 E
 scimitar~
    This weapon really isn't of too high a quality.  
@@ -218,9 +218,9 @@ crate~
 a crate~
 A crate is stacked here.~
 ~
-15 0 0 0 0 a 0 0 0 0 0 0 0
+15 0 0 0 0 ao 0 0 0 0 0 0 0
 200 5 0 0
-50 100 20 0
+50 100 20 0 0
 E
 crate~
    It's a standard wooden crate.  
@@ -232,7 +232,7 @@ A hunting bow lies here, unwanted~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 1 5 11
-6 400 40 0
+6 400 40 0 0
 E
 bow hunting~
    This is the type of weapon you would use to bag some deer or rabbits, but not
@@ -247,7 +247,7 @@ A nice leather vest lies here.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-6 500 50 0
+6 500 50 0 0
 E
 vest leather~
    The seams are delicately sewn with a enruned thread...  
@@ -259,7 +259,7 @@ A glass of beer sits forgotten here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 1 0
-2 5 1 0
+2 5 1 0 0
 E
 glass~
    This is a nice glass filled with homebrew.  There doesn't seem to be too much
@@ -272,7 +272,7 @@ A big glass of mead sits here, cool and frosty.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 3 0
-2 8 3 0
+2 8 3 0 0
 E
 glass mead~
    Looks good.  Looks warm.  Doesn't matter; it still looks good.  
@@ -284,7 +284,7 @@ A shot of whisky is sitting here.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
 1 1 5 0
-1 10 5 0
+1 10 5 0 0
 E
 shot~
    Whew!  Looks like potent stuff!  

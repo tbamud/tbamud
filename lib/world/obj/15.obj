@@ -1,20 +1,3 @@
-#1500
-scales justice scale~
-the Scales of Justice~
-Two beautiful plates shaped like scales have been left here.~
-~
-12 ak 0 0 0 ao 0 0 0 0 0 0 0
-0 0 0 0
-10 150 22 0
-E
-scales justice scale~
-   As you look at the scales, you notice that they seem to sway back and forth
-of their own accord, as if weighing something that is to you still unseen.  
-~
-A
-3 1
-A
-4 2
 #1501
 scroll parchment~
 the Scroll of the Messenger~
@@ -22,7 +5,7 @@ You see a solid and silver-lined scroll resting on the ground.~
 ~
 12 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 500 500 0
+1 500 500 0 0
 E
 scroll parchment~
    It seems to be some sort of spell designed to transport its user across vast
@@ -39,7 +22,7 @@ You are startled by the sight of a sword that glows as you approach it.~
 ~
 5 abgkn 0 0 0 an 0 0 0 0 0 0 0
 0 3 4 11
-10 500 90 0
+10 500 90 0 0
 E
 sword blazing~
    The edge of the blade is lined with writing, religious verse apparently, in a
@@ -54,7 +37,7 @@ A weighty looking shield has been abandoned by one unworthy to hold it.~
 ~
 9 kn 0 0 0 aj 0 0 0 0 0 0 0
 10 0 0 0
-20 500 150 0
+20 500 150 0 0
 E
 protector faithful shield~
    It evades your attempts to focus on it, deflecting your gaze as it deflects
@@ -67,7 +50,7 @@ A ragged and faded looking piece of cloth has been left here, forgotten.~
 ~
 12 j 0 0 0 ai 0 0 0 0 0 0 0
 0 0 0 0
-1 15 50 0
+1 15 50 0 0
 E
 armband faded band~
    It has some sort of militia insignia on it, perhaps an indication of a rank
@@ -84,7 +67,7 @@ A stunning curved blade glistens on the ground.~
 ~
 5 akn 0 0 0 an 0 0 0 0 0 0 0
 0 7 1 3
-5 500 50 0
+5 500 50 0 0
 E
 scimitar jeweled~
    The entire rim and edge of the scimitar's handle is bedecked in a gorgeous
@@ -97,7 +80,7 @@ You glance briefly at a smouldering ember that rests at your feet.~
 ~
 1 ajnop 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-1 5 25 0
+1 5 25 0 0
 E
 ember charred~
    It glares back at you, almost angrily.  
@@ -113,7 +96,7 @@ The entire room is aglow from the flame at your feet.~
 ~
 1 ajkop 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-1 5 25 0
+1 5 25 0 0
 E
 ethereal flame~
    Even being near it fills you with a peaceful and comforted feeling.  
@@ -129,7 +112,7 @@ You have found at last the Key to the Gates of eternity.~
 ~
 18 aikl 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-1 100 50 0
+1 100 50 0 0
 E
 key gates~
    There are no gates.  They are inside of you.  
@@ -143,7 +126,7 @@ You have found a burnt book, some forgotten history lying on the ground.~
 ~
 13 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 10 500 0
+2 10 500 0 0
 E
 history burnt book~
    So this is the jester's joke.  All of our works have turned to dust, and will
@@ -158,7 +141,7 @@ You notice a thin parchment, with flowing script and rich decorative trim.~
 ~
 1 dklmn 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-1 500 80 0
+1 500 80 0 0
 E
 surah book~
    Al-Kafirun Say: "Oh ye that reject the Faith, I do not worship what you
@@ -176,7 +159,7 @@ It is surely the best of men who has left these gloves to aid you.~
 ~
 9 iklmn 0 0 0 ah 0 0 0 0 0 0 0
 5 0 0 0
-5 120 40 0
+5 120 40 0 0
 A
 19 2
 A
@@ -188,7 +171,7 @@ You see a beautiful pendant of ancient and noble craftsmanship.~
 ~
 11 al 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-3 500 200 0
+3 500 200 0 0
 E
 ankh~
    It is an even earlier version of the old Christian cross, an oval loop above
@@ -205,7 +188,7 @@ You have found a beautiful gleaming disc with a golden image of the sun god.~
 ~
 11 ag 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
-5 750 150 0
+5 750 150 0 0
 A
 3 2
 A
@@ -217,7 +200,7 @@ You frown in disgust at the hideous icon of a false god that you have found.~
 ~
 1 jlq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
-2 1000 500 0
+2 1000 500 0 0
 A
 6 2
 $~

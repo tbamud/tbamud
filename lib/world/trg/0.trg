@@ -87,7 +87,7 @@ if %amount% >= 10
     give %change% coin %actor.name%
   end
   * Otherwise they must have given exactly 10 coins, open the gate.
-  say thank you.
+  say Thank you.
   wait 1 sec
   unlock gateway
   wait 1 sec

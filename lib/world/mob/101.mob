@@ -17,8 +17,8 @@ a lost cow~
 A cow roams about aimlessly, munching on any grass it can find.
 ~
    The cow is large and brown, with a short fur coat.  It is extremely docile
-and friendly.  Domesticated to life on a farm.  Strange for it to be out roaming
-around.  
+and friendly, having been domesticated to life on a farm.  Strange for it to be
+out roaming around.  
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -43,8 +43,8 @@ cow calf~
 the calf~
 A newborn cow calf looks for its mother.
 ~
-   The calf can barely walk on it's own four feet.  It stumbles awkwardly
-towards you looking for it's mother.  
+   The calf can barely walk on its own four feet.  It stumbles awkwardly towards
+you, looking for its mother.  
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -68,8 +68,8 @@ fisherman~
 the fisherman~
 A fisherman walks between the cities to sell his latest catch.
 ~
-   He walks past with a long purposeful stride.  On his way to making some
-money.  
+   He walks past with a long purposeful stride on his way to making some money.
+
 ~
 72 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
@@ -94,7 +94,7 @@ merchant robbed~
 a robbed merchant~
 A merchant is here crying at his recent losses.
 ~
-   A shame to see a grown man cry, but he has lost alot.  He relates to you how
+   A shame to see a grown man cry, but he has lost a lot.  He relates to you how
 his caravan was looted by bandits.  All his accumulated wealth taken away in an
 instant.  
 ~
@@ -106,10 +106,10 @@ E
 #10108
 clairvoyant gypsy~
 a clairvoyant gypsy~
-A gypsy brags of her clairvoyant ability and stares at you shocked by your future.
+A gypsy brags of her clairvoyant ability then stares at you, shocked by your future.
 ~
-   She grasps your palm and stares in horror up into your eyes.  She says, 'for
-a minimal fee I can tell you of yer future.  '
+   She grasps your palm and stares in horror up into your eyes.  She says, 'For
+a minimal fee I can tell you of yer future.'
 ~
 72 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
@@ -131,9 +131,9 @@ E
 #10110
 groundhog~
 the groundhog~
-A small brown furry groundhog runs towards it's hole as you approach.
+A small brown furry groundhog runs towards its hole as you approach.
 ~
-   It is a grizzled thickset marmot.  Built low to the ground and about the size
+   It is a grizzled thickset marmot, built low to the ground and about the size
 of a small dog.  
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -159,7 +159,7 @@ Bubba~
 Bubba~
 Bubba staggers by, a little tipsy from his moonshine.
 ~
-   He reeks of homemade moonshine.  Most likely made from corn.  He is the
+   He reeks of homemade moonshine, most likely made from corn.  He is the
 typical hillbilly, and fits his name to a tee.  
 ~
 72 0 0 0 0 0 0 0 0 E
