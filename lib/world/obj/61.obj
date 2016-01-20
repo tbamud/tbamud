@@ -5,7 +5,7 @@ An old, battered sign lies on the ground.~
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-10 2 2 0
+10 2 2 0 0
 E
 sign~
    Only some of the letters are legible :-
@@ -24,17 +24,17 @@ A colossal tree blocks the way westward.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 1000 0 0 0
-0 0 0 0
+0 0 0 0 0
+E
+opening~
+   The opening is far too narrow for you to squeeze through but it looks as if
+the tree is hollow.  
+~
 E
 tree~
    This enormous tree must be a thousand years old.  Its rough bark looks grey
 and pale and is decorated with scratches and clawmarks.  On its west side is a
 small opening just above ground level.  
-~
-E
-opening~
-   The opening is far too narrow for you to squeeze through but it looks as if
-the tree is hollow.  
 ~
 #6103
 branch grey long~
@@ -43,7 +43,7 @@ A long, grey branch rests heavily on the ground.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 25 0
-20 1 3 0
+20 1 3 0 0
 E
 branch grey long~
    It is quite heavy and looks as if it has been dropped from great height.  It
@@ -56,7 +56,7 @@ A long, grey branch rests heavily on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
-18 60 20 0
+18 60 20 0 0
 E
 branch grey long~
    It is very heavy and looks as if it has been dropped from great height.  It
@@ -73,7 +73,7 @@ A long, grey branch rests heavily on the ground.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-40 1 0 0
+40 1 0 0 0
 E
 branch grey long~
    It is very heavy and looks as if it has been dropped from great height.  It
@@ -86,7 +86,7 @@ A large toadstool grows nearby.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 0
-5 20 20 0
+5 20 20 0 0
 E
 toadstool~
    It is a large, brown boletus that must weigh nearly five pounds.  The top
@@ -100,7 +100,7 @@ A large toadstool grows nearby.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 12 0 0 1
-5 20 20 0
+5 20 20 0 0
 E
 toadstool~
    It is a large, brown boletus that must weigh nearly five pounds.  It has
@@ -115,7 +115,7 @@ A big pile of gold coins is lying here.~
 ~
 20 0 0 0 0 a 0 0 0 0 0 0 0
 1000 0 0 0
-15 1000 0 0
+15 1000 0 0 0
 #6109
 potion blue~
 a blue potion~
@@ -123,7 +123,7 @@ A blue potion has been left here.~
 ~
 10 g 0 0 0 a 0 0 0 0 0 0 0
 15 28 -1 -1
-2 680 50 0
+2 680 50 0 0
 E
 potion blue~
    It has a nice deep blue color and a smell like peppermint.  
@@ -135,7 +135,7 @@ A yellow potion has been left here.~
 ~
 10 g 0 0 0 a 0 0 0 0 0 0 0
 15 39 -1 -1
-2 1000 200 0
+2 1000 200 0 0
 E
 potion yellow musky~
    It has a deep yellow color and and a strong spicy smell.  
@@ -147,7 +147,7 @@ A large round shield has been left here.~
 ~
 9 0 0 0 0 aj 0 0 0 0 0 0 0
 5 0 0 0
-15 300 800 0
+15 300 800 0 0
 E
 shield round large~
    It is made from hard wood that has been reinforced with heavy iron bands.  
@@ -159,7 +159,7 @@ An iron crown rests on the ground.~
 ~
 9 g 0 0 0 ae 0 0 0 0 0 0 0
 6 0 0 0
-20 700 50 0
+20 700 50 0 0
 E
 crown iron~
    It is a heavy human-sized crown made from solid iron.  
@@ -171,7 +171,7 @@ An iron sceptre lies on the ground.~
 ~
 1 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 -1 0
-10 500 70 0
+10 500 70 0 0
 E
 sceptre iron~
    It is a heavy sceptre made from solid iron.  
@@ -183,7 +183,7 @@ An iron ring has been left here.~
 ~
 11 g 0 0 0 ab 0 0 0 0 0 0 0
 0 0 0 0
-10 500 50 0
+10 500 50 0 0
 E
 ring iron~
    It is a quite heavy human-sized ring made from solid iron.  It lacks
@@ -200,7 +200,7 @@ The morning star is here collecting dust while it lies on the ground.~
 ~
 5 g 0 0 0 an 0 0 0 0 0 0 0
 0 2 9 7
-10 150 20 0
+10 150 20 0 0
 A
 18 2
 #6116
@@ -210,7 +210,7 @@ A black dragon scale shirt has been left here.~
 ~
 9 g 0 0 0 ad 0 0 0 0 0 0 0
 6 0 0 0
-10 1000 10 0
+10 1000 10 0 0
 E
 shirt scale~
    It is a sleeveless shirt made from big, black dragon scales joined with
@@ -225,7 +225,7 @@ A black dragon scale skirt has been left here.~
 ~
 9 g 0 0 0 af 0 0 0 0 0 0 0
 6 0 0 0
-8 500 10 0
+8 500 10 0 0
 E
 skirt scale~
    It is a short skirt made from big, black dragon scales joined with silver
@@ -240,7 +240,7 @@ A large, hooded cloak, as dark as the night, has been left here.~
 ~
 11 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-20 800 40 0
+20 800 40 0 0
 E
 cloak black~
    It is a heavy, black cloak with a large hood.  The word 'Isha' is written
@@ -257,7 +257,7 @@ A broad silver belt has been left here.~
 ~
 9 ag 0 0 0 al 0 0 0 0 0 0 0
 6 0 0 0
-4 500 35 0
+4 500 35 0 0
 E
 belt silver~
    It is a broad belt made from tiny silver rings woven together.  
@@ -269,7 +269,7 @@ A long, slender sword lies on the ground.~
 ~
 5 agjl 0 0 0 an 0 0 0 0 0 0 0
 0 3 6 3
-4 300 60 0
+4 300 60 0 0
 E
 sword long slender~
    It is a long, slender sword that seems to be made from silver.  The word
@@ -279,4 +279,17 @@ A
 18 4
 A
 19 2
+#6121
+sign~
+wooden sign~
+A wooden sign nailed to a tree is here, You'd better read it...~
+~
+16 0 0 0 0 a 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+wooden sign~
+   Warning Spider Trap to the West.  Be Warned, Be Wary.  Tholius, The
+Travelling Monk.
+~
 $~

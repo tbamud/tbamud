@@ -7,115 +7,428 @@ A square key lies here.~
 0 0 0 0
 1 1 0 0 0
 #27401
-smurfberry~
-smurfberry~
-A ripe smurfberry is looking delicious here.~
+fountain granite~
+a granite fountain~
+A granite fountain is here bubbling merrily. ~
 ~
-19 q 0 0 0 a 0 0 0 0 0 0 0
-1 0 0 0
-1 1 0 0 0
-A
-11 -1
+23 a 0 0 0 0 0 0 0 0 0 0 0
+-1 2 0 0
+0 0 0 0 0
+E
+basin~
+   The basin is open and round and in it the cool water resides.  It looks cool
+and refreshing.  
+~
+E
+statue~
+   The statue is of a woman carrying a basin of on her shoulder, clad in a
+simple gown.  The water is being pumped into the basin below from a hole in the
+jug on the statue.  The statue is made of marble and the woman whom it portrays
+is very youthful and beautiful.  
+~
+E
+granite fountain~
+   The fountain has a long and wide round basin with a short statue in the
+center.
+~
 #27402
-blue ring~
-blue ring~
-A small blue ring lies here.~
+anvil~
+a heavy anvil~
+A heavy anvil is here bolted and secured to a block of cement. ~
 ~
-9 bk 0 0 0 ab 0 0 0 0 0 0 0
-5 0 0 0
-1 200 0 0 0
-A
-2 1
-A
-11 -12
-#27403
-curved dagger~
-a curved dagger~
-A curved dagger is lying here.~
-~
-5 bj 0 0 0 an 0 0 0 0 0 0 0
-0 3 4 11
-3 250 0 0 0
-A
-19 3
-A
-6 -1
-#27404
-bag~
-a bag~
-A small bag is here.~
-~
-15 0 0 0 0 ao 0 0 0 0 0 0 0
-55 0 0 0
-2 20 0 0 0
-#27405
-smurfette's bracelet~
-Smurfette's bracelet~
-You see a VERY small bracelet here.~
-~
-9 g 0 0 0 ab 0 0 0 0 0 0 0
+12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-1 300 0 0 0
-A
-3 2
-A
-4 1
-A
-6 2
-#27406
-smurfy little wand~
-a smurfy wand~
-You happen across a smurfy little wand.~
+0 0 0 0 0
+E
+block~
+   The cement block is a rectangle cube and it takes the punishment of shock
+from the pounding hammer as the blacksmithe beats and pounds the metal on it.  
 ~
-3 0 0 0 0 ao 0 0 0 0 0 0 0
-10 5 5 8
-1 500 0 0 0
-#27407
-small weight belt~
-a weight belt~
-A small weight belt lies here.~
+E
+anvil~
+   The anvil is pure solid cast iron and it is attached to the cement block with
+U shaped bolts and large nuts.  
 ~
-9 m 0 0 0 al 0 0 0 0 0 0 0
-1 0 0 0
-3 80 0 0 0
-A
-1 1
-#27408
-small pick axe~
-a pick axe~
-A small axe rests here.~
+#27403
+lance~
+a Saint Brigid lance~
+A Saint Brigid lance is here leaning against the wall. ~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
-0 2 3 14
-5 400 0 0 0
-#27409
-lump coal~
-a lump of coal~
-A lump of coal is here.~
+2 2 3 7
+100 250 0 5 0
+E
+lance~
+   The lance is long and cylindrical made of a fine ash tree that has been cut
+down and hardened via the use of fire and bronze guards and stuff attached to
+it.  It has a very sharp point at one end.
 ~
-13 0 0 0 0 ao 0 0 0 0 0 0 0
-0 0 0 0
-1 1 0 0 0
-#27410
-azrael's collar azerael~
-Azrael's collar~
-Azrael's collar is here~
+A
+17 10
+A
+18 5
+A
+19 3
+#27404
+staff~
+a staff~
+A five foot staff lies on the ground.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+1 3 3 7
+16 50 0 0 0
+E
+hammer~
+   The hammer is large with a wood handle and a huge head, equally solid for
+pounding molten metal at the forge, or busting someone's skull wide open.  
+~
+A
+17 2
+#27405
+sword~
+a Saint Brigid sword~
+A shiny Saint Brigid Bastard Sword is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+6 1 2 3
+15 120 0 5 0
+E
+sword~
+   The sword is well forged, with a simple handle made of wrapped wood and a
+curved narrow blade, easy for slashing.
+~
+#27406
+helmet~
+a green and gray helmet~
+A greenand gray helmet is here laying in the dust~
+~
+9 0 0 0 0 ae 0 0 0 0 0 0 0
+5 0 0 0
+20 250 0 5 0
+E
+helmet~
+   The helmet is a full head with a visor and it is made of a hard iron that is
+colored green and gray.  It looks very protective.
+~
+A
+18 1
+A
+18 2
+#27407
+cloak gray~
+a gray cloak~
+A gray cloak is fluttering in the breeze hanging from a hook.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
-0 0 0 0
-1 1 0 0 0
+1 0 0 0
+2 20 0 5 0
+E
+clasp~
+   The clasp is gold and silver and in the form of a crescent moon and
+interlocked, rayed star.  The sign of its Elvish origin.  
+~
+E
+cloak~
+   The cloak is made of thick wool and is held together at the neck by a gold
+and silver clasp.
+~
+A
+17 1
+A
+19 -2
+#27408
+armor body~
+a green and gray leather tunic~
+A green and gray leather tunic is here wanting to be worn.~
+~
+9 0 0 0 0 ad 0 0 0 0 0 0 0
+5 0 0 0
+20 500 0 5 0
+E
+tunic~
+   The body armor is a simple tunic made of greenand gray leather that clasps to
+one side.  It is adorned with designs of an elvish origin.  
+~
+A
+18 3
+A
+19 -1
+#27409
+bucklers~
+green and gray leather bucklers~
+Green and gray leather bucklers are here.~
+~
+9 0 0 0 0 ai 0 0 0 0 0 0 0
+2 0 0 0
+20 50 0 5 0
+E
+bucklers~
+   The buckler are mere arm guards that strap onto the arm and they go up to the
+shoulder protecting the arm from damage.
+~
+A
+19 1
+#27410
+breeches~
+leather breeches~
+Leather breeches are folded neatly into a pile~
+~
+9 0 0 0 0 af 0 0 0 0 0 0 0
+2 0 0 0
+5 25 0 5 0
+E
+breeches~
+   The breeches are leather pants that match the tunic and they blouse outward
+at the knee when tucked into the boots giving ample protection to the legs.
+~
 A
 19 2
 A
-17 -1
+2 3
 #27411
-small mirror~
-a small mirror~
-A small mirror sits here.~
+belt~
+a leather belt~
+An unfinished object is lying here.~
 ~
-13 0 0 0 0 ao 0 0 0 0 0 0 0
+9 0 0 0 0 al 0 0 0 0 0 0 0
 0 0 0 0
-1 100 0 0 0
+1 2 0 4 0
+E
+belt~
+   The belt is a woen lether strip that surrounds the waist.  It has a metal
+clasp in the front that clips the two ends together
+~
 A
-6 1
+17 -2
+A
+18 1
+A
+19 2
+#27412
+boots gray~
+gray leather boots~
+D~
+~
+9 0 0 0 0 ag 0 0 0 0 0 0 0
+-3 0 0 0
+5 50 0 5 0
+E
+boots gray~
+   Gray leather boots are soft and durable that seem to blend in with the tunic
+and breeches when worn.  
+~
+A
+19 1
+A
+1 2
+#27413
+gloves green~
+a pair of green leather gloves~
+A pair of green leather gloves lay on the ground.~
+~
+9 0 0 0 0 ah 0 0 0 0 0 0 0
+3 0 0 0
+3 75 10 5 0
+A
+18 1
+A
+19 1
+#27414
+leather loop~
+a leather loop~
+A leather loop is here connected to a pair of dusters~
+~
+11 0 0 0 0 ab 0 0 0 0 0 0 0
+1 0 0 0
+1 10 1 5 0
+E
+leather ring~
+   The ring is a simple ring of leather that has dusters attached that protect
+the fingers while fighting in battle.
+~
+A
+18 2
+A
+19 -1
+#27415
+girdle~
+a green and gray girdle~
+A green and gray girdle is here looking to be tied.~
+~
+9 0 0 0 0 ak 0 0 0 0 0 0 0
+-10 0 0 0
+15 250 0 5 0
+E
+girdle~
+   The girdle slips on around the waist and is tightened by laces that are
+resemblant to a corset.  The laces then tie securing the girdle to the abdomen.
+~
+A
+18 2
+A
+19 2
+#27416
+wristguards~
+green leather wristguards~
+A pair of green leather wristguards roll here when dropped.~
+~
+9 0 0 0 0 am 0 0 0 0 0 0 0
+1 0 0 0
+10 150 0 5 0
+E
+wristguards~
+   The wristguards are a hard leather that have been bent and secured into a
+sturdy loop, protecing the thumb and wrist and part of the hand when worn.  
+~
+A
+19 1
+#27417
+shield metal~
+a metal shield~
+A large metal shield is lying on the ground~
+~
+9 0 0 0 0 aj 0 0 0 0 0 0 0
+-20 0 0 0
+3 100 10 5 0
+E
+shield~
+   The shield has a crescent moon and interlocked rayed star painted on the
+front of it in full radiant color.  The shield itself is a gray metal color.
+~
+A
+19 5
+#27418
+warhammer hammer~
+a Saint Brigid hammer~
+A medium sized hammer is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 1 5 7
+6 50 10 5 0
+#27419
+flail large~
+a Saint Brigid flail~
+A large flail is here.~
+~
+5 0 0 0 0 an 0 0 0 0 0 0 0
+0 2 4 7
+6 625 10 5 0
+E
+Flail~
+   The flail is a massive ball of spikes hooked to a chain connected to a large
+staff in which is a swung at the enemy to crush them.  It looks formidable.
+~
+#27420
+sword small~
+a Saint Brigid small sword~
+A small sword is here laying on its side.~
+~
+5 e 0 0 0 an 0 0 0 0 0 0 0
+0 1 6 11
+3 60 10 5 0
+E
+sword small~
+   The small sword seems to have an inscription of some sort.
+~
+E
+inscription~
+   It says: 'May this sword be a good companion.  '
+~
+#27421
+dagger~
+a Saint Brigid dagger~
+A dagger with a long thin blade is here.~
+~
+5 n 0 0 0 an 0 0 0 0 0 0 0
+0 1 4 11
+1 10 10 0 0
+#27422
+atm teller banks machine~
+an automatic teller machine~
+An automatic teller machine has been installed in the wall here.~
+~
+12 cdeg 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+atm teller bank machine~
+   There is a small note on the machine which says:
+
+To use, type 'BALANCE', 'WITHDRAW <amount>', or 'DEPOSIT <amount>'.
+Please report any strange occurrences to the bank manager.
+
+~
+#27423
+box~
+a box on a pedistal~
+A box on a pedistal is sitting here.~
+~
+15 0 0 0 0 0 0 0 0 0 0 0 0
+5000 15 27424 0
+0 0 0 0 0
+E
+box~
+   The box is made of ash and has a slot on top to be able to put things into
+it.  It looks to be a donations box.
+~
+#27424
+key golden~
+a golden key~
+A golden key is here glistening in the light~
+~
+18 0 0 0 0 ao 0 0 0 0 0 0 0
+0 0 0 0
+5 50000 0 0 0
+E
+key~
+   The key looks to be a stumpy, old fashioned one and it has a strange circular
+handle with a star on it.  
+~
+#27425
+coins~
+some coins~
+A huge pile of coins is here.~
+~
+20 0 0 0 0 a 0 0 0 0 0 0 0
+1000000 0 0 0
+1 1000000 0 0 0
+E
+coins gold~
+   The coins are small and circular and have the insign of Saint Brigid stamped
+in the center of them.  
+~
+#27426
+shrine~
+a large shrine made of marble~
+A large shrine made of marble dominates the wall.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+shrine~
+   The shrine here is smaller and made of marble, trimmed in flexible strips of
+ornamental oak wood.  It has cubbies where small candles burn and incense burns
+honoring the god or goddess here.  
+~
+E
+incense~
+   The incense is stuck out of the top from small holes and it smells like the
+wild honeysuckle.  Very refreshing.
+~
+#27427
+altar~
+a prayer altar~
+A prayer altar is here.~
+~
+6 ai 0 0 0 0 0 0 0 0 0 0 0
+1 0 0 0
+200 0 0 0 0
+E
+altar~
+   The altar is made of gold and twisted marble.  It has a shiny well finished
+appearance in its construction with the rune symbol of Whiteknight carved on the
+side of it.  There are candles and incense burners incorperated in the design
+and they smolder gently.
+~
 $~

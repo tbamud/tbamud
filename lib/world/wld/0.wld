@@ -319,7 +319,7 @@ is the most advanced form of OLC we have to offer. It is the hardest, but also
 the most rewarding. If you are looking to pour life into your mobs, enliven 
 your rooms or just make your objects special? This can all be done with 
 trigedit. Have fun with the power of (minor) coding!
-   Like all the hallways before use this hallway in conjuction with the help
+   Like all the hallways before use this hallway in conjunction with the help
 files: @RHELP TRIGEDIT-MENU@n and the commands @RTLIST@n and @RTSTAT@n commands.
 Do not attempt to use trigedit until you complete your trial vnum and are
 assigned a zone. Remember you must disable @RNOHASSLE@n. Triggers will not work
@@ -563,53 +563,18 @@ D2
 ~
 0 0 33
 E
-july4~
-   On July 4, 1776, we claimed our independence from England and Democracy was
-born.  Every day thousands leave their homeland to come to the "land of the
-free and the home of the brave" so they can begin their American Dream.  The
-United States is truly a diverse nation made up of dynamic people.  Each year
-on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
-picnics, and family ga-therings.  Through the Internet we are learning about
-and communicat-ing with people of different nations, with different languages
-and different races throughout the world.  Bringing the world closer with
-understanding and knowledge can only benefit all nations.  We invite all
-nations to celebrate with Americans online this Fourth of July.  Happy
-Birthday, America!    
-~
-E
-oath~
-   I do solemnly swear that I will support and defend the Constitution of the
-United States against all enemies, foreign and domestic, and to bear true faith
-and allegiance to the same that I take this obligation freely, without any
-mental reservation or purpose of evasion, and that I will well and faithfully
-discharge the duties of the office upon which I am about to enter.
-~
-E
-builder~
-  
-There is one timeless way of building.
-  
-It is thousands of years old, and the same today as it has always been.
-  
-   The great traditional buildings of the past, the villages and tents and
-temples in which man feels at home, have always been made by people who were
-very close to the center of this way.  It is not possible to make great
-buildings, or great towns, beautiful places, places where you feel yourself,
-places where you feel alive, except by following this way.  And, as you will
-see, this way will lead anyone who looks for it to buildings which are
-themselves as ancient in their form, as the trees and hills, and as our faces
-are.    
-                                        --The Timeless Way of Building
-~
-E
-war~
-   War is an ugly thing, but not the ugliest of things.  The decayed and
-degraded state of moral and patriotic feeling which thinks that nothing is
-worth war is much worse.  The person who has nothing for which he is willing to
-fight, nothing which is more important than his own personal safety, is a
-miserable creature and has no chance of being free unless made and kept so by
-the exertions of better men than himself.
-John Stuart Mill
+Catcher Rye~
+   The mark of the immature man is that he wants to die nobly for a cause, 
+while the mark of the mature man is that he wants to live humbly for one.  
+--Wilhelm Stekel
+   ...you'll find that you're not the first person who was ever confused and 
+frighteneed and even sickened by human behavior. You're by no means alone on 
+that score, you'll be excited and stimulated to know. Many, many men have been 
+just as troubled morally and spiritually as you are right now. Happily, some 
+of them kept records of their troubles. You'll learn from them-if you want to. 
+Just as someday, if you have something to offer, someone will learn something 
+from you. It's a beautiful reciprocal arrangement.
+--The Catcher in the Rye   
 ~
 E
 old glory flag~
@@ -642,18 +607,53 @@ or daughter-I am proud.  My name is Old Glory-long may I wave.  Dear God, long
 may I wave.    
 ~
 E
-Catcher Rye~
-   The mark of the immature man is that he wants to die nobly for a cause, 
-while the mark of the mature man is that he wants to live humbly for one.  
---Wilhelm Stekel
-   ...you'll find that you're not the first person who was ever confused and 
-frighteneed and even sickened by human behavior. You're by no means alone on 
-that score, you'll be excited and stimulated to know. Many, many men have been 
-just as troubled morally and spiritually as you are right now. Happily, some 
-of them kept records of their troubles. You'll learn from them-if you want to. 
-Just as someday, if you have something to offer, someone will learn something 
-from you. It's a beautiful reciprocal arrangement.
---The Catcher in the Rye   
+war~
+   War is an ugly thing, but not the ugliest of things.  The decayed and
+degraded state of moral and patriotic feeling which thinks that nothing is
+worth war is much worse.  The person who has nothing for which he is willing to
+fight, nothing which is more important than his own personal safety, is a
+miserable creature and has no chance of being free unless made and kept so by
+the exertions of better men than himself.
+John Stuart Mill
+~
+E
+builder~
+  
+There is one timeless way of building.
+  
+It is thousands of years old, and the same today as it has always been.
+  
+   The great traditional buildings of the past, the villages and tents and
+temples in which man feels at home, have always been made by people who were
+very close to the center of this way.  It is not possible to make great
+buildings, or great towns, beautiful places, places where you feel yourself,
+places where you feel alive, except by following this way.  And, as you will
+see, this way will lead anyone who looks for it to buildings which are
+themselves as ancient in their form, as the trees and hills, and as our faces
+are.    
+                                        --The Timeless Way of Building
+~
+E
+oath~
+   I do solemnly swear that I will support and defend the Constitution of the
+United States against all enemies, foreign and domestic, and to bear true faith
+and allegiance to the same that I take this obligation freely, without any
+mental reservation or purpose of evasion, and that I will well and faithfully
+discharge the duties of the office upon which I am about to enter.
+~
+E
+july4~
+   On July 4, 1776, we claimed our independence from England and Democracy was
+born.  Every day thousands leave their homeland to come to the "land of the
+free and the home of the brave" so they can begin their American Dream.  The
+United States is truly a diverse nation made up of dynamic people.  Each year
+on July 4, Americans celebrate that freedom and indepen-dence with barbecues,
+picnics, and family ga-therings.  Through the Internet we are learning about
+and communicat-ing with people of different nations, with different languages
+and different races throughout the world.  Bringing the world closer with
+understanding and knowledge can only benefit all nations.  We invite all
+nations to celebrate with Americans online this Fourth of July.  Happy
+Birthday, America!    
 ~
 S
 #34
@@ -875,14 +875,14 @@ D2
 ~
 0 0 98
 E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+~
+E
 floor~
    The stone floor is the same shade of grey as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
-~
-E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

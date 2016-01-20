@@ -1,14 +1,26 @@
 #27400
-Entrance to Smurfville~
-   You see before you several tiny houses with little blue people scurrying
-about their tasks.  Everyone seems SO happy.    
+Inside Southern Gate~
+   The Southern Gate is here, The road abruptly ends south, but begins north as
+it leads off into the village.  It is a street of dirt with a few stray cobbles,
+dating back when the Roman's conquered this land.  There are buildings on each
+side of the street.  A guard gate post is to the east here, where it is manned
+twenty-four by seven days a week.  
 ~
-274 0 0 0 0 2
+274 20 0 0 0 1
 D0
-Onward to smurf village.
 ~
 ~
-0 -1 27404
+0 0 27403
+D1
+~
+~
+0 0 27402
+D2
+The gate is forged of iron, and it has spikes on the outside
+] making it formidable as it is attached to the six foot wall./fi
+~
+gate~
+1 0 27422
 E
 credits~
    This Zone was created by Brett Lynnes and Andy McLeod We're just some bored
@@ -20,717 +32,1840 @@ wld ##00
 ~
 S
 #27401
-Smurfberry Patch~
-   You are in the far south-west corner of the smurfberry patch.  Small white
-picket fences block passage to the south and west.  You can continue on to the
-north or east, where more of the smurfberry patch awaits.    
+Inside Southern Gate~
+   You stand in and at the main southern gate of Saint Brigid.  It is the
+southern most village and free town of the realm knwon as Adria.  The street is
+dirt here, mud when it rains, but it continues to the north deeper into the
+small village.  To the east is a guard gate here and south is the gate itself
+that leaves this place.  
 ~
-274 0 0 0 0 2
-D0
-You see more smurfberries growing in nice neat rows.
-~
-~
-0 -1 27410
+274 0 0 0 0 1
 D1
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27402
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27402
 S
 #27402
-Smurfberry Patch~
-   The smurfberries are starting to clog your nostrils with their sweet smell.
-Everywhere you look there are neat litte smurfberry bushes with ripe
-smurfberries on them.  To the south there is a small picket fence keeping you
-from the wild jungle beyond.    
+Inside Guard Gate~
+   The inside of the guard gate is empty, except for a desk, a lantern or two to
+light it at night and a chair.  There is a small cot in the corner for the guard
+to sleep, usually this is a two man job to guard the gates here.  
 ~
-274 0 0 0 0 2
-D0
-You see more smurfberries growing in nice neat rows.
-~
-~
-0 -1 27411
-D1
-You see more smurfberries growing in nice neat rows.
-~
-~
-0 -1 27403
+274 264 0 0 0 0
 D3
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27401
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27400
 S
 #27403
-Smurfberry Patch~
-   You are in the south-east corner of this wonderfully cute smurfberry patch.
-  
+Southern End of Saint Brigid~
+   Walking up a north-south street, the street continues toward what appears to
+be a town square in the distance to the the north.  The gate to the south
+clearly visible to the south.  A residence is to the east, and the Saint Brigid
+Bank is to the west.  
 ~
-274 0 0 0 0 2
+274 0 0 0 0 1
 D0
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27412
+0 0 27404
+D1
+~
+~
+0 0 27449
+D2
+~
+~
+0 0 27400
 D3
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27402
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27448
 S
 #27404
-Smurfy Road~
-   You are on the main street in Smurfville.  To the north you see a cute
-smurfy well in the distance and to the east you see some nice smurfy houses
-aligned in a perfect row.    
+Southern End of Saint Brigid~
+   This is a north-south street, at the edge of a townsquare to the north.  It
+continues on to the south toward a gate in the distance or enters the square.  
+There is a residence here to the east or the church entry to the west.  
 ~
 274 0 0 0 0 1
 D0
-Smurfy Road leads off to the north.
 ~
 ~
-0 -1 27413
+0 0 27473
 D1
-Papa Smurf Lane begins over here.
 ~
 ~
-0 -1 27431
+0 0 27451
 D2
-You see the entrance to Smurfville.
 ~
 ~
-0 -1 27400
+0 0 27403
+D3
+~
+~
+0 0 27450
 S
 #27405
-Brainy Smurf's House~
-   As you enter this house you are amazed by the number of scientific apparatus
-neatly arranged throughout the room.  Several test tubes are boiling with
-various extracts of smurfberries.    
+Southern Road~
+   The road continues north and south here, among the abudant crops that are
+growing here.  In the distance is the village of Saint Brigid and its
+southernmost gate and south the road snakes off across the farmland until it
+reaches the edge of another grove of forest in the distance, and grassy plains.
 ~
-274 8 0 0 0 0
+274 0 0 0 0 2
 D0
-Out the door you see Papa Smurf Lane.
 ~
 ~
-1 -1 27431
+0 0 27422
+D1
+~
+~
+0 0 27480
+D2
+~
+~
+0 0 27474
+D3
+~
+~
+0 0 27476
 S
 #27406
-Handy Smurf's House~
-   There is an impressive array of tools of all types and purposes.  Picking
-one up, you see the brand name, 'Smurfy Sears' engraved in the handle.    
+On Western Side of Saint Brigid~
+   This is a east-west street, at the edge of a townsquare to the east.  It
+continues on to the west toward a gate in the distance or enters the square.  A
+residence is to the south and the Apothecary is to the north.  
 ~
-274 8 0 0 0 0
+274 0 0 0 0 1
 D0
-Out the door you see Papa Smurf Lane.
 ~
 ~
-1 -1 27432
+0 0 27435
+D1
+~
+~
+0 0 27473
+D2
+~
+~
+0 0 27436
+D3
+~
+~
+0 0 27407
 S
 #27407
-Papa Smurf's House~
-   This small house is the residence of the leader of all smurfs, Papa Smurf.
-There are various red hats hanging from pegs on the wall.  A smurfy throne is
-sitting in the center of the room.    
+On Western Side of Saint Brigid~
+   The street continues to the east and west, the smell of deicious bread makes
+it well known that you are outsie the Saint Brigid Bakery to the south.  North a
+residence is there too.  
 ~
-274 8 0 0 0 0
+274 0 0 0 0 1
 D0
-You see a small secret door behind Papa Smurf's bed.  Hmm, I wonder where 
-that leads?
 ~
 ~
-1 -1 27416
+0 0 27433
+D1
+~
+~
+0 0 27406
+D2
+~
+~
+0 0 27434
 D3
-Out the door you see Papa Smurf Lane.
 ~
 ~
-1 -1 27432
-E
-throne~
-   You see an oak throne, impressively engraved with utmost smurfy care.  
-~
-E
-hats hat hatrack pegs peg~
-   You see several red hats that look neat, but are much too small for you to
-wear.  
-~
+0 0 27408
 S
 #27408
-Vanity Smurf's House~
-   There are oodles of mirrors positioned everywhere.  My, you look a mess.  
-When was the last time you took a bath?    
+Across Bridge of the Rhillion River~
+   Standing on the bridge above the rushing wild river waters of the Rhillion
+River as it flows from the Aleser Mountains.  The bridge crosses safely over it
+to the west and east.  East toward the townsquare and west toward the Western
+Gate.
 ~
-274 8 0 0 0 0
-D2
-Back to Papa Smurf Lane.
+274 0 0 0 0 1
+D1
 ~
 ~
-1 -1 27431
+0 0 27407
+D3
+~
+~
+0 0 27409
 S
 #27409
-Athletic Smurf's House~
-   This looks more like a Gym than a house.  Over to the left you see a
-miniature bench press set up with a two pound weight mounted on either side,
-ready to be lifted.    
+On Western Side of Saint Brigid.~
+   The street continues to the west and east here.  There is an entry to what
+appears to be a heavily fortified building that makes up the Saint Brigid
+Jeweler and a residence to the south.  The street has a mud puddle here from a
+recent rain, making it a mud bath for those to cross.  
 ~
-274 8 0 0 0 0
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27431
+D1
+~
+~
+0 0 27408
 D2
-Back to Papa Smurf Lane.
 ~
 ~
-1 -1 27432
-E
-bench press weight left~
-   Don't you think it would be more constructive if you spent your time wielding
-something heavier?  
+0 0 27432
+D3
 ~
+~
+0 0 27410
 S
 #27410
-Smurfberry Patch~
-   Oh goodie, even more smurfberry patch!  To the east, you see a white picket
-fence.    
+Inside Western Gate~
+   This is the inside of the Western Gate.  The street begins or ends here.  
+Leading to the town square to the east in the distance.  There is a guard gate
+to the north here.  The gate is a simple one, attached to a six foot wall to
+partially fortify the village.
 ~
-274 0 0 0 0 2
+274 20 0 0 0 1
 D0
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27419
+0 0 27424
 D1
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27411
-D2
-You see more smurfberries growing in nice neat rows.
+0 0 27409
+D3
+   The gate is forged of iron, and it has spikes on the outside ] making it
+formidable as it is attached to the six foot wall.
 ~
-~
-0 -1 27401
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+gate~
+1 0 27423
 S
 #27411
-Smurfberry Patch~
-   Everywhere you look, there are neat rows of Smurfberry bushes.
+On Eastern Side of Saint Brigid~
+   This is a east-west street, at the edge of a townsquare to the west.  It
+continues on to the east toward a gate in the distance or enters the square.  
+The Saint Brigid Training Center is to the north and a path to the Belltower
+which is the main alarm for the village.  
 ~
-274 0 0 0 0 2
+274 0 0 0 0 1
 D0
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27420
+0 0 27437
 D1
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27412
+0 0 27412
 D2
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27402
+0 0 27438
 D3
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27410
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27473
 S
 #27412
-Entrance to Smurfberry Patch ~
-   You see ordered rows of bushes growing what appear to be Smurfberries.  The
-patch continues to the north, south and west.  To the east lies Smurfy Road.  
+On Eastern Side of Saint Brigid~
+   The street continues over a small hill here, to the west and east.  It is a
+bit narrow here but there is a way past.  The General Store is to the north and
+a residence is to the south.  
 ~
-274 0 0 0 0 2
+274 0 0 0 0 1
 D0
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27421
+0 0 27440
 D1
-Back to Smurfy Road.
 ~
 ~
-0 -1 27413
+0 0 27413
 D2
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27403
+0 0 27439
 D3
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27411
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27411
 S
 #27413
-Smurfy Road~
-   You are walking down a well-kept road in the middle of Smurfville.  To the
-north, you see a cute little smurfy well.  To the west is what appears to be a
-Smurfberry Patch.  To the east, you see yet another row of well-kept houses.  
+Inside Eastern Gate~
+   This is the inside of the Eastern Gate.  The street begins or ends here.  
+Leading to the town square to the west in the distance.  There is a guard gate
+to the north here.  The gate is a simple one, attached to a six foot wall to
+partially fortify the village.  
 ~
-274 0 0 0 0 1
+274 20 0 0 0 1
 D0
-You see the road leading to a smurfy well.
 ~
 ~
-0 -1 27422
+0 0 27425
 D1
-Into Smurfette Lane.
+   The gate is forged of iron, and it has spikes on the outside ] making it
+formidable as it is attached to the six foot wall.
 ~
-~
-0 -1 27433
-D2
-You see more of the Smurfy Road Leading out of the Village.
-~
-~
-0 -1 27404
+gate~
+1 0 27414
 D3
-You see a path leading to the Smurfberry Patch.
 ~
 ~
-0 -1 27412
+0 0 27412
 S
 #27414
-Clumsy Smurf's House~
-   This looks like a normal smurfy house, except for the fact that there are
-absolutely no sharp corners in the house.    
+Outside Eastern Gate~
+   Outside the eastern gate, the road continues on in a sweeping curve ] to the
+southeast.  There is Malvern Forest's edge to the north and the road stays clear
+of it as it leaves the edge at this point.  There is a junction to the east,
+where a path breaks away and goes into the forest.  The Eastern Gate is to the
+west.  
 ~
-274 8 0 0 0 0
-D0
-Back to Smurfette Lane.
+274 0 0 0 0 3
+D1
 ~
 ~
-1 -1 27433
+0 0 27426
+D3
+   The gate is forged of iron, and it has spikes on the outside making it
+formidable as it is attached to the six foot wall.  
+~
+gate~
+1 0 27413
 S
 #27415
-Grumpy Smurf's House~
-   This house is probably positioned so close to Smurfette's house just so that
-some of Smurfette's overwhelming goodness will rub off on Grumpy Smurf.    
+On Northern Side of Saint Brigid~
+   This is a north-south street, at the edge of a townsquare to the south.  It
+continues on to the south toward a gate in the distance or enters the square.  
+A residence is to the east and Broderick's Tavern is to the west.
 ~
-274 8 0 0 0 0
+274 0 0 0 0 1
 D0
-Back to Smurfette Lane.
 ~
 ~
-1 -1 27434
+0 0 27416
+D1
+~
+~
+0 0 27443
+D2
+~
+~
+0 0 27473
+D3
+~
+~
+0 0 27442
 S
 #27416
-Smurfette's House~
-   Pink!  Everything in sight is Pink!  Smurfette keeps her house nice and
-tidy, and well dusted.  Her bed looks very large and comfortable.    
+On Bridge Crossing Rhillion River~
+   Standing on the bridge above the rushing wild river waters of the Rhillion
+River as it flows from the Aleser Mountains.  The bridge crosses safely over it
+and the street continues to the north and south.  
 ~
-274 8 0 0 0 0
+274 0 0 0 0 1
+D0
+~
+~
+0 0 27417
 D2
-Secret passage from Papa Smurf's house.
 ~
 ~
-1 -1 27407
-D3
-Back to Smurfette Lane
-~
-~
-1 -1 27434
-E
-bed~
-   This is a large, comfortable be, larger than any one smurf would need.  Is
-that a door you see partially hidden by the bed to the south?  
-~
+0 0 27415
 S
 #27417
-Artistic Smurf's House~
-   This is the most creative smurfy house you've seen yet.  Everywhere hangs
-brightly colored paintings.  The floor has enormous amounts of paint splattered
-everywhere.  The ceiling has a half-finished mural painted on it.    
+On Northern Side of Saint Brigid~
+   The pounding sound of metal, and the smell of brimstone alert that you now
+are outside the Saint Brigid Blacksmithe Shoppe.  The reverb of the hammer
+strikes can be felt as one stands outside to the west.  East is the Armory in
+which all items from the Blacksmithe are sent to be sold.  The street cointinues
+onto the north and south.  North the gate can be seen in the distance.  
 ~
-274 8 0 0 0 0
+274 0 0 0 0 1
+D0
+~
+~
+0 0 27418
+D1
+~
+~
+0 0 27445
 D2
-Back to Smurfette Lane
 ~
 ~
-1 -1 27433
-E
-mural painting paintings~
-   Of course, it's another picture of Smurfette in the nude.  
+0 0 27416
+D3
 ~
+~
+0 0 27444
 S
 #27418
-Fireman Smurf's House~
-   Fireman Smurf's house is pretty plain.  It does not appear that he spends
-much time here.  His bed is neatly made, and an extra fireman's suit hangs in
-the closet.    
+On Northern Side of Saint Brigid~
+   The adjacent area to the Northern Gate.  It is an open area and the street
+continues to the north and south.  Residences are to the east and west.
 ~
-274 8 0 0 0 0
+274 0 0 0 0 1
+D0
+~
+~
+0 0 27419
+D1
+~
+~
+0 0 27447
 D2
-Back to Smurfette Lane
 ~
 ~
-1 -1 27434
+0 0 27417
+D3
+~
+~
+0 0 27446
 S
 #27419
-Smurfberry Patch~
-   This is the Northwest corner of the smurfberry patch.  Once again, you see
-more rows of smurfberry bushes, neatly aligned.  To the north and west you see
-a small white picket fence preventing you from going farther.    
+Inside Northern Gate~
+   The Northern Gate is here.  The road abruptly ends north, but begins south as
+it leads off into the village.  It is a street of dirt with a few stray
+cobbles,dating back when the Roman's conquered this land.  There are buildings
+on each side of the street.  A guard gate post is to the east here, where it is
+manned twenty-four by seven days a week.
 ~
-274 0 0 0 0 2
+274 20 0 0 0 0
+D0
+   The gate is forged of iron, and it has spikes on the outside ] making it
+formidable as it is attached to the six foot wall.
+~
+gate~
+1 0 27420
 D1
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27420
+0 0 27471
 D2
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27410
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27418
 S
 #27420
-Smurfberry Patch~
-   The smurfberry patch extends to the south, east, and west.  There is a white
-picket fence to the north, blocking your passage in that direction.    
+Outside Northern Gate~
+   You stand on the outside of the wall and the gate of Saint Brigid.  From here
+it is nothing more than forest that runs off to the north as the road snakes off
+through it.  The main gate is south.  
 ~
-274 0 0 0 0 2
-D1
-You see more smurfberries growing in nice neat rows.
+274 0 0 0 0 1
+D0
 ~
 ~
-0 -1 27421
+0 0 27421
 D2
-You see more smurfberries growing in nice neat rows.
+   The gate is forged of iron, and it has spikes on the outside ] making it
+formidable as it is attached to the six foot wall.
 ~
-~
-0 -1 27411
-D3
-You see more smurfberries growing in nice neat rows.
-~
-~
-0 -1 27419
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+gate~
+1 0 27419
 S
 #27421
-Smurfberry Patch~
-   This is the Northeast corner of the smurfberry patch.  Once again, you see
-more rows of smurfberry bushes, neatly aligned.  To the north and east you see
-a small white picket fence preventing you from going farther.    
+Beginning/End of Malvern Road~
+   As you step into the forest, the ominous silence echoes around you with the
+form of rustling in the undergrowth, birds chirping, and even the occasional
+snap of the twig.  The road snakes onward north and south it comes to a clearing
+among the forest to civilization in the form of Saint Brigid.  
 ~
-274 0 0 0 0 2
+274 0 0 0 0 3
 D2
-You see more smurfberries growing in nice neat rows.
 ~
 ~
-0 -1 27412
-D3
-You see more smurfberries growing in nice neat rows.
-~
-~
-0 -1 27420
-E
-smurfberry smurfberries patch berry berries~
-   You see some very delicious looking smurfberries.  
-~
+0 0 27420
 S
 #27422
-The Smurfy Well~
-   You see a cute smurfy well made of cute, perfectly cut smurfy stones.  This
-looks like the central meeting place for the Smurfs.  This appears to be the
-northern end of Smurfville.  There is a sinister-looking road leading off to
-the north.    
+Outside Southern Gate~
+   You stand on the southern road outside the south gate of Saint Brigid.  It is
+the farmlands here on this side with rich fertile land and ripe crops that grow
+abundantly here.  The road continues off between the many crops that are growing
+here as far as the eye can see until it reaches forest far in the distance.
 ~
 274 0 0 0 0 1
 D0
-The path leading north appears to be rarely used, as it is overgrown with 
-weeds.
+   The gate is forged of iron, and it has spikes on the outside ] making it
+formidable as it is attached to the six foot wall.
+~
+gate~
+1 0 27400
+D1
 ~
 ~
-0 -1 27426
+0 0 -1
 D2
-Back to Smurfy Road
 ~
 ~
-0 -1 27413
-D5
-You peer into the dark well and think you may just be able to squeeze down.
-~
-~
-0 -1 27423
-E
-well~
-   You peer into the dark well and think you may just be able to squeeze down.
-~
+0 0 27405
 S
 #27423
-Inside the well~
-   As you look around, you see there is very little water left at the bottom of
-this well.  There appears to be a small tunnel leading off to the east.    
+Outside the Western Gate ~
+   The gate is here, built into what appears to be the moutains.  It is made of
+wood and the gate is a huge wooden gate that is fortified with sentery posts on
+top and arrow slits on the sides of the gate, all built over the roaring
+Rhillion River that seems run from underground into the open air.  The street
+continues east through the gate to the east or west into the mountains.  
 ~
-274 265 0 0 0 0
+274 0 0 0 0 5
 D1
-You see a dark tunnel.
+   The gate is forged of iron, and it has spikes on the outside ] making it
+formidable as it is attached to the six foot wall.
 ~
-~
-0 -1 27424
-D4
-Back up to Smurfville.
-~
-~
-0 -1 27422
+gate~
+1 0 27410
 S
 #27424
-End of Tunnel~
-   There appears to be recent digging going on here to find more water for the
-dry well.  You are becoming claustrophobic in this small, damp, muddy tunnel.
-  
+Inside Guard Gate~
+   The inside of the guard gate is empty, except for a desk, a lantern or two
+tolight it at night and a chair.  There is a small cot in the corner for the
+guardto sleep, usually this is a two man job to guard the gates here.
 ~
-274 265 0 0 0 0
-D3
-You see a dark tunnel.
+274 264 0 0 0 0
+D0
 ~
 ~
-0 -1 27423
+0 0 -1
+D2
+~
+~
+0 0 27410
+D4
+~
+~
+0 0 -1
 S
 #27425
-Road to Gargamel's Castle~
-   You are on a not-too-well paved road leading to a large sinister-looking
-castle to the north.  Eerie theme music is filtering down from the castle.    
+Insie Guard Gate~
+   The inside of the guard gate is empty, except for a desk, a lantern or two
+tolight it at night and a chair.  There is a small cot in the corner for the
+guardto sleep, usually this is a two man job to guard the gates here.
 ~
-274 0 0 0 0 2
-D0
-You see Gargamel's castle looming in the distance.
-~
-~
-0 -1 27428
-D1
-This path leads off into the distance somewhere.
+274 268 0 0 0 0
+D2
 ~
 ~
-0 -1 27426
+0 0 27413
 S
 #27426
-A T-intersection~
-   You are on a T-intersection of two rarely-used paths.    
+Saint Brigid-Furze Road~
+   The road junctions here, not officially, but there is a path that leads off
+to the north into the forest from the road.  And looking closer you can see the
+remains of what was a house build there.  It seems there was a road to it but it
+got overgrown through the years of lack of use.  The road continues east or the
+west top the Western Saint Brigid Gate.  
 ~
 274 0 0 0 0 2
+D0
+~
+~
+0 0 27428
 D1
-You hear the Barney theme song drifting on the wind.
 ~
 ~
-0 -1 27427
-D2
-You see a path leading back to the well-lit area of Smurfville.
-~
-~
-0 -1 27422
+0 0 27427
 D3
-The path leads somewhere to the west.
 ~
 ~
-0 -1 27425
+0 0 27414
 S
 #27427
-Barney's Playland~
-   Oh no, Barney's gone psychotic.  There is blood covering all of the toys and
-walls of this once well-lit area.  Several indistinguishable corpses litter the
-ground and a putrid stench hangs in the air.    
+Saint Brigid-Furze Road~
+   The road begins to slope to the south east here and it continues onto around
+the edge of the forest to the north through meadows and groves of trees where
+the forest spreads out across the land like a snake with a thick emerald green
+folage.  The road seems to go west too toward civilization and toward a gate
+nearby.  
 ~
-274 0 0 0 0 2
+274 0 0 0 0 3
 D3
-You see a path leading away from this disaster.
 ~
 ~
-0 -1 27426
+0 0 27426
 S
 #27428
-Entrance to Gargamel's Castle~
-   You are at the entrance to a large, sinister-looking castle.  The castle
-appears to be mostly deserted, with possibly a few inhabitants.  The entrance
-to the castle is unguarded, but you are not sure you want to see what's inside.
-  
+Narrow Forest Path~
+   The path is pretty narrow but you manage to squeak through the trees and
+undergrowth to the north through the foliage toward the structure.  The only way
+back to the road is to the south.  
 ~
-274 1 0 0 0 2
+274 0 0 0 0 3
 D0
-You see a large iron door leading into the abode of Gargamel.
 ~
-door iron~
-1 -1 27429
+~
+0 0 27429
 D2
-There is an overgrown path leading away from the castle.
 ~
 ~
-0 -1 27425
+0 0 27426
 S
 #27429
-Gargamel's Lair~
-   Cold, bare stone floors and walls surround you in every direction.  There is
-a large table with several cages and smurf-torturing devices on it.  There is a
-fireplace against the wall, with a large black cauldron boiling above the pit.
-You see an exit to the south as well as a small door placed in the east wall.
+Narrow Forest Path~
+   Outside the old house of the Leather Woman's Hut.  An outcast of Saint Brigid
+who was said to weave magic of wicca and powers of black hearts.  She worked
+leather mending for a living and made a meagre living but she was feared by all.
+The path leads south toward the road or you can enter the home north.
 ~
-274 8 0 0 0 0
-D1
-You see a door leading into a small room.
+274 0 0 0 0 3
+D0
 ~
-door~
-1 27400 27430
+~
+0 0 27430
 D2
-You see the exit from this dismal place.
 ~
-door iron~
-1 -1 27428
-E
-table cage smurf torture torturing device devices~
-   Upon closer inspection, you see that this table is not used very much.  
-Gargamel must not be very good at catching smurfs.  
 ~
+0 0 27428
 S
 #27430
-A small room~
-   As you look around, you see that this is nothing but a small store room
-mainly containing empty, threadbare sacks and boxex.  A small pile of bones is
-in one corner.    
+Inside Leatherwoman's Hut~
+   The house is half dilapadated, and falling apart, the ceiling is crumbling
+and there was holes int he walls, but they looks like they were patched at one
+time.  It is a wreck.  There is nothing here, but memories and no evil as it was
+said by the populace of Saint Brigid.  The only exit is south into the forest.
+~
+274 9 0 0 0 0
+D2
+~
+~
+0 0 27429
+S
+#27431
+Saint Brigid Jeweler~
+   The Jewelry shoppe and appraiser works ehind a fortified steel cage as you
+walk in and everything is in glass cases.  That includes glass cases for even
+mediocre stuff in middle of the shop is under glass.  It looks like a bank or a
+keep than a regular store.  The only exit is south onto the main street.
+~
+274 24 0 0 0 0
+D2
+~
+~
+0 0 27409
+S
+#27432
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is north onto the street.
+~
+274 8 0 0 0 0
+D0
+~
+~
+0 0 27409
+S
+#27433
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is south onto the street.  
+~
+274 8 0 0 0 0
+D2
+~
+~
+0 0 27407
+S
+#27434
+Saint Brigid Bread Market~
+   The break market has a wonderful smell as you walk in and the store is setup
+where everything is in baskets to shop for or just examine.  A large counter is
+to the south where the keeper works and takes purchases and behind it you can
+see the huge ovens in which the bread is baked.  MMM Delicious.  The only exit
+is north onto the street.
+~
+274 28 0 0 0 0
+D0
+~
+~
+0 0 27407
+S
+#27435
+Apothecary/Magic Shoppe~
+   A foul stench waifs through the air as you step in and you try not to wrench
+onto the floor from the awful stench that you could smell outside.  It is an
+array of chaos in this store.  It has aisles upon aisels of potions of every
+sort and count, but they are all mixed up and out of order.  The only escape is
+the shop keeper who works behind her counter on the north wall, where her
+assistants work behind a cauldron that brew some sort of noxious potion.  They
+sell water here, and you wonder if it was could be tained from all the chemicals
+they used in these awful potions.  The only exit out of the smell is to the
+south onto the street.  
+~
+274 28 0 0 0 0
+D2
+~
+~
+0 0 27406
+S
+#27436
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is north into the street.
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27406
+S
+#27437
+Saint Brigid Training~
+   The room is open and airy with racks, mats and practice dummys that indicate
+this area is for training for levels of all classes.  The room seems to have
+sparring areas, and a work out area with weights and you get the feeling that
+Ulysess is not here for his health.  The only exit is south into the street.
+~
+274 28 0 0 0 0
+D2
+~
+~
+0 0 27411
+S
+#27438
+Bottom of Belltower~
+   Standing at the bottom of the narrow tower that makes up the belltower.  The
+only way is to the north to the main street or climbing the ladder to the top of
+the tower itself.  
+~
+274 0 0 0 0 1
+D0
+~
+~
+0 0 27411
+D4
+~
+~
+0 0 27441
+S
+#27439
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The onl
+exit is north onto the street.
+~
+274 8 0 0 0 0
+D0
+~
+~
+0 0 27412
+S
+#27440
+Saint Brigid General Store~
+   The General Store is setup the same way as many of the other shops, in a neat
+and orderly fashion.  Rows of shelves house the equipment to be sold and a
+counter where purchases to be made is to the south.  A glass counter in the
+front of the store depict hot items for sale or newly arrived.  The only exit is
+south onto the street.
+~
+274 28 0 0 0 0
+D2
+~
+~
+0 0 27412
+S
+#27441
+Top of Bell Tower~
+   This is the top of the bell-tower.  You stand inside the large massive bell
+that now hangs here and covered by the roof over it which makes up the steeple
+of the tower.  The only way down is the ladder to the bottom.  From here is a
+pretty good view of everything around the village in the distance.  
+~
+274 301 0 0 0 1
+D5
+~
+~
+0 0 27438
+S
+#27442
+Foyer to Brodericks Tavern~
+   Inside the foyer to Broderick's place.  It has an archway to the west leading
+into the main hall where laughter and chatter echo loudly in the room.  There is
+a staircase here leading upward to the upper floor that is open and can look
+down over the main hall.  It is where the Hotel bedrooms and the working girls
+are located.  The exit to the street is to the east.  The foyer here is dity and
+dusty and barren of any furnishings because of the many fights that break out
+usually outside the Inn.  A dangerous place here.  
+~
+274 12 0 0 0 0
+D1
+~
+~
+0 0 27415
+D3
+~
+~
+0 0 27458
+D4
+~
+~
+0 0 27460
+S
+#27443
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is west to the main street.
 ~
 274 8 0 0 0 0
 D3
-You see the main area of the castle.
+~
+~
+0 0 27415
+S
+#27444
+Francis' Blacksmith Shoppe/Forge~
+   The forge area is very hot here, an array of vices, benches, tools, presses,
+andother tools that are setup throughout the whole room.  His main fire forge
+dominates the center of the room with a stack going up through the planked
+ceiling of wood that covers it.  The only exit is east into the open street.  
+~
+274 24 0 0 0 0
+D1
+~
+~
+0 0 27417
+S
+#27445
+Saint Brigid Armory~
+   The Armory is a shop made up of neat rows of items all organized for the
+buyer to find in an easy manner.  There is a large glas case on the eastern wall
+that holds the hot items, which are on special or discount.  It is an array of a
+well kept shop of it appears great prices.  The only exit is to the west to the
+main street.
+~
+274 28 0 0 0 0
+D3
+~
+~
+0 0 27417
+S
+#27446
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is east into the main street.
+~
+274 0 0 0 0 0
+D1
+~
+~
+0 0 27418
+S
+#27447
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is west into the main street.
+~
+274 8 0 0 0 0
+D3
+~
+~
+0 0 27418
+S
+#27448
+Saint Brigid Bank~
+   The bank is empty save a couple of grated windows on the western wall for
+deposits and/or withdrawls.  There is no line but it looks fortified like a
+typical bank.  The only exit is east onto the street.
+~
+274 28 0 0 0 0
+D1
+~
+~
+0 0 27403
+S
+#27449
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is west onto the street.
+~
+274 8 0 0 0 0
+D3
+~
+~
+0 0 27403
+S
+#27450
+Foyer of Saint Brigid Church~
+   Inside the foyer of the church it is quite plush here where passages lead to
+the west and south from the entry/exit point.  It has tiled floor here and
+paneled walls, with artwork, sculptures of wood and marble, and art that depict
+many events in religous history.  Two main doors to the south look like the main
+entry point to the chapel as it continues on.  
+~
+274 8 0 0 0 0
+D1
+~
+~
+0 0 27404
+D2
+~
+~
+0 0 27452
+D3
+~
+~
+0 0 27457
+S
+#27451
+A Residence~
+   The residences are simple shacks with a large cooking area on one end and a
+sleeping arragement of folding beds on the other, the shacks are dingy with dirt
+floors, and have a warm stone hearth in the center of it to heat it.  The only
+exit is west onto the street.
+~
+274 8 0 0 0 0
+D3
+~
+~
+0 0 27404
+S
+#27452
+Outside Main Chapel~
+   Standing outside the main doors of the chapel the passage continues to the
+north t the foyer or south where it curves abruptly west.  It has the same
+paneled walls, and tiled floor and is quite peaceful here.
+~
+274 8 0 0 0 0
+D0
+~
+~
+0 0 27450
+D2
+~
+~
+0 0 27455
+D3
+   A set of double doors made of oak are here, and they have stained glass in
+the center of them.  They have huge bronze hinges holding them to the wall and
+bronze handles to allow them to be opened.  
+
 ~
 door~
-1 27400 27429
+1 0 27453
 S
-#27431
-Papa Smurf Lane~
-   This is a cute, smurfy road with houses to the north and south.  The road
-continues to the east and west.    
+T 1200
+#27453
+Inside Main Chapel~
+   Inside the main chapel there is a main altar to the west end of the room with
+side doors to the north and south exiting out into side halls.  It is not like
+any Chapel you have seen, instead of pews there are simple wood benches.  There
+are relics and statues and art lining the walls but that is all.  Main door to
+the east exit to the main hallway exit.  
 ~
-274 0 0 0 0 1
+274 220 0 0 0 0
 D0
-You see Vanity Smurf's house.
+An oak door is here with bronze hinges and fixtures. It seems
+to be a side door leading from the chapel
 ~
-~
-1 -1 27408
+door~
+1 0 27457
 D1
-Papa Smurf lane continues to the east.
 ~
 ~
-0 -1 27432
+0 0 27452
 D2
-You see Brainy Smurf's house.
+   An oak door is here with bronze hinges and fixtures.  It seems to be a side
+door leading from the chapel.
+~
+door~
+1 0 27456
+D4
 ~
 ~
-1 -1 27405
-D3
-Papa Smurf Lane intersects with Smurfy Road
-~
-~
-0 -1 27404
+0 0 27454
 S
-#27432
-Papa Smurf Lane~
-   This is a cute, smurfy road with houses to the north and south.  The road
-continues to the west.  To the east you see the formidable house of Papa Smurf.
-  
+#27454
+In Front of Altar~
+   At the main altar, here a podium stands for the the Cure to speak and do his
+sermons in front of a sinister altar made of marble, trimmed in oak and gold.  
+Simple steps lead east down to the audience level here.  
 ~
-274 0 0 0 0 1
-D0
-You see Athletic Smurf's house.
-~
-~
-1 -1 27409
-D1
-You see a smurfy house that is larger than the others.  It appears to be 
-Papa Smurfs'.
+274 12 0 0 0 0
+D5
 ~
 ~
-1 -1 27407
-D2
-You see Handy Smurf's house.
-~
-~
-1 -1 27406
-D3
-Papa Smurf Lane continues.
-~
-~
-0 -1 27431
+0 0 27453
 S
-#27433
-Smurfette Lane~
-   This is a cute, smurfy road with houses to the north and south.  The road
-continues to the east and west.    
+#27455
+Narrow Hallway~
+   Ther hallway turns here from the north-south to the west-east direction and
+it continues onward along the same paneled walls and tiled floors.  More
+religious relics line the walls and along hall, and the smell of incense is
+strong in the air here.  An alcove is to the west.
 ~
-274 0 0 0 0 1
+274 8 0 0 0 0
 D0
-You see Artistic Smurf's house.
 ~
 ~
-1 -1 27417
-D1
-Smurfette lane continues to the east.
-~
-~
-0 -1 27434
-D2
-You see Clumsy Smurf's house.
-~
-~
-1 -1 27414
+0 0 27452
 D3
-Papa Smurf Lane intersects with Smurfy Road
 ~
 ~
-0 -1 27413
+0 0 27456
 S
-#27434
-Smurfette Lane~
-   This is a cute, smurfy road with houses to the north and south.  The road
-continues to the east and west.    
+#27456
+Small Alcove~
+   Inside a small alcove the hallway ends into a circular chamber.  It is here
+that you can sit and pray, or just relax as light from a skylight lets the light
+from the outside shine down into the room, The hallway returns to the east/north
+or a door north leads into the main chapel.  
 ~
-274 0 0 0 0 1
+274 8 0 0 0 0
 D0
-You see Fireman Smurf's house.
+An oak door is here with bronze hinges and fixtures. It seems
+to be a side door into the main chapel.
 ~
-~
-1 -1 27418
+door~
+1 0 27453
 D1
-You see the cute pink house belonging to Smurfette.
 ~
 ~
-1 -1 27416
+0 0 27455
+S
+#27457
+Small Alcove~
+   Inside a small alcove the hallway ends into a circular chamber.  It is here
+that you can sit and pray, or just relax as light from a skylight lets the light
+from the outside shine down into the room, The hallway returns to the east to
+the foyer or south into the main chapel.  
+~
+274 8 0 0 0 0
+D1
+~
+~
+0 0 27450
 D2
-You see Grumpy Smurf's house.
+   An oak door is here with bronze hinges and fixtures.  It seems to be a side
+door into the main chapel.  
+~
+door~
+1 0 27453
+S
+#27458
+Main Hall~
+   This is the main hall where many tables lie throughout, crammed with many
+unwashed bodies of adventurers who seek fortune and glory.  There is a bar to
+the west that spreads along the western wall and east is the exit.  A bandstand
+seems to be to the north where live entertainment plays.  
+~
+274 8 0 0 0 0
+D0
 ~
 ~
-1 -1 27415
+0 0 27472
+D1
+~
+~
+0 0 27442
 D3
-Smurfette Lane continues.
 ~
 ~
-0 -1 27433
+0 0 27459
+S
+#27459
+At the Bar~
+   The bar here dominates the western wall and serves the patrons of the tavern.
+It has a long counter here made of oak and behind it is a large display that
+show many bottles of booze which is served here.  The display also has a mirror
+that reflects your image there.  The main hall is to the east.  
+~
+274 8 0 0 0 0
+D1
+~
+~
+0 0 27458
+S
+#27460
+Upper Floor~
+   Standing on the top of the narrow staircase that leads down to the foyer
+below.  The open hallway continues to the west, passing the many bedrooms that
+are located in this hall for the working girls to do business with the
+adventurers who pass through here. 
+~
+274 8 0 0 0 0
+D1
+   An oak door with bronze hinges and fixtures are here.  On the door is the
+number 'One' nailed here.  
+~
+door~
+1 0 27464
+D2
+   An oak door with bronze hinges and fixtures are here.  On the door is the
+number 'Two' nailed here.
+~
+door~
+1 0 27465
+D3
+~
+~
+0 0 27461
+D5
+~
+~
+0 0 27442
+S
+#27461
+Upper Floor~
+   Standing on the upper open floor of the Tavern.  You can see down to the
+hellof the main hall below, to the people laughing, drinking and having a good
+time,or to the many fights that break out there too.  This is a ring side seat.
+The hallway goes west and east, passing the many bedrooms for the working girls
+who do business with the adventurers who pass through here.
+~
+274 8 0 0 0 0
+D1
+~
+~
+0 0 27460
+D2
+   An oak door with bronze hinges and fixtures are here.  On the door, the
+number 'Three' is nailed here.  
+~
+door~
+1 0 27466
+D3
+~
+~
+0 0 27462
+S
+#27462
+Upper Floor~
+   The hallway turns here and it turns a different direction it goes north and
+east or south and east depending on your point of view.  You have a ring side
+seat to the action below to the drinking, singing, fighting that happens in the
+hall below.  It passes more bedrooms to the north and some to the east.
+~
+274 8 0 0 0 0
+D0
+~
+~
+0 0 27463
+D1
+~
+~
+0 0 27461
+D2
+   An oak door with bronze hinges and fixtures are here.  On the door, the
+number 'Four' is nailed here.
+~
+door~
+1 0 27467
+D3
+   An oak door with bronze hinges and fixtures are here.  On the door, the
+number 'Five' has been nailed here.
+~
+door~
+1 0 27468
+S
+#27463
+Upper Floor~
+   The hall ends here.  You stand outside the Madam's room to the north who
+takes an active participation in working with the adventurers too.  The hallway
+returns to the south passing the bedrooms as before.  Below it is is harder to
+see the hall but you can see enough, and hear it all.  
+~
+274 8 0 0 0 0
+D0
+   An oak door with bronze hinges and fixtures are here.  On the door the words
+'Madam Guineveer Purty.' are nailed here.
+~
+door~
+1 0 27470
+D2
+~
+~
+0 0 27462
+D3
+   An oak door with bronze hinges and fixtures are here.  On the door, the
+number 'Six' has been nailed here.
+~
+door~
+1 0 27469
+S
+#27464
+Bedroom One~
+   The bedroom here is a simple one, with a large bed in the middle and that of
+a dresser with a mirror to one side.  It has a fireplace in the corner that
+whenused warms the entire room.  Otherwise it is relatively empty.  The only
+exit is west into the hallway.
+~
+274 8 0 0 0 0
+D3
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27460
+S
+#27465
+Bedroom Two~
+   The bedroom here is a simple one, with a large bed in the middle and that of
+a dresser with a mirror to one side.  It has a fireplace in the corner that
+whenused warms the entire room.  Otherwise it is relatively empty.  The only
+exit is north into the hallway.
+~
+274 8 0 0 0 0
+D0
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27460
+S
+#27466
+Bedroom Three~
+   The bedroom here is a simple one, with a large bed in the middle and that of
+a dresser with a mirror to one side.  It has a fireplace in the corner that
+whenused warms the entire room.  Otherwise it is relatively empty.  The only
+exit is north into the hallway.
+~
+274 8 0 0 0 0
+D0
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27461
+S
+#27467
+Bedroom Four~
+   The bedroom here is a simple one, with a large bed in the middle and that of
+a dresser with a mirror to one side.  It has a fireplace in the corner that
+whenused warms the entire room.  Otherwise it is relatively empty.  The only
+exit is north into the hallway.
+~
+274 8 0 0 0 0
+D0
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27462
+S
+#27468
+Bedroom Five~
+   The bedroom here is a simple one, with a large bed in the middle and that of
+a dresser with a mirror to one side.  It has a fireplace in the corner that when
+used warms the entire room.  Otherwise it is relatively empty.  The only exit is
+to the ewast through the doorway.
+~
+274 8 0 0 0 0
+D1
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27462
+S
+#27469
+Bedroom Six~
+   The bedroom here is a simple one, with a large bed in the middle and that of
+a dresser with a mirror to one side.  It has a fireplace in the corner that when
+used warms the entire room.  Otherwise it is relatively empty.  The only exit is
+a door to the east.  
+~
+274 8 0 0 0 0
+D0
+~
+~
+0 0 -1
+D1
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27463
+S
+#27470
+Madam Guineveer's Room~
+   Inside the Madam's room, it is a sinister red lighted room with lanterns
+throughout covered in red parchment to make it that color.  A bed seems to be in
+the center of the room, shaped in the form of a heart and it is covered with a
+hand-sewn comforter over the rough looking thin sheets that are under it.  
+Large pillows are sitting on the top near the headboard made of ash wood and the
+foot also made of ash wood.  There is a dresser on the left side of this large
+room and what appears to be mirrors throughout.  Kinky...  The only exit is
+south through the door into the hall.  
+~
+274 8 0 0 0 0
+D2
+   An oak door with bronze hinges and fixtures are here.
+~
+door~
+1 0 27463
+S
+#27471
+Inside Guard Gate~
+   The inside of the guard gate is empty, except for a desk, a lantern or two
+tolight it at night and a chair.  There is a small cot in the corner for the
+guardto sleep, usually this is a two man job to guard the gates here.
+~
+274 264 0 0 0 0
+D3
+~
+~
+0 0 27419
+S
+#27472
+Bandstand~
+   An empty bandstand is here, half cluttered with broken chairs and tables
+after the many fights that break out in this rough establishment.  It probably
+was once used but when the place got rough it was not able to be used the way it
+was intended.  The main hall is to the south.  
+~
+274 8 0 0 0 0
+D2
+~
+~
+0 0 27458
+S
+#27473
+Town Square~
+   The townsquare is circular and it goes off in all directions to each section
+of the village.  It is empty right now, usually it is hopping with vendors and
+sellers of sorts but not right now for some reason.  
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27415
+D1
+~
+~
+0 0 27411
+D2
+~
+~
+0 0 27404
+D3
+~
+~
+0 0 27406
+S
+#27474
+Southern Road~
+   The road continues north and south here, among the abudant crops that are
+growing here.  In the distance is the village of Saint Brigid and its
+southernmost gate and south the road snakes off across the farmland until it
+reaches the edge of another grove of forest in the distance, and grassy plains .
+
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27405
+D1
+~
+~
+0 0 27488
+D2
+~
+~
+0 0 27475
+D3
+~
+~
+0 0 27484
+S
+#27475
+Southern Road~
+   The road continues north and south here, among the abudant crops that are
+growing here.  In the distance is the village of Saint Brigid and its
+southernmost gate and south the road snakes off across the farmland until it
+reaches the edge of another grove of forest in the distance, and grassy plains .
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27474
+D1
+~
+~
+0 0 27496
+D2
+~
+~
+0 0 27495
+D3
+~
+~
+0 0 27492
+S
+#27476
+Inside Cornfield~
+   At the edge of the cornfield.  The road is adjacent to the east and leaves
+and ears of corn can be seen to the west.  You can just carely force your way
+through the stalks.  
+~
+274 0 0 0 0 0
+D1
+~
+~
+0 0 27405
+D2
+~
+~
+0 0 27484
+D3
+~
+~
+0 0 27477
+S
+#27477
+Inside Cornfield~
+   At the edge of the cornfield.  The road is adjacent to the east and leaves
+and ears of corn can be seen to the west.  You can just carely force your way
+through the stalks.
+~
+274 0 0 0 0 0
+D1
+~
+~
+0 0 27476
+D2
+~
+~
+0 0 27485
+D3
+~
+~
+0 0 27478
+S
+#27478
+Edge of Cornfield~
+   At the edge of the cornfield.  The road is adjacent to the east and leaves
+and ears of corn can be seen to the west.  You can just carely force your way
+through the stalks.
+~
+274 0 0 0 0 0
+D1
+~
+~
+0 0 27477
+D2
+~
+~
+0 0 27486
+D3
+~
+~
+0 0 27479
+S
+#27479
+Edge of Cornfield~
+   A large ditch makes it impssible to cross to the south and the fences to the
+west and north to cross any further out of this field.  The only way it seems is
+to the east deeper into the field.  
+~
+274 0 0 0 0 0
+D1
+~
+~
+0 0 27478
+S
+#27480
+Edge of Cotton Patch~
+   You stand at the edge of a cotton path, with thick growth of the plants here
+and thick tufts of white from the cotton plants plainly visible here.  The patch
+continues east and south.  West is the road.  
+~
+274 0 0 0 0 2
+D1
+~
+~
+0 0 27481
+D2
+~
+~
+0 0 27489
+D3
+~
+~
+0 0 27405
+S
+#27481
+Middle of Cotton Patch~
+   You stand at the edge of a cotton path, with thick growth of the plants here
+and thick tufts of white from the cotton plants plainly visible here.  The patch
+continues east, west and south.  .  S
+~
+274 0 0 0 0 2
+D1
+~
+~
+0 0 27482
+D2
+~
+~
+0 0 27489
+D3
+~
+~
+0 0 27480
+S
+#27482
+Middle of Cotton Patch~
+   You stand at the edge of a cotton path, with thick growth of the plants here
+and thick tufts of white from the cotton plants plainly visible here.  The patch
+continues west, south and east.
+~
+274 0 0 0 0 2
+D1
+~
+~
+0 0 27483
+D2
+~
+~
+0 0 27490
+D3
+~
+~
+0 0 27481
+S
+#27483
+Edge of Cotton Patch~
+   The north east fence line is here, the patch continues to the west and south
+through the thick growth, and wisps of cotton.  
+~
+274 0 0 0 0 2
+D2
+~
+~
+0 0 27491
+D3
+~
+~
+0 0 27482
+S
+#27484
+Inside Cornfield~
+   At the edge of the cornfield.  The road is adjacent to the east and leaves
+and ears of corn can be seen to the west.  You can just carely force your way
+through the stalks.
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27476
+D1
+~
+~
+0 0 27474
+D2
+~
+~
+0 0 27492
+D3
+~
+~
+0 0 27485
+S
+#27485
+Inside Cornfield~
+   You are lost and disoriented in the corn field.  There seems to be ways to go
+in three directions to go and can't seem to orient yourself!
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27477
+D1
+~
+~
+0 0 27484
+D3
+~
+~
+0 0 27486
+S
+#27486
+Inide Cornfield~
+   You are lost and disoriented in the corn field.  There seems to be ways to go
+in three directions to go and can't seem to orient yourself!
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27479
+D1
+~
+~
+0 0 27485
+D2
+~
+~
+0 0 27494
+D3
+~
+~
+0 0 27487
+S
+#27487
+Edge of Cornfield~
+   Walking along a fence you can continue to the north, south or east in which
+you gcan easily ghet lost inside the cornfield itself.  
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27479
+D1
+~
+~
+0 0 27486
+S
+#27488
+Edge of Cotton Patch~
+   You stand at the edge of a cotton path, with thick growth of the plants here
+and thick tufts of white from the cotton plants plainly visible here.  The patch
+continues to the east, south, and north.  West is the road.
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27480
+D1
+~
+~
+0 0 27489
+D2
+~
+~
+0 0 27496
+D3
+~
+~
+0 0 27474
+S
+#27489
+Middle of Cotton Patch~
+   The middle of the cotton patch is disorienting, but you are thankfully able
+to see to the west the road that runs between the fields.  Field runs off in
+three directions, north, west, and east.  
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27491
+D1
+~
+~
+0 0 27490
+D3
+~
+~
+0 0 27488
+S
+#27490
+Middle of Cotton Patch~
+   The middle of the cotton patch is disorienting, but you are thankfully able
+to see to the west the road that runs between the fields.  Field runs off in
+three directions, north, south, east, and west.
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27482
+D1
+~
+~
+0 0 27491
+D2
+~
+~
+0 0 27488
+D3
+~
+~
+0 0 27489
+S
+#27491
+Edge of Cotton Patch~
+   This is the eastern end of the fence.  The only way back is north, south or
+west to the road that runs between the patch of cotton and corn fields.  
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27483
+D2
+~
+~
+0 0 27499
+D3
+~
+~
+0 0 27490
+S
+#27492
+Inside Cornfield~
+   At the edge of the cornfield.  The road is adjacent to the east and leaves
+and ears of corn can be seen to the west.  You can just carely force your way
+through the stalks.
+
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27485
+D1
+~
+~
+0 0 27475
+D3
+~
+~
+0 0 27493
+S
+#27493
+Inside Cornfield~
+   You are lost in a corn field, the surroundings are do disorientating that
+each direction seems like the same and you struggle to orient yourself.  You can
+go off in all directions.  
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27485
+D1
+~
+~
+0 0 27492
+D3
+~
+~
+0 0 27494
+S
+#27494
+Inside Cornfield~
+   The ede of the cornfield is here to the south, a fence blocks the way to the
+south making it impossible to travel that way.  The only way to go is west north
+and east.
+~
+274 0 0 0 0 0
+D0
+~
+~
+0 0 27486
+D1
+~
+~
+0 0 27493
+D2
+~
+~
+0 0 -1
+S
+#27495
+Edge of Forest~
+   You stand at the edge of a forest in which it ends and enters an open field
+of meadow and crops that seem to belong to someone ahead.  A road starts here.
+And it goes to the north toward the field.  South enters a forest, onto a thick
+overgrown path.
+~
+274 0 0 0 0 3
+D0
+~
+~
+0 0 27475
+S
+#27496
+Edge of Cotton Patch~
+   You stand at the edge of a cotton path, with thick growth of the plants here
+and thick tufts of white from the cotton plants plainly visible here.  The patch
+continues to the north and east, west is the road.  
+
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27488
+D1
+~
+~
+0 0 27497
+D3
+~
+~
+0 0 27475
+S
+#27497
+Edge of Cotton Patch~
+   This is the edge of the cotton path at the fence.  There is no other way to
+go here through the plants than west, north or east.  
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27489
+D1
+~
+~
+0 0 27498
+D3
+~
+~
+0 0 27496
+S
+#27498
+Edge of Cotton Patch~
+   This is the edge of the cotton path at the fence.  There is no other way to
+go here than west, east or north through the wisps of cotton.  
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27490
+D1
+~
+~
+0 0 27499
+D3
+~
+~
+0 0 27497
+S
+#27499
+Edge of Cotton Patch~
+   This is the southeastern end and fence of the Cotton Field.  There is no way
+to go from here than north or west through the wisps of cotton.  
+~
+274 0 0 0 0 2
+D0
+~
+~
+0 0 27491
+D3
+~
+~
+0 0 27498
 S
 $~

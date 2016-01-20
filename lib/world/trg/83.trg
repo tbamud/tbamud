@@ -4,10 +4,10 @@ Zone 83 Enter~
 Enter~
 if !%arg% && !%command%
   wait 2s
-  %echo%  @g[ Welcome to Zone 83, by Meyekul.  Type '@oEnter Zone@n@g' to begin. ]@n
+  %echo%  	g[ Welcome to Zone 83, by Meyekul.  Type '	oEnter Zone	n	g' to begin. ]	n
 elseif %cmd.mudcommand% == Enter && zone /= %arg%
   wait 1s
-  %echo% @g[ Now Entering Zone 83... ]@n
+  %echo% 	g[ Now Entering Zone 83... ]	n
   wait 1s
   %teleport% %actor% 8301
   %force% %actor% look
@@ -19,7 +19,7 @@ Small Fish (8301) Schooling~
 0 h 100
 ~
 if %actor.vnum% == 8301
-  follow %actor%
+  follow small
   detach all %self.id%
 end
 ~
@@ -39,13 +39,13 @@ Self-Healing on half HP~
 eval repair %random.3%
 switch %repair%
   case 1
-    %echo% @cPirates scramble to repair their damaged ship.@n
+    %echo% 	cPirates scramble to repair their damaged ship.	n
     break
   case 2
-    %echo% @cPirates carry buckets of water to extinguish fires on the ship.@n
+    %echo% 	cPirates carry buckets of water to extinguish fires on the ship.	n
     break
   case 3
-    %echo% @cPirates rush to seal leaks in the hull of their ship.@n
+    %echo% 	cPirates rush to seal leaks in the hull of their ship.	n
     break
 done
   %damage% %self% -1000
@@ -130,14 +130,14 @@ switch %song%
     emote sings, 'They breathe!'
     wait 10s
 done
-@n
-@n
-@n
-@y****************************************************************
-@y*  @cThese songs were written (as far as I know..) by            @y*
-@y*  @c@oTim Schafer@n@c, Lead Designer of "@oThe Curse of Monkey Island@n@c"  @y*
-@y*  @cI take no responsibility if he got the ideas elsewhere. :)  @y*
-@y****************************************************************@n
+	n
+	n
+	n
+	y****************************************************************
+	y*  	cThese songs were written (as far as I know..) by            	y*
+	y*  	c	oTim Schafer	n	c, Lead Designer of "	oThe Curse of Monkey Island	n	c"  	y*
+	y*  	cI take no responsibility if he got the ideas elsewhere. :)  	y*
+	y****************************************************************	n
 ~
 #8307
 Cabin Boy (8307) Mops~
@@ -417,16 +417,16 @@ jump~
    %echoaround% %actor% %actor.name% climbs to the edge and jumps off.
    %teleport% %actor% 8376
    wait 1s
-   %send% %actor% @oDown..@n
+   %send% %actor% 	oDown..	n
    wait 1s
-   %send% %actor% @oDown...@n
+   %send% %actor% 	oDown...	n
    wait 1s
-   %send% %actor% @oDown you go...@n
+   %send% %actor% 	oDown you go...	n
    wait 1s
    eval halfhitp ((%actor.hitp% / 2) + 10)
-   %send% %actor% You slam @oHARD@n into the deck!
-   %send% %actor% You take @r%halfhitp%@n points of damage.
-   %echoaround% %actor% %actor.name% slams @oHARD@n into the deck!
+   %send% %actor% You slam 	oHARD	n into the deck!
+   %send% %actor% You take 	r%halfhitp%	n points of damage.
+   %echoaround% %actor% %actor.name% slams 	oHARD	n into the deck!
    %damage% %actor% %halfhitp%
  else
    %send% %actor% Jump where?
@@ -563,41 +563,41 @@ Chinchirorin Dice (8397)~
    eval die2 %random.6%
    eval die3 %random.6%
    eval roll %die1%%die2%%die3%
-   %send% %actor% The dice land on  @o@g%die1%@n, @o@c%die2%@n, @o@r%die3%@n.
-   oechoaround %actor% %actor.name% rolls a @o@g%die1%@n, @o@c%die2%@n, @o@r%die3%@n.
+   %send% %actor% The dice land on  	o	g%die1%	n, 	o	c%die2%	n, 	o	r%die3%	n.
+   oechoaround %actor% %actor.name% rolls a 	o	g%die1%	n, 	o	c%die2%	n, 	o	r%die3%	n.
 *** Check For 3 of a Kind ***
     if (%roll% == 111)
-     oechoaround %actor% It's a @o@g1-1-1@n!  %actor.name% pays triple the bet!
-     %send% %actor% It's a @o@g1-1-1@n!  You pay triple the bet!
+     oechoaround %actor% It's a 	o	g1-1-1	n!  %actor.name% pays triple the bet!
+     %send% %actor% It's a 	o	g1-1-1	n!  You pay triple the bet!
      halt
     elseif ((%die1% == %die2%) && (%die2% == %die3%))
-     oechoaround %actor% @o@g%die1%@c%die2%@r%die3%@n Three of a kind! %actor.name% wins triple the bet!
-     %send% %actor% @o@g%die1%@c%die2%@r%die3%@n Three of a kind! You win triple the bet!
+     oechoaround %actor% 	o	g%die1%	c%die2%	r%die3%	n Three of a kind! %actor.name% wins triple the bet!
+     %send% %actor% 	o	g%die1%	c%die2%	r%die3%	n Three of a kind! You win triple the bet!
      halt
 *** Check for Storms ***
     elseif (%roll% == 123 || %roll% == 132 || %roll% == 213 || %roll% == 321 || %roll% == 312)
-     oechoaround %actor% It's a storm!  @o@g1-2-3@n!  %actor.name% pays double the bet!
-     %send% %actor% It's a storm!  @o@g1-2-3@n!  You pay double the bet!
+     oechoaround %actor% It's a storm!  	o	g1-2-3	n!  %actor.name% pays double the bet!
+     %send% %actor% It's a storm!  	o	g1-2-3	n!  You pay double the bet!
      halt
     elseif (%roll% == 456 || %roll% == 465 || %roll% == 546 || %roll% == 654 || %roll% == 645)
-     oechoaround %actor% It's a storm!  @o@g4-5-6@n!  %actor.name% wins double the bet!
-     %send% %actor% It's a storm!  @o@g4-5-6@n!  You win double the bet!
+     oechoaround %actor% It's a storm!  	o	g4-5-6	n!  %actor.name% wins double the bet!
+     %send% %actor% It's a storm!  	o	g4-5-6	n!  You win double the bet!
      halt
 *** Otherwise, Compute the Score ***
     elseif (%die1%==%die2%)
-     oechoaround %actor% %actor.name% scores a @o@g%die3%@n.
-     %send% %actor% You score a @o@g%die3%@n.
+     oechoaround %actor% %actor.name% scores a 	o	g%die3%	n.
+     %send% %actor% You score a 	o	g%die3%	n.
      halt
     elseif (%die1%==%die3%)
-     oechoaround %actor% %actor.name% scores a @o@g%die2%@n.
-     %send% %actor% You score a @o@g%die2%@n.
+     oechoaround %actor% %actor.name% scores a 	o	g%die2%	n.
+     %send% %actor% You score a 	o	g%die2%	n.
      halt
     elseif (%die2%==%die3%)
-     oechoaround %actor% %actor.name% scores a @o@g%die1%@n.
-     %send% %actor% You score a @o@g%die1%@n.
+     oechoaround %actor% %actor.name% scores a 	o	g%die1%	n.
+     %send% %actor% You score a 	o	g%die1%	n.
      halt
     else
-     oecho @o@gNo score!@n
+     oecho 	o	gNo score!	n
    end
 *** Please Do not Edit This Section ***
 * Written by Meyekul (meyekul@@hotmail.com) for Anywhere But Home (anywhere.wolfpaw.net:5555).

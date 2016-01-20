@@ -1,1 +1,280 @@
+CircleMUD v3.0 Shop File~
+#27400~
+27405
+27403
+27418
+27419
+27420
+27421
+-1
+1.00
+1.00
+9Armor
+5Weapons
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+27402
+0
+27444
+-1
+0
+28
+0
+28
+#27401~
+27406
+27407
+27408
+27409
+27410
+27411
+27412
+27413
+27414
+27415
+27416
+27417
+-1
+1.00
+1.00
+5Weapon
+9Armor
+11Worn
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+27403
+0
+27445
+-1
+0
+28
+0
+28
+#27402~
+3000
+3001
+3002
+3003
+3004
+-1
+1.25
+1.00
+19Food
+17Liquid Containers
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+0
+27401
+0
+27459
+-1
+0
+28
+0
+28
+#27403~
+3030
+3031
+3032
+3033
+3037
+3038
+3039
+3104
+3103
+3060
+3061
+-1
+1.00
+1.00
+15Container
+1light
+17Liquid Container
+19Food
+22Boatr
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+27407
+0
+27440
+-1
+0
+28
+0
+28
+#27404~
+3009
+3010
+3011
+-1
+1.00
+1.00
+19Food
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+27408
+0
+27434
+-1
+0
+28
+0
+28
+#27405~
+-1
+1.00
+1.00
+2Scroll
+10Potion
+3Wand
+8Treasure
+4Staff
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+6
+27405
+32
+27431
+-1
+0
+28
+0
+28
+#27406~
+3050
+3051
+3052
+3054
+3053
+3055
+-1
+1.00
+1.00
+2Scroll
+4staff
+10potion
+3wand
+21pen
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+0
+27409
+0
+27435
+-1
+0
+28
+0
+28
+#27407~
+3001
+3002
+3003
+3004
+3000
+-1
+2.25
+1.00
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+0
+27430
+0
+27458
+27459
+27472
+-1
+0
+28
+0
+28
+#27408~
+3001
+3002
+3003
+3004
+3000
+-1
+2.25
+1.00
+-1
+%s Sorry, I don't stock that item.~
+%s You don't seem to have that.~
+%s I don't trade in such items.~
+%s I can't afford that!~
+%s You are too poor!~
+%s That'll be %d coins, thanks.~
+%s I'll give you %d coins for that.~
+0
+0
+-1
+0
+27458
+27459
+27472
+-1
+0
+28
+0
+28
 $~

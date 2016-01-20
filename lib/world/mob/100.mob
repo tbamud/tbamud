@@ -4,7 +4,7 @@ the hermit~
 A hermit is standing here, oblivious to you and the rest of the world.
 ~
    This recluse has been living outside of the city for too long.  He is
-disheveled and in depserate need of a bath and clean clothes.  He must be strong
+disheveled and in desperate need of a bath and clean clothes.  He must be strong
 and determined to survive out here on his own.  
 ~
 2124 0 0 0 64 0 0 0 0 E
@@ -34,10 +34,10 @@ chipmunk~
 the chipmunk~
 A cute little chipmunk scurries around gathering nuts.
 ~
-   It's cheeks are puffed out to the max and look like they are ready to
-explode.  It must be gathering food to stash away for emergencies.  It's a small
-brown furry critter with black and white strips running from the top of it's
-head all the way down to it's tail.  
+   Its cheeks are puffed out to the max and look like they are ready to explode.
+It must be gathering food to stash away for emergencies.  It's a small brown
+furry critter with black and white stripes running from the top of its head all
+the way down to its tail.  
 ~
 200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -50,10 +50,10 @@ fox~
 the fox~
 A red fox sneaks slowly away from you, trying to go unnoticed.
 ~
-   It looks more of a brown than red.  The fox is extremely alert with it's ears
-coming to fine points listening for any sound of danger.  It's big bushy tail is
-a sure sign of it's good health.  It saw you coming a mile away and does not
-seem very scared.  
+   It looks more of a brown than red.  The fox is extremely alert with its ears
+coming to fine points listening for any sound of danger.  Its big bushy tail is
+a sure sign of its good health.  It saw you coming a mile away and does not seem
+very scared.  
 ~
 76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -66,10 +66,10 @@ coyote~
 the coyote~
 A skinny grey coyote fades into the trees as you approach.
 ~
-   Although the coyote looks a little too skinny it is definitely still in very
+   Although the coyote looks a little too skinny, it is definitely still in very
 good shape.  This scavenger has learned to live off the land and has become a
 common nuisance to the farmers in the area.  Entire packs have been known to
-take down a stray cow
+take down a stray cow.
 ~
 92 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -80,10 +80,10 @@ E
 #10005
 doe~
 the doe~
-A graceful doe flicks it's white tail at you.
+A graceful doe flicks her white tail at you.
 ~
    The doe stares at you carefully.  You see a flash of white from the underside
-of it's tail as it warns other deer of your presence.  It looks very frightened
+of her tail as she warns other deer of your presence.  She looks very frightened
 of you and could run at any second.  
 ~
 200 0 0 0 0 0 0 0 0 E
@@ -139,7 +139,7 @@ E
 #10009
 possum~
 the possum~
-A possum is hanging from a tree by it's tail.
+A possum is hanging from a tree by its tail.
 ~
    This odd creature has eyes that look to be made for seeing in the dark.  
 It's about 2 feet long including a hairless tail.  It looks stupid and slow.  
@@ -170,10 +170,9 @@ raccoon~
 the raccoon~
 A raccoon is sitting in a tree just above you.
 ~
-   This miniature bandit looks very interested in what you're doing.  He watches
-you without any sign of fear.  It uses it's human like hands to climb around in
-the trees.  It is grey and black with the unforgettable mask around it's eyes.
-
+   This miniature bandit looks very interested in what you're doing.  It watches
+you without any sign of fear.  It uses its human-like hands to climb around in
+the trees.  It is grey and black with the unforgettable mask around its eyes.
 ~
 76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -187,8 +186,8 @@ the skunk~
 A skunk waddles slowly past.
 ~
    You freeze in your footsteps as you see the familiar black feline with a
-white stripe down it's back and on it's tail.  This animal is scared of no one
-since only an idiot would attack it and chance being skunked.  
+white stripe down its back and on its tail.  This animal is scared of no one
+since only an idiot would attack it and chance being skunked.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -216,10 +215,10 @@ lynx~
 the lynx~
 A lynx hisses at you as you walk by.
 ~
-   This small and stocky feline has definitely adapted to these forests.  It's
+   This small and stocky feline has definitely adapted to these forests.  Its
 ears have small tufts of hair sticking out of the ends.  It is about two or
 three times the size of any cat you've ever seen.  It walks with agility and
-purpose.  
+purpose.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -232,8 +231,8 @@ hunter~
 the hunter~
 A hunter roams these woods in pursuit of a big buck.
 ~
-   Clad in hides from his latest kills this veteran of the wilderness stalks his
-prey silently.  Waiting for the opportunity to strike.  
+   Clad in hides from his latest kills, this veteran of the wilderness stalks
+his prey silently, waiting for the opportunity to strike.
 ~
 72 0 0 0 524288 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -245,7 +244,7 @@ huntress~
 the huntress~
 The huntress tracks her prey with skill and determination.
 ~
-   Covered in hides and fur from her past killings she looks very experienced
+   Covered in hides and fur from her past killings, she looks very experienced
 and adept.  
 ~
 72 0 0 0 524288 0 0 0 0 E

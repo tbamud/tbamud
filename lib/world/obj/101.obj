@@ -5,7 +5,7 @@ An irrigation ditch has been dug across the road to water the fields.~
 ~
 23 0 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-505 0 0 0
+505 0 0 0 0
 E
 irrigation ditch~
    The ditch is full of fresh water from a recent rain.  It crosses under a
@@ -14,25 +14,25 @@ small wooden grating in the road.  The water looks clear and refreshing.
 #10101
 caravan~
 the caravan~
-A caravan of wagons lay burnt in ruins from a recent raid.~
+A caravan of wagons lies burned in ruins from a recent raid.~
 ~
 15 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 caravan~
-   Several different wagons make up the caravan.  They appear to be carrying
-fish and crops between the cities.  Right up until a group of bandits or
-mercenaries ransacked it that is.    
+   Several different wagons make up the caravan.  They appear to have been
+carrying fish and crops between the cities.  Right up until a group of bandits
+or mercenaries ransacked it, that is.  
 ~
 #10102
 salmon~
 some salmon~
-Several fresh cuts of salmon that have been recently filleted.~
+Several fresh cuts of salmon have been recently filleted.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 20 0 0 0
-10 500 0 0
+10 500 0 0 0
 E
 salmon~
    These salmon steaks look delicious.  Except for the fact that they are rare.
@@ -45,11 +45,11 @@ A large assortment of crops and fish.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 24 0 0 0
-50 1000 0 0
+50 1000 0 0 0
 E
 large assortment crops fish~
    Various crops, such as wheat, corn, and rice, are laid out besides crates of
-fish.  All of it ready for sale.    
+fish.
 ~
 #10104
 shovel manure~
@@ -58,7 +58,7 @@ A shovel covered in cow manure smells here.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 8 7
-7 350 35 0
+7 350 35 0 0
 E
 shovel manure~
    The shovel reeks of the barn and cows.  It is covered from end to end with
@@ -71,7 +71,7 @@ Some coveralls that have been worn and abused were discarded.~
 ~
 11 g 0 0 0 ak 0 0 0 0 0 0 0
 0 0 0 0
-3 25 3 0
+3 25 3 0 0
 E
 worn coveralls~
    A set of farmers coveralls.  They are made of a light but durable cloth.  
@@ -82,11 +82,11 @@ A
 #10106
 cow bell~
 a cow bell~
-A cow's bell, made to hang around a cow's neck.~
+This bell was made to hang around a cow's neck.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 1 0 0 0
-9 180 18 0
+9 180 18 0 0
 E
 cow bell~
    The brass bell is affixed to a leather adjustable strap.    
@@ -100,22 +100,22 @@ A small cow's nose ring glistens brightly.~
 ~
 9 0 0 0 0 ab 0 0 0 0 0 0 0
 1 0 0 0
-1 20 2 0
+1 20 2 0 0
 E
-cmall cow's nose ring~
-   The ring is made from solid brass, and is meant to prevent cow's from
-drinking from their mothers teats.    
+small cow's nose ring~
+   The ring is made from solid brass, and is meant to prevent a cow from
+drinking from its mother's teats.  
 ~
 A
 6 1
 #10108
 fishing pole~
 a fishing pole~
-A fishing pole without a line, hook, or sinkers.~
+A fishing pole looks bare without a line, hook, or sinkers.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 7 2 5 2
-5 25 2 0
+5 25 2 0 0
 E
 fishing pole~
    The pole is made from a strange wood, reminding you of bamboo.  It is
@@ -128,7 +128,7 @@ A bandit's mask is waiting to be worn.~
 ~
 9 0 0 0 0 ae 0 0 0 0 0 0 0
 2 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 bandit's mask~
    The cloth mask has been dyed black with holes cut out for the eyes and
@@ -137,27 +137,27 @@ mouth.  It is very crude and extremely itchy.
 #10110
 camouflage pants~
 some camouflage pants~
-A set of camouflaged pants, died black and brown blend into their surroundings.~
+A set of camouflaged pants, dyed black and brown, blend into their surroundings.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
 3 0 0 0
-3 15 1 0
+3 15 1 0 0
 E
 camouflage pants~
-   The pants are made from burlap, and have been died a deep black and brown to
-blend in with the surrounding terrain.    
+   The pants are made from burlap, and have been dyed a deep black and brown to
+blend in with the surrounding terrain.  
 ~
 #10111
-camouflage moccassins~
-some camouflage moccassins~
-A pair of camouflage moccassins blend into their surroundings.~
+camouflage moccasins~
+some camouflage moccasins~
+A pair of camouflage moccasins blend into their surroundings.~
 ~
 9 0 0 0 0 ag 0 0 0 0 0 0 0
 3 0 0 0
-3 15 1 0
+3 15 1 0 0
 E
-camouflage moccassins~
-   These fur moccassins have been died brown and black to blend in with their
+camouflage moccasins~
+   These fur moccasins have been dyed brown and black to blend in with their
 surroundings.    
 ~
 #10112
@@ -167,7 +167,7 @@ A set of camouflaged gloves blend into their surroundings.~
 ~
 9 0 0 0 0 ah 0 0 0 0 0 0 0
 3 0 0 0
-3 15 1 0
+3 15 1 0 0
 E
 camouflage gloves~
    The gloves are dyed brown, black, and green to help conceal their wearer in
@@ -176,11 +176,11 @@ the wilderness.
 #10113
 torn sleeves coat~
 some torn sleeves~
-A once fine coat has had it's sleeves torn off and left here.~
+A once fine coat has had its sleeves torn off and left here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 2 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 torn sleeves coat~
    The coat must have been very fine by the look of these embroidered sleeves,
@@ -189,11 +189,11 @@ but now it's been ravaged and torn.
 #10114
 local bottle rum local~
 a bottle~
-A bottle of cheap rum.~
+A bottle of cheap rum lies here.~
 ~
-17 0 0 0 0 aj 0 0 0 0 0 0 0
+17 0 0 0 0 a 0 0 0 0 0 0 0
 3 3 8 0
-8 120 12 0
+8 120 12 0 0
 E
 bottle rum~
    Many find solace and protection within bottles such as these.  At least
@@ -202,15 +202,15 @@ those that are dim witted and hopeless.
 #10115
 beltpouch pouch~
 a beltpouch~
-A fancy beltpouch made from a fine leather.~
+This fancy beltpouch is made from a fine leather.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 3 0 0 0
-3 30 3 0
+3 30 3 0 0
 E
 beltpouch pouch~
-   The beltpouch is top of the line.  A fine pouch with a brass clasp and
-leather belt combined into one.    
+   The beltpouch is top of the line, a fine pouch with a brass clasp and leather
+belt combined into one.  
 ~
 #10116
 gypsy bracelet~
@@ -219,7 +219,7 @@ A gypsy's bracelet sparkles brightly.~
 ~
 12 g 0 0 0 am 0 0 0 0 0 0 0
 0 0 0 0
-1 130 15 0
+1 130 15 0 0
 E
 gypsy's bracelet~
    The bracelet glimmers.  It's fake diamonds and emeralds set into a fake

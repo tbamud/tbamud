@@ -5,7 +5,7 @@ A flee-infested bunk filled with rags sits in one corner.~
 ~
 15 e 0 0 0 0 0 0 0 0 0 0 0
 100 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 dirty bunk~
    As you examine the bunk closer you notice some of the rags may not be as 
@@ -18,7 +18,7 @@ An old stove is slowly rusting away to nothing here.~
 ~
 15 e 0 0 0 0 0 0 0 0 0 0 0
 400 0 -1 0
-0 0 0 0
+0 0 0 0 0
 E
 stove~
    The stove looks like it hasn't been used for a few years. In the bottom you
@@ -31,15 +31,15 @@ A clear river with small trout swimming lazily in the current flows by.~
 ~
 15 e 0 0 0 0 0 0 0 0 0 0 0
 400 0 -1 0
-0 0 0 0
-E
-fish~
-   They are small trout of some kind. They look very tasty.
-~
+0 0 0 0 0
 E
 river~
    The river here is gently flowing by. Small trout float close to the surface.
 You wonder if you could catch one of them.
+~
+E
+fish~
+   They are small trout of some kind. They look very tasty.
 ~
 #10003
 lake~
@@ -48,7 +48,7 @@ A beautiful, calm lake is sparkling here.~
 ~
 23 e 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-505 0 0 0
+505 0 0 0 0
 E
 lake~
    The lake is perfectly calm, no movement of any kind in the lake makes the 
@@ -61,7 +61,7 @@ A murky pond is stagnating here.~
 ~
 23 e 0 0 0 0 0 0 0 0 0 0 0
 500 500 0 0
-505 0 0 0
+505 0 0 0 0
 E
 pond~
    The pond is a deep brown color and smells funny. You think twice about 
@@ -74,7 +74,7 @@ A fast moving river flows by you with a roar.~
 ~
 23 e 0 0 0 0 0 0 0 0 0 0 0
 500 500 15 0
-505 0 0 0
+505 0 0 0 0
 E
 river~
    The river is extremely wide here. You doubt you could make it across. The water
@@ -87,7 +87,7 @@ A small trout is squirming in your hands.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 5 0 0 0
-1 1 0 0
+1 1 0 0 0
 E
 trout~
    This poor little fella wants to get back into some water before he dies.
@@ -96,11 +96,11 @@ He looks rather tasty.
 #10007
 pants~
 some pants~
-A pair of dirty pants~
+A pair of dirty pants lies crumpled on the ground.~
 ~
 11 e 0 0 0 af 0 0 0 0 0 0 0
 0 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 pants~
    These pants are filthy. They look like they have not been washed in years.
@@ -115,11 +115,11 @@ A filthy looking shirt has been left here.~
 ~
 11 e 0 0 0 ad 0 0 0 0 0 0 0
 0 0 0 0
-3 3 0 0
+3 3 0 0 0
 E
 shirt~
-   Although the shirt is dirty, it looks very useable. The fabric is made of fine
-wool and should stand up to alot of wear and tear.
+   Although the shirt is dirty, it looks very useable.  The fabric is a fine
+wool and should stand up to a lot of wear and tear.
 ~
 A
 17 3
@@ -130,7 +130,7 @@ A few coins have been left here.~
 ~
 20 e 0 0 0 a 0 0 0 0 0 0 0
 50 7 2 0
-1 1 0 0
+1 1 0 0 0
 E
 coins~
    The pile sparkles, coins of platinum, gold, silver, and bronze.    
@@ -142,7 +142,7 @@ A huge oak towers above you.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 oak tree~
    This impressive tree is thicker than you are tall.  Many animals have homes
@@ -156,12 +156,12 @@ A maple tree sways gently in the breeze here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 tree maple~
    This massive tree sways gently in the breeze. It towers above all the other
 trees in the area. If you could climb to the top you could probably get a good 
-view of the area. But you see no branches that you could possibly reach
+view of the area. But you see no branches that you could possibly reach.
 ~
 #10012
 elm~
@@ -170,7 +170,7 @@ A gigantic elm reaches towards the sky.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 elm~
    This must be one of the biggest trees you've ever seen. The base must be a good
@@ -184,7 +184,7 @@ A tall, straight ash tree stretches towards the sky.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0
+0 0 0 0 0
 E
 ash~
    This tree has a rough bark and looks to be perfectly straight, without limbs
@@ -198,7 +198,7 @@ A brass lantern is extinguished here.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 8 0
-6 120 12 0
+6 120 12 0 0
 E
 brass lantern~
    The brass hood can be opened and closed allowing for dimming the light
@@ -212,7 +212,7 @@ A pile of fur with straps on it looks like it might be a backpack.~
 ~
 15 0 0 0 0 ak 0 0 0 0 0 0 0
 50 1 -1 0
-5 25 2 0
+5 25 2 0 0
 E
 fur backpack~
    This backpack is made from deer hide and is extremely durable.  It can be
@@ -221,14 +221,14 @@ worn about the body.
 #10016
 deer venison meat~
 some venison~
-A slab of venison from a large, well-fed deer.~
+This slab of venison is from a large, well-fed deer.~
 ~
 19 0 0 0 0 a 0 0 0 0 0 0 0
 10 0 0 0
-3 10 0 0
+3 10 0 0 0
 E
 deer meat venison~
-   This large slab of meat has been recently cooked and though dry looks rather
-tasty.    
+   This large slab of meat has been recently cooked and, though dry, looks
+rather tasty.  
 ~
 $~
