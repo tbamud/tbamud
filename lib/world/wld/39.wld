@@ -1,18 +1,18 @@
 #3900
 The City of Haven~
-   Haven is located far south of the capital.  The city thrives because
-it's the main supplier of fish and other sea goods to the capital.  The
-location of the city provides quite a scenery, there are mountains to the east,
-and forest to the west.  More of a jungle really.  The sea is just south of the
-city with a beautiful and sandy beach, stopped abrubtly by the mountains to the
-east, and a range of impassable cliffs not far west of the forest line.  The
-South Road, people in Haven have always laughed at this name for it, since from
-here it actually goes north.  Begins just outside a marvelous city gate.  The
-gate is more for show though than for protection.  Since Haven never had
-anything to fear because of it's remote location, and anyway what lord would be
-inerested in a few fish.  This has not really changed, even with the coming of
-the south road, since regular patrols of elite soldiers are assigned to protect
-it and garrison the city itself.    
+   Haven is located far south of the capital.  The city thrives because it's the
+main supplier of fish and other sea goods to the capital.  The location of the
+city provides quite a scenery.  There are mountains to the east and forest to
+the west.  More of a jungle really.  The sea is just south of the city with a
+beautiful sandy beach, stopped abruptly by the mountains to the east and a range
+of impassable cliffs not far west of the forest line.  The South Road (people in
+Haven have always laughed at this name for it, since from here it actually goes
+north) begins just outside a marvelous city gate.  The gate is more for show
+though than for protection since Haven never had anything to fear because of its
+remote location.  Anyway, what lord would be inerested in a few fish?  This has
+not really changed, even with the coming of the south road, since regular
+patrols of elite soldiers are assigned to protect it and garrison the city
+itself.
 ~
 39 585 0 0 0 0
 E
@@ -22,15 +22,13 @@ credits~
 S
 #3901
 The Captain's Cabin~
-   The cabin looks comfortable, but not exactly oppulent or rich.  The round
+   The cabin looks comfortable, but not exactly opulent or rich.  The round
 windows are open to let in the salty breeze.  A couch is under one of these,
 made of horsehair and very soft-looking.  Maps of the sea line the walls, along
 with the many instruments used in sailing.  There is also a bed and a small
 stove here, next to the writing desk.  All of the furniture is securely bolted
-to the floor, thus unaffected by the used in sailing.  There is also a bed and
-a small stove here, next to the writing desk.  All of the furniture is securely
-bolted to the floor, thus unaffected by the ship's rocking.  The door to the
-north leads back out onto the decks.    
+to the floor, thus unaffected by the ship's rocking.  The door to the north
+leads back out onto the decks.
 ~
 39 8 0 0 0 0
 D0
@@ -248,6 +246,12 @@ D2
 door south~
 1 0 3910
 E
+door legend~
+   The carvings on the door show a scene of one of Haven's greatest heros,
+Delegarthe Haven himself, slaying the dreaded sea dragon and making Haven a
+safe place to fish.    
+~
+E
 railing fish carving porch~
    Before you is the masterfully decorated porch.  It is roofed in red tiles.
 The railings are all one piece of wood, a flowing flowery vine.  The flowers
@@ -256,12 +260,6 @@ railing up are of the same piece of wood as the railing itself, and are of
 Haven's main export, fish, standing on their tails and supporting the vine with
 thier mouths.  The sapphires that form the eyes of the fish twinkle merrily,
 almost making you believe the fish to be alive.    
-~
-E
-door legend~
-   The carvings on the door show a scene of one of Haven's greatest heros,
-Delegarthe Haven himself, slaying the dreaded sea dragon and making Haven a
-safe place to fish.    
 ~
 S
 #3912
@@ -319,15 +317,15 @@ D2
 ~
 0 0 3911
 E
-animal animals~
-   Rabbits, foxes, birds, and other small mammals dart under the trees and
-across your path, absoluetly unafraid.    
-~
-E
 flower everblooming flowers ever blooming vine vines~
    The flowers are in many hues and give off meny scents that mix to make an
 overall pleasant purfume.  The plants have been magically altered to produce
 sweet blooms, even in the dead of winter.    
+~
+E
+animal animals~
+   Rabbits, foxes, birds, and other small mammals dart under the trees and
+across your path, absoluetly unafraid.    
 ~
 S
 #3915
@@ -2037,6 +2035,14 @@ D2
 ~
 0 0 3995
 E
+color canopies colorful~
+   As you look intently to the south and the flashes of color you can see that
+the canopies are really lots of tightly woven blankets stitched together.  It
+probably serves to keep the sun off the customers and merchants.  It doesn't
+really look like a canopy, but more of a colorful roof over the marketplace,
+billowing in the wind.    
+~
+E
 traffic people~
    People, mules, horses, and all manner of things race along the road here, in
 a hurry to get to wherever it is they want to go.  The ones headed to the south
@@ -2044,14 +2050,6 @@ carry empty baskets, the cartsmen with their full loads yelling loudly at their
 straining animals.  The ones heading north lug heavy baskets full of the day's
 find at the market, their expressions pleased that they got the best of the
 pesky merchants.  Didn't they?    
-~
-E
-color canopies colorful~
-   As you look intently to the south and the flashes of color you can see that
-the canopies are really lots of tightly woven blankets stitched together.  It
-probably serves to keep the sun off the customers and merchants.  It doesn't
-really look like a canopy, but more of a colorful roof over the marketplace,
-billowing in the wind.    
 ~
 S
 #3997
@@ -2076,14 +2074,6 @@ toward the market.
 ~
 0 0 3996
 E
-color canopies colorful~
-   As you look intently to the south and the flashes of color you can see that
-the canopies are really lots of tightly woven blankets stitched together.  It
-probably serves to keep the sun off the customers and merchants.  It doesn't
-really look like a canopy, but more of a colorful roof over the marketplace,
-billowing in the wind.    
-~
-E
 people traffic~
    People, mules, horses, and all manner of things race along the road here, in
 a hurry to get to wherever it is they want to go.  The ones headed to the south
@@ -2091,6 +2081,14 @@ carry empty baskets, the cartsmen with their full loads yelling loudly at their
 straining animals.  The ones heading north lug heavy baskets full of the day's
 find at the market, their expressions pleased that they got the best of the
 pesky merchants.  Didn't they?    
+~
+E
+color canopies colorful~
+   As you look intently to the south and the flashes of color you can see that
+the canopies are really lots of tightly woven blankets stitched together.  It
+probably serves to keep the sun off the customers and merchants.  It doesn't
+really look like a canopy, but more of a colorful roof over the marketplace,
+billowing in the wind.    
 ~
 S
 #3998
