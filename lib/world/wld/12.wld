@@ -6,24 +6,24 @@ around the table, all empty.  The Immortal Board Room is to the north.
 ~
 12 8 0 0 0 0
 D0
-The Immortal Board Room can be seen to the north.
+   A frosted glass door with huge silver hinges and silver fixtures are here
+marking the main meeting room with the TBA company Logo upon the door.  The door
+is open.
 ~
-~
-0 -1 1204
+door~
+1 -1 34310
 S
 #1201
 The Inn Of The Gods~
-   The Inn of the Gods is a small room, holding only a shelf with many
-small precious stones on it.  When a God comes to rent his belongings,
-his essence is stored in the stones.  The Immortal Board Room is to
-the south.
+   The Inn of the Gods is a small room, holding only a shelf with many small
+precious stones on it.  When a God comes to rent his belongings, his essence is
+stored in the stones.  The north foyer is to the east.
 ~
 12 8 0 0 0 0
-D2
-The Immortal Board Room can be seen to the south.
+D1
 ~
 ~
-0 -1 1204
+0 0 34307
 S
 #1202
 The Ice Box Of The Gods~
@@ -34,52 +34,27 @@ and maybe someone will come and get you.
 S
 #1203
 The Gods' Mortal Board Room~
-   Here the Gods have magically created an exact copy of the mortal board
-room.  Any God can easily post and read messages from the mortal board room
-without being seen by any mortals.  The Immortal Board Room is to the west.
+   Here the Gods have magically created an exact copy of the mortal board room.
+Any God can easily post and read messages from the mortal board room without
+being seen by any mortals.  The eastern foyer is to the north.
 ~
 12 8 0 0 0 0
-D3
-The Immortal Board Room can be seen to the west.
+D0
 ~
 ~
-0 -1 1204
+0 0 34308
 S
 #1204
 The Immortal Board Room~
    The main hang out of the Gods, the Immortal Board Room is the place to be.  
-Gods exchange messages here most every day.  The mortal board room is to the
-east and the meeting room for the gods is to the south.  To the north is the
-Gods' Inn and to the west is a post office for Gods.  In the northeast corner
-you spot a small staircase leading upwards.
+Gods exchange messages here most every day.  The eastern foyer is to the south.
 ~
 12 8 0 0 0 0
-D0
-The Gods' Inn can be seen just to the north.
-~
-~
-0 -1 1201
-D1
-The Immortal Board Hall can be seen just to the east.
-~
-~
-0 -1 1290
 D2
 The Gods' Meeting Room is located to the south.
 ~
 ~
-0 -1 1200
-D3
-The Gods' Post Office is just to the west.
-~
-~
-0 -1 1205
-D4
-There is a small stair in the corner leading up to the social room of
-the Gods.
-~
-~
-0 -1 1206
+0 -1 34308
 E
 original~
    The main hang out of the Gods, the Immortal Board Room is the place to be.  
@@ -91,30 +66,30 @@ you spot a small staircase leading upwards.
 S
 #1205
 The Post Office Of The Gods~
-   The Post Office Of The Gods is the same as most Post Offices except that
-it is not as slow.  Even the Postal service knows not to anger the Gods.
-Piles of junk mail line the walls.  I guess even Gods get on mailing lists.
-The Immortal Board Room is to the east.
+   The Post Office Of The Gods is the same as most Post Offices except that it
+is not as slow.  Even the Postal service knows not to anger the Gods.  Piles of
+junk mail line the walls.  I guess even Gods get on mailing lists.  The northern
+foyer is to the west.
 ~
 12 8 0 0 0 0
-D1
-The Immortal Board Room is just to the east.
+D3
 ~
 ~
-0 -1 1204
+0 0 34307
 S
 #1206
-The Social Gathering Room~
-   This elegantly decorated room has one simple purpose.  To socialize with
-everyone else around in one central location.
+Advertising/Business Center~
+   This is the advertising room.  It is a very large room with several tables
+and chairs lining the room that have computers on them and a lone printer in the
+corner.  It is a business center of the Gods.  It also has what appears to be
+several bulletin boards for notices.  The only exit is west through an arch into
+the southern foyer.
 ~
 12 8 0 0 0 0
-D5
-The Immortal Board Room is just down through the floor.  Funny how you
-didn't notice that exit before isn't it?
+D3
 ~
 ~
-0 -1 1204
+0 0 34309
 S
 #1290
 The Immortal Board Hall~
@@ -140,13 +115,13 @@ S
 The Builders' Board Room~
    The Builder Academy zone begins in room 3.  @RGOTO 3@n to begin your training or
 if you need a refresher.  TBA zone should be able to teach anyone, no matter how
-new, the basics of building.
+new, the basics of building.  The southern foyer is to the east.
 ~
 12 8 0 0 0 0
-D2
+D1
 ~
 ~
-0 0 1290
+0 0 34309
 S
 #1292
 The Immortals' Mortal Board Room~
@@ -167,10 +142,17 @@ north.  Statues of Karileena the goddess of Honour and Justice, are lining the
 walls.  You realize this is where the exalted gods meet to discuss what course of
 action to take against offenders in the realms.    
 ~
-12 8 0 0 0 9
-D0
+12 8 0 0 0 0
+D2
+   A frosted glass door with huge silver hinges and silver fixtures are here
+marking the Hall of Justice with the Rune of Justice etched in the glass in the
+exact center of it.
+~
+door~
+1 -1 34310
+D4
 ~
 ~
-0 0 1290
+0 0 34399
 S
 $~
