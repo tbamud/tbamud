@@ -1,0 +1,200 @@
+#34600
+fountain~
+a large corner fountain~
+A large corner fountain is here~
+~
+23 0 0 0 0 a 0 0 0 0 0 0 0
+-1 2 15 0
+7 0 0 0 0
+E
+statue~
+   The statue is that of a warrior who is dressed in robes of silk carrying a
+sword at his side and a fan in his hand.  It appears to be that of the ancient
+samurai warriors.  
+~
+E
+basin~
+   The basin is granite and it is carved by hand as-if every piece of the stone
+were removed into the very shape to make it into the beautiful piece that it
+really is.  There is a statue in the center, no doubt a centerpiece god that is
+worshipped here in this pagoda.
+~
+E
+fountain~
+   The foutain is a corner one and it is being fed from a spring that flows from
+a spigot from the wall.  The water flows into the basin below with a quiet
+splashing.
+~
+#34601
+shrine~
+a shrine made of teak and gold~
+A shrine made of teak and gold is here.~
+~
+6 0 0 0 0 a 0 0 0 0 0 0 0
+1 0 0 0
+0 0 0 0 0
+E
+shrine~
+   The shrine is large and boxy, with gold trim and it shines in the medium
+light of the many lanterns that light this Pagoda.  It has an insription what
+appears to be a poem, but it is written in a foreign language which you do not
+understand.  
+~
+#34602
+lantern~
+a shining bronze lantern~
+A shining bronze lantern is here.~
+~
+1 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 -1 0
+0 0 0 0 0
+E
+lantern~
+   The lantern is about 3 feet high and about 3 feet in diameter, made off metal
+glass and wire, giving off a warm glow.
+~
+#34603
+statuehead~
+a statuehead on a pedistal~
+A statuehead on a pedistal stands here.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+pillar~
+   The pillar it stands on of simple marble with many carvings of different
+designs belonging to many parts of the realms found on TBAMUD.  Com.  There are
+inscriptions on the side and decorative grooves that make it up.  It is very
+well designed.  
+~
+E
+statuehead~
+   The statuehead is a head and partial shoulders that depicts one of the many
+gods who works over this realm as a builder.  Its resemblene is uncanny to one
+of the many builders who work here.  It is made of a hi-tech material that it
+allows holograms to be placed over the plaster mold that it covers.  
+~
+#34604
+couch~
+a plush couch~
+A plush couch is sitting here against the wall.~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+5 0 0 0
+0 0 0 0 0
+E
+couch~
+   The couch is colored blue and white and it stands on four legs looking very
+comfortable.  It appears to be used as a waiting place for mortals looking to
+meet with the immortals.
+~
+#34605
+altar~
+a prayer altar~
+A prayer altar is here.~
+~
+6 ai 0 0 0 0 0 0 0 0 0 0 0
+1 0 0 0
+200 1 0 0 0
+E
+altar~
+   The altar is made of gold and twisted marble.  It has a shiny well finished
+appearance in its construction with the rune symbol of Whiteknight carved on the
+side of it.  There are candles and incense burners incorperated in the design
+and they smolder gently.
+~
+#34606
+shrine~
+a small shrine made of marble~
+A small shrine made of marble is here~
+~
+6 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0 0
+0 0 0 0 0
+E
+incense~
+the incense is stuck out of the top from small holes and it smells like
+the wild honeysuckle. Very refreshing.
+~
+E
+shrine~
+   The shrine here is smaller and made of marble, trimmed in flexible strips of
+ornamental oak wood.  It has cubbies where small candles burn and incense burns
+honoring the god or goddess here.  
+~
+#34607
+painting~
+a large oil painting of the Last Judgement~
+An oil painting of the Last Judgement hangs here.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+100 1000 0 0 0
+E
+painting judgement~
+   The painting here represents the Last Judgement of Christ our Redeemer
+standing forth at the great white throne of judgement as he casts his judgement
+upon the souls that stand before him.  It has alot of floaty representation with
+background color and flowing design.  It is uplifting.
+~
+#34608
+oil painting~
+an oil painting of the Last Supper~
+An oil painting of the Last Supper hangs here.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+100 1000 0 0 0
+E
+painting supper~
+   The painting here is the Last Supper where Christ and the Disciples sit
+together at the familiar long table and have the famous dinner before his
+crucifixion.  It is absolutely stunning, the design and painting representation
+that is here.
+~
+#34609
+exit arrow~
+a glowing exit arrow~
+A glowing exit arrow is here, hanging from the ceiling.~
+~
+12 a 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+10 1 0 0 0
+E
+exit arrow~
+   The arrow is made of glass, metal and plastic and it hangs over the main exit
+which happens to be south, over the step up into the Main Upper Imm Hall.  On
+the surface, in red letters, on the green glass is the word 'EXIT:'
+~
+#34610
+exit arrow~
+a glowing exit arrow~
+A glowing exit arrow is here, hanging from the ceiling.~
+~
+12 a 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+10 1 0 0 0
+E
+exit arrow~
+   The arrow is made of glass, metal and plastic and hangs over the main exit of
+the room.  It has the words 'EXIT' written in red letters on the green glass
+lens and an arrow ->.
+~
+#34611
+american flag~
+an American Flag~
+An American Flag hangs from the wall in honor for the 9/11 Victims.~
+~
+12 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
+E
+flag american~
+   The proud stars and stripes are set strongly against the blue background of
+the morning sky. Someone has raised the flag in hopes that our dear friend,
+Rumble, returns from his service in Iraq. May his courage and strength keep him
+safe, and let the great banner of our great nation always watch over him. 
+Return home my friend.
+~
+$~
