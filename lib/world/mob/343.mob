@@ -1,0 +1,207 @@
+#34300
+Barney~
+Barney the Dinosaur~
+Barney the Dinosaur is here singing (Off-key).
+~
+     Here he is, large, purple, green with a goofy grin, big nose
+and big gleaming black eyes. He stands towering here acting
+all goofy as usual.
+~
+520282 0 0 0 2424 0 0 0 1000 E
+34 9 -10 6d6+340 5d5+5
+340 115600
+8 8 0
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 8
+SavingRod: 8
+SavingPetri: 8
+SavingBreath: 8
+SavingSpell: 10
+E
+T 34300
+#34301
+Kenny~
+Kenny the attendant~
+Kenny the attendant is here looking after the coffee bar.
+~
+   Kenny is a young man, a typical teenager who works at this Coffee Alcove.  
+He has blue sagging pants to show off his gaudy Sponge-Bob Boxers, white
+sneakers, a red long sleeved shirt with the logo of the service company on its
+breast, and a red matching hat to his shirt.  He has dirty blond hair, blue
+eyes, big nose, giant ears, freckles among the zits on his face and green teeth
+under the braces he wears in his mouth, EEEW..
+~
+516186 0 0 0 2424 0 0 0 325 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 1
+Str: 16
+Dex: 16
+Int: 14
+Wis: 12
+Con: 18
+Cha: 19
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 34301
+#34302
+Assistant~
+a bikini clad Executive Assistant~
+an bikini clad Executive Assistant is here holding a tablet.
+~
+   The Executive Assistant is tall, slender, and has a fantastic body with
+curves in all the right places.  She wear a skimpy orange and white bikini two
+piece over those curves.  She still holds her purple tablet to help Whiteknight
+with business affairs of the office.
+~
+520282 0 0 0 0 0 0 0 0 E
+31 10 -8 6d6+310 5d5+5
+310 96100
+8 8 2
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+#34303
+Chandra Bishop~
+Bishop Chandra~
+Bishop Chandra, the Holy Father is here.
+~
+     Bishop Chandra is an older man, with white hair, a ful beard and a wrinkled
+face. His blue eyes twinkle brightly though as-if he were a young man ready
+to go out and face adventures. He wears a simple white and blue trimmed robe
+that has the designs of the Holy Church emblazoned on it in gold.
+~
+258120 0 0 0 2168 0 0 0 0 E
+31 10 -8 6d6+310 5d5+5
+310 96100
+8 8 1
+Str: 18
+Dex: 18
+Int: 18
+Wis: 18
+Con: 18
+Cha: 18
+SavingPara: 7
+SavingRod: 7
+SavingPetri: 7
+SavingBreath: 7
+SavingSpell: 7
+E
+T 34399
+#34304
+being smorphous spirit drunk wandering~
+a drunk morphous spirit~
+a drunk amorphous spirit is here nursing its drink.
+~
+   This spirit, having lived out its days in the mortal world, now works off its
+final sins by doing menial labour in this realm's purgatory.  In this case,
+those chores seem to be cleaning up after the immortals of the land.  Obviously
+this one does not exactly like his job in this world and looks a little bit pink
+from the booze. It also appears very depressed and down on its luck.
+~
+516170 0 0 0 589840 0 0 0 0 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 0
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#34305
+gardener~
+a gardener~
+a gardener is working here.
+~
+   The gardner is clad in a two piece kimono with what appears to cast 'beacon'
+a dragon on the back and wears sandals.  Although she is not oriental, she has
+black hair, deep brown eyes and a narrow trim figure.
+~
+520204 0 0 0 0 0 0 0 350 E
+14 16 1 2d2+140 2d2+2
+140 19600
+8 8 2
+Str: 16
+Dex: 17
+Int: 13
+Wis: 12
+Con: 16
+Cha: 19
+SavingPara: 3
+SavingRod: 3
+SavingPetri: 3
+SavingBreath: 3
+SavingSpell: 3
+E
+#34306
+golem~
+a stone golem~
+a stone golem is on guard duty here.
+~
+   The stone golem looks rather solid, very buff with huge powerful legs, arms
+chest and able to tear the victim in half with its bare hands.  It has an
+expressionless look on its face despite its red glowing eyes.
+~
+520266 0 0 0 2424 0 0 0 0 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 0
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 34303
+#34307
+golem~
+an air golem~
+an air golem is here on guard duty.
+~
+   The air golem is that if a displacement of air and a cloud-like shape with
+wispy arms and legs and a huge center body.  It has yellow glowing eyes and a
+blueish electrical glow about it.  
+~
+520266 0 0 0 133500 0 0 0 0 E
+25 12 -5 5d5+250 4d4+4
+250 62500
+8 8 0
+Str: 16
+Dex: 16
+Int: 16
+Wis: 16
+Con: 16
+Cha: 16
+SavingPara: 6
+SavingRod: 6
+SavingPetri: 6
+SavingBreath: 6
+SavingSpell: 6
+E
+T 34303
+$
