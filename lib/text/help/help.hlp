@@ -286,21 +286,21 @@ AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY
 is at protecting you.  When you don armor, any AC apply that armor has is 
 subtracted from your standard (naked) AC value, modified depending on where on
 the body you are wearing the armor.  Some items have a special bonus, and 
-subtract from the AC directly. Negative AC is better. 
+subtract from the AC directly. Negative AC is better. Modifiers: Body X3, 
+head and legs X2.
 
-See Also: ARMOR-SPELL
-#0
+See also: MEDIT-AC
+#31
 AC-CONFIDENCE ARMOR-CLASS ARMOUR-CLASS AC-APPLY 
 
    Your Armor Class (often called AC) is an expression for how good your armor
 is at protecting you.  When you don armor, any AC apply that armor has is 
 subtracted from your standard (naked) AC value, modified depending on where on
 the body you are wearing the armor.  Some items have a special bonus, and 
-subtract from the AC directly. Negative AC is better. Modifiers: Body X3, 
-head and legs X2.
+subtract from the AC directly. Negative AC is better. 
 
-See also: MEDIT-AC
-#31
+See Also: ARMOR-SPELL
+#0
 ACRONYMS TERMINOLOGY VOCABULARY
 
 Here are some common terms used in building, and TBA zone:
@@ -1184,36 +1184,6 @@ NOTE: Buildwalk does not autosave on exit. You must type SAVEALL. This way if
  
 See also: TOGGLE, SAVEALL, REDIT, OLC, RLIST, DIG
 #31
-BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS
-
-Bulletin boards are the forum of inter-player communication on the MUD.
-There are different bulletin boards for different purposes -- for example,
-a standard mortal board, a board for immortals, a board for fun "social"
-messages, etc.  Naturally, not all players may be allowed to read all
-types of boards.
-
-Type "LOOK BOARD" to see the messages already posted on a board.  Type
-"WRITE <subject>" to post a message to a board; terminate a message with
-a '/s' as the first characters on a line.  Type "READ <number>" to read a
-post.  Type "REMOVE <number>" to remove your own messages.
-
-Examples:
-  > look at board
-  > write Crash Bug I found!
-  [writes the message; terminates with '/s']
-  > look at board
-  > read 6
-  > remove 6
-
-Boards are just a normal object with a special procedure attached in the
-MUD's code. Ask your friendly implementor if you need to make one.
-
-@uRoom - Board@n 
-1204 - Immortal Board
-1290 - Social Board
-
-See also: MAIL, READ, WRITE
-#0
 BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS POSTING
 
 Bulletin boards are the forum of inter-player communication on the MUD.
@@ -1244,6 +1214,36 @@ MUD's code. Ask your friendly implementor if you need to make one.
 
 See also: MAIL, READ, WRITE, SPECIALS
 #31
+BULLETINS BOARDS BULLETIN-BOARDS MESSAGE-BOARDS
+
+Bulletin boards are the forum of inter-player communication on the MUD.
+There are different bulletin boards for different purposes -- for example,
+a standard mortal board, a board for immortals, a board for fun "social"
+messages, etc.  Naturally, not all players may be allowed to read all
+types of boards.
+
+Type "LOOK BOARD" to see the messages already posted on a board.  Type
+"WRITE <subject>" to post a message to a board; terminate a message with
+a '/s' as the first characters on a line.  Type "READ <number>" to read a
+post.  Type "REMOVE <number>" to remove your own messages.
+
+Examples:
+  > look at board
+  > write Crash Bug I found!
+  [writes the message; terminates with '/s']
+  > look at board
+  > read 6
+  > remove 6
+
+Boards are just a normal object with a special procedure attached in the
+MUD's code. Ask your friendly implementor if you need to make one.
+
+@uRoom - Board@n 
+1204 - Immortal Board
+1290 - Social Board
+
+See also: MAIL, READ, WRITE
+#0
 BURNING-HANDS
 
 Usage       : cast 'burning hands' <victim>
@@ -1991,6 +1991,29 @@ CONTROL-WEATHER
 
 Usage       : cast 'control weather' <'better' | 'worse'>
 Accumulative: Yes
+
+This spell will change the "course" of the current weather.
+
+Example:
+
+  > cast 'control wea' worse
+See also: %WEATHER%, WEATHER
+#31
+CONTROL-WEATHER
+
+Usage       : cast 'control weather' <'better' | 'worse'>
+Accumulative: Yes
+
+This spell will change the "course" of the current weather.
+
+Example:
+
+  > cast 'control wea' worse
+#0
+CONTROL-WEATHER
+
+Usage       : cast 'control weather' <'better' | 'worse'>
+Accumulative: Yes
 Duration    : -
 Level       : Cleric level 17.
 
@@ -2000,29 +2023,6 @@ Example:
 
   > cast 'control wea' worse
 #0
-CONTROL-WEATHER
-
-Usage       : cast 'control weather' <'better' | 'worse'>
-Accumulative: Yes
-
-This spell will change the "course" of the current weather.
-
-Example:
-
-  > cast 'control wea' worse
-#0
-CONTROL-WEATHER
-
-Usage       : cast 'control weather' <'better' | 'worse'>
-Accumulative: Yes
-
-This spell will change the "course" of the current weather.
-
-Example:
-
-  > cast 'control wea' worse
-See also: %WEATHER%, WEATHER
-#31
 COPYOVERS
 
 Usage: copyover
@@ -2130,10 +2130,10 @@ See also: RESOURCES
 #31
 CYGWIN README.CYGWIN README-CYGWIN COMPILER SHELLS
 
-You can view all the documentation files via the websvn link at www.tbamud.com
+You can view all the documentation files via the github link at www.tbamud.com
 in the /doc directory.
 
-http://tbamud.com/websvn/filedetails.php?repname=tbaMUD&path=%2Fdoc%2FREADME.CYGWIN
+https://github.com/tbamud/tbamud/blob/master/doc/README.CYGWIN
 
 See also: CODING, DOWNLOADS
 #31
@@ -2668,6 +2668,7 @@ Name     Email
 Welcor   welcor@*tbamud.com
 Rumble   rumble@*tbamud.com
 Opie     opie@*tbamud.com
+Wyld     wyld@*tbamud.com
 Vatiken  vatiken@*tbamud.com
 Shamra   shamra@*tbamud.com
 Fizban   fizban@*tbamud.com
@@ -3776,6 +3777,100 @@ with trigedit. His example zone 359 is very impressive. He is always willing to
 help, especially with trigedit.
 
 #0
+HELP TBA-ADMIN
+
+Help and World files are the "master" versions. Before a release I copy the help file and World files to /tbamud
+Only difference from stock is do_cheat, help files viewable by any level, do_advance is LVL_GOD, and 600+ zones.
+tbamud.com is the latest Joomla version with Kunena as our forums. Download section is Google Drive.
+Builder Applications can be viewed here: goo.gl/0FBsys
+Backups are done monthly of /tba and using the Akeeba component in Joomla, I keep an archive. Github is our version control system but I like backups of backups. Please do reasonable backups of your own.
+
+To setup a trial vnum (in this case test for 61165:
+advance test 31
+set test nohassle off
+set test olc 611
+set test title has trial vnum 61165
+set test loadroom 3
+set test gold 1000000
+restore test
+redit 61165
+1
+test's Trial Vnum
+q
+y
+toggle nohassle off
+load obj 1332
+set self level 32
+tbalim test 61165
+return
+toggle nohassle on
+
+To setup test with zone 348
+return
+saveall
+set test olc 348
+set file test olc 348
+set test title has zone 348
+set file test title has zone 348
+set test loadroom 348
+set file test loadroom 348
+set test gold 1000000
+wiznet Okay test, you have zone 348 vnum's 34800 to 34899. Help buildwalk and help dig to learn how to create and link your rooms. If you have any questions just ask.
+toggle nohassle off
+load obj 1332
+set self level 32
+tbalim test purge
+return
+restore test
+toggle nohassle on
+redit 34800
+1
+test's Zone Description Room
+q
+y
+zedit 34800
+1
+test
+z
+Name Me - test
+q
+y
+redit 34800
+2
+return
+saveall
+set test olc 348
+set test title has zone 348
+set test loadroom 348
+set test gold 1000000
+wiznet Okay test, you have zone 348 vnum's 34800 to 34899. Help buildwalk and help dig to learn how 
+to create and link your rooms. If you have any questions just ask.
+toggle nohassle off
+load obj 1332
+set self level 32
+tbalim test purge
+return
+restore test
+toggle nohassle on
+redit 34800
+1
+test's Zone Description Room
+q
+y
+zedit 34800
+1
+test
+z
+Name Me - test
+q
+y
+redit 34800
+2
+<paste zone proposal here>
+q
+y
+See Also: TBA-STAFF, TBA-ZONES
+#0
 HELPCHECK
 
 Usage: helpcheck
@@ -4252,7 +4347,7 @@ all the / commands do).
 #31
 LAST LASTLISTS
 
-Usage: last [[#] [player_name] | all | *]
+Usage: last [player_name | all] [#]
  
 For checking the last time(s) a person logged on, their sitename, and their
 ID number. This now works similar to the unix version of 'last'. This will
@@ -7157,7 +7252,7 @@ then #01, etc…
 When you qedit <vnum> to create a new quest (or edit an existing one), you will 
 see the menu in @RHELP QEDIT-MENU@n
 
-See Also: QEDIT-MENU, AUTOQUESTS, QUESTPOINTS, QUESTFLAG
+See Also: QEDIT-MENU, QUESTPOINTS, QUESTFLAG
 #31
 QEDIT-ACCEPT
 
@@ -8136,34 +8231,29 @@ ROOM-TRIGGERS TRIGEDIT-ROOM-TYPES
 RUMBLE
  
    Thanks, I need all the help I can get.
-
-Rumble is the Creator of The Builder Academy and is in charge of its 
-administration: tbamud.com 9091
-
-See Also: ADVERTISING
-
+ 
+Rumble created The Builder Academy back in 2000 and appreciates any assistance
+in improving the tbaMUD codebase for the community to enjoy: tbamud.com 9091
+ 
+See Also: TBA-ADVERTISING, TBA-STAFF
 #0
 RUMBLE-ALIASES
-  
-  To set up aliases to use older tbaMUD building commands:
-history          history all
-poofout          set self poofout $*
-poofin           set self poofin $*
-poofs            score
-cheat            return
-clsolc           toggle clsolc
-
-   And other good examples:
-receive          at postmaster receive
-all              tlist $1;slist $1;olist $1;mlist $1;rlist $1;
-mail             at postmaster mail $*
-pg               title is here, page me if you need anything.
-work             title has gone to work.;afk
-zn               zedit new $1 $100 $199
-ea               title is eating and can't type with his mouth full.
-away             title is gone, send a tell to leave a message.
-
-See also: ALIASES
+ 
+   Some examples of aliases I use:
+alias history history all
+alias poofs score
+alias poofin set self poofin $*
+alias poofout set self poofout $*
+alias pg title is here, page me if you need anything.
+alias work title has gone to work.
+alias cheat return
+alias zn zedit new $1 $100 $199
+alias rec at postmaster receive
+alias mail at postmaster mail $*
+alias work title has gone to work.;afk
+alias away title is gone, send a tell to leave a message.
+ 
+See Also: ALIASES, RUMBLE
 #31
 SANCTUARY
 
@@ -9160,9 +9250,11 @@ Great God's:
     in their title "set rumble title has trial vnum #" "set rumble olc #." Put
     their name in their trial vnum room title. Use the assigner to limit them
     to their single vnum. HELP ASSIGNER. In the rare occasion that I am absent 
-    @HELP STAFF-ZONES explains how I setup new zones.
+    @HHELP STAFF-ZONES explains how I setup new zones.
 
 Rumble
+
+See Also: TBA-ADMIN
 #31
 STAFF-ZONES
  
@@ -9204,7 +9296,8 @@ return
 nohassle
 redit [%1]00
 2
-I then cut and paste the zone description into the first room.
+
+"show zone none" to see free zones
 
 See also: STAFF, ASSIGNER
 #0
@@ -10007,6 +10100,8 @@ TinTin     (all) - http://tintin.sourceforge.net/
 Mushclient (Win) - http://www.gammon.com.au/mushclient/mushclient.htm
 PuTTY      (Win) - http://www.chiark.greenend.org.uk/
 Atlantis   (Mac) - http://riverdark.net/atlantis/
+BlowTorch  (android)
+JuiceSSH   (android)
 
 $ = not free
 Warning: Some clients will give you problems since they use special characters.
@@ -10257,27 +10352,6 @@ TNL
 can attain the next level.
 
 #0
-TOGGLES CONFIGURE SETTINGS
-
-Usage: toggle
-       toggle <option> <argument>
-
-TOGGLE shows you the current values of various toggles available on the MUD.
-This command can also be used to change these values, if used with the correct
-argument. When a toggle is set, it will be saved in that state until the next
-time you change it. 
-
-Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
-   Move Display: OFF            Compact: ON               Quest: OFF
-   Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
-      AutoExits: OFF            NoShout: OFF              Wimpy: OFF
-       NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
-       AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
-        AutoSac: ON          AutoAssist: ON                 AFK: OFF
-     Pagelength: 23               Color: off     
-
-See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
-#0
 TOGGLES CONFIGURE SETTINGS 
 
 Usage: toggle
@@ -10301,6 +10375,27 @@ Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
         AutoSac: ON          AutoAssist: ON             AutoMap: ON
      Pagelength: 32         Screenwidth: 80                 AFK: OFF
         Autokey: OFF           Autodoor: OFF              Color: on     
+
+See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
+#0
+TOGGLES CONFIGURE SETTINGS
+
+Usage: toggle
+       toggle <option> <argument>
+
+TOGGLE shows you the current values of various toggles available on the MUD.
+This command can also be used to change these values, if used with the correct
+argument. When a toggle is set, it will be saved in that state until the next
+time you change it. 
+
+Hit Pnt Display: OFF              Brief: OFF         Summonable: OFF
+   Move Display: OFF            Compact: ON               Quest: OFF
+   Mana Display: OFF             NoTell: OFF           NoRepeat: OFF
+      AutoExits: OFF            NoShout: OFF              Wimpy: OFF
+       NoGossip: OFF          NoAuction: OFF            NoGrats: OFF
+       AutoLoot: ON            AutoGold: ON           AutoSplit: ON 
+        AutoSac: ON          AutoAssist: ON                 AFK: OFF
+     Pagelength: 23               Color: off     
 
 See also: DISPLAY, NOSHOUT, NOSUMM, NOTELL, QUEST, REPEAT, WIMP
 #0
@@ -10472,7 +10567,7 @@ TRIG-RETURN RETURN-0 CONTINUE %RETURN% RETURN-1
  
 Usage: return 0
 
-   Return 0 in a trigger will allow the certain triggers added flexibility. This 
+   Return 0 in a trigger will allow certain triggers added flexibility. This 
 is dependent on the trigger type and is explained in each trigger help file under
 @RHELP TRIG-TYPE@n. The only way to make two triggers of the same type to both 
 fire is to have the first one return 0. Other Examples:
@@ -11846,7 +11941,7 @@ the help files below.
 @ROBJ-VAR@n  - Variables for objects.       @RTSTAT 28@n
 @RROOM-VAR@n - Variables for rooms.         @RTSTAT 29@n
 @RTEXT-VAR@n - Variables for text.          @RTSTAT 30@n
-@RSPEC-VAR@n - Variables for special stuff. @RTSTAT 1@n
+@RSPEC-VAR@n - variables for special stuff. @Rtstat 31@n
 
 See also: GLOBAL
 #31
@@ -12325,22 +12420,22 @@ Examples:
 See also: LOAD, STAT, VNUM, TSTAT 
 #31
 WAIT PAUSE TRIGEDIT-TIMING TIMING TRIG-WAIT TRIGEDIT-WAIT
-
-Usage: wait <time> [s]
+ 
+Usage: wait <time> [s | c]
        wait until <mudtime>
-
+ 
 * This trigger gives the actor 10 seconds to get out.
 say GET OUT! NOW!
 wait 10 s
 mkill %actor%
-
+ 
    The wait statement is used to 'pause' the trigger execution for a period of 
-time. When a trigger is being executed it will attempt to execute all commands 
-right away. To get small breaks in, and perhaps give the players time to adjust, 
-use the wait command.
-
-Example: @RTSTAT 103@n
-
+time. When a trigger is being activated it will execute all commands immediately. 
+To create a pause during trigger execution use the wait command. A wait can
+use seconds or cycles (1/20th of a second).
+ 
+Example: @RTSTAT 103, 43, 79@n
+ 
 See also: RANDOM-TIMING, WAIT-UNTIL
 #31
 WAITUNTIL WAIT-UNTIL 
@@ -13461,5 +13556,13 @@ own zone if their name is in the zone's builders list.
 zlock - Locks one or all zones. Type zlock for usage. 
 zunlock - Locks one or all zones. Type zunlock for usage. 
 
+#31
+CHMOD
+
+4 stands for "read",
+2 stands for "write",
+1 stands for "execute", and
+0 stands for "no permission."
+So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).
 #31
 $~
