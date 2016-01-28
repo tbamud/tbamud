@@ -15,9 +15,9 @@ A granite fountain is here bubbling merrily. ~
 -1 2 0 0
 0 0 0 0 0
 E
-basin~
-   The basin is open and round and in it the cool water resides.  It looks cool
-and refreshing.  
+granite fountain~
+   The fountain has a long and wide round basin with a short statue in the
+center.
 ~
 E
 statue~
@@ -27,9 +27,9 @@ jug on the statue.  The statue is made of marble and the woman whom it portrays
 is very youthful and beautiful.  
 ~
 E
-granite fountain~
-   The fountain has a long and wide round basin with a short statue in the
-center.
+basin~
+   The basin is open and round and in it the cool water resides.  It looks cool
+and refreshing.  
 ~
 #27402
 anvil~
@@ -40,14 +40,14 @@ A heavy anvil is here bolted and secured to a block of cement. ~
 0 0 0 0
 0 0 0 0 0
 E
-block~
-   The cement block is a rectangle cube and it takes the punishment of shock
-from the pounding hammer as the blacksmithe beats and pounds the metal on it.  
-~
-E
 anvil~
    The anvil is pure solid cast iron and it is attached to the cement block with
 U shaped bolts and large nuts.  
+~
+E
+block~
+   The cement block is a rectangle cube and it takes the punishment of shock
+from the pounding hammer as the blacksmithe beats and pounds the metal on it.  
 ~
 #27403
 lance~
@@ -123,14 +123,14 @@ A gray cloak is fluttering in the breeze hanging from a hook.~
 1 0 0 0
 2 20 0 5 0
 E
-clasp~
-   The clasp is gold and silver and in the form of a crescent moon and
-interlocked, rayed star.  The sign of its Elvish origin.  
-~
-E
 cloak~
    The cloak is made of thick wool and is held together at the neck by a gold
 and silver clasp.
+~
+E
+clasp~
+   The clasp is gold and silver and in the form of a crescent moon and
+interlocked, rayed star.  The sign of its Elvish origin.  
 ~
 A
 17 1
@@ -327,12 +327,12 @@ A small sword is here laying on its side.~
 0 1 6 11
 3 60 10 5 0
 E
-sword small~
-   The small sword seems to have an inscription of some sort.
-~
-E
 inscription~
    It says: 'May this sword be a good companion.  '
+~
+E
+sword small~
+   The small sword seems to have an inscription of some sort.
 ~
 #27421
 dagger~
@@ -406,15 +406,15 @@ A large shrine made of marble dominates the wall.~
 0 0 0 0
 0 0 0 0 0
 E
+incense~
+   The incense is stuck out of the top from small holes and it smells like the
+wild honeysuckle.  Very refreshing.
+~
+E
 shrine~
    The shrine here is smaller and made of marble, trimmed in flexible strips of
 ornamental oak wood.  It has cubbies where small candles burn and incense burns
 honoring the god or goddess here.  
-~
-E
-incense~
-   The incense is stuck out of the top from small holes and it smells like the
-wild honeysuckle.  Very refreshing.
 ~
 #27427
 altar~
@@ -423,7 +423,7 @@ A prayer altar is here.~
 ~
 6 ai 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
-200 0 0 0 0
+0 0 0 0 0
 E
 altar~
    The altar is made of gold and twisted marble.  It has a shiny well finished

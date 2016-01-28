@@ -211,10 +211,10 @@ standards to all values a builder can set. This way you know what values are
 appropriate and will not have to redo objects because you did not know what 
 values to set.
    Oedit can be used by typing "oedit <<VNUM>>".  A zone is divided into VNUM's 
-##00 to ##99.  For example, Zone 12 has VNUM's 1200 to 1299.  These numbers 
+##00 to ##99.  For example, Zone 12 has VNUM's 1200 to 1299.  These numbers
 are critical; they are the identities of the objects within the game.  It is 
 a good habit to start using all VNUMs from ##00 to ##99 consecutively.
-   Lets start off by checking out the oedit menu. Type @RHELP OEDIT-MENU@n
+   Start off by checking out the oedit menu. Type @RHELP OEDIT-MENU@n
 That is an example of the oedit menu you will see when you edit an object. 
 Notice how each important line has an associated help topic. To learn more
 about it just see the appropriate help file. If this is your first experience
@@ -679,20 +679,6 @@ clown, which in turn dissolves into a prancing pony.  The only constant here
 appears to be a faint scent of jasmine.
 ~
 0 24 0 0 0 0
-S
-#44
-Rhade's Room~
-You are in an unfinished room.
-~
-0 8 0 0 0 0
-D4
-~
-~
-0 0 1204
-D5
-~
-~
-0 0 33
 S
 #71
 The Vault Of The Programancer~

@@ -3,11 +3,11 @@ mob0~
 mob0~
 mob0
 ~
-mob0
+   Mob0
 ~
-8 0 0 0 0 0 0 0 0 E
-0 20 10 1d1+0 1d1+0
-0 0
+10 0 0 0 0 0 0 0 0 E
+1 20 9 0d0+10 1d2+0
+10 100
 8 8 0
 E
 #1
@@ -30,9 +30,10 @@ cleric healer~
 the healer~
 A healer in a white luminescent robe is tending to the wounded.
 ~
-This beautiful woman at one time used to piously offer her healing skills to any
-in need.  But times are rough and now she can only afford to help those that are
-just starting their adventures.  Type 'heal' to see what services she offers.  
+   This beautiful woman at one time used to piously offer her healing skills to
+any in need.  But times are rough and now she can only afford to help those that
+are just starting their adventures.  Type 'heal' to see what services she
+offers.  
 ~
 188426 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -483,7 +484,7 @@ A spy from the underground resistance is discreetly looking for some new recruit
 and it has been rumored that many new recruits often end up missing. The few
 that do manage to come back are often damaged both physically and mentally.
 ~
-8 0 0 0 0 0 0 0 0 E
+72 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
 60 3600
 8 8 2
@@ -513,7 +514,7 @@ Some hired muscle is willing to do just about anything for the right price.
 show an intense hatred and a blankness of intelligence that seems to convey the
 truth about brawn without brains.
 ~
-8 0 0 0 0 0 0 0 0 E
+72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
 100 10000
 8 8 1
@@ -527,7 +528,7 @@ Homer Simpson is wandering around aimlessly in a dream like state.
 words of wisdom to fellow travellers. He is decked out in his usual blue pants
 and food stained white t-shirt.
 ~
-8 0 0 0 0 0 0 0 0 E
+72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
 10 100
 8 8 1
@@ -559,9 +560,14 @@ spoon, and enjoys serving the builders who come here in their overalls after a
 hard day laying bricks and writing triggers.
 ~
 24586 0 0 0 0 0 0 0 10 E
-10 10 4 10d10+100 10d10+10
+10 17 4 2d2+100 1d2+1
 100 10000
 8 8 2
+SavingPara: 2
+SavingRod: 2
+SavingPetri: 2
+SavingBreath: 2
+SavingSpell: 2
 E
 #98
 travelling saleswoman woman~

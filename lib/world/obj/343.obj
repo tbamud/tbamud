@@ -7,6 +7,28 @@ A granite fountain is gurgling here.~
 -1 2 15 0
 0 0 0 0 0
 E
+fountain basin~
+     The fountain is made of black granite and the water
+in it looks and inviting to drink. In the center is a
+'SPADE' shaped centerstone that seems to have writing
+all over it.
+~
+E
+spade~
+     The spade seems to be the headstone of the center of the
+fountain here. It is made of black stone and is an obelisk
+in shape. It has 'Directory' on the side of it and it also
+has a 'MAP' on the side of it as well.
+~
+E
+Map~
+Nth: God Hall - Nth, Inn, Post Office, Coffee Alcove
+Sth: God Hall - Sth, Bus. Ctr, Bldr Brd Rm, God Hall, Ext
+Est: God Hall - Est, Imm/Mrtl Brd Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
+Wst: God Hall - Wst, H.O.Jst/Chpl, Mtn Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
+Dwn: Midguaard
+~
+E
 Directory~
 ---------------------------------------------------------
 Immortal Name: ===== Room #  ======   Location: =======
@@ -34,28 +56,6 @@ Vatiken ------- 34339 -------- God Hall, Northwest
 Niamh ----------- 34351 ----------- God Hall, Southeast
 Fade ----------- 34337 ------------ God Hall, West
 Angela -------- 34636 --------God Hall, South Extension
-~
-E
-Map~
-Nth: God Hall - Nth, Inn, Post Office, Coffee Alcove
-Sth: God Hall - Sth, Bus. Ctr, Bldr Brd Rm, God Hall, Ext
-Est: God Hall - Est, Imm/Mrtl Brd Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
-Wst: God Hall - Wst, H.O.Jst/Chpl, Mtn Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
-Dwn: Midguaard
-~
-E
-spade~
-     The spade seems to be the headstone of the center of the
-fountain here. It is made of black stone and is an obelisk
-in shape. It has 'Directory' on the side of it and it also
-has a 'MAP' on the side of it as well.
-~
-E
-fountain basin~
-     The fountain is made of black granite and the water
-in it looks and inviting to drink. In the center is a
-'SPADE' shaped centerstone that seems to have writing
-all over it.
 ~
 #34301
 fouton~
@@ -111,7 +111,7 @@ beermug mug~
 placed out for use by the patrons.
 ~
 #34305
-coffeecup cup~
+coffee cup coffee~
 a large coffee cup~
 A large empty coffee cup is here ready for use.~
 ~
@@ -150,12 +150,12 @@ Lemonaid Fountain~
 front of a five gallon jug of the yellow delicious liquid.  
 ~
 #34308
-Glass~
+juice glass juice~
 a tall frosty glass~
 An empty tall frost-covered glass is here ready for use.~
 ~
 17 0 0 0 0 ao 0 0 0 0 0 0 0
-2 0 11 0
+2 0 10 0
 3 1 0 0 0
 E
 glass~
@@ -204,7 +204,7 @@ winebox~
 glass.  There is a trigger to push glass against to make it dispense.
 ~
 #34312
-wineglass~
+wine glass wine~
 a crystal wine glass~
 A crystal wine glass is here ready for use.~
 ~
@@ -230,7 +230,7 @@ shelf wooden~
 the wall below, It makes for perfect storage.
 ~
 #34314
-whisky bottle~
+whisky bottle whisky~
 a bottle of whisky~
 A bottle of whisky is here.~
 ~
@@ -242,7 +242,7 @@ bottle whiskey~
    The bottle is brown and it has a white and red label marked "Wild Turkey"
 ~
 #34315
-shotglass shot~
+ale shotglass ale~
 a short shotglass~
 A short shotglass is here ready for use.~
 ~
@@ -271,15 +271,12 @@ the metal tigger and it will dispense a perfect shot of whiskey.
 barrier construction~
 a construction barrier~
 A construction barrier is here on its metal spidery legs.~
+   The orange and white stripped barrier has two lights on the top of it that
+blink yellow and it sits on long spidery looking legs.
 ~
 16 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 200 2000 0 31 0
-E
-barrier construction~
-   The orange and white stripped barrier has two lights on the top of it that
-blink yellow and it sits on long spidery looking legs,
-~
 #34318
 couch~
 a plush couch~
@@ -310,38 +307,30 @@ leather is light brown trimmed in black.
 sign~
 a construction sign~
 A construction sign is here nailed to a 2x4~
-~
-0 a 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0 0
-E
-sign construction~
 This area is currenty under construction. Please enter at OWN RISK
 ------------------- HARD-HAT AREA -----------------
  
- Witt's End Construction Company
+Witt's End Construction Company
 Making for a Better Tomorrow
 ~
+16 a 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
 #34321
 bigscreen TV~
 a bigscreen TV 51"~
 A big screen 51" TV is here playing the local sports channel highlights.~
-~
-16 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0 0
-E
-bigscreen TV~
    The Big Screen 51" has a huge, flat screen, perfect sound, and color.  It
 sits on a black pedistal with a swivel, and has a keypad on one side, on front
-to change the channels.  Sounds of Lively Action is on the SCREEN right now.  
-~
-E
-screen football~
+to change the channels.  Sounds of Lively Action is on the SCREEN right now.
+
    The split screen is engaged and on it the NY Yankees (tm) vs the SF Giants
 (tm) for MLB.  The other split screen shows a round of Soccer being played,
 Mexico vs Brazil.  Exciting games!  
 ~
+16 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
 #34322
 stool barstool~
 a barstool~
@@ -369,32 +358,28 @@ of the Witt's Construction company on the center front of it.
 There is a plastic adjustable insert to fit the wearers head.
 ~
 A
-18 20
+18 5
 A
-19 22
+19 5
 A
-24 5
+24 2
 #34324
 sign~
 a small freestanding sign~
 A small freestanding sign is here on a rod and pedistal.~
+   The sign is in the shape of two arrows, on pointing up and the other pointing
+downward, There is a MESSAGE written in the center of either of the arrows.
+
+
+The arrow up has the message: For all Lead Offices, use upper stairs to 
+Garden Level
+ 
+The arrow down has the message: Higher Immortal Hallway, North Extension(s) 
+Section(s) A-B (coming soon C)
 ~
 16 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 31 0
-E
-sign arrows~
-   The sign is in the shape of two arrows, on pointing up and the other pointing
-downward, There is a MESSAGE written in the center of either of the arrows.
-~
-E
-message text~
-The arrow up has the message: For all Lead Offices, use upper stairs to 
-Garden Level
-
-The arrow down has the message: Higher Immortal Hallway, North Extension(s) 
-Section(s) A-B (coming soon C)
-~
 #34325
 neck guard~
 a titanium neckguard~
@@ -402,16 +387,16 @@ A titanium necckguard is here.~
 ~
 9 0 0 0 0 ac 0 0 0 0 0 0 0
 -20 0 0 0
-20 0 0 0 0
+20 10 0 0 0
 E
 ascot~
    The ascot is made of silk and is of a sheer material.  It flows nicely in the
 breeze to make you look uber cool.
 ~
 A
-18 25
+18 5
 A
-19 28
+19 5
 #34326
 smock~
 a builder's smock~
@@ -426,9 +411,9 @@ smock~
 no sleeves but is protectant against impact by items while building.
 ~
 A
-18 20
+18 5
 A
-19 30
+19 5
 #34327
 elbow~
 elbow guards~
@@ -443,9 +428,9 @@ elbow guards~
 the joints while working.  
 ~
 A
-18 15
+18 5
 A
-19 20
+19 5
 #34328
 jeans~
 501 Levi (tm) Jeans~
@@ -460,9 +445,9 @@ jeans~
 orange that usually come with the thread pattern.  They look very well worn.
 ~
 A
-18 20
+18 5
 A
-19 22
+19 5
 A
 14 40
 #34329
@@ -480,9 +465,9 @@ palm sides.  They help to not wreck your hands while working hard on physical
 tasks.  
 ~
 A
-17 20
+18 5
 A
-19 22
+19 5
 #34330
 Rebock's Sneakers~
 Rebock's Hightop Sneakers~
@@ -499,7 +484,7 @@ Basketball, but for just general wear they are quite comfortable.
 A
 18 5
 A
-19 10
+19 5
 #34331
 labcoat~
 an OFFICIAL TBAMUD Labcoat~
@@ -514,11 +499,9 @@ Labcoat~
 Logo,
 ~
 A
-17 19
+18 5
 A
-18 20
-A
-19 22
+19 5
 #34332
 belt~
 a leather belt~
@@ -526,17 +509,15 @@ A leather belt with a gold clasp is here.~
 ~
 9 0 0 0 0 al 0 0 0 0 0 0 0
 -10 0 0 0
-0 0 0 0 0
+10 50 0 0 0
 E
 belt~
    The belt is black woven leather and it has a gold clasp in the front.
 ~
 A
-17 5
+18 5
 A
-18 10
-A
-19 12
+19 5
 #34333
 rolex~
 a gold and silver Rolex Watch~
@@ -544,7 +525,7 @@ WOW! A real gold and silver Rolex Watch is laying here!~
 ~
 9 0 0 0 0 am 0 0 0 defgs 0 0 0
 -5 0 0 0
-0 0 0 31 0
+1 1 0 31 0
 E
 watch rolex~
    The watch is really fancy, showing time in three different countries can go
@@ -553,7 +534,7 @@ under water 300m and is made of a bright silver and gold body.
 A
 18 5
 A
-19 10
+19 5
 #34334
 gold chain~
 a gold chain~
@@ -561,7 +542,7 @@ A decorative gold chain~
 ~
 9 0 0 0 0 am 0 0 0 0 0 0 0
 -5 0 0 0
-0 0 0 31 0
+1 1 0 31 0
 E
 gold chain~
    The chain is linked gold and it twinkles in the light.  
@@ -571,24 +552,24 @@ A
 A
 17 3
 A
-19 8
+19 5
 #34335
 hammer~
 a TBAMUD Builder's Hammer~
 A TBAMUD Builder's Hammer is here laying head down.~
 ~
 5 0 0 0 0 an 0 0 0 i 0 0 0
-50 50 50 5
-20 50000 0 31 0
+10 6 6 5
+17 500 0 31 0
 E
 hammer~
    The hammer is very small, like the size of a 20 lb sledgehammer but it has
 the bite of a warhammer.  It should be ample protection against mobs.
 ~
 A
-19 100
+18 5
 A
-13 100
+19 5
 #34336
 ring class~
 a TBAMUD Builder's Ring~
@@ -603,25 +584,17 @@ ring class~
 the center of it.  It signify's you are an official builder!
 ~
 A
-21 3
-A
-22 5
-A
-23 6
-A
-24 8
-A
 18 5
 A
-19 10
+19 5
 #34337
 skirt~
 a pleated 503 Levi (tm) skirt~
 A pleasted 503 Levi (tm) skirt is here in a heap.~
 ~
 9 0 0 0 0 af 0 0 0 0 0 0 0
--40 0 0 0
-0 0 0 31 0
+-10 0 0 0
+5 10 0 31 0
 E
 skirt~
    The skirt is a typical stone washed blue with the orange thread and on the
@@ -629,18 +602,16 @@ back is the paper marker showing the size.  It is about migh thigh to knee
 length.
 ~
 A
-18 20
+18 5
 A
-19 24
-A
-14 10
+19 5
 #34338
 shield~
 a powerful titanium shield~
 A powerful titanium shield sits tipped against the wall.~
 ~
 9 0 0 0 0 aj 0 0 0 ino 0 0 0
--100 0 0 0
+-10 0 0 0
 20 35000 0 31 0
 E
 shield~
@@ -648,17 +619,9 @@ shield~
 and center of it.  It is made of titanium metal.  
 ~
 A
-18 50
+18 5
 A
-19 52
-A
-22 25
-A
-20 25
-A
-23 25
-A
-24 25
+19 5
 #34339
 bench loveseat~
 a comfy looking French loveseat~
@@ -721,14 +684,14 @@ A toilet is here made of porclein.~
 1 0 0 0
 0 0 0 0 0
 E
+sign~
+   Be sure to Flush!  
+~
+E
 toilet toidy throne~
    The toilet is made of white porcelien and it stands with a tank near the
 wall.  It has a wooden seat that is made of carved walnut and it has gold
 fixtures all around, which include the handles.
-~
-E
-sign~
-   Be sure to Flush!  
 ~
 #34344
 sink~
@@ -739,14 +702,14 @@ A sink and long granite counter is here.~
 0 0 0 0
 0 0 0 0 0
 E
-sink~
-   The sink is clean and white, with a shiny chrome faucet system and drain in
-the bottom.
-~
-E
 counter~
    The counters are made of granite and are immaculately carved with such
 precision into a smooth flowing shape and designs all over them.
+~
+E
+sink~
+   The sink is clean and white, with a shiny chrome faucet system and drain in
+the bottom.
 ~
 #34345
 tub clawtub~
@@ -757,15 +720,15 @@ An old fashioned claw tub and shower is here.~
 3 0 0 0
 0 0 0 0 0
 E
-tub~
-   The tub is made of iron and porcelin and it has claw feet in which it sits.
-It is quite large and deep holding several meters of water.  
-~
-E
 shower~
    The shower is a gold tube and a nozzle that is located on one side of the tub
 and the water pours down over the person or persons.  The valve is located just
 above the fixture on the bottom of the tub that fills it.  
+~
+E
+tub~
+   The tub is made of iron and porcelin and it has claw feet in which it sits.
+It is quite large and deep holding several meters of water.  
 ~
 #34346
 bench~
@@ -789,15 +752,15 @@ A gurgling spring is here splashing into a golden basin.~
 -1 2 15 0
 0 0 0 0 0
 E
-spring~
-   The spring is just a free flowing stream of water that flows from the ground
-with a murmuring, gurgling sound.
-~
-E
 basin~
    The basin is made of gold and it holds the water as it splashes out from the
 spring from the ground.  When full it runs into what appears to be a channel
 leading to the lagoon.
+~
+E
+spring~
+   The spring is just a free flowing stream of water that flows from the ground
+with a murmuring, gurgling sound.
 ~
 #34348
 statue~
@@ -808,18 +771,18 @@ A guardian statue of Rumble is here next to a pedistal.~
 0 0 0 0
 0 0 0 31 0
 E
-pedistal~
-   The pedistal is made of rounded carved marble and it has unique designs,
-portraying extreme power.  The top of the pedistal is empty, but it seems that
-something should go there.
-~
-E
 statue Rumble rumble guardian~
    The statue is a guardian to this shrine, it depicts one of the immortals of
 TBA and his power and influence over all who worship here.  He stands clad as a
 Battle Mage, in flowing robes and carries a staff.  His hair is long and flowing
 as he seems to be raising the staff in battle.  You seem to feel at ease by this
 statue.
+~
+E
+pedistal~
+   The pedistal is made of rounded carved marble and it has unique designs,
+portraying extreme power.  The top of the pedistal is empty, but it seems that
+something should go there.
 ~
 #34349
 Opie~
@@ -830,17 +793,17 @@ A guardian statue of Opie is here.~
 0 0 0 0
 0 0 0 31 0
 E
-nametag~
-   The nametag reads Opie the Cunning and that is carved at the base of the
-statue near the foot of his statue.  
-~
-E
 Opie Guardian~
    The statue is a guardian to this shine, it depicts one of the immortals of
 TBA and the influence of steath and cunning to all who worhip here.  He stands
 clad in carved battle armor of leather, a loose flowing shirt and a sash about
 his waist.  In his hand he carries a dagger that is thrust outward in a backstab
 motion.  You feel a strange surge of adventure looking at this statue.
+~
+E
+nametag~
+   The nametag reads Opie the Cunning and that is carved at the base of the
+statue near the foot of his statue.  
 ~
 #34350
 Welcor~
@@ -851,16 +814,16 @@ A guardian statue of Welcor is here.~
 0 0 0 0
 0 0 0 31 0
 E
-nametag~
-   The nametag reads Welcor the Bishop and that is carved at the base of the
-statue near the foot of it.  
-~
-E
 Welcor guardian~
    The statue is a guardian to this shine, it depicts one of the immortals of
 TBA and the influence of Justice to all who worship here.  He/She stands clad in
 a long flowing set of robes and he/she carries a warhammer in their hand.  The
 feeling of peace overwhelms the senses when you look at the statue that seems to
 be floating and glowing brightly.  
+~
+E
+nametag~
+   The nametag reads Welcor the Bishop and that is carved at the base of the
+statue near the foot of it.  
 ~
 $~
