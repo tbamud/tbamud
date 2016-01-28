@@ -785,6 +785,10 @@ D1
 ~
 ~
 0 0 34331
+D2
+~
+~
+0 0 34364
 D3
 ~
 ~
@@ -1205,13 +1209,17 @@ Wyld's Office~
 You are in an unfinished room.
 ~
 343 28 0 0 0 0
+D0
+~
+~
+0 0 34330
 D3
 ~
-~
-0 0 34386
+door~
+1 0 34386
 S
 #34365
-Fizbin's Office~
+Fizban's Office~
 You are in an unfinished room.
 ~
 343 28 0 0 0 0
