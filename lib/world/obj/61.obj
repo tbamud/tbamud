@@ -26,15 +26,15 @@ A colossal tree blocks the way westward.~
 1000 0 0 0
 0 0 0 0 0
 E
-opening~
-   The opening is far too narrow for you to squeeze through but it looks as if
-the tree is hollow.  
-~
-E
 tree~
    This enormous tree must be a thousand years old.  Its rough bark looks grey
 and pale and is decorated with scratches and clawmarks.  On its west side is a
 small opening just above ground level.  
+~
+E
+opening~
+   The opening is far too narrow for you to squeeze through but it looks as if
+the tree is hollow.  
 ~
 #6103
 branch grey long~
@@ -283,13 +283,10 @@ A
 sign~
 wooden sign~
 A wooden sign nailed to a tree is here, You'd better read it...~
-~
-16 0 0 0 0 a 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0 0
-E
-wooden sign~
    Warning Spider Trap to the West.  Be Warned, Be Wary.  Tholius, The
 Travelling Monk.
 ~
+16 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
 $~

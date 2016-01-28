@@ -3,9 +3,9 @@ fountain~
 a large corner fountain~
 A large corner fountain is here~
 ~
-23 0 0 0 0 a 0 0 0 0 0 0 0
+23 0 0 0 0 0 0 0 0 0 0 0 0
 -1 2 15 0
-7 0 0 0 0
+0 0 0 0 0
 E
 statue~
    The statue is that of a warrior who is dressed in robes of silk carrying a
@@ -30,7 +30,7 @@ shrine~
 a shrine made of teak and gold~
 A shrine made of teak and gold is here.~
 ~
-6 0 0 0 0 a 0 0 0 0 0 0 0
+6 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
 0 0 0 0 0
 E
@@ -96,7 +96,7 @@ A prayer altar is here.~
 ~
 6 ai 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 0
-200 1 0 0 0
+0 0 0 0 0
 E
 altar~
    The altar is made of gold and twisted marble.  It has a shiny well finished
@@ -114,8 +114,8 @@ A small shrine made of marble is here~
 0 0 0 0 0
 E
 incense~
-the incense is stuck out of the top from small holes and it smells like
-the wild honeysuckle. Very refreshing.
+   The incense is stuck out of the top from small holes and it smells like wild
+honeysuckle.  Very refreshing.
 ~
 E
 shrine~
@@ -130,7 +130,7 @@ An oil painting of the Last Judgement hangs here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-100 1000 0 0 0
+0 0 0 0 0
 E
 painting judgement~
    The painting here represents the Last Judgement of Christ our Redeemer
@@ -145,7 +145,7 @@ An oil painting of the Last Supper hangs here.~
 ~
 12 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-100 1000 0 0 0
+0 0 0 0 0
 E
 painting supper~
    The painting here is the Last Supper where Christ and the Disciples sit
@@ -160,7 +160,7 @@ A glowing exit arrow is here, hanging from the ceiling.~
 ~
 12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 0 0
+0 0 0 0 0
 E
 exit arrow~
    The arrow is made of glass, metal and plastic and it hangs over the main exit
@@ -174,7 +174,7 @@ A glowing exit arrow is here, hanging from the ceiling.~
 ~
 12 a 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
-10 1 0 0 0
+0 0 0 0 0
 E
 exit arrow~
    The arrow is made of glass, metal and plastic and hangs over the main exit of

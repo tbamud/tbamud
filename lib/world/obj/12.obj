@@ -9,8 +9,7 @@ A list of the staff's emails has been left here.~
 T 1205
 E
 list email staff~
-	RHELP CONTACT	n for the most recent listing or:
-
+   	RHELP CONTACT	n for the most recent listing or:
 ~
 #1201
 pamphlet trigedit~
@@ -22,12 +21,12 @@ A small pamphlet advertising the wonderful world of Trigedit.~
 1 1 0 0 0
 E
 pamphlet trigedit~
-Are you looking to pour in life into your mobs? To enliven your rooms? Or just
-make your objects special? Well then, come and read to your hearts content
-through the trigedit tutorial hallway starting in room 13. It will describe
-what trigedit is, what it can do, and of course, how to make them. Dont forget,
-for optimal results, Use the pages in conjuction with TSTAT. Have fun with the
-power of (minor)coding! 
+   Are you looking to pour in life into your mobs?  To enliven your rooms?  Or
+just make your objects special?  Well then, come and read to your hearts content
+through the trigedit tutorial hallway starting in room 13.  It will describe
+what trigedit is, what it can do, and of course, how to make them.  Dont forget,
+for optimal results, Use the pages in conjuction with TSTAT.  Have fun with the
+power of (minor)coding!  
 ~
 #1202
 scroll~
@@ -66,19 +65,11 @@ Staff~
 neon sign~
 a neon sign~
 A neon sign is here blinking an important message!~
-~
-16 ab 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0
-500 0 0 0 0
-E
-neon sign~
    The sign is lighted and surrounded in brillant, flashing, multi-color bulbs.
 The sign itself has a message written on it using the stick on Velcro(tm)
 letters.
-~
-E
-message text~
-Please be aware that the God Hall has changed, and all operations are
+
+   Please be aware that the God Hall has changed, and all operations are
 available using the new zone, (343) Offices are also posted at this new
 location.  Look at fountain for the Directory and Map (34306) to
 assist you if this applies. 
@@ -86,6 +77,9 @@ assist you if this applies.
 Whiteknight, The Just Cleric
 Billeting Officer, Zone(s) 343/346
 ~
+16 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0
+0 0 0 0 0
 #1209
 squishy armchair chair~
 a squishy armchair~
@@ -116,7 +110,7 @@ neon sign~
 a @Rn@Ge@Yo@Wn @Bs@Ci@Mg@Rn@n~
 @WA @Rn@Ge@Yo@Wn @Bs@Ci@Mg@Rn@W has been placed here, and is POINTING to the message board!@n~
 ~
-16 0 0 0 0 a 0 0 0 0 0 0 0
+16 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0
 0 0 0 0 0
 #1212
@@ -131,7 +125,7 @@ T 1212
 T 1213
 E
 game console~
-To start a game type: go
+   To start a game type: go
 To move around type: go <up | down | left | right>
  
 You must collect the prizes and avoid the animal to obtain maximum points.
@@ -224,7 +218,7 @@ A test object.~
 #1233
 weapon level 34~
 a level 34 weapon~
-A level 34 weapon is used to test level restrictions~
+A level 34 weapon is used to test level restrictions.~
 ~
 5 0 0 0 0 ano 0 0 0 0 0 0 0
 11 2 2 0
@@ -240,24 +234,6 @@ A Gigantic Black Staff rests here.~
 E
 staff black~
    A Huge staff sits here eminating a tremendous power.  
-~
-#1268
-note~
-Another paper note addressd to RAZZY!~
-Another paper note addressed tp RAZ is here!~
-~
-12 a 0 0 0 a 0 0 0 0 0 0 0
-0 0 0 0
-0 0 0 0 0
-E
-note~
-   Razzy...  I fixed your area.  You put a put on a non existent object.  Check
-your mail in 1205...  Help Mail to undestand the mud mail sustem.  To get it
-though, Receive mail.  You were approved for an area.  Mail if you have
-questions here on mud or at Nathaniel.  Miller741@gmail.  Com Whiteknight Also
-we are needin a proposal sent to me for a zone...  Sednt to my e-mail when youme
-up with one.  If you need help leme know ofor proposal and i will answer what i
-know about it.  Help proposal and use the example.
 ~
 #1269
 switch~
@@ -303,7 +279,7 @@ An American flag waves proudly in the wind, marking wishes for the safe return o
 ~
 12 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
-0 0 0 0 0
+1 1 0 0 0
 E
 flag american~
    The proud stars and stripes are set strongly against the blue background of
@@ -346,13 +322,13 @@ A piece of fireworks is planted in a champagne bottle.~
 0 0 0 0 0
 T 1297
 E
+firework new year piece~
+   This large rocket is about to go up!  Strange colours will fill the sky!  
+~
+E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
 has obviously drunk the champagne first.  
-~
-E
-firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
 ~
 #1299
 christmas tree~
