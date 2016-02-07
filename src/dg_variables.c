@@ -1112,6 +1112,17 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             }
             snprintf(str, slen, "%d", GET_WIS(c));
           }
+          
+          else if (!str_cmp(field, "wait")) 
+          {
+            if (subfield && *subfield)
+            {
+              int addition = atoi(subfield);
+              WAIT_STATE(c, addition * ( PULSE_VIOLENCE / 2) ); // by default violence is 2 seconds
+            }
+            snprintf(str, slen, "%d", GET_WAIT_STATE(c));
+          }
+
           break;
       } /* switch *field */
 
