@@ -454,7 +454,7 @@ ACMD(do_ibt)
 {
   char arg[MAX_STRING_LENGTH], arg2[MAX_STRING_LENGTH];
   char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[128];
-  int  i, num_res, num_unres;
+  int  i, num_res, num_unres, len = 0;
   IBT_DATA *ibtData, *first_ibt, *last_ibt;
   int ano=0;
 
@@ -543,15 +543,18 @@ ACMD(do_ibt)
   }
   else if(is_abbrev(arg,"list"))
   {
-
     if (first_ibt)
     {
       if (GET_LEVEL(ch) < LVL_IMMORT) {
-        send_to_char(ch,"%s No %s|%s Description\r\n", QCYN, QGRN, QCYN);
-        send_to_char(ch,"%s ---|--------------------------------------------------%s\r\n", QGRN, QNRM);
+        len = snprintf(buf, sizeof(buf),
+               "%s No %s|%s Description\r\n"
+               "%s ---|-------------------------------------------------%s\r\n",
+               QCYN, QGRN, QCYN, QGRN, QNRM);
       } else {
-        send_to_char(ch,"%s No %s|%sName        %s|%sRoom  %s|%sLevel%s|%s Description\r\n", QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN);
-        send_to_char(ch,"%s ---|------------|------|-----|--------------------------------------------------%s\r\n", QGRN, QNRM);
+        len = snprintf(buf, sizeof(buf),
+               "%s No %s|%sName        %s|%sRoom  %s|%sLevel%s|%s Description\r\n"
+               "%s ---|------------|------|-----|-------------------------------------------------%s\r\n",
+               QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QCYN, QGRN, QNRM);
       }
       i=num_res=num_unres=0;
       for (ibtData=first_ibt;ibtData;ibtData = ibtData->next) {
@@ -569,10 +572,10 @@ ACMD(do_ibt)
 
         if (IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
-            send_to_char(ch, "%s%s%3d|%s%s\r\n",
+            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d|%s%s\r\n",
                                   imp, QGRN, i, ibtData->text, QNRM);
           } else {
-            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
                                   imp, QGRN, i, QGRN,
                                   QGRN, ibtData->name, QGRN,
                                   QGRN, ibtData->room, QGRN,
@@ -582,11 +585,11 @@ ACMD(do_ibt)
           num_res++;
         } else if (IBT_FLAGGED(ibtData, IBT_INPROGRESS)) {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
-            send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
+            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QYEL, i, QGRN,
                                   QYEL, ibtData->text, QNRM);
           } else {
-            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
                                   imp, QYEL, i, QGRN,
                                   QYEL, ibtData->name, QGRN,
                                   QYEL, ibtData->room, QGRN,
@@ -596,11 +599,11 @@ ACMD(do_ibt)
           num_unres++;
         } else {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
-            send_to_char(ch, "%s%s%3d%s|%s%s%s\r\n",
+            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
                                   QRED, ibtData->text, QNRM);
           } else {
-            send_to_char(ch, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
                                   QRED, ibtData->name, QGRN,
                                   QRED, ibtData->room, QGRN,
@@ -609,22 +612,31 @@ ACMD(do_ibt)
           }
           num_unres++;
         }
+        if (len > sizeof(buf))
+          break;
       }
       if ((num_res + num_unres) > 0) {
-        send_to_char(ch,"\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n",QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM);
-        send_to_char(ch,"%s%ss in %sRED%s are unresolved %ss.\r\n", QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME);
-        send_to_char(ch,"%s%ss in %sYELLOW%s are in-progress %ss.\r\n", QCYN, ibt_types[subcmd], QYEL, QCYN, CMD_NAME);
-        send_to_char(ch,"%s%ss in %sGREEN%s are resolved %ss.\r\n", QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
+        len += snprintf(buf + len, sizeof(buf) - len,
+                "\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n"
+                "%s%ss in %sRED%s are unresolved %ss.\r\n"
+                "%s%ss in %sYELLOW%s are in-progress %ss.\r\n"
+                "%s%ss in %sGREEN%s are resolved %ss.\r\n",
+                QCYN, i, CMD_NAME, QBGRN, num_res, QCYN, QBRED, num_unres, QCYN, QNRM,
+                QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME,
+                QCYN, ibt_types[subcmd], QYEL, QCYN, CMD_NAME,
+                QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
       } else {
-        send_to_char(ch,"No %ss have been found that were reported by you!\r\n", CMD_NAME);
+        len += snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
       }
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
-        send_to_char(ch,"%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
+        len += snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
       }
-      send_to_char(ch,"%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
+      len += snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
     } else {
-      send_to_char(ch,"No %ss have been reported!\r\n", CMD_NAME);
+      len += snprintf(buf + len, sizeof(buf) - len, "No %ss have been reported!\r\n", CMD_NAME);
     }
+
+    page_string(ch->desc, buf, TRUE);
     return;
   }
   else if (is_abbrev(arg,"submit"))
