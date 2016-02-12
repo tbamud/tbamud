@@ -4983,7 +4983,7 @@ ACMD(do_recent)
     ct = this->time;
     strftime(timestr, sizeof(timestr), "%a %b %d %H:%M:%S %Y", localtime(&ct));
 
-    if (this->host && *(this->host)) {
+    if (*(this->host)) {
       if (!strcmp(this->host, "localhost")) loc = TRUE;
     }
 

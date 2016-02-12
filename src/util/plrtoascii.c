@@ -196,13 +196,10 @@ void convert(char *filename)
     }
 
 /* char_file_u */
-    if (player.name)
-      fprintf(outfile, "Name: %s\n", player.name);
-    if (player.pwd)
-      fprintf(outfile, "Pass: %s\n", player.pwd);
-    if (player.title)
-      fprintf(outfile, "Titl: %s\n", player.title);
-    if (player.description && *player.description)
+    fprintf(outfile, "Name: %s\n", player.name);
+    fprintf(outfile, "Pass: %s\n", player.pwd);
+    fprintf(outfile, "Titl: %s\n", player.title);
+    if (*player.description)
       fprintf(outfile, "Desc:\n%s~\n", player.description);
     if (player.sex != PFDEF_SEX)
       fprintf(outfile, "Sex : %d\n", (int)player.sex); 
