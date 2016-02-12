@@ -52,9 +52,8 @@ static void qedit_save_to_disk(int num)
 
 ACMD(do_oasis_qedit)
 {
-  int save = 0;
+  int number = NOWHERE, save = 0;
   qst_rnum real_num;
-  qst_vnum number = NOWHERE;
   struct descriptor_data *d;
   char *buf3;
   char buf1[MAX_INPUT_LENGTH];
@@ -98,6 +97,11 @@ ACMD(do_oasis_qedit)
   /****************************************************************************/
   if (number == NOWHERE)
     number = atoi(buf1);
+
+  if (number < IDXTYPE_MIN || number > IDXTYPE_MAX) {
+    send_to_char(ch, "That quest VNUM can't exist.\r\n");
+    return;
+  }
 
   /****************************************************************************/
   /** Check that the quest isn't already being edited.                       **/
