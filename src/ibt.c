@@ -1170,3 +1170,14 @@ void free_ibt_lists()
   }
 }
 
+void clean_ibt_list(int mode)
+{
+  IBT_DATA *ibtData = get_first_ibt(mode), *ibtTemp;
+  while (ibtData) {
+    ibtTemp = ibtData;
+    ibtData = ibtData->next;
+    if (!ibtTemp->body || !*ibtTemp->body) {
+      free_ibt(mode, ibtTemp);
+    }
+  }
+}
