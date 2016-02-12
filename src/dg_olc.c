@@ -49,6 +49,11 @@ ACMD(do_oasis_trigedit)
 
   number = atoi(argument);
 
+  if (number < IDXTYPE_MIN || number > IDXTYPE_MAX) {
+    send_to_char(ch, "That trigger VNUM can't exist.\r\n");
+    return;
+  }
+
   /* Check that it isn't already being edited. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_TRIGEDIT) {

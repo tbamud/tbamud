@@ -97,6 +97,11 @@ ACMD(do_oasis_oedit)
   if (number == NOWHERE)
     number = atoi(buf1);
 
+  if (number < IDXTYPE_MIN || number > IDXTYPE_MAX) {
+    send_to_char(ch, "That object VNUM can't exist.\r\n");
+    return;
+  }
+
   /* Check that whatever it is isn't already being edited. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_OEDIT) {
