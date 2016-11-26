@@ -896,7 +896,7 @@ echo "$ac_t""$ac_cv_gcc_fnb" 1>&6
     MYFLAGS="-Wall"
   else
     if test ${ac_cv_gcc_ncs:-ERROR} = yes; then
-      MYFLAGS="-Wall -Wno-char-subscripts"
+      MYFLAGS="-Wall -Wno-char-subscripts -Wno-unused-but-set-variable"
     else
       MYFLAGS=""
     fi
