@@ -455,12 +455,12 @@ void script_syntax_highlighting(struct descriptor_data *d, char *string)
         // Highlight lines
         if (!comment) {
             // Syntax replacement
-            for (i=0;i <= SYNTAX_TERMS;i++) {
+            for (i=0;i < SYNTAX_TERMS;i++) {
                 line = str_replace(line, syntax_color_replacement[i][0], syntax_color_replacement[i][1]);
             }
 
             // Commands replacement
-            for (i=0;i <= COMMAND_TERMS;i++) {
+            for (i=0;i < COMMAND_TERMS;i++) {
                 line = str_replace(line, command_color_replacement[i][0], command_color_replacement[i][1]);
             }
         
