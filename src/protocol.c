@@ -38,28 +38,25 @@ const char * RGBthree = "F555";
 
 static void Write( descriptor_t *apDescriptor, const char *apData )
 {
-   if ( apDescriptor != NULL && apDescriptor->has_prompt )
+   if ( apDescriptor != NULL)
    {
-      if ( apDescriptor->pProtocol->WriteOOB > 0 || 
-         *(apDescriptor->output) == '\0' )
+      if ( apDescriptor->pProtocol->WriteOOB > 0)
       {
          apDescriptor->pProtocol->WriteOOB = 2;
       }
    }
-
-   write_to_output( apDescriptor, apData );
+   write_to_output( apDescriptor, apData, 0 );
 }
 
 static void ReportBug( const char *apText )
 {
-   log( apText );
+   log( "%s", apText);
 }
 
 static void InfoMessage( descriptor_t *apDescriptor, const char *apData )
 {
    Write( apDescriptor, "\t[F210][\toINFO\t[F210]]\tn " );
    Write( apDescriptor, apData );
-   apDescriptor->pProtocol->WriteOOB = 0;
 }
 
 static void CompressStart( descriptor_t *apDescriptor )
