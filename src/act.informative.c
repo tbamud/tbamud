@@ -71,7 +71,7 @@ static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mod
   }
 
   if ((mode == 0) && obj->description) {
-    if (!GET_OBJ_VAL(obj, 1) == 0 || OBJ_SAT_IN_BY(obj)) {
+    if (GET_OBJ_VAL(obj, 1) != 0 || OBJ_SAT_IN_BY(obj)) {
       temp = OBJ_SAT_IN_BY(obj);
       for (temp = OBJ_SAT_IN_BY(obj); temp; temp = NEXT_SITTING(temp)) {
         if (temp == ch)
