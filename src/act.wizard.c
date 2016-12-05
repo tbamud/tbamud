@@ -1986,7 +1986,7 @@ void list_llog_entries(struct char_data *ch)
   strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M:%S", localtime(&llast.time));
 
   while(!feof(fp)) {
-    send_to_char(ch, "%10s\t%d\t%s\t%s\r\n", llast.username, llast.punique,
+    send_to_char(ch, "%10s %d %s %s\r\n", llast.username, llast.punique,
         last_array[llast.close_type], timestr);
     i = fread(&llast, sizeof(struct last_entry), 1, fp);
   }
