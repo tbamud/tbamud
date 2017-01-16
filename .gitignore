@@ -1,3 +1,41 @@
 bin/*
-src/*.o
-src/util/*.o
+
+# ignore object code
+*.o
+
+# ignore player index, files, objects, vars
+**/plrfiles/index
+**/plrfiles/?-?
+**/plrobjs/?-?
+**/plrvars/?-?
+
+# ignore house files as well
+**/house
+
+# but keep the '00' placeholder files!
+!00
+
+#ignore etc, but keep badsites file
+/lib/etc
+!badsites
+
+# ignore world files, all changes presumed to be mud specific
+**/world
+
+# log files, status files
+*.log
+.fastboot
+.killscript
+
+# config and other files created during installation
+config.cache
+config.status
+src/.accepted
+src/Makefile
+src/conf.h
+src/depend
+src/util/Makefile
+src/util/depend
+
+# project files
+**/.idea
