@@ -6,7 +6,6 @@ Development moved to Github:
 https://github.com/tbamud/tbamud
 Changelog also available on Github:
 https://github.com/tbamud/tbamud/commits/master
-
 Changes prior to Github transition:
 [Jun 21 2013] - Vatiken
   Added 'toupper' as a dg_script command to capitalize the first letter
