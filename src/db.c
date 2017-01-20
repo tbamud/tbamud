@@ -1553,12 +1553,9 @@ static void parse_simple_mob(FILE *mob_f, int i, int nr)
  * assigns the correct value to the mob as appropriate.  Adding new e-specs is
  * absurdly easy -- just add a new CASE statement to this function! No other
  * changes need to be made anywhere in the code.
- * CASE		: Requires a parameter through 'value'.
- * BOOL_CASE	: Being specified at all is its value. */
+ * CASE		: Requires a parameter through 'value'. */
 #define CASE(test)	\
 	if (value && !matched && !str_cmp(keyword, test) && (matched = TRUE))
-#define BOOL_CASE(test)	\
-	if (!value && !matched && !str_cmp(keyword, test) && (matched = TRUE))
 #define RANGE(low, high)	\
 	(num_arg = MAX((low), MIN((high), (num_arg))))
 

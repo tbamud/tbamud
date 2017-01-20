@@ -1018,7 +1018,6 @@ void ibtedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d, "Do you wish to save your changes? : ");
         return;
       }
-      break;
 
     case IBTEDIT_MAIN_MENU:
       switch (*arg) {
@@ -1080,7 +1079,6 @@ void ibtedit_parse(struct descriptor_data *d, char *arg)
           ibtedit_disp_main_menu(d);
           return;
       }
-      break;
 
     case IBTEDIT_NAME:
       smash_tilde(arg);

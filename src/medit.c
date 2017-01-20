@@ -571,7 +571,6 @@ void medit_parse(struct descriptor_data *d, char *arg)
       write_to_output(d, "Do you wish to save your changes? : ");
       return;
     }
-    break;
 
   case MEDIT_MAIN_MENU:
     i = 0;

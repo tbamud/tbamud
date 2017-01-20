@@ -3228,7 +3228,6 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       break;
     case 53: /* variable */
       return perform_set_dg_var(ch, vict, val_arg);
-      break;
     case 54: /* weight */
       GET_WEIGHT(vict) = value;
       affect_total(vict);
@@ -3484,11 +3483,6 @@ struct zcheck_armor {
   {ITEM_WEAR_HOLD,   10, "Held item"}
 };
 
-/*These are strictly boolean*/
-#define CAN_WEAR_WEAPONS         0     /* toggle - can a weapon also be a piece of armor? */
-#define MAX_APPLIES_LIMIT        1     /* toggle - is there a limit at all?               */
-#define CHECK_ITEM_RENT          0     /* do we check for rent cost == 0 ?                */
-#define CHECK_ITEM_COST          0     /* do we check for item cost == 0 ?                */
 /* Applies limits !! Very Important:  Keep these in the same order as in Structs.h.
  * To ignore an apply, set max_aff to -99. These will be ignored if MAX_APPLIES_LIMIT = 0 */
 struct zcheck_affs {

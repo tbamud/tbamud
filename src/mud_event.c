@@ -77,6 +77,12 @@ EVENTFUNC(event_countdown)
       REMOVE_BIT_AR(ROOM_FLAGS(rnum), ROOM_DARK);
       send_to_room(rnum, "The dark shroud disappates.\r\n");
       break;
+    case ePROTOCOLS:
+      break;
+    case eWHIRLWIND:
+      break;
+    case eNULL:
+      break;
     default:
       break;
   }
@@ -234,7 +240,7 @@ void clear_char_event_list(struct char_data * ch)
 void change_event_duration(struct char_data * ch, event_id iId, long time)
 {
   struct event * pEvent;
-  struct mud_event_data * pMudEvent;
+  struct mud_event_data * pMudEvent = 0;
   bool found = FALSE;
 
   if (ch->events == NULL)

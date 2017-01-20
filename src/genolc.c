@@ -5,8 +5,6 @@
 *  Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.            *
 **************************************************************************/
 
-#define __GENOLC_C__
-
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"

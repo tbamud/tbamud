@@ -93,7 +93,6 @@
 
 # include "conf.h"
 # include "sysdep.h"
-# define MAX(a, b)	((a) < (b) ? (b) : (a))
 
 #if defined(BROKEN_SNPRINTF)		/* For those with broken snprintf() */
 # undef HAVE_SNPRINTF

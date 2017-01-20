@@ -969,7 +969,7 @@ void mag_creations(int level, struct char_data *ch, int spellnum)
 void mag_rooms(int level, struct char_data *ch, int spellnum)
 {
   room_rnum rnum;
-  int duration;
+  int duration = 0;
   bool failure = FALSE;
   event_id IdNum = eNULL;
   const char *msg = NULL;

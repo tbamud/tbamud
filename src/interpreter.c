@@ -1354,7 +1354,6 @@ void nanny(struct descriptor_data *d, char *arg)
   case CON_GET_PROTOCOL:
     write_to_output(d, "Collecting Protocol Information... Please Wait.\r\n"); 
     return;
-  break;
   case CON_GET_NAME:		/* wait for input of name */
     if (d->character == NULL) {
       CREATE(d->character, struct char_data, 1);

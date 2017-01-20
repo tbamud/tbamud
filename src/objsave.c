@@ -1185,7 +1185,7 @@ static int Crash_load_objs(struct char_data *ch) {
   unsigned long cost;
   struct obj_data *cont_row[MAX_BAG_ROWS];
   int rentcode = RENT_UNDEF;
-  int timed,netcost,gold,account,nitems;
+  int timed=0,netcost=0,gold,account,nitems;
 	obj_save_data *loaded, *current;
 
   if (!get_filename(filename, sizeof(filename), CRASH_FILE, GET_NAME(ch)))
