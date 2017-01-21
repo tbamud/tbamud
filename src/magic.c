@@ -586,8 +586,11 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
   while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
     if (IN_ROOM(tch) != IN_ROOM(ch))
       continue;
+    if (tch == ch)
+      continue;
     perform_mag_groups(level, ch, tch, spellnum, savetype);
   }
+  perform_mag_groups(level, ch, ch, spellnum, savetype);
 }
 
 
