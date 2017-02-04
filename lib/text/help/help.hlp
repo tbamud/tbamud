@@ -2665,23 +2665,23 @@ EMAILS ICQ AIM E-MAILS CONTACTS MSN AOL
 
 Name     Email
 
-Welcor   welcor@*tbamud.com
-Rumble   rumble@*tbamud.com
-Opie     opie@*tbamud.com
-Wyld     wyld@*tbamud.com
-Vatiken  vatiken@*tbamud.com
-Shamra   shamra@*tbamud.com
-Fizban   fizban@*tbamud.com
-Amber    amber@*tbamud.com
-Detta    detta@*tbamud.com
-Elaseth  elaseth@*tbamud.com
-Elorien  elorien@*tbamud.com
-Ferret   ferret@*tbamud.com
-Fyre     fyre@*tbamud.com
-Heiach   heiach@*tbamud.com
-Random   random@*tbamud.com
-Relsqui  relsqui@*tbamud.com
-Rhade    rhade@*tbamud.com
+Welcor     welcor@*tbamud.com
+Rumble     rumble@*tbamud.com
+Joker      joker@*tbamud.com
+Wyld       wyld@*tbamud.com
+Vatiken    vatiken@*tbamud.com
+Shamra     shamra@*tbamud.com
+Fizban     fizban@*tbamud.com
+Amber      amber@*tbamud.com
+Detta      detta@*tbamud.com
+Elaseth    elaseth@*tbamud.com
+Elorien    elorien@*tbamud.com
+Ferret     ferret@*tbamud.com
+Fyre       fyre@*tbamud.com
+Heiach     heiach@*tbamud.com
+Random     random@*tbamud.com
+Relsqui    relsqui@*tbamud.com
+Rhade      rhade@*tbamud.com
 #0
 EMOTES : EMOTIONS
 
@@ -2837,6 +2837,11 @@ the initial amount.
 a single location. HELP ZEDIT-EQUIP for all the possible object equipping 
 locations. All you have to do to fix this is pick a different equip location
 that is not used. 
+
+SYSERR: bind: adress is already in use.
+
+   This means the port you are running the MUD on is already in use. The game
+is probably already running and using that port. The default port is 4000.
 
 See also: TRIG-ERRORS, ZEDIT-MISTAKES, SEDIT-MISTAKES
 #31

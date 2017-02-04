@@ -773,7 +773,7 @@ Upper Immortal Hall, East~
    This is the midway down the hallway east, this hallway is lined with wood
 paneling and thick maroon, shag carpeting.  The hallway is lit by bronze
 lanterns that burn brightly here.  It continues on to the east and west.  
-Office doors line the walls.  Wyld's Office is to the south.
+Office doors line the walls.
 ~
 343 24 0 0 0 0
 D0
@@ -785,10 +785,6 @@ D1
 ~
 ~
 0 0 34331
-D2
-~
-~
-0 0 34364
 D3
 ~
 ~
@@ -1108,7 +1104,7 @@ door~
 S
 #34357
 Whiteknight's Office~
-   You are in an unfinished room.  Inside a very Spartan and plushly furnished
+Inside a very Spartan and plushly furnished
 office that belongs to Whiteknight.  There is a desk in the center of the room
 and a bay window behind with shudders overlooking what appears to be a beach and
 ocean thundering up on the sand.  The only exit is south into the Plush Higher
@@ -1172,7 +1168,7 @@ door~
 1 0 34383
 S
 #34362
-Opie's Office~
+Joker's Office~
    You are standing on an immense, grey stone floor that stretches as far as you
 can see in all directions.  Rough winds plunging from the dark, starless sky
 tear savagely at your fragile body.  The stone floor is the same shade of grey
@@ -1209,17 +1205,13 @@ Wyld's Office~
 You are in an unfinished room.
 ~
 343 28 0 0 0 0
-D0
-~
-~
-0 0 34330
 D3
 ~
-door~
-1 0 34386
+~
+0 0 34386
 S
 #34365
-Fizban's Office~
+Fizbin's Office~
 You are in an unfinished room.
 ~
 343 28 0 0 0 0
@@ -1581,7 +1573,7 @@ S
 Inside a Garden~
    A Garden is here with thick trees, cool waterways, plants, shrubs grass,
 flowers and even a lagoon in the center of it.  A path goes east and west
-through it. There seems to be finished pagodas here that make up Opie's
+through it. There seems to be finished pagodas here that make up Joker's
 office to the north, and Wyld's office to the east.  The garden path is lit
 by lanterns hanging from hooks brightening then way.
 ~
@@ -1715,9 +1707,9 @@ S
 Inside Pagoda Shrine~
    The pagoda is very large but empty with exception to a large shrine that
 makes up most of the West and South Wall.  It has many lanterns, candles and
-incense burning to honor the great gods, Rumble, Opie and Welcor which are being
-worshipped here.  A circular staircase leads down into a plush hallway below and
-a sliding door north exits the Pagoda Shrine into a great garden beyond to the
+incense burning to honor the great gods, Rumble, Welcor, and Joker which are
+being worshipped here.  A circular staircase leads down into a plush hallway below
+and a sliding door north exits the Pagoda Shrine into a great garden beyond to the
 north.  
 ~
 343 28 0 0 0 0
