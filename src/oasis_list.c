@@ -408,8 +408,6 @@ ACMD(do_oasis_list)
         return;
       }
       else if (is_abbrev(arg, "level") || is_abbrev(arg, "flags")) {
-        int i;
-
         if (!*arg2) {
           send_to_char(ch, "Which mobile flag or level do you want to list?\r\n");
           for (i = 0; i < NUM_MOB_FLAGS; i++) {

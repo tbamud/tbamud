@@ -285,7 +285,6 @@ int entry_mtrigger(char_data *ch)
   for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
     if (TRIGGER_CHECK(t, MTRIG_ENTRY) && (rand_number(1, 100) <= GET_TRIG_NARG(t))){
       return script_driver(&ch, t, MOB_TRIGGER, TRIG_NEW);
-      break;
     }
   }
 
@@ -1134,7 +1133,6 @@ int drop_wtrigger(obj_data *obj, char_data *actor)
         return 0;
       else
         return ret_val;
-      break;
     }
 
   return 1;

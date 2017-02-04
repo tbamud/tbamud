@@ -205,7 +205,6 @@ void * next_in_list(struct iterator_data * pIterator)
 
 struct item_data * find_in_list(void * pContent, struct list_data * pList)
 {
-  struct iterator_data Iterator;
   void * pFoundItem;
   struct item_data *pItem = NULL;
   bool found;
@@ -281,7 +280,6 @@ void * simple_list(struct list_data * pList)
 
 void * random_from_list(struct list_data * pList)
 {
-  struct iterator_data Iterator;
   void * pFoundItem;
   bool found;
   int number;

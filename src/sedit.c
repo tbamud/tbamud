@@ -467,7 +467,6 @@ void sedit_parse(struct descriptor_data *d, char *arg)
      write_to_output(d, "Invalid choice!\r\nDo you wish to save your changes? : ");
       return;
     }
-    break;
 
   case SEDIT_MAIN_MENU:
     i = 0;

@@ -11,9 +11,6 @@
  *  Makefile: # Any special flags you want to pass to the compiler
  *  Makefile: MYFLAGS = -Wall -DMEMORY_DEBUG */
 
-/* protect our calloc() and free() calls from recursive redefinition: */
-#define ZMALLOC_H
-
 #include "conf.h"
 #include <stdio.h>
 #include <stdlib.h>

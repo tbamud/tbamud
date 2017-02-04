@@ -368,7 +368,7 @@ int save_config( IDXTYPE nowhere )
               "load_into_inventory = %d\n\n", CONFIG_LOAD_INVENTORY);
   fprintf(fl, "* Should PC's be able to track through hidden or closed doors?\n"
               "track_through_doors = %d\n\n", CONFIG_TRACK_T_DOORS);
-  fprintf(fl, "* Should players who reach enough exp automatically level to immortal?\n"
+  fprintf(fl, "* Should players who reach enough exp be prevented from automatically levelling to immortal?\n"
               "no_mort_to_immort = %d\n\n", CONFIG_NO_MORT_TO_IMMORT);
   fprintf(fl, "* Should closed doors be shown on autoexit / exit?\n"
               "disp_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
@@ -633,7 +633,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%sO%s) Track Through Doors         : %s%s\r\n"
         "%sP%s) Display Closed Doors        : %s%s\r\n"
         "%sR%s) Diagonal Directions         : %s%s\r\n"
-        "%sS%s) Mortals Level To Immortal   : %s%s\r\n"
+        "%sS%s) Prevent Mortal Level To Immortal : %s%s\r\n"
 	"%s1%s) OK Message Text         : %s%s"
 	"%s2%s) HUH Message Text        : %s%s"
         "%s3%s) NOPERSON Message Text   : %s%s"

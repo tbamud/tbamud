@@ -407,7 +407,6 @@ void qedit_parse(struct descriptor_data *d, char *arg)
             "Invalid choice!\r\nDo you wish to save the quest? : ");
           return;
       }
-      break;
     /*-------------------------------------------------------------------*/
     case QEDIT_CONFIRM_DELETE:
       switch (*arg) {
@@ -433,7 +432,6 @@ void qedit_parse(struct descriptor_data *d, char *arg)
             "Invalid choice!\r\nDo you wish to delete the quest? : ");
           return;
       }
-      break;
 
     /*-------------------------------------------------------------------*/
     case QEDIT_MAIN_MENU:
@@ -747,3 +745,4 @@ void qedit_string_cleanup(struct descriptor_data *d, int terminator)
     break;
   }
 }
+

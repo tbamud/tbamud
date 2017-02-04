@@ -288,9 +288,14 @@ static void get_from_room(struct char_data *ch, char *arg, int howmany)
   dotmode = find_all_dots(arg);
 
   if (dotmode == FIND_INDIV) {
-    if (!(obj = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents)))
+    if (!(obj = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents))) {
+        /* Are they trying to take something in a room extra description? */
+        if (find_exdesc(arg, world[IN_ROOM(ch)].ex_description) != NULL) {
+            send_to_char(ch, "You can't take %s %s.\r\n", AN(arg), arg);
+            return;
+        }
       send_to_char(ch, "You don't see %s %s here.\r\n", AN(arg), arg);
-    else {
+    } else {
       struct obj_data *obj_next;
       while(obj && howmany--) {
 	obj_next = obj->next_content;
@@ -880,7 +885,7 @@ ACMD(do_drink)
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
-  if ((GET_OBJ_VAL(temp, 1) == 0) || (!GET_OBJ_VAL(temp, 0) == 1)) {
+  if ((GET_OBJ_VAL(temp, 1) == 0) || (GET_OBJ_VAL(temp, 0) != 1)) {
     send_to_char(ch, "It is empty.\r\n");
     return;
   }
