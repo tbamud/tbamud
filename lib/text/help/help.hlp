@@ -22,6 +22,100 @@ See Examples: @RTSTAT 7505, 154@n
 
 Example: @RTSTAT 19, 20@n
 #31
+TBA-ADMIN
+
+Help and World files are the "master" versions. Before a release I copy the help file and World files to /tbamud
+Only difference from stock is do_cheat, help files viewable by any level, do_advance is LVL_GOD, and 600+ zones.
+tbamud.com is the latest Joomla version with Kunena as our forums. Download section is Google Drive.
+Builder Applications can be viewed here: goo.gl/0FBsys
+Backups are done monthly of /tba and using the Akeeba component in Joomla, I keep an archive. Github is our version control system but I like backups of backups. Please do reasonable backups of your own.
+
+To setup a trial vnum (in this case test for 61165:
+advance test 31
+set test nohassle off
+set test olc 611
+set test title has trial vnum 61165
+set test loadroom 3
+set test gold 1000000
+restore test
+redit 61165
+1
+test's Trial Vnum
+q
+y
+toggle nohassle off
+load obj 1332
+set self level 32
+tbalim test 61165
+return
+toggle nohassle on
+
+To setup test with zone 348
+return
+saveall
+set test olc 348
+set file test olc 348
+set test title has zone 348
+set file test title has zone 348
+set test loadroom 348
+set file test loadroom 348
+set test gold 1000000
+wiznet Okay test, you have zone 348 vnum's 34800 to 34899. Help buildwalk and help dig to learn how to create and link your rooms. If you have any questions just ask.
+toggle nohassle off
+load obj 1332
+set self level 32
+tbalim test purge
+return
+restore test
+toggle nohassle on
+redit 34800
+1
+test's Zone Description Room
+q
+y
+zedit 34800
+1
+test
+z
+Name Me - test
+q
+y
+redit 34800
+2
+return
+saveall
+set test olc 348
+set test title has zone 348
+set test loadroom 348
+set test gold 1000000
+wiznet Okay test, you have zone 348 vnum's 34800 to 34899. Help buildwalk and help dig to learn how 
+to create and link your rooms. If you have any questions just ask.
+toggle nohassle off
+load obj 1332
+set self level 32
+tbalim test purge
+return
+restore test
+toggle nohassle on
+redit 34800
+1
+test's Zone Description Room
+q
+y
+zedit 34800
+1
+test
+z
+Name Me - test
+q
+y
+redit 34800
+2
+<paste zone proposal here>
+q
+y
+See Also: TBA-STAFF, TBA-ZONES
+#32
 %DAMAGE% ODAMAGE MDAMAGE WDAMAGE TRIGEDIT-DAMAGE TRIGEDIT-ROOM-DAMAGE TRIG-DAMAGE
 
 %damage% %victim% amount
@@ -1661,6 +1755,8 @@ varexists()     - Returns 1 if global variable in subfield exists, 0 if not.
                   Used with remote vars on players. @RHELP VAREXIST@n
 vnum()          - The actor's vnum. Equality can now be checked with 
                   if %self.vnum(#)% not if %self.vnum% == #  
+wait()          - Adds a # second wait to the actor to allow trigger firing.
+                  nop %actor.wait(#)%
 weight          - The actor's weight. 
 
 Example: @RTSTAT 27@n
@@ -1722,16 +1818,22 @@ reduced by one.
 
 See also: MAGIC-MISSILE
 #0
-CIRCLEMUD CREDITS
+CHMOD
 
-                        t  b  a  M  U  D     3  .  5  1
+4 stands for "read",
+2 stands for "write",
+1 stands for "execute", and
+0 stands for "no permission."
+So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).
+#31
+CIRCLEMUD CREDITS
 
 tbaMUD (formerly known as CircleMUD) was developed from DikuMUD (Gamma 0.0) by 
 Jeremy "Ras" Elson at Johns Hopkins University's Department of Computer Science.
-All code unique to tbaMUD is protected under a copyright by the Trustees of 
+All code unique to CircleMUD is protected under a copyright by the Trustees of 
 the Johns Hopkins University.
 
-Many, many people contributed to tbaMUD in one way or another throughout
+Many, many people contributed to CircleMUD in one way or another throughout
 the course of its development.  Although it is impossible for me to remember
 them all, I'd like to extend special thanks to certain people:
 
@@ -1756,14 +1858,17 @@ them all, I'd like to extend special thanks to certain people:
 ...plus everyone else in the Circle community who has submitted material!
 Thanks everyone!
 
-  Bugs and Help:  tbamud.com 9091
-            URL:  http://tbaMUD.com/
-
 --Jeremy Elson
 
-tbaMUD (formerly known as CircleMUD) is currently being developed by The 
-Builder Academy. All bugs and requests for help should be directed to: 
-tbamud.com 9091
+tbaMUD is currently being developed by The Builder Academy. All bugs and 
+requests for help should be directed to: 
+
+   Builder Port:  tbamud.com 9091
+    Player Port:  tbamud.com 4000
+        Website:  http://tbaMUD.com/
+
+Thank you to the entire MUDding community for your continued support.
+tbaMUD is currently being developed by: Welcor, Wyld, and Opie.
 
 --Rumble
 #0
@@ -2667,7 +2772,7 @@ Name     Email
 
 Welcor     welcor@*tbamud.com
 Rumble     rumble@*tbamud.com
-Joker      joker@*tbamud.com
+Opie       opie@*tbamud.com
 Wyld       wyld@*tbamud.com
 Vatiken    vatiken@*tbamud.com
 Shamra     shamra@*tbamud.com
@@ -3781,100 +3886,6 @@ Heiach has been a big help with training new builders and has become very adept
 with trigedit. His example zone 359 is very impressive. He is always willing to
 help, especially with trigedit.
 
-#0
-HELP TBA-ADMIN
-
-Help and World files are the "master" versions. Before a release I copy the help file and World files to /tbamud
-Only difference from stock is do_cheat, help files viewable by any level, do_advance is LVL_GOD, and 600+ zones.
-tbamud.com is the latest Joomla version with Kunena as our forums. Download section is Google Drive.
-Builder Applications can be viewed here: goo.gl/0FBsys
-Backups are done monthly of /tba and using the Akeeba component in Joomla, I keep an archive. Github is our version control system but I like backups of backups. Please do reasonable backups of your own.
-
-To setup a trial vnum (in this case test for 61165:
-advance test 31
-set test nohassle off
-set test olc 611
-set test title has trial vnum 61165
-set test loadroom 3
-set test gold 1000000
-restore test
-redit 61165
-1
-test's Trial Vnum
-q
-y
-toggle nohassle off
-load obj 1332
-set self level 32
-tbalim test 61165
-return
-toggle nohassle on
-
-To setup test with zone 348
-return
-saveall
-set test olc 348
-set file test olc 348
-set test title has zone 348
-set file test title has zone 348
-set test loadroom 348
-set file test loadroom 348
-set test gold 1000000
-wiznet Okay test, you have zone 348 vnum's 34800 to 34899. Help buildwalk and help dig to learn how to create and link your rooms. If you have any questions just ask.
-toggle nohassle off
-load obj 1332
-set self level 32
-tbalim test purge
-return
-restore test
-toggle nohassle on
-redit 34800
-1
-test's Zone Description Room
-q
-y
-zedit 34800
-1
-test
-z
-Name Me - test
-q
-y
-redit 34800
-2
-return
-saveall
-set test olc 348
-set test title has zone 348
-set test loadroom 348
-set test gold 1000000
-wiznet Okay test, you have zone 348 vnum's 34800 to 34899. Help buildwalk and help dig to learn how 
-to create and link your rooms. If you have any questions just ask.
-toggle nohassle off
-load obj 1332
-set self level 32
-tbalim test purge
-return
-restore test
-toggle nohassle on
-redit 34800
-1
-test's Zone Description Room
-q
-y
-zedit 34800
-1
-test
-z
-Name Me - test
-q
-y
-redit 34800
-2
-<paste zone proposal here>
-q
-y
-See Also: TBA-STAFF, TBA-ZONES
 #0
 HELPCHECK
 
@@ -10024,7 +10035,7 @@ TBAMAPS TBA-MAPS
 
 See also: CARTOGRAPHY, ASCII
 #31
-TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW VISION TBA-VISION
+TBA TBAMUD PROJECT BACKGROUND STORY HISTORY INTRODUCTION ACADEMY COMMUNITY OVERVIEW VISION TBA-VISION
 
 TBA stands for The Builder Academy. 
 @RGOTO 3@n to enter the Builder Academy tutorial.
@@ -10971,7 +10982,7 @@ Variables:
 %amount% - number of coins given.
 %self%   - the mobile.
 
-Example: @RTSTAT 130, 72, 8308, 23612, 19580@n
+Example: @RTSTAT 130, 72, 8308, 23612@n
 
 See also: MHUNT
 #31
@@ -13561,13 +13572,5 @@ own zone if their name is in the zone's builders list.
 zlock - Locks one or all zones. Type zlock for usage. 
 zunlock - Locks one or all zones. Type zunlock for usage. 
 
-#31
-CHMOD
-
-4 stands for "read",
-2 stands for "write",
-1 stands for "execute", and
-0 stands for "no permission."
-So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).
 #31
 $~

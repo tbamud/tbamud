@@ -34,7 +34,7 @@ Directory~
 Immortal Name: ===== Room #  ======   Location: =======
 ----------------------------------------------------------
 Rumble -------------- 34361 ----- Indoor Garden
-Joker -------------- 34362 ----- Indoor Garden
+Opie -------------- 34362 ----- Indoor Garden
 Velcor -------------- 34387 ----- Indoor Garden
 Whiteknight --------- 34337 ----- Higher Imm Hall, West
 Elona ------------- 34359 ----- Higher Imm Hall, West
@@ -785,15 +785,15 @@ portraying extreme power.  The top of the pedistal is empty, but it seems that
 something should go there.
 ~
 #34349
-Joker~
-a guardian statue of Joker~
-A guardian statue of Joker is here.~
+Opie~
+a guardian statue of Opie~
+A guardian statue of Opie is here.~
 ~
 12 abg 0 0 0 0 0 0 0 tu 0 0 0
 0 0 0 0
 0 0 0 31 0
 E
-Joker Guardian~
+Opie Guardian~
    The statue is a guardian to this shine, it depicts one of the immortals of
 TBA and the influence of steath and cunning to all who worhip here.  He stands
 clad in carved battle armor of leather, a loose flowing shirt and a sash about
@@ -802,7 +802,7 @@ motion.  You feel a strange surge of adventure looking at this statue.
 ~
 E
 nametag~
-   The nametag reads Joker the Cunning and that is carved at the base of the
+   The nametag reads Opie the Cunning and that is carved at the base of the
 statue near the foot of his statue.  
 ~
 #34350
