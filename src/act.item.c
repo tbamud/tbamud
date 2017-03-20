@@ -885,7 +885,7 @@ ACMD(do_drink)
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
-  if ((GET_OBJ_VAL(temp, 1) == 0) || (GET_OBJ_VAL(temp, 0) != 1)) {
+  if (GET_OBJ_VAL(temp, 1) < 1) {
     send_to_char(ch, "It is empty.\r\n");
     return;
   }
