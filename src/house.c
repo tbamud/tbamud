@@ -282,7 +282,7 @@ void House_boot(void)
 }
 
 /* "House Control" functions */
-const char *HCONTROL_FORMAT =
+static const char *HCONTROL_FORMAT =
 "Usage: hcontrol build <house vnum> <exit direction> <player name>\r\n"
 "       hcontrol destroy <house vnum>\r\n"
 "       hcontrol pay <house vnum>\r\n"

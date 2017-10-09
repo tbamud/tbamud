@@ -28,14 +28,10 @@ const char *title_male(int chclass, int level);
 
 /* Global variables */
 
-#ifndef __CLASS_C__  
-
 extern const char *class_abbrevs[];
 extern const char *pc_class_types[];
 extern const char *class_menu;
 extern int prac_params[][NUM_CLASSES];
 extern struct guild_info_type guild_info[];
-
-#endif /* __CLASS_C__ */
 
 #endif /* _CLASS_H_*/

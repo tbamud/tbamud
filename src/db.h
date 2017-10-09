@@ -321,12 +321,6 @@ bitvector_t asciiflag_conv(char *flag);
 void renum_world(void);
 void load_config( void );
 
-
-
-/* global buffering system */
-
-#ifndef __DB_C__
-
 /* Various Files */
 extern char *credits;
 extern char *news;
@@ -412,6 +406,6 @@ extern int top_of_p_file;
 extern long top_idnum;
 /* end previously located in players.c */
 
-#endif /* __DB_C__ */
-
+extern time_t newsmod;
+extern time_t motdmod;
 #endif /* _DB_H_ */

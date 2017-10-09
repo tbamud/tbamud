@@ -785,7 +785,7 @@ static OCMD(do_omove)
     obj_to_room(obj, target);
 }
 
-const struct obj_command_info obj_cmd_info[] = {
+static const struct obj_command_info obj_cmd_info[] = {
     { "RESERVED", 0, 0 },/* this must be first -- for specprocs */
 
     { "oasound "    , do_oasound  , 0 },

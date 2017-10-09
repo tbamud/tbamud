@@ -13,7 +13,6 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-#ifndef __CONFIG_C__
 /* Global variable declarations, all settable by cedit */
 extern int pk_allowed;
 extern int script_players;
@@ -88,7 +87,5 @@ extern int bitsavetodisk;
 extern int auto_pwipe;
 extern struct pclean_criteria_data pclean_criteria[];
 extern int selfdelete_fastwipe;
-
-#endif /* __CONFIG_C__ */
 
 #endif /* _CONFIG_H_*/

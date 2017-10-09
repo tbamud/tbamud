@@ -43,7 +43,7 @@ IBT_DATA * last_idea  = NULL;
 IBT_DATA * first_typo = NULL;
 IBT_DATA * last_typo  = NULL;
 
-const char *ibt_types[]={
+static const char *ibt_types[]={
   "Bug",
   "Idea",
   "Typo",
@@ -374,7 +374,8 @@ static IBT_DATA *get_last_ibt(int mode)
   }
   return (last_ibt);
 }
-IBT_DATA *get_ibt_by_num(int mode, int target_num)
+
+static IBT_DATA *get_ibt_by_num(int mode, int target_num)
 {
   int no=0;
   IBT_DATA *target_ibt, *first_ibt;
@@ -391,7 +392,7 @@ IBT_DATA *get_ibt_by_num(int mode, int target_num)
 }
 
 /* Search the IBT list, and return true if ibt is found there */
-bool ibt_in_list(int mode, IBT_DATA *ibt)
+static bool ibt_in_list(int mode, IBT_DATA *ibt)
 {
   IBT_DATA *target_ibt, *first_ibt;
 
@@ -407,7 +408,7 @@ bool ibt_in_list(int mode, IBT_DATA *ibt)
 
 /* Free up an IBT struct, removing it from the list if necessary */
 /* returns TRUE on success                                       */
-bool free_ibt(int mode, IBT_DATA *ibtData)
+static bool free_ibt(int mode, IBT_DATA *ibtData)
 {
   if (ibtData == NULL) return FALSE;
 
@@ -454,7 +455,8 @@ ACMD(do_ibt)
 {
   char arg[MAX_STRING_LENGTH], arg2[MAX_STRING_LENGTH];
   char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[128];
-  int  i, num_res, num_unres, len = 0;
+  int i, num_res, num_unres;
+  size_t len = 0;
   IBT_DATA *ibtData, *first_ibt, *last_ibt;
   int ano=0;
 

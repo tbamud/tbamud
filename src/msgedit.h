@@ -1,6 +1,4 @@
 /**
- * @file msgedit.h
- * 
  * Copyright 2012 Joseph Arnusch
  * 
  * This program is free software; you can redistribute it and/or modify

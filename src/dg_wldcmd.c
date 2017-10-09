@@ -607,7 +607,7 @@ WCMD(do_wmove)
     }
 }
 
-const struct wld_command_info wld_cmd_info[] = {
+static const struct wld_command_info wld_cmd_info[] = {
     { "RESERVED", 0, 0 },/* this must be first -- for specprocs */
 
     { "wasound "    , do_wasound   , 0 },

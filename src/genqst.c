@@ -250,7 +250,7 @@ int save_quests(zone_rnum zone_num)
  QST_QUANTITY(rnum), QST_GOLD(rnum), QST_EXP(rnum), QST_OBJ(rnum)
       );
       
-      fprintf(sf, convert_from_tabs(buf), 0);
+      fprintf(sf, "%s", convert_from_tabs(buf));
       
       num_quests++;
     }

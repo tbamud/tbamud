@@ -191,7 +191,7 @@ typedef struct
 {
    const char  *pName;         /* The name of the MSSP variable */
    const char  *pValue;        /* The value of the MSSP variable */
-   const char  *(*pFunction)();/* Optional function to return the value */
+   const char  *(*pFunction)(void); /* Optional function to return the value */
 } MSSP_t;
 
 typedef struct

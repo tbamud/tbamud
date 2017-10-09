@@ -282,13 +282,9 @@ ACMD(do_cast);
 void unused_spell(int spl);
 void mag_assign_spells(void);
 
-/* Global variables exported */
-#ifndef __SPELL_PARSER_C__
-
+/* Global variables */
 extern struct spell_info_type spell_info[];
 extern char cast_arg2[];
 extern const char *unused_spellname;
-
-#endif /* __SPELL_PARSER_C__ */
 
 #endif /* _SPELLS_H_ */

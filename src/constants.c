@@ -18,6 +18,7 @@
 #include "structs.h"
 #include "utils.h"
 #include "interpreter.h"	/* alias_data */
+#include "constants.h"
 
 /** Current tbaMUD version.
  * @todo defined with _TBAMUD so we don't have multiple constants to change.
@@ -328,7 +329,7 @@ const char *connected_types[] = {
 
 /** Describes the position in the equipment listing.
  * @pre Must be in the same order as the defines.
- * Not used in sprinttype() so no \n. */
+ * Not used in sprinttype() so no \\n. */
 const char *wear_where[] = {
   "<used as light>      ",
   "<worn on finger>     ",
@@ -591,7 +592,7 @@ const char *color_liquid[] =
 };
 
 /** Used to describe the level of fullness of a drink container. Not used in
- * sprinttype() so no \n. */
+ * sprinttype() so no \\n. */
 const char *fullness[] =
 {
   "less than half ",

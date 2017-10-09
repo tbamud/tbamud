@@ -172,7 +172,7 @@ struct spec_func_data {
    SPECIAL(*func); 
 }; 
 
-struct spec_func_data spec_func_list[] = { 
+static struct spec_func_data spec_func_list[] = { 
   {"Mayor",          mayor }, 
   {"Snake",          snake }, 
   {"Thief",          thief }, 

@@ -278,7 +278,7 @@ int sprintascii(char *out, bitvector_t bits)
 }
 
 /* converts illegal filename chars into appropriate equivalents */ 
-char *fix_filename(char *str) 
+static char *fix_filename(char *str) 
 { 
   static char good_file_name[MAX_STRING_LENGTH]; 
   char *cindex = good_file_name; 

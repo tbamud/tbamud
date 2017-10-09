@@ -263,7 +263,7 @@ static void trigedit_disp_types(struct descriptor_data *d)
 /****************************************************************************************
  DG Scripts Code Syntax Highlighting
  Created by Victor Almeida (aka Stoneheart) in Brazil 
- from BrMUD:Tormenta www.tormenta.com.br (mudbrasil@gmail.com)
+ from BrMUD:Tormenta www.tormenta.com.br
  
  License: Attribution 4.0 International (CC BY 4.0)
  http://creativecommons.org/licenses/by/4.0/
@@ -281,7 +281,7 @@ static void trigedit_disp_types(struct descriptor_data *d)
  *****************************************************************************************/
 
 // Change a string for another without memory bugs
-char *str_replace(const char *string, const char *substr, const char *replacement) {
+static char *str_replace(const char *string, const char *substr, const char *replacement) {
     char *tok = NULL;
     char *newstr = NULL;
     char *oldstr = NULL;
@@ -317,7 +317,7 @@ char *str_replace(const char *string, const char *substr, const char *replacemen
 
 // You can easily change the color code (\tn) to the old one (@n or &n)
 #define SYNTAX_TERMS        49
-const char *syntax_color_replacement[SYNTAX_TERMS][2] =
+static const char *syntax_color_replacement[SYNTAX_TERMS][2] =
 {
     // script logic (10)
     { "if",             "\tcif\tn" }, // 0
@@ -378,7 +378,7 @@ const char *syntax_color_replacement[SYNTAX_TERMS][2] =
 
 // Here you can include more commands usually used in your triggers
 #define COMMAND_TERMS   35
-const char *command_color_replacement[COMMAND_TERMS][2] =
+static const char *command_color_replacement[COMMAND_TERMS][2] =
 {
     // Mob specific commands (25)
     { "marena",          "\tcmarena\tn" },  // 0
@@ -420,13 +420,14 @@ const char *command_color_replacement[COMMAND_TERMS][2] =
 };
 
 
-void script_syntax_highlighting(struct descriptor_data *d, char *string)
+static void script_syntax_highlighting(struct descriptor_data *d, char *string)
 {
     ACMD(do_action);
     char buffer[MAX_STRING_LENGTH] = "";
     char *newlist, *curtok;
-    int i;
     
+    size_t i;
+
     // Parse script text line by line
     newlist = strdup(string);
     for (curtok = strtok(newlist, "\r\n"); curtok; curtok = strtok(NULL, "\r\n")) {

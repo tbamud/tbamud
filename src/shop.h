@@ -31,8 +31,8 @@ struct shop_buy_data {
 struct shop_data {
    room_vnum vnum;		/* Virtual number of this shop		*/
    obj_vnum *producing;		/* Which item to produce (virtual)	*/
-   float profit_buy;		/* Factor to multiply cost with		*/
-   float profit_sell;		/* Factor to multiply cost with		*/
+   double profit_buy;		/* Factor to multiply cost with		*/
+   double profit_sell;		/* Factor to multiply cost with		*/
    struct shop_buy_data *type;	/* Which items to trade			*/
    char	*no_such_item1;		/* Message if keeper hasn't got an item	*/
    char	*no_such_item2;		/* Message if player hasn't got an item	*/
@@ -151,11 +151,8 @@ struct stack_data {
 #define MSG_CANT_KILL_KEEPER	"Get out of here before I call the guards!"
 
 /* Global variables */
-#ifndef __SHOP_C__
 
 extern const char *trade_letters[];
 extern const char *shop_bits[];
-
-#endif /* __SHOP_C__ */
 
 #endif /* _SHOP_H_ */

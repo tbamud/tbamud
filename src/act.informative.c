@@ -62,7 +62,7 @@ static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mod
   struct char_data *temp;
 
   if (!obj || !ch) {
-    log("SYSERR: NULL pointer in show_obj_to_char(): obj=%p ch=%p", obj, ch);
+    log("SYSERR: NULL pointer in show_obj_to_char(): obj=%p ch=%p", (void *)obj, (void *)ch);
     /*  SYSERR_DESC: Somehow a NULL pointer was sent to show_obj_to_char() in
      *  either the 'obj' or the 'ch' variable.  The error will indicate which
      *  was NULL by listing both of the pointers passed to it.  This is often a
@@ -2448,7 +2448,7 @@ ACMD(do_whois)
     free_char (victim);
 }
 
-bool get_zone_levels(zone_rnum znum, char *buf)
+static bool get_zone_levels(zone_rnum znum, char *buf)
 {
   /* Create a string for the level restrictions for this zone. */
   if ((zone_table[znum].min_level == -1) && (zone_table[znum].max_level == -1)) {
@@ -2564,7 +2564,7 @@ ACMD(do_areas)
     page_string(ch->desc, buf, TRUE);
 }
 
-void list_scanned_chars(struct char_data * list, struct char_data * ch, int
+static void list_scanned_chars(struct char_data * list, struct char_data * ch, int
 distance, int door)
 {
   char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];

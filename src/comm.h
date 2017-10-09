@@ -60,9 +60,6 @@ void game_loop(socket_t mother_desc);
 void heartbeat(int heart_pulse);
 void copyover_recover(void);
 
-/* global buffering system - allow access to global variables within comm.c */
-#ifndef __COMM_C__
-
 /** webster dictionary lookup */
 extern long last_webster_teller;
 
@@ -79,7 +76,5 @@ extern unsigned long pulse;
 extern ush_int port;
 extern socket_t mother_desc;
 extern int next_tick;
-
-#endif /* __COMM_C__ */
 
 #endif /* _COMM_H_ */

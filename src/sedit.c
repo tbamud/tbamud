@@ -708,10 +708,10 @@ void sedit_parse(struct descriptor_data *d, char *arg)
     S_CLOSE2(OLC_SHOP(d)) = LIMIT(atoi(arg), 0, 28);
     break;
   case SEDIT_BUY_PROFIT:
-    sscanf(arg, "%f", &S_BUYPROFIT(OLC_SHOP(d)));
+    sscanf(arg, "%lf", &S_BUYPROFIT(OLC_SHOP(d)));
     break;
   case SEDIT_SELL_PROFIT:
-    sscanf(arg, "%f", &S_SELLPROFIT(OLC_SHOP(d)));
+    sscanf(arg, "%lf", &S_SELLPROFIT(OLC_SHOP(d)));
     break;
   case SEDIT_TYPE_MENU:
     OLC_VAL(d) = LIMIT(atoi(arg), 0, NUM_ITEM_TYPES - 1);

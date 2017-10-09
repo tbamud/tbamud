@@ -223,7 +223,7 @@ int save_objects(zone_rnum zone_num)
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
         
-      fprintf(fp, convert_from_tabs(buf2), 0);
+      fprintf(fp, "%s", convert_from_tabs(buf2));
 
       sprintascii(ebuf1, GET_OBJ_EXTRA(obj)[0]);
       sprintascii(ebuf2, GET_OBJ_EXTRA(obj)[1]);

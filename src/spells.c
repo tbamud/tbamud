@@ -161,7 +161,7 @@ ASPELL(spell_summon)
 }
 
 /* Used by the locate object spell to check the alias list on objects */
-int isname_obj(char *search, char *list)
+static int isname_obj(char *search, char *list)
 {
   char *found_in_list; /* But could be something like 'ring' in 'shimmering.' */
   char searchname[128];

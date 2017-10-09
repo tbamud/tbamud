@@ -164,9 +164,7 @@ ACMD(do_sleep);
 ACMD(do_stand);
 ACMD(do_wake);
 /* Global variables from act.movement.c */
-#ifndef __ACT_MOVEMENT_C__
 extern const char *cmd_door[];
-#endif /* __ACT_MOVEMENT_C__ */
 
 
 /*****************************************************************************

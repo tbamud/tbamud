@@ -171,9 +171,6 @@ extern void abort (), exit ();
 #define assert(arg)
 #endif
 
-/* Header files only used in comm.c and some of the utils */
-#if defined(__COMM_C__) || defined(CIRCLE_UTIL)
-
 #ifndef HAVE_STRUCT_IN_ADDR
 struct in_addr {
   unsigned long int s_addr;	/* for inet_addr, etc. */
@@ -230,16 +227,9 @@ struct in_addr {
 # include <sys/uio.h>
 #endif
 
-#endif /* __COMM_C__ && CIRCLE_UNIX */
-
-/* Header files that are only used in act.other.c */
-#ifdef __ACT_OTHER_C__
-
 #ifdef HAVE_SYS_STAT_H
 # include <sys/stat.h>
 #endif
-
-#endif /* __ACT_OTHER_C__ */
 
 /* Basic system dependencies. */
 #if CIRCLE_GNU_LIBC_MEMORY_TRACK && !defined(HAVE_MCHECK_H)
@@ -464,9 +454,6 @@ struct in_addr {
    int remove(const char *path);
 #endif
 
-/* Function prototypes that are only used in comm.c and some of the utils */
-#if defined(__COMM_C__) || defined(CIRCLE_UTIL)
-
 #ifdef NEED_ACCEPT_PROTO
    int accept(socket_t s, struct sockaddr *addr, int *addrlen);
 #endif
@@ -573,8 +560,6 @@ struct in_addr {
 #ifdef NEED_WRITE_PROTO
     ssize_t write(int fildes, const void *buf, size_t nbyte);
 #endif
-
-#endif /* __COMM_C__ */
 
 #endif /* NO_LIBRARY_PROTOTYPES */
 

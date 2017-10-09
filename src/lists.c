@@ -41,7 +41,7 @@ struct list_data * create_list(void)
   return (pNewList);
 }
 
-struct item_data * create_item(void)
+static struct item_data * create_item(void)
 {
   struct item_data *pNewItem;
 
@@ -234,18 +234,6 @@ void clear_simple_list(void)
   loop = FALSE;
   pLastList = NULL;  
 }
-
-/** This is the "For Dummies" function, as although it's not as flexible,
- * it is even easier applied for list searches then using your own iterators
- * and next_in_list()
- * @usage Common usage would be as follows:
- * 
- * while ((var = (struct XXX_data *) simple_list(XXX_list))) {
- *   blah blah....
- * }
- * @return Will return the next list content until it hits the end, in which
- * will detach itself from the list.
- * */
 
 void * simple_list(struct list_data * pList)
 {

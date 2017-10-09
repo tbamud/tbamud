@@ -8,8 +8,6 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-#define __INTERPRETER_C__
-
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
@@ -368,7 +366,7 @@ cpp_extern const struct command_info cmd_info[] = {
 
   /* Thanks to Melzaren for this change to allow DG Scripts to be attachable
    *to player's while still disallowing them to manually use the DG-Commands. */
-  const struct mob_script_command_t mob_script_commands[] = {
+static const struct mob_script_command_t mob_script_commands[] = {
 
   /* DG trigger commands. minimum_level should be set to -1. */
   { "masound"  , do_masound  , 0 },
@@ -420,7 +418,7 @@ int script_command_interpreter(struct char_data *ch, char *arg) {
   return 1; // We took care of execution. Let caller know.
 }
 
-const char *fill[] =
+static const char *fill[] =
 {
   "in",
   "from",
@@ -432,7 +430,7 @@ const char *fill[] =
   "\n"
 };
 
-const char *reserved[] =
+static const char *reserved[] =
 {
   "a",
   "an",

@@ -34,17 +34,6 @@
 #define PT_FLAGS(i) (player_table[(i)].flags)
 #define PT_LLAST(i) (player_table[(i)].last)
 
-/* 'global' vars defined here and used externally */
-/** @deprecated Since this file really is basically a functional extension
- * of the database handling in db.c, until the day that the mud is broken
- * down to be less monolithic, I don't see why the following should be defined
- * anywhere but there.
-struct player_index_element *player_table = NULL;
-int top_of_p_table = 0;
-int top_of_p_file = 0;
-long top_idnum = 0;
-*/
-
 /* local functions */
 static void load_affects(FILE *fl, struct char_data *ch);
 static void load_skills(FILE *fl, struct char_data *ch);
@@ -127,7 +116,7 @@ int create_entry(char *name)
 
 /* Remove an entry from the in-memory player index table.               *
  * Requires the 'pos' value returned by the get_ptable_by_name function */
-void remove_player_from_index(int pos)
+static void remove_player_from_index(int pos)
 {
   int i;
 

@@ -22,7 +22,7 @@
 #include "interpreter.h"
 #include "constants.h"
 #include "act.h"
-
+#include "class.h"
 
 /* Names first */
 const char *class_abbrevs[] = {

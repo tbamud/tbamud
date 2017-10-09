@@ -8,9 +8,6 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-/* needed by sysdep.h to allow for definition of <sys/stat.h> */
-#define __ACT_OTHER_C__
-
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
@@ -843,7 +840,7 @@ ACMD(do_gen_tog)
   return;
 }
 
-void show_happyhour(struct char_data *ch)
+static void show_happyhour(struct char_data *ch)
 {
   char happyexp[80], happygold[80], happyqp[80];
   int secs_left;

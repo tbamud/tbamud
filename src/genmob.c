@@ -381,7 +381,7 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   );
 
   
-  fprintf(fd, convert_from_tabs(buf), 0);
+  fprintf(fd, "%s", convert_from_tabs(buf));
 
   fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
       "%d %d %d %dd%d+%d %dd%d+%d\n",

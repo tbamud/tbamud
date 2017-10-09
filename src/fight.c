@@ -8,8 +8,6 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-#define __FIGHT_C__
-
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"

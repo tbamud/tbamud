@@ -8,8 +8,6 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-#define __BOARDS_C__
-
 /* FEATURES & INSTALLATION INSTRUCTIONS
  * - Arbitrary number of boards handled by one set of generalized routines.
  *   Adding a new board is as easy as adding another entry to an array.

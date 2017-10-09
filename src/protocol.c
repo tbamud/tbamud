@@ -2498,15 +2498,19 @@ static bool_t IsValidColour( const char *apArgument )
 
 static bool_t MatchString( const char *apFirst, const char *apSecond )
 {
-   while ( *apFirst && tolower(*apFirst) == tolower(*apSecond) )
-      ++apFirst, ++apSecond;
+   while ( *apFirst && tolower(*apFirst) == tolower(*apSecond) ) {
+      ++apFirst;
+      ++apSecond;
+   }
    return ( !*apFirst && !*apSecond );
 }
 
 static bool_t PrefixString( const char *apPart, const char *apWhole )
 {
-   while ( *apPart && tolower(*apPart) == tolower(*apWhole) )
-      ++apPart, ++apWhole;
+   while ( *apPart && tolower(*apPart) == tolower(*apWhole) ) {
+      ++apPart;
+      ++apWhole;
+   }
    return ( !*apPart );
 }
 

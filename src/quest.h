@@ -141,9 +141,7 @@ int save_quests(zone_rnum zone_num);
 /* ******************************************************************** */
 
 /* AQ Global Variables ************************************************ */
-#ifndef __QUEST_C__
 extern const char *aq_flags[];       /* names for quest flags (quest.c) */
 extern const char *quest_types[];    /* named for quest types (quest.c) */
-#endif /* __QUEST_C__ */
 
 #endif /* _QUEST_H_ */

@@ -60,10 +60,7 @@ void board_load_board(int board_type);
 void board_clear_all(void);
 
 /* Global variables */
-#ifndef __BOARDS_C__
 
 extern struct board_info_type board_info[NUM_OF_BOARDS];
-
-#endif /* __BOARDS_C__ */
 
 #endif /* _BOARDS_H_ */

@@ -44,12 +44,7 @@ void free_invalid_list(void);
 ACMD(do_ban);
 ACMD(do_unban);
 
-/* Global buffering */
-#ifndef __BAN_C__
-
 extern struct ban_list_element *ban_list;
 extern int num_invalid;
-
-#endif /*__BAN_C__ */
 
 #endif /* _BAN_H_*/

@@ -1016,7 +1016,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       /* Do nothing. */
   } else if (temp != NULL && current->obj != NULL) {
       if (temp != current->obj)
-        log("inconsistent object pointers in objsave_parse_objects: %p/%p", temp, current->obj);
+        log("inconsistent object pointers in objsave_parse_objects: %p/%p", (void *)temp, (void *)current->obj);
     }
 
     break;
@@ -1213,7 +1213,7 @@ static int Crash_load_objs(struct char_data *ch) {
 
   if (rentcode == RENT_RENTED || rentcode == RENT_TIMEDOUT) {
     sprintf(str, "%d", SECS_PER_REAL_DAY);
-    num_of_days = (int)((float) (time(0) - timed) / (float)atoi(str));
+    num_of_days = (int)((float) (time(0) - timed) / atoi(str));
     cost = (unsigned int) (netcost * num_of_days);
     if (cost > (unsigned int)GET_GOLD(ch) + (unsigned int)GET_BANK_GOLD(ch)) {
       fclose(fl);

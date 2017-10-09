@@ -8,8 +8,6 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
-#define __COMM_C__
-
 #include "conf.h"
 #include "sysdep.h"
 
@@ -164,7 +162,7 @@ static sigfunc *my_signal(int signo, sigfunc *func);
 #endif
 /* Webster Dictionary Lookup functions */
 static RETSIGTYPE websterlink(int sig);
-static void handle_webster_file();
+static void handle_webster_file(void);
 
 static void msdp_update(void); /* KaVir plugin*/
 
@@ -2477,7 +2475,7 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
   }
 }
 
-const char *ACTNULL = "<NULL>";
+static const char *ACTNULL = "<NULL>";
 #define CHECK_NULL(pointer, expression) \
   if ((pointer) == NULL) i = ACTNULL; else i = (expression);
 /* higher-level communication: the act() function */

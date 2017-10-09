@@ -39,7 +39,7 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , o
 static void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
 static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name);
 
-void perform_mob_flag_list(struct char_data * ch, char *arg)
+static void perform_mob_flag_list(struct char_data * ch, char *arg)
 {
   int num, mob_flag, found = 0;
   size_t len;
@@ -76,7 +76,7 @@ void perform_mob_flag_list(struct char_data * ch, char *arg)
   return;
 }
 
-void perform_mob_level_list(struct char_data * ch, char *arg)
+static void perform_mob_level_list(struct char_data * ch, char *arg)
 {
   int num, mob_level, found = 0;
   size_t len;
@@ -112,7 +112,7 @@ void perform_mob_level_list(struct char_data * ch, char *arg)
   return;
 }
 
-void add_to_obj_list(struct obj_list_item *lst, int num_items, obj_vnum nvo, int nval)
+static void add_to_obj_list(struct obj_list_item *lst, int num_items, obj_vnum nvo, int nval)
 {
   int j, tmp_v;
   obj_vnum tmp_ov;
@@ -131,7 +131,7 @@ void add_to_obj_list(struct obj_list_item *lst, int num_items, obj_vnum nvo, int
   }
 }
 
-void perform_obj_type_list(struct char_data * ch, char *arg)
+static void perform_obj_type_list(struct char_data * ch, char *arg)
 {
   int num, itemtype, v1, v2, found = 0;
   size_t len = 0, tmp_len = 0;
@@ -246,7 +246,7 @@ void perform_obj_type_list(struct char_data * ch, char *arg)
   page_string(ch->desc, buf, TRUE);
 }
 
-void perform_obj_aff_list(struct char_data * ch, char *arg)
+static void perform_obj_aff_list(struct char_data * ch, char *arg)
 {
   int num, i, apply, v1 = 0, found = 0;
   size_t len = 0, tmp_len = 0;
@@ -331,7 +331,7 @@ void perform_obj_aff_list(struct char_data * ch, char *arg)
   page_string(ch->desc, buf, TRUE);
 }
 
-void perform_obj_name_list(struct char_data * ch, char *arg)
+static void perform_obj_name_list(struct char_data * ch, char *arg)
 {
   int num, found = 0;
   size_t len = 0, tmp_len = 0;

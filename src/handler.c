@@ -105,7 +105,7 @@ int isname(const char *str, const char *namelist)
   return 0;
 }
 
-void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
+static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
 {
   switch (loc) {
   case APPLY_NONE:
@@ -394,7 +394,7 @@ void char_to_room(struct char_data *ch, room_rnum room)
 {
   if (ch == NULL || room == NOWHERE || room > top_of_world)
     log("SYSERR: Illegal value(s) passed to char_to_room. (Room: %d/%d Ch: %p",
-		room, top_of_world, ch);
+		room, top_of_world, (void *)ch);
   else {
     ch->next_in_room = world[room].people;
     world[room].people = ch;
@@ -433,7 +433,7 @@ void obj_to_char(struct obj_data *object, struct char_data *ch)
     if (!IS_NPC(ch))
       SET_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
   } else
-    log("SYSERR: NULL obj (%p) or char (%p) passed to obj_to_char.", object, ch);
+    log("SYSERR: NULL obj (%p) or char (%p) passed to obj_to_char.", (void *)object, (void *)ch);
 }
 
 /* take an object from a char */
@@ -673,7 +673,7 @@ void obj_to_room(struct obj_data *object, room_rnum room)
 {
   if (!object || room == NOWHERE || room > top_of_world)
     log("SYSERR: Illegal value(s) passed to obj_to_room. (Room #%d/%d, obj %p)",
-	room, top_of_world, object);
+	room, top_of_world, (void *)object);
   else {
     object->next_content = world[room].contents;
     world[room].contents = object;
@@ -692,7 +692,7 @@ void obj_from_room(struct obj_data *object)
 
   if (!object || IN_ROOM(object) == NOWHERE) {
     log("SYSERR: NULL object (%p) or obj not in a room (%d) passed to obj_from_room",
-	object, IN_ROOM(object));
+	(void *)object, IN_ROOM(object));
     return;
   }
 
@@ -720,7 +720,7 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
 
   if (!obj || !obj_to || obj == obj_to) {
     log("SYSERR: NULL object (%p) or same source (%p) and target (%p) obj passed to obj_to_obj.",
-	obj, obj, obj_to);
+	(void *)obj, (void *)obj, (void *)obj_to);
     return;
   }
 

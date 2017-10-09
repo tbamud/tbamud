@@ -37,9 +37,7 @@ void  stop_fighting(struct char_data *ch);
 
 
 /* Global variables */
-#ifndef __FIGHT_C__
 extern struct attack_hit_type attack_hit_text[];
 extern struct char_data *combat_list;
-#endif /* __FIGHT_C__ */
 
 #endif /* _FIGHT_H_*/

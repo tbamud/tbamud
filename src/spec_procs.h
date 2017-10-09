@@ -26,12 +26,16 @@ void assign_mobiles(void);
 void assign_objects(void);
 void assign_rooms(void);
 
+#include "structs.h"
+const char *get_spec_func_name(SPECIAL(*func));
+
 /*****************************************************************************
  * Begin Functions and defines for spec_procs.c 
  ****************************************************************************/
 /* Utility functions */
 void sort_spells(void);
 void list_skills(struct char_data *ch);
+
 /* Special functions */
 SPECIAL(guild);
 SPECIAL(dump);

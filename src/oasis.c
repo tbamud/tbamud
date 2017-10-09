@@ -28,26 +28,6 @@
 #include "ibt.h"
 #include "msgedit.h"
 
-/* Internal Data Structures */
-/** @deprecated olc_scmd_info appears to be deprecated. Commented out for now.
-static struct olc_scmd_info_t {
-  const char *text;
-  int con_type;
-} olc_scmd_info[] = {
-  { "room",	CON_REDIT },
-  { "object",	CON_OEDIT },
-  { "zone",	CON_ZEDIT },
-  { "mobile",	CON_MEDIT },
-  { "shop",	CON_SEDIT },
-  { "config",   CON_CEDIT },
-  { "trigger",  CON_TRIGEDIT },
-  { "action",   CON_AEDIT },
-  { "help",     CON_HEDIT },
-  { "quest",     CON_QEDIT },
-  { "\n",	-1	  }
-};
-*/
-
 /* Global variables defined here, used elsewhere */
 const char *nrm, *grn, *cyn, *yel;
 
