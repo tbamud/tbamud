@@ -81,7 +81,9 @@ static EVENTFUNC(trig_wait_event);
  * a match.
  * @todo Move this function to string util library.
  * @param cs The string to search.
- * @param ct What to search for in cs. */
+ * @param ct What to search for in cs.
+ * @retval char * NULL if ct is not a substring of cs, or pointer to the
+ * location in cs where substring ct begins. */
 char *str_str(char *cs, char *ct)
 {
   char *s, *t;
@@ -112,7 +114,9 @@ char *str_str(char *cs, char *ct)
 }
 
 /** Returns the number of people in a room.
- * @param vnum The virtual number of a room. */
+ * @param vnum The virtual number of a room.
+ * @retval int Returns -1 if the room does not exist, or the total number of
+ * PCs and NPCs in the room. */
 int trgvar_in_room(room_vnum vnum) 
 {
     room_rnum rnum = real_room(vnum);
@@ -135,6 +139,8 @@ int trgvar_in_room(room_vnum vnum)
  * @param name Either the unique id of an object or a string identifying the
  * object. Note the unique id must be prefixed with UID_CHAR.
  * @param list The list of objects to look through.
+ * @retval obj_data * Pointer to the object if it is found in the list of
+ * objects, NULL if the object is not found in the list.
  */
 obj_data *get_obj_in_list(char *name, obj_data *list)
 {
@@ -161,6 +167,8 @@ obj_data *get_obj_in_list(char *name, obj_data *list)
  * @param ch Pointer to the NPC/PC to search through.
  * @param name String describing either the name of the object or the unique
  * id of the object. Note the unique id must be prefixed with UID_CHAR.
+ * @retval obj_data * Either a pointer to the first object found that matches
+ * the name argument, or the NULL if the object isn't found.
  */
 obj_data *get_object_in_equip(char_data * ch, char *name)
 {
@@ -203,6 +211,8 @@ obj_data *get_object_in_equip(char_data * ch, char *name)
  * Byron Ellacott. 
  * @param arg Either the name of the position, or the number of a wear
  * location definition to check for.
+ * @retval int If arg is not a valid wear location name or number, return
+ * -1, else return the defined number of the wear location.
  */
 int find_eq_pos_script(char *arg)
 {
@@ -246,6 +256,7 @@ int find_eq_pos_script(char *arg)
 /** Figures out if an object can be worn on a defined wear location.
  * @param obj The object to check.
  * @param pos The defined wear location to check.
+ * @retval int TRUE if obj can be worn on pos, FALSE if not.
  */
 int can_wear_on_pos(struct obj_data *obj, int pos)
 {
@@ -274,6 +285,8 @@ int can_wear_on_pos(struct obj_data *obj, int pos)
 
 /** Search for an NPC or PC by number routines.
  * @param n The unique ID (PC or NPC) to look for.
+ * @retval char_data * Pointer to the character structure if it exists, or NULL
+ * if it cannot be found.
  */
 struct char_data *find_char(long n)
 {
@@ -285,6 +298,8 @@ struct char_data *find_char(long n)
 
 /** Search for an object by number routines.
  * @param n The unique ID to look for.
+ * @retval obj_data * Pointer to the object if it exists, or NULL if it cannot
+ * be found.
  */
 static obj_data *find_obj(long n)
 {
@@ -296,6 +311,8 @@ static obj_data *find_obj(long n)
 
 /* Search for a room with UID n.
  * @param n the Unique ID to look for.
+ * @retval room_data * Pointer to the room if it exists, or NULL if it cannot
+ * be found.
  */
 static room_data *find_room(long n)
 {
@@ -315,7 +332,8 @@ static room_data *find_room(long n)
 /* Generic searches based only on name. */
 /** Search the entire world for an NPC or PC by name. 
  * @param name String describing the name or the unique id of the char. 
- * Note the unique id must be prefixed with UID_CHAR. */
+ * Note the unique id must be prefixed with UID_CHAR.
+ * @retval char_data * Pointer to the char or NULL if char is not found. */
 char_data *get_char(char *name)
 {
   char_data *i;
@@ -341,7 +359,9 @@ char_data *get_char(char *name)
  * @param obj An object that will constrain the search to the location that
  * the object is in *if* the name argument is not a unique id.
  * @param name Character name keyword to search for, or unique ID. Unique
- * id must be prefixed with UID_CHAR. */
+ * id must be prefixed with UID_CHAR.
+ * @retval char_data * Pointer to the the char if found, NULL if not. Will
+ * only find god characters if DG_ALLOW_GODS is on. */
 char_data *get_char_near_obj(obj_data *obj, char *name)
 {
   char_data *ch;
@@ -369,10 +389,13 @@ char_data *get_char_near_obj(obj_data *obj, char *name)
  * @param room A room that will constrain the search to that location 
  * *if* the name argument is not a unique id.
  * @param name Character name keyword to search for, or unique ID. Unique
- * id must be prefixed with UID_CHAR. */
+ * id must be prefixed with UID_CHAR.
+ * @retval char_data * Pointer to the the char if found, NULL if not. Will
+ * only find god characters if DG_ALLOW_GODS is on. */
 char_data *get_char_in_room(room_data *room, char *name)
 {
   char_data *ch;
+
 
   if (*name == UID_CHAR) {
     ch = find_char(atoi(name + 1));
@@ -394,7 +417,8 @@ char_data *get_char_in_room(room_data *room, char *name)
  * @param obj The obj with which to constrain the search.
  * @param name The keyword of the object to search for. If 'self' or 'me'
  * are passed in as arguments, obj is returned. Can also be a unique object
- * id, and if so it must be prefixed with UID_CHAR. */
+ * id, and if so it must be prefixed with UID_CHAR.
+* @retval obj_data * Pointer to the object if found, NULL if not. */
 obj_data *get_obj_near_obj(obj_data *obj, char *name)
 {
   obj_data *i = NULL;

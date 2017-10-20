@@ -123,7 +123,9 @@ static int has_scuba(struct char_data *ch)
  * @param ch The character structure to attempt to move.
  * @param dir The defined direction (NORTH, SOUTH, etc...) to attempt to
  * move into.
- * @param need_specials_check If TRUE will cause */
+ * @param need_specials_check If TRUE will cause 
+ * @retval int 1 for a successful move (ch is now in a new location)		
+ * or 0 for a failed move (ch is still in the original location). */
 int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 {
   /* Begin Local variable definitions */

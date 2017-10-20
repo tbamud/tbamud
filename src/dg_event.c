@@ -52,7 +52,8 @@ void event_init(void)
  * event fires. It is func's job to cast event_obj. If event_obj is not needed,
  * pass in NULL.
  * @param when Number of pulses between firing(s) of this event.
- * */
+ * @retval event * Returns a pointer to the newly created event.
+ **/
 struct event *event_create(EVENTFUNC(*func), void *event_obj, long when)
 {
   struct event *new_event;
@@ -136,7 +137,8 @@ void event_process(void)
 }
 
 /** Returns the time remaining before the event as how many pulses from now. 
- * @param event Check this event for it's scheduled activation time. */
+ * @param event Check this event for its scheduled activation time.
+ * @retval long Number of pulses before this event will fire. */
 long event_time(struct event *event)
 {
   long when;
@@ -153,7 +155,9 @@ void event_free_all(void)
 }
 
 /** Boolean function to tell whether an event is queued or not. Does this by
- * checking if event->q_el points to anything but null. */
+ * checking if event->q_el points to anything but null.
+ * @retval int 1 if the event has been queued, 0 if the event has not.
+ **/
 int event_is_queued(struct event *event)
 {
    if (event->q_el)
@@ -168,7 +172,8 @@ int event_is_queued(struct event *event)
 /***************************************************************************
  * Begin generic (abstract) priority queue functions
  **************************************************************************/
-/** Create a new, empty, priority queue and return it. */
+/** Create a new, empty, priority queue and return it.
+ * @retval dg_queue * Pointer to the newly created queue structure. */
 struct dg_queue *queue_init(void)
 {
   struct dg_queue *q;
@@ -185,7 +190,9 @@ struct dg_queue *queue_init(void)
  * @param data The data to be associated with, and theoretically used, when
  * the element comes up in q. data is wrapped in a new q_element.
  * @param key Indicates where this event should be located in the queue, and
- * when the element should be activated. */
+ * when the element should be activated.
+ * @retval q_element Pointer to the created q_element that contains
+ * the data. */
 struct q_element *queue_enq(struct dg_queue *q, void *data, long key)
 {
   struct q_element *qe, *i;
@@ -260,7 +267,9 @@ void queue_deq(struct dg_queue *q, struct q_element *qe)
  * @pre pulse must be defined. This is a multi-headed queue, the current
  * head is determined by the current pulse.
  * @post the q->head is dequeued. 
- * @param q The queue to return the head of. */
+ * @param q The queue to return the head of.
+ * @retval void * NULL if there is not a currently available head, pointer
+ * to any data object associated with the queue element. */
 void *queue_head(struct dg_queue *q)
 {
   void *dg_data;
@@ -279,7 +288,9 @@ void *queue_head(struct dg_queue *q)
 /** Returns the key of the head element of the priority queue.
  * @pre pulse must be defined. This is a multi-headed queue, the current
  * head is determined by the current pulse. 
- * @param q Queue to check for. */
+ * @param q Queue to check for.
+ * @retval long Return the key element of the head q_element. If no head
+ * q_element is available, return LONG_MAX. */
 long queue_key(struct dg_queue *q)
 {
   int i;
@@ -293,7 +304,8 @@ long queue_key(struct dg_queue *q)
 }
 
 /** Returns the key of queue element qe.
- * @param qe Pointer to the keyed q_element. */
+ * @param qe Pointer to the keyed q_element.
+ * @retval long Key of qe. */
 long queue_elmt_key(struct q_element *qe)
 {
   return qe->key;
