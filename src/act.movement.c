@@ -941,7 +941,12 @@ ACMD(do_follow)
       return;
     }
   } else {
-    send_to_char(ch, "Whom do you wish to follow?\r\n");
+    if (ch->master != (char_data*)  NULL) {
+      send_to_char(ch, "You are following %s.\r\n", 
+         GET_NAME(ch->master));
+    } else {
+      send_to_char(ch, "Whom do you wish to follow?\r\n");
+    }
     return;
   }
 
