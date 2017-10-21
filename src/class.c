@@ -1630,6 +1630,7 @@ void init_spell_levels(void)
   /* WARRIORS */
   spell_level(SKILL_KICK, CLASS_WARRIOR, 1);
   spell_level(SKILL_RESCUE, CLASS_WARRIOR, 3);
+  spell_level(SKILL_BANDAGE, CLASS_WARRIOR, 7);
   spell_level(SKILL_TRACK, CLASS_WARRIOR, 9);
   spell_level(SKILL_BASH, CLASS_WARRIOR, 12);
   spell_level(SKILL_WHIRLWIND, CLASS_WARRIOR, 16);

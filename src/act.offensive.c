@@ -524,3 +524,53 @@ ACMD(do_kick)
 
   WAIT_STATE(ch, PULSE_VIOLENCE * 3);
 }
+
+ACMD(do_bandage)
+{
+  char arg[MAX_INPUT_LENGTH];
+  struct char_data * vict;
+  int percent, prob;
+
+  if (!GET_SKILL(ch, SKILL_BANDAGE))
+  {
+    send_to_char(ch, "You are unskilled in the art of bandaging.\r\n");
+    return;
+  }
+
+  if (GET_POS(ch) != POS_STANDING) {
+    send_to_char(ch, "You are not in a proper position for that!\r\n");
+    return;
+  }
+
+  one_argument(argument, arg);
+
+  if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_ROOM))) {
+    send_to_char(ch, "Who do you want to bandage?\r\n");
+    return;
+  }
+
+  if (GET_HIT(vict) >= 0) {
+    send_to_char(ch, "You can only bandage someone who is close to death.\r\n");
+    return;
+  }
+
+  WAIT_STATE(ch, PULSE_VIOLENCE * 2);
+
+  percent = rand_number(1, 101);        /* 101% is a complete failure */
+  prob = GET_SKILL(ch, SKILL_BANDAGE);
+
+  if (percent <= prob) {
+    act("Your attempt to bandage fails.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n tries to bandage $N, but fails miserably.", TRUE, ch, 
+      0, vict, TO_NOTVICT);
+    damage(vict, vict, 2, TYPE_SUFFERING);
+    return;
+  }
+
+  act("You successfully bandage $N.", FALSE, ch, 0, vict, TO_CHAR);
+  act("$n bandages $N, who looks a bit better now.", TRUE, ch, 0, 
+    vict, TO_NOTVICT);
+  act("Someone bandages you, and you feel a bit better now.",
+         FALSE, ch, 0, vict, TO_VICT);
+  GET_HIT(vict) = 0;
+}

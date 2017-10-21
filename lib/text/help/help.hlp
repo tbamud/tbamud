@@ -1061,6 +1061,19 @@ Moves all of your money in/out of the bank.
 
 See also: GOLD, SCORE
 #0
+BANDAGE
+
+Some fighting classes only.
+
+Usage: bandage [patient]
+
+The bandage skill is used to treat extremely critical patients who are
+in imminent danger of dying.  Upon successful application of bandages,
+the patient will be stabilized but will still be in critical condition.
+If the bandage application fails, the patient will suffer additional
+trauma which may hasten their ultimate fate.  The success of this skill
+will depend upon how well it has been learned.
+#0
 BASH
 
 Fighters only.

@@ -103,6 +103,7 @@ cpp_extern const struct command_info cmd_info[] = {
 
   { "backstab" , "ba"      , POS_STANDING, do_backstab , 1, 0 },
   { "ban"      , "ban"     , POS_DEAD    , do_ban      , LVL_GRGOD, 0 },
+  { "bandage"  , "band"    , POS_RESTING , do_bandage  , 1, 0 },
   { "balance"  , "bal"     , POS_STANDING, do_not_here , 1, 0 },
   { "bash"     , "bas"     , POS_FIGHTING, do_bash     , 1, 0 },
   { "brief"    , "br"      , POS_DEAD    , do_gen_tog  , 0, SCMD_BRIEF },
