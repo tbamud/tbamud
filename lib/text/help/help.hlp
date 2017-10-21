@@ -12184,6 +12184,20 @@ Usage: unaffect [target]
 Removes all affections (i.e., spell effects) from a player.
 
 #31
+UNFOLLOW
+
+Usage: unfollow
+
+The UNFOLLOW command will stop a player from following another player or
+creature.  This command will not succeed if the player is under the 
+influence of a CHARM spell.
+
+Examples:
+
+  > unfollow
+
+See also: FOLLOW
+#0
 UNGROUP DISBAND
 
 Usage: ungroup [group member]

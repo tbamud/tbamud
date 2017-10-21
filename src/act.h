@@ -162,6 +162,7 @@ ACMD(do_rest);
 ACMD(do_sit);
 ACMD(do_sleep);
 ACMD(do_stand);
+ACMD(do_unfollow);
 ACMD(do_wake);
 /* Global variables from act.movement.c */
 extern const char *cmd_door[];
