@@ -428,7 +428,20 @@ ACMD(do_group)
     send_to_char(ch, "You have kicked %s out of the group.\r\n", GET_NAME(vict));
     send_to_char(vict, "You have been kicked out of the group.\r\n"); 
     leave_group(vict);
+  } else if (is_abbrev(buf, "regroup")) {
+    if (!GROUP(ch)) {
+      send_to_char(ch, "But you aren't apart of a group!\r\n");
+      return;
+    }
+    vict = GROUP_LEADER(GROUP(ch));
+    if (ch == vict) {
+      send_to_char(ch, "You are the group leader and cannot re-group.\r\n");
+    } else {
+      leave_group(ch);
+      join_group(ch, GROUP(vict));
+    }
   } else if (is_abbrev(buf, "leave")) {
+    
     if (!GROUP(ch)) {
       send_to_char(ch, "But you aren't apart of a group!\r\n");
       return;
