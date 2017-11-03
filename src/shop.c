@@ -456,15 +456,15 @@ static struct obj_data *get_purchase_obj(struct char_data *ch, char *arg, struct
 static int buy_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *buyer)
 {
   return (int) (GET_OBJ_COST(obj) * SHOP_BUYPROFIT(shop_nr)
-	* (1 + (GET_CHA(keeper) - GET_CHA(buyer)) / (double)70));
+	* (1 + (GET_CHA(keeper) - GET_CHA(buyer)) / (float)70));
 }
 
 /* When the shopkeeper is buying, we reverse the discount. Also make sure
    we don't buy for more than we sell for, to prevent infinite money-making. */
 static int sell_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *seller)
 {
-  float sell_cost_modifier = SHOP_SELLPROFIT(shop_nr) * (1 - (GET_CHA(keeper) - GET_CHA(seller)) / (double)70);
-  float buy_cost_modifier = SHOP_BUYPROFIT(shop_nr) * (1 + (GET_CHA(keeper) - GET_CHA(seller)) / (double)70);
+  float sell_cost_modifier = SHOP_SELLPROFIT(shop_nr) * (1 - (GET_CHA(keeper) - GET_CHA(seller)) / 70.0);
+  float buy_cost_modifier = SHOP_BUYPROFIT(shop_nr) * (1 + (GET_CHA(keeper) - GET_CHA(seller)) / 70.0);
 
   if (sell_cost_modifier > buy_cost_modifier)
     sell_cost_modifier = buy_cost_modifier;
