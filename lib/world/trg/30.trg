@@ -279,7 +279,7 @@ set ant 4600
 set zodiac 5701
 set grave 7401
 set zamba 7500
-set gidean 7801
+set gideon 7801
 set glumgold 8301
 set duke 8660
 set oasis 9000
