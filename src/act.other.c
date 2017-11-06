@@ -400,7 +400,7 @@ ACMD(do_group)
       send_to_char(ch, "But you are already part of a group.\r\n");
       return;
     } else if (!GROUP(vict)) {
-      act("$E$u is not a part of a group!", FALSE, ch, 0, vict, TO_CHAR);
+      act("$E$u is not part of a group!", FALSE, ch, 0, vict, TO_CHAR);
       return;
     } else if (!IS_SET(GROUP_FLAGS(GROUP(vict)), GROUP_OPEN)) {
       send_to_char(ch, "That group isn't accepting members.\r\n");
@@ -430,7 +430,7 @@ ACMD(do_group)
     leave_group(vict);
   } else if (is_abbrev(buf, "regroup")) {
     if (!GROUP(ch)) {
-      send_to_char(ch, "But you aren't apart of a group!\r\n");
+      send_to_char(ch, "But you aren't part of a group!\r\n");
       return;
     }
     vict = GROUP_LEADER(GROUP(ch));
@@ -443,7 +443,7 @@ ACMD(do_group)
   } else if (is_abbrev(buf, "leave")) {
     
     if (!GROUP(ch)) {
-      send_to_char(ch, "But you aren't apart of a group!\r\n");
+      send_to_char(ch, "But you aren't part of a group!\r\n");
       return;
     }
 		
