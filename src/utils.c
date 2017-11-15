@@ -535,7 +535,8 @@ void stop_follower(struct char_data *ch)
   } else {
     act("You stop following $N.", FALSE, ch, 0, ch->master, TO_CHAR);
     act("$n stops following $N.", TRUE, ch, 0, ch->master, TO_NOTVICT);
-    act("$n stops following you.", TRUE, ch, 0, ch->master, TO_VICT);
+    if (CAN_SEE(ch->master, ch))
+      act("$n stops following you.", TRUE, ch, 0, ch->master, TO_VICT);
   }
 
   if (ch->master->followers->follower == ch) {	/* Head of follower-list? */
