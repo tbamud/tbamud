@@ -20,9 +20,9 @@
  * macro was introduced in pl13.  Any future code add-ons could take into
  * account the version and supply their own definition for the macro if used
  * on an older version. You are supposed to compare this with the macro
- * TBAMUD_VERSION() in utils.h.
- * It is read as Major/Minor/Patchlevel - MMmmPP */
-#define _TBAMUD    0x030680
+ * TBAMUD_VERSION() in utils.h. Not currently in use.
+ * It is read as Year/Version YYYY.v */
+#define _TBAMUD    2018.1
 
 /** If you want equipment to be automatically equipped to the same place
  * it was when players rented, set the define below to 1 because

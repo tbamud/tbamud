@@ -11,7 +11,7 @@ if %actor.is_pc% && %actor.level% == 1
     wait 2 sec
     say If you are interested in learning how to build, or want to teach others, then you have come to the right place.
     wait 2 sec
-    say Please fill out the application at: geocities.com/buildersacademy/
+say Please fill out the application at: http://tbamud.com
     set mortal_greeting_for_TBA 1
     remote mortal_greeting_for_TBA %actor.id%
   end
@@ -99,7 +99,7 @@ tbalim~
 * Make sure name matches a player, purge mobs or use 0.name if you have 
 * troubles. They are given an assigner in the mortal start room.
 * Usage: tbalim player vnum | purge
-if !%actor.is_pc% || %actor.level% < 30
+if !%actor.is_pc% || %actor.level% < 32
   %send% %actor% Only human staff can use this limiter.
 else  
   set victim %arg.car%
@@ -107,8 +107,12 @@ else
     if purge /= %arg.cdr% && %victim.has_item(1332)%
       %send% %actor% %arg.car%'s assigner has been %arg.cdr%'d.
       eval TBA_trial_vnum %victim.TBA_trial_vnum% - (2 * %victim.TBA_trial_vnum%)
-      remote TBA_trial_vnum %victim.id%
+      if %TBA_trial_vnum% < 0
+        remote TBA_trial_vnum %victim.id%
+      end
       %purge% %victim.inventory(1332)%
+    elseif purge /= %arg.cdr%
+      %send% %actor% They do not have a trial vnum assigner for you to purge.
     else
       set TBA_trial_vnum %arg.cdr%
       remote TBA_trial_vnum %victim.id%

@@ -159,10 +159,10 @@ D3
 S
 #34308
 Eastern Foyer~
-      This is the Eastern End of the Gathering Hall. This foyer continues to
-the east into what appears to be a hallway and west into a circular central
-room. Several pillars line the room here, Archways north and south lead into
-the Immortal Board Room and the Mortal Board Room.
+   This is the Eastern End of the Gathering Hall.  This foyer continues to the
+east into what appears to be a hallway and west into a circular central room.  
+Several pillars line the room here, Archways north and south lead into the
+Immortal Board Room and the Mortal Board Room.
 ~
 343 24 0 0 0 0
 D0
@@ -209,10 +209,10 @@ D3
 S
 #34310
 Western Foyer~
-      This is the Western End of the Gathering Hall. This foyer continues to
-the west into what appears to be a hallway and east into a circular central
-room. Several pillars line the room here. Archways north and south lead to
-the Hall of Justice/Chapel and the Meeting Room of the Immortals.
+   This is the Western End of the Gathering Hall.  This foyer continues to the
+west into what appears to be a hallway and east into a circular central room.  
+Several pillars line the room here.  Archways north and south lead to the Hall
+of Justice/Chapel and the Meeting Room of the Immortals.
 ~
 343 24 0 0 0 0
 D0
@@ -269,13 +269,12 @@ D3
 S
 #34312
 God Hall, South~
-     The beginning and ending of the God Hall, South is here.
- It seems to go on to the east and west with many doors that
-line the hallways leading into the many offices that are
-located here. An archway leads into the Foyer to the north.
-
-Another passageway crosses the hall into what appears to be
-a very simple looking extension to the main God Hall.
+   The beginning and ending of the God Hall, South is here.  It seems to go on
+to the east and west with many doors that line the hallways leading into the
+many offices that are located here.  An archway leads into the Foyer to the
+north.  
+   Another passageway crosses the hall into what appears to be a very simple
+looking extension to the main God Hall.
 ~
 343 24 0 0 0 0
 D0
@@ -297,13 +296,12 @@ D3
 S
 #34313
 God Hall, West~
-     This is a simple hallway that leads to the north and south. There is a
-tiled floor and open beamed ceilings here. On either side doors line
-the hallway. An archway to the east enters a plush foyer.
-A staircase leads up to a very plush hallway above.
-
-Another passageway crosses the hall into what appears to be
-a very simple looking extension to the main God Hall.
+   This is a simple hallway that leads to the north and south.  There is a tiled
+floor and open beamed ceilings here.  On either side doors line the hallway.  
+An archway to the east enters a plush foyer.  A staircase leads up to a very
+plush hallway above.  
+   Another passageway crosses the hall into what appears to be a very simple
+looking extension to the main God Hall.
 ~
 343 24 0 0 0 0
 D0
@@ -329,13 +327,12 @@ D4
 S
 #34314
 God Hall, East~
-      This is a simple hallway that leads to the north and south. There is a
-tiled floor and open beamed ceilings here. On either side doors line
-the hallway. An archway to the west enters a plush foyer.
-A staircase leads up to a very plush hallway above.
-
-Another passageway crosses the hall into what appears to be
-a very simple looking extension to the main God Hall.
+   This is a simple hallway that leads to the north and south.  There is a tiled
+floor and open beamed ceilings here.  On either side doors line the hallway.  
+An archway to the west enters a plush foyer.  A staircase leads up to a very
+plush hallway above.  
+   Another passageway crosses the hall into what appears to be a very simple
+looking extension to the main God Hall.
 ~
 343 24 0 0 0 0
 D0
@@ -825,8 +822,9 @@ D5
 0 0 34314
 S
 #34332
-EEmpty Office~
-undefined~
+Empty Office~
+Unfinished.
+~
 343 28 0 0 0 0
 D0
    A walnut door is here with huge gold hinges.
@@ -1234,7 +1232,7 @@ S
 #34367
 Rhade's Office~
    The office here is plain and simple with a center desk, a cot to the side and
-several filing abinets scattered throughout.  It has tiled floors, white walls,
+several filing cabinets scattered throughout.  It has tiled floors, white walls,
 but not without very fine and fancy artwork and tapestries on the walls.  There
 is a single bay window here as well, that lets in the bright sunlight and
 overlooks the land of Midguaard far below.  The only exit is west into a

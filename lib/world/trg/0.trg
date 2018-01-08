@@ -574,7 +574,7 @@ done
 ~
 #24
 Room While Teleport Example~
-2 b 100
+2 bg 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Target the first person or mob in the room.
@@ -2850,7 +2850,7 @@ set ant 4600
 set zodiac 5701
 set grave 7401
 set zamba 7500
-set gideon 7801
+set gidean 7801
 set glumgold 8301
 set duke 8660
 set oasis 9000
