@@ -1570,14 +1570,15 @@ static int process_output(struct descriptor_data *t)
 
   /* add the extra CRLF if the person isn't in compact mode */
   if (STATE(t) == CON_PLAYING && t->character && !IS_NPC(t->character) && !PRF_FLAGGED(t->character, PRF_COMPACT))
-    strcat(osb, "\r\n");	/* strcpy: OK (osb:MAX_SOCK_BUF-2 reserves space) */
+    if ( !t->pProtocol->WriteOOB ) 
+      strcat(osb, "\r\n");	/* strcpy: OK (osb:MAX_SOCK_BUF-2 reserves space) */
 
   if (!t->pProtocol->WriteOOB) /* add a prompt */
     strcat(i, make_prompt(t));	/* strcpy: OK (i:MAX_SOCK_BUF reserves space) */
 
   /* now, send the output.  If this is an 'interruption', use the prepended
    * CRLF, otherwise send the straight output sans CRLF. */
-  if (t->has_prompt) {
+  if (t->has_prompt && !t->pProtocol->WriteOOB) {
     t->has_prompt = FALSE;
     result = write_to_descriptor(t->descriptor, i);
     if (result >= 2)
