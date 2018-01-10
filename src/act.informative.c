@@ -1049,7 +1049,6 @@ int search_help(const char *argument, int level)
 
       while (level < help_table[mid].min_level && mid < (bot + top) / 2)
         mid++;
-  
       if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
         break;
         
