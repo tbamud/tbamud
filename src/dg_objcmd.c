@@ -155,7 +155,7 @@ static OCMD(do_oecho)
         obj_log(obj, "oecho called by object in NOWHERE");
 }
 
-static OLOG(do_olog)
+static OCMD(do_olog)
 {
   skip_spaces(&argument);
 
