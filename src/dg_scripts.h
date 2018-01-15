@@ -384,6 +384,7 @@ ACMD(do_msend);
 ACMD(do_mteleport);
 ACMD(do_mtransform);
 ACMD(do_mzoneecho);
+ACMD(do_mlog);
 
 /* from dg_olc.c... thinking these should be moved to oasis.h */
 void trigedit_save(struct descriptor_data *d);
