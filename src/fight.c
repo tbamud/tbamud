@@ -251,6 +251,8 @@ void death_cry(struct char_data *ch)
 
 void raw_kill(struct char_data * ch, struct char_data * killer)
 {
+struct char_data *i;
+
   if (FIGHTING(ch))
     stop_fighting(ch);
 
@@ -266,8 +268,14 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   } else
     death_cry(ch);
 
-  if (killer)
-    autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
+  if (killer) {
+    if (killer->group) {
+      while ((i = (struct char_data *) simple_list(killer->group->members)) != NULL)
+        if(IN_ROOM(i) == IN_ROOM(ch)  || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
+          autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);      
+    } else
+        autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
+  }
 
   /* Alert Group if Applicable */
   if (GROUP(ch))

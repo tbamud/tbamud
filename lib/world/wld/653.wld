@@ -4,12 +4,41 @@ Utility Room~
 the building, look map.  
  
    To assign the rooms, stand in any apartment with the player and use hcontrol.
+ 
+   *WARNING* Before the first apartment, please check for the file lib/house.
+This will sometimes be deleted as an empty file.  The house contents will not
+save without this directory!
 ~
 653 8 0 0 0 0
 D3
 ~
 ~
 0 0 65398
+E
+map~
+   Map
+ 
+	c      01    02    03	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c15	n-----	wH	n-----	wH	n-----	wH	n----	c04	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c13	n-----	wH	n-	c14  	yE  	c06	n-	wH	n----	c05	n
+       |           |
+       |    	c10	n     |
+       |     |     |
+	c12	n-----	wH	n-----	wH	n-----	wH	n----	c07	n
+       |     |     |
+       |     |     |
+       |     |     |
+	c      11    09    08	n
+	yElevator	n
+	wHalls	n
+	cApartments	n
+~
 E
 Plan~
    Plan
@@ -56,31 +85,6 @@ Plan~
 	yElevator: 01-04	n
 	wHalls: 05-36	n
 	cApartments: 37-96	n
-~
-E
-map~
-   Map
- 
-	c      01    02    03	n
-       |     |     |
-       |     |     |
-       |     |     |
-	c15	n-----	wH	n-----	wH	n-----	wH	n----	c04	n
-       |     |     |
-       |     |     |
-       |     |     |
-	c13	n-----	wH	n-	c14  	yE  	c06	n-	wH	n----	c05	n
-       |           |
-       |    	c10	n     |
-       |     |     |
-	c12	n-----	wH	n-----	wH	n-----	wH	n----	c07	n
-       |     |     |
-       |     |     |
-       |     |     |
-	c      11    09    08	n
-	yElevator	n
-	wHalls	n
-	cApartments	n
 ~
 S
 #65301

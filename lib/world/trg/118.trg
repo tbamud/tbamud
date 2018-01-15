@@ -930,15 +930,23 @@ emote gasps for air.
 0 d 100
 *~
 if %actor.varexists(zn118_runningstart)%
-  %speech%
-  wait 1
-  if %self.room.vnum% == 11831
-    rdelete zn118_runningstart %actor.id%
-    set zn118_runningquest 1
-    remote zn118_runningquest %actor.id%
-    wait 1 s
-    tell %actor.name% Thank you for getting me out of there.
-    follow self
+  if %speech.contains(msend)% || %speech.contains(mecho)% || %speech.contains(mechoaround)% || %speech.contains(mdoor)% || %speech.contains(mforce)% || %speech.contains(mload)% || %speech.contains(mpurge)% || %speech.contains(mteleport)%
+    %force% %actor% gos I just attempted to cheat by abusing a script.
+  elseif %speech.contains(mdamage)% || %speech.contains(mzoneecho)% || %speech.contains(masound)% || %speech.contains(dg_affect)% || %speech.contains(dg_cast)% || %speech.contains(mat)% || %speech.contains(mtransform)% || %speech.contains(mhunt)%
+    %force% %actor% gos I just attempted to cheat by abusing a script.
+  elseif %speech.contains(mremember)% || %speech.contains(mforget)%  || %speech.contains(mgoto)% || %speech.contains(mkill)% || %speech.contains(mjunk)% || %speech.contains(mfollow)%
+    %force% %actor% gos I just attempted to cheat by abusing a script.
+  else
+    %speech%
+    wait 1
+    if %self.room.vnum% == 11831
+      rdelete zn118_runningstart %actor.id%
+      set zn118_runningquest 1
+      remote zn118_runningquest %actor.id%
+      wait 1 s
+      tell %actor.name% Thank you for getting me out of there.
+      follow self
+    end
   end
 end
 ~
@@ -1315,7 +1323,7 @@ if %cmd.mudcommand% == examine
     set  txt[21] RAPIO
     set  word %%txt[%max%]%%
     eval word %word%
-    %send% %actor% Your eyes scan the glowing walls and alight upon the word @C%word%@n.
+    %send% %actor% Your eyes scan the glowing walls and alight upon the word 	C%word%	n.
     if !%actor.varexists(zn118_blinddone)%
       set zn118_blindquest %word%
       remote zn118_blindquest %actor.id%
@@ -1640,21 +1648,21 @@ end
 mob does not load if already present~
 0 k 100
 ~
-@c* This sets the vnum of the mob you are checking for, and loading/not loading@n
+	c* This sets the vnum of the mob you are checking for, and loading/not loading	n
 set mobvnum 42500
-@c* This tells the trigger to keep checking for people until there are none.@n
+	c* This tells the trigger to keep checking for people until there are none.	n
 set here %self.room.people%
 while %here%
   set others %here.next_in_room%
-@c* If the mob is in the room, the isthere variable is set.@n
+	c* If the mob is in the room, the isthere variable is set.	n
   if %here.vnum% == %mobvnum%
 set mobid %here%
     set isthere 1
   end
   set here %others%
 done
-@c* If the mob is not in the room (variable is not set)@n
-@c* The mob will load.@n
+	c* If the mob is not in the room (variable is not set)	n
+	c* The mob will load.	n
 if !%isthere%
   %load% mob %mobvnum%
 end
@@ -2104,13 +2112,13 @@ different corpses loaded~
 ~
 %teleport% %self% 11800
 if %self.vnum% == 11830
-  %at% 11895 xx118trig118xx wload obj 11856
+  %at% 11895 xx118trig118xx
 elseif %self.vnum% == 11831
-  %at% 11838 xx118trig118xx wload obj 11857
+  %at% 11838 xx118trig118xx
 elseif %self.vnum% == 11832
-  %at% 11849 xx118trig118xx wload obj 11858
+  %at% 11849 xx118trig118xx
 elseif %self.vnum% == 11839
-  %at% 11848 xx118trig118xx wload obj 11869
+  %at% 11848 xx118trig118xx
 end
 ~
 #11865
@@ -2128,7 +2136,15 @@ end
 room obeys mob trigger~
 2 c 100
 xx118trig118xx~
-%arg%
+if %actor.vnum% == 11830
+  %load% obj 11856
+elseif %actor.vnum% == 11831
+  %load% obj 11857
+elseif %actor.vnum% == 11832
+  %load% obj 11858
+elseif %actor.vnum% == 11839
+  %load% obj 11869
+end
 ~
 #11867
 (11) Ridley responds to asking~
