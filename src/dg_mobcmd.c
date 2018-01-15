@@ -282,6 +282,28 @@ ACMD(do_mecho)
     sub_write(p, ch, TRUE, TO_CHAR);
 }
 
+ACMD(do_mlog)
+{
+    char *p;
+
+    if (!MOB_OR_IMPL(ch)) {
+        send_to_char(ch, "%s", CONFIG_HUH);
+        return;
+    }
+
+    if (AFF_FLAGGED(ch, AFF_CHARM))
+        return;
+
+    if (!*argument)
+      return;
+
+    p = argument;
+    skip_spaces(&p);
+
+    mob_log(ch, p);
+
+}
+
 ACMD(do_mzoneecho)
 {
     int zone;

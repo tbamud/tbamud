@@ -45,6 +45,7 @@ static OCMD(do_odoor);
 static OCMD(do_osetval);
 static OCMD(do_oat);
 static OCMD(do_omove);
+static OCMD(do_olog);
 
 struct obj_command_info {
    char *command;
@@ -152,6 +153,14 @@ static OCMD(do_oecho)
 
     else
         obj_log(obj, "oecho called by object in NOWHERE");
+}
+
+static OCMD(do_olog)
+{
+  skip_spaces(&argument);
+
+  if (*argument)
+    obj_log(obj, argument);
 }
 
 static OCMD(do_oforce)
@@ -805,6 +814,7 @@ static const struct obj_command_info obj_cmd_info[] = {
     { "otransform " , do_otransform, 0 },
     { "ozoneecho "  , do_ozoneecho , 0 }, /* fix by Rumble */
     { "omove "      , do_omove     , 0 },
+    { "olog "       , do_olog       , 0 },
     { "\n", 0, 0 }        /* this must be last */
 };
 

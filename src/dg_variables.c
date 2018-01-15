@@ -257,6 +257,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   char *name;
   int num, count, i, j, doors;
 
+  char *log_cmd[]        = {"mlog ",       "olog ",         "wlog "       };
   char *send_cmd[]       = {"msend ",       "osend ",       "wsend "      };
   char *echo_cmd[]       = {"mecho ",       "oecho ",       "wecho "      };
   char *echoaround_cmd[] = {"mechoaround ", "oechoaround ", "wechoaround "};
@@ -343,6 +344,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         snprintf(str, slen, "%s", recho[type]);
       else if (!str_cmp(var, "move"))
         snprintf(str, slen, "%s", omove[type]);
+      else if (!str_cmp(var, "log"))
+        snprintf(str, slen, "%s", log_cmd[type]);
       else
         *str = '\0';
     }
