@@ -704,6 +704,7 @@ ACMD(do_look)
 {
   int look_type;
   int found = 0;
+  char tempsave[MAX_INPUT_LENGTH];
 
   if (!ch->desc)
     return;
@@ -724,7 +725,7 @@ ACMD(do_look)
       if (!*arg)
 	send_to_char(ch, "Read what?\r\n");
       else
-	look_at_target(ch, arg);
+	look_at_target(ch, strcpy(tempsave, arg));
       return;
     }
     if (!*arg)			/* "look" alone, without an argument at all */
@@ -735,7 +736,7 @@ ACMD(do_look)
     else if ((look_type = search_block(arg, dirs, FALSE)) >= 0)
       look_in_direction(ch, look_type);
     else if (is_abbrev(arg, "at"))
-      look_at_target(ch, arg2);
+      look_at_target(ch, strcpy(tempsave, arg2));
     else if (is_abbrev(arg, "around")) {
       struct extra_descr_data *i;
 
@@ -749,7 +750,7 @@ ACMD(do_look)
       if (!found)
          send_to_char(ch, "You couldn't find anything noticeable.\r\n");
     } else
-      look_at_target(ch, arg);
+      look_at_target(ch, strcpy(tempsave, arg));
   }
 }
 
