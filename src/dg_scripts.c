@@ -3004,9 +3004,15 @@ void add_to_lookup_table(long uid, void *c)
   int bucket = (int) (uid & (BUCKET_COUNT - 1));
   struct lookup_table_t *lt = &lookup_table[bucket];
 
-  for (;lt->next; lt = lt->next)
-  if (lt->c == c && lt->uid == uid) {
-      log ("Add_to_lookup failed. Already there. (uid = %ld)", uid);
+  if (lt && lt->uid == uid) {
+   log("add_to_lookup updating existing value for uid=%ld (%p -> %p)", uid, lt->c, c);
+   lt->c = c;
+   return;
+  }
+
+  for (;lt && lt->next; lt = lt->next)
+    if (lt->next->uid == uid) {
+      log("add_to_lookup updating existing value for uid=%ld (%p -> %p)", uid, lt->next->c, c);
       return;
     }
 
