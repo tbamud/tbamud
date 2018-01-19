@@ -268,6 +268,7 @@ void * simple_list(struct list_data * pList)
 
 void * random_from_list(struct list_data * pList)
 {
+  struct iterator_data localIterator;
   void * pFoundItem;
   bool found;
   int number;
@@ -278,17 +279,17 @@ void * random_from_list(struct list_data * pList)
   else
     number = rand_number(1, pList->iSize);
 
-  pFoundItem = merge_iterator(&Iterator, pList);
+  pFoundItem = merge_iterator(&localIterator, pList);
 
-  for (found = FALSE; pFoundItem != NULL; pFoundItem = next_in_list(&Iterator), count++) {
+  for (found = FALSE; pFoundItem != NULL; pFoundItem = next_in_list(&localIterator), count++) {
     if (count == number) {
       found = TRUE;
       break;
     }
   }
 
-  remove_iterator(&Iterator);
-
+  remove_iterator(&localIterator);
+  
   if (found)
     return (pFoundItem);
   else
