@@ -930,8 +930,11 @@ void perform_violence(void)
       continue;
     }
 
-    if (GROUP(ch)) {
-      while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
+ if (GROUP(ch) && GROUP(ch)->members && GROUP(ch)->members->iSize) {
+      struct iterator_data Iterator;
+
+      tch = (struct char_data *) merge_iterator(&Iterator, GROUP(ch)->members);
+    for (; tch ; tch = next_in_list(&Iterator)) {
         if (tch == ch)
           continue;
         if (!IS_NPC(tch) && !PRF_FLAGGED(tch, PRF_AUTOASSIST))
