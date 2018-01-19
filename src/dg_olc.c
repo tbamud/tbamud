@@ -377,7 +377,7 @@ static const char *syntax_color_replacement[SYNTAX_TERMS][2] =
 };
 
 // Here you can include more commands usually used in your triggers
-#define COMMAND_TERMS   35
+#define COMMAND_TERMS   36
 static const char *command_color_replacement[COMMAND_TERMS][2] =
 {
     // Mob specific commands (25)
