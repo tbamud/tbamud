@@ -64,7 +64,6 @@ void free_recent_players(void);
 ACMD(do_commands);
 #define SCMD_COMMANDS 0
 #define SCMD_SOCIALS  1
-#define SCMD_WIZHELP  2
 /* do_gen_ps */
 ACMD(do_gen_ps);
 #define SCMD_INFO      0
@@ -340,6 +339,7 @@ ACMD(do_teleport);
 ACMD(do_trans);
 ACMD(do_vnum);
 ACMD(do_vstat);
+ACMD(do_wizhelp);
 ACMD(do_wizlock);
 ACMD(do_wiznet);
 ACMD(do_wizupdate);

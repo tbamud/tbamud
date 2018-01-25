@@ -2210,35 +2210,17 @@ ACMD(do_toggle)
 ACMD(do_commands)
 {
   int no, i, cmd_num;
-  int wizhelp = 0, socials = 0;
-  struct char_data *vict;
-  char arg[MAX_INPUT_LENGTH];
-  char buf[MAX_STRING_LENGTH];
+  int socials = 0;
   const char *commands[1000];
   int overflow = sizeof(commands) / sizeof(commands[0]);
 
   if (!ch->desc)
     return;
 
-  one_argument(argument, arg);
-
-  if (*arg) {
-    if (!(vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD)) || IS_NPC(vict)) {
-      send_to_char(ch, "Who is that?\r\n");
-      return;
-    }
-  } else
-    vict = ch;
-
   if (subcmd == SCMD_SOCIALS)
     socials = 1;
-  else if (subcmd == SCMD_WIZHELP)
-    wizhelp = 1;
 
-  sprintf(buf, "The following %s%s are available to %s:\r\n",
-          wizhelp ? "privileged " : "",
-          socials ? "socials" : "commands",
-          vict == ch ? "you" : GET_NAME(vict));
+  send_to_char(ch, "The following %s are available to you:\r\n", socials ? "socials" : "commands");
 
   /* cmd_num starts at 1, not 0, to remove 'RESERVED' */
   for (no = 0, cmd_num = 1;
@@ -2250,13 +2232,10 @@ ACMD(do_commands)
     if (complete_cmd_info[i].minimum_level < 0 || GET_LEVEL(vict) < complete_cmd_info[i].minimum_level)
       continue;
 
-    if ((complete_cmd_info[i].minimum_level >= LVL_IMMORT) != wizhelp)
+    if (complete_cmd_info[i].minimum_level >= LVL_IMMORT)
       continue;
 
-    if (!wizhelp && socials != (complete_cmd_info[i].command_pointer == do_action))
-      continue;
-
-    if (wizhelp && complete_cmd_info[i].command_pointer == do_action)
+    if (socials != (complete_cmd_info[i].command_pointer == do_action))
       continue;
 
     if (--overflow < 0)

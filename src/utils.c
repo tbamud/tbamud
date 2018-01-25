@@ -961,6 +961,7 @@ void column_list(struct char_data *ch, int num_cols, const char **list, int list
    int num_per_col, col_width, r, c, i, offset = 0;
    char buf[MAX_STRING_LENGTH];
 
+   *buf='\0';
    /* Work out the longest list item */
    for (i=0; i<list_length; i++)
      if (max_len < strlen(list[i]))
