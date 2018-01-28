@@ -2230,6 +2230,7 @@ ACMD(do_commands)
     i = cmd_sort_info[cmd_num];
 
     if (complete_cmd_info[i].minimum_level < 0 || GET_LEVEL(ch) < complete_cmd_info[i].minimum_level)
+
       continue;
 
     if (complete_cmd_info[i].minimum_level >= LVL_IMMORT)
