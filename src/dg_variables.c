@@ -257,7 +257,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   char *name;
   int num, count, i, j, doors;
 
-  char *log_cmd[]        = {"mlog ",       "olog ",         "wlog "       };
+  char *log_cmd[]        = {"mlog ",        "olog ",        "wlog "       };
   char *send_cmd[]       = {"msend ",       "osend ",       "wsend "      };
   char *echo_cmd[]       = {"mecho ",       "oecho ",       "wecho "      };
   char *echoaround_cmd[] = {"mechoaround ", "oechoaround ", "wechoaround "};
@@ -632,9 +632,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-              GET_CHA(c) += addition;
-              if (GET_CHA(c) > max) GET_CHA(c) = max;
-              if (GET_CHA(c) < 3) GET_CHA(c) = 3;
+              c->real_abils.cha += addition;
+              if (c->real_abils.cha > max) c->real_abils.cha = max;
+              if (c->real_abils.cha < 3) c->real_abils.cha = 3;
             }
             snprintf(str, slen, "%d", GET_CHA(c));
           }
@@ -654,9 +654,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-              GET_CON(c) += addition;
-              if (GET_CON(c) > max) GET_CON(c) = max;
-              if (GET_CON(c) < 3) GET_CON(c) = 3;
+              c->real_abils.con += addition;
+              if (c->real_abils.con > max) c->real_abils.con = max;
+              if (c->real_abils.con < 3) c->real_abils.con = 3;
             }
             snprintf(str, slen, "%d", GET_CON(c));
           }
@@ -672,9 +672,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               if (subfield && *subfield) {
                 int addition = atoi(subfield);
                 int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-                GET_DEX(c) += addition;
-                if (GET_DEX(c) > max) GET_DEX(c) = max;
-                if (GET_DEX(c) < 3) GET_DEX(c) = 3;
+                c->real_abils.dex += addition;
+                if (c->real_abils.dex > max) c->real_abils.dex = max;
+                if (c->real_abils.dex < 3) c->real_abils.dex = 3;
               }
             snprintf(str, slen, "%d", GET_DEX(c));
           }
@@ -796,9 +796,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-              GET_INT(c) += addition;
-              if (GET_INT(c) > max) GET_INT(c) = max;
-              if (GET_INT(c) < 3) GET_INT(c) = 3;
+              c->real_abils.intel += addition;
+              if (c->real_abils.intel > max) c->real_abils.intel = max;
+              if (c->real_abils.intel < 3) c->real_abils.intel = 3;
             }
             snprintf(str, slen, "%d", GET_INT(c));
           }
@@ -906,6 +906,21 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(c->next_in_room));
             else
               *str = '\0';
+          }
+          else if (!str_cmp(field, "npcflag")) {
+            if (subfield && *subfield) {
+               char buf[MAX_STRING_LENGTH];
+               sprintbitarray(MOB_FLAGS(c), action_bits, PM_ARRAY_MAX, buf);
+              if (buf) {
+                if (str_str(buf, subfield))
+                  snprintf(str, slen, "1");
+                else
+                  snprintf(str, slen, "0");
+              }
+              else {
+                snprintf(str, slen, "0");
+              }
+            }
           }
           break;
         case 'p':
@@ -1041,9 +1056,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-              GET_STR(c) += addition;
-              if (GET_STR(c) > max) GET_STR(c) = max;
-              if (GET_STR(c) < 3) GET_STR(c) = 3;
+              c->real_abils.str += addition;
+              if (c->real_abils.str > max) c->real_abils.str = max;
+              if (c->real_abils.str < 3) c->real_abils.str = 3;
             }
             snprintf(str, slen, "%d", GET_STR(c));
           }
@@ -1051,9 +1066,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (GET_STR(c) >= 18) {
               if (subfield && *subfield) {
                 int addition = atoi(subfield);
-                GET_ADD(c) += addition;
-                if (GET_ADD(c) > 100) GET_ADD(c) = 100;
-                if (GET_ADD(c) < 0) GET_ADD(c) = 0;
+                c->real_abils.str_add += addition;
+                if (c->real_abils.str_add > 100) c->real_abils.str_add = 100;
+                if (c->real_abils.str_add < 0) c->real_abils.str_add = 0;
               }
               snprintf(str, slen, "%d", GET_ADD(c));
             }
@@ -1088,7 +1103,11 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           }
           else if (!str_cmp(field, "vnum")) {
             if (subfield && *subfield) {
-              snprintf(str, slen, "%d", IS_NPC(c) ? (int)(GET_MOB_VNUM(c) == atoi(subfield)) : -1 );
+             /* When this had -1 at the end of the line it returned true for PC's if you did
+              * something like if %actor.vnum(500)%. It should return false for PC's instead 
+              * -- Fizban 02/18
+              */ 
+              snprintf(str, slen, "%d", IS_NPC(c) ? (int)(GET_MOB_VNUM(c) == atoi(subfield)) : 0 );
             } else {
               if (IS_NPC(c))
                 snprintf(str, slen, "%d", GET_MOB_VNUM(c));
@@ -1109,9 +1128,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
               int addition = atoi(subfield);
               int max = (IS_NPC(c) || GET_LEVEL(c) >= LVL_GRGOD) ? 25 : 18;
-              GET_WIS(c) += addition;
-              if (GET_WIS(c) > max) GET_WIS(c) = max;
-              if (GET_WIS(c) < 3) GET_WIS(c) = 3;
+              c->real_abils.wis += addition;
+              if (c->real_abils.wis > max) c->real_abils.wis = max;
+              if (c->real_abils.wis < 3) c->real_abils.wis = 3;
             }
             snprintf(str, slen, "%d", GET_WIS(c));
           }
@@ -1196,8 +1215,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           /* thanks to Jamie Nelson (Mordecai of 4 Dimensions MUD) */
           else if (!str_cmp(field, "count")) {
             if (GET_OBJ_TYPE(o) == ITEM_CONTAINER)
-              snprintf(str, slen, "%d", item_in_list(subfield,
-o->contains));
+              snprintf(str, slen, "%d", item_in_list(subfield, o->contains));
             else
             	strcpy(str, "0");
           }
@@ -1218,8 +1236,7 @@ o->contains));
           /* thanks to Jamie Nelson (Mordecai of 4 Dimensions MUD) */
           if (!str_cmp(field, "has_in")) {
             if (GET_OBJ_TYPE(o) == ITEM_CONTAINER)
-              snprintf(str, slen, "%s", (item_in_list(subfield,
-o->contains) ? "1" : "0"));
+              snprintf(str, slen, "%s", (item_in_list(subfield, o->contains) ? "1" : "0"));
             else
               strcpy(str, "0");
           }
