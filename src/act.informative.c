@@ -1090,7 +1090,7 @@ ACMD(do_help)
 
   if ((mid = search_help(argument, GET_LEVEL(ch))) == NOWHERE) {
     send_to_char(ch, "There is no help on that word.\r\n");
-    mudlog(NRM, MAX(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
+    mudlog(NRM, MIN(LVL_IMPL, GET_INVIS_LEV(ch)), TRUE,
       "%s tried to get help on %s", GET_NAME(ch), argument);
     for (i = 0; i < top_of_helpt; i++)  {
       if (help_table[i].min_level > GET_LEVEL(ch))
@@ -1924,6 +1924,9 @@ ACMD(do_toggle)
     {"wimpy", 0, 0, "\n", "\n"},
     {"pagelength", 0, 0, "\n", "\n"},
     {"screenwidth", 0, 0, "\n", "\n"},
+    {"zoneresets", PRF_ZONERESETS, LVL_IMPL,
+    "You will no longer see zone resets.\r\n",
+    "You will now see zone resets.\r\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
@@ -1957,7 +1960,7 @@ ACMD(do_toggle)
         "       NoHassle: %-3s    "
         "      Holylight: %-3s    "
         "      ShowVnums: %-3s\r\n"
-        "         Syslog: %-3s\r\n",
+        "         Syslog: %-3s%s    ",
 
         ONOFF(PRF_FLAGGED(ch, PRF_BUILDWALK)),
         ONOFF(PRF_FLAGGED(ch, PRF_NOWIZ)),
@@ -1965,7 +1968,13 @@ ACMD(do_toggle)
         ONOFF(PRF_FLAGGED(ch, PRF_NOHASSLE)),
         ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
         ONOFF(PRF_FLAGGED(ch, PRF_SHOWVNUMS)),
-        types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)]);
+        types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)],
+        GET_LEVEL(ch) == LVL_IMPL ? "" : "\r\n");
+    }
+    if (GET_LEVEL(ch) >= LVL_IMPL) {
+      send_to_char(ch,
+        "     ZoneResets: %-3s\r\n",
+        ONOFF(PRF_FLAGGED(ch, PRF_ZONERESETS)));
     }
 
   send_to_char(ch,

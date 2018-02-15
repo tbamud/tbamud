@@ -191,8 +191,9 @@ int strn_cmp(const char *arg1, const char *arg2, int n)
 void basic_mud_vlog(const char *format, va_list args)
 {
   time_t ct = time(0);
-  char timestr[20];
-
+  char timestr[21];
+  int i;
+  
   if (logfile == NULL) {
     puts("SYSERR: Using log() before stream was initialized!");
     return;
@@ -201,6 +202,7 @@ void basic_mud_vlog(const char *format, va_list args)
   if (format == NULL)
     format = "SYSERR: log() received a NULL format.";
 
+  for (i=0;i<21;i++) timestr[i]=0;
   strftime(timestr, sizeof(timestr), "%b %d %H:%M:%S %Y", localtime(&ct));
 
   fprintf(logfile, "%-20.20s :: ", timestr);

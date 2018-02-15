@@ -355,6 +355,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "wizlock"  , "wizlock" , POS_DEAD    , do_wizlock  , LVL_IMPL, 0 },
   { "write"    , "write"   , POS_STANDING, do_write    , 1, 0 },
 
+  { "zoneresets", "zoner" ,  POS_DEAD    , do_gen_tog , LVL_IMPL, SCMD_ZONERESETS },
   { "zreset"   , "zreset"  , POS_DEAD    , do_zreset   , LVL_BUILDER, 0 },
   { "zedit"    , "zedit"   , POS_DEAD    , do_oasis_zedit, LVL_BUILDER, 0 },
   { "zlist"    , "zlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_ZLIST },
@@ -1148,7 +1149,7 @@ static int perform_dupe_check(struct descriptor_data *d)
   case RECON:
     write_to_output(d, "Reconnecting.\r\n");
     act("$n has reconnected.", TRUE, d->character, 0, 0, TO_ROOM);
-    mudlog(NRM, MAX(0, GET_INVIS_LEV(d->character)), TRUE, "%s [%s] has reconnected.", GET_NAME(d->character), d->host);
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "%s [%s] has reconnected.", GET_NAME(d->character), d->host);
     if (has_mail(GET_IDNUM(d->character)))
       write_to_output(d, "You have mail waiting.\r\n");
     break;
@@ -1775,7 +1776,8 @@ void nanny(struct descriptor_data *d, char *arg)
 
       delete_variables(GET_NAME(d->character));
       write_to_output(d, "Character '%s' deleted! Goodbye.\r\n", GET_NAME(d->character));
-      mudlog(NRM, LVL_GOD, TRUE, "%s (lev %d) has self-deleted.", GET_NAME(d->character), GET_LEVEL(d->character));
+      mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE, "%s (lev %d) has self-deleted.",
+       GET_NAME(d->character), GET_LEVEL(d->character));
       STATE(d) = CON_CLOSE;
       return;
     } else {

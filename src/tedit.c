@@ -38,7 +38,7 @@ void tedit_string_cleanup(struct descriptor_data *d, int terminator)
         fputs(*d->str, fl);
       }
       fclose(fl);
-      mudlog(CMP, LVL_GOD, TRUE, "OLC: %s saves '%s'.", GET_NAME(d->character), storage);
+      mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s saves '%s'.", GET_NAME(d->character), storage);
       write_to_output(d, "Saved.\r\n");
       if (!strcmp(storage, NEWS_FILE))
         newsmod = time(0);

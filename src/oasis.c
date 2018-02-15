@@ -197,13 +197,18 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
     act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
     if (cleanup_type == CLEANUP_CONFIG)
-      mudlog(BRF, LVL_IMMORT, TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
+      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), 
+        TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
     else if (STATE(d) == CON_TEDIT)
-      mudlog(BRF, LVL_IMMORT, TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
+      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+       TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
     else if (STATE(d) == CON_HEDIT)
-      mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
+      mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+       TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
     else
-      mudlog(CMP, LVL_IMMORT, TRUE, "OLC: %s stops editing zone %d allowed zone %d", GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
+      mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+        TRUE, "OLC: %s stops editing zone %d allowed zone %d", 
+        GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
 
     STATE(d) = CON_PLAYING;
   }

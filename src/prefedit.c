@@ -161,6 +161,10 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
              ONOFF(PREFEDIT_FLAGGED(PRF_NOHASSLE)), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
              CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(PREFEDIT_FLAGGED(PRF_HOLYLIGHT)), CCCYN(d->character, C_NRM)
              );
+    if (GET_LEVEL(PREFEDIT_GET_CHAR) == LVL_IMPL)
+      send_to_char(d->character, "%s7%s) Zone Resets  %s[%s%3s%s]\r\n",
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
+             ONOFF(PREFEDIT_FLAGGED(PRF_ZONERESETS)), CCCYN(d->character, C_NRM));
   }
 
 /* Finishing Off */
@@ -360,7 +364,8 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
     case 'y':
     case 'Y':
       prefedit_save_to_char(d);
-      mudlog(CMP, LVL_BUILDER, TRUE, "OLC: %s edits toggles for %s", GET_NAME(d->character), GET_NAME(OLC_PREFS(d)->ch));
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits toggles for %s", 
+        GET_NAME(d->character), GET_NAME(OLC_PREFS(d)->ch));
       /*. No strings to save - cleanup all .*/
       cleanup_olc(d, CLEANUP_ALL);
       break;
@@ -497,6 +502,18 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       else
       {
         TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
+      }
+      break;
+
+    case '7':
+      if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMPL)
+      {
+        send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
+        prefedit_disp_main_menu(d);
+      }
+      else
+      {
+        TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_ZONERESETS);
       }
       break;
 
