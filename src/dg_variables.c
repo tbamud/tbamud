@@ -915,7 +915,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (subfield && *subfield) {
                char buf[MAX_STRING_LENGTH];
                sprintbitarray(MOB_FLAGS(c), action_bits, PM_ARRAY_MAX, buf);
-              if (buf) {
                 if (str_str(buf, subfield))
                   snprintf(str, slen, "1");
                 else
@@ -925,7 +924,6 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
                 snprintf(str, slen, "0");
               }
             }
-          }
           break;
         case 'p':
           /* Thanks to Christian Ejlertsen for this idea
