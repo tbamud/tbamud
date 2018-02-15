@@ -717,7 +717,7 @@ struct obj_data
   struct obj_data *in_obj; /**< Points to carrying object, or NULL */
   struct obj_data *contains; /**< List of objects being carried, or NULL */
 
-  long id; /**< used by DG triggers - unique id  */
+  long script_id; /**< used by DG triggers - fetch only with obj_script_id()  */
   struct trig_proto_list *proto_script; /**< list of default triggers  */
   struct script_data *script;           /**< script info for the object */
 
@@ -1033,7 +1033,7 @@ struct char_data
   struct obj_data *carrying;    /**< List head for objects in inventory */
   struct descriptor_data *desc; /**< Descriptor/connection info; NPCs = NULL */
 
-  long id; /**< used by DG triggers - unique id */
+  long script_id; /**< used by DG triggers - fetch only with char_script_id() */
   struct trig_proto_list *proto_script; /**< list of default triggers */
   struct script_data *script;           /**< script info for the object */
   struct script_memory *memory;         /**< for mob memory triggers */

@@ -537,7 +537,8 @@ do                                                              \
 /** Unique ID of ch. */
 #define GET_IDNUM(ch)	  ((ch)->char_specials.saved.idnum)
 /** Returns contents of id field from x. */
-#define GET_ID(x)         ((x)->id)
+/** Warning: GET_ID is deprecated and you should use char_script_id, obj_script_id, room_script_id */
+/** #define GET_ID(x)         ((x)->id) */
 /** Weight carried by ch. */
 #define IS_CARRYING_W(ch) ((ch)->char_specials.carry_weight)
 /** Number of items carried by ch. */

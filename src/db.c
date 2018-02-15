@@ -2345,9 +2345,7 @@ struct char_data *create_char(void)
   ch->next = character_list;
   character_list = ch;
 
-  GET_ID(ch) = max_mob_id++;
-  /* find_char helper */
-  add_to_lookup_table(GET_ID(ch), (void *)ch);
+  ch->script_id = 0;	// set later by char_script_id
 
   return (ch);
 }
@@ -2398,10 +2396,7 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
 
   mob_index[i].number++;
 
-  GET_ID(mob) = max_mob_id++;
-  
-  /* find_char helper */
-  add_to_lookup_table(GET_ID(mob), (void *)mob);
+  mob->script_id = 0;	// this is set later by char_script_id
 
   copy_proto_script(&mob_proto[i], mob, MOB_TRIGGER);
   assign_triggers(mob, MOB_TRIGGER);
@@ -2421,9 +2416,7 @@ struct obj_data *create_obj(void)
   
   obj->events = NULL;
 
-  GET_ID(obj) = max_obj_id++;
-  /* find_obj helper */
-  add_to_lookup_table(GET_ID(obj), (void *)obj);
+  obj->script_id = 0;	// this is set later by obj_script_id
 
   return (obj);
 }
@@ -2449,9 +2442,7 @@ struct obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
 
   obj_index[i].number++;
 
-  GET_ID(obj) = max_obj_id++;
-  /* find_obj helper */
-  add_to_lookup_table(GET_ID(obj), (void *)obj);
+  obj->script_id = 0;	// this is set later by obj_script_id
 
   copy_proto_script(&obj_proto[i], obj, OBJ_TRIGGER);
   assign_triggers(obj, OBJ_TRIGGER);
@@ -3252,8 +3243,9 @@ void free_char(struct char_data *ch)
 
   /* find_char helper, when free_char is called with a blank character struct,
    * ID is set to 0, and has not yet been added to the lookup table. */
-  if (GET_ID(ch) != 0)
-  remove_from_lookup_table(GET_ID(ch));
+  if (ch->script_id != 0) {
+    remove_from_lookup_table(ch->script_id);
+  }
 
   free(ch);
 }
@@ -3275,8 +3267,10 @@ void free_obj(struct obj_data *obj)
   if (SCRIPT(obj))
     extract_script(obj, OBJ_TRIGGER);
 
-  /* find_obj helper */
-  remove_from_lookup_table(GET_ID(obj));
+  /* find_obj helper (0 is not-yet-added to the table) */
+  if (obj->script_id != 0) {
+    remove_from_lookup_table(obj->script_id);
+  }
 
   free(obj);
 }

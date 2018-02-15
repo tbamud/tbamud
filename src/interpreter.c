@@ -1254,9 +1254,9 @@ int enter_player_game (struct descriptor_data *d)
     load_room = r_frozen_start_room;
 
   /* copyover */
-  GET_ID(d->character) = GET_IDNUM(d->character);
+  d->character->script_id = GET_IDNUM(d->character);
   /* find_char helper */
-  add_to_lookup_table(GET_ID(d->character), (void *)d->character);
+  add_to_lookup_table(d->character->script_id, (void *)d->character);
 
   /* After moving saving of variables to the player file, this should only
    * be called in case nothing was found in the pfile. If something was

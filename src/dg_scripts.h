@@ -420,9 +420,9 @@ void wld_command_interpreter(room_data *room, char *argument);
  * mob id's: MOB_ID_BASE to ROOM_ID_BASE - 1
  * room id's: ROOM_ID_BASE to OBJ_ID_BASE - 1
  * object id's: OBJ_ID_BASE and higher */
-#define MOB_ID_BASE	  50000  /* 50000 player IDNUMS should suffice */
-#define ROOM_ID_BASE    1050000 /* 1000000 Mobs */
-#define OBJ_ID_BASE     1300000 /* 250000 Rooms */
+#define MOB_ID_BASE	  10000000  /* 10000000 player IDNUMS should suffice */
+#define ROOM_ID_BASE    (10000000 + MOB_ID_BASE) /* 10000000 Mobs */
+#define OBJ_ID_BASE     (10000000 + ROOM_ID_BASE) /* 10000000 Rooms */
 
 #define SCRIPT(o)		  ((o)->script)
 #define SCRIPT_MEM(c)             ((c)->memory)
@@ -437,8 +437,18 @@ void wld_command_interpreter(room_data *room, char *argument);
 #define TRIGGER_CHECK(t, type)   (IS_SET(GET_TRIG_TYPE(t), type) && \
 				  !GET_TRIG_DEPTH(t))
 
-#define ADD_UID_VAR(buf, trig, go, name, context) do { \
-		         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(go)); \
+
+/* This formerly used 'go' instead of 'id' and referenced 'go->id' but this is
+* no longer possible since script ids must be referenced with char_script_id()
+* and obj_script_id().
+*/
+#define ADD_UID_VAR(buf, trig, id, name, context) do { \
+		         sprintf(buf, "%c%ld", UID_CHAR, id); \
                          add_var(&GET_TRIG_VARS(trig), name, buf, context); } while (0)
+
+// id helpers
+extern long char_script_id(char_data *ch);
+extern long obj_script_id(obj_data *obj);
+#define room_script_id(room)  ((long)(room)->number + ROOM_ID_BASE)
 
 #endif /* _DG_SCRIPTS_H_ */

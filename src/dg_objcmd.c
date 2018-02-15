@@ -330,7 +330,7 @@ static OCMD(do_otransform)
     tmpobj.worn_on = obj->worn_on;
     tmpobj.in_obj = obj->in_obj;
     tmpobj.contains = obj->contains;
-    tmpobj.id = obj->id;
+    tmpobj.script_id = obj->script_id;
     tmpobj.proto_script = obj->proto_script;
     tmpobj.script = obj->script;
     tmpobj.next_content = obj->next_content;
@@ -491,7 +491,7 @@ static OCMD(do_dgoload)
 
       if (SCRIPT(obj)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
-        sprintf(buf, "%c%ld", UID_CHAR, GET_ID(mob));
+        sprintf(buf, "%c%ld", UID_CHAR, char_script_id(mob));
         add_var(&(SCRIPT(obj)->global_vars), "lastloaded", buf, 0);
       }
 
@@ -506,7 +506,7 @@ static OCMD(do_dgoload)
 
       if (SCRIPT(obj)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
-        sprintf(buf, "%c%ld", UID_CHAR, GET_ID(object));
+        sprintf(buf, "%c%ld", UID_CHAR, obj_script_id(object));
         add_var(&(SCRIPT(obj)->global_vars), "lastloaded", buf, 0);
       }
 
