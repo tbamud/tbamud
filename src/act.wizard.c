@@ -1151,7 +1151,6 @@ static void stop_snooping(struct char_data *ch)
   else {
     send_to_char(ch, "You stop snooping.\r\n");
 
-    if (GET_LEVEL(ch) < LVL_IMPL)
       mudlog(BRF, GET_LEVEL(ch), TRUE, "(GC) %s stops snooping", GET_NAME(ch));
 
     ch->desc->snooping->snoop_by = NULL;
@@ -1193,7 +1192,6 @@ ACMD(do_snoop)
     }
     send_to_char(ch, "%s", CONFIG_OK);
 
-    if (GET_LEVEL(ch) < LVL_IMPL)
       mudlog(BRF, GET_LEVEL(ch), TRUE, "(GC) %s snoops %s", GET_NAME(ch), GET_NAME(victim));
 
     if (ch->desc->snooping)
@@ -1445,13 +1443,14 @@ ACMD(do_purge)
   if (*buf) {
     t = buf;
     number = get_number(&t);
-    if ((vict = get_char_vis(ch, buf, &number, FIND_CHAR_ROOM)) != NULL) {      if (!IS_NPC(vict) && (GET_LEVEL(ch) <= GET_LEVEL(vict))) {
-        send_to_char(ch, "You can't purge %s!\r\n", HMHR(vict));
+    if ((vict = get_char_vis(ch, buf, &number, FIND_CHAR_ROOM)) != NULL) {      
+      if (!IS_NPC(vict) && (GET_LEVEL(ch) <= GET_LEVEL(vict))) {
+        send_to_char(ch, "You can't purge %s!\r\n", GET_NAME(vict));
 	return;
       }
       act("$n disintegrates $N.", FALSE, ch, 0, vict, TO_NOTVICT);
 
-      if (!IS_NPC(vict) && GET_LEVEL(ch) < LVL_GOD) {
+      if (!IS_NPC(vict)) {
 	mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has purged %s.", GET_NAME(ch), GET_NAME(vict));
 	if (vict->desc) {
 	  STATE(vict->desc) = CON_CLOSE;
@@ -1602,6 +1601,8 @@ ACMD(do_restore)
   else if (!IS_NPC(vict) && ch != vict && GET_LEVEL(vict) >= GET_LEVEL(ch))
     act("$E doesn't need your help.", FALSE, ch, 0, vict, TO_CHAR);
   else {
+    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s restored %s",GET_NAME(ch), GET_NAME(vict));
+
     GET_HIT(vict) = GET_MAX_HIT(vict);
     GET_MANA(vict) = GET_MAX_MANA(vict);
     GET_MOVE(vict) = GET_MAX_MOVE(vict);
@@ -1616,7 +1617,7 @@ ACMD(do_restore)
 	vict->real_abils.intel = 25;
 	vict->real_abils.wis = 25;
 	vict->real_abils.dex = 25;
-	vict->real_abils.str = 18;
+	vict->real_abils.str = 25;
 	vict->real_abils.con = 25;
 	vict->real_abils.cha = 25;
       }
@@ -2279,7 +2280,7 @@ ACMD(do_zreset)
       for (i = 0; i <= top_of_zone_table; i++)
       reset_zone(i);
     send_to_char(ch, "Reset world.\r\n");
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset entire world.", GET_NAME(ch));
+    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset entire world.", GET_NAME(ch));
     return; }
   } else if (*arg == '.' || !*arg)
     i = world[IN_ROOM(ch)].zone;
@@ -2292,7 +2293,7 @@ ACMD(do_zreset)
   if (i <= top_of_zone_table && (can_edit_zone(ch, i) || GET_LEVEL(ch) > LVL_IMMORT)) {
     reset_zone(i);
     send_to_char(ch, "Reset zone #%d: %s.\r\n", zone_table[i].number, zone_table[i].name);
-    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset zone %d (%s)", GET_NAME(ch), zone_table[i].number, zone_table[i].name);
+    mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s reset zone %d (%s)", GET_NAME(ch), zone_table[i].number, zone_table[i].name);
   } else
     send_to_char(ch, "You do not have permission to reset this zone. Try %d.\r\n", GET_OLC_ZONE(ch));
 }
@@ -4748,7 +4749,7 @@ ACMD(do_zlock)
       return;
     }
     send_to_char(ch, "%d zones have now been locked.\r\n", counter);
-    mudlog(BRF, LVL_GOD, TRUE, "(GC) %s has locked ALL zones!", GET_NAME(ch));
+    mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has locked ALL zones!", GET_NAME(ch));
     return;
   }
   if (is_abbrev(arg, "list")) {
@@ -4791,7 +4792,7 @@ ACMD(do_zlock)
   }
   SET_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
   if (save_zone(zn)) {
-    mudlog(NRM, LVL_GRGOD, TRUE, "(GC) %s has locked zone %d", GET_NAME(ch), znvnum);
+    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has locked zone %d", GET_NAME(ch), znvnum);
   }
   else
   {
@@ -4842,7 +4843,7 @@ ACMD(do_zunlock)
       return;
     }
     send_to_char(ch, "%d zones have now been unlocked.\r\n", counter);
-    mudlog(BRF, LVL_GOD, TRUE, "(GC) %s has unlocked ALL zones!", GET_NAME(ch));
+    mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has unlocked ALL zones!", GET_NAME(ch));
     return;
   }
   if (is_abbrev(arg, "list")) {
@@ -4885,7 +4886,7 @@ ACMD(do_zunlock)
   }
   REMOVE_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
   if (save_zone(zn)) {
-    mudlog(NRM, LVL_GRGOD, TRUE, "(GC) %s has unlocked zone %d", GET_NAME(ch), znvnum);
+    mudlog(NRM, MAX(LVL_GRGOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has unlocked zone %d", GET_NAME(ch), znvnum);
   }
   else
   {

@@ -248,7 +248,7 @@ static void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
         else
           equip_char(ch, obj, j);
       } else {  /* Oops, saved a player with double equipment? */
-        mudlog(BRF, LVL_IMMORT, TRUE,
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,
                "SYSERR: autoeq: '%s' already equipped in position %d.", GET_NAME(ch), location);
         location = LOC_INVENTORY;
       }

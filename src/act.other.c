@@ -729,7 +729,9 @@ ACMD(do_gen_tog)
     {"Autokey disabled.\r\n",
     "Autokey enabled.\r\n"},
     {"Autodoor disabled.\r\n",
-    "Autodoor enabled.\r\n"}
+    "Autodoor enabled.\r\n"},
+    {"ZoneResets disabled.\r\n",
+    "ZoneResets enabled.\r\n"}
   };
 
   if (IS_NPC(ch))
@@ -783,7 +785,7 @@ ACMD(do_gen_tog)
     break;
   case SCMD_CLS:
     result = PRF_TOG_CHK(ch, PRF_CLS);
-    break;
+    break;    
   case SCMD_BUILDWALK:
     if (GET_LEVEL(ch) < LVL_BUILDER) {
       send_to_char(ch, "Builders only, sorry.\r\n");
@@ -839,6 +841,9 @@ ACMD(do_gen_tog)
     break;
   case SCMD_AUTODOOR:
     result = PRF_TOG_CHK(ch, PRF_AUTODOOR);
+    break;
+  case SCMD_ZONERESETS:
+    result = PRF_TOG_CHK(ch, PRF_ZONERESETS);
     break;
   default:
     log("SYSERR: Unknown subcmd %d in do_gen_toggle.", subcmd);

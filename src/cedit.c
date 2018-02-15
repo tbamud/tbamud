@@ -57,7 +57,7 @@ ACMD(do_oasis_cedit)
     act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
     SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-    mudlog(BRF, LVL_IMMORT, TRUE,
+    mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
       "OLC: %s starts editing the game configuration.", GET_NAME(ch));
     return;
   } else if (str_cmp("save", buf1) != 0) {

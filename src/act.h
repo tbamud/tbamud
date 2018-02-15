@@ -225,6 +225,7 @@ ACMD(do_gen_tog);
 #define SCMD_WIMPY       30
 #define SCMD_PAGELENGTH  31
 #define SCMD_SCREENWIDTH 32
+#define SCMD_ZONERESETS  33
 
 /* do_quit */
 ACMD(do_quit);

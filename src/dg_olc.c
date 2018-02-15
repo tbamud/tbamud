@@ -67,7 +67,7 @@ ACMD(do_oasis_trigedit)
   d = ch->desc;
   /* Give descriptor an OLC structure. */
   if (d->olc) {
-    mudlog(BRF, LVL_IMMORT, TRUE,
+    mudlog(BRF, LVL_BUILDER, TRUE,
       "SYSERR: do_oasis_trigedit: Player already had olc structure.");
     free(d->olc);
   }
@@ -104,7 +104,7 @@ ACMD(do_oasis_trigedit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, LVL_IMMORT, TRUE,"OLC: %s starts editing zone %d [trigger](allowed zone %d)",
+  mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,"OLC: %s starts editing zone %d [trigger](allowed zone %d)",
          GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 

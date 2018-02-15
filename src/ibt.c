@@ -683,7 +683,8 @@ ACMD(do_ibt)
        case SCMD_TYPO: LINK( ibtData, first_typo, last_typo, next, prev );
                        break;
     }
-    mudlog(NRM,LVL_IMMORT, FALSE, "%s has posted %s %s!", GET_NAME(ch), TANA(CMD_NAME), CMD_NAME);
+    mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), 
+      FALSE, "%s has posted %s %s!", GET_NAME(ch), TANA(CMD_NAME), CMD_NAME);
     return;
   }
   else if (is_abbrev(arg,"resolve"))
@@ -839,7 +840,7 @@ ACMD(do_oasis_ibtedit)
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
 
-  mudlog(CMP, LVL_IMMORT, TRUE,"OLC: %s starts editing %s %d",
+  mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE,"OLC: %s starts editing %s %d",
     GET_NAME(ch), IBT_TYPE, OLC_NUM(d));
 }
 

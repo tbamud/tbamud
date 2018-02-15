@@ -37,6 +37,7 @@
 #include "ibt.h"
 #include "mud_event.h"
 #include "msgedit.h"
+#include "screen.h"
 #include <sys/stat.h>
 
 /*  declarations of most of the 'global' variables */
@@ -2506,8 +2507,14 @@ void zone_update(void)
     if (zone_table[update_u->zone_to_reset].reset_mode == 2 ||
 	is_empty(update_u->zone_to_reset)) {
       reset_zone(update_u->zone_to_reset);
-      mudlog(CMP, LVL_IMPL, FALSE, "Auto zone reset: %s (Zone %d)",
+      mudlog(CMP, LVL_IMPL+1, FALSE, "Auto zone reset: %s (Zone %d)",
           zone_table[update_u->zone_to_reset].name, zone_table[update_u->zone_to_reset].number);
+      struct descriptor_data *pt;
+      for (pt = descriptor_list; pt; pt = pt->next)
+        if (IS_PLAYING(pt) && pt->character && PRF_FLAGGED(pt->character, PRF_ZONERESETS))
+          send_to_char(pt->character, "%s[Auto zone reset: %s (Zone %d)]%s", 
+            CCGRN(pt->character, C_NRM), zone_table[update_u->zone_to_reset].name, 
+            zone_table[update_u->zone_to_reset].number, CCNRM(pt->character, C_NRM));
       /* dequeue */
       if (update_u == reset_q.head)
 	reset_q.head = reset_q.head->next;

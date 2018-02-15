@@ -192,7 +192,8 @@ void basic_mud_vlog(const char *format, va_list args)
 {
   time_t ct = time(0);
   char timestr[21];
-
+  int i;
+  
   if (logfile == NULL) {
     puts("SYSERR: Using log() before stream was initialized!");
     return;

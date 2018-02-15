@@ -367,7 +367,7 @@ static void check_idling(struct char_data *ch)
 	Crash_rentsave(ch, 0);
       else
 	Crash_idlesave(ch);
-      mudlog(CMP, LVL_GOD, TRUE, "%s force-rented and extracted (idle).", GET_NAME(ch));
+      mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s force-rented and extracted (idle).", GET_NAME(ch));
       add_llog_entry(ch, LAST_IDLEOUT);
       extract_char(ch);
     }
