@@ -437,8 +437,18 @@ void wld_command_interpreter(room_data *room, char *argument);
 #define TRIGGER_CHECK(t, type)   (IS_SET(GET_TRIG_TYPE(t), type) && \
 				  !GET_TRIG_DEPTH(t))
 
-#define ADD_UID_VAR(buf, trig, go, name, context) do { \
-		         sprintf(buf, "%c%ld", UID_CHAR, GET_ID(go)); \
+
+/* This formerly used 'go' instead of 'id' and referenced 'go->id' but this is
+* no longer possible since script ids must be referenced with char_script_id()
+* and obj_script_id().
+*/
+#define ADD_UID_VAR(buf, trig, id, name, context) do { \
+		         sprintf(buf, "%c%ld", UID_CHAR, id); \
                          add_var(&GET_TRIG_VARS(trig), name, buf, context); } while (0)
+
+// id helpers
+extern long char_script_id(char_data *ch);
+extern long obj_script_id(obj_data *obj);
+#define room_script_id(room)  ((long)(room)->number + ROOM_ID_BASE)
 
 #endif /* _DG_SCRIPTS_H_ */

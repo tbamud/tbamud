@@ -92,7 +92,7 @@ int item_in_list(char *item, obj_data *list)
     long id = atol(item + 1);
 
     for (i = list; i; i = i->next_content) {
-      if (id == GET_ID(i))
+      if (id == i->script_id)
         count ++;
       if (GET_OBJ_TYPE(i) == ITEM_CONTAINER)
         count += item_in_list(item, i->contains);
@@ -299,13 +299,13 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
       if (!str_cmp(var, "self")) {
         switch (type) {
         case MOB_TRIGGER:
-          snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID((char_data *) go));
+          snprintf(str, slen, "%c%ld", UID_CHAR, char_script_id((char_data *) go));
           break;
         case OBJ_TRIGGER:
-          snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID((obj_data *) go));
+          snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id((obj_data *) go));
           break;
         case WLD_TRIGGER:
-          snprintf(str, slen, "%c%ld", UID_CHAR, (long) ((room_data *)go)->number + ROOM_ID_BASE);
+          snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id((room_data *)go));
           break;
         }
       }
@@ -539,7 +539,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           }
 
           if (rndm)
-            snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(rndm));
+            snprintf(str, slen, "%c%ld", UID_CHAR, char_script_id(rndm));
           else
             *str = '\0';
         }
@@ -704,7 +704,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             } else if ((pos = find_eq_pos_script(subfield)) < 0 || !GET_EQ(c, pos))
               *str = '\0';
             else
-              snprintf(str, slen, "%c%ld",UID_CHAR, GET_ID(GET_EQ(c, pos)));
+              snprintf(str, slen, "%c%ld",UID_CHAR, obj_script_id(GET_EQ(c, pos)));
           }
           else if (!str_cmp(field, "exp")) {
             if (subfield && *subfield) {
@@ -718,7 +718,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         case 'f':
           if (!str_cmp(field, "fighting")) {
             if (FIGHTING(c))
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(FIGHTING(c)));
+              snprintf(str, slen, "%c%ld", UID_CHAR, char_script_id(FIGHTING(c)));
             else
               *str = '\0';
           }
@@ -726,7 +726,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (!c->followers || !c->followers->follower)
               *str = '\0';
             else
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(c->followers->follower));
+              snprintf(str, slen, "%c%ld", UID_CHAR, char_script_id(c->followers->follower));
           }
           break;
         case 'g':
@@ -784,7 +784,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           break;
         case 'i':
           if (!str_cmp(field, "id"))
-            snprintf(str, slen, "%ld", GET_ID(c));
+            snprintf(str, slen, "%ld", char_script_id(c));
           /* new check for pc/npc status */
           else if (!str_cmp(field, "is_pc")) {
             if (IS_NPC(c))
@@ -806,7 +806,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if(subfield && *subfield) {
               for (obj = c->carrying;obj;obj=obj->next_content) {
                 if(GET_OBJ_VNUM(obj)==atoi(subfield)) {
-                  snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(obj)); /* arg given, found */
+                  snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id(obj)); /* arg given, found */
                   return;
                 }
               }
@@ -814,7 +814,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
                 *str = '\0'; /* arg given, not found */
             } else { /* no arg given */
               if (c->carrying) {
-                snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(c->carrying));
+                snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id(c->carrying));
               } else {
                 *str = '\0';
               }
@@ -866,7 +866,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (!c->master)
               *str = '\0';
             else
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(c->master));
+              snprintf(str, slen, "%c%ld", UID_CHAR, char_script_id(c->master));
           }
           else if (!str_cmp(field, "maxhitp")) {
             if (subfield && *subfield) {
@@ -903,7 +903,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
           else if (!str_cmp(field, "next_in_room")) {
             if (c->next_in_room)
-              snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(c->next_in_room));
+              snprintf(str, slen,"%c%ld",UID_CHAR, char_script_id(c->next_in_room));
             else
               *str = '\0';
           }
@@ -976,7 +976,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 /* see note in dg_scripts.h */
 #ifdef ACTOR_ROOM_IS_UID
             snprintf(str, slen, "%c%ld",UID_CHAR,
-               (IN_ROOM(c)!= NOWHERE) ? (long) world[IN_ROOM(c)].number + ROOM_ID_BASE : ROOM_ID_BASE);
+               (IN_ROOM(c)!= NOWHERE) ? room_script_id(world + IN_ROOM(c)) : ROOM_ID_BASE);
 #else
             snprintf(str, slen, "%d", (IN_ROOM(c)!= NOWHERE) ? world[IN_ROOM(c)].number : 0);
 #endif
@@ -1182,14 +1182,14 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
           else if (!str_cmp(field, "carried_by")) {
             if (o->carried_by)
-              snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->carried_by));
+              snprintf(str, slen,"%c%ld",UID_CHAR, char_script_id(o->carried_by));
             else
               *str = '\0';
           }
 
           else if (!str_cmp(field, "contents")) {
             if (o->contains)
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(o->contains));
+              snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id(o->contains));
             else
               *str = '\0';
           }
@@ -1234,11 +1234,11 @@ o->contains) ? "1" : "0"));
           break;
         case 'i':
           if (!str_cmp(field, "id"))
-            snprintf(str, slen, "%ld", GET_ID(o));
+            snprintf(str, slen, "%ld", obj_script_id(o));
 
           else if (!str_cmp(field, "is_inroom")) {
             if (IN_ROOM(o) != NOWHERE)
-              snprintf(str, slen,"%c%ld",UID_CHAR, (long) world[IN_ROOM(o)].number + ROOM_ID_BASE);
+              snprintf(str, slen,"%c%ld",UID_CHAR, room_script_id(world + IN_ROOM(o)));
             else
               *str = '\0';
           }
@@ -1252,7 +1252,7 @@ o->contains) ? "1" : "0"));
 
           else if (!str_cmp(field, "next_in_list")) {
             if (o->next_content)
-              snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->next_content));
+              snprintf(str, slen,"%c%ld",UID_CHAR, obj_script_id(o->next_content));
             else
               *str = '\0';
           }
@@ -1270,7 +1270,7 @@ o->contains) ? "1" : "0"));
         case 'r':
           if (!str_cmp(field, "room")) {
             if (obj_room(o) != NOWHERE)
-              snprintf(str, slen,"%c%ld",UID_CHAR, (long)world[obj_room(o)].number + ROOM_ID_BASE);
+              snprintf(str, slen,"%c%ld",UID_CHAR, room_script_id(world + obj_room(o)));
             else
               *str = '\0';
           }
@@ -1326,7 +1326,7 @@ o->contains) ? "1" : "0"));
 
           else if (!str_cmp(field, "worn_by")) {
             if (o->worn_by)
-              snprintf(str, slen,"%c%ld",UID_CHAR, GET_ID(o->worn_by));
+              snprintf(str, slen,"%c%ld",UID_CHAR, char_script_id(o->worn_by));
             else
               *str = '\0';
           }
@@ -1390,7 +1390,7 @@ o->contains) ? "1" : "0"));
           for (obj = r->contents; obj; obj = obj->next_content) {
             if (GET_OBJ_VNUM(obj) == atoi(subfield)) {
               /* arg given, found */
-              snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(obj));
+              snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id(obj));
               return;
             }
           }
@@ -1398,7 +1398,7 @@ o->contains) ? "1" : "0"));
             *str = '\0'; /* arg given, not found */
         } else { /* no arg given */
           if (r->contents) {
-            snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(r->contents));
+            snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id(r->contents));
           } else {
             *str = '\0';
           }
@@ -1407,14 +1407,14 @@ o->contains) ? "1" : "0"));
 
       else if (!str_cmp(field, "people")) {
         if (r->people)
-          snprintf(str, slen, "%c%ld", UID_CHAR, GET_ID(r->people));
+          snprintf(str, slen, "%c%ld", UID_CHAR, char_script_id(r->people));
         else
           *str = '\0';
       }
       else if (!str_cmp(field, "id")) {
         room_rnum rnum = real_room(r->number);
         if (rnum != NOWHERE)
-          snprintf(str, slen, "%ld", (long) world[rnum].number + ROOM_ID_BASE);
+          snprintf(str, slen, "%ld", room_script_id(world + rnum));
         else
           *str = '\0';
       }
@@ -1464,7 +1464,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, NORTH)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, NORTH)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, NORTH)->to_room].number + ROOM_ID_BASE);
+                snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id(world + R_EXIT(r, NORTH)->to_room));
               else
                 *str = '\0';
             }
@@ -1484,7 +1484,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, EAST)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, EAST)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, EAST)->to_room].number + ROOM_ID_BASE);
+                snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id(world + R_EXIT(r, EAST)->to_room));
               else
                 *str = '\0';
             }
@@ -1504,7 +1504,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, SOUTH)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, SOUTH)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, SOUTH)->to_room].number + ROOM_ID_BASE);
+                snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id(world + R_EXIT(r, SOUTH)->to_room));
               else
                 *str = '\0';
             }
@@ -1524,7 +1524,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, WEST)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, WEST)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, WEST)->to_room].number + ROOM_ID_BASE);
+                snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id(world + R_EXIT(r, WEST)->to_room));
               else
                 *str = '\0';
             }
@@ -1544,7 +1544,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, UP)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, UP)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, UP)->to_room].number + ROOM_ID_BASE);
+                snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id(world + R_EXIT(r, UP)->to_room));
               else
                 *str = '\0';
             }
@@ -1564,7 +1564,7 @@ o->contains) ? "1" : "0"));
               sprintbit(R_EXIT(r, DOWN)->exit_info ,exit_bits, str, slen);
             else if (!str_cmp(subfield, "room")) {
               if (R_EXIT(r, DOWN)->to_room != NOWHERE)
-                snprintf(str, slen, "%c%ld", UID_CHAR, (long) world[R_EXIT(r, DOWN)->to_room].number + ROOM_ID_BASE);
+                snprintf(str, slen, "%c%ld", UID_CHAR, room_script_id(world + R_EXIT(r, DOWN)->to_room));
               else
                 *str = '\0';
             }

@@ -379,7 +379,7 @@ ACMD(do_mload)
       char_to_room(mob, rnum);
       if (SCRIPT(ch)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
-        sprintf(buf, "%c%ld", UID_CHAR, GET_ID(mob));
+        sprintf(buf, "%c%ld", UID_CHAR, char_script_id(mob));
         add_var(&(SCRIPT(ch)->global_vars), "lastloaded", buf, 0);
       }
       load_mtrigger(mob);
@@ -392,7 +392,7 @@ ACMD(do_mload)
       }
       if (SCRIPT(ch)) { /* It _should_ have, but it might be detached. */
         char buf[MAX_INPUT_LENGTH];
-        sprintf(buf, "%c%ld", UID_CHAR, GET_ID(object));
+        sprintf(buf, "%c%ld", UID_CHAR, obj_script_id(object));
         add_var(&(SCRIPT(ch)->global_vars), "lastloaded", buf, 0);
       }
       /* special handling to make objects able to load on a person/in a container/worn etc. */
@@ -821,7 +821,7 @@ ACMD(do_mremember)
     }
 
     /* fill in the structure */
-    mem->id = GET_ID(victim);
+    mem->id = char_script_id(victim);
     if (argument && *argument) {
       mem->cmd = strdup(argument);
     }
@@ -865,7 +865,7 @@ ACMD(do_mforget)
     mem = SCRIPT_MEM(ch);
     prev = NULL;
     while (mem) {
-      if (mem->id == GET_ID(victim)) {
+      if (mem->id == char_script_id(victim)) {
         if (mem->cmd) free(mem->cmd);
         if (prev==NULL) {
           SCRIPT_MEM(ch) = mem->next;
@@ -950,7 +950,7 @@ ACMD(do_mtransform)
     if(m->player.description)
       tmpmob.player.description = strdup(m->player.description);
 
-    tmpmob.id = ch->id;
+    tmpmob.script_id = ch->script_id;
     tmpmob.affected = ch->affected;
     tmpmob.carrying = ch->carrying;
     tmpmob.proto_script = ch->proto_script;

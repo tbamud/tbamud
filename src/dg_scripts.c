@@ -151,7 +151,7 @@ obj_data *get_obj_in_list(char *name, obj_data *list)
       id = atoi(name + 1);
 
       for (i = list; i; i = i->next_content)
-        if (id == GET_ID(i))
+        if (id == i->script_id)
           return i;
       
     } else {
@@ -183,7 +183,7 @@ obj_data *get_object_in_equip(char_data * ch, char *name)
 
     for (j = 0; j < NUM_WEARS; j++)
       if ((obj = GET_EQ(ch, j)))
-        if (id == GET_ID(obj))
+        if (id == obj->script_id)
           return (obj);
   } else if (is_number(name)) {
     obj_vnum ovnum = atoi(name);
@@ -438,7 +438,7 @@ obj_data *get_obj_near_obj(obj_data *obj, char *name)
     if (*name == UID_CHAR) {
        id = atoi(name + 1);
 
-      if (id == GET_ID(obj->in_obj))
+      if (id == obj->in_obj->script_id)
         return obj->in_obj;
     } else if (isname(name, obj->in_obj->name))
       return obj->in_obj;
@@ -591,7 +591,7 @@ obj_data *get_obj_in_room(room_data *room, char *name)
   if (*name == UID_CHAR) {
       id = atoi(name + 1);
       for (obj = room->contents; obj; obj = obj->next_content)
-          if (id == GET_ID(obj))
+          if (id == obj->script_id)
               return obj;
   } else {
       for (obj = room->contents; obj; obj = obj->next_content)
@@ -1990,7 +1990,7 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
           break;
       }
       if (c)
-        snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, GET_ID(c));
+        snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, char_script_id(c));
     } else if (is_abbrev(arg, "obj")) {
       struct obj_data *o = NULL;
       switch (type) {
@@ -2008,7 +2008,7 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
           break;
       }
       if (o)
-        snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, GET_ID(o));
+        snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, obj_script_id(o));
     } else if (is_abbrev(arg, "room")) {
       room_rnum r = NOWHERE;
       switch (type) {
@@ -2023,7 +2023,7 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
           break;
       }
       if (r != NOWHERE)
-        snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, (long)world[r].number+ROOM_ID_BASE);
+        snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, room_script_id(world + r));
     } else {
       script_log("Trigger: %s, VNum %d. makeuid syntax error: '%s'",
             GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), cmd);
@@ -3071,4 +3071,50 @@ int trig_is_attached(struct script_data *sc, int trig_num)
       return 1; 
 
   return 0; 
+}
+
+/**
+* Fetches the char's script id -- may also set it here if it's not set yet.
+*
+* This function was provided by EmpireMUD to help reduce how quickly DG Scripts
+* runs out of id space.
+*
+* @param char_data *ch The character.
+* @return long The unique ID.
+*/
+long char_script_id(char_data *ch)
+{
+  if (ch->script_id == 0) {
+    ch->script_id = max_mob_id++;
+    add_to_lookup_table(ch->script_id, (void *)ch);
+    
+    if (max_mob_id >= ROOM_ID_BASE) {
+      mudlog(CMP, LVL_BUILDER, TRUE, "SYSERR: Script IDs for mobiles have exceeded the limit -- reboot to fix this");
+    }
+  }
+  return ch->script_id;
+}
+
+/**
+* Fetches the object's script id -- may also set it here if it's not set yet.
+*
+* This function was provided by EmpireMUD to help reduce how quickly DG Scripts
+* runs out of id space.
+*
+* @param obj_data *obj The object.
+* @return long The unique ID.
+*/
+long obj_script_id(obj_data *obj)
+{
+  if (obj->script_id == 0) {
+    obj->script_id = max_obj_id++;
+    add_to_lookup_table(obj->script_id, (void *)obj);
+    
+    /* objs don't run out of idspace, currently
+    if (max_obj_id > x && reboot_control.time > 16) {
+      mudlog(CMP, LVL_BUILDER, TRUE, "SYSERR: Script IDs for objects have exceeded the limit -- reboot to fix this");
+    }
+    */
+  }
+  return obj->script_id;
 }
