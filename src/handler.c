@@ -990,18 +990,24 @@ void extract_char_final(struct char_data *ch)
  * trivial workaround of 'vict = next_vict' doesn't work if the _next_ person
  * in the list gets killed, for example, by an area spell. Why do we leave them
  * on the character_list? Because code doing 'vict = vict->next' would get
- * really confused otherwise. */
+ * really confused otherwise.
+ *
+ * Fixed a bug where it would over-count extractions if you try to extract the
+ * same character twice (e.g. double-purging in a script) -khufu / EmpireMUD
+ */
 void extract_char(struct char_data *ch)
 {
   char_from_furniture(ch);
   clear_char_event_list(ch);
 
-  if (IS_NPC(ch))
+  if (IS_NPC(ch) && !MOB_FLAGGED(ch, MOB_NOTDEADYET)) {
     SET_BIT_AR(MOB_FLAGS(ch), MOB_NOTDEADYET);
-  else
+    ++extractions_pending;
+  }
+  else if (!IS_NPC(ch) && !PLR_FLAGGED(ch, PLR_NOTDEADYET)) {
     SET_BIT_AR(PLR_FLAGS(ch), PLR_NOTDEADYET);
-
-  extractions_pending++;
+    ++extractions_pending;
+  }
 }
 
 /* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped
