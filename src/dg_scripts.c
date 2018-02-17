@@ -1144,12 +1144,17 @@ ACMD(do_detach)
   char_data *victim = NULL;
   obj_data *object = NULL;
   struct room_data *room;
-  char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH];
+  char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], *snum;
   char *trigger = 0;
-  int num_arg;
+  int num_arg, tn, rn;
+  room_rnum rnum;
+  trig_data *trig;
 
   argument = two_arguments(argument, arg1, arg2);
   one_argument(argument, arg3);
+  tn = atoi(arg3);
+  rn = real_trigger(tn);
+  trig = read_trigger(rn);
 
   if (!*arg1 || !*arg2) {
     send_to_char(ch, "Usage: detach [ mob | object | room ] { target } { trigger |"
@@ -1161,23 +1166,43 @@ ACMD(do_detach)
   num_arg = atoi(arg2);
 
   if (!str_cmp(arg1, "room") || !str_cmp(arg1, "wtr")) {
-    room = &world[IN_ROOM(ch)];
+    if (!*arg3 || (strchr(arg2, '.')))
+      rnum = IN_ROOM(ch);
+    else if (isdigit(*arg2))
+      rnum = find_target_room(ch, arg2);
+    else
+      rnum = NOWHERE;
+
+    if (rnum == NOWHERE) {
+      send_to_char(ch, "That's not a valid room.\r\n");
+      return;
+    }
+
+    room = &world[rnum]; 
     if (!can_edit_zone(ch, room->zone)) {
       send_to_char(ch, "You can only detach triggers in your own zone\r\n");
       return;
     }
     if (!SCRIPT(room))
       send_to_char(ch, "This room does not have any triggers.\r\n");
-    else if (!str_cmp(arg2, "all")) {
+    else if (!str_cmp(arg2, "all") || !str_cmp(arg3, "all")) {
       extract_script(room, WLD_TRIGGER);
-      send_to_char(ch, "All triggers removed from room.\r\n");
-    } else if (remove_trigger(SCRIPT(room), arg2)) {
-      send_to_char(ch, "Trigger removed.\r\n");
-      if (!TRIGGERS(SCRIPT(room))) {
+      send_to_char(ch, "All triggers removed from room %d.\r\n", world[rnum].number);
+    } else {
+      if (*arg3)
+        snum = arg3;
+      else
+        snum = arg2;
+
+    if (remove_trigger(SCRIPT(room), snum)) {
+      send_to_char(ch, "Trigger %d (%s) removed from %d.\r\n", tn, GET_TRIG_NAME(trig), world[rnum].number);
+      
+      if (!TRIGGERS(SCRIPT(room)))
         extract_script(room, WLD_TRIGGER);
-      }
+
     } else
       send_to_char(ch, "That trigger was not found.\r\n");
+   }
   }
 
   else {
@@ -1239,11 +1264,6 @@ ACMD(do_detach)
     }
 
     if (victim) {
-      if (!IS_NPC(victim) && !CONFIG_SCRIPT_PLAYERS)
-      {
-        send_to_char(ch, "Players don't have triggers.\r\n");
-        return;
-      }
 
       if (!SCRIPT(victim)) 
         send_to_char(ch, "That %s doesn't have any triggers.\r\n", IS_NPC(victim) ? "mob" : "player");  
@@ -1257,7 +1277,9 @@ ACMD(do_detach)
       }
 
       else if (trigger && remove_trigger(SCRIPT(victim), trigger)) {
-        send_to_char(ch, "Trigger removed.\r\n");
+        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
+          tn, GET_TRIG_NAME(trig), IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
+
         if (!TRIGGERS(SCRIPT(victim))) {
           extract_script(victim, MOB_TRIGGER);
         }
@@ -1281,7 +1303,9 @@ ACMD(do_detach)
       }
 
       else if (remove_trigger(SCRIPT(object), trigger)) {
-        send_to_char(ch, "Trigger removed.\r\n");
+        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
+          tn, GET_TRIG_NAME(trig), object->short_description ? object->short_description : 
+          object->name);
         if (!TRIGGERS(SCRIPT(object))) {
           extract_script(object, OBJ_TRIGGER);
         }
