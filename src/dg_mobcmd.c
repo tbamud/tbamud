@@ -618,7 +618,7 @@ ACMD(do_mteleport)
       if (valid_dg_target(vict, DG_ALLOW_GODS)) {
         char_from_room(vict);
         char_to_room(vict, target);
-        enter_wtrigger(&world[IN_ROOM(ch)], ch, -1);
+        enter_wtrigger(&world[IN_ROOM(vict)], vict, -1);
       }
     }
   } else {
@@ -632,10 +632,10 @@ ACMD(do_mteleport)
       return;
     }
 
-    if (valid_dg_target(ch, DG_ALLOW_GODS)) {
+    if (valid_dg_target(vict, DG_ALLOW_GODS)) {
       char_from_room(vict);
       char_to_room(vict, target);
-      enter_wtrigger(&world[IN_ROOM(ch)], ch, -1);
+      enter_wtrigger(&world[IN_ROOM(vict)], vict, -1);
     }
   }
 }
