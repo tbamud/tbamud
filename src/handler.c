@@ -81,8 +81,7 @@ int is_name(const char *str, const char *namelist)
 
 /* allow abbreviations */
 #define WHITESPACE " \t"
-#define KEYWORDJOIN "_"
-int isname_tok(const char *str, const char *namelist)
+int isname(const char *str, const char *namelist)
 {
   char *newlist;
   char *curtok;
@@ -105,34 +104,6 @@ int isname_tok(const char *str, const char *namelist)
   free(newlist);
   return 0;
 }
-
-
-int isname (const char *str, const char *namelist)
-{
-  char *strlist;
-  char *substr;
-
-  if (!str || !*str || !namelist || !*namelist)
-    return 0;
-
-  if (!strcmp (str, namelist))	/* the easy way */
-    return 1;
-
-    strlist = strdup(str);
-    for (substr = strtok(strlist, KEYWORDJOIN); substr; substr = strtok (NULL, KEYWORDJOIN))
-    {
-        if (!substr) continue;
-        if (!isname_tok(substr, namelist)) 
-        {
-            free(strlist);
-            return 0;
-        }
-    }
-    /* If we didn't fail, assume we succeded because every token was matched */
-    free(strlist);
-    return 1;
-}
-
 
 static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
 {
