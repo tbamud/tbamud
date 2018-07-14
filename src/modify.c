@@ -253,17 +253,18 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       notify_if_playing(d->character, d->mail_to);
     } else
       write_to_output(d, "Mail aborted.\r\n");
-      free(*d->str);
-      free(d->str);
-    }
+    
+    free(*d->str);
+    free(d->str);
+  }
 
-  /* We have no way of knowing which slot the post was sent to so we can only
-   * give the message.   */
-    if (d->mail_to >= BOARD_MAGIC) {
-      board_save_board(d->mail_to - BOARD_MAGIC);
-      if (action == STRINGADD_ABORT)
-        write_to_output(d, "Post not aborted, use REMOVE <post #>.\r\n");
-    }
+/* We have no way of knowing which slot the post was sent to so we can only
+ * give the message.   */
+  if (d->mail_to >= BOARD_MAGIC) {
+    board_save_board(d->mail_to - BOARD_MAGIC);
+    if (action == STRINGADD_ABORT)
+      write_to_output(d, "Post not aborted, use REMOVE <post #>.\r\n");
+  }
   if (PLR_FLAGGED(d->character, PLR_IDEA)) {
     if (action == STRINGADD_SAVE && *d->str){
       write_to_output(d, "Idea saved!\r\n");

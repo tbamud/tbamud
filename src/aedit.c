@@ -42,7 +42,7 @@ ACMD(do_oasis_aedit)
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
     return;
     
-    if (CONFIG_NEW_SOCIALS == 0) {
+  if (CONFIG_NEW_SOCIALS == 0) {
     send_to_char(ch, "Socials cannot be edited at the moment.\r\n");
     return;
   }
