@@ -2593,7 +2593,7 @@ distance, int door)
     if (!*buf)
       sprintf(buf, "You see %s", GET_NAME(i));
     else
-      sprintf(buf, "%s%s", buf, GET_NAME(i));
+      strcat(buf, GET_NAME(i));
     if (--count > 1)
       strcat(buf, ", ");
     else if (count == 1)
