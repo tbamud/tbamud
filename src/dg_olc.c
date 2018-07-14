@@ -476,7 +476,8 @@ static void script_syntax_highlighting(struct descriptor_data *d, char *string)
             }
         }
 
-        sprintf(buffer, "%s%s\tn\r\n", buffer, line);
+        strcat(buffer, line);
+        strcat(buffer, "\tn\r\n");
     }
     
     page_string(d, buffer, TRUE);
