@@ -744,7 +744,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       }
     if (i >= 0)
       add_shop_to_int_list(&(S_ROOMS(OLC_SHOP(d))), atoi(arg));
-      sedit_rooms_menu(d);
+    sedit_rooms_menu(d);
     return;
   case SEDIT_DELETE_ROOM:
     remove_shop_from_int_list(&(S_ROOMS(OLC_SHOP(d))), atoi(arg));

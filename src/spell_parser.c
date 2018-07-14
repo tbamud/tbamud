@@ -404,8 +404,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj,
   case ITEM_POTION:
     tch = ch;
 
-  if (!consume_otrigger(obj, ch, OCMD_QUAFF))  /* check trigger */
-    return;
+    if (!consume_otrigger(obj, ch, OCMD_QUAFF))  /* check trigger */
+      return;
 
     act("You quaff $p.", FALSE, ch, obj, NULL, TO_CHAR);
     if (obj->action_description)

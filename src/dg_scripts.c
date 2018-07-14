@@ -793,10 +793,11 @@ static void do_stat_trigger(struct char_data *ch, trig_data *trig)
       if (cmd_list->cmd)
         len += snprintf(sb + len, sizeof(sb)-len, "%s\r\n", cmd_list->cmd);
 
-        if (len>MAX_STRING_LENGTH-80) {
-          len += snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
-          break;
-        }
+      if (len>MAX_STRING_LENGTH-80) {
+        len += snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
+        break;
+      }
+      
       cmd_list = cmd_list->next;
     }
 

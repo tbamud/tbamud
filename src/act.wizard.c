@@ -3669,20 +3669,20 @@ ACMD (do_zcheck)
           len += snprintf(buf + len, sizeof(buf) - len,
                             "- SPEC flag needs to be removed.\r\n");
 
-          /* Additional mob checks.*/
-          if (found) {
-            send_to_char(ch,
-                    "%s[%5d]%s %-30s: %s\r\n",
-                    CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
-                    CCYEL(ch, C_NRM), GET_NAME(mob),
-                    CCNRM(ch, C_NRM));
-            send_to_char(ch, "%s", buf);
-          }
-          /* reset buffers and found flag */
-          strcpy(buf, "");
-          found = 0;
-          len = 0;
-        }   /* mob is in zone */
+        /* Additional mob checks.*/
+        if (found) {
+          send_to_char(ch,
+                  "%s[%5d]%s %-30s: %s\r\n",
+                  CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
+                  CCYEL(ch, C_NRM), GET_NAME(mob),
+                  CCNRM(ch, C_NRM));
+          send_to_char(ch, "%s", buf);
+        }
+        /* reset buffers and found flag */
+        strcpy(buf, "");
+        found = 0;
+        len = 0;
+      }   /* mob is in zone */
     }  /* check mobs */
 
  /* Check objects */
@@ -3988,15 +3988,15 @@ static void obj_checkload(struct char_data *ch, obj_vnum ovnum)
                              mob_proto[lastmob_r].player.short_descr,
                              mob_index[lastmob_r].vnum,
                              ZCMD2.arg2);
-            break;
-          case 'R': /* rem obj from room */
-            lastroom_v = world[ZCMD2.arg1].number;
-            lastroom_r = ZCMD2.arg1;
-            if (ZCMD2.arg2 == ornum)
-              send_to_char(ch, "  [%5d] %s (Removed from room)\r\n",
-                               lastroom_v,
-                               world[lastroom_r].name);
-            break;
+          break;
+        case 'R': /* rem obj from room */
+          lastroom_v = world[ZCMD2.arg1].number;
+          lastroom_r = ZCMD2.arg1;
+          if (ZCMD2.arg2 == ornum)
+            send_to_char(ch, "  [%5d] %s (Removed from room)\r\n",
+                             lastroom_v,
+                             world[lastroom_r].name);
+          break;
       }/* switch */
     } /*for cmd_no......*/
   }  /*for zone...*/
