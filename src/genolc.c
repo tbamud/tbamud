@@ -945,7 +945,8 @@ static int export_save_rooms(zone_rnum zrnum)
         struct extra_descr_data *xdesc;
 
 	for (xdesc = room->ex_description; xdesc; xdesc = xdesc->next) {
-	  strncpy(buf, xdesc->description, sizeof(buf));
+	  strncpy(buf, xdesc->description, sizeof(buf) - 1);
+	  buf[sizeof(buf) - 1] = '\0';
 	  strip_cr(buf);
 	  fprintf(room_file,	"E\n"
 			"%s~\n"
