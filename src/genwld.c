@@ -302,7 +302,7 @@ int save_rooms(zone_rnum rzone)
       strip_cr(buf);
 
       /* Save the numeric and string section of the file. */
-      sprintf(buf2, 	"#%d\n"
+      int n = snprintf(buf2, MAX_STRING_LENGTH, "#%d\n"
 			"%s%c\n"
 			"%s%c\n"
 			"%d %d %d %d %d %d\n",
@@ -312,6 +312,13 @@ int save_rooms(zone_rnum rzone)
 	zone_table[room->zone].number, room->room_flags[0], room->room_flags[1], room->room_flags[2], 
 	  room->room_flags[3], room->sector_type 
       );
+      
+      if(n >= MAX_STRING_LENGTH) {
+        mudlog(BRF,LVL_BUILDER,TRUE,
+               "SYSERR: Could not save room #%d due to size (%d > maximum of %d).",
+               room->number, n, MAX_STRING_LENGTH);
+        continue;
+      }
 
   fprintf(sf, "%s", convert_from_tabs(buf2));
  

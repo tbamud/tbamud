@@ -205,12 +205,12 @@ int save_objects(zone_rnum zone_num)
   for (counter = genolc_zone_bottom(zone_num); counter <= zone_table[zone_num].top; counter++) {
     if ((realcounter = real_object(counter)) != NOTHING) {
       if ((obj = &obj_proto[realcounter])->action_description) {
-	strncpy(buf, obj->action_description, sizeof(buf) - 1);
-	strip_cr(buf);
+        strncpy(buf, obj->action_description, sizeof(buf) - 1);
+        strip_cr(buf);
       } else
-	*buf = '\0';
+        *buf = '\0';
 
-      sprintf(buf2,
+      int n = snprintf(buf2, MAX_STRING_LENGTH,
 	      "#%d\n"
 	      "%s~\n"
 	      "%s~\n"
@@ -223,6 +223,13 @@ int save_objects(zone_rnum zone_num)
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
         
+      if(n >= MAX_STRING_LENGTH) {
+        mudlog(BRF,LVL_BUILDER,TRUE,
+               "SYSERR: Could not save object #%d due to size (%d > maximum of %d).",
+               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH);
+        continue;
+      }
+      
       fprintf(fp, "%s", convert_from_tabs(buf2));
 
       sprintascii(ebuf1, GET_OBJ_EXTRA(obj)[0]);
