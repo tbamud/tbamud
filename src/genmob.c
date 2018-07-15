@@ -368,7 +368,7 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   strip_cr(strncpy(ldesc, GET_LDESC(mob), MAX_STRING_LENGTH - 1));
   strip_cr(strncpy(ddesc, GET_DDESC(mob), MAX_STRING_LENGTH - 1));
 
-  sprintf(buf,	"#%d\n"
+  int n = snprintf(buf, MAX_STRING_LENGTH, "#%d\n"
 		"%s%c\n"
 		"%s%c\n"
 		"%s%c\n"
@@ -380,37 +380,42 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 	ddesc, STRING_TERMINATOR
   );
 
+  if(n > MAX_STRING_LENGTH) {
+    fprintf(fd, "%s", convert_from_tabs(buf));
   
-  fprintf(fd, "%s", convert_from_tabs(buf));
-
-  fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
-      "%d %d %d %dd%d+%d %dd%d+%d\n",
-      MOB_FLAGS(mob)[0], MOB_FLAGS(mob)[1],
-      MOB_FLAGS(mob)[2], MOB_FLAGS(mob)[3],
-      AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
-      AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
-      GET_ALIGNMENT(mob),
-      GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
-      GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
-      GET_DAMROLL(mob));
-
-  fprintf(fd, 	"%d %d\n"
-		"%d %d %d\n",
-		GET_GOLD(mob), GET_EXP(mob),
-		GET_POS(mob), GET_DEFAULT_POS(mob), GET_SEX(mob)
-  );
-
-  if (write_mobile_espec(mvnum, mob, fd) < 0)
-    log("SYSERR: GenOLC: Error writing E-specs for mobile #%d.", mvnum);
-
-  script_save_to_disk(fd, mob, MOB_TRIGGER);
-
-
-#if CONFIG_GENOLC_MOBPROG
-  if (write_mobile_mobprog(mvnum, mob, fd) < 0)
-    log("SYSERR: GenOLC: Error writing MobProgs for mobile #%d.", mvnum);
-#endif
-
+    fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
+        "%d %d %d %dd%d+%d %dd%d+%d\n",
+        MOB_FLAGS(mob)[0], MOB_FLAGS(mob)[1],
+        MOB_FLAGS(mob)[2], MOB_FLAGS(mob)[3],
+        AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
+        AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
+        GET_ALIGNMENT(mob),
+        GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
+        GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
+        GET_DAMROLL(mob));
+  
+    fprintf(fd, 	"%d %d\n"
+      "%d %d %d\n",
+      GET_GOLD(mob), GET_EXP(mob),
+      GET_POS(mob), GET_DEFAULT_POS(mob), GET_SEX(mob)
+    );
+  
+    if (write_mobile_espec(mvnum, mob, fd) < 0)
+      log("SYSERR: GenOLC: Error writing E-specs for mobile #%d.", mvnum);
+  
+    script_save_to_disk(fd, mob, MOB_TRIGGER);
+  
+  
+  #if CONFIG_GENOLC_MOBPROG
+    if (write_mobile_mobprog(mvnum, mob, fd) < 0)
+      log("SYSERR: GenOLC: Error writing MobProgs for mobile #%d.", mvnum);
+  #endif
+  } else {
+    mudlog(BRF,LVL_BUILDER,TRUE,
+           "SYSERR: Could not save mobile #%d due to size (%d > maximum of %d)",
+           mvnum, n, MAX_STRING_LENGTH);
+  }
+  
   return TRUE;
 }
 
