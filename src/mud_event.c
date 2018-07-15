@@ -54,7 +54,6 @@ void init_events(void)
 EVENTFUNC(event_countdown)
 {
   struct mud_event_data * pMudEvent;
-  struct char_data * ch = NULL;
   struct room_data * room = NULL;
   room_rnum rnum = NOWHERE;
 
@@ -62,14 +61,13 @@ EVENTFUNC(event_countdown)
 
   switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
     case EVENT_CHAR:
-      ch = (struct char_data * ) pMudEvent->pStruct;
-    break;
+      break;
     case EVENT_ROOM:
       room = (struct room_data * ) pMudEvent->pStruct;
       rnum = real_room(room->number);
-    break;
+      break;
     default:
-    break;
+      break;
   }
 
   switch (pMudEvent->iId) {

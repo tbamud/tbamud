@@ -911,7 +911,6 @@ ACMD(do_oasis_prefedit)
 {
   struct descriptor_data *d;
   struct char_data *vict;
-  char *buf3;
   char buf[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
@@ -919,7 +918,7 @@ ACMD(do_oasis_prefedit)
   /****************************************************************************/
   /** Parse any arguments.                                                   **/
   /****************************************************************************/
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   /****************************************************************************/
   /** If there aren't any arguments...well...they can only modify their      **/

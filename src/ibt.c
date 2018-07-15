@@ -287,22 +287,19 @@ void load_ibt_file(int mode)
 
 void save_ibt_file(int mode)
 {
-   IBT_DATA *ibtData, *first_ibt, *last_ibt;
+   IBT_DATA *ibtData, *first_ibt;
    FILE *fp;
    char filename[256];
 
    switch(mode) {
      case SCMD_BUG : sprintf( filename, "%s",BUGS_FILE );
                      first_ibt = first_bug;
-                     last_ibt  = last_bug;
                      break;
      case SCMD_IDEA: sprintf( filename, "%s",IDEAS_FILE );
                      first_ibt = first_idea;
-                     last_ibt  = last_idea;
                      break;
      case SCMD_TYPO: sprintf( filename, "%s",TYPOS_FILE );
                      first_ibt = first_typo;
-                     last_ibt  = last_typo;
                      break;
      default       : log("SYSERR: Invalid mode (%d) in save_ibt_file", mode);
                      return;
@@ -457,17 +454,16 @@ ACMD(do_ibt)
   char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[128];
   int i, num_res, num_unres;
   size_t len = 0;
-  IBT_DATA *ibtData, *first_ibt, *last_ibt;
+  IBT_DATA *ibtData, *first_ibt;
   int ano=0;
 
   if (IS_NPC(ch))
     return;
 
   arg_text  = one_argument(argument, arg);
-  argument  = two_arguments(argument, arg, arg2);
+  two_arguments(argument, arg, arg2);
 
   first_ibt = get_first_ibt(subcmd);
-  last_ibt  = get_last_ibt(subcmd);
 
   if ((!*arg)){
     if (GET_LEVEL(ch) >= LVL_GRGOD){
@@ -633,9 +629,9 @@ ACMD(do_ibt)
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
         len += snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
       }
-      len += snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
+      snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
     } else {
-      len += snprintf(buf + len, sizeof(buf) - len, "No %ss have been reported!\r\n", CMD_NAME);
+      snprintf(buf + len, sizeof(buf) - len, "No %ss have been reported!\r\n", CMD_NAME);
     }
 
     page_string(ch->desc, buf, TRUE);
@@ -775,14 +771,14 @@ ACMD(do_oasis_ibtedit)
 {
   int number = NOTHING;
   struct descriptor_data *d;
-  char buf1[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH], *buf3;
+  char buf1[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
   /* No editing as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
     return;
 
   /* Parse any arguments */
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   if (!*buf1) {
     send_to_char(ch, "Specify a %s number to edit.\r\n", ibt_types[subcmd]);

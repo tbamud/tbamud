@@ -50,7 +50,6 @@ ACMD(do_oasis_sedit)
   int number = NOWHERE, save = 0;
   shop_rnum real_num;
   struct descriptor_data *d;
-  char *buf3;
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
 
@@ -59,7 +58,7 @@ ACMD(do_oasis_sedit)
     return;
     
   /* Parse any arguments. */
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   if (!*buf1) {
     send_to_char(ch, "Specify a shop VNUM to edit.\r\n");
@@ -682,7 +681,6 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 
     /* Numerical responses. */
   case SEDIT_KEEPER:
-    i = atoi(arg);
     if ((i = atoi(arg)) != -1)
       if ((i = real_mobile(i)) == NOBODY) {
 	write_to_output(d, "That mobile does not exist, try again : ");

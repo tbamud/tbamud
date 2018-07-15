@@ -92,9 +92,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, cha
     one_argument(strcpy(buf2, t), t);
     skip_spaces(&t);
   }
-  if (IS_SET(SINFO.targets, TAR_IGNORE)) {
-    target = TRUE;
-  } else if (t != NULL && *t) {
+  if (!IS_SET(SINFO.targets, TAR_IGNORE) && t != NULL && *t) {
     if (!target &&
           (IS_SET(SINFO.targets, TAR_CHAR_ROOM) ||
            IS_SET(SINFO.targets, TAR_CHAR_WORLD))) {

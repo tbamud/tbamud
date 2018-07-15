@@ -422,7 +422,7 @@ void copyover_recover()
 
   for (;;) {
     fOld = TRUE;
-    i = fscanf (fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt);
+    fscanf (fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt);
     if (desc == -1)
       break;
 

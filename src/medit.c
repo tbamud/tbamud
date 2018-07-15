@@ -45,7 +45,6 @@ ACMD(do_oasis_medit)
 {
   int number = NOBODY, save = 0, real_num;
   struct descriptor_data *d;
-  char *buf3;
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
@@ -54,7 +53,7 @@ ACMD(do_oasis_medit)
     return;
 
   /* Parse any arguments */
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   if (!*buf1) {
     send_to_char(ch, "Specify a mobile VNUM to edit.\r\n");

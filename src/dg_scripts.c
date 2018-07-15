@@ -794,7 +794,7 @@ static void do_stat_trigger(struct char_data *ch, trig_data *trig)
         len += snprintf(sb + len, sizeof(sb)-len, "%s\r\n", cmd_list->cmd);
 
       if (len>MAX_STRING_LENGTH-80) {
-        len += snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
+        snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
         break;
       }
       
@@ -1516,7 +1516,7 @@ static void eval_expr(char *line, char *result, void *go, struct script_data *sc
   if (eval_lhs_op_rhs(line, result, go, sc, trig, type));
 
   else if (*line == '(') {
-    p = strcpy(expr, line);
+    strcpy(expr, line);
     p = matching_paren(expr);
     *p = '\0';
     eval_expr(expr + 1, result, go, sc, trig, type);
@@ -2179,12 +2179,12 @@ ACMD(do_vdelete)
   struct script_data *sc_remote=NULL;
   char *var, *uid_p;
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
-  long uid, context;
+  long uid;
   room_data *room;
   char_data *mob;
   obj_data *obj;
 
-  argument = two_arguments(argument, buf, buf2);
+  two_arguments(argument, buf, buf2);
   var = buf;
   uid_p = buf2;
   skip_spaces(&var);
@@ -2207,7 +2207,6 @@ ACMD(do_vdelete)
     sc_remote = SCRIPT(room);
   } else if ((mob = find_char(uid))) {
     sc_remote = SCRIPT(mob);
-    if (!IS_NPC(mob)) context = 0;
   } else if ((obj = find_obj(uid))) {
     sc_remote = SCRIPT(obj);
   } else {
@@ -2287,7 +2286,7 @@ static void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd)
   struct script_data *sc_remote=NULL;
   char *line, *var, *uid_p;
   char arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
-  long uid, context;
+  long uid;
   room_data *room;
   char_data *mob;
   obj_data *obj;
@@ -2317,7 +2316,6 @@ static void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd)
     sc_remote = SCRIPT(room);
   } else if ((mob = find_char(uid))) {
     sc_remote = SCRIPT(mob);
-    if (!IS_NPC(mob)) context = 0;
   } else if ((obj = find_obj(uid))) {
     sc_remote = SCRIPT(obj);
   } else {

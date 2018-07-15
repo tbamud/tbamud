@@ -770,8 +770,6 @@ ACMD(do_sit)
 
   one_argument(argument, arg);
 
-  if (!*arg)
-    found = 0;
   if (!(furniture = get_obj_in_list_vis(ch, arg, NULL, world[ch->in_room].contents)))
     found = 0;
   else

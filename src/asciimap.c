@@ -516,7 +516,7 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
   count += sprintf(buf + count, "\tn%s Swim\\\\", map_info[SECT_WATER_SWIM].disp);
   count += sprintf(buf + count, "\tn%s Boat\\\\", map_info[SECT_WATER_NOSWIM].disp);
   count += sprintf(buf + count, "\tn%s Flying\\\\", map_info[SECT_FLYING].disp);
-  count += sprintf(buf + count, "\tn%s Underwater\\\\", map_info[SECT_UNDERWATER].disp);
+  sprintf(buf + count, "\tn%s Underwater\\\\", map_info[SECT_UNDERWATER].disp);
 
   strcpy(buf, strfrmt(buf, LEGEND_WIDTH, CANVAS_HEIGHT + 2, FALSE, TRUE, TRUE));
 

@@ -592,7 +592,7 @@ ACMD(do_mteleport)
   if (AFF_FLAGGED(ch, AFF_CHARM))
     return;
 
-  argument = two_arguments(argument, arg1, arg2);
+  two_arguments(argument, arg1, arg2);
 
   if (!*arg1 || !*arg2) {
     mob_log(ch, "mteleport: bad syntax");

@@ -53,7 +53,6 @@ ACMD(do_oasis_oedit)
 {
   int number = NOWHERE, save = 0, real_num;
   struct descriptor_data *d;
-  char *buf3;
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
@@ -62,7 +61,7 @@ ACMD(do_oasis_oedit)
     return;
 
   /* Parse any arguments. */
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   /* If there aren't any arguments they can't modify anything. */
   if (!*buf1) {

@@ -333,9 +333,7 @@ ASPELL(spell_identify)
       }
 
       if (GET_OBJ_VAL(obj, 3) >= 1 && len < sizeof(bitbuf)) {
-	i = snprintf(bitbuf + len, sizeof(bitbuf) - len, " %s", skill_name(GET_OBJ_VAL(obj, 3)));
-        if (i >= 0)
-          len += i;
+	snprintf(bitbuf + len, sizeof(bitbuf) - len, " %s", skill_name(GET_OBJ_VAL(obj, 3)));
       }
 
       send_to_char(ch, "This %s casts: %s\r\n", item_types[(int) GET_OBJ_TYPE(obj)], bitbuf);

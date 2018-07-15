@@ -55,14 +55,13 @@ ACMD(do_oasis_qedit)
   int number = NOWHERE, save = 0;
   qst_rnum real_num;
   struct descriptor_data *d;
-  char *buf3;
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
 
   /****************************************************************************/
   /** Parse any arguments.                                                   **/
   /****************************************************************************/
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   if (!*buf1) {
     send_to_char(ch, "Specify a quest VNUM to edit.\r\n");

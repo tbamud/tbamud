@@ -185,7 +185,7 @@ static void aedit_save_internally(struct descriptor_data *d) {
    }
    /* pass the editted action back to the list - no need to add */
    else {
-      i = aedit_find_command(OLC_ACTION(d)->command);
+      aedit_find_command(OLC_ACTION(d)->command);
       OLC_ACTION(d)->act_nr = soc_mess_list[OLC_ZNUM(d)].act_nr;
       /* why did i do this..? hrm */
       free_action(soc_mess_list + OLC_ZNUM(d));
