@@ -1936,8 +1936,10 @@ void add_llog_entry(struct char_data *ch, int type) {
   /* we didn't - make a new one */
   if(llast == NULL) {  /* no entry found, add ..error if close! */
     CREATE(llast,struct last_entry,1);
-    strncpy(llast->username,GET_NAME(ch),16);
-    strncpy(llast->hostname,GET_HOST(ch),128);
+    strncpy(llast->username,GET_NAME(ch),15);
+    strncpy(llast->hostname,GET_HOST(ch),127);
+    llast->username[15]='\0';
+    llast->hostname[127]='\0';
     llast->idnum=GET_IDNUM(ch);
     llast->punique=GET_PREF(ch);
     llast->time=time(0);
@@ -2054,8 +2056,11 @@ ACMD(do_last)
         num = atoi(arg);
         if (num < 0)
           num = 0;
-      } else
+      } else {
         strncpy(name, arg, sizeof(name)-1);
+        name[sizeof(name) - 1] = '\0';
+      }
+      
       half_chop(argument, arg, argument);
     }
   }

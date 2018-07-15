@@ -365,7 +365,8 @@ int save_rooms(zone_rnum rzone)
         struct extra_descr_data *xdesc;
 
 	for (xdesc = room->ex_description; xdesc; xdesc = xdesc->next) {
-	  strncpy(buf, xdesc->description, sizeof(buf));
+	  strncpy(buf, xdesc->description, sizeof(buf) - 1);
+	  buf[sizeof(buf) - 1] = '\0';
 	  strip_cr(buf);
 	  fprintf(sf,	"E\n"
 			"%s~\n"

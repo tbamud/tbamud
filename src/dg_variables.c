@@ -1628,7 +1628,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 void var_subst(void *go, struct script_data *sc, trig_data *trig,
                int type, char *line, char *buf)
 {
-  char tmp[MAX_INPUT_LENGTH], repl_str[MAX_INPUT_LENGTH];
+  char tmp[MAX_INPUT_LENGTH], repl_str[MAX_INPUT_LENGTH - 1];
   char *var = NULL, *field = NULL, *p = NULL;
   char tmp2[MAX_INPUT_LENGTH];
   char *subfield_p, subfield[MAX_INPUT_LENGTH];
@@ -1722,4 +1722,5 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
       left -= len;
     } /* else if *p .. */
   } /* while *p .. */
+  buf[sizeof(buf) - 1] = '\0';
 }
