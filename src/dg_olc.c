@@ -470,14 +470,14 @@ static void script_syntax_highlighting(struct descriptor_data *d, char *string)
             for (cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++) {
                 if (complete_cmd_info[cmd].command_pointer == do_action) {
                     char replace_social[MAX_INPUT_LENGTH];
-                    sprintf(replace_social, "\tc%s\tn", complete_cmd_info[cmd].command);
+                    snprintf(replace_social, MAX_INPUT_LENGTH, "\tc%s\tn", complete_cmd_info[cmd].command);
                     line = str_replace(line, complete_cmd_info[cmd].command, replace_social);
                 }
             }
         }
 
-        strcat(buffer, line);
-        strcat(buffer, "\tn\r\n");
+        strncat(buffer, line, sizeof(buffer) - strlen(buffer) - 1);
+        strncat(buffer, "\tn\r\n", sizeof(buffer) - strlen(buffer) - 1);
     }
     
     page_string(d, buffer, TRUE);

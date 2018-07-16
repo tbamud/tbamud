@@ -2554,7 +2554,7 @@ ACMD(do_areas)
 static void list_scanned_chars(struct char_data * list, struct char_data * ch, int
 distance, int door)
 {
-  char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
+  char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH - 1];
 
   const char *how_far[] = {
     "close by",
@@ -2589,16 +2589,16 @@ distance, int door)
     if (!CAN_SEE(ch, i))
       continue;
     if (!*buf)
-      sprintf(buf, "You see %s", GET_NAME(i));
+      snprintf(buf, sizeof(buf), "You see %s", GET_NAME(i));
     else
-      strcat(buf, GET_NAME(i));
+      strncat(buf, GET_NAME(i), sizeof(buf) - strlen(buf) - 1);
     if (--count > 1)
-      strcat(buf, ", ");
+      strncat(buf, ", ", sizeof(buf) - strlen(buf) - 1);
     else if (count == 1)
-      strcat(buf, " and ");
+      strncat(buf, " and ", sizeof(buf) - strlen(buf) - 1);
     else {
-      sprintf(buf2, " %s %s.\r\n", how_far[distance], dirs[door]);
-      strcat(buf, buf2);
+      snprintf(buf2, sizeof(buf2), " %s %s.\r\n", how_far[distance], dirs[door]);
+      strncat(buf, buf2, sizeof(buf) - strlen(buf) - 1);
     }
 
   }
