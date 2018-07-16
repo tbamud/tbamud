@@ -129,7 +129,16 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       write_to_output(d, "No string.\r\n");        
       break;
     }
-    if (strchr(*d->str, '@')) {
+    bool has_at = FALSE;
+    for (char* c = *d->str; *c; ++c) {
+      if (*c == '@') {
+        if (*(++c) != '@') {
+          has_at = TRUE;
+          break;
+        }
+      }
+    }
+    if (has_at) {
       parse_at(*d->str);
       write_to_output(d, "Toggling (at) into (tab) Characters...\r\n");  
     } else {
