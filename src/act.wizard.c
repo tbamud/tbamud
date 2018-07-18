@@ -1893,7 +1893,10 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
-    fread(&mlast,sizeof(struct last_entry),1,fp);
+    if(fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
+      log("mod_llog_entry: read error or unexpected end of file.");
+      return;
+    }
     /* Another one to keep that stepback. */
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
 
@@ -1988,7 +1991,10 @@ void clean_llog_entries(void) {
 
   /* copy the rest */
   while (!feof(ofp)) {
-    fread(&mlast,sizeof(struct last_entry),1,ofp);
+    if(fread(&mlast,sizeof(struct last_entry),1,ofp) != 1 ) {
+      log("clean_llog_entries: read error or unexpected end of file.");
+      return;
+    }
     fwrite(&mlast,sizeof(struct last_entry),1,nfp);
   }
   fclose(ofp);
@@ -2006,18 +2012,21 @@ static void list_llog_entries(struct char_data *ch)
   char timestr[25];
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
-    log("bad things.");
+    log("llist_log_entries: could not open last log file %s.", LAST_FILE);
     send_to_char(ch, "Error! - no last log");
   }
   send_to_char(ch, "Last log\r\n");
-  fread(&llast, sizeof(struct last_entry), 1, fp);
 
-  strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M:%S", localtime(&llast.time));
-
-  while(!feof(fp)) {
-    send_to_char(ch, "%10s\t%d\t%s\t%s\r\n", llast.username, llast.punique,
+  while(fread(&llast, sizeof(struct last_entry), 1, fp) == 1) {
+    strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M:%S", localtime(&llast.time));
+    send_to_char(ch, "%10s    %d    %s    %s\r\n", llast.username, llast.punique,
         last_array[llast.close_type], timestr);
-    fread(&llast, sizeof(struct last_entry), 1, fp);
+      break;
+  }
+
+  if(ferror(fp)) {
+    log("llist_log_entries: error reading %s.", LAST_FILE);
+    send_to_char(ch, "Error reading last_log file.");
   }
 }
 
@@ -2100,11 +2109,14 @@ ACMD(do_last)
   send_to_char(ch, "Last log\r\n");
   while(num > 0 && recs > 0) {
     fseek(fp,-1* ((long)sizeof(struct last_entry)),SEEK_CUR);
-    fread(&mlast,sizeof(struct last_entry),1,fp);
+    if(fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
+      send_to_char(ch, "Error reading log file.");
+      return;
+    }
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if(!*name ||(*name && !str_cmp(name, mlast.username))) {
       strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M", localtime(&mlast.time));
-      send_to_char(ch,"%10.10s %20.20s %20.21s - ",
+      send_to_char(ch, "%10.10s %20.20s %20.21s - ",
         mlast.username, mlast.hostname, timestr);
       if((temp=is_in_game(mlast.idnum)) && mlast.punique == GET_PREF(temp)) {
         send_to_char(ch, "Still Playing  ");
@@ -4200,16 +4212,20 @@ ACMD(do_copyover)
   sprintf (buf2, "-C%d", mother_desc);
 
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
-  chdir ("..");
+  if(chdir ("..") != 0) {
+    log("Error changing working directory: %s", strerror(errno));
+    send_to_char(ch, "Error changing working directory: %s.", strerror(errno));
+    exit(1);
+  }
 
   /* Close reserve and other always-open files and release other resources */
-   execl (EXE_FILE, "circle", buf2, buf, (char *) NULL);
+  execl (EXE_FILE, "circle", buf2, buf, (char *) NULL);
 
-   /* Failed - successful exec will not return */
-   perror ("do_copyover: execl");
-   send_to_char (ch, "Copyover FAILED!\n\r");
+  /* Failed - successful exec will not return */
+  perror ("do_copyover: execl");
+  send_to_char (ch, "Copyover FAILED!\n\r");
 
- exit (1); /* too much trouble to try to recover! */
+  exit (1); /* too much trouble to try to recover! */
 }
 
 ACMD(do_peace)

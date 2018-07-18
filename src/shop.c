@@ -1089,7 +1089,14 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
     return (read_list(shop_f, list, 0, max, LIST_TRADE));
 
   do {
-    fgets(buf, sizeof(buf), shop_f);
+    if (fgets(buf, sizeof(buf), shop_f) == NULL) {
+      if (feof(shop_f))
+        log("SYSERR: unexpected end of file reading shop file type list.");
+      else if (ferror(shop_f))
+        log("SYSERR: error reading reading shop file type list: %s", strerror(errno));
+      else
+        log("SYSERR: error reading reading shop file type list.");
+    }
     if ((ptr = strchr(buf, ';')) != NULL)
       *ptr = '\0';
     else
