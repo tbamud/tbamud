@@ -366,13 +366,13 @@ ACMD(do_export_zone)
   f = fix_filename(zone_name); 
 
   /* Remove the old copy. */ 
-  snprintf(sysbuf, MAX_STRING_LENGTH, "rm %s%s.tar.gz", path, f); 
+  snprintf(sysbuf, MAX_INPUT_LENGTH, "rm %s%s.tar.gz", path, f);
 
   /* Tar the new copy. */ 
-  snprintf(sysbuf, MAX_STRING_LENGTH, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, f, path, path, path, path, path, path, path);
+  snprintf(sysbuf, MAX_INPUT_LENGTH, "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, f, path, path, path, path, path, path, path);
 
   /* Gzip it. */ 
-  snprintf(sysbuf, MAX_STRING_LENGTH, "gzip %s%s.tar", path, f); 
+  snprintf(sysbuf, MAX_INPUT_LENGTH, "gzip %s%s.tar", path, f);
 
   send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, f); 
 }
