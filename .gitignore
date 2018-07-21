@@ -1,3 +1,12 @@
 bin/*
 src/*.o
 src/util/*.o
+config.cache
+config.log
+config.status
+src/Makefile
+src/conf.h
+src/util/Makefile
+src/.accepted
+src/depend
+src/util/depend

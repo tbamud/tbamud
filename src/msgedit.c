@@ -88,13 +88,36 @@ void load_messages(void)
     fight_messages[i].msg = NULL;
   }
 
-  while (!feof(fl)) {
-    fgets(chk, 128, fl);
-    while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-      fgets(chk, 128, fl);
+  while (fgets(chk, 128, fl)) {
+    while (*chk == '\n' || *chk == '*') {
+      if (fgets(chk, 128, fl) == NULL) {
+        if (feof(fl))
+          break;
+        else if(ferror(fl))
+          log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
+        else
+          log("SYSERR: Error reading combat message file %s", MESS_FILE);
+        exit(1);
+      }
+    }
+
+    if(feof(fl)) {
+      break;
+    }
 
     while (*chk == 'M') {
-      fgets(chk, 128, fl);
+      if (fgets(chk, 128, fl) == NULL) {
+        if(feof(fl)) {
+          log("SYSERR: Unexpected end of file reading combat message file %s", MESS_FILE);
+          break;
+        }
+        else if(ferror(fl))
+          log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
+        else
+          log("SYSERR: Error reading combat message file %s", MESS_FILE);
+        exit(1);
+      }
+
       sscanf(chk, " %d\n", &type);
       for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
          (fight_messages[i].a_type); i++);
@@ -120,9 +143,6 @@ void load_messages(void)
       messages->god_msg.attacker_msg = fread_action(fl, i);
       messages->god_msg.victim_msg = fread_action(fl, i);
       messages->god_msg.room_msg = fread_action(fl, i);
-      fgets(chk, 128, fl);
-      while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-       fgets(chk, 128, fl);
     }
   }
   fclose(fl);

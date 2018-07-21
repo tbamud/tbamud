@@ -157,14 +157,18 @@ char *fread_action(FILE *fl, int nr)
   char buf[MAX_STRING_LENGTH];
   int i;
 
-  fgets(buf, MAX_STRING_LENGTH, fl);
-  if (feof(fl)) {
-    log("SYSERR: fread_action: unexpected EOF near action #%d", nr);
-    /* SYSERR_DESC: fread_action() will fail if it discovers an end of file
-     * marker before it is able to read in the expected string.  This can be
-     * caused by a truncated socials file. */
+  if(fgets(buf, MAX_STRING_LENGTH, fl) == NULL) {
+    if(feof(fl)) {
+      log("SYSERR: fread_action: unexpected EOF near action #%d", nr);
+      /* SYSERR_DESC: fread_action() will fail if it discovers an end of file
+      * marker before it is able to read in the expected string.  This can be
+      * caused by a truncated socials file. */
+    } else {
+      log("SYSERR: fread_action: read error near action #%d: %s", nr, strerror(errno));
+    }
     exit(1);
   }
+
   if (*buf == '#')
     return (NULL);
 
@@ -199,9 +203,12 @@ static void boot_social_messages(void)
     }
     /* count socials */
     *next_soc = '\0';
-    while (!feof(fl)) {
-    fgets(next_soc, MAX_STRING_LENGTH, fl);
+    while (fgets(next_soc, MAX_STRING_LENGTH, fl))
       if (*next_soc == '~') top_of_socialt++;
+
+    if(ferror(fl)) {
+      log("SYSERR: error encountered reading socials file %s: %s", SOCMESS_FILE_NEW, strerror(errno));
+      exit(1);
     }
   } else { /* old style */
 
@@ -214,9 +221,12 @@ static void boot_social_messages(void)
       exit(1);
     }
     /* count socials */
-    while (!feof(fl)) {
-    fgets(next_soc, MAX_STRING_LENGTH, fl);
+    while (fgets(next_soc, MAX_STRING_LENGTH, fl))
       if (*next_soc == '\n' || *next_soc == '\r') top_of_socialt++; /* all socials are followed by a blank line */
+
+    if(ferror(fl)) {
+      log("SYSERR: error encountered reading socials file %s: %s", SOCMESS_FILE_NEW, strerror(errno));
+      exit(1);
     }
   }
 
@@ -226,8 +236,16 @@ static void boot_social_messages(void)
   CREATE(soc_mess_list, struct social_messg, top_of_socialt + 1);
 
   /* now read 'em */
-  for (;;) {
-    fscanf(fl, " %s ", next_soc);
+  for (int line_number = 0;; ++line_number) {
+    if (fscanf(fl, " %s ", next_soc) != 1) {
+      if(feof(fl))
+        log("SYSERR: unexpected end of file encountered in socials file %s", SOCMESS_FILE_NEW);
+      else if(ferror(fl))
+        log("SYSERR: error reading socials file %s: %s", SOCMESS_FILE_NEW, strerror(errno));
+      else
+        log("SYSERR: format error in social file near line %d", line_number);
+      exit(1);
+    }
     if (*next_soc == '$') break;
     if (CONFIG_NEW_SOCIALS == TRUE) {
       if (fscanf(fl, " %s %d %d %d %d \n",
@@ -798,7 +816,13 @@ static void reset_time(void)
   if ((bgtime = fopen(TIME_FILE, "r")) == NULL)
     log("No time file '%s' starting from the beginning.", TIME_FILE);
   else {
-    fscanf(bgtime, "%ld\n", (long *)&beginning_of_time);
+    if(fscanf(bgtime, "%ld\n", (long *)&beginning_of_time) == EOF) {
+      if(feof(bgtime)) {
+        log("SYSERR: reset_time: unexpected end of file encountered reading %s.", TIME_FILE);
+      } else if(ferror(bgtime)) {
+        log("SYSERR: reset_time: unexpected end of file encountered reading %s: %s.", TIME_FILE, strerror(errno));
+      }
+    }
     fclose(bgtime);
   }
 
@@ -955,26 +979,38 @@ void index_boot(int mode)
     exit(1);
   }
 
-  /* first, count the number of records in the file so we can malloc */
-  fscanf(db_index, "%s\n", buf1);
-  while (*buf1 != '$') {
+  for (int line_number = 0;; ++line_number) {
+    /* first, count the number of records in the file so we can malloc */
+    if (fscanf(db_index, "%s\n", buf1) != 1) {
+      if (feof(db_index))
+        log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s. "
+            "Ensure that the last line of the file starts with the character '$'.",
+            prefix, index_filename);
+      else if (ferror(db_index))
+        log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s: %s",
+            prefix, index_filename, strerror(errno));
+      else
+        log("SYSERR: boot error -- error parsing index file %s%s on line %d",
+            prefix, index_filename, line_number);
+      exit(1);
+    }
+
+    if (*buf1 == '$')
+      break;
+
     snprintf(buf2, sizeof(buf2), "%s%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       log("SYSERR: File '%s' listed in '%s/%s': %s", buf2, prefix,
-	  index_filename, strerror(errno));
-      fscanf(db_index, "%s\n", buf1);
-      continue;
+          index_filename, strerror(errno));
     } else {
       if (mode == DB_BOOT_ZON)
-	rec_count++;
+        rec_count++;
       else if (mode == DB_BOOT_HLP)
-	rec_count += count_alias_records(db_file);
+        rec_count += count_alias_records(db_file);
       else
-	rec_count += count_hash_records(db_file);
+        rec_count += count_hash_records(db_file);
+      fclose(db_file);
     }
-
-    fclose(db_file);
-    fscanf(db_index, "%s\n", buf1);
   }
 
   /* Exit if 0 records, unless this is shops */
@@ -1028,8 +1064,24 @@ void index_boot(int mode)
   }
 
   rewind(db_index);
-  fscanf(db_index, "%s\n", buf1);
-  while (*buf1 != '$') {
+
+  for (int line_number = 1;; ++line_number) {
+    if (fscanf(db_index, "%s\n", buf1) != 1) {
+      if (feof(db_index))
+        log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s",
+            prefix, index_filename);
+      else if (ferror(db_index))
+        log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s: %s",
+            prefix, index_filename, strerror(errno));
+      else
+        log("SYSERR: boot error -- error parsing index file ./%s%s on line %d",
+            prefix, index_filename, line_number);
+      exit(1);
+    }
+
+    if (*buf1 == '$')
+      break;
+
     snprintf(buf2, sizeof(buf2), "%s%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       log("SYSERR: %s: %s", buf2, strerror(errno));
@@ -1055,7 +1107,6 @@ void index_boot(int mode)
     }
 
     fclose(db_file);
-    fscanf(db_index, "%s\n", buf1);
   }
   fclose(db_index);
 

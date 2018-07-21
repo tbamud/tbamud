@@ -211,7 +211,9 @@ void run_autowiz(void)
     if (res < sizeof(buf)) {
       mudlog(CMP, LVL_IMMORT, FALSE, "Initiating autowiz.");
       reboot_wizlists();
-      system(buf);
+      int rval = system(buf);
+      if(rval != 0)
+        mudlog(BRF, LVL_IMMORT, TRUE, "Warning: autowiz failed with return value %d", rval);
     } else
       log("Cannot run autowiz: command-line doesn't fit in buffer.");
   }

@@ -422,7 +422,16 @@ void copyover_recover()
 
   for (;;) {
     fOld = TRUE;
-    fscanf (fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt);
+    if (fscanf(fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt) != 5) {
+      if(!feof(fp)) {
+        if(ferror(fp))
+          log("SYSERR: error reading copyover file %s: %s", COPYOVER_FILE, strerror(errno));
+        else if(!feof(fp))
+          log("SYSERR: could not scan line in copyover file %s.", COPYOVER_FILE);
+        exit(1);
+      }
+    }
+
     if (desc == -1)
       break;
 
