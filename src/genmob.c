@@ -380,7 +380,7 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 	ddesc, STRING_TERMINATOR
   );
 
-  if(n > MAX_STRING_LENGTH) {
+  if(n < MAX_STRING_LENGTH) {
     fprintf(fd, "%s", convert_from_tabs(buf));
   
     fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
