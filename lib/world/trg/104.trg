@@ -146,8 +146,8 @@ wait 3 sec
 Finding the Armor~
 1 g 100
 ~
-%echoaround% %actor% As %actor.name% picks up the armor, the room is filled with a mystical @Wwhite@n light.
-%send% %actor% You pick up the armor and you are engulfed in a @Wwhite@n light.
+%echoaround% %actor% As %actor.name% picks up the armor, the room is filled with a mystical 	Wwhite	n light.
+%send% %actor% You pick up the armor and you are engulfed in a 	Wwhite	n light.
 %teleport% %actor% 10413
 %echoaround% %actor% As the light fades, you notice %actor.name% is no longer there.
 %echoaround% %actor% Nor is the armor.
@@ -262,12 +262,12 @@ if %actor.is_pc%
   wait 2s
   %send% %actor% You begin to feel your self lose sight of the room.
   %echoaround% %actor% %actor.name%'s eyes shut and %actor.heshe% slumps over.
-  %actor.pos(Sleeping)%
+  nop %actor.pos(sleeping)%
   wait 3s
-  %echoaround% %actor% Strange words can be heard comeing from somewhere, and %actor.name%'s body floats into the air and vanishes.
+  %echoaround% %actor% Strange words can be heard coming from somewhere, and %actor.name%'s body floats into the air and vanishes.
   wait 1s
   %teleport% %actor% 10424
-  %lag% %actor.name% 200
+  nop %actor.wait(200)%
 end
 ~
 #10499

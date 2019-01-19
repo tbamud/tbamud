@@ -6508,6 +6508,21 @@ $n teases your $t.
 You tease $p.
 $n teases $p.
 
+~testsocial testsocial 0 8 8 2
+This action is unfinished.
+This action is unfinished.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
 ~thanks thank 0 5 0 0
 Thank you too.
 $n thanks everyone.
@@ -7244,7 +7259,7 @@ You fall to your knees and worship $p.
 $n falls to $s knees and worships $p.
 
 ~wrong wrong 0 8 8 0
-You couldn't find the right if your life depended on it.
+You couldn't find the right social if your life depended on it.
 $n couldn't find the right social if $s life depended on it.
 #
 #

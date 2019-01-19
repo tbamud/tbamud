@@ -466,9 +466,9 @@ Rumble's Spy~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Arguments: * means all speech will trigger this.
 * This will echo all speech to Rumble.
-%at% rumble say %actor.name% says, '%speech%'
+%at% rumble say %actor.name% says, '%speech%' 1
 * doesn't work:
-%at% rumble %echo% %actor.name% says, '%speech%'
+%at% rumble mecho %actor.name% says, '%speech%' 2
 ~
 #21
 Transform Example~

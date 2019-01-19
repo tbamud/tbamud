@@ -1821,9 +1821,19 @@ if %actor.level% > 30 && %actor.varexists(TBA_trial_vnum)%
   * We set completed trial vnums to -#. So if negative abort.
   if %actor.TBA_trial_vnum% < 0
     return 0
+    halt
   end
-  if (%cmd.mudcommand% == redit && ((%arg% && %arg% != %actor.TBA_trial_vnum%) || (%actor.room.vnum% != %actor.TBA_trial_vnum%)))
-    %send% %actor% GOTO %actor.TBA_trial_vnum% to edit your room.
+  if %cmd.mudcommand% == redit
+    if %arg% == %actor.TBA_trial_vnum%
+      return 0
+      if %actor.room.vnum% != %actor.TBA_trial_vnum%
+        %send% %actor% You can type GOTO %actor.TBA_trial_vnum% to go to your trial vnum.
+      end
+    elseif %actor.room.vnum% == %actor.TBA_trial_vnum% && !%arg%
+      return 0
+    else
+      %send% %actor% You can only edit vnum %actor.TBA_trial_vnum%, eiter type GOTO %actor.TBA_trial_vnum% and then type redit, or type redit %actor.TBA_trial_vnum%.
+    end
   elseif %cmd.mudcommand% == oedit && %arg% != %actor.TBA_trial_vnum%
     %send% %actor% Use OEDIT %actor.TBA_trial_vnum% to modify your object.
   elseif %cmd.mudcommand% == medit && %arg% != %actor.TBA_trial_vnum%

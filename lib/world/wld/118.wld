@@ -34,71 +34,126 @@ D5
 ~
 0 0 11899
 E
-17~
-   Once you are returned to the antique shop, a young woman will approach you
-with an interest in the journal.  If you give it to her she will exchange it for
-a fiery bloodstone amulet.  This amulet has the power to move you to a safe
-place whenever you use it.  This can however, only be used about once every 20
-minutes, as the amulet needs to recharge itself.
+14~
+   In room 11859 you can find the angry girl.  She will attack you instantly
+when you walk in and the key to completing this quest is to let her tire herself
+out attacking you while keeping both her and yourself alive.  Once you let her
+wear herself out she will apologize and ask for a hug, give it to her and she
+will suddenly be a lot more receptive to writing in the journal.  
 ~
 E
-16~
-   The ghostly girl can be found in room 11848 and is the last mob that must be
-approached.  If you approach her before completing every one of the other quests
-she will remind you of this.  If they are already completed and you give her the
-journal she will make the request that you kill her and bury the corpse in the
-room.  Once you do this, her invisible spirit will complete the last entry in
-the journal for you, and you will be returned to the antique shop where the
-entire quest started.
+12~
+   In room 11844 is the emaciated girl, mumbling away absent-mindedly to
+herself.  To trigger this quest, as with almost all the others; just give her
+the journal.  She will give a little speech about sacrifice before asking you to
+make the ultimate one, and handing you a hotdog.  Now, not being any ordinary
+hotdog, eating it will take a huge chunk out of your hps.  If it doesn't kill
+you she will hand you another one, reminding you that the sacrifice is death.  
+Once you have eaten enough of them to render you incapacitated, she will heal
+you and explain that it was your willingness to make the sacrifice that she
+wanted.  Giving her the journal at any time after this point will cause her to
+write in it for you.  
 ~
 E
-15~
-   The scarred child hangs out in room 11872 (Inside the Gazebo), giving her the
-journal will launch her into a speech about her own lost story.  Choked by the
-pines she says it is, and the only way to get it back is to burn them down and
-recover the pages from the ashes.  With this task set, she gives you a
-flickering candle and asks you to return all the pages to her.  There are five
-pines throughout the zone and all must be burned down to retrieve the right
-amount of pages.  In rooms (11850, 11849, 11848, 11820, 11837) is where they can
-all be found.  As long as you have the candle somewhere on your person, typing
-BURN PINES will set the trees on fire.  They will burn for about three minutes
-before leaving nothing but a black page.  Return all five pages to the girl and
-she will offer to write in the journal.  Once this is done, she will also give
-you the completed book and ask you to return it to the house somewhere, just as
-a favour to her.
+11~
+   If you enter room 11870 (The Bunkbed Room) you will hear a child's voice
+telling you to "crawl in here".  The command crawl will cause you to crawl under
+the bed and enter room 11871 where the hiding girl is.  Giving her the journal
+will make her ask you for three things...  Three corpses in particular.  
+The corpse of a fish (the red trout - mobvnum: 11830, objvnum: 11856)
+The corpse of a bird (the taildove - mobvnum: 11831, objvnum: 11857)
+The corpse of a toad (the vile toad - mobvnum: 11832, objvnum: 11858)
+Once you have brought her all three of those things she will apologize and ask
+for one further thing... a secret that Ridley guards.
+If you go to Ridley and ask her a question with the word secret in it she will
+consent to give it to you.
+Once you have this item, just return to the hiding girl, give it to her and
+she will offer to write in the journal for you... give it to her and the job
+is done.
 ~
 E
-13~
-   The silent girl can be found in room 11852, and is silent for one major
-reason - her lips have been stitched together.  She will indicate this when you
-give her the journal, hopefully providing the hint that she wants something done
-about it.  Examining her will offer the idea that you have to cut them, and with
-no ordinary sword.  The sword you need is the sword of words (obj 11835), which
-Ridley gives you upon completion of her quest.  If you have it, just type cut,
-and the stitching will weaken enough to allow her to speak, and agree to write
-in the journal.  
+09~
+   The weeping girl is found in room 11864.  As with all of the quests, giving
+her the journal is what triggers it.  She will explain that she is upset because
+she can no longer spend time in her garden because of the monster there.  The
+quest then is to find is search out the garden west of the porch (room 11846)
+until you see a hideous looking creature.  Kill it, return to the weeping girl
+and give her the journal, and she will write in it for you.  As a side note,
+examining the mirror in the room with her will give you some dynamic information
+on your character ;)
 ~
 E
-10~
-   The fidgety girl hangs out in room 11863 and is a pretty unstable character.
-Once you give her the journal she'll ask you to play a game with her...  If you
-win three times she'll write in the book for you.  The bad part?  Every time you
-lose she slashes her arm with frustration, if she does that three times without
-healing she'll die.  Its a simple cup and ball game though, so hopefully not too
-difficult..  She just puts the ball under a random cup, and then randomly mixes
-them around.  If you pick the right cup you win.  She keeps track of your score
-and once you have won three times (it does not have to be concurrently), just
-give her the journal again.  
+08~
+   The blind girl can be found in room 11854.  Giving her the journal triggers
+her giving you a pair of eyes and telling you to examine the walls.  All you
+have to do is wear the eyes, examine the walls as she says, and say aloud the
+word you see written there.  If its correct she'll agree to write in the
+journal.  
 ~
 E
-6~
-   The tunnel-man can be found in room 11831, once you give him the journal he
-asks you to enter the tunnel and destroy some of the secrets there.  Typing
-ENTER will put you through the vortex and into another area where secrets are
-roaming wildly in the form of dark figures.  Once you've killed fifteen of them,
-the tunnel-man will accept the journal and write in it.  He'll also tell you of
-how many you've killed if you hand the journal to him before you've killed all
-fifteen.  
+07~
+   The running girl can be found running up and down inside the tunnel in room
+11831.  She moves fast, so the only way to really interact with her is to follow
+her..  Which will take you on a bit of a spammy ride.  As soon as you give her
+the journal however, she will come to a halt and tell you that all she wants is
+to be taken out of there.  She agrees to write in it if you will show her the
+way out and agrees to do whatever you say.  The key here is that she does just
+that, whatever you speak she does...  So if you say north, she moves north etc.
+All you have to do is lead her with speech to the vortex and through it.  Once
+on the other side she will happily write in the journal when you give it to her.
+~
+E
+05~
+   Ridley can be found playing with alphabet blocks in room 11836.  If you give
+her the journal she'll launch into a little speech and finally decide to write
+in it if you bring her three things.  She'll give you a black box and ask for a
+fruit, a flower, and a flying thing, and for you to return them in the box.  
+The fruit is obj 11828 and loads in room 11837.
+The flower is obj 11832 and loads in room 11831.
+And the flying thing is a little mob (11821) that basically wanders all over.
+The trick to giving her this thing is to type CAPTURE INSECT in the same room as
+it. This will then let you put it in the box with the rest of the things.
+Once all three things are in the box, just give it to her, and she'll write in
+the journal as well as giving you a sword that you'll need for later. ;)
+Oh, the insect will escape from you after a while, so make sure to put it in the box if you don't want to lose it.
+~
+E
+04~
+   The colouring child is super easy to deal with, she is in room 11809 and just
+wants a red crayon.  Give her the journal as always to trigger the quest, then
+find the red crayon in room 11812 (where the playing child is).  Once you give
+her the crayon she'll accept the journal and write in it.  
+~
+E
+03~
+   The playing child can be found in room 11812 (Their Room), once you give her
+the journal she will hand it back and tell you she wants you to release the bird
+kept in the house.  She'll also give you a key (referred to as Pin) so that you
+can unlock the cage.  You'll find the bird inside a cage in room 11818, just
+unlock the cage and take the bird out to release it.  Then the playing child
+will write in the journal when you give it to her.  Additionally, the key she
+gave you will open the door that The Way to the Middle leads to from The
+Crossroads.  
+~
+E
+02~
+   Okay, this is basically the main point of the zone.  When you are teleported
+by the dollshouse you find yourself in a room with a girl who gives you an eye.
+If you OPEN EYE you will continue with the quest, CLOSE EYE to hightail it out
+of there.  For those who continue on, they will be teleported to a crossroads
+and given a journal.  The basic idea behind the journal is that its empty when
+you start off, the only way to get it filled is to give it to the various mobs
+you find, and complete their mini quests to get them to write in it.  The goal
+is to find all those mobs, get them all to write in it, and complete the
+journal.  :)
+~
+E
+01~
+   Once you enter the Antique shop, the saleswoman should greet you.  The main
+item to look out for here is of course the dollshouse ;).  Looking at it or
+examining it should trigger some prompts from the saleswoman as to the doll that
+came with it.  Removing the doll from the dollshouse will cause you to be
+teleported, essentially triggering your quest within the zone.  
 ~
 E
 spoilers~
@@ -125,126 +180,71 @@ at each one (look 1 for example).
 17: The Fiery Bloodstone Amulet
 ~
 E
-01~
-   Once you enter the Antique shop, the saleswoman should greet you.  The main
-item to look out for here is of course the dollshouse ;).  Looking at it or
-examining it should trigger some prompts from the saleswoman as to the doll that
-came with it.  Removing the doll from the dollshouse will cause you to be
-teleported, essentially triggering your quest within the zone.  
+6~
+   The tunnel-man can be found in room 11831, once you give him the journal he
+asks you to enter the tunnel and destroy some of the secrets there.  Typing
+ENTER will put you through the vortex and into another area where secrets are
+roaming wildly in the form of dark figures.  Once you've killed fifteen of them,
+the tunnel-man will accept the journal and write in it.  He'll also tell you of
+how many you've killed if you hand the journal to him before you've killed all
+fifteen.  
 ~
 E
-02~
-   Okay, this is basically the main point of the zone.  When you are teleported
-by the dollshouse you find yourself in a room with a girl who gives you an eye.
-If you OPEN EYE you will continue with the quest, CLOSE EYE to hightail it out
-of there.  For those who continue on, they will be teleported to a crossroads
-and given a journal.  The basic idea behind the journal is that its empty when
-you start off, the only way to get it filled is to give it to the various mobs
-you find, and complete their mini quests to get them to write in it.  The goal
-is to find all those mobs, get them all to write in it, and complete the
-journal.  :)
+10~
+   The fidgety girl hangs out in room 11863 and is a pretty unstable character.
+Once you give her the journal she'll ask you to play a game with her...  If you
+win three times she'll write in the book for you.  The bad part?  Every time you
+lose she slashes her arm with frustration, if she does that three times without
+healing she'll die.  Its a simple cup and ball game though, so hopefully not too
+difficult..  She just puts the ball under a random cup, and then randomly mixes
+them around.  If you pick the right cup you win.  She keeps track of your score
+and once you have won three times (it does not have to be concurrently), just
+give her the journal again.  
 ~
 E
-03~
-   The playing child can be found in room 11812 (Their Room), once you give her
-the journal she will hand it back and tell you she wants you to release the bird
-kept in the house.  She'll also give you a key (referred to as Pin) so that you
-can unlock the cage.  You'll find the bird inside a cage in room 11818, just
-unlock the cage and take the bird out to release it.  Then the playing child
-will write in the journal when you give it to her.  Additionally, the key she
-gave you will open the door that The Way to the Middle leads to from The
-Crossroads.  
+13~
+   The silent girl can be found in room 11852, and is silent for one major
+reason - her lips have been stitched together.  She will indicate this when you
+give her the journal, hopefully providing the hint that she wants something done
+about it.  Examining her will offer the idea that you have to cut them, and with
+no ordinary sword.  The sword you need is the sword of words (obj 11835), which
+Ridley gives you upon completion of her quest.  If you have it, just type cut,
+and the stitching will weaken enough to allow her to speak, and agree to write
+in the journal.  
 ~
 E
-04~
-   The colouring child is super easy to deal with, she is in room 11809 and just
-wants a red crayon.  Give her the journal as always to trigger the quest, then
-find the red crayon in room 11812 (where the playing child is).  Once you give
-her the crayon she'll accept the journal and write in it.  
+15~
+   The scarred child hangs out in room 11872 (Inside the Gazebo), giving her the
+journal will launch her into a speech about her own lost story.  Choked by the
+pines she says it is, and the only way to get it back is to burn them down and
+recover the pages from the ashes.  With this task set, she gives you a
+flickering candle and asks you to return all the pages to her.  There are five
+pines throughout the zone and all must be burned down to retrieve the right
+amount of pages.  In rooms (11850, 11849, 11848, 11820, 11837) is where they can
+all be found.  As long as you have the candle somewhere on your person, typing
+BURN PINES will set the trees on fire.  They will burn for about three minutes
+before leaving nothing but a black page.  Return all five pages to the girl and
+she will offer to write in the journal.  Once this is done, she will also give
+you the completed book and ask you to return it to the house somewhere, just as
+a favour to her.
 ~
 E
-05~
-   Ridley can be found playing with alphabet blocks in room 11836.  If you give
-her the journal she'll launch into a little speech and finally decide to write
-in it if you bring her three things.  She'll give you a black box and ask for a
-fruit, a flower, and a flying thing, and for you to return them in the box.  
-The fruit is obj 11828 and loads in room 11837.
-The flower is obj 11832 and loads in room 11831.
-And the flying thing is a little mob (11821) that basically wanders all over.
-The trick to giving her this thing is to type CAPTURE INSECT in the same room as
-it. This will then let you put it in the box with the rest of the things.
-Once all three things are in the box, just give it to her, and she'll write in
-the journal as well as giving you a sword that you'll need for later. ;)
-Oh, the insect will escape from you after a while, so make sure to put it in the box if you don't want to lose it.
+16~
+   The ghostly girl can be found in room 11848 and is the last mob that must be
+approached.  If you approach her before completing every one of the other quests
+she will remind you of this.  If they are already completed and you give her the
+journal she will make the request that you kill her and bury the corpse in the
+room.  Once you do this, her invisible spirit will complete the last entry in
+the journal for you, and you will be returned to the antique shop where the
+entire quest started.
 ~
 E
-07~
-   The running girl can be found running up and down inside the tunnel in room
-11831.  She moves fast, so the only way to really interact with her is to follow
-her..  Which will take you on a bit of a spammy ride.  As soon as you give her
-the journal however, she will come to a halt and tell you that all she wants is
-to be taken out of there.  She agrees to write in it if you will show her the
-way out and agrees to do whatever you say.  The key here is that she does just
-that, whatever you speak she does...  So if you say north, she moves north etc.
-All you have to do is lead her with speech to the vortex and through it.  Once
-on the other side she will happily write in the journal when you give it to her.
-~
-E
-08~
-   The blind girl can be found in room 11854.  Giving her the journal triggers
-her giving you a pair of eyes and telling you to examine the walls.  All you
-have to do is wear the eyes, examine the walls as she says, and say aloud the
-word you see written there.  If its correct she'll agree to write in the
-journal.  
-~
-E
-09~
-   The weeping girl is found in room 11864.  As with all of the quests, giving
-her the journal is what triggers it.  She will explain that she is upset because
-she can no longer spend time in her garden because of the monster there.  The
-quest then is to find is search out the garden west of the porch (room 11846)
-until you see a hideous looking creature.  Kill it, return to the weeping girl
-and give her the journal, and she will write in it for you.  As a side note,
-examining the mirror in the room with her will give you some dynamic information
-on your character ;)
-~
-E
-11~
-   If you enter room 11870 (The Bunkbed Room) you will hear a child's voice
-telling you to "crawl in here".  The command crawl will cause you to crawl under
-the bed and enter room 11871 where the hiding girl is.  Giving her the journal
-will make her ask you for three things...  Three corpses in particular.  
-The corpse of a fish (the red trout - mobvnum: 11830, objvnum: 11856)
-The corpse of a bird (the taildove - mobvnum: 11831, objvnum: 11857)
-The corpse of a toad (the vile toad - mobvnum: 11832, objvnum: 11858)
-Once you have brought her all three of those things she will apologize and ask
-for one further thing... a secret that Ridley guards.
-If you go to Ridley and ask her a question with the word secret in it she will
-consent to give it to you.
-Once you have this item, just return to the hiding girl, give it to her and
-she will offer to write in the journal for you... give it to her and the job
-is done.
-~
-E
-12~
-   In room 11844 is the emaciated girl, mumbling away absent-mindedly to
-herself.  To trigger this quest, as with almost all the others; just give her
-the journal.  She will give a little speech about sacrifice before asking you to
-make the ultimate one, and handing you a hotdog.  Now, not being any ordinary
-hotdog, eating it will take a huge chunk out of your hps.  If it doesn't kill
-you she will hand you another one, reminding you that the sacrifice is death.  
-Once you have eaten enough of them to render you incapacitated, she will heal
-you and explain that it was your willingness to make the sacrifice that she
-wanted.  Giving her the journal at any time after this point will cause her to
-write in it for you.  
-~
-E
-14~
-   In room 11859 you can find the angry girl.  She will attack you instantly
-when you walk in and the key to completing this quest is to let her tire herself
-out attacking you while keeping both her and yourself alive.  Once you let her
-wear herself out she will apologize and ask for a hug, give it to her and she
-will suddenly be a lot more receptive to writing in the journal.  
+17~
+   Once you are returned to the antique shop, a young woman will approach you
+with an interest in the journal.  If you give it to her she will exchange it for
+a fiery bloodstone amulet.  This amulet has the power to move you to a safe
+place whenever you use it.  This can however, only be used about once every 20
+minutes, as the amulet needs to recharge itself.
 ~
 S
 #11801
@@ -279,21 +279,9 @@ wafting from the damp, grey street outside.
 ~
 0 0 11899
 E
-shop counter~
-   It looks almost as if someone had a fit of rage and pounded on it, a long
-black crack running along its length so that it barely holds up its own weight.
-~
-E
-old forgotten items~
-   Old-fashioned children's toys seem to make up the bulk of the items here,
-tiny china dolls and wooden cars.  Some delicate jewellry boxes can be spied
-glinting from the higher shelves, along with crystal ornaments of many kinds.
-~
-E
-weary wood panelling dried paint~
-   A sombre dark wood has been painted with a cheerful lick of paint, presumably
-to brighten it up.  However the paint has been left to flake and peel away,
-leaving the walls looking even more ghastly.
+sparkling particles dust~
+   These silver specks dance carelessly in the gentle wafts of air, turning and
+sparkling like tiny stars in each shaft of light.
 ~
 E
 cobwebs darker corners ceiling beams~
@@ -302,9 +290,21 @@ parts of the room.  Some of the older webs are dimmed and grey with time,
 flapping like indignant hands trying to shoo visitors away.
 ~
 E
-sparkling particles dust~
-   These silver specks dance carelessly in the gentle wafts of air, turning and
-sparkling like tiny stars in each shaft of light.
+weary wood panelling dried paint~
+   A sombre dark wood has been painted with a cheerful lick of paint, presumably
+to brighten it up.  However the paint has been left to flake and peel away,
+leaving the walls looking even more ghastly.
+~
+E
+old forgotten items~
+   Old-fashioned children's toys seem to make up the bulk of the items here,
+tiny china dolls and wooden cars.  Some delicate jewellry boxes can be spied
+glinting from the higher shelves, along with crystal ornaments of many kinds.
+~
+E
+shop counter~
+   It looks almost as if someone had a fit of rage and pounded on it, a long
+black crack running along its length so that it barely holds up its own weight.
 ~
 S
 #11803
@@ -397,21 +397,9 @@ a hall, the green leaves of some tall plant just in view.
 ~
 0 0 11804
 E
-horizontal windows~
-   These little windows are trimmed with lacey curtains, a few purple flowers
-nodding lazily just outside.
-~
-E
-several metal cars~
-   These little cars have smoothly rounded edges, and are too large for a young
-child to swallow, glistening brightly in every colour of the rainbow they look
-as if they'd be almost irresistable to play with.  
-~
-E
-little plastic teaparty set round table~
-   A low plastic table holds an assortment of pretty little cups and saucers,
-make believe biscuits made out of cardboard sit almost too perfectly in a plate
-on the little lacey tablecloth.  
+tiny children's chairs~
+   These vibrantly coloured plastic chairs sit low to the ground, just perfect
+for young children and toddlers.  
 ~
 E
 bookshelves brightly coloured books~
@@ -420,9 +408,21 @@ mathematical titles display themselves proudly.  One shelf holds an assortment
 of Disney and fantasy stories, and yet another holds several colouring books.  
 ~
 E
-tiny children's chairs~
-   These vibrantly coloured plastic chairs sit low to the ground, just perfect
-for young children and toddlers.  
+little plastic teaparty set round table~
+   A low plastic table holds an assortment of pretty little cups and saucers,
+make believe biscuits made out of cardboard sit almost too perfectly in a plate
+on the little lacey tablecloth.  
+~
+E
+several metal cars~
+   These little cars have smoothly rounded edges, and are too large for a young
+child to swallow, glistening brightly in every colour of the rainbow they look
+as if they'd be almost irresistable to play with.  
+~
+E
+horizontal windows~
+   These little windows are trimmed with lacey curtains, a few purple flowers
+nodding lazily just outside.
 ~
 S
 #11806
@@ -453,16 +453,16 @@ furniture settled against the near wall.
 ~
 0 0 11805
 E
-oily handprints~
-   These are very small handprints indeed, and freshly made, perhaps those of a
-very young child, or a baby just learning to walk.  
-~
-E
 toys~
    These toys look a little out of place in such tidy surroundings, little lego
 bricks and a jigsaw puzzle piece lie dropped along the center of the floor, as
 though someone carried a pile of toys too large for their arms and lost a few
 along the way.  
+~
+E
+oily handprints~
+   These are very small handprints indeed, and freshly made, perhaps those of a
+very young child, or a baby just learning to walk.  
 ~
 S
 #11807
@@ -481,19 +481,9 @@ wall amidst scattered toys.
 ~
 0 0 11806
 E
-music box~
-   The shape of a little piano, this clear plastic music box tinkles gently with
-the sleepy tune of Twinkle Twinkle Little Star.
-~
-E
-high window~
-   Green grasses obscure much of the view, little yellow dandelions growing in
-what seems to be a neglected part of the garden outside.
-~
-E
-toy box~
-   Little toys spill out of this brightly coloured but unremarkable box, the odd
-stuffed arm of a doll or teddybear amongst little lego bricks and crayons.
+tall wooden cot~
+   This little cot is somewhat reminiscent of a cage, the long wooden bars
+painted a cheerful white but covered with smudgy handprints.
 ~
 E
 changing table~
@@ -501,9 +491,19 @@ changing table~
 table is stocked with all things necessary for, well, changing nappies.
 ~
 E
-tall wooden cot~
-   This little cot is somewhat reminiscent of a cage, the long wooden bars
-painted a cheerful white but covered with smudgy handprints.
+toy box~
+   Little toys spill out of this brightly coloured but unremarkable box, the odd
+stuffed arm of a doll or teddybear amongst little lego bricks and crayons.
+~
+E
+high window~
+   Green grasses obscure much of the view, little yellow dandelions growing in
+what seems to be a neglected part of the garden outside.
+~
+E
+music box~
+   The shape of a little piano, this clear plastic music box tinkles gently with
+the sleepy tune of Twinkle Twinkle Little Star.
 ~
 S
 #11808
@@ -550,9 +550,9 @@ contrasting with the coziness of this little room.
 ~
 0 0 11808
 E
-high window~
-   Tall grasses can be seen waving just slightly above window level, indicating
-that this room is below ground.
+low bed~
+   This child's bed is made from a light coloured wood that has been smoothly
+polished, tiny little pieces of glitter have been stuck to it as decoration.
 ~
 E
 delicate hanging ornaments~
@@ -560,9 +560,9 @@ delicate hanging ornaments~
 long crystal spiral plays with any light as it twirls.
 ~
 E
-low bed~
-   This child's bed is made from a light coloured wood that has been smoothly
-polished, tiny little pieces of glitter have been stuck to it as decoration.
+high window~
+   Tall grasses can be seen waving just slightly above window level, indicating
+that this room is below ground.
 ~
 S
 #11810
@@ -586,17 +586,17 @@ carpeted stairs leading upward..
 ~
 0 0 11811
 E
+small neatly woven rug~
+   This little rug has been delicately woven from fine materials, dark greens
+and blues backing a purplish flower pattern that stands out vibrantly in the
+otherwise stark surroundings.  
+~
+E
 few family photos~
    These neatly framed pictures look to be recent snapshots of the family here.
 A solemn unshaven man and a starry-eyed young woman hold two tiny children on
 their laps.  The small girl has her arm around what presumably is her baby
 brother, both smiling toothlessly.  
-~
-E
-small neatly woven rug~
-   This little rug has been delicately woven from fine materials, dark greens
-and blues backing a purplish flower pattern that stands out vibrantly in the
-otherwise stark surroundings.  
 ~
 S
 #11811
@@ -633,13 +633,13 @@ subtle light at the bottom of the stairs.
 ~
 0 0 11810
 E
+sign~
+   	BMUM AND DAD'S ROOM	n
+~
+E
 nightlights~
    These small plastic lights give off just enough illumination for walking
 around without bumping into things.
-~
-E
-sign~
-   @BMUM AND DAD'S ROOM@n
 ~
 S
 #11812
@@ -658,10 +658,9 @@ doorknob decorated with paintings of flowers.
 door red wood~
 1 0 11811
 E
-delicate chandelier~
-   This pretty little light fixture has been made from glass beads and pendants
-dangling from delicate metal chains.  The resulting effect is one of a brilliant
-shimmering dome of light.
+slippery satiny quilts plump pillows~
+   These soft padded blankets and pillows are covered with a shimmering red
+fabric, the same rich colour as a deep glass of wine.
 ~
 E
 large double bed~
@@ -669,9 +668,10 @@ large double bed~
 four-poster bed, large enough for two adults to sleep comfortably.
 ~
 E
-slippery satiny quilts plump pillows~
-   These soft padded blankets and pillows are covered with a shimmering red
-fabric, the same rich colour as a deep glass of wine.
+delicate chandelier~
+   This pretty little light fixture has been made from glass beads and pendants
+dangling from delicate metal chains.  The resulting effect is one of a brilliant
+shimmering dome of light.
 ~
 S
 #11813
@@ -690,14 +690,9 @@ slightly askew as if the locking mechanism has been sabotaged.
 door~
 1 0 11811
 E
-various bottles cleansers lotions~
-   Amongst these relatively unremarkable supplies are the visible brand names of
-moisturisers and perfumes, most of them half-used.
-~
-E
-large deep bath~
-   Sparkling white, this bathtub looks almost as if it is never used at all,
-except for the big opened bottle of bubble bath that sits to the side.
+little oil burner~
+   This small cermaic pot holds a basin full of sweet smelling oil, a flickering
+candle beneath it heating the liquid and filling the air with the aroma.
 ~
 E
 pretty blue shower curtain~
@@ -705,9 +700,14 @@ pretty blue shower curtain~
 jumping dolphins making up the rest of the scenery.
 ~
 E
-little oil burner~
-   This small cermaic pot holds a basin full of sweet smelling oil, a flickering
-candle beneath it heating the liquid and filling the air with the aroma.
+large deep bath~
+   Sparkling white, this bathtub looks almost as if it is never used at all,
+except for the big opened bottle of bubble bath that sits to the side.
+~
+E
+various bottles cleansers lotions~
+   Amongst these relatively unremarkable supplies are the visible brand names of
+moisturisers and perfumes, most of them half-used.
 ~
 S
 #11814
@@ -746,14 +746,9 @@ furniture.
 ~
 0 0 11805
 E
-soft lamp shades~
-   These shades are made from cream-coloured tassled fabric, the kind that shows
-any speck of dust, only these are in absolutely pristine condition.
-~
-E
-electronic games~
-   These large machines are reminiscent of what you'd find in an arcade game
-facility, amongst the various flashing lights pinball and pacman can be seen.
+dart board~
+   Seemingly well used, this circular board is filled with hundreds and hundreds
+of tiny black holes, a great deal of them within the bullseye.
 ~
 E
 large stereo system~
@@ -762,9 +757,14 @@ Two massive speakers stand either side of it, practically prickling with the
 static of potential sound.
 ~
 E
-dart board~
-   Seemingly well used, this circular board is filled with hundreds and hundreds
-of tiny black holes, a great deal of them within the bullseye.
+electronic games~
+   These large machines are reminiscent of what you'd find in an arcade game
+facility, amongst the various flashing lights pinball and pacman can be seen.
+~
+E
+soft lamp shades~
+   These shades are made from cream-coloured tassled fabric, the kind that shows
+any speck of dust, only these are in absolutely pristine condition.
 ~
 S
 #11816
@@ -817,14 +817,14 @@ with smells of cooking.
 ~
 0 0 11816
 E
-righ mahogany sofas~
-   Carefully sculpted wooden frames hold a luxurious array of padded leather
-cushions, the smooth black texture of the sofa looking comfortable and inviting.
-~
-E
 glass cabinet crystal~
    Smooth glassy shelves hold an array of crystal ornaments, tiny glittering
 swans and teddy bears sparkling in rows.
+~
+E
+righ mahogany sofas~
+   Carefully sculpted wooden frames hold a luxurious array of padded leather
+cushions, the smooth black texture of the sofa looking comfortable and inviting.
 ~
 S
 #11818
@@ -893,9 +893,9 @@ music coming from within.
 ~
 0 0 11819
 E
-small metal ladder~
-   This simple ladder is fastened to the side of the pool, enabling swimmers to
-climb either in or out.
+large trees~
+   These gently swaying trees appear to be weeping willows, long trailing stems
+hanging gracefully down from the bent trunks.
 ~
 E
 green blooming plants~
@@ -903,9 +903,9 @@ green blooming plants~
 large red and magenta blossoms splashing colourfully through the green.
 ~
 E
-large trees~
-   These gently swaying trees appear to be weeping willows, long trailing stems
-hanging gracefully down from the bent trunks.
+small metal ladder~
+   This simple ladder is fastened to the side of the pool, enabling swimmers to
+climb either in or out.
 ~
 S
 #11821
@@ -1220,14 +1220,14 @@ paint peeling from its surface.
 door~
 1 0 11830
 E
-stickers cartoon characters wooden dressers images~
-   Various depictions of Disney characters cover most of the wooden surfaces,
-brightly and carefully hand-painted, although smudged with little fingerprints.
-~
-E
 twirling suncatchers~
    These pretty little suncatchers are made from long spirals of glass, attached
 to a silver thread and hung from the ceiling to twirl in the stirring air.
+~
+E
+stickers cartoon characters wooden dressers images~
+   Various depictions of Disney characters cover most of the wooden surfaces,
+brightly and carefully hand-painted, although smudged with little fingerprints.
 ~
 S
 T 11834
@@ -1245,15 +1245,15 @@ D0
 door~
 1 0 11830
 E
-bed~
-   Just a regular wooden bed, this little piece of furniture stands tucked as
-closely against the wall as it can get, made with blue bedding.
-~
-E
 dresser~
    Made of plain, unfinished wood, this small dresser looks as if it were thrown
 together by hand, pressed tightly into the corner so as to take up the least
 amount of room.
+~
+E
+bed~
+   Just a regular wooden bed, this little piece of furniture stands tucked as
+closely against the wall as it can get, made with blue bedding.
 ~
 S
 #11833
@@ -1279,10 +1279,10 @@ shoes and coats.
 ~
 0 0 11825
 E
-television~
-   This television is covered in a very fine layer of dust, indicating that it
-has not been turned on for some time though it is large and prominent in the
-room.  
+cross-stitchings paintings~
+   These little works of art are obviously amateur but nonetheless very pretty,
+portrayals of flowers and landscapes are the main subject, with one elaborate
+stitching of a tiger placed in clear view.  
 ~
 E
 several family photos~
@@ -1292,10 +1292,10 @@ about seven, whereas the younger two girls are barely out of their toddler
 years, one sucking contendedly on a dummy.  
 ~
 E
-cross-stitchings paintings~
-   These little works of art are obviously amateur but nonetheless very pretty,
-portrayals of flowers and landscapes are the main subject, with one elaborate
-stitching of a tiger placed in clear view.  
+television~
+   This television is covered in a very fine layer of dust, indicating that it
+has not been turned on for some time though it is large and prominent in the
+room.  
 ~
 S
 #11834
@@ -2390,18 +2390,18 @@ Once you have counted them all, type look next
 ~
 118 24 0 0 0 0
 E
+two 2~
+	y	RF	yINISHED 	RF	yILES ARE THE RE-
+SULT O	RF	y YEARS O	RF	y SCIENTI	RF	y-
+IC STUDY COMBINED WITH THE
+EXPERIENCE O	RF	y YEARS...	n
+~
+E
 next~
 How many F's did you get?
 The answer is that there are 6 :)
 Most people only count three as the brain does not process the F in the word of
 PS. if you are really stuck, type LOOK TWO, to see exactly where the F's are
-~
-E
-two 2~
-@y@RF@yINISHED @RF@yILES ARE THE RE-
-SULT O@RF@y YEARS O@RF@y SCIENTI@RF@y-
-IC STUDY COMBINED WITH THE
-EXPERIENCE O@RF@y YEARS...@n
 ~
 S
 #11895
@@ -2445,10 +2445,10 @@ T 11899
 A Street Corner~
    This long grey street is wet with puddles from the nearly constant rain here,
 the splashing sound of cars driving past and the cooing of pigeons as they
-flutter overhead almost all there is to be heard.  It seems mostly deserted, the
-few people to be seen scurrying quickly about, faces down as they rush to their
-destinations.  All seems dim and dreary, the only warmth is the subtle glow of
-light coming from a shop to the east.  
+flutter overhead is almost all there is to be heard.  It seems mostly deserted,
+the few people to be seen scurrying quickly about, faces down as they rush to
+their destinations.  All seems dim and dreary, the only warmth is the subtle
+glow of light coming from a shop to the east.  
 ~
 118 0 0 0 0 1
 D1

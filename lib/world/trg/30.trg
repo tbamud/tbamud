@@ -71,7 +71,7 @@ if %actor.level% < 3
 else
   nop %actor.gold(%value%)%
 end
-return 0
+%purge% %object%
 ~
 #3005
 Stock Thief~

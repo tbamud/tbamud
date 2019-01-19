@@ -189,7 +189,7 @@ char *fread_action(FILE *fl, int nr)
 static void boot_social_messages(void)
 {
   FILE *fl;
-  int nr = 0, hide, min_char_pos, min_pos, min_lvl, curr_soc = -1;
+  int line_number, nr = 0, hide, min_char_pos, min_pos, min_lvl, curr_soc = -1;
   char next_soc[MAX_STRING_LENGTH], sorted[MAX_INPUT_LENGTH];
 
   if (CONFIG_NEW_SOCIALS == TRUE) {
@@ -236,7 +236,7 @@ static void boot_social_messages(void)
   CREATE(soc_mess_list, struct social_messg, top_of_socialt + 1);
 
   /* now read 'em */
-  for (int line_number = 0;; ++line_number) {
+  for (line_number = 0;; ++line_number) {
     if (fscanf(fl, " %s ", next_soc) != 1) {
       if(feof(fl))
         log("SYSERR: unexpected end of file encountered in socials file %s", SOCMESS_FILE_NEW);
@@ -935,7 +935,7 @@ void index_boot(int mode)
 {
   const char *index_filename, *prefix = NULL;	/* NULL or egcs 1.1 complains */
   FILE *db_index, *db_file;
-  int rec_count = 0, size[2];
+  int line_number, rec_count = 0, size[2];
   char buf2[PATH_MAX], buf1[MAX_STRING_LENGTH];
 
   switch (mode) {
@@ -979,7 +979,7 @@ void index_boot(int mode)
     exit(1);
   }
 
-  for (int line_number = 0;; ++line_number) {
+  for (line_number = 0;; ++line_number) {
     /* first, count the number of records in the file so we can malloc */
     if (fscanf(db_index, "%s\n", buf1) != 1) {
       if (feof(db_index))
@@ -1065,7 +1065,7 @@ void index_boot(int mode)
 
   rewind(db_index);
 
-  for (int line_number = 1;; ++line_number) {
+  for (line_number = 1;; ++line_number) {
     if (fscanf(db_index, "%s\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s",

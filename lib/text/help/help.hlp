@@ -34,7 +34,7 @@ trigger you must define actor.
 %damage% %actor% 20           - cause 20 points damage
 %damage% %actor% %random.20%  - cause 1-20 points damage randomly
 
-eval stunned %actor.hitp%     - evaluate all hitpoints and then damage
+set stunned %actor.hitp%      - evaluate all hitpoints and then damage
 %damage% %actor% %stunned%    - leaving the player stunned, but will recover 
 
 eval random_up_to_stunned %%random.%stunned%%%
@@ -143,6 +143,22 @@ Mob Example: @RTSTAT 81@n
 
 See also: POSITIONS, CHAR-VAR
 #31
+%LOG% WLOG MLOG OLOG
+
+%log% <message>
+
+This command sends a message to the syslog so all immmortals can see it. It can
+ be useful for debugging, or for tracking the frequency of things that shouldn't occur
+very often.
+
+%log% %actor.name%, a level %actor.level% %actor.class% just typed %cmd% %arg%
+
+will generate a message that looks like:
+
+[ Room 57700 :: Fizban, a level 34 Magic-User just typed log example ]
+
+The part before the :: shows what the script that logged the message was attached to.
+#0
 %MOVE% MOVE-OBJECT MOVE-ALL
 
 In an object trigger, moves the object to which the trig is attached to the 
@@ -841,7 +857,7 @@ AUTOQUESTS QUESTS QUESTMASTERS QUESTPOINTS QUEST-POINTS QUEST-MOBS QUESTMOBS
    An autoquest is a quest that can be automatically started and completed by 
 players on the MUD without the intervention of an immortal.  Players simply 
 visit a questmaster where they join an available quest, and get rewarded on 
-it’s completion.
+its completion.
 
 See Also: QEDIT, QUEST-FLAG
 #31
@@ -859,7 +875,7 @@ AUTOSACRIFICE SACRIFICE
 Usage: toggle autosac
 
    Enables you to automatically sacrifice any mob you kill. If you do not have
-autoloot and autoloot enabled the objects and gold will also be sacrificed.
+autoloot enabled the objects and gold will also be sacrificed.
 
 See Also: TOGGLE
 #0
@@ -1861,6 +1877,11 @@ ANSI colors:
 @*m - @mmagenta@n    @*M - @Mbright magenta@n   @*p - @ppink@n       @*P - @Pbright pink@n
 @*y - @yyellow@n     @*Y - @Ybright yellow@n    @*o - @oorange@n     @*O - @Obright orange@n
 @*w - @wwhite@n      @*W - @Wbright white@n     @*[F###] - @RSHOW COLOUR@n to list all codes.
+
+It should be noted that in editors typing /t toggles whether color codes are shown
+or are interpreted as color codes. This can be useful for copying and pasting
+strings that contain color without having to re-insert all the color codes
+manually.
 
 See also: @*, OLC-COLOR, MXP, ANSI, PROMPT, TOGGLE, SHOW-COLOUR
 #1
@@ -6295,8 +6316,12 @@ Usage: olist <range of vnums or zone number>
 
 Olist gives you a list of the objects numbered within the parameters.
 
-olist 12          - lists all objects defined in zone 12
-olist 3001 3022   - lists all existing objects from vnum 3001 to 3022
+olist 12           - lists all objects defined in zone 12
+olist 3001 3022    - lists all existing objects from vnum 3001 to 3022
+olist affect <num> - Displays top 100 objects, in order, with the selected affect.
+                     Type olist affect to see all available fields.
+olist type <num>   - Displays objects of the selected type.
+                     Type olist type to see all available fields.
 
 See also: OEDIT, OLC
 #31
@@ -7080,7 +7105,7 @@ Level 32 (God) An experienced builder that has proven their knowledge and is
                willing to teach others. Level 2 and above is considered staff.
 Level 33 (Greater God) An experienced builder that has contributed 
                        significantly to TBA.
-Level 34 (Implementor) Welcor and I (Rumble). Welcor hosts and I administrate.
+Level 34 (Implementor) Current developers: Welcor, Wyld, and Opie.
 
    Do not bother asking to be advanced, and if that is why you are here, you
 are wasting your time. Note, this does not mean you are not a quality builder,
@@ -7092,6 +7117,7 @@ necessary skills to do so, you will be advanced and given further privileges
 to help teach others. Generally, if you have to ask for a promotion you will be
 less likely to receive it. Performance is everything here.
 
+q
 #0
 PROPOSALS GUIDELINES ZONE-PROPOSALS PROPOSITIONS PROPOSE REQUESTS CRITERIA
 
@@ -7797,6 +7823,11 @@ The following terrains may be selected (only one):
 10)  Underwater       Underwater requires AFF_SCUBA.          5 
 
 #31
+RELEASES
+
+The complete release history of tbaMUD is available at:
+https://github.com/tbamud/tbamud/blob/master/doc/releases.txt
+#0
 RELOAD
 
 Usage: reload < '*' | all | file >
@@ -10128,11 +10159,6 @@ MOB: 1322
              ^^^//\\_^^//\\_^       ^(\_\_\_\)
                ^^^ ^^ ^^^ ^^
 #31
-RELEASES
-
-The complete release history of tbaMUD is available at:
-https://github.com/tbamud/tbamud/blob/master/doc/releases.txt
-#0
 THE-MUD-CONNECTOR TMC MUD-CONNECTOR MUDCONNECTOR
 
    Most of our traffic comes through word of mouth or TMC reviews. If you are so
@@ -10919,7 +10945,7 @@ Example: @RTSTAT 76@n
 TRIGEDIT-MOB-COMMAND TRIG-MOB-COMMAND
 
 Activates when commands are performed in the same room as the mobile.
-Does not work for God and above.
+Does not work for Greater God and above.
 
 Numeric Arg : not used.
 Argument    : text which must be part of the command typed to filter out 
@@ -11387,7 +11413,7 @@ Example: @RTSTAT 90@n
 TRIGEDIT-OBJ-COMMANDS TRIGEDIT-OBJECT-COMMAND TRIG-OBJ-COMMAND TRIG-OBJ-COMMANDS
 
 Activates when a command is performed near this object.
-Command triggers do not work for God and above.
+Command triggers do not work for Greater God and above.
 
 Numeric Arg : a bitfield to indicate where the object must be in order to cause 
               the trigger to activate. 
@@ -11605,7 +11631,7 @@ Example: @RTSTAT 57@n
 TRIGEDIT-ROOM-COMMANDS TRIG-ROOM-COMMANDS CLIMBING 
 
 Activates when commands are performed in the room.
-Does not work for God and above.
+Does not work for Greater God and above.
 
 Numeric Arg : not used.
 Argument    : text which must be part of the command typed to filter out 
@@ -12008,6 +12034,7 @@ mudcommand - Returns the mud command the string is shorthand for. Used to make
 charat     - set new variable %text/var.charat(index)% i.e. set phrase testing, 
              set var1 %phrase.charat(2)% now %var1% == e
 
+toupper    - Returns the string with the first letter of it capitalized.
 Example: @RTSTAT 30@n
 #31
 TRIGGER-EDITORS

@@ -54,7 +54,7 @@ A weather-beaten sign solemnly stands here.~
 0 0 0 0 0
 E
 sign words word~
-     @n
+     	n
 North: Forbidden Forest
 West: An Abandoned Lighthouse
 South: Konolua Beach
@@ -136,7 +136,7 @@ E
 harp~
    This harp is made of a metal that shifts and changes its colours every now
 and then.  Carved into the column of it are strange elvish designs, while the
-neck of the harp is a simple S-shape.  @Rplay harp@n to produce sensational
+neck of the harp is a simple S-shape.  	Rplay harp	n to produce sensational
 music.  
 ~
 #20110
@@ -173,12 +173,12 @@ The blade itself is made of a bluish metal, yet it cannot be determined for the
 tones of blue are always changing.  You may say the blade itself is made of a
 solid type of flowing liquid, while the hilt has been creatively designed to
 form the shape of Leviathan, the legendary dragon that sleeps beneath the ocean.
-@W@uTo Use this blade:@n At the expense of 50 mana points, this blade will
+	W	uTo Use this blade:	n At the expense of 50 mana points, this blade will
 constantly heal you for 10 hp every 2-3 seconds.  To use this command, type
-@BEXECUTE FUSION@n.  For 100 of your own hp you can damage the opponent for 1000
+	BEXECUTE FUSION	n.  For 100 of your own hp you can damage the opponent for 1000
 in return, provided that it is not a player character.  A drawback to this
 ability is the time taken to fully execute the damage, it takes time to recharge
-before striking down the opponent.  To use this type @BPERFORM AURORAFALL@n.  
+before striking down the opponent.  To use this type 	BPERFORM AURORAFALL	n.  
 ~
 #20112
 chest~
@@ -262,7 +262,7 @@ T 20146
 T 20147
 E
 cushion~
-   The @Rred@n cushion is big, nice, and exceptionally nice to cuddle or sit on.
+   The 	Rred	n cushion is big, nice, and exceptionally nice to cuddle or sit on.
 
 ~
 #20118
@@ -277,7 +277,7 @@ T 20146
 T 20147
 E
 cushion~
-   The @Bblue@n cushion is big, nice, and exceptionally nice to cuddle or sit
+   The 	Bblue	n cushion is big, nice, and exceptionally nice to cuddle or sit
 on.  
 ~
 #20119
@@ -292,7 +292,7 @@ T 20146
 T 20147
 E
 cushion~
-   The @Yyellow@n cushion is big, nice, and exceptionally nice to cuddle or sit
+   The 	Yyellow	n cushion is big, nice, and exceptionally nice to cuddle or sit
 on.  
 ~
 #20120
@@ -305,7 +305,7 @@ A glittering anklet sparkles silently here.~
 6 2500 500 0 0
 E
 anklet~
-   This @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n is made from prism, a rare mineral
+   This 	MP	Wr	Mi	ms	Wm 	MA	Wn	Mk	ml	We	mt	n is made from prism, a rare mineral
 that is created after being buried under the sand for many years.  The white
 powdery substance it is made from makes it glitters, enhancing the beauty of
 this wonderful object.  
@@ -320,7 +320,7 @@ A nearly transparent dress lies here, sparkling silently.~
 8 7500 1000 0 0
 E
 dress~
-   This @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n is made from prism, a rare mineral
+   This 	MP	Wr	Mi	ms	Wm 	MD	Wr	Me	ms	Ws	n is made from prism, a rare mineral
 that is created after being buried under the sand for many years.  The white
 powdery substance it is made from makes it glitters, enhancing the beauty of
 this wonderful object.  
@@ -335,7 +335,7 @@ A glittering collar sparkles alone.~
 5 2500 500 0 0
 E
 collar~
-   This @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n is made from prism, a rare mineral
+   This 	MP	Wr	Mi	ms	Wm 	MC	Wo	Ml	ml	Wa	Mr	n is made from prism, a rare mineral
 that is created after being buried under the sand for many years.  The white
 powdery substance it is made from makes it glitters, enhancing the beauty of
 this wonderful object.  
@@ -350,7 +350,7 @@ A wooden sign has been planted here.~
 0 0 0 0 0
 E
 sign~
-   The sign says: When you wish to go home, just @CJUMP@n into the water.  
+   The sign says: When you wish to go home, just 	CJUMP	n into the water.  
 ~
 #20124
 book manual guide~
@@ -361,30 +361,22 @@ A simple guidebook of @WSapphire Islands@g lies here.~
 0 0 0 0
 1 10 0 0 0
 E
-book guide~
-   This book has been made for immortals to give them a rough idea of this area.
-A simple, plain hardcover book, the pages contains many useful information and
-secrets of the Sapphire Islands.  Type look index to look at it.  
-~
-E
-index~
-   INDEX:
-1)Overview
-2)Notes by the Author
-3)Features
-4)Secrets
-Type look <number> to read the different entries.
-~
-E
-1~
-   OVERVIEW type @Rgoto 20100@n and look ;)
-~
-E
-2~
-   WORDS BY THE BUILDER
-Thanks everyone who has helped me in the making of this zone.  It took me 7
-days to finish it, followed by a few more days of editing.  
-There may be a lot more hidden errors, so mail me if you see any ;)
+4~
+   	n
+SECRETS
+   There are a list of things that will not appear anywhere on this zone.  They
+are for immortals only ;) Type olist to bring out a list of them.  Items
+classified under this will be those with VNUM 20170+.  Load them and enjoy.  
+
+QUESTS
+   A power sword can be obtained by braving the deep waters (move far away from
+the island) and wait.  Then go north, and SEARCH around.  Finally say the words
+'liquiddreams' and receive this magnificent blade!  
+   The Old Fool in the old hut may seem to be talking rubbish, but they are
+actually clues to the words liquiddreams ;)
+
+   Special commands like dive and dig can be performed at the places where they
+say you can do so.
 ~
 E
 3~
@@ -402,22 +394,30 @@ voices can stun you!
    Deep waters should also be avoided, if you don't want to drown.
 ~
 E
-4~
-   @n
-SECRETS
-   There are a list of things that will not appear anywhere on this zone.  They
-are for immortals only ;) Type olist to bring out a list of them.  Items
-classified under this will be those with VNUM 20170+.  Load them and enjoy.  
-
-QUESTS
-   A power sword can be obtained by braving the deep waters (move far away from
-the island) and wait.  Then go north, and SEARCH around.  Finally say the words
-'liquiddreams' and receive this magnificent blade!  
-   The Old Fool in the old hut may seem to be talking rubbish, but they are
-actually clues to the words liquiddreams ;)
-
-   Special commands like dive and dig can be performed at the places where they
-say you can do so.
+2~
+   WORDS BY THE BUILDER
+Thanks everyone who has helped me in the making of this zone.  It took me 7
+days to finish it, followed by a few more days of editing.  
+There may be a lot more hidden errors, so mail me if you see any ;)
+~
+E
+1~
+   OVERVIEW type 	Rgoto 20100	n and look ;)
+~
+E
+index~
+   INDEX:
+1)Overview
+2)Notes by the Author
+3)Features
+4)Secrets
+Type look <number> to read the different entries.
+~
+E
+book guide~
+   This book has been made for immortals to give them a rough idea of this area.
+A simple, plain hardcover book, the pages contains many useful information and
+secrets of the Sapphire Islands.  Type look index to look at it.  
 ~
 #20190
 sword nirvana~
@@ -432,7 +432,7 @@ E
 sword nirvana~
    Deathly Nirvana is a blade made of pure runestone.  Its edge is razor-sharp
 and dangerously thin - a characteristic that enables it to slice through any
-material with utmost ease.  @RSlash@n releases its hidden power.  
+material with utmost ease.  	RSlash	n releases its hidden power.  
 ~
 #20191
 icecream ice cone~
@@ -484,8 +484,8 @@ Someone has dropped a pair of glasses here.~
 1 500 0 0 0
 E
 glasses specs spectacle spectacles~
-   The glass of this pair of spectacle is heavily tinted in @Cblue@n!  Looking
-through it will probably make everything look @Cblue@n as well.  
+   The glass of this pair of spectacle is heavily tinted in 	Cblue	n!  Looking
+through it will probably make everything look 	Cblue	n as well.  
 ~
 #20195
 shorts short~
@@ -539,15 +539,15 @@ A neatly folded, @Cocean blue@g T-shirt lies here.~
 0 0 0 0
 1 300 0 0 0
 E
+label~
+   The label reads: I-wear - We specialize in making clothes for happy
+immortals.  
+~
+E
 tshirt shirt t-shirt~
    This Hawiian t-shirt is made from a brilliant blue fabric, carefully and
 specially designed to fit any immortal.  A label hangs by the collar of the
 shirt.  
-~
-E
-label~
-   The label reads: I-wear - We specialize in making clothes for happy
-immortals.  
 ~
 #20199
 key~
@@ -558,9 +558,8 @@ A key that is covered in a reddish-material lies forgotten here.~
 0 0 0 0
 1 1 1 0 0
 E
-material rust~
-   The reddish-material is rust, which the key seems to be collecting after many
-many years.  
+engraving engravings~
+   The rust makes it difficult to read.  
 ~
 E
 key~
@@ -568,7 +567,8 @@ key~
 engravings can be found on the key, the rust makes it difficult to see.  
 ~
 E
-engraving engravings~
-   The rust makes it difficult to read.  
+material rust~
+   The reddish-material is rust, which the key seems to be collecting after many
+many years.  
 ~
 $~
