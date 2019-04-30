@@ -1,0 +1,84 @@
+# CircleMUD Makefile.in - Makefile template used by 'configure'
+# for the 'util' directory
+
+# C compiler to use
+CC = @CC@
+
+# Any special flags you want to pass to the compiler
+MYFLAGS = @MYFLAGS@ -DCIRCLE_UTIL
+
+#flags for profiling (see hacker.doc for more information)
+PROFILE = 
+
+##############################################################################
+# Do Not Modify Anything Below This Line (unless you know what you're doing) #
+##############################################################################
+
+# binary destination directory
+BINDIR = ../../bin
+# location of Circle include files
+INCDIR = ..
+
+CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE) -I$(INCDIR)
+
+default: all
+
+all: $(BINDIR)/asciipasswd $(BINDIR)/autowiz $(BINDIR)/plrtoascii $(BINDIR)/rebuildIndex $(BINDIR)/rebuildMailIndex $(BINDIR)/shopconv $(BINDIR)/sign $(BINDIR)/split $(BINDIR)/wld2html $(BINDIR)/webster
+
+asciipasswd: $(BINDIR)/asciipasswd
+
+autowiz: $(BINDIR)/autowiz
+
+plrtoascii: $(BINDIR)/plrtoascii
+
+rebuildIndex: $(BINDIR)/rebuildIndex
+
+rebuildMailIndex: $(BINDIR)/rebuildMailIndex
+
+shopconv: $(BINDIR)/shopconv
+
+sign: $(BINDIR)/sign
+
+split: $(BINDIR)/split
+
+wld2html: $(BINDIR)/wld2html
+
+webster: $(BINDIR)/webster
+
+$(BINDIR)/asciipasswd: asciipasswd.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/asciipasswd asciipasswd.c @CRYPTLIB@
+
+$(BINDIR)/autowiz: autowiz.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/autowiz autowiz.c
+
+$(BINDIR)/plrtoascii: plrtoascii.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/plrtoascii plrtoascii.c
+
+$(BINDIR)/rebuildIndex: rebuildAsciiIndex.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/rebuildIndex rebuildAsciiIndex.c
+
+$(BINDIR)/rebuildMailIndex: rebuildMailIndex.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/rebuildMailIndex rebuildMailIndex.c
+
+$(BINDIR)/shopconv: shopconv.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/shopconv shopconv.c
+
+$(BINDIR)/sign: sign.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/sign sign.c @NETLIB@
+
+$(BINDIR)/split: split.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/split split.c
+
+$(BINDIR)/wld2html: wld2html.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/wld2html wld2html.c
+
+$(BINDIR)/webster: webster.c
+	$(CC) $(CFLAGS) -o $(BINDIR)/webster webster.c
+
+# Dependencies for the object files (automagically generated with
+# gcc -MM)
+
+depend:
+	$(CC) -I$(INCDIR) -MM *.c > depend
+
+-include depend
