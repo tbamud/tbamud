@@ -23,16 +23,7 @@ CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE) -I$(INCDIR)
 
 default: all
 
-all: $(BINDIR)/asciipasswd \
-	$(BINDIR)/autowiz \
-	$(BINDIR)/plrtoascii \
-	$(BINDIR)/rebuildIndex \
-	$(BINDIR)/rebuildMailIndex \
-	$(BINDIR)/shopconv \
-	$(BINDIR)/sign \
-	$(BINDIR)/split \
-	$(BINDIR)/wld2html \
-	$(BINDIR)/webster 
+all: $(BINDIR)/asciipasswd $(BINDIR)/autowiz $(BINDIR)/plrtoascii $(BINDIR)/rebuildIndex $(BINDIR)/rebuildMailIndex $(BINDIR)/shopconv $(BINDIR)/sign $(BINDIR)/split $(BINDIR)/wld2html $(BINDIR)/webster
 
 asciipasswd: $(BINDIR)/asciipasswd
 
