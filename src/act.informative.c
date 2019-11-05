@@ -1918,14 +1918,14 @@ ACMD(do_toggle)
     {"autodoor", PRF_AUTODOOR, 0,
     "You will now need to specify a door direction when opening, closing and unlocking.\r\n",
     "You will now find the next available door when opening, closing or unlocking.\r\n"},
-    {"color", 0, 0, "\n", "\n"},
+    {"zoneresets", PRF_ZONERESETS, LVL_IMPL,
+    "You will no longer see zone resets.\r\n",
+    "You will now see zone resets.\r\n"},
     {"syslog", 0, LVL_IMMORT, "\n", "\n"},
     {"wimpy", 0, 0, "\n", "\n"},
     {"pagelength", 0, 0, "\n", "\n"},
     {"screenwidth", 0, 0, "\n", "\n"},
-    {"zoneresets", PRF_ZONERESETS, LVL_IMPL,
-    "You will no longer see zone resets.\r\n",
-    "You will now see zone resets.\r\n"},
+    {"color", 0, 0, "\n", "\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
