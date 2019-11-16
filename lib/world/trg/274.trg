@@ -106,8 +106,7 @@ switch %random.4%
        say its a mean old man!
       else
        say its a mean witch!
-       done
-      done
+      end
       %echo% the child starts crying!
     break
     case 2
@@ -122,7 +121,7 @@ switch %random.4%
       hug %actor.name%
       say Please be welcome here!
     break
-end
+done
 ~
 #27407
 Std greeting shop mobs~
