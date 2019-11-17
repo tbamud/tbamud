@@ -1568,7 +1568,7 @@ Eval and Set Example~
 2 d 100
 test~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* This is a speech trig 	RHELP TRIGEDIT ROOM SPEECH	n, say 'test' to activate.
+* This is a speech trig @RHELP TRIGEDIT ROOM SPEECH@n, say 'test' to activate.
 * There is much confusion about the difference between set and eval. So this is
 * the simplest way I can think of to explain it (assume %actor.level% = 34):
 *

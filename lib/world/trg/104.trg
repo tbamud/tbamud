@@ -146,8 +146,8 @@ wait 3 sec
 Finding the Armor~
 1 g 100
 ~
-%echoaround% %actor% As %actor.name% picks up the armor, the room is filled with a mystical 	Wwhite	n light.
-%send% %actor% You pick up the armor and you are engulfed in a 	Wwhite	n light.
+%echoaround% %actor% As %actor.name% picks up the armor, the room is filled with a mystical @Wwhite@n light.
+%send% %actor% You pick up the armor and you are engulfed in a @Wwhite@n light.
 %teleport% %actor% 10413
 %echoaround% %actor% As the light fades, you notice %actor.name% is no longer there.
 %echoaround% %actor% Nor is the armor.

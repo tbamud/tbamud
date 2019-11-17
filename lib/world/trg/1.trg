@@ -2233,7 +2233,7 @@ Stayalive idleout bracelet - 88~
 * By Rumble of The Builder Academy    tbamud.com 9091
 eval actor %self.worn_by%
 if %actor%
-  %send% %actor% 	n
+  %send% %actor% @n
 end
 ~
 #196
@@ -2255,11 +2255,11 @@ say Good Job, you made it.
 wait 2 sec
 say Now I would suggest that you practice what you have learned.
 wait 2 sec
-say Check your title under 	RWHO	n. A vnum should be listed there, if not mudmail Rumble for one.
+say Check your title under @RWHO@n. A vnum should be listed there, if not mudmail Rumble for one.
 wait 2 sec
-say Just type 	RGOTO VNUM	n and type redit to modify your room.
+say Just type @RGOTO VNUM@n and type redit to modify your room.
 wait 2 sec
-say Once you complete your room come back to these hallways by typing 	RGOTO 3	n.
+say Once you complete your room come back to these hallways by typing @RGOTO 3@n.
 wait 3 sec
 beam %actor.name%
 ~
@@ -2268,7 +2268,7 @@ TBA Give Suggestions - 21~
 0 g 100
 ~
 wait 2 sec
-say The best advice for new builders is under 	RHELP SUGGESTIONS	n.
+say The best advice for new builders is under @RHELP SUGGESTIONS@n.
 ~
 #199
 TBA Welcome - 18~

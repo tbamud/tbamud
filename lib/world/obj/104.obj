@@ -52,9 +52,9 @@ A tacky wooden sign is tacked into the ground by a tall oak.~
 E
 wooden sign tacky~
   +----------------------------+
-  | 	DMiz'real	n and Orchan Forest |
+  | @DMiz'real@n and Orchan Forest |
 +----------------------------------+
-|  The forest of 	DMiz'real	n lies     | 
+|  The forest of @DMiz'real@n lies     | 
 |   to the north of this forest.   |
 |----------------------------------|
 |   To the south lies the Orchan   |
@@ -339,27 +339,27 @@ A maze map(not for mortals)~
 1 1 0 30 0
 E
 map maze~
-	r-------------------------------------------------------
+@r-------------------------------------------------------
                                                        
-	b                               DED    
-	b                                |
-	b                DED  DED  DED--MOD--DED   X --MOD
-	b                 |    |         |         |    |
-	b            X -- X -- X   CNT-- X         X --MOD--DED
-	b            |         |         |         |
-	b      DED-- X    X --MOD-- X -- X -- X -- X
-	b            |    |    |         |
-	b  X -- X -- X   DED   X        MOD
-	b  |                   |
-	b  X                  DED
-	b  |
-	b ENT
+@b                               DED    
+@b                                |
+@b                DED  DED  DED--MOD--DED   X --MOD
+@b                 |    |         |         |    |
+@b            X -- X -- X   CNT-- X         X --MOD--DED
+@b            |         |         |         |
+@b      DED-- X    X --MOD-- X -- X -- X -- X
+@b            |    |    |         |
+@b  X -- X -- X   DED   X        MOD
+@b  |                   |
+@b  X                  DED
+@b  |
+@b ENT
 
-	r-------------------------------------------------------
-	yENT: Beginning              MOD: Monsters Den
-	yDED: Dead End                 X: Just a Regular Maze Room
-	yCNT: Center of the Maze         	BRooms: 31
-	r-------------------------------------------------------	n
+@r-------------------------------------------------------
+@yENT: Beginning              MOD: Monsters Den
+@yDED: Dead End                 X: Just a Regular Maze Room
+@yCNT: Center of the Maze         @BRooms: 31
+@r-------------------------------------------------------@n
 ~
 #10429
 Infa Armor~
@@ -400,34 +400,34 @@ A Master Map lies on the ground here.~
 4 1000 0 0 0
 E
 3~
-	r-------------------------------------------------------
+@r-------------------------------------------------------
                                                        
-	b                               DED    
-	b                                |
-	b                DED  DED  DED--MOD--DED   X --MOD
-	b                 |    |         |         |    |
-	b            X -- X -- X   CNT-- X         X --MOD--DED
-	b            |         |         |         |
-	b      DED-- X    X --MOD-- X -- X -- X -- X
-	b            |    |    |         |
-	b  X -- X -- X   DED   X        MOD
-	b  |                   |
-	b  X                  DED
-	b  |
-	b ENT
+@b                               DED    
+@b                                |
+@b                DED  DED  DED--MOD--DED   X --MOD
+@b                 |    |         |         |    |
+@b            X -- X -- X   CNT-- X         X --MOD--DED
+@b            |         |         |         |
+@b      DED-- X    X --MOD-- X -- X -- X -- X
+@b            |    |    |         |
+@b  X -- X -- X   DED   X        MOD
+@b  |                   |
+@b  X                  DED
+@b  |
+@b ENT
 
-	r-------------------------------------------------------
-	yENT: Beginning              MOD: Monsters Den
-	yDED: Dead End                 X: Just a Regular Maze Room
-	yCNT: Center of the Maze         	BRooms: 31
-	r-------------------------------------------------------	n
+@r-------------------------------------------------------
+@yENT: Beginning              MOD: Monsters Den
+@yDED: Dead End                 X: Just a Regular Maze Room
+@yCNT: Center of the Maze         @BRooms: 31
+@r-------------------------------------------------------@n
 ~
 E
 2~
-	bArea    : Orchan Village
+@bArea    : Orchan Village
 Level   : Any
-	r-------------------------------------------------------
-	b                                                        
+@r-------------------------------------------------------
+@b                                                        
                 MSH                       
                  |                      
                 MST--MST--VIW             
@@ -438,43 +438,43 @@ Level   : Any
                  |    |    |            
                 ELD  WPS--ROR     
 
-	r-------------------------------------------------------
-	bGTE: Gate         ELD: Village Elder
+@r-------------------------------------------------------
+@bGTE: Gate         ELD: Village Elder
 ROR: Rock Road    VIW: Village Warrior
 WPS: Weapon Shop  MST: Main Street
 ACS: Amor Shop    MSH: Map Shop 
-	r-------------------------------------------------------
+@r-------------------------------------------------------
 ~
 E
 1~
-	bArea     : A Small Forest
-	bLevel    : Any Level
-	r-------------------------------------------------------
-	b                  WOD
+@bArea     : A Small Forest
+@bLevel    : Any Level
+@r-------------------------------------------------------
+@b                  WOD
                    |                            
              BET--WOP--NTF--FTF  ENF                           
               |    |         |    |
              HSE  LLP--ENF  SHK--LKE                                        
-	r-------------------------------------------------------
-	bWOD: Further into the Woods    LLP: Lightly Lit Path
+@r-------------------------------------------------------
+@bWOD: Further into the Woods    LLP: Lightly Lit Path
 BET: Barricade of Trees        ENF: End of Forest
 WOP: Woodland Path             NTF: Near the Tree Fort
 FTF: Foot of the Fort          SHK: A Small Shack
 LKE: Lake
-	r-------------------------------------------------------
+@r-------------------------------------------------------
 ~
 E
 master map~
-	bMaster Map
-	r*=================+==================================*
-	r| 	bPage 1        	r|            	bForest Map              	r|
-	r| 	bPage 2        	r|            	bVillage Map             	r|    
-	r| 	bPage 3        	r|            	bMaze Map                	r|   
-	r+=================+==================================+
+@bMaster Map
+@r*=================+==================================*
+@r| @bPage 1        @r|            @bForest Map              @r|
+@r| @bPage 2        @r|            @bVillage Map             @r|    
+@r| @bPage 3        @r|            @bMaze Map                @r|   
+@r+=================+==================================+
 |                                                    |
-|    	b	uTo look at any of these maps, it is look (#)	n	r    |
+|    @b@uTo look at any of these maps, it is look (#)@n@r    |
 |                                                    |
-*====================================================*	n
+*====================================================*@n
 ~
 #10432
 map~

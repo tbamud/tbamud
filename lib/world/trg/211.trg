@@ -14,8 +14,8 @@ eval room %self.room.vnum% + 1
 switch %speech.car%
   case shuffle
     if %self.varexists(Cards_Dealt)%
-      %echo% 	n  The voice is in your mind again.
-      %echo% 	c    'I'm sorry, the cards seem to be already laid out.'	n
+      %echo% @n  The voice is in your mind again.
+      %echo% @c    'I'm sorry, the cards seem to be already laid out.'@n
       halt
     else
       set deck 78
@@ -24,9 +24,9 @@ switch %speech.car%
       global layout
       set var %zone%01
       emote shuffles the cards.
-      %echo% 	n  %self.name% seems to speak directly to your mind.
-      %echo% 	c    'Keep shuffling until you feel the deck understands your question.	n
-      %echo% 	c   When you're ready, say DEAL.'	n
+      %echo% @n  %self.name% seems to speak directly to your mind.
+      %echo% @c    'Keep shuffling until you feel the deck understands your question.@n
+      %echo% @c   When you're ready, say DEAL.'@n
       set Deck_Shuffled 1
       global Deck_Shuffled
       while %var% < %zone%79
@@ -39,25 +39,25 @@ switch %speech.car%
   end
   case deal
   if !%self.varexists(Deck_Shuffled)%
-    %echo% 	n  The voice is in your mind again.
-    %echo% 	c    'The cards don't seem to understand your question yet.  Have you 	n
-    %echo% 	c   SHUFFLEd?'	n
+    %echo% @n  The voice is in your mind again.
+    %echo% @c    'The cards don't seem to understand your question yet.  Have you @n
+    %echo% @c   SHUFFLEd?'@n
     halt
   elseif %self.varexists(Cards_Dealt)%
-    %echo% 	n  The voice is in your mind again.	n
-    %echo% 	c    'I'm sorry, the cards seem to be already laid out.'	n
+    %echo% @n  The voice is in your mind again.@n
+    %echo% @c    'I'm sorry, the cards seem to be already laid out.'@n
     halt
   else
     emote starts to lay out the cards.
-    %echo% 	n  The voice seems to surround you now.
-    %echo% 	c    'When you're ready, please go up to start your reading.  Once you	n  
-    %echo% 	c   start, you won't be able to come back.  Of course, you can always	n 
-    %echo% 	c   come back for another reading.	n 
+    %echo% @n  The voice seems to surround you now.
+    %echo% @c    'When you're ready, please go up to start your reading.  Once you@n  
+    %echo% @c   start, you won't be able to come back.  Of course, you can always@n 
+    %echo% @c   come back for another reading.@n 
     wait 2 sec
-    %echo% 	c    At each room, LOOK CARD to see the meaning.  Reverse means	n 
-    %echo% 	c   that the card laid out upsidedown which changes the meaning.	n 
-    %echo% 	c   Don't worry about it.  The card will show the reversed meaning.	n 
-    %echo% 	c   The room name will explain what the placement of the card means.'	n 
+    %echo% @c    At each room, LOOK CARD to see the meaning.  Reverse means@n 
+    %echo% @c   that the card laid out upsidedown which changes the meaning.@n 
+    %echo% @c   Don't worry about it.  The card will show the reversed meaning.@n 
+    %echo% @c   The room name will explain what the placement of the card means.'@n 
     wait 1 sec
     %door% %self.room.vnum% up flags a
     emote opens the door to the stairway.
@@ -250,26 +250,26 @@ Dealer Greets~
 0 h 100
 ~
 wait 2 sec
-%echo% 	n  The voice of %self.name% seems to fill your head.
-%echo% 	c     'Ahh, you have something on your mind? Let us see what the	n
-%echo% 	c   cards have to say.  Unfortunately, you cannot hold or shuffle	n
-%echo% 	c   my cards, but concentrate on your question and say shuffle.	n  
-%echo% 	c   When you feel that the cards know your question, say deal and	n
-%echo% 	c   I shall lay out the cards for you to examine.	n
+%echo% @n  The voice of %self.name% seems to fill your head.
+%echo% @c     'Ahh, you have something on your mind? Let us see what the@n
+%echo% @c   cards have to say.  Unfortunately, you cannot hold or shuffle@n
+%echo% @c   my cards, but concentrate on your question and say shuffle.@n  
+%echo% @c   When you feel that the cards know your question, say deal and@n
+%echo% @c   I shall lay out the cards for you to examine.@n
 wait 3 sec
-%echo% 	c     Usually I would interpret the cards for you, but that is	n 
-%echo% 	c   forbidden me in this space and time.  All I am allowed is to	n 
-%echo% 	c   show you the cards and you must decide their meanings in your	n 
-%echo% 	c   own mind. Move from card to card.  Each space and each card	n 
-%echo% 	c   will explain itself to you. 'LOOK CARD' in each room to see	n 
-%echo% 	c   the explanation. These are very simplified meanings so they	n 
-%echo% 	c   are very general.	n  
+%echo% @c     Usually I would interpret the cards for you, but that is@n 
+%echo% @c   forbidden me in this space and time.  All I am allowed is to@n 
+%echo% @c   show you the cards and you must decide their meanings in your@n 
+%echo% @c   own mind. Move from card to card.  Each space and each card@n 
+%echo% @c   will explain itself to you. 'LOOK CARD' in each room to see@n 
+%echo% @c   the explanation. These are very simplified meanings so they@n 
+%echo% @c   are very general.@n  
 wait 3 sec
-%echo% 	c     Remember, this is just a game and should not be taken	n
-%echo% 	c   seriously any more than you would run your life by newspaper	n
-%echo% 	c   horoscopes or slips of paper from fortune-cookies.	n
+%echo% @c     Remember, this is just a game and should not be taken@n
+%echo% @c   seriously any more than you would run your life by newspaper@n
+%echo% @c   horoscopes or slips of paper from fortune-cookies.@n
 wait 2 sec
-%echo% 	c     When you're ready, start by saying SHUFFLE.'	n
+%echo% @c     When you're ready, start by saying SHUFFLE.'@n
 ~
 #21106
 Receptionist juggles appointments - M21104~
@@ -513,9 +513,9 @@ if %cmd.mudcommand% == quit || %cmd.mudcommand% == afk
   elseif %self.vnum% == %zone%01 || %self.vnum% == %zone%02 || %self.vnum% == %zone%03
     set office %self.room.vnum%
     eval endroom %office% + 10
-    %echo% 	n    %self.name%'s voice sounds reproachfully in your head.
-    %echo% 	c       'You don't seem to have time for this right now.	n
-    %echo% 	c     Please come back when you have more time.'	n
+    %echo% @n    %self.name%'s voice sounds reproachfully in your head.
+    %echo% @c       'You don't seem to have time for this right now.@n
+    %echo% @c     Please come back when you have more time.'@n
     wait 1 sec
     %echo%    %self.name% waves her hand and you find yourself outside.
     wait 1 sec
@@ -543,21 +543,21 @@ elseif %cmd% == return || %cmd% == recall || %cmd% == teleport || %cmd.mudcomman
     mgoto %zone%99
     %purge% quill
     mgoto %zone%02
-    %send% %actor%  	n
+    %send% %actor%  @n
     emote puts down the appointment book.
-    %send% %actor%  	n
+    %send% %actor%  @n
     return 0
     halt
   elseif %self.vnum% == %zone%01 || %self.vnum% == %zone%02 || %self.vnum% == %zone%03
     set office %self.room.vnum%
     eval endroom %office% + 10
-    %echo% 	n    %self.name%'s voice sounds reproachfully in your head.
-    %echo% 	c       'You don't seem to have time for this right now.	n
-    %echo% 	c     Please come back when you have more time.'	n
-    %send% %actor%  	n
+    %echo% @n    %self.name%'s voice sounds reproachfully in your head.
+    %echo% @c       'You don't seem to have time for this right now.@n
+    %echo% @c     Please come back when you have more time.'@n
+    %send% %actor%  @n
     %teleport% %actor% %zone%01
     return 0
-    %send% %actor%  	n
+    %send% %actor%  @n
     mgoto %endroom%
     down
     mgoto %office%

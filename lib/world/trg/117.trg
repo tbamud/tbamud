@@ -242,7 +242,7 @@ else
 end
 if %actor.inventory(11730)%
   %damage% %arg% 30
-  %send% %actor% 	WThe arrow makes a bright flash of light as it strikes your opponent!	n
+  %send% %actor% @WThe arrow makes a bright flash of light as it strikes your opponent!@n
   %purge% %actor.inventory(11730)%
   switch %random.4%
     case 1
@@ -606,7 +606,7 @@ if %actor.is_pc%
   %echo% suddenly, the door opens, and a bright flash of light consumes the entire room, blinding both you and %self.name%!
   Wait 3s
   %send% %actor% You wake up at the entrance to Los Torres, and everything seems normal for some reason. What the heck happened??
-  %send% %actor% 	g+	n	bQUEST COMPLETE	n	g+	n
+  %send% %actor% @g+@n@bQUEST COMPLETE@n@g+@n
   %teleport% %actor% 11701
 end
 ~

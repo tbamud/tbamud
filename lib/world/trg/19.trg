@@ -763,7 +763,7 @@ attach 1926 %self.id%
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == red
-%echoaround% %actor% %actor.name%'s muscles begin to bulge enormously as %actor.heshe% quaffs a 	Rred vial	n.
+%echoaround% %actor% %actor.name%'s muscles begin to bulge enormously as %actor.heshe% quaffs a @Rred vial@n.
 %send% %actor% You feel your muscles beginning to bulge enormously, your whole body becoming stronger and more hardy.
 dg_affect %actor% str 5 24
 dg_affect %actor% maxhit 100 24
@@ -780,7 +780,7 @@ end
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == blue
-%echoaround% %actor% %actor.name%'s magical aura begins to glow brightly as %actor.heshe% quaffs a 	Bblue vial	n.
+%echoaround% %actor% %actor.name%'s magical aura begins to glow brightly as %actor.heshe% quaffs a @Bblue vial@n.
 %send% %actor% Your magical aura begins to glow brightly.
 dg_affect %actor% int 5 24
 dg_affect %actor% maxmana 100 24
@@ -797,7 +797,7 @@ end
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == green
-%echoaround% %actor% %actor.name%'s movements become unnaturally fast as %actor.heshe% quaffs a 	Ggreen vial	n.
+%echoaround% %actor% %actor.name%'s movements become unnaturally fast as %actor.heshe% quaffs a @Ggreen vial@n.
 %send% %actor% You feel yourself becoming unnaturally agile and stealthy.
 dg_affect %actor% dex 5 24
 dg_affect %actor% maxmove 100 24
@@ -1028,7 +1028,7 @@ rdelete zn19_all %actor.id%
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == black
-%echoaround% %actor% %actor.name% seems to stagger weakly as %actor.heshe% quaffs a 	Dblack vial.	n
+%echoaround% %actor% %actor.name% seems to stagger weakly as %actor.heshe% quaffs a @Dblack vial.@n
 %send% %actor% You suddenly feel quite weak and unwell.
 dg_affect %actor% maxmana -50 24
 dg_affect %actor% maxmove -50 24
@@ -1254,7 +1254,7 @@ end
 0 f 100
 ~
 eval where %self.room%
-%zoneecho% %where.vnum% 	BWith a last mighty breath Selvetarm cries out: It is impossible! The followers of Lloth cannot be vanquished!	n
+%zoneecho% %where.vnum% @BWith a last mighty breath Selvetarm cries out: It is impossible! The followers of Lloth cannot be vanquished!@n
 %force% %actor% xxtrigxx
 ~
 #1976
@@ -1427,7 +1427,7 @@ if fireworks /= %arg%
   set sou[7] a shower of sparks
   set  sound %%sou[%sx%]%%
   eval sound %sound%
-  %echo% With %sound%, a	%colour% F I R E W O R K	n explodes into light.	n
+  %echo% With %sound%, a	%colour% F I R E W O R K@n explodes into light.@n
   %purge% self
 else
   %send% %actor% Light what?

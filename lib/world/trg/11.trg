@@ -200,19 +200,19 @@ end
 1 c 1
 draw~
 if %arg% == bracelet
-  %send% %actor%  	CYou attempt to draw on the power of %self.shortdesc%.	n
-  %echoaround% %actor%  	C%actor.name% attempts to draw on the power of %self.shortdesc%.	n
+  %send% %actor%  @CYou attempt to draw on the power of %self.shortdesc%.@n
+  %echoaround% %actor%  @C%actor.name% attempts to draw on the power of %self.shortdesc%.@n
   wait 1 s
   if %self.timer% == 0
     eval give %actor.maxmove% - %actor.move%
     eval percent (%give% * 8) / 10
 eval power %actor.move(%percent%)%
     set %power%
-    %send% %actor%  	CYou glow with energy as a powerful wind erupts from %self.shortdesc% and envelops you. 	n
-    %echoaround% %actor%  	C%actor.name% glows with energy as a powerful wind erupts from %self.shortdesc% and envelops %actor.himher%. 	n
+    %send% %actor%  @CYou glow with energy as a powerful wind erupts from %self.shortdesc% and envelops you. @n
+    %echoaround% %actor%  @C%actor.name% glows with energy as a powerful wind erupts from %self.shortdesc% and envelops %actor.himher%. @n
     otimer 20
   else
-    %send% %actor% 	cAlas, the power of %self.shortdesc% has not yet recovered.	n
+    %send% %actor% @cAlas, the power of %self.shortdesc% has not yet recovered.@n
   end
 end
 return 0
@@ -1052,23 +1052,23 @@ global mrc
 global llc
 global lmc
 global lrc
-%echo% 	n _______________
-%echo% 	n| 	%ulc%_	Y%UL1%	%ulc%_  	%umc%_	Y%UM1%	%umc%_  	%urc%_	Y%UR1%	%urc%_	n |
-%echo% 	n|	%ulc%|   |	%umc%|   |	%urc%|   |	n|
-%echo% 	n|	Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%	n|
-%echo% 	n|	%ulc%|	u%ULn%	n	%ulc%|	%umc%|	u%UMn%	n	%umc%|	%urc%|	u%URn%	n	%urc%|	n|
-%echo% 	n|	%ulc%|_	Y%UL3%	%ulc%_|	%umc%|_	Y%UM3%	%umc%_|	%urc%|_	Y%UR3%	%urc%_|	n|
-%echo% 	n|	%mlc% _	Y%ML1%	%mlc%_  	%mmc%_	Y%MM1%	%mmc%_  	%mrc%_	Y%MR1%	%mrc%_	n |
-%echo% 	n|	%mlc%|   |	%mmc%|   |	%mrc%|   |	n|
-%echo% 	n|	Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%	n|
-%echo% 	n|	%mlc%|	u%MLn%	n	%mlc%|	%mmc%|	u%MMn%	n	%mmc%|	%mrc%|	u%MRn%	n	%mrc%|	n|
-%echo% 	n|	%mlc%|_	Y%ML3%	%mlc%_|	%mmc%|_	Y%MM3%	%mmc%_|	%mrc%|_	Y%MR3%	%mrc%_|	n|
-%echo% 	n|	%llc% _	Y%LL1%	%llc%_  	%lmc%_	Y%LM1%	%lmc%_  	%lrc%_	Y%LR1%	%lrc%_ 	n|
-%echo% 	n|	%llc%|   |	%lmc%|   |	%lrc%|   |	n|
-%echo% 	n|	Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%	n|
-%echo% 	n|	%llc%|	u%LLn%	n	%llc%|	%lmc%|	u%LMn%	n	%lmc%|	%lrc%|	u%LRn%	n	%lrc%|	n|
-%echo% 	n|	%llc%|_	Y%LL3%	%llc%_|	%lmc%|_	Y%LM3%	%lmc%_|	%lrc%|_	Y%LR3%	%lrc%_|	n|
-%echo% 	n|_______________|
+%echo% @n _______________
+%echo% @n| 	%ulc%_@Y%UL1%	%ulc%_  	%umc%_@Y%UM1%	%umc%_  	%urc%_@Y%UR1%	%urc%_@n |
+%echo% @n|	%ulc%|   |	%umc%|   |	%urc%|   |@n|
+%echo% @n|@Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%@n|
+%echo% @n|	%ulc%|@u%ULn%@n	%ulc%|	%umc%|@u%UMn%@n	%umc%|	%urc%|@u%URn%@n	%urc%|@n|
+%echo% @n|	%ulc%|_@Y%UL3%	%ulc%_|	%umc%|_@Y%UM3%	%umc%_|	%urc%|_@Y%UR3%	%urc%_|@n|
+%echo% @n|	%mlc% _@Y%ML1%	%mlc%_  	%mmc%_@Y%MM1%	%mmc%_  	%mrc%_@Y%MR1%	%mrc%_@n |
+%echo% @n|	%mlc%|   |	%mmc%|   |	%mrc%|   |@n|
+%echo% @n|@Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%@n|
+%echo% @n|	%mlc%|@u%MLn%@n	%mlc%|	%mmc%|@u%MMn%@n	%mmc%|	%mrc%|@u%MRn%@n	%mrc%|@n|
+%echo% @n|	%mlc%|_@Y%ML3%	%mlc%_|	%mmc%|_@Y%MM3%	%mmc%_|	%mrc%|_@Y%MR3%	%mrc%_|@n|
+%echo% @n|	%llc% _@Y%LL1%	%llc%_  	%lmc%_@Y%LM1%	%lmc%_  	%lrc%_@Y%LR1%	%lrc%_ @n|
+%echo% @n|	%llc%|   |	%lmc%|   |	%lrc%|   |@n|
+%echo% @n|@Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%@n|
+%echo% @n|	%llc%|@u%LLn%@n	%llc%|	%lmc%|@u%LMn%@n	%lmc%|	%lrc%|@u%LRn%@n	%lrc%|@n|
+%echo% @n|	%llc%|_@Y%LL3%	%llc%_|	%lmc%|_@Y%LM3%	%lmc%_|	%lrc%|_@Y%LR3%	%lrc%_|@n|
+%echo% @n|_______________|
 ~
 #1140
 dealer say new game~
@@ -1076,11 +1076,11 @@ dealer say new game~
 new game~
 wait 1s
 if %actor.varexists(ffplaying)%
-  %send% %actor% 	GYou are already playing a game.	n
-  %send% %actor% 	GIf you forfeit, you will lose the cards you've won.	n
-  %send% %actor% 	GYour opponent will keep the cards they've won.	n
-  %send% %actor% 	GSay forfeit to accept this and end the game.	n
-  %send% %actor% 	GSay continue to carry on with your current game.	n
+  %send% %actor% @GYou are already playing a game.@n
+  %send% %actor% @GIf you forfeit, you will lose the cards you've won.@n
+  %send% %actor% @GYour opponent will keep the cards they've won.@n
+  %send% %actor% @GSay forfeit to accept this and end the game.@n
+  %send% %actor% @GSay continue to carry on with your current game.@n
 elseif %playing%
   %echo% Sorry, I'm already playing a game.
 else
@@ -1325,23 +1325,23 @@ global %cardpos%4
 show board~
 2 c 100
 show~
-%echo% 	n _______________
-%echo% 	n| 	%ulc%_	Y%UL1%	%ulc%_  	%umc%_	Y%UM1%	%umc%_  	%urc%_	Y%UR1%	%urc%_	n |
-%echo% 	n|	%ulc%|   |	%umc%|   |	%urc%|   |	n|
-%echo% 	n|	Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%	n|
-%echo% 	n|	%ulc%|	u%ULn%	n	%ulc%|	%umc%|	u%UMn%	n	%umc%|	%urc%|	u%URn%	n	%urc%|	n|
-%echo% 	n|	%ulc%|_	Y%UL3%	%ulc%_|	%umc%|_	Y%UM3%	%umc%_|	%urc%|_	Y%UR3%	%urc%_|	n|
-%echo% 	n|	%mlc% _	Y%ML1%	%mlc%_  	%mmc%_	Y%MM1%	%mmc%_  	%mrc%_	Y%MR1%	%mrc%_	n |
-%echo% 	n|	%mlc%|   |	%mmc%|   |	%mrc%|   |	n|
-%echo% 	n|	Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%	n|
-%echo% 	n|	%mlc%|	u%MLn%	n	%mlc%|	%mmc%|	u%MMn%	n	%mmc%|	%mrc%|	u%MRn%	n	%mrc%|	n|
-%echo% 	n|	%mlc%|_	Y%ML3%	%mlc%_|	%mmc%|_	Y%MM3%	%mmc%_|	%mrc%|_	Y%MR3%	%mrc%_|	n|
-%echo% 	n|	%llc% _	Y%LL1%	%llc%_  	%lmc%_	Y%LM1%	%lmc%_  	%lrc%_	Y%LR1%	%lrc%_ 	n|
-%echo% 	n|	%llc%|   |	%lmc%|   |	%lrc%|   |	n|
-%echo% 	n|	Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%	n|
-%echo% 	n|	%llc%|	u%LLn%	n	%llc%|	%lmc%|	u%LMn%	n	%lmc%|	%lrc%|	u%LRn%	n	%lrc%|	n|
-%echo% 	n|	%llc%|_	Y%LL3%	%llc%_|	%lmc%|_	Y%LM3%	%lmc%_|	%lrc%|_	Y%LR3%	%lrc%_|	n|
-%echo% 	n|_______________|
+%echo% @n _______________
+%echo% @n| 	%ulc%_@Y%UL1%	%ulc%_  	%umc%_@Y%UM1%	%umc%_  	%urc%_@Y%UR1%	%urc%_@n |
+%echo% @n|	%ulc%|   |	%umc%|   |	%urc%|   |@n|
+%echo% @n|@Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%@n|
+%echo% @n|	%ulc%|@u%ULn%@n	%ulc%|	%umc%|@u%UMn%@n	%umc%|	%urc%|@u%URn%@n	%urc%|@n|
+%echo% @n|	%ulc%|_@Y%UL3%	%ulc%_|	%umc%|_@Y%UM3%	%umc%_|	%urc%|_@Y%UR3%	%urc%_|@n|
+%echo% @n|	%mlc% _@Y%ML1%	%mlc%_  	%mmc%_@Y%MM1%	%mmc%_  	%mrc%_@Y%MR1%	%mrc%_@n |
+%echo% @n|	%mlc%|   |	%mmc%|   |	%mrc%|   |@n|
+%echo% @n|@Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%@n|
+%echo% @n|	%mlc%|@u%MLn%@n	%mlc%|	%mmc%|@u%MMn%@n	%mmc%|	%mrc%|@u%MRn%@n	%mrc%|@n|
+%echo% @n|	%mlc%|_@Y%ML3%	%mlc%_|	%mmc%|_@Y%MM3%	%mmc%_|	%mrc%|_@Y%MR3%	%mrc%_|@n|
+%echo% @n|	%llc% _@Y%LL1%	%llc%_  	%lmc%_@Y%LM1%	%lmc%_  	%lrc%_@Y%LR1%	%lrc%_ @n|
+%echo% @n|	%llc%|   |	%lmc%|   |	%lrc%|   |@n|
+%echo% @n|@Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%@n|
+%echo% @n|	%llc%|@u%LLn%@n	%llc%|	%lmc%|@u%LMn%@n	%lmc%|	%lrc%|@u%LRn%@n	%lrc%|@n|
+%echo% @n|	%llc%|_@Y%LL3%	%llc%_|	%lmc%|_@Y%LM3%	%lmc%_|	%lrc%|_@Y%LR3%	%lrc%_|@n|
+%echo% @n|_______________|
 ~
 #1144
 new trigger~
@@ -1349,8 +1349,8 @@ new trigger~
 test~
 %echo% var is %var%
 %echo% var2 is %var2%
-%echo% coloured var is 	Y%var%	n
+%echo% coloured var is @Y%var%@n
 set col Y
-%echo% var coloured var is 	%col%%var%	n
+%echo% var coloured var is 	%col%%var%@n
 ~
 $~
