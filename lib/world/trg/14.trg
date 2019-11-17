@@ -520,7 +520,7 @@ switch %random.3%
     dg_cast 'harm' %actor%
   break
   case 2
-    dg_cast 'magic missle' %actor%
+    dg_cast 'magic missile' %actor%
   break
   default
     say That wasn't right...

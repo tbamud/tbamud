@@ -272,7 +272,7 @@ disarm %actor%
 Mob Fight - generic lightning bolt~
 0 k 10
 ~
-dg_cast 'lightning' %actor%
+dg_cast 'lightning bolt' %actor%
 ~
 #322
 Mob Fight - generic kick~

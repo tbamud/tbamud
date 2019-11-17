@@ -795,7 +795,7 @@ switch %random.7%
   case 3
     say Let's see how well you do if I pluck out your eyes!
     wait 1 sec
-    dg_cast 'blind' %actor%
+    dg_cast 'blindness' %actor%
   break
   case 4
     say I said to 'shut up'!!

@@ -75,7 +75,7 @@ switch %rand%
     dg_cast 'curse' %actor%
   break
   case 3
-    dg_cast 'blind' %actor%
+    dg_cast 'blindness' %actor%
   break
   case 4
     dg_cast 'earthquake'
