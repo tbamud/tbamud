@@ -735,7 +735,7 @@ A list of directions to important areas within Sanctus lies here.~
 1 1 0 0 0
 E
 list directions sanctus~
-   	n
+   @n
 recall Room - teleport Sanctus
 Newbie Zones - teleport Newbie
 Food - 1d, 3s, 1e, 1n
@@ -932,7 +932,7 @@ T 157
 E
 ten sided dice die~
    The die has been carefully carved out of bone with black spots painted on
-each of its 10 sides accordingly.  	RROLL DIE	n
+each of its 10 sides accordingly.  @RROLL DIE@n
 ~
 #174
 hairball~

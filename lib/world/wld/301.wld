@@ -489,10 +489,10 @@ E
 sign warning~
    The sign says:
 Welcome to the Student Ghetto!
-	n
+@n
 Fine $103.50 for carrying open alcohol in the streets.
 Fine $ 53.75 for excessively loud noises.
-	n
+@n
 ENTER AT YOUR OWN RISK!
 ~
 E
@@ -1214,7 +1214,7 @@ plaque plaques~
 E
 sign~
    The sign says:
-	n
+@n
     Gym           -> North
     Arena         -> East
     Locker Rooms  -> West

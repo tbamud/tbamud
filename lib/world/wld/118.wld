@@ -634,7 +634,7 @@ subtle light at the bottom of the stairs.
 0 0 11810
 E
 sign~
-   	BMUM AND DAD'S ROOM	n
+   @BMUM AND DAD'S ROOM@n
 ~
 E
 nightlights~
@@ -2391,10 +2391,10 @@ Once you have counted them all, type look next
 118 24 0 0 0 0
 E
 two 2~
-	y	RF	yINISHED 	RF	yILES ARE THE RE-
-SULT O	RF	y YEARS O	RF	y SCIENTI	RF	y-
+@y@RF@yINISHED @RF@yILES ARE THE RE-
+SULT O@RF@y YEARS O@RF@y SCIENTI@RF@y-
 IC STUDY COMBINED WITH THE
-EXPERIENCE O	RF	y YEARS...	n
+EXPERIENCE O@RF@y YEARS...@n
 ~
 E
 next~

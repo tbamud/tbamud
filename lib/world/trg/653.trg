@@ -151,9 +151,9 @@ if %cmd% == push
     %door% %Elevat% %elevdoor% purge
     %door% %Elevat% %elevdoor% room %Elevat%
     %door% %Elevat% %elevdoor% flags abc
-    %at% %Elevat% %echo% The elevator 	g*l u r c h e s*	n
-    %at% %Elevat% %echo% 	n              	G*l u r c h e s*	n
-    %at% %Elevat% %echo% 	n             	g*l u r c h e s*	n %dir%wards.
+    %at% %Elevat% %echo% The elevator @g*l u r c h e s*@n
+    %at% %Elevat% %echo% @n              @G*l u r c h e s*@n
+    %at% %Elevat% %echo% @n             @g*l u r c h e s*@n %dir%wards.
   end
   while %length%
     if %dir% == up
@@ -173,24 +173,24 @@ if %cmd% == push
       set ordinal %Curfl%th
     end 
     wait 15
-    %at% %Elevat% %echo% 	g     *DING!*	n
+    %at% %Elevat% %echo% @g     *DING!*@n
     %at% %Elevat% %echo% You have reached the %ordinal% floor.
     * It's easier to use the following line if you have over 20 floors (instead of the 21th floor)
     *    %at% %Elevat% %echo% You have reached floor %Curfl%.
     wait 5
     eval length %length% - 1
     if %CurFl% > %maxfl%
-      %echo%	r Something seems to be wrong with the elevator.	n
-      %echo%	r Please try again and if there's still a problem,	n
-      %echo%	r please report this to admin.	n
+      %echo%@r Something seems to be wrong with the elevator.@n
+      %echo%@r Please try again and if there's still a problem,@n
+      %echo%@r please report this to admin.@n
       set length 0
     end
   done
   if %origlen% > 0
     wait 2
-    %at% %Elevat% %echo% 	nThe elevator 	y*s h u d d e r s*	n
-    %at% %Elevat% %echo% 	n              	Y*s h u d d e r s*	n
-    %at% %Elevat% %echo% 	n             	y*s h u d d e r s*	n to a halt.
+    %at% %Elevat% %echo% @nThe elevator @y*s h u d d e r s*@n
+    %at% %Elevat% %echo% @n              @Y*s h u d d e r s*@n
+    %at% %Elevat% %echo% @n             @y*s h u d d e r s*@n to a halt.
   end
   wait 2
   set echofl 0
@@ -202,7 +202,7 @@ if %cmd% == push
     eval echofl %echofl% + 1
   done
   wait 1
-  %at% %targfl%  %echo% 	g     *DING!*	n
+  %at% %targfl%  %echo% @g     *DING!*@n
   wait 3
   %door% %Tarex% %roomdoor% room %Elevat%
   %door% %Tarex% %roomdoor% flags a

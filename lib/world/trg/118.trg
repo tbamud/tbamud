@@ -1323,7 +1323,7 @@ if %cmd.mudcommand% == examine
     set  txt[21] RAPIO
     set  word %%txt[%max%]%%
     eval word %word%
-    %send% %actor% Your eyes scan the glowing walls and alight upon the word 	C%word%	n.
+    %send% %actor% Your eyes scan the glowing walls and alight upon the word @C%word%@n.
     if !%actor.varexists(zn118_blinddone)%
       set zn118_blindquest %word%
       remote zn118_blindquest %actor.id%
@@ -1648,21 +1648,21 @@ end
 mob does not load if already present~
 0 k 100
 ~
-	c* This sets the vnum of the mob you are checking for, and loading/not loading	n
+@c* This sets the vnum of the mob you are checking for, and loading/not loading@n
 set mobvnum 42500
-	c* This tells the trigger to keep checking for people until there are none.	n
+@c* This tells the trigger to keep checking for people until there are none.@n
 set here %self.room.people%
 while %here%
   set others %here.next_in_room%
-	c* If the mob is in the room, the isthere variable is set.	n
+@c* If the mob is in the room, the isthere variable is set.@n
   if %here.vnum% == %mobvnum%
 set mobid %here%
     set isthere 1
   end
   set here %others%
 done
-	c* If the mob is not in the room (variable is not set)	n
-	c* The mob will load.	n
+@c* If the mob is not in the room (variable is not set)@n
+@c* The mob will load.@n
 if !%isthere%
   %load% mob %mobvnum%
 end

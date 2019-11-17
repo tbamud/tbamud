@@ -102,15 +102,15 @@ A ragged book has been left here.~
 E
 ragged diary~
    This dark leather book is almost falling apart, although there appears to be
-very little written inside it. The word 	gPRIVATE	n has been carefully carved
+very little written inside it. The word @gPRIVATE@n has been carefully carved
 into the cover.
 
            (type look 1, 2, or 3 to view pages)
 ~
 E
 3~
-   	G
-	gEntry 3	n
+   @G
+@gEntry 3@n
    Somehow I fear this may be my last entry.  I have been recruited, along with
 several others for a secret task by the sorceress' evil bird.  What the task is
 I do not yet know, but I know that the sorceress has a particular way of
@@ -118,8 +118,8 @@ keeping her secrets, and it does not involve the survival of witnesses.
 ~
 E
 2~
-   	G
-	gEntry 2	n
+   @G
+@gEntry 2@n
    Someone came to help us today, he told me he knew how to destroy the
 sorceress once and for all.  I thought he would be the one to succeed but he
 was killed by the toothy one.  Now the abominable creature has holed itself
@@ -127,8 +127,8 @@ into a cave from which there is no return... or so it is claimed.
 ~
 E
 1~
-   	G
-	gEntry 1	n
+   @G
+@gEntry 1@n
    I have lost all interest in keeping this diary.  Since the sorceress has
 taken over, life has not been worth writing about.  I shall instead record
 anything I observe that may aid in her demise, though it will mean my death
@@ -1233,7 +1233,7 @@ icy mana ring~
    This cool glassy ring has been forged from a silvery metal and interwoven
 with blue crystal, the two substances spiralling around each other in a
 never-ending circle, a symbol of the flowing of unseen forces.  It looks as
-though it may impart some powerful magic unto the wearer if	c used	n.  
+though it may impart some powerful magic unto the wearer if@c used@n.  
 ~
 #2777
 Goethite staff flame fire~
