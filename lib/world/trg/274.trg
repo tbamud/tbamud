@@ -7,7 +7,7 @@ say Blessings upon you this day, %actor.name%. The hand of God
 say be upon you always. Here let me heal and help you.
 dg_cast 'heal' %actor.name%
 wait 5
-dg_cast 'sanc' %actor.name%
+dg_cast 'sanctuary' %actor.name%
 wait 5
 dg_cast 'fly' %actor.name%
 wait 5
