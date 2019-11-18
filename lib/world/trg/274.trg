@@ -11,7 +11,7 @@ dg_cast 'sanctuary' %actor.name%
 wait 5
 dg_cast 'fly' %actor.name%
 wait 5
-say Go with God.                    
+say Go with God.
 ~
 #27401
 Barney - 27404~
@@ -151,7 +151,7 @@ if %actor.is_pc%
     SAY Get lost you bitch... I am not into Women!
     say what a whacko pervert!
   else
-Say Sotrry I'm not into Neuterless ones! 
+Say Sotrry I'm not into Neuterless ones!
   end
 else
   say Take off you Mob Swine!

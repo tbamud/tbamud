@@ -4,7 +4,7 @@ The Forests Edge~
 in the wind.  The trees almost appear to dance to the songs of the birds
 singing in them.  North the forest is darker and the trees much larger.  To the
 south the forest comes to an end and expands into a large open field.  A trail
-leads east and south.    
+leads east and south.
 ~
 75 32768 0 0 0 3
 D1
@@ -21,7 +21,7 @@ E
 credits info~
    Builder   : Shimmer
 Zone         : 75 Zamba
-Began        : 
+Began        :
 Player Level : 14-18
 Rooms        : 100
 Mobs         : 36
@@ -29,32 +29,32 @@ Objects      : 53
 Shops        : 5
 Triggers     : 12
 Plot         : The town once thrived on tourism and had many profitable items.
-   But a group of evil mages or clerics started going too far and rumors of 
-   evil things like sacrifices cause people to stop coming.  Many shopkeepers 
-   left when business died.  The ones that stayed learned to do without and 
-   went back to a more natural lifestyle, even in the fortress there were 
-   changes that could not be helped such as a more native attire or wearing 
-   things still around from the past, but where the fortress could continue as 
-   they did in the past they do.  Most of the people now don't even remember 
-   other towns and live a normal peaceful life.  The change was generations 
-   ago.  The order that was following the evil worship are still hidden but 
-   seem to be more acepted and beginning to blend into the normal lifestyle of 
-   many of the villagers.    
+   But a group of evil mages or clerics started going too far and rumors of
+   evil things like sacrifices cause people to stop coming.  Many shopkeepers
+   left when business died.  The ones that stayed learned to do without and
+   went back to a more natural lifestyle, even in the fortress there were
+   changes that could not be helped such as a more native attire or wearing
+   things still around from the past, but where the fortress could continue as
+   they did in the past they do.  Most of the people now don't even remember
+   other towns and live a normal peaceful life.  The change was generations
+   ago.  The order that was following the evil worship are still hidden but
+   seem to be more acepted and beginning to blend into the normal lifestyle of
+   many of the villagers.
 Links        : 80n, 85s, 98nse
-Notes        : The first room , becuase of needing more forest area, is 7598 it 
-   only leads west.  It needs to connect to something to the east to fit on the 
-   map.  A lot of my area is outside, but the town is considered secluded so 
-   other junctions need to not be too close to the town.  The town ends at the 
-   coast line and if someone makes an underwater ocean area it would fit in 
-   perfect to my coast.  The numbers of my coast are 74-85, but in order it 
-   goes from the north to south 80 79 78 77 76 75 74 81 82 83 84 85. 
+Notes        : The first room , becuase of needing more forest area, is 7598 it
+   only leads west.  It needs to connect to something to the east to fit on the
+   map.  A lot of my area is outside, but the town is considered secluded so
+   other junctions need to not be too close to the town.  The town ends at the
+   coast line and if someone makes an underwater ocean area it would fit in
+   perfect to my coast.  The numbers of my coast are 74-85, but in order it
+   goes from the north to south 80 79 78 77 76 75 74 81 82 83 84 85.
 ~
 S
 #7501
 An Open Field~
    To the north a forest sets over the horizon.  To the east, west, and south
 tall green grass and wild flowers grow freely only stopping short at a trail
-that runs north and south.    
+that runs north and south.
 ~
 75 32768 0 0 0 2
 D0
@@ -70,7 +70,7 @@ An Open Field.
 E
 grass flower field~
    A gentle breeze sweeps across the fields.  The smell of wild flowers
-sweetens the air around you.    
+sweetens the air around you.
 ~
 S
 #7502
@@ -78,7 +78,7 @@ An Open Field~
    To the east and west a gentle breeze causes the tall grass to ripple the way
 a calm pool does when disturbed.  The trail disappears under patches of grass,
 it doesn't appear to have been traveled recently.  The trail here runs north
-and south, large enough for a small wagon.    
+and south, large enough for a small wagon.
 ~
 75 32768 0 0 0 2
 D0
@@ -94,7 +94,7 @@ An Open Field.
 E
 grass flower field ~
    A gentle breeze sweeps across the fields.  The smell of wild flowers
-sweetens the air around you.    
+sweetens the air around you.
 ~
 S
 #7503
@@ -102,7 +102,7 @@ An Open Field~
    To the east and west tall green grass and wild flowers grow freely by the
 side of the trail.  Various areas of the trail are covered with small plants
 and weeds.  The trail here runs north and south, just wide enough for a small
-wagon or a horse and rider.    
+wagon or a horse and rider.
 ~
 75 32768 0 0 0 2
 D0
@@ -118,14 +118,14 @@ An Open Field.
 E
 grass flower field~
    A gentle breeze sweeps across the fields.  The smell of wild flowers
-sweetens the air around you.    
+sweetens the air around you.
 ~
 S
 #7504
 An Open Field~
    The flowers and plants growing here are less familar, but quite beautiful.
 In the northern distance the plants growing are more familar.  Something beside
-the road looks out of place.  To the south the trail begins to get thinner.  
+the road looks out of place.  To the south the trail begins to get thinner.
 ~
 75 32768 0 0 0 2
 D0
@@ -146,14 +146,14 @@ trap door leaves~
 E
 road trail leaves leaf trap ~
    You see several large leaves gathered together, they seem to be a door or
-hatch.  
+hatch.
 ~
 S
 #7505
 A Trap~
    This is a large pit thats been dug at the edge of the road.  The walls have
 been smoothed and are muddy.  There is nothing for you to grasp in order to get
-out.  This pit has been dug out to catch something, something very big.    
+out.  This pit has been dug out to catch something, something very big.
 ~
 75 1 0 0 0 0
 D4
@@ -164,7 +164,7 @@ trap door leaves~
 E
 walls pit mud ~
    Straining your eyes to see clearly for a brief second two red orbs of some
-sort shined.  Were those eyes?    
+sort shined.  Were those eyes?
 ~
 S
 #7506
@@ -172,7 +172,7 @@ A Narrow Path~
    The trail now has become nothing more than a narrow path.  Peculiar plants
 and flowers grow everywhere some reaching heights that are as large as trees.
 Perhaps they are trees.  Unusual sounds can be heard in the distance.  The path
-runs north and south.    
+runs north and south.
 ~
 75 32768 0 0 0 3
 D0
@@ -190,7 +190,7 @@ S
 A Narrow Path~
    The narrow path is disappearing under the large amount of plants and
 flowers.  Song birds can be heard in the distance but the songs are not ones
-you have heard before.  The path twists and leads to the north and west.    
+you have heard before.  The path twists and leads to the north and west.
 ~
 75 32768 0 0 0 3
 D0
@@ -209,7 +209,7 @@ The Trail to Zamba~
    The plants here have been cut back and a trail made of large flat stones has
 been built here.  The stones of the path are old and broken.  The strange
 noises seem to be getting louder.  The air grows thick from the sweet smell of
-the flowers.  The old, stone path leads east and west.    
+the flowers.  The old, stone path leads east and west.
 ~
 75 32768 0 0 0 3
 D1
@@ -224,9 +224,9 @@ The Trail to Zamba.
 0 0 7509
 E
 tree flower noise~
-   Glancing around you find the sourse of the noise, at least some of it.  
+   Glancing around you find the sourse of the noise, at least some of it.
 From what you can tell a very large bird of many colors, mostly red, is perched
-and screeching from high up in the trees.    
+and screeching from high up in the trees.
 ~
 S
 #7509
@@ -234,7 +234,7 @@ The Trail to Zamba~
    Many noises are heard from every direction.  The birds with their wide range
 of singing, screeching, and calling are becoming familiar.  But there is still a
 bizarre chatter, where it comes from is still unknown.  The stone path runs
-east and west.    
+east and west.
 ~
 75 32768 0 0 0 3
 D1
@@ -255,7 +255,7 @@ to have been made of living trees grown standing side by side with thick trunks
 and branches that weave back and forth from one trunk to the next.  In the
 center of the massive gate the trail leads to a small opening.  The air is cool
 and gentle, the strong floral smell begins to weaken.  Several noises escape
-the gate, sounds of civilization.  A small path leads east and west.    
+the gate, sounds of civilization.  A small path leads east and west.
 ~
 75 32772 0 0 0 3
 D1
@@ -272,7 +272,7 @@ E
 gate tree ~
    The gate of trees stands over 50 feet tall.  Look at each tree you notice
 each one looks the same size and condition of the other ones.  The trunk of
-each tree is extremely hard and looks more like rock than wood.    
+each tree is extremely hard and looks more like rock than wood.
 ~
 S
 #7511
@@ -280,7 +280,7 @@ Inside the Gates of Zamba~
    The sounds of crashing water can be heard off in the distance.  The people
 here look at you curiously for a moment before returning to their duties.  To
 the east stands the gates of Zamba.  The stone path leads east and west with
-many straw huts scattered about.    
+many straw huts scattered about.
 ~
 75 32768 0 0 0 1
 D0
@@ -308,7 +308,7 @@ S
 A Straw Hut~
    Sand covers the ground inside this small hut.  Lining the far wall straw
 mats are neatly stacked together.  In the center of this one room home a circle
-of stones, blackened by smoke, lie cold.    
+of stones, blackened by smoke, lie cold.
 ~
 75 32776 0 0 0 0
 D2
@@ -320,11 +320,11 @@ S
 #7513
 A Straw Hut~
    This one room hut seems to have been built around a small group of trees
-used for support.  A well crafted net stretches from one tree to a second.  
+used for support.  A well crafted net stretches from one tree to a second.
 The net is held open by two long even branches woven at the ends of the net
 before being tied to the trees.  A blanket is folded and is setting in the
 middle of the net.  In the center of the room a small cluster of stones,
-blackened by smoke, surrounds a small fire.    
+blackened by smoke, surrounds a small fire.
 ~
 75 32776 0 0 0 0
 D0
@@ -336,14 +336,14 @@ E
 shelf tall wall ~
    A tall shelf sets against the wall.  One row seems to be clothing, another
 seems to be dishes while the next has clay figures and little things shaped out
-of what appears to be bone.    
+of what appears to be bone.
 ~
 S
 #7514
 A Straw Hut~
    This small room has one window that has been covered with a large piece of
 cloth on the east wall.  A smell of rotten fish lingers everywhere.  A straw
-mat with several dirty blankets sets to the north.    
+mat with several dirty blankets sets to the north.
 ~
 75 32776 0 0 0 0
 D2
@@ -354,7 +354,7 @@ A Small Street.
 E
 floor room~
    Scattered about the room as if just thrown anywhere when finished is several
-different types of half devoured foods.    
+different types of half devoured foods.
 ~
 S
 #7515
@@ -362,7 +362,7 @@ A Straw Hut~
    This straw hut is quite large.  The floor has been covered with straw.  To
 the south a large window sets open with a gentle breeze blowing in.  Outside
 the window you can see several pieces of cloth hanging on a line swaying gently
-in the wind drying.    
+in the wind drying.
 ~
 75 32776 0 0 0 0
 D0
@@ -375,7 +375,7 @@ S
 A Straw Hut~
    The floor is covered in sand and the walls look like they have been caked
 with mud and let dry.  Other than a few footprints in the sand the room is
-completely empty.    
+completely empty.
 ~
 75 32776 0 0 0 0
 D0
@@ -385,16 +385,16 @@ A Small Street.
 0 0 7519
 E
 wall~
-   The walls are a rich clay being used to make the straw hut more durable.  
-It appears to be under repairs or has been rebuilt.    
+   The walls are a rich clay being used to make the straw hut more durable.
+It appears to be under repairs or has been rebuilt.
 ~
 S
 #7517
 A Straw Hut~
-   This one room hut is large with an opening to the west for a window.  
+   This one room hut is large with an opening to the west for a window.
 Lining the far wall is a stack of straw mats neatly put together.  In the
 center of the room is a circle of black stones surrounding small twigs and
-sticks, but no fire.    
+sticks, but no fire.
 ~
 75 32776 0 0 0 0
 D2
@@ -406,7 +406,7 @@ E
 shelf tall wall ~
    A tall shelf sets against the wall.  One row seems to be clothing, another
 seems to be dishes while the next has clay figures and little things shaped out
-of what appears to be bone.    
+of what appears to be bone.
 ~
 S
 #7518
@@ -415,7 +415,7 @@ A Walkway in Zamba~
 civilized from their half naked appearance.  The stone walkway begins to be
 buried under white sand.  Straw huts continue in all directions.  Although you
 still hear the sound of rushing water you also hear the faint sounds of music
-further west.    
+further west.
 ~
 75 32768 0 0 0 1
 D0
@@ -443,8 +443,8 @@ S
 A Walkway in Zamba~
    At this part of the street it is difficult to tell if the stone path is
 buried under the white sand or if it ended because the sand here is so thick.
-Straw huts stand to the north and south the huts walls look covered in mud.  
-To the east and west is a sandy path.    
+Straw huts stand to the north and south the huts walls look covered in mud.
+To the east and west is a sandy path.
 ~
 75 32768 0 0 0 0
 D0
@@ -470,14 +470,14 @@ A Small Street.
 E
 boy group play~
    The small boys are looking around trying to find something to practice their
-skills with the bow on.  
+skills with the bow on.
 ~
 S
 #7520
 A Straw Hut~
    The small hut appears to be empty of anything but trash, but further
 observation shows a straw mat in the corner of the room.  Broken pieces of
-pottery are scattered about the floor.    
+pottery are scattered about the floor.
 ~
 75 32780 0 0 0 0
 D2
@@ -502,7 +502,7 @@ A Walkway in Zamba~
 about but to the south instead of a straw hut there is a large building made of
 wood, perhaps not as grand as you are familar with but a much more attractive
 building compared to the small huts.  To the west appears to be the formation
-of mountains.    
+of mountains.
 ~
 75 32768 0 0 0 1
 D0
@@ -529,7 +529,7 @@ E
 sound music noise~
    To the south you hear music coming from inside the Tiki Lounge.  Although
 you have never heard this type of music before it is very pleasent and
-uplifting.    
+uplifting.
 ~
 S
 #7522
@@ -537,7 +537,7 @@ The Tiki Lounge~
    As your eyes adjust to the dim torch lights, you see this is a large building
 made of wood.  Torches line all the walls but only give off a dim light.  To
 the south wall stands a large, well stocked bar.  Loud music comes from the
-eastern part of the room.    
+eastern part of the room.
 ~
 75 32780 0 0 0 0
 D0
@@ -550,7 +550,7 @@ band wall noise music~
    Glancing to the east you see several natives playing odd looking
 instruments, the only instrument that looks slightly familar is what appears to
 be a drum.  Young native women are dancing to the music.  To the west older
-people sit enjoying drinks.    
+people sit enjoying drinks.
 ~
 S
 #7523
@@ -559,7 +559,7 @@ A Walkway in Zamba~
 seen more clearly.  It seems like someone carved a fortress right out of the
 mountain or had built a fortress on the surface to appear as a mountain.  The
 huge stone building rises high into the sky, a long set of steps lead upward.
-To the north and south the sand continues.    
+To the north and south the sand continues.
 ~
 75 32768 0 0 0 1
 D0
@@ -589,7 +589,7 @@ Southern Clearing~
 roaring fire, set on the fire is a gigantic black pot.  To the east of the fire
 a primitive machine used to weave cloth has been positioned under a shaded
 tree.  The sounds of crashing water is loud.  The air smells salty with a
-slight aroma of cooked fish.  The sandy track leads north, south and west.    
+slight aroma of cooked fish.  The sandy track leads north, south and west.
 ~
 75 32768 0 0 0 4
 D0
@@ -610,7 +610,7 @@ A Sandy Beach.
 E
 tree machine~
    It seems that the women come together in this area working together to
-accommodate most of the needs of the village.    
+accommodate most of the needs of the village.
 ~
 S
 #7525
@@ -645,7 +645,7 @@ the trees you notice the chattering is now gone and everything is totally
 silent.  The silence is strange.  There are no beautiful birds here.  Suddenly
 the silence is replaced by loud frantic chattering from all around you high in
 the trees.  A large sandy path leads south.  To the east a narrow path full of
-thick vines leads deeper into the trees.    
+thick vines leads deeper into the trees.
 ~
 75 32768 0 0 0 3
 D1
@@ -661,7 +661,7 @@ A Sandy Clearing.
 E
 monkey creature~
    Watching the creatures on the ground you see some are still hidding and
-appear to be working their way behind you.  
+appear to be working their way behind you.
 ~
 S
 #7527
@@ -669,7 +669,7 @@ The Jungle~
    A low chatter can be heard off in the distance.  Large trees grow tall,
 stretching toward the sky in a oddly tilted fashion.  Other types of trees grow
 here that have sharp pointy bark.  Thick vines twist and turn clinging to
-everything.  A small path leads off to the east and west.    
+everything.  A small path leads off to the east and west.
 ~
 75 32768 0 0 0 3
 D1
@@ -685,14 +685,14 @@ Jungle Passage.
 E
 jungle tree~
    This area is rich with wild flowers and oddly shaped trees.  Almost all the
-trees here seem to grow fruit.    
+trees here seem to grow fruit.
 ~
 S
 #7528
 The Jungle~
    Trees and vines mesh together in a wild struggle against each other for
 growing space.  Bright, colorful butterflies flutter high in the trees.  A
-small path leads off to the east and west.    
+small path leads off to the east and west.
 ~
 75 32768 0 0 0 3
 D1
@@ -708,7 +708,7 @@ Jungle Passage.
 E
 tree vine jungle~
    Although many trees grow here the amount of vines well exceeds the tree
-population.    
+population.
 ~
 S
 #7529
@@ -716,7 +716,7 @@ The Jungle~
    There is almost no ground without some sort of plant growing out of it.  A
 slight wind catches the small leaves of the vines making them appear to grow as
 they sway in the wind.  A small path leads west.  Further to the east there
-seems to be a clearing.    
+seems to be a clearing.
 ~
 75 32768 0 0 0 3
 D1
@@ -732,7 +732,7 @@ Jungle Passage.
 E
 tree vine jungle~
    The vines here are smothering out the life of the surrounding trees.  It
-seems that nothing but vines will inhabit this area before to much longer.    
+seems that nothing but vines will inhabit this area before to much longer.
 ~
 S
 #7530
@@ -741,9 +741,9 @@ The Black Alter~
 black stone cut into a perfect rectangle.  Behind the stone stands a gruesome
 stone statue.  It appears to be cut from the same stone but is much larger, as
 you stare up at it you notice it has large green gems for eyes, its mouth open
-as if ready to bite.  In one of its clawed hands it holds a twisted dagger.  
+as if ready to bite.  In one of its clawed hands it holds a twisted dagger.
 The dagger is of fine steel and appears to have been placed in the claw after
-the statue was made.    
+the statue was made.
 ~
 75 32768 0 0 0 3
 D3
@@ -757,7 +757,7 @@ stone altar dagger statue rectangle blood~
 stone block are large iron rings with leather straps.  The stone block and the
 mouth of the statue is covered with dry blood.  The daggers twisted blade also
 is bloody, except it is not dry blood, the blood is fresh and slowly drips from
-the blade.    
+the blade.
 ~
 S
 #7531
@@ -767,7 +767,7 @@ struggling for space.  The canopy of the trees almost totally block out the
 sky, only small patches of light are able to sneak in.  The air here is moist
 and thick.  A small group of butterflies busily flutter about in a cluster of
 flowers.  A large yellow flower silhouettes one of the patches of light, for
-some reason it stands alone as if the other plants fear to grow beside it.    
+some reason it stands alone as if the other plants fear to grow beside it.
 ~
 75 32768 0 0 0 3
 D0
@@ -780,7 +780,7 @@ S
 The Taboo Way~
    This tunnel is very cramped and just tall enough to stand in.  The earthy
 walls are cold and clammy.  An eerie wind whispers to you from further below.
-The tunnel slopes downward.    
+The tunnel slopes downward.
 ~
 75 9 0 0 0 0
 D4
@@ -796,14 +796,14 @@ To dark to tell.
 E
 wall dirt earth~
    As you look closer to the tunnel you can see worms wiggling in the moist
-dirt.  
+dirt.
 ~
 S
 #7533
 The Taboo Way~
    This part of the tunnel is barely tall enough to stand in.  The earthy walls
 are moist and cold.  A foul smell seeps in from further below.  The tunnel
-leads up and down.    
+leads up and down.
 ~
 75 9 0 0 0 0
 D4
@@ -819,14 +819,14 @@ To dark to tell.
 E
 wall dirt earth~
    As you look closer to the tunnel you can see worms wiggling in the moist
-dirt.  
+dirt.
 ~
 S
 #7534
 The Taboo Way~
    Large wooden beams have been set in place to keep the tunnel from
 collapsing.  The walls of the tunnel are wider from mud dripping off the walls.
-The floor is covered in slimy mud.  The tunnel leads up and down.    
+The floor is covered in slimy mud.  The tunnel leads up and down.
 ~
 75 9 0 0 0 0
 D4
@@ -843,7 +843,7 @@ E
 dirt earth mud floor ground ~
    Looking closer you see the muddy floor is covered in worms.  Scattered
 throughout the mud and worms are hordes of small rat skeletons, clean
-completely to the bone.    
+completely to the bone.
 ~
 S
 #7535
@@ -852,7 +852,7 @@ The Taboo Way~
 moist, cold, and stink of death.  An eerie wind whispers to you from further
 below.  Is the wind getting louder?  Is the smell worse?  Are the walls getting
 closer together?  Perhaps, it might be a good idea to turn back and breathe
-fresh air again.    
+fresh air again.
 ~
 75 9 0 0 0 0
 D4
@@ -867,14 +867,14 @@ To dark to tell.
 0 0 7536
 E
 wall dirt earth~
-   The moist dirt is crawling with worms.    
+   The moist dirt is crawling with worms.
 ~
 S
 #7536
 The Taboo Way~
    The tunnel is cold and confining.  The dirt walls give off a stale musty
 odor.  A faint mutter seems to echo from everywhere.  The tunnel tilts up and
-down.    
+down.
 ~
 75 9 0 0 0 0
 D4
@@ -889,14 +889,14 @@ To dark to tell.
 0 0 7537
 E
 wall dirt earth~
-   The moist dirt is crawling with worms.    
+   The moist dirt is crawling with worms.
 ~
 S
 #7537
 The Taboo Way~
    The tunnel opens up to a much larger room.  Large wooden beams have been
 placed in the four corners of the room for support.  The walls and ground are
-just slightly moist.  A tunnel leads up and down.    
+just slightly moist.  A tunnel leads up and down.
 ~
 75 9 0 0 0 0
 D4
@@ -912,14 +912,14 @@ To dark to tell.
 E
 wall dirt earth~
    The ground is only slightly moist and appears to not have any worms wiggling
-about.    
+about.
 ~
 S
 #7538
 The Taboo Way~
    Deep within the earth the ground is soft and murky.  There are only two ways
 to go, the dark tunnel up or the tunnel north, they are the only visible routes
-of travel.  A small light flickers in from the north tunnel.    
+of travel.  A small light flickers in from the north tunnel.
 ~
 75 12 0 0 0 0
 D0
@@ -934,7 +934,7 @@ To dark to tell.
 0 0 7537
 E
 torch light wall~
-   A burning torch is mounted to the wall.  
+   A burning torch is mounted to the wall.
 ~
 S
 #7539
@@ -945,7 +945,7 @@ the light hits it from a torch.  Painted on the floor is a huge pentagram
 inside a circle.  Black and crimson candles burn at each point of the
 pentagram.  Inside the center of the pentagram is a pewter bowl.  A whisp of
 smoke spirals out of the bowl carrying a foul odor.  The only exit visible is
-the tunnel south.    
+the tunnel south.
 ~
 75 8 0 0 0 0
 D2
@@ -956,12 +956,12 @@ To dark to tell.
 E
 wall room floor~
    This room appears to be old but used quite often by some sort of magic user.
-  
+
 ~
 S
 #7540
 A Stone Stairway~
-   The stone stairs are wide and appear easy to climb as they expand upward.  
+   The stone stairs are wide and appear easy to climb as they expand upward.
 At this close a distance looking upward all you can see are rows and rows of
 steps all identical as they spirial upward.  Glancing downward there is but one
 step then the sandy ground.
@@ -981,7 +981,7 @@ E
 stairs steps~
    Each step seems to lead off to another step that looks exactly as the one
 before it.  Even the side of the mountain with its unusual symbols seems to
-repeat in order the unusual markings over and over.    
+repeat in order the unusual markings over and over.
 ~
 S
 #7541
@@ -990,7 +990,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32772 0 0 0 5
 D4
@@ -1007,7 +1007,7 @@ E
 step stair mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7542
@@ -1016,7 +1016,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1033,7 +1033,7 @@ E
 step stair mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7543
@@ -1042,7 +1042,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1059,7 +1059,7 @@ E
 stair step mountain stone~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7544
@@ -1068,7 +1068,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1085,7 +1085,7 @@ E
 step stair stone mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7545
@@ -1094,7 +1094,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1111,7 +1111,7 @@ E
 step stair mountain stone~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7546
@@ -1120,7 +1120,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1137,7 +1137,7 @@ E
 stone stair step mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7547
@@ -1146,7 +1146,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1163,7 +1163,7 @@ E
 stone step stair mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7548
@@ -1172,7 +1172,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1189,7 +1189,7 @@ E
 stone stair step mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7549
@@ -1198,7 +1198,7 @@ A Stone Stairway~
 the southwest.  Much work has been put into this passage.  The steps have been
 smoothed and widened for easy climbing.  Handcarved into the side of the
 mountain are strange symbols and beasts.  The steps lead up and down, you can
-go no other way.    
+go no other way.
 ~
 75 32768 0 0 0 5
 D4
@@ -1215,20 +1215,20 @@ E
 step stair stone mountain~
    Each step leads off to another step that looks exactly as the one before it.
 Even the side of the mountain with its unusual carvings of symbols and beast
-seem to repeat in an order the same markings over and over.    
+seem to repeat in an order the same markings over and over.
 ~
 S
 #7550
 The Top of Mount Zamba~
-   The stone steps extending upward finally stop at a set of double doors.  
+   The stone steps extending upward finally stop at a set of double doors.
 The doors are made of thick iron mounted into the side of the mountain.  In the
 center of each door is the face of a black panther snarling.  Its mouth holds a
 loose iron ring.  Looking to the north and east you see the ground far below .
 To the west below are jagged rocks jutting out from the side of the mountain
-ending at a large body of water crashing against the side of the mountain.  
+ending at a large body of water crashing against the side of the mountain.
 The sounds of the water roars as it echos up the mountain side.  A strong wind
 from the west threatens to push you over the side.  Should you climb down or
-should you brave the unknown and enter the doors to the south?    
+should you brave the unknown and enter the doors to the south?
 ~
 75 32772 0 0 0 5
 D2
@@ -1247,7 +1247,7 @@ The Fortress Foyer~
    You are standing in a large entryway.  It is well developed and lavishly
 decorated.  Beautiful paintings cover the stone walls.  Giant statues of
 unusual beasts stand in a row on both the east and west side of the room.  To
-the north double doors made of iron.  An open archway leads south.    
+the north double doors made of iron.  An open archway leads south.
 ~
 75 8 0 0 0 0
 D0
@@ -1263,7 +1263,7 @@ An Archway.
 E
 statue~
    The statues are quite unique and look to of been crafted by the hands of a
-maste sculptor.    
+maste sculptor.
 ~
 S
 #7552
@@ -1272,7 +1272,7 @@ A Small Parlor~
 wall.  A warm fire burns in the hearth as flickering light dances on the floor
 in front of it.  Centered on the room are many comfortable looking chairs and a
 long moon shaped sofa.  To the north and south ends of the room stands an open
-archway.    
+archway.
 ~
 75 8 0 0 0 0
 D0
@@ -1288,19 +1288,19 @@ A Corridor.
 E
 fireplace~
    The fireplace is quite large.  The mantle is decorated with a large golden
-candelabra.  The front of the fireplace is covered with a mess screen.    
+candelabra.  The front of the fireplace is covered with a mess screen.
 ~
 E
 sofa chair~
    The chairs and sofa are thick with padding and made of a brown leather that
-has been treated to make it soft and smooth.    
+has been treated to make it soft and smooth.
 ~
 S
 #7553
 A Long Corridor~
    The corridor is wide and leads north and south.  Torches line the walls
 giving off enough light to see that the corridor is empty.  An open archway
-leads to the west.    
+leads to the west.
 ~
 75 8 0 0 0 0
 D0
@@ -1323,7 +1323,7 @@ S
 A Long Corridor~
    The corridor is wide and leads north and south.  Torches line the wall
 giving enough light to see that the corridor is completly empty.  To the south
-is a very long corridor and to the north is the end.    
+is a very long corridor and to the north is the end.
 ~
 75 8 0 0 0 0
 D0
@@ -1341,7 +1341,7 @@ S
 A Long Corridor~
    The corridor is wide and leads north and south.  Torches line the walls
 giving off enough light to see that the corridor is empty.  To the east you see
-a door.    
+a door.
 ~
 75 0 0 0 0 0
 D0
@@ -1364,7 +1364,7 @@ S
 A Long Corridor~
    This part of the corridor is unfunished.  Large golden candleholders are
 mounted to the walls, white candles burn brightly, to show off a tremendous
-painting of a elegant lady.  The corridor is wide and leads north and south.  
+painting of a elegant lady.  The corridor is wide and leads north and south.
 ~
 75 0 0 0 0 0
 D0
@@ -1380,7 +1380,7 @@ A Corridor.
 E
 plaque~
    This portrait of the Empiress Kiona was dedicated to her from her friend and
-mentor.    
+mentor.
        Shimmer
 ~
 E
@@ -1389,14 +1389,14 @@ painting woman~
 She is adorned in several expensive pieces of jewerly.  Her features are soft
 under her black hair and tan skin.  She has striking blue eyes unlike the other
 natives with their dark brown eyes.  A gold plaque is mounted to the wall under
-the painting.    
+the painting.
 ~
 S
 #7557
 A Long Corridor~
    Torches line the walls giving off enough light to see the corridor is empty.
 The corridor leads north and south.  To the south you can see the corridor is
-opening up into other directions.    
+opening up into other directions.
 ~
 75 0 0 0 0 0
 D0
@@ -1414,7 +1414,7 @@ S
 A Split in the Corridor~
    The corridor here leads north and south, to the north the way is much
 brighter.  Doors are to the east and west.  Much noise can be heard coming from
-the east and south.    
+the east and south.
 ~
 75 8 0 0 0 0
 D0
@@ -1444,7 +1444,7 @@ The Gathering Room~
 clears you see the room is enormous.  Several large chandeliers hang from the
 ceiling.  The floor, walls, and ceiling are white as snow.  Gigantic pillars
 stand at each end of the room.  To the west the room is open stepping out onto
-a balcony.    
+a balcony.
 ~
 75 8 0 0 0 0
 D0
@@ -1463,12 +1463,12 @@ pillar~
 been sculpted into the shape of a muscular man wearing a short toga, sandels,
 and armbands on his upper arm.  The man is standing with his hands upward
 holding up the ceiling.  The sculpture is very realistic and almost looks
-alive.    
+alive.
 ~
 E
 wall room floor~
    The room is bright and airy.  Everything around the room and the room itself
-is a snow white giving the room an aura of purity.    
+is a snow white giving the room an aura of purity.
 ~
 S
 #7560
@@ -1478,7 +1478,7 @@ is strong and carries a salty smell.  Standing here is almost like standing on
 a large ship.  Looking out over the balcony above you is the sky in full
 display of its grand splendor, and below the ocean, rushing toward the cliffs
 below you crashing loudly against the stones, both stretching as far as you can
-see.    
+see.
 ~
 75 8 0 0 0 0
 D1
@@ -1489,14 +1489,14 @@ The Gathering Room.
 E
 balcony~
    The balcony is made of solid stone with a waist high stone rail.  A large
-canopy hangs over the balcony for protection.    
+canopy hangs over the balcony for protection.
 ~
 S
 #7561
 The Kitchen~
-   The room is busy with activity.  The walls are lined with pots and pans.  
+   The room is busy with activity.  The walls are lined with pots and pans.
 Many tables are in this room all cluttered with food and dishes.  The air is
-warm and fragrant from all the delicious food being cooked.    
+warm and fragrant from all the delicious food being cooked.
 ~
 75 8 0 0 0 0
 D3
@@ -1507,14 +1507,14 @@ A Swinging Door.
 E
 table~
    Bowls filled with fruit, cooked meats, and many other delicious foods are
-neatly placed here being arranged on silver platters and in exquisite bowls.  
+neatly placed here being arranged on silver platters and in exquisite bowls.
 ~
 S
 #7562
 The Pantry~
    The pantry walls are full of shelves neatly stacked with various foods.  On
 the floor huge barrels are clustered together.  Although the shelfs are clean,
-the floor is covered in dust.    
+the floor is covered in dust.
 ~
 75 1 0 0 0 0
 D1
@@ -1527,7 +1527,7 @@ S
 A Tiny Hall~
    The hall has no decorations hanging on the walls, just a few wooden torches
 for light.  The air here is damp and cold.  The hall continues east.  To the
-west you see a door.    
+west you see a door.
 ~
 75 8 0 0 0 0
 D1
@@ -1545,7 +1545,7 @@ S
 A Tiny Hall~
    The hall has no decorations hanging on the walls, just a few wooden torches
 for light.  The air here is damp and cold.  Closed doors line the north and
-south wall.  The hall continues east and west.    
+south wall.  The hall continues east and west.
 ~
 75 0 0 0 0 0
 D0
@@ -1573,7 +1573,7 @@ S
 A Tiny Hall~
    The hall is plain with no decorations.  To the east wall sits an empty
 fireplace.  To the north and south closed doors.  The hall continues to the
-west.    
+west.
 ~
 75 0 0 0 0 0
 D0
@@ -1598,7 +1598,7 @@ A Black Room~
 shelves line the walls.  On the shelves are several sizes of white candles
 burning brightly.  At the far end of the room to the north sets an altar.  A
 long red carpet leads from the door to the altar.  The door leading out is on
-the south wall.    
+the south wall.
 ~
 75 8 0 0 0 0
 D2
@@ -1608,14 +1608,14 @@ A Wooden Door.
 0 0 7564
 E
 alter~
-   The alter is made of a black stone.  The alter is empty.    
+   The alter is made of a black stone.  The alter is empty.
 ~
 S
 #7567
 A Small Bedroom~
    The room is small and cold.  A bed, small table, and a trunk are the only
 furniture here.  The room is cluttered and in disarray.  Black candles are lit
-on the table.    
+on the table.
 ~
 75 0 0 0 0 0
 D2
@@ -1626,18 +1626,18 @@ door south~
 E
 candle table~
    Several black candles sit here on the table lit leaving a trail of foul
-smoke.    
+smoke.
 ~
 E
 trunk~
-   The wooden trunk is plain except for having a large lock holding it shut.  
+   The wooden trunk is plain except for having a large lock holding it shut.
 ~
 S
 #7568
 An Office~
    The room is small but pleasent.  A leather chair, small desk, and a
 bookshelf are arranged in an orderly fashion.  The room is neat and clean.  A
-few pieces of paper sit on top of the desk.    
+few pieces of paper sit on top of the desk.
 ~
 75 0 0 0 0 0
 D0
@@ -1648,19 +1648,19 @@ door north~
 E
 paper desk~
    A few papers sit here on the desk.  Each having the seal of the royal crest
-of Empress Kiona.    
+of Empress Kiona.
 ~
 E
 shelf wall~
    The shelf is a display case of many unique weapons.  It is made of a strong
-oak wood.  The front of the shelf is a glass door.    
+oak wood.  The front of the shelf is a glass door.
 ~
 S
 #7569
 A Small Bedroom~
    The room is small but pleasent.  A bed, small table, and a wardrobe are the
 only furniture here.  The room is very neat and clean.  Lying on the table is a
-match set made up of a hairbrush, comb, and hand mirror.    
+match set made up of a hairbrush, comb, and hand mirror.
 ~
 75 0 0 0 0 0
 D0
@@ -1671,7 +1671,7 @@ A Wooden Door.
 E
 brush comb mirror table~
    The table has lying on it neatly a hairbrush, comb, and a hand held mirror.
-The items are carved from a dark wood and skillfully crafted.    
+The items are carved from a dark wood and skillfully crafted.
 ~
 S
 #7570
@@ -1694,20 +1694,20 @@ door iron~
 E
 seal~
    The seal is of a shield containing a pair of crossed swords with the face of
-a panther growling from above the wicked looking blades.    
+a panther growling from above the wicked looking blades.
 ~
 E
 door~
-   The double doors are encraved with the image of a royal seal.  
+   The double doors are encraved with the image of a royal seal.
 ~
 S
 #7571
 The Throne Room~
-   The walls of this room are covered with mosaics depicting natural scenes.  
+   The walls of this room are covered with mosaics depicting natural scenes.
 The floor is polished marble.  A long carpet leads from the eastern doors to a
 large throne.  The throne sits atop a raised dias near the western wall.  The
 room is lightly decorated with colorful flowers.  The fresh scent of flowers
-fill the room.    
+fill the room.
 ~
 75 8 0 0 0 0
 D1
@@ -1724,7 +1724,7 @@ E
 flower~
    The beautiful golden pots hardly compare to the wonderful flowers each one
 contains.  A mixture of colors blended together well in each floral
-arrangement.    
+arrangement.
 ~
 S
 #7572
@@ -1736,7 +1736,7 @@ soft bed with many pillows.  The room has a soothing peace about it, almost
 embracing you into a gentle sleep.  Suddenly you realize you are not alone, at
 the other end of the room a huge bath sits, someone is sitting at the far end
 of the bath.  At the bath thin lines of steam rises and disappear.  The sounds
-of gentle splashing can be heard.    
+of gentle splashing can be heard.
 ~
 75 8 0 0 0 0
 D0
@@ -1756,7 +1756,7 @@ A Huge Bath~
 flowers and candles.  The air is hot and thick from the steam as it rises from
 the bath.  The strong scent of flowers cling to everything.  At the other end
 of the bath you can make out the shape of a woman leaning over, her hand
-testing the water.    
+testing the water.
 ~
 75 8 0 0 0 0
 D0
@@ -1770,7 +1770,7 @@ A Sandy Beach~
    White sand extends far to the north and south.  Small birds dig about the
 sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
-carrying with it the salty smell of the ocean.    
+carrying with it the salty smell of the ocean.
 ~
 75 32768 0 0 0 4
 D0
@@ -1794,7 +1794,7 @@ A Sandy Beach~
    White sand extends far to the north and south.  Small birds dig about the
 sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
-carrying with it the salty smell of the ocean.    
+carrying with it the salty smell of the ocean.
 ~
 75 32768 0 0 0 0
 D0
@@ -1813,7 +1813,7 @@ A Sandy Beach~
    The white sand is flat and smooth with a few bird trails leading to the
 north.  White waves roll in onto the sand washing away some of the bird prints.
 To the east a few small buildings can be seen in the distance..  The sand
-extents off to the north and south.    
+extents off to the north and south.
 ~
 75 32768 0 0 0 4
 D0
@@ -1831,9 +1831,9 @@ S
 A Sandy Beach~
    The white sand holds many sets of footprints and animal trails.  Most of the
 footprints seem to come and go from the south and east direction.  To the north
-many bird shaped prints seem to run back and forth to the edge of the ocean.  
+many bird shaped prints seem to run back and forth to the edge of the ocean.
 To the east stands several small buildings made of wood.  The sand leads off to
-the north, south, and east.    
+the north, south, and east.
 ~
 75 32768 0 0 0 4
 D0
@@ -1856,7 +1856,7 @@ S
 A Sandy Beach~
    The white sand rises and falls in small dunes scattered all about.  Small
 patches of wild grass grows scantly around.  Several trees grow to the north
-and east of the sand.  To the west the ocean spreads far into the distance.  
+and east of the sand.  To the west the ocean spreads far into the distance.
 ~
 75 32768 0 0 0 4
 D0
@@ -1875,7 +1875,7 @@ A Sandy Beach~
    Large trees enclose this narrow strip of beach from the north around to the
 east.  To the west the ocean washes up the beach and crash onto a group of
 jagged rocks clustered below the trees.  To the south the sandy trail leads off
-to a wider strip of beach.    
+to a wider strip of beach.
 ~
 75 32768 0 0 0 4
 D2
@@ -1888,7 +1888,7 @@ S
 A Sandy Beach~
    The white sand is flat and smooth with a few bird trails leading to the
 north.  White waves roll in onto the sand washing away some of the bird prints.
-To the east a sandy clearing.  The sand extents off to the north and south.  
+To the east a sandy clearing.  The sand extents off to the north and south.
 ~
 75 32768 0 0 0 4
 D0
@@ -1912,7 +1912,7 @@ A Sandy Beach~
    To the west the ocean rolls in and out on to the beach carrying off the top
 layer of sand and leaving behind shells of various sizes most of which are just
 broken pieces.  The air is salty and warm as it blows in from the west.  The
-sand continues to the north and south.    
+sand continues to the north and south.
 ~
 75 32768 0 0 0 4
 D0
@@ -1931,7 +1931,7 @@ A Sandy Beach~
    White sand extends far to the north and south.  Small birds dig about the
 sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
-carrying with it the salty smell of the ocean.    
+carrying with it the salty smell of the ocean.
 ~
 75 32768 0 0 0 4
 D0
@@ -1950,8 +1950,8 @@ A Sandy Beach~
    The sand of the beach has been dug out in several areas.  In other parts
 farther away from the waters edge mounds of dirt have been packed and odd
 animal tracks lead away from the mounds toward the coast disappearing into the
-water.  The current here is gentle and softly caresses the edge of the bank.  
-The sand leads off to the north and south.    
+water.  The current here is gentle and softly caresses the edge of the bank.
+The sand leads off to the north and south.
 ~
 75 32768 0 0 0 4
 D0
@@ -1970,7 +1970,7 @@ A Sandy Beach~
    White sand extends far to the north and south.  Small birds dig about the
 sand looking for their next meal.  To the west the ocean washes up to the beach
 washing away the sand under it.  The wind blows in softly across the waves
-carrying with it the salty smell of the ocean.    
+carrying with it the salty smell of the ocean.
 ~
 75 32768 0 0 0 4
 D0
@@ -1990,7 +1990,7 @@ A Sandy Haven~
 with footprints and various pieces of clothing.  To the south the sand comes to
 a drop off overlooking jagged rocks.  West the ocean rolls in onto the sand
 gently washing away several of the footprints.  East is a large cluster of
-trees.  To the north a sandy path out.    
+trees.  To the north a sandy path out.
 ~
 75 32768 0 0 0 4
 D0
@@ -2002,14 +2002,14 @@ E
 beach sand~
    This area of the beach appears to be private because of the ocean to the
 west, jagged rocks to the south, trees to the east and the only way out a sandy
-hill north.    
+hill north.
 ~
 S
 #7586
 Market Row~
    The small road is well traveled with a few shops to each side.  Noise echos
 out from the shops from all the activity around them.  To the north stands a
-large building made of wood and large stones.  The road leads east and west.  
+large building made of wood and large stones.  The road leads east and west.
 ~
 75 32772 0 0 0 1
 D0
@@ -2032,7 +2032,7 @@ S
 Market Row~
    The ground of the road is packed firm from many travelers.  Noise echos out
 from the shops from all the activity around them.  To the south a native fruit
-stand sits.  To the east stands a small shop.  To road leads west.    
+stand sits.  To the east stands a small shop.  To road leads west.
 ~
 75 32768 0 0 0 1
 D1
@@ -2056,7 +2056,7 @@ A Small Shop~
    The small shop is clutted with all sorts of items.  The tables and shelves
 are overflowing with books, flasks, bags and other things.  A thick layer of
 dust covers everything.  Many of the books are old and in bad shape.  A door to
-the west leads out.    
+the west leads out.
 ~
 75 32768 0 0 0 0
 D3
@@ -2066,7 +2066,7 @@ A path
 0 0 7587
 E
 room shop floor wall~
-   It doesn't look like this shop has been cleaned in a very long time.    
+   It doesn't look like this shop has been cleaned in a very long time.
 ~
 S
 #7589
@@ -2084,7 +2084,7 @@ A Path.
 E
 fruit stand display~
    Small baskets line the stand containing different types of fruit.  The
-different fruits all look very tasty and juicy.    
+different fruits all look very tasty and juicy.
 ~
 S
 #7590
@@ -2104,7 +2104,7 @@ A path.
 E
 jars counter~
    The jars contain eyeballs, animal organs, herbs, and what resembles blood.
-  
+
 ~
 S
 #7591
@@ -2112,7 +2112,7 @@ Deep in the Forest~
    The forest is vibrant with the chirping and singing of several species of
 birds nestled in the trees.  A warm breeze gently blows in.  Not very many
 trees are here, but the ones that are have many wild flowers growing around
-them.  The trail leads east and west.    
+them.  The trail leads east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2128,14 +2128,14 @@ The Forest.
 E
 forest wood tree~
    To the west side of the forest the trees are full of song birds singing and
-chirping, to the east the trees are empty and quite.    
+chirping, to the east the trees are empty and quite.
 ~
 S
 #7592
 Deep in the Forest~
    The forest holds a bone chilling cold.  A thick layer of fog clings to
 everything making the forest gloomy and distorts the trees.  A gust of wind
-blows a patch of dead leaves all around.  The trail leads east and west.    
+blows a patch of dead leaves all around.  The trail leads east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2152,15 +2152,15 @@ E
 tree forest woods fog~
    A thick layer of fog seems trapped in this part of the forest.  Although the
 wind is blowing the fog doesn't appear to be moving only the dry leaves and
-small limbs of the trees seem to feel the wind.    
+small limbs of the trees seem to feel the wind.
 ~
 S
 #7593
 Deep in the Forest~
    The forest is dark and chilling as a stronger wind blows growing strong with
-every second.  The trees here are not very colorful with drab brown leaves.  
+every second.  The trees here are not very colorful with drab brown leaves.
 Somewhere deep in the forest a howl begins growing louder as the wind grows
-stronger.  The trail leads east and west.    
+stronger.  The trail leads east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2176,7 +2176,7 @@ The Forest.
 E
 wolf howl tree forest~
    Everything seems frozen in place, nothing is moving or making a sound except
-for the distant howling.    
+for the distant howling.
 ~
 S
 #7594
@@ -2184,7 +2184,7 @@ Deep in the Forest~
    The forest is darker with an eerie chill in the air.  The songs of the birds
 and the buzzing of insects are not here.  The forest is quite but not in a
 peaceful way.  This is too dreary a place perhaps for normal woodland
-creatures.  The trail lead east and west.    
+creatures.  The trail lead east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2200,14 +2200,14 @@ The Forest.
 E
 tree forest wood~
    The cold and quiteness the forest has taken on is very odd.  It is as if
-nothing living is here.    
+nothing living is here.
 ~
 S
 #7595
 Deep in the Forest~
    The trees take on a gloomy presence as they stretch their branches high into
 the sky.  Many of the branches are lost in a thick fog overhead.  The forest
-grows darker with a slight chill in the air.  The trail leads east and west.  
+grows darker with a slight chill in the air.  The trail leads east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2223,14 +2223,14 @@ The Forest.
 E
 tree forest sky~
    An owl sits high in one of the trees.  Its large yellow eyes seems to see
-everything.  
+everything.
 ~
 S
 #7596
 A Forest Trail~
    The trees begin to block out the sky as they stretch high overhead.  The top
 of the trees are lost in the distance.  The forest is alive with chirping and
-singing from birds nestled in the trees.  The trail leads east and west.    
+singing from birds nestled in the trees.  The trail leads east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2246,14 +2246,14 @@ The Forest.
 E
 bird tree~
    Several different types of bird are scattered about the many trees singing,
-chirping and some resting.    
+chirping and some resting.
 ~
 S
 #7597
 The Forest Trail~
    The forest is full of rich colors from the various trees and flowers growing
 here.  In the not so far distance the sounds of buzzing insects fill the
-forest.  The trail leads east and west.    
+forest.  The trail leads east and west.
 ~
 75 32768 0 0 0 0
 D1
@@ -2268,18 +2268,18 @@ The Forest.
 0 0 7596
 E
 tree trail ~
-   A squirrel quickly scurries up the nearest tree.  
+   A squirrel quickly scurries up the nearest tree.
 ~
 S
 #7598
 The Forest~
-   The forest contains many different types of trees all quite beautiful.  
+   The forest contains many different types of trees all quite beautiful.
 There are some trees with large pink flowers, trees with small blue blossoms,
 even the trees with no blossoms are eye catching.  A group of trees covered in
 huge leaves that change in a variety of shades from a golden yellow to a
 crimson red are the main species here.  The trees open into a wide gap large
 enough for a row of wagons.  The ground is clear of rocks but show no sign of
-wagon wheels.  The trail leads west into the forest.    
+wagon wheels.  The trail leads west into the forest.
 ~
 75 32768 0 0 0 0
 D3
@@ -2291,7 +2291,7 @@ E
 trail road path~
    The trail is a hard, dry, firmly, packed dirt that looks easy to haul a
 large wagon on.  Perhaps at one time it had been a main road but now it is void
-of any type of tracks other than a few animal tracks.    
+of any type of tracks other than a few animal tracks.
 ~
 S
 $~

@@ -3,7 +3,7 @@ dervish raggity~
 the dervish~
 A raggity dervish walks on aimlessly.
 ~
-   Dressed in loose fitting rags, this man looks like he could use some rest.  
+   Dressed in loose fitting rags, this man looks like he could use some rest.
 ~
 204 0 0 0 1572864 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
@@ -29,7 +29,7 @@ the coral snake~
 A brightly colored snake slithers along the sands.
 ~
    This relatively harmless snake has bright alternating bands of red, yellow
-and black.  
+and black.
 ~
 72 0 0 0 0 0 0 0 -10 E
 4 19 7 0d0+40 1d2+0
@@ -41,7 +41,7 @@ scorpion small~
 the small scorpion~
 A small, red scorpion scuttles away at your approach.
 ~
-   The little tail is mighty dangerous for such a small creature.  
+   The little tail is mighty dangerous for such a small creature.
 ~
 72 0 0 0 0 0 0 0 -50 E
 3 19 8 0d0+30 1d2+0
@@ -53,7 +53,7 @@ worm giant purple~
 the sand worm~
 A giant, purple sand worm thrusts up out of the sand and attacks!
 ~
-   He's big, mean, and purple.  Watch out!  
+   He's big, mean, and purple.  Watch out!
 ~
 165946 0 0 0 80 0 0 0 -300 E
 21 13 -2 4d4+210 3d3+3
@@ -80,7 +80,7 @@ the nomad leader~
 The nomad leader sits silently in prayer.
 ~
    He is clad in silk robes lined with gold thread.  At his side is a large,
-engraved cutlass.  He has an especially haughty air about him.  
+engraved cutlass.  He has an especially haughty air about him.
 ~
 2186 0 0 0 16 0 0 0 950 E
 14 16 1 2d2+140 2d2+2
@@ -93,7 +93,7 @@ the nomad commander~
 The nomad commander stands here staring at you suspiciously.
 ~
    This is the nomad leader's second in command.  His clothes are richly woven
-of silk and gold thread.  A nasty cutlass hangs at his side.  
+of silk and gold thread.  A nasty cutlass hangs at his side.
 ~
 2186 0 0 0 0 0 0 0 900 E
 12 16 2 2d2+120 2d2+2
@@ -105,7 +105,7 @@ nomad warrior~
 the nomad warrior~
 A proud nomad warrior stands here.
 ~
-   This warrior is dressed in typical nomad clothing and looks quite mean.  
+   This warrior is dressed in typical nomad clothing and looks quite mean.
 ~
 10 0 0 0 0 0 0 0 700 E
 10 17 4 2d2+100 1d2+1
@@ -117,7 +117,7 @@ slave young~
 the slave~
 A young slave sits here staring at you with pleading eyes.
 ~
-   She looks quite thin and weak.  
+   She looks quite thin and weak.
 ~
 138 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
@@ -129,8 +129,8 @@ dracolich lich~
 the dracolich~
 A pile of bones rises up to form a skeletal dracolich.
 ~
-   The dracolich is now only bone with pieces of flesh hanging from it.  
-Obviously it no longer fears death.  
+   The dracolich is now only bone with pieces of flesh hanging from it.
+Obviously it no longer fears death.
 ~
 124986 0 0 0 65620 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
@@ -143,7 +143,7 @@ drider~
 the drider~
 The drider looks at you viciously while it draws its sword.
 ~
-   This half-spider, half-drow creature is a formidable opponent.  
+   This half-spider, half-drow creature is a formidable opponent.
 ~
 104 0 0 0 65552 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
@@ -169,7 +169,7 @@ the myconoid~
 A myconoid lumbers along peacefully.
 ~
    The myconoid looks something like a giant mushroom (and probably has the same
-effect).  
+effect).
 ~
 200 0 0 0 16 0 0 0 850 E
 6 18 6 1d1+60 1d2+1
@@ -181,7 +181,7 @@ myconoid shaman~
 the myconoid shaman~
 A rather large myconoid stands here chanting in a strange tongue.
 ~
-   The shaman shoots spores into the air.  
+   The shaman shoots spores into the air.
 ~
 2380 0 0 0 16 0 0 0 950 E
 14 16 1 2d2+140 2d2+2
@@ -195,7 +195,7 @@ the dustdigger~
 A small oasis invites you to dive in.
 ~
    Looking a little closer at this oasis, you begin to wonder why it seems to be
-moving about...  
+moving about...
 ~
 196654 0 0 0 0 0 0 0 -200 E
 7 18 5 1d1+70 1d2+1
@@ -208,7 +208,7 @@ the camel~
 A very dangerous creature, a camel, snorts at you.
 ~
    It is advisable not to mess with this creature.  After all, you have heard
-many a horror story about experiences with camels.  Bad experiences.  
+many a horror story about experiences with camels.  Bad experiences.
 ~
 65578 0 0 0 0 0 0 0 -351 E
 5 19 7 1d1+50 1d2+0

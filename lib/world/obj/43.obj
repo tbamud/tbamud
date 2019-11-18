@@ -9,7 +9,7 @@ There is a bright icy crown here, melting.~
 E
 crown royal ice~
    This crown is slowling melting into water so you had better pick it up fast.
-  
+
 ~
 A
 12 -30
@@ -24,7 +24,7 @@ An icy scepter is here.~
 E
 scepter icy~
    This scepter is very cold to the touch.  You now that it is made out of ice
-but you can't figure out why it doesn't melt.    
+but you can't figure out why it doesn't melt.
 ~
 A
 3 1
@@ -40,7 +40,7 @@ The pelt of some unfortunate penguin lies crumpled here.~
 2 10 1 0 0
 E
 penguin pelt~
-   This is all that's left of a poor penguin.    
+   This is all that's left of a poor penguin.
 ~
 #4304
 penguin claw~
@@ -83,7 +83,7 @@ sign ice covered~
 an icy covered sign~
 An ice covered sign stands here, slightly tilted.~
 North: Barren Fields
-  
+
 West: The Realm of Glogtar
 ~
 16 0 0 0 0 0 0 0 0 0 0 0 0
@@ -99,7 +99,7 @@ An bone sign with engraved symbols stands here.~
 0 0 0 0 0
 E
 sign bone~
-   Welcome to Rankir!  
+   Welcome to Rankir!
 ~
 #4310
 ice sculpted fountain~
@@ -113,7 +113,7 @@ E
 ice fountain~
    The fountain before yu is the most beautiful ice sculpture you have ever
 seen.  The ice is sculpted, on one side, as an Eskimo with a whaling spear
-returning with a kill, displayed on the other.    
+returning with a kill, displayed on the other.
 ~
 #4311
 strip penguin flesh~

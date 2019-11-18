@@ -5,7 +5,7 @@ Tower Guard Holden is here inspecting visitors.
 ~
    It looks unfinished.  A tall male guard in armor stands here inspecting each
 visitor into the tower before they enter for security.  He is rather satisfied
-with his duties now and carries an arrogant smirk.  
+with his duties now and carries an arrogant smirk.
 ~
 12378 0 0 0 0 0 0 0 150 E
 15 15 1 3d3+150 2d2+2
@@ -21,7 +21,7 @@ Tower Guard Stradler cheerfully surveys the crowd.
    Stradler is a charming and attractive guard.  He inspects visitor's
 inventories for security here.  The ladies (and a few men) seem to flock to him
 for inspection.  He stands proud and tall for the safety of the people of Los
-Torres.  
+Torres.
 ~
 12378 0 0 0 0 0 0 0 175 E
 15 15 1 3d3+150 2d2+2
@@ -36,7 +36,7 @@ A citizen stands here.
 ~
    The citizen of Los Torres stands here, minding her own business.  She does
 not want to be bothered, she has many, many errands to run.  She looks in her
-purse, counts her money and checks for her ID cards.  
+purse, counts her money and checks for her ID cards.
 ~
 72 0 0 0 0 0 0 0 25 E
 10 17 4 2d2+100 1d2+1
@@ -66,7 +66,7 @@ Zulthan the Waiter takes orders from customers here.
    Zulthan the Waiter is here taking orders and retrieving food for people. He
 seems very busy, but he is very happy doing what he does. He has brown hair and
 is very short. He is also a bit on the pudgy side as well, though he doesn't
-seem to care. 
+seem to care.
 ~
 10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -82,7 +82,7 @@ Cassandra Lacela kinda stands here, like, drunk, you know...
    Cassandra Lacela stands here, kind of.  She slurs her tongue and her hair is
 all messed up.  She must be drunk.  She is wearing a white dress with some red
 and purple stains on it.  She lazily will take her customer's orders and she
-seems to have an obsession with lace, due to the decor in the room.  
+seems to have an obsession with lace, due to the decor in the room.
 ~
 188426 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -98,7 +98,7 @@ The Government Official Lesalie is here.
    The Government Official Lesalie is here in his brown suit.  He is wearing a
 white tie and brown pants.  He has brown hair and seems to be very tall.  He has
 a scar in his left cheek that looks like a slash from a weapon or a claw of
-sorts.  
+sorts.
 ~
 16394 0 0 0 65536 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -114,7 +114,7 @@ Salesman Derresor Maosund stands here checking his inventory of armor.
    Salesman Derresor Maosund smiles at his customers as they browse his display
 and ask him questions on 'What does this armor do' and 'How much are these
 boots'.  He is wearing a black robe over what seems to be flowing black pants
-and a black shirt.  
+and a black shirt.
 ~
 74 0 0 0 16 0 0 0 0 E
 20 14 -2 4d4+200 4d5+4
@@ -130,9 +130,9 @@ A Sniper Assassin hides here spying on citizens.
 ~
    The assassin here looks through the wall patiently at the citizens walking
 past.  She has long red hair that matches her red outfit.  She has very unique
-sniping skills as well as some interesting close up combat technique to boot.  
+sniping skills as well as some interesting close up combat technique to boot.
 She is mumbling to herself as she carefully watches to anyone opposing the
-government.  
+government.
 ~
 2074 0 0 0 524288 0 0 0 -200 E
 14 16 1 3d2+140 2d4+2
@@ -148,7 +148,7 @@ The Assassin Chieftan stands here guarding over her prisoner.
 red veil and her dull gold badge that reads 'Red Assassin Chieftan'.  She gives
 orders to her assassins from the government and checks over her prisoner.  She
 has long black hair that flies out from behind her veiled head.  She has a very
-tall and skinny figure and she stands with her hand on her hip.  
+tall and skinny figure and she stands with her hand on her hip.
 ~
 10266 0 0 0 80 0 0 0 -200 E
 17 15 0 3d3+170 2d2+2
@@ -164,7 +164,7 @@ The Government Official Visconti crawls up in his own filth.
    The Goverment Official Visconti, famous now for the addition of the top floor
 in the second tower, is covered in dirt, with ragged clothing and a bruised
 face.  He has a stubbled beard growing from lack of grooming and he smells like
-a skunk in an exhaust pipe!  
+a skunk in an exhaust pipe!
 ~
 72 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -181,7 +181,7 @@ Tower Guard Ackley stands here, slacking off.
 and shivers uncontrollably.  He has a major temper problem, and can go off the
 deep end easily when someone comments on one of his flaws.  He snorts loudly at
 random people for a laugh, and makes lewd gestures at those who have
-disrespected him before.  
+disrespected him before.
 ~
 10 0 0 0 0 0 0 0 -50 E
 17 15 0 3d3+170 2d2+2
@@ -214,7 +214,7 @@ The Government Official Phel is standing here.
 persuasive skills around the town, nobody is exactly sure if this guy's
 trustworthy or not.  He wears a dark green suit as he works his busy day.  His
 hair is blonde with a white streak of hair down the right.  His eyes are colored
-differentyly, one being brown and one being hazel.  
+differentyly, one being brown and one being hazel.
 ~
 26 0 0 0 0 0 0 0 -100 E
 15 15 1 3d3+150 2d2+2
@@ -228,7 +228,7 @@ The Government Official Gertrude sneers wickedly as she works.
 ~
    The pink suited Gertrude always wears a sneer and does things for her own
 interest instead of who she is supposed to represent.  She constantly sends off
-any messages of complaint to her, and is blatantly corrupt.  
+any messages of complaint to her, and is blatantly corrupt.
 ~
 10 0 0 0 0 0 0 0 -150 E
 14 16 1 2d2+140 2d2+2
@@ -243,7 +243,7 @@ The Government Official Cecille hums ignorantly to herself.
    Cecille looks pretty darn dumb to be an official.  She is wearing a light
 pink buttoned shirt and a matching skirt.  She is humming a song that she made
 up five seconds ago and its rather irritating.  She seems like she would be
-easily persuaded to believe one way or the other even if its unjust.  
+easily persuaded to believe one way or the other even if its unjust.
 ~
 10250 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -260,7 +260,7 @@ The Government Official Thedoric grins fakely as he greets his clients.
 to go to extreme measures to ensure that his beliefs are reality.  He is wearing
 a red suit and has medium length black hair.  He always wears a rather fake grin
 as he meets with people.  He tends to favor those who agree with him, and maybe
-he's a bit irrational when it comes to those who don't...  
+he's a bit irrational when it comes to those who don't...
 ~
 10266 0 0 0 0 0 0 0 -250 E
 18 14 0 3d3+180 3d3+3
@@ -277,7 +277,7 @@ The Government Official Luther tries his best to keep the council in line.
 wearing a blue trench coat over a blue dress shirt with white pants.  He has
 very short brown hair with deep blue eyes.  He is scrambling to save the city
 from the council, though he looks like he could use some help.  Maybe you should
-say hello to him?  
+say hello to him?
 ~
 10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -293,7 +293,7 @@ The Empress's bodyguard Verno blocks anyone from seeing the Empress.
    Verno, it would seem, stands very tall though he also has a very large
 waistline.  He is wearing a standard black tuxedo and he has his arms folded,
 stepping right in front of the path so that no one will go through.  He has a
-bald head and is also wearing a pair of black sunglasses.  
+bald head and is also wearing a pair of black sunglasses.
 ~
 262170 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
@@ -313,7 +313,7 @@ robe over a shirt that hangs down to her thighs at some parts.  The shirt is cut
 so tat triangular flaps hang from the waste.  Her pants are very loose and have
 several chains hanging from various spots.  The pants are flared a lot at the
 bottom, so much that it totally covers her feet.  She has long blonde hair and
-sky blue colored eyes.  Her lips are the scarlet of her robe.  
+sky blue colored eyes.  Her lips are the scarlet of her robe.
 ~
 188506 0 0 0 112 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -328,7 +328,7 @@ the artist~
 The artist paints another picture.
 ~
    The artist wears a paint covered smock and a black beret.  He stands in
-disgust trying to think of ideas for his next masterpiece.  
+disgust trying to think of ideas for his next masterpiece.
 ~
 10 0 0 0 0 0 0 0 50 E
 11 17 3 2d2+110 1d2+1
@@ -342,7 +342,7 @@ A journalist wanders around asking people questions.
 ~
    The journalist is dressed nicely, and is carrying a notepad, a pen and a
 sheet of questions to ask the citizens of Los Torres.  The questions mainly deal
-with the government, though most people seem unwilling to answer them.  
+with the government, though most people seem unwilling to answer them.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -356,7 +356,7 @@ A really fat chef stands behind the counter chopping onions.
 ~
    The chef is extremely fat, I mean, totally huge.  He has a thick, black,
 curly mustache.  He is wearing a big poofy hat that chefs normally wear and a
-big white apron that somehow manages to fit around his grandiose waist.  
+big white apron that somehow manages to fit around his grandiose waist.
 ~
 10 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -369,7 +369,7 @@ a crying man~
 A crying man mopes on one of the pews about how he lost his wedding ring.
 ~
    The man has totally wrinkled clothing and bangs his fist on the pew
-repeatedly for some reason, making all the citizens nearby uncomfortable.  
+repeatedly for some reason, making all the citizens nearby uncomfortable.
 ~
 10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -394,9 +394,9 @@ maid~
 the maid~
 The maid stands here doing laundry.
 ~
-   The maid is a short skynni woman, wearing a black dress and a white apron.  
+   The maid is a short skynni woman, wearing a black dress and a white apron.
 She carries a bunch of towels in her hand and is busy doing the laundrywork to
-care about anything else.  
+care about anything else.
 ~
 10 0 0 0 0 0 0 0 150 E
 10 17 4 2d2+100 1d2+1
@@ -408,10 +408,10 @@ karate instructor~
 the Karate Instructor~
 The Karate Instructor practices Tae Kwon Do.
 ~
-   It looks unfinished.  The instructor is bald headed, very short and thin.  
+   It looks unfinished.  The instructor is bald headed, very short and thin.
 He wears a white uniform with a black belt tied around the waist.  He is
 currently practicing one of his forms right now with his eyes closed, thinking
-about what he is doing.  
+about what he is doing.
 ~
 10 0 0 0 64 0 0 0 100 E
 15 15 1 3d3+150 3d2+3
@@ -427,7 +427,7 @@ The Librarian stands here, swatting dust particles that come by.
    The librarian wears her brown hair down to her waist, and has bright green
 eyes.  She stands aware, looking t the air.  She seems very conscious about
 having dust in the room, as she keept slapping them out of the air with a
-feather duster.  
+feather duster.
 ~
 10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
@@ -440,7 +440,7 @@ little Alex~
 Little Alex is here running around in circles.
 ~
    The confused little boy named Alex is bored, so he'll just run around in
-circles now.  H is wearing blue overalls and a red striped T-shirt.  
+circles now.  H is wearing blue overalls and a red striped T-shirt.
 ~
 14 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -453,9 +453,9 @@ clever Josie~
 Clever Josie sits in the corner reading a book.
 ~
    Clever Josie the know-it--all of the bunch.  She is reading to herself in the
-corner quietly.  She is the only one of the children that is behaving nicely.  
+corner quietly.  She is the only one of the children that is behaving nicely.
 She has medium length brown heair and cat-shaped black glasses.  She is wearing
-a brown dress with pockets at the front.  
+a brown dress with pockets at the front.
 ~
 10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -469,7 +469,7 @@ The teacher stands here cleaning up after her kids.
 ~
    The teacher wears her hair in a bun, and is wearing small wire glasses.  She
 has a green dress on and she is aggravated by the mess that all of her students
-had made when they left.  
+had made when they left.
 ~
 10 0 0 0 0 0 0 0 50 E
 12 16 2 2d2+120 2d2+2
@@ -483,7 +483,7 @@ The janitor kneels here, cleaning something off the walls.
 ~
    The janitor has short black hair, and a stubbly beard.  He wears a red
 T-shirt and blue jeans, and seems very cranky.  HE is unhappy that he has to
-clean up the messes that people make on the walls.  
+clean up the messes that people make on the walls.
 ~
 10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1

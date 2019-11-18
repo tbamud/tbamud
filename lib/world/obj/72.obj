@@ -9,7 +9,7 @@ The mysterious devil rod lies on the floor.~
 E
 devil rod~
    This is indeed a mysterious rod.  It is dark black at the base but has four
-very sharp purple tentacles at the end.  
+very sharp purple tentacles at the end.
 ~
 A
 18 3
@@ -26,7 +26,7 @@ A large mace lies here.~
 E
 large mace~
    The mace is pretty large with a weight of 10 lbs.  The head is actually four
-purple tentacles tied together.  
+purple tentacles tied together.
 ~
 A
 19 2
@@ -41,7 +41,7 @@ A small mace has been left here.~
 E
 small mace~
    This weapon does look like it does a lot of damage, but then you never know.
-It consists of a black handle and a purple head.  
+It consists of a black handle and a purple head.
 ~
 A
 19 1
@@ -56,7 +56,7 @@ A purple cloak lies on the floor.~
 E
 cloak purple~
    This is a very fine made cloak from an unknown material, in a nice purple
-color.  
+color.
 ~
 A
 24 2
@@ -72,7 +72,7 @@ A neon blue potion stands on the floor.~
 4 100 1000 0
 E
 potion blue~
-   In the flask is a transparent electric blue liquid.  
+   In the flask is a transparent electric blue liquid.
 ~
 #7205
 key black~
@@ -84,7 +84,7 @@ A black key has been left on the floor.~
 2 1 0 0
 E
 black key~
-   This little key is made from a black metal of unknown origin.  
+   This little key is made from a black metal of unknown origin.
 ~
 #7206
 skull white~
@@ -97,11 +97,11 @@ A strange white skull lies on the floor looking at you.~
 E
 white skull~
    The skull has two small horns in the forehead.  You notice some writing on
-the inside.  
+the inside.
 ~
 E
 writing text~
-   You read the number '666'.  
+   You read the number '666'.
 ~
 A
 2 -4
@@ -115,7 +115,7 @@ A pair of muddy gauntlets have been thrown away here.~
 10 600 150 0
 E
 muddy gauntlets~
-   These gauntlets are muddy indeed, however they look very effective.  
+   These gauntlets are muddy indeed, however they look very effective.
 ~
 A
 1 1
@@ -130,7 +130,7 @@ A small stick lies here.~
 E
 small stick~
    The small stick does not look interesting at all.  But just as you are going
-to throw it away you notice some small letters.  
+to throw it away you notice some small letters.
 ~
 E
 letters letter~
@@ -146,7 +146,7 @@ A pair of muddy boots has been dropped here.~
 10 75 500 0
 E
 boots muddy~
-   The boots are muddy and they look well worn, but also very comfortable.  
+   The boots are muddy and they look well worn, but also very comfortable.
 ~
 A
 14 15
@@ -160,7 +160,7 @@ There is a huge treasure here, looking very valuable.~
 5 652 0 0
 E
 treasure coins~
-   This looks like a whole lot of coins.  
+   This looks like a whole lot of coins.
 ~
 #7211
 sword short~
@@ -172,6 +172,6 @@ A short sword is lying here.~
 4 100 300 0
 E
 short sword~
-   This is a very nice little weapon.  
+   This is a very nice little weapon.
 ~
 $~

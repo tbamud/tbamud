@@ -6,7 +6,7 @@ afraid to fall to the depths beyond its edge.  There isn't much chance of that,
 however, since the road is being repaired whereever it is needed as soon as it
 is needed.  The dwarves are interested in trade, and without roads there will
 be no trade.  The road continues southward, while north of here you see a cave
-opening.    
+opening.
 ~
 237 0 0 0 0 5
 D0
@@ -29,10 +29,10 @@ Mobs         : 12
 Objects      : 20
 Shops        : 0
 Triggers     : 11
-Theme        : 
-Plot         : 
-Links        : 24, 26, 29 
- 
+Theme        :
+Plot         :
+Links        : 24, 26, 29
+
 Zone 237 is linked to the following zones:
 236 Aldin                          at 23700 (north) ---> 23601
 ~
@@ -40,7 +40,7 @@ E
 view east~
    The view is excellent from uphere.  You have a splendid view over the
 mountains, and you think they're sooo beautiful...  They do, however get boring
-eventually.  
+eventually.
 ~
 S
 #23701
@@ -49,7 +49,7 @@ On a well used road through the mountains~
 east a steep mountainside blocks any view, while to the west a just as steep
 drop leads into certain death.  The road is quite wide and heavily used by
 carridges, soldiers and the occasional road worker.  North from here you see
-some sort of opening in the mountain.    
+some sort of opening in the mountain.
 ~
 237 0 0 0 0 5
 D0
@@ -68,7 +68,7 @@ down on what was once the road just south of here.  The road has been
 reconstructed, leading around the boulder.  A vertical rock wall to your east
 keeps you from going that way.  However a set of steps has been hacked into the
 stone of the boulder to the south, allowing you to get to the small wooden
-building on top of it.    
+building on top of it.
 ~
 237 0 0 0 0 5
 D0
@@ -91,7 +91,7 @@ leads east and south from here.  It is about fifteen feet wide here, but just
 north and est of here there is nothing, except empty air.  To your southeast
 you see the reason for going so near the edge; A colossal rock has once tumbled
 down the mountain, and hit the road where it lay once - close to the side of
-the mountain.    
+the mountain.
 ~
 237 0 0 0 0 5
 D1
@@ -108,7 +108,7 @@ A well used road near certain death.~
    The road leads north and south from here.  To your east a colossal rock has
 dropped where the road once were.  This part of the road has been made around
 it, and is therefore a little narrower.  This also means you are walking
-dangerously close to the edge of a cliff, several hundred feet high.    
+dangerously close to the edge of a cliff, several hundred feet high.
 ~
 237 32768 0 0 0 5
 D0
@@ -128,7 +128,7 @@ edge - so close in fact, that if you were to walk on the outer stones, you
 would surely fall to your death if you slipped.  To your northeast you see an
 enourmous boulder, about the size of a house which totally blocks the road
 where it once were, near the side of the cliff.  The road continues north and
-east around the boulder.    
+east around the boulder.
 ~
 237 32768 0 0 0 5
 D0
@@ -149,7 +149,7 @@ of here, totally obstructing the path.  It seems the dwarves has decided to
 make the road go around the boulder rather than to take it apart.  On the top
 of the boulder you can see a small wooden building, which seem to house some
 kind of lookout post.  The rockface to both north and east is smooth, and
-cannot be climbed here, though.    
+cannot be climbed here, though.
 ~
 237 32768 0 0 0 5
 D2
@@ -169,7 +169,7 @@ shelves, or an occasional turn eastwards.  This is where the dwarven lookout is
 doing just that, keeping an eye out for orc raiding parties, or others trying
 to invade the city of the dwarves.  Not only does the lookout have a good view.
 He alos has some switches on the northern wall of the cabin.  From what you can
-decpiher of the labels, they set off different traps on the road below.    
+decpiher of the labels, they set off different traps on the road below.
 ~
 237 8 0 0 0 0
 D5
@@ -193,7 +193,7 @@ On the stone stairs.~
    These steps have been made for dwarven hands and feet, and you are slipping
 several times.  As you raise your eyes, you see the small wooden cabin, the
 dwarves has built on top of the boulder.  Just below you, the road is ready to
-accept the offer of your falling body, should you slip.    
+accept the offer of your falling body, should you slip.
 ~
 237 0 0 0 0 0
 D4
@@ -213,7 +213,7 @@ To your east a smooth stone wall blocks any movement, while to your west a just
 as smooth fall lets you move very fast - for a short while.  High on the
 eastern cliffwall, some logs have been fastened with boards and a thick rope
 leads northward from here.  You hope noone pulls the rope while you're standing
-here.    
+here.
 ~
 237 32768 0 0 0 5
 D0
@@ -230,12 +230,12 @@ On a road in the mountains.~
    The road has started getting steeper.  You are walking on a paved road in a
 montain area - This can only be dwarf work.  And it is, of course.  The road has
 obviously been built to facilitate trade between the dwarves and the men of the
-realm.  Also it has been built to keep those not welcome to the dwarves out.  
+realm.  Also it has been built to keep those not welcome to the dwarves out.
 Several rocks has been set behind a plank high on the smooth rock wall to your
 east.  A thick rope leads northwards, so whoever pulls the rope starts a
 rockslide onto YOU!  And you can't even escape westwards, without falling a
 hundred feet to the valley below.  You'd better move on, north ar south from
-here.  
+here.
 ~
 237 32768 0 0 0 5
 D0
@@ -253,7 +253,7 @@ On a road in the mountains.~
 north and south from here, and rises somewhat to the north.  East of here a
 smooth rock wall blocks any access, while west the road stops at the edge of
 the shelf along the mountain, letting you fall several hundred feet to the
-bottom, should you go outthere.    
+bottom, should you go outthere.
 ~
 237 32768 0 0 0 5
 D0
@@ -272,7 +272,7 @@ north and south from here, and rises somewhat to the north.  East of here a
 smooth rock wall blocks any access, while west the road stops at the edge of
 the shelf along the mountain, letting you fall several hundred feet to the
 bottom, should you go outthere.  South of here a promontory from the main
-mountain makes the road turn.    
+mountain makes the road turn.
 ~
 237 32768 0 0 0 5
 D0
@@ -290,7 +290,7 @@ On a road passing the promontory.~
 around a promontory just east of here, while letting you fall to your death if
 you step one step off the ledge south or west of here.  This also means that
 you can go into the foothills of the promontory, by leaving east or continue
-into the mountains by going north.    
+into the mountains by going north.
 ~
 237 32768 0 0 0 5
 D0
@@ -310,7 +310,7 @@ magnificent.  The road has climbed above the foothils below you and you can see
 as far as the eastern highway, where it twists through the fields and forests.
 You figure you must be high indeed as you know the distance to be nearly a days
 travel.  The well-tended road is impossible close to the edge here, and you
-watch your step carefully, so as to not fall from the ledge.  
+watch your step carefully, so as to not fall from the ledge.
 ~
 237 32768 0 0 0 5
 D1
@@ -330,7 +330,7 @@ comfortably, while making the horses' hooves get a grip too.  It leads east and
 west from here, rising sharply to the west, and falling just as sharply to the
 east from here.  All thoughts of leaving the path are forgotten as you look
 over the southern edge into a deep valley and north a blank rock wall blocks
-your progress.  The road is obviously the only way ahead.    
+your progress.  The road is obviously the only way ahead.
 ~
 237 32768 0 0 0 5
 D1
@@ -349,7 +349,7 @@ through foothills, while to the west it rises sharply and follows the side of
 the cliff.  The path once continued east too, but that path has been buried by
 a landslide.  Though the way looks unstable and dangerous, it should still be
 passable.  The road itself has been seen to recently, and not a single stone is
-out of place.    
+out of place.
 ~
 237 32768 0 0 0 5
 D1
@@ -371,7 +371,7 @@ On a paved road through foothills~
 chest laid down side by side over the hills, that seem to grow steadily to the
 north.  The road is well-tended, not a single bit of grass peeks out from the
 cracks.  The road leads north and south here, and being the only interesting
-thing around here, you decide to stick to it.    
+thing around here, you decide to stick to it.
 ~
 237 32768 0 0 0 4
 D0
@@ -391,7 +391,7 @@ all the signs of decomposition and breakdown caused by frostbite.  The road is
 free from that and also cleared of leaves and large rocks.  The Dwarves have
 long ago learned to be meticulous about their work, making a name in the stone
 and steel business.  You decide to stay on the north and south leading road,
-while watching the scenery around from a distance.    
+while watching the scenery around from a distance.
 ~
 237 32768 0 0 0 4
 D0
@@ -409,7 +409,7 @@ On a paved road through low foothills~
 cross from the forested area to your south and towards the timber line.  The
 road is rising slightly towards the north, heading into the mountain range you
 can see to your far north.  The road leaves no doubt about its origin, made
-from granite, and tended beyond belief, it's a masterpiece in itself.    
+from granite, and tended beyond belief, it's a masterpiece in itself.
 ~
 237 32768 0 0 0 4
 D0
@@ -423,12 +423,12 @@ D2
 S
 #23721
 On a paved road through low foothills~
-   The paved road you're currently on continues south and north from here.  
+   The paved road you're currently on continues south and north from here.
 Far in the distance to your north you see the granite slabs cut a path through
 the green grass of the foothills before ascending the mountains, while to the
 south it continues over a hill toward the eastern highway.  The road itself is
 an exhibition of engineering in itself.  Totally smooth, and perfectly
-straight.  Just what any dwarf would want to show off with.    
+straight.  Just what any dwarf would want to show off with.
 ~
 237 32768 0 0 0 4
 D0
@@ -447,7 +447,7 @@ north of here.  South of here however, the road leads through open, flat
 grassland towards the Eastern highway.  If you focus hard, you are able to see
 the T-crossing where the trade route meets the Highway.  The granite road feels
 comfortably smooth to walk on, so you are certain the hills to your north are
-easily crossed with this kind of foundation.    
+easily crossed with this kind of foundation.
 ~
 237 32768 0 0 0 4
 D0
@@ -461,12 +461,12 @@ D2
 S
 #23723
 On a paved road through grasslands.~
-   The road stretches for miles and miles northward, but only few southward.  
+   The road stretches for miles and miles northward, but only few southward.
 Some hills just north of here block your view, but you are certain the road
 will continue in a just as straight line beyond this false horizon as it does
 southward, across the plains.  The grasslands around you are unsafe, as several
 places quicksand is hidden under a thin layer of grass.  After a short
-consideration you decide to stay on the road.    
+consideration you decide to stay on the road.
 ~
 237 32768 0 0 0 2
 D0
@@ -481,13 +481,13 @@ S
 #23724
 On a paved road through grasslands.~
    You take an extra look as you step out on this road.  Obviously built and
-tended for by dwarves, the road is like nothing you have ever seen before.  
+tended for by dwarves, the road is like nothing you have ever seen before.
 Granite slabs lined up so perfectly that not even a single straw of grass grows
 between any two slabs, and all smooth like a rock from the sea.  And the road
 continues in a perfectly straight line north from here, towards the kingdom of
 the dwarves and the capital Aldin.  The occasional trader comes here, and some
 hide a smile as they see your amazement.  South of here the man-made eastern
-highway leads towards a city.    
+highway leads towards a city.
 ~
 237 32768 0 0 0 2
 D0
@@ -497,11 +497,11 @@ D0
 S
 #23725
 Crossing the Landslide~
-   The loose rock, gravel, and sand makes travelling extremely treacherous.  
+   The loose rock, gravel, and sand makes travelling extremely treacherous.
 Large boulders jut out erradicately between patches of sand loose gravel.  The
 possibility of another landslide seems imminent.  The landslide slopes
 downwards to the east.  Leading towards a deep chasm.  To the north the
-landslide rises steeply above you, looking almost impossible to climb.    
+landslide rises steeply above you, looking almost impossible to climb.
 ~
 237 4 0 0 0 0
 D0
@@ -519,9 +519,9 @@ D3
 S
 #23726
 Crossing the Landslide~
-   The remains of the landslide empty into a deep chasm further to the east.  
+   The remains of the landslide empty into a deep chasm further to the east.
 The sheer walls of granite from the chasm begin to block out portions of the
-sky.  The further east you travel the deeper into the chasm you will be.    
+sky.  The further east you travel the deeper into the chasm you will be.
 ~
 237 0 0 0 0 0
 D3
@@ -531,9 +531,9 @@ D3
 S
 #23727
 Climbing Up the Landslide~
-   The perilous task of climbing up the landslide may actually be worth it.  
+   The perilous task of climbing up the landslide may actually be worth it.
 Just to the north, at the top, you can see some old ruins uncovered by the
-recent avalanche.  Now if you can only find the footing to climb up to it.    
+recent avalanche.  Now if you can only find the footing to climb up to it.
 ~
 237 0 0 0 0 0
 D0
@@ -550,7 +550,7 @@ Nearing the Top of the Landslide~
    From here you have an excellent view of the realm.  You can catch a glimpse
 of a desert to the south, the city of Eldorado to the southeast.  To the west
 you can vaguely catch glimpses of the plains through a jagged mountain range.
-North and east a fresh wind blows in off from the ocean.    
+North and east a fresh wind blows in off from the ocean.
 ~
 237 0 0 0 0 0
 D0
@@ -566,7 +566,7 @@ S
 The Top of the Landslide~
    Finally at the top.  The loose rock, dirt, and sand has given way, revealing
 a strange doorway made of ancient stone.  Strange symbols, almost worn away
-with age, decorate the door and walls.  The door is cracked open slightly.  
+with age, decorate the door and walls.  The door is cracked open slightly.
 Unidentifiable tracks, made from blood, lead down into the passageway
 ~
 237 0 0 0 0 0

@@ -274,7 +274,7 @@ A shadowed stairway leading down.
 E
 sign stairs stairway~
    The sign next to the stairs says: If you are below level 7 and alone, or
-below level 4 then bugger off!  Or else don't blame me if you die...  
+below level 4 then bugger off!  Or else don't blame me if you die...
 ~
 S
 #18620
@@ -458,7 +458,7 @@ D5
 E
 portal floor~
    It looks as if you could go down into it...  But you can't be sure of where
-you will end up, or if you can get back.  
+you will end up, or if you can get back.
 ~
 S
 #18630
@@ -659,7 +659,7 @@ writing words~
 E
 wall~
    There is a crude picture of a man with the head of a bull with some writing
-next to it.  
+next to it.
 ~
 S
 #18640
@@ -681,7 +681,7 @@ The hall extends to the south where it seems to lighten somewhat.
 E
 statue~
    Upon closer inspection you see that the statue has a small plaque affixed to
-it.  The face looks remarkably familiar also.  
+it.  The face looks remarkably familiar also.
 ~
 E
 plaque nameplate name~
@@ -781,7 +781,7 @@ door~
 1 -1 18603
 E
 floor design~
-   It appears to be the Crest of the Harlequin Guild.  
+   It appears to be the Crest of the Harlequin Guild.
 ~
 S
 #18645
@@ -804,7 +804,7 @@ Back down the south staircase.
 0 -1 18647
 E
 staircase stair stairs~
-   They are constructed of smooth, beautiful marble.  
+   They are constructed of smooth, beautiful marble.
 ~
 S
 #18646
@@ -826,7 +826,7 @@ door~
 1 -1 18603
 E
 floor design~
-   It appears to be the crest of the Harlequin Guild.  
+   It appears to be the crest of the Harlequin Guild.
 ~
 S
 #18647
@@ -860,7 +860,7 @@ An open air balcony.
 0 -1 18645
 E
 staircase stair stairs~
-   They are constructed of smooth, beautiful marble.  
+   They are constructed of smooth, beautiful marble.
 ~
 S
 $~

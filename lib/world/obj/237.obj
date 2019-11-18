@@ -8,7 +8,7 @@ An axe, obviously of dwarven manufacture, has been left here.~
 12 600 60 0
 E
 axe dwarven~
-   A nicely made battle axe, with the rune 'T' engraved on the haft.  
+   A nicely made battle axe, with the rune 'T' engraved on the haft.
 ~
 #23701
 short sword shortsword dwarven~
@@ -22,7 +22,7 @@ E
 short sword shortsword dwarven~
    This sword is typical dwarven manufacture.  The forge in the mountain has
 produced planty of these small wonders to start a full-scale war.  This
-particular blade bears a small 'T' rune, near the handle.  
+particular blade bears a small 'T' rune, near the handle.
 ~
 A
 18 1
@@ -46,7 +46,7 @@ A small pick has been left here, gathering dust.~
 4 200 20 0
 E
 pick dwarven~
-   A pick, made for someone not quite as tall as you.  
+   A pick, made for someone not quite as tall as you.
 ~
 #23704
 hammer dwarven~
@@ -99,8 +99,8 @@ A shield, bearing the insignia of the dwarves, has been left here.~
 2 100 10 0
 E
 shield dwarven kite~
-   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.  
-This must be a dwarven shield.  
+   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.
+This must be a dwarven shield.
 ~
 #23709
 buckler dwarven shield~
@@ -112,8 +112,8 @@ A small round shield has been thrown here.~
 1 50 5 0
 E
 buckler dwarven shield~
-   A small round 'target' shield, it offers little protection when fighting.  
-But anything is better than nothing...  
+   A small round 'target' shield, it offers little protection when fighting.
+But anything is better than nothing...
 ~
 #23710
 gauntlets plate dwarven~
@@ -125,8 +125,8 @@ Some plate gauntlets, with the dwarven insignia on them, are here.~
 1 250 25 0
 E
 gauntlets plate dwarven insignia~
-   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.  
-This must be dwarven gauntlets.  
+   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.
+This must be dwarven gauntlets.
 ~
 A
 19 2
@@ -166,8 +166,8 @@ A helmet bearing the dwarven insignia has been thrown here.~
 3 150 15 0
 E
 helmet plate dwarven~
-   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.  
-This must be a dwarven helmet.  
+   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.
+This must be a dwarven helmet.
 ~
 #23715
 purse traders leather~
@@ -179,8 +179,8 @@ A large leather purse with the dwarven insignia has been thrown here.~
 5 50 5 0
 E
 purse traders leather~
-   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.  
-This must be the traders purse.  
+   A hammer and an axe crossed over 3 rocks is the insignia of the dwarves.
+This must be the traders purse.
 ~
 #23716
 pile coins~
@@ -201,7 +201,7 @@ A copper tube about 3' long has been left here.~
 E
 looking glass dwarven~
    In either end of the tube a small piece of glass is inserted.  When you look
-through it, you see much clearer, even in half-darkness.  
+through it, you see much clearer, even in half-darkness.
 ~
 #23718
 skullcap cap iron~

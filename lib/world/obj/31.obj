@@ -8,7 +8,7 @@ A cup has been set here.~
 13 5 1 0 0
 E
 cup~
-   It is a small simple cup.  
+   It is a small simple cup.
 ~
 #3101
 cup coffee~
@@ -20,7 +20,7 @@ A cup has been set here.~
 13 7 1 0 0
 E
 cup~
-   It is a small simple cup.  
+   It is a small simple cup.
 ~
 #3102
 cup water~
@@ -32,7 +32,7 @@ A cup has been set here.~
 17 2 1 0 0
 E
 cup~
-   It is a large simple cup.  
+   It is a large simple cup.
 ~
 #3103
 bottle water~
@@ -50,7 +50,7 @@ is from the natural, mostly clean River of Midgaard.  '
 ~
 E
 bottle~
-   It is a large, clean bottle.  There is a large label pasted on the side.  
+   It is a large, clean bottle.  There is a large label pasted on the side.
 ~
 #3104
 canteen water~
@@ -62,7 +62,7 @@ A canteen has been set on the ground here.~
 85 45 15 0 0
 E
 canteen~
-   It is a fairly big canteen.  Looks like it can hold a lot of liquid.  
+   It is a fairly big canteen.  Looks like it can hold a lot of liquid.
 ~
 #3105
 key iron~
@@ -74,7 +74,7 @@ An iron key has been left here.~
 1 1 10 0 0
 E
 key iron~
-   The iron key is not special.  In fact, it is quite boring.  
+   The iron key is not special.  In fact, it is quite boring.
 ~
 #3106
 key rusty~
@@ -86,7 +86,7 @@ A rusty key has been left here.~
 1 1 10 0 0
 E
 key rusty~
-   The key is a fairly large rusty key.  You notice a lot of dirt it.  
+   The key is a fairly large rusty key.  You notice a lot of dirt it.
 ~
 #3107
 key wooden~
@@ -99,7 +99,7 @@ A wooden key has been left here.~
 E
 key wooden~
    The wooden key is not special.  In fact it is just about the most boring key
-you've ever seen in your life.  
+you've ever seen in your life.
 ~
 #3108
 key brass~
@@ -111,7 +111,7 @@ A brass key has been left here.~
 1 1 10 0 0
 E
 key brass~
-   The brass key is small and looks like it fits a very complicated lock.  
+   The brass key is small and looks like it fits a very complicated lock.
 ~
 #3109
 desk drawer~
@@ -123,11 +123,11 @@ A desk is set against the western wall.~
 0 0 0 0 0
 E
 desk~
-   The desk looks very sparse, there is a drawer in the left side.  
+   The desk looks very sparse, there is a drawer in the left side.
 ~
 E
 drawer~
-   You notice a keyhole in the drawer.  
+   You notice a keyhole in the drawer.
 ~
 #3110
 safe~
@@ -139,7 +139,7 @@ A safe is placed in a dark corner of the room.~
 0 0 0 0 0
 E
 safe~
-   The safe is very heavy and has a keyhole.  
+   The safe is very heavy and has a keyhole.
 ~
 #3111
 bench~
@@ -153,7 +153,7 @@ E
 bench~
    It is a quite heavy but very comfortable bench.  It is placed with its front
 towards the river so you can sit and watch the river and the houses on the other
-side.  
+side.
 ~
 #3112
 key city~
@@ -167,7 +167,7 @@ E
 key city~
    It is probably the biggest key you have seen in your life.  It is made from
 polished gold and has various patterns on it along with the Midgaard Coat of
-Arms.  
+Arms.
 ~
 #3113
 fountain water~
@@ -179,7 +179,7 @@ A small white fountain is standing here, gurgling happily.~
 999 0 0 0 0
 E
 fountain water~
-   It is very nice.  Made from fine white marble.  
+   It is very nice.  Made from fine white marble.
 ~
 #3114
 coins gold~
@@ -208,7 +208,7 @@ A pewter candlestick is standing here.~
 E
 candlestick~
    It is a rather old-looking three-armed candlestick made from pewter.  Its
-candles are a yellowish white color.  
+candles are a yellowish white color.
 ~
 #3117
 tree elm~
@@ -220,6 +220,6 @@ An old elm tree grows here.~
 0 0 0 0 0
 E
 elm tree~
-   The fresh young leaves of the elm tree wave gently in the wind.  
+   The fresh young leaves of the elm tree wave gently in the wind.
 ~
 $~

@@ -26,12 +26,12 @@ info credits~
      north of Midgaard. Later on, I decided to add a ski hill and under-
      ground temple. This zone contains about 100 rooms, 3 shops, 1 death
      trap, several new items, and a bunch of new mobs. In a small cave at
-     the southernmost part of the zone is a locked room, guarded by a 
+     the southernmost part of the zone is a locked room, guarded by a
      mob. Inside the room is the "Belt of the Ancients", a good piece of
-     equipment. You might want to check out the difficulty of the mob 
-     guarding the belt and ensure that he's strong enough for your MUD. 
+     equipment. You might want to check out the difficulty of the mob
+     guarding the belt and ensure that he's strong enough for your MUD.
      You don't want players gettting good equipment too easily! :)
-            
+
      Written entirely from scratch in WordPad. Feel free to edit, modify,
      and do what you want with this zone!
     x---------------------------------------------------------------------x
@@ -50,11 +50,11 @@ S
 #24301
 The Great Field Of Midgaard~
    You are walking on a wide dirt path through the lush, green, fresh
-Midgaard countryside.  You can see to the horizon to the east and west; 
+Midgaard countryside.  You can see to the horizon to the east and west;
 you can see some hills to the north.  All around you is healthy green grass
 and an occasional large oak tree.  The sun feels wonderful on your face and
 a pleasant wind blows through your hair.  Birds chirp quietly to themselves
-and you can smell the faint scent of flowers and freshly cut grass.  You 
+and you can smell the faint scent of flowers and freshly cut grass.  You
 feel like you could lie down in the grass and stay here forever, surrounded
 by powerful beauty in all directions. You can see a large sign on the left
 side of the road.
@@ -76,14 +76,14 @@ sign~
         x------------------------------------------------x
         |                                                |
         |   <------   BigKing's Castle - West            |
-        |                                                |     
+        |                                                |
         x------------------------------------------------x
 ~
 S
 #24302
 The Great Field Of Midgaard~
    You are walking on a wide dirt path through the lush, green, fresh
-Midgaard countryside.  You can see to the horizon to the east and west; 
+Midgaard countryside.  You can see to the horizon to the east and west;
 you can see some hills to the north.  The grass is no longer cut here, and
 you can feel a cold wind coming from the north. The hills up ahead have a
 bit of snow on them.
@@ -121,8 +121,8 @@ S
 #24304
 The Great Field of Midgaard~
    You are walking on a wide dirt path through the lush, green, fresh
-Midgaard countryside.  You can see to the horizon to the east and west. 
-You find yourself at the base of a long hill that spans east and west. 
+Midgaard countryside.  You can see to the horizon to the east and west.
+You find yourself at the base of a long hill that spans east and west.
 The grass is no longer cut here, and you can feel a cold wind coming from
 the north.
 ~
@@ -141,8 +141,8 @@ S
 #24305
 The Great Field Of Midgaard~
    You are walking on a wide dirt path through the lush, green, fresh
-Midgaard countryside.  You can see to the horizon to the east and west. 
-You find yourself at the base of a long hill that spans east and west. 
+Midgaard countryside.  You can see to the horizon to the east and west.
+You find yourself at the base of a long hill that spans east and west.
 The grass is no longer cut here, and you can feel a cold wind coming from
 the north.
 ~
@@ -160,7 +160,7 @@ The field continues West.
 S
 #24306
 In the Hills~
-   You find yourself on a narrow path in between two hills. A bit of 
+   You find yourself on a narrow path in between two hills. A bit of
 snow covers the ground here, as well as the two hills. To the north
 you can see a wide expanse of deep snow. You can see a very small
 hole leading into the eastern hill. A short wooden sign has been shoved
@@ -186,9 +186,9 @@ E
 sign~
    The sign reads:
                   x---------------------------------x
-                  |   Beware of the strange beast   | 
+                  |   Beware of the strange beast   |
                   |   who lives inside this hole!   |
-                  x---------------------------------x    
+                  x---------------------------------x
 ~
 S
 #24307
@@ -282,9 +282,9 @@ The path continues South.
 S
 #24312
 A Snowy Path~
-   You find yourself in the middle of a winter storm. It's snowing heavily, 
-and a strong wind is blowing it all around. A huge drift of snow blocks your 
-way west, but a very narrow path has been shoveled east. The path has 
+   You find yourself in the middle of a winter storm. It's snowing heavily,
+and a strong wind is blowing it all around. A huge drift of snow blocks your
+way west, but a very narrow path has been shoveled east. The path has
 several inches of snow covering it.
 ~
 243 0 0 0 0 2
@@ -306,8 +306,8 @@ The path continues South.
 S
 #24313
 A Snowy Trail~
-   You find yourself in the middle of a winter storm. It's snowing heavily, 
-and a strong wind is blowing it all around. Huge drifts of snow block your 
+   You find yourself in the middle of a winter storm. It's snowing heavily,
+and a strong wind is blowing it all around. Huge drifts of snow block your
 way north and south. You can see some old frozen steps leading up to a
 wooden shack to the east.
 ~
@@ -418,7 +418,7 @@ S
 Ski Hill Road~
    You're on a wide shovelled road. To the west you can see a fairly high
 hill, which must be the Cooland Ski Hill. To the east you can see a log
-cabin. 
+cabin.
 ~
 243 0 0 0 0 2
 D1
@@ -454,8 +454,8 @@ The bar is West.
 S
 #24322
 A Snowy Path~
-   You find yourself in the middle of a winter storm. It's snowing heavily, 
-and a strong wind is blowing it all around. A huge drift of snow blocks your 
+   You find yourself in the middle of a winter storm. It's snowing heavily,
+and a strong wind is blowing it all around. A huge drift of snow blocks your
 way east, but a huge log cabin lies directly west. The path continues north.
 ~
 243 4 0 0 0 2
@@ -479,7 +479,7 @@ S
 A Snowy Path~
    You find yourself in the middle of a winter storm.  It's snowing heavily, and
 a strong wind is blowing all around.  Huge snow drifts block your way to the
-east, west and north.  
+east, west and north.
 ~
 243 0 0 0 0 2
 D2
@@ -630,7 +630,7 @@ A cold room is West.
 S
 #24334
 A Cold Intersection~
-   You're at the main intersection of the Underground Temple. Dark corridors 
+   You're at the main intersection of the Underground Temple. Dark corridors
 lead in all directions. The frost cracked walls are made from ancient granite
 stones. A thick frost covers many parts of the walls and ceiling. A darkened
 skeleton lies in the middle of the floor, obviously from someone who fell down
@@ -943,10 +943,10 @@ The trail continues West.
 S
 #24352
 Start of the newbie ski trail~
-   You find yourself at the top of a ski run. The freshly groomed slope 
-isn't too steep, so this must be a newbie trail. You see the odd skier go 
-by, but this trail is fairly empty. A thick forest blocks your way north 
-and east. The chalet is to the southwest. A wide path (almost a road) 
+   You find yourself at the top of a ski run. The freshly groomed slope
+isn't too steep, so this must be a newbie trail. You see the odd skier go
+by, but this trail is fairly empty. A thick forest blocks your way north
+and east. The chalet is to the southwest. A wide path (almost a road)
 leads south to the ski hill's main entrance.
 ~
 243 0 0 0 0 2
@@ -1038,7 +1038,7 @@ The forest continues West.
 S
 #24356
 Lounge~
-   You're in the chalet's lounge. Various couches and Lazyoy chairs are 
+   You're in the chalet's lounge. Various couches and Lazyoy chairs are
 scattered around the room. A pool table is against the western wall, and
 a couple dartboards are located beside it. A huge 60" TV sits on the floor
 against the northern wall. A large chandelier hangs from the high peaked
@@ -1054,7 +1054,7 @@ The cafateria is Down.
 S
 #24357
 Main Path~
-   You find yourself at the top of the ski hill on a wide path. The chalet 
+   You find yourself at the top of the ski hill on a wide path. The chalet
 blocks your way west, while a thick forest blocks your way east.
 ~
 243 0 0 0 0 2
@@ -1072,8 +1072,8 @@ S
 #24358
 Bottom of the Newbie ski trail~
    You find yourself at the bottom of a freshly groomed ski run. The run isn't
-too steep, so this must be a newbie trail. You see the odd skier go by, but 
-thistrail is fairly empty. A thick forest blocks your way west and south. 
+too steep, so this must be a newbie trail. You see the odd skier go by, but
+thistrail is fairly empty. A thick forest blocks your way west and south.
 Since there aren't any ski lifts at this hill, you'll have to walk back up.
 ~
 243 0 0 0 0 2
@@ -1091,7 +1091,7 @@ S
 #24359
 Forest~
    You're in a snowy forest. The vegetation isn't very thick, and you can
-see the newbie trail to the west. Since this place is more hidden than the 
+see the newbie trail to the west. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up.
 ~
 243 0 0 0 0 2
@@ -1120,7 +1120,7 @@ S
 Forest~
    You're in a snowy forest. The vegetation isn't very thick, and you can
 see the newbie trail to the west. The chalet blocks your way east. Since this
-place is more hidden than the open trails, snowboarders like to come here to 
+place is more hidden than the open trails, snowboarders like to come here to
 smoke up.
 ~
 243 0 0 0 0 2
@@ -1142,11 +1142,11 @@ The forest continues West.
 S
 #24361
 Chalet Cafateria~
-   Expensive wooden panelling and fancy carpet line the room. The ceiling is 
-fairly low, giving off a cozy feeling to the room. A long glass countertop is 
+   Expensive wooden panelling and fancy carpet line the room. The ceiling is
+fairly low, giving off a cozy feeling to the room. A long glass countertop is
 against the western wall, where hamburgers, french fries, and potato chips are
-sold. Long, wide tables are lined up in the middle of the room, with about a 
-dozen chairs around each one. A beautifully carved double width stairway leads 
+sold. Long, wide tables are lined up in the middle of the room, with about a
+dozen chairs around each one. A beautifully carved double width stairway leads
 up to the lounge.  Surprisingly, this place is fairly empty.
 ~
 243 8 0 0 0 0
@@ -1166,8 +1166,8 @@ Chalet~
    Expensive wooden panelling and fancy carpet line the room. The ceiling is
 fairly low, giving a cozy feeling to the room. An enourmous stone fireplace is
 roaring in the southern part of the room. Two couches are set against the door,
-and several chairs are arranged around the fireplace. Four large tables are 
-lined up in the middle of the room, and you can see that the cafateria extends 
+and several chairs are arranged around the fireplace. Four large tables are
+lined up in the middle of the room, and you can see that the cafateria extends
 west where you can buy your food. You can see the ski shop the north.
 ~
 243 8 0 0 0 0
@@ -1189,9 +1189,9 @@ The cafateria continues West.
 S
 #24363
 Main Path~
-   You find yourself at the top of the ski hill on a wide path. A thick forest 
-blocks your way east. A large wooden building is built right into the hill to 
-the west. Several ski racks sit outside the door, and a huge chimney is 
+   You find yourself at the top of the ski hill on a wide path. A thick forest
+blocks your way east. A large wooden building is built right into the hill to
+the west. Several ski racks sit outside the door, and a huge chimney is
 billowing out smoke from the side of the chalet.
 ~
 243 0 0 0 0 2
@@ -1213,8 +1213,8 @@ The chalet is West.
 S
 #24364
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the south. Since this place is more hidden than the 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the south. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The forest thickens
 and blocks your way west.
 ~
@@ -1237,9 +1237,9 @@ The intermediate trail is South.
 S
 #24365
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the south. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the south. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up.
 ~
 243 0 0 0 0 2
 D0
@@ -1266,8 +1266,8 @@ S
 #24366
 Forest~
    You're in a snowy forest. The vegetation isn't very thick, and you can
-see the newbie trail to the west. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. The chalet blocks 
+see the newbie trail to the west. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up. The chalet blocks
 your way north.
 ~
 243 0 0 0 0 2
@@ -1290,8 +1290,8 @@ S
 #24367
 Forest~
    You're in a snowy forest. The vegetation isn't very thick, and you can
-see the newbie trail to the west. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. The chalet blocks 
+see the newbie trail to the west. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up. The chalet blocks
 your way north, while you can see the main path east.
 ~
 243 0 0 0 0 2
@@ -1338,8 +1338,8 @@ S
 Intermediate ski trail~
    You're at the bottom of the intermediate ski trail. A thick forest blocks
 your way in all directions, wait, you think you can see a narrow trail leading
-west and down. except east where the trail leads up. The snow is rather deep 
-here, and it isn't groomed. You can see large ape-like footprints in the snow. 
+west and down. except east where the trail leads up. The snow is rather deep
+here, and it isn't groomed. You can see large ape-like footprints in the snow.
 You get the feeling no one comes down here very often.
 ~
 243 0 0 0 0 2
@@ -1382,7 +1382,7 @@ S
 Intermediate ski trail~
    You're on the intermediate ski trail. You can see the odd rock sticking
 up through the snow, and many moguls and bumps are all around. This trail is
-obviously made for better skiers and snowboarders. 
+obviously made for better skiers and snowboarders.
 ~
 243 0 0 0 0 2
 D0
@@ -1410,7 +1410,7 @@ S
 Intermediate ski trail~
    You're on the intermediate ski trail. You can see the odd rock sticking
 up through the snow, and many moguls and bumps are all around. This trail is
-obviously made for better skiers and snowboarders. 
+obviously made for better skiers and snowboarders.
 ~
 243 0 0 0 0 2
 D0
@@ -1438,7 +1438,7 @@ S
 Intermediate ski trail~
    You're on the intermediate ski trail. You can see the odd rock sticking
 up through the snow, and many moguls and bumps are all around. This trail is
-obviously made for better skiers and snowboarders. 
+obviously made for better skiers and snowboarders.
 ~
 243 0 0 0 0 2
 D0
@@ -1466,7 +1466,7 @@ S
 Intermediate ski trail~
    You're on the intermediate ski trail. You can see the odd rock sticking
 up through the snow, and many moguls and bumps are all around. This trail is
-obviously made for better skiers and snowboarders. 
+obviously made for better skiers and snowboarders.
 ~
 243 0 0 0 0 2
 D0
@@ -1518,7 +1518,7 @@ Dark Path~
 stand fully errect. The path is very narrow, again due to the thick
 branches. Clumps of hair can be seen all over. Now that your eyes have
 adjusted, you can see a low entry way into a cave to the south. Human
-bones are scattered around the entrance. 
+bones are scattered around the entrance.
 ~
 243 8 0 0 0 0
 D2
@@ -1547,10 +1547,10 @@ A narrow trail is North.
 S
 #24380
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the north. Since this place is more hidden than the 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the north. Since this place is more hidden than the
 open trails, snowboarders like to come here to smoke up. The forest thickens
-and completely blocks your way west and south. 
+and completely blocks your way west and south.
 ~
 243 0 0 0 0 2
 D0
@@ -1566,9 +1566,9 @@ The forest continues East.
 S
 #24381
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the north. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the north. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up.
 ~
 243 0 0 0 0 2
 D0
@@ -1594,9 +1594,9 @@ The forest continues West.
 S
 #24382
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the north. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the north. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up.
 ~
 243 0 0 0 0 2
 D0
@@ -1622,9 +1622,9 @@ The forest continues West.
 S
 #24383
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the north. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the north. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up.
 ~
 243 0 0 0 0 2
 D0
@@ -1650,9 +1650,9 @@ The forest continues West.
 S
 #24384
 Forest~
-   You're in a snowy forest. The vegetation isn't very thick, and you can see 
-the intermediate trail to the north. Since this place is more hidden than the 
-open trails, snowboarders like to come here to smoke up. 
+   You're in a snowy forest. The vegetation isn't very thick, and you can see
+the intermediate trail to the north. Since this place is more hidden than the
+open trails, snowboarders like to come here to smoke up.
 ~
 243 0 0 0 0 2
 D0
@@ -1703,7 +1703,7 @@ Advanced ski trail~
    You're on the advanced ski trail. Icy patches abound, rocks stick out of the
 snow, and huge jumps and bumps sit right in the middle of the trail. The slope
 is very steep. This place is definitely not for beginners. A high cliff is
-directly south. A large sign sits on the left side of the trail. (You should 
+directly south. A large sign sits on the left side of the trail. (You should
 read it!)
 ~
 243 0 0 0 0 2
@@ -1728,12 +1728,12 @@ sign~
      x---------------------------------------------------------x
      | <!>        A MESSAGE FROM COOLAND SKI HILL         <!>  |
      |                                                         |
-     | This cliff is only recommended for advanced skiers. The | 
-     | cliff is 75 feet high, and the edge can get very icy at | 
-     | times. Use at own risk! Again, let us remind you that   | 
-     | we shall not be held liable for any injuries incurred   | 
+     | This cliff is only recommended for advanced skiers. The |
+     | cliff is 75 feet high, and the edge can get very icy at |
+     | times. Use at own risk! Again, let us remind you that   |
+     | we shall not be held liable for any injuries incurred   |
      | on this property. (The cliff is our property in case    |
-     | you were wondering.)                                    |	
+     | you were wondering.)                                    |
      x---------------------------------------------------------x
 ~
 S
@@ -1813,7 +1813,7 @@ S
 Start of the advanced ski trail~
    You're on the advanced ski trail. Icy patches abound, rocks stick out of the
 snow, and huge jumps and bumps sit right in the middle of the trail. The slope
-is very steep. This place is definitely not for beginners. A thick forest 
+is very steep. This place is definitely not for beginners. A thick forest
 blocks your way west and south.
 ~
 243 0 0 0 0 2
@@ -1844,9 +1844,9 @@ Ski Hill Entrance~
    You're at the ski hill entrance. The snow is well packed down, and pine
 trees line the north and south sides of the road. A large plastic banner
 spans the entire width of the road exclaiming,
-	             "WELCOME TO THE COOLAND SKI HILL!"
+                     "WELCOME TO THE COOLAND SKI HILL!"
 A small booth stands here, where people must buy their lift tickets to get
-in. A small wooden sign has been nailed to the booth. A steel gate lies 
+in. A small wooden sign has been nailed to the booth. A steel gate lies
 west.
 ~
 243 68 0 0 0 2
@@ -1871,7 +1871,7 @@ sign~
      |                                                               |
      |     WE ARE NOT RESPONSIBLE FOR ANY INJURIES INCURRED ON       |
      |     THIS PROPERTY!!! USE AT OWN RISK!!!                       |
-     x---------------------------------------------------------------x   
+     x---------------------------------------------------------------x
 ~
 S
 #24393
@@ -1895,7 +1895,7 @@ S
 #24399
 Ski Shop~
    You're in a small ski shop. Skis, snowboards, and assorted winter clothing
-are packed on hangers, shelves, walls, just about everywhere. A small glass 
+are packed on hangers, shelves, walls, just about everywhere. A small glass
 countertop contains various pairs of expensive ski goggles and sun glasses.
 ~
 243 8 0 0 0 0

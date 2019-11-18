@@ -3,9 +3,9 @@ monk priest~
 the monk~
 A ferret wearing monk robes stands here.
 ~
-   You see a very calm monk.  He walks around with a serene look on his face.  
+   You see a very calm monk.  He walks around with a serene look on his face.
 This is a creature completely at peace with him self.  He is dressed in some
-nice red robes, and wearing a pair of worn out sandals.  
+nice red robes, and wearing a pair of worn out sandals.
 ~
 6600 0 0 0 8200 0 0 0 1000 E
 12 16 2 2d2+120 2d2+2
@@ -18,7 +18,7 @@ monk mouse~
 the monk~
 A mousy looking monk stands here.
 ~
-   You see a mouse wearing a monk's robe.  He is walking about intently.  
+   You see a mouse wearing a monk's robe.  He is walking about intently.
 ~
 6600 0 0 0 8192 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
@@ -32,7 +32,7 @@ the monk~
 A squirrel monk darts around.
 ~
    You see a monk.  This one has a rather large, bushy tail, and seems to have a
-weird twitch.  
+weird twitch.
 ~
 6476 0 0 0 8192 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
@@ -45,8 +45,8 @@ assisstant~
 the assistant~
 An assistant stands here nervously.
 ~
-   You see a rabbit wearing an apron.  He looks exhausted and overworked.  
-Maybe his shift has been a little too long...  
+   You see a rabbit wearing an apron.  He looks exhausted and overworked.
+Maybe his shift has been a little too long...
 ~
 4234 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -59,7 +59,7 @@ Buttercup~
 A large badger stands here, barking orders.
 ~
    You see a VERY large badger.  She is ranting and raving at various helpers
-within the kitchen.  She looks upset.  
+within the kitchen.  She looks upset.
 ~
 37130 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -73,7 +73,7 @@ A phoenix nests here.
 ~
    You see one of the legendary phoenix's here.  It is scarred and is missing
 patches of feathers.  One wing hangs slightly limp.  It's head contains a crest
-with several very long ornamental feathers.  
+with several very long ornamental feathers.
 ~
 178446 0 0 0 8272 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
@@ -88,7 +88,7 @@ The abbot calmly stands here.
 ~
    You see a large otter wearing saintly robes.  He is standing quietly,
 watching the people sitting within the pews as the choir behind him sings
-quietly.  
+quietly.
 ~
 14602 0 0 0 8192 0 0 0 1000 E
 13 16 2 2d2+130 2d2+2
@@ -101,7 +101,7 @@ gopher furball~
 the gopher~
 A gopher sits here, watching you intently.
 ~
-   You see an ordinary gopher.  It seems a little big for it's kind.  
+   You see an ordinary gopher.  It seems a little big for it's kind.
 ~
 14 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -116,7 +116,7 @@ A guard stands here.
 ~
    You see a clealy shaven man in a military uniform.  He is dressed in a green
 suit.  On his back hangs a quiver and a bow.  A sword hangs loosely by his side.
-He stares at you, waiting for a response.  
+He stares at you, waiting for a response.
 ~
 6158 0 0 0 0 0 0 0 700 E
 13 16 2 2d2+130 2d2+2
@@ -144,7 +144,7 @@ A large green dragon prowls here.
    A large green wall of muscle stands before you.  As it moves, you can see
 large thick muscles ripple under is skin as it moves silently through the
 forest.  To large red eyes turn and concentrate on you.  You shudder as you feel
-a wave of hate and anger ripple through you from the dragon.  
+a wave of hate and anger ripple through you from the dragon.
 ~
 256030 0 0 0 8192 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -159,7 +159,7 @@ An archer patrols the walls.
 ~
    You see a strongly build guard.  He walks around, watching over the wall for
 any sign of movement in the forest, which he takes care of with one quickly shot
-arrow.  
+arrow.
 ~
 179276 0 0 0 16 0 0 0 350 E
 14 16 1 2d2+140 2d2+2

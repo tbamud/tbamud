@@ -2,7 +2,7 @@
 An Unused Corner~
    You have come to an unused corner of the garden.  The land has been neatly
 worked, but nothing seems to have been planted yet.  Various gardening
-implements are scattered about subject to the weather.    
+implements are scattered about subject to the weather.
 ~
 45 0 0 0 0 0
 D0
@@ -22,10 +22,10 @@ Player Level : 12-15
 Rooms        : 62
 Mobs         : 14
 Objects      : 9
-Shops        : 
+Shops        :
 Triggers     : 3
-Theme        : 
-Plot         : 
+Theme        :
+Plot         :
 Links        : 12w
 ~
 S
@@ -34,7 +34,7 @@ A Dormitory~
    You have entered some sleeping quarters.  The walls are lined with several
 beds.  Besides each bed is a small table and a chair.  The room has a very
 cluttered look.  Several animals are lying in bed, or sitting around talking
-and making a tremendous noise.    
+and making a tremendous noise.
 ~
 45 0 0 0 0 0
 D2
@@ -47,7 +47,7 @@ The End of the Hallway~
    You have come to the end of the hallway.  Loud talking can be heard from the
 north and south.  A small otter runs out from the south, almost knocking you
 down.  It is followed by a larger otter chasing after it with a determined look
-on it's face.    
+on it's face.
 ~
 45 0 0 0 0 0
 D0
@@ -67,7 +67,7 @@ S
 A Dormitory~
    You have entered some sleeping quarters.  The walls are lined with several
 beds.  Besides each bed is a small table and a chair.  The room has a very
-cluttered look.  Several animals sit in a small circle, meditating quietly.  
+cluttered look.  Several animals sit in a small circle, meditating quietly.
 ~
 45 0 0 0 0 0
 D0
@@ -79,7 +79,7 @@ S
 A Hallway~
    You stand in the middle of a fairly long hallway.  More tapestries are
 placed on the walls, with statues placed in between the large pieces of cloth.
-The hallway continues to the east and to the west.    
+The hallway continues to the east and to the west.
 ~
 45 0 0 0 0 0
 D1
@@ -95,7 +95,7 @@ S
 An Intersection~
    You have come to an intersection.  You can hear laughter and merriment to
 the east and to the west.  From the top of the stair case you can hear music
-that seems to be of a religious nature.    
+that seems to be of a religious nature.
 ~
 45 0 0 0 0 0
 D1
@@ -119,7 +119,7 @@ S
 A Hallway~
    You stand in the middle of a fairly long hallway.  More tapestries are
 placed on the walls, with statues placed in between the large pieces of cloth.
-The hallway continues to the east and to the west.    
+The hallway continues to the east and to the west.
 ~
 45 0 0 0 0 0
 D1
@@ -136,7 +136,7 @@ The Grand Hall~
    You have entered a very large room.  The ceiling is intricately carved, and
 large paintings line the walls.  Two large rows of tables occupy most of the
 room.  They seem to be filled with various woodland creatures, busily eating
-and drinking.  Their seems to be some kind of celebration going on.    
+and drinking.  Their seems to be some kind of celebration going on.
 ~
 45 0 0 0 0 0
 D2
@@ -148,7 +148,7 @@ S
 End of the Hall~
    You have come to the end of a hallway.  Two doors lie to the north and to
 the south.  From the north you can hear a loud raucous, to the south, you hear
-the banging of metal, and the shouting of a very loud individual.    
+the banging of metal, and the shouting of a very loud individual.
 ~
 45 0 0 0 0 0
 D0
@@ -168,7 +168,7 @@ S
 In the Kitchen~
    You have entered a very cluttered kitchen.  A large badger seems to be in
 charge, and is giving orders quite loudly to a pair of rather young squirrels.
-The room smells of freshly baked cakes and cooked meat.    
+The room smells of freshly baked cakes and cooked meat.
 ~
 45 0 0 0 0 0
 D0
@@ -180,7 +180,7 @@ S
 Inside the Temple~
    You stand inside a small temple.  The walls are lined with rich tapestries
 of various woodland creatures conducting various activities.  To the north
-their seems to be an intersection, and a small staircase.    
+their seems to be an intersection, and a small staircase.
 ~
 45 0 0 0 0 0
 D0
@@ -197,7 +197,7 @@ Inside the Monastery~
    You have entered the walls of the monastery.  You stand on a path that leads
 to a fairly extensive compound.  Lines of very large oak trees line the nicely
 paved path.  At regular intervals, you see statues of various woodland
-creatures.  They are postured like humans, and seem to be wearing clothes.    
+creatures.  They are postured like humans, and seem to be wearing clothes.
 ~
 45 4 0 0 0 0
 D0
@@ -213,7 +213,7 @@ S
 Outside the Monastery~
    The path ends abruptly at a small gate.  The gate is a simple wire frame,
 with a large red bird placed in the center.  Through the bars you can seem some
-sort of church.  A small path leads off to the east.    
+sort of church.  A small path leads off to the east.
 ~
 45 0 0 0 0 0
 D0
@@ -227,9 +227,9 @@ D1
 S
 #4513
 A Small Path~
-   You stand in a small dirt path.  It is lined with several apple trees.  
+   You stand in a small dirt path.  It is lined with several apple trees.
 Birds sing sweetly from there large branches.  The path seems to be heading
-eastward towards a rather large garden.    
+eastward towards a rather large garden.
 ~
 45 0 0 0 0 0
 D1
@@ -243,9 +243,9 @@ D3
 S
 #4514
 The Treasure Chamber~
-   You seem to have stumbled in to the secret treasure chamber of the monks.  
+   You seem to have stumbled in to the secret treasure chamber of the monks.
 It ain't much, but it's something.  Several small piles of gold sit at various
-locations around the room.    
+locations around the room.
 ~
 45 0 0 0 0 0
 D1
@@ -258,7 +258,7 @@ The Top of the Dark Staircase~
    The stairs come to a strange abrupt halt at a wall.  Looking more
 carefully, you see pictures lightly engraved in the east and west walls.  To
 the east is the carving of a large phoenix in flight, and to the west is the
-etching of an injured chimera.    
+etching of an injured chimera.
 ~
 45 0 0 0 0 0
 D1
@@ -291,7 +291,7 @@ Behind the Tapestry~
    Sneaking behind the tapestry, you have entered a very dark staircase.  You
 cannot see anything of note in front of you.  Suddenly, you are paralyzed by an
 ear piercing shriek coming from the top of the stairs.  You start to feel
-apprehensive about continuing up these dark stairs.    
+apprehensive about continuing up these dark stairs.
 ~
 45 68 0 0 0 0
 D4
@@ -307,7 +307,7 @@ S
 Atop the Stairs~
    After climbing the chairs you come to a large temple.  A choir sings behind
 an otter wearing robes who is standing in front of a few random creatures
-sitting along the pews.  A large tapestry sits behind him.    
+sitting along the pews.  A large tapestry sits behind him.
 ~
 45 0 0 0 0 0
 D4
@@ -323,7 +323,7 @@ S
 The Garden Gate~
    You have come to a small fence, deterring entrance into a rather large
 garden.  It is a flimsy wire fence, most likely meant to keep the rabbits out.
-From here you can see large rows of various vegetables.    
+From here you can see large rows of various vegetables.
 ~
 45 0 0 0 0 0
 D1
@@ -339,7 +339,7 @@ S
 The Celery Corner~
    You among the celery.  It's rather nice celery too, with nice firm stiff
 stalks.  They seems as if they would be pretty tasty.  Go ahead, they won't
-hurt you, or so you hope...    
+hurt you, or so you hope...
 ~
 45 0 0 0 0 0
 D1
@@ -355,7 +355,7 @@ S
 The Tomato Corner~
    You are currently in the north east corner of the garden.  Several large
 tomato plants grow quite splendidly here.  A small stone wall is to the east,
-and a large field lies to the north.    
+and a large field lies to the north.
 ~
 45 0 0 0 0 0
 D2
@@ -372,7 +372,7 @@ The Carrot Row~
    You stand in the middle of a fair sized garden.  More specifically, you
 stand in the middle of a row of very large carrots.  The garden seems to be
 fairly well taken care of, with only a few nibbles on some of the smaller
-shoots.    
+shoots.
 ~
 45 0 0 0 0 0
 D0
@@ -396,7 +396,7 @@ S
 The Carrot Row~
    You among several very large carrots.  They sit in neat little rows, and
 seem to be of a fair size.  A rock wall lines the east wall of the garden, and
-it seems some of the stones have fallen out of place.    
+it seems some of the stones have fallen out of place.
 ~
 45 0 0 0 0 0
 D0
@@ -420,7 +420,7 @@ S
 A Strawberry Patch~
    You stand among the delicious strawberries.  The small shrubs contain several
 large juicy strawberries.  A rabbit tries to blend in amont them, it fur
-stained red.  In a flash, it runs away.    
+stained red.  In a flash, it runs away.
 ~
 45 0 0 0 0 0
 D0
@@ -436,7 +436,7 @@ S
 A Gopher Hole~
    You find yourself in a strange underground burrow.  To small beady little
 eyes stare at you from a dark corner.  Your starting to feel a little uneasy
-about this place...  
+about this place...
 ~
 45 0 0 0 0 0
 D4
@@ -449,7 +449,7 @@ A Clear Trail~
    You find yourself standing on a nicely tended trail.  It leads straight to
 the east.  From here you can see that it ends abbruptly at the entrance to a
 large wooden fortress.  This must be the path way to the fabled Outpost of the
-Rangers of the Broken Bow.    
+Rangers of the Broken Bow.
 ~
 45 0 0 0 0 0
 D1
@@ -478,7 +478,7 @@ S
 Within the Walls~
    Apparently the walls are much, much thicker than they look.  Looking around,
 you find yourself in the wall.  It's about 10 paces wide.  A staircase leads
-up.  The path also continues to the east.    
+up.  The path also continues to the east.
 ~
 45 4 0 0 0 0
 D1
@@ -499,7 +499,7 @@ Through the Wall~
    Coming out the other side of the wall you see you have entered a very large,
 very busy outpost.  People are constantly moving around.  You see a training
 field a bit to the northeast, and various buildings.  Sentries patrol
-everywhere.  
+everywhere.
 ~
 45 0 0 0 0 0
 D1
@@ -515,7 +515,7 @@ S
 A Corner of the Wall~
    You have come to the end of this section of wall.  A small tower rises up
 out of the wall here.  From here you can see still more guards quietly
-patroling the walls.  They seem a little paranoid...    
+patroling the walls.  They seem a little paranoid...
 ~
 45 0 0 0 0 0
 D1
@@ -535,7 +535,7 @@ S
 Atop the Wall~
    You stand on the wall of the outpost from here you can see a very large
 mountain range to the north.  Archers patrol everywhere, just like the rest of
-this strangly over manned outpost.    
+this strangly over manned outpost.
 ~
 45 0 0 0 0 0
 D1
@@ -552,7 +552,7 @@ Atop the Wall~
    Spying over the wall you gaze intently into the forest.  Suddenly you see
 some motion within the forest.  In an instant, you see several orcs rush out of
 the forest.  Quickly the archers jump into action and the orcs turn in to pin
-cushions in short order.    
+cushions in short order.
 ~
 45 0 0 0 0 0
 D1
@@ -566,9 +566,9 @@ D3
 S
 #4533
 An Abrupy End~
-   For some strange reason, the walkway on the wall ends very abruptly here.  
+   For some strange reason, the walkway on the wall ends very abruptly here.
 To the south is more wall, however it is 3 times thicker then the rest of the
-wall, and about 30 feet higher.  Very peculiar.    
+wall, and about 30 feet higher.  Very peculiar.
 ~
 45 0 0 0 0 0
 D3
@@ -584,7 +584,7 @@ S
 Atop the Wall~
    You stand one the top of the high wooden walls of the outpost.  From here,
 you can see a good distance into the forest.  Guards slowly march along the top
-of the wall.  Intently gazing into the forest.  
+of the wall.  Intently gazing into the forest.
 ~
 45 0 0 0 0 0
 D0
@@ -600,7 +600,7 @@ S
 Atop the Walls~
    You stand one the top of the high wooden walls of the outpost.  From here,
 you can see a good distance into the forest.  Guards slowly march along the top
-of the wall.  Intently gazing into the forest.  
+of the wall.  Intently gazing into the forest.
 ~
 45 0 0 0 0 0
 D0
@@ -616,7 +616,7 @@ S
 A Corner~
    You have come to the southwest corner of the wall tops.  Here the wall turns
 and makes a right angle.  You can see more guards slowly marching along the
-wall.  A tower rises out of the wall here.  
+wall.  A tower rises out of the wall here.
 ~
 45 0 0 0 0 0
 D0
@@ -637,7 +637,7 @@ Atop the Wall~
    You stand on the wall of the outpost.  Men wearing green uniforms slowly
 patrol along the wall.  From here you can see the entire complex to the north.
 It consists of several large buildings, with one being larger then most.  To the
-south you can see an seeminly endless ocean of trees.  
+south you can see an seeminly endless ocean of trees.
 ~
 45 0 0 0 0 0
 D1
@@ -653,7 +653,7 @@ S
 Atop the Wall~
    The wall top continues here to the east and west here.  More sentries stand
 here watching the forest intently.  For some reason the eastern wall seems a
-bit large then this wall...  Odd.    
+bit large then this wall...  Odd.
 ~
 45 0 0 0 0 0
 D1
@@ -669,7 +669,7 @@ S
 End of the Wall~
    Strange the path on the top of the wall ends here.  It is replaced by another
 giant wall that is roughly 30 feet higher and 3 times thicker than the rest of
-the wall.  An extraordinarily large tower rises up next to the wall.  
+the wall.  An extraordinarily large tower rises up next to the wall.
 ~
 45 0 0 0 0 0
 D3
@@ -686,7 +686,7 @@ A Tower~
    You have climbed to the top of a tower.  A guard sits slumped against a
 pole.  He seems to be asleep.  Odd, he must be the first slacker you've seen in
 the entire outpost.  Maybe you should report him.  From here you have a breath
-taking view of the mountains to the north.    
+taking view of the mountains to the north.
 ~
 45 0 0 0 0 0
 D5
@@ -699,7 +699,7 @@ Atop a Tower~
    You stand at the top of a fairly high tower.  It runs slightly higher then
 the odd eastern wall of this fortress.  From here you think you can see subtle
 movemnets coming from the outside of the wall, but you cannot make out anything
-for certain.    
+for certain.
 ~
 45 0 0 0 0 0
 D5
@@ -711,7 +711,7 @@ S
 A Tower~
    You have climbed up into a look out tower.  From here you can see leagues
 into the forest.  A sentry gazes intently around, alert for any signs of
-danger.    
+danger.
 ~
 45 0 0 0 0 0
 D5
@@ -723,7 +723,7 @@ S
 Tower~
    The tower stairs wind up and around in a tight spiral.  Finally ending at a
 small room at the very top with no windows or furnishings.  It is completely
-barren.  
+barren.
 ~
 45 0 0 0 0 0
 D5
@@ -735,7 +735,7 @@ S
 Down the Path~
    As you continue you walk down the path you arrive closer to the training
 area and the other buildings.  As guards walk by you they give you a strange
-look and the procede on their way.  Maybe you should stay more out of sight.  
+look and the procede on their way.  Maybe you should stay more out of sight.
 ~
 45 0 0 0 0 0
 D0
@@ -755,7 +755,7 @@ S
 Training Area~
    This small area has been cleared for training.  Various sparring tools and
 equipment are scattered about the area.  From the looks of things it has not
-been used in a while.  
+been used in a while.
 ~
 45 0 0 0 0 0
 D2
@@ -767,7 +767,7 @@ S
 Path~
    The path splits apart here leading to a wooden building with a large chimney
 to the north and a small wooden shack to the south.  East and west the path
-continues.  
+continues.
 ~
 45 0 0 0 0 0
 D0
@@ -791,7 +791,7 @@ S
 Path~
    A small building lies to the east while the clearing and training area are to
 the west.  The path is well packed from heavy use.  Vegetation is abundant on
-both sides of the path.  
+both sides of the path.
 ~
 45 0 0 0 0 0
 D0
@@ -811,7 +811,7 @@ S
 Smithy~
    The smithy is a large wooden hut with a rock foundation.  A rock hearth and
 bellows is unused and cool to the touch.  The place is empty.  The fires must
-have been out for a long time.  
+have been out for a long time.
 ~
 45 0 0 0 0 0
 D2
@@ -821,9 +821,9 @@ D2
 S
 #4562
 Storehouse~
-   Crates, boxes, and jars line the shelves and floor of this wooden shack.  
-The storage looks like enough to feed a dozen people for half a year.  
-Everything is well preserved and sealed tightly.  
+   Crates, boxes, and jars line the shelves and floor of this wooden shack.
+The storage looks like enough to feed a dozen people for half a year.
+Everything is well preserved and sealed tightly.
 ~
 45 0 0 0 0 0
 D0
@@ -835,7 +835,7 @@ S
 Quartermaster~
    A small entranceway is setup with a desk and ledger for new arrivals.  This
 small building seems to be where the records are kept in order.  A few
-bookshelves are filled on the far wall.  
+bookshelves are filled on the far wall.
 ~
 45 0 0 0 0 0
 D0
@@ -851,7 +851,7 @@ S
 BackRoom~
    A fine desk, ink, and pen are setup for whoever keeps the books for this
 place.  Several shelves are full of written material and seem to be quiet old
-and unkept.  
+and unkept.
 ~
 45 0 0 0 0 0
 D2
@@ -863,7 +863,7 @@ S
 Barrack~
    A table and set of chairs fills the middle of the room while bunks line the
 walls.  Everything in the room is worn with use and age.  A set of stairs lead
-down into darkness.  
+down into darkness.
 ~
 45 0 0 0 0 0
 D0
@@ -883,7 +883,7 @@ S
 Dungeon~
    Walls of rock damp with condensation makes everything dance mystically from
 the light of the torches.  The occasional echoing footstep can be heard in the
-distance.  A set of stairs lead up out of the dungeon.  
+distance.  A set of stairs lead up out of the dungeon.
 ~
 45 0 0 0 0 0
 D1
@@ -899,7 +899,7 @@ S
 Captian's Quarters~
    This small room is more functional than elaborate.  A large bed, desk, and
 chair fill the majority of the room with a few odds and ends scattered in the
-corners.  
+corners.
 ~
 45 0 0 0 0 0
 D2
@@ -911,7 +911,7 @@ S
 Tunnel~
    The earthen walls are broken by the occasional root or rock that juts through
 the brown soil.  Torches are placed sparingly providing very little light.  An
-opening can be seen further to the east.  
+opening can be seen further to the east.
 ~
 45 0 0 0 0 0
 D1
@@ -927,7 +927,7 @@ S
 Outside~
    The clean fresh air is fouled by a blast of hot air that comes up out of a
 pit below you.  The pit has a steep incline but looks like it is traversible
-both down and back up.  
+both down and back up.
 ~
 45 0 0 0 0 0
 D3
@@ -943,7 +943,7 @@ S
 Dragon Pit~
    The pit is dark and moist with very little light.  A soft rasping can be
 heard.  As if a large animal is breathing deeply.  The only exit is back up out
-of the pit.  
+of the pit.
 ~
 45 0 0 0 0 0
 D4
@@ -955,7 +955,7 @@ S
 Atop the Wall~
    You stand one the top of the high wooden walls of the outpost.  From here,
 you can see a good distance into the forest.  Guards slowly march along the top
-of the wall.  Intently gazing into the forest.    
+of the wall.  Intently gazing into the forest.
 ~
 45 0 0 0 0 0
 D0

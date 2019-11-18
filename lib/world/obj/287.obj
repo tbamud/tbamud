@@ -154,7 +154,7 @@ E
 crown~
    As you turn the crown over in your hands, you feel twice the warrior you used
 to be, ready even to lead an army into battle.  Surely no magic can harm such a
-great one as wears this crown.  
+great one as wears this crown.
 ~
 A
 6 1
@@ -173,7 +173,7 @@ A bottle of Inver House blended whiskey lies here.~
 E
 bottle~
    It is sealed with a metal cap.  You KNOW this stuff is bad,bad,bad.  It is
-probably not single-malt.  More likely eight malt.  
+probably not single-malt.  More likely eight malt.
 ~
 #28720
 bowl stew bigos~
@@ -280,7 +280,7 @@ A beautiful claymore with an engraved hilt lies here.~
 10 1000 0 0 0
 E
 hilt claymore sword engravings~
-   The hilt is engraved with one word, a name ;it is the name "MacLeod".  
+   The hilt is engraved with one word, a name ;it is the name "MacLeod".
 ~
 A
 1 1
@@ -437,7 +437,7 @@ white robe~
    This robe is worn by only the most prestigious.  An aura of peace and
 contentment surrounds the robe.  Making it feel almost other worldly.  The
 fabric is soft and very pliable.  This robe would be very comfortable to wear.
-  
+
 ~
 #28749
 shield medium wooden~
@@ -482,7 +482,7 @@ A small flask full of an aromatic, and alcoholic, fluid.~
 E
 flask~
    It is engraved with these arcane runes:
- 
+
                       judicandus dies
 ~
 #28754
@@ -543,19 +543,19 @@ A scroll labelled "The Legend of Nambor" lies here.~
 1 100 0 0 0
 E
 scroll~
-                       The Legend of Nambor.            
+                       The Legend of Nambor.
     In days now forgotten to any but the living God, there lived a
-    valiant Man, Nambor by name, who dared enter the evil tunnels 
+    valiant Man, Nambor by name, who dared enter the evil tunnels
     in the bowels of the mountains.  From Symtoto he came, through
-    paths untrodden, until after great struggle he found a shaft 
+    paths untrodden, until after great struggle he found a shaft
     leading down into deep darkness.  But that was the start of poor
     Nambor's trials, for he found the entrance was too high to leave
     through. Now must he roam the tunnels of the evil creatures that
-    gnaw the rocks of the Underdark, till God shows him an escape 
+    gnaw the rocks of the Underdark, till God shows him an escape
     from the tunnels, or from this world.
-    And bravely he went forth, ever climbing deeper, sword clutched 
-    in hand.  And 'tis said by the elves that he saw there many a 
-    marvel; rocks that turned into vile beasts when touched, and 
+    And bravely he went forth, ever climbing deeper, sword clutched
+    in hand.  And 'tis said by the elves that he saw there many a
+    marvel; rocks that turned into vile beasts when touched, and
     unseen creatures that lurked in the shadows.  And some there are
     that say he escaped at last, but others say he never left, but
     died in the dark, broken sword still in his hand.
@@ -595,7 +595,7 @@ A jagged black knife with a goblin-head carved on its hilt lies here.~
 1 50 0 0 0
 E
 hilt~
-   It is a hideous, leering goblin head carved in bone.  
+   It is a hideous, leering goblin head carved in bone.
 ~
 #28764
 scimitar goblin~
@@ -689,7 +689,7 @@ E
 broadsword sword~
    The mark "D.  F.  " with a stamped-in hammer is on its hilt, and the blade
 bears the name "Krat".  Perhaps it is magic?  But its blade, at least, is very
-well-tempered, and its edge razor-sharp.  
+well-tempered, and its edge razor-sharp.
 ~
 A
 19 2
@@ -823,7 +823,7 @@ A tub of dirty water for quenching tools sits here.~
 1004 0 0 0 0
 E
 water tub~
-   It doesn't look too good.  I wouldn't drink it if I were you!  
+   It doesn't look too good.  I wouldn't drink it if I were you!
 ~
 #28786
 well jakur~
@@ -843,7 +843,7 @@ A magical fountain of marble spouts the blood-red wine.~
 1004 0 0 0 0
 E
 wine fountain~
-   The fountain is filled with cheap, but not sour, wine.  
+   The fountain is filled with cheap, but not sour, wine.
 ~
 #28788
 safe picture~
@@ -857,7 +857,7 @@ E
 portrait~
    It is an oil-on-wood portrait of the good King.  No, you can't steal it, my
 friend.  It is, strange to say, firmly bolted to the wall, not hung from the
-usual nail.  
+usual nail.
 ~
 #28789
 waybread~

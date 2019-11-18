@@ -7,7 +7,7 @@ if %actor.is_pc% && %actor.level% == 1
   if %actor.varexists(mortal_greeting_for_TBA)%
     say Welcome back %actor.name%. Tell someone level 32 or above when you complete the application.
   else
-    say Welcome to The Builder Academy %actor.name%. 
+    say Welcome to The Builder Academy %actor.name%.
     wait 2 sec
     say If you are interested in learning how to build, or want to teach others, then you have come to the right place.
     wait 2 sec
@@ -72,9 +72,9 @@ if %actor.is_pc%
     say Welcome back %actor.name%. Read through these rooms whenever you need a refresher.
     * First greeting, give them instructions.
   else
-    say Welcome to The Builder Academy %actor.name%. 
+    say Welcome to The Builder Academy %actor.name%.
     wait 1 sec
-    say Within this zone you can learn all the immortal commands and how to build. 
+    say Within this zone you can learn all the immortal commands and how to build.
     wait 2 sec
     say This zone is like a newbie zone, except for gods. All you have to do is walk through the zone and read every room description.
     wait 3 sec
@@ -96,12 +96,12 @@ Trial Vnum Assigner - 1332~
 tbalim~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Trial vnum assigner. For STAFF only! Make sure player has nohassle off.
-* Make sure name matches a player, purge mobs or use 0.name if you have 
+* Make sure name matches a player, purge mobs or use 0.name if you have
 * troubles. They are given an assigner in the mortal start room.
 * Usage: tbalim player vnum | purge
 if !%actor.is_pc% || %actor.level% < 32
   %send% %actor% Only human staff can use this limiter.
-else  
+else
   set victim %arg.car%
   if %victim.is_pc%
     if purge /= %arg.cdr% && %victim.has_item(1332)%
@@ -141,7 +141,7 @@ while %actor.inventory%
     while %item.contents%
       eval stolen %item.contents.vnum%
       %echo% purging %item.contents.shortdesc% in container.
-      %purge% %item.contents% 
+      %purge% %item.contents%
       eval num %random.99% + 100
       %at% %num% %load% obj %stolen%
     done
@@ -149,7 +149,7 @@ while %actor.inventory%
   eval item_to_purge %%actor.inventory(%item.vnum%)%%
   eval stolen %item.vnum%
   %echo% purging %item.shortdesc%.
-  %purge% %item_to_purge% 
+  %purge% %item_to_purge%
   eval num %random.99% + 100
   %at% %num% %load% obj %stolen%
 done
@@ -242,21 +242,21 @@ Room Door Example~
 move~
 *%door% <vnum> < direction> < field> [value]
 *Used for adding, deleting, and modifying doors in room #vnum.
-*Direction determines which door is being changed, and can be north, south, east, west, up, or down. 
-*If the door does not exist first, a new door will be created. 
+*Direction determines which door is being changed, and can be north, south, east, west, up, or down.
+*If the door does not exist first, a new door will be created.
 *Field is what property of the door is being changed. Valid fields are:
 *
 *purge - remove the exit in the direction specified - no value needed
 *description -  value will become the new exit description
 *flags - value will be the new door flags bitvector as defined here:
-*  a - Exit is a door that can be opened and closed. 
-*  b - The door is closed. 
-*  c - The door is locked. 
-*  d - The door is pick-proof. 
+*  a - Exit is a door that can be opened and closed.
+*  b - The door is closed.
+*  c - The door is locked.
+*  d - The door is pick-proof.
 *key - value is the vnum of the key to the door in this direction
 *name - value is the name of the door in the specified direction
 *room - value is the vnum of the room this direction leads to
- 
+
 *Example by Falstar for room 14520
 *The following trigger is designed to reveal a trapdoor leading down when Player types 'Move Chest'
 *
@@ -357,7 +357,7 @@ wait 1
 switch %random.3%
   case 1
     * only the person entering the room will see this.
-    %send% %actor% You trip over a root as you walk into the room. 
+    %send% %actor% You trip over a root as you walk into the room.
     * everyone in the room except the actor will see this.
     %echoaround% %actor% %actor.name% trips on a root walking into the room.
     * everyone in the room will see this.
@@ -366,7 +366,7 @@ switch %random.3%
     %zoneecho% %self.vnum% %actor.name% is a clutz.
   break
   case 2
-    %send% %actor% You strut into the room. 
+    %send% %actor% You strut into the room.
     %echoaround% %actor% %actor.name% Seems to have a big head..
     %echo% A strong breeze kicks some leaves up into the air.
   break
@@ -443,7 +443,7 @@ if !%has_it%
         set next_in_bag %in_bag.next_in_list%
         %echo% %next_in_bag.vnum%
         if %in_bag.vnum%==1300
-          %echo% has it in bag    
+          %echo% has it in bag
           set has_it 1
           break
         end
@@ -452,7 +452,7 @@ if !%has_it%
     set i %next%
   done
 end
-* 
+*
 if %has_it%
   say %actor.name% has that special item.
 else
@@ -637,7 +637,7 @@ if %object.vnum% == 1300
    say Thank you %actor.name%!
    wait 1 sec
    tell %actor.name% Here is a small reward for your hard work!
-   %echo% %self.name% thanks %actor.name% 
+   %echo% %self.name% thanks %actor.name%
    kiss %actor.name%
    %purge% app
    %load% obj 1301
@@ -678,84 +678,84 @@ Mobile Random Example~
 *(Alan Menken / Howard Ashman)
 *Steve Martin
 *
-%echo% %self.name% sings, When I was young and just a bad little kid, 
+%echo% %self.name% sings, When I was young and just a bad little kid,
 wait 3 sec
-%echo% %self.name% sings, My momma noticed funny things I did. 
+%echo% %self.name% sings, My momma noticed funny things I did.
 wait 3 sec
-%echo% %self.name% sings, Like shootin' puppies with a BB-Gun. 
+%echo% %self.name% sings, Like shootin' puppies with a BB-Gun.
 wait 3 sec
-%echo% %self.name% sings, I'd poison guppies, and when I was done, 
+%echo% %self.name% sings, I'd poison guppies, and when I was done,
 wait 3 sec
-%echo% %self.name% sings, I'd find a pussy-cat and bash in it's head. 
+%echo% %self.name% sings, I'd find a pussy-cat and bash in it's head.
 wait 3 sec
-%echo% %self.name% sings, That's when my momma said... 
+%echo% %self.name% sings, That's when my momma said...
 wait 3 sec
 %echo% A chorus from above sings, 'What did she say?'
 wait 3 sec
-%echo% %self.name% sings, She said my boy I think someday 
+%echo% %self.name% sings, She said my boy I think someday
 wait 3 sec
-%echo% %self.name% sings, You'll find a way 
+%echo% %self.name% sings, You'll find a way
 wait 3 sec
-%echo% %self.name% sings, To make your natural tendencies pay... 
+%echo% %self.name% sings, To make your natural tendencies pay...
 wait 6 sec
-%echo% %self.name% sings, You'll be a dentist. 
+%echo% %self.name% sings, You'll be a dentist.
 wait 3 sec
-%echo% %self.name% sings, You have a talent for causing things pain! 
+%echo% %self.name% sings, You have a talent for causing things pain!
 wait 3 sec
-%echo% %self.name% sings, Son, be a dentist. 
+%echo% %self.name% sings, Son, be a dentist.
 wait 3 sec
-%echo% %self.name% sings, People will pay you to be inhumane! 
+%echo% %self.name% sings, People will pay you to be inhumane!
 wait 3 sec
-%echo% %self.name% sings, You're temperment's wrong for the priesthood, 
+%echo% %self.name% sings, You're temperment's wrong for the priesthood,
 wait 3 sec
-%echo% %self.name% sings, And teaching would suit you still less. 
+%echo% %self.name% sings, And teaching would suit you still less.
 wait 3 sec
-%echo% %self.name% sings, Son, be a dentist. 
+%echo% %self.name% sings, Son, be a dentist.
 wait 3 sec
-%echo% %self.name% sings, You'll be a success. 
+%echo% %self.name% sings, You'll be a success.
 wait 6 sec
-%echo% A chorus from above sings, "Here he is folks, the leader of the plaque." 
+%echo% A chorus from above sings, "Here he is folks, the leader of the plaque."
 wait 3 sec
-%echo% A chorus from above sings, "Watch him suck up that gas. Oh My God!" 
+%echo% A chorus from above sings, "Watch him suck up that gas. Oh My God!"
 wait 3 sec
-%echo% A chorus from above sings, "He's a dentist and he'll never ever be any good." 
+%echo% A chorus from above sings, "He's a dentist and he'll never ever be any good."
 wait 3 sec
-%echo% A chorus from above sings, "Who wants their teeth done by the Marqui DeSade?" 
+%echo% A chorus from above sings, "Who wants their teeth done by the Marqui DeSade?"
 wait 6 sec
-%echo% An innocent dental patient screams, "Oh, that hurts! Wait! I'm not numb!" 
-%echo% %self.name% sings, "Eh, Shut Up! Open Wide! Here I Come!" 
+%echo% An innocent dental patient screams, "Oh, that hurts! Wait! I'm not numb!"
+%echo% %self.name% sings, "Eh, Shut Up! Open Wide! Here I Come!"
 wait 6 sec
-%echo% %self.name% sings, I am your dentist. 
+%echo% %self.name% sings, I am your dentist.
 wait 3 sec
-%echo% %self.name% sings, And I enjoy the career that I picked. 
+%echo% %self.name% sings, And I enjoy the career that I picked.
 wait 3 sec
-%echo% %self.name% sings, I'm your dentist. 
+%echo% %self.name% sings, I'm your dentist.
 wait 3 sec
-%echo% %self.name% sings, And I get off on the pain I inflict! 
+%echo% %self.name% sings, And I get off on the pain I inflict!
 wait 6 sec
-%echo% %self.name% sings, When I start extracting those mollars 
+%echo% %self.name% sings, When I start extracting those mollars
 wait 3 sec
-%echo% %self.name% sings, Girls, you'll be screaming like holy rollers 
+%echo% %self.name% sings, Girls, you'll be screaming like holy rollers
 wait 6 sec
-%echo% %self.name% sings, And though it may cause my patients distress. 
+%echo% %self.name% sings, And though it may cause my patients distress.
 wait 3 sec
-%echo% %self.name% sings, Somewhere...Somewhere in heaven above me... 
+%echo% %self.name% sings, Somewhere...Somewhere in heaven above me...
 wait 3 sec
-%echo% %self.name% sings, I know...I know that my momma's proud of me. 
+%echo% %self.name% sings, I know...I know that my momma's proud of me.
 wait 3 sec
-%echo% %self.name% sings, "Oh, Momma..." 
+%echo% %self.name% sings, "Oh, Momma..."
 wait 6 sec
-%echo% %self.name% sings, 'Cause I'm a dentist... 
+%echo% %self.name% sings, 'Cause I'm a dentist...
 wait 3 sec
-%echo% %self.name% sings, And a success! 
+%echo% %self.name% sings, And a success!
 wait 6 sec
-%echo% %self.name% sings, "Say ahh..." 
+%echo% %self.name% sings, "Say ahh..."
 wait 3 sec
-%echo% %self.name% sings, "Say AHhhh..." 
+%echo% %self.name% sings, "Say AHhhh..."
 wait 3 sec
-%echo% %self.name% sings, "Say AAARRRHHHH!!!" 
+%echo% %self.name% sings, "Say AAARRRHHHH!!!"
 wait 3 sec
-%echo% %self.name% sings, "Now Spit!" 
+%echo% %self.name% sings, "Now Spit!"
 %purge% %self%
 ~
 #1332
@@ -972,7 +972,7 @@ set  text[51]  Do illiterate people get the full effect of Alphabet Soup?
 set  text[52]  Did you ever notice that when you blow in a dog's face, he gets mad at you, but when you take him on a car ride, he sticks his head out the window?
 set  text[53]  My mind works like lightning one brilliant flash and it is gone.
 set  text[54]  100,000 sperm and you were the fastest?
-set  text[55]  A closed mouth gathers no foot. 
+set  text[55]  A closed mouth gathers no foot.
 set  text[56]  Someday, we'll all look back on this, laugh nervously and change the subject.
 set  text[57]  A diplomat is someone who can tell you to go to hell in such a way that you will look forward to the trip.
 set  text[58]  All generalizations are false, including this one.
@@ -981,47 +981,47 @@ set  text[60]  What was the best thing BEFORE sliced bread?
 set  text[61]  All stressed out and no one to choke.
 set  text[62]  Before you criticize someone, you should walk a mile in their shoes. That way, when you criticize them, you're a mile away and you have their shoes.
 set  text[63]  Better to understand a little than to misunderstand a lot.
-set  text[64]  Bills travel through the mail at twice the speed of checks. 
+set  text[64]  Bills travel through the mail at twice the speed of checks.
 set  text[65]  Do NOT start with me. You will NOT win.
 set  text[66]  Don't be irreplaceable; if you can't be replaced, you can't be promoted.
 set  text[67]  Don't piss me off! I'm running out of places to hide the bodies.
 set  text[68]  Don't take life too seriously, you won't get out alive.
 set  text[69]  Duct tape is like the force, it has a light side and a dark side and it holds the universe together.
 set  text[70]  Eagles may soar, but weasels don't get sucked into jet engines.
-set  text[71]  Ever stop to think, and forget to start again? 
+set  text[71]  Ever stop to think, and forget to start again?
 set  text[72]  Forget world peace. Visualize using your turn signal.
 set  text[73]  Give me ambiguity or give me something else.
 set  text[74]  Why do people with closed minds always open their mouths?
 set  text[75]  He who laughs last thinks slowest.
 set  text[76]  I didn't say it was your fault, Relsqui. I said I was going to blame you.
-set  text[77]  I don't suffer from insanity. I enjoy every minute of it. 
+set  text[77]  I don't suffer from insanity. I enjoy every minute of it.
 set  text[78]  I feel like I'm diagonally parked in a parallel universe.
-set  text[79]  I just got lost in thought. It was unfamiliar territory. 
+set  text[79]  I just got lost in thought. It was unfamiliar territory.
 set  text[80]  I need someone really bad. Are you really bad?
 set  text[81]  I poured Spot remover on my dog. Now he's gone.
 set  text[82]  I used to be indecisive. Now I'm not sure.
-set  text[83]  I used to have a handle on life, and then it broke. 
-set  text[84]  If ignorance is bliss, you must be orgasmic. 
+set  text[83]  I used to have a handle on life, and then it broke.
+set  text[84]  If ignorance is bliss, you must be orgasmic.
 set  text[85]  Some people are alive only because it's illegal to kill them.
 set  text[86]  It is far more impressive when others discover your good qualities without your help.
 set  text[87]  It may be that your sole purpose in life is simply to serve as a warning to others.
 set  text[88]  Never mess up an apology with an excuse.
 set  text[89]  Okay, who put a stop payment on my reality check?
 set  text[90]  Of course I don't look busy... I did it right the first time.
-set  text[91]  Quantum mechanics: The dreams stuff is made of. 
-set  text[92]  Save your breath. You'll need it to blow up your date! 
+set  text[91]  Quantum mechanics: The dreams stuff is made of.
+set  text[92]  Save your breath. You'll need it to blow up your date!
 set  text[93]  Smith & Wesson: The original point and click interface.
 set  text[94]  Some days you are the bug, some days you are the windshield.
 set  text[95]  Some drink at the fountain of knowledge. Others just gargle.
-set  text[96]  The early bird may get the worm, but the second mouse gets the cheese. 
-set  text[97]  The only substitute for good manners is fast reflexes. 
+set  text[96]  The early bird may get the worm, but the second mouse gets the cheese.
+set  text[97]  The only substitute for good manners is fast reflexes.
 set  text[98]  The problem with the gene pool is that there is no lifeguard.
 set  text[99]  Remember my name - you'll be screaming it later.
 set  text[100] The severity of the itch is inversely proportional to the ability to reach it.
 set  text[101] Very funny Scotty, now beam down my clothes.
-set  text[102] Why is abbreviation such a long word? 
+set  text[102] Why is abbreviation such a long word?
 set  text[103] Why isn't phonetic spelled the way it sounds?
-set  text[104] You're just jealous because the voices are talking to me and not you! 
+set  text[104] You're just jealous because the voices are talking to me and not you!
 set  text[105] The proctologist called, they found your head.
 set  text[106] Everyone has a photographic memory; some just don't have film.
 set  text[107] Try not to let your mind wander. It is too small to be out by itself.
@@ -1046,7 +1046,7 @@ set  text[125] More people are killed annually by donkeys than die in air crashe
 set  text[126] A 'jiffy' is an actual unit of time for 1/100th of a second.
 set  text[127] Does your train of thought have a caboose?
 set  text[128] Money isn't made out of paper, it's made out of cotton.
-set  text[129] I got out of bed for this? 
+set  text[129] I got out of bed for this?
 set  text[130] You, you and you: panic.  The rest of you, come with me.
 set  text[131] Stress is when you wake up screaming and you realize you haven't fallen asleep yet.
 set  text[132] I'm not your type. I'm not inflatable.
@@ -1079,7 +1079,7 @@ set  text[158] I don't approve of political jokes...I've seen too many of them g
 set  text[159] I love being married. It's so great to find that one special person you want to annoy for the rest of your life.
 set  text[160] I am a nobody, nobody is perfect, therefore I am perfect.
 set  text[161] Everyday I beat my own previous record for number of consecutive days I've stayed alive.
-set  text[162] If carrots are so good for the eyes, how come I see so many dead rabbits on the highway? 
+set  text[162] If carrots are so good for the eyes, how come I see so many dead rabbits on the highway?
 set  text[163] Welcome To Shit Creek - Sorry, We're Out of Paddles!
 set  text[164] How come we choose from just two people to run for president and 50 for Miss America?
 set  text[165] Ever notice that people who spend money on beer, cigarettes, and lottery tickets are always complaining about being broke and not feeling well?
@@ -1172,7 +1172,7 @@ set book default reached
 *wait 5 s
 %echo% Dr. Von Erhartz seems engrossed in reading a large leatherbound book through a battered pair
 %echo% of reading glasses. The title reads: %book%.
-*wait 3 s 
+*wait 3 s
 %echo% The doctor looks up at you, seeming to notice you for the first time.
 *wait 1 s
 say ah %actor.name%, I was wondering when you'd drop by.
@@ -1395,7 +1395,7 @@ end
 Mob Random Master Test~
 0 b 100
 ~
-if (%actor.master%) 
+if (%actor.master%)
   eval master %self.master%
   if %master.fighting%
     say I will save you Master %master.name%
@@ -1459,7 +1459,7 @@ eval name %actor.car%
 eval test %%name.varexists(%speech.cdr%)%%
 if %test%
   eval var %%name.%speech.cdr%%%
-  %echo% %name.name% has remote variable %speech.cdr% which has the 
+  %echo% %name.name% has remote variable %speech.cdr% which has the
 value of '%var%'.
 else
   %echo% %name.name% doesnt have the variable %speech.cdr%.
@@ -1608,7 +1608,7 @@ end
 if (%room.vnum% == 3166)
   unset getting_up
 end
-if (%getting_up%) 
+if (%getting_up%)
 * so we know he's going from his bedroom to his throne room
   switch %room.vnum%
     case 3193
@@ -1722,7 +1722,7 @@ eval i %self.inventory%
 while (%i%)
   set next %i.next_in_list%
   %purge% %i%
-  set i %next% 
+  set i %next%
 done
 ~
 #1360
@@ -1734,7 +1734,7 @@ eval person %self.people%
 %echo% There are %person% people here.
 wait 1 sec
 *While there are still people in the room.
-while (%person%) 
+while (%person%)
   %send% %person% You are next!
   %echo% I am targetting %person.name%.
   %echoaround% %person% %person.name% is struck by a bolt of lightning. Leaving only a pile of ash.
@@ -1753,7 +1753,7 @@ Free~
 Deodorant Bottle - 1391~
 1 c 7
 spray~
-if %arg% 
+if %arg%
   %echoaround% %actor% %actor.name% soaks %arg% with the deodorant spray.
   %send% %actor% You soak %arg% with the deodorant spray.
 else
@@ -1846,7 +1846,7 @@ if %actor.level% > 30 && %actor.varexists(TBA_trial_vnum)%
     %send% %actor% You cannot enable nohassle until you finish your trial vnum.
   elseif %cmd.mudcommand% == buildwalk || (%cmd.mudcommand% == toggle && buildwalk /= %arg.car%)
     %send% %actor% You cannot enable buildwalk until you finish your trial vnum.
-  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == qedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete 
+  elseif %cmd.mudcommand% == sedit || %cmd.mudcommand% == qedit || %cmd.mudcommand% == trigedit || %cmd.mudcommand% == dig || %cmd.mudcommand% == rclone || %cmd.mudcommand% == attach || %cmd.mudcommand% == detach || %cmd.mudcommand% == vdelete
     %send% %actor% Sedit, Trigedit, Qedit, Dig, Rclone, Attach, Detach, and Vdelete are not required for your trial vnum.
   elseif %cmd.mudcommand% == zpurge
     %send% %actor% Zpurge is not required for your trial vnum. Use 'purge' or 'purge item.'
@@ -1883,7 +1883,7 @@ set  food[4] 9
 set  food[5] 10
 set  food[6] 14
 set  food[7] 109
-set  food[8] 110 
+set  food[8] 110
 set  food[9] 111
 set  food[10] 112
 set  food[11] 114
@@ -1903,7 +1903,7 @@ set  food[24] 502
 set  food[25] 521
 set  food[26] 537
 set  food[27] 383
-set  food[28] 622 
+set  food[28] 622
 set  food[29] 635
 set  food[30] 637
 set  food[31] 638
@@ -2194,15 +2194,15 @@ Rumble's Poofs~
 has entered the game.~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * To generate random poofs at login just set your loadroom to wherever this
-* mob is. 
+* mob is.
 eval maxpoofin %random.24%
-set  poofins[1] appears with a strange wooshing sound and climbs out of a pneumatic air 
+set  poofins[1] appears with a strange wooshing sound and climbs out of a pneumatic air
 tube like they use at the bank.
 set  poofins[2] thinks himself into existence.
 set  poofins[3] soars into the room like a bird, and THWAP! right into a window.
 set  poofins[4] crawls out of the ground gasping for air.
 set  poofins[5] appears in a flash of blinding nothingness!
-set  poofins[6] falls from the sky above, screaming until he hits the ground. SPLAT! like a 
+set  poofins[6] falls from the sky above, screaming until he hits the ground. SPLAT! like a
 bug on a windshield.
 set  poofins[7] appears with a dulcet bang.
 set  poofins[8] appears with a sonic boom.
@@ -2220,7 +2220,7 @@ set  poofins[19] can resist everything but temptation.
 set  poofins[20] is searching for a near life experience.
 set  poofins[21] walks into the room fashionably early.
 set  poofins[22] hanglides into the room.
-set  poofins[23] parachutes into the room performing a perfect parachute landing fall, 
+set  poofins[23] parachutes into the room performing a perfect parachute landing fall,
 except for the fact that he landed backside first.
 set  poofins[24] does a cannonball into room, injuring himself on the hard ground.
 eval  poofin %%poofins[%maxpoofin%]%%
@@ -2276,7 +2276,7 @@ return 0
 Random Mob Purge~
 2 b 100
 ~
-* This script checks if anyone is in the room. If so each mob has a 50 
+* This script checks if anyone is in the room. If so each mob has a 50
 * percent chance of being purged 5 percent of the time.
 eval target %self.people%
 while %target%
@@ -2369,7 +2369,7 @@ Command Test~
 2 c 100
 l~
 if %cmd.mudcommand% == look && rodent /= %arg%
-  return 0  
+  return 0
   wait 2 sec
   %send% %actor% A soft, pleasant voice calls 'Welcome, do come inside.'
 else
@@ -2639,7 +2639,7 @@ push~
     if %pushed_red%
       set pushed_yellow 1
       global pushed_yellow
-    else 
+    else
       set reset_buttons 1
     end
   elseif %arg% == green
@@ -2693,7 +2693,7 @@ eval item %actor.inventory%
 eval item_to_purge %%actor.inventory(%item.vnum%)%%
 if %item_to_purge%
   %echo% purging %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
-  %purge% %item_to_purge% 
+  %purge% %item_to_purge%
 else
 %echo% I cant find %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
   %echo% I cant find an item in %actor.name%'s inventory.
@@ -2710,7 +2710,7 @@ Detach 1388 %self.id%
 FREE~
 1 c 7
 join~
-eval currentroom %self.room% 
+eval currentroom %self.room%
 if ((%currentroom.vnum% == 1233) && (%actor.inventory(1315)%) && (%actor.inventory(1316)%))
   %echo% room check correct: %currentroom.vnum%
   %purge% %actor.inventory(1316)%
@@ -2758,19 +2758,19 @@ free~
 1 c 2
 shake~
 * Numeric Arg: 2 means in character's carried inventory
-* There are 20 possible answers that the Magic Eight Ball can give. 
-* Of these, nine are full positive, two are full negative, one is 
-* mostly positive, three are mostly negative, and five are abstentions. 
+* There are 20 possible answers that the Magic Eight Ball can give.
+* Of these, nine are full positive, two are full negative, one is
+* mostly positive, three are mostly negative, and five are abstentions.
 *
 if ball /= %arg% || eightball /= %arg%
   %echoaround% %actor% %actor.name% shakes the magic eight ball vigorously.
   %send% %actor% You shake the magic eight ball vigorously.
     switch %random.20%
       case 1
-        %send% %actor% The magic eight ball reveals the answer: Outlook Good 
+        %send% %actor% The magic eight ball reveals the answer: Outlook Good
       break
       case 2
-        %send% %actor% The magic eight ball reveals the answer: Outlook Not So Good 
+        %send% %actor% The magic eight ball reveals the answer: Outlook Not So Good
       break
       case 3
         %send% %actor% The magic eight ball reveals the answer: My Reply Is No
@@ -2785,19 +2785,19 @@ if ball /= %arg% || eightball /= %arg%
         %send% %actor% The magic eight ball reveals the answer: Ask Again Later
       break
       case 7
-        %send% %actor% The magic eight ball reveals the answer: Most Likely 
+        %send% %actor% The magic eight ball reveals the answer: Most Likely
       break
       case 8
         %send% %actor% The magic eight ball reveals the answer: Cannot Predict Now
       break
       case 9
-        %send% %actor% The magic eight ball reveals the answer: Yes 
+        %send% %actor% The magic eight ball reveals the answer: Yes
       break
       case 10
         %send% %actor% The magic eight ball reveals the answer: Yes, definitely
       break
       case 11
-        %send% %actor% The magic eight ball reveals the answer: Better Not Tell You Now 
+        %send% %actor% The magic eight ball reveals the answer: Better Not Tell You Now
       break
       case 12
         %send% %actor% The magic eight ball reveals the answer: It Is Certain
@@ -2812,13 +2812,13 @@ if ball /= %arg% || eightball /= %arg%
         %send% %actor% The magic eight ball reveals the answer: Concentrate And Ask Again
       break
       case 16
-        %send% %actor% The magic eight ball reveals the answer: Signs Point To Yes 
+        %send% %actor% The magic eight ball reveals the answer: Signs Point To Yes
       break
       case 17
-        %send% %actor% The magic eight ball reveals the answer: My Sources Say No 
+        %send% %actor% The magic eight ball reveals the answer: My Sources Say No
       break
       case 18
-        %send% %actor% The magic eight ball reveals the answer: Without A Doubt 
+        %send% %actor% The magic eight ball reveals the answer: Without A Doubt
       break
       case 19
         %send% %actor% The magic eight ball reveals the answer: Reply Hazy, Try Again
@@ -2985,7 +2985,7 @@ while %target%
   * Don't let the bunny kill players or itself.
   if ((%target.vnum% != -1) && (%target.name% != %self.name%))
     * Do the deed with a little pause in between.
-    emote hops towards %target.name% and looks up innocently. 
+    emote hops towards %target.name% and looks up innocently.
     wait 2 sec
     emote strikes with lightning speed, decapitating %target.name%.
     * bye bye.

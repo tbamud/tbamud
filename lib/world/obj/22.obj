@@ -23,7 +23,7 @@ E
 chainmail black dark~
    Bits of rotted clothing, and possibly even flesh are caught in between the
 chain links of this shirt.  The smell is not too appealing, but the shirt is in
-good condition and looks like it can afford a fair amount of protection.    
+good condition and looks like it can afford a fair amount of protection.
 ~
 A
 5 1
@@ -38,7 +38,7 @@ A ferret skin is lying here.~
 E
 ferret pelt skin~
    The hide has been well-tanned and the fur is very soft and supple.  An
-expert tanner must have aged this hide to perfection.    
+expert tanner must have aged this hide to perfection.
 ~
 A
 6 2
@@ -53,7 +53,7 @@ A heart lying on the floor is still beating.~
 E
 heart vampire~
    The heart still beats with some strange life of its own.  Small spurts of
-blood ooze out of it with every pulse.  It looks dark and diseased.    
+blood ooze out of it with every pulse.  It looks dark and diseased.
 ~
 A
 18 2
@@ -70,8 +70,8 @@ A pair of gloves made of fine fur lay here.~
 E
 fur gloves ferret~
    The gloves are small and well-made.  The stitching is almost impercebtible
-within the inside of the gloves.  Ferret fur lines both the inside and out.  
-They are of very high quality and make.    
+within the inside of the gloves.  Ferret fur lines both the inside and out.
+They are of very high quality and make.
 ~
 A
 2 2
@@ -88,7 +88,7 @@ animators gloves~
    The gloves seem to have some form of magical quality.  They are hard to
 focus on direcdtly.  They seem to move with a life of their own.  At first
 glance they look black, but upon further examination they appear to be stained
-black from dried blood.    
+black from dried blood.
 ~
 A
 12 20
@@ -102,9 +102,9 @@ A finely crafted stiletto is lying on the ground.~
 5 500 55 21 0
 E
 stiletto~
-   It is a slender dagger with a blade thick in proportion to its breadth.  
+   It is a slender dagger with a blade thick in proportion to its breadth.
 Usually used to cause horrible puncture wounds, this weapon is meant for a
-thief.    
+thief.
 ~
 A
 2 1
@@ -120,7 +120,7 @@ E
 corset~
    It is a woman's close-fitting boned supporting undergarment that is often
 hooked and laced and that extends from above or beneath the bust or from the
-waist to below the hips and has garters attached.    
+waist to below the hips and has garters attached.
 ~
 #2208
 sword~
@@ -133,7 +133,7 @@ An old sword was left here.~
 E
 sword~
    It is a weapon with a long blade for cutting or thrusting that is often used
-as a symbol of honor or authority.    
+as a symbol of honor or authority.
 ~
 A
 18 1
@@ -150,7 +150,7 @@ A pair of old leather boots lie here.~
 E
 leather boots~
    These boots are rotted and slowly falling apart from age.  The stitching has
-come loose and the left boots heel flops about annoyingly.    
+come loose and the left boots heel flops about annoyingly.
 ~
 A
 14 20
@@ -164,8 +164,8 @@ An old dented helm is lying here, with a head still in it.~
 2 40 4 3 0
 E
 helm~
-   The remains of someone's brains is splattered into the top of the helm.  
-Chunks of scalp and hair cover the chin strap that appears to be broken.    
+   The remains of someone's brains is splattered into the top of the helm.
+Chunks of scalp and hair cover the chin strap that appears to be broken.
 ~
 #2211
 grey robe~
@@ -179,7 +179,7 @@ E
 robe~
    A pair of crossed lightning bolts are emblazoned on the front of this fine
 robe.  It looks to be made of a strange grey velvet like material that your
-eyes slide off as soon as you look at it, making it impossible to focus.    
+eyes slide off as soon as you look at it, making it impossible to focus.
 ~
 A
 5 1
@@ -195,7 +195,7 @@ E
 masters sword~
    The quality of this blade mesmerizes you, as does the finely emblazoned
 lightning bolts on its handle.  Something about this sword just makes you want
-to pick it up.    
+to pick it up.
 ~
 A
 18 2
@@ -213,7 +213,7 @@ E
 brass knuckles~
    The knuckles are roughly made, pitted and even cracked in one place were the
 tempering must have failed.  They are very heavy but look like they could be
-very lethal on someone who knew how to use them.    
+very lethal on someone who knew how to use them.
 ~
 A
 18 1
@@ -230,7 +230,7 @@ Flames flicker across the floor, burning everything in their path.~
 E
 flames~
    They dance across the floor, ceiling, and walls.  Just waiting for an
-unsespecting traveller to attempt to cross through them.    
+unsespecting traveller to attempt to cross through them.
 ~
 #2215
 cadaver hidden~
@@ -242,9 +242,9 @@ a half-eaten cadaver~
 0 0 0 0 0
 E
 cadaver hidden~
-   The stench permeates you and all your clothing as you examine it closer.  
+   The stench permeates you and all your clothing as you examine it closer.
 Small teeth marks cover the arms and legs.  Larger teeth marks cover the torso,
-they look human.    
+they look human.
 ~
 #2216
 emerald ring~
@@ -256,7 +256,7 @@ A beatiful ring with a large emerald set in it's face.~
 1 30 3 10 0
 E
 emerald ring~
-   This gold ring has been set with a large green emerald, princess cut.    
+   This gold ring has been set with a large green emerald, princess cut.
 ~
 A
 17 -1
@@ -270,7 +270,7 @@ A candle lies here~
 3 3 0 0 0
 E
 flickering candle~
-   A little stub of candle is all that is left.    
+   A little stub of candle is all that is left.
 ~
 A
 2 -3
@@ -285,7 +285,7 @@ Some steel leg plates are in need of some legs to protect.~
 E
 steel leg plates~
    Made from a dull hard metal, these plates are surprisingly light for their
-durability.    
+durability.
 ~
 #2219
 steel arm plates~
@@ -298,7 +298,7 @@ Some steel arm plates have been abandoned.~
 E
 steel arm plates~
    The plates are made from a durable and light alloy that appears to be steel.
-They can be placed over the arms for protection.    
+They can be placed over the arms for protection.
 ~
 #2220
 shield blackened~
@@ -311,7 +311,7 @@ A blackened shield is propped up here, waiting to be carried into battle.~
 E
 blackened shield~
    The shield was once made of a fine wood, but has now been hardened and burnt
-by fire, it is the strongest wood you have ever come across.    
+by fire, it is the strongest wood you have ever come across.
 ~
 #2221
 thick braided twine~
@@ -324,7 +324,7 @@ Some twine that has been braided into a belt.~
 E
 twine~
    This loosely braided piece of twine has been made into a belt, a poor one,
-but a belt none the less.    
+but a belt none the less.
 ~
 #2222
 leather wristguard~
@@ -338,6 +338,6 @@ E
 leather wristguard~
    The wristguard has been heavily oiled and is extremely flexible and
 supportive.  It is laced with some leather string to loosen and tighten to
-almost any size.    
+almost any size.
 ~
 $~

@@ -12,10 +12,10 @@ S
 #34301
 Garden Path~
    The path is a norh-south path which narrows here as it crosses a small foot
-bridge on its way to the main garden to the north and an alcove to the south.  
+bridge on its way to the main garden to the north and an alcove to the south.
 It is quite pleasant here, as a refreshing breeze whips through the trees and
 the plants that are placed here.  The path itself is gravel and has a brick
-border. An empty Pagoda office is to the east. 
+border. An empty Pagoda office is to the east.
 ~
 343 16 0 0 0 1
 D0
@@ -36,7 +36,7 @@ S
 #34302
 Garden Path~
    The path is a norh-south path which narrows here as it crosses a small foot
-bridge on its way to the main garden to the north and an alcove to the south.  
+bridge on its way to the main garden to the north and an alcove to the south.
 It is quite pleasant here, as a refreshing breeze whips through the trees and
 the plants that are placed here.  The path itself is gravel and has a brick
 border.  An empty Pagoda Office is to the east.
@@ -160,7 +160,7 @@ S
 #34308
 Eastern Foyer~
    This is the Eastern End of the Gathering Hall.  This foyer continues to the
-east into what appears to be a hallway and west into a circular central room.  
+east into what appears to be a hallway and west into a circular central room.
 Several pillars line the room here, Archways north and south lead into the
 Immortal Board Room and the Mortal Board Room.
 ~
@@ -210,7 +210,7 @@ S
 #34310
 Western Foyer~
    This is the Western End of the Gathering Hall.  This foyer continues to the
-west into what appears to be a hallway and east into a circular central room.  
+west into what appears to be a hallway and east into a circular central room.
 Several pillars line the room here.  Archways north and south lead to the Hall
 of Justice/Chapel and the Meeting Room of the Immortals.
 ~
@@ -272,7 +272,7 @@ God Hall, South~
    The beginning and ending of the God Hall, South is here.  It seems to go on
 to the east and west with many doors that line the hallways leading into the
 many offices that are located here.  An archway leads into the Foyer to the
-north.  
+north.
    Another passageway crosses the hall into what appears to be a very simple
 looking extension to the main God Hall.
 ~
@@ -297,9 +297,9 @@ S
 #34313
 God Hall, West~
    This is a simple hallway that leads to the north and south.  There is a tiled
-floor and open beamed ceilings here.  On either side doors line the hallway.  
+floor and open beamed ceilings here.  On either side doors line the hallway.
 An archway to the east enters a plush foyer.  A staircase leads up to a very
-plush hallway above.  
+plush hallway above.
    Another passageway crosses the hall into what appears to be a very simple
 looking extension to the main God Hall.
 ~
@@ -328,9 +328,9 @@ S
 #34314
 God Hall, East~
    This is a simple hallway that leads to the north and south.  There is a tiled
-floor and open beamed ceilings here.  On either side doors line the hallway.  
+floor and open beamed ceilings here.  On either side doors line the hallway.
 An archway to the west enters a plush foyer.  A staircase leads up to a very
-plush hallway above.  
+plush hallway above.
    Another passageway crosses the hall into what appears to be a very simple
 looking extension to the main God Hall.
 ~
@@ -626,7 +626,7 @@ S
 #34325
 God Hall, Southwest~
    This is a simple hallway, which curves to the east and north.  There is a
-tiled floor and open beamed ceilings here.  There are offices on the corners.  
+tiled floor and open beamed ceilings here.  There are offices on the corners.
 West is Detta's Office.
 ~
 343 24 0 0 0 0
@@ -714,7 +714,7 @@ S
 Upper Immortal Hall, West~
    This is the midway down the hallway west, this hallway is lined with wood
 paneling and thick maroon, shag carpeting.  The hallway is lit by bronze
-lanterns that burn brightly here.  It continues on to the east and west.  
+lanterns that burn brightly here.  It continues on to the east and west.
 Office doors line the walls.  Elona's Office is to the north.
 ~
 343 24 0 0 0 0
@@ -769,7 +769,7 @@ S
 Upper Immortal Hall, East~
    This is the midway down the hallway east, this hallway is lined with wood
 paneling and thick maroon, shag carpeting.  The hallway is lit by bronze
-lanterns that burn brightly here.  It continues on to the east and west.  
+lanterns that burn brightly here.  It continues on to the east and west.
 Office doors line the walls.
 ~
 343 24 0 0 0 0
@@ -1277,7 +1277,7 @@ S
 Higher Imm Hall, Extension Sct. A~
    The hallway begin ends here with doors lining the walls on either side of
 thepanel covered walls and maroon covered carpeting.  It continues to the east
-and west.  
+and west.
 ~
 343 24 0 0 0 0
 D0
@@ -1445,7 +1445,7 @@ Higher Immortal Hall, North Extension~
 but has fingers leading east and west to the actual offices.  It has plush
 carpeting, panel clad walls, bronze lanterns that hang overhead to light it.
 There are a few pieces of artwork here that hang on the wall and what
-appear to be statuettes on pedistals sitting here to decorate it. 
+appear to be statuettes on pedistals sitting here to decorate it.
 ~
 343 24 0 0 0 0
 D0
@@ -1707,7 +1707,7 @@ makes up most of the West and South Wall.  It has many lanterns, candles and
 incense burning to honor the great gods, Rumble, Welcor, and Opie which are
 being worshipped here.  A circular staircase leads down into a plush hallway below
 and a sliding door north exits the Pagoda Shrine into a great garden beyond to the
-north.  
+north.
 ~
 343 28 0 0 0 0
 D0
@@ -1752,7 +1752,7 @@ S
 Higher Immortal Hall, Extension Sct. A~
    The hallway begin ends here with doors lining the walls on either side of
 thepanel covered walls and maroon covered carpeting.  It continues to the east
-and west.  
+and west.
 ~
 343 24 0 0 0 0
 D0
@@ -1780,10 +1780,10 @@ S
 Exective Meeting Pagoda.~
    The Meeting room is for the upper immortals.  It is unlike the other regular
 one.  It has paneled walls and thick, red, shag carpet and a huge circular table
-that sits in the center of the room, surrounded by wooden high-backed chairs.  
+that sits in the center of the room, surrounded by wooden high-backed chairs.
 On the walls there are many pictures of the zones here, but also of fallen
 hero's of the TBA and staff who were lost or retired.  The only exit is south
-into the garden through a sliding panel door of oriental design.  
+into the garden through a sliding panel door of oriental design.
 ~
 343 1756 0 0 0 0
 D2
@@ -1801,7 +1801,7 @@ that serves drinks and food to the Immortals and open for any visiting mortals.
 It has long counters here, colored green and white walls and cabinets that are
 attached to the walls on all sides around a sink and faucet on one end of the
 counter.  An exit south leads into the main hallway or east into what appears to
-be a public restroom.  
+be a public restroom.
 ~
 343 28 0 0 0 0
 D0

@@ -8,7 +8,7 @@ A small whip, obviously made for those new to the game, is here.~
 2 10 1 0 0
 E
 whip newbie~
-   It's a small whip, not made to last, but it'll hold a couple of days.  
+   It's a small whip, not made to last, but it'll hold a couple of days.
 ~
 #2804
 cloak newbie~
@@ -21,7 +21,7 @@ A cloak, obviously made for those new to the game, is here.~
 E
 newbie cloak~
    This drap garment can be worn around the neck to protect an adventurer from
-the weather.  It affords very little protection from anything else.    
+the weather.  It affords very little protection from anything else.
 ~
 A
 17 -3
@@ -37,7 +37,7 @@ E
 water canteen newbie~
    The canteen can hold only a few mouthfuls of water.  It would be handy to
 keep this canteen in case you travel a short distance away from the clean
-waters of the town.    
+waters of the town.
 ~
 #2806
 porkchop chop~
@@ -50,7 +50,7 @@ A side of pork has been cut into a pork chop here.~
 E
 porkchop chop~
    This slab of meat looks quite appetizing.  Just brush off some of the dirt
-and grime first.    
+and grime first.
 ~
 #2807
 purse~
@@ -63,7 +63,7 @@ A small purse has been dropped here.~
 E
 purse~
    A small purse for carrying a few items.  It cannot hold much, but it looks
-useful.    
+useful.
 ~
 #2808
 coins pile~
@@ -75,6 +75,6 @@ Some coins has been thrown here. - Should never be seen.~
 10 1 0 0 0
 E
 coins pile~
-   A small pile of coins, what luck you have to stumble upon such a thing.    
+   A small pile of coins, what luck you have to stumble upon such a thing.
 ~
 $~

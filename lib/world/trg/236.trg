@@ -32,7 +32,7 @@ if tapestries /= %arg%
   %door% 23667 east flags abcd
   %door% 23667 east key 23634
   %door% 23667 east name vault
-  %door% 23667 east room 23668 
+  %door% 23667 east room 23668
 else
   %send% %actor% Pull what ?!
 end
@@ -240,19 +240,19 @@ Mine Crane - 23674~
 enter~
 * funtions
 set passup %echoaround% %actor% %actor.name% passes you in a basket, going up.
-set passdown %echoaround% %actor% %actor.name% passes you in a basket, going down. 
+set passdown %echoaround% %actor% %actor.name% passes you in a basket, going down.
 set look wforce %actor% look
- 
+
 * the crane itself
 if %arg% == basket
  if %self.vnum% == 23674
-   %send% %actor% As you enter the basket, the crane starts moving. 
+   %send% %actor% As you enter the basket, the crane starts moving.
    %echoaround% %actor% As %actor.name% enters the basket it starts moving upwards.
    wait 2 s
    %teleport% %actor% 23673
    %passup%
    %look%
-   %send% %actor% You lean back and relax the ride, while you are lifted out of the mine. 
+   %send% %actor% You lean back and relax the ride, while you are lifted out of the mine.
    wait 2 s
    %teleport% %actor% 23672
    %passup%
@@ -273,13 +273,13 @@ if %arg% == basket
    %send% %actor% Having arrived at the top level, you quickly jump out of the basket.
    %echoaround% %actor% %actor.name% quickly jumps out of the basket.
  else if %self.vnum% == 23622
-   %send% %actor% As you sit in the basket, it lowers slowly into the mine. 
+   %send% %actor% As you sit in the basket, it lowers slowly into the mine.
    %echoaround% %actor% As %actor.name% enters the basket, it lowers slowly into the mine.
    wait 2 s
    %teleport% %actor% 23670
    %passdown%
    %look%
-   %send% %actor% You lean back and relax the ride, while you are slowly descending the mine. 
+   %send% %actor% You lean back and relax the ride, while you are slowly descending the mine.
    wait 2 s
    %teleport% %actor% 23671
    %passdown%
@@ -307,22 +307,22 @@ end
 Bad Stairs Trap - 23672~
 2 g 100
 ~
-* Variable definitions 
+* Variable definitions
 if %direction% == up
   set todir down
 else
   set todir up
 end
- 
+
 eval temp %random.6%
-    
+
 switch %temp%
   case 1
     set slip foot
     set hurt hit
     set part head
-    eval damage %actor.hitp% / 2 
-    break     
+    eval damage %actor.hitp% / 2
+    break
   case 2
     set slip hand
     set hurt strain
@@ -349,10 +349,10 @@ switch %temp%
     break
 done
 * the actual trap part :
-wait 1    
+wait 1
 %send% %actor% As you step %todir%, your %slip% slips and you %hurt% your %part%. OUCH!
 %echoaround% %actor% As %actor.name% steps %todir%, %actor.hisher% %slip% slips and %actor.heshe% %hurt%s %actor.hisher% %part%. It looks painful.
-         
+
 wdamage %actor% %damage%
 ~
 #23608
@@ -372,7 +372,7 @@ switch %random.6%
   default
     sing
     break
-done    
+done
 ~
 #23609
 Poisonous Spider - NOT ATTACHED~
@@ -388,22 +388,22 @@ if %self.vnum% == 23638
   return 0
   %echoaround% %actor% As %actor.name% touches the pile of titanium, the bell rings.
   %send% %actor% As you touch the pile of titanium, the bell rings.
-    
+
   wait 1
-  
+
   %echo% Some miners heard the bell, and come running as fast as they possibly can.
-  wait 1 
-  %echo% A miner has arrived.
-  %load% mob 23626 
-  wait 2
+  wait 1
   %echo% A miner has arrived.
   %load% mob 23626
   wait 2
   %echo% A miner has arrived.
   %load% mob 23626
-  wait 2 
-   
-  %echo% The bell falls to the ground. 
+  wait 2
+  %echo% A miner has arrived.
+  %load% mob 23626
+  wait 2
+
+  %echo% The bell falls to the ground.
   otransform 23639
 else
   return 1
@@ -424,7 +424,7 @@ wait 1
 * The price is 400 coins to pass. Player must 'give 400 coin leader.'
 if %amount% < 400
   say Did you really think I was that cheap, %actor.name%.
-  snarl 
+  snarl
 else
   * Context saves the global with the players ID so multiple players can bribe.
   context %actor.id%
@@ -518,7 +518,7 @@ Near Death Trap Fall - 12684~
 ~
 * Near Death Trap stuns actor
 wait 5 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% The Gods allow your puny existence to continue.

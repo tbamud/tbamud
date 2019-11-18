@@ -10,14 +10,14 @@ E
 corpse fresh~
    The corpse lying here is disgusting at best.  Looking closely at it, you
 notice that it has been disembowled, but can find no trace of the entrails
-whatsoever.  
+whatsoever.
 ~
 E
 altar~
    The altar before you is covered with glyphs and symbols that mean nothing to
 you.  It obviously is not the original altar that was in this cathedral.  There
 are fresh blood stains down the side of it and the top is stained a very deep
-brown.  
+brown.
 ~
 #29901
 knife long curved~
@@ -30,7 +30,7 @@ A long curved knife.~
 E
 knife long curved~
    This long knife has a long curved blade with a bone handle.  The blade is
-very plain, but looks surprisingly sharp.  
+very plain, but looks surprisingly sharp.
 ~
 A
 19 2
@@ -44,13 +44,13 @@ A strange sapphire amulet rests on the ground here.~
 10 200 0 0 0
 E
 amulet sapphire~
-   This necklace is comprised of a large sapphire hanging on a brass chain.  
+   This necklace is comprised of a large sapphire hanging on a brass chain.
 There are some runes in the back of the sapphire, but they are almost totally
-indecipherable.  
+indecipherable.
 ~
 E
 runes~
-   My mistake.  They are *totally* indecipherable.  
+   My mistake.  They are *totally* indecipherable.
 ~
 A
 2 -1
@@ -68,7 +68,7 @@ E
 key ivory bone~
    You stare at the shiny white surface of this key, noticing strange brownish
 marks marring its surface.  Suddenly you realise that the key is made not of
-ivory, but rather of bone.  Erk.  
+ivory, but rather of bone.  Erk.
 ~
 #29904
 coffin ebony~
@@ -89,7 +89,7 @@ The carcass of Evalynn is lying here almost as if she had just died~
 E
 corpse evalynn~
    Evalynn's corpse does not seem to have decayed at all over the past few
-hundred years.  It appears to be clutching a sword of some sort.  
+hundred years.  It appears to be clutching a sword of some sort.
 ~
 #29906
 potion dark~
@@ -102,7 +102,7 @@ A dark potion is sitting here on the floor, sucking up all the light.~
 E
 potion dark~
    This potion almost seems to be made of the complete and utter absence of
-light.  Boy, is it ever weird.  
+light.  Boy, is it ever weird.
 ~
 #29907
 staff ivory~
@@ -116,7 +116,7 @@ E
 staff ivory~
    This staff is really weird.  Not only is it carved from a beautiful white
 ivory, but it is giving off a strange white light that bedazzles you with its
-brilliance.  
+brilliance.
 ~
 #29908
 coins pile~
@@ -143,7 +143,7 @@ A strange sword lies here.~
 E
 sword rune~
    The sword looks rather strange, and has cryptic runes engraved into the
-blade.  
+blade.
 ~
 A
 19 2
@@ -158,7 +158,7 @@ A key made of gold seems to have been forgotten on the ground here.~
 E
 key gold golden~
    This fine key is made out of gold.  There is a very tiny ruby set into the
-teeth of the key.  
+teeth of the key.
 ~
 #29911
 key blood~
@@ -171,7 +171,7 @@ A sinister key of blood beckons...~
 E
 key blood~
    This key seems to have been formed by mystically forming human blood into the
-shape of a rather sinister key.  
+shape of a rather sinister key.
 ~
 #29912
 bones pile crushed~
@@ -186,7 +186,7 @@ bones pile crushed~
    The bones in this pile look to have been crushed by a large force.  Like that
 wasn't expected.  They have all been splintered and most are shattered in
 addition.  You can think of no good reason to pick them up and carry them with
-you.  
+you.
 ~
 #29913
 cape black satin~
@@ -200,7 +200,7 @@ E
 cape black satin~
    This cape seems to be rather black.  It feels like it is made of velvet or
 some similar material.  Turning it over, you notice that the inside lining is
-made of red satin.  A small gold link holds the neck of the cape together.  
+made of red satin.  A small gold link holds the neck of the cape together.
 ~
 A
 3 1
@@ -218,7 +218,7 @@ E
 necklace onyx~
    This necklace is pretty much just a string with a number of black onyx stones
 attached to it.  It gives you a sinister feeling simultaneously with a feeling
-of wonderment.  
+of wonderment.
 ~
 A
 5 -2
@@ -235,7 +235,7 @@ halberd giant~
    This has got to be the largest weapon you have ever seen.  Sure, halberds are
 normally big, but this has got to be at least twice as big as any other halberd
 you've seen.  How any mortal can even hope to use it, you are not sure, but it
-is definitely something you wouldn't want to get hit by....  
+is definitely something you wouldn't want to get hit by....
 ~
 A
 18 -2
@@ -253,6 +253,6 @@ E
 avenger holy sword~
    This beautiful weapon has been forged out of an unknown metal and seems to
 glow with an inner light of its own.  The hilt is made of what seems to be gold
-tightly wrapped with a silken material.  
+tightly wrapped with a silken material.
 ~
 $~

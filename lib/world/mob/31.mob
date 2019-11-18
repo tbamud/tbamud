@@ -4,7 +4,7 @@ the Maid~
 The Maid is waiting for your order.
 ~
    She is very beautiful with golden hair, and deep blue eyes.  A good reason
-for coming here more often, you think to yourself.  
+for coming here more often, you think to yourself.
 ~
 26635 0 0 0 16 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
@@ -16,7 +16,7 @@ sexton~
 the Sexton~
 A Sexton is sitting here, drinking hot tea.
 ~
-   The Sexton looks like he is relaxing after another gravedigging job.  
+   The Sexton looks like he is relaxing after another gravedigging job.
 ~
 10 0 0 0 0 0 0 0 800 E
 3 19 8 0d0+30 1d2+0
@@ -28,7 +28,7 @@ chief guard~
 the Chief Guard~
 The Chief Guard is looking very upset.
 ~
-   A very angry chief.  
+   A very angry chief.
 ~
 46 0 0 0 16 0 0 0 800 E
 17 15 0 3d3+170 2d2+2
@@ -40,7 +40,7 @@ cityguard guard~
 the upset cityguard~
 A cityguard stands here, looking very upset.
 ~
-   A big, strong, angry guard.  
+   A big, strong, angry guard.
 ~
 46 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -66,7 +66,7 @@ mayor~
 the Mayor~
 The Mayor is sitting in his huge chair, snoring loudly.
 ~
-   He is a stocky, middle-aged man with thin, grey hair.  
+   He is a stocky, middle-aged man with thin, grey hair.
 ~
 26635 0 0 0 16 0 0 0 1000 E
 24 12 -4 4d4+240 4d4+4
@@ -78,7 +78,7 @@ crier~
 the Town Crier~
 The Town Crier is here, weeping quietly.
 ~
-   He is very good at his job - completely dissolved in tears.  
+   He is very good at his job - completely dissolved in tears.
 ~
 200 0 0 0 0 0 0 0 900 E
 1 20 9 0d0+10 1d2+0
@@ -90,7 +90,7 @@ swan~
 the swan~
 A swan is swimming around in the pond.
 ~
-   The white swan is very elegant.  
+   The white swan is very elegant.
 ~
 10 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
@@ -102,7 +102,7 @@ duckling~
 the duckling~
 A duckling is swimming around in the pond.
 ~
-   The duckling is adorable, it looks most of all like a tiny furball.  
+   The duckling is adorable, it looks most of all like a tiny furball.
 ~
 10 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
@@ -114,7 +114,7 @@ sparrow~
 the sparrow~
 A sparrow is flapping around on the ground.
 ~
-   The sparrow looks like it is enjoying life.  
+   The sparrow looks like it is enjoying life.
 ~
 200 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
@@ -126,7 +126,7 @@ duck~
 the duck~
 A duck is here, quacking happily.
 ~
-   The duck is quite fat.  It looks like it is enjoying life.  
+   The duck is quite fat.  It looks like it is enjoying life.
 ~
 72 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0

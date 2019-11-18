@@ -67,9 +67,9 @@ Tutorial II Guard Greet - 24~
 * This is a N S road so only greet players arriving from the south.
 if %direction% == south && %actor.is_pc%
   wait 1 sec
-  emote snaps to attention. 
+  emote snaps to attention.
   wait 1 sec
-  say Admittance to the city is 10 coins. 
+  say Admittance to the city is 10 coins.
 end
 ~
 #5
@@ -92,10 +92,10 @@ if %amount% >= 10
   unlock gateway
   wait 1 sec
   open gateway
-  wait 10 sec 
-  close gateway 
+  wait 10 sec
+  close gateway
   wait 1 sec
-  lock gateway 
+  lock gateway
   * Else they gave too few! be nice and refund them.
 else
   say only %amount% coins, I require 10.
@@ -109,9 +109,9 @@ shake~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Numeric Arg: 2 means in character's carried inventory.
 * Command trigs do not work for level 33 and above.
-* There are 20 possible answers that the Magic Eight Ball can give. 
-* Of these, nine are full positive, two are full negative, one is 
-* mostly positive, three are mostly negative, and five are abstentions. 
+* There are 20 possible answers that the Magic Eight Ball can give.
+* Of these, nine are full positive, two are full negative, one is
+* mostly positive, three are mostly negative, and five are abstentions.
 *
 * Check arguments if they match. /= checks abbreviations.
 set argcheck 'ball 'eightball
@@ -123,13 +123,13 @@ if %argcheck.contains('%arg%)%
   switch %random.20%
     * Send the answer! %self% is the 8ball, or whatever the trig is attached to.
     * Only the actor sees the answer.
-    * Case is what we are trying to match. Does %random.20% == 1? 
+    * Case is what we are trying to match. Does %random.20% == 1?
     case 1
-      %send% %actor% %self.shortdesc% reveals the answer: Outlook Good 
+      %send% %actor% %self.shortdesc% reveals the answer: Outlook Good
       * We are done with this case so check the next one.
     break
     case 2
-      %send% %actor% %self.shortdesc% reveals the answer: Outlook Not So Good 
+      %send% %actor% %self.shortdesc% reveals the answer: Outlook Not So Good
     break
     case 3
       %send% %actor% %self.shortdesc% reveals the answer: My Reply Is No
@@ -144,19 +144,19 @@ if %argcheck.contains('%arg%)%
       %send% %actor% %self.shortdesc% reveals the answer: Ask Again Later
     break
     case 7
-      %send% %actor% %self.shortdesc% reveals the answer: Most Likely 
+      %send% %actor% %self.shortdesc% reveals the answer: Most Likely
     break
     case 8
       %send% %actor% %self.shortdesc% reveals the answer: Cannot Predict Now
     break
     case 9
-      %send% %actor% %self.shortdesc% reveals the answer: Yes 
+      %send% %actor% %self.shortdesc% reveals the answer: Yes
     break
     case 10
       %send% %actor% %self.shortdesc% reveals the answer: Yes, definitely
     break
     case 11
-      %send% %actor% %self.shortdesc% reveals the answer: Better Not Tell You Now 
+      %send% %actor% %self.shortdesc% reveals the answer: Better Not Tell You Now
     break
     case 12
       %send% %actor% %self.shortdesc% reveals the answer: It Is Certain
@@ -171,13 +171,13 @@ if %argcheck.contains('%arg%)%
       %send% %actor% %self.shortdesc% reveals the answer: Concentrate And Ask Again
     break
     case 16
-      %send% %actor% %self.shortdesc% reveals the answer: Signs Point To Yes 
+      %send% %actor% %self.shortdesc% reveals the answer: Signs Point To Yes
     break
     case 17
-      %send% %actor% %self.shortdesc% reveals the answer: My Sources Say No 
+      %send% %actor% %self.shortdesc% reveals the answer: My Sources Say No
     break
     case 18
-      %send% %actor% %self.shortdesc% reveals the answer: Without A Doubt 
+      %send% %actor% %self.shortdesc% reveals the answer: Without A Doubt
     break
     case 19
       %send% %actor% %self.shortdesc% reveals the answer: Reply Hazy, Try Again
@@ -193,7 +193,7 @@ if %argcheck.contains('%arg%)%
   done
   * The actor didn't use the command shake with arg ball or eightball.
 else
-  * Return 0 allows the command to continue through to the MUD. The player will 
+  * Return 0 allows the command to continue through to the MUD. The player will
   * get the Huh!?! response or the shake social if you have one.
   return 0
 end
@@ -206,8 +206,8 @@ The gate is opened from~
 * A basic guard bribe trigger. Trigs 4, 5, 7, 8.
 * This is required to close the gate after someone opens it from the other
 * side.
-wait 5 sec 
-close gate 
+wait 5 sec
+close gate
 wait 1 sec
 lock gate
 ~
@@ -219,8 +219,8 @@ leaves north.~
 * A basic guard bribe trigger. Trigs 4, 5, 7, 8.
 * This is required to close the gate after the guard is bribed and someone
 * leaves to the north.
-wait 5 sec 
-close gate 
+wait 5 sec
+close gate
 wait 1 sec
 lock gate
 ~
@@ -260,25 +260,25 @@ end
 Tutorial Quest 1317 - Completion~
 0 j 100
 ~
-* By Rumble of The Builder Academy    tbamud.com 9091 
-* Quest Trigs 9-12. If the player returns the right object reward them. 
-if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 47 
-  set solved_tutorial_quest_zone_0 1 
-  remote solved_tutorial_quest_zone_0 %actor.id% 
-  %purge% %object% 
-  dance 
-  wait 1 sec 
-  say Thank you, %actor.name%. 
-  nop %actor.exp(50)% 
-  nop %actor.gold(50)% 
-  say finally, now I can get some answers. 
-  wait 1 sec 
-  emote shakes the magic eight ball vigorously. 
-  wait 1 sec 
-  emote does not seem too pleased with his answer. 
-else 
-  say I don't want that! 
-  junk %object.name% 
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Quest Trigs 9-12. If the player returns the right object reward them.
+if !%actor.varexists(solved_tutorial_quest_zone_0)%  && %object.vnum% == 47
+  set solved_tutorial_quest_zone_0 1
+  remote solved_tutorial_quest_zone_0 %actor.id%
+  %purge% %object%
+  dance
+  wait 1 sec
+  say Thank you, %actor.name%.
+  nop %actor.exp(50)%
+  nop %actor.gold(50)%
+  say finally, now I can get some answers.
+  wait 1 sec
+  emote shakes the magic eight ball vigorously.
+  wait 1 sec
+  emote does not seem too pleased with his answer.
+else
+  say I don't want that!
+  junk %object.name%
 end
 ~
 #12
@@ -308,18 +308,18 @@ end
 Restorative Comfy Bed 1401 - Heal~
 1 b 100
 ~
-* By Rumble of The Builder Academy    tbamud.com 9091 
-* Healing Bed Trigs 13-15. Heals those who sleep on it. 
-set room_var %actor.room% 
-set target_char %room_var.people% 
-while %target_char% 
-  set tmp_target %target_char.next_in_room% 
-  if %target_char.varexists(laying_in_comfy_bed_14)% 
-    %damage% %target_char% -10 
-    %send% %target_char% You feel refreshed from sleeping in the comfy bed. 
-  end 
-  set target_char %tmp_target% 
-done 
+* By Rumble of The Builder Academy    tbamud.com 9091
+* Healing Bed Trigs 13-15. Heals those who sleep on it.
+set room_var %actor.room%
+set target_char %room_var.people%
+while %target_char%
+  set tmp_target %target_char.next_in_room%
+  if %target_char.varexists(laying_in_comfy_bed_14)%
+    %damage% %target_char% -10
+    %send% %target_char% You feel refreshed from sleeping in the comfy bed.
+  end
+  set target_char %tmp_target%
+done
 ~
 #15
 Restorative Comfy Bed 1401 - Wake~
@@ -360,7 +360,7 @@ Door Example~
 2 c 100
 move~
 * Example by Falstar for room 14520
-* The following trigger is designed to reveal a trapdoor leading down when 
+* The following trigger is designed to reveal a trapdoor leading down when
 * Player types 'Move Chest'
 *
 * The following ARGument determines what can be MOVEd ('move' Command inserted
@@ -386,9 +386,9 @@ if %arg% == chest
   %door% 14521 up room 14520
   %door% 14521 up description A wooden ladder leads up into a storeroom.
   %door% 14521 up key 14500
-  * IMPORTANT: Note reverse of direction in both the commands and extra 
-  * descriptions and room numbers it can be very easy to get lost here and 
-  * probably get your adventurer lost too. Finally set up what happens when 
+  * IMPORTANT: Note reverse of direction in both the commands and extra
+  * descriptions and room numbers it can be very easy to get lost here and
+  * probably get your adventurer lost too. Finally set up what happens when
   * adventurer tries to move anything else and end the trigger
 else
   %send% %actor% Move what ?!
@@ -400,7 +400,7 @@ end
 *   %door% 23667 east flags abcd
 *   %door% 23667 east key 23634
 *   %door% 23667 east name vault
-*   %door% 23667 east room 23668 
+*   %door% 23667 east room 23668
 * else
 *   %send% %actor% Pull what ?!
 * end
@@ -410,13 +410,13 @@ Switch Echo Example~
 2 g 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-* Since this is an ENTER trigger we must put a wait in here 
+* Since this is an ENTER trigger we must put a wait in here
 * so it doesn't fire before the player enters the room
 wait 1
 switch %random.4%
   case 1
     * only the person (actor) entering the room will see this.
-    %send% %actor% You trip over a root as you walk into the room. 
+    %send% %actor% You trip over a root as you walk into the room.
     * everyone in the room except the actor will see this.
     %echoaround% %actor% %actor.name% trips on a root while walking into the room.
     * everyone in the room will see this.
@@ -425,7 +425,7 @@ switch %random.4%
     %zoneecho% %self.vnum% %actor.name% is a clutz.
   break
   case 2
-    %send% %actor% You strut into the room. 
+    %send% %actor% You strut into the room.
     %echoaround% %actor% %actor.name% Seems to have a big head..
     %echo% A strong breeze kicks some leaves up into the air.
   break
@@ -504,7 +504,7 @@ elseif %anumber% > 90
   * The second condition %anumber% > 90 is true.
   emote shrinks down to the size of a mouse.
   say Squeak squeak squeak!
-  * If the first elseif condition was also false, the program looks for the 
+  * If the first elseif condition was also false, the program looks for the
   * next one.
 elseif %anumber% < 10
   * Here's a tricky one. If %anumber% equals 5, the program will already have
@@ -518,18 +518,18 @@ else
   * Note that else has no condition.
   emote disappears in a cloud of blue smoke.
   %purge% %self%
-  * For that to happen, all of this must be true: %anumber% is not five. 
-  * %anumber% is not greater than 90. %anumber% is not less than 10. If all 
+  * For that to happen, all of this must be true: %anumber% is not five.
+  * %anumber% is not greater than 90. %anumber% is not less than 10. If all
   * those conditions are met, the mob will disappear in a cloud of blue smoke.
   * Finally, please don't forget the all-important...
 end
-* Ends are good. They tell the program when the if-block is over. After any of 
-* the above sets of commands runs, the program skips to the next end. 
+* Ends are good. They tell the program when the if-block is over. After any of
+* the above sets of commands runs, the program skips to the next end.
 *
-* We could have omitted the else. If we had, and none of the conditions had 
+* We could have omitted the else. If we had, and none of the conditions had
 * been met, no commands in the if-block would run. However, there can never be
 * more than one else. There is only one default. There must always be the same
-* number of if's and end's. We could have had any number of ifelses, from zero 
+* number of if's and end's. We could have had any number of ifelses, from zero
 * on up. To summarize, here is the basic format of an if-block:
 * if (condition)
 *   (commands)
@@ -689,13 +689,13 @@ if %actor.canbeseen% && %actor.is_pc%
   %echo% WEIGHT:          %actor.weight%
   * Objects TSTAT 28, Rooms TSTAT 29, Text TSTAT 30, Special TSTAT 31.
   *
-  * equipment positions: 0-18 or light, rfinger, lfinger, neck1, neck2, 
-  * body, head, legs, feet, hands, arms, shield, about, waist, rwrist, 
+  * equipment positions: 0-18 or light, rfinger, lfinger, neck1, neck2,
+  * body, head, legs, feet, hands, arms, shield, about, waist, rwrist,
   * lwrist, wield, hold, inv
   * This example will check wield 16
   if %actor.eq(wield)%
     eval wield %actor.eq(wield)%
-    %echo% WIELDING ID: %wield.id%, NAME: %wield.name%, SHORTDESC: %wield.shortdesc%, TIMER:: %wield.timer%, TYPE: %wield.type%, VAL0: %wield.val0%, VAL1: %wield.val1%, VAL2: %wield.val2%, VAL3: %wield.val3%, VNUM: %wield.vnum%, 
+    %echo% WIELDING ID: %wield.id%, NAME: %wield.name%, SHORTDESC: %wield.shortdesc%, TIMER:: %wield.timer%, TYPE: %wield.type%, VAL0: %wield.val0%, VAL1: %wield.val1%, VAL2: %wield.val2%, VAL3: %wield.val3%, VNUM: %wield.vnum%,
     %echo% CARRIED_BY: %wield.carried_by%, NEXT_IN_LIST: %wield.next_in_list%, WORN_BY: %wield.worn_by%, WEIGHT: %wield.weight%, COST: %wield.cost%, COST_PER_DAY: %wield.cost_per_day%
   end
 end
@@ -737,7 +737,7 @@ Room Variables Example~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * A listing and demonstration of all room variables.
 %echo% CONTENTS:   %self.contents%
-%echo% NORTH:      %self.north% %self.north(vnum)% 
+%echo% NORTH:      %self.north% %self.north(vnum)%
 %echo% SOUTH:      %self.south% %self.south(key)%
 %echo% SOUTH:      %self.south% %self.south(vnum)%
 %echo% EAST:       %self.east% %self.east(bits)%
@@ -817,11 +817,11 @@ if !%has_it%
           break
         end
       done
-    end    
+    end
     set i %next%
   done
 end
-* 
+*
 if %has_it%
   say %actor.name% has that special item.
 else
@@ -836,7 +836,7 @@ quote~
 eval w1max %random.21%
 eval w2max %random.21%
 eval w3max %random.21%
-eval w4max %random.21% 
+eval w4max %random.21%
 eval w5max %random.11%
 eval w6max %random.21%l
 set  w1[1] rapid
@@ -1234,7 +1234,7 @@ Random Equipment Scatter and Teleport~
 wait 1 sec
 %send% %actor% You feel you must not have been worthy when a powerful force hurls you back through the gates.
 wait 2 sec
-eval stunned %actor.hitp% -1 
+eval stunned %actor.hitp% -1
 %damage% %actor% %stunned%
 eval num %random.99% + 20300
 %teleport% %actor% %num%
@@ -1244,14 +1244,14 @@ while %actor.inventory%
     while %item.contents%
       set stolen %item.contents.vnum%
       %echo% purging %item.contents.shortdesc% in container.
-      %purge% %item.contents% 
+      %purge% %item.contents%
       eval num %random.99% + 2300
       %at% %num% %load% obj %stolen%
     done
   end
   set item_to_purge %actor.inventory%
   set stolen %item.vnum%
-  %purge% %item_to_purge% 
+  %purge% %item_to_purge%
   eval num %random.99% + 2300
   %at% %num% %load% obj %stolen%
 done
@@ -1262,11 +1262,11 @@ while %i% < 18
     set stolen %item.vnum%
     set item_to_purge %%actor.eq(%i%)%%
     %send% %actor% You drop %item.shortdesc%
-    %purge% %item_to_purge% 
+    %purge% %item_to_purge%
     eval num %random.99% + 20300
     %at% %num% %load% obj %stolen%
   end
-  eval i %i% + 1 
+  eval i %i% + 1
 done
 %force% %actor% look
 ~
@@ -1295,7 +1295,7 @@ Container with Personal Key~
 * By Jamie Nelson from the forum http://groups.yahoo.com/group/dg_scripts/
 * Container script for use with no key
 if !%actor.is_pc%
-  return 0 
+  return 0
   halt
 end
 *
@@ -1335,7 +1335,7 @@ switch %cmd%
   case fingerprint
     if %arg% != open
       if %arg% != close
-        %send% %actor% You must type either: 
+        %send% %actor% You must type either:
         %send% %actor% fingerprint open
         %send% %actor% or
         %send% %actor% fingerprint close
@@ -1458,7 +1458,7 @@ if %self.worn_by%
       * Detaching trig since gun is out of ammo.
       detach 45 %self.id%
       halt
-    end  
+    end
     * We also have to define the victim.
     set victim %actor.fighting%
     * Send the messages and do the damage.
@@ -1524,7 +1524,7 @@ if %item%
     %purge% %item%
   else
     %echo% can't purge %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory because it may be a unique item.
-  end 
+  end
 else
   %echo% I can't find %item.shortdesc% with vnum %item.vnum% in %actor.name%'s inventory.
   %echo% I can't find an item in %actor.name%'s inventory.
@@ -1536,7 +1536,7 @@ Object Command Assemble~
 join~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Assemble an orb onto a staff to make a new item. Trig attached to obj 189
-set currentroom %self.room% 
+set currentroom %self.room%
 * Make sure they are in room 133 with the 2 objects.
 if %currentroom.vnum(133)%
   if %actor.inventory(189)% && %actor.inventory(191)%
@@ -1573,11 +1573,11 @@ test~
 * the simplest way I can think of to explain it (assume %actor.level% = 34):
 *
 * Set stores the variable and will not process it until called.
-* In the example below %set_variable% will contain '34 + 1' 
+* In the example below %set_variable% will contain '34 + 1'
 set set_variable %actor.level% + 1
 %echo% Set Variable: %set_variable%
 *
-* Eval immediately evaluates the variable. 
+* Eval immediately evaluates the variable.
 * In the example below %eval_variable% will contain '35'
 eval eval_variable %actor.level% + 1
 %echo% Eval Variable: %eval_variable%
@@ -1778,7 +1778,7 @@ say Hey!  You don't belong here!
 emote mumbles, 'Now what was that spell...'
 wait 1 sec
 * Senile old guard casts random spells on intruders.
-* Don't cast if incapacitated 
+* Don't cast if incapacitated
 if %self.hitp% > 0
   switch %random.17%
     case 1
@@ -1868,7 +1868,7 @@ if %actor.is_pc%
   wait 1 sec
   * Check the actors sex.
   if %actor.sex% == male
-    say Good day sir, what would you like? 
+    say Good day sir, what would you like?
   elseif %actor.sex% == female
     wait 1 sec
     say Good day maam, what can I get you?
@@ -2143,7 +2143,7 @@ if %spellname% == magic missile
   return 0
 else
   %echo% %self.name%s shield spell doesn't protect %self.himher% from %actor.name%'s %spellname%.
-  * Return 1 allows the trigger to continue and the spell to work. It is not needed 
+  * Return 1 allows the trigger to continue and the spell to work. It is not needed
   * since this is the normal return state of a trigger.
   return 1
 end
@@ -2340,7 +2340,7 @@ push~
     if %pushed_red%
       set pushed_yellow 1
       global pushed_yellow
-    else 
+    else
       set reset_buttons 1
     end
   elseif %arg% == green
@@ -2585,7 +2585,7 @@ set  text[51]  Do illiterate people get the full effect of Alphabet Soup?
 set  text[52]  Did you ever notice that when you blow in a dog's face, he gets mad at you, but when you take him on a car ride, he sticks his head out the window?
 set  text[53]  My mind works like lightning one brilliant flash and it is gone.
 set  text[54]  100,000 sperm and you were the fastest?
-set  text[55]  A closed mouth gathers no foot. 
+set  text[55]  A closed mouth gathers no foot.
 set  text[56]  Someday, we'll all look back on this, laugh nervously and change the subject.
 set  text[57]  A diplomat is someone who can tell you to go to hell in such a way that you will look forward to the trip.
 set  text[58]  All generalizations are false, including this one.
@@ -2594,47 +2594,47 @@ set  text[60]  What was the best thing BEFORE sliced bread?
 set  text[61]  All stressed out and no one to choke.
 set  text[62]  Before you criticize someone, you should walk a mile in their shoes. That way, when you criticize them, you're a mile away and you have their shoes.
 set  text[63]  Better to understand a little than to misunderstand a lot.
-set  text[64]  Bills travel through the mail at twice the speed of checks. 
+set  text[64]  Bills travel through the mail at twice the speed of checks.
 set  text[65]  Do NOT start with me. You will NOT win.
 set  text[66]  Don't be irreplaceable; if you can't be replaced, you can't be promoted.
 set  text[67]  Don't piss me off! I'm running out of places to hide the bodies.
 set  text[68]  Don't take life too seriously, you won't get out alive.
 set  text[69]  Duct tape is like the force, it has a light side and a dark side and it holds the universe together.
 set  text[70]  Eagles may soar, but weasels don't get sucked into jet engines.
-set  text[71]  Ever stop to think, and forget to start again? 
+set  text[71]  Ever stop to think, and forget to start again?
 set  text[72]  Forget world peace. Visualize using your turn signal.
 set  text[73]  Give me ambiguity or give me something else.
 set  text[74]  Why do people with closed minds always open their mouths?
 set  text[75]  He who laughs last thinks slowest.
 set  text[76]  I didn't say it was your fault, Relsqui. I said I was going to blame you.
-set  text[77]  I don't suffer from insanity. I enjoy every minute of it. 
+set  text[77]  I don't suffer from insanity. I enjoy every minute of it.
 set  text[78]  I feel like I'm diagonally parked in a parallel universe.
-set  text[79]  I just got lost in thought. It was unfamiliar territory. 
+set  text[79]  I just got lost in thought. It was unfamiliar territory.
 set  text[80]  I need someone really bad. Are you really bad?
 set  text[81]  I poured Spot remover on my dog. Now he's gone.
 set  text[82]  I used to be indecisive. Now I'm not sure.
-set  text[83]  I used to have a handle on life, and then it broke. 
-set  text[84]  If ignorance is bliss, you must be orgasmic. 
+set  text[83]  I used to have a handle on life, and then it broke.
+set  text[84]  If ignorance is bliss, you must be orgasmic.
 set  text[85]  Some people are alive only because it's illegal to kill them.
 set  text[86]  It is far more impressive when others discover your good qualities without your help.
 set  text[87]  It may be that your sole purpose in life is simply to serve as a warning to others.
 set  text[88]  Never mess up an apology with an excuse.
 set  text[89]  Okay, who put a stop payment on my reality check?
 set  text[90]  Of course I don't look busy... I did it right the first time.
-set  text[91]  Quantum mechanics: The dreams stuff is made of. 
-set  text[92]  Save your breath. You'll need it to blow up your date! 
+set  text[91]  Quantum mechanics: The dreams stuff is made of.
+set  text[92]  Save your breath. You'll need it to blow up your date!
 set  text[93]  Smith & Wesson: The original point and click interface.
 set  text[94]  Some days you are the bug, some days you are the windshield.
 set  text[95]  Some drink at the fountain of knowledge. Others just gargle.
-set  text[96]  The early bird may get the worm, but the second mouse gets the cheese. 
-set  text[97]  The only substitute for good manners is fast reflexes. 
+set  text[96]  The early bird may get the worm, but the second mouse gets the cheese.
+set  text[97]  The only substitute for good manners is fast reflexes.
 set  text[98]  The problem with the gene pool is that there is no lifeguard.
 set  text[99]  Remember my name - you'll be screaming it later.
 set  text[100] The severity of the itch is inversely proportional to the ability to reach it.
 set  text[101] Very funny Scotty, now beam down my clothes.
-set  text[102] Why is abbreviation such a long word? 
+set  text[102] Why is abbreviation such a long word?
 set  text[103] Why isn't phonetic spelled the way it sounds?
-set  text[104] You're just jealous because the voices are talking to me and not you! 
+set  text[104] You're just jealous because the voices are talking to me and not you!
 set  text[105] The proctologist called, they found your head.
 set  text[106] Everyone has a photographic memory; some just don't have film.
 set  text[107] Try not to let your mind wander. It is too small to be out by itself.
@@ -2659,7 +2659,7 @@ set  text[125] More people are killed annually by donkeys than die in air crashe
 set  text[126] A 'jiffy' is an actual unit of time for 1/100th of a second.
 set  text[127] Does your train of thought have a caboose?
 set  text[128] Money isn't made out of paper, it's made out of cotton.
-set  text[129] I got out of bed for this? 
+set  text[129] I got out of bed for this?
 set  text[130] You, you and you: panic.  The rest of you, come with me.
 set  text[131] Stress is when you wake up screaming and you realize you haven't fallen asleep yet.
 set  text[132] I'm not your type. I'm not inflatable.
@@ -2692,7 +2692,7 @@ set  text[158] I don't approve of political jokes...I've seen too many of them g
 set  text[159] I love being married. It's so great to find that one special person you want to annoy for the rest of your life.
 set  text[160] I am a nobody, nobody is perfect, therefore I am perfect.
 set  text[161] Everyday I beat my own previous record for number of consecutive days I've stayed alive.
-set  text[162] If carrots are so good for the eyes, how come I see so many dead rabbits on the highway? 
+set  text[162] If carrots are so good for the eyes, how come I see so many dead rabbits on the highway?
 set  text[163] Welcome To Shit Creek - Sorry, We're Out of Paddles!
 set  text[164] How come we choose from just two people to run for president and 50 for Miss America?
 set  text[165] Ever notice that people who spend money on beer, cigarettes, and lottery tickets are always complaining about being broke and not feeling well?
@@ -2780,7 +2780,7 @@ Mob Act - 98 Teleporter Give~
 0 e 0
 steps out of space and time.~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %actor.is_pc%  
+if %actor.is_pc%
   if !%actor.eq(*)%
     %load% obj 50 %actor% light
     %load% obj 51 %actor% rfinger

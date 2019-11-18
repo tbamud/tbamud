@@ -3,7 +3,7 @@ rat~
 a rat~
 A rat is chewing on an moldy piece of bread here.
 ~
-   A rat is a small, black, greasy looking rodent with a tiny twitching nose.  
+   A rat is a small, black, greasy looking rodent with a tiny twitching nose.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -17,7 +17,7 @@ a moth~
 A dusty white moth beats her wings here.
 ~
    No longer than the first joint of a human finger, this tiny moth flits about
-looking for more cutains to chew upon.  
+looking for more cutains to chew upon.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -30,7 +30,7 @@ a rat~
 A rat is wiggling beneath the covers here.
 ~
    The rat is a fairly large black rodent with shiny black whiskers and a foul
-odor about him.  
+odor about him.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -43,7 +43,7 @@ a small rat~
 A small rat is here, nibbling on something.
 ~
    This rat is a tiny specimen considering what else is roaming about this Keep.
-His eyes are shiny black and his coat is of a dark brown color.  
+His eyes are shiny black and his coat is of a dark brown color.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -73,7 +73,7 @@ A female bandit is here, looking for something to wear.
 ~
    This young woman is half dressed in one of Lady Kalithorn's old dusty
 dresses.  The dress has been ripped at the hem and is missing a sleeve.  The
-young woman is rummaging through her closet for a better one.  
+young woman is rummaging through her closet for a better one.
 ~
 74 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -86,7 +86,7 @@ bat~
 a bat~
 A bat is flapping about here.
 ~
-   It looks like a flying rat!  
+   It looks like a flying rat!
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -99,7 +99,7 @@ a mouse~
 A mouse is running about here, looking for a scrap of food.
 ~
    Small and grey this mouse looks a little on the thin side.  Its whiskers
-twitch quickly and it blinks rapidly.  
+twitch quickly and it blinks rapidly.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -114,7 +114,7 @@ A stone guardian is fixed into the wall here.
    The guardian appears to be made of a chiseled marble.  A wonderous hand has
 chiseled out a most imposing carving.  The guardian's stone delinated muscles
 seem to quiver and its eyes almost shift.  Whomever set them here must have
-something to protect...  
+something to protect...
 ~
 174154 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -129,7 +129,7 @@ Grand Duke Kalithorn is here, plotting his revenge.
 ~
    Clad in a long tunic and matching brown hose, Grand Duke Kalithorn is bent
 over his desk scribbling and mumbling to himself about his ultimate revenge upon
-the bandits who took his wife.  
+the bandits who took his wife.
 ~
 172106 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -143,7 +143,7 @@ a wandering bandit~
 A wandering bandit is here, staring off into the distance.
 ~
    Unshaved, scarred and generally unappealing to look at, a bandit, grins
-broadly as he stares off into the distance.  
+broadly as he stares off into the distance.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -157,7 +157,7 @@ a dirty bandit~
 A dirty bandit is standing here.
 ~
    Looks like this fella hasn't washed in a loooong time.  His stench alone
-could kill.  
+could kill.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -172,7 +172,7 @@ The leader of the bandits is here, writing something down.
 ~
    This bandit is at least somewhat clean as compared to the rest of the
 riff-raff.  His hair is bound back with a leather fillip and he appears to be
-writing something down in a notebook.  
+writing something down in a notebook.
 ~
 172106 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -187,7 +187,7 @@ A young bandit is sneaking about here.
 ~
    This small, lanky bandit is hardly old enough to have hair on his face, yet
 he walks with the confidence of a much older individual.  The calluses on his
-hands prove that he knows his way around a sword.  
+hands prove that he knows his way around a sword.
 ~
 12360 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1

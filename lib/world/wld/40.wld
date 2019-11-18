@@ -207,7 +207,7 @@ D2
 0 -1 4014
 E
 pile bones~
-   You had better watch out - some of the bones are human!  
+   You had better watch out - some of the bones are human!
 ~
 S
 #4019
@@ -427,12 +427,12 @@ E
 corpse corpses~
    Looking at the corpses lying around the cave, they all appear to have been
 torn to shreds by some large creature.  As a further not too unexpected point to
-note, they all smell terrible.  
+note, they all smell terrible.
 ~
 S
 #4031
 The Valley~
-   You are in a small valley, surrounded by hills and a mountain to 
+   You are in a small valley, surrounded by hills and a mountain to
 the south.  In the mountain there is a cave.  To the north you can
 enter the hills.  There is a small trail leading up a steep hill to
 the east.
@@ -757,7 +757,7 @@ S
 The Foothills~
    You are at a point on the trail where it turns slowly from an
 almost straight westwards trail into a trail meandering towards
-the northwest. 
+the northwest.
 ~
 40 4 0 0 0 4
 D0
@@ -899,7 +899,7 @@ E
 fire~
    The fire seems to have been burning for quite a long time.  The ceiling is
 covered with soot from the smoke, and ashes are littered all over the floor of
-the cave.  
+the cave.
 ~
 S
 #4057
@@ -1243,7 +1243,7 @@ what can be found below.
 E
 hole floor~
    The small hole in the floor refuses to give up its secrets about what can be
-found below.  
+found below.
 ~
 S
 #4075
@@ -1251,7 +1251,7 @@ The Copse Of Trees~
    Standing in this copse of trees gives you an eerie feeling.  Off to
 the east you can see the plains, and just to the north a strange shadow
 seems to be changing shape constantly and almost seems to beckon you to
-enter it. 
+enter it.
 ~
 40 0 0 0 0 4
 D0

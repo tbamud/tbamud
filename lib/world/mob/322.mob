@@ -4,7 +4,7 @@ a strong dock worker~
 A strong dock worker loads and unloads heavy crates.
 ~
    He bulges from the tight short sleeves of his shirt, a tattoo peeking out
-from beneath.    
+from beneath.
 ~
 2120 0 0 0 0 0 0 0 300 E
 29 11 -7 5d5+290 4d4+4
@@ -17,7 +17,7 @@ a cargo hauler~
 A man who's sole job it is to lug crates lugs a crate past you.
 ~
    The crate does appear to be at all light in weight, however this guy carries
-it along with both arms as if it were nothing more than a trifle.    
+it along with both arms as if it were nothing more than a trifle.
 ~
 2120 0 0 0 0 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
@@ -30,7 +30,7 @@ the travel representative~
 A woman in a tight fitting body suit helps passengers on board their boats.
 ~
    She gives you a quick look and decides that you are not one of her clients.
-She sniffs quietly and turns away.    
+She sniffs quietly and turns away.
 ~
 200 0 0 0 0 0 0 0 200 E
 30 10 -8 6d6+300 5d5+5
@@ -43,7 +43,7 @@ a sailor~
 A sailor pushes past you, intent on finding the nearest brothel.
 ~
    The man still walks with that rolling gait that most sailors affect.  He
-will probably continue to do so, unless he finds another profession,.    
+will probably continue to do so, unless he finds another profession,.
 ~
 2120 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -56,7 +56,7 @@ a boatman~
 A boatman tips his hat to you as he passes.
 ~
    He appears to be a resident of these docks, as he is intent on making sure
-that his ship in good condition.    
+that his ship in good condition.
 ~
 72 0 0 0 0 0 0 0 800 E
 21 13 -2 4d4+210 3d3+3
@@ -68,7 +68,7 @@ passenger~
 a passenger~
 A passenger waits to board their ship.
 ~
-   They tap their feet impatiently, frequently glancing at the sky.    
+   They tap their feet impatiently, frequently glancing at the sky.
 ~
 72 0 0 0 0 0 0 0 300 E
 22 13 -3 4d4+220 3d3+3
@@ -83,7 +83,7 @@ A fisherman floats lazily in a small boat, trying to catch some dinner.
    He stares glazy-eyed at the water, as if it has transfixed him.  He raises
 up his pole, bringing the line and casting out again without blinking or
 looking up.  In the same motion, he raises a bottle of whiskey to his lips with
-his free hand.  The whiskey is also swagged without blinking.    
+his free hand.  The whiskey is also swagged without blinking.
 ~
 74 0 0 0 0 0 0 0 100 E
 23 13 -3 4d4+230 3d3+3
@@ -96,7 +96,7 @@ a dolphin~
 A dolphin playfully splashes you with its tail.
 ~
    It makes little squeak noises, twisting its body back and forth in its
-excitement in seeing you.    
+excitement in seeing you.
 ~
 73800 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
@@ -110,7 +110,7 @@ a seagull~
 A seagull squawks past overhead, searching the water for dinner.
 ~
    Best to watch above from now on, you never know when one of those pests
-might have to let a load go.    
+might have to let a load go.
 ~
 196680 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
@@ -123,7 +123,7 @@ a wealthy ship owner~
 A wealthy ship owner walks past, regarding you with disdain.
 ~
    He must realize that you are not a part of the elite crowd that owns the
-vessels which dock here.    
+vessels which dock here.
 ~
 76 0 0 0 0 0 0 0 100 E
 25 12 -5 5d5+250 4d4+4
@@ -137,7 +137,7 @@ A customer service representative stands ready to attend to any passenger's need
 ~
    He opens his mouth as if to say 'Can I help you?  ' and sees that you have
 no ticket or luggage.  Assuming you are yet another vagrant from the dock area,
-he turns away in disgust.    
+he turns away in disgust.
 ~
 200 0 0 0 0 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5

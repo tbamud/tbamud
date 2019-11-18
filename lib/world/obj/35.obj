@@ -50,7 +50,7 @@ A mutilated corpse has been left on the ground here.~
 0 0 0 0
 E
 corpse mutilated~
-   Looks to be an aftermath of whatever caused this carnage.  
+   Looks to be an aftermath of whatever caused this carnage.
 ~
 #3506
 mutilated carcass~
@@ -62,7 +62,7 @@ A mutilated carcass has been left on the ground here.~
 0 0 0 0
 E
 carcass mutilated~
-   Looks to be an aftermath of whatever caused this carnage.  
+   Looks to be an aftermath of whatever caused this carnage.
 ~
 #3507
 dagger ornate~
@@ -75,7 +75,7 @@ A beautiful looking dagger is stuck in the ground.~
 E
 dagger ornate~
    The hilt of this dagger looks to be two intertwined snakes.  At the end of
-it, there is a small red ruby.  
+it, there is a small red ruby.
 ~
 A
 18 5
@@ -92,6 +92,6 @@ A small toy is spinning about on the ground here.~
 E
 gyroscope toy~
    As the gyroscope spins around and around you find yourself almost hypnotized
-by its movement.  
+by its movement.
 ~
 $~

@@ -10,7 +10,7 @@ E
 rabbit skin gloves glove~
    The gloves are very furry.  They are made from the skin and fur of a
 recently killed rabbit.  You think these would keep your hands safe as well as
-warm.    
+warm.
 ~
 #401
 boots~
@@ -22,9 +22,9 @@ A pair of rabbit skin boots.~
 8 400 0 10 0
 E
 rabbit skin boots boot~
-   The boots are very well made, and look like they would protect you well.  
+   The boots are very well made, and look like they would protect you well.
 The outside is covered in soft fur to keep your warm.  The inside is made from
-the skin of the rabbit.    
+the skin of the rabbit.
 ~
 #402
 shrub~
@@ -37,7 +37,7 @@ A small shrub is here.~
 E
 small shrub plant~
    The plant is about knee high and in full bloom.  Many colorful flowers
-dangle from it, giving off a sweet scent.    
+dangle from it, giving off a sweet scent.
 ~
 #403
 whip~
@@ -51,7 +51,7 @@ E
 rawhide whip~
    The weapon looks rather strong and would defend you well in battle.  The
 whip is nine feet long with a very skinny end.  You could cut someone badly
-with this weapon.    
+with this weapon.
 ~
 #406
 tree stump~
@@ -64,7 +64,7 @@ There is a tree stump here.~
 E
 Tree Stump~
    This is just an ordinary tree stump.  By the looks of it, it's been here for
-quite some time.    
+quite some time.
 ~
 #407
 teddybear~
@@ -77,7 +77,7 @@ A teddybear was abandoned here.~
 E
 teddybear~
    The bear is rather cute looking.  There seems to be a small glow within his
-eyes, maybe this bear is magical.    
+eyes, maybe this bear is magical.
 ~
 #409
 armour~
@@ -90,7 +90,7 @@ A suit of wooden armour~
 E
 Wooden armour~
    The armour is quite solid, giving you the best protection available.  A
-person would easily be able to move around wearing this.    
+person would easily be able to move around wearing this.
 ~
 #410
 warhelm helmet~
@@ -103,7 +103,7 @@ A wooden warhelm~
 E
 wooden wood warhelm helmet~
    The helmet is quite solid and would protect you quite well in battle.  You
-notice a few small chips in the wood, most likely from a past battle.    
+notice a few small chips in the wood, most likely from a past battle.
 ~
 #411
 pebble rock~
@@ -116,7 +116,7 @@ An onyx pebble is lying on the ground.~
 E
 onyx pebble rock~
    The black pebble shines as you look at it.  You feel that it must contain
-some kind of power.    
+some kind of power.
 ~
 A
 1 2
@@ -133,7 +133,7 @@ A large tree is here.~
 E
 tree~
    The tree is quite large.  It towers over you, shading you from the sunlight.
-  
+
 ~
 #416
 torch~
@@ -145,7 +145,7 @@ A large torch.~
 1 20 0 0 0
 E
 torch~
-   Your basic torch, nothing very remarkeable about it.    
+   Your basic torch, nothing very remarkeable about it.
 ~
 #417
 backpack~
@@ -157,7 +157,7 @@ A backpack is here.~
 5 250 0 0 0
 E
 backpack~
-   A hefty backpack that can carry more than a bag.    
+   A hefty backpack that can carry more than a bag.
 ~
 #418
 dagger~
@@ -170,7 +170,7 @@ A dagger with a long thin blade is here.~
 E
 dagger~
    A simple dagger used by thieves and hoodlums to relieve the unwary of thier
-money.    
+money.
 ~
 #419
 mace~
@@ -182,7 +182,7 @@ A mace is here.~
 6 60 0 0 0
 E
 mace~
-   This mace is made of a heavy polished metal with small spikes on the end.  
+   This mace is made of a heavy polished metal with small spikes on the end.
 Look deadly
 ~
 #420
@@ -204,7 +204,7 @@ A colorful plant is growing here.~
 E
 colorful plant~
    The plant is the most beautiful plant you have ever set your eyes on.  It
-has petals like silk and gives off the most wonderous scent.    
+has petals like silk and gives off the most wonderous scent.
 ~
 #433
 egg~
@@ -216,7 +216,7 @@ A bird egg is lying on the ground.~
 1 125 0 0 0
 E
 bird egg~
-   The egg is speckled with shades of blue.  It's in excellent condition.    
+   The egg is speckled with shades of blue.  It's in excellent condition.
 ~
 #447
 apple~
@@ -228,7 +228,7 @@ An apple~
 3 50 0 0 0
 E
 apple~
-   The red apples shines in the light, making it look more delicious.    
+   The red apples shines in the light, making it look more delicious.
 ~
 #450
 rock~
@@ -241,7 +241,7 @@ A magical rock~
 E
 magical rock~
    The rocks seems to hold some sort of magic.  You feel the power running
-through your hands.    
+through your hands.
 ~
 A
 2 3
@@ -258,7 +258,7 @@ A beautiful painting is hanging on the wall.~
 E
 painting~
    Color flowers fills your eyes as they stretch off the canvas of the
-painting.  The picture gives the room a cheerful feeling.    
+painting.  The picture gives the room a cheerful feeling.
 ~
 #484
 stream water~

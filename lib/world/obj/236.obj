@@ -3,38 +3,38 @@ map aldin~
 a map of Aldin~
 A map of Aldin and the Dwarven Trade Route.~
 
-      O             O        |            
-      |             |        O            
-      O             O        |            
-      |             |        O            
-O-O-O-O-O-O-O O-O O-O        |            
-  |   |     |   |   |      O-^            
-O-O-O O O-O-O-O-O-O-O      |              
-  |   | |   | | | | |      O              
-  O-O O O O-O O O O O      |              
-        |     |     |      O-O            
-        O-O-O-O---O-O        |            
-        | | | |   | |        O            
-        O v O O-O O O        |            
-        |   |       |        O       O    
-        O---O-O-O---O        |       |    
-              |              O       O    
-        O     O-O            |       |    
-        |     |              O       O    
-      O-O-O-O-O-O            |       |    
-        |     |              O-O-O-O-O-O  
-      O-O-O   O                    |      
-        |                          O      
+      O             O        |
+      |             |        O
+      O             O        |
+      |             |        O
+O-O-O-O-O-O-O O-O O-O        |
+  |   |     |   |   |      O-^
+O-O-O O O-O-O-O-O-O-O      |
+  |   | |   | | | | |      O
+  O-O O O O-O O O O O      |
+        |     |     |      O-O
+        O-O-O-O---O-O        |
+        | | | |   | |        O
+        O v O O-O O O        |
+        |   |       |        O       O
+        O---O-O-O---O        |       |
+              |              O       O
+        O     O-O            |       |
+        |     |              O       O
+      O-O-O-O-O-O            |       |
+        |     |              O-O-O-O-O-O
+      O-O-O   O                    |
+        |                          O
         O                          |
-O                                  O      
-|                                  |      
-O-O                                O      
-| |                                |      
-O O-O                              O      
-| |                                |      
-v O                                O      
-|                                  |      
-O                                  O      
+O                                  O
+|                                  |
+O-O                                O
+| |                                |
+O O-O                              O
+| |                                |
+v O                                O
+|                                  |
+O                                  O
 |                                  |
 ^                                  O
 
@@ -112,7 +112,7 @@ A pendant made from amethyst is here on the ground.~
 2 480 48 0 0
 E
 amethyst pendant~
-   It's very good craftmanship.  Obviously dwarven manufacture.  
+   It's very good craftmanship.  Obviously dwarven manufacture.
 ~
 A
 6 2
@@ -126,7 +126,7 @@ An axe, obviously of dwarven manufacture, has been left here.~
 24 210 20 0 0
 E
 axe dwarven~
-   A nicely made battle axe, with the rune 'T' engraved on the haft.  
+   A nicely made battle axe, with the rune 'T' engraved on the haft.
 ~
 #23606
 short sword shortsword dwarven~
@@ -140,7 +140,7 @@ E
 short sword shortsword dwarven~
    This sword is typical dwarven manufacture.  The forge in the mountain has
 produced planty of these small wonders to start a full-scale war.  This
-particular blade bears a small 'T' rune, near the handle.  
+particular blade bears a small 'T' rune, near the handle.
 ~
 A
 18 1
@@ -155,7 +155,7 @@ A large dagger, almost resembling a small sword, is here.~
 E
 dagger dwarven~
    A standard dwarven dagger, made in the forges of the dwarven mountain.  It
-has a small 'T' rune engraved near the handle.  
+has a small 'T' rune engraved near the handle.
 ~
 A
 19 1
@@ -169,7 +169,7 @@ A platemail, obviously of crafted by dwarves, has been left here.~
 7 950 95 0 0
 E
 plate mail platemail dwarven~
-   A fine platemail, marked with an 'R' rune on the backside.  
+   A fine platemail, marked with an 'R' rune on the backside.
 ~
 #23609
 ring mail ringmail dwarven~
@@ -182,7 +182,7 @@ A ringmail has been thrown in a heap here.~
 E
 ring mail ringmail dwarven~
    A mail shirt, made from small interlocking rings, it has taken quite some
-time to make.  On the inside of the collar is a small 'R' rune.  
+time to make.  On the inside of the collar is a small 'R' rune.
 ~
 #23610
 bracers steel dwarven~
@@ -195,7 +195,7 @@ Some bracers made of the finest steel are here.~
 E
 bracers steel dwarven~
    Some fine steel bracers, all polished and shiny.  On the inside, near the
-elbows, a small 'R' rune has been set.  
+elbows, a small 'R' rune has been set.
 ~
 #23611
 gloves dwarven~
@@ -210,7 +210,7 @@ gloves dwarven~
    A fine set of gloves.  They appear to be made from buckskin at first, but a
 closer examination reveals in inner glove made from small rings of the highly
 praised dwarven metal, mithril.  This makes the glove very strong, and such
-gloves are known to be enchanted.  
+gloves are known to be enchanted.
 ~
 A
 5 2
@@ -224,7 +224,7 @@ Some iron ore has been piled up here.~
 4 200 20 0 0
 E
 iron ore~
-   A pretty much nondescript pile of rustred ore, ready to be refined.  
+   A pretty much nondescript pile of rustred ore, ready to be refined.
 ~
 #23613
 ore gold~
@@ -236,7 +236,7 @@ Some gold ore has been piled up here.~
 3 820 82 0 0
 E
 ore gold~
-   A pretty nondescript pile of gold-streaked ore.  
+   A pretty nondescript pile of gold-streaked ore.
 ~
 #23614
 ore titanium~
@@ -248,7 +248,7 @@ Some titanium ore has been piled up here.~
 2 800 80 0 0
 E
 ore titanium~
-   A pretty nondescript pile of titanium-grey ore.  
+   A pretty nondescript pile of titanium-grey ore.
 ~
 #23615
 rod iron~
@@ -261,7 +261,7 @@ A small rod, made from iron, is here.~
 E
 rod iron~
    A small rod, made for comfotably moving small amounts of metal.  In this case
-iron.  
+iron.
 ~
 #23616
 rod gold~
@@ -274,7 +274,7 @@ A small rod, made of gold, is here.~
 E
 rod gold~
    A small rod, made for comfotably moving small amounts of metal.  In this case
-gold.  
+gold.
 ~
 #23617
 rod titanium~
@@ -287,7 +287,7 @@ A small rod, made of titanium, is here. ~
 E
 rod titanium~
    A small rod, made for comfotably moving small amounts of metal.  In this case
-titanium.  
+titanium.
 ~
 #23618
 bar iron~
@@ -299,7 +299,7 @@ An iron bar is here on the ground - it looks quite heavy.~
 12 600 60 0 0
 E
 bar iron~
-   A bar some two by two by ten inches, pure iron.  
+   A bar some two by two by ten inches, pure iron.
 ~
 #23619
 bar gold~
@@ -311,7 +311,7 @@ A gold bar is here on the ground - it looks quite heavy, but also valuable.~
 5 900 90 0 0
 E
 bar gold~
-   A bar some two by two by ten inches, pure gold.  
+   A bar some two by two by ten inches, pure gold.
 ~
 #23620
 bar titanium~
@@ -333,7 +333,7 @@ E
 gold foil~
    Some very thin sheets of gold foil, ready to use on the armours in the
 smithy.  You have to handle them really gently, since they are so thin they
-break if you touch them the wrong way.  
+break if you touch them the wrong way.
 ~
 #23622
 rock~
@@ -345,7 +345,7 @@ A piece of rock has fallen down here.~
 5 25 2 0 0
 E
 rock~
-   A small rock, about the size of your underarm.  
+   A small rock, about the size of your underarm.
 ~
 #23623
 rock large~
@@ -357,7 +357,7 @@ A large rock has dropped to the ground here.~
 10 50 5 0 0
 E
 rock large~
-   A large rock, about the size of your head.  
+   A large rock, about the size of your head.
 ~
 #23624
 ruby~
@@ -369,7 +369,7 @@ Someone have lost a ruby here.~
 1 450 45 0 0
 E
 ruby~
-   A small, bloodred, ruby.  
+   A small, bloodred, ruby.
 ~
 #23625
 emerald~
@@ -381,7 +381,7 @@ A little emerald is lying here on the ground.~
 1 372 37 0 0
 E
 emerald~
-   A little green spot of light in a dark world.  
+   A little green spot of light in a dark world.
 ~
 #23626
 key mine dwarven~
@@ -410,7 +410,7 @@ A bed, just the right size for a dwarf, has been set in one corner here.~
 E
 bed dwarven small~
    The bed is made from wood, has four corners, and is about 5 feet long.  You
-think it would suit almost any of the dwarves you've met.  
+think it would suit almost any of the dwarves you've met.
 ~
 #23629
 chest dwarven~
@@ -425,7 +425,7 @@ chest dwarven~
    A large chest, with several broad and heavy iron bands going around both the
 top and the sides, and a large padlock on the front, stands here.  From the
 padlock a blue glitter periodically reoccurs, so you are in no doubt the lock is
-magical.  
+magical.
 ~
 #23630
 key dwarven~
@@ -448,7 +448,7 @@ parade chain chainmail mail dwarven~
    An extremely beautiful chainmail, it encompasses everything you expect from a
 dwarven armour.  It's comparatively light, strong and yet seemingly made only
 for parades.  On every little ring you can see the 'R' rune, made by Ralf -
-Armoursmith of the dwarves.  
+Armoursmith of the dwarves.
 ~
 A
 2 -1
@@ -467,7 +467,7 @@ A large four-poster bed, almost your size, has been set in the corner here.~
 E
 bed large dwarven~
    A bed of almost mansize, it's obviously made for the dwarf inhabitant to have
-plenty of space.  
+plenty of space.
 ~
 #23634
 key silver~
@@ -490,7 +490,7 @@ plate silver dwarven~
    An extremely nice breastplate it is obviously made for the dwarf of some
 stature.  You think you might just be able to squeeze in, and you feel very
 lucky to have found such a beatyful piece of art.  A Rune 'R' has been etched
-under the left armhole.  
+under the left armhole.
 ~
 A
 5 2
@@ -532,7 +532,7 @@ E
 pile titanium pieces ore~
    A very large amount of titanium-rich ore.  A small bell has been attached to
 it, and you're quite sure you wouldn't be able to get more than a handful of
-them before the bell goes off.  
+them before the bell goes off.
 ~
 #23639
 pile titanium pieces ore~
@@ -545,7 +545,7 @@ A large pile of very fine pieces of titanium ore is here.~
 E
 pile titanium pieces ore~
    A very large amount of titanium-rich ore.  A small bell has fallen to the
-ground in front of it.  
+ground in front of it.
 ~
 #23640
 mining pick dwarf~
@@ -557,7 +557,7 @@ A small mining pick has been left here, gathering dust.~
 3 150 15 0 0
 E
 mining pick dwarf~
-   A mining pick, made for someone not quite as tall as you.  
+   A mining pick, made for someone not quite as tall as you.
 ~
 #23641
 helm mining dwarven~
@@ -570,7 +570,7 @@ An old helmet with an almost extinguished light is here.~
 E
 helm mining dwarven~
    A small helmet worn by the dwarves in the mine, so they can see in the total
-darkness downthere.  A small candle sits in a housing on the brim.  
+darkness downthere.  A small candle sits in a housing on the brim.
 ~
 #23642
 key dwarven city~

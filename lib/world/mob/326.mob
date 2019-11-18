@@ -18,7 +18,7 @@ a footman~
 A footman marches along steadily with the rest his troop.
 ~
    This man looks as if he could probably march all day and all night without a
-complaint.  Must be what the army would call 'Gung Ho'.    
+complaint.  Must be what the army would call 'Gung Ho'.
 ~
 72 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
@@ -32,7 +32,7 @@ A footman trudges along with the rest of his troop, trying to stay in step.
 ~
    This slob can't seem to keep step no matter how hard he tries.  He keeps
 hopping from one foot to the other, watching his fellow footmen, trying to get
-in synche - but to no avail.  
+in synche - but to no avail.
 ~
 72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
@@ -45,7 +45,7 @@ a cavalry soldier~
 A cavalry soldier walks his horse along the road, giving the steed a rest.
 ~
    This man appears to be most proud of not only his steed, but of the position
-he has attained within the Army's Ranks.    
+he has attained within the Army's Ranks.
 ~
 72 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
@@ -58,7 +58,7 @@ a patrolman~
 A patrolman walks his rounds, on constant alert for signs of danger or invasion.
 ~
    His eyes seem constantly squinted to the sun, even when there is none.  He
-walks with a slow, deliberate gait that suggests readiness and watchfulness.  
+walks with a slow, deliberate gait that suggests readiness and watchfulness.
 
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -72,7 +72,7 @@ a guard~
 A guard stands at rigid attention, eyes boring down on you as if reading your intent.
 ~
    Strict orders have been placed upon this poor lad - no one in civilian
-clothing may pass without authorization forms from a higher power.    
+clothing may pass without authorization forms from a higher power.
 ~
 69722 0 0 0 0 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3
@@ -86,7 +86,7 @@ A lookout appears shocked by your intrusion here.
 ~
    These platforms were created in the interest of safety and security, to keep
 invaders from launching surprise attacks upon the camp.  You are now considered
-a breach of security.    
+a breach of security.
 ~
 122 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
@@ -100,7 +100,7 @@ A man is here with his back turned to you, unaware of your presence.
 ~
    He appears to be watching something through the trees, so intent on whatever
 he is watching, he does not notice that you have entered into his small space.
-  
+
 ~
 74 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
@@ -113,7 +113,7 @@ the lookout~
 The lookout is here, fast asleep against the trunk of the tree.
 ~
    He is someone you could almost miss were you not searching for someone, he
-is so camoflauged by his face paint and attire.    
+is so camoflauged by his face paint and attire.
 ~
 74 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -126,7 +126,7 @@ a logger~
 A logger is here, pounding away at a tree.
 ~
    This man is built like an ox - muscles to match.  Might be a good idea to
-make friends with this one...    
+make friends with this one...
 ~
 456 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -139,7 +139,7 @@ a logger~
 A logger is here taking a break from the chopping, leaning on his axe.
 ~
    This man is lean and wiry, with small, solid muscles that bely his true
-strength.    
+strength.
 ~
 4186 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -152,7 +152,7 @@ a logger~
 A logger is propped up against a stump, snoring away.
 ~
    If this man can sleep through the sound of loggers hacking at trees with
-axes, then this man has my respect and admiration!    
+axes, then this man has my respect and admiration!
 ~
 456 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -165,7 +165,7 @@ the logging chief~
 The logging chief is here barking orders at the top of his lungs.
 ~
    How could a man spend his days screaming at the top of his lungs, in
-competition with a dozen axes pounding at trees?  This guy is special...    
+competition with a dozen axes pounding at trees?  This guy is special...
 ~
 456 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
@@ -180,7 +180,7 @@ A dryad sits upon the stump of the huge tree, weeping for its loss.
    Her brown skinned cheeks are saturated by the tears that stream down her
 face.  She does not seem to notice or care that you have entered into her area
 - she looks at a point in the air just past where she sits - staring at nothing
-and crying for her loss.    
+and crying for her loss.
 ~
 254042 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -193,7 +193,7 @@ a soldier~
 A soldier jogs past you, getting a bit of exercise.
 ~
    He looks a bit red in the face and maybe even winded, but he continues on.
-A real trooper.  No pun intended.    
+A real trooper.  No pun intended.
 ~
 4168 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -206,7 +206,7 @@ a marching soldier~
 A soldier marches past you, intent on his rythym.
 ~
    He looks neither right nor left, simply straight ahead at where he is going.
-  
+
 ~
 4168 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
@@ -218,7 +218,7 @@ wagon driver man soldier~
 a wagon driver~
 A wagon driver stands beside his wagon, mopping his face and forehead from the heat.
 ~
-   He glances up with a small smile and a wave.    
+   He glances up with a small smile and a wave.
 ~
 6218 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -231,7 +231,7 @@ a squirrel~
 A little squirrel runs across your path.
 ~
    It stops at the edge of the path, raises up on its hind legs and twitches
-its nose at you.    
+its nose at you.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -243,7 +243,7 @@ bird small~
 a small bird~
 A small bird hops about on the forest floor, looking for worms or bits of seed.
 ~
-   It shies away from your approach, but doesn't take to flight - yet.    
+   It shies away from your approach, but doesn't take to flight - yet.
 ~
 72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
@@ -256,7 +256,7 @@ a little rabbit~
 A little rabbit sprints across the path just ahead of you.
 ~
    It pauses just at the fringe of the forest and wiggles its pink nose at you.
-  
+
 ~
 72 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -270,7 +270,7 @@ A drill sergeant runs along side his men, barking the rythym.
 ~
    He wear his hair in a long ponytail braid, severely pulled back on the
 sides, lending him an air of hostility and savagery.  He looks mean to the
-core.    
+core.
 ~
 4168 0 0 0 0 0 0 0 -100 E
 30 10 -8 6d6+300 5d5+5

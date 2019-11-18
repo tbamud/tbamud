@@ -5,7 +5,7 @@ X'Raantra kneels with his knees deep in the blood-filled floor, his arms held hi
 ~
    His eyes are tightly clenched closed, his right fist holding fast to a
 curved dagger held high to his God.  He sporatically mumbles words, garbled
-phrases or prayers which may or may not have meaning.    
+phrases or prayers which may or may not have meaning.
 ~
 4106 0 0 0 0 0 0 0 -200 E
 34 9 -10 6d6+340 5d5+5
@@ -19,7 +19,7 @@ A Believer kneels proudly beside his saviour.
 ~
    His eyes are a bit glazed over, blood spattered over the front of his grubby
 jerkin.  He never seems to lose sight of the blade which is raised high by
-X'Raantra in anticipation of the next kill.    
+X'Raantra in anticipation of the next kill.
 ~
 10 0 0 0 0 0 0 0 -500 E
 29 11 -7 5d5+290 4d4+4
@@ -32,7 +32,7 @@ a gibbering man~
 A man is slouched against the wall, badly bleeding and broken.
 ~
    He almost does not notice you from the pain that he is in, but then he
-obviously must have as he is trying to speak to you.    
+obviously must have as he is trying to speak to you.
 ~
 10 0 0 0 0 0 0 0 200 E
 17 15 0 3d3+170 2d2+2
@@ -45,7 +45,7 @@ a retching elf~
 An elf is curled up at the founatin's base, retching and vomiting terribly.
 ~
    He looks up at you with terror-stricken eyes and pleads without words for
-you to help him, somehow help him.    
+you to help him, somehow help him.
 ~
 10 0 0 0 0 0 0 0 500 E
 15 15 1 3d3+150 2d2+2
@@ -58,7 +58,7 @@ a woman~
 A woman walks with a very deliberate gait across the courtyard.
 ~
    She holds her tattered clothing tight against her as if she were cold or
-afraid of prying eyes.  It is certainly a gesture of fear or discomfort.    
+afraid of prying eyes.  It is certainly a gesture of fear or discomfort.
 ~
 2120 0 0 0 0 0 0 0 -200 E
 16 15 0 3d3+160 2d2+2
@@ -71,7 +71,7 @@ a squatter~
 A man lies on the floor, stretched out on a raggedy blanket.
 ~
    He has a wealth of nasty stubble and the smell - it might be better not to
-talk about the smell.    
+talk about the smell.
 ~
 10 0 0 0 0 0 0 0 -200 E
 19 14 -1 3d3+190 3d3+3
@@ -84,7 +84,7 @@ a terrified child~
 A terrified child lies huddled in a corner, squinting against your light.
 ~
    The child is wearing no clothes whatsoever and is covered in welts and
-bruises.  He couldn't be much more than ten or eleven years old.    
+bruises.  He couldn't be much more than ten or eleven years old.
 ~
 74 0 0 0 0 0 0 0 400 E
 12 16 2 2d2+120 2d2+2
@@ -98,7 +98,7 @@ A man sits curled up in ball, weeping uncontrollably.
 ~
    He alternates between rage and sadness - touching the mangled remains of his
 son's body, stroking the blood matted hair back from the cold, lifeless ears.
-  
+
 ~
 10 0 0 0 0 0 0 0 100 E
 18 14 0 3d3+180 3d3+3
@@ -110,7 +110,7 @@ rat scurrying~
 a scurrying rat~
 A rat scurries past, its feet clicking on the stone floor.
 ~
-   It looks very much like your every day typical disgusting rat.    
+   It looks very much like your every day typical disgusting rat.
 ~
 72 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
@@ -124,7 +124,7 @@ Gunter wanders the compound, spreading the word of the Chosen.
 ~
    Gunter is a small, pale man who looks as if he may be a bit ill.  His main
 task which has raised him in the ranks of X'Raantra's Chosen, is to go out and
-Select the next of the Chosen.  It is quite an honor.    
+Select the next of the Chosen.  It is quite an honor.
 ~
 88 0 0 0 0 0 0 0 -700 E
 31 10 -8 6d6+310 5d5+5
@@ -137,7 +137,7 @@ a torturer~
 A man stands near the doorway, a hideous sneer on his face.
 ~
    A horrid scar runs down the left side of his face, he looks you up and down
-and uncrosses his arms, readying his whip.    
+and uncrosses his arms, readying his whip.
 ~
 42 0 0 0 0 0 0 0 -900 E
 24 12 -4 4d4+240 4d4+4
@@ -151,7 +151,7 @@ A grubby man stands before the fire barrel, warming his hands.
 ~
    He looks pitifully poverty-stricken, enough so that it is obvious at first
 glance.  He is covered in dirt and grime and has a few pussing welts on his
-face and hands.    
+face and hands.
 ~
 10 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
@@ -165,7 +165,7 @@ A man in a hooded cloak walks slowly by mumbling to himself.
 ~
    The mumblings are not coherent, they are words spoken in garbled phrases,
 words that mean nothing.  They are the words of one who is delusioned beyond
-regainment of full mental faculties.    
+regainment of full mental faculties.
 ~
 72 0 0 0 0 0 0 0 -300 E
 22 13 -3 4d4+220 3d3+3
@@ -178,7 +178,7 @@ a hidden Believer~
 One of X'Raantra's Believers hides in the shadows.
 ~
    The Believer notes your look with a look of her own, giving you a curt nod.
-  
+
 ~
 10 0 0 0 0 0 0 0 -500 E
 24 12 -4 4d4+240 4d4+4
@@ -191,7 +191,7 @@ a brown bat~
 A bat dive bombs you, coming inches from your head!
 ~
    It is hard to get a good look at the little fella, but that really doesn't
-matter, just aim for the blackish-brown blur.    
+matter, just aim for the blackish-brown blur.
 ~
 104 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -205,7 +205,7 @@ a hairy spider~
 A small, hairy spider moves across the ground before you.
 ~
    It is not an aggressive type of spider, nor is it large by any means - but
-it is a spider, nonetheless, and is digusting and wrong.    
+it is a spider, nonetheless, and is digusting and wrong.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -220,7 +220,7 @@ A DeathKnight wanders about, staggering in a daze.
 ~
    He holds his weapon as if he had never used it before, a slight line of
 drool running from the left corner of his mouth.  His eyes hold a faraway,
-dazed look in them.    
+dazed look in them.
 ~
 72 0 0 0 0 0 0 0 -600 E
 21 13 -2 4d4+210 3d3+3
@@ -232,7 +232,7 @@ fellow adventurer~
 a fellow adventurer~
 A man in warrior's traveling garb lies upon the floor, looking very surprised to see you.
 ~
-   Looks like he was catching a nap where he thought he might be safe.    
+   Looks like he was catching a nap where he thought he might be safe.
 ~
 14 0 0 0 0 0 0 0 400 E
 32 10 -9 6d6+320 5d5+5
@@ -245,7 +245,7 @@ a blood wight~
 A humanoid is hunched over the corpse, hands and face dripping with blood.
 ~
    This awful scavenger looks up at you with a snarl and spits some blood on
-you.  It goes back to its feast without another glance.    
+you.  It goes back to its feast without another glance.
 ~
 10 0 0 0 0 0 0 0 -800 E
 27 11 -6 5d5+270 4d4+4
@@ -259,7 +259,7 @@ the unrobed believer~
 A Believer stands menacingly over the boy, a look of glee on his face.
 ~
    The Believer looks as if this sort of sport were his passion, his only
-reason for living.  Indeed, it may be from the look of the boy's back.    
+reason for living.  Indeed, it may be from the look of the boy's back.
 ~
 10 0 0 0 0 0 0 0 -900 E
 25 12 -5 5d5+250 4d4+4
@@ -272,7 +272,7 @@ a screeching boy~
 A screeching boy is thrown face down over a desk, his shirt torn off, blood everywhere.
 ~
    It appears that this man has been at this boy for some time.  The slashes
-across the boy's back are many and deep.    
+across the boy's back are many and deep.
 ~
 10 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1

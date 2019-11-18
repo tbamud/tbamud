@@ -8,7 +8,7 @@ A small metal pail is lying here on the floor.~
 20 150 0 0
 E
 water pail water~
-   Looks to be a very sturdy little pail.  
+   Looks to be a very sturdy little pail.
 ~
 #26301
 bag patchwork~
@@ -20,7 +20,7 @@ A patchwork bag lies on the ground here.~
 2 1 0 0
 E
 bag patchwork~
-   Looks like a bag which has seen a great many years.  
+   Looks like a bag which has seen a great many years.
 ~
 #26302
 boots rubber~
@@ -32,7 +32,7 @@ A pair of rubber boots have been left here.~
 2 1 0 0
 E
 boots rubber~
-   I would be VERY careful not to touch the bottoms of those.  
+   I would be VERY careful not to touch the bottoms of those.
 ~
 #26303
 jacket cowhide~
@@ -44,7 +44,7 @@ A cowhide jacket has been left here.~
 2 1 0 0
 E
 jacket cowhide~
-   Looks VERY manly, strong, even.  
+   Looks VERY manly, strong, even.
 ~
 #26304
 hat floppy cloth~
@@ -69,7 +69,7 @@ A patchwork cloak lies here, discarded.~
 2 1 0 0
 E
 cloak patchwork~
-   Looks as if this cloak has been worn many a year, over many a road.  
+   Looks as if this cloak has been worn many a year, over many a road.
 ~
 A
 5 2
@@ -86,7 +86,7 @@ A flowered dress has been tossed away in a corner.~
 E
 dress flowered~
    The dress is made from fine fabric and fits very tightly.  Real plain jane
-farmer's daughter type clothing here.  
+farmer's daughter type clothing here.
 ~
 A
 6 2
@@ -100,7 +100,7 @@ A milking stool sits here.~
 1 1 0 0
 E
 stool~
-   Small, wood, and rickety - three legs, be careful.  
+   Small, wood, and rickety - three legs, be careful.
 ~
 A
 11 5
@@ -114,7 +114,7 @@ A piano sits in the middle of the floor, looking very lonely.~
 0 0 0 0
 E
 piano~
-   Looks as if the keys haven't been touched in years.  
+   Looks as if the keys haven't been touched in years.
 ~
 #26309
 whip horse~
@@ -126,7 +126,7 @@ A horse whip has been left here.~
 2 1 0 0
 E
 whip horse~
-   It is made of brown leather.  Looks like a sex toy more than a horse whip!  
+   It is made of brown leather.  Looks like a sex toy more than a horse whip!
 ~
 #26310
 rope~
@@ -146,7 +146,7 @@ A pair of riding boots have been left here.~
 2 1 0 0
 E
 boots riding~
-   Spurs and all, these are a FINE pair of boots.  
+   Spurs and all, these are a FINE pair of boots.
 ~
 A
 2 2
@@ -160,7 +160,7 @@ A horseman's hat has been left here.~
 2 1 0 0
 E
 hat horseman~
-   Kind of makes you look like Indiana Jones.  Maybe even better than that.  
+   Kind of makes you look like Indiana Jones.  Maybe even better than that.
 ~
 #26313
 straw piece~
@@ -172,7 +172,7 @@ A piece of straw has been left here.~
 1 1 0 0
 E
 straw piece~
-   It's all chewed at one end, maybe you should wash it first...  
+   It's all chewed at one end, maybe you should wash it first...
 ~
 #26314
 pants rawhide~
@@ -185,7 +185,7 @@ A pair of rawhide pants have been left here.~
 E
 pants rawhide~
    They look really stiff and uncomfortable, but then it's better than being
-naked.  
+naked.
 ~
 #26315
 scythe~
@@ -197,7 +197,7 @@ A field scythe is laying on the floor.~
 1 1 0 0
 E
 scythe~
-   Not quite as cool as the Grim Reaper's, but cool just the same.  
+   Not quite as cool as the Grim Reaper's, but cool just the same.
 ~
 #26316
 stone skipping~
@@ -209,7 +209,7 @@ A round, flattened stone is here.~
 1 1 0 0
 E
 stone skipping ~
-   Looks like it would be a great candidate for a skipper.  
+   Looks like it would be a great candidate for a skipper.
 ~
 A
 5 2
@@ -223,7 +223,7 @@ A bamboo fishing pole has been left here.~
 1 1 0 0
 E
 pole fishing bamboo~
-   A simple branch of bamboo with some string and a hook tied to it.  
+   A simple branch of bamboo with some string and a hook tied to it.
 ~
 #26318
 hat straw~
@@ -251,6 +251,6 @@ boots steel toed rubber~
    A shudder goes down your spine as you just think about being kicked by these
 heavy steel montrosities.  They are made from rugged leather hide and the toes
 are capped with solid steel.  They look like they could do some serious groin
-damage, if implemented properly.  
+damage, if implemented properly.
 ~
 $~

@@ -24,7 +24,7 @@ if %actor.is_pc%
       say I believe the wellmaster should have something of clay that will work as a container.
     end
   else
-    say Good day %actor.name%. 
+    say Good day %actor.name%.
     wait 1 sec
     emote looks around suspiciously.
     wait 1 sec
@@ -35,7 +35,7 @@ if %actor.is_pc%
     say people aren't very friendly towards me since the last fire.
     emote looks down into the cauldron lost in thought with a grimace on her face.
     wait 3 sec
-    say But I have perfected it this time, don't listen to what they say. 
+    say But I have perfected it this time, don't listen to what they say.
     wait 1 sec
     say Bring me some Naphthalene, Palmitite and a proper container. I will give you a sampling of my liquid fire as payment.
     set 3_napalm_search 1
@@ -226,7 +226,7 @@ end
 Room Command - Anti-quit~
 2 c 100
 quit~
-   %send% %actor% Powerful forces keep you here. 
+   %send% %actor% Powerful forces keep you here.
 ~
 #315
 Obj Command - No quit~
@@ -400,7 +400,7 @@ if %self.carried_by% == 0
   switch %self.vnum%
     case 201
       %damage% %actor% -10
-      break 
+      break
     case 202
       %damage% %actor% 10
       %send% %actor% Ouch, that hurt a little!
@@ -479,7 +479,7 @@ if napalm /= %cmd%
   if %actor.fighting% && !%arg%
     set arg %actor.fighting%
   end
-  if !%arg% 
+  if !%arg%
     %send% %actor% Throw it at Who?
     halt
   end
@@ -488,12 +488,12 @@ if napalm /= %cmd%
     halt
   end
   %send% %actor% You throw the napalm at %arg.name%, it strikes %arg.himher% and shatters, exploding into a ball of fire consuming %arg.himher% completely.
-  %echoaround% %actor% %actor.name% throws the napalm at %arg.name%. It shatters and explodes into a ball of fire consuming %arg.himher%. 
+  %echoaround% %actor% %actor.name% throws the napalm at %arg.name%. It shatters and explodes into a ball of fire consuming %arg.himher%.
   %asound% A large explosion is heard close by.
-  set stunned %arg.hitp% 
+  set stunned %arg.hitp%
   %damage% %arg% %stunned%
   wait 5 sec
-  %echoaround% %arg% %arg.name% collapses to the ground as the flames die down. %arg.heshe% seems to still be alive, but barely. 
+  %echoaround% %arg% %arg.name% collapses to the ground as the flames die down. %arg.heshe% seems to still be alive, but barely.
 end
 ~
 #338
@@ -535,7 +535,7 @@ elseif %cmd.mudcommand% == buy
     halt
   end
   *
-  if %actor.gold% < %pet_cost% 
+  if %actor.gold% < %pet_cost%
     tell %actor.name% You don't have enough gold for that.
   else
     * Need to load the mob, have it follow the player AND set the affect
@@ -566,7 +566,7 @@ recall~
 Mob Greet - Kind Soul - 13~
 0 g 100
 ~
-if %actor.is_pc%   
+if %actor.is_pc%
   wait 2 sec
   if !%actor.eq(light)%
     Say you really shouldn't be wondering these parts without a light source %actor.name%.

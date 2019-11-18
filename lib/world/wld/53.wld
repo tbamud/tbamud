@@ -227,12 +227,12 @@ E
 stones~
    As you look closer you can make out a crack in the center of the stones
 beneath your feet.  With some effort you might be able to lift that section up
-and get inside!  
+and get inside!
 ~
 S
 #5307
 On The Dangerous Stones~
-   Here the elements have carved away at the sides of the pyramid quite a 
+   Here the elements have carved away at the sides of the pyramid quite a
 bit.  You aren't so sure of your footing anymore...
 Suddenly the wind picks up, and you lose your balance!
 You tumble down the side of the pyramid, and fall to your death!
@@ -264,12 +264,12 @@ E
 stones~
    As you look closer you can make out a crack in the center of the stones above
 your head.  With some effort you might be able to lift that section up and get
-outside!  
+outside!
 ~
 S
 #5309
 A Musty Chamber~
-   You are standing in a dank, musty chamber just inside the pyramid. 
+   You are standing in a dank, musty chamber just inside the pyramid.
 Footprints and other strange marks are set into the dusty floor here.
 It would seem that some of the tenants of this monument are still alive.
 Exits lead in all directions.   The door to the west is covered with
@@ -306,12 +306,12 @@ sigils hieroglyphs inscriptions writing~
    You cannot understand the strange glyphs that cover the door, but most of
 them seem to depict scenes of fire and massive creatures of apparently
 tremendous strength.  You have a feeling that the glyphs are serving as a
-warning.  
+warning.
 ~
 E
 door stone~
    The stone door is covered in strange inscriptions and hieroglyphs that warn
-you not to proceed any further.  
+you not to proceed any further.
 ~
 S
 #5310
@@ -336,7 +336,7 @@ S
 #5311
 The Chamber Of The Efreet~
    You make your way across the fire pool, and into a small stone chamber.
-Here the flames are nearly as high as your head, singeing your face and 
+Here the flames are nearly as high as your head, singeing your face and
 evaporating your sweat instantaneously.
 ~
 53 8 0 0 0 7
@@ -372,7 +372,7 @@ S
 #5313
 A Tiny Crawlway~
    You are on your hands and knees, inside a small crawlway that winds
-through the inside of the pyramid.  The crawlway is thick with sand, dust, 
+through the inside of the pyramid.  The crawlway is thick with sand, dust,
 and markings of the passage of other creatures.
 ~
 53 9 0 0 0 0
@@ -390,7 +390,7 @@ S
 #5314
 A Tiny Crawlway~
    You are on your hands and knees, inside a small crawlway that winds
-through the inside of the pyramid.  The crawlway is thick with sand, dust, 
+through the inside of the pyramid.  The crawlway is thick with sand, dust,
 and markings of the passage of other creatures.
 ~
 53 9 0 0 0 0
@@ -492,7 +492,7 @@ The hole looks far too slippery to climb back up.
 E
 bones~
    The bones have whitened and cracked in the dry air, apparently the remains of
-adventurers, thieves, and creatures that did not survive the fall.  
+adventurers, thieves, and creatures that did not survive the fall.
 ~
 S
 #5319
@@ -520,7 +520,7 @@ The crevasse continues downward into total darkness.
 E
 rough~
    As you look through the rough terrain, your eyes catch a small glint of
-light!  
+light!
 ~
 S
 #5320
@@ -540,7 +540,7 @@ man old~
    The old man looks like he has been trapped down here far too long, and has
 begun to lose his mind.  He moves about slowly, cackling to himself.  He turns
 to you and shouts, 'nope measse!  Nope measse!  ', then turns back and stares
-into the fire.  'What a strange person,' you think to yourself.  
+into the fire.  'What a strange person,' you think to yourself.
 ~
 S
 #5321
@@ -584,13 +584,13 @@ tiger head animal sesame~
 animal, whose voice rumbles lowly on the breeze, and whose massive jaws could
 easily swallow you whole.  You move closer for a better look, when suddenly a
 pair of eyes flashes.  A cold voice echoes: 'SEEK YE THE DIAMOND...  IN THE
-ROUGH...  ' ...  Then all is silent.  
+ROUGH...  ' ...  Then all is silent.
 ~
 E
 black shape~
    Wind howls about your ears like the roar of a tiger.  As your eyes adjust to
 the light the shape to the south almost seems to take the form of a massive
-animal head.  
+animal head.
 ~
 S
 #5323
@@ -610,8 +610,8 @@ Through the jaws of the tiger you see the blackness of the crevasse.
 E
 treasure gold coins valuables~
    You reach for some of the tasty goodies, when you hear a loud rumbling sound
-and see a bright flash of light...  Then the words: 'TAKE ONLY THE LAMP...  
-TOUCH NOTHING ELSE.  ' ...  All is silent once again.  
+and see a bright flash of light...  Then the words: 'TAKE ONLY THE LAMP...
+TOUCH NOTHING ELSE.  ' ...  All is silent once again.
 ~
 S
 #5324
@@ -636,7 +636,7 @@ S
 A Looted Tomb~
    The floor of this small tomb is littered with the lids of smashed sarcophagi,
 bits of treasure dropped by thieves and looters, and corpses pulled from their
-resting places.  
+resting places.
 ~
 53 8 0 0 0 0
 D0
@@ -659,7 +659,7 @@ S
 A Demolished Tomb~
    This tomb has been utterly destroyed by thieves and looters in search of the
 treasures of the pharoahs.  Nothing of interest remains in this room, except a
-large stone coffin that leans against the western wall.  
+large stone coffin that leans against the western wall.
 ~
 53 8 0 0 0 0
 D1
@@ -676,7 +676,7 @@ E
 man garments pharoah~
    As you look closer at the figure sculpted into the stone coffin you notice a
 small marking carved into its chest.  It looks like a scarab or small beetle
-would fit into the small space, if properly sized.  Hmmm.  
+would fit into the small space, if properly sized.  Hmmm.
 ~
 E
 coffin lid~
@@ -684,7 +684,7 @@ coffin lid~
 you, and clad in the garments of pharoahs.  It has apparently been untouched by
 the ravages of time and the activities of looters.  Several markings on the side
 indicate spots where unsuccessful attempts were made to open the coffin.  You
-can't see any way to open it.  
+can't see any way to open it.
 ~
 S
 #5327
@@ -706,12 +706,12 @@ It is too dark to see down the stairway.
 0 -1 5328
 E
 coffin lid~
-   On this side the coffin lid is smooth featureless stone.  
+   On this side the coffin lid is smooth featureless stone.
 ~
 E
 inscriptions~
    You blow dust away from the inscriptions to read: Beware the curse of the
-mummy.  
+mummy.
 ~
 S
 #5328
@@ -751,14 +751,14 @@ It is too dark to see up the stairway.
 E
 walls floor ceiling hieroglyphics~
    The hieroglyphics are covered with a thick layer of dust.  You clear the dust
-away with your hand, and find that you cannot comprehend them.  
+away with your hand, and find that you cannot comprehend them.
 ~
 S
 #5330
 The Ancient Hall~
    Here the air is deathly still, motes of dust thickly obscuring your
-vision.  Several stone statues line the walls of the hall, depicting the 
-gods of an ancient society.  Strange glyphs and sigils cover the walls, a 
+vision.  Several stone statues line the walls of the hall, depicting the
+gods of an ancient society.  Strange glyphs and sigils cover the walls, a
 peculiar pictorial form of written language that you don't understand.
    Some steps lead to a raised dais to the south.
 ~
@@ -775,7 +775,7 @@ You see a small raised dais.
 0 -1 5331
 E
 writings glyphs sigils hieroglyphics symbols~
-   You don't understand the meaning of these symbols.  
+   You don't understand the meaning of these symbols.
 ~
 S
 #5331
@@ -799,7 +799,7 @@ E
 pedestal writings~
    The writings are covered in sand and worn nearly away by the passage of time:
 'I am Ramses the Damned, once counselor and aide to the mightiest of pharoahs
-and queens of this land.  Much time has passed since I last walked the earth.  
+and queens of this land.  Much time has passed since I last walked the earth.
 Disturb my rest at your peril.  '
 ~
 S
@@ -817,7 +817,7 @@ S
 #5333
 A Ransacked Tomb~
    This tomb has been completely ransacked and destroyed by the actions of
-pyramid thieves and looters.  The floor is littered with junk.  
+pyramid thieves and looters.  The floor is littered with junk.
 ~
 53 8 0 0 0 0
 D1
@@ -875,7 +875,7 @@ Through the hole you see rubble and sand.
 0 -1 5346
 E
 hole~
-   The hole is low, at the floor of the southern wall.  
+   The hole is low, at the floor of the southern wall.
 ~
 S
 #5336
@@ -898,7 +898,7 @@ S
 #5337
 A Dank Chamber~
    This chamber has a dank, dusty, musty smell to it.  Small footprints
-in the dust betray the recent passage of some sort of creatures.  A hole 
+in the dust betray the recent passage of some sort of creatures.  A hole
 in the floor lies to the west and a stairway is to the east.
 ~
 53 8 0 0 0 0
@@ -1033,7 +1033,7 @@ floor~
 E
 cracks~
    The cracks look like you might be able to pull away some pieces of the floor,
-perhaps even fit your body through the space you make.  
+perhaps even fit your body through the space you make.
 ~
 S
 #5344
@@ -1057,12 +1057,12 @@ ceiling~
 E
 hieroglyphics carvings~
    The markings indicate that this tomb is indeed the tomb of the greatest
-pharoahs of the ancient civilization that built this massive pyramid.  
+pharoahs of the ancient civilization that built this massive pyramid.
 ~
 E
 tomb~
    The tomb looks like it has stood for many years, much like the pyramid which
-encloses it.  It is covered in small hieroglyphics.  
+encloses it.  It is covered in small hieroglyphics.
 ~
 S
 #5345
@@ -1081,15 +1081,15 @@ tomb~
 E
 treasures~
    The treasures are dusty and fragile, but still seem quite valuable.  You
-decide not to take them out of respect for the ancient dead.  
+decide not to take them out of respect for the ancient dead.
 ~
 S
 #5346
 A Rubble-Strewn Hallway~
    This hallway formerly had a beautiful arch to the ceiling, now
 collapsed under the weight of the slowly settling stones of the
-pyramid.  Now, a massive pile of rubble leads up into a hole high 
-in the northern portion of the hallway.  To the south, through the 
+pyramid.  Now, a massive pile of rubble leads up into a hole high
+in the northern portion of the hallway.  To the south, through the
 rubble and fallen stones you see a sandstone crypt.
 ~
 53 13 0 0 0 0
@@ -1187,12 +1187,12 @@ You see an arched hall.
 0 -1 5349
 E
 bricks~
-   The small golden bricks are very smooth and also quite soft.  
+   The small golden bricks are very smooth and also quite soft.
 ~
 E
 rug rugs tapestry tapestries~
    The rugs and tapestries are very fine and worn with age, their colors now
-faded.  They depict scenes of life in an ancient desert city.  
+faded.  They depict scenes of life in an ancient desert city.
 ~
 S
 #5351
@@ -1229,7 +1229,7 @@ You see a hall with a beautifully arched ceiling.
 E
 particles glass~
    The glassy particles reflect and refract your light source in a myriad of
-dazzling colours that dance across your eyes and make you giggle.  
+dazzling colours that dance across your eyes and make you giggle.
 ~
 S
 #5353
@@ -1253,7 +1253,7 @@ You see only a wall of whirling, blowing, dry sand.
 0 -1 5354
 E
 sand dune sandstorm~
-   The sand is very white, and very sandy.  There sure is a lot of it.  
+   The sand is very white, and very sandy.  There sure is a lot of it.
 ~
 S
 #5354
@@ -1286,7 +1286,7 @@ You see only a wall of whirling, blowing, dry sand.
 E
 sand~
    Sand is about all you CAN see right now.  Unfortunately, it isn't very
-interesting sand, only white, dry, and blowing all over the place.  
+interesting sand, only white, dry, and blowing all over the place.
 ~
 S
 #5355
@@ -1319,7 +1319,7 @@ You see only a wall of whirling, blowing, dry sand.
 E
 sand~
    Sand is about all you CAN see right now.  Unfortunately, it isn't very
-interesting sand, only white, dry, and blowing all over the place.  
+interesting sand, only white, dry, and blowing all over the place.
 ~
 S
 #5356
@@ -1352,7 +1352,7 @@ You see only a wall of whirling, blowing, dry sand.
 E
 sand~
    Sand is about all you CAN see right now.  Unfortunately, it isn't very
-interesting sand, only white, dry, and blowing all over the place.  
+interesting sand, only white, dry, and blowing all over the place.
 ~
 S
 #5357
@@ -1385,7 +1385,7 @@ You see only a wall of whirling, blowing, dry sand.
 E
 sand~
    Sand is about all you CAN see right now.  Unfortunately, it isn't very
-interesting sand, only white, dry, and blowing all over the place.  
+interesting sand, only white, dry, and blowing all over the place.
 ~
 S
 #5358
@@ -1412,15 +1412,15 @@ E
 hieroglyphics symbols~
    Like most of the ancient hieroglyphics of this land, the symbols are totally
 incomprehensible to you.  Perhaps the Sphinx has the answer to this ancient
-riddle.  
+riddle.
 ~
 E
 riddle~
-   A vision forms before your eyes, in glowing hieroglyphic symbols.  
+   A vision forms before your eyes, in glowing hieroglyphic symbols.
 ~
 E
 sand dune~
-   The sand is very white, and very sandy.  There sure is a lot of it.  
+   The sand is very white, and very sandy.  There sure is a lot of it.
 ~
 S
 #5359

@@ -4,7 +4,7 @@ Near Death Trap - 30305~
 ~
 * Near Death Trap stuns actor
 wait 1 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 ~
 $~

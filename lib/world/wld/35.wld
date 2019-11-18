@@ -132,7 +132,7 @@ This path cuts through the darkness of the Miden'Nir.
 0 -1 3507
 D3
 The Woodsman's Inn can be seen a short distance to the west, it appears
-to be the source of the smoke.  
+to be the source of the smoke.
 ~
 ~
 0 -1 3570
@@ -335,7 +335,7 @@ The forest continues.
 S
 #3515
 The Light Forest~
-   The forest is light here and you can easily pick your way through the 
+   The forest is light here and you can easily pick your way through the
 trail.  To the east, the forest becomes thick and darker.  South, the
 trail continues.
 ~
@@ -499,9 +499,9 @@ More dark forest.
 0 -1 3522
 E
 carcass body corpse carcasses bodies corpses~
-   The corpses looked as if they have been pierced by a large, jagged spear.  
+   The corpses looked as if they have been pierced by a large, jagged spear.
 The damage these people sustained is simply amazing.  Worse, the lips on the
-bodies are a light shade of blue, hinting at poison in their systems.  
+bodies are a light shade of blue, hinting at poison in their systems.
 ~
 S
 #3522
@@ -639,7 +639,7 @@ You see the main passageway.
 E
 twigs leaves bead~
    The twigs and leaves have all been piled together as a makeshift bed for some
-small humanoid.  
+small humanoid.
 ~
 S
 #3555
@@ -843,7 +843,7 @@ S
 #3578
 The Garbage Dump~
    You stand knee deep in garbage.  YECCH!!!  It smells terrible and who knows
-what vermin live in these piles of filth...  
+what vermin live in these piles of filth...
 ~
 35 0 0 0 0 3
 D1
@@ -855,7 +855,7 @@ S
 #3579
 A Quieter Section Of The Inn~
    There seems to be no one in this end of the Woodsman, probably a safe place
-to rest and lick your wounds...  
+to rest and lick your wounds...
 ~
 35 8 0 0 0 0
 D0

@@ -14,7 +14,7 @@ through it.
 Note that Indoor flags are deliberately set on outdoor rooms as the
 zone has its own trigger-run weather messages.
    @MSecrets:@n None yet, but there will be ;). Will keep posted.
-   @CNote:@n If you have any suggestions, spot any typos, bugs, or 
+   @CNote:@n If you have any suggestions, spot any typos, bugs, or
 weirdnesses, please mudmail me - Detta. :-) All input appreciated!
 You can also email me at detta@@builderacademy.net
 East takes you through the other zones I have built here.
@@ -162,7 +162,7 @@ A Cold Throneroom~
 breathing of lingering spirits.  The towering stone walls and smooth white
 marble floor can be seen to have given the place a cold regal air, long before
 its wintery fate.  Now only wisps of snow flicker here and there like tendrils
-of mist, all else still and undisturbed.  
+of mist, all else still and undisturbed.
 ~
 11 8 0 0 0 0
 D1
@@ -335,7 +335,7 @@ T 1136
 #1115
 Hall of Forgotten Arts~
    In a striking tribute to craftsmanship, beautifully cut gems and jewels of
-every description decorate the walls and silver-gilded ceiling of this hall.  
+every description decorate the walls and silver-gilded ceiling of this hall.
 Sapphire and azure lend their regal blue hue to the surroundings, contrasting
 with the pure whiteness of the blanketing snow and creamy irridescent opals that
 line the length of the walls.
@@ -482,7 +482,7 @@ S
 #1122
 The Northwest Stair~
    Cold and grey, pieces of old dust and debris stir in the disturbed air,
-floating along with snowflakes down into the deeper parts of the stair.  
+floating along with snowflakes down into the deeper parts of the stair.
 Darkness looms overhead as well, the spiralling wooden planks leading to a
 higher story of the castle, as well as a lower.  A subtle wooden door stands
 settled into the eastern wall.
@@ -617,7 +617,7 @@ A Smashed Statuette~
    An awesome sculpture once stood here, as evidenced by the smatterings of ruby
 and red beryl that still adorn the ground like drops of blood.  A round metal
 base stands in the midst of the snow, upon which the artwork would have once
-stood, apparently a tribute to one of the four locally worshipped elements.  
+stood, apparently a tribute to one of the four locally worshipped elements.
 Completely destroyed now, only the tiniest scarlet gems remain frozen in the
 surrounding ice, evidence of the desecrated statue that once stood proudly here.
 ~
@@ -722,7 +722,7 @@ D5
 S
 #1133
 Upper Part of the Northwest Stair~
-   A mournful silence seems to envelop this hidden-away corner of the castle.  
+   A mournful silence seems to envelop this hidden-away corner of the castle.
 A neglected wooden stair descends steeply below, a path for the resident
 servants to take discreetly as they went about their duties, although now it
 seems nothing lingers but the cobwebs.  A subtle wooden door stands settled into
@@ -866,7 +866,7 @@ door~
 S
 #1140
 Icicle-adorned Hall~
-   Long and forlorn, the size of this hall only emphasizes its emptiness.  
+   Long and forlorn, the size of this hall only emphasizes its emptiness.
 Clear jagged spikes of ice dangle from above, shimmering with light and
 vibration.  Sparkles of frost drift wearily in the air, settling on every
 surface like ancient dust.
@@ -929,7 +929,7 @@ S
 The Lady's Garderobe~
    Long, snow-covered shelves run along the walls of this room, stacked with
 piles of neatly folded clothing.  A few wooden mannequins stand half-dressed
-here and there, frozen in place and ghost-like in the eerie abandoned cold.  
+here and there, frozen in place and ghost-like in the eerie abandoned cold.
 Sequins and embroidered jewels glitter through the snow and ice as though the
 last flickering embers of a slow dying fire.
 ~
@@ -1319,7 +1319,7 @@ S
 #1163
 A Blustery Buttery~
    A strange wind whips about this storage room, clinking and clanging against
-the bottles and barrels that lie here, as if a ghost was rattling its chains.  
+the bottles and barrels that lie here, as if a ghost was rattling its chains.
 Powdered butts of beer stand against the walls, shrouded in deep layers of snow,
 and scattered shards of glass lie sprinkled across the floor, along with frozen
 droplets of wine.
@@ -1351,7 +1351,7 @@ S
 The Servants' Lounge~
    This room appears to have been quite cozy at one point, dark hues of wood and
 animal furs generously adorning the place.  The wood however, has become
-silver-veined with frost, overhead rafters hung with glittering stalactites.  
+silver-veined with frost, overhead rafters hung with glittering stalactites.
 The furs that would have once been soft and warm, are frozen brittle, each fine
 hair a needle of ice.
 ~
@@ -1391,7 +1391,7 @@ S
 Seamstresses' Corner~
    Pieces of clothing and fabric are hung from clotheswires, making this little
 corner seem sheltered and private.  Here must have been where the women gathered
-to sew and gossip, small stools standing powdered with snow as if cushioned.  
+to sew and gossip, small stools standing powdered with snow as if cushioned.
 Various knitting and sewing needles lie strewn about, glistening brightly
 amongst splinters of ice.
 ~
@@ -1415,7 +1415,7 @@ A Snowed-in Roasting Pit~
 filled with blasting heat.  Smoke and soot have been preserved in the ice-coated
 walls, making every surface black and glossy as ink.  A large firepit lies
 abandoned to snow and ash, an unidentifiable carcass still suspended on a spit
-above it.  
+above it.
 ~
 11 8 0 0 0 0
 D0
@@ -1472,7 +1472,7 @@ S
 #1171
 A Whispering Corridor~
    Hushed and dreary, this corridor flickers subtly as if lit with blue fire,
-sparkles of colour reflecting in the solid ice that coats its walls.  
+sparkles of colour reflecting in the solid ice that coats its walls.
 Whispering echoes travel down the length of this tunnel, stirring the few tufts
 of plant life that grow amongst the cracked stone, cobwebs fluttering forlornly.
 ~
@@ -1531,7 +1531,7 @@ S
 #1174
 Priest's Chamber~
    This pale, spacious room is filled with a holy glow, sparkling facets of ice
-casting rays of brightness about the place as if lit by celestial lights.  
+casting rays of brightness about the place as if lit by celestial lights.
 Silver threads of cobweb and dust dance lazily in the breeze, catching the light
 and glimmering like strands of angel's hair.
 ~
@@ -1704,7 +1704,7 @@ S
 #1184
 A Haunted Prison Cell~
    Soft whispering voices waft through the air here, stirring shadows and
-glimmers of light that writhe upon the icy walls as if trying to escape.  
+glimmers of light that writhe upon the icy walls as if trying to escape.
 Gentle breezes shift unnaturally in the near silence, as if ancient ghosts were
 still breathing in the darkness, or pacing away the time.
 ~

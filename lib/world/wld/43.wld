@@ -5,7 +5,7 @@ little places to get good or even moderate exp.  This zone will have two
 halves.  In the first half there will be penguins on a large scale in a
 community in the northern wastes of Ilnyir.  The other half is the city of
 eskimos, Rankit.  Rankit is ruled by a gluttonus king, Glogtar, and does little
-for his kingdom.    
+for his kingdom.
 Rooms: 95
 Objs: 23
 Mobs: 17
@@ -20,7 +20,7 @@ An Ice Bridge~
    Standing on a bridge of ice you almost slip off into the gully below.  On a
 bridge made of ice.  Don't lose your balance!  To the north you see the end of
 the bridge, and past it is vast, white, nothing.  To the northwest you see
-smoke rising from an unknown village.    
+smoke rising from an unknown village.
 ~
 43 0 0 0 0 2
 D0
@@ -33,7 +33,7 @@ D2
 0 0 4399
 E
 north~
-   More ice bridge.    
+   More ice bridge.
 ~
 S
 #4302
@@ -41,7 +41,7 @@ An Ice Bridge~
    Standing in the middle of an ice bridge.  It looks very slippery, don't fall
 off!  Beyond in the distance there is a large pillar of smoke rising of what
 seems to be rising from a small village in the northwest.  You stand there and
-think, Eskimos?    
+think, Eskimos?
 ~
 43 0 0 0 0 2
 D0
@@ -54,18 +54,18 @@ D2
 0 0 4301
 E
 south~
-   More ice bridge.    
+   More ice bridge.
 ~
 E
 north~
-   More ice bridge.    
+   More ice bridge.
 ~
 S
 #4303
 An Ice Bridge~
    At the end of an ice bridge.  You didn't fall off.  It nows seems there
 really are eskimos in this barren land of snow and ice.  There are many black
-dots moving around aimlessly to the northeast.    
+dots moving around aimlessly to the northeast.
 ~
 43 0 0 0 0 2
 D0
@@ -78,7 +78,7 @@ D2
 0 0 4302
 E
 south~
-   More ice bridge.    
+   More ice bridge.
 ~
 S
 #4304
@@ -86,7 +86,7 @@ An Icy Trail~
    While on this winding trail totally consumed by ice and unpacked snow you
 suddenly see a field to the north open up.  There are very few footprints in
 the snow.  To the north there is more nothing than you ever thought there could
-be.    
+be.
 ~
 43 0 0 0 0 2
 D0
@@ -102,7 +102,7 @@ S
 An Icy Crossroads~
    The trail looks exactly the same as it did before except for the fact that
 there is a three way split in the trail.  To the north, snow, ice, and black
-figures wondering about.  To the west, a barely definable trail.    
+figures wondering about.  To the west, a barely definable trail.
 ~
 43 0 0 0 0 2
 D0
@@ -138,7 +138,7 @@ S
 A Turn in an Icy Trail~
    The trail takes a turn here.  You stand and watch all the penguins wondering
 aimlessly in circles to the east.  Far to the east you see what seems to be a
-shoreline.  To the south a path of ice and snow.    
+shoreline.  To the south a path of ice and snow.
 ~
 43 4 0 0 0 2
 D1
@@ -155,7 +155,7 @@ The Beginning of a Snow Field~
    There is a fine layer of freshley fallen snow on the hard packed, very thick
 snow.  There are penguins all about you.  Way to the northeast there is a large
 structure made of ice.  The only thing you see for miles around is
-ice,penguins, and snow.    
+ice,penguins, and snow.
 ~
 43 0 0 0 0 2
 D0
@@ -176,7 +176,7 @@ Snow Field~
    It is still snowing in this baren, forsaken land of ice.  Only the penguins
 and a couple lumps of some sort of creature roam these lands.  The penguins are
 many and with their babies seem many more.  As you scan your surroundings you
-see a large hump of ice to the northeast.  
+see a large hump of ice to the northeast.
 ~
 43 0 0 0 0 2
 D0
@@ -196,7 +196,7 @@ S
 A Snow Field~
    This field is heavily trampled with tracks that have webbing in them.  The
 penguins are still waddling around seemingly mindless.  But as you look closer
-at the many tracks there are some that dont look like a bird.    
+at the many tracks there are some that dont look like a bird.
 ~
 43 0 0 0 0 2
 D0
@@ -216,7 +216,7 @@ S
 A Field of Packed Snow~
    The snow here is packed from constant use.  You can not distinguish one
 track from another.  Although it is very very cold the penguins are still out
-in full force.    
+in full force.
 ~
 43 0 0 0 0 2
 D0
@@ -237,7 +237,7 @@ Into a Snow Field~
    You are now very far into this land of frozen nothing.  You see strait to
 the north a small hole in the ice.  Penguins still skid along their bellies and
 waddle around on thier feet.  You now also see what the animal was that was
-making those tracks earlier.  They are walruses!    
+making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D0
@@ -254,7 +254,7 @@ Into a Snow Field~
    You are now very far into this land of frozen nothing.  You see strait to
 the north a small hole in the ice.  Penguins still skid along their bellies and
 waddle around on thier feet.  You now also see what the animal was that was
-making those tracks earlier.  They are walruses!    
+making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D0
@@ -274,7 +274,7 @@ S
 A Field of Packed Snow~
    The snow here is packed from constant use.  You can not distinguish one
 track from another.  Although it is very very cold the penguins are still out
-in full force.    
+in full force.
 ~
 43 0 0 0 0 2
 D0
@@ -298,7 +298,7 @@ S
 A Snow Field~
    This field is heavily trampled with tracks that have webbing in them.  The
 penguins are still waddling around seemingly mindless.  But as you look closer
-at the many tracks there are some that dont look like a bird.    
+at the many tracks there are some that dont look like a bird.
 ~
 43 0 0 0 0 2
 D0
@@ -323,7 +323,7 @@ Snow Field~
    It's still snowing in this baren, forsaken land of ice.  Only the penguins
 and a couple of lumps of some sort of creature roam these lands.  The penguins
 are many and with their babies seem many more.  As you scan your surroundings
-you see a large hump of ice to the northeast.    
+you see a large hump of ice to the northeast.
 ~
 43 0 0 0 0 2
 D0
@@ -348,7 +348,7 @@ Snow Field~
    It's still snowing in this baren, forsaken land of ice.  Only the penguins
 and a couple lumps of some sort of creature roam these lands.  The penguins are
 many and with thier babies seem many more.  As you scan your surroundings you
-see a large hump of ice to the northeast.    
+see a large hump of ice to the northeast.
 ~
 43 0 0 0 0 2
 D0
@@ -368,7 +368,7 @@ S
 A Snow Field~
    This field is heavily trampled with tracks that have webbing in them.  The
 penguins are still waddling around seemingly mindless.  But as you look closer
-at the many tracks there are some that dont look like a bird.    
+at the many tracks there are some that dont look like a bird.
 ~
 43 0 0 0 0 2
 D0
@@ -388,7 +388,7 @@ S
 A Snow Field~
    This field is heavily trampled with tracks that have webbing in them.  The
 penguins are still waddling around seemingly mindless.  But as you look closer
-at the many tracks there are some that dont look like a bird.    
+at the many tracks there are some that dont look like a bird.
 ~
 43 0 0 0 0 2
 D0
@@ -412,7 +412,7 @@ S
 A Snow Field~
    This field is heavily trampled with tracks that have webbing in them.  The
 penguins are still waddling around seemingly mindless.  But as you look closer
-at the many tracks there are some that dont look like a bird.    
+at the many tracks there are some that dont look like a bird.
 ~
 43 0 0 0 0 2
 D0
@@ -436,7 +436,7 @@ S
 A Field of Packed Snow~
    The snow here is packed from constant use.  You can not distinguish one
 track from another.  Although it is very very cold the penguins are still out
-in full force.    
+in full force.
 ~
 43 0 0 0 0 2
 D0
@@ -461,7 +461,7 @@ Into a Snow Field~
    You are now very far into this land of frozen nothing.  You see strait to
 the north a small hole in the ice.  Penguins still skid along their bellies and
 waddle around on thier feet.  You now also see what the animal was that was
-making those tracks earlier.  They are walruses!    
+making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D0
@@ -483,7 +483,7 @@ On an Ice Slick~
 The hole is just large enough for a large dwarf through.  There is no snow at
 all around the hole so the ice is practically see through.  There is an igloo
 to the north which looks well tended for.  All around to the south and east is
-a very large field.    
+a very large field.
 ~
 43 4 0 0 0 2
 D0
@@ -508,7 +508,7 @@ Into a Snow Field~
    Now you are very far into this field of frozen nothing.  The ice building
 you saw earlier is now much closer and strait to the east.  Penguins still skid
 along their bellies and waddle around on thier feet.  You now also see what the
-animal was that was making those tracks earlier.  They are walruses!    
+animal was that was making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D1
@@ -529,7 +529,7 @@ Into a Snow Field~
    Now you are very far into this field of frozen nothing.  The ice building
 you saw earlier is now much closer and strait to the east.  Penguins still skid
 along their bellies and waddle around on thier feet.  You now also see what the
-animal was that was making those tracks earlier.  They are walruses!    
+animal was that was making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D1
@@ -550,7 +550,7 @@ Into a Snow Field~
    Now you are very far into this field of frozen nothing.  The ice building
 you saw earlier is now much closer and strait to the east.  Penguins still skid
 along their bellies and waddle around on thier feet.  You now also see what the
-animal was that was making those tracks earlier.  They are walruses!    
+animal was that was making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D1
@@ -571,7 +571,7 @@ Into a Snow Field~
    Now you are very far into this field of frozen nothing.  The ice building
 you saw earlier is now much closer and strait to the east.  Penguins still skid
 along their bellies and waddle around on thier feet.  You now also see what the
-animal was that was making those tracks earlier.  They are walruses!    
+animal was that was making those tracks earlier.  They are walruses!
 ~
 43 0 0 0 0 2
 D1
@@ -588,7 +588,7 @@ Down the Ice Hole~
    As you look up through the hole you just came through you relize you can
 stand up and look out of it.  To the north is a long tunnel with a bright blue
 light coming out of it.  At the end of the tunnel it seems there is a very
-large room.    
+large room.
 ~
 43 256 0 0 0 2
 D0
@@ -605,7 +605,7 @@ Inside an Igloo~
    The interior of this igloo would make someone feel young again.  There are
 babies wailing about something, they must be orphans by the look of the adults.
 With only a couple adults to watch over them some of them seem to be very
-mischeivious.    
+mischeivious.
 ~
 43 0 0 0 0 0
 D2
@@ -618,7 +618,7 @@ Through an Ice Tunnel~
    This tunnel is big for a gaint!  You wonder how a penguin could possibly
 reach that high!  The walls are smootheed away from constant use and wearing.
 The ice here never seems to melt; for as you put your hand on it and take it
-of, there is no water.  To the north is a very large, cavernous room.    
+of, there is no water.  To the north is a very large, cavernous room.
 ~
 43 8 0 0 0 0
 D0
@@ -635,7 +635,7 @@ Through an Ice Tunnel~
    The ice reflects a brilliant light that almost blinds you.  You don't know
 where the light is comeing from.  As you look around you are astonished that
 there aren't even any torches, lanterns, or anything that gives of any light at
-all.    
+all.
 ~
 43 8 0 0 0 0
 D0
@@ -664,14 +664,14 @@ E
 wall~
    The walls in this room are perfectly smoothed away and still refecting that
 strange blue light.  You think the light must be coming from outside for there
-are no lights in here.    
+are no lights in here.
 ~
 E
 throne chair~
    This chair made completly of ice is suberbly crafted and sqared away.  It
 seems to be made of one block of ice as you can see no grooves to mark that it
 is not.  The seat of the chair is very low in humanoid standards, but penguins
-see it not fit to be in high places.    
+see it not fit to be in high places.
 ~
 S
 #4333
@@ -679,7 +679,7 @@ Snowy Trail~
    This trail seems not to be used very much if at all.  You can clearly see
 the village of eskimos now.  You see back to the east the trail that continues
 north.  To the west the trail seems very short, but all this white nay be
-affecting your sight.    
+affecting your sight.
 ~
 43 0 0 0 0 2
 D1
@@ -694,9 +694,9 @@ S
 #4334
 Snowy Trail~
    Continuing along the trail it seems to become more used.  The tracks in the
-the snow here are deeper and there are more of them; but not many more.  
+the snow here are deeper and there are more of them; but not many more.
 Coming closer to the eskimo village you see people bustling about in there
-everyday chores.    
+everyday chores.
 ~
 43 0 0 0 0 2
 D0
@@ -713,7 +713,7 @@ Above the Eskimo Village~
    On top of this hill looking down upon the village of eskimos there is an
 incredible view of the entire city.  Someone could come up here and look upon
 the entire workings of the city.  Far away to the east there is a large open
-field with many objects moving about.    
+field with many objects moving about.
 ~
 43 0 0 0 0 0
 D2
@@ -746,7 +746,7 @@ Outside a Wall of Ice~
 any kind to signify ot was built, but rather frozen out of the very air.  The
 wall stands close to twenty feet high and, through the large iron gate set in
 the ice, six feet thick.  In front of the gate stands an engraved sign.  Above
-is a steep icy path that dosen't seem to be possible to climb up.    
+is a steep icy path that dosen't seem to be possible to climb up.
 ~
 43 4 0 0 0 2
 D0
@@ -761,7 +761,7 @@ Intersection of Whale Street and Arivat Avenue.~
 The snow gleams in the sun and crunches under your feet.  People bundled in
 very warm clothes are hurrying about with there buissness.  To the north Arivat
 Avenue runs to a busy town square.  Whale Street runs east ans west.  To the
-south is the giant wall with the large gate set in the ice.    
+south is the giant wall with the large gate set in the ice.
 ~
 43 0 0 0 0 1
 D0
@@ -784,9 +784,9 @@ S
 #4339
 Arivat Avenue~
    The road here is made of ice on the bottom and snow on the top for traction.
-There are many sled tracks through the area along with many more dog tracks.  
+There are many sled tracks through the area along with many more dog tracks.
 To the south is the main gate of the city and to the north is a busy market
-place.    
+place.
 ~
 43 0 0 0 0 1
 D0
@@ -804,7 +804,7 @@ Avivat Avenue~
 they all look the same.  The townspeople must be able to tell them apart some
 how.  There are many people going about thier buissness about you.  To the west
 there is a sign with a tunic on it and to the east a sign with a butcher's
-knife.  Just to the north is a busy square.    
+knife.  Just to the north is a busy square.
 ~
 43 0 0 0 0 1
 D0
@@ -830,10 +830,10 @@ Rankit Square~
 starts falling very lightly and the townsfolk don't even care.  There are so
 many people in this little town it could be thought impossible by many in such
 a desolate place.  The snow glistings off of everything covered in it.  There
-is a small post by the fountain with many numbers on it measuring the snow.  
+is a small post by the fountain with many numbers on it measuring the snow.
 The snow reaches up to the 13' foot mark upon closer examination.  Also on the
 post there is a dark line at the 18.5 mark which must be the highest snow
-fall ever.  There are stairs going down from the south side of the fountain.    
+fall ever.  There are stairs going down from the south side of the fountain.
 ~
 43 0 0 0 0 1
 D0
@@ -863,7 +863,7 @@ Arivat Avenue~
 returning from expeditions with many pelts of many different animals.  There is
 a fresh smell coming from the west and the clink of metal coming from the east.
 To the south is the fountain of clear water and to the north there is the north
-gate.    
+gate.
 ~
 43 0 0 0 0 1
 D0
@@ -888,7 +888,7 @@ Arivat Avenue~
    The street here is just like the rest of it, icy with packed snow on the
 top.  The gurgling of the fountain at the square can be faintly heard from
 here.  There is nothing mush to see here but the igloo houses lining the
-streets.    
+streets.
 ~
 43 0 0 0 0 1
 D0
@@ -905,7 +905,7 @@ Intersection of Arivat Avenue and Artic Street.~
    The intersection of the main road and the northern most road in town is not
 quite as busy as might have been guessed.  The northern gate here seems to be
 well barred and impassible.  What is out there to the very northern reaches of
-Illniyr?    
+Illniyr?
 ~
 43 0 0 0 0 1
 D1
@@ -923,9 +923,9 @@ D3
 S
 #4345
 Nunavut Street~
-   This street crosses with the main street at the square just to the west.  
+   This street crosses with the main street at the square just to the west.
 The weapon shop and the butchery are to the north and south but the doors here
-say private only.  To the east is the east gate of Rankit.    
+say private only.  To the east is the east gate of Rankit.
 ~
 43 0 0 0 0 1
 D1
@@ -942,7 +942,7 @@ Intersection of Nunavut Street and Ice Lane~
    This intersection doesn't have many people in it.  The roads have many
 igloos along the side of them some are bigger than others possibly signifying
 rank or social order.  The gate to to east seems to be well used and well
-maintained.    
+maintained.
 ~
 43 0 0 0 0 1
 D0
@@ -967,7 +967,7 @@ Nunavut Street~
    Continuing on this street the pace of the people picks up and you notice
 sled dogs with there masters coming back from a good hunt.  The other people
 walking along are looking at you like you were a monster; they must not get
-many outsiders.  Just to the east is the eastern gate of Rankit.    
+many outsiders.  Just to the east is the eastern gate of Rankit.
 ~
 43 0 0 0 0 1
 D1
@@ -984,7 +984,7 @@ Western Gate of Rankit~
    The gate here is not as big as the main one but it should be because the
 traffic here is almost non-stop.  Many people going to the stores to sell thier
 good and take some to thier familes.  The gate is well tended and hardly makes
-a noise when it opens.    
+a noise when it opens.
 ~
 43 0 0 0 0 1
 D0
@@ -1006,9 +1006,9 @@ D3
 S
 #4349
 Nunavut Street~
-   This street crosses with the main street at the square just to the east.  
+   This street crosses with the main street at the square just to the east.
 The food supply shop and the fitter are to the north and south but the doors
-here say private only.  To the west is the west gate of Rankit.    
+here say private only.  To the west is the west gate of Rankit.
 ~
 43 0 0 0 0 1
 D1
@@ -1025,7 +1025,7 @@ Intersection of Nunavut Street and Snow Lane~
    This intersection doesn't have many people in it.  The roads have many
 igloos along the side of them some are bigger than others possibly signifying
 rank or social order.  The gate to to west seems to be well used and well
-maintained.    
+maintained.
 ~
 43 0 0 0 0 1
 D0
@@ -1050,7 +1050,7 @@ Nunavut Street~
    Continuing on this street the pace of the people picks up and you notice
 sled dogs with there masters coming back from a good hunt.  The other people
 walking along are looking at you like you were a monster; they must not get
-many outsiders.  Just to the west is the western gate of Rankit.    
+many outsiders.  Just to the west is the western gate of Rankit.
 ~
 43 0 0 0 0 1
 D1
@@ -1067,7 +1067,7 @@ Eastern Gate of Rankit~
    The gate here is not as big as the main one but it should be because the
 traffic here is much more than that one.  Many people going to the stores to
 sell thier good and take some to thier familes.  The gate is well tended and
-hardly makes a noise when it opens.    
+hardly makes a noise when it opens.
 ~
 43 0 0 0 0 1
 D0
@@ -1088,7 +1088,7 @@ Artic Street~
    You are on the northern most street of the city of Rankit.  The people here
 are few and they seem to shy away from the north side of the street even then.
 The folk poke thier heads out of there igloos watching your every move.  There
-are intersections to the east and west of you.    
+are intersections to the east and west of you.
 ~
 43 0 0 0 0 1
 D1
@@ -1105,7 +1105,7 @@ Artic Street~
    You are on the northern most street of the city of Rankit.  The people here
 are few and they seem to shy away from the north side of the street even then.
 The folk poke thier heads out of there igloos watching your every move.  There
-are intersections to the east and west of you.    
+are intersections to the east and west of you.
 ~
 43 0 0 0 0 1
 D1
@@ -1126,7 +1126,7 @@ Artic Street~
    You are on the northern most street of the city of Rankit.  The people here
 are few and they seem to shy away from the north side of the street even then.
 The folk poke thier heads out of there igloos watching your every move.  There
-are intersections to the east and west of you.    
+are intersections to the east and west of you.
 ~
 43 0 0 0 0 1
 D1
@@ -1140,9 +1140,9 @@ D3
 S
 #4356
 Intersection of Artic Street and Eskimo Avenue~
-   This intersection is full of loitering people just talking and laughing.  
+   This intersection is full of loitering people just talking and laughing.
 To the west is a street almost void of people and to the south is a fairily
-busy street.    
+busy street.
 ~
 43 0 0 0 0 1
 D2
@@ -1159,7 +1159,7 @@ Artic Street~
    You are on the northern most street of the city of Rankit.  The people here
 are few and they seem to shy away from the north side of the street even then.
 The folk poke thier heads out of there igloos watching your every move.  There
-are intersections to the east and west of you.    
+are intersections to the east and west of you.
 ~
 43 0 0 0 0 1
 D1
@@ -1176,7 +1176,7 @@ Artic Street~
    You are on the northern most street of the city of Rankit.  The people here
 are few and they seem to shy away from the north side of the street even then.
 The folk poke thier heads out of there igloos watching your every move.  There
-are intersections to the east and west of you.    
+are intersections to the east and west of you.
 ~
 43 0 0 0 0 1
 D1
@@ -1197,7 +1197,7 @@ Artic Street~
    You are on the northern most street of the city of Rankit.  The people here
 are few and they seem to shy away from the north side of the street even then.
 The folk poke thier heads out of there igloos watching your every move.  There
-are intersections to the east and west of you.    
+are intersections to the east and west of you.
 ~
 43 0 0 0 0 1
 D1
@@ -1211,9 +1211,9 @@ D3
 S
 #4360
 Intersection of Artic Street and Inuit Avenue~
-   This intersection is full of loitering people just talking and laughing.  
+   This intersection is full of loitering people just talking and laughing.
 To the east is a street almost void of people and to the south is a fairily
-busy street.    
+busy street.
 ~
 43 0 0 0 0 1
 D1
@@ -1228,9 +1228,9 @@ S
 #4361
 Inuit Avenue~
    This street is pretty busy with people returning with traping and hunting
-prizes.  The street is well maintained to keep the flow of traffic smooth.  
+prizes.  The street is well maintained to keep the flow of traffic smooth.
 Also the people walking past you give you strange looks from underneath thier
-hoods.    
+hoods.
 ~
 43 0 0 0 0 1
 D0
@@ -1245,9 +1245,9 @@ S
 #4362
 Inuit Avenue~
    This street is pretty busy with people returning with traping and hunting
-prizes.  The street is well maintained to keep the flow of traffic smooth.  
+prizes.  The street is well maintained to keep the flow of traffic smooth.
 Also the people walking past you give you strange looks from underneath thier
-hoods.    
+hoods.
 ~
 43 0 0 0 0 1
 D0
@@ -1262,9 +1262,9 @@ S
 #4363
 Inuit Avenue~
    This street is pretty busy with people returning with traping and hunting
-prizes.  The street is well maintained to keep the flow of traffic smooth.  
+prizes.  The street is well maintained to keep the flow of traffic smooth.
 Also the people walking past you give you strange looks from underneath thier
-hoods.    
+hoods.
 ~
 43 0 0 0 0 1
 D0
@@ -1279,9 +1279,9 @@ S
 #4364
 Inuit Avenue~
    This street is pretty busy with people returning with traping and hunting
-prizes.  The street is well maintained to keep the flow of traffic smooth.  
+prizes.  The street is well maintained to keep the flow of traffic smooth.
 Also the people walking past you give you strange looks from underneath thier
-hoods.    
+hoods.
 ~
 43 0 0 0 0 1
 D0
@@ -1296,8 +1296,8 @@ S
 #4365
 Intersection of Whale Street and Inuit Avenue~
    The intersection has people mingeling in the corners and going about their
-buissness.  To the north is a gate with people constantly going in and out.  
-To the east is the main gate that has very few going back and forth.    
+buissness.  To the north is a gate with people constantly going in and out.
+To the east is the main gate that has very few going back and forth.
 ~
 43 0 0 0 0 1
 D0
@@ -1314,7 +1314,7 @@ Eskimo Avenue~
    The road here is well tended but still not as well as the main road.  The
 eastern gate to the south is a fairily busy place with hunters constantly
 coming in and out with pelts and furs to sell to the town shops.  To the north
-is the northern most part of the city.    
+is the northern most part of the city.
 ~
 43 0 0 0 0 1
 D0
@@ -1331,7 +1331,7 @@ Eskimo Avenue~
    The road here is well tended but still not as well as the main road.  The
 eastern gate to the south is a fairily busy place with hunters constantly
 coming in and out with pelts and furs to sell to the town shops.  To the north
-is the northern most part of the city.    
+is the northern most part of the city.
 ~
 43 0 0 0 0 1
 D0
@@ -1348,7 +1348,7 @@ Eskimo Avenue~
    The road here is well tended but still not as well as the main road.  The
 eastern gate to the north is a fairily busy place with hunters constantly
 coming in and out with pelts and furs to sell to the town shops.  To the south
-is an intersection of two streets with not many people around.    
+is an intersection of two streets with not many people around.
 ~
 43 0 0 0 0 1
 D0
@@ -1365,7 +1365,7 @@ Eskimo Avenue~
    The road here is well tended but still not as well as the main road.  The
 eastern gate to the north is a fairily busy place with hunters constantly
 coming in and out with pelts and furs to sell to the town shops.  To the south
-is an intersection of two streets with not many people around.    
+is an intersection of two streets with not many people around.
 ~
 43 0 0 0 0 1
 D0
@@ -1380,8 +1380,8 @@ S
 #4370
 Intersection of Whale Street and Eskimo Avenue~
    The intersection has people mingeling in the corners and going about their
-buissness.  To the north is a gate with people constantly going in and out.  
-To the west is the main gate that has very few going back and forth.    
+buissness.  To the north is a gate with people constantly going in and out.
+To the west is the main gate that has very few going back and forth.
 ~
 43 0 0 0 0 1
 D0
@@ -1397,7 +1397,7 @@ S
 Whale Street~
    The buissness on this street is low.  There no igloos on this side of the
 town, lining the streets, because the wind is blowing out of the south.  To the
-west is the main gate of the city which is used rarely.    
+west is the main gate of the city which is used rarely.
 ~
 43 0 0 0 0 1
 D1
@@ -1413,7 +1413,7 @@ S
 Whale Street~
    The buissness on this street is low.  There no igloos on this side of the
 town, lining the streets, because the wind is blowing out of the south.  To the
-west is the main gate of the city which is used rarely.    
+west is the main gate of the city which is used rarely.
 ~
 43 0 0 0 0 1
 D0
@@ -1433,7 +1433,7 @@ S
 Whale Street~
    The buissness on this street is low.  There no igloos on this side of the
 town, lining the streets, because the wind is blowing out of the south.  To the
-west is the main gate of the city which is used rarely.    
+west is the main gate of the city which is used rarely.
 ~
 43 0 0 0 0 1
 D1
@@ -1449,7 +1449,7 @@ S
 Whale Street~
    The buissness on this street is low.  There no igloos on this side of the
 town, lining the streets, because the wind is blowing out of the south.  To the
-east is the main gate of the city which is used rarely.    
+east is the main gate of the city which is used rarely.
 ~
 43 0 0 0 0 1
 D1
@@ -1465,7 +1465,7 @@ S
 Whale Street~
    The buissness on this street is low.  There no igloos on this side of the
 town, lining the streets, because the wind is blowing out of the south.  To the
-east is the main gate of the city which is used rarely.    
+east is the main gate of the city which is used rarely.
 ~
 43 0 0 0 0 1
 D0
@@ -1485,7 +1485,7 @@ S
 Whale Street~
    The buissness on this street is low.  There no igloos on this side of the
 town, lining the streets, because the wind is blowing out of the south.  To the
-east is the main gate of the city which is used rarely.    
+east is the main gate of the city which is used rarely.
 ~
 43 0 0 0 0 1
 D1
@@ -1501,7 +1501,7 @@ S
 Snow Lane~
    The snow here is very deep.  The potholes you make while steping are up to
 your hips.  The eskimos walking around and above you have snow shoes on
-allowing them to walk without falling down.    
+allowing them to walk without falling down.
 ~
 43 0 0 0 0 1
 D0
@@ -1517,7 +1517,7 @@ S
 Snow Lane~
    The snow here is very deep.  The potholes you make while steping are up to
 your hips.  The eskimos walking around and above you have snow shoes on
-allowing them to walk without falling down.    
+allowing them to walk without falling down.
 ~
 43 0 0 0 0 1
 D0
@@ -1533,7 +1533,7 @@ S
 Snow Lane~
    The snow here is very deep.  The potholes you make while steping are up to
 your hips.  The eskimos walking around and above you have snow shoes on
-allowing them to walk without falling down.    
+allowing them to walk without falling down.
 ~
 43 0 0 0 0 1
 D0
@@ -1549,7 +1549,7 @@ S
 Snow Lane~
    The snow here is very deep.  The potholes you make while steping are up to
 your hips.  The eskimos walking around and above you have snow shoes on
-allowing them to walk without falling down.    
+allowing them to walk without falling down.
 ~
 43 0 0 0 0 1
 D0
@@ -1566,7 +1566,7 @@ Ice Lane~
    It is very slippery here.  The ice doesn't seem to be as well tended for in
 this part of town for some reason as the rest of the city.  The igloos still
 line the streets and residents of these igloos poke thier heads out and look at
-you warily.    
+you warily.
 ~
 43 0 0 0 0 1
 D0
@@ -1583,7 +1583,7 @@ Ice Lane~
    It is very slippery here.  The ice doesn't seem to be as well tended for in
 this part of town for some reason as the rest of the city.  The igloos still
 line the streets and residents of these igloos poke thier heads out and look at
-you warily.    
+you warily.
 ~
 43 0 0 0 0 1
 D0
@@ -1600,7 +1600,7 @@ Ice Lane~
    It is very slippery here.  The ice doesn't seem to be as well tended for in
 this part of town for some reason as the rest of the city.  The igloos still
 line the streets and residents of these igloos poke thier heads out and look at
-you warily.    
+you warily.
 ~
 43 0 0 0 0 1
 D0
@@ -1617,7 +1617,7 @@ Ice Lane~
    It is very slippery here.  The ice doesn't seem to be as well tended for in
 this part of town for some reason as the rest of the city.  The igloos still
 line the streets and residents of these igloos poke thier heads out and look at
-you warily.    
+you warily.
 ~
 43 0 0 0 0 1
 D0
@@ -1634,7 +1634,7 @@ Rankit Food Supply~
    The smell of freshly baked food eminates from this shop.  There is a list on
 the counter for all to see the contents of the shop.  There are four large
 ovens on the back wall releaseing heat that makes this room at least 20 degrees
-warmer than outside.    
+warmer than outside.
 ~
 43 0 0 0 0 0
 D1
@@ -1646,8 +1646,8 @@ S
 Rankit Weaponry~
    There is a large clamor of metal on heated metal as you enter.  The weapons
 lining the walls are all polished and shining waiting to be used for good or
-evil.  The heat here is unbearably hot as the room is stuffy and congested.  
-The temperature outside must be at least 50 degrees lower than in here.    
+evil.  The heat here is unbearably hot as the room is stuffy and congested.
+The temperature outside must be at least 50 degrees lower than in here.
 ~
 43 0 0 0 0 0
 D3
@@ -1660,7 +1660,7 @@ Rankit Tunic Fitter~
    While standing in this room with fur lined leather clothing upon every wall
 the young shopkeeper stands and greets you upon entering.  There are sewing
 needles and unfinished hides littering the floor, evidence of continued
-buissness.    
+buissness.
 ~
 43 0 0 0 0 0
 D1
@@ -1670,7 +1670,7 @@ D1
 E
 hides skins~
    The hides that line the walls are tanned and shaped.  They are just models
-for the sizing is different for different people.    
+for the sizing is different for different people.
 ~
 S
 #4388
@@ -1679,7 +1679,7 @@ The Butchery~
 as you enter as it smells like long over due socks that need washing.  Other
 fouler smells are mixed throughout the area but none worse than the smell of
 dead animals.  No one seems to be able to cope with the smell exept for the
-butcher himself as you see residents come in then run out.    
+butcher himself as you see residents come in then run out.
 ~
 43 0 0 0 0 0
 D3
@@ -1692,7 +1692,7 @@ Entrance to Glogtar's Throne Room~
    The steps leading back up to a hole in the snow emerges out in the air of
 the center of the city.  Nobody comes here from the outside for fear of seeing
 thier dictator, Glogtar the Ruler of Ice.  To the north is a tunnel with a
-large light coming from the end.    
+large light coming from the end.
 ~
 43 4 0 0 0 0
 D0
@@ -1726,7 +1726,7 @@ A Tunnel Through the Snow ~
 through the hole that is continually cleared of snow.  Just to the north is the
 throne of Glogtar.  The light coming there is bright and does not flicker.  If
 there was a fire here it would melt and collapse the whole chamber and tunnel
-causing the raod below to cave in.    
+causing the raod below to cave in.
 ~
 43 0 0 0 0 0
 D0
@@ -1745,7 +1745,7 @@ the size it should be for his size.  The snow is neatly packed around the
 chamber and dug out so you have to decend several steps to come upon the Ruler
 of the Ice.  Servants constantly coming in and out through a small entry way in
 the west side of the wall bring thier king delicacies.  To the south is the
-exit and there is a small intricately carved door to te east.    
+exit and there is a small intricately carved door to te east.
 ~
 43 0 0 0 0 0
 D1
@@ -1764,14 +1764,14 @@ E
 throne~
    The throne is carved very delicately and very skillfully.  The carving in
 the wood has many curves and intricate lacings throughout the intirething from
-the legs to the head.    
+the legs to the head.
 ~
 S
 #4393
 Treasure Room~
    This room is lined with steel and looks like a prison cell.  The one
 exeption to it being a prison is the HUGE amount of money sitting in the
-corner.  The only way out is the way you came in.    
+corner.  The only way out is the way you came in.
 ~
 43 0 0 0 0 0
 D3
@@ -1783,7 +1783,7 @@ S
 A Hunting Trail~
    You are on a game path.  Many animals have come by here to be attacked and
 killed to be eaten.  There are eskimo tracks everywhere heading to the east
-were the hunting trail leads on.    
+were the hunting trail leads on.
 ~
 43 0 0 0 0 2
 D1
@@ -1800,7 +1800,7 @@ A hunting Trail~
    The trail turns east and is quickly lost to the skill of eskimo hunters in
 snow.  Save the very fine foots prints hardly noticeable to the naked eye.  To
 the west is the gate of Rankit and to the south is barren lands of snow and
-ice.    
+ice.
 ~
 43 0 0 0 0 2
 D2
@@ -1816,7 +1816,7 @@ S
 A Mud Trail~
    The road becomes wet with melted water from the north.  The water seeps
 between your toes and is uncomfortably cold.  The trail continues west through
-more mud and back east to dry dirt.    
+more mud and back east to dry dirt.
 ~
 43 0 0 0 0 2
 D3
@@ -1829,7 +1829,7 @@ A Mud Trail~
    The surroundings are changing as the weather becomes colder and the ground
 begins to freeze.  The mud is becoming harder and a chill wind begins blowing
 from the north and west.  To the east is the warmth of the minotaur city, Dun
-Maura.  To the north is a wasteland of cold.    
+Maura.  To the north is a wasteland of cold.
 ~
 43 0 0 0 0 2
 D0
@@ -1846,7 +1846,7 @@ A Cold, Wet Trail~
    The trail is very wet and very cold now.  The mud has disappeared and the
 cold is all that is left.  There seems to be no trace of life anywhere around.
 To the south you must go through the mud and to the north is a sparkeling
-bridge.    
+bridge.
 ~
 43 0 0 0 0 2
 D0
@@ -1863,7 +1863,7 @@ A Trail of Snow~
    The temperature is now below freezing and the breath comes out of you in
 puffs of visible air.  The bridge to the north is madde of ice and the trail
 behind is wet.  The change of climates seems to be very dramatic for such a
-small distance traveled.    
+small distance traveled.
 ~
 43 4 0 0 0 2
 D0

@@ -5,7 +5,7 @@ A woman wearing a pretty pink taffeta dress trudges along the beach.
 ~
    My, what beauty.  But she just gives you a long, doleful stare and without a
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
-seem to work with her beautiful face.    
+seem to work with her beautiful face.
 ~
 220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -21,7 +21,7 @@ A woman wearing a pretty blue silk dress trudges along the beach.
 ~
    My, what beauty.  But she just gives you a long, doleful stare and without a
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
-seem to work with her beautiful face.    
+seem to work with her beautiful face.
 ~
 220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -37,7 +37,7 @@ A woman wearing a pretty pristine white cotton dress trudges along the beach.
 ~
    My, what beauty.  But she just gives you a long, doleful stare and without a
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
-seem to work with her beautiful face.    
+seem to work with her beautiful face.
 ~
 220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -53,7 +53,7 @@ A woman wearing a drab beige burlap dress trudges along the beach.
 ~
    My, what beauty.  But she just gives you a long, doleful stare and without a
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
-seem to work with her beautiful face.    
+seem to work with her beautiful face.
 ~
 220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -69,7 +69,7 @@ A slave for the master works endlessly at his will.
 ~
    My, what beauty.  But she just gives you a long, doleful stare and without a
 sound continues along.  How strange--her eyes are a very dull grey.  Doesn't
-seem to work with her beautiful face.    
+seem to work with her beautiful face.
 ~
 220 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -83,7 +83,7 @@ A very fat harem master orders his concubines around.
 ~
    Gads.  This man must have some kind of magic to be able to keep all of these
 women, because he certainly doesn't have the face for it.  He looks somewhat
-like a cross between a pear and a potato, but without the good looks.    
+like a cross between a pear and a potato, but without the good looks.
 ~
 10 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
@@ -98,7 +98,7 @@ a small, red crab~
 A small, red crab scuttles along the beach.
 ~
    This small creature has rather large pincers for its negligble size.  It
-looks benign, but probably wouldn't appreciate being attacked.    
+looks benign, but probably wouldn't appreciate being attacked.
 ~
 88 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
@@ -111,7 +111,7 @@ a cuddly little tar baby~
 A cute, cuddly little tar baby is here, ready to follow the first person it sees.
 ~
    Aww, this cute little thing is just COVERED in tar.  It latches on to the
-first sign of human life.  And it's just so cute you can't want to kill it!  
+first sign of human life.  And it's just so cute you can't want to kill it!
 
 ~
 220 0 0 0 16 0 0 0 500 E
@@ -126,7 +126,7 @@ a seagull~
 A seagull flies about the cliff.
 ~
    Hmm...  It's a bird, that much you can tell.  It doesn't appear to care
-whether you look closely at it or not.    
+whether you look closely at it or not.
 ~
 26 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
@@ -139,9 +139,9 @@ the Priest of Fear~
 The Priest of Fear is walking around, looking rather pompous.
 ~
    This incredibly strong person doesn't look like the kind of man you'd want
-to meet on the street every day.  He certainly inspires fear in your heart.  
+to meet on the street every day.  He certainly inspires fear in your heart.
 You'd most likely *NOT* want to attempt to kill this man!  He's one mean
-fellow!    
+fellow!
 ~
 88 0 0 0 16 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
@@ -154,7 +154,7 @@ ghost banshee siren~
 a wailing ghost~
 A wailing ghost floats about the halls.
 ~
-   You look and look but all you can really see is the wall behind it, and a 
+   You look and look but all you can really see is the wall behind it, and a
 faint outline of something making the wall shimmer.
 ~
 248 0 0 0 1122376 0 0 0 -750 E
@@ -167,10 +167,10 @@ prisoner cellmate~
 the prisoner~
 A prisoner, locked up for crimes against Fear, is raving here.
 ~
-   The prisoner looks at you bravely and shouts, "JUST KILL ME!  I DARE YOU!  
+   The prisoner looks at you bravely and shouts, "JUST KILL ME!  I DARE YOU!
 " He looks totally emaciated, as if he hasn't been fed for weeks.  He is dirty
 and almost naked--his rags barely cover him.  He is covered in his own filth.
-Just looking at him makes you want to retch.    
+Just looking at him makes you want to retch.
 ~
 14 0 0 0 16 0 0 0 -900 E
 24 12 -4 4d4+240 4d4+4
@@ -183,7 +183,7 @@ the butcher~
 The butcher stands here, waiting for his next kill.
 ~
    He's rather ordinary, except for the humongous knife he holds in his hand.
-  
+
 ~
 10 0 0 0 0 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
@@ -200,7 +200,7 @@ The High Priest of Terror stands before you in all her majesty.
 this kind of position, you didn't expect to see someone this beautiful and
 kind- looking.  She stands about 2 meters tall, and while she is obviously very
 strong, she is also quite voluptious.  She looks at you with the most
-sympathetic eyes--you just want to give yourself over to her.    
+sympathetic eyes--you just want to give yourself over to her.
 ~
 88 0 0 0 16 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
@@ -213,7 +213,7 @@ keeper vice~
 the Keeper of the Shrine of Vice~
 The Keeper of the Shrine of Vice guards the alter from desecration.
 ~
-   This man is covered in the blood of his former kills. He looks as if 
+   This man is covered in the blood of his former kills. He looks as if
 he would like to make you his next. Keep clear of this guy.
 ~
 14 0 0 0 16 0 0 0 -800 E
@@ -226,13 +226,13 @@ dragon terror~
 the Grand Dragon of Terror~
 The Grand Dragon of Terror rests, curled around a giant pillar in the temple.
 ~
-   This dragon is just beautiful.  Its scales are mirror-like in polish.  
+   This dragon is just beautiful.  Its scales are mirror-like in polish.
 Beautifully-coloured wings protrude from the sides.  Unlike most dragons, this
 actually resembles a snake--except that it's about one-hundred times larger,
 and certainly is more dangerous.  Sharp teeth extend from the mouth, and wisps
 of smoke curl from its nose.  It looks at you with infinite intelligence and a
 little bit of resignation, as though it knows you will eventually get around to
-attacking it.    
+attacking it.
 ~
 90 0 0 0 16 0 0 0 -750 E
 24 12 -4 4d4+240 4d4+4
@@ -246,7 +246,7 @@ The torturer stands here, brandishing a cat o' nine tails.
 ~
    The torturer looks stark raving mad, to be frank.  He waves his weapon in
 the air with a mad cackle, and looks at you.  With an evil grin, he says, "ah,
-my next victim!  Yessssss" and launches himself at you.    
+my next victim!  Yessssss" and launches himself at you.
 ~
 26 0 0 0 16 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
@@ -274,7 +274,7 @@ The Grand Inquisitor of Despair looks you up and down appraisingly.
 ~
    This man looks just like the others, except for an uncharactistic gleam in
 his eye.  He looks quite sinister, as though he expects to get information out
-of you--whether you know it or not.    
+of you--whether you know it or not.
 ~
 216 0 0 0 0 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
@@ -288,7 +288,7 @@ the Priest of Hopelessness~
 The Priest of Hopelessness stands here, waiting to remove all hope of leaving.
 ~
    The priest looks back at you indignantly and says, "how dare you attempt to
-look at me!?  " and prompty attacks you.    
+look at me!?  " and prompty attacks you.
 ~
 10 0 0 0 1048576 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3

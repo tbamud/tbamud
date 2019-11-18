@@ -43,7 +43,7 @@ c~
 if %cmd.mudcommand% == cast && fireshield /= %arg%
   if %actor.class% == Magic User
     %echoaround% %actor% %self.shortdesc% that %actor.name% is wearing glows brightly for a moment.
-    %send% %actor% Your %self.shortdesc% glows brightly for a moment. 
+    %send% %actor% Your %self.shortdesc% glows brightly for a moment.
     dg_cast 'armor' %actor%
   end
   eval ward_major %ward_major%+1
@@ -111,14 +111,14 @@ Crystal Ball to Locate a Mob.~
 1 c 7
 locate~
 * By Rumble of The Builder Academy    tbamud.com 9091
-set find %arg% 
+set find %arg%
 if !%find.is_pc%
-  eval rname %find.room% 
-  %send% %actor% As you gaze into the ball, it starts to glow. You see an image of %find.name% in %rname.name%. 
-else 
-  %send% %actor% All that you see is a blurry haze. 
-end 
-%echoaround% %actor% %actor.name% peers into %actor.hisher% gently glowing crystal ball. 
+  eval rname %find.room%
+  %send% %actor% As you gaze into the ball, it starts to glow. You see an image of %find.name% in %rname.name%.
+else
+  %send% %actor% All that you see is a blurry haze.
+end
+%echoaround% %actor% %actor.name% peers into %actor.hisher% gently glowing crystal ball.
 ~
 #206
 Smelly Bum - M168~
@@ -163,7 +163,7 @@ global from_room
 Mob Blocks opening of chest~
 2 c 100
 o~
-* By Rumble of The Builder Academy    tbamud.com 9091 
+* By Rumble of The Builder Academy    tbamud.com 9091
 * Make sure the command is open, check for any abbrev of chest
 if %cmd.mudcommand% == open && chest /= %arg%
   * findmob checks if the mob is in the room.
@@ -200,24 +200,24 @@ Open a Chest once per zone reset~
 1 c 100
 open~
 * By Mordecai
-if chest /= %arg% 
-  * Verify that the player typed 'open chest' 
-  * Has the player already opened this chest? 
-  context %actor.id% 
-  if %already_opened_chest% 
-    %send% %actor% The chest has already been opened, and emptied. 
-  else 
-    * The first time!  OK, open the chest. 
+if chest /= %arg%
+  * Verify that the player typed 'open chest'
+  * Has the player already opened this chest?
+  context %actor.id%
+  if %already_opened_chest%
+    %send% %actor% The chest has already been opened, and emptied.
+  else
+    * The first time!  OK, open the chest.
     %send% %actor% You get a jar of naphthalene from an iron bound chest.
     %load% obj 306 %actor% inv
     * Remember that the player has already opened this chest until next reboot/copyover. This limits this item to only be found once per boot per player.
-    set already_opened_chest 1 
+    set already_opened_chest 1
     global already_opened_chest
-    return 0 
-  end 
-else 
-  * Not 'open chest' - pass control back to the command parser 
-  return 0 
+    return 0
+  end
+else
+  * Not 'open chest' - pass control back to the command parser
+  return 0
 end
 ~
 #210
@@ -261,7 +261,7 @@ else
   %load% obj 184
   set phoenix_deaths 0
   %echo% Something in the pile of ashes glimmers brightly.
-end  
+end
 * Remember the count for the next time this trig fires
 global phoenix_deaths
 ~

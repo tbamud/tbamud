@@ -34,7 +34,7 @@ East.  You see nothing of interest.
 0 -1 7103
 E
 mud~
-   You never saw such disgusting matter before, it nearly makes you puke.  
+   You never saw such disgusting matter before, it nearly makes you puke.
 ~
 S
 #7102
@@ -61,7 +61,7 @@ E
 ladder~
    This is funny enough a wooden ladder and, after closer inspection, you
 discover it is magically held to the wall!  You can't, even with your greatest
-effort, move it at ALL!  
+effort, move it at ALL!
 ~
 S
 #7103
@@ -78,7 +78,7 @@ You have a felling it would be nice to have your feet free from mud again.
 ~
 0 -1 7104
 D3
-You can see a room in which mud drips from the roof onto the floor in 
+You can see a room in which mud drips from the roof onto the floor in
 great cakes of sludge.  There doesn't seem to be any exits from that room
 apart from in you direction.
 ~
@@ -86,7 +86,7 @@ apart from in you direction.
 0 -1 7101
 E
 mud~
-   You never saw such disgusting matter before, it nearly makes you puke.  
+   You never saw such disgusting matter before, it nearly makes you puke.
 ~
 S
 #7104
@@ -127,8 +127,8 @@ Anyway it SEEMS darker down here than up there, if that is possible.
 0 -1 7015
 D5
 Down there nothing at all can be spotted.  The darkness that engulfs this
-decent seems utterly impossible in a mortal world.  It is so thick that a 
-torch down there would be utterly useless... or so it seems to you.  Not 
+decent seems utterly impossible in a mortal world.  It is so thick that a
+torch down there would be utterly useless... or so it seems to you.  Not
 the kind of thing to cheer you up on this voyage, Eh?
 ~
 ~
@@ -136,7 +136,7 @@ the kind of thing to cheer you up on this voyage, Eh?
 E
 bars~
    These look like they're pretty slippery, and not very safe, but perhaps safe
-enough for you to climb down, WITH both hands on them.  
+enough for you to climb down, WITH both hands on them.
 ~
 S
 #7106
@@ -165,18 +165,18 @@ rock step edge~
 E
 rock~
    It looks as if it can be opened in a door-like fashion.  Maybe this will lead
-the way down.  
+the way down.
 ~
 E
 step~
    A small rock sticks out right under it, otherwise the way is DOWN, DOWN, and
-SPLAT!!!  
+SPLAT!!!
 ~
 E
 edge odd-looking~
    This is truly a weird piece of craftsmanship in your eyes.  The edge seems to
 form a step leading down, but WHAT a STEP DOWN.  The Abyss opens down there
-leading to seemingly total destruction.  
+leading to seemingly total destruction.
 ~
 S
 #7107
@@ -193,7 +193,7 @@ North.  The ledge leads into a corner and turns eastward.
 ~
 0 -1 7106
 D1
-You stare into mid-air, and right under there is absolutely nothing but 
+You stare into mid-air, and right under there is absolutely nothing but
 darkness.  You shiver by the thought of falling an utterly unknown distance.
 ~
 ~
@@ -309,18 +309,18 @@ rock step edge~
 E
 rock~
    It looks as if it can be opened in a door-like fashion.  Maybe this will lead
-the way down.  
+the way down.
 ~
 E
 step~
    A small rock sticks out right under it, otherwise the way is DOWN, DOWN, and
-SPLAT!!!  
+SPLAT!!!
 ~
 E
 edge odd-looking~
    This is truly a weird piece of craftsmanship in your eyes.  The edge seems to
 form a step leading down, but WHAT a STEP DOWN.  The Abyss opens down there
-leading to seemingly total destruction.  
+leading to seemingly total destruction.
 ~
 S
 #7112
@@ -429,13 +429,13 @@ E
 soil soft earth~
    You can just make out the outline of a trapdoor here in the soil.  The earth
 is probably there to conceal a secret entrance.  This looks as if it leads down
-into the seemingly solid rock face of the ledge.  
+into the seemingly solid rock face of the ledge.
 ~
 E
 ground ledge rock~
    The ground here seems a little different from all the other ledges along the
 Abyss.  There is a kind of soft soil on this ledge, maybe you should look
-carefully at this.  It seems to be of some interest.  
+carefully at this.  It seems to be of some interest.
 ~
 S
 #7117
@@ -552,18 +552,18 @@ rock step edge~
 E
 rock~
    It looks as if it can be opened in a door-like fashion.  Maybe this will lead
-the way down.  
+the way down.
 ~
 E
 step~
    A small rock sticks out right under it, otherwise the way is DOWN, DOWN, and
-SPLAT!!!  
+SPLAT!!!
 ~
 E
 edge odd-looking~
    This is truly a weird piece of craftsmanship in your eyes.  The edge seems to
 form a step leading down, but WHAT a STEP DOWN.  The Abyss opens down there
-leading to seemingly total destruction.  
+leading to seemingly total destruction.
 ~
 S
 #7122
@@ -578,7 +578,7 @@ D3
 0 -1 7112
 E
 wall~
-   There is a crack here that looks like it has been made recently.  
+   There is a crack here that looks like it has been made recently.
 ~
 S
 #7123

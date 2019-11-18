@@ -3,7 +3,7 @@ fish~
 the large fish~
 A large fish swims here.
 ~
-   This fish looks very mean and hungry.    
+   This fish looks very mean and hungry.
 ~
 76 0 0 0 0 0 0 0 -20 E
 22 13 -3 4d4+220 3d3+3
@@ -17,7 +17,7 @@ a large swordfish~
 A large swordfish swims here.
 ~
    This fish has a very long and sharp looking nose and appears to not notice
-you.    
+you.
 ~
 72 0 0 0 0 0 0 0 -20 E
 22 13 -3 4d4+220 3d3+3
@@ -32,7 +32,7 @@ A large ugly monster stands here.
 ~
    This monster looks hungry for blood.  There are many blood stains around his
 mouth and about his body.  Many different bones line his neck connected by some
-kind of metal.    
+kind of metal.
 ~
 30 0 0 0 0 0 0 0 -100 E
 23 13 -3 4d4+230 3d3+3
@@ -53,7 +53,7 @@ A small rat is here running in circles.
 ~
    The rat looks as if it has many wounds on his back as if something has
 attacked it or something.  The rat itself looks all but sick, it has a lot of
-energy and appears to have been running in circles for hours.    
+energy and appears to have been running in circles for hours.
 ~
 26 0 0 0 1024 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -72,7 +72,7 @@ A large statue stands firm here.
 ~
    This statue appears to be solid yet alive.  It looks very strong but not to
 fast but it seems to not be moving at all.  The statue stands firm looking east
-towards where you came from.    
+towards where you came from.
 ~
 10 0 0 0 4 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
@@ -90,7 +90,7 @@ a large spider~
 A large spider with a look for blood is stuck to the wall here.
 ~
    This spider has many corpses strown about his web and it seems to want to
-add you.    
+add you.
 ~
 26 0 0 0 0 0 0 0 -100 E
 24 12 -4 4d4+240 4d4+4
@@ -106,7 +106,7 @@ A very old looking man stands tall here.
    This man appears to be very old and has many war wounds.  He also seems to
 be experienced in the art of war.  The old man looks not to be a warrior or
 fighter but rather a spell caster.  Wearing many valuable looking pieces of eq
-makes you wonder can this guy be serious.    
+makes you wonder can this guy be serious.
 ~
 8202 0 0 0 0 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
@@ -123,7 +123,7 @@ troll~
 the large troll~
 A large troll with markings of some king of clan stands here.
 ~
-   The troll looks to be tired and stressed.    
+   The troll looks to be tired and stressed.
 ~
 10 0 0 0 0 0 0 0 -100 E
 26 12 -5 5d5+260 4d4+4
@@ -149,7 +149,7 @@ Queen Plegia sits atop her throne here.
 ~
    The queen looks as if she has a lot of power and experience.  She has
 beautifull white hair and baby blue eyes.  She appears to not question your
-intrusion rather seems glad you came.    
+intrusion rather seems glad you came.
 ~
 10 0 0 0 0 0 0 0 100 E
 26 12 -5 5d5+260 4d4+4
@@ -164,7 +164,7 @@ A large crystal covered dragon rests here.
 ~
    This dragon seems to be very old and very experienced due to the massive war
 wounds on it's back and wings.  The dragon looks very tough and seems to be
-made of crystal.    
+made of crystal.
 ~
 10 0 0 0 1048576 0 0 0 0 E
 26 12 -5 5d5+260 4d4+4
@@ -182,7 +182,7 @@ the trout~
 A large trout swims here.
 ~
    This trout looks a little bit mean.  His eyes are glowing red and his scales
-are slightly glowing.  The fish swims here unaware of your entrance.    
+are slightly glowing.  The fish swims here unaware of your entrance.
 ~
 72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
@@ -195,7 +195,7 @@ the blue bird~
 A swift blue bird is flying here.
 ~
    This bird seems very fast not very strong but very fast.  This bird is
-flying around very fast making it hard for you to keep up with.    
+flying around very fast making it hard for you to keep up with.
 ~
 72 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -213,7 +213,7 @@ A small crab sits here.
 ~
    This crab looks very tough.  The crab has only one claw but that has been
 enough to keep it alive so far.  The crab also is missing a leg which appears
-to have been eaten.    
+to have been eaten.
 ~
 72 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -228,7 +228,7 @@ A swimming duck is here in the water.
 ~
    The duck has many colorfull feathers and seems flawless in pattern and color
 of it's feathers.  The duck itself seems very calm and easy.  The water around
-the duck seems to be cleaner than the rest.    
+the duck seems to be cleaner than the rest.
 ~
 72 0 0 0 0 0 0 0 0 E
 24 12 -4 4d4+240 4d4+4
@@ -242,7 +242,7 @@ A large swallow is here hunting fish.
 ~
    This swallow looks very hungry and has determination in his eye but has had
 no luck as of yet.  The bird is very persistant and seems almost dead from
-hunger but he keeps searching.    
+hunger but he keeps searching.
 ~
 72 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4

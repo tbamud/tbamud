@@ -28,10 +28,10 @@ Objects      : 13
 Shops        : 0
 Triggers     : 0
 Theme        : Medieval
-Plot         : The zone is based off the theme of Camelot. Based off the theme 
-               of Camelot, king arthur, the knights, the round table merlin, 
+Plot         : The zone is based off the theme of Camelot. Based off the theme
+               of Camelot, king arthur, the knights, the round table merlin,
                etc. Only reachable by teleport. Originally started with zone 16
-               and 17, ran out of room so also used a few rooms in zone 7. zone 
+               and 17, ran out of room so also used a few rooms in zone 7. zone
                7 is now used for extra rooms where needed.
 Zone 17 is linked to the following zones:
   7 Camelot                        at  1700 (north) --->   775
@@ -57,11 +57,11 @@ Zone 17 is linked to the following zones:
 S
 #1701
 East Lane~
-   A battlement above the main gate towers over you to the north.  You are 
-on a lane that parallels the eastern wall of this fortress.  You can follow 
-it to the south or enter the courtyard to the west.  Out in the courtyard 
-you see a couple groups of people talking amongst themselves.  Maybe they 
-can give you some answers to what's going on.    
+   A battlement above the main gate towers over you to the north.  You are
+on a lane that parallels the eastern wall of this fortress.  You can follow
+it to the south or enter the courtyard to the west.  Out in the courtyard
+you see a couple groups of people talking amongst themselves.  Maybe they
+can give you some answers to what's going on.
 ~
 17 0 0 0 0 0
 D2
@@ -210,10 +210,10 @@ D1
 S
 #1709
 Center Lane~
-   Just to the north is an entrance into the castle.  A few people are 
-walking along the lane to the north and south but they don't seem to have 
-a purpose other than to be pacing, obviously waiting for something or 
-someone.    
+   Just to the north is an entrance into the castle.  A few people are
+walking along the lane to the north and south but they don't seem to have
+a purpose other than to be pacing, obviously waiting for something or
+someone.
 ~
 17 0 0 0 0 0
 D0
@@ -227,10 +227,10 @@ D2
 S
 #1710
 Horse Stall~
-   You open the gate and step in with one of the massive war horses.  It 
-looks at you and you start to get the feeling that you shouldn't be 
-bothering this impressive horse.  A bin of grain and half a bale of hay 
-lie on the floor.    
+   You open the gate and step in with one of the massive war horses.  It
+looks at you and you start to get the feeling that you shouldn't be
+bothering this impressive horse.  A bin of grain and half a bale of hay
+lie on the floor.
 ~
 17 8 0 0 0 0
 D3
@@ -241,7 +241,7 @@ S
 #1711
 Stables~
    You stand in the vast stables of Camelot.  Row upon row of stalls greet your
-eye.  Smells of horse, sweat, and fresh straw combine into an unpleasant mix.  
+eye.  Smells of horse, sweat, and fresh straw combine into an unpleasant mix.
 ~
 17 8 0 0 0 0
 D0
@@ -263,10 +263,10 @@ D3
 S
 #1712
 Horse Stall~
-   You open the gate and step in with one of the massive war horses.  It 
-looks at you and you start to get the feeling that you shouldn't be 
-bothering this impressive horse.  A bin of grain and half a bale of hay 
-lie on the floor.    
+   You open the gate and step in with one of the massive war horses.  It
+looks at you and you start to get the feeling that you shouldn't be
+bothering this impressive horse.  A bin of grain and half a bale of hay
+lie on the floor.
 ~
 17 8 0 0 0 0
 D1
@@ -276,9 +276,9 @@ D1
 S
 #1713
 Group of Ladies~
-   You perk up your ears and listen in on the group of ladies.  You 
-overhear "..  It is terrible.  The poor girl was captured on her way to 
-her wedding by that foul Mordred.  Her father has offered a considerable 
+   You perk up your ears and listen in on the group of ladies.  You
+overhear "..  It is terrible.  The poor girl was captured on her way to
+her wedding by that foul Mordred.  Her father has offered a considerable
 sum for her safe return.  I think my Gawaine can surely claim it..  "
 ~
 17 8 0 0 0 0
@@ -354,7 +354,7 @@ Abbey~
    You enter a small temple of prayer.  You don't see the usual aisles of chairs
 or benches, the floors are covered with numerous mats.  They must worship by
 kneeling on them, how strange.  A few monks tend to the various candles
-surrounding the room.  
+surrounding the room.
 ~
 17 8 0 0 0 0
 D0
@@ -368,10 +368,10 @@ D2
 S
 #1718
 Practice Yard~
-   Several knights are here practicing the arts of combat.  All of them 
-look to be very proficient.  Several squires and lackeys look on in 
-concentration, trying to memorize the complex forms the masterful knights 
-use to try to overcome each other.    
+   Several knights are here practicing the arts of combat.  All of them
+look to be very proficient.  Several squires and lackeys look on in
+concentration, trying to memorize the complex forms the masterful knights
+use to try to overcome each other.
 ~
 17 0 0 0 0 0
 D0
@@ -385,10 +385,10 @@ D2
 S
 #1719
 Scottish Clansmen~
-   You stare around in horror at what once must have been some sort of 
-dance hall or large meeting place.  It has now been taken over by all 
-these Scottish warriors.  It must be hard times if the King is seeking 
-help from these ruffians.    
+   You stare around in horror at what once must have been some sort of
+dance hall or large meeting place.  It has now been taken over by all
+these Scottish warriors.  It must be hard times if the King is seeking
+help from these ruffians.
 ~
 17 8 0 0 0 0
 D0
@@ -419,10 +419,10 @@ D2
 S
 #1721
 Battlements~
-   You stand atop the battlements over the main gate, looking across the 
-lake at the small ferry on the shore waiting to carry travellers across.  
-Several Archers and guards keep a sharp lookout as if they are expecting 
-a full scale siege at any moment.    
+   You stand atop the battlements over the main gate, looking across the
+lake at the small ferry on the shore waiting to carry travellers across.
+Several Archers and guards keep a sharp lookout as if they are expecting
+a full scale siege at any moment.
 ~
 17 0 0 0 0 0
 D5
@@ -433,9 +433,9 @@ S
 #1722
 Southeast Tower~
    You reach the top of the stairs and stare across the lake and down onto
-Bellau City to the east and a thick forest to the south.  The lake around 
-the castle is smooth as glass and reflects an inverse image of the castle.  
-The stairs lead back down.    
+Bellau City to the east and a thick forest to the south.  The lake around
+the castle is smooth as glass and reflects an inverse image of the castle.
+The stairs lead back down.
 ~
 17 0 0 0 0 0
 D5
@@ -457,9 +457,9 @@ D5
 S
 #1724
 Open Field~
-   Another pair of oxen are pulling a plow with a farmer walking behind 
-them.  The farmer stares at you in disgust as you walk by.  These people 
-don't seem to be very happy about working in these fields.    
+   Another pair of oxen are pulling a plow with a farmer walking behind
+them.  The farmer stares at you in disgust as you walk by.  These people
+don't seem to be very happy about working in these fields.
 ~
 17 0 0 0 0 0
 D0
@@ -492,10 +492,10 @@ D2
 S
 #1726
 East Lane~
-   You walk down a back alley with the castle wall to the east and a 
-building to the west.  The shadows are deep in this corner of the castle 
-and it seems like the beggars and unlawful merchants have taken over this 
-area.    
+   You walk down a back alley with the castle wall to the east and a
+building to the west.  The shadows are deep in this corner of the castle
+and it seems like the beggars and unlawful merchants have taken over this
+area.
 ~
 17 0 0 0 0 0
 D0
@@ -557,9 +557,9 @@ D3
 S
 #1730
 Main Hall~
-   This hallway continues north and south.  Open double doors to the east 
-allow you to hear the clatter of utensils and a drone of conversations 
-coming through the doorway.  Sounds like a feast is being held.    
+   This hallway continues north and south.  Open double doors to the east
+allow you to hear the clatter of utensils and a drone of conversations
+coming through the doorway.  Sounds like a feast is being held.
 ~
 17 8 0 0 0 0
 D0
@@ -573,9 +573,9 @@ D2
 S
 #1731
 Stairs~
-   A set of stairs wind in a spiral out of sight up into the second level 
-of the castle.  The stairs are spotless and torches are placed close 
-together illuminating every corner of the room.    
+   A set of stairs wind in a spiral out of sight up into the second level
+of the castle.  The stairs are spotless and torches are placed close
+together illuminating every corner of the room.
 ~
 17 8 0 0 0 0
 D3
@@ -626,9 +626,9 @@ D4
 S
 #1734
 Center Lane~
-   A few people are exiting and entering an open doorway into the castle 
-to the north.  They look to be mostly nobles and servants.  All of the 
-common folk must be out working the fields.  A tall wall is to the west.    
+   A few people are exiting and entering an open doorway into the castle
+to the north.  They look to be mostly nobles and servants.  All of the
+common folk must be out working the fields.  A tall wall is to the west.
 ~
 17 0 0 0 0 0
 D0
@@ -696,9 +696,9 @@ S
 #1738
 Room of Ladies~
    Oh yes, it is here that the virginal maidens of the court reside, pining
-away for their knights who travel far and wide on Arthurs missions.  The 
-main activity here is tapestry making, and presently there are three tapestries 
-under construction.    
+away for their knights who travel far and wide on Arthurs missions.  The
+main activity here is tapestry making, and presently there are three tapestries
+under construction.
 ~
 17 8 0 0 0 0
 D0
@@ -777,11 +777,11 @@ D2
 S
 #1742
 Abbey~
-   More monks are here but they seem to be more interested in studying 
-their books than worship.  Tables line both walls with books stacked on 
-every available part of the floor.  They must be in charge of recording 
-current events.  If you want to find out what's wrong with these people, 
-this would be the best place to start.    
+   More monks are here but they seem to be more interested in studying
+their books than worship.  Tables line both walls with books stacked on
+every available part of the floor.  They must be in charge of recording
+current events.  If you want to find out what's wrong with these people,
+this would be the best place to start.
 ~
 17 8 0 0 0 0
 D0
@@ -812,10 +812,10 @@ D2
 S
 #1744
 Scottish Clansmen~
-   These hardened warriors seem oblivious to the fact that they will 
-probably die next battle.  You have to admit they are throwing one hell 
-of a party though.  You just wish so much brawling wasn't involved.  
-A chair goes flying past your head.    
+   These hardened warriors seem oblivious to the fact that they will
+probably die next battle.  You have to admit they are throwing one hell
+of a party though.  You just wish so much brawling wasn't involved.
+A chair goes flying past your head.
 ~
 17 8 0 0 0 0
 D0
@@ -978,8 +978,8 @@ S
 South Lane~
    Another seedy looking merchant walks up to you offering a guaranteed
 position at the Round Table.  All you need to do is purchase the Holy Grail
-from him and present it to the king.  The merchant pulls out a tin cup you 
-saw a beggar using not ten minutes ago and asks for 2000000 gold.    
+from him and present it to the king.  The merchant pulls out a tin cup you
+saw a beggar using not ten minutes ago and asks for 2000000 gold.
 ~
 17 0 0 0 0 0
 D1
@@ -1174,9 +1174,9 @@ D3
 S
 #1765
 Tourney Yard~
-   You watch the orange knight fly and land with a sickening crash on the 
-yard.  The black knight circles and raises his lance in a salute to 
-Arthur.  A few people cheer, but most seem to be preoccupied.    
+   You watch the orange knight fly and land with a sickening crash on the
+yard.  The black knight circles and raises his lance in a salute to
+Arthur.  A few people cheer, but most seem to be preoccupied.
 ~
 17 0 0 0 0 0
 D0
@@ -1424,11 +1424,11 @@ D3
 S
 #1779
 A Dark Trail~
-   The forest is beginning to thin and you can see that the water to the 
-north is part of a massive lake with a large island in the middle of it.  
-A fortress sits on the island looking impregnable.  The trail continues 
-east and west with the south still too thick to be worth travelling 
-through.    
+   The forest is beginning to thin and you can see that the water to the
+north is part of a massive lake with a large island in the middle of it.
+A fortress sits on the island looking impregnable.  The trail continues
+east and west with the south still too thick to be worth travelling
+through.
 ~
 17 0 0 0 0 0
 D1
@@ -1442,11 +1442,11 @@ D3
 S
 #1780
 A Dark Trail~
-   The trees are changing from crowded pines into scattered maple and 
-birch.  Birds fly limb to limb and a few squirrels race across the forest 
-floor.  The lake to the north stretches for almost a mile before reaching 
-the island.  The trail is opening up into a road once more and you see 
-people walking along it to the west.    
+   The trees are changing from crowded pines into scattered maple and
+birch.  Birds fly limb to limb and a few squirrels race across the forest
+floor.  The lake to the north stretches for almost a mile before reaching
+the island.  The trail is opening up into a road once more and you see
+people walking along it to the west.
 ~
 17 0 0 0 0 0
 D1
@@ -1461,7 +1461,7 @@ S
 #1781
 A Light Forest~
    The forest is giving way to cultivated fields where serfs are working hard to
-produce food for those who live on the island across the lake to the north.  
+produce food for those who live on the island across the lake to the north.
 The trail continues east and west, into the fields or back towards the forest.
 ~
 17 0 0 0 0 0
@@ -1477,9 +1477,9 @@ S
 #1782
 A Cultivated Field~
    The fields to the south stretch for miles.  Several kinds of animals are
-being led to pasture, including some sheep and cows.  Peasants are toiling 
-in the dirt and mud, planting crops.  The lake extends to the north and the 
-path goes east and west.    
+being led to pasture, including some sheep and cows.  Peasants are toiling
+in the dirt and mud, planting crops.  The lake extends to the north and the
+path goes east and west.
 ~
 17 0 0 0 0 0
 D1
@@ -1494,7 +1494,7 @@ S
 #1783
 A Cultivated Field~
    You have to stop as a shepherd pushes a flock of sheep in front of you.  How
-rude!  You don't see how these people travel back and forth from the island.  
+rude!  You don't see how these people travel back and forth from the island.
 There must be a ferry somewhere, but you can't see it.
 ~
 17 0 0 0 0 0
@@ -1510,9 +1510,9 @@ S
 #1784
 A Cultivated Field~
    More peasants are plowing and planting the vast plain of fields that lay
-before you.  It would almost look like they are trying to build up a stock 
-of food, maybe they're expecting a siege.  The fields continue along the 
-path to the east and west.    
+before you.  It would almost look like they are trying to build up a stock
+of food, maybe they're expecting a siege.  The fields continue along the
+path to the east and west.
 ~
 17 0 0 0 0 0
 D1
@@ -1572,7 +1572,7 @@ S
 #1788
 Dressing Room~
    Several ladies are trying on various dresses and gowns, trying to find the
-perfect dress to seduce one of the many famous knights of the round table.  
+perfect dress to seduce one of the many famous knights of the round table.
 Little do they realize that they will probably be the ones that get used.
 ~
 17 8 0 0 0 0
@@ -1601,8 +1601,8 @@ S
 #1790
 Court of Camelot~
    The whole world seems like a much better place here, where friendship
-thrives and the high ideals of chivalry breathe.  You have a commanding 
-vantage of the Tourney Yard of Camelot to the north from here.    
+thrives and the high ideals of chivalry breathe.  You have a commanding
+vantage of the Tourney Yard of Camelot to the north from here.
 ~
 17 0 0 0 0 0
 D0
@@ -1652,7 +1652,7 @@ Practice Yard~
    A single knight is challenging three others simultaneously in the most
 impressive sword battle you have ever seen.  This knight expertly disarms all
 three knights within seconds.  Your jaw drops in admiration.  The knight bows
-deeply and all the squires cheer, 'Lancelot, Lancelot!'  
+deeply and all the squires cheer, 'Lancelot, Lancelot!'
 ~
 17 0 0 0 0 0
 D0
@@ -1663,7 +1663,7 @@ S
 #1794
 Scottish Clansmen~
    A large table is filled with food and ale.  A very large Scotsman glares at
-you, making you decide not to help yourself to any of the ale or food.  
+you, making you decide not to help yourself to any of the ale or food.
 Everyone is cursing, joking and laughing as if there will be no tomorrow....
 ~
 17 8 0 0 0 0
@@ -1674,9 +1674,9 @@ D0
 S
 #1795
 Southwest Tower~
-   You climb the stairs up to the tower and look around at the impressive 
-view. Guards solemnly stand their watch, keeping an eye out for the 
-farmers and peasants tending the fields over the lake to the west.    
+   You climb the stairs up to the tower and look around at the impressive
+view. Guards solemnly stand their watch, keeping an eye out for the
+farmers and peasants tending the fields over the lake to the west.
 ~
 17 0 0 0 0 0
 D5
@@ -1712,9 +1712,9 @@ S
 #1797
 Beautiful Hall~
    The hall continues east and west with another set of double doors to the
-north.  You stare with your mouth open at the fancy drawings and the thick 
-fur rug you walk across.  You would be set for life if you could sell just 
-one of them.    
+north.  You stare with your mouth open at the fancy drawings and the thick
+fur rug you walk across.  You would be set for life if you could sell just
+one of them.
 ~
 17 8 0 0 0 0
 D0
@@ -1755,7 +1755,7 @@ S
 #1799
 Open Field~
    A herd of cows are grazing on a small hill, most of them lying down.  Must be
-it's going to rain.  The trail turns north along the shoreline of the lake.  
+it's going to rain.  The trail turns north along the shoreline of the lake.
 You still can't see any possible way to reach the island.
 ~
 17 0 0 0 0 0

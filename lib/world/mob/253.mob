@@ -4,7 +4,7 @@ an MoS Guard~
 An MoS Guard stands here, blocking your passage down the steps.
 ~
    Such strict attention stands he, looks as if maybe he were made of steel
-himself.  
+himself.
 ~
 10 0 0 0 0 0 0 0 -200 E
 5 19 7 1d1+50 1d2+0
@@ -22,7 +22,7 @@ Checkpoint Charley~
 Checkpoint Charley stands here, clipboard in hand, making sure no elves get in.
 ~
    Poor guy, must have been a geek in high school, now he has this semi-official
-position and he takes it WAY too seriously.  
+position and he takes it WAY too seriously.
 ~
 10 0 0 0 0 0 0 0 -100 E
 5 19 7 1d1+50 1d2+0
@@ -37,7 +37,7 @@ soldier mos~
 an MoS soldier~
 An MoS soldier is here, looking at you in some confusion.
 ~
-   He turns away, begins to walk away, then stops.  He turns back.  Looks.  
+   He turns away, begins to walk away, then stops.  He turns back.  Looks.
 "Um, hey," he says, "are you supposed to be here?  "
 ~
 200 0 0 0 0 0 0 0 -200 E
@@ -52,7 +52,7 @@ the Master at Arms~
 The Master at Arms is here, working out with some steel weights.
 ~
    This dude looks like he could crush you in one sweep of his massive
-tree-trunk arms.  
+tree-trunk arms.
 ~
 10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -67,7 +67,7 @@ The MoS Captain stands here, hating elves.
 ~
    This guy is as brainwashed as they come.  If he was wearing an "I hate elves"
 patch on his arm, it couldn't be more obvious.  You check his arm.  He isn't
-wearing one.  
+wearing one.
 ~
 10 0 0 0 0 0 0 0 -300 E
 15 15 1 3d3+150 2d2+2
@@ -92,7 +92,7 @@ sergeant MoS~
 the MoS Sergeant~
 The MoS Sergeant stands here, nothing to do.
 ~
-   Pity this man seems like he might make a good stableman...  
+   Pity this man seems like he might make a good stableman...
 ~
 10 0 0 0 0 0 0 0 -300 E
 16 15 0 3d3+160 2d2+2
@@ -104,7 +104,7 @@ general MoS~
 the MoS General~
 The MoS General is here, practicing his hate speeches.
 ~
-   This guy seems just maybe a couple cards short of a full deck.  
+   This guy seems just maybe a couple cards short of a full deck.
 ~
 10 0 0 0 0 0 0 0 -300 E
 17 15 0 3d3+170 2d2+2
@@ -116,7 +116,7 @@ grand knight~
 the Grand Knight~
 The Grand Knight stands here.
 ~
-   Maybe you should consider running the other way...  
+   Maybe you should consider running the other way...
 ~
 10 0 0 0 0 0 0 0 -400 E
 17 15 0 3d3+170 2d2+2
@@ -129,7 +129,7 @@ Bob, the MoS guard~
 A guard in MoS uniform with the name 'Bob' stenciled across his chest waits here.
 ~
    He has just the slightest grin on his face, one that suggests he may not be
-"all there".  
+"all there".
 ~
 10 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
@@ -144,7 +144,7 @@ an MoS soldier~
 An MoS soldier is here, looking at you in some confusion.
 ~
    He turns away, begins to walk away, then stops.  He turns back.  Looks.  Um,
-hey," he says, "are you sposed to be here?  
+hey," he says, "are you sposed to be here?
 ~
 200 0 0 0 0 0 0 0 -200 E
 6 18 6 1d1+60 1d2+1

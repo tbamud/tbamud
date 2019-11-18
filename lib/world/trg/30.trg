@@ -2,15 +2,15 @@
 Mage Guildguard - 3024~
 0 q 100
 ~
-* Check the direction the player must go to enter the guild. 
-if %direction% == south 
-  * Stop them if they are not the appropriate class. 
-  if %actor.class% != Magic User 
-    return 0 
-    %send% %actor% The guard humiliates you, and blocks your way. 
-    %echoaround% %actor% The guard humiliates %actor.name%, and blocks %actor.hisher% way. 
-  end 
-end 
+* Check the direction the player must go to enter the guild.
+if %direction% == south
+  * Stop them if they are not the appropriate class.
+  if %actor.class% != Magic User
+    return 0
+    %send% %actor% The guard humiliates you, and blocks your way.
+    %echoaround% %actor% The guard humiliates %actor.name%, and blocks %actor.hisher% way.
+  end
+end
 ~
 #3001
 Cleric Guildguard - 3025~
@@ -163,7 +163,7 @@ Near Death Trap~
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * Near Death Trap stuns actor
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 %send% %actor% You are on the brink of life and death.
 %send% %actor% The Gods must favor you this day.
@@ -223,7 +223,7 @@ eval item %inroom.contents%
 while %item%
   * Target the next item in room. In case it is picked up.
   set next_item %item.next_in_list%
-* TODO: if %item.wearflag(take)% 
+* TODO: if %item.wearflag(take)%
   * Check for fountains and expensive items.
   if %item.type% != FOUNTAIN && %item.cost% <= 15
     take %item.name%

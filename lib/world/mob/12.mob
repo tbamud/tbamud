@@ -3,7 +3,7 @@ innkeeper receptionists~
 the Immortal Innkeeper~
 The Immortal Innkeeper is organizing her books here.
 ~
-   She appears to be having no problem tallying things up.  
+   She appears to be having no problem tallying things up.
 ~
 188426 0 0 0 65536 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -15,7 +15,7 @@ postmaster~
 the Immortal Postmaster~
 The Immortal Postmaster is hard at work here.
 ~
-   Scary...  A postal worker...  Working?  
+   Scary...  A postal worker...  Working?
 ~
 10 0 0 0 65536 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -29,7 +29,7 @@ A strange amorphous being wanders these halls eternally cleaning.
 ~
    This spirit, having lived out its days in the mortal world, now works off its
 final sins by doing menial labour in this realm's purgatory.  In this case,
-those chores seem to be cleaning up after the immortals of the land.  
+those chores seem to be cleaning up after the immortals of the land.
 ~
 254028 0 0 0 589840 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -43,7 +43,7 @@ Malikar the Janitor~
 Malikar the Janitor stands here, looking lost.
 ~
    It looks like Malikar is suffering from a bad concience he must have buggered
-Emershia one time too many.  
+Emershia one time too many.
 ~
 172108 0 0 0 2 0 0 0 -1000 E
 3 19 8 0d0+30 1d2+0
@@ -56,7 +56,7 @@ imp~
 the Imp~
 A small imp sits here, grinning devilishly.
 ~
-   This small imp is used for testing.  
+   This small imp is used for testing.
 ~
 256092 0 0 0 20 0 0 0 -1000 E
 3 19 8 0d0+30 1d2+0
@@ -86,7 +86,7 @@ A frosty little ice cube walks about doing whatever Spector says.
    It is a little ice cube that Spector has given life to.  It looks like a
 normal ice cube, only now it has little arms and feet made out of ice.  From
 what you can see, it has no eyes, yet it can make it's way about without bumping
-into things.  
+into things.
 ~
 253978 0 0 0 65656 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
@@ -101,7 +101,7 @@ Zipping from plant to plant is a cluster of rainbow-colored faeries.
    There are about twenty tiny, ickle faeries floating around, each a completely
 different shade from its friends.  They are all female and continually giggle
 and dart around sharing their own jokes and keeping forbidden people out of this
-holy sanctuary.  
+holy sanctuary.
 ~
 200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -115,7 +115,7 @@ Taylor's secretary stands here holding a note pad.
 ~
    She is a very pretty woman, her hair is shoulder length and a beautiful
 brown, and here body is slim and curvey.  She stands about 5'4" and looks to be
-light.  
+light.
 ~
 256026 0 0 0 120 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -175,7 +175,7 @@ A friendly Shitzu puppy dog named Peishu is playing here.
 ~
    Peishu is a friendly Shitzu puppy dog bred from ancient chinese ancestors he
 has a long line of geneology dating back to the times of Confucius.  He is
-Gina's favorite pet and doesn't look too dangerous.  
+Gina's favorite pet and doesn't look too dangerous.
 ~
 188506 0 0 0 80 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -188,7 +188,7 @@ hidden mob~
 the hidden mob~
 .a hidden mob
 ~
-   This mob is hidden so no one can see it.  
+   This mob is hidden so no one can see it.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -200,7 +200,7 @@ color mob~
 @Rtests the color mob@n~
 The color test mob.
 ~
-   The color test mob is so colorful.  
+   The color test mob is so colorful.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -212,7 +212,7 @@ test mob~
 the test mob~
 .the test mob is our friend.
 ~
-   Test mobs can be whatever you want them to be.  
+   Test mobs can be whatever you want them to be.
 ~
 61454 0 0 0 983040 0 0 0 0 E
 3 19 8 0d0+30 1d2+0

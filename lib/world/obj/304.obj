@@ -8,7 +8,7 @@ A brown fur cape is piled on the floor here.~
 4 200 0 5 0
 E
 brown fur cape~
-   It is a rather coarse brown cape.  
+   It is a rather coarse brown cape.
 ~
 A
 1 1
@@ -22,7 +22,7 @@ An straight sword is stuck in the ground here.~
 9 100 0 0 0
 E
 sword~
-   The sword looks rather old.  
+   The sword looks rather old.
 ~
 A
 13 10
@@ -36,7 +36,7 @@ A well seasoned staff has been dropped here.~
 9 200 0 0 0
 E
 seasoned staff~
-   It looks like a seasoned staff.  Probably good for hitting people.  
+   It looks like a seasoned staff.  Probably good for hitting people.
 ~
 A
 18 3
@@ -50,7 +50,7 @@ A soaking wet mop is here, making a puddle.~
 5 100 0 0 0
 E
 wet mop~
-   Yuck, its a smelly wet mop..  Better run before you have to mop something.  
+   Yuck, its a smelly wet mop..  Better run before you have to mop something.
 ~
 A
 9 5
@@ -64,7 +64,7 @@ A marble key lies here, gathering dust.~
 1 50 0 0 0
 E
 marble key~
-   Its a small marble key, would fit in a marble door methinks.  
+   Its a small marble key, would fit in a marble door methinks.
 ~
 #30406
 oak key~
@@ -76,7 +76,7 @@ An oak key rests here.~
 1 50 0 0 0
 E
 oak key~
-   It's a small oak key, would fit in an oak door methinks.  
+   It's a small oak key, would fit in an oak door methinks.
 ~
 #30407
 iron key~
@@ -88,7 +88,7 @@ An iron key lies here, rusting.~
 1 50 0 0 0
 E
 iron key~
-   It's an iron key, would fit in an iron door methinks.  
+   It's an iron key, would fit in an iron door methinks.
 ~
 #30408
 taurus ring~
@@ -100,7 +100,7 @@ A ring shaped like a bull lies here.~
 1 200 0 0 0
 E
 taurus ring~
-   It is a ring with a golden bull insignia.  
+   It is a ring with a golden bull insignia.
 ~
 A
 19 2
@@ -118,7 +118,7 @@ E
 fur cloak~
    This was once the skin of a great bull.  The hide has been tanned and oiled.
 Thick black coarse fur on the outside and the hardened leather inside would
-make this cloak a good defense against most attacks.    
+make this cloak a good defense against most attacks.
 ~
 A
 14 -10
@@ -134,7 +134,7 @@ A mask with two wicked horns rests here.~
 3 400 0 0 0
 E
 golden horn mask~
-   This mask is made out of pure gold, and has two wicked horns.  
+   This mask is made out of pure gold, and has two wicked horns.
 ~
 A
 24 2
@@ -158,7 +158,7 @@ wabat bible~
         defend themselves.
    IV.  Thou shalt have no guilds before WABAT.
    V.   Thou shalt kill those who take the name of WABAT in vain.
- 
+
 Thus speaketh the WABAT bible.
 ~
 #30413
@@ -172,7 +172,7 @@ A dagger with strange blue flames dancing along it's tip.~
 E
 fire dagger~
    A thin stream of fire runs from the dagger's leather bound hilt to its razor
-sharp tip.  
+sharp tip.
 ~
 #30414
 suit chain chainmail~
@@ -185,7 +185,7 @@ A full suit of chainmail is looking very old and used.~
 E
 suit old chainmail~
    Wow!  A suit of old chainmail!  Who told you these things don't exist
-anymore?    
+anymore?
 ~
 A
 2 -1
@@ -199,7 +199,7 @@ A beautiful cloak of pristine white silke hangs on a peg.~
 10 1 0 0 0
 E
 holy cloak~
-   It is a holy cloak, crafted by the gods.  
+   It is a holy cloak, crafted by the gods.
 ~
 #30416
 leggings leg brown fur~
@@ -211,7 +211,7 @@ A pair of brown fur leggings lie on the ground here.~
 5 250 0 10 0
 E
 leggings leg brown fur~
-   They seem to have been stripped off of a Bull.  
+   They seem to have been stripped off of a Bull.
 ~
 A
 14 20
@@ -227,7 +227,7 @@ A twisted piece of horn has been dropped here.~
 2 1000 0 10 0
 E
 bracelet horn twisted~
-   It is a highly polished piece of horn, might fit on your wrist.  
+   It is a highly polished piece of horn, might fit on your wrist.
 ~
 A
 18 2

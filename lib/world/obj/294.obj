@@ -8,7 +8,7 @@ A dangerous piece of cutlery sits here.~
 6 50 0 0
 E
 Knife madman madmans piece cutlery~
-   There's dried blood on the blade.  
+   There's dried blood on the blade.
 ~
 A
 4 -2
@@ -22,7 +22,7 @@ A discarded awl lies here.~
 1 5 0 0
 E
 awl~
-   Looks like a normal awl, used to punch holes through leather.  
+   Looks like a normal awl, used to punch holes through leather.
 ~
 #29402
 T-Square square t~
@@ -34,7 +34,7 @@ An architect's T-Square lies forgotten here.~
 1 30 0 0
 E
 T-Square square t~
-   You think its used for angles and lines and ...  Stuff.  
+   You think its used for angles and lines and ...  Stuff.
 ~
 #29403
 Cleaver knife meat meatcleaver~
@@ -46,7 +46,7 @@ A huge meat cleaver gathers rust here.~
 15 100 0 0
 E
 Cleaver knife meat meatcleaver~
-   Looks like you could really hack through some meat with that thing!  
+   Looks like you could really hack through some meat with that thing!
 ~
 A
 17 -10
@@ -62,7 +62,7 @@ A silver ring lies here.~
 1 1000 0 0
 E
 ring silver~
-   Small and silver, Nice.  
+   Small and silver, Nice.
 ~
 #29405
 boots pair leather~
@@ -74,7 +74,7 @@ A pair of Leather Boots are sitting here.~
 6 200 0 0
 E
 boots pair leather~
-   A nice set of heavy leather boots.  
+   A nice set of heavy leather boots.
 ~
 #29406
 Tie leather necktie~
@@ -86,7 +86,7 @@ A Leather tie is here.  Fashionable!~
 1 450 0 0
 E
 Tie leather necktie~
-   A black leather necktie.  It would go well with nothing you have.  
+   A black leather necktie.  It would go well with nothing you have.
 ~
 #29407
 jacket leather~
@@ -98,7 +98,7 @@ A nice leather jacket gathers dust on the ground.~
 15 300 0 0
 E
 jacket leather~
-   A heavy-duty leather jacket, made for warmth and protection.  
+   A heavy-duty leather jacket, made for warmth and protection.
 ~
 #29408
 Gloves leather~
@@ -111,7 +111,7 @@ A pair of leather gloves have been discarded in a pile.~
 E
 Gloves leather~
    These heavy-duty leather gloves seem to offer a lot of hand protection for
-day-to-day activities.  
+day-to-day activities.
 ~
 #29409
 Sapphire gem jewel~
@@ -123,7 +123,7 @@ A glittering blue gem sits here.~
 1 1000 0 0
 E
 Sapphire gem jewel~
-   Pretty.  It's a sapphire, isn't it?  
+   Pretty.  It's a sapphire, isn't it?
 ~
 #29410
 Emerald gem jewel~
@@ -135,7 +135,7 @@ A sparkling green jewel sits here.~
 1 500 0 0
 E
 Emerald gem jewel~
-   Exquisite...  A fantastic stone.  
+   Exquisite...  A fantastic stone.
 ~
 #29411
 Diamond gem jewel~
@@ -147,7 +147,7 @@ A diamond gathers dust here.~
 1 200 0 0
 E
 Diamond gem jewel~
-   Wow!  A real Diamond!  
+   Wow!  A real Diamond!
 ~
 A
 2 2
@@ -161,7 +161,7 @@ A fresh slab of beef is wrapped up here.~
 10 50 0 0
 E
 Slab beef~
-   It's a big, bloody hunk of meat.  Mmmm.  
+   It's a big, bloody hunk of meat.  Mmmm.
 ~
 #29413
 Haunch mutton~
@@ -173,7 +173,7 @@ A haunch of fresh mutton is sitting here.~
 7 25 0 0
 E
 Haunch mutton~
-   Looks like it came from a nice, fat sheep.  
+   Looks like it came from a nice, fat sheep.
 ~
 #29414
 Steak deer~
@@ -185,7 +185,7 @@ A steak of deer meat is wrapped in paper here.~
 5 30 0 0
 E
 Steak deer~
-   Smells gamy, but seems edible.  
+   Smells gamy, but seems edible.
 ~
 #29415
 Rope coil~
@@ -197,7 +197,7 @@ A length of rope is neatly coiled here.~
 25 250 0 0
 E
 Rope coil~
-   The rope seems to be made of a good quality hemp.  
+   The rope seems to be made of a good quality hemp.
 ~
 #29416
 Anchor~
@@ -217,7 +217,7 @@ A fishing net is lying on the ground.~
 10 1000 0 0
 E
 Net~
-   Its a fishing net, with little fishing hooks attached to the knots.  
+   Its a fishing net, with little fishing hooks attached to the knots.
 ~
 #29418
 Fishhook hook~
@@ -229,7 +229,7 @@ A stray fishhook is lying here.~
 1 1 0 0
 E
 Fishhook hook~
-   Its a tiny wire fishhook.  You've seen these before...  
+   Its a tiny wire fishhook.  You've seen these before...
 ~
 #29419
 beer glass beer~
@@ -241,7 +241,7 @@ A glass of beer sits forgotten here.~
 2 5 0 0
 E
 Beer glass~
-   A nice glass filled with 'Mr.  Beer' brand beer.  
+   A nice glass filled with 'Mr.  Beer' brand beer.
 ~
 #29420
 ale mead glass ale~
@@ -254,7 +254,7 @@ A big glass of mead sits here, cool and frosty.~
 E
 Mead glass~
    Looks good.  Looks cold.  You sure could use some cold and alcoholic right
-about now...  
+about now...
 ~
 #29421
 whisky shot whiskey whisky~
@@ -266,7 +266,7 @@ A shot of Whiskey is sitting here.~
 1 10 0 0
 E
 Whiskey shot~
-   Whew!  Looks like potent stuff!  
+   Whew!  Looks like potent stuff!
 ~
 #29422
 Sword Long Longsword~
@@ -278,6 +278,6 @@ A long sword gathers rust here.~
 12 600 0 0
 E
 Sword Long Longsword~
-   Looks like your generic long sword.  
+   Looks like your generic long sword.
 ~
 $~

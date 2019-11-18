@@ -78,11 +78,11 @@ You can see some light to the west.
 0 -1 7302
 E
 worms~
-   The worms are purple.  They do not look edible.  
+   The worms are purple.  They do not look edible.
 ~
 E
 mud~
-   When you examine the mud, you notice small worms crawling around.  
+   When you examine the mud, you notice small worms crawling around.
 ~
 S
 #7304
@@ -105,7 +105,7 @@ E
 flat round stone~
    The stone looks very uninteresting.  BUT as you are about to turn away, you
 see a strip of light coming through a small hole.  Conclusion: The stone is
-moveable.  
+moveable.
 ~
 S
 #7305
@@ -129,11 +129,11 @@ block grey~
 E
 crystal globe~
    The crystal globe is glowing with a pulsing light.  It looks like there is
-smoke inside it.  
+smoke inside it.
 ~
 E
 socket~
-   The socket looks like the work of a dwarf.  It is VERY beautiful.  
+   The socket looks like the work of a dwarf.  It is VERY beautiful.
 ~
 S
 #7306
@@ -225,7 +225,7 @@ You see a VERY long hallway.
 E
 small statue~
    This is a statue of a imp, pointing to the west.  The imp looks like a man
-with horns and a tail.  
+with horns and a tail.
 ~
 S
 #7311
@@ -249,7 +249,7 @@ D2
 0 -1 7312
 E
 stalagmite~
-   The stalagmites are very tall, and looks very beautiful.  
+   The stalagmites are very tall, and looks very beautiful.
 ~
 S
 #7312
@@ -322,7 +322,7 @@ D3
 E
 primitive picture~
    You see some people dancing around a huge sun.  The sun is about 7 feet in
-diameter, which shows the size of the picture.  
+diameter, which shows the size of the picture.
 ~
 S
 #7316
@@ -361,7 +361,7 @@ Another part of the lair.
 0 -1 7320
 E
 skeleton~
-   It looks like a adventurer who wasn't lucky.  You'd better watch out...  
+   It looks like a adventurer who wasn't lucky.  You'd better watch out...
 ~
 S
 #7318
@@ -440,17 +440,17 @@ E
 dragon statue~
    It looks like a silver dragon.  It is nailed onto the table.  The dragon sits
 on a red dragon that looks dead.  But the eyes of the red dragon are glowing,
-pulsating red.  You feel drained.  
+pulsating red.  You feel drained.
 ~
 E
 skeleton skeletons~
    They've obviously been killed somehow, but it doesn't look like it was by
-sword or club.  
+sword or club.
 ~
 E
 table~
    On the table there is dust, in the center there is a small statue of a Dragon
-sleeping.  
+sleeping.
 ~
 S
 #7321
@@ -534,26 +534,26 @@ You see a room far away.
 0 -1 7323
 E
 blue~
-   This looks like a good dragon.  
+   This looks like a good dragon.
 ~
 E
 red~
-   This looks like a neutral dragon.  
+   This looks like a neutral dragon.
 ~
 E
 green~
-   This looks like an evil dragon.  
+   This looks like an evil dragon.
 ~
 E
 head heads~
    When you study the faces of the heads you see that they are faces of dragons.
 The face to the north is red, the face to the east is green, and the face to the
-south is blue.  
+south is blue.
 ~
 S
 #7325
 A Dusty Tunnel~
-   You are standing in dust.  This place has not been touched for a long time. 
+   You are standing in dust.  This place has not been touched for a long time.
 Otherwise it is quite boring here, looks like a place to rest!  To the west
 you see the outline of a door.  A tunnel leads to the east.
 ~
@@ -594,7 +594,7 @@ D3
 0 -1 7325
 E
 footprints foot~
-   You have never seen this kind of footprint before!  
+   You have never seen this kind of footprint before!
 ~
 S
 #7327
@@ -614,7 +614,7 @@ D1
 0 -1 7328
 E
 sign~
-   The sign says: DANGER!!  
+   The sign says: DANGER!!
 ~
 S
 #7328
@@ -672,7 +672,7 @@ D3
 0 -1 7326
 E
 breeze~
-   The breeze comes from a hole above you.  NO way to get up there.  
+   The breeze comes from a hole above you.  NO way to get up there.
 ~
 S
 #7331
@@ -695,7 +695,7 @@ D3
 0 -1 7333
 E
 glitter walls silver~
-   The glittering silver looks like it is INSIDE the walls.  
+   The glittering silver looks like it is INSIDE the walls.
 ~
 S
 #7332
@@ -728,7 +728,7 @@ mass grey~
 1 -1 7334
 E
 grey mass~
-   The mass is nothing but a mass, but it is quite suspicious!  
+   The mass is nothing but a mass, but it is quite suspicious!
 ~
 S
 #7334
@@ -760,7 +760,7 @@ D2
 0 -1 7336
 E
 bones bone~
-   It looks like bones of a human.  
+   It looks like bones of a human.
 ~
 S
 #7336
@@ -805,7 +805,7 @@ D3
 S
 #7338
 The South-Eastern Part Of The Basilisk's Cave~
-   There is a very small hole in wall from which the smoke is coming from. 
+   There is a very small hole in wall from which the smoke is coming from.
 Otherwise it is pitch black.  Exits are north and west.
 ~
 73 9 0 0 0 2
@@ -821,7 +821,7 @@ You can see nothing but smoke.
 0 -1 7340
 E
 hole small~
-   It seems to be a small hole, about one foot in diameter.  
+   It seems to be a small hole, about one foot in diameter.
 ~
 S
 #7339
@@ -841,12 +841,12 @@ D2
 0 -1 7340
 E
 hay~
-   The hay is very dirty.  The smell of it makes you feel sick.  
+   The hay is very dirty.  The smell of it makes you feel sick.
 ~
 S
 #7340
 The South-Western Part Of The Basilisk's Cave~
-   You can see nothing but smoke.  
+   You can see nothing but smoke.
 ~
 73 9 0 0 0 5
 D0

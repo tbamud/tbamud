@@ -5,7 +5,7 @@ A large rat is scurrying about here, squeeking as you approach.
 ~
    As you look closer you see flecks of blood on the teeth of the rat.  It's so
 obvious because the rat is just about ready to sink those teeth into your warm
-human flesh.  
+human flesh.
 ~
 232 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
@@ -19,7 +19,7 @@ the big rat~
 A large rat is here, searching for food.
 ~
    This rat doesn't look very menacing, but if you press it hard it'll certainly
-fight back.  
+fight back.
 ~
 232 0 0 0 0 0 0 0 100 E
 3 19 8 0d0+30 1d2+0
@@ -33,7 +33,7 @@ the protector rat~
 A huge rat is here, growling as you get nearer. Careful - it bites!
 ~
    This battlescarred rat is not going anywhere.  You, however are going to go
-right into its belly, after it's killed you.  Better get out of here.  
+right into its belly, after it's killed you.  Better get out of here.
 ~
 4202 0 0 0 0 0 0 0 -350 E
 3 19 8 0d0+30 1d2+0
@@ -49,7 +49,7 @@ A gigantic rat is here standing on top of a pile of glittering stones.
    The King rat is so large, magic is the only possible explanation.  There has
 long been rumours about the magicusers using sewer animals in their experiments.
 This is the final proof.  As you study the rat closer you notice what looks like
-a small gleam of intelligence in its eyes.  
+a small gleam of intelligence in its eyes.
 ~
 4174 0 0 0 0 0 0 0 -350 E
 7 18 5 1d1+70 1d2+1
@@ -60,9 +60,9 @@ E
 #3704
 bat small~
 the bat~
-A bat is hanging from the ceiling here. 
+A bat is hanging from the ceiling here.
 ~
-   A small bat, getting a good days sleep.  
+   A small bat, getting a good days sleep.
 ~
 4330 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -73,9 +73,9 @@ E
 #3705
 bat small~
 the bat~
-A bat is here, flying quickly about. 
+A bat is here, flying quickly about.
 ~
-   A small bat, getting ready to go out of the cave, to get something to eat.  
+   A small bat, getting ready to go out of the cave, to get something to eat.
 ~
 4328 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -86,10 +86,10 @@ E
 #3706
 bat giant~
 the giant bat~
-A huge bat is here, considering you for meal. 
+A huge bat is here, considering you for meal.
 ~
    This giant bat makes you shiver.  Even if it just flys around you, it still
-gives you the creeps.  
+gives you the creeps.
 ~
 4328 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -100,10 +100,10 @@ E
 #3707
 bat vampire~
 the vampire bat~
-A huge bat is here. You see fresh blood on its face. 
+A huge bat is here. You see fresh blood on its face.
 ~
    This giant bat makes you shiver.  You realise that soon your blood will be
-tasted too.  
+tasted too.
 ~
 4202 0 0 0 0 0 0 0 -500 E
 3 19 8 0d0+30 1d2+0
@@ -114,10 +114,10 @@ E
 #3708
 trout fish~
 the trout~
-A trout is swimming happily about here. 
+A trout is swimming happily about here.
 ~
    The underground lake must be connected to the outside rivers.  This fish
-looks healthy and fresh.  
+looks healthy and fresh.
 ~
 106522 0 0 0 589952 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -128,10 +128,10 @@ E
 #3709
 blind fish~
 the blind fish~
-A blind fish is here, all white. 
+A blind fish is here, all white.
 ~
    Having spent it's entire life in this cave, the fish has never used its eyes.
-Your torch' presence has made it blind.  
+Your torch' presence has made it blind.
 ~
 106522 0 0 0 589954 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -145,7 +145,7 @@ the giant oyster~
 A giant oyster sits on the bottom here.
 ~
    You come very close to the oyster, but suddenly it snaps shut, preventing you
-from seeing inside.  
+from seeing inside.
 ~
 254026 0 0 0 128 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -160,7 +160,7 @@ A small rabbit is nibbling on some grass here.
 ~
    You've seen them before..  And hunted them down like rats, when you were a
 kid..  They're small, furry and generate extreme amounts of small black perls
-whereever they go...  
+whereever they go...
 ~
 72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
@@ -174,7 +174,7 @@ a small cat~
 A small grey and black striped cat is waiting for a bird to catch..
 ~
    It's extremely nice and sweet.  If you reach out you hand to carees it, it
-only bites and scratches so HALF your fingers are missing afterwards..  
+only bites and scratches so HALF your fingers are missing afterwards..
 ~
 72 0 0 0 524288 0 0 0 -50 E
 3 19 8 0d0+30 1d2+0
@@ -188,7 +188,7 @@ the fox~
 A small fox is here, prowling.
 ~
    A red, not so large canine, with pointy ears and nose - and teeth, for that
-matter..  
+matter..
 ~
 72 0 0 0 0 0 0 0 300 E
 3 19 8 0d0+30 1d2+0

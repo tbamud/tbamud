@@ -53,7 +53,7 @@ A pair of shiny black shoes are on the ground.~
 E
 shoes shiny pair black~
    These shoes are perfectly spotless, meticulously kept clean by someone with a
-fetish for cleaning stuff.  
+fetish for cleaning stuff.
 ~
 #31705
 shovel~
@@ -107,7 +107,7 @@ A small flask has been left here.~
 10 10 0 1
 E
 whisky flask silver whisky~
-   The engraving on the side reads CTW, whatever that means..  
+   The engraving on the side reads CTW, whatever that means..
 ~
 #31710
 locket golden~
@@ -119,7 +119,7 @@ A small piece of jewelry is on the ground.~
 5 100 0 13
 E
 locket golden~
-   You try and try to prise this thing open, but it will not budge.  
+   You try and try to prise this thing open, but it will not budge.
 ~
 A
 3 2
@@ -180,7 +180,7 @@ It looks as if the floor has wrinkles.~
 10 1 0 15
 E
 cape blending~
-   This wonderful cape can camouflage you in almost any setting.  
+   This wonderful cape can camouflage you in almost any setting.
 ~
 A
 5 2
@@ -196,7 +196,7 @@ A rake has been dropped on the ground.~
 7 10 0 1
 E
 rake~
-   Metal pronged teeth and a wooden handle.  Looks a lot like a rake.  
+   Metal pronged teeth and a wooden handle.  Looks a lot like a rake.
 ~
 #31716
 peel banana~
@@ -208,7 +208,7 @@ Someone left their banana peel here... tsk, tsk, someone could fall!~
 1 1 0 1
 E
 peel banana~
-   No banana stuff inside, sorry, just the peel.  
+   No banana stuff inside, sorry, just the peel.
 ~
 #31717
 gloves gardening~
@@ -221,7 +221,7 @@ A pair of gardening gloves have been left here.~
 E
 gloves gardening~
    They have a bit of dirt smudged on the fingertips, but other than that, they
-look perfectly usable.  
+look perfectly usable.
 ~
 #31718
 shovel gardening~
@@ -233,7 +233,7 @@ A small gardening shovel is laying in the ground.~
 3 1 0 1
 E
 shovel gardening~
-   Looks like it could dig a mean hole or two...  
+   Looks like it could dig a mean hole or two...
 ~
 #31719
 shovel~
@@ -246,7 +246,7 @@ A shovel is propped up against a tree.~
 E
 shovel~
    Kind of makes you queasy to know that this shovel is used only for burying
-people...  
+people...
 ~
 #31720
 sign rules~
@@ -262,7 +262,7 @@ sign~
 
 -To place a wager simply type GAMBLE (amnt) and the dealer will deal
 you one card and a card for himself.  The player with the highest
-card wins the wager.   
+card wins the wager.
 
 In the event of a tie, there will be a War! and this will continue
 until there is a winner.

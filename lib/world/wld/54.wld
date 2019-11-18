@@ -56,7 +56,7 @@ You see the entrance to the Daemon.
 E
 bar~
    The bar looks slightly out of place and you can only assume the powerful
-magic of the bartender allows it to revolve.  
+magic of the bartender allows it to revolve.
 ~
 S
 #5403
@@ -151,7 +151,7 @@ E
 statue~
    Before you is a statue of the mighty beholder!  A great beast with multiple
 eyes and wicked...  Wicked...  Um....  Eyes...  The mighty beholder is in
-Excellent condition.  
+Excellent condition.
 ~
 S
 #5407
@@ -213,7 +213,7 @@ Western Market Square~
 You notice that most of the outland adventurers mill around the
 southern end of the market, while the townfolk seem to keep their
 business in the northern end.
-   West Main street begins here and heads for the gate, the market's 
+   West Main street begins here and heads for the gate, the market's
 expanse fills the other directions.
 ~
 54 0 0 0 0 1
@@ -599,7 +599,7 @@ S
 #5426
 West Main Street~
    You are strolling on the street between the bank and general store.
-To the west you hear a roadcrew at work and to the east, the sounds of 
+To the west you hear a roadcrew at work and to the east, the sounds of
 commerce taking place.  The air is filled with the smell of gold and
 riches.
 On the wall of the store is a poster.
@@ -616,14 +616,14 @@ D3
 E
 poster~
    The poster is of a wealthy looking man in red robes smiling at you.  The
-caption reads: THE SULTAN REMINDS YOU TO PAY YOUR TAXES!  
+caption reads: THE SULTAN REMINDS YOU TO PAY YOUR TAXES!
 ~
 S
 #5427
 East Main Street~
    Here on East Main, you smell the odor of freshly slaughtered meat
 and, hear the pounding of new metal from the armory.  The Square is
-to the west and a junction is to the East.  
+to the west and a junction is to the East.
 ~
 54 0 0 0 0 1
 D1
@@ -662,9 +662,9 @@ D3
 E
 sign~
    The sign reads:
- 
+
                         NO LOITERING!
- 
+
             (by order of the Sultan of New Thalos)
 ~
 S
@@ -773,7 +773,7 @@ S
 West Ishtar Drive~
    A few men walk by almost pushing you out of the way as they go about
 their business of loading and unloading the boats.  An entrance to one
-of the huge warehouses of New Thalos is to the north and the River Ishtar 
+of the huge warehouses of New Thalos is to the north and the River Ishtar
 quietly flows by to the south.  Ishtar Drive continues east and west.
 ~
 54 0 0 0 0 1
@@ -834,7 +834,7 @@ D3
 S
 #5437
 East Ishtar Drive~
-   Loud hammering and the sound of red hot iron cooling in water reaches 
+   Loud hammering and the sound of red hot iron cooling in water reaches
 your ears as you stand in front of the blacksmith.  A small boy runs up
 to you with big eyes and, as you return his gaze, runs off down the road.
    The common square can be seen to the west and Ishtar Drive continues
@@ -979,7 +979,7 @@ S
 West Casbah~
    The air takes on a somber note as you stand before the entrance to the
 jailhouse of New Thalos.  Hopefully you won't ever see this structure from
-the inside.  The northwest tower stands here with a spiral staircase 
+the inside.  The northwest tower stands here with a spiral staircase
 leading up.  The Avenue ends here, only exiting to the east.
 ~
 54 0 0 0 0 1
@@ -998,10 +998,10 @@ D4
 S
 #5445
 West Casbah~
-   You have almost reached the end of the Avenue in this direction, the 
+   You have almost reached the end of the Avenue in this direction, the
 number of guards in this part of town is nearly doubled.  To the north
 the familiar city wall protects you from the wilderness.  Looking south
-marble stairs rise towards the entrance of city hall surrounded by 
+marble stairs rise towards the entrance of city hall surrounded by
 massive white pillars.
    The Avenue continues east and west from here.
 ~
@@ -1269,7 +1269,7 @@ manhole hole man~
 S
 #5460
 Guildsman's Row~
-   This Row is a hive of activity second only to the actual Market 
+   This Row is a hive of activity second only to the actual Market
 Square itself.  Along this row stands all the guilds of the working
 class citizens of New Thalos, here all the items sold in the Square
 are made.  Along this particular stretch of the row lie the Boyer/
@@ -1465,7 +1465,7 @@ D2
 0 -1 5471
 E
 footprint~
-   Kind of looks like a yeti has been here...  Hmmmm.  
+   Kind of looks like a yeti has been here...  Hmmmm.
 ~
 S
 #5470
@@ -1501,7 +1501,7 @@ D2
 0 -1 5425
 E
 pothole~
-   Why are you looking in a pothole?  Are you poor or something?  
+   Why are you looking in a pothole?  Are you poor or something?
 ~
 S
 #5472
@@ -1812,7 +1812,7 @@ D3
 E
 boulder~
    A huge boulder stands here.  In its center someone has carved out a perfect
-round hole.  
+round hole.
 ~
 S
 #5491
@@ -1834,7 +1834,7 @@ E
 fire~
    Moving closer you see this fire is actually FROZEN in place.  The flames
 still radiate heat, but are not actually burning.  Looking around you notice a
-small hole about the size of a piece of charcoal at the base of the flames.  
+small hole about the size of a piece of charcoal at the base of the flames.
 ~
 S
 #5492

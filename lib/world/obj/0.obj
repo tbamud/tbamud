@@ -33,19 +33,19 @@ The email listing of the gods is pinned against the wall.~
 E
 wizlist~
                                  Implementors
-                                 ~~~~~~~~~~~ 
-                               Rumble   Welcor   
+                                 ~~~~~~~~~~~
+                               Rumble   Welcor
                                  Greater Gods
-                                 ~~~~~~~~~~~ 
+                                 ~~~~~~~~~~~
        Detta   Elaseth   Elorien   Fade   Ferret   Fyre   Heiach   Manivo
-                          Radiax   Random   Relsqui   
+                          Radiax   Random   Relsqui
                                      Gods
-                                     ~~~ 
+                                     ~~~
        Aeon   Alambil   Amber   Arcano   Balm   Demar   Demortes   Elixias
       Emmett   Exa   Falstar   Fharron   Fizban   Gatia   Ilsensine   Justo
         Kyr   Macros   Meyekul   Mick   Minisham   Mythran   Neela   Poiu
     Santa   Shamra   Shimmer   Silvanos   Smaug   Snowlock   Talgard   Taylor
-       Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat   
+       Theophilus   Tocamat   Torpidai   Treestump   Tuskony   Zizazat
 ~
 E
 emails listing~
@@ -63,7 +63,7 @@ E
 berries foraged~
    These blue, red, and even green berries look edible.  Though you do wonder
 about all those stories of poisonous berries out in the woods.  These don't
-smell bitter, so they must be fine.    
+smell bitter, so they must be fine.
 ~
 #6
 greens forage~
@@ -77,7 +77,7 @@ E
 foraged greens~
    An assortment of leaves and grasses that look rather bland.  But if you had
 to a person could survive off this meager cuisine.  After all, how do you think
-all these animals live out here.    
+all these animals live out here.
 ~
 #7
 foraged roots~
@@ -91,7 +91,7 @@ E
 roots foraged~
    Tubular roots of varying sizes and colors.  They look very edible.  Some of
 them are known to even taste good!  You recognize on of a purplish hue that is
-extremely sweet and is actually considered a delicacy in some parts.    
+extremely sweet and is actually considered a delicacy in some parts.
 ~
 #8
 foraged bark~
@@ -105,7 +105,7 @@ E
 foraged bark~
    Now this is gross!  It must be desperate times when you have to turn to
 eating tree bark.  This stuff is still green luckily so it has some moisture to
-it.  But you really aren't going to eat this are you?    
+it.  But you really aren't going to eat this are you?
 ~
 #9
 foraged nuts~
@@ -119,7 +119,7 @@ E
 nuts foraged~
    A variety of nuts that are very hard to come by.  Various animals hoard
 these in their lairs, so if you are lucky enough to come across some then you
-can just go nutty!    
+can just go nutty!
 ~
 #10
 waybread bread~
@@ -132,7 +132,7 @@ Some waybread has been put here.~
 E
 waybread bread~
    The waybread is the traditional feed of elves when travelling, they call it
-lembas.  It is said to refresh the weary traveler greatly.  
+lembas.  It is said to refresh the weary traveler greatly.
 ~
 #11
 water spring water~
@@ -191,8 +191,8 @@ T 141
 T 169
 E
 quest token~
-   It is a plain gold coin with the symbol of Sanctus engraved on both sides.  
-This token should be taken back to the questmaster to receive a reward.  
+   It is a plain gold coin with the symbol of Sanctus engraved on both sides.
+This token should be taken back to the questmaster to receive a reward.
 ~
 #16
 quest timer~
@@ -208,7 +208,7 @@ T 142
 E
 quest timer~
    This small device looks like an antique gold pocket watch.  One small hand
-counts down the 10 minutes a questor has to complete their quest.  
+counts down the 10 minutes a questor has to complete their quest.
 ~
 #17
 quest mobile head~
@@ -222,7 +222,7 @@ T 141
 E
 head quest mob~
    This quest item is proof that you have hunted down and killed the quest mob.
-It needs to be returned to the questmaster within 10 minutes.  
+It needs to be returned to the questmaster within 10 minutes.
 ~
 #20
 portal gate gateway~
@@ -244,12 +244,12 @@ T 80
 E
 sword quest war's blood~
    The blade of this beautiful weapon is inlaid with tiny wavelets.  The guard
-extends far out from the basket hilt, guarding the wielder from all attacks.  
+extends far out from the basket hilt, guarding the wielder from all attacks.
 Engraved across the blade are these words.  "Seek not death.  Seek not triumph.
 Seek wisdom, honor, and truth.  For I wield the spirit of my wielder, and blood
 of heroes never dies."  These words are written in golden runes across the
 polished steel of the blade.  War's blood is given only to those warriors meant
-for greatness.  Remember, the sword wields the spirit of its master.    
+for greatness.  Remember, the sword wields the spirit of its master.
 ~
 A
 18 5
@@ -274,7 +274,7 @@ part of the very night.  As you look at the blade and hilt, you can make out an
 inscription which travels from the point of the weapon to its ornately engraved
 pommel.  "Whosoever would let blood for love, whosoever would make war upon
 death, whosoever would give their life to love, make war with my darkness."
-Wield this fabled blade of lost love, and become one with the shadows.  
+Wield this fabled blade of lost love, and become one with the shadows.
 ~
 A
 2 3
@@ -395,10 +395,10 @@ that is good.  Made only of shadows and the taint that is the most obscene
 corruption, the head of this axe is jagged and spiked.  The blade is balanced by
 a wicked spike giving this ancient weapon the look of a warped headsman's axe.
 No light seems to reach it, no living thing seeks its touch.  Tendrils of sickly
-smoke rise from the blade tainting your thoughts and the very air around you.  
+smoke rise from the blade tainting your thoughts and the very air around you.
 It calls you, it draws you.  "Wield me, worship me, watch me take the blood of
-the pure.  Become one with my taint.  Feel the foulness fermenting your soul.  
-Accept evil, accept the shadow.  Wield me and become death.  Become immortal."  
+the pure.  Become one with my taint.  Feel the foulness fermenting your soul.
+Accept evil, accept the shadow.  Wield me and become death.  Become immortal."
 ~
 A
 18 5
@@ -423,7 +423,7 @@ jutting jauntily out of the front of the cap.  A peace of silk ribbon forms a
 band around the inside of the brim.  These words have been embroidered into the
 cap's material.  "The world is a wonder.  A wonder to wander.  To wander the
 wonderful world.  That is the life of a sprite.  Come, my brothers, for much is
-lost that we may find.  Come, my sisters, for many are lost that we may love.  
+lost that we may find.  Come, my sisters, for many are lost that we may love.
 Happiness is a laugh away.  Live and laugh and love; that is joy."
 ~
 A
@@ -471,7 +471,7 @@ Carved by the finest craftsman, enchanted by the most powerful wielders of the
 magical arts, this stone was made for the greatest of the human race.  Look into
 its depths, and see all the souls of mortal man.  It has no peer, no equal, and
 has yet to be classified by dwarven miners or gnomish scholars.  The human who
-holds it holds the light of all humanity in their grasp.  
+holds it holds the light of all humanity in their grasp.
 ~
 A
 12 50
@@ -497,7 +497,7 @@ ancient of wyrms.  The shield shimmers and wavers with all the colors of the
 rainbow.  In its shimmering depths can be seen all the colors of every dragon
 that has ever come to pass.  Magical runes circle the shield's rim.  "Come wind,
 come fire.  Come Thunder, come rain.  My bearer need never fear.  Come giants to
-duel.  My roar of triumph will be the last you ever hear."  
+duel.  My roar of triumph will be the last you ever hear."
 ~
 A
 17 -10
@@ -568,7 +568,7 @@ boots strider quest~
    These fine boots have been made from the hides of monsters and beasts the
 world over.  They are unadorned black suede leather, with a thick sole and
 steel toe.  The stitching that holds them together is so fine as to be
-invisible.  As you look at them, words enter your mind.  "Trip over mountain.  
+invisible.  As you look at them, words enter your mind.  "Trip over mountain.
 Stride over sea.  Travel across desert.  Run between the forest trees.  Be bold,
 be brave.  Be unfettered.  Let us run the world over.  You and me."
 ~
@@ -594,7 +594,7 @@ this mighty blade are formed from a gray stone that can never be chipped or
 broken.  The head of the weapon is formed from two massive pieces of obsidian,
 shaped like diamonds, side by side.  However this vicious object has but one
 purpose.  Etched into the two heads of the axe are these words.  "Slash, slice,
-swerve and swipe.  Dodge, duck, down and up.  I draw the blood of the weak.  
+swerve and swipe.  Dodge, duck, down and up.  I draw the blood of the weak.
 Thunder marks my strike.  Lightning shines when I am drawn.  I am the storm to
 end all.  I am the dragonbane."
 ~
@@ -641,7 +641,7 @@ gloves kindred quest~
    A set of lithe leather riding gloves.  The leather is so thin as to almost
 not be there.  The palm and fingertip of each glove are padded with a lining of
 cloth to protect the wearer's hand against harm.  Looking at these tiny gloves
-you wonder what keeps them from just tearing at the slightest pressure.  
+you wonder what keeps them from just tearing at the slightest pressure.
 ~
 A
 13 50
@@ -660,7 +660,7 @@ One of the lost treasures of Sanctum is here.~
 T 90
 E
 gem sanctum~
-   This is one of the treasures from the hoards of the city of Sanctum.  
+   This is one of the treasures from the hoards of the city of Sanctum.
 ~
 #39
 staff curative~
@@ -672,7 +672,7 @@ A staff used by the healers of Sanctum is here.~
 1 1000 0 0 0
 E
 curative staff~
-   This beautiful staff is used by the healers of sanctum.  
+   This beautiful staff is used by the healers of sanctum.
 ~
 #40
 runestone sanctum church~
@@ -698,7 +698,7 @@ Nothing.
 1 1000 0 0 0
 E
 bell sanctum's freedom~
-   This is the bell that represents the freedom of the city of Sanctum.  
+   This is the bell that represents the freedom of the city of Sanctum.
 ~
 #42
 hammer Sanctum~
@@ -731,7 +731,7 @@ to shimmer before your very eyes, fact or fiction, they look as though they
 could vanish at any turn.  Looking deep into the fire that is their strength you
 see these words in yellow and red flame.  "Drawn from the depths.  Delivered
 from death.  Directed by Divinity.  I am the truth.  The light.  The guardian of
-hope and the future.  Find comfort in my flames.  Find strength in my touch.  
+hope and the future.  Find comfort in my flames.  Find strength in my touch.
 For with me lies all that is to come."
 ~
 A
@@ -768,7 +768,7 @@ A mysterious looking magic eight ball holds the answer.~
 T 6
 E
 magic eight ball~
-   Simply "shake eightball" to have all of your questions answered. 
+   Simply "shake eightball" to have all of your questions answered.
 ~
 #48
 bed comfy~
@@ -808,7 +808,7 @@ A generic light is lying here.~
 E
 generic light~
    Since this light is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #51
 generic ring rfinger~
@@ -821,7 +821,7 @@ A generic ring is lying here.~
 E
 generic ring right~
    Since this ring is completely generic there are no distinctive features worth
-noticing.    
+noticing.
 ~
 #52
 generic ring lfinger~
@@ -834,7 +834,7 @@ A generic ring is lying here.~
 E
 generic ring left~
    Since this ring is completely generic there are no distinctive features worth
-noticing.    
+noticing.
 ~
 #53
 generic neck1 necklace~
@@ -847,7 +847,7 @@ A generic necklace is lying here.~
 E
 generic neck1 necklace~
    Since this necklace is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #54
 generic neck2 necklace~
@@ -860,7 +860,7 @@ A generic necklace is lying here.~
 E
 generic neck2 necklace~
    Since this necklace is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #55
 generic body armor~
@@ -873,7 +873,7 @@ A set of generic body armor is lying here.~
 E
 generic body armor~
    Since this body armor is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #56
 generic helm~
@@ -886,7 +886,7 @@ A generic helm is lying here.~
 E
 generic helm~
    Since this helm is completely generic there are no distinctive features worth
-noticing.    
+noticing.
 ~
 #57
 generic leggings~
@@ -899,7 +899,7 @@ A pair of generic leggings are lying here.~
 E
 generic leggings~
    Since this pair of leggings is completely generic there are no distinctive
-features worth noticing.    
+features worth noticing.
 ~
 #58
 generic boots~
@@ -912,7 +912,7 @@ A pair of generic boots are lying here.~
 E
 generic boots~
    Since the pair of boots are completely generic there are no distinctive
-features worth noticing.    
+features worth noticing.
 ~
 #59
 generic gloves~
@@ -925,7 +925,7 @@ A pair of generic gloves are lying here.~
 E
 generic gloves~
    Since the pair of gloves are completely generic there are no distinctive
-features worth noticing.    
+features worth noticing.
 ~
 #60
 generic sleeves~
@@ -938,7 +938,7 @@ A pair of generic sleeves are lying here.~
 E
 generic sleeves~
    Since the pair of sleeves are completely generic there are no distinctive
-features worth noticing.    
+features worth noticing.
 ~
 #61
 generic shield~
@@ -951,7 +951,7 @@ A generic shield is lying here.~
 E
 generic shield~
    Since the shield is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #62
 generic cape~
@@ -964,7 +964,7 @@ A generic cape is lying here.~
 E
 generic cape~
    Since the cape is completely generic there are no distinctive features worth
-noticing.    
+noticing.
 ~
 #63
 generic belt~
@@ -977,7 +977,7 @@ A generic belt is lying here.~
 E
 generic belt~
    Since the belt is completely generic there are no distinctive features worth
-noticing.    
+noticing.
 ~
 #64
 generic wristguard~
@@ -990,7 +990,7 @@ A generic wristguard is lying here.~
 E
 generic wristguard~
    Since the wristguard is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #65
 generic wristguard~
@@ -1003,7 +1003,7 @@ A generic wristguard is lying here.~
 E
 generic wristguard~
    Since the wristguard is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #66
 generic weapon~
@@ -1016,7 +1016,7 @@ A generic weapon is lying here.~
 E
 generic weapon~
    Since this weapon is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #67
 generic staff~
@@ -1029,7 +1029,7 @@ A generic staff is lying here.~
 E
 generic staff~
    Since this staff is completely generic there are no distinctive features
-worth noticing.    
+worth noticing.
 ~
 #68
 commissars key~
@@ -1124,7 +1124,7 @@ are listed under HELP ZONES by being CAPITALIZED.  For example to teleport to:
   74 Newbie GRAVEyard                   -- Jojen                       3- 5
 type: teleport grave
    The teleporter may also be used to recall back to Midgaard at any time.
- 
+
 Uncapitalized zones are linked through a capitalized zone.
 ~
 #83
@@ -1138,9 +1138,9 @@ A small slip of paper has something written on it.~
 E
 slip paper tapcode code~
    Below is a tap code we use to communicate through the walls by tapping 2 numbers.
-TAPS| 1 | 2 |  3  | 4 | 5 | 
-1   | A | B |C/K| D | E | The first designates the horizontal row and the 2nd 
-2   | F | G |  H  | I | J | designates the vertical row. The letter W, for 
+TAPS| 1 | 2 |  3  | 4 | 5 |
+1   | A | B |C/K| D | E | The first designates the horizontal row and the 2nd
+2   | F | G |  H  | I | J | designates the vertical row. The letter W, for
 3   | L | M |  N  | O | P |  example, would be 5-2. The letter H would be 2-3.
 4   | Q | R |  S  | T | U | The letter "c" works double duty as a c or k.
 5   | V | W |  X  | Y | Z |
@@ -1198,7 +1198,7 @@ E
 throne chair bayonets~
    The chair is made completely out of bayonets with the sharpest points in the
 most inconvenient of spots.  A plaque on the bottom reads: "You can build a
-throne of bayonets, but you can't sit on it for long."  
+throne of bayonets, but you can't sit on it for long."
 ~
 #88
 idleout timer stayalive bracelet~
@@ -1258,7 +1258,7 @@ full english breakfast fatty food~
 sausages, baked beans, hashed browns, mushrooms, tomatoes, black pudding and
 fried bread. Available variants include the so-called Jewish Breakfast, served
 with turkey ham and beef sausages, or the vegetarian breakfast, served with
-quorn sausages. 
+quorn sausages.
 ~
 #92
 tea mug cup nice tea~
@@ -1270,7 +1270,7 @@ A nice mug of tea has been left here.~
 7 1 0 0 0
 E
 mug cup tea nice~
-   A nice mug of fair trade tea, all you need now is a nice piece of cake. 
+   A nice mug of fair trade tea, all you need now is a nice piece of cake.
 From its home in China to the break times of Britain, Tea is the drink of Asian
 Emperors and European Monarchs, as well as sweatshop workers in the east and IT
 workers in the west.
@@ -1349,6 +1349,6 @@ E
 scythe death~
    It is a very heavy scythe.  The grey handle is made from hard wood and the
 long iron blade is completely smooth from countless years of use.  It feels cold
-to the touch.  
+to the touch.
 ~
 $~

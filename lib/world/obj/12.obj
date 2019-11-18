@@ -26,7 +26,7 @@ just make your objects special?  Well then, come and read to your hearts content
 through the trigedit tutorial hallway starting in room 13.  It will describe
 what trigedit is, what it can do, and of course, how to make them.  Dont forget,
 for optimal results, Use the pages in conjuction with TSTAT.  Have fun with the
-power of (minor)coding!  
+power of (minor)coding!
 ~
 #1202
 scroll~
@@ -72,7 +72,7 @@ letters.
    Please be aware that the God Hall has changed, and all operations are
 available using the new zone, (343) Offices are also posted at this new
 location.  Look at fountain for the Directory and Map (34306) to
-assist you if this applies. 
+assist you if this applies.
 
 Whiteknight, The Just Cleric
 Billeting Officer, Zone(s) 343/346
@@ -127,7 +127,7 @@ E
 game console~
    To start a game type: go
 To move around type: go <up | down | left | right>
- 
+
 You must collect the prizes and avoid the animal to obtain maximum points.
 Each prize is worth 500 * game_level in experience.
 ~
@@ -154,7 +154,7 @@ A pile of sheer silk is here, almost transparent.~
 E
 near-transparent small garmet silk sheer transparent~
    The tiny silk dress is cut so thin it is almost transparent, and it doesn't
-look as thought it would cover much.  
+look as thought it would cover much.
 ~
 A
 6 2
@@ -197,7 +197,7 @@ smaug couch~
    Smaug's glamourous couch :-P.  It is made from a soft medal, only found deep
 in the dungeons of hell.  The coushons on the couch are the finest of all
 couschons, the arms of the couch are made from a ferret's pelt.  The legs are in
-the shape of dragons, and are also made from dragon's skin.  
+the shape of dragons, and are also made from dragon's skin.
 ~
 #1230
 test scroll~
@@ -233,7 +233,7 @@ A Gigantic Black Staff rests here.~
 5 1 0 30 0
 E
 staff black~
-   A Huge staff sits here eminating a tremendous power.  
+   A Huge staff sits here eminating a tremendous power.
 ~
 #1269
 switch~
@@ -246,7 +246,7 @@ A magical switch from a willow tree has carelessly been discarded here.~
 T 1270
 E
 switch willow~
-   It's a stick.  It's magical.  It also hurts when you beat people with it.  
+   It's a stick.  It's magical.  It also hurts when you beat people with it.
 ~
 #1275
 uniform~
@@ -285,7 +285,7 @@ flag american~
    The proud stars and stripes are set strongly against the blue background of
 the morning sky. Someone has raised the flag in hopes that our dear friend,
 Rumble, returns from his service in Iraq. May his courage and strength keep him
-safe, and let the great banner of our great nation always watch over him. 
+safe, and let the great banner of our great nation always watch over him.
 Return home my friend.
 ~
 #1295
@@ -323,12 +323,12 @@ A piece of fireworks is planted in a champagne bottle.~
 T 1297
 E
 firework new year piece~
-   This large rocket is about to go up!  Strange colours will fill the sky!  
+   This large rocket is about to go up!  Strange colours will fill the sky!
 ~
 E
 bottle champagne~
    The bottle is filled partially with water so it doesn't tilt over.  Someone
-has obviously drunk the champagne first.  
+has obviously drunk the champagne first.
 ~
 #1299
 christmas tree~
@@ -341,6 +341,6 @@ A festive christmas tree is covered in various ornaments and lights.~
 E
 tree christmas~
    The Christmas Tree is nicely decorated, there is a Huge shining star at the
-top.  And colourful lights are hanging from all its branches.  
+top.  And colourful lights are hanging from all its branches.
 ~
 $~

@@ -16,7 +16,7 @@ A very sharp knife lies here.~
 9 1000 2500 0
 E
 knife thief~
-   A keen knife, very sharp -- you could cut the air in two!  
+   A keen knife, very sharp -- you could cut the air in two!
 ~
 A
 2 2
@@ -32,7 +32,7 @@ A blue wizard's hat lies here.~
 5 200 10 0
 E
 hat wizard~
-   A hat made of blue cloth.  It looks very comfortable.  
+   A hat made of blue cloth.  It looks very comfortable.
 ~
 A
 3 2
@@ -48,7 +48,7 @@ A white cone-shaped head ornament with religious symbols lies here.~
 5 200 10 0
 E
 headress pontiff ornament cone head~
-   A starchy headress worn by powerful secular types.  
+   A starchy headress worn by powerful secular types.
 ~
 A
 4 3
@@ -64,7 +64,7 @@ A black visor sits here.~
 5 200 10 0
 E
 visor black knight~
-   A visor that protects the head, good for warriors.  
+   A visor that protects the head, good for warriors.
 ~
 A
 1 1
@@ -81,6 +81,6 @@ A thick white potion has been left here.~
 E
 potion thick white~
    It is disgusting thick white gunk which looks like liquid web and smells like
-medicine.  
+medicine.
 ~
 $~

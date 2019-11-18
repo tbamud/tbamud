@@ -10,7 +10,7 @@ E
 pile glitter~
    The king rat seem to like shining objects.  This pile is filed with small
 pieces of glass, broken mirrors, nice pebbles and the occasional lost gold
-piece.  
+piece.
 ~
 #3701
 trout fillet~
@@ -46,8 +46,8 @@ A chest is here, protecting whatever is hidden in it.~
 0 0 0 0 0
 E
 iron ironbound chest~
-   The chest has been bound by iron, to prevent it from being forced open.  
-Lucky for you the lock is a simple one.  
+   The chest has been bound by iron, to prevent it from being forced open.
+Lucky for you the lock is a simple one.
 ~
 #3705
 chain chainmail mail~
@@ -60,7 +60,7 @@ A very nice chainmail has been thrown on the ground here.~
 E
 chain mail chainmail~
    The chains connected in this chainmail is of a fine quality, making a very
-nice and very sturdy chainmail suit.  
+nice and very sturdy chainmail suit.
 ~
 A
 24 -2
@@ -89,7 +89,7 @@ A small fishing boat has been moored here.~
 E
 boat~
    The boat is made from a very light sort of wood, making it extremely easy to
-carry around.  
+carry around.
 ~
 #3708
 fungus~
@@ -101,7 +101,7 @@ Fungus is hanging from the ceiling.~
 5 25 2 0 0
 E
 fungus~
-   Green fungus growing on spiderwebs - YUCK!  
+   Green fungus growing on spiderwebs - YUCK!
 ~
 #3709
 desk~
@@ -115,7 +115,7 @@ E
 desk~
    An old desk, heavy with age - and guano - has been left here by the
 constructors of the sewers.  If there was anything of interest on it earlier, it
-has been covered in several tons of guano from the bats on the ceiling above.  
+has been covered in several tons of guano from the bats on the ceiling above.
 ~
 #3710
 key~
@@ -128,6 +128,6 @@ An extremely dirty key is lying here.~
 E
 key~
    An old and very dirty key.  It looks as you'd imagine a padlock key looks,
-when not in the padlock.  And of course dirty from the surrounding muck.  
+when not in the padlock.  And of course dirty from the surrounding muck.
 ~
 $~

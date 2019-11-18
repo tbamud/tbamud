@@ -36,11 +36,11 @@ one big factory, churning out the standard magic items that
 many DikuMudders have become accustomed to.
 *
 A Big Thanks to Builder_5, Serene, and Amanda for supporting C.A.W.
-Also, kudos to Tarkin of VieMud (viemud.org 4000) for allowing us to 
-use his mud for pre-release testing. This area was built with the aid 
-of George Essl's Dikued program.  We would like to thank Mr. Essl for 
-his time and determination to create and support Dikued. The 
-following people have aided C.A.W. and Amanda in numerous ways, and 
+Also, kudos to Tarkin of VieMud (viemud.org 4000) for allowing us to
+use his mud for pre-release testing. This area was built with the aid
+of George Essl's Dikued program.  We would like to thank Mr. Essl for
+his time and determination to create and support Dikued. The
+following people have aided C.A.W. and Amanda in numerous ways, and
 all receive our deepest gratitude: Derek Lang (for continued support)
 Freja (for the pink incarnation) the players of VieMud (for playtesting)
 ~
@@ -412,9 +412,9 @@ S
 #29619
 The Work Floor~
    This is a part of the assembly line for Froboz' products.  Here
-you see wands of invisibility being assembled.  Small sticks are 
-placed on the back of a large walking turtle, which trombles past 
-other workers standing in line.  The workers take turns putting  
+you see wands of invisibility being assembled.  Small sticks are
+placed on the back of a large walking turtle, which trombles past
+other workers standing in line.  The workers take turns putting
 the little white tip on one end, inscribing Froboz' name on the
 wand, dousing it with extract of Implementor, and a lot of other
 complicated, technical things you do not understand.  It looks
@@ -458,7 +458,7 @@ D3
 0 -1 29619
 E
 vat~
-   It is big.  It is a vat.  It is filled.  What else do you want to know?  
+   It is big.  It is a vat.  It is filled.  What else do you want to know?
 ~
 S
 #29621
@@ -487,7 +487,7 @@ E
 book~
    Hmm...  An introduction to a new magic!  You sit down with the book, and
 awake several hours later, well rested.  Blinking, you sit up to find the book
-is gone.  Oh well.  
+is gone.  Oh well.
 ~
 S
 #29622
@@ -511,7 +511,7 @@ D1
 0 -1 29621
 E
 machine pigeon~
-   No really, you don't want to know.  
+   No really, you don't want to know.
 ~
 S
 #29623
@@ -535,12 +535,12 @@ D2
 E
 machine~
    Parchment in one end, scrolls out the other.  No moving parts that you can
-see!  Magic!  Ain't it wonderful???  
+see!  Magic!  Ain't it wonderful???
 ~
 E
 box~
    Wow!  The twin power-mages Black and Decker themselves couldn't get into this
-box if they tried!  This isn't a safe...  It is a safer!  
+box if they tried!  This isn't a safe...  It is a safer!
 ~
 S
 #29624
@@ -604,12 +604,12 @@ D3
 E
 grinder~
    Looks real disgusting.  Looks real painful.  You are glad you are not going
-anywhere near it, aren't you?  
+anywhere near it, aren't you?
 ~
 E
 crates crates~
    On the side of the crate, barely legible from scratchmarks and age, is the
-legend: 'stbusters Inc.  One Type III enclosed.  DANGER.  This end up.  
+legend: 'stbusters Inc.  One Type III enclosed.  DANGER.  This end up.
 ~
 S
 #29626
@@ -632,8 +632,8 @@ D3
 E
 junk~
    Looks like a lot of odd and ends.  Most appear harmless...  It would take
-quite an imagination to create something dangerous with these, like a...!!!  
-Nah, it'll never work.  
+quite an imagination to create something dangerous with these, like a...!!!
+Nah, it'll never work.
 ~
 S
 #29627
@@ -680,7 +680,7 @@ D3
 E
 door writing~
    The writing on the door is in large yellow print and reads: DANGER!!!  DO NOT
-ENTER!!!  
+ENTER!!!
 ~
 S
 #29629
@@ -707,12 +707,12 @@ door~
 E
 door writing~
    The writing on the door is in large yellow print and reads: DANGER!!!  DO NOT
-ENTER!!!  
+ENTER!!!
 ~
 E
 magazines~
    These magazines seem to be filled with pictures of woman in various clothing
-crises.  Hmm.  
+crises.  Hmm.
 ~
 S
 #29630
@@ -813,7 +813,7 @@ D1
 S
 #29635
 The Access Road~
-   This winding accessway heads north around the side of the 
+   This winding accessway heads north around the side of the
 factory to the dock areas in the back.  The factory doesn't
 look near as imposing or as evil from this angle, but you
 still wouldn't want to work there.  Many heavy  carts and

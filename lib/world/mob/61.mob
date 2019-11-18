@@ -4,7 +4,7 @@ the vicious warg~
 A vicious warg is here, snarling angrily at you.
 ~
    It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
-quickly from its long, white fangs.  It looks quite dangerous and very angry.  
+quickly from its long, white fangs.  It looks quite dangerous and very angry.
 ~
 104 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
@@ -17,7 +17,7 @@ the ferocious warg~
 A ferocious warg is here, snarling angrily at you.
 ~
    It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
-quickly from its long, white fangs.  It looks quite dangerous and very angry.  
+quickly from its long, white fangs.  It looks quite dangerous and very angry.
 ~
 104 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
@@ -29,7 +29,7 @@ wolf grey~
 the large, grey wolf~
 A large, grey wolf is here, glaring hungrily at you.
 ~
-   The large, grey wolf eyes you with interest while licking its lips.  
+   The large, grey wolf eyes you with interest while licking its lips.
 ~
 104 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
@@ -41,7 +41,7 @@ wolf black~
 the large, black wolf~
 A large, black wolf is here, glaring hungrily at you.
 ~
-   The large, black wolf eyes you with interest while licking its lips.  
+   The large, black wolf eyes you with interest while licking its lips.
 ~
 104 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
@@ -53,9 +53,9 @@ tree ancient~
 the ancient tree~
 A huge, ancient tree towers above you.
 ~
-   Its roots are extremely big and large parts of them are above ground.  
+   Its roots are extremely big and large parts of them are above ground.
 Something about it makes you think that this is not a normal oak tree.  The
-enormous grey trunk shivers slightly, as if sighing deeply.  
+enormous grey trunk shivers slightly, as if sighing deeply.
 ~
 256072 0 0 0 1638480 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -67,9 +67,9 @@ tree ancient~
 the ancient tree~
 A huge, ancient tree towers above you.
 ~
-   Its roots are extremely big and large parts of them are above ground.  
+   Its roots are extremely big and large parts of them are above ground.
 Something about it makes you think that this is not a normal oak tree.  The
-enormous grey trunk emits a deep, moaning sound.  
+enormous grey trunk emits a deep, moaning sound.
 ~
 256072 0 0 0 1638480 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -99,7 +99,7 @@ A huge, poisonous spider is here.
 ~
    This disgusting creature is at the size of a human crawling on all four.  It
 has eight hairy legs that gives it a tremendous speed on almost any surface and
-sharp poisonous fangs to paralyze or kill its prey.  
+sharp poisonous fangs to paralyze or kill its prey.
 ~
 74 0 0 0 16 0 0 0 -350 E
 8 18 5 1d1+80 1d2+1
@@ -114,7 +114,7 @@ The huge, bulky Queen spider is here.
 ~
    This disgusting creature is at the size of a small elephant.  It has eight
 huge, hairy legs that would give it a tremendous speed on almost any surface if
-it wasn't so immensely fat.  Its large, bulbous eyes stare back at you.  
+it wasn't so immensely fat.  Its large, bulbous eyes stare back at you.
 ~
 2634 0 0 0 65616 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
@@ -129,7 +129,7 @@ Shargugh the Forest Brownie is here, grinning broadly at you.
 ~
    This little fellow is only three foot tall with wild matted brown hair and
 long tangled brown beard.  He wears ragged brown and green clothing and looks as
-if he is having great fun.  
+if he is having great fun.
 ~
 2252 0 0 0 1638612 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -143,7 +143,7 @@ the Elder druid~
 The Elder druid is here.  He looks very upset about your presence in his home.
 ~
    The druid looks quite old.  You would think of him as venerable but yet you
-know he would be a tough foe.  
+know he would be a tough foe.
 ~
 778 0 0 0 80 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
@@ -160,7 +160,7 @@ Isha the Dark Elf is here, observing you silently.
 like silver in the moonlight.  Her slender body is adorned with a sleeveless
 shirt and a short skirt made from black scales joined with silver threads.  Her
 back is covered by a large, hooded cloak as black as her skin and in her broad
-silver belt hangs a long, slender sword in a silver scabbard.  
+silver belt hangs a long, slender sword in a silver scabbard.
 ~
 6154 0 0 0 524304 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3

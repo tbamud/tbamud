@@ -1,7 +1,7 @@
 #10000
 Inside a Small Cabin~
    As you step into the shabby cabin, the smell makes you gag.  A slight haze
-makes your eyes sting.  Whoever lives here has no regard for cleanliness.  
+makes your eyes sting.  Whoever lives here has no regard for cleanliness.
 Piles of rags lie everywhere.
 ~
 100 0 0 0 0 3
@@ -59,7 +59,7 @@ Along the City Wall~
    As you walk by the city wall, you notice the forest is getting thicker.  A
 slight gloom hangs over this part of the woods.  You start to walk a little
 faster.  Further to the west you can see a small clearing with something that
-looks like a shack.  
+looks like a shack.
 ~
 100 0 0 0 0 3
 D0
@@ -120,8 +120,8 @@ S
 #10005
 Along the City Wall~
    The forest along this part of the wall is thinnning out.  Further east it
-looks as if the forest disappears all together and turns into a grassy plain.  
-Small innocent forest creatures abound in this healthy forest.  
+looks as if the forest disappears all together and turns into a grassy plain.
+Small innocent forest creatures abound in this healthy forest.
 ~
 100 0 0 0 0 3
 D0
@@ -304,7 +304,7 @@ Deep Forest~
    The forest is too thick to see more than a few feet.  Trees and brush block
 the exits to the north and east.  You start to wonder if someone could be spying
 on you.  Someone could be standing behind any one of these huge trees and you
-would never know.  
+would never know.
 ~
 100 0 0 0 0 3
 D1
@@ -344,7 +344,7 @@ S
 Off the Northern Road~
    The northern road is just to your east now.  It seems to curve around to the
 north.  The trees here are spaced several feet apart and you can see the
-movement of wildlife in the distance.  
+movement of wildlife in the distance.
 ~
 100 0 0 0 0 3
 D0
@@ -370,7 +370,7 @@ The Northern Road~
 deserted.  You can see a few people off in the distance to the south, close to
 the city.  To the north you can make out what looks like a body of water in the
 distance.  The forest is to the west and there are some plains in the distance
-to the east.  
+to the east.
 ~
 100 0 0 0 0 3
 D0
@@ -394,7 +394,7 @@ S
 Light Forest~
    The forest is starting to fade away into plains.  A stiff wind blows from the
 east.  It seems a little cold for this time of year.  To the north you think you
-can hear the sound of rushing water.  
+can hear the sound of rushing water.
 ~
 100 0 0 0 0 3
 D0
@@ -490,7 +490,7 @@ S
 #10023
 The Northern Road~
    The northern road leads right up to the edge of a vast lake.  The water looks
-clean and refreshing.  A blanket of fog obscures what is on the other side.  
+clean and refreshing.  A blanket of fog obscures what is on the other side.
 The road goes continues east to west to go around the lake.
 ~
 100 0 0 0 0 3
@@ -600,7 +600,7 @@ S
 By the River~
    The river roars past you to the north.  You can only leave east or west.  To
 the east you can see the northern road and what looks like a bridge to get
-across the river.  
+across the river.
 ~
 100 0 0 0 0 3
 D1
@@ -669,7 +669,7 @@ Before the Plains~
    The river drops off into an impressive waterfall that flows into a small
 lake to the east.  Across the canyon you see fields of grass.  A small rickety
 rope bridge crosses the river to the north.  It looks like it might be able to
-hold one person at a time.    
+hold one person at a time.
 ~
 100 0 0 0 0 3
 D0
@@ -788,9 +788,9 @@ S
 #10039
 Light Forest~
    The swamp clears up a little, tall healthy trees keep the soil under your
-feet firm.  The river to the south must be the outlet to the massive lake.  
+feet firm.  The river to the south must be the outlet to the massive lake.
 You can only leave to the north or west.  It looks like swampland in both
-directions.    
+directions.
 ~
 100 0 0 0 0 3
 D0
@@ -805,9 +805,9 @@ S
 #10040
 Swamp~
    You walk out onto a small natural jetty sticking out into the middle of the
-swamp.  Fetid water surrounds you, leaving the only way out to the north.  
+swamp.  Fetid water surrounds you, leaving the only way out to the north.
 Something causes ripples in the water, but is gone before you can tell what it
-was.  
+was.
 ~
 100 0 0 0 0 3
 D0
@@ -819,7 +819,7 @@ S
 Before the Plains~
    You stand just north of a rope bridge, on the edge of the plains.  A bog to
 the east looks dangerous.  To the north you can continue into the plains.  The
-way east is blocked by the river.    
+way east is blocked by the river.
 ~
 100 0 0 0 0 3
 D0
@@ -836,7 +836,7 @@ The Northern Road~
    The northern road continues here, north to Dun Maura or east back toward the
 city.  You wonder about the fabled Dun Maura, city of the minotaurs.  Many
 stories abound about it, but you doubt half of them are true.  To the south you
-could enter the dense forest.    
+could enter the dense forest.
 ~
 100 0 0 0 0 3
 D0
@@ -854,10 +854,10 @@ D2
 S
 #10043
 A Curve in the Northern Road~
-   The road turns west around a small pond or heads south back to the city.  
+   The road turns west around a small pond or heads south back to the city.
 The pond just to the north looks more like a bog than anything else.  Sick and
 dying trees are scattered throughout it.  It looks as if the area was recently
-flooded.    
+flooded.
 ~
 100 0 0 0 0 3
 D1
@@ -877,7 +877,7 @@ S
 Swamp~
    You stand at the southeast corner of the pond, surrounded by swamp, except
 to the south and west that appear to be where the northern road works its way
-around this marsh.  The smell of decomposition is strong here.    
+around this marsh.  The smell of decomposition is strong here.
 ~
 100 0 0 0 0 3
 D0
@@ -902,7 +902,7 @@ Swamp~
    You stand in the middle of the swamp, carefully testing every step as you
 step into the muck.  It seems to be getting deeper here.  Your feet sink above
 the ankles once in a while.  Wildlife seems scarce.  You wonder why anything
-would live here.    
+would live here.
 ~
 100 0 0 0 0 3
 D0
@@ -927,7 +927,7 @@ Swamp~
    You are afraid you might lose your way in this dismal marsh.  Your feet are
 starting to sink almost all the way up to your knees now.  You wonder about the
 possibilities of quicksand, and all those stories you hear about people
-disappearing in these swamps.    
+disappearing in these swamps.
 ~
 100 0 0 0 0 3
 D0
@@ -951,7 +951,7 @@ S
 Swamp~
    The thought of taking a wrong step and sinking to your death makes you slow
 down a little.  To the west you think you can see some drier land.  You thank
-the gods above.    
+the gods above.
 ~
 100 0 0 0 0 3
 D0
@@ -976,7 +976,7 @@ Swamp~
    The swamp is starting to firm up underneath you.  To the north you see a
 large crater in the ground.  You wonder who the unfortunate soul was to be
 walking across that when it gave out.  To the south and west the swamp looks
-even worse.  East you see the beginning of some plains.    
+even worse.  East you see the beginning of some plains.
 ~
 100 0 0 0 0 3
 D1
@@ -997,7 +997,7 @@ Edge of the Plains~
    The plains stretch to the north and east as far as you can see.  To the
 south you can hear the sound of rushing water.  West you stare into a dismal
 swampland.  The stories you've heard about getting lost in those plains makes
-you decide to stick closer to civilization.    
+you decide to stick closer to civilization.
 ~
 100 0 0 0 0 3
 D0
@@ -1017,7 +1017,7 @@ S
 The Northern Road~
    The northern road hugs the edge of the pond to the east.  The forest to the
 west looks too thick to bother leaving the easy travelling of this road.  The
-road continues north and south.    
+road continues north and south.
 ~
 100 0 0 0 0 3
 D0
@@ -1033,7 +1033,7 @@ S
 Beside the Pond~
    A small pond is just to the west.  The water looks murky and unclean.  To
 the north is more forest while east and south it looks a little swampy.  Small
-animals scatter as you intrude on their territory.    
+animals scatter as you intrude on their territory.
 ~
 100 0 0 0 0 3
 D0
@@ -1053,7 +1053,7 @@ S
 Swamp~
    The smell here is overpowering.  The stench of stagnant water and rot makes
 your eyes tear.  The swamp continues to the south.  To the west you can see a
-body of water.    
+body of water.
 ~
 100 0 0 0 0 3
 D2
@@ -1069,7 +1069,7 @@ S
 A Small Bridge~
    Someone had the common sense to put a bridge here so you would not have to
 walk in the muddy swamp.  It feels good to be on dry ground for a change.  The
-bridge leads north or south.    
+bridge leads north or south.
 ~
 100 0 0 0 0 3
 D0
@@ -1085,7 +1085,7 @@ S
 The Edge of a Sink Hole~
    You walk towards the large crater and the ground underneath you starts to
 fall away.  Luckily, you jump back before falling into this natural trap.  You
-look down into the sink hole and think you can see a corpse.  
+look down into the sink hole and think you can see a corpse.
 ~
 100 0 0 0 0 3
 D2
@@ -1103,7 +1103,7 @@ S
 The Edge of the Plains~
    With the swamp to the south and plains north and east you enjoy the fresh,
 clean, open air.  A sink hole is just to the west.  Someone must have walked
-over it and caused it to collapse.  You pity the poor adventurer.    
+over it and caused it to collapse.  You pity the poor adventurer.
 ~
 100 0 0 0 0 3
 D0
@@ -1120,7 +1120,7 @@ The Northern Road~
    The northern road turns sharply east here.  You must be getting closer to
 the city of Dun Maura.  The road to the south leads back to the safety of the
 city.  North is more dense forest.  To the west a fresh path has been hacked
-through the woods.    
+through the woods.
 ~
 100 0 0 0 0 3
 D0
@@ -1140,7 +1140,7 @@ S
 A Turn in the Northern Road~
    The northern road curves yet again to the north.  You wonder why they could
 not just make a straight road.  Then you realize the swamp probably made it
-impossible.  The pond is to the south and it looks like a swamp to the east.  
+impossible.  The pond is to the south and it looks like a swamp to the east.
 ~
 100 0 0 0 0 3
 D0
@@ -1160,7 +1160,7 @@ S
 Swamp~
    You frown in disgust as you slosh your way through this bog.  It just does
 not seem like a good day anymore.  The swamp is dismal and smelly.  The
-northern road is to the west.  Dry forest is north or east.    
+northern road is to the west.  Dry forest is north or east.
 ~
 100 0 0 0 0 3
 D0
@@ -1184,7 +1184,7 @@ S
 Deep Forest~
    Small animals abound in this part of the forest.  Most of them are too fast
 and too suspicious for you to see.  You only hear the rustle of leaves as they
-hide from you.  The forest continues in all directions.    
+hide from you.  The forest continues in all directions.
 ~
 100 0 0 0 0 3
 D0
@@ -1203,8 +1203,8 @@ S
 #10060
 Deep Forest~
    Just to the south you see a bridge that crosses some of the swamp.  Forest
-surrounds you on all other sides.  This part of the forest seems peaceful.  
-Birds chirping and small animals chattering.    
+surrounds you on all other sides.  This part of the forest seems peaceful.
+Birds chirping and small animals chattering.
 ~
 100 0 0 0 0 3
 D0
@@ -1229,7 +1229,7 @@ Light Forest~
    The forest is slowly turning into plains here.  To the east you see huge
 fields of grass, perfectly level land that you can see for miles.  South of you
 is a large natural crater of some sort.  It looks as if the ground had recently
-just given way.  
+just given way.
 ~
 100 0 0 0 0 3
 D0
@@ -1249,7 +1249,7 @@ S
 Light Forest~
    The trees here are all tall hardwoods, spread far apart so you can see for
 some distance.  To the east the trees grow even more sparse and finally give way
-to the plains.  West will take you back into the thick forest.  
+to the plains.  West will take you back into the thick forest.
 ~
 100 0 0 0 0 3
 D0
@@ -1269,7 +1269,7 @@ S
 The Edge of the Plains~
    The forest finally gives way to the plains here.  Although the plains are
 perfectly level, allowing you to see for miles, one could easily get lost out
-there once they lost sight of the forest.    
+there once they lost sight of the forest.
 ~
 100 0 0 0 0 3
 D0
@@ -1289,7 +1289,7 @@ S
 Deep Forest~
    You find yourself in dense woodland.  Hardwood trees tower above you while
 small pine and fir trees hug the ground, reducing visibility.  The northern road
-is just south and east of here.  
+is just south and east of here.
 ~
 100 0 0 0 0 3
 D0
@@ -1303,9 +1303,9 @@ D2
 S
 #10065
 The Northern Road~
-   You walk along the northern road.  The well-made path makes travel easy.  
+   You walk along the northern road.  The well-made path makes travel easy.
 The road continues north and south.  To the east and west is thick forest.  You
-think you can see an intersection of roads to the north.  
+think you can see an intersection of roads to the north.
 ~
 100 0 0 0 0 3
 D0
@@ -1337,7 +1337,7 @@ S
 Deep Forest~
    More pine, fir and cedar trees make you push limbs aside and force your way
 through the underbrush.  Cobwebs cling to your face and sticks keep seeming to
-try to poke you in the eye.  
+try to poke you in the eye.
 ~
 100 0 0 0 0 3
 D0
@@ -1357,7 +1357,7 @@ S
 Light Forest~
    You make it to a small clearing where the trees no longer crowd you.  The
 forest continues in all directions.  To the north you think you can see the
-northern road.  South looks like more swamp.    
+northern road.  South looks like more swamp.
 ~
 100 0 0 0 0 3
 D0
@@ -1382,7 +1382,7 @@ Light Forest~
    The noise of wild animals keeps distracting you.  You wonder if there are
 any dangerous animals in these woods.  Childhood stories of viscious minotaurs
 spark sudden fears.  They were just stories to kep the children inside the city
-walls, weren't they?    
+walls, weren't they?
 ~
 100 0 0 0 0 3
 D0
@@ -1403,7 +1403,7 @@ Light Forest~
    The forest is light and cheery here.  You forget about all your worries and
 enjoy the fine scenery.  Nothing to worry about here.  Just a bunch of harmless
 little forest animals.  Then again, maybe some of these animals are not so
-harmless.    
+harmless.
 ~
 100 0 0 0 0 3
 D0
@@ -1419,7 +1419,7 @@ S
 The Edge of the Plains~
    Plains continue in all directions except for the forest to the west.  You
 think of the stories about the plains of lost souls and wonder whether those
-were just stories or actually true.  
+were just stories or actually true.
 ~
 100 0 0 0 0 3
 D0
@@ -1435,7 +1435,7 @@ S
 Deep Forest~
    The forest is thick with huge elms and maples.  Just to the north you can
 make out a small road of some sort.  It definitely is not the northern road
-which you believe is due east of where you are.    
+which you believe is due east of where you are.
 ~
 100 0 0 0 0 3
 D0
@@ -1451,7 +1451,7 @@ S
 A Turn in the Northern Road~
    The northern road turns to the east or south from here.  You notice another
 smaller road leading off to the north.  It looks like it has been rarely used.
-Which way to go?  How about the one less travelled?    
+Which way to go?  How about the one less travelled?
 ~
 100 0 0 0 0 3
 D0
@@ -1471,7 +1471,7 @@ S
 The Northern Road~
    The northern road continues east and west from here.  To the east it must
 eventually turn back north to the city of minotaurs.  To the west it heads back
-to the city.  North and south you see more forest.    
+to the city.  North and south you see more forest.
 ~
 100 0 0 0 0 3
 D1
@@ -1491,7 +1491,7 @@ S
 The Northern Road~
    The road stretches to the east and west.  Thick forest are to the north and
 south.  The road seems a little less traveled through this part.  You notice
-fewer ruts in the road from wagons and even fewer people.  
+fewer ruts in the road from wagons and even fewer people.
 ~
 100 0 0 0 0 3
 D0
@@ -1515,7 +1515,7 @@ S
 A Small Road~
    The small road continues to the east from here.  The main road lies to the
 west while forest stretches out in all other directions.  This road looks like
-it has not been used for years.  
+it has not been used for years.
 ~
 100 0 0 0 0 3
 D0
@@ -1539,7 +1539,7 @@ S
 A Bend in the Small Road~
    The road turns to the north or west from here.  Forest lies to the south and
 the start of the plains is to the east.  This road is covered with grass and
-even a few small trees.  It looks like no one has travelled it for years.    
+even a few small trees.  It looks like no one has travelled it for years.
 ~
 100 0 0 0 0 3
 D0
@@ -1563,7 +1563,7 @@ S
 Light Forest~
    A small road lies just to the west and the plains are to the east.  North
 and south is even more forest.  It seems no one ever comes this deep into the
-woods.  All the animals seem to be staring at you.    
+woods.  All the animals seem to be staring at you.
 ~
 100 0 0 0 0 3
 D2
@@ -1580,7 +1580,7 @@ The Edge of the Plains~
    The plains stretch out for miles.  You actually miss the confines of the
 woods compared to this open vulnerability.  To the north you can see a small
 road.  You occasionally notice the sway of the grass on the plains as something,
-or someone, moves stealthily through.    
+or someone, moves stealthily through.
 ~
 100 0 0 0 0 3
 D0
@@ -1596,7 +1596,7 @@ S
 A Small Road~
    The road is completely overgrown here and you can't tell which way it was
 meant to go.  It looks like it might continue to the east, or you can enter the
-forest to the south.    
+forest to the south.
 ~
 100 0 0 0 0 3
 D1
@@ -1612,7 +1612,7 @@ S
 A Small Road~
    The road here is starting to fade back into the land.  Few traces actually
 remain that allow you to determine which way it goes.  It looks like it
-continues to the west and to the south.    
+continues to the west and to the south.
 ~
 100 0 0 0 0 3
 D0
@@ -1636,7 +1636,7 @@ S
 Deep Forest~
    The forest is thick and dismal.  The northern road is to the east while
 another smaller road lies to the west.  Small animals sit and stare at you
-instead of running away.  They must not be used to seeing trespassers.    
+instead of running away.  They must not be used to seeing trespassers.
 ~
 100 0 0 0 0 3
 D1
@@ -1653,7 +1653,7 @@ The Northern Road~
    The northern road goes north or south from here.  It seems you must be
 coming close to Dun Maura by now.  You have been travelling forever.  Fewer
 people seem to be on the road anymore.  You are not sure if that is a good or
-bad sign.    
+bad sign.
 ~
 100 0 0 0 0 3
 D0
@@ -1677,7 +1677,7 @@ S
 Light Forest~
    The trees open up into small fields.  To the east you can see a small road.
 The road also seems to curve to the south.  West is the main road to Dun Maura
-or back to the safety of the city.    
+or back to the safety of the city.
 ~
 100 0 0 0 0 3
 D0
@@ -1701,7 +1701,7 @@ S
 A Small Road~
    The road turns to the east or south from here.  You think to the west you
 can see the northern road.  You look for any signs of life, but find nothing.
-It seems you are deep into the wilderness where few dare go.    
+It seems you are deep into the wilderness where few dare go.
 ~
 100 0 0 0 0 3
 D1
@@ -1721,7 +1721,7 @@ S
 A Small Road~
    This road is completely overgrown here.  You start to have to concentrate to
 keep track of where it goes.  It seems to be heading to the east toward the
-plains.  It also goes west toward the main road.    
+plains.  It also goes west toward the main road.
 ~
 100 0 0 0 0 3
 D0
@@ -1741,7 +1741,7 @@ S
 A Small Road Into the Plains~
    This small road continues on through the plains or heads back to the
 northern road towards the minotaur city.  The confines of the forest seem to
-beckon you compared to the openness of the plains.    
+beckon you compared to the openness of the plains.
 ~
 100 0 0 0 0 3
 D2
@@ -1757,7 +1757,7 @@ S
 Deep Forest~
    The forest is dark and quiet here.  Few animals can be seen or heard.  To
 the south you can make out a small road.  To the north you think you can see
-some sort of wall.  Could it be the city of the minotaurs at last?    
+some sort of wall.  Could it be the city of the minotaurs at last?
 ~
 100 0 0 0 0 3
 D0
@@ -1778,7 +1778,7 @@ Deep Forest~
    Thick forest surrounds you.  It feels suffocating and you wonder if you may
 be getting a little claustrophobic.  To the south you can make out the northern
 road.  North you can just barely see some sort of wall.  Definitely not nature's
-work.    
+work.
 ~
 100 0 0 0 0 3
 D0
@@ -1796,9 +1796,9 @@ D3
 S
 #10090
 Near the End of the Northern Road~
-   At last you have almost made it to the end of the great northern road.  
+   At last you have almost made it to the end of the great northern road.
 Just to the north you can see the city of the minotaurs.  A great wall
-surrounds the entire city.  You wonder about heading back south to safety.    
+surrounds the entire city.  You wonder about heading back south to safety.
 ~
 100 0 0 0 0 3
 D0
@@ -1822,7 +1822,7 @@ S
 Light Forest~
    The northern road is just west of you.  To the north you can see the famed
 city of minotaurs.  The woods here are very dark and quiet.  Few creaturs seem
-to live in these parts.  A gloom seems to hang over this forest.    
+to live in these parts.  A gloom seems to hang over this forest.
 ~
 100 0 0 0 0 3
 D0
@@ -1846,7 +1846,7 @@ S
 Light Forest~
    Although the forest seems thin in this part, you start feeling a sense of
 gloom and despair.  The woods seem to look darker by the minute.  Something is
-definitely wrong with this part of the woods, but you can not tell what.    
+definitely wrong with this part of the woods, but you can not tell what.
 ~
 100 0 0 0 0 3
 D1
@@ -1862,7 +1862,7 @@ S
 Edge of the Plains~
    Barren plains stretch east and south from here.  Just to the north you see
 the walls of a city.  West you can enter a dark forest.  A wind blows from the
-east, bringing with it an unseasonal chill.    
+east, bringing with it an unseasonal chill.
 ~
 100 0 0 0 0 3
 D0
@@ -1882,7 +1882,7 @@ S
 Beside the City Walls of Dun Maura~
    You stand before the towering city walls of the minotaurs.  The forest has
 been cut back away from the walls to allow good visibility for defense.  The
-gate of the city must be to the east.    
+gate of the city must be to the east.
 ~
 100 0 0 0 0 3
 D1
@@ -1898,7 +1898,7 @@ S
 Beside the City Walls of Dun Maura~
    The walls of the city look to be made from huge blocks of granite-like rock.
 You couldn't imagine any human being able to lift such things.  The walls are
-definite eye sores, but they serve their purpose well.    
+definite eye sores, but they serve their purpose well.
 ~
 100 0 0 0 0 3
 D1
@@ -1919,7 +1919,7 @@ Before the City of Dun Maura~
    You stand before the gates of the city of minotaurs.  Unfortunately, the
 gates are closed and they look like they have been that way for quite some
 time.  You can search the city walls east and west or head back south towards
-home.    
+home.
 ~
 100 0 0 0 0 3
 D1
@@ -1940,7 +1940,7 @@ Beside the City Walls of Dun Maura~
    The walls tower above you.  Nothing seems to be moving up there, but you can
 not help but wonder if someone has a bow pointed at you from above.  You should
 probably move a little deeper into the woods away from the walls before you
-find out.    
+find out.
 ~
 100 0 0 0 0 3
 D1
@@ -1961,7 +1961,7 @@ Beside the City Walls of Dun Maura~
    The wall of the city of minotaurs blocks you from going any further north.
 The gates to the city must be west from here.  The forest south looks very
 gloomy.  To the east is more of the city wall that heads out into the plains.
-  
+
 ~
 100 0 0 0 0 3
 D1
@@ -1977,7 +1977,7 @@ S
 Beside the City Walls of Dun Maura~
    The plains go for miles to the south and east.  The city walls of Dun Maura
 are directly north of you.  Also to the west you can see a light forest and
-what looks like the northern road in the distance.    
+what looks like the northern road in the distance.
 ~
 100 0 0 0 0 3
 D2

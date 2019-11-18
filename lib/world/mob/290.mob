@@ -4,7 +4,7 @@ the sea serpent~
 A sea serpent swims around here.
 ~
    Looking closely at this creature reveals its large teeth...  Heading your
-way.    
+way.
 ~
 76 0 0 0 1048592 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -16,7 +16,7 @@ lizardman sentry~
 the sentry~
 A lizardman sentry sentries here.
 ~
-   He seems to be doing a good job sentrying.    
+   He seems to be doing a good job sentrying.
 ~
 170 0 0 0 16 0 0 0 -150 E
 10 17 4 2d2+100 1d2+1
@@ -28,8 +28,8 @@ lizardman wizard~
 the wizard~
 A lizardman wizard is conjuring here.
 ~
-   This wizard is deeply involved in his conjuring and hasn't noticed you...  
-Yet.    
+   This wizard is deeply involved in his conjuring and hasn't noticed you...
+Yet.
 ~
 10 0 0 0 0 0 0 0 -200 E
 15 15 1 3d3+150 2d2+2
@@ -41,7 +41,7 @@ water elemental~
 the water elemental~
 A large water elemental is swimming about here.
 ~
-   It seems to be part of the conjuring spell the wizard is casting.    
+   It seems to be part of the conjuring spell the wizard is casting.
 ~
 42 0 0 0 16 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -54,7 +54,7 @@ the guard~
 A lizardman guard is guarding this area from people like you.
 ~
    This Guard is guarding.  Obviously he is not doing a good job.  This is
-proven by the simple fact that you are still here.    
+proven by the simple fact that you are still here.
 ~
 14 0 0 0 16 0 0 0 -100 E
 12 16 2 2d2+120 2d2+2
@@ -66,7 +66,7 @@ lizardman prince~
 the prince~
 The lizardman prince glares at you.
 ~
-   His glare is very unnerving.  Maybe you should attack him...    
+   His glare is very unnerving.  Maybe you should attack him...
 ~
 14 0 0 0 16 0 0 0 -350 E
 13 16 2 2d2+130 2d2+2
@@ -80,7 +80,7 @@ From behind the counter, Mr. Hooper smiles at you.
 ~
    Mr.  Hooper is the kind old man that runs this small general store.  He tips
 his head forward and looks over his glasses at you.  'Is there something that
-you would like to buy?  ', he asks politely.    
+you would like to buy?  ', he asks politely.
 ~
 188618 0 0 0 16 0 0 0 250 E
 14 16 1 2d2+140 2d2+2

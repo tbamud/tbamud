@@ -2,7 +2,7 @@
 Newbie School~
    Welcome.  We hope you have alot of fun here.  Please go down to start your
 training.  When you have finished the school, you can go down, and fight in the
-combat arena.  Good Luck!    
+combat arena.  Good Luck!
 ~
 234 152 0 0 0 0
 D5
@@ -20,8 +20,8 @@ Mobs         : 12
 Objects      : 36
 Shops        : 2
 Triggers     : 3
-Theme        : 
-Plot         : 
+Theme        :
+Plot         :
 Links        : 00, 72u
 Map          : 30
 ~
@@ -30,7 +30,7 @@ S
 Newbie School~
    Following these halls will lead you to rooms that will teach you some of the
 basics commands that will be very useful for your journeys here in the realm of
-Time Warp.  Please continue East.    
+Time Warp.  Please continue East.
 ~
 234 152 0 0 0 0
 D1
@@ -47,7 +47,7 @@ Newbie School~
    Typing @RLOOK@n either in small case, upper case, or mixed will allow you to
 see the Room name and Room Description also any players or Monsters or items.
 You also can just type @RL@n to view the room.  Please continue North or South
-to read more on commands.  After you are done, continue East.    
+to read more on commands.  After you are done, continue East.
 ~
 234 152 0 0 0 0
 D0
@@ -73,7 +73,7 @@ Newbie School~
 type Look, you can see the available exits.  Closed Doors or Gates will not
 display an exit, until you open them.  Read the room descriptions for hints in
 finding hidden exits.  There is a curtain on the north wall swaying slightly as
-if air is flowing in from somewhere.    
+if air is flowing in from somewhere.
 ~
 234 152 0 0 0 0
 D0
@@ -86,7 +86,7 @@ D2
 0 0 23402
 E
 curtain~
-   A beautiful set of curtains is blocking your view to the north.  
+   A beautiful set of curtains is blocking your view to the north.
 ~
 S
 #23404
@@ -95,7 +95,7 @@ Newbie School~
 game, and can help you easily identify certain things like, boards, atms, mobs,
 corpses, you bleeding...  Etc etc.  You can also talk in different colors and
 make your title colorful.  Type @RHELP ANSI@n @nto view how to do this, and to
-get a list of the colors.    
+get a list of the colors.
 ~
 234 152 0 0 0 0
 D0
@@ -109,7 +109,7 @@ Newbie School~
 you a display of both the Visible immortals and Mortals.  It will also tell you
 the class and race of a player and if they belong to a guild or clan.  It will
 also let you know if a player is currently away from thier PC.  Typing @R AFK
-@n will toggle this Display.    
+@n will toggle this Display.
 ~
 234 152 0 0 0 0
 D1
@@ -123,9 +123,9 @@ D3
 S
 #23406
 Newbie School~
-   @RCommands @nwill bring up a list of available commands that you can use.  
+   @RCommands @nwill bring up a list of available commands that you can use.
 This will show game commands, typing @RSocials @nwill show you actions that you
-can use.    
+can use.
 ~
 234 152 0 0 0 0
 D0
@@ -154,7 +154,7 @@ only the gold from the defeated mobs.  Autoloot overrides autogold, so you will
 still take items.  @RAutosplit @nwill split your gold from a defeated mob and
 disperse it to all the people within your group.  All these commands are
 toggles, so you can turn them on or off at will.  Type @RTOGGLE @nto see all
-the available toggles that you can turn on or off.    
+the available toggles that you can turn on or off.
 ~
 234 152 0 0 0 0
 D2
@@ -169,7 +169,7 @@ the set wimpy.  For example if you type wimpy 10 you will flee from combat if
 you fall below 10 hitpoints.  Flee is not guaranteed.  You can fail from
 fleeing, but it will continue to flee if possible.  Make sure you keep an eye
 on your hitpoints.  A scroll of Recall will save you if you feel your wimpy
-won't.    
+won't.
 ~
 234 152 0 0 0 0
 D0
@@ -187,7 +187,7 @@ as well as all other channels that you belong to.  You can also do more
 commands that sleeping will not allow you to do, but some commands require you
 to be standing.  Resting does not heal hitpoints as fast as sleeping, but will
 restore movement points just as fast.  Being Drunk and sleeping increases the
-Rate of Mana point rejuvenation.    
+Rate of Mana point rejuvenation.
 ~
 234 152 0 0 0 0
 D3
@@ -205,7 +205,7 @@ Newbie School~
 show you mobs in rooms within two paces of the room you are in.  It will not
 show you mobs in a room with a closed door.  Scan will also let you see if a
 Player is within 2 spaces of you.  Scan will not work around corners, it only
-works in a straight line.    
+works in a straight line.
 ~
 234 152 0 0 0 0
 D3
@@ -220,7 +220,7 @@ S
 #23411
 Newbie School~
    @RWhere@n will display all players that are currently in your zone.  It will
-not tell you where they are, just that they are within the same zone as you.  
+not tell you where they are, just that they are within the same zone as you.
 ~
 234 152 0 0 0 0
 D0
@@ -246,7 +246,7 @@ Newbie School~
 @nputs armour on the appropriate body part.  @RHold @nlets you hold onto a
 light, as well as some weapons.  @RWield @nequips your main weapon.  Shields
 will be considered a wearable.  To unequip items just @RRemove @nthe item you
-want, use specific names such as remove sword.    
+want, use specific names such as remove sword.
 ~
 234 152 0 0 0 0
 D2
@@ -272,7 +272,7 @@ Newbie School~
 @REmote @ncommand.  For example emote hops about happily.  Will display
 yourname hops about happily to everyone in the same room as you.  @RGemote
 @nwill allow you to send socials to the entire game.  For example Gemote
-smiles, displays Gossip yourname smiles happily, to the entire mud.    
+smiles, displays Gossip yourname smiles happily, to the entire mud.
 ~
 234 152 0 0 0 0
 D1
@@ -289,7 +289,7 @@ Newbie School~
    In some instances you may need to know what time of day it is.  For example
 buying items from a store that has only day time hours, and/or gates that lock
 at nightfall, and unlock at sunrise.  To view the time and date, type @RTime@n.
-  
+
 ~
 234 152 0 0 0 0
 D0
@@ -314,7 +314,7 @@ Newbie School~
    You can send any items you do not want to a specified place, known as a
 donation room.  Please @RDonate @n any unwanted items.  The short name for this
 is @RDon@n.  Not all items will make it to the donation room so don't use it
-for a storage place.    
+for a storage place.
 ~
 234 152 0 0 0 0
 D2
@@ -327,7 +327,7 @@ Newbie School~
    We have enabled @RAuctions @non this mud.  You can auction any item you have
 in your inventory.  This will send a message to all players stating what item
 and price you are auctioning off.  This auctioneer will give three chances for
-someone to bid on the item.  Then the auction will be complete.    
+someone to bid on the item.  Then the auction will be complete.
 ~
 234 152 0 0 0 0
 D0
@@ -343,7 +343,7 @@ contain important information, code changes that will effect you, or maybe
 upcoming quests.  Another feature for you to view is the @RMOTD@n.  You can
 type MOTD or can view it when you log onto the game.  This part is automatic,
 but you can view it at any time.  If you have any problems Please type @RBUG@n
-and your message so we may correct the problem.    
+and your message so we may correct the problem.
 ~
 234 152 0 0 0 0
 D1
@@ -362,7 +362,7 @@ the Mob.  The @RConsider@n command will let you know how well matched you are
 to the mob.  Typing @RCon@n mobname will display this info.  You can consider
 another player, especially if you are not in town and you are wondering if you
 can take on another player.  Pkilling is not allowed in Town or in the newbie
-school/zone area.    
+school/zone area.
 ~
 234 152 0 0 0 0
 D0
@@ -382,7 +382,7 @@ group.  To follow someone, type @RFollow Playername@n or you can type @RFol
 Playername@n.  If you enable Autoassist, you will automatically fight when your
 partner fights.  However this won't work if a spell is cast first.  To view the
 stats of your party, type @RGroup@n this will display level, hit/mana/movement
-points.  To talk to your party so noone else can hear you, type @RGT@n.    
+points.  To talk to your party so noone else can hear you, type @RGT@n.
 ~
 234 152 0 0 0 0
 D0
@@ -397,10 +397,10 @@ S
 #23421
 Newbie School~
    @REQ@n lets you see what you have equipped.  To see what you have in your
-Inventory type @Rinv@n.  This will be useful if you want to sell some items.  
+Inventory type @Rinv@n.  This will be useful if you want to sell some items.
 The @RScore@n allows you to check your stats, ac, class, money, time you have
 spent in the game and also what you are affected by, such as a strength, bless,
-armor spell.  The short cut for this is @RSC@n.    
+armor spell.  The short cut for this is @RSC@n.
 ~
 234 152 0 0 0 0
 D0
@@ -427,9 +427,9 @@ you find the guildmaster that supports your class, you will find that he can
 train you.  To see how you can be trained, type @RPractice@n.  This will give
 you a list of skills and/or spells that you can learn.  This will also tell you
 how many practice points you have.  Train as much as you can until you cannot
-train anymore for that Skill/spell, this will make your fail rate decrease.  
+train anymore for that Skill/spell, this will make your fail rate decrease.
 You gain Practice Points when you level, but you may not gain skills/spells
-each level.    
+each level.
 ~
 234 152 0 0 0 0
 D3
@@ -443,7 +443,7 @@ Newbie Shop~
 @RList@n.  To buy an item type @RBuy #1@n.  Or you can use the Item name, if
 there is multiple items with the same name, use the # method.  To buy multiple
 items such as 5 rations of food, you would type @RBuy 5 #2@n.  To sell items in
-your inventory just type @RSell item@n.    
+your inventory just type @RSell item@n.
 ~
 234 152 0 0 0 0
 D1
@@ -461,7 +461,7 @@ message, go to the postmaster and type @RMail recipient@n.  If I wanted to send
 mail to Rumble, I would type @RMail Rumble@n.  Just type your massage in, and
 then on a new line type /s to save and send the mail.  To receive mail, go to
 the postmaster and type @RReceive mail@n.  Sending mail will cost you 150 gold.
-  
+
 ~
 234 152 0 0 0 0
 D0
@@ -479,7 +479,7 @@ Newbie School~
 put your knowledge to the test.  To the east and west are some practice mobs
 for you test your skills and commands.  Going down will send you down into the
 Newbie zone, which was designed for you to hone your skills and make your way
-to the next experience level.  Good Luck!    
+to the next experience level.  Good Luck!
 ~
 234 156 0 0 0 0
 D1
@@ -503,7 +503,7 @@ S
 The Fight~
    Here are some simple mobs for you to fight and to learn your basic skills.
 They should not be difficult.  But, be sure to set your wimpy and be ready to
-flee.    
+flee.
 ~
 234 8 0 0 0 0
 D3
@@ -515,7 +515,7 @@ S
 The Fight~
    A few pathetic mobs are here to practice on.  Be sure to consider all mobs
 before attacking them.  This way you will know how likely it is you will win or
-flee.    
+flee.
 ~
 234 8 0 0 0 0
 D1
@@ -529,7 +529,7 @@ Arena~
 looking forward to a good fight.  Remember to CON the mobs..  Some mobs may be
 a bit too tough for you.  Fighting in here until you are level 5 is
 recommended, however you can roam around anytime you like.  Be careful though,
-because outside of this zone, some mobs will attack you!    
+because outside of this zone, some mobs will attack you!
 ~
 234 8 0 0 0 0
 D1
@@ -553,7 +553,7 @@ S
 Arena~
    Here is a fountain that you can fill up your Goatskin.  The water is crystal
 clear, but the surrounding walls are very musky.  The fountain looks clean and
-safe to drink from.    
+safe to drink from.
 ~
 234 8 0 0 0 0
 D1
@@ -569,7 +569,7 @@ S
 Arena~
    The smell of death is all around you.  You can hear tiny pitter patter of
 footsteps to the east, west and south.  You could be mistaken, but you think
-you see little red eyes watching you.    
+you see little red eyes watching you.
 ~
 234 8 0 0 0 0
 D1
@@ -587,14 +587,14 @@ D3
 E
 eyes~
    When you lean over to try to see the eyes, you hear something scurry off, and
-tiny squeek of laughter.  
+tiny squeek of laughter.
 ~
 S
 #23431
 Arena~
    Little footprints head in all directions.  A small mouse hole is in the base
 of the northern wall.  The sounds of little footsteps echo throughout the
-arena.    
+arena.
 ~
 234 8 0 0 0 0
 D1
@@ -614,7 +614,7 @@ S
 Arena~
    The stench here seems to be of a different origin...  As if it was human
 instead of creature.  Did someone you know, not make it far enough?  They
-probably didn't use the CON command!    
+probably didn't use the CON command!
 ~
 234 8 0 0 0 0
 D1
@@ -633,7 +633,7 @@ S
 #23433
 Arena~
    A loud wailing can be heard to the distant south.  It sounds almost like an
-animal crying.  The arena continues in all directions except to the north.    
+animal crying.  The arena continues in all directions except to the north.
 ~
 234 8 0 0 0 0
 D1
@@ -653,7 +653,7 @@ S
 Arena~
    This room has a peaceful feeling.  You feel as though you can rest here
 without anything bothering you.  You feel refreshed in this room.  Safe rooms
-are a blessing to troubled adventurers.    
+are a blessing to troubled adventurers.
 ~
 234 24 0 0 0 0
 D2
@@ -669,7 +669,7 @@ S
 Arena~
    The sounds of battle echo through out the hall.  The air is thin within this
 arena, maybe it gives the creatures an advantage in combat???  A knocked over
-sign is lying here.    
+sign is lying here.
 ~
 234 8 0 0 0 0
 D0
@@ -688,14 +688,14 @@ E
 sign~
    Be courteous to other players.  If there is a player in a room and there are
 mobs.  Do not attack the mobs, unless you ask the player, or the player is
-asleep.  Offenders will be punished.  
+asleep.  Offenders will be punished.
 ~
 S
 #23436
 Arena~
    This room seems to be darker than the rest of the arena.  You can make out
 little red eyes following your every movement.  They seem to stay just far
-enough away to hide themselves from view.    
+enough away to hide themselves from view.
 ~
 234 9 0 0 0 0
 D0
@@ -719,7 +719,7 @@ S
 Arena~
    Everything echo's in this room, the clanging of swords, ring through your
 head..  The clanging of armor is continuous.  Not a good place to be if you
-have a headache.    
+have a headache.
 ~
 234 8 0 0 0 0
 D0
@@ -743,7 +743,7 @@ S
 Arena~
    The ground here seems to be really soft.  A closer examination, suggests
 that there are creatures that live underground.  The holes are too small for
-you to enter.    
+you to enter.
 ~
 234 8 0 0 0 0
 D0
@@ -766,7 +766,7 @@ S
 #23439
 Arena~
    This is an odd room, it has a tree growing in the center.  This is the only
-tree in the arena, and it looks to be in good health.  How can this be so?    
+tree in the arena, and it looks to be in good health.  How can this be so?
 ~
 234 8 0 0 0 0
 D0
@@ -788,14 +788,14 @@ D3
 E
 tree~
    This Tree is magical.  The fallen leaves off of this tree provides some
-nourishment.  
+nourishment.
 ~
 S
 #23440
 Arena~
    This is a typical room in the arena.  It is clear of everything except the
 occasional wandering mob.  The air has a stench of death and blood is
-splattered everywhere.    
+splattered everywhere.
 ~
 234 8 0 0 0 0
 D0
@@ -819,7 +819,7 @@ S
 Arena~
    The wall here has something scratched into it.  You also see a small stone
 sticking out of the wall, the rest of the wall is smooth.  To the north you
-notice a fountain.  Nothing else of interest is here.    
+notice a fountain.  Nothing else of interest is here.
 ~
 234 8 0 0 0 0
 D0
@@ -836,7 +836,7 @@ D2
 0 0 23442
 E
 wall scratched stone~
-   The little stone screams, Push the button.    
+   The little stone screams, Push the button.
 ~
 S
 T 23400
@@ -844,7 +844,7 @@ T 23400
 Arena~
    The ground seems a bit grainy here.  It is like wet sand.  Wet from blood.
 How would the inside of an Arena get sand in it?  This is obviously not a
-normal area.    
+normal area.
 ~
 234 8 0 0 0 0
 D0
@@ -864,7 +864,7 @@ S
 Arena~
    A grainy wet sand sticks to everything.  It is a dark, almost red, brown
 from the blood that is pooled about the room.  The amount of death involved has
-left a lingering smell.    
+left a lingering smell.
 ~
 234 8 0 0 0 0
 D0
@@ -888,7 +888,7 @@ S
 Arena~
    The temperature in this room seems to have increased.  There is no cool wind
 at all.  You can hear the hissing of mobs all around you.  Their beady eyes are
-all that is visible as they circle in the darkness.    
+all that is visible as they circle in the darkness.
 ~
 234 8 0 0 0 0
 D0
@@ -912,7 +912,7 @@ S
 Arena~
    The sand sticks to the bottom of your feet and smells metallic.  The sand is
 scattered and piled in various ways as if people have struggled in a fight
-here.    
+here.
 ~
 234 8 0 0 0 0
 D0
@@ -936,7 +936,7 @@ S
 Arena~
    The sand covers a few dismembered body parts.  A few bleached white bones
 stick out a odd angles as if someone was trying to create a design.  They seem
-to have failed.    
+to have failed.
 ~
 234 8 0 0 0 0
 D0
@@ -960,7 +960,7 @@ S
 Arena~
    The ground here is sandy, but very firm.  You can hear the sound of water to
 the south west.  The sand seems to give way to a more solid rock floor that
-slopes up.    
+slopes up.
 ~
 234 8 0 0 0 0
 D0
@@ -984,7 +984,7 @@ S
 Arena~
    The musky smell seems to be very light in this section of the arena.  The
 whole atmosphere seems to have changed.  The wall here seems to be in better
-shape than the rest of the Arena.  How odd.    
+shape than the rest of the Arena.  How odd.
 ~
 234 8 0 0 0 0
 D0
@@ -1004,7 +1004,7 @@ S
 Inside Lake~
    You enter some shallow water.  You barely splash around as you move.  The
 water level barely covers the bottom of your feet.  You can see some ripples
-forming in the southwest.    
+forming in the southwest.
 ~
 234 8 0 0 0 7
 D0
@@ -1024,7 +1024,7 @@ S
 Inside Lake~
    You sink knee deep into water.  This will make it hard for you to flee
 rapidly.  There are some wakes coming from the south.  You wonder if you
-disturbed something.    
+disturbed something.
 ~
 234 8 0 0 0 7
 D0
@@ -1046,9 +1046,9 @@ D3
 S
 #23451
 Inside Lake~
-   The water in this lake seems oddly warm.  It is almost as if.............  
+   The water in this lake seems oddly warm.  It is almost as if.............
 The color of this @Ylake@n is undeterminable.  However, you do notice a small
-wake coming from the south east.    
+wake coming from the south east.
 ~
 234 8 0 0 0 7
 D0
@@ -1072,7 +1072,7 @@ S
 Indoor Lake~
    You splash into some water.  It seems as if there is a lake within this
 arena.  How did this Lake get here?  It must have been made by someone or
-something.  This is definately not natural.    
+something.  This is definately not natural.
 ~
 234 8 0 0 0 7
 D0
@@ -1096,7 +1096,7 @@ S
 Arena~
    You seem to be on a bank of a cavern lake.  The path here is somewhat
 narrow.  You almost have to walk sideways.  Looking down the cliff you can see
-little nests.    
+little nests.
 ~
 234 8 0 0 0 0
 D0
@@ -1117,15 +1117,15 @@ D3
 0 0 23454
 E
 nest~
-   These nests are snug in the dirt.  Trying to remove them seems impossible.  
-This looks like a breeding ground.  
+   These nests are snug in the dirt.  Trying to remove them seems impossible.
+This looks like a breeding ground.
 ~
 S
 #23454
 Arena~
    The terrain here is rocky and a tad bit sandy.  To the east there is a large
 rigged boulder which almost blocks your way.  The rock is slick from water and
-blood.    
+blood.
 ~
 234 8 0 0 0 0
 D0
@@ -1149,7 +1149,7 @@ S
 Arena~
    There is nothing here but sand and some bones.  You cannot make out what
 type of creature they come from.  It could be human, a really short and
-deformed one.    
+deformed one.
 ~
 234 8 0 0 0 0
 D0
@@ -1170,7 +1170,7 @@ Arena~
    Crunch, Crunch, Crunch.  You cannot take a step without stepping on some
 bones.  The bones break everytime you step on them.  Some of these bones seem
 to have been here for a very long time.  Some of them are beneath the large
-rocks that occupy this space also.    
+rocks that occupy this space also.
 ~
 234 8 0 0 0 0
 D0
@@ -1191,7 +1191,7 @@ Arena~
    The beach and the rocks merge together here.  You can see that the rocks
 form a breaking point for the water.  During a high tide, the water seems to
 come up to this point.  Hopefully you won't be in the middle of combat when it
-rises.    
+rises.
 ~
 234 8 0 0 0 0
 D0
@@ -1215,7 +1215,7 @@ S
 Arena~
    The path here leads north and gets very narrow.  There is water coming from
 the east.  The bank here is very travel worn, you can't make out a single set
-of tracks.    
+of tracks.
 ~
 234 8 0 0 0 0
 D0
@@ -1239,7 +1239,7 @@ S
 Indoor Lake~
    You sink down in the water to your chest.  It is a little bit difficult to
 move here.  Fighting here would be a bad mistake.  The current of the water is
-coming from the east.  
+coming from the east.
 ~
 234 8 0 0 0 0
 D0
@@ -1263,7 +1263,7 @@ S
 Inside Lake~
    The waters current is coming from the east.  It is almost as if something is
 trying to force the water in every direction you walk.  You can hear a faint
-splash coming from the east.    
+splash coming from the east.
 ~
 234 8 0 0 0 0
 D0
@@ -1287,7 +1287,7 @@ S
 The Source~
    You see ripples generating here in the center of this lake.  This leads you
 to believe that there must be something alive in here.  You hear an odd noise.
-  
+
 ~
 234 8 0 0 0 7
 D0
@@ -1311,7 +1311,7 @@ S
 In the Lake~
    You fall waist deep into the water.  You can feel a small current trying to
 push you to the east.  A rock wall to the east is worn smooth from years of
-erosion.    
+erosion.
 ~
 234 8 0 0 0 0
 D0
@@ -1331,7 +1331,7 @@ S
 Arena~
    You sink down into water that is about 6 feet deep.  You have a wall to your
 east and south.  You could swear that something moved passed your leg.  You can
-see green moss floating all around you.    
+see green moss floating all around you.
 ~
 234 8 0 0 0 0
 D0
@@ -1347,7 +1347,7 @@ S
 Arena~
    This room is about half sand and half water.  There seems to be quite a lot
 of ripples coming from the north.  It is a lot for an indoor lake.  If you
-concentrate close enough, you could swear the ground is moving.    
+concentrate close enough, you could swear the ground is moving.
 ~
 234 8 0 0 0 0
 D0
@@ -1369,7 +1369,7 @@ Arena~
 the grass, but does not seem to drown the grass.  The grass however has been
 trampled on, many of times.  This is a good sign that something lives around
 here.  You see a large rope dangling from the ceiling.  It looks strong enough
-to support you.    
+to support you.
 ~
 234 8 0 0 0 0
 D0
@@ -1393,7 +1393,7 @@ S
 Arena~
    You wade up to your ankles in water.  The inside lake seems to get its
 source from the south.  A small trickle of water seems to come from underneath
-the wall.    
+the wall.
 ~
 234 8 0 0 0 0
 D0
@@ -1412,9 +1412,9 @@ S
 #23467
 Arena~
    A trail here leads right into the wall.  How strange, there is no way to go
-through the wall.  It is as if someone forgot to finish building in here.  
+through the wall.  It is as if someone forgot to finish building in here.
 None the less, this room has 3 other exits and is big enough to be in combat.
-  
+
 ~
 234 8 0 0 0 0
 D0
@@ -1434,7 +1434,7 @@ S
 Arena~
    The rock here is very flat, smooth and shiny.  It seems to be made from a
 fine polished marble.  Something here catches the light and reflects back at
-you.    
+you.
 ~
 234 8 0 0 0 0
 D0
@@ -1454,7 +1454,7 @@ S
 Arena~
    A pool of blood fills the center of the room.  The scent of death is in the
 air.  Hopefully you can overcome the sensation and fight your way to victory
-and fame.    
+and fame.
 ~
 234 8 0 0 0 0
 D0
@@ -1470,7 +1470,7 @@ S
 A Hidden Room~
    Congratulations, you have found the Hidden room.  Always be on the look out
 for key phrases or words that may be further explored.  Please continue back to
-the main Hallway.    
+the main Hallway.
 ~
 234 152 0 0 0 0
 D2
@@ -1481,7 +1481,7 @@ S
 #23471
 A Hidden Store~
    You enter a small, cluttered room which is filled with shelves of boots and
-pants.  There are various types of items ranging from leather to plate mail.  
+pants.  There are various types of items ranging from leather to plate mail.
 ~
 234 152 0 0 0 0
 D1
@@ -1493,9 +1493,9 @@ T 23401
 T 23402
 #23472
 A Small Room~
-   The room ends abruptly with no way out except back down into the arena.  
+   The room ends abruptly with no way out except back down into the arena.
 High overhead, out of reach, a trapdoor to leads to freedom out of this newbie
-training nightmare.    
+training nightmare.
 ~
 234 12 0 0 0 0
 D5

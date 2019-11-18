@@ -3,9 +3,9 @@ east wizard Shadimar~
 Shadimar~
 Shadimar, the Wizard of the East stands here.
 ~
-   The Wizard of the East is a small wizened figure with a long, white beard.  
+   The Wizard of the East is a small wizened figure with a long, white beard.
 His thin, stick-like limbs and torso look frail, but for some reason give a
-formidable impression of strength.  
+formidable impression of strength.
 ~
 10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -21,7 +21,7 @@ the large squid~
 A large squid rests just beneath the surface of the water here.
 ~
    This squid is absolutely huge!  It's almost half the size of a man,
-discounting the tentacles, and it looks hungry.  Not to mention dangerous.  
+discounting the tentacles, and it looks hungry.  Not to mention dangerous.
 ~
 4138 0 0 0 0 0 0 0 125 E
 18 14 0 3d3+180 3d3+3
@@ -37,7 +37,7 @@ A lesser Kraken is here, eyeing you with hunger.
 ~
    The lesser Kraken is two-thirds the length of a man, diregarding the
 tentacles.  Which is hard to do, due to the sharp, claw-like tip on on the end
-of all eight limbs.  
+of all eight limbs.
 ~
 4138 0 0 0 0 0 0 0 225 E
 18 14 0 3d3+180 3d3+3
@@ -52,7 +52,7 @@ a Kraken~
 A Kraken swims here, growling menacingly.
 ~
    The Kraken is massive, larger than a man and with powerful stingers on the
-end of each tentacle.  
+end of each tentacle.
 ~
 4138 0 0 0 0 0 0 0 300 E
 18 14 0 3d3+180 3d3+3
@@ -69,7 +69,7 @@ A greater Kraken lurks in these waters. Watch out!!!!
    This monster of a squid fills the waters infront of you.  The tentacles are
 too long to see in your field of vision to estimate its size.  You notice the
 little beady eyes looking back at you, and the large beak opening and closing in
-anticipation.  
+anticipation.
 ~
 4138 0 0 0 0 0 0 0 410 E
 18 14 0 3d3+180 3d3+3
@@ -84,7 +84,7 @@ the Water Elemental~
 A Water Elemental stands before you, rippling to faint vibrations.
 ~
    The Water Elemental is a vaguely man shaped statue of liquid water.  It may
-be liquid, but it looks tough.  
+be liquid, but it looks tough.
 ~
 4138 0 0 0 0 0 0 0 410 E
 18 14 0 3d3+180 3d3+3
@@ -97,10 +97,10 @@ Trilless sorceress north northern~
 Trilless~
 Trilless the Northern Sorceress is here, radiating goodness and well-being.
 ~
-   An aged woman, Trilless has long grey-white hair and pale, wrinkled skin.  
+   An aged woman, Trilless has long grey-white hair and pale, wrinkled skin.
 She wears white robes, and she gives forth an aura of purity and goodness.  The
 only splash of color in her form is her eyes, which are a shade of piercing
-electric blue.  
+electric blue.
 ~
 266 0 0 0 8400 0 0 0 1000 E
 18 14 0 3d3+180 3d3+3
@@ -116,7 +116,7 @@ the Light Guardian~
 The Light Guardian stands here, glowing with intense light.
 ~
    A glowing figure in brightly luminous armour, the Light Guardian looks to be
-a formidable foe.  
+a formidable foe.
 ~
 4106 0 0 0 0 0 0 0 1000 E
 18 14 0 3d3+180 3d3+3
@@ -134,7 +134,7 @@ the Dark Sentinel~
 A Dark Sentinel watches vigilantly, sucking light from the room.
 ~
    The black, light-absorbing armour of the Dark Sentinel draws you in, and it
-becomes an effort not to fall over.  
+becomes an effort not to fall over.
 ~
 4106 0 0 0 0 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
@@ -151,7 +151,7 @@ Shadimar's Spectre~
 Shadimar's Spectre floats here, glowing with faint grey light.
 ~
    This is not the true Shadimar, it is but a pale vision of him.  You can see
-the background through the Spectre's form.  
+the background through the Spectre's form.
 ~
 10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -167,7 +167,7 @@ Carcophan's Spectre floats here, absorbing the little light availible.
 ~
    This spectre of carcophan is just as evil as the man in real life.  He now
 must haunt these halls looking for revenge on the one that sent him to hell, or
-at least this eternal limbo.  
+at least this eternal limbo.
 ~
 10 0 0 0 80 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -183,7 +183,7 @@ Carcophan the Southern Wizard stands here, radiating pure evil.
    If it wasn't for his aura of darkness, Carcophan could merely be a genteel
 old man with salt-and-peppered hair and a dignified stance.  But the dark
 flowing robes and occolt sigils adorning them let you know that this is not
-someone to be trifled with.  
+someone to be trifled with.
 ~
 522 0 0 0 0 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
@@ -205,7 +205,7 @@ An inverse salamander crouches into the ground here, absorbing light and heat.
    According to legend and myth, the Salamander is supposed to be a being of
 fire and light.  The reptillian form you see before you looks to be the exact
 opposite, as it sucks the light and warmth from the room with its dark, liquid
-eyes.  
+eyes.
 ~
 4106 0 0 0 0 0 0 0 -900 E
 18 14 0 3d3+180 3d3+3

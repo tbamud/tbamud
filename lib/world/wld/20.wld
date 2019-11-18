@@ -2,8 +2,8 @@
 Entrance~
    The lighted passageway continues to the north where you can hear loud
 cheering and the sounds of battle.  The walls are covered with posters
-announcing future bouts in the arena with some of the famous gladiators.  
-One poster catches your eye as it is written in blood red ink.    
+announcing future bouts in the arena with some of the famous gladiators.
+One poster catches your eye as it is written in blood red ink.
 ~
 20 0 0 0 0 0
 D0
@@ -114,7 +114,7 @@ Gladiators Cells~
    There is noise everywhere produced by the equipment of death, here a sword
 is being sharpened, there someone is heating metal plates to be used on fallen
 gladiators, to see if they are dead, here rods are produced, there whips to
-encourage unwilling participants.    
+encourage unwilling participants.
 ~
 20 0 0 0 0 0
 D0
@@ -137,8 +137,8 @@ S
 #2004
 Training Room~
    These rooms are set aside by the Lanistas to train the gladiators.  The
-various moves and attacks seem to be more for looks than anything else.  
-Gladiators always have to play to the crowd.  
+various moves and attacks seem to be more for looks than anything else.
+Gladiators always have to play to the crowd.
 ~
 20 0 0 0 0 0
 D3
@@ -150,7 +150,7 @@ S
 Training Room~
    More gladiators spar and tussle back and forth across the room.  Sawdust and
 dirt covers the floor.  Everything in the room is spartan and dull.  The only
-thing extravagant is a few bits of the gladiators weaponry and armor.  
+thing extravagant is a few bits of the gladiators weaponry and armor.
 ~
 20 0 0 0 0 0
 D1
@@ -163,7 +163,7 @@ Gladiators Cells~
    As unattractive as being a Gladiator may sound, a gladiator's life takes on
 new meaning.  First, his status is now voluntary rather than involuntary.  He
 also becomes a member of a cohesive group that is known for its courage, good
-morale, and absolute fidelity to their master to the point of death.    
+morale, and absolute fidelity to their master to the point of death.
 ~
 20 0 0 0 0 0
 D0
@@ -185,9 +185,9 @@ door~
 S
 #2007
 Training Room~
-   The Lanistas are hard at work preparing their gladiators for the big show.  
+   The Lanistas are hard at work preparing their gladiators for the big show.
 Many are scarred gladiator veterans themselves and know very well how to please
-the crowd.  
+the crowd.
 ~
 20 0 0 0 0 0
 D3
@@ -199,7 +199,7 @@ S
 Training Room~
    A Lanistas demonstrates a few moves to a gladiator who is just learning the
 ropes.  The motivation to learn is high since failing at this usually costs
-someone their life or limbs.  
+someone their life or limbs.
 ~
 20 0 0 0 0 0
 D1
@@ -236,8 +236,8 @@ S
 #2010
 Training Room~
    A lone gladiator here is on the verge of a breakdown.  He is faced with
-either fighting to the death in the arena or being hung for not fighting.  
-Either way death is assured with time.  
+either fighting to the death in the arena or being hung for not fighting.
+Either way death is assured with time.
 ~
 20 0 0 0 0 0
 D3
@@ -248,8 +248,8 @@ S
 #2011
 Gladiators Room~
    A Gladiator devotes himself body and soul to the owner of his troupe or
-lanista by swearing an oath "to endure branding, chains, flogging or death 
-by the sword" and to do whatever the master ordered.   
+lanista by swearing an oath "to endure branding, chains, flogging or death
+by the sword" and to do whatever the master ordered.
 ~
 20 0 0 0 0 0
 D1
@@ -259,7 +259,7 @@ D1
 S
 #2012
 Gladiators Cells~
-   No doubt it was thought too dangerous to allow private citizens to own 
+   No doubt it was thought too dangerous to allow private citizens to own
 and train gladiators who could be easily turned into a private army for
 revolutionary purposes.  Therefore, with very few exceptions, gladiators are
 under the control and ownership of the emperor.
@@ -285,7 +285,7 @@ S
 #2013
 Gladiators Room~
    A Gladiator devotes himself body and soul to the owner of his troupe or
-lanista by swearing an oath "to endure branding, chains, flogging or death 
+lanista by swearing an oath "to endure branding, chains, flogging or death
 by the sword" and to do whatever the master ordered.
 ~
 20 0 0 0 0 0
@@ -297,7 +297,7 @@ S
 #2014
 Retiarii Cell~
    This room is set aside for the retiarii who fight with a net, a spiked
-trident and a dagger.  The floor is lined with straw and a smelly pot sits 
+trident and a dagger.  The floor is lined with straw and a smelly pot sits
 in the corner.  How could anyone live in these conditions?
 ~
 20 0 0 0 0 0
@@ -309,7 +309,7 @@ S
 #2015
 Gladiators Cells~
    The gladiators life becomes a model of military discipline and through
-courageous behavior he is also now capable of achieving honor similar to 
+courageous behavior he is also now capable of achieving honor similar to
 that enjoyed by Roman soldiers on the battlefield.
 ~
 20 0 0 0 0 0
@@ -332,9 +332,9 @@ door~
 S
 #2016
 Murmillones Cell~
-   This room is set aside for the murmillones, so called from the fish 
-ornament on their helmets.  Each murmillo is armed with a short, thick 
-sword, an oblong shield and leg and arm shields of metal.  A smelly pot 
+   This room is set aside for the murmillones, so called from the fish
+ornament on their helmets.  Each murmillo is armed with a short, thick
+sword, an oblong shield and leg and arm shields of metal.  A smelly pot
 sits in the corner.
 ~
 20 0 0 0 0 0
@@ -347,7 +347,7 @@ S
 Retiarii Cell~
    This is where the retiarii wait to be brought up to the arena for their
 bouts.  Most of them are dressed up in funny armor and look like common
-thieves. 
+thieves.
 ~
 20 0 0 0 0 0
 D1
@@ -358,8 +358,8 @@ S
 #2018
 Gladiators Cells~
    Gladiators are owned by a person called a lanista and are trained in the
-lanistas school.  Training involves the learning of a series of figures 
-which are broken down into various phases.  The training of gladiators has 
+lanistas school.  Training involves the learning of a series of figures
+which are broken down into various phases.  The training of gladiators has
 been taken over by the state.
 ~
 20 0 0 0 0 0
@@ -382,7 +382,7 @@ door~
 S
 #2019
 Murmillones Cell~
-   This is where the murmillones wait to be brought up to the arena for 
+   This is where the murmillones wait to be brought up to the arena for
 their bouts.  Most of them are dressed up in funny armor and look like common
 thieves.
 ~
@@ -396,7 +396,7 @@ S
 Samnites Cell~
    This is where the Samnites wait to be brought up to the arena for their
 bouts.  Most of them are dressed up in funny armor and look like common
-thieves. 
+thieves.
 ~
 20 0 0 0 0 0
 D1
@@ -431,7 +431,7 @@ S
 Thracian Cell~
    This is where the Thracians wait to be brought up to the arena for their
 bouts.  Most of them are dressed up in funny armor and look like common
-thieves.    
+thieves.
 ~
 20 0 0 0 0 0
 D3
@@ -441,10 +441,10 @@ door~
 S
 #2023
 Ostrich Cell~
-   This is where the exotic animals for the arena games are kept until 
-needed.  Straw lines the floor and the animals' refuse is thick on the floor.  
-The animals are starved before the games so they will be crazed and 
-aggressive. 
+   This is where the exotic animals for the arena games are kept until
+needed.  Straw lines the floor and the animals' refuse is thick on the floor.
+The animals are starved before the games so they will be crazed and
+aggressive.
 ~
 20 0 0 0 0 0
 D1
@@ -455,8 +455,8 @@ S
 #2024
 Prisons~
    These dungeons are damp, dark and reek of some unidentifiable source.  All
-the victims to be led into the arena are kept down here until their fight.  
-Those that do not fight are killed.  
+the victims to be led into the arena are kept down here until their fight.
+Those that do not fight are killed.
 ~
 20 0 0 0 0 0
 D0
@@ -478,10 +478,10 @@ door~
 S
 #2025
 Animal Cell~
-   This is where the exotic animals for the arena games are kept until 
-needed.  Straw lines the floor and the animals' refuse is thick on the floor.  
-The animals are starved before the games so they will be crazed and 
-aggressive. 
+   This is where the exotic animals for the arena games are kept until
+needed.  Straw lines the floor and the animals' refuse is thick on the floor.
+The animals are starved before the games so they will be crazed and
+aggressive.
 ~
 20 0 0 0 0 0
 D3
@@ -491,10 +491,10 @@ door~
 S
 #2026
 Elephant Cell~
-   This is where the exotic animals for the arena games are kept until 
-needed.  Straw lines the floor and the animals' refuse is thick on the floor.  
-The animals are starved before the games so they will be crazed and 
-aggressive. 
+   This is where the exotic animals for the arena games are kept until
+needed.  Straw lines the floor and the animals' refuse is thick on the floor.
+The animals are starved before the games so they will be crazed and
+aggressive.
 ~
 20 0 0 0 0 0
 D1
@@ -506,7 +506,7 @@ S
 Prisons~
    The smell of refuse is strong here, coming mostly from behind the closed
 doors to the east and west.  The prisons continue north and south with a long
-hallway of cells.  
+hallway of cells.
 ~
 20 0 0 0 0 0
 D0
@@ -528,10 +528,10 @@ door~
 S
 #2028
 Giraffe Cell~
-   This is where the exotic animals for the arena games are kept until 
-needed.  Straw lines the floor and the animals' refuse is thick on the floor.  
-The animals are starved before the games so they will be crazed and 
-aggressive. 
+   This is where the exotic animals for the arena games are kept until
+needed.  Straw lines the floor and the animals' refuse is thick on the floor.
+The animals are starved before the games so they will be crazed and
+aggressive.
 ~
 20 0 0 0 0 0
 D3
@@ -541,10 +541,10 @@ door~
 S
 #2029
 Lion Cell~
-   This is where the exotic animals for the arena games are kept until 
-needed.  Straw lines the floor and the animals' refuse is thick on the floor.  
-The animals are starved before the games so they will be crazed and 
-aggressive. 
+   This is where the exotic animals for the arena games are kept until
+needed.  Straw lines the floor and the animals' refuse is thick on the floor.
+The animals are starved before the games so they will be crazed and
+aggressive.
 ~
 20 0 0 0 0 0
 D1
@@ -556,7 +556,7 @@ S
 Prisons~
    Doors to the east and west lead to the prison cells.  You hear growling and
 snarling in both directions.  The prisons continue north and south with no end
-in sight.  
+in sight.
 ~
 20 0 0 0 0 0
 D0
@@ -578,10 +578,10 @@ door~
 S
 #2031
 Animal Cell~
-   This is where the exotic animals for the arena games are kept until 
-needed.  Straw lines the floor and the animals' refuse is thick on the floor.  
-The animals are starved before the games so they will be crazed and 
-aggressive. 
+   This is where the exotic animals for the arena games are kept until
+needed.  Straw lines the floor and the animals' refuse is thick on the floor.
+The animals are starved before the games so they will be crazed and
+aggressive.
 ~
 20 0 0 0 0 0
 D3
@@ -593,7 +593,7 @@ S
 Prisons~
    The Prison to the south is full of activity while to the north you see a
 trail of blood.  You also notice light filtering in from the north penetrating
-the gloom.  
+the gloom.
 ~
 20 0 0 0 0 0
 D0
@@ -607,9 +607,9 @@ D2
 S
 #2033
 Prisons~
-   The prison continues north out the back entrance of the amphitheater and 
+   The prison continues north out the back entrance of the amphitheater and
 south deeper into the prisons.  A trail of blood leads east.  Wheelbarrow
-treadmarks are visible in the blood.  
+treadmarks are visible in the blood.
 ~
 20 0 0 0 0 0
 D0
@@ -629,7 +629,7 @@ S
 Training Room~
    Another practice room the Lanistas set aside for their gladiators.  The
 competition is intense and good gladiators can make their owners very wealthy
-and famous. 
+and famous.
 ~
 20 0 0 0 0 0
 D1
@@ -639,10 +639,10 @@ door~
 S
 #2035
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -657,10 +657,10 @@ D2
 S
 #2036
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -679,10 +679,10 @@ D3
 S
 #2037
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -697,10 +697,10 @@ D3
 S
 #2038
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -719,10 +719,10 @@ D2
 S
 #2039
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -745,10 +745,10 @@ D3
 S
 #2040
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -767,10 +767,10 @@ D3
 S
 #2041
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -785,10 +785,10 @@ D1
 S
 #2042
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -811,10 +811,10 @@ D3
 S
 #2043
 Mages Arena~
-   This arena was built solely for gladiatorial duels between mages.  The 
-air in this room seems to be charged and you can feel the powerful residue 
-of forces that have been unleashed during previous battles.  The walls glow 
-with a faint phosphorescent light, making the paintings of various mages 
+   This arena was built solely for gladiatorial duels between mages.  The
+air in this room seems to be charged and you can feel the powerful residue
+of forces that have been unleashed during previous battles.  The walls glow
+with a faint phosphorescent light, making the paintings of various mages
 locked in battle along the walls seem alive.
 ~
 20 0 0 0 0 0
@@ -829,11 +829,11 @@ D3
 S
 #2044
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D1
@@ -847,11 +847,11 @@ D2
 S
 #2045
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D1
@@ -869,11 +869,11 @@ D3
 S
 #2046
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D2
@@ -887,11 +887,11 @@ D3
 S
 #2047
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D0
@@ -913,11 +913,11 @@ D3
 S
 #2048
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?  Are you ready to Rumble?    
+walls, which one of them isn't a drawing?  Are you ready to Rumble?
 ~
 20 0 0 0 0 0
 D0
@@ -939,11 +939,11 @@ D3
 S
 #2049
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D0
@@ -961,11 +961,11 @@ D3
 S
 #2050
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D0
@@ -979,11 +979,11 @@ D1
 S
 #2051
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?  
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D0
@@ -1001,11 +1001,11 @@ D3
 S
 #2052
 Thieves Arena~
-   This room was made especially for gladiatorial bouts between thieves.  
+   This room was made especially for gladiatorial bouts between thieves.
 Pillars of black marble and widely spaced torches cause shadows to dance wildly
 around the room.  A thief could easily practice his skills in hiding and
 backstabbing in such a room.  Life size drawings of famous thieves cover the
-walls, which one of them isn't a drawing?    
+walls, which one of them isn't a drawing?
 ~
 20 0 0 0 0 0
 D0
@@ -1022,7 +1022,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D1
@@ -1039,7 +1039,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D1
@@ -1060,7 +1060,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D2
@@ -1077,7 +1077,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D0
@@ -1098,7 +1098,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.  Are you ready to Rumble?    
+clerics from the past hang on all the walls.  Are you ready to Rumble?
 ~
 20 0 0 0 0 0
 D0
@@ -1123,7 +1123,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D0
@@ -1148,7 +1148,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D0
@@ -1165,7 +1165,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D0
@@ -1186,7 +1186,7 @@ Clerics Arena~
    This arena was made specifically for gladiatorial matches between clerics.
 The room is well-lit by some unseen source from high above.  Though clerics are
 usually thought of as healers they can also be deadly opponents.  Murals of
-clerics from the past hang on all the walls.    
+clerics from the past hang on all the walls.
 ~
 20 0 0 0 0 0
 D0
@@ -1202,9 +1202,9 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
-ceiling.    
+ceiling.
 ~
 20 0 0 0 0 0
 D1
@@ -1220,7 +1220,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1242,7 +1242,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1260,7 +1260,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1282,7 +1282,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling. Are you ready to Rumble?
 ~
@@ -1308,7 +1308,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1334,7 +1334,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1352,7 +1352,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1374,7 +1374,7 @@ S
 Warriors Arena~
    This large dome-ceiling room has been set aside for gladiatorial fights
 between warriors of great strength and weapon-skills.  The room has a slight
-smoky haze from the torches sputtering in brackets lining the walls.  
+smoky haze from the torches sputtering in brackets lining the walls.
 Paintings of famous battles and past gladiators cover the room floor to
 ceiling.
 ~
@@ -1390,8 +1390,8 @@ D3
 S
 #2071
 Main Arena~
-   The arena continues east and south.  The walls are too steep and sloped 
-inward to climb to the north or west.  The crowd above starts yelling at 
+   The arena continues east and south.  The walls are too steep and sloped
+inward to climb to the north or west.  The crowd above starts yelling at
 you to begin fighting soon or they would send in some real gladiators.
 ~
 20 0 0 0 0 0
@@ -1408,7 +1408,7 @@ S
 Main Arena~
    The floor of the arena is covered with a fine sand.  The crowd cheers in
 anticipation of the fighting and bloodshed.  The sound is deafening and
-definitely distracting.  
+definitely distracting.
 ~
 20 0 0 0 0 0
 D0
@@ -1432,7 +1432,7 @@ S
 Main Arena~
    The crowd is deafening and the heat stifling.  The sand is baking underneath
 your feet.  This is where the gladiators fight to the death for the pleasure of
-the citizens of Rome.  
+the citizens of Rome.
 ~
 20 0 0 0 0 0
 D0
@@ -1446,8 +1446,8 @@ D1
 S
 #2074
 Main Arena~
-   The arena floor is slick with blood and other bodily fluids that make 
-your stomach turn.  Above you is the Imperial Box where Emperor Titus 
+   The arena floor is slick with blood and other bodily fluids that make
+your stomach turn.  Above you is the Imperial Box where Emperor Titus
 commands the fights of the arena.
 ~
 20 0 0 0 0 0
@@ -1466,8 +1466,8 @@ D3
 S
 #2075
 Main Arena~
-   You stand in the center of the arena.  The crowd starts to calm down 
-and silence blankets the arena as everyone waits in anticipation.  Are 
+   You stand in the center of the arena.  The crowd starts to calm down
+and silence blankets the arena as everyone waits in anticipation.  Are
 you ready to Rumble?
 ~
 20 0 0 0 0 0
@@ -1491,7 +1491,7 @@ S
 #2076
 Main Arena~
    Thousands of battles and even more deaths have colored the sand on the
-arena floor a sickly brown.  Slaves are dumping fresh sand over the 
+arena floor a sickly brown.  Slaves are dumping fresh sand over the
 stains, but it doesn't seem to be helping.
 ~
 20 0 0 0 0 0
@@ -1527,8 +1527,8 @@ D3
 S
 #2078
 Main Arena~
-   The walls slope inwards above you making them impossible to scale.  
-The heat and noise of the crowd is very aggravating.  Your foot sinks 
+   The walls slope inwards above you making them impossible to scale.
+The heat and noise of the crowd is very aggravating.  Your foot sinks
 into a puddle of blood from the last person who came into this arena.
 ~
 20 0 0 0 0 0
@@ -1548,7 +1548,7 @@ S
 #2079
 Main Arena~
    Prisoners can fight for their freedom here to become gladiators and make
-some good money or, even better, become a famous gladiator and be held in 
+some good money or, even better, become a famous gladiator and be held in
 awe by all the citizens of Rome.
 ~
 20 0 0 0 0 0
@@ -1563,8 +1563,8 @@ D3
 S
 #2080
 Roman Ampitheatre~
-   The arena below you is empty right now, but from the shouting of the 
-crowd you expect the games are about to begin.  The crowd that seems to 
+   The arena below you is empty right now, but from the shouting of the
+crowd you expect the games are about to begin.  The crowd that seems to
 be more of a mob than anything else is growing impatient.
 ~
 20 0 0 0 0 0
@@ -1579,12 +1579,12 @@ D2
 S
 #2081
 Roman Ampitheatre~
-   The amphitheater is a microcosm of Roman society.  The seating 
-arrangements reflect the stratification of Roman society.  The emperor 
-has a special box for himself and his family.  Senators and knights sit in 
-their own special section.  Soldiers are separated from civilians, married 
-men, from bachelors.  Boys and their tutors sit together.  Women, except 
-for the Vestal Virgins who sit in the best seats with religious officials, 
+   The amphitheater is a microcosm of Roman society.  The seating
+arrangements reflect the stratification of Roman society.  The emperor
+has a special box for himself and his family.  Senators and knights sit in
+their own special section.  Soldiers are separated from civilians, married
+men, from bachelors.  Boys and their tutors sit together.  Women, except
+for the Vestal Virgins who sit in the best seats with religious officials,
 sit with the poorest men in the top tier.
 ~
 20 0 0 0 0 0
@@ -1601,7 +1601,7 @@ S
 Imperial Box~
    The emperor sits on his lavish throne, watching the bouts that he has
 provided for his people so they will look upon him with favor.  The Vestal
-Virgins sit to both sides of the emperor fanning themselves from the 
+Virgins sit to both sides of the emperor fanning themselves from the
 oppressive heat.
 ~
 20 0 0 0 0 0
@@ -1616,11 +1616,11 @@ D3
 S
 #2083
 Roman Amphitheater~
-   Certain criminals are executed here by being given to the wild beasts 
-or are forced to fight to the death as gladiators.  It also represents the 
-domination of Rome over its enemies: prisoners of war are either executed 
-or forced to fight each other as gladiators.  But for the professional 
-gladiator it is also a place of redemption, in which one can overcome death 
+   Certain criminals are executed here by being given to the wild beasts
+or are forced to fight to the death as gladiators.  It also represents the
+domination of Rome over its enemies: prisoners of war are either executed
+or forced to fight each other as gladiators.  But for the professional
+gladiator it is also a place of redemption, in which one can overcome death
 by victory or by stoically accepting it.
 ~
 20 0 0 0 0 0
@@ -1636,7 +1636,7 @@ S
 #2084
 Roman Amphitheater~
    Several slaves walk into the arena with barrows of sand to cover over the
-blood stains and prepare for the next bout.  The populace is once again 
+blood stains and prepare for the next bout.  The populace is once again
 getting restless.
 ~
 20 0 0 0 0 0
@@ -1653,8 +1653,8 @@ S
 Roman Amphitheater~
    Slaves, that had been forced to exhaust themselves helping to finish
 building the very amphitheater in which they are to die, are pushed into the
-arena.  As the mob screams, howls and roars, barred doors are lifted, 
-releasing man-eating lions and tigers who have not been fed for quite a time. 
+arena.  As the mob screams, howls and roars, barred doors are lifted,
+releasing man-eating lions and tigers who have not been fed for quite a time.
 ~
 20 0 0 0 0 0
 D0
@@ -1670,11 +1670,11 @@ S
 Roman Amphitheater~
    At last this fighting seems to have gone on long enough to satisfy,
 momentarily, the mob.  The few survivors retire to get their laurel crowns,
-their bags of gold and to anticipate the adulation of Rome.  Squads of 
+their bags of gold and to anticipate the adulation of Rome.  Squads of
 little men run into the arena with ropes and metal hooks to drag the bodies of the
 dead and wounded to a mortuary cell where valuable weapons and armour are
 retrieved and sorted out.  The gasping, bleeding, groaning and wounded are
-finished off.  The bodies are then piled into carts to be taken and flung 
+finished off.  The bodies are then piled into carts to be taken and flung
 into a nameless common grave.
 ~
 20 0 0 0 0 0
@@ -1690,13 +1690,13 @@ S
 #2087
 Roman Amphitheater~
    Flashing swords, the clash of steel, and the first wounds arouse the
-passions, the hatred and the desperate fury of the gladiators and inflame 
-the blood-lust of the mob.  The shouts and yells and screams of the 
-onlookers grow to a huge, roaring crescendo of sound as one Samnite after 
-another go down with their stomachs gashed open or their necks spouting 
-blood and one Thracian after another crumbles with a Samnite sword through 
-his chest.  Reinforcements are rushed in to restore the balance and to add 
-to the pile of bleeding, writhing bodies on the sand-strewn floor. 
+passions, the hatred and the desperate fury of the gladiators and inflame
+the blood-lust of the mob.  The shouts and yells and screams of the
+onlookers grow to a huge, roaring crescendo of sound as one Samnite after
+another go down with their stomachs gashed open or their necks spouting
+blood and one Thracian after another crumbles with a Samnite sword through
+his chest.  Reinforcements are rushed in to restore the balance and to add
+to the pile of bleeding, writhing bodies on the sand-strewn floor.
 ~
 20 0 0 0 0 0
 D0
@@ -1710,13 +1710,13 @@ D2
 S
 #2088
 Roman Amphitheater~
-   Another fanfare of trumpets announces the entry of two teams of 24 
-gladiators in charge of two renowned trainers, themselves former gladiators 
-who, scarred and maimed, have somehow survived with their glory from many a 
-combat.  According to tradition, 24 men heavily armed as the ancient 
-Samnites, Rome's oldest enemies, face 24 lightly clad and lightly armed 
-'Thracians,' each with exposed chests.  Both teams march smartly up to face 
-the Emperor in his resplendent Imperial Box to shout as one man: 'Hail, 
+   Another fanfare of trumpets announces the entry of two teams of 24
+gladiators in charge of two renowned trainers, themselves former gladiators
+who, scarred and maimed, have somehow survived with their glory from many a
+combat.  According to tradition, 24 men heavily armed as the ancient
+Samnites, Rome's oldest enemies, face 24 lightly clad and lightly armed
+'Thracians,' each with exposed chests.  Both teams march smartly up to face
+the Emperor in his resplendent Imperial Box to shout as one man: 'Hail,
 Caesar.  Those about to die salute you.'
 ~
 20 0 0 0 0 0
@@ -1731,10 +1731,10 @@ D3
 S
 #2089
 Roman Amphitheater~
-   A tremendous fanfare of trumpets follows the entrance of the Emperor.  
-The Games begin.  It is the turn of the gladiators, men trained for battle, 
-sworn to the gladiators' oath to suffer death by fire, in chains, under 
-the lash or by the sword as their master might decide and to obey as a 
+   A tremendous fanfare of trumpets follows the entrance of the Emperor.
+The Games begin.  It is the turn of the gladiators, men trained for battle,
+sworn to the gladiators' oath to suffer death by fire, in chains, under
+the lash or by the sword as their master might decide and to obey as a
 true gladiator should.
 ~
 20 0 0 0 0 0
@@ -1749,13 +1749,13 @@ D3
 S
 #2090
 Roman Amphitheater~
-   You walk under a spread of canvas which sailors of the fleet have slung 
-as a partial roof from masts all around the amphitheater's rim, to serve 
-as a shield against the sun.  It makes a hothouse of the upper seats.  
-After the solemn, long procession of civic dignitaries, priests and 
-performers, together with images of the gods, the entry of the Emperor 
-Titus across the floor of the arena is the signal for renewed frenzied 
-applause from the restive crowd. 
+   You walk under a spread of canvas which sailors of the fleet have slung
+as a partial roof from masts all around the amphitheater's rim, to serve
+as a shield against the sun.  It makes a hothouse of the upper seats.
+After the solemn, long procession of civic dignitaries, priests and
+performers, together with images of the gods, the entry of the Emperor
+Titus across the floor of the arena is the signal for renewed frenzied
+applause from the restive crowd.
 ~
 20 0 0 0 0 0
 D1
@@ -1769,10 +1769,10 @@ D3
 S
 #2091
 Roman Amphitheater~
-   The first rows are filled with senators, priests, augurs, magistrates, 
-and other officials of distinction.  Up to the first 17 rows are crammed 
-with the worthy citizens of wealth and standing.  Above them and entirely 
-filling the second and third rows up to the very top is the mob making up 
+   The first rows are filled with senators, priests, augurs, magistrates,
+and other officials of distinction.  Up to the first 17 rows are crammed
+with the worthy citizens of wealth and standing.  Above them and entirely
+filling the second and third rows up to the very top is the mob making up
 the great mass of the inhabitants of the Imperial City.
 ~
 20 0 0 0 0 0
@@ -1787,10 +1787,10 @@ D3
 S
 #2092
 Roman Amphitheater~
-   The whole amphitheater and the lavish shows held in it are arranged to 
-keep the populace of this city amused.  Excitable and noisy, the crowds 
-near-animal instincts and passions, unrestrained by education, good manners 
-or breeding, are squashed promiscuously together, men, women and children, 
+   The whole amphitheater and the lavish shows held in it are arranged to
+keep the populace of this city amused.  Excitable and noisy, the crowds
+near-animal instincts and passions, unrestrained by education, good manners
+or breeding, are squashed promiscuously together, men, women and children,
 crying, shouting and sweating in a deafening crescendo of noise.
 ~
 20 0 0 0 0 0
@@ -1805,9 +1805,9 @@ D1
 S
 #2093
 Roman Amphitheater~
-   It is here the Romans hold their gladiatorial games, with man against 
-man or man against beast.  Trap doors in the floor allow famous gladiators 
-to make grand entrances, or to allow the Caesar to spring animals into the 
+   It is here the Romans hold their gladiatorial games, with man against
+man or man against beast.  Trap doors in the floor allow famous gladiators
+to make grand entrances, or to allow the Caesar to spring animals into the
 arena.  The Colosseum looks like it could hold about 50,000 spectators.
 ~
 20 0 0 0 0 0
@@ -1823,8 +1823,8 @@ S
 #2094
 Roman Amphitheater~
    You have entered a great oval amphitheater, also known as the Colosseum.
-Crowds of people pour in through the entrance, pushing, shoving and 
-scrambling to fill the top half of the immense number of seats looking down 
+Crowds of people pour in through the entrance, pushing, shoving and
+scrambling to fill the top half of the immense number of seats looking down
 on the huge arena.  It looks like the whole of Rome is here.
 ~
 20 0 0 0 0 0
@@ -1843,8 +1843,8 @@ D5
 S
 #2095
 Roman Amphitheater~
-   Thousands of people are crowded together, pushing, shoving, trying to 
-find the best view of the arena below.  A bout must be getting started soon.  
+   Thousands of people are crowded together, pushing, shoving, trying to
+find the best view of the arena below.  A bout must be getting started soon.
 Gladiators fight for money or in order to compensate for crimes they have
 committed.  The money is good and the adoration of the people of Rome is even
 better.
@@ -1862,7 +1862,7 @@ S
 #2096
 Mortuary Cell~
    The losers of various bouts in the arena are piled high while slaves sort
-through the corpses, retrieving the weapons and armor for a future battle.  
+through the corpses, retrieving the weapons and armor for a future battle.
 Flies are everywhere and you gag at the stench.
 ~
 20 0 0 0 0 0
@@ -1875,7 +1875,7 @@ S
 Outside the Amphitheater~
    The amphitheater towers above you to the south and you stare at the impressive
 Roman architecture.  The smell of death hangs heavy in the air.  So many
-gladiators have fought and died in this place.  
+gladiators have fought and died in this place.
 ~
 20 0 0 0 0 0
 D0
@@ -1891,7 +1891,7 @@ S
 Common Grave~
    A massive hole has been dug here to dump all the corpses from the arena
 fights.  A few beggars scrounge through the corpses looking for valuables.  The
-stench is overpowering.  
+stench is overpowering.
 ~
 20 0 0 0 0 0
 D2
@@ -1901,11 +1901,11 @@ D2
 S
 #2099
 Trophy Room~
-   Trophies line the walls of all the famous gladiators.  You notice five 
-medals hanging inside a glass case.  Four of them are for the strongest 
-gladiators of each class; Mage, Thief, Warrior and Cleric.  The fifth is 
+   Trophies line the walls of all the famous gladiators.  You notice five
+medals hanging inside a glass case.  Four of them are for the strongest
+gladiators of each class; Mage, Thief, Warrior and Cleric.  The fifth is
 for the strongest gladiator alive, no matter what class.  Do you think you
-could compete for and win one of them?  A sign listing the rules of the 
+could compete for and win one of them?  A sign listing the rules of the
 arena is posted here.
 ~
 20 0 0 0 0 0
@@ -1915,19 +1915,19 @@ D1
 0 0 2000
 E
 godsign sign~
-     This arena is not meant for random player killing of anyone within, 
+     This arena is not meant for random player killing of anyone within,
 but was instead made for players to challenge and fight against each other
-to see who is the strongest.  Players can challenge each other in any of 
-the arenas.  The strongest of each class will be awarded a medal, or if 
+to see who is the strongest.  Players can challenge each other in any of
+the arenas.  The strongest of each class will be awarded a medal, or if
 he/she is the strongest of all classes he/she will also receive the
-gladiators medal.  There will only be one medal for each class and the 
-gladiators medal.  Who ever holds a medal MUST meet all challenges, within 
-one day of the challenge, or forfeit their right to keep it.  Do not make 
-the gods interfere.  If you can't meet a challenge for whatever reason, 
-simply give up the medal and win it back at another time.  If you are 
-going to be gone for more than a week, junk the medal and inform the gods 
-so other players can compete for it.  Player looting and Player stealing 
-is NOT allowed. Matches can be played to the death or the first to flee.  
+gladiators medal.  There will only be one medal for each class and the
+gladiators medal.  Who ever holds a medal MUST meet all challenges, within
+one day of the challenge, or forfeit their right to keep it.  Do not make
+the gods interfere.  If you can't meet a challenge for whatever reason,
+simply give up the medal and win it back at another time.  If you are
+going to be gone for more than a week, junk the medal and inform the gods
+so other players can compete for it.  Player looting and Player stealing
+is NOT allowed. Matches can be played to the death or the first to flee.
 Either way the loser, if he has the medal, must give it to the winner.
 The gods will give out the medals to the first champions.
 After that we expect the players to handle it.

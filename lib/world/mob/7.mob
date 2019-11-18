@@ -4,8 +4,8 @@ a merchant~
 A merchant is trying to you sell you something.
 ~
    A merchant forces a smile and walks up to you like you are his best friend.
-He immediately begins his speech on all the fine wares he could sell you...  
-For the right price of course.    
+He immediately begins his speech on all the fine wares he could sell you...
+For the right price of course.
 ~
 76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -19,7 +19,7 @@ a border guard~
 This guard is protecting the outskirts of the city from attack.
 ~
    A veteran warrior, this guard was enlisted by the city to protect it from
-attack.    
+attack.
 ~
 233482 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -32,7 +32,7 @@ the commander~
 The outpost commander is here, safe in the respect of her men.
 ~
    The outpost commander is a hardened, grizzled veteran with the cunning that
-comes from a life of leading men in endless battle.    
+comes from a life of leading men in endless battle.
 ~
 2058 0 0 0 80 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -47,7 +47,7 @@ A trader tries to barter with you.
 ~
    He immediately starts telling you the value of every item you carry and
 explains to you how he could trade you some much better equipment for a small
-few or an extra item or two.    
+few or an extra item or two.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -75,7 +75,7 @@ a patrolman~
 A patrolman is keeping an eye out for any trouble.
 ~
    One of the many protectors of the city, his job is to protect the outskirts
-of the city and give warning in case of trouble.    
+of the city and give warning in case of trouble.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -89,7 +89,7 @@ a warden~
 A warden is patrolling the outskirts of the city.
 ~
    He looks more like he's seen his fair share of action in his time.  He looks
-at you suspiciously.    
+at you suspiciously.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -103,7 +103,7 @@ a woodsman~
 A woodsman walks by.  He needs a shower, bad!
 ~
    Born and raised in the woods, he looks like more a part of the wilderness
-than most animals you've seen.    
+than most animals you've seen.
 ~
 232 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -116,7 +116,7 @@ guard~
 a guard~
 A guard is standing watch here.
 ~
-   He looks very well trained.    
+   He looks very well trained.
 ~
 2058 0 0 0 72 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -129,7 +129,7 @@ woodswoman~
 a woodswoman~
 A woodswoman is looking for a woodsman to nag.
 ~
-   She looks upset about something.    
+   She looks upset about something.
 ~
 72 0 0 0 8192 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -142,7 +142,7 @@ messenger~
 a messenger~
 A messenger runs by on an errand.
 ~
-   He looks fit from running on all those errands.    
+   He looks fit from running on all those errands.
 ~
 76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -155,7 +155,7 @@ scoundrel~
 a scoundrel~
 This scoundrel is looking for some easy prey.
 ~
-   She lives off the misfortune of others.  She looks at you warily.    
+   She lives off the misfortune of others.  She looks at you warily.
 ~
 65608 0 0 0 1048660 0 0 0 0 E
 7 18 5 1d1+70 1d2+1

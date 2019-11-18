@@ -30,7 +30,7 @@ while %target_char%
     done
     if %quiver%
       %force% %actor% take arrow quiver
-    end  
+    end
     if %actor.inventory(9004)%
       eval dex_check %random.6% + 10
       if %actor.dex% > %dex_check%

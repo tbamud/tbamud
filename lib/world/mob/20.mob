@@ -3,7 +3,7 @@ senator official~
 a senator~
 An official is trying to look important here.
 ~
-   This senator is busy sucking up to the higher authorities.    
+   This senator is busy sucking up to the higher authorities.
 ~
 2124 0 0 0 80 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
@@ -16,7 +16,7 @@ priest~
 a priest~
 A priest is praying for his favorite gladiator to win.
 ~
-   For a priest he seems to be enjoying the bloodshed a little too much.    
+   For a priest he seems to be enjoying the bloodshed a little too much.
 ~
 231496 0 0 0 64 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -29,7 +29,7 @@ an augur~
 An augur is trying to predict the winner of the next bout.
 ~
    Known for their predictions by the reading of omens, these men are very
-popular among the rich.    
+popular among the rich.
 ~
 2264 0 0 0 64 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -41,7 +41,7 @@ magistrate~
 a magistrate~
 A magistrate is standing here with his nose stuck up in the air.
 ~
-   He looks rather ridiculous and extremely full of himself.    
+   He looks rather ridiculous and extremely full of himself.
 ~
 2058 0 0 0 65600 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -54,7 +54,7 @@ vestal virgin~
 a vestal virgin~
 A Vestal Virgin brushes close against you and winks seductively.
 ~
-   She doesn't look nearly as innocent as she's supposed to be.    
+   She doesn't look nearly as innocent as she's supposed to be.
 ~
 256030 0 0 0 65616 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -69,7 +69,7 @@ A Samnite warrior is waiting for his next bout.
 ~
    This warrior looks depressed, already realizing his fate.  He will battle in
 the arena until he is killed.  It could be today or years from now, but his fate
-is unavoidable.    
+is unavoidable.
 ~
 67672 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
@@ -83,7 +83,7 @@ a Thracian warrior~
 This warrior is covered in sweat, practicing his hand to hand combat skills.
 ~
    This guy is huge, well over six feet and pure muscle.  Looks like he's been
-training for years.    
+training for years.
 ~
 67594 0 0 0 80 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -99,7 +99,7 @@ A slave is hauling dead bodies to the graves.
    This slave looks like he's almost been worked to death, cleaning up after
 the animals, hauling the corpses to the common grave, retrieving armor and
 weapons from the dead.  He will soon be left alone in the arena and the starved
-wild animals will feed on him for the entertainment of the populace.    
+wild animals will feed on him for the entertainment of the populace.
 ~
 2120 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -111,7 +111,7 @@ ostrich bird~
 an ostrich~
 A strange bird with long legs and a long neck stands here.
 ~
-   This must be one of the exotic animals from far away countries that the 
+   This must be one of the exotic animals from far away countries that the
 emperor brings in to amuse his people.
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -141,7 +141,7 @@ A huge grey beast with long tusks and large floppy ears trumpets at you.
 ~
    Yet another exotic animal the emperor imports so his people can watch it be
 riddled with arrows and then slaughtered by gladiators.  Metal tusks have been
-placed over the regular ivory ones and look very sharp.    
+placed over the regular ivory ones and look very sharp.
 ~
 65546 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -169,7 +169,7 @@ a murmillo~
 This gladiator practices with a shortsword.  He looks very skilled.
 ~
    He is heavily armored with a helmet, arm and leg guards and a funny looking
-shield.  The crest of his helmet has a strange ornament of a fish on it.  He 
+shield.  The crest of his helmet has a strange ornament of a fish on it.  He
 swings a shortsword with ease and familiarity.
 ~
 65608 0 0 0 0 0 0 0 0 E
@@ -184,7 +184,7 @@ a lion~
 A lion looks up as you enter.  He looks hungry.
 ~
    These lions are starved then let loose in the arenas with gladiators or
-unarmed slaves.    
+unarmed slaves.
 ~
 74 0 0 0 16 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
@@ -198,7 +198,7 @@ a tiger~
 A tiger looks at you hungrily.
 ~
    Another animal that is let loose in the arenas to battle against the
-gladiators or feed on the slaves, this large cat looks like it hasn't eaten 
+gladiators or feed on the slaves, this large cat looks like it hasn't eaten
 in a long time.
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -213,7 +213,7 @@ a gladiator~
 A professional gladiator pushes you out of his way.
 ~
    Years of experience and the battle scars to prove it makes this gladiator a
-veteran of combat of all kinds.    
+veteran of combat of all kinds.
 ~
 204872 0 0 0 64 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -238,7 +238,7 @@ Emperor Titus~
 Emperor Titus is overseeing the amphitheater.
 ~
    Emperor Titus abuses his wealth and power, all the while holding these great
-games to distract the ignorant masses.  He is very good at it.  
+games to distract the ignorant masses.  He is very good at it.
 ~
 10 0 0 0 80 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -264,7 +264,7 @@ soldier~
 a soldier~
 A soldier stands here catching his breath before the next battle.
 ~
-   Another member of the dozen or so gladiators.    
+   Another member of the dozen or so gladiators.
 ~
 2120 0 0 0 80 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -278,7 +278,7 @@ a civilian~
 A civilian is screaming at the top of his lungs, enthralled with the battle.
 ~
    He is watching the bout, screaming his encouragement to his favorite
-gladiator.  He seems to enjoy the bloodshed and death.    
+gladiator.  He seems to enjoy the bloodshed and death.
 ~
 72 0 0 0 80 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -304,7 +304,7 @@ a lanista~
 A lanista is busy training gladiators.
 ~
    The lanista is a former gladiator who has managed to survive long enough to
-retire and pass on all his skills to others.    
+retire and pass on all his skills to others.
 ~
 196618 0 0 0 80 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3

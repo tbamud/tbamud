@@ -5,7 +5,7 @@ A green worker ant toils away mindlessly for its queen.
 ~
    The green worker ant is the powerhouse behind this anthill.  It slaves away
 almost constantly, digging new tunnels, gathering food, and even protecting the
-hill from other bugs.  
+hill from other bugs.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -20,7 +20,7 @@ A red soldier ant is invading the anthill.
 ~
    Sent by the red queen to seek and destroy for progression and expansion of
 the red ant colony.  This red soldier ant has been sent here to eliminate the
-existing residents.  
+existing residents.
 ~
 65612 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -34,7 +34,7 @@ a green soldier ant~
 A green soldier ant is protecting the anthill.
 ~
    The green soldier ant was born and raised to protect the queen and the entire
-anthill.  They do no work, but will sacrifice themselves for the queen.  
+anthill.  They do no work, but will sacrifice themselves for the queen.
 ~
 10 0 0 0 0 0 0 0 3 E
 3 19 8 0d0+30 1d2+0
@@ -49,7 +49,7 @@ A huge green soldier ant stands here ready to die protecting the Queen.
 ~
    This special soldier ant has been given the sole responsibility of protecting
 the queen from attack.  It is by far one of the largest ants in the entire
-anthill.  
+anthill.
 ~
 4106 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -67,7 +67,7 @@ The green queen ant is ensuring the survival of the species.
 ~
    She has no purpose other than to lead the anthill, and breed.  She is huge
 and it doesn't look like she could ever fit through any of the tunnels.  She
-guards over her newborn larvae.  
+guards over her newborn larvae.
 ~
 10 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -85,7 +85,7 @@ A large green dominant male ant scutters about, making sure the workers tend the
 ~
    This large dominant male green ant is second only to the queen.  Its purpose
 is to ensure everything gets done and the queen keeps pumping out cute little
-larvae.  
+larvae.
 ~
 72 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1

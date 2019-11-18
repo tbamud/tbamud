@@ -4,7 +4,7 @@ the mage~
 A small intelligent looking mage is standing here.
 ~
    His IQ makes almost any normal person look stupid...  It looks like he knows
-his way with magic.  
+his way with magic.
 ~
 14 0 0 0 16 0 0 0 -100 E
 13 16 2 2d2+130 2d2+2
@@ -17,7 +17,7 @@ troll~
 the troll~
 A large mean-looking troll is here.
 ~
-   Well, it looks dangerous!  
+   Well, it looks dangerous!
 ~
 46 0 0 0 0 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
@@ -30,7 +30,7 @@ the snake~
 A large green snake is here, looks like a guardian for an evil force.
 ~
    You see a evil creature.  The snake measures at least 5 feet in length and is
-coiled into a tight circle hissing at you.  
+coiled into a tight circle hissing at you.
 ~
 14 0 0 0 0 0 0 0 -700 E
 10 17 4 2d2+100 1d2+1
@@ -44,7 +44,7 @@ the thief~
 A thief is here, all dressed in black.
 ~
    He seems to be counting a handful of coins.  Maybe you ought to count YOUR
-gold too...  
+gold too...
 ~
 76 0 0 0 1572880 0 0 0 -400 E
 8 18 5 1d1+80 1d2+1
@@ -57,7 +57,7 @@ orc ugly~
 the orc~
 A ugly orc is standing here.
 ~
-   It is quite disgusting to look at.  
+   It is quite disgusting to look at.
 ~
 236 0 0 0 65552 0 0 0 -200 E
 7 18 5 1d1+70 1d2+1
@@ -69,7 +69,7 @@ centipede~
 the centipede~
 A small harmless centipede is here.
 ~
-   Well it doesn't seem to pay any attention to you.  
+   Well it doesn't seem to pay any attention to you.
 ~
 10 0 0 0 0 0 0 0 300 E
 6 18 6 1d1+60 1d2+1
@@ -81,7 +81,7 @@ warrior~
 the warrior~
 A human warrior is here.  He has a evil grin in his face.
 ~
-   He doesn't look friendly at all...  
+   He doesn't look friendly at all...
 ~
 108 0 0 0 0 0 0 0 -300 E
 9 17 4 1d1+90 1d2+1
@@ -93,7 +93,7 @@ kobold~
 the kobold~
 A green kobold is here.
 ~
-   It looks slimy..  
+   It looks slimy..
 ~
 108 0 0 0 0 0 0 0 -100 E
 7 18 5 1d1+70 1d2+1

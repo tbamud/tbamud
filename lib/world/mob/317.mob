@@ -6,7 +6,7 @@ The Mayor of McGintey Cove parades by you.
    He looks quited decadent, draped in sheer, golden silk and satin teal
 sashes.  He turns his head suddenly to catch a glimpse of a young noblewoman
 and you see a small teal ornament hanging loosely from his right ear.  The
-trinket looks quite valuable.    
+trinket looks quite valuable.
 ~
 32968 0 0 0 0 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -20,7 +20,7 @@ Maree~
 Maree is here serving drinks.
 ~
    She is one of those women who could be twenty-five or could be forty.  She
-has that timeless look about her that lends a quiet, dignified beauty.    
+has that timeless look about her that lends a quiet, dignified beauty.
 ~
 188426 0 0 0 0 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -34,7 +34,7 @@ A town noble stands nearby, disgusted by your mere presence.
 ~
    He is dressed in the finest clothes money can buy, and as he dusts of his
 shirt and tidies his hair he turns his head from you, not acknowledging your
-presence there.    
+presence there.
 ~
 200 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
@@ -48,7 +48,7 @@ the proprieter~
 The proprieter of the Inn is here, making sure everything is perfect.
 ~
    He hurries here and there and everywhere, always fussing or whining that
-something is wrong or out of place.    
+something is wrong or out of place.
 ~
 16394 0 0 0 0 0 0 0 200 E
 30 10 -8 6d6+300 5d5+5
@@ -62,7 +62,7 @@ A waiter is here scurrying from table to table.
 ~
    He keeps glancing up at the proprieter, as if he were a stray dog expecting
 to beat at any moment.  Poor fella, he probably gets at least one good tongue
-lashing a day.    
+lashing a day.
 ~
 138 0 0 0 0 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
@@ -76,7 +76,7 @@ The Mayor's wife stalks silently by.
 ~
    Yes, her clothes are of the finest make but you can tell she does not
 belong.  Her features are long and sad looking, as if she had no desire to be
-the mayor's wife.  She moves away quickly, trying to remain unseen.    
+the mayor's wife.  She moves away quickly, trying to remain unseen.
 ~
 147656 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
@@ -90,7 +90,7 @@ the roulette attendant~
 A strikingly beautiful woman stands at the wheel, taking bets.
 ~
    She gives you a very big, very seductive smile and urges you to place a bet.
-  
+
 ~
 16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -103,7 +103,7 @@ Baagh~
 Baagh is here, dealing the next the grueling round of war.
 ~
    Baagh does not look all that smart.  Seems that this card game is just his
-speed.    
+speed.
 ~
 16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -115,7 +115,7 @@ dealer blank faced~
 the blank-faced dealer~
 A blank-faced dealer is here, getting ready to take your money.
 ~
-   This guy is the poster child for poker faces.    
+   This guy is the poster child for poker faces.
 ~
 16394 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -128,7 +128,7 @@ a noblewoman~
 A noble's wife is standing here.
 ~
    She has the same contempt of you as a nobleman has, full of disgust.  She
-tries to be as far away from you as she can.    
+tries to be as far away from you as she can.
 ~
 200 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -155,7 +155,7 @@ a stealthy burglar~
 A stealthy burglar is attempting to hide himself in the shadows.
 ~
    Crouched back in a corner, head low, this man thinks that you are unable to
-see him.    
+see him.
 ~
 138 0 0 0 0 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
@@ -168,7 +168,7 @@ the park ranger~
 The Park Ranger is here, tending to the park.
 ~
    She is dressed all in brown and green, with rake in hand.  She looks like
-she knows her way around both forest and city.    
+she knows her way around both forest and city.
 ~
 2186 0 0 0 0 0 0 0 600 E
 25 12 -5 5d5+250 4d4+4
@@ -181,7 +181,7 @@ a little boy~
 A little boy plays tag with a little girl, laughing and giggling as he runs.
 ~
    With lunch stains all over his shirt and grass stains all on his knees, he
-looks like he couldn't be any happier than he is now.    
+looks like he couldn't be any happier than he is now.
 ~
 72 0 0 0 0 0 0 0 400 E
 8 18 5 1d1+80 1d2+1
@@ -194,7 +194,7 @@ the little girl~
 A little girl laughs as a boy tries in vain to catch her by the ponytails.
 ~
    With her bright red hair up in ponytails, she kind of looks like Pippy
-Longstocking.    
+Longstocking.
 ~
 72 0 0 0 0 0 0 0 500 E
 7 18 5 1d1+70 1d2+1
@@ -206,7 +206,7 @@ matre de~
 the matre de~
 The matre de looks disdainfully at you.
 ~
-   This man may have to get a bit snooty, better watch it.    
+   This man may have to get a bit snooty, better watch it.
 ~
 10 0 0 0 0 0 0 0 -100 E
 21 13 -2 4d4+210 3d3+3
@@ -219,7 +219,7 @@ the waiter~
 A well dressed waiter is moving gracefully through the room, serving customers.
 ~
    Resplendant inhis black tuxedo and shined shoes, this man would be graceful
-falling down.    
+falling down.
 ~
 10 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
@@ -232,7 +232,7 @@ the waitress~
 A waitress moves through the room serving drinks.
 ~
    This woman could only be described as elegant the way she sways and moves
-through the clientele dining here.    
+through the clientele dining here.
 ~
 188426 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
@@ -245,7 +245,7 @@ the receptionist~
 A receptionist sits behind an ornate mahoganey desk, taking reservations for the night.
 ~
    She looks almost bored with her job as she efficiently writes dates, names,
-and times in ledger.    
+and times in ledger.
 ~
 16394 0 0 0 0 0 0 0 100 E
 25 12 -5 5d5+250 4d4+4
@@ -258,7 +258,7 @@ the woman~
 A woman is planting flowers here, pulling weeds here and there.
 ~
    She looks in her element here, digging in the dirt, like she couldn't be
-happier anywhere else.    
+happier anywhere else.
 ~
 10 0 0 0 0 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
@@ -271,7 +271,7 @@ the server~
 A man is here serving all the diners quietly, efficiently.
 ~
    A very somber seeming man, you cannot see a glint of a smile or any kind of
-emotion on his face.  His work seems to be his passion.    
+emotion on his face.  His work seems to be his passion.
 ~
 188426 0 0 0 0 0 0 0 -100 E
 20 14 -2 4d4+200 3d3+3
@@ -284,7 +284,7 @@ the grave digger~
 A grave digger is resting under the shade of a tree, shovel on the ground next to him.
 ~
    He wipes the sweat from his brow, smiles, and asks if you might like to join
-him for a bit of a rest...?    
+him for a bit of a rest...?
 ~
 10 0 0 0 0 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
@@ -296,7 +296,7 @@ manager hotel~
 the hotel manager~
 The hotel manager stands behind a large desk, ready to sell you a room.
 ~
-   He smiles and asks how he can help you today.    
+   He smiles and asks how he can help you today.
 ~
 10 0 0 0 0 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
@@ -308,7 +308,7 @@ woman receptionist~
 the receptionist~
 She stands smiling at you, waiting for you to take a room.
 ~
-   Hmmmm....  Wonder if she is part of the price, too...    
+   Hmmmm....  Wonder if she is part of the price, too...
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0

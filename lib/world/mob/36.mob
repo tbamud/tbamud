@@ -3,7 +3,7 @@ black pawn~
 the Pawn of the Black Court~
 You see a pawn standing here waiting for orders.
 ~
-   The Black Pawn looks quite like a small knight without his powerful steed.  
+   The Black Pawn looks quite like a small knight without his powerful steed.
 His armor is shiny and black.  He stands ready to give his life for the Crown.
 
 ~
@@ -17,9 +17,9 @@ white pawn~
 the Pawn of the White Court~
 You see a pawn standing here waiting for orders.
 ~
-   The White Pawn looks quite like a small knight without his powerful steed.  
+   The White Pawn looks quite like a small knight without his powerful steed.
 His armor is spotless and white.  He stands ready to give his life for the
-Crown.  
+Crown.
 ~
 78 0 0 0 16 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
@@ -32,7 +32,7 @@ the Black Rook~
 In the corner you see a large, black, stone castle on wheels.
 ~
    The Black Rook is a very large man-made tomb on wheels.  Just from the looks
-of it, it will probably be YOUR tomb.  
+of it, it will probably be YOUR tomb.
 ~
 229386 0 0 0 16 0 0 0 -600 E
 27 11 -6 5d5+270 4d4+4
@@ -45,7 +45,7 @@ the White Rook~
 In the corner you see a large, white, stone castle on wheels.
 ~
    The White Rook is a very large man-made tomb on wheels.  Just from the looks
-of it, it will probably be YOUR tomb.  
+of it, it will probably be YOUR tomb.
 ~
 229386 0 0 0 16 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
@@ -58,7 +58,7 @@ the Black Knight~
 Here stands a magnificent knight of the dark realm.
 ~
    The Black Knight is here, riding his ebony black war horse.  His eyes flash
-behind his visor in vengence.  
+behind his visor in vengence.
 ~
 42 0 0 0 16 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
@@ -71,7 +71,7 @@ the White Knight~
 Here stands a magnificent knight of the light realm.
 ~
    The White Knight is here, riding his ivory white war horse.  His eyes gleam
-behind his visor in joy.  
+behind his visor in joy.
 ~
 42 0 0 0 16 0 0 0 400 E
 18 14 0 3d3+180 3d3+3
@@ -84,7 +84,7 @@ the Black Bishop~
 A dark priest stands here.
 ~
    The Black Bishop seems willing to help you straight into your grave so he can
-bless you properly.  
+bless you properly.
 ~
 10 0 0 0 16 0 0 0 -500 E
 24 12 -4 4d4+240 4d4+4
@@ -97,7 +97,7 @@ the White Bishop~
 A light priest stands here.
 ~
    The White Bishop seems willing to help you in any possible so that he can
-attain a higher spirituality.  
+attain a higher spirituality.
 ~
 10 0 0 0 16 0 0 0 500 E
 24 12 -4 4d4+240 4d4+4
@@ -111,7 +111,7 @@ The Black Queen stands here.
 ~
    The Black Queen is a strikingly beautiful woman with pale skin and a mass of
 dark hair that crowns her head like a black cloud.  If looks could kill, you
-would already be dead.  
+would already be dead.
 ~
 2094 0 0 0 16 0 0 0 -750 E
 29 11 -7 5d5+290 4d4+4
@@ -125,7 +125,7 @@ The White Queen stands here.
 ~
    The White Queen is a stunningly beautiful woman with dark skin and a mass of
 light hair that frames her head like the sun.  This is surely love at first
-sight for you.  
+sight for you.
 ~
 2094 0 0 0 16 0 0 0 750 E
 29 11 -7 5d5+290 4d4+4
@@ -138,7 +138,7 @@ the Black King~
 The Black King stands here.
 ~
    The Black King is a menacing figure.  You can easily understand why he is the
-king and you are not.  
+king and you are not.
 ~
 2110 0 0 0 16 0 0 0 -999 E
 30 10 -8 6d6+300 5d5+5
@@ -151,7 +151,7 @@ the White King~
 The White King stands here.
 ~
    The White King is a stately figure.  You can easily understand why he is the
-king and you are not.  
+king and you are not.
 ~
 2110 0 0 0 16 0 0 0 999 E
 30 10 -8 6d6+300 5d5+5

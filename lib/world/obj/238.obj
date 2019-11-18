@@ -3,14 +3,14 @@ map~
 a map of the crystal castle~
 A map of the crystal castle.~
 
-                        O                            
-                        |                            
-                    O O-v                            
-                                                     
-                                                     
-                                                     
-                            ^                        
-                            |                        
+                        O
+                        |
+                    O O-v
+
+
+
+                            ^
+                            |
           O-O-O-O-O-O-O-O   O                 O     O
           | | | | | | | |   |                 |     |
           O-O-O-O-O-O-O-O   O   O           O O     O
@@ -156,12 +156,12 @@ A small torch sputters on the wall casting a flickering light.~
 0 0 0 0 0
 E
 stone~
-   Upon further inspection you notice that the torch is pullable.  
+   Upon further inspection you notice that the torch is pullable.
 ~
 E
 torch~
    A small light torch is here sticking out of the wall surrounded by loose
-stones.  
+stones.
 ~
 #23841
 bone necklace~
@@ -174,7 +174,7 @@ A necklace made of bones lies here.~
 E
 necklace~
    As you look at this necklace you see that it is made of small pieces of bone
-connected by titanium.  
+connected by titanium.
 ~
 A
 1 2
@@ -193,7 +193,7 @@ A large box stands upright here.~
 T 23843
 E
 box~
-   You notice that this box is in excellent condition.  
+   You notice that this box is in excellent condition.
 ~
 #23844
 coin~
@@ -285,11 +285,11 @@ T 23855
 E
 fountain~
    Looking closer at the fountain you notice that the bottom is very deep and
-there is something sparkling in the water.    
+there is something sparkling in the water.
 ~
 E
 water~
-   You notice that there is a small portal on the bottom of the fountain.    
+   You notice that there is a small portal on the bottom of the fountain.
 ~
 #23860
 key~

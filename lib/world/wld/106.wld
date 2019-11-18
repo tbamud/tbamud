@@ -9,11 +9,11 @@ Mobs         : 23
 Objects      : 41
 Shops        : 5
 Triggers     : 1
-Theme        : Elcardo, a small city, where the mayor has become ill. Suncas 
+Theme        : Elcardo, a small city, where the mayor has become ill. Suncas
    rebels are trying to take over the town. Their leader is sujin suncas.
-Notes        : Since the mayor of elcardo is very sick the citizens are not 
-   being looked after as they should, many rebel and start their own little 
-   groups within the city.  
+Notes        : Since the mayor of elcardo is very sick the citizens are not
+   being looked after as they should, many rebel and start their own little
+   groups within the city.
 Zone: 106 was linked to the following zones:
 200 Western Highway                at 10609 (south) ---> 20025
 175 The Cardinal Wizards           at 10613 (east ) ---> 17525
@@ -25,7 +25,7 @@ S
 Cathedral Altar~
    This is the Cathedral of Elcardo.  The glowing altar stands before you.  The
 room is very dimly lit from the blood red candles which lie before you.  The
-candles appear to be made out of some sort of fat.    
+candles appear to be made out of some sort of fat.
 ~
 106 8 0 0 0 0
 D2
@@ -38,7 +38,7 @@ Inside the Elcardo Cathedral~
    As you enter the Elcardo Cathedral a holy feeling enriches your body.  The
 room is well lit by over a thousand holy white candles.  On the far wall in
 front of you there hangs a large cross.  The friendly Healer stands here
-reading a book that appears to be the bible.    
+reading a book that appears to be the bible.
 ~
 106 8 0 0 0 0
 D0
@@ -56,7 +56,7 @@ Outside the Elcardorian Cathedral~
 thick oak.  There are small designs all over the door, the designs appear
 to be from many years ago.  Standing right in front of the main doors is the
 Executioner guarding the door quite well and watching each and every person
-that is planning on entering the cathedral.    
+that is planning on entering the cathedral.
 ~
 106 8 0 0 0 0
 D0
@@ -89,7 +89,7 @@ Peddler's Square~
    People rush by you left and right as you stand in the intersection of
 Peddler's Way.  The smell of freshly baked bread breezes by your nose.  In the
 distance you can see the Executioner guarding the cathedral.  A panhandler begs
-the passersby for money.  Some actually feel sorry for the worthless bum.    
+the passersby for money.  Some actually feel sorry for the worthless bum.
 ~
 106 0 0 0 0 0
 D0
@@ -116,7 +116,7 @@ casters to the east or fighters to the west.  Mages and sorcerers of all kinds
 rush by.  A large hulky Barbarian almost knocks you over.  In the distance you
 see a strange glowing, It seems to be coming from the spell casting area.  To
 the east you feel a strong magical presence, and to the west you can smell the
-sweat of hard work.    
+sweat of hard work.
 ~
 106 0 0 0 0 0
 D0
@@ -141,7 +141,7 @@ Citizens Square~
    This is the poor part of Elcardo.  Small dirty poor children run past you
 screaming their heads off.  Poor men sit all over the roads begging for money
 it really is a sin.  It is very strange, the rest of the city is well off money
-wise but as soon as you get here it is very poor.    
+wise but as soon as you get here it is very poor.
 ~
 106 0 0 0 0 0
 D0
@@ -184,7 +184,7 @@ Outside the South Gate of Elcardo~
    A massive steel gate rests just to the north.  The city of Elcardo held
 beyond the gate and walls.  You remember rumors of the city being overthrown by
 a new political faction.  But who listens to politics.  "Poli" meaning many,
-"tics" meaning blood sucking insects.    
+"tics" meaning blood sucking insects.
 ~
 106 0 0 0 0 3
 D0
@@ -196,7 +196,7 @@ S
 Peddler's Road~
    The streets are paved with a fine marble, much better looking then other
 city's that you've seen.  The clanging of metal rings in your ears, it seems to
-be comming from the north.  There is a bank close to the south.    
+be comming from the north.  There is a bank close to the south.
 ~
 106 0 0 0 0 0
 D0
@@ -220,7 +220,7 @@ S
 Peddler's Road~
    Tall strong men brush by you, swords hanging at their waists.  They must be
 going to the Armor Shop which is to the north of where you are standing.  To
-the south you see a strange hut.    
+the south you see a strange hut.
 ~
 106 0 0 0 0 0
 D0
@@ -245,7 +245,7 @@ Inside the East Gate of Elcardo~
    The steel gates are held shut by two Elcardo Knights which are guarding the
 exit.  The Elcardorian leaders try to keep strict control through the use of
 the knights and soldiers.  But, with rumors of the Mayor falling ill many
-rebels have begun to combine forces within the city walls.    
+rebels have begun to combine forces within the city walls.
 ~
 106 0 0 0 0 0
 D1
@@ -259,11 +259,11 @@ D3
 S
 #10613
 Outside the East Gate of Elcardo~
-   The city of Elcardo is to the west through a set of guarded steel gates.  
+   The city of Elcardo is to the west through a set of guarded steel gates.
 You have been told that the city is in turmoil and on the verge of a collapse,
 or possible overthrowing.  Many cunning politicians have plans for this city.
 A gravel path continues east out the gate.  The north is blocked by a tall
-cliff face.    
+cliff face.
 ~
 106 0 0 0 0 3
 D3
@@ -276,7 +276,7 @@ Peddler's Road~
    A strong scent gets your attention right away.  The smell of biscuits, bread
 and home-made cookies comes from the north.  You definately want to check this
 place out.  To the south you see a small shop and a sign with the words Elcaro
-Grocer on it.    
+Grocer on it.
 ~
 106 0 0 0 0 0
 D0
@@ -299,8 +299,8 @@ S
 #10615
 Peddler's Road~
    Little elf-like people walk by you left and right, You wonder why...  Then
-you realize that the Magic shop is directly in front of you to the north.  
-There is a small sign here that says the words, Lara's Magic supplies.    
+you realize that the Magic shop is directly in front of you to the north.
+There is a small sign here that says the words, Lara's Magic supplies.
 ~
 106 0 0 0 0 0
 D0
@@ -321,7 +321,7 @@ Inside the West Gate of Elcardo~
    The whispers of treachery and deciept fill the city streets and every
 passerby looks at you warily.  Everyone in the city just wants peace, but the
 Mayor has failed to maintain order and the revolts have begun.  Revolutionists
-are coming forth.    
+are coming forth.
 ~
 106 0 0 0 0 0
 D1
@@ -335,11 +335,11 @@ D3
 S
 #10617
 Outside the West Gate of Elcardo~
-   Through the gates to the east you can see the infamous city of Elcardo.  
+   Through the gates to the east you can see the infamous city of Elcardo.
 The city is known for its unstable government.  The current Mayor has fallen
 ill and rumors abound.  Everything from him being poisoned to an illness sent
-from the Gods because of the Mayor's betrayal to the upkeep of the citizens.  
-A thick forest can be seen to the west.    
+from the Gods because of the Mayor's betrayal to the upkeep of the citizens.
+A thick forest can be seen to the west.
 ~
 106 0 0 0 0 3
 D1
@@ -356,7 +356,7 @@ Guild Halls~
    This is the spellcaster side of the guild halls.  You will find no fighter
 guilds in this section.  To the north is the Cleric guildmaster and to the
 south is the Paladin guildmaster.  Signs are placed over both doors stating
-that the guilds are closed.    
+that the guilds are closed.
 ~
 106 0 0 0 0 0
 D1
@@ -372,8 +372,8 @@ S
 Guild Halls~
    Continuing on the spellcaster side of the halls you see a dark dreary guild,
 it must be the Vampire guild that is to the north.  More elves walk in and out
-of the guild to the south, shall you take a closer look at the Mage guild.  
-Signs are placed over both doors stating that the guilds are closed.    
+of the guild to the south, shall you take a closer look at the Mage guild.
+Signs are placed over both doors stating that the guilds are closed.
 ~
 106 0 0 0 0 0
 D1
@@ -387,11 +387,11 @@ D3
 S
 #10620
 Guild Halls~
-   To the south you see a strange guild, its more like a Grove then a guild.  
+   To the south you see a strange guild, its more like a Grove then a guild.
 You automatically assume that it is the Druid guild.  Meanwhile, to the north
 you hear strange sounds unlike the other guilds.  The Psionicist guild is to
 the north.  Signs are placed over both doors stating that the guilds are
-closed.    
+closed.
 ~
 106 0 0 0 0 0
 D3
@@ -401,12 +401,12 @@ D3
 S
 #10621
 Guild Halls~
-   You sense a strong presence of evil when you step in front of this guild.  
+   You sense a strong presence of evil when you step in front of this guild.
 Shadows are everywhere and you can almost feel the fear rising in your throat.
 To the south you can make out the entrance to the Thieves guild in the dim
 light.  North of here is the Warriors Guild.  To the east is the safety and
 comfort of the Guild Halls.  Signs are placed over both doors stating that the
-guilds are closed.    
+guilds are closed.
 ~
 106 0 0 0 0 0
 D1
@@ -424,7 +424,7 @@ Guild Halls~
 It may be loud and not very peaceful but you feel strangly good that you are
 here.  The Barbarian guild is to the north.  But as you turn your head towards
 the south a peaceful feeling fills you body.  The Ranger guild is to the south.
-Signs are placed over both doors stating that the guilds are closed.    
+Signs are placed over both doors stating that the guilds are closed.
 ~
 106 0 0 0 0 0
 D1
@@ -437,7 +437,7 @@ Citizens Street~
    The citizens of Elcardo have grown up in a very poor state.  But do not let
 their poverty fool you, they have spent much time training in combat since the
 city requires all citizens to serve in the army.  Decrepit looking shacks are
-closed and boarded up to the north and south of you.    
+closed and boarded up to the north and south of you.
 ~
 106 0 0 0 0 0
 D1
@@ -454,7 +454,7 @@ Citizens Street~
    Children run past you, high on sugar, or so you think.  It is very loud in
 this part of Elcardo, much louder then the other parts.  If it is not the
 screaming children that deafens you it is the mothers yelling for or at their
-children.  More shacks are to the north and south.    
+children.  More shacks are to the north and south.
 ~
 106 0 0 0 0 0
 D1
@@ -471,7 +471,7 @@ Citizens Street~
    Children beg for money all around you.  It is not often they see someone as
 rich as you in their neighborhood.  You are quite annoyed that all these
 children are pulling at your clothes and digging in your pockets.  To the north
-and south are the shacks that these children live in.    
+and south are the shacks that these children live in.
 ~
 106 0 0 0 0 0
 D1
@@ -488,7 +488,7 @@ Dead End~
    To the north you see two teenage children guarding a shack which is
 reasonably nicer then the rest.  The children are each holding a spear and have
 body paint around their eyes and on their cheeks.  Each one with a look of hate
-and disgust on their face.  Shall you enter...    
+and disgust on their face.  Shall you enter...
 ~
 106 0 0 0 0 0
 D0
@@ -505,7 +505,7 @@ Pathway to the Saloon~
    You are on the path towards the old Elcardo Saloon, a popular hangout for
 all those old Elcaro Knights.  But watch out, they are quite bitter with their
 old age.  The Saloon is a great place to glean the latest gossip from the
-locals.    
+locals.
 ~
 106 0 0 0 0 0
 D1
@@ -522,7 +522,7 @@ Entrance to the Saloon~
    A short, very short, man is here letting people in and tossing people out of
 the Saloon.  He doesnt look very intimidating at all.  But, he must be
 qualified or he wouldn't have the job and be able to handle the soldiers and
-rebels.    
+rebels.
 ~
 106 0 0 0 0 0
 D1
@@ -540,7 +540,7 @@ Inside the Elcardo Saloon~
 you were ten years old considering everyone in the room is at least twice your
 age.  It is quite hard to breathe in here but these old timers are very use to
 it.  You notice an odd back room with a sign on the door to the east saying Do
-Not Enter.    
+Not Enter.
 ~
 106 8 0 0 0 0
 D1
@@ -558,7 +558,7 @@ Center of the Saloon~
 Elcardo knights and soldiers play cards all around you and reminisce about the
 olden days.  Not quite the spot you find exciting but you wonder what is going
 on in that back room.  An old veteran flashes his gums at you.  The back room is
-close to the north.    
+close to the north.
 ~
 106 8 0 0 0 0
 D0
@@ -575,7 +575,7 @@ The Back Room~
    The room is very dim, A few candles are lit on the walls.  This is where
 many of the different rebellious factions in the city meet.  They sometimes
 work together, sometimes oppose each other.  It all depends which they think is
-most beneficial.    
+most beneficial.
 ~
 106 9 0 0 0 0
 D2
@@ -588,7 +588,7 @@ The Armor Shop~
    The walls are tarnished black from soot.  The sounds of clanging metal comes
 from a large man perfecting a silver sword.  The smell of his sweat is enough
 to change your mind from entering this shop again, You should purchase your
-weapon and get out as fast as possible.    
+weapon and get out as fast as possible.
 ~
 106 8 0 0 0 0
 D1
@@ -604,7 +604,7 @@ S
 The Bank of Elcardo~
    The bank is very clean and it feels very peaceful.  There are many plaques
 on the walls all of which say something good about the city of Elcardo.  Quite
-the rich looking establishment it is.    
+the rich looking establishment it is.
 ~
 106 8 0 0 0 0
 D0
@@ -616,7 +616,7 @@ S
 The weapon shop~
    The armoury has a wide assortment of armours on the walls and in the
 windows.  You see helmets, shields and chain shirts to name a few.  To the
-south is the main street.    
+south is the main street.
 ~
 106 8 0 0 0 0
 D2
@@ -633,7 +633,7 @@ Mayor's Hut~
    You are having a hard time believing that this little hut belongs to the
 Mayor of the city.  A middle-aged women informs you that the Mayor is sick in
 bed and is taking no visitors.  You should leave.  To the south is a closed
-wooden door with the words "Do Not Disturb" on it.    
+wooden door with the words "Do Not Disturb" on it.
 ~
 106 12 0 0 0 0
 D0
@@ -650,7 +650,7 @@ Inside the Mayor's room~
    The inside of the Mayor's room is quite impressive.  A tall four post bed
 fills the center of the room.  An ornately carved dresser and desk cover the
 western wall.  A light fragrance attempts to cover the smell of death in the
-room.    
+room.
 ~
 106 8 0 0 0 0
 D0
@@ -663,7 +663,7 @@ Grandma's Diner~
    This is a very small diner, but it is one of the most comfortable places
 you've ever been in your life.  Directly behind the counter you see an elderly
 man playing with an antique cash register.  In the kitchen you see a little old
-lady baking cookies and other goodies.  You know you wanna have some.    
+lady baking cookies and other goodies.  You know you wanna have some.
 ~
 106 8 0 0 0 0
 D2
@@ -675,7 +675,7 @@ S
 Elcardo Grocer~
    You are inside the general store.  All sorts of items are stacked on shelves
 behind the counter, safely out of your reach.  None of the items seem to be of
-special interest, just your everyday requirements.    
+special interest, just your everyday requirements.
 ~
 106 8 0 0 0 0
 D0
@@ -688,7 +688,7 @@ Lara's Magic Supplies~
    The shop is quite small compared to the others.  Shelves are filled with
 mason jars with pig eyes, cow tongues, and chicken brains.  It is not the most
 pleasant sight in the world.  Lara is quite the odd looking individual, wearing
-all black with the Skull of Hakanda around here neck.    
+all black with the Skull of Hakanda around here neck.
 ~
 106 12 0 0 0 0
 D2
@@ -701,7 +701,7 @@ Inside the Shack~
    You are in the main entrance to the poor shack that was being guarded by two
 teenage kids.  What could they possibly be guarding you wonder.  There are
 doors to the west and east of you and also a large solid stone door to the
-north.    
+north.
 ~
 106 8 0 0 0 0
 D0
@@ -726,7 +726,7 @@ S
 Poor Barracks~
    There are bunk beds all around you.  Extra spears and other weapons lie in
 the corner of the room.  Some teenage children are sleeping in the bunks while
-some are choosing a weapon.  Should You really be here...    
+some are choosing a weapon.  Should You really be here...
 ~
 106 0 0 0 0 0
 D1
@@ -739,7 +739,7 @@ Poor Barracks~
    Bunk beds everywhere, clothes neatly folded in separate piles.  These
 children look very tired and look as though they are far over-worked.  A Young
 child quietly crys on a bunk to your left, all he really needs is some comfort.
-An open hatch leads down.    
+An open hatch leads down.
 ~
 106 12 0 0 0 0
 D3
@@ -755,7 +755,7 @@ S
 An Empty Room~
    The room is very VERY small and there is almost nothing in it.  The walls
 are very dirty and the floor is made of dirt.  A shudder goes through your
-spine, You can sense the hatred in this place.    
+spine, You can sense the hatred in this place.
 ~
 106 9 0 0 0 0
 D4
@@ -771,9 +771,9 @@ S
 Chambers of Sujin Suncas~
    The rebel headquarters run by Sujin Suncas is more run-down than would be
 expected.  It appears he lacks the financial support to carry out a successful
-rebellion.  Rebellions never last very long once people start starving.  
+rebellion.  Rebellions never last very long once people start starving.
 Perhaps that is the Mayor's strategy.  A few wooden chairs are placed around an
-empty table.    
+empty table.
 ~
 106 9 0 0 0 0
 D2
@@ -786,7 +786,7 @@ S
 Entrance to the Dungeon~
    The smell of old bones and rotting flesh fills your nose.  There are puddles
 of a brownish liquid on the floor and stains of blood on the walls.  The sound
-of moaning rings through-out the dungeon.    
+of moaning rings through-out the dungeon.
 ~
 106 9 0 0 0 0
 D0
@@ -810,7 +810,7 @@ S
 Death Chamber~
    This cramped room has a very strong odor of decay to it.  It is not pleasant
 at all.  You wonder why the citizens of Elcardo would allow people to be
-imprisoned down here in the dungeons.    
+imprisoned down here in the dungeons.
 ~
 106 9 0 0 0 0
 D1
@@ -822,7 +822,7 @@ S
 Torture Room~
    Strange devices used for torture are scattered all around the room.  Why
 would they torture people in a dungeon, Sick SICK people.  It appears that
-there are some bodies still alive in here.    
+there are some bodies still alive in here.
 ~
 106 9 0 0 0 0
 D3
@@ -835,7 +835,7 @@ Dungeon Hallway~
    You do not feel safe at all when you are down here all alone.  There are a
 few small candles mounted on the dungeon walls just enough light to see your
 own hands but thats about the only thing visible.  A gaping hole in the dungeon
-floor to the west looks bottomless.    
+floor to the west looks bottomless.
 ~
 106 0 0 0 0 0
 D0
@@ -853,7 +853,7 @@ D3
 S
 #10650
 Body Count~
-   FALLING, FELL, NEAR-DEAD!  Should have read the room descriptions.    
+   FALLING, FELL, NEAR-DEAD!  Should have read the room descriptions.
 ~
 106 165 0 0 0 0
 S
@@ -863,7 +863,7 @@ Dungeon Hallway~
    There are rooms and chambers to the left and right of you, this way and that
 way.  You do not feel safe at all when you are down here all alone.  There are
 a few small candles mounted on the dungeon walls just enough light to see your
-own hands but thats about the only thing visible.    
+own hands but thats about the only thing visible.
 ~
 106 8 0 0 0 0
 D0
@@ -887,7 +887,7 @@ S
 A Black Cell~
    This is a the scariest room of all.  There is no light AT ALL.  You can feel
 your heart pounding as you look around the room trying to see if something is
-here...  Is alive.    
+here...  Is alive.
 ~
 106 9 0 0 0 0
 D1
@@ -900,7 +900,7 @@ Suncas Jail Cell.~
    This large room with earthen walls has been equipped with shackles for both
 hands and feet.  They seem to have been driven into the walls on long steel
 poles.  A few leg shackles are scattered about the center of the room.  This
-appears to be a jail cell for prisoners.    
+appears to be a jail cell for prisoners.
 ~
 106 9 0 0 0 0
 D3
@@ -913,7 +913,7 @@ The Guard Room~
    Blood and guts are all over the floor and walls in this room.  It looks as
 though a few prisoners escaped and came after the guards.  It is even more
 gross that part of the guts have been eaten.  They must not feed the prisoners
-very well.    
+very well.
 ~
 106 8 0 0 0 0
 D2
@@ -925,7 +925,7 @@ S
 A Path between Hannah and Elcardo~
    Forests surround you, but to the east you can just make out the city of
 Elcardo.  While to the west and north some you have heard lies the city of
-Hannah.  The path looks relatively empty, and unused here.    
+Hannah.  The path looks relatively empty, and unused here.
 ~
 106 0 0 0 0 0
 D1
@@ -942,7 +942,7 @@ A Path between Hannah and Elcardo~
    This well travelled path links the cities of Elcardo and Hannah.  The two
 cities were once strong allies until the City of Hannah started having problems
 with strange creatures storming the city walls.  All communication between the
-cities has been cut off for some time now.    
+cities has been cut off for some time now.
 ~
 106 0 0 0 0 0
 D0
@@ -959,7 +959,7 @@ Before the City of Hannah~
    Just to the north can be seen a pair of barred and rusted gates, the gates
 have been closed for a long time and rumours of the city within being destroyed
 or deserted abound.  The city walls stretching to the east and west are crumbled
-in some places, even torn down.  
+in some places, even torn down.
 ~
 106 0 0 0 0 0
 D2

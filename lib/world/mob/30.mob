@@ -5,7 +5,7 @@ A wizard walks around behind the counter, talking to himself.
 ~
    The wizard looks old and senile, and yet he looks like a very powerful
 wizard.  He is equipped with fine clothing, and is wearing many fine rings and
-bracelets.  
+bracelets.
 ~
 26635 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -18,7 +18,7 @@ the baker~
 The baker looks at you calmly, wiping flour from his face with one hand.
 ~
    A fat, nice looking baker.  But you can see that he has many scars on his
-body.  
+body.
 ~
 26635 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -44,7 +44,7 @@ the weaponsmith~
 A weaponsmith is standing here.
 ~
    He is a young weaponsmith, who still has lots to learn but he is still eager
-to sell you his latest implements of carnage and destruction.  
+to sell you his latest implements of carnage and destruction.
 ~
 26635 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -57,7 +57,7 @@ the armourer~
 An armourer stands here displaying his new (and previously owned) armours.
 ~
    An old but very strong armourer.  He has made more suits of armour in his
-life than you have ever seen.  
+life than you have ever seen.
 ~
 26635 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -70,7 +70,7 @@ the receptionist~
 A receptionist is standing behind the counter here, smiling at you.
 ~
    You notice a tired look in her face.  She looks like she isn't paid well
-enough to put up with any crap from mud players with attitudes.  
+enough to put up with any crap from mud players with attitudes.
 ~
 59419 0 0 0 65616 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -82,7 +82,7 @@ captain stolar~
 Captain Stolar~
 A retired captain stands here, selling boats.
 ~
-   This captain has eaten more sharks than you have killed peas.  
+   This captain has eaten more sharks than you have killed peas.
 ~
 26635 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -94,7 +94,7 @@ sailor~
 the sailor~
 A sailor stands here, waiting to help you.
 ~
-   He looks like a strong, fit sailor.  
+   He looks like a strong, fit sailor.
 ~
 26634 0 0 0 0 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -106,7 +106,7 @@ uncle juan~
 Uncle Juan~
 Uncle Juan is here ready to take your order.
 ~
-   He looks like he may or may not have a green card.  
+   He looks like he may or may not have a green card.
 ~
 26635 0 0 0 0 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -120,7 +120,7 @@ Wally the Watermaster is standing behind the counter.
 ~
    Wally is a bit pudgy but looks very strong.  He has a glass of Midgaard
 Natural Spring Water in his hand.  When he notices you, he proudly displays his
-fine collection of contemporary waters.  
+fine collection of contemporary waters.
 ~
 26635 0 0 0 16 0 0 0 800 E
 33 9 -9 6d6+330 5d5+5
@@ -135,7 +135,7 @@ The head postmaster is standing here, waiting to help you with your mail.
    The Postmaster seems like a happy old man, though a bit sluggish.  He worries
 about the reputation of the MMS (Midgaard Mail Service), as many people seem to
 think that it is slow.  Perhaps if he were to brush the cobwebs from his uniform
-it would help to make a better impression.  
+it would help to make a better impression.
 ~
 518154 0 0 0 65552 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
@@ -149,7 +149,7 @@ This saleswoman is laden with gadgets and gizmos that are outrageously priced.
 ~
    A combination of good business sense, charming personality, and good looks
 has made her a success at pushing useless products on uneducated buyers.  Only
-on a rare occasion does she sell anything useful.  
+on a rare occasion does she sell anything useful.
 ~
 253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -163,7 +163,7 @@ A very kind and caring soul is here looking out for those who need it.
 ~
    She immediately reminds you of your mother.  Constantly worrying about
 everyone and everything.  She is always around to help out those who have hit
-hard times and need a little boost.  
+hard times and need a little boost.
 ~
 253962 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -176,7 +176,7 @@ newbie tour guide~
 the newbie tour guide~
 A newbie tour guide is here to help. "@RTell guide help@y" for assistance.@n
 ~
-   This young lady has the sole purpose of helping those who need assistance.  
+   This young lady has the sole purpose of helping those who need assistance.
 She will follow you around Midgaard and provide a walking tour of the local
 attractions.
 ~
@@ -197,7 +197,7 @@ Your guildmaster is studying a spellbook while preparing to cast a spell.
 ~
    Even though your guildmaster looks old and tired, you can clearly see the
 vast amount of knowledge she possesses.  She is wearing fine magic clothing, and
-you notice that she is surrounded by a blue shimmering aura.  
+you notice that she is surrounded by a blue shimmering aura.
 ~
 59419 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
@@ -210,7 +210,7 @@ the priests' guildmaster~
 Your guildmaster is praying to your God here.
 ~
    You are in no doubt that this guildmaster is truly close to your God; he has
-a peaceful, loving look.  You notice that he is surrounded by a white aura.  
+a peaceful, loving look.  You notice that he is surrounded by a white aura.
 ~
 59419 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
@@ -224,7 +224,7 @@ A beggar is sitting here, could she be a guildmaster?
 ~
    You realize that whenever your guildmaster moves, you fail to notice it - the
 way of the true thief.  She is to be dressed in poor clothing, having the
-appearance of a beggar.  
+appearance of a beggar.
 ~
 59419 0 0 0 16 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
@@ -238,7 +238,7 @@ Your guildmaster is standing here sharpening an axe.
 ~
    This is your master.  Big and strong with bulging muscles.  Several scars
 across his body proves that he was using arms before you were born.  He has a
-calm look on his face.  
+calm look on his face.
 ~
 59419 0 0 0 0 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
@@ -252,7 +252,7 @@ A sorcerer is guarding the entrance.
 ~
    He is an experienced mage who has specialized in the field of Combat Magic.
 He is here to guard the Mage's Guild and his superior knowledge of offensive as
-well as defensive spells make him a deadly opponent.  
+well as defensive spells make him a deadly opponent.
 ~
 256010 0 0 0 80 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -268,7 +268,7 @@ A knight templar is guarding the entrance.
    He is a specially trained warrior belonging to the military order of the
 Faith.  His duty is to protect the faithful from persecution and infidel attacks
 and his religious devotion combined with his superior skill makes him a deadly
-opponent.  
+opponent.
 ~
 256010 0 0 0 80 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
@@ -299,7 +299,7 @@ A knight is guarding the entrance.
 ~
    He is an expert warrior who has attained knighthood through countless
 chivalrous deeds.  His duty is to protect the Guild of Swordsmen and his extreme
-skill combined with his experience in warfare makes him a deadly opponent.  
+skill combined with his experience in warfare makes him a deadly opponent.
 ~
 256010 0 0 0 80 0 0 0 800 E
 33 9 -9 6d6+330 5d5+5
@@ -312,7 +312,7 @@ bartender~
 the bartender~
 A bartender watches you calmly, while he skillfully mixes a drink.
 ~
-   A tired looking Bartender who hates trouble in his bar.  
+   A tired looking Bartender who hates trouble in his bar.
 ~
 24586 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
@@ -324,7 +324,7 @@ waiter~
 the waiter~
 A waiter is going around from one place to another.
 ~
-   A tired looking waiter.  
+   A tired looking waiter.
 ~
 24586 0 0 0 0 0 0 0 900 E
 23 13 -3 4d4+230 3d3+3
@@ -337,7 +337,7 @@ the waiter~
 A man now leads a quiet, peaceful life as a waiter is standing here.
 ~
    This man was obviously a famous sorcerer in his younger days as you instantly
-recognize his face.  
+recognize his face.
 ~
 24586 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
@@ -350,7 +350,7 @@ the waiter~
 A waiter who seems to have reached contact with his God is standing here.
 ~
    This waiter almost makes you feel like you should drop to your knees and
-begin to worship your God.  Naaah.  
+begin to worship your God.  Naaah.
 ~
 24586 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
@@ -362,7 +362,7 @@ waiter~
 the waiter~
 A waiter who knows where all his customers keep their money is standing here.
 ~
-   Hmmm...  Wonder where he got that coin he is playing with.  
+   Hmmm...  Wonder where he got that coin he is playing with.
 ~
 24586 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
@@ -375,7 +375,7 @@ the waiter~
 A waiter is here.
 ~
    This guy looks like he could easily kill you while still carrying quite a few
-firebreathers.  
+firebreathers.
 ~
 24586 0 0 0 0 0 0 0 600 E
 23 13 -3 4d4+230 3d3+3
@@ -388,7 +388,7 @@ Filthy~
 Filthy is standing here, eager to serve you a special drink.
 ~
    Filthy looks real, ehm, dirty.  He likes to keep his customers happy, but do
-not mess with him or else he'll get upset.  
+not mess with him or else he'll get upset.
 ~
 26650 0 0 0 16 0 0 0 600 E
 33 9 -9 6d6+330 5d5+5
@@ -400,7 +400,7 @@ keeper peacekeeper~
 the Peacekeeper~
 A Peacekeeper is standing here, ready to jump in at the first sign of trouble.
 ~
-   He looks very strong and wise.  Looks like he doesn't answer to ANYONE.  
+   He looks very strong and wise.  Looks like he doesn't answer to ANYONE.
 ~
 6232 0 0 0 16 0 0 0 1000 E
 17 15 0 3d3+170 2d2+2
@@ -414,7 +414,7 @@ cityguard guard~
 the cityguard~
 A cityguard stands here.
 ~
-   A big, strong, helpful, trustworthy guard.  
+   A big, strong, helpful, trustworthy guard.
 ~
 6216 0 0 0 16 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -427,7 +427,7 @@ janitor~
 the janitor~
 A janitor is walking around, cleaning up.
 ~
-   What a tough job he has.  
+   What a tough job he has.
 ~
 2120 0 0 0 0 0 0 0 800 E
 1 20 9 0d0+10 1d2+0
@@ -441,7 +441,7 @@ the beastly fido~
 A beastly fido is mucking through the garbage looking for food here.
 ~
    The fido is a small dog that has a foul smell and pieces of rotted meat
-hanging around his teeth.  
+hanging around his teeth.
 ~
 202 0 0 0 65536 0 0 0 -200 E
 1 20 9 0d0+10 1d2+0
@@ -455,7 +455,7 @@ mercenary~
 the mercenary~
 A mercenary is waiting for a job here.
 ~
-   He looks pretty mean, and you imagine he'd do anything for money.  
+   He looks pretty mean, and you imagine he'd do anything for money.
 ~
 2058 0 0 0 0 0 0 0 -330 E
 5 19 7 1d1+50 1d2+0
@@ -467,7 +467,7 @@ drunk~
 the drunk~
 A singing, happy Drunk.
 ~
-   A drunk who seems to be too happy, and to carry too much money.  
+   A drunk who seems to be too happy, and to carry too much money.
 ~
 10 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -479,7 +479,7 @@ beggar~
 the beggar~
 A beggar is here, asking for a few coins.
 ~
-   The beggar looks like she is fed up with life.  
+   The beggar looks like she is fed up with life.
 ~
 10 0 0 0 0 0 0 0 400 E
 1 20 9 0d0+10 1d2+0
@@ -491,7 +491,7 @@ odif yltsaeb~
 the odif yltsaeb~
 An odif yltsaeb is here, walking backwards.
 ~
-   The odif is a small god that has been reversed by some dog.  
+   The odif is a small god that has been reversed by some dog.
 ~
 65768 0 0 0 65536 0 0 0 -200 E
 1 20 9 0d0+10 1d2+0
@@ -505,7 +505,7 @@ cityguard guard~
 the cityguard~
 A cityguard is here, guarding the gate.
 ~
-   A big, strong, helpful, trustworthy guard.  
+   A big, strong, helpful, trustworthy guard.
 ~
 6218 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -518,7 +518,7 @@ green gelatinous blob oozing~
 the green gelatinous blob~
 An oozing green gelatinous blob is here, sucking in bits of debris.
 ~
-   A horrid looking thing; it is huge, greenish, and looks like the blob.  
+   A horrid looking thing; it is huge, greenish, and looks like the blob.
 ~
 256216 0 0 0 16 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -532,7 +532,7 @@ petshops shop boy~
 the Pet Shop Boy~
 There is a Pet Shop Boy standing here cuddling something furry in his hands.
 ~
-   As you look at him, he opens his hands to reveal a rat!  
+   As you look at him, he opens his hands to reveal a rat!
 ~
 26634 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -544,7 +544,7 @@ kitten pets~
 the kitten~
 A small loyal kitten is here.
 ~
-   The kitten looks like a cute, little, fierce fighter.  
+   The kitten looks like a cute, little, fierce fighter.
 ~
 16398 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -557,7 +557,7 @@ puppy pets~
 the puppy~
 A small loyal puppy is here.
 ~
-   The puppy looks like a cute, little, fierce fighter.  
+   The puppy looks like a cute, little, fierce fighter.
 ~
 16398 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -570,7 +570,7 @@ beagle pets~
 the beagle~
 A small, quick, loyal beagle is here.
 ~
-   The beagle looks like a fierce fighter.  
+   The beagle looks like a fierce fighter.
 ~
 16398 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
@@ -583,7 +583,7 @@ rottweiler pets~
 the rottweiler~
 A large, loyal rottweiler is here.
 ~
-   The rottweiler looks like a strong, fierce fighter.  
+   The rottweiler looks like a strong, fierce fighter.
 ~
 16398 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -596,7 +596,7 @@ wolf pets~
 the wolf~
 A large, trained wolf is here.
 ~
-   The wolf looks like a strong, fearless fighter.  
+   The wolf looks like a strong, fearless fighter.
 ~
 16398 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -610,7 +610,7 @@ the cryogenicist~
 The cryogenicist is here, playing with a canister of liquid nitrogen.
 ~
    You notice a tired look in her face.  She looks like she isn't paid well
-enough to put up with any crap from mud players with attitudes.  
+enough to put up with any crap from mud players with attitudes.
 ~
 26635 0 0 0 65616 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5

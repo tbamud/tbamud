@@ -8,7 +8,7 @@ A cup has been set here.~
 13 5 1 0
 E
 cup~
-   It is a small simple cup.  
+   It is a small simple cup.
 ~
 #24201
 milk cup milk~
@@ -20,7 +20,7 @@ A cup has been set here.~
 13 7 1 0
 E
 cup~
-   It is a small simple cup.  
+   It is a small simple cup.
 ~
 #24202
 water cup water~
@@ -32,7 +32,7 @@ A cup has been set here.~
 17 2 1 0
 E
 cup~
-   It is a large simple cup.  
+   It is a large simple cup.
 ~
 #24203
 water bottle water~
@@ -44,7 +44,7 @@ A bottle of Evian natural spring water is here.~
 29 10 6 0
 E
 bottle~
-   It is a large, clean bottle.  There is a large label pasted on the side.  
+   It is a large, clean bottle.  There is a large label pasted on the side.
 ~
 E
 label~
@@ -62,7 +62,7 @@ A canteen has been set on the ground here.~
 85 45 15 0
 E
 canteen~
-   It is a fairly big canteen.  Looks like it can hold a lot of liquid.  
+   It is a fairly big canteen.  Looks like it can hold a lot of liquid.
 ~
 #24205
 red usher usher's vest~
@@ -75,7 +75,7 @@ A red ushers vest has been left here.~
 E
 red usher usher's vest~
    This vest is made out of thick cloth.  It has bright gold buttons running
-down the middle of it, and it has two small pockets on either side.  
+down the middle of it, and it has two small pockets on either side.
 ~
 #24206
 flashlight flash light~
@@ -87,7 +87,7 @@ A small black metal flashlight is lying here.~
 2 1 0 0
 E
 flashlight flash light~
-   This is a small flashlight, used by the ushers at the theatre.  
+   This is a small flashlight, used by the ushers at the theatre.
 ~
 #24207
 leather work gloves~
@@ -100,7 +100,7 @@ A pair of thick leather work gloves have been left here.~
 E
 leather work gloves~
    This pair of gloves looks fairly new.  The palms have an extra strip of
-leather across them, while the tops have a layer of thick yellow fabric.  
+leather across them, while the tops have a layer of thick yellow fabric.
 ~
 #24208
 denim overalls~
@@ -113,7 +113,7 @@ A pair of denim overalls have been discarded here.~
 E
 denim overalls~
    This pair of overalls looks quite big.  They're a dark blue colour, with a
-large pocket over the chest.  
+large pocket over the chest.
 ~
 #24209
 expensive suit jacket~
@@ -125,7 +125,7 @@ An expensive looking black suit jacket is sitting here.~
 4 400 100 0
 E
 expensive suit jacket~
-   This jacket looks pretty nice.  It seems to fit you perfectly.  
+   This jacket looks pretty nice.  It seems to fit you perfectly.
 ~
 #24210
 white dress shirt~
@@ -138,7 +138,7 @@ A white dress shirt has been neatly folded here.~
 E
 white dress shirt~
    The shirt has no patterns or colours on it whatsover.  It's a thin white
-shirt with white buttons.  
+shirt with white buttons.
 ~
 #24211
 black dress pants~
@@ -150,7 +150,7 @@ A pair of black dress pants is lying here.~
 3 200 20 0
 E
 black dress pants~
-   This pair of dress pants feel soft, and seem to fit you well.  
+   This pair of dress pants feel soft, and seem to fit you well.
 ~
 #24212
 leather dress shoes~
@@ -163,7 +163,7 @@ A pair of men's black leather dress shoes are sitting here.~
 E
 leather dress shoes~
    These shoes look quite comfortable.  The leather is soft, and has an
-elaborate pattern printed on it.  
+elaborate pattern printed on it.
 ~
 #24213
 fancy dress~
@@ -175,7 +175,7 @@ A fancy black dress has been left here.~
 3 400 100 0
 E
 fancy dress~
-   This dress is very nice.  It's rather tight, but it fits you quite well.  
+   This dress is very nice.  It's rather tight, but it fits you quite well.
 ~
 #24214
 dress heels~
@@ -188,7 +188,7 @@ A pair of women's dress heels are sitting here.~
 E
 dress heels~
    These shoes look quite comfortable.  The leather is soft, the heels aren't
-too high.  
+too high.
 ~
 #24215
 black bow tie~
@@ -200,7 +200,7 @@ A black bow tie is here, waiting for you to pick it up.~
 1 250 50 0
 E
 black bow tie~
-   This bow tie looks brand new.  It would go well with a suit.  
+   This bow tie looks brand new.  It would go well with a suit.
 ~
 #24216
 key city~
@@ -214,7 +214,7 @@ E
 key city~
    It is probably the biggest key you have seen in your life.  It is made from
 polished gold and has various patterns on it along with the Midgaard Coat of
-Arms.  
+Arms.
 ~
 #24217
 pda personal digital assistant~
@@ -227,7 +227,7 @@ A PDA (Personal Digital Assistant) is lying here.~
 E
 pda personal digital assistant~
    This PDA looks pretty complicated.  It's a small black box, about the size of
-a small book.  On the screen are several icons.  
+a small book.  On the screen are several icons.
 ~
 A
 3 2
@@ -245,7 +245,7 @@ E
 cell phone cellphone~
    A cellphone is a pretty worthless item.  Why use a cellphone when you can use
 a regular phone?  And besides, on a MUD, you can magically communicate without
-phones anyway.  
+phones anyway.
 ~
 A
 14 30
@@ -261,7 +261,7 @@ E
 laptop lap top~
    This laptop looks brand new.  Black in colour, it features a 1.  6 GHz
 processor, 512 MB of RAM, a 64 MB video card, and a 40x DVD/CD burner.  Pretty
-fancy.  
+fancy.
 ~
 A
 3 1
@@ -296,7 +296,7 @@ meat chunk~
    It isn't so much that the meat looks poisoned or anything, but that you just
 are not sure of its origins.  You doubt that a hunter would drop a side of
 venison or rabbit meat...  What in the world could this meat have come from, you
-wonder...  
+wonder...
 ~
 #24223
 script first 1 one~
@@ -314,9 +314,9 @@ script 1 one~
    |                   by Crazyman                   |
    |                                                 |
    |  (The play begins on a street in downtown       |
-   |  New Sparta. It's about noon, and it's          | 
+   |  New Sparta. It's about noon, and it's          |
    |  raining. Joe Smith is seated on a bench,       |
-   |  along with a cop.)                             |          
+   |  along with a cop.)                             |
    |                                                 |
    |  Joe: Oh, how I wish it would stop raining! I   |
    |       grow weary of this foul weather.          |
@@ -336,7 +336,7 @@ script 1 one~
    |       (The cop stands up, and hurries down      |
    |       the street.)                              |
    |                                                 |
-   |  Joe: (To himself) I think I'm heading home.    | 
+   |  Joe: (To himself) I think I'm heading home.    |
    |       (He gets up to leave.)                    |
    |                                                 |
    x-------------------------------------------------x
@@ -359,9 +359,9 @@ script second 2 two~
    |  (A street vendor dashes out from behind a      |
    |  building, and rushes over to Joe)              |
    |                                                 |
-   |  Vendor: Good afternoon good sir! May I inter-  | 
+   |  Vendor: Good afternoon good sir! May I inter-  |
    |          est you in this beautiful gold watch?  |
-   |          (The vendor pulls out a gold watch     |  
+   |          (The vendor pulls out a gold watch     |
    |          from his pocket, obviously one of      |
    |          many.)                                 |
    |                                                 |
@@ -410,7 +410,7 @@ script third 3 three~
    |                                                 |
    |  Vendor: Shut the hell up. You're gonna be      |
    |          sorry you didn't buy this from me.     |
-   |          (He puts the watch away, and pulls out | 
+   |          (He puts the watch away, and pulls out |
    |          a handgun. He cocks the trigger, and   |
    |          points it at Joe's chest.)             |
    |                                                 |
@@ -425,7 +425,7 @@ script third 3 three~
    |                                                 |
    |  Vendor: Haha! Hopefully the next customer      |
    |          will be more cooperative!              |
-   |                                                 | 
+   |                                                 |
    |                  T H E   E N D                  |
    |                                                 |
    x-------------------------------------------------x
@@ -444,7 +444,7 @@ E
 mop~
    This looks like a very useful mop.  It has a soft cloth end, which looks like
 it would be great at washing a floor.  The wooden handle is quite thick and
-hard.  It would make an idea weapon.  
+hard.  It would make an idea weapon.
 ~
 A
 17 -2
@@ -460,7 +460,7 @@ E
 broom curling~
    This is a curling broom.  It has a long thin plastic handle, and an end
 consisting of rough fabric stretched over a piece of foam attached to a wooden
-block.  Curlers use these to sweep the ice in front of the rocks.  
+block.  Curlers use these to sweep the ice in front of the rocks.
 ~
 A
 13 20
@@ -475,7 +475,7 @@ A red curling rock has been left here.~
 E
 red curling rock~
    The curling rock is made of a grey stone, and has a red handle and red
-stripes on it.  It feels quite heavy.  
+stripes on it.  It feels quite heavy.
 ~
 A
 5 1
@@ -492,7 +492,7 @@ A yellow curling rock has been left here.~
 E
 yellow curling rock~
    The curling rock is made of a grey stone, and has a yellow handle and yellow
-stripes on it.  It feels quite heavy.  
+stripes on it.  It feels quite heavy.
 ~
 A
 1 1
@@ -517,7 +517,7 @@ A tasty looking hamburger has been left here.~
 E
 hamburger burger~
    This hamburger was made at the Newbie Zoo.  It's still in its foil wrapper,
-so it's still warm.  
+so it's still warm.
 ~
 #24293
 poutine box cheesy~
@@ -530,7 +530,7 @@ A box of cheesy poutine has been left here.~
 E
 poutine box cheesy~
    This box of poutine is quite large.  For those who don't know, poutine is
-composed of french fries covered with gravy and cheese curds.  
+composed of french fries covered with gravy and cheese curds.
 ~
 #24294
 hotdog foot long foot-long~
@@ -542,7 +542,7 @@ A foot-long is lying here.~
 1 10 5 0
 E
 hotdog foot long foot-long~
-   This hot dog was made at the Newbie Zoo.  It looks pretty tasty.  
+   This hot dog was made at the Newbie Zoo.  It looks pretty tasty.
 ~
 #24295
 water bottle water~

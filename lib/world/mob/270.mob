@@ -3,7 +3,7 @@ giant vulture~
 the giant vulture~
 A giant vulture is here.
 ~
-   It looks hungry.    
+   It looks hungry.
 ~
 76 0 0 0 80 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
@@ -15,7 +15,7 @@ demon horse~
 the demon horse~
 A demon horse is here.
 ~
-   The demon horse widens its nostrils and fire burns in its eyes.    
+   The demon horse widens its nostrils and fire burns in its eyes.
 ~
 1546 0 0 0 0 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
@@ -27,7 +27,7 @@ rabid fox~
 the rabid fox~
 A rabid fox is here, drooling heavily.
 ~
-   The rabid fox seems almost putrid.    
+   The rabid fox seems almost putrid.
 ~
 40970 0 0 0 0 0 0 0 -900 E
 13 16 2 2d2+130 2d2+2
@@ -39,7 +39,7 @@ earth demon~
 the earth demon~
 An earth demon lingers in the air.
 ~
-   It is brown and stocky.    
+   It is brown and stocky.
 ~
 41032 0 0 0 589824 0 0 0 -900 E
 13 16 2 2d2+130 2d2+2
@@ -51,7 +51,7 @@ evil bird~
 the evil bird~
 An evil bird is here.
 ~
-   It is raven black with bright, gleeming, yellow eyes.    
+   It is raven black with bright, gleeming, yellow eyes.
 ~
 72 0 0 0 16 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -64,7 +64,7 @@ the iodocentipedus~
 An Iodocentipedus crawls around here very slowly.
 ~
    It is a mixture of colors, blue, red and brown, totally lacking hair on its
-plated body.    
+plated body.
 ~
 6154 0 0 0 0 0 0 0 -700 E
 15 15 1 3d3+150 2d2+2
@@ -76,7 +76,7 @@ fanged reindeer~
 the fanged reindeer~
 A fanged reindeer walks around here looking for food.
 ~
-   It is awesome, at least by reindeer standards!    
+   It is awesome, at least by reindeer standards!
 ~
 14 0 0 0 16 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -88,7 +88,7 @@ hill ghoul~
 the hill ghoul~
 An hill ghoul walks and walks and walks here.
 ~
-   It is large, white and looks MAD!!!    
+   It is large, white and looks MAD!!!
 ~
 8222 0 0 0 1114128 0 0 0 -1000 E
 13 16 2 2d2+130 2d2+2
@@ -100,7 +100,7 @@ stone ogre~
 the stone ogre~
 A stone ogre tramples around.
 ~
-   The ogre seems confused.    
+   The ogre seems confused.
 ~
 6158 0 0 0 80 0 0 0 -800 E
 14 16 1 2d2+140 2d2+2
@@ -113,7 +113,7 @@ the ice troll~
 An ice troll mutters about.
 ~
    It is covered with a thick ice armor.  And it certainly looks ready for
-battle.    
+battle.
 ~
 14 0 0 0 1114128 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
@@ -126,7 +126,7 @@ the lithophiliac~
 A lithophiliac is here, burping his ass off.
 ~
    He is skinny but still a scary being, presuambly because of his dreadful
-smell.    
+smell.
 ~
 14 0 0 0 4 0 0 0 200 E
 13 16 2 2d2+130 2d2+2
@@ -140,7 +140,7 @@ The Wizard of ice-molding looks grimly at YOU!!
 ~
    He is of average height wearing a long silvery robe covered with small ice
 crystals.  He seems very intelligent with his long frosty beard and sharp
-looks.    
+looks.
 ~
 24606 0 0 0 80 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
@@ -152,7 +152,7 @@ stormbringer~
 the stormbringer~
 The stormbringer sweeps around here.
 ~
-   The stormbringer is HUGE but still swift.    
+   The stormbringer is HUGE but still swift.
 ~
 24606 0 0 0 84 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2

@@ -4,7 +4,7 @@ A short rockslide~
 ebony.  A pale hawk circles overhead, uttering a shivering cry.  It is
 impossible to continue downwards without meeting an untimely (?  ) death.  A
 few homes have been hidden here in the cliff face, a bit of a hike from any
-civilization.    
+civilization.
 ~
 272 0 0 0 0 5
 D1
@@ -24,7 +24,7 @@ credits info~
    Sundhaven is designed to be a newbie starting town, essentially
 an alternative to a time-worn Midgaard. It is complete with the guilds
 of the four basic classes, shops, bank, post office, and several
-connecting points which make it easy to link to any world.  
+connecting points which make it easy to link to any world.
 SPECS:
 guilds:  {CLASS_WARRIOR, 6757, SCMD_WEST},
          {CLASS_THIEF, 6740, SCMD_EAST},
@@ -39,7 +39,7 @@ equipment loading with new players:
       obj 6607 to clerics  (mace).
       obj 6608 to warriors  (short sword).
    I hope you find the zone useful.
- 
+
 Zone 272 is linked to the following zones:
 271 Sundhaven                      at 27221 (east ) ---> 27145
 271 Sundhaven                      at 27233 (north) ---> 27127
@@ -90,7 +90,7 @@ S
 A path of black grass~
    A little trail picks its way among small ill-anchored stones and patches of
 black, wiry grass, that at first site gives the place a ravaged, charred look.
-However, the vegetation is living, just endowed with a dark hue.    
+However, the vegetation is living, just endowed with a dark hue.
 ~
 272 0 0 0 0 2
 D1
@@ -111,7 +111,7 @@ A small haunted grove~
    With the exception of the inexplicable darkness permeating this grove, there
 is little way to explain the odd feeling of foreboding about this place.  No
 birds sing, no rat scurries in the open, the leaves rustle barely enough to
-break the silence.  Yet an odd presence makes itself felt.    
+break the silence.  Yet an odd presence makes itself felt.
 ~
 272 1 0 0 0 3
 D0
@@ -172,7 +172,7 @@ S
 A dwelling perched precariously on the edge~
    This home is so tenuously held to the brink of stone and mud that you have
 to wonder how long before the rains carry it over the edge.  However, if a god
-assures you it is safe, it must be....  Right?  You trust us, don't you?    
+assures you it is safe, it must be....  Right?  You trust us, don't you?
 ~
 272 8 0 0 0 0
 D3
@@ -185,7 +185,7 @@ A black stone dwelling~
    You stand in a quiet, empty dwelling of sturdy black sandstone.  Occupied
 now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
-might sell it to you?    
+might sell it to you?
 ~
 272 8 0 0 0 0
 D1
@@ -198,7 +198,7 @@ A garden of wild rosethorn~
    Dense bushes of rosethorn, growing wild, fill the garden with splashes of
 white and red colors.  There is a grassy space in the center, circled by smooth
 grey stones, where children play and older residents of the town picnic and
-enjoy themselves.    
+enjoy themselves.
 ~
 272 0 0 0 0 2
 D1
@@ -219,7 +219,7 @@ A black stone dwelling~
    You stand in a quiet, empty dwelling of sturdy black sandstone.  Occupied
 now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
-might sell it to you?    
+might sell it to you?
 ~
 272 8 0 0 0 0
 D0
@@ -232,7 +232,7 @@ A black stone dwelling~
    You stand in a quiet, empty dwelling of sturdy black sandstone.  Occupied
 now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
-might sell it to you?    
+might sell it to you?
 ~
 272 8 0 0 0 0
 D3
@@ -245,7 +245,7 @@ A black stone dwelling~
    You stand in a quiet, empty dwelling of sturdy black sandstone.  Occupied
 now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
-might sell it to you?    
+might sell it to you?
 ~
 272 8 0 0 0 0
 D1
@@ -258,7 +258,7 @@ A red stone dwelling~
    You stand in a quiet dwelling of mortar and rose-colored stone.  Occupied
 now by only a few spiders, it looks like it could be a comfortable place to
 live, with a little work.  And gold, of course.  Perhaps it may be bought from
-one of the gods.    
+one of the gods.
 ~
 272 8 0 0 0 0
 D1
@@ -270,7 +270,7 @@ S
 Passing through a vine-wreathed gate~
    A gate swathed in green, fruitless vine lies open, but the path looks
 little-travelling.  You wonder if there is anything of use to you out this
-remote way, apparently passing out of the residential area.    
+remote way, apparently passing out of the residential area.
 ~
 272 0 0 0 0 2
 D0
@@ -291,7 +291,7 @@ A black stone dwelling~
    You stand in a quiet, empty dwelling of sturdy black sandstone.  Occupied
 now by only a few spiders, it looks like it could be a comfortable place to
 live with a little work.  With enough gold, perhaps one of the higher gods
-might sell it to you?    
+might sell it to you?
 ~
 272 8 0 0 0 0
 D2
@@ -304,7 +304,7 @@ A path hung with golden lanterns~
    A wide path of chalky-white cobblestone leads to southwards towards some
 dense illumination.  Here the lane is lined with poles hung with lanterns
 giving off a mild golden glow, swinging in the breeze.  The wind passes more
-strongly along a lane to the north.    
+strongly along a lane to the north.
 ~
 272 0 0 0 0 2
 D0
@@ -321,7 +321,7 @@ A circle of golden lanterns~
    The path fades into a broad circular clearing, ringed with white stones and
 hanging golden lanterns that provide a bright radiance.  A few white stone
 houses, small but cozy-looking, lie just east and west, enjoying the
-luminescence.    
+luminescence.
 ~
 272 0 0 0 0 2
 D1
@@ -341,7 +341,7 @@ S
 A white stone dwelling~
    A small dwelling has been fashioned from chalky-white stones and grey
 mortar.  It is empty of signs of habitation.  You feel, nevertheless, that this
-could be a comfortable place to live, if bought from the gods of the realm.  
+could be a comfortable place to live, if bought from the gods of the realm.
 ~
 272 8 0 0 0 0
 D1
@@ -353,7 +353,7 @@ S
 A white stone dwelling~
    A small dwelling has been fashioned from chalky-white stones and grey mortar.
 It is empty of signs of habitation.  You feel, nevertheless, that this could be
-a comfortable place to live, if bought from the gods of the realm.  
+a comfortable place to live, if bought from the gods of the realm.
 ~
 272 8 0 0 0 0
 D3
@@ -365,7 +365,7 @@ S
 A wide cart path~
    The road outside the town of Sundhaven is well-travelled by vehicles of
 trade....  Is it a path for wide carts, or a wide path for carts?  Westwards, a
-dense forest is blurred with low-hanging clouds.    
+dense forest is blurred with low-hanging clouds.
 ~
 272 0 0 0 0 2
 D1
@@ -381,7 +381,7 @@ S
 An untravelled path~
    A thin line of soil barely resembling a path threads its lonesome way
 between the dull grey stones.  You can only wonder if there is much of note out
-this direction, as a sense of barrenness is prominent.    
+this direction, as a sense of barrenness is prominent.
 ~
 272 0 0 0 0 2
 D0
@@ -401,7 +401,7 @@ S
 An untravelled path~
    A thin line of soil barely resembling a path threads its lonesome way
 between the dull grey stones.  You can only wonder if there is much of note out
-this direction, as a sense of barrenness is prominent.    
+this direction, as a sense of barrenness is prominent.
 ~
 272 0 0 0 0 2
 D0
@@ -417,7 +417,7 @@ S
 An untravelled path~
    A thin line of soil barely resembling a path threads its lonesome way
 between the dull grey stones.  You can only wonder if there is much of note out
-this direction, as a sense of barrenness is prominent.    
+this direction, as a sense of barrenness is prominent.
 ~
 272 0 0 0 0 2
 D2
@@ -435,7 +435,7 @@ Climbing a small bluff~
 eastward arcs.  There is little that is extraordinary about this place.  It is
 deserted, it is lonely, yet a particularly green bluff forms a plateau just
 above you.  It calls to you in an eerie way, yet emits a chaotic aura that
-might be best left alone.    
+might be best left alone.
 ~
 272 0 0 0 0 4
 D4
@@ -452,7 +452,7 @@ Blind Man's Bluff~
    The lonely hilltop is blanketed in a strange, rich green grass-cover, and
 the only sound is that of the wind whistling over the moors.  A haunting,
 otherworldly presence has made this bluff its home, casting what malevolence it
-yet can on the mortal world, and giving the bluff its name.    
+yet can on the mortal world, and giving the bluff its name.
 ~
 272 0 0 0 0 2
 D5
@@ -465,7 +465,7 @@ A clearing circled by oaks and maples~
    The stone-rimmed path opens out to a clearing of dirt, encircled by broad
 oaks and maples with leaves the color of honey.  To the north a black gate is
 closed against the clamor of the world, and the road continues east to town,
-and west where it vanishes into a fog banked forest.    
+and west where it vanishes into a fog banked forest.
 ~
 272 0 0 0 0 3
 D0
@@ -485,7 +485,7 @@ S
 The black orchard gate~
    A small gate wrought with black iron flowers and arches swings loosely in
 the shallow wind.  Beyond, rows of brambles are stretching past the range of
-your vision.    
+your vision.
 ~
 272 0 0 0 0 2
 D0
@@ -523,7 +523,7 @@ Under an oak dark and wet with rain~
    A broad oak, knotted with the eons it has seen, stands amidst a circle of
 blackberry shrubs that seem to form a protective shroud of thorns about the
 area.  Ivy vines hang loose from its many-cornered limbs.  Some images have
-been carved into the oak.    
+been carved into the oak.
 ~
 272 0 0 0 0 2
 D0
@@ -540,7 +540,7 @@ D3
 0 -1 27231
 E
 oak~
-   The giant oak is covered in thick blue-green mosses and dark swaying ivy.  
+   The giant oak is covered in thick blue-green mosses and dark swaying ivy.
 Some images have been carved and charred in by a fiery touch, a sternly
 beautiful woman with a ruby dagger sheathed at her waist stands beside a man
 with the robe of the priesthood.  The cold wind of the sea blows the sails of
@@ -548,7 +548,7 @@ the rocking ship they ride upon.  The rogue woman is imploring a second man to
 destroy a beast far too great for his strength, a cruel smile playing upon her
 lips.  The image is frozen upon the bark, immobile, yet it is apparent she is
 winning the battle.  Beneath the picture are engraved the words "Know thy
-limits".  
+limits".
 ~
 S
 #27231
@@ -595,7 +595,7 @@ The southern path~
 you in slightly with each step.  A rotten stench is filtering in from the west,
 repelling you in another direction automatically such that it takes a great
 conscious effort for you to turn that way.  The path heads north into the
-town's mainstream, and south closer to the wildlands beyond it.    
+town's mainstream, and south closer to the wildlands beyond it.
 ~
 272 0 0 0 0 1
 D0
@@ -619,7 +619,7 @@ ceiling of this supply house of witchcraft.  Ingredients for the hexes of hags
 and the poisons of roguish assassins bubble and float in jars crowded onto
 shelves, and tinkling against each other from strings around the stone doorway.
 A voodoo doll pinned to one wall seems to be eyeing you.  Let's hope you are
-not already earmarked for demise by someone.    
+not already earmarked for demise by someone.
 ~
 272 13 0 0 0 0
 D4
@@ -633,7 +633,7 @@ The southern gate~
    You stand before the southern gate,forged into ornaments of the triskelion
 in black iron and covered with ivy.  Beyond it, days distant, the mountains of
 black glass rise shrouded in permanent night.  Northwards lies the spread of
-the town of Sundhaven, hooded in wreaths of cooking smoke.    
+the town of Sundhaven, hooded in wreaths of cooking smoke.
 ~
 272 0 0 0 0 1
 D0
@@ -650,7 +650,7 @@ A foul staircase~
    A staircase littered with rubble descends into a passageway crawling with
 rats and smelling of..  Your imagination needs no assistance here.  The place
 gives you the creeps, particularly since there seem to be faint traces of
-recent footfalls outlined in the slime on the soiled floor..    
+recent footfalls outlined in the slime on the soiled floor..
 ~
 272 9 0 0 0 0
 D0
@@ -669,7 +669,7 @@ A dark passageway~
 roomy enough for a large rat..  Or something..  To pass through with ease, and
 are not just down by the ground but up near the ceiling.  A fetid stench rolls
 over you from within the holes.  The passage continues south and east into
-black.    
+black.
 ~
 272 9 0 0 0 0
 D1
@@ -685,7 +685,7 @@ S
 A dark passageway~
    Your foot slides as your boot sinks into some unpleasant substance on the
 muddy floor..  Mold?  Only inspection in better light will tell.  Eastwards the
-passage slants into a dark pool, and disappears to the west into blackness.  
+passage slants into a dark pool, and disappears to the west into blackness.
 ~
 272 9 0 0 0 0
 D1
@@ -702,7 +702,7 @@ Trudging through a pool of slime~
    The dark passage slopes into a pool of drainage from the roads of town,
 seeping in through cracks above you and wetting your hair with slime.  There is
 an eerie feeling about this place, as if only the few and priviledged are
-welcome here.    
+welcome here.
 ~
 272 9 0 0 0 0
 D1
@@ -723,7 +723,7 @@ A doorway hung with daggers~
    The dark hall of the underground ends here before a tall, narrow door of
 sturdy oak, scarred with daggerpoints.  The soil is wet with some dark fluid..
 Slime from the boots of passersby?  Of course.  A circular emblem is etched
-into the door.    
+into the door.
 ~
 272 8 0 0 0 0
 D1
@@ -738,10 +738,10 @@ D3
 E
 emblem~
    An emblem of a black naga chasing its tail is engraved in a crimson border on
-the thick oaken door.  Beneath, something has been scrawled by daggerpoint.  
+the thick oaken door.  Beneath, something has been scrawled by daggerpoint.
 ...  Round the gallows, one-armed and bland We dance and dance, the devil's own
 band Of wary highwaymen.  Let no rogue fail to keep his head.  This is no
-monastery here, I say, you dead.  ...  
+monastery here, I say, you dead.  ...
 ~
 S
 #27241
@@ -749,7 +749,7 @@ A hall in the Assassins Guild~
    You stand in a wide, dark hallway of the Assassins Guild.  On the ceiling
 spreads a gigantic mural of the black serpentlike naga, a model of stealth and
 intelligence, in muted blue and black.  An elegant table stands against the
-wall, laid with a simple black cloth and a few daggers.    
+wall, laid with a simple black cloth and a few daggers.
 ~
 272 8 0 0 0 0
 D0
@@ -779,7 +779,7 @@ which bounties can be split and repose taken by a warm fireplace hung with
 guild daggers, skillfully tapered and too hot from the flames to steal.  A bar
 sunken into the far stone wall assists your dexterity..  So it is said..  And
 bunks are layer the area to the east, hung with stolen tapestries and sheets.
-  
+
 ~
 272 8 0 0 0 0
 D0
@@ -797,7 +797,7 @@ A secret hideaway~
 dugout hidden from the lawful population and furnished with kick-back chairs
 and half-full bottles of wine.  No bounty hunter could find a lounging thief
 here, sheltered away from the executioners of town.  No hunter, that is, except
-a rogue like yourself.    
+a rogue like yourself.
 ~
 272 9 0 0 0 0
 D4
@@ -812,7 +812,7 @@ of the trade.  A hanging row of the spines of previous victims covers the east
 wall, scarred with the dagger twists of countless thieves perfecting their
 backstab.  You may have to travel far in search of more fine-tuned skills, but
 the guildmistress is willing to give newcomers their start in the art of
-fiends.    
+fiends.
 ~
 272 24 0 0 0 0
 D2
@@ -826,7 +826,7 @@ Slippery stone steps~
 sounds of slime creeping down the walls is barely detectable beneath the sounds
 of your own breathing.  There seems to be tracks of footfalls in the slime
 coating the steps..  Evidently this serves as a secret passageway, regularly
-used, for some individuals of a shady nature.    
+used, for some individuals of a shady nature.
 ~
 272 9 0 0 0 0
 D4
@@ -869,7 +869,7 @@ S
 A wide cart path~
    The road outside the town of Sundhaven is well-travelled by vehicles of
 trade....  Is it a path for wide carts, or a wide path for carts?  Westwards, a
-dense forest is blurred with low-hanging clouds.    
+dense forest is blurred with low-hanging clouds.
 ~
 272 0 0 0 0 2
 D1
@@ -882,7 +882,7 @@ A dark corner of the tavern~
    The loners of Sundhaven gather here (figure *that* one out) to mourn their
 losses over gallons of liquid spirits.  Occasionally, one can be seen passed
 out on the floor, robbed by some thief slipping in from the Nightbreak, but
-generally the livers here are stout from long and weary experiences.    
+generally the livers here are stout from long and weary experiences.
 ~
 272 9 0 0 0 0
 D3
@@ -896,7 +896,7 @@ The Lodge of Wrath~
 with a thick, hardy rug of a red so dark as to almost be black, beds shelved in
 bunks of hearty oak, a roaring fireplace in the corner.  Several large chairs
 stuffed with coarse wool are situated round the fire for the rowdy telling of
-tales over inebriating brews.    
+tales over inebriating brews.
 ~
 272 24 0 0 0 0
 D0
@@ -913,7 +913,7 @@ A red portal~
    You stand in the shimmering glow of a portal of deep red light.  This is the
 gift of the Archmage to the warriors guild, in return for other favors, of
 course.  Beyond the glare is a vision of the temple courtyard, the center of
-town, to the west.    
+town, to the west.
 ~
 272 8 0 0 0 0
 D2
@@ -929,9 +929,9 @@ S
 A black portal~
    You stand in the shimmering glow of a portal of rogue-black light.  This is
 the gift of the Archmage to the assassin's guild, in return for a few bounties
-performed, of course.  Ever wonder who put the Earl of Sundhaven in power?..  
+performed, of course.  Ever wonder who put the Earl of Sundhaven in power?..
 Nevermind.  Beyond the dark glare is a vision of the temple courtyard, the
-center of town, above you.    
+center of town, above you.
 ~
 272 8 0 0 0 0
 D2
@@ -949,9 +949,9 @@ The Sanctuary~
 seemingly rounded and blurred by a muted pale light that seems to come from
 nowhere.  It is perhaps a product of the combined faiths of those who live
 here..  Dark, alabaster, and every shade in between.  All beliefs are accepted
-here, provided they are not discussed too often, lest blood should be spilt.  
+here, provided they are not discussed too often, lest blood should be spilt.
 There are several bookshelves of varying religious works, an altar without
-ornament, and numerous cots for clerics to take their rest in.    
+ornament, and numerous cots for clerics to take their rest in.
 ~
 272 24 0 0 0 0
 D0
@@ -968,7 +968,7 @@ A white portal~
    You stand bathed in the glow of a portal of white light.  This is the gift
 of the Archmage to the guild of the ministry, in return for certain blessings,
 of course.  Beyond the pale glare is a vision of the temple courtyard, the
-center of town, below you.    
+center of town, below you.
 ~
 272 8 0 0 0 0
 D3
@@ -983,11 +983,11 @@ S
 #27255
 The Den of Sorcery~
    The den of sorcery for mages and witches and wizards is a comfortable place,
-well-lit by magical rose and violet faerie fires for the reading of tomes.  
+well-lit by magical rose and violet faerie fires for the reading of tomes.
 There is a rug in guild colors of blue and violet which spans the stone floor,
 and hammocks hang in rows along the walls, where the mages take their repose.
 A series of bookshelves provide ample guild literature, and an oak coffee table
-before a couch dominates the room.    
+before a couch dominates the room.
 ~
 272 24 0 0 0 0
 D0
@@ -1005,7 +1005,7 @@ A blue portal~
 the gift of the previous Archmage upon his own guild.  He went on to fashion
 further portals all leading all over the known world, before the Lady Assassin
 extinguished his life.  Beyond the blue glare is a vision of the temple
-courtyard, the center of town.    
+courtyard, the center of town.
 ~
 272 8 0 0 0 0
 D2
@@ -1021,7 +1021,7 @@ S
 Some battered stone steps~
    Broad, shallow stairs of dark stone descend into a hallway warm with the
 heat of sparring warriors.  Above you the sounds of the alehouse distract you
-with bawdy laughter.  A doorway is west, bruised with sword-points.    
+with bawdy laughter.  A doorway is west, bruised with sword-points.
 ~
 272 8 0 0 0 0
 D3
@@ -1038,7 +1038,7 @@ The town treasury~
    With the exception of a few portraits of the founders of you-don't-
 know-what, the room is quite drab, and could benefit from some fresh air.  A
 huge pile of the town's wealth lies on the tile floor, guarded from your
-meddling by a protective amber shield.    
+meddling by a protective amber shield.
 ~
 272 12 0 0 0 0
 D1
@@ -1048,20 +1048,20 @@ D1
 E
 gold~
    You can't get near it.  On attempting to reach in and partake of the wealth,
-a protective amber shield balks your hand as if it were a wall of steel.  
+a protective amber shield balks your hand as if it were a wall of steel.
 However, you can create your own account by depositing some money.  If you want
 to know your balance, typing balance will do the job.  If you'd care to see it
 again, type withdraw (amount).  Then please put it back again.  Your support is
-appreciated, we know the town's security rests with you.  Have a nice day.  
+appreciated, we know the town's security rests with you.  Have a nice day.
 ~
 E
 pile~
    You can't get near it.  On attempting to reach in and partake of the wealth,
-a protective amber shield balks your hand as if it were a wall of steel.  
+a protective amber shield balks your hand as if it were a wall of steel.
 However, you can create your own account by depositing some money.  If you want
 to know your balance, typing balance will do the job.  If you'd care to see it
 again, type withdraw (amount).  Then please put it back again.  Your support is
-appreciated, we know the town's security rests with you.  Have a nice day.  
+appreciated, we know the town's security rests with you.  Have a nice day.
 ~
 S
 #27259
@@ -1069,7 +1069,7 @@ The Tiger's Eye~
    Three cases, locked and faced in glass, reveal their glittering contents
 along the walls.  These selfsame jewels perhaps attracted you from the
 street...  Clouded pearls, white and blue diamonds, amethyst and golden tigers
-eyes.  Using 'list' will allow you to peruse the goods available.    
+eyes.  Using 'list' will allow you to peruse the goods available.
 ~
 272 12 0 0 0 0
 D1
@@ -1081,11 +1081,11 @@ S
 A stone path~
    You stand just outside the eastern gate of the town of Sundhaven.  Fresh
 bread and cool drink await those within who are willing to pay for the service,
-and about the city, other willing merchants may also be found in abundance.  
+and about the city, other willing merchants may also be found in abundance.
 Eastwards the land stretches in unmarred wilderness to the far horizon, and to
 the southeast you think you can catch glimpses of the thatched roofs of yet
 another village, this one smaller and more humble.  A trail south along the
-cobblestone wall seems to head in that direction.    
+cobblestone wall seems to head in that direction.
 ~
 272 0 0 0 0 2
 D2
@@ -1102,7 +1102,7 @@ Along the town wall~
    You follow the thick wall of grey cobblestone that marks the outer border of
 Sundhaven.  Moss, nourished by frequent rainfall, hides portions of the wall
 under its green tendrils.  A stony path can be made out to the north, and the
-wall makes its way southwards to a corner.    
+wall makes its way southwards to a corner.
 ~
 272 0 0 0 0 2
 D0
@@ -1119,7 +1119,7 @@ Along the town wall~
    You reach a bend in the town wall, and the trail follows it on both sides to
 the north and west.  Ivy growing along the wall here brushes your arm as you
 pass.  Dense shrubbery lining the path to the east renders that way
-unnavigable.    
+unnavigable.
 ~
 272 0 0 0 0 2
 D0
@@ -1136,7 +1136,7 @@ Along the town wall~
    A small path lined with broad trees breaks off to the south from the
 cobblestone wall of Sundhaven, which runs eastwards to a corner.  The gate of
 the town must be somewhere near.  You can make out the buzz of city life,
-hushed by the stone barrier, from the north.    
+hushed by the stone barrier, from the north.
 ~
 272 0 0 0 0 2
 D1
@@ -1153,7 +1153,7 @@ A path hung with moss~
    A narrow path bordered with ancient, broad-trunked trees leads north to the
 town wall of Sundhaven and southwards to a short drop.  Moss completely covers
 and overflows from the oaks, brushing the hair and helms of all but the
-shortest races of beings.    
+shortest races of beings.
 ~
 272 1 0 0 0 3
 D0
@@ -1171,7 +1171,7 @@ A short mossy cliff~
 with tall bending trees, is easily scaled by handy footholds in the rock.  The
 place looks well-travelled by some hardy population of small-footed creatures.
 One path continues in a north-south vein over the cliff, another breaks off and
-leads east.    
+leads east.
 ~
 272 1 0 0 0 3
 D2
@@ -1188,7 +1188,7 @@ A path hung with moss~
    The slender trail winds its way north-south through bending trees laiden
 with spanish moss.  (Except this was before Spain.  ) It comes to an end before
 the bubbling ebbs of a tiny stream, pouring gently forth from a hole in the
-rock on which you are poised, and flows southward.    
+rock on which you are poised, and flows southward.
 ~
 272 1 0 0 0 3
 D0
@@ -1205,7 +1205,7 @@ A stream~
    A quietly flowing stream drifts down a slim riverbed, leading south from a
 small hole in the rock to the north.  The water is clear and pure, and seems
 entirely empty of creatures..  It may be true this stream was taxed by heavy
-fishing long ago that long since cleaned it of all life.    
+fishing long ago that long since cleaned it of all life.
 ~
 272 1 0 0 0 7
 D2
@@ -1222,7 +1222,7 @@ A stream~
    The clear waters begin to shift and curl and the current increase slightly.
 Tiny brown reeds on the banks lean downstream, sending the dragonflies airborne
 from their stalks.  A wind whistles in the leaves of the trees above and no
-sound can be made out from ahead.    
+sound can be made out from ahead.
 ~
 272 1 0 0 0 7
 D0
@@ -1240,7 +1240,7 @@ A whirlpool~
 and without breath.  The tree-darkened sky disappears in a circular motion
 above your eyes as the world turns to water, and you cannot help but feel that
 what goes down, must continue down..  The waters engulf you and suck you
-downwards, where you awake with stars circling before your eyes.    
+downwards, where you awake with stars circling before your eyes.
 ~
 272 1 0 0 0 8
 D0
@@ -1254,7 +1254,7 @@ A stairwell~
 abandoned recesses of the golden temple.  It seems few have reason to travel
 this way.  The dust that coats the steps lies mostly undisturbed, and an aura
 of desertion hangs about the place.  Whoever does traverse these ancient halls
-may or may not have the light of goodness in their motivations.    
+may or may not have the light of goodness in their motivations.
 ~
 272 13 0 0 0 0
 D1
@@ -1270,7 +1270,7 @@ S
 A stairwell~
    The old stairwell completes its descent here, and a single passage, shadowed
 in darkness black as ink, leads east.  The stairs, floor, and walls are all
-wooden.    
+wooden.
 ~
 272 9 0 0 0 0
 D1
@@ -1287,7 +1287,7 @@ A dark landing~
    A seatless landing creates a pause in the stairwell before its final
 descent.  Angular shapes of lighter areas on the walls indicate this place may
 have once been hung with numerous paintings or tapestries, possibly
-comemorating the priests and gods of the past.    
+comemorating the priests and gods of the past.
 ~
 272 9 0 0 0 0
 D3
@@ -1306,7 +1306,7 @@ clambering over one another before the approach of your footfalls, yet
 everything seems to indicate to you that this is not the sort of fun fairy-tale
 niche your mother liked to tell tales about by the fireside of your ancient
 home.  Do you continue, or turn back?  Sometimes shadows may form a bluff of
-great danger in the recesses of your imagination.    
+great danger in the recesses of your imagination.
 ~
 272 9 0 0 0 0
 D1
@@ -1322,7 +1322,7 @@ S
 A dark corridor~
    The hallway bends sharply, leading off to the south and west.  No light
 penetrates either one, so as always the question of where you want to go
-depends on where you've been.    
+depends on where you've been.
 ~
 272 9 0 0 0 0
 D0
@@ -1345,7 +1345,7 @@ A dark corridor~
 water shivers and shimmers, black against black.  The pool is nearly still,
 only an occasional ripple moving across the surface gives any indication of
 life, or life in death, within.  Northwards the hall disappears into the dark.
-  
+
 ~
 272 9 0 0 0 0
 D0
@@ -1362,7 +1362,7 @@ Edge of a black-bottom pool~
    You wade ankle-deep into the murky waters of a black-bottom pool.  It
 appears this pool was once a nice pleasure bath for the priests and their
 guests, but has fallen into decay from recent lack of use.  Who knows what
-creatures make their home beneath the dark surface.    
+creatures make their home beneath the dark surface.
 ~
 272 13 0 0 0 6
 D2
@@ -1380,7 +1380,7 @@ A black-bottom pool~
 every limb, each movement sending a chill coursing through from ears to toes.
 The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
-grotesque underwater creatures that now make this their home.    
+grotesque underwater creatures that now make this their home.
 ~
 272 9 0 0 0 8
 D0
@@ -1398,7 +1398,7 @@ A black-bottom pool~
 every limb, each movement sending a chill coursing through from ears to toes.
 The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
-grotesque underwater creatures that now make this their home.    
+grotesque underwater creatures that now make this their home.
 ~
 272 9 0 0 0 8
 D0
@@ -1420,7 +1420,7 @@ A black-bottom pool~
 every limb, each movement sending a chill coursing through from ears to toes.
 The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
-grotesque underwater creatures that now make this their home.    
+grotesque underwater creatures that now make this their home.
 ~
 272 9 0 0 0 8
 D0
@@ -1438,7 +1438,7 @@ A black-bottom pool~
 every limb, each movement sending a chill coursing through from ears to toes.
 The smooth, dark bottom of the pool shows traces of faded ornamental designs,
 now mostly hidden and eroded with moss and algae.  Few can pin a name on the
-grotesque underwater creatures that now make this their home.    
+grotesque underwater creatures that now make this their home.
 ~
 272 9 0 0 0 8
 D2
@@ -1455,7 +1455,7 @@ The cartographers~
    You are in a closely walled-in room with little air and much light; a
 glass-fronted bookcase displays a variety of map parchments, though as they are
 curled and bound with colored ribbon, it is difficult to discern their
-contents.    
+contents.
 ~
 272 156 0 0 0 0
 D2
@@ -1468,7 +1468,7 @@ The corner store~
    You enter a small, wooden-planked shop, in sore need of some repairs, but
 essentially kept very tidy by someone with little else to do but revel in her
 senility.  A few crowded shelves hold items that may be of use to you in
-everyday living.    
+everyday living.
 ~
 272 8 0 0 0 0
 D3
@@ -1482,7 +1482,7 @@ A cobblestone road~
 high enough to keep the town secure, and ringed with tendrils of lush green
 ivy.  The busy murmur of citylife can be heard from beyond.  Southwards, the
 cobblestone road crosses a meadow of sorts before disappearing into a line of
-dark woods.    
+dark woods.
 ~
 272 0 0 0 0 2
 D0
@@ -1494,7 +1494,7 @@ S
 A crawlspace~
    You slip into someone's private domain.  Better leave without a trace before
 long, it could be dangerous to remain, should the dweller of this place return
-and claim what is theirs.    
+and claim what is theirs.
 ~
 272 524 0 0 0 0
 D2

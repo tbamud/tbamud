@@ -25,7 +25,7 @@ give the pleasent feeling of being welcome here.  A large portrait is
 hanging on one of the walls.  A large wooden staircase leads up into
 the tower.  To the east there is a high passage away from the hall.
 This ends shortly after by a tall oak door.  The enormous hall extends
-further north from here.  To the south you can see a huge, and VERY 
+further north from here.  To the south you can see a huge, and VERY
 heavy-looking iron-wrought door.  It looks like this is the only exit
 from this magnificent old house.
 ~
@@ -97,39 +97,39 @@ E
 river~
    You see a large and winding river cut through the landscape, starting at an
 enormous inland lake, it seeps through Midgaard and finally ends up in the Grand
-Sea on the west coast of the land.  
+Sea on the west coast of the land.
 ~
 E
 out outside beyond~
    The clouds muster and form the ground on which this entire building is set.
 Through the thinnest of the clouds you can just make out Midgaard with all of
-its magnificent activity.  
+its magnificent activity.
 ~
 E
 window glass~
    These windows are really BIG!  They reach from about 20 inches above the
 floor to approximately 10 inches under the ceiling.  If you try and 'look out',
-you might see what might lie beyond these windows.  
+you might see what might lie beyond these windows.
 ~
 E
 chairs leather armchairs chair armchair~
    These two chairs are exactly alike one another.  They look incredibly
 comfortable.  They are both made from old leather, and yet they seem so worn
-that they can be nothing but a perfect place for a long needed rest.  
+that they can be nothing but a perfect place for a long needed rest.
 ~
 E
 midgaard town city~
    You see a small speck with woods on the west from it, plains to the east from
 it and mountains to the north from it.  To the east of it you can see a thin
 trail lead to a large castle.  Finally you notice a rather large river pour in
-from the east and go through Midgaard in the middle.  
+from the east and go through Midgaard in the middle.
 ~
 E
 globe world map~
    You see a large world map stretch out on the enormous globe.  It has towns
 drawn in every spot available for such.  In the middle of the map you can spot a
 large town with the name 'MIDGAARD' written over it.  The rest is mountains,
-woods, plains and water.  
+woods, plains and water.
 ~
 S
 #7903
@@ -197,7 +197,7 @@ door aspen heavy~
 1 -1 7904
 E
 chair armchair~
-   This is truly a wonderful relic of the past.  In it is a large cushion.  
+   This is truly a wonderful relic of the past.  In it is a large cushion.
 ~
 S
 #7906
@@ -370,7 +370,7 @@ That way seems to be the only way away from here.
 D5
 THAT WAY IS CERTAIN DEATH!!!!  You can see the wind tearing at the chain
 down below you.  It swings like a furious serpent from side to side!  The
-descent is ABSOLUTELY out of the QUESTION.  
+descent is ABSOLUTELY out of the QUESTION.
 ~
 ~
 0 -1 7920
@@ -407,7 +407,7 @@ Speed.'  The chain extends further down through the now spreading clouds.
 ~
 79 4 0 0 0 5
 D4
-It seems to you that the Chain is dissolving again.  Maybe it is just an 
+It seems to you that the Chain is dissolving again.  Maybe it is just an
 illusion, but still...
 ~
 ~
@@ -444,10 +444,6 @@ S
 The Free Fall From The Chain~
    This is probably the third worst place to be in this entire MUD right
 now.  You fall
-.  
-.
-.
-and fall
 .
 .
 .
@@ -455,7 +451,11 @@ and fall
 .
 .
 .
-and HIT THE GROUND WITH SUCH A *SPLUTCH* that you survive only by the 
+and fall
+.
+.
+.
+and HIT THE GROUND WITH SUCH A *SPLUTCH* that you survive only by the
 grace of the Gods.
 ~
 79 12 0 0 0 0

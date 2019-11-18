@@ -3,7 +3,7 @@ poor mudder~
 a poor mudder~
 A poor mudder wanders, lost in this place.
 ~
-   You will become him if you are not careful.    
+   You will become him if you are not careful.
 ~
 76 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
@@ -16,7 +16,7 @@ star~
 a beautiful star~
 A beautiful white star smiles at you.
 ~
-   You can't tell what the star looks like, she is too bright!    
+   You can't tell what the star looks like, she is too bright!
 ~
 10 0 0 0 0 0 0 0 500 E
 28 11 -6 5d5+280 4d4+4
@@ -28,7 +28,7 @@ nebula young~
 a young nebula~
 A young nebula is waiting to become a star.
 ~
-   It hasn't got a definite shape, it is just a cloud of mist.    
+   It hasn't got a definite shape, it is just a cloud of mist.
 ~
 72 0 0 0 0 0 0 0 200 E
 28 11 -6 5d5+280 4d4+4
@@ -53,7 +53,7 @@ a red supergiant~
 An enormous, red supergiant is forced to protect the galaxy.
 ~
    You notice the giant is not as tough as his name sounds ...  Still he can be
-very powerful.    
+very powerful.
 ~
 138 0 0 0 0 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
@@ -63,10 +63,10 @@ E
 #28806
 white dwarf~
 a white dwarf~
-A tiny white dwarf is trying to sneak away from duty. 
+A tiny white dwarf is trying to sneak away from duty.
 ~
-   Like the red giant, he is also appointed to stand guard for the galaxy.  
-But somehow he manages to escape.  Though tiny, it can take a lot of hits!    
+   Like the red giant, he is also appointed to stand guard for the galaxy.
+But somehow he manages to escape.  Though tiny, it can take a lot of hits!
 ~
 76 0 0 0 0 0 0 0 0 E
 31 10 -8 6d6+310 5d5+5
@@ -79,7 +79,7 @@ a horsehead nebula~
 A huge nebula is here, resembling a horsehead.
 ~
    You can only make out its shape from the darkness.  He was cursed to stay in
-here and his face may never be seen by anyone again.    
+here and his face may never be seen by anyone again.
 ~
 10 0 0 0 1572864 0 0 0 -1000 E
 28 11 -6 5d5+280 4d4+4
@@ -92,7 +92,7 @@ poor Andromeda~
 The poor Andromeda is chained to the wall, suffering ...
 ~
    She was once a princess of beauty.  However, her beauty has led to a
-Goddess's jealousy and she has to suffer here endlessly until Perseus comes.  
+Goddess's jealousy and she has to suffer here endlessly until Perseus comes.
 ~
 26 0 0 0 0 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
@@ -106,7 +106,7 @@ The Mighty Hercules is working hard on his extra Labours for the Gods.
 ~
    He has been put to do the Ten Labours -- ten impossible tasks, by Hera, the
 queen goddess, who disliked him.  But he finished them all and at the end was
-granted immortality.  He is a very brave and strong fighter.    
+granted immortality.  He is a very brave and strong fighter.
 ~
 10 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
@@ -118,7 +118,7 @@ pegasus~
 the wild Pegasus~
 The wild pegasus is grazing peacefully.
 ~
-   It is the legendary horse with wings on its back.    
+   It is the legendary horse with wings on its back.
 ~
 138 0 0 0 0 0 0 0 300 E
 32 10 -9 6d6+320 5d5+5
@@ -132,7 +132,7 @@ Orion is still hunting for Scorpio.
 ~
    He is the legendary hunter who almost defeated Taurus the bull, but got
 killed by Scorpio.  The gods put them both up as constellations but one appears
-on one side of the sky and the other the other side so they will never meet.  
+on one side of the sky and the other the other side so they will never meet.
 ~
 74 0 0 0 0 0 0 0 300 E
 30 10 -8 6d6+300 5d5+5
@@ -145,7 +145,7 @@ the Pleiades~
 The Pleiades are here, weeping for the loss of their sisters.
 ~
    These are the seven sisters of the Myths, and as for why they are here, no
-one knows; even the Gods themselves have forgotten.    
+one knows; even the Gods themselves have forgotten.
 ~
 10 0 0 0 0 0 0 0 300 E
 31 10 -8 6d6+310 5d5+5
@@ -159,7 +159,7 @@ The gigantic Head of Draco lurks out from beneath and prepares to roast you.
 ~
    This evil-looking head is even larger than a giant.  He is the last guardian
 before entering the inner galaxy.  His neck is flexing in a random fashion so
-hitting the head is certainly not easy.    
+hitting the head is certainly not easy.
 ~
 10 0 0 0 16 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
@@ -174,7 +174,7 @@ A baby draco is crawling on the Draco's body.
 ~
    You see a tiny creature which looks like a dragon except that its body
 resembles a snake.  Gosh, is this a draco, you wonder, is this the thing we are
-on now?    
+on now?
 ~
 204 0 0 0 0 0 0 0 -700 E
 29 11 -7 5d5+290 4d4+4
@@ -188,7 +188,7 @@ Aries~
 Aries is sitting here, welcoming you.
 ~
    You see a white goat here, the first guardian of the Zodiac, also the ruler
-of Spring.  He looks as if he is expecting you.    
+of Spring.  He looks as if he is expecting you.
 ~
 10 0 0 0 0 0 0 0 700 E
 33 9 -9 6d6+330 5d5+5
@@ -203,7 +203,7 @@ Taurus wants to leave, but has been forced to stay as a guardian here.
 ~
    You see a wild-looking bull with a bad temper.  He is well-built and looks
 like he can fight well ...  Indeed he has fought with Orion before and
-survived.    
+survived.
 ~
 10 0 0 0 16 0 0 0 -100 E
 30 10 -8 6d6+300 5d5+5
@@ -217,7 +217,7 @@ Gemini~
 Gemini is looking for his brother; have you seen him?
 ~
    As soon as you see him you know that he is the most perfect man you have
-seen.  You can't find any imperfections on him.    
+seen.  You can't find any imperfections on him.
 ~
 74 0 0 0 0 0 0 0 1000 E
 32 10 -9 6d6+320 5d5+5
@@ -230,8 +230,8 @@ gemini~
 Gemini~
 Gemini is hiding from his brother, grinning evilly at you.
 ~
-   As soon as you see him you see the most imperfect man you have ever seen.  
-How can there be such a contrast?  You wonder ...    
+   As soon as you see him you see the most imperfect man you have ever seen.
+How can there be such a contrast?  You wonder ...
 ~
 238 0 0 0 16 0 0 0 -1000 E
 32 10 -9 6d6+320 5d5+5
@@ -246,7 +246,7 @@ Cancer the crab is here, hoarding the treasure away from you.
 ~
    You see a gigantic crab (YES, it is bigger than you!  ) with a crushed
 shell.  Legend is that he was crushed by Hercules when he was sent by Hera to
-kill him.  So Hera made Cancer a constellation for his work.    
+kill him.  So Hera made Cancer a constellation for his work.
 ~
 74 0 0 0 0 0 0 0 0 E
 31 10 -8 6d6+310 5d5+5
@@ -261,7 +261,7 @@ Leo the lion is roaring at you, ready for a strike!
 ~
    His metallic skin means that he could be the one which was killed by
 Hercules during his first Labour.  His skin is so weapon-proof that Hercules
-had to use his bare hands to tear the lion into two from its mouth!    
+had to use his bare hands to tear the lion into two from its mouth!
 ~
 106 0 0 0 16 0 0 0 -100 E
 30 10 -8 6d6+300 5d5+5
@@ -276,7 +276,7 @@ Virgo is sitting here, winking at you suggestively ... you are alarmed!
 ~
    From what you have seen, you now realize that legends are legends, and Virgo
 may not be the maid of chastity and purity at all!  But still she looks
-gorgeous and is waiting for your first move, whatever it is ...    
+gorgeous and is waiting for your first move, whatever it is ...
 ~
 74 0 0 0 0 0 0 0 1000 E
 29 11 -7 5d5+290 4d4+4
@@ -289,8 +289,8 @@ libra~
 Libra~
 Libra, the fair and just, is staring at you, weighing up the sins of your past.
 ~
-   He is a wise old man and can see people's thoughts through their eyes....  
-Now all he can see from you is greed and bloodshed.    
+   He is a wise old man and can see people's thoughts through their eyes....
+Now all he can see from you is greed and bloodshed.
 ~
 74 0 0 0 0 0 0 0 1000 E
 34 9 -10 6d6+340 5d5+5
@@ -304,7 +304,7 @@ Scorpio~
 Scorpio is moving his tail towards you, waiting to put an end to some mortals.
 ~
    Ever since he killed Orion in the myths, he has been punished by having
-Sagittarius' arrow aimed at his heart forever.    
+Sagittarius' arrow aimed at his heart forever.
 ~
 10 0 0 0 16 0 0 0 -200 E
 30 10 -8 6d6+300 5d5+5
@@ -317,7 +317,7 @@ sagittarius~
 Sagittarius~
 Sagittarius the centaur is waiting to let go of his well aimed arrow ...
 ~
-   He is a centaur and a well trained archer.  No one can escape his arrows.  
+   He is a centaur and a well trained archer.  No one can escape his arrows.
 
 ~
 74 0 0 0 0 0 0 0 1000 E
@@ -333,7 +333,7 @@ Capricorn is here, feeling bored ... he wants a fight!
 ~
    You see a mean-looking ram here.  He used to be a fierce fighter in the
 ancient war but now the gods have decided to put him here, to live out the rest
-of his days in peace.    
+of his days in peace.
 ~
 74 0 0 0 0 0 0 0 700 E
 33 9 -9 6d6+330 5d5+5
@@ -347,7 +347,7 @@ Aquarius~
 The beautiful Aquarius is standing here, holding THE vessel.
 ~
    The pretty Water Bearer is smiling at you, you think you'd better give her a
-hand with holding the vessel.    
+hand with holding the vessel.
 ~
 74 0 0 0 0 0 0 0 1000 E
 32 10 -9 6d6+320 5d5+5
@@ -361,7 +361,7 @@ Pisces the mermaid~
 Pisces the mermaid is sitting here, waiting for your help.
 ~
    She has been forced to serve her husband, who had been cursed to turn into a
-fish and she deserves your pity.    
+fish and she deserves your pity.
 ~
 74 0 0 0 0 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
@@ -374,8 +374,8 @@ pisces fish~
 Pisces the fish~
 Pisces the fish, is jealous of your approach...
 ~
-   He was once a very handsome man but now has turned into an ugly big fish.  
-So he becomes jealous of any living thing which is more handsome than him.    
+   He was once a very handsome man but now has turned into an ugly big fish.
+So he becomes jealous of any living thing which is more handsome than him.
 ~
 106 0 0 0 0 0 0 0 -1000 E
 32 10 -9 6d6+320 5d5+5
@@ -389,7 +389,7 @@ Ursa Major the bear~
 Ursa Major the bear is the last defense against any intruders.
 ~
    The Huge Bear which resides in the northern skies is here.  You think you'd
-better turn back.  At least you have got a chance of survival.    
+better turn back.  At least you have got a chance of survival.
 ~
 10 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -416,7 +416,7 @@ Cepheus the King~
 Cepheus, the king of the Universe, is sitting on his throne.
 ~
    He is the King of Might as well as of the Universe.  You suddenly feel very
-weak and useless in front of him.    
+weak and useless in front of him.
 ~
 10 0 0 0 0 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -432,7 +432,7 @@ Polaris, the polar star, who commands the whole Universe, stands before you!
    He is the Master of the Universe, (NOT He-Man!  ), the most powerful!  Even
 the King and the Queen obey him.  As you look at him you notice he is actually
 a STAR, with dazzling bright light ...  Maybe you shouldn't have come here at
-all?    
+all?
 ~
 10 0 0 0 20 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5

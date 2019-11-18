@@ -4,7 +4,7 @@ a goblin raider~
 A goblin raider runs crouched-over through the fields, looking for people to kill.
 ~
    It runs with its arms almost dragging on the ground through the fields, its
-nose twitching as it sniffs for prey.    
+nose twitching as it sniffs for prey.
 ~
 584 0 0 0 0 0 0 0 -700 E
 9 17 4 1d1+90 1d2+1
@@ -17,7 +17,7 @@ a torch-bearing goblin~
 A goblin walks through the smoke and ash carrying a torch.
 ~
    He looks right and then left - he must be searching for something to burn.
-  
+
 ~
 584 0 0 0 0 0 0 0 -600 E
 8 18 5 1d1+80 1d2+1
@@ -30,7 +30,7 @@ a leg-gnawing goblin~
 A goblin sits cross-legged on the ground gnawing on a human leg.
 ~
    Blood and muscle tissue drip down its face, its pointed noise dripping with
-goo and gore.    
+goo and gore.
 ~
 10 0 0 0 0 0 0 0 -900 E
 10 17 4 2d2+100 1d2+1
@@ -43,7 +43,7 @@ the goblin commander~
 A goblin commander grunts and screams his troops into organization.
 ~
    His green warted skin stretches tight over his squinted eyes, he smiffs the
-wind every now and again for signs of human flesh.    
+wind every now and again for signs of human flesh.
 ~
 584 0 0 0 0 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -56,7 +56,7 @@ a goblin scout~
 A goblin scout walks cautiously past, sniffing and searching.
 ~
    A goblin scout here could mean only one thing - there are more in the area.
-Best to keep a close eye out.    
+Best to keep a close eye out.
 ~
 92 0 0 0 0 0 0 0 -600 E
 12 16 2 2d2+120 2d2+2
@@ -69,7 +69,7 @@ a goblin looter~
 A goblin searches through the wreckage of the fields for scraps.
 ~
    It rummages through the blackened dirt, looking for any valuables that might
-have been overlooked by the troops when they came through.    
+have been overlooked by the troops when they came through.
 ~
 76 0 0 0 0 0 0 0 -700 E
 11 17 3 2d2+110 1d2+1
@@ -82,7 +82,7 @@ a goblin hordesman~
 A goblin hordesman tromps confidently along, looking for a fight.
 ~
    Its weapon is constantly held at ready while it scans the smoke and ruin for
-any signs of life.    
+any signs of life.
 ~
 72 0 0 0 0 0 0 0 -600 E
 10 17 4 2d2+100 1d2+1
@@ -96,7 +96,7 @@ The Commander of the Lord's Retinue leads a weary gaggle of men through the deso
 ~
    His face is covered in black dirt and ash, his once-fine armor dented and
 dirty.  By the look in his black-rimmed eyes, he is a man at the end of his
-rope.  
+rope.
 ~
 72 0 0 0 0 0 0 0 900 E
 15 15 1 3d3+150 2d2+2
@@ -111,7 +111,7 @@ A member of the Lord's Retinue strides wearily past.
    He appears to have lost much of his hope in eliminating the threat of the
 goblins in this region.  The the constant raids and the lack of sleep has made
 him less than the highly-trained soldier that he was when he arrived here some
-months back.    
+months back.
 ~
 72 0 0 0 0 0 0 0 800 E
 12 16 2 2d2+120 2d2+2
@@ -124,7 +124,7 @@ a sobbing soldier~
 A soldier is curled into a ball, knees clutched, sobbing into the black dirt.
 ~
    He does not acknowledge your presence nor does he stop his sobbing.  He
-seems to have lost his mind, reduced to a whimpering infant.    
+seems to have lost his mind, reduced to a whimpering infant.
 ~
 10 0 0 0 0 0 0 0 600 E
 10 17 4 2d2+100 1d2+1
@@ -138,7 +138,7 @@ Jon Boggins strides through his fields, a heavy pitchfork held at ready.
 ~
    Jon has lost not only his son the Horde, but has lost his wife and daughter
 as well.  He is a man with no ties and no love of life - that is what makes him
-so dangerous.    
+so dangerous.
 ~
 72 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
@@ -152,7 +152,7 @@ A desperate farmer crouches in this barricade, eyes wide with fear.
 ~
    The poor man has lost his livelihood, but he will BE DAMNED if he will lose
 his land as well to the very creatures who destroyed it.  He will die before he
-gives this small stand up to the enemy.    
+gives this small stand up to the enemy.
 ~
 10 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
@@ -165,7 +165,7 @@ an angry farmwife~
 An angry farmwife squats beside her husband, lending him her strength and support.
 ~
    Against her husband's numerous requests, she has stayed here in their last
-ditch stand to make an effort at saving their home.    
+ditch stand to make an effort at saving their home.
 ~
 10 0 0 0 0 0 0 0 500 E
 8 18 5 1d1+80 1d2+1

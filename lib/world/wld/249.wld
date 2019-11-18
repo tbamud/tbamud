@@ -2,12 +2,12 @@
 Jedi Zone Description Room~
    Builder      : G.Threepwood
    Zone         : 249 Jedi Clan House
-   Began        : 
-   Player Level : 
+   Began        :
+   Player Level :
    Rooms        : 20
    Mobs         : 1
    Objects      : 2
-   Links        : 
+   Links        :
 ~
 249 0 0 0 0 0
 S
@@ -34,12 +34,12 @@ sign~
 S
 #24902
 The Atrium~
-     You see a great room with a wide opening in the ceiling, light 
-floods the room. Huge marble pillars rise on either side of you and hold 
-the ceiling. In the middle of the room you note a beautiful circular table 
-made of marble. You perceive that the Jedi member come to here to expose 
-their ideas. The walls are white with some inscriptions in it. You also 
-see a Code of Laws where can be read the JEDI's rules. To the east you 
+     You see a great room with a wide opening in the ceiling, light
+floods the room. Huge marble pillars rise on either side of you and hold
+the ceiling. In the middle of the room you note a beautiful circular table
+made of marble. You perceive that the Jedi member come to here to expose
+their ideas. The walls are white with some inscriptions in it. You also
+see a Code of Laws where can be read the JEDI's rules. To the east you
 see the Library, to the west the Treasury.
 ~
 249 72 0 0 0 0
@@ -74,8 +74,8 @@ Obligations
       4 - Do not distribute clan's holy equipment;
 Rights
       1 - Have access to the Jedi HQ;
-      2 - Pick up any eq found in the donation room or in the store; 
-      3 - Ask others members help;      
+      2 - Pick up any eq found in the donation room or in the store;
+      3 - Ask others members help;
 Punishments
       1 - Desertors are punished with their lives;
       2 - Killing members of this brotherhood is punished with death;
@@ -86,7 +86,7 @@ Punishments
 ~
 E
 inscription wall~
-   May the Force be with you.  
+   May the Force be with you.
 ~
 S
 #24903
@@ -105,13 +105,13 @@ You see the Atrium.
 0 -1 24902
 E
 note~
-   Scribere scribendo, dicendo dicere disces.  
+   Scribere scribendo, dicendo dicere disces.
 ~
 S
 #24904
 The Treasury~
      You are in a relatively small room. There are some benches and desks.
-You see a big bin that seems to be impossible to open. Here is protected 
+You see a big bin that seems to be impossible to open. Here is protected
 the gold and the values of the JEDI members.
 To the east you get to the Atrium.
 ~
@@ -125,7 +125,7 @@ S
 #24905
 The Common Hall~
      You in a simple room with some pictures on the wall and on the floor.
-There is a big stair made of old good oak just in front of you. 
+There is a big stair made of old good oak just in front of you.
 Where does it lead?, you inquire yourself.
 To the south you get to the Atrium.
 ~
@@ -148,9 +148,9 @@ You hear some voices and noises from there.
 S
 #24906
 The High Members Hall~
-     You are in the middle of a well ardornated room. Many pictures were 
+     You are in the middle of a well ardornated room. Many pictures were
 drawn on the walls. Undoubtly, holy pictures. You note the existence of
-three rooms adjacents to this one. You see a yellow glow coming from the 
+three rooms adjacents to this one. You see a yellow glow coming from the
 west room. What is there?
 ~
 249 88 0 0 0 0
@@ -177,9 +177,9 @@ You see the Kirian's Laboratory.
 S
 #24907
 The Upper Floor~
-     You are in the upstairs. You are positive that here you will find many 
-interesting things. The Force runs faster in your soul. You note a 
-imposing statue of an Old Jedi situated in front of you. 
+     You are in the upstairs. You are positive that here you will find many
+interesting things. The Force runs faster in your soul. You note a
+imposing statue of an Old Jedi situated in front of you.
 To down you reach the downstairs, to the east there is a corridor,
 to the west you see the training center.
 ~
@@ -209,7 +209,7 @@ S
 The Corridor~
      You get to a wide corridor that becomes narrower as you walk through it.
 The Force is more powerful in you. You note that to the east the room become
-dark. There are paintings hanged on the wall. The light comes from a very 
+dark. There are paintings hanged on the wall. The light comes from a very
 small hole in the ceiling.
 ~
 249 72 0 0 0 0
@@ -244,16 +244,16 @@ You see the corridor.
 0 0 24908
 E
 holy~
-   You note that the force is stronger in the Holy Chamber.  
+   You note that the force is stronger in the Holy Chamber.
 ~
 S
 #24910
 The Holy Chamber~
-     You are in a mystical atmosphere here. Your soul is in real peace and 
-you feel better than never before. The wall, the floor, everything is very 
-clear and white. You see a great pedestal and some candeladra. There is a 
-beautiful holy altar with a great ark on it. A Jedi Member get here to rise 
-his spiritual status. You understand that religion is taken serious by 
+     You are in a mystical atmosphere here. Your soul is in real peace and
+you feel better than never before. The wall, the floor, everything is very
+clear and white. You see a great pedestal and some candeladra. There is a
+beautiful holy altar with a great ark on it. A Jedi Member get here to rise
+his spiritual status. You understand that religion is taken serious by
 the JEDI. A Jedi have his inicialization here during the Holy Ritual.
 ~
 249 88 0 0 0 0
@@ -264,7 +264,7 @@ You see the tunnel.
 0 0 24909
 E
 ark~
-   It is so bright that you cannot perceive its details.  
+   It is so bright that you cannot perceive its details.
 ~
 E
 rules~
@@ -277,8 +277,8 @@ Obligations
       4 - Do not distribute clan's holy equipment;
 Rights
       1 - Have access to the Jedi HQ;
-      2 - Pick up any eq found in the donation room or in the store; 
-      3 - Ask others members help;      
+      2 - Pick up any eq found in the donation room or in the store;
+      3 - Ask others members help;
 Punishments
       1 - Desertors are punished with their lives;
       2 - Killing members of this brotherhood is punished with death;
@@ -290,10 +290,10 @@ Punishments
 S
 #24911
 The JEDI's Donation Room~
-     You see a large room with many things on it. There are on the ceiling 
-some unknow, at least for you, hanging objects. The floor is covered with 
-a white painting, with many symbols. Holy symbols? Here you find equipments 
-and weapons that were donated by other members of the clan. 
+     You see a large room with many things on it. There are on the ceiling
+some unknow, at least for you, hanging objects. The floor is covered with
+a white painting, with many symbols. Holy symbols? Here you find equipments
+and weapons that were donated by other members of the clan.
 ~
 249 72 0 0 0 0
 D2
@@ -304,9 +304,9 @@ You see the Upper Floor.
 S
 #24912
 The Tablinum~
-     The Upper Floor continues. But the walls become stronger. You almost 
-feel in jail. There is on the floor a big soft carpet ornated this many 
-geometric figures, you feel like stepping in a cloud. The walls are covered 
+     The Upper Floor continues. But the walls become stronger. You almost
+feel in jail. There is on the floor a big soft carpet ornated this many
+geometric figures, you feel like stepping in a cloud. The walls are covered
 with a special paint.
 ~
 249 72 0 0 0 0
@@ -332,9 +332,9 @@ D3
 S
 #24913
 The Store~
-     You are in small room but it is full of things. There are many shelves 
-filled with all sorts of boxes. You see many containers, crates and sacks 
-everywhere. The Jedi members' equipment can be left here save from disasters. 
+     You are in small room but it is full of things. There are many shelves
+filled with all sorts of boxes. You see many containers, crates and sacks
+everywhere. The Jedi members' equipment can be left here save from disasters.
 Cool!!
 ~
 249 0 0 0 0 0
@@ -360,9 +360,9 @@ You see the Upper floor.
 S
 #24915
 The Trainning Center~
-     The Jedi knight's legacy is the knowlegment. Here the Jedi passes their 
-fighting experience to youngers. You hear some shouts and noises 
-from the west. To the east you see the Upper Floor, and to the west 
+     The Jedi knight's legacy is the knowlegment. Here the Jedi passes their
+fighting experience to youngers. You hear some shouts and noises
+from the west. To the east you see the Upper Floor, and to the west
 the Jedi Arena.
 ~
 249 72 0 0 0 0
@@ -379,10 +379,10 @@ Wow! The Arena.
 S
 #24916
 The Jedi Arena~
-     You see a very large circular area where fighters and gladiators 
-exercise their physicals habilities. The ground is covered with sand, 
-compacted sand. Outside the this area, there is a sitting in which 
-people watch the trainment of the members. 
+     You see a very large circular area where fighters and gladiators
+exercise their physicals habilities. The ground is covered with sand,
+compacted sand. Outside the this area, there is a sitting in which
+people watch the trainment of the members.
 ~
 249 0 0 0 0 0
 D1
@@ -394,9 +394,9 @@ S
 #24917
 Kirian's Laboratory~
      You are standing in a simple adorned room, but you note your
-fine accomplishment. The walls and the floor are very smooth. In 
+fine accomplishment. The walls and the floor are very smooth. In
 the middle of room you see two large marble tables. On the first many
-books of science an mystical arts. On the second, a collection of 
+books of science an mystical arts. On the second, a collection of
 magic objects. On the corner you see a small desk with some scrolls.
 A floating magic light illumines the room. Surrounded by this magic
 atmosphere you realize that the FORCE is strong here.
@@ -410,7 +410,7 @@ You see the High Members Hall.
 S
 #24918
 Sneaky's Room~
-   Sneaky's room description must be setted here!!  
+   Sneaky's room description must be setted here!!
 ~
 249 604 0 0 0 0
 D3
@@ -421,13 +421,13 @@ You see the High Member Hall.
 S
 #24919
 Threepwood's Office~
-     You entered in dark room. Shadows are everywhere. The shadows seem 
-to move. You have the true impression that you are being beholded. You become 
-nervous when you see an incredible collection of daggers. A bookcase holds  
-many books of secret arts. You also perceive a big desk on where is found 
-a lot of papers and a spot of blood... What!!!! You feel something touching 
-your back. You turn around, and see nothing. Although the lack of 
-illumination you can positively realize holy inscriptions written on the 
+     You entered in dark room. Shadows are everywhere. The shadows seem
+to move. You have the true impression that you are being beholded. You become
+nervous when you see an incredible collection of daggers. A bookcase holds
+many books of secret arts. You also perceive a big desk on where is found
+a lot of papers and a spot of blood... What!!!! You feel something touching
+your back. You turn around, and see nothing. Although the lack of
+illumination you can positively realize holy inscriptions written on the
 walls.
 ~
 249 604 0 0 0 0
@@ -438,19 +438,19 @@ You see the High Members Hall.
 0 0 24906
 E
 wall~
-   Unum castigabis, centum emendabis.  
+   Unum castigabis, centum emendabis.
 ~
 E
 collection~
-   You have never seen so many daggers.  And how sharp!!  Ouch!  
+   You have never seen so many daggers.  And how sharp!!  Ouch!
 ~
 E
 inscription~
-   Qui spernit consilium, spernit auxilium.  
+   Qui spernit consilium, spernit auxilium.
 ~
 E
 blood~
-   My God!!  This blood is still warm!!  
+   My God!!  This blood is still warm!!
 ~
 S
 $~

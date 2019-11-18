@@ -1,10 +1,10 @@
 #3300
 A Scraggly Trail~
-   This trail slopes up and away from the main road to 
-the west.  At points the trail seems to fade into 
-obscurity against the grey stone and near-grey mountain 
-grass prevalent here.  The trail leads generally eastward 
-and up higher into the rocky ground.  There is a sign 
+   This trail slopes up and away from the main road to
+the west.  At points the trail seems to fade into
+obscurity against the grey stone and near-grey mountain
+grass prevalent here.  The trail leads generally eastward
+and up higher into the rocky ground.  There is a sign
 here, seemingly out-of-place in this rough country.
 ~
 33 68 0 0 0 5
@@ -20,16 +20,16 @@ E
 sign~
         ,_____________________________.
         |                             |
-	|         Gabadiel's          |
-	|          Smithery           |
-	|      -------------->        |
-	|			      |
+        |         Gabadiel's          |
+        |          Smithery           |
+        |      -------------->        |
+        |                             |
         |           -- BUAG SIGNS INC.|
-	`-----------------------------'
-		     |  |
-		     |  |
-		     |  |
-		     |  |     
+        `-----------------------------'
+                     |  |
+                     |  |
+                     |  |
+                     |  |
 ~
 E
 credits info~
@@ -38,10 +38,10 @@ credits info~
 S
 #3301
 A Scraggly Trail~
-   What could barely be called a trail leads west back 
-down the mountainside, and down into a very small valley 
-where a small house sits in the middle of a well-groomed 
-yard.  The door to the house is open and inviting, 
+   What could barely be called a trail leads west back
+down the mountainside, and down into a very small valley
+where a small house sits in the middle of a well-groomed
+yard.  The door to the house is open and inviting,
 welcoming you for a visit.
 ~
 33 0 0 0 0 5
@@ -56,13 +56,13 @@ D5
 S
 #3302
 A Groomed Path~
-   You are standing in the western end of a very, very 
-small valley, just about room enough for the one house 
-standing to your east.  You can see from here that the 
-door to the cozy cottage is open and inviting, but the 
-interior seems very dark.  A path bordered by shrubberies 
-leads up to the structure, and ends where you are 
-standing; right by the easiest path back up into the 
+   You are standing in the western end of a very, very
+small valley, just about room enough for the one house
+standing to your east.  You can see from here that the
+door to the cozy cottage is open and inviting, but the
+interior seems very dark.  A path bordered by shrubberies
+leads up to the structure, and ends where you are
+standing; right by the easiest path back up into the
 mountains.
 ~
 33 0 0 0 0 5
@@ -99,11 +99,11 @@ S
 #3304
 The Smithery~
    Devastation greets your eyes.
-   The forge has been blasted apart, along with most of 
-the back door.  Hammers, tongs, and anvils lie about in 
-one gigantic mess, and the smith's bed smoulders yet.  
-This place has been utterly wrecked and blasted apart, by 
-more than one man you would think from all the tracks in 
+   The forge has been blasted apart, along with most of
+the back door.  Hammers, tongs, and anvils lie about in
+one gigantic mess, and the smith's bed smoulders yet.
+This place has been utterly wrecked and blasted apart, by
+more than one man you would think from all the tracks in
 the dust...
 ~
 33 8 0 0 0 0
@@ -125,11 +125,11 @@ letter, unaddressed.  The bits of text that aren't smudged, burnt, and smeared
 tell tale of the smith/mage Gabadiel's masterwork: a sword of unequalled power,
 and two swords that came before, discarded as 'Not quite what I was working
 towards'.  Looking around, you notice a distinct lack of any swords.  You think
-you may have a motive now...  
+you may have a motive now...
 ~
 E
 tracks dust~
-   Three sets of prints lead out where the back door used to stand.  
+   Three sets of prints lead out where the back door used to stand.
 ~
 S
 #3305
@@ -151,15 +151,15 @@ D3
 0 -1 3304
 E
 tracks track~
-   They lead east.  
+   They lead east.
 ~
 S
 #3306
 Mountain Ridge~
    You are standing on a ridge in the mountains, just east
-of a very small valley.  You spot a tiny cottage sitting 
-in the center of the valley, and the ridge continues 
-south.  Looking at the sheer drops to the north and west, 
+of a very small valley.  You spot a tiny cottage sitting
+in the center of the valley, and the ridge continues
+south.  Looking at the sheer drops to the north and west,
 you consider not taking those directions.
 ~
 33 0 0 0 0 5
@@ -173,17 +173,17 @@ D3
 0 -1 3305
 E
 tracks track~
-   The tracks lead south.  
+   The tracks lead south.
 ~
 S
 #3307
 The Mountain Ridge~
-    The mountain range continues north from here, and 
+    The mountain range continues north from here, and
 widens out into a small plateau just to your south.  Going
-east and west from here would be a bad idea, considering 
-the steepness of the drop.  From this height, you have a 
-fairly good panoramic view to the south, including what 
-appears to be a small mountain village to your south and 
+east and west from here would be a bad idea, considering
+the steepness of the drop.  From this height, you have a
+fairly good panoramic view to the south, including what
+appears to be a small mountain village to your south and
 west, and a tall, ominous peak westwards from here.
 ~
 33 0 0 0 0 5
@@ -197,16 +197,16 @@ D2
 0 -1 3308
 E
 tracks track~
-   They lead south.  
+   They lead south.
 ~
 S
 #3308
 The Diverging Paths~
-   You are standing on a small plateau in the mountains, 
-just south of a ridge that leads northwards through the 
-rocky area.  To the east, south, and west are gentle 
+   You are standing on a small plateau in the mountains,
+just south of a ridge that leads northwards through the
+rocky area.  To the east, south, and west are gentle
 slopes leading down into different areas of the mountains.
-   A giant, dark peak looks down over you to the west, 
+   A giant, dark peak looks down over you to the west,
 looking quite spooky indeed!
 ~
 33 0 0 0 0 5
@@ -228,16 +228,16 @@ D3
 0 -1 3359
 E
 tracks track~
-   The three sets of tracks split up here, one west, one east, one south.  
+   The three sets of tracks split up here, one west, one east, one south.
 ~
 S
 #3309
 A Steep Slope~
-   This slopes leads down and to the west from here.  Up 
-above, you see a plateau at the southern end of a long 
-mountain ridge.  Surpisingly, there seems to be signs of 
-traffic in this area, leading into the large depression 
-here.  The going looks somewhat dangerous, and you decide 
+   This slopes leads down and to the west from here.  Up
+above, you see a plateau at the southern end of a long
+mountain ridge.  Surpisingly, there seems to be signs of
+traffic in this area, leading into the large depression
+here.  The going looks somewhat dangerous, and you decide
 to exercise a little caution.
 ~
 33 0 0 0 0 4
@@ -256,14 +256,14 @@ D4
 E
 signs tracks~
    A few boot prints lead way in the dust here.  There is definitely traffic
-here, but this area is not what you would call well-travelled.  
+here, but this area is not what you would call well-travelled.
 ~
 S
 #3310
 A Small Plateau~
    You are standing upon another mini-plateau, bordered by
-a sheer wall of rock to the north.  You can climb up the 
-slope to the east, or continue along the flat area to the 
+a sheer wall of rock to the north.  You can climb up the
+slope to the east, or continue along the flat area to the
 west.  Another slope leads downwards to the south, looking
 unsafe but climbable.
 ~
@@ -283,12 +283,12 @@ D3
 S
 #3311
 A Small Plateau~
-   This plateau ends here, with a steep drop-off to the 
-south, and a solid wall of rock to the north.  Eastwards 
-the plateau continues, and you think you can climb up the 
-steep rocky slope just west of here.  You are afforded a 
+   This plateau ends here, with a steep drop-off to the
+south, and a solid wall of rock to the north.  Eastwards
+the plateau continues, and you think you can climb up the
+steep rocky slope just west of here.  You are afforded a
 good view of the lower regions of this depression, and you
-think you spot what might be a cave south and down from 
+think you spot what might be a cave south and down from
 here...
 ~
 33 0 0 0 0 4
@@ -303,11 +303,11 @@ D3
 S
 #3312
 A Rocky Slope~
-   This slope is fairly treacherous, but looks to be 
-somewhat safer to the north.  East the slope leads down 
-to a small plateau that also looks considerably safer 
-than your other choices.  The shale under your feet 
-slips badly, and you are almost thrown off balance; 
+   This slope is fairly treacherous, but looks to be
+somewhat safer to the north.  East the slope leads down
+to a small plateau that also looks considerably safer
+than your other choices.  The shale under your feet
+slips badly, and you are almost thrown off balance;
 this is no place to be without mountaineering equipment.
 ~
 33 0 0 0 0 5
@@ -322,14 +322,14 @@ D1
 S
 #3313
 The Overlook~
-   You are standing on a point outcropping with a 
-beautiful view of the mountains to the north.  Far 
-below, you see what appears to be a foot-path climb 
-up to the central mountain, a peak that looks dark 
-and disturbing.  You get very bad vibes from that 
-mountain for some reason, and it doesn't seem like 
+   You are standing on a point outcropping with a
+beautiful view of the mountains to the north.  Far
+below, you see what appears to be a foot-path climb
+up to the central mountain, a peak that looks dark
+and disturbing.  You get very bad vibes from that
+mountain for some reason, and it doesn't seem like
 a very good idea to try to find a way to get there.
-   The only safe way to leave this overlook is to 
+   The only safe way to leave this overlook is to
 the south.
 ~
 33 0 0 0 0 4
@@ -340,10 +340,10 @@ D2
 S
 #3314
 A Rocky Slope~
-    You slip and slide your way across the steep ground, 
-trying desperately to keep your balance.  You can climb 
+    You slip and slide your way across the steep ground,
+trying desperately to keep your balance.  You can climb
 up to a small plateau to the north from here, or carefully
-head down to the floor of the depression to the west.  
+head down to the floor of the depression to the west.
 You're not sure which is safer...
 ~
 33 0 0 0 0 5
@@ -358,10 +358,10 @@ D3
 S
 #3315
 The Depression Floor~
-   A small path leads south here, away from the rocky 
-slope leading up to the east.  A small spring burbles 
-here, evidently the cause of much of the traffic.  
-Looking up, you see sheer rock walls surrounding much 
+   A small path leads south here, away from the rocky
+slope leading up to the east.  A small spring burbles
+here, evidently the cause of much of the traffic.
+Looking up, you see sheer rock walls surrounding much
 of the depression, making an effective fortress of
 this place.
 ~
@@ -396,11 +396,11 @@ S
 #3317
 A Cave Entrance~
    A cave leads into the heart of the mountainside, well-
-lit by sconces upon the walls.  A large rock sits by 
-the side here, near a small firepit.  Debris litters the 
+lit by sconces upon the walls.  A large rock sits by
+the side here, near a small firepit.  Debris litters the
 area; rabbit bones, half of a broken whetstone, and random
-litter.  The ground is devoid of grass, and well trodden 
-by many pairs of boots.  Strange that someone should live 
+litter.  The ground is devoid of grass, and well trodden
+by many pairs of boots.  Strange that someone should live
 so deep in the mountains...
 ~
 33 4 0 0 0 0
@@ -415,12 +415,12 @@ D3
 S
 #3318
 A Cave Passageway~
-   You are near the entrance of the cave.  The outside 
-light streams in from the west, accompanied by a slight 
+   You are near the entrance of the cave.  The outside
+light streams in from the west, accompanied by a slight
 breeze, making the flames in the sconces flutter a bit
-and throw stange shadows upon the walls.  This passageway 
+and throw stange shadows upon the walls.  This passageway
 heads north and south from here, each way seeming dark and
-stuffy compared to outdoors.  From the tracks in the 
+stuffy compared to outdoors.  From the tracks in the
 floor, you guess that the north is the more used.
 ~
 33 8 0 0 0 0
@@ -439,11 +439,11 @@ D3
 S
 #3319
 A Cave Passageway~
-   The passage turns here, one end leading south, towards 
+   The passage turns here, one end leading south, towards
 the cave's entrance, and east -- that much deeper into the
-mountain.  The light sconces keep the area bright enough 
-to see, but not nearly bright enough for you to be quite 
-comfortable in this strange place.  From far off you hear 
+mountain.  The light sconces keep the area bright enough
+to see, but not nearly bright enough for you to be quite
+comfortable in this strange place.  From far off you hear
 the echoes of what sound to be voices.
 ~
 33 8 0 0 0 0
@@ -458,10 +458,10 @@ D2
 S
 #3320
 A Cave Passageway~
-   This twisty passage leads east and west from here.  
-Eastwards you hear the unmistakable sounds of low 
-voices.  The echoes seem to be playing funny effects 
-on you, however, and you are not sure  from how far 
+   This twisty passage leads east and west from here.
+Eastwards you hear the unmistakable sounds of low
+voices.  The echoes seem to be playing funny effects
+on you, however, and you are not sure  from how far
 off these voices might be coming.
 ~
 33 8 0 0 0 0
@@ -476,10 +476,10 @@ D3
 S
 #3321
 A Cave Passageway~
-   The passage you are standing in turns west and south 
-from here.  One of the sconces here is out, making this 
+   The passage you are standing in turns west and south
+from here.  One of the sconces here is out, making this
 area extremely dark and hard to see in.  You do see lights
-from the south, however, seemingly brighter than the 
+from the south, however, seemingly brighter than the
 sconces you've seen along the walls so far.
 ~
 33 8 0 0 0 0
@@ -494,12 +494,12 @@ D3
 S
 #3322
 A Cave Passageway~
-   This is a T-intersection in the cave passageway, the 
-north leading back towards the cave's entrance (you 
-think!), the west leading towards a well-lighted area.  
-Eastwards the passageway continues into the shadowy 
-recesses of the mountain uninvitingly.  The echoes of 
-voices are confusing you a bit, and you are not sure 
+   This is a T-intersection in the cave passageway, the
+north leading back towards the cave's entrance (you
+think!), the west leading towards a well-lighted area.
+Eastwards the passageway continues into the shadowy
+recesses of the mountain uninvitingly.  The echoes of
+voices are confusing you a bit, and you are not sure
 whether you should try to remain quiet or not.
 ~
 33 8 0 0 0 0
@@ -518,7 +518,7 @@ D3
 S
 #3323
 A Cave~
-   Many sconces line the walls here, casting light on 
+   Many sconces line the walls here, casting light on
 some weapon racks and chests of armor.  Everything
 is neat, orderly, and actually well-dusted.  Someone
 cares for these items...frequently it seems.
@@ -531,11 +531,11 @@ D1
 S
 #3324
 A Cave Passageway~
-   The passageway you are in leads south and west from 
+   The passageway you are in leads south and west from
 here.  Many large stones and rocks are on the floor of the
-cave, making walking difficult in the dim light from the 
-sconces on the walls.  You hear the continued echo of 
-voices, seemingly fainter now.  Must be the strange 
+cave, making walking difficult in the dim light from the
+sconces on the walls.  You hear the continued echo of
+voices, seemingly fainter now.  Must be the strange
 acoustics of this place...
 ~
 33 8 0 0 0 0
@@ -550,8 +550,8 @@ D3
 S
 #3325
 A Cave Passageway~
-   The cave twists around like a coiled snake, leading 
-east and north from here.  You begin to wonder if your 
+   The cave twists around like a coiled snake, leading
+east and north from here.  You begin to wonder if your
 orientations are still correct.  That worries you for
 some reason.
 ~
@@ -568,11 +568,11 @@ S
 #3326
 A Cave Passageway~
    You can head north and west through the cave passageways
-here, both ways dimly lit by the ever-present sconces on 
+here, both ways dimly lit by the ever-present sconces on
 the walls.  The echoes you heard earlier seem to be getting
-louder, and seem to be coming from the northern passage.  
-You feeled a bit chilled from the cooled cave air and 
-shiver a bit in the faint whisper of a breeze.  This place 
+louder, and seem to be coming from the northern passage.
+You feeled a bit chilled from the cooled cave air and
+shiver a bit in the faint whisper of a breeze.  This place
 is a little too eerie and dark to be comfortable in.
 ~
 33 8 0 0 0 0
@@ -587,11 +587,11 @@ D3
 S
 #3327
 A Cave Passageway~
-   The echoes are growing louder, and seem to be coming 
-from the northern end of this corridor.  Southwards you 
-see the tunnel continue right before yet another bend in 
-the passagway.  You spot a small piece of red cloth torn 
-against a sharp rock jutting out from the passage's side.  
+   The echoes are growing louder, and seem to be coming
+from the northern end of this corridor.  Southwards you
+see the tunnel continue right before yet another bend in
+the passagway.  You spot a small piece of red cloth torn
+against a sharp rock jutting out from the passage's side.
 It looks like silk, very nice in fact.
 ~
 33 8 0 0 0 0
@@ -607,10 +607,10 @@ S
 #3328
 A Cave Passageway~
    The main passageway leads south from here, and a smaller
-cave tunnel leads away to the west.  Two large boulders 
-sit against the wall, wiped clean of dirt and grime.  A 
-paper food wrapper has been trodden under several pairs of 
-feet here; at best guess, you'd say this would probably be 
+cave tunnel leads away to the west.  Two large boulders
+sit against the wall, wiped clean of dirt and grime.  A
+paper food wrapper has been trodden under several pairs of
+feet here; at best guess, you'd say this would probably be
 a guard post.
 ~
 33 8 0 0 0 0
@@ -645,12 +645,12 @@ D1
 S
 #3330
 A Cavern~
-   This natural cavern has been turned into a combination 
-office/storeroom.  A small brook rushes through the south 
-wall, and flows back into the west wall through a tiny 
-hole.  Boxes and crates are stacked against the walls, and 
-a beat up oaken desk stands near the door stacked with 
-papers written upon by an unsteady hand.  Some large 
+   This natural cavern has been turned into a combination
+office/storeroom.  A small brook rushes through the south
+wall, and flows back into the west wall through a tiny
+hole.  Boxes and crates are stacked against the walls, and
+a beat up oaken desk stands near the door stacked with
+papers written upon by an unsteady hand.  Some large
 lanterns keep the place very well lighted.
 ~
 33 8 0 0 0 0
@@ -662,11 +662,11 @@ door wooden~
 S
 #3331
 A Cave Passageway~
-   You are standing south of the main entrance to this 
-cave.  The passage you are in continues south, very badly 
-lit along its length by the sconces lining the walls 
-every fifteen feet or so.  From somewhere deep in the 
-recesses of the cave, you hear a faint, rhythmic thumping 
+   You are standing south of the main entrance to this
+cave.  The passage you are in continues south, very badly
+lit along its length by the sconces lining the walls
+every fifteen feet or so.  From somewhere deep in the
+recesses of the cave, you hear a faint, rhythmic thumping
 sound distorted by the passage's strange acoustics.
 ~
 33 8 0 0 0 0
@@ -717,9 +717,9 @@ D3
 S
 #3334
 A Cave Passageway~
-   The tunnel twists to the south and east from here, 
-its dark length seemingly dismal and lifeless.  A faint 
-thumping sound reverberates from the walls, making you 
+   The tunnel twists to the south and east from here,
+its dark length seemingly dismal and lifeless.  A faint
+thumping sound reverberates from the walls, making you
 perk your ears for the direction of the noise.
 ~
 33 8 0 0 0 0
@@ -738,8 +738,8 @@ A Cave Passageway~
 to the fact that the sconces along the walls stop abruptly
 here.  The way to the south is completely dark, in direct
 contrast to the tunnels to the west.  You peer hard to the
-south, but can make out nothing in the impenetrable 
-darkness.  And still that distant thumping impinges on 
+south, but can make out nothing in the impenetrable
+darkness.  And still that distant thumping impinges on
 your consciousness...
 ~
 33 8 0 0 0 0
@@ -754,12 +754,12 @@ D3
 S
 #3336
 A Cave Passageway~
-   You are standing in a north-south tunnel carved 
-naturally through the stone of the mountain.  To the 
-north the tunnel is lighted by sconces along the wall, 
-banishing the deep, deep darkness you now stand in.  To 
-the south you can see nothing.  A deep thumping noise 
-seems to be getting louder and louder as you stand here, 
+   You are standing in a north-south tunnel carved
+naturally through the stone of the mountain.  To the
+north the tunnel is lighted by sconces along the wall,
+banishing the deep, deep darkness you now stand in.  To
+the south you can see nothing.  A deep thumping noise
+seems to be getting louder and louder as you stand here,
 coming from somewhere deep inside.
 ~
 33 9 0 0 0 0
@@ -774,10 +774,10 @@ D2
 S
 #3337
 A Cave Passageway~
-   The passageway switches directions again in the dark 
-gloom of the mountain, heading to the north and east from 
-here.  As you round the corner, a trick of the acoustics 
-make the deep thrumming and pounding you've been hearing 
+   The passageway switches directions again in the dark
+gloom of the mountain, heading to the north and east from
+here.  As you round the corner, a trick of the acoustics
+make the deep thrumming and pounding you've been hearing
 sound as if its coming from two feet away!  Very unsettling.
 ~
 33 9 0 0 0 0
@@ -792,9 +792,9 @@ D1
 S
 #3338
 A Cave Passageway~
-   The tunnel weaves around, twisting to the north and 
-west here.  The darkness around you is near total.  Ahead, 
-you hear the sounds of something metal banging against 
+   The tunnel weaves around, twisting to the north and
+west here.  The darkness around you is near total.  Ahead,
+you hear the sounds of something metal banging against
 stone.  Could someone be mining out the tunnel, perhaps?
 ~
 33 9 0 0 0 0
@@ -842,10 +842,10 @@ S
 #3341
 A Rocky Slope~
    This treacherous slope leads ever-downward quite a ways,
-down to a valley where there seems to be a small village!  
+down to a valley where there seems to be a small village!
 What a village is doing this far from civilization, and how
-they survive you've no idea.  From the smoke wafting from 
-some of the chimneys, it looks like this place is still 
+they survive you've no idea.  From the smoke wafting from
+some of the chimneys, it looks like this place is still
 inhabited as well.
    Now if you can only get down this slope without breaking
 an ankle...
@@ -866,7 +866,7 @@ A Rocky Slope~
 get to your destination without breaking your leg or falling
 and shattering your head.  Below, you spot some movement in
 the village, giving proof the place is not a ghost-town.
-   The main road of the village starts at the bottom of 
+   The main road of the village starts at the bottom of
 the slope just to the east, and the slope continues west
 and up far, far up the mountain.
 ~
@@ -882,11 +882,11 @@ D3
 S
 #3343
 Main Road~
-   This place leaves you very unimpressed.  And bored.  
-You are definitely bored by this place.  The people are 
-listless, going about their daily chores with a slowness 
-that pains your eyes.  A slope to the west climbs up the 
-mountainside, and two open shops made of wood and stone 
+   This place leaves you very unimpressed.  And bored.
+You are definitely bored by this place.  The people are
+listless, going about their daily chores with a slowness
+that pains your eyes.  A slope to the west climbs up the
+mountainside, and two open shops made of wood and stone
 are to your north and south.  East-wards this road continues.
    There is a small sign here.
 ~
@@ -920,7 +920,7 @@ sign~
                 |  |
                 |  |
                 |  |
-                |  |   
+                |  |
 ~
 S
 #3344
@@ -987,10 +987,10 @@ S
 The Intersection~
    You are standing in an intersection deep in the heart
 of Stanneg by the Mountains.  In fact, this is the ONLY
-intersection anywhere in Stanneg by the Mountain it 
+intersection anywhere in Stanneg by the Mountain it
 appears.
    There are some buildings to the north, and south, and
-east, and west.  None particularly stand out from the 
+east, and west.  None particularly stand out from the
 others.
 ~
 33 0 0 0 0 1
@@ -1013,11 +1013,11 @@ D3
 S
 #3349
 A Small Road~
-   This road runs north through Stanneg by the Mountains, 
-if through would be the operative word for such a motley 
+   This road runs north through Stanneg by the Mountains,
+if through would be the operative word for such a motley
 collection of buildings.  Westwards is a small, open-roofed
-building that appears to be a farmer's market.  The road 
-you are on continues north, and comes to an intersection 
+building that appears to be a farmer's market.  The road
+you are on continues north, and comes to an intersection
 just south of here.
 ~
 33 0 0 0 0 1
@@ -1067,11 +1067,11 @@ D2
 S
 #3352
 A Private Home~
-   The interior of this home is simple and rustic.  A 
-ladder leads up to the loft, where the sleeping pallets 
-are tucked away.  A wood-burning stove keeps the place 
-well heated and cozy.  A homemade rocking chair stands 
-crooked in the corner, draped with a old looking afghan.  
+   The interior of this home is simple and rustic.  A
+ladder leads up to the loft, where the sleeping pallets
+are tucked away.  A wood-burning stove keeps the place
+well heated and cozy.  A homemade rocking chair stands
+crooked in the corner, draped with a old looking afghan.
 This home is a nice place, very comfortable.
 ~
 33 8 0 0 0 0
@@ -1094,7 +1094,7 @@ D0
 ~
 0 -1 3348
 D2
-A normal looking front door made of wood serves as the entrance. 
+A normal looking front door made of wood serves as the entrance.
 ~
 door front~
 1 -1 3354
@@ -1104,7 +1104,7 @@ A Private Home~
    This home strikes you as unbearable warm and uncomfortable.
 The fireplace is going at a full-bonfire, a mammoth stack of
 firewood beside it against the wall.  The decorations seem
-somewhat spartan and plain; a landscape, an old hunting 
+somewhat spartan and plain; a landscape, an old hunting
 bow... nothing much of interest.
 ~
 33 8 0 0 0 0
@@ -1117,11 +1117,11 @@ S
 #3355
 Main Road~
    The main road through Stanneg ends here at a large well
-that leads deep, deep into the earth.  To the north of the 
-well is a large building, with a large WELCOME mat outside 
-its front door.  Westwards you see the a road intersection 
-in the center of the tiny village.  Around you is a rocky 
-terrain in the middle of this mountain range...not very 
+that leads deep, deep into the earth.  To the north of the
+well is a large building, with a large WELCOME mat outside
+its front door.  Westwards you see the a road intersection
+in the center of the tiny village.  Around you is a rocky
+terrain in the middle of this mountain range...not very
 many places else to go.
 ~
 33 0 0 0 0 1
@@ -1178,7 +1178,7 @@ S
 The Reception~
    A hall leads away to the west lined with small brown
 doors.  A small table has a ledger on it, seemingly
-almost unused.  The hall is plain and without any 
+almost unused.  The hall is plain and without any
 decoration, except for a nice painting of (what else)
 a mountain hanging above the stairs that lead back
 down to the inn proper.
@@ -1191,11 +1191,11 @@ D5
 S
 #3359
 A Rocky Slope~
-   This slope is fairly shallow and easy to walk on, 
-despite the loose shale and gravel.  To the east is a high 
-ridge you could stand on, and to the west is a flat area 
-near two trails leading up and down into the mountains.  
-High above you, to your west, is that ominous, dark peak, 
+   This slope is fairly shallow and easy to walk on,
+despite the loose shale and gravel.  To the east is a high
+ridge you could stand on, and to the west is a flat area
+near two trails leading up and down into the mountains.
+High above you, to your west, is that ominous, dark peak,
 which seems to radiating a sense of hopelessness...
 ~
 33 0 0 0 0 5
@@ -1210,12 +1210,12 @@ D3
 S
 #3360
 A Ledge~
-   This ledge overlooks a small path that leads up and 
-down from here.  Below, you see the path head down to a 
-large flat area where a small cottage lies nestled in the 
-mountains, smoke rising from it in a curling line.  Above, 
-the path seems to head towards that dark peak piercing the 
-sky.  You notice a few boot-tracks in the earth, seemingly 
+   This ledge overlooks a small path that leads up and
+down from here.  Below, you see the path head down to a
+large flat area where a small cottage lies nestled in the
+mountains, smoke rising from it in a curling line.  Above,
+the path seems to head towards that dark peak piercing the
+sky.  You notice a few boot-tracks in the earth, seemingly
 to lead down towards the cottage.
 ~
 33 0 0 0 0 4
@@ -1234,11 +1234,11 @@ D5
 S
 #3361
 Outside Of A Cottage~
-   Now that you approach closer to the cottage, you notice 
-that the smoke is not coming from the chimney, but rather 
-the gutted ruins of the building.  Something torched this 
+   Now that you approach closer to the cottage, you notice
+that the smoke is not coming from the chimney, but rather
+the gutted ruins of the building.  Something torched this
 place, badly.  You see no signs of life among the wreckage.
-You can enter one of the particularly large holes in the 
+You can enter one of the particularly large holes in the
 wall to the west, with caution.
 ~
 33 0 0 0 0 4
@@ -1253,11 +1253,11 @@ D4
 S
 #3362
 The Torched Cottage~
-   This whole place is smouldering still from whatever 
-decided to try to burn it to the ground.  On the floor 
-near the center of the ruined structure is the burnt and 
-dessicated corpse of a man, outstretched and blackened.  
-There's not much to see here; whatever decided to destroy 
+   This whole place is smouldering still from whatever
+decided to try to burn it to the ground.  On the floor
+near the center of the ruined structure is the burnt and
+dessicated corpse of a man, outstretched and blackened.
+There's not much to see here; whatever decided to destroy
 this place did it very well.
 ~
 33 0 0 0 0 1
@@ -1268,12 +1268,12 @@ D1
 S
 #3363
 A Mountain Trail~
-   This mountain trail leads straight up into the evil 
-looking mountains.  High above you, one mountain peak 
-seems to radiate danger and fear, and the trail seems 
-to be leading straight up to it.  You wonder if it is 
+   This mountain trail leads straight up into the evil
+looking mountains.  High above you, one mountain peak
+seems to radiate danger and fear, and the trail seems
+to be leading straight up to it.  You wonder if it is
 wise to continue this way...
-   The trail goes even higher up to the west, and back 
+   The trail goes even higher up to the west, and back
 down to the west.
 ~
 33 0 0 0 0 5
@@ -1291,7 +1291,7 @@ A Mountain Trail~
    The trail leads up even higher into the mountains to the
 west here.  You shiver as the cold mountain air washes over
 you, and your back prickles as you wonder if anything lives
-up here, or anything _dangerous_ for that matter.  Maybe 
+up here, or anything _dangerous_ for that matter.  Maybe
 heading back down to the east would be a good idea...
 ~
 33 0 0 0 0 5
@@ -1306,9 +1306,9 @@ D3
 S
 #3365
 A Mountain Trail~
-   The trail leads up the side of the tallest mountain in 
+   The trail leads up the side of the tallest mountain in
 the range -- the one that sticks up into the dark sky like
-a monument to death and futility.  The trail leads back to 
+a monument to death and futility.  The trail leads back to
 safety to the east, and goes even higher to the west.
 ~
 33 0 0 0 0 5
@@ -1323,11 +1323,11 @@ D3
 S
 #3366
 Near The Peak~
-   This is as close to the peak as you're going to get, 
-unless you use that tiny, tiny path leading up to your 
-north.  Up the side of the mountain you see a great cave 
-hollowed out, the inside pitch black.  The path leads down 
-the mountains to your east, which seems to be the best 
+   This is as close to the peak as you're going to get,
+unless you use that tiny, tiny path leading up to your
+north.  Up the side of the mountain you see a great cave
+hollowed out, the inside pitch black.  The path leads down
+the mountains to your east, which seems to be the best
 place to go.
 ~
 33 576 0 0 0 5
@@ -1342,9 +1342,9 @@ D1
 S
 #3367
 A Small, Dangerous Path~
-   This path leads up, up, up the side of the mountain, to 
-the evil-seeming cave.  It also heads down to the south--a 
-lot safer place to be.  In fact, you hear footsteps above 
+   This path leads up, up, up the side of the mountain, to
+the evil-seeming cave.  It also heads down to the south--a
+lot safer place to be.  In fact, you hear footsteps above
 your head...
 ~
 33 576 0 0 0 5
@@ -1359,10 +1359,10 @@ D4
 S
 #3368
 A Small, Dangerous Path~
-   Unfortunately, you realize too late that this bigger 
-ledge that leads north to the darkened cave is an ideal 
-spot for an ambush.  This ledge gives you a beautiful 
-panoramic view of the entire mountain range, however.  
+   Unfortunately, you realize too late that this bigger
+ledge that leads north to the darkened cave is an ideal
+spot for an ambush.  This ledge gives you a beautiful
+panoramic view of the entire mountain range, however.
 Breathtaking!
 ~
 33 576 0 0 0 5
@@ -1378,9 +1378,9 @@ S
 #3369
 The Cave Entrance~
    You are standing in the entrance of a simply huge cave!
-The size is stunning!  All around the entrance are burnt 
-bones and various types of wooden and metal debris.  Giant 
-claw marks are all along the ground, leading back deeper 
+The size is stunning!  All around the entrance are burnt
+bones and various types of wooden and metal debris.  Giant
+claw marks are all along the ground, leading back deeper
 into the cave.
    Two tunnels lead off from here, one up, one down.  There
 are claw marks leading in either direction.
@@ -1401,9 +1401,9 @@ D5
 S
 #3370
 A Sloping Tunnel~
-   The tunnels slopes up to the north deeper into the 
-mountain.  A rather gusty breeze riffles your clothing 
-from ahead somewhere.  The claw marks in the stone floor 
+   The tunnels slopes up to the north deeper into the
+mountain.  A rather gusty breeze riffles your clothing
+from ahead somewhere.  The claw marks in the stone floor
 continue up the passage, through the darkness.
 ~
 33 585 0 0 0 0
@@ -1418,10 +1418,10 @@ D5
 S
 #3371
 A Sloping Tunnel~
-   The tunnel continues its slope upwards, and the wind 
-blows at you even stronger yet.  The claw tracks in the 
+   The tunnel continues its slope upwards, and the wind
+blows at you even stronger yet.  The claw tracks in the
 stone stop abruptly here, where there seems to be a lot
-of unearthed dirt and stone around, heaped upon the floor.  
+of unearthed dirt and stone around, heaped upon the floor.
 You feel uneasy about this place.
 ~
 33 585 0 0 0 4
@@ -1435,7 +1435,7 @@ D2
 0 -1 3370
 E
 dirt stone~
-   It has been dug from somewhere, but where?  
+   It has been dug from somewhere, but where?
 ~
 E
 claw claws track tracks mark marks~
@@ -1444,13 +1444,13 @@ claw claws track tracks mark marks~
 E
 floor~
    The floor up ahead looks...  Strange.  You don't think going ahead would be a
-good idea.  
+good idea.
 ~
 S
 #3372
 The Pit~
    You fall through the illusionary floor.
- 
+
    You hit the poisoned spikes below.
 ~
 33 76 0 0 0 0
@@ -1459,9 +1459,9 @@ T 3300
 #3373
 A Sloping Tunnel~
    This tunnel slopes deep, down into the mountain's heart.
-The air feels still and uncomfortably warm, despite the 
-closeness of the cave's entrance above you.  There's a 
-deep, musky odor in the air, and the giant claw marks 
+The air feels still and uncomfortably warm, despite the
+closeness of the cave's entrance above you.  There's a
+deep, musky odor in the air, and the giant claw marks
 continue downwards.
 ~
 33 585 0 0 0 4
@@ -1476,12 +1476,12 @@ D5
 S
 #3374
 A Sloping Tunnel~
-   A bright light greets your eyes from the north, in 
-direct contrast to the darkness of the tunnel overhead.  
-You break  out in a sweat due to the overwhelming warmth 
-of the air.  The musky odor has grown quite intense, 
-drowning out everything else in the air and making it hard 
-to breathe.  Something in your gut begins squirming 
+   A bright light greets your eyes from the north, in
+direct contrast to the darkness of the tunnel overhead.
+You break  out in a sweat due to the overwhelming warmth
+of the air.  The musky odor has grown quite intense,
+drowning out everything else in the air and making it hard
+to breathe.  Something in your gut begins squirming
 uncomfortably as you wonder what's ahead...
 ~
 33 585 0 0 0 4
@@ -1496,12 +1496,12 @@ D4
 S
 #3375
 The Lair~
-   This place is huge!!!  It should be considering the 
-dragon's great bulk.  However, instead of seeing the 
-customary carnage and mound of gold that one is accustomed 
-to seeing in a dragon lair, this one is decorated subtly 
-with tapestries and drapes, and other comforts of human 
-life.  There is even a huge-dragon sized bed -- undoubtedly 
+   This place is huge!!!  It should be considering the
+dragon's great bulk.  However, instead of seeing the
+customary carnage and mound of gold that one is accustomed
+to seeing in a dragon lair, this one is decorated subtly
+with tapestries and drapes, and other comforts of human
+life.  There is even a huge-dragon sized bed -- undoubtedly
 conjured to life by its elder dragon owner.
 ~
 33 584 0 0 0 4

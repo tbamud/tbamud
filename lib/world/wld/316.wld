@@ -5,7 +5,7 @@ just east of you.  The air seems charged with magic and friction.  It makes your
 palms want to sweat, makes your pulse race.  All the hubbub and noise from the
 city has been swallowed up by the tall gray walled buildings which now surround
 you.  You may continue west into the guild area or head east back into the
-business district.  
+business district.
 ~
 316 8 0 0 0 0
 D1
@@ -29,7 +29,7 @@ Guild Area~
    North Street continues to run west into the Guild Area, the strange feeling
 of power and vitality washing over you strong as ever.  A huge stone edifice
 rises to your south, one which must be at least four stories in height.  To the
-east, the street heads toward the business district.  
+east, the street heads toward the business district.
 ~
 316 0 0 0 0 0
 D1
@@ -45,7 +45,7 @@ S
 Guild Area~
    North Street head backs west, curving south almost immediately.  To the north
 and south are the walls of buildings whose purpose is unknown.  You may head
-toward the business district to the east.  
+toward the business district to the east.
 ~
 316 0 0 0 0 0
 D1
@@ -59,9 +59,9 @@ D3
 S
 #31603
 Dead End to North Street~
-   North Street ends here, however two alleys run off to the north and south.  
+   North Street ends here, however two alleys run off to the north and south.
 To the north, the alley seems a bit small, the way a bit tight.  To the south,
-the alley is almost the same width as North Street.  
+the alley is almost the same width as North Street.
 ~
 316 0 0 0 0 0
 D0
@@ -83,7 +83,7 @@ Mage Area~
 arcane energies, the forces of good and evil magic strongly at work here.  You
 may continue further into the Mage Area or go south, leaving it.  To the east
 and west are low stone buildings, no signs of any sort proclaiming their
-function.  
+function.
 ~
 316 0 0 0 0 0
 D0
@@ -107,7 +107,7 @@ S
 Potions~
    These potions are those made by mages for mages.  Some will help to aid the
 common user, one who may not be a mage, but be warned, some have some very
-harmful side affects.  
+harmful side affects.
 ~
 316 0 0 0 0 0
 D3
@@ -119,7 +119,7 @@ S
 Scrolls~
    These powerful scrolls help to manipulate the forces of magic which a mage
 commands.  The withered old man who stands here tending shop looks with a
-disdainful eye upon you, as if you could never reach his standards.  
+disdainful eye upon you, as if you could never reach his standards.
 ~
 316 8 0 0 0 0
 D1
@@ -129,9 +129,9 @@ D1
 S
 #31607
 Mage Weapons~
-   The weapons for sale in this shop are made exclusively for mages by mages.  
+   The weapons for sale in this shop are made exclusively for mages by mages.
 These weapons will not be of any use to any other class.  Rows of weapons lay
-neatly stacked along the walls and on shelves.  The exit is to the east.  
+neatly stacked along the walls and on shelves.  The exit is to the east.
 ~
 316 8 0 0 0 0
 D1
@@ -144,7 +144,7 @@ End of the Alley~
    The alley ends here, the only direction you may go is south.  The closed
 doors of low stone buildings lay to the east, west, and north however what lies
 inside those buildings is a mystery.  One thing is for sure, they certainly do
-not look inviting.  
+not look inviting.
 ~
 316 8 0 0 0 0
 D0
@@ -168,7 +168,7 @@ S
 Mage Board Room~
    Any messages between mages can be left here on the board and will received at
 any mage guild throughout the land.  The guild for the mages lies directly east
-of here or you may leave to the west.  
+of here or you may leave to the west.
 ~
 316 8 0 0 0 0
 D1
@@ -182,9 +182,9 @@ D3
 S
 #31610
 Robes and Armor~
-   This is where a mage may buy armor specifically tailored for him or her.  
+   This is where a mage may buy armor specifically tailored for him or her.
 The walls are lined with racks from which robes and leather armor hang.  You may
-exit to the south.  
+exit to the south.
 ~
 316 8 0 0 0 0
 D2
@@ -196,7 +196,7 @@ S
 Mage Guild~
    Here one may practice any spells that may need practicing or train skills to
 perfection.  The guildmaster is always free to lend a helpinh hang that just may
-lift you to the next level.  
+lift you to the next level.
 ~
 316 8 0 0 0 0
 D3
@@ -232,7 +232,7 @@ West Alley~
 side.  The hush that seems characteristic of this place only makes the feeling
 of power that much more mysterious and exciting.  You almost find yourself
 holding your breath, afraid to look in any passer-by's eye, afraid you may laugh
-aloud.  
+aloud.
 ~
 316 0 0 0 0 0
 D0
@@ -249,7 +249,7 @@ West Alley~
    The alley still runs north and south, however there is a small dirt path
 leading between two stone buildings west from here.  The hushed reverence all
 around makes this whole section of town seem mysterious and thrilling, almost as
-if you should be thanking someone for their allowing you to be here.  
+if you should be thanking someone for their allowing you to be here.
 ~
 316 0 0 0 0 0
 D0
@@ -286,7 +286,7 @@ Dirt Path~
    The dull gray buildings are gone now, replaced with a grassy field of wild
 flowers and trees.  Butterflies flit about you, and the smell is that of the
 open sea.  Just west of here, the trail leads to a beautiful grove, while east
-leads back into the dark grayness of the Guild Area.  
+leads back into the dark grayness of the Guild Area.
 ~
 316 0 0 0 0 0
 D1
@@ -305,7 +305,7 @@ and enjoy, perches directly on the edge of the plateau which McGintey Cove rests
 upon.  Looking west, all you can see is the beautiful shoreline following the
 curve of the Cove which the town is nestled in.  To the south is a large tree
 with a board of some sort affixed to it, and to the east leads the way back into
-the main Guild Area.  
+the main Guild Area.
 ~
 316 0 0 0 0 0
 D1
@@ -323,7 +323,7 @@ The Old Oak~
 Rangers in McGintey Cove.  This tree looks as if it may be as old as the world
 you stand upon, so huge and impressive is it's girth and height.  Why, a single
 one of it's branches in the upper reaches is easily as big as your waist and
-then some!  
+then some!
 ~
 316 16 0 0 0 0
 D0
@@ -338,9 +338,9 @@ S
 #31619
 Ranger Guild Room~
    More of a park than a Guild, this small plot of well tended land serves as
-the training and advancement center for the Ranger Guild in McGintey Cove.  
+the training and advancement center for the Ranger Guild in McGintey Cove.
 Instructors work with trainees all around you, teaching various skills and
-techniques.  
+techniques.
 ~
 316 16 0 0 0 0
 D0
@@ -352,7 +352,7 @@ S
 Back Street~
    The way through this 'street' - actually more of an alley - is quite narrow,
 grimy, and dark.  East from here you can see a faint trickle of light and
-another road.  To the west it only gets darker, looking quite unappealing.  
+another road.  To the west it only gets darker, looking quite unappealing.
 ~
 316 1 0 0 0 0
 D1
@@ -366,7 +366,7 @@ D3
 S
 #31621
 Back Street~
-   The alley ends here, seeming to lead nowhere except back the way you came.  
+   The alley ends here, seeming to lead nowhere except back the way you came.
 As you scan the walls surrounding you, you can't help but feel as if maybe
 someone is watching your every move, however it is too dark for you to be sure.
 ~
@@ -407,7 +407,7 @@ Board Room~
    It looks more like a band of street punks got to this room, rather than a
 group of professional thieves.  What passes for the board is the western wall
 which is made of brick and covered in scrawlings from the many thieves who
-frequent this guild.  The guild and training area is directly north of you.  
+frequent this guild.  The guild and training area is directly north of you.
 ~
 316 4 0 0 0 0
 D0
@@ -422,11 +422,11 @@ S
 #31624
 Thieve's Guild~
    This room, set in the back room of looks to have been a small warehouse at
-one time, is the resting and training place of the Thieves in McGintey Cove.  
+one time, is the resting and training place of the Thieves in McGintey Cove.
 Cots are thrown haphazardly in all corners of this room.  Obviously, many of the
-thieves in McGintey Cove cannot afford their own homes and bunk here instead.  
+thieves in McGintey Cove cannot afford their own homes and bunk here instead.
 Better watch your wallet, some sneaky associate of yours just may decide to try
-some 'practice training' on it.  
+some 'practice training' on it.
 ~
 316 0 0 0 0 0
 D2
@@ -441,7 +441,7 @@ surrounded by enemies.  As you get deeper into the room, you feel the fabric of
 someone's sleeve brush you.  Whirling around and grabbing the sleeve, you
 realize it is an empty jacket hanging on a hook.  Feeling your way around the
 room, you find that there are wearables hanging all around.  A low voice rumbles
-out of the darkness.  
+out of the darkness.
 ~
 316 8 0 0 0 0
 D1
@@ -459,7 +459,7 @@ guardsmen stand on either side of the door leading into the building, arms
 crossed.  To the east the road continues, leading the way to a HUGE building,
 one who's girth you can only imagine, being that you can only see a fraction of
 it from between the buildings you currently stand between.  West is the way out
-of the Warrior Guild's area into the West Alley.  
+of the Warrior Guild's area into the West Alley.
 ~
 316 0 0 0 0 0
 D0
@@ -486,7 +486,7 @@ board room for the Warrior Guild in McGintey Cove.  Very atypical of this class,
 the men and women who congregate here seem almost nervous as they stretch out or
 concentrate on whatever skills they will be attempting to learn in the arena
 which is the Warrior's Guild in this town.  Just south of you is the guild room,
-north is the exit to the outside.  
+north is the exit to the outside.
 ~
 316 24 0 0 0 0
 D0
@@ -503,7 +503,7 @@ Warrior's Guild - Arena~
    This huge arena turned practice and advancement station is rumored to be the
 best and most thorough training guild for Warriors in Dibrova.  The numbers of
 trainers to the number of trainees is almost double, a rarity for most guilds.
-You may exit to the north when you have finished.  
+You may exit to the north when you have finished.
 ~
 316 24 0 0 0 0
 D0
@@ -519,7 +519,7 @@ that you had best duck, as a chair goes flying past your head, just inches from
 your right ear!  This flying chair is, of course, accompanied by drunken
 laughter and calls of 'Newbie!  ' and 'Incoming!  '.  This chair throwing must
 be a ritual here at the Broken Spleen.  How quaint.  The exit is just south of
-you.  
+you.
 ~
 316 8 0 0 0 0
 D2
@@ -531,7 +531,7 @@ S
 The Warrior's Boutique~
    This little store sells an assortment of deadly implements used by the
 warrior class to wreak havoc amongst their many enemies.  The exit lies to the
-east.  
+east.
 ~
 316 8 0 0 0 0
 D1
@@ -557,7 +557,7 @@ Warrior Way~
    The road ends here in a small court which allows access to two small stone
 buildings, one west and one north of you.  The mammoth wall of the Gladiator Pit
 runs along on your east, the clashes, clangs, and cries coming faintly to your
-ears from within.  
+ears from within.
 ~
 316 0 0 0 0 0
 D0
@@ -578,7 +578,7 @@ Warrior Way~
    The road runs north to a small court surrounded by stone buildings.  To the
 south the road heads into an intersection in front of the main entrance to the
 enormous Gladiator Pit.  To the east and west you are hemmed in by the gray
-stone walls of buildings owned by the Warrior Guild.  
+stone walls of buildings owned by the Warrior Guild.
 ~
 316 0 0 0 0 0
 D0
@@ -592,10 +592,10 @@ D2
 S
 #31634
 Spectator Balcony~
-   From this vantage point you can see the entire Pit spread out below you.  
+   From this vantage point you can see the entire Pit spread out below you.
 Every punch, every kick, every stab and pierce can be seen from this point.  A
 sign hangs on the wall, explaining the rules for placing wagers on the fights
-which ensue below.  
+which ensue below.
 ~
 316 8 0 0 0 0
 D5
@@ -608,7 +608,7 @@ Gladiator Pit - Center~
    You stand at the center of a huge dirt floored arena.  All around you are
 rows and rows of screaming spectators, seated in the bleachers which climb the
 upward slope of the arena wall.  You may move in any cardinal direction in
-attempt to find and vanquish your opponent.  
+attempt to find and vanquish your opponent.
 ~
 316 64 0 0 0 0
 D3
@@ -621,7 +621,7 @@ The Pit~
    In this room, one may pay to enter into mortal combat with another combatant
 of equal stature.  Screams from spectators and cries of pain from the combatants
 accompanied by the clash of steel reaches your ears from the arena, which lies
-directly east from here.  
+directly east from here.
 ~
 316 8 0 0 0 0
 D1
@@ -644,7 +644,7 @@ course west back toward the entrance to this guild.  In front of you is the
 arched entrance to a huge arena, one whose rounded walls tower above you a good
 five or six stories.  From inside you hear the catcalls and screams from all who
 watch the fights, and also the clanging and clashing of steel from all those who
-battle.  
+battle.
 ~
 316 0 0 0 0 0
 D0
@@ -668,7 +668,7 @@ S
 Warrior Way~
    The road runs south toward a small court where two low stone buildings stand
 to the west and south.  To the north the road heads into the main intersection
-of Warrior Way where one may enter into the gladiator pit if desired.  
+of Warrior Way where one may enter into the gladiator pit if desired.
 ~
 316 0 0 0 0 0
 D0
@@ -685,7 +685,7 @@ Warrior Way~
    The road heads farther south, ending in a small court.  To the north is the
 way leading to the main intersection of Warrior Way.  On your east is the huge
 rounded wall of the Gladiator Pit, it's enormous bulk still amazing to you, even
-though you stand beside it.  
+though you stand beside it.
 ~
 316 0 0 0 0 0
 D0
@@ -701,7 +701,7 @@ S
 Shield 'n' Helms~
    This small shop sells exactly what it proclaims to sell, helms and shields.
 The goods may be browsed at your leisure.  A permanet employee of the Guild
-always stands at attention to help with your purchase.  
+always stands at attention to help with your purchase.
 ~
 316 0 0 0 0 0
 D1
@@ -713,7 +713,7 @@ S
 Warrior Way~
    This small court is home to two small stone buildings, one west and one south
 of here.  The road heads north from here, running along the west wall of the
-gladiator pit toward it's entrance.  
+gladiator pit toward it's entrance.
 ~
 316 0 0 0 0 0
 D0
@@ -733,7 +733,7 @@ S
 Body Armor~
    Racks of armor, both full bodied and upper torso are scattered all through
 the shop.  A permanent member of the warrior guild is here to serve you as your
-needs demand.  
+needs demand.
 ~
 316 8 0 0 0 0
 D0
@@ -746,7 +746,7 @@ West Alley~
    This dark, dripping alleyway leads south toward the many guilds housed in
 this district.  To the north lies much of the same, with a section heading off
 east into the warrior guild.  To the west is the entrance to the Paladin's
-Guild, a strong sense of power and devotion radiating from its entrance.  
+Guild, a strong sense of power and devotion radiating from its entrance.
 ~
 316 0 0 0 0 0
 D0
@@ -766,7 +766,7 @@ S
 West Alley~
    The alley heads north and south, the cold, dark grey walls of stone buildings
 surrounding you on every side.  Just south of you lies an offshoot of the main
-alleyway which heads west into the cleric's guild.  
+alleyway which heads west into the cleric's guild.
 ~
 316 0 0 0 0 0
 D0
@@ -784,9 +784,9 @@ West Alley~
 dreary and dismal.  To the west is a small cobbled path leading into the
 cleric's guild.  That path looks as if it may be the only part of this district
 that is not only maintained, but cheerful as well.  The cobblestones which line
-the path are scrubbed almost white, the walls of the buildings white stucco.  
+the path are scrubbed almost white, the walls of the buildings white stucco.
 You feel that even someone who is not a cleric may be drawn to this part of the
-district just to escape the grey monotony everywhere else.  
+district just to escape the grey monotony everywhere else.
 ~
 316 0 0 0 0 0
 D0
@@ -809,7 +809,7 @@ Obviously the clerics who belong to this guild take great pride in their place
 here in McGintey Cove.  Just north of you is a large marble temple with huge
 oaken double doors in front.  This temple must be the main guild housing for
 this guild.  The path heads west into more of the cleric's area or east out into
-the West Alley.  
+the West Alley.
 ~
 316 0 0 0 0 0
 D0
@@ -829,7 +829,7 @@ S
 Sitting Room~
    This large, ornate room is laden with plush couches, comfortable easy chairs
 and food free for the taking.  To the north is the entrance to the main practice
-and meditation area, south is the exit out to the God's Path.  
+and meditation area, south is the exit out to the God's Path.
 ~
 316 8 0 0 0 0
 D0
@@ -845,7 +845,7 @@ S
 Meditation and Advancement~
    A large altar rests near the far northern wall of this temple.  Small pads of
 cloth line the eastern wall where many of your class pray and meditate,
-searching for advancement and enlightenment.  You may exit to the south.  
+searching for advancement and enlightenment.  You may exit to the south.
 ~
 316 0 0 0 0 0
 D2
@@ -858,7 +858,7 @@ The God's Path~
    With the temple wall still to the north of you, the path heads west into a
 broad court surrounded by white stucco buildings.  Directly south of you is
 another such building, the entranceway wide open and inviting.  To the east the
-path heads out past the temple entrance into the West Alley.  
+path heads out past the temple entrance into the West Alley.
 ~
 316 0 0 0 0 0
 D1
@@ -878,7 +878,7 @@ S
 The God's Court~
    This large allows entrance to any of three white stucco buildings which lie
 north, south, and west of you.  You may exit to the east toward the temple and
-West Alley.  
+West Alley.
 ~
 316 0 0 0 0 0
 D0
@@ -902,7 +902,7 @@ S
 Robes~
    This quiet room has a small wooden desk sitting at the north end, a monk from
 the guild seated serenely behind it.  On the east and west walls are lines of
-robes hung in an extremely orderly fashion.  
+robes hung in an extremely orderly fashion.
 ~
 316 8 0 0 0 0
 D2
@@ -914,7 +914,7 @@ S
 Holy Relics~
    Small wooden stands spread throughout the room hold trinkets, baubles, and
 wearables, all for sale.  A monk from the guild wanders about the room, helping
-those in need of assistance.  
+those in need of assistance.
 ~
 316 8 0 0 0 0
 D1
@@ -925,7 +925,7 @@ S
 #31653
 Books of the Gods~
    Small wooden bookshelves line the east, west, and south walls of this room,
-all spotlessly clean and filled with books of all shapes and sizes.  
+all spotlessly clean and filled with books of all shapes and sizes.
 ~
 316 0 0 0 0 0
 D0
@@ -938,7 +938,7 @@ Holy Weapons~
    Although physical battle is not condoned by the guild, it is realized that in
 this day and age every man or woman must need defend themselves at some time or
 another.  Hence this small shop dedicated to those weapons deemed fit to be
-wield by a cleric in Dibrova.  
+wield by a cleric in Dibrova.
 ~
 316 8 0 0 0 0
 D0
@@ -951,7 +951,7 @@ West Alley~
    The alley heads north deep into the guild area for McGintey Cove, the gray
 walls of guild-owned buildings surrounding the way ahead.  To the south is the
 intersection of the Alley and South St, the road leading east into the business
-district of McGintey Cove.  
+district of McGintey Cove.
 ~
 316 0 0 0 0 0
 D0
@@ -969,7 +969,7 @@ South Street~
 is the dark, grey walled alley which heads deep into the guild area.  East, the
 way gets a bit lighter as it heads it's way back toward the main business
 district of McGintey Cove.  To the south the alley heads into a shadowed
-section, one which must be the Assassin's Guild area.  
+section, one which must be the Assassin's Guild area.
 ~
 316 0 0 0 0 0
 D0
@@ -993,7 +993,7 @@ around these deadly beings.  To the west is a tall, slender door leading into
 the main guild room, where deathknights practice to advance themselves.  To the
 east is a door leading into a very small building, one which gives you a
 decidedly uneasy feeling.  South is the end of West Alley and north leads the
-way out of the Deathknight's Guild.  
+way out of the Deathknight's Guild.
 ~
 316 0 0 0 0 0
 D0
@@ -1015,7 +1015,7 @@ Deathknight's Board Room~
 those who wish to relax in the comfort of their guild.  Glass display cases hold
 an array of weapons along the walls, many of which considered antique by today's
 standards of assassination.  To the west is the entrance to the training and
-advancement room.  East leads out to West Alley.  
+advancement room.  East leads out to West Alley.
 ~
 316 8 0 0 0 0
 D1
@@ -1029,7 +1029,7 @@ D3
 S
 #31659
 Guild Room~
-   You are all alone in a completely darkened room...  Or so you think.  
+   You are all alone in a completely darkened room...  Or so you think.
 ~
 316 25 0 0 0 0
 D1
@@ -1040,7 +1040,7 @@ S
 #31660
 Dark Wearables~
    All manner of clothing, cloakwear, and hoods are for sale in this shop.  All
-wearables sold here are to aid the deathknight in his/her profession.  
+wearables sold here are to aid the deathknight in his/her profession.
 ~
 316 8 0 0 0 0
 D1
@@ -1051,7 +1051,7 @@ S
 #31661
 South Dead End to West Alley~
    This seems to be the end of the way.  Doors lead off to the east, west, and
-south.  The alley heads north.  Watch your step.  
+south.  The alley heads north.  Watch your step.
 ~
 316 0 0 0 0 0
 D0
@@ -1072,7 +1072,7 @@ Paladin Row~
    The whole area strikes you as clean and well-organized as soon as you enter.
 With all the gray building and their lack of color out in the main guild area,
 this place is a stark contrast indeed.  The alley continues west, with a door to
-the north leading into a small tavern.  
+the north leading into a small tavern.
 ~
 316 0 0 0 0 0
 D1
@@ -1088,7 +1088,7 @@ S
 Weapons of Choice~
    All weapons sold here are made specifically for the lethal and many times
 secretive killing arts.  Browse and be merry, but remember, they are not cheap
-for a reason!  
+for a reason!
 ~
 316 8 0 0 0 0
 D0
@@ -1100,7 +1100,7 @@ S
 South Street~
    The street, now completely enclosed on the north and south side by grey stone
 walls of guild buildings, leads west to an intersection of some sort, or east
-out into the main business district of McGintey Cove.  
+out into the main business district of McGintey Cove.
 ~
 316 0 0 0 0 0
 D1
@@ -1117,7 +1117,7 @@ South Street~
    The street heads west into the darkened guild area of McGintey, where it
 seems the very air around it carckles with mystical energy and magic.  To the
 east is the main business district of McGintey Cove.  A small, unobtrusive alley
-leads south from here.  
+leads south from here.
 ~
 316 0 0 0 0 0
 D1
@@ -1138,7 +1138,7 @@ South Street~
    The high traffic business area to the east seems almost a memory only as you
 enter into this entirely different section of town.  The wide open expanse that
 was typical of the bazaar and the main streets of town are replaced by tight
-streets with stone walled buildings to either side.  
+streets with stone walled buildings to either side.
 ~
 316 0 0 0 0 0
 D1
@@ -1155,7 +1155,7 @@ West Alley~
    The alley continues to run north and south from here, the gray, dismal walls
 surrounding it unending.  To the east is a wide stretch of cobbled street that
 looks a bit more well travelled than any any of the previous offshoots from this
-alley.  
+alley.
 ~
 316 0 0 0 0 0
 D0
@@ -1176,7 +1176,7 @@ Paladin Row~
    Nothing.  The alley ends just west of here at the entrance to the Guild
 itself.  It appears that a small area in front of the guild has been set up as a
 resting spot for paladins who wish to rest their feet after a day of saving
-innocent women and children.  
+innocent women and children.
 ~
 316 0 0 0 0 0
 D1
@@ -1194,7 +1194,7 @@ Paladin Court~
 and low tables, all for resting and relaxing upon before heading back out into
 the wilds of Dibrova.  To the west is the entrance to the Guild, south is a
 weapon shop and north is an armor shop.  Both shops are maintained by the Guild
-and specialize in Paladin equipment.  
+and specialize in Paladin equipment.
 ~
 316 4 0 0 0 0
 D0
@@ -1220,7 +1220,7 @@ Paladin Board Room~
 Guild where the Master grants level gain by virtue of experience in the field.
 A bulleltin board has been posted on the south wall, a small writing implement
 attached so that anyone who wishes to may post a message to their fellow
-clannies.  
+clannies.
 ~
 316 4 0 0 0 0
 D1
@@ -1239,7 +1239,7 @@ rock that is McGintey Cove today.  It is said that upon this very spot, Amos
 McGintey erected his temporary hideout when hiding from the Ionian Knights who
 plagued the seas back in his day.  Now this ancient has been converted into a
 place of respect and devotion where Paladins may increase their level if so
-desired.  
+desired.
 ~
 316 4 0 0 0 0
 D1
@@ -1252,7 +1252,7 @@ Paladin Outfitters~
    Cloaks and armor, boots and gauntlets all are arrayed in this clean and
 bright room.  The colors of the wearables are all vibrant and catching to the
 eye, signifying the pride of the Paladin and what the class stands for in a
-world ridden with evil and pestilence.  
+world ridden with evil and pestilence.
 ~
 316 0 0 0 0 0
 D2
@@ -1266,7 +1266,7 @@ Weapons of Honor~
 class members may purchase the fine weapons produced here.  Paladins, being a
 very meticulous and demanding class, prefer to make and enchant their own
 weapons rather than import weapons from the dwarven craftsmen or magus weavers.
-Browse these fine weapons, but remember - they are not cheap.  
+Browse these fine weapons, but remember - they are not cheap.
 ~
 316 0 0 0 0 0
 D0
@@ -1279,7 +1279,7 @@ A Quiet Back Street~
    The sounds of the bazaar, the hustle and bustle of all the city-goers all
 seems to get swallowed up by the walls of this alley.  You feel a bit of peace,
 your body begins to relax a bit as you begin down this alley.  You can see that
-it ends just south of here at a small door.  
+it ends just south of here at a small door.
 ~
 316 0 0 0 0 0
 D0
@@ -1296,7 +1296,7 @@ End of a Quiet Back Street~
    You stand before a small door, a very unmentionable place if not for the man
 standing just to side of it - as if guarding it.  Strange that all sounds of the
 city have completely vanished now, though you know that you have no travelled
-that far from the main section.  
+that far from the main section.
 ~
 316 0 0 0 0 0
 D0
@@ -1313,7 +1313,7 @@ Monk Board Room~
    You would almost think that this place were abandoned, so quiet of an air
 persists here.  However, looking south you see the main room and the Guidlmaster
 tutoring his disciples.  The Board for your clan is mounted here - any messages
-you wish to pass along can be passed via this board.  
+you wish to pass along can be passed via this board.
 ~
 316 12 0 0 0 0
 D0
@@ -1329,7 +1329,7 @@ S
 Monk Guild Room~
    There is absolutely nothing at all in this room save for the man who will
 advance you to your next level if you are deemed worthy.  The exit lies to the
-north.  
+north.
 ~
 316 12 0 0 0 0
 D0

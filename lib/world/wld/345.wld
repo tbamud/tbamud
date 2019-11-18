@@ -8,7 +8,7 @@ way through the grounds to on a mini quest to find a piece of eq that will
 modify their strength up by three but lower their wisdom by three when they wear
 it. The quest will have one task that will need to be completed to get the
 piece of eq, but there is a quest just to get into the asylum as well. This is
-all in a modern day time period. 
+all in a modern day time period.
 ~
 345 0 0 0 0 0
 D5
@@ -60,14 +60,14 @@ D2
 E
 plaque sign~
    @Y
-@y 
+@y
 **************************
 *    NEW YORK ASYLUM     *
 *                        *
-*        FOR THE         *              
-*                        * 
+*        FOR THE         *
+*                        *
 *   CRIMINALLY INSANE    *
-************************** @n                  
+************************** @n
 ~
 E
 iron gate~
@@ -78,7 +78,7 @@ S
 #34503
 A Broken Road~
    The road seems to be in disrepair here. It doesn't look like it gets much
-better to the north. To the south the road is so bad that its not usable. 
+better to the north. To the south the road is so bad that its not usable.
 Your view to the east is blocked by a large vine covered wall.
 ~
 345 0 0 0 0 1
@@ -150,7 +150,7 @@ At the Doors~
 their age. While not yet falling out, it looks as if a strong wind could
 collapse the whole wall. To the south there appears to be headstones, with
 someone moving in among them... Or it could just be the swirling fog playing
-tricks. 
+tricks.
 ~
 345 4 0 0 0 4
 D1
@@ -166,9 +166,9 @@ S
 #34507
 A Well Worn Path~
    The fog turns and swirls here, creating shapes and images of a most horrific
-nature. A black wrought iron fence with a gate leads to a path to the south. 
+nature. A black wrought iron fence with a gate leads to a path to the south.
 Northeast is a large building in disrepair. Faintly to west, you can make out a
-high wall. 
+high wall.
 ~
 345 4 0 0 0 2
 D0
@@ -786,7 +786,7 @@ Second Floor Landing~
 seems to be in better upkeep. Strange since no one is suppose to be living or
 working in the building. This area looks as if it was kept up better and looks
 nicer than the rest of the building. There is a room to the east and a hallway
-that runs from north to south. 
+that runs from north to south.
 ~
 345 8 0 0 0 0
 D0
@@ -844,7 +844,7 @@ door west~
 S
 #34537
 A Green Office~
-   This room has the look of a an office. The over all color is green. 
+   This room has the look of a an office. The over all color is green.
 Everything about this room seems to reflect that from the carpet to the window
 curtains to other varies odds and ends that adorn the room. There is an old
 wooden desk dominating the center of the room and a filing cabinet in one

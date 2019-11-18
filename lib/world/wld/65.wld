@@ -1,7 +1,7 @@
 #6500
 The Path To The Dwarven Village~
    You are walking down a path that leads to the dwarven village.  Above
-you, you can see the Turning Point, and to the north the path continues 
+you, you can see the Turning Point, and to the north the path continues
 toward the mountains.
 ~
 65 4 0 0 0 2
@@ -76,7 +76,7 @@ S
 #6504
 The Narrow Path~
    This is a narrow path leading to the Dwarven Kingdom.  It looks less
-travelled than the others, and it is very creepy.  The path opens up to 
+travelled than the others, and it is very creepy.  The path opens up to
 the south, and continues to the north.
 ~
 65 8 0 0 0 0
@@ -108,7 +108,7 @@ S
 A Bend In The Narrow Path~
    This is a narrow path that bends to the east here.  The trees hang over the
 path, and it is very overgrown.  The narrow path continues to the south and to
-the east.  
+the east.
 ~
 65 8 0 0 0 0
 D1
@@ -121,7 +121,7 @@ D2
 0 -1 6504
 E
 tree trees~
-   They hang over the road in the most ominous of ways.  
+   They hang over the road in the most ominous of ways.
 ~
 S
 #6507
@@ -206,7 +206,7 @@ D2
 S
 #6512
 The Door To The Castle~
-   Here there is a door to the castle to the east.  The castle is 
+   Here there is a door to the castle to the east.  The castle is
 elegantly designed, and looks much like a roll of toilet paper
 standing  on its end.  There is a sign which says:
               ******************************************
@@ -294,7 +294,7 @@ D1
 S
 #6517
 The Path To The North Of The Shop~
-   You are on a path to the north of the Hide & Tooth shop.  The path 
+   You are on a path to the north of the Hide & Tooth shop.  The path
 continues to the north, and there is Granite Head's bakery to the west.
 ~
 65 8 0 0 0 0
@@ -361,7 +361,7 @@ D3
 S
 #6521
 The Entrance To The Barracks~
-   Here there is an entrance to the barracks to the south, and the path 
+   Here there is an entrance to the barracks to the south, and the path
 continues to the west.
 ~
 65 8 0 0 0 0
@@ -376,7 +376,7 @@ D3
 S
 #6522
 A Guard House~
-   You are in the guard house to the west of the entrance to the castle.  
+   You are in the guard house to the west of the entrance to the castle.
 There are nudie posters covering the walls.
 ~
 65 8 0 0 0 0
@@ -386,7 +386,7 @@ D1
 0 -1 6509
 E
 poster~
-   There is a wall poster of a nude Minne Pearl.  
+   There is a wall poster of a nude Minne Pearl.
 ~
 S
 #6523
@@ -406,7 +406,7 @@ D2
 S
 #6524
 The Back Of The Barracks~
-   Here is the back of the dwarven barracks.  There are rows of beds 
+   Here is the back of the dwarven barracks.  There are rows of beds
 here, and there is a stench that is unbearable.
 ~
 65 8 0 0 0 0
@@ -449,7 +449,7 @@ trapdoor~
 1 -1 6527
 E
 floor dust~
-   After blowing all the dust off the floor, you notice a trapdoor!  
+   After blowing all the dust off the floor, you notice a trapdoor!
 ~
 S
 #6527
@@ -793,7 +793,7 @@ S
 #6551
 The Mining Equipment Room~
    This is the storage room for equipment used by the Dwarven miners.
-It is very small, and you can tell that not many miners actually use 
+It is very small, and you can tell that not many miners actually use
 equipment.
 ~
 65 9 0 0 0 0

@@ -4,7 +4,7 @@ the dwarf guard~
 A dwarven guard is here.
 ~
    The guard looks very tough and mean.  He wears his beard long, and he smells
-like he hasn't bathed in over a month.  
+like he hasn't bathed in over a month.
 ~
 6154 0 0 0 16 0 0 0 1000 E
 21 13 -2 4d4+210 3d3+3
@@ -17,7 +17,7 @@ worker dwarf dwarven~
 the dwarf worker~
 A dwarven mining worker is here.
 ~
-   He is very dirty, and looks extremely over-worked.  
+   He is very dirty, and looks extremely over-worked.
 ~
 6216 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
@@ -29,7 +29,7 @@ wraith~
 the wraith~
 A wraith is awaiting your first move here.
 ~
-   A black, almost transparent wraith.  
+   A black, almost transparent wraith.
 ~
 188458 0 0 0 80 0 0 0 -900 E
 25 12 -5 5d5+250 4d4+4
@@ -42,7 +42,7 @@ storekeeper~
 the Hide & Tooth storekeeper~
 The Hide & Tooth storekeeper is standing here, waiting patiently.
 ~
-   The storekeeper is very rotund, but looks in excellent condition.  
+   The storekeeper is very rotund, but looks in excellent condition.
 ~
 6154 0 0 0 16 0 0 0 1000 E
 33 15 -9 6d6+330 5d5+5
@@ -54,7 +54,7 @@ baker granite head~
 Granite Head the baker~
 Granite Head, the baker, is waiting for a customer here.
 ~
-   Granite Head is covered with flour and grains.  
+   Granite Head is covered with flour and grains.
 ~
 6154 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5
@@ -67,7 +67,7 @@ the giant lizard~
 A giant lizard is foraging for food along the cavern floor here.
 ~
    This scaly creature looks like it is well adapted to its underground habitat.
-He looks very powerful.  
+He looks very powerful.
 ~
 72 0 0 0 16 0 0 0 100 E
 21 13 -2 4d4+210 3d3+3
@@ -80,7 +80,7 @@ the giant~
 A giant is wandering around the mountainside here.
 ~
    The giant is about 18 feet tall, with arms of steel, and looks in excellent
-physical condition.  
+physical condition.
 ~
 2120 0 0 0 0 0 0 0 600 E
 19 14 -1 3d3+190 3d3+3
@@ -92,7 +92,7 @@ mineworker dwarven dwarf miner worker~
 the dwarven mineworker~
 A dwarven mineworker is here.
 ~
-   The mineworker is very tired, and very dirty, and he has bulging muscles.  
+   The mineworker is very tired, and very dirty, and he has bulging muscles.
 ~
 2058 0 0 0 0 0 0 0 500 E
 4 19 7 0d0+40 1d2+0
@@ -105,7 +105,7 @@ the mine leader~
 A dwarven mine leader is here, supervising the work.
 ~
    The mine leader is very big and very strong, though he must be fairly bright
-also, to have gotten this job.  
+also, to have gotten this job.
 ~
 2058 0 0 0 0 0 0 0 700 E
 19 14 -1 3d3+190 3d3+3
@@ -117,7 +117,7 @@ doctor dwarven healer~
 the dwarven doctor~
 The dwarven doctor is here, aiding the sick of his people.
 ~
-   He is a very skilled healer, and extremely faithful to his god.  
+   He is a very skilled healer, and extremely faithful to his god.
 ~
 2058 0 0 0 16 0 0 0 999 E
 22 13 -3 4d4+220 3d3+3
@@ -131,7 +131,7 @@ the dwarven peon~
 A dwarven peon is awaiting help here.
 ~
    Incapable of doing anything himself this dwarf is utterly lost and is
-awaiting orders.  
+awaiting orders.
 ~
 4106 0 0 0 0 0 0 0 500 E
 3 19 8 0d0+30 1d2+0
@@ -143,7 +143,7 @@ dwarf~
 the Dwarf~
 A dwarf is here.
 ~
-   He is short and stout as their kind is famed to be.  
+   He is short and stout as their kind is famed to be.
 ~
 10 0 0 0 0 0 0 0 500 E
 6 18 6 1d1+60 1d2+1
@@ -155,7 +155,7 @@ guard barrack~
 the barrack guard~
 A barrack guard is here, lounging around while off duty.
 ~
-   This middle aged man seems lost without something to guard.  
+   This middle aged man seems lost without something to guard.
 ~
 4106 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
@@ -167,7 +167,7 @@ mazekeeper keeper~
 the mazekeeper~
 A mazekeeper is here.
 ~
-   He looks VERY tough.  
+   He looks VERY tough.
 ~
 2090 0 0 0 16 0 0 0 -1000 E
 29 11 -7 5d5+290 4d4+4
@@ -182,7 +182,7 @@ There is a giant snake here.
 ~
    The snake is coiled tightly and ready to strike at the first sign of trouble.
 The scaly skin is a mottled brown, black, and grey that blends into the
-surrounding terrain.  
+surrounding terrain.
 ~
 42 0 0 0 0 0 0 0 -1000 E
 33 9 -9 6d6+330 5d5+5

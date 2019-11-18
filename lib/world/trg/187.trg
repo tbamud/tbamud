@@ -6,7 +6,7 @@ if %actor.is_pc%
   if %direction% == north
     say Welcome, %actor.name% come enjoy yourself in our wonderful circus.
   else
-    say Leaving so soon %actor.name%? Hope you enjoyed your visit. 
+    say Leaving so soon %actor.name%? Hope you enjoyed your visit.
   end
 end
 ~

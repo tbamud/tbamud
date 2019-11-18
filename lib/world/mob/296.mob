@@ -5,7 +5,7 @@ A foreman stands here, cracking his whip evilly!
 ~
    He looks mean, brawny, and ready to bite you!  His clothes are rumpled, and
 splattered with the blood of innocent citizens of Midgaard!  Cliche practically
-oozes off him.  Get him!    
+oozes off him.  Get him!
 ~
 10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -18,7 +18,7 @@ the Car Alarm~
 An odd spirit guards an expensive-looking wagon here.
 ~
    This spirit looks kind of like the banshees that Mother always told you
-about.  It seems pretty serious about guarding this wagon...    
+about.  It seems pretty serious about guarding this wagon...
 ~
 10 0 0 0 16 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -32,7 +32,7 @@ A Factory Worker works hard for minimum wage here.
 ~
    The worker is poor and wears ragged clothes.  Down- trodden by the system,
 forced to work to exhaustion, he still holds his head high.  You can have his
-life, but not his dignity.    
+life, but not his dignity.
 ~
 10 0 0 0 0 0 0 0 250 E
 1 20 9 0d0+10 1d2+0
@@ -45,8 +45,8 @@ the Turtle~
 A turtle trombles about, carrying wands for assembly.
 ~
    This turtle doesn't look too healthy for a good 4 foot high reptile.  Its
-skin is going grey and patchy in areas, and its eyes are white and misty.  
-Poor thing!    
+skin is going grey and patchy in areas, and its eyes are white and misty.
+Poor thing!
 ~
 138 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
@@ -86,9 +86,9 @@ worker office~
 the Office Worker~
 An office worker is pushing paper here.
 ~
-   This office worker is trying to make it to the top, rung by rung.  
+   This office worker is trying to make it to the top, rung by rung.
 Unfortunately, there isn't much room for advancement in this corporation, so
-now is as good a time as any to goof off.    
+now is as good a time as any to goof off.
 ~
 10 0 0 0 0 0 0 0 100 E
 1 20 9 0d0+10 1d2+0
@@ -101,7 +101,7 @@ the Secretary~
 A secretary runs around here, busier than anyone should be.
 ~
    This secretary has SCADS of work to do, from her boss, friends of her boss,
-other workers, etc.  You wonder why she puts up with this at all...    
+other workers, etc.  You wonder why she puts up with this at all...
 ~
 10 0 0 0 0 0 0 0 300 E
 1 20 9 0d0+10 1d2+0
@@ -115,7 +115,7 @@ The Big Boss is waiting to give someone the AXE!
 ~
    You look at him, and accidentally catches his eye.  He begins yelling at
 you!  For a second you get angry, before you realize that this is his _job_...
-To yell at people.    
+To yell at people.
 ~
 142 0 0 0 0 0 0 0 -200 E
 4 19 7 0d0+40 1d2+0
@@ -129,7 +129,7 @@ A Giant Machine twists and whirls, hitting you by accident!
 ~
    It looks like a giant twisted creation of a blind engineer on acid.  Its
 extruding parts look so hazardous that just thinking about entering the same
-room might get you extremely hurt!    
+room might get you extremely hurt!
 ~
 42 0 0 0 16 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -142,7 +142,7 @@ the Ghost~
 A frightened looking ghost flits about looking for escape.
 ~
    This ghost escaped the nets of the workers and now desperately seeks escape.
-You feel for it, probably because of the fate that was intended for it...    
+You feel for it, probably because of the fate that was intended for it...
 ~
 10 0 0 0 4 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -154,7 +154,7 @@ worker dock~
 the Dock Worker~
 A Dock Worker moves big crates about here.
 ~
-   He's big, he's brawny, he's busy.  Leave him alone.    
+   He's big, he's brawny, he's busy.  Leave him alone.
 ~
 10 0 0 0 0 0 0 0 100 E
 2 20 8 0d0+20 1d2+0
@@ -167,7 +167,7 @@ the maintenance worker~
 A maintenance worker looks bored here.
 ~
    He looks at you with half-lidded eyes and rubs his hands on his jumpsuit
-absently.  Not a real rocket scientist here.    
+absently.  Not a real rocket scientist here.
 ~
 10 0 0 0 0 0 0 0 400 E
 3 19 8 0d0+30 1d2+0

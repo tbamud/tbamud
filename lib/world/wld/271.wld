@@ -4,7 +4,7 @@ The Sunken Temple Courtyard~
 courtyard, together with the amber glow of standing torches.  Many citizens of
 the town of Sundhaven find it their pleasure to lounge here.  The dark marble
 temple rises like a shadow to the north, the vivid colors of roses eastwards,
-and the library lies to the west.  There is a stone arch to the south.    
+and the library lies to the west.  There is a stone arch to the south.
 ~
 271 0 0 0 0 1
 D0
@@ -32,7 +32,7 @@ credits info~
    Rooms        : 64
    Mobiles      : 67
    Objects      : 100
-   Shops        : 9 
+   Shops        : 9
 Zone 271 is linked to the following zones:
 272 Sundhaven II                   at 27118 (south) ---> 27255
 272 Sundhaven II                   at 27121 (down ) ---> 27245
@@ -50,7 +50,7 @@ Zone 271 is linked to the following zones:
 272 Sundhaven II                   at 27152 (west ) ---> 27250
 272 Sundhaven II                   at 27161 (down ) ---> 27270
 272 Sundhaven II                   at 27162 (south) ---> 27253
- 
+
 SPECS:
 cityguard: 01,59,60
 postmaster: 64
@@ -67,8 +67,8 @@ The Temple of Mercy~
 black-domed temple.  This is where all adventurers of human ilk must begin
 their trials of danger and discovery.  You stand in a cast of rosy-gold light,
 stretching along the floor from a stained glass window that serves as your
-first sight of the known world.  The unknown world awaits you with open..  
-Jaws.  There is an inscription in the north wall.    
+first sight of the known world.  The unknown world awaits you with open..
+Jaws.  There is an inscription in the north wall.
 ~
 271 24 0 0 0 0
 D0
@@ -106,7 +106,7 @@ The alms room~
 are outlined several dark silhouettes.  Under some scrutiny you can trace a
 basilisk, a chimera, and a dragon circling a deity, a dusty red cloak about her
 neck.  Homage and sacrifice to this human deity are paid here by the other
-citizens of the realm.    
+citizens of the realm.
 ~
 271 28 0 0 0 0
 D3
@@ -118,7 +118,7 @@ S
 At the altar~
    You stand in a quiet room garbed on all sides by black drapery, save for the
 south wall, on which is painted a stellar calendar with symbols difficult to
-interpret.  Reverance to the elusive human deity is paid here.    
+interpret.  Reverance to the elusive human deity is paid here.
 ~
 271 24 0 0 0 0
 D1
@@ -133,7 +133,7 @@ E
 calendar~
    The circular diagram shows symbols for what appear to be the days of the week
 and the month, and how they correspond to the slow treks of the stars, and
-perhaps, some inner meanings known only to the local priesthood.  
+perhaps, some inner meanings known only to the local priesthood.
 ~
 S
 #27104
@@ -141,7 +141,7 @@ A narrow terrace north of the temple~
    You stand on a thin stone terrace before the temple.  Southwards the dome of
 the temple rises among the town smoke, and a set of steps to the north leads up
 to the northern square before the cliffs edge.  Black willows grow in small
-clusters to the east and west.    
+clusters to the east and west.
 ~
 271 0 0 0 0 1
 D2
@@ -157,7 +157,7 @@ S
 The town library~
    Silence reigns here.  On two walls are painted the black and gold arcs of
 mural designs; bands twisted into knotlike patterns and borders.  Travellers
-and citizens may post information on the board hung here.    
+and citizens may post information on the board hung here.
 ~
 271 44 0 0 0 0
 D1
@@ -168,7 +168,7 @@ S
 #27106
 The temple garden~
    An impressionistic splash of red, black and gold meets the eye, accompanied
-by the intoxicating fragrance of roses growing nearly wild in this garden.    
+by the intoxicating fragrance of roses growing nearly wild in this garden.
 ~
 271 0 0 0 0 1
 D3
@@ -181,7 +181,7 @@ A stone arch~
    An imposing arch of the grey-white stone of the cliffs arcs over your head,
 half grown over with dark green ivy.  Before you to the south are the stone
 steps leading up to the town gallows, and northwards lies the courtyard of the
-temple.    
+temple.
 ~
 271 0 0 0 0 1
 D0
@@ -199,7 +199,7 @@ Sundhaven square~
 trodden down and the scents of animals, smoke and exotic perfumes hangs in the
 air.  The cliffs and the northern gate of the town lie north of here, the lane
 paralleling the cliffs runs east and west, and the entrance to the temple is
-southwards.    
+southwards.
 ~
 271 0 0 0 0 1
 D0
@@ -226,7 +226,7 @@ behind and the world opens out before you.  You are standing atop a highland
 cliff, lined with mosses, lichen and purple heather, and looking out over a
 foggy wetland.  The graveyard for the dead of Sundhaven lies near the foot of
 the cliffs, and in the far distance you can make out the blue line of the sea
-closing the horizon.    
+closing the horizon.
 ~
 271 0 0 0 0 1
 D0
@@ -243,7 +243,7 @@ S
 A lane bordering the cliffs~
    The wind from the northern sea finds its way over the rooftops of shops and
 fills the heavily trafficked lane with a salty scent.  The path is lined with a
-few oaks, and shops lie to the north and south.    
+few oaks, and shops lie to the north and south.
 ~
 271 0 0 0 0 1
 D0
@@ -268,7 +268,7 @@ The alchemy shop~
    Vials and bottles of all shapes and sizes line the cluttered shelves of this
 small shop.  On a window in the north wall sits a bizarre golden squid-like
 creature in a jar, glinting in the sun.  You wonder what oddities could be
-found in storage.    
+found in storage.
 ~
 271 156 0 0 0 0
 D2
@@ -281,7 +281,7 @@ The House of Sorcery~
    You stand in a small, well-lit shop of cobblestone and mortar, entirely
 cluttered with scrolls, glowing wands, odd regents and components.  The place
 has an unmistakable scent of sulfur that makes you wonder, but the sorceress
-seems knowledgeable.    
+seems knowledgeable.
 ~
 271 156 0 0 0 0
 D0
@@ -294,7 +294,7 @@ A lane bordering the cliffs~
    You have come to a crossroads of sorts.  A park lies to the north, from
 which a pleasant scent is drifting, and the road continues, narrowing, to the
 west towards the homes of the residents.  Eastwards lies shops and the northern
-gate; a shaded lane travels to the south.    
+gate; a shaded lane travels to the south.
 ~
 271 0 0 0 0 1
 D0
@@ -320,7 +320,7 @@ Wisteria park~
 purple-flowering wisteria vine, forming in leafy clumps at the bottoms.  The
 park is a quiet, relaxing place, with the exception of the occasional explosion
 coming from a pale tower rising to the northwest, accompanied by a brilliant
-flash of light.    
+flash of light.
 ~
 271 1 0 0 0 2
 D2
@@ -338,7 +338,7 @@ Wisteria park~
 flowering wisteria vine which slowly ambles up the town walls.  To the south,
 the cliff lane runs east-west.  An occasional explosion from a pale stone tower
 to the north startles you, and piques your curiousity about that strange place.
-  
+
 ~
 271 1 0 0 0 2
 D0
@@ -360,7 +360,7 @@ The Tower of Sorcery~
 the tower of the local wizards, winding towards the ceiling in a sloping
 spiral.  A stairwell has its foot at the north wall, rickety but presumably
 stable enough to support you.  A dim violet faerie glow illuminates the room.
-  
+
 ~
 271 12 0 0 0 0
 D2
@@ -377,7 +377,7 @@ A dark spiral staircase~
    The immobile stone faces of gargoyles regard you with cold stares from the
 walls of the darkened stairwell.  At each turn in the spiral steps a more
 mangled face than the last confronts you, drawing closer to the laboratory
-above.  What is the sculptor implying about the study of magic?    
+above.  What is the sculptor implying about the study of magic?
 ~
 271 13 0 0 0 0
 D4
@@ -396,7 +396,7 @@ by narrow black lab tables cluttered with a chaotic mess of bubbling vials,
 shattered beakers, and miscellaneous spell components.  The latest experiment
 in familiars, a leathery-skinned fork-tailed creature, hops knavishly from
 shoulder to shoulder among the mages at work here.  If you need practice in the
-magic arts, this would be a good place to start.    
+magic arts, this would be a good place to start.
 ~
 271 28 0 0 0 0
 D0
@@ -420,7 +420,7 @@ none of the blood that has been shed here, but the legends of the dead live on
 in tales and nightmares.  The executions still take place at irregular
 intervals, to the joy of hidden enemies and law-abiding citizens.  You note
 there is plenty of room for spectators.  Besides the east-west road, a stone
-arch stands to the north, and a well-travelled path leads southwards.    
+arch stands to the north, and a well-travelled path leads southwards.
 ~
 271 0 0 0 0 1
 D1
@@ -445,7 +445,7 @@ On a weathered stone terrace~
    This seems to be a plaza of sorts, but is so worn and cracked with age the
 stone is barely holding together.  Moss and weeds have all but overgrown the
 rock-strewn surface.  Balmy, roguish scents are drifting out of a dark,
-ivy-clothed building to the east.    
+ivy-clothed building to the east.
 ~
 271 0 0 0 0 1
 D0
@@ -467,7 +467,7 @@ Nightbreak Cafe~
 secret themselves away in hideouts by day.  The place is well-known to be run
 by the local assassins guild, and it is common to witness conversations here
 spoken in whispers as deals are cut and bounties arranged.  The rules of
-conduct are etched on the back wall.    
+conduct are etched on the back wall.
 ~
 271 8 0 0 0 0
 D3
@@ -493,7 +493,7 @@ S
 The southern path~
    A well-trodden dirt path heads southwards, bordered by dense clumps of
 black-tipped grass.  By night the moths gather by a fatal instinct round the
-glow of torches lining the way, beating their wings heavily.    
+glow of torches lining the way, beating their wings heavily.
 ~
 271 0 0 0 0 1
 D0
@@ -508,9 +508,9 @@ S
 #27123
 The southern path~
    The green grass and firm soil of the path begin to give way to mud strewn
-with traces of human filth as you pass into the poorer section of Sundhaven.  
+with traces of human filth as you pass into the poorer section of Sundhaven.
 The shanties and town dump add a mild stench to the air, and attest to the
-virtual burglaries of the poor by the rich..  And often by the poor.    
+virtual burglaries of the poor by the rich..  And often by the poor.
 ~
 271 0 0 0 0 1
 D0
@@ -535,7 +535,7 @@ A withered shanty~
    The splintered plankings that make the walls of this room are sodden with
 rain and leaking water, light and a chilling wind in to its inhabitants, who
 look sick from poverty.  A rat scurries nonchalantly by your toes, then pauses
-to debate their merits as food.  The mud floor is littered with debris.    
+to debate their merits as food.  The mud floor is littered with debris.
 ~
 271 12 0 0 0 0
 D3
@@ -546,8 +546,8 @@ S
 #27125
 The town dump~
    The foul stench of rotting food and other miscellaneous goods creates an
-almost visible brown haze among the heaps of trash, clouding your senses.  
-Those who call it home certainly smell as decayed as it does.    
+almost visible brown haze among the heaps of trash, clouding your senses.
+Those who call it home certainly smell as decayed as it does.
 ~
 271 0 0 0 0 1
 D1
@@ -569,7 +569,7 @@ T 27109
 The town dump~
    You wander amid heaps of trash that smell of disease, famine, and other
 pleasantries...  Suffice it to say that very little that should be alive here
-is, and vice-versa.    
+is, and vice-versa.
 ~
 271 0 0 0 0 1
 D0
@@ -588,7 +588,7 @@ The southern path~
 you in slightly with each step.  A rotten stench is filtering in from the west,
 repelling you in another direction automatically such that it takes a great
 conscious effort for you to turn that way.  The path heads north into the
-town's mainstream, and south closer to the wildlands beyond it.    
+town's mainstream, and south closer to the wildlands beyond it.
 ~
 271 0 0 0 0 1
 D0
@@ -609,7 +609,7 @@ A black sand road~
    The black sand of the road absorbs heat and feels pleasant to those without
 coverings on their feet, attracting all sorts of loafers and siteseers who come
 on days off to relax and watch the festivities at the gallows.  A bloody trail
-leads into a building to the south.    
+leads into a building to the south.
 ~
 271 0 0 0 0 1
 D1
@@ -627,15 +627,15 @@ D3
 E
 trail bloody~
    Sand has been shuffled over most of it, but it is obviously from a recent
-kill.  The sign on the building reads 'The House of the Butcher and Friends'.  
-It appears the fellow has a quirky sense of humor.  
+kill.  The sign on the building reads 'The House of the Butcher and Friends'.
+It appears the fellow has a quirky sense of humor.
 ~
 S
 #27130
 A sandy bend before the east gate~
    The wide road comes to a crossroads close to the eastern gate, which appears
 to be forged from some heavy metal and painted white.  The ground is a mix of
-shuffled black and gold sand where the two roads meet.    
+shuffled black and gold sand where the two roads meet.
 ~
 271 0 0 0 0 1
 D0
@@ -656,7 +656,7 @@ A gold sand road~
    A thick stone and mortar building with small windows stands to the east, but
 no entrance can be seen from here, and the black stone of the weapons shop is
 westwards.  The road is treeless and wide, the air laiden with smoke and the
-shouts of bartering.    
+shouts of bartering.
 ~
 271 0 0 0 0 1
 D0
@@ -677,7 +677,7 @@ A gold sand road~
    The sand road continues north and south, crowded with citizens going about
 their business.  The armoury stands to the west, emitting heat from the fires
 of the forge.  Occasional drunken shouts and laughter can be heard from a
-smoking lodge to the east.    
+smoking lodge to the east.
 ~
 271 0 0 0 0 1
 D0
@@ -702,7 +702,7 @@ A gold sand road~
    Sand of pale gold has been carted in from the desert lands to cover this
 road, reducing the sinking effect of mud during the rains.  The air here is
 heavy with the smell of delicious food, fresh bread baking, and something
-spicier, to the east.    
+spicier, to the east.
 ~
 271 0 0 0 0 1
 D0
@@ -726,7 +726,7 @@ S
 A bend in the road~
    You have come to a narrow bend, and can feel the faint heat of a fire from a
 small, blackened stone structure to the north.  Patches of gold sand are
-scattered about.    
+scattered about.
 ~
 271 0 0 0 0 1
 D0
@@ -750,7 +750,7 @@ S
 A lane bordering the cliffs~
    This narrow lane, sometimes dimmed with fog from the sea and forests,
 travels east and west paralleling the cliffs just around the shops to the
-north.  Faint bird cries are issuing from the building to the south.    
+north.  Faint bird cries are issuing from the building to the south.
 ~
 271 0 0 0 0 1
 D0
@@ -775,7 +775,7 @@ A shaded lane~
    Loose leaves blow in tiny spirals along the surface of the wooded road as
 summer fades to autumn.  Between the trees to the west, something sparkles
 tauntingly from the dark doorway of a small shop.  Eastwards the dome of the
-temple can be seen rising.    
+temple can be seen rising.
 ~
 271 0 0 0 0 1
 D0
@@ -797,7 +797,7 @@ A shaded lane~
 place bustling with activity, including the occasional attentions of a
 pickpocket or two, for the lane is broad and the shadows of the trees leave
 plenty of hiding places.  However, the frequent presence of guards gives a
-feeling of security.    
+feeling of security.
 ~
 271 0 0 0 0 1
 D0
@@ -818,7 +818,7 @@ A shaded lane~
    The bent limbs of ash and oak trees lining the lane casts a pattern of
 dappled light on the ground, which shifts languidly back and forth in the
 breeze.  To the west stands the old post office, and the lane continues north
-and south.    
+and south.
 ~
 271 0 0 0 0 1
 D0
@@ -840,7 +840,7 @@ A cluster of trees before the west gate~
 oaks trellised with ivy.  The wind brushes the leaves, but this sound is dulled
 by the din of the town going about its daily business.  The ornate west gate
 lies just to the west, a road paved with black sand runs east and north is a
-lane shaded by oak and ash trees.    
+lane shaded by oak and ash trees.
 ~
 271 0 0 0 0 1
 D0
@@ -861,7 +861,7 @@ A black sand road~
    Black sand has been hauled up the steep cliffs from the beaches to reduce
 the unpleasant affects of copious mud during the frequent rains and heavy fogs
 of the region.  The road is so heavily travelled it has almost been packed down
-into a hard surface.    
+into a hard surface.
 ~
 271 0 0 0 0 1
 D1
@@ -880,11 +880,11 @@ S
 #27142
 The butcher shop~
    You are enclosed in a poorly lit, stuffy room that smells of blood, salted
-meat and strange preservatives you didn't think existed in this time period.  
+meat and strange preservatives you didn't think existed in this time period.
 Pewter cases filled with ice give off wisps of steam near a roasting fire at
 the east wall.  You might wonder why this place is situated so proximate to the
 gallows, but the butcher nonchalantly claims all his goods died peaceably, then
-turns away to stifle a chuckle.    
+turns away to stifle a chuckle.
 ~
 271 136 0 0 0 0
 D0
@@ -897,7 +897,7 @@ The stables~
    No whinnies issue from the darkened stalls of this place; the horses are as
 yet untamed and the stables lie empty.  It is not unusual for a vagrant to make
 his home here, however, before being moved on by the guards or attacked by the
-barn owls.    
+barn owls.
 ~
 271 9 0 0 0 0
 D0
@@ -909,7 +909,7 @@ S
 The east gate of Sundhaven~
    You stand on the eastern border of Sundhaven, before a heavy gate forged
 from iron and painted bone-white.  A hot desert wind blows through the grating
-sporadically, giving hint to the vast regions beyond.    
+sporadically, giving hint to the vast regions beyond.
 ~
 271 0 0 0 0 1
 D1
@@ -927,7 +927,7 @@ The west gate of Sundhaven~
    An ornate gate, heavy and wrought from black iron, hangs on ancient hinges
 to the west, bordered by slender elms.  The ivy so plentiful in the town is
 twined and braided about its intricate coils and carvings, which consist
-largely of prowling cats and eclipsed circle designs.    
+largely of prowling cats and eclipsed circle designs.
 ~
 271 0 0 0 0 1
 D1
@@ -947,7 +947,7 @@ display on the stone and mortar walls.  A single window admits virtually no
 light, so filled with the webs and dust of neglect is it..  Obviously the
 shopowner prefers to seclude himself to the obsessive labors of his work.  You
 wonder if he ever makes anything new, so fanatical he is about sharpening and
-re-sharpening the old.    
+re-sharpening the old.
 ~
 271 156 0 0 0 0
 D1
@@ -960,7 +960,7 @@ The Silver Scale~
    You pass into a shop whose walls are gleaming dully, hung with various armor
 reflecting the firelight spawning from the forge.  Goods of defensive metal may
 be bought and sold here, at nearly reasonable prices.  Use 'list' to peruse the
-options.    
+options.
 ~
 271 156 0 0 0 0
 D1
@@ -975,7 +975,7 @@ bounty hunting atmosphere of the Nightbreak Cafe.  Your feet are hard put to
 find a purchase on the slippery floor of spilled ale and cracked, sodden wood.
 This is the meeting place of those of a fighting bent, accordingly the blood
 from last night's brawls has barely dried on the walls before tonight's is
-shed, be wary.    
+shed, be wary.
 ~
 271 8 0 0 0 0
 D2
@@ -995,7 +995,7 @@ S
 Along the bar counter~
    You have entered a loud and boisterous corner in the alehouse, where
 adventurers tell their tales of fact and fable..  Perhaps there are things to
-be learned here of the lands beyond the thin walls of the city.    
+be learned here of the lands beyond the thin walls of the city.
 ~
 271 8 0 0 0 0
 D0
@@ -1012,7 +1012,7 @@ Mekala's Thai Kitchen~
    A large room crowded with ornamental porcelain elephants, incense dishes and
 silkscreen dividers encloses you, the blur of spicy scents from the kitchen
 bringing a flush of red to your face.  A steep, narrow stairwell rises up the
-east wall.    
+east wall.
 ~
 271 156 0 0 0 0
 D3
@@ -1027,8 +1027,8 @@ S
 #27151
 The rooftop at Mekala's~
    The open, moist air gives some relief from the heat below.  Wild birds
-circle about above your head, curious about the food but too shy to descend.  
-A few tables stand adorned with simple white tablecloths and red candles.    
+circle about above your head, curious about the food but too shy to descend.
+A few tables stand adorned with simple white tablecloths and red candles.
 ~
 271 0 0 0 0 1
 D5
@@ -1042,7 +1042,7 @@ The sparring hall~
 sparring room, gleaming with human pride.  While not being overly promiscuous,
 the heads of foes are noticeably stacked one atop the other on a pole of
 polished wood in the corner.  If you are looking to improve your skills in the
-art of battle, this might be a good place to start.    
+art of battle, this might be a good place to start.
 ~
 271 24 0 0 0 0
 D1
@@ -1058,7 +1058,7 @@ S
 The Bread Basket~
    You pass into an unusually humble dwelling and shop for the town, built from
 baked clay and hot from the cumbersome bread ovens projecting partially out of
-the far wall.  The smell of fresh bread is mouth-watering.    
+the far wall.  The smell of fresh bread is mouth-watering.
 ~
 271 156 0 0 0 0
 D1
@@ -1070,7 +1070,7 @@ S
 The blacksmiths~
    The orange glow of the forge brightens an otherwise black, windowless room.
 This is the blacksmith's home and workplace; a humble cot rests very close to
-the fire.    
+the fire.
 ~
 271 8 0 0 0 0
 D2
@@ -1083,7 +1083,7 @@ The aviary~
    Shrill and murmuring bird calls alike assail your ears.  The aviary is
 crowded with bird cages holding the trained variety of species for sale, and
 something like aspirin is available on a small, high-standing round table by
-the door.    
+the door.
 ~
 271 156 0 0 0 0
 D0
@@ -1112,7 +1112,7 @@ underway in here - what would be a strike if this wasn't before unions - among
 the numerous disgruntled postal workers conglomerated.  Shining silver letter-
 openers flash in the light as they heedlessly try to backstab anyone in sight.
 It's a droll scene.  You decide it prudent to mail your wares and be on your
-way.  There is a sign posted on the north wall.    
+way.  There is a sign posted on the north wall.
 ~
 271 12 0 0 0 0
 D1
@@ -1123,7 +1123,7 @@ E
 sign~
    A few instructions have been meticulously printed in small letters.  Send
 (item) (playername) will function to mail something to someone.  Receive will
-allow you to collect your mail.  Thank you and have a nice day.  
+allow you to collect your mail.  Thank you and have a nice day.
 ~
 S
 #27158
@@ -1131,7 +1131,7 @@ Standing at the brink~
    A sea of light, floating fog opens up before you, swallowing most of the
 cliff and the lands beyond in its pale jaws.  Far beyond the whiteness opens
 out to reveal a welcome azure that is the mantle of the sea.  A trail
-disappears downwards into the mist.    
+disappears downwards into the mist.
 ~
 271 0 0 0 0 4
 D2
@@ -1142,11 +1142,11 @@ gate
 S
 #27160
 A balcony of the tower~
-   This high point on the northern edge of Sundhaven boasts quite a view.  
+   This high point on the northern edge of Sundhaven boasts quite a view.
 When fog is not seen rolling about the balcony's railing, one can see the
 graveyard near the foot of the cliff to the north, and beyond it, the pearl
 blue sea, clothing the far horizon.  The mages have made this a favored place
-for recreational studies.    
+for recreational studies.
 ~
 271 0 0 0 0 1
 D2
@@ -1160,7 +1160,7 @@ A silvery-lit landing~
 and silent about you as a curtain of falling snow, though there is a chanting
 taking place, seemingly miles away, in the chamber to the west.  Lamps mounted
 on the walls give off a silver glow reminiscent of saints and martyrs, whether
-they died for the cause of good, or for evil.    
+they died for the cause of good, or for evil.
 ~
 271 8 0 0 0 0
 D3
@@ -1183,7 +1183,7 @@ illumined in airless, black glass cabinets, their twinkling golden and silver
 chasings catching your eye with mocking immortality.  Urns of demon ash line
 polished amberwood shelves, and a small, simple altar edged in ivory stands
 against the north wall.  This is the sanctum of the ministry.  Those of a pious
-bent would do well to begin studies here.    
+bent would do well to begin studies here.
 ~
 271 28 0 0 0 0
 D1
@@ -1205,7 +1205,7 @@ The chamber of sacrifice~
 retaining shadows that seem to flicker in the recesses of the room.  It appears
 a sacrifice to the matron deity of Sundhaven is scheduled to take place.  You
 may watch, but be warned there are times set aside for the sacrifice of those
-who interfere.    
+who interfere.
 ~
 271 9 0 0 0 0
 D4
@@ -1218,7 +1218,7 @@ At a swinging wooden gate~
    You pass through a creaking gate of weathered wood, swinging idly in the
 wind.  To the west rise the bluffs and gardens of the homes of Sundhaven's
 varied people; citizens can also be seen passing eastwards into the town
-itself.    
+itself.
 ~
 271 0 0 0 0 1
 D0
@@ -1240,7 +1240,7 @@ A windy cliffside lane~
    A damp and chilly wind wafts over the homes of the clifftop moors.  About
 you bluffs rise, pale grey and dark sandstone, smooth from the sculpturing of
 winds, and dotted with purple heather and green mosses.  A path strays through
-the clifftop hills.    
+the clifftop hills.
 ~
 271 0 0 0 0 2
 D1
@@ -1258,7 +1258,7 @@ A windy cliffside lane~
    A damp and chilly wind wafts over the homes of the clifftop moors.  About
 you bluffs rise, pale grey and dark sandstone, smooth from the sculpturing of
 winds, and dotted with purple heather and green mosses.  A path strays through
-the clifftop hills.    
+the clifftop hills.
 ~
 271 0 0 0 0 2
 D1

@@ -8,7 +8,7 @@ A strange looking sword lies discarded here.~
 5 900 0 0 0
 E
 falchion sword~
-   It is a short sword of the hacking variety, it seems a bit worn.  
+   It is a short sword of the hacking variety, it seems a bit worn.
 ~
 #30001
 blood chalice blood~
@@ -20,7 +20,7 @@ A blood-stained chalice has been set down here.~
 11 300 0 0 0
 E
 chalice~
-   What a perfect gift for mother!  
+   What a perfect gift for mother!
 ~
 #30002
 coffer copper ornate~
@@ -33,7 +33,7 @@ An ornate copper coffer is set against the far wall.~
 E
 coffer copper ornate~
    This small coffer looks like it could contain all of your belongings, which
-isn't really saying a lot.  
+isn't really saying a lot.
 ~
 #30003
 tonic root comfrey~
@@ -45,7 +45,7 @@ A tonic of comfrey root has been discarded here.~
 1 600 0 0 0
 E
 tonic root comfrey~
-   What doesn't kill you makes you stronger, right?  
+   What doesn't kill you makes you stronger, right?
 ~
 #30004
 elixir tongue adder~
@@ -58,7 +58,7 @@ An elixir of Adder's Tongue lies here.~
 E
 elixir tongue adder~
    This elixer may be good for you, but it sure looks disgusting.  Adder's
-tongue indeed.  
+tongue indeed.
 ~
 #30005
 key skeleton~
@@ -70,7 +70,7 @@ An old skeleton key lies on the floor.~
 2 500 0 0 0
 E
 key skeleton~
-   It is made of bone.  What did you expect, in this place of death?  
+   It is made of bone.  What did you expect, in this place of death?
 ~
 #30006
 blowgun bamboo~
@@ -83,7 +83,7 @@ A long, bamboo blowgun rest on the ground.~
 E
 blowgun bamboo~
    How odd, who would have ever expected you to find a bamboo blowgun in these
-parts...  
+parts...
 ~
 A
 18 1
@@ -98,7 +98,7 @@ You seem to be standing in a pool of blood.~
 E
 blood pool~
    Wow!  Perfect for the vampire in you!  I wonder if it is human or animal
-blood however...  
+blood however...
 ~
 #30008
 Bloodstone stone red~
@@ -111,7 +111,7 @@ A large, dull red stone awaits, invitingly, to be picked up.~
 E
 bloodstone stone red~
    It glows malignantly with its own ruddy light.  You peer within the stone
-only to see the vague impression of some misshaped soul trapped within.  
+only to see the vague impression of some misshaped soul trapped within.
 ~
 A
 4 -2
@@ -125,7 +125,7 @@ A nasty looking stiletto with a shiny black blade lies amid the dust.~
 3 1000 0 0 0
 E
 Heartseeker stiletto blade~
-   This blade has a distinct aura of evil surrounding its fine blade.  
+   This blade has a distinct aura of evil surrounding its fine blade.
 ~
 A
 18 3
@@ -174,7 +174,7 @@ A spiked buckler with a circle of knives set in it, has been left here.~
 7 240 0 0 0
 E
 buckler arsenal~
-   The buckler has a circle of throwing knives set around its center spike.  
+   The buckler has a circle of throwing knives set around its center spike.
 ~
 A
 17 -5
@@ -191,7 +191,7 @@ A well balanced throwing knife lies on the ground.~
 E
 knife throwing~
    This knife has been carefully crafted to provide maximum balance, so that it
-can be used for accurate throwing.  
+can be used for accurate throwing.
 ~
 #30014
 pile debris~
@@ -204,7 +204,7 @@ A pile of debris has been stacked on a small plateau, away from the acid.~
 E
 pile debris~
    It contains all manner of rusty items and beaten equipment garnered by the
-fastidious denizens of this place.  
+fastidious denizens of this place.
 ~
 #30015
 guisarme polearm~
@@ -216,7 +216,7 @@ A long, sharp polearm has been left here.~
 16 150 0 0 0
 E
 guisarme polearm~
-   What more can be said?  It is a rather long weapon of destruction.  
+   What more can be said?  It is a rather long weapon of destruction.
 ~
 A
 18 -2
@@ -233,7 +233,7 @@ A single, white minstrel's glove has been discarded here.~
 E
 glove minstrels minstrel harp pattern~
    The glove has a small needlework pattern in the back formed in the shape of a
-small harp.  
+small harp.
 ~
 A
 18 2
@@ -247,7 +247,7 @@ A worn and shabby suit of ring mail has been cast away here.~
 20 700 0 0 0
 E
 mail shabby~
-   It seems about ready to fall apart!  
+   It seems about ready to fall apart!
 ~
 #30018
 key granite~
@@ -260,7 +260,7 @@ A key fashioned of stone has been left here.~
 E
 key granite~
    This key appears to have be crafted from solid granite.  You wonder what kind
-of tools could have been used to do such a thing.  
+of tools could have been used to do such a thing.
 ~
 #30019
 flesh embalmed~
@@ -272,8 +272,8 @@ A large pile of presumably human flesh has been embalmed and stored here.~
 50 600 0 0 0
 E
 flesh embalmed~
-   Ugh.  You have never seen such sickly looking flesh before in your life.  
-And the smell of it!  
+   Ugh.  You have never seen such sickly looking flesh before in your life.
+And the smell of it!
 ~
 #30020
 flail beater grave~
@@ -285,7 +285,7 @@ A rusty grave beater flail has been dropped here.~
 12 150 0 0 0
 E
 flail beater grave~
-   This flail seems only to have been used to keep the dead in their place.  
+   This flail seems only to have been used to keep the dead in their place.
 ~
 A
 19 1
@@ -300,7 +300,7 @@ An old and rusty dagger has been left here.~
 E
 dagger rusty~
    This dagger appears to be rather old and by the looks of it, has been left
-here to rust for quite some time.  
+here to rust for quite some time.
 ~
 #30022
 vial potion puce~
@@ -313,7 +313,7 @@ A small vial has been forgotten here.~
 E
 vial potion puce~
    The vial contains a disgusting looking liquid, which appears to be almost
-puce in colour.  
+puce in colour.
 ~
 #30023
 shield large shiny~
@@ -327,7 +327,7 @@ E
 shield large shiny~
    This shield is very shiny, and appears to have been recently polished by
 something or someone, yet it also appears to be several decades old from the
-style is has been crafted in.  
+style is has been crafted in.
 ~
 A
 1 -2
@@ -344,7 +344,7 @@ An odd torch glowing green has been left here.~
 E
 torch green~
    This torch is quite odd, since you have never seen a torch glow with an
-everlasting flame before, and a green flame no less...  
+everlasting flame before, and a green flame no less...
 ~
 #30025
 helm silver metal~
@@ -357,13 +357,13 @@ A helm made of a silverish metal has been left here.~
 E
 engravings lines pattern~
    The lines appear to be a part of a pattern, but you cannot make out exactly
-what the pattern is.  
+what the pattern is.
 ~
 E
 helm silver metal~
    This helm looks to be purely ornamental, and does not look like it would
 afford the wearer any protection whatsoever.  It is finely engraven with small
-wavy lines however.  
+wavy lines however.
 ~
 #30026
 jacket rotted leather~
@@ -376,7 +376,7 @@ An old, rotted leather jacket is decomposing on the ground here.~
 E
 jacket rotted leather~
    This jacket looks like it may have once been in decent condition, but is no
-longer in any condition to speak of.  
+longer in any condition to speak of.
 ~
 #30027
 rod metal strange~
@@ -391,6 +391,6 @@ rod metal strange~
    This strange metallic rod looks like it was once a wooden branch, so
 carefully crafted are the "knots", bends, and bumps along the shaft.  You have
 no clue whatsoever of anything you could use it for, but you should hang onto it
-since there could always be some use beyond your imagination.  
+since there could always be some use beyond your imagination.
 ~
 $~

@@ -9,7 +9,7 @@ A white and black striped sailor's shirt has been left here.~
 E
 shirt sailors white black~
    The stains which riddle this shirt are enough to make any land-lubber not
-want to even touch it.  
+want to even touch it.
 ~
 #31801
 stubble~
@@ -21,7 +21,7 @@ Some prickly chin stubble is lying in a heap on the floor.~
 3 100 0 20 0
 E
 stubble~
-   Yuck.  
+   Yuck.
 ~
 A
 6 1
@@ -35,7 +35,7 @@ A fistful of money is laying here on the ground.~
 50 1 0 1 0
 E
 fistful money~
-   What the hell are you looking at it for?  Take it!    
+   What the hell are you looking at it for?  Take it!
 ~
 #31803
 sash black~
@@ -47,7 +47,7 @@ A pile of crumpled black silk is on the ground.~
 1 1 0 20 0
 E
 sash black~
-   This sash, the mark of a member of the Dead Boys, radiates evil intent.  
+   This sash, the mark of a member of the Dead Boys, radiates evil intent.
 ~
 A
 13 15
@@ -61,7 +61,7 @@ A set of spiked knuckles have been left here.~
 1 1 0 20 0
 E
 knuckles spiked~
-   The deadly looking spikes glisten as the light catches them.  
+   The deadly looking spikes glisten as the light catches them.
 ~
 #31805
 sash red~
@@ -74,7 +74,7 @@ A red sash has been left on the floor.~
 E
 sash red~
    This sash, the opposing color to the Dead Boy's black sash, marks the wearer
-as a member of the Bloody Scythe.  
+as a member of the Bloody Scythe.
 ~
 A
 4 2
@@ -89,7 +89,7 @@ A wicked looking scythe lies on the ground.~
 E
 wicked scythe~
    This weapon, although unwieldy, is the token weapon of the Bloody Scythe
-gang.  
+gang.
 ~
 #31807
 rusted knife~
@@ -102,7 +102,7 @@ A rusted knife has been left here.~
 E
 rusted knife~
    It is chipped in many places, worn down to almost a flat edge where it should
-be sharp.  
+be sharp.
 ~
 #31808
 blade marcko's dagger~
@@ -115,7 +115,7 @@ A black knife has been left here.~
 E
 blade marcko's dagger~
    Made by an old veteran assassin from the Far Reaches just for Marcko, this
-blade is said to have special powers.  
+blade is said to have special powers.
 ~
 A
 18 2
@@ -133,7 +133,7 @@ A black opal ring has been dropped here.~
 1 1 0 28 0
 E
 ring opal black~
-   The thing seems to radiate evil and bad intent.  
+   The thing seems to radiate evil and bad intent.
 ~
 A
 1 2
@@ -152,7 +152,7 @@ A pair of boots have been left here.~
 E
 boots razor tipped~
    Looks like these boots were meant for someone who likes to surprise their
-opponent, from the way the blade shoots out the toe.  
+opponent, from the way the blade shoots out the toe.
 ~
 A
 19 2
@@ -170,7 +170,7 @@ A hammer has been left here on the ground.~
 1 1 0 22 0
 E
 hammer~
-   Long wooden handle, strong metal head.  A hammer.  
+   Long wooden handle, strong metal head.  A hammer.
 ~
 #31812
 belt tool carpenter's~
@@ -198,7 +198,7 @@ A fat cigar is on the floor, just begging to be smoked.~
 E
 cigar stogie fat~
    The business end of the thing looks a bit wet and chewed, but other than that
-it seems perfectly good.  
+it seems perfectly good.
 ~
 A
 4 -2
@@ -214,7 +214,7 @@ The foreman's beer gut is lumped in the corner.~
 1 50 0 25 0
 E
 beer gut foreman~
-   You are actually considering wearing this nasty thing?  
+   You are actually considering wearing this nasty thing?
 ~
 A
 10 10
@@ -230,7 +230,7 @@ A thin coat of sweat is glooped on the floor.~
 1 1 0 20 0
 E
 sweat coat thin~
-   You give it a cursory sniff.  Yep, it's sweat, all right.  
+   You give it a cursory sniff.  Yep, it's sweat, all right.
 ~
 A
 5 1
@@ -247,7 +247,7 @@ A clipboard is lying face down on the floor.~
 E
 board clip clipboard~
    It currently holds no papers of any kind, mus tnot be much harbor traffic at
-this time.  
+this time.
 ~
 A
 19 1
@@ -284,7 +284,7 @@ A shiny dirk has been left here.~
 1 1 0 1 0
 E
 dirk shiny~
-   Boy, it sure is a shiny little bugger.  
+   Boy, it sure is a shiny little bugger.
 ~
 #31819
 britches pair green~
@@ -298,7 +298,7 @@ E
 britches pair green~
    They look like they definately could be in the 'flood' classification.  Wear
 them at your own risk...  My guess is even the non-aggro mobs will attack you
-with these on!  
+with these on!
 ~
 A
 6 -2
@@ -315,7 +315,7 @@ A sailor's hat is lying here.~
 E
 hat cap'n~
    This thing emminates a strong aura of bad whiskey, bad women, and bad
-personality.  Use it at your own risk.  
+personality.  Use it at your own risk.
 ~
 A
 19 1
@@ -331,7 +331,7 @@ A wad of some sort of animal's skin is on the ground.~
 1 200 0 23 0
 E
 sleeves dolphin skin~
-   They look as if they would stretch right over your arms for a snug fit.  
+   They look as if they would stretch right over your arms for a snug fit.
 ~
 A
 13 25
@@ -345,7 +345,7 @@ A thin piece of black leather is here.~
 1 100 0 25 0
 E
 arm tie~
-   It is about 9 inches long, frayed at both ends.  
+   It is about 9 inches long, frayed at both ends.
 ~
 A
 18 2
@@ -359,6 +359,6 @@ A small whip has been left here.~
 1 1 0 2 0
 E
 whip backhand~
-   Just the perfect fit in the palm of your hand.  
+   Just the perfect fit in the palm of your hand.
 ~
 $~

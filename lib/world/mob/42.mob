@@ -4,7 +4,7 @@ a red dragon~
 A red dragon is curled up here.
 ~
    As you get close enough to see the small details, the dragon whips its snout
-toward you, breathing a small cloud of smoke.  
+toward you, breathing a small cloud of smoke.
 ~
 188474 0 0 0 0 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
@@ -19,7 +19,7 @@ The King of the Dragons reclines on his tail here.
 ~
    He looks extremely large, and as you lean a little forward to look closer, he
 narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
-cough and take a step backwards.  
+cough and take a step backwards.
 ~
 42 0 0 0 48 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
@@ -37,7 +37,7 @@ hatchling hatch dragon drag~
 a Dragon Hatchling~
 A dragon hatchling is lying here curled up into a ball
 ~
-   It looks up at you and breathes a small tougue of flame.  
+   It looks up at you and breathes a small tougue of flame.
 ~
 253982 0 0 0 56 0 0 0 -10 E
 22 13 -3 4d4+220 3d3+3
@@ -50,7 +50,7 @@ troll~
 a troll~
 A large, hulking troll is standing here.
 ~
-   It looks big, and very hungry...  
+   It looks big, and very hungry...
 ~
 253978 0 0 0 56 0 0 0 -1000 E
 22 13 -3 4d4+220 3d3+3
@@ -62,7 +62,7 @@ dragon guard~
 a Guard Dragon~
 A dragon is here, blocking your way
 ~
-   He lookes at you, and you see a dangerous glint in his eye...  
+   He lookes at you, and you see a dangerous glint in his eye...
 ~
 253978 0 0 0 120 0 0 0 -1000 E
 26 12 -5 5d5+260 4d4+4
@@ -76,7 +76,7 @@ an elven slave~
 An elf is here, mopping the floor.
 ~
    She looks up at you sadly, and you can tell by her eyes that she was broken
-by the dragons long ago.  
+by the dragons long ago.
 ~
 256010 0 0 0 0 0 0 0 1000 E
 22 13 -3 4d4+220 3d3+3
@@ -90,7 +90,7 @@ a green dragon~
 A green dragon is standing here!
 ~
    The green dragon is big, strong, and dangerous, Unfortunately for you, it has
-already seen you, so there is no good in running.  
+already seen you, so there is no good in running.
 ~
 254076 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -105,7 +105,7 @@ The King of the Dragons reclines on his tail here.
 ~
    He looks extremely large, and as you lean a little forward to look closer, he
 narrows his eyes and breathes a cloud of sulfur smoke into your face, making you
-cough and take a step backwards.  
+cough and take a step backwards.
 ~
 83982 0 0 0 16 0 0 0 -800 E
 26 12 -5 5d5+260 4d4+4
@@ -122,7 +122,7 @@ income~
 Guldane's Income~
 Guldane's Income mob.
 ~
-   I have not idea what this is for.  
+   I have not idea what this is for.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -135,7 +135,7 @@ shopkeeper~
 Guldane's Shopkeeper~
 Guldane's Shopkeeper stands here
 ~
-   He has only 2 items....  
+   He has only 2 items....
 ~
 10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0

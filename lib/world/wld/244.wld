@@ -1,9 +1,9 @@
 #24400
 Cell A1~
    You're in a small, dark, prison cell. The dark stone walls look ancient,
-and are quite damp. The dirt covered floor is made of cement, and a small hole 
+and are quite damp. The dirt covered floor is made of cement, and a small hole
 in the northwestern corner of the cell serves as a toilet. There is no bed,
-no chairs, and no lights. This place obviously isn't maintained anymore. A 
+no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
@@ -37,27 +37,27 @@ credits info~
 |                     Written in 2002 by Crazyman                     |
 |                         www.nt.net/saarinen                         |
 x---------------------------------------------------------------------x
-This zone is the jail on my MUD. Although highly unlikely, it is 
-possible to escape. On my MUD, I don't like throwing people into the 
-icebox or freezing them. When this happens, the player has no control 
-over anything. By putting them in a jail, the player has the 
-opportunity to escape, giving them control of the situation. The 
-locked jail cells can only be opened with a key found on the prison 
-guards, and since they are inaccessible by someone in a cell, a GOD or 
-IMP has to open the doors. Besides, a GOD or an IMP should visit the 
-player in jail anyway to advise them of their situation. The cell room 
+This zone is the jail on my MUD. Although highly unlikely, it is
+possible to escape. On my MUD, I don't like throwing people into the
+icebox or freezing them. When this happens, the player has no control
+over anything. By putting them in a jail, the player has the
+opportunity to escape, giving them control of the situation. The
+locked jail cells can only be opened with a key found on the prison
+guards, and since they are inaccessible by someone in a cell, a GOD or
+IMP has to open the doors. Besides, a GOD or an IMP should visit the
+player in jail anyway to advise them of their situation. The cell room
 numbers are as follows:
 Cell A1 - room #00           Cell A2 - room #08
 Cell B1 - room #01           Cell B2 - room #09 (death trap)
 Cell C1 - room #02           Cell C2 - room #10
 As you can see, there are five functional jail cells, as cell B2 is a
-death trap. If you need more than that, I think you're being pretty 
+death trap. If you need more than that, I think you're being pretty
 mean to your players! :)
-Ensure that the entrance to the jail (I have mine attached to the;my New Southern Midgaard, room # 3111) is either locked or inaccessible, 
-because you wouldn't want anyone to accidentally enter and be killed. I 
-like making the jail door accessible to everyone, that way a player 
-outside the jail has the chance to get in and rescue someone inside. I 
-have a jail bulletin board set up in the cafeteria, so you'll have to 
+Ensure that the entrance to the jail (I have mine attached to the;my New Southern Midgaard, room # 3111) is either locked or inaccessible,
+because you wouldn't want anyone to accidentally enter and be killed. I
+like making the jail door accessible to everyone, that way a player
+outside the jail has the chance to get in and rescue someone inside. I
+have a jail bulletin board set up in the cafeteria, so you'll have to
 remove it or add your own.
     Written entirely from scratch in WordPad. Feel free to edit, modify,
 and do what you want with this zone!
@@ -69,15 +69,15 @@ Player Level : 30
 Rooms        : 57
 Mobs         : 2
 Objects      : 1
-Links        : 
+Links        :
 ~
 S
 #24401
 Cell B1~
    You're in a small, dark, prison cell. The dark stone walls look ancient,
-and are quite damp. The dirt covered floor is made of cement, and a small hole 
+and are quite damp. The dirt covered floor is made of cement, and a small hole
 in the northwestern corner of the cell serves as a toilet. There is no bed,
-no chairs, and no lights. This place obviously isn't maintained anymore. A 
+no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
@@ -108,9 +108,9 @@ S
 #24402
 Cell C1~
    You're in a small, dark, prison cell. The dark stone walls look ancient,
-and are quite damp. The dirt covered floor is made of cement, and a small hole 
+and are quite damp. The dirt covered floor is made of cement, and a small hole
 in the northwestern corner of the cell serves as a toilet. There is no bed,
-no chairs, and no lights. This place obviously isn't maintained anymore. A 
+no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
@@ -140,8 +140,8 @@ sign notice door~
 S
 #24403
 Sprial Staircase~
-   You're at the bottom of a cold metal spiral staircase. The main cell 
-hallway is west, while darkness leads up. You can hear dripping water from 
+   You're at the bottom of a cold metal spiral staircase. The main cell
+hallway is west, while darkness leads up. You can hear dripping water from
 above you.
 ~
 244 233 0 0 0 0
@@ -218,11 +218,11 @@ The cell hallway is West.
 E
 words sign notice door~
    The scratchings look like this:
- _____    ______     _____   _____          _______    _____    _____ 
-|      | /      \    \     \ /     \ |\   |    |      /     \  /     \  
-|     /         | .  |     | \     \ | \  \    |      |        \     \ 
-|-----\    ____/     |     |  |    | | \  |    |      | ___     |    | 
-|      |  /       .  |     |  |    | |  \ |    |      |    \    |    | 
+ _____    ______     _____   _____          _______    _____    _____
+|      | /      \    \     \ /     \ |\   |    |      /     \  /     \
+|     /         | .  |     | \     \ | \  \    |      |        \     \
+|-----\    ____/     |     |  |    | | \  |    |      | ___     |    |
+|      |  /       .  |     |  |    | |  \ |    |      |    \    |    |
 |_____/   \______    |____/   \____/ |   \|    |       \___/    \____/
 ~
 S
@@ -257,7 +257,7 @@ The cell hallway is West.
 S
 #24407
 Cafeteria~
-   You're overwhelmed by the stink of rotting food. Several long wooden 
+   You're overwhelmed by the stink of rotting food. Several long wooden
 tables stretch the entire length of the room, with many half destroyed
 chairs scattered around. At the far end of the room is a food counter,
 and several stainless steel food bowls are sitting on it. That must be
@@ -274,9 +274,9 @@ S
 #24408
 Cell A2~
    You're in a small, dark, prison cell. The dark stone walls look ancient,
-and are quite damp. The dirt covered floor is made of cement, and a small hole 
+and are quite damp. The dirt covered floor is made of cement, and a small hole
 in the northwestern corner of the cell serves as a toilet. There is no bed,
-no chairs, and no lights. This place obviously isn't maintained anymore. A 
+no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
@@ -307,7 +307,7 @@ S
 #24409
 Cell B2~
    As soon as you enter the cell, the floor collapses, and you feel yourself
-falling, falling deep into the ground. You finally land, and you feel both of 
+falling, falling deep into the ground. You finally land, and you feel both of
 your legs snap under your weight. As you scream out in pain, the rest of the
 debris from the cement floor lands on you, crushing your body.
 ~
@@ -321,9 +321,9 @@ S
 #24410
 Cell C2~
    You're in a small, dark, prison cell. The dark stone walls look ancient,
-and are quite damp. The dirt covered floor is made of cement, and a small hole 
+and are quite damp. The dirt covered floor is made of cement, and a small hole
 in the northwestern corner of the cell serves as a toilet. There is no bed,
-no chairs, and no lights. This place obviously isn't maintained anymore. A 
+no chairs, and no lights. This place obviously isn't maintained anymore. A
 sturdy iron door leads south.
    A small notice has been engraved in the door.
 ~
@@ -353,7 +353,7 @@ sign notice door~
 S
 #24411
 A Warm Room~
-   As soon as you step through the door, you fall about twenty feet and land 
+   As soon as you step through the door, you fall about twenty feet and land
 on a bed of red hot coals. Your body is engulfed in flames, and you quickly
 roast to death.
 ~
@@ -364,15 +364,15 @@ T 24400
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. You see a small 
-greasy rat scuttle through a small hole in the wall, while a long burnt out 
+the old cement floor, and you wonder if can support you. You see a small
+greasy rat scuttle through a small hole in the wall, while a long burnt out
 light bulb hangs from the ceiling. You can feel an intense heat coming from
 an iron door to the north, while you feel an extreme coldness coming from an
 iron door leading south.
 ~
 244 233 0 0 0 0
 D0
-A hot room is North. 
+A hot room is North.
 ~
 door iron~
 1 -1 24411
@@ -389,7 +389,7 @@ door iron~
 S
 #24413
 A Cold Room~
-   As soon as you step through the door, you fall about twenty feet and land 
+   As soon as you step through the door, you fall about twenty feet and land
 hard on a sheet of ice. The room is extremely cold, and your body quickly freezes
 solid.
 ~
@@ -400,12 +400,12 @@ T 24400
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24415
@@ -419,13 +419,13 @@ S
 A Prison Corridor at a Staircase~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling. A steel spiral staircase leads down
 into darkness.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24416
@@ -444,12 +444,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24417
@@ -463,7 +463,7 @@ S
 A Prison Corridor Intersection~
    You're at an intersection in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
@@ -473,7 +473,7 @@ The corridor continues North.
 ~
 0 -1 24453
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24418
@@ -492,12 +492,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24419
@@ -511,12 +511,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24420
@@ -530,12 +530,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24421
@@ -549,12 +549,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24422
@@ -568,12 +568,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24423
@@ -587,7 +587,7 @@ S
 A Prison Corridor Intersection~
    You're at a dark intersection in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
@@ -597,7 +597,7 @@ The corridor leads North.
 ~
 0 -1 24425
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24424
@@ -611,12 +611,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24420
@@ -630,12 +630,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24426
@@ -649,12 +649,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24427
@@ -668,12 +668,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D2
-The corridor continues South. 
+The corridor continues South.
 ~
 ~
 0 -1 24426
@@ -687,12 +687,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24427
@@ -706,12 +706,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24428
@@ -725,12 +725,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24430
@@ -744,12 +744,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24431
@@ -763,12 +763,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24432
@@ -791,12 +791,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24417
@@ -810,12 +810,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24435
@@ -829,12 +829,12 @@ S
 A Prison Corridor Intersection~
    You're at a dark intersection in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24436
@@ -858,12 +858,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24437
@@ -877,12 +877,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24438
@@ -896,12 +896,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24439
@@ -935,12 +935,12 @@ T 24400
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24443
@@ -954,12 +954,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24444
@@ -973,7 +973,7 @@ S
 A Prison Corridor at a Staircase~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling. A steel spiral staircase leads up.
 ~
 244 233 0 0 0 0
@@ -992,12 +992,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24446
@@ -1011,12 +1011,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D0
-The corridor continues North. 
+The corridor continues North.
 ~
 ~
 0 -1 24447
@@ -1035,12 +1035,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24448
@@ -1064,12 +1064,12 @@ T 24400
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24437
@@ -1083,12 +1083,12 @@ S
 A Prison Corridor~
    You're in a dark corridor in the Cooland Prison. The walls are quite
 damp, and the dark grey paint is flaking. You notice large cracks in
-the old cement floor, and you wonder if can support you. A long burnt out 
+the old cement floor, and you wonder if can support you. A long burnt out
 light bulb hangs from the ceiling.
 ~
 244 233 0 0 0 0
 D1
-The corridor continues East. 
+The corridor continues East.
 ~
 ~
 0 -1 24449
@@ -1140,9 +1140,9 @@ S
 T 24400
 #24455
 Prison Upper Level~
-   You're on the upper level of the Cooland Prison. A metal spiral staircase 
+   You're on the upper level of the Cooland Prison. A metal spiral staircase
 leads down into darkness. This is where the prisoners are kept.
-   A sign written in red lettering is attached to the wall. 
+   A sign written in red lettering is attached to the wall.
 ~
 244 8 0 0 0 0
 D3
@@ -1172,7 +1172,7 @@ Prison Upper Level~
    You're on the upper level of the Cooland Prison. The walls are made of
 cinderblocks, and an immensely huge thick metal door leads west. This must
 be the main door that keeps the prisoners safely locked up. A small stool
-sits beside the door, which is where Joe the gateguard sits.  
+sits beside the door, which is where Joe the gateguard sits.
 ~
 244 8 0 0 0 0
 D1
@@ -1191,10 +1191,10 @@ Cooland Prison~
    You're in the main entrance of the Cooland Prison. The walls are made
 of thick cinderblocks, and the floor looks like it could support a freight
 train. The three windows looking out onto Midgaard have thick bars across
-them. An immensely huge thick metal door leads east. This must be the main 
-door that keeps the prisoners safely locked up. A large desk sits along the 
-northern wall, but it looks empty. Maybe this prison isn't maintained 
-anymore. 
+them. An immensely huge thick metal door leads east. This must be the main
+door that keeps the prisoners safely locked up. A large desk sits along the
+northern wall, but it looks empty. Maybe this prison isn't maintained
+anymore.
    A sign has been attached to the wall beside the door.
 ~
 244 8 0 0 0 0

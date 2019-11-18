@@ -57,7 +57,7 @@ say Would you like a drink?  They are good for the thirst.
 Milo A - 3957~
 0 g 25
 ~
-say 200789... 200790... 200791... 
+say 200789... 200790... 200791...
 emote gets a dreamy look in his eyes as he stares at his pile of glittering gold.
 emote snaps to attention, finally noticing that there is a person in the room.
 say Well, if it isn't %actor.name%.  Your reputation preceeds you.  Welcome to my humble bank.
@@ -80,7 +80,7 @@ Near Death Trap on the Rocks - 3975~
 ~
 * Near Death Trap stuns actor
 wait 6 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 wait 2 sec
 %send% %actor% You lay among the jagged rocks.

@@ -165,12 +165,12 @@ elseif %arg% == set
   if %actor.eq(17)%
     if !%actor.varexists(set_life_counter)%
       set set_life_counter 1
-      remote set_life_counter %actor.id% 
+      remote set_life_counter %actor.id%
     end
     if %actor.set_life_counter% < 14
       eval setReturn %self.room%
       eval setReturn %setReturn.vnum%
-      eval return_room_staff %setReturn%    
+      eval return_room_staff %setReturn%
       eval set_life_counter %actor.set_life_counter% + 1
       set set_counter 0
       remote set_life_counter %actor.id%
@@ -203,7 +203,7 @@ elseif %arg% == return
   end
 else
   %send% %actor% Huh?!?  Who?!?  What?!?
-end 
+end
 ~
 #13003
 recall staff drop~
@@ -263,7 +263,7 @@ if %dir.mudcommand% == north || %dir.mudcommand% == east || %dir.mudcommand% == 
   eval direction %%room1.%dir%(vnum)%%
   eval where %%room1.%dir%(room)%%
 * checks to see if there is a target
-  if !%target% 
+  if !%target%
     %send% %actor% Who are you trying to shoot?
     halt
   end
@@ -291,7 +291,7 @@ if %dir.mudcommand% == north || %dir.mudcommand% == east || %dir.mudcommand% == 
 *    halt
 *  end
   *
-  * Checks for the first item in inventory that is one of the 
+  * Checks for the first item in inventory that is one of the
   * specified arrows and sets its vnum as the one to be used.
   *
   eval inv %actor.inventory%
@@ -344,7 +344,7 @@ if %dir.mudcommand% == north || %dir.mudcommand% == east || %dir.mudcommand% == 
   done
   eval finaldam %finaldam% + %bonus%
   *
-  * If the actor has an arrow in inventory, and there are 
+  * If the actor has an arrow in inventory, and there are
   * people in the room specified, one of three random things
   * happens - Actor shoots but misses, Actor shoots and damages,
   * Actor shoots, damages, but loses the arrow.
@@ -352,7 +352,7 @@ if %dir.mudcommand% == north || %dir.mudcommand% == east || %dir.mudcommand% == 
   if %arrow%
     if %target%
 *  a hack of the formula used in the code to determine if something hits
-*  based on dexterity... 
+*  based on dexterity...
     eval dex %actor.dex%
     eval odds %dex% * 4
       if %odds% > 99
@@ -581,7 +581,7 @@ switch %random.8%
     %send% %actor% \@w\@0     \|=\|'                 '\|=\|\@n
   break
   case 4
-    * Once I wasn't  Then I was  Now I ain't again (44)   
+    * Once I wasn't  Then I was  Now I ain't again (44)
     %send% %actor% \@w\@0     \|=\|'                 '\|=\|\@n
     %send% %actor% \@w\@0     \|=\|'  Once I wasn't  '\|=\|\@n
     %send% %actor% \@w\@0     \|=\|'   Then I was    '\|=\|\@n
@@ -828,7 +828,7 @@ Mist mob dies~
 ~
 * Random
 * Mist mob's death
-* 
+*
 *
 %load% obj 13010
 drop mist

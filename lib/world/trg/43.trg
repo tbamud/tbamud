@@ -17,7 +17,7 @@ Eskimo Weaponry - 4310~
 0 g 100
 ~
 if %actor.is_pc%
-  say Whoo!  It's hot in here!  Oh hello, can i help you?    
+  say Whoo!  It's hot in here!  Oh hello, can i help you?
 end
 ~
 #4303

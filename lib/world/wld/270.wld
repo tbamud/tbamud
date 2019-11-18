@@ -2,14 +2,14 @@
 AsA's Zone Description Room~
    I hereby present the wasteland area, availiable to those concerned.  I have,
 deliberately, written short long_descriptions.  Because I consider them more
-useful that way, since most DIKU's are not inclined towards questing.    
+useful that way, since most DIKU's are not inclined towards questing.
    Builder      : AsA
    Zone         : 270 Wasteland
    Player Level : 12-15
    Rooms        : 58
    Mobiles      : 13
-   Objects      : 12 
-   Links        : 
+   Objects      : 12
+   Links        :
 ~
 270 0 0 0 0 0
 S
@@ -29,7 +29,7 @@ D2
 S
 #27002
 The Foothills~
-   You stand in the foothills of the Icy-Mountain.  The mountain 
+   You stand in the foothills of the Icy-Mountain.  The mountain
 rises high towards the sky immediately south of here.
 ~
 270 0 0 0 0 4
@@ -44,7 +44,7 @@ D3
 S
 #27003
 The Foothills~
-    You stand in the foothills of the Icy-Mountain.  The mountain 
+    You stand in the foothills of the Icy-Mountain.  The mountain
 rises high towards the sky immediately south of here.
 ~
 270 0 0 0 0 4
@@ -59,7 +59,7 @@ D3
 S
 #27004
 The Foothills~
-   You stand in the foothills of the Icy-Mountain.  The mountain 
+   You stand in the foothills of the Icy-Mountain.  The mountain
 rises high towards the sky immediately south and west of here.
 ~
 270 0 0 0 0 4
@@ -74,7 +74,7 @@ D3
 S
 #27005
 The Icy-Mountain~
-   The mountain trail ends here just beneath the top. 
+   The mountain trail ends here just beneath the top.
 ~
 270 0 0 0 0 5
 D2
@@ -84,10 +84,10 @@ D2
 S
 #27006
 The Ice Cave~
-   You are inside the ice cave.  Some droppings, not too nice 
+   You are inside the ice cave.  Some droppings, not too nice
 looking nor smelling, have been spilled in the centre of the cave.
-Your basic knowlege of ichtyology tells you that this excrement 
-does not relate to the elusive Otopharynx lithobates, but to 
+Your basic knowlege of ichtyology tells you that this excrement
+does not relate to the elusive Otopharynx lithobates, but to
 something completely different.
 ~
 270 8 0 0 0 0
@@ -98,7 +98,7 @@ D2
 S
 #27007
 The Foothills~
-   You stand in the foothills of the Icy-Mountain.  The mountain 
+   You stand in the foothills of the Icy-Mountain.  The mountain
 rises high towards the sky immediately east of here.
 ~
 270 0 0 0 0 4
@@ -169,7 +169,7 @@ D3
 S
 #27012
 The Icy Mountain~
-   You are on a trail in the mountain.  North of here is a 
+   You are on a trail in the mountain.  North of here is a
 cavern, which might lead to a cave.
 ~
 270 0 0 0 0 5
@@ -184,7 +184,7 @@ D3
 S
 #27013
 The Foothills~
-   You are in the foothills surrounding the Icy-mountain, which 
+   You are in the foothills surrounding the Icy-mountain, which
 rises towards the sky just west of you.
 ~
 270 0 0 0 0 4
@@ -250,8 +250,8 @@ D4
 S
 #27017
 The Foothills~
-   You are in the foothills surrounding the Icy-mountain.  There 
-is a mountain trail leading up along the side of the mountain 
+   You are in the foothills surrounding the Icy-mountain.  There
+is a mountain trail leading up along the side of the mountain
 east of you.
 ~
 270 0 0 0 0 4
@@ -288,7 +288,7 @@ D3
 S
 #27019
 The Icy Mountain~
-   You are on a mountain trail leading up along the side of the 
+   You are on a mountain trail leading up along the side of the
 mountain.
 ~
 270 0 0 0 0 5
@@ -367,7 +367,7 @@ D2
 S
 #27024
 The Foothills~
-   You are in the foothills.  There is a mountain rising to your 
+   You are in the foothills.  There is a mountain rising to your
 easthand side.
 ~
 270 0 0 0 0 4
@@ -382,7 +382,7 @@ D1
 S
 #27025
 The Foothills~
-   You are in the foothills surrounding the Icy-mountain.  There 
+   You are in the foothills surrounding the Icy-mountain.  There
 is a trail leading up the montain north of here.
 ~
 270 0 0 0 0 4
@@ -405,7 +405,7 @@ D3
 S
 #27026
 The Foothills~
-   You are in the foothills surrounding the Icy-mountain.  There 
+   You are in the foothills surrounding the Icy-mountain.  There
 is a path leading up along the mountainside north of you.
 ~
 270 0 0 0 0 4
@@ -484,7 +484,7 @@ D2
 S
 #27031
 The Wasteland Hills~
-   You are in some completely wasted, tiresome, boring and 
+   You are in some completely wasted, tiresome, boring and
 totally ugly hills.  There are some droppings left here.
 ~
 270 0 0 0 0 4
@@ -502,13 +502,13 @@ D2
 0 -1 27038
 E
 droppings~
-   Looks pretty messy.  
+   Looks pretty messy.
 ~
 S
 #27032
 The Wasteland Hills~
-   You are on a path leading through the wasted hills.  To the 
-north you barely make out the contours of a pointy mountain and 
+   You are on a path leading through the wasted hills.  To the
+north you barely make out the contours of a pointy mountain and
 its foothills.
 ~
 270 0 0 0 0 4
@@ -523,7 +523,7 @@ D2
 S
 #27033
 The Wasteland Hills~
-   You are on a path in the hills.  Apart from down to the south 
+   You are on a path in the hills.  Apart from down to the south
 there is nothing but brown, dull and wasted hills surrounding you.
 ~
 270 0 0 0 0 4
@@ -581,7 +581,7 @@ D3
 S
 #27036
 The Icy Mountain~
-   You are on a trail leading up the moutain.  There is some loose 
+   You are on a trail leading up the moutain.  There is some loose
 crabble lying on the ground.
 ~
 270 0 0 0 0 5
@@ -595,7 +595,7 @@ D2
 0 -1 27043
 E
 crabble~
-   Yes it is just lying there of absolutely no use at all.  
+   Yes it is just lying there of absolutely no use at all.
 ~
 S
 #27037
@@ -614,12 +614,12 @@ D2
 0 -1 27044
 E
 claymore~
-   The more you look at it the more it vanishes, to your desperate grief.  
+   The more you look at it the more it vanishes, to your desperate grief.
 ~
 S
 #27038
 The Wasteland Hills~
-   You are surrounded by smooth hills right in the middle of 
+   You are surrounded by smooth hills right in the middle of
 absolute nowhere.
 ~
 270 0 0 0 0 4
@@ -634,7 +634,7 @@ D1
 S
 #27039
 The Wasteland hills~
-   You are on a little path leaing through the smooth, brown hills 
+   You are on a little path leaing through the smooth, brown hills
 of complete waste.  Right beneath you is some wasteland fields.
 ~
 270 0 0 0 0 4
@@ -667,7 +667,7 @@ D4
 S
 #27041
 The Wasteland Fields~
-   You are on the vast, wasted fields in the middle of nowhere. 
+   You are on the vast, wasted fields in the middle of nowhere.
 Above you is quite clearly some hills.
 ~
 270 0 0 0 0 2
@@ -701,7 +701,7 @@ D1
 S
 #27043
 The Foothills~
-   You are in the foothills.  North of here a small path is finding 
+   You are in the foothills.  North of here a small path is finding
 its way up along the Icy-mountain.
 ~
 270 0 0 0 0 4
@@ -794,7 +794,7 @@ D1
 S
 #27049
 The Wasteland Fields~
-   You are on a large field, which as you clearly can tell is 
+   You are on a large field, which as you clearly can tell is
 nothing but waste.
 ~
 270 0 0 0 0 2
@@ -827,7 +827,7 @@ D3
 0 -1 27049
 E
 wheat stalk~
-   Looks lonely doesn't it.  
+   Looks lonely doesn't it.
 ~
 S
 #27051
@@ -892,7 +892,7 @@ D3
 S
 #27055
 The Wasteland Fields~
-   You are in the middle of a large, brown field, not nice 
+   You are in the middle of a large, brown field, not nice
 looking, but it just isn't.
 ~
 270 0 0 0 0 2
@@ -903,8 +903,8 @@ D1
 S
 #27056
 The Wasteland Fields~
-   You are on a large, windy field.  Everything around you is laid 
-in complete waste.  Only some aufwuchs on a stone seem to be able 
+   You are on a large, windy field.  Everything around you is laid
+in complete waste.  Only some aufwuchs on a stone seem to be able
 to exist here.
 ~
 270 0 0 0 0 2
@@ -918,14 +918,14 @@ D3
 0 -1 27055
 E
 aufwuchs~
-   They look green and slimy.  
+   They look green and slimy.
 ~
 S
 #27057
 Close To The Wasteland Fields~
-   You are on a field.  The wind is smoothly sweeping across the 
-ground with the sound of a soft howl.  The vegetation seem to have 
-lost the battle to some greater force as it gradually disappears 
+   You are on a field.  The wind is smoothly sweeping across the
+ground with the sound of a soft howl.  The vegetation seem to have
+lost the battle to some greater force as it gradually disappears
 towards the east.
 ~
 270 0 0 0 0 2

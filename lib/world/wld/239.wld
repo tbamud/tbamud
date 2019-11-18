@@ -34,15 +34,15 @@ tree~
    This is a level 17 area of birds in branches of the tree.  To get into the
 tree you must be before the tree and "climb tree" there is an one way exit to
 the base of the tree, and some clues to Newhaven imbeded in the outpost room.
-  
+
 ~
 E
 path~
-   Area has hidden entrance into Newhaven by "follow path" on hidden trail.  
+   Area has hidden entrance into Newhaven by "follow path" on hidden trail.
 Level 20 mobs called the "Dark".  And secret entrance to the tree "climb tree".
 It is divided at the tree from level 20 area with the Dark,to level 17 area
 with birds in the tree and other animals level 17 on the decent into the desert
-of the waypoint trail.    
+of the waypoint trail.
 ~
 E
 newhaven~
@@ -55,19 +55,19 @@ E
 pass~
    This area is level 20 area is between desert and first secret entrance to
 the NewHaven caverns (say Friends of NewHaven to enter) There are bigfoot mobs
-here.    
+here.
 ~
 E
 desert~
    This area is on the north side of the Southern Mountains, it has a few
 loops, level 17 mobs, hidden clues and hints to NewHaven whereabouts, a false
-cave with a Dwarven Sentinel.    
+cave with a Dwarven Sentinel.
 ~
 E
 links~
    This zone links north to room 9030.  Build all rooms south of that
 connection point.  Best link to zone 90 would be south to room 23904 and north
-from 23904 to room 9030.    
+from 23904 to room 9030.
 ~
 S
 #23901
@@ -76,7 +76,7 @@ Southern Desert~
 To the south can be seen some hills.  North is nothing but desert, sand, sun
 and heat.  To the west can be seen some kragla birds waiting for something to
 die so that they may finally have a meal.  Eastward dunes of sand expand as far
-as the eye can see.    
+as the eye can see.
 ~
 239 0 0 0 0 2
 D1
@@ -97,12 +97,12 @@ Sand Dunes of the Great Southern Desert
 E
 kragla birds~
    The Kragla birds are huge black winged desert vultures.  They have bald
-heads, sharp beaks, black eyes and long curved talons.    
+heads, sharp beaks, black eyes and long curved talons.
 ~
 E
 sands dunes~
    The sand is an endless sea of white waves of sparkling silicon fragments
-being tossed around by the merciless wind.    
+being tossed around by the merciless wind.
 ~
 S
 #23902
@@ -110,7 +110,7 @@ Barren Hills~
    The desert begins to rise here onto sloping slick rocks of slate.  To the
 south the slopes rise gently to the Southern Mountains.  North is the beginning
 of the desert sands.  Westward and eastward are more hills all converging to
-the foot of the Southern Mountains.    
+the foot of the Southern Mountains.
 ~
 239 0 0 0 0 4
 D0
@@ -139,7 +139,7 @@ desert slopes sands hills~
 red, orange, brown, yellow, and white in the light spectrum.  The slopes form
 waves of golden white in countless shapes and sizes.  The hills are countless
 black slate mini giants swimming in the sea of sand, but to where do they go?
-Only they know.    
+Only they know.
 ~
 S
 #23903
@@ -150,7 +150,7 @@ desert, the sun pounding down upon them incessantly.  To the north the hills
 slope down to the Southern Desert.  East and west the hills are very similar to
 those which are trodded here.  Climbing these slopes is tedious and tiring on
 the body, mind and soul.  Many adventurers have lost hope here of finding the
-path to the city of NewHaven.    
+path to the city of NewHaven.
 ~
 239 0 0 0 0 4
 D3
@@ -174,7 +174,7 @@ Slate Slopes~
    Rocky ravines and crags surround the area.  The heat of the desert
 penetrates to ones bowels.  To the west and east are more hills.  The Great
 Southern Desert is to the north.  You can see the peaks of the Southern
-Mountains high up in the wispy clouds to the south.    
+Mountains high up in the wispy clouds to the south.
 ~
 239 64 0 0 0 4
 D0
@@ -198,7 +198,7 @@ Slate Gorge~
 far to the north and south prevent movement there.  To the east and west are
 fatigue generating slopes that tear at the muscles in ones legs.  Some
 scorpions crawl under the rocks to seek shade and prey on the other denizens of
-the desert that hide there.    
+the desert that hide there.
 ~
 239 0 0 0 0 4
 D0
@@ -224,12 +224,12 @@ Jutted Path
 E
 denizen~
    There are small spiders, beetles, centipedes, sand slugs and a few ants
-crawling about the rocks.    
+crawling about the rocks.
 ~
 E
 rocks desert~
    It's way too hot to view the scenery you should find you way out of here
-before you die of thirst or starvation.    
+before you die of thirst or starvation.
 ~
 S
 #23906
@@ -238,7 +238,7 @@ A Rocky Cliff~
 closer to the Southern Mountains.  Far to the north and down below looms the
 foreboding Southern Desert.  To the south the hills become peaks of the Southern
 Mountains.  To the east and west are endless jagged hills and ravines of broken
-slate.    
+slate.
 ~
 239 0 0 0 0 5
 D0
@@ -271,7 +271,7 @@ desert hills peaks~
    The hills are like giant black monsters swimming to some unknown beach in
 the sand.  A vast desolance overwhelms even the more experienced adventurers.
 The beauty of the desert is unimaginable and astounding.  The whereabouts of
-the way out of this hell befudles even the most traveled veterans at times.  
+the way out of this hell befudles even the most traveled veterans at times.
 ~
 E
 southern mountains~
@@ -282,7 +282,7 @@ plates of the world collided together during the 'Great Formation' and were
 pushed up out of the bowels of the ground and left here asunder.  Many legends
 of NewHaven dwarves, drow demons, caves with riches and great battles with
 dragons, orcs, elephants, and horses abound the land but they have been called
-'old wives tales' and dubious to the truth of such tales.    
+'old wives tales' and dubious to the truth of such tales.
 ~
 S
 #23907
@@ -292,7 +292,7 @@ only markings to distinguish it from the rest of the hills.  It has been ages
 since anything but birds of prey and rodents have traveled to this point.  The
 path leads down from the hills of the Southern Mountains to the north towards
 the Southern Desert.  It appears as if this faint trail may turn into a path
-that actually goes someplace.    
+that actually goes someplace.
 ~
 239 0 0 0 0 5
 D0
@@ -301,7 +301,7 @@ Jutted Path Origin
 ~
 0 0 23906
 D2
-   Trail to the ascending path.    
+   Trail to the ascending path.
 ~
 ~
 0 0 23912
@@ -310,7 +310,7 @@ S
 Entrance to a Cave~
    A pile of rubble and some dead branches hide the entrance to a small cave.
 The opening is slightly obscured but there is just enough room that someone
-might be able to squeeze thru to see what is inside if they dared.    
+might be able to squeeze thru to see what is inside if they dared.
 ~
 239 12 0 0 0 5
 D2
@@ -326,10 +326,10 @@ Path to rocky cliff.
 S
 #23909
 Inside a Small Cave~
-   It looks like some small animals may live inside this small cave.  
+   It looks like some small animals may live inside this small cave.
 Hopefully, no big and scary ones have decided to live here.  Perhaps they may
 be coming back soon and kicking out intruders or eating them for lunch.  There
-is an entrance to the north and south.    
+is an entrance to the north and south.
 ~
 239 9 0 0 0 5
 D0
@@ -353,9 +353,9 @@ well that the South Pass is full of all kinds of caves.  Some leading no where,
 some inhabited by hidious monsters.  And others leading so far into the heart of
 the mountains that you might actually unwarily stumble upon the inhabitants of
 the underdark.  It is rumoured that if you should wish to access the cities of
-the drow, or to slay mindflayers, this is your direct route to the underdark.  
+the drow, or to slay mindflayers, this is your direct route to the underdark.
 Some speculate there might be other ways to get there as well, but it has never
-been proven.  
+been proven.
 ~
 S
 #23910
@@ -365,7 +365,7 @@ the sand to fly and gather into dunes at every obstacle, making the desert look
 like an enormous golden sea.  The desert stretches far to the north, east and
 west, while to the south can be seen the hills and summits, marking the beginning
 of the Southern Mountains.  One can continue their travels to the east and west
-where the dunes are far enough apart to provide a path.    
+where the dunes are far enough apart to provide a path.
 ~
 239 0 0 0 0 2
 D1
@@ -385,7 +385,7 @@ Drifts of Southern Desert~
 equipment infiltrating their equipment and supplies of food.  Scratching and
 drying their skin in this miserable heat.  Rolling hills of sand surround the
 area.  Impassable hills of slate are to the north and south.  East and west are
-more dunes of sand.    
+more dunes of sand.
 ~
 239 0 0 0 0 2
 D1
@@ -404,7 +404,7 @@ sand equipment~
 way out of this hell, they would know that the longer that one stays here, the
 more danger they are in of dying a worthless death, forgotten, without
 accomplishing anything.  The job of an adventurer is a tough job, they must
-rely on their determination and wits in order to survive.    
+rely on their determination and wits in order to survive.
 ~
 S
 #23912
@@ -413,7 +413,7 @@ An Ascending Trail~
 purple granite in the trail.  It has been a long time since anyone has traveled
 on this path so some spots are cluttered with boulders of granite partially
 blocking it and other parts have wind hewn ruts that look like they were cut by
-some insane sculptor who was mad at the world.    
+some insane sculptor who was mad at the world.
 ~
 239 4 0 0 0 5
 D0
@@ -434,7 +434,7 @@ various sizes from avalanches ages ago.  This part of the trail appears to
 be about halfway up the Southern Mountains and it gets steeper to the south as
 it travels further along the Southern Mountains.  Upwards you can barely make out
 some sort of ledge.  Slightly upward and to the west is a narrow crumbling path
-that looks too risky to attempt to traverse.    
+that looks too risky to attempt to traverse.
 ~
 239 0 0 0 0 5
 D0
@@ -459,9 +459,9 @@ A Desolate Precipice~
 birch trees are all around but not many signs of life, reminiscent of a
 battlefield where both sides lost, except there are no dead bodies scattered
 around.  North, over the ledge, the vastness of the desert spans below and
-every now and then there is some movement in the shifting dunes of sand.  
+every now and then there is some movement in the shifting dunes of sand.
 Barely visible, the peak of the mountain, which is still quite a way upward
-from here, is crowned by a few wisps of clouds.    
+from here, is crowned by a few wisps of clouds.
 ~
 239 196 0 0 0 5
 D5
@@ -477,7 +477,7 @@ possible to side step carefully facing the steep decline to the Southern Desert
 below and north of here.  How beautiful the desert is with its own pastels of
 white, orange, brown and red.  The narrow ledge crumbles and every now and then
 rocks tumble down the sheer side so far that no one could hear the sound of
-their crash at the base of the towering peak.    
+their crash at the base of the towering peak.
 ~
 239 0 0 0 0 5
 D1
@@ -497,11 +497,11 @@ A Long Climb~
 grabbing foot and hand holds and scaling the side of the mountain.  The wind is
 howling around with a frost biting chill.  Here rises a purple granite side of
 the peak, which no one has bothered to name, perhaps they will name it after an
-adventurer, should they fall and die here.    
+adventurer, should they fall and die here.
 ~
 239 0 0 0 0 5
 D4
-   Climb to the path around the ridge.    
+   Climb to the path around the ridge.
 ~
 ~
 0 0 23917
@@ -517,16 +517,16 @@ Around the Peak~
 winds around the mountain just below the peak.  There is a desert way down
 below surrounded by dense woods to the south.  To the west you can make out a
 few roads going thru the woods and to the east the trail continues with the
-mountain base blocking the view directly below.    
+mountain base blocking the view directly below.
 ~
 239 0 0 0 0 5
 D1
-   To a deep drift of snow.    
+   To a deep drift of snow.
 ~
 ~
 0 0 23918
 D5
-   A snow covered path around the peak.    
+   A snow covered path around the peak.
 ~
 ~
 0 0 23916
@@ -539,35 +539,35 @@ nowhere.  You wonder who would be on top of a mountain and not wearing boots in
 this weather.  To the west is a winding path around the ridge.  The trail
 starts again a ways off to the east near a huge tree.  Below is the sheer side
 of the mountain and cannot be traversed.  To the north is the peak of the
-mountain which looks just as omnimous here as it did far below.    
+mountain which looks just as omnimous here as it did far below.
 ~
 239 4 0 0 0 5
 D3
-   A winding trail around the peak.    
+   A winding trail around the peak.
 ~
 ~
 0 0 23917
 E
 footprint snow snowbank ~
    You notice a golden plaque attached to the side of the mountain and even
-though you cannot read the ancient runes you understand them somehow.    
+though you cannot read the ancient runes you understand them somehow.
 TO ENTER SAY THESE WORDS: Friend of NewHaven
 ~
 S
 T 23900
 #23919
 A Secret Entrance to the Cavern~
-   The path stops at a dwarven carved door to the secret path to NewHaven.  
+   The path stops at a dwarven carved door to the secret path to NewHaven.
 It looks brand new, probably because the dwarven stone cutters cast spells on
 it to preserve it centuries ago.  Downward, one can barely make out the stone
 road to the city within the mountain.  It is puzzling where this door comes
 from and to where it leads.  Only a brave explorer would be able to find out.
 A cautious and conservative explorer would return from whence he came and never
-know what lies beyond.    
+know what lies beyond.
 ~
 239 269 0 0 0 0
 D5
-   Beginning of the path to the dwarven road.    
+   Beginning of the path to the dwarven road.
 ~
 ~
 0 0 23920
@@ -589,7 +589,7 @@ centuries and hardly worn.  Who could have crafted such work?  It was made with
 long forgotten arts and spells.  Ancient lore states that it could only have
 been fabricated by the NewHaven dwarves of old.  To the east is a mountain of
 some type within the immense cavern.  Up, the road seems to end at a mysterious
-runed door.    
+runed door.
 ~
 239 265 0 0 0 0
 D1
@@ -598,7 +598,7 @@ Road to mountain of bones
 ~
 0 0 23921
 D4
-   End of the path to the Entrance.    
+   End of the path to the Entrance.
 ~
 ~
 0 0 23919
@@ -615,7 +615,7 @@ nature, some great act of the gods, the evil magic of a sorcerer or mage, or
 perhaps there are some survivors someplace, refugees that ran away and
 disappeared to some unknown land, unable to return to claim victory and clean
 up the battlefield.  To the west is a wide road of some type.  To the east is a
-broken bridge across a bottomless chasm.    
+broken bridge across a bottomless chasm.
 ~
 239 265 0 0 0 0
 D1
@@ -632,7 +632,7 @@ S
 #23922
 Next to a Broken Bridge~
    Here lies the epitome of dwarven architecture destroyed and laying in ruins.
-It is a magnificent suspension bridge arching across a bottomless chasm.  
+It is a magnificent suspension bridge arching across a bottomless chasm.
 However the distal side is broken and what remains of it is hanging down the
 chasm in a twisted menagerie of cable, stone, mithril, and gold.  The proximal
 side has somehow remained suspended on the west side, but droops down
@@ -640,7 +640,7 @@ precariously and could tumble into the chasm at any moment.  To the west there
 is a large gray and black heap.  You notice a pile of rubble on the proximal
 side which doesn't seem to fit there.  The rubble consist of hides, sticks,
 tree trunks, and bones of small animals.  To the north the path delves down
-into the chasm.    
+into the chasm.
 ~
 239 265 0 0 0 0
 D0
@@ -659,7 +659,7 @@ rubble pile proximal hides tree~
 the chasm.  The path is poorly constructed, hacked and chipped and obviously
 not made by dwarves but by someone else.  An unsure adventurer would turn back
 and go the way that he came, but a brave and gallant adventurer would follow
-the path.    
+the path.
 ~
 S
 T 23902
@@ -669,7 +669,7 @@ On a Hidden Path~
 mountain and winds around the scattered piles in a crudely hewed tunnel into
 the side of the mountain.  To the west is a pile of rubble consisting of hides,
 tree trunks, bones of small animals and rocks.  East the trail continues down
-the path.    
+the path.
 ~
 239 265 0 0 0 4
 D0
@@ -678,7 +678,7 @@ Path to a Small Cave
 ~
 0 0 23909
 D1
-   From a hidden path of rubble to crudely hewed hallway.    
+   From a hidden path of rubble to crudely hewed hallway.
 ~
 ~
 0 0 23924
@@ -687,18 +687,18 @@ pile rubble hides tree trunk rocks~
    There is a hidden path going to the west that can be followed.  It could be
 dangerous, a brave adventurer would probably follow it.  A more cautious
 adventurer would probably go back the way that he came, at least they would
-know what was there.    
+know what was there.
 ~
 S
 T 23903
 #23924
 Further Down the Path~
-   This path is hewed crudely out of the rock of the sides of the mountain.  
+   This path is hewed crudely out of the rock of the sides of the mountain.
 It is a very narrow hallway.  There is a clay floor with several footprints in
 it, they seem to have been made by an army of some kind.  It travels in an
 east-west direction.  To the west there is a short path which turns north into
 a huge pile of rubble.  To the east the path slopes downward towards a large
-pine tree.    
+pine tree.
 ~
 239 265 0 0 0 4
 D1
@@ -715,7 +715,7 @@ E
 clay footprints path~
    The path is covered with thousands of footprints, they seem like those of
 orc.  Probably an orc army uses this path as a shortcut to battles they fight
-all around the lands.  The clay is a light brown color, smooth and wet.    
+all around the lands.  The clay is a light brown color, smooth and wet.
 ~
 S
 #23925
@@ -725,7 +725,7 @@ mountain.  It is a lonely pine, tall, commanding, proud, and healthy.  A
 massive trunk is petrified from the base to up as far as one can see, but some
 needled limbs sway gently in the breeze far far above.  To the west is a clay
 path with many footprints in it.  To the south a wooden plank path meanders
-down the slope.    
+down the slope.
 ~
 239 129 0 0 0 5
 D2
@@ -734,7 +734,7 @@ D2
 ~
 0 0 23926
 D3
-   A path from a tall ponderosa pine to a clay path.    
+   A path from a tall ponderosa pine to a clay path.
 ~
 ~
 0 0 23924
@@ -744,7 +744,7 @@ pine ponderosa trunk base petrified~
 facilitate climbing the trunk.  It is pretty high up to the branches and if
 someone fell down they surely would injure themselves badly.  Wise judgement
 would tell them not to climb the tree and that it would be far too dangerous.
-  
+
 ~
 S
 T 23904
@@ -753,11 +753,11 @@ Below the Tree~
    A huge ponderosa pine tree looms overhead.  It stands tall and proud and was
 probably a leader of the trees at one time.  To the north is a path of wooden
 planks meandering up a slight slope.  South the path continues on with a turn
-in the path.    
+in the path.
 ~
 239 9 0 0 0 0
 D0
-   Path from under the tree to the Ponderosa pine.    
+   Path from under the tree to the Ponderosa pine.
 ~
 ~
 0 0 23925
@@ -768,7 +768,7 @@ The path contines and then turns.
 0 0 23940
 D5
    There is a crack in the ground with a small cave exposing some roots of the
-giant tree.    
+giant tree.
 ~
 ~
 0 0 23939
@@ -779,34 +779,34 @@ A Lookout Post~
 cluttered floor.  A few crude rows of bunks line the back wall.  There is a
 dirty black fireplace in the center of the room.  Around the walls are slits in
 the sides that someone could look out of.  Leading up and down the tree are
-small footholds someone has used to climb the tree.    
+small footholds someone has used to climb the tree.
 ~
 239 12 0 0 0 5
 D4
-   Ladder from outpost to up in a tree.    
+   Ladder from outpost to up in a tree.
 ~
 ~
 0 0 23928
 D5
-   Footholds down the trunk of a huge ponderosa pine tree.    
+   Footholds down the trunk of a huge ponderosa pine tree.
 ~
 ~
 0 0 23926
 E
 floor~
    The floor is cluttered with bones of small animals, burnt hides, broken
-spears and other trash.    
+spears and other trash.
 ~
 E
 bunks~
    The bunks are empty, uncomfortable, small and unmade racks for orc messengers
 to rest in while off duty.  There is nothing interesting about them but most
-adventurers are glad that they don't have to sleep in them.    
+adventurers are glad that they don't have to sleep in them.
 ~
 E
 fireplace burnt~
    The fireplace is barely suitable for burning a few branches in for heat or
-cooking.    
+cooking.
 ~
 E
 slits~
@@ -814,7 +814,7 @@ slits~
 north from the tree to a clay path which cuts off to the west.  A path on the
 side of the mountain can be seen.  Also, a zig zag trail leading down and off
 to the west . A medium sized desert is below and what appears to been a small
-oasis.    
+oasis.
 ~
 S
 #23928
@@ -822,11 +822,11 @@ Up in a Tree~
    Perched on a branch in the tree one can see that the trunk was petrified
 ages ago but the branches still grow and are teeming with small animals of all
 types.  There is a sturdy ladder going up and down the tree trunk.  Another
-branch goes from the trunk of the tree to the east.    
+branch goes from the trunk of the tree to the east.
 ~
 239 0 0 0 0 5
 D1
-   From up in a branch to out on a limb.    
+   From up in a branch to out on a limb.
 ~
 ~
 0 0 23929
@@ -836,7 +836,7 @@ Up higher in the tree.
 ~
 0 0 23936
 D5
-   From up in the branches to an old outpost.    
+   From up in the branches to an old outpost.
 ~
 ~
 0 0 23927
@@ -846,11 +846,11 @@ Out on a Branch~
    Out on a branch of a giant ponderosa pine tree.  The trunk is petrified but
 the limbs are full of pinion nuts which attracts the animals that have made
 this tree their home in the middle of this desolance.  West is the branch is
-attached to the petrified trunk of the tree.    
+attached to the petrified trunk of the tree.
 ~
 239 0 0 0 0 0
 D3
-   Out on a branch to the trunk of a tree.    
+   Out on a branch to the trunk of a tree.
 ~
 ~
 0 0 23928
@@ -861,7 +861,7 @@ A Branch in the Tree~
 the birds that hop and chirp thru its limbs and branches.  The sanctuary of
 this tree provides a resting stop for the birds on their travels and a few have
 decided to live here and make it their home.  The petrified trunk of the
-tree is west.    
+tree is west.
 ~
 239 0 0 0 0 0
 D3
@@ -875,7 +875,7 @@ A Branch in the Ponderosa Pine~
    Perched on a branch in the tree one can see that the trunk was petrified
 ages ago but the branches still grow and are teeming with small animals of all
 types of birds.  A few larger birds search for prey all around and in the tree.
-The branch is attached to the trunk east of here.    
+The branch is attached to the trunk east of here.
 ~
 239 0 0 0 0 0
 D1
@@ -890,7 +890,7 @@ Out on a Branch of the Tree~
 the birds that hop and chirp thru its limbs and branches.  The sanctuary of
 this tree provides a resting stop for the birds on their travels and a few have
 decided to live here and make it their home.  The petrified trunk of the tree
-is east.    
+is east.
 ~
 239 0 0 0 0 0
 D1
@@ -904,7 +904,7 @@ A Branch of the Pine Tree~
    Perched on a branch in the tree one can see that the trunk was petrified
 ages ago but the branches still grow and are teeming with small animals of all
 types of birds.  A few larger birds search for prey all around and in the tree.
-The branch is attached to the trunk west of here.    
+The branch is attached to the trunk west of here.
 ~
 239 0 0 0 0 0
 D3
@@ -917,8 +917,8 @@ S
 On a Ponderosa Pine Branch~
    The view out on a branch of a giant ponderosa pine tree is beautiful.  The
 trunk is petrified but the limbs are full of pinion nuts which attracts the
-animals that have made this tree their home in the middle of this desolance.  
-Towards the west the branch is attached to the petrified trunk of the tree.  
+animals that have made this tree their home in the middle of this desolance.
+Towards the west the branch is attached to the petrified trunk of the tree.
 ~
 239 0 0 0 0 0
 D3
@@ -931,8 +931,8 @@ S
 Out on a Sturdy Branch~
    The view out on a branch of a giant ponderosa pine tree is beautiful.  The
 trunk is petrified but the limbs are full of pinion nuts which attracts the
-animals that have made this tree their home in the middle of this desolance.  
-Towards the east the branch is attached to the petrified trunk of the tree.  
+animals that have made this tree their home in the middle of this desolance.
+Towards the east the branch is attached to the petrified trunk of the tree.
 ~
 239 0 0 0 0 0
 D1
@@ -1003,7 +1003,7 @@ In the Ponderosa Pine~
    The crown of the tree is almost fifty metrons high and is partially
 petrified.  The ladder goes down the trunk to other branches below.  Two
 branches sway in the wind to the east and to the west from here.  Some larger
-birds perch in the crown searching the broad expanses for prey.    
+birds perch in the crown searching the broad expanses for prey.
 ~
 239 0 0 0 0 0
 D1
@@ -1028,20 +1028,20 @@ The Roots of the Tree~
 pine.  The heart of the tree from which life sustaining minerals and water are
 drawn from the soil.  They go deep into the side of the mountain and have
 supported the tree for centuries.  Long fingers of the hand of the tree
-grasping the earth with a tight grip in the ground upon which it stands.  
+grasping the earth with a tight grip in the ground upon which it stands.
 Often their importance and beauty are forgotten by the land walkers above, but
 never by the tree itself, for if not for the roots below there would be nothing
-above.    
+above.
 ~
 239 385 0 0 0 0
 D4
-You see the petrified trunk of a tall ponderosa pine tree.    
+You see the petrified trunk of a tall ponderosa pine tree.
 ~
 ~
 0 0 23926
 E
 story newhaven~
-   The root of the tree laments it's story to you of the Legend of NewHaven.  
+   The root of the tree laments it's story to you of the Legend of NewHaven.
 Greetings Adventurer I am the sole survior of the battle of the fall of
 NewHaven.  It was in the reign of the Dwarven King Elcnir in the year of
 Goldleaf.  The NewHaven Dwarves, Men of Adonma, Elephants of Glad, Ents of
@@ -1054,7 +1054,7 @@ armies in the battlefield, destroyed them all instantly in their tracks.  I
 was on this perimeter and my trunk and roots were petrified by the "Myst of the
 crack" and have stood here alone since.  Now all I have is the company of birds
 and small creatures in my bough and I am unable to walk back to my forest of
-Drenwood and my heart grows weary and homesick.    
+Drenwood and my heart grows weary and homesick.
 ~
 S
 #23940
@@ -1065,16 +1065,16 @@ craftmanship, only mastered by the NewHaven dwarves.  Ones feet bounce lightly
 on the trail and don't tire as easily for some reason, perhaps the road has
 been woven with magical spells of travelling, like they were in the days of
 old.  North the path continues up the trail towards the mountain peak.  Down
-the gently winding road makes it's way to the foothills of the mountains.    
+the gently winding road makes it's way to the foothills of the mountains.
 ~
 239 0 0 0 0 4
 D0
-The path turns gently northward, to a giant ponderosa pine tree.    
+The path turns gently northward, to a giant ponderosa pine tree.
 ~
 ~
 0 0 23926
 D5
-   The path turns westwardly thru a light sloping forest.    
+   The path turns westwardly thru a light sloping forest.
 ~
 ~
 0 0 23941
@@ -1088,21 +1088,21 @@ still exists to this day
 S
 #23941
 A Path Up the Mountain~
-   The path continues up the moutain in a gentle slope with an easy climb.  
+   The path continues up the moutain in a gentle slope with an easy climb.
 Some wild mountain flowers grow along the path.  A few rotting trees lie broken
 and decaying around you.  There are many patches of small trees sprouting up
 all around the old and decaying ones as nature regenerates itself.  Up there is
 a turn in the path.  West the path slowly dwindles into a lightly wooded area.
-  
+
 ~
 239 0 0 0 0 5
 D3
-   The path slopes downward into some rolling hills and forests.    
+   The path slopes downward into some rolling hills and forests.
 ~
 ~
 0 0 23942
 D4
-   The path turns towards the north as it climbs up the mountain trail.    
+   The path turns towards the north as it climbs up the mountain trail.
 ~
 ~
 0 0 23940
@@ -1111,7 +1111,7 @@ flowers trees wild~
    The flowers smell like spring.  The rotting trees have lived a good life and
 their substance is returning to the soil, nourishing the new growths that will
 come in the future, giving themselves to their offspring and other wildlife in
-a never-ending cycle of life and death.    
+a never-ending cycle of life and death.
 ~
 S
 #23942
@@ -1121,16 +1121,16 @@ mountain forest.  It is blanketed with a thick layer of pine needles that
 cushion ones steps.  Birds chirp, squirrels chatter, rabbits scamper about and
 and an occasional deer can be seen grazing on the new grass and bark they can
 find as they forage for food.  East the path seems to widen and is paved with
-brick.  West the trial winds thru the foothills.    
+brick.  West the trial winds thru the foothills.
 ~
 239 0 0 0 0 4
 D1
-   The path winds upward thru some light forests and hills.    
+   The path winds upward thru some light forests and hills.
 ~
 ~
 0 0 23941
 D3
-   The path slopes down thru some hills.    
+   The path slopes down thru some hills.
 ~
 ~
 0 0 23943
@@ -1143,11 +1143,11 @@ something, causing the hairs to stand up on ones neck is here.  Even brave
 adventures get an uneasy feelings sometimes, like they forgot something
 important or do they have enough supplies for their journey.  East the path
 continues to climb thru some light woods.  South the path disappears into the
-sands of the desert.    
+sands of the desert.
 ~
 239 0 0 0 0 4
 D1
-   The path continues east thru some hills.    
+   The path continues east thru some hills.
 ~
 ~
 0 0 23942
@@ -1160,11 +1160,11 @@ The path is roughly hewn and not of dwarven construction but seems sturdy
 enough.  Every few strata there is a stairwell that winds up and down the
 chasm.  Periodically a loose rock or boulder dislodges from the side of the
 chasm and crashes below on the sides of the chasm walls resounding for a few
-minutes then no sounds can be heard as it's course takes it from the sides.  
+minutes then no sounds can be heard as it's course takes it from the sides.
 ~
 239 269 0 0 0 4
 D0
-   Path along the chasm.    
+   Path along the chasm.
 ~
 ~
 0 0 23945
@@ -1180,16 +1180,16 @@ Further into the Chasm~
 and deeper into the chasm depths and darkness to the north.  The sulfuric fumes
 are growing stronger with each level lower.  There is a thin yellow powder on
 the path, probably condensation of the fumes upon its surface.  The path heads
-deeper into the chasm to the north and climbs up the chasm to the south.    
+deeper into the chasm to the north and climbs up the chasm to the south.
 ~
 239 265 0 0 0 5
 D0
-   Path along the chasm.    
+   Path along the chasm.
 ~
 ~
 0 0 23946
 D2
-   Path along the side of the chasm.    
+   Path along the side of the chasm.
 ~
 ~
 0 0 23944
@@ -1200,21 +1200,21 @@ A Fork in the Path~
 are two stone stairways, one veering off to the east and one veering off into
 the wall of the chasm to the west.  The sides of the chasm seem to glow with a
 soft yellow glow, providing a dull light to see the trail.  To the south the
-path slopes upward and gradually climbs the chasm.    
+path slopes upward and gradually climbs the chasm.
 ~
 239 268 0 0 0 5
 D1
-   Path to a travelers resting spot.    
+   Path to a travelers resting spot.
 ~
 ~
 0 0 23959
 D2
-   Path climbing up the chasm.    
+   Path climbing up the chasm.
 ~
 ~
 0 0 23945
 D3
-   Stairway to a glowing cave going into the chasm wall.    
+   Stairway to a glowing cave going into the chasm wall.
 ~
 ~
 0 0 23947
@@ -1225,16 +1225,16 @@ A Glowing Cave~
 greenish-yellow light to the entrance of a rocky cave.  In the distance to the
 south there appears to be a fire of some kind glowing with orange, red, and
 bright yellow.  The path is smooth and paved with purple granite blocks and a
-black grout of obsidian powder.    
+black grout of obsidian powder.
 ~
 239 264 0 0 0 0
 D1
-   Path to along the side of the chasm.    
+   Path to along the side of the chasm.
 ~
 ~
 0 0 23946
 D2
-   Path further into the cave.    
+   Path further into the cave.
 ~
 ~
 0 0 23948
@@ -1246,7 +1246,7 @@ is smooth on the floor with bricks of purple granite and in a plain design,
 probably goblins made this or copied it from some other culture.  There are
 hollowed out cubby holes with places for lanterns, but they are unnecessary
 because of the glow of the walls.  The combination of colors is nauseating and
-the smell here doesn't help.    
+the smell here doesn't help.
 ~
 239 392 0 0 0 4
 D0
@@ -1272,7 +1272,7 @@ is smooth on the floor with bricks of purple granite and in a plain design,
 probably goblins made this or copied it from some other culture.  There are
 hollowed out cubby holes with places for lanterns, but they are unnecessary
 because of the glow of the walls.  The combination of colors is nauseating and
-the smell here doesn't help.    
+the smell here doesn't help.
 ~
 239 264 0 0 0 0
 D1
@@ -1292,7 +1292,7 @@ Another Part of the Cave~
 stale, forboding and bleak.  The floor is smooth here but the walls have jagged
 protusions of crystal.  There are strange pattering footstep sounds coming from
 within the darkness around.  The air has the stench of death on it's still cool
-breath.    
+breath.
 ~
 239 265 0 0 0 0
 D0
@@ -1308,7 +1308,7 @@ D3
 ~
 0 0 23950
 D5
-A dark sloping passage downwards.    
+A dark sloping passage downwards.
 ~
 ~
 0 0 23964
@@ -1316,10 +1316,10 @@ S
 #23951
 Another Part of the Cave~
    Darkness is entombed within the pitch black walls of the cave.  Sharp jagged
-crystals of adamite, quartz, obsidian and granite are embedded in the walls.  
+crystals of adamite, quartz, obsidian and granite are embedded in the walls.
 Strange echos of pattering footsteps can be heard eminating from the darkness
 around.  The air is thick, dry, stale and foul.  It smells of death and decay
-and is suffocating.    
+and is suffocating.
 ~
 239 265 0 0 0 0
 D1
@@ -1337,7 +1337,7 @@ Another Part of the Cave~
 adamite, but some purple quartz crystals and granite are here also.  The walls
 are rough and sharp to the touch.  The floor is smooth and hard but not
 slippery on the dry level floor.  Soft footsteps can be heard pattering in the
-darkness from obscure directions.  The air here is still and stale.    
+darkness from obscure directions.  The air here is still and stale.
 ~
 239 265 0 0 0 0
 D0
@@ -1355,7 +1355,7 @@ Another Part of the Cave~
 and purple quartz.  They are sharp to the touch, but the floors have been hewn
 smooth and show no ruts or other wear.  The air is stagnant, stale , dry and
 cool.  Nothing could live here and yet strange patting sounds echo off the
-walls and into the darkness around.    
+walls and into the darkness around.
 ~
 239 265 0 0 0 0
 D0
@@ -1381,7 +1381,7 @@ Another Part of the Cave~
 could live here.  Yet, sounds of footsteps pattering softly on the smooth hewn
 floor can be heard from all around.  Perhaps there are creatures lost in the
 caverns looking for a way out, losing hope, losing energy, no nurishment to
-sustain them, lost forever in the darkness with no one to rescue them.    
+sustain them, lost forever in the darkness with no one to rescue them.
 ~
 239 265 0 0 0 0
 D0
@@ -1410,7 +1410,7 @@ ruts or other wear.  Soft pattering footstep can be heard echoing off the walls
 and into the darkness around.  If someone were to get lost here they would
 surely die for lack of food, water, light or fresh air, Perhaps those footsteep
 are from lost travellers wandering thru the caves trying to find their way out.
-  
+
 ~
 239 265 0 0 0 0
 D2
@@ -1427,7 +1427,7 @@ Another Part of the Cave~
    This part of the cave is much like the others.  Stale dry air which smells
 of death and decay.  One can hear pattering footsteps in the dark from all
 around.  If someone were to get lost here they would surely die for lack of
-food, water, light or fresh air.    
+food, water, light or fresh air.
 ~
 239 265 0 0 0 0
 D1
@@ -1435,7 +1435,7 @@ D1
 ~
 0 0 23955
 D3
-To a dark corner of the cave.    
+To a dark corner of the cave.
 ~
 ~
 0 0 23965
@@ -1443,24 +1443,24 @@ S
 #23957
 Inside a Goblin Cave~
    There is large campfire built here, probably for warmth.  The smoke fills
-this part of the cave and has coated the cave walls with a thick black soot.  
+this part of the cave and has coated the cave walls with a thick black soot.
 The smell in the cave is worse here, and a pile of garbage seems to be the
 source of the awful smell.  The glow of the cave walls is less noticeable here
-but you can still see by the light of the fire.    
+but you can still see by the light of the fire.
 ~
 239 264 0 0 0 0
 D0
-   Path to another part of the goblin cave.    
+   Path to another part of the goblin cave.
 ~
 ~
 0 0 23948
 D2
-   Path to another part of the goblin cave.    
+   Path to another part of the goblin cave.
 ~
 ~
 0 0 23958
 D3
-   Path to another part of the goblin cave.    
+   Path to another part of the goblin cave.
 ~
 ~
 0 0 23949
@@ -1472,7 +1472,7 @@ is smooth on the floor with bricks of purple granite and in a plain design,
 probably goblins made this or copied it from some other culture.  There are
 hollowed out cubby holes with places for lanterns, but they are unnecessary
 because of the glow of the walls.  The combination of colors is nauseating and
-the smell here doesn't help.    
+the smell here doesn't help.
 ~
 239 264 0 0 0 0
 D0
@@ -1483,28 +1483,28 @@ Path to another part of the goblin cave.
 S
 #23959
 A Ledge on the Chasm Path~
-   The path is wider here and is carved deeper into the side of the chasm.  
+   The path is wider here and is carved deeper into the side of the chasm.
 There are spring fountains and benches here in this resting spot along the
 trail.  To the east the path continues it's downward slope, while it climbs
 upwards to the west.  There is a fine glowing powder lighting the path with a
 eerie orange-red glow here.  A strong sulfuric smell drifts up from the chasm
-below.    
+below.
 ~
 239 12 0 0 0 4
 D1
-   Decending path into the chasm.    
+   Decending path into the chasm.
 ~
 ~
 0 0 23960
 D3
-   Path up the chasm wall.    
+   Path up the chasm wall.
 ~
 ~
 0 0 23946
 E
 spring fountains~
    These fountains are dry but probably once quenched the thirst of travelers
-and their beasts along the path.    
+and their beasts along the path.
 ~
 S
 #23960
@@ -1515,16 +1515,16 @@ sulfuric odor.  Every now and then sounds of dislodged rocks can be heard
 crashing off the sides of the chasm, then a deafening silence as they continue
 their endless flight through the depths below.  To the west the path ascends
 with a dull red glow of mineral deposits from the fumes.  To the east is a
-gradual slope deeper into the chasm.    
+gradual slope deeper into the chasm.
 ~
 239 264 0 0 0 4
 D1
-   Path descending deeper into the chasm.    
+   Path descending deeper into the chasm.
 ~
 ~
 0 0 23961
 D3
-   Path ascending the chasm wall.    
+   Path ascending the chasm wall.
 ~
 ~
 0 0 23959
@@ -1535,17 +1535,17 @@ A Huge Gate~
 runes.  It is a deep black color and probably contstructed of the drow's
 favorite mineral, obsidian.  The path has a dull red glow from some powder
 caked along the chasm walls.  To the west the path ascends along the side of
-the chasm, lit with the scarlet glow.    
+the chasm, lit with the scarlet glow.
 ~
 239 264 0 0 0 4
 D2
-   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.  
-There is a red rune in the center of the door which might be a keyhole.    
+   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.
+There is a red rune in the center of the door which might be a keyhole.
 ~
 gate runed~
 1 23929 23962
 D3
-   Path ascending the side of the chasm.    
+   Path ascending the side of the chasm.
 ~
 ~
 0 0 23960
@@ -1553,12 +1553,12 @@ E
 powder glow walls~
    The blood red glow comes from a fine powder, probably deposits from the
 sulfuric fumes drifting up from the chasm below.  The red is a deep blood red
-or scarlet and dimly lights the path along the chasm.    
+or scarlet and dimly lights the path along the chasm.
 ~
 E
 gate obsidian~
-   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.  
-There is a red rune in the center of the door which might be a keyhole.    
+   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.
+There is a red rune in the center of the door which might be a keyhole.
 ~
 S
 #23962
@@ -1566,24 +1566,24 @@ An Obsidian Cave~
    The entrance to the cave is eight metrons high and four metrons wide,
 covered with bricks of shiny black obsidian.  The floor is covered with red
 glowing runes of drow origin and light the path.  There is a huge gate to the
-north.  The cave continues on to the south.    
+north.  The cave continues on to the south.
 ~
 239 140 0 0 0 4
 D0
    A huge obsidian door carved with drow runes.  The door is about 8 metrons
-high and there is a red rune in the center for a key.    
+high and there is a red rune in the center for a key.
 ~
 gate runed~
 1 23929 23961
 D2
-Towards a dim passageway.    
+Towards a dim passageway.
 ~
 ~
 0 0 23963
 E
 gate~
-   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.  
-There is a red rune in the center of the door which might be a keyhole.    
+   An obsidian gate 8 metrons high, 4 metrons wide carved with drow runes.
+There is a red rune in the center of the door which might be a keyhole.
 ~
 S
 #23963
@@ -1592,11 +1592,11 @@ A Dark Passage~
 and decay.  There is a slight glow here coming from what looks like many
 footprints going in all directions on the passage floor.  There is a soft light
 coming from the north end of the passage and darkness to the east.  Strange
-faint sounds of patting feet can be heard echoing from the darkness.    
+faint sounds of patting feet can be heard echoing from the darkness.
 ~
 239 268 0 0 0 2
 D0
-Towards a red glow in the passage.    
+Towards a red glow in the passage.
 ~
 ~
 0 0 23962
@@ -1608,24 +1608,24 @@ Towards a dark passageway.
 E
 light footprints floor~
    The light comes from what looks like tracks of many footprints traveling
-thru a red glowing powder thru the passage.    
+thru a red glowing powder thru the passage.
 ~
 S
 #23964
 Mouth of a Cave~
-   This is a sloping passage.  Downwards to a dark passage to the west.  
+   This is a sloping passage.  Downwards to a dark passage to the west.
 Upwards to what appears to be a cave.  The air is stale and smells of death and
 decay.  Eriee sounds of soft footsteps come from within the cave.  And echoing
-thru the passageway.    
+thru the passageway.
 ~
 239 265 0 0 0 0
 D3
-Towards a glowing passageway.    
+Towards a glowing passageway.
 ~
 ~
 0 0 23963
 D4
-Towards a dark cave.    
+Towards a dark cave.
 ~
 ~
 0 0 23950
@@ -1635,16 +1635,16 @@ A Dark Corner of the Cave~
    The stale cool air remains stagnant and has the stench of death and decay
 upon it.  This is a small niche of the cave with a lower ceiling than the rest
 of the cave.  A narrow passageway leads north into the darkness and to the
-east, leads into a wider area of the dark cave.    
+east, leads into a wider area of the dark cave.
 ~
 239 265 0 0 0 0
 D0
-To another part of the cave.    
+To another part of the cave.
 ~
 ~
 0 0 23966
 D1
-To a wider part of the cave.    
+To a wider part of the cave.
 ~
 ~
 0 0 23956
@@ -1653,16 +1653,16 @@ S
 Another Part of the Cave~
    This part of the cave is not any different than the rest.  Cool, dry, stale
 air, no food , no water, or other substanance to sustain life.  Yet, sounds of
-soft footsteps can be heard coming from all around.    
+soft footsteps can be heard coming from all around.
 ~
 239 269 0 0 0 0
 D1
-A dark part of the cave.    
+A dark part of the cave.
 ~
 ~
 0 0 23967
 D2
-To a dark niche in the cave.    
+To a dark niche in the cave.
 ~
 ~
 0 0 23965
@@ -1672,7 +1672,7 @@ Another Part of the Cave~
    The cave has dark walls, stale air, strange sounds of footsteps coming from
 all around.  The walls are a conglomerate of adamite and obsidian rock and an
 evil force seems to raditate from them.  The floor has been hewn smooth by
-someone and seems to have no signs of wear.    
+someone and seems to have no signs of wear.
 ~
 239 265 0 0 0 4
 D0
@@ -1681,7 +1681,7 @@ A dark stale cave.
 ~
 0 0 23968
 D3
-A dark cave.    
+A dark cave.
 ~
 ~
 0 0 23966
@@ -1693,7 +1693,7 @@ the cavern here.  If someone were to get lost here they would surely die for
 lack of food, water, fresh air, light or hope of finding a path thru the dark
 caverns, niches, slopes.  The floor is smooth here but the walls are sharp to
 the touch with shards of obsidian, adamite protruding from it.  Soft pattering
-sounds can be heard echoing off the walls from all around.    
+sounds can be heard echoing off the walls from all around.
 ~
 239 265 0 0 0 4
 D0
@@ -1707,7 +1707,7 @@ An even darker part of the cave.
 ~
 0 0 23967
 D3
-A dark cave with a stale air of death and decay.    
+A dark cave with a stale air of death and decay.
 ~
 ~
 0 0 23966
@@ -1718,11 +1718,11 @@ Another Part of the Cave~
 jut out from the sides with glimmers of adamite cyrstal shards wedged in
 between the layers.  If one were to get lost here they would surely die, no
 food, water, light or fresh air to sustain them for very long.  Soft patting
-footsteps can be heard coming from somewhere within to the south.    
+footsteps can be heard coming from somewhere within to the south.
 ~
 239 265 0 0 0 0
 D0
-Towards a long dark obsidian hallway.    
+Towards a long dark obsidian hallway.
 ~
 door~
 1 0 23970
@@ -1739,7 +1739,7 @@ runs north and south.  There is a dark obsidian door on the north side.  An
 opening to a dark cavern is on the south.  Soft pattering sounds can be heard
 towards the south but inside the the hallway there are no sounds.  The sounds
 and light seem to be absorbed by the mysterious stone the walls, ceiling, and
-floor are made of.    
+floor are made of.
 ~
 239 397 0 0 0 4
 D0
@@ -1747,18 +1747,18 @@ D0
 door~
 1 0 23971
 D2
-   Door to the drow caverns.    
+   Door to the drow caverns.
 ~
 gate~
 1 0 23969
 S
 #23971
 South End of Slave Corridor~
-   This is a long hallway with dark black stone floor, walls and ceiling.  
+   This is a long hallway with dark black stone floor, walls and ceiling.
 There are several gates to prison cells on each side.  Grunts, moans, and pleas
 of mercy can be heard coming from the cells.  The air here smells of blood and
 sweat.  There are doors on each end of the hallway leading towards unknown
-destinations.    
+destinations.
 ~
 239 265 0 0 0 0
 D0
@@ -1767,7 +1767,7 @@ Further down the corridor.
 ~
 0 0 23972
 D1
-A gate to a slave chamber.    
+A gate to a slave chamber.
 ~
 gate~
 1 0 23975
@@ -1776,18 +1776,18 @@ D2
 door~
 1 0 23970
 D3
-Gate to a slave chamber.    
+Gate to a slave chamber.
 ~
 gate~
 1 0 23976
 S
 #23972
 Middle of Slave Corridor~
-   This is a long hallway with dark black stone floor, walls and ceiling.  
+   This is a long hallway with dark black stone floor, walls and ceiling.
 There are several gates to prison cells on each side.  Grunts, moans, and pleas
 of mercy can be heard coming from the cells.  The air here smells of blood and
 sweat.  There are doors on each end of the hallway leading towards unknown
-destinations.    
+destinations.
 ~
 239 265 0 0 0 0
 D0
@@ -1796,7 +1796,7 @@ Further down the corridor.
 ~
 0 0 23973
 D1
-Gate to a slave chamber.    
+Gate to a slave chamber.
 ~
 gate~
 1 0 23977
@@ -1813,20 +1813,20 @@ gate~
 S
 #23973
 North End of Slave Corridor~
-   This is a long hallway with dark black stone floor, walls and ceiling.  
+   This is a long hallway with dark black stone floor, walls and ceiling.
 There are several gates to prison cells on each side.  Grunts, moans, and pleas
 of mercy can be heard coming from the cells.  The air here smells of blood and
 sweat.  There are doors on each end of the hallway leading towards unknown
-destinations.    
+destinations.
 ~
 239 265 0 0 0 0
 D0
-Door to a hallway.    
+Door to a hallway.
 ~
 ~
 1 0 23980
 D1
-Gate to a slave chamber.    
+Gate to a slave chamber.
 ~
 gate~
 1 0 23979
@@ -1836,7 +1836,7 @@ Further down the corridor.
 ~
 0 0 23972
 D3
-Gate to a slave chamber.    
+Gate to a slave chamber.
 ~
 gate~
 1 0 23974
@@ -1845,13 +1845,13 @@ S
 A Slave Chamber~
    A large dark room is here with a gate to a passageway, a trough carved in
 the floor, dark smooth walls and ceiling.  The trough in the floor has water
-and scraps of food in it.  The smooth dark walls are made of obsidian block.  
+and scraps of food in it.  The smooth dark walls are made of obsidian block.
 The ceiling is high above the floor and has air vents and hollowed out sections
-in which torches burn dimly.    
+in which torches burn dimly.
 ~
 239 265 0 0 0 0
 D1
-Gate to the passageway.    
+Gate to the passageway.
 ~
 gate~
 1 0 23973
@@ -1860,13 +1860,13 @@ S
 A Slave Chamber~
    A large dark room is here with a gate to a passageway, a trough carved in
 the floor, dark smooth walls and ceiling.  The trough in the floor has water
-and scraps of food in it.  The smooth dark walls are made of obsidian block.  
+and scraps of food in it.  The smooth dark walls are made of obsidian block.
 The ceiling is high above the floor and has air vents and hollowed out sections
-in which torches burn dimly.    
+in which torches burn dimly.
 ~
 239 273 0 0 0 0
 D3
-Gate to the passageway.    
+Gate to the passageway.
 ~
 gate~
 1 0 23971
@@ -1875,9 +1875,9 @@ S
 A Slave Chamber~
    A large dark room is here with a gate to a passageway, a trough carved in
 the floor, dark smooth walls and ceiling.  The trough in the floor has water
-and scraps of food in it.  The smooth dark walls are made of obsidian block.  
+and scraps of food in it.  The smooth dark walls are made of obsidian block.
 The ceiling is high above the floor and has air vents and hollowed out sections
-in which torches burn dimly.    
+in which torches burn dimly.
 ~
 239 265 0 0 0 0
 D1
@@ -1890,13 +1890,13 @@ S
 A Slave Chamber~
    A large dark room is here with a gate to a passageway, a trough carved in
 the floor, dark smooth walls and ceiling.  The trough in the floor has water
-and scraps of food in it.  The smooth dark walls are made of obsidian block.  
+and scraps of food in it.  The smooth dark walls are made of obsidian block.
 The ceiling is high above the floor and has air vents and hollowed out sections
-in which torches burn dimly.    
+in which torches burn dimly.
 ~
 239 265 0 0 0 0
 D3
-Gate to the passageway.    
+Gate to the passageway.
 ~
 gate~
 1 0 23972
@@ -1905,13 +1905,13 @@ S
 A Slave Chamber~
    A large dark room is here with a gate to a passageway, a trough carved in
 the floor, dark smooth walls and ceiling.  The trough in the floor has water
-and scraps of food in it.  The smooth dark walls are made of obsidian block.  
+and scraps of food in it.  The smooth dark walls are made of obsidian block.
 The ceiling is high above the floor and has air vents and hollowed out sections
-in which torches burn dimly.    
+in which torches burn dimly.
 ~
 239 265 0 0 0 0
 D1
-Gate to the passageway.    
+Gate to the passageway.
 ~
 gate~
 1 0 23972
@@ -1920,13 +1920,13 @@ S
 A Slave Chamber~
    A large dark room is here with a gate to a passageway, a trough carved in
 the floor, dark smooth walls and ceiling.  The trough in the floor has water
-and scraps of food in it.  The smooth dark walls are made of obsidian block.  
+and scraps of food in it.  The smooth dark walls are made of obsidian block.
 The ceiling is high above the floor and has air vents and hollowed out sections
-in which torches burn dimly.    
+in which torches burn dimly.
 ~
 239 265 0 0 0 0
 D3
-A gate to the passageway.    
+A gate to the passageway.
 ~
 gate~
 1 0 23973
@@ -1941,16 +1941,16 @@ walls along the passage way and sharp turns along it's path.  The craftmanship
 of the tiles and blocks of the walls are superb and no cracks can be detected
 between the smooth grotesque design.  The dim red glow seems to be absorbed by
 the black walls and the onyx tiles on the floor glimmer reflections from the
-ceiling so only a short distance can be seen down the hallway.    
+ceiling so only a short distance can be seen down the hallway.
 ~
 239 268 0 0 0 0
 D1
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23981
 D2
-A door to another passageway.    
+A door to another passageway.
 ~
 door~
 1 0 23973
@@ -1965,16 +1965,16 @@ walls along the passage way and sharp turns along it's path.  The craftmanship
 of the tiles and blocks of the walls are superb and no cracks can be detected
 between the smooth grotesque design.  The dim red glow seems to be absorbed by
 the black walls and the onyx tiles on the floor glimmer reflections from the
-ceiling so only a short distance can be seen down the hallway.    
+ceiling so only a short distance can be seen down the hallway.
 ~
 239 264 0 0 0 0
 D1
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23982
 D3
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23980
@@ -1989,16 +1989,16 @@ walls along the passage way and sharp turns along it's path.  The craftmanship
 of the tiles and blocks of the walls are superb and no cracks can be detected
 between the smooth grotesque design.  The dim red glow seems to be absorbed by
 the black walls and the onyx tiles on the floor glimmer reflections from the
-ceiling so only a short distance can be seen down the hallway.    
+ceiling so only a short distance can be seen down the hallway.
 ~
 239 264 0 0 0 0
 D0
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23983
 D3
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23981
@@ -2013,16 +2013,16 @@ walls along the passage way and sharp turns along it's path.  The craftmanship
 of the tiles and blocks of the walls are superb and no cracks can be detected
 between the smooth grotesque design.  The dim red glow seems to be absorbed by
 the black walls and the onyx tiles on the floor glimmer reflections from the
-ceiling so only a short distance can be seen down the hallway.    
+ceiling so only a short distance can be seen down the hallway.
 ~
 239 264 0 0 0 0
 D2
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23982
 D3
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23984
@@ -2037,16 +2037,16 @@ walls along the passage way and sharp turns along it's path.  The craftmanship
 of the tiles and blocks of the walls are superb and no cracks can be detected
 between the smooth grotesque design.  The dim red glow seems to be absorbed by
 the black walls and the onyx tiles on the floor glimmer reflections from the
-ceiling so only a short distance can be seen down the hallway.    
+ceiling so only a short distance can be seen down the hallway.
 ~
 239 264 0 0 0 0
 D1
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23983
 D2
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23985
@@ -2061,11 +2061,11 @@ walls along the passage way and sharp turns along it's path.  The craftmanship
 of the tiles and blocks of the walls are superb and no cracks can be detected
 between the smooth grotesque design.  The dim red glow seems to be absorbed by
 the black walls and the onyx tiles on the floor glimmer reflections from the
-ceiling so only a short distance can be seen down the hallway.    
+ceiling so only a short distance can be seen down the hallway.
 ~
 239 264 0 0 0 0
 D0
-Further down the hallway.    
+Further down the hallway.
 ~
 ~
 0 0 23984
@@ -2082,7 +2082,7 @@ and 8 cm thick.  If one fell off a supporting strand, they would not fall too
 far before landing on another.  The strands are symetrically designed and
 radiate from the central chamber within the zone.  One can barely make out
 another chamber directly in the center which is suspended in space by the
-thousands of strands of spiderweb supporting it.    
+thousands of strands of spiderweb supporting it.
 ~
 239 137 0 0 0 5
 D4
@@ -2093,9 +2093,9 @@ S
 #23999
 South Pass Links Room {Crysanthia]~
    This zone links north to room 9030.  Build all rooms south of that
-connection point.    
-Best link to zone 90 would be south to room 23904 and north from 
-23904 to room 9030 in zone 90. When implemented on CW this 
+connection point.
+Best link to zone 90 would be south to room 23904 and north from
+23904 to room 9030 in zone 90. When implemented on CW this
 should be edited in both rooms on other port.
 ~
 239 0 0 0 0 0

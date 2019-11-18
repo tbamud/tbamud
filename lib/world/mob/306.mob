@@ -4,7 +4,7 @@ a stealthy brown jaguar~
 A stealthy brown jaguar makes its way along the branches.
 ~
    It gives a lazy look in your direction and continues with its slow, graceful
-slink across the Tree's branches.  
+slink across the Tree's branches.
 ~
 16456 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -20,7 +20,7 @@ an elven cat~
 An elven cat lies on a branch, deep in sleep.
 ~
    It lays in the shade with an uncaring look to it, as if everything were
-completely safe.  
+completely safe.
 ~
 72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -35,7 +35,7 @@ leopard spotted~
 a spotted leopard~
 A spotted leopard lazily preens its coat as you walk past.
 ~
-   It does not even glance your way as it goes about its bathing needs.  
+   It does not even glance your way as it goes about its bathing needs.
 ~
 72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -50,7 +50,7 @@ jaculi snake~
 a jaculi~
 A small tree snake slithers past.
 ~
-   It is a very small, green thing which has made its home in the Great Tree.  
+   It is a very small, green thing which has made its home in the Great Tree.
 ~
 72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
@@ -65,7 +65,7 @@ grippli frog tree~
 a grippli~
 A small tree frog hops about.
 ~
-   It is a little green thing, looking for a few good insects to munch.  
+   It is a little green thing, looking for a few good insects to munch.
 ~
 72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
@@ -81,7 +81,7 @@ a wild babboon~
 A wild babboon ambles about.
 ~
    It lumbers about the tree, munching here and there on any items it finds of
-interest.  
+interest.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -97,7 +97,7 @@ a carnivorous ape~
 A carnivorous ape swings from branch to branch.
 ~
    It has a fixed look of stupidity upon its face, one which says plainly that
-it exists only by the grace of the creatures around it.  
+it exists only by the grace of the creatures around it.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -113,7 +113,7 @@ an Atomie Shaman~
 An Atomie Shaman walks slowly past.
 ~
    The Shaman wears a look of absolute seriousness upon his face, a fixed
-expression of intense concentration.  
+expression of intense concentration.
 ~
 72 0 0 0 0 0 0 0 600 E
 7 18 5 1d1+70 1d2+1
@@ -129,7 +129,7 @@ an Atomie father~
 An Atomie father works diligently for his family.
 ~
    The atomie is a race of highly intelligent elf-like beings who serve the
-trees in which they reside.  
+trees in which they reside.
 ~
 72 0 0 0 0 0 0 0 700 E
 6 18 6 1d1+60 1d2+1
@@ -145,7 +145,7 @@ an Atomie mother~
 An Atomie mother fusses about the tree, cleaning and straightening.
 ~
    Her face looks careworn and full of love.  Her labors are those of her
-people, which age all prematurely.  
+people, which age all prematurely.
 ~
 72 0 0 0 0 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
@@ -161,7 +161,7 @@ an Atomie child~
 An Atomie child plays about the tree branches.
 ~
    The child looks to be without a care in the world, existing in a very perfect
-place.  
+place.
 ~
 72 0 0 0 0 0 0 0 600 E
 4 19 7 0d0+40 1d2+0
@@ -176,7 +176,7 @@ dryad~
 a dryad~
 A dryad walks about the branches with a lithe dexterity.
 ~
-   She politely nods to you and continues on her way.  
+   She politely nods to you and continues on her way.
 ~
 72 0 0 0 0 0 0 0 500 E
 8 18 5 1d1+80 1d2+1
@@ -207,7 +207,7 @@ sprite~
 a sprite~
 A sprite moves past, all grace and mischief.
 ~
-   She grins wickedly your way and winks before moving on.  
+   She grins wickedly your way and winks before moving on.
 ~
 72 0 0 0 0 0 0 0 600 E
 8 18 5 1d1+80 1d2+1
@@ -223,7 +223,7 @@ an ettercap~
 An ettercap lounges in a small branching of the tree.
 ~
    It looks to be awake but nods off every now again, jerking upright with a
-start.  
+start.
 ~
 74 0 0 0 0 0 0 0 800 E
 9 17 4 1d1+90 1d2+1
@@ -238,7 +238,7 @@ grig shaman~
 a Grig shaman~
 A Grig shaman moves purposefully about the Tree.
 ~
-   He is lost in deep thought, taking no notice of those around him.  
+   He is lost in deep thought, taking no notice of those around him.
 ~
 72 0 0 0 0 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
@@ -253,7 +253,7 @@ grig father~
 a grig father~
 A grig father works about the Tree.
 ~
-   The father works hard for the well-being of the Tree.  
+   The father works hard for the well-being of the Tree.
 ~
 72 0 0 0 0 0 0 0 800 E
 1 20 9 0d0+10 1d2+0
@@ -269,7 +269,7 @@ a grig mother~
 A grig mother clucks and tsks over the condition of the Tree.
 ~
    She skimpers about here and there making a fuss at the smallest of tasks
-which need doing.  
+which need doing.
 ~
 72 0 0 0 0 0 0 0 800 E
 5 19 7 1d1+50 1d2+0
@@ -285,7 +285,7 @@ a grig child~
 A grig child performs some small, menial chores about the Tree.
 ~
    The child appears solemn, even more so than the rest of the grigs in this
-Tree due to her age.  
+Tree due to her age.
 ~
 72 0 0 0 0 0 0 0 900 E
 4 19 7 0d0+40 1d2+0

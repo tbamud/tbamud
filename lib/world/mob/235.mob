@@ -3,7 +3,7 @@ dwarven knight~
 the dwarven knight~
 A dwarven knight is standing here, guarding his post.
 ~
-   He look intimidating, but could easily be out smarted.    
+   He look intimidating, but could easily be out smarted.
 ~
 10 0 0 0 0 0 0 0 -400 E
 10 17 4 2d2+100 1d2+1
@@ -18,7 +18,7 @@ the dwarven teenager~
 A wandering dwarven teenager is here.
 ~
    She is tall and looks quite scrawny.  Her hair is matted down and her
-clothes are ratty looking.  She must work here in the caves.    
+clothes are ratty looking.  She must work here in the caves.
 ~
 10 0 0 0 0 0 0 0 300 E
 11 17 3 2d2+110 1d2+1
@@ -33,7 +33,7 @@ a mutant dwarf~
 A dwarven mutant is here, chittering evilly.
 ~
    She is an ugly thing.  Her face is deformed and covered in scars.  You
-notice she has an extra arm and only one eye.  How gross!    
+notice she has an extra arm and only one eye.  How gross!
 ~
 10 0 0 0 0 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -47,7 +47,7 @@ the scout~
 A scout is here, pacing back and forth.
 ~
    He looks tough.  His body is covered in hair, which has been matted down by
-sweat.  He could use a bath.    
+sweat.  He could use a bath.
 ~
 10 0 0 0 0 0 0 0 -500 E
 10 17 4 2d2+100 1d2+1
@@ -61,7 +61,7 @@ the dwarven soldier~
 A dwarven soldier is here.
 ~
    He is well built and looks quite intelligent.  He paces his post waiting for
-enemies.    
+enemies.
 ~
 10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
@@ -75,7 +75,7 @@ the dwarven child~
 A dwarven child is wandering around aimlessly.
 ~
    What a scrawny looking thing!  She looks like a bag of bones and could badly
-use a good meal.    
+use a good meal.
 ~
 10 0 0 0 0 0 0 0 -200 E
 12 16 2 2d2+120 2d2+2
@@ -89,7 +89,7 @@ the dwarven mine worker~
 A dwarven mine worker is standing here.
 ~
    He is short and stocky and seems to be balding on the top.  He is covered in
-dust and could use a bath.    
+dust and could use a bath.
 ~
 10 0 0 0 0 0 0 0 -400 E
 11 17 3 2d2+110 1d2+1
@@ -102,8 +102,8 @@ ranger~
 the ranger~
 A ranger is here.
 ~
-   She is a dwarf just like all the others that live and work in this cave.  
-She is taller than the rest of the dwarves and appears to be much cleaner.    
+   She is a dwarf just like all the others that live and work in this cave.
+She is taller than the rest of the dwarves and appears to be much cleaner.
 ~
 10 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
@@ -118,7 +118,7 @@ An elderly dwarf stands before you.
 ~
    She is a ratty old thing, but looks nice enough.  You can see pain and
 suffering when you look into her eyes.  Could it be possible that she has been
-stuck down here all of her life?    
+stuck down here all of her life?
 ~
 10 0 0 0 0 0 0 0 400 E
 12 16 2 2d2+120 2d2+2
@@ -132,7 +132,7 @@ the turtle~
 A brightly colored turtle is here.
 ~
    His black little eyes glare at you, giving you the feeling that maybe you
-shouldn't have come this way.    
+shouldn't have come this way.
 ~
 10 0 0 0 0 0 0 0 -250 E
 13 16 2 2d2+130 2d2+2
@@ -146,7 +146,7 @@ the water snake~
 A water snake is swimming through the water.
 ~
    She is black and very large.  If she got a good hold of you she could
-proably crush you.    
+proably crush you.
 ~
 10 0 0 0 0 0 0 0 -1000 E
 11 17 3 2d2+110 1d2+1
@@ -160,7 +160,7 @@ the scout leader~
 A mean looking scout leader is here.
 ~
    He's very well built.  His looks alone could kill you.  You notice several
-scars covering his face.  How gross!    
+scars covering his face.  How gross!
 ~
 10 0 0 0 0 0 0 0 -900 E
 14 16 1 2d2+140 2d2+2

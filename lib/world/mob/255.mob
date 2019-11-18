@@ -3,7 +3,7 @@ parrot ghost~
 a parrot ghost~
 A ghost parrot suddenly appears before you in a flurry of motion.
 ~
-   Man that thing is fast!  
+   Man that thing is fast!
 ~
 256282 0 0 0 65540 0 0 0 -1000 E
 5 19 7 1d1+50 1d2+0
@@ -18,7 +18,7 @@ a pirate ghost~
 A pirate ghost fades into existence, intent on getting you off his ship.
 ~
    The image of this being flickers in and out of existance, making it hard for
-you to distinguish any specific features.  
+you to distinguish any specific features.
 ~
 231544 0 0 0 65556 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
@@ -31,8 +31,8 @@ captain ghost~
 the Captain ghost~
 The Captain blurs into focus, just as he slams his weapon into your head!
 ~
-   The ghost of the captain is much larger than the other ghosts you've seen.  
-And much meaner!  
+   The ghost of the captain is much larger than the other ghosts you've seen.
+And much meaner!
 ~
 239674 0 0 0 65556 0 0 0 -1000 E
 30 10 -8 6d6+300 5d5+5
@@ -46,7 +46,7 @@ the ghost cook~
 The ghost of the pirate cook blurs into focus before your eyes.  Is that a meat cleaver?
 ~
    You cannot get a solid look at the cook, the apparition is not distinct
-enough for that.  
+enough for that.
 ~
 231482 0 0 0 65540 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
@@ -59,7 +59,7 @@ first mate ghost pirate~
 the ghost of the First Mate~
 The ghost of the First Mate comes flying at you, a silent scream of fury on it's lips!
 ~
-   This man must have been a maniac even when he was alive!  
+   This man must have been a maniac even when he was alive!
 ~
 188536 0 0 0 65540 0 0 0 -1000 E
 27 11 -6 5d5+270 4d4+4
@@ -73,7 +73,7 @@ an old sailor~
 An old sailor sits before the fire, cross-legged, staring at the flames.
 ~
    The old man does not even seem to notice that you have entered into his
-domain.  
+domain.
 ~
 2074 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -86,7 +86,7 @@ bones pile~
 the pile of bones~
 A pile of bones suddenly rises up, comes to life and attacks!
 ~
-   Horror of horrors, RUN!  
+   Horror of horrors, RUN!
 ~
 229418 0 0 0 4 0 0 0 -1000 E
 13 16 2 2d2+130 2d2+2

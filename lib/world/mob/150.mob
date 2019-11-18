@@ -4,7 +4,7 @@ Gwydion~
 Gwydion the Royal Guard is here on duty.
 ~
    As all members of the Guard, Gwydion wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 75 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -19,7 +19,7 @@ The wise King Welmar sits here in his throne.
    In his later middle-age, with his beard starting to grey, King Welmar is
 still very powerfully built, and wouldn't take kindly to an attack.  Despite
 that, you know he is well-loved throughout the land, and has a reputation as a
-wise and just ruler.  
+wise and just ruler.
 ~
 11 0 0 0 16 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5
@@ -31,7 +31,7 @@ ghost horrible~
 the horrible ghost~
 You hear a frightening wail, and see a horrible ghost approaching.
 ~
-   The ghost is almost translucent, and looks really SCARY!  
+   The ghost is almost translucent, and looks really SCARY!
 ~
 254014 0 0 0 524304 0 0 0 -700 E
 15 15 1 3d3+150 2d2+2
@@ -44,7 +44,7 @@ Jim~
 Jim the Royal Guard is here on duty.
 ~
    As all members of the Guard, Jim wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 73 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -57,7 +57,7 @@ Brian~
 Brian the Royal Guard is here, training with the Master.
 ~
    As all members of the Guard, Brian wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 75 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -70,7 +70,7 @@ Mick~
 Mick the Royal Guard is here, training with the Master.
 ~
    As all members of the Guard, Mick wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 75 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -83,7 +83,7 @@ Matt~
 Matt the Royal Guard is here on duty.
 ~
    As all members of the Guard, Matt wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 73 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -97,7 +97,7 @@ Jochem the Royal Guard sits here, off duty.
 ~
    As all members of the Guard, Jochem wears the chain mail required of them as
 uniform.  He seems very well trained, and moves like a fighter who has seen more
-than one battle, and longs to see the next!  
+than one battle, and longs to see the next!
 ~
 73 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
@@ -111,7 +111,7 @@ Anne the Royal Guard is here on duty.
 ~
    As all members of the Guard, Anne wears the chain mail required of them as
 uniform.  She seems very well trained, and moves like a fighter who has seen
-more than one battle, and longs to see the next!  
+more than one battle, and longs to see the next!
 ~
 73 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
@@ -125,7 +125,7 @@ Andrew the Royal Guard is here on duty.
 ~
    As all members of the Guard, Andrew wears the chain mail required of them as
 uniform.  He seems very well trained, and moves like a fighter who has seen more
-than one battle, and longs to see the next!  
+than one battle, and longs to see the next!
 ~
 73 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
@@ -139,7 +139,7 @@ Bertram the Royal Guard is here on duty.
 ~
    As all members of the Guard, Bertram wears the chain mail required of them as
 uniform.  He seems very well trained, and carries his scars with pride.  This
-guy seems tough...  
+guy seems tough...
 ~
 73 0 0 0 0 0 0 0 900 E
 15 15 1 3d3+150 2d2+2
@@ -152,8 +152,8 @@ Jeanette~
 Jeanette the Royal Guard is here on duty.
 ~
    As all members of the Guard, Jeanette wears the chain mail required of them
-as uniform.  She seems very well trained, and carries her scars with pride.  
-This girl could be nasty if she wanted to...  
+as uniform.  She seems very well trained, and carries her scars with pride.
+This girl could be nasty if she wanted to...
 ~
 73 0 0 0 0 0 0 0 900 E
 15 15 1 3d3+150 2d2+2
@@ -170,7 +170,7 @@ uniform.  Even though all the other guards seem well trained, you realise none
 of them would stand a chance against this man in a fight.  He stands at least
 two metres tall, but still moves with an almost feline grace.  He actually
 radiates strength and confidence, and you have to fight a sudden urge to come to
-attention as you see him.  
+attention as you see him.
 ~
 73 0 0 0 0 0 0 0 900 E
 19 14 -1 3d3+190 3d3+3
@@ -183,7 +183,7 @@ the Training Master~
 The Training Master is here, supervising.
 ~
    Aged, but experienced, the Training Master is skilled in the use of virtually
-every weapon type invented by Man.  
+every weapon type invented by Man.
 ~
 75 0 0 0 0 0 0 0 950 E
 18 14 0 3d3+180 3d3+3
@@ -196,7 +196,7 @@ the Royal Herald~
 The Royal Herald is standing here.
 ~
    This is a young, powerfully built man, whose primary function is to make
-Royal Announcements.  
+Royal Announcements.
 ~
 72 0 0 0 0 0 0 0 800 E
 18 14 0 3d3+180 3d3+3
@@ -211,7 +211,7 @@ Slumped in a corner you see Ergan, aka the Murderer of Townsbridge.
    You remember a time almost a decade ago, when the news of the day was how
 this man had slaughtered the entire population of the little village of
 Townsbridge.  He was imprisoned, and here he is - a shadow of the undoubtedly
-great warrior he once was, but still to be reckoned with.  
+great warrior he once was, but still to be reckoned with.
 ~
 24828 0 0 0 589824 0 0 0 -1000 E
 13 16 2 2d2+130 2d2+2
@@ -225,7 +225,7 @@ James the Butler~
 James the Butler is standing here, looking pompous.
 ~
    The typical perfect butler: upper middle age, a bit bald and with an
-impressive belly.  
+impressive belly.
 ~
 73 0 0 0 0 0 0 0 500 E
 8 18 5 1d1+80 1d2+1
@@ -237,7 +237,7 @@ woman cleaning~
 the Cleaning Woman~
 There is a Cleaning Woman here, trying not be noticed.
 ~
-   Although she has a menial job, she seems to like it.  
+   Although she has a menial job, she seems to like it.
 ~
 73 0 0 0 0 0 0 0 800 E
 1 20 9 0d0+10 1d2+0
@@ -249,7 +249,7 @@ cockroach roach~
 the cockroach~
 A large cockroach is crawling by the wall.
 ~
-   Very large indeed, and they say cockroaches are hard to kill...  
+   Very large indeed, and they say cockroaches are hard to kill...
 ~
 196696 0 0 0 0 0 0 0 -250 E
 4 19 7 0d0+40 1d2+0
@@ -263,7 +263,7 @@ The Astrologer is sitting here, studying a book.
 ~
    He is old and white-haired, with a long beard.  As you see him, you can
 almost believe the rumours about stars deciding Fate, and that astrology is
-capable of seeing the future.  
+capable of seeing the future.
 ~
 26651 0 0 0 0 0 0 0 900 E
 23 13 -3 4d4+230 3d3+3
@@ -276,7 +276,7 @@ Tim, the King's Lifeguard~
 Tim, the King's Lifeguard, is standing here.
 ~
    This guy looks just like his twin, Tom.  There seems to be no doubt that he
-is completely prepared to give his life for the King, if necessary.  
+is completely prepared to give his life for the King, if necessary.
 ~
 11 0 0 0 16 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
@@ -289,7 +289,7 @@ Tom, the King's Lifeguard~
 Tom, the King's Lifeguard, is standing here.
 ~
    This guy looks just like his twin, Tim.  There seems to be no doubt that he
-is completely prepared to give his life for the King, if necessary.  
+is completely prepared to give his life for the King, if necessary.
 ~
 11 0 0 0 16 0 0 0 900 E
 17 15 0 3d3+170 2d2+2
@@ -302,7 +302,7 @@ the Chef~
 The Chef is here, shouting orders to the other cooks.
 ~
    It seems he has been tasting his own food a bit too enthusiastically.  He is,
-in other words, a bit fat.  
+in other words, a bit fat.
 ~
 26778 0 0 0 0 0 0 0 500 E
 19 14 -1 3d3+190 3d3+3
@@ -314,7 +314,7 @@ cook~
 the cook~
 There is a cook here, making himself busy with a pot.
 ~
-   A junior cook, eager to do the Chef's bidding.  
+   A junior cook, eager to do the Chef's bidding.
 ~
 138 0 0 0 0 0 0 0 300 E
 4 19 7 0d0+40 1d2+0
@@ -327,7 +327,7 @@ David~
 David, a big, mean-looking man, stands here, guarding the door.
 ~
    He really is big, and you get the feeling he wouldn't take kindly to an
-attempt to get past him.  
+attempt to get past him.
 ~
 11 0 0 0 16 0 0 0 250 E
 19 14 -1 3d3+190 3d3+3
@@ -340,7 +340,7 @@ Dick~
 Dick, a big, mean-looking man, stands here, guarding the door.
 ~
    He really is big, and you get the feeling he wouldn't take kindly to an
-attempt to get past him.  
+attempt to get past him.
 ~
 11 0 0 0 16 0 0 0 250 E
 19 14 -1 3d3+190 3d3+3
@@ -353,7 +353,7 @@ Jerry~
 Jerry the Royal Guard is here off duty, playing dice.
 ~
    As all members of the Guard, Jerry wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 73 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -366,7 +366,7 @@ Michael~
 Michael the Royal Guard is here off duty, playing dice.
 ~
    As all members of the Guard, Michael wears the chain mail required of them as
-uniform.  He seems very well trained, and moves like an experienced fighter.  
+uniform.  He seems very well trained, and moves like an experienced fighter.
 ~
 73 0 0 0 0 0 0 0 800 E
 11 17 3 2d2+110 1d2+1
@@ -380,7 +380,7 @@ Hans the Royal Guard is here on duty.
 ~
    As all members of the Guard, Hans wears the chain mail required of them as
 uniform.  He seems very well trained, and moves like a fighter who has seen more
-than one battle, and longs to see the next!  
+than one battle, and longs to see the next!
 ~
 73 0 0 0 0 0 0 0 900 E
 13 16 2 2d2+130 2d2+2
@@ -394,7 +394,7 @@ Boris the Royal Guard is here on duty.
 ~
    As all members of the Guard, Boris wears the chain mail required of them as
 uniform.  He seems very well trained, and carries his scars with pride.  This
-guy seems tough...  
+guy seems tough...
 ~
 73 0 0 0 0 0 0 0 900 E
 15 15 1 3d3+150 2d2+2
@@ -408,7 +408,7 @@ A zombie is shambling over some corpses here, moving quite silently.
 ~
    It is entirely possible that this zombie was once one of the villagers of
 Townsbridge who has been brought to an undead life by a fuelling desire for
-revenge.  
+revenge.
 ~
 172090 0 0 0 524368 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -422,7 +422,7 @@ A skeleton is moving about with a loud clatter here, climbing over corpses.
 ~
    It is entirely possible that this skeleton was once one of the villagers of
 Townsbridge who has been brought to an undead life by a fuelling desire for
-revenge.  
+revenge.
 ~
 172090 0 0 0 80 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -436,7 +436,7 @@ A large demon surrounded by flames rises out of the dark pool.
 ~
    It is a horrifying thing, this demonic creature from the depths of the Abyss.
 It glares down at you through blood-red eyes, and bares its huge white fangs and
-its razor-sharp talons.  
+its razor-sharp talons.
 ~
 256058 0 0 0 80 0 0 0 1000 E
 33 9 -9 6d6+330 5d5+5

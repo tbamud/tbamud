@@ -309,7 +309,7 @@ switch %random.9%
     emote growls menacingly.
   break
   case 6
-    say Decadence is the credence of the abominable.  
+    say Decadence is the credence of the abominable.
   break
   case 7
     say I look at you and get a wonderful sense of impending doom.
@@ -365,7 +365,7 @@ switch %random.13%
     emote flips over and walks around on his hands.
   break
   case 6
-    emote cartwheels around the room.  
+    emote cartwheels around the room.
   break
   case 7
     say How many ogres does it take to screw in a light bulb?

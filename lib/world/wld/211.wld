@@ -2,16 +2,16 @@
 Parna's Tarot Zone Description Room~
    This area is trying to recreate the Tarot zone I built for Smaug.  The
 purpose is to have a way of Tarot fortune-telling online.  It has been repeated
-twice to allow different people to have their futures told at the same time.  
+twice to allow different people to have their futures told at the same time.
 It's a specialized sort of area that, in my experience, most people will stay
 away from, some people will visit occasionally and a few people may visit
 constantly.  There is, of course, no way of telling what the ratio will be on
-any given mud.  
- 
+any given mud.
+
    If you have diagonal exits, please remove the corner rooms and use the
 diagonal exits instead.
 
-   There are a lot of triggers to try to keep people from blocking the zone.  
+   There are a lot of triggers to try to keep people from blocking the zone.
 Please adjust these to your own mud.
 
    The food and drink in room 21102 are self replicating.  For each bokolyi or
@@ -48,7 +48,7 @@ door~
 1 0 21102
 E
 fence picket~
-   It's a normal-looking, pointed-slat fence covered with fresh white paint.  
+   It's a normal-looking, pointed-slat fence covered with fresh white paint.
 The entrance is an open, oval trellis, covered with red roses.
 ~
 E
@@ -67,9 +67,9 @@ flowerbeds.
 E
 sign brass bright~
    @w
-@w       Sibyl, Esmerelda and Jaelle  
+@w       Sibyl, Esmerelda and Jaelle
 @w
-@w              Tarot Readings           
+@w              Tarot Readings
 @n
 ~
 S
@@ -105,7 +105,7 @@ door~
 E
 paintings~
    These are the sort of pictures with a young woman standing, looking pensively
-at a forest, field or ocean.  She wears a long dress that blows in the wind.  
+at a forest, field or ocean.  She wears a long dress that blows in the wind.
 Her long hair, covered with a floppy hat, blows around also.
 ~
 E
@@ -125,7 +125,7 @@ magazines ~
 magazines that you'd find in a doctor's office waiting room.  There are issues
 Reader's Digest, Sports Illustrated, Entertainment Weekly and a few other
 familiar names.  Are Time and Fortune here because they're popular or are they
-some sort of joke?  
+some sort of joke?
 ~
 S
 #21103

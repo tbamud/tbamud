@@ -653,7 +653,7 @@ end
 1 h 100
 ~
 eval where %self.room.vnum%
-if %where% == 1982 
+if %where% == 1982
   wait 1 sec
   %echo% The ground rumbles as a heavy stone slab slides back into place in the northern wall.
   %door% 1982 north purge
@@ -913,7 +913,7 @@ set next %i.next_in_list%
         set next_in_bag %in_bag.next_in_list%
 %echo% contains: %in_bag.vnum%
           break
-         
+
         set in_bag %next_in_bag%
       done
     set i %next%
@@ -971,7 +971,7 @@ tur~
 *This trig is meant to be used as part of a trio (1954, 1960, 1961)
 *This one is what gives you the finished product after tallying up
 *all the ingredients.
-*If everything has been done properly, a lovely coloured potion is 
+*If everything has been done properly, a lovely coloured potion is
 *the reward. Otherwise, you end up with nothing.. or a big mess ;)
 **************
 set product 1949
@@ -1287,7 +1287,7 @@ test while~
 ~
 %at% 1900 %load% obj 1901
 %send% %actor% You are not worthy!!
-set stunned %actor.hitp% - 1 
+set stunned %actor.hitp% - 1
 %damage% %actor% %stunned%
 eval num %random.99% + 1900
 %teleport% %actor% %num%
@@ -1295,7 +1295,7 @@ while %actor.inventory%
   eval item %actor.inventory%
   eval item_to_purge %%actor.inventory(%item.vnum%)%%
   eval stolen %item.vnum%
-  %purge% %item_to_purge% 
+  %purge% %item_to_purge%
   eval num2 %random.99% + 1900
   %at% %num2% %load% obj %stolen%
 done
@@ -1305,11 +1305,11 @@ while %i% < 18
   if %item%
     eval stolen %item.vnum%
     eval item_to_purge %%actor.eq(%i%)%%
-    %purge% %item_to_purge% 
+    %purge% %item_to_purge%
     eval num3 %random.99% + 1900
     %at% %num3% %load% obj %stolen%
   end
-  eval i %i% + 1 
+  eval i %i% + 1
 done
 ~
 #1980
@@ -1427,7 +1427,7 @@ if fireworks /= %arg%
   set sou[7] a shower of sparks
   set  sound %%sou[%sx%]%%
   eval sound %sound%
-  %echo% With %sound%, a	%colour% F I R E W O R K@n explodes into light.@n
+  %echo% With %sound%, a        %colour% F I R E W O R K@n explodes into light.@n
   %purge% self
 else
   %send% %actor% Light what?

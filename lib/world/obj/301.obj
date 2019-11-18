@@ -8,7 +8,7 @@ A small red key has been left here.~
 1 1 0 0 0
 E
 small red key~
-   It's small, it's red, it's a key.  
+   It's small, it's red, it's a key.
 ~
 #30101
 key brass~
@@ -20,7 +20,7 @@ An worn brass key lies idlely on the ground here.~
 1 1 0 0 0
 E
 brass key~
-   The brass key seems worn through years of use.  
+   The brass key seems worn through years of use.
 ~
 #30102
 oreo~
@@ -32,12 +32,12 @@ A moldy, dust covered Oreo(tm) cookie has been discarded here.~
 1 1 0 0 0
 E
 oreo~
-   It isn't a pretty sight.  You could not bring yourself to eat this!  
+   It isn't a pretty sight.  You could not bring yourself to eat this!
 ~
 E
 tm trademark~
    Oreo is a registered trademark of Christie Brown & Co.  A division of Nabisco
-Brands Ltd.  
+Brands Ltd.
 ~
 #30103
 key small iron~
@@ -49,7 +49,7 @@ A small iron key hangs from a hook here.~
 1 1 0 0 0
 E
 small iron key~
-   It has a 'W3625' insribed on it.  
+   It has a 'W3625' insribed on it.
 ~
 #30104
 key small iron~
@@ -61,7 +61,7 @@ A small iron key lies on a desk here.~
 1 1 0 0 0
 E
 small iron key~
-   It has a 'W2716' insribed on it.  
+   It has a 'W2716' insribed on it.
 ~
 #30105
 steak salisbury tray~
@@ -73,7 +73,7 @@ A tray of Mary Rotte salisbury steak has been left here.~
 2 10 0 0 0
 E
 salisbury steak tray~
-   It's not steak!  
+   It's not steak!
 ~
 #30106
 burger garden~
@@ -85,7 +85,7 @@ A Mary Rotte garden burger lies here, lonely.~
 1 8 0 0 0
 E
 garden burger~
-   You've never seen anything more disgusting in your life.  
+   You've never seen anything more disgusting in your life.
 ~
 #30107
 eggs fried~
@@ -97,7 +97,7 @@ Some Mary Rotte fried eggs sit here slowly hardening.~
 1 2 0 0 0
 E
 fried eggs~
-   You're not sure, but you think that they are plastic.  
+   You're not sure, but you think that they are plastic.
 ~
 #30108
 dish lyonnaise potatoes~
@@ -109,7 +109,7 @@ A dish of Mary Rotte lyonnaise potatoes wobbles around here.~
 1 5 0 0 0
 E
 lyonnaise potatoes dish~
-   What is lyonnaise, anyways?  
+   What is lyonnaise, anyways?
 ~
 #30109
 calzone~
@@ -121,7 +121,7 @@ A Mary Rotte calzone cools here.~
 1 10 0 0 0
 E
 calzone~
-   It's similar to a pizza pop.  It looks vaguely edible.  
+   It's similar to a pizza pop.  It looks vaguely edible.
 ~
 #30110
 barbells~
@@ -133,7 +133,7 @@ A HUGE set of barbells lies here, gathering dust.~
 50 100 0 0 0
 E
 barbells~
-   They look heavy.  
+   They look heavy.
 ~
 #30111
 condom~
@@ -145,7 +145,7 @@ A condom has been carefully placed here.~
 1 5 0 0 0
 E
 condom~
-   One of the old type...  The ones they give away for free.  
+   One of the old type...  The ones they give away for free.
 ~
 A
 14 -10
@@ -159,7 +159,7 @@ A tam is here...~
 5 1 0 0 0
 E
 tam~
-   This tam is real ugly.  I mean ugly.  
+   This tam is real ugly.  I mean ugly.
 ~
 A
 4 1
@@ -174,7 +174,7 @@ No it couldn't be... a blue tray!~
 E
 blue tray~
    You can't believe you actually found one.  Blue trays are almost as common as
-talking dogs that speak in Norwegian!  
+talking dogs that speak in Norwegian!
 ~
 #30114
 hairnet~
@@ -186,7 +186,7 @@ A hairnet has been thrown away here.~
 1 1 0 0 0
 E
 hairnet~
-   This thing (blech) must be glowing from the radiation...  
+   This thing (blech) must be glowing from the radiation...
 ~
 #30115
 flashlight light~
@@ -198,7 +198,7 @@ A long flashlight has been dropped here.~
 8 150 0 0 0
 E
 flashlight light~
-   This looks like one of the flashlights Security uses...  Uh-oh...  
+   This looks like one of the flashlights Security uses...  Uh-oh...
 ~
 #30116
 jacket yellow~
@@ -210,7 +210,7 @@ A nice yellow jacket has been carefully hung here.~
 15 200 0 0 0
 E
 yellow jacket~
-   This nice, yellow jacket has the word STU-CON emblazoned on the back.  
+   This nice, yellow jacket has the word STU-CON emblazoned on the back.
 ~
 #30117
 knife evil~
@@ -222,7 +222,7 @@ An evil knife lies on the ground here.~
 5 300 0 0 0
 E
 knife evil~
-   This is an evil knife, pure and simple.  
+   This is an evil knife, pure and simple.
 ~
 #30118
 key silver~
@@ -234,7 +234,7 @@ A small silver key lies forgotten here.~
 1 1 0 0 0
 E
 silver key~
-   This small key has only one marking on it, the number BF128.  
+   This small key has only one marking on it, the number BF128.
 ~
 #30119
 key brass~
@@ -246,7 +246,7 @@ A small brass key lies forgotten here.~
 1 1 0 0 0
 E
 brass key~
-   This brass key is marked with the number HG34.  
+   This brass key is marked with the number HG34.
 ~
 #30120
 blade darkness~
@@ -259,7 +259,7 @@ A dark, incredibly sharp blade lies on the ground here.~
 E
 blade darkness~
    The blade has a dark aura surrounding it.  It seems to absorb any light that
-dares to stray near it.  
+dares to stray near it.
 ~
 A
 18 2
@@ -281,7 +281,7 @@ An oddly shaped sword lies here.~
 10 1000 0 0 0
 E
 mage bane magebane sword~
-   It's shape is very peculiar.  It seems to have a glowing aura.  
+   It's shape is very peculiar.  It seems to have a glowing aura.
 ~
 A
 24 2
@@ -297,7 +297,7 @@ An Obsidian orb is emoting darkness here.~
 1 100 0 0 0
 E
 orb obsidian~
-   This Orb looks distinctly evil.  
+   This Orb looks distinctly evil.
 ~
 A
 12 25
@@ -314,11 +314,11 @@ A beautiful Golden jacket has been left here.~
 E
 gpa golden party armor~
    This gold leather jacket looks rather beaten up, but it still looks like it
-will last forever.  You can see a crest of sorts on the left breast.  
+will last forever.  You can see a crest of sorts on the left breast.
 ~
 E
 crest~
-   The crest seems to portray the numbers 9 and 7.  
+   The crest seems to portray the numbers 9 and 7.
 ~
 A
 9 2
@@ -332,7 +332,7 @@ An extremely Furry Hat has been carefully hung on the wall here.~
 3 133 0 0 0
 E
 furry hat~
-   This hat is covered with fur and has rather nice ear-flaps.  
+   This hat is covered with fur and has rather nice ear-flaps.
 ~
 A
 12 5
@@ -346,7 +346,7 @@ A pair of boots has been left here.~
 10 65 0 0 0
 E
 work boots~
-   This pair of boots is well worn.  
+   This pair of boots is well worn.
 ~
 #30127
 vest silver~
@@ -358,7 +358,7 @@ A nice, shiny, silver vest has been lost here.~
 20 100 0 0 0
 E
 silver vest~
-   It's shiny, it's silver ...  What more could you want?  
+   It's shiny, it's silver ...  What more could you want?
 ~
 #30128
 hairbrush silver hair brush object~
@@ -371,7 +371,7 @@ A silver object has been dropped here.~
 E
 silver hair brush hairbrush~
    This nice, silver hairbrush is a bit tarnished but still suffices to untangle
-hair.  
+hair.
 ~
 #30129
 extension cord~
@@ -384,7 +384,7 @@ A long extension cord stretches to the north and south.~
 E
 extension cord~
    The extension cord was probably made by the twin power-mages Black and Decker
-and seems to stretch off to the horizon.  
+and seems to stretch off to the horizon.
 ~
 #30130
 extension cord~
@@ -397,7 +397,7 @@ A cord comes in from the street and is plugged in an outlet to the east.~
 E
 extension cord~
    The extension cord was probably made by the twin power-mages Black and Decker
-and leads off into the street.  Wonder where it leads?  
+and leads off into the street.  Wonder where it leads?
 ~
 #30131
 extension cord~
@@ -410,7 +410,7 @@ An cord comes from the back of the Coke Machine and stretches to the north.~
 E
 extension cord~
    The extension cord was probably made by the twin power-mages Black and Decker
-and seems to stretch off to the northern horizon.  
+and seems to stretch off to the northern horizon.
 ~
 #30132
 extension cord~
@@ -424,7 +424,7 @@ E
 extension cord~
    The extension cord was probably made by the twin power-mages Black and Decker
 and seems to stretch off to the southern horizon and into the building which
-just happens to lie to the east.  
+just happens to lie to the east.
 ~
 #30133
 world xeen~
@@ -437,12 +437,12 @@ The World of Xeen(tm) game is sitting here.~
 E
 tm trademark~
    World of Xeen is a registered trademark of New World Computing.  As are the
-Might & Magic games (IV and V).  
+Might & Magic games (IV and V).
 ~
 E
 world xeen~
    This game is a combination of Might & Magic IV and V (tm) and takes up a lot
-of hard drive space.  Almost 42 megabytes in fact!  
+of hard drive space.  Almost 42 megabytes in fact!
 ~
 #30134
 sword long longsword~
@@ -454,7 +454,7 @@ An ordinary long sword gathers dust here.~
 12 600 0 0 0
 E
 sword long longsword~
-   Looks almost like your generic long sword, but not quite.  
+   Looks almost like your generic long sword, but not quite.
 ~
 #30135
 t-square t square death~
@@ -466,7 +466,7 @@ A T-square has been carelessly discarded here.~
 9 250 0 0 0
 E
 t-square t square death~
-   This T-square is an extremely sharp weapon, and has been well used.  
+   This T-square is an extremely sharp weapon, and has been well used.
 ~
 A
 19 -2
@@ -480,7 +480,7 @@ An extremely pale apple sits here.~
 1 3 0 0 0
 E
 apple~
-   It looks like it didn't get enough sun.  
+   It looks like it didn't get enough sun.
 ~
 #30137
 milk bottle milk~
@@ -505,7 +505,7 @@ A wooden carafe sits on a table here.~
 13 20 0 0 0
 E
 carafe~
-   The wooden carafe seems to be some sort of container.  
+   The wooden carafe seems to be some sort of container.
 ~
 #30139
 firebreather glass shotglass firebreather~
@@ -517,7 +517,7 @@ A shotglass has been discarded here.~
 7 15 0 0 0
 E
 glass shot shotglass~
-   This small glass looks like it would be emptied in a drink or two.  
+   This small glass looks like it would be emptied in a drink or two.
 ~
 #30140
 water popcoke coke pop can water~
@@ -544,7 +544,7 @@ A candy bar is here!~
 E
 candy bar~
    This candy is made of the highest standard of chocolate.  It even meets the
-standards of the Candy Man.  
+standards of the Candy Man.
 ~
 #30142
 key steel~
@@ -556,7 +556,7 @@ A large steel key lies hidden here.~
 7 1 0 0 0
 E
 key steel~
-   This large, steel key is very ordinary.  
+   This large, steel key is very ordinary.
 ~
 #30143
 copy golden world~
@@ -569,7 +569,7 @@ A copy of Golden World lies here.~
 E
 copy golden world~
    It looks like the student humour newspaper, but it contains nothing to do
-with actual news that you didn't know already.  
+with actual news that you didn't know already.
 ~
 #30144
 water bottle water~
@@ -582,7 +582,7 @@ A large Water Bottle stands in the corner.~
 E
 water bottle~
    It seems to have water in it and it reminds you of one of the water bottles
-used in hamster's cages.  
+used in hamster's cages.
 ~
 #30145
 key vic~
@@ -595,7 +595,7 @@ A key elusively lies quite convincingly.~
 E
 key vic~
    This key is an effective master of the art of uselessness...  You wonder why
-it is even here.  
+it is even here.
 ~
 #30146
 computer~
@@ -608,13 +608,13 @@ A computer sits quietly in the corner.~
 E
 computer screen~
    The computer is turned on and on the screen you can see:
-  
+
 0) Exit from DikuMud.
 1) Enter the game.
 2) Enter description.
 3) Change password.
 5) Read History.
-  
+
    Make your choice:
 ~
 #30147
@@ -628,7 +628,7 @@ A letter lies here.~
 E
 letter~
    This looks like it was postdated a loooong time ago.  Wonder why it hasn't
-been delivered.  
+been delivered.
 ~
 #30148
 mail~
@@ -641,7 +641,7 @@ A piece of mail is here.~
 E
 mail~
    This piece of mail has been stamped and dropped into the mailbox and is
-presently awaiting delivery.  
+presently awaiting delivery.
 ~
 #30149
 parcel~
@@ -653,8 +653,8 @@ A large parcel stands here.~
 10 1 0 0 0
 E
 parcel~
-   This parcel has been wrapped with brown paper and sealed with Duct Tape.  
-Looks like it's never getting opened again.  
+   This parcel has been wrapped with brown paper and sealed with Duct Tape.
+Looks like it's never getting opened again.
 ~
 #30150
 milk dispenser milk~
@@ -666,7 +666,7 @@ A milk dispenser sits at the back of the auditorium.~
 50 1 0 0 0
 E
 milk dispenser~
-   Darn!  It seems to be broken.  
+   Darn!  It seems to be broken.
 ~
 #30151
 milk carton white milk~
@@ -678,7 +678,7 @@ A cool carton of refreshing milk catches your eye.~
 2 20 0 0 0
 E
 milk carton white~
-   Hey!  It's got that cool picture from those commercials!  
+   Hey!  It's got that cool picture from those commercials!
 ~
 #30152
 milk chocolate carton milk~
@@ -690,7 +690,7 @@ A cool carton of refreshing milk catches your eye.~
 2 21 0 0 0
 E
 milk chocolate choco carton~
-   Hey!  It's got that cool picture from those commercials too!  
+   Hey!  It's got that cool picture from those commercials too!
 ~
 #30153
 map~
@@ -746,7 +746,7 @@ inscription~
 E
 map~
    To see the map, type "look part1" and "look part2".  There is also an
-inscription on the map.  
+inscription on the map.
 ~
 #30154
 key ghostly~
@@ -759,7 +759,7 @@ You can see through an object resembling a key.~
 E
 key ghostly~
    This key is extremely ghostly, and you fear to put it down as you might not
-be able to find it again.  
+be able to find it again.
 ~
 #30155
 nothing~
@@ -781,7 +781,7 @@ E
 pendulum plaque~
    A small plaque on the base reads: This pendulum was donated by the Class of
 '67 Of course....  You do have a little trouble reading this as the pendulum
-swings inches from your head.  
+swings inches from your head.
 ~
 #30157
 water fountain water~
@@ -793,7 +793,7 @@ A drinking fountain is firmly attached to the wall here.~
 0 0 0 0 0
 E
 fountain water~
-   You can tell it is firmly attached simply by pulling on it.  
+   You can tell it is firmly attached simply by pulling on it.
 ~
 #30158
 chest wooden~
@@ -805,7 +805,7 @@ There is a wooden chest here.~
 0 0 0 0 0
 E
 chest wooden~
-   This is your average, every day, run-of-the-mill, wooden chest.  
+   This is your average, every day, run-of-the-mill, wooden chest.
 ~
 #30159
 ledger book~
@@ -818,7 +818,7 @@ A large book with the word "Ledger" written on it has been forgotten here.~
 E
 ledger book~
    This book is filled with numbers, dates, and strange notation.  It is enough
-to put anyone to sleep.  
+to put anyone to sleep.
 ~
 #30160
 chest wooden~
@@ -830,7 +830,7 @@ There is a wooden chest here.~
 0 0 0 0 0
 E
 chest wooden~
-   This is your average, every day, run-of-the-mill, wooden chest.  
+   This is your average, every day, run-of-the-mill, wooden chest.
 ~
 #30161
 bag coins gold~
@@ -842,6 +842,6 @@ A small bag filled with coins lies here.~
 1 1 0 0 0
 E
 bag coins gold~
-   This bag of coins doesn't look too big.  
+   This bag of coins doesn't look too big.
 ~
 $~

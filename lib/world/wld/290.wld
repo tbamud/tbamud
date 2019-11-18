@@ -1,11 +1,11 @@
 #29000
 The Entrance To The Lizard Lair Safari~
-   This is the opulent entrance to the exciting Lizard Lair Safari Park.  
+   This is the opulent entrance to the exciting Lizard Lair Safari Park.
 Around you stand many other adventurers awaiting their chance to try their luck
 in the quest set before them.  And you.  This quest consists of the recovery of
 the Golden treasure in the depths of the lair of the lizardmen.  If you wish to
 test your luck, you can push your way through the exit to the south...  If not,
-you can leave the Safari Park to the east.  There is a large sign here.    
+you can leave the Safari Park to the east.  There is a large sign here.
 ~
 290 12 0 0 0 4
 D1
@@ -21,15 +21,15 @@ The quest begins to the south.
 E
 sign large~
    The sign reads as follows:
- 
+
    This area is not suggested if your character is less than 15th level
    since there are several tough aggressive monsters.  There are one or
    two essential skills to have... either a knock spell or item, or the
          ability to pick locks.  If you are LUCKY you might find
                   an item to open locks....
- 
+
                                                 Matrix
- 
+
 ~
 E
 credits info~
@@ -38,19 +38,19 @@ by Matrix and The Wandering Bard
 *
 Copyright 1994 by Curious Areas Workshop
 *
-The Lizard Lair Safari was originally merely the example area 
-included with the Builders' Handbook, but since so many people 
-use it, it was decided to release the area in its own right.  
+The Lizard Lair Safari was originally merely the example area
+included with the Builders' Handbook, but since so many people
+use it, it was decided to release the area in its own right.
 *
 The lair consists of 18 rooms.  Edit the following room:
 #17 (exit north to the rest of the world)
 *
-The mobs in this area were built on a -100 (good) to 100 (bad) armor 
+The mobs in this area were built on a -100 (good) to 100 (bad) armor
 class range.  Remove the extra '0' if you don't need/want it.
 *
 Credits
-THANKS TO: C.A.W. for examples of areas. Builder_5 for the original 
-Diku Builders' Handbook. VieMud (viemud.org 4000) for giving us a 
+THANKS TO: C.A.W. for examples of areas. Builder_5 for the original
+Diku Builders' Handbook. VieMud (viemud.org 4000) for giving us a
 chance, and another, and...
 Links: 17
 ~
@@ -63,7 +63,7 @@ you see that the exit to the north has disappeared and you are left with only
 the one exit down...  Into the water.  As you ready yourself to begin the
 quest, the guide gives you a potion and tells you to quaff it.  You do so and
 feel like your movements are easier, and much more free.  The guide suddenly
-vanishes and you begin the quest.    
+vanishes and you begin the quest.
 ~
 290 12 0 0 0 0
 D5
@@ -76,7 +76,7 @@ S
 A Tunnel~
    This tunnel is filled with water and your light sheds all of the light that
 gives you visibility here.  There are two exits.  One is to the east and one
-above you.    
+above you.
 ~
 290 9 0 0 0 6
 D0
@@ -97,8 +97,8 @@ The quest preparation room is above you.
 S
 #29003
 A Tunnel~
-   This tunnel is filled with water.  There are exits to the east and west.  
-The tunnel stretches off in both directions.    
+   This tunnel is filled with water.  There are exits to the east and west.
+The tunnel stretches off in both directions.
 ~
 290 9 0 0 0 6
 D1
@@ -116,7 +116,7 @@ S
 A Tunnel~
    The tunnel comes to an abrupt end as there is a rock wall right in front of
 you.  Fortunately, there are two exits, one to the west and one through a hole
-in the floor.    
+in the floor.
 ~
 290 9 0 0 0 6
 D3
@@ -131,13 +131,13 @@ There is a hole in the floor leading down.
 0 -1 29005
 E
 hole~
-   The hole leads down.  
+   The hole leads down.
 ~
 S
 #29005
 Tunnel End~
    The tunnel ends here.  There is a hole in the ceiling and a large door to
-the west.    
+the west.
 ~
 290 9 0 0 0 6
 D3
@@ -152,11 +152,11 @@ There is a hole in the ceiling leading up.
 0 -1 29004
 E
 hole~
-   The hole leads up.  Big surprise since you've already seen it.  
+   The hole leads up.  Big surprise since you've already seen it.
 ~
 E
 door~
-   You have to be able to Pick or Knock this door open, unless you got LUCKY.  
+   You have to be able to Pick or Knock this door open, unless you got LUCKY.
 ~
 S
 #29006
@@ -164,7 +164,7 @@ The Conjuring Chamber~
    This large room is dominated by a whirlpool.  There are two exits.  To the
 east you can see a door and to the west you can see a waterfilled hallway
 stretching off.  The whirlpool is threatening to pull you down, but you are
-certain that you would drown in it.    
+certain that you would drown in it.
 ~
 290 9 0 0 0 6
 D0
@@ -191,16 +191,16 @@ The whirlpool is threatening to pull you down to your death.
 0 -1 29007
 E
 door~
-   This is a big door, but not as big as it looked from the other side.  
+   This is a big door, but not as big as it looked from the other side.
 ~
 E
 whirlpool~
-   This just looks scary and EXTREMELY dangerous.  
+   This just looks scary and EXTREMELY dangerous.
 ~
 S
 #29007
 The Whirlpool~
-   It was not a good idea to come here.    
+   It was not a good idea to come here.
 ~
 290 8 0 0 0 0
 D4
@@ -211,7 +211,7 @@ S
 #29008
 A Hallway~
    The hallway naturally twists so that is seems to head east and down, but the
-hallway doesn't seem to be curved or bent in any way.    
+hallway doesn't seem to be curved or bent in any way.
 ~
 290 9 0 0 0 6
 D1
@@ -227,12 +227,12 @@ The hallway continues to the south... er... below.
 E
 hallway hall~
    It is dead straight but it goes down and east...  M.  C.  Escher has struck
-again!  
+again!
 ~
 S
 #29009
 A Hallway~
-   The hallway here is bent in a big way.  It goes up and east.    
+   The hallway here is bent in a big way.  It goes up and east.
 ~
 290 9 0 0 0 6
 D1
@@ -247,7 +247,7 @@ The hall continues up.
 0 -1 29008
 E
 hallway hall~
-   This hall is BENT!  
+   This hall is BENT!
 ~
 S
 #29010
@@ -263,7 +263,7 @@ S
 The Throne Room Annex~
    This is the entrance to the Throne room which lies to the east.  A hall
 leads off to the west.  The room is lavishly decorated but there is not much to
-see.    
+see.
 ~
 290 9 0 0 0 6
 D1
@@ -278,7 +278,7 @@ A hall looms to the west.
 0 -1 29009
 E
 loom~
-   What a descriptive word that is.  Loom.  
+   What a descriptive word that is.  Loom.
 ~
 S
 #29012
@@ -286,7 +286,7 @@ Throne Room~
    This large room is rather large.  A throne sits on the east wall below a
 hole in the ceiling.  The throne almost dominates the room.  No one is sitting
 in it.  The wall is decorated to look like pillars surround the room.  The
-annex is to the west whilst you are not sure what is above.    
+annex is to the west whilst you are not sure what is above.
 ~
 290 9 0 0 0 6
 D3
@@ -302,7 +302,7 @@ You can't see what is above this room.
 E
 throne~
    This is a large ugly thing that you are repulsed by.  You can think of no
-conceivable reason why the lizardmen keep it here.  
+conceivable reason why the lizardmen keep it here.
 ~
 E
 pillars wall~
@@ -314,7 +314,7 @@ Temple Of Morgash~
    This is the temple to the Lizardmen's evil deity, Morgash.  It is quite
 ugly.  At least in your opinion it is...  You are certain that the lizardmen
 like it though.  There are two exits.  Down and through the large door to the
-east.    
+east.
 ~
 290 9 0 0 0 6
 D1
@@ -329,14 +329,14 @@ There is a hole leading down.  Obvious eh?
 0 -1 29012
 E
 door~
-   It is quite large with a small keyhole.  
+   It is quite large with a small keyhole.
 ~
 S
 #29014
 Quest End~
    You have completed the quest!  CONGRATULATIONS!!  There are two exits back
 into the quest through the door and back to the outer world which lies to the
-east.    
+east.
 ~
 290 4 0 0 0 0
 D1
@@ -352,7 +352,7 @@ door~
 S
 #29015
 Quest Preparation Room~
-   This room is exactly as you left it.  One exit...  Down...    
+   This room is exactly as you left it.  One exit...  Down...
 ~
 290 12 0 0 0 0
 D5
@@ -363,8 +363,8 @@ The water below still looks ominous.
 S
 #29016
 LUCKY~
-   This room is empty.  There is a LUCKY blocking your way to the south.  
-There is a sign on the wall.    
+   This room is empty.  There is a LUCKY blocking your way to the south.
+There is a sign on the wall.
 ~
 290 8 0 0 0 0
 D2
@@ -374,13 +374,13 @@ lucky~
 1 -1 29002
 E
 sign~
-   The sign says: Boy are you ever LUCKY!!!!  
+   The sign says: Boy are you ever LUCKY!!!!
 ~
 S
 #29017
 The Real World Ends Here~
-   This is the point where the real world ends...  PROCEED AT YOUR OWN RISK!  
-The entrance to the Lizard Lair Safari is to the west.  
+   This is the point where the real world ends...  PROCEED AT YOUR OWN RISK!
+The entrance to the Lizard Lair Safari is to the west.
 ~
 290 0 0 0 0 0
 D3
@@ -390,13 +390,13 @@ This is the entrance way to the Safari.
 0 -1 29000
 E
 door metal huge~
-   It's one of those huge studio-like doors.  It seems pretty strong.  
+   It's one of those huge studio-like doors.  It seems pretty strong.
 ~
 S
 #29018
 Mr. Hooper's store~
-   This is your friendly neighbourhood convenience store and restaurant.  
-There are many interesting things that you can buy here.    
+   This is your friendly neighbourhood convenience store and restaurant.
+There are many interesting things that you can buy here.
 ~
 290 12 0 0 0 1
 D2
@@ -406,7 +406,7 @@ The conjuring chamber is still to the south.
 0 -1 29006
 E
 counter~
-   The counter is nice and clean.  Mr.  Hooper looks at you expectantly.  
+   The counter is nice and clean.  Mr.  Hooper looks at you expectantly.
 ~
 S
 $~

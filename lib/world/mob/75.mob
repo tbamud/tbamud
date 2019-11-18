@@ -4,7 +4,7 @@ a small doe~
 A small doe stands here grazing.
 ~
    The small doe is brown with tiny white spots on its back.  A piece of hide
-hangs from an old wound on its side.  
+hangs from an old wound on its side.
 ~
 14 0 0 0 0 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
@@ -22,7 +22,7 @@ A wild boar stands here.
 ~
    A wild boar has been trapped here.  It is short and round with large tusks
 protruding from its mouth.  As it shifts its head around looking for the way out
-its eyes shine red.  
+its eyes shine red.
 ~
 30 0 0 0 1048592 0 0 0 -200 E
 14 16 1 2d2+140 2d2+2
@@ -36,7 +36,7 @@ the giant fruit bat~
 A giant fruit bat hangs here sleeping.
 ~
    A giant fruit bat is hanging here in an upside down position from a large
-tree.  Its black wings are wrapped around its body like a cozy blanket.  
+tree.  Its black wings are wrapped around its body like a cozy blanket.
 ~
 8206 0 0 0 0 0 0 0 1000 E
 18 14 0 3d3+180 3d3+3
@@ -56,7 +56,7 @@ A Zamba warrior stands here alert.
 long, black hair and cold, piercing eyes.  His clothing is strange, around his
 head is a leather strap with many colourful feathers attached, he wears thick
 gold bands around the upper part of both his arms and has a white cloth tied
-around his waist.  
+around his waist.
 ~
 4122 0 0 0 16 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
@@ -72,7 +72,7 @@ black kitten cat~
 a black kitten~
 A black kitten is lying here sleeping.
 ~
-   A black kitten looks like a cute, fuzzy ball.  
+   A black kitten looks like a cute, fuzzy ball.
 ~
 10 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
@@ -87,7 +87,7 @@ A large man is sitting here eating.
 ~
    The large man has dirty white hair and food smudges on his faces and hands.
 He has a large brown cloth wrapped around his waist.  His skin is sweaty and
-oily, he smells horrible.  
+oily, he smells horrible.
 ~
 4110 0 0 0 8192 0 0 0 300 E
 14 16 1 2d2+140 2d2+2
@@ -102,7 +102,7 @@ A young girl sits here playing.
 ~
    A young girl sits here playing with her doll.  Her hair is long and black,
 she had big brown eyes and a very dark tan.  She wears a yellow dress tied
-around the neck and waist.  
+around the neck and waist.
 ~
 74 0 0 0 8200 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
@@ -118,8 +118,8 @@ woman ~
 a short woman~
 A short woman stands here.
 ~
-   The short woman is standing here catching her breath as she fans herself.  
-She is barefoot and wears only a white dress tied at one shoulder.  
+   The short woman is standing here catching her breath as she fans herself.
+She is barefoot and wears only a white dress tied at one shoulder.
 ~
 2248 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -135,7 +135,7 @@ A native boy stands here.
 ~
    The native boy is dressed in a small cloth wrapped around his waist.  He
 carries a small bow and arrow as he searches around looking for something to aim
-at for target practice.  
+at for target practice.
 ~
 254040 0 0 0 524288 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -149,7 +149,7 @@ the barkeeper~
 The barkeeper is standing here.
 ~
    You see a large woman standing behind the bar wearing a flowery dress.  She
-smiles at you revealing several gaps where she is missing teeth.  
+smiles at you revealing several gaps where she is missing teeth.
 ~
 10 0 0 0 0 0 0 0 -300 E
 30 10 -8 6d6+300 5d5+5
@@ -165,7 +165,7 @@ A green lizard rests here in the warm sand.
    An iguana around six feet long is resting here.  Its skin is leathery and
 bright green, strange thorn looking scales run from the top of its head down to
 its tail.  The tail is extremely long and is probably more than half the length
-of this strange reptile.  
+of this strange reptile.
 ~
 67660 0 0 0 4 0 0 0 -100 E
 14 16 1 2d2+140 2d2+2
@@ -182,7 +182,7 @@ a native woman~
 A native woman sits here.
 ~
    A native woman sits here preparing food for the tribe.  She is wearing a
-brightly colored dress.  Her black hair is held back with a pearl hair piece.  
+brightly colored dress.  Her black hair is held back with a pearl hair piece.
 ~
 2058 0 0 0 0 0 0 0 1000 E
 14 16 1 2d2+140 2d2+2
@@ -195,9 +195,9 @@ man fisherman ~
 a fisherman~
 A native fisherman is standing here working.
 ~
-   The fisherman looks at you sharply as he gathers together his fishing net.  
+   The fisherman looks at you sharply as he gathers together his fishing net.
 He has a dark tan and is quite muscular.  His clothing is a simple cloth wrapped
-around his waist.  
+around his waist.
 ~
 83994 0 0 0 0 0 0 0 -200 E
 14 16 1 2d2+140 2d2+2
@@ -214,7 +214,7 @@ An angry monkey stands here challenging you.
 ~
    The large monkey stands on its bottom two feet that look just like its hands.
 It stands slightly bent over a little over six feet in height.  It glares its
-sharp teeth at you.  
+sharp teeth at you.
 ~
 4106 0 0 0 0 0 0 0 -300 E
 14 16 1 2d2+140 2d2+2
@@ -232,7 +232,7 @@ a vine~
 A thick vine is blocking the path.
 ~
    A vine of the Crona plant entangles everything.  The Crona has a think, dark
-green base with small yellow leaves.  
+green base with small yellow leaves.
 ~
 4110 0 0 0 64 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -251,7 +251,7 @@ A robed figure hiding at the edge of the jungle.
 ~
    A man stands here dressed in dark robes hiding his appearance.  From what you
 can see he is tall and thin.  The large hood of the robe drapes over his eyes
-only leaving his long white beard visible.  
+only leaving his long white beard visible.
 ~
 1802 0 0 0 524288 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -271,7 +271,7 @@ A Zamba hook plant is rooted here.
    You see a beautiful flower gracefully standing in a little clearing to
 itself.  It is quite tall with a broad flower and long, slim leaves.  The light
 that glows onto this lovely flower enhancing its beauty is actually glowing from
-within the flower.  
+within the flower.
 ~
 18446 0 0 0 64 0 0 0 -500 E
 14 16 1 2d2+140 2d2+2
@@ -288,7 +288,7 @@ A large rat scurries here.
 ~
    The large rat scurries around looking for food.  Its red beady eyes stare
 about the room as it sniffs the air.  As it lifts its head you can see it has
-very long front teeth on both the top and bottom of its mouth.  
+very long front teeth on both the top and bottom of its mouth.
 ~
 76 0 0 0 0 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -303,7 +303,7 @@ The witch doctor is hovering in the pentagram.
 ~
    An old man dressed in armor made of bones and teeth is inside the petagram.
 He is softly chanting strange incantations.  He sways his arms around tossing
-black powder into a large pewter bowl set in the center of the pentagram.  
+black powder into a large pewter bowl set in the center of the pentagram.
 ~
 172042 0 0 0 0 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
@@ -323,7 +323,7 @@ A colossal falcon is perched on the edge of the cliff.
 ~
    The falcon stretches out its wings and screeches.  Its wing span is at least
 ten feet.  Its talons look large enough to grasp large cows making the perfect
-size dinner.  
+size dinner.
 ~
 18462 0 0 0 65536 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
@@ -341,7 +341,7 @@ A chubby man stands here.
 ~
    The chubby man looks at you and smiles.  He is wearing many expensive pieces
 of jewelry, and unlike the natives he is well dressed.  Something about him
-doesn't look quite right.  
+doesn't look quite right.
 ~
 24668 0 0 0 0 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
@@ -358,7 +358,7 @@ A nobleman stands here.
 ~
    The nobleman looks wise and intellectual.  His cloths look simular to ancient
 gentleman attire but new.  His hair is short and black with a touch of grey at
-the temples.  
+the temples.
 ~
 18442 0 0 0 0 0 0 0 -300 E
 14 16 1 2d2+140 2d2+2
@@ -375,7 +375,7 @@ a refined lady~
 A refined lady stands here gracefully.
 ~
    She stands with a grace of elegance.  Her hair pulled back and held with
-pearls and strands of gold.  She wears a long, flowing, white gown.  
+pearls and strands of gold.  She wears a long, flowing, white gown.
 ~
 16666 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
@@ -392,7 +392,7 @@ a cook~
 A  cook is here preparing a dish for a banquet.
 ~
    The cook is a young woman dressed in white cloths with a small apron around
-her.  Her black hair is pulled back and covered with a large scarf.  
+her.  Her black hair is pulled back and covered with a large scarf.
 ~
 2074 0 0 0 0 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
@@ -404,7 +404,7 @@ voodoo doll~
 a voodoo doll~
 A cloth doll is lying here.
 ~
-   The cloth doll looks tortured from needles poked into its eyes.  
+   The cloth doll looks tortured from needles poked into its eyes.
 ~
 16906 0 0 0 1572868 0 0 0 -1000 E
 14 16 1 2d2+140 2d2+2
@@ -418,7 +418,7 @@ man guard~
 the guard~
 The guard stands here in front of the door.
 ~
-   The guard is wearing silver armor.  He stares at you watching you closely.  
+   The guard is wearing silver armor.  He stares at you watching you closely.
 ~
 22554 0 0 0 16 0 0 0 200 E
 14 16 1 2d2+140 2d2+2
@@ -436,7 +436,7 @@ a black panther~
 A black panther crouches down ready to strike!
 ~
    The panther is well muscular, it looks very strong and dangerous.  Bright
-green eyes shine out from under is sleek, black fur.  
+green eyes shine out from under is sleek, black fur.
 ~
 28730 0 0 0 1572868 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
@@ -453,7 +453,7 @@ a servant girl~
 A young servant girl stands here waiting.
 ~
    The young girl is pretty in a plain way.  She is dressed all in white with a
-cloth tied around her head to hold back her long black hair.  
+cloth tied around her head to hold back her long black hair.
 ~
 118794 0 0 0 8196 0 0 0 200 E
 14 16 1 2d2+140 2d2+2
@@ -467,7 +467,7 @@ The Empress Kiona sits here, leaning over a huge bath.
 ~
    She gracefully leans over the tub getting ready for her bath.  She wears a
 long robe about her but has removed everything else except some gold jewelry and
-a elegant hair comb holding her black hair up.  
+a elegant hair comb holding her black hair up.
 ~
 253978 0 0 0 73736 0 0 0 1000 E
 18 14 0 3d3+180 3d3+3
@@ -484,7 +484,7 @@ a sea turtle~
 A sea turtle is standing here.
 ~
    The sea turtle is around 6 feet around and has a light green shell.  As it
-sits here in the sand it uses its back legs to dig into the sand.  
+sits here in the sand it uses its back legs to dig into the sand.
 ~
 4106 0 0 0 128 0 0 0 500 E
 14 16 1 2d2+140 2d2+2
@@ -498,7 +498,7 @@ a young native woman~
 A young native woman is playing at the waters edge.
 ~
    The beautiful girl is soaking wet.  She stops for a moment, smiles at you,
-then continues running in and out of the water.  
+then continues running in and out of the water.
 ~
 26 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
@@ -510,7 +510,7 @@ old man~
 the old man~
 An old man is standing here.
 ~
-   The old man peers over his glasses at you.  
+   The old man peers over his glasses at you.
 ~
 138 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
@@ -524,7 +524,7 @@ the young man~
 The young man is standing here selling fruit.
 ~
    The young man smiles at you and holds a basket of fruit toward you to look
-at.  
+at.
 ~
 14 0 0 0 16 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -537,9 +537,9 @@ old man mage~
 a feeble old man~
 A feeble old man stands here leaning on his staff.
 ~
-   The old man stands here slightly been over using a tall staff for support.  
+   The old man stands here slightly been over using a tall staff for support.
 He wears a long blue robe with gold embroidery.  He has thin, long, white, hair
-growing from the top of his head to the bottom of his chin.  
+growing from the top of his head to the bottom of his chin.
 ~
 253962 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
@@ -558,7 +558,7 @@ A grey wolf hunts here.
 ~
    The grey wolf stands as tall as a horse.  The thick fur around its neck and
 back is standing up as it looks around.  Foam drips from the corner of its mouth
-as it bares its teeth.  
+as it bares its teeth.
 ~
 2062 0 0 0 1572880 0 0 0 -100 E
 14 16 1 2d2+140 2d2+2

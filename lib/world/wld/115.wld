@@ -5,7 +5,7 @@ trees, plump bushes, and an assortment of fine flowers And grass.  But to the
 north there is a building that looks almost like an old church.  There is also a
 faint sound of water running near by . Here lies a dirt path leading to the
 north.  To the east is a small garden.  To the west there are trees and a
-forested path.  
+forested path.
 ~
 115 32768 0 0 0 3
 D0
@@ -32,12 +32,12 @@ Objects      : 24
 Shops        : 0
 Triggers     : 1
 Theme        : A monastery being attacked by monsters, monks attempt to defend themselves.
-Notes        : From room 11500 to the north is the monestary/church, to the east is a small 
-               garden with a stream. To the west there is a forest until about room 11547 
+Notes        : From room 11500 to the north is the monestary/church, to the east is a small
+               garden with a stream. To the west there is a forest until about room 11547
                which north of that lies the battlegrounds. Path going all the way around the
                monastery. This zone includes a link to the Doom Priest Guild with guildmaster
                and guildguard.
- 
+
 Zone: 115 was linked to the following zones:
 200 Western Highway                at 11500 (south) ---> 20003
 ~
@@ -46,7 +46,7 @@ S
 Monastery Entrance~
    This seems to be an old abandoned monastery.  It has a very distinct smell
 of dust and rotting wood..  The floor is made of marble, and cracked.  The
-walls of wood are faded and beginning to rot and fall apart.    
+walls of wood are faded and beginning to rot and fall apart.
 ~
 115 32776 0 0 0 0
 D0
@@ -62,7 +62,7 @@ S
 The Center of Monastery~
    Once entered, there is a feeling as if being warded off by some unknown
 power.  This room looks as the one before it.  There are exits to the north,
-south, east, and west.    
+south, east, and west.
 ~
 115 32776 0 0 0 0
 D0
@@ -107,7 +107,7 @@ Passage To The North~
    This room also has a yellowish tint about it, and the same taste and smell
 that fills the rest of the monastery.  There are two finely decorated statues
 of knights on the eastern and western sides of this room.  There is also a
-heavy oak table resting on a rug in the middle of the room.    
+heavy oak table resting on a rug in the middle of the room.
 ~
 115 32776 0 0 0 0
 D0
@@ -123,7 +123,7 @@ S
 Passage To The North~
    The room is decorated finely with a silk rug and a comfy looking chair,
 though it is beginning to rot, by the fire place.  When looking around there is
-a large bat perched on the black mantle piece above the fireplace.    
+a large bat perched on the black mantle piece above the fireplace.
 ~
 115 32776 0 0 0 0
 D0
@@ -140,7 +140,7 @@ Under The Monestary~
    This room is decorated with an elegant silk rug and a chandelier hanging
 from the middle of the roof.  A few rats scatter at your approach.  This place
 hasn't been inhabited by humans for quite some time.  The hallway continues to
-the north and south.    
+the north and south.
 ~
 115 32937 0 0 0 0
 D4
@@ -153,7 +153,7 @@ S
 Passage To The North~
    Upon entering this room it is obvious that it is someones personal library.
 This room is extremely organized and clean all the way around.  There are exits
-to the north and south.    
+to the north and south.
 ~
 115 32776 0 0 0 0
 D0
@@ -171,7 +171,7 @@ Masters Chamber~
 also of extravagent tastes, there is a large silk rug and a king sized bed with
 silk sheets and a large burning fire.  This room is very clean and cozy
 looking.  You feel as if you could use a rest in the bed until it is noticed
-what already occupies it.  There is an exit to the south.    
+what already occupies it.  There is an exit to the south.
 ~
 115 9 0 0 0 0
 D2
@@ -185,14 +185,14 @@ rug~
 E
 bed~
    You notice a large green figure sleeping in the bed.  There are the words
-Polar The Great etched perfectly on the headboard.  
+Polar The Great etched perfectly on the headboard.
 ~
 S
 #11509
 Passage to the East~
    Upon entering this room it is noticable that the room has a red tint to it
 and the room itself is worn and somewhat abandoned.  There is no furniture or
-wall hangings in this room.  There are exits to the east and west.    
+wall hangings in this room.  There are exits to the east and west.
 ~
 115 32776 0 0 0 0
 D1
@@ -208,7 +208,7 @@ S
 Passage to the East~
    This room has no suprises it looks the same as the one before it except for
 a couple of rats that seem to be quite aware of the unknown presence.  There
-are exits to the west and a door to the east.    
+are exits to the west and a door to the east.
 ~
 115 32776 0 0 0 0
 D1
@@ -224,7 +224,7 @@ S
 Eastern Room~
    Upon entering this room it is known that it is poorly lit and there is an
 awfull smell comming from the far corner of this room.  There is an exit to the
-west.    
+west.
 ~
 115 9 0 0 0 0
 D3
@@ -235,8 +235,8 @@ S
 #11512
 Passage To The West~
    There is a strange slight purple tint to the room.  A strange prescence can
-be felt, but not seen.  This room contains a few chairs and a large table.  
-There are exits to the east and west.    
+be felt, but not seen.  This room contains a few chairs and a large table.
+There are exits to the east and west.
 ~
 115 32776 0 0 0 0
 D1
@@ -253,7 +253,7 @@ Passage To The West~
    Upon entering this room you feel as if you are floating in mid air because
 when looking down there is nothing to be seen except darkness.  The floor can
 not be seen but it can be felt.  (IS THIS A DREAM OR WHAT).  There are exits to
-the east and west.    
+the east and west.
 ~
 115 32776 0 0 0 0
 D1
@@ -267,14 +267,14 @@ door~
 E
 look floor~
    The floor isn't there or is it there is no way to know where it may drop
-off.    
+off.
 ~
 S
 #11514
 Dark Room~
    Upon entering this room there is nothing but pure darkness and about ten
 feet away a pair of red glowing eyes that occupy the dark room.  There is an
-exit to the east.    
+exit to the east.
 ~
 115 9 0 0 0 0
 D1
@@ -286,7 +286,7 @@ S
 Forested Path~
    The path is bordered by a row of tall elms to the north and south.  Through
 the trees to the north you can see the southern wall of an old monastery.  To
-the east and west the path continues.    
+the east and west the path continues.
 ~
 115 32768 0 0 0 3
 D0
@@ -306,7 +306,7 @@ S
 A Forested Path~
    The trees along the path guide you further to the east or west.  To the
 north is an old building that looks like a church.  The roof of the church is
-sagging, and looks about ready to collapse.    
+sagging, and looks about ready to collapse.
 ~
 115 32768 0 0 0 0
 D0
@@ -326,7 +326,7 @@ S
 By the Monastery~
    The wall turns abruptly to the south here into what looks like an entrance.
 The walls here look to have been recently chipped and scratched from someone
-trying to scale them.    
+trying to scale them.
 ~
 115 32768 0 0 0 0
 D2
@@ -340,9 +340,9 @@ D3
 S
 #11518
 By the Monastery~
-   The trees have grown up against the southern wall of the monastery here.  
+   The trees have grown up against the southern wall of the monastery here.
 Flowers and other bushes line the monastery wall, but are slowly being consumed
-by weeds and grass.    
+by weeds and grass.
 ~
 115 32768 0 0 0 0
 D1
@@ -364,7 +364,7 @@ A Forested Path~
 and grass.  But to the north there is a building that looks almost like an old
 church.  The grassy lange you travel between the trees is overgrown and
 untended.  The remains of some nice flowers and shrubs are barely visible
-through the grass.  A large wall can be seen to the north.    
+through the grass.  A large wall can be seen to the north.
 ~
 115 32768 0 0 0 0
 D0
@@ -383,8 +383,8 @@ S
 #11520
 By the Monastery~
    There are some trees here, and flowers with a few patches of moss and grass.
-But to the north there is a building that looks almost like an old church.  
-The church wall is chipped and cracked in several places.    
+But to the north there is a building that looks almost like an old church.
+The church wall is chipped and cracked in several places.
 ~
 115 32768 0 0 0 0
 D1
@@ -404,7 +404,7 @@ S
 A Forested Path~
    The path opens up into a clearing with the trees still bordering it.  Small
 creatures are wandering about and many different sounds can be heard.  There
-appears to be another building farther to the north.    
+appears to be another building farther to the north.
 ~
 115 32768 0 0 0 0
 D0
@@ -422,9 +422,9 @@ D3
 S
 #11522
 A Path~
-   Here lies many different trees which line the path in every direction.  
+   Here lies many different trees which line the path in every direction.
 There is a thicket with many prickly thorns that impail your skin as you walk
-through.  There are many noises that are heard, but not seen.    
+through.  There are many noises that are heard, but not seen.
 ~
 115 32768 0 0 0 0
 D0
@@ -468,7 +468,7 @@ S
 Path To The North~
    The relative calm and quiet seems out of place here.  Very little noise and
 movement is evident, strange considering the number of wildlife normally
-occurring in these woods.    
+occurring in these woods.
 ~
 115 32768 0 0 0 0
 D0
@@ -488,7 +488,7 @@ S
 A Forested Path~
    This section of the forest is very quiet, there are no sounds or movement.
 There is utter silence The presence of fear consumes all around.  The path
-turns to the north along the western wall of the church.    
+turns to the north along the western wall of the church.
 ~
 115 32768 0 0 0 0
 D0
@@ -504,7 +504,7 @@ S
 A Forested Path~
    This part of the forest seems very odd.  There are small noises coming from
 behind a few of the bushes and there are many different noises.  It seems
-almost like there is a war breaking out behind the bushes.    
+almost like there is a war breaking out behind the bushes.
 ~
 115 32768 0 0 0 0
 D0
@@ -522,9 +522,9 @@ D2
 S
 #11527
 Path To The North~
-   The path continues north and south weaving in between trees and bushes.  
+   The path continues north and south weaving in between trees and bushes.
 The Monastery wall to the east rises above you several spans.  The concrete
-wall though old appears to be in good condition.    
+wall though old appears to be in good condition.
 ~
 115 32768 0 0 0 0
 D0
@@ -548,7 +548,7 @@ S
 A Forest Trail~
    The forest floor consists mostly of fallen branches, small saplings, and a
 scattering of acorns that crunch underfoot.  The tall elms, maples, and oaks
-reach magnificently into the sky.    
+reach magnificently into the sky.
 ~
 115 32768 0 0 0 0
 D0
@@ -568,7 +568,7 @@ S
 A Forested Path~
    This area of the forest seems awfully quiet except for some faint sounds of
 grunting and metal clanging in the distance.  There is little sign of life
-around but there is a building to be noticed farther to the north.    
+around but there is a building to be noticed farther to the north.
 ~
 115 32768 0 0 0 0
 D0
@@ -589,7 +589,7 @@ A Large Oak~
    A tall oak dominates all the trees in this area.  Its massive trunk and
 limbs have left no room for other trees to grow in a large circle of grass and
 moss.  To the south you can see several vines slowly climbing up the monastery
-wall.    
+wall.
 ~
 115 32768 0 0 0 0
 D0
@@ -609,7 +609,7 @@ S
 Along the Monastery Wall~
    The Monastery wall to the south curves around to the east.  Various vines
 and flowers haved scaled the walls and are now covering the wall about two
-spans high.  A small path can be seen to the north.    
+spans high.  A small path can be seen to the north.
 ~
 115 32768 0 0 0 0
 D0
@@ -625,7 +625,7 @@ S
 Path To The East~
    The forest ends against a metal fence to the north.  Beyone it lays an open
 field.  No gate or opening in the fence is visible.  It looks too high and
-dangerous to attempt to climb.    
+dangerous to attempt to climb.
 ~
 115 32768 0 0 0 0
 D1
@@ -646,7 +646,7 @@ Path To The East~
    The metal fence to the north runs up against the Monastery wall to the east.
 A small gap lies between the two, just wide enough to squeeze through.  The
 forest to the south is relatively clear with a huge tree dominating the area.
-  
+
 ~
 115 32772 0 0 0 0
 D0
@@ -668,7 +668,7 @@ The Garden~
 about the garden and a faint stream-like sound becoming more apparent.  There
 is a large oak tree standing in the middle of the garden, with a little white
 bird pirched on the lowest branch observing you with enthusiasm.  There are
-exits to the north, east, and west.    
+exits to the north, east, and west.
 ~
 115 32768 0 0 0 0
 D0
@@ -702,10 +702,10 @@ D2
 S
 #11536
 The Garden~
-   This section of the garden appears to be more colorful than the last.  
+   This section of the garden appears to be more colorful than the last.
 There are many multi-colored flowers here, as well as beautiful grass.  The
 faint sound of rushung water isn't very faint any more it is becoming very
-distinct.  There are exits to the north, east, and west.    
+distinct.  There are exits to the north, east, and west.
 ~
 115 32768 0 0 0 0
 D0
@@ -728,7 +728,7 @@ a bed of water.  This section of the garden appears to be the main irrigation
 system for the entire garden.  There are pipes that run underground from the
 stream that lies here.  There are small fish swimming around back and forth in
 the stream.  One of the fish get up enough courage to swim up and nibble on
-your toe.  There are exits to the north and west.    
+your toe.  There are exits to the north and west.
 ~
 115 32768 0 0 0 0
 D0
@@ -741,14 +741,14 @@ D3
 0 0 11536
 E
 fish~
-   The fish swimms away so fast you cant catch a glimpse of him.  
+   The fish swimms away so fast you cant catch a glimpse of him.
 ~
 S
 #11538
 The Garden~
    This section of the garden looks a little mistreated.  The plants look worn
 and withered . The grass is brown and dry.  And there are no signs of life
-here.  To the north is the southern wall of the monestary.    
+here.  To the north is the southern wall of the monestary.
 ~
 115 32768 0 0 0 0
 D2
@@ -764,7 +764,7 @@ S
 The Garden~
    This part of the garden is very withered and looks as if it hasn't gotten
 any water for a very long time.  The monestary's southern wall lies to the
-north.    
+north.
 ~
 115 32768 0 0 0 0
 D1
@@ -784,7 +784,7 @@ S
 Beside the Fence~
    This small trail between the metal fence and Monastery wall is very cramped,
 leaving little room to maneuver.  On the other side of the fence to the west
-you can see a wide open field.  A few vultures circle above it.    
+you can see a wide open field.  A few vultures circle above it.
 ~
 115 32768 0 0 0 0
 D0
@@ -800,7 +800,7 @@ S
 Beside the Monastery Wall~
    The block stone wall of the monastery rises sharply above you to the west.
 The large stone blocks are held together with a white mortar and are extremely
-smooth and well built.  The path continues north and south.    
+smooth and well built.  The path continues north and south.
 ~
 115 32768 0 0 0 0
 D0
@@ -817,7 +817,7 @@ A Narrow Path~
    The gap between the wall and fence narrows even more to the north, making
 movement even more difficult.  The black steel pole fence to the east resembles
 a weapons stand filled with small sharpened spears intertwined together with
-wire.    
+wire.
 ~
 115 32768 0 0 0 0
 D0
@@ -833,7 +833,7 @@ S
 A Narrow Path~
    The Monastery wall continues north and south and the fence paralleling it on
 the opposite side of you.  This path looks unused and is being consumed by
-weeds.  To the north the path turns east.    
+weeds.  To the north the path turns east.
 ~
 115 32768 0 0 0 0
 D0
@@ -849,7 +849,7 @@ S
 A Turn in the Narrow Path~
    The path turns east and south from here.  The northern wall of the monastery
 just to the southeast.  A black metal fence to the west blocks access to an
-open field.    
+open field.
 ~
 115 32768 0 0 0 0
 D1
@@ -865,7 +865,7 @@ S
 Behind The Monestary~
    This area seems to be calm and quiet.  The monestary is directly to the
 south, although there is no exit on this side of the large building.  There are
-faint sounds of birds chirping in the distance.    
+faint sounds of birds chirping in the distance.
 ~
 115 32768 0 0 0 0
 D1
@@ -879,7 +879,7 @@ D3
 E
 monastery~
    The monastery is made of large stone blocks that have been mortarred
-together.  The roof is of green tiles and is covered with tar.    
+together.  The roof is of green tiles and is covered with tar.
 ~
 S
 #11546
@@ -888,7 +888,7 @@ Behind The Monestary~
 This appears to be a private place for the people that occupied the monestary.
 There are parts of gardens mix matched around as if someone has been looking
 for something.  There are small gardening tools scattered about as if everyone
-left in a rush.    
+left in a rush.
 ~
 115 32768 0 0 0 0
 D1
@@ -914,7 +914,7 @@ S
 Entrance to the Battlegrounds~
    This area seems to be an entrance to a very old building ressembling the
 monastery but older in many ways.  It looks as if this building wasn't quite
-completed before it was ransacked by someone.    
+completed before it was ransacked by someone.
 ~
 115 32772 0 0 0 2
 D0
@@ -934,7 +934,7 @@ S
 A Turn in the Path~
    A large building to the northwest looks like it may have been built at the
 same time as the monastery to the west.  Except, it is much smaller and in even
-worse condition.  The path forks here going east, west, and south.    
+worse condition.  The path forks here going east, west, and south.
 ~
 115 32768 0 0 0 0
 D1
@@ -952,9 +952,9 @@ D3
 S
 #11549
 Path To The East~
-   A metal fence runs east and west before a large open field to the north.  
+   A metal fence runs east and west before a large open field to the north.
 It seems to stretch to an old building to the west.  The open field beyond is
-littered with objects that are not quite discernable from here.    
+littered with objects that are not quite discernable from here.
 ~
 115 32768 0 0 0 0
 D1
@@ -975,7 +975,7 @@ Entering the Battlegrounds~
    You work your way into a collapsed building.  The roof and walls have all
 collapsed, leaving only the frame and part of the southern wall and roof
 standing.  What looks like a trampled battlefield can be seen to the north,
-east, and west.    
+east, and west.
 ~
 115 32780 0 0 0 0
 D0
@@ -1000,7 +1000,7 @@ Along the Southern Fence~
    The corpse of a monk is impaled upon the black steel fencing to the south.
 Several other unidentifiable corpses litter the grassy field.  A few rats
 scatter as you disturb their eating.  The battle must have been recent since
-none of the corpses have yet begun to bloat.    
+none of the corpses have yet begun to bloat.
 ~
 115 32776 0 0 0 0
 D0
@@ -1020,7 +1020,7 @@ S
 Along the Southern Fence~
    Among the corpses of monks lays a few other humanoids.  Upon closer
 examination you can see the remains of a troll, riddled with makeshift spears
-that seem to have been crafted from gardening tools.    
+that seem to have been crafted from gardening tools.
 ~
 115 32768 0 0 0 0
 D0
@@ -1038,9 +1038,9 @@ D3
 S
 #11553
 The Southeastern Corner of the Battlefield~
-   The monks have quite a body count here.  Corpses litter the grassy field.  
+   The monks have quite a body count here.  Corpses litter the grassy field.
 Several vultures hiss and take flight at your disturbance.  The cool air mists
-over several of the bodies that are still warm.    
+over several of the bodies that are still warm.
 ~
 115 32768 0 0 0 0
 D0
@@ -1056,7 +1056,7 @@ S
 Along the Eastern Fence~
    A large corpse of a centaur is surrounded by a dozen dead monks.  It looks
 like a lucky monk managed inflict a mortally wounding blow with a shovel to the
-head of the giant beast.  The shovel is still embedded in the centaurs head.  
+head of the giant beast.  The shovel is still embedded in the centaurs head.
 ~
 115 32768 0 0 0 0
 D0
@@ -1075,8 +1075,8 @@ S
 #11555
 The Battlegrounds~
    Corpses of monks lay about the field, several renderred limb from limb by a
-very powerful foe.  A few makeshift weapons lay scattered uselessly about.  
-The monks of Omega never were known for their fighting abilities.    
+very powerful foe.  A few makeshift weapons lay scattered uselessly about.
+The monks of Omega never were known for their fighting abilities.
 ~
 115 32768 0 0 0 0
 D0
@@ -1100,7 +1100,7 @@ S
 The Battlegrounds~
    The grassy field has been trampled and plowed into an earthen mess.  Large
 hoofprints and unnaturally large footprints are evident in the freshly turned
-earth.  Some outlined in blood.    
+earth.  Some outlined in blood.
 ~
 115 32768 0 0 0 0
 D0
@@ -1124,7 +1124,7 @@ S
 The Battlegrounds~
    The corpses of a few slimy green or yellow orcs are scattered among the monk
 corpses.  It seems the monks were able to hold their own against the smaller
-and less intelligent orcs.    
+and less intelligent orcs.
 ~
 115 32768 0 0 0 0
 D0
@@ -1149,7 +1149,7 @@ The Western Fence~
    The remains of several monks lay dismembered and still steaming in the cool
 air.  One monk twitches occasionally.  Seemingly to deny his fate.  More death
 and murder is everwhere except to the west where a tall metal fence blocks the
-way.    
+way.
 ~
 115 32768 0 0 0 0
 D0
@@ -1169,7 +1169,7 @@ S
 A Fenced in Path~
    The tall black metal fence to the east and west look insurmountable.  The
 trampled grass is splotched with blood, and even some body parts.  A few
-corpses line the fence to the west.    
+corpses line the fence to the west.
 ~
 115 32768 0 0 0 0
 D0
@@ -1185,7 +1185,7 @@ S
 A Fenced in Path~
    A wailing cry of someone in anguish, or the last throes of life pierces the
 chill air.  Everything goes deathly silent afterwards, the cry echoes off the
-monastery and small building to the east over the fence.    
+monastery and small building to the east over the fence.
 ~
 115 32768 0 0 0 0
 D0
@@ -1201,7 +1201,7 @@ S
 A Fenced in Path~
    The smell of a recent battle fills this path although a stiff breeze is
 desperately trying to dissipate it.  The tall black fence on both sides looks
-to have been the last attempted escape of a few soon to be corpses.    
+to have been the last attempted escape of a few soon to be corpses.
 ~
 115 32768 0 0 0 0
 D0
@@ -1217,7 +1217,7 @@ S
 A Fenced in Path~
    The black metal fence to the east and west guide you to the north or south.
 The stamped grass is streaked with blood and even a few bodyparts.  A few
-pieces of broken equipment and weapons is scattered about.    
+pieces of broken equipment and weapons is scattered about.
 ~
 115 32768 0 0 0 0
 D0
@@ -1234,7 +1234,7 @@ A Fenced in Dead End~
    The black metal fence blocks all exits except to the north.  A dismembered
 corpse is impaled upon one of the metal fence posts.  The grass is trampled
 here from a recent battle.  This looks like it may have been the location of a
-last stand.    
+last stand.
 ~
 115 32768 0 0 0 0
 D0
@@ -1244,9 +1244,9 @@ D0
 S
 #11564
 The Western Fence~
-   The remains of more monks and a few goblins lay about the grassy field.  
+   The remains of more monks and a few goblins lay about the grassy field.
 Trails of blood and limbs seem to head to the east towards what must have been
-the culmination of the battle.    
+the culmination of the battle.
 ~
 115 32768 0 0 0 0
 D0
@@ -1267,7 +1267,7 @@ The Western Fence~
    The remains of several monks lay dismembered and still steaming in the cool
 air.  One monk twitches occasionally.  Seemingly to deny his fate.  More death
 and murder is everwhere except to the west where a tall metal fence blocks the
-way.    
+way.
 ~
 115 32768 0 0 0 0
 D0
@@ -1287,7 +1287,7 @@ S
 The Battlegrounds~
    A trail of blood and body parts leads towards the east.  You are just about
 in the center of the battlefield.  The body count is highest here and you find
-it hard to believe so many monks have died.    
+it hard to believe so many monks have died.
 ~
 115 32768 0 0 0 0
 D0
@@ -1311,7 +1311,7 @@ S
 The Center of the Battlegrounds~
    A pile of dead monks surround a large centaur corpse.  The monks seem to
 have overwhelmed the beast by sure numbers, and the majority seem to have died
-in the attempt.  The battlefield stretches around you in all directions.    
+in the attempt.  The battlefield stretches around you in all directions.
 ~
 115 32768 0 0 0 0
 D0
@@ -1335,7 +1335,7 @@ S
 The Battlegrounds~
    The smell of death and blood intermingle with the even more rotten smell
 from the goblin and troll corpses.  The monks seem to have faired well in this
-part of the battlefield.    
+part of the battlefield.
 ~
 115 32768 0 0 0 0
 D0
@@ -1360,7 +1360,7 @@ Along the Eastern Fence~
    The tall black fencing to the east is built just along the western wall of
 the Monastery of Omega.  Supposedly a safe haven from evil, it seems that holds
 true no longer.  Corpses of innocent monks give proof of the reality of this
-Cruel World.    
+Cruel World.
 ~
 115 32768 0 0 0 0
 D0
@@ -1380,7 +1380,7 @@ S
 Along the Eastern Fence~
    A large corpse of a centaur is surrounded by a dozen dead monks.  It looks
 like a lucky monk managed inflict a mortally wounding blow with a shovel to the
-head of the giant beast.  The shovel is still embedded in the centaurs head.  
+head of the giant beast.  The shovel is still embedded in the centaurs head.
 ~
 115 32768 0 0 0 0
 D0
@@ -1399,8 +1399,8 @@ S
 #11571
 The Battlegrounds~
    Corpses of monks lay about the field, several renderred limb from limb by a
-very powerful foe.  A few makeshift weapons lay scattered uselessly about.  
-The monks of Omega never were known for their fighting abilities.    
+very powerful foe.  A few makeshift weapons lay scattered uselessly about.
+The monks of Omega never were known for their fighting abilities.
 ~
 115 32768 0 0 0 0
 D0
@@ -1424,7 +1424,7 @@ S
 The Battlegrounds~
    The grassy field has been trampled and plowed into an earthen mess.  Large
 hoofprints and unnaturally large footprints are evident in the freshly turned
-earth.  Some outlined in blood.    
+earth.  Some outlined in blood.
 ~
 115 32768 0 0 0 0
 D0
@@ -1448,7 +1448,7 @@ S
 The Battlegrounds~
    The corpses of a few slimy green or yellow orcs are scattered among the monk
 corpses.  It seems the monks were able to hold their own against the smaller
-and less intelligent orcs.    
+and less intelligent orcs.
 ~
 115 32768 0 0 0 0
 D0
@@ -1473,7 +1473,7 @@ The Western Fence~
    The remains of several monks lay dismembered and still steaming in the cool
 air.  One monk twitches occasionally.  Seemingly to deny his fate.  More death
 and murder is everwhere except to the west where a tall metal fence blocks the
-way.    
+way.
 ~
 115 32768 0 0 0 0
 D0
@@ -1493,7 +1493,7 @@ S
 The Northwestern Corner of the Battlefield~
    The smell of vile monsters and feces fills this part of the open field.  A
 few corpses of goblins and a troll seem to be the source.  Monks lay scattered
-and broken all about them.    
+and broken all about them.
 ~
 115 32768 0 0 0 0
 D1
@@ -1509,7 +1509,7 @@ S
 Along the Northern Fence~
    The black metal fence to the north is covered in blood and bits of the poor
 monks who tried to flee over the tall fence.  A few are even impaled into and
-on the fence.  The gory battlefiled continues all around.    
+on the fence.  The gory battlefiled continues all around.
 ~
 115 32768 0 0 0 0
 D1
@@ -1530,7 +1530,7 @@ Along the Northern Fence~
    The corpse of a monk is impaled upon the black steel fencing to the north.
 Several other unidentifiable corpses litter the grassy field.  A few rats
 scatter as you disturb their eating.  The battle must have been recent since
-none of the corpses have yet begun to bloat.    
+none of the corpses have yet begun to bloat.
 ~
 115 32768 0 0 0 0
 D1
@@ -1550,7 +1550,7 @@ S
 Along the Northern Fence~
    Among the corpses of monks lays a few other humanoids.  Upon closer
 examination you can see the remains of a troll, riddled with makeshift spears
-that seem to have been crafted from gardening tools.    
+that seem to have been crafted from gardening tools.
 ~
 115 32768 0 0 0 0
 D1
@@ -1568,9 +1568,9 @@ D3
 S
 #11579
 The Northeastern Corner of the Battlefield~
-   The monks have quite a body count here.  Corpses litter the grassy field.  
+   The monks have quite a body count here.  Corpses litter the grassy field.
 Several vultures hiss and take flight at your disturbance.  The cool air mists
-over several of the bodies that are still warm.    
+over several of the bodies that are still warm.
 ~
 115 32768 0 0 0 0
 D2
@@ -1586,7 +1586,7 @@ S
 Behind The Monestary~
    To the west is the monestary.  There is a strong fragrance of earth and
 flowers upon entering this room.  A small trail of blood leading to the south.
-There are many different plants here and a few animals rummaging for food.    
+There are many different plants here and a few animals rummaging for food.
 ~
 115 32768 0 0 0 0
 D0
@@ -1604,14 +1604,14 @@ D2
 E
 look blood~
    This trail of blood leads to the south and appears to be getting thicker and
-thicker the farther south it goes.    
+thicker the farther south it goes.
 ~
 S
 #11581
 Behind The Monestary~
    A row of corn to the west blocks out the rest of the garden.  The wall to
 the east leaves a narrow path to walk upon.  Small drops of blood can be seen
-on some dead leaves and grass.    
+on some dead leaves and grass.
 ~
 115 32768 0 0 0 0
 D0
@@ -1629,14 +1629,14 @@ D2
 E
 look sky~
    There is a very large creature sitting about the clouds blowing ice down on
-you and the surrounding area.    
+you and the surrounding area.
 ~
 S
 #11582
 Behind The Monestary~
    A brush pile of twigs and dead leaves has been stacked against the Monastery
 wall to the west.  A pile of the leaves are matted down and covered in blood as
-if a wounded animal rested there.    
+if a wounded animal rested there.
 ~
 115 32768 0 0 0 0
 D0
@@ -1654,14 +1654,14 @@ D2
 E
 look blood~
    The trail can still be distinguished from the dirt, and seems to be running
-south.    
+south.
 ~
 S
 #11583
 Behind the Monastery~
    A trail of footprints and hoofprints have pounded the ground into a nice
 trail here.  An assortment of garden tools are lined up against the eastern
-wall of the Monastery.    
+wall of the Monastery.
 ~
 115 32768 0 0 0 0
 D0
@@ -1678,14 +1678,14 @@ D2
 0 0 11584
 E
 look blood~
-   The trail has been lost and it is not known which way it runs.    
+   The trail has been lost and it is not known which way it runs.
 ~
 S
 #11584
 Behind The Monestary~
    An orchard opens up to the east while the Monastery wall hugs close to the
 west.  A small path travels north and south along the wall.  Tools of gardening
-are scattered about the ground in disorder.    
+are scattered about the ground in disorder.
 ~
 115 32768 0 0 0 0
 D0
@@ -1707,7 +1707,7 @@ Behind The Monestary~
 menacing grass scattered all about . The room itself seems to be moving but
 after examining it closely the cause is known, the grass itself is moving about
 the room.  The church is directly to the west, and the blood trail runs to the
-east.    
+east.
 ~
 115 32768 0 0 0 0
 D0
@@ -1721,14 +1721,14 @@ D1
 E
 look grass~
    The grass here is very odd it moves around and seems to shift right under
-your feet.    
+your feet.
 ~
 S
 #11586
 An Apple Orchard~
    Apple trees in distinct rows fill this part of the garden.  Although they
 are small and young they still bear fruit.  Several baskets of apples lay
-about, full of rotting apples.    
+about, full of rotting apples.
 ~
 115 32768 0 0 0 0
 D0
@@ -1754,7 +1754,7 @@ Behind The Monestary~
 scattered about uprooted as if someone drug something about the room.  The
 blood trail is lying on the ground pointing to the east.  The smell here is of
 death, there is a foul odor that occupies this room.  There are no signs of
-what could be causing the smell here.    
+what could be causing the smell here.
 ~
 115 32768 0 0 0 0
 D0
@@ -1774,7 +1774,7 @@ S
 A Small Garden~
    This area seems to be well tended and one of the more beautiful parts of the
 entire garden.  A blood trail seems to end here and it is now clear what the
-awful smell was.    
+awful smell was.
 ~
 115 32768 0 0 0 0
 D0
@@ -1790,7 +1790,7 @@ S
 Edge of the Stream~
    The bank of the stream is very steep, it looks as if some of the stream has
 actually worked its way underground.  The bank you stand on no longer seems
-very safe.    
+very safe.
 ~
 115 32768 0 0 0 0
 D0
@@ -1809,8 +1809,8 @@ S
 #11590
 In the Garden~
    Several plots have been measured out and seem to have been assigned to
-different people.  Some contain corn, beans, lettuce, and other edibles.  
-Others seem to be nothing more than flower beds.    
+different people.  Some contain corn, beans, lettuce, and other edibles.
+Others seem to be nothing more than flower beds.
 ~
 115 32768 0 0 0 0
 D2
@@ -1826,7 +1826,7 @@ S
 In the Garden~
    Several garden plots are evenly spaced and are now about ready to be
 harvested.  Large squash and pumpkins are ripe for the picking.  To the west
-you see the monastery while the garden stretches in all other directions.    
+you see the monastery while the garden stretches in all other directions.
 ~
 115 32768 0 0 0 0
 D0
@@ -1850,7 +1850,7 @@ S
 Between Corn Rows~
    Tall rows of corn block out your surroundings.  The rough leaves and thick
 stalks makes travel difficult unless you continue with the rows which are
-planted north to south.    
+planted north to south.
 ~
 115 32768 0 0 0 0
 D0
@@ -1874,7 +1874,7 @@ S
 Between the Corn Rows~
    The corn looks ready to be picked.  The golden tassles sprouting from the
 cobs is just starting to turn brown.  A faint trickling can be heard to the
-east, most likely a stream.    
+east, most likely a stream.
 ~
 115 32768 0 0 0 0
 D0
@@ -1898,7 +1898,7 @@ S
 An Apple Orchard~
    Small apple trees are evenly spaced and look almost identical to each other.
 Each bears an assortment of apples, some ripe, some almost ripe.  The ground is
-littered with fallen apples that are beginning to rot.    
+littered with fallen apples that are beginning to rot.
 ~
 115 32768 0 0 0 0
 D0
@@ -1920,9 +1920,9 @@ D3
 S
 #11595
 The Edge of the Stream~
-   The stream drops several feet into a much deeper and narrower stream bed.  
+   The stream drops several feet into a much deeper and narrower stream bed.
 Trout can be seen swimming lazily in the deeper water.  To the west a small
-orchard fills the garden east of the Monastery.    
+orchard fills the garden east of the Monastery.
 ~
 115 32768 0 0 0 0
 D0
@@ -1942,7 +1942,7 @@ S
 The Edge of a Stream~
    The stream sparkles and looks crystal clear.  The water appears untainted
 and beckons to be drunk.  The bank on the opposite side is extremely steep and
-looks impossible to jump across without getting soaked.    
+looks impossible to jump across without getting soaked.
 ~
 115 32768 0 0 0 0
 D0
@@ -1962,7 +1962,7 @@ S
 The Edge of the Stream~
    The soft gurgling of the stream is very peaceful and soothing.  A small
 irrigation ditch cuts into the garden and feeds water into several other
-man-made ditches.    
+man-made ditches.
 ~
 115 32768 0 0 0 0
 D0
@@ -1982,7 +1982,7 @@ S
 The Edge of a Stream~
    The garden is planted right up to the edge of a small stream that provides
 irrigation for the many plots of vegetables and trees.  The stream flows slowly
-and is only a few feet deep.    
+and is only a few feet deep.
 ~
 115 32768 0 0 0 0
 D2
@@ -1996,10 +1996,10 @@ D3
 S
 #11599
 The Doom Priest Guild~
-   The room is plastered in shadows making everything difficult to see.  
-Various scrolls, books, and containers are filling bookshelfs on every wall.  
+   The room is plastered in shadows making everything difficult to see.
+Various scrolls, books, and containers are filling bookshelfs on every wall.
 Some are even overflowing into piles on the floor.  This looks like a room of
-magical studies.  
+magical studies.
 ~
 115 0 0 0 0 0
 D4

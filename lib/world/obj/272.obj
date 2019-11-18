@@ -9,7 +9,7 @@ A dried and salted fish lies at your feet.~
 E
 herring salted~
    The slender and shrivelled herring comes from waters far away, and looks
-tasty despite its delapidated appearance.  
+tasty despite its delapidated appearance.
 ~
 #27201
 quill feather white swan~
@@ -22,7 +22,7 @@ A swan's feather drifts along the ground in the breeze.~
 E
 quill feather white swan~
    A single, slender swan's feather stands from the end of an ivory- colored ink
-quill.  
+quill.
 ~
 #27202
 shard crystal pc~
@@ -36,7 +36,7 @@ E
 shard crystal~
    The broken crystal glass has a sharp edge, and looks like it could hurt
 someone.  Since wielding it may hurt your hand, however, it remains a mystery
-exactly how it may accomplish this end..  
+exactly how it may accomplish this end..
 ~
 #27203
 gloves silk~
@@ -49,7 +49,7 @@ Someone has left a pair of silk gloves crumpled here.~
 E
 gloves silk~
    You see a pair of creased gloves of dark silk.  There are tiny holes in the
-ends of the fingers, as if this was once worn by a clawed creature.  
+ends of the fingers, as if this was once worn by a clawed creature.
 ~
 #27204
 shawl blue silk~
@@ -62,7 +62,7 @@ A pile of blue silk is lying on the ground.~
 E
 shawl blue silk~
    The trellised shawl is handmade of a dusty-blue silk, and is framed to wrap
-about the shoulders.  
+about the shoulders.
 ~
 #27205
 gown indigo silk~
@@ -77,7 +77,7 @@ gown indigo silk~
    The gown has a deep indigo blue shine to its silken folds.  When worn by a
 creature of medium size, its hem lightly trails the ground.  It looks
 appropriate for festive occasions, the sort of thing that may be donned by
-ladies attending an execution at the gallows.  
+ladies attending an execution at the gallows.
 ~
 #27206
 wine glass drink wine~
@@ -90,7 +90,7 @@ A glass of white wine sits primly on the ground.~
 E
 wine glass~
    It's a tall, clear glass rimmed in genuine crystal and filled with sparkling
-white wine.  
+white wine.
 ~
 #27207
 map sundhaven~
@@ -108,7 +108,7 @@ map~
                 Alchemy Shop                           Corner Store
  <--To Homes________________________________________________
                  |                           Bakery         |
-    Jewellers    |        Temple of Mercy    Silver Scale   |   Dragons      
+    Jewellers    |        Temple of Mercy    Silver Scale   |   Dragons
   Town Treasury  |   Library    *                Armoury    |    Wrath
    Post Office   |             ***           Dirk & Dagger  |   Alehouse
                  |            *****              Weaponry   |
@@ -136,7 +136,7 @@ A crystalline potion sits here.~
 2 200 0 0
 E
 potion crystal~
-   The potion sparkles with a diamond-like shine.  
+   The potion sparkles with a diamond-like shine.
 ~
 #27209
 staff twisted~
@@ -149,7 +149,7 @@ A corkscrew wooden staff lies here discarded.~
 E
 staff twisted~
    The staff has been carved into a twisting spiral from a light grey pliant
-wood.  
+wood.
 ~
 #27211
 bottle blue~
@@ -178,7 +178,7 @@ message paper~
    The words are scrawled in black ink and leave crooked trails as they run down
 the page.  ....  "You who would enter this forsaken place!  Stir it not, leave
 it be, lest you would waken the underworld creatures that swim these infested
-waters.  Only those of evil thoughts and deeds may pass unscathed.  
+waters.  Only those of evil thoughts and deeds may pass unscathed.
 ~
 #27213
 sword heraldry~
@@ -190,8 +190,8 @@ A sword marked with the insignia of a noble house is lying here.~
 10 800 0 0
 E
 sword heraldry~
-   The sword is of silver with a slender, tapering point, sharp as a needle.  
-The hilt is inscribed with the insignia of a noble house of Sundhaven.  
+   The sword is of silver with a slender, tapering point, sharp as a needle.
+The hilt is inscribed with the insignia of a noble house of Sundhaven.
 ~
 #27214
 mim~
@@ -203,7 +203,7 @@ A shining mithril dagger lies here.~
 1 500 0 0
 E
 dagger mithril~
-   It's a silver-colored dagger, with a crescent-like blade.  
+   It's a silver-colored dagger, with a crescent-like blade.
 ~
 A
 18 5
@@ -219,7 +219,7 @@ a wall~
 0 0 0 0
 E
 wall stone~
-   A grey stone wall covers the entrance.  
+   A grey stone wall covers the entrance.
 ~
 #27216
 cloak taupe~
@@ -232,7 +232,7 @@ A billowing cloak blows in the wind nearby.~
 E
 cloak taupe~
    It is long with full folds that catch the wind, and soft as angora or lambs
-wool.  Whoever wears this must be doing well for themselves.  
+wool.  Whoever wears this must be doing well for themselves.
 ~
 #27217
 gung ma bowl food~
@@ -245,7 +245,7 @@ A steaming hot bowl of ma gung sits here.~
 E
 bowl ma gung~
    You slightly burn your fingers touching the ornamented bowl, which is small
-but filled to the rim with a spicy exotic soup.  
+but filled to the rim with a spicy exotic soup.
 ~
 #27218
 basket~
@@ -258,7 +258,7 @@ A basket sits on the ground.~
 E
 basket~
    The basket is small, wicker, and bowl-shaped..  A perfect container for
-collecting berries and other food in.  
+collecting berries and other food in.
 ~
 #27219
 blackberries berries black food~
@@ -271,7 +271,7 @@ Some blackberries lie in a pile in the dirt.~
 E
 blackberries berries black~
    The blackberries are ripe and full, growing to be large in this region of the
-world.  
+world.
 ~
 #27220
 message guild sign~
@@ -302,7 +302,7 @@ E
 heap rubble refuse~
    This enormous pile of trash is disgusting, no one would touch it..  You
 think...  Yet..  If you look down, you will find an entrance to someplace else
-beneath.  
+beneath.
 ~
 #27222
 potion white~
@@ -315,7 +315,7 @@ A misty-white potion sits here.~
 E
 potion white~
    A mist whirls about the surface of the liquid, which is milky- white in
-color.  
+color.
 ~
 #27223
 potion bubbling~
@@ -328,7 +328,7 @@ Bubbles rise and pop from a potion on the ground.~
 E
 potion bubbling~
    The potion is multi-colored, with small bubbles shivering chaotically to the
-surface.  
+surface.
 ~
 #27224
 wand silver silvery~
@@ -341,7 +341,7 @@ A silvery wand rests here.~
 E
 wand silver silvery~
    The short silver wand is inscribed with runes for a single spell of
-invisibility.  
+invisibility.
 ~
 #27225
 wine drink bottle spanish wine~
@@ -355,7 +355,7 @@ depleting.~
 E
 bottle wine spanish~
    It looks and smells luxuriously inebriating, and brings to mind ponderous
-philosophical thoughts.  
+philosophical thoughts.
 ~
 #27226
 foil fencing athos rapier~
@@ -368,7 +368,7 @@ A gallant rapier of silver is lying here.~
 E
 foil fencing rapier~
    Forged entirely from silver but for a hilt of black ruby, it was given to a
-great warrior by the gods and would be wisely returned.  
+great warrior by the gods and would be wisely returned.
 ~
 A
 18 2

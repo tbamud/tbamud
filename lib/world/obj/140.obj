@@ -11,7 +11,7 @@ wyvern scale armor~
    This armor is made from the scales of a great wyvern.  The blue plates of
 scale armor overlap providing protection from attacks.  The armor has been
 blessed by the high priest of the wyverns for the Sentries guarding the Lord of
-the wyverns.  
+the wyverns.
 ~
 A
 1 1
@@ -26,7 +26,7 @@ A glowing red ball floats in the air here.~
 E
 red dragon orb~
    This sphere of deep red scales has been endowed with the evil essence of a
-red dragon.  It glows with an unholy light of pure evil.  
+red dragon.  It glows with an unholy light of pure evil.
 ~
 A
 12 20
@@ -41,7 +41,7 @@ A dull red claw has been dropped here.~
 E
 claw wyvern~
    This sturdy claw was once the weapon of a mighty wyvern.  It is scratched and
-nicked from countless battles.  
+nicked from countless battles.
 ~
 A
 19 1
@@ -57,7 +57,7 @@ E
 foreclaw wyvern~
    This is the foreclaw of a great wyvern.  Its tough material and deadly
 pointed talons make it an excellent weapon and parrying item.  What a beast it
-must have been that this came from.  
+must have been that this came from.
 ~
 A
 18 1
@@ -75,7 +75,7 @@ E
 crested wyvern helm~
    This is the blue crested helm of a wyvern sentry.  The blue ridges of bone
 and scale that cover it make it stronger than forged steel.  The helm has been
-blessed by the High priest of the wyverns.  
+blessed by the High priest of the wyverns.
 ~
 A
 13 5
@@ -94,7 +94,7 @@ greater wyvern talon~
    This huge claw was once wielded in battle by the commander of all the wyvern
 defenders.  Its edges have been filed down into wicked blades and the points are
 barbed.  It must have been quite painful for the commander to have this done
-while he was still attached to the talon.  
+while he was still attached to the talon.
 ~
 A
 18 1
@@ -130,7 +130,7 @@ claw ring~
    This ring was made from a very old claw by soaking it in water for 2 years
 and gradually shaping it.  There is a feeling of magical energy that emanates
 from the ring.  In wyvern culture this ring represents allegiance to the city
-lord, and service in his court.  
+lord, and service in his court.
 ~
 A
 19 1
@@ -151,7 +151,7 @@ wyvern wings~
    These wings came from the mighty Lord of all the wyverns.  The oldest and
 strongest of all wyverns he reached an age where he grew wings like his cousins
 the dragons.  Incredibly light and strong these wings are 15 feet long from tip
-to tip.  They are transparent and very difficult to see.  
+to tip.  They are transparent and very difficult to see.
 ~
 A
 2 2
@@ -169,7 +169,7 @@ E
 shield royal wyvern~
    This shield is crafted of overlapping blue and red scales to provide maximum
 possible protection to its owner.  Emblazoned upon the front is the symbol of
-the royal house of wyverns.  
+the royal house of wyverns.
 ~
 A
 13 10
@@ -185,7 +185,7 @@ E
 glowing red eyes wyvern~
    These were once the eyes of a mighty wyvern, now dead.  They still retain
 some of their previous owner's magical energy.  They glow with a sinister red
-light.  The red orbs seem to watch you where ever you go.  
+light.  The red orbs seem to watch you where ever you go.
 ~
 A
 18 2
@@ -207,7 +207,7 @@ fountain blood~
 traditional colors of the wyvern race.  Upon close inspection you realize that
 the liquid in it is blood.  The wyverns believe that this is the blood of their
 ansesters, and so drinking of it gives them strength.  Never the less the
-question is where is the blood coming from?  
+question is where is the blood coming from?
 ~
 #14012
 statue dragon god~
@@ -223,7 +223,7 @@ statue dragon god ferret~
 taller than any of the buildings in the city.  The image of the amethyst dragon
 looks down on the mortals he created so many years ago.  The citizens
 constructed this statue in honor of the God after they completed this city, they
-believe he protects them, and sent the red dragon to defend the city.  
+believe he protects them, and sent the red dragon to defend the city.
 ~
 #14013
 statue god elf~
@@ -239,7 +239,7 @@ statue elf god ilsensine~
 in hopes he will honor and aid their students of magic.  The statue is only 6
 feet tall but made entirely of pure emerald.  The god is pictured dressed in
 robes, his head shaved and his hands raised in the act of calling upon great
-magical forces.  
+magical forces.
 ~
 #14014
 alter gods telemacos balm wyv~
@@ -255,7 +255,7 @@ alter balm telemacos~
 in honor of the two gods of neutrality who battle each other over the fait of
 all mortality.  The two dragon gods are sculpted as facing each other preparing
 for combat.  Between them is a marble egg representing the lives they battle
-over.  
+over.
 ~
 #14015
 willow wyv statue goddess~
@@ -271,7 +271,7 @@ goddess willow statue~
 been trimmed with silver guild.  The temple priests placed her here to symbolize
 the separation of the duties of men and women.  Her sudor Balm is for ever bound
 by his battle for the souls of mortals in the next room.  The two may watch each
-other but are for ever apart.  
+other but are for ever apart.
 ~
 #14016
 scroll recall wyv~
@@ -493,7 +493,7 @@ god springfire air statue~
 the naked eye it is completely invisible.  The warriors of the city paid a
 staggering amount of money to have the warrior god's image immortalized in their
 guild.  They hope he will aid them in battle against their mortal enemies the
-giants.  
+giants.
 ~
 #14041
 statue khelben god knight wyv~
@@ -510,7 +510,7 @@ guild.  Above all other gods they worship the mighty Khelben, who they believe
 founded the order of knighthood.  The statue itself is 9 feet tall and made of
 pure platinum.  It is clad in the armor and symbols of the city's royal line and
 the knights' personal colors.  The knights hope that the god will grant them
-their magic in days to come and aid them when they enter battle.  
+their magic in days to come and aid them when they enter battle.
 ~
 #14042
 god statue thunder~
@@ -522,13 +522,13 @@ A statue of the mighty God Rumble has been built here.~
 0 0 0 0
 E
 thunder rumble god statue ~
-   This statue was built by the city's guild of rogues and thieves.  
-They have chosen the almighty thunder god as their patron deity because 
-of his former status as a thief, and because they believe that in the 
-final battle between order and chaos he will come down from the heavens 
-and help them destroy Balm and all his followers for ever.  The statue 
-is carved from polished obsidian stone and has been inlaid with streaks 
-of silver lightning bolts.  The God is depicted, dressed in a grey robe 
+   This statue was built by the city's guild of rogues and thieves.
+They have chosen the almighty thunder god as their patron deity because
+of his former status as a thief, and because they believe that in the
+final battle between order and chaos he will come down from the heavens
+and help them destroy Balm and all his followers for ever.  The statue
+is carved from polished obsidian stone and has been inlaid with streaks
+of silver lightning bolts.  The God is depicted, dressed in a grey robe
 with both hands raised hurling his deadly thunder around him.
 ~
 #14043
@@ -546,7 +546,7 @@ pedistle, the image of Sexykitty, the beautiful empress of magic, stands
 watching over this room.  The wyverns have chosen her as their deity of charity
 and the poor because of her kindness and exceptional beauty.  They believe that
 all who are in need can call upon her and if their need is strong enough she
-will come to aid them in their time of trouble.  
+will come to aid them in their time of trouble.
 ~
 #14044
 Gnoff god statue wyv~
@@ -561,6 +561,6 @@ gnoff god statue~
    This statue has been carved from pure topaz.  The bright yellow sculpture
 looks to be worth a small fortune.  The wyverns worship Gnoff as their god of
 social activities and interaction.  They believe he watches all marriages and
-gives his blessing to those which will endure.  
+gives his blessing to those which will endure.
 ~
 $~

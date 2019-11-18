@@ -36,7 +36,7 @@ E
 look vase~
    This is a very old vase, inside is clear water wich you can drink, it says
 that you can drink from it 12 times, after that you would need to fill it from a
-fountain.  
+fountain.
 ~
 #27907
 water plate silver water~
@@ -48,7 +48,7 @@ A silver plate is stuck to the wall.~
 0 0 0 0 0
 E
 look plate~
-   This plate is filled with blessed water.  
+   This plate is filled with blessed water.
 ~
 #27908
 sweater~
@@ -244,7 +244,7 @@ A grey stone fountain babbles here.~
 505 0 0 0 0
 E
 look fountain~
-   Is not just a fountain, it is an ornament of the city.  
+   Is not just a fountain, it is an ornament of the city.
 ~
 #27943
 magic potion~
@@ -330,7 +330,7 @@ A bronze statue of Louis XIV is here.~
 0 0 0 0 0
 E
 look statue~
-   This statue was made in honor of the king Louis XIV.  
+   This statue was made in honor of the king Louis XIV.
 ~
 #27966
 dress white~
@@ -342,7 +342,7 @@ A white dress is lying here.~
 4 500 0 0 0
 E
 look dress~
-   It is a beautifull dress, you cant imagine yourself using it.  
+   It is a beautifull dress, you cant imagine yourself using it.
 ~
 A
 6 1
@@ -372,7 +372,7 @@ A bronze key is lying here.~
 8 1 0 0 0
 E
 look key~
-   This key is the one that open the principal door of the Musketeers H.  Q.  
+   This key is the one that open the principal door of the Musketeers H.  Q.
 ~
 #27969
 guillotine~
@@ -384,7 +384,7 @@ A blody guillotine is here.~
 0 0 0 0 0
 E
 guillotine~
-   This guillotine was built to punish the revolutioners.  
+   This guillotine was built to punish the revolutioners.
 ~
 #27971
 French cake~
@@ -469,7 +469,7 @@ A set of horseshoes has been left here.~
 E
 look horseshoes~
    This object can only be use by a horse sorry if you liked them but, you cant
-take them with you.  
+take them with you.
 ~
 A
 19 3
@@ -488,7 +488,7 @@ A staff has been left here.~
 E
 look staff~
    This is a magical an powerful staff that blesses all the persons that are
-around you players or mobs.  When you buy it you can used 5 times.  
+around you players or mobs.  When you buy it you can used 5 times.
 ~
 #27990
 key oxided~
@@ -501,7 +501,7 @@ An oxided key has been left here.~
 E
 look key~
    This is a key of a cell, what ever muste be in that cell you should live it
-there it must be a very dangerous thief or revolutioner.  
+there it must be a very dangerous thief or revolutioner.
 ~
 #27991
 cadaver~
@@ -513,7 +513,7 @@ The cadaver of a man is lying here.~
 0 0 0 0 0
 E
 look corpse~
-   This is the corpse of the man that once had the iron mask on his head.  
+   This is the corpse of the man that once had the iron mask on his head.
 ~
 #27992
 key platinum~
@@ -526,7 +526,7 @@ A platinum key is lying here.~
 E
 look key~
    This is not an ordinary key, this key can open a secret passage that leads to
-the royal hall, where you can find the king.  
+the royal hall, where you can find the king.
 ~
 #27993
 crown royal~

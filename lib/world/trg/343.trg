@@ -133,9 +133,9 @@ Drunk spirit text~
 eval number %random.6%
 switch %number%
 case 0
-Say S-set me up Kenny... 
+Say S-set me up Kenny...
 wait 2
-say A-an-another rwound here... 
+say A-an-another rwound here...
 wait 2
 emote hics
 wait 2
@@ -155,7 +155,7 @@ dance
 break
 case 3
 say 99 bottles of beer on the wall....
-say 99 bottles of beer... 
+say 99 bottles of beer...
 say take one down, pass it around....
 say 98 bottles of beer on the wall..,
 break
@@ -182,7 +182,7 @@ say GREETINGS HOLINESS!
 bow
 else
 say =====================================================
-say Hrmmmph. This area mortal is not off-limits, but please go 
+say Hrmmmph. This area mortal is not off-limits, but please go
 say to your destination quickly. Once completed, DO NOT LINGER!
 say ------------------------------------------------------
 nod %actor.name%

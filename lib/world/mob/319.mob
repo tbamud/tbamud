@@ -5,7 +5,7 @@ A sea zombie rises from the sea with a blast of water and attacks!
 ~
    This long dead soul of a sea captain deigned to forsake the chance to Pass
 Through to the next life, instead wreaking his vengence on all those who cross
-the place where he himself perished.    
+the place where he himself perished.
 ~
 190506 0 0 0 0 0 0 0 -700 E
 20 14 -2 4d4+200 3d3+3
@@ -18,7 +18,7 @@ a giant squid~
 A giant squid moves through the water at a lightning pace.
 ~
    It looks very slimy to the touch and extremely mean.  Watch that it does not
-decide to make a meal of you.    
+decide to make a meal of you.
 ~
 104 0 0 0 0 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
@@ -31,7 +31,7 @@ a dragon turtle~
 An enormous dragon turtle glides across the surface of the sea, searching for food.
 ~
    It does not move very fast, in fact it still has not seemed to notice that
-you are here, but it is larger than a killer whale.  And stronger.    
+you are here, but it is larger than a killer whale.  And stronger.
 ~
 76 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -44,7 +44,7 @@ a pelican~
 A pelican glides over the surface of the water, skimming for food.
 ~
    Its enormous beak dips in and out of the water in constant search for a
-morsel to eat.    
+morsel to eat.
 ~
 72 0 0 0 0 0 0 0 100 E
 23 13 -3 4d4+230 3d3+3
@@ -58,7 +58,7 @@ a killer whale~
 A killer whale skims just under the surface of the water.
 ~
    The teeth are the visible part of this animal, even when its mouth is closed
-- could it just be your imagination?!?    
+- could it just be your imagination?!?
 ~
 65608 0 0 0 0 0 0 0 200 E
 24 12 -4 4d4+240 4d4+4
@@ -72,7 +72,7 @@ a great white shark~
 A curved fin is visible swimming very near to you.
 ~
    Is this something that you really feel you'd like to investigate?  If it IS
-a shark, it is probably best left alone.    
+a shark, it is probably best left alone.
 ~
 204872 0 0 0 0 0 0 0 300 E
 25 12 -5 5d5+250 4d4+4
@@ -86,7 +86,7 @@ a sea elf~
 The head of a sea elf pokes out of the water nearby.
 ~
    The elf gives you a smile and a laugh and then dives for the depths of the
-sea.    
+sea.
 ~
 2120 0 0 0 0 0 0 0 400 E
 26 12 -5 5d5+260 4d4+4
@@ -99,7 +99,7 @@ a bright red crab~
 A small red crab bobs at the top of the water.
 ~
    Its two little whiskers bounce wetly above its bulbous eyes.  It almost
-seems like it might be looking at you, even smiling...    
+seems like it might be looking at you, even smiling...
 ~
 72 0 0 0 0 0 0 0 0 E
 27 11 -6 5d5+270 4d4+4
@@ -111,7 +111,7 @@ jellyfish fish mass gooey~
 a jellyfish~
 A gooey mass of greenish yuck is floating on the surface.
 ~
-   That damn stuff is alive!  Its a jellyfish!    
+   That damn stuff is alive!  Its a jellyfish!
 ~
 72 0 0 0 0 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
@@ -125,7 +125,7 @@ a walrus~
 The dark colored head of a walrus is all that is visible from here.
 ~
    It almost looks goofy with its big buck-toothed tusks and the whiskers.  It
-sees you and gives a bark.    
+sees you and gives a bark.
 ~
 72 0 0 0 0 0 0 0 400 E
 29 11 -7 5d5+290 4d4+4
@@ -137,7 +137,7 @@ seal~
 a seal~
 A seal gracefully leaps the waves as it happily plays on the surface.
 ~
-   It barks and claps it fins as plays, noisily voicing its delight.    
+   It barks and claps it fins as plays, noisily voicing its delight.
 ~
 72 0 0 0 0 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -151,7 +151,7 @@ a merman~
 A merman gives a gasp as he realizes you've spotted him and dives under.
 ~
    All that is left of where he was is a small ripple on the surface of the
-sea.    
+sea.
 ~
 202 0 0 0 0 0 0 0 700 E
 31 10 -8 6d6+310 5d5+5
@@ -164,7 +164,7 @@ a mermaid~
 A mermaid's eyes get very wide and afraid as she spots you.
 ~
    She immediately ducks under the water, only a small ripple left of where she
-was.    
+was.
 ~
 10 0 0 0 0 0 0 0 800 E
 32 10 -9 6d6+320 5d5+5
@@ -176,7 +176,7 @@ elemental water~
 a water elemental~
 A water elemental swirls in with a rush of water and wind.
 ~
-   It is in constant motion, churning and swirling with force and fury.    
+   It is in constant motion, churning and swirling with force and fury.
 ~
 239626 0 0 0 0 0 0 0 700 E
 33 9 -9 6d6+330 5d5+5
@@ -190,7 +190,7 @@ A sea demon snarls in fury as you enter into its domain.
 ~
    Sea demons are extremely protective of their area, almost as if they felt
 that they owned their section of the seas.  Indeed, many seafarers might not
-agrue that.    
+agrue that.
 ~
 254490 0 0 0 0 0 0 0 900 E
 34 9 -10 6d6+340 5d5+5

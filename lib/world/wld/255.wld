@@ -1,7 +1,7 @@
 #25500
 Old Sailor's Home~
    You enter into a small cavern about ten by ten in diameter.  The flickering
-light you noticed earlier comes from a campfire in the center of the floor.  
+light you noticed earlier comes from a campfire in the center of the floor.
 Crude furniture made from driftwood and rocks lies strewn about, and some
 raggety clothing hangs on a peg of wood jammed into a crack in the stone wall.
 ~
@@ -28,7 +28,7 @@ Skeleton Room~
    This room looks to have been used as a sort of holding cell for crew members
 who commited crimes or for unwanted stowaways.  A pile of human bones sits in a
 corner, being the only thing in the room except, of course, for the ever
-lingering stale smell of death.  
+lingering stale smell of death.
 ~
 255 9 0 0 0 0
 D4
@@ -37,7 +37,7 @@ D4
 0 0 25514
 E
 bones pile~
-   They look like any other pile of bones you've looked through.  
+   They look like any other pile of bones you've looked through.
 ~
 S
 #25507
@@ -47,7 +47,7 @@ obscuring all except a foot or so below you.  In fact, you can barely see your
 feet as they descend.  The air around seems to much more damp than the air
 above, near the sea.  You can hear a creaking noise, a noise made up of many
 different pitches, all blended into one, like a hundred grannies rocking in old
-chairs all at once.  
+chairs all at once.
 ~
 255 264 0 0 0 0
 D4
@@ -84,7 +84,7 @@ Crow's Nest - Main Mast~
    You stand on a small round platform which encircles the top of the main mast.
 A set of small iron rungs lead down the mast to the deck at midships.  Rigging
 surrounds you on all sides, but none of it looks too stable.  The rope ladder
-ascends up through the mists.  
+ascends up through the mists.
 ~
 255 0 0 0 0 5
 D4
@@ -102,7 +102,7 @@ Gangway - Midships~
 water beneath.  You can hear no sound but that of the ship creaking beneath you,
 the crew that ran this proud ship must have long since deserted it or died
 trying to get it out of this cavern.  The gangway runs north to south the length
-of the ship.  The gunwales lies east and west of you.  
+of the ship.  The gunwales lies east and west of you.
 ~
 255 0 0 0 0 5
 D0
@@ -147,13 +147,13 @@ D5
 0 -1 25520
 E
 hatch~
-   The hatch has a handle set into it.  It does not appear to be locked.  
+   The hatch has a handle set into it.  It does not appear to be locked.
 ~
 S
 #25512
 Gangway at Foremast~
    The foremast raises from the deck here, rotted rigging still attached to
-tattered sails.  The ganway continues on north and south of you.  
+tattered sails.  The ganway continues on north and south of you.
 ~
 255 256 0 0 0 0
 D0
@@ -171,7 +171,7 @@ Forecastle~
 staring you right in the face.  You can now see how the ship got trapped in this
 cavern.  It looks as if at one time this was a small cove with deep enough
 waters to harbor a ship.  The northern wall, now a tremendous pile of rubble,
-must have come down, sealing the ship in.  
+must have come down, sealing the ship in.
 ~
 255 264 0 0 0 0
 D0
@@ -186,7 +186,7 @@ S
 #25514
 Bow~
    You stand at the very front of the ship.  There is a small square hole
-leading down from here or you may head south along the gangway.  
+leading down from here or you may head south along the gangway.
 ~
 255 264 0 0 0 0
 D2
@@ -201,7 +201,7 @@ S
 #25515
 Poopdeck~
    You stand on the poop deck, the main section of the upper deck, where most of
-the sailing must have been done when this craft was seaworthy.  
+the sailing must have been done when this craft was seaworthy.
 ~
 255 264 0 0 0 0
 D0
@@ -217,7 +217,7 @@ S
 At the Wheel~
    Here the huge wheel of the ship still rests in place, not a scratch or nick
 on it.  A compass sits in its stand here as well, also still in fine condition.
-You may head north along the gangway or south to the stern.  
+You may head north along the gangway or south to the stern.
 ~
 255 264 0 0 0 0
 D0
@@ -231,9 +231,9 @@ D2
 S
 #25517
 Stern~
-   You stand at the back of the ship, which butts up against the cavern wall.  
+   You stand at the back of the ship, which butts up against the cavern wall.
 The floors here still seem to be free of any litter or debris, strange for a
-ship that appears to have been stuck in one place for so long.  
+ship that appears to have been stuck in one place for so long.
 ~
 255 264 0 0 0 0
 D0
@@ -243,7 +243,7 @@ D0
 S
 #25518
 Port Gunwale~
-   The sides of the ship are roughly 3 ft in height.  
+   The sides of the ship are roughly 3 ft in height.
 ~
 255 8 0 0 0 0
 D1
@@ -253,7 +253,7 @@ D1
 S
 #25519
 Starboard Gunwale~
-   The sides of the ship are roughly 3 ft in height.  
+   The sides of the ship are roughly 3 ft in height.
 ~
 255 0 0 0 0 0
 D3
@@ -265,7 +265,7 @@ S
 In a Corridor - Lower Deck~
    You stand in a small, cramped corridor which runs north to south.  You notice
 doors spaced at intervals in front and behind you, but none next to you.  Doors
-stand closed at the end of the hall at both ends.  
+stand closed at the end of the hall at both ends.
 ~
 255 9 0 0 0 0
 D0
@@ -284,7 +284,7 @@ S
 #25521
 In a Corridor - Lower Deck~
    The corridor ends just north of you at a door.  Doors flank you on both east
-and west sides.  
+and west sides.
 ~
 255 9 0 0 0 0
 D0
@@ -307,7 +307,7 @@ S
 #25522
 North End of Corridor~
    You stand in front of a closed door at the north end of the corridor.  No
-markings or signs adorn the door, so it could lead anywhere.  
+markings or signs adorn the door, so it could lead anywhere.
 ~
 255 9 0 0 0 0
 D0
@@ -324,7 +324,7 @@ S
 In a Corridor - Lower Deck~
    The corridor runs south and north from here, ending just south of you in a
 closed door.  Doors flank either side of you, east and west, or you may go back
-north.  
+north.
 ~
 255 9 0 0 0 0
 D0
@@ -347,7 +347,7 @@ S
 #25524
 South End of Corridor~
    You stand at the southern end of the corridor in front of a large oak door.
-You may go back north or try the door.  
+You may go back north or try the door.
 ~
 255 9 0 0 0 0
 D0
@@ -365,7 +365,7 @@ Captain's Quarters~
    This is easily the biggest single room on the whole lower deck of the ship,
 not that that is saying too much.  A large, quite comfortable looking bed rests
 against one wall, a desk, nailed to the floor, sits at another end with a stool
-similarly attached to floor.  
+similarly attached to floor.
 ~
 255 9 0 0 0 0
 D0
@@ -378,7 +378,7 @@ Bunk Room~
    This room is where the majority of the crew must have slept.  Bunks built
 into the walls of this room make small alcoves for each sailor.  The cushions in
 each have long since rotted into decay, and even the wood which fashioned these
-walls looks now so rotted as not to be able hold any one man's weight.  
+walls looks now so rotted as not to be able hold any one man's weight.
 ~
 255 9 0 0 0 0
 D2
@@ -390,7 +390,7 @@ S
 Galley and Mess Room~
    All food for the ship was prepared and eaten in this room.  A small but
 servicable kitchen is set up at one end of the room, while a long table which
-benches lining either side is set up at the other side.  
+benches lining either side is set up at the other side.
 ~
 255 9 0 0 0 0
 D1
@@ -402,7 +402,7 @@ S
 The Latrine~
    This room, although unused for who knows how long, still smells the same as
 it must have when in operation.  A small, dirty basin sits in the center of the
-room, awaiting use, seeming almost to smile at you, daring you to use it.  
+room, awaiting use, seeming almost to smile at you, daring you to use it.
 ~
 255 9 0 0 0 0
 D3
@@ -414,7 +414,7 @@ S
 Rowing Room - Starboard Side~
    This long room houses a set of rotted wooden benches, all deluxe with rotted
 oars to match.  What a joy it must have been to be down here when there was no
-wind!  
+wind!
 ~
 255 9 0 0 0 0
 D3
@@ -426,7 +426,7 @@ S
 Rowing Room - Port Side~
    This room houses a set of rotted wooden benches complete with rotted oars
 resting on each.  You can smell the sweat still in the air from the men who must
-have worked their heart and soul to keep this vessel moving in calm waters.  
+have worked their heart and soul to keep this vessel moving in calm waters.
 ~
 255 9 0 0 0 0
 D1
@@ -438,7 +438,7 @@ S
 Cave Entrance~
    You stand at the entrance to a cave half way down the cliff face.  You see a
 flickering light inside which could be a campfire, could be a lantern.  It also
-could be a cook fire - a cook fire to cook you!  
+could be a cook fire - a cook fire to cook you!
 ~
 255 256 0 0 0 5
 D1

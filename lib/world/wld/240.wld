@@ -3,7 +3,7 @@ The Southern Gate of Dun Maura~
    As you walk into the shadows between the large steel gates you realize how
 insignificant you must look.  Minotaurs walk past, most several feet taller
 than you.  The guards here seem to be looking for an excuse to kill something,
-or someone.    
+or someone.
 ~
 240 0 0 0 0 1
 D0
@@ -23,7 +23,7 @@ Shops        : 1
 Triggers     : 10
 Theme        : A city of proud minotaurs.
 Links        : 00s, 37w, 47e, 84n
- 
+
 Zone: 240 was linked to the following zones:
 100 The Northern Highway           at: 24000 (south) ---> 10096
  86 Duke Kalithorn's Keep          at: 24084 (north) --->  8660
@@ -33,7 +33,7 @@ gate~
    The large gates are made of wood, but are so heavily reinforced with stell
 that The large gates are made of wood, but are so heavily reinforced with steel
 that you can hardly tell.  It would take someone of inhuman strength to close
-them.  
+them.
 ~
 S
 #24001
@@ -41,7 +41,7 @@ Zyanya Way~
    You have heard stories that minotaurs like large buildings and open spaces
 which can accommodate their extended families.  They tend to get on well with
 anyone displaying similar qualities to their own.  You hope they will get along
-with you.    
+with you.
 ~
 240 0 0 0 0 1
 D0
@@ -57,7 +57,7 @@ S
 Zyanya Way~
    The minotaur is one of the most powerful races.  Some growing over eight
 feet tall.  Stories of minotaurs killing humans for sport abound.  But they
-were all just stories, right?    
+were all just stories, right?
 ~
 240 0 0 0 0 1
 D0
@@ -76,9 +76,9 @@ S
 #24003
 Zyanya Way~
    You carefully work your way along the small side street.  Trying to stay out
-of the way of the minotaurs.  Their bodies are covered in a short dark fur.  
+of the way of the minotaurs.  Their bodies are covered in a short dark fur.
 Minotaurs are not considered one of the smarter races, and tend be viewed as a
-race of bullies.    
+race of bullies.
 ~
 240 0 0 0 0 1
 D1
@@ -94,7 +94,7 @@ S
 Zyanya Way~
    The minotaur is a tall muscular race.  Most Minotaurs average about 8 feet
 tall, and weigh in excess of 400 pounds.  You follow a small street along the
-southern wall.  To the north you see a large structure.    
+southern wall.  To the north you see a large structure.
 ~
 240 0 0 0 0 1
 D0
@@ -140,7 +140,7 @@ Zyanya Way~
    You have heard stories that minotaurs like large buildings and open spaces
 which can accommodate their extended families.  They tend to get on well with
 anyone displaying similar qualities to their own.  You hope they will get along
-with you.    
+with you.
 ~
 240 0 0 0 0 1
 D1
@@ -154,9 +154,9 @@ D3
 S
 #24007
 Zyanya Way~
-   Minotaurs are ancient creatures, dating back to the beginning of time.  
+   Minotaurs are ancient creatures, dating back to the beginning of time.
 Human in body, these creatures have the heads of bulls, making them not very
-well suited towards beautypageants.    
+well suited towards beautypageants.
 ~
 240 0 0 0 0 1
 D1
@@ -172,7 +172,7 @@ S
 Zyanya Way~
    You remember the horrible stories about how a minotaur can become greatly
 enraged and wreak havoc if provoked.  You remind yourself to be very careful
-around these juggernauts.    
+around these juggernauts.
 ~
 240 0 0 0 0 1
 D1
@@ -188,7 +188,7 @@ S
 Zyanaya Way~
    The average Minotaur tends to wear very little clothing because their fur
 provides quite a bit of warmth.  They trample past you with a certain
-determination that makes you feel uneasy.  They all look so...  Confident.    
+determination that makes you feel uneasy.  They all look so...  Confident.
 ~
 240 0 0 0 0 1
 D0
@@ -203,9 +203,9 @@ S
 #24010
 Whits Lane~
    Minotaurs are a very honorable race.  Unfortunately, they are also a violent
-race because of how they value strength.  This makes them very seclusive.  
+race because of how they value strength.  This makes them very seclusive.
 Very rarely will a minotaur ever bee seen outside of the city.  Unless they are
-on a mission.    
+on a mission.
 ~
 240 0 0 0 0 1
 D0
@@ -221,7 +221,7 @@ S
 Minotaur Home~
    A large room lined with bunks stacked three high.  Several large tables are
 in the middle of the room without any chairs.  This must be where the minotaurs
-come to sleep and eat.  They must live a very mundane and dull life.    
+come to sleep and eat.  They must live a very mundane and dull life.
 ~
 240 0 0 0 0 1
 D2
@@ -235,7 +235,7 @@ D4
 E
 table~
    The table is bare and in pretty rough shape.  Scratches mar the once smooth
-top.    
+top.
 ~
 S
 #24012
@@ -256,7 +256,7 @@ Minotaur Home~
    This is where the minotaurs sleep and eat.  That is all.  A large table sits
 in the middle of the room and bunks line all the walls.  They have no need for
 luxuries.  A large family must live in this house.  A small staircase winds its
-way to the second floor.    
+way to the second floor.
 ~
 240 0 0 0 0 1
 D2
@@ -270,7 +270,7 @@ D4
 E
 table~
    The table spans about three quarters of the room.  Enough to seat at least
-30 minotaurs.  Too bad there are no chairs.    
+30 minotaurs.  Too bad there are no chairs.
 ~
 S
 #24014
@@ -278,7 +278,7 @@ Vassar Road~
    From their birth, minotaurs are trained for strength, cunning, and
 intelligence.  They believe that the weak should perish and that might proves
 right.  It is to them, the natural process of life.  The street continues north
-and south.    
+and south.
 ~
 240 0 0 0 0 1
 D0
@@ -294,7 +294,7 @@ S
 Training Grounds~
    You remember the tales of battle how the Minotaurs fought ferociously and
 showed no mercy to their fallen adversaries, often stampeding over the dead and
-dying bodies to pursue a new enemy.    
+dying bodies to pursue a new enemy.
 ~
 240 0 0 0 0 1
 D0
@@ -310,7 +310,7 @@ S
 Training Grounds~
    Minotaurs view surrender as an admission of weakness, and are likely to
 fight to the death regardless of the circumstances.  Several minotaurs are here
-sparring with their deadly look axes and pole arms.    
+sparring with their deadly look axes and pole arms.
 ~
 240 0 0 0 0 1
 D0
@@ -331,7 +331,7 @@ Training Grounds~
    Minotaurs are powerfully built and tower more than eight feet in height,
 with the head of a bull and the body of a human male.  Minotaurs revere
 physical strength above all else, and they believe that the strong should
-naturally rule the weak.    
+naturally rule the weak.
 ~
 240 0 0 0 0 1
 D0
@@ -347,7 +347,7 @@ S
 Wasatch Lane~
    Minotaurs grow up in secluded towns only with other Minotaurs.  The city
 seems to be very chaotic and barbaric.  But, this is not the case.  They just
-have a very different way of approaching law enforcement and society.    
+have a very different way of approaching law enforcement and society.
 ~
 240 0 0 0 0 1
 D0
@@ -363,7 +363,7 @@ S
 Whits Lane~
    The stories you hear of the minotaurs are not always good ones, you remember
 one specifically.  Minotaurs believe themselves to be the "Master Race.  " They
-believe the gods chose them to control the weak and dishonorable.    
+believe the gods chose them to control the weak and dishonorable.
 ~
 240 0 0 0 0 1
 D0
@@ -380,7 +380,7 @@ Market Street~
    You recall the story how when provoked, these awesome warriors will
 fearlessly charge headlong into their foes, seeking to spill entrails with
 their devastating horns.  This power makes Minotaurs respected and revered
-fighters throughout all of the realm.    
+fighters throughout all of the realm.
 ~
 240 0 0 0 0 1
 D0
@@ -396,7 +396,7 @@ S
 Market Street~
    The city around you is a wondrous city of buildings and cobblestone streets.
 Though crude and utilitarian.  Inhabited solely by minotaurs, it is ruled by
-Zarn, the minotaur Grand Master.    
+Zarn, the minotaur Grand Master.
 ~
 240 0 0 0 0 1
 D1
@@ -417,7 +417,7 @@ Market Street~
    Many minotaurs are brutal savages, but they are not always mindless killers.
 They are ruthless, harsh, and stubborn, but they can be surprisingly
 intelligent.  As you enter the marketplace, you realize they are a society just
-like any other.    
+like any other.
 ~
 240 0 0 0 0 1
 D0
@@ -463,7 +463,7 @@ Training Grounds~
    You have entered into the minotaurs training area.  Here minotaurs practice
 their various fighting styles.  You could probably learn a thing or two by
 watching.  Because of their legendary stamina and massive builds most Minotaurs
-pursue a life of military service.    
+pursue a life of military service.
 ~
 240 0 0 0 0 1
 D0
@@ -485,11 +485,11 @@ D3
 S
 #24025
 Training Grounds~
-   Adventurer knows better then to get on the wrong side of a Minotaur.  
+   Adventurer knows better then to get on the wrong side of a Minotaur.
 Minotaurs are a large strong race well known for their abillty to work days at
 a time with very little rest.  Though they are not among the smartest of races,
 they are regarded for their warrior skills and even the novice adventurer knows
-better then to get on the wrong side of a Minotaur.    
+better then to get on the wrong side of a Minotaur.
 ~
 240 0 0 0 0 1
 D0
@@ -513,7 +513,7 @@ S
 Training Grounds~
    Minotaurs are great fighters, but they are limited in the other occupations.
 They mostly keep to themselves because of their superior beliefs except during
-war.  If you ever had to go to war, this would be who you want as any ally.  
+war.  If you ever had to go to war, this would be who you want as any ally.
 ~
 240 0 0 0 0 1
 D0
@@ -534,7 +534,7 @@ Wasatch Lane~
    Minotaurs frequently prize strength and prowess, and tend to prefer simple,
 direct solutions to problems.  The majority of Minotaurs despise laziness and
 injustice.  You wonder exactly at what their definition of laziness and
-injustice would be.    
+injustice would be.
 ~
 240 0 0 0 0 1
 D0
@@ -551,7 +551,7 @@ Whits Lane~
    The small lane continues north and south from here.  You recall even more of
 the stories of the minotaur way of life.  The family is the blood of the
 culture.  Without a family a Minotaur has no source for nobility, honor, or
-pride.    
+pride.
 ~
 240 0 0 0 0 1
 D0
@@ -565,9 +565,9 @@ D2
 S
 #24029
 Specialty Shop~
-   This small shop has exotic items only made by minotaurs, for minotaurs.  
+   This small shop has exotic items only made by minotaurs, for minotaurs.
 You have heard stories of some people being able to get these items through
-other hands, but no minotaur ever gives up these special items willingly.    
+other hands, but no minotaur ever gives up these special items willingly.
 ~
 240 0 0 0 0 1
 D2
@@ -580,7 +580,7 @@ Minotaur House~
    There is something strange about this house.  You can't quite figure it out,
 but something disturbs you.  A staircase leads up.  The street is to the north.
 A large rug covers most of the floor here.  It is the first luxury you have
-seen in any minotuar home.    
+seen in any minotuar home.
 ~
 240 0 0 0 0 1
 D0
@@ -598,11 +598,11 @@ Grate~
 E
 rug~
    The rug seems to be covering a large grate in the floor.  You wonder if you
-could lift that heavy metal grate.    
+could lift that heavy metal grate.
 ~
 E
 grate~
-   A small grate is partially hidden under some dirt and blankets.    
+   A small grate is partially hidden under some dirt and blankets.
 ~
 S
 #24031
@@ -610,7 +610,7 @@ Supplies store~
    Shelves are everywhere in this small shope.  Crowded to overflowing, items
 lean against the walls, are stacked on the floor, and are even hanging from the
 ceiling.  You wonder what kinds of things might be for sale to you.  Most
-minotaurs only trade with their own kind.    
+minotaurs only trade with their own kind.
 ~
 240 0 0 0 0 1
 D2
@@ -623,7 +623,7 @@ Vassar Road~
    Few other races are respected or feared more than the minotaurs of Dun
 Maura.  Their minds and bodies are powerful, and they radiate auras of command
 and authority.  No one in their right mind comes to this city with evil
-intentions.    
+intentions.
 ~
 240 0 0 0 0 1
 D0
@@ -637,11 +637,11 @@ D2
 S
 #24033
 Training Grounds~
-   You stare at the minotaurs honrs, you start to feel sick to your stomach.  
+   You stare at the minotaurs honrs, you start to feel sick to your stomach.
 Could you imagine what it would be like to be impaled by a minotaur?  The
 minotaurs ivory-coloured horns reach up to two feet in length.  They adorn
 thier horns with gold rings which represent the number of combats won in the
-Arena.    
+Arena.
 ~
 240 0 0 0 0 1
 D1
@@ -658,7 +658,7 @@ Training Grounds~
    Minotaurs are incredibly strong and powerful.  Their thick hide can take a
 strong beating in battle.  Due to their nature, they are disliked by many other
 races but are tolerated because of their fierce warlike attitudes.  Minotaurs
-make superb warriors.    
+make superb warriors.
 ~
 240 0 0 0 0 1
 D1
@@ -676,10 +676,10 @@ D3
 S
 #24035
 Training Grounds~
-   Minotaurs are the largest of the races, ranging from 7-9 feet in height.  
-They are stronger than any other race, and almost as durable as the dwarves.  
+   Minotaurs are the largest of the races, ranging from 7-9 feet in height.
+They are stronger than any other race, and almost as durable as the dwarves.
 Minotaurs are very versatile.  They prefer to be what they were born to be: a
-Warrior!    
+Warrior!
 ~
 240 0 0 0 0 1
 D2
@@ -696,7 +696,7 @@ Wasatch Lane~
    Minotaurs do not look down on other races, but they rarely understand the
 likes of the "higher", "civilized" species.  They are a very brusque and direct
 people and don't particularly enjoy the likes of those races that rely on
-diplomacy and subterfuge to exist.    
+diplomacy and subterfuge to exist.
 ~
 240 0 0 0 0 1
 D0
@@ -712,7 +712,7 @@ S
 The Western Gate of Dun Maura~
    This gate is rarely open.  Only the Southern and Eastern gates are kept open
 to allow travel between the city of the centaurs and the Capital.  The
-wilderness beyond these gate is wild and untamed.    
+wilderness beyond these gate is wild and untamed.
 ~
 240 0 0 0 0 1
 D1
@@ -725,7 +725,7 @@ Whits Lane~
    You arrive at the intersection before the west gate.  The minotaurs around
 you have heads that are shaped like that of a bull and their bodies are covered
 with fur and their feet are cleft hooves.  They have horns that grow 3-24
-inches.    
+inches.
 ~
 240 0 0 0 0 1
 D0
@@ -750,7 +750,7 @@ VaQuero Road~
    Few other races are respected or feared more than the minotaurs of Dun
 Maura.  Their minds and bodies are powerful, and they radiate auras of command
 and authority.  No one in their right mind comes to this city with evil
-intentions.    
+intentions.
 ~
 240 0 0 0 0 1
 D1
@@ -766,7 +766,7 @@ S
 VaQuero Road~
    To the north you see a large, crude building.  It seems that alot of
 important minotaurs must reside there.  It must be where the city is run from.
-To the south a small stone building is heavily guarded.    
+To the south a small stone building is heavily guarded.
 ~
 240 0 0 0 0 1
 D0
@@ -790,7 +790,7 @@ S
 VaQuero Road~
    The physical presence of a minotaur is awe-inspiring.  Powerful, eight-foot
 tall humanoids with the horned head of a bull, minotaurs have fur all over
-their bodies, ranging in colour from red to brown and even black.    
+their bodies, ranging in colour from red to brown and even black.
 ~
 240 0 0 0 0 1
 D1
@@ -807,7 +807,7 @@ The Center of Dun Maura~
    You find yourself in the heart of the city.  Minotaurs are everywhere.  It
 seem like this city is overflowing, you wonder how so many can live in such a
 small city.  They seem oblivious to your presence, you are not sure if that is
-good or bad.    
+good or bad.
 ~
 240 0 0 0 0 1
 D0
@@ -829,11 +829,11 @@ D3
 S
 #24043
 VaQuero Road~
-   You stare at the minotaurs honrs, you start to feel sick to your stomach.  
+   You stare at the minotaurs honrs, you start to feel sick to your stomach.
 Could you imagine what it would be like to be impaled by a minotaur?  The
 minotaurs ivory-coloured horns reach up to two feet in length.  They adorn
 thier horns with gold rings which represent the number of combats won in the
-Arena.    
+Arena.
 ~
 240 0 0 0 0 1
 D1
@@ -850,7 +850,7 @@ VaQuero Road~
    Minotaurs are incredibly strong and powerful.  Their thick hide can take a
 strong beating in battle.  Due to their nature, they are disliked by many other
 races but are tolerated because of their fierce warlike attitudes.  Minotaurs
-make superb warriors.    
+make superb warriors.
 ~
 240 0 0 0 0 1
 D1
@@ -864,10 +864,10 @@ D3
 S
 #24045
 VaQuero Way~
-   Minotaurs are the largest of the races, ranging from 7-9 feet in height.  
-They are stronger than any other race, and almost as durable as the dwarves.  
+   Minotaurs are the largest of the races, ranging from 7-9 feet in height.
+They are stronger than any other race, and almost as durable as the dwarves.
 Minotaurs are very versatile.  They prefer to be what they were born to be: a
-Warrior!    
+Warrior!
 ~
 240 0 0 0 0 1
 D1
@@ -884,7 +884,7 @@ Wasatch Lane~
    You arrive at the intersection before the east gate.  The minotaurs around
 you have heads that are shaped like that of a bull and their bodies are covered
 with fur and their feet are cleft hooves.  They have horns that grow 3-24
-inches.    
+inches.
 ~
 240 0 0 0 0 1
 D0
@@ -909,7 +909,7 @@ The Eastern Gate of Dun Maura~
    This gate is heavily guarded by the minotaurs.  You can remember the huge
 battles between the minotaurs and centaurs.  Some of the greatest fighters ever
 to clash in the great wars.  Now a temporary truce has stopped the war, but how
-long will it last?    
+long will it last?
 ~
 240 0 0 0 0 1
 D3
@@ -920,9 +920,9 @@ S
 #24048
 Whits Lane~
    Minotaurs are a very honorable race.  Unfortunately, they are also a violent
-race because of how they value strength.  This makes them very seclusive.  
+race because of how they value strength.  This makes them very seclusive.
 Very rarely will a minotaur ever bee seen outside of the city.  Unless they are
-on a mission.    
+on a mission.
 ~
 240 0 0 0 0 1
 D0
@@ -938,7 +938,7 @@ S
 Hall of Vardis~
    Despite their brutal appearance, Minotaurs possess good-natured dispositions
 and strive to uphold justice in the name of the Glorious Vardis, their only
-god.    
+god.
 ~
 240 0 0 0 0 1
 D0
@@ -954,7 +954,7 @@ S
 Hall of Vardis~
    You stand in a massive stone building.  The hall continues north.  This
 seems to be some kind of place of worship.  A large statue dominates the center
-of the room.  It must be the minotuars sole god.    
+of the room.  It must be the minotuars sole god.
 ~
 240 0 0 0 0 1
 D0
@@ -978,7 +978,7 @@ S
 Hall of Vardis~
    Minotaurs are a secluded race and are fervently religious toward their god,
 Vardis.  Minotaurs possess good-natured dispositions and strive to uphold
-justice in the name of Glorious Vardis.    
+justice in the name of Glorious Vardis.
 ~
 240 0 0 0 0 1
 D0
@@ -994,7 +994,7 @@ S
 Vassar Road~
    The physical presence of a minotaur is awe-inspiring.  Powerful, eight-foot
 tall humanoids with the horned head of a bull, minotaurs have fur all over
-their bodies, ranging in colour from red to brown and even black.    
+their bodies, ranging in colour from red to brown and even black.
 ~
 240 0 0 0 0 1
 D0
@@ -1010,7 +1010,7 @@ S
 Vorn Estate~
    This is the estate of the famous minotaur Vorn.  He is in charge of the
 cities economic stature and has supposedly been doing a great job for over 30
-years.  But, few minotaurs seem to respect him.  You wonder why.    
+years.  But, few minotaurs seem to respect him.  You wonder why.
 ~
 240 0 0 0 0 1
 D0
@@ -1028,9 +1028,9 @@ D4
 S
 #24054
 Main Chamber~
-   You stand in a massive room, marble pillars support a high ceiling.  
+   You stand in a massive room, marble pillars support a high ceiling.
 Skylights and windows are carved intricately into the walls.  This estate is a
-relief compared to the crude buildings in the rest of the city.    
+relief compared to the crude buildings in the rest of the city.
 ~
 240 0 0 0 0 1
 D0
@@ -1050,7 +1050,7 @@ S
 Waiting Room~
    This is where anyone seeking an audience with Vorn must wait until called
 upon.  The room is surprisingly empty.  Either Vorn runs a tight ship or the
-population must be scared of him.  The main chamber is to the west.    
+population must be scared of him.  The main chamber is to the west.
 ~
 240 0 0 0 0 1
 D3
@@ -1063,7 +1063,7 @@ Wasatch Lane~
    Minotaurs live by a Code of Honor.  A Minotaur would never break his word or
 cause dishonor to himself.  Minotaurs believe that "Might makes right.  " All
 legal cases are settled in the Arena.  The Arena is the heart of their culture.
-  
+
 ~
 240 0 0 0 0 1
 D0
@@ -1095,7 +1095,7 @@ S
 Hall of Vardis~
    Minotaurs are a secluded race and are fervently religious toward their god,
 Vardis.  Minotaurs possess good-natured dispositions and strive to uphold
-justice in the name of Glorious Vardis.    
+justice in the name of Glorious Vardis.
 ~
 240 0 0 0 0 1
 D1
@@ -1110,9 +1110,9 @@ S
 #24059
 Hall of Vardis~
    A huge statue dominates the center of this room.  Vardis, the god of
-minotaurs has been known by many names.  The god of war, death, or justice.  
+minotaurs has been known by many names.  The god of war, death, or justice.
 All minotaurs revere him and wait for his return to finally overthrow the
-centaurs to the east.    
+centaurs to the east.
 ~
 240 0 0 0 0 1
 D0
@@ -1135,14 +1135,14 @@ E
 statue vardis~
    The statue depicts a giant centaur with horns covered with golden rings to
 portray an undefeated rein in the arena.  He holds a massive war axe and seems
-to be standing over the remains of a centaur.    
+to be standing over the remains of a centaur.
 ~
 S
 #24060
 Hall of Vardis~
    Despite their brutal appearance, Minotaurs possess good-natured dispositions
 and strive to uphold justice in the name of the Glorious Vardis, their only
-god.    
+god.
 ~
 240 0 0 0 0 1
 D2
@@ -1159,7 +1159,7 @@ Vassar Road~
    To the east the entrance to a large fancy building is wide open.  You
 remember more of the minotuar history.  They are intensely proud creatures,
 half-human and half-cow, "bovine" is just about the worst insult anyone can
-hurl at a minotaur.    
+hurl at a minotaur.
 ~
 240 0 0 0 0 1
 D0
@@ -1180,7 +1180,7 @@ Vorn Estate~
    Though most minotaurs would rather lead a life of battle and honor some have
 been persuaded by the ways of other races to live a more fertile and luxurious
 life.  This is frowned on by the society, but allowed by the Grand Master to
-allow for trade.    
+allow for trade.
 ~
 240 0 0 0 0 1
 D0
@@ -1204,7 +1204,7 @@ S
 The Main Chamber~
    You work your way into the center of this fancy estate.  The exit seems to
 be to the west while Vorn himself should be in the audience chamber to the
-east.  This massive chamber continues north and south.    
+east.  This massive chamber continues north and south.
 ~
 240 0 0 0 0 1
 D0
@@ -1229,7 +1229,7 @@ Audience Chamber~
    It is here that the cities financial matters are taken care of.  Vorn
 himself usually sits on top of a small platform at the back of the room to
 listen to anyone who has a reason to petition.  The room is lavishly decorated
-with curtains and a fine rug.    
+with curtains and a fine rug.
 ~
 240 0 0 0 0 1
 D3
@@ -1246,7 +1246,7 @@ Wasatch Lane~
    The small lane continues north and south from here.  You recall even more of
 the stories of the minotaur way of life.  The family is the blood of the
 culture.  Without a family a Minotaur has no source for nobility, honor, or
-pride.    
+pride.
 ~
 240 0 0 0 0 1
 D0
@@ -1263,7 +1263,7 @@ Whits Lane~
    Minotaurs do not look down on other races, but they rarely understand the
 likes of the "higher", "civilized" species.  They are a very brusque and direct
 towards people and don't particularly enjoy the likes of those races that rely
-on diplomacy and subterfuge to exist.  
+on diplomacy and subterfuge to exist.
 ~
 240 0 0 0 0 1
 D0
@@ -1279,7 +1279,7 @@ S
 Zarn's Estate~
    Stairs lead up to the Grand Masters rooms.  He is the supreme power in the
 city.  Everyone except the War Master answer to him and him alone.  Only in the
-time of war can his word be overran by the War Master.    
+time of war can his word be overran by the War Master.
 ~
 240 0 0 0 0 1
 D1
@@ -1296,7 +1296,7 @@ Zarn's Estate~
    You enter another small building attached to the end of Vardis Hall.  This
 is where the government, if you could call it that, of the minotaurs resides.
 Their is only one position.  The Grand Master.  He is the final say in all
-matters of the city.    
+matters of the city.
 ~
 240 0 0 0 0 1
 D1
@@ -1316,7 +1316,7 @@ S
 Zarn's Estate~
    Stairs lead up to Zarn's rooms where he runs the city.  The Grand Master is
 almost always accompanied by the War Master and a few advisors that help him
-make all the decisions for the city.    
+make all the decisions for the city.
 ~
 240 0 0 0 0 1
 D3
@@ -1333,7 +1333,7 @@ Vassar Road~
    From their birth, minotaurs are trained for strength, cunning, and
 intelligence.  They believe that the weak should perish and that might proves
 right.  It is to them, the natural process of life.  The street continues north
-and south.    
+and south.
 ~
 240 0 0 0 0 1
 D0
@@ -1349,7 +1349,7 @@ S
 Vorn Estate~
    Several minotaurs are actually wearing robes and some type of sandals here.
 They seem to have given up the normal minotaur life in order to pursue a more
-monetary lifestyle.  A spiral stairway leads up.    
+monetary lifestyle.  A spiral stairway leads up.
 ~
 240 0 0 0 0 1
 D1
@@ -1369,7 +1369,7 @@ S
 Vorn Estate~
    You wonder how even a race of warriors must trade and have some sort of
 monetary system to keep the city healthy.  The occupants of this small estate
-must be in charge of all trade with the outsiders.    
+must be in charge of all trade with the outsiders.
 ~
 240 0 0 0 0 1
 D1
@@ -1389,7 +1389,7 @@ S
 Vorn Estate~
    This Vorn, the guy who owns this place must be rich.  You have heard that he
 controls all trade with the other cities.  He is well known as a conniving
-salesman who always gets the best of any deal.    
+salesman who always gets the best of any deal.
 ~
 240 0 0 0 0 1
 D3
@@ -1401,7 +1401,7 @@ S
 Wasatch Lane~
    The stories you hear of the minotaurs are not always good ones, you remember
 one specifically.  Minotaurs believe themselves to be the "Master Race.  " They
-believe the gods chose them to control the weak and dishonorable.    
+believe the gods chose them to control the weak and dishonorable.
 ~
 240 0 0 0 0 1
 D0
@@ -1413,20 +1413,20 @@ D2
 ~
 0 0 24065
 D5
-   A large metal cover blocks the entrance to the sewers below the city.    
+   A large metal cover blocks the entrance to the sewers below the city.
 ~
 sewer cover~
 1 0 24099
 E
 sewer cover~
-   A large metal sewer cover is partially open.    
+   A large metal sewer cover is partially open.
 ~
 S
 #24075
 Zoa Way~
    You remember the horrible stories about how a minotaur can become greatly
 enraged and wreak havoc if provoked.  You remind yourself to be very careful
-around these juggernauts.  The road continues west or south.    
+around these juggernauts.  The road continues west or south.
 ~
 240 0 0 0 0 1
 D1
@@ -1440,9 +1440,9 @@ D2
 S
 #24076
 Zoa Way~
-   Minotaurs are ancient creatures, dating back to the beginning of time.  
+   Minotaurs are ancient creatures, dating back to the beginning of time.
 Human in body, these creatures have the heads of bulls, making them not very
-well suited towards beautypageants.    
+well suited towards beautypageants.
 ~
 240 0 0 0 0 1
 D1
@@ -1459,7 +1459,7 @@ Zoa Way~
    You have heard stories that minotaurs like large buildings and open spaces
 which can accommodate their extended families.  They tend to get on well with
 anyone displaying similar qualities to their own.  You hope they will get along
-with you.    
+with you.
 ~
 240 0 0 0 0 1
 D1
@@ -1474,9 +1474,9 @@ S
 #24078
 Zoa Way~
    You carefully work your way along the small side street.  Trying to stay out
-of the way of the minotaurs.  Their bodies are covered in a short dark fur.  
+of the way of the minotaurs.  Their bodies are covered in a short dark fur.
 Minotaurs are not considered one of the smarter races, and tend be viewed as a
-race of bullies.    
+race of bullies.
 ~
 240 0 0 0 0 1
 D1
@@ -1493,7 +1493,7 @@ Vassar Road~
    You stare around in amazement at this strange race, the Minotaur.  You know
 the stories well.  Generally sturdy, large and strong folk, they are mostly
 hard-working, assertive and uncompromising to the point of stubbornness, which
-can manifest as belligerence, boastful pride and a hot temper.    
+can manifest as belligerence, boastful pride and a hot temper.
 ~
 240 0 0 0 0 1
 D0
@@ -1516,9 +1516,9 @@ S
 #24080
 Zoa Way~
    You carefully work your way along the small side street.  Trying to stay out
-of the way of the minotaurs.  Their bodies are covered in a short dark fur.  
+of the way of the minotaurs.  Their bodies are covered in a short dark fur.
 Minotaurs are not considered one of the smarter races, and tend be viewed as a
-race of bullies.    
+race of bullies.
 ~
 240 0 0 0 0 1
 D1
@@ -1534,7 +1534,7 @@ S
 Zoa Way~
    The average Minotaur tends to wear very little clothing because their fur
 provides quite a bit of warmth.  They trample past you with a certain
-determination that makes you feel uneasy.  They all look so...  Confident.    
+determination that makes you feel uneasy.  They all look so...  Confident.
 ~
 240 0 0 0 0 1
 D1
@@ -1550,7 +1550,7 @@ S
 Zoa Way~
    Minotaurs grow up in secluded towns only with other Minotaurs.  The city
 seems to be very chaotic and barbaric.  But, this is not the case.  They just
-have a very different way of approaching law enforcement and society.    
+have a very different way of approaching law enforcement and society.
 ~
 240 0 0 0 0 1
 D1
@@ -1570,7 +1570,7 @@ injustice.  You wonder exactly at what their definition of laziness and
 injustice would be.  Minotaurs frequently prize strength and prowess, and tend
 to prefer simple, direct solutions to problems.  The majority of Minotaurs
 despise laziness and injustice.  You wonder exactly what their definition of
-laziness and injustice would be.  
+laziness and injustice would be.
 ~
 240 0 0 0 0 1
 D2
@@ -1586,7 +1586,7 @@ S
 The Northern Gate of Dun Maura~
    The gate stands wide open and leads into a peaceful looking woods.  A fresh
 breeze blows through the gate carrying with it the noise and smell of the
-forest.  A small path leads into the woods to the north.    
+forest.  A small path leads into the woods to the north.
 ~
 240 0 0 0 0 1
 D2
@@ -1598,7 +1598,7 @@ S
 Bunk Room~
    Nothing but bunks crowd this room to the max.  Stacked one on top of the
 other you wonder how anyone could live in such cramped quarters.  About a
-quarter of the population could probably live in this one house.    
+quarter of the population could probably live in this one house.
 ~
 240 0 0 0 0 1
 D5
@@ -1610,7 +1610,7 @@ S
 Bunk Room~
    Nothing but bunk after bunk lining the walls.  They are actually built right
 into the walls.  Three high, on right on top of the other.  At least 20
-minotaurs could probably sleep in here.  You see no personal items at all.    
+minotaurs could probably sleep in here.  You see no personal items at all.
 ~
 240 0 0 0 0 1
 D5
@@ -1622,7 +1622,7 @@ S
 Bunk Room~
    This room also gives you a strange creepy feeling.  Nothing unusual about it
 though.  Just bunks lining the walls giving the minotaurs somewhere to sleep.
-The night shift is snoring, asleep until thier next watch.    
+The night shift is snoring, asleep until thier next watch.
 ~
 240 0 0 0 0 1
 D5
@@ -1635,11 +1635,11 @@ Hidden Room~
    You thought minotaurs were very unsecretive and incapable of any mischief.
 Various implements of torture lie about the room.  This seems to be where the
 not so honorable minotaurs of the society reside.  You wonder how a society of
-such strict honor could allow something like this to go on.    
+such strict honor could allow something like this to go on.
 ~
 240 0 0 0 0 0
 D4
-   A small grate blocks the exit up.    
+   A small grate blocks the exit up.
 ~
 grate~
 1 0 24030
@@ -1648,7 +1648,7 @@ S
 Zarn's Hall~
    Stairs lead down or the hall continues to the east towards the meeting room.
 Where Zarn runs the city.  The hierarchy of minatours is simple.  Their God,
-the Grand Master, and finally the War Master.    
+the Grand Master, and finally the War Master.
 ~
 240 0 0 0 0 1
 D1
@@ -1664,7 +1664,7 @@ S
 Zarn's Hall~
    Stairs lead down or the hall continues to the west towards the meeting room.
 Where Zarn runs the city.  The hierarchy of minatours is simple.  Their God,
-the Grand Master, and finally the War Master.    
+the Grand Master, and finally the War Master.
 ~
 240 0 0 0 0 1
 D3
@@ -1681,7 +1681,7 @@ Zarn's Hall~
    Just to the south you can see the meeting room where the Grand Master
 resides.  To the east and west are stairways leading down to the Hall of
 Vardis.  Several minotaurs are lounging around, awaiting an audience with Zarn.
-  
+
 ~
 240 0 0 0 0 1
 D1
@@ -1701,7 +1701,7 @@ S
 Advisors Room~
    Several bunks line the walls where the advisors to the Grand Master sleep.
 Always withing shouting distance they help Zarn run the city.  To many Zarn is
-just a figurehead while the advisors are the real brains.    
+just a figurehead while the advisors are the real brains.
 ~
 240 0 0 0 0 1
 D1
@@ -1714,7 +1714,7 @@ Meeting Room of the Grand Master~
    You step into a large room with windows cut into the high ceiling to allow
 light, and pillars to keep the ceiling from crashing down on your head.  In the
 center of the room is a pedestal where the grand master gives audience with his
-advisors.    
+advisors.
 ~
 240 0 0 0 0 1
 D0
@@ -1739,7 +1739,7 @@ War Masters Chambers~
    Easily the most respected of all the minotaurs, the War Master is admired
 almost as much as the war god himself.  The title War Master is the ultimate
 honor to be given to any minotaur.  It can only be given to a minotaur who has
-been a war hero and undefeated in the arena.    
+been a war hero and undefeated in the arena.
 ~
 240 0 0 0 0 1
 D3
@@ -1751,7 +1751,7 @@ S
 Grand Masters Chamber~
    The Grand Master is the only political figure in the entire city.  Some
 minotaurs even despise him because of this, but it was agreed that a figurehead
-is necessary in order to run the city and trade with the other races.    
+is necessary in order to run the city and trade with the other races.
 ~
 240 0 0 0 0 1
 D0
@@ -1763,7 +1763,7 @@ S
 A Bedroom~
    This has to be one of the first liveable rooms you have seen in this city of
 stone.  A large bed fills the room and even some small furniture is scattered
-haphazardly in the corners.    
+haphazardly in the corners.
 ~
 240 0 0 0 0 1
 D5
@@ -1787,7 +1787,7 @@ S
 Guest Room~
    This is where the special guests of the estate can stay if Vorn thinks it
 fit.  Many people of different races and from across the realm travel to this
-fabled city.  If they have the money Vorn is sure to swindle them out of it.  
+fabled city.  If they have the money Vorn is sure to swindle them out of it.
 ~
 240 0 0 0 0 1
 D5
@@ -1799,11 +1799,11 @@ S
 The Sewers~
    Large Iron bars block any further entrance to the sewers.  A small rusty
 ladder leads back up into the city.  You guess the minotaurs did not want
-anyone wandering below them in their sewers.    
+anyone wandering below them in their sewers.
 ~
 240 0 0 0 0 0
 D4
-   A sewer cover leading up to the city and fresh air.    
+   A sewer cover leading up to the city and fresh air.
 ~
 sewer cover~
 1 0 24074

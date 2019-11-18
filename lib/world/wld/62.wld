@@ -16,7 +16,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6201
@@ -41,7 +41,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6202
@@ -67,7 +67,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6203
@@ -95,7 +95,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6204
@@ -122,7 +122,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6205
@@ -148,7 +148,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6206
@@ -173,7 +173,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6207
@@ -199,7 +199,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6208
@@ -230,7 +230,7 @@ E
 barrier energy~
    You can see a clearing beyond, the barrier not fully blocking out the area
 behind.  You think it might be possible to push your way through, if the damn
-thing doesn't kill you first.  
+thing doesn't kill you first.
 ~
 S
 #6209
@@ -253,7 +253,7 @@ barrier energy~
    You can faintly see the woods continue beyond it, but it seems there's no way
 through.  The field rises high up into the air, and seems to form a ceiling
 above the woods, preventing a flying entrance.  You'd also bet it extends deep
-into the ground.  
+into the ground.
 ~
 S
 #6210
@@ -298,7 +298,7 @@ E
 corpse body bodies corpses skull skulls~
    Demi-human, from the size.  The foreheads slop down to a blocky brow, and the
 braincase seems rather small.  On a hunch, you check one of the feet of a
-torched body.  Cloven, like a pig's...  Orcs.  
+torched body.  Cloven, like a pig's...  Orcs.
 ~
 S
 #6212
@@ -332,7 +332,7 @@ D3
 0 -1 6228
 E
 foot footprint footprints print prints~
-   Cloven hoofs, two feet...  They walk erect whatever they are.  
+   Cloven hoofs, two feet...  They walk erect whatever they are.
 ~
 S
 #6213
@@ -397,11 +397,11 @@ S
 #6216
 The River's Edge~
    A large out-cropping of rock blocks this path along the
-river to the west, and you don't spot any way around it; 
-the woods are too thick to the south, the river too swift 
-to the north, the magical barrier above you.  This is a 
+river to the west, and you don't spot any way around it;
+the woods are too thick to the south, the river too swift
+to the north, the magical barrier above you.  This is a
 nice area, however, as evidenced by the amount of traffic
-this path gets.  From the marks in the grass, you guess 
+this path gets.  From the marks in the grass, you guess
 that this is a favored resting spot.
 ~
 62 0 0 0 0 2
@@ -412,10 +412,10 @@ D1
 S
 #6217
 A Forest Trail~
-   This well-used forest trail leads south.  Among the 
-foot-tracks in the dirt, you spot a few animal tracks as 
+   This well-used forest trail leads south.  Among the
+foot-tracks in the dirt, you spot a few animal tracks as
 well, leading you to believe that these trails are used by
-hunters.  Why would they be enclosed in this manner, 
+hunters.  Why would they be enclosed in this manner,
 however?
    There is a clearing to the north, and the path
 continues to the south.
@@ -454,12 +454,12 @@ D2
 S
 #6219
 A Forest Trail~
-   The trail changes direction here, turning to the north 
+   The trail changes direction here, turning to the north
 and west.  A large tree to your south bears an interesting
-artifact; a rusty arrowhead embedded in the wood.  It 
-looks as if the arrow had been  broken off at the head, 
-the wood scratched at, and the arrowhead left behind.  
-Otherwise, there doesn't seem to be much of interest in 
+artifact; a rusty arrowhead embedded in the wood.  It
+looks as if the arrow had been  broken off at the head,
+the wood scratched at, and the arrowhead left behind.
+Otherwise, there doesn't seem to be much of interest in
 this particular section of the woods.
 ~
 62 0 0 0 0 3
@@ -475,11 +475,11 @@ S
 #6220
 A Forest Trail~
    This is a winding east-west path through the thickening
-forest.  The grass along the path is matted down from 
-frequent traffic.  The path continues to the east, and 
+forest.  The grass along the path is matted down from
+frequent traffic.  The path continues to the east, and
 there seems to be a small clearing to the west.
-   A faint noise makes you stand stock still.  You could 
-have sworn you heard a voice nearby.  Whatever it was, it 
+   A faint noise makes you stand stock still.  You could
+have sworn you heard a voice nearby.  Whatever it was, it
 wasn't speaking common.
 ~
 62 0 0 0 0 3
@@ -495,8 +495,8 @@ S
 #6221
 A Small Clearing~
    In the middle of this small clearing in the forest is a
-fairly large rock sticking up out of the ground.  Paths 
-lead away to the east, west, and south from here.  The 
+fairly large rock sticking up out of the ground.  Paths
+lead away to the east, west, and south from here.  The
 trees above block out the sky fairly effectively, also
 blotting out the glowing energy barrier above your head.
 ~
@@ -515,15 +515,15 @@ D3
 0 -1 6227
 E
 rock boulder~
-   There is dried blood on it.  
+   There is dried blood on it.
 ~
 S
 #6222
 A Forest Trail~
    A smaller northern path leads away from the main east-
-west trail here towards a clearing.  The main path leads 
+west trail here towards a clearing.  The main path leads
 windingly around the trees to the east and west, the woods
-blocking out whatever may be ahead.  Again you get that 
+blocking out whatever may be ahead.  Again you get that
 strange feeling of being watched.
 ~
 62 0 0 0 0 3
@@ -545,7 +545,7 @@ A Forest Trail~
    The trail leads east and west here through the forest.  To the west you spot
 an area where a smaller path breaks off from the main track.  Eastwards seems to
 be another small clearing that seems to be well used; there are many tracks
-leading in that direction.  
+leading in that direction.
 ~
 62 0 0 0 0 3
 D1
@@ -562,7 +562,7 @@ The Dead End~
    The ground has been cleared of vegetation in this small
 clearing, and several large, man-made salt licks lie on
 the ground and stand on poles here.  There are many animal
-tracks in the earth -- the salt licks must attract 
+tracks in the earth -- the salt licks must attract
 wildlife for miles around.  You think this would be a good
 place to hide and wait for dinner if you were a hunter...
 ~
@@ -592,10 +592,10 @@ D3
 S
 #6226
 A Forest Trail~
-   The trail bends here, leading away to the north and 
-east.  Far off the the distance you hear the squawk of a 
-large bird-of-prey searching the skies for a meal.  The 
-ferns around you rustle gently in the light breeze.  
+   The trail bends here, leading away to the north and
+east.  Far off the the distance you hear the squawk of a
+large bird-of-prey searching the skies for a meal.  The
+ferns around you rustle gently in the light breeze.
 Somehow, the threatening aura that pervades over the rest
 of the area seems absent here.  You feel almost relaxed...
 ~
@@ -609,10 +609,10 @@ S
 A Forest Trail~
    A bend in the forest trail allows you to go east and
 north here.  To the east you spot a small clearing, while
-northwards this trail seems to join a much larger one 
-leading through the woods.  On the ground is half of a 
+northwards this trail seems to join a much larger one
+leading through the woods.  On the ground is half of a
 broken knife handle, made of bone and dried leather,
-useless now.  You wonder if the owner is watching you 
+useless now.  You wonder if the owner is watching you
 now -- something certainly is.
 ~
 62 0 0 0 0 3
@@ -627,11 +627,11 @@ D1
 S
 #6228
 A Forest Trail~
-   This path leads from the main clearing to the west to 
-intersect with a north-south path just to the east.  A 
-small sapling on the north side of the trail has a rope 
-tied around one of its top branches; an unused snare 
-evidently.  You still feel as if you're being watched in 
+   This path leads from the main clearing to the west to
+intersect with a north-south path just to the east.  A
+small sapling on the north side of the trail has a rope
+tied around one of its top branches; an unused snare
+evidently.  You still feel as if you're being watched in
 the back of your mind, and adrenaline pumps into your
 brain like a lightning fuzz.
 ~
@@ -647,11 +647,11 @@ D3
 S
 #6229
 A Forest Trail~
-   A north-south trail leads through the woods here, with 
-a small side trail leading off to the east.  The trees 
-provide adequate cover from the sky, but through a few 
-holes in the foliage you spot the magical barrier above 
-you, keeping you from escaping by flight.  You feel 
+   A north-south trail leads through the woods here, with
+a small side trail leading off to the east.  The trees
+provide adequate cover from the sky, but through a few
+holes in the foliage you spot the magical barrier above
+you, keeping you from escaping by flight.  You feel
 slightly captured.
 ~
 62 0 0 0 0 3
@@ -666,12 +666,12 @@ D2
 S
 #6230
 A Forest Trail~
-   Two trails come together here, a large northern path 
-heading away from tracks leading to the east and west.  
-The western path seems to be the most traveled, and the 
-east hardly at all.  There seems to be less trees around 
+   Two trails come together here, a large northern path
+heading away from tracks leading to the east and west.
+The western path seems to be the most traveled, and the
+east hardly at all.  There seems to be less trees around
 here... it seems as if many have been cut down by some
-sort of crude tools.  This land clearing appears to be 
+sort of crude tools.  This land clearing appears to be
 especially true to the east.
 ~
 62 0 0 0 0 3
@@ -690,11 +690,11 @@ D3
 S
 #6231
 A Clearing~
-   The trees have been cut down around here, and many of 
-the trunks hollowed out with sharp stones and lined with 
-treated leather to make almost-waterproof tubs.  A foul 
-smelling brown fluid, tannin evidently, fills many of 
-these, soaking into various bits and pieces of animal 
+   The trees have been cut down around here, and many of
+the trunks hollowed out with sharp stones and lined with
+treated leather to make almost-waterproof tubs.  A foul
+smelling brown fluid, tannin evidently, fills many of
+these, soaking into various bits and pieces of animal
 hides.  Crude, but workable.
 ~
 62 0 0 0 0 3
@@ -706,7 +706,7 @@ S
 #6232
 A Forest Trail~
    The trail is widening to the west, where the path leads
-all the way up to the side of the mountains that enclose 
+all the way up to the side of the mountains that enclose
 this valley.  Many of the trees have been cut down around
 here, and it definitely looks as if the forest is ending.
 Eastwards the trail leads on into the thick of the forest.
@@ -728,12 +728,12 @@ D3
 S
 #6233
 A Forest Trail~
-   The ground is growing more rocky here.  The trees and 
-other foliage in the forest grow sparse here, finding it 
-hard to find purchase in the soil.   The forest ends just 
+   The ground is growing more rocky here.  The trees and
+other foliage in the forest grow sparse here, finding it
+hard to find purchase in the soil.   The forest ends just
 to the west, with the trail you are on leading right on up
-to the side of the mountains.  A side trail leads south 
-here, and the trail also leads back into the thick of the 
+to the side of the mountains.  A side trail leads south
+here, and the trail also leads back into the thick of the
 forest to the east.
 ~
 62 0 0 0 0 3
@@ -752,13 +752,13 @@ D3
 S
 #6234
 A Rocky Trail~
-   The ground is getting very rocky here, causing the 
-trees of the woods to become more sparse.  Several bushes 
-have found purchase in the soil, but not near enough to 
-block free movement in this area.  The trail leads on up 
-to what appears to be a cave in the side of the mountain 
+   The ground is getting very rocky here, causing the
+trees of the woods to become more sparse.  Several bushes
+have found purchase in the soil, but not near enough to
+block free movement in this area.  The trail leads on up
+to what appears to be a cave in the side of the mountain
 to the west, and a side trail runs along the forest's edge
-to the north.  To the east, the trail runs deep into the 
+to the north.  To the east, the trail runs deep into the
 forest out of sight.
 ~
 62 0 0 0 0 4
@@ -778,7 +778,7 @@ S
 #6235
 A Forest Trail~
    The trail you are on bends around a large double-
-trunked tree and leads away to the north and west.  The 
+trunked tree and leads away to the north and west.  The
 green canopy of leaves overhead make this area fairly dark
 and ominous, and that creepy 'watched' feeling returns to
 hit you with full force.
@@ -795,7 +795,7 @@ D3
 S
 #6236
 A Forest Trail~
-   The trail continues here to the east and west, with a 
+   The trail continues here to the east and west, with a
 small trail splitting off towards a large clearing to the
 south.  Two wooden poles with skulls on top warn you away
 from the south, and succeed in making you feel quite
@@ -835,10 +835,10 @@ D0
 S
 #6238
 A Forest Trail~
-   The trail splits here, one fork heading north towards 
-the rushing sounds of a river, and west where the forest 
-seems to be thinning out a lot.  A sudden motion out of 
-the corner of your eye catches your eyes, and you turn 
+   The trail splits here, one fork heading north towards
+the rushing sounds of a river, and west where the forest
+seems to be thinning out a lot.  A sudden motion out of
+the corner of your eye catches your eyes, and you turn
 your head.  Nothing, there's nothing there at all.
    You wonder if you're being stalked.
 ~
@@ -879,11 +879,11 @@ D3
 S
 #6240
 A River's Edge~
-   The river pours down the side of the mountains to the 
-west, originating from a large hole in the face of one of 
-the sheer rock protuberances.  The energy barrier climbs 
-right up the mountain, and seals off any means of escape 
-by that means.  The trail you are on runs by the side of 
+   The river pours down the side of the mountains to the
+west, originating from a large hole in the face of one of
+the sheer rock protuberances.  The energy barrier climbs
+right up the mountain, and seals off any means of escape
+by that means.  The trail you are on runs by the side of
 the river to the east, and a path leads by the forest side
 to the south.
 ~
@@ -899,11 +899,11 @@ D2
 S
 #6241
 A Rocky Trail~
-   The forest is just to your west, with a side trail 
+   The forest is just to your west, with a side trail
 leading deep inside from here.  The main trail you are on,
-however, heads north towards the river, and south near 
-where a trail leads up to a cave in the mountain side.  
-There doesn't seem to be a whole lot to capture your 
+however, heads north towards the river, and south near
+where a trail leads up to a cave in the mountain side.
+There doesn't seem to be a whole lot to capture your
 attention here...
 ~
 62 0 0 0 0 4
@@ -925,9 +925,9 @@ A Cave Entrance~
    You are half blinded by the differences of the outdoors
 illumination and the pure darkness of the cave.  A deep,
 cloying stench flows out from the cave mouth; the smells
-of decay, unwashed bodies, and sickness in one roiling 
-odor.  Your stomach turns involuntarily, and you wonder 
-about going back down the hill to the east, instead of 
+of decay, unwashed bodies, and sickness in one roiling
+odor.  Your stomach turns involuntarily, and you wonder
+about going back down the hill to the east, instead of
 going even further down the western tunnel.
 ~
 62 8 0 0 0 5
@@ -942,11 +942,11 @@ D3
 S
 #6243
 A Tunnel Forking~
-   The tunnel forks here, one branch leading north, the 
-other west.  Additionally, you can head back outside to 
-the east, which seems like a very good idea to your 
+   The tunnel forks here, one branch leading north, the
+other west.  Additionally, you can head back outside to
+the east, which seems like a very good idea to your
 tortured nasal passages.  Your eyes water from the stench,
-and you clench your left hand tightly to keep control of 
+and you clench your left hand tightly to keep control of
 your bile.
    Forcing your eyes open, you notice the warning signs
 painted around the tunnel to the north.
@@ -966,15 +966,15 @@ D3
 0 -1 6244
 E
 painting sign signs~
-   They are orcish, and you could swear they were all warning symbols.  
+   They are orcish, and you could swear they were all warning symbols.
 ~
 S
 #6244
 A Tunnel~
    The floor is slick with the humidity that boils out of
-the lower reaches of this cave, bringing that most awful 
-smell with it.  Again, you consider saving your nose the 
-trip west and down the tunnel, and heading back east to 
+the lower reaches of this cave, bringing that most awful
+smell with it.  Again, you consider saving your nose the
+trip west and down the tunnel, and heading back east to
 the cave entrance.
 ~
 62 9 0 0 0 4
@@ -989,10 +989,10 @@ D3
 S
 #6245
 A Tunnel~
-   The tunnel takes a deep dip here, and opens up into a 
-largish cave to the west.  There seems to be a few faint 
-lights from inside, and you hear some heavy breathing and 
-low grunts from that direction.  The cave entrance to the 
+   The tunnel takes a deep dip here, and opens up into a
+largish cave to the west.  There seems to be a few faint
+lights from inside, and you hear some heavy breathing and
+low grunts from that direction.  The cave entrance to the
 east seems far too far away for your comfort...
 ~
 62 9 0 0 0 5
@@ -1011,8 +1011,8 @@ A Cave~
 sit here; the orc food stores.  You stand here and wonder
 in near-disbelief at how the orcs could find this stuff
 palatable.  They're orcs; its their nature and their
-stomachs you guess.  Oddly enough, you don't even care to 
-catalog what they have available -- there's no chance you're 
+stomachs you guess.  Oddly enough, you don't even care to
+catalog what they have available -- there's no chance you're
 going to take any of this...
 ~
 62 8 0 0 0 4
@@ -1027,11 +1027,11 @@ D2
 S
 #6247
 A Cave~
-   A single corpse lies here, well away from a pile of 
-similars to the east.  There are several sharpened stakes 
-and rocks sitting about conveniently.  The way the corpse 
-is lying, the stone next to its hand... this is a suicide 
-area!  You look down upon the orc and comprehend its 
+   A single corpse lies here, well away from a pile of
+similars to the east.  There are several sharpened stakes
+and rocks sitting about conveniently.  The way the corpse
+is lying, the stone next to its hand... this is a suicide
+area!  You look down upon the orc and comprehend its
 suffering in its twisted form.  How sad.
 ~
 62 8 0 0 0 4
@@ -1050,13 +1050,13 @@ D3
 S
 #6248
 A Cave~
-   There are bodies here... corpses.  Orcs, the lot of 
-them, every single one of them horribly disfigured in 
-some senseless way; one whose arms were removed, another 
-who lacks anything that could sensibly be called a face. 
-A few twitch feebly with the last remains of life, the 
-rest just decompose.  The dim sense of horror budding in 
-your head blossoms as you realize the pile in the corner 
+   There are bodies here... corpses.  Orcs, the lot of
+them, every single one of them horribly disfigured in
+some senseless way; one whose arms were removed, another
+who lacks anything that could sensibly be called a face.
+A few twitch feebly with the last remains of life, the
+rest just decompose.  The dim sense of horror budding in
+your head blossoms as you realize the pile in the corner
 consists of dead orc children awaiting burial.
 ~
 62 12 0 0 0 4
@@ -1071,12 +1071,12 @@ D3
 S
 #6249
 A Cave~
-   A few sleeping pallets, made of moldy straw and 
-stinking furs are arranged around a small firepit here.  
-A wooden cup, carved by a crude tool and cruder hands 
-sits near the ashes filled with water you consider 
-undrinkable.  Somewhere to the east you hear an orc 
-child's whining cry, and a voice hushes it urgently.  
+   A few sleeping pallets, made of moldy straw and
+stinking furs are arranged around a small firepit here.
+A wooden cup, carved by a crude tool and cruder hands
+sits near the ashes filled with water you consider
+undrinkable.  Somewhere to the east you hear an orc
+child's whining cry, and a voice hushes it urgently.
 Beware, orcs!  Adventurers are here!  Hide your children!
 ~
 62 8 0 0 0 4
@@ -1095,14 +1095,14 @@ D2
 S
 #6250
 A Cave~
-   Several grass sleeping pallets are here, clustered 
-around the remains of an old fire.  The sloping of the 
-cave's ceiling allow for smoke ventilation towards the 
-surface in here you note, lucky for the orcs.  A few 
-strings of burnt meat still hang over the fire, untended 
-and uneaten.  On the floor near your feet you spy a small, 
-twisted piece of wire... one orc's idea of a treasured ring, 
-no doubt.  Kicking the trinket away, you try to push the 
+   Several grass sleeping pallets are here, clustered
+around the remains of an old fire.  The sloping of the
+cave's ceiling allow for smoke ventilation towards the
+surface in here you note, lucky for the orcs.  A few
+strings of burnt meat still hang over the fire, untended
+and uneaten.  On the floor near your feet you spy a small,
+twisted piece of wire... one orc's idea of a treasured ring,
+no doubt.  Kicking the trinket away, you try to push the
 pity out of your heart for these wretches.
 ~
 62 8 0 0 0 4
@@ -1125,13 +1125,13 @@ D3
 S
 #6251
 A Cave~
-   You are standing just inside a largish cave, about a 
-hundred feet in diameter.  A few dim make-shift lanterns 
+   You are standing just inside a largish cave, about a
+hundred feet in diameter.  A few dim make-shift lanterns
 burning animal fat illuminate the area, just enough so you
-can see the rotted food on the floor, and a few bodies 
-sprawled throughout the whole area.  Your disgust quickly 
+can see the rotted food on the floor, and a few bodies
+sprawled throughout the whole area.  Your disgust quickly
 turns to horror as you see a horrible creature, half...
-well, half something and half orc dash between two 
+well, half something and half orc dash between two
 stalagmites.
 ~
 62 8 0 0 0 4
@@ -1154,12 +1154,12 @@ D3
 S
 #6252
 A Cave~
-   This must be the orc chief's area.  There's an old 
-prize -- a stolen timeworn human armchair sitting near 
-the south wall as a throne.  A mammoth sleeping pallet 
-made of piled furs is nearby.  Next to that is the pile 
-of orc treasure; a pile of well-polished coppers.  You 
-look at the pile of worthless coins and wonder at the 
+   This must be the orc chief's area.  There's an old
+prize -- a stolen timeworn human armchair sitting near
+the south wall as a throne.  A mammoth sleeping pallet
+made of piled furs is nearby.  Next to that is the pile
+of orc treasure; a pile of well-polished coppers.  You
+look at the pile of worthless coins and wonder at the
 image of orcish raiders.
    These orcs aren't raiders, they are victims.
 ~
@@ -1176,9 +1176,9 @@ S
 #6253
 A Cave~
    Many sleeping pallets are arranged near the walls, each
-made of heavy fur padding for comfort and warmth.  Many 
-are covered with blood and other, unidentifiable 
-substances.  Looking around, your only coherent thought 
+made of heavy fur padding for comfort and warmth.  Many
+are covered with blood and other, unidentifiable
+substances.  Looking around, your only coherent thought
 is, 'Don't want to know... don't want to know...'
 ~
 62 8 0 0 0 4
@@ -1197,12 +1197,12 @@ D3
 S
 #6254
 A Cave~
-   This area of the cave is one vast orc sickroom.  
-Mutated and mangled orcs lie on the floor, seeming quiet, 
-lifeless.  They're not even worth your time, you think, 
+   This area of the cave is one vast orc sickroom.
+Mutated and mangled orcs lie on the floor, seeming quiet,
+lifeless.  They're not even worth your time, you think,
 unless you've the mercy to put them out of their misery.
-   You look at the corruption of nature's design and 
-wonder what forces are at work here... the barrier, the 
+   You look at the corruption of nature's design and
+wonder what forces are at work here... the barrier, the
 orcs...  What's going on here?
 ~
 62 8 0 0 0 4
@@ -1217,11 +1217,11 @@ D3
 S
 #6255
 A Tunnel~
-   This forking off from the mail tunnel seems odd; the 
-walls are strangely smooth, as if they were carved out by 
+   This forking off from the mail tunnel seems odd; the
+walls are strangely smooth, as if they were carved out by
 forces unknown.  The end is abrupt and short, but there is
-a steel door inset in the wall of the west side of the 
-tunnel.  The smell from the lower tunnel doesn't seem 
+a steel door inset in the wall of the west side of the
+tunnel.  The smell from the lower tunnel doesn't seem
 nearly as bad here... this might be a good place to rest
 and catch your breath.
 ~
@@ -1240,10 +1240,10 @@ S
 #6256
 A Tunnel~
    This section of man-made tunnel heads north from here,
-doors on either side.  A few glowing spots on the ceiling 
-illuminate the area to almost a daylight level.  From the 
-north you hear some horrible cries of pain and anguish 
-that make you cringe inside and think twice about heading 
+doors on either side.  A few glowing spots on the ceiling
+illuminate the area to almost a daylight level.  From the
+north you hear some horrible cries of pain and anguish
+that make you cringe inside and think twice about heading
 in that direction.
 ~
 62 8 0 0 0 0
@@ -1263,11 +1263,11 @@ door wooden~
 S
 #6257
 A Bedroom~
-   This is a bedroom, catered to someone with a definite 
-sense of taste.  There's a chest of drawers made of a 
+   This is a bedroom, catered to someone with a definite
+sense of taste.  There's a chest of drawers made of a
 solid section of oak tree.  In fact, most of the furniture
-here has that 'natural look' about it.  The bed is filled 
-with soft down with an ornate table lamp close by.  Nice 
+here has that 'natural look' about it.  The bed is filled
+with soft down with an ornate table lamp close by.  Nice
 place.
 ~
 62 8 0 0 0 0
@@ -1279,13 +1279,13 @@ door wooden~
 S
 #6258
 A Tunnel~
-   This tunnel opens up into a large room to the north, 
+   This tunnel opens up into a large room to the north,
 and to the south, leads towards a set of doors.  The light
-is crisp and bright, clearly showing the lack of tool 
-marks on the hewn walls... magic?  The room just ahead is 
+is crisp and bright, clearly showing the lack of tool
+marks on the hewn walls... magic?  The room just ahead is
 large, and also well-lighted, giving it an almost clinical
-atmosphere.  Somewhere in the recesses of that room 
-something cries out in a horrible crackling voice.  Not 
+atmosphere.  Somewhere in the recesses of that room
+something cries out in a horrible crackling voice.  Not
 good.
 ~
 62 8 0 0 0 0
@@ -1302,9 +1302,9 @@ S
 The Laboratory~
    A full fledge operating table is set up here, outfitted
 with a full set of restraints.  A ledge nearby has a whole
-array of sterile medical equipment on it, covered over by 
-a clear lid.  There's a drain in the floor with gradients 
-leading to it to carry away the blood.  For some reason, 
+array of sterile medical equipment on it, covered over by
+a clear lid.  There's a drain in the floor with gradients
+leading to it to carry away the blood.  For some reason,
 you don't imagine this as a voluntary operating theatre...
 ~
 62 8 0 0 0 0
@@ -1319,9 +1319,9 @@ D2
 S
 #6260
 The Laboratory~
-   Another table is set up will all sorts of alchemical 
-apparatus here, vials and beakers, distillation equipment 
-and et cetera.  The stuff looks expensive, but bulky and 
+   Another table is set up will all sorts of alchemical
+apparatus here, vials and beakers, distillation equipment
+and et cetera.  The stuff looks expensive, but bulky and
 fragile; not good treasure to cart away with you at all.
 ~
 62 8 0 0 0 0
@@ -1341,9 +1341,9 @@ D3
 S
 #6261
 A Cage~
-   This is a small, dirty cage, with only a bucket for 
-wastes, another bucket for food, and a dirty towel for a 
-bed.  The whole room has a terrible stench about it. 
+   This is a small, dirty cage, with only a bucket for
+wastes, another bucket for food, and a dirty towel for a
+bed.  The whole room has a terrible stench about it.
 ~
 62 8 0 0 0 0
 D3
@@ -1354,11 +1354,11 @@ door steel~
 S
 #6262
 The Laboratory~
-   Some small cages sit here, containing many different 
-types of rodents.  Leaning down to look better, you are 
-very surprised as a tiny, common garden mouse growls at 
-you and tries to rip your face off through the bars.  
-There are some bulges on its back, and it doesn't seem to 
+   Some small cages sit here, containing many different
+types of rodents.  Leaning down to look better, you are
+very surprised as a tiny, common garden mouse growls at
+you and tries to rip your face off through the bars.
+There are some bulges on its back, and it doesn't seem to
 be in a very good mood.  It quivers some, not fully in
 control of its motor functions.  Poor thing.
 ~
@@ -1378,8 +1378,8 @@ D2
 S
 #6263
 The Laboratory~
-   A rack stands near the cages on the eastern wall, 
-filled with shackles and manacles, bullwhips and worse.  
+   A rack stands near the cages on the eastern wall,
+filled with shackles and manacles, bullwhips and worse.
 They all look well-used.  You give a shiver, and carry on.
 ~
 62 8 0 0 0 0
@@ -1403,9 +1403,9 @@ D3
 S
 #6264
 A Cage~
-   This is a small, dirty cage, with only a bucket for 
-wastes, another bucket for food, and a dirty towel for a 
-bed.  The whole room has a terrible stench about it. 
+   This is a small, dirty cage, with only a bucket for
+wastes, another bucket for food, and a dirty towel for a
+bed.  The whole room has a terrible stench about it.
 ~
 62 8 0 0 0 0
 D3
@@ -1416,9 +1416,9 @@ door steel~
 S
 #6265
 The Laboratory~
-   This is the southwest corner of the lab.  There's no 
-equipment here, merely several pairs of heavy steel 
-shackles on the southern wall.  There's also some a few 
+   This is the southwest corner of the lab.  There's no
+equipment here, merely several pairs of heavy steel
+shackles on the southern wall.  There's also some a few
 small bloodstains on the floor beneath the shackles.
 ~
 62 8 0 0 0 0
@@ -1433,10 +1433,10 @@ D1
 S
 #6266
 The Laboratory~
-   This is a fairly roomy laboratory that extends to the 
-north, with cages set on the east side of the room.  A 
-metal table here is empty, although you can see some 
-outlines in the dust that suggest books had laid here 
+   This is a fairly roomy laboratory that extends to the
+north, with cages set on the east side of the room.  A
+metal table here is empty, although you can see some
+outlines in the dust that suggest books had laid here
 once.
 ~
 62 8 0 0 0 0
@@ -1460,8 +1460,8 @@ D3
 S
 #6267
 A Cage~
-   This is a small, dirty cage, with only a bucket for 
-wastes, another bucket for food, and a dirty towel for a 
+   This is a small, dirty cage, with only a bucket for
+wastes, another bucket for food, and a dirty towel for a
 bed.  The whole room has a terrible stench about it.
 ~
 62 8 0 0 0 0

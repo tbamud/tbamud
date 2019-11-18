@@ -8,7 +8,7 @@ An orange lies on the ground here.~
 1 8 0 0 0
 E
 orange~
-   You wonder how it got here, seeing how oranges are non-migratory.  
+   You wonder how it got here, seeing how oranges are non-migratory.
 ~
 #25601
 bale wheat~
@@ -20,7 +20,7 @@ There is a bale of wheat here.~
 50 1000 0 0 0
 E
 bale wheat~
-   It doesn't look appetizing to you, but a horse might enjoy this...  
+   It doesn't look appetizing to you, but a horse might enjoy this...
 ~
 #25602
 iron flail~
@@ -48,7 +48,7 @@ barrel perfume~
    Smells good...the label reads:
 
    "Somewhere between GPA and MUD there lies...
-		OBSESSION"
+                OBSESSION"
 ~
 #25604
 statue~
@@ -60,7 +60,7 @@ There is a statue of Aglandiir here, made of solid gold.~
 30 500 0 0 0
 E
 statue~
-   He's a pretty striking chap, for a dragon.  
+   He's a pretty striking chap, for a dragon.
 ~
 #25605
 halberd~
@@ -73,7 +73,7 @@ A runed halberd lies on the ground here.~
 E
 halberd~
    The runes glow with a bright light, making you think that this might be a
-pretty decent weapon.  
+pretty decent weapon.
 ~
 A
 18 5
@@ -87,7 +87,7 @@ A vial of a dun fluid is here.~
 1 1000 0 0 0
 E
 potion protection dun vial~
-   Looks thick, and brownish-grey (dun).  Ick!  
+   Looks thick, and brownish-grey (dun).  Ick!
 ~
 #25607
 headband~
@@ -107,7 +107,7 @@ A scrawny red apple sits here.~
 1 5 0 0 0
 E
 apple~
-   It is not wormy...  Yet.  
+   It is not wormy...  Yet.
 ~
 #25609
 bread loaf~
@@ -119,7 +119,7 @@ A fresh loaf of bread lies here.~
 1 10 0 0 0
 E
 bread loaf~
-   Mmmm...  Rye!  
+   Mmmm...  Rye!
 ~
 #25610
 melon~
@@ -131,7 +131,7 @@ A melon sits here, discarded evidently.~
 3 100 0 0 0
 E
 melon~
-   Wow!  Look at the size of that melon!  
+   Wow!  Look at the size of that melon!
 ~
 #25611
 knife~
@@ -153,7 +153,7 @@ E
 sword long~
    This sword is light, but the heft is perfectly balanced.  Such an incredible
 weapon can only have be crafted by the legendary smith Gabadiel, and as such be
-worth a fortune!  
+worth a fortune!
 ~
 A
 18 2
@@ -170,7 +170,7 @@ A short sword lies here... a work of art!~
 E
 sword short~
    It brings tears to your eyes.  This must have been Gabadiel the smith's
-masterpiece; his final work.  Simply invaluble.  
+masterpiece; his final work.  Simply invaluble.
 ~
 A
 18 1
@@ -194,7 +194,7 @@ A suit of plate mail lies here.~
 50 500 0 0 0
 E
 armor suit plate mail~
-   This armor was made especially for the Lord's Guard.  
+   This armor was made especially for the Lord's Guard.
 ~
 #25616
 cooler~
@@ -206,7 +206,7 @@ A cooler rests here against one wall.~
 50 200 0 0 0
 E
 cooler~
-   It must be magically maintained, to keep all the food cold.  
+   It must be magically maintained, to keep all the food cold.
 ~
 #25617
 lord's Lord's badge office~
@@ -219,7 +219,7 @@ The Lord's badge of office lays on the ground here.~
 E
 badge office~
    This is the Lord's symbol of integrity and responsibility, the symbol of the
-people of Jareth.  
+people of Jareth.
 ~
 A
 4 3
@@ -245,7 +245,7 @@ A glass of wine sits forgotten here.~
 2 500 0 0 0
 E
 glass~
-   This is a nice glass filled with the Lord's finest.  
+   This is a nice glass filled with the Lord's finest.
 ~
 #25620
 tea cup tea~
@@ -257,7 +257,7 @@ A cup of tea sits here.~
 2 100 0 0 0
 E
 tea cup~
-   Looks good.  Looks warm.  Doesn't matter; it still looks good.  
+   Looks good.  Looks warm.  Doesn't matter; it still looks good.
 ~
 #25621
 slice pie~
@@ -269,7 +269,7 @@ A slice of pie is sitting here.~
 1 100 0 0 0
 E
 slice pie~
-   Whew!  Looks like some good food!  
+   Whew!  Looks like some good food!
 ~
 #25625
 key grey metal~

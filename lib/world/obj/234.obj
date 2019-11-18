@@ -65,7 +65,7 @@ A newbie mace has been dropped here.~
 3 10 0 0
 E
 newbie mace~
-   A short mace designed for new characters.    
+   A short mace designed for new characters.
 ~
 #23407
 newbie dagger~
@@ -77,7 +77,7 @@ A newbie dagger is resting here.~
 2 10 0 0
 E
 newbie dagger~
-   A small dagger designed for thieves, or an offset weapon.    
+   A small dagger designed for thieves, or an offset weapon.
 ~
 A
 19 1
@@ -91,7 +91,7 @@ A newbie club has been left here.~
 2 5 0 0
 E
 newbie club~
-   A small club designed for an offset hand.    
+   A small club designed for an offset hand.
 ~
 A
 19 1
@@ -105,7 +105,7 @@ A newbie chest plate rests here.~
 6 15 0 0
 E
 newbie chest~
-   A small chest place designed for all classes.    
+   A small chest place designed for all classes.
 ~
 #23410
 ring power~
@@ -117,7 +117,7 @@ A shiny ring is trying to hide here.~
 1 10 0 0
 E
 ring power~
-   A ring with a fighter drawing his sword is engraved on this shiny ring.    
+   A ring with a fighter drawing his sword is engraved on this shiny ring.
 ~
 A
 1 1
@@ -131,7 +131,7 @@ A black ring is hiding in the shadows~
 1 10 0 0
 E
 ring shadows~
-   A dark black ring with no markings on it.    
+   A dark black ring with no markings on it.
 ~
 A
 2 1
@@ -145,7 +145,7 @@ A humming ring is calling out to you.~
 1 10 0 0
 E
 ring blessed~
-   A ring that looks pure and glows brightly.    
+   A ring that looks pure and glows brightly.
 ~
 A
 4 1
@@ -159,7 +159,7 @@ A ring that glows like fire is warding you off.~
 1 10 0 0
 E
 ring fire~
-   This ring burns bright red and burns to the touch.    
+   This ring burns bright red and burns to the touch.
 ~
 A
 3 1
@@ -173,7 +173,7 @@ An amulet is lying here.~
 1 10 0 0
 E
 warriors amulet~
-   This amulet is designed to protect the neck of a Warrior.    
+   This amulet is designed to protect the neck of a Warrior.
 ~
 #23415
 Black collar~
@@ -186,7 +186,7 @@ A black collar has been left here.~
 E
 black collar~
    This collar wraps around the neck of a thief to prevent this skin from
-showing.    
+showing.
 ~
 #23416
 Silver pendant~
@@ -198,7 +198,7 @@ A silver pendant is resting here.~
 1 15 0 0
 E
 silver pendant~
-   This pendant is shaped as a cross.  It shines brightly.    
+   This pendant is shaped as a cross.  It shines brightly.
 ~
 #23417
 Red charm~
@@ -210,7 +210,7 @@ A fire red charm is burning a hole here.~
 1 10 0 0
 E
 red charm~
-   This charm is red as fire and burns to the touch.    
+   This charm is red as fire and burns to the touch.
 ~
 #23418
 Warriors Helm~
@@ -223,7 +223,7 @@ A large Helm is looking for an owner~
 E
 warriors helm~
    A large helm which covers the entire face.  It has slits for the Eyes and
-for the nose.    
+for the nose.
 ~
 #23419
 Leather Helm~
@@ -236,7 +236,7 @@ A dark leather helm is sitting here.~
 E
 leather helm~
    This is helm is black and covers the entire face except for the eyes.  It
-most resembles a mask.    
+most resembles a mask.
 ~
 #23420
 gold Tiara~
@@ -248,7 +248,7 @@ A gold tiara calls out to you.~
 1 20 0 0
 E
 gold tiara~
-   A tiara designed to show respect to the Deities.    
+   A tiara designed to show respect to the Deities.
 ~
 #23421
 Wizards Hat~
@@ -261,7 +261,7 @@ A pointy hat is floating here.~
 E
 wizards hat~
    A common wizards hat which points at the end.  The hat is red with pictures
-of fire.    
+of fire.
 ~
 A
 21 1
@@ -276,7 +276,7 @@ A pair of leggings are resting here.~
 E
 leggings~
    Leggings that cover the entire legs but has the ability to bend at the knee.
-  
+
 ~
 #23423
 Leather leggings~
@@ -288,7 +288,7 @@ A set of leather leggings.~
 1 10 0 0
 E
 leather leggings~
-   A pair of leggings designed for maneuverability.    
+   A pair of leggings designed for maneuverability.
 ~
 #23424
 Cleric Breeches~
@@ -300,7 +300,7 @@ A pair of breeches that allows for great movement.~
 1 10 0 0
 E
 cleric breeches~
-   Breeches that fight very loosely but provides extra protection.    
+   Breeches that fight very loosely but provides extra protection.
 ~
 A
 24 1
@@ -314,7 +314,7 @@ A set of leggings rest here.~
 1 20 0 0
 E
 leather leggings~
-   Leather leggings with pouches along the side.    
+   Leather leggings with pouches along the side.
 ~
 #23426
 mail boots plate~
@@ -326,7 +326,7 @@ A pair plate mail boots~
 2 50 0 0
 E
 mail plate boots~
-   A pair of boots that is made completely of Plate.    
+   A pair of boots that is made completely of Plate.
 ~
 A
 14 -10
@@ -340,7 +340,7 @@ A rugged pair of boots.~
 2 10 0 0
 E
 leather boots~
-   A pair of leather boots that look very comfortable.    
+   A pair of leather boots that look very comfortable.
 ~
 A
 14 20
@@ -354,7 +354,7 @@ A pair of Sandals.~
 2 10 0 0
 E
 sandals~
-   A pair of light weight sandals.    
+   A pair of light weight sandals.
 ~
 #23429
 Mage boots~
@@ -366,7 +366,7 @@ A pair of Mage boots are floating here.~
 2 10 0 0
 E
 mage boots~
-   A pair of boots that are very lightweight, but provide good protection.    
+   A pair of boots that are very lightweight, but provide good protection.
 ~
 #23430
 map newbie school~
@@ -397,7 +397,7 @@ A tuxedo sized for a dragon.~
 5 1 0 0
 E
 tuxedo~
-   You see a dragon sized Tuxedo.  Its coat has a twin tail.  
+   You see a dragon sized Tuxedo.  Its coat has a twin tail.
 ~
 #23496
 wedding dress gown~
@@ -410,7 +410,7 @@ A long white gown.~
 E
 wedding dress~
    You see a beautiful white wedding dress.  It covers the complete body of the
-bride and its train stretches five feet out from the bride.    
+bride and its train stretches five feet out from the bride.
 ~
 #23497
 engagement ring~
@@ -460,7 +460,7 @@ A little black book is sitting here calling your name.~
 E
 book~
    Upon these pages are players that have upset Ferret and will not receive
-help!  
+help!
 
 Demigod
 Saint

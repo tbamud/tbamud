@@ -4,7 +4,7 @@ the forest brownie~
 A forest brownie scampers about here.
 ~
    The forest brownie winks at you and scurries away.  Quite an amicable
-fellow.    
+fellow.
 ~
 204 0 0 0 1048580 0 0 0 800 E
 12 16 2 2d2+120 2d2+2
@@ -17,7 +17,7 @@ the wolf~
 a wolf trots by, looking for a rabbit
 ~
    The wolf looks rather hungry.  You see him trying to decide if YOU taste
-like rabbit.    
+like rabbit.
 ~
 76 0 0 0 1048576 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
@@ -29,8 +29,8 @@ rabbit brown~
 the brown rabbit~
 A brown rabbit hops along merrily.
 ~
-   The rabbit looks up at you with big brown eyes, then scoots away..  Hey..  
-There goes lunch!    
+   The rabbit looks up at you with big brown eyes, then scoots away..  Hey..
+There goes lunch!
 ~
 200 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
@@ -56,7 +56,7 @@ the guardian demon~
 A shadowy form steps out of the mist.
 ~
    You see a nightmarish array of teeth and claws, the guardian demon is
-determined to rip your guts out.    
+determined to rip your guts out.
 ~
 42 0 0 0 56 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
@@ -82,7 +82,7 @@ the demon imp~
 A tiny demon snarls at you.
 ~
    It seems like a relatively harmless little demon, but those sharp teeth
-might hurt if they were wrapped around your arm.    
+might hurt if they were wrapped around your arm.
 ~
 76 0 0 0 1048576 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
@@ -95,7 +95,7 @@ the minor demon~
 A minor demon jumps out of the shadows at you!
 ~
    The demon resembles little, but a sinewy mass of flesh, tendons, and teeth.
-It glares at you with pure fury in it's eyes.    
+It glares at you with pure fury in it's eyes.
 ~
 104 0 0 0 4 0 0 0 -900 E
 13 16 2 2d2+130 2d2+2
@@ -108,7 +108,7 @@ the Graye Citizen~
 A citizen of Graye rushes by here, looking over his shoulder.
 ~
    The citizen looks rather nervous- You would too if your town was beseiged by
-demons.    
+demons.
 ~
 200 0 0 0 0 0 0 0 700 E
 15 15 1 3d3+150 2d2+2
@@ -121,7 +121,7 @@ the Graye Citizen~
 A citizen of Graye rushes by here, looking over her shoulder.
 ~
    The citizen looks rather nervous- You would too if your town was beseiged by
-demons.    
+demons.
 ~
 200 0 0 0 0 0 0 0 700 E
 15 15 1 3d3+150 2d2+2
@@ -134,7 +134,7 @@ a major demon~
 A major demon lurks about here.
 ~
    You look deep into the eyes of the beast.  You sense no absolutely no
-intellect, only raw power and rage.    
+intellect, only raw power and rage.
 ~
 108 0 0 0 4 0 0 0 -900 E
 22 13 -3 4d4+220 3d3+3
@@ -146,7 +146,7 @@ guardian rift~
 the rift guardian~
 A shadow wraith drifts into your way.
 ~
-   All you see is a fog-like apparition, with two glowing red eyes...    
+   All you see is a fog-like apparition, with two glowing red eyes...
 ~
 42 0 0 0 4 0 0 0 -900 E
 24 12 -4 4d4+240 4d4+4
@@ -174,7 +174,7 @@ The King's Advisor is here, weeping.
 ~
    He looks at you and begs, 'please!  They have taken him!  I can see that you
 are a great adventurer..  Please bring him back to us!  ' The advisor turns
-from you and continues to sob uncontrollably.    
+from you and continues to sob uncontrollably.
 ~
 10 0 0 0 0 0 0 0 900 E
 22 13 -3 4d4+220 3d3+3
@@ -186,7 +186,7 @@ irgon arch demon~
 the Arch-Demon Irgon~
 The Arch-Demon Irgon emerges from the shadows.
 ~
-   Irgon frowns down upon you.  His oily black skin reflects the torchlight.  
+   Irgon frowns down upon you.  His oily black skin reflects the torchlight.
 A thick white claw points at you, and he utters, 'prepare to die.  '
 ~
 42 0 0 0 4 0 0 0 -900 E
@@ -201,7 +201,7 @@ Scrytin, the demon lord's apprentice, smiles at you.
 ~
    Scrytin looks at you kindly, and suddenly you feel very peacefull and
 relaxed.  You stare directly into his eyes, and feel yourself slipping deeper
-and deeper...  NOOO!!  Scrytin growls, 'Won't become a minion of mine eh?..  
+and deeper...  NOOO!!  Scrytin growls, 'Won't become a minion of mine eh?..
 Then you shall DIE!  '
 ~
 104 0 0 0 0 0 0 0 -999 E
@@ -215,7 +215,7 @@ Relnar~
 The good king Relnar is here.
 ~
    You look into the eyes of the descendant of Graye, and know now why his city
-is so prosperous and happy.    
+is so prosperous and happy.
 ~
 10 0 0 0 0 0 0 0 999 E
 30 10 -8 6d6+300 5d5+5

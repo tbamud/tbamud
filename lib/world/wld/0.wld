@@ -26,15 +26,15 @@ S
 #2
 Welcome to the Builder Academy~
    A builder is a term usually used to describe a person who designs MUD zones
-for other characters to explore. Any player with motivation, ideas, and good 
-writing style can be a builder as well as a player. As a Builder, your job is 
-to create the virtual world in which players can roam around, solve puzzles, 
-find treasures, and gain experience. A Builder creates the rooms, objects, 
-mobs, shops, and triggers with which players will interact. 
+for other characters to explore. Any player with motivation, ideas, and good
+writing style can be a builder as well as a player. As a Builder, your job is
+to create the virtual world in which players can roam around, solve puzzles,
+find treasures, and gain experience. A Builder creates the rooms, objects,
+mobs, shops, and triggers with which players will interact.
    If this is something you are interested in doing then you have come to the
-right place. Be warned, building is not easy and will require hard work, 
+right place. Be warned, building is not easy and will require hard work,
 patience, and the ability to take constructive criticism.
-   Your first task is to apply for builder status at: 
+   Your first task is to apply for builder status at:
 @Cwww.tbamud.com@n
    When you finish and submit the application tell anyone level 32 or higher
 and they will advance you to begin your training.
@@ -52,11 +52,11 @@ T 199
 The Builder Academy~
    Congratulations on your new-found immortality. Now all you need to know is
 how to use your new abilities. This zone describes how to create CircleMUD
-areas. The intended audience is builders interested in creating new worlds.  
+areas. The intended audience is builders interested in creating new worlds.
 There are a few basic rules to understand while exploring this zone and
 learning how to build. Everything in @RCAPITAL LETTERS@n is something that
 can be further explored by typing @RCAPITAL LETTERS@n and hitting return.
- 
+
 Test this out, @RHELP DISCLAIMER@n.
 ~
 0 8 0 0 0 0
@@ -92,7 +92,7 @@ S
 The Builder Academy Implementation~
    Here at The Builder Academy we try not to restrict builders with rules and
 regulations. But, some are required in order to make this place run smoothly.
-Please realize we handle a lot of newbie builders with a very minimal staff so 
+Please realize we handle a lot of newbie builders with a very minimal staff so
 be patient, learn to use the helpfiles and have fun.
    Read the following help files on TBA's training process:
 @RHELP TRIALROOM
@@ -112,18 +112,18 @@ D3
 S
 #6
 Building~
-   This hallway running west to east is the route you will advance after 
-completing each hallway leading off to the north (if there is one) @RHELP TBAMAP@n.  
+   This hallway running west to east is the route you will advance after
+completing each hallway leading off to the north (if there is one) @RHELP TBAMAP@n.
    The first thing all builders need to realize is that their area is not going
 to be the best, and it is not going to have the best equipment or toughest mobs
-in the game.  All new builders want to make a piece of equipment that is better 
-than any other and they all want the large group of players to remember the 
-trials and tribulations they went through while trying to kill a mob that they 
+in the game.  All new builders want to make a piece of equipment that is better
+than any other and they all want the large group of players to remember the
+trials and tribulations they went through while trying to kill a mob that they
 have created.  If you are a veteran of any MUD, you know that the toughest mobs
-have already been made, and to try to create a mob that is tougher is almost 
+have already been made, and to try to create a mob that is tougher is almost
 impossible and will only duplicate existing mobs, or throw off the balance of
 the game. So start out small and do not expect to create a perfect zone the
-first time around. Do not make anything super-powerful. It will not be allowed 
+first time around. Do not make anything super-powerful. It will not be allowed
 and you will have to redo it, wasting everyone's time, both yours and ours.
    Read the following help files:
 @RHELP BUILDER
@@ -155,15 +155,15 @@ D4
 S
 #7
 Writing Good Descriptions~
-   The following help files go into the lengthy subject of writing good 
+   The following help files go into the lengthy subject of writing good
 descriptions.  This will also cover proper grammar and the use of the text
-editor where you enter all of your long descriptions.  
-   The hardest part for most new builders is writing descriptions. We assume 
-that you are reasonably literate and know basic grammar and spelling. If 
-this does not describe you, we humbly suggest that you take some classes, 
-get a dictionary, and start learning. Proper grammar should be used at all 
-times. If you can write reasonably well, great! I am sure you will still 
-find this hallway useful. We will discuss some of the issues related to 
+editor where you enter all of your long descriptions.
+   The hardest part for most new builders is writing descriptions. We assume
+that you are reasonably literate and know basic grammar and spelling. If
+this does not describe you, we humbly suggest that you take some classes,
+get a dictionary, and start learning. Proper grammar should be used at all
+times. If you can write reasonably well, great! I am sure you will still
+find this hallway useful. We will discuss some of the issues related to
 writing specifically for a MUD, such as:
 @RHELP DESCRIBING
 HELP YOU
@@ -196,7 +196,7 @@ it is because your OLC is not set to that zone. @RSTAT SELF@n to see what your
 assigned to you by the staff.  The zone number is then divided into VNUM's ##00
 to ##99. For example, Zone 12 has VNUM's 1200 to 1299. These numbers are
 critical; they are the identities of the rooms within the game.  They can be
-used with "goto" to go to that room.    
+used with "goto" to go to that room.
    Now, lets look at the redit menu. Type the following: @RHELP REDIT-MENU@n
 That is an example of the redit menu you will see when you edit a room.
 Notice how each important line has an associated help topic. To learn more
@@ -223,15 +223,15 @@ How to Use Oedit~
 Please remember that every MUD has different ideas of balance and the basics of
 building you learn here should be universal, but expect limitations on objects
 from your MUD administration. To further help your training we have added object
-standards to all values a builder can set. This way you know what values are 
-appropriate and will not have to redo objects because you did not know what 
+standards to all values a builder can set. This way you know what values are
+appropriate and will not have to redo objects because you did not know what
 values to set.
-   Oedit can be used by typing "oedit <<VNUM>>".  A zone is divided into VNUM's 
+   Oedit can be used by typing "oedit <<VNUM>>".  A zone is divided into VNUM's
 ##00 to ##99.  For example, Zone 12 has VNUM's 1200 to 1299.  These numbers
-are critical; they are the identities of the objects within the game.  It is 
+are critical; they are the identities of the objects within the game.  It is
 a good habit to start using all VNUMs from ##00 to ##99 consecutively.
    Start off by checking out the oedit menu. Type @RHELP OEDIT-MENU@n
-That is an example of the oedit menu you will see when you edit an object. 
+That is an example of the oedit menu you will see when you edit an object.
 Notice how each important line has an associated help topic. To learn more
 about it just see the appropriate help file. If this is your first experience
 with oedit read ALL the help files.
@@ -248,8 +248,8 @@ D3
 S
 #10
 How to Use Medit~
-   Next you will learn how to create mobiles with the mobile editor. Mobs are 
-the non-player characters within the game (NPC's). With medit you will be able 
+   Next you will learn how to create mobiles with the mobile editor. Mobs are
+the non-player characters within the game (NPC's). With medit you will be able
 to create a mob and modify all of its stats (statistics), flags, and settings.
    Mobile edit, or medit, is how you create the monsters a player can interact
 with.  Notice I use the word interact.  Every mob should not be made for just
@@ -257,8 +257,8 @@ killing.  There can and should be a variety.  For example, one mob could be
 made for high experience value, another for gold, another for a unique object,
 another to fill a storyline, another as part of a quest.  The options are
 limitless, especially with triggers, mobs are meant for much more than just
-killing.  Medit can be used by typing "medit <VNUM>".  
-   Type @RHELP MEDIT-MENU@n That is an example of the medit menu you will see 
+killing.  Medit can be used by typing "medit <VNUM>".
+   Type @RHELP MEDIT-MENU@n That is an example of the medit menu you will see
 when you edit a mobile. Each line has its own help topic you should also read.
 ~
 0 8 0 0 0 0
@@ -273,25 +273,25 @@ D3
 S
 #11
 How to Use Zedit~
-   Zedit is what is used to load mobiles and objects into rooms. Every zone 
+   Zedit is what is used to load mobiles and objects into rooms. Every zone
 goes through a zone reset, each one depending on how you set it. Upon a zone
 reset all rooms, mobs, and objects will reload if they are no longer present.
    Most new builders think mobs and objects are loaded by the "load" command.
 This is not how it is done. Instead you use zedit in each room you wish a
-mob or object to load. This way whenever the zone resets it will execute the 
+mob or object to load. This way whenever the zone resets it will execute the
 zone commands to load all of your mobs and objects.
-   Zone edit, or zedit, is how you control how mobiles and objects are 
-integrated within the zone to create an inhabited world. Using "load obj 
-<VNUM>" does not ensure that the mob will always be there, in fact if someone 
-kills it or the mud reboots it will be gone. So you need to load mobs and 
+   Zone edit, or zedit, is how you control how mobiles and objects are
+integrated within the zone to create an inhabited world. Using "load obj
+<VNUM>" does not ensure that the mob will always be there, in fact if someone
+kills it or the mud reboots it will be gone. So you need to load mobs and
 objects through zedit.
    It can be used just like redit, by simply typing zedit while you are in the
 room you wish to edit or "zedit <<VNUM>>." Now, lets look at the zedit menu.
 @RHELP ZEDIT-MENU@n.  That is an example of the zedit menu, be sure to read
 the related helpfiles on each menu option.
    Zedit contains zone settings, followed by a series of reset commands. Each
-time a zone is reset, the server executes all the commands in order from 
-beginning to end. All zones are reset when the server first boots, and 
+time a zone is reset, the server executes all the commands in order from
+beginning to end. All zones are reset when the server first boots, and
 periodically reset again while the game is running.
 ~
 0 8 0 0 0 0
@@ -306,16 +306,16 @@ D3
 S
 #12
 How to Use Sedit~
-   Shops are stores within the mud that players can list the items for sale 
-and then buy or sell from. Shops are one of the more complicated aspects of 
-building and should not be attempted until you are comfortable with the other 
-forms of OLC (except trigedit).    
+   Shops are stores within the mud that players can list the items for sale
+and then buy or sell from. Shops are one of the more complicated aspects of
+building and should not be attempted until you are comfortable with the other
+forms of OLC (except trigedit).
    When you make a shop I suggest you use the shop vnum that matches the room
-you wish the shop to be in. For example, say I want a shop in room 1333. I 
-would sedit 1333 to create that shop. Now, let us look at the sedit menu.  
-Type the following: @RHELP SEDIT-MENU@n. That is an example of the sedit menu 
-you will see when you edit a shop. Notice how each important line has an 
-associated help topic. To learn more about it just see the appropriate help 
+you wish the shop to be in. For example, say I want a shop in room 1333. I
+would sedit 1333 to create that shop. Now, let us look at the sedit menu.
+Type the following: @RHELP SEDIT-MENU@n. That is an example of the sedit menu
+you will see when you edit a shop. Notice how each important line has an
+associated help topic. To learn more about it just see the appropriate help
 file. If this is your first experience with sedit read ALL the help files.
 ~
 0 8 0 0 0 0
@@ -331,9 +331,9 @@ S
 #13
 How to Use Trigedit~
    The hall to the north will show you how to use the trigger editor. Trigedit
-is the most advanced form of OLC we have to offer. It is the hardest, but also 
-the most rewarding. If you are looking to pour life into your mobs, enliven 
-your rooms or just make your objects special? This can all be done with 
+is the most advanced form of OLC we have to offer. It is the hardest, but also
+the most rewarding. If you are looking to pour life into your mobs, enliven
+your rooms or just make your objects special? This can all be done with
 trigedit. Have fun with the power of (minor) coding!
    Like all the hallways before use this hallway in conjunction with the help
 files: @RHELP TRIGEDIT-MENU@n and the commands @RTLIST@n and @RTSTAT@n commands.
@@ -358,12 +358,12 @@ S
 #14
 Planning~
    The ideas discussed in the help files below are tried and true. Though they
-may not work for everyone, they will for the majority. Learn from others 
-mistakes and understand the planning required to make a good zone. Building a 
-great zone takes many things; such as time, patience, good grammar/spelling, 
-knowing how to balance your zone, a lot of work, and most importantly 
-planning. Now this all may sound like a lot to do, but I can assure you that 
-with this zone, and the help of others, you can do this. 
+may not work for everyone, they will for the majority. Learn from others
+mistakes and understand the planning required to make a good zone. Building a
+great zone takes many things; such as time, patience, good grammar/spelling,
+knowing how to balance your zone, a lot of work, and most importantly
+planning. Now this all may sound like a lot to do, but I can assure you that
+with this zone, and the help of others, you can do this.
 @RHELP DICTIONARY@n
 @RHELP WORK@n
 @RHELP PLANNING@n
@@ -388,7 +388,7 @@ S
 #15
 Lessons Learned and Advanced Building~
    Here are a few lessons that have been passed down from builder to builder
-through out the years.  Take heed to these words as they have been and done 
+through out the years.  Take heed to these words as they have been and done
 what you are now doing many times over.
 @RHELP LANCE
 HELP SNOWLOCK
@@ -413,19 +413,19 @@ S
 Immortal Commands~
    As an immortal you have some new commands available to you.  To see all
 of your immortal commands simply type @RWIZHELP@n. Every command in the game
-has a help entry. So the best way to learn how to use all these commands is 
-by simply typing @RHELP <COMMAND>@n. This will bring up some information 
-about the command. For example, this is what you will see if you type 
+has a help entry. So the best way to learn how to use all these commands is
+by simply typing @RHELP <COMMAND>@n. This will bring up some information
+about the command. For example, this is what you will see if you type
 @RHELP NOHASSLE@n:
- 
+
 @WNOHASSLE      -------->> help topic
- 
+
 Usage: nohassle         ---------->> what you need to type to do it.
- 
+
    Toggles a flag to prevent aggressive monsters from attacking and also prevents
-immortals from firing triggers. If you wish to test triggers you must turn 
+immortals from firing triggers. If you wish to test triggers you must turn
 nohassle off.  -->> description
- 
+
 See Also: HOLYLIGHT, ROOMFLAGS  ------->> other related commands in help file.
 @n
    Now is the time to practice all of your immortal commands, make sure you
@@ -448,7 +448,7 @@ S
 Overview of the MUD World~
    The first thing you need to build is a good telnet client.
 @RHELP TELNET@n for a list.
- 
+
    Once you have a good client you must understand a few basics:
 @RHELP VIRTUAL-NUMBERS@n
 @RHELP TERMINOLOGY@n
@@ -480,7 +480,7 @@ D2
 S
 #19
 A Quest Room~
-   In this room you may be able to finish the Mob Quest Tutorial.    
+   In this room you may be able to finish the Mob Quest Tutorial.
 ~
 0 8 0 0 0 0
 D3
@@ -490,14 +490,14 @@ D3
 S
 #20
 Advanced Trigedit Example~
-   Begin by @RSTAT GATEGUARD@n and then tstat each trigger listed to see what 
+   Begin by @RSTAT GATEGUARD@n and then tstat each trigger listed to see what
 they do.  This example is explained under @RHELP TRIGEDIT-ADVANCED-TUTORIAL@n.
 Including triggers 4, 5, 7, 8.
 To pay the gateguard: @RGIVE 10 COINS GUARD@n.
 ~
 0 24 0 0 0 0
 D0
-   The tutorial hallway continues.  
+   The tutorial hallway continues.
 ~
 gateway~
 2 46 21
@@ -514,7 +514,7 @@ these variables.  The most basic usage is to set a quest as completed when the
 player is done.  Another use would be to set something else like
 player_can_breathe_water and prevent a player from entering a certain room
 unless they have this variable set.  To see what variables are set on a player
-simply stat that player.  @RSTAT SELF@n.    
+simply stat that player.  @RSTAT SELF@n.
 ~
 0 24 0 0 0 0
 D0
@@ -533,7 +533,7 @@ S
 #22
 Quest Variables Example~
    I used triggers 190 thru 192 to setup this example.  Simply tstat each to see
-what they do.  
+what they do.
 ~
 0 8 0 0 0 0
 D3
@@ -545,7 +545,7 @@ T 189
 #23
 Trigger Help Files~
    I have added extensive help files on every type of trigger.  Please use them
-and give feedback.  The easiest way to get to them all is through: 
+and give feedback.  The easiest way to get to them all is through:
 @RHELP TRIGEDIT-MENU@n and @RHELP TRIGEDIT-TYPE@n.
    There are 1000's of triggers on TBA you can use as examples. @RHELP EXAMPLES@n
 for a few. @RHELP TRIG-EXAMPLES@n for some advanced ones.
@@ -579,7 +579,7 @@ into the water images begin to form from out of the depths, coalescing into a
 vivid scene.  Your heart begins to pound and your breathing becomes deeper as
 you watch the images taking shape in the turbulent liquid.  Your mouth becomes
 dry as you see yourself in the watery panorama ...  And time stands still for
-just one moment ...  As you see your future in the depths ...    
+just one moment ...  As you see your future in the depths ...
 ~
 0 520 0 0 0 0
 S
@@ -615,9 +615,9 @@ longer online.
 S
 #89
 The Prison Cell Corridor~
-   This long hallway is barely wide enough for two people to walk abreast. 
+   This long hallway is barely wide enough for two people to walk abreast.
 Along the Northern wall are steel doors spaced a few feet apart while the
-southern wall is of cinder block construction. 
+southern wall is of cinder block construction.
 ~
 0 8 0 0 0 0
 D1
@@ -735,22 +735,22 @@ T 172
 #98
 The End of the Beginning~
    For those of you who have read this far and actually made something out of
-it, Congratulations. You have the patience to become a builder and make 
-CircleMUD zones. If you wimped out or skipped some areas then please MUDmail 
-me why. @RAT POSTMASTER MAIL RUMBLE@n. Also, please MUDmail or email me any 
-questions, comments, concerns, or suggestions about this zone.  What did I do 
-wrong, forget, misspell, anything! If you have something to add feel free to 
+it, Congratulations. You have the patience to become a builder and make
+CircleMUD zones. If you wimped out or skipped some areas then please MUDmail
+me why. @RAT POSTMASTER MAIL RUMBLE@n. Also, please MUDmail or email me any
+questions, comments, concerns, or suggestions about this zone.  What did I do
+wrong, forget, misspell, anything! If you have something to add feel free to
 MUDmail or email me. @RHELP EMAIL@n.
- 
+
    This area is a culmination of help files I have come across and my own
 experiences in the CircleMUD community. I thank all those before who have
 helped in the creation of this masterpiece. Special Thanks to Welcor,
 Elaseth, Manivo, Snowlock, and Lance for their additions.
- 
+
 Remember, MUDding is fun!
- 
+
 Respectfully,
- 
+
 Rumble
 ~
 0 8 0 0 0 0

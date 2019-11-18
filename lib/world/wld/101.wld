@@ -1,6 +1,6 @@
 #10100
 South Road Zone Description Room~
-   Builder   : 
+   Builder   :
 Zone         : 101 South Road
 Began        : 1999
 Player Level : 6-8
@@ -10,7 +10,7 @@ Objects      : 17
 Shops        : 0
 Triggers     : 0
 Theme        : The zone is a basic highway filler to link other zones.
-Notes        : Meant to connect a main city, Haven, and Iuel.Plains/fields 
+Notes        : Meant to connect a main city, Haven, and Iuel.Plains/fields
    with the desert and mountains to the east. A river runs through it ;-).
 Replace all XXXX with a name of a major city.
 Links        : 01n to a city, 10s, 37s to Haven
@@ -24,7 +24,7 @@ The South Road~
    You are just south of the gates to a city.  A gust of warm wind blows in from
 the east warning you that the desert isn't far off in that direction.  The road
 leads off to the south, and north into the capital.  To the east and west
-farmland stretches as far as you can see.  
+farmland stretches as far as you can see.
 ~
 101 0 0 0 0 2
 D2
@@ -34,15 +34,15 @@ D2
 E
 gates~
    You are looking at the great gates of XXXX.  The citywall towers before you,
-there is no way you could get in, save through these huge gates.  
+there is no way you could get in, save through these huge gates.
 ~
 S
 #10102
 The South Road~
-   You are walking on the south road which connects to the city of Haven.  
+   You are walking on the south road which connects to the city of Haven.
 Fields stretch to the east and west while the road continues north toward the
 southern gate of the capital, which you can just barely see from here, and south
-through the farmland.  A warm wind from the east reminds you of the desert.  
+through the farmland.  A warm wind from the east reminds you of the desert.
 ~
 101 0 0 0 0 2
 D0
@@ -59,7 +59,7 @@ The South Road~
    You are walking on the south road.  A gust of warm wind from the east reminds
 you of the desert not too far off in that direction.  The walls of a large city
 can be seen on the horizon to the north while farmland to the east and south has
-forced the road to take a turn to the west.  
+forced the road to take a turn to the west.
 ~
 101 0 0 0 0 2
 D0
@@ -231,7 +231,7 @@ The South Road~
 bridge crosses the river connecting to the road on the other side while the road
 continues to the south from here.  To the east and west grassland stretch as far
 as you can see.  A warm wind blows in from the east as to remind you of the
-desert dominating the southeastern part of the continent.  
+desert dominating the southeastern part of the continent.
 ~
 101 0 0 0 0 2
 D0
@@ -248,7 +248,7 @@ The South Road~
    You are walking on the south road between the city and Haven.  The road
 continues north and west from here around a small formation of rocks.  To the
 east, grassy plains stretch as far as you can see.  And you can hear the sound of
-running water greeting you from the north.  
+running water greeting you from the north.
 ~
 101 0 0 0 0 2
 D0
@@ -282,7 +282,7 @@ The South Road~
    You are walking on the south road between the city and Haven.  The road
 continues north and south from here while to the east a formation of rocks
 blocks your view and passage.  To the west grassy plains stretch as far as you
-can see.  A faint sound of running water can be heard coming from the north.  
+can see.  A faint sound of running water can be heard coming from the north.
 ~
 101 0 0 0 0 2
 D0
@@ -316,7 +316,7 @@ The South Road~
 to the south.  To the east, your view and path are blocked by a small formation
 of rocks.  To the west, grassy plains stretch as far as you can see.  A gust of
 warm wind blows down from the rocks to the east, as if to remind you that you
-are still relatively close to the desert.  
+are still relatively close to the desert.
 ~
 101 0 0 0 0 2
 D0
@@ -333,7 +333,7 @@ The South Road~
    You are walking on the south road connecting the city with Haven in the
 south.  The road leads off to the north and east here while to the south and
 west, grassy plains stretch as far as you can see.  A gust of warm wind comes in
-from the east, as if to remind you of the desert and the secrets it holds.  
+from the east, as if to remind you of the desert and the secrets it holds.
 ~
 101 0 0 0 0 2
 D0
@@ -347,10 +347,10 @@ D1
 S
 #10120
 The South Road~
-   You are walking on the south road, somewhere between the city and Haven.  
+   You are walking on the south road, somewhere between the city and Haven.
 The road continues east and west from here while to the north, your view and
 path are blocked by a small formation of rocks.  In the distance to the south
-you can barely see the beginning of a seemingly ancient dense forest.  
+you can barely see the beginning of a seemingly ancient dense forest.
 ~
 101 0 0 0 0 2
 D1
@@ -406,7 +406,7 @@ to and from the city which is considered to be the centre of the world around
 these parts.  A gust of warm wind blows in from the east, as if to remind you of
 the desert not too far off.  You see fertile grasslands to the east and west
 while the road itself continues to the north and south.  Just south of here you
-can barely make out a small path leading off to the west.  
+can barely make out a small path leading off to the west.
 ~
 101 0 0 0 0 2
 D0
@@ -424,7 +424,7 @@ The South Road~
 warm wind blows in from the desert in the east, as if to remind you of its
 secrets.  The road continues north and south here while a small trail leads off
 to the west.  Your view to the east is dominated by fertile grasslands which are
-broken by a fine yellow line in the horizon.  
+broken by a fine yellow line in the horizon.
 ~
 101 0 0 0 0 2
 D0
@@ -620,12 +620,12 @@ S
 #10135
 The South Road~
    The road leads off to the south like a giant snake eating its way through the
-hills in between a dense forest to the west and the mountains to the east.  
+hills in between a dense forest to the west and the mountains to the east.
 Sounds from unseen, and probably even unknown, animals can be heard from the
 forest to the west but at this point you see no way of entering the dense shrubs
 and woods preventing entrance to the adventures which are likely to be within.
 The wind here is a strange blend of hot dry desert air and biting cold from the
-mountain glaciers.  
+mountain glaciers.
 ~
 101 0 0 0 0 2
 D2
@@ -642,7 +642,7 @@ The South Road~
    The road continues to the north, where it makes a turn west, and to the
 south, through the foothills between the mountains to the east and a dense
 forest to the west.  Animal sounds can be heard from the forest, which at this
-point is too dense to enter.  
+point is too dense to enter.
 ~
 101 0 0 0 0 4
 D0
@@ -660,7 +660,7 @@ The South Road~
 between a dense forest to the west, and the mountains towering over you to the
 east, gusts of cold wind comes in from the mountains to the east, strangling
 the sounds from the forest.  You barely notice the small trail leading east
-from here towards the mountains.    
+from here towards the mountains.
 ~
 101 0 0 0 0 4
 D0

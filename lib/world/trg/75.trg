@@ -34,7 +34,7 @@ wait 20 s
 chubby man greeting~
 0 g 100
 ~
-say Hello, wait here and I will see if Empress Kiona will see you.    
+say Hello, wait here and I will see if Empress Kiona will see you.
 ~
 #7567
 voodoo doll says out~

@@ -3,7 +3,7 @@ Dragon Plains~
    A huge outstretch of sand is before you.  You notice a few scattered trees
 and plants that should have been dead long ago.  A lot of the leaves on the
 trees are missing.  They appear to have been torn off.  Several large foot
-prints linger in the sand.    
+prints linger in the sand.
 ~
 233 132 0 0 0 2
 D1
@@ -12,7 +12,7 @@ D1
 0 0 23301
 E
 credits info~
-   Builder   : 
+   Builder   :
 Zone         : 233 Dragon Plains
 Began        : 1998
 Player Level : 15-17
@@ -21,8 +21,8 @@ Mobs         : 24
 Objects      : 28
 Shops        : 0
 Triggers     : 0
-Theme        : 
-Plot         : 
+Theme        :
+Plot         :
 Links        : 00
 Map          : 02
 ~
@@ -31,7 +31,7 @@ S
 Dragon Plains~
    As you continue walking through the dry plains, you feel your feet sinking
 into the sand, making it difficult for you to walk.  You can see a small stream
-to the south.  But is it really there, or is it a mirage?    
+to the south.  But is it really there, or is it a mirage?
 ~
 233 64 0 0 0 2
 D1
@@ -52,7 +52,7 @@ A Small Stream~
    You have come to a small stream filled with crystal blue water.  You look
 into the water and see several small pebbles drifting through the current of
 the stream.  You look ahead to see where the stream ends, and notice that it
-disappears into the ground.    
+disappears into the ground.
 ~
 233 256 0 0 0 7
 D0
@@ -65,7 +65,7 @@ Dragon Plains~
    You hear a few twigs crunch under your feet.  You look down just in time to
 see the sand swallow the wood.  There is a slight incline here, causing some
 drifts of sand to roll across your feet.  You feel the wind pick up as you
-continue on your way.    
+continue on your way.
 ~
 233 0 0 0 0 2
 D0
@@ -86,7 +86,7 @@ A Huge Footprint~
    You have stepped inside the footprint of a very large creature!  You see
 sand begin to fill in the large hole, threatening to trap you inside.  The
 sides of the huge hole are sturdy enough to climb out of, but you'd better
-hurry before you get burried alive.    
+hurry before you get burried alive.
 ~
 233 64 0 0 0 2
 D2
@@ -98,7 +98,7 @@ S
 Sand Drift~
    You find yourself standing on a small sand drift.  It's almost as big as a
 hill, but not as steep.  Some dried up leaves lay at your feet, waiting to be
-blown away in the wind.  You hear some birds singing in the distance.    
+blown away in the wind.  You hear some birds singing in the distance.
 ~
 233 4 0 0 0 2
 D1
@@ -118,7 +118,7 @@ S
 Dragon Plains~
    Sand dances around before you, almost hypnotizing you.  You feel some grains
 blow through your hair, making your head tingle with relaxation.  There is a
-large tumbleweed being blown around by the breeze.    
+large tumbleweed being blown around by the breeze.
 ~
 233 0 0 0 0 2
 D0
@@ -134,7 +134,7 @@ S
 Dragon Plains~
    You feel a light mist of sand hit your face.  You close your eyes, shielding
 yourself from the flying grains.  You notice some small footprints in the sand.
-They are much too small to be ones of a dragon.  What could they be from?    
+They are much too small to be ones of a dragon.  What could they be from?
 ~
 233 128 0 0 0 2
 D1
@@ -150,7 +150,7 @@ S
 Skeleton Shack~
    You have come to a small shack made from bones of several creatures that are
 long dead.  The smell of decay fills your nostrils, almost making you gag.  A
-light covering of animal skin is on the the roof to help keep the rain out.  
+light covering of animal skin is on the the roof to help keep the rain out.
 ~
 233 0 0 0 0 2
 D0
@@ -164,10 +164,10 @@ D1
 S
 #23309
 Skeleton Shack~
-   As you enter the horrid smelling shack, you look at your surroundings.  
+   As you enter the horrid smelling shack, you look at your surroundings.
 There is not much here to look at.  Just some broken furniture and scattered
 bones laying about the floor.  There are no windows, just beams of light
-creeping in through the cracks between the bones.    
+creeping in through the cracks between the bones.
 ~
 233 320 0 0 0 0
 D3
@@ -179,7 +179,7 @@ S
 An Abandoned Well~
    An old rusted up well stands before you.  There is no possible way that you
 could get any water out of here, not that anyone would want to.  The bottom of
-the well is crawling with large black beetles.  Watch out, one might escape!  
+the well is crawling with large black beetles.  Watch out, one might escape!
 ~
 233 0 0 0 0 2
 D1
@@ -195,7 +195,7 @@ S
 Dragonscale Tunnel~
    You have entered a straight tunnel made from the scales of a dragon.  The
 tunnel holds in a lot of heat, making it difficult for you to breathe.  The
-tunnel continues to the east.    
+tunnel continues to the east.
 ~
 233 4 0 0 0 0
 D1
@@ -212,7 +212,7 @@ Dragonscale Tunnel~
    As you step further into the tunnel, the smell of mildew fills your lungs.
 The stench almost knocks you over.  You look down at your feet and notice that
 you are walking on hollowed out skulls.  They crunch and crackle under your
-weight.    
+weight.
 ~
 233 0 0 0 0 0
 D1
@@ -228,7 +228,7 @@ S
 Dragonscale Tunnel~
    The feeling of death creeps over you as you continue walking on the skull
 path through the hot, sticky tunnel.  Sweat begins to drip off your face.  A
-tall glass of water would be great right about now.    
+tall glass of water would be great right about now.
 ~
 233 0 0 0 0 0
 D1
@@ -244,7 +244,7 @@ S
 Dragonscale Tunnel~
    As you continue walking, horrible images fill your mind.  You look around at
 all the bones around you and you begin to wonder how all these creatures died,
-and if any of them were human.  The tunnel continues to the east.    
+and if any of them were human.  The tunnel continues to the east.
 ~
 233 0 0 0 0 0
 D1
@@ -260,7 +260,7 @@ S
 Dragonscale Tunnel~
    You can see the end of the tunnel just up ahead to the east.  You feel a bit
 relieved as you feel the temperature begin to drop, and you are able to breathe
-once again.    
+once again.
 ~
 233 64 0 0 0 0
 D1
@@ -276,7 +276,7 @@ S
 Dragonscale Tunnel~
    You have reached the end of the tunnel.  Feeling a bit overwhelmed, you
 stumble out of the tunnel and fall onto the sand.  You feel your body begin to
-sink into the sand.  Struggling would do you no good.    
+sink into the sand.  Struggling would do you no good.
 ~
 233 0 0 0 0 2
 D2
@@ -292,7 +292,7 @@ S
 Sand Warp~
    You begin to feel your body falling through the sand.  Numerous sticks
 scratch at you, leaving swelling marks on your skin.  Grains of sand slip
-through your fingers, giving you nothing to hold on to.    
+through your fingers, giving you nothing to hold on to.
 ~
 233 320 0 0 0 0
 D0
@@ -308,7 +308,7 @@ S
 Sand Warp~
    As your helpless body continues to fall, images of death scream through your
 mind.  You begin to wonder whats at the end of the sand warp.  Dust from the
-sand fills your lungs, almost choking you.    
+sand fills your lungs, almost choking you.
 ~
 233 0 0 0 0 0
 D0
@@ -324,7 +324,7 @@ S
 Sand Warp~
    You're falling through the air at a tremendous speed.  All of a sudden you
 begin to slow down.  You feel yourself hit a hard metal floor.  A very loud
-banging sound echos throughout the room.  Where could you have gone?    
+banging sound echos throughout the room.  Where could you have gone?
 ~
 233 0 0 0 0 0
 D0
@@ -340,7 +340,7 @@ S
 Dragon Cave~
    As you stand up and brush layers of sand off yourself, you look around at
 your surroundings.  You appear to be in some sort of cave.  You'd better be
-careful.    
+careful.
 ~
 233 64 0 0 0 0
 D1
@@ -356,7 +356,7 @@ S
 Dragon Cave~
    Several small lights have been attatched to the cold stone walls, enabling
 you to see.  The floor at your feet is damp, making you feel cold.  You begin
-to feel that you're not alone.    
+to feel that you're not alone.
 ~
 233 0 0 0 0 0
 D1
@@ -373,7 +373,7 @@ Dragon Cave~
    As you continue making your way through the cave, you begin hearing
 scratching noises coming from a narrow tunnel in the ceiling.  Several images
 pass through your mind as you wonder whats causing the loud scratching sound.
-  
+
 ~
 233 128 0 0 0 0
 D0
@@ -388,8 +388,8 @@ S
 #23323
 Dragon Cave~
    An enormous nest of spiders blocks your way!  They cover the ceiling and
-walls.  As you look up at the tunnel you se more spiders entering the cave.  
-Maybe you'd better turn back while you still can.    
+walls.  As you look up at the tunnel you se more spiders entering the cave.
+Maybe you'd better turn back while you still can.
 ~
 233 0 0 0 0 0
 D1
@@ -405,7 +405,7 @@ S
 Dragon Cave~
    One getting past the nest, you breathe a sigh of relief.  That was a close
 call.  Maybe it would be wise to turn around and leave before you get killed.
-Only the bravest of adventurers dare go on from here.    
+Only the bravest of adventurers dare go on from here.
 ~
 233 256 0 0 0 0
 D0
@@ -421,7 +421,7 @@ S
 Dragon Cave~
    The light before you slowly starts to fade.  Your shadow dances on the wall
 around you, making you look somewhat deformed.  You hear a soft ticking noise
-to the south.    
+to the south.
 ~
 233 0 0 0 0 0
 D0
@@ -437,7 +437,7 @@ S
 Dragon Cave~
    As the ticking noise gets louder, you being searching for an exit out the
 cave.  Maybe you shouldn't have come here.  A cold chill rushes down your back,
-almost paralyzing you.    
+almost paralyzing you.
 ~
 233 0 0 0 0 0
 D0
@@ -453,7 +453,7 @@ S
 Dragon Cave~
    You're standing on the bottom of an old crumbling staircase.  There isn't
 much light here, so be careful.  The stairs lead up into the darkness.  Who
-knows whats lurking up there, waiting to attack you.    
+knows whats lurking up there, waiting to attack you.
 ~
 233 0 0 0 0 0
 D0
@@ -469,7 +469,7 @@ S
 Crumbling Staircase~
    You begin walking up the crumbling staircase.  Theres an old rotted railing
 here, but it most likely wouldn't support your weight.  Everything around you
-suddenly goes quiet.  Maybe too quiet.    
+suddenly goes quiet.  Maybe too quiet.
 ~
 233 0 0 0 0 0
 D2
@@ -485,7 +485,7 @@ S
 Crumbling Staircase~
    Flickering lights dance over the walls all around you, making you feel like
 you're in a dream.  The soft ticking noise that once left has returned.  The
-ticking sound fills your ears.  A strange coldness comes over your body.    
+ticking sound fills your ears.  A strange coldness comes over your body.
 ~
 233 0 0 0 0 0
 D0
@@ -502,7 +502,7 @@ An Empty Room~
    As you reach the top of the stairs, you look around to find yourself in a
 small room.  Several inches of sand covers the ground, making the room very
 dusty.  You see a small beam of light coming from a narrow hole in the floor.
-It may be big enough for you to fall through.  Watch your step.    
+It may be big enough for you to fall through.  Watch your step.
 ~
 233 64 0 0 0 0
 D2
@@ -518,7 +518,7 @@ S
 A Hole~
    Oops!  You obviously weren't watching where you were going.  You have fallen
 into the hole!  Shards of wood poke at your sides, causing you to freeze in
-pain.  A large cloud of dust looms over your head.    
+pain.  A large cloud of dust looms over your head.
 ~
 233 0 0 0 0 0
 D1
@@ -534,7 +534,7 @@ S
 A Hole~
    You stand up, struggling to get out of the hole.  You're able to grab onto a
 large board and pull yourself out.  Maybe from now on you'll pay closer
-attention to where you're walking.    
+attention to where you're walking.
 ~
 233 256 0 0 0 0
 D1
@@ -550,7 +550,7 @@ S
 Secret Passage~
    You found a secret passageway tucked into a wall.  You push on the door,
 allowing it to open.  You see a narrow set of wooden steps leading downwards.
-You wonder where they go.  Theres only one way to find out.    
+You wonder where they go.  Theres only one way to find out.
 ~
 233 64 0 0 0 0
 D0
@@ -566,7 +566,7 @@ S
 Secret Passage~
    You begin decending down the rickety stairs, hoping you don't fall through
 some of the rotted wood.  You can see your breath in front of you, but for some
-odd reason, the air doesnt feel the slightest bit cold.    
+odd reason, the air doesnt feel the slightest bit cold.
 ~
 233 0 0 0 0 0
 D0
@@ -580,10 +580,10 @@ D3
 S
 #23335
 Secret Passage~
-   As you step off the last step, you look around at your surroundings.  
+   As you step off the last step, you look around at your surroundings.
 Everything is covered in a thick layer of dust.  You see a broken table stashed
 away under the stairs.  The only things its good for now is the fire.  There is
-a small walkway to the west.    
+a small walkway to the west.
 ~
 233 0 0 0 0 0
 D1
@@ -597,10 +597,10 @@ D3
 S
 #23336
 A Narrow Walkway~
-   The walkway is just barely big enough for one person to squeeze through.  
+   The walkway is just barely big enough for one person to squeeze through.
 As you push yourself through the narrow opening, a small pile of dust falls
 into your hair and around your face, making you sneeze.  You seem to have
-entered a long hallway, but where does it lead?    
+entered a long hallway, but where does it lead?
 ~
 233 0 0 0 0 0
 D1
@@ -616,8 +616,8 @@ S
 Hall of Lost Souls~
    As you step into the hallway, a weird feeling takes over your body.  You are
 suddenly frozen in terror as your ears are filled with screams.  Just ahead of
-you, you begin to see an apparition appear.  You can see right through it.  
-Maybe you are imagining its presence.    
+you, you begin to see an apparition appear.  You can see right through it.
+Maybe you are imagining its presence.
 ~
 233 0 0 0 0 0
 D1
@@ -633,7 +633,7 @@ S
 Hall of Lost Souls~
    Several images fill your mind.  You begin to wonder where all the screaming
 is coming from, or if its really even there.  You can hear the echo of your
-footsteps ricochetting down the long hallway.    
+footsteps ricochetting down the long hallway.
 ~
 233 0 0 0 0 0
 D0
@@ -649,7 +649,7 @@ S
 Hall of Lost Souls~
    As you step down into the hard floor, you hear a splashing sound.  You look
 down and see that you are standing in a puddle, but it doesn't look like water.
-It almost looks like blood.  You suddenly feel disgusted.    
+It almost looks like blood.  You suddenly feel disgusted.
 ~
 233 64 0 0 0 0
 D0
@@ -665,7 +665,7 @@ S
 Hall of Lost Souls~
    You sense that the hall will soon come to an end.  The thick dark puddle
 remains on the floor, sticking to your feet.  You pick up the pace and start
-walking a little faster, in a hurry the leave this horrid place.    
+walking a little faster, in a hurry the leave this horrid place.
 ~
 233 0 0 0 0 0
 D0
@@ -681,7 +681,7 @@ S
 Hall of Lost Souls~
    As you had expected, the hall comes to an end here.  You stand at yet
 another stairway leading down.  As you look down the stairs, you see some
-torches attached to the wall.  A few of them look about ready to burn out.    
+torches attached to the wall.  A few of them look about ready to burn out.
 ~
 233 0 0 0 0 0
 D0
@@ -699,7 +699,7 @@ A Darkened Stairwell~
 nothing for you to hold onto if the stairs decided to give way.  There are
 several cobwebs above you, some getting into your hair.  The stairs moan under
 your weight.  You'd better move a little faster unless you want to fall to your
-death.    
+death.
 ~
 233 0 0 0 0 0
 D2
@@ -717,7 +717,7 @@ A Darkened Stairwell~
 nothing for you to hold onto if the stairs decided to give way.  There are
 several cobwebs above you, some getting into your hair.  The stairs moan under
 your weight.  You'd better move a little faster unless you want to fall to your
-death.    
+death.
 ~
 233 0 0 0 0 0
 D0
@@ -733,7 +733,7 @@ S
 A Darkened Stairwell~
    As you continue walking down the stairs, you begin feeling the temperature
 drop.  You can see your breath in front of you, then watch it disappear into
-the darkness.  You begin to wonder if you're all alone in here.    
+the darkness.  You begin to wonder if you're all alone in here.
 ~
 233 320 0 0 0 0
 D0
@@ -749,7 +749,7 @@ S
 A Darkened Stairwell~
    As you get closer to the bottom of the stairs you notice there is a large
 gap in the stairwell.  You might be able to jump across it, but if for some
-reason you don't make the jump, you might not survive to try again.    
+reason you don't make the jump, you might not survive to try again.
 ~
 233 64 0 0 0 0
 D1
@@ -765,7 +765,7 @@ S
 A Darkened Stairwell~
    As you get closer to the bottom of the stairs you notice there is a large
 gap in the stairwell.  You might be able to jump across it, but if for some
-reason you don't make the jump, you might not survive to try again.    
+reason you don't make the jump, you might not survive to try again.
 ~
 233 0 0 0 0 0
 D1
@@ -781,7 +781,7 @@ S
 A Hole in the Stairs~
    You have come to a large hole in the stairwell.  There seems to be atleast
 six steps missing.  You look into the hole, but see the darkness that awaits
-your arrival.  You take a deep breath and get ready for the jump.    
+your arrival.  You take a deep breath and get ready for the jump.
 ~
 233 0 0 0 0 0
 D1
@@ -796,8 +796,8 @@ S
 #23348
 A Hole in the Stairs~
    As you begin feeling yourself flying through the air, you keep your eyes on
-the bottom section of the stairs.  They are slowly coming closer to you.  
-Maybe you'll make the jump after all!    
+the bottom section of the stairs.  They are slowly coming closer to you.
+Maybe you'll make the jump after all!
 ~
 233 0 0 0 0 0
 D1
@@ -814,7 +814,7 @@ A Hole in the Stairs~
    You feel your body crash onto the first step that comes into view.  Your
 legs fall from the stairwell and hang in the emptiness below you.  You feel
 your heart pounding in your chest as you struggle to pull yourself up.  The
-step your holding onto begins to move!    
+step your holding onto begins to move!
 ~
 233 0 0 0 0 0
 D1
@@ -834,7 +834,7 @@ S
 Darkness~
    You feel your fingers slipping away from the board as your helpless body
 begins falling through the air.  You are too frozen by terror to scream.  Is
-this the end?    
+this the end?
 ~
 233 64 0 0 0 0
 D0
@@ -850,7 +850,7 @@ S
 A Darkened Stairwell~
    You made the jump!  Your head spins, making you feel quite dizzy.  Maybe it
 would be wise to sit here for a moment and rest.  A strange noise fills the
-room as if a swarm of insects is nearby.    
+room as if a swarm of insects is nearby.
 ~
 233 0 0 0 0 0
 D1
@@ -868,7 +868,7 @@ Darkness~
 bunch of cobwebs surround you, almost swallowing you.  A light suddenly comes
 on, showing you your surroundings.  The walls around you are made from
 skeletons.  Not just humans, but creatures as well.  You begin feeling sick to
-your stomach, wishing you never would have come here.    
+your stomach, wishing you never would have come here.
 ~
 233 0 0 0 0 0
 D0
@@ -884,7 +884,7 @@ S
 A Large Empty Room~
    As you take your last step off the stairwell you find yourself standing in a
 large empty room with nothing inside of it.  You scratch your head in
-confusion, wondering why you havent seen anyone else around.    
+confusion, wondering why you havent seen anyone else around.
 ~
 233 0 0 0 0 0
 D0
@@ -900,7 +900,7 @@ S
 A Large Empty Room~
    You walk deeper into the room, looking for any sign of life.  You see
 nothing but dust.  It's remarkable how large this room is.  You see a small
-walkway to the east.    
+walkway to the east.
 ~
 233 0 0 0 0 0
 D0
@@ -917,7 +917,7 @@ Skeleton Tunnel~
    As your body is gently set onto the ground, you find yourself standing in a
 small skeleton tunnel.  Several lights shine through the empty eye sockets of
 the creatures that once were.  You take a deep breath and continue on your way.
-  
+
 ~
 233 0 0 0 0 0
 D1
@@ -933,7 +933,7 @@ S
 Skeleton Tunnel~
    Some small bones line the floor beneath you.  You hear them snap and crackle
 under your weight.  You begin to shiver from the cold.  Maybe if you could find
-a torch, you could use it to warm yourself up.    
+a torch, you could use it to warm yourself up.
 ~
 233 0 0 0 0 0
 D1
@@ -949,7 +949,7 @@ S
 A Large Empty Room~
    You walk deeper into the room, looking for any sign of life.  You see
 nothing but dust.  It's remarkable how large this room is.  You see a small
-walkway to the east.    
+walkway to the east.
 ~
 233 0 0 0 0 0
 D1
@@ -965,7 +965,7 @@ S
 A Small Walkway~
    The walkway is very well lit.  You can see that it leads back out into the
 plains.  You suddenly feel relieved, knowing you made it out of the cave alive.
-  
+
 ~
 233 0 0 0 0 0
 D1
@@ -979,9 +979,9 @@ D3
 S
 #23359
 Skeleton Tunnel~
-   As you continue walking through the tunnel, you notice a small window.  
+   As you continue walking through the tunnel, you notice a small window.
 It's barely large enough for a small child to squeeze through.  The light of
-the day streams down into the tunnel, showing you more of whats ahead.    
+the day streams down into the tunnel, showing you more of whats ahead.
 ~
 233 0 0 0 0 0
 D1
@@ -997,7 +997,7 @@ S
 A Small Walkway~
    The walkway is very well lit.  You can see that it leads back out into the
 plains.  You suddenly feel relieved, knowing you made it out of the cave alive.
-  
+
 ~
 233 0 0 0 0 0
 D2
@@ -1013,7 +1013,7 @@ S
 Skeleton Tunnel~
    Some small bones line the floor beneath you.  You hear them snap and crackle
 under your weight.  You begin to shiver from the cold.  Maybe if you could find
-a torch, you could use it to warm yourself up.    
+a torch, you could use it to warm yourself up.
 ~
 233 0 0 0 0 0
 D1
@@ -1029,7 +1029,7 @@ S
 Skeleton Tunnel~
    You have come to the end of the tunnel.  It was much shorter than you had
 expected it to be.  There is a small door way to the south.  It appears to be
-leading outside.    
+leading outside.
 ~
 233 0 0 0 0 0
 D1
@@ -1045,7 +1045,7 @@ S
 Dragon Plains~
    You find yourself back in the plains.  Numerous sticks are scattered around
 in the dirt here.  There might be enough to gather and make a small fire.  It
-even looks as if other travellers have camped out here before.    
+even looks as if other travellers have camped out here before.
 ~
 233 0 0 0 0 2
 D0
@@ -1061,7 +1061,7 @@ S
 Dragon Plains~
    Miles of sand stretch out before you.  You see several small trees that
 should have been dead long ago.  The land here is very dry and humid.  You
-begin to wonder how anything could possibly grow here.    
+begin to wonder how anything could possibly grow here.
 ~
 233 128 0 0 0 2
 D0
@@ -1077,7 +1077,7 @@ S
 Dragon Plains~
    Miles of sand stretch out before you.  You see several small trees that
 should have been dead long ago.  The land here is very dry and humid.  You
-begin to wonder how anything could possibly grow here.    
+begin to wonder how anything could possibly grow here.
 ~
 233 0 0 0 0 2
 D0
@@ -1093,7 +1093,7 @@ S
 Dragon Plains~
    Miles of sand stretch out before you.  You see several small trees that
 should have been dead long ago.  The land here is very dry and humid.  You
-begin to wonder how anything could possibly grow here.    
+begin to wonder how anything could possibly grow here.
 ~
 233 0 0 0 0 2
 D0
@@ -1109,7 +1109,7 @@ S
 Dragon Plains~
    Miles of sand stretch out before you.  You see several small trees that
 should have been dead long ago.  The land here is very dry and humid.  You
-begin to wonder how anything could possibly grow here.    
+begin to wonder how anything could possibly grow here.
 ~
 233 0 0 0 0 2
 D0
@@ -1125,7 +1125,7 @@ S
 Dragon Plains~
    The plains seems to stretch out forever.  You begin to wonder if the endless
 amounts of sand will ever cease.  You feel a small breeeze pick up, threatening
-to blow some sand in your eyes.    
+to blow some sand in your eyes.
 ~
 233 0 0 0 0 2
 D1
@@ -1141,7 +1141,7 @@ S
 Sand Drift~
    You have stepped into a rather large drift of sand.  The pile comes up to
 your knees, making it very difficult for you to walk.  It will take a bit of a
-struggle to get free.    
+struggle to get free.
 ~
 233 0 0 0 0 2
 D1
@@ -1157,7 +1157,7 @@ S
 Sand Drift~
    You continue tredging through the rather large drift.  Inching along, you
 feel your legs begin to itch.  Your feet seem to be going deeper into the sand.
-How is that possible?    
+How is that possible?
 ~
 233 0 0 0 0 2
 D0
@@ -1173,7 +1173,7 @@ S
 A Small Path~
    The path leads into a doorway that is almost completely buried in the sand.
 No tracks are visible along the beaten path and there is nothing but sand as
-far as the eye can see.    
+far as the eye can see.
 ~
 233 0 0 0 0 2
 D0
@@ -1189,7 +1189,7 @@ S
 A Small Path~
    The path begins to narrow, making it difficult to keep your footing.  Maybe
 you would be better off walking through the sand.  The sand on both sides is
-very fine and makes strange sounds as you walk on it.    
+very fine and makes strange sounds as you walk on it.
 ~
 233 0 0 0 0 2
 D0
@@ -1205,7 +1205,7 @@ S
 A Small Path~
    There are several sticks on the ground beneath your feet.  You hear many of
 them snapping and crunching under your weight.  Many of the sticks have large
-thorns that look dangerous.  Be careful not to fall.    
+thorns that look dangerous.  Be careful not to fall.
 ~
 233 0 0 0 0 2
 D1
@@ -1221,7 +1221,7 @@ S
 A Small Path~
    You have come to a small path in the sand.  It doesn't appaear to lead
 anywhere special, but it sure beats walking through the sand.  The path is out
-of place amongst the sand dunes.    
+of place amongst the sand dunes.
 ~
 233 0 0 0 0 2
 D1
@@ -1237,7 +1237,7 @@ S
 Dragon Plains~
    The sand seems to find its way into everything.  The small grains seem to
 vary in color and texture from almost white to a light brown.  Strange bits of
-scales seem to be intermixed.    
+scales seem to be intermixed.
 ~
 233 0 0 0 0 2
 D1
@@ -1258,7 +1258,7 @@ Sand Drift~
    As you make your way through the last of the drift, you lose your balance
 and fall to the ground.  Grains of sand get shoved into your teeth, making you
 feel sick to your stomach.  Maybe you should start watching where you're
-walking.    
+walking.
 ~
 233 0 0 0 0 2
 D1
@@ -1274,7 +1274,7 @@ S
 Sand Drift~
    You continue tredging through the rather large drift.  Inching along, you
 feel your legs begin to itch.  Your feet seem to be going deeper into the sand.
-How is that possible?    
+How is that possible?
 ~
 233 0 0 0 0 2
 D1
@@ -1290,7 +1290,7 @@ S
 Dragon Plains~
    You decide to start heading in a new direction, in hopes to find other
 beings, like yourself, creeping around.  It would be easy to become lost or
-disoriented.    
+disoriented.
 ~
 233 0 0 0 0 2
 D0
@@ -1306,7 +1306,7 @@ S
 Dragon Plains~
    As you continue walking, you begin to see some sand lifting up from the
 ground, swirling around in the wind.  It appears to be almost dancing.  The
-rumors about dust devils may be true.    
+rumors about dust devils may be true.
 ~
 233 0 0 0 0 2
 D0
@@ -1321,8 +1321,8 @@ S
 #23380
 Dragon Plains~
    The sand feels squishy under your feet.  The heat seems to penetrate
-everything to its core.  The parched and dreary land is barren and scarred.  
-It hardly seems able to support any life.    
+everything to its core.  The parched and dreary land is barren and scarred.
+It hardly seems able to support any life.
 ~
 233 0 0 0 0 2
 D2
@@ -1334,7 +1334,7 @@ S
 Dragon Plains~
    As you continue walking through the plains, you look around at your
 surroundings.  To the west you can see some sort of burial ground.  Maybe you
-should go have a look.    
+should go have a look.
 ~
 233 0 0 0 0 2
 D1
@@ -1350,7 +1350,7 @@ S
 Indian Burial Ground~
    You have entered an old indian burial ground.  You suddenly feel light
 headed and not quite yourself.  Many small pebbles are on the ground, marking
-grave sites.  Be careful not to step on one!    
+grave sites.  Be careful not to step on one!
 ~
 233 0 0 0 0 2
 D1
@@ -1367,7 +1367,7 @@ Indian Burial Ground~
    As you walk deeper into the grounds, you begin seeing several scattered
 bones lying around.  You wonder how they could have gotten here.  You begin
 looking around, then you see the reason.  Numerous footprints from several
-large dragons have been smashed into the dirt, crushing some of the graves.  
+large dragons have been smashed into the dirt, crushing some of the graves.
 ~
 233 0 0 0 0 2
 D1
@@ -1383,7 +1383,7 @@ S
 Indian Burial Ground~
    You begin to feel like your no longer alone.  In the distance you can hear
 the thundering footsteps of a very large dragon.  Maybe it would be best to
-leave before you turn into someones lunch.    
+leave before you turn into someones lunch.
 ~
 233 0 0 0 0 2
 D0
@@ -1399,7 +1399,7 @@ S
 Indian Burial Ground~
    You are coming towards the exit of the burial grounds.  You begin to wonder
 where all the dragons are.  The exit is coming up to the east.  Strange piers
-and poles stick up out of the ground in the distance.    
+and poles stick up out of the ground in the distance.
 ~
 233 0 0 0 0 2
 D1
@@ -1414,8 +1414,8 @@ S
 #23386
 Gates leading out of the Burial Grounds~
    You have come to the exit of the burial grounds.  Just up ahead to the east
-you can see a large water hole.  You begin to wonder if its really there.  
-Stories of mirages abound in the taverns.    
+you can see a large water hole.  You begin to wonder if its really there.
+Stories of mirages abound in the taverns.
 ~
 233 0 0 0 0 2
 D1
@@ -1431,7 +1431,7 @@ S
 Dragon Plains~
    You once again find yourself walking through the plains.  Just up ahead to
 the east you can see a fairly large water hole.  Maybe you could get a drink
-there.    
+there.
 ~
 233 0 0 0 0 2
 D0
@@ -1451,7 +1451,7 @@ S
 Water Hole~
    You have come to a large water hole.  It's almost the size of a small pond.
 The water looks clean and drinkable.  Sparse vegetation surrounds the limited
-water supply.    
+water supply.
 ~
 233 0 0 0 0 2
 D2
@@ -1467,7 +1467,7 @@ S
 Water Hole~
    As you stand at the side of the water hole, you look into the depths of the
 water thinking about yout long lost childhood.  So many old memories flood your
-mind, making you feel light headed.    
+mind, making you feel light headed.
 ~
 233 0 0 0 0 2
 D0
@@ -1483,7 +1483,7 @@ S
 Water Hole~
    You have come to the end of the water hole.  The water on this end looks
 rather murky and wouldn't be very good for drinking.  Something must have
-stirred it up recently.    
+stirred it up recently.
 ~
 233 0 0 0 0 2
 D1
@@ -1498,8 +1498,8 @@ S
 #23391
 Dragon Plains~
    As you walk away from the hole, you look around at your surroundings.  In
-the distance you can see a few buildings.  What are buildings doing here?  
-They appear to have been destroyed.    
+the distance you can see a few buildings.  What are buildings doing here?
+They appear to have been destroyed.
 ~
 233 0 0 0 0 2
 D0
@@ -1515,7 +1515,7 @@ S
 Dragon Plains~
    You continue making your way through the plains.  To the north you can see
 the remains of a ransacked village.  Wisps of smoke still rise up from the
-charred remains of what must have been houses.    
+charred remains of what must have been houses.
 ~
 233 0 0 0 0 2
 D0
@@ -1530,9 +1530,9 @@ S
 #23393
 Ransacked Village~
    As you enter the remains of a village, you look around at the damage.  You
-can see several large footprints in the dirt, most likely from a dragon.  
+can see several large footprints in the dirt, most likely from a dragon.
 Piles of rubble are everywhere.  You can see a skeleton under one of the piles.
-  
+
 ~
 233 0 0 0 0 2
 D0
@@ -1549,7 +1549,7 @@ Ransacked Village~
    As you continue walking through the remains of the village, horrid visions
 race through your mind.  You see several people, probably ones who lived in
 this village, being eaten by the dragons.  You begin feeling sick to your
-stomach.    
+stomach.
 ~
 233 0 0 0 0 2
 D1
@@ -1563,9 +1563,9 @@ D2
 S
 #23395
 Ransacked Village~
-   You walk past several small buildings that have been smashed into dust.  
+   You walk past several small buildings that have been smashed into dust.
 You feel that you're at the end of the village.  You can see the plains to the
-east.    
+east.
 ~
 233 0 0 0 0 2
 D1
@@ -1581,7 +1581,7 @@ S
 Dragon Plains~
    Feeling exhausted from your long journey, you begin day dreaming.  Thoughts
 of battles that took place here fill your mind.  You realize how lucky you are
-to still be alive.    
+to still be alive.
 ~
 233 0 0 0 0 2
 D1
@@ -1597,7 +1597,7 @@ S
 Dragon Plains~
    You see some small footprints in the sand by your feet.  Maybe you are not
 here alone.  No other signs of life exist and the footprints are quickly being
-covered by the blowing sand.    
+covered by the blowing sand.
 ~
 233 0 0 0 0 2
 D2
@@ -1613,7 +1613,7 @@ S
 Dragon Plains~
    The plains seem to be ending and the sand a sparse grass is now broken by
 small trees and shrubs.  The heat seems to lessen and a cooler breeze rustles
-through the vegetation.    
+through the vegetation.
 ~
 233 0 0 0 0 2
 D0
@@ -1629,7 +1629,7 @@ S
 Dragon Plains~
    As you enter the last bit of the plains, you turn around and look at how far
 you've come.  You feel a great sense of accomplishment.  Maybe the journey
-wasn't so bad after all.    
+wasn't so bad after all.
 ~
 233 0 0 0 0 2
 D0

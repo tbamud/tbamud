@@ -2,7 +2,7 @@
 Entrance to Mudschool:~
    To enter mudschool, type <n> followed by ENTER or RETURN.
    You would just type ----> n <--- and then ENTER...
-   
+
    To go back to the Capital, go through the portal to your east.
 ~
 28 60 0 0 0 0
@@ -28,20 +28,20 @@ S
 #2801
 Mudschool 1st Lesson: Finding your way around.~
    In this context <xxx> means, type xxx and then ENTER or RETURN.
- 
+
    As you might already have noticed, you move around in the world by
-going <east>, <west>, <north>, <south>, <up> or <down>. 
- 
-   All of these can, like most mud commands,  be abbreviated to one 
+going <east>, <west>, <north>, <south>, <up> or <down>.
+
+   All of these can, like most mud commands,  be abbreviated to one
 letter : <e>,<w>,<n>,<s>,<u> and <d>.
 Throughout this tutorial, you'll be told which direction to continue.
- 
-If at any point this text should scroll off your screen, 
+
+If at any point this text should scroll off your screen,
 type <look> or <l>, to redisplay it. Try this now.
- 
+
 Many questions can also be helped by the command <help xxx>, where xxx
 is the command you are in doubt about.
- 
+
 Now, go <east> (<e> for short).
 ~
 28 60 0 0 0 0
@@ -57,22 +57,22 @@ S
 #2802
 Mudschool 2nd Lesson: Finders Keepers~
    Under this text, you should see a line much like the following:
-    
-A purse has been dropped on the floor here.   
- 
+
+A purse has been dropped on the floor here.
+
 To pick up an item, like this pouch, type  <get purse>.
- 
-The purse is now no longer on the floor - check that with <look> 
+
+The purse is now no longer on the floor - check that with <look>
 - but in your <inventory> (<i> for short). This is where every item you
-pick up will be. Once carried, several options are available to you; 
- 
+pick up will be. Once carried, several options are available to you;
+
 To peek inside the purse, type <look in purse> or <examine purse>.
- 
-And to get the coins out of the purse, <get all purse> or 
+
+And to get the coins out of the purse, <get all purse> or
 <get coins purse> will do the trick.
- 
+
 Having done that, go <north>
- 
+
 ~
 28 60 0 0 0 0
 D0
@@ -88,17 +88,17 @@ S
 Mudschool 3rd Lesson: Money talks.~
    You know now, you're carrying a purse with a few coins about. It is
 time to spend some. In this room you're not alone anymore; a shopkeeper
-has set up his booth, ready to trade with you. 
- 
+has set up his booth, ready to trade with you.
+
 To see what he has for sale, type <list>
- 
+
 To buy stuff, type <buy xxx>, where xxx is the thing you want to buy.
- 
+
 For now, <buy whip>, <buy cloak> and <buy canteen>.
- 
-And you won't need the purse again, so <value purse> to see what the 
+
+And you won't need the purse again, so <value purse> to see what the
 shopkeeper will give you for it. If the price is right, <sell purse>.
- 
+
 Then, proceed east.
 ~
 28 156 0 0 0 0
@@ -115,23 +115,23 @@ S
 Mudschool 4th Lesson: How to not go through life naked!~
    If you check your inventory, you can see that your have two cloaks,
 a whip and a canteen.
- 
+
 To start using your stuff, you need to <wear> it. The command <wear all> will
 make you attempt to <wear> all you're carrying.
- 
+
 For now, type <wear cloak> twice to wear the cloaks.
- 
-The command <equipment> (<eq> for short) will show you what you are 
+
+The command <equipment> (<eq> for short) will show you what you are
 currently using. It is not possible to have more then one item equipped
 in one 'slot' at any one time - except the neck, where there actually are
 two slots. This is why you can wear both cloaks.
- 
-To take the cloaks off again, you must use the <remove> command - 
+
+To take the cloaks off again, you must use the <remove> command -
 <remove cloak>
- 
-To use a weapon, you must <wield> it. Try <wield whip> and see 
+
+To use a weapon, you must <wield> it. Try <wield whip> and see
 your <equipment>.
-  
+
 Then go north.
 ~
 28 188 0 0 0 0
@@ -148,15 +148,15 @@ S
 Mudschool 5th Lesson: Preparing for battle.~
    Now you're wearing just a little armor (the cloak) and a weapon (the whip),
 and you are almost ready to fight your first battle. In the next room there
-is a small monster, asleep and very easy to kill. 
- 
+is a small monster, asleep and very easy to kill.
+
 You should go east, then <consider piglet>.
- 
+
 The game will then inform you about how strong you are compared to the piglet.
- 
+
 This first monster is so small, you should have no problems killing it.
 Just type <kill piglet> to start fighting it.
- 
+
 You can go east now.
 ~
 28 60 0 0 0 0
@@ -174,13 +174,13 @@ Mudschool 6th Lesson: The end of poor piglet.~
    First type <consider piglet>, then <kill piglet> to start fighting
 the piglet. If it is not here, wait a couple of minutes, then <look> to
 see if it has come back.
- 
+
 After you kill the piglet, you might want to see if it was carrying
 anything. To do this type <examine corpse>. You'll find a couple of
 porkchops in the corpse. To pick them up, type <get all corpse>.
- 
+
 When you are sure you have all you need from the corpse you may choose
-to <sacrifice corpse> for a reward if you are lucky. 
+to <sacrifice corpse> for a reward if you are lucky.
 Then go <north>
 ~
 28 44 0 0 0 0
@@ -197,17 +197,17 @@ S
 Mudschool 7th Lesson: Lunch break.~
    So.. You might be getting hungry and thirsty by now. Luckily the piglet
 had some pork chops for you, and you've bought a canteen full of water.
- 
+
 To drink the water : <drink canteen>
- 
+
 To eat the pork chops : <eat pork>
- 
+
 You might want to repeat one or both of these commands, until you're
 full. This can easily be done with the <!> command, which will repeat
 the last typed command. Thus, to eat two pork chops :
- 
+
 type <eat pork> <!>
- 
+
 Lunch break over, time to go to class. See the teacher to the east.
 ~
 28 60 0 0 0 0
@@ -227,9 +227,9 @@ through the same texts, had to deal with the same monster. Here however,
 The paths separate. A bunch of signs have been set up on the wall here.
 A teacher stands in front of them, and will teach you your classes' special
 abilities.
- 
+
 The signs have large Titles: WARRIOR, MAGE, THIEF and CLERIC.
- 
+
 To read a sign type <look xxx> where xxx is one of the above.
 When you are done here, go north.
 ~
@@ -244,7 +244,7 @@ D3
 0 0 2807
 E
 warrior~
-   The only skill you can learn on this low level is a kick, 
+   The only skill you can learn on this low level is a kick,
 which will do a little damage to your enemy - if you hit.
 To get better at this, type <practice kick>
 If you just want to see what you can learn, type <practice>.
@@ -252,15 +252,15 @@ Later, you can use the skill in combat by typing <kick>.
 ~
 E
 mage magic user~
-   The only spell you can learn on this low level is a 'magic missile', 
+   The only spell you can learn on this low level is a 'magic missile',
 which will do a little damage to your enemy - if you have mana to cast it.
- 
+
 To get better at this, type <practice magic>
- 
+
 If you just want to see what you can learn, type <practice>.
- 
-Later, you can use the skill in combat by typing 
-<cast 'magic missile' xxx>. 
+
+Later, you can use the skill in combat by typing
+<cast 'magic missile' xxx>.
 ~
 E
 thief~
@@ -269,44 +269,44 @@ A backstab is, as the name suggests, a way of getting behind
 your enemy, and stab him/her/it in the back.
 To get better at this, type <practice backstab>
 If you just want to see what you can learn, type <practice>
-Later, you can use the skill by typing <backstab> instead 
+Later, you can use the skill by typing <backstab> instead
 of <kill> to initiate combat. Note, though that you need
 to use a pointed weapon to be able to backstab.
 ~
 E
 cleric~
    You may choose to learn two spells :
- 
+
 'armor' which will protect yourself or others.
 'cure light' which will cure a small amount of hitpoints.
- 
+
 To get better at any one of these, type
- 
+
 <practice armor>
 or
 <practice cure light>
- 
+
 to use the spells later, type
-<cast 'armor' xxx> and <cast 'cure light' xxx> 
+<cast 'armor' xxx> and <cast 'cure light' xxx>
 where xxx is the name of your target.
- 
+
 ~
 S
 #2809
 Mudschool 9th Lesson: Who Am I - really ?~
    To get some statistics on yourself type <score>.
- 
+
 You will then get an overview of your current condition:
 Your age is in the first line.
- 
+
 The display of hitpoints, mana and move shows you how much you have
 right now, and your current maximum in the ()'s.
- 
+
 Your AC is next. It is best if it's low, as monsters hit you less often then.
-After that is your alignment. 1000 being pure good, -1000 being pure evil. 
+After that is your alignment. 1000 being pure good, -1000 being pure evil.
 Next is your experience and gold followed by how long you have been playing.
 Lastly you are informed of your level and current position.
- 
+
 Now continue north.
 ~
 28 44 0 0 0 0
@@ -322,19 +322,19 @@ S
 #2810
 Mudschool 10th Lesson: Shortcuts~
    To avoid typing <score> all the time, the game has a small shortcut:
- 
-By now you will have noticed the > that keeps appearing every time, you enter 
-a command. This is your prompt, and it can be set to display various 
+
+By now you will have noticed the > that keeps appearing every time, you enter
+a command. This is your prompt, and it can be set to display various
 characteristics of your character. Right now type <prompt all>.
- 
+
 A line looking something like this will appear as your prompt:
-12H 8M 31V >  
-The numbers are the same as the ones in <score>. Current hitpoints (H), mana 
+12H 8M 31V >
+The numbers are the same as the ones in <score>. Current hitpoints (H), mana
 (M), and move (V).
- 
-Remember: All commands can be abbreviated, to some extend. 
+
+Remember: All commands can be abbreviated, to some extend.
 Example : <pr all> will work just as good as <prompt all>
- 
+
 Now move east for some basic manouvres.
 ~
 28 60 0 0 0 0
@@ -350,16 +350,16 @@ S
 #2811
 Mudschool 11th Lesson : Doors - a menace to free movement.~
    In this room a door blocks your way east.
- 
+
 To get past it you'll have to <open door>.
- 
+
 If for any reason you'd wish to stop others from doing the same,
 the command <close door> will do the trick. If you happen to carry
 the right key, you may also <lock door> and <unlock door>.
- 
-Thieves may also try to unlock a locked door by <pick>ing it, 
+
+Thieves may also try to unlock a locked door by <pick>ing it,
 if they know the skill.
- 
+
 Right now, <open door> and proceed east.
 ~
 28 0 0 0 0 0
@@ -376,22 +376,22 @@ S
 #2812
 Mudschool 12th Lesson : Socialising~
    The world might seem a little boring if you don't know how to communicate.
- 
+
 You may <say> things, so others in the same room as you can hear you. Try
 <say Hello>
- 
+
 Others in the room would see the results as
 Yourname says, 'Hello'
- 
+
 Another important command is <tell>. It is used like this:
- 
-<tell xxx yyy>, where xxx is the person you'd like to talk to, and 
+
+<tell xxx yyy>, where xxx is the person you'd like to talk to, and
                 yyy is what you have to say.
- 
-Later on, you can use commands like gossip, yell, holler and shout, to 
+
+Later on, you can use commands like gossip, yell, holler and shout, to
 communicate with everybody on the mud, in your local area, and so forth.
 More info on those by typing <help subject>.
- 
+
 You're almost done with Mudschool, just hurry south.
 ~
 28 0 0 0 0 0
@@ -407,14 +407,14 @@ door~
 S
 #2813
 Mudschool 14th Lesson : What NOT to do :)~
-   To get an overview of the do's and dont's, type <policy>. These are a few 
-rules, which must be abided by for you to be allowed to stay. 
- 
-We try to keep them short and to the point. 
- 
+   To get an overview of the do's and dont's, type <policy>. These are a few
+rules, which must be abided by for you to be allowed to stay.
+
+We try to keep them short and to the point.
+
 The last command you'll learn is <recall>. This will transport you
 to the main chamber of the temple, as long as you are still a newbie.
- 
+
 To leave Mudschool, type <recall>.
 ~
 28 0 0 0 0 0
@@ -426,10 +426,10 @@ S
 #2814
 Mudschool 13th Lesson : Getting the game on your side.~
    To liven up the world with colors, type <color complete>
- 
-If in doubt about any command, type <help xxx> to get help on the command 
+
+If in doubt about any command, type <help xxx> to get help on the command
 in question.
- 
+
 Now go east for the final lesson.
 ~
 28 0 0 0 0 0
@@ -444,14 +444,14 @@ D1
 S
 #2815
 Welcors ~~~ ~~~ furnace~
-   You seem to be standing in a cave of some sort.  A rather large cave.  
+   You seem to be standing in a cave of some sort.  A rather large cave.
 Actually the cave is so large you think you could just as well be standing
 outside.  The ceiling is so high above you, you can't really make out the
 contours of it.  The sides of the cave are burning.  Had you not felt so
 comfortable, you could easily think you were inside a gigantic fire, looking
 out through the flames.  You realise, with a sudden stab of fear, that you've
 unwittingly stumbled into the home of Welcor, God of Fiery Justice.  You've
-better not be here when he gets back...    
+better not be here when he gets back...
 ~
 28 8 0 0 0 0
 E
@@ -462,7 +462,7 @@ several burn marks on your hand
 ~
 E
 Welcor~
-   Even when not here, you sense his presence.    
+   Even when not here, you sense his presence.
 ~
 S
 $~

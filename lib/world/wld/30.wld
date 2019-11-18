@@ -207,7 +207,7 @@ Free instructions provided by the Grunting Boar Inn.
 E
 writing carving carvings symbols symbol~
    Although it is very hard to understand, you think it looks a lot like beer,
-poems about beer, and small beer-mugs.  
+poems about beer, and small beer-mugs.
 ~
 S
 #3008
@@ -230,12 +230,12 @@ You see the entrance hall.
 E
 sign~
    Rooms are expensive but good!  You may:
- 
+
    Offer - get an offer on a room - Time is in real life days.
    Rent  - Rent a room (saves your stuff, and quits the game),
            minimum charge is one day.
- 
- 
+
+
                           MY WAY OR THE HIGHWAY
                              PAY YOUR RENT!
                 WE WON'T THINK TWICE BEFORE KICKING YOU OUT.
@@ -260,7 +260,7 @@ danish pastry~
 Denmark (which surely is not the capital of Sweden!  ).  Former ruler of
 Scandinavia, England, Northern Germany, Northern France, Russia, Greenland,
 Iceland, Estonia etc.  Etc.  The sight of those large, wholesome chokoladeboller
-makes your mouth water and your soul sing.  
+makes your mouth water and your soul sing.
 ~
 E
 sign~
@@ -296,7 +296,7 @@ S
 The Weapon Shop~
    The smell of worked metals and various quenching oils fills the room.  Every
 available space in the room including the ceiling is loaded with various
-equipment and weaponry.  There is a small note on the counter.  
+equipment and weaponry.  There is a small note on the counter.
 ~
 30 136 0 0 0 0
 D2
@@ -699,7 +699,7 @@ You see the entrance hall to the thieves' guild.
 0 -1 3027
 E
 furniture~
-   As you look at the furniture, the chair you sit on disappears.  
+   As you look at the furniture, the chair you sit on disappears.
 ~
 S
 #3029
@@ -815,23 +815,23 @@ gate~
 E
 bridge footbridge~
    It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+from one tower to the other.
 ~
 E
 gate~
    It is a set of very big double doors made from hard wood.  They have been
 reinforced with large iron bands to make them even more sturdy.  One of the
-doors is equipped with a very big lock.  
+doors is equipped with a very big lock.
 ~
 E
 tower towers~
    Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+each other with some kind of mortar, just like the city wall.
 ~
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3041
@@ -859,23 +859,23 @@ You see Main Street.
 E
 bridge footbridge~
    It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+from one tower to the other.
 ~
 E
 gate~
    It is a set of very big double doors made from hard wood.  They have been
 reinforced with large iron bands to make them even more sturdy.  One of the
-doors is equipped with a very big lock.  
+doors is equipped with a very big lock.
 ~
 E
 tower towers~
    Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+each other with some kind of mortar, just like the city wall.
 ~
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3042
@@ -897,7 +897,7 @@ The road continues further south.
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3043
@@ -929,7 +929,7 @@ wall writing letters~
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3044
@@ -1008,7 +1008,7 @@ You see the bridge.
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3048
@@ -1072,16 +1072,16 @@ You see the Concourse.
 E
 bridge~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar, just like the wall.  
+some kind of mortar, just like the wall.
 ~
 E
 opening~
-   You cannot really see it from here as it is somewhere beneath your feet.  
+   You cannot really see it from here as it is somewhere beneath your feet.
 ~
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3052
@@ -1104,23 +1104,23 @@ The forest edge is to the west.
 E
 bridge footbridge~
    It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+from one tower to the other.
 ~
 E
 gate~
    It is a set of very big double doors made from hard wood.  They have been
 reinforced with large iron bands to make them even more sturdy.  One of the
-doors is equipped with a very big lock.  
+doors is equipped with a very big lock.
 ~
 E
 tower towers~
    Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+each other with some kind of mortar, just like the city wall.
 ~
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3053
@@ -1143,28 +1143,28 @@ gate~
 E
 bridge footbridge~
    It is too high up to reach but it looks as if one easily could walk across it
-from one tower to the other.  
+from one tower to the other.
 ~
 E
 gate~
    It is a set of very big double doors made from hard wood.  They have been
 reinforced with large iron bands to make them even more sturdy.  One of the
-doors is equipped with a very big lock.  
+doors is equipped with a very big lock.
 ~
 E
 tower towers~
    Both of the towers are built from large grey rocks that have been fastened to
-each other with some kind of mortar, just like the city wall.  
+each other with some kind of mortar, just like the city wall.
 ~
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3054
 By The Temple Altar~
-   You are by the temple altar in the northern end of the Temple of Midgaard. 
+   You are by the temple altar in the northern end of the Temple of Midgaard.
 A huge altar made from white polished marble dominates this part of the temple.
 Towering behind the altar is a ten foot tall sitting statue of Odin, the King of
 the Gods. To the north, steps lead out the back of the temple towards the
@@ -1184,14 +1184,14 @@ You see the southern end of the temple.
 E
 altar~
    Even though the altar is more than ten feet long it appears to be made from a
-single block of white virgin marble.  
+single block of white virgin marble.
 ~
 E
 statue odin king god~
    The statue represents the one-eyed Odin sitting on a his throne.  He has
 long, grey hair and beard and a strict look on his face.  On top of the throne,
 just above his shoulders, his two ravens Hugin and Munin are sitting and at his
-feet are his wolves Gere and Freke.  
+feet are his wolves Gere and Freke.
 ~
 S
 #3058
@@ -1323,24 +1323,24 @@ E
 letters envelopes assorted~
    Envelopes of all sizes are heaped into hugh piles around the room.  As you
 look closer, you see a letter that you had posted a full week ago, laying
-unnoticed and slightly rat-chewed towards the bottom of the pile.  
+unnoticed and slightly rat-chewed towards the bottom of the pile.
 ~
 E
 cobwebs~
-   They seem to cover everything here, even the Postmaster himself.  
+   They seem to cover everything here, even the Postmaster himself.
 ~
 E
 crates opened large~
    As you know, it is illegal to send contraband items through the Midgaard
 Mail.  The customs agents use this as a great excuse to seize liquor, rare
-spices, and just about anything they might find useful or profitable.  
+spices, and just about anything they might find useful or profitable.
 ~
 E
 WANTED posters poster wall~
    Faces of various known Killers and Thieves can barely be seen behind the
 crates on the west wall.  Some of them look quite familar, sorta like that guy
 who you saw in the Reception a minute ago...  But then again, they are rather
-hard to see past the crates.  
+hard to see past the crates.
 ~
 S
 #3063
@@ -1398,7 +1398,7 @@ on the eastern side of the path.
 E
 plot device~
    What more is a plot device than something to block a certain direction for
-reasons beyond your comprehension.  
+reasons beyond your comprehension.
 ~
 S
 #3066

@@ -1,6 +1,6 @@
 #27600
 The Church~
-   Looking at the condition of the church, you wonder what kind of 
+   Looking at the condition of the church, you wonder what kind of
 bishop would allow a church's condition to get so bad.  As you look
 around, you notice a sign that reads Church of the Pythons.  After a
 moment of pondering, you realize that this is the home of the famed
@@ -16,7 +16,7 @@ You see Second Avenue.
 E
 sign~
    The sign reads Church of the Pythons.  Like you didn't already know that,
-duh!  
+duh!
 ~
 E
 credits info~
@@ -34,7 +34,7 @@ S
 Fire Station~
    This is the place where the firemen spend most of their time,
 free or otherwise.  Because they hardly ever see their wives, they
-particularly enjoy sliding down the pole to the fire engines.  
+particularly enjoy sliding down the pole to the fire engines.
    Stairs lead up to the firemen's quarters, Second Avenue is to
 the north, and to the south is Fire Marshall Bob's office.
 ~
@@ -84,14 +84,14 @@ You see the station.
 0 -1 27601
 E
 objects~
-   They seem to be some kind of used contraceptive device.  
+   They seem to be some kind of used contraceptive device.
 ~
 S
 #27604
 Second Avenue~
    Nothing here... you can go now.  The construction workers still haven't
 started building on this section of the road.
-   To the east is the intersection of Broadway and Second Ave and to the 
+   To the east is the intersection of Broadway and Second Ave and to the
 west you smell something bad.
 ~
 276 0 0 0 0 1
@@ -139,7 +139,7 @@ S
 The Pound~
    Yes, as a favour to newbies everywhere, we created the pound full of fidos
 and cats for quick experience.  Go to town on them.  Second Avenue is to the
-south.    
+south.
 ~
 276 8 0 0 0 0
 D2
@@ -154,7 +154,7 @@ The Police Station~
 tidbits of evidence looking for answers to all the killings and murders
 in New Sparta.  Watch out, they might even have your name!
    Second Avenue is to the north, the Chief's office is to the south,
-and the jail is to the west.        
+and the jail is to the west.
 ~
 276 8 0 0 0 0
 D0
@@ -192,7 +192,7 @@ T 27600
 The Chief's Office~
    Here you are in the office of New Sparta's new Chief of Police,
 Chief O'Hara, who just transferred from the Gotham Police Force.  His
-office is neatly decorated with bat paraphranalia on one wall, and a 
+office is neatly decorated with bat paraphranalia on one wall, and a
 fully stocked bar on the other.
    A door to the north leads to the rest of the station.
 ~
@@ -277,12 +277,12 @@ E
 statue goethe~
    You witness in front of yourself a monolith of manhood, a guru of grandiosity
 a plethora of poetic prowess, an epitome of elegance, the sultan of sonnets, the
-champion of chivalry, an embodyment of empathy, and the zenith of...  
+champion of chivalry, an embodyment of empathy, and the zenith of...
 Something.  It is Goethe!  The statue of Goethe looms before you.  He is mounted
 on his favorite steed, the trusty Nessumsar.  As always the sweet essence of his
 poetry is dripping off his tongue.  His all-knowing eyes seem to pierce through
 you.  You can't help but fell embarrassed about all your shortcomings as you
-stand beside this solemn stud (not the horse silly, the man-stud Goethe!  ).  
+stand beside this solemn stud (not the horse silly, the man-stud Goethe!  ).
 ~
 S
 #27614
@@ -315,7 +315,7 @@ afford lights.  You sense the tremendous evil that lurks within and
 decide that your personal safety is more important than exploring...
 besides you can think of at least of a dozen better places you'd
 rather be than in Hell's Kitchen.
-   You decide that the only real exit is to First Avenue which is 
+   You decide that the only real exit is to First Avenue which is
 to the east.
 ~
 276 1 0 0 0 1
@@ -341,20 +341,20 @@ You see a doorway that leads to Broadway.
 E
 sign~
    The sign reads:
- 
+
   Use 'List' to see the available pets.
   Use 'Buy <pet>' to buy yourself a pet.
- 
+
   Instructions for having pets:
- 
+
   You can use 'order <pet> <instructions>' to order your pets around.
   If you abuse your pet, it will no longer regard you as its master.
   If you have several pets you may use 'order followers <instructions>'
- 
+
   You can name the pet you buy as : "buy <pet> <name>"
- 
+
  Regards,
- 
+
  The Shopkeeper
 ~
 S

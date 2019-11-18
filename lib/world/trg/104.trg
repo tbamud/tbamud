@@ -115,9 +115,9 @@ if %actor.is_pc%
           say Hello there young one.
           wait 2 sec
           say I am the village elder, the oldest and wisest of them all.
-          wait 4 sec          
+          wait 4 sec
           say %actor.name%, if you bring me back the item from the center of the maze, I will reward you with great riches and power.
-          wait 4 sec          
+          wait 4 sec
           say Will you accept my quest? Will you go to the center of the maze and retrieve the sacred item?
         end
       end
@@ -175,7 +175,7 @@ if %object.vnum% == 10429
   wait 2 s
   %send% %actor% %self.name% hands you the coins, you feel a slight surge of energy.
   %echoaround% %actor% %self.name% rummages through a bag and pulls out a couple coins.
-  wait 2 s 
+  wait 2 s
   %echoaround% %actor% %self.name% hands the coins to %actor.name% , a small light emits from the coins.
   nop %actor.gold(150)%
   nop %actor.exp(400)%

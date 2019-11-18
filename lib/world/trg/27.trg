@@ -6,13 +6,13 @@ eval rwrist %actor.eq(rwrist)%
 eval lwrist %actor.eq(lwrist)%
 if (%rwrist.vnum% == 2708)
 %send% %actor% A magical force seems to ebb, allowing you to pass.
- 
+
 elseif (%lwrist.vnum% == 2708)
 %send% %actor% A magical force seems to ebb, allowing you to pass.
- 
+
 elseif (%actor.varexists(Zn27_shacklepass)%)
 %send% %actor% A magical force seems to ebb, allowing you to pass.
- 
+
 else
 %send% %actor% A powerful force seems to repel you, preventing you from entering.
 %force% %actor% sit
@@ -53,7 +53,7 @@ else
   wait 3 s
   %send% %actor% The guard whispers to you 'She is most cruel, and if you can rid us of her we would be eternally grateful.'
   wait 2 s
-  %send% %actor% The guard whispers to you 'I will let you pass, though it may cost my life.' 
+  %send% %actor% The guard whispers to you 'I will let you pass, though it may cost my life.'
   wait 2 s
   %send% %actor% The guard whispers to you 'Please do not let us down!'
   set Zn27_greeted 1
@@ -245,7 +245,7 @@ wait 1 s
 wait 1 s
 clap
 wait 1 s
-%send% %actor% A blind child feels for your arm and grips it. 
+%send% %actor% A blind child feels for your arm and grips it.
 fol %actor.name%
 wait 1 s
 %send% %actor% A blind child tells you 'Please pat me when you want me to stop following.'
@@ -274,11 +274,11 @@ wait 2 s
 say I think if he were here he would want you to have it though.
 wait 2 s
 say I hid it in that cupboard where you found me... in the floorboards.
- 
+
 set Zn27_childquest 1
 remote Zn27_childquest %actor.id%
- 
- 
+
+
 else
 wait 1 s
 follow %self%
@@ -324,7 +324,7 @@ wait 2 s
 rdelete Zn27_shacklereject %actor.id%
 else
 return 0
-end 
+end
 ~
 #2717
 (2707) Room resets shacklepass~
@@ -1258,14 +1258,14 @@ wait 5 s
 wait 4 s
   say Very rarely, a Tor will suddenly fail whenever balance shifts extremely in the universe. These occasional shifts demand redirection of Imari focus, causing the power of the Tor to weaken and allowing the lifeform to awaken and emerge.
 wait 7 s
-  say The lifeform that emerges from a Tor is called a Nevim, a potent and unnatural concentration of lamen life, closest in power to the Imari themselves. 
+  say The lifeform that emerges from a Tor is called a Nevim, a potent and unnatural concentration of lamen life, closest in power to the Imari themselves.
 wait 4 s
-  say Nevim do not feel the pull of Navi and do not perceive the greater state of the cosmos, using their powers according to their own will and wreaking havoc upon the universal balance. 
+  say Nevim do not feel the pull of Navi and do not perceive the greater state of the cosmos, using their powers according to their own will and wreaking havoc upon the universal balance.
 wait 5 s
   say Shunned through fear and isolated from every other form of life, Nevim become bitter and angry, forces of destruction and causing much pain in an attempt to exorcise their own.
   wait 1 s
 elseif %room.vnum% == 2793
-  say The second wave brings forth the Denuo, the lesser beings, the second-born who live and die without changing form, colouring the lamen that flows through them but being entirely of miru. 
+  say The second wave brings forth the Denuo, the lesser beings, the second-born who live and die without changing form, colouring the lamen that flows through them but being entirely of miru.
   wait 3 s
   say The Khan'li, the Dynar, and myself of Memlin kind, are all examples of Denuo life.
 elseif %room.vnum% == 2794
@@ -1273,7 +1273,7 @@ elseif %room.vnum% == 2794
   wait 4 s
   say Black and red are their colours and they enjoy sharp points, reflective surfaces for their inclination to repel light and singular works of beauty, believing themselves superior as the firstborn.
   wait 4 s
-  say They live mainly underground or in caves, seeking to escape the occasional rains and sculpting their showy palaces into mountains. 
+  say They live mainly underground or in caves, seeking to escape the occasional rains and sculpting their showy palaces into mountains.
   wait 3 s
   say They believe in domination of the strong over the weak and have hardly any sense of guilt or compassion, taking no pleasure in cruelty but exercising it without hesitation for the slightest benefit.
   wait 4 s
@@ -1281,7 +1281,7 @@ elseif %room.vnum% == 2794
   wait 4 s
   say They are passionate, ambitious, powerful, proud, single-minded and fearless.
 elseif %room.vnum% == 2795
-  say Dynar are smaller than the Khan'li, but just as adept at fighting, extremely fast, able to contort their bodies amazingly and putting their skills to use in the construction of elaborate weapons and studying of the world. 
+  say Dynar are smaller than the Khan'li, but just as adept at fighting, extremely fast, able to contort their bodies amazingly and putting their skills to use in the construction of elaborate weapons and studying of the world.
   wait 4 s
   say Pale-skinned, their blood is as the milky sap of trees, having slight phosphorescent properties which causes them to glow faintly in darkness.
   wait 3 s
@@ -1666,7 +1666,7 @@ wait 2 s
 yes~
 emote smiles happily.
 wait 1 s
-say Its like this, see... 
+say Its like this, see...
 wait 1 s
 emote stands up and traces a circle in the sand.
 wait 2 s

@@ -6,7 +6,7 @@ of things like the warp core temperature, current speed and the ship's shield
 specifications.  The room is longer than it is wide, and it has fairly low
 ceilings.  Computer terminals cover all the walls, and a large table built into
 the floor sits in the middle of the room.  Located at the far end of the room is
-the warp core, a large pulsating vertical tube.  
+the warp core, a large pulsating vertical tube.
 ~
 241 8 0 0 0 0
 D0
@@ -36,18 +36,18 @@ maps~
 -------------------------------------+-----------------------------------------
                                      |
              Turbolift               |      Ready-----Bridge
-               1032                  |     Room 1035    1038         
+               1032                  |     Room 1035    1038
                  |                   |                    |
    Science-----1030-----Cargo        |                 Bridge-----Conference
    Lab 1029      |     Bay 1031      |                  1036       Room 1037
                  |                   |                    |
-       Gym-----1027-----Picard's     |                Turbolift   
-      1026       |   Quarters 1028   |                  1034   
+       Gym-----1027-----Picard's     |                Turbolift
+      1026       |   Quarters 1028   |                  1034
                  |                   |                    |
-    Troi's-----1024-----Worf's       |                Turbolift   
- Quarters 1023   |   Quarters 1025   |                  1033      
-                 |                   |                
-             Shuttle Bay             |                    
+    Troi's-----1024-----Worf's       |                Turbolift
+ Quarters 1023   |   Quarters 1025   |                  1033
+                 |                   |
+             Shuttle Bay             |
                1022                  |
                                      |
               DECK 3                 |                DECK 4
@@ -61,12 +61,12 @@ credits info~
     x---------------------------------------------------------------------x
      I created this zone because I'm a fan of the show Star Trek: The Next
      Generation. This zone features all of the main characters from the
-     show, and many of the items too. This zone features about 45 rooms, 
-     and is good for players of level 26-30. Everyone except for the 
-     ensigns, Picard, and Data are rougly a bit stronger than Jupiter. Data 
-     and Picard are much harder, and the ensigns are easier. I have a spot 
+     show, and many of the items too. This zone features about 45 rooms,
+     and is good for players of level 26-30. Everyone except for the
+     ensigns, Picard, and Data are rougly a bit stronger than Jupiter. Data
+     and Picard are much harder, and the ensigns are easier. I have a spot
      for a holodeck, but I haven't added anything in yet.
-               
+
      Written entirely from scratch in WordPad. Feel free to edit, modify,
      and do what you want with this zone!
     x---------------------------------------------------------------------x
@@ -89,7 +89,7 @@ decorations.  Considering the fact that the owner is blind, it isn't at all
 strange to find that the room is almost completely bare, just the basics.  A
 small personal computer sits on a desk against the western wall, in between two
 windows that look out into space, not that it really matters.  A neatly made bed
-has been placed against the northern wall.  
+has been placed against the northern wall.
 ~
 241 8 0 0 0 0
 D1
@@ -102,29 +102,29 @@ S
 A Corridor~
    This is the southern end of a long hallway.  Like all of the ships internal
 passages, this one is well lit and pretty narrow.  To the south can be heard the
-continual rumbling of main engineering.  
+continual rumbling of main engineering.
 ~
 241 8 0 0 0 0
 D0
-   This corridor continues in a northernly direction.  
+   This corridor continues in a northernly direction.
 ~
 ~
 0 -1 24105
 D1
    The android Data's quarters are located to the east, the almost constant home
-to his pet cat, Spot.  
+to his pet cat, Spot.
 ~
 ~
 0 -1 24103
 D2
    Main engineering can be spotted to the south, one of the most important parts
-of a ship who's main mission is to explore.  
+of a ship who's main mission is to explore.
 ~
 ~
 0 -1 24100
 D3
    Geordi's Quarters lie to the west, quite a simply decorated room, for obvious
-reasons.  
+reasons.
 ~
 ~
 0 -1 24101
@@ -135,14 +135,14 @@ Data's Quarters~
 that it was designed by an android.  Some easels and paintings have been
 positioned along and on the northern wall, displaying Data's person expression
 of what he sees, which is mainly spacial phenomenon.  A huge computer screen
-showing a cross section of the Enterprise dominates the view to the south.  
+showing a cross section of the Enterprise dominates the view to the south.
 Infront of said screen is a large desk which boasts a wide array of computer
-controls.  What is quite perplexing is the lack of any sleeping facilities.  
-Data apparently, does not need to sleep the same way we do.  
+controls.  What is quite perplexing is the lack of any sleeping facilities.
+Data apparently, does not need to sleep the same way we do.
 ~
 241 8 0 0 0 0
 D3
-   An ordered-looking corridor lies to the west.  
+   An ordered-looking corridor lies to the west.
 ~
 ~
 0 -1 24102
@@ -153,11 +153,11 @@ The Brig~
 prisoners are kept while onboard the Enterprise.  Three fairly large cells can
 been seen in the southern part of the room, defended with invisible laser bars.
 A computer control panel is situated in the northwestern corner of the room,
-which is where the force fields for the cells are controlled.  
+which is where the force fields for the cells are controlled.
 ~
 241 8 0 0 0 0
 D1
-   A long corridor can be spied to the east.  
+   A long corridor can be spied to the east.
 ~
 ~
 0 -1 24105
@@ -166,13 +166,13 @@ S
 A Corridor~
    The rest of this well-lit corridor stretches to the north and south with many
 doors to the east and west along it.  Very much like a tube, the light beige
-walls are narrow and have been rounded, throwing all memories of earth away.  
+walls are narrow and have been rounded, throwing all memories of earth away.
 Right-angles are so 2020.  You notice a tiny computer panel embedded into the
-wall.  
+wall.
 ~
 241 8 0 0 0 0
 D0
-   The corridor heads northward, toward the turbolifts.  
+   The corridor heads northward, toward the turbolifts.
 ~
 ~
 0 -1 24108
@@ -188,7 +188,7 @@ D2
 0 -1 24102
 D3
    The place where all criminals spend their time can be seen in that direction,
-the Brig.  
+the Brig.
 ~
 ~
 0 -1 24104
@@ -217,24 +217,24 @@ Transporter Room~
 chief can control the multitude of machines that are used to give safe passage
 to those brave enough to risk using such an untested device.  Eight round
 transport pads have been arranged in a circle, on a raised platform just ot the
-north.  
+north.
 ~
 241 8 0 0 0 0
 D0
    The actual transporting chamber is located to the north.  Bright white and
-pale yellow lights pulse in from the north.  
+pale yellow lights pulse in from the north.
 ~
 ~
 0 -1 24142
 D3
-   A corridor can be seen to the west, and beyond it, the Brig.  
+   A corridor can be seen to the west, and beyond it, the Brig.
 ~
 ~
 0 -1 24105
 E
 controls computer terminal teleportor~
    The teleportation console and controls look very complicated, but you can
-work out that you have to INPUT a locations co-ordinates and then ENERGIZE.  
+work out that you have to INPUT a locations co-ordinates and then ENERGIZE.
 ~
 S
 T 24100
@@ -245,11 +245,11 @@ School~
 ship.  There are a number of tables and chairs that have been positioned in an
 orderly fashion.  Several computer consoles with an interface specially designed
 for a childs use on them can be seen on the tables and some larger ones
-pertruding from the walls.  
+pertruding from the walls.
 ~
 241 8 0 0 0 0
 D1
-   A corridor lies to the east, beyond it, the second holodeck.  
+   A corridor lies to the east, beyond it, the second holodeck.
 ~
 ~
 0 -1 24108
@@ -260,18 +260,18 @@ A Corridor~
 of the species that live onboard.  Like all of the corridors, this one is well
 lit and not very wide.  You see the holodeck's control panel beside the holodeck
 door, and it has some information on it.  A computer screen with the map of the
-Enterprise on it is located next to the turbolift entrance.  
+Enterprise on it is located next to the turbolift entrance.
 ~
 241 8 0 0 0 0
 D0
    You can see the turbolift to the north.  New signs have been placed in all
-turbolifts to prevent improper use, this includes you Wesley.  
+turbolifts to prevent improper use, this includes you Wesley.
 ~
 ~
 0 -1 24110
 D1
    A very empty-looking holodeck lies to the east, waiting for someon to program
-it.  
+it.
 ~
 ~
 0 -1 24109
@@ -281,52 +281,52 @@ D2
 ~
 0 -1 24105
 D3
-   Enterprise's school lies to the west, looking very neat and tidy.  
+   Enterprise's school lies to the west, looking very neat and tidy.
 ~
 ~
 0 -1 24107
 E
 map screen~
    STARSHIP ENTERPRISE
-                                     |                
-             Turbolift               |               Ten Forward 
+                                     |
+             Turbolift               |               Ten Forward
                  |                   |                    |
      School----****----Holodeck 2    |    Crusher's-----****----Security
-                 |                   |    Quarters        |      
+                 |                   |    Quarters        |
                  |                   |                    |
        Brig----****---Transporter    |     Sick Bay-----****-----Holodeck 4
-                 |       Room        |                    |       
+                 |       Room        |                    |
                  |                   |                    |
    Geordi's----****----Data's        |        Cargo-----****-----Riker's
-   Quarters      |   Quarters        |         Bay        |     Quarters  
+   Quarters      |   Quarters        |         Bay        |     Quarters
                  |                   |                    |
             Engineering              |                Turbolift
-                                     |                 
+                                     |
                                      |
               DECK 1                 |                DECK 2
 -------------------------------------+-----------------------------------------
                                      |
                                      |      Ready-----Bridge
-             Turbolift               |      Room          |        
+             Turbolift               |      Room          |
                  |                   |                    |
    Science-----****-----Cargo        |    Turbolift----Bridge-----Conference
      Lab         |       Bay         |                               Room
-                 |                   |                    
-       Gym-----****-----Picard's     |                  
-                 |      Quarters     |                      
-                 |                   |                    
-    Troi's-----****-----Worf's       |                   
-  Quarters       |     Quarters      |                        
-                 |                   |                
-             Shuttle Bay             |                    
+                 |                   |
+       Gym-----****-----Picard's     |
+                 |      Quarters     |
+                 |                   |
+    Troi's-----****-----Worf's       |
+  Quarters       |     Quarters      |
+                 |                   |
+             Shuttle Bay             |
                                      |
                                      |
-              DECK 3                 |                DECK 4 
+              DECK 3                 |                DECK 4
 ~
 E
 holodeck computer control panel sign~
    It looks like this:
-   
+
     ***************************************************
     *                                                 *
     *            NCC-1701-D - "ENTERPRISE"            *
@@ -348,15 +348,15 @@ holodeck computer control panel sign~
 S
 #24109
 Holodeck 2~
-   As soon as this room is entered, the enormity of it becomes very apparent.  
+   As soon as this room is entered, the enormity of it becomes very apparent.
 The room is just a large cube, with jet black walls and a yellow grid painted on
 the floors, the walls, and the ceiling.  This is where different programs can be
 loaded and experienced, which seem totally real.  A small instructional screen
-can be seen by the door.  
+can be seen by the door.
 ~
 241 12 0 0 0 0
 D3
-   A corridor, and across the way, the school can be located to the west.  
+   A corridor, and across the way, the school can be located to the west.
 ~
 ~
 0 -1 24108
@@ -377,15 +377,15 @@ T 24127
 #24110
 Turbolift~
    A small screen above the door reads "Deck One".  The turbolift walls are a
-pleasant beige and have been rounded off, making it in the shape of a tube.  
+pleasant beige and have been rounded off, making it in the shape of a tube.
 Several vertical rows of lights make this place very well lit.  From here, you
 can access the other decks on the Enterprise.  There is a small instructional
-panel by the door.  
+panel by the door.
 ~
 241 8 0 0 0 0
 D2
    An automatic door opens to the south to reveal a long, sterile-looking
-corridor.  
+corridor.
 ~
 ~
 0 -1 24108
@@ -406,11 +406,11 @@ Turbolift~
 been rounded off, making it in the shape of a tube.  Several vertical rows of
 lights make this place very well lit.  From here, you can access the other decks
 on the Enterprise.  There is a small instructional panel by the door.  Like a
-lot of the ship, the turbolift accepts vocal commands.  
+lot of the ship, the turbolift accepts vocal commands.
 ~
 241 8 0 0 0 0
 D0
-   A corridor heads to the north, toward Ten Forward.  
+   A corridor heads to the north, toward Ten Forward.
 ~
 ~
 0 -1 24113
@@ -430,11 +430,11 @@ Cargo Bay 1~
    As to be expected, this bay is gigantic with a very high ceiling and a lot of
 floor space for the storage most various items, usually of the non-lethal kind.
 There are several plastic crates and barrels with the Starfleet insignia printed
-on their lids stacked up, almost right to the top.  
+on their lids stacked up, almost right to the top.
 ~
 241 8 0 0 0 0
 D1
-   A corridor can be seen to the east.  
+   A corridor can be seen to the east.
 ~
 ~
 0 -1 24113
@@ -445,72 +445,72 @@ A Corridor~
 ship, not excluding this particular corridor.  It isn't very wide, and the light
 beige walls have been rounded, making the corridor an oval shape.  You notice a
 tiny computer panel embedded into the wall.  A computer screen with the map of
-the Enterprise on it is located next to the turbolift entrance.  
+the Enterprise on it is located next to the turbolift entrance.
 ~
 241 8 0 0 0 0
 D0
-   A beige corridor continues to the north.  
+   A beige corridor continues to the north.
 ~
 ~
 0 -1 24116
 D1
-   Commander Riker's private quarters are located to the east.  
+   Commander Riker's private quarters are located to the east.
 ~
 ~
 0 -1 24114
 D2
    A high-tech looking turbolift glides effortlessly up and down the ship to the
-south.  
+south.
 ~
 ~
 0 -1 24111
 D3
-   A rather large cargo bay is to the west.  
+   A rather large cargo bay is to the west.
 ~
 ~
 0 -1 24112
 E
 map screen~
    STARSHIP ENTERPRISE
-                                     |                
-             Turbolift               |               Ten Forward 
+                                     |
+             Turbolift               |               Ten Forward
                  |                   |                    |
      School----****----Holodeck 2    |    Crusher's-----****----Security
-                 |                   |    Quarters        |      
+                 |                   |    Quarters        |
                  |                   |                    |
        Brig----****---Transporter    |     Sick Bay-----****-----Holodeck 4
-                 |       Room        |                    |       
+                 |       Room        |                    |
                  |                   |                    |
    Geordi's----****----Data's        |        Cargo-----****-----Riker's
-   Quarters      |   Quarters        |         Bay        |     Quarters  
+   Quarters      |   Quarters        |         Bay        |     Quarters
                  |                   |                    |
             Engineering              |                Turbolift
-                                     |                 
+                                     |
                                      |
               DECK 1                 |                DECK 2
 -------------------------------------+-----------------------------------------
                                      |
                                      |      Ready-----Bridge
-             Turbolift               |      Room          |        
+             Turbolift               |      Room          |
                  |                   |                    |
    Science-----****-----Cargo        |    Turbolift----Bridge-----Conference
      Lab         |       Bay         |                               Room
-                 |                   |                    
-       Gym-----****-----Picard's     |                  
-                 |      Quarters     |                      
-                 |                   |                    
-    Troi's-----****-----Worf's       |                   
-  Quarters       |     Quarters      |                        
-                 |                   |                
-             Shuttle Bay             |                    
+                 |                   |
+       Gym-----****-----Picard's     |
+                 |      Quarters     |
+                 |                   |
+    Troi's-----****-----Worf's       |
+  Quarters       |     Quarters      |
+                 |                   |
+             Shuttle Bay             |
                                      |
                                      |
-              DECK 3                 |                DECK 4 
+              DECK 3                 |                DECK 4
 ~
 E
 control panel computer screen sign~
    The panel says:
- 
+
     ***************************************************
     *                                                 *
     *            NCC-1701-D - "ENTERPRISE"            *
@@ -533,11 +533,11 @@ Riker's Quarters~
 around a coffee table by the eastern wall.  A small partition at the northern
 part of the room separates his sleeping area with the rest of the room.  Riker
 has been dimmed his room, making his romantic red lamps and purple cusions seems
-more exotic and appealing.  
+more exotic and appealing.
 ~
 241 8 0 0 0 0
 D3
-   Cargo Bay 1 lies far to the west.  
+   Cargo Bay 1 lies far to the west.
 ~
 ~
 0 -1 24113
@@ -551,12 +551,12 @@ scattered around the room.  A large glass window in the northern part of the
 room separates the doctor's office with the rest of the room.  Desite the
 seemingly random presentation of some of the equipment, Dr.  Crusher keeps
 everything well ordered and has a small well-trained medical staff at her
-disposal.  
+disposal.
 ~
 241 8 0 0 0 0
 D1
    Through the small glass windows in the automatical doors, you can see a
-plain-looking corridor.  
+plain-looking corridor.
 ~
 ~
 0 -1 24116
@@ -569,35 +569,35 @@ sick bay can be located to the west, and looking in an easterly direction can be
 seen the fourth holodeck.  These passages aren't very wide, and the light beige
 walls have been rounded, making the corridor an oval shape.  You see the
 holodeck's control panel beside the holodeck door, and it has some information
-on it.  
+on it.
 ~
 241 8 0 0 0 0
 D0
    The corridor continues North.  A pleasantly ordered corridor heads to the
-north and south.  
+north and south.
 ~
 ~
 0 -1 24119
 D1
-   Holodeck 4 lies to the east.  
+   Holodeck 4 lies to the east.
 ~
 ~
 0 -1 24117
 D2
-   This corridor continues to the south.  
+   This corridor continues to the south.
 ~
 ~
 0 -1 24113
 D3
    One of the most important parts of the ship lies in that direction.  How
-could a crew survive alien invasions without a sick bay?  
+could a crew survive alien invasions without a sick bay?
 ~
 ~
 0 -1 24115
 E
 holodeck computer control panel sign~
    It looks like this:
-   
+
     ***************************************************
     *                                                 *
     *            NCC-1701-D - "ENTERPRISE"            *
@@ -622,17 +622,17 @@ holodeck computer control panel sign~
 S
 #24117
 Holodeck 4 Entrance - A Narrow Alley~
-   You emerge into a dark narrow alley. Tall dark brick buildings block your 
-way north and south. You can see that the windows on the buildings are fairly 
-high, and some have been boarded up. The smell from the rotting food and 
-garbage mixing with the foul water on the ground is unbearable. You can hear 
-the sounds of a bustling marketpace to the east. The archway leading out of 
+   You emerge into a dark narrow alley. Tall dark brick buildings block your
+way north and south. You can see that the windows on the buildings are fairly
+high, and some have been boarded up. The smell from the rotting food and
+garbage mixing with the foul water on the ground is unbearable. You can hear
+the sounds of a bustling marketpace to the east. The archway leading out of
 the holodeck is west.
 ~
 241 8 0 0 0 0
 D3
    You think a corridor on the starship Enterprise lies to the west, but you can
-never be sure on a holodeck.  
+never be sure on a holodeck.
 ~
 ~
 0 -1 24116
@@ -642,11 +642,11 @@ Crusher's Quarters~
    This room is dimly lit and is decorated with red and pink cushions.  Several
 different paintings are attached to the walls and also quite a few sculptures
 are placed quite elegantly apon marble pillars.  A neatly made bed is located by
-the northern wall, in between two large windows looking out into space.  
+the northern wall, in between two large windows looking out into space.
 ~
 241 8 0 0 0 0
 D1
-   A slightly boring-looking corridor lies just to the east.  
+   A slightly boring-looking corridor lies just to the east.
 ~
 ~
 0 -1 24119
@@ -657,7 +657,7 @@ A Corridor~
 passage from deck to deck and room to room.  Unlike every other section of these
 stretches of well-lit, pale-colored hallways, one of the lights is on the blink
 and can't seem to decide whether it wants to be on or not.  The security station
-is location to the east where most of the ships weaponry is currently stored.  
+is location to the east where most of the ships weaponry is currently stored.
 ~
 241 8 0 0 0 0
 D0
@@ -666,17 +666,17 @@ D0
 ~
 0 -1 24121
 D1
-   The security center is to the east.  
+   The security center is to the east.
 ~
 ~
 0 -1 24120
 D2
-   This corridor leads to the south, toward a turbolift.  
+   This corridor leads to the south, toward a turbolift.
 ~
 ~
 0 -1 24116
 D3
-   Dr.  Crusher's clean quarters are to the west.  
+   Dr.  Crusher's clean quarters are to the west.
 ~
 ~
 0 -1 24118
@@ -689,12 +689,12 @@ onboard, the whole chamber is surounded by weaponry lockers, except the northern
 wall.  A large glass window protects dozens of different phasers, blaster rifles
 and other high-tech devices of war.  Three long tables surrounded by chairs
 stretch across the room.  A top-privilege replicator stands to one side, only
-the memebers of security may use it.  
+the memebers of security may use it.
 ~
 241 12 0 0 0 0
 D3
    Beyond the red flashing lights by the entrance to this area can be seen, a
-corridor.  
+corridor.
 ~
 ~
 0 -1 24119
@@ -708,11 +708,11 @@ doors with the Starfleet insignia stamped on them face south.  Many round metal
 tables are scattered around the room, surrounded by metal chairs.  A long bar
 spans almost the entire length of the southern part of the room, and about two
 dozen bar stools are sitting in front of it.  It's very noisy in here, due to
-all of the talking and laughing.  
+all of the talking and laughing.
 ~
 241 8 0 0 0 0
 D2
-   A long corridor runs south from Ten Forward, through some wooden doors.  
+   A long corridor runs south from Ten Forward, through some wooden doors.
 ~
 ~
 0 -1 24119
@@ -724,7 +724,7 @@ direct route to the ship's outer shell, when the ship is docked mind.  It's
 quite a large room, with a very high ceiling and a lot of floor space.  There
 are three different shuttle-crafts hovering just to the west, waiting to be
 flown into the very depths of space itself.  A large grey door leads into space,
-becareful about opening it.  
+becareful about opening it.
 ~
 241 8 0 0 0 0
 D0
@@ -733,14 +733,14 @@ A corridor is North.
 ~
 0 -1 24124
 D2
-   Some very large grey doors block the view north.  
+   Some very large grey doors block the view north.
 ~
 door grey doors~
 1 -1 24139
 E
 door~
    The large grey shuttle bay door that leads into deep space.  Make sure you
-have a spacesuit in your inventory!  
+have a spacesuit in your inventory!
 ~
 S
 T 24121
@@ -756,7 +756,7 @@ made bed is partially hidden behind a curtain at the northern part of the room.
 ~
 241 8 0 0 0 0
 D1
-   A normal-looking corridor is to the east.  
+   A normal-looking corridor is to the east.
 ~
 ~
 0 -1 24124
@@ -766,33 +766,33 @@ A corridor~
    The cylindrical corridors of this space vessel are all made from a
 plastic-like substance and are all colored in the same non-descript shade of
 beige.  A very war-like chamber can be spied to the east, whereas on the
-opposite side, a calming peace resides.  
+opposite side, a calming peace resides.
 ~
 241 8 0 0 0 0
 D0
-   This corridor continues to the north, toward the turbolift.  
+   This corridor continues to the north, toward the turbolift.
 ~
 ~
 0 -1 24127
 D1
-   Some very Klingon-like quarters can be seen to the east.  
+   Some very Klingon-like quarters can be seen to the east.
 ~
 ~
 0 -1 24125
 D2
-   The main shuttle bay lies to the south.  Becareful.  
+   The main shuttle bay lies to the south.  Becareful.
 ~
 ~
 0 -1 24122
 D3
-   Troi's peaceful quarters are to the west.  
+   Troi's peaceful quarters are to the west.
 ~
 ~
 0 -1 24123
 E
 control panel computer screen sign~
    The panel says:
- 
+
     ***************************************************
     *                                                 *
     *            NCC-1701-D - "ENTERPRISE"            *
@@ -815,56 +815,56 @@ Worf's Quarters~
 Klingon crew member.  A small table is sitting in the southeastern corner, and
 on it is a small potted plant.  An impressive selection of Klingon weapons have
 been mounted on the northern wall, and a partition splits this room with Worf's
-bedroom to the east.  
+bedroom to the east.
 ~
 241 8 0 0 0 0
 D3
-   A grey-looking corridor is to the west.  
+   A grey-looking corridor is to the west.
 ~
 ~
 0 -1 24124
 S
 #24126
 Enterprise Gym~
-   You emerge into the Enterprise gym. The room is quite large, with a soft 
-grey floor. A set of lockers against the southern wall contain all of the 
-necessary equipment needed for using the gym. A thick stack of mats have been 
-piled high in one corner, which can be used for different activities. Captain 
+   You emerge into the Enterprise gym. The room is quite large, with a soft
+grey floor. A set of lockers against the southern wall contain all of the
+necessary equipment needed for using the gym. A thick stack of mats have been
+piled high in one corner, which can be used for different activities. Captain
 Picard likes to come here to practice his fencing.
 ~
 241 8 0 0 0 0
 D1
    Captain Picard's quarters are position right next to the gym to take
-advantage of his enjoyment of fencing.  
+advantage of his enjoyment of fencing.
 ~
 ~
 0 -1 24127
 S
 #24127
 A Corridor~
-   You find yourself in the middle of a well lit corridor on the Enterprise. 
-It isn't very wide, and the light beige walls have been rounded, making the 
-corridor an oval shape. 
+   You find yourself in the middle of a well lit corridor on the Enterprise.
+It isn't very wide, and the light beige walls have been rounded, making the
+corridor an oval shape.
 ~
 241 8 0 0 0 0
 D0
-   A corridor continues to the north, before entering the tubolifts.  
+   A corridor continues to the north, before entering the tubolifts.
 ~
 ~
 0 -1 24130
 D1
-   Captain Picard's quarters can be found to the east.  
+   Captain Picard's quarters can be found to the east.
 ~
 ~
 0 -1 24128
 D2
-   This corridor continues to the south.  
+   This corridor continues to the south.
 ~
 ~
 0 -1 24124
 D3
    Enterprise's gym is to the west, slightly less used than would be expected.
-Why exercise here when you can get a good work-out in one of the holodecks?  
+Why exercise here when you can get a good work-out in one of the holodecks?
 ~
 ~
 0 -1 24126
@@ -882,7 +882,7 @@ the room contains Picard's sleeping area.
 ~
 241 8 0 0 0 0
 D3
-   You see a non-descript door that leads to a corridor no doubt.  
+   You see a non-descript door that leads to a corridor no doubt.
 ~
 ~
 0 -1 24127
@@ -895,11 +895,11 @@ raised platform.  It looks as though something (or someone) could be placed
 inside, hooked up to the multitude of wires and cables, and have scientific
 tests performed on it (or them).  A complex looking computer console is facing
 this machine.  Around the rest of the room are counterops with with the odd
-computer terminal.  
+computer terminal.
 ~
 241 8 0 0 0 0
 D1
-   A corridor lies to the east, through clear, bullet-proof plastic.  
+   A corridor lies to the east, through clear, bullet-proof plastic.
 ~
 ~
 0 -1 24130
@@ -910,78 +910,78 @@ A Corridor~
 the northern and southern directions.  The main scientific laboratory is located
 to the west, caution is advised.  A massive cargo bay can be seen to the east,
 or would be if the doors were open.  A computer screen with the map of the
-Enterprise on it is located next to the turbolift entrance.  
+Enterprise on it is located next to the turbolift entrance.
 ~
 241 8 0 0 0 0
 D0
-   A turbolift is located to the north.  
+   A turbolift is located to the north.
 ~
 ~
 0 -1 24132
 D1
    Cargo Bay 2 can be seen to hte east as a vast room, filled almost to the
-ceiling with plastic crates.  
+ceiling with plastic crates.
 ~
 ~
 0 -1 24131
 D2
-   A generally Star Trek-like corridor wanders southward.  
+   A generally Star Trek-like corridor wanders southward.
 ~
 ~
 0 -1 24127
 D3
-   The science lab can be seen to the west, through see-through doors.  
+   The science lab can be seen to the west, through see-through doors.
 ~
 ~
 0 -1 24129
 E
 map screen~
    STARSHIP ENTERPRISE
-                                     |                
-             Turbolift               |               Ten Forward 
+                                     |
+             Turbolift               |               Ten Forward
                  |                   |                    |
      School----****----Holodeck 2    |    Crusher's-----****----Security
-                 |                   |    Quarters        |      
+                 |                   |    Quarters        |
                  |                   |                    |
        Brig----****---Transporter    |     Sick Bay-----****-----Holodeck 4
-                 |       Room        |                    |       
+                 |       Room        |                    |
                  |                   |                    |
    Geordi's----****----Data's        |        Cargo-----****-----Riker's
-   Quarters      |   Quarters        |         Bay        |     Quarters  
+   Quarters      |   Quarters        |         Bay        |     Quarters
                  |                   |                    |
             Engineering              |                Turbolift
-                                     |                 
+                                     |
                                      |
               DECK 1                 |                DECK 2
 -------------------------------------+-----------------------------------------
                                      |
                                      |      Ready-----Bridge
-             Turbolift               |      Room          |        
+             Turbolift               |      Room          |
                  |                   |                    |
    Science-----****-----Cargo        |    Turbolift----Bridge-----Conference
      Lab         |       Bay         |                               Room
-                 |                   |                    
-       Gym-----****-----Picard's     |                  
-                 |      Quarters     |                      
-                 |                   |                    
-    Troi's-----****-----Worf's       |                   
-  Quarters       |     Quarters      |                        
-                 |                   |                
-             Shuttle Bay             |                    
+                 |                   |
+       Gym-----****-----Picard's     |
+                 |      Quarters     |
+                 |                   |
+    Troi's-----****-----Worf's       |
+  Quarters       |     Quarters      |
+                 |                   |
+             Shuttle Bay             |
                                      |
                                      |
-              DECK 3                 |                DECK 4 
+              DECK 3                 |                DECK 4
 ~
 S
 #24131
 Cargo Bay 2~
    You're in the cargo bay 2 of the Enterprise.  It's quite a large room, with a
 very high ceiling and a lot of floor space.  Several hundred plastic crates and
-barrels with the Starfleet insignia on them stacked right up to the ceiling.  
+barrels with the Starfleet insignia on them stacked right up to the ceiling.
 ~
 241 8 0 0 0 0
 D3
-   The colorless doors of the science lab lie a sort distance to the west.  
+   The colorless doors of the science lab lie a sort distance to the west.
 ~
 ~
 0 -1 24130
@@ -991,11 +991,11 @@ Turbolift~
    A small screen above the door reads "Deck Three".  The turbolift walls have
 been rounded off, making it in the shape of a tube.  Several vertical rows of
 lights make this place very well lit.  From here, you can access the other decks
-on the Enterprise.  There is a small instructional panel by the door.  
+on the Enterprise.  There is a small instructional panel by the door.
 ~
 241 8 0 0 0 0
 D2
-   A long corridor leads toward the main shuttle bay.  
+   A long corridor leads toward the main shuttle bay.
 ~
 ~
 0 -1 24130
@@ -1015,12 +1015,12 @@ Turbolift~
    A small screen above the door reads "Deck Four".  The turbolift walls have
 been rounded off, making it in the shape of a tube.  Several vertical rows of
 lights make this place very well lit.  From here, you can access the other decks
-on the Enterprise.  There is a small instructional panel by the door.  
+on the Enterprise.  There is a small instructional panel by the door.
 ~
 241 8 0 0 0 0
 D1
    You can see the very respectable-looking main bridge.  It is forbidden for
-non-crew personnel or non-ambassadors to step past this threshhold.  
+non-crew personnel or non-ambassadors to step past this threshhold.
 ~
 ~
 0 0 24136
@@ -1039,7 +1039,7 @@ T 24115
 Turbolift~
    The turbolift walls have been rounded off, making it in the shape of a tube.
 Several vertical rows of lights make this place very well lit.  From here, you
-can access theother decks on the Enterprise.  
+can access theother decks on the Enterprise.
 ~
 241 8 0 0 0 0
 S
@@ -1047,42 +1047,42 @@ S
 Picard's Ready Room~
    In Captain Picard's ready room, a long couch has been placed beside the door,
 while a large U shaped desk is located by the northern wall.  A small computer
-screen is sitting on the desk, as well as several other papers and documents.  
+screen is sitting on the desk, as well as several other papers and documents.
 A single high window beside the desk looks into space, and a fish tank is
 located in the northwestern corner of the room.  This is where the Captain makes
-all of his important decisions.  
+all of his important decisions.
 ~
 241 8 0 0 0 0
 D1
-   The main bridge lies to the east, where most of the action takes place.  
+   The main bridge lies to the east, where most of the action takes place.
 ~
 ~
 0 -1 24138
 S
 #24136
 Main Bridge - Upper Half~
-   You find yourself on the upper half of the main bridge of the USS 
-Enterprise. Directly in front of you is a thick railing that contains many 
+   You find yourself on the upper half of the main bridge of the USS
+Enterprise. Directly in front of you is a thick railing that contains many
 different computer panels used for the tactical systems of the ship. The
-entire southern wall is covered with computer consoles, where the ship's 
-main systems are controlled. Two small curved ramps on either side of the 
-room lead north to the lower part of the bridge, and a large circular 
+entire southern wall is covered with computer consoles, where the ship's
+main systems are controlled. Two small curved ramps on either side of the
+room lead north to the lower part of the bridge, and a large circular
 skylight shows the space outside the ship.
 ~
 241 8 0 0 0 0
 D0
-   The lower half of the main bridge is to the north.  
+   The lower half of the main bridge is to the north.
 ~
 ~
 0 -1 24138
 D1
    The conference room can be seen to the east.  Very important meetings take
-place there, obviously.  
+place there, obviously.
 ~
 ~
 0 -1 24137
 D3
-   A smart-looking turbolift jets people all around the ship to the west.  
+   A smart-looking turbolift jets people all around the ship to the west.
 ~
 ~
 0 0 24133
@@ -1094,35 +1094,35 @@ about a dozen comfortable looking office chairs, one for each member of the
 senior staff.  The entire eastern wall is covered with windows, looking out into
 space.  Because of the vast expanse of space which is viewed eastern wall, this
 room appears to be very dark, which is a good atmosphere for discussing the many
-important issues that are the everyday of the crew.  
+important issues that are the everyday of the crew.
 ~
 241 8 0 0 0 0
 D3
-   The main bridge can be seen to the west.  
+   The main bridge can be seen to the west.
 ~
 ~
 0 -1 24136
 S
 #24138
 Main Bridge - Lower Half~
-   You find yourself on the lower half of the main bridge of the USS 
-Enterprise. An enormous view screen covers almost the entire northern wall, 
-and is currently displaying a view of the stars rushing by. Three large 
-chairs in the northern part of the room, in front of the railing, face the 
-screen. This is where the Captain, Commander Riker, and Counselor Troi sit. 
-Two computer consoles with built in chairs rest about ten feet in front of 
+   You find yourself on the lower half of the main bridge of the USS
+Enterprise. An enormous view screen covers almost the entire northern wall,
+and is currently displaying a view of the stars rushing by. Three large
+chairs in the northern part of the room, in front of the railing, face the
+screen. This is where the Captain, Commander Riker, and Counselor Troi sit.
+Two computer consoles with built in chairs rest about ten feet in front of
 the chairs, also facing the view screen. This is where the ship's pilot and
 information officer sit.
 ~
 241 8 0 0 0 0
 D2
-   The upper half of the main bridge is to the south.  
+   The upper half of the main bridge is to the south.
 ~
 ~
 0 -1 24136
 D3
    Captain Picard's ready room is to the west.  Access is granted only on
-permission by the captain.  
+permission by the captain.
 ~
 ~
 0 -1 24135
@@ -1132,7 +1132,7 @@ Outer Space by the Enterprise~
    You are floating in outerspace, right beside the USS Enterprise.  Billions of
 stars glitter and sparkle from every direction, originating from the vast
 expanses of deep space.  Without a spacesuit, one would surely perish out here.
-A large grey door leads into the Enterprise's Shuttle Bay.  
+A large grey door leads into the Enterprise's Shuttle Bay.
 ~
 241 0 0 0 0 9
 D0
@@ -1141,7 +1141,7 @@ The Shuttle Bay is North.
 door doors grey~
 1 -1 24122
 D4
-   All you can see is the massive expanse of deep space.  
+   All you can see is the massive expanse of deep space.
 ~
 ~
 0 -1 24140
@@ -1156,12 +1156,12 @@ direction apart from to the north, where a large red star is going super-nova.
 241 0 0 0 0 9
 D4
    Millions upon millions of stars slowly burn and radiate their light
-throughout the universe.  
+throughout the universe.
 ~
 ~
 0 -1 24141
 D5
-   The USS Enterprise can be seen, a small distance away.  
+   The USS Enterprise can be seen, a small distance away.
 ~
 ~
 0 -1 24139
@@ -1171,12 +1171,12 @@ T 24107
 Outer Space~
    You are nearing deep-space, the cold and desolate enormity that has boggled
 the minds of all sentient beings since the begining of time.  The USS Enterprise
-can be spied, some distance away.  
+can be spied, some distance away.
 ~
 241 0 0 0 0 9
 D5
    Far away, the USS Enterprise can be spied.  A large red planet peacefully
-orbits it's dying sun.  
+orbits it's dying sun.
 ~
 ~
 0 -1 24140
@@ -1189,7 +1189,7 @@ occurs.  The chamber is perfectly round and quite tall, to house the round pads
 on the floor.  Everything is the most brilliant of white, excepting the blinking
 red lights on the floor and the blue ones on the ceiling.  When activated, the
 whole area flashes the same color as the walls, which only server to intensify
-the bright beams.  
+the bright beams.
 ~
 241 0 0 0 0 9
 D2
@@ -1205,7 +1205,7 @@ Alien World~
 mutated forest.  What go for trees here are tall, circular pyramid type
 structures with three or four basin-like layers.  The grass is purple, the sky
 is a deep crimson and the clouds are a hidious yellow.  A small watch-tower
-stands just to the north, fallen into disrepair.  
+stands just to the north, fallen into disrepair.
 ~
 241 0 0 0 0 0
 S
@@ -1220,13 +1220,13 @@ of the streets below.  A hat-stand is positioned to the side of the door to the
 north, which has a small frosted-glass panel with an advertisement on the
 outside.  A large cluttered desk lies underneath the window facing the door with
 the chair quite some distance away, looking like it's used to lean back quite
-frequently.  A quaint little clock hangs on the wall.  
+frequently.  A quaint little clock hangs on the wall.
 ~
 241 24 0 0 0 0
 E
 desk~
    The desk is pretty cluttered.  Among the many items on the desk is a
-name-plaque, a circular-dial telephone and a black ink-pen.  
+name-plaque, a circular-dial telephone and a black ink-pen.
 ~
 S
 T 24124
@@ -1242,7 +1242,7 @@ and is suited more for being left in a horizontal configuration.  There are
 loops of metal encircling it, each with complex computer circuits and scanning
 equipment.  To the east are four large, circular booths, about the size of a
 shower.  Three of them contain what appear to be half-human beings, the fourth
-is empty.  
+is empty.
 ~
 241 24 0 0 0 0
 S
