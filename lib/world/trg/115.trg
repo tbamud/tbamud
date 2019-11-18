@@ -4,7 +4,7 @@ Man Trigger~
 ~
 if %actor.is_pc%
   wait 5
-  Say "Run, Run, Fast, Fast, Get Out Of Here !! "
+  say "Run, Run, Fast, Fast, Get Out Of Here !! "
 end
 ~
 $~

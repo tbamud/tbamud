@@ -398,7 +398,7 @@ while %word%
         %load% obj %zone%49
         mgoto %zone%02
       else
-        Say I'm sorry.  Sibyl is with another client right now.
+        say I'm sorry.  Sibyl is with another client right now.
         say Please choose one of the available readers.
       end
     end
@@ -420,7 +420,7 @@ while %word%
         %load% obj %zone%52
         mgoto %zone%02
       else
-        Say I'm sorry.  Esmerelda is with another client right now.
+        say I'm sorry.  Esmerelda is with another client right now.
         say Please choose one of the available readers.
       end
     end
@@ -442,7 +442,7 @@ while %word%
         %load% obj %zone%50
         mgoto %zone%02
       else
-        Say I'm sorry.  Jaelle is with another client right now.
+        say I'm sorry.  Jaelle is with another client right now.
         say Please choose one of the available readers.
       end
     end

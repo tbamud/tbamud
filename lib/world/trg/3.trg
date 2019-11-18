@@ -569,21 +569,21 @@ Mob Greet - Kind Soul - 13~
 if %actor.is_pc%
   wait 2 sec
   if !%actor.eq(light)%
-    Say you really shouldn't be wondering these parts without a light source %actor.name%.
+    say you really shouldn't be wondering these parts without a light source %actor.name%.
     shake
     %load% obj 200
     give light %actor.name%
     halt
   end
   if !%actor.eq(rfinger)% || !%actor.eq(lfinger)%
-    Say did you lose one of your rings?
+    say did you lose one of your rings?
     sigh
     %load% obj 201
     give ring %actor.name%
     halt
   end
   if !%actor.eq(neck1)% || !%actor.eq(neck2)%
-    Say you lose everything don't you?
+    say you lose everything don't you?
     roll
     %load% obj 203
     give necklace %actor.name%
@@ -596,68 +596,68 @@ if %actor.is_pc%
     halt
   end
   if !%actor.eq(head)%
-    Say protect that noggin of yours, %actor.name%.
+    say protect that noggin of yours, %actor.name%.
     %load% obj 206
     give helm %actor.name%
     halt
   end
   if !%actor.eq(legs)%
-    Say why do you always lose your pants %actor.name%?
+    say why do you always lose your pants %actor.name%?
     %load% obj 207
     give leggings %actor.name%
     halt
   end
   if !%actor.eq(feet)%
-    Say you can't go around barefoot %actor.name%.
+    say you can't go around barefoot %actor.name%.
     %load% obj 208
     give boots %actor.name%
     halt
   end
   if !%actor.eq(hands)%
-    Say need some gloves %actor.name%?
+    say need some gloves %actor.name%?
     %load% obj 209
     give gloves %actor.name%
     halt
   end
   if !%actor.eq(arms)%
-    Say you must be freezing %actor.name%.
+    say you must be freezing %actor.name%.
     %load% obj 210
     give sleeves %actor.name%
     halt
   end
   if !%actor.eq(shield)%
-    Say you need one of these to protect yourself %actor.name%.
+    say you need one of these to protect yourself %actor.name%.
     %load% obj 211
     give shield %actor.name%
     halt
   end
   if !%actor.eq(about)%
-    Say you are going to catch a cold %actor.name%.
+    say you are going to catch a cold %actor.name%.
     %load% obj 212
     give cape %actor.name%
     halt
   end
   if !%actor.eq(waist)%
-    Say better use this to hold your pants up %actor.name%.
+    say better use this to hold your pants up %actor.name%.
     %load% obj 213
     give belt %actor.name%
     halt
   end
   if !%actor.eq(rwrist)% || !%actor.eq(lwrist)%
-    Say misplace something?
+    say misplace something?
     smile
     %load% obj 215
     give wristguard %actor.name%
     halt
   end
   if !%actor.eq(wield)%
-    Say without a weapon you will be fido food %actor.name%.
+    say without a weapon you will be fido food %actor.name%.
     %load% obj 216
     give weapon %actor.name%
     halt
   end
   if !%actor.eq(hold)%
-    Say this might help you %actor.name%.
+    say this might help you %actor.name%.
     %load% obj 217
     give staff %actor.name%
     halt

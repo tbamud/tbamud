@@ -12,12 +12,12 @@ Calculator By Mordecai~
 *~
 * By Mordecai
 if %actor.is_pc%
-  Return 0
-  Eval sum %speech%
-  Eval test1 "%speech%"
-  Eval test %test1.strlen%
-  Eval che %sum%/1
-  If %che% == %sum%
+  return 0
+  eval sum %speech%
+  eval test1 "%speech%"
+  eval test %test1.strlen%
+  eval che %sum%/1
+  if %che% == %sum%
     %echo% @WComputing results...@n
     if (%speech%/===)
       if (%sum%==1)
@@ -26,19 +26,19 @@ if %actor.is_pc%
         set sum No
       end
     end
-    Eval st 2+%test%
-    Eval o .
-    Eval sumslen "%sum%
-    Eval len %st% - (%sumslen.strlen%-2)
-    If %len% > 0
-      Eval dif (%len%/2)
-      While %y.strlen% < %st%
-        Eval o .%o%
-        Eval y %o%
-        Eval m ?%m%
-        Eval p %m%
-        If %dif% == %y.strlen%
-          Eval wid1 %p%
+    eval st 2+%test%
+    eval o .
+    eval sumslen "%sum%
+    eval len %st% - (%sumslen.strlen%-2)
+    if %len% > 0
+      eval dif (%len%/2)
+      while %y.strlen% < %st%
+        eval o .%o%
+        eval y %o%
+        eval m ?%m%
+        eval p %m%
+        if %dif% == %y.strlen%
+          eval wid1 %p%
         end
       done
     end
@@ -1545,7 +1545,7 @@ actor.eq(*) test~
 0 g 100
 ~
 if !%actor.eq(*)%
-  Say you are wearing nothing!
+  say you are wearing nothing!
 else
   say you are wearing something.
 end
