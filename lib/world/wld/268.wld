@@ -2,7 +2,7 @@
 Blindingly lit hallway~
    This east-west hallway is so brightly lit that you can barely see anything.
 You have to shield your eyes just to see in front of you.  It appears to be
-made from the same metal as the entrance to the building does.    
+made from the same metal as the entrance to the building does.
 ~
 268 8 0 0 0 0
 D0
@@ -22,21 +22,21 @@ You see the blindingly bright hallway.
 0 0 26798
 E
 credits~
-   Vice Island is an evil-only area. It's rather large for a medium-sized MUD 
+   Vice Island is an evil-only area. It's rather large for a medium-sized MUD
 and is intended to be used in concurrence with Oceania.
 This area is intended to be part 1 of 4 subareas I have in mind for Oceania.
 It has mainly evil mobs, and almost all of the equipment in it is evil only.
 ---------------------------------------------------------------------------
-I make no legal claim on Vice Island save this: You MUST give me credit for 
+I make no legal claim on Vice Island save this: You MUST give me credit for
 its design SOMEPLACE in your mud. You can hide it if you want, but I want
-some credit somewhere for it. :) I spent 6 months making Oceania and Vice 
+some credit somewhere for it. :) I spent 6 months making Oceania and Vice
 Island, and I feel some need to have it known that my work is appreciated.
 ---------------------------------------------------------------------------
 Builder      : Questor
 Zone         : 268 Vice Island II
 Player Level : 20-25
 Rooms        : 5
-Links        : 
+Links        :
 Zone 268 is linked to the following zones:
 267 Vice Island                    at 26800 (west ) ---> 26798
 267 Vice Island                    at 26804 (east ) ---> 26797
@@ -49,7 +49,7 @@ Deadly Iron Maiden~
 and the bars of the coffin-like structure start to close.  You try to run out,
 but before you can, the door snaps shut.  You feel the spikes pierce your skin
 as you are about to lose consciousness the closing walls stop and you wonder at
-the luck you seem to have of late.    
+the luck you seem to have of late.
 ~
 268 516 0 0 0 0
 S
@@ -60,7 +60,7 @@ Blindingly lit hallway~
 You have to shield your eyes just to see in front of you.  It appears to be
 made from the same metal as the entrance to the building does.  Openings to
 your north and south look like they need to be examined closely before you even
-think about going those ways.  The Grand Temple of Terror is to your east.    
+think about going those ways.  The Grand Temple of Terror is to your east.
 ~
 268 8 0 0 0 0
 D0
@@ -76,8 +76,8 @@ You can see the grand temple of terror.
 ~
 0 0 26804
 D2
-You can see what looks to be an iron maiden in the southern room--however, 
-it fits every part of that room...and looks like it's just about to snap 
+You can see what looks to be an iron maiden in the southern room--however,
+it fits every part of that room...and looks like it's just about to snap
 shut. It looks like you'd be very dumb to attempt entrance.
 ~
 ~
@@ -91,8 +91,8 @@ S
 #26803
 The HellFire Room~
    You should really be more careful in your adventures.  The gods favor you
-this day.  This used to be a death trap.  Next time read the descriptions.  
-The Gods are not always forgiving.    
+this day.  This used to be a death trap.  Next time read the descriptions.
+The Gods are not always forgiving.
 ~
 268 516 0 0 0 0
 D2
@@ -107,7 +107,7 @@ Grand Temple of Terror~
 drawings all around the room depict one terrifying act after another.  The
 light is so bright that even though you close your eyes to hide the awful
 sights, you can still see them!  You want to run, but are mesmerized by the
-utter horror of this place.    
+utter horror of this place.
 ~
 268 8 0 0 0 0
 D1
@@ -122,7 +122,7 @@ You see, strangely enough, a way to the High Priest of Terror's office.
 0 0 26792
 E
 drawings~
-   Don't look at them any more closely than you have to!  
+   Don't look at them any more closely than you have to!
 ~
 S
 $~

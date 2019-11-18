@@ -4,7 +4,7 @@ The mad wizard's hut~
 and the bubbling of the cauldron.  Shelves along the walls are lined with vials
 and glasses, holding a variety of colored liquids.  Inside the cauldron is a
 purple-red liquid, bubbling and splashing all over the floor.  The only exit is
-back east, out of the hut.    
+back east, out of the hut.
 ~
 96 76 0 0 0 0
 D1
@@ -24,8 +24,8 @@ Shops        : 1
 Triggers     : 13
 Theme        : Forest, Cave, Swamp, abandoned keep
 Notes        : A quest zone in which a player has to first go to the bear cave
-   to get a key that allows entrance to the wizards hut. The wizard will then 
-   transport the players to domiae and then they must find the king and 
+   to get a key that allows entrance to the wizards hut. The wizard will then
+   transport the players to domiae and then they must find the king and
    complete the quest to receive a sword.
 Links        : 03e
 Zone 96 was linked to the following zones:
@@ -34,7 +34,7 @@ Zone 96 was linked to the following zones:
 E
 tree oak~
    Large oaken trees block out most of the light, giving the everything in the
-forest a dim green appearance.    
+forest a dim green appearance.
 ~
 S
 #9601
@@ -44,7 +44,7 @@ the threshold.  Dried leaves crackle underfoot, and the forest animals scurry a
 safe distance away before turning to regard this new invader.  Birds chirp
 their merry songs, voices intertangling into a mesh of sounds that faintly
 resembles a choir.  The path branches off to the west, but the main path
-continues north.    
+continues north.
 ~
 96 0 0 0 0 3
 D0
@@ -69,7 +69,7 @@ and dry.  Most of the small animals are gone, and only the biggest predatory
 animals of the forest dare come this close to the hut.  The front of the hut is
 decorated with strange runes, and animal skulls hang from the eaves.  The
 doorknob is fashioned from a human thigh bone.  Exits are back to the main
-path, or into the hut.    
+path, or into the hut.
 ~
 96 0 0 0 0 3
 D1
@@ -83,14 +83,14 @@ door~
 E
 hut house hovel home~
    The hut is a crude one, fashioned of daub and mud.  Thatched straw serves as
-the roof, and the windows are mere holes in the cracked walls.    
+the roof, and the windows are mere holes in the cracked walls.
 ~
 S
 #9603
 A Cleared Path~
    The limbs and scrub brush have been hacked off and thrown to each side of
 this new path.  Very little traffic has passed this way, only a few plants and
-grass blades peeking up through the forest floor are trodden.    
+grass blades peeking up through the forest floor are trodden.
 ~
 96 8 0 0 0 0
 D3
@@ -102,10 +102,10 @@ S
 A path through Domiae~
    The path goes on into deeper foliage, and it now sprouts grass and other
 greenery.  The dirt becomes slightly softer, and roots protude from the soil.
-The refreshing scent of life is in the air, and the birds sing it's praise.  
+The refreshing scent of life is in the air, and the birds sing it's praise.
 The forest animals seem to take no heed of anyone, travelling along the path as
 any human would.  Squirrels, rabbits, hares, foxes, and other animals can be
-seen scurrying about.  The path continues north and south.    
+seen scurrying about.  The path continues north and south.
 ~
 96 0 0 0 0 3
 D0
@@ -123,7 +123,7 @@ A four-way intersection~
    A small hole in the treetops forms a sunlit glade.  The animals of the forest
 are far more active here, and the ground is littered with evidence on their
 passing.  A bird chirps gleefully from a hole in a nearby tree, soon followed
-by a chorus of her chicks.  The path here splits in four directions.    
+by a chorus of her chicks.  The path here splits in four directions.
 ~
 96 0 0 0 0 3
 D0
@@ -150,7 +150,7 @@ A dead end~
 path, blocking any further advance.  Many birds are nested in the falling tree,
 which accountrs for the increase in noise.  The tree itself is covered in moss
 and lichen, with violets and wildflowers shooting from the rotted wood.  The
-only exit is back to the intersection.    
+only exit is back to the intersection.
 ~
 96 0 0 0 0 3
 D1
@@ -164,7 +164,7 @@ A path deeper into the forest~
    As the path into the forest gets deeper, the sounds get louder and more
 plentiful.  The squirrels tittering, the birds chirping, and the animals just
 generally scampering about.  The path is filled with less leaves, now, and the
-ground gets even softer.  Exits are to the east and west.    
+ground gets even softer.  Exits are to the east and west.
 ~
 96 0 0 0 0 0
 D1
@@ -182,7 +182,7 @@ A mushy path~
    The ground is completely devoid of leaves now, and the soil gets even
 softer.  The air is beginning to take on an unpleasant odor, but it's not quite
 placeable.  The birdsong is as loud as ever, but the other animals seem to be
-strangely quiet.  The path turns south, or back west.    
+strangely quiet.  The path turns south, or back west.
 ~
 96 64 0 0 0 3
 D2
@@ -199,7 +199,7 @@ T 9600
 A swampy pit~
    The path ends here.  The dirt has turned to mud, and a large collection of
 water and muck is in resting in the middle of the path.  The forest is silent,
-except the occasional bird chirping.  The only exit is back north.    
+except the occasional bird chirping.  The only exit is back north.
 ~
 96 65 0 0 0 3
 D0
@@ -214,7 +214,7 @@ different types of trees are flourishing.  Rowan, elm, pine, and cedar trees
 add themselves to the already plentiful oak.  The ever-present birdsong
 intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
-the forest a wet sheen.  The path continues north and south.    
+the forest a wet sheen.  The path continues north and south.
 ~
 96 0 0 0 0 3
 D0
@@ -234,7 +234,7 @@ different types of trees are flourishing.  Rowan, elm, pine, and cedar trees
 add themselves to the already plentiful oak.  The ever-present birdsong
 intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
-the forest a wet sheen.  The path continues north and south.    
+the forest a wet sheen.  The path continues north and south.
 ~
 96 0 0 0 0 3
 D0
@@ -252,7 +252,7 @@ A turn in the path~
    The path takes a turn here, the hard-packed dirt loping in a wide turn.  In
 many places the path is interrupted by small collapses, due to ants tunneling
 under.  In the underbrush nearby, an animal has burrowed a rather deep hole to
-make it's home.  Exits are west or back to the south.    
+make it's home.  Exits are west or back to the south.
 ~
 96 0 0 0 0 3
 D2
@@ -266,7 +266,7 @@ D3
 E
 den hole burrow~
    Peering into the hole, it looks like a mole has chosen to make it's home
-here.  The soil inside the burrow is dry and grainy.    
+here.  The soil inside the burrow is dry and grainy.
 ~
 S
 T 9600
@@ -276,7 +276,7 @@ A three-way intersection~
 'larger' animals seem to use the west path, while squirrels and birds - the
 'smaller' animals - seem to keep to the east path.  The northern path, on the
 other hand, doesn't look like any animal uses it.  The path continues west and
-north, and back east.    
+north, and back east.
 ~
 96 0 0 0 0 3
 D0
@@ -300,7 +300,7 @@ different types of trees are flourishing.  Rowan, elm, pine, and cedar trees
 add themselves to the already plentiful oak.  The ever-present birdsong
 intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
-the forest a wet sheen.  The path continues north and south.    
+the forest a wet sheen.  The path continues north and south.
 ~
 96 0 0 0 0 3
 D0
@@ -318,7 +318,7 @@ A turn in the path~
    The path takes a turn here, the hard-packed dirt loping in a wide turn.  In
 many places the path is interrupted by small collapses, due to ants tunneling
 under.  In the underbrush nearby, an animal has burrowed a rather deep hole to
-make it's home.  Exits are east or back to the south.    
+make it's home.  Exits are east or back to the south.
 ~
 96 0 0 0 0 3
 D1
@@ -332,7 +332,7 @@ D2
 E
 den hole burrow~
    Peering into the hole, it looks like a mole has chosen to make it's home
-here.  The soil inside the burrow is dry and grainy.    
+here.  The soil inside the burrow is dry and grainy.
 ~
 S
 T 9600
@@ -342,7 +342,7 @@ A dead end~
 path, blocking any further advance.  Many birds are nested in the falling tree,
 which accountrs for the increase in noise.  The tree itself is covered in moss
 and lichen, with violets and wildflowers shooting from the rotted wood.  The
-only exit is back west.    
+only exit is back west.
 ~
 96 0 0 0 0 3
 D3
@@ -358,7 +358,7 @@ different types of trees are flourishing.  Rowan, elm, pine, and cedar trees
 add themselves to the already plentiful oak.  The ever-present birdsong
 intertwines itself with the sounds of the animals going about their business.
 The moisture trapped by the trees coupled with the coolness of the air gives
-the forest a wet sheen.  The path continues east and west.    
+the forest a wet sheen.  The path continues east and west.
 ~
 96 0 0 0 0 3
 D1
@@ -396,7 +396,7 @@ trees block out most of the light, and the trail through the forest is
 cluttered with leafs and sticks.  However, looking again there are many things
 of beauty about it.  Small animals scurry about, and birdsong can be heard even
 at the threshold of the forest.  Flowers line the path north into the forest,
-which is the only visible exit.    
+which is the only visible exit.
 ~
 96 0 0 0 0 3
 D0
@@ -410,7 +410,7 @@ D1
 E
 tree oak~
    Large oaken trees block out most of the light, giving the everything in the
-forest a dim green appearance.    
+forest a dim green appearance.
 ~
 S
 T 9600
@@ -420,7 +420,7 @@ Another turn in the path~
 something, has ripped off the lower boughs to the trees.  That either means
 someone wants an unobstructed view or someone's property line is near.  Far in
 the distance a cave makes a grey splotch on the horizon.  Exits are west or
-back north.    
+back north.
 ~
 96 0 0 0 0 3
 D0
@@ -438,7 +438,7 @@ A path nearing the cave~
    The path continues west toward the cave.  Foxes and rabbits shoot through
 the underbrush constantly, and the birdsong grows even fainter.  Loud roars
 come from the west, and the unmistakeable sound of an animal getting ripped in
-half.  The path continues west and east.    
+half.  The path continues west and east.
 ~
 96 0 0 0 0 3
 D1
@@ -456,7 +456,7 @@ A path nearing the cave~
    Now only the smallest birds can be heard chirping, but the foxes and rabbits
 seem to thrive in the silence.  The inhuman roars from the west grow louder,
 and the squelching of dead animals intensifies.  The smell of excrement floats
-through the air.  The path continues west and east.    
+through the air.  The path continues west and east.
 ~
 96 0 0 0 0 3
 D1
@@ -475,7 +475,7 @@ A turn in the path~
 much worse.  The wind stops, the animals disappear, and the birds stop singing.
 The shrieks of a dying creature can be heard nearby, and the roaring stops
 momentarily, replaced by a sickening squelch.  The path returns west, or
-continues north.    
+continues north.
 ~
 96 4 0 0 0 3
 D0
@@ -493,7 +493,7 @@ In front of the cave~
    The roars here are almost deafening.  The smell of death and animal
 excrement floats through the air, in enough potency to make one vomit.  A pair
 of red eyes peer out of the shroud of darkness in the cave.  The path continues
-north, into the cave west, or returns south.    
+north, into the cave west, or returns south.
 ~
 96 0 0 0 0 3
 D0
@@ -514,7 +514,7 @@ A refuse pit~
    The stench of excrement and death come from this pit.  Heaps of dead animals
 in various stages of decomposition, and piles of animal excrement.  Whether
 it's from what lives in the cave or from the dead animals isn't known.  The
-only exit is back south.    
+only exit is back south.
 ~
 96 0 0 0 0 3
 D2
@@ -526,7 +526,7 @@ S
 In the mouth of the cave~
    Just inside of the cave, the sickly-sweet odor of fresh blood can be
 detected.  Roars from inside the cave signifies that the cave isn't exactly
-empty.  The rest of the cave lies west, and one can exit east.    
+empty.  The rest of the cave lies west, and one can exit east.
 ~
 96 8 0 0 0 5
 D1
@@ -543,7 +543,7 @@ Inside the cave~
    The odor of blood gets stronger inside the cave.  Probably because of the
 strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits in all
-directions.    
+directions.
 ~
 96 9 0 0 0 5
 D0
@@ -568,7 +568,7 @@ Inside the cave~
    The odor of blood gets stronger inside the cave.  Probably because of the
 strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the south
-and west.    
+and west.
 ~
 96 9 0 0 0 0
 D2
@@ -585,7 +585,7 @@ Inside the cave~
    The odor of blood gets stronger inside the cave.  Probably because of the
 strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the north
-and west.    
+and west.
 ~
 96 9 0 0 0 0
 D0
@@ -602,7 +602,7 @@ Inside the cave~
    The odor of blood gets stronger inside the cave.  Probably because of the
 strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits north, east,
-and south.    
+and south.
 ~
 96 9 0 0 0 0
 D0
@@ -623,7 +623,7 @@ Inside the cave~
    The odor of blood gets stronger inside the cave.  Probably because of the
 strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the south
-and east.    
+and east.
 ~
 96 9 0 0 0 0
 D1
@@ -640,7 +640,7 @@ Inside the cave~
    The odor of blood gets stronger inside the cave.  Probably because of the
 strewn about corpses and the fresh blood staining the walls.  Claw marks on the
 floor tell that the dead animals put up quite a struggle.  Exits to the north
-and east.    
+and east.
 ~
 96 9 0 0 0 0
 D0
@@ -658,7 +658,7 @@ Inside the outer gate~
 gate is north, and two narrow towers protect the barbican.  The gate has rusted
 off of its hinges, and it lies on the ground near the entrance.  To the west
 and east are the stairways into the towers, and north lays the gate.  To the
-south a blue portal stretches between the walls.    
+south a blue portal stretches between the walls.
 ~
 96 0 0 0 0 5
 D0
@@ -684,7 +684,7 @@ A stairwell~
 and most of them are rotten.  Small slits in the stone wall give room for
 archers to fire through in case of an attack, and a murder-hole halfway up the
 stairs give soldiers something to pour burning oil or drip heavy objects
-through.  East lies the outer gate and the top of the small tower is upward.  
+through.  East lies the outer gate and the top of the small tower is upward.
 ~
 96 0 0 0 0 5
 D1
@@ -702,7 +702,7 @@ A stairwell~
 and most of them are rotten.  Small slits in the stone wall give room for
 archers to fire through in case of an attack, and a murder-hole halfway up the
 stairs give soldiers something to pour burning oil or drip heavy objects
-through.  West lies the outer gate and the top of the small tower is upward.  
+through.  West lies the outer gate and the top of the small tower is upward.
 ~
 96 0 0 0 0 5
 D3
@@ -719,7 +719,7 @@ A small tower~
    Moss and mildew grow on the walls, and slime lies on the floor.  Just below
 the tower is the gate area, where people would come in if the outer gate still
 existed.  There are broken pieces of bows and arrows, rusted sets of armor, and
-swords tarnished beyond recognition.  The only exit is back down.    
+swords tarnished beyond recognition.  The only exit is back down.
 ~
 96 0 0 0 0 0
 D5
@@ -732,7 +732,7 @@ A small tower~
    Moss and mildew grow on the walls, and slime lies on the floor.  Just below
 the tower is the gate area, where people would come in if the outer gate still
 existed.  There are broken pieces of bows and arrows, rusted sets of armor, and
-swords tarnished beyond recognition.  The only exit is back down.    
+swords tarnished beyond recognition.  The only exit is back down.
 ~
 96 0 0 0 0 0
 D5
@@ -746,7 +746,7 @@ Foyer~
 the sound of footsteps.  A grand chandelier lies broken in several pieces on
 the floor, and the furniture reduced to dull colored rags.  All that remains of
 the fountain is the statue of the King, broken in half.  Exits are north and
-south.    
+south.
 ~
 96 8 0 0 0 0
 D0
@@ -764,7 +764,7 @@ The throne room~
 thrones of solid gold and satin lay on the dais, and the exquisite silk
 tapestries on the walls are untouched by rats or other vermin.  The queens
 chair holds a skeleton, but the king's chair is strangely empty.  Exits are east
-and west along the hall, north to the dining area or south to the foyer.    
+and west along the hall, north to the dining area or south to the foyer.
 ~
 96 8 0 0 0 0
 D0
@@ -789,7 +789,7 @@ Banquet hall~
    Contrary to the Throne Room, the hall lies in horrible disrepair.  The table
 itself seems sturdy enough, but those chairs remaining are in pieces or missing
 legs.  The ever-present sound of rat on stone can be heard.  Exits are north
-and south.    
+and south.
 ~
 96 8 0 0 0 0
 D0
@@ -806,7 +806,7 @@ Kitchen~
    Massive iron-cast ovens occupy most of the room, and the remains of plain
 tables can be seen.  The smell of rat floats in the air, along with the smell
 of long spoiled food.  The cellar lies west, or one may exit south back into
-the dining hall.    
+the dining hall.
 ~
 96 8 0 0 0 0
 D2
@@ -823,7 +823,7 @@ Cellar~
    The cellar smells strongly of rotten food and filthy rats.  Eyes glare from
 the shelves where food use to be, and the sound of sniffing and fighting can be
 heard.  Human skeletons lie in a heap.  Perhaps this isn't the safest place to
-be?    
+be?
 ~
 96 9 0 0 0 0
 D1
@@ -836,7 +836,7 @@ A hall~
    Chunks of ceiling and wall lay on the floor, blocking most of the entrances.
 Rats scurry around the hall, making clicking noises on the broken marble floor.
 Plants hang from the ceiling, and grow out of the walls.  The hall continues
-east, or one can go back west toward the throne room.    
+east, or one can go back west toward the throne room.
 ~
 96 8 0 0 0 0
 D1
@@ -853,7 +853,7 @@ A hall~
    Chunks of ceiling and wall lay on the floor, blocking most of the entrances.
 Rats scurry around the hall, making clicking noises on the broken marble floor.
 Plants hang from the ceiling, and grow out of the walls.  The hall continues
-west, or one can go back east toward the throne room.    
+west, or one can go back east toward the throne room.
 ~
 96 8 0 0 0 0
 D1
@@ -871,7 +871,7 @@ A stairwell~
 on the ground here, having rusted off.  The rats seem to stay away from here.
 Perhaps it has something to do with the inhuman howls of rage that eminate from
 the room west of hear.  Or maybe it's that there's more food nearer the
-kitchen.  Exits are up, west, and east.    
+kitchen.  Exits are up, west, and east.
 ~
 96 12 0 0 0 0
 D1
@@ -893,7 +893,7 @@ A stairwell~
 on the ground here, having rusted off.  The rats seem to stay away from here.
 Perhaps it has something to do with the inhuman howls of rage that eminate from
 the room east of here.  Or maybe it's that there's more food nearer the
-kitchen.  Exits are up, west, and east.    
+kitchen.  Exits are up, west, and east.
 ~
 96 8 0 0 0 0
 D1
@@ -914,7 +914,7 @@ A holding chamber.~
    A steel barred window lets in light to the spartan room.  A bed and a
 chamberpot are all that are here.  The floor is of the same cracked marble, and
 the cold stone walls don't show the same cracking and falling that the other
-walls do.  The only exit is the way you came.    
+walls do.  The only exit is the way you came.
 ~
 96 8 0 0 0 0
 D3
@@ -927,7 +927,7 @@ A holding chamber.~
    A steel barred window lets in light to the spartan room.  A bed and a
 chamberpot are all that are here.  The floor is of the same cracked marble, and
 the cold stone walls don't show the same cracking and falling that the other
-walls do.  The only exit is the way you came.    
+walls do.  The only exit is the way you came.
 ~
 96 8 0 0 0 0
 D1
@@ -940,7 +940,7 @@ A hallway entrance~
    The floor here is lined with satin, although torn and bitten from rats.  No
 rats are here presently, but signs of their presence are visible.  Intricate
 carvings and tapestries adorn the walls, along with a bust of the King in the
-corner.  Exits are west or back down.    
+corner.  Exits are west or back down.
 ~
 96 8 0 0 0 0
 D3
@@ -957,7 +957,7 @@ A hallway entrance~
    The floor here is lined with satin, although torn and bitten from rats.  No
 rats are here presently, but signs of their presence are visible.  Intricate
 carvings and tapestries adorn the walls, along with a bust of the King in the
-corner.  Exits are east or back down.    
+corner.  Exits are east or back down.
 ~
 96 8 0 0 0 0
 D1
@@ -974,7 +974,7 @@ The royal hallway~
    Along the hallway there is no noise whatsoever.  The walls are still
 crumbling, plants are still growing out of the ceiling, of which most of is
 laying on the floor.  The floor seems a little less eaten up.  The entrance to
-the King's bedroom lies east, or one may return west.    
+the King's bedroom lies east, or one may return west.
 ~
 96 8 0 0 0 0
 D1
@@ -991,7 +991,7 @@ The royal hallway~
    Along the hallway there is no noise whatsoever.  The walls are still
 crumbling, plants are still growing out of the ceiling, of which most of is
 laying on the floor.  The floor seems a little less eaten up.  The entrance to
-the King's bedroom lies west, or one may return east.    
+the King's bedroom lies west, or one may return east.
 ~
 96 8 0 0 0 0
 D1
@@ -1036,7 +1036,7 @@ depicting a mighty battle.  The ceiling is painted in the image of an angel and
 her followers, and the furniture is exquisite.  A desk made from the finest
 cedar is resting against the wall, with a matching chair.  Both are heavily
 cushioned with satin, and carved in strange and beautiful pictures.  The only
-exit is north.    
+exit is north.
 ~
 96 8 0 0 0 0
 D0
@@ -1048,7 +1048,7 @@ S
 A Cleared Path~
    The freshly cut path is clearer to the east while to the west it looks like
 someone gave up on hacking through this dense woods.  The trees and brush are
-typical of any hardwood forest.    
+typical of any hardwood forest.
 ~
 96 0 0 0 0 0
 D1

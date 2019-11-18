@@ -3,7 +3,7 @@ butler~
 the butler~
 A butler walks up to you and states, 'please follow me, sir.'
 ~
-   Dressed all in black, looking like a very capable and dependable man.  
+   Dressed all in black, looking like a very capable and dependable man.
 ~
 200 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -17,7 +17,7 @@ a five headed demon~
 A huge five headed demon rises up up on its haunches and attacks!
 ~
    This demon has pure malevolence for anything living.  Oops!  You're living!
-I guess that means you!  
+I guess that means you!
 ~
 194586 0 0 0 16 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
@@ -30,7 +30,7 @@ man~
 a man~
 A man sits here, chatting happily with a handsome older woman.
 ~
-   Looks like he just might get lucky.  
+   Looks like he just might get lucky.
 ~
 256026 0 0 0 16 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -42,7 +42,7 @@ woman~
 a woman~
 A woman sits here, chatting with a young man.
 ~
-   Looks like a socialite who has seen better days.  
+   Looks like a socialite who has seen better days.
 ~
 256026 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -54,7 +54,7 @@ man balding~
 a balding man~
 A balding man sits in a recliner, feet up, before the fire.
 ~
-   Man, that looks comfey!  
+   Man, that looks comfey!
 ~
 253962 0 0 0 16 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
@@ -66,7 +66,7 @@ servant~
 a servant~
 A servant walks by, stiff backed and formal.
 ~
-   Black slacks, white shirt, black overcoat - you know, a servant.  
+   Black slacks, white shirt, black overcoat - you know, a servant.
 ~
 6344 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -78,7 +78,7 @@ maid~
 a maid~
 A maid walks by, ignoring you and all others as she goes about her business.
 ~
-   Black dress, white smock.  She looks quite a bit like a maid.  
+   Black dress, white smock.  She looks quite a bit like a maid.
 ~
 4296 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -92,7 +92,7 @@ The Cook bustles about, making a mess while making a meal.
 ~
    Dressed in what used to be white, the cook mostly wears her many stains upon
 herself.  Strangely, she seems almost proud of those stains, almost as if they
-were decorations from battles past.  
+were decorations from battles past.
 ~
 2058 0 0 0 0 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
@@ -106,7 +106,7 @@ the fat maid~
 A HUGE FAT maid stands here, cramming all the food she can in her mouth.
 ~
    This big 'ole porker must have won at least one all-you-can-eat contest in
-her time.  
+her time.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -118,7 +118,7 @@ thing~
 a slimy green thing~
 A huge slimy green thing crawls across the table, sucking at the food.
 ~
-   Man, that's sick.  Sick and wrong.  
+   Man, that's sick.  Sick and wrong.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -130,7 +130,7 @@ face floating floatingfacepainting ~
 the Floating Face~
 The Face suddenly comes alive, out of the picture, and attacks you!
 ~
-   By the Gods, what IS it?  
+   By the Gods, what IS it?
 ~
 229418 0 0 0 1572864 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
@@ -144,7 +144,7 @@ Inna's cat~
 A HUGE bear rises up on its hind legs, looking as if it may attack!
 ~
    The image of this bear wavers in and out, flickering.  Could it be that this
-thing isn't what it seems?  
+thing isn't what it seems?
 ~
 138 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
@@ -157,7 +157,7 @@ man naked~
 a naked man~
 The man jumps up from the bed and although he has not a stitch on him, attacks!
 ~
-   This guy must've been a little, err, busy?  When you landed in his room.  
+   This guy must've been a little, err, busy?  When you landed in his room.
 ~
 42 0 0 0 80 0 0 0 100 E
 20 14 -2 4d4+200 3d3+3
@@ -169,7 +169,7 @@ woman cowering~
 the cowering woman~
 The woman simply tries to cover herself under the blankets.
 ~
-   Poor girl, looks as if maybe she was one the servants...  
+   Poor girl, looks as if maybe she was one the servants...
 ~
 138 0 0 0 0 0 0 0 300 E
 6 18 6 1d1+60 1d2+1
@@ -181,7 +181,7 @@ vampiress~
 vampiress~
 A vampiress stands naked in the shower, mouth open wide, gleefully slurping the blood.
 ~
-   As beautiful as she may seem, she is ten times as dangerous.  
+   As beautiful as she may seem, she is ten times as dangerous.
 ~
 30 0 0 0 65536 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
@@ -194,7 +194,7 @@ marty bartender~
 Old Marty~
 Old Marty stands behind the bar, mixing drinks.
 ~
-   Good Old Marty, what a guy.  
+   Good Old Marty, what a guy.
 ~
 188442 0 0 0 0 0 0 0 500 E
 20 14 -2 4d4+200 3d3+3
@@ -219,7 +219,7 @@ pa~
 Pa~
 Pa sits with his whittlin' knife, whittlin' on some wood.
 ~
-   -'Looks like another one of them damn hippies, Ma', Pa says.  
+   -'Looks like another one of them damn hippies, Ma', Pa says.
 ~
 4106 0 0 0 0 0 0 0 1000 E
 30 10 -8 6d6+300 5d5+5
@@ -233,7 +233,7 @@ the Ancient Dragon~
 An Ancient Dragon is resting on it's haunches in the center of the floor, one eye cocked curiously upon you.
 ~
    Scarred, a bit withered, but definately still in good enough condition to
-whoop your ass.  
+whoop your ass.
 ~
 2058 0 0 0 73808 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -246,8 +246,8 @@ martin~
 Martin~
 Martin dangles about four feet off the floor from a rope.
 ~
-   Poor fella, he always said he never had enough time to get anything done.  
-Always so busy...  Guess he got this one thing done, though.  
+   Poor fella, he always said he never had enough time to get anything done.
+Always so busy...  Guess he got this one thing done, though.
 ~
 10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -262,7 +262,7 @@ A receptionist sits at her desk, filing her nails.
 ~
    Undefined    Dragon ancient  It wi  The Ancient Dragon  Sy  An Ancient
 Dragon is resting on it's haunches in the center of the floor, one eye cocked
-curiously upon you.  
+curiously upon you.
 ~
 10 0 0 0 112 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -274,7 +274,7 @@ inna~
 Inna~
 Inna is here, busily brewing some kind of potion.
 ~
-   Dressed in a white alchemist's robe, she still looks stunning.  
+   Dressed in a white alchemist's robe, she still looks stunning.
 ~
 6282 0 0 0 0 0 0 0 100 E
 30 10 -8 6d6+300 5d5+5
@@ -286,7 +286,7 @@ igor~
 Igor~
 Igor is mixing a brew here.
 ~
-   Looking tall, regal and powerful, you have to respect this man.  
+   Looking tall, regal and powerful, you have to respect this man.
 ~
 6282 0 0 0 0 0 0 0 100 E
 28 11 -6 5d5+280 4d4+4

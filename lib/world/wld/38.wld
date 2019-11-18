@@ -22,19 +22,19 @@ make it almost impossible to climb the ladder that leads out of the hole.  A
 steady waterfall of sewage flows into the drain and down into a large circular
 grate that seems to make the majority of the bottom of the draninhole.  The
 drainhole is only about 20' deep, but you still wouldn't be able to climb out
-easily without the ladder.    
+easily without the ladder.
 ~
 38 9 0 0 0 0
 D4
    As you glance upward you see a cateract of slime flowing in from the
-northern pipe of the capital sewer system above.    
+northern pipe of the capital sewer system above.
 ~
 ~
 0 0 3717
 D5
    Below a large grate, you see that there is a big pipe, just enough that a
 small group could easily travel in it.  Sewage is constantsly flowing down into
-it.    
+it.
 ~
 grate down~
 1 3804 3802
@@ -42,14 +42,14 @@ E
 red grate~
    It is a large, circular grate.  It seems to be made out of iron, but it is
 too icky to tell.  It also seems that it was once painted red, but the paint
-eroded away with the sewage that constantly barrages it.    
+eroded away with the sewage that constantly barrages it.
 ~
 E
 ladder~
    The ladder is simply some iron bars the bend out towards the center of the
 drainhole.  They are dripping with ooze and sewage.  You feel reluctant to
 touch them, but you eventually build up the courage.  The bars are slick in
-some parts and sticky in others.  Gross!    
+some parts and sticky in others.  Gross!
 ~
 S
 #3802
@@ -58,22 +58,22 @@ A Big Pipe~
 joins together to flow into wherever it goes.  Sewage is flowing down from
 above.  The slime is so deep here that you are being soaked up to your knees.
 What seems like a tunnel is at the end of this pipe to the north.  The sewage
-nearly makes you slip as it flows continually towards the tunnel.    
+nearly makes you slip as it flows continually towards the tunnel.
 ~
 38 9 0 0 0 0
 D0
-   You see the big pipe continuing towards a large tunnel.    
+   You see the big pipe continuing towards a large tunnel.
 ~
 ~
 0 0 3803
 D4
-   You see the northern drainhold beyond a red grate.    
+   You see the northern drainhold beyond a red grate.
 ~
 grate up~
 1 3804 3801
 E
 red grate~
-   It appears to be a red grate, but the color is very faded.    
+   It appears to be a red grate, but the color is very faded.
 ~
 S
 #3803
@@ -83,16 +83,16 @@ already knee-deep, is constantly being added upon by pipes to the east and to
 the west.  The walls of the pipe seem to be very unkept, probably because no
 dignified person would ever spend more time then he needed to down here.  To
 the north there is a tunnel with a river of sewage, what could be down there?
-  
+
 ~
 38 9 0 0 0 0
 D0
-   You see where the big pipe ends.  It is a giant opening.    
+   You see where the big pipe ends.  It is a giant opening.
 ~
 ~
 0 0 3804
 D2
-   You see that the pipe continues to the south.    
+   You see that the pipe continues to the south.
 ~
 ~
 0 0 3802
@@ -100,7 +100,7 @@ E
 pipes~
    There are small pipes to the east and west of you.  Sewage is flowing out of
 them and flows with the rest of the slime to the north.  The pipe is too small
-to climb in, not that you would want to.    
+to climb in, not that you would want to.
 ~
 S
 #3804
@@ -110,7 +110,7 @@ of cities' crap fills the place to the point where no man could stand for long
 without severe brain damage.  The sewage finishes its journey to the main
 tunnel of the sewers, only to make another one to who knows where?  The iron
 walls have been reduced to rust and rubbage from centuries of constant siege of
-refuse.    
+refuse.
 ~
 38 9 0 0 0 0
 D0
@@ -118,19 +118,19 @@ D0
 ~
 0 0 3807
 D2
-   You see the big pipe continuing to the south.    
+   You see the big pipe continuing to the south.
 ~
 ~
 0 0 3803
 D4
    It is the top of the pipe.  There is an arch supporting the opening of the
-pipe.  You see what appears to be a crack in the roof...    
+pipe.  You see what appears to be a crack in the roof...
 ~
 secret up~
 1 0 3805
 E
 Sewage~
-   The digusting sewage flows on its smelly way.    
+   The digusting sewage flows on its smelly way.
 ~
 E
 sign~
@@ -142,7 +142,7 @@ A Secret Passage~
    You seem to be in a secret passage that connects to the pipe below via a
 trap door.  The walls seem to have been crudely dug away by animal hands.  You
 fell cluastophobic in this tiny passage.  YOu should either move up towards the
-light or down to the pipe.    
+light or down to the pipe.
 ~
 38 268 0 0 0 0
 D4
@@ -151,7 +151,7 @@ You see a secret chamber.
 ~
 0 0 3806
 D5
-   You see that the passage continues down to a big pipe.    
+   You see that the passage continues down to a big pipe.
 ~
 secret passage down~
 1 0 3804
@@ -163,11 +163,11 @@ hidout was where he evaded the city guards for most of his life.  The chamber is
 somewhat spacious and comfortable.  The walls are not covered, nevertheless,
 they are carved away well.  There must be a light somewhere, but you can't seem
 to find it.  There is clutter trashed about.  For a thief, there doesn't seem to
-be that many riches around.  There must be gold somewhere...  
+be that many riches around.  There must be gold somewhere...
 ~
 38 8 0 0 0 0
 D5
-   The chamber passage is below.    
+   The chamber passage is below.
 ~
 ~
 0 0 3805
@@ -175,7 +175,7 @@ E
 metal box secret safe~
    It's a secret safe!  It seems to be encased in black diamond, the strongest
 of all diamonds.  Its metal knob seems to have rusted off, rendering the safe
-useless.  That means the contents could still be inside...    
+useless.  That means the contents could still be inside...
 ~
 E
 clutter trash~

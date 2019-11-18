@@ -19,10 +19,10 @@ credits info~
    Kerofk by Amanda Eterniale & Builder_5
 Copyright 1993 by Curious Areas Workshop
 *
-Kerofk is 153 rooms big. Replace all instances of 'XXXX' with some 
+Kerofk is 153 rooms big. Replace all instances of 'XXXX' with some
 deity, god or imp's name.  Whatever.
-Edit room 2#46 to connect with somewhere mountainous in your mud.  
-Exits can be joined to this room from the west, or from the south.  
+Edit room 2#46 to connect with somewhere mountainous in your mud.
+Exits can be joined to this room from the west, or from the south.
 Finish the last line in the room description to reflect this exit.
 Check the following items to make sure the value used
 for spells conforms to the same spell on your mud.
@@ -38,33 +38,33 @@ for spells conforms to the same spell on your mud.
 Add specials, if desired, for the mobs listed in the 'notes' section.
 Add these two rooms to your 'reception' special: #45 & #64.
 *
-Edit Room 2#29 to look like your login screen. (you'll understand 
+Edit Room 2#29 to look like your login screen. (you'll understand
 once you look at it...)
 *
 Here are some recommended specials for the mobs:
 *
 Guildmasters: Mage (#02), Thief (#04), Cleric (#27) and Warrior (#29).
 Spellcasters: #02, #34, #41, #44.
-#38 & #39 were 'boss'-mobs of the quest, and should be given tough 
+#38 & #39 were 'boss'-mobs of the quest, and should be given tough
 spellcasting routines, such as healing themselves, removing sanct's...
-whatever you can think of which seems unnecessary.  The power of the 
-items in that section make it more than worth the risk. Mob #00 had a 
-nice speaking routine, and basically commented about the weather, made 
+whatever you can think of which seems unnecessary.  The power of the
+items in that section make it more than worth the risk. Mob #00 had a
+nice speaking routine, and basically commented about the weather, made
 vague remarks about the future, and the following quest based remarks:
-'Great power will go to the destroyer of the orb!' 'The Blue Temple 
-houses an orb of utter evil!' and other such tripe.  A sign can do 
+'Great power will go to the destroyer of the orb!' 'The Blue Temple
+houses an orb of utter evil!' and other such tripe.  A sign can do
 just as well, if desired.
 *
 Credits
-Big thankee's to Tarkin of VieMud (viemud.org 4000) who codes 
-everything I could ever want. This area was overhauled with the aid 
-of George Essl's Dikued program. Even more thanks to the brothers of 
-FORCE and all the players at VieMud, for some of the most painful 
+Big thankee's to Tarkin of VieMud (viemud.org 4000) who codes
+everything I could ever want. This area was overhauled with the aid
+of George Essl's Dikued program. Even more thanks to the brothers of
+FORCE and all the players at VieMud, for some of the most painful
 playtesting ever seen.
 ~
 E
 throne~
-   Its nice, for a chair, but drab, for a throne.    
+   Its nice, for a chair, but drab, for a throne.
 ~
 S
 #29201
@@ -83,7 +83,7 @@ D2
 0 -1 29200
 E
 door west~
-   This door seems welded shut.  You'll never open it!  
+   This door seems welded shut.  You'll never open it!
 ~
 S
 #29202
@@ -215,7 +215,7 @@ D0
 S
 #29208
 Intersection at the Cliff's Edge~
-   This is the intersection of Cliffside Road, and Center Road.  
+   This is the intersection of Cliffside Road, and Center Road.
    Cliffside?
    About fifteen feet ahead of you there is a sheer precipice that
 drops down about a thousand feet into the dark ocean.  You don't think
@@ -916,7 +916,7 @@ D0
 ~
 0 -1 29231
 D1
-This is a big metal door with a sign hung on it saying, 'KEEP OUT!'  
+This is a big metal door with a sign hung on it saying, 'KEEP OUT!'
 ~
 door~
 1 29226 29240
@@ -969,12 +969,12 @@ D1
 0 -1 29241
 E
 weapons~
-   A closer examinations reveal the weapons are all junk.  
+   A closer examinations reveal the weapons are all junk.
 ~
 E
 pictures~
    With a closer look, you realize the pictures are all of someone else's
-family.  
+family.
 ~
 S
 #29243
@@ -1193,11 +1193,11 @@ Town Hall--Entrance~
    Organized Madness.  There are people going every which way here, up
 across, over, under, through!  Deliveries, messages, visits,
 appointments, WHEW!  You're suddenly glad you don't work here!
-	   There's a directory sign:
-		Up-Mayor Kell
-		Down-Jails
-		North-Courtroom
-		West-Council Chambers
+           There's a directory sign:
+                Up-Mayor Kell
+                Down-Jails
+                North-Courtroom
+                West-Council Chambers
 ~
 292 8 0 0 0 0
 D0
@@ -1319,7 +1319,7 @@ chair~
 ~
 E
 newspaper~
-   Seems all it is is war news.  How boring!  
+   Seems all it is is war news.  How boring!
 ~
 S
 #29262
@@ -1386,8 +1386,8 @@ Uh-Oh!~
    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA(breathe)AAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHH!!!!
-			THUD! CRACK!  KerPLOOMP!
-   	   (that wasn't a good idea, but now you know that, eh?)
+                        THUD! CRACK!  KerPLOOMP!
+           (that wasn't a good idea, but now you know that, eh?)
 ~
 292 4 0 0 0 0
 S
@@ -1502,7 +1502,7 @@ S
 Vacant Lot~
    There's a large flattened area in the middle of this lot.  You get the eerie
 feeling that something SHOULD be here, but isn't.  How Odd!  Moon Gate Road is
-to the north.    
+to the north.
 ~
 292 8 0 0 0 0
 D0
@@ -1531,7 +1531,7 @@ gave them to Builder_5, smiled, and said,
 these files into a version more suitable for a public release.  This
 is what you have now.
    Both of us hope you enjoy this area, over a year in the making...
-	Amanda Eterniale			Builder_5
+        Amanda Eterniale                        Builder_5
 ~
 292 8 0 0 0 1
 S
@@ -1578,7 +1578,7 @@ sign~
    ADVENTURERS!!!!  I need a party of brave souls to enter the blue temple and
 destroy the evil orb inside.  I shall pay well for the deed!!!  Please stop by
 my temple and get the magic scroll used for entering the foul area if you are
-powerful enough to withstand the trials!!!  --MouseRider, sage of Kerofk.  
+powerful enough to withstand the trials!!!  --MouseRider, sage of Kerofk.
 ~
 S
 #29277
@@ -1602,7 +1602,7 @@ sign~
    ADVENTURERS!!!  I need a party of brave souls to enter the blue temple and
 destroy the evil orb within.  I shall pay thee well for the deed!  Please stop
 by my temple and get the magic scroll used for entering the foul area, if you
-are powerful enough to withstand its trials!!!  --MouseRider, sage of Kerofk.  
+are powerful enough to withstand its trials!!!  --MouseRider, sage of Kerofk.
 ~
 S
 #29278

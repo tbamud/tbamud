@@ -8,13 +8,13 @@ You are quite unable to perceive Sapowox's Universal Nothingness here.~
 40 1 200 0
 E
 text writing inscription~
-   It just says: ' (void *) ' Not very enlightening, is it?  
+   It just says: ' (void *) ' Not very enlightening, is it?
 ~
 E
 nothingness universal~
    You are not sure, but you do not seem not able to figure out what it isn't,
 because it doesn't much resemble anything you haven't ever seen.  You feel a bit
-of mortal confusion, but you notice a small inscription on it.  
+of mortal confusion, but you notice a small inscription on it.
 ~
 A
 18 2
@@ -102,7 +102,7 @@ A strange looking sword is lying upon the ground here.~
 E
 verminator sword~
    This strange sword seems to be made of black metal, an eerie green glow
-surrounds the blade.  
+surrounds the blade.
 ~
 #15009
 key butlers butler~
@@ -131,7 +131,7 @@ A large wooden chest stands here in a corner.~
 E
 chest~
    It is equipped with a small lock, that any self-respecting thief should be
-able to pick.  
+able to pick.
 ~
 #15012
 vial large potion brown~
@@ -143,7 +143,7 @@ A large vial has been left here.~
 14 800 80 0
 E
 vial large brown potion~
-   It is filled with a disgusting brown liquid.  
+   It is filled with a disgusting brown liquid.
 ~
 #15013
 banner royal~
@@ -155,12 +155,12 @@ The royal banner has been firmly planted in the ground here.~
 0 0 0 0
 E
 flag~
-   On the flag is the symbol of King Welmar's house, the rampant stag.  
+   On the flag is the symbol of King Welmar's house, the rampant stag.
 ~
 E
 banner royal standard~
    It is large and very heavy.  On top of it flutters King Welmar's flag
-proudly.  
+proudly.
 ~
 #15014
 key~
@@ -172,7 +172,7 @@ A key lies on the floor.~
 13 1 0 0
 E
 key~
-   It has a finely carved letter 'W' inscribed on it.  
+   It has a finely carved letter 'W' inscribed on it.
 ~
 #15015
 hauberk mail chain~
@@ -200,7 +200,7 @@ A key lies on the floor.~
 3 1 0 0
 E
 key cell~
-   This appears to be the key for the cells of the castle.  
+   This appears to be the key for the cells of the castle.
 ~
 #15018
 carcass~
@@ -237,7 +237,7 @@ There is a strange glow coming from the west.~
 E
 glow~
    The glow from the west appears to be quite strong, but it does not give
-enough light to see by here, nor can you see the source of the glow.  
+enough light to see by here, nor can you see the source of the glow.
 ~
 #15022
 wail sound~

@@ -16,7 +16,7 @@ A passageway opens up into a fairly large cave above.
 0 -1 5011
 E
 gate~
-   A large adamantite gate with giant spider shaped emblems stands here.  
+   A large adamantite gate with giant spider shaped emblems stands here.
 ~
 S
 #5101
@@ -78,7 +78,7 @@ S
 #5104
 The 3rd House~
    You stand inside the 3rd house of the city; it is fairly well decorated
-by drow standards having a few statues, murals and such.  A door leads to the 
+by drow standards having a few statues, murals and such.  A door leads to the
 south.
 ~
 51 9 0 0 0 0
@@ -190,7 +190,7 @@ S
 #5111
 The 1st House~
    You stand in the inner courtyard of the 1st and largest house in the city.
-The room is extremely large and decorative.  Mural and paintings hang on the 
+The room is extremely large and decorative.  Mural and paintings hang on the
 walls depicting some battles and a spider queen.
 ~
 51 9 0 0 0 0
@@ -305,7 +305,7 @@ S
 #5119
 The Entrance To The Temple Of Lloth~
    The temple is the largest building in the city.  Even its doors are beyond
-imagination.  Inside of the temple entrance, the walls are made of gold and 
+imagination.  Inside of the temple entrance, the walls are made of gold and
 adamantite.
 ~
 51 9 0 0 0 0
@@ -380,7 +380,7 @@ D3
 S
 #5124
 The 4th House~
-   You stand inside the 4th house of the city.  Its inner courtyard is rather 
+   You stand inside the 4th house of the city.  Its inner courtyard is rather
 dull by drow standards and rather small as well.
 ~
 51 9 0 0 0 0
@@ -408,7 +408,7 @@ S
 The Entrance Hall~
    You stand in the entrance way to the temple which opens up to the north into
 a large hallway going east and west.  Small statues of spiders line the entrance
-way's walls.  
+way's walls.
 ~
 51 9 0 0 0 0
 D0
@@ -572,7 +572,7 @@ D3
 S
 #5135
 The Grand Stairway~
-   You are standing at the bottom of a giant obsidian and adamantite 
+   You are standing at the bottom of a giant obsidian and adamantite
 stairway.  The edges are trimmed with gold.
 ~
 51 9 0 0 0 0
@@ -587,7 +587,7 @@ D4
 S
 #5136
 The Grand Hallway~
-   You are standing in the middle of a grand hallway.  The walls are 
+   You are standing in the middle of a grand hallway.  The walls are
 of the purest adamantite with gold trim.  Mosaics line the walls.
 ~
 51 9 0 0 0 0
@@ -619,7 +619,7 @@ S
 #5138
 The Grand Hallway~
    You are walking down a grand hallway, heavily decorated with adamantite
-and gold.  To the north the hall goes down a flight of stairs while a door is 
+and gold.  To the north the hall goes down a flight of stairs while a door is
 to the west.
 ~
 51 9 0 0 0 0
@@ -705,8 +705,8 @@ S
 #5143
 The Sacrificial Pit~
    As you climb down into the pit, thousands of spiders cover you, tearing
-your fragile body to shreds.  
-@R 
+your fragile body to shreds.
+@R
 Lloth thanks you for your sacrifice.
 @n
 ~
@@ -730,8 +730,8 @@ D2
 S
 #5145
 The Altar~
-   You are standing in front of a highly and freshly bloodstained altar.  
-Engraved on the top of the altar is a giant spider with a human head.  Looking 
+   You are standing in front of a highly and freshly bloodstained altar.
+Engraved on the top of the altar is a giant spider with a human head.  Looking
 down from the altar you see a large sacrificial pit with thousands of swarming
 spiders looking for their next meal!
 ~
@@ -756,7 +756,7 @@ Thousands of spiders eye you with undisguised hunger.
 S
 #5146
 The Slave Cells~
-   This is the main room to the cell chambers for the slaves to be 
+   This is the main room to the cell chambers for the slaves to be
 sacrificed.  You notice there are no guards around.
 ~
 51 9 0 0 0 0
@@ -771,7 +771,7 @@ door~
 S
 #5147
 The Slave Pen~
-   Rotten meat and breads lie about the floor while shackles hang from the 
+   Rotten meat and breads lie about the floor while shackles hang from the
 walls.  The room reeks of death.  You almost become nauseous and decide to
 leave the room since you were obviously too late to save the slave.
 ~
@@ -784,7 +784,7 @@ S
 #5148
 The Dias~
    You stand upon a dias behind the altar.  Above you is a enormous illusion
-of a female drow turning into a giant spider and back again.  There is a door 
+of a female drow turning into a giant spider and back again.  There is a door
 to the west.
 ~
 51 9 0 0 0 0
@@ -799,7 +799,7 @@ door~
 S
 #5149
 The Treasury~
-   This is obviously only a temporary storage place for the collected 
+   This is obviously only a temporary storage place for the collected
 treasure being rather bare.
 ~
 51 9 0 0 0 0

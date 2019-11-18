@@ -50,14 +50,14 @@ switch %speech.car%
   else
     emote starts to lay out the cards.
     %echo% @n  The voice seems to surround you now.
-    %echo% @c    'When you're ready, please go up to start your reading.  Once you@n  
-    %echo% @c   start, you won't be able to come back.  Of course, you can always@n 
-    %echo% @c   come back for another reading.@n 
+    %echo% @c    'When you're ready, please go up to start your reading.  Once you@n
+    %echo% @c   start, you won't be able to come back.  Of course, you can always@n
+    %echo% @c   come back for another reading.@n
     wait 2 sec
-    %echo% @c    At each room, LOOK CARD to see the meaning.  Reverse means@n 
-    %echo% @c   that the card laid out upsidedown which changes the meaning.@n 
-    %echo% @c   Don't worry about it.  The card will show the reversed meaning.@n 
-    %echo% @c   The room name will explain what the placement of the card means.'@n 
+    %echo% @c    At each room, LOOK CARD to see the meaning.  Reverse means@n
+    %echo% @c   that the card laid out upsidedown which changes the meaning.@n
+    %echo% @c   Don't worry about it.  The card will show the reversed meaning.@n
+    %echo% @c   The room name will explain what the placement of the card means.'@n
     wait 1 sec
     %door% %self.room.vnum% up flags a
     emote opens the door to the stairway.
@@ -67,7 +67,7 @@ switch %speech.car%
       eval temp %%self.varexists(%card%)%%
       eval hascard %temp%
       if %hascard%
-        mgoto %room% 
+        mgoto %room%
         set rand %random.2%
         if %rand% == 1
           %load% obj %zone%99
@@ -82,7 +82,7 @@ switch %speech.car%
         global layout
         set Cards_Dealt 1
         global Cards_Dealt
-      else   
+      else
       end
     done
     halt
@@ -253,17 +253,17 @@ wait 2 sec
 %echo% @n  The voice of %self.name% seems to fill your head.
 %echo% @c     'Ahh, you have something on your mind? Let us see what the@n
 %echo% @c   cards have to say.  Unfortunately, you cannot hold or shuffle@n
-%echo% @c   my cards, but concentrate on your question and say shuffle.@n  
+%echo% @c   my cards, but concentrate on your question and say shuffle.@n
 %echo% @c   When you feel that the cards know your question, say deal and@n
 %echo% @c   I shall lay out the cards for you to examine.@n
 wait 3 sec
-%echo% @c     Usually I would interpret the cards for you, but that is@n 
-%echo% @c   forbidden me in this space and time.  All I am allowed is to@n 
-%echo% @c   show you the cards and you must decide their meanings in your@n 
-%echo% @c   own mind. Move from card to card.  Each space and each card@n 
-%echo% @c   will explain itself to you. 'LOOK CARD' in each room to see@n 
-%echo% @c   the explanation. These are very simplified meanings so they@n 
-%echo% @c   are very general.@n  
+%echo% @c     Usually I would interpret the cards for you, but that is@n
+%echo% @c   forbidden me in this space and time.  All I am allowed is to@n
+%echo% @c   show you the cards and you must decide their meanings in your@n
+%echo% @c   own mind. Move from card to card.  Each space and each card@n
+%echo% @c   will explain itself to you. 'LOOK CARD' in each room to see@n
+%echo% @c   the explanation. These are very simplified meanings so they@n
+%echo% @c   are very general.@n
 wait 3 sec
 %echo% @c     Remember, this is just a game and should not be taken@n
 %echo% @c   seriously any more than you would run your life by newspaper@n
@@ -291,11 +291,11 @@ if %self.room.vnum% != %zone%02
     halt
   end
 end
-if %actor% == %self% 
+if %actor% == %self%
   halt
 end
 * This loop goes through the entire string of words the actor says. .car is the
-* word and .cdr is the remaining string. 
+* word and .cdr is the remaining string.
 eval word %speech.car%
 eval rest %speech.cdr%
 while %word%
@@ -304,7 +304,7 @@ while %word%
   switch %word%
     * Appointment starts the conversation.
     * Objxxx98 keeps trigger from reacting to other conversations.
-    * if %actor.is_pc% && 
+    * if %actor.is_pc% &&
     case appointment
     * Check to see if someone is already trying to get an appointment.
     if %self.has_item(%zone%98)% && !%actor.varexists(Making_Tarot_Appointment_%zone%)%
@@ -328,7 +328,7 @@ while %word%
         eval available %available% + 1
         eval readerno %readerno% + 1
         set reader%readerno% Sibyl
-      else 
+      else
         eval unreaderno %unreaderno% + 1
         set unreader%unreaderno% Sibyl
       end
@@ -338,7 +338,7 @@ while %word%
         eval available %available% + 1
         eval readerno %readerno% + 1
         set reader%readerno% Esmerelda
-      else 
+      else
         eval unreaderno %unreaderno% + 1
         set unreader%unreaderno% Esmerelda
       end
@@ -348,7 +348,7 @@ while %word%
         eval available %available% + 1
         eval readerno %readerno% + 1
         set reader%readerno% Jaelle
-      else 
+      else
         eval unreaderno %unreaderno% + 1
         set unreader%unreaderno% Jaelle
       end
@@ -634,7 +634,7 @@ if get == %cmd.mudcommand% || sacrifice == %cmd.mudcommand%
     set testernumber 2
   else
     set testernumber 1
-  end 
+  end
   set arg _%arg%
   eval inroom %self.room%
   eval obj %inroom.contents%
@@ -642,7 +642,7 @@ if get == %cmd.mudcommand% || sacrifice == %cmd.mudcommand%
   while %obj%
     set next_obj %obj.next_in_list%
     set objlist %obj.name%
-    set keywordlist _%obj.name.car%    
+    set keywordlist _%obj.name.car%
     set keywordrest _%obj.name.cdr%
     while %keywordlist%
       * while an object is in the room
@@ -660,7 +660,7 @@ if get == %cmd.mudcommand% || sacrifice == %cmd.mudcommand%
               set testernumber 2
             else
               set testernumber 1
-            end 
+            end
             if %tester% < %testernumber%
               %at% %zone%02 %load% obj %self.vnum%
             end

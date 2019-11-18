@@ -4,7 +4,7 @@ a cow~
 A fat cow stand here chewing her cud.
 ~
    She may not be the most hygenic animal, but she sure has a good load of fat
-meat on her!  And look at them tits!    
+meat on her!  And look at them tits!
 ~
 73738 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -18,7 +18,7 @@ the mean bull~
 A mean bull stamps it feet and snorts at you.
 ~
    Papa always said make sure you never get behind an angry bull.  Also said
-never get in front of one.  So where does that leave?    
+never get in front of one.  So where does that leave?
 ~
 73770 0 0 0 0 0 0 0 -200 E
 17 15 0 3d3+170 2d2+2
@@ -32,7 +32,7 @@ a war horse~
 A proud war horse tosses its head whinnies.
 ~
    This large animal is trained to hate every human except the one who rides
-him.  Beware his kicking hooves!    
+him.  Beware his kicking hooves!
 ~
 106538 0 0 0 0 0 0 0 0 E
 16 15 0 3d3+160 2d2+2
@@ -45,7 +45,7 @@ horse work~
 a sturdy work horse~
 A sturdy work horse grazes the tall grass.
 ~
-   It takes almost no notice of you, just continues on with it's lunch.    
+   It takes almost no notice of you, just continues on with it's lunch.
 ~
 40970 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -59,7 +59,7 @@ the Forgemaster~
 The Forgemaster stands near the fire directing his workers in their labors.
 ~
    He is quite large with tree-trunk arms.  He is definately not someone to
-trifle with even on one of his bad days.    
+trifle with even on one of his bad days.
 ~
 72 0 0 0 0 0 0 0 300 E
 21 13 -2 4d4+210 3d3+3
@@ -72,7 +72,7 @@ the sweating smithy~
 A sweating smithy soldier pumps the coals with a bellows.
 ~
    The sweat drips from his bare back as makes sure that the fire does not get
-low.    
+low.
 ~
 72 0 0 0 0 0 0 0 200 E
 18 14 0 3d3+180 3d3+3
@@ -84,7 +84,7 @@ smithy soldier sweating~
 the smithy~
 A smithy pounds away at a piece of metal, shaping it into a usable piece.
 ~
-   His muscles bulge and the hammer rings.  This guy could do commercials.    
+   His muscles bulge and the hammer rings.  This guy could do commercials.
 ~
 72 0 0 0 0 0 0 0 350 E
 19 14 -1 3d3+190 3d3+3
@@ -97,7 +97,7 @@ a tanner~
 A soldier works diligently at tanning hides.
 ~
    He wipes his sweating brow and gives a smile.  At least he seems to enjoy
-his work a bit.    
+his work a bit.
 ~
 72 0 0 0 0 0 0 0 400 E
 18 14 0 3d3+180 3d3+3
@@ -110,7 +110,7 @@ the sweating soldier~
 A soldier grunts as he lifts a bale of hay up onto the stack.
 ~
    He is sweating from most every pore in his body - it does not appear that he
-is enjoying his labors.    
+is enjoying his labors.
 ~
 72 0 0 0 0 0 0 0 100 E
 16 15 0 3d3+160 2d2+2
@@ -123,7 +123,7 @@ a brander~
 A soldier is here branding the cattle and the horses of the Eastern Army.
 ~
    He stands with a sly grin on his face, as if he might enjoy his work just a
-bit too much.    
+bit too much.
 ~
 76 0 0 0 0 0 0 0 -100 E
 19 14 -1 3d3+190 3d3+3
@@ -135,7 +135,7 @@ soldier rustler~
 a rustler~
 A soldier rustles a cow into a prone position so that the brander might place his mark.
 ~
-   He looks strong enough to wrestle an ox - indeed he often does.    
+   He looks strong enough to wrestle an ox - indeed he often does.
 ~
 72 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
@@ -147,7 +147,7 @@ soldier footman~
 a footman~
 A footman trudges wearily back toward the barracks tents.
 ~
-   His job is done for the day and he is quite glad of it!    
+   His job is done for the day and he is quite glad of it!
 ~
 72 0 0 0 0 0 0 0 300 E
 17 15 0 3d3+170 2d2+2
@@ -160,7 +160,7 @@ General Tso~
 General Tso walks among his troops, a look of disapproval fixed upon his face.
 ~
    Tso appears the type that would never be satisfied no matter what the length
-a soldier might go to to obtain his approval.    
+a soldier might go to to obtain his approval.
 ~
 72 0 0 0 0 0 0 0 200 E
 25 12 -5 5d5+250 4d4+4
@@ -173,7 +173,7 @@ a patrolman~
 A patrolman walks his rounds, watching for signs of invasion.
 ~
    He does not appear all that concerned about invaders as he drearily walks
-his rounds.    
+his rounds.
 ~
 72 0 0 0 0 0 0 0 600 E
 21 13 -2 4d4+210 3d3+3
@@ -186,7 +186,7 @@ an army scout~
 An army scout walks lithely through the camp.
 ~
    He moves with a sinous grace that speaks well of his abilities in the
-forest.    
+forest.
 ~
 72 0 0 0 0 0 0 0 700 E
 23 13 -3 4d4+230 3d3+3
@@ -199,7 +199,7 @@ the surgeon~
 The camp surgeon is here tending to the wounded.
 ~
    He is a very energetic young man, fully trained by the Eastern Army's best
-surgeons.    
+surgeons.
 ~
 72 0 0 0 0 0 0 0 600 E
 17 15 0 3d3+170 2d2+2
@@ -212,7 +212,7 @@ the medic~
 A medic bustles along self-importantly.
 ~
    He gives you a look and sees that you don't appear hurt.  He then pointedly
-ignores you and continues on.    
+ignores you and continues on.
 ~
 72 0 0 0 0 0 0 0 100 E
 14 16 1 2d2+140 2d2+2
@@ -225,7 +225,7 @@ the marksman~
 A marksman keeps a keen eye out for trouble.
 ~
    He looks a bit startled at your intrusion, but quickly recovers seeing that
-you are not the enemy and goes back to watching out the peepholes.    
+you are not the enemy and goes back to watching out the peepholes.
 ~
 74 0 0 0 0 0 0 0 400 E
 22 13 -3 4d4+220 3d3+3
@@ -237,7 +237,7 @@ soldier wounded~
 a wounded soldier~
 A wounded soldier limps past.
 ~
-   He gives you a curt nod and then continues on his way.    
+   He gives you a curt nod and then continues on his way.
 ~
 72 0 0 0 0 0 0 0 600 E
 13 16 2 2d2+130 2d2+2
@@ -250,7 +250,7 @@ a cavalry officer~
 An off-duty cavalry officer walks past.
 ~
    He has that odd gait that suggests that more of his time is spent in the
-saddle than on his feet.    
+saddle than on his feet.
 ~
 72 0 0 0 0 0 0 0 300 E
 23 13 -3 4d4+230 3d3+3
@@ -263,7 +263,7 @@ the water boy~
 A young soldier is here filling his water pails to carry them up to the mess tent.
 ~
    He grumbles under his breath as he works, feeling that his position in the
-Army's ranks are very unfair.    
+Army's ranks are very unfair.
 ~
 72 0 0 0 0 0 0 0 600 E
 12 16 2 2d2+120 2d2+2
@@ -276,7 +276,7 @@ the squatting soldier~
 A soldier looks up in shock as you enter into this small and private area with him.
 ~
    He clutches to the sides of the seat, wondering just what sort of person
-would intrude on one in such a place!    
+would intrude on one in such a place!
 ~
 72 0 0 0 0 0 0 0 800 E
 16 15 0 3d3+160 2d2+2

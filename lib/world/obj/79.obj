@@ -8,7 +8,7 @@ A large steel key has been left here.~
 2 1 0 0
 E
 steel key~
-   This huge key is made from solid steel.  
+   This huge key is made from solid steel.
 ~
 #7901
 key copper~
@@ -20,7 +20,7 @@ A copper key has been left on the floor.~
 2 1 0 0
 E
 copper key~
-   This little key is made from copper.  
+   This little key is made from copper.
 ~
 #7902
 key brass~
@@ -32,7 +32,7 @@ A small brass key lies here.~
 1 10 4 0
 E
 key brass~
-   It is a small, simple brass key with no inscriptions or marks of any kind.  
+   It is a small, simple brass key with no inscriptions or marks of any kind.
 ~
 #7903
 treasure coins~
@@ -44,7 +44,7 @@ There is a huge treasure here, looking moderately valuable.~
 5 1 0 0
 E
 treasure~
-   This looks like a whole lot of coins, though not as many as you expected.  
+   This looks like a whole lot of coins, though not as many as you expected.
 ~
 #7904
 chest wooden~
@@ -57,7 +57,7 @@ A wooden chest stands in the corner.~
 E
 chest wooden~
    It is a robust chest made from short, heavy planks that have been fastened
-together with tenons.  It is equipped with a simple brass lock.  
+together with tenons.  It is equipped with a simple brass lock.
 ~
 #7905
 chest~
@@ -100,7 +100,7 @@ Some waybread has been put here.~
 E
 waybread bread~
    The waybread is the traditional feed of elves when travelling, they call it
-lembas.  It is said to refresh the weary traveler greatly.  
+lembas.  It is said to refresh the weary traveler greatly.
 ~
 #7909
 ring gold goldring~
@@ -122,7 +122,7 @@ There is a huge bastard sword here.~
 18 170 80 0
 E
 bastard sword~
-   Quite a heavy weapon, with a pure white hilt.  
+   Quite a heavy weapon, with a pure white hilt.
 ~
 A
 19 3
@@ -136,7 +136,7 @@ There is a large helmet on the floor.~
 5 450 150 0
 E
 large helmet~
-   This looks like some heavy protection, for the head of course.  
+   This looks like some heavy protection, for the head of course.
 ~
 #7912
 helmet chaos~
@@ -149,7 +149,7 @@ On the floor is a grand evil-looking chaos helmet.~
 E
 chaos helmet~
    This helmet has mounted some mean looking spikes on the front, moreover it
-looks like good protection.  
+looks like good protection.
 ~
 A
 19 2
@@ -166,11 +166,11 @@ On the floor rests a enormous two-handed sword.~
 E
 two-handed sword~
    You notice that there has been inscribed some runes and a sort of pattern,
-which resembles flames running along the edge.  
+which resembles flames running along the edge.
 ~
 E
 runes~
-   On the blade you can read 'Flame And Strength United Are My Soul Power'.  
+   On the blade you can read 'Flame And Strength United Are My Soul Power'.
 ~
 A
 17 10
@@ -187,7 +187,7 @@ There is a silvery breast plate on the floor.~
 E
 plate breast silvery silver~
    On the breast plate you notice a relief of large rose.  The metal seems to be
-some kind of silver or platinum.  
+some kind of silver or platinum.
 ~
 #7915
 plates leg silvery~
@@ -212,7 +212,7 @@ You can see a pair of gloves on the floor.~
 14 250 20 0
 E
 gloves silvery silver~
-   The gloves are made of silver threads.  
+   The gloves are made of silver threads.
 ~
 A
 18 1
@@ -227,7 +227,7 @@ The silvery helmet lies here.~
 E
 helmet silvery silver~
    The helmet is made from platinum or silver and has a white fur brush attached
-on the top.  
+on the top.
 ~
 #7918
 shield rose~
@@ -240,7 +240,7 @@ The shield of the rose rests on the floor.~
 E
 shield rose~
    On the shield you see a clear and perfect painting of a dark red rose on a
-white background.  You also notice an inscription.  
+white background.  You also notice an inscription.
 ~
 E
 inscription~
@@ -256,7 +256,7 @@ A pair of heavy plated boots stand on the floor.~
 40 350 35 0
 E
 boots heavy plated~
-   The boots are made from a silvery metal.  
+   The boots are made from a silvery metal.
 ~
 #7920
 plates arm silvery silver~

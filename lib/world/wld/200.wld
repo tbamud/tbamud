@@ -1,6 +1,6 @@
 #20000
 Western Highway Zone Description Room~
-   Builders  : Talandra 
+   Builders  : Talandra
 Zone         : 200 Western Highway
 Began        : 1998
 Player Level : 3-7
@@ -11,9 +11,9 @@ Shops        : 1
 Triggers     : 0
 Theme        : The zone is a basic highway filler to link other zones.
 Plot         : It will be low level and easy due to its proximity to the newbie
-               zone. Generally friendly wildlife, travellers. Mostly forest. 
+               zone. Generally friendly wildlife, travellers. Mostly forest.
 Links        : 01e to a major city
- 
+
 Zone: 200 was linked to the following zones:
  37 Capital sewer system           at: 20001 (north) --->  3746
 115 Monestary Omega                at: 20003 (north) ---> 11500
@@ -29,7 +29,7 @@ Western Highway~
    You are on the Western Highway east of here you can see the gates of the
 Capital while to the west the highway continues.  A gravelled path leads
 northward, away from this boring highway, towards some rocks a bit further
-north.    
+north.
 ~
 200 32768 0 0 0 2
 D3
@@ -40,8 +40,8 @@ S
 #20002
 Western Highway~
    You continue along the western highway.  The city gates of the Capital can
-be seen to the east.  The highway stretches from the west towards the gates.  
-A light forest to the north of pines and small saplings looks peaceful.    
+be seen to the east.  The highway stretches from the west towards the gates.
+A light forest to the north of pines and small saplings looks peaceful.
 ~
 200 32768 0 0 0 2
 D1
@@ -57,7 +57,7 @@ S
 Western Highway~
    As you walk along the Western Highway you notice a small path leading off to
 the south as well as the highway continuing off to the east and west.  The
-forest to the north seems to thin out a little allowing entrance.  
+forest to the north seems to thin out a little allowing entrance.
 ~
 200 32768 0 0 0 2
 D1
@@ -73,7 +73,7 @@ S
 Western Highway~
    You continue your way along the western highway.  It stretches east, back to
 the Capital and west deeper into the wilderness, plains to the south and thick
-forest to the north.    
+forest to the north.
 ~
 200 32768 0 0 0 2
 D1
@@ -89,7 +89,7 @@ S
 Western Highway~
    As you move a long the western highway you notice that it continues to the
 west as well as to the east.  The forest to the north looks peaceful and
-inviting, though it seems too dense to enter.    
+inviting, though it seems too dense to enter.
 ~
 200 32768 0 0 0 2
 D1
@@ -105,7 +105,7 @@ S
 Western Highway~
    Standing along the western highway you notice the forest to the northwest
 has thinned out and a large wooden building with smoke trailing out of a stone
-chimney is visible between the trees.    
+chimney is visible between the trees.
 ~
 200 32768 0 0 0 2
 D1
@@ -122,7 +122,7 @@ Western Highway~
    The wester highway passes infront of a large wooden building.  The building
 is in disrepair, with shingles lying on the ground and a porch that looks like
 it could collapse any second.  A faded sign swings on rusty hinges that squeak
-annoyingly.    
+annoyingly.
 ~
 200 32768 0 0 0 2
 D0
@@ -146,7 +146,7 @@ S
 Western Highway~
    Moving along the western highway you see that the highway continues to the
 west and to the east.  To the northeast a wooden building can be seen set back
-a little ways in the forest.    
+a little ways in the forest.
 ~
 200 32768 0 0 0 2
 D1
@@ -162,7 +162,7 @@ S
 Western Highway~
    Walking along the western highway you notice trees all around you except for
 to the east and west where the road continues on and to the south where the
-trees open up into a barren plain.    
+trees open up into a barren plain.
 ~
 200 32768 0 0 0 2
 D1
@@ -178,7 +178,7 @@ S
 Western Highway~
    As you continue along the western highway you notice a road heading to the
 south while the highway continues on to the east and to the west.  The road
-heads south through the plains.    
+heads south through the plains.
 ~
 200 32768 0 0 0 2
 D1
@@ -198,7 +198,7 @@ S
 Western Highway~
    As you walk along you notice that the trees have thinned out to the
 northwest to allow entry into the forest.  The plains to the south appear
-barren.  The highway continues onto the west and east.    
+barren.  The highway continues onto the west and east.
 ~
 200 32768 0 0 0 2
 D1
@@ -235,7 +235,7 @@ Western Highway~
    The highway consists of hard packed dirt, making travel very easy.  A warm
 breeze blows to you from over the plains to the south.  It carries a slight
 hint of smoke with it, civilization must be near.  To the north a thick forest
-blocks your view.    
+blocks your view.
 ~
 200 32768 0 0 0 2
 D1
@@ -252,7 +252,7 @@ Western Highway~
    As you move along the Western Highway you see in the distance a village to
 the Southwest.  To the north a thick grove of pines lays in deep shadow while
 to the south an open plain is broken by a few scattered hills.  The highway
-continues on to the west and east.    
+continues on to the west and east.
 ~
 200 32768 0 0 0 2
 D1
@@ -288,7 +288,7 @@ S
 Western Highway~
    As you venture along the Western Highway you notice a village far in the
 distance to the southeast.  The highway continues east or west.  To the west
-the sound of rushing water can be heard.    
+the sound of rushing water can be heard.
 ~
 200 32768 0 0 0 2
 D1
@@ -305,7 +305,7 @@ Western Highway~
    The Western Highway ends abruptly at a collapsed bridge.  A raging river
 flows beneath it slowly washing the remains of the bridge away.  Debris and
 sand has been scattered everywhere.  The river must have overflown and washed
-the bridge away.    
+the bridge away.
 ~
 200 32768 0 0 0 2
 D1
@@ -318,7 +318,7 @@ Dirt Road~
    You venture on a small, dirt road through the woods.  It looks well
 travelled.  It seems to lead on to the north as well as to the south, where you
 can see the Western Highway.  The thick forest continues on both sides of the
-dirt road.    
+dirt road.
 ~
 200 32768 0 0 0 2
 D0
@@ -334,7 +334,7 @@ S
 Dirt Road~
    Moving along the small dirt road the tall trees on each side prevent you
 from seeing very far.  A few small animals scamper here and there around your
-feet.  The road continues to the north and south.    
+feet.  The road continues to the north and south.
 ~
 200 32768 0 0 0 2
 D0
@@ -351,7 +351,7 @@ Dirt Road~
    The dirt road becomes more rough further to the north.  It seems less
 travelled in that direction.  The thick coniferous forest seems to be starting
 to thin out into a variety of hard woods.  Young maple trees seem to be
-dominating this part of the forest.    
+dominating this part of the forest.
 ~
 200 32768 0 0 0 2
 D0
@@ -368,7 +368,7 @@ Dirt Road~
    As you move along the dirt road you notice the trees have grown in closer to
 the path, hanging around you.  Thick underbrush has begun to form to the sides
 and the road looks unkept.  It is slowly being consumed by the forest around
-it.    
+it.
 ~
 200 32768 0 0 0 2
 D0
@@ -384,7 +384,7 @@ S
 Dirt Road~
    The sounds of wildlife fill the woods.  Birds, squirrels, and other unseen
 animals stay just out of sight.  They seem unused to travellers and are very
-wary.  The trees continue to thin to the north.    
+wary.  The trees continue to thin to the north.
 ~
 200 32768 0 0 0 2
 D0
@@ -400,7 +400,7 @@ S
 Dirt Road~
    The dirt path almost disappears in a section of thick brush and young
 saplings.  The path is barely distinguishable from the rest of the overgrowth.
-The smell of the forest is very strong.    
+The smell of the forest is very strong.
 ~
 200 32768 0 0 0 2
 D0
@@ -416,7 +416,7 @@ S
 Dirt Road~
    The dirt path widens and seems to be pushing the forest and underbrush back.
 The path continues north and south between the columns of thick trees and
-brush.    
+brush.
 ~
 200 32768 0 0 0 2
 D0
@@ -433,7 +433,7 @@ Dirt Road~
    Several fallen trees block the path to the north.  They appear to have been
 cut down and fallen over the path, as if to block it.  The smell of fresh pine
 must mean they were cut recently.  Through the brush and trees to the north you
-can just barely make out what looks like a gate and a city wall.    
+can just barely make out what looks like a gate and a city wall.
 ~
 200 32768 0 0 0 2
 D2
@@ -445,7 +445,7 @@ S
 Dirt Road~
    As you venture on a small, dirt road you can see the western highway to the
 north and the dirt road continuing to the south.  The forest around the road
-diminishes to plains the further south you travel.    
+diminishes to plains the further south you travel.
 ~
 200 32768 0 0 0 2
 D0
@@ -462,7 +462,7 @@ Dirt Road~
    Moving along the dirt road you see that the road leads to the west and also
 to the north.  Tall fields of wild grass, weeds, and other small brush borderw
 the road.  The fields have grown to about waist height and could be used easily
-to conceal oneself within.  The grass sways gently in the breeze.    
+to conceal oneself within.  The grass sways gently in the breeze.
 ~
 200 32768 0 0 0 2
 D0
@@ -480,7 +480,7 @@ Dirt Road~
 and fro.  The road continues to the south and east.  The sharp bend here goes
 around a huge pile of rocks to the southeast.  The remains of a stone wall runs
 through the middle of the pile.  Once used to mark out boundaries between land
-owners.  Now it seems no one is farming on these plains.    
+owners.  Now it seems no one is farming on these plains.
 ~
 200 32768 0 0 0 2
 D1
@@ -498,7 +498,7 @@ Dirt Road~
 north.  The plains are overgrown and should be farmed, especially since it is
 so close to the Capital.  Instead they appear empty and deserted.  Very little
 sign of travel or civilization can be seen, except for a plume of smoke rising
-far to the west.    
+far to the west.
 ~
 200 32768 0 0 0 2
 D0
@@ -513,8 +513,8 @@ S
 #20030
 Dirt Road~
    As you continue along the road you notice that the road continues to the
-north and also to the south.  The grassy plains sway gently in the breeze.  
-Occasionally the grass will rustle as some animal flees at your approach.    
+north and also to the south.  The grassy plains sway gently in the breeze.
+Occasionally the grass will rustle as some animal flees at your approach.
 ~
 200 32768 0 0 0 2
 D0
@@ -530,7 +530,7 @@ S
 Dirt Road~
    Moving on the road you notice the foliage seems to be growing over the road
 in places.  You guess the road isn't used very often.  The road continues off
-to the north and south.    
+to the north and south.
 ~
 200 32768 0 0 0 2
 D0
@@ -547,7 +547,7 @@ Dirt Road~
    As you venture further you spot a few small flowers growing here and there
 on the road.  The road continues to the north and south.  To the north a field
 of swaying grass stretches to a forest in the distance.  South the plain gives
-way to a light forest.    
+way to a light forest.
 ~
 200 32768 0 0 0 2
 D0
@@ -563,7 +563,7 @@ S
 Dirt Road~
    Moving along the road you notice that the road continues the the east and
 north.  The road curves around a large steep hill to the south.  The hill looks
-somewhat unnatural, and out of place.    
+somewhat unnatural, and out of place.
 ~
 200 32768 0 0 0 2
 D0
@@ -579,7 +579,7 @@ S
 Dirt Road~
    You make your way on the dirt road.  The road seems to continue to the west
 and south.  You stand alongside a steep hill covered in grass and moss.  The
-hill rises so steeply above you that you doubt it could be climbed.    
+hill rises so steeply above you that you doubt it could be climbed.
 ~
 200 32768 0 0 0 2
 D2
@@ -595,7 +595,7 @@ S
 Dirt Road~
    As you move along the small, dirt road you see the road continues to the
 north and south.  A large hill directly to the west looms above you.  Strange,
-when the rest of the rolling hills around here are so small.    
+when the rest of the rolling hills around here are so small.
 ~
 200 32768 0 0 0 2
 D0
@@ -611,7 +611,7 @@ S
 Dirt Road~
    The brush grows a bit thicker here but is still passable.  A few tiny
 animals seem to be taking refuge in some of the small bushes to the side of the
-road.  The road continues off to the north and south.    
+road.  The road continues off to the north and south.
 ~
 200 32768 0 0 0 2
 D0
@@ -627,7 +627,7 @@ S
 Dirt Road~
    Moving along the dirt road you notice that it continues to the north and
 south.  The brush is broken up by small trees which seem to grow even thicker
-further south.  To the north the road opens up into the plains.    
+further south.  To the north the road opens up into the plains.
 ~
 200 32768 0 0 0 2
 D0
@@ -643,7 +643,7 @@ S
 Dirt Road~
    You make your way on the dirt road.  You notice the road leads to the north.
 The road bends to the west into a dense forest.  Their seems to be an absence
-of wildlife in this area, the forest is strangely silent.    
+of wildlife in this area, the forest is strangely silent.
 ~
 200 32768 0 0 0 2
 D0
@@ -653,10 +653,10 @@ D0
 S
 #20039
 Narrow Path~
-   You are following a well travelled branch off the Western Highway.  
+   You are following a well travelled branch off the Western Highway.
 Somewhere in the distance to the south-west you can make out some small streaks
 of smoke, as if coming from the chimneys in a small village, while to the
-north you see the busy Western Highway.    
+north you see the busy Western Highway.
 ~
 200 32768 0 0 0 2
 D0
@@ -666,7 +666,7 @@ D0
 S
 #20040
 Sairith's Trading Post~
-   The building is covered in dust and everything is slick from animal fat.  
+   The building is covered in dust and everything is slick from animal fat.
 The horrible stench from the tanning and curing of the hides fills your
 nostrils.  Pelts and various types of clothing hang from the walls and rafters.
 A man behind the counter grins

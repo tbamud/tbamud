@@ -1,16 +1,16 @@
 #400
 Jade Forest (Description Room)~
-   The Jade Forest is a simple zone, laid out for levels 10-15 approximately.  
-The majority of it is forest, with a small village, some trails, and a river.  
-There are a couple of shops, but these need stocking with items really.  
+   The Jade Forest is a simple zone, laid out for levels 10-15 approximately.
+The majority of it is forest, with a small village, some trails, and a river.
+There are a couple of shops, but these need stocking with items really.
 Descriptions are very basic and could do with fleshing out.
 ~
 4 0 0 0 0 3
 E
 credits info~
-   Builder   : 
+   Builder   :
 Zone         : 4 Jade Forest
-Began        : 1999 
+Began        : 1999
 Player Level : 10-25
 Rooms        : 100
 Mobs         : 31
@@ -27,7 +27,7 @@ The Jade Forest~
    The shadows of the trees seem to engulf their surroundings.  The light in
 here is extremely scarce, allowing very little to be visible.  Tall blades of
 grass wave drearily back and forth, lushly coating the ground as if this were
-swampland.  
+swampland.
 ~
 4 0 0 0 0 3
 D0
@@ -48,7 +48,7 @@ The Jade Forest~
    Several colourful plants blossom prettily, their vibrant hues only visible
 now and again from their hiding place in the grass.  The plant life here is so
 abundant that it completely obscures any trail, making it very easy for a
-traveler to become lost.  
+traveler to become lost.
 ~
 4 4 0 0 0 3
 D0
@@ -84,7 +84,7 @@ S
 The Jade Forest~
    Weeds cover the ground in a thick entwined tangle, their vine-like stems
 weaving around each other as if laying a netted trap.  It would be very easy to
-become ensnared here, and lingering is probably not the wisest of ideas.  
+become ensnared here, and lingering is probably not the wisest of ideas.
 ~
 4 0 0 0 0 3
 D0
@@ -106,7 +106,7 @@ The Jade Forest~
    Stepping out from the weeds, a large clearing opens up, pale trees standing
 sentry around its borders.  High above, beams of sunlight can be seen making
 their way through the branches of the trees.  The song of some nearby birds
-fills the air with joyful sound.  
+fills the air with joyful sound.
 ~
 4 64 0 0 0 3
 D0
@@ -122,7 +122,7 @@ S
 The Jade Forest~
    This appears to be the beginning of a rather large looking path.  There is no
 indication of where it might lead, the darkness at its edges obscuring any
-vision of what lies beyond.  
+vision of what lies beyond.
 ~
 4 0 0 0 0 3
 D1
@@ -138,7 +138,7 @@ S
 Rocky Path~
    The sound of scuffing and shuffling can be heard as the rocks on the path are
 disturbed by movement.  In patches over the ground, several spots of blood can
-be seen covering the rocks with a sickly sheen of moisture.  
+be seen covering the rocks with a sickly sheen of moisture.
 ~
 4 0 0 0 0 3
 D1
@@ -197,7 +197,7 @@ Rocky Path~
    The path looks though it is coming to its end.  There is no sign of what it
 may give way to, whether a clearing, or even deeper darker forest.  It can be
 seen growing steadily narrower, though its edge dips just over the horizon and
-out of view.  
+out of view.
 ~
 4 0 0 0 0 3
 D1
@@ -213,7 +213,7 @@ S
 Rocky Path~
    At the end of a long winding path, the south opens up into a what appears to
 be a small garden, though its foliage is too deep to see clearly inside.  To the
-north the forest grows thickly and menacingly dark.  
+north the forest grows thickly and menacingly dark.
 ~
 4 0 0 0 0 3
 D1
@@ -269,10 +269,10 @@ D2
 S
 #414
 Garden~
-   The rocks on the ground seem to get larger the deeper the garden becomes.  
+   The rocks on the ground seem to get larger the deeper the garden becomes.
 It seems chaotic, and yet somehow strangely designed.  Between a particularly
 large set of boulders can be seen the yellowing bones of a skeleton.  It appears
-to have been crushed by one of the huge stones.  
+to have been crushed by one of the huge stones.
 ~
 4 0 0 0 0 3
 D0
@@ -296,7 +296,7 @@ S
 The Jade Forest~
    The trees seem to get taller and taller as the forest deepens, their massive
 looming trunks standing ominously close to the border of the path, as if daring
-a traveler to set one foot over the edge.  
+a traveler to set one foot over the edge.
 ~
 4 64 0 0 0 3
 D0
@@ -312,7 +312,7 @@ S
 The Jade Forest~
    The trees seem to get taller and taller as the forest deepens, their massive
 looming trunks standing ominously close to the border of the path, as if daring
-a traveler to set one foot over the edge.  
+a traveler to set one foot over the edge.
 ~
 4 0 0 0 0 3
 D0
@@ -345,7 +345,7 @@ The Jade Forest~
    The forest grows lush and damp, its dark greenery dripping with moisture and
 dewdrops as the light from above becomes dimmer and more diffuse.  The sounds of
 creatures battling can be heard, evidence of previous fights lying on the ground
-in streaks of blood and tufts of fur.  
+in streaks of blood and tufts of fur.
 ~
 4 0 0 0 0 3
 D0
@@ -361,7 +361,7 @@ S
 Intersection~
    This small intersection is unmarked and gives no indication of which would be
 the safest way to turn.  Narrow paths lead off in all directions, each equally
-shrouded in shadows from the leafy canopy.  
+shrouded in shadows from the leafy canopy.
 ~
 4 0 0 0 0 3
 D0
@@ -382,7 +382,7 @@ Tunnel of the Dead~
    This mysterious looking tunnel appears to have been fashioned together from
 logs and leaves.  Small beams of light shine through the roof of the tunnel,
 allowing some glimpse of the many insects and worms that reside here, burrowing
-silently through the decaying pieces of wood.  
+silently through the decaying pieces of wood.
 ~
 4 0 0 0 0 3
 D1
@@ -396,10 +396,10 @@ D3
 S
 #422
 Tunnel of the Dead~
-   As the tunnel leads deeper, it begins echoing with a faint crying sound.  
+   As the tunnel leads deeper, it begins echoing with a faint crying sound.
 There doesn’t seem to be anywhere in particular that it is coming from though
 stories have often been told of this tunnel being haunted by the spirits who
-died in the great battles that were held here.  
+died in the great battles that were held here.
 ~
 4 0 0 0 0 3
 D0
@@ -421,7 +421,7 @@ Tunnel of the Dead~
    The gruesome surroundings are impossible to ignore, the stench of death still
 lingering heavy in the air.  Blood stains the walls and floor.  Several
 skeletons are scattered about the floor, threatening to trip anyone who passes
-through.  
+through.
 ~
 4 0 0 0 0 3
 D1
@@ -488,8 +488,8 @@ S
 The Jade Forest~
    At last, a larger section of the forest looms darkly ahead on the path.  It
 seems the forest is much bigger than it appears from the outside.  Just up ahead
-to the north can be seen a bridge made from logs bound together with twine.  
-Maybe there is a stream underneath it.  
+to the north can be seen a bridge made from logs bound together with twine.
+Maybe there is a stream underneath it.
 ~
 4 0 0 0 0 3
 D0
@@ -507,7 +507,7 @@ A Log Bridge~
 been bound together, are suspended precariously above a fungating swamp.  The
 bubbling fumes waft into the air, filling it with an overpowering stench.  As
 the murky water bubbles past, it can be seen to be green and as thick as
-pudding.  
+pudding.
 ~
 4 0 0 0 0 3
 D0
@@ -524,7 +524,7 @@ A Log Bridge~
    The fragile nature of this bridge becomes more and more apparent, the further
 one walks upon it.  Any motion or breeze causes it to sway slowly back and
 forth, threatening to plummet itself and anyone on it into the festering slime
-of the underlying swamp.  
+of the underlying swamp.
 ~
 4 0 0 0 0 3
 D0
@@ -562,7 +562,7 @@ Marsh~
    The ground here becomes wet and slippery, easily giving way to any pressure.
 Its submission is misleading however, as the mud quickly closes in again, an
 insistent sucking pressure threatening to suck any travelers down into its
-deathly depths.  
+deathly depths.
 ~
 4 0 0 0 0 3
 D0
@@ -578,7 +578,7 @@ S
 The Jade Forest~
    As the forest becomes deeper and thicker, the ground can be noticed becoming
 darker and more moist.  What was once hard and dry is now soft and wet.  It
-seems the forest is giving way to a more swampy marshland.  
+seems the forest is giving way to a more swampy marshland.
 ~
 4 0 0 0 0 3
 D0
@@ -595,7 +595,7 @@ A Log Bridge~
    The smell of the swamp bubbles up sickeningly, filling the air with a green
 gaseous cloud.  The bridge continues shuddering dangerously, its logs beginning
 to separate with wear and age, the slimy water visible through the opening
-cracks.  
+cracks.
 ~
 4 0 0 0 0 3
 D0
@@ -611,7 +611,7 @@ S
 The Jade Forest~
    The trees seem to get taller and taller as the forest deepens, their massive
 looming trunks standing ominously close to the border of the path, as if daring
-a traveler to set one foot over the edge.  
+a traveler to set one foot over the edge.
 ~
 4 0 0 0 0 3
 D1
@@ -623,7 +623,7 @@ S
 Marsh~
    The water rises ankle-deep, becoming more sticky and smelly the deeper it
 grows.  A thick cloud of stench rises into the air as bubbles form and pop, the
-heat of the air increasing with the humidity.  
+heat of the air increasing with the humidity.
 ~
 4 0 0 0 0 3
 D1
@@ -659,7 +659,7 @@ S
 Marsh~
    The water rises ankle-deep, becoming more sticky and smelly the deeper it
 grows.  A thick cloud of stench rises into the air as bubbles form and pop, the
-heat of the air increasing with the humidity.  
+heat of the air increasing with the humidity.
 ~
 4 0 0 0 0 3
 D1
@@ -691,7 +691,7 @@ S
 Marsh~
    The borders of a wet marshland stretch out ahead, long grasses and boulders
 obscuring much of the view.  Swarms of mosquitoes buzz heavily in the air,
-dipping in and out of the murky puddles.  To the north is a small dirt path.  
+dipping in and out of the murky puddles.  To the north is a small dirt path.
 ~
 4 0 0 0 0 3
 D0
@@ -728,7 +728,7 @@ The Jade Forest~
    The grass on the forest floor begins getting taller the deeper the forest
 becomes.  The thickness of it would make it difficult for even experienced
 travelers to pass.  A small hole can be just barely seen to the north, its
-relative obscurity making it very easy to stumble into.  
+relative obscurity making it very easy to stumble into.
 ~
 4 0 0 0 0 3
 D0
@@ -745,7 +745,7 @@ The Jade Forest~
    The edges of a small hole lie jagged in the ground, making it very easy for a
 distracted passer to trip and hurt themselves.  Its not clear how the hole got
 there in the first place, but a few jagged rocks lie scattered around,
-distinctly out of place as if carried here.  
+distinctly out of place as if carried here.
 ~
 4 0 0 0 0 3
 D1
@@ -790,7 +790,7 @@ S
 Cobblestone Road~
    The dusty ground merges into the edge of a very well made cobblestone road.
 It seems to be leading into the village.  The trees seem to be more scarce here,
-allowing more of the surroundings to be visible.  
+allowing more of the surroundings to be visible.
 ~
 4 0 0 0 0 3
 D1
@@ -807,7 +807,7 @@ Cobblestone Road~
    As the road grows larger, and less well traveled, everything around it seems
 to get quiet.  The creatures in the forest must sense the presence of intruding
 passage.  The road is very smooth and flawless.  It seems a very fine piece of
-work for such a remote and abandoned area.  
+work for such a remote and abandoned area.
 ~
 4 0 0 0 0 3
 D1
@@ -824,7 +824,7 @@ Hidden Village~
    Following the cobblestone road towards the center of the village, various
 modest homes can be seen standing around in small clusters.  Several people are
 distractedly and busily working on what seem to be newer homes.  Leaves fall
-gently from the trees and carpet the winding path.  
+gently from the trees and carpet the winding path.
 ~
 4 0 0 0 0 3
 D0
@@ -840,7 +840,7 @@ S
 Hidden Village~
    The path has led right into the entrance of the village.  Everything looks so
 peaceful here, so quiet and cozy.  The smell of fresh cut flowers fills the air,
-making it sparkle with particles of dancing pollen.  
+making it sparkle with particles of dancing pollen.
 ~
 4 0 0 0 0 3
 D1
@@ -862,7 +862,7 @@ Jedidiah's Armour Shop~
 Shop!"  Here it is possible to buy or sell items for a fair price.  In some cases,
 Jedidiah may even accept trade.  His shop appears to be well stocked with
 various leather and metal armours, although why they would be needed in such a
-quiet place as this is not clear.  
+quiet place as this is not clear.
 ~
 4 8 0 0 0 0
 D0
@@ -883,7 +883,7 @@ Cobblestone Road~
    The road turns here, heading directly into the village.  Several shops and
 homes can be seen lining either side of the path, showing no signs yet of the
 people who could be living there.  The chittering of people can be heard talking
-in the distance.  
+in the distance.
 ~
 4 0 0 0 0 3
 D0
@@ -917,7 +917,7 @@ Cobblestone Road~
    As the village continues on, the shadows grow darker and longer as more and
 more trees begin to appear.  The trees seem to be leaning to one side, almost as
 if they were creating a path for passage.  The pawn shop can be seen to the
-north.  
+north.
 ~
 4 8 0 0 0 0
 D0
@@ -947,7 +947,7 @@ Hidden Village~
    Hundreds of leaves are falling from the trees all around, making the place
 look as if its in the middle of a tornado.  A slight breeze picks up, blowing
 some of the leaves swirling into the air.  The road immediately ahead is covered
-in a carpet of green.  
+in a carpet of green.
 ~
 4 0 0 0 0 3
 D0
@@ -964,7 +964,7 @@ Hidden Village~
    The road is hardly visible, as it has been covered in a thick carpet of dried
 leaves.  They can be heard crunching underfoot as small creatures scamper
 amongst the trees.  The center of the village can be seen lying open in the
-distance.  
+distance.
 ~
 4 0 0 0 0 3
 D2
@@ -981,7 +981,7 @@ A Dirt Path~
    The land appears to have turned off onto a small dirt path.  Its not
 immediately visible where it leads, but the view here is beautiful!  Several
 small plants can be seen all around you, and in full bloom!  The wondrous
-blossoms fill the air with rich fragrance.  
+blossoms fill the air with rich fragrance.
 ~
 4 0 0 0 0 3
 D0
@@ -997,7 +997,7 @@ S
 A Dirt Path~
    As the small dusty path continues on, some small holes can be seen lying
 dented into the ground.  They are much too large to be ant holes, but nothing
-can be seen that might have caused them.  
+can be seen that might have caused them.
 ~
 4 0 0 0 0 3
 D0
@@ -1011,10 +1011,10 @@ D2
 S
 #458
 A Dirt Path~
-   The path comes to an end here, surrounded by a field of tall green grass.  
+   The path comes to an end here, surrounded by a field of tall green grass.
 The grass comes up to almost the full height of a man, making it very difficult
 to see much beyond it.  Trees tower high above, watching over the landscape like
-dormant guardians.  
+dormant guardians.
 ~
 4 0 0 0 0 3
 D1
@@ -1034,7 +1034,7 @@ S
 Cobblestone Road~
    Stepping out from the gigantic field of swaying grass, a long cobblestone
 road becomes immediately visible.  It appears to be going directly into the
-village.  There is a small house lying off to the east.  
+village.  There is a small house lying off to the east.
 ~
 4 0 0 0 0 3
 D1
@@ -1050,7 +1050,7 @@ S
 Hidden Village~
    A dusty patch of tangled weeds makes up the entrance to a small house.  It
 appears to have been abandoned some time ago.  The windows and the door have
-been boarded up, keeping people from entering, or even peering inside.  
+been boarded up, keeping people from entering, or even peering inside.
 ~
 4 0 0 0 0 3
 D1
@@ -1066,7 +1066,7 @@ S
 A Stream~
    The sound of rushing water fills the air, spray misting up from a rather
 large looking stream.  The water swirls chaotically with foam and mud, several
-small fish can be seen swimming about just beneath its surface.  
+small fish can be seen swimming about just beneath its surface.
 ~
 4 4 0 0 0 3
 D1
@@ -1082,7 +1082,7 @@ S
 A Stream~
    Just beneath the glittering surface of the water can be seen a layer of
 smooth white pebbles being hit by the sunlight.  The light reflects from the
-rocks, making small rainbows in the water.  
+rocks, making small rainbows in the water.
 ~
 4 0 0 0 0 3
 D0
@@ -1103,7 +1103,7 @@ S
 A Stream~
    Just beneath the glittering surface of the water can be seen a layer of
 smooth white pebbles being hit by the sunlight.  The light reflects from the
-rocks, making small rainbows in the water.  
+rocks, making small rainbows in the water.
 ~
 4 0 0 0 0 3
 D0
@@ -1115,7 +1115,7 @@ S
 A Stream~
    The stream begins to get shallow here.  The tops of large pebbles that were
 once submerged under the water are now out in the open, being dried by the sun.
-A soft scratching noise can be heard close by.  
+A soft scratching noise can be heard close by.
 ~
 4 0 0 0 0 3
 D0
@@ -1131,7 +1131,7 @@ S
 A Stream~
    There is a slight bend in the stream here.  It begins heading off to the
 east.  It appears to be almost at an end.  The beginning of a dusty dirt trail
-can be seen stretching straight ahead to the east.  
+can be seen stretching straight ahead to the east.
 ~
 4 0 0 0 0 3
 D1
@@ -1163,7 +1163,7 @@ S
 Sanctus Trail~
    The trail ahead of looks well-maintained and decorated.  Many beautiful
 plants line the sides of the trail, making it look as if it passes through a
-large flower garden.  The trail continues to the east.  
+large flower garden.  The trail continues to the east.
 ~
 4 0 0 0 0 3
 D1
@@ -1237,7 +1237,7 @@ S
 Cobblestone Road~
    An enormous tree stands stretching into the sky.  It's branches are full with
 fluttering green leaves, offering plenty of shelter from the sun.  The road
-continues to the west, heading directly into the center of the village.  
+continues to the west, heading directly into the center of the village.
 ~
 4 0 0 0 0 3
 D2
@@ -1254,7 +1254,7 @@ Cobblestone Road~
    The road makes a sharp turn here, heading to the north.  A village can be
 seen nearby, the sound of friendly chattering filling the air.  Now and again,
 the glimpse of people can be seen busily shuffling around.  A few of them pause
-and speak to each other before going about their business.  
+and speak to each other before going about their business.
 ~
 4 0 0 0 0 3
 D0
@@ -1270,7 +1270,7 @@ S
 Cobblestone Road~
    The road seems to come to an end here, leaving nothing but open grassy ground
 to walk on.  To the east can be seen an old shop, but it doesn't appear to be
-open, its windows and door carefully nailed shut.  
+open, its windows and door carefully nailed shut.
 ~
 4 0 0 0 0 3
 D1
@@ -1324,7 +1324,7 @@ Sanctus Trail~
    The trail begins to turn here, heading to the west.  A small breeze cascades
 over the land, stirring little dust clouds into the air.  Leaves flutter lazily
 as they fall from the trees and onto the ground, carpeting it with a layer of
-earthy colours.  
+earthy colours.
 ~
 4 0 0 0 0 3
 D2
@@ -1340,7 +1340,7 @@ S
 Sanctus Trail~
    The city is not too far away now.  Its gleaming stone wall can be seen
 looming in the distance.  Several tall buildings are visible here and there,
-their tiled roofs peeking just over the edges of the wall.  
+their tiled roofs peeking just over the edges of the wall.
 ~
 4 0 0 0 0 3
 D0
@@ -1356,7 +1356,7 @@ S
 Sanctus Trail~
    The city is not too far away now.  Its gleaming stone wall can be seen
 looming in the distance.  Several tall buildings are visible here and there,
-their tiled roofs peeking just over the edges of the wall.  
+their tiled roofs peeking just over the edges of the wall.
 ~
 4 0 0 0 0 3
 D2
@@ -1390,7 +1390,7 @@ Hidden Village~
    To the east can be seen a weapons shop, although it seems distinctly out of
 place in such a peaceful place as this.  To the north lies a small inn, its
 flowered windows open, and a welcoming smell of home cooking wafting from its
-direction.  
+direction.
 ~
 4 0 0 0 0 3
 D0
@@ -1425,7 +1425,7 @@ Inn Entrance~
    The entrance to the inn smells like baking bread and fresh flowers.  It looks
 like a marvelous place to stay.  To the west is the front desk, a list of rooms
 hanging on the wall, along with various sets of keys.  A little fireplace
-flickers against one wall, filling the room with a homey warmth and light.  
+flickers against one wall, filling the room with a homey warmth and light.
 ~
 4 8 0 0 0 0
 D0
@@ -1459,7 +1459,7 @@ Room 1~
    The room is wide and spacious, painted with neutral hues of ivory and beige.
 There is a large bed sitting in the corner of the room next to a large window
 with what appears to be a beautiful view!  The carpeting is plush and warm,
-giving the place a welcoming feel.  
+giving the place a welcoming feel.
 ~
 4 8 0 0 0 0
 D1
@@ -1480,7 +1480,7 @@ Room 2~
    The room is wide and spacious, painted with neutral hues of ivory and beige.
 There is a large bed sitting in the corner of the room next to a large window
 with what appears to be a beautiful view!  The carpeting is plush and warm,
-giving the place a welcoming feel.  
+giving the place a welcoming feel.
 ~
 4 8 0 0 0 0
 D3
@@ -1493,7 +1493,7 @@ Sanctus Trail~
    The road ahead looks long and dusty, its borders half claimed by the
 wilderness surrounding it.  A very large city looms in the distance, a large
 wall obscuring most of the view, but its very possible it could be the city of
-Sanctus.  
+Sanctus.
 ~
 4 0 0 0 0 3
 D0
@@ -1510,7 +1510,7 @@ Sanctus Trail~
    The road ahead looks long and dusty, its borders half claimed by the
 wilderness surrounding it.  A very large city looms in the distance, a large
 wall obscuring most of the view, but its very possible it could be the city of
-Sanctus.  
+Sanctus.
 ~
 4 0 0 0 0 3
 D0
@@ -1526,7 +1526,7 @@ S
 Sanctus Trail~
    As the trail continues on, the sight of a far off village comes into view, as
 well as an extremely large city.  The village looks tiny compared to the city
-that looms on the horizon.  The trail continues to the north.  
+that looms on the horizon.  The trail continues to the north.
 ~
 4 0 0 0 0 3
 D0
@@ -1543,7 +1543,7 @@ Room 4~
    The room is wide and spacious, painted with neutral hues of ivory and beige.
 There is a large bed sitting in the corner of the room next to a large window
 with what appears to be a beautiful view!  The carpeting is plush and warm,
-giving the place a welcoming feel.  
+giving the place a welcoming feel.
 ~
 4 8 0 0 0 0
 D0
@@ -1560,7 +1560,7 @@ Room 3~
    The room is wide and spacious, painted with neutral hues of ivory and beige.
 There is a large bed sitting in the corner of the room next to a large window
 with what appears to be a beautiful view!  The carpeting is plush and warm,
-giving the place a welcoming feel.  
+giving the place a welcoming feel.
 ~
 4 8 0 0 0 0
 D1
@@ -1576,7 +1576,7 @@ S
 Sanctus Trail~
    Several large boulders surround the trail, almost creating a wall.  To the
 east can be seen a rather large looking well.  The trail continues north and
-south.  
+south.
 ~
 4 0 0 0 0 3
 D0
@@ -1593,7 +1593,7 @@ Sanctus Trail~
    The city of Sanctus can be seen lying on the horizon, its large stone walls
 obscuring much of what lays within.  The trail grows wider and better traveled
 as it approaches the city, its borders pushing back the waving grasses that
-encroach all around.  
+encroach all around.
 ~
 4 0 0 0 0 3
 D1
@@ -1610,7 +1610,7 @@ Sanctus Trail~
    The air stirs gently, rippling over the grasses and causing them to wave
 gently as if greeting any travelers that pass through here.  The occasional
 sound of birdsong drifts down from above, the lazy hum of bees and insects
-droning continually in the background.  
+droning continually in the background.
 ~
 4 0 0 0 0 3
 D1
@@ -1631,7 +1631,7 @@ Sanctus Trail~
    The trail continues on, heading straight for the city.  The sound of
 civilization grows louder, gentle chattering and the scuffling of footsteps
 echoing from within the large surrounding walls of Sanctus.  The trail here has
-become more grooved and worn with heavy passage.  
+become more grooved and worn with heavy passage.
 ~
 4 0 0 0 0 3
 D1
@@ -1647,7 +1647,7 @@ S
 Sanctus Trail~
    As the trail continues on, the sight of a far off village comes into view, as
 well as an extremely large city.  The village looks tiny compared to the city
-that looms on the horizon.  The trail continues to the north.  
+that looms on the horizon.  The trail continues to the north.
 ~
 4 0 0 0 0 3
 D2
@@ -1664,7 +1664,7 @@ Sanctus Trail~
    A large stone well stands here, the ground around it cast in shadow and moist
 with the water that has been spilled through use.  Dark green mosses and small
 nodding mushrooms take refuge in the shade, small insects scuttling busily
-around them.  
+around them.
 ~
 4 0 0 0 0 3
 D0
@@ -1681,7 +1681,7 @@ Room 6~
    The room is wide and spacious, painted with neutral hues of ivory and beige.
 There is a large bed sitting in the corner of the room next to a large window
 with what appears to be a beautiful view!  The carpeting is plush and warm,
-giving the place a welcoming feel.  
+giving the place a welcoming feel.
 ~
 4 0 0 0 0 0
 D3
@@ -1694,7 +1694,7 @@ Room 5~
    The room is wide and spacious, painted with neutral hues of ivory and beige.
 There is a large bed sitting in the corner of the room next to a large window
 with what appears to be a beautiful view!  The carpeting is plush and warm,
-giving the place a welcoming feel.  
+giving the place a welcoming feel.
 ~
 4 8 0 0 0 0
 D1

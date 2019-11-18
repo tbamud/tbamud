@@ -88,7 +88,7 @@ D2
 E
 statue~
    Looking up the huge statue you see Akbal calmly gazing out across his lands,
-he seems pleased.  
+he seems pleased.
 ~
 S
 #5506
@@ -170,7 +170,7 @@ The Donation Room~
    This room is new to the temple, it was created during the hard times
 that had struck the city in recent decades.  Luckily for them the Sultan
 had been hoarding some of the basic neccesities for just such an occasion.
-These days the donation room depends on the generosity of wealthy 
+These days the donation room depends on the generosity of wealthy
 adventurers, and a curse on any that walk in to take everything.
 ~
 55 12 0 0 0 0
@@ -182,7 +182,7 @@ S
 #5511
 The Museum Of The Greater Gods~
    Four large stone statues reside in the museum.  They were constructed
-by the people of New Thalos to pay homage to the saints they believe to 
+by the people of New Thalos to pay homage to the saints they believe to
 have saved all their lives.
    The museum continues to the south.
 ~
@@ -263,7 +263,7 @@ S
 #5516
 The Museum Of The Greater Gods~
    Four large stone statues reside in the museum.  They were constructed
-by the people of New Thalos to pay homage to the saints they believe to 
+by the people of New Thalos to pay homage to the saints they believe to
 have saved all their lives.
    The museum continues to the north.
 ~
@@ -320,7 +320,7 @@ S
 Nectar Of The Gods~
    You are startled by the lavishness of this place.  From what you
 know of clerics they are supposed to be humble people, giving all their
-material goods to their cause.  Perhaps because only clerics are 
+material goods to their cause.  Perhaps because only clerics are
 allowed to enter this bar they have condoned making it as comfortable
 as possible.  In the corner stands a staircase leading down to the
 meditaion chambers.
@@ -385,7 +385,7 @@ D3
 0 -1 5416
 E
 vat~
-   You think you hear noises from the vat...  Naaah.  
+   You think you hear noises from the vat...  Naaah.
 ~
 S
 #5523
@@ -416,9 +416,9 @@ D2
 E
 sign~
    The sign reads:
- 
+
 Welcome to Braheem's...
- 
+
 LIST   - Shows you all of my wonderful creations.
 VALUE  - Shows what an item might be worth to me.
 SELL   - Allows you to rid yourself of excessive magic items.
@@ -428,7 +428,7 @@ S
 #5525
 The Entrance To The Mages' Tower~
    The entrance hall is a small poor lighted room.  It would seem its
-only purpose is to house the powerful sorcerer standing here guarding 
+only purpose is to house the powerful sorcerer standing here guarding
 the entrance.
 ~
 55 152 0 0 0 0
@@ -818,7 +818,7 @@ D3
 S
 #5550
 The Grand Entrance~
-   Nowhere have you seen such an obscene display of wealth then in this 
+   Nowhere have you seen such an obscene display of wealth then in this
 corridor.  The shaggy carpeting under your feet makes it seem as if you
 are walking on a cloud.  Platinum candelabras hang delicately from the
 ceiling casting light on the ancient tapestries adorning the walls.  The
@@ -860,7 +860,7 @@ S
 #5552
 The Dance Hall~
    You seem to have missed a huge party.  The janitors are here cleaning
-up the confetti and pieces of food.  Hundreds of empty beer mugs on the 
+up the confetti and pieces of food.  Hundreds of empty beer mugs on the
 tables surrounding the dance floor suggest that the citizens love their
 drink.  There is still a banner on the wall.
 ~
@@ -872,16 +872,16 @@ D1
 E
 banner~
    =====================================================================
-   @                  
+   @
              H A P P Y   B I R T H D A Y   T O   U S
-@ 
+@
    =====================================================================
 ~
 S
 #5553
 The Jail~
    You are in jail.  For some reason, someone feels that you've screwed
-up pretty bad and should be put away safely for a while.  
+up pretty bad and should be put away safely for a while.
 ~
 55 696 0 0 0 0
 D0
@@ -1261,7 +1261,7 @@ A Guest Room~
    This is a simple room used for visiting nobles.  A small dresser stands
 on the east wall with a mirror hung right above it.  A queen sized bed made
 up in satin sheets stands in the middle of the room against the south
-wall under a window.  The only obvious exit is north back out into the 
+wall under a window.  The only obvious exit is north back out into the
 hallway.
 ~
 55 8 0 0 0 0
@@ -1276,13 +1276,13 @@ mirror~
 E
 window~
    Looking out this window you can see the grounds of the palace that separate
-the walls of the palace from the building itself.  
+the walls of the palace from the building itself.
 ~
 S
 #5577
 A Hall~
    The long hall continues here with a wooden door in the south wall.  On
-the north wall hangs the picture of some forgotten nobleman who once ruled 
+the north wall hangs the picture of some forgotten nobleman who once ruled
 the land.
 ~
 55 8 0 0 0 0
@@ -1366,7 +1366,7 @@ S
 The Art Exhibit~
    You are standing in the Sultan's tribute to the finer virtues.
 Large paintings hang from the walls displaying nature scenes, nudes,
-and glorious victories in battle.  Strange scupltures rest on pedestals 
+and glorious victories in battle.  Strange scupltures rest on pedestals
 at each corner of the room and mirrors are placed in strategic locations
 so the viewer may see an entire sculpture at a glance.
    Your eyes, however, are pulled towards a painting that dominates the
@@ -1380,7 +1380,7 @@ door~
 E
 painting~
    The large painting on the west wall appears to be of the temple of New
-Thalos, and occupies the entire western wall of this room.  
+Thalos, and occupies the entire western wall of this room.
 ~
 S
 #5581

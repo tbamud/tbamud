@@ -23,9 +23,9 @@ credits info~
    |                     Written in 2001 by Crazyman                     |
    x---------------------------------------------------------------------x
     This is the first zone I ever wrote. It's based on the original 1968
-    Planet of the Apes movie. The zone is currently attached to the world 
+    Planet of the Apes movie. The zone is currently attached to the world
     north of room 6090, which is just before the forest west of Midgaard.
-                   
+
     Written entirely from scratch in WordPad. Feel free to edit, modify,
     and do what you want with this zone!
    x---------------------------------------------------------------------x
@@ -66,7 +66,7 @@ S
 Grassy Field~
    You're on the southern edge of a large grasy field. Waist high
 grasses completely surround you. You can see the odd willow tree growing
-amongst the grass. A dense forest is to the south. A dirt path is to the 
+amongst the grass. A dense forest is to the south. A dirt path is to the
 west.
 ~
 251 0 0 0 0 2
@@ -211,7 +211,7 @@ S
 Grassy Field~
    You're in a large grassy field.  Waist high grasses completely surround you.
 You can see the odd willow tree growing amongst the grass.  The wind
-occasionally sweeps across the field swaying the grass and willow gently.    
+occasionally sweeps across the field swaying the grass and willow gently.
 ~
 251 0 0 0 0 2
 D0
@@ -343,7 +343,7 @@ S
 Grassy Field~
    You're in a large grassy field.  Waist high grasses completely surround you.
 You can see the odd willow tree growing amongst the grass.  The wind
-occasionally sweeps across the field swaying the grass and willow gently.    
+occasionally sweeps across the field swaying the grass and willow gently.
 ~
 251 0 0 0 0 2
 D0
@@ -394,7 +394,7 @@ S
 #25115
 Grassy Field~
    You're on the northwestern edge of a large grassy field. Waist high
-grasses completely surround you. The back of a large sandy coloured 
+grasses completely surround you. The back of a large sandy coloured
 building is directly north of you.
 ~
 251 0 0 0 0 2
@@ -442,7 +442,7 @@ S
 #25117
 Grassy Field~
    You're on the northern edge of a large grassy field. Waist high
-grasses completely surround you. The back of a large sandy coloured 
+grasses completely surround you. The back of a large sandy coloured
 building is directly north of you.
 ~
 251 0 0 0 0 2
@@ -465,7 +465,7 @@ S
 #25118
 Grassy Field~
    You're on the northeastern edge of a large grassy field. Waist high
-grasses completely surround you. The back of a large sandy coloured 
+grasses completely surround you. The back of a large sandy coloured
 building is directly north of you, and another sandy coloured building
 is east of you.
 ~
@@ -483,8 +483,8 @@ The field continues West.
 S
 #25119
 Ape Office~
-   You're in a tidy office. Stacks of papers are neatly piled on a 
-large wooden table, while bookshelves filled with books line the 
+   You're in a tidy office. Stacks of papers are neatly piled on a
+large wooden table, while bookshelves filled with books line the
 walls. A large shuttered window faces south onto the grassy plains.
 ~
 251 8 0 0 0 0
@@ -515,7 +515,7 @@ First Level of the Wax Museum is Down.
 S
 #25121
 Wax Museum~
-   What a crazy place! Wax statues of cavemen line the walls, and some 
+   What a crazy place! Wax statues of cavemen line the walls, and some
 are even set up in battle scenes. A large circular dirt ramp leads up to a
 second story.
 ~
@@ -531,16 +531,16 @@ The Ape Village entrance is to the East.
 ~
 0 -1 25122
 D4
-Ape Museum, Level 2 
+Ape Museum, Level 2
 ~
 ~
 0 -1 25120
 S
 #25122
 Ape Road South~
-   You are on a well worn dirt road, in between two sandy coloured 
+   You are on a well worn dirt road, in between two sandy coloured
 buildings. The Wax Museum lies to the west, and the Weapons Shop is
-to the east. The Town Square is to the north. 
+to the east. The Town Square is to the north.
 ~
 251 4 0 0 0 1
 D0
@@ -566,7 +566,7 @@ The Wax Museum is to the West.
 S
 #25123
 Ape Weapons Shop~
-   This building is filthy. The dirt floors have bits of straw and leaves 
+   This building is filthy. The dirt floors have bits of straw and leaves
 all over them, and old wooden barrels line the walls. A few "windows" (really
 just holes smashed into the walls) face the street to the north. A long
 counter spans the entire southern length of the room. Behind the counter
@@ -587,9 +587,9 @@ Ape Road is to the West
 S
 #25124
 Ape Zoo~
-   You're in the northern part of a small field. In the middle of the 
-field is a huge bamboo cage. Inside this cage are several cavemen, who are 
-all climbing, screaming, and fighting each other. The apes find this to be 
+   You're in the northern part of a small field. In the middle of the
+field is a huge bamboo cage. Inside this cage are several cavemen, who are
+all climbing, screaming, and fighting each other. The apes find this to be
 pretty exciting.
 ~
 251 0 0 0 0 2
@@ -625,7 +625,7 @@ The Hospital Office is to the South.
 S
 #25126
 Human Cage~
-   You're in a large cage. The cage stinks of rotten food and urine. A narrow 
+   You're in a large cage. The cage stinks of rotten food and urine. A narrow
 window looks out onto the grassy plains to the east. Straw covers the stone
 floor.
 ~
@@ -652,7 +652,7 @@ S
 #25128
 Gorilla Training Centre~
    You find yourself in a large, well lit gym. Exercise machines and
-weight benches are scattered around the room. Several straw dummies are 
+weight benches are scattered around the room. Several straw dummies are
 positioned against the southern walls, with arrows and spears stuck in them.
 The Gorilla Soldiers train here.
 ~
@@ -670,8 +670,8 @@ The Gorilla Bunkhouse is to the West.
 S
 #25129
 Western End of Ape Lane~
-   Ape Lane is the main street of Ape Village. To the northwest is a 
-large pond, which must be where the apes get their water. A small park 
+   Ape Lane is the main street of Ape Village. To the northwest is a
+large pond, which must be where the apes get their water. A small park
 lies North, and the Wax Museum is to the South.
 ~
 251 0 0 0 0 1
@@ -698,9 +698,9 @@ The Gorilla training ground is to the West.
 S
 #25130
 Ape Village Square~
-   This is the Ape Village Town Square. A large stone statue of the 
-greatest Ape to ever live, the Law Giver, stands in the centre of the 
-square on a stone pedistal. The words "Ape will never kill ape!" are 
+   This is the Ape Village Town Square. A large stone statue of the
+greatest Ape to ever live, the Law Giver, stands in the centre of the
+square on a stone pedistal. The words "Ape will never kill ape!" are
 inscribed on the pedistal.
 ~
 251 0 0 0 0 1
@@ -729,7 +729,7 @@ S
 Ape Lane East~
    You're on Ape Lane East.  Simian Public School is to the North, and the
 Weapons Shop is to the South.  The place looks like a typical human town,
-except for the inhabitants.    
+except for the inhabitants.
 ~
 251 0 0 0 0 1
 D0
@@ -808,7 +808,7 @@ S
 #25134
 Human Cage~
    You are in a large cage.  The cage stinks of rotten food.  A narrow window
-looks out onto the grassy plains to the east.  Straw covers the stone floor.  
+looks out onto the grassy plains to the east.  Straw covers the stone floor.
 ~
 251 8 0 0 0 0
 D3
@@ -821,7 +821,7 @@ S
 Ape Pond~
    You are swimming in a large pond.  The water is quite calm, and lilly pads
 are growing all around.  To the north you can see a dangerous raging whirlpool.
-  
+
 ~
 251 4 0 0 0 6
 D0
@@ -839,7 +839,7 @@ S
 Ape Pond~
    You find yourself wading in shallow water.  The water seems clean enough,
 but you probably would not want to drink from it.  To the east is a clearing
-leading to Ape Park.    
+leading to Ape Park.
 ~
 251 4 0 0 0 6
 D0
@@ -862,7 +862,7 @@ S
 Ape Park~
    Ape Park is popular with the Apes.  While here the Apes can swim or play
 games.  A large pond is to the west in the middle of the large clearing for
-swimming.    
+swimming.
 ~
 251 0 0 0 0 2
 D1
@@ -885,7 +885,7 @@ S
 Ape Road North~
    Ape Road North is the road that leads to the Forbidden Zone.  To the west is
 the Ape Park and what looks like a lake.  To the east is Simian Public School.
-  
+
 ~
 251 0 0 0 0 1
 D0
@@ -929,8 +929,8 @@ Ape Road is to the West.
 S
 #25140
 Cornelius and Zira's House~
-   This is actually a fairly tidy ape home. A large wooden table sits in 
-the middle, and a large bed is at the back of the room. A large bookshelf 
+   This is actually a fairly tidy ape home. A large wooden table sits in
+the middle, and a large bed is at the back of the room. A large bookshelf
 contains hundreds of books dedicated to Archeology and Psychology.
 ~
 251 8 0 0 0 0
@@ -967,7 +967,7 @@ S
 Ape Pond~
    You are swimming in a large pond.  The water is quite calm, and lilly pads
 are growing all around.  To the west you can see a dangerous raging whirlpool.
-  
+
 ~
 251 4 0 0 0 6
 D0
@@ -1018,7 +1018,7 @@ S
 Ape Road North~
    Ape Road North is the road that leads to the Forbidden Zone.  To the west is
 a large pond and a park.  To the east is the amphitheatre with a few apes
-walking in and out.    
+walking in and out.
 ~
 251 0 0 0 0 1
 D0
@@ -1044,7 +1044,7 @@ A large pond is to the West.
 S
 #25145
 Ape Amphitheatre~
-   You find yourself on the top level of a big amphitheatre. It's rounded, 
+   You find yourself on the top level of a big amphitheatre. It's rounded,
 with about 6 or 7 levels of seats. The bottom part is where Dr. Zaius and Ursus
 rally all the other apes.
 ~
@@ -1064,7 +1064,7 @@ S
 Ape Pond~
    You are swimming in a large pond.  The water is quite calm, and lilly pads
 are growing all around.  To the south you can see a dangerous raging whirlpool.
-  
+
 ~
 251 4 0 0 0 6
 D1
@@ -1082,7 +1082,7 @@ S
 Ape Pond~
    You're swimming in a large pond.  The water is quite calm, and lilly pads
 are growing all around.  The water is clean and clear all the way to the
-bottom.    
+bottom.
 ~
 251 4 0 0 0 6
 D2
@@ -1113,7 +1113,7 @@ S
 Ape Road North~
    Ape Road North is the road that leads to the Forbidden Zone.  To the west
 Dr.  Zaius's house, and to the east is Dr.  Zaius's lab.  The buildings look
-rather mundane.    
+rather mundane.
 ~
 251 0 0 0 0 1
 D0
@@ -1141,7 +1141,7 @@ S
 Dr. Zaius's Lab~
    Dr. Zaius's Lab is fairly messy. Several rectangular tables are set
 against the walls, with test tubes and beakers littered all over. One of
-the tables appears to be used in surgery, as several medical tools can 
+the tables appears to be used in surgery, as several medical tools can
 be seen on it. Dr. Zaius is fond of performing lobotomies, especially
 on humans.
 ~
@@ -1154,7 +1154,7 @@ Ape Road is to the West.
 S
 #25151
 Amphitheatre Stage~
-   Two seats are mounted into the northern wall, where Dr. Zaius and 
+   Two seats are mounted into the northern wall, where Dr. Zaius and
 Ursus sit. You never noticed it before, but on the floor a small rounded
 trapdoor is barely visible beside the two seats.
 ~
@@ -1213,8 +1213,8 @@ S
 Underground Cavern~
    You're at a turn in the cave. The cave goes south into darkness. To
 the east you can see a cave entrance, and beyond that a sandy beach beside
-the ocean. You notice several wide holes in the ground, which look like 
-they've recently been dug up. Several old artifacts can be seen half 
+the ocean. You notice several wide holes in the ground, which look like
+they've recently been dug up. Several old artifacts can be seen half
 buried in the holes.
 ~
 251 8 0 0 0 0
@@ -1252,8 +1252,8 @@ S
 Forbidden Zone~
     You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way west. The gusting winds blow sand all over you. You don't think 
-anything could live out here. 
+your way west. The gusting winds blow sand all over you. You don't think
+anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1272,7 +1272,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
 sand all over you.  You don't think anything could live out here.  You can see
-the Ape Village to the south.    
+the Ape Village to the south.
 ~
 251 0 0 0 0 2
 D0
@@ -1294,10 +1294,10 @@ S
 #25158
 Forbidden Zone Entrance~
    This is the entrance to the desert wasteland known as the Forbidden Zone.
-Ape Law decrees it to be illegal to enter without permission from the Ape 
+Ape Law decrees it to be illegal to enter without permission from the Ape
 Council. Sand dunes are scattered about, and you can see the odd dead shrub. A
-high cliff blocks your way to the east. The gusting winds blow sand all over 
-you. You don't think anything could live out here. You can see the Ape Village 
+high cliff blocks your way to the east. The gusting winds blow sand all over
+you. You don't think anything could live out here. You can see the Ape Village
 to the south.
 ~
 251 4 0 0 0 2
@@ -1322,7 +1322,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1345,7 +1345,7 @@ S
 Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
-sand all over you.  You don't think anything could live out here.    
+sand all over you.  You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1371,10 +1371,10 @@ The Forbidden Zone continues West.
 S
 #25161
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. A high cliff blocks 
-your way to the east. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. A high cliff blocks
+your way to the east. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1398,7 +1398,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1421,7 +1421,7 @@ S
 Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
-sand all over you.  You don't think anything could live out here.    
+sand all over you.  You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1447,10 +1447,10 @@ The Forbidden Zone continues West.
 S
 #25164
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. A high cliff blocks 
-your way to the east. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. A high cliff blocks
+your way to the east. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1474,7 +1474,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1497,7 +1497,7 @@ S
 Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
-sand all over you.  You don't think anything could live out here.    
+sand all over you.  You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1523,10 +1523,10 @@ The Forbidden Zone continues West.
 S
 #25167
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. A high cliff blocks 
-your way to the east. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. A high cliff blocks
+your way to the east. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1547,11 +1547,11 @@ The Forbidden Zone continues West.
 S
 #25168
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. High cliffs block 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. High cliffs block
 your way east, west, and south, and they also stop some of the winds. You
 barely notice an old weather beaten stone table, which is mostly buried in
-sand.  You don't think anything could live out here. 
+sand.  You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1562,10 +1562,10 @@ The Forbidden Zone continues North.
 S
 #25169
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. A high cliff blocks 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. A high cliff blocks
 your way to the east and west, and they also block some of the winds. You
-don't think anything could live out here. 
+don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1584,7 +1584,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1607,7 +1607,7 @@ S
 Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
-sand all over you.  You don't think anything could live out here.    
+sand all over you.  You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1633,9 +1633,9 @@ The Forbidden Zone continues West.
 S
 #25172
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. The gusting winds 
-blow sand all over you. You don't think anything could live out here. 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. The gusting winds
+blow sand all over you. You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1661,10 +1661,10 @@ The Forbidden Zone continues West.
 S
 #25173
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way to the south. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+your way to the south. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1685,10 +1685,10 @@ The Forbidden Zone continues West.
 S
 #25174
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way to the east. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+your way to the east. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1712,7 +1712,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1735,7 +1735,7 @@ S
 Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  The gusting winds blow
-sand all over you.  You don't think anything could live out here.    
+sand all over you.  You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1761,9 +1761,9 @@ The Forbidden Zone continues West.
 S
 #25177
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. The gusting winds 
-blow sand all over you. You don't think anything could live out here. 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. The gusting winds
+blow sand all over you. You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1789,9 +1789,9 @@ The Forbidden Zone continues West.
 S
 #25178
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
-scattered about, and you can see the odd dead shrub. The gusting winds 
-blow sand all over you. You don't think anything could live out here. 
+   You find yourself in the middle of a very hot desert. Sand dunes are
+scattered about, and you can see the odd dead shrub. The gusting winds
+blow sand all over you. You don't think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1817,10 +1817,10 @@ The Forbidden Zone continues West.
 S
 #25179
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way to the east. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+your way to the east. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D0
@@ -1844,7 +1844,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way west.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D1
@@ -1863,7 +1863,7 @@ Forbidden Zone~
    You find yourself in the middle of a very hot desert.  Sand dunes are
 scattered about, and you can see the odd dead shrub.  A high cliff blocks your
 way north.  The gusting winds blow sand all over you.  You don't think anything
-could live out here.    
+could live out here.
 ~
 251 0 0 0 0 2
 D1
@@ -1884,10 +1884,10 @@ The Forbidden Zone continues West.
 S
 #25182
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way to the north. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+your way to the north. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D1
@@ -1908,10 +1908,10 @@ The Forbidden Zone continues West.
 S
 #25183
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way to the north. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+your way to the north. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D1
@@ -1932,10 +1932,10 @@ The Forbidden Zone continues West.
 S
 #25184
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. A high cliff blocks
-your way to the north. The gusting winds blow sand all over you. You don't 
-think anything could live out here. 
+your way to the north. The gusting winds blow sand all over you. You don't
+think anything could live out here.
 ~
 251 0 0 0 0 2
 D1
@@ -1956,9 +1956,9 @@ The Forbidden Zone continues West.
 S
 #25185
 Forbidden Zone~
-   You find yourself in the middle of a very hot desert. Sand dunes are 
+   You find yourself in the middle of a very hot desert. Sand dunes are
 scattered about, and you can see the odd dead shrub. High cliffs block
-your way to the north and south. The gusting winds blow sand all over you. 
+your way to the north and south. The gusting winds blow sand all over you.
 You don't think anything could live out here. You can see an ocean and a
 sandy beach to the east.
 ~
@@ -2005,8 +2005,8 @@ Sandy Beach~
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. You notice a large statue
-located further north. Too bad the apes don't like swimming, because 
-this place is perfect for it! 
+located further north. Too bad the apes don't like swimming, because
+this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2026,9 +2026,9 @@ Sandy Beach~
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
 shore. A high cliff blocks your way west. A huge dark green statue is
-resting right on the side of the beach. It's a woman wearing a large 
+resting right on the side of the beach. It's a woman wearing a large
 spikey crown holding a book, so it must be the ruins of the Statue of
-Liberty! Damn them all to hell! 
+Liberty! Damn them all to hell!
 ~
 251 4 0 0 0 2
 D2
@@ -2047,8 +2047,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A high cliff blocks your way west and south. Too bad the apes 
-don't like swimming, because this place is perfect for it! 
+shore. A high cliff blocks your way west and south. Too bad the apes
+don't like swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2062,8 +2062,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A high cliff blocks your way west. Too bad the apes don't like 
-swimming, because this place is perfect for it! 
+shore. A high cliff blocks your way west. Too bad the apes don't like
+swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2082,8 +2082,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A low cave lead into the cliff to the west. Too bad the apes don't 
-like swimming, because this place is perfect for it! 
+shore. A low cave lead into the cliff to the west. Too bad the apes don't
+like swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2107,8 +2107,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A high cliff blocks your way west. Too bad the apes don't like 
-swimming, because this place is perfect for it! 
+shore. A high cliff blocks your way west. Too bad the apes don't like
+swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2127,8 +2127,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A high cliff blocks your way west. Too bad the apes don't like 
-swimming, because this place is perfect for it! 
+shore. A high cliff blocks your way west. Too bad the apes don't like
+swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2147,8 +2147,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A high cliff blocks your way west. Too bad the apes don't like 
-swimming, because this place is perfect for it! 
+shore. A high cliff blocks your way west. Too bad the apes don't like
+swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2167,8 +2167,8 @@ Sandy Beach~
    You're on a wide sandy beach. The soft sand seems much nicer than
 the coarse sand found in the Forbidden Zone. The ocean to the east
 stretches as far as the eye can see, and small waves gently lap on the
-shore. A high cliff blocks your way west. Too bad the apes don't like 
-swimming, because this place is perfect for it! 
+shore. A high cliff blocks your way west. Too bad the apes don't like
+swimming, because this place is perfect for it!
 ~
 251 0 0 0 0 2
 D0
@@ -2206,8 +2206,8 @@ Statue of Liberty Stairs~
    You're on a staircase leading up the Statue of Liberty. Back when
 this place wasn't wrecked, people used to come here to tour the
 statue and to get a nice view of New York. Now, the staircase is
-full of cobwebs and many large cracks can be seen along the walls. 
-You can see the main observatory at the top of the stairs. 
+full of cobwebs and many large cracks can be seen along the walls.
+You can see the main observatory at the top of the stairs.
 ~
 251 0 0 0 0 0
 D4
@@ -2224,7 +2224,7 @@ S
 #25198
 Statue of Liberty - Main Observatory~
    You're in the main observatory of the Statue of Liberty. Several
-sets of coin operated binoculars look out onto the ocean through 
+sets of coin operated binoculars look out onto the ocean through
 the long broken windows. Dirt and grime covers all of the walls.
 A heap of rags is on the floor towards the northern part of the
 room, which looks like it may be a bed. An old staircase leading

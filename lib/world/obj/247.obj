@@ -9,7 +9,7 @@ A pewter candlestick is standing here.~
 E
 candlestick~
    It is a rather old-looking three-armed candlestick made from pewter.  Its
-candles are a yellowish white colour.  
+candles are a yellowish white colour.
 ~
 #24701
 cross~
@@ -21,7 +21,7 @@ A beautiful cross made of silver has been left here.~
 5 800 80 0 0
 E
 silver cross~
-   It is made of pure silver but is actually quite plain.  
+   It is made of pure silver but is actually quite plain.
 ~
 A
 17 -6
@@ -36,7 +36,7 @@ An ancient tombstone sits at the head of this cemetery plot.~
 E
 tombstone headstone~
    There is some writing on the tombstone.  Type "look grave" or "look stone" to
-read it.  
+read it.
 ~
 #24704
 ball string~
@@ -48,7 +48,7 @@ There is a ball of string rolling on the floor.~
 1 10 1 0 0
 E
 ball string~
-   You never know when a ball of string will come in handy!  
+   You never know when a ball of string will come in handy!
 ~
 #24705
 knife pocket~
@@ -60,7 +60,7 @@ A small pocket knife lies in the dust.  Someone must have dropped it.~
 1 100 10 0 0
 E
 pocket knife~
-   The handle is well worn, and the blade has a small nick in it.  
+   The handle is well worn, and the blade has a small nick in it.
 ~
 #24706
 thigh bone~
@@ -72,7 +72,7 @@ A disgusting thigh bone is lying in the corner.~
 15 50 5 0 0
 E
 thigh bone~
-   Chunks of flesh still hang from it and blood drips down its sides.  
+   Chunks of flesh still hang from it and blood drips down its sides.
 ~
 #24707
 pile carcasses~
@@ -86,7 +86,7 @@ E
 pile carcasses~
    The pile of refuse is utterly disgusting.  None of the carcasses are complete
 -- it's more a pile of limbs, heads and other body parts.  Mixed in with it all
-is bits and pieces of assorted arms and armor, none of which look useful.  
+is bits and pieces of assorted arms and armor, none of which look useful.
 ~
 #24708
 shovel~
@@ -99,7 +99,7 @@ A very well built shovel rests against the wall.~
 E
 shovel~
    This is the nicest shovel you have ever seen.  The shaft is made of smooth
-oak and the blade is of shining silver.  
+oak and the blade is of shining silver.
 ~
 A
 18 3
@@ -115,7 +115,7 @@ A cloak as black as the very night lies on the ground.~
 5 500 50 0 0
 E
 shadow cloak~
-   It is pure black in colour -- as pure black as the heart that wears it.  
+   It is pure black in colour -- as pure black as the heart that wears it.
 ~
 A
 2 1
@@ -132,7 +132,7 @@ A dirty grey burial wrap is lying here.~
 E
 wrap~
    It looks ancient, but surprisingly enough it is not brittle.  It is made of
-fine gauze.  
+fine gauze.
 ~
 A
 1 1
@@ -148,7 +148,7 @@ An ancient sarcophagus lies in the center of this room.~
 0 0 0 0 0
 E
 sarcophagus~
-   It is made of the finest marble.  You wonder what lies inside.  
+   It is made of the finest marble.  You wonder what lies inside.
 ~
 #24712
 sword crystal~
@@ -162,7 +162,7 @@ E
 crystal sword~
    You've never seen any weapon quite like it.  It appears to be etched from a
 single gem, and that gem must have been huge and quite flawless.  The blade is
-as sharp as glass and will never dull.  
+as sharp as glass and will never dull.
 ~
 A
 18 1
@@ -179,7 +179,7 @@ Plate mail formed from crystal has been carelessly left here.~
 E
 crystal plate~
    Truly this armor is a work of genius.  The plate is fashioned from pure gem
-but looks remarkingly comfortable.  You wonder who created it.  
+but looks remarkingly comfortable.  You wonder who created it.
 ~
 A
 12 25
@@ -195,7 +195,7 @@ E
 carcass elven prince~
    He was once a great elvish warrior, but his life has passed on.  He has been
 kept in this sarcophagus, much to the dismay of his lovely bride who jumped to
-her death when she heard he had passed on.  
+her death when she heard he had passed on.
 ~
 #24715
 rose~
@@ -209,7 +209,7 @@ E
 crystal rose~
    The stem and leaves are of the finest emerald and the petals are of amethyst.
 However, the two types of crystal seem to be bonded together naturally.  It
-looks very delicate, but you doubt it will ever break.  
+looks very delicate, but you doubt it will ever break.
 ~
 A
 3 1
@@ -244,7 +244,7 @@ A beautiful crown with elegant jewels rests on the ground.~
 E
 jewel crown~
    You have never seen a crown this beautiful before.  Sparkling rubies and
-diamonds adorn it's surface.  
+diamonds adorn it's surface.
 ~
 A
 17 -7
@@ -261,7 +261,7 @@ An evil looking wand with a grinning skull stares up at you.~
 E
 skull wand~
    It is a black rod with a small skull attached to the head.  Evil permeates
-from it in a faint red aura.  
+from it in a faint red aura.
 ~
 #24720
 dagger vorpal~
@@ -274,7 +274,7 @@ A curvy vorpal dagger is stuck into the wall.~
 E
 vorpal dagger~
    Its curvy edge is extremely sharp.  You dread to think of how many hearts it
-has been plunged into.  
+has been plunged into.
 ~
 A
 18 -2
@@ -298,7 +298,7 @@ The black robe of the undead is spread out on the floor before you.~
 10 240 24 0 0
 E
 black robe~
-   It is jet black in colour and seems to radiate evil.  
+   It is jet black in colour and seems to radiate evil.
 ~
 A
 12 50
@@ -323,7 +323,7 @@ A mask made from a rather large skull grins back at you.~
 E
 death mask~
    A mask in the shape of a grinning skull.  It must have been fashioned from
-the head of giant.  
+the head of giant.
 ~
 #24726
 gold coins~
@@ -360,7 +360,7 @@ A beautiful long stemmed rose has been placed here.~
 E
 rose~
    The petals are bright red, the stem is a vivbrant green and the thorns appear
-razor sharp.  
+razor sharp.
 ~
 #24744
 key crystal~

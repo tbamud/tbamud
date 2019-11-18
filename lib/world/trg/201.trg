@@ -59,7 +59,7 @@ waves + wind~
 eval line %random.2%
 switch %line%
   case 1
-    %echo% @WHarsh, cold wind tears at you in all directions.@n       
+    %echo% @WHarsh, cold wind tears at you in all directions.@n
   break
   default
     %echo% @BThe waves rush in as the ocean body shifts...@n
@@ -73,7 +73,7 @@ wind+pounding~
 eval line %random.2%
 switch %line%
   case 1
-    %echo% @WHarsh, cold wind tears at you in all directions.@n       
+    %echo% @WHarsh, cold wind tears at you in all directions.@n
     return 0
   break
   default
@@ -90,7 +90,7 @@ test~
 m 1233.
 %echo%             There is %findobj.1233(1332664)% object of ID 1332605 in r
 oom 1233.
-%echo%             There are %findobj.1233(app)% objects of name app in room 
+%echo%             There are %findobj.1233(app)% objects of name app in room
 1233.
 %echo%             There are %findobj.1233(apprehension)% objects of name app
 in room 1233.
@@ -110,7 +110,7 @@ if ( %time.hour% <=7 || %time.hour% >=19)
     default
     break
   done
-else 
+else
   eval line %random.10%
   switch %line%
     case 1
@@ -349,7 +349,7 @@ Waking up - 20146~
 eval person %self.people%
 wait 1 sec
 *While there are still people in the room.
-while (%person%) 
+while (%person%)
   %echo% Darkness surrounds you...
   set worthy_oceana 1
   remote worthy_oceana %person.id%
@@ -758,9 +758,9 @@ while (%i%)
   set next %i.next_in_list%
   if %i.vnum%==20115
     eval no_of_shards %no_of_shards%+1
-    set i %next% 
+    set i %next%
   else
-    set i %next% 
+    set i %next%
   end
 done
 say %actor.name%, you currently have %no_of_shards% number of prism shards in your inventory.
@@ -788,9 +788,9 @@ while (%i%)
   set next %i.next_in_list%
   if %i.vnum%==20115
     eval no_of_shards %no_of_shards%+1
-    set i %next% 
+    set i %next%
   else
-    set i %next% 
+    set i %next%
   end
 done
 if (%no_of_shards%<10)
@@ -805,7 +805,7 @@ else
   while (%n%>0)
     %purge% %actor.inventory(20115)%
     eval n %n%-1
-     
+
   done
   %load% obj 20116 %actor% inv
 end
@@ -820,9 +820,9 @@ while (%i%)
   set next %i.next_in_list%
   if %i.vnum%==20116
     eval no_of_shells %no_of_shells%+1
-    set i %next% 
+    set i %next%
   else
-    set i %next% 
+    set i %next%
   end
 done
 if (%arg%==anklet)
@@ -853,7 +853,7 @@ else
       say You do not have enough shells for me, %actor.name%.
     end
   else
-    if (%arg%==dress) 
+    if (%arg%==dress)
       if (%no_of_shells%>=15)
         %send% %actor% You hand the shells to the Fool, who gives you a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n in return.
         %echoaround% %actor% %actor.name% hands a few shells to the Fool, who in return gives %actor.name% a @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n.
@@ -922,7 +922,7 @@ new trigger~
 ~
 say When you sleep you have it, yet you cannot get it.
 wait 2 secs
-say You can get the other, but it is just not solid enough. 
+say You can get the other, but it is just not solid enough.
 wait 2 secs
 think
 wait 2 secs

@@ -82,13 +82,13 @@ if %amount% >= 10
   * otherwise they must have given exactly 10 coins, open the gate.
   say thank you.
   wait 1 sec
-  unlock gate 
+  unlock gate
   wait 1 sec
-  open gate 
-  wait 10 sec 
-  close gate 
+  open gate
+  wait 10 sec
+  close gate
   wait 1 sec
-  lock gate 
+  lock gate
   * else they gave too few! be nice and refund them
 else
   say only %amount% coins, I require 10.
@@ -105,19 +105,19 @@ free~
 free~
 0 e 0
 The gate is opened from~
-wait 5 sec 
-close gate 
+wait 5 sec
+close gate
 wait 1 sec
-lock gate 
+lock gate
 ~
 #1408
 free~
 0 e 0
 leaves north.~
 wait 1 sec
-close gate 
+close gate
 wait 1 sec
-lock gate 
+lock gate
 ~
 #1409
 free~
@@ -289,21 +289,21 @@ while %start% < 12
 set opening1 Upon opening the pack a strong vanilla note hits me,
 set opening2 A slight hint of vanilla hits me as I open the pack,
 set opening3 There was a slight hint of vanilla when I opened the pack,
-set opening4 Opening the pack I was treated to a lovely vanilla scented 
+set opening4 Opening the pack I was treated to a lovely vanilla scented
 tobacco,
-set opening5 This particular pouch smells rather sweet, possibly vanilla, 
+set opening5 This particular pouch smells rather sweet, possibly vanilla,
 set opening6 First let me say that this pouch was really sweet smelling,
-set opening7 This sweet smelling pouch made me wonder about the quality of the 
-tobacco, 
-set opening8 I had a bit of trouble with the tin, 
+set opening7 This sweet smelling pouch made me wonder about the quality of the
+tobacco,
+set opening8 I had a bit of trouble with the tin,
 set look1 but inside was an excellent well rubbed tobacco.
 set look2 and inside I was treated to a nice well rubbed tobacco.
 set look3 but I found a nice rubbed tobacco inside.
 set look4 but it produced a nice pinch of reddish tobacco.
 set look5 yet it was filled with beautiful flakes of tobacco.
-set look6 but the tobacco was too lightly packed. It was uneven and packed 
+set look6 but the tobacco was too lightly packed. It was uneven and packed
 funny into the pipe.
-set look7 and I couldn't help noticing how great this would be for the room 
+set look7 and I couldn't help noticing how great this would be for the room
 note.
 set look8 and yet I found an excellent nugget of tobacco waiting inside.
 set moisture1 It was a bit wet at first,
@@ -316,53 +316,53 @@ set drying1 but I let it sit on a napkin for %random.3% hours.
 set drying2 but I air-dried it and it turned out fine.
 set drying3 so I put it in a napkin for a bit to make it smokeable.
 set drying4 so I wrapped it in a napkin and forgot about it for a few hours.
-set drying5 so being me, I tried lighting it as it was. Big mistake. My next 
+set drying5 so being me, I tried lighting it as it was. Big mistake. My next
 batch I let sit out before lighting up.
 set drying6 but this was easily fixed by letting it dry out on my desk.
-set drying7 but I like my tobacco a bit on the wet side, so I only aired it 
+set drying7 but I like my tobacco a bit on the wet side, so I only aired it
 for 20 minutes.
 set drying8 and it took a while to dry, but it lit beautifully afterwards.
-set mix1 A well honed mix of Virginia and Burley, this mix stood the test of 
+set mix1 A well honed mix of Virginia and Burley, this mix stood the test of
 time.
-set mix2 This mix suited my briar quite well as I'd smoked plenty of 
+set mix2 This mix suited my briar quite well as I'd smoked plenty of
 Virginia/Burley in the past in it.
 set mix3 It was worth it, this is an excellent mix of Virginia and Burley.
-set mix4 I quite enjoyed the Virginia notes inside of the Burley base of this 
+set mix4 I quite enjoyed the Virginia notes inside of the Burley base of this
 tobacco.
 set mix5 Your standard Virginia and Burley mixed, this particular mix stands
 set mix6 A pleasant Virginia/Burley, although nothing out of the ordinary.
-set mix7 I could taste a strong note of Burley on this particular specimen, 
+set mix7 I could taste a strong note of Burley on this particular specimen,
 but not sure what else.
 set mix8 As always, this excellent blend worked well for my morning pipe.
-set burn1 The burn on this batch was rather mild flavored, but not any more 
+set burn1 The burn on this batch was rather mild flavored, but not any more
 than you'd normally suspect.
 set burn2 Rather mild, but quite aromatic. I quite liked this pouch.
-set burn3 Nice and mild, but with a slight kick to it. I was enjoying it so 
+set burn3 Nice and mild, but with a slight kick to it. I was enjoying it so
 much I went a bit too fast.
-set burn4 Rather bland flavor to be honest, but I like my tobacco strong and 
+set burn4 Rather bland flavor to be honest, but I like my tobacco strong and
 my coffee black.
-set burn5 A bit on the softer side as far as burn goes, but a rich, smooth 
+set burn5 A bit on the softer side as far as burn goes, but a rich, smooth
 flavor.
 set burn6 Great mild taste, but pretty well beginner only.
-set burn7 The tobacco itself had a mild taste, but would make an excellent 
+set burn7 The tobacco itself had a mild taste, but would make an excellent
 pipe for after dessert.
-set burn8 I didn't pack my pipe properly, so I didn't get to enjoy this as 
+set burn8 I didn't pack my pipe properly, so I didn't get to enjoy this as
 much as I'd have liked to.
 set price1 Definitely worth the price.
 set price2 Pretty cheap tobacco, but for good reason.
-set price3 I think given the flavor and quality of the tobacco the price 
+set price3 I think given the flavor and quality of the tobacco the price
 matches up.
-set price4 The price is pretty reasonable for what you're getting. It's an 
+set price4 The price is pretty reasonable for what you're getting. It's an
 excellent beginners pouch.
-set price5 A nice starter-oriented price. This tobacco won't break the bank 
+set price5 A nice starter-oriented price. This tobacco won't break the bank
 and is mild enough to start with, but any true conniseur will move on soon.
-set price6 With today's gas prices, I don't know why I spend so much on 
+set price6 With today's gas prices, I don't know why I spend so much on
 tobacco. Must be the addiction.
 set price7 Excellently priced, as usual.
-set price8 This bowl really took me back to my college days when I first tried 
+set price8 This bowl really took me back to my college days when I first tried
 this mix.
 set openingamt 8
-set lookamt 8 
+set lookamt 8
 set moistureamt 6
 set dryamt 8
 set mixamt 8
@@ -394,7 +394,7 @@ end
 if %which% == 6
 %echo% %opening% %look% %mix% %burn% %price%
 end
-%echo% 
+%echo%
 eval start %start%+1
 done
 ~
@@ -437,7 +437,7 @@ end
 * %teleport% %actor% 3001
 * %force% %actor% look
 * %echoaround% %actor% %actor.name% steps through a portal.
-* else 
+* else
 * %send% %actor% Enter what?!
 * end
 ~
@@ -836,7 +836,7 @@ if %direction% == NORTH
         say don't tell anyone I let you in.
       else
         say let me see your ID.
-        return 0     
+        return 0
       end
     end
     * Don't let nuetrals pass

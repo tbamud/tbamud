@@ -5,10 +5,10 @@ A mighty wyvern stands here defending his city.
 ~
    This huge wyvern holds himself with military precision.  His claws are
 extremely sharp as if he has taken the time to file them to fine points.  His
-scales are a dull red and flex over the massive muscles underneath his hide.  
+scales are a dull red and flex over the massive muscles underneath his hide.
 His glance scans the room and focuses on you intently.  He crooks one huge talon
 as you look at him as if to ask what you want from him, better not waist his
-time.  
+time.
 ~
 26714 0 0 0 120 0 0 0 -400 E
 18 14 0 3d3+180 3d3+3
@@ -23,7 +23,7 @@ A small tornado of dust spins here.
 ~
    This is a funnel of air about three feet tall.  It spins in circles kicking
 up sand and dust as it goes.  There looks to be a human face within the tiny
-storm.  
+storm.
 ~
 65612 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -38,7 +38,7 @@ A small crab is crawling across the sand here.
 ~
    This little crab has two large claws to defend itself and a thick shell to
 hide under.  Looks like you wouldn't want it to get a good hold of you with
-those pincers.  
+those pincers.
 ~
 2136 0 0 0 64 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -51,7 +51,7 @@ Heat Monster wyv~
 a heat monster~
 A monster made entirely of heat walks here in human form.
 ~
-   This figure looks vaguely human in shape but keeps wavering in the light.  
+   This figure looks vaguely human in shape but keeps wavering in the light.
 Waves of heated air flow from it and you wonder what kind of energy it took to
 create this thing.  The fiendish face of the monster grins demonically at you.
 
@@ -86,7 +86,7 @@ a wyvern citizen~
 A working class wyvern walks these streets without fear.
 ~
    This is an adult wyvern on his way to run some errands.  His gaze passes over
-you and dismisses you as soon as it does.  How pathetic you are.  
+you and dismisses you as soon as it does.  How pathetic you are.
 ~
 2124 0 0 0 0 0 0 0 -200 E
 3 19 8 0d0+30 1d2+0
@@ -101,7 +101,7 @@ A newly hatched wyvern is here.
 ~
    This is a tiny version of the other larger inhabitants of this city.  It is
 so young that its scales are still shiny from birth.  The baby wyvern looks back
-at you with curiosity, who is this strange being?  
+at you with curiosity, who is this strange being?
 ~
 2252 0 0 0 0 0 0 0 -100 E
 3 19 8 0d0+30 1d2+0
@@ -117,7 +117,7 @@ A wyvern guard is here on duty.
    This wyvern is powerfully built and carries himself with confidence.  He
 watches the crowds intently looking for signs of trouble within his city.  His
 dull red scales glint faintly in the light and his footsteps echo heavily over
-the voices of those of his lighter brethren.  A deadly opponent.  
+the voices of those of his lighter brethren.  A deadly opponent.
 ~
 59480 0 0 0 8256 0 0 0 -250 E
 7 18 5 1d1+70 1d2+1
@@ -134,7 +134,7 @@ A mighty wyvern stands here watching the gates.
 raised to a height of ten feet and her dull blue scales reflect the light giving
 everything around her a bluish tinge.  She looks at you as if assessing your
 possible danger to her.  A forked tung flickers in and out of her mouth tasting
-the air.  
+the air.
 ~
 22618 0 0 0 72 0 0 0 -350 E
 10 17 4 2d2+100 1d2+1
@@ -150,7 +150,7 @@ A wyvern in royal colors stands here.
    This wyvern is dressed in the house colors of the ruling family of the city.
 Deep red scales match a set of glowing red eyes which look at you distastefully.
 Though he says nothing the 15 foot long reptile conveys a feeling of great
-arrogance and disdain.  He must be very important.  
+arrogance and disdain.  He must be very important.
 ~
 26700 0 0 0 8248 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
@@ -167,7 +167,7 @@ The great Lord of the wyverns is here in all his glory.
 even some dragons you've seen.  Unlike other males his coloring is a deep
 crimson.  There is an other difference as well, he has a set of huge wings
 folded across his back.  His eyes pass serenely over you and the rest of the
-room.  You represent no threat to such a creature.  
+room.  You represent no threat to such a creature.
 ~
 256090 0 0 0 8312 0 0 0 -500 E
 22 13 -3 4d4+220 3d3+3
@@ -182,7 +182,7 @@ A wyvern wizard is here researching new items to sell.
 ~
    This wyvern holds a wand in one hand and a spell book in the other.  He looks
 at you carefully to make sure you don't try to walk off with anything from his
-shop.  
+shop.
 ~
 188638 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -197,7 +197,7 @@ A wyvern stands here filling cups and barrels with water.
 ~
    This wyvern holds a forked stick in one hand and the Handel of a pump in the
 other.  He watches you with interest.  Wonder if he's hungry or looking for
-business?  
+business?
 ~
 188638 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -211,7 +211,7 @@ a wyvern trader~
 A wyvern is here checking over his goods.
 ~
    This wyvern holds a jeweler's monocle in one hand and a tablet in the other.
-There is a shrewd look in his eye.  Looks like he drives a hard bargain.  
+There is a shrewd look in his eye.  Looks like he drives a hard bargain.
 ~
 190686 0 0 0 8440 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -225,7 +225,7 @@ a wyvern weapon master~
 A huge wyvern is here sharpening his claws.
 ~
    He looks very well capable of crushing you with one claw tied behind his
-back.  It's a good thing he's selling weapons and not using them...  On you.  
+back.  It's a good thing he's selling weapons and not using them...  On you.
 ~
 256094 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -238,8 +238,8 @@ wyvern armor expert wyv~
 a wyvern armor expert~
 A wyvern is here tanning some hides.
 ~
-   This wyvern holds a knife in one hand and a piece of hide in the other.  
-Wonder if she wants your hide too?  
+   This wyvern holds a knife in one hand and a piece of hide in the other.
+Wonder if she wants your hide too?
 ~
 256078 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -253,7 +253,7 @@ a wyvern cook~
 A big wyvern is here selling his home cooked meals.
 ~
    This wyvern looks like he's had a few too many of his own creations.  On the
-other hand maybe he's had a few too many of his customers.  
+other hand maybe he's had a few too many of his customers.
 ~
 190686 0 0 0 8440 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3

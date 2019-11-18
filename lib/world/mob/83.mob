@@ -5,7 +5,7 @@ A small fish swims by.
 ~
    These small fish tend to school together, in order to improve their chances
 of survival against larger predators.  Their bright colors disorient the foe,
-and their numbers ensure that the majority survive.    
+and their numbers ensure that the majority survive.
 ~
 200 0 0 0 128 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
@@ -21,7 +21,7 @@ A large fish swims by.
 ~
    These large fish are more solitary than the small ones.  They have less to
 fear in the sea, and thus concentrate most of their efforts on hunting smaller
-fish.    
+fish.
 ~
 200 0 0 0 128 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -37,7 +37,7 @@ A hungry moray eel swims by.
 ~
    This long, slender creature is fond of small caves and passages in the rocks
 on the ocean floor.  They scavenge for food, but will sometimes attack other
-creatures when hungry.    
+creatures when hungry.
 ~
 236 0 0 0 128 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -51,7 +51,7 @@ a Great White Shark~
 A Great White Shark swims by, watching you very closely...
 ~
    This sleek, grey creature is one of nature's most deadly predators.  They
-feed on almost every creature in the sea, including you!    
+feed on almost every creature in the sea, including you!
 ~
 104 0 0 0 128 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
@@ -66,7 +66,7 @@ A huge ship flying a black flag sails by here.
 ~
    This large vessel appears to be very heavily armed.  The sailors don't
 exactly seem to be friendly as they sneer at you from the deck.  A large, black
-flag bearing a skull and crossbones indicates that these men are pirates.  
+flag bearing a skull and crossbones indicates that these men are pirates.
    Pirates are not usually fond of prisoners, but sometimes exceptions are made;
 If they seem too tough for you, say or just type @oSURRENDER@n at the prompt.
 ~
@@ -85,7 +85,7 @@ A grizzly pirate stands here, steering the boat.
 ~
    Long exposure to the sea air has given this man's face and hair a light
 dusting of salt.  His tired eyes are focused intently on the horizon, searching
-for new lands or other ships to loot.    
+for new lands or other ships to loot.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -100,7 +100,7 @@ the cabin boy~
 The cabin boy stands here, wearily swabbing the deck.
 ~
    The cabin boy has dreamed of being a pirate since they plundered his village
-when he was a child.  Hey, if you can't beat them, join them!    
+when he was a child.  Hey, if you can't beat them, join them!
 ~
 204 0 0 0 0 0 0 0 200 E
 5 19 7 1d1+50 1d2+0
@@ -118,7 +118,7 @@ A pirate stands here, guarding the brig.
    If there is one thing you can always count on, it's pirate's greed.  This
 man is paid to make sure prisoners stay in their cell, but everyone has a
 price...  The going rate for a set of keys is 100 gold down here in the brig.
-  
+
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -134,7 +134,7 @@ a drunken pirate~
 A drunken pirate sits here, taking a swig of booze.
 ~
    This pirate is quite enjoying his time off duty.  Right now he's so
-plastered he can barely move, so he'll be stuck in that chair for a while.    
+plastered he can barely move, so he'll be stuck in that chair for a while.
 ~
 10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -149,7 +149,7 @@ a drunken pirate~
 A drunken pirate sits here, taking a swig of booze.
 ~
    This pirate is quite enjoying his time off duty.  Right now he's so
-plastered he can barely move, so he'll be stuck in that chair for a while.    
+plastered he can barely move, so he'll be stuck in that chair for a while.
 ~
 10 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -163,7 +163,7 @@ Glumgold the Pirate~
 @o@cGlumgold the Pirate@n@y, Captain of this Vessel, stands here.@n
 ~
    He looks very mean!  He's missing an eye, a hand, and a leg, each replaced
-some way or another.    
+some way or another.
 ~
 20490 0 0 0 0 0 0 0 -600 E
 30 10 -8 6d6+300 5d5+5
@@ -198,7 +198,7 @@ a small crab~
 A small crab is here, scurrying about in the sand.
 ~
    It's a small, red, crab.  He looks quite content just sitting here on the
-beach.    
+beach.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -214,7 +214,7 @@ Tai Ho, a famous fisherman, sits on the side of the boat waiting for a fish to b
 ~
    Tai Ho is a fisherman from a far away town called Kaku, in the Toran
 Republic.  He and his brother Yam Koo travel far and wide searching for good
-spots to fish and good people to gamble with.    
+spots to fish and good people to gamble with.
 ~
 72 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3
@@ -228,7 +228,7 @@ Yam Koo~
 Yam Koo, a fisherman, stands here.
 ~
    Yam Koo is the brother of Tai Ho.  The two come from the town of Kaku in the
-Toran Republic in search of good times and good fishing.    
+Toran Republic in search of good times and good fishing.
 ~
 10 0 0 0 0 0 0 0 300 E
 20 14 -2 4d4+200 3d3+3

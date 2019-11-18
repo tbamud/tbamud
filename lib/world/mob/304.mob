@@ -4,7 +4,7 @@ the Shaggy Monk~
 A shaggy monk stands here quietly.
 ~
    This man looks like an ordinary monk, except he is really quite a big fella,
-and seems to have a lot of very fine brown body hair, even on his palms..  
+and seems to have a lot of very fine brown body hair, even on his palms..
 *stare*
 ~
 14 0 0 0 20 0 0 0 600 E
@@ -18,7 +18,7 @@ the Silver Statue~
 A silver statue has posted itself in the corner.
 ~
    Well, It doesn't APPEAR to be human.  It looks like a suit of armor, but why
-the heck did it just turn to look at you?    
+the heck did it just turn to look at you?
 ~
 138 0 0 0 20 0 0 0 400 E
 15 15 1 3d3+150 2d2+2
@@ -31,7 +31,7 @@ the templar of Mateon~
 Mateon's Templar is here, looking out the window.
 ~
    This man has dedicated his life to Mateon, and the man behind the mask.  He
-turns from the window and stares at you blankly.    
+turns from the window and stares at you blankly.
 ~
 10 0 0 0 20 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
@@ -44,7 +44,7 @@ the grand knight Mateon~
 Mateon, defender of the Bull, scowers at you!
 ~
    Mateon is a HUGE man.  A huge ANGRY man.  He will NOT let you NEAR the man
-behind the mask.    
+behind the mask.
 ~
 10 0 0 0 20 0 0 0 600 E
 14 16 1 2d2+140 2d2+2
@@ -56,7 +56,7 @@ chambermaid maid~
 the Chambermaid~
 A Chambermaid is here, desperately trying to straighten up.
 ~
-   The Chambermaid looks harried, and glances at you with fear in her eyes.  
+   The Chambermaid looks harried, and glances at you with fear in her eyes.
 ~
 138 0 0 0 16 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
@@ -71,7 +71,7 @@ A man wearing a golden mask watches you.
    You look at this man, and then notice something funny.  It seems to be
 difficult for him to stand on two legs.  As you watch, he drops to all fours.
 You see a glimpse of fur under his cloak.  He peels the mask off and you stare
-into his brown eyes, and big, wet, black nose.  "Nice nose ring", you think.  
+into his brown eyes, and big, wet, black nose.  "Nice nose ring", you think.
 ~
 10 0 0 0 20 0 0 0 800 E
 13 16 2 2d2+130 2d2+2
@@ -84,7 +84,7 @@ an acolyte~
 An acolyte is here, looking for a broom.
 ~
    The acolyte wanders around, looking for a broom.  He is making a heroic
-attempt to ignore you.    
+attempt to ignore you.
 ~
 204 0 0 0 20 0 0 0 600 E
 10 17 4 2d2+100 1d2+1

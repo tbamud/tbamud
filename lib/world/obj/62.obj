@@ -8,7 +8,7 @@ A key sits here.~
 1 20 0 0
 E
 key~
-   It is a plain looking key.  
+   It is a plain looking key.
 ~
 #6201
 manacles~
@@ -20,7 +20,7 @@ A set of iron manacles lie here.~
 20 100 20 0
 E
 manacles~
-   They're big steel cuffs, meant to be locked around the hands.  
+   They're big steel cuffs, meant to be locked around the hands.
 ~
 A
 18 -5
@@ -34,7 +34,7 @@ A set of shackles sit here, discarded.~
 20 100 20 0
 E
 shackles~
-   Big iron cuffs, meant to be locked around the ankles.  
+   Big iron cuffs, meant to be locked around the ankles.
 ~
 A
 14 -50
@@ -48,8 +48,8 @@ A small stone with an inscription sits here.~
 1 1000 200 0
 E
 runestone rune stone~
-   It is a small, carved stone with a strange symbol carved upon it.  
-Strange...  
+   It is a small, carved stone with a strange symbol carved upon it.
+Strange...
 ~
 A
 12 8
@@ -63,7 +63,7 @@ A crude wooden club sits here.~
 12 10 2 0
 E
 club~
-   It is a big, wooden club.  
+   It is a big, wooden club.
 ~
 #6205
 Starkblade knife dagger blade~
@@ -76,7 +76,7 @@ A knife hums with eternal energy here.~
 E
 starkblade knife dagger blade~
    It is an odd knife, with an inset of sapphire in the pommel.  It hums
-constantly, and your hand stings a bit when you touch it.  
+constantly, and your hand stings a bit when you touch it.
 ~
 A
 12 10

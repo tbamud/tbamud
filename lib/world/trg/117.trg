@@ -195,7 +195,7 @@ shoot~
 if %actor.fighting% && !%arg%
   set arg %actor.fighting%
 end
-if !%arg% 
+if !%arg%
   %send% %actor% Shoot Who?
   halt
 else
@@ -216,7 +216,7 @@ set i %next%
 done
 if %quiver%
   %force% %actor% take arrow quiver
-end  
+end
 if %actor.inventory(11728)%
   %damage% %arg% 10
   %send% %actor% You fire your arrow at your opponent.
@@ -414,7 +414,7 @@ wait 2s
 wait 2s
 %send% %actor% %self.name% says: Or you can find the password to get into the Empresss Chamber. Every Official has one letter of the nine letter password memorized. You must track down the hidden officials and get the letter from them.
 wait 2s
-%send% %actor% %self.name% says: I know that the letters of the people still here are recorded on something that all of the councilors have in their office Try searching whatever that may be. 
+%send% %actor% %self.name% says: I know that the letters of the people still here are recorded on something that all of the councilors have in their office Try searching whatever that may be.
 wait 2s
 %send% %actor% %self.name% says: The letters will also be out of order. You must find the document that says: what the word is once you get all the letters. Im sure the missing Officials will give you a subtle hint when you find them.
 %send% %actor% %self.name% says: Then, speak the password in front of Verno, the guard, and you know how to take it from there! Good luck! By the way, my letter is A.

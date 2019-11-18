@@ -12,16 +12,16 @@ door stone~
 2 7205 7201
 E
 door stone~
-   This is a heavy black stone door it looks very solid.  
+   This is a heavy black stone door it looks very solid.
 ~
 E
 writing~
-   You read the number '666'.  
+   You read the number '666'.
 ~
 S
 #7201
 The Inner Lair~
-   You are in a octagonal room with smooth purple stone walls.  The floor is 
+   You are in a octagonal room with smooth purple stone walls.  The floor is
 made from black stone.  In the western wall you see a large black stone door.
 ~
 72 9 0 0 0 0
@@ -61,15 +61,15 @@ You see another part of the lair.
 E
 skull skulls bones decay~
    On all the skulls you notice that there is a three inch hole in the forehead.
-All the bones are broken and old.  
+All the bones are broken and old.
 ~
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 E
 torch sconce~
-   The torch is bolted to the sconce and the sconce to the wall.  
+   The torch is bolted to the sconce and the sconce to the wall.
 ~
 S
 #7203
@@ -96,15 +96,15 @@ You see another part of the lair.
 E
 skull skulls bones decay~
    On all the skulls you notice that there is a three inch hole in the forehead.
-All the bones are broken and old.  
+All the bones are broken and old.
 ~
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 E
 torch sconce~
-   The torch is bolted to the sconce and the sconce to the wall.  
+   The torch is bolted to the sconce and the sconce to the wall.
 ~
 S
 #7204
@@ -131,15 +131,15 @@ door wooden~
 E
 skull skulls bones decay~
    On all the skulls you notice that there is a three inch hole in the forehead.
-All the bones are broken and old.  
+All the bones are broken and old.
 ~
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 E
 torch sconce~
-   The torch is bolted to the sconce and the sconce to the wall.  
+   The torch is bolted to the sconce and the sconce to the wall.
 ~
 S
 #7205
@@ -161,15 +161,15 @@ You see another part of the lair.
 E
 skull skulls bones decay~
    On all the skulls you notice that there is a three inch hole in the forehead.
-All the bones are broken and old.  
+All the bones are broken and old.
 ~
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 E
 torch sconce~
-   The torch is bolted to the sconce and the sconce to the wall.  
+   The torch is bolted to the sconce and the sconce to the wall.
 ~
 S
 #7206
@@ -195,15 +195,15 @@ You see another part of the lair.
 0 -1 7203
 E
 bones decay~
-   All the bones are broken and old.  
+   All the bones are broken and old.
 ~
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 E
 torch sconce~
-   The torch is bolted to the sconce and the sconce to the wall.  
+   The torch is bolted to the sconce and the sconce to the wall.
 ~
 S
 #7207
@@ -225,15 +225,15 @@ You see another part of the lair.
 E
 skull skulls bones decay~
    On all the skulls you notice that there is a three inch hole in the forehead.
-All the bones are broken and old.  
+All the bones are broken and old.
 ~
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 E
 torch sconce~
-   The torch is bolted to the sconce and the sconce to the wall.  
+   The torch is bolted to the sconce and the sconce to the wall.
 ~
 S
 #7208
@@ -255,7 +255,7 @@ You see a crawlway.
 0 -1 7209
 E
 slime~
-   The slime is slimy and uninteresting.  
+   The slime is slimy and uninteresting.
 ~
 S
 #7209
@@ -375,7 +375,7 @@ To the south you see a sewer drain filled with water.
 0 -1 7216
 E
 water~
-   The water is dirty but it looks like you would be able to swim in it.  
+   The water is dirty but it looks like you would be able to swim in it.
 ~
 S
 #7216
@@ -420,11 +420,11 @@ You see a drain running to the west.
 0 -1 7219
 E
 water~
-   The water is dirty but it looks like you would be able to swim in it.  
+   The water is dirty but it looks like you would be able to swim in it.
 ~
 E
 hole~
-   Through the hole you can just make out a very small room.  
+   Through the hole you can just make out a very small room.
 ~
 S
 #7218
@@ -473,7 +473,7 @@ You can see another drain to the east.
 S
 #7221
 The Sewer Drain~
-   You are in a sewer drain, there is nothing special in here, except for a 
+   You are in a sewer drain, there is nothing special in here, except for a
 loud echo.
 ~
 72 9 0 0 0 3
@@ -510,7 +510,7 @@ You see a sewer drain.
 0 -1 7221
 E
 slimy water~
-   The water floats to the east from here.  
+   The water floats to the east from here.
 ~
 S
 #7223
@@ -557,7 +557,7 @@ S
 #7225
 The Sewer~
    You are in a sewer, where the slimy water runs down through a tiny hole.
-You see some odd scratches on the pipe wall, as from a gigantic rat.  There 
+You see some odd scratches on the pipe wall, as from a gigantic rat.  There
 is a sewer drain south.
 ~
 72 9 0 0 0 3
@@ -588,7 +588,7 @@ You see a slimy sewer drain.
 S
 #7230
 The Damp Sewer~
-   You are in a sewer drain with a funny damp substance on the floor, in the 
+   You are in a sewer drain with a funny damp substance on the floor, in the
 substance you see a lot of decay.  You see some odd scratches on the wall,
 as if from a gigantic rat.  Both to the east and west the pipe seems to run
 down.
@@ -623,7 +623,7 @@ You see another sewer.
 0 -1 7232
 E
 debris~
-   You see a lot of organic decay on the floor.  
+   You see a lot of organic decay on the floor.
 ~
 S
 #7232
@@ -708,12 +708,12 @@ altar secret~
 E
 altar~
    This altar is very special.  Faces appear to be smiling from it.  There is a
-triangle engraved in the top of it.  
+triangle engraved in the top of it.
 ~
 E
 triangle~
    The triangle is filled with small symbols.  They seem to be a language you
-have never seen before.  
+have never seen before.
 ~
 S
 #7281
@@ -734,15 +734,15 @@ door small round~
 1 -1 7280
 E
 small round door~
-   The door is completely round without a keyhole.  
+   The door is completely round without a keyhole.
 ~
 E
 red light~
-   The red light glows from the walls.  
+   The red light glows from the walls.
 ~
 E
 walls~
-   The walls look alive.  
+   The walls look alive.
 ~
 S
 #7282
@@ -765,7 +765,7 @@ You look into a red hole.
 0 -1 7281
 E
 shadow~
-   The shadow looks like a man in great pain.  
+   The shadow looks like a man in great pain.
 ~
 S
 #7283
@@ -794,7 +794,7 @@ place to enter!
 E
 writing~
    The writing says 'The one to the east, belongs to the beast.  To the west you
-will surely END your quest!  '.  
+will surely END your quest!  '.
 ~
 S
 #7284
@@ -806,13 +806,13 @@ see no exits at all!  Skeletons are lying all over the floor.
 E
 writing wall~
    The writing says 'A prayer to the GODS will not be heard, though the only
-exit is death...  Mother, I love you'.  
+exit is death...  Mother, I love you'.
 ~
 S
 #7285
 The Torture Room~
-   You are standing in a middle of a square room.  Along the walls skeletons 
-are hanging in rusty chains.  In the middle of the room there is a big metal 
+   You are standing in a middle of a square room.  Along the walls skeletons
+are hanging in rusty chains.  In the middle of the room there is a big metal
 box, covered with dust.  To the south you can just make out a small exit.
 ~
 72 8 0 0 0 1
@@ -825,19 +825,19 @@ E
 skeletons~
    When you look at the skeletons, you can see that they once had been in great
 pain.  They are hanging in their arms, and some of them were killed with a sharp
-instrument.  
+instrument.
 ~
 E
 big metal box~
    The metal box is covered with dust.  You notice that it was once filled with
-coal, as you see some small pieces of it.  
+coal, as you see some small pieces of it.
 ~
 S
 #7286
 The Hell Yard~
    You are standing in a lot of mud.  A disgusting smell surrounds
 the place, and makes you feel sick.  Small flames sometimes shoot
-up from the hot mud.  To the west there is a small door.  To the 
+up from the hot mud.  To the west there is a small door.  To the
 north you can see an iron door.
 ~
 72 12 0 0 0 5

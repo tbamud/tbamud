@@ -8,7 +8,7 @@ An orange lies on the ground here.~
 1 8 8 0 0
 E
 orange~
-   You wonder how it got here, seeing how oranges are non-migratory.  
+   You wonder how it got here, seeing how oranges are non-migratory.
 ~
 #3301
 bale wheat~
@@ -20,7 +20,7 @@ There is a bale of wheat here.~
 50 100 10 0 0
 E
 bale wheat~
-   It doesn't look appetizing to you, but a horse might enjoy this...  
+   It doesn't look appetizing to you, but a horse might enjoy this...
 ~
 #3302
 zither~
@@ -58,7 +58,7 @@ There is a statue of Aglandiir here, made of solid gold.~
 30 900 90 0 0
 E
 statue~
-   He's a pretty striking chap, for a dragon.  
+   He's a pretty striking chap, for a dragon.
 ~
 #3305
 halberd~
@@ -71,7 +71,7 @@ A runed halberd lies on the ground here.~
 E
 halberd~
    The runes glow with a bright light, making you think that this might be a
-pretty decent weapon.  
+pretty decent weapon.
 ~
 A
 18 5
@@ -85,7 +85,7 @@ A vial of a dun fluid is here.~
 1 1000 200 0 0
 E
 potion protection dun vial~
-   Looks thick, and brownish-grey (dun).  Ick!  
+   Looks thick, and brownish-grey (dun).  Ick!
 ~
 #3307
 crown~
@@ -98,7 +98,7 @@ Aglandiir's crown sits here, radiating a shield.~
 E
 crown~
    The shield repulses you, making you wonder how you're going to get your hands
-on this huge, valuble chunk of gold...  
+on this huge, valuble chunk of gold...
 ~
 #3308
 apple~
@@ -110,7 +110,7 @@ A scrawny red apple sits here.~
 1 5 2 0 0
 E
 apple~
-   It is not wormy...  Yet.  
+   It is not wormy...  Yet.
 ~
 #3309
 bread loaf~
@@ -122,7 +122,7 @@ A fresh loaf of bread lies here.~
 1 10 5 0 0
 E
 bread loaf~
-   Mmmm...  Rye!  
+   Mmmm...  Rye!
 ~
 #3310
 melon~
@@ -134,7 +134,7 @@ A melon sits here, discarded evidently.~
 3 8 3 0 0
 E
 melon~
-   Wow!  Look at the size of that melon!  
+   Wow!  Look at the size of that melon!
 ~
 #3311
 knife~
@@ -166,7 +166,7 @@ E
 sword long~
    This sword is light, but the heft is perfectly balanced.  Such an incredible
 weapon can only have be crafted by the legendary smith Gabadiel, and as such be
-worth a fortune!  
+worth a fortune!
 ~
 A
 18 2
@@ -183,7 +183,7 @@ A short sword lies here... a work of art!~
 E
 sword short~
    It brings tears to your eyes.  This must have been Gabadiel the smith's
-masterpiece; his final work.  Simply invaluble.  
+masterpiece; his final work.  Simply invaluble.
 ~
 A
 18 4
@@ -199,7 +199,7 @@ A dismembered and burnt cadaver lies on the ground here.~
 0 0 0 0 0
 E
 cadaver~
-   It is still smouldering a little; the culprits can't be far off!  
+   It is still smouldering a little; the culprits can't be far off!
 ~
 #3315
 scimitar~
@@ -211,7 +211,7 @@ A scimitar as long as your arm lies here.~
 10 500 50 0 0
 E
 scimitar~
-   This weapon really isn't of too high a quality.  
+   This weapon really isn't of too high a quality.
 ~
 #3316
 crate~
@@ -223,7 +223,7 @@ A crate is stacked here.~
 50 100 20 0 0
 E
 crate~
-   It's a standard wooden crate.  
+   It's a standard wooden crate.
 ~
 #3317
 bow hunting~
@@ -236,7 +236,7 @@ A hunting bow lies here, unwanted~
 E
 bow hunting~
    This is the type of weapon you would use to bag some deer or rabbits, but not
-the type you'd take into battle...  
+the type you'd take into battle...
 ~
 A
 19 1
@@ -250,7 +250,7 @@ A nice leather vest lies here.~
 6 500 50 0 0
 E
 vest leather~
-   The seams are delicately sewn with a enruned thread...  
+   The seams are delicately sewn with a enruned thread...
 ~
 #3319
 glass beer~
@@ -263,7 +263,7 @@ A glass of beer sits forgotten here.~
 E
 glass~
    This is a nice glass filled with homebrew.  There doesn't seem to be too much
-stuff floating in it.  
+stuff floating in it.
 ~
 #3320
 glass mead ale~
@@ -275,7 +275,7 @@ A big glass of mead sits here, cool and frosty.~
 2 8 3 0 0
 E
 glass mead~
-   Looks good.  Looks warm.  Doesn't matter; it still looks good.  
+   Looks good.  Looks warm.  Doesn't matter; it still looks good.
 ~
 #3321
 shot whisky~
@@ -287,6 +287,6 @@ A shot of whisky is sitting here.~
 1 10 5 0 0
 E
 shot~
-   Whew!  Looks like potent stuff!  
+   Whew!  Looks like potent stuff!
 ~
 $~

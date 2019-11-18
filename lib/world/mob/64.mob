@@ -4,7 +4,7 @@ the mountain goat~
 A mountain goat nibbles at a piece of grass here.
 ~
    This goat is acclimated to the rugged terrain of the mountains.  It looks at
-you and shies away a little.  
+you and shies away a little.
 ~
 200 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
@@ -18,7 +18,7 @@ the Demon of Decay~
 A cloaked and clawed demon of decay comes at you viciously!
 ~
    This demon has pure malevolence for anything living.  Oops!  You're living!
-I guess that means you!  
+I guess that means you!
 ~
 194618 0 0 0 16 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
@@ -31,7 +31,7 @@ book monster guardian~
 the Book Monster~
 A mound of books rise up into a human shape and tries to hit you!
 ~
-   Ironically enough, the book-monster's head is War and Peace.  Hmm.  
+   Ironically enough, the book-monster's head is War and Peace.  Hmm.
 ~
 260154 0 0 0 16 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -44,7 +44,7 @@ a Bad Feeling~
 A bad feeling chokes your throat.
 ~
    It resembles a lot of other bad feelings you've had, but a lot more
-tangible...  Magic?  
+tangible...  Magic?
 ~
 260154 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -57,7 +57,7 @@ Your Worst Nightmare~
 Your worst nightmare coalesces in front of you and attacks!
 ~
    It looks like you deepest, darkest fears personified.  Wait a minute!  It IS
-your deepest, darkest fears personified!  
+your deepest, darkest fears personified!
 ~
 260154 0 0 0 16 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3
@@ -70,7 +70,7 @@ the Guardian~
 A guardian guards the door.  It looks at you and attacks!
 ~
    The guardian guards the door.  That's about all its brain can handle:
-guarding.  
+guarding.
 ~
 194618 0 0 0 16 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -83,9 +83,9 @@ small god~
 a small God~
 A small god entrapped by the wizard looks at you with an insane expression.
 ~
-   Four hundred years of imprisonment doesn't do much for one's disposition.  
+   Four hundred years of imprisonment doesn't do much for one's disposition.
 It looks ready and able to take out vengeance on anyone silly enough to enter
-the pentagram that contains its power.  
+the pentagram that contains its power.
 ~
 16394 0 0 0 80 0 0 0 0 E
 19 14 -1 3d3+190 3d3+3

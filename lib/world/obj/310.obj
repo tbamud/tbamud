@@ -8,7 +8,7 @@ A secret key lies here.~
 1 100 0 0
 E
 key secret~
-   It is a itty bitty secret key.  
+   It is a itty bitty secret key.
 ~
 #31002
 key trapdoor~
@@ -20,7 +20,7 @@ A key to a trapdoor has been left here.~
 1 100 0 0
 E
 key trap trapdoor~
-   It is a tiny key meant to open a trapdoor.  
+   It is a tiny key meant to open a trapdoor.
 ~
 #31003
 key ebony~
@@ -32,7 +32,7 @@ An intricate ebony key is here.~
 1 100 0 0
 E
 key ebony~
-   Look's like it would open an ebony door.  
+   Look's like it would open an ebony door.
 ~
 #31004
 key ivory~
@@ -44,7 +44,7 @@ An ivory key has been left here.~
 1 100 0 0
 E
 key ivory~
-   Look like it would open an ivory door.  
+   Look like it would open an ivory door.
 ~
 #31005
 book chronicles~
@@ -62,7 +62,7 @@ book chronicles~
 the Demon lord, and his disciples Irgon and Scrytin, and banished
 them to to bowels of the earth from which they came.  Years passed
 and Graye's descendants prospered.  The city of Graye has been ruled
-for many hundreds of years by wise kings, directly descended from 
+for many hundreds of years by wise kings, directly descended from
 Graye himself.
 
 The book goes on to list dozens of names of kings..
@@ -79,7 +79,7 @@ Relnar's desk is in the corner.~
 0 0 0 0
 E
 desk~
-   It is a fine oak desk with a drawer.  
+   It is a fine oak desk with a drawer.
 ~
 #31007
 sapling wand~
@@ -91,7 +91,7 @@ A green stick lies here.~
 3 123 0 0
 E
 sapling wand~
-   It is a fresh green stick.  
+   It is a fresh green stick.
 ~
 A
 2 1
@@ -105,7 +105,7 @@ A woodsman's cloak is crumpled up here.~
 2 1000 0 0
 E
 cloak woodsman~
-   It has alot of pockets.  
+   It has alot of pockets.
 ~
 A
 17 8
@@ -121,7 +121,7 @@ A woodsman's belt lies coiled here.~
 2 1000 0 0
 E
 belt woodsman~
-   What a nice leather belt!  
+   What a nice leather belt!
 ~
 A
 14 10
@@ -135,7 +135,7 @@ A pair of walking boots have been left here.~
 3 100 0 0
 E
 boots walking~
-   I bet you could go anywhere wearing these.  
+   I bet you could go anywhere wearing these.
 ~
 #31011
 helmet plumed~
@@ -147,7 +147,7 @@ A plumed helmet lies on the ground here.~
 5 1000 0 0
 E
 helmet plumed~
-   It's a nice thing to wear on your head.  
+   It's a nice thing to wear on your head.
 ~
 A
 18 2
@@ -161,7 +161,7 @@ A crimson cape lies on the ground here.~
 2 1000 0 0
 E
 cape crimson emblazoned~
-   It's a nice thing to wear around your neck.  
+   It's a nice thing to wear around your neck.
 ~
 A
 13 10
@@ -175,7 +175,7 @@ A crimson emblazoned longsword is stuck in the ground here.~
 15 1000 0 0
 E
 sword long longsword crimson emblazoned~
-   It is a finely balanced weapon..  Standard eq for Graye guards.  
+   It is a finely balanced weapon..  Standard eq for Graye guards.
 ~
 #31014
 claw bloodied~
@@ -187,7 +187,7 @@ A severed claw lies on the ground here, making a puddle.~
 5 1000 0 0
 E
 claw bloodied~
-   It seems to have been severed off a demons corpse.  
+   It seems to have been severed off a demons corpse.
 ~
 A
 18 2
@@ -201,7 +201,7 @@ Armbands of pure mist lie hoover here.~
 5 1000 0 10
 E
 mist arm armbands~
-   They are fascinating..  All mist...  Cool.  
+   They are fascinating..  All mist...  Cool.
 ~
 A
 18 2
@@ -217,7 +217,7 @@ A whip, encrusted with dried blood, is coiled up here.~
 15 1000 0 0
 E
 whip bloodied~
-   It looks well used.  
+   It looks well used.
 ~
 #31017
 candle black~
@@ -229,7 +229,7 @@ A black candle rests here, making sooty smoke.~
 3 500 0 0
 E
 candle black~
-   It just RADIATES evil.  
+   It just RADIATES evil.
 ~
 A
 18 3
@@ -245,7 +245,7 @@ The dark shield of Scrytin rests here.~
 10 500 0 0
 E
 shield scrytin~
-   It is a powerful shield.  
+   It is a powerful shield.
 ~
 A
 17 10
@@ -261,7 +261,7 @@ The legendary visor of Graye rests here.~
 8 800 0 20
 E
 visor graye~
-   It is finely crafted and old.  
+   It is finely crafted and old.
 ~
 A
 19 3
@@ -275,7 +275,7 @@ The legendary breastplate of Graye rests here.~
 10 1000 0 0
 E
 breastplate plate graye~
-   It is finely crafted and old.  
+   It is finely crafted and old.
 ~
 A
 17 10
@@ -292,15 +292,15 @@ A personal journal, written by the king is here.~
 E
 note personal journal~
    The last entry reads:
- 
+
         I fear my magic is not enough..every day the demons
-get stronger...my people are living in fear..we cannot go 
+get stronger...my people are living in fear..we cannot go
 on like this.  Noone save myself knows of the secret passage
 beneath the throne room, perhaps I should take it and confront
 the enemy?   But I cannot leave my people here alone..and the
 legasy of Graye must never fall into enemy hands.  What is that!
 The sounds of fighting?! In the Castle?!  I must...
- 
+
 The next few sentences are unintelligible..they say something
 about a spell being cast on this room to bar the demon's entry
 and something about defending his castle.
@@ -316,7 +316,7 @@ A hastily scrawled note lies here.~
 E
 note hastily scrawled~
    The note reads:
- 
+
         Thank you kind adventurer!  I heard the sound's of
 your battle with Scrytin, and while he was distracted I was
 able to cast a powerful spell.  You will find a magical key
@@ -326,7 +326,7 @@ here.  The key will unlock some secret floorboards, and what
 you find under there will be your reward.  I must stay here
 and help my countrymen from their chains.  Thank You for
 what you have done.
- 
+
                          Signed,
                                  King Relnar
 ~
@@ -340,6 +340,6 @@ An inconspicuous rock is tucked in a corner here.~
 1 1 0 0
 E
 key magic rock~
-   Huh..  Somethin kinda funny about that rock.  
+   Huh..  Somethin kinda funny about that rock.
 ~
 $~

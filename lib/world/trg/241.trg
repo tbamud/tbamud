@@ -248,7 +248,7 @@ get~
 if get /= %cmd.mudcommand% && spacesuit /= %arg% && %arg%
   %send% %actor% You carefully lift down one of the spacesuits.
   %echoaround% %actor% %actor.name% carefully lifts down one of the spacesuits.
-  %purge% %actor.inventory(24126)%  
+  %purge% %actor.inventory(24126)%
   %load% o 24126 %actor% inv
 else
   return 0
@@ -292,7 +292,7 @@ set  food[4] 9
 set  food[5] 10
 set  food[6] 14
 set  food[7] 109
-set  food[8] 110 
+set  food[8] 110
 set  food[9] 111
 set  food[10] 112
 set  food[11] 114
@@ -312,7 +312,7 @@ set  food[24] 502
 set  food[25] 521
 set  food[26] 537
 set  food[27] 383
-set  food[28] 622 
+set  food[28] 622
 set  food[29] 635
 set  food[30] 637
 set  food[31] 638
@@ -747,7 +747,7 @@ elseif %speech% == data09
 elseif %speech% == laforge11
   *  %echo% A pleasant English garden comes into focus.
   *  %teleport% all 35923
-  %echo% A female voice announces, 'That program is temporarily unavailable' 
+  %echo% A female voice announces, 'That program is temporarily unavailable'
 elseif %speech% == programs
   %echo% A female voice announces, 'The following programs exist:'
   %echo% A female voice announces, 'Worf01'

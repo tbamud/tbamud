@@ -4,7 +4,7 @@ a dwarven worker~
 A dwarven construction worker is here, tending the road.
 ~
    He's small and quite ugly.  But the way he takes care of the road, you know
-he loves his work.    
+he loves his work.
 ~
 6216 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
@@ -18,7 +18,7 @@ The foreman for the construction workers is here, getting an overview.
 ~
    A little higher than the original construction worker, this dwarf has been
 instructed by his superiors to keep an eye on his fellow workers.  He rather
-enjoys that power...    
+enjoys that power...
 ~
 6216 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
@@ -32,7 +32,7 @@ A dwarven guard is standing here, guarding.
 ~
    This guard looks to be in exceptional shape, and very tough.  For a dwarf
 he's look like he might actually pose a threat, should you encounter him in
-battle.    
+battle.
 ~
 6154 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
@@ -46,7 +46,7 @@ A dwarven guard is walking here, guarding the area.
 ~
    This guard looks to be in exceptional shape, and very tough.  For a dwarf
 he's look like he might actually pose a threat, should you encounter him in
-battle.    
+battle.
 ~
 6216 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
@@ -60,7 +60,7 @@ The dwarven lookout is here, watching over the traderoute.
 ~
    This is one dwarf you do not want to mess with.  He's so high in the ranks,
 that he alone can determine when to set off the traps, you've noticed further
-down the road.    
+down the road.
 ~
 137226 0 0 0 16 0 0 0 500 E
 10 17 4 2d2+100 1d2+1
@@ -77,7 +77,7 @@ The dwarven trader is on his way to a meeting with fellow traders.
 has been given only the amount of gold necessary to perform his duties, and has
 been assigned an escort.  He walks as if he owns the world, as traders have
 always done, and keeps his money in his hands always, lest someone steal them.
-  
+
 ~
 30750 0 0 0 80 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
@@ -94,7 +94,7 @@ A bodyguard for the dwarven trader, is here, guarding.
 ~
    When he vulunteered for this duty, he was certain to see the world.  And
 sure enough.  Following the trader whereever he goes, takes him around to parts
-of the world he only dreamed about.    
+of the world he only dreamed about.
 ~
 6154 0 0 0 0 0 0 0 400 E
 7 18 5 1d1+70 1d2+1
@@ -111,7 +111,7 @@ a cur dog~
 A cur dog is here, barking at you.
 ~
    It looks as though it's almost starved to death.  And smells if its been
-buried a week.    
+buried a week.
 ~
 232 0 0 0 524288 0 0 0 -100 E
 3 19 8 0d0+30 1d2+0
@@ -124,7 +124,7 @@ mouse~
 a small mouse~
 A small mouse scurries about here.
 ~
-   It looks soft and ready for your blade..    
+   It looks soft and ready for your blade..
 ~
 72 0 0 0 524288 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -138,7 +138,7 @@ a crow~
 A crow is flying around here, looking for carcasses.
 ~
    A black crow.  Just another black crow.  How should that be anything worth
-looking at.    
+looking at.
 ~
 76 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -151,7 +151,7 @@ hawk~
 a hawk~
 A hawk has landed not far from you. It stares at you with one eye.
 ~
-   A hawk, seemingly untamed and ready to put both beak and claws to use.    
+   A hawk, seemingly untamed and ready to put both beak and claws to use.
 ~
 232 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -165,7 +165,7 @@ a small white centipede~
 A small white centipede tries to hide under a nearby rock.
 ~
    Well, it doesn't have a hundred legs.  But it's a close race.  And it's
-really not worth looking at.    
+really not worth looking at.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0

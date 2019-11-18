@@ -3,9 +3,9 @@ lord castle~
 the Lord of the Castle~
 The Lord gives you a sloppy smile and nods your way.
 ~
-   He is obviously quite drunk most of his waking moments - and rightly so.  
+   He is obviously quite drunk most of his waking moments - and rightly so.
 Being married to the dreadful wench of a Lady must be quite demanding on one's
-nerves.    
+nerves.
 ~
 72 0 0 0 0 0 0 0 600 E
 27 11 -6 5d5+270 4d4+4
@@ -19,7 +19,7 @@ The Lady narrows here eyes at you, wondering who you are.
 ~
    She seems to come to some sort of decision about you, one that must have
 been favorable on your part, because she suddenly dons a bright smile and comes
-walking your way.    
+walking your way.
 ~
 72 0 0 0 0 0 0 0 600 E
 25 12 -5 5d5+250 4d4+4
@@ -33,7 +33,7 @@ The Lady's handmaiden fusses about the castle, making sure all is perfect.
 ~
    She is a young and beautiful thing, handpicked by the Lady for her aesthetic
 pleasantness.  Her manners in court are unmatched and yet she knows her place
-enough to never overstep her bounds.    
+enough to never overstep her bounds.
 ~
 72 0 0 0 0 0 0 0 780 E
 24 12 -4 4d4+240 4d4+4
@@ -46,7 +46,7 @@ the Lord's manservant~
 The Lord's manservant regards you solemnly.
 ~
    He regards you with calm, clear eyes that reflect almost nothing at all
-within them.  His only desire seems to be to serve his Lord.    
+within them.  His only desire seems to be to serve his Lord.
 ~
 72 0 0 0 0 0 0 0 200 E
 24 12 -4 4d4+240 4d4+4
@@ -61,7 +61,7 @@ The Lady's drunk brother leans over a windowledge, his feet almost leaving the f
    He is obviously a guest-turned-permanent-resident.  The fact that the Lady
 and her husband throw a nonstop party appeals greatly to this man.  Coupled
 with the fact that everything is free plus whatever gold he can sponge from his
-sister, he has it made.    
+sister, he has it made.
 ~
 10 0 0 0 0 0 0 0 100 E
 22 13 -3 4d4+220 3d3+3
@@ -74,7 +74,7 @@ the Lord's brother~
 A very militaristic man stands rigidly while the gala goes on around him.
 ~
    He is abviously unused to the informalities of court life and spends most of
-his time in the field, doing whatever it is that knights do best.    
+his time in the field, doing whatever it is that knights do best.
 ~
 10 0 0 0 0 0 0 0 700 E
 26 12 -5 5d5+260 4d4+4
@@ -87,7 +87,7 @@ a soldier~
 A soldier from the Lord's brother's contingent beds down in the hay.
 ~
    He seems more than content to relax for this short duration, even though it
-be out in this barn rather than indoors where it is much more festive.    
+be out in this barn rather than indoors where it is much more festive.
 ~
 4106 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
@@ -100,7 +100,7 @@ an impatient soldier~
 An impatient soldier paces back and forth, waiting for his captain.
 ~
    Some of his other men may feel comfortable standing still, but this one is
-ready to get back out into action.    
+ready to get back out into action.
 ~
 4106 0 0 0 0 0 0 0 800 E
 24 12 -4 4d4+240 4d4+4
@@ -113,7 +113,7 @@ a bored soldier~
 A bored soldier leans against a wood post in the barn, waiting for something to happen.
 ~
    He stares off into space with a vacant look, idly picking at the hay beneath
-him.    
+him.
 ~
 4106 0 0 0 0 0 0 0 300 E
 23 13 -3 4d4+230 3d3+3
@@ -126,7 +126,7 @@ a lady-in-waiting~
 A lady-in-waiting fusses and fritters about the Lady's bedroom, tidying up.
 ~
    This one is a neat freak, for sure.  She seems almost on the verge of tears
-when she finds the slightest smudge of dirt anywhere.    
+when she finds the slightest smudge of dirt anywhere.
 ~
 10 0 0 0 0 0 0 0 600 E
 22 13 -3 4d4+220 3d3+3
@@ -138,7 +138,7 @@ lady in waiting~
 a lady-in-waiting~
 A lady-in-waiting wanders about the keep, searching for her Lady.
 ~
-   After all, what good is a lady-in-waiting if she can't wait on her Lady?  
+   After all, what good is a lady-in-waiting if she can't wait on her Lady?
 
 ~
 72 0 0 0 0 0 0 0 500 E
@@ -152,7 +152,7 @@ a visiting scholar~
 A visiting scholar rests from a long day in the Grand Ballroom.
 ~
    The man is obviously not one for the party life and hasn't the stamina that
-the Lord and Lady possess for drinking and carousing.    
+the Lord and Lady possess for drinking and carousing.
 ~
 10 0 0 0 0 0 0 0 700 E
 23 13 -3 4d4+230 3d3+3
@@ -165,7 +165,7 @@ a whore~
 A scantily-clad woman pats the drunk man's back soothingly, giving you a wink.
 ~
    She is obviously hired company for the awful man who probably is leaving
-most of his dinner on the ground outside the castle at this very moment.    
+most of his dinner on the ground outside the castle at this very moment.
 ~
 10 0 0 0 0 0 0 0 300 E
 22 13 -3 4d4+220 3d3+3
@@ -178,7 +178,7 @@ an entertainer~
 A man with a bowed fiddle plays with vigor for the room.
 ~
    He is older, with crows feet in the corners of his eyes that he scrunches up
-everytime he gets going really well into an overture.    
+everytime he gets going really well into an overture.
 ~
 10 0 0 0 0 0 0 0 500 E
 21 13 -2 4d4+210 3d3+3
@@ -191,7 +191,7 @@ a cook~
 A cook works about the kitchen, keeping the food fresh and tasty.
 ~
    He and his co-workers look more than pleased to be doing to be doing what
-they are for the Lord and Lady.  They must be well paid.    
+they are for the Lord and Lady.  They must be well paid.
 ~
 10 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
@@ -204,7 +204,7 @@ the stable boy~
 The stable boy smiles up at you, looking to take your horse.
 ~
    He says nothing, only looks you dead in the eye and smiles.  Its actually
-sort of annoying.    
+sort of annoying.
 ~
 10 0 0 0 0 0 0 0 900 E
 21 13 -2 4d4+210 3d3+3
@@ -217,7 +217,7 @@ an ale salesman~
 An ale salesman lies stretched out on the bed, catching some Z's.
 ~
    He must have had himself a few too many tastes of his own product last night
-and now has to sleep it off.    
+and now has to sleep it off.
 ~
 10 0 0 0 0 0 0 0 500 E
 22 13 -3 4d4+220 3d3+3
@@ -230,7 +230,7 @@ Alanis~
 Alanis the sorceress waits patiently for the Lady to return.
 ~
    It seems the Lady has been dabbling in magic of late and has asked Alanis to
-join the staff permanently - unbeknownst to the Lord.    
+join the staff permanently - unbeknownst to the Lord.
 ~
 10 0 0 0 0 0 0 0 400 E
 24 12 -4 4d4+240 4d4+4
@@ -243,7 +243,7 @@ Felice~
 Felice, the castle healer, relaxes on the bed, reading a thick book.
 ~
    He smiles at you as you enter, inviting you to come sit near him and talk.
-  
+
 ~
 10 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4

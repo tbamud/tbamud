@@ -3,10 +3,10 @@ madman man mad~
 the Madman~
 A madman has tea with his mortally challenged friends.
 ~
-   He looks up at you with misted eyes and clenches his knife convusively.  
+   He looks up at you with misted eyes and clenches his knife convusively.
 Spluttering and shaking, he begins to rise to his feet, cradling the cold steel
 of his knife in his hands.  A tiny voice in your head says very clearly,
-'Uh-oh.  ' You feel chilled...  Distant.    
+'Uh-oh.  ' You feel chilled...  Distant.
 ~
 10 0 0 0 16 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3
@@ -18,7 +18,7 @@ rat~
 the rat~
 A rat scurries near the wall.
 ~
-   Its black, furry, and seems to have a serious problem with fleas.    
+   Its black, furry, and seems to have a serious problem with fleas.
 ~
 200 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -31,8 +31,8 @@ the Leatherworker~
 A Leatherworker is here...working with leather.
 ~
    He smiles at your attention, and then turns back to his work.  His hands are
-rough and scarred from frequent accidents with needles and leather-knives...  
-A hazard of the trade.    
+rough and scarred from frequent accidents with needles and leather-knives...
+A hazard of the trade.
 ~
 188426 0 0 0 0 0 0 0 350 E
 18 14 0 3d3+180 3d3+3
@@ -47,7 +47,7 @@ The Jeweller smiles at you briefly and motions you in.
    You can't guess what age she is; she's one of those few women that seem to
 be almost timeless in their looks.  Her eyes glint with laughter as she notices
 your scrutiny and slowly examines you.  You squirm under her penetrating gaze.
-  
+
 ~
 188426 0 0 0 0 0 0 0 500 E
 18 14 0 3d3+180 3d3+3
@@ -62,7 +62,7 @@ The butcher glances at you briefly and SLAMS down his cleaver.
    His apron is covered with bloodstains, as are his large, thick python-arms.
 He holds a cleaver loosely and easily, almost as if he were born gripping that
 thing.  His hair seems greasy and useless on his balding pate.  He sneers at
-you and motions for you to take a number.    
+you and motions for you to take a number.
 ~
 10 0 0 0 0 0 0 0 100 E
 18 14 0 3d3+180 3d3+3
@@ -104,7 +104,7 @@ Ceran the Contractor waves for you to sit down in a chair.
    Ceran plots a final line on his sketch and sighs in gratification.  He holds
 the finished architectural drawing up to you; a plan to rebuild the ruined
 temple to the north!  He examines it again, and then slaps it down onto a sheaf
-of similar papers on his desk.    
+of similar papers on his desk.
 ~
 10 0 0 0 0 0 0 0 100 E
 18 14 0 3d3+180 3d3+3
@@ -118,7 +118,7 @@ Grebe tends bar here between the drunkards.
 ~
    Grebe is an old, weatherbeaten scarred hulk of a man who looks as if he
 survived the holocaust with only a few minor bruises to show for it.  You're
-not sure if you want to mess with him or not.    
+not sure if you want to mess with him or not.
 ~
 188426 0 0 0 0 0 0 0 -300 E
 16 15 0 3d3+160 2d2+2
@@ -132,7 +132,7 @@ A Sailor-Merchant points out his wares.
 ~
    This retired weather-beaten sailor man has quite a booming trade going on
 here.  He grins snaggle-toothedly at you and tries to sell you an anchor.  You
-don't think you need it.    
+don't think you need it.
 ~
 188426 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -145,7 +145,7 @@ the Landlord~
 The Landlord asks you how long you'll be staying.
 ~
    The landlord of this boarding house sneers at you and sticks out his hand.
-Payment in advance.    
+Payment in advance.
 ~
 10 0 0 0 0 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
@@ -159,7 +159,7 @@ A cityguard is keeping the peace.
 ~
    Just another law abidding citizen that decided to do more than just work the
 mines or fields.  He has devoted his life to ensuring the protection of others.
-  
+
 ~
 72 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -171,7 +171,7 @@ Worker brewery~
 the Brewery Worker~
 A Brewery Worker rolls a barrel right on by you.
 ~
-   He waves at you and keeps going on by...    
+   He waves at you and keeps going on by...
 ~
 10 0 0 0 0 0 0 0 200 E
 4 19 7 0d0+40 1d2+0
@@ -184,7 +184,7 @@ the Boarder~
 A Boarder sighs and tromps back to his room.
 ~
    Sad, poor, and depressed.  Obviously not one of the citizenry elite of
-XXXX.    
+XXXX.
 ~
 10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -198,7 +198,7 @@ A Citizen of XXXX passes you without a glance.
 ~
    You make eye contact with the average looking man for a moment, and he
 quickly looks away.  You notice his pace has sped up slightly; in a hurry to
-get away from you?  Why would he...  Oh.  You've still got your weapon out.  
+get away from you?  Why would he...  Oh.  You've still got your weapon out.
 
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -213,7 +213,7 @@ A Citizen of XXXX passes you without a glance.
 ~
    You make eye contact with the average looking woman for a moment, and she
 quickly looks away.  You notice her pace has sped up slightly; in a hurry to
-get away from you?  Why would she...  Oh.  You've still got your weapon out.  
+get away from you?  Why would she...  Oh.  You've still got your weapon out.
 
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -228,7 +228,7 @@ A Merchant Trader is doing inventory in his head.
 ~
    His clothes are silken, and eyes hands soft, but his movement belie combat
 training.  You don't think he would have gotten so successful by letting just
-anyone knock over his operation here.    
+anyone knock over his operation here.
 ~
 10 0 0 0 0 0 0 0 350 E
 18 14 0 3d3+180 3d3+3
@@ -240,7 +240,7 @@ Woman Old~
 the Old Woman~
 An Old Woman sits here, rembering better times...
 ~
-   Looking closer, you see that she isn't remembering; she's asleep!    
+   Looking closer, you see that she isn't remembering; she's asleep!
 ~
 10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -253,7 +253,7 @@ the Young Boy~
 A young boy plays quietly here.
 ~
    He looks up at you with watery eyes and asks for a drink.  He looks rather
-sickly.    
+sickly.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -266,7 +266,7 @@ the Housewife~
 An aging housewife is waiting for her husband to return.
 ~
    You see worry in her eyes; is her husband overdue?  Possibly dead?  You know
-with all those marauding bands of adventurers out there...  You never know!  
+with all those marauding bands of adventurers out there...  You never know!
 
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -280,7 +280,7 @@ the Slob~
 An utter slob of a man is curled up in his chair.
 ~
    He hasn't bathed in, what?  One, two...  You stand away quickly; the smell
-got to you.    
+got to you.
 ~
 10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -292,7 +292,7 @@ Man Old~
 the Old Man~
 An Old Man stares at the checkerboard intently.
 ~
-   He's playing checkers.  Leave him alone!    
+   He's playing checkers.  Leave him alone!
 ~
 10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -304,8 +304,8 @@ Bachelor man~
 the Bachelor~
 A man sits in his bachelor pad, just hanging out.
 ~
-   He's cool, he's slick, he's got a job, and no woman will come near him.  
-That's life...    
+   He's cool, he's slick, he's got a job, and no woman will come near him.
+That's life...
 ~
 10 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0

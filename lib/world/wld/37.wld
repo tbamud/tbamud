@@ -9,14 +9,14 @@ Triggers     : 1 (prevents mobs from filling a room they cannot get out of)
 Theme        : The zone is currently the top level of the sewer system
                It's populated by rats, bats and some blind fish.
 Began        : Quite some time ago.
-Finished     : The top level is finished. See below. 
-Notes        : The zone will eventually consist of three levels. The top level, 
+Finished     : The top level is finished. See below.
+Notes        : The zone will eventually consist of three levels. The top level,
                which is finished, a catacomb level and another level of old
                sewers - populated by undeads and swamp things.
- 
+
 Zone 37 is linked to the following zones:
 38 Capital Sewer System           at  3717 (down ) --->  3801
-  
+
 Links: 02u, 17d, 28w
 ~
 37 513 0 0 0 0
@@ -26,7 +26,7 @@ Entering the sewers~
    As you descend into this stinking, mud-filled swamp, at the very bottom of
 the city, you can't help noticing how much waste, so many people create.  And
 it's all here under your feet - and in your boots!  You see water filled with
-all kinds of bad things coming from east and west, drifting north from here.  
+all kinds of bad things coming from east and west, drifting north from here.
 ~
 37 32777 0 0 0 0
 D0
@@ -36,7 +36,7 @@ A pipe leads north. It's filled with muck.
 0 -1 3716
 D1
 A pipe is here.
- 
+
 ~
 ~
 0 -1 3703
@@ -59,7 +59,7 @@ be the sewers of what ever city is at the end of that pipe.  Few options present
 themselves to you in this mess, knee deep in sewage you have but two choices,
 either venture north and deeper in to the sewers, and meet what ever creatures
 might dwell in this filthy place, or attempt to go up through that pipe, with a
-chance of getting out of this dark and gloomy place.  
+chance of getting out of this dark and gloomy place.
 ~
 37 32777 0 0 0 0
 D0
@@ -91,7 +91,7 @@ S
 A pipe deep underground.~
    You are walking through a larger than man-sized pipe, in the capitals sewers.
 From the north you hear some scratching and the sound of small animals.  You've
-seen rat tracks earlier, and they were a bit too large for your taste.  
+seen rat tracks earlier, and they were a bit too large for your taste.
 ~
 37 32777 0 0 0 0
 D0
@@ -110,7 +110,7 @@ A pipe deep underground~
    The sounds of rats can no longer be ignored.  The big pipe has recent
 markings of claws and fangs.  It is clear, that whatever lives here is too big
 to be ordinary rats.  North of here you can barely make out a crossing, and
-south the pipe continues.  
+south the pipe continues.
 ~
 37 32777 0 0 0 0
 D0
@@ -128,10 +128,10 @@ S
 A three-way intersection~
    You are standing in what was once a north/east turn in the pipe.  To the
 west, however, there is a large hole in the pipe which makes it possible to go
-that way too.  As you examine the hole, you notice that it's not man-made.  
+that way too.  As you examine the hole, you notice that it's not man-made.
 Some quite large, toothmarks along the perimeter suggest it was done by some of
 the rodents inhabiting the sewers.  The sound of rats moving about is strong
-from both the east and the west.  
+from both the east and the west.
 ~
 37 32777 0 0 0 0
 D1
@@ -152,12 +152,12 @@ Behind it you see dirt walls.
 0 -1 3714
 E
 bite marks bitemarks~
-   The bitemarks are deep, and approximately 8" wide.  
+   The bitemarks are deep, and approximately 8" wide.
 ~
 E
 hole~
    The hole is about 3 feet high, and must've been dug out by big rats.  It's
-full of marks of teeth.  
+full of marks of teeth.
 ~
 S
 #3708
@@ -169,7 +169,7 @@ you hear the sound of animals.  Again you think of rats, but they sound so BIG!.
 ~
 37 32777 0 0 0 0
 D0
-The grate obviously has rusted in the hinges, and is covered in muck. 
+The grate obviously has rusted in the hinges, and is covered in muck.
 ~
 grate~
 2 -1 3709
@@ -185,7 +185,7 @@ North of a grate~
 evidence of absence of people you'll ever need - knee-high muck, green slime
 dropping from the walls, a profound smell of rats, fungus growing on the
 ceiling.  You feel very dirty just being here.  Also you can't help hearing lots
-of noises from the north-west.  Sounds like something's having a feast.  
+of noises from the north-west.  Sounds like something's having a feast.
 ~
 37 32777 0 0 0 0
 D0
@@ -205,7 +205,7 @@ Near the northern drainhole~
 around your ankles you feel the water flowing towards it.  The fungus on the
 walls are luminous, so you have every chance to study the dirty ceiling, the
 green slime, and the big rats.  From the west you hear the sounds of big
-creatures eating - or is it many small?  
+creatures eating - or is it many small?
 ~
 37 32776 0 0 0 0
 D2
@@ -215,7 +215,7 @@ The pipe continues south.
 0 -1 3709
 D3
 A drainhole is here.
- 
+
 ~
 ~
 0 -1 3711
@@ -228,7 +228,7 @@ disagree.  They have made a nest south of here, and a tunnel to the west.  The
 room is very dirty and you deduct that no civil servant would ever go all the
 way inhere, even if it was originally so intended.  The ceiling is overgrown
 with luminous fungus, making the room bright as day.  You can hear the sounds of
-creatures eating, bones being crushed.  The source seems to be south of here.  
+creatures eating, bones being crushed.  The source seems to be south of here.
 ~
 37 32776 0 0 0 0
 D1
@@ -250,7 +250,7 @@ A hole has been grinded by many teeth, leading to a dirt tunnel.
 E
 drain hole drainhole~
    A hole with a grate on it, the drainhole is there to lead the polluted water
-of the Capital straight to the river.  Downstream, of course.  
+of the Capital straight to the river.  Downstream, of course.
 ~
 S
 #3712
@@ -260,7 +260,7 @@ then at least soft to the touch, and you do not feel very safe here.  You are
 worried if the tunnel can take a full grown person, crawling as you are.  East
 of here you see a domed chamber, nothing like the dirt you're crawling in, but
 south you just see more and more of it.  You are also aware of a loud sound from
-your east - almost like chewing.  
+your east - almost like chewing.
 ~
 37 32777 0 0 0 0
 D1
@@ -280,7 +280,7 @@ In a dirt tunnel~
 dirt on your hands and knees with no obvious relief within eyesight.  Around you
 the markings of claws suggest large amounts of rats of dog-like proportions in
 your immediate vicinity.  And to top that off, you are hearing strange sounds
-from the north.  
+from the north.
 ~
 37 32777 0 0 0 0
 D0
@@ -297,15 +297,15 @@ S
 #3714
 A dirt tunnel~
    This tunnel is not very big.  You can only fit in, if you crawl on your hands
-and knees, making it hard for you to get an overview of the situation.  
+and knees, making it hard for you to get an overview of the situation.
 However, you have no doubt that the tunnel leads somewhere, as it's obviously
 being used often, judging from the marks on the walls.  You can crawl on north,
-or make your way to the intersection to the east.  
+or make your way to the intersection to the east.
 ~
 37 32777 0 0 0 0
 D0
 The dirt tunnel continues.
- 
+
 ~
 ~
 0 -1 3713
@@ -323,7 +323,7 @@ bones make out a trash pile.  Or at least that's your guess - hard to tell
 exactly, actually.  The room is the lair of a gigantic rat, bigger than the rest
 of them, which seems to have at least some intelligence.  Glittering objects,
 reflecting the dim light from the luminous fungus, litter the nest.  It seems
-the Rat King has gathered what others has dropped.  
+the Rat King has gathered what others has dropped.
 ~
 37 32776 0 0 0 0
 D0
@@ -333,14 +333,14 @@ The northern drainhole.
 0 -1 3711
 E
 gems glitter~
-   Not all that glitters is gold - or gems!  
+   Not all that glitters is gold - or gems!
 ~
 S
 #3716
 The Northern Pipe~
    Standing in a large pipe, you feel the muck around your ankles drifting
 northward.  You are able to stand tall in this room, and as far as you can tell,
-there is a large drainhole to your north.  
+there is a large drainhole to your north.
 ~
 37 32777 0 0 0 0
 D0
@@ -361,7 +361,7 @@ the floor of the room.  Muck is dripping over the edge, and the smell is
 horrible.  As you go closer to the edge and take a peek, you realise there is a
 drop of about 20', before the bottom is reached.  Not caring to try if you can
 climb down, you also notice a ladder carved into the wall of the hole.  As you
-examine the hole closer you see a grate further down.  
+examine the hole closer you see a grate further down.
 ~
 37 32777 0 0 0 0
 D2
@@ -379,7 +379,7 @@ The western junction.~
    Entering the chamber, you see tunnels leading west, north and east of here.
 This chamber in itself is but a mere junction of pipes.  Stinking water comes
 drifting from the west and north, flowing out to your east.  The smell inhere is
-torture to your nose, but luckily you are starting to get used to it.  
+torture to your nose, but luckily you are starting to get used to it.
 ~
 37 32777 0 0 0 0
 D0
@@ -400,7 +400,7 @@ North/south Pipe~
    A large tube is what this is.  Leading from a junction to the south and
 straight north, a lot of small pipes - too small to be entered - join in from
 the sides, randomly spilling sewage in your path.  The pipe leads north as far
-as your light lets you see.  
+as your light lets you see.
 ~
 37 32777 0 0 0 0
 D0
@@ -414,7 +414,7 @@ D2
 E
 sewage pipe pipes~
    From these pipes sewage spills into the tube, starting its journey through
-the larger pipes here.  
+the larger pipes here.
 ~
 S
 #3720
@@ -423,7 +423,7 @@ North/south Pipe~
 - too small to be entered - join in from the sides, randomly spilling sewage in
 your path.  It seems this pipe has been blocked by a very strong grate with
 small holes in it.  Through the small holes you see a lot of bats.  It seems the
-grating was put here for a reason.  
+grating was put here for a reason.
 ~
 37 32777 0 0 0 0
 D0
@@ -462,7 +462,7 @@ A domed cave~
 of the sewers lived and had their things stored.  This makes it easier to
 understand the fresh air you're smelling from the north.  It also helps explain
 the millions of bats you see on the ceiling, ignoring you totally.  You can
-continue north through a jagged opening, and south to the pipes.  
+continue north through a jagged opening, and south to the pipes.
 ~
 37 32777 0 0 0 0
 D0
@@ -476,7 +476,7 @@ D2
 E
 bats bat ceiling~
    What you first thought to be the face of the rock, you suddenly realise, is
-actually bats sitting side by side all across the ceiling.  
+actually bats sitting side by side all across the ceiling.
 ~
 S
 #3723
@@ -485,7 +485,7 @@ Near the outside~
 wall.  There is an old wooden ladder set under it so it can be traversed by
 foot.  Through the hole bats are swarming in and out.  As far as you can tell
 going up would take you out of the capital.  You can also go south to a large
-chamber.  
+chamber.
 ~
 37 32776 0 0 0 0
 D2
@@ -503,7 +503,7 @@ A side tunnel~
 while others merely cling to the ceiling as you pass.  You come to think of the
 stories you have heard of bats sucking the blood of their victims, and a shiver
 runs down your spine.  You can leave this side tunnel to your east, and it
-continues north.  
+continues north.
 ~
 37 32777 0 0 0 0
 D0
@@ -536,7 +536,7 @@ S
 Turn in a side tunnel~
    You see still more of the bats, crawling and climbing on each other to get a
 place on the ceiling.  Some seem a little hostile to your presence.  The tunnel
-turns here, going west and south.  
+turns here, going west and south.
 ~
 37 32777 0 0 0 0
 D2
@@ -551,8 +551,8 @@ S
 #3727
 The west tunnel~
    The tunnel seems to go on forever.  From small holes in the walls ooze is
-dripping onto the floor, and bats are everywhere, almost driving you crazy.  
-The tunnel stretches west to east.  
+dripping onto the floor, and bats are everywhere, almost driving you crazy.
+The tunnel stretches west to east.
 ~
 37 32777 0 0 0 0
 D1
@@ -567,8 +567,8 @@ S
 #3728
 The west tunnel~
    The tunnel seems to go on forever.  From small holes in the walls ooze is
-dripping onto the floor, and bats are everywhere, almost driving you crazy.  
-The tunnel stretches west to east.  
+dripping onto the floor, and bats are everywhere, almost driving you crazy.
+The tunnel stretches west to east.
 ~
 37 32777 0 0 0 0
 D1
@@ -583,7 +583,7 @@ is almost unbearable to your nostrils, and the water is so dirty, you wouldn't
 be surprised to be able to walk on it.  Unfortunately it doesn't keep you up,
 just leaks into your boots.  High on the western wall you notice a small hole,
 seemingly shut with a couple of nailed-in boards.  However it is too high for
-you to reach.  The pipe continues north and a junction is to the east.  
+you to reach.  The pipe continues north and a junction is to the east.
 ~
 37 32777 0 0 0 0
 D0
@@ -596,7 +596,7 @@ D1
 0 -1 3718
 E
 hole boards~
-   A hole, just about 3' in diameter, nailed shut with wooden planks.  
+   A hole, just about 3' in diameter, nailed shut with wooden planks.
 ~
 S
 #3730
@@ -605,7 +605,7 @@ A boring pipe~
 is almost unbearable to your nostrils, and the water is so dirty, you wouldn't
 be surprised to be able to walk on it.  Unfortunately it doesn't keep you up,
 just leaks into your boots.  Nothing much of interest here.  The pipe continues
-north and south.  
+north and south.
 ~
 37 32777 0 0 0 0
 D0
@@ -624,7 +624,7 @@ is almost unbearable to your nostrils, and the water is so dirty, you wouldn't
 be surprised to be able to walk on it.  Unfortunately it doesn't keep you up,
 just leaks into your boots.  Small pipes coming out of the walls leak ooze into
 the sewage around you.  To your west the water seem cleaner.  South the boring
-pipe continues.  
+pipe continues.
 ~
 37 32777 0 0 0 0
 D2
@@ -642,7 +642,7 @@ A boring pipe~
 is almost unbearable to your nostrils, however the water is a little less
 polluted than it is east of here.  Unfortunately it still doesn't keep you up,
 just leaks into your boots.  Small pipes coming out of the walls leak ooze into
-the sewage around you.  Both to your west and east you see turns in the pipe.  
+the sewage around you.  Both to your west and east you see turns in the pipe.
 ~
 37 32777 0 0 0 0
 D1
@@ -660,7 +660,7 @@ A turn in a boring pipe~
 is not as strong here, and the water seems a little clearer than east of here.
 It IS still polluted though.  Small pipes coming out of the walls leak ooze into
 the sewage around you.  To your south the water seems even clearer yet.  East
-the boring pipe continues.  
+the boring pipe continues.
 ~
 37 32777 0 0 0 0
 D1
@@ -678,7 +678,7 @@ A boring pipe~
 is not very strong here, and the water seems a little clearer than north of
 here.  It IS still a little polluted though.  A few small pipes coming out of
 the walls leak ooze into the water around you.  To the south the water seems
-even clearer.  North is a turn in the pipe.  
+even clearer.  North is a turn in the pipe.
 ~
 37 32777 0 0 0 0
 D0
@@ -700,7 +700,7 @@ a natural cavern of some sort, through a hole too small to fit in, and most of
 the water then continues to the east of here through a larger hole.  To your
 south however, a metal door, with a heavy padlock blocks your passage.  Through
 some bars in the door you see still water, and a moored boat.  Some of the water
-also runs through the pipe to your north, creating a natural flow.  
+also runs through the pipe to your north, creating a natural flow.
 ~
 37 32777 0 0 0 0
 D0
@@ -738,7 +738,7 @@ T 3700
 By an underground fishing pond~
    You're standing by a still underground pool.  This is almost an underground
 lake.  There are moorings for a boats here, and you see fish swimming in the
-water.  They're attracted to your light.  
+water.  They're attracted to your light.
 ~
 37 9 0 0 0 0
 D0
@@ -758,7 +758,7 @@ S
 The pool.~
    An underground lake, with fish ready for the taking.  East of here the cliff
 rise above the water, blocking your way.  South and west the pool continues and
-north you see the mooring.  
+north you see the mooring.
 ~
 37 9 0 0 0 6
 D0
@@ -778,7 +778,7 @@ S
 The pool~
    An underground lake, with fish ready for the taking.  South and east of here
 the cliff rise above the water, blocking your way.  North and west the pool
-continues and east you see the mooring.  
+continues and east you see the mooring.
 ~
 37 9 0 0 0 6
 D0
@@ -794,7 +794,7 @@ S
 The pool~
    An underground lake, with fish ready for the taking.  South and west of here
 the cliff rise above the water, blocking your way.  North and east the pool
-continues.  
+continues.
 ~
 37 9 0 0 0 6
 D0
@@ -810,7 +810,7 @@ S
 The pool~
    An underground lake, with fish ready for the taking.  West of here the cliff
 rise above the water, blocking your way.  To the north, east and south the pool
-continues.  The water looks quite deep here.  
+continues.  The water looks quite deep here.
 ~
 37 9 0 0 0 7
 D0
@@ -830,7 +830,7 @@ S
 The pool~
    An underground lake, with fish ready for the taking.  North and west of here
 the cliff rise above the water, blocking your way, south the pool continues and
-east you see the mooring.  
+east you see the mooring.
 ~
 37 9 0 0 0 6
 D1
@@ -845,8 +845,8 @@ S
 #3743
 Through the hole~
    Standing on the edge of the hole, you see things on the outside.  Looking
-down you see a jagged opening, which you might enter by an old wooden ladder.  
-Swarms of bats fly around you, almost making you panic.  
+down you see a jagged opening, which you might enter by an old wooden ladder.
+Swarms of bats fly around you, almost making you panic.
 ~
 37 32776 0 0 0 0
 D0
@@ -863,7 +863,7 @@ S
 Outside the cave~
    You are standing outside a gloomy cave, from which an occasional bat flies
 out around you.  You may enter the cave by going south, but can head back toward
-the city by going west from here.  
+the city by going west from here.
 ~
 37 32768 0 0 0 5
 D2
@@ -881,7 +881,7 @@ S
 Outside the capital~
    Who would have thought the world could be so barren just outside the capital
 itself.  You're standing in some low foothils near some rocky ground to your
-east.  South of here a gravelled path leads towards the western highway.  
+east.  South of here a gravelled path leads towards the western highway.
 ~
 37 32768 0 0 0 2
 D1
@@ -898,7 +898,7 @@ S
 #3746
 On a gravelled path~
    You are walking along a gravelled path.  North of here the gravel path
-continues, while to the south you enter the bustle of the western highway.  
+continues, while to the south you enter the bustle of the western highway.
 ~
 37 0 0 0 0 2
 D0

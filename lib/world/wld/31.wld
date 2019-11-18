@@ -111,7 +111,7 @@ You see the promenade.
 E
 wall~
    It is built from large grey rocks that have been fastened to each other with
-some kind of mortar.  It is far too high to climb.  
+some kind of mortar.  It is far too high to climb.
 ~
 S
 #3105
@@ -239,9 +239,9 @@ door~
 E
 building door sign~
    The sign on the door says:
- 
+
                  Cityguard HeadQuarters
- 
+
            WARNING: Authorized Personnel Only!
 ~
 S
@@ -427,7 +427,7 @@ Someone has added the following with red paint:
 E
 chain~
    The chain reaches the clouds high above you.  It must take some really
-powerful magic to hold such a chain in place.  
+powerful magic to hold such a chain in place.
 ~
 S
 #3121
@@ -709,18 +709,18 @@ The exit west leads to Emerald Avenue.
 0 -1 3117
 E
 chair chairs~
-   Not the very least comfortable.  
+   Not the very least comfortable.
 ~
 E
 desk~
    An extremely heavy desk.  It is so large that it doesn't even need drawers.
-Everything can be stored on its top.  
+Everything can be stored on its top.
 ~
 E
 typewriter~
    It is an ancient Quifatronic T-1000 mk I.  These machines are known for their
 incredible durability, and for their even more incredible weight.  They make a
-Cray II look like a laptop.  
+Cray II look like a laptop.
 ~
 S
 #3138
@@ -739,13 +739,13 @@ The waiting room is to the west.
 E
 desk~
    This desk is obviously very old.  Nevertheless it looks as if has never been
-used.  
+used.
 ~
 E
 chair armchair~
    This chair is really a masterpiece.  A chair where one can sit as comfortably
 as in a bed.  All auditoriums should be equipped with these things.  A shame
-that there wouldn't be room for the students too, though.  
+that there wouldn't be room for the students too, though.
 ~
 S
 #3139
@@ -808,7 +808,7 @@ S
 #3151
 A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
-graveyard.  On both sides of the road grow dark evergreen trees.  
+graveyard.  On both sides of the road grow dark evergreen trees.
 ~
 31 0 0 0 0 2
 D0
@@ -825,7 +825,7 @@ S
 #3152
 A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
-graveyard.  On both sides of the road grow dark evergreen trees.  
+graveyard.  On both sides of the road grow dark evergreen trees.
 ~
 31 0 0 0 0 2
 D0
@@ -842,7 +842,7 @@ S
 #3153
 A Gravel Road In The Graveyard~
    You are on a well-kept gravel road that leads north-south through the
-graveyard.  On both sides of the road grow dark evergreen trees.  
+graveyard.  On both sides of the road grow dark evergreen trees.
 ~
 31 0 0 0 0 1
 D0
@@ -888,7 +888,7 @@ door~
 1 -1 3154
 E
 glass windows~
-   The windows must be meant to be dark.  At least they are completely clean.  
+   The windows must be meant to be dark.  At least they are completely clean.
 ~
 E
 altar~
@@ -898,7 +898,7 @@ here regularly...  Maybe that old guy in Park Cafe, he looked like that sort...
 ~
 E
 benches rows~
-   The benches are not of the comfortable kind.  
+   The benches are not of the comfortable kind.
 ~
 S
 $~

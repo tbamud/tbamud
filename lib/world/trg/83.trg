@@ -252,7 +252,7 @@ Near Death Trap Davy Jones' Locker - 8386~
 ~
 * Near Death Trap stuns actor
 wait 1 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% The Gods pity you enough to allow you to survive.

@@ -9,13 +9,13 @@ Mobs         : 20
 Objects      : 56
 Shops        : 2
 Triggers     : 1
-Theme        : The zone is the town ship for the undead. Totally against the 
+Theme        : The zone is the town ship for the undead. Totally against the
                living.
-Notes        : It could be converted into a starting town if we want. It is not 
-               quite good enough for that right now, but close. Almost 
+Notes        : It could be converted into a starting town if we want. It is not
+               quite good enough for that right now, but close. Almost
                everything here is !LIVING.
 Links        : 08n
- 
+
 Zone: 107 was linked to the following zones:
 101 The South Road                 at 10740 (east ) --->  10131
 ~
@@ -28,7 +28,7 @@ cornering every angle as a fat retraction.  Probably the only dry area around
 the lands, this clearing seems to be the only place a tired rack of bones or a
 blood drenched undead could probably call close to home.  Dust particles float
 around the air in a weird sort of lingering cloud.  Sounds of mourning,
-creaking and shaking can be heard from as far as the eyes can see.    
+creaking and shaking can be heard from as far as the eyes can see.
 ~
 107 28 0 0 0 0
 D0
@@ -54,12 +54,12 @@ D5
 S
 #10702
 Badlands~
-   Moving onto highgrounds the swamp waters start to dry beneath your feet.  
+   Moving onto highgrounds the swamp waters start to dry beneath your feet.
 Circles of small puddles gather water into your footwear, making them gushy and
 uncomfortable.  In the Badlands the skys above paint a grey ceiling that never
 changes through weather.  The surroundings show nothing but broken wood and
 moss, eminating a foul smell that gathers into your nostrils and greens your
-thoughts into what may lay ahead of this damned place.    
+thoughts into what may lay ahead of this damned place.
 ~
 107 1 0 0 0 1
 D0
@@ -79,7 +79,7 @@ water and dead or decaying plantlife is sobering and a good example of the
 frailty of life.  The undead rule this world whether the living realize it or
 not.  An old building in as bad a condition as the rest of the swamp looms
 overhead in the branches of a large tree.  A set of stairs lead up to an dark
-empty doorway.    
+empty doorway.
 ~
 107 1 0 0 0 0
 D0
@@ -109,7 +109,7 @@ Badlands~
 ground.  Several stakes and crosses have been nailed in a circle, displaying
 the remains of the few living who tried to enter this deadly abyss.  To the
 west a large tree cradles a small building in its limbs.  The loud clank and
-shriek of metal being shaped can be heard within.    
+shriek of metal being shaped can be heard within.
 ~
 107 1 0 0 0 0
 D1
@@ -126,7 +126,7 @@ Badlands~
    The howl of wind passing through the hollow dead limbs of the trees is the
 only sound that can be heard.  Though the wind blows fervently, the clouds
 above do not change.  The land is barren and lifeless.  Pools of water and muck
-appear untouched and undisturbed.  Nothing living dares pass this way.    
+appear untouched and undisturbed.  Nothing living dares pass this way.
 ~
 107 5 0 0 0 0
 D2
@@ -143,7 +143,7 @@ Badlands~
    The murky waters of the swamp rise to just below your knees.  The smell is
 overpowering, emanating from the dead plantlife and even a few bodies that
 float past.  The sky above remains unchanged and unmoving, as if frozen in
-time.  These swamps are the home to those who have foresworn life.    
+time.  These swamps are the home to those who have foresworn life.
 ~
 107 1 0 0 0 0
 D1
@@ -161,7 +161,7 @@ Badlands~
 waters through which you trod.  A cave can be seen leading into the bowels of
 the badlands.  The trees and plantlife surrounding it and you are dead and on
 the last stages of decomposition, like everything else in this place of
-damnation.    
+damnation.
 ~
 107 5 0 0 0 0
 D1
@@ -180,7 +180,7 @@ only exit to the south.  A large board has been erected on the northern wall.
 Messages are written on scattered parchments about the room, some in blood,
 some in even less pleasing bodily fluids.  This is the meeting room of the
 undead where they may plot and scheme their corruption and consumption of the
-living world.    
+living world.
 ~
 107 1 0 0 0 0
 D2
@@ -193,7 +193,7 @@ Wetlands~
    The stone remains of a ruined city are slowly being consumed by the rot and
 decay of the swamp.  A few small stone buildings can be seen struggling to
 remain above the murky waters.  To the north an entire building looks almost
-untouched by the surrounding swamp.    
+untouched by the surrounding swamp.
 ~
 107 8 0 0 0 6
 D0
@@ -214,7 +214,7 @@ has diminished to an absolute null.  Dead bodies of those once loved, float on
 the surface waters of the wetlands getting trapped inbetween the dead and
 rotting overgrowned weedgrass.  A strange stairway of the thick fog looks solid
 enough to walk on.  It rises high above you into a low hanging cloud of white
-vapor.    
+vapor.
 ~
 107 0 0 0 0 6
 D0
@@ -244,7 +244,7 @@ Wetlands~
 everything within, except for a small gap in the stones to the north and south.
 The walls of rock are the only remains of an unkown civilization that has been
 buried and forgotten in the realm of the undead.  To the south you can see a
-faint trail that looks drier than the surrounding area.    
+faint trail that looks drier than the surrounding area.
 ~
 107 0 0 0 0 6
 D0
@@ -262,7 +262,7 @@ Wetlands~
 you take.  The sucking sound of your footsteps is broken only by a shrill
 ceaseless scream in the distance.  The clouds overhead are motionless.  They
 look superficial, the only movement is that of a thin layer of fog rising off
-the murky water.    
+the murky water.
 ~
 107 8 0 0 0 6
 D1
@@ -280,7 +280,7 @@ Wetlands~
 the warm water into the cooler air, reducing visibility and attenuating any
 sound.  The waters are an unhealthy shade of black and grey.  Making it
 impossible to judge the depth or see what lies underneath.  A few ripples in
-the water are the only sign of life in this hell hole.    
+the water are the only sign of life in this hell hole.
 ~
 107 12 0 0 0 6
 D0
@@ -297,7 +297,7 @@ Wetlands~
    Dead trees covered in a black moss rise out of the swamp like skeltal
 fingers trying to claw their way out of their swampy graves.  Large pools dark
 water reflect the strange unchanging sky above.  Small trailers of fog rise off
-the warm water and dissipate into the cool, still air.    
+the warm water and dissipate into the cool, still air.
 ~
 107 0 0 0 0 6
 D1
@@ -314,7 +314,7 @@ Wetlands~
    The lack of life and movement makes the dead swamp look more like a painting
 than reality.  Filthy water, dead trees, rotting debris floating motoinless in
 the still waters.  A large sinkhole has collapsed here.  Revealing a dark
-cavern below.    
+cavern below.
 ~
 107 0 0 0 0 6
 D1
@@ -329,9 +329,9 @@ S
 #10716
 Stone Ruins~
    The remains of a once impressive stone structure lies collapsed all about.
-Fluted columns of marble and granite stand naked with no roof to cover them.  
+Fluted columns of marble and granite stand naked with no roof to cover them.
 A once marvelous cobblestone road has been desecrated and broken by years of
-neglect.  The remnants of a few small buildings still remain.    
+neglect.  The remnants of a few small buildings still remain.
 ~
 107 1 0 0 0 7
 D1
@@ -345,11 +345,11 @@ D3
 S
 #10717
 Cave-in Tundra~
-   The remains of a stone staircase lead up into an ancient stone structure.  
+   The remains of a stone staircase lead up into an ancient stone structure.
 The walls, ceilings and floor changes from stone slabs constructed centuries
 ago to bare cavern walls of strange colors.  A thin film of ice covers
 everything as a frozen breeze from the east keeps everything frozen.  Nothing
-living is in evidence.    
+living is in evidence.
 ~
 107 0 0 0 0 0
 D3
@@ -369,7 +369,7 @@ S
 Stone Ruins~
    A massive structure with steps leading up to the summit towers over the rest
 of the ruins.  It is still in good repair and even looks slightly used.  All
-around the encroaching swampland is beginning to reclaim this fallen city.    
+around the encroaching swampland is beginning to reclaim this fallen city.
 ~
 107 0 0 0 0 0
 D0
@@ -399,7 +399,7 @@ Stone Ruins~
 of the remainder of this once beautiful city.  A few other buildings remain,
 ready to collapse at any time.  To the north and south are two such buildings.
 Neither have doors since the wood has rotted away decades ago, the only remains
-are the stony skeletal walls and roof.    
+are the stony skeletal walls and roof.
 ~
 107 0 0 0 0 0
 D0
@@ -425,7 +425,7 @@ Swampy Flats~
 dead tree stumps and seems to come from several directions.  The presence of so
 many undead have sucked the life out this land.  Nothing living moves.  From
 within these realms comes the source of the undead, and no one has yet to
-discover what or where it is.    
+discover what or where it is.
 ~
 107 0 0 0 0 0
 D0
@@ -445,7 +445,7 @@ towards a pseudo horizon that never seems to get brighter no matter the
 distance closer.  Broken root arms bend and twist around each other in a static
 dance that lasts forever.  The opaque grounds below cover stories of great wars
 and treason burried into the ground.  Leaving behind nothing but a legend and
-scattered armours collected by merchants and sold to far away realms.    
+scattered armours collected by merchants and sold to far away realms.
 ~
 107 0 0 0 0 0
 D0
@@ -463,7 +463,7 @@ Swampy Flats~
 unidentifiable objects float on or near the surface of the black liquid.  The
 footing is unsure and treacherous, dangerous to anyone afraid of drowning, but
 nothing more than a nuisance for those that call this place home.  The land of
-the undead is no place for the living.    
+the undead is no place for the living.
 ~
 107 8 0 0 0 0
 D0
@@ -497,7 +497,7 @@ Cave-in Tundra~
    The cavern walls seem painted in strains of different colors from red to
 violet.  All colors of the spectrum fill the room and give it a strange feeling
 of being in motion.  The occasional tremor causes dust and small rocks to shake
-loose from the ceiling and walls.    
+loose from the ceiling and walls.
 ~
 107 0 0 0 0 0
 D1
@@ -516,7 +516,7 @@ crashing down, a descending faced cave-in wall in which you are standing now.
 The colours of these rocks are as vibrant as they are large.  Yellow, brown and
 red and all different strains of concentration, running up and down, as if
 painted formations.  The ground below always trembling giving off an uneasy
-feeling of being swallowed deeper into this tundra.    
+feeling of being swallowed deeper into this tundra.
 ~
 107 0 0 0 0 0
 D0
@@ -544,7 +544,7 @@ S
 Cave-in Tundra~
    The rocky walls form a natural dead end in this lifeless cavern.  The floor
 consists of small rocks of every color making travel precarious at best.  The
-walls are striated with strange colors and shapes, almost as if painted.    
+walls are striated with strange colors and shapes, almost as if painted.
 ~
 107 0 0 0 0 0
 D1
@@ -554,11 +554,11 @@ D1
 S
 #10727
 Cave-in Tundra~
-   The remains of a recent collapse has opened even more of the cavern.  
+   The remains of a recent collapse has opened even more of the cavern.
 Stones of random size and color cover the floor.  Nothing can live in this
 frozen rocky grave.  No moss or lichen is visible on any of the rocks.  The
 wind howls through the empty cavern like a mother mourning for the loss of her
-children.    
+children.
 ~
 107 0 0 0 0 0
 D0
@@ -572,10 +572,10 @@ D2
 S
 #10728
 Cave-in Tundra~
-   A chill wind from the south blows bits of ice and dirt around the cavern.  
+   A chill wind from the south blows bits of ice and dirt around the cavern.
 Stalagtites hang from the ceiling, looking like large icicles.  From the cavern
 floor rises stalagmites reach up towards their twins.  A few connecting,
-forming natural pillars to support this underground cavern.    
+forming natural pillars to support this underground cavern.
 ~
 107 0 0 0 0 0
 D2
@@ -592,7 +592,7 @@ Cave-in Tundra~
    Stalagmites and stalagtites make travel and visibility difficult.  The path
 through the cavern weaves around natures pillars.  Piles of rocks are arranged
 in strange patterns, their colors looking artificial.  A strange presence seems
-to fill the cavern.    
+to fill the cavern.
 ~
 107 0 0 0 0 0
 D0
@@ -609,7 +609,7 @@ Cave-in Tundra~
    The remains of a recent collapse fills the cavern.  Small puddles of swamp
 water have begun to crystallize into ice.  Rotten roots from dead trees hang
 down at the edge of the collapse, making an easy climb out.  A chill wind from
-the north flows up and out of the cavern.    
+the north flows up and out of the cavern.
 ~
 107 4 0 0 0 0
 D0
@@ -627,7 +627,7 @@ Writing Iuel~
 boards walls and everything inside this room, tells tales of the greatness this
 crypt use to possess.  A bright fire burns on the furnance in the shorter
 corner of the room, warming the chilled bone and every fiber or muscles that
-will twitch in gratefulness.    
+will twitch in gratefulness.
 ~
 107 29 0 0 0 0
 D1
@@ -640,7 +640,7 @@ Central Armoury and Weaponary~
    Racks and racks and racks of standing, lying, hanging and weapons and armour
 still in the middle of making are scattered everywhere in this room.  A large
 odylic anvil gathers the attention of everything magnetic in steel and rust and
-draws it to the owner of this shop.    
+draws it to the owner of this shop.
 ~
 107 20 0 0 0 0
 D5
@@ -653,7 +653,7 @@ Cauldron Skyways~
    Scents of sweet, sour and bitter herbs complicate your senses.  It is a
 mixture of all that you have ever smelt before and a few new aromas that you
 are curious about . In the middle of this room sits a large copper cauldron
-with two large rings and some engravings on the side of it.    
+with two large rings and some engravings on the side of it.
 ~
 107 28 0 0 0 0
 D5
@@ -665,7 +665,7 @@ S
 Wisdom Revise~
    Upon entering the room unseen hits and blows force you to the ground,
 followed by emptines...  All that come to the spectre of Iuel to learn must
-first forget what they already know.    
+first forget what they already know.
 ~
 107 29 0 0 0 0
 D5
@@ -679,7 +679,7 @@ Drugstore~
 counter, bottles of medication and strange foul looking conjures sit on the
 shelves of these cupboards.  A strange awkward feeling as movement in this room
 is restricted to a limit.  The pale light in the room coming from a lighten
-lamp coveres the shadow of a translucent being.    
+lamp coveres the shadow of a translucent being.
 ~
 107 21 0 0 0 0
 D4
@@ -693,7 +693,7 @@ The Post Office of Iuel~
 allow communication between the various factions of the undead who which to
 conspire the overthrow of all pitiful living creatures in the realm.  A large
 shelf divided into small boxes filled with names seems to be the extent of the
-postmans ability to sort and deliver mail.    
+postmans ability to sort and deliver mail.
 ~
 107 8 0 0 0 0
 D2
@@ -707,7 +707,7 @@ The Bank of Iuel~
 fortune in coins and other treasures lies within.  But no one is stupid enough
 to try and steal from this bank.  The walls are crumbling into dust, debris
 from the ceiling lies about the floor, making an excellent skylight through
-which you can see the grey unmoving clouds above.    
+which you can see the grey unmoving clouds above.
 ~
 107 0 0 0 0 0
 D0
@@ -721,7 +721,7 @@ Pet Shop of Iuel~
    This strange room is starkly out of place and in remarkably good condition.
 Cages line all the walls filled with animals.  A small boy tends to them with
 love and devotion.  The smell is what could be expected, a mix of urine,
-fesces, and animals.    
+fesces, and animals.
 ~
 107 8 0 0 0 0
 D3
@@ -745,8 +745,8 @@ S
 #10740
 Entrance to Iuel~
    The hill slopes downwards into what appears to be an old and abandoned city
-of stone.  It is starkly out of place with plains and field surrounding it.  
-The city appears to be sinking into the swamplands it rests upon.    
+of stone.  It is starkly out of place with plains and field surrounding it.
+The city appears to be sinking into the swamplands it rests upon.
 ~
 107 0 0 0 0 0
 D0
@@ -763,7 +763,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 357 0 0 0 9
 D1
@@ -788,7 +788,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -813,7 +813,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D3
@@ -838,7 +838,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -867,7 +867,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -892,7 +892,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -913,7 +913,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -934,7 +934,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -955,7 +955,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -976,7 +976,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D3
@@ -1001,7 +1001,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -1022,7 +1022,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1047,7 +1047,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1068,7 +1068,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1093,7 +1093,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -1114,7 +1114,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -1141,7 +1141,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1162,7 +1162,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -1183,7 +1183,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -1204,7 +1204,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1225,7 +1225,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1250,7 +1250,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -1267,7 +1267,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1284,7 +1284,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1305,7 +1305,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1326,7 +1326,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -1347,7 +1347,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1368,7 +1368,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -1389,7 +1389,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -1410,7 +1410,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1435,7 +1435,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -1458,7 +1458,7 @@ wetlands.  Creeping vines flourish and seemingly thriving on the liquid compose
 that Iuel has managed to gather in it's gruesome arms.  A smooth bowl carved
 from the fluid's weight takes center stage gathering more foul smelling liquid,
 attracting the strangest insects.  Amplified sounds of dripping fluid can be
-heard from all over.    
+heard from all over.
 ~
 107 0 0 0 0 0
 D3
@@ -1470,7 +1470,7 @@ S
 Body Count~
    The soft earth gives under your feet and you are sucked down into he sink
 hole.  Dirt and rocks quickly fill in over your head.  The weight and lack of
-oxygen are slowly killing you.  
+oxygen are slowly killing you.
 ~
 107 4 0 0 0 0
 S
@@ -1484,7 +1484,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1510,7 +1510,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1531,7 +1531,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -1552,7 +1552,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -1577,7 +1577,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D3
@@ -1602,7 +1602,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1627,7 +1627,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1648,7 +1648,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -1669,7 +1669,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D1
@@ -1694,7 +1694,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1715,7 +1715,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -1736,7 +1736,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1761,7 +1761,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D4
@@ -1782,7 +1782,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D2
@@ -1803,7 +1803,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0
@@ -1824,7 +1824,7 @@ of blood and flesh, spilt and cutt off from fallen fighters leaves this place a
 terrible adventuring spot.  Soft walls of this sink hole crumbles slowly
 expanding it's diameter century over century.  Absolutely no light penetrates
 into this cavern trapping humid coldness in the air and a nerve racking
-silence.    
+silence.
 ~
 107 0 0 0 0 0
 D0

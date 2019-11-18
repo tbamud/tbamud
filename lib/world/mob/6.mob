@@ -4,7 +4,7 @@ a snail~
 A snail is here, nestled in the sand.
 ~
    The snail looks quite comfortable sitting there in the sand.  You can see
-his small little eyes looking at you, almost watching you.    
+his small little eyes looking at you, almost watching you.
 ~
 10 0 0 0 0 0 0 0 250 E
 10 17 4 2d2+100 1d2+1
@@ -18,7 +18,7 @@ a clam~
 A clam is here.
 ~
    The clam looks dead.  It's just lying there in the sand, but looks can be
-deceiving.    
+deceiving.
 ~
 10 0 0 0 0 0 0 0 -220 E
 10 17 4 2d2+100 1d2+1
@@ -32,7 +32,7 @@ a fishfly~
 An ugly fishfly is here.
 ~
    Her wings are quite long and make a soft humming noise when she moves.  He
-is quite ugly, and could easily scare her enemies away.    
+is quite ugly, and could easily scare her enemies away.
 ~
 10 0 0 0 0 0 0 0 -200 E
 11 17 3 2d2+110 1d2+1
@@ -46,7 +46,7 @@ a crab~
 A small crab is crawling around in the sand.
 ~
    The claws of this creature are huge!  He could easily tear you apart if you
-provoked him.  His eyes are small and black, almost like death.    
+provoked him.  His eyes are small and black, almost like death.
 ~
 10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -60,7 +60,7 @@ a seagull~
 A seagull is here.
 ~
    The bird is filthy.  His feather that were once white are now brown from the
-dirt.    
+dirt.
 ~
 10 0 0 0 0 0 0 0 200 E
 12 16 2 2d2+120 2d2+2
@@ -73,7 +73,7 @@ a water snake~
 A water snake is at the waters edge.
 ~
    He is small and black.  He almost looks like an eel.  He appears to be
-harmless, but looks can be deceiving.    
+harmless, but looks can be deceiving.
 ~
 10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
@@ -86,8 +86,8 @@ mosquito~
 a mosquito~
 A large mosquito is here.
 ~
-   The creature is rather large.  You can see blood sitting in its stomach.  
-How revolting!    
+   The creature is rather large.  You can see blood sitting in its stomach.
+How revolting!
 ~
 10 0 0 0 0 0 0 0 -220 E
 14 16 1 2d2+140 2d2+2
@@ -101,7 +101,7 @@ Polly~
 A beautiful parrot is here.
 ~
    The colors of the creature blend like paint on a canvas.  You wonder why
-such a beautiful bird would be on such a small island like this.    
+such a beautiful bird would be on such a small island like this.
 ~
 10 0 0 0 0 0 0 0 -250 E
 15 15 1 3d3+150 2d2+2
@@ -117,7 +117,7 @@ a crayfish~
 An ugly little crayfish is here.
 ~
    Her eyes are tiny are black, they watch you very cautiously.  She may be
-small, but can move quite fast.    
+small, but can move quite fast.
 ~
 10 0 0 0 0 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
@@ -130,7 +130,7 @@ lobster~
 a lobster~
 A mean looking lobster is here.
 ~
-   His claws are enormous!  He could easily tear you apart if provoked.    
+   His claws are enormous!  He could easily tear you apart if provoked.
 ~
 10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
@@ -144,7 +144,7 @@ a sparrow~
 A sparrow is flying around above you.
 ~
    She is a beautiful creature.  Her feathers are a light brown.  You see them
-glistening in the sunlight.    
+glistening in the sunlight.
 ~
 10 0 0 0 0 0 0 0 200 E
 13 16 2 2d2+130 2d2+2
@@ -158,7 +158,7 @@ a waitress~
 The waitress is here, ready to serve you.
 ~
    She is a pretty little thing, slender with long brown hair.  She has the
-most friendliest smile you have ever seen.    
+most friendliest smile you have ever seen.
 ~
 188426 0 0 0 0 0 0 0 500 E
 25 12 -5 5d5+250 4d4+4
@@ -173,7 +173,7 @@ Herman the shopkeeper is here.
 ~
    He looks like a friendly gentleman.  He is balding on top, but still has
 some hair on the sides.  He's a short, husky man.  One who would be good at
-protecting what he owns.    
+protecting what he owns.
 ~
 188426 0 0 0 0 0 0 0 500 E
 25 12 -5 5d5+250 4d4+4
@@ -187,7 +187,7 @@ a black widow spider~
 A black widow spider is here.
 ~
    The spider is small, but fierce looking.  She looks to be in excellent
-condition.    
+condition.
 ~
 10 0 0 0 0 0 0 0 -330 E
 15 15 1 3d3+150 2d2+2
@@ -200,8 +200,8 @@ snake rattlesnake~
 a coiled up rattlesnake is here.~
 A coiled up rattle snake is here.
 ~
-   The snake is coiled up on the ground, looking at you, ready to attack.  
-Maybe you should just leave it alone.    
+   The snake is coiled up on the ground, looking at you, ready to attack.
+Maybe you should just leave it alone.
 ~
 10 0 0 0 8 0 0 0 -400 E
 15 15 1 3d3+150 2d2+2
@@ -215,7 +215,7 @@ a wasp~
 A wasp is flying around you.
 ~
    The wasp is rather large.  You see its incredibly large stinger, waiting to
-dive into your skin!    
+dive into your skin!
 ~
 10 0 0 0 0 0 0 0 -275 E
 13 16 2 2d2+130 2d2+2
@@ -229,7 +229,7 @@ a scorpion~
 A scorpion is here.
 ~
    She is nasty little thing and would kill you without a second thought.  She
-should be the least of your worries.  
+should be the least of your worries.
 ~
 10 0 0 0 0 0 0 0 -400 E
 13 16 2 2d2+130 2d2+2
@@ -243,7 +243,7 @@ a scorpion queen~
 The scorpion queen is here.
 ~
    She looks much tougher than the average scorpion.  She has two stingers
-instead of one!  Maybe you should stay away.  
+instead of one!  Maybe you should stay away.
 ~
 10 0 0 0 0 0 0 0 -400 E
 14 16 1 2d2+140 2d2+2
@@ -257,7 +257,7 @@ a scorpion leader~
 The scorpion leader is standing here.
 ~
    He looks at you as his stinger shakes slightly.  You suddenly feel terror
-run through you.  Maybe you shouldn't have come here.    
+run through you.  Maybe you shouldn't have come here.
 ~
 10 0 0 0 0 0 0 0 -500 E
 15 15 1 3d3+150 2d2+2
@@ -271,7 +271,7 @@ an earth dragon~
 Earth dragon is here.
 ~
    The creature is quite large.  It towers over you, drooling.  You suddenly
-feel like someone's lunch.  
+feel like someone's lunch.
 ~
 10 0 0 0 0 0 0 0 -350 E
 15 15 1 3d3+150 2d2+2
@@ -284,7 +284,7 @@ purple dragon~
 a purple dragon~
 Purple dragon is here.
 ~
-   The dragon is purple with glowing yellow eyes.  You are frozen in terror.  
+   The dragon is purple with glowing yellow eyes.  You are frozen in terror.
 
 ~
 10 0 0 0 0 0 0 0 -400 E
@@ -299,7 +299,7 @@ an ice dragon~
 Ice dragon is here.
 ~
    The creature is white and gives off a cold mist of steam.  You can see the
-ice hanging off her scales.  
+ice hanging off her scales.
 ~
 10 0 0 0 8 0 0 0 -600 E
 14 16 1 2d2+140 2d2+2
@@ -313,7 +313,7 @@ a polar bear~
 A large polar bear is standing here.
 ~
    The bear looks cuddly, but as you look closer you can tell he has long fangs
-stained with blood.    
+stained with blood.
 ~
 10 0 0 0 0 0 0 0 -300 E
 13 16 2 2d2+130 2d2+2
@@ -327,7 +327,7 @@ a penguin~
 A cute penguin is here.
 ~
    It looks like an average looking penguin.  You see nothing special about it.
-  
+
 ~
 10 0 0 0 0 0 0 0 -100 E
 12 16 2 2d2+120 2d2+2
@@ -340,7 +340,7 @@ bear~
 a bear~
 A bear is standing in front of you.
 ~
-   He is mean looking.  You can hear a sofy growl coming from within him.    
+   He is mean looking.  You can hear a sofy growl coming from within him.
 ~
 10 0 0 0 0 0 0 0 -300 E
 14 16 1 2d2+140 2d2+2

@@ -1,7 +1,7 @@
 #24200
 Wall Road~
-   You are walking next to the western city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the western city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. To the north, you see the western bridge.
 ~
@@ -30,22 +30,22 @@ credits info~
      -------------------------
      The Chain
         1. In 79.wld, find room 7914.
-        2. Change the room leading down (D5) to 3135.        
+        2. Change the room leading down (D5) to 3135.
      The Southwestern Gate:
-        1. In 35.wld, find room 3505. Change the room leading north (D0) 
+        1. In 35.wld, find room 3505. Change the room leading north (D0)
            to 3112.
      The Central Bridge/The Dump
-        1. In 30.wld, find room 3025 (The Common Square). Change the room 
+        1. In 30.wld, find room 3025 (The Common Square). Change the room
            leading south (D2) to 3118.
         2. In 30.wld, find room 3030 (The Dump). Change the room leading
            north (D0) to 3044.
         3. In 30.wld, find room 3044 (Poor Alley). Add a room leading
-           south (D2) to room 3030 (The Dump).       
+           south (D2) to room 3030 (The Dump).
       (You don't HAVE to make the above changes. They are just what I
        decided to do on my MUD. Place the zone wherever YOU want!)
     x---------------------------------------------------------------------x
     |         Written  entirely from  scratch in WordPad.  Feel           |
-    |         free to edit, modify, and redistribute this zone!           |    
+    |         free to edit, modify, and redistribute this zone!           |
     x---------------------------------------------------------------------x
    Builder      : Crazyman
    Zone         : 242 New Southern Midgaard
@@ -61,31 +61,31 @@ credits info~
 E
 maps~
    SOUTHERN MIDGAARD
-      To Wall Road         To Central Square    
+      To Wall Road         To Central Square
            |                      |             Midgaard
   <=== [Bridge] =============[Central========== River =============>
-           |                  Bridge]    
+           |                  Bridge]
            |                     |       Newspaper  Docks--Docks
            |         Bank        |        Office      |      |
            |          |          |          |         |      |
-           +----------+-------Southern------+---------+------+                     
+           +----------+-------Southern------+---------+------+
            |          |        Square       |         |      |
            |       Computer      |        Empty    Clothing  |
          (Wall      Store        |                  Store  (Wall
           Road)                  |                          Road)
-           |        Garden       |        Theatre  City Hall | 
+           |        Garden       |        Theatre  City Hall |
            |          |          |          |         |      |
-           +----------+--------Razor's------+---------+------+--Prison 
+           +----------+--------Razor's------+---------+------+--Prison
            |          |        Square       |         |      |
            |        Empty        |        Empty      School  |
-         (Wall                   |                         (Wall 
-          Road)                  |       Police    Curling  Road) 
+         (Wall                   |                         (Wall
+          Road)                  |       Police    Curling  Road)
            |        Cafe         |       Station    Club     |
            |          |          |          |         |      |
            +----------+-----(Wall Road)-----+---------+------+
 MIDGAARD CURLING CLUB
-          Sheet 1----Sheet 2----Sheet 3      
-           3182       3185       3188 
+          Sheet 1----Sheet 2----Sheet 3
+           3182       3185       3188
             |           |         |
             |           |         |
           Sheet 1----Sheet 2----Sheet 3
@@ -93,11 +93,11 @@ MIDGAARD CURLING CLUB
             |           |         |
             |           |         |
           Sheet 1----Sheet 2----Sheet 3
-           3180       3183       3186 
+           3180       3183       3186
             |                     |
             |                     |
-           3177-------3178------3179 
-                        | 
+           3177-------3178------3179
+                        |
   3172----Curling-----3174-----Curling-----Coffee
    |     Club 3173            Club 3175  Shop 3176
    |
@@ -109,23 +109,23 @@ Catwalks---Catwalks---Catwalks---Catwalks
    \
     \
    Ladder
-    3166 
-      \                                                   
-       \Back----Left----Centre----Right---Back---3164---Dressing  
-        Stage   Stage   Stage     Stage   Stage    |   Room 1 3165 
+    3166
+      \
+       \Back----Left----Centre----Right---Back---3164---Dressing
+        Stage   Stage   Stage     Stage   Stage    |   Room 1 3165
         3159    3160    3161      3162    3163     |
           |                          |             |
-         3153--3154-(Seats)-3155---3156          3157---Dressing 
+         3153--3154-(Seats)-3155---3156          3157---Dressing
           |                          |             |   Room 2 3158
-          |                          |             | 
+          |                          |             |
          3147--3148-(Seats)-3149---3150          3151---Dressing
           |                          |             |   Room 3 3152
-          |                          |             |     
+          |                          |             |
          3141--3142-(Seats)-3143---3144          3145---Dressing
           |                          |             |   Room 4 3146
           |                          |             |
          3137------Snack Booth-----3139----------3140
-                      3138  
+                      3138
                        |
         Theatre        |
       Office 3136---Entrance
@@ -134,8 +134,8 @@ S
 #24201
 Emerald Avenue~
    You are on Emerald Avenue. The road looks brand new, as do the shops
-and buildings that line the road. This is obviously the newer part of 
-Midgaard. People are bustling about, while street vendors are trying hard 
+and buildings that line the road. This is obviously the newer part of
+Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
@@ -160,10 +160,10 @@ S
 #24202
 The Southern Square~
    You find yourself in the middle of the Southern Square. Tall buildings
-stand all around you, blocking out much of the sunlight. A twenty foot high 
+stand all around you, blocking out much of the sunlight. A twenty foot high
 stone statue of a man stands here, surrounded by a ring of bushes and
-flowers. From all around you, you can hear the bustle of daily city life in 
-Midgaard. The central bridge is north, leading to the old part of Midgaard. 
+flowers. From all around you, you can hear the bustle of daily city life in
+Midgaard. The central bridge is north, leading to the old part of Midgaard.
 ~
 242 0 0 0 0 1
 D0
@@ -192,7 +192,7 @@ a plaque, which looks like this:
      |                                               |
      |      Completed on Friday, March 29, 2002.     |
      |                                               |
-     |          "The old south was a mess,           | 
+     |          "The old south was a mess,           |
      |            this one is the best!"             |
      | .                                           . |
      x-----------------------------------------------x
@@ -201,8 +201,8 @@ S
 #24203
 Emerald Avenue~
    You are on Emerald Avenue. The road looks brand new, as do the shops
-and buildings that line the road. This is obviously the newer part of 
-Midgaard. People are bustling about, while street vendors are trying hard 
+and buildings that line the road. This is obviously the newer part of
+Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
@@ -223,8 +223,8 @@ S
 #24204
 Emerald Avenue~
    You are on Emerald Avenue. The road looks brand new, as do the shops
-and buildings that line the road. This is obviously the newer part of 
-Midgaard. People are bustling about, while street vendors are trying hard 
+and buildings that line the road. This is obviously the newer part of
+Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree. You can see the
 southern docks to the north.
@@ -249,8 +249,8 @@ D3
 S
 #24205
 Wall Road~
-   You are walking next to the eastern city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the eastern city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
 their destinations. To the north, you can see the southern docks.
 ~
@@ -270,10 +270,10 @@ D3
 S
 #24206
 Wall Road~
-   You are walking next to the western city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the western city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
-their destinations. 
+their destinations.
 ~
 242 0 0 0 0 1
 D0
@@ -292,8 +292,8 @@ S
 #24207
 Razor's Road~
    You are on Razor's Road. The road looks brand new, as do the shops
-and buildings that line the road. This is obviously the newer part of 
-Midgaard. People are bustling about, while street vendors are trying hard 
+and buildings that line the road. This is obviously the newer part of
+Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
@@ -343,13 +343,13 @@ S
 #24209
 Razor's Road~
    You are on Razor's Road. The road looks brand new, as do the shops
-and buildings that line the road. This is obviously the newer part of 
-Midgaard. People are bustling about, while street vendors are trying hard 
+and buildings that line the road. This is obviously the newer part of
+Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. A portion of the
 roof juts out from the northern building, just above the door. The overhang
 sticks out about ten feet from the building, and is about twenty feet wide.
 All along the bottom edge of it are lightbulbs. A double glass door leads
-north, while a few signs have been set up here on the sidewalk. You 
+north, while a few signs have been set up here on the sidewalk. You
 recognize this as the entrance to the Midgaard Theatre.
 ~
 242 0 0 0 0 1
@@ -393,7 +393,7 @@ sign signs~
         |                                             |
         | Admission: Free                             |
         |                                             |
-        | Times: Hey, for a free play, we'll put it   | 
+        | Times: Hey, for a free play, we'll put it   |
         |        on when WE want. Too bad if you      |
         |        miss it!                             |
         |                                             |
@@ -403,8 +403,8 @@ S
 #24210
 Razor's Road~
    You are on Razor's Road. The road looks brand new, as do the shops
-and buildings that line the road. This is obviously the newer part of 
-Midgaard. People are bustling about, while street vendors are trying hard 
+and buildings that line the road. This is obviously the newer part of
+Midgaard. People are bustling about, while street vendors are trying hard
 to sell hotdogs and other less legal merchandise. Streetlights can be
 seen along the road, and you also notice the odd tree.
 ~
@@ -428,10 +428,10 @@ D3
 S
 #24211
 Wall Road~
-   You are walking next to the eastern city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the eastern city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 You can see a large stone entrance leading into the wall here, leading
-east. People are walking past you, hurrying to their destinations. 
+east. People are walking past you, hurrying to their destinations.
 ~
 242 0 0 0 0 1
 D0
@@ -449,7 +449,7 @@ D3
 S
 #24212
 Southwest Gate~
-   You are walking next to the western city wall, at the southwest gate. 
+   You are walking next to the western city wall, at the southwest gate.
 The gate is currently up, allowing people to freely pass. A dusty path
 leads south to the forest of Miden'Nir (Goblinic for 'Green Blood').
 You can still see the city to the east, but if you go south, there is
@@ -467,10 +467,10 @@ D1
 S
 #24213
 Wall Road~
-   You are walking next to the southern city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the southern city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
-their destinations. 
+their destinations.
 ~
 242 0 0 0 0 1
 D0
@@ -488,10 +488,10 @@ D3
 S
 #24214
 Wall Road~
-   You are walking next to the southern city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the southern city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
-their destinations. 
+their destinations.
 ~
 242 0 0 0 0 1
 D0
@@ -509,10 +509,10 @@ D3
 S
 #24215
 Wall Road~
-   You are walking next to the southern city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the southern city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
-their destinations. 
+their destinations.
 ~
 242 0 0 0 0 1
 D0
@@ -530,10 +530,10 @@ D3
 S
 #24216
 Wall Road~
-   You are walking next to the southern city wall. It is built from large 
-grey rocks that have been fastened to each other with some kind of mortar.  
+   You are walking next to the southern city wall. It is built from large
+grey rocks that have been fastened to each other with some kind of mortar.
 It is far too high to climb. People are walking past you, hurrying to
-their destinations. 
+their destinations.
 ~
 242 0 0 0 0 1
 D0
@@ -555,7 +555,7 @@ Southeast Gate~
 gate is closed and seems to have been that way for a long time.  You are
 walking next to the western city wall, at the southeast gate.  The gate is
 closed, blocking all passage and seems to have been that way for a long time.
-  
+
 ~
 242 0 0 0 0 1
 D0
@@ -572,8 +572,8 @@ On the Central Bridge~
    The central bridge is the main connection between northern and southern
 Midgaard. The bridge is constructed from iron support beams and concrete.
 It looks very solid. From below, you can see the swiftly flowing river,
-leading east and west. The tall buildings of southern Midgaard dominate the 
-southern skyline, while you can see the huge temple of Midgaard off in the 
+leading east and west. The tall buildings of southern Midgaard dominate the
+southern skyline, while you can see the huge temple of Midgaard off in the
 north.
 ~
 242 0 0 0 0 1
@@ -651,7 +651,7 @@ S
 #24223
 The Computer Store~
    The computer store is the only one of its kind in Cooland. This store
-is very large, with very high ceilings and bright lights. Wide shelves, 
+is very large, with very high ceilings and bright lights. Wide shelves,
 twenty feet high, run the entire length of the store. Aisles run in between
 them. Computer parts of all kinds are neatly stacked on the shelves. Several
 checkouts are located beside the door.
@@ -664,7 +664,7 @@ D0
 S
 #24224
 Clothing Store~
-   You're in the Midgaard clothing store. It's a fairly small shop, with 
+   You're in the Midgaard clothing store. It's a fairly small shop, with
 rather low ceilings. Racks of clothing totally fill the store, making it
 almost impossible to move. You can faintly hear some classical music being
 played.
@@ -678,7 +678,7 @@ S
 #24225
 South Gardens~
    You leave the street and enter a beautiful garden. Tall trees of all
-kinds are growing here, and a winding gravel path leads to a set of benches 
+kinds are growing here, and a winding gravel path leads to a set of benches
 in the middle. You can see flowers growing along the path. Even though
 you're in the middle of the city, you feel as though you're in a deep
 forest. As your eyes adjust to the lower light, you notice a rope softly
@@ -698,7 +698,7 @@ S
 Midgaard Theatre~
    You find yourself inside the lobby of the Midgaard Theatre. A rich
 navy blue carpet covers the floor, while expensive looking wallpaper
-covers the walls. An elaborate chandelier hangs from the ceiling. A 
+covers the walls. An elaborate chandelier hangs from the ceiling. A
 small ticket booth is located near the front door.
 ~
 242 12 0 0 0 0
@@ -719,7 +719,7 @@ S
 City Hall~
    You're inside the Midgaard City Hall. It's a large domed room, almost
 circular in shape, with a round skylight at the top, looking to the sky.
-The walls are all solid wood. A large U shaped desk sits in the middle 
+The walls are all solid wood. A large U shaped desk sits in the middle
 of the room, where the secretary usually sits. A beautifully carved
 staircase leads up to the mayor's office.
 ~
@@ -737,7 +737,7 @@ S
 An Empty Room~
    You're inside a completely empty room.  The walls are barren and the floor
 is covered in dust.  A few small tracks, most likely from rodents or
-cockroaches, can be seen in the dust.    
+cockroaches, can be seen in the dust.
 ~
 242 8 0 0 0 0
 D0
@@ -749,7 +749,7 @@ S
 An Empty Room~
    You're inside a completely empty room.  The walls are barren and the floor
 is covered in dust.  A few small tracks, most likely from rodents or
-cockroaches, can be seen in the dust.    
+cockroaches, can be seen in the dust.
 ~
 242 8 0 0 0 0
 D0
@@ -759,7 +759,7 @@ D0
 S
 #24230
 Midgaard Public School~
-   You're inside the main lobby of Cooland's only school (no, we're not 
+   You're inside the main lobby of Cooland's only school (no, we're not
 counting that monkey school in Ape Village). Everything looks neat and
 tidy, which is surprising for a public school. You notice the odd
 student walking past you, giving you funny looks.
@@ -801,7 +801,7 @@ S
 The Bank of Midgaard - Vault~
    You find yourself inside the bank vault. Row upon row of stainless steel
 safety deposit boxes cover the walls. Three rows of extremely bright lights
-shine down on you, making everything completely visible. It would be 
+shine down on you, making everything completely visible. It would be
 impossible to hide in here.
 ~
 242 8 0 0 0 0
@@ -814,7 +814,7 @@ S
 The top of the Tree~
    You climb the rope, and find yourself on a wooden platform at the top
 of the tree. From here, you have an excellent view of Midgaard. From out
-of nowhere, a thick chain falls out of the sky, right in front of your 
+of nowhere, a thick chain falls out of the sky, right in front of your
 face. It leads up into the clouds above.
 ~
 242 0 0 0 0 1
@@ -839,8 +839,8 @@ D1
 S
 #24237
 Theatre Corridor~
-   You're in the main theatre corridor. The walls and ceiling have been 
-painted black, and the floor is also black. A dark wooden door leads south 
+   You're in the main theatre corridor. The walls and ceiling have been
+painted black, and the floor is also black. A dark wooden door leads south
 to the main part of the theatre.
 ~
 242 12 0 0 0 0
@@ -855,9 +855,9 @@ D1
 S
 #24238
 Snack Booth~
-   You're in the main theatre corridor, at the snack booth. A bar has been 
-built into the northern wall, and behind it a glass-doored fridge and a 
-selection of snacks can been seen. In between scenes, audience members come 
+   You're in the main theatre corridor, at the snack booth. A bar has been
+built into the northern wall, and behind it a glass-doored fridge and a
+selection of snacks can been seen. In between scenes, audience members come
 here to get some food or a drink.
 ~
 242 8 0 0 0 0
@@ -876,9 +876,9 @@ D3
 S
 #24239
 Theatre Corridor~
-   You're in the main theatre corridor. The walls and ceiling have been 
-painted black, and the floor is also black. A dark wooden door leads south 
-to the main part of the theatre. A set of stairs leads down the the dressing 
+   You're in the main theatre corridor. The walls and ceiling have been
+painted black, and the floor is also black. A dark wooden door leads south
+to the main part of the theatre. A set of stairs leads down the the dressing
 rooms.
 ~
 242 12 0 0 0 0
@@ -939,7 +939,7 @@ D2
 S
 #24242
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they 
+   You're in the seats of the theatre. They're a dark red colour, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -955,7 +955,7 @@ D3
 S
 #24243
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they 
+   You're in the seats of the theatre. They're a dark red colour, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1047,7 +1047,7 @@ D2
 S
 #24248
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they 
+   You're in the seats of the theatre. They're a dark red colour, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1063,7 +1063,7 @@ D3
 S
 #24249
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they 
+   You're in the seats of the theatre. They're a dark red colour, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1154,7 +1154,7 @@ D4
 S
 #24254
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they 
+   You're in the seats of the theatre. They're a dark red colour, and they
 feel very soft. You can see the stage, just in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1170,7 +1170,7 @@ D3
 S
 #24255
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they 
+   You're in the seats of the theatre. They're a dark red colour, and they
 feel very soft. You can see the stage, just in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1228,8 +1228,8 @@ S
 Dressing Room Two~
    You're in dressing room number two. It's nicer than dressing rooms three and
 four, with a makeup counter along the northern wall, and a large comfortable
-looking couch along the eastern wall. A large mirror, completely surrounded by 
-lightbulbs, sits against the wall behind the counter. A costume rack sits 
+looking couch along the eastern wall. A large mirror, completely surrounded by
+lightbulbs, sits against the wall behind the counter. A costume rack sits
 beside the door, packed with different clothing and costumes.
 ~
 242 8 0 0 0 0
@@ -1242,9 +1242,9 @@ S
 Back Stage~
    You're standing backstage. The walls have been painted black, and you
 can see all sorts of cables and ropes leading up here. A large thick
-curtain hides most of the stage to the west. A few tools are scattered about 
-here, things like mops, brooms, and a vacuum cleaner. A row of four chairs 
-sits along the northern wall. You see a black ladder leading up to the 
+curtain hides most of the stage to the west. A few tools are scattered about
+here, things like mops, brooms, and a vacuum cleaner. A row of four chairs
+sits along the northern wall. You see a black ladder leading up to the
 catwalk.
    You see a sign hanging beside the stage entrance.
 ~
@@ -1260,7 +1260,7 @@ D4
 E
 sign~
    The sign says:
-                
+
                        QUIET!
 ~
 S
@@ -1288,9 +1288,9 @@ D5
 S
 #24261
 Centre Stage~
-   Lights shine down from above, partially blinding you. No sets are 
-currently assembled, only a massive curtain hangs behind you. The floor is 
-of solid wood, and makes a slight creaking sound as you walk. You can see 
+   Lights shine down from above, partially blinding you. No sets are
+currently assembled, only a massive curtain hangs behind you. The floor is
+of solid wood, and makes a slight creaking sound as you walk. You can see
 the entire theatre from here.
 ~
 242 8 0 0 0 0
@@ -1305,10 +1305,10 @@ D3
 S
 #24262
 Right Stage~
-   You're on stage, at the right end. Lights shine down from above, 
-partially blinding you. No sets are currently assembled, only a massive 
-curtain hangs behind you. The floor is of solid wood, and makes a slight 
-creaking sound as you walk. You can see the entire theatre from here. An 
+   You're on stage, at the right end. Lights shine down from above,
+partially blinding you. No sets are currently assembled, only a massive
+curtain hangs behind you. The floor is of solid wood, and makes a slight
+creaking sound as you walk. You can see the entire theatre from here. An
 opening in the curtain leads east, backstage.
 ~
 242 8 0 0 0 0
@@ -1327,11 +1327,11 @@ D5
 S
 #24263
 Back Stage~
-   You're standing backstage. The walls have been painted black, and 
+   You're standing backstage. The walls have been painted black, and
 you can see all sorts of cables and ropes leading up here. A large thick
-curtain hides most of the stage to the west. A few tools are scattered about 
-here, things like mops, brooms, and a vacuum cleaner. A large costume rack 
-rests here, and costumes of kinds hang from its hangers. A door leads down 
+curtain hides most of the stage to the west. A few tools are scattered about
+here, things like mops, brooms, and a vacuum cleaner. A large costume rack
+rests here, and costumes of kinds hang from its hangers. A door leads down
 to the dressing rooms.
    You notice a sign hanging near the stage entrance.
 ~
@@ -1347,7 +1347,7 @@ D5
 E
 sign~
    The sign says:
-                
+
                        QUIET!
 ~
 S
@@ -1373,7 +1373,7 @@ D4
 S
 #24265
 Dressing Room One~
-   You're in dressing room number one. It's the largest and nicest of all of 
+   You're in dressing room number one. It's the largest and nicest of all of
 the dressing rooms. A beautifully carved wooden makeup counter stands against
 the eastern wall, with a gigantic mirror standing above it. A soft looking
 recliner sits by the door, with a rack of magazines sitting beside it. A
@@ -1389,8 +1389,8 @@ S
 #24266
 Black Ladder~
    You are on a black metal ladder, leading up to the catwalks.  The ladder
-rungs are slick with condensation and bits of rust break off in your hands.  
-The rungs are almost ready to collapse.    
+rungs are slick with condensation and bits of rust break off in your hands.
+The rungs are almost ready to collapse.
 ~
 242 8 0 0 0 0
 D4
@@ -1502,10 +1502,10 @@ D4
 S
 #24273
 Curling Club~
-   You're inside the Midgaard Curling Club. A bar is located along the 
+   You're inside the Midgaard Curling Club. A bar is located along the
 western wall, and several large round tables are scattered around. Each
 table has an ash tray on it, filled with ashes and cigarette butts. A railing
-runs across the northern part of the room, and ten feet below it is the 
+runs across the northern part of the room, and ten feet below it is the
 spectators area. The wall in front of the spectators area is an enormous
 window, looking out onto the curling rink. A small green safe with a beer
 sticker on it sits in front of the railing, by the stairs leading down
@@ -1525,9 +1525,9 @@ S
 Curling Club~
    You're inside the Midgaard Curling Club. Directly behind you, on a table,
 sits a 60" TV. Several large round tables are scattered around, and an ash
-trays sit on each one. A railing runs across the northern part of the room, 
-but it curves downwards here opening up to a staircase. The wall in front of 
-the spectators area is an enormous window, looking out onto the curling rink. 
+trays sit on each one. A railing runs across the northern part of the room,
+but it curves downwards here opening up to a staircase. The wall in front of
+the spectators area is an enormous window, looking out onto the curling rink.
 ~
 242 8 0 0 0 0
 D1
@@ -1545,11 +1545,11 @@ D5
 S
 #24275
 Curling Club~
-   You're inside the Midgaard Curling Club. Several large round tables are 
-scattered around. Each table has an ash tray on it, filled with ashes and 
-cigarette butts. A railing runs across the northern part of the room, and ten 
-feet below it is the spectators area. The wall in front of the spectators area 
-is an enormous window, looking out onto the curling rink. 
+   You're inside the Midgaard Curling Club. Several large round tables are
+scattered around. Each table has an ash tray on it, filled with ashes and
+cigarette butts. A railing runs across the northern part of the room, and ten
+feet below it is the spectators area. The wall in front of the spectators area
+is an enormous window, looking out onto the curling rink.
 ~
 242 8 0 0 0 0
 D1
@@ -1567,7 +1567,7 @@ Curling Club Coffee Shop~
 wooden bar sits along the eastern wall, and behind it you see several
 tables covered with glasses, and a large stove. About a dozen tables are
 here, waiting for people to sit at them. Several thickly plated windows
-look out onto the street to the south. The actual building looks very 
+look out onto the street to the south. The actual building looks very
 solid, as if it was made to withstand an earthquake.
 ~
 242 8 0 0 0 0
@@ -1601,7 +1601,7 @@ advertisements bulletin board posters~
          *              CURLING RESULTS              *
          *                                           *
          *          Friday, March 22, 2002           *
-         *                 ____                      *          
+         *                 ____                      *
          *                 ___\\____                 *
          *                /_________\                *
          *               |___________|               *
@@ -1611,7 +1611,7 @@ advertisements bulletin board posters~
          *                                           *
          *      Quote: "Nice take out P Diddy!"      *
          *                                           *
-         ********************************************* 
+         *********************************************
 ~
 S
 #24278
@@ -1665,7 +1665,7 @@ advertisements bulletin board posters~
          *                                           *
          *        Wednesday, March 27, 2002          *
          *                                           *
-         *                 ____                      *          
+         *                 ____                      *
          *                 ___\\____                 *
          *                /_________\                *
          *               |___________|               *
@@ -1676,7 +1676,7 @@ advertisements bulletin board posters~
          *                                           *
          *  No drunken antics on the ice this time!  *
          *                                           *
-         ********************************************* 
+         *********************************************
 ~
 S
 #24280

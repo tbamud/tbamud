@@ -3,7 +3,7 @@ Western Bridge~
    This bridge spans for quite some distance over the length of space between
 the land and the plateau which McGintey Cove rests upon.  To the south the
 bridge leads the way into the city, to the north is a toll booth which sits on
-the side of McGintey Road.  
+the side of McGintey Road.
 ~
 315 0 0 0 0 0
 D0
@@ -34,7 +34,7 @@ Western Bridge~
 down, you see that the bridge you stand upon must have been a huge undertaking,
 the anchors which hold the bridge to the cliff face are by themselves bigger
 than you.  You may enter into the city or head north back over the bridge into
-the wilderness.  
+the wilderness.
 ~
 315 0 0 0 0 0
 D0
@@ -49,7 +49,7 @@ S
 #31502
 Eastern Bridge~
    The bridge heads south toward the city entrance or leads the way north to
-McGintey Road.  
+McGintey Road.
 ~
 315 0 0 0 0 0
 D0
@@ -80,7 +80,7 @@ Cliffside Inn~
    This inn looks to be one of the main rest spots for travellers who stay in
 McGintey Cove over night.  The place is not all that flashy, but it always has a
 warm fire at night, plenty of ale, and the beds upstairs are always very
-comfortable.  
+comfortable.
 ~
 315 8 0 0 0 0
 D1
@@ -97,7 +97,7 @@ West Main~
    The street heads south into the main part of the city or north onto the
 bridge which allows access to the outside world.  East of you is a small, tidy
 building with a sign out front proclaiming 'INFORMATION'.  To the west is very
-nice looking inn, the Cliffside.  
+nice looking inn, the Cliffside.
 ~
 315 0 0 0 0 0
 D0
@@ -122,7 +122,7 @@ Information~
    This small one room building is split in half by a long counter running north
 to south, from wall to wall.  On your side of the counter at the north end is a
 large rack full of maps and brochures which tell in great hype and detail all
-the wonders of McGintey Cove.  The exit to West Main lies just west of you.  
+the wonders of McGintey Cove.  The exit to West Main lies just west of you.
 ~
 315 24 0 0 0 0
 D3
@@ -137,7 +137,7 @@ wayward travellers who need to shake the road dirt off their boots and take out
 any frustrations they may have felt in their travels on each other.  Samuel, the
 owner and operator, an ex-gladiator from the pits, never seems to mind any
 fights in his business.  It is even rumored that he sometimes starts them
-himself!  
+himself!
 ~
 315 24 0 0 0 0
 D1
@@ -150,7 +150,7 @@ East Main~
    The road leads south into the main section of McGintey Cove.  Shops line the
 way, both sides of the road, with the ocassional side street branching off.  To
 your west is a very loud and rustic looking tavern called Samuel Faarza's, and
-to your east is the post office.  
+to your east is the post office.
 ~
 315 0 0 0 0 0
 D0
@@ -174,7 +174,7 @@ S
 Post Office~
    This small room is all you may enter into, although you know it is a much
 larger building from what you saw outside.  You may either send mail to any
-player here or receive any mail you have been sent.  
+player here or receive any mail you have been sent.
 ~
 315 8 0 0 0 0
 D3
@@ -186,7 +186,7 @@ S
 North St.~
    The road heads west into the guild areas, or east into the main section of
 McGintey Cove.  To your north is the southern wall of the Cliffside Inn, south
-is the wall of an unknown shop who's entrance must be on some other side.  
+is the wall of an unknown shop who's entrance must be on some other side.
 ~
 315 0 0 0 0 0
 D1
@@ -203,7 +203,7 @@ West Main and North St~
    The roads intersect here, heading in all four cardinal directions.  To the
 north the street heads toward the western bridge, one of the exits out of town.
 South, the street runs toward the bazaar.  North street runs west into the guild
-area or east deeper into the main section of town.  
+area or east deeper into the main section of town.
 ~
 315 0 0 0 0 0
 D0
@@ -229,7 +229,7 @@ North St.~
 town.  Shops line the south side of the street, their entrances facing out in
 another direction, because from this side all you see is their brick wall.  To
 the north is the Town Meeting Hall, a gloriously large place - built for a large
-town.  
+town.
 ~
 315 0 0 0 0 0
 D0
@@ -249,7 +249,7 @@ S
 North St.~
    The street runs east and west from here.  To the east is the intersection of
 North and E.  Main.  West the street runs past the Town Meeting Hall, north of
-you is the entrance to the Teleport Shop.  
+you is the entrance to the Teleport Shop.
 ~
 315 0 0 0 0 0
 D0
@@ -270,7 +270,7 @@ Intersection~
    You stand at the meetings of E.  Main and North St.  The roads lead in every
 direction.  North leads to the Eastern Bridge out of town, while south leads
 deeper into town toward the bazaar.  Heading east on North St.  Takes you up
-hill into the Wharf, the high-class, prestigious section of McGintey Cove.  
+hill into the Wharf, the high-class, prestigious section of McGintey Cove.
 ~
 315 0 0 0 0 0
 D0
@@ -294,7 +294,7 @@ S
 North St.~
    The street heads east at an upward slant into the Wharf, a section of town
 known for it's high prices and high class people.  To the west the street runs
-into an intersection of two of the main roads of the city.  
+into an intersection of two of the main roads of the city.
 ~
 315 0 0 0 0 0
 D1
@@ -311,7 +311,7 @@ Libation Station~
    It looks as if maybe a mad scientist lives here, from the way all the
 counters and shelves are filled with vials and beakers, all full of different
 colored fluids, some of which bubble, some of which fizz, some which steam.  If
-you need potions, it looks like you probably came to the right place.  
+you need potions, it looks like you probably came to the right place.
 ~
 315 8 0 0 0 0
 D1
@@ -323,7 +323,7 @@ S
 West Main~
    The street heads north toward the city gates and south toward the bazaar
 which is the center of the city.  East of you is the Jewelry shop and west is
-the local potion shop, the Libation Station.  
+the local potion shop, the Libation Station.
 ~
 315 0 0 0 0 0
 D0
@@ -347,7 +347,7 @@ S
 Jewelry Store~
    There are no items on display here, it looks as if maybe the clientele of
 this town might be a bit too rough.  Possibly you should ask if you would like
-to take a look at what the shopkeeper has to offer.  
+to take a look at what the shopkeeper has to offer.
 ~
 315 8 0 0 0 0
 D3
@@ -361,7 +361,7 @@ McGintey Bank and Depository~
 there is a lot of money which passes through a bank's hands, but most of that
 money does not belong to the bank.  Wise investments and purchases do yield a
 profit over time, however all banks seem to have way more than enough money for
-themselves.  This bank is no exception.  
+themselves.  This bank is no exception.
 ~
 315 8 0 0 0 0
 D1
@@ -396,7 +396,7 @@ S
 McGintey City Armory~
    Suits, vests, helms, and leg-wear litter this room, all in various states of
 repair or disrepair.  It doesn't look as if the armor here is of the absolute
-finest quality, however it does cover most of your major organs.  
+finest quality, however it does cover most of your major organs.
 ~
 315 8 0 0 0 0
 D3
@@ -407,7 +407,7 @@ S
 #31522
 Top of the Stairs~
    A desk has been set here for the purpose of allowing your receptionist to
-find you a room which is vacant so that you may rest in comfort.  
+find you a room which is vacant so that you may rest in comfort.
 ~
 315 8 0 0 0 0
 D5
@@ -420,7 +420,7 @@ The Pet Shop~
    A burst of noise and smell greets you as you enter this room.  The sound of
 dogs braking, cats meowing and birds chirping is enough to drive you crazy and
 you just got here.  How in the world does anyone stand all the racket long
-enough to actually work here?  
+enough to actually work here?
 ~
 315 8 0 0 0 0
 D1
@@ -446,7 +446,7 @@ West Main~
    Directly south of you is the bazaar, a huge, sprawling affair which dominates
 most of the city's center.  Vendors from all over the land come to buy, sell,
 and trade exotic goods of every kind.  The street also runs north toward the
-city gates.  East of you is the weapon shop, and to the west is the pet shop.  
+city gates.  East of you is the weapon shop, and to the west is the pet shop.
 ~
 315 0 0 0 0 0
 D0
@@ -473,7 +473,7 @@ you don't care about your fighting skills or you are a mage (since they can't
 fight like real men, anyway).  The proprieter of the shop is a sniveling worm of
 a kid who's rich father bought him the shop only in an attempt to keep the kid
 occupied away from home.  Hence, the poor quality of weapon sold here, and the
-high prices, which are that way because of the low volume.  
+high prices, which are that way because of the low volume.
 ~
 315 8 0 0 0 0
 D3
@@ -485,7 +485,7 @@ S
 Traveller's Pitstop~
    This store sells all manner of goods which a traveller may need to keep him
 or her travelling in style, or at least in a semblance of style.  From lanterns
-to carrying cases, this store has it all.  
+to carrying cases, this store has it all.
 ~
 315 8 0 0 0 0
 D1
@@ -497,7 +497,7 @@ S
 East Main~
    The street heads north toward the city gates or south into the bazaar, the
 merchant's fair which runs all day and all night every day.  To the east is the
-local branch of law enforcement, and to the west is the town general store.  
+local branch of law enforcement, and to the west is the town general store.
 ~
 315 0 0 0 0 0
 D0
@@ -522,7 +522,7 @@ Marshal Station~
    There are a few desks scattered throughout the room, most of which are empty
 at this time.  There are only a few officers on duty here, looks as if most of
 the officers spend their time patrolling the city rather than wasting it here in
-the office.  
+the office.
 ~
 315 8 0 0 0 0
 D3
@@ -551,7 +551,7 @@ The Bazaar~
    This is huge!  This wide splotch of stone in the middle of the city offers a
 spot for some of the strangest and most exotic goods to be sold by vendors who
 have travelled far and wide to claim their treasures.  North is the entrance
-onto West Main, the bazaar leads off in every direction.  
+onto West Main, the bazaar leads off in every direction.
 ~
 315 0 0 0 0 0
 D0
@@ -575,7 +575,7 @@ S
 The Bazaar~
    Men and woman from every race and class brush shoulders here, some selling
 goods, some shopping for the hard-to-find goods that can only be found in places
-such as this.  
+such as this.
 ~
 315 0 0 0 0 0
 D1
@@ -594,7 +594,7 @@ S
 #31533
 The Bazaar~
    The bazaar heads off into the east, west and south.  To the north, it butts
-up against a shop's wall.  
+up against a shop's wall.
 ~
 315 0 0 0 0 0
 D1
@@ -616,7 +616,7 @@ The Bazaar~
 in McGintey Cove, a real tourist attraction.  Vendors come from all over the
 world to sell their goods here, hoping to find an open spot on the stone to set
 up shop.  You may leave the bazaar to the north onto East Main, or head off into
-the bazaar in any other direction.  
+the bazaar in any other direction.
 ~
 315 0 0 0 0 0
 D0
@@ -639,7 +639,7 @@ S
 #31535
 The Bazaar~
    You stand at the northeast corner of the bazaar.  You may head south or west
-into the bazaar or browse the goods offered at this locale.  
+into the bazaar or browse the goods offered at this locale.
 ~
 315 0 0 0 0 0
 D2
@@ -654,7 +654,7 @@ S
 #31536
 The Bazaar~
    The bazaar's noise and smells surround you, washing around you in an endless
-blur.  
+blur.
 ~
 315 0 0 0 0 0
 D0
@@ -674,7 +674,7 @@ S
 The Bazaar~
    It is easy see how one could spend a whole day in this one section of the
 city, browsing and shopping for goods which are offered by these fine men and
-woman from all corners of the land.  
+woman from all corners of the land.
 ~
 315 0 0 0 0 0
 D0
@@ -697,7 +697,7 @@ S
 #31538
 The Bazaar~
    The bazaar surrounds you in every direction, vendors call out to you from all
-sides.  
+sides.
 ~
 315 0 0 0 0 0
 D0
@@ -720,7 +720,7 @@ S
 #31539
 The Bazaar~
    You may head in any direction from here into more of the bazaar, or browse
-the good this fine merchant sells.  
+the good this fine merchant sells.
 ~
 315 0 0 0 0 0
 D0
@@ -743,7 +743,7 @@ S
 #31540
 The Bazaar~
    Bright colors, men and women calling their salespitches over the din, this
-place is enough to give the most stalwart man a headache.  
+place is enough to give the most stalwart man a headache.
 ~
 315 0 0 0 0 0
 D0
@@ -766,7 +766,7 @@ S
 #31541
 The Bazaar~
    You stand at far eastern side of the bazaar.  You may go south, north or west
-into more of the bazaar.  
+into more of the bazaar.
 ~
 315 0 0 0 0 0
 D0
@@ -785,7 +785,7 @@ S
 #31542
 The Bazaar~
    You stand at the western side of the bazaar.  You may head east, north or
-south into the bazaar from here.  
+south into the bazaar from here.
 ~
 315 0 0 0 0 0
 D0
@@ -804,7 +804,7 @@ S
 #31543
 The Bazaar~
    The bazaar surrounds you on all sides.  You may head in any direction into
-this crazy managerie of goods.  
+this crazy managerie of goods.
 ~
 315 0 0 0 0 0
 D0
@@ -828,7 +828,7 @@ S
 The Bazaar~
    Every size and shape of being is here, shopping in harmony.  Looks like maybe
 shopping is the universal language.  You may head in any direction from your
-current position.  
+current position.
 ~
 315 0 0 0 0 0
 D0
@@ -851,7 +851,7 @@ S
 #31545
 The Bazaar~
    All around are men and women trying their damndest to get you to buy their
-products.  This is quite an exciting place.  
+products.  This is quite an exciting place.
 ~
 315 0 0 0 0 0
 D0
@@ -880,7 +880,7 @@ arms!  Your arms seem to be growing, they begin to drag on the ground and your
 jaw - for the love of Pete!  You jaw has elongated to the point that it is
 resting on your chest even though your head is held high.  Now the whole bazaar
 is laughing, laughing, laughing...  Just kidding.  A bit of crowd claustrophobia
-there.  
+there.
 ~
 315 0 0 0 0 0
 D0
@@ -902,7 +902,7 @@ D3
 S
 #31547
 The Bazaar~
-   The bazaar heads south, north and east from here.  
+   The bazaar heads south, north and east from here.
 ~
 315 0 0 0 0 0
 D0
@@ -922,7 +922,7 @@ S
 The Bazaar~
    You stand at the far southwest edge of the bazaar.  A large, tall building's
 wall is just south of you, and the city wall is west of you.  You may head into
-the bazaar to the north and east.  
+the bazaar to the north and east.
 ~
 315 0 0 0 0 0
 D0
@@ -938,7 +938,7 @@ S
 The Bazaar~
    The bazaar, probably one of the many reasons people visit McGintey Cove,
 heads off to the north, east and west.  You may exit the bazaar to the south
-onto West Main.  
+onto West Main.
 ~
 315 0 0 0 0 0
 D0
@@ -961,7 +961,7 @@ S
 #31550
 The Bazaar~
    You stand at the southern end of the bazaar.  A building wall is to your
-south, the bazaar stretches out to the north, east and west.  
+south, the bazaar stretches out to the north, east and west.
 ~
 315 0 0 0 0 0
 D0
@@ -980,7 +980,7 @@ S
 #31551
 The Bazaar~
    You are at the south end of the bazaar.  You may head in any direction but
-south, which is the north wall of a business facing Main St.  
+south, which is the north wall of a business facing Main St.
 ~
 315 0 0 0 0 0
 D0
@@ -1002,7 +1002,7 @@ The Bazaar~
 corners of Dibrova is a twenty four hour, seven day a week managerie of sights
 and sounds, most of which coming from the colorful people who push their goods
 here.  You may exit onto East Main to the south or head out into the bazaar in
-any other direction.  
+any other direction.
 ~
 315 0 0 0 0 0
 D0
@@ -1025,7 +1025,7 @@ S
 #31553
 The Bazaar~
    Your stand at the far southeastern corner of the bazaar.  Looking north and
-west, it seems that the bazaar must go on forever.  
+west, it seems that the bazaar must go on forever.
 ~
 315 0 0 0 0 0
 D0
@@ -1042,7 +1042,7 @@ Harbor Cove Apartments~
    This small reception area is the leasing office for this complex.  Any player
 who wishes to rent a home here will need to fill out an application for lease
 and leave a deposit of one hundred fifty gold coins.  Type LEASE to fill out an
-application.  
+application.
 ~
 315 32768 0 0 0 0
 D1
@@ -1055,7 +1055,7 @@ West Main~
    The road heads north into the bazaar, a huge open court full of vendors from
 every part of the world, plying their goods.  To the south the road continues
 with shops on either side.  East of you is the Green Leaf, a local dining
-facility.  
+facility.
 ~
 315 0 0 0 0 0
 D0
@@ -1076,7 +1076,7 @@ The Green Leaf~
    This large, clean restaurant offers a variety of foods, most of them the
 common fare most people from this area would be used to.  Looks as if the
 tourist trade does not touch this homey little place, and for that reason most
-locals like it here best.  
+locals like it here best.
 ~
 315 8 0 0 0 0
 D3
@@ -1089,7 +1089,7 @@ The Parchment Place~
    This run-down, hole in the wall, flea bag dive is home to a failing business
 which is failing only because of it's lack of variety and it's competition
 located in the guild area.  The scrolls offered are of fine quality and work
-with almost every use, but the scrolls offered are not popularly needed.  
+with almost every use, but the scrolls offered are not popularly needed.
 ~
 315 8 0 0 0 0
 D1
@@ -1103,7 +1103,7 @@ East Main~
 To the west is a very ill-kept business with a faded and peeling sign hanging
 crooked over the door proclaiming it the Parchment Place.  The way is impassable
 to the east, a steep hill runs up for quite some distance to the Wharf, the high
-class section of town.  
+class section of town.
 ~
 315 8 0 0 0 0
 D0
@@ -1123,7 +1123,7 @@ S
 Fatima's Footwear~
    Fatima seems to run a orderly, neat store.  All the shoes are kept clean and
 shined, all placed strategically on shelves so as to give the customer the best
-angle on them.  
+angle on them.
 ~
 315 8 0 0 0 0
 D1
@@ -1135,7 +1135,7 @@ S
 West Main~
    The road heads north and south from here.  In the distance to the north the
 road leads into the bazaar and south the road heads into an intersection with
-South St.  East of you is the jeweler and west is Fatima's Footwear.  
+South St.  East of you is the jeweler and west is Fatima's Footwear.
 ~
 315 8 0 0 0 0
 D0
@@ -1159,7 +1159,7 @@ S
 The Jeweler~
    Many exotic jewels lay in glass displays on velvet cushions of contrasting
 color.  The colors are dazzling to the eye, and the temptation to rob this poor
-schmuck is almost overpowering.  
+schmuck is almost overpowering.
 ~
 315 32776 0 0 0 0
 D3
@@ -1170,7 +1170,7 @@ S
 #31562
 Hospital~
    This small one room whitewashed building houses just enough equipment to heal
-any standard health issues.  
+any standard health issues.
 ~
 315 8 0 0 0 0
 D2
@@ -1181,7 +1181,7 @@ S
 #31563
 East Main~
    The road runs north toward the bazaar or south past an intersection with
-South St toward the Docks.  
+South St toward the Docks.
 ~
 315 0 0 0 0 0
 D0
@@ -1202,7 +1202,7 @@ The Watering Hole~
    Barrels are stacked neatly along the north wall, canteens hang from straps
 along the south wall, and behind the counter are flasks and cups of varying
 shapes and colors.  Some kind of large machine, most probably used to distill
-sea water into drinking water sits back behind the counter.  
+sea water into drinking water sits back behind the counter.
 ~
 315 8 0 0 0 0
 D3
@@ -1213,7 +1213,7 @@ S
 #31565
 South Street~
    The street heads west into the guild area or east into the main business
-sections of McGintey Cove.  
+sections of McGintey Cove.
 ~
 315 8 0 0 0 0
 D1
@@ -1231,7 +1231,7 @@ West Main and South St~
 goes further into the business sections of McGintey Cove.  South of here begins
 the area of town known as the Docks, where all the sea vessels are built and
 most sailors stay when in port.  To the west the street heads into the Guild
-area.  
+area.
 ~
 315 8 0 0 0 0
 D0
@@ -1255,7 +1255,7 @@ S
 South Street~
    The street heads east and west from here.  To the south is a small shop which
 sells all manner of hand wear.  The street here seems a bit dirtier, less kept
-up than the streets at the north end of town near the gates, almost dingy.  
+up than the streets at the north end of town near the gates, almost dingy.
 ~
 315 8 0 0 0 0
 D1
@@ -1274,7 +1274,7 @@ S
 #31568
 South St~
    The road, seeming a bit dark and gloomy at this end of town, heads east and
-west from here.  To the north is a small hospital.  
+west from here.  To the north is a small hospital.
 ~
 315 0 0 0 0 0
 D0
@@ -1294,7 +1294,7 @@ S
 East Main and South St~
    The two main streets intersect here, heading off im every direction.  South
 lies the Dock area, east heads uphill into the high class area of town, the
-Wharf, and north and west lead deeper into the main business district.  
+Wharf, and north and west lead deeper into the main business district.
 ~
 315 0 0 0 0 0
 D0
@@ -1319,7 +1319,7 @@ South St~
    You have begun your ascent into the upper reaches of the high status section
 of McGintey Cove, known as the Wharf.  A warning to all who come this way.  No
 thievery is allowed here, no crimes are allowed to be committed, and all prices
-are very high.  
+are very high.
 ~
 315 32768 0 0 0 0
 D1
@@ -1333,9 +1333,9 @@ D3
 S
 #31571
 West Main~
-   The street is definately a bit less kept up than the streets to the north.  
+   The street is definately a bit less kept up than the streets to the north.
 The road leads generally downhill, sometimes down steps toward to the sea shore
-where sailors roam about, looking for food stuffs or women, as is their wont.  
+where sailors roam about, looking for food stuffs or women, as is their wont.
 ~
 315 0 0 0 0 0
 D0
@@ -1353,7 +1353,7 @@ Gloveworks~
 gloves hanging from them.  In cabinets and on shelves are many types of
 gauntlets and glaives which would be too heavy to hang from a hook on the racks.
 It smells of frehly oiled metal and leather in here, a delightful combination
-for any seasoned adventurer such as yourself.  
+for any seasoned adventurer such as yourself.
 ~
 315 0 0 0 0 0
 D0
@@ -1367,7 +1367,7 @@ East Main~
 It smells of sea weed, raw fish and dirty bodied men of the sea.  The roads are
 covered in dirt and grime and the farther south you get, the worse the roads
 get.  Hard to believe that some of more high class people actually come through
-here.  
+here.
 ~
 315 0 0 0 0 0
 D0
@@ -1384,7 +1384,7 @@ McGintey Teleporters~
    This establishment runs in direct competition with the Boat Station, being
 that this is a seaport town and all.  The prices offered here are substantially
 less than those found in most other towns, and the choices of travel are much
-less limited than the other, smaller inland towns.  
+less limited than the other, smaller inland towns.
 ~
 315 0 0 0 0 0
 D2
@@ -1397,7 +1397,7 @@ McGintey Center Square~
    This area has been set aside for patrons of the bazaar and the common
 citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
-place of residence.  Ah well, it's still a fine place to relax.  
+place of residence.  Ah well, it's still a fine place to relax.
 ~
 315 20 0 0 0 0
 D0
@@ -1418,7 +1418,7 @@ McGintey Center Square~
    This area has been set aside for patrons of the bazaar and the common
 citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
-place of residence.  Ah well, it's still a fine place to relax.  
+place of residence.  Ah well, it's still a fine place to relax.
 ~
 315 20 0 0 0 0
 D0
@@ -1439,7 +1439,7 @@ McGintey Center Square~
    This area has been set aside for patrons of the bazaar and the common
 citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
-place of residence.  Ah well, it's still a fine place to relax.  
+place of residence.  Ah well, it's still a fine place to relax.
 ~
 315 20 0 0 0 0
 D0
@@ -1460,7 +1460,7 @@ McGintey Center Square~
    This area has been set aside for patrons of the bazaar and the common
 citizens to have a place for a peaceful rest away from all the noise and hustle
 of the city.  Pity that so many of the less fortunate make it their permanent
-place of residence.  Ah well, it's still a fine place to relax.  
+place of residence.  Ah well, it's still a fine place to relax.
 ~
 315 20 0 0 0 0
 D0
@@ -1482,7 +1482,7 @@ Town Meeting Hall~
 McGintey Cove and its laws, plus as the shouting house for the people of the
 town.  Monthly meetings are still held by either the town mayor or the immortal
 sponsor for this town.  The upper reaches of this fine place hold the various
-board rooms for McGintey Cove.  
+board rooms for McGintey Cove.
 ~
 315 24 0 0 0 0
 D2
@@ -1499,7 +1499,7 @@ Reading Room~
    This is the place where players may post messages to other players, or to the
 Gods or just post whatever might be on their mind in general.  This is not a
 board to be used to post flames, if a message is considered to be a flame it
-will be removed immediately.  
+will be removed immediately.
 ~
 315 28 0 0 0 0
 D1
@@ -1520,7 +1520,7 @@ Quest Room~
    This is where most quests will begin, unless a different room from another
 hometown is chosen instead.  The board here is intended to be used by players to
 talk about quests, request quests, or suggest new quests.  Feel free to post any
-suggestions you may have.  
+suggestions you may have.
 ~
 315 28 0 0 0 0
 D1
@@ -1533,7 +1533,7 @@ Suggestion Room~
    This is where players can post their wants, needs and desires in terms of
 additions to Dibrova.  We encourage all players to give input regarding any and
 all aspects of the game, we want to make this a game for everyone, so don't be
-shy!  
+shy!
 ~
 315 28 0 0 0 0
 D3

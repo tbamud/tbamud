@@ -4,16 +4,16 @@ Taylor's Zone Description Room~
 @G|                            @WWelcome to The Country@G                         |
 @G|                                @WZone by Taylor@G                             |
 @G0---------------------------------------------------------------------------0
-                          
+
       @r___________________________
      @r/--------------------------/|\       @y+----------------+
-    @r/--------------------------/ | |     @y/@Y||||||||||||||||@y/       
-   @r/--------------------------/  | |    @y/@Y||||||||||||||||@y/    
-  @r/--------------------------/   | |   @y/@Y||||||||||||||||@y/      
+    @r/--------------------------/ | |     @y/@Y||||||||||||||||@y/
+   @r/--------------------------/  | |    @y/@Y||||||||||||||||@y/
+  @r/--------------------------/   | |   @y/@Y||||||||||||||||@y/
  @r/__________________________/|   | /  @y/@Y||||||||||||||||@y/
   @r|           @W_@r              |   |/  @y+----------------+
-  @r|          @W|@u/@n@W|@r             |   /               
-  @r|       _________          |  /        
+  @r|          @W|@u/@n@W|@r             |   /
+  @r|       _________          |  /
   @r|      |@W\\//@r|@W\\//@r|         | /
   @r|______|@W//\\@r|@W//\\@r|_________|/
 Link N from 10463
@@ -35,7 +35,7 @@ go.  Birds chirp in the trees, and sounds of animals come from all around you,
 the sun fights its way through the leaves in the trees, and the wind tries to
 break through the trees, but is unsuccessful.  The morning dew still sits on the
 forest floor, adding the this serene setting, the trees creep up towards the
-sky, large branches sticking out of its trunk, blocking the sky from view.  
+sky, large branches sticking out of its trunk, blocking the sky from view.
 ~
 104 0 0 0 0 3
 D0
@@ -65,7 +65,7 @@ around.  The sound of laughing children comes into this part of the woods, and
 the forest seems to be enchanted with the spirits of these children.  The trees
 seem to hold onto their spirits, these trees seem to be gentle, but at the same
 time they seem to be sinister, their branches seem to lash out and try to catch
-you in their grasp.  
+you in their grasp.
 ~
 104 0 0 0 0 3
 D2
@@ -81,7 +81,7 @@ touches one another, blocking off almost all sunlight.  The sounds of wind are
 no longer heard in this place, only the whining of the trees surrounding this
 place.  Some large branches cover this place, and multiple animal tracks are
 imprinted into the ground here.  Towards the top of the trees, the scratching of
-little squirrels feet bounces off the trees surrounding this place.  
+little squirrels feet bounces off the trees surrounding this place.
 ~
 104 0 0 0 0 3
 D1
@@ -104,7 +104,7 @@ ways.  Although the trees entwine above you, the area all around you is not
 surrounded by such trees.  The wind blows through here freely, and the sun
 shines in from the trees around you, not letting in a lot of light though.  The
 rustling of leaves comes to your ears in the area around you, adding to the
-feeling of being uncomfortable.  
+feeling of being uncomfortable.
 ~
 104 0 0 0 0 3
 D0
@@ -124,7 +124,7 @@ the destructive human hand.  Plastic bottles and foam cups litter this area,
 along with many cardboard boxes.  The sun shines in this area as though there
 were no trees overhead, this is not like the other parts of the forest, it is
 mostly clear, and it seems to have been forced to be this way.  The wind
-whistles through here, rustling leaves and moving branches all around.  
+whistles through here, rustling leaves and moving branches all around.
 ~
 104 0 0 0 0 3
 D1
@@ -142,7 +142,7 @@ The Mazes Entrance~
 stagnant smell.  The walls a large marble stones, and are well made.  The ground
 is sleek, and it has a few blood stains every now and then.  For as closed in as
 this area is, it gives off a good amount of light, enough to illuminate your
-path.  
+path.
 ~
 104 28 0 0 0 0
 D0
@@ -176,7 +176,7 @@ the ground, and cover the surrounding area.  A small light sits in the fort atop
 the tree.  There is no way to go up into the fort because of a lack of a ladder,
 or a rope.  Large plastic bottles cover the ground, and some foam coolers every
 now and then.  A piece of broken wood lies in a large brush pile, it seems to be
-connected to the brush.  
+connected to the brush.
 ~
 104 0 0 0 0 3
 D2
@@ -214,7 +214,7 @@ ears.  Small waves wash up on to the shore.  Fish swim in the lake, adding to
 the beautiful scene.  The ground here is softer here, making it a great place
 to just rest.  The air is fresh, and the sounds of animals also fills your ears.
 Tall grass grows all around the lake, and large boulders are also here.  It is
-mysterious how they got here, air also has a moist smell in it.  
+mysterious how they got here, air also has a moist smell in it.
 ~
 104 20 0 0 0 3
 D0
@@ -259,7 +259,7 @@ One large oak has up-rooted and fallen on an old wooden house.  The house was
 split in half and it seems to be home to multiple animals now.  Strange sounds
 emit from the house, and a horrid smell also comes from the house.  An old
 rusted well sits in front of the house, it seems to have been protected from the
-tree by the house.  
+tree by the house.
 ~
 104 4 0 0 0 3
 D0
@@ -270,11 +270,11 @@ S
 #10413
 Gate to Orchan~
    @yA hard wooden platform lies under your feet.  Straight ahead is a large
-metal gate that stands open.  No one is patrolling the perimeter of the gate.  
+metal gate that stands open.  No one is patrolling the perimeter of the gate.
 Torches are on either side of the gate casting shadows on either side of the
 gate.  At the top of the gate is some weird insigne, this is also on either side
 of the gate.  At the gates entrance the wooden platform stops and the ground
-turns to rock.  
+turns to rock.
 ~
 104 0 0 0 0 1
 D1
@@ -292,7 +292,7 @@ A Rock Road~
 little stone seems to have been placed with extreme care.  Houses line the road,
 to the north the road continues, and it also continues to the south.  Noise
 emits from people walking around on this road, they seem to be in a hurry, and
-don't want to talk to anyone.  
+don't want to talk to anyone.
 ~
 104 0 0 0 0 1
 D0
@@ -310,7 +310,7 @@ D2
 S
 #10415
 A Rock Road~
-   @yThe rocky road seems to be ending here, it leads to a luxurious house.  
+   @yThe rocky road seems to be ending here, it leads to a luxurious house.
 Smoke emits from the chimney, and the smell of something cooking is in the air.
 A sign is neatly placed on the door of the house.  The steps that lead up to the
 house are made of pine wood, each step has been carefully cut, and carefully put
@@ -348,12 +348,12 @@ D3
 S
 #10417
 Main Street~
-   @yThe ground moves from the rough rock road to a smooth cobblestone road.  
+   @yThe ground moves from the rough rock road to a smooth cobblestone road.
 This road is wider then the rock road, and even more people move through here.
 Large houses line the side of the road, and some trees are able to be seen every
 now and then.  A sign is stuck into the ground on the side of the road, it seems
 to be a direction sign.  A warm feeling seems to be coming from all around you.
-It seems to be coming from the towns people.  
+It seems to be coming from the towns people.
 ~
 104 0 0 0 0 1
 D1
@@ -371,7 +371,7 @@ Main Street~
 some trees are here and there.  Loads of people litter the street, some short,
 others tall.  But every person seems to be Elven.  A warm feeling comes from the
 area around you.  The people seem to be giving this feeling off.  The cobble
-stone road is freshly polished and looks to be brand new.  
+stone road is freshly polished and looks to be brand new.
 ~
 104 0 0 0 0 1
 D0
@@ -400,7 +400,7 @@ D2
 S
 #10420
 A Rock Road~
-   @yThe road seems to get a little smoother her, but it is barely noticeable.  
+   @yThe road seems to get a little smoother her, but it is barely noticeable.
 Some small trees are starting to grow up on the side of the road.  A building
 lies to the west, it seems to be gaining a lot of attention.  A small breeze
 blows through this part of town.  Another sign has been placed neatly on the
@@ -460,7 +460,7 @@ A Rock Road~
    @yThis road is unlike any of the other rock roads, each road has been
 carefully placed so that there are no spaces in between them.  A gigantic wooden
 house lies to the south.  It stands taller than all the others in this village.
-A large golden statue of some old looking elf is in front of this house.  
+A large golden statue of some old looking elf is in front of this house.
 Beautiful pine steps are leading up to his house, and the door is nowhere to be
 seen, it seems it has been taken off.  @n
 ~
@@ -498,11 +498,11 @@ D3
 S
 #10425
 Orchan Post Office~
-   @yThis is a large room, and this room seems to draw a lot of people to it.  
+   @yThis is a large room, and this room seems to draw a lot of people to it.
 People are giving there mail to the postmaster to send, and she is giving them
 their mail.  There are loads of bags with mail in them, he seems to be send mail
 for a small fee though.  The floor is also littered with paper, but this paper
-is blank.  
+is blank.
 ~
 104 8 0 0 0 0
 D1
@@ -516,7 +516,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -534,7 +534,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -552,7 +552,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -570,7 +570,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -588,7 +588,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -609,7 +609,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D1
@@ -623,7 +623,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -641,7 +641,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -662,7 +662,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D2
@@ -676,7 +676,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -697,7 +697,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D2
@@ -736,7 +736,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -753,7 +753,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D0
@@ -767,7 +767,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -784,7 +784,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D0
@@ -798,7 +798,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -816,7 +816,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -841,7 +841,7 @@ The Monsters Den~
    @yThe walls are covered with blood, and the floor is also covered with it
 too.  Human skeletons litter the floor, and multiple animal skeletons also fill
 this place.  The ceiling is not perfect here, and the walls are cover in
-scratches, and the ceiling is cover in blood and scratches.  
+scratches, and the ceiling is cover in blood and scratches.
 ~
 104 8 0 0 0 0
 D0
@@ -855,7 +855,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -877,7 +877,7 @@ The Center of the Maze~
 gray marble.  The floor is one solid marble, and the ceiling is made of another
 large marble stone.  The walls floor and ceiling are all smooth.  The light
 seems to bouce off the walls, a slight noise comes from the top of this room,
-and a small white orb hovers in the air there.  
+and a small white orb hovers in the air there.
 ~
 104 28 0 0 0 0
 D1
@@ -890,7 +890,7 @@ The Monsters Den~
    @yThe walls are covered with blood, and the floor is also covered with it
 too.  Human skeletons litter the floor, and multiple animal skeletons also fill
 this place.  The ceiling is not perfect here, and the walls are cover in
-scratches, and the ceiling is cover in blood and scratches.  
+scratches, and the ceiling is cover in blood and scratches.
 ~
 104 8 0 0 0 0
 D0
@@ -915,7 +915,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D1
@@ -928,7 +928,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D2
@@ -941,7 +941,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D3
@@ -955,7 +955,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -973,7 +973,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -991,7 +991,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D0
@@ -1013,7 +1013,7 @@ A Maze Room~
 a little more blood splatter here.  The floor is made up of a smaller light
 marble stone.  There are many scratches on the ground and they seem to have been
 made by something in-human.  The ceiling is made of the same marble, but this is
-smoother, and only enough light is here to allow sight.  
+smoother, and only enough light is here to allow sight.
 ~
 104 28 0 0 0 0
 D1
@@ -1030,7 +1030,7 @@ The Monsters Den~
    @yThe walls are covered with blood, and the floor is also covered with it
 too.  Human skeletons litter the floor, and multiple animal skeletons also fill
 this place.  The ceiling is not perfect here, and the walls are cover in
-scratches, and the ceiling is cover in blood and scratches.  
+scratches, and the ceiling is cover in blood and scratches.
 ~
 104 8 0 0 0 0
 D2
@@ -1048,7 +1048,7 @@ The Monsters Den~
    @yThe walls are covered with blood, and the floor is also covered with it
 too.  Human skeletons litter the floor, and multiple animal skeletons also fill
 this place.  The ceiling is not perfect here, and the walls are cover in
-scratches, and the ceiling is cover in blood and scratches.  
+scratches, and the ceiling is cover in blood and scratches.
 ~
 104 8 0 0 0 0
 D0
@@ -1069,7 +1069,7 @@ A Dead End~
    @yThis is an entirely enclosed area.  All the walls are made up of a deep
 red marble.  The floor has many different stains all over it, and the walls have
 some of the same stains.  The ceiling seems to be unscathed, it has the same
-smooth texture it has had the whole time.  
+smooth texture it has had the whole time.
 ~
 104 8 0 0 0 0
 D3
@@ -1091,12 +1091,12 @@ Taylors Immortal Resting Chamber~
 @n\|                                                                    |/
  |             Inuyasha Presents        Shikon Jewle Hunt             |
   \                                                                  /
-   '\       Welcome to the hunt, now go find those shards!!        /'  
+   '\       Welcome to the hunt, now go find those shards!!        /'
      |                                                            |
-     |  Additional information on this zone is available within.  |  
-     | To view the details on the selected topic, type LOOK, then:|  
-    /                                                              \ 
-  /'                                                                `\ 
+     |  Additional information on this zone is available within.  |
+     | To view the details on the selected topic, type LOOK, then:|
+    /                                                              \
+  /'                                                                `\
  |     Overview  Theme  Status  Location  Secrets  Help  Credits!     |
 @n/|    ____________________________________________________________    |\
 @n)|   /                      |      |      |                       \   |(
@@ -1118,7 +1118,7 @@ A New Zone Description Room~
            @C:      @D.'.                 @C-*-
         @Y. @C-*-@D    /   \          @Y. '    @C:
   @C*        @C:@D   .'     '.      @C|                  @C*
-    @Y.     @D    /_,_____,_\ @Y.  @C-*-    @Y.      '  
+    @Y.     @D    /_,_____,_\ @Y.  @C-*-    @Y.      '
       @Y`   @.  @w   |       | @C*   @. @C|          @Y.     `
   @Y.     @D..  @C* @w | ----  |    @C*   .  @Y`
        @D/  \    @w|---====|/`\       @Y.@D  ..
@@ -1133,12 +1133,12 @@ A New Zone Description Room~
    @w/\_|__/\.----O-|@D______/.:@w|@D.\___@w|====--|O  O|
    @w| v__v |--._.==|_ _ ==|-|| |  _|  __==| O__|
    @w|__||__|_|_|_|_|_|_|__|_||_|_|_:__||__:__|||
-@y   \_\\ \  \/- //\  -,-|  __   | |`.   :||   / |         
+@y   \_\\ \  \/- //\  -,-|  __   | |`.   :||   / |
      |\`| `   _//  | / _| || |  | `.'  ,''|`./ /
      |`\| \  //'   |  // \`| |  `.'  .' | |'__|
      \.\\`//| | \ \//   \`  .-'  .' | '/  |
-       \`\// |.`  ` ' /-  :-'   .'|  '/ , //      
-        \`|   \\ |   // .' / /.'| |  |.'/         
+       \`\// |.`  ` ' /-  :-'   .'|  '/ , //
+        \`|   \\ |   // .' / /.'| |  |.'/
          `.\// | `| ''.'  \\ .' | '_/ .`
               \ ' . . `'. __ /   ` .__/ @c*@y===================@c*@y
                \//   //  __  _.`_/      @y|@c-F O R G O T T E N-@y|
@@ -1152,7 +1152,7 @@ A New Zone Description Room~
 S
 #10460
 Path Through the Forest~
-   @yThis path looks like it has been used by many travelers and creatures. 
+   @yThis path looks like it has been used by many travelers and creatures.
 The earth is compact and the no shuberry grows near this place. The sky above
 can be seen, but it looks as if the sky fades into the trees ahead. @n
 ~
@@ -1217,10 +1217,10 @@ D2
 S
 #10464
 An Observation Room~
-   @yThe room is not a small room, but rather vast, books are scattered all 
-around the floor and on the tables.  This place seems as though no one has 
-cleaned it for months.  Large tools scatter the desk off in the corner, and many 
-piles of papers with writing on them scatter this desk as well.  The ceiling 
+   @yThe room is not a small room, but rather vast, books are scattered all
+around the floor and on the tables.  This place seems as though no one has
+cleaned it for months.  Large tools scatter the desk off in the corner, and many
+piles of papers with writing on them scatter this desk as well.  The ceiling
 above is nothing but a thick looking glass with bars filling in for support.@n
 ~
 104 4 0 0 0 1
@@ -1233,14 +1233,14 @@ S
 Taylor's Lounge~
    @WA small lamp sits in the center of the room letting off a small amount of
 light. A beautiful white shag carpet is covering the whole floor besides in a
-small spot where there is white marble with small flecks of black in them. 
+small spot where there is white marble with small flecks of black in them.
 Directly on the wall behind the marble is a large fireplace the sinks deep into
 the wall. A small fire crackles in the center on the fireplace, casting a soft
 glow upon the walls. Pictures line the pure white walls, all are in finely made
 wooden frames. A freshly stained trim lies at the top of every wall. The
 fireplaces frame is made of small marble bricks, all are black, making the
 fireplace standout from the rest of the room. A window lies on the wall
-opposite the fireplace, letting in a little light through the linen curtains. 
+opposite the fireplace, letting in a little light through the linen curtains.
 A large squishy looking armchair sits in the middle of the room only a few feet
 from the fireplace. @n
 ~
@@ -1249,14 +1249,14 @@ E
 main chamber room taylors tays~
    @WA small lamp sits in the center of the room letting off a small amount of
 light.  A beautiful white shag carpet is covering the whole floor besides in a
-small spot where there is white marble with small flecks of black in them.  
+small spot where there is white marble with small flecks of black in them.
 Directly on the wall behind the marble is a large fireplace the sinks deep into
 the wall.  A small fire crackles in the center on the fireplace, casting a soft
 glow upon the walls.  Pictures line the pure white walls, all are in finely made
 wooden frames.  A freshly stained trim lies at the top of every wall.  The
 fireplaces frame is made of small marble bricks, all are black, making the
 fireplace standout from the rest of the room.  A window lies on the wall
-opposite the fireplace, letting in a little light through the linen curtains.  
+opposite the fireplace, letting in a little light through the linen curtains.
 A large squishy looking armchair sits in the middle of the room only a few feet
 from the firplace.  @n
 ~

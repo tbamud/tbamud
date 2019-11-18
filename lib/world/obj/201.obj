@@ -29,7 +29,7 @@ A petite, spiral-like seashell lies here, its tip pointing skywards.~
 E
 shell seashell~
    This seashell is rather small, and has a sprical like shape with a broader
-base that narrows to the tip.  
+base that narrows to the tip.
 ~
 #20102
 coral~
@@ -42,7 +42,7 @@ A genuine piece of sea coral lies here.~
 E
 coral~
    This underwater treasure is a rock-like substance formed in the sea.  Is has
-a pinkish-orange colouring to it.  
+a pinkish-orange colouring to it.
 ~
 #20103
 sign wood~
@@ -70,7 +70,7 @@ A coconut which has fallen from its tree lies forgotten here.~
 E
 coconut~
    A small hole has been cut at the top of this coconut, transforming the husk
-into a cup of some sort.  
+into a cup of some sort.
 ~
 #20105
 coconuttree tree~
@@ -84,7 +84,7 @@ T 20106
 E
 tree~
    A coconut tree has broad leaves suitable for providing shade from the sun in
-the morning.  Getting the coconuts down is the a real problem though...  
+the morning.  Getting the coconuts down is the a real problem though...
 ~
 #20106
 boulder stone rock~
@@ -96,7 +96,7 @@ A jagged boulder pokes up from the sand here.~
 0 0 0 0 0
 E
 boulder rock stone~
-   This boulder has been weathered and has developed dangerous, sharp edges.  
+   This boulder has been weathered and has developed dangerous, sharp edges.
 ~
 #20107
 nest~
@@ -108,7 +108,7 @@ A nest made of straw is here.~
 0 0 0 0 0
 E
 nest~
-   The nest is made of straw, firmly weaved by a clever bird.  
+   The nest is made of straw, firmly weaved by a clever bird.
 ~
 #20108
 egg~
@@ -121,7 +121,7 @@ An egg with brown specks is here.~
 E
 egg~
    The egg is white, round, with specks of brown all over it.  It has been
-removed from its nest, and the egg is fast growing cold.  
+removed from its nest, and the egg is fast growing cold.
 ~
 #20109
 harp~
@@ -137,7 +137,7 @@ harp~
    This harp is made of a metal that shifts and changes its colours every now
 and then.  Carved into the column of it are strange elvish designs, while the
 neck of the harp is a simple S-shape.  @Rplay harp@n to produce sensational
-music.  
+music.
 ~
 #20110
 sign~
@@ -151,7 +151,7 @@ E
 sign~
    A picture has been drawn on this sign, warning swimmers to be careful of deep
 underwater currents and giant waves that may sweep them away into the deep
-ocean.  
+ocean.
 ~
 #20111
 sword meridianus oceana~
@@ -178,7 +178,7 @@ constantly heal you for 10 hp every 2-3 seconds.  To use this command, type
 @BEXECUTE FUSION@n.  For 100 of your own hp you can damage the opponent for 1000
 in return, provided that it is not a player character.  A drawback to this
 ability is the time taken to fully execute the damage, it takes time to recharge
-before striking down the opponent.  To use this type @BPERFORM AURORAFALL@n.  
+before striking down the opponent.  To use this type @BPERFORM AURORAFALL@n.
 ~
 #20112
 chest~
@@ -191,7 +191,7 @@ A sturdy wooden chest lies opened here.~
 E
 chest~
    This wooden chest must have been here for a long time.  The wood is already
-decaying and there are several holes in it.  
+decaying and there are several holes in it.
 ~
 #20113
 key~
@@ -204,7 +204,7 @@ A crude rusty key is half-buried here.~
 E
 key~
    This key is losing its silvery glint to rust and has little twist here and
-there.  
+there.
 ~
 #20114
 note paper~
@@ -233,7 +233,7 @@ E
 prism shard~
    This appears to be a broken fragment from a shell.  Its surface glitters with
 a kind of white dust, while the prism shard itself is a bright pink.  Prisms are
-known to be the main material used to make enchanted weapons and armours.  
+known to be the main material used to make enchanted weapons and armours.
 ~
 #20116
 prism shell~
@@ -248,7 +248,7 @@ prism shell~
    The white powdery substance on this shell glitters, while the colour of the
 shell itself is a bright pink.  A few scratches can be found on the shell, or
 otherwise it would have been flawless.  Prisms are known to be the main material
-used to make enchanted weapons and armours.  
+used to make enchanted weapons and armours.
 ~
 #20117
 cushion~
@@ -278,7 +278,7 @@ T 20147
 E
 cushion~
    The @Bblue@n cushion is big, nice, and exceptionally nice to cuddle or sit
-on.  
+on.
 ~
 #20119
 cushion~
@@ -293,7 +293,7 @@ T 20147
 E
 cushion~
    The @Yyellow@n cushion is big, nice, and exceptionally nice to cuddle or sit
-on.  
+on.
 ~
 #20120
 prism anklet~
@@ -308,7 +308,7 @@ anklet~
    This @MP@Wr@Mi@ms@Wm @MA@Wn@Mk@ml@We@mt@n is made from prism, a rare mineral
 that is created after being buried under the sand for many years.  The white
 powdery substance it is made from makes it glitters, enhancing the beauty of
-this wonderful object.  
+this wonderful object.
 ~
 #20121
 prism dress~
@@ -323,7 +323,7 @@ dress~
    This @MP@Wr@Mi@ms@Wm @MD@Wr@Me@ms@Ws@n is made from prism, a rare mineral
 that is created after being buried under the sand for many years.  The white
 powdery substance it is made from makes it glitters, enhancing the beauty of
-this wonderful object.  
+this wonderful object.
 ~
 #20122
 prism collar~
@@ -338,7 +338,7 @@ collar~
    This @MP@Wr@Mi@ms@Wm @MC@Wo@Ml@ml@Wa@Mr@n is made from prism, a rare mineral
 that is created after being buried under the sand for many years.  The white
 powdery substance it is made from makes it glitters, enhancing the beauty of
-this wonderful object.  
+this wonderful object.
 ~
 #20123
 sign~
@@ -350,7 +350,7 @@ A wooden sign has been planted here.~
 0 0 0 0 0
 E
 sign~
-   The sign says: When you wish to go home, just @CJUMP@n into the water.  
+   The sign says: When you wish to go home, just @CJUMP@n into the water.
 ~
 #20124
 book manual guide~
@@ -366,12 +366,12 @@ E
 SECRETS
    There are a list of things that will not appear anywhere on this zone.  They
 are for immortals only ;) Type olist to bring out a list of them.  Items
-classified under this will be those with VNUM 20170+.  Load them and enjoy.  
+classified under this will be those with VNUM 20170+.  Load them and enjoy.
 
 QUESTS
    A power sword can be obtained by braving the deep waters (move far away from
 the island) and wait.  Then go north, and SEARCH around.  Finally say the words
-'liquiddreams' and receive this magnificent blade!  
+'liquiddreams' and receive this magnificent blade!
    The Old Fool in the old hut may seem to be talking rubbish, but they are
 actually clues to the words liquiddreams ;)
 
@@ -382,22 +382,22 @@ E
 3~
    FEATURES
    Wildlife: Crabs and seagull sleep at night, if you like watching these
-creatures you may want to observe them from day till night.  
+creatures you may want to observe them from day till night.
 
    Prism: The old fool will offer to make prism equipments for you.  Simple DIG
 around for a few prism shards of shells and greet him to get a list of
-instructions.  
+instructions.
 
    Danger: Although Konolua beach may seem peaceful on the outside, GUYS
 especially should keep a look out for the siren and be wary of them.  Their
-voices can stun you!  
+voices can stun you!
    Deep waters should also be avoided, if you don't want to drown.
 ~
 E
 2~
    WORDS BY THE BUILDER
 Thanks everyone who has helped me in the making of this zone.  It took me 7
-days to finish it, followed by a few more days of editing.  
+days to finish it, followed by a few more days of editing.
 There may be a lot more hidden errors, so mail me if you see any ;)
 ~
 E
@@ -417,7 +417,7 @@ E
 book guide~
    This book has been made for immortals to give them a rough idea of this area.
 A simple, plain hardcover book, the pages contains many useful information and
-secrets of the Sapphire Islands.  Type look index to look at it.  
+secrets of the Sapphire Islands.  Type look index to look at it.
 ~
 #20190
 sword nirvana~
@@ -432,7 +432,7 @@ E
 sword nirvana~
    Deathly Nirvana is a blade made of pure runestone.  Its edge is razor-sharp
 and dangerously thin - a characteristic that enables it to slice through any
-material with utmost ease.  @RSlash@n releases its hidden power.  
+material with utmost ease.  @RSlash@n releases its hidden power.
 ~
 #20191
 icecream ice cone~
@@ -446,7 +446,7 @@ T 20190
 E
 icecream ice~
    A vanilla icecream!  The icecream is slowly melting, and the white substances
-is dripping from the sides of the cone!  
+is dripping from the sides of the cone!
 ~
 #20192
 hat~
@@ -459,7 +459,7 @@ Someone has left a hat here.~
 E
 hat~
    This hat is made by Elixias to his cousin Azwick.  Now isn't that
-thoughtful..  
+thoughtful..
 ~
 #20193
 bag~
@@ -472,7 +472,7 @@ A simple bag lies here.~
 E
 bag~
    This bag looks deflated and strangely is weighs nothing!  A spell have been
-cast on it so that you can put as many things as you like into the bag.  
+cast on it so that you can put as many things as you like into the bag.
 ~
 #20194
 specs spec spectacles spectacle glasses~
@@ -485,7 +485,7 @@ Someone has dropped a pair of glasses here.~
 E
 glasses specs spectacle spectacles~
    The glass of this pair of spectacle is heavily tinted in @Cblue@n!  Looking
-through it will probably make everything look @Cblue@n as well.  
+through it will probably make everything look @Cblue@n as well.
 ~
 #20195
 shorts short~
@@ -498,7 +498,7 @@ A new pair of hawiian style shorts has been left here.~
 E
 short shorts~
    This pair of shorts is made of a blue fabric and has been specially made for
-Immortals of all shapes and sizes.  
+Immortals of all shapes and sizes.
 ~
 #20196
 surfboard board~
@@ -514,7 +514,7 @@ T 20191
 E
 surfboard board~
    This surfboard will allow you to ride any wave big or small.  Enchanted with
-the ability to use the [teleport] command.  
+the ability to use the [teleport] command.
 ~
 #20197
 crab food meal dish~
@@ -528,7 +528,7 @@ E
 crab dish food meal~
    This crab has been cooked in thick, hot and spicy sauce by the local chef and
 has been placed in a small dish.  Powdery spices is sprinkled on the crab itself
-to enhace its taste.  
+to enhace its taste.
 ~
 #20198
 shirt t-shirt tshirt clothes~
@@ -541,13 +541,13 @@ A neatly folded, @Cocean blue@g T-shirt lies here.~
 E
 label~
    The label reads: I-wear - We specialize in making clothes for happy
-immortals.  
+immortals.
 ~
 E
 tshirt shirt t-shirt~
    This Hawiian t-shirt is made from a brilliant blue fabric, carefully and
 specially designed to fit any immortal.  A label hangs by the collar of the
-shirt.  
+shirt.
 ~
 #20199
 key~
@@ -559,16 +559,16 @@ A key that is covered in a reddish-material lies forgotten here.~
 1 1 1 0 0
 E
 engraving engravings~
-   The rust makes it difficult to read.  
+   The rust makes it difficult to read.
 ~
 E
 key~
    The key is crudely made, and it has rusted over the many years.  Small
-engravings can be found on the key, the rust makes it difficult to see.  
+engravings can be found on the key, the rust makes it difficult to see.
 ~
 E
 material rust~
    The reddish-material is rust, which the key seems to be collecting after many
-many years.  
+many years.
 ~
 $~

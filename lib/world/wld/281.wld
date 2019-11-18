@@ -1,7 +1,7 @@
 #28100
 A paved path~
-   You are standing at the edge of the city.  From here, a short, 
-paved path leads toward the east.  To the northeast is a large building, 
+   You are standing at the edge of the city.  From here, a short,
+paved path leads toward the east.  To the northeast is a large building,
 its yard lined by an old fence of stone.
 ~
 281 4 0 0 0 1
@@ -14,7 +14,7 @@ credits info~
    This is a modest zone with about 65 rooms.  It is a little forest,
 maybe east of Midgaard.  The area was originally written for low-level
 (say 1-10) players.
- 
+
 -Methem
 (mputkone@@rieska.oulu.fi)
 Replace XXXX with a town name of your choosing.
@@ -68,7 +68,7 @@ You see the yard.
 S
 #28103
 On the lawn~
-   You step on the lawn.  An old, large tree lines the track, and its 
+   You step on the lawn.  An old, large tree lines the track, and its
 foliage covers the yard in massive shadows.  The corner of the tavern is
 close to the west.
 ~
@@ -81,8 +81,8 @@ You see the yard before the tavern.
 S
 #28104
 By the side of the tavern~
-   You are standing close to the western fence of the yard.  The city 
-can be seen further to the west - masses of people and clamour.  To the 
+   You are standing close to the western fence of the yard.  The city
+can be seen further to the west - masses of people and clamour.  To the
 is a small, wooden, and cell-like building, obviously a lavatory.
 ~
 281 0 0 0 0 1
@@ -99,7 +99,7 @@ You see the yard.
 S
 #28105
 The lavatory~
-   The lavatory is quite cramped and the smell around exactly what it 
+   The lavatory is quite cramped and the smell around exactly what it
 uses to be in places like this.  However the inside is very tidy, see-
 mingly taken care often.  Anyway, you are ready to leave now...
 ~
@@ -112,10 +112,10 @@ door wooden~
 S
 #28106
 Inside the tavern~
-   The walls here are paneled in some wood of various deep brown 
+   The walls here are paneled in some wood of various deep brown
 tints.  A large, wooden chandelier lits the room, making it very ho-
-mely.  The furniture is dominated by a tall desk close to the north 
-wall.  Behind it there stands a large, impressive cupboard.  To the 
+mely.  The furniture is dominated by a tall desk close to the north
+wall.  Behind it there stands a large, impressive cupboard.  To the
 west is a high, arched doorway, above which a huge bearhead has been
 fastened, welcoming the customers in.
    Broad stairs lead up.
@@ -141,16 +141,16 @@ cupboard impressive~
    The cupboard is of some lacquered wood and the handicraft appears excellent.
 The doubledoors of it are covered in a big painted picture, presenting a march
 of an ancient fully equipped army.  There are also two large handles of pronze,
-formed in interesting spiral.  
+formed in interesting spiral.
 ~
 S
 #28107
 A smoky drawing-room~
-   You have arrived at a large drawing-room where quite an amount of 
-tobacco smoke hovers about, forcing you to cough loudly.  Heavy chairs 
-and tables can be seen all around.  The room is full of people, youngsters 
+   You have arrived at a large drawing-room where quite an amount of
+tobacco smoke hovers about, forcing you to cough loudly.  Heavy chairs
+and tables can be seen all around.  The room is full of people, youngsters
 and elders, riches and poors, all from the different social classes.
-   There is a wide collection of various hunting weapons on the western 
+   There is a wide collection of various hunting weapons on the western
 wall.  The room is warmed up by a massive fireplace.
 ~
 281 8 0 0 0 0
@@ -162,9 +162,9 @@ You see the tavern.
 S
 #28108
 On the top floor~
-   This north- and south-directed corridor is where the local guest 
-rooms are located at.  The walls are paneled in some fine wood, and 
-there hang deep green tapestries with some white decorations on them.  
+   This north- and south-directed corridor is where the local guest
+rooms are located at.  The walls are paneled in some fine wood, and
+there hang deep green tapestries with some white decorations on them.
 Torches cast soft light into the space.
 ~
 281 8 0 0 0 0
@@ -186,10 +186,10 @@ You see the stairs leading down.
 S
 #28109
 A dusty room~
-   The room has been furnished by a small elegant table, a strong 
+   The room has been furnished by a small elegant table, a strong
 bed, an old bookcase, and a chest of drawers.  Somehow you feel that
-it won't be hired out so often, although it seems that no one has 
-been here in a few weeks.  But no doubt, there is someone's property 
+it won't be hired out so often, although it seems that no one has
+been here in a few weeks.  But no doubt, there is someone's property
 around...
 ~
 281 1 0 0 0 0
@@ -200,7 +200,7 @@ door oaken~
 S
 #28110
 On the top floor~
-   You walk on the corridor.  A door to the west is ajar and you 
+   You walk on the corridor.  A door to the west is ajar and you
 wonder if you heard some voices from behind it...
 ~
 281 8 0 0 0 0
@@ -271,8 +271,8 @@ door wooden~
 S
 #28114
 At the forest edge~
-   You are walking on a brownish path that leads towards a light 
-forest to the east, and begins to wriggle its way there.  A mild 
+   You are walking on a brownish path that leads towards a light
+forest to the east, and begins to wriggle its way there.  A mild
 chirping can be heard from somewhere nearby.
    The city of XXXX is further away to the west.
 ~
@@ -290,9 +290,9 @@ You see the paved path.
 S
 #28115
 A path~
-   As the path finds its way through the forest it sometimes becomes 
-very narrow, wriggling by the side of some large stones.  Passing by 
-a wagon of any kind would be impossible.  To the east grows dense 
+   As the path finds its way through the forest it sometimes becomes
+very narrow, wriggling by the side of some large stones.  Passing by
+a wagon of any kind would be impossible.  To the east grows dense
 thicket.
 ~
 281 4 0 0 0 2
@@ -314,7 +314,7 @@ You see the forest edge.
 S
 #28116
 A path~
-   The path seems to descend toward the east where you can make out 
+   The path seems to descend toward the east where you can make out
 some sandy ground.  Also, from the same direction was heard something
 that sounded peculiar talk...
 ~
@@ -332,8 +332,8 @@ You see the forest.
 S
 #28117
 A small dell~
-   You descend onto a sandy dell where you notice some old marks of 
-water, approximately flown here a few months ago.  The path continues to 
+   You descend onto a sandy dell where you notice some old marks of
+water, approximately flown here a few months ago.  The path continues to
 the east, climbing over great roots.
 ~
 281 0 0 0 0 2
@@ -350,8 +350,8 @@ You see the forest.
 S
 #28118
 An intersection of paths~
-   You are standing at a small square from where trails lead north, west, 
-and east.  Since the foliage dominates your vision more or less, only the 
+   You are standing at a small square from where trails lead north, west,
+and east.  Since the foliage dominates your vision more or less, only the
 highest of Towers of Midgaard can be seen farther to the west.
 ~
 281 0 0 0 0 2
@@ -375,7 +375,7 @@ S
 A grassy path~
    A grassy but quite a wide path leads here.  According a few deep
 grooves that are yet visible on it, this way was probably used much, a
-long time ago. 
+long time ago.
    Leaning against a greyish tree, there is a rottening, wooden sign.
 ~
 281 0 0 0 0 2
@@ -392,16 +392,16 @@ You see a small intersection of trails.
 E
 sign wooden~
    This is about what you detect:
- 
+
                  %he ++n o- G%%d i l
- 
-                     20* m _ e 
+
+                     20* m _ e
 ~
 S
 #28120
 A low hillside~
    This is a low, bush-growing hillside.  The path appears to be leading
-toward what looks a small marshland down there.  For some reason it does 
+toward what looks a small marshland down there.  For some reason it does
 not look very fascinating.
 ~
 281 4 0 0 0 4
@@ -418,11 +418,11 @@ You see a marshland.
 S
 #28121
 The marshland~
-   As you reach the marshland, the clouds of insects catch you 
-in their unpleasant embrace, penetrating your very equipment.  You 
-move on quickly, over the damp hummocks and over the small pools of 
-black disgusting water, to escape those tiny winged beasts.  Further 
-away to the north seems to be an another hillside, growing high trees.  
+   As you reach the marshland, the clouds of insects catch you
+in their unpleasant embrace, penetrating your very equipment.  You
+move on quickly, over the damp hummocks and over the small pools of
+black disgusting water, to escape those tiny winged beasts.  Further
+away to the north seems to be an another hillside, growing high trees.
    Remainders of a bridge-like structure still lie here, leading
 across the marsh.
 ~
@@ -445,9 +445,9 @@ You see the low hillside.
 S
 #28122
 Stepping on some hammocks~
-   The most sturdiest hammocks here resist your weight easily, and 
+   The most sturdiest hammocks here resist your weight easily, and
 thus you are able to move on.  Close to the east grows a large, somewhat
-peculiar bush that covers your vision quite totally.  
+peculiar bush that covers your vision quite totally.
 ~
 281 0 0 0 0 3
 D3
@@ -463,7 +463,7 @@ You see something black.
 E
 bush large peculiar~
    It appears old and greyish.  It looks as if there were something dark behind
-it...  Perhaps.  
+it...  Perhaps.
 ~
 S
 #28123
@@ -482,9 +482,9 @@ You see some hammocks ...*burb*.
 S
 #28124
 The marshland~
-   You are walking at the northern part of the marshland.  Just to 
-the north is an another hillside, high and much more steeper than the 
-one you just descended.  It grows some deep brown hay and tall birches.  
+   You are walking at the northern part of the marshland.  Just to
+the north is an another hillside, high and much more steeper than the
+one you just descended.  It grows some deep brown hay and tall birches.
 A faint trail climbs on it.
 ~
 281 0 0 0 0 3
@@ -501,8 +501,8 @@ You see a steep hillside.
 S
 #28125
 A steep hillside~
-   You ascend the hillside, struggling between the trees and their 
-twisted branches.  A figure of grey building begins to discern slowly 
+   You ascend the hillside, struggling between the trees and their
+twisted branches.  A figure of grey building begins to discern slowly
 to the northwest.
 ~
 281 4 0 0 0 4
@@ -519,10 +519,10 @@ You see the marshland down there.
 S
 #28126
 Before a decayed building~
-   You are standing at a grass-covered yard.  Just to the west lies 
-what may have been an inn of some kind years ago.  Now its roof and many 
-of the other wooden parts are mostly gone, and the greyish walls break 
-off so badly that you somewhat wonder how the building still stands.  An 
+   You are standing at a grass-covered yard.  Just to the west lies
+what may have been an inn of some kind years ago.  Now its roof and many
+of the other wooden parts are mostly gone, and the greyish walls break
+off so badly that you somewhat wonder how the building still stands.  An
 open doorway gives passage inside.  To the north lies an old pen.
 ~
 281 0 0 0 0 1
@@ -544,7 +544,7 @@ You see the decayed building.
 S
 #28127
 Inside an old pen~
-   The muddy ground here is covered in wooden fragments and old junk, 
+   The muddy ground here is covered in wooden fragments and old junk,
 nothing of interest.  To the north the forest gets thicker.
 ~
 281 0 0 0 0 1
@@ -556,10 +556,10 @@ You see the yard of the building.
 S
 #28128
 An empty vestibule~
-   You find yourself standing inside a dark vestibule, where the walls 
-are covered in vast cobwebs and some strange smears.  The wind blows in 
-from the holes of the walls, almost sounding as if there were a few small 
-spirits howling their regret.  To the north is a door, blackened but still 
+   You find yourself standing inside a dark vestibule, where the walls
+are covered in vast cobwebs and some strange smears.  The wind blows in
+from the holes of the walls, almost sounding as if there were a few small
+spirits howling their regret.  To the north is a door, blackened but still
 in existence.  Rather dangerous looking stairs lead upwards.
 ~
 281 4 0 0 0 0
@@ -581,7 +581,7 @@ You see stairs leading up.
 S
 #28129
 A chaotic room~
-   The room is in chaotic order.  Parts of the upper floor have fallen 
+   The room is in chaotic order.  Parts of the upper floor have fallen
 down here, and the former furniture is now more or less buried under them.
 At the corners there lie several rottening books, bedraggled tapestries,
 and broken vessels.  Besides, the room appears partially burned.
@@ -595,8 +595,8 @@ door blackened~
 S
 #28130
 The top of the stairs~
-   You are standing at the second floor of these ruins which seem to 
-swing every time you take a move.  There is no go to the north.  Once 
+   You are standing at the second floor of these ruins which seem to
+swing every time you take a move.  There is no go to the north.  Once
 apparently so elegant passage has vanished, totally rottened, and col-
 lapsed away.
 ~
@@ -604,9 +604,9 @@ lapsed away.
 S
 #28131
 A weak trail~
-   The forest appears thicker now.  Massive trees tower around, making 
+   The forest appears thicker now.  Massive trees tower around, making
 you feel yourself tiny and pitiful compared to those old giants.  The trail
-here is quite narrow.  
+here is quite narrow.
 ~
 281 4 0 0 0 2
 D1
@@ -649,7 +649,7 @@ You see more forest.
 S
 #28133
 A weak trail~
-   You have arrived at a bend.  From here the trail turns to the north, 
+   You have arrived at a bend.  From here the trail turns to the north,
 leading through the dark green arch of the gigantic trees.  To the south
 lies a small grove.
 ~
@@ -672,8 +672,8 @@ You see more forest.
 S
 #28134
 A square of mushrooms~
-   You are standing at a small square, surrounded by tall trees.  Dozens 
-of deep brown mushrooms grow here, seemingly alluring the animals of the 
+   You are standing at a small square, surrounded by tall trees.  Dozens
+of deep brown mushrooms grow here, seemingly alluring the animals of the
 forest, for many of them appear munched.  The trail lies to the southeast.
 ~
 281 0 0 0 0 2
@@ -690,8 +690,8 @@ You see more forest.
 S
 #28135
 A weak trail~
-   You are walking on a narrow trail.  The trees are getting more 
-apart slowly, and you hear birds singing here and there.  Way farther 
+   You are walking on a narrow trail.  The trees are getting more
+apart slowly, and you hear birds singing here and there.  Way farther
 to the north raises a tremendous, grey figure, the mountainside of
 Great Aesarthwe.
 ~
@@ -714,8 +714,8 @@ You see the square.
 S
 #28136
 A weak trail~
-   The forest is clearly more lighter now, and you sense gentle sunshine 
-on your cheeks.  The trail leads north toward the mountain, and west, into 
+   The forest is clearly more lighter now, and you sense gentle sunshine
+on your cheeks.  The trail leads north toward the mountain, and west, into
 the deeper forest.
 ~
 281 0 0 0 0 2
@@ -728,7 +728,7 @@ S
 #28137
 A lighter forest~
    You are approaching the edge of the forest from where a stony mountain-
-side begins to ascend, very gentle at first.  Rippling of water can be heard 
+side begins to ascend, very gentle at first.  Rippling of water can be heard
 from nearby.
 ~
 281 0 0 0 0 2
@@ -745,7 +745,7 @@ You see the forest.
 S
 #28138
 A small brook~
-   This small brook streams somewhere from the highest summits of the 
+   This small brook streams somewhere from the highest summits of the
 mountain.  Its water is clear and very refreshive, and you can see the
 sunshine make it sparkle splendid at the upper course of the brook where
 lies a picturesque waterfall.
@@ -764,7 +764,7 @@ You see the edge of the forest.
 S
 #28139
 Walking on stony soil~
-   As you walk on, the mountainside begins to change much more steeper 
+   As you walk on, the mountainside begins to change much more steeper
 before you.  However it seems that you can advance easily enough.
 ~
 281 4 0 0 0 4
@@ -781,9 +781,9 @@ You see the mountainside.
 S
 #28140
 Climbing on the mountainside~
-   You ascend a narrow split and arrive at a small plateau that 
+   You ascend a narrow split and arrive at a small plateau that
 continues both north and west.  Dark fungus appears to grow profuse
-here.      
+here.
 ~
 281 4 0 0 0 5
 D0
@@ -810,7 +810,7 @@ S
 #28141
 Before a gigantic boulder~
    Wedged in at the ancient times, the massive boulder projects here
-before you.  It is black all over and partly of some glasslike material.  
+before you.  It is black all over and partly of some glasslike material.
 Some remnants lie under it.  The plateau extends to the east.
 ~
 281 0 0 0 0 5
@@ -821,13 +821,13 @@ You see the plateau.
 0 -1 28140
 E
 remnants~
-   You see what mainly are small bones.  
+   You see what mainly are small bones.
 ~
 S
 #28142
 At the midst of some edges~
-   You are walking between some edges.  Since most of them seem to 
-be quite sharp, it is wise to be careful, this is not the day to get 
+   You are walking between some edges.  Since most of them seem to
+be quite sharp, it is wise to be careful, this is not the day to get
 impaled.  To the north is what appears a brink.  Also, the mountain-
 side above remains climbable.
 ~
@@ -845,9 +845,9 @@ You see more mountainside.
 S
 #28143
 The brink of a gorge~
-   You are standing on the brink of a deep, deep gorge.  Its walls are 
+   You are standing on the brink of a deep, deep gorge.  Its walls are
 very smooth and rush straight down, where nothing but a jet-black empti-
-ness can be seen.  
+ness can be seen.
 ~
 281 0 0 0 0 5
 D2
@@ -858,10 +858,10 @@ You see some edges.
 S
 #28144
 Higher up~
-   Conducted by a gentle wind you climb the mountainside and reach 
-some space to rest on.  Taking a look at the sky you see a small eagle 
-flying round the summit and vanishing into the canyons.  You can still 
-continue to the north but it seems difficult to ascend the hillside any 
+   Conducted by a gentle wind you climb the mountainside and reach
+some space to rest on.  Taking a look at the sky you see a small eagle
+flying round the summit and vanishing into the canyons.  You can still
+continue to the north but it seems difficult to ascend the hillside any
 higher...
 ~
 281 0 0 0 0 5
@@ -878,8 +878,8 @@ You see more mountainside.
 S
 #28145
 On the mountainside~
-   Climbing changes more and more difficult as you struggle on.  
-It would take a long time to find a reasonable way to climb forward.  
+   Climbing changes more and more difficult as you struggle on.
+It would take a long time to find a reasonable way to climb forward.
 And if one existed it would still be very arduous at all events.
 ~
 281 0 0 0 0 5
@@ -892,8 +892,8 @@ S
 #28146
 An Underground Dwelling~
    The space is a small, round chamber, lit by an extraordinary chan-
-delier made of the rhizome of a tree standing above there.  All around 
-lie small pieces of furniture, most of which you probably could not use, 
+delier made of the rhizome of a tree standing above there.  All around
+lie small pieces of furniture, most of which you probably could not use,
 for they are rather tiny.  However, they are skillfully constructed,
 revealing both the artistic and practical abilities of whoever was the
 maker.  A thick, multicolorous carpet covers the floor.
@@ -908,9 +908,9 @@ door wooden~
 S
 #28147
 Under a brown dome~
-   You are standing inside a brownish chamber, under some massive 
-roots, from which various fibres with soil still hang down.  There 
-are small footprints on the ground.  While an improvised ladder leads 
+   You are standing inside a brownish chamber, under some massive
+roots, from which various fibres with soil still hang down.  There
+are small footprints on the ground.  While an improvised ladder leads
 up, there is a small, wooden door the east.
 ~
 281 5 0 0 0 1
@@ -927,8 +927,8 @@ You see the hollow tree.
 S
 #28148
 Inside the hollow trunk~
-   As you crawl through a small hole you notice that the huge tree is 
-completely hollow, and enables you to move about.  Some kind of ladder 
+   As you crawl through a small hole you notice that the huge tree is
+completely hollow, and enables you to move about.  Some kind of ladder
 leads down from here.
 ~
 281 4 0 0 0 1
@@ -945,9 +945,9 @@ You see a dark chamber..
 S
 #28149
 Before an ancient poplar~
-   You are standing at a grove.  Just before you is a large poplar, which 
-foliage spreads in every direction like a gigantic green ball.  Its trunk 
-is gnarled and carries the scars of hundreds of years.  A small hole appears 
+   You are standing at a grove.  Just before you is a large poplar, which
+foliage spreads in every direction like a gigantic green ball.  Its trunk
+is gnarled and carries the scars of hundreds of years.  A small hole appears
 to penetrate into the pith of the tree.
 ~
 281 0 0 0 0 1
@@ -975,7 +975,7 @@ S
 #28150
 On the hill~
    You are standing on a low and barren hill.  There are several foot-
-prints on it.  There is a small grove to the north. 
+prints on it.  There is a small grove to the north.
 ~
 281 0 0 0 0 2
 D0
@@ -986,10 +986,10 @@ You see the grove.
 S
 #28151
 A small grove~
-   You are standing at a peaceful grove, surrounded by those 
-evergrowing trees and various flowers which all look so beautiful, 
-but also somewhat sad.  
-   There is a large ant hill, and as a contrast to the grove it 
+   You are standing at a peaceful grove, surrounded by those
+evergrowing trees and various flowers which all look so beautiful,
+but also somewhat sad.
+   There is a large ant hill, and as a contrast to the grove it
 nearly swarms life.  A faint track leads to the north, and to the
 west there lies a ditch.
 ~
@@ -1012,8 +1012,8 @@ You see a small ditch.
 S
 #28152
 A grassy ditch~
-   You are standing on a grassy bottom of the ditch, seemingly trampled.  
-Low bushes grow around.  The ditch leads west, while there is a grove to 
+   You are standing on a grassy bottom of the ditch, seemingly trampled.
+Low bushes grow around.  The ditch leads west, while there is a grove to
 the east.
 ~
 281 4 0 0 0 3
@@ -1030,8 +1030,8 @@ You see the ditch.
 S
 #28153
 Walking in the ditch~
-   You walk on the bottom of the ditch.  As the bushes vanish in the 
-south you can see a grassy hillside, on where a narrow path descends.  
+   You walk on the bottom of the ditch.  As the bushes vanish in the
+south you can see a grassy hillside, on where a narrow path descends.
 The ditch leads west and east.
 ~
 281 0 0 0 0 3
@@ -1053,7 +1053,7 @@ You see the ditch.
 S
 #28154
 A grassy ditch~
-   You are standing on the bottom of a small and grassy ditch.  There 
+   You are standing on the bottom of a small and grassy ditch.  There
 is some thicket growing around.  The ditch leads to the east.
 ~
 281 0 0 0 0 3
@@ -1070,8 +1070,8 @@ You see the ditch.
 S
 #28155
 Through some bushes~
-   You are struggling at a thicket, disturbed by several multicolorous 
-spiders and gadflies.  Most of these bushes are unusually tough, lashing 
+   You are struggling at a thicket, disturbed by several multicolorous
+spiders and gadflies.  Most of these bushes are unusually tough, lashing
 your face with an unpleasant force.  There is a small ditch to the south.
 ~
 281 0 0 0 0 3
@@ -1088,7 +1088,7 @@ You see the forest edge nearby.
 S
 #28156
 The brink of the grassy hillside~
-   You are standing on the brink of the grassy hillside that begins 
+   You are standing on the brink of the grassy hillside that begins
 to descend gently.  Below there lies what appears very dense forest.
 To the north is a ditch.
 ~
@@ -1106,8 +1106,8 @@ You see the hillside.
 S
 #28157
 Descending the hillside~
-   You start climbing down a small worn-out path on the hillside.  Despite 
-the fresh footprints all around, the way doesn't appear very busy.   
+   You start climbing down a small worn-out path on the hillside.  Despite
+the fresh footprints all around, the way doesn't appear very busy.
 ~
 281 0 0 0 0 4
 D4
@@ -1123,8 +1123,8 @@ You see the bottom of the hillside.
 S
 #28158
 On a grey trunk~
-   Reaching the foot of the hillside you notice a large greyish trunk, 
-penetrating into the forest as if it were a straight bridge.  You begin 
+   Reaching the foot of the hillside you notice a large greyish trunk,
+penetrating into the forest as if it were a straight bridge.  You begin
 to walk on it.
 ~
 281 0 0 0 0 1
@@ -1141,10 +1141,10 @@ You see the hillside.
 S
 #28159
 Walking on the trunk~
-   You move forward, keeping your balance quite easily since the trunk 
-is so broad.  It seems that many smaller trees remained under when this 
+   You move forward, keeping your balance quite easily since the trunk
+is so broad.  It seems that many smaller trees remained under when this
 giant overturned years ago.
-   Now, there lies the rhizome.  The roots appear to give passage to 
+   Now, there lies the rhizome.  The roots appear to give passage to
 the south.
 ~
 281 0 0 0 0 1
@@ -1161,10 +1161,10 @@ You see the trunk.
 S
 #28160
 A narrow path~
-   You step on a narrow path, engraved deep in the ground.  Several 
-stones make your walking quite difficult, and you are worried about 
-your feet.  The foliages form a green and inpenetrable "wall" around 
-the path which seems to descend to the east. 
+   You step on a narrow path, engraved deep in the ground.  Several
+stones make your walking quite difficult, and you are worried about
+your feet.  The foliages form a green and inpenetrable "wall" around
+the path which seems to descend to the east.
 ~
 281 0 0 0 0 2
 D0
@@ -1180,7 +1180,7 @@ You see the path leading under some roots.
 S
 #28161
 Under some massive roots~
-   Here the path goes very deep in the ground, almost as if it were 
+   Here the path goes very deep in the ground, almost as if it were
 an ancient trench.  Tremendous, gnarled roots from some brown and black
 arches above.  The path leads both to the west and east.
 ~
@@ -1198,8 +1198,8 @@ You see the path.
 S
 #28162
 A small meadow~
-   You arrive at a small meadow that grows tall yellowish hay, swaying 
-slowly in the wind.  The path leads towards the north, where you make out 
+   You arrive at a small meadow that grows tall yellowish hay, swaying
+slowly in the wind.  The path leads towards the north, where you make out
 some high osiers.
 ~
 281 0 0 0 0 2
@@ -1216,8 +1216,8 @@ You see the path leading under the roots.
 S
 #28163
 On a trail through high osiers~
-   Despite the thickness of these bushes you still detect the path and 
-walk on it easily.  Now your trip begins to wind downwards, from where you 
+   Despite the thickness of these bushes you still detect the path and
+walk on it easily.  Now your trip begins to wind downwards, from where you
 can hear some voices.
 ~
 281 0 0 0 0 3
@@ -1234,12 +1234,12 @@ You see a crater.
 S
 #28164
 An ancient crater~
-   You find yourself standing at a vast and deep pit, obviously an 
-ancient crater with a diameter of 30 metres, at least.  The bottom is 
-covered in brownish grass and there are several rough boulders around, 
-most of them black.  Also you notice that the crater is full of small 
-folk, everyone directing towards a structure of some kind further away 
-to the east. 
+   You find yourself standing at a vast and deep pit, obviously an
+ancient crater with a diameter of 30 metres, at least.  The bottom is
+covered in brownish grass and there are several rough boulders around,
+most of them black.  Also you notice that the crater is full of small
+folk, everyone directing towards a structure of some kind further away
+to the east.
 ~
 281 4 0 0 0 2
 D1
@@ -1256,10 +1256,10 @@ S
 #28165
 At the crater~
    With the brownies you start approaching the structure as well.
-It looks like a wooden dais, on where a couple of beings are sitting, 
-deep in their discussion.  Behind them there stands what could be a 
-totem or a statue of some kind.  Yet you do not know what this all is 
-about, but no doubt this place must be of great importance and sanctity 
+It looks like a wooden dais, on where a couple of beings are sitting,
+deep in their discussion.  Behind them there stands what could be a
+totem or a statue of some kind.  Yet you do not know what this all is
+about, but no doubt this place must be of great importance and sanctity
 for these people.
 ~
 281 0 0 0 0 2
@@ -1281,7 +1281,7 @@ You see the crater.
 S
 #28166
 Before the wooden steps~
-   Just before you lie firm, wooden steps, ascending onto the dias.  
+   Just before you lie firm, wooden steps, ascending onto the dias.
 Simple, but elegant symbols have been encarved on them.
 ~
 281 0 0 0 0 2
@@ -1298,7 +1298,7 @@ You see a wooden plateau.
 S
 #28167
 Before the wooden steps~
-   Just before you lie firm, wooden steps, ascending onto the dias.  
+   Just before you lie firm, wooden steps, ascending onto the dias.
 Simple, but elegant symbols have been encarved on them.
 ~
 281 0 0 0 0 2
@@ -1315,10 +1315,10 @@ You see a wooden plateau.
 S
 #28168
 The Ceremony Plateau~
-   The dais has been grinded very smooth.  Four green pictures cover 
+   The dais has been grinded very smooth.  Four green pictures cover
 its surface, representing fine trees.  Each picture points to the sepa-
-rate cardinal direction.  In the middle of the dais stands a tall, wooden 
-statue, resembling an impressive woman, clad in clothes made of large 
+rate cardinal direction.  In the middle of the dais stands a tall, wooden
+statue, resembling an impressive woman, clad in clothes made of large
 leaves and garments.
    The brownies assemble to the foot of the dais and you feel the
 atmosphere running high.
@@ -1340,7 +1340,7 @@ statue woman~
 presents has a tall lenght of straight hair almost reaching her legs.  Worn on
 her head is a crown made of the most beautiful flowers, barely found in every
 forest.  Couple of small birds are sitting on her shoulders, seemingly listening
-earnestly.  This must be the Queen of the forest herself.  
+earnestly.  This must be the Queen of the forest herself.
 ~
 S
 #28169

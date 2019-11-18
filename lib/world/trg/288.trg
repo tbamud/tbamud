@@ -30,7 +30,7 @@ eval new_current_hp %current_hp% - %dmg%
 eval dmgpc (%dmg% * 100) / %current_hp%
 if %dmgpc% == 0
   set vp misses
-elseif %dmgpc% <= 4 
+elseif %dmgpc% <= 4
   set vp scratches
 elseif %dmgpc% <= 8
   set vp grazes
@@ -119,7 +119,7 @@ eval new_current_hp %current_hp% - %dmg%
 eval dmgpc (%dmg% * 100) / %current_hp%
 if %dmgpc% == 0
   set vp misses
-elseif %dmgpc% <= 4 
+elseif %dmgpc% <= 4
   set vp scratches
 elseif %dmgpc% <= 8
   set vp grazes
@@ -185,7 +185,7 @@ eval dmgpc (%dmg% * 100) / %current_hp%
 set spellname fire breath
 if %dmgpc% == 0
   set vp misses
-elseif %dmgpc% <= 4 
+elseif %dmgpc% <= 4
   set vp scratches
 elseif %dmgpc% <= 8
   set vp grazes
@@ -237,7 +237,7 @@ eval dmgpc (%dmg% * 100) / %current_hp%
 set spellname acid breath
 if %dmgpc% == 0
   set vp misses
-elseif %dmgpc% <= 4 
+elseif %dmgpc% <= 4
   set vp scratches
 elseif %dmgpc% <= 8
   set vp grazes

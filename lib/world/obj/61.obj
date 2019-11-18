@@ -29,12 +29,12 @@ E
 tree~
    This enormous tree must be a thousand years old.  Its rough bark looks grey
 and pale and is decorated with scratches and clawmarks.  On its west side is a
-small opening just above ground level.  
+small opening just above ground level.
 ~
 E
 opening~
    The opening is far too narrow for you to squeeze through but it looks as if
-the tree is hollow.  
+the tree is hollow.
 ~
 #6103
 branch grey long~
@@ -47,7 +47,7 @@ A long, grey branch rests heavily on the ground.~
 E
 branch grey long~
    It is quite heavy and looks as if it has been dropped from great height.  It
-is long dead and very dry.  Could probably be lighted quite easily.  
+is long dead and very dry.  Could probably be lighted quite easily.
 ~
 #6104
 branch grey long~
@@ -60,9 +60,9 @@ A long, grey branch rests heavily on the ground.~
 E
 branch grey long~
    It is very heavy and looks as if it has been dropped from great height.  It
-is long and straight and the wood is very hard, still being full of sap.  
+is long and straight and the wood is very hard, still being full of sap.
 Although it does not fit very well in your hand, it could be used as a clumsy
-but very heavy weapon.  
+but very heavy weapon.
 ~
 A
 18 -2
@@ -77,7 +77,7 @@ A long, grey branch rests heavily on the ground.~
 E
 branch grey long~
    It is very heavy and looks as if it has been dropped from great height.  It
-is somewhat twisted and the hard wood is still full of sap.  
+is somewhat twisted and the hard wood is still full of sap.
 ~
 #6106
 toadstool~
@@ -91,7 +91,7 @@ E
 toadstool~
    It is a large, brown boletus that must weigh nearly five pounds.  The top
 surface is covered in a thin layer of transparent slime that emits a weak, musty
-smell.  Not the most delicious thing you have seen.  
+smell.  Not the most delicious thing you have seen.
 ~
 #6107
 toadstool~
@@ -106,7 +106,7 @@ toadstool~
    It is a large, brown boletus that must weigh nearly five pounds.  It has
 small white spots and the top surface is covered in a thin layer of transparent
 slime that emits a weak, musty smell.  Not the most delicious thing you have
-seen.  
+seen.
 ~
 #6108
 coins gold~
@@ -126,7 +126,7 @@ A blue potion has been left here.~
 2 680 50 0 0
 E
 potion blue~
-   It has a nice deep blue color and a smell like peppermint.  
+   It has a nice deep blue color and a smell like peppermint.
 ~
 #6110
 potion yellow musky~
@@ -138,7 +138,7 @@ A yellow potion has been left here.~
 2 1000 200 0 0
 E
 potion yellow musky~
-   It has a deep yellow color and and a strong spicy smell.  
+   It has a deep yellow color and and a strong spicy smell.
 ~
 #6111
 shield round large~
@@ -150,7 +150,7 @@ A large round shield has been left here.~
 15 300 800 0 0
 E
 shield round large~
-   It is made from hard wood that has been reinforced with heavy iron bands.  
+   It is made from hard wood that has been reinforced with heavy iron bands.
 ~
 #6112
 crown iron~
@@ -162,7 +162,7 @@ An iron crown rests on the ground.~
 20 700 50 0 0
 E
 crown iron~
-   It is a heavy human-sized crown made from solid iron.  
+   It is a heavy human-sized crown made from solid iron.
 ~
 #6113
 sceptre iron~
@@ -174,7 +174,7 @@ An iron sceptre lies on the ground.~
 10 500 70 0 0
 E
 sceptre iron~
-   It is a heavy sceptre made from solid iron.  
+   It is a heavy sceptre made from solid iron.
 ~
 #6114
 ring iron~
@@ -187,7 +187,7 @@ An iron ring has been left here.~
 E
 ring iron~
    It is a quite heavy human-sized ring made from solid iron.  It lacks
-decorations of any kind.  
+decorations of any kind.
 ~
 A
 17 -4
@@ -216,7 +216,7 @@ shirt scale~
    It is a sleeveless shirt made from big, black dragon scales joined with
 silver threads.  Its inside has been made from the soft skin on the dragon's
 belly, making it very comfortable to wear.  The word 'Isha' has been engraved on
-one of the scales.  
+one of the scales.
 ~
 #6117
 skirt scale~
@@ -231,7 +231,7 @@ skirt scale~
    It is a short skirt made from big, black dragon scales joined with silver
 threads.  Its inside has been made from the soft skin on the dragon's belly,
 making it very comfortable to wear.  The word 'Isha' has been engraved on one of
-the scales.  
+the scales.
 ~
 #6118
 cloak black~
@@ -244,7 +244,7 @@ A large, hooded cloak, as dark as the night, has been left here.~
 E
 cloak black~
    It is a heavy, black cloak with a large hood.  The word 'Isha' is written
-inside it with a silver thread.  
+inside it with a silver thread.
 ~
 A
 17 -6
@@ -260,7 +260,7 @@ A broad silver belt has been left here.~
 4 500 35 0 0
 E
 belt silver~
-   It is a broad belt made from tiny silver rings woven together.  
+   It is a broad belt made from tiny silver rings woven together.
 ~
 #6120
 sword long slender~
@@ -273,7 +273,7 @@ A long, slender sword lies on the ground.~
 E
 sword long slender~
    It is a long, slender sword that seems to be made from silver.  The word
-'Isha' has been engraved on the hilt.  
+'Isha' has been engraved on the hilt.
 ~
 A
 18 4

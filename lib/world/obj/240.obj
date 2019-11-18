@@ -21,7 +21,7 @@ Someone left a bright white mantle here.~
 3 3 0 0 0
 E
 mantle~
-   A very short cloak, often covering just the shoulders.  
+   A very short cloak, often covering just the shoulders.
 ~
 #24002
 axe~
@@ -33,7 +33,7 @@ A large battle axe is stuck into the ground.~
 16 800 120 0 0
 E
 axe~
-   A single-bladed axe designed primarily for combat.  
+   A single-bladed axe designed primarily for combat.
 ~
 #24003
 axe~
@@ -45,7 +45,7 @@ A massive double headed axe is half buried in the ground.~
 18 850 135 0 0
 E
 axe~
-   A war axe with two opposing blades.  
+   A war axe with two opposing blades.
 ~
 #24004
 lochaber~
@@ -58,7 +58,7 @@ An expertly crafted lochaber is hidden in the dirt.~
 E
 axe~
    As much a polearm as an axe, it is a single edged axe head attached to a 6
-foot long haft.  
+foot long haft.
 ~
 #24005
 axe~
@@ -70,7 +70,7 @@ A large axe was left here.~
 8 300 0 0 0
 E
 axe~
-   A single wide-edged axe.  
+   A single wide-edged axe.
 ~
 #24006
 bardiche~
@@ -83,7 +83,7 @@ A bardiche was negligently left here.~
 E
 bardiche~
    A type of pole-axe, typically a long, convex blade attached to the pole at
-two points.  
+two points.
 ~
 #24007
 halberd~
@@ -95,7 +95,7 @@ A halberd is rusting in the damp air.~
 8 600 60 0 0
 E
 halberd~
-   A large, angled axe blade atop a pole, set with a back spike.  
+   A large, angled axe blade atop a pole, set with a back spike.
 ~
 #24008
 hatchet~
@@ -107,7 +107,7 @@ A small hatchet has been abandoned by its owner.~
 3 150 15 0 0
 E
 hatchet~
-   A small, one handed axe, designed for labor more than combat.  
+   A small, one handed axe, designed for labor more than combat.
 ~
 #24009
 polearm~
@@ -121,7 +121,7 @@ E
 polearm~
    This horrifying weapons main feeature is that a large hook is the main body
 of the weapon, with a convex axe blade on the end with sharpened edges and
-spikes.  
+spikes.
 ~
 #24010
 loincloth~
@@ -134,7 +134,7 @@ A leather loincloth is laying on the ground.~
 E
 loincloth~
    This is the only clothing most minotaurs wear.  It looks very uncomfortable
-and you would rather not be caught wearing it.  
+and you would rather not be caught wearing it.
 ~
 #24011
 bear meat~
@@ -147,7 +147,7 @@ A large side of meat is lying here attracting flies.~
 E
 meat~
    This large hunk of meat must have come from a big animal.  You guess it's
-probably from the bears outside the city of Dun Maura.  
+probably from the bears outside the city of Dun Maura.
 ~
 #24012
 elk meat~
@@ -160,7 +160,7 @@ A side of meat was left here.~
 E
 meat~
    This large hunk of meat must have come from a big animal.  You guess it's
-probably from the elks outside the city of Dun Maura.  
+probably from the elks outside the city of Dun Maura.
 ~
 #24013
 salmon fish~
@@ -173,7 +173,7 @@ A large fish stinks here.~
 E
 fish~
    A large fish, looks like salmon, was left here.  It still looks edible, at
-least if you like fish.  
+least if you like fish.
 ~
 #24014
 loincloth fur~
@@ -186,7 +186,7 @@ A loincloth made of soft fur has your name on it.~
 E
 loincloth~
    This attractive little getup is very soft.  You wouldn't mind wearing this at
-all.  Who knows, maybe you'll attract some attention.  
+all.  Who knows, maybe you'll attract some attention.
 ~
 #24015
 minotaur horns~
@@ -199,7 +199,7 @@ A set of minotaur horns was left here.~
 E
 minotaur horns~
    Whoever, or whatever killed the minotaur to get these horns must be one tough
-SOB.  These horns are prized in some areas and will fetch a good price.  
+SOB.  These horns are prized in some areas and will fetch a good price.
 ~
 #24016
 gold nosering ring~
@@ -213,7 +213,7 @@ E
 nosering~
    This prized item among the minotaurs looks almost big enough to fit around
 your wrist.  The minotaurs use the nosering as a symbol of office.  Only an
-experienced guildsman is allowed to wear them.  
+experienced guildsman is allowed to wear them.
 ~
 A
 19 2
@@ -228,7 +228,7 @@ A large oak quarterstaff is perfectly straight and smooth without imperfection.~
 E
 oak quarterstaff~
    A long staff a few inches thick.  It is made of oak and is in perfect
-condition.  It is the best staff you have ever seen.  
+condition.  It is the best staff you have ever seen.
 ~
 A
 19 1
@@ -244,7 +244,7 @@ E
 brass knuckles~
    This deadly looking weapon is very good during fist fights.  That or it can
 be worn when wielding a weapon to prevent a foe from raking your fingers and
-trying to make you drop your own weapon.  
+trying to make you drop your own weapon.
 ~
 #24019
 hooded lantern~
@@ -258,7 +258,7 @@ E
 lantern hooded~
    This is a rugged lantern used on long treks when searching caves or
 underground tunnels.  It is made to last a long time, but the price is
-outrageous.  
+outrageous.
 ~
 #24020
 belt pouch~
@@ -284,7 +284,7 @@ A fancy cape was left here.~
 E
 cape~
    An fancy unhooded cloak that serves no real purpose except look silly.  You
-wonder how anyone could wear one of these and not get all tangled up in it.  
+wonder how anyone could wear one of these and not get all tangled up in it.
 ~
 A
 2 1
@@ -300,7 +300,7 @@ E
 sandals~
    These sandals won't even fit on your feet.  Some rich minotaurs of Dun Maura
 are supposed to wear these, they are considered a type of high status if you
-have a pair.  To you they are just junk.  
+have a pair.  To you they are just junk.
 ~
 #24023
 scourge~
@@ -312,7 +312,7 @@ A wicked looking whip is coiled up neatly in a circle.~
 8 500 0 0 0
 E
 scourge~
-   A whip with sharp metal attached to the end.  
+   A whip with sharp metal attached to the end.
 ~
 A
 19 2
@@ -329,7 +329,7 @@ A large bronze sceptre sparkles brightly.~
 E
 spectre~
    This spectre gives off a strange light from an unkown source.  It does not
-flicker like a torch or lantern but radiates constantly.  
+flicker like a torch or lantern but radiates constantly.
 ~
 #24025
 purse~
@@ -342,7 +342,7 @@ A fancy fur purse is hidden in the shadows.~
 E
 purse~
    This nice looking purse is very pretty.  You wonder what poor woman dropped
-it.  
+it.
 ~
 #24026
 gold band~
@@ -356,7 +356,7 @@ E
 gold ring~
    This ring signifies a victory in the arena of Dun Maura, city of minotaurs.
 These are considered precious.  Minotaurs wear these on their horns after a
-victory.  Anyone falsely wearing this is deserving of a long painful death.  
+victory.  Anyone falsely wearing this is deserving of a long painful death.
 ~
 A
 19 2

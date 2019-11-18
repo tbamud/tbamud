@@ -4,7 +4,7 @@ Samantha, the clerk~
 Samantha smiles as you enter her shop.
 ~
    Samantha is a beautiful young elf, who seems to be happy with what she does.
-She is very pleased to see you.    
+She is very pleased to see you.
 ~
 188442 0 0 0 65616 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -16,7 +16,7 @@ newbie training mob~
 a newbie training mob~
 The newbie training mob stands here mocking you.
 ~
-   The newbie training mob looks very scrawny and sickly.    
+   The newbie training mob looks very scrawny and sickly.
 ~
 10 0 0 0 80 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -29,7 +29,7 @@ the dummy mob~
 A newbie dummy mob is unsure what it is doing.
 ~
    This mob looks like a punching bag, that would bounce right back up, if it
-got knocked to the ground.    
+got knocked to the ground.
 ~
 26 0 0 0 80 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -43,7 +43,7 @@ A Kobold is snearing at you.
 ~
    You see a small rat man, which stands about 3 feet tall.  In his hand is a
 small dagger which is jagged and chipped.  The clothes on this rat man are torn
-and a bit oversized.    
+and a bit oversized.
 ~
 72 0 0 0 0 0 0 0 1 E
 1 20 9 0d0+10 1d2+0
@@ -57,7 +57,7 @@ a badger~
 A badger is here hissing.
 ~
    You see a large badger with red eyes staring back at you.  The badger seems
-to be unusally strong.    
+to be unusally strong.
 ~
 72 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
@@ -71,7 +71,7 @@ a brownie~
 A brownie is here trying to hide.
 ~
    You see a tiny humanoid.  The brownie is a little larger than a fairy, and
-does not have wings.  They are skilled with ranged items.    
+does not have wings.  They are skilled with ranged items.
 ~
 72 0 0 0 524372 0 0 0 6 E
 2 20 8 0d0+20 1d2+0
@@ -85,7 +85,7 @@ a bulette~
 You see a bulette snooping around
 ~
    You see a very large insect type creature that looks like an overgrown
-beetle.  It is armored with a very tough shell.    
+beetle.  It is armored with a very tough shell.
 ~
 72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -98,8 +98,8 @@ Osquip~
 a osquip~
 An osquip snaps at you.
 ~
-   You see a large rodent with 6 legs and appears to be of a beaver family.  
-It also looks like a large Rat.  The Osquip is the size of a small dog.    
+   You see a large rodent with 6 legs and appears to be of a beaver family.
+It also looks like a large Rat.  The Osquip is the size of a small dog.
 ~
 72 0 0 0 16 0 0 0 -8 E
 3 19 8 0d0+30 1d2+0
@@ -113,7 +113,7 @@ a urd~
 An urd is flying overhead
 ~
    An Urd is of the Kobold family, except that the Urd has wings and can fly.
-Urds are three feet tall and have short ivory horns and red rimmed eyes.    
+Urds are three feet tall and have short ivory horns and red rimmed eyes.
 ~
 72 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -127,7 +127,7 @@ a water weird~
 A water weird is angered to see you.
 ~
    This water weird is still young.  It seems to be made out of water, and seems
-to be of a serpent type.  It's body blends into the water.    
+to be of a serpent type.  It's body blends into the water.
 ~
 10 0 0 0 80 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -141,7 +141,7 @@ the armourer~
 The Armourer is watching you eagerly.
 ~
    The Armourer is the size of a hobbit.  He looks well equipped and seems to
-have been in a battle or two.  He has a kind looking face.    
+have been in a battle or two.  He has a kind looking face.
 ~
 188426 0 0 0 80 0 0 0 -250 E
 10 17 4 2d2+100 1d2+1
@@ -154,7 +154,7 @@ a brownie~
 A brownie is here trying to hide.
 ~
    You see a tiny humanoid.  The brownie is a little larger than a fairy, and
-does not have wings.  They are skilled with ranged items.    
+does not have wings.  They are skilled with ranged items.
 ~
 200 0 0 0 84 0 0 0 0 E
 2 20 8 0d0+20 1d2+0

@@ -8,9 +8,9 @@ A dragontooth necklace is here.~
 1 480 0 0 0
 E
 dragontooth necklace~
-   The teeth from several dragons have been strung up on a rawhide necklace.  
+   The teeth from several dragons have been strung up on a rawhide necklace.
 This isn't worth much value, but its been known to bring travelers like
-yourself good luck.    
+yourself good luck.
 ~
 A
 2 2
@@ -27,57 +27,57 @@ A pile of sticks is lying on the ground.~
 E
 pile sticks~
    This is just a simple pile of sticks that was left here, most likely from a
-recent traveler.    
+recent traveler.
 ~
 #23302
 map~
 a map of the dragon plains~
 A map with the words "Dragon Plains" written on the top.~
-    O                      
-    |                      
-O-O-O-O-O-O-O-O-O-O-O-O    
-  |   |               |    
-  O   O               O    
-      |               |    
-      O-O             O    
-                      |    
-                  O-O-O    
-                  |        
-                O-O        
-                |          
-        O-O-O   O          
-        |   |   |          
-        O   O-O O          
-        |     | |          
-  O-O-O-O     O-O          
-  |                        
-  O                        
-  |                        
-  O                        
-  |                        
-  O                        
-  |                        
-  O-O             O-O-O    
-    |             |   |    
-    O             O   O    
-    |             |   |    
-    O-O-O-O-O-O-O-O   O    
-              |       |    
-              O       O    
-              |       |    
-    O-O-O-O-O-O       O    
-    |                 |    
-    O             O-O-O    
-    |             |        
-    O-O-O-O-O-O---O        
-            |              
+    O
+    |
+O-O-O-O-O-O-O-O-O-O-O-O
+  |   |               |
+  O   O               O
+      |               |
+      O-O             O
+                      |
+                  O-O-O
+                  |
+                O-O
+                |
+        O-O-O   O
+        |   |   |
+        O   O-O O
+        |     | |
+  O-O-O-O     O-O
+  |
+  O
+  |
+  O
+  |
+  O
+  |
+  O-O             O-O-O
+    |             |   |
+    O             O   O
+    |             |   |
+    O-O-O-O-O-O-O-O   O
+              |       |
+              O       O
+              |       |
+    O-O-O-O-O-O       O
+    |                 |
+    O             O-O-O
+    |             |
+    O-O-O-O-O-O---O
+            |
             O       O-O-O-O
             |       |     |
       O-O-O-O O     O     O
       |       |     |     |
       O-O-O---O-O   O     O
-                |   |      
-                O-O-O      
+                |   |
+                O-O-O
 
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
@@ -93,8 +93,8 @@ A colorful bird feather has dropped on the ground before you.~
 1 50 0 0 0
 E
 bird feather~
-   The feather is bright with colors ranging from blue to orange to green.  
-You wonder what kind of a bird it could have come from.    
+   The feather is bright with colors ranging from blue to orange to green.
+You wonder what kind of a bird it could have come from.
 ~
 #23306
 weed tumbleweed~
@@ -107,7 +107,7 @@ A large tumbleweed is blowing around in the wind.~
 E
 tumbleweed weed~
    The tumbleweed consists of many dead twigs bunched together.  It's
-relativley weightless and could easily be crushed.    
+relativley weightless and could easily be crushed.
 ~
 #23312
 skull~
@@ -120,7 +120,7 @@ A fragile looking skull is sitting on the ground.~
 E
 skull~
    The skull looks up at you with its empty eyes.  The skull is covered with
-blood stains, making you feel sick to your stomach.    
+blood stains, making you feel sick to your stomach.
 ~
 #23316
 large rock~
@@ -132,7 +132,7 @@ A large rock is sitting here.~
 0 0 0 0 0
 E
 large rock~
-   The rock is rather plain.  You notice a few small chips on the surface.    
+   The rock is rather plain.  You notice a few small chips on the surface.
 ~
 #23320
 pile dust~
@@ -144,7 +144,7 @@ There is a pile of dust at your feet.~
 0 0 0 0 0
 E
 Pile dust~
-   This is just a simple pile of dust.  There is nothing special about it.    
+   This is just a simple pile of dust.  There is nothing special about it.
 ~
 #23321
 broken lantern~
@@ -157,7 +157,7 @@ A broken lantern has been left here.~
 E
 broken lantern~
    The lantern appears to be out of gas.  The glass top has been shattered,
-leaving shards of glass around the floor.    
+leaving shards of glass around the floor.
 ~
 #23324
 shirt~
@@ -170,7 +170,7 @@ A torn shirt has been left here.~
 E
 torn shirt~
    The shirt has almost been ripped to shreads.  It might be possible to still
-wear it, but it wouldn't give you much warmth or protection.    
+wear it, but it wouldn't give you much warmth or protection.
 ~
 #23329
 ring~
@@ -184,7 +184,7 @@ E
 onyx ring~
    The beautiful ring sparkles in the light of the day.  The ring holds no
 power, but could be worth some value.  Although, you may want to hold onto it.
-You may never find another gem like it.    
+You may never find another gem like it.
 ~
 #23331
 stone~
@@ -197,7 +197,7 @@ A shimmering glass stone is here.~
 E
 glass stone~
    As you look at the beautiful rock, you see a slight shade of blue coming
-from within it.  It sparkles in the light, making you feel warmer.    
+from within it.  It sparkles in the light, making you feel warmer.
 ~
 #23333
 candle~
@@ -210,7 +210,7 @@ A small candle is lying on the floor in front of you.~
 E
 candle~
    As you look at the candle, you notice there isn't much left of it.  It could
-be lit and used as light, but probably wouldn't stay lit for very long.    
+be lit and used as light, but probably wouldn't stay lit for very long.
 ~
 #23335
 water canteen water~
@@ -223,7 +223,7 @@ A canteen is here.~
 E
 canteen~
    The canteen is rather simple looking.  The outside is made out of cat skin,
-giving it an odd smell.  But hey, it works!    
+giving it an odd smell.  But hey, it works!
 ~
 #23336
 rope~
@@ -236,7 +236,7 @@ A coil of rope is here.~
 E
 coil rope~
    There is 50' of rope here which could be used for climbing.  The rope
-appears to be in good shape.    
+appears to be in good shape.
 ~
 #23337
 burnt out torch~
@@ -249,7 +249,7 @@ A burnt out torch has been left here.~
 E
 burnt out torch~
    The torch is in reasonably good shape.  You might still be able to get some
-light from it, but don't expect it to last long.    
+light from it, but don't expect it to last long.
 ~
 #23340
 red dagger~
@@ -263,7 +263,7 @@ E
 red dagger~
    This weapon is rather extravagant looking.  The handle is made from ivory.
 You see swirls of red marble throughout it.  The blade shimmers in the light.
-  
+
 ~
 A
 1 2
@@ -280,7 +280,7 @@ A torch is here.~
 E
 torch~
    The torch is simple looking.  There doesnt appear to be anything special
-about it.    
+about it.
 ~
 #23342
 mace~
@@ -293,7 +293,7 @@ A mace is lying on the ground.~
 E
 mace~
    The weapon is quite large in size.  You notice several large spikes coming
-out from the weapon.  It could easily tear someone apart.    
+out from the weapon.  It could easily tear someone apart.
 ~
 #23345
 dirk~
@@ -306,7 +306,7 @@ A small dirk has been left here.~
 E
 dirk~
    As you look at the dirk, you notice how small it is.  However, it is quite
-sharp.  Be careful not to cut yourself.    
+sharp.  Be careful not to cut yourself.
 ~
 #23356
 dragonmail gloves~
@@ -319,7 +319,7 @@ A pair of dragonmail gloves are here.~
 E
 dragonmail gloves~
    These fine gloves were hand made from the scales of a dragon.  They look
-like they would provide excellent protection.    
+like they would provide excellent protection.
 ~
 #23362
 toy top~
@@ -332,7 +332,7 @@ A toy top is here.~
 E
 toy top~
    This is just a simple toy top from a child.  You could amuse yourself by
-playing with it.    
+playing with it.
 ~
 #23366
 backpack~
@@ -345,7 +345,7 @@ A large dragonscale backpack has been left here.~
 E
 dragonscale backpack~
    The pack is considerably large and could carry a lot.  It is green and very
-shiny as it catches in the light.    
+shiny as it catches in the light.
 ~
 #23370
 feather~
@@ -357,7 +357,7 @@ A feather is here.~
 1 50 0 0 0
 E
 feather~
-   This is a feather of a hawk.  There is nothing special about it.    
+   This is a feather of a hawk.  There is nothing special about it.
 ~
 #23376
 boots~
@@ -370,7 +370,7 @@ A pair of dragonscale boots is here.~
 E
 dragonscale boots boot~
    As you look at the boots, you notice they are in excellent condition.  They
-would fit you well, and no doubt protect your feet from just about anything.  
+would fit you well, and no doubt protect your feet from just about anything.
 
 ~
 #23380
@@ -385,7 +385,7 @@ E
 dragonscale armour~
    The suit of armour is quite large, but would provide excellent protection
 against your enemies.  It's made from the finest dragonscales, and is quite
-colorful.    
+colorful.
 ~
 A
 2 3
@@ -399,7 +399,7 @@ A dragonscale warhelm is here.~
 8 150 0 0 0
 E
 dragonscale warhelm~
-   This is a simple helmet, designed to protect your head in battle.    
+   This is a simple helmet, designed to protect your head in battle.
 ~
 #23398
 ruby gem~
@@ -412,6 +412,6 @@ A ruby gem is lying on the ground before you.~
 E
 ruby gem~
    The gem reflects off the sun, making a red rainbow in front of you.  You
-suddenly feel warmer.    
+suddenly feel warmer.
 ~
 $~

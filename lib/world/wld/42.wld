@@ -4,7 +4,7 @@ Entrance to a Chasm~
 path for you to walk down.  The granite walls of the chasm soar up above you,
 showing you only a small swath of the sky.  To the east, you can smell the odor
 of brimstone.  You fail to surpress a shudder when you remember the tales you
-have heard of this place.    
+have heard of this place.
 ~
 42 4 0 0 0 0
 D1
@@ -22,7 +22,7 @@ Deeper into the Chasm~
 rough surface of granite for you to walk upon.  Here and there, though, are
 some deep furrows in the rock, always in groups of three.  You suddenly realize
 that these cuts are claw marks, probably territory marks of some sort...  To
-the east, the chasm gets yet deeper.    
+the east, the chasm gets yet deeper.
 ~
 42 0 0 0 0 0
 D1
@@ -40,7 +40,7 @@ Deeper into the Chasm~
 The enterance to this hell-cursed chasm is to the west.  When you look to the
 est, you realize that the end of this ordeal is in sight-you can see the
 bottom.  The smell of sulfur is very strong here, and it seems to be wafting on
-the air currents from the east.    
+the air currents from the east.
 ~
 42 0 0 0 0 0
 D1
@@ -55,10 +55,10 @@ S
 #4203
 The Bottom of the Chasm~
    You are at the bottom of an extremely deep granite chasm.  The only way you
-can see even a small portion of the sky is by trying to look straight up.  
+can see even a small portion of the sky is by trying to look straight up.
 There are multiple groups of three deep claw furrows all over the ground and
 covering a good portion of the walls.  There is a cave in the north wall,
-almost big enough for a large giant to walk into without ducking.    
+almost big enough for a large giant to walk into without ducking.
 ~
 42 0 0 0 0 0
 D0
@@ -80,7 +80,7 @@ East side of the Chasm~
 continues rising, taking you away from the oppressive might of the towering
 granite walls.  As it is, you can only see a small piece of the sky.  There are
 numerous claw marks here, each several inches deep.  The smell of sulfur is
-omnipresent, but it seems worse to the west.    
+omnipresent, but it seems worse to the west.
 ~
 42 0 0 0 0 0
 D1
@@ -95,8 +95,8 @@ S
 #4205
 Entrance to a Cave~
    The path up is supposed to continue to the north-east here, but the way is
-blocked by a large mass of rubble.  There's no way you can get out that way.  
-To the east, however, is a large cave.  Maybe you can go spelunking.    
+blocked by a large mass of rubble.  There's no way you can get out that way.
+To the east, however, is a large cave.  Maybe you can go spelunking.
 ~
 42 0 0 0 0 0
 D1
@@ -114,7 +114,7 @@ A Cave~
    You are in a cave, not so large as caves go, but still, its pretty big
 compared to you.  It doesn't go back too far, you can almost see all the way to
 the back of it.  There is a small glow towards the back of the cave.  To the
-west is the exit.    
+west is the exit.
 ~
 42 5 0 0 0 0
 D1
@@ -132,7 +132,7 @@ Entrance to a Cave~
 the ceiling and the floor, giving you the unsettling impression that you are
 walking into a giant mouth.  The thing that bothers you the most, though, is
 that though the center of the chamber, there are stumps where other stalagmites
-should be.  Something REALLY strong must have done that.    
+should be.  Something REALLY strong must have done that.
 ~
 42 0 0 0 0 0
 D0
@@ -150,7 +150,7 @@ Further Into the Cave~
 they have reinforcements.  You see some claw marks that go five to six inches
 into the stone!  The path through the stalagmites continues, and you feel too
 captivated by curiousity to stop now.  You conviently forget that curiousity
-killed the cat...    
+killed the cat...
 ~
 42 0 0 0 0 0
 D0
@@ -167,7 +167,7 @@ A Choice of Ways~
    You have reached the back of the cave.  It branches off in three directions
 from here, with passages big enough to accomodate medium-sized giants.  To the
 north is a smaller hole in the otherwise completely smooth walls.  The walls
-are so smooth, in facts, that it is clear that they could not be natural...  
+are so smooth, in facts, that it is clear that they could not be natural...
 ~
 42 0 0 0 0 0
 D0
@@ -188,14 +188,14 @@ D3
 0 0 4216
 E
 claw~
-   It is a long, deep gash, at least six inches deep.  
+   It is a long, deep gash, at least six inches deep.
 ~
 S
 #4210
 Top of A Stairwell~
    You have entered a massive stairwell, spiraling downwards as far as you can
 see.  Each step is about ten feet long and thirty feet wide.  You would hate to
-find out what would happen if you tripped and fell down them...    
+find out what would happen if you tripped and fell down them...
 ~
 42 4 0 0 0 0
 D3
@@ -213,7 +213,7 @@ A Stairwell~
 featureless, made out of solid granite.  The only thing interesting about these
 stairs is that they are very large and wide, big enough for a giant.  They
 spiral downwards are far as you can see.  You look up.  They go just as far
-that way.    
+that way.
 ~
 42 0 0 0 0 0
 D4
@@ -230,7 +230,7 @@ Bottom of a Stairwell~
    You are at the bottom of a very large stairwell.  The steps themselves are
 barely small enough for you to go up the stairs without climbing up each step.
 The stairwell is large enough to hold a giant, with some room to spare.  To the
-east, you detect a faint humidness.    
+east, you detect a faint humidness.
 ~
 42 4 0 0 0 0
 D1
@@ -247,7 +247,7 @@ A Dank Corridor~
    You are in a large corridor.  There is moisture coating the walls, and some
 other unidentifiable substances on the floor.  Like the rest of this place, the
 ceiling is high above, almost lost in shadow.  To the west, you see a
-stairwell.  To the east, you see more corridor.    
+stairwell.  To the east, you see more corridor.
 ~
 42 0 0 0 0 0
 D1
@@ -263,7 +263,7 @@ S
 A Dank Corridor~
    The dark corridor abruptly terminates in a rough hewn stone wall on the
 south side.  There is a solid steel door set into the rock.  You think you can
-hear mumbling and heavy footfalls coming from beyond the doorway...    
+hear mumbling and heavy footfalls coming from beyond the doorway...
 ~
 42 0 0 0 0 0
 D1
@@ -283,7 +283,7 @@ S
 A Prison Cell~
    You are in a solid stone cell, big enough for several man-sized creatures to
 fit in without complaint.  There are a few bones scattered around the room, and
-the bite marks on them are unsettling you...    
+the bite marks on them are unsettling you...
 ~
 42 0 0 0 0 0
 D0
@@ -296,7 +296,7 @@ A Stairwell~
    You are standing at the bottom of a gigantic stairwell, with each step being
 several meters high, almost taller than you are.  To the east, you see a cave
 with multiple stalagmites, and another stairwell opposite the one you are
-currently in.    
+currently in.
 ~
 42 12 0 0 0 0
 D1
@@ -310,7 +310,7 @@ D4
 S
 #4217
 A Small Room~
-   You note with some relief that this room is too small to fit a dragon.  
+   You note with some relief that this room is too small to fit a dragon.
 There are numerous brooms and mops around, as well as a few buckets and a well
 carved into one corner.  Evidently this is a storeroom for cleaning supplies.
 ~
@@ -341,7 +341,7 @@ S
 A Hallway~
    You have entered a large hallway, which is at least twenty feet wide and
 extremely long.  To the east is the stairway back down, and there is an
-intersection to the west.  The amount of claw marks here worries you...    
+intersection to the west.  The amount of claw marks here worries you...
 ~
 42 0 0 0 0 0
 D1
@@ -379,7 +379,7 @@ A Hatchery~
 middle of the room.  There are a few eggs in the nest, and lost of scattered
 eggsells lying about.  There are no eggs, luckily for you- if there were eggs,
 there would be a watchful dragon nearby.  You think you hear a few high-pitched
-squeaks, though...    
+squeaks, though...
 ~
 42 4 0 0 0 0
 D2
@@ -389,9 +389,9 @@ D2
 S
 #4222
 The End of the Hallway~
-   You are in a moderately cozy room, with a small air shaft going up through 
+   You are in a moderately cozy room, with a small air shaft going up through
 the ceiling to the sky above.  The ground is rough and pebbly, with a large
-mound a sand in the center of the room.  There is a keyrack here.    
+mound a sand in the center of the room.  There is a keyrack here.
 ~
 42 0 0 0 0 0
 D3
@@ -404,7 +404,7 @@ A Hallway~
    You are walking down an ordinary hallway...  If you count the extremely
 discomforting amount of claw marks as normal...  If you count the stench of
 sulfur as run of the mill...  And if you count the roaring you hear echoing
-from somewhere as ordinary...    
+from somewhere as ordinary...
 ~
 42 0 0 0 0 0
 D0
@@ -421,7 +421,7 @@ A Hallway~
    You are walking down an almost featureless granite corridor.  There is only
 a few things that mar its perfect smoothness, and those few things are multiple
 scratches and claw marks on the floor and walls.  Up ahead, you think you hear
-the sound of scales, but you can't be sure.    
+the sound of scales, but you can't be sure.
 ~
 42 0 0 0 0 0
 D0
@@ -439,7 +439,7 @@ A Guard Chamber~
 tell that this area is very well traveled, and from some of the deep grooves in
 the rock you guess that many dragons have waited in this room for permission
 beyond.  You also notice that there is some smoke drifting down the ramp to the
-west.    
+west.
 ~
 42 4 0 0 0 0
 D1
@@ -458,7 +458,7 @@ species that made it.  There are inlaid designs along every inch of the walls,
 made out of gold, silver, platinum, and countless diamonds and rubies.  The
 granite floor has somehow been made so that the rock has the illusion of being a
 carpet.  The smell of sulfur, which is intensifying, is the only aspect of the
-stairwell that you think could be better.    
+stairwell that you think could be better.
 ~
 42 0 0 0 0 0
 D1
@@ -476,7 +476,7 @@ The Royal Treasury~
 millions of gold and silver pieces.  The entire floor is covered, except for a
 small cleared area where you are standing.  You take a step towards the
 treasure, but immediately realize that there is no way you could possibly take
-all of the treasure with you.    
+all of the treasure with you.
 ~
 42 12 0 0 0 0
 D4
@@ -493,7 +493,7 @@ fashion.  You think you can see a seam around the edges of the circle, and
 there is a small slot in the exact middle of the pattern.  To the west, you see
 a ramp desending downward, and you see three passages in the north, east, and
 south walls of the room.  The stench of sulfur is so thick that you can almost
-see it, and it is making your eyes water.    
+see it, and it is making your eyes water.
 ~
 42 8 0 0 0 0
 D0
@@ -519,12 +519,12 @@ pattern circle door design~
 S
 #4229
 The Royal Nest~
-   You are in a medium-sized circular chamber, with only one major feature.  
+   You are in a medium-sized circular chamber, with only one major feature.
 In the almost exact middle of the room there is a large circular depression,
 with several pieces of armor and bones scattered around it.  The walls are
 carved from rock, but in the wall near you there is a skeleton *melted* into
 the wall, still carrying his sword and shield.  You shiver.  What a horrible
-fate...    
+fate...
 ~
 42 0 0 0 0 0
 D2
@@ -538,7 +538,7 @@ The Royal Balcony~
 sprialing structure that is obviously not natural.  You can see the ground far,
 far below you, and you shudder as you think what would happen if you fell from
 here.  You look up, and you can see the blue sky far above you.  To the north
-is the passageway that brought you here.    
+is the passageway that brought you here.
 ~
 42 0 0 0 0 0
 D0
@@ -554,7 +554,7 @@ wall, a large circular hollow, with several indentations as if for places to
 lean your elbows, but they are way too big for you.  Everywhere you can see
 large designs, showing knights on horseback being slaughtered, countrysides
 being ravaged, and castles being destroyed.  They are obviously a monument to
-some particularly evil acts by dragons.    
+some particularly evil acts by dragons.
 ~
 42 0 0 0 0 0
 D3
@@ -574,7 +574,7 @@ A Stairwell~
 featureless, made out of solid granite.  The only thing interesting about these
 stairs is that they are very large and wide, big enough for a giant.  They
 spiral downwards are far as you can see.  You look up.  They go just as far
-that way.    
+that way.
 ~
 42 0 0 0 0 0
 D4
@@ -590,7 +590,7 @@ S
 Top of A Stairwell~
    You have entered a massive stairwell, spiraling downwards as far as you can
 see.  Each step is about ten feet long and thirty feet wide.  You would hate to
-find out what would happen if you tripped and fell down them...    
+find out what would happen if you tripped and fell down them...
 ~
 42 4 0 0 0 0
 D3
@@ -609,7 +609,7 @@ fact that there is a globe of magical light floating in the middle of the room.
 This lets you see your surroundings, and the many claw marks decorating the
 walls.  There is a large circular depression by the wall, which have some bones
 and assorted pieces of armor lying about-all of them with large bite marks on
-them.  You start to get an uneasy feeling in the pit of your stomach...    
+them.  You start to get an uneasy feeling in the pit of your stomach...
 ~
 42 12 0 0 0 0
 D3

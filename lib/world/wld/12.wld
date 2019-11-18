@@ -2,7 +2,7 @@
 The Meeting Room Of The Gods~
    The meeting room is plain and very simple.  A circular table sits in the
 middle of the room, lit by some unseen light source.  There are many chairs
-around the table, all empty.  The Immortal Board Room is to the north.  
+around the table, all empty.  The Immortal Board Room is to the north.
 ~
 12 8 0 0 0 0
 D0
@@ -46,7 +46,7 @@ D0
 S
 #1204
 The Immortal Board Room~
-   The main hang out of the Gods, the Immortal Board Room is the place to be.  
+   The main hang out of the Gods, the Immortal Board Room is the place to be.
 Gods exchange messages here most every day.  The eastern foyer is to the south.
 ~
 12 8 0 0 0 0
@@ -57,11 +57,11 @@ The Gods' Meeting Room is located to the south.
 0 -1 34308
 E
 original~
-   The main hang out of the Gods, the Immortal Board Room is the place to be.  
+   The main hang out of the Gods, the Immortal Board Room is the place to be.
 Gods exchange messages here most every day.  The mortal board room is to the
 east and the meeting room for the gods is to the south.  To the north is the
 Gods' Inn and to the west is a post office for Gods.  In the northeast corner
-you spot a small staircase leading upwards.  
+you spot a small staircase leading upwards.
 ~
 S
 #1205
@@ -113,8 +113,8 @@ D3
 S
 #1291
 The Builders' Board Room~
-   The Builder Academy zone begins in room 3.  @RGOTO 3@n to begin your 
-training or if you need a refresher.  TBA zone should be able to teach anyone, 
+   The Builder Academy zone begins in room 3.  @RGOTO 3@n to begin your
+training or if you need a refresher.  TBA zone should be able to teach anyone,
 no matter how new, the basics of building.  The southern foyer is to the east.
 ~
 12 8 0 0 0 0
@@ -140,7 +140,7 @@ The Halls Of Justice~
    You are standing in a magnificent marble hall, the only exit is back to the
 north.  Statues of Karileena the goddess of Honour and Justice, are lining the
 walls.  You realize this is where the exalted gods meet to discuss what course of
-action to take against offenders in the realms.    
+action to take against offenders in the realms.
 ~
 12 8 0 0 0 0
 D2

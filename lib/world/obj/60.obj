@@ -8,7 +8,7 @@ A heavy lumber axe lies here.~
 12 50 15 0
 E
 axe lumber~
-   It is a heavy axe of the kind lumberjacks use to chop down trees.  
+   It is a heavy axe of the kind lumberjacks use to chop down trees.
 ~
 A
 18 1
@@ -22,7 +22,7 @@ A chequered shirt lies here.~
 2 20 8 0
 E
 shirt chequered~
-   It is an extra large, chequered shirt made from heavy cloth.  
+   It is an extra large, chequered shirt made from heavy cloth.
 ~
 #6002
 boots leather~
@@ -35,7 +35,7 @@ A pair of worn leather boots lies here.~
 E
 boots~
    They are fashioned from rough leather that has been oiled frequently to make
-it stay waterproof.  They look worn but quite functional.  
+it stay waterproof.  They look worn but quite functional.
 ~
 #6003
 fireplace~
@@ -49,7 +49,7 @@ E
 fireplace~
    It is fashioned from stones of various sizes that have been stacked on top of
 each other and fastened with mortar.  Its chimney is constructed likewise and
-leads the smoke out through the low cabin ceiling.  
+leads the smoke out through the low cabin ceiling.
 ~
 #6004
 lantern brass hooded~
@@ -61,13 +61,13 @@ A hooded brass lantern has been left here.~
 4 60 10 0
 E
 letters~
-   The letters say: Use 'hold lantern' to activate.  
+   The letters say: Use 'hold lantern' to activate.
 ~
 E
 lantern brass hooded~
    It is a large and robust but somewhat battered oil lantern made from brass,
 and it is equipped with a handle to make it handy and a hood to protect its
-flame.  Some letters have been scratched on its bottom.  
+flame.  Some letters have been scratched on its bottom.
 ~
 #6005
 chest wooden~
@@ -80,7 +80,7 @@ A wooden chest stands in the corner.~
 E
 chest wooden~
    It is a robust chest made from short, heavy planks that have been fastened
-together with tenons.  It is equipped with a simple brass lock.  
+together with tenons.  It is equipped with a simple brass lock.
 ~
 #6006
 key brass~
@@ -92,7 +92,7 @@ A small brass key lies here.~
 1 1 0 0
 E
 key brass~
-   It is a small, simple brass key with no inscriptions or marks of any kind.  
+   It is a small, simple brass key with no inscriptions or marks of any kind.
 ~
 #6007
 coins gold~
@@ -104,7 +104,7 @@ Some gold coins lie piled up in a heap on the floor.~
 1 127 0 0
 E
 coins gold~
-   The coins seem to be gold.  They are obviously valuable.  
+   The coins seem to be gold.  They are obviously valuable.
 ~
 #6010
 blackberries berries~
@@ -116,7 +116,7 @@ Some blackberries grow on a bush nearby.~
 1 1 0 0
 E
 blackberries berries~
-   They look very tasty indeed.  
+   They look very tasty indeed.
 ~
 #6011
 mushroom~
@@ -128,7 +128,7 @@ A small mushroom grows nearby.~
 1 10 10 0
 E
 mushroom~
-   It looks to be a tasty little thing.  
+   It looks to be a tasty little thing.
 ~
 #6012
 sign~
@@ -143,13 +143,13 @@ sign~
    It says :-
                          Haon-Dor
                          --------
- 
+
  This is the Forest of Haon-Dor.  Enter at your own risk.
 ~
 E
 pole~
    Not the most interesting pole in the world.  Better leave it here, though, as
-it holds the sign in place.  
+it holds the sign in place.
 ~
 #6013
 barrel water~
@@ -169,7 +169,7 @@ A small brook trickles through the forest beside the path.~
 505 0 0 0
 E
 water brook~
-   The water looks clean and refreshing.  
+   The water looks clean and refreshing.
 ~
 #6015
 water lake~
@@ -189,7 +189,7 @@ A limb has fallen here.~
 16 1 20 0
 E
 cudgel oak oaken limb~
-   The cudgel looks quite sturdy, and would make a nice weapon.  
+   The cudgel looks quite sturdy, and would make a nice weapon.
 ~
 A
 19 2
@@ -213,7 +213,7 @@ A large piece of freshly cut boar meat is on the ground here.~
 15 40 1 0
 E
 slab meat~
-   It looks quite filling.  
+   It looks quite filling.
 ~
 #6019
 tusks pair~
@@ -225,7 +225,7 @@ A pair of large boar tusks have been dropped here.~
 10 60 1 0
 E
 tusks pair~
-   They look like they might be worth something to a craftsman.  
+   They look like they might be worth something to a craftsman.
 ~
 #6020
 log hollow floating~
@@ -237,7 +237,7 @@ a hollow log~
 48 2 1 0
 E
 log~
-   It looks like it would probably float.  
+   It looks like it would probably float.
 ~
 #6021
 nest bird~
@@ -257,7 +257,7 @@ A small bluish egg has been left here.~
 1 10 0 0
 E
 egg blue robin~
-   It is small, but food nonetheless.  
+   It is small, but food nonetheless.
 ~
 #6023
 meat rabbit~

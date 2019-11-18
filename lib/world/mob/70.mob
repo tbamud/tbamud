@@ -6,7 +6,7 @@ A horrifying Mudmonster is slowly evolving from the mud...
    It sure looks like something out of a horror movie.  It strongly resembles a
 huge figure made up from mud alone, and it sure looks like it had human flesh
 for breakfast and is strongly intent on having the same for dinner - Perhaps
-you?  
+you?
 ~
 196680 0 0 0 524288 0 0 0 -250 E
 12 16 2 2d2+120 2d2+2
@@ -20,7 +20,7 @@ The small fierce-looking bat is hanging from the ceiling, obviously sleeping.
 ~
    You have never in your entire life seen such a mean looking small creature,
 though it looks rather peaceful, hanging there, sleeping.  The thought of
-arousing this cruel creature doesn't sit well in your bones.  
+arousing this cruel creature doesn't sit well in your bones.
 ~
 131176 0 0 0 524288 0 0 0 -500 E
 1 20 9 0d0+10 1d2+0
@@ -34,7 +34,7 @@ The huge hungry-looking sewer rat sits here.
 ~
    This creature is fairly large for a rat, but not so big that it could be
 called a giant rat.  Sewer water drips off of its grey fur as it looks at you
-with black glistening eyes.  
+with black glistening eyes.
 ~
 104 0 0 0 0 0 0 0 -1000 E
 5 19 7 1d1+50 1d2+0
@@ -47,7 +47,7 @@ the small Spider~
 The small hairy Spider is here, busy with its web.
 ~
    This small spider seems to pay you no attention at all as it builds its
-intricately designed web.  
+intricately designed web.
 ~
 104 0 0 0 524288 0 0 0 -700 E
 1 20 9 0d0+10 1d2+0
@@ -61,7 +61,7 @@ The giant, mean-looking earth beetle is here.
 ~
    Now, you've seen beetles, but this one is enormous.  It stretches perhaps two
 feet from head to tail.  As it notices you, it waves its six legs about and
-makes some strange skittering noises at you.  
+makes some strange skittering noises at you.
 ~
 72 0 0 0 0 0 0 0 -300 E
 8 18 5 1d1+80 1d2+1
@@ -74,7 +74,7 @@ the maggot~
 The giant maggot is here, simply existing.
 ~
    This large mound of grotesque flesh is just lying here quivering, almost as
-if it can sense your warm blood nearby.  
+if it can sense your warm blood nearby.
 ~
 196680 0 0 0 0 0 0 0 300 E
 3 19 8 0d0+30 1d2+0
@@ -88,7 +88,7 @@ The snake slithers towards you. It looks very mean.
 ~
    This snake is of a variety that you do not recall seeing recently.  It has
 near black skin with small white diamond shaped spots all over its head and
-upper body.  A thin green stripe stretches along each side of its body.  
+upper body.  A thin green stripe stretches along each side of its body.
 ~
 72 0 0 0 0 0 0 0 -500 E
 4 19 7 0d0+40 1d2+0
@@ -102,7 +102,7 @@ the evil wanderer~
 The evil wanderer stares at you with a piercing gaze.
 ~
    The evil wanderer is very thin.  He is dressed in a grey cloak.  He doesn't
-look like he'd be your first choice as a travelling companion.  
+look like he'd be your first choice as a travelling companion.
 ~
 204 0 0 0 64 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
@@ -116,7 +116,7 @@ The creature homunculus is here, looking at you with an evil look.
 ~
    The homunculus appears in a man-like form, about eighteen inches tall, has a
 greenish, reptilian skin, leathery wings, and a batlike mouth, with teeth
-dripping with a greenish sludge.  
+dripping with a greenish sludge.
 ~
 57416 0 0 0 80 0 0 0 -780 E
 11 17 3 2d2+110 1d2+1
@@ -129,7 +129,7 @@ the shadowy morkoth~
 The morkoth are standing here, waiting for someone to KILL!
 ~
    It is a five foot tall, shadow monster.  This has the shape between a human
-and a rat.  It breaths very heavily while staring at you.  
+and a rat.  It breaths very heavily while staring at you.
 ~
 200 0 0 0 64 0 0 0 -900 E
 10 17 4 2d2+100 1d2+1
@@ -143,7 +143,7 @@ the evil chr-eff'n~
 The chr-eff'n are crawling here, looking around with its yellow eyes.
 ~
    The head and torso of a chr-eff'n is copper-covered, with yellow, glowing
-eyes.  The lower body is in an orange shading.  
+eyes.  The lower body is in an orange shading.
 ~
 204 0 0 0 524304 0 0 0 -830 E
 12 16 2 2d2+120 2d2+2
@@ -170,8 +170,8 @@ the sea hag~
 A sea hag is here, swimming around.
 ~
    The sea hag is so ghastly looking that you feel the deepest fear: Big yellow
-eyes and sharp teeth.  Its ears are very big, and it has small sharp horns.  
-This beast is obviously a hater of beauty.  
+eyes and sharp teeth.  Its ears are very big, and it has small sharp horns.
+This beast is obviously a hater of beauty.
 ~
 104 0 0 0 0 0 0 0 -800 E
 14 16 1 2d2+140 2d2+2
@@ -200,7 +200,7 @@ The scaled basilisk crawls towards you slowly.
 ~
    The basilisk is a reptilian monster.  It has eight legs, and a strong, toothy
 jaws.  It is dull brown with yellowish underbelly.  Its eyes are glowing pale
-green.  
+green.
 ~
 76 0 0 0 80 0 0 0 -250 E
 13 16 2 2d2+130 2d2+2
@@ -228,8 +228,8 @@ Jones 'cruncher' ettin~
 Jones is standing here glaring at you.
 ~
    At the first sight you thought Jones was an Orc, but when he came closer you
-see his second head.  He wears an animal skin dress, filthy and moth eaten.  
-Jones really stinks...  
+see his second head.  He wears an animal skin dress, filthy and moth eaten.
+Jones really stinks...
 ~
 76 0 0 0 0 0 0 0 -480 E
 10 17 4 2d2+100 1d2+1
@@ -243,7 +243,7 @@ Herald is standing here looking confused at you.
 ~
    When you look at Herald, you feel pity.  His clothes are really poor, and one
 of his heads hangs down.  At the rope around his stomach hangs dead mice and
-rats.  He does not smell good.  
+rats.  He does not smell good.
 ~
 76 0 0 0 0 0 0 0 200 E
 6 18 6 1d1+60 1d2+1

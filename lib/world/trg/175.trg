@@ -48,15 +48,15 @@ Spectre Greeting~
 0 g 100
 ~
 %echo% Shadimar says, 'Greetings, %actor.name%. I have a message for you.
-%echo%     
+%echo%
 %echo% Carcophan protects himself with riddles. You must answer them to get from room to room.
-%echo%     
+%echo%
 %echo% If you have trouble with the riddle, return to this room and say 'help'. I will leave a clue here for you.
-%echo%     
+%echo%
 %echo% Farewell, %actor.name%. Until we meet again.'
-%echo%   
+%echo%
 %echo% %self.name% vanishes in a puff of smoke!
-%echo%     
+%echo%
 %purge% spectre
 ~
 #17505

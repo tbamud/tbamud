@@ -16,7 +16,7 @@ S
 #27501
 The Port Of New Sparta~
    You stare in astonishment at the modern metropolis of New Sparta...
-After examining the sky for a few minutes, you realize an old sailor has 
+After examining the sky for a few minutes, you realize an old sailor has
 been staring at you the whole time.  As you gaze down at him, you notice
 a strange aura around him.  When you finally decide to speak, the strange
 sailor points to the city and says "With technology comes power and with
@@ -38,7 +38,7 @@ Central Harbourplace~
 up to you and push their cheap wares with inflated prices.  When they
 see you have no intention of buying any of their goods, they disappear
 as suddenly as they appeared.
-   The harbourplace continues to the east and west.  To the north you 
+   The harbourplace continues to the east and west.  To the north you
 see the downtown section of New Sparta.
 ~
 275 0 0 0 0 1
@@ -69,7 +69,7 @@ Broadway~
 line the sides of the street as far as you can see.  You are impressed
 by the modern technology and the sheer size of the buildings.  You are
 confident that this city is at least 1000 times better than Midgaard.
-    To the east lies the Fishery.  The west leads to the Tin Can Alley, 
+    To the east lies the Fishery.  The west leads to the Tin Can Alley,
 the economically challenged neighborhood (note the PC terminology).
 Broadway continues to the north.
 ~
@@ -98,7 +98,7 @@ S
 #27504
 Harbourplace East~
    You are now in the eastern section of the harbour. There are less
-of those annoying salespeople here, but there are more and more foreign 
+of those annoying salespeople here, but there are more and more foreign
 tourists flashing their cameras.
    The harbour continues to the south and west.
 ~
@@ -194,7 +194,7 @@ You see Broadway.
 ~
 0 -1 27503
 D2
-A chill runs through your spine as you gaze upon the entrance 
+A chill runs through your spine as you gaze upon the entrance
 to the thieves guild.
 ~
 ~
@@ -223,7 +223,7 @@ By The Shore~
    You are standing on a small public beach (unfortunately, it is NOT
 a topless beach) overlooking the river.  The Swedish Bikini Team is
 here shooting an Old Midgaard beer commercial (It is REALLY too bad
-it is not a topless beach!).  
+it is not a topless beach!).
    To the north is the west end of the harbourplace.
 ~
 275 0 0 0 0 1
@@ -236,7 +236,7 @@ S
 #27511
 Broadway~
    You are on the 300 block of Broadway, though you wouldn't be able
-to tell that because someone has stolen the street sign (probably  
+to tell that because someone has stolen the street sign (probably
 a bunch of bored college students).
    To the east is the Weapons Shop, and to the west is the Seven-
 Eleven.  Broadway continues north and south of here.
@@ -275,7 +275,7 @@ corner.
 ~
 275 8 0 0 0 0
 D3
-You can make out Broadway through the mass of bodies between 
+You can make out Broadway through the mass of bodies between
 you and the door.
 ~
 ~
@@ -341,8 +341,8 @@ More Tin Can Alley.
 S
 #27516
 The Intersection Of First And Broadway~
-   Here Broadway crosses with another main street, First Avenue, 
-which runs east and west through the city.  It is not as large as 
+   Here Broadway crosses with another main street, First Avenue,
+which runs east and west through the city.  It is not as large as
 Broadway, but leads both to Hell's Kitchen and to the new sports
 stadium.
    Broadway continues north and south; First Avenue extends west
@@ -373,7 +373,7 @@ S
 #27517
 The Weapons Shop~
    The Weapons Shop is self-explanatory -- this is a place to buy
-and sell weapons (what else would you expect?).  
+and sell weapons (what else would you expect?).
    The Warriors' Guild is to the east and Broadway is to the west.
 ~
 275 8 0 0 0 0
@@ -391,7 +391,7 @@ S
 #27518
 The Seven-Eleven~
    Much to your surprise, there IS a friendly neighbourhood 7-11 in
-New Sparta.  Much like any other 7-11, here you can purchase many 
+New Sparta.  Much like any other 7-11, here you can purchase many
 necessities at inflated prices all hours of the night.  And what
 would a 7-11 be without a foreign clerk with a funny accent?
 ~
@@ -405,7 +405,7 @@ S
 #27519
 The Entrance To The Clerics' Guild~
    The entrance hall is a small modest room, reflecting the true nature
-of the Clerics.  
+of the Clerics.
    Harry's Pharmacy is to the east and the bar is to the west.
 ~
 275 8 0 0 0 0
@@ -456,7 +456,7 @@ Tin Can Alley~
    The longer you stay in the alley, the more you realize that you don't
 want to be here.  Then you remember all the better things you have seen
 in New Sparta (like the public beach) and how much you'd rather be there!
-   To the south is Baltimore Ave. and Tin Can Alley continues east 
+   To the south is Baltimore Ave. and Tin Can Alley continues east
 towards Broadway.
 ~
 275 0 0 0 0 1
@@ -473,9 +473,9 @@ You see Baltimore Avenue, the famed red light district.
 S
 #27523
 The Entrance To The Guild Of Swordsmen~
-   This is the entrance to the Guild of Swordsmen, a place where 
+   This is the entrance to the Guild of Swordsmen, a place where
 one has to be careful not to say something wrong (or right).
-   The Swordsmens' Bar is to the south and the Weapons Shop is to 
+   The Swordsmens' Bar is to the south and the Weapons Shop is to
 the west.
 ~
 275 8 0 0 0 0
@@ -492,10 +492,10 @@ You see the Weapons Shop.
 S
 #27524
 The Bar Of Swordsmen~
-   The Bar of Swordsmen was once upon a time beautifully furnished, 
-but now the furniture is all around you in small pieces (kind of like 
+   The Bar of Swordsmen was once upon a time beautifully furnished,
+but now the furniture is all around you in small pieces (kind of like
 a Frat House).
-   To the south you see the Tournament and Practice Yard and to the 
+   To the south you see the Tournament and Practice Yard and to the
 north is the Entrance to the Guild of Swordsmen.
 ~
 275 8 0 0 0 0
@@ -526,7 +526,7 @@ Baltimore Avenue~
    You are in the famed red light district of New Sparta (hey, every
 town has one), a wonderful place to spend your money on a rainy day
 (an even better reason for learning Control Weather).
-   To the east is Pee Wee's Peep Show and to the south, Baltimore 
+   To the east is Pee Wee's Peep Show and to the south, Baltimore
 Avenue continues.
 ~
 275 0 0 0 0 1
@@ -548,16 +548,16 @@ You see more of Baltimore Avenue.
 S
 #27527
 Pee Wee's Peep Show~
-   Upon entering, your eyes immediately fixate upon the gorgeous 
+   Upon entering, your eyes immediately fixate upon the gorgeous
 dancers who are here for your amusement.  Pee Wee is busy in the
 corner doing something you would rather not think about.  Good
-thing there are no police here!  
+thing there are no police here!
    Baltimore Avenue is to the west.
 ~
 275 8 0 0 0 0
 D3
 Had you succeeded in removing your gaze from the gyrating women in front
-of you, you would have seen that Baltimore Avenue lies to the west.     
+of you, you would have seen that Baltimore Avenue lies to the west.
 ~
 ~
 0 -1 27526
@@ -582,7 +582,7 @@ You see some graffiti that reads:  Try Peggy at Pee Wee's, She's da Best!
 0 -1 -1
 E
 graffiti~
-   Try Peggy at Pee Wee's, She's da Best!  
+   Try Peggy at Pee Wee's, She's da Best!
 ~
 S
 #27529
@@ -701,7 +701,7 @@ You see the southwest corner of WarDome.
 S
 #27533
 The West Stands~
-   You are standing in the West Stands, the general admission 
+   You are standing in the West Stands, the general admission
 section of WarDome.  Various spectators are here, viewing the
 game.  The stands overlook New Sparta's defensive zone.
    The West Stands continue north and south.
@@ -782,7 +782,7 @@ S
 The West Stands~
    You are standing in the northern-most end of the West Stands.
 This is probably the worst location in WarDome to view the game,
-but the best place to eye the hometown cheerleaders.  
+but the best place to eye the hometown cheerleaders.
    The West Stands continue to the south, to the north is the
 northwest corner of WarDome.
 ~
@@ -806,7 +806,7 @@ E
 cheerleaders~
    This group of blondes, brunettes, and redheads is one of the most stunning
 you have ever seen.  These are the best that New Sparta has to offer.  It is
-just too bad you can't get a closer look (at least not from here).  
+just too bad you can't get a closer look (at least not from here).
 ~
 S
 #27537
@@ -831,7 +831,7 @@ You see the West Stands.
 S
 #27538
 Behind WarVision~
-   You stand, thoughtfully gazing at the incredible mass of 
+   You stand, thoughtfully gazing at the incredible mass of
 electronic equipment composing WarVision, even though you are
 clueless to what any of it does.  To your north, you see the
 Home Locker room, which has been closed off to the public.
@@ -851,7 +851,7 @@ The concourse continues.
 ~
 0 -1 27539
 D2
-You see the intricate circuits of WarVision.  You realize you probably 
+You see the intricate circuits of WarVision.  You realize you probably
 shouldn't touch them.
 ~
 ~
@@ -889,7 +889,7 @@ The End of the Concourse~
    As you come to the end of the concourse, you find the entrance
 to the East Stands of WarDome -- the SuperBoxes.  Unfortunately,
 you are not permitted to go in as these are reserved for the very
-elite.  There is a sign on the door to the SuperBoxes. 
+elite.  There is a sign on the door to the SuperBoxes.
    After getting over your disappointment (you always wanted to
 see the inside of a SuperBox), you notice that someone has rather
 carelessly left open the door to the Visitor's Locker room, just
@@ -921,7 +921,7 @@ The concourse continues.
 E
 sign~
    ******************************************
-   *                                        *      
+   *                                        *
    *            WarDome SuperBoxes          *
    *            ------------------          *
    *    SuperBoxes reserved for only the    *
@@ -991,7 +991,7 @@ The Blue Seats~
 inhabited by the most loyal, die-hard fans you'll ever want to
 not meet.  Vile, sweaty, lewd, rude, crude, and usually drunk --
 this is not the place to be for the faint of heart.
-   The Blue Seats continue to the east, to the west is the exit 
+   The Blue Seats continue to the east, to the west is the exit
 from WarDome.
 ~
 275 8 0 0 0 1
@@ -1013,9 +1013,9 @@ You see the exit from WarDome.
 S
 #27544
 The Blue Seats~
-   You are in the middle of the Blue Seats--definitely dangerous 
+   You are in the middle of the Blue Seats--definitely dangerous
 territory.  But if you feel up for more of a challenge, you can
-climb down the steps leading towards the playing field. 
+climb down the steps leading towards the playing field.
    The Blue Seats continue east and west, stairs go down to the
 field level.
 ~
@@ -1042,12 +1042,12 @@ Steps lead down to the playing level.
 0 -1 27547
 E
 steps~
-   Many have ventured down these steps...  Not as many have returned.  
+   Many have ventured down these steps...  Not as many have returned.
 ~
 S
 #27545
 The Blue Seats~
-   You are standing in one of the raunchiest set of bleachers 
+   You are standing in one of the raunchiest set of bleachers
 anyone has ever seen or heard.  You Clerics had better cover
 your ears.
    The Blue Seats continue west.
@@ -1091,8 +1091,8 @@ The Tunnel~
    You stand at the end of a long tunnel, the long walk where the
 fearless gladiators collect their final thoughts before entering the
 battle zone.  There is a light at the end of the tunnel, beckoning
-you to enter.  You hear the roar of the crowd, and begin to feel your 
-animalistic instincts rise inside of you.  Can you take that 
+you to enter.  You hear the roar of the crowd, and begin to feel your
+animalistic instincts rise inside of you.  Can you take that
 long walk...?
    Above you are the stands, to your north is the playing field.
 ~
@@ -1182,7 +1182,7 @@ S
 #27551
 The Warriors' Zone~
    You are in the Warriors' defensive zone.  To the north Centre-
-field, to the south is the end zone.  The field also continues east 
+field, to the south is the end zone.  The field also continues east
 and west.
 ~
 275 8 0 0 0 1
@@ -1212,7 +1212,7 @@ The Warriors' End Zone~
    You are in the Warriors' end zone, the sacred ground of their
 team.  It is decoratively painted in the club's colors and their
 logo, a fierce warrior.
-   The end zone continues to the east and west.  To the north is 
+   The end zone continues to the east and west.  To the north is
 the Warriors' defensive zone, to the south is the tunnel.
 ~
 275 8 0 0 0 1
@@ -1573,7 +1573,7 @@ S
 #27570
 Intersection of Broadway and Second Avenue~
    This is the intersection of Second Avenue and Broadway.  Second
-Avenue leads west to the dump and east to the church and fire station.    
+Avenue leads west to the dump and east to the church and fire station.
    Broadway runs north-south and Second Avenue runs east-west.
 ~
 275 0 0 0 0 1
@@ -1600,7 +1600,7 @@ You see Second Avenue.
 S
 #27571
 Broadway~
-   You are on the 600 block of Broadway and by the condition 
+   You are on the 600 block of Broadway and by the condition
 of the buildings, you can tell that you just crossed into the
 upper class neighborhood of New Sparta.
    Broadway continues to the north and south.  To the east is
@@ -1632,10 +1632,10 @@ S
 #27572
 The Museum Of National History~
    You are standing in the cavernous lobby of the Museum of National
-History.  During your examination of the lobby, you are startled by the 
-museum curator.  The curator whines to you about how the museum is still 
-under renovations and how the lack of funds from the city is slowing the 
-the museum's progress.  After a long and boring story, you jump at the 
+History.  During your examination of the lobby, you are startled by the
+museum curator.  The curator whines to you about how the museum is still
+under renovations and how the lack of funds from the city is slowing the
+the museum's progress.  After a long and boring story, you jump at the
 chance to make a polite exit and quickly make your departure.
    Broadway is to the west.
 ~
@@ -1648,7 +1648,7 @@ You see Broadway.
 S
 #27573
 The Lobby Of The Waldorf Astoria~
-   This is one of the most luxurious hotels you have ever seen. It 
+   This is one of the most luxurious hotels you have ever seen. It
 makes the inn at Midgaard look like the Bates' Motel.  Pillars of gold
 tower above you to both your left and right.  You try to chip a piece
 off the towers, but you think twice when you see the large guards who
@@ -1698,7 +1698,7 @@ You see the happy place of the Cheers Bar (est. 1898 B.C.)
 S
 #27575
 The Entrance To The Mages' Guild~
-   The entrance is a small, poor lighted room.  
+   The entrance is a small, poor lighted room.
 ~
 275 8 0 0 0 0
 D0
@@ -1732,11 +1732,11 @@ You see the Entrance to the Mages' Guild.
 S
 #27577
 The Mages' Laboratory~
-   This is the Magical Experiments Laboratory.  Dark smoke-stained 
+   This is the Magical Experiments Laboratory.  Dark smoke-stained
 stones arch over numerous huge oaken tables, most of these cluttered
 with strange and even weirder symbols, and a blackboard in a dark
 corner has only been partially cleaned, some painful-looking letters
-are faintly visible.  
+are faintly visible.
 ~
 275 8 0 0 0 0
 D3
@@ -1762,7 +1762,7 @@ You see Broadway.
 S
 #27580
 Broadway~
-   You are on the 800 block of Broadway.  This end of Broadway also 
+   You are on the 800 block of Broadway.  This end of Broadway also
 doubles as the entrance to the park. You see the park to the north,
 Broadway to the south, a department store to the west and the City
 Hall of New Sparta is to the east.
@@ -1831,9 +1831,9 @@ You see Woody, waiting to serve you.
 S
 #27583
 The Main Bar~
-   You step up to the bar and absorb the atmosphere of an old 
+   You step up to the bar and absorb the atmosphere of an old
 neighborhood tavern.  You're always certain to find a friendly
-face here.  
+face here.
    The bar continues north and west. To the south are the stairs
 to Melville's, to the east is the exit.
 ~
@@ -1959,7 +1959,7 @@ Inside The Bar~
 a very old player piano.  On the wall you see a picture of Geronimo,
 hung here in loving memory of Coach Ernie Pantuzzo.
    To the north are the bar stools, to the west is the Office to
-Cheers, behind a door.  To the east, you see the stairs to Melville's 
+Cheers, behind a door.  To the east, you see the stairs to Melville's
 Restaurant.
 ~
 275 8 0 0 0 0
@@ -1981,7 +1981,7 @@ door~
 E
 picture~
    You see a picture of the famous Indian, Geronimo.  An inscription says in
-loving memory of Coach.  
+loving memory of Coach.
 ~
 S
 #27589
@@ -2023,7 +2023,7 @@ You see Cheers Bar (wow!).
 S
 #27591
 Rebecca's Office~
-   As you enter the office, the first thing you notice is a very 
+   As you enter the office, the first thing you notice is a very
 comfortable couch and you realize that it has been used for more
 than midday naps.  You also infer from the couch that the desk has
 been used for more than business work (well, maybe it's been used
@@ -2038,11 +2038,11 @@ door~
 1 -1 27588
 E
 couch~
-   This is one comfortable couch.  
+   This is one comfortable couch.
 ~
 E
 desk~
-   This is a large desk, good for doing many various things.  
+   This is a large desk, good for doing many various things.
 ~
 S
 #27592
@@ -2067,7 +2067,7 @@ S
 #27593
 Mayor Abe's Office~
    This is the residence of one of the most uninspired and uninterested
-mayors since Maryon Barry (sorry, he's in the jail at the moment!).  The 
+mayors since Maryon Barry (sorry, he's in the jail at the moment!).  The
 office makes you feel like your being watched and then you recall all the
 rumors you heard about the mayor's link to Satan himself (which would
 explain him damning everyone).
@@ -2096,8 +2096,8 @@ You see the lobby.
 S
 #27595
 The Rogues' Bar~
-   This is a dark room full of shadows, but as a thief, it is just 
-the way you like it.  This is the perfect place to hide from the local 
+   This is a dark room full of shadows, but as a thief, it is just
+the way you like it.  This is the perfect place to hide from the local
 authorities or any other persons who are after your head!
    The Entrance to the Thieves' Guild is to the north and the Secret
 Yard is to the west.
@@ -2160,7 +2160,7 @@ You see the intersection of Broadway and Second Avenue.
 S
 #27599
 The East End Of Second Avenue~
-   This is the east end of the very short Second Avenue.  The Church 
+   This is the east end of the very short Second Avenue.  The Church
 is to the north and the fire station is to the south.
 ~
 275 0 0 0 0 1

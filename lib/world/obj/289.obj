@@ -9,7 +9,7 @@ A huge crossbow is leaning against the wall here.~
 E
 Crossbow cross bow~
    This weapon almost scares you.  Why, this thing could punch a hole right
-through you...  Ack!  
+through you...  Ack!
 ~
 A
 18 1
@@ -25,7 +25,7 @@ A thick, well-crafted axe lies here, well-polished.~
 10 200 0 0
 E
 axe sturdy~
-   This axe is so shiny, you'd swear someone has licked it clean!  
+   This axe is so shiny, you'd swear someone has licked it clean!
 ~
 A
 18 -2
@@ -41,7 +41,7 @@ An astoundingly big bastard sword stands here.~
 10 750 0 0
 E
 Sword bastard~
-   Wow!  It would take a HUGE person to wield this sword!  
+   Wow!  It would take a HUGE person to wield this sword!
 ~
 A
 1 2
@@ -57,7 +57,7 @@ A rain barrel stands here.~
 305 50 0 0
 E
 rain barrel~
-   That's one big rain barrel!  The water looks cool and clear inside...  
+   That's one big rain barrel!  The water looks cool and clear inside...
 ~
 #28904
 slingshot sling shot~
@@ -69,7 +69,7 @@ A slingshot of wood has been discarded here.~
 2 25 0 0
 E
 slingshot sling shot~
-   A child's weapon, nothing more.  
+   A child's weapon, nothing more.
 ~
 A
 18 5
@@ -84,7 +84,7 @@ A dart is stuck in the ground.~
 E
 dart~
    You're not actually considering wielding this, are you?  "The dragon cowers
-before your dart, 'Please do not hurt me!  '" Yeah, right.  
+before your dart, 'Please do not hurt me!  '" Yeah, right.
 ~
 #28906
 pike~
@@ -96,7 +96,7 @@ A nasty looking pike is lying on the ground.~
 20 500 0 0
 E
 pike~
-   It's heavy, but not a bad weapon!  
+   It's heavy, but not a bad weapon!
 ~
 #28907
 knife wicked~
@@ -108,7 +108,7 @@ A wickedly curved knife sits here.~
 5 300 0 0
 E
 knife wicked~
-   This is a murderer's knife, pure and simple.  
+   This is a murderer's knife, pure and simple.
 ~
 A
 18 1
@@ -122,7 +122,7 @@ A metal-shod quarterstaff has been stuck in the ground.~
 12 100 0 0
 E
 staff quarter quarterstaff~
-   An oaken war staff.  A simple weapon that can be very deadly.  
+   An oaken war staff.  A simple weapon that can be very deadly.
 ~
 A
 19 1
@@ -137,7 +137,7 @@ A strange weapon made of wood and spikes sits here.~
 E
 Bevgul weapon wood spike spikes~
    It looks to be a piece of wood made to be strapped to the forearm covered
-with spikes and nails.  Doesn't look like a friendly weapon at all!  
+with spikes and nails.  Doesn't look like a friendly weapon at all!
 ~
 A
 19 2
@@ -151,7 +151,7 @@ A silk scarf has been folded neatly here.~
 1 500 0 0
 E
 scarf silk~
-   Very nice...  A beautiful scarf.  
+   Very nice...  A beautiful scarf.
 ~
 A
 3 1
@@ -165,7 +165,7 @@ A silk scarf has been folded neatly here.~
 1 500 0 0
 E
 scarf silk~
-   Very nice...  A beautiful scarf.  
+   Very nice...  A beautiful scarf.
 ~
 A
 3 -1
@@ -179,7 +179,7 @@ A big cooking pot sits here.~
 15 200 0 0
 E
 pot~
-   That's one big cast-iron pot!  
+   That's one big cast-iron pot!
 ~
 #28913
 Pan frying~
@@ -191,7 +191,7 @@ A frying pan has been put aside here.~
 10 100 0 0
 E
 Pan frying~
-   There's some grease on the bottom.  Yuck!  
+   There's some grease on the bottom.  Yuck!
 ~
 #28914
 Plate Jumbalaya~
@@ -207,7 +207,7 @@ Plate Jumbalaya~
 ~
 E
 shrimp plate jumbalaya~
-   Shrimp, rice, sausage, and lots and LOTS of cayenne pepper!  Whew!  
+   Shrimp, rice, sausage, and lots and LOTS of cayenne pepper!  Whew!
 ~
 #28915
 Plate spaghetti~
@@ -219,7 +219,7 @@ A plate of spaghetti sits here.~
 3 18 0 0
 E
 Plate spaghetti~
-   Spaghetti with meatballs...  Looks good!  
+   Spaghetti with meatballs...  Looks good!
 ~
 #28916
 Bowl soup~
@@ -231,7 +231,7 @@ A bowl of soup is cooling here.~
 1 10 0 0
 E
 Bowl soup~
-   Looks like garden vegetable soup.  Smells good too.  
+   Looks like garden vegetable soup.  Smells good too.
 ~
 #28917
 beer glass beer~
@@ -243,7 +243,7 @@ A glass of beer sits forgotten here.~
 2 5 0 0
 E
 Beer glass~
-   A nice glass filled with 'Mr.  Beer' brand beer.  
+   A nice glass filled with 'Mr.  Beer' brand beer.
 ~
 #28918
 ale glass ale~
@@ -256,7 +256,7 @@ A big glass of mead sits here, cool and frosty.~
 E
 Mead glass~
    Looks good.  Looks cold.  You sure could use some cold and alcoholic right
-about now...  
+about now...
 ~
 #28919
 whisky shot whiskey whisky~
@@ -268,6 +268,6 @@ A shot of Whiskey is sitting here.~
 1 10 0 0
 E
 Whiskey shot~
-   Whew!  Looks like potent stuff!  
+   Whew!  Looks like potent stuff!
 ~
 $~

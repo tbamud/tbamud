@@ -11,8 +11,8 @@ Mobs         : 15
 Objects      : 29
 Shops        : 0
 Triggers     : 16
-Theme        : 
-Plot         : 
+Theme        :
+Plot         :
 Links        : 75
 Map          : 00
 ~
@@ -23,11 +23,11 @@ Before the lake~
    This small patch of land lies before a grand lake.  A large crystal castle
 can be seen far in the distance towards the middle of the lake.  Many small
 footprints can be seen laying about the trail that has lead you to this marvel
-of castles.    
+of castles.
 ~
 238 4 0 0 0 0
 D0
-   As you look north you notice that there is nothing but water.    
+   As you look north you notice that there is nothing but water.
 ~
 ~
 0 0 23802
@@ -39,7 +39,7 @@ Looking south you see an area leading into the fog.
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23802
@@ -49,22 +49,22 @@ Under the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 64 0 0 0 6
 D0
-   Looking north is nothing but water.    
+   Looking north is nothing but water.
 ~
 ~
 0 0 23817
 D1
-   As you look east you see water.    
+   As you look east you see water.
 ~
 ~
 0 0 23803
 D2
    Upon looking south you notice a large patch of ground.  Scattered about are
-many small footprints and claw marks.    
+many small footprints and claw marks.
 ~
 ~
 0 0 23801
@@ -76,7 +76,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 6
 D0
@@ -85,12 +85,12 @@ Looking north nothing but fog can be seen
 ~
 0 0 23816
 D1
-As you look east you see water.    
+As you look east you see water.
 ~
 ~
 0 0 23804
 D3
-As you look west you see more water.    
+As you look west you see more water.
 ~
 ~
 0 0 23802
@@ -102,28 +102,28 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
-Nothing but fog can be seen to the north.    
+Nothing but fog can be seen to the north.
 ~
 ~
 0 0 23815
 D1
-As you look east you see nothing but water.    
+As you look east you see nothing but water.
 ~
 ~
 0 0 23805
 D3
-As you look west you see nothing but water.    
+As you look west you see nothing but water.
 ~
 ~
 0 0 23803
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23805
@@ -133,11 +133,11 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
-Nothing but fog and mist can be seen in the distance.    
+Nothing but fog and mist can be seen in the distance.
 ~
 ~
 0 0 23814
@@ -154,7 +154,7 @@ As you look west you see more water.
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23806
@@ -164,16 +164,16 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 64 0 0 0 6
 D0
-Upon looking north you see nothing but tons of water.    
+Upon looking north you see nothing but tons of water.
 ~
 ~
 0 0 23813
 D1
-As you look east you see nothing but sickening water.    
+As you look east you see nothing but sickening water.
 ~
 ~
 0 0 23807
@@ -185,7 +185,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23807
@@ -195,28 +195,28 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 6
 D0
-Fog and mist can be seen in the distance.    
+Fog and mist can be seen in the distance.
 ~
 ~
 0 0 23812
 D1
-As you look west you see yet more water.    
+As you look west you see yet more water.
 ~
 ~
 0 0 23808
 D3
-As you look west you see more water.    
+As you look west you see more water.
 ~
 ~
 0 0 23806
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23808
@@ -226,28 +226,28 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
-Fog and mist are the only things to be seen in the distance.    
+Fog and mist are the only things to be seen in the distance.
 ~
 ~
 0 0 23811
 D1
-As you look east you see a small patch of land.    
+As you look east you see a small patch of land.
 ~
 ~
 0 0 23809
 D3
-As you look west you see more water.    
+As you look west you see more water.
 ~
 ~
 0 0 23807
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23809
@@ -256,21 +256,21 @@ Patch of land~
 mist that covers the outside of the lake making it unreachable.  You cannot
 even see where you come from on the shore side of the lake.  It may be too late
 to turn back.  Sand covers the ground here with a small patch of square shaped
-grass in the center of the small island.    
+grass in the center of the small island.
 ~
 238 32772 0 0 0 0
 D0
-As you look north you see nothing but nasty water.    
+As you look north you see nothing but nasty water.
 ~
 ~
 0 0 23810
 D3
-As you look west you see more sickening water.    
+As you look west you see more sickening water.
 ~
 ~
 0 0 23808
 D5
-This seems to lead you under the island.    
+This seems to lead you under the island.
 ~
 patch~
 1 0 23834
@@ -283,7 +283,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -296,14 +296,14 @@ As you look south you notice a small patch of dry land.
 ~
 0 0 23809
 D3
-As you look west you see nothing but water.    
+As you look west you see nothing but water.
 ~
 ~
 0 0 23811
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23811
@@ -314,7 +314,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -336,7 +336,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23812
@@ -347,7 +347,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -369,7 +369,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23813
@@ -380,7 +380,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -402,7 +402,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23814
@@ -413,7 +413,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -435,7 +435,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23815
@@ -446,7 +446,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -468,7 +468,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23816
@@ -479,7 +479,7 @@ important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
 bottom of the lake.  A thick fog covers this area making it hard to see
-anything in the distance.    
+anything in the distance.
 ~
 238 32768 0 0 0 0
 D0
@@ -501,7 +501,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23817
@@ -511,7 +511,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -523,14 +523,14 @@ D1
 ~
 0 0 23816
 D2
-   Looking south there is water scattered over the entire area.    
+   Looking south there is water scattered over the entire area.
 ~
 ~
 0 0 23802
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23818
@@ -540,7 +540,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -558,7 +558,7 @@ D2
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23819
@@ -568,7 +568,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -590,7 +590,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23820
@@ -600,7 +600,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -622,7 +622,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23821
@@ -632,7 +632,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -654,7 +654,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23822
@@ -664,7 +664,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -686,7 +686,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23823
@@ -696,7 +696,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -718,7 +718,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23824
@@ -728,7 +728,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -750,7 +750,7 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23825
@@ -760,7 +760,7 @@ the lake can be seen small fish and a few pieces of garbage but nothing
 important.  Also the sand at the bottom of the lake is not quite sand rather
 busted up crystal making it imposable to walk on the bottom of the lake.  Also
 algae floats towards the top of the lake making it hard to see up from the
-bottom of the lake.    
+bottom of the lake.
 ~
 238 32768 0 0 0 0
 D0
@@ -778,15 +778,15 @@ D3
 E
 look footprints~
    You notice that these prints are different creatures.  It appears that they
-were drug or have drug themselves into this room and and then walked out.  
+were drug or have drug themselves into this room and and then walked out.
 ~
 S
 #23826
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D2
@@ -800,10 +800,10 @@ D3
 S
 #23827
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D1
@@ -821,10 +821,10 @@ D3
 S
 #23828
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D1
@@ -842,10 +842,10 @@ D3
 S
 #23829
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D1
@@ -863,10 +863,10 @@ D3
 S
 #23830
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D1
@@ -884,10 +884,10 @@ D3
 S
 #23831
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D1
@@ -905,10 +905,10 @@ D3
 S
 #23832
 In the fog~
-   Here it is hard to see anything besides what is in the area with you.  
+   Here it is hard to see anything besides what is in the area with you.
 There is thick grey fog around everything leaving you wandering where you are
 and where to go.  This must be some kind of magic because the fog seems to not
-be moving any and it has a strange glow to it.    
+be moving any and it has a strange glow to it.
 ~
 238 32768 0 0 0 0
 D1
@@ -930,7 +930,7 @@ Before the castle~
 flawless and very delicate yet very strong in design.  There are many small
 crystals poking out from the sides of the castle making it impossable to scale
 the wall.  There is a large gate leading into the castle directly to the north.
-  
+
 ~
 238 32768 0 0 0 0
 D1
@@ -947,7 +947,7 @@ Under the sand~
    There are large spider webs and dead insects scattered about.  There is also
 a fowl stench that has completely closed you in.  Many nasty bugs crawl around
 looking for a crumb of food here . There is a small tunnel leading off into the
-north leading you into darkness.    
+north leading you into darkness.
 ~
 238 32768 0 0 0 0
 D0
@@ -956,13 +956,13 @@ Looking north there is a small tunnel leading north
 ~
 0 0 23835
 D4
-Leading up is a small patch of land.    
+Leading up is a small patch of land.
 ~
 patch~
 1 0 23809
 E
 look spider web~
-   There are many small spiders around the room looking for a bite to eat.    
+   There are many small spiders around the room looking for a bite to eat.
 ~
 S
 #23835
@@ -971,7 +971,7 @@ Through the tunnel~
 have not been used for a very long time . It looks like it was used for an
 escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
-linning the walls.    
+linning the walls.
 ~
 238 32768 0 0 0 0
 D0
@@ -979,7 +979,7 @@ D0
 ~
 0 0 23836
 D2
-Looking south you see a small area under a patch of grass.    
+Looking south you see a small area under a patch of grass.
 ~
 ~
 0 0 23834
@@ -990,7 +990,7 @@ Through the tunnel~
 have not been used for a very long time . It looks like it was used for an
 escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
-linning the walls.    
+linning the walls.
 ~
 238 32768 0 0 0 0
 D0
@@ -1009,7 +1009,7 @@ have not been used for a very long time . It looks like it was used for an
 escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spider webs
 linning the walls.  There seems to be the remains of someones skull lying here
-on the ground.    
+on the ground.
 ~
 238 32768 0 0 0 0
 D0
@@ -1027,7 +1027,7 @@ Through the tunnel~
 have not been used for a very long time . It looks like it was used for an
 escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
-linning the walls.    
+linning the walls.
 ~
 238 32768 0 0 0 0
 D0
@@ -1045,7 +1045,7 @@ Through the tunnel~
 have not been used for a very long time . It looks like it was used for an
 escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spide webs
-linning the walls.    
+linning the walls.
 ~
 238 32768 0 0 0 0
 D0
@@ -1063,7 +1063,7 @@ Through the tunnel~
 have not been used for a very long time . It looks like it was used for an
 escape route or maybe for someone to sneak in or out.  There are many carvings
 in the wall nothing special but just notches.  Also there are still spider webs
-linning the walls.    
+linning the walls.
 ~
 238 32768 0 0 0 0
 D2
@@ -1077,7 +1077,7 @@ Entrance to the castle~
    There are many bloody and smelly heads hanging from the walls as if there
 were some king of crazed monster living here mutilating anything that steps in
 his way.  The heads appear to have been cut off with some kind of dull blade.
-Blood lines the floors and mutilated body parts are scattered about.    
+Blood lines the floors and mutilated body parts are scattered about.
 ~
 238 0 0 0 0 0
 D0
@@ -1104,7 +1104,7 @@ E
 head~
    There are many heads strown across the room with many nasty smells to follow.
 These heads appear to have been gnawed off of the owners neck very visiously as
-if torn off by animals.  
+if torn off by animals.
 ~
 S
 #23842
@@ -1113,7 +1113,7 @@ Corpses~
 lying in a big pile on the eastern wall and some without any extra limbs piled
 on the northern side.  Also there are a pile of heads stacked up on the western
 wall of this room.  There are many nasty smells that come from this room making
-anyone who enters want to puke.    
+anyone who enters want to puke.
 ~
 238 4 0 0 0 0
 D2
@@ -1124,7 +1124,7 @@ Looking south you see the entrance to the castle.
 E
 corpses~
    There are many decapitated corpse strown about the room piled in all corners
-of the room.  
+of the room.
 ~
 S
 T 23839
@@ -1157,7 +1157,7 @@ Main floor hallway~
 scattered about in a decorative design.  Many pieces of pottery line the walls
 atop of many eligant tables.  There are many fine pieses of art and a few
 sculptures scattered about making the room appear very eligant to those who
-enter the castle.    
+enter the castle.
 ~
 238 8 0 0 0 0
 D0
@@ -1177,7 +1177,7 @@ trapdoor~
 1 0 23841
 E
 pottery~
-   These pots are very old and fragile but very valuable.  
+   These pots are very old and fragile but very valuable.
 ~
 E
 pillar~
@@ -1186,10 +1186,10 @@ pillar~
 S
 #23846
 Outside the castle~
-   This room appears to support you even though you did not think it would.  
-There are small trees scattered about below and a massive lake just south.  
+   This room appears to support you even though you did not think it would.
+There are small trees scattered about below and a massive lake just south.
 You can see small fish swimming in the lake below.  As you look back you notice
-that you can go up into a cubby hole which is very large.    
+that you can go up into a cubby hole which is very large.
 ~
 238 4 0 0 0 4
 D0
@@ -1205,10 +1205,10 @@ Looking up you see a large room with a crystal roof and a crystal floor.
 S
 #23847
 Intersection~
-   The rug covered floor attracts attention to the center of the floor here.  
+   The rug covered floor attracts attention to the center of the floor here.
 There is a large picture of a dragon woven into the center of the beautiful
 rug.  There are not many decorations here except for the dragon in the center
-of the rug. The dragon seems to pull you into some kind of trance.    
+of the rug. The dragon seems to pull you into some kind of trance.
 ~
 238 0 0 0 0 0
 D0
@@ -1234,7 +1234,7 @@ looking west seems to lead you through the western hallway.
 E
 dragon~
    Looking at this picture woven into carpet seems to put you into a trance
-making it hard to believe that this picture is just a picture.  
+making it hard to believe that this picture is just a picture.
 ~
 S
 #23848
@@ -1242,7 +1242,7 @@ Western hallway~
    This room appears to be in excelent condition as well as the rooms before
 it.  There are no decorations here or any kind of art work.  There are bare
 walls and tiled floor.  This hallway seems to not be very popular or just not
-finished.    
+finished.
 ~
 238 0 0 0 0 0
 D1
@@ -1261,7 +1261,7 @@ Dead end~
 hallway that has lead you thus far.  There are no decorations in this room and
 no kind of evidance of inhabitants.  There are many tiles that line the floor
 throughout the floor seeming to form a circle.  There are small markings placed
-in the circle but you cannot tell what they are for or where thet come from.  
+in the circle but you cannot tell what they are for or where thet come from.
 ~
 238 0 0 0 0 0
 D1
@@ -1271,7 +1271,7 @@ Looking east appears to take you to the western hallway.
 0 0 23848
 E
 statue~
-   Looking at the statue you notice that it is a large statue of a wyvern.  
+   Looking at the statue you notice that it is a large statue of a wyvern.
 ~
 E
 scratch~
@@ -1283,7 +1283,7 @@ Eastern hallway~
    There are many different colors about this room as if it was sprayed with
 paint.  There are swirls and different patterns as if some kind of art.  There
 are also some misplaced spots on the floor that appear to have dripped from the
-roof.  There are no spots on the roof however.    
+roof.  There are no spots on the roof however.
 ~
 238 0 0 0 0 0
 D1
@@ -1299,17 +1299,17 @@ Looking west shows you to the intersection.
 E
 spots~
    Looking more carefully you notice that these spots appear to be some kind of
-tracks leading fomr the roof to the floor.  
+tracks leading fomr the roof to the floor.
 ~
 S
 #23851
 Further on the eastern hallway~
    This room appears to be the same as the last except the spots on the floor
 are not here.  There are also some small items strewn about the floor
-consisting of rat guano, bird feathers, spider webs, and cockroach shells.  
+consisting of rat guano, bird feathers, spider webs, and cockroach shells.
 There are no traces of anyone ever being here to clean this room or to have
 even walked through it because there is a coating of dust on the floor revealing
-your tracks as you cross it.    
+your tracks as you cross it.
 ~
 238 0 0 0 0 0
 D0
@@ -1332,7 +1332,7 @@ Northern hallway~
    This room is about the same as the first room of this hallway very clean and
 well kept.  There are not any smudges or any dirt stains of any kind.  It
 almost seems that the room is magically maintained and left spotless.  There
-are also many tapestries in this room.    
+are also many tapestries in this room.
 ~
 238 0 0 0 0 0
 D0
@@ -1349,15 +1349,15 @@ NONE~
 E
 tapestries~
    The tapestries are very elegant and well kept they are pictures of different
-land scapes.  
+land scapes.
 ~
 S
 #23855
 Dead end~
    This appears to be the end of the line for this hallway.  There are still
-very eligant pictures and other pieces of art placed about the room here.  
+very eligant pictures and other pieces of art placed about the room here.
 Just as before the room is spotlessly clean.  There are no traces of anything
-in this room.    
+in this room.
 ~
 238 0 0 0 0 0
 D2
@@ -1368,7 +1368,7 @@ Looking south seems to lead you into the northern hallway.
 E
 pictures~
    These pictures seem to be people but they are slightly blurred when you try
-to focus on them.  
+to focus on them.
 ~
 S
 #23856
@@ -1376,7 +1376,7 @@ Hidden hallway~
    This area seems to have been also cleaned even though it was very well
 hidden.  There are no traces of life and no way to get back up.  There are many
 cobblestones linning the floor to make it appear as if the floor here was the
-bottom of the fountain.    
+bottom of the fountain.
 ~
 238 0 0 0 0 0
 D0
@@ -1405,7 +1405,7 @@ Looking south seems to lead you toward the beginning of the hidden hallway.
 E
 look mountain~
    The mountain looks as if it may fall any second probably because this is not
-the way you usually see them.  
+the way you usually see them.
 ~
 E
 look sky~
@@ -1417,7 +1417,7 @@ Walking through the sky~
    You have entered a remarkable room placed above the clouds except for the
 fact that you cannot walk you you have to fly.  There are birds and clouds
 drifting about in the distance.  The only thing you can see is clouds and the
-blue sky above.    
+blue sky above.
 ~
 238 0 0 0 0 8
 D0
@@ -1436,7 +1436,7 @@ Near the end~
    You have set foot on solid ground again.  The room here looks exactly the
 same as the first and you can see what looks like the first room ahead to the
 north.  There are many fine pictures on the walls here.  Also the floor seems
-to be made of some kind of deep brown wood.    
+to be made of some kind of deep brown wood.
 ~
 238 0 0 0 0 0
 D0
@@ -1455,7 +1455,7 @@ The end~
    You have finally made it to the end of this god forsaken hallway.  There are
 no more posters or and kind of decoration here just walls a floor and a
 ceiling, which you much appreciate.  The walls, floor, and ceiling appear to be
-made of wood.    
+made of wood.
 ~
 238 0 0 0 0 0
 D0
@@ -1471,14 +1471,14 @@ Looking south you can see more hallway.
 E
 troll~
    The troll's marking appear to be those of Lords Of Pain signifying power and
-courage.    
+courage.
 ~
 S
 #23861
 Portal room~
    Upon entering this room you notice a large green portal standing on the
 northern wall in this room shimmering in the darkness.  There are no
-decorations in this room but the room seems to have a green tint to it.    
+decorations in this room but the room seems to have a green tint to it.
 ~
 238 0 0 0 0 0
 D2
@@ -1492,7 +1492,7 @@ Through the blue portal~
    You have entered the portal and have yet to find anything but blue glowing
 strongly around you.  You walk along whap seems to be a floor but is nothing
 but light from the portal.  There are many small spots floating around the
-portal around you.    
+portal around you.
 ~
 238 0 0 0 0 0
 D0
@@ -1503,7 +1503,7 @@ Looking north appears to lead you further into the portal.
 E
 spots~
    There are many small spots that appear to be some kind of smaller portals
-inside of the big portal.  
+inside of the big portal.
 ~
 S
 #23863
@@ -1522,14 +1522,14 @@ Looking north reveals another part of the portal.
 E
 spot~
    Looking in for further examination you see that they are balls of energy, as
-you turn back one pops you in the face OUCH!!!!!  
+you turn back one pops you in the face OUCH!!!!!
 ~
 S
 #23864
 Through the green portal~
-   This room appears to have a green tint to every part of the entire room.  
+   This room appears to have a green tint to every part of the entire room.
 There are green posters covering the walls and very small green spots strown
-about.    
+about.
 ~
 238 0 0 0 0 0
 D1
@@ -1546,7 +1546,7 @@ S
 Portal room~
    This room has a large blue portal against the far northern wall.  This room
 has a blue tint to the room and has no decorations or designs anywhere on the
-room.  The portal seems to have placed a blue aurora about the room.    
+room.  The portal seems to have placed a blue aurora about the room.
 ~
 238 0 0 0 0 0
 D3
@@ -1559,7 +1559,7 @@ Portal room~
    This room has a large red portal placed on the northern wall and also has a
 tint of red thruought the entire room.  There are no decorative items or any
 kind of other decorations.  The room is very plain except for the portal
-itself.    
+itself.
 ~
 238 0 0 0 0 0
 D1
@@ -1571,7 +1571,7 @@ S
 Further in the blue portal~
    There are still all the small spots floating around but the floor seems to
 be taking shape more now.  There are no walls or a roof but the floor is
-beginning to get harder and more sturdy.    
+beginning to get harder and more sturdy.
 ~
 238 0 0 0 0 0
 D0
@@ -1589,7 +1589,7 @@ S
 Further in the blue portal~
    There are still all the small spots floating around but the floor seems to
 be taking shape more now.  There are no walls or a roof but the floor is
-beginning to get harder and more sturdy.    
+beginning to get harder and more sturdy.
 ~
 238 0 0 0 0 0
 D0
@@ -1608,7 +1608,7 @@ Further in the blue portal~
    There are still all the small spots floating around but the floor seems to
 be taking shape more now.  There are no walls or a roof but the floor is
 beginning to get harder and more sturdy.  The floor appears as a solid floor
-now.    
+now.
 ~
 238 0 0 0 0 0
 D0
@@ -1640,7 +1640,7 @@ S
 Further through the red portal.~
    This area appears the same as the last except for the little floating
 objects that cause the sparks when you bump them are very scarce here.  The
-floor is beginning to harden and the walls are beginning to show.    
+floor is beginning to harden and the walls are beginning to show.
 ~
 238 0 0 0 0 0
 D0
@@ -1657,8 +1657,8 @@ S
 #23872
 Far into the red portal.~
    The wals here are shimmering and swirling making a beautiful mass of colors
-and patterns.  The walls appear to be unreachable but also right beside you.  
-The floor is hard and solid now just the walls appear unstable.    
+and patterns.  The walls appear to be unreachable but also right beside you.
+The floor is hard and solid now just the walls appear unstable.
 ~
 238 0 0 0 0 0
 D0
@@ -1677,7 +1677,7 @@ Towards the end~
    This area seems to be very rich in color and loaded with the small
 particals.  There are many different colors flowing throught the the walls
 making it a sight to see.  The spots appear to be avoiding you now saving you a
-heart ache.    
+heart ache.
 ~
 238 0 0 0 0 0
 D0
@@ -1696,7 +1696,7 @@ Queen plegia's room~
    This room is very eligant from top to bottom.  There are many decorative
 pieces of art in this room revealing the elegant tastes of royalty.  The queens
 throne is perched atop a large golden square.  The throne itself seems to be
-made of gold and silk.    
+made of gold and silk.
 ~
 238 0 0 0 0 0
 D2
@@ -1707,12 +1707,12 @@ Looking south you see the portal that you came from.
 E
 throne~
    Made of solid gold linned with silk this throne appears to be a very eligant
-sitting.  
+sitting.
 ~
 S
 #23875
 South road~
-   You are walking through a a small trail which seems to lead to nothing.  
+   You are walking through a a small trail which seems to lead to nothing.
 The road has changed here and seems to be less bright and more spooky.  The
 area is still good and the land is fertile but the air around seems very weird.
 ~
@@ -1728,7 +1728,7 @@ Towards the lake~
    This area seems to be very odd.  There are many odd sounds and different
 smells.  There are no animals here but you can hear the sounds of animals in
 the distance.  There is a small fog rolling in which stretches farther to the
-east.    
+east.
 ~
 238 0 0 0 0 0
 D1
@@ -1747,7 +1747,7 @@ In the fog~
    There is a heavy fog here which disallows you to see anything except the
 exits to the rooms ahead.  The fog appears to be implied by some kind of
 magical force.  The sounds of animals are no longer heard and no evidence of
-life are present.    
+life are present.
 ~
 238 0 0 0 0 0
 D1
@@ -1764,7 +1764,7 @@ In the fog~
    There is a heavy fog here which disallows you to see anything except the
 exits to the rooms ahead.  The fog appears to be implied by some kind of
 magical force.  The sounds of animals are no longer heard and no evidence of
-life are present.    
+life are present.
 ~
 238 0 0 0 0 0
 D1
@@ -1781,7 +1781,7 @@ In the fog~
    There is a heavy fog here which disallows you to see anything except the
 exits to the rooms ahead.  The fog appears to be implied by some kind of
 magical force.  The sounds of animals are no longer heard and no evidence of
-life are present.    
+life are present.
 ~
 238 0 0 0 0 0
 D1
@@ -1798,7 +1798,7 @@ S
 A Clearing Before the Lake~
    You stand here in front of a massive lake.  There are many small animals
 scattered about looking as if they want to get out but cannot.  There are many
-different smells surrounding the area.    
+different smells surrounding the area.
 ~
 238 0 0 0 0 0
 D0
@@ -1817,7 +1817,7 @@ Dragons Lair~
    You have entered a large room with very little decorations and no kind of
 art.  There are claw marks and very large holes in the walls and ceiling
 around.  The floor is very hard and seems to be composed of crystal.  The roof
-is also made of the same materials.    
+is also made of the same materials.
 ~
 238 0 0 0 0 0
 D5
@@ -1828,7 +1828,7 @@ Looking down you see the rocks in front of the castle.
 E
 scratches~
    Looking in for a closer look you see that these scratches are from some kind
-of animal.  
+of animal.
 ~
 S
 $~

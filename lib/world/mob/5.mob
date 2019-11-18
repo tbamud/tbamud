@@ -4,7 +4,7 @@ a bunny~
 A cute little bunny is here.
 ~
    She is white with red eyes and looks harmless, but looks can be deceiving.
-  
+
 ~
 10 0 0 0 0 0 0 0 200 E
 1 20 9 0d0+10 1d2+0
@@ -19,7 +19,7 @@ the apple thief~
 A dirty boy is waiting for the next apple to fall.
 ~
    This little thief is too short to reach the apples over his head.  Instead
-he waits for the ripe apples to fall from the breeze.    
+he waits for the ripe apples to fall from the breeze.
 ~
 10 0 0 0 80 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -33,7 +33,7 @@ a mouse~
 A small mouse is here.
 ~
    He is rather small and scrawny looking.  His teeth look very sharp and would
-hurt terribly if he bit you.  
+hurt terribly if he bit you.
 ~
 10 0 0 0 0 0 0 0 250 E
 1 20 9 0d0+10 1d2+0
@@ -48,7 +48,7 @@ the old farmer~
 An old farmer sits underneath the shade of the apple tree.
 ~
    He wears a set of old ratty coveralls and is picking his teeth with a bit of
-hay.    
+hay.
 ~
 10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -61,7 +61,7 @@ a rooster~
 An ugly little rooster is here.
 ~
    He is perhaps the ugliest rooster you have ever seen.  He is missing over
-half of his feathers and has a large scar over his left eye.  
+half of his feathers and has a large scar over his left eye.
 ~
 10 0 0 0 0 0 0 0 -200 E
 2 20 8 0d0+20 1d2+0
@@ -75,8 +75,8 @@ rat~
 a rat~
 A large rat is here.
 ~
-   The creature looks up at you with it's big dark eyes.  They look black.  
-The hair on the rat is matted down, probably from some sewer water.    
+   The creature looks up at you with it's big dark eyes.  They look black.
+The hair on the rat is matted down, probably from some sewer water.
 ~
 10 0 0 0 0 0 0 0 -250 E
 2 20 8 0d0+20 1d2+0
@@ -89,7 +89,7 @@ weasel~
 a weasel~
 A sly looking weasel is here.
 ~
-   She looks very sneaky and could easily sneak up on her prey.    
+   She looks very sneaky and could easily sneak up on her prey.
 ~
 10 0 0 0 0 0 0 0 -250 E
 2 20 8 0d0+20 1d2+0
@@ -102,7 +102,7 @@ goose~
 a goose~
 A goose is here, walking along the trail.
 ~
-   Her feathers are as white as snow, she looks friendly enough to touch.    
+   Her feathers are as white as snow, she looks friendly enough to touch.
 ~
 10 0 0 0 0 0 0 0 300 E
 1 20 9 0d0+10 1d2+0
@@ -115,7 +115,7 @@ chick~
 a chick~
 A furry little chick is here.
 ~
-   She is a small little thing and looks quite weak.    
+   She is a small little thing and looks quite weak.
 ~
 10 0 0 0 0 0 0 0 250 E
 3 19 8 0d0+30 1d2+0
@@ -129,7 +129,7 @@ a hen~
 A hen is here.
 ~
    She is mean looking and quite ugly.  Her eyes give you the chilling feeling
-of death.    
+of death.
 ~
 10 0 0 0 0 0 0 0 -300 E
 4 19 7 0d0+40 1d2+0
@@ -143,7 +143,7 @@ a dog~
 A large dog is here.
 ~
    He is very bony, but appears to be very tough.  It might be wise to leave
-him alone.    
+him alone.
 ~
 10 0 0 0 0 0 0 0 300 E
 5 19 7 1d1+50 1d2+0
@@ -157,7 +157,7 @@ a farmer~
 Farmer Pete is here, busily working.
 ~
    He is a husky man.  Well built, but friendly looking.  His silver hair
-reflects in the sunlight.    
+reflects in the sunlight.
 ~
 10 0 0 0 0 0 0 0 300 E
 10 17 4 2d2+100 1d2+1
@@ -171,7 +171,7 @@ cow~
 a cow~
 A cow is here.
 ~
-   She is very clean and well groomed.    
+   She is very clean and well groomed.
 ~
 10 0 0 0 0 0 0 0 300 E
 4 19 7 0d0+40 1d2+0
@@ -185,7 +185,7 @@ a barn cat~
 A lazy barn cat is roaming around here.
 ~
    He is a large creature, and could probably use a diet.  His fur is orange
-with stripes of brown.    
+with stripes of brown.
 ~
 10 0 0 0 0 0 0 0 -300 E
 5 19 7 1d1+50 1d2+0
@@ -199,7 +199,7 @@ a crow~
 An ugly crow is here.
 ~
    He looks like he should be dead.  He is covered in scars.  You notice some
-blood on his beak.    
+blood on his beak.
 ~
 10 0 0 0 0 0 0 0 -300 E
 1 20 9 0d0+10 1d2+0
@@ -213,7 +213,7 @@ the farmer's wife~
 Helen, the farmers wife is standing here.
 ~
    She is a kind looking old woman.  Her hair is still its natural brown.  She
-must be younger than the farmer.    
+must be younger than the farmer.
 ~
 10 0 0 0 0 0 0 0 350 E
 8 18 5 1d1+80 1d2+1
@@ -227,7 +227,7 @@ sheep~
 a sheep~
 A sheep is here.
 ~
-   She looks very tired.  Maybe you should let her rest.    
+   She looks very tired.  Maybe you should let her rest.
 ~
 10 0 0 0 0 0 0 0 400 E
 4 19 7 0d0+40 1d2+0
@@ -241,7 +241,7 @@ a calf~
 A small calf is here.
 ~
    She looks up at you with her young innocent eyes.  How could you ever harm
-her?    
+her?
 ~
 10 0 0 0 0 0 0 0 300 E
 2 20 8 0d0+20 1d2+0
@@ -255,7 +255,7 @@ a farm boy~
 A young farm boy named Jonathan is here.
 ~
    He is a scrawny little thing, but quite tall.  He makes you think of a twig.
-His face is boney and looks like it's been caved in.  How gross!    
+His face is boney and looks like it's been caved in.  How gross!
 ~
 10 0 0 0 0 0 0 0 300 E
 7 18 5 1d1+70 1d2+1
@@ -269,7 +269,7 @@ an owl~
 An owl is here
 ~
    She is quite large, but very beautiful.  Her white feathers look like
-freshly fallen snow.    
+freshly fallen snow.
 ~
 10 0 0 0 8 0 0 0 200 E
 1 20 9 0d0+10 1d2+0
@@ -282,7 +282,7 @@ sheepdog~
 a sheepdog~
 A furry sheepdog is here.
 ~
-   He is quite friendly looking.  He must belong to the farmer.    
+   He is quite friendly looking.  He must belong to the farmer.
 ~
 10 0 0 0 0 0 0 0 400 E
 3 19 8 0d0+30 1d2+0
@@ -295,7 +295,7 @@ blackbird~
 a blackbird~
 A blackbird is flying around above you.
 ~
-   She is old and mean looking.  She carries a lot of battle scars.    
+   She is old and mean looking.  She carries a lot of battle scars.
 ~
 10 0 0 0 0 0 0 0 -300 E
 2 20 8 0d0+20 1d2+0
@@ -309,7 +309,7 @@ a raven~
 A raven is here.
 ~
    Her beak is long and sharp.  It would hurt greatly if she decided to bite
-you.    
+you.
 ~
 10 0 0 0 0 0 0 0 -600 E
 9 17 4 1d1+90 1d2+1
@@ -322,8 +322,8 @@ wolf~
 a wolf~
 A snarling wolf is here.
 ~
-   His teeth drip with drool as he snarls at you, warning you to stay back.  
-Maybe you should just leave him alone.    
+   His teeth drip with drool as he snarls at you, warning you to stay back.
+Maybe you should just leave him alone.
 ~
 10 0 0 0 0 0 0 0 -500 E
 6 18 6 1d1+60 1d2+1
@@ -337,7 +337,7 @@ a squirrel~
 A cute little squirrel is here.
 ~
    He is a cute little thing and probably wouldn't attack you unless you
-provoked him.    
+provoked him.
 ~
 10 0 0 0 0 0 0 0 -250 E
 3 19 8 0d0+30 1d2+0
@@ -350,7 +350,7 @@ gopher~
 a gopher~
 A small gopher is here
 ~
-   She must be a baby.  She is half the size of a normal gopher.    
+   She must be a baby.  She is half the size of a normal gopher.
 ~
 10 0 0 0 0 0 0 0 -300 E
 5 19 7 1d1+50 1d2+0
@@ -364,7 +364,7 @@ a bat~
 A small bat is hanging from the wall.
 ~
    He is a small thing, but rather nasty looking.  His eyes look like 2 small
-black holes.  They remind you of death.  
+black holes.  They remind you of death.
 ~
 10 0 0 0 0 0 0 0 -400 E
 9 17 4 1d1+90 1d2+1
@@ -378,7 +378,7 @@ colt~
 a colt~
 A firey colt is here.
 ~
-   He looks quite mean.  He must be the bully of the farm.    
+   He looks quite mean.  He must be the bully of the farm.
 ~
 10 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
@@ -391,7 +391,7 @@ mare~
 a mare~
 A mare is here.
 ~
-   She is a cute little thing, almost too weak to stand on her own.    
+   She is a cute little thing, almost too weak to stand on her own.
 ~
 10 0 0 0 0 0 0 0 -300 E
 5 19 7 1d1+50 1d2+0
@@ -405,7 +405,7 @@ a horse~
 A beautiful horse stands here.
 ~
    Her coat is a shiny brown.  You notice she has some white splotches on her
-legs.    
+legs.
 ~
 10 0 0 0 0 0 0 0 -200 E
 4 19 7 0d0+40 1d2+0
@@ -419,7 +419,7 @@ a stallion~
 A fierce looking stallion is here.
 ~
    His eyes almost seem red as they stare at you, almost making you want to
-leave.    
+leave.
 ~
 10 0 0 0 0 0 0 0 -500 E
 8 18 5 1d1+80 1d2+1
@@ -433,7 +433,7 @@ a turkey~
 An annoying turkey is here.
 ~
    He is more than ugly.  He is hidious looking!  His eyes seem to have a fog
-in them.  Maybe he can't see as well as he used to.    
+in them.  Maybe he can't see as well as he used to.
 ~
 10 0 0 0 0 0 0 0 -400 E
 3 19 8 0d0+30 1d2+0
@@ -447,7 +447,7 @@ a butterfly~
 A beautiful butterfly is here.
 ~
    His wings are splotched in many bright colors.  He is the most beautiful
-creature you have ever seen.    
+creature you have ever seen.
 ~
 10 0 0 0 0 0 0 0 600 E
 10 17 4 2d2+100 1d2+1
@@ -461,7 +461,7 @@ Arthur~
 Arthur is sitting here in his rocking chair, warming himself by the fire.
 ~
    He smiles at you when you look at him.  He must work somewhere on the farm
-and hunt in his spare time.    
+and hunt in his spare time.
 ~
 10 0 0 0 0 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -476,7 +476,7 @@ a coyote~
 A coyote is here.
 ~
    He is fierce looking.  His teeth are probably razor sharp and could easily
-tear you open.    
+tear you open.
 ~
 10 0 0 0 0 0 0 0 -800 E
 10 17 4 2d2+100 1d2+1
@@ -490,7 +490,7 @@ a hawk~
 A hawk is here.
 ~
    She looks like a normal hawk, but her wings seems to be somewhat longer,
-enabling her to fly faster.    
+enabling her to fly faster.
 ~
 10 0 0 0 0 0 0 0 -300 E
 7 18 5 1d1+70 1d2+1
@@ -504,7 +504,7 @@ a roach~
 A large roach is here.
 ~
    He is an ugly thing.  He has hair growing off his legs and is head looks
-some what deformed.    
+some what deformed.
 ~
 10 0 0 0 0 0 0 0 -300 E
 9 17 4 1d1+90 1d2+1
@@ -517,7 +517,7 @@ sparrow~
 a sparrow~
 A small sparrow is here.
 ~
-   She is delicate looking, but looks can be deceiving.    
+   She is delicate looking, but looks can be deceiving.
 ~
 10 0 0 0 0 0 0 0 -300 E
 7 18 5 1d1+70 1d2+1

@@ -1,6 +1,6 @@
 #17500
 The Cardinal Wizards Zone Description Room~
-   Builder   : 
+   Builder   :
 Zone         : 175 Cardinal Wizards
 Began        : 2000
 Player Level : 18-22
@@ -26,7 +26,7 @@ S
 A Gravel Path~
    The path beneath you is made of loose gravel, and travels both north and
 east.  To the north a large complex is visible, with a tower peaking into the
-sky to the northwest.  To the south lies a granite castle.    
+sky to the northwest.  To the south lies a granite castle.
 ~
 175 0 0 0 0 0
 D0
@@ -42,13 +42,13 @@ S
 A Dead End~
    The path halts suddenly here at the base of what at first glance looks like
 a cliff.  But upon closer examination, the cliff is revealed to be part of a
-wall that extends to the east and west as far as the eye can see.    
+wall that extends to the east and west as far as the eye can see.
 ~
 175 0 0 0 0 0
 D0
    Looking closer at the sheer wall before you, it becomes obvious that there
 is a finely constructed door here, designed to merge seamlessly into the
-northern wall.    
+northern wall.
 ~
 door hidden~
 2 17500 17503
@@ -62,7 +62,7 @@ The Wizard's Mansion~
    You are in a richly decorated room, with thick carpet under your feet and
 tapestries hanging from the walls.  To the west lies a staircase, and to the
 east you can hear the gurgling of water.  On the north wall hangs a curious
-quicksilver mirror.    
+quicksilver mirror.
 ~
 175 8 0 0 0 0
 D0
@@ -89,9 +89,9 @@ To the west lies the base of a staircase.
 0 0 17516
 E
 mirror~
-   The mirror is a grey stone frame the size of a door set against the wall.  
+   The mirror is a grey stone frame the size of a door set against the wall.
 Within it, a vertical pool of quicksilver ripples gently, held in place by some
-magical means.    
+magical means.
 ~
 S
 #17504
@@ -99,7 +99,7 @@ An Indoor River~
    The carpet here comes to an abrupt halt as some hidden mechanism pumps
 water into the hallway and sends it flowing to the east, where it quickly
 becomes rapid and hostile.  On the north wall is a large tapestry, which
-appears suspiciously door-like.    
+appears suspiciously door-like.
 ~
 175 8 0 0 0 0
 D0
@@ -122,7 +122,7 @@ S
 A Tight Space~
    You are in a tight space behind a tapestry.  It is cramped, cold, dark, and
 smells of moist, moldy stone.  The only thing of intrest is an inscription on
-the wall.    
+the wall.
 ~
 175 265 0 0 0 0
 D2
@@ -135,7 +135,7 @@ S
 The River Quickens~
    The absurd indoor river quickens now, and you realise that you cannot hope
 to make your way back upstream.  The brick walls around you become coarse and
-poorly cut as you move downstream.    
+poorly cut as you move downstream.
 ~
 175 72 0 0 0 6
 D1
@@ -148,7 +148,7 @@ S
 A Bend in the River~
    Here the river bends, and continues onwards to the north.  The walls
 continue to deteriorate closer towards that of a cavern, and you can see what
-looks like daylight ahead to the north.    
+looks like daylight ahead to the north.
 ~
 175 8 0 0 0 0
 D0
@@ -161,7 +161,7 @@ S
 The River Continues~
    The river continues onwards to the north from here, and you can definitely
 see what looks like the exit of a cave's mouth up ahead.  The walls have
-degenerated into uncut stone.    
+degenerated into uncut stone.
 ~
 175 8 0 0 0 6
 D0
@@ -174,7 +174,7 @@ S
 A Bend to the East~
    You leave the cave entrance only to find yourself outside in the wilderness.
 However, the banks of the river are too steep to climb, and you are forced
-along a tight bend to the east.    
+along a tight bend to the east.
 ~
 175 0 0 0 0 6
 D1
@@ -187,7 +187,7 @@ S
 Out on the Lake~
    The river pours into a lake here, and the water stills.  To the north lies a
 shimmering white light, and far to the east you can see a door-sized mirror
-hovering vertically above the water.    
+hovering vertically above the water.
 ~
 175 0 0 0 0 6
 D0
@@ -210,7 +210,7 @@ Trilless's Sanctuary.~
    You are surrounded by a shimmering white light in all directions but down.
 Beneath you, water laps gently through the void of brightness, and to the south
 you hear the sounds of a lake.  To the west, you can hear the muffled bickering
-of two guards.    
+of two guards.
 ~
 175 0 0 0 0 6
 D2
@@ -227,7 +227,7 @@ S
 The Mirror on the Lake~
    To the south rises a large ivory doorframe, carved with ethereal runes and
 symbols.  Within the frame ripples quicksilver, and your warped reflection
-stares back at you.  The mirror could be easily walked through.    
+stares back at you.  The mirror could be easily walked through.
 ~
 175 0 0 0 0 6
 D2
@@ -247,7 +247,7 @@ the four cardinal directions lies a door, and only the northern is even
 remotely earthly in appearance.  The west wall has a carved obsidian doorframe
 attached, pure blackness inside.  The east is the inverse of the first, a
 carved ivory frame with glowing white light.  The south has a grey stone frame,
-and liquid quicksilver ripples gently on the surface.    
+and liquid quicksilver ripples gently on the surface.
 ~
 175 8 0 0 0 0
 D1
@@ -270,7 +270,7 @@ S
 #17514
 The Flowing River~
    The river soon turns out to become to powerful an opponent to battle, and it
-unceremoniously forces you back to the east.    
+unceremoniously forces you back to the east.
 ~
 175 0 0 0 0 6
 D1
@@ -283,7 +283,7 @@ S
 Inside the Mirror~
    Nothing but rippling liquid reflection makes up the existence of the world.
 Beneath your feet, up above, and to either side all you can see is your own
-reflection, warped into odd contorted shapes.    
+reflection, warped into odd contorted shapes.
 ~
 175 8 0 0 0 0
 D2
@@ -296,7 +296,7 @@ S
 The Base of the Stairs~
    The room around you is rich, luxuriant, and very, very black.  A stairwell
 leads upwards into the level above, and a small sign is attached to the rail.
-To the east you can see the entrance to the wizards mansion.    
+To the east you can see the entrance to the wizards mansion.
 ~
 175 0 0 0 0 0
 D1
@@ -311,8 +311,8 @@ The stairwell winds upwards above you into a foyer.
 0 0 17517
 E
 read sign~
-   My Tower of Evil lies above.  All tresspassers will be killed on sight.  
-Turn back now, or face my wrath.  
+   My Tower of Evil lies above.  All tresspassers will be killed on sight.
+Turn back now, or face my wrath.
 - Carcophan
 ~
 S
@@ -321,7 +321,7 @@ The Foyer of the Tower~
    You are in a foyer.  The floor, walls, and ceiling are black, with the
 occasional blood red splash of a rug or a tapestry.  There is a desk to the west
 that you could easily fit behind.  The stairwell continues up before coming to
-an abrubt halt at the ceiling.  
+an abrubt halt at the ceiling.
 ~
 175 8 0 0 0 0
 D3
@@ -342,7 +342,7 @@ D5
 0 0 17516
 E
 ceiling porthole stairwell~
-   There is a small porthole covering the ascent of the stairwell. 
+   There is a small porthole covering the ascent of the stairwell.
 There is an inscription written on the porthole:
 I am the end of every life, and the beginning of every end. What am I?
 ~
@@ -351,7 +351,7 @@ T 17502
 #17518
 Behind the Desk~
    The desk is cluttered with papers and records, but nothing is of exceptional
-notice here.    
+notice here.
 ~
 175 8 0 0 0 0
 D1
@@ -364,9 +364,9 @@ T 17505
 Outside~
    The porthole at your feet is surrounded as far as the eye can see by a vast
 desert in the grips of eternal night.  The stars and moon provide enough light
-to see by.  Before you lies a rock carved with what looks like crude poetry.  
+to see by.  Before you lies a rock carved with what looks like crude poetry.
 You see no reason to explore the desert.  It's absolutely empty as far as the
-eye can see, and probably further.    
+eye can see, and probably further.
 ~
 175 8 0 0 0 0
 D0
@@ -407,7 +407,7 @@ Call the Dark!
 Call the Black!
 Bringsie forth,
 I call it back!"
- 
+
 - Trickster
 ~
 E
@@ -425,7 +425,7 @@ The Forge.~
    This room looks to be an oversized forge.  An anvil larger then you are
 stands in the center of the room, and several huge smithy weapons adorn the
 walls.  The chimeny to the forge looks safe to climb, but a large grate blocks
-your path upwards.    
+your path upwards.
 ~
 175 0 0 0 0 0
 D4
@@ -456,7 +456,7 @@ T 17508
 The Windy Chimney~
    By some trick of placement, a gale blows up the chimney from below.  The
 rushing air howls and wails, pulling and pushing at anything not fixed to the
-wall.  Above you is another grate, with a plaque fixed in the center.    
+wall.  Above you is another grate, with a plaque fixed in the center.
 ~
 175 0 0 0 0 0
 D5
@@ -479,7 +479,7 @@ Deeper Within the Darkness~
    You are surrounded on all sides by deep, black, malign darkness.  You can
 see nothing whatsoever beyond the outer limit of your light's glow.  But to the
 south you can hear an echo, as if there is more space in that direction than in
-the others.    
+the others.
 ~
 175 9 0 0 0 0
 D1
@@ -502,7 +502,7 @@ Within the Darkness~
    You are surrounded on all sides by deep, black, malign darkness.  You can
 see nothing whatsoever beyond the outer limit of your light's glow.  But to the
 north you can hear an echo, as if there is more space in that direction than in
-the others.    
+the others.
 ~
 175 9 0 0 0 0
 D0
@@ -515,7 +515,7 @@ Carcophan's Study~
    You are standing inside what looks to be a large tent in the middle of a
 desert.  A small fire burns giving off light, and comfortable pillows lie
 scattered across the ground.  There is a desk in one corner, with papers and
-pens scattered across it.    
+pens scattered across it.
 ~
 175 0 0 0 0 0
 D1
@@ -527,7 +527,7 @@ S
 Before a Cliff Face~
    The gravel path continues east and west along the cliff face that towers
 above you, too steep to climb.  It stretches to the east and west just north of
-the path.    
+the path.
 ~
 175 0 0 0 0 0
 D1
@@ -539,7 +539,7 @@ S
 Before a Cliff Face~
    The gravel path looks out of place at the base of this cliff with an open
 field to the south.  A turn in the path can be seen to the east while the city
-of Elcardo is visible to the west.    
+of Elcardo is visible to the west.
 ~
 175 0 0 0 0 0
 D1

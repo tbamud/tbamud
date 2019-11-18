@@ -2,10 +2,10 @@
 The Bridge~
    You have reached the Bridge, the central nervous system for Space Station
 Alpha.  All around you are flashing screens a ndlights.  Status reports and
-damage reports are scrolling o ffthe screen faster than you can read them.  
+damage reports are scrolling o ffthe screen faster than you can read them.
 The gravity is ve rylight in this room.  You can see blood staining the crash
 couch of what was probably the Computer Systems Officer.  There are dozens of
-egg pods here!    
+egg pods here!
 ~
 273 137 0 0 0 0
 D4
@@ -17,44 +17,44 @@ credits info~
    Hi, just a quick explanation of Space Station Alpha.
 Esentially this area is a Sci-fi based area. A space station has been in orbit
 around your planet and something has gone terribly wrong. Predator aliens and
-introduced Alien aliens into the station to hunt along with the humans! The 
+introduced Alien aliens into the station to hunt along with the humans! The
 station is completely infested and the crew of Space Station Alpha is doing
 their best to hold out and clear the station. Too bad the captain has snapped
-and more than half the crew has been killed or committed suicide. 
-Room #61 is a space shuttle that is the entrance to the station from the rest 
-of the world. Edit it to fit in yours. 
+and more than half the crew has been killed or committed suicide.
+Room #61 is a space shuttle that is the entrance to the station from the rest
+of the world. Edit it to fit in yours.
 Other than that it should be pretty much plug and play. It contains 1 deathtrap,
 a room that has been sealed off that the players will definately have to ignore
 all the warnings to get killed in. It will serve them right if they are dumb
 enough to walk into a sealed room that has a hull breach and no pressure!
-This area is nasty. Not for people who are simply hack & slash. It will take 
-some thinking to clear. Best not to go alone too. 
-2 or 3 higher level characters should be able to clear it if they follow a 
-hit and run campaign. Since all but a few of the rooms are no magic spell 
+This area is nasty. Not for people who are simply hack & slash. It will take
+some thinking to clear. Best not to go alone too.
+2 or 3 higher level characters should be able to clear it if they follow a
+hit and run campaign. Since all but a few of the rooms are no magic spell
 casters should map out which rooms magic will work in and cast protection spells
 there or before they enter the station.  Magic works in the hangars and a few
 other rooms. Best bet is to set up a base camp in the main hagar and clear the
 immeadiate area of wandering aliens. Then heal up in the hangar and explore until
 the next battle. Then drop back, heal up and head back out into it. Pick the
-mobs off one at a time if possible. You really don't want to go into a combat 
-wounded. Plus fleeing here can get you killed too. 
+mobs off one at a time if possible. You really don't want to go into a combat
+wounded. Plus fleeing here can get you killed too.
 I recommend setting the zone reset bit so that it doesn't reload while
-players are in the station. I don't think I have it set that way as the 
-default. 
-Anyway, enjoy. 
+players are in the station. I don't think I have it set that way as the
+default.
+Anyway, enjoy.
 Magnus/Stan Rohrer
 magnus@@ix.netcom.com
 ~
 E
 egg eggs pod~
    Yes, your presence in this room has been noticed by the proto-aliens in the
-pods!  
+pods!
 ~
 S
 #27301
 Weapon Storage Chamber~
-   You have located the weapons storage chamber.  Unfortunatelyit is empty.  
-Apparently the crewmembers had a chance to get to the weapons.    
+   You have located the weapons storage chamber.  Unfortunatelyit is empty.
+Apparently the crewmembers had a chance to get to the weapons.
 ~
 273 137 0 0 0 0
 D1
@@ -70,7 +70,7 @@ S
 Officer's Mess~
    This is where the officers of Space Station Alpha take their meals.  It
 looks as if the room is being used as a staging area for alien hunting
-Predators!    
+Predators!
 ~
 273 137 0 0 0 0
 D1
@@ -86,7 +86,7 @@ S
 Systems Officer's Quarters~
    These are the quarters of the Systems Officer.  What is left of her is
 scattered all about the room.  The grate over the ventilation shaft has been
-torn off.    
+torn off.
 ~
 273 137 0 0 0 0
 D1
@@ -101,7 +101,7 @@ S
 #27304
 Communications Officer's Quarters~
    These are the quarters of Lt.  Oshura, communications officer of the
-station.  There is no sign of Oshura here.    
+station.  There is no sign of Oshura here.
 ~
 273 137 0 0 0 0
 D2
@@ -117,7 +117,7 @@ S
 Captain's Quarters~
    These are the quarters of Captain Vance Marshal.  They look recently
 occupied but Captain Marshal is not in the room.  A steel plate has been
-hastily welded over the ventilation shaft.    
+hastily welded over the ventilation shaft.
 ~
 273 137 0 0 0 0
 D0
@@ -137,7 +137,7 @@ S
 Main Axis Transportation Column~
    You are in the main transportation column.  There are some burn marks here
 on the walls and the rungs directly above you have been corroded away by acid.
-  
+
 ~
 273 137 0 0 0 0
 D1
@@ -162,7 +162,7 @@ Science Officer's Quarters~
    These are the quarters of the stations Science Officer.  The room is in
 complete dissaray.  A vent cover in the ceiling has been forcibly removed from
 the inside.  There are burn marks and signs of acid corrosion on the floor
-below the vent.    
+below the vent.
 ~
 273 137 0 0 0 0
 D0
@@ -182,7 +182,7 @@ S
 Recreation Room~
    You have found the recreation room.  It looks like there was some strenuous
 activity going on here recently judging by the human body parts.  Where is the
-skull though?    
+skull though?
 ~
 273 137 0 0 0 0
 D0
@@ -198,7 +198,7 @@ S
 The Latrine~
    You have found the latrine.  The fixtures have been torn off the floor and
 smashed by something with great strength.  Part of a dead adult stage alien is
-here.    
+here.
 ~
 273 137 0 0 0 0
 D1
@@ -213,7 +213,7 @@ S
 #27310
 A Storage Room~
    This room stored various replacement parts for the spacestation.  Boxes are
-tossed randomly about.    
+tossed randomly about.
 ~
 273 137 0 0 0 0
 D1
@@ -228,7 +228,7 @@ S
 #27311
 Food Storage~
    This was where the dry rations for the station were stored.  Most packages
-have been ripped open.    
+have been ripped open.
 ~
 273 137 0 0 0 0
 D0
@@ -242,7 +242,7 @@ hatch~
 S
 #27312
 Storage Room~
-   This room is stored with huge metal barrels.    
+   This room is stored with huge metal barrels.
 ~
 273 137 0 0 0 0
 D1
@@ -258,7 +258,7 @@ S
 Bio Lab~
    This room is full of high tech equipment for disection and analisis of
 biological specimens.  There is a naked human on an examination table here.  A
-facehugger is firmly attached to him.    
+facehugger is firmly attached to him.
 ~
 273 137 0 0 0 0
 D1
@@ -274,7 +274,7 @@ S
 Cryo Storage~
    This room is bitterly cold.  There are some large glass tubes here
 containing frozen humanbeings.  Other containers house suspended alien life
-forms.    
+forms.
 ~
 273 137 0 0 0 0
 D1
@@ -289,7 +289,7 @@ S
 #27315
 An Empty Stateroom~
    There are a couple neately made beds here.  Nothing else is out of the
-ordingary.    
+ordingary.
 ~
 273 8 0 0 0 0
 D2
@@ -304,7 +304,7 @@ S
 #27316
 Hangar #1~
    You are in Hangar #1 on Space Station Alpha.  A suttlecraft is waiting here
-to transport you to the planet's surface.    
+to transport you to the planet's surface.
 ~
 273 8 0 0 0 0
 D1
@@ -321,7 +321,7 @@ S
 #27317
 Air Lock #1~
    This room has especially thick hatches to it with a large control pannel
-mounted next to the hatch to the west.    
+mounted next to the hatch to the west.
 ~
 273 8 0 0 0 0
 D0
@@ -345,7 +345,7 @@ S
 Main Axis Transportation Column~
    You are in the main transportation column.  There are some burn marks on the
 walls here.  What's that!?????  A part of a human face?!  Something isn't right
-here!    
+here!
 ~
 273 137 0 0 0 0
 D1
@@ -368,7 +368,7 @@ S
 #27319
 Airlock #2~
    This room has especially thick hatches to it with a large control pannel
-mounted next to the hatch to the east.    
+mounted next to the hatch to the east.
 ~
 273 137 0 0 0 0
 D0
@@ -391,7 +391,7 @@ S
 #27320
 Hanger #2~
    This is a rather large room, similar to the room you entered the station
-from.  There is no other space craft here however.    
+from.  There is no other space craft here however.
 ~
 273 137 0 0 0 0
 D3
@@ -402,7 +402,7 @@ S
 #27321
 Preparation Room #1~
    This room contains a number of vacum suits and other equipment for walking
-out side the hull of the station.    
+out side the hull of the station.
 ~
 273 8 0 0 0 0
 D0
@@ -417,7 +417,7 @@ S
 #27322
 Repair Shop~
    This room is obviously a repairshop of some sort.  There is a half assembled
-robot on a table here along with some weapons that are recharging.    
+robot on a table here along with some weapons that are recharging.
 ~
 273 137 0 0 0 0
 D1
@@ -432,7 +432,7 @@ S
 #27323
 A Storage Room~
    Spare parts are stacked to the ceiling in this room.  There are a few
-overturned boxes but otherwise this room is intact.    
+overturned boxes but otherwise this room is intact.
 ~
 273 137 0 0 0 0
 D1
@@ -447,7 +447,7 @@ S
 #27324
 Preparation Room #2~
    This room is full of vacum suits and equipment for space walking out side
-the hull of the ship.    
+the hull of the ship.
 ~
 273 137 0 0 0 0
 D0
@@ -462,7 +462,7 @@ S
 #27325
 A Kitchen~
    This is a small kitchen used for making snacks for the crew.  The place has
-been ransacked!    
+been ransacked!
 ~
 273 137 0 0 0 0
 D1
@@ -477,7 +477,7 @@ S
 #27326
 A Crew Stateroom~
    The room was until recently occupied by a memeber of the space station's
-crew.    
+crew.
 ~
 273 8 0 0 0 0
 D1
@@ -492,7 +492,7 @@ S
 #27327
 A Crew Stateroom~
    The room was until recently occupied by a memeber of the space station's
-crew.    
+crew.
 ~
 273 137 0 0 0 0
 D1
@@ -508,7 +508,7 @@ S
 A Crew Stateroom~
    The room was until recently occupied by a memeber of the space station's
 crew.  The bed in this room is soaked with blood from the poor slob on the
-floor.  The corpse has a gaping hole in its chest.    
+floor.  The corpse has a gaping hole in its chest.
 ~
 273 137 0 0 0 0
 D2
@@ -523,9 +523,9 @@ S
 #27329
 Video Room~
    This room contains a dozen comfortable looking reclining couches each
-equiped with thier own video screen on a swivel are attached to the couch.  
+equiped with thier own video screen on a swivel are attached to the couch.
 One of the video couches is occupied by a corpse with a large hole it his
-chest.    
+chest.
 ~
 273 137 0 0 0 0
 D0
@@ -544,7 +544,7 @@ S
 #27330
 Main Axis Transportation Column~
    You are in the main transportation column.  There are some burn marks here
-on the walls and blood covers most of the shaft here.    
+on the walls and blood covers most of the shaft here.
 ~
 273 137 0 0 0 0
 D1
@@ -567,7 +567,7 @@ S
 #27331
 Crew Stateroom~
    This room was recently occupied by one of the crew members of the
-spacestation.  There is a hastily scribbled note laying on the desk here.    
+spacestation.  There is a hastily scribbled note laying on the desk here.
 ~
 273 137 0 0 0 0
 D0
@@ -588,7 +588,7 @@ Sceen of a Battle~
    It is hard to say what this room once was.  Everything has been destroyed.
 There are burn marks and holes everywhere.  It looks like some eventually
 tossed in a fragmentation grenade and closed the door.  Bits of alien flesh
-cling to the walls and ceiling.  Score one up for the crew!    
+cling to the walls and ceiling.  Score one up for the crew!
 ~
 273 137 0 0 0 0
 D0
@@ -604,8 +604,8 @@ S
 A Crew Stateroom~
    A corpse lies slumped over a small metal desk against the far wall of
 thisroom.  As you lift the head up to have a better look you notice the
-singleperfectly round hole through the right temple and out the other side.  
-This crewmenber took the easy way out.    
+singleperfectly round hole through the right temple and out the other side.
+This crewmenber took the easy way out.
 ~
 273 137 0 0 0 0
 D1
@@ -622,7 +622,7 @@ A Small Theater~
    This is a small theater.  One entire wall is a huge viewing screen for
 moviesand entertainment views.  Unfortunately the screen has been damaged by
 splattered alien blood.  A translucent alien arm lays on the floor just
-inchesfrom your feet.  Looks like the crew didn't do so badly after all.    
+inchesfrom your feet.  Looks like the crew didn't do so badly after all.
 ~
 273 137 0 0 0 0
 D1
@@ -639,7 +639,7 @@ Observation Room~
    The external wall of this room is completely transparent.  There are a
 numberof comfortable chairs here for simply sitting and staring out into space.
 You could stare at the stars forever, just like the dead crewman to your right
-with the huge gaping hole in his chest!    
+with the huge gaping hole in his chest!
 ~
 273 8 0 0 0 0
 D0
@@ -655,7 +655,7 @@ S
 Agrodome #1~
    This room is full of lush plant life that has been designed to live in
 lowgravity environments such as are found on orbiting space platforms.  The
-foliage offers great cover.  This room is a veritable jungle in space!    
+foliage offers great cover.  This room is a veritable jungle in space!
 ~
 273 8 0 0 0 0
 D1
@@ -672,7 +672,7 @@ Agrodome #2~
    This room is full of row after row of editable plant life.  There are
 gainttomatoes, two foot long cucumbers, carrots, and other vegetables.  They
 haveno doubt been geneticaly altered to grow in the light gravity of a
-spacestation.    
+spacestation.
 ~
 273 137 0 0 0 0
 D1
@@ -692,7 +692,7 @@ Agrodome #3~
    It was a BIG mistake to open that hatch!  The hull of the station has been
 breached here!  Anything that wasn't nailed down has been sucked out of this
 room...  Including you!  Should have paid more attention to that little light
-on the hatch console now shouldn't you?    
+on the hatch console now shouldn't you?
 ~
 273 100 0 0 0 0
 D1
@@ -708,9 +708,9 @@ hatch~
 S
 #27339
 Agrodome #4~
-   All the plantlife in this room has been destroyed by energy weapon fire.  
-Someone apparently got spookedand just started opening up at radom here.  
-Either thator they simply went nuts!  Maybe both.    
+   All the plantlife in this room has been destroyed by energy weapon fire.
+Someone apparently got spookedand just started opening up at radom here.
+Either thator they simply went nuts!  Maybe both.
 ~
 273 137 0 0 0 0
 D2
@@ -718,8 +718,8 @@ D2
 hatch~
 2 27315 27343
 D3
-The hatch to Agrodome #3 is closed. The control pannel onthe door 
-has a red flashing light on it. 
+The hatch to Agrodome #3 is closed. The control pannel onthe door
+has a red flashing light on it.
 The LCD reads:
 ** NO PRESSURE **
 ~
@@ -731,7 +731,7 @@ Hangar Delta~
    This is another space hangar.  The shuttle in this hangar has been destroyed
 by a powerful blast.  Parts from four or five aliens are lying here on the
 floor, most of the hangar deck had been corroded away and it looks unsafe to
-walk here.    
+walk here.
 ~
 273 8 0 0 0 0
 D1
@@ -742,7 +742,7 @@ S
 #27341
 Preparation Room~
    This is a equipment preparation room for crew memebers who will be walking
-outside the ship or taking a flight in one of the shuttles.    
+outside the ship or taking a flight in one of the shuttles.
 ~
 273 137 0 0 0 0
 D0
@@ -765,7 +765,7 @@ S
 #27342
 Main Axis Transportation Column~
    You are in the main transportation column.  There are more burn marks on the
-walls here.    
+walls here.
 ~
 273 137 0 0 0 0
 D1
@@ -789,7 +789,7 @@ S
 Predator Remote Command Facility~
    This room has been converted over from its former function to serve as a
 Predator remote comand and control base.  You get the feeling you are being
-watched!    
+watched!
 ~
 273 137 0 0 0 0
 D0
@@ -813,7 +813,7 @@ S
 Hangar Gamma~
    This hangar is occupied by and extreamly strange looking spacecraft.  The
 markings on the hull are not human in origin.  A large access hatch is open on
-the alien craft.    
+the alien craft.
 ~
 273 137 0 0 0 0
 D1
@@ -829,7 +829,7 @@ S
 #27345
 A Storage Room~
    Strange markings have been crudely painted on the wall here in what appears
-to be Predator blood!    
+to be Predator blood!
 ~
 273 137 0 0 0 0
 D0
@@ -843,7 +843,7 @@ hatch~
 S
 #27346
 A Passageway~
-   The passage continues east and west.  
+   The passage continues east and west.
 ~
 273 137 0 0 0 0
 D1
@@ -857,7 +857,7 @@ hatch~
 S
 #27347
 Cleaning Room~
-   Cleaning supplies are stored in this room.  Mops, sponges etc.    
+   Cleaning supplies are stored in this room.  Mops, sponges etc.
 ~
 273 137 0 0 0 0
 D1
@@ -873,7 +873,7 @@ S
 The Sickbay~
    This is the hospital for the station.  There are 10 beds, one of which is
 totaly soaked in blood.  The others are empty.  A corpse lies on the floor of
-the bloodstained bed with a gaping hole in her chest.    
+the bloodstained bed with a gaping hole in her chest.
 ~
 273 137 0 0 0 0
 D0
@@ -888,7 +888,7 @@ S
 #27349
 Surgery~
    This is the surgery room of the station.  Most of the equipment has been
-badly damaged here.  Smashed readouts broken glass, a major mess.    
+badly damaged here.  Smashed readouts broken glass, a major mess.
 ~
 273 137 0 0 0 0
 D1
@@ -903,7 +903,7 @@ S
 #27350
 A Crew Stateroom~
    This room has been left pretty much intact.  The bed is still made and there
-is no sign of anything out of the ordinary.    
+is no sign of anything out of the ordinary.
 ~
 273 137 0 0 0 0
 D1
@@ -917,7 +917,7 @@ hatch~
 S
 #27351
 A Passageway~
-   The passage continues east and west.  
+   The passage continues east and west.
 ~
 273 137 0 0 0 0
 D1
@@ -931,7 +931,7 @@ hatch~
 S
 #27352
 A Passageway~
-   The passage continues south and west.  
+   The passage continues south and west.
 ~
 273 137 0 0 0 0
 D2
@@ -945,7 +945,7 @@ hatch~
 S
 #27353
 A Passageway~
-   The passage continues south, east, and north.  
+   The passage continues south, east, and north.
 ~
 273 137 0 0 0 0
 D0
@@ -963,7 +963,7 @@ hatch~
 S
 #27354
 Main Axis Transportation Column~
-   You are in the main transportation tube.    
+   You are in the main transportation tube.
 ~
 273 137 0 0 0 0
 D1
@@ -985,7 +985,7 @@ green hatch~
 S
 #27355
 A Passageway~
-   The passage continues south, west, and north.  
+   The passage continues south, west, and north.
 ~
 273 137 0 0 0 0
 D0
@@ -1003,7 +1003,7 @@ D3
 S
 #27356
 A Passageway~
-   The passage continues north and east.  
+   The passage continues north and east.
 ~
 273 137 0 0 0 0
 D0
@@ -1017,7 +1017,7 @@ hatch~
 S
 #27357
 A Passageway~
-   The passage continues east and west.  
+   The passage continues east and west.
 ~
 273 137 0 0 0 0
 D1
@@ -1031,7 +1031,7 @@ hatch~
 S
 #27358
 A Passageway~
-   The passage continues east and west.  
+   The passage continues east and west.
 ~
 273 137 0 0 0 0
 D1
@@ -1045,7 +1045,7 @@ hatch~
 S
 #27359
 A Passageway~
-   The passage continues north and west.  
+   The passage continues north and west.
 ~
 273 137 0 0 0 0
 D0
@@ -1062,7 +1062,7 @@ Reactor Room~
    The main reactors that power the station are here.  There is a pannel on the
 main reactor that looks as if a code has been partially entred.  Suddenly you
 are surprized by Captain Marshal!  The man is obviously insane and screams "I
-must destroy the station!  " as he aims his weapon at your head!    
+must destroy the station!  " as he aims his weapon at your head!
 ~
 273 137 0 0 0 0
 D5
@@ -1073,7 +1073,7 @@ S
 #27361
 Space Shuttle Galeleo~
    You have entered the strange looking craft and you search it for signs of
-life.  There are none.  What you do find is a button marked 'Return'.    
+life.  There are none.  What you do find is a button marked 'Return'.
 ~
 273 137 0 0 0 0
 D4
@@ -1084,9 +1084,9 @@ Pressing the 'Return' button launches the ship.
 S
 #27362
 The Bridge of the Predator Craft~
-   You stand on the mist shrouded bridge of the Predator aliean spacecraft.  
+   You stand on the mist shrouded bridge of the Predator aliean spacecraft.
 Strange glowing controls hypnotically flash and change color.  Occasionally a
-strange spiting-hissing sound comes over what must be an intercom speaker.    
+strange spiting-hissing sound comes over what must be an intercom speaker.
 ~
 273 8 0 0 0 0
 D1
@@ -1103,7 +1103,7 @@ S
 Trophy Room~
    You have entered the main hold and trophy room of the Predator ship.  There
 are skulls of all sorts on trophy stands along the walls.  These monsters have
-killed a lot of men, and other things in their travels!    
+killed a lot of men, and other things in their travels!
 ~
 273 168 0 0 0 0
 D1
@@ -1122,7 +1122,7 @@ Predator Engine Room~
    Somehow you have managed to get all the way to the main engine room ofthe
 Peredator's ship!  Too bad the technology here is so alien you can find nothing
 of use.  Strange machinery hums and glows.  The same thick mist that covers
-most of the ship is on the floor here too.    
+most of the ship is on the floor here too.
 ~
 273 233 0 0 0 0
 D3

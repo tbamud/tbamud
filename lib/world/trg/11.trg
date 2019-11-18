@@ -710,7 +710,7 @@ case default
 %send% %actor% %Self.name% damaged itself trying to go %nextdir%.
 if %damage%
 eval damage %self.damage%+10
-else 
+else
 set damage 10
 end
 global damage
@@ -1053,21 +1053,21 @@ global llc
 global lmc
 global lrc
 %echo% @n _______________
-%echo% @n| 	%ulc%_@Y%UL1%	%ulc%_  	%umc%_@Y%UM1%	%umc%_  	%urc%_@Y%UR1%	%urc%_@n |
-%echo% @n|	%ulc%|   |	%umc%|   |	%urc%|   |@n|
+%echo% @n|      %ulc%_@Y%UL1%   %ulc%_          %umc%_@Y%UM1%   %umc%_          %urc%_@Y%UR1%   %urc%_@n |
+%echo% @n|      %ulc%|   |      %umc%|   |      %urc%|   |@n|
 %echo% @n|@Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%@n|
-%echo% @n|	%ulc%|@u%ULn%@n	%ulc%|	%umc%|@u%UMn%@n	%umc%|	%urc%|@u%URn%@n	%urc%|@n|
-%echo% @n|	%ulc%|_@Y%UL3%	%ulc%_|	%umc%|_@Y%UM3%	%umc%_|	%urc%|_@Y%UR3%	%urc%_|@n|
-%echo% @n|	%mlc% _@Y%ML1%	%mlc%_  	%mmc%_@Y%MM1%	%mmc%_  	%mrc%_@Y%MR1%	%mrc%_@n |
-%echo% @n|	%mlc%|   |	%mmc%|   |	%mrc%|   |@n|
+%echo% @n|      %ulc%|@u%ULn%@n %ulc%|  %umc%|@u%UMn%@n %umc%|  %urc%|@u%URn%@n %urc%|@n|
+%echo% @n|      %ulc%|_@Y%UL3%  %ulc%_| %umc%|_@Y%UM3%  %umc%_| %urc%|_@Y%UR3%  %urc%_|@n|
+%echo% @n|      %mlc% _@Y%ML1%  %mlc%_          %mmc%_@Y%MM1%   %mmc%_          %mrc%_@Y%MR1%   %mrc%_@n |
+%echo% @n|      %mlc%|   |      %mmc%|   |      %mrc%|   |@n|
 %echo% @n|@Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%@n|
-%echo% @n|	%mlc%|@u%MLn%@n	%mlc%|	%mmc%|@u%MMn%@n	%mmc%|	%mrc%|@u%MRn%@n	%mrc%|@n|
-%echo% @n|	%mlc%|_@Y%ML3%	%mlc%_|	%mmc%|_@Y%MM3%	%mmc%_|	%mrc%|_@Y%MR3%	%mrc%_|@n|
-%echo% @n|	%llc% _@Y%LL1%	%llc%_  	%lmc%_@Y%LM1%	%lmc%_  	%lrc%_@Y%LR1%	%lrc%_ @n|
-%echo% @n|	%llc%|   |	%lmc%|   |	%lrc%|   |@n|
+%echo% @n|      %mlc%|@u%MLn%@n %mlc%|  %mmc%|@u%MMn%@n %mmc%|  %mrc%|@u%MRn%@n %mrc%|@n|
+%echo% @n|      %mlc%|_@Y%ML3%  %mlc%_| %mmc%|_@Y%MM3%  %mmc%_| %mrc%|_@Y%MR3%  %mrc%_|@n|
+%echo% @n|      %llc% _@Y%LL1%  %llc%_          %lmc%_@Y%LM1%   %lmc%_          %lrc%_@Y%LR1%   %lrc%_ @n|
+%echo% @n|      %llc%|   |      %lmc%|   |      %lrc%|   |@n|
 %echo% @n|@Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%@n|
-%echo% @n|	%llc%|@u%LLn%@n	%llc%|	%lmc%|@u%LMn%@n	%lmc%|	%lrc%|@u%LRn%@n	%lrc%|@n|
-%echo% @n|	%llc%|_@Y%LL3%	%llc%_|	%lmc%|_@Y%LM3%	%lmc%_|	%lrc%|_@Y%LR3%	%lrc%_|@n|
+%echo% @n|      %llc%|@u%LLn%@n %llc%|  %lmc%|@u%LMn%@n %lmc%|  %lrc%|@u%LRn%@n %lrc%|@n|
+%echo% @n|      %llc%|_@Y%LL3%  %llc%_| %lmc%|_@Y%LM3%  %lmc%_| %lrc%|_@Y%LR3%  %lrc%_|@n|
 %echo% @n|_______________|
 ~
 #1140
@@ -1326,21 +1326,21 @@ show board~
 2 c 100
 show~
 %echo% @n _______________
-%echo% @n| 	%ulc%_@Y%UL1%	%ulc%_  	%umc%_@Y%UM1%	%umc%_  	%urc%_@Y%UR1%	%urc%_@n |
-%echo% @n|	%ulc%|   |	%umc%|   |	%urc%|   |@n|
+%echo% @n|      %ulc%_@Y%UL1%   %ulc%_          %umc%_@Y%UM1%   %umc%_          %urc%_@Y%UR1%   %urc%_@n |
+%echo% @n|      %ulc%|   |      %umc%|   |      %urc%|   |@n|
 %echo% @n|@Y%UL4%   %UL2%%UM4%   %UM2%%UR4%   %UR2%@n|
-%echo% @n|	%ulc%|@u%ULn%@n	%ulc%|	%umc%|@u%UMn%@n	%umc%|	%urc%|@u%URn%@n	%urc%|@n|
-%echo% @n|	%ulc%|_@Y%UL3%	%ulc%_|	%umc%|_@Y%UM3%	%umc%_|	%urc%|_@Y%UR3%	%urc%_|@n|
-%echo% @n|	%mlc% _@Y%ML1%	%mlc%_  	%mmc%_@Y%MM1%	%mmc%_  	%mrc%_@Y%MR1%	%mrc%_@n |
-%echo% @n|	%mlc%|   |	%mmc%|   |	%mrc%|   |@n|
+%echo% @n|      %ulc%|@u%ULn%@n %ulc%|  %umc%|@u%UMn%@n %umc%|  %urc%|@u%URn%@n %urc%|@n|
+%echo% @n|      %ulc%|_@Y%UL3%  %ulc%_| %umc%|_@Y%UM3%  %umc%_| %urc%|_@Y%UR3%  %urc%_|@n|
+%echo% @n|      %mlc% _@Y%ML1%  %mlc%_          %mmc%_@Y%MM1%   %mmc%_          %mrc%_@Y%MR1%   %mrc%_@n |
+%echo% @n|      %mlc%|   |      %mmc%|   |      %mrc%|   |@n|
 %echo% @n|@Y%ML4%   %ML2%%MM4%   %MM2%%MR4%   %MR2%@n|
-%echo% @n|	%mlc%|@u%MLn%@n	%mlc%|	%mmc%|@u%MMn%@n	%mmc%|	%mrc%|@u%MRn%@n	%mrc%|@n|
-%echo% @n|	%mlc%|_@Y%ML3%	%mlc%_|	%mmc%|_@Y%MM3%	%mmc%_|	%mrc%|_@Y%MR3%	%mrc%_|@n|
-%echo% @n|	%llc% _@Y%LL1%	%llc%_  	%lmc%_@Y%LM1%	%lmc%_  	%lrc%_@Y%LR1%	%lrc%_ @n|
-%echo% @n|	%llc%|   |	%lmc%|   |	%lrc%|   |@n|
+%echo% @n|      %mlc%|@u%MLn%@n %mlc%|  %mmc%|@u%MMn%@n %mmc%|  %mrc%|@u%MRn%@n %mrc%|@n|
+%echo% @n|      %mlc%|_@Y%ML3%  %mlc%_| %mmc%|_@Y%MM3%  %mmc%_| %mrc%|_@Y%MR3%  %mrc%_|@n|
+%echo% @n|      %llc% _@Y%LL1%  %llc%_          %lmc%_@Y%LM1%   %lmc%_          %lrc%_@Y%LR1%   %lrc%_ @n|
+%echo% @n|      %llc%|   |      %lmc%|   |      %lrc%|   |@n|
 %echo% @n|@Y%LL4%   %LL2%%LM4%   %LM2%%LR4%   %LR2%@n|
-%echo% @n|	%llc%|@u%LLn%@n	%llc%|	%lmc%|@u%LMn%@n	%lmc%|	%lrc%|@u%LRn%@n	%lrc%|@n|
-%echo% @n|	%llc%|_@Y%LL3%	%llc%_|	%lmc%|_@Y%LM3%	%lmc%_|	%lrc%|_@Y%LR3%	%lrc%_|@n|
+%echo% @n|      %llc%|@u%LLn%@n %llc%|  %lmc%|@u%LMn%@n %lmc%|  %lrc%|@u%LRn%@n %lrc%|@n|
+%echo% @n|      %llc%|_@Y%LL3%  %llc%_| %lmc%|_@Y%LM3%  %lmc%_| %lrc%|_@Y%LR3%  %lrc%_|@n|
 %echo% @n|_______________|
 ~
 #1144
@@ -1351,6 +1351,6 @@ test~
 %echo% var2 is %var2%
 %echo% coloured var is @Y%var%@n
 set col Y
-%echo% var coloured var is 	%col%%var%@n
+%echo% var coloured var is      %col%%var%@n
 ~
 $~

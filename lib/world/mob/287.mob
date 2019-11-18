@@ -6,7 +6,7 @@ The innkeeper watches for customers and drinks imported Scotch.
    Reilly doesn't keep this inn open by sitting and watching the goblins invade!
 He looks more like a hobo than an innkeeper but you can at least see that he is
 wearing a huge Scotch sword at his side.  He is also drinking from a huge bottle
-of Scotch whiskey, probably not the single-malt variety.  
+of Scotch whiskey, probably not the single-malt variety.
 ~
 190682 0 0 0 524400 0 0 0 200 E
 30 10 -8 6d6+300 5d5+5
@@ -23,7 +23,7 @@ Pater Vinci greets you as you pass by.
 ~
    Pater Vinci did not bear a weapon in the good old days, but now the goblins
 ought to avoid him, because the good priest fought for King Korbor before he
-took holy orders, and still carries a sturdy club.  
+took holy orders, and still carries a sturdy club.
 ~
 10456 0 0 0 8200 0 0 0 900 E
 15 15 1 3d3+150 2d2+2
@@ -36,7 +36,7 @@ Zeb Rykalp~
 Zeb Rykalp, sheriff of Ofingia, watches you closely.
 ~
    You had better keep on Zeb's good side.  He has few qualms about roughing up
-the Midgaarders, and is ever-vigilant for evil.  
+the Midgaarders, and is ever-vigilant for evil.
 ~
 10588 0 0 0 8 0 0 0 700 E
 15 15 1 3d3+150 2d2+2
@@ -50,7 +50,7 @@ Dorig the dwarf welds bars together with a 10 pound hammer.
 ~
    He is too strong for you to beat easily in a fight, and if he had a beer or
 two in him Dorig would be invincible.  At least, he would think himself
-invincible.  
+invincible.
 ~
 190686 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -63,7 +63,7 @@ Joel Kreb~
 Joel Kreb, the village carpenter, rests with an axe close at hand.
 ~
    That axe he has has a long spike opposite its blade, and you do not think it
-is intended for wood, but for flesh and bone, particularly of goblin-kind.  
+is intended for wood, but for flesh and bone, particularly of goblin-kind.
 ~
 190686 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -77,7 +77,7 @@ A stout halfling shopkeeper eyes your moneybag with a glinting eye.
 ~
    Guard your wallet carefully!  Rumor has it that Maxtrum rarely runs out of
 money, which would be wonderful, if only his customers didn't so often find
-their pockets lighter after leaving his store, though they bought nothing.  
+their pockets lighter after leaving his store, though they bought nothing.
 ~
 190686 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -92,7 +92,7 @@ An elven alchemist inhales the fumes deeply and sighs happily.
    Churt notices you gagging as you enter his shop and peers at you with some
 surprise.  He is a powerful wizard, having practiced such great spells as
 `Churt's Irresistable Retch' and `Word of Command: Go away, I...  ' Well, never
-mind that one.  
+mind that one.
 ~
 190686 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -105,7 +105,7 @@ Dek Shattershock~
 A retired elven ranger works here as a leatherworker.
 ~
    Dek Shattershock- the name inspires fear in goblin and githyanki warrior
-alike!  You ought to be scared, too, you shrimp.  
+alike!  You ought to be scared, too, you shrimp.
 ~
 190686 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -118,9 +118,9 @@ Marya the Baker~
 A young Ofintine woman kneads dough here.
 ~
    She is not a noblewoman, but is a lady all the same.  After all, lady means
-`loaf-kneader' just as lord means `loaf-ward' in the old Anglo- Saxon tongue.  
+`loaf-kneader' just as lord means `loaf-ward' in the old Anglo- Saxon tongue.
 She has bashed more goblins with her rolling pin than Jewish rye has caraway
-seeds.  
+seeds.
 ~
 190686 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -135,7 +135,7 @@ A priestess watches you carefully.
    This priestess is an old friend of Dek, Dorig, Churt, and Maxtrum.  They
 saved the world from destruction, but there isn't much need for heroes in
 peacetime.  You can see Sara's long spear hung on the wall where she can
-instantly reach it.  
+instantly reach it.
 ~
 190494 0 0 0 524400 0 0 0 700 E
 30 10 -8 6d6+300 5d5+5
@@ -147,7 +147,7 @@ kelek guard captain~
 Sir Kelek~
 Passing guards raise their visors in salute to Sir Kelek, their captain.
 ~
-   He did not reach this rank by staying close by the Newbie Zone.  
+   He did not reach this rank by staying close by the Newbie Zone.
 ~
 14618 0 0 0 0 0 0 0 700 E
 10 17 4 2d2+100 1d2+1
@@ -160,7 +160,7 @@ King Korbor~
 Clad in bright mail and girt with a sword, King Korbor goes to war.
 ~
    Once King Korbor sat in his lofty hall, but now he marches with his army to
-drive off the goblins which threaten his realm.  
+drive off the goblins which threaten his realm.
 ~
 14618 0 0 0 0 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
@@ -172,7 +172,7 @@ tim thief boy~
 Tim the Thief~
 A small boy sneaks silently through the shadows.
 ~
-   Guard your money!  It is that dratted Tim!  
+   Guard your money!  It is that dratted Tim!
 ~
 34908 0 0 0 0 0 0 0 100 E
 8 18 5 1d1+80 1d2+1
@@ -185,7 +185,7 @@ sir mischa~
 Sir Mischa~
 Sir Mischa guards his town from evil creatures.
 ~
-   This knight could easily kill Curley GreenLeaf.  
+   This knight could easily kill Curley GreenLeaf.
 ~
 6472 0 0 0 0 0 0 0 700 E
 10 17 4 2d2+100 1d2+1
@@ -197,7 +197,7 @@ guard~
 the Ofintine guard~
 A guard of Ofintinia patrolls his town.
 ~
-   A sturdy guardsman, loyal to King Korbor.  
+   A sturdy guardsman, loyal to King Korbor.
 ~
 6472 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
@@ -209,7 +209,7 @@ guard~
 the Ofintine guard~
 An Ofintine guard watches the gate.
 ~
-   A sturdy guardsman, ever vigilant for evil.  
+   A sturdy guardsman, ever vigilant for evil.
 ~
 6410 0 0 0 0 0 0 0 400 E
 6 18 6 1d1+60 1d2+1
@@ -221,7 +221,7 @@ volunteer~
 an Ofintine volunteer~
 An Ofintine volunteer patrolls his town.
 ~
-   He has taken up arms to fight the goblins.  
+   He has taken up arms to fight the goblins.
 ~
 4168 0 0 0 0 0 0 0 400 E
 3 19 8 0d0+30 1d2+0
@@ -233,7 +233,7 @@ volunteer~
 an Ofintine volunteer~
 A citizen of Ofinitine looks fierce and determined.
 ~
-   She has taken up arms to fight the goblins.  
+   She has taken up arms to fight the goblins.
 ~
 4168 0 0 0 0 0 0 0 400 E
 3 19 8 0d0+30 1d2+0
@@ -245,7 +245,7 @@ man~
 a Lonoyan man~
 A man of Ofingia stands here.
 ~
-   He won't desert his town for a million goblins, all waving axes.  
+   He won't desert his town for a million goblins, all waving axes.
 ~
 72 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -257,7 +257,7 @@ woman~
 a Lonoyan citizen~
 An Lonoyan woman walks through town.
 ~
-   Though the goblins poured in through every gate, she would stay here.  
+   Though the goblins poured in through every gate, she would stay here.
 ~
 72 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -269,7 +269,7 @@ boy~
 a small boy~
 A small boy runs around shouting at unseen foes.
 ~
-   He is ready for the goblins when they come!  
+   He is ready for the goblins when they come!
 ~
 200 0 0 0 0 0 0 0 300 E
 1 20 9 0d0+10 1d2+0
@@ -281,7 +281,7 @@ girl~
 a young girl~
 A Lonoyan girl stands here.
 ~
-   You are sure she has killed many trolls and more goblins.  
+   You are sure she has killed many trolls and more goblins.
 ~
 200 0 0 0 0 0 0 0 300 E
 1 20 9 0d0+10 1d2+0
@@ -293,7 +293,7 @@ big dog~
 the big dog~
 A huge dog runs about, tongue lolling out of his mouth in a silly way.
 ~
-   A big goofy retriever, with a rough, coarse black coat.  
+   A big goofy retriever, with a rough, coarse black coat.
 ~
 4296 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -306,7 +306,7 @@ dog~
 Reilly's dog~
 You cringe in fear when a small black dog growls menacingly.
 ~
-   Reilly's miniature schnauzer looks tougher than a small dragon.  
+   Reilly's miniature schnauzer looks tougher than a small dragon.
 ~
 4296 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -333,7 +333,7 @@ a dwarf~
 A drunken Dwarf rests here, singing loud enough to wake the dead.
 ~
    It takes more than a beer or two to intoxicate the sturdy mountain folk; he
-must have had enough to stun a giant.  
+must have had enough to stun a giant.
 ~
 200 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -346,7 +346,7 @@ a hobbit landowner~
 A fine fat gentlehobbit swaggers around, whistling merrily.
 ~
    There aren't too many hobbits living in Lonoya, and he is most likely a
-visitor from the Shire.  
+visitor from the Shire.
 ~
 200 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -359,7 +359,7 @@ the bar maid~
 A lovely Lonoyan woman serves mead to Reilly's customers.
 ~
    No one bothers her as she serves drinks, because they know that she has a
-dagger ready for anyone who gets `fresh'.  
+dagger ready for anyone who gets `fresh'.
 ~
 200 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -375,7 +375,7 @@ An old Lonoyan man sweeps the road clean.
 picking up the litter that passerby drop in Lonoyan gutters.  Ofingia, the
 "Jewel of Lonoya", would not sparkle as it does in Korbor's crown if he was not
 so busy.  The old man really hates adventurers who don't clean up after
-themselves.  
+themselves.
 ~
 200 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -388,7 +388,7 @@ the goblin~
 A forest goblin roams Lonoya, arguing with himself.
 ~
    He doesn't seem to notice you right away, but I wouldn't wait for him to stop
-talking and see you.  Goblins hate strangers, especially if they are armed.  
+talking and see you.  Goblins hate strangers, especially if they are armed.
 ~
 6248 0 0 0 0 0 0 0 -250 E
 4 19 7 0d0+40 1d2+0
@@ -400,7 +400,7 @@ goblin raider~
 the goblin~
 A goblin raider prowls Lonoya, looking for travellers to rob.
 ~
-   Stumpy-short but thick, green-skinned and great-headed.  Ugly, ain't he?  
+   Stumpy-short but thick, green-skinned and great-headed.  Ugly, ain't he?
 ~
 6248 0 0 0 0 0 0 0 -250 E
 5 19 7 1d1+50 1d2+0
@@ -412,7 +412,7 @@ goblin~
 the goblin~
 A goblin crouches in ambush here.
 ~
-   Another goblin, another battle, another notch in your newbie dagger.  
+   Another goblin, another battle, another notch in your newbie dagger.
 ~
 6248 0 0 0 0 0 0 0 -250 E
 5 19 7 1d1+50 1d2+0
@@ -424,7 +424,7 @@ goblin~
 the goblin watchman~
 A goblin stands watch here.
 ~
-   Goblins, it seems, are not trusty watchmen.  You'd expect no more.  
+   Goblins, it seems, are not trusty watchmen.  You'd expect no more.
 ~
 6250 0 0 0 0 0 0 0 -250 E
 5 19 7 1d1+50 1d2+0
@@ -438,7 +438,7 @@ A great serpent slithers through the caverns, ignoring you.
 ~
    For a little while you fear poison, but this snake looks about as harmless as
 any forty-five-foot reptile can.  Perhaps this serpent lives off the carcasses
-of those killed by these goblins.  
+of those killed by these goblins.
 ~
 76 0 0 0 0 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
@@ -450,7 +450,7 @@ gnome~
 the lost gnome~
 A stone-gnome is far from home.
 ~
-   He is wandering, as you are, through these tunnels to find an exit.  
+   He is wandering, as you are, through these tunnels to find an exit.
 ~
 2268 0 0 0 589824 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -462,7 +462,7 @@ goblin~
 the goblin guard~
 A goblin stands here alert, vigilant for intruders.
 ~
-   No one will pass by him unnoticed.  
+   No one will pass by him unnoticed.
 ~
 6250 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
@@ -474,7 +474,7 @@ goblin~
 the goblin~
 A green-skinned goblin warrior stands here, clutching a bloody scimitar.
 ~
-   He looks tougher than the average goblin.  
+   He looks tougher than the average goblin.
 ~
 6248 0 0 0 0 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
@@ -486,7 +486,7 @@ goblin~
 the goblin warrior~
 A goblin warrior glares at you, angry at having been awakened.
 ~
-   He looks tougher than the average goblin.  
+   He looks tougher than the average goblin.
 ~
 6248 0 0 0 0 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
@@ -500,7 +500,7 @@ A large goblin clad in stinking hides glares at you.
 ~
    You would NEVER wear his armor; untanned cowhide is not your style.  He
 doesn't seem to mind it, however, and in any case this fellow is a dangerous foe
-for any knight.  
+for any knight.
 ~
 6248 0 0 0 0 0 0 0 -400 E
 8 18 5 1d1+80 1d2+1
@@ -514,7 +514,7 @@ Toadstool, chief of the forest goblins, shouts and throws things at you.
 ~
    What does he throw?  Rocks, mostly.  Toadstool is taller than a dwarf, and
 ugly as a toad.  He is larger than any goblin you have seen, in fact; maybe
-Toadstool is orcish or half-orcish.  
+Toadstool is orcish or half-orcish.
 ~
 6248 0 0 0 0 0 0 0 -500 E
 10 17 4 2d2+100 1d2+1
@@ -526,7 +526,7 @@ goblin~
 the goblin~
 A goblin gnaws a bone here.
 ~
-   That bone looks very tasty, but he probably won't share it.  
+   That bone looks very tasty, but he probably won't share it.
 ~
 6248 0 0 0 0 0 0 0 -250 E
 4 19 7 0d0+40 1d2+0
@@ -541,7 +541,7 @@ A huge hairy troll stirrs a bubbling pot.
    As you watch, safely hidden, he picks up a dead goblin and throws it into his
 pot, followed by a few spotted mushrooms and a halfling.  Then he catches sight
 of you, and wonders what flavor you'd add to his concoction.  Oops!  Should have
-stayed still, you idiot.  
+stayed still, you idiot.
 ~
 46 0 0 0 0 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
@@ -553,9 +553,9 @@ mimic barrel~
 the mimic~
 A sturdy oaken barrel bound with iron hoops stands in the corner.
 ~
-   This barrel has no tap, but perhaps you could borrow one from the goblins.  
+   This barrel has no tap, but perhaps you could borrow one from the goblins.
 No, I doubt it.  Besides, there is something queer about that cask.  Did it just
-move?  
+move?
 ~
 196618 0 0 0 0 0 0 0 10 E
 11 17 3 2d2+110 1d2+1
@@ -568,7 +568,7 @@ the mimic~
 A cabinet marked `Magical Items Only' stands in the corner.
 ~
    You nearly open the cabinet when you realize goblins don't write in the
-Common Speech.  Perhaps it's a trap.  
+Common Speech.  Perhaps it's a trap.
 ~
 196618 0 0 0 0 0 0 0 10 E
 11 17 3 2d2+110 1d2+1
@@ -580,7 +580,7 @@ hybrid centipede cementipede~
 the Cementipede~
 A strange hybrid of stone and centipede prowls the caves.
 ~
-   Half-crawler, half-concrete; it could only be the legendary Cementipede!  
+   Half-crawler, half-concrete; it could only be the legendary Cementipede!
 ~
 73944 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -593,7 +593,7 @@ goblin~
 the goblin~
 A drunken goblin staggers around.
 ~
-   You don't want to THINK about what he's been drinking.  
+   You don't want to THINK about what he's been drinking.
 ~
 6248 0 0 0 0 0 0 0 -250 E
 4 19 7 0d0+40 1d2+0
@@ -607,7 +607,7 @@ A hungry warg stands here, growling at you.
 ~
    The goblins sometimes ride wargs, and maybe this one is trained as a mount.
 You only know that the white fangs it now shows as it sees you approaching look
-very sharp.  
+very sharp.
 ~
 104 0 0 0 0 0 0 0 -350 E
 5 19 7 1d1+50 1d2+0
@@ -619,7 +619,7 @@ mold~
 the green mold~
 A peculiar green mold looks at you from the wall.
 ~
-   Looks at you?  Molds don't usually have EYES!  But this one does.  
+   Looks at you?  Molds don't usually have EYES!  But this one does.
 ~
 196682 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
@@ -636,7 +636,7 @@ orc~
 the orc~
 An Orc guards the caves here.
 ~
-   He is not as large as the usual Orc, probably half a goblin.  
+   He is not as large as the usual Orc, probably half a goblin.
 ~
 6250 0 0 0 0 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
@@ -648,7 +648,7 @@ goblin~
 the goblin~
 A goblin miner chips away at the mountains' stony innards.
 ~
-   He doesn't seem to be in the best of spirits.  It's been a long day.  
+   He doesn't seem to be in the best of spirits.  It's been a long day.
 ~
 6248 0 0 0 0 0 0 0 -250 E
 5 19 7 1d1+50 1d2+0
@@ -660,7 +660,7 @@ stalker~
 the Stalker~
 The invisible stalker is, fortunately, not after you.
 ~
-   You can't see him.  
+   You can't see him.
 ~
 239704 0 0 0 590076 0 0 0 -1000 E
 33 9 -9 6d6+330 5d5+5
@@ -673,7 +673,7 @@ kobold~
 the kobold~
 A kobold slave hauls rubble for the goblins.
 ~
-   He is always looking for a way to escape.  
+   He is always looking for a way to escape.
 ~
 76 0 0 0 0 0 0 0 -100 E
 4 19 7 0d0+40 1d2+0
@@ -685,7 +685,7 @@ goblin~
 the goblin~
 A goblin miner rests here, out of his master's sight.
 ~
-   He is not too tired to kill you with that big nasty pick.  
+   He is not too tired to kill you with that big nasty pick.
 ~
 6250 0 0 0 0 0 0 0 -250 E
 5 19 7 1d1+50 1d2+0
@@ -697,7 +697,7 @@ mimic boulder~
 the mimic~
 A great boulder nearly blocks the tunnel.
 ~
-   Where did that thing come from?  It didn't just MOVE, did it?  Hmmm...  
+   Where did that thing come from?  It didn't just MOVE, did it?  Hmmm...
 ~
 196618 0 0 0 0 0 0 0 -10 E
 14 16 1 2d2+140 2d2+2
@@ -710,7 +710,7 @@ the goblin~
 A goblin slave driver supervises the miners and cracks his whip!
 ~
    He lashes fiercely at you with that great whip when he sees you in his mine
-tunnels.  
+tunnels.
 ~
 6252 0 0 0 0 0 0 0 -800 E
 8 18 5 1d1+80 1d2+1
@@ -724,7 +724,7 @@ the human slave~
 An Ofintine works as a goblin slave, with no hope of escape.
 ~
    The goblins captured him in a raid and now work him to death in their huge
-mines.  
+mines.
 ~
 72 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -737,7 +737,7 @@ the human slave~
 An Ofintine works as a goblin slave, with no hope of escape.
 ~
    The goblins captured her in a raid and now work her to death in their huge
-mines.  
+mines.
 ~
 72 0 0 0 0 0 0 0 400 E
 2 20 8 0d0+20 1d2+0
@@ -749,7 +749,7 @@ goblin blacksmith~
 the goblin blacksmith~
 Wielding two great hammers, the goblin smith toils at his forge.
 ~
-   His knotted, iron-hard muscles attest to long hours at the anvil.  
+   His knotted, iron-hard muscles attest to long hours at the anvil.
 ~
 6250 0 0 0 0 0 0 0 -800 E
 8 18 5 1d1+80 1d2+1
@@ -762,7 +762,7 @@ the goblin~
 A goblin pumps the great forge-bellows here.
 ~
    He works at a furious pace as the overseer cracks his whip, to keep the
-goblins' iron furnace white-hot.  
+goblins' iron furnace white-hot.
 ~
 6248 0 0 0 0 0 0 0 -250 E
 5 19 7 1d1+50 1d2+0
@@ -774,7 +774,7 @@ kobold slave~
 the kobold slave~
 A kobold shuffles quickly about, carrying iron ore and lime.
 ~
-   He avoids the whip nimbly as he feeds the roaring furnace.  
+   He avoids the whip nimbly as he feeds the roaring furnace.
 ~
 76 0 0 0 0 0 0 0 -100 E
 4 19 7 0d0+40 1d2+0
@@ -787,7 +787,7 @@ the hill giant~
 A hill giant `encourages' the slaves with a huge flint-studded whip.
 ~
    He is not very bright, as few giants are, and might think you work here if
-you stay much longer.  Like any evil giant, he loves causing pain.  
+you stay much longer.  Like any evil giant, he loves causing pain.
 ~
 6378 0 0 0 0 0 0 0 -900 E
 12 16 2 2d2+120 2d2+2
@@ -799,7 +799,7 @@ mimic pig iron~
 the mimic~
 A glowing iron pig cools in the sand, away from the others.
 ~
-   This iron pig seems to be chuckling softly.  Odd.  
+   This iron pig seems to be chuckling softly.  Odd.
 ~
 196618 0 0 0 0 0 0 0 -10 E
 14 16 1 2d2+140 2d2+2
@@ -811,7 +811,7 @@ ogre~
 the ogre~
 A large ogre trudges about, pushing boulders that must weigh tons.
 ~
-   He looks very strong.  
+   He looks very strong.
 ~
 6346 0 0 0 0 0 0 0 -900 E
 12 16 2 2d2+120 2d2+2
@@ -824,7 +824,7 @@ an Elf~
 An Elven hunter stalks goblins here.
 ~
    He, like you, has crept into Goblin-Town to hunt goblins.  Seems as though he
-is doing a good job of it, so why not let him continue?  
+is doing a good job of it, so why not let him continue?
 ~
 2392 0 0 0 1048688 0 0 0 1000 E
 6 18 6 1d1+60 1d2+1
@@ -849,7 +849,7 @@ troll guard~
 the troll guard~
 A huge troll of the Olog-Hai stands guard here.
 ~
-   Oh dear!  Time to leave the way you came in!  
+   Oh dear!  Time to leave the way you came in!
 ~
 6378 0 0 0 0 0 0 0 -900 E
 12 16 2 2d2+120 2d2+2
@@ -867,7 +867,7 @@ A large Orc stands here, looking for dinner.
 ~
    Offering him a waybread was a BAD idea, you now think.  Orcs don't like elves
 very much.  Well, they do like elves dead.  In fact, they like almost any meat.
-You probably look like a tasty meal.  
+You probably look like a tasty meal.
 ~
 108 0 0 0 0 0 0 0 -800 E
 8 18 5 1d1+80 1d2+1
@@ -880,7 +880,7 @@ the living wall~
 A section of stone wall has many treasures embedded in it.
 ~
    You have heard of walls that came alive by wicked sorcery and absorb great
-treasures within their magical masonry.  
+treasures within their magical masonry.
 ~
 253978 0 0 0 16 0 0 0 -750 E
 33 9 -9 6d6+330 5d5+5
@@ -892,7 +892,7 @@ mimic chest~
 the mimic~
 A fine iron-bound chest would catch any cabinetmaker's eye.
 ~
-   The chest was truly the work of a master carpenter.  
+   The chest was truly the work of a master carpenter.
 ~
 196618 0 0 0 0 0 0 0 -10 E
 14 16 1 2d2+140 2d2+2
@@ -904,7 +904,7 @@ goblin moragd~
 Moragd the Goblin~
 Moragd the Goblin stands here.
 ~
-   Moragd is a great goblin warrior, son of Gorgh the Knob-headed.  
+   Moragd is a great goblin warrior, son of Gorgh the Knob-headed.
 ~
 6378 0 0 0 0 0 0 0 -900 E
 12 16 2 2d2+120 2d2+2
@@ -917,7 +917,7 @@ Gorgh the Goblin~
 Gorgh the Knob-Headed stands here.
 ~
    Gorgh, father of Moragd , is the greatest goblin warrior yet to taint this
-world.  
+world.
 ~
 6378 0 0 0 0 0 0 0 -900 E
 12 16 2 2d2+120 2d2+2
@@ -929,7 +929,7 @@ goblin Khos~
 Khos the Goblin~
 Khos the Greatnosed stands here.
 ~
-   Khos, Gorgh, and Moragd are the three best soldiers of the Great Goblin.  
+   Khos, Gorgh, and Moragd are the three best soldiers of the Great Goblin.
 ~
 6378 0 0 0 0 0 0 0 -900 E
 12 16 2 2d2+120 2d2+2
@@ -941,7 +941,7 @@ goblin~
 the goblin~
 A goblin warrior stands here.
 ~
-   Ugly, slime-green, and bull-strong.  
+   Ugly, slime-green, and bull-strong.
 ~
 6248 0 0 0 0 0 0 0 -400 E
 6 18 6 1d1+60 1d2+1
@@ -955,7 +955,7 @@ Thrash the Ogre Mercenary guards the Great Goblin.
 ~
    You are sure you have seen Thrash before, somewhere.  Maybe he was in the
 Grunting Boar the other day with Pippin.  Anyway, the Great Goblin has hired him
-as a bodyguard.  
+as a bodyguard.
 ~
 6254 0 0 0 16 0 0 0 -900 E
 27 11 -6 5d5+270 4d4+4
@@ -970,7 +970,7 @@ Throm the Giant guards the Great Goblin.
 ~
    You are sure you have seen Throm before, somewhere.  Maybe he was at the
 weapon shop the other day?  Anyway, the Great Goblin has hired this reknowned
-giant to guard his person.  
+giant to guard his person.
 ~
 6254 0 0 0 16 0 0 0 -900 E
 23 13 -3 4d4+230 3d3+3
@@ -987,7 +987,7 @@ Tarus~
 Tarus the Swordpupil guards the Great Goblin.
 ~
    You are sure you have seen Tarus before, perhaps on BluemageMUD.  This sturdy
-human is one of the Great Goblin's bodyguards.  
+human is one of the Great Goblin's bodyguards.
 ~
 6254 0 0 0 16 0 0 0 -900 E
 23 13 -3 4d4+230 3d3+3
@@ -1001,7 +1001,7 @@ The Great Goblin sees you and calls his guards!
 ~
    His head is bigger than any goblin's you have seen, and he is quite proud of
 it.  This goblin is quite strong, and quite ugly, and has quite a few guards
-around him.  Kill him, and King Korbor will repay you handsomely.  
+around him.  Kill him, and King Korbor will repay you handsomely.
 ~
 6254 0 0 0 0 0 0 0 -990 E
 17 15 0 3d3+170 2d2+2

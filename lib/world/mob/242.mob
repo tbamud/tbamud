@@ -5,7 +5,7 @@ A cityguard stands here, watching you intently.
 ~
    The guard looks very strong.  He looks to be about 30 years of age, and is
 wearing the standard guard uniform.  He'd do anything to protect the citizens
-of Midgaard.    
+of Midgaard.
 ~
 6220 0 0 0 0 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
@@ -17,7 +17,7 @@ mayor~
 the Mayor~
 The Mayor is walking around here, inspecting the city.
 ~
-   He is a stocky, middle-aged man with thin, grey hair.    
+   He is a stocky, middle-aged man with thin, grey hair.
 ~
 26634 0 0 0 16 0 0 0 1000 E
 7 18 5 1d1+70 1d2+1
@@ -30,7 +30,7 @@ the Bank Manager~
 The Bank Manager is here, watching your every move.
 ~
    The bank manager runs this place.  He makes lots of money, and spends his
-time counting other people's money.  He likes money.    
+time counting other people's money.  He likes money.
 ~
 10266 0 0 0 0 0 0 0 -350 E
 7 18 5 1d1+70 1d2+1
@@ -49,7 +49,7 @@ The theatre manager is here, looking bored.
 ~
    The theatre manager stares back at you.  He's a balding older man, and he
 wears a cheap looking suit.  He expects that you've bought tickets to tonight's
-performance.    
+performance.
 ~
 10266 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -68,7 +68,7 @@ A young looking usher is here, showing you to your seat.
 ~
    This usher looks quite young.  His job is to make sure people have their
 tickets, and that they sit down during the play.  Due to his small size, you
-can't imagine how he'd enforce these rules if somebody resisted.    
+can't imagine how he'd enforce these rules if somebody resisted.
 ~
 204 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -80,10 +80,10 @@ computer salesman~
 the computer salesman~
 A computer salesman is here, blabbering about a new technology.
 ~
-   This computer salesman obviously doesn't know what he's talking about.  
+   This computer salesman obviously doesn't know what he's talking about.
 He's busy telling you about all the great features of some OEM PC.  You try to
 ask him a question, but he raises had hand to silence you, and continues
-talking.  Oh well.    
+talking.  Oh well.
 ~
 26634 0 0 0 16 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
@@ -96,7 +96,7 @@ the clothing salesman~
 A clothing salesman is here, waiting to serve you.
 ~
    This clothing salesman is standing here, watching you.  He's wearing an
-expensive suit, and his hair is slicked back.    
+expensive suit, and his hair is slicked back.
 ~
 26634 0 0 0 16 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
@@ -110,7 +110,7 @@ A waitress is here, ready to bring you some food.
 ~
    This waitress looks tired.  She seems distracted, frequently looking out the
 windows.  She hurries from table to table, pouring coffee to the different
-patrons.    
+patrons.
 ~
 26634 0 0 0 16 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
@@ -123,7 +123,7 @@ the stagehand~
 A stagehand is here, waiting for something to do.
 ~
    This stagehand looks bored.  He's wearing a pair of dark blue overalls, and
-he's got on a black baseball cap.  He looks pretty strong.    
+he's got on a black baseball cap.  He looks pretty strong.
 ~
 2120 0 0 0 0 0 0 0 1000 E
 4 19 7 0d0+40 1d2+0
@@ -136,7 +136,7 @@ the actor~
 An actor is here, studying his lines.
 ~
    This actor looks quite busy.  He's reading his lines, and not paying much
-attention to you.    
+attention to you.
 ~
 2120 0 0 0 0 0 0 0 1000 E
 5 19 7 1d1+50 1d2+0
@@ -149,7 +149,7 @@ the actress~
 An actress is here, studying her lines.
 ~
    This actress looks quite busy.  She's reading her lines, and not paying much
-attention to you.    
+attention to you.
 ~
 2120 0 0 0 0 0 0 0 1000 E
 6 18 6 1d1+60 1d2+1
@@ -162,7 +162,7 @@ the snack booth attendant~
 A snack booth attendant is here, ready to serve you.
 ~
    This snack booth attendant is tired of taking crap from ungrateful
-customers.  He looks like he's going to snap soon.    
+customers.  He looks like he's going to snap soon.
 ~
 26634 0 0 0 16 0 0 0 900 E
 7 18 5 1d1+70 1d2+1
@@ -175,7 +175,7 @@ the curler~
 A curler is here, practicing his sliding technique.
 ~
    This curler is busy practicing for tonight's game.  He's stretching, and
-trying to improve his technique.  He doesn't look to scary.    
+trying to improve his technique.  He doesn't look to scary.
 ~
 200 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -189,7 +189,7 @@ A waitress is here, ready to bring you some food.
 ~
    This waitress looks tired.  She seems distracted, frequently looking out the
 windows.  She hurries from table to table, pouring coffee to the different
-patrons.    
+patrons.
 ~
 26634 0 0 0 16 0 0 0 900 E
 6 18 6 1d1+60 1d2+1

@@ -2,7 +2,7 @@
 Mine Entrance~
    You step into the entrance of the mine.  Everything around you is dusty and
 smells of mildew.  Some large boulders line the entrance, making you crawl over
-them.  The inside of the mine looks dark and dangerous.    
+them.  The inside of the mine looks dark and dangerous.
 ~
 235 0 0 0 0 0
 D2
@@ -11,7 +11,7 @@ D2
 0 0 23501
 E
 info credits~
-   Builder   : 
+   Builder   :
 Zone         : 235 Dwarven Mines
 Began        : 1998
 Player Level : 10-14
@@ -20,8 +20,8 @@ Mobs         : 12
 Objects      : 12
 Shops        : 0
 Triggers     : 2
-Theme        : 
-Plot         : 
+Theme        :
+Plot         :
 Links        : 00, 99
 Map          : 01
 ~
@@ -30,7 +30,7 @@ S
 Dwarven Mines~
    As you enter the mine, you notice several dwarves hard at work.  They look
 at you with narrow eyes as you walk past them.  The dust in here is extremely
-thick, making it difficult for you to breathe.    
+thick, making it difficult for you to breathe.
 ~
 235 0 0 0 0 0
 D0
@@ -45,7 +45,7 @@ S
 #23502
 Dwarven Mines~
    The dust seems to go get thicker here as it threatens to choke the life out
-of you.  You stumble over a large boulder, almost falling flat on your face!  
+of you.  You stumble over a large boulder, almost falling flat on your face!
 ~
 235 0 0 0 0 0
 D1
@@ -65,7 +65,7 @@ S
 Cove~
    You find yourself standing in a small cove.  It's quite dusty here, but the
 air is much more breatheable.  Someone could easily hide in here and perhaps
-never be found.    
+never be found.
 ~
 235 0 0 0 0 0
 D0
@@ -77,7 +77,7 @@ S
 Dwarven Mines~
    The air seems a lot lighter as you walk deeper into the cold mines.  You
 reach out and feel the walls at your sides.  They are cold and damp, but where
-could the water be coming from?    
+could the water be coming from?
 ~
 235 0 0 0 0 0
 D1
@@ -93,7 +93,7 @@ S
 Dwarven Mines~
    The air seems a lot lighter as you walk deeper into the cold mines.  You
 reach out and feel the walls at your sides.  They are cold and damp, but where
-could the water be coming from?    
+could the water be coming from?
 ~
 235 0 0 0 0 0
 D1
@@ -109,7 +109,7 @@ S
 Dwarven Mines~
    The temperature seems to drop quite a few degrees as you get deeper into the
 mine.  You can hear some water dripping onto the ground before you.  It's most
-likely leaking from the roof.    
+likely leaking from the roof.
 ~
 235 0 0 0 0 0
 D0
@@ -125,7 +125,7 @@ S
 Dwarven Mines~
    You feel your feet sink into a small puddle, but it doesn't feel like water.
 It's much to thick.  As you look more closely, you see that you have stepped
-into a puddle of blood!  How gross!    
+into a puddle of blood!  How gross!
 ~
 235 0 0 0 0 0
 D2
@@ -142,7 +142,7 @@ Dwarven Mines~
    As you step out of the gooey puddle, you continue making your way through
 the mines.  As you look to your left you can see small streaks of gold running
 through the rocks.  If someone tried chipping out the gold, they would most
-likely cause an avalanche.    
+likely cause an avalanche.
 ~
 235 0 0 0 0 0
 D1
@@ -156,9 +156,9 @@ D3
 S
 #23509
 Dwarven Mines~
-   The mine seems to expand here, allowing more travelers to pass through.  
+   The mine seems to expand here, allowing more travelers to pass through.
 There are several small pebbles lying about the ground.  Be careful not to trip
-over one!    
+over one!
 ~
 235 0 0 0 0 0
 D1
@@ -172,9 +172,9 @@ D2
 S
 #23510
 Dwarven Mines~
-   You feel your feet suddenly get drenched as you step into a small stream.  
+   You feel your feet suddenly get drenched as you step into a small stream.
 What a funny place to have a stream!  How could it have gotten here?  Maybe the
-mine workers built it so they can drink from it.    
+mine workers built it so they can drink from it.
 ~
 235 0 0 0 0 0
 D0
@@ -190,7 +190,7 @@ S
 Stream~
    The stream gets a little deeper here, causing the water to rise to your
 ankles.  You feel a chill rush through your entire body, then continue on your
-way.    
+way.
 ~
 235 0 0 0 0 0
 D0
@@ -206,7 +206,7 @@ S
 Stream~
    The stream comes to an end here, leaving you on dry ground.  As you look at
 the end of the stream, you notice that it disappears into the wall.  How could
-that be?  It couldn't have just vanished into the stones!    
+that be?  It couldn't have just vanished into the stones!
 ~
 235 0 0 0 0 0
 D1
@@ -221,8 +221,8 @@ S
 #23513
 Dwarven Mines~
    The mine seems to bend here, heading off towards the south.  Huge chunks of
-rock are lying on the ground.  Probably left there from some of the workers.  
-How messy these little people are!    
+rock are lying on the ground.  Probably left there from some of the workers.
+How messy these little people are!
 ~
 235 0 0 0 0 0
 D0
@@ -238,7 +238,7 @@ S
 Dwarven Mines~
    You begin feeling alone as you get deeper into the mines.  Everything around
 you is terribly quiet.  Maybe too quiet.  You suddenly get the feeling like
-you're being watched.    
+you're being watched.
 ~
 235 0 0 0 0 0
 D0
@@ -269,7 +269,7 @@ S
 Dwarven Mines~
    The smell and haze of coal engulfs your senses, almost making you choke and
 stinging your eyes.  The air is very thick and dirty, almost black.  But how
-could the air be black?    
+could the air be black?
 ~
 235 0 0 0 0 0
 D1
@@ -289,7 +289,7 @@ S
 Dwarven Mines~
    Chicken!  You took the easy way out.  You'd better hope your friends don't
 find out or else you may never live it down.  Flee and run away, yet live
-another day.    
+another day.
 ~
 235 0 0 0 0 0
 D0
@@ -305,7 +305,7 @@ S
 Dark Tunnel~
    You have stepped into what appears to be a tunnel.  There is no light here.
 The only way a person would be able to see to get through this jungle would be
-with a torch or some other light source.    
+with a torch or some other light source.
 ~
 235 1 0 0 0 0
 D1
@@ -320,8 +320,8 @@ S
 #23519
 Dark Tunnel~
    Several large boulders cover the ground.  As you look closely, you can see a
-smashed skeleton.  The dwarf must have gotten killed during an avalanche.  
-Don't let the same thing happen to you.    
+smashed skeleton.  The dwarf must have gotten killed during an avalanche.
+Don't let the same thing happen to you.
 ~
 235 1 0 0 0 0
 D1
@@ -337,7 +337,7 @@ S
 Dark Tunnel~
    As you continue making your way through the dirty little tunnel, you notice
 several smears of blood on the walls.  Most likely from past adventurers that
-were not lucky enough to survive.    
+were not lucky enough to survive.
 ~
 235 1 0 0 0 0
 D1
@@ -353,7 +353,7 @@ S
 Dark Tunnel~
    You can see the end of the tunnel just up ahead to the east.  You suddenly
 feel relieved.  You made it through alive!  That's something to be very proud
-of.    
+of.
 ~
 235 1 0 0 0 0
 D1
@@ -368,8 +368,8 @@ S
 #23522
 Dark Tunnel~
    You're standing at the end of the tunnel.  The mine takes a turn here
-heading towards the south.  The conditions ahead look much more promising.  
-Perhaps you will have an easier journey now.  But then again, maybe not.    
+heading towards the south.  The conditions ahead look much more promising.
+Perhaps you will have an easier journey now.  But then again, maybe not.
 ~
 235 1 0 0 0 0
 D2
@@ -386,7 +386,7 @@ Dwarven Mines~
    The mine is actually quite clean here.  The smell could be better, but it's
 not the worst you have smelled, so why complain?  To the north you can see a
 dark tunnel.  Perhaps you should stay away from it.  It's only for the bravest
-of souls.    
+of souls.
 ~
 235 0 0 0 0 0
 D0
@@ -406,7 +406,7 @@ S
 Dead End~
    Oops!  You have ran into a dead end!  If you had been looking before you
 moved ahead you never would have ended up here!  If you don't start paying
-closer attention to where you're going, you won't be likely to survive.    
+closer attention to where you're going, you won't be likely to survive.
 ~
 235 0 0 0 0 0
 D3
@@ -418,7 +418,7 @@ S
 Dwarven Mines~
    The rocks from the ceiling begin to crumble and fall all around you.  You
 feel some dust and small pebbles hit your head and a few larger rocks crash
-down around you.  You'd better get out of here!    
+down around you.  You'd better get out of here!
 ~
 235 0 0 0 0 0
 D0
@@ -434,7 +434,7 @@ S
 Dwarven Mines~
    Run!  Huge boulders are falling all around you.  If you stick around, you're
 sure to be killed.  The dust and debris is starting to grow thick.  Waiting
-around could be fatal.    
+around could be fatal.
 ~
 235 0 0 0 0 0
 D1
@@ -450,7 +450,7 @@ S
 Dwarven Mines~
    Whew!  That was a close call.  One more minute in that rock slide and you
 would be dead meat.  The path ahead of you seems pretty clear.  Theres a few
-sticks lying on the ground.  What would sticks be doing in a mine?    
+sticks lying on the ground.  What would sticks be doing in a mine?
 ~
 235 0 0 0 0 0
 D0
@@ -464,10 +464,10 @@ D3
 S
 #23528
 Dwarven Mines~
-   As you continue walking, you feel the temperature begin to slowly rise.  
+   As you continue walking, you feel the temperature begin to slowly rise.
 Little beads of sweat form on your forehead, making you wish you had a cool
 cloth.  The air around you is getting harder to breathe, most likely do to the
-increase in the temperature.    
+increase in the temperature.
 ~
 235 0 0 0 0 0
 D1
@@ -487,7 +487,7 @@ S
 Dwarven Mines~
    You begin panting heavily as you continue making your way through the mines.
 How could anyone survive in these temperatures?  The rock walls that surround
-you are bone dry.  You notice that a few of them are giving off steam.    
+you are bone dry.  You notice that a few of them are giving off steam.
 ~
 235 0 0 0 0 0
 D0
@@ -504,7 +504,7 @@ Dwarven Mines~
    You start to get the feeling that you have been walking through these dirty
 mines forever.  Everything is begining to look the same.  All the rocks have
 the same formation and seem to be moving towards you.  Is this really happening
-or is it a mirage?    
+or is it a mirage?
 ~
 235 0 0 0 0 0
 D1
@@ -520,7 +520,7 @@ S
 Dwarven Mines~
    There is a torch here, hanging from the wall.  It gives off just enough
 light to let you see where the walls are.  The mine continues to the east and
-west.    
+west.
 ~
 235 0 0 0 0 0
 D1
@@ -536,7 +536,7 @@ S
 Dwarven Mines~
    The mine curves here, heading off towards the north.  The ground at your
 feet is very rough.  A person could easily fall and get hurt if they weren't
-watching where they were going.    
+watching where they were going.
 ~
 235 0 0 0 0 0
 D0
@@ -552,7 +552,7 @@ S
 Dwarven Mines~
    Darkness is ahead of you.  As you look at the walls surrounding you, you
 notice your shadow dancing on the rocks.  You look much larger and tougher this
-way.    
+way.
 ~
 235 0 0 0 0 0
 D0
@@ -568,7 +568,7 @@ S
 Narrow Path~
    You have come to a narrow path burried deep within the mines.  The path is
 only big enough for one person to go through at a time.  If you dare enter,
-you'd better be prepared.    
+you'd better be prepared.
 ~
 235 256 0 0 0 0
 D0
@@ -584,7 +584,7 @@ S
 Narrow Path~
    A sense of dread creeps over you as you step deeper onto the path.  Some
 loose pebbles wiggle around under your feet, threatening to trip you.  Be
-careful not to fall!    
+careful not to fall!
 ~
 235 0 0 0 0 0
 D1
@@ -600,7 +600,7 @@ S
 Narrow Path~
    The rocks at your sides have moved closer together, making it almost
 impossible for you to get through.  There is a small opening you could force
-yourself through if you're feeling lucky.    
+yourself through if you're feeling lucky.
 ~
 235 0 0 0 0 0
 D1
@@ -620,7 +620,7 @@ S
 Dusty Room~
    Your body pushes through the narrow opening and falls on the floor in a
 large dusty room.  There is no way out of here, except to turn around and go
-back through the narrow hole.    
+back through the narrow hole.
 ~
 235 0 0 0 0 0
 D3
@@ -632,7 +632,7 @@ S
 Narrow Path~
    The path curves here, bending around some large boulders.  Some of the
 boulders have been split in half, others have large chip marks from where other
-adventurers have tried to break them up.  Maybe that isn't such a good idea.  
+adventurers have tried to break them up.  Maybe that isn't such a good idea.
 ~
 235 0 0 0 0 0
 D0
@@ -648,7 +648,7 @@ S
 Narrow Path~
    The path comes to an abrupt end here.  To the west you can see a large pile
 of boulders which you will have to either climb over, or turn around and go
-back.    
+back.
 ~
 235 0 0 0 0 0
 D0
@@ -664,7 +664,7 @@ S
 Boulder Heap~
    You begin making your way up the enormous pile.  Will there even be a way
 out past this pile?  Guess you'll have to take that chance and find out the
-hard way.    
+hard way.
 ~
 235 0 0 0 0 0
 D1
@@ -680,7 +680,7 @@ S
 Boulder Heap~
    The large rocks shift under your weight.  Be careful!  The last thing this
 mine needs is another corpse.  The entire cave seems to be close to collapse.
-  
+
 ~
 235 0 0 0 0 0
 D1
@@ -695,7 +695,7 @@ S
 #23542
 Boulder Heap~
    The boulders seem to be getting smaller, but less sturdy.  Don't look down
-or you might lose your balance and fall.  The fall does not look survivable.  
+or you might lose your balance and fall.  The fall does not look survivable.
 ~
 235 0 0 0 0 0
 D0
@@ -716,7 +716,7 @@ Boulder Heap~
    You find yourself standing at the top of the heap, looking down into the
 mines.  You feel like you're playing king of the mountain.  Just like you did
 when you were a child.  There is a narrow passageway to the west.  Maybe you
-can squeeze through it.    
+can squeeze through it.
 ~
 235 0 0 0 0 0
 D2
@@ -732,7 +732,7 @@ S
 Narrow Passageway~
    You have come to a small passageway.  It doesn't look like you could fit
 through here, but you could try.  Maybe with enough squeezing you could slide
-through.    
+through.
 ~
 235 0 0 0 0 0
 D0
@@ -748,7 +748,7 @@ S
 Narrow Passageway~
    You begin forcing yourself through the hole.  Rocks are scratching at your
 sides, and dust is falling into your hair and eyes.  Is this really worth all
-this trouble?    
+this trouble?
 ~
 235 0 0 0 0 0
 D2
@@ -765,7 +765,7 @@ Dwarven Mines~
    Your body falls out from the passageway and lands on the floor with a loud
 *THUD*.  Your sides ache from the scratches you encountered.  You made it
 through though, maybe thats a good thing.  But then again, it could mean
-trouble.    
+trouble.
 ~
 235 0 0 0 0 0
 D1
@@ -781,7 +781,7 @@ S
 Dwarven Mines~
    As you continue making your way through the mines, you begin hearing the
 sound of rushing water coming from the west.  The air seems moist and fresh
-with a cool breeze.    
+with a cool breeze.
 ~
 235 0 0 0 0 0
 D1
@@ -818,7 +818,7 @@ S
 Waterfall Slide~
    The current of the water starts pulling you down the large slide.  You
 notice some small lights attatched to the ceiling, allowing you to see water
-gushing past you at a tremendous speed.    
+gushing past you at a tremendous speed.
 ~
 235 0 0 0 0 0
 D0
@@ -834,7 +834,7 @@ S
 Waterfall Slide~
    A light spray of mist hits your face as you continue traveling down the
 waterfall.  The temperature seems to be dropping, causing the water to become
-colder.  Maybe this ride wasn't such a good idea after all.    
+colder.  Maybe this ride wasn't such a good idea after all.
 ~
 235 0 0 0 0 0
 D2
@@ -850,7 +850,7 @@ S
 Waterfall Slide~
    There is a sharp bend here.  You feel your drenched body suddenly get jerked
 towards the west.  You feel your rear end starting to get sore from the rocky
-bottom of the waterfall.    
+bottom of the waterfall.
 ~
 235 0 0 0 0 0
 D3
@@ -866,7 +866,7 @@ S
 Drop Off~
    AHHHHH!!!  You feel your helpless body falling through the air, passing
 large rocks that have been against the walls for some time.  You look down and
-see the end is near.  There is a large pile of rocks just below!    
+see the end is near.  There is a large pile of rocks just below!
 ~
 235 0 0 0 0 0
 D1
@@ -880,9 +880,9 @@ D5
 S
 #23553
 Pile of Illusions~
-   The rocks below you seem to fade away and show the waterfall once again.  
+   The rocks below you seem to fade away and show the waterfall once again.
 You feel your heart pounding heavily in your chest.  That was too close for
-comfort!    
+comfort!
 ~
 235 0 0 0 0 0
 D2
@@ -896,9 +896,9 @@ D4
 S
 #23554
 Watefall Slide~
-   The end of the waterfall is near.  You can see an exit to the south.  
+   The end of the waterfall is near.  You can see an exit to the south.
 You're clothes begin drying off, leaving you feeling cold and just about dead.
-Maybe next time you should take the whimps way out.    
+Maybe next time you should take the whimps way out.
 ~
 235 0 0 0 0 0
 D0
@@ -914,7 +914,7 @@ S
 Exit from the Waterfall~
    As you get to the end of the waterfall, you look back at the death trap and
 thank your lucky stars that you're still alive.  The mines seem to continue to
-the south from here.    
+the south from here.
 ~
 235 0 0 0 0 0
 D0
@@ -930,7 +930,7 @@ S
 Dwarven Mines~
    You begin walking away from the waterfall, looking at your surroundings
 ahead of you.  The mines continue to the east.  Just up ahead you can see a
-small intersection.  Which path will you choose?    
+small intersection.  Which path will you choose?
 ~
 235 0 0 0 0 0
 D0
@@ -946,7 +946,7 @@ S
 Dwarven Mines~
    Everything around you seems to quiet down, making you feel like you're all
 alone in these dusty mines.  The walls are in bad need of repair.  If they
-don't get fixed soon they might collapse and kill someone, maybe you!    
+don't get fixed soon they might collapse and kill someone, maybe you!
 ~
 235 0 0 0 0 0
 D1
@@ -963,7 +963,7 @@ Intersection~
    You're standing in the middle of a small intersection.  The ground at your
 feet is slick and very worn.  To the northwest you can see a waterfall, what a
 beautiful sight!  What is south from here is uncertain.  Guess you will have to
-explore and find out.    
+explore and find out.
 ~
 235 0 0 0 0 0
 D0
@@ -983,7 +983,7 @@ S
 Dwarven Mines~
    You skip down a few stairs and walk deeper into the mines.  The dust here is
 awful!  It's so thick you can barely breathe.  A thin layer of dust is covering
-the walls and floor.    
+the walls and floor.
 ~
 235 0 0 0 0 0
 D1
@@ -999,7 +999,7 @@ S
 Hole in the Floor~
    There is a large hole in the floor here.  You could easily climb down into
 it.  You notice a ladder suspended from the floor.  Apparently you aren't the
-only one who's thought of making that trip.  The mines continue to the east.  
+only one who's thought of making that trip.  The mines continue to the east.
 ~
 235 0 0 0 0 0
 D1
@@ -1017,9 +1017,9 @@ D5
 S
 #23561
 Dwarven Mines~
-   You sneak down the side of the boulder heap.  Make sure no one sees you.  
+   You sneak down the side of the boulder heap.  Make sure no one sees you.
 You see an enormous hole in the ground to the west.  Maybe you could hide in
-there.    
+there.
 ~
 235 0 0 0 0 0
 D1
@@ -1035,7 +1035,7 @@ S
 Cove~
    You find yourself standing in a small abandoned cove.  There isn't much here
 to look at, just a few stray cobwebs dangling from the dirty walls.  You notice
-a few scattered pebbles lying about the floor.    
+a few scattered pebbles lying about the floor.
 ~
 235 0 0 0 0 0
 D0
@@ -1047,7 +1047,7 @@ S
 Hole in the Floor~
    You begin climbing down through the floor.  Darkness surrounds you, making
 you feel alone.  The ladder you're holding onto is made from rope and some old
-rotted boards.  It could easily break, so be careful!    
+rotted boards.  It could easily break, so be careful!
 ~
 235 0 0 0 0 0
 D4
@@ -1064,7 +1064,7 @@ Hole in the Floor~
    The ladder comes to a sudden end.  You are forced to jump the rest of the
 way down.  As you land on the ground, you feel a shooting pain rush up your
 legs.  The dust that was looming in the air seems to have vanished.  Don't
-complain.    
+complain.
 ~
 235 0 0 0 0 0
 D1
@@ -1088,7 +1088,7 @@ S
 Tunnel~
    You're walking through a narrow tunnel.  In the distance to the east you can
 hear the shouts of several dwarves training for battle.  You must be close to
-the battlefield.    
+the battlefield.
 ~
 235 0 0 0 0 0
 D1
@@ -1104,7 +1104,7 @@ S
 Tunnel~
    You find yourself standing in a small intersection.  To the east you can see
 the dwarven battlefield.  Blood stains the tunnel ahead.  To your south you can
-see more of the mines.    
+see more of the mines.
 ~
 235 0 0 0 0 0
 D1
@@ -1124,7 +1124,7 @@ S
 Dwarven Mines~
    As you continue walking through the mines, you can hear the shouts of
 dwarven soilders preparing for battle.  To the north is a small intersection.
-The mines continue to the south.    
+The mines continue to the south.
 ~
 235 0 0 0 0 0
 D0
@@ -1138,7 +1138,7 @@ Dwarven Battlefield~
 you.  This must be just a practice battlefield.  You notice that the floor is
 made from concrete and it's heavily stained with blood.  There are several
 torches hanging from the wall, illuminating the room with a soft glow.  The
-soilders barracks are to the south.    
+soilders barracks are to the south.
 ~
 235 0 0 0 0 0
 D0
@@ -1156,7 +1156,7 @@ Battlefield Gates~
 ceiling, and are perhaps the best part of the mines.  By far the most
 beautiful.  By the looks of it, the gate has never been closed.  You can hear
 men shouting and grunting inside.  There is an aide room to the east.  The
-battlefield is to the south.  Enter with care.    
+battlefield is to the south.  Enter with care.
 ~
 235 128 0 0 0 0
 D1
@@ -1177,7 +1177,7 @@ Aide Room~
    This is where the dwarven soilders come for aide when they are hurt in
 battle.  There is a long shelf up against the southern wall piles high with
 bandages and splints.  There is a faint odor of blood in here.  It almost makes
-you gag.    
+you gag.
 ~
 235 0 0 0 0 0
 D3
@@ -1224,7 +1224,7 @@ Stairwell~
    A small stone stairwell stands before you, covered in dust.  You notice some
 fresh footprints on the steps.  Doesn't anyone clean in here?  The stairs look
 fairly sturdy, but are extrememly uneven.  Someone could easily fall and break
-their neck.    
+their neck.
 ~
 235 0 0 0 0 0
 D1
@@ -1236,7 +1236,7 @@ S
 Enormous Hole~
    There is an emormous hole before you.  It's not very deep, but you would
 most likely get hurt if you attempted to walk through it.  The mines continue
-to the north, west, and south.    
+to the north, west, and south.
 ~
 235 0 0 0 0 0
 D0
@@ -1251,7 +1251,7 @@ S
 #23584
 Dwarven Mines~
    You begin to feel very lost.  The only sounds you hear are those of your own
-footsteps.  To the south is a large hole.  The mines continue to the north.  
+footsteps.  To the south is a large hole.  The mines continue to the north.
 ~
 235 0 0 0 0 0
 D0
@@ -1265,9 +1265,9 @@ D2
 S
 #23585
 Barracks~
-   You're standing in the soilders barracks.  Several bunks line the walls.  
+   You're standing in the soilders barracks.  Several bunks line the walls.
 There is a thin layer of dust on the floor.  All the bunks are made, but you
-wonder when this room was last swept.  The training room is to the south.    
+wonder when this room was last swept.  The training room is to the south.
 ~
 235 0 0 0 0 0
 D0
@@ -1282,8 +1282,8 @@ S
 #23586
 Soilders Training Room~
    This room is quite large.  It would have to be to hold all of the soilders.
-There are numerous torches dangling from the stone walls, lighting the room.  
-There is a small passageway to the south.  Where could it lead?    
+There are numerous torches dangling from the stone walls, lighting the room.
+There is a small passageway to the south.  Where could it lead?
 ~
 235 0 0 0 0 0
 D0
@@ -1301,9 +1301,9 @@ D2
 S
 #23587
 Battlefield Entrance~
-   You're standing in the doorway leading out onto the dwarven battlefield.  
+   You're standing in the doorway leading out onto the dwarven battlefield.
 You see numerous soldiers fighting and training.  There are small pools of
-blood on the ground.  You suddenly feel sick to your stomach.    
+blood on the ground.  You suddenly feel sick to your stomach.
 ~
 235 0 0 0 0 0
 D0
@@ -1319,7 +1319,7 @@ S
 Battlefield~
    As you step out into the battlefield, you notice everyone turn and look at
 you.  Perhaps coming here was a bad idea.  Now you might not make it back out
-alive.    
+alive.
 ~
 235 0 0 0 0 0
 D1
@@ -1335,7 +1335,7 @@ S
 Battlefield~
    You're standing in the middle of the battlefield, looking around at
 everything around you.  The ground at your feet is solid, but it's not concrete
-anymore.  It looks like dirt heavily stained with blood.  How gross!    
+anymore.  It looks like dirt heavily stained with blood.  How gross!
 ~
 235 0 0 0 0 0
 D2
@@ -1351,7 +1351,7 @@ S
 Battlefield~
    You have come to the end of the battlefield.  You feel a bit relieved
 knowing that you made it out alive.  There is a small path to the south.  It
-looks like it's leading towards the end of the mines.    
+looks like it's leading towards the end of the mines.
 ~
 235 0 0 0 0 0
 D0
@@ -1367,7 +1367,7 @@ S
 Marble Path~
    As your feet step down on to the marble path, everything around you gets
 quiet.  The only sound you hear is the sound of your footsteps crunching along
-on the path.  The path continues to the south.    
+on the path.  The path continues to the south.
 ~
 235 0 0 0 0 0
 D0
@@ -1384,7 +1384,7 @@ Marble Path~
    You begin to feel like you're walking on a chess board.  The marble at your
 feet is white and swirled with shades of grey.  Some are so dark they look
 black.  The swirls almost hypnotize you.  The path continues to the north and
-west.    
+west.
 ~
 235 0 0 0 0 0
 D0
@@ -1400,7 +1400,7 @@ S
 Marble Path~
    As you continue walking along the path, you begin remembering past
 adventures you've had.  You realize how lucky you are to be alive.  You can see
-the exit to the mines to the west.    
+the exit to the mines to the west.
 ~
 235 0 0 0 0 0
 D1
@@ -1415,8 +1415,8 @@ S
 #23595
 Marble Path~
    There is a small intersection here.  To the north there is a small
-passageway.  Where could it lead?  To the west is the exit out of the mines.  
-Which path will you choose?    
+passageway.  Where could it lead?  To the west is the exit out of the mines.
+Which path will you choose?
 ~
 235 0 0 0 0 0
 D0
@@ -1437,7 +1437,7 @@ Passageway~
    As you step into the small passageway, you notice there are paths leading in
 all sorts of directions.  To the southwest you can see the ending of the mines.
 To the southeast is the dwarven battlefield.  The shouts of the soilders fill
-your ears.  To the south is a tunnel leading out of the mines.    
+your ears.  To the south is a tunnel leading out of the mines.
 ~
 235 0 0 0 0 0
 D0
@@ -1457,7 +1457,7 @@ S
 Dwarven Mines~
    You come to an abrupt hault.  There is an enormous hole in the floor to the
 north.  You will have to jump over it.  You see a small passageway to the east.
-Where could it lead?    
+Where could it lead?
 ~
 235 0 0 0 0 0
 D0
@@ -1474,7 +1474,7 @@ Stairwell~
    You have come to the end of the marble path and find yourself standing at
 the bottom of a wooden stairwell.  Half of the wood looks rotted and should
 have fallen apart years ago.  Be careful!  The exit is just up ahead to the
-west.    
+west.
 ~
 235 0 0 0 0 0
 D1
@@ -1491,7 +1491,7 @@ Exit out of the Mines~
    You're standing at the back of the mines in a narrow doorway.  The air here
 is rather musty smelling.  The smell just about makes you gag.  You notice some
 burned out torches hanging from the wall.  They are covered in dust.  They must
-not have been used in a while.    
+not have been used in a while.
 ~
 235 0 0 0 0 0
 D5

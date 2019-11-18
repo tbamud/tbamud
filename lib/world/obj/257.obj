@@ -57,7 +57,7 @@ A pair of orange-tinted, mirrored sunglasses sit here.~
 E
 sunglasses glasses mirrored~
    Lenses in the shape of rectangles, these orange-tinted mirrored sunglasses
-are UV protected.  
+are UV protected.
 ~
 #25707
 tie dyed robe~
@@ -70,7 +70,7 @@ A tie dyed robe sits here.~
 E
 tie dyed robe~
    Colored in every shade under the rainbow, this robe is sure to attract
-attention.  
+attention.
 ~
 #25708
 round fishing hat~
@@ -83,7 +83,7 @@ A round fishing hat has been left here.~
 E
 round fishing hat~
    Round, rumpled, and covered in lures, this hat must have been someone's
-favorite.  
+favorite.
 ~
 #25709
 waybread bread~
@@ -96,7 +96,7 @@ Some waybread has been put here.~
 E
 waybread bread~
    The waybread is the traditional feed of elves when traveling, they call it
-lembas.  It is said to refresh the weary traveler greatly.  
+lembas.  It is said to refresh the weary traveler greatly.
 ~
 #25710
 dried rations~
@@ -140,7 +140,7 @@ Some nachos have been left here.~
 1 5 0 0 0
 E
 nachos nacho~
-   They have cheese on them.  Looks like one of The Goat's specials.  
+   They have cheese on them.  Looks like one of The Goat's specials.
 ~
 #25715
 chest coins gold treasure~
@@ -162,7 +162,7 @@ E
 bench~
    It is a quite heavy but very comfortable bench.  It is placed with its front
 towards the river so that you may enjoy the view of the river and all the shops
-and homes on the opposite bank.  
+and homes on the opposite bank.
 ~
 #25717
 glowing rack armor~
@@ -191,9 +191,9 @@ menu~
                             fine dining and exotic entertainment
 
                              Ask for any of our dinner specials
-    
+
                                           -OR-
-   
+
                                 if you are in the mood for
                            something a bit more on the WILD side,
                        try our upper lounge's wonderful facilities
@@ -338,7 +338,7 @@ E
 large fountain statue~
    It is a well crafted fountain, carved from a single piece of granite
 beautifully rendered so to represent a feeling of victory.  It seems to be
-enchanted in some manner, as the water level seems to never lower.  
+enchanted in some manner, as the water level seems to never lower.
 ~
 #25736
 sanitary footy~
@@ -506,7 +506,7 @@ A small yellow potion has carelessly been left here.~
 1 20 0 0 0
 E
 potion yellow~
-   The potion has a small label 'Detect The Invisible'.  
+   The potion has a small label 'Detect The Invisible'.
 ~
 #25752
 scroll recall~
@@ -518,7 +518,7 @@ A scroll has carelessly been left here.~
 4 1000 0 0 0
 E
 scroll recall~
-   The scroll has written a formulae of 'Word of Recall' upon it.  
+   The scroll has written a formulae of 'Word of Recall' upon it.
 ~
 #25753
 wand grey~
@@ -569,7 +569,7 @@ A metal staff has carelessly been left here.~
 7 850 0 0 0
 E
 staff metal~
-   The staff is made of metals unknown to you.  
+   The staff is made of metals unknown to you.
 ~
 #25756
 gold~
@@ -613,7 +613,7 @@ A raft has been left here.~
 50 400 0 0 0
 E
 raft~
-   The raft looks very primitive.  
+   The raft looks very primitive.
 ~
 #25761
 canoe~
@@ -626,7 +626,7 @@ A canoe has been left here.~
 E
 canoe~
    The canoe looks to be made from white ash.  A strong but light wood that can
-be easily steamed into almost any shape.    
+be easily steamed into almost any shape.
 ~
 #25762
 row boat~
@@ -646,9 +646,9 @@ A floatation device has been left here.~
 10 200 0 0 0
 E
 rubber ducky flotation device~
-   You have got to be kidding!  No one would actually use this would they?  
+   You have got to be kidding!  No one would actually use this would they?
 You are going to be the laughing stock of the realm if you ever use this thing.
-  
+
 ~
 #25764
 beer red lager beer~
@@ -677,7 +677,7 @@ A pair of bright green and yellow checkered pants has been left here.~
 E
 bright green yellow checkered pants~
    Reading the tag in the back, you see that it was Made in Jareth, by Franz's
-Clothier.  
+Clothier.
 ~
 #25767
 hot pink golfers cap ball~
@@ -713,7 +713,7 @@ A pair of black gloves have been left here.~
 5 700 0 0 0
 E
 stealing gloves~
-   Black, leather, with the fingers cut off, these gloves radiate power.  
+   Black, leather, with the fingers cut off, these gloves radiate power.
 ~
 A
 2 2
@@ -801,7 +801,7 @@ Jacque the Jackal's pinky finger lies on the ground here.~
 1 1000 0 0 0
 E
 jacque pinky finger~
-   Is that a booger on the end?  Yuck!  
+   Is that a booger on the end?  Yuck!
 ~
 #25781
 wall sign~
@@ -814,7 +814,7 @@ A sign hangs on the wall here.~
 E
 sign~
    This establishment will pay any being who gives blood a flat sum of gold in
-return for their donation.  Simply GIVE BLOOD and you shall be rewarded.  
+return for their donation.  Simply GIVE BLOOD and you shall be rewarded.
 ~
 #25782
 sign~
@@ -840,7 +840,7 @@ An empty vial has been left here.~
 1 1 0 0 0
 E
 vial~
-   It's just an empty vial.  
+   It's just an empty vial.
 ~
 #25784
 blank scrolled paper~
@@ -930,11 +930,11 @@ A large, sociable bulletin board is mounted on a wall here.~
 0 0 0 0 0
 E
 drop box message~
-   Use 'look box' to write a message.  
+   Use 'look box' to write a message.
 ~
 E
 box~
-   If you can read this, the drop box is not working.  
+   If you can read this, the drop box is not working.
 ~
 #25797
 board frozen bulletin~
@@ -946,11 +946,11 @@ A large bulletin board is here, carved from a block of ice.~
 0 0 0 0 0
 E
 freeze bulletin~
-   Use 'look board' to read the board.  
+   Use 'look board' to read the board.
 ~
 E
 board~
-   If you can read this, the board is not working.  
+   If you can read this, the board is not working.
 ~
 #25798
 board holy bulletin~
@@ -962,11 +962,11 @@ A large bulletin board is mounted on a wall here.  It glows with a faint aura.~
 0 0 0 0 0
 E
 holy bulletin~
-   Use 'look board' to read the board.  
+   Use 'look board' to read the board.
 ~
 E
 board~
-   If you can read this, the board is not working.  
+   If you can read this, the board is not working.
 ~
 #25799
 board bulletin~
@@ -978,10 +978,10 @@ A large bulletin board is mounted on a wall here.~
 0 0 0 0 0
 E
 bulletin~
-   Use 'look board' to read the board.  
+   Use 'look board' to read the board.
 ~
 E
 board~
-   If you can read this, the board is not working.  
+   If you can read this, the board is not working.
 ~
 $~

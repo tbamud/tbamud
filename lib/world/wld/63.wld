@@ -110,7 +110,7 @@ S
 On The Busy Path~
    Spiders, spiders, everywhere!  It is almost ant-like in efficiency
 with one big difference.  The spiders here are carrying ant-corpses,
-as well as cats, wolves, and humans.  
+as well as cats, wolves, and humans.
 ~
 63 0 0 0 0 2
 D0
@@ -229,7 +229,7 @@ D1
 S
 #6320
 The Webless Path~
-   Strange.  No webbing here.  In fact, no sounds whatsoever.  
+   Strange.  No webbing here.  In fact, no sounds whatsoever.
 The path continues northward, where you find that you may have
 to tightrope your way across a ravine.
 ~
@@ -248,7 +248,7 @@ Above The Ravine~
    Stranger still.  Your feet get a real firm grip on the spiderline.
 You are above a deep ravine.  This line connects you between two trees.
 Below you can see a prismatic web with lots of animal bones caught in it:
-some bear and small deer bones in fact.  No human skeletons are visible 
+some bear and small deer bones in fact.  No human skeletons are visible
 (yet).
 ~
 63 0 0 0 0 2
@@ -359,7 +359,7 @@ S
 #6328
 The Entrance Of The Ethereal Web~
    You are at the entrance to ethereal web.  Flickering in and out,
-in and out, each strand reveals a different hue from black to green 
+in and out, each strand reveals a different hue from black to green
 to blue.
 ~
 63 0 0 0 0 2
@@ -683,7 +683,7 @@ D0
 0 -1 6368
 E
 chair~
-   An ordinary chair, well used, glued to the ground by spiderweb.  
+   An ordinary chair, well used, glued to the ground by spiderweb.
 ~
 S
 #6368
@@ -722,7 +722,7 @@ The Donjonkeep~
 the howls of wolves are the only way you can describe the sounds you
 hear.  The walls are thin and wispy.  The only light you receive is
 the shimmering from the strand of the ethereal web you used to get
-here.  
+here.
 ~
 63 0 0 0 0 2
 D1
@@ -783,7 +783,7 @@ S
 Mahatma's Inescapable Trap~
    The room is dark and filled with shadows.  A trap has been carefully crafted
 to catch unwary travellers.  There seems to be no way out.  A few looted corpses
-are piled in one corner.  
+are piled in one corner.
 ~
 63 12 0 0 0 0
 D1
@@ -809,8 +809,8 @@ S
 #6391
 The Sticky Chamber~
    You can still bail out since your knees are shaking from the
-anticipation (or is it fear?).  The sky is clear on this strand of 
-web, surprisingly unsticky.  The strand does not vibrate like the 
+anticipation (or is it fear?).  The sky is clear on this strand of
+web, surprisingly unsticky.  The strand does not vibrate like the
 others.  A few ballooning spiders pass by, cackling 'You're gonna
 die, you're gonna fry.  Good bye!'
 ~
@@ -828,7 +828,7 @@ S
 The Great Door~
    Before you you see a large, web-like door.  Various designs
 of ancient runes and names of Midgaard heroes are etched into
-the webwork.  Perhaps lists of victims?  You can't tell.  
+the webwork.  Perhaps lists of victims?  You can't tell.
 ~
 63 8 0 0 0 2
 D0

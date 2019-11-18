@@ -8,7 +8,7 @@ A hierogylph-engraved mace has been left here.~
 10 800 50 0
 E
 mace egyptian~
-   The mace is formed from solid brass, and engraved in strange hieroglyphs.  
+   The mace is formed from solid brass, and engraved in strange hieroglyphs.
 ~
 #5301
 robe sand~
@@ -22,7 +22,7 @@ E
 robes sand~
    The robes are colored a sandy off-white, and are in fact caked and covered
 with sand as well.  You don't seem to be able to remove all of the sand, no
-matter how much you try.  
+matter how much you try.
 ~
 #5302
 dirk obsidian~
@@ -34,7 +34,7 @@ A flat dirk made of chipped obsidian lies here.~
 8 1000 100 0
 E
 dirk obsidian~
-   The blade of the dirk is black, glassy obsidian, chipped razor sharp.  
+   The blade of the dirk is black, glassy obsidian, chipped razor sharp.
 ~
 A
 2 1
@@ -51,7 +51,7 @@ A dirty cloth turban has been forgotten here.~
 E
 turban cloth~
    The turban used to be white cloth, now it is covered with oil and dirt from
-the head and hair of its previous owner, who must not have bathed much.  
+the head and hair of its previous owner, who must not have bathed much.
 ~
 A
 2 1
@@ -67,7 +67,7 @@ Long cloth wrappings lie on the ground in a pile.~
 15 125 17 0
 E
 wrappings cloth~
-   The cloth wrappings are old, wrinkled, and stink of embalming fluid.  
+   The cloth wrappings are old, wrinkled, and stink of embalming fluid.
 ~
 #5305
 bottle fluid~
@@ -79,7 +79,7 @@ A dusty bottle lies here on the ground.~
 5 250 50 0
 E
 bottle fluid~
-   The bottle is dusty and the fluid has a strange sickly-sweet smell to it.  
+   The bottle is dusty and the fluid has a strange sickly-sweet smell to it.
 ~
 #5306
 jar formaldehyde~
@@ -91,7 +91,7 @@ A small jar lies here on the ground.~
 6 300 60 0
 E
 jar formaldehyde~
-   The jar is sticky and smells really bad.  
+   The jar is sticky and smells really bad.
 ~
 #5307
 ball fire~
@@ -103,7 +103,7 @@ A little ball of fire hovers in the air before your eyes.~
 10 350 50 0
 E
 ball fire~
-   The ball of fire is hot to the touch and very very bright.  
+   The ball of fire is hot to the touch and very very bright.
 ~
 A
 13 10
@@ -120,7 +120,7 @@ A curved scimitar made of stone rests on the ground.~
 E
 scimitar stone~
    The scimitar is formed from solid stone, chipped and carved to perfection,
-with a sharp, cold blade that is marred only by a few nicks here and there.  
+with a sharp, cold blade that is marred only by a few nicks here and there.
 ~
 A
 18 2
@@ -136,7 +136,7 @@ A stone key has been dropped here.~
 15 1 0 0
 E
 key stone~
-   The key is made from stone, but is otherwise unremarkable.  
+   The key is made from stone, but is otherwise unremarkable.
 ~
 #5310
 sarcophagus stone~
@@ -152,7 +152,7 @@ sarcophagus stone~
 wars fought long ago, mighty pyramids being constructed...  A raised image atop
 the sarcophagus is formed in the visage of one of the mighty pharoahs, painted
 in gold and studded with precious gems.  You see a small keyhole in the side of
-the sarcophagus.  
+the sarcophagus.
 ~
 #5311
 dust~
@@ -165,7 +165,7 @@ A small pile of dust is being scattered by the breeze.~
 E
 dust~
    The dust is old.  As you sift it through your hands you find tiny chips of
-aged bone inside -- it must be the ancient remains of something.  
+aged bone inside -- it must be the ancient remains of something.
 ~
 #5312
 scarab emerald~
@@ -178,7 +178,7 @@ A small emerald scarab lies here on the ground.~
 E
 scarab emerald~
    The scarab is intricately detailed, down to the tiny hairs on its insectile
-legs and the faceting of the emeralds in its eyes.  
+legs and the faceting of the emeralds in its eyes.
 ~
 #5313
 lamp~
@@ -191,7 +191,7 @@ A small, tarnished, battered lamp has been dropped here.~
 E
 lamp~
    The lamp is quite old and tarnished.  You rub at it to get some of the grime
-off, but it doesn't seem like anybody is home.  
+off, but it doesn't seem like anybody is home.
 ~
 A
 17 -5
@@ -208,7 +208,7 @@ A small brass ankh has been left here.~
 E
 ankh~
    The ankh is a small brass symbol of an ancient religion.  It glows with a
-soft bright light that is soothing to you.  
+soft bright light that is soothing to you.
 ~
 A
 3 1
@@ -226,7 +226,7 @@ E
 book riddles~
    The book has well-worn pages, containing many befuddling riddles to surprise,
 confuse, and amuse you.  You find yourself bewildered by its contents and put it
-down to sort your head out.  
+down to sort your head out.
 ~
 #5316
 paw lion~
@@ -240,7 +240,7 @@ E
 paw lion~
    The massive paw has straps on it formed of bronze, so that it will fit snugly
 over your hand.  As you put it on, it melds with your hand, becoming an
-extension of your arm.  
+extension of your arm.
 ~
 A
 5 1
@@ -257,7 +257,7 @@ A small piece of parchment covered in hieroglyphics lies here.~
 E
 answer hieroglyphics parchment~
    You cannot decipher the strange hieroglyphics that cover the sheet of
-parchment.  
+parchment.
 ~
 #5318
 treasure~
@@ -270,7 +270,7 @@ The massive treasure of the sphinx lies here in a big pile.~
 E
 treasure~
    The treasure is incredibly large, filled with gold coins and valuables, more
-wealth than you could ever possibly imagine accumulated in one place.  
+wealth than you could ever possibly imagine accumulated in one place.
 ~
 #5319
 sand pile~
@@ -283,7 +283,7 @@ You see a small pile of sand.~
 E
 sand pile~
    You think you see some coins and valuables glinting amongst the grains of
-sand.  
+sand.
 ~
 #5320
 curse mummy~
@@ -297,7 +297,7 @@ E
 curse mummy~
    Rumor has it that whomever disturbs the grave of the mummy shall be cursed
 for all eternity, and that the descendents of that person shall likewise be
-cursed for ten generations to follow.  
+cursed for ten generations to follow.
 ~
 A
 13 -50
@@ -315,7 +315,7 @@ E
 elixir small glass~
    The elixir is deceptively small.  Something tells you that its contents are
 truly quite potent.  Perhaps too potent for ordinary mortals to attempt to
-consume.  
+consume.
 ~
 #5322
 mask golden~
@@ -330,7 +330,7 @@ mask golden~
    This beautiful mask was shaped from solid gold and magically enchanted to
 perfectly fit the face of any who choose to wear it, its golden features and
 turquoise highlights even moving to match the expressions of the face of the
-wearer.  
+wearer.
 ~
 A
 12 25
@@ -347,7 +347,7 @@ the diamond~
 E
 diamond~
    Aha!  You see a multifaceted gemstone, which strangely reflects no light,
-making it very hard to see when it lies on the ground.  
+making it very hard to see when it lies on the ground.
 ~
 #5324
 wand sun brass pipe~
@@ -361,7 +361,7 @@ E
 wand sun brass pipe~
    This small brass shaft is a holy weapon used by the ancient people of this
 land to defend against the deadliest of foes.  It shines with the brilliant
-blazing light of the sun.  
+blazing light of the sun.
 ~
 A
 21 -2
@@ -378,7 +378,7 @@ A small sandy-coloured ring has been carelessly dropped here.~
 E
 ring sandy~
    The ring is small, smooth, sandy-coloured and unremarkable, save that it
-gives off a continuous low humming noise that tickles your fingertips.  
+gives off a continuous low humming noise that tickles your fingertips.
 ~
 A
 3 1
@@ -396,7 +396,7 @@ E
 sphinx golden~
    The golden sphinx is incredibly detailed and very small, fitting easily into
 the palm of your hand.  You can even make out the expression of wisdom and peace
-on its face.  
+on its face.
 ~
 A
 4 2
@@ -412,7 +412,7 @@ E
 leggings sphinxian~
    These magically fashioned leggings impart the strength and stamina of the
 mightiest of the ancient sphinxes.  You feel ancient power emanating from them;
-they seem to be almost alive.  
+they seem to be almost alive.
 ~
 A
 1 3

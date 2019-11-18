@@ -172,7 +172,7 @@ Passageway~
    Here the passageway has two alcoves on the sides, each with a statue of some
 forgotten god.  The plaques have rusted away so you can't even read the names.
 Probably these were devotions to Gods whose time was over and whose followers
-deserted.  There is a trapdoor in the floor beyond them: the only way to go.  
+deserted.  There is a trapdoor in the floor beyond them: the only way to go.
 ~
 293 9 0 0 0 0
 D5
@@ -265,7 +265,7 @@ S
 #29318
 Passageway~
    Here is a door to the north.  A plaque next to it reads, 'The Trial of
-Defense!  '.  You get a BAD feeling about this room ahead.    
+Defense!  '.  You get a BAD feeling about this room ahead.
 ~
 293 9 0 0 0 0
 D0
@@ -400,8 +400,8 @@ D0
 S
 #29328
 Passageway~
-   There is a door to your north, with a plaque that says, 
-		   'The Trial of Death!'
+   There is a door to your north, with a plaque that says,
+                   'The Trial of Death!'
    Uh-oh.  You wonder if you've a scroll of recall...
 ~
 293 9 0 0 0 0
@@ -426,7 +426,7 @@ Welcome to The Builder Academy (TBA)!
 3) Read the background story.
 4) Change password.
 5) Delete this character.
- 
+
    Make your choice:
 (and then, the illusion and shock slowly fades away.)
 ~
@@ -440,7 +440,7 @@ S
 Alcove~
    Up ahead, you see a bright light, much brighter than most mundane light
 sources you've seen.  It seems to be coming from a small globe in the next
-room, resting on a pedestal.    
+room, resting on a pedestal.
 ~
 293 8 0 0 0 0
 D0
@@ -483,7 +483,7 @@ S
 Void~
    Mouserider's bedroom is gone.  You float in space, and several
 objects wink into being around you.  A reward from the gods, perhaps?
- 
+
    A rift opens in space below you, and you spot the street outside
 the White Temple in Kerofk.  A voice booms around you:
    "Take these toys, and remember this:  don't expect plot continuity
@@ -548,10 +548,10 @@ D2
 S
 #29337
 Turn in the Road~
-   The road turns here to the east.  Around you you see small cultivated 
+   The road turns here to the east.  Around you you see small cultivated
 fields, tended by farmers who seem paranoid and quick.  The vegetables
-they are harvesting seem pale and lifeless by your standards, with a few 
-you've never seen the likes of before.  From several burned out shells of 
+they are harvesting seem pale and lifeless by your standards, with a few
+you've never seen the likes of before.  From several burned out shells of
 houses you guess the farmers just try to grow what they can before the
 city is put under siege again.
 ~
@@ -567,9 +567,9 @@ D2
 S
 #29338
 A City on the Edge~
-   From here you see a great walled city from the side.  Only half is 
-walled, the other half sprawled directly on the edge of a great cliff 
-which drops down into a dark ocean below.  To the east you see a small 
+   From here you see a great walled city from the side.  Only half is
+walled, the other half sprawled directly on the edge of a great cliff
+which drops down into a dark ocean below.  To the east you see a small
 gate in the city, which farmers are going into and out of sporadically.
 ~
 293 8 0 0 0 2
@@ -673,7 +673,7 @@ S
 Mountain Pass~
    The mountain pass leads up to the west, and downwards to the south.
 There seems to be a strange half twilight farther to the west, casting
-an eerie glow over the stones and shrubberies around.  You can see a 
+an eerie glow over the stones and shrubberies around.  You can see a
 large dark plain to the east that the sun never seems to have shone
 upon, making it appear to be otherworldly somehow...
 ~
@@ -758,7 +758,7 @@ S
 Graveyard~
    This path leads through the graveyard south and west.  You notice
 several graves have been disturbed here, and one grave has been entirely
-dug up.  The bones of a dead dwarf lie exposed at the bottom of the 
+dug up.  The bones of a dead dwarf lie exposed at the bottom of the
 grave, its hands seemingly to clutch at the sky.  The tombstone at
 the head of the grave is completely unreadable.
 ~
@@ -793,7 +793,7 @@ S
 #29351
 Graveyard~
    The earth here has been freshly turned up, the graves recent.
-The headstones tell tale of faithful wives and brave husbands, 
+The headstones tell tale of faithful wives and brave husbands,
 meeting their ends with dignity and aplomb.  Two pits are dug
 near the wall for a burial yet to take place.  You feel strangely
 chilled by the night air...

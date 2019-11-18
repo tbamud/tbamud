@@ -4,7 +4,7 @@ a zombie guard~
 A decomposing guard is still standing watch here.
 ~
    The flesh is falling off this guy, while green puss oozes from old wounds.
-He looks Dead!    
+He looks Dead!
 ~
 6154 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
@@ -19,7 +19,7 @@ A rotten knight in black armor is standing here.
 ~
    A once noble knight in armor, it now looks like it spent a few weeks laying
 out in the sun and has shriveled up.  His black armor sits loosely over the
-remains of this undead monsters body.    
+remains of this undead monsters body.
 ~
 2124 0 0 0 80 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -32,7 +32,7 @@ zombie servant~
 a zombie servant~
 A zombie servants rotten head almost falls off as he bows before you.
 ~
-   This dead servant was brought back to life.  You wonder why!    
+   This dead servant was brought back to life.  You wonder why!
 ~
 188488 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -46,7 +46,7 @@ a zombie maid~
 A zombie maid picks up after all the zombies.
 ~
    She might have once been an attractive woman, but now she's just another
-soulless husk of a human being.    
+soulless husk of a human being.
 ~
 188488 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
@@ -62,7 +62,7 @@ A richly dressed zombie walks around with his nose stuck up in the air.
    At one time he used to be dressed in the finest of finery.  You catch
 glimpses of gold trimming on the old rotten clothing, hints of this mans
 greatness at one time.  The downfall of his empire seems to weep in his sunken
-eyes.    
+eyes.
 ~
 72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -76,7 +76,7 @@ a zombie lady~
 A smelly zombie brushes up against you seductively.
 ~
    Dressed in clothes that were once very flattering, the decaying flesh and
-oozing green puss don't do much to help this lady now.    
+oozing green puss don't do much to help this lady now.
 ~
 72 0 0 0 0 0 0 0 -750 E
 10 17 4 2d2+100 1d2+1
@@ -90,7 +90,7 @@ a skeleton~
 A pile of human bones is lying here.
 ~
    What you first think is just a pile of bones, you now realize that it is
-actually alive and looks ready to attack.    
+actually alive and looks ready to attack.
 ~
 10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -103,7 +103,7 @@ undead~
 an undead corpse~
 An undead corpse walks past you.
 ~
-   This corpse just stood up and walked past you.  How unnerving.    
+   This corpse just stood up and walked past you.  How unnerving.
 ~
 72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -117,7 +117,7 @@ the head maid~
 A zombie head maid is supervising the cleaning of the tower.
 ~
    She looks tough, all the other maids cower towards her.  She holds herself
-with an air of authority that is expected to be respected and followed.    
+with an air of authority that is expected to be respected and followed.
 ~
 10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -131,7 +131,7 @@ a blistered zombie~
 A blistered zombie is smoldering from the heat.
 ~
    The heat has caused this zombie to be covered in blisters.  Very little
-clothing remains, what does is slowly smoldering into ash.    
+clothing remains, what does is slowly smoldering into ash.
 ~
 10 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
@@ -145,7 +145,7 @@ a smoking zombie~
 A zombie stands here negligent to the heat.
 ~
    This zombie is charred and smoke pours off his smoldering flesh.  The smell
-is none too appealing and makes your eyes burn.    
+is none too appealing and makes your eyes burn.
 ~
 10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -159,7 +159,7 @@ a flaming zombie~
 A zombie has caught on fire here.
 ~
    Smoke and flames roll off this zombie causing the horrible stench of burnt
-hair and flesh to make you gag.  It seems oblivious to the world.    
+hair and flesh to make you gag.  It seems oblivious to the world.
 ~
 10 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -174,7 +174,7 @@ An algae monster is trying to hide from you.
 ~
    This monster is covered in algae.  It looks somewhat human in form, but it is
 impossible to tell for sure.  It looks very hostile.  Claws and teeth protrude
-from the fungus covered beast.  
+from the fungus covered beast.
 ~
 2110 0 0 0 1048660 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -189,7 +189,7 @@ A vampire looks at you and grins evilly.
 ~
    This vampire must be about 7 feet tall and looks really upset about you
 disturbing him.  He wears a black cape that fails to conceal his broad
-shoulders.  He looks to be much more than just your average vampire.    
+shoulders.  He looks to be much more than just your average vampire.
 ~
 237630 0 0 0 1048656 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -203,7 +203,7 @@ a damsel in distresss~
 A damsel in distress sings so beautifully.
 ~
    Such a beautiful voice, but such an ugly face.  She reminds you of those
-sirens you've heard of.    
+sirens you've heard of.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -217,7 +217,7 @@ a prisoner~
 A prisoner is standing here, looking hopeless.
 ~
    The blank eyes seem to already have seen the future and the fate that will
-become of him.    
+become of him.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -231,7 +231,7 @@ the inquisitor~
 An inquisitor is here, applying her trade to the prisoners.
 ~
    She seems to enjoy her work a little too much.  She is dressed in tight
-black leather and various tools of her trade hang about her.    
+black leather and various tools of her trade hang about her.
 ~
 2570 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -245,7 +245,7 @@ the head inquisitor~
 The head inquisitor is supervising the interrogations.
 ~
    She really seems to enjoy inflicting pain on others, she suddenly notices
-you and smiles seductively.  Yet another prisoner in her eyes.    
+you and smiles seductively.  Yet another prisoner in her eyes.
 ~
 42 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -260,7 +260,7 @@ An animator of the dead is weaving an intricate spell.
 ~
    Dressed completely in black, he hardly looks human.  He makes several
 intricate gestures while mumbling incomprehensible words.  He suddenly notices
-you, and loses his concentration.    
+you, and loses his concentration.
 ~
 172074 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -274,7 +274,7 @@ a zombie~
 A zombie stumbles past you.
 ~
    This guy has been dead for a long time.  The body is decomposed and ridden
-with maggots.    
+with maggots.
 ~
 72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -287,7 +287,7 @@ zombie~
 a moldy zombie~
 A zombie covered in mold is lying on the floor.
 ~
-   This zombie has been lying on the ground too long and has gotten moldy.    
+   This zombie has been lying on the ground too long and has gotten moldy.
 ~
 72 0 0 0 0 0 0 0 -750 E
 14 16 1 2d2+140 2d2+2
@@ -302,7 +302,7 @@ A wraith floats past you.
 ~
    This thing sends a chill down your spine as it slowly floats by, seeming to
 fade in and out of existence, you can't tell if it's real or just your
-imagination.    
+imagination.
 ~
 2632 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -315,7 +315,7 @@ shade~
 a shade~
 A shade is slowly fading in and out of existence.
 ~
-   It looks unreal, and definitely undead.    
+   It looks unreal, and definitely undead.
 ~
 42 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -329,7 +329,7 @@ a frozen zombie~
 A zombie with icicles hanging on it shuffles by.
 ~
    The cold has taken ahold of this zombie and turned it into a popsicle.  It
-moves even slower than normal.    
+moves even slower than normal.
 ~
 72 0 0 0 0 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -344,7 +344,7 @@ A zombie king orders you to leave at once.
 ~
    Surprisingly, he looks like he would do well in a battle.  Years of
 rulership has left him with a smug arrogance in which he expects everything and
-everyone to obey his every command.    
+everyone to obey his every command.
 ~
 2090 0 0 0 80 0 0 0 -750 E
 18 14 0 3d3+180 3d3+3
@@ -357,7 +357,7 @@ zombie queen~
 a zombie queen~
 A zombie queen sniffs in disdain at you.
 ~
-   Once beautiful, she is now just another one of the rotting undead.    
+   Once beautiful, she is now just another one of the rotting undead.
 ~
 170026 0 0 0 0 0 0 0 30 E
 18 14 0 3d3+180 3d3+3
@@ -371,7 +371,7 @@ a dungeon guard~
 A dungeon guard stands his watch vigilantly.
 ~
    He stands with pride and honor, the perfect guard.  He wears a grey robe
-over his armor with two crossed thunderbolts emblazoned on it.    
+over his armor with two crossed thunderbolts emblazoned on it.
 ~
 2124 0 0 0 80 0 0 0 750 E
 18 14 0 3d3+180 3d3+3
@@ -385,8 +385,8 @@ a dungeon sentry~
 This sentry is standing watch over a large locked door to the south.
 ~
    She stands rigidly at attention.  Heels together, feet seperated at a 45
-degree angle, back straight, closed hands against the seam of her trousers.  
-She doesn't move an inch.    
+degree angle, back straight, closed hands against the seam of her trousers.
+She doesn't move an inch.
 ~
 6154 0 0 0 80 0 0 0 750 E
 14 16 1 2d2+140 2d2+2
@@ -400,7 +400,7 @@ a dungeon master~
 The dungeon master is here protecting the cell to the south.
 ~
    She looks tough and very serious, She carries a wicked sword with two
-crossed lightning bolts engraved on the handle.    
+crossed lightning bolts engraved on the handle.
 ~
 239626 0 0 0 80 0 0 0 750 E
 18 14 0 3d3+180 3d3+3
@@ -414,7 +414,7 @@ a princess~
 The princess is sitting in a corner, cowering in fear.
 ~
    Her face is streaked with dried tears, she looks like she has given up hope
-on life, will you save her?    
+on life, will you save her?
 ~
 202 0 0 0 0 0 0 0 750 E
 14 16 1 2d2+140 2d2+2
@@ -429,7 +429,7 @@ the Lord of the Undead~
 The Lord of the Undead ignores your pitiful existence.
 ~
    The master of the tower, his only equal is the gods, that is if he ever
-escapes confinement from his warded cell.    
+escapes confinement from his warded cell.
 ~
 30 0 0 0 80 0 0 0 -1000 E
 18 14 0 3d3+180 3d3+3

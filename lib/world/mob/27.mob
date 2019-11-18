@@ -6,7 +6,7 @@ A small creature digs here with a sad look in its eyes.
    This creature is one of the few left of the race of memlins.  Short and
 gangly, it looks well suited to life in tunnels.  Its warty skin is the colour
 of sand and stone and two large pointed ears twitch at any sound.  Large yellow
-eyes seem to fill its face with an expression of despair and helplessness.    
+eyes seem to fill its face with an expression of despair and helplessness.
 ~
 72 0 0 0 2048 0 0 0 100 E
 10 19 6 2d1+110 1d2+2
@@ -23,7 +23,7 @@ A heavily-muscled guard stands here keeping an eye on the surroundings.
    This fierce looking guard has the large amber eyes and pointed ears of his
 memlin kin, but appears unnaturally muscled and strong.  His face is stern and
 grim as though he takes his duties seriously, but his wide eyes betray a sense
-of concealed desperation.    
+of concealed desperation.
 ~
 26 0 0 0 0 0 0 0 0 E
 15 19 4 3d2+165 0d6+3
@@ -38,7 +38,7 @@ A small squeaking bat dives in and out of the shadows.
 ~
    Flitting about quickly, this bat hardly stays still long enough to be
 observed.  Its characteristic black furred body and webbed wings are somewhat
-harmless looking until several sharp teeth glint in the subdued light.    
+harmless looking until several sharp teeth glint in the subdued light.
 ~
 135178 0 0 0 67664 0 0 0 -500 E
 10 17 4 2d2+500 1d2+1
@@ -54,7 +54,7 @@ A weary memlin supervises the handing out of supplies.
    His eyes are slightly glassed over and the natural creases of his face are
 even more deeply furrowed into an almost constant frown.  Absent-mindedly
 shuffling various items into some resemblance of order, he seems scarcely aware
-of anyone else's presence.    
+of anyone else's presence.
 ~
 188426 0 0 0 0 0 0 0 0 E
 34 15 -10 6d6+340 5d5+5
@@ -72,7 +72,7 @@ A @Ctiny wish@y floats lazily through the air.@n
 out from a spherical body as it floats in the air.  Almost more like a seedling
 than an animal, it is easy to forget it is alive, until it hums gently and
 drifts deliberately closer.  This creature's mere presence seems to freshen the
-air, as though it were somehow filtering and replenishing it.    
+air, as though it were somehow filtering and replenishing it.
 ~
 72 0 0 0 2048 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
@@ -88,7 +88,7 @@ An armored guardian stands here, blocking the gates to the north.
    Tall and menacing, his body is completely covered with black irridescent
 armor that reveals none of his natural form.  Even his eyes are masked by the
 metal visor over his face, though somehow he seems to perceive his surroundings
-very well indeed.    
+very well indeed.
 ~
 135226 0 0 0 64 0 0 0 -50 E
 16 18 3 3d2+200 1d2+3
@@ -106,7 +106,7 @@ A small child stands here.
    This small memlin child seems to have even larger eyes than her adult-kin.
 Startlingly luminous and brimming slightly with tears, they are almost like the
 amber eyes of a feline, only unsettlingly vacant.  She seems confused at the
-workings of the world around her and draws shyly away on approach.    
+workings of the world around her and draws shyly away on approach.
 ~
 138 0 0 0 80 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -125,7 +125,7 @@ A colourful pheasant hides amongst the greenery.
    This beautiful bird is well-fattened and covered with bright plumage that
 makes its efforts at hiding almost laughable.  Its cherry-red face blends into a
 warm bespeckled brown that covers most of its body, a brilliant patch of
-eggshell blue and light purple fanning out into its tail.  
+eggshell blue and light purple fanning out into its tail.
 ~
 10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
@@ -140,7 +140,7 @@ The Keeper of the Temple stands here.
 ~
    This memlin looks very wise as though the product of a lifetime of
 contemplation.  Tranquil yellow eyes betray no hint of emotion or thought, and
-only the faint swishing of robes can be heard as he moves about the room.    
+only the faint swishing of robes can be heard as he moves about the room.
 ~
 172042 0 0 0 0 0 0 0 0 E
 30 15 -8 6d6+300 5d5+5
@@ -154,11 +154,11 @@ fire wrm~
 a @Rfire wrm@n~
 A @Rfire wrm@y scuttles about here, filling the air with smoke.@n
 ~
-   This creature wanders about the place devouring anything it sees.  
+   This creature wanders about the place devouring anything it sees.
 Shuffling along on spines that cover its entire body, its gigantic fiery mouth
 gives it the ability to consume even metals and piles of rubble, making it
 useful for excavation sites.  Black smoke rises from the creature, the product
-of its constant digestion.    
+of its constant digestion.
 ~
 72 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 3d7+2
@@ -177,7 +177,7 @@ skeleton were it not for the rasping sounds of breath that still escape his
 mouth.  A single black chain secures his ankle to the wall, though he appears
 far beyond any chance for escape or survival.  Paper-thin skin hangs loosely in
 folds about his skeletal body, the eerie rattling sound as he struggles for
-breath a sure sign of his imminent death.  
+breath a sure sign of his imminent death.
 ~
 74 0 0 0 0 0 0 0 0 E
 8 19 5 0d0+0 1d2+1
@@ -192,7 +192,7 @@ the glassy tentacle~
    On closer inspection, this spike doesn't appear to be a stalagmite at all.
 In fact it seems almost gelatinous, quivering slightly with every vibration and
 slowly waving as if by its own accord.  It looks as though there is more to it
-than what can be seen protruding from the ice.    
+than what can be seen protruding from the ice.
 ~
 147482 0 0 0 0 0 0 0 0 E
 20 17 -2 4d4+200 3d3+3
@@ -204,10 +204,10 @@ newly grown wish~
 a newly-grown @Cwish@n~
 A newly-grown @Cwish@y wobbles uncertainly in the air.@n
 ~
-   This little creature is still sticky from the sap of its parent vine.  
+   This little creature is still sticky from the sap of its parent vine.
 Disentangling its delicate strands slowly, it seems to grow larger as the air
 currents from its siblings dry it off, making it increasingly capable of
-navigating its way through the slight breeze.    
+navigating its way through the slight breeze.
 ~
 10 0 0 0 0 0 0 0 0 E
 12 18 2 2d2+120 2d2+2
@@ -225,7 +225,7 @@ sound when it moves as though it is made entirely of bone...  or indeed
 egg-shell.  Squinting black eyes peer calculatingly out from an elongated skull
 and a hideous toothy smile splits across its face at the sight of you.  Two
 gigantic spider-like hands curl protectively around a glowing object in its
-lap.    
+lap.
 ~
 188442 0 0 0 80 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
@@ -243,7 +243,7 @@ A dying memlin leans against the wall, half turned to stone.
    Shuddering slightly, this half-dead creature clutches at the wall for support
 as his skin seems slowly to darken and crack.  His entire lower body has turned
 completely into stone, the petrification creeping higher like a black spreading
-stain.  
+stain.
 ~
 24586 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+0 1d2+0
@@ -261,7 +261,7 @@ A @Rfire wrm@y is tethered here, billowing smoke around it.@n
 slightly as peristaltic-like contractions ripple through its body.  Large
 amounts of thick black smoke ooze from pores all over its body as it devours the
 piles of rubble, ore and all with its massive fiery mouth, acting almost as
-living waste disposal.  
+living waste disposal.
 ~
 10 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
@@ -276,7 +276,7 @@ A dark, beady-eyed rat sniffs the air.
    This mangy rodent must be well-fed to have grown so large.  Pink scaly feet
 and a long worm-like tail are all of the creature that is not covered in coarse,
 matted dark fur.  Two predatory black eyes scan the surroundings as the animal
-apparantly continues its scavenges for anything edible.  
+apparantly continues its scavenges for anything edible.
 ~
 6264 0 0 0 64 0 0 0 0 E
 10 19 4 2d2+100 1d2+1
@@ -293,7 +293,7 @@ A little iridescent beetle scurries along.
    This little glistening beetle has two rather large pinchers that protrude
 like horns from its head.  Tiny legs move almost too quickly to be seen, as the
 creature scuttles nervously around, streaks of blue and green glinting in its
-black armor.  
+black armor.
 ~
 200 0 0 0 2048 0 0 0 0 E
 5 19 7 1d1+50 1d2+0
@@ -309,7 +309,7 @@ A green serpent writhes along the floor, jewelled markings down its back.
    This long, undulating snake weaves its way cautiously along, green shimmering
 scales glinting as it moves.  A tiny blood-red tongue flickers in and out of its
 mouth like fire, highlighting the scarlet diamond markings all down the length
-of its body.  
+of its body.
 ~
 2120 0 0 0 0 0 0 0 0 E
 17 18 0 3d3+170 2d2+2
@@ -325,7 +325,7 @@ A female memlin stands here, busily preparing food.
    This memlin appears intently focused on her activities, large yellow eyes
 following the flurry-like movements of her hands as she washes, slices, and
 kneads.  Traces of white powder and the scent of herbs and spices linger on her
-clothes and skin.  
+clothes and skin.
 ~
 10 0 0 0 0 0 0 0 0 E
 15 18 1 3d3+150 2d2+2
@@ -342,7 +342,7 @@ A memlin child seems to daydream as he dangles his feet in the water.
    Smaller and scrawnier than a full-grown memlin, this appears to be a child of
 about ten years old.  His large eyes are far too big for his head, which is
 likewise out of proportion to his fragile build.  Kicking his feet lazily, his
-expression is one of almost meditative calm.  
+expression is one of almost meditative calm.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 19 4 2d2+100 1d2+1
@@ -356,14 +356,14 @@ mighty dragon dragon-like creature Cui~
 the mighty Cui~
 A mighty, dragon-like creature watches perceptively with glowing eyes.
 ~
-   This powerful creature is most similar in appearance and size to a dragon.  
+   This powerful creature is most similar in appearance and size to a dragon.
 Massive scale plating cascades smoothly down its back and sides, reptilian skin
 polished and gleaming as it moves.  An enormous tail waves slowly and
 pendulously from side to side, its clawed feet indenting the almost solid
 ground.  Its most unusual feature is its large faintly glowing eyes, uncannily
 perceptive they seem to peer through things rather than at them.  The eyes are
 of odd colouring too, one glowing bright ember red and the other gleaming
-charcoal black.  
+charcoal black.
 ~
 253978 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
@@ -383,7 +383,7 @@ like tattooed patterns on human skin.  Long fair hair cascades down her back,
 and her features are strikingly prominent yet still smoothly feminine.  Her
 large blue eyes seem almost eeriely perceptive, shimmering just a little to
 brightly to appear normal, vivid splashes of green fading and dying as though
-some strange force pulses through them.  
+some strange force pulses through them.
 ~
 253978 0 0 0 0 0 0 0 0 E
 33 9 -9 6d6+330 5d5+5
@@ -401,7 +401,7 @@ smooth scale-like skin that glistens irridescent black, almost shimmering and
 radiating intense heat.  His eyes are large and dark, flickering slightly with
 red flashes as though a very fire dances within them.  Long clawed hands hang at
 his sides and his black teeth are small and pointed.  Powerful and intimidating,
-he gives an air of formidable confidence and proud fearlessness.  
+he gives an air of formidable confidence and proud fearlessness.
 ~
 10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -413,10 +413,10 @@ Dynar youth~
 a Dynar youth~
 A Dynar youth wanders meditatively here.
 ~
-   This delicate, agile humanoid is slender and elongated in body and limb.  
+   This delicate, agile humanoid is slender and elongated in body and limb.
 His movements are unusually fast although smooth and graceful and his pale skin
 glows like moonlight.  His soft, fair hair seems almost to float through the air
-as he moves and his large violet eyes are almost childishly innocent.  
+as he moves and his large violet eyes are almost childishly innocent.
 ~
 10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -432,7 +432,7 @@ A little memlin blinks curiously around.
 slightly rough in texture.  Large pointed ears stick up on either side of his
 head and his huge amber eyes fill half his face.  Peaceful in expression, he
 looks eager to learn and explore, peering easily and perceptively about in the
-shadows.  
+shadows.
 ~
 10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -446,7 +446,7 @@ The Revealer stands here, guarding the secrets of his people.
 ~
    This aged memlin is shrunken and wrinkled with time, his large eyes faded in
 color as an ember about to die.  His expression is firm and troubled, as though
-he has seen enough for many lifetimes.  
+he has seen enough for many lifetimes.
 ~
 10 0 0 0 0 0 0 0 0 E
 25 12 -5 5d5+250 4d4+4
@@ -463,7 +463,7 @@ A rabbit grazes peacefully here.
 ~
    This little animal is covered with soft brown fur, two long floppy ears
 dangling down either side of its head.  Oblivious to everything, it chews
-happily on the abundant grass, constantly sniffing as it hops about.  
+happily on the abundant grass, constantly sniffing as it hops about.
 ~
 10 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
@@ -478,7 +478,7 @@ A young memlin stands eagerly here, as if waiting for something.
    This bright-eyed memlin has an expression of almost excited wonder and
 curiousity on his face.  Fidgeting constantly, he wrings his hands as he
 glances around at everything, flickers of emotion passing over his face like
-windblown clouds.  
+windblown clouds.
 ~
 253962 0 0 0 0 0 0 0 0 E
 10 17 4 2d0+100 1d2+1
@@ -502,7 +502,7 @@ stormy force.  Her eyes are deep obsidian black, shifting with Khan'li flickers
 of scarlet and the occasional flash of green, their expression one of vicious
 calculating evil.  Cruel black teeth glint like coals amidst the fiery crimson
 of her lips, so sharp and pointed as to appear almost feral, her smooth scaled
-skin as dark and glossy as slick oil.  
+skin as dark and glossy as slick oil.
 ~
 10 0 0 0 0 0 0 0 -1000 E
 25 12 -5 5d5+700 4d4+4
@@ -520,7 +520,7 @@ A dark crow perches here, its green eyes gleaming.
 ~
    This jet-black crow is covered with sleek irridescent feathers, its
 formidable beak sharply curved, obviously made for tearing flesh.  Two tiny
-gleaming eyes peer suspicously about, the colour of deep emerald green.  
+gleaming eyes peer suspicously about, the colour of deep emerald green.
 ~
 10 0 0 0 0 0 0 0 0 E
 23 13 -3 4d4+230 3d3+3

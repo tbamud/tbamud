@@ -4,7 +4,7 @@ the chimpanzee~
 A chimpanzee is standing here.
 ~
    This intelligent chimpanzee is one of the many inhabitants of Ape Village.
-  
+
 ~
 200 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -17,7 +17,7 @@ the chimpanzee~
 A chimpanzee is standing here.
 ~
    This intelligent chimpanzee is one of the many inhabitants of Ape Village.
-  
+
 ~
 200 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -30,7 +30,7 @@ the Orangutan~
 A regal looking Orangutan is standing here.
 ~
    The Orangutans are the rulers of the Ape Village, and they are the most
-intelligent.    
+intelligent.
 ~
 200 0 0 0 0 0 0 0 -350 E
 19 14 -1 3d3+190 3d3+3
@@ -47,8 +47,8 @@ gorilla soldier~
 the savage gorilla soldier~
 A savage Gorilla soldier is here, looking for something to kill.
 ~
-   The Gorilla Soldiers make up the army and police forces of Ape Village.  
-Don't mess with them!    
+   The Gorilla Soldiers make up the army and police forces of Ape Village.
+Don't mess with them!
 ~
 72 0 0 0 0 0 0 0 -500 E
 20 14 -2 4d4+200 3d3+3
@@ -66,7 +66,7 @@ the gorilla hunter~
 A Gorilla Hunter is here, looking for something to kill.
 ~
    The Gorilla Hunters hunt down humans for sport.  They also round up humans
-for the ape scientists to use in experiments.    
+for the ape scientists to use in experiments.
 ~
 72 0 0 0 0 0 0 0 -500 E
 21 13 -2 4d4+210 3d3+3
@@ -83,7 +83,7 @@ ape child kid~
 the ape child~
 A small Ape Child is standing here.
 ~
-   Ape children are stupid and weak.  Perfect for killing!    
+   Ape children are stupid and weak.  Perfect for killing!
 ~
 200 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -96,7 +96,7 @@ the wild human~
 A wild human is here, eyeing you nervously.
 ~
    These wild humans are crazy.  They can't speak or write, and they are hunted
-by the apes.    
+by the apes.
 ~
 76 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -109,7 +109,7 @@ the caged human~
 A caged human is here, eyeing you nervously.
 ~
    These wild humans are crazy.  They can't speak or write, and they are hunted
-by apes.  Captivity has made these humans weaker than the wild ones.    
+by apes.  Captivity has made these humans weaker than the wild ones.
 ~
 10 0 0 0 0 0 0 0 0 E
 18 14 0 3d3+180 3d3+3
@@ -122,7 +122,7 @@ Ursus, the gorilla captain~
 Ursus, the Gorilla Captain, is glaring at you.
 ~
    Ursus is the captain of the Gorilla Soldiers.  He's very mean and very
-strong.  Picking a fight with him would surely result in death!    
+strong.  Picking a fight with him would surely result in death!
 ~
 141384 0 0 0 0 0 0 0 -500 E
 22 13 -3 4d4+220 3d3+3
@@ -140,7 +140,7 @@ Dr. Zaius~
 Dr. Zaius, the ruler of Ape Village, is standing here.
 ~
    Dr.  Zaius knows the truth behind Ape Village.  He knows that apes were once
-dominated by man, but he doesn't like to share information.    
+dominated by man, but he doesn't like to share information.
 ~
 8392 0 0 0 0 0 0 0 -200 E
 21 13 -2 4d4+210 3d3+3
@@ -158,7 +158,7 @@ Cornelius~
 Cornelius the chimpanzee is standing here.
 ~
    Cornelius is an archeologist.  He is simpathetic towards humans, unlike the
-other apes.    
+other apes.
 ~
 8264 0 0 0 0 0 0 0 200 E
 20 14 -2 4d4+200 3d3+3
@@ -176,8 +176,8 @@ Zira~
 Zira the chimpanzee is standing here.
 ~
    Zira is a psychologist.  She works with the humans and tries to make them
-speak.  Although she doesn't know it, she performs evil operations with Dr.  
-Zaius.    
+speak.  Although she doesn't know it, she performs evil operations with Dr.
+Zaius.
 ~
 8202 0 0 0 0 0 0 0 200 E
 19 14 -1 3d3+190 3d3+3
@@ -196,7 +196,7 @@ A large rock is resting here.
 ~
    These rocks have been mutated by radiation from the nuclear wars of the
 past.  For some reason, they have developed an intelligence and are able to
-move around.  Beware!    
+move around.  Beware!
 ~
 76 0 0 0 0 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -215,7 +215,7 @@ The Keeper is here, watching out onto the ocean.
 ~
    The Keeper guards the Statue of Liberty.  He certainly doesn't want any
 hairy apes touching one of mankind's last relics.  He's an avid steroid user,
-so he's pretty tough.    
+so he's pretty tough.
 ~
 34830 0 0 0 0 0 0 0 -600 E
 22 13 -3 4d4+220 3d3+3
@@ -232,7 +232,7 @@ ape shopkeeper~
 the ape shopkeeper~
 An ape shopkeeper is here, staring at you.
 ~
-   This ape likes to buy and sell stuff.  He has a very short temper.    
+   This ape likes to buy and sell stuff.  He has a very short temper.
 ~
 141322 0 0 0 16 0 0 0 -300 E
 22 13 -3 4d4+220 3d3+3

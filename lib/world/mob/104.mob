@@ -5,7 +5,7 @@ Map maker Lena sits behind the desk selling and making maps.
 ~
    It looks unfinished.  She has beautiful fair skin, her clothing looks new, a
 nice silk shirt, and a pair of silk pants.  Her long whit hair flows gently down
-her back, and she wears a small pair of half-moon glasses.  
+her back, and she wears a small pair of half-moon glasses.
 ~
 10 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -19,7 +19,7 @@ Chwin~
 Chwin stands behind his desk polishing a sword.
 ~
    Chwin has a rugged look about him, his cloths are torn in some places, and
-his hair is all messed up.  
+his hair is all messed up.
 ~
 10 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -34,7 +34,7 @@ Arwin Mic'Zell fiddles with some armour behind his desk.
 ~
    It looks unfinished.  Arwin Mic'Zell wears some of the finest cloths you have
 ever seen, they seem to be custom made, and very expensive.  He has short blond
-hair, and he stands rather tall.  
+hair, and he stands rather tall.
 ~
 10 0 0 0 120 0 0 0 0 E
 34 9 10 6d6+340 5d5+5
@@ -49,7 +49,7 @@ An elven townsmen walks around the city.
 ~
    It looks unfinished.  It is hard to tell this townsmen from the others, they
 all look almost exactly the same, his hair is blond, and shoulder length.  His
-cloths look new and he has a peaceful aura about him.  
+cloths look new and he has a peaceful aura about him.
 ~
 72 0 0 0 96 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -62,7 +62,7 @@ an elven woman~
 An elven woman walks about the city.
 ~
    She has long flowing white hair, her body is well built, but still beautiful.
-Her cloths are well crafted and she looks to be loving.  
+Her cloths are well crafted and she looks to be loving.
 ~
 72 0 0 0 96 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -77,7 +77,7 @@ The Village Elder stands here watching you.
 ~
    This man seems to be the oldest elf in the village, he has short white hair,
 his face is worn looking.  Even though he looks old, he still seems to be
-beautiful.  His clothes look to be some of the best you have seen.  
+beautiful.  His clothes look to be some of the best you have seen.
 ~
 10 0 0 0 96 0 0 0 0 E
 21 13 12 4d4+210 3d3+3
@@ -94,9 +94,9 @@ Ligern~
 Ligern, the village warrior, sits watching the fire.
 ~
    Ligern looks to be younge, but he has many scars all over his body, the fire
-light illuminates his body, makeing him seem older then he actually is.  
+light illuminates his body, makeing him seem older then he actually is.
 Although he has many scars, he looks to be strong, and more powerfulthen any
-other in the village.  
+other in the village.
 ~
 10 0 0 0 96 0 0 0 0 E
 31 10 20 6d6+310 5d5+5
@@ -109,7 +109,7 @@ a small squirrel~
 A small squirrel frolics around.
 ~
    A chestnut brown squirrel, the is about medium size moves around in the
-woods.  
+woods.
 ~
 72 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -123,7 +123,7 @@ An ugly troll stumbles around here.
 ~
    This has to be one of the ugliest things ever seen, it has large cuts on it's
 body, and in some places it is missing skin.  He wears nothing but a loincloth,
-and a small belt.  
+and a small belt.
 ~
 104 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -136,7 +136,7 @@ Jak~
 Jak the shop keeper sits behind his desk.
 ~
    He wears a long raddy trench coat, and his hair is all straggly.  He has
-multiple cuts on his face, and a long beard.  
+multiple cuts on his face, and a long beard.
 ~
 10 0 0 0 120 0 0 0 0 E
 34 9 -10 6d6+340 5d5+5
@@ -150,8 +150,8 @@ an orc~
 An orc moves in the shadows.
 ~
    This creature almost matches a trolls uglyness, the stench that comes from
-him smells like rotting flesh.  His armor looks weak, and he wears no weapon.  
-He looks to be a little strong.  
+him smells like rotting flesh.  His armor looks weak, and he wears no weapon.
+He looks to be a little strong.
 ~
 104 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -165,7 +165,7 @@ a wood imp~
 A wood imp watches you carefully.
 ~
    This wood imp looks like a giant tree, he stands at 8'3" and has a moss
-beard.  His branches are all messed up and he has no leaves.  
+beard.  His branches are all messed up and he has no leaves.
 ~
 3144 0 0 0 32 0 0 0 0 E
 16 15 10 3d3+160 2d2+2
@@ -179,7 +179,7 @@ postmistress Elide~
 A woman stands about the room, giving people there mail.
 ~
    She wears a pair of specticles, and a long white coat.  Her hair is a bright
-pink, and is in a pony tail.  She stands up straight looking at you sternly.  
+pink, and is in a pony tail.  She stands up straight looking at you sternly.
 ~
 518154 0 0 0 0 0 0 0 0 E
 34 9 20 6d6+340 5d5+5
@@ -192,7 +192,7 @@ Jewel~
 Jewel stands here smiling sweetle.
 ~
    Jewel looks rather pretty.  She has long brown hair, and she wears some odd
-looking clothes.  She has a well built body and looks very nice.  
+looking clothes.  She has a well built body and looks very nice.
 ~
 10 0 0 0 0 0 0 0 0 E
 34 9 20 6d6+340 5d5+5
@@ -204,7 +204,7 @@ hell beast~
 hells hound~
 A hell hound looks at you angrily.
 ~
-   This is a very large dog, his hair is messed up, and he glows a bit.  
+   This is a very large dog, his hair is messed up, and he glows a bit.
 ~
 104 0 0 0 120 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -219,7 +219,7 @@ A pretty border collie sits by the chair.
 ~
    She is a medium sized black and white dog, she has a long fluffy tail, and a
 small head.  Her head cocks sideways as you look at her, and she wears an
-expression as if asking who you are.  
+expression as if asking who you are.
 ~
 74 0 0 0 0 0 0 0 0 E
 2 20 8 0d0+20 1d2+0
@@ -246,7 +246,7 @@ the Weatherman~
 The Weatherman watches the sky.
 ~
    He seems to be a regular man, wearing large glasses, and other business
-clothes.  
+clothes.
 ~
 10 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5

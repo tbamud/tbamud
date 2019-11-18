@@ -11,8 +11,8 @@ Objects      : 17
 Shops        : 0
 Triggers     : 0
 Theme        : Medieval
-Plot         : The zone is based off the theme of Camelot: king arthur, the 
-knights, the round table, merlin, etc. 
+Plot         : The zone is based off the theme of Camelot: king arthur, the
+knights, the round table, merlin, etc.
 
 Edits made for tbaMUD by Parna.
 ~
@@ -55,7 +55,7 @@ S
 #701
 Along the Stream~
    The small stream grows to the West into a respectable river.  The stream has
-eroded the bank walls and the only way to continue is into the stream itself.  
+eroded the bank walls and the only way to continue is into the stream itself.
 A field opens to the East and a small outpost is visible.
 ~
 7 0 0 0 0 0
@@ -101,7 +101,7 @@ S
 The Forest Arden~
    The forest of Arden stretches in all directions, consisting of towering oaks
 and unknown wildlife.  A path leads north and south into the forest.  There is a
-gilded plaque affixed to a boulder.  
+gilded plaque affixed to a boulder.
 ~
 7 0 0 0 0 0
 D0
@@ -127,7 +127,7 @@ S
 Entrance~
    Fine stonecraft and workmanship has created this picturesque fortress.  A
 portcullis gapes open invitingly.  Several guards inspect all passers-by.  A
-small ferry is available to cross back to the mainland.  
+small ferry is available to cross back to the mainland.
 ~
 7 8 0 0 0 0
 D1
@@ -144,7 +144,7 @@ Courtyard~
    The castle courtyard bustles with activity.  Several people are hustling
 about their daily business.  The courtyard extends in all directions except to
 the east which leads to the gate of the castle.  A steady flow of peasants
-merchants and a few nobles pass by.  
+merchants and a few nobles pass by.
 ~
 7 0 0 0 0 0
 D0
@@ -170,7 +170,7 @@ Courtyard~
 is crowded with activity.  The people seem to be wary and distrustful of each
 other.  A knight strolls through the courtyard and the peasants and merchants
 stare at his back with a look of hate after he passes.  They do not seem to be
-very happy.  
+very happy.
 ~
 7 0 0 0 0 0
 D0
@@ -196,7 +196,7 @@ Courtyard~
 for manners.  The impressive castle walls surrounding the courtyard loom high
 overhead providing a sense of security.  A couple of beggars look up imploringly
 hoping for some charity but everyone ignores them.  To the west lies the main
-entrance to the castle.  
+entrance to the castle.
 ~
 7 0 0 0 0 0
 D0
@@ -218,9 +218,9 @@ D3
 S
 #780
 Main Hall~
-   The castle entrance is well lit with torches lining the wide hallway.  
+   The castle entrance is well lit with torches lining the wide hallway.
 Tapestries of battles and portraits of rulers line each wall.  The castle proper
-is to the west or the courtyard is to the east.  
+is to the west or the courtyard is to the east.
 ~
 7 8 0 0 0 0
 D0
@@ -244,7 +244,7 @@ S
 Audience Chamber~
    Dozens of chairs form a semicircle around a throne to the south.  The vast
 room only has a few people in it.  None of them look like they are of any
-importance.  
+importance.
 ~
 7 8 0 0 0 0
 D1
@@ -265,7 +265,7 @@ Audience Chamber~
    A path through the room weaves between the numerous chairs.  To the south,
 the floor slopes down to a intricate throne plated in gold.  A page scurries
 past as he runs one of his errands.  Further to the east and west you see exits
-while the throne lies to the south.  
+while the throne lies to the south.
 ~
 7 8 0 0 0 0
 D1
@@ -308,7 +308,7 @@ Cobblestone Road~
    A large inner wall splits the castle in half.  It is used as a second line of
 defense in case the castle's defenses can not hold the outer wall.  The outer
 wall is set aside for the poor quarter while the wealthier inhabitants crowd the
-inner circle.  
+inner circle.
 ~
 7 0 0 0 0 0
 D0
@@ -333,7 +333,7 @@ Cobblestone Road~
    A small pass is cut through the inner wall allowing access to both halves of
 the castle.  The stone walls shine a bright white from heavy polishing and the
 massive blocks fit together seamlessly.  To the west a fountain flows underneath
-a large statue of Uther Pendragon.  
+a large statue of Uther Pendragon.
 ~
 7 0 0 0 0 0
 D0
@@ -354,7 +354,7 @@ S
 Cobblestone Road~
    An intricate fountain with a large basin flows gently around the towering
 statue of Uther Pendragon and three women.  The sounds and smells to the south
-must be from the castle stables.  
+must be from the castle stables.
 ~
 7 0 0 0 0 0
 D0
@@ -377,8 +377,8 @@ S
 #787
 Cobblestone Road~
    This cobblestone road seems to bisect the entire city of Camelot.  Pennants
-fly from the towers high above and all of the buildings gleam of white stone.  
-Several knights seem to be coming and going to the North.  
+fly from the towers high above and all of the buildings gleam of white stone.
+Several knights seem to be coming and going to the North.
 ~
 7 0 0 0 0 0
 D0
@@ -398,7 +398,7 @@ S
 Cobblestone Road~
    The pristine towers of white gleam unnaturally here.  Pennants snap in the
 breeze on every tower.  The buildings to the south seem to be filled with the
-sounds of women laughing and gossiping.  
+sounds of women laughing and gossiping.
 ~
 7 0 0 0 0 0
 D1
@@ -419,7 +419,7 @@ Cobblestone Road~
    The white walls of the castle are almost blinding.  The flags and pennants
 snap in the wind.  Everything seems perfect except for the fact that the general
 mood in the castle seem to be depressing.  A tall fence to the south blocks the
-view, but not the sound, of men on horseback.  
+view, but not the sound, of men on horseback.
 ~
 7 0 0 0 0 0
 D0
@@ -440,7 +440,7 @@ Knights Way~
    A steady stream of traffic flows from the south.  The sounds of training can
 be heard and there is some excitement in the crowd.  Several knights in full
 combat gear are among the crowd.  It is easy to pick out those who won and those
-who lost recently.  
+who lost recently.
 ~
 7 0 0 0 0 0
 D0
@@ -498,9 +498,9 @@ D3
 S
 #793
 Cobblestone Road~
-   The glamor of Camelot is not reflected by the people in the streets.  
+   The glamor of Camelot is not reflected by the people in the streets.
 Everyone seems subdued and to have accepted some fate they did not want.  It is
-as if the spirit had been taken away from the city.  
+as if the spirit had been taken away from the city.
 ~
 7 0 0 0 0 0
 D1
@@ -520,7 +520,7 @@ S
 Cobblestone Road~
    Massive towers to the north block the light and leave this area in shadows.
 A drunken ruckus can be heard to the south.  It sounds like it may be the only
-place in Camelot having a good time.  
+place in Camelot having a good time.
 ~
 7 0 0 0 0 0
 D1
@@ -540,7 +540,7 @@ S
 West Lane~
    A gate in the west wall is boarded, chained, and locked shut.  The hinges are
 rusted and look like they haven't been used for a very long time.  A dirt path
-follows the wall to the north and south.  
+follows the wall to the north and south.
 ~
 7 0 0 0 0 0
 D0
@@ -594,7 +594,7 @@ S
 The Lake~
    The fog slowly parts revealing a large island.  A massive castle fills the
 entire island.  Its spires shrouded fog.  Lights are visible in several windows
-and the noise of its inhabitants echo across the still lake.  
+and the noise of its inhabitants echo across the still lake.
 ~
 7 4 0 0 0 0
 D1

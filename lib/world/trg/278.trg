@@ -26,7 +26,7 @@ if %actor.is_pc%
       dg_cast 'cure critic' %self%
     break
     default
-    break     
+    break
   done
 end
 ~

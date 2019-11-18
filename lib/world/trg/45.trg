@@ -17,7 +17,7 @@ player kills ogre -> load ears~
 0 f 100
 ~
 * load the ears
-%load% obj 4512 
+%load% obj 4512
 ~
 #4503
 player gives ears -> reward player~

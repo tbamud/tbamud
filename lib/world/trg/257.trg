@@ -80,7 +80,7 @@ if %cmd.mudcommand% == give && blood /= %arg%
     %send% %actor% You try to give blood. But, the nurse refuses since you are white as a ghost and can barely stand.
     %echoaround% %actor% %actor.name% tries to give blood. But, the nurse laughs in %actor.hisher% face since he is whiate as a ghost and can barely stand.
   else
-    %send% %actor% The nurse jabs a thick needle into your arm and quickly draws a small amount of blood. She gives you a small pile of coins. 
+    %send% %actor% The nurse jabs a thick needle into your arm and quickly draws a small amount of blood. She gives you a small pile of coins.
     %echoaround% %actor% The nurse jabs %actor.name% in the arm and quickly draws a small amount of blood. She then gives %actor.name% a small pile of coins.
     nop %actor.gold(20)%
     %damage% %actor% 20

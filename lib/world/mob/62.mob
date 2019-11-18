@@ -3,7 +3,7 @@ deer~
 the deer~
 A deer looks at you with fear in its eyes.
 ~
-   That is one nice looking deer!  
+   That is one nice looking deer!
 ~
 200 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -15,7 +15,7 @@ rabbit~
 the rabbit~
 A small rabbit nibbles at a leaf here.
 ~
-   It is a small, furry rodent with big ears.  
+   It is a small, furry rodent with big ears.
 ~
 200 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -27,7 +27,7 @@ squirrel~
 the squirrel~
 A squirrel spots you and runs around a tree!
 ~
-   It is a small, brown squirrel.  Kind of like a fuzzy high-tension spring.  
+   It is a small, brown squirrel.  Kind of like a fuzzy high-tension spring.
 ~
 200 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -40,7 +40,7 @@ the orc hunter~
 An orc hunter looks at you with hateful eyes.
 ~
    He looks angry, desperate, and maybe a little sick.  His green skin is
-definitely mottled, and he seems to limp a little bit...  
+definitely mottled, and he seems to limp a little bit...
 ~
 4200 0 0 0 0 0 0 0 -350 E
 7 18 5 1d1+70 1d2+1
@@ -53,7 +53,7 @@ the orc chief~
 An orc chief growls at you!
 ~
    He wears a crown of oak leaves to show he is a leader.  He carries a club to
-show he is a warrior.  You wonder how good he is at both.  
+show he is a warrior.  You wonder how good he is at both.
 ~
 6186 0 0 0 0 0 0 0 -600 E
 10 17 4 2d2+100 1d2+1
@@ -66,7 +66,7 @@ the orc woman~
 An orc woman stands here, frightened of you.
 ~
    As you stare her down, she raises her hands slowly, as if to say, 'Don't kill
-me'.  
+me'.
 ~
 200 0 0 0 0 0 0 0 -50 E
 5 19 7 1d1+50 1d2+0
@@ -78,7 +78,7 @@ orc child~
 the orc child~
 An orc child frantically searches for her mother.
 ~
-   She is raggedy, and seems to be covered with sores.  
+   She is raggedy, and seems to be covered with sores.
 ~
 200 0 0 0 0 0 0 0 50 E
 3 19 8 0d0+30 1d2+0
@@ -90,7 +90,7 @@ orc woman~
 the orc woman~
 A pregnant orc woman tries to stand to flee from you.
 ~
-   She is too far gone to move very quickly.  You could kill her easily.  
+   She is too far gone to move very quickly.  You could kill her easily.
 ~
 138 0 0 0 0 0 0 0 -50 E
 5 19 7 1d1+50 1d2+0
@@ -103,7 +103,7 @@ the mutant orc~
 A mutant orc lies here, barely alive.
 ~
    Its body has been twisted beyond all hope.  It is dying, and nothing will
-stop that.  
+stop that.
 ~
 72 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -116,7 +116,7 @@ the mutant orc~
 A horribly mutated orc stands here, gibbering.
 ~
    It doesn't even appear to have registered your arrival...  It is just talking
-to itself.  Its body is a twisted wreck of orc, man, beast, and what-not.  
+to itself.  Its body is a twisted wreck of orc, man, beast, and what-not.
 ~
 72 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -129,7 +129,7 @@ Elstar~
 An elven wizard is here.  He looks angry.
 ~
    He looks at you archly as he wonders why you have invaded his domain.  No
-matter...  It shouldn't be too hard for him to destroy you, no?  
+matter...  It shouldn't be too hard for him to destroy you, no?
 ~
 2090 0 0 0 16 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
@@ -141,7 +141,7 @@ child elf elven apprentice~
 the elven child~
 An elven child casts his fishing pole into the river.
 ~
-   He looks young and innocent.  You wonder what he is doing here.  
+   He looks young and innocent.  You wonder what he is doing here.
 ~
 10 0 0 0 0 0 0 0 600 E
 3 19 8 0d0+30 1d2+0
@@ -154,7 +154,7 @@ the mutant thing~
 A mutant... thing rushes at you!
 ~
    It might've been an orc, once.  Now it is a living terror, pushing everything
-out of its way to get at you.  
+out of its way to get at you.
 ~
 2152 0 0 0 0 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2
@@ -167,7 +167,7 @@ the mutant thing~
 A mutant... thing tries to get you, but cannot move into range!
 ~
    It might have been an orc, once.  Now it is a living terror, pushing
-everything out of its way to get at you.  
+everything out of its way to get at you.
 ~
 2058 0 0 0 0 0 0 0 -800 E
 12 16 2 2d2+120 2d2+2

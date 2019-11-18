@@ -9,7 +9,7 @@ You see a solid and silver-lined scroll resting on the ground.~
 E
 scroll parchment~
    It seems to be some sort of spell designed to transport its user across vast
-distances, but how to make use of it is impossible to tell.  
+distances, but how to make use of it is impossible to tell.
 ~
 A
 14 15
@@ -26,7 +26,7 @@ You are startled by the sight of a sword that glows as you approach it.~
 E
 sword blazing~
    The edge of the blade is lined with writing, religious verse apparently, in a
-fine, silver-laced and flowing script.  
+fine, silver-laced and flowing script.
 ~
 A
 13 -5
@@ -41,7 +41,7 @@ A weighty looking shield has been abandoned by one unworthy to hold it.~
 E
 protector faithful shield~
    It evades your attempts to focus on it, deflecting your gaze as it deflects
-the weapons that will try to kill you.  
+the weapons that will try to kill you.
 ~
 #1504
 armband band faded~
@@ -54,7 +54,7 @@ A ragged and faded looking piece of cloth has been left here, forgotten.~
 E
 armband faded band~
    It has some sort of militia insignia on it, perhaps an indication of a rank
-or award in some military order unknown to you.  
+or award in some military order unknown to you.
 ~
 A
 6 2
@@ -71,7 +71,7 @@ A stunning curved blade glistens on the ground.~
 E
 scimitar jeweled~
    The entire rim and edge of the scimitar's handle is bedecked in a gorgeous
-array of stones and precious metals.  
+array of stones and precious metals.
 ~
 #1506
 ember charred~
@@ -83,7 +83,7 @@ You glance briefly at a smouldering ember that rests at your feet.~
 1 5 25 0 0
 E
 ember charred~
-   It glares back at you, almost angrily.  
+   It glares back at you, almost angrily.
 ~
 A
 18 2
@@ -99,7 +99,7 @@ The entire room is aglow from the flame at your feet.~
 1 5 25 0 0
 E
 ethereal flame~
-   Even being near it fills you with a peaceful and comforted feeling.  
+   Even being near it fills you with a peaceful and comforted feeling.
 ~
 A
 12 8
@@ -115,7 +115,7 @@ You have found at last the Key to the Gates of eternity.~
 1 100 50 0 0
 E
 key gates~
-   There are no gates.  They are inside of you.  
+   There are no gates.  They are inside of you.
 ~
 A
 3 2
@@ -130,7 +130,7 @@ You have found a burnt book, some forgotten history lying on the ground.~
 E
 history burnt book~
    So this is the jester's joke.  All of our works have turned to dust, and will
-end in nothing.  It is for this that he laughs.  
+end in nothing.  It is for this that he laughs.
 ~
 A
 4 2
@@ -175,7 +175,7 @@ You see a beautiful pendant of ancient and noble craftsmanship.~
 E
 ankh~
    It is an even earlier version of the old Christian cross, an oval loop above
-the crossed arms of white gold.  
+the crossed arms of white gold.
 ~
 A
 12 10

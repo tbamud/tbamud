@@ -3,7 +3,7 @@ pelican~
 a pelican~
 A pelican is here, taking a break in the sun.
 ~
-   Looks like every other pelican you've seen....  
+   Looks like every other pelican you've seen....
 ~
 200 0 0 0 128 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -16,7 +16,7 @@ otter sea~
 a sea otter~
 A sea otter is here, basking in the warmth of the sun.
 ~
-   Cute little guy, even though he looks a bit slimy.  
+   Cute little guy, even though he looks a bit slimy.
 ~
 204 0 0 0 128 0 0 0 0 E
 21 13 -2 4d4+210 3d3+3
@@ -29,7 +29,7 @@ seagull gull~
 a seagull~
 A seagull pokes about, looking for scraps.
 ~
-   Dirty little bird, you wish you had a wrist-rocket (more fun).  
+   Dirty little bird, you wish you had a wrist-rocket (more fun).
 ~
 200 0 0 0 128 0 0 0 0 E
 22 13 -3 4d4+220 3d3+3
@@ -57,7 +57,7 @@ the hermaphrodite~
 A strange looking.. thing(?) is standing here, no expression on it's face at all.
 ~
    It looks as if it may be a man, but then, being that it is naked, you can see
-that it is just a bit of both.  
+that it is just a bit of both.
 ~
 74 0 0 0 0 0 0 0 800 E
 26 12 -5 5d5+260 4d4+4
@@ -70,7 +70,7 @@ the battered woman~
 A woman lies here on her cot, bruised, naked, and bleeding.
 ~
    It looks as if she may have been a very beautiful woman at one time, however
-she is now so covered in dirt and grime, it is hard to tell.  
+she is now so covered in dirt and grime, it is hard to tell.
 ~
 74 0 0 0 0 0 0 0 800 E
 27 11 -6 5d5+270 4d4+4
@@ -83,7 +83,7 @@ the Man with Tits~
 A naked man stands, boasting a HUGE set of knockers.
 ~
    You're not sure what he is, how he came to be what he is now, and you're not
-sure you want to know.  
+sure you want to know.
 ~
 74 0 0 0 0 0 0 0 800 E
 27 11 -6 5d5+270 4d4+4
@@ -95,7 +95,7 @@ perfect companion~
 the Perfect Companion~
 The Perfect Companion lies stretched out on the bed, waiting to give pleasure.
 ~
-   It is not describable, simply not describable.  
+   It is not describable, simply not describable.
 ~
 74 0 0 0 0 0 0 0 900 E
 25 12 -5 5d5+250 4d4+4
@@ -108,7 +108,7 @@ the Lighthouse Keeper's Wife~
 The Lighthouse Keeper's wife is here, sewing and humming a happy song.
 ~
    Such a kind looking lady, I'm sure she'd let you stay to dinner if you had
-the urge.  
+the urge.
 ~
 74 0 0 0 0 0 0 0 900 E
 24 12 -4 4d4+240 4d4+4
@@ -121,7 +121,7 @@ Max~
 Max, the Lighthouse Keeper's dog rests before the fire.
 ~
    Mostly mutt, but very friendly, this black dog looks like the stereo- typical
-house-dog.  
+house-dog.
 ~
 4170 0 0 0 0 0 0 0 900 E
 28 11 -6 5d5+280 4d4+4
@@ -135,7 +135,7 @@ the Lighthouse Keeper's Daughter~
 The Lighthouse Keeper's Daughter is here, playing house.
 ~
    Although she looks as if she must be at least fifteen or sixteen years old,
-she still seems quite content with her dolls.  What a nice girl!  
+she still seems quite content with her dolls.  What a nice girl!
 ~
 74 0 0 0 0 0 0 0 900 E
 29 11 -7 5d5+290 4d4+4
@@ -149,7 +149,7 @@ Old man Takker sits here, fishing away his life.
 ~
    It is said by many that Old Man Takker hasn't left this spot for over twenty.
 His disciples bring him any food he needs, and they say he never sleeps - just
-fishes.  
+fishes.
 ~
 74 0 0 0 0 0 0 0 900 E
 29 11 -7 5d5+290 4d4+4
@@ -161,7 +161,7 @@ fisherman disciple~
 Takker's Disciple~
 A fisherman sits here, trying to imitate Takker as best he can.
 ~
-   Man this guy smells bad!  
+   Man this guy smells bad!
 ~
 74 0 0 0 0 0 0 0 900 E
 25 12 -5 5d5+250 4d4+4
@@ -171,7 +171,7 @@ E
 #26513
 kracken~
 the Kracken~
-With a tremendous blast of force, the Kracken lunges up from the water! 
+With a tremendous blast of force, the Kracken lunges up from the water!
 ~
    This creature is larger than a city block and older than the Gods themselves.
 ~

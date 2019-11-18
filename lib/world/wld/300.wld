@@ -17,7 +17,7 @@ D3
 0 -1 30057
 E
 uprising stone~
-   The uprising looks like some huge beast set to pounce.  
+   The uprising looks like some huge beast set to pounce.
 ~
 E
 info credits~
@@ -26,21 +26,21 @@ info credits~
 *
 *Copyright 1994 by Curious Areas Workshop
 *
-1)  Edit room #00 to connect with somewhere in a jungle in your mud.  
-    Exits can be joined to this room from any direction but from the 
+1)  Edit room #00 to connect with somewhere in a jungle in your mud.
+    Exits can be joined to this room from any direction but from the
     east.  Edit the room description to reflect the new exit.
 *
-Note:  Mercutio has provided room #57 as an easy connection point, 
+Note:  Mercutio has provided room #57 as an easy connection point,
        connecting from room #00 to room 6121 in the Haon-Dor forest.
 *
-2)  Check the following items to make sure the value used for spells 
+2)  Check the following items to make sure the value used for spells
     conforms to the same spell on your mud.
     *#03 -- Strength(39), Strength(39), Poison(33)
     *#04 -- Sense Life(44), Detect Poison (21)
     *#08 -- Energy Drain(25)
     *#22 -- Detect Invisible(19), Poison(33)
 *
-If your mud does not allow some of these as 'wand' or 'potion' type 
+If your mud does not allow some of these as 'wand' or 'potion' type
 items, replace with a suitable spell of your own choice.
 *
 3)  Add specials, if desired, for the mobs listed in the 'notes' section.
@@ -55,11 +55,11 @@ Here are some recommended specials for the mobs:
 *
 Credits
 *
-We are greatly indebted to Tarkin and Freja of VieMud (viemud.org 4000) 
+We are greatly indebted to Tarkin and Freja of VieMud (viemud.org 4000)
 for all the time and code contributed.
 *
-Thanks to the players at VieMud, for playtesting above and beyond the 
-call of duty. Even more thanks to the people supporting C.A.W. and 
+Thanks to the players at VieMud, for playtesting above and beyond the
+call of duty. Even more thanks to the people supporting C.A.W. and
 using our areas.  We love your feedback, even the flames.
 *
 Mercutio's donation to the Curious Areas Workshop is highly appreciated.
@@ -174,7 +174,7 @@ D3
 0 -1 30005
 E
 flaps flap~
-   Who can say which part of draconian anatomy this might be?  
+   Who can say which part of draconian anatomy this might be?
 ~
 S
 #30007
@@ -850,7 +850,7 @@ plot device~
    This large and strange creation is merely a device often used by writers to
 steer people away from something that he or she does not want them to see at the
 present moment.  Speaking of which, you *did* see the path leading away to the
-south did you not?  
+south did you not?
 ~
 S
 #30045
@@ -1075,7 +1075,7 @@ door doors bone~
 1 30018 30026
 E
 walls~
-   A small fissure appears to be set in the south wall.  
+   A small fissure appears to be set in the south wall.
 ~
 S
 #30057

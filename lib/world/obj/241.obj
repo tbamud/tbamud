@@ -9,7 +9,7 @@ A standard issue Starfleet phaser has been left here.~
 E
 phaser~
    These phasers are the standard weapon of Starfleet officers.  It offers
-decent damage for its fairly small size.  
+decent damage for its fairly small size.
 ~
 A
 18 2
@@ -24,7 +24,7 @@ A large phaser rifle is lying here.~
 E
 phaser rifle~
    This phaser rifle looks pretty powerful.  These weapons are used mainly on
-assault type missions, where power is important.  
+assault type missions, where power is important.
 ~
 A
 18 4
@@ -39,7 +39,7 @@ A neatly folded burgandy Starfleet command uniform is lying here.~
 E
 burgandy command uniform~
    These uniforms are worn by command officers on Federation starships.  It's
-kind of tight, but it looks pretty good.  
+kind of tight, but it looks pretty good.
 ~
 A
 3 1
@@ -57,8 +57,8 @@ A neatly folded gold Starfleet engineering uniform is lying here.~
 5 400 500 0
 E
 gold engineering uniform~
-   These uniforms are worn by engineering officers on Federation starships.  
-It's kind of tight, but it looks pretty good.  
+   These uniforms are worn by engineering officers on Federation starships.
+It's kind of tight, but it looks pretty good.
 ~
 A
 1 1
@@ -77,7 +77,7 @@ A neatly folded blue Starfleet medical uniform is lying here.~
 E
 blue medical uniform~
    These uniforms are worn by medical officers on Federation starships.  It's
-kind of tight, but it looks pretty good.  
+kind of tight, but it looks pretty good.
 ~
 A
 2 1
@@ -96,7 +96,7 @@ A pair of Starfleet black boots are sitting here.~
 E
 starfleet black boots~
    These boots must be worn by all Starfleet officers while on duty.  They're
-quite light, and offer good protection for the feet.  
+quite light, and offer good protection for the feet.
 ~
 A
 14 50
@@ -114,10 +114,10 @@ starfleet communication badge~
    These communication badges must be worn by all officers while on a starship.
 It looks like a silver arrow head on top of a golden coloured oval:
 
-                        ____/\____  
-                       /   /  \   \                
-                      |   /    \   |   
-                       \_/ _/\_ \_/ 
+                        ____/\____
+                       /   /  \   \
+                      |   /    \   |
+                       \_/ _/\_ \_/
                         //      \\
 
 It looks like it could be TAPped.
@@ -137,7 +137,7 @@ Worf's silver chain sash has been left here.~
 E
 worf's worf sash~
    Worf's sash is some sort of Klingon clothing.  Worf always wears it, which
-makes you wonder how you managed to get a hold of it...  
+makes you wonder how you managed to get a hold of it...
 ~
 A
 1 1
@@ -154,7 +154,7 @@ E
 geordi geordi's visor~
    Geordi's VISOR was made specially for him, because he's blind.  This piece of
 equipment allows him to see things, but differently than normal eyes.  I wonder
-how Geordi is managing, now that you've stolen his only way of seeing?  
+how Geordi is managing, now that you've stolen his only way of seeing?
 ~
 A
 3 1
@@ -173,7 +173,7 @@ E
 medical tricorder~
    This medical Tricorder is used to heal small wounds and cuts.  While it isn't
 made for major injuries, it can help you limp home.  To use, hold it and then
-use it.  You can also use it to @gscan@n someone for injuries.  
+use it.  You can also use it to @gscan@n someone for injuries.
 ~
 #24110
 dilithium crystal~
@@ -186,7 +186,7 @@ A shard of dilithium crystal is lying here.~
 E
 dilithium crystal~
    Dilithium crystals are used to power warp cores of starships.  This
-particular crystal is glowing brightly, and gives off a blue-ish tinge.  
+particular crystal is glowing brightly, and gives off a blue-ish tinge.
 ~
 A
 18 1
@@ -202,7 +202,7 @@ T 24103
 E
 picard picard's flute~
    Captain Picard recieved this flute when he lost his memory and was stuck on
-some strange world.  Now, he plays it to relieve stress.  
+some strange world.  Now, he plays it to relieve stress.
 ~
 A
 4 3
@@ -220,7 +220,7 @@ T 24106
 E
 riker riker's trombone~
    Commander Riker considers himself to be a talented jazz musician.  He
-practices on this trombone all the time.  
+practices on this trombone all the time.
 ~
 A
 18 3
@@ -286,7 +286,7 @@ E
 spacesuit suit~
    These suits come in pale shades of red, blue and gold, depending on ones
 rank.  Their tanks contain plenty of oxygen.  Always wear one before going out
-into space!  
+into space!
 ~
 #24127
 spacesuit suit~
@@ -301,7 +301,7 @@ E
 spacesuit suit~
    This is a long row of Starfleet regulation spacesuits, enough for every
 member of the crew, and then some.  They come in various colors, dependant on
-rank and have an almost limitless supply of oxygen.  
+rank and have an almost limitless supply of oxygen.
 ~
 #24128
 replicator~
@@ -317,7 +317,7 @@ replicator~
 (and programmed) food or drink.  They can be configured to reproduce other
 things, like weapons and atomic elements.  But this one hasn't got such a
 function, you'd want the ones in security for that.  One of the side-panels
-appears to have some writing on it.  
+appears to have some writing on it.
 ~
 E
 side panel~
@@ -338,7 +338,7 @@ A cup of earl grey tea has been discarded.~
 1 1 0 0
 E
 cup earl grey tea~
-   This is captain Picard's favourite beverage.  
+   This is captain Picard's favourite beverage.
 ~
 #24130
 loaf warm bread~
@@ -350,7 +350,7 @@ A loaf of warm bread has been dropped here.~
 1 1 0 0
 E
 loaf warm bread~
-   A delicious-looking loaf of warm bread.  
+   A delicious-looking loaf of warm bread.
 ~
 #24131
 mug black coffee~
@@ -362,7 +362,7 @@ A mug of black coffee lies steaming on the floor.~
 1 1 0 0
 E
 mug black coffee~
-   A lovely big mug of hot black coffee.  
+   A lovely big mug of hot black coffee.
 ~
 #24132
 worf batleth~
@@ -378,7 +378,7 @@ worf batleth~
    This is the native weapon of a Klingon, they are given one when they are old
 enough to stand and are very adept with it before they reach puberty.  It
 consists of a long, curved blade with a slightly shorter handle parallel to it,
-with appropriate grip holes.  
+with appropriate grip holes.
 ~
 #24133
 spots collar red~
@@ -391,6 +391,6 @@ Spot seems to have lost his small red collar.~
 E
 spots collar red~
    A very fine-looking red cat's collar.  It has a small metal tag that reads
-'SPOT' hanging from it.  
+'SPOT' hanging from it.
 ~
 $~

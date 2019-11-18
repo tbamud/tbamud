@@ -4,7 +4,7 @@ the adjudicator~
 An adjudicator is watching the games intently.
 ~
    The adjudicator is a retired gladiator and scars cover all exposed parts of
-his body.  Although he is getting on in years, he remains healthy and fit.  
+his body.  Although he is getting on in years, he remains healthy and fit.
 ~
 2058 0 0 0 0 0 0 0 100 E
 12 16 2 2d2+120 2d2+2
@@ -17,7 +17,7 @@ the scorekeeper~
 A scorekeeper has one eye on his stopwatch and the other on a clipboard.
 ~
    The scorekeeper is a young man of about 25 years of age and is very intently
-studying his clipboard.  
+studying his clipboard.
 ~
 2058 0 0 0 0 0 0 0 100 E
 7 18 5 1d1+70 1d2+1
@@ -29,7 +29,7 @@ spectator fan~
 the spectator~
 A spectator is here watching the games.
 ~
-   The spectator is filthy, half drunk and screaming his head off.  
+   The spectator is filthy, half drunk and screaming his head off.
 ~
 10 0 0 0 0 0 0 0 -100 E
 5 19 7 1d1+50 1d2+0
@@ -43,7 +43,7 @@ A nobleman stands here looking aloof.
 ~
    The nobleman is dressed in fine clothes and jewelry and has a very snobbish
 attitude.  While he is getting old and his hair and beard are streaked with
-gray, he is by no means an easy target.  
+gray, he is by no means an easy target.
 ~
 2186 0 0 0 16 0 0 0 500 E
 12 16 2 2d2+120 2d2+2
@@ -56,7 +56,7 @@ the slave~
 A slave stands here, wishing that she was free.
 ~
    A very pretty young woman who was captured instead of being killed when the
-Roman legions subjugated her land.  
+Roman legions subjugated her land.
 ~
 10 0 0 0 0 0 0 0 0 E
 3 19 8 0d0+30 1d2+0
@@ -69,7 +69,7 @@ the gladiator~
 There is a gladiator standing here.
 ~
    A well muscled man who is very heavily armored and armed to the teeth.  He
-lives for combat.  
+lives for combat.
 ~
 10 0 0 0 0 0 0 0 -250 E
 14 16 1 2d2+140 2d2+2
@@ -82,7 +82,7 @@ the chariot driver~
 There is a chariot driver here.
 ~
    You see a very slight and small individual whose whole life is centered
-around nothing but horses and speed.  
+around nothing but horses and speed.
 ~
 10 0 0 0 0 0 0 0 100 E
 10 17 4 2d2+100 1d2+1
@@ -95,7 +95,7 @@ the coach~
 There is a coach standing here, going over last minute strategy.
 ~
    As you try to look over his shoulder and listen in on his mumbling, he looks
-up at you and gives you a glare that chills you to the bone.  
+up at you and gives you a glare that chills you to the bone.
 ~
 2058 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -108,7 +108,7 @@ the healer~
 A healer is standing here.
 ~
    You see a young man, still learning about magical healing, wearing a white
-coat and using a stethoscope.  
+coat and using a stethoscope.
 ~
 2074 0 0 0 16 0 0 0 900 E
 14 16 1 2d2+140 2d2+2
@@ -123,7 +123,7 @@ There is a beautiful young lady here, carrying herbs to help the healer with.
 ~
    The herbalist is a very beautiful young lady who is about 22 years old.  She
 has deep brown eyes and shoulder-length chestnut hair.  Her body is perfectly
-proportioned and she stands about 5' 5" tall.  
+proportioned and she stands about 5' 5" tall.
 ~
 2186 0 0 0 16 0 0 0 1000 E
 10 17 4 2d2+100 1d2+1
@@ -137,7 +137,7 @@ Titus' shopkeeper is here, minding the store.
 ~
    The shopkeeper is an older man in his middle to late fifties and looks like
 he enjoys the quiet life.  There is a long scar running from the edge of his
-mouth to his right ear, making it look like he is always smiling.  
+mouth to his right ear, making it look like he is always smiling.
 ~
 2058 0 0 0 16 0 0 0 750 E
 23 13 -3 4d4+230 3d3+3
@@ -149,7 +149,7 @@ peddler~
 the peddler~
 A poor peddler is standing here, trying to support his meager existence.
 ~
-   You see a small, dirty man who doesn't look very healthy.  
+   You see a small, dirty man who doesn't look very healthy.
 ~
 8394 0 0 0 0 0 0 0 250 E
 4 19 7 0d0+40 1d2+0
@@ -162,7 +162,7 @@ the page~
 A page stands here, waiting to run an errand.
 ~
    You see a young boy who looks very strong and very fast.  He has the look of
-a scholar about him.  
+a scholar about him.
 ~
 10 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -174,7 +174,7 @@ plaintiff~
 the plaintiff~
 The plaintiff stands here, pleading his case.
 ~
-   He looks pitiful.  Absolutely pitiful.  
+   He looks pitiful.  Absolutely pitiful.
 ~
 10 0 0 0 0 0 0 0 0 E
 11 17 3 2d2+110 1d2+1
@@ -187,7 +187,7 @@ the ticket master~
 A ticket master is here, looking at you expectantly.
 ~
    He seems to be waiting for you to either buy a ticket or to get out of his
-way so that he can sell tickets to people that actually want them.  
+way so that he can sell tickets to people that actually want them.
 ~
 2058 0 0 0 0 0 0 0 100 E
 17 15 0 3d3+170 2d2+2
@@ -200,7 +200,7 @@ the stadium vendor~
 A stadium vendor is walking here, selling overpriced hotdogs and beer.
 ~
    The vendor is a scruffy looking man who isn't afraid of a fight and looks
-like he has had just about enough of smart-mouthed spectators.  
+like he has had just about enough of smart-mouthed spectators.
 ~
 254024 0 0 0 0 0 0 0 -150 E
 8 18 5 1d1+80 1d2+1
@@ -212,7 +212,7 @@ citizen~
 the citizen~
 A citizen of Rome is standing here.
 ~
-   It appears to be your ordinary citizen going about his business.  
+   It appears to be your ordinary citizen going about his business.
 ~
 2120 0 0 0 0 0 0 0 900 E
 5 19 7 1d1+50 1d2+0
@@ -224,7 +224,7 @@ gateguard guard~
 the gateguard~
 A gateguard stands here, tending the gate.
 ~
-   You see a strong, loyal public defender.  
+   You see a strong, loyal public defender.
 ~
 2078 0 0 0 0 0 0 0 1000 E
 11 17 3 2d2+110 1d2+1
@@ -239,7 +239,7 @@ A soldier on leave is walking around looking for entertainment.
 ~
    You see a member of one of the Emperor's elite legions.  He looks VERY
 strong.  You have this vague feeling that his entertainment isn't going to be a
-very wholesome activity.  
+very wholesome activity.
 ~
 2120 0 0 0 0 0 0 0 300 E
 17 15 0 3d3+170 2d2+2
@@ -252,7 +252,7 @@ Julius Caesar~
 Julius Caesar, the Emperor of Rome, is sitting here.
 ~
    You see a man who is dressed in the finest of clothes, has eaten the best of
-foods and lived in the most opulent palace that Rome has ever known.  
+foods and lived in the most opulent palace that Rome has ever known.
 ~
 2058 0 0 0 65552 0 0 0 990 E
 27 11 -6 5d5+270 4d4+4
@@ -268,7 +268,7 @@ There is a royal bodyguard here, ready to die for the Emperor, if necessary.
    The bodyguard is dressed in the finest of armor and wields only the deadliest
 of weapons.  He is very strong and would put up one hell of a fight.  He has
 been trained to be suspicious of all but the most innocent visitors, and likely
-to take offense of anyone with less than pure intentions.  
+to take offense of anyone with less than pure intentions.
 ~
 3338 0 0 0 16 0 0 0 990 E
 18 14 0 3d3+180 3d3+3
@@ -285,7 +285,7 @@ the judge~
 A judge is standing here, reading a case.
 ~
    He seems to be quite interested in the case, perhaps you shouldn't disturb
-him now, later would probably be a better time.  
+him now, later would probably be a better time.
 ~
 2058 0 0 0 0 0 0 0 990 E
 21 13 -2 4d4+210 3d3+3
@@ -310,7 +310,7 @@ slimeball slime ball green~
 the slimeball~
 A green ball of slime is hanging over you, oozing downward.
 ~
-   There is a green 'ball' of slime oozing from the coating on the walls.  
+   There is a green 'ball' of slime oozing from the coating on the walls.
 ~
 196654 0 0 0 80 0 0 0 -500 E
 12 16 2 2d2+120 2d2+2
@@ -325,7 +325,7 @@ Froboz~
 Froboz the wizard is standing here, working on a new spell.
 ~
    You see a middle-aged man whose knowledge of magic, both offensive and
-defensive, is legendary.  He literally glows with a pink aura.  
+defensive, is legendary.  He literally glows with a pink aura.
 ~
 26650 0 0 0 16 0 0 0 300 E
 23 13 -3 4d4+230 3d3+3
@@ -338,8 +338,8 @@ titus andronicus~
 Titus Andronicus~
 Titus Andronicus is standing here, polishing a few swords.
 ~
-   As you look at him, he suddenly swings a newly sharpened sword at you!  
-Watch out!  
+   As you look at him, he suddenly swings a newly sharpened sword at you!
+Watch out!
 ~
 26682 0 0 0 16 0 0 0 500 E
 24 12 -4 4d4+240 4d4+4
@@ -352,7 +352,7 @@ senator~
 the senator~
 A senator is here, waiting for debate to begin.
 ~
-   He seems to be quite bored and is playing with the edge of his toga.  
+   He seems to be quite bored and is playing with the edge of his toga.
 ~
 2058 0 0 0 0 0 0 0 350 E
 10 17 4 2d2+100 1d2+1
@@ -365,7 +365,7 @@ the bailiff~
 The bailiff stands here, keeping order in the courtroom.
 ~
    He is a very stern man and insists on absolute quiet in his courtroom unless
-the judge has given someone permisson to speak.  
+the judge has given someone permisson to speak.
 ~
 2058 0 0 0 16 0 0 0 900 E
 16 15 0 3d3+160 2d2+2
@@ -377,7 +377,7 @@ defendant~
 the defendant~
 The defendant stands here, pleading her case.
 ~
-   She looks to be well organized and full of confidence.  
+   She looks to be well organized and full of confidence.
 ~
 2058 0 0 0 0 0 0 0 200 E
 11 17 3 2d2+110 1d2+1
@@ -411,7 +411,7 @@ Venus, the Goddess of Beauty and Knowledge, is resting here.
 ~
    Venus is probably one of the most beautiful women you have ever seen if not
 THE most beautiful.  She is very powerful and tough under that outer image of
-beauty.  
+beauty.
 ~
 256026 0 0 0 65552 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
@@ -448,7 +448,7 @@ mercury messenger god~
 Mercury~
 Mercury, the messenger of the Gods, is standing here.
 ~
-   Mercury is a handsome, youthful God and wears a large grin on his face.  
+   Mercury is a handsome, youthful God and wears a large grin on his face.
 ~
 256026 0 0 0 65552 0 0 0 1000 E
 26 12 -5 5d5+260 4d4+4
@@ -467,7 +467,7 @@ Froboz' shopkeeper is here, minding the store.
 ~
    The shopkeeper is an older man in his middle to late fifties and looks like
 he enjoys the quiet life.  There is a long scar running from the edge of his
-mouth to his right ear, making it look like he is always smiling.  
+mouth to his right ear, making it look like he is always smiling.
 ~
 26634 0 0 0 16 0 0 0 650 E
 23 13 -3 4d4+230 3d3+3
@@ -480,7 +480,7 @@ the executioner~
 The executioner stands here, waiting to torture some sorry soul.
 ~
    You see a burly man who is wearing a black hood that obscures his face.  He
-has a very sadistic attitude and clearly loves his work.  
+has a very sadistic attitude and clearly loves his work.
 ~
 24622 0 0 0 16 0 0 0 -1000 E
 20 14 -2 4d4+200 3d3+3
@@ -493,7 +493,7 @@ the baker~
 The baker looks at you calmly, wiping flour from his face with one hand.
 ~
    A fat, nice looking baker.  But you can see that he has many scars on his
-body.  
+body.
 ~
 2058 0 0 0 16 0 0 0 900 E
 33 9 -9 6d6+330 5d5+5

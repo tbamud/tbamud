@@ -5,7 +5,7 @@ John the Lumberjack is here, looking for some trees to chop down.
 ~
    He is six feet tall and looks quite strong, muscles bulging under his heavy,
 chequered shirt.  His features are worn with hard work and his expression is one
-of a peaceful man leading a simple life.  
+of a peaceful man leading a simple life.
 ~
 6220 0 0 0 64 0 0 0 370 E
 5 19 7 1d1+50 1d2+0
@@ -17,7 +17,7 @@ rabbit small~
 the rabbit~
 A small rabbit is foraging in the bushes here.
 ~
-   It is a small, furry creature with long ears and big feet.  
+   It is a small, furry creature with long ears and big feet.
 ~
 72 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -30,7 +30,7 @@ the brown bear~
 A big, brown, angry-looking bear is here.
 ~
    The bear is a big, brown, furry animal with very large claws and very sharp
-teeth.  It doesn't resemble those cute little dolls from toy shops at all.  
+teeth.  It doesn't resemble those cute little dolls from toy shops at all.
 ~
 104 0 0 0 0 0 0 0 -50 E
 8 18 5 1d1+80 1d2+1
@@ -44,7 +44,7 @@ A ferocious rabbit is here, glaring hungrily at you.
 ~
    This small, furry creature with long ears and big feet has been attacked by
 the dreaded rabbit rabies, a horrible disease that turns helpless and innocent
-rabbits into ferocious and bloodthirsty monsters.  
+rabbits into ferocious and bloodthirsty monsters.
 ~
 104 0 0 0 0 0 0 0 -150 E
 3 19 8 0d0+30 1d2+0
@@ -57,7 +57,7 @@ the fallow deer~
 A fallow deer is grazing peacefully here.
 ~
    She is a graceful creature on long, slender legs, and with large, brown eyes
-looking back at you with an air of watchful interest.  
+looking back at you with an air of watchful interest.
 ~
 200 0 0 0 16 0 0 0 350 E
 2 20 8 0d0+20 1d2+0
@@ -82,7 +82,7 @@ bird large~
 the bird~
 A large bird with a broken wing has been cornered here.
 ~
-   The bird isn't going to live much longer, by the looks of it.  
+   The bird isn't going to live much longer, by the looks of it.
 ~
 10 0 0 0 0 0 0 0 0 E
 1 20 9 0d0+10 1d2+0
@@ -95,7 +95,7 @@ the bobcat~
 A medium sized bobcat is stalking a bird here.
 ~
    The bobcat has sharp claws and teeth, and will probably eat you instead of
-the bird if you give it the chance.  
+the bird if you give it the chance.
 ~
 42 0 0 0 16 0 0 0 -150 E
 5 19 7 1d1+50 1d2+0
@@ -107,7 +107,7 @@ sparrow~
 the sparrow~
 A sparrow is flapping around by the ground.
 ~
-   The sparrow looks like it is enjoying life.  
+   The sparrow looks like it is enjoying life.
 ~
 72 0 0 0 0 0 0 0 200 E
 1 20 9 0d0+10 1d2+0
@@ -119,7 +119,7 @@ robin~
 the robin~
 A robin is hopping around looking for bugs to eat.
 ~
-   The robin looks quite intent on finding a bug or worm to eat.  
+   The robin looks quite intent on finding a bug or worm to eat.
 ~
 72 0 0 0 0 0 0 0 200 E
 1 20 9 0d0+10 1d2+0
@@ -132,7 +132,7 @@ the squirrel~
 A squirrel is here seeking refuge in its nest.
 ~
    It peers out of its nest at you anxiously, seeming to plead silently with you
-to leave it alone.  
+to leave it alone.
 ~
 10 0 0 0 1572864 0 0 0 200 E
 1 20 9 0d0+10 1d2+0
@@ -146,7 +146,7 @@ A furry brown badger is curled up under a log here.
 ~
    The badger is slowly awakening and peering up at you from its burrow.  You
 know that it won't be moving this slow for long.  Its sharp claws and teeth
-catch your attention when you consider killing it.  
+catch your attention when you consider killing it.
 ~
 10 0 0 0 1048576 0 0 0 50 E
 4 19 7 0d0+40 1d2+0
@@ -159,7 +159,7 @@ the grey squirrel~
 A grey squirrel with a bushy tail is foraging for nuts here.
 ~
    This happy creature seems to pay you no heed as it goes about its search for
-nuts among the leaves and twigs on the ground here.  
+nuts among the leaves and twigs on the ground here.
 ~
 72 0 0 0 524288 0 0 0 150 E
 2 20 8 0d0+20 1d2+0
@@ -173,7 +173,7 @@ A small brown-red chipmunk dashes from tree to tree here.
 ~
    The absolute zenith of hyperactivity, this small rodent seems to never tire
 of running up, down, and around the trees in this area.  If you could ever catch
-it, you imagine it would make an easy meal.  
+it, you imagine it would make an easy meal.
 ~
 72 0 0 0 524288 0 0 0 170 E
 1 20 9 0d0+10 1d2+0
@@ -185,7 +185,7 @@ crow black bird~
 the large black crow~
 A large black bird flits about here, picking at bits of carrion.
 ~
-   The bird eyes you warily, but continues with its meal.  
+   The bird eyes you warily, but continues with its meal.
 ~
 142 0 0 0 0 0 0 0 -20 E
 2 20 8 0d0+20 1d2+0
@@ -199,7 +199,7 @@ A grotesque vulture covered in blood and gore is here feeding madly.
 ~
    It sickens you to even look at this foul bird.  Bits of dried gore stick to
 its beak, and unidentifiable organs hang from its talons and feathers.  It sees
-you and attacks, protecting its horrible feast!  
+you and attacks, protecting its horrible feast!
 ~
 46 0 0 0 16 0 0 0 -700 E
 6 18 6 1d1+60 1d2+1
@@ -213,7 +213,7 @@ A young 5-point buck is drinking from the lake here.
 ~
    This young male deer is drinking from the edge of the lake and watching you
 warily.  His antlers are not full size yet, and will no doubt be quite
-impressive in a few years.  
+impressive in a few years.
 ~
 74 0 0 0 16 0 0 0 350 E
 4 19 7 0d0+40 1d2+0
@@ -225,7 +225,7 @@ fish~
 the fish~
 A fish is swimming about here.
 ~
-   The fish looks about the right size for a meal.  
+   The fish looks about the right size for a meal.
 ~
 10 0 0 0 128 0 0 0 100 E
 1 20 9 0d0+10 1d2+0
@@ -237,7 +237,7 @@ duckling~
 the duckling~
 A duckling is swimming around in the pond.
 ~
-   The duckling is adorable, it looks most of all like a tiny furball.  
+   The duckling is adorable, it looks most of all like a tiny furball.
 ~
 10 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0
@@ -249,7 +249,7 @@ duck~
 the duck~
 A duck is here, quacking happily.
 ~
-   The duck is quite fat.  It looks like it is enjoying life.  
+   The duck is quite fat.  It looks like it is enjoying life.
 ~
 72 0 0 0 0 0 0 0 1000 E
 1 20 9 0d0+10 1d2+0

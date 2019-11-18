@@ -132,7 +132,7 @@ en~
 if %cmd.mudcommand% == enter && portal /= %arg%
   wait 1
   %send% %actor% A whirl of white light falls into your eyes, you fall into a huge water fall.
-  %echoaround% %actor% A whirl of white light falls into %actor.name% eyes, and %actor.heshe% falls into a huge water fall that appears under %actor.hisher% feet. 
+  %echoaround% %actor% A whirl of white light falls into %actor.name% eyes, and %actor.heshe% falls into a huge water fall that appears under %actor.hisher% feet.
   %teleport% %actor% 3001
   wait 1
   %force% %actor% look
@@ -143,72 +143,72 @@ Object Affects Example~
 1 n 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %self.affects(BLIND)% 
+if %self.affects(BLIND)%
   %echo% This object is affected with blind.
-end 
-if %self.affects(INVIS)% 
+end
+if %self.affects(INVIS)%
   %echo% This object is affected with invisibility.
-end 
-if %self.affects(DET-ALIGN)% 
+end
+if %self.affects(DET-ALIGN)%
   %echo% This object is affected with detect alignment.
-end 
-if %self.affects(DET-INVIS)% 
+end
+if %self.affects(DET-INVIS)%
   %echo% This object is affected with detect invisibility.
-end 
-if %self.affects(DET-MAGIC)% 
+end
+if %self.affects(DET-MAGIC)%
   %echo% This object is affected with detect magic.
-end 
-if %self.affects(SENSE-LIFE)% 
+end
+if %self.affects(SENSE-LIFE)%
   %echo% This object is affected with sense life.
-end 
-if %self.affects(WATWALK)% 
+end
+if %self.affects(WATWALK)%
   %echo% This object is affected with water walk.
-end 
-if %self.affects(SANCT)% 
+end
+if %self.affects(SANCT)%
   %echo% This object is affected with sanctuary.
-end 
-if %self.affects(GROUP)% 
+end
+if %self.affects(GROUP)%
   %echo% This object is affected with group.
-end 
-if %self.affects(CURSE)% 
+end
+if %self.affects(CURSE)%
   %echo% This object is affected with curse.
-end 
-if %self.affects(INFRA)% 
+end
+if %self.affects(INFRA)%
   %echo% This object is affected with infravision.
-end 
-if %self.affects(POISON)% 
+end
+if %self.affects(POISON)%
   %echo% This object is affected with poison.
-end 
-if %self.affects(PROT-EVIL)% 
+end
+if %self.affects(PROT-EVIL)%
   %echo% This object is affected with protection from evil.
-end 
-if %self.affects(PROT-GOOD)% 
+end
+if %self.affects(PROT-GOOD)%
   %echo% This object is affected with protection from good.
-end 
-if %self.affects(SLEEP)% 
+end
+if %self.affects(SLEEP)%
   %echo% This object is affected with sleep.
-end 
-if %self.affects(NO_TRACK)% 
+end
+if %self.affects(NO_TRACK)%
   %echo% This object is affected with no track.
-end 
-if %self.affects(FLYING)% 
+end
+if %self.affects(FLYING)%
   %echo% This object is affected with flying.
-end 
-if %self.affects(SCUBA)% 
+end
+if %self.affects(SCUBA)%
   %echo% This object is affected with scuba.
-end 
-if %self.affects(SNEAK)% 
+end
+if %self.affects(SNEAK)%
   %echo% This object is affected with sneak.
-end 
-if %self.affects(HIDE)% 
+end
+if %self.affects(HIDE)%
   %echo% This object is affected with hide.
-end 
-if %self.affects(UNUSED)% 
+end
+if %self.affects(UNUSED)%
   %echo% This object is affected with unused.
-end 
-if %self.affects(CHARM)% 
+end
+if %self.affects(CHARM)%
   %echo% This object is affected with charm.
-end 
+end
 ~
 #1206
 (1207) Capturing~
@@ -339,61 +339,61 @@ end
 Actor Pref Checking~
 2 q 100
 ~
-if %actor.pref(BRIEF)% 
+if %actor.pref(BRIEF)%
   %send% %actor% You have BRIEF on.
 end
 if %actor.pref(COMPACT)%
   %send% %actor% You have COMPACT on.
 end
-if %actor.pref(NO_SHOUT)% 
+if %actor.pref(NO_SHOUT)%
   %send% %actor% You have NO_SHOUT on.
 end
 if %actor.pref(NO_TELL)%
   %send% %actor% You have NO_TELL on.
 end
-if %actor.pref(D_HP)% 
+if %actor.pref(D_HP)%
   %send% %actor% You have D_HP on.
 end
 if %actor.pref(D_MANA)%
   %send% %actor% You have D_MANA on.
 end
-if %actor.pref(D_MOVE)% 
+if %actor.pref(D_MOVE)%
   %send% %actor% You have D_MOVE on.
 end
 if %actor.pref(AUTOEX)%
   %send% %actor% You have AUTOEX on.
 end
-if %actor.pref(NO_HASS)% 
+if %actor.pref(NO_HASS)%
   %send% %actor% You have NO_HASS on.
 end
 if %actor.pref(QUEST)%
   %send% %actor% You have QUEST on.
 end
-if %actor.pref(SUMN)% 
+if %actor.pref(SUMN)%
   %send% %actor% You have SUMN on.
 end
 if %actor.pref(NO_REP)%
   %send% %actor% You have NO_REP on.
 end
-if %actor.pref(LIGHT)% 
+if %actor.pref(LIGHT)%
   %send% %actor% You have LIGHT on.
 end
 if %actor.pref(C1)%
   %send% %actor% You have C1 on.
 end
-if %actor.pref(NO_WIZ)% 
+if %actor.pref(NO_WIZ)%
   %send% %actor% You have NO_WIZ on.
 end
 if %actor.pref(L1)%
   %send% %actor% You have L1 on.
 end
-if %actor.pref(L2)% 
+if %actor.pref(L2)%
   %send% %actor% You have L2 on.
 end
 if %actor.pref(NO_AUC)%
   %send% %actor% You have NO_AUC on.
 end
-if %actor.pref(NO_GOS)% 
+if %actor.pref(NO_GOS)%
   %send% %actor% You have NO_GOS on.
 end
 if %actor.pref(RMFLG)%
@@ -402,13 +402,13 @@ end
 if %actor.pref(D_AUTO)%
   %send% %actor% You have D_AUTO on.
 end
-if %actor.pref(CLS)% 
+if %actor.pref(CLS)%
   %send% %actor% You have CLS on.
 end
 if %actor.pref(BLDWLK)%
   %send% %actor% You have BLDWLK on.
 end
-if %actor.pref(AFK)% 
+if %actor.pref(AFK)%
   %send% %actor% You have AFK on.
 end
 if %actor.pref(AUTOLOOT)%
@@ -417,13 +417,13 @@ end
 if %actor.pref(AUTOGOLD)%
   %send% %actor% You have AUTOGOLD on.
 end
-if %actor.pref(AUTOSPLIT)% 
+if %actor.pref(AUTOSPLIT)%
   %send% %actor% You have AUTOSPLIT on.
 end
 if %actor.pref(AUTOSAC)%
   %send% %actor% You have AUTOSAC on.
 end
-if %actor.pref(AUTOASSIST)% 
+if %actor.pref(AUTOASSIST)%
   %send% %actor% You have AUTOASSIST on.
 end
 ~
@@ -899,7 +899,7 @@ wait 1
 %echo% O=#==NAME============\|=Level=\|=Points==\|=EXP=========O
 set i 1
 set j 1
-while %self.varexists(%j%)% 
+while %self.varexists(%j%)%
   eval r %%self.%j%%%
   eval nam %r.car%
   extract ll 2 %r%
@@ -988,7 +988,7 @@ Multiple Command Example Trig~
 2 c 100
 t~
 if %cmd% == test
-  * Careful not to use Arguments * or this trig will freeze you. 
+  * Careful not to use Arguments * or this trig will freeze you.
   * set the first arg
   set command %arg.car%
   * set the rest of the arg string
@@ -1006,45 +1006,45 @@ end
 Roomflag Test Trigger~
 2 g 100
 ~
-if %self.roomflag(DARK)% 
-  %echo% This is a dark room. 
-end 
-if %self.roomflag(DEATH)% 
-  %echo% This is a death trap - goodbye! 
-end 
-if %self.roomflag(NO_MOB)% 
-  %echo% Mobiles cannot enter this room. 
-end 
-if %self.roomflag(INDOORS)% 
-  %echo% This room is indoors. 
-end 
-if %self.roomflag(PEACEFUL)% 
-  %echo% You can't kill anything in this room. 
-end 
-if %self.roomflag(NO_TRACK)% 
-  %echo% You cannot track anything through this room. 
-end 
-if %self.roomflag(NO_MAGIC)% 
-  %echo% You cannot cast spells in here! 
-end 
-if %self.roomflag(TUNNEL)% 
-  %echo% This room is a narrow tunnel. 
-end 
-if %self.roomflag(PRIVATE)% 
-  %echo% This is a private room. 
-end 
-if %self.roomflag(GODROOM)% 
-  %echo% Only Gods can enter this room. 
-end 
-if %self.roomflag(HOUSE)% 
-  %echo% This is a house. 
-end 
-if %self.roomflag(HCRSH)% 
-  %echo% This is a house which will crash-save. 
-end 
-if %self.roomflag(ATRIUM)% 
-  %echo% This is an atrium for a house. 
-end 
+if %self.roomflag(DARK)%
+  %echo% This is a dark room.
+end
+if %self.roomflag(DEATH)%
+  %echo% This is a death trap - goodbye!
+end
+if %self.roomflag(NO_MOB)%
+  %echo% Mobiles cannot enter this room.
+end
+if %self.roomflag(INDOORS)%
+  %echo% This room is indoors.
+end
+if %self.roomflag(PEACEFUL)%
+  %echo% You can't kill anything in this room.
+end
+if %self.roomflag(NO_TRACK)%
+  %echo% You cannot track anything through this room.
+end
+if %self.roomflag(NO_MAGIC)%
+  %echo% You cannot cast spells in here!
+end
+if %self.roomflag(TUNNEL)%
+  %echo% This room is a narrow tunnel.
+end
+if %self.roomflag(PRIVATE)%
+  %echo% This is a private room.
+end
+if %self.roomflag(GODROOM)%
+  %echo% Only Gods can enter this room.
+end
+if %self.roomflag(HOUSE)%
+  %echo% This is a house.
+end
+if %self.roomflag(HCRSH)%
+  %echo% This is a house which will crash-save.
+end
+if %self.roomflag(ATRIUM)%
+  %echo% This is an atrium for a house.
+end
 ~
 #1221
 Test Trigger~
@@ -1105,7 +1105,7 @@ if %arg% == drawer
   %load% obj 7711
   %echo% The small drawer appears to be nothing more than a mere crack underneath the
   %echo% desk.  The only thing that gives it away is the small keyhole that winks at you
-  %echo% upon closer inspection.    
+  %echo% upon closer inspection.
 else
   return 0
 end
@@ -1245,19 +1245,19 @@ Deal a single card from a deck~
 deal~
 switch %random.4%
   case 1
-    set col 
+    set col
     set suit Diamond
   break
   case 2
-    set col 
+    set col
     set suit Heart
   break
   case 3
-    set col 
+    set col
     set suit Club
   break
   case 4
-    set col 
+    set col
     set suit Spade
   break
   default
@@ -1418,19 +1418,19 @@ elseif %cmd% == deal
   %echo% while begins.
   switch %random.4%
     case 1
-      set col 
+      set col
       set suit Diamonds
     break
     case 2
-      set col 
+      set col
       set suit Hearts
     break
     case 3
-      set col 
+      set col
       set suit Clubs
     break
     case 4
-      set col 
+      set col
       set suit Spades
     break
     default
@@ -1480,7 +1480,7 @@ Damage trigger~
 eval num_hitp %actor.hitp%/2
 %echo% half hitp = %num_hitp%
 eval rx %%random.%num_hitp%%%
-%echo% rx %rx% 
+%echo% rx %rx%
 %damage% %actor% %rx%
 ~
 #1286
@@ -1724,11 +1724,11 @@ Quest object loader~
 ~
 context %actor.id%
 say object vnum: %object.vnum%
- 
+
 set answer_yes say Yes, I want that object :)
 set answer_no say I already have that object !
 set answer_reward say There you go. Here's an object for you. Thanks!
- 
+
 if (%object.vnum% == 1301)
   if (%zone_12_object1%)
     %answer_no%
@@ -1769,17 +1769,17 @@ else
   say I do not want that object!
   return 0
 end
- 
-if (%zone_12_object1% && %zone_12_object2% && %zone_12_object3% && %zone_12_object4%) 
+
+if (%zone_12_object1% && %zone_12_object2% && %zone_12_object3% && %zone_12_object4%)
   %answer_reward%
   eval zone_12_reward_number %actor.zone_12_reward_number%+1
- 
+
   * cap this to a max of 12 rewards.
   if %zone_12_reward_number%>12
     set zone_12_reward_number 12
   end
   remote zone_12_reward_number %actor.id%
- 
+
   *  make sure all objects from 3016 and upwards have 'reward' as an alias
   eval loadnum 3015+%zone_12_reward_number%
   %load% o %loadnum%

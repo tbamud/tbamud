@@ -11,7 +11,7 @@ get key start mob 34500~
 wait 1 s
 if %direction% == West
   say Can you help me find my key, %actor.alias%
-  say I bet its somewhere in the cemetery.  
+  say I bet its somewhere in the cemetery.
   say Oh what a confusing place that is.
 else
   emote looks for his key nearby.
@@ -38,10 +38,10 @@ start quest 2~
 ~
 wait 1 s
 if %actor.varexists(accepted_quest_two)%
-  say Have you returned with the head, %actor.alias%? 
+  say Have you returned with the head, %actor.alias%?
 Else
   say Can you help me?, %actor.alias%
-  emote rings his hands nerviously, looking around. 
+  emote rings his hands nerviously, looking around.
 end
 ~
 #34505
@@ -52,11 +52,11 @@ say Oh good.
 emote looks around nervously
 wait 15
 say A colleague and I where..ah...operating
-say on a patient down in the basement when 
+say on a patient down in the basement when
 say he broke his restraints.
 wait 30
-say I was able to escape up to here, but 
-say the other doctor didn't make it.  
+say I was able to escape up to here, but
+say the other doctor didn't make it.
 say I looked back just as the patient ripped
 say his head off.
 wait 30
@@ -98,7 +98,7 @@ Else
   return 0
   wait 3
   say Thats not a head!
-  
+
 End
 ~
 #34508
