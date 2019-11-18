@@ -2703,7 +2703,7 @@ end
 Room Command Detach Example~
 2 c 100
 detach~
-Detach 1388 %self.id%
+detach 1388 %self.id%
 %echo% detached
 ~
 #1389

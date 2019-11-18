@@ -204,7 +204,7 @@ end
 Player can't move! - 20104~
 0 c 0
 *~
-If %actor.name% == Elixias
+if %actor.name% == Elixias
   return 0
 else
   if (%actor.sex%==male)
@@ -336,7 +336,7 @@ end
 Haplessness - 20146~
 2 c 100
 *~
-If %actor.name% == Elixias
+if %actor.name% == Elixias
   return 0
 else
   %send% %actor% You are unconscious, unable to do anything...

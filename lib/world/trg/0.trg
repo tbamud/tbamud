@@ -2436,21 +2436,21 @@ if %actor.is_pc% && %actor.level% < 3
     halt
   end
   if !%actor.eq(light)%
-    Say you really shouldn't be wandering these parts without a light source %actor.name%.
+    say you really shouldn't be wandering these parts without a light source %actor.name%.
     shake
     %load% obj 50
     give generic %actor.name%
     halt
   end
   if !%actor.eq(rfinger)% || !%actor.eq(lfinger)%
-    Say did you lose one of your rings?
+    say did you lose one of your rings?
     sigh
     %load% obj 51
     give generic %actor.name%
     halt
   end
   if !%actor.eq(neck1)% || !%actor.eq(neck2)%
-    Say you lose everything don't you?
+    say you lose everything don't you?
     roll
     %load% obj 53
     give generic %actor.name%
@@ -2463,62 +2463,62 @@ if %actor.is_pc% && %actor.level% < 3
     halt
   end
   if !%actor.eq(head)%
-    Say protect that noggin of yours, %actor.name%.
+    say protect that noggin of yours, %actor.name%.
     %load% obj 56
     give generic %actor.name%
     halt
   end
   if !%actor.eq(legs)%
-    Say why do you always lose your pants %actor.name%?
+    say why do you always lose your pants %actor.name%?
     %load% obj 57
     give generic %actor.name%
     halt
   end
   if !%actor.eq(feet)%
-    Say you can't go around barefoot %actor.name%.
+    say you can't go around barefoot %actor.name%.
     %load% obj 58
     give generic %actor.name%
     halt
   end
   if !%actor.eq(hands)%
-    Say need some gloves %actor.name%?
+    say need some gloves %actor.name%?
     %load% obj 59
     give generic %actor.name%
     halt
   end
   if !%actor.eq(arms)%
-    Say you must be freezing %actor.name%.
+    say you must be freezing %actor.name%.
     %load% obj 60
     give generic %actor.name%
     halt
   end
   if !%actor.eq(shield)%
-    Say you need one of these to protect yourself %actor.name%.
+    say you need one of these to protect yourself %actor.name%.
     %load% obj 61
     give generic %actor.name%
     halt
   end
   if !%actor.eq(about)%
-    Say you are going to catch a cold %actor.name%.
+    say you are going to catch a cold %actor.name%.
     %load% obj 62
     give generic %actor.name%
     halt
   end
   if !%actor.eq(waist)%
-    Say better use this to hold your pants up %actor.name%.
+    say better use this to hold your pants up %actor.name%.
     %load% obj 63
     give generic %actor.name%
     halt
   end
   if !%actor.eq(rwrist)% || !%actor.eq(lwrist)%
-    Say misplace something?
+    say misplace something?
     smile
     %load% obj 65
     give generic %actor.name%
     halt
   end
   if !%actor.eq(wield)%
-    Say without a weapon you will be Fido food %actor.name%.
+    say without a weapon you will be Fido food %actor.name%.
     %load% obj 66
     give generic %actor.name%
     halt

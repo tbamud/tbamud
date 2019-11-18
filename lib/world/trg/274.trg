@@ -78,7 +78,7 @@ Broderick~
 0 g 100
 ~
 if %actor.is_pc%
-Say Welcome to Saint Brigid, the hand of the Lady be upon thee.
+say Welcome to Saint Brigid, the hand of the Lady be upon thee.
 wait 10
 nod
 say To view my wares type 'List' to show everything i have in stock.
@@ -89,7 +89,7 @@ nod
 wait 5
 say So What'll it be?
 else
-  Say Blessings upon you this Day!
+  say Blessings upon you this Day!
 end
 ~
 #27406
@@ -101,7 +101,7 @@ Child mob st brigid~
 set actor %random.char%
 switch %random.4%
     case 1
-      Say MommY!!! Daday!!!
+      say MommY!!! Daday!!!
       if %actor.sex% = man
        say its a mean old man!
       else
@@ -127,7 +127,7 @@ done
 Std greeting shop mobs~
 0 g 100
 ~
-Say Welcome to Saint Brigid, the hand of the Lady be upon thee.
+say Welcome to Saint Brigid, the hand of the Lady be upon thee.
 wait 10
 nod
 say To view my wares type 'List' to show everything i have in stock.
@@ -148,10 +148,10 @@ if %actor.is_pc%
     say Hey baby, how bout a little action and some
     say small bit of fun~ I am all that.
   elseif %actor.sex% == female
-    SAY Get lost you bitch... I am not into Women!
+    say Get lost you bitch... I am not into Women!
     say what a whacko pervert!
   else
-Say Sotrry I'm not into Neuterless ones!
+say Sotrry I'm not into Neuterless ones!
   end
 else
   say Take off you Mob Swine!

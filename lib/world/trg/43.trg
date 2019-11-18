@@ -25,7 +25,7 @@ Eskimo Butcher - 4312~
 0 g 25
 ~
 if %actor.is_pc%
-  Say Go away!  I'm about to cut off his head!    
+  say Go away!  I'm about to cut off his head!
 end
 ~
 #4304

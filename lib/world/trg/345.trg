@@ -39,7 +39,7 @@ start quest 2~
 wait 1 s
 if %actor.varexists(accepted_quest_two)%
   say Have you returned with the head, %actor.alias%?
-Else
+else
   say Can you help me?, %actor.alias%
   emote rings his hands nerviously, looking around.
 end
@@ -94,12 +94,12 @@ if %object.vnum( 34502 )%
   say Perhaps you should go over and look around some
   %purge% %object%
   rdelete accepted_quest_two %actor.id%
-Else
+else
   return 0
   wait 3
   say Thats not a head!
 
-End
+end
 ~
 #34508
 atmosphere for rooms (Fog)~

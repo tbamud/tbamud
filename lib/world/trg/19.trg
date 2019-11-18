@@ -1125,7 +1125,7 @@ end
 test load~
 2 c 100
 *~
-If %actor.name% == Detta
+if %actor.name% == Detta
 return 0
 else
 %send% %actor% An unmeasurable power holds you frozen.
