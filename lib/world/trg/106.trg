@@ -1,5 +1,5 @@
 #10600
-Armourer - 10634~
+Armorer - 10634~
 0 g 100
 ~
 if %actor.is_pc%

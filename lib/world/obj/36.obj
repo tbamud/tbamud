@@ -1,15 +1,15 @@
 #3600
-armour black pawn~
-some Black Pawn Armour~
-A pile of black armour is here.~
+armor black pawn~
+some Black Pawn Armor~
+A pile of black armor is here.~
 ~
 9 j 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
 13 300 1 0 0
 #3601
-armour white pawn~
-some White Pawn Armour~
-A pile of white armour is here.~
+armor white pawn~
+some White Pawn Armor~
+A pile of white armor is here.~
 ~
 9 k 0 0 0 ad 0 0 0 0 0 0 0
 1 0 0 0
@@ -31,9 +31,9 @@ The sword of a White Pawn lies here.~
 0 3 4 3
 10 100 1 0 0
 #3604
-armour black rook~
-some Black Rook Armour~
-Some armour made from the remains of a black rook lies heaped on the floor.~
+armor black rook~
+some Black Rook Armor~
+Some armor made from the remains of a black rook lies heaped on the floor.~
 ~
 9 aj 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0
@@ -43,9 +43,9 @@ A
 A
 5 1
 #3605
-armour white rook~
-some White Rook Armour~
-Some armour made from the remains of a white rook lies heaped on the floor.~
+armor white rook~
+some White Rook Armor~
+Some armor made from the remains of a white rook lies heaped on the floor.~
 ~
 9 agk 0 0 0 ad 0 0 0 0 0 0 0
 2 0 0 0

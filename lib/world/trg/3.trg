@@ -212,14 +212,14 @@ if %actor.level% < 30
   return 0
   %send% %actor% The Staff of Sanctum whispers: I will not serve you!
   %echoaround% %actor% The Staff of Sanctum exclaims: 'I will not serve
-those without honour.'
+those without honor.'
   %purge% self
 else
   wait 1s
   %send% %actor% The Staff of Sanctum whispers: I was made to serve,
 great one!
   %echoaround% %actor% The Staff of Sanctus exclaims: 'I will serve you
-honourable one.'
+honorable one.'
 end
 ~
 #314

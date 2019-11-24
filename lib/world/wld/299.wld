@@ -53,7 +53,7 @@ Since I couldn't find fly sectors in the original DikuMud, I used
 #14, #50, #51, #52, #53
 *
 The mobs were built with a 'standard' 30-level, DikuMud in mind.
-Armour classes range from +10 (bad) to -10 (excellent).
+Armor classes range from +10 (bad) to -10 (excellent).
 On VieMud, mobile ##05 (Wyrenthoth) was a snivelling excuse of a
 dracolich, always whining about how it hated cold, damp, and closed
 in spaces.  Also, if it was given object ##07 (the ivory staff),
@@ -1242,7 +1242,7 @@ door runes carvings~
    The door on the western side of the crypt is covered with strange, yet
 elegant carvings.  Looking somewhat closer at the carvings, you notice that they
 appear to be runes of protection.  Mostly against rot and ruin, but there is one
-near the centre of the design which looks to be for protection against the
+near the center of the design which looks to be for protection against the
 undead.
 ~
 S
@@ -1272,7 +1272,7 @@ walls wall painting paintings~
    The paintings on the walls show various events in Princess Evalynn's life.
 One shows her ill-fated wedding day, when the wedding party was attacked shortly
 before the ceremony and Prince Michael was carried off by a large golden dragon.
-Another shows her donning a suit of emerald armour in preparation of war.  She
+Another shows her donning a suit of emerald armor in preparation of war.  She
 was forced to take the kingdom in hand and defend it against many attacks over
 the years by those who thought that Gildoria would fall easily without any solid
 male leadership.

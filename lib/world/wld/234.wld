@@ -243,7 +243,7 @@ S
 #23412
 Newbie School~
    To equip and unequip items the following commands will be needed.  @RWear
-@nputs armour on the appropriate body part.  @RHold @nlets you hold onto a
+@nputs armor on the appropriate body part.  @RHold @nlets you hold onto a
 light, as well as some weapons.  @RWield @nequips your main weapon.  Shields
 will be considered a wearable.  To unequip items just @RRemove @nthe item you
 want, use specific names such as remove sword.

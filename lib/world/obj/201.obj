@@ -42,7 +42,7 @@ A genuine piece of sea coral lies here.~
 E
 coral~
    This underwater treasure is a rock-like substance formed in the sea.  Is has
-a pinkish-orange colouring to it.
+a pinkish-orange coloring to it.
 ~
 #20103
 sign wood~
@@ -134,7 +134,7 @@ An ornate harp has been carelessly left here.~
 T 20115
 E
 harp~
-   This harp is made of a metal that shifts and changes its colours every now
+   This harp is made of a metal that shifts and changes its colors every now
 and then.  Carved into the column of it are strange elvish designs, while the
 neck of the harp is a simple S-shape.  @Rplay harp@n to produce sensational
 music.
@@ -233,7 +233,7 @@ E
 prism shard~
    This appears to be a broken fragment from a shell.  Its surface glitters with
 a kind of white dust, while the prism shard itself is a bright pink.  Prisms are
-known to be the main material used to make enchanted weapons and armours.
+known to be the main material used to make enchanted weapons and armors.
 ~
 #20116
 prism shell~
@@ -245,10 +245,10 @@ A glowing piece of shell is lying here.~
 5 500 500 0 0
 E
 prism shell~
-   The white powdery substance on this shell glitters, while the colour of the
+   The white powdery substance on this shell glitters, while the color of the
 shell itself is a bright pink.  A few scratches can be found on the shell, or
 otherwise it would have been flawless.  Prisms are known to be the main material
-used to make enchanted weapons and armours.
+used to make enchanted weapons and armors.
 ~
 #20117
 cushion~

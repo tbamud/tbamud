@@ -471,7 +471,7 @@ Low-income student housing lies to the north.  BEWARE!
 ~
 0 -1 30124
 D1
-The student centre, known as the "J" Dock, stands to the east.
+The student center, known as the "J" Dock, stands to the east.
 ~
 ~
 0 -1 30138
@@ -497,17 +497,17 @@ ENTER AT YOUR OWN RISK!
 ~
 E
 building~
-   The student centre lies to the east.
+   The student center lies to the east.
 ~
 S
 #30114
 Union Street~
    This non-descript road segment runs east-west between University Avenue and
-Division Road.  To the north is the student centre.
+Division Road.  To the north is the student center.
 ~
 301 0 0 0 0 1
 D0
-The student centre, known as the "J" Dock, stands to the north.
+The student center, known as the "J" Dock, stands to the north.
 ~
 ~
 0 -1 30137
@@ -527,7 +527,7 @@ non-descript non descript~
 ~
 E
 building~
-   The student centre lies to the north.
+   The student center lies to the north.
 ~
 S
 #30115
@@ -949,7 +949,7 @@ The hallway continues east.
 ~
 0 -1 30320
 D2
-An opening to the south brings you to the centre of the building.
+An opening to the south brings you to the center of the building.
 ~
 ~
 0 -1 30325
@@ -974,7 +974,7 @@ S
 The Student Health Services Entrance~
    This nice and inviting building does not seem quite so nice and inviting
 anymore now that you can smell the Formeldehyde.  But life has brightened
-substantially, there is a Birth Control Centre to the east and a De-Tox unit to
+substantially, there is a Birth Control Center to the east and a De-Tox unit to
 the south.  To the north lies a tempting exit to a cobblestone covered street.
 
 ~
@@ -985,7 +985,7 @@ Back to cobblestones, eh?
 ~
 0 -1 30105
 D1
-The Birth Control Centre looks mighty inviting doesn't it?
+The Birth Control Center looks mighty inviting doesn't it?
 ~
 ~
 0 -1 30172
@@ -1122,7 +1122,7 @@ The Central Annex~
 the east you can see the Infobank, and to the west, you can see the Tuck
 Shoppe.  North of you is the back hall with its bank machines, and south is the
 exit to Union Street.  This area is usually rather busy with students as this
-is the University Student Centre.
+is the University Student Center.
 ~
 301 8 0 0 0 1
 D0
@@ -1153,7 +1153,7 @@ prawn~
 S
 #30138
 The Back Hall~
-   This is the back hall of the Student Centre.  You can see a Post Office to
+   This is the back hall of the Student Center.  You can see a Post Office to
 the north, and a games room to the east.  The Central Annex is located to the
 south whilst the street is located directly to your west.
 ~
@@ -1818,7 +1818,7 @@ S
 #30166
 Campus Pub~
    This is your everyday campus pub with loud music, lots of underagers, lots
-of beer, and the perennial favourite, Moshing.  You find it very difficult to
+of beer, and the perennial favorite, Moshing.  You find it very difficult to
 move around, so decide to limit yourself to the bar.  There is only one exit...
 The one you entered by (down if you can't remember).
 ~
@@ -1940,7 +1940,7 @@ plank~
 1 -1 30167
 S
 #30172
-Birth Control Centre~
+Birth Control Center~
    This room is literally plastered with photographs, leaflets, and other birth
 control paraphernalia.  On the table for instance is a stack of pamphlets to be
 handed out to any students who wish to read them.
@@ -2037,7 +2037,7 @@ S
 #30176
 Auditorium~
    This is the large room you probably saw from the hallway attached to its
-only exit (west).  There are numerous seats arranged like a theatre would be.
+only exit (west).  There are numerous seats arranged like a theater would be.
 There is a large stage at the east end of the room.
 ~
 301 9 0 0 0 3

@@ -770,7 +770,7 @@ dg_affect %actor% maxhit 100 24
 dg_affect %actor% armor 20 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -787,7 +787,7 @@ dg_affect %actor% maxmana 100 24
 dg_affect %actor% wis 5 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -804,7 +804,7 @@ dg_affect %actor% maxmove 100 24
 dg_affect %actor% invis on 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -971,18 +971,18 @@ tur~
 *This trig is meant to be used as part of a trio (1954, 1960, 1961)
 *This one is what gives you the finished product after tallying up
 *all the ingredients.
-*If everything has been done properly, a lovely coloured potion is
+*If everything has been done properly, a lovely colored potion is
 *the reward. Otherwise, you end up with nothing.. or a big mess ;)
 **************
 set product 1949
-set colour colourless
+set color colorless
 if  %actor.varexists(zn19_red1)%
 rdelete zn19_red1 %actor.id%
 if  %actor.varexists(zn19_red2)%
 rdelete zn19_red2 %actor.id%
 if  %actor.varexists(zn19_all)%
 set product 1945
-set colour red
+set color red
 end
 end
 end
@@ -992,7 +992,7 @@ if  %actor.varexists(zn19_blue2)%
 rdelete zn19_blue2 %actor.id%
 if  %actor.varexists(zn19_all)%
 set product 1946
-set colour blue
+set color blue
 end
 end
 end
@@ -1002,21 +1002,21 @@ if  %actor.varexists(zn19_green2)%
 rdelete zn19_green2 %actor.id%
 if  %actor.varexists(zn19_all)%
 set product 1947
-set colour green
+set color green
 end
 end
 end
 if  %actor.varexists(zn19_black)%
 rdelete zn19_black %actor.id%
 set product 1952
-set colour black
+set color black
 end
 eval in_bag %self.contents%
 if %in_bag.vnum%==1949
-%echo% A stream of %colour% fluid gushes out of the machine's nozzle into the empty vial.
+%echo% A stream of %color% fluid gushes out of the machine's nozzle into the empty vial.
 %load% obj %product%
 else
-%echo% A stream of %colour% fluid gushes out of the machine's nozzle and splashes all over the floor.
+%echo% A stream of %color% fluid gushes out of the machine's nozzle and splashes all over the floor.
 end
 rdelete zn19_all %actor.id%
 %load% obj 1948
@@ -1035,7 +1035,7 @@ dg_affect %actor% maxmove -50 24
 dg_affect %actor% maxhit -50 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -1415,8 +1415,8 @@ if fireworks /= %arg%
   set col[5] M
   set col[6] Y
   set col[7] W
-  set  colour %%col[%cx%]%%
-  eval colour %colour%
+  set  color %%col[%cx%]%%
+  eval color %color%
   eval sx %random.7%
   set sou[1] an almighty bang
   set sou[2] a piercing whistle
@@ -1427,7 +1427,7 @@ if fireworks /= %arg%
   set sou[7] a shower of sparks
   set  sound %%sou[%sx%]%%
   eval sound %sound%
-  %echo% With %sound%, a        %colour% F I R E W O R K@n explodes into light.@n
+  %echo% With %sound%, a        %color% F I R E W O R K@n explodes into light.@n
   %purge% self
 else
   %send% %actor% Light what?

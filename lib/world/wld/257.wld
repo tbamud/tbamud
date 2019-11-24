@@ -1,6 +1,6 @@
 #25700
-Maris' Armoury~
-   You stand in Maris' Armoury, self proclaimed finest armoury in all Jareth.
+Maris' Armory~
+   You stand in Maris' Armory, self proclaimed finest armory in all Jareth.
 An ornate but servicable looking counter makes an 'L' shape around a door which
 appears to lead into a rear service and holding area.  Shields adorn the walls,
 all polished to a bright gleam, and a suit of armor stands attentively on a
@@ -75,7 +75,7 @@ You see the City Proper.
 ~
 0 -1 25705
 D3
-You see Maris' Armoury.
+You see Maris' Armory.
 ~
 ~
 0 -1 25700
@@ -1127,7 +1127,7 @@ adds to your lust for material wealth as you survey your surroundings.  All
 around you, the finest of all furniture and goods lay sattered haphazardly
 around, as if the owner of these items were not aware of their value.  In one
 corner, a chest heaped with coins lays on it's side, while in another, a rack of
-glowing, golden armour and weapons sits propped against the wall.  Your only
+glowing, golden armor and weapons sits propped against the wall.  Your only
 exit is to the west.
 ~
 257 524 0 0 0 0
@@ -1621,7 +1621,7 @@ map wall~
                         |      Vulcevic's                     |        Outfitters
                         |                                     |
         Jareth City  River St  The Bootery      Maris'  - Bourbon St. -  Maris'
-           Flats        |           |          Armoury        |         Weaponry
+           Flats        |           |          Armory        |         Weaponry
              |          |           |                         |            |
  < - -  Floris Ave - Square -  Floris Ave - Floris Ave - City Proper - Floris Ave...
                         |           |           |             |            |

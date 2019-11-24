@@ -286,7 +286,7 @@ S
 Dirt Path~
    You are on a fairly wide dirt path. Grassy fields with huge willow
 trees scattered about lie to the east and west. The sun is very bright,
-making it almost difficult to see. Strange, sandy coloured dome shaped
+making it almost difficult to see. Strange, sandy colored dome shaped
 houses can be made out ahead.
 ~
 251 0 0 0 0 2
@@ -370,13 +370,13 @@ S
 #25114
 Grassy Field~
    You're on the eastern edge of a large grassy field. Waist high
-grasses completely surround you. A large sandy coloured building is
+grasses completely surround you. A large sandy colored building is
 to the north. The grass has been cut around the building, and a small
 stack of firewood is resting beside the door.
 ~
 251 4 0 0 0 2
 D0
-A sandy coloured building is North.
+A sandy colored building is North.
 ~
 ~
 0 -1 25119
@@ -394,7 +394,7 @@ S
 #25115
 Grassy Field~
    You're on the northwestern edge of a large grassy field. Waist high
-grasses completely surround you. The back of a large sandy coloured
+grasses completely surround you. The back of a large sandy colored
 building is directly north of you.
 ~
 251 0 0 0 0 2
@@ -411,7 +411,7 @@ The field continues South.
 S
 #25116
 Ape Village Entrance~
-   Just ahead you can see dozens of sandy coloured rounded buildings.
+   Just ahead you can see dozens of sandy colored rounded buildings.
 A small woooden guard booth has been errected on the eastern side of the
 road. A tall steel rod is attached to the side of the booth, and a large
 cloth flag attached to the top flaps in the wind. The flag has a picture
@@ -442,7 +442,7 @@ S
 #25117
 Grassy Field~
    You're on the northern edge of a large grassy field. Waist high
-grasses completely surround you. The back of a large sandy coloured
+grasses completely surround you. The back of a large sandy colored
 building is directly north of you.
 ~
 251 0 0 0 0 2
@@ -465,8 +465,8 @@ S
 #25118
 Grassy Field~
    You're on the northeastern edge of a large grassy field. Waist high
-grasses completely surround you. The back of a large sandy coloured
-building is directly north of you, and another sandy coloured building
+grasses completely surround you. The back of a large sandy colored
+building is directly north of you, and another sandy colored building
 is east of you.
 ~
 251 0 0 0 0 2
@@ -538,7 +538,7 @@ Ape Museum, Level 2
 S
 #25122
 Ape Road South~
-   You are on a well worn dirt road, in between two sandy coloured
+   You are on a well worn dirt road, in between two sandy colored
 buildings. The Wax Museum lies to the west, and the Weapons Shop is
 to the east. The Town Square is to the north.
 ~
@@ -650,7 +650,7 @@ Gorilla Training is to the East.
 0 -1 25128
 S
 #25128
-Gorilla Training Centre~
+Gorilla Training Center~
    You find yourself in a large, well lit gym. Exercise machines and
 weight benches are scattered around the room. Several straw dummies are
 positioned against the southern walls, with arrows and spears stuck in them.
@@ -699,7 +699,7 @@ S
 #25130
 Ape Village Square~
    This is the Ape Village Town Square. A large stone statue of the
-greatest Ape to ever live, the Law Giver, stands in the centre of the
+greatest Ape to ever live, the Law Giver, stands in the center of the
 square on a stone pedistal. The words "Ape will never kill ape!" are
 inscribed on the pedistal.
 ~
@@ -1017,7 +1017,7 @@ S
 #25144
 Ape Road North~
    Ape Road North is the road that leads to the Forbidden Zone.  To the west is
-a large pond and a park.  To the east is the amphitheatre with a few apes
+a large pond and a park.  To the east is the amphitheater with a few apes
 walking in and out.
 ~
 251 0 0 0 0 1
@@ -1027,7 +1027,7 @@ Ape Road continues North.
 ~
 0 -1 25149
 D1
-The amphitheatre is to the East.
+The amphitheater is to the East.
 ~
 ~
 0 -1 25145
@@ -1043,8 +1043,8 @@ A large pond is to the West.
 0 -1 25143
 S
 #25145
-Ape Amphitheatre~
-   You find yourself on the top level of a big amphitheatre. It's rounded,
+Ape Amphitheater~
+   You find yourself on the top level of a big amphitheater. It's rounded,
 with about 6 or 7 levels of seats. The bottom part is where Dr. Zaius and Ursus
 rally all the other apes.
 ~
@@ -1055,7 +1055,7 @@ Ape Road is to the West.
 ~
 0 -1 25144
 D5
-The Amphitheatre stage is Down.
+The Amphitheater stage is Down.
 ~
 ~
 0 -1 25151
@@ -1153,14 +1153,14 @@ Ape Road is to the West.
 0 -1 25149
 S
 #25151
-Amphitheatre Stage~
+Amphitheater Stage~
    Two seats are mounted into the northern wall, where Dr. Zaius and
 Ursus sit. You never noticed it before, but on the floor a small rounded
 trapdoor is barely visible beside the two seats.
 ~
 251 0 0 0 0 0
 D4
-The amphitheatre seats are Up.
+The amphitheater seats are Up.
 ~
 ~
 0 -1 25145

@@ -340,7 +340,7 @@ break
 done
 ~
 #11814
-(02) colouring message~
+(02) coloring message~
 0 gh 100
 ~
 if %actor.is_pc%
@@ -485,7 +485,7 @@ if %object.vnum% == 11807
     wait 1 s
     say Yes, there is something I could write in that...
     wait 1 s
-    say but would you do me a favour first?
+    say but would you do me a favor first?
     wait 2 s
     say My father keeps a little bird locked away...
     wait 2 s
@@ -847,7 +847,7 @@ if %object.vnum% == 11807
     wait 3 s
     emote turns his attention back to the twirling journal.
     wait 2 s
-    say You do realise shadow-person... that this quest of yours will destroy me?
+    say You do realize shadow-person... that this quest of yours will destroy me?
     wait 3 s
     say Indeed, not just myself, but all who dwell here.
     wait 2 s
@@ -2604,7 +2604,7 @@ elseif %object.vnum% == 11807
     remote zn118_scarreddone %actor.id%
     wait 1 s
     %load% obj 11868
-    say Do me one more favour?
+    say Do me one more favor?
     wait 1 s
     give book %actor.name%
     drop book

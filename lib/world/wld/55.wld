@@ -459,7 +459,7 @@ S
 The Repair Shop~
    One of the most popular shops in New Thalos, this shop is always a
 hive of activity.  It is almost inhuman the way one man can fix all
-types of armour singlehandedly.  If you have an item in need of repair
+types of armor singlehandedly.  If you have an item in need of repair
 simply give it to the man behind the counter.
 There is a small sign on the counter.
 ~
@@ -487,12 +487,12 @@ D1
 0 -1 5408
 S
 #5529
-Abdul's Armour~
-   The sound of hammering metal grows louder as you enter the armoury.
+Abdul's Armor~
+   The sound of hammering metal grows louder as you enter the armory.
 Young boys run to and fro carrying buckets of water and coal.  A few
-dwarves work on sections of armour in the back of the shop, their
+dwarves work on sections of armor in the back of the shop, their
 hammers working too fast to follow.  The walls are adorned in all of
-Abdul's prize creations.  Here you can purchase suits of armour meant
+Abdul's prize creations.  Here you can purchase suits of armor meant
 to keep monsters from hacking you into little pieces.
 A note on the wall beckons your attention.
 ~
@@ -618,7 +618,7 @@ E
 note~
    The note simply reads:
 @
-READ THE NOTE IN THE ARMOURY
+READ THE NOTE IN THE ARMORY
 @
                           Igor.
 ~

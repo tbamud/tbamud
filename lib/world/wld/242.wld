@@ -23,7 +23,7 @@ credits info~
     x---------------------------------------------------------------------x
      I found the stock Southern Midgaard to be really confusing, so I
      decided to write a new one. This new zone features about 100 rooms,
-     several new shops, a theatre, and a curling rink. I've used a few
+     several new shops, a theater, and a curling rink. I've used a few
      of the old Southern Midgaard rooms and objects, but everything else
      is totally different.
      Stuff You Need to Change:
@@ -73,7 +73,7 @@ maps~
            |       Computer      |        Empty    Clothing  |
          (Wall      Store        |                  Store  (Wall
           Road)                  |                          Road)
-           |        Garden       |        Theatre  City Hall |
+           |        Garden       |        Theater  City Hall |
            |          |          |          |         |      |
            +----------+--------Razor's------+---------+------+--Prison
            |          |        Square       |         |      |
@@ -103,7 +103,7 @@ MIDGAARD CURLING CLUB
    |
 Entrance
   3171
-MIDGAARD THEATRE
+MIDGAARD THEATER
 Catwalks---Catwalks---Catwalks---Catwalks
   3167       3168       3169       3170
    \
@@ -111,7 +111,7 @@ Catwalks---Catwalks---Catwalks---Catwalks
    Ladder
     3166
       \
-       \Back----Left----Centre----Right---Back---3164---Dressing
+       \Back----Left----Center----Right---Back---3164---Dressing
         Stage   Stage   Stage     Stage   Stage    |   Room 1 3165
         3159    3160    3161      3162    3163     |
           |                          |             |
@@ -127,7 +127,7 @@ Catwalks---Catwalks---Catwalks---Catwalks
          3137------Snack Booth-----3139----------3140
                       3138
                        |
-        Theatre        |
+        Theater        |
       Office 3136---Entrance
 ~
 S
@@ -350,7 +350,7 @@ roof juts out from the northern building, just above the door. The overhang
 sticks out about ten feet from the building, and is about twenty feet wide.
 All along the bottom edge of it are lightbulbs. A double glass door leads
 north, while a few signs have been set up here on the sidewalk. You
-recognize this as the entrance to the Midgaard Theatre.
+recognize this as the entrance to the Midgaard Theater.
 ~
 242 0 0 0 0 1
 D0
@@ -374,7 +374,7 @@ sign signs~
    The signs are all the same, and they look like this:
         x---------------------------------------------x
         |                                             |
-        |         MIDGAARD THEATRE PRESENTS:          |
+        |         MIDGAARD THEATER PRESENTS:          |
         |                                             |
         |       T H E   S T R E E T   V E N D O R     |
         |              F R O M   H E L L              |
@@ -695,8 +695,8 @@ D4
 0 -1 24235
 S
 #24226
-Midgaard Theatre~
-   You find yourself inside the lobby of the Midgaard Theatre. A rich
+Midgaard Theater~
+   You find yourself inside the lobby of the Midgaard Theater. A rich
 navy blue carpet covers the floor, while expensive looking wallpaper
 covers the walls. An elaborate chandelier hangs from the ceiling. A
 small ticket booth is located near the front door.
@@ -824,8 +824,8 @@ D5
 0 -1 24225
 S
 #24236
-Theatre Office~
-   You're in the theatre office. Posters from past performances cover
+Theater Office~
+   You're in the theater office. Posters from past performances cover
 the walls, and a thick dark carpet covers the floor. An ancient looking
 wooden desk sits in far end of the room, covered with papers and old
 documents. Only a single reading lamp is on, making this room fairly
@@ -838,10 +838,10 @@ D1
 0 -1 24226
 S
 #24237
-Theatre Corridor~
-   You're in the main theatre corridor. The walls and ceiling have been
+Theater Corridor~
+   You're in the main theater corridor. The walls and ceiling have been
 painted black, and the floor is also black. A dark wooden door leads south
-to the main part of the theatre.
+to the main part of the theater.
 ~
 242 12 0 0 0 0
 D0
@@ -855,7 +855,7 @@ D1
 S
 #24238
 Snack Booth~
-   You're in the main theatre corridor, at the snack booth. A bar has been
+   You're in the main theater corridor, at the snack booth. A bar has been
 built into the northern wall, and behind it a glass-doored fridge and a
 selection of snacks can been seen. In between scenes, audience members come
 here to get some food or a drink.
@@ -875,10 +875,10 @@ D3
 0 -1 24237
 S
 #24239
-Theatre Corridor~
-   You're in the main theatre corridor. The walls and ceiling have been
+Theater Corridor~
+   You're in the main theater corridor. The walls and ceiling have been
 painted black, and the floor is also black. A dark wooden door leads south
-to the main part of the theatre. A set of stairs leads down the the dressing
+to the main part of the theater. A set of stairs leads down the the dressing
 rooms.
 ~
 242 12 0 0 0 0
@@ -897,7 +897,7 @@ D5
 S
 #24240
 Dressing Room Hallway~
-   You're in the dressing room hallway, in the basement of the theatre. It's
+   You're in the dressing room hallway, in the basement of the theater. It's
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway. A
 wooden door leads south.
@@ -918,7 +918,7 @@ D4
 S
 #24241
 Left Aisle~
-   You're in the middle of the left aisle of the theatre. You can see the
+   You're in the middle of the left aisle of the theater. You can see the
 stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
@@ -939,7 +939,7 @@ D2
 S
 #24242
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they
+   You're in the seats of the theater. They're a dark red color, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -955,7 +955,7 @@ D3
 S
 #24243
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they
+   You're in the seats of the theater. They're a dark red color, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -971,7 +971,7 @@ D3
 S
 #24244
 Right Aisle~
-   You're in the middle of the right aisle of the theatre. You can see the
+   You're in the middle of the right aisle of the theater. You can see the
 stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
@@ -992,7 +992,7 @@ D3
 S
 #24245
 Dressing Room Hallway~
-   You're in the dressing room hallway, in the basement of the theatre. It's
+   You're in the dressing room hallway, in the basement of the theater. It's
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
@@ -1026,7 +1026,7 @@ D3
 S
 #24247
 Left Aisle~
-   You're in the middle of the left aisle of the theatre. You can see the
+   You're in the middle of the left aisle of the theater. You can see the
 stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
@@ -1047,7 +1047,7 @@ D2
 S
 #24248
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they
+   You're in the seats of the theater. They're a dark red color, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1063,7 +1063,7 @@ D3
 S
 #24249
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they
+   You're in the seats of the theater. They're a dark red color, and they
 feel very soft. You can see the stage, far in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1079,7 +1079,7 @@ D3
 S
 #24250
 Right Aisle~
-   You're in the middle of the right aisle of the theatre. You can see the
+   You're in the middle of the right aisle of the theater. You can see the
 stage up ahead, with some bright lights shining on it. All along the
 sides of the aisle on the floor are small lights, leading the way. It's
 very dark in here.
@@ -1100,7 +1100,7 @@ D3
 S
 #24251
 Dressing Room Hallway~
-   You're in the dressing room hallway, in the basement of the theatre. It's
+   You're in the dressing room hallway, in the basement of the theater. It's
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
@@ -1134,7 +1134,7 @@ D3
 S
 #24253
 Left Aisle~
-   You're in the middle of the left aisle of the theatre. The stage is now
+   You're in the middle of the left aisle of the theater. The stage is now
 directly in front of you, with some stairs leading up to it. Bright
 lights shine all across it, making it look quite bright.
 ~
@@ -1154,7 +1154,7 @@ D4
 S
 #24254
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they
+   You're in the seats of the theater. They're a dark red color, and they
 feel very soft. You can see the stage, just in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1170,7 +1170,7 @@ D3
 S
 #24255
 In the Seats~
-   You're in the seats of the theatre. They're a dark red colour, and they
+   You're in the seats of the theater. They're a dark red color, and they
 feel very soft. You can see the stage, just in front of you. Except for the
 lights of the stage, this area is totally dark.
 ~
@@ -1186,7 +1186,7 @@ D3
 S
 #24256
 Right Aisle~
-   You're in the middle of the right aisle of the theatre. The stage is now
+   You're in the middle of the right aisle of the theater. The stage is now
 directly in front of you, with some stairs leading up to it. Bright
 lights shine all across it, making it look quite bright.
 ~
@@ -1206,7 +1206,7 @@ D4
 S
 #24257
 Dressing Room Hallway~
-   You're in the dressing room hallway, in the basement of the theatre. It's
+   You're in the dressing room hallway, in the basement of the theater. It's
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
@@ -1269,7 +1269,7 @@ Left Stage~
    You're on stage, at the left end. Lights shine down from above, partially
 blinding you. No sets are currently assembled, only a massive curtain hangs
 behind you. The floor is of solid wood, and makes a slight creaking sound
-as you walk. You can see the entire theatre from here. An opening in the
+as you walk. You can see the entire theater from here. An opening in the
 curtain leads west, backstage.
 ~
 242 8 0 0 0 0
@@ -1287,11 +1287,11 @@ D5
 0 -1 24253
 S
 #24261
-Centre Stage~
+Center Stage~
    Lights shine down from above, partially blinding you. No sets are
 currently assembled, only a massive curtain hangs behind you. The floor is
 of solid wood, and makes a slight creaking sound as you walk. You can see
-the entire theatre from here.
+the entire theater from here.
 ~
 242 8 0 0 0 0
 D1
@@ -1308,7 +1308,7 @@ Right Stage~
    You're on stage, at the right end. Lights shine down from above,
 partially blinding you. No sets are currently assembled, only a massive
 curtain hangs behind you. The floor is of solid wood, and makes a slight
-creaking sound as you walk. You can see the entire theatre from here. An
+creaking sound as you walk. You can see the entire theater from here. An
 opening in the curtain leads east, backstage.
 ~
 242 8 0 0 0 0
@@ -1353,7 +1353,7 @@ sign~
 S
 #24264
 Dressing Room Hallway~
-   You're in the dressing room hallway, in the basement of the theatre. It's
+   You're in the dressing room hallway, in the basement of the theater. It's
 fairly narrow, with dark wallpaper covering the walls. A row of lights hangs
 from the ceiling. Dressing room doors can been seen all along the hallway.
 ~
@@ -1421,7 +1421,7 @@ D5
 S
 #24268
 Catwalk~
-   You're at the top of the theatre, on the catwalks. The floor is built
+   You're at the top of the theater, on the catwalks. The floor is built
 out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
@@ -1438,7 +1438,7 @@ D3
 S
 #24269
 Catwalk~
-   You're at the top of the theatre, on the catwalks. The floor is built
+   You're at the top of the theater, on the catwalks. The floor is built
 out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
@@ -1455,7 +1455,7 @@ D3
 S
 #24270
 Catwalk~
-   You're at the top of the theatre, on the catwalks. The floor is built
+   You're at the top of the theater, on the catwalks. The floor is built
 out of steel grating, and a railing has been built out of metal bars.
 Everything has been painted black. From here, you have a great view
 of the stage, as you can see everything perfectly.
@@ -1470,7 +1470,7 @@ S
 Midgaard Curling Club Entrance Hall~
    You're in the entrance hall of the Midgaard Curling Club. A grey carpet
 runs down the hallway, where it ends at a set of stairs leading up and to
-the east. The walls are a pale beige colour, and an ancient looking tile
+the east. The walls are a pale beige color, and an ancient looking tile
 ceiling is slowly rotting away. This place looks like it's at least fifty
 years old.
 ~

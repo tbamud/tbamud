@@ -187,7 +187,7 @@ wooden stick breaking the smoothness of the horizon.
 ~
 0 0 1901
 D2
-   The ground becomes an almost unnatural red colour, glimpses of something
+   The ground becomes an almost unnatural red color, glimpses of something
 sparkling winking in and out like stars amongst the mud.
 ~
 ~
@@ -227,7 +227,7 @@ above the watery ground.
 ~
 0 0 1903
 D2
-   The soil seems to become more copper-coloured toward the south, a slight
+   The soil seems to become more copper-colored toward the south, a slight
 smell of metal and rust carrying on the air.
 ~
 ~
@@ -238,7 +238,7 @@ T 1971
 Bloodied Soil~
    Scarlet stains blossom here and there like spreading wounds in the soil,
 giving the impression that this place has not recovered from some ancient
-battle.  Glimpses of metal can be seen half-buried in the ground, the armour and
+battle.  Glimpses of metal can be seen half-buried in the ground, the armor and
 weapons of some long-decayed army.
 ~
 19 0 0 0 0 2
@@ -255,8 +255,8 @@ wafting on the western air.
 ~
 0 0 1906
 E
-glimpses metal armour weapons~
-   Small pieces of weaponry and armour protrude from the ground like shrapnel,
+glimpses metal armor weapons~
+   Small pieces of weaponry and armor protrude from the ground like shrapnel,
 so deeply rusted and swallowed in mud that they are practically irretrievable
 and are obviously of no further use for warring.
 ~
@@ -269,8 +269,8 @@ S
 T 1971
 #1906
 Crimson Waters~
-   Old rusted weapons and armour lie half rotted in scattered pools of slime.
-The rust has leached into the water, discolouring it deep red and filling the
+   Old rusted weapons and armor lie half rotted in scattered pools of slime.
+The rust has leached into the water, discoloring it deep red and filling the
 air with the overwhelming stench of decay and the sickly metallic scent of
 blood.
 ~
@@ -300,7 +300,7 @@ organic kinds.  The water is presumably toxic as it is so saturated with rust
 and rot that it glints scarlet in the light.
 ~
 E
-old rusted weapons armour rotted~
+old rusted weapons armor rotted~
    These battered pieces of metal and algae-encrusted leather are all that is
 left of an obviously mighty battle.  There are no corpses to be found, all that
 died presumably devoured by creatures here or rotted long before these metals
@@ -505,7 +505,7 @@ downward as it becomes increasingly submerged in the mud.
 ~
 0 0 1914
 D2
-   A foul smell wafts on the discoloured air, water bubbling and simmering away
+   A foul smell wafts on the discolored air, water bubbling and simmering away
 to the south.
 ~
 ~
@@ -579,7 +579,7 @@ stonework.
 ~
 0 0 1908
 D3
-   Dark discoloured water churns gently in the breeze, the slippery algae-laden
+   Dark discolored water churns gently in the breeze, the slippery algae-laden
 surface glinting with each ripple.
 ~
 ~
@@ -627,7 +627,7 @@ north.
 ~
 0 0 1921
 D1
-   Dark discoloured water churns gently in the breeze, the slippery algae-laden
+   Dark discolored water churns gently in the breeze, the slippery algae-laden
 surface glinting with each ripple.
 ~
 ~
@@ -813,7 +813,7 @@ place is rotting.
 E
 shelled creatures~
    Little snails, and the encrustations of crabs and mollusks decorate the
-surfaces with their coloured remains.  It is impossible to tell which of these
+surfaces with their colored remains.  It is impossible to tell which of these
 are alive and which are long dead, most seem perfectly content to stay
 completely motionless.
 ~
@@ -872,7 +872,7 @@ T 1971
 #1926
 Flooded Cave~
    Scarce light penetrates the dark waters of this cavern, but what little can
-be seen is slick with swamp slime and mosses, the odd glittering piece of armour
+be seen is slick with swamp slime and mosses, the odd glittering piece of armor
 shining like stars from the inky depths below.
 ~
 19 13 0 0 0 9
@@ -889,7 +889,7 @@ same sparkling pieces of metal sliding in and out of view.
 ~
 0 0 1954
 E
-glittering armour~
+glittering armor~
    Once in a while, something shiny moves to the surface, lingering just long
 enough to reveal itself as a piece of warrior's equipment before sinking back
 down into the deep.
@@ -911,7 +911,7 @@ outside the enclosure.
 S
 #1928
 Sunken Road~
-   Small pieces of coloured glass glint up from beneath the water, broken bits
+   Small pieces of colored glass glint up from beneath the water, broken bits
 of slate and chunks of stone mixing with the wreckage to create an unstable
 surface for walking on, the slick overgrowth of plant life making it even more
 treacherous.
@@ -1036,7 +1036,7 @@ S
 #1933
 A Primitive Throne Room~
    A great fire burns in the middle of this room, giving off the horrible stench
-of some cooking flesh.  Bits and pieces of broken armour and swords are hung
+of some cooking flesh.  Bits and pieces of broken armor and swords are hung
 here and there as decoration for the walls, along with various animal and
 humanoid skulls.  At the far north end, several swords have been tied together
 and bent to form a crude jewelled throne.  To the south, two large bamboo gates
@@ -1055,14 +1055,14 @@ great fire~
 flesh and burning leather wafting in the smokey air around it.
 ~
 E
-pieces broken armour decoration walls~
+pieces broken armor decoration walls~
    Glittering pieces of broken and bent metal embed the walls like jewels, no
 doubt serving the secondary purpose of displaying the vanquishing of foes.
 ~
 E
 swords crude jewelled throne~
    These rather beautiful swords have been carelessly bent and fastened together
-to form a slightly unusual but attractive throne, coloured gems sparkling in the
+to form a slightly unusual but attractive throne, colored gems sparkling in the
 hilts and firelight reflecting off the still shiny metal.
 ~
 S
@@ -1563,7 +1563,7 @@ S
 #1955
 Opening in a Circle of Trees~
    All around, the ancient and brittle bark of dying trees fills all view, the
-odd green shoot of a struggling youngster colouring the gloominess, and the
+odd green shoot of a struggling youngster coloring the gloominess, and the
 scent of new plant life freshening the air, even as fungi consume the rotting
 elders.
 ~
@@ -1820,7 +1820,7 @@ T 1971
 Bend in an Ancient Path~
    Water sloshes noisily down this path which slopes downward to the west,
 coated slightly with the glassy sheen of an inch or two of clear running water,
-the carefully laid mosaic stones and coloured glass can clearly be seen.
+the carefully laid mosaic stones and colored glass can clearly be seen.
 ~
 19 0 0 0 0 2
 D0
@@ -1950,9 +1950,9 @@ D4
 0 0 1972
 S
 #1974
-Jumbled Armoury~
+Jumbled Armory~
    A rough walkway has been cleared through the piles of dented and rusting
-armour that lie here.  Miscellaneous scavenged shields and pieces of equipment
+armor that lie here.  Miscellaneous scavenged shields and pieces of equipment
 lie scattered around in varying states of decay or repair.  A few finer pieces
 hang along the wall, ready for use.
 ~
@@ -2336,7 +2336,7 @@ Place of Plunder~
    Dancing light from several wall-hung torches keeps the whole room aglow as if
 with sunfire.  Gold and silver alike generously line the walls and floor as if
 some incredible heat simply melted the treasure into the structure all at once.
-Sparkling jewels and gems of many colours glitter from assorted piles like
+Sparkling jewels and gems of many colors glitter from assorted piles like
 bundles of freshly picked flowers, left scattered around the many ornamental
 chests as though for casual decoration.
 ~
@@ -2347,9 +2347,9 @@ D1
 0 0 1988
 S
 #1996
-Regal Armoury~
+Regal Armory~
    The ghostly figures of several wooden mannikins stand eerily in this
-dimly-lit room, display stands for various sets and pieces of armour.  Coats of
+dimly-lit room, display stands for various sets and pieces of armor.  Coats of
 mail glisten beautifully from the shadowy corners, fine mesh and dark admantite
 alike being woven into regal pieces adorned with gems.  Elaborate helmets and
 visors stand encased within crystal columns, and glittering shields shine from
