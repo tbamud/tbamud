@@ -2,7 +2,7 @@
 Seabreeze/Landbreeze - All Rooms~
 2 b 75
 ~
-if ( %time.hour% >=7 && %time.hour% <=19)
+if (%time.hour% >=7 && %time.hour% <=19)
   %echo% @WA seabreeze arrives from the south, bringing in the smell of salt.@n
   return 0
 else
@@ -21,7 +21,7 @@ return 0
 Seabreeze only - all~
 2 b 100
 ~
-if ( %time.hour% >=7 && %time.hour% <=19)
+if (%time.hour% >=7 && %time.hour% <=19)
   %echo% @WA seabreeze arrives from the south, bringing in the smell of salt.@n
   return 0
 end
@@ -99,7 +99,7 @@ in room 1233.
 the crabs sleep - 20101~
 0 b 100
 ~
-if ( %time.hour% <=7 || %time.hour% >=19)
+if (%time.hour% <=7 || %time.hour% >=19)
   eval line %random.5%
   switch %line%
     case 1
@@ -133,7 +133,7 @@ end
 seagull sleeps/wake - 20103~
 0 b 100
 ~
-if ( %time.hour% <=5 || %time.hour% >=18)
+if (%time.hour% <=5 || %time.hour% >=18)
   south
   %teleport% %self% 20110
   wait 2 secs
@@ -908,7 +908,7 @@ wait 5
 More effects - 20147~
 2 b 100
 ~
-if ( %time.hour% >=6 && %time.hour% <=17)
+if (%time.hour% >=6 && %time.hour% <=17)
   %echo% A bird sings from the nearby tree.
   return 0
 else

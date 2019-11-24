@@ -80,7 +80,7 @@ end
 Quest 2 give obj. (mob 34502)~
 0 j 100
 ~
-if %object.vnum( 34502 )%
+if %object.vnum(34502)%
   wait 1 s
   say Thank you.
   say Now for your information
