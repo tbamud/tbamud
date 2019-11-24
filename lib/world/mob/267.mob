@@ -97,7 +97,7 @@ crab~
 a small, red crab~
 A small, red crab scuttles along the beach.
 ~
-   This small creature has rather large pincers for its negligble size.  It
+   This small creature has rather large pincers for its negligible size.  It
 looks benign, but probably wouldn't appreciate being attacked.
 ~
 88 0 0 0 0 0 0 0 0 E
@@ -199,7 +199,7 @@ The High Priest of Terror stands before you in all her majesty.
    How shocking!  Out of all the types of people you would expect to see in
 this kind of position, you didn't expect to see someone this beautiful and
 kind- looking.  She stands about 2 meters tall, and while she is obviously very
-strong, she is also quite voluptious.  She looks at you with the most
+strong, she is also quite voluptuous.  She looks at you with the most
 sympathetic eyes--you just want to give yourself over to her.
 ~
 88 0 0 0 16 0 0 0 -1000 E
@@ -272,7 +272,7 @@ interrogator inquisitor grand~
 the Grand Inquisitor~
 The Grand Inquisitor of Despair looks you up and down appraisingly.
 ~
-   This man looks just like the others, except for an uncharactistic gleam in
+   This man looks just like the others, except for an uncharacteristic gleam in
 his eye.  He looks quite sinister, as though he expects to get information out
 of you--whether you know it or not.
 ~
@@ -288,7 +288,7 @@ the Priest of Hopelessness~
 The Priest of Hopelessness stands here, waiting to remove all hope of leaving.
 ~
    The priest looks back at you indignantly and says, "how dare you attempt to
-look at me!?  " and prompty attacks you.
+look at me!?  " and promptly attacks you.
 ~
 10 0 0 0 1048576 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3

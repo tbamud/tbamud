@@ -229,7 +229,7 @@ switch %forest_sounds%
     %echo% @gThe gently chirping of crickets peacefully resonate across the forest.@n
   break
   case 2
-    %echo% A haze of @yfir@Wefl@yies@n dart inbetween some ancient cedars.
+    %echo% A haze of @yfir@Wefl@yies@n dart in between some ancient cedars.
   break
   case 3
     %echo% @DA thick fog drifts in, dampening the moss.@n
@@ -289,7 +289,7 @@ switch %forest_sounds%
     %echo% @gA relaxed nattering can be heard in the top of a tree to the south.@n
   break
   case 22
-    %echo% A hedgehog slowly wanders inbetween some trees and out of view.
+    %echo% A hedgehog slowly wanders in between some trees and out of view.
   break
   case 23
     %echo% A faint wind breathes in from all directions, steeping the mists.

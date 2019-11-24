@@ -61,8 +61,8 @@ Int: 25
 Wis: 25
 E
 #12504
-looter thiefing~
-a thiefing looter~
+looter thieving~
+a thieving looter~
 A thief sulks along the street looting the abandoned homes.
 ~
    This looter is taking advantage of the city's downfall and has amassed a
@@ -201,7 +201,7 @@ Atropos~
 Atropos is here selling baked items.
 ~
    He smiles at your patronage and claps his hands together causing a spray of
-flower everwhere.  Atropos says, 'What can I get ya today?  '
+flower everywhere.  Atropos says, 'What can I get ya today?  '
 ~
 16394 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -252,7 +252,7 @@ the elite guard~
 an elite temple guard~
 An elite temple guard is here.
 ~
-   Ther guard has worked his way through the ranks from a mere soldier to his
+   The guard has worked her way through the ranks from a mere soldier to her
 present day exulted position as an elite guard.  She seems very proud of
 herself.
 ~

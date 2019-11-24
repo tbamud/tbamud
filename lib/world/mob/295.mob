@@ -31,7 +31,7 @@ a cannibal~
 A cannibal stands here looking hungry!
 ~
    Looks a little like the guards that were on the gate, but with one
-differance.  This guy has bits of meat and blood all over him.  Guess where it
+difference.  This guy has bits of meat and blood all over him.  Guess where it
 came from!
 ~
 6186 0 0 0 0 0 0 0 -100 E
@@ -84,7 +84,7 @@ chief cannibal~
 the cannibal chief~
 The cannibal chief looks very annoyed at your intrusion!
 ~
-   This guy looks realy mean!  Maybe you have walked in on the middle of a
+   This guy looks really mean!  Maybe you have walked in on the middle of a
 meal.  Just hope that you don't end up as the next course!
 ~
 6186 0 0 0 0 0 0 0 -300 E
@@ -134,10 +134,10 @@ BareHandAttack: 6
 E
 #29510
 a female ape~
-a femal ape~
+a female ape~
 A female ape jumps about wildly!
 ~
-   She looks the same as the large apes realy.  Smelly dirty, and horible.
+   She looks the same as the large apes really.  Smelly dirty, and horrible.
 ~
 142 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1

@@ -277,7 +277,7 @@ variable questmaster master~
 the variable questmaster~
 The variable questmaster is waiting to set you.
 ~
-   This questmaster will save a variable to your player file to remember wether
+   This questmaster will save a variable to your player file to remember whether
 or not you have done his quest.  This way you can only do this quest once.
 ~
 10 0 0 0 0 0 0 0 0 E

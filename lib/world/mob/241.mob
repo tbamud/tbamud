@@ -279,7 +279,7 @@ a slightly dangerous alien~
 Drooling everywhere is a slightly dangerous-looking alien.
 ~
    This alien has brown and green scales, 4 limbs and 2 tentacles.  He has evil
-green eyes and rows of sharp teeth pertruding from his dog-like mouth.
+green eyes and rows of sharp teeth protruding from his dog-like mouth.
 ~
 10 0 0 0 0 0 0 0 0 E
 20 14 -2 4d4+200 3d3+3
@@ -292,7 +292,7 @@ a very dangerous alien~
 Snarling with rage, a very dangerous-looking alien salivates.
 ~
    This alien is completely red and is covered with hundreds of sharp horns that
-reach from the two at the eides of his head, down his spine and to the tip of
+reach from the two at the sides of his head, down his spine and to the tip of
 his devil-like tail.
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -305,7 +305,7 @@ klingon warrior~
 a fearsome Klingon warrior~
 Practicing with his batleth, is a fearsome-looking Klingon warrior.
 ~
-   His face is a dark brown and his quite distinct, with it's pertruding
+   His face is a dark brown and his quite distinct, with it's protruding
 forehead scales and his devious-looking eyes.  He is fully armored and appears
 to be quite skilled with his batleth.
 ~
@@ -334,9 +334,9 @@ an experimental android~
 Half completed, an experimental android stands here, de-activated.
 ~
    The android was never completed and therefore, has no gender.  It has 2 legs,
-a torso, a head and an eletronic mind, but lacks any arms.  It wears no clothes
+a torso, a head and an electronic mind, but lacks any arms.  It wears no clothes
 and only has a half-finished skin-implant.  Because of this, the android looks
-spotched with a disease.  Where the skin failed to cover, silvery mechanical
+splotched with a disease.  Where the skin failed to cover, silvery mechanical
 parts and micro-chips can be seen.  It is currently de-activated but can be
 re-activated by pressing a switch up behind it's left shoulder-blade.
 
@@ -354,9 +354,9 @@ an experimental android~
 Half completed, an experimental android stands here, examining its surroundings.
 ~
    It looks unfinished.  The android was never completed and therefore, has no
-gender.  It has 2 legs, a torso, a head and an eletronic mind, but lacks any
+gender.  It has 2 legs, a torso, a head and an electronic mind, but lacks any
 arms.  It wears no clothes and only has a half-finished skin-implant.  Because
-of this, the android looks spotched with a disease.  Where the skin failed to
+of this, the android looks splotched with a disease.  Where the skin failed to
 cover, silvery mechanical parts and micro-chips can be seen.  It has been
 re-activated and is ready to accept vocal command programming.
 ~
