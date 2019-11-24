@@ -281,7 +281,7 @@ else
 end
 ~
 #11714
-Chieftan Attacks You - 11709~
+Chieftain Attacks You - 11709~
 0 g 100
 ~
 * This trigger has been exported 'as is'. This means that vnums

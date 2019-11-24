@@ -52,9 +52,9 @@ deathwish...
 BareHandAttack: 3
 E
 #25204
-vampyre greater~
-a Greater Vampyre~
-A Greater Vampyre flings himself on you in a frenzy of Bloodlust!
+vampire greater~
+a Greater Vampire~
+A Greater Vampire flings himself on you in a frenzy of Bloodlust!
 ~
    You really don't have the time to stop and check this guy out, he is
 attacking you!
@@ -66,9 +66,9 @@ attacking you!
 BareHandAttack: 4
 E
 #25205
-vampyre lesser~
-a Lesser Vampyre~
-A Lesser Vampyre attacks with a power that only a vampyre could possess.
+vampire lesser~
+a Lesser Vampire~
+A Lesser Vampire attacks with a power that only a vampire could possess.
 ~
    Watch the teeth - something you were supposed to remember about the teeth.
 ~
@@ -79,8 +79,8 @@ A Lesser Vampyre attacks with a power that only a vampyre could possess.
 BareHandAttack: 8
 E
 #25206
-Lord vampyre~
-the Vampyre Lord~
+Lord vampire~
+the Vampire Lord~
 A huge, terrifying man-like thing is about to bite your neck.
 ~
    He moves so fast, it is hard to tell anything about him at all.

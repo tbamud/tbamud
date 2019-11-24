@@ -18,7 +18,7 @@ a diamond-back rattle snake~
 A diamond-back rattle snake is coiled up ready to strike.
 ~
    A diamond-back rattle snake is coiled up amongst the rocks here ready to
-strike at anything that moves or trys to step on it.
+strike at anything that moves or tries to step on it.
 ~
 72 0 0 0 0 0 0 0 0 E
 17 15 0 3d3+170 2d2+2
@@ -43,7 +43,7 @@ E
 #23903
 red scorpion~
 a red scorpion~
-A red scorpion quivers its posion stinger at you.
+A red scorpion quivers its poisoned stinger at you.
 ~
    A red scorpion is the largest of all scorpions and quivers its deadly
 stinger at you with confidence of victory.
@@ -57,7 +57,7 @@ E
 #23904
 black scorpion~
 a black scorpion~
-A black scorpion is sharpening its viscious stinger here.
+A black scorpion is sharpening its vicious stinger here.
 ~
    A black scorpion passes its time while waiting for victims by polishing its
 armor and sharpening its deadly stinger.
@@ -219,7 +219,7 @@ eagle brown bird~
 a brown eagle~
 A brown eagle has sharp claws of steel.
 ~
-   The eagle is a magnificant bird of prey, has sharp eyesight, claws to grasp
+   The eagle is a magnificent bird of prey, has sharp eyesight, claws to grasp
 it's prey, and a 15 macra wingspan.
 ~
 2140 0 0 0 524304 0 0 0 0 E
@@ -480,7 +480,7 @@ An elf slave is pacing the cell.
 ~
    An elf slave is anxious and wants to find a way to escape slavery by his
 drow captors.  He has been forced to mine for them and has been beaten,
-whipped, and humilitated by the drow guards.  He is weak and has lost hope of
+whipped, and humiliated by the drow guards.  He is weak and has lost hope of
 rescue by his friends.
 ~
 74 0 0 0 16 0 0 0 1000 E

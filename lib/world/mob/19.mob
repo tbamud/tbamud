@@ -84,7 +84,7 @@ a tiny lizard hatchling~
 A tiny lizard hatchling crawls about.
 ~
    This tiny lizard is humanoid but crawling about on four legs as though
-newly-born.  Soft transluscent scales cover its whole body and its small eyes
+newly-born.  Soft translucent scales cover its whole body and its small eyes
 are still squinted shut as though asleep.
 ~
 10 0 0 0 0 0 0 0 0 E
@@ -115,7 +115,7 @@ The bullywug subleader patrols cautiously.
    This large, bipedal amphibian looks almost like a frog.  Covered in smooth,
 mottled olive green hide he looks naturally well-armored.  A wide gaping mouth
 covers much of his face, the only other noteworthy feature being his large
-bulbousy eyes that peer keenly about.
+bulbous eyes that peer keenly about.
 ~
 20568 0 0 0 0 0 0 0 -200 E
 18 14 0 3d3+180 3d3+3
@@ -129,7 +129,7 @@ a jet-black crow~
 A jet-black crow hops warily along the ground.
 ~
    This large bird is covered in shimmering inky feathers that glisten almost
-irridescent in any light.  Its large, sharp beak is curved and predatory, as is
+iridescent in any light.  Its large, sharp beak is curved and predatory, as is
 the look in its tiny beaded eyes.
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -178,8 +178,8 @@ a cross spider~
 A cross spider scuttles about warily.
 ~
    This rather plain-looking spider has the characteristic sleek legs and large
-fangs of its more dangerous arachnoid kin.  Large bulbous eyes peer keenly and
-evily about, watching for any opportunity this creature could take to capture a
+fangs of its more dangerous arachnid kin.  Large bulbous eyes peer keenly and
+evilly about, watching for any opportunity this creature could take to capture a
 new meal.
 ~
 104 0 0 0 0 0 0 0 -400 E
@@ -194,8 +194,8 @@ a bolas spider~
 A bolas spider clicks its fangs, filling the air with a heady scent.
 ~
    The air seems vaguely foggy around this creature, a powerful almost
-hypnotising scent wafting around it.  The natural pheremones of this animal are
-apparantly as deadly as they are intoxicating, judging by the predatory gleam in
+hypnotizing scent wafting around it.  The natural pheromones of this animal are
+apparently as deadly as they are intoxicating, judging by the predatory gleam in
 its calculating eyes.
 ~
 72 0 0 0 0 0 0 0 -400 E
@@ -208,7 +208,7 @@ T 1914
 #1913
 fishing spider~
 a fishing spider~
-A fishing spider scurries about on spindley legs.
+A fishing spider scurries about on spindly legs.
 ~
    This delicate-looking spider is light and agile enough to run across the
 surface of still waters with its long, slender legs.  Small in size and almost
@@ -242,7 +242,7 @@ widow spider~
 a widow spider~
 A widow spider wanders silently about.
 ~
-   This black bulbousy spider has an unproportionately large belly, scarlet
+   This black bulbous spider has an unproportionately large belly, scarlet
 markings decorating its black hide like fresh blood.  Abnormally large poison
 sacks are visible behind its substantial fangs, indicating that this spider's
 bite could be worse than most.
@@ -422,7 +422,7 @@ an enormous whisper spider~
 An enormous whisper spider stirs from her blanket of webbing.
 ~
    This massive spider is almost ten feet in width, long jointed legs clicking
-slightly as they support the weight of its huge bulbousy black body.  The two
+slightly as they support the weight of its huge bulbous black body.  The two
 signature grey stripes of the whisper species mark this creature's underbelly,
 and two blood red eyes peer effortlessly through the dark.
 ~
@@ -505,7 +505,7 @@ tiny fly glittering dragonfly~
 a tiny glittering dragonfly~
 A tiny glittering dragonfly flexes its wings.
 ~
-   This tiny jewelled insect is sleek and shimmering with beautiful irridescent
+   This tiny jewelled insect is sleek and shimmering with beautiful iridescent
 colors.  Fragile silvery wings open and close reflexively as it rests, delicate
 metallic veins sparkling as they catch the light.
 ~
@@ -525,7 +525,7 @@ A scruffy-haired gnome rubs his eyes, blinking with confusion.
 being the lighter build of his gnomish kin.  Long wisps of frizzy grey hair
 stick out haphazardly from both his head and his large, pointed ears.
 Friendly-faced, his skin is lined with many years of laughter and sorrow alike,
-wise grey eyes twinkling with a stubborn humour.
+wise grey eyes twinkling with a stubborn humor.
 ~
 10 0 0 0 0 0 0 0 100 E
 17 15 0 3d3+170 2d2+2

@@ -3,7 +3,7 @@ assistant stonewright shopkeeper trader~
 the stonewrights' assistant~
 The assistant to the stonewright is here, ready to sell you some stones.
 ~
-   The stonewrights' assistant is a musculous man, obviously strong from
+   The stonewrights' assistant is a muscular man, obviously strong from
 helping the stonewright with the rocks.  And he obviously has been sent here,
 because he's expendable - the stonewright wasn't...
 ~
@@ -15,7 +15,7 @@ E
 #23602
 weaponsmith assistant trader~
 the weaponsmiths' assistant~
-The assistant to the dwarven weaponsmith is ready to fo business with you here.
+The assistant to the dwarven weaponsmith is ready to do business with you here.
 ~
    The weaponsmith himself is too valuable to the dwarven community to stand in
 these halls.  His assistant, on the other hand, is still a young dwarf, who
@@ -64,7 +64,7 @@ guard trade~
 the trade guard~
 A guard is here, keeping an eye on the flow of traders.
 ~
-   This dwarf has foumd a good spot, from which he can see if people are
+   This dwarf has found a good spot, from which he can see if people are
 carrying stolen goods from the trade area.  He looks ready to call for backup,
 if needed.
 ~
@@ -80,7 +80,7 @@ The sergeant of the guards is patrolling the trade halls, eyeing you suspiciousl
 ~
    A short look on this dwarf makes you realize he might not actually want to
 be here, but has been ordered by his superiors to go around here, almost under
-open sky, compared to his warm cosy bunk in the barraks in the town itself.
+open sky, compared to his warm cosy bunk in the barracks in the town itself.
 He seems to be just on the verge of becoming provocative just to get a fight
 going.  He still keeps his poor men busy, though.
 ~
@@ -175,7 +175,7 @@ foreman dwarf miner~
 the dwarven foreman~
 You are being watch by a dwarf, who spends most of his time watching others work.
 ~
-   The foreman stares back at you.  He says, 'You are interupting the work - Go
+   The foreman stares back at you.  He says, 'You are interrupting the work - Go
 away !'
 ~
 6216 0 0 0 0 0 0 0 450 E
@@ -229,7 +229,7 @@ guard sergeant dwarf~
 a sergeant of the kings guard~
 A sergeant of the kings guard is getting his people lined up for inspection.
 ~
-   Battlescarred, and ready to get more of them, he looks like everything you'd
+   Battle-scarred, and ready to get more of them, he looks like everything you'd
 expect an old military career-dwarf to look.  You don't think irritating him
 would be such a good idea.
 ~
@@ -244,7 +244,7 @@ a dwarven lieutenant~
 A Lieutenant is inspecting the troops.
 ~
    Being lieutenant in the dwarven army is not easy.  You have captains trying
-to keep you down, seargants trying to get you demoted and other lieutenants
+to keep you down, sergeants trying to get you demoted and other lieutenants
 trying to make you look bad in front of the captain.  This lieutenant looks
 quite strong and ready to beat the crap out of anyone disrupting his chances of
 promotion.
@@ -259,7 +259,7 @@ captain guard dwarf~
 a dwarven captain~
 A captain of the guard is looking extremely important here.
 ~
-   He has an aura of importance surroundung him.  He seems busy doing
+   He has an aura of importance surrounding him.  He seems busy doing
 absolutely nothing right now, but the scars on his face, the muscles on his
 arms suggest he is ready for combat, should it be necessary.
 ~
@@ -288,8 +288,8 @@ the dwarven minister of trade~
 The dwarven minister of trade is an important person. And he's here.
 ~
    It has taken some time for this old dwarf to get to the position he's at
-today.  He is a master of retoric and can talk almost any salesman down in
-price, while sellig his own goods more and more expensively.
+today.  He is a master of rhetoric and can talk almost any salesman down in
+price, while selling his own goods more and more expensively.
 ~
 2058 0 0 0 0 0 0 0 400 E
 14 16 1 2d2+140 2d2+2
@@ -301,7 +301,7 @@ dwarf cleric~
 the dwarven cleric~
 The dwarven cleric is here, praying.
 ~
-   An old, whitebearded dwarf, he seems to have been here as long as the rock
+   An old, white-bearded dwarf, he seems to have been here as long as the rock
 walls around you.  He looks at you with eyes sad with age.  He slowly lowers
 his head, while mumbling something like 'Too late for saving..  ..  Had I been
 younger...  '
@@ -331,7 +331,7 @@ E
 #23623
 dwarf male~
 a dwarf~
-A longbearded dwarf is walking here.
+A long-bearded dwarf is walking here.
 ~
    He has got a long beard, a small body and strong limbs.  A dwarf if you ever
 saw one.
@@ -345,7 +345,7 @@ T 23604
 #23624
 dwarf woman female~
 a dwarf woman~
-A longbearded dwarf woman is walking here.
+A long-bearded dwarf woman is walking here.
 ~
    Had she not worn her clothes in a slightly different way than the men, you
 might have mistaken her for one.  The beard, stoutness and strong limbs are all
@@ -377,7 +377,7 @@ a dwarven miner ~
 A dwarven miner has heard the bell and is now looking for whoever stole the titanium.
 ~
    This fierce-looking dwarf is ready to give his life to stop thieves from
-stealing the hardearned titanium he and his fellow miners has been mining
+stealing the hard-earned titanium he and his fellow miners has been mining
 lately.
 ~
 2090 0 0 0 0 0 0 0 800 E
@@ -391,7 +391,7 @@ a dwarven miner~
 A dwarven miner is here, taking a break.
 ~
    This old dwarf has a beard that almost reaches his toes.  He's so used to
-walkng around in the mines he almost needs no light.
+walking around in the mines he almost needs no light.
 ~
 72 0 0 0 0 0 0 0 800 E
 10 17 4 2d2+100 1d2+1
