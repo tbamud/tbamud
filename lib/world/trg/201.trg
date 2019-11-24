@@ -517,7 +517,7 @@ if (%arg%==aurorafall)
       %echoaround% %actor% @W%actor.name% whirls @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W around %actor.himher% creating @bf@Br@Co@Wzen illusions of the blade.@n
       %send% %actor% @WYou whirl @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W around you, creating @bf@Br@Co@Wsted illusions of the sacred blade.@n
       wait 2 secs
-      %echo% @WThe surroundings @Dloose@W their colours as @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W rapidly @Ddrains@W energy from them.@n
+      %echo% @WThe surroundings @Dloose@W their colors as @bO@Bc@Ce@Wa@Cn@Ba @bM@Be@Cr@Widia@Cn@Bu@bs@W rapidly @Ddrains@W energy from them.@n
       wait 2 secs
 if (%actor.fighting%)
 if ((%victim.is_pc%))

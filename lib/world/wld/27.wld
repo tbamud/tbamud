@@ -67,8 +67,8 @@ crystal nymph ring.
 ~
 E
 5~
-   The shard of glass (2727) that loads in room 2754 will change colours and
-display a message when you pick it up.  The colour/message is different for
+   The shard of glass (2727) that loads in room 2754 will change colors and
+display a message when you pick it up.  The color/message is different for
 each class of player.
 ~
 E
@@ -117,7 +117,7 @@ zone exploring pleasure.  Just type look # to look at each one.
 2: Lost Child Puzzle
 3: Goethite Shackle
 4: Girl who Transforms to Doll
-5: Colour-changing Shard of Glass
+5: Color-changing Shard of Glass
 6: Defeating the Sorceress
 7: Getting the Orb
 ~
@@ -251,7 +251,7 @@ flickering within and a thin layer of sand covers the floor.
 0 0 2706
 E
 pile rocks~
-   This pile of rocks has a strange powdery coating, the pale yellowish colour
+   This pile of rocks has a strange powdery coating, the pale yellowish color
 and the surrounding smell indicates that it might be sulfur.
 ~
 E
@@ -421,7 +421,7 @@ the light turns unmistakeably red a little deeper into the passage.
 E
 beryll evil spell gates~
    These gates seem to glow with some inner light source, though it is probably
-magic.  The use of beryll, the favoured gem of the Khan'li, means the spell is
+magic.  The use of beryll, the favored gem of the Khan'li, means the spell is
 likely evil and unbreakable by any normal means.
 ~
 S
@@ -429,7 +429,7 @@ S
 Crystal Passage~
    Awash with white light, this passage is almost blinding to walk through.
 The walls, floor, and ceiling are all carved from beautiful yet delicate crystal
-that seems to reflect an inner source of light.  Colours dance and sparkle on
+that seems to reflect an inner source of light.  Colors dance and sparkle on
 the faceted surface of the walls and the air here is cool enough to chill
 breath.  To the south, two large clear gates block the exit.
 ~
@@ -448,7 +448,7 @@ D4
 E
 large clear gates~
    These gates seem to glow with some inner light source, though it is probably
-magic.  The use of beryll, the favoured gem of the Khan'li, means the spell is
+magic.  The use of beryll, the favored gem of the Khan'li, means the spell is
 likely evil and unbreakable by any normal means.
 ~
 S
@@ -992,7 +992,7 @@ S
 #2731
 Great Marble Hall~
    Great black columns extend off to the west, only partially supporting a
-massive staircase here.  Deep forest green colours swirl about the floor,
+massive staircase here.  Deep forest green colors swirl about the floor,
 reflecting the surroundings perfectly on the polished surface.  The great stone
 walls chiseled almost to glassy smoothness.
 ~
@@ -1155,7 +1155,7 @@ Shimmering Glacier~
    Almost at the peak of the mountain, the entire untouched slope spreads
 infinitely below, preserved within frozen cobwebs of time.  Dancing and
 shifting all around the sky, spectacular blue and green aurora borealis splash
-their colours upon the vast white canvas of snow.
+their colors upon the vast white canvas of snow.
 ~
 27 4 0 0 0 0
 D3
@@ -1250,9 +1250,9 @@ D2
 S
 #2745
 Path of Dawn~
-   Pieces of brightly coloured glass make up a narrowly winding path.  Fresh
+   Pieces of brightly colored glass make up a narrowly winding path.  Fresh
 moss grows from the ground and walls, sprinkled with a dew-like moisture and
-elaborate paintings of the rising sun accompanied with dawn colours decorates
+elaborate paintings of the rising sun accompanied with dawn colors decorates
 the corridor.
 ~
 27 136 0 0 0 0
@@ -1343,7 +1343,7 @@ T 2723
 #2750
 All That is Light~
    It is impossible to see the size or shape of the room as a blinding white
-light shines from an equally invisible source.  No shadows or colours of any
+light shines from an equally invisible source.  No shadows or colors of any
 sort are evident, only the overwhelming glow of illumination in every
 direction.
 ~
@@ -2016,7 +2016,7 @@ Natul, Bringer of Life~
    Beyond the glass walls of this room, a great explosion of light can be seen
 suspended in the midst of deep space, frozen in time and almost blinding in
 intensity.  In its wake a small barren planet can be seen beginning to blossom,
-the initial sprouts of growth and life colouring its dusky surface with splashes
+the initial sprouts of growth and life coloring its dusky surface with splashes
 of green, the nearby stars starting to glow brightly as if emblazened with
 unnatural fire.
 ~
@@ -2134,7 +2134,7 @@ Dynar, of Light~
 movement of the willow trees that grow here.  The sound of trickling water can
 be heard gurgling amidst nearby rocks and leading into a small luminous pond.
 Plant life blooms abundantly here, grasses and mosses covering every surface,
-colourful flower blossoms and tree sprouts beginning to show through the green.
+colorful flower blossoms and tree sprouts beginning to show through the green.
 ~
 27 0 0 0 0 2
 D1

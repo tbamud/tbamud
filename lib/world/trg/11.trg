@@ -1349,8 +1349,8 @@ new trigger~
 test~
 %echo% var is %var%
 %echo% var2 is %var2%
-%echo% coloured var is @Y%var%@n
+%echo% colored var is @Y%var%@n
 set col Y
-%echo% var coloured var is      %col%%var%@n
+%echo% var colored var is      %col%%var%@n
 ~
 $~

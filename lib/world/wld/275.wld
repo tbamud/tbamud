@@ -1112,7 +1112,7 @@ S
 The 50-Meter Line~
    You are standing in the middle of the excitement of a bloodball
 game.  To the south is the Warriors' zone, to the north is the
-Raiders'.  Centrefield is east, and the tunnel is west.
+Raiders'.  Centerfield is east, and the tunnel is west.
 ~
 275 8 0 0 0 1
 D0
@@ -1121,7 +1121,7 @@ You see the Raiders' zone.
 ~
 0 -1 27561
 D1
-You see centrefield.
+You see centerfield.
 ~
 ~
 0 -1 27553
@@ -1181,13 +1181,13 @@ The end zone continues.
 S
 #27551
 The Warriors' Zone~
-   You are in the Warriors' defensive zone.  To the north Centre-
+   You are in the Warriors' defensive zone.  To the north Center-
 field, to the south is the end zone.  The field also continues east
 and west.
 ~
 275 8 0 0 0 1
 D0
-You see Centrefield.
+You see Centerfield.
 ~
 ~
 0 -1 27553
@@ -1238,7 +1238,7 @@ The end zone continues.
 0 -1 27550
 S
 #27553
-Centrefield~
+Centerfield~
    This is the center of all action in WarDome.  Flying bodies
 (and body parts) are all around you.  You are standing on a large
 gray skull with glowing eyes and blood stained fangs -- not real of
@@ -1270,7 +1270,7 @@ The 50-Meter line.
 S
 #27554
 The Raiders' Zone~
-   You are in the Raiders' defensive zone.  To the south is Centre-
+   You are in the Raiders' defensive zone.  To the south is Center-
 field, to the north is the end zone.  The field continues east and
 west.
 ~
@@ -1286,7 +1286,7 @@ The field continues.
 ~
 0 -1 27558
 D2
-You see Centrefield.
+You see Centerfield.
 ~
 ~
 0 -1 27553
@@ -1300,7 +1300,7 @@ S
 The 50-Meter Line~
    You are standing in the middle of the excitement of a bloodball
 game.  To the south is the Warriors' zone, to the north is the
-Raiders'.  Centrefield is to the west.
+Raiders'.  Centerfield is to the west.
 ~
 275 8 0 0 0 1
 D0
@@ -1314,7 +1314,7 @@ You see the Warriors' zone.
 ~
 0 -1 27557
 D3
-You see centrefield.
+You see centerfield.
 ~
 ~
 0 -1 27553
@@ -1481,7 +1481,7 @@ Broadway~
    You are on the 400 block of Broadway and as you look at the pot
 holes in the road you realize that city road workers are the same
 everywhere.
-   Broadway continues to the north and south. The armoury is to the
+   Broadway continues to the north and south. The armory is to the
 east and the magic shop is to the west.
 ~
 275 0 0 0 0 1
@@ -1491,7 +1491,7 @@ You see Broadway.
 ~
 0 -1 27569
 D1
-You see the Armoury.
+You see the Armory.
 ~
 ~
 0 -1 27567
@@ -1507,9 +1507,9 @@ You see the Magic Shop.
 0 -1 27568
 S
 #27567
-The Armoury~
-   This is your standard armoury, filled with your average supply of
-of armour and other assorted goodies.
+The Armory~
+   This is your standard armory, filled with your average supply of
+of armor and other assorted goodies.
    Broadway is to the west.
 ~
 275 8 0 0 0 0

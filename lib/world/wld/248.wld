@@ -146,7 +146,7 @@ S
 A Fine Path Through the Elven Forest~
    On both sides of this path is doors.  Over the eastern door is a sign
 telling you this must be the weapon shop, and over the western door is a
-similar sign telling you it's the armoury.
+similar sign telling you it's the armory.
 ~
 248 0 0 0 0 3
 D0
@@ -167,10 +167,10 @@ D3
 0 -1 24811
 S
 #24810
-The Elven Armoury~
-   On the walls of this large room are fine elven armours hanging.  A few other
+The Elven Armory~
+   On the walls of this large room are fine elven armors hanging.  A few other
 odds and ends lay about that are required for the bending and pounding of the
-armour.
+armor.
 ~
 248 8 0 0 0 0
 D3

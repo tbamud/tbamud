@@ -47,7 +47,7 @@ sign~
    |                                  |
    | The Trade Halls                  |
    |                                  |
-   |    AR       AR = Armourer        |
+   |    AR       AR = Armorer        |
    |     |                            |
    | WP--+--+#   WP = Weaponsmith     |
    |     |                            |
@@ -140,10 +140,10 @@ D1
 0 0 23607
 S
 #23606
-The Armourers Stall~
+The Armorers Stall~
    You are in the corner of the cave, which the dwarves have decided to use as a
-trade area.  In this, the farthest corner from the entrance, some shining armour
-has been laid out on an old sack.  Behind it, the assistant to the armoursmith
+trade area.  In this, the farthest corner from the entrance, some shining armor
+has been laid out on an old sack.  Behind it, the assistant to the armorsmith
 is getting ready to display his merchandise to you.  To get back to the center
 of the trade halls, you must go south.
 ~
@@ -153,8 +153,8 @@ D2
 ~
 0 0 23607
 E
-sack armour armor~
-   The different pieces of armour have been strewed all over the ground here,
+sack armor armor~
+   The different pieces of armor have been strewed all over the ground here,
 but it might be an unwise idea to try to just pick it up.  Theft is not looked
 lightly upon in the dwarven kingdom.
 ~
@@ -214,7 +214,7 @@ Entrance to Aldin, City of the Dwarves~
 To your west, a rather large gate opens to the trade halls, and to your east a
 smaller stone door blocks your entry into the heart of Aldin.  This cave
 obviously has been set up, so the guards have a place to check people before
-they leave the trade halls and enter the city itself.  You realise with sudden
+they leave the trade halls and enter the city itself.  You realize with sudden
 brutality the guards are stopping anyone who isn't dwarven...
 ~
 236 8 0 0 0 0
@@ -236,7 +236,7 @@ Passing by the workshops~
 almost deafened by the sounds from the nearby workshops. It seems all of the
 things traded in the trade halls come from these workshops. To your south the
 weaponsmith is working and east of here the armor smith is preparing more
-armours for sale. You can leave the city by going west from here, or go deeper
+armors for sale. You can leave the city by going west from here, or go deeper
 into it by heading north.
 ~
 236 8 0 0 0 0
@@ -264,7 +264,7 @@ At Torgs' smithy~
    The dwarves are very proud of their fine weaponry.  Rods of several
 different metals have been laid on shelves along the south wall, ready to go
 into the forge.  The forege itself has been set in the east wall, accesible
-from both here and the armourers smithy just north and east of here.  The walls
+from both here and the armorers smithy just north and east of here.  The walls
 are blackened wth soot from many years of smoke from the large forge.  A
 strange contraption makes sure the bellows keep the heat at its peak.
 ~
@@ -344,12 +344,12 @@ S
 #23615
 At Ralfs' smithy~
    Upon entering the smithy you immidiately discover the reason for all the
-noise in the area.  All the armours made here are full-body armours.  When
+noise in the area.  All the armors made here are full-body armors.  When
 struck by Ralf, they make about as much noise, as a churchbell.  The forge is
 set in the south wall, and on the northern and eastern wall, several
-half-finished armours have been lain on shelves.  In a crate near the eastern
+half-finished armors have been lain on shelves.  In a crate near the eastern
 wall, different straps and thongs of leather are stored - nothing of use until
-they've been applied to an armour.
+they've been applied to an armor.
 ~
 236 8 0 0 0 0
 D3
@@ -359,7 +359,7 @@ D3
 E
 crate~
    A wooden crate about one by two feet.  It contains strips of leather used for
-the armours made here.
+the armors made here.
 ~
 E
 forge~
@@ -530,7 +530,7 @@ S
 Dwarven mines~
    You are standing in a comparatively large room deep inside the dwarven
 mountain.  The walls around you seem to be chipped directly from the
-surrounding rock, and you immidiately realise you're standing on the edge of
+surrounding rock, and you immidiately realize you're standing on the edge of
 the dwarven mines.  Also the large hole in the floor, with ladders leading into
 darkness might have given you a clue.  To your north a wooden door with a
 sturdy lock blocks your exit, while you may descend into the mines by going
@@ -613,7 +613,7 @@ S
 #23625
 In a closet~
    Wow, do you feel stupid now.  You've only just managed to crawl through the
-portal before you realise the place you've fought so hard to get into is
+portal before you realize the place you've fought so hard to get into is
 nothing but a wardrobe for the dwarfs living in this home.  The only way out
 is back west.
 ~
@@ -1135,7 +1135,7 @@ into a small dark opening in the north wall.
 ~
 236 8 0 0 0 1
 D0
-You can't see much inthere, but you realise you'll have to crawl on your hands
+You can't see much inthere, but you realize you'll have to crawl on your hands
 and knees to get through.
 ~
 opening~
@@ -1152,7 +1152,7 @@ The hallway continues.
 0 0 23646
 E
 opening dark wall~
-   You can't see much inthere, but you realise you'll have to crawl on your
+   You can't see much inthere, but you realize you'll have to crawl on your
 hands and knees to get through.
 ~
 S
@@ -1278,7 +1278,7 @@ S
 #23654
 In a drafty tunnel.~
    You are crawling on hands and knees in a small tunnel.  Up north you see a
-faint outline of the tunnels opening.  You realise the light coming from the
+faint outline of the tunnels opening.  You realize the light coming from the
 opening is daylight from the outside.  South the tunnel ends in the dwarven
 city.  You seem to be in one of the tunnels the dwarves had to make to permit
 enough air to enter their city for them to breathe.  The walls are smooth as
@@ -1415,7 +1415,7 @@ S
 At the court~
    You have entered the court of the dwarven king.  East of here a large black
 granite slab magically bars the exit, and while a light touch currently makes
-it turn aside, you realise quickly that the door can be sealed airtight by
+it turn aside, you realize quickly that the door can be sealed airtight by
 removing the spells from the slab To your west a brightly lit corridor with
 intricant decoration leads towards the throne room.
 ~
@@ -1515,9 +1515,9 @@ S
 #23666
 Shrine of Welcor~
    You are standing in front of stone altar, made from marble.  Or at least
-you think it's marble.  The colour of the stone makes you think it is a large
+you think it's marble.  The color of the stone makes you think it is a large
 fire, changed into solid rock.  The altar is square, but even as you watch it,
-the colours seem to shift a bit, as if the stone were made from suspended
+the colors seem to shift a bit, as if the stone were made from suspended
 flames.  In front of a the altar a silver chain shows just how near you're
 supposed to go.
 ~
@@ -1546,7 +1546,7 @@ At the Dwarven Court~
    You have entered the throne room of the dwarven king.  Along the south wall
 rich tapestries hang, the only extravagant thing in the whole complex.  In
 front of you, the throne has been set up, with steps leading up to a seat in
-about the height if your chest.  You realise the throne has the obvious
+about the height if your chest.  You realize the throne has the obvious
 consequence that everyone has to look up, and consequently feel very small,
 when adressing the king.
 ~
@@ -1878,8 +1878,8 @@ The tunnel leads north from here.
 S
 #23683
 In the side tunnels~
-   This is where the dwarves get thir iron for the tempered steel plate armours
-you saw at the armourers stall in the trade halls.  The ore is so fine you can
+   This is where the dwarves get thir iron for the tempered steel plate armors
+you saw at the armorers stall in the trade halls.  The ore is so fine you can
 actually see the glimmer of iron, not just the reddish lump you see everywhere
 else.  The tunnel leads west from here.
 ~
@@ -1918,7 +1918,7 @@ S
 T 23617
 #23685
 At the end of the tunnel~
-   Standing on the edge of a ledge, high above a ragged ravine, you realise you
+   Standing on the edge of a ledge, high above a ragged ravine, you realize you
 have nowhere to go except back through the tunnel.  The only other option is to
 jump...
 ~

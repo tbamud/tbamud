@@ -40,7 +40,7 @@ A murky pool of water stagnates slowly.~
 E
 murky pool water~
    This muddy pool of water looks safe to drink despite the unappealing
-particles of algae and rotting matter that discolour it.
+particles of algae and rotting matter that discolor it.
 ~
 #1903
 rusted dagger~
@@ -112,7 +112,7 @@ E
 stained bone necklace bones~
    This appears to be a simple bit of muddy twine, carefully knotted around
 several large sharp bones.  What type and from what sort of creature the bones
-originate is hard to tell, but the rust-coloured stains are unmistakeable.
+originate is hard to tell, but the rust-colored stains are unmistakeable.
 ~
 #1908
 dark leathery egg~
@@ -126,7 +126,7 @@ E
 dark leathery egg~
    This large round egg is so tough and leathery that it is probably not edible.
 The hide covering it however is incredibly strong and could potentially be used
-for making armour.
+for making armor.
 ~
 #1909
 Fallorain's Plate fallorains fallorain's plate ancient beautiful breastplate~
@@ -238,7 +238,7 @@ A metal wall shield glistens brightly here.~
 4 600 4 0 0
 E
 metal wall shield~
-   This large shield is big enough to provide defence for the entire torso and
+   This large shield is big enough to provide defense for the entire torso and
 legs of a warrior.  Glistening brightly, it has a strange green tint as though
 at one time it were covered with algae.
 ~
@@ -253,7 +253,7 @@ Some smoked meat is here.~
 E
 some smoked meat~
    This is a large slab of red meat, roughly hewn from the carcass of some
-creature.  Partially cooked and dried, smoke stains discolour it slightly.
+creature.  Partially cooked and dried, smoke stains discolor it slightly.
 ~
 #1918
 massive statue frog god~
@@ -342,7 +342,7 @@ smooth piece velvety leather cloak blanket hide~
 E
 smooth piece velvety leather cloak blanket hide~
    This large piece of exceptionally beautiful leather is velvety to the touch
-and a pleasing dark maroon colour that shimmers strangely in any light.  While
+and a pleasing dark maroon color that shimmers strangely in any light.  While
 the fabric is easily workable into some form of clothing, it functions just as
 efficiently as a blanket or wraparound cloak.  The slight unnatural chill to its
 surface indicates an inherent ability to ward off magic.
@@ -540,7 +540,7 @@ A glittering piece of fine chainmail has been left here.~
 E
 delicate chain mail chainmail shirt~
    Tiny sparkling chain rings have been so finely linked together that this
-armour looks almost more like silver shimmering fabric.  Light but incredibly
+armor looks almost more like silver shimmering fabric.  Light but incredibly
 strong, a strange glow pulses softly through the metal, giving it an eerie
 appearance that is particularly striking in the dark.
 ~
@@ -704,7 +704,7 @@ contraption large mysterious metal machine~
 click continuously away.  The only noteworthy external parts are a large metal
 tray that looks as though it opens and closes, releasing its contents to the
 inner parts of the machine, also a large nozzle with a shelf placed
-strategically beneath it.  A control board with three coloured buttons is fixed
+strategically beneath it.  A control board with three colored buttons is fixed
 to the front of the machine.  The red button is inscribed with the word - press,
 the blue button with switch, and green with turn.
 
@@ -752,7 +752,7 @@ A sealed beaker of dark blood stands here.~
 1 1 0 0 0
 E
 sealed beaker dark blood~
-   Almost black in colour, this glass beaker holds the blood of a creature that
+   Almost black in color, this glass beaker holds the blood of a creature that
 is clearly not human.  A strange chill creeps through the container, and a
 slightly shimmering aura betrays the inherent magic of this substance.
 ~
@@ -785,8 +785,8 @@ rules this place, and so the method of creating these potions is no more.
 Nonetheless, I lay it out here for any who would continue these studies.
 
    A powerful potion of strength was our first discovery, a deep red potion,
-the colour of rich wine. When quaffed, it produced immediate physical
-effects, muscle ability enhanced and body defences strengthened.
+the color of rich wine. When quaffed, it produced immediate physical
+effects, muscle ability enhanced and body defenses strengthened.
 
    As a base for all our testings, we used the nightblood of the driders, black
 viscous fluid that burns the eyes unless contained in special beakers. Then,
@@ -818,7 +818,7 @@ rules this place, and so the method of creating these potions is no more.
 Nonetheless, I lay it out here for any who would continue these studies.
 
    A powerful potion of magic was our second discovery, a deep blue potion,
-the colour of a clear sky. When quaffed, it produced immediate magical
+the color of a clear sky. When quaffed, it produced immediate magical
 effects, enhanced mental ability and casting endurance.
 
    As a base for all our testings, we used the nightblood of the driders, black
@@ -850,13 +850,13 @@ rules this place, and so the method of creating these potions is no more.
 Nonetheless, I lay it out here for any who would continue these studies.
 
    A powerful potion of agility was our third discovery, a bright green potion,
-the colour of fresh grass. When quaffed, it produced immediate changes to
+the color of fresh grass. When quaffed, it produced immediate changes to
 speed and agility, improving endurance in travel.
 
    As a base for all our testings, we used the nightblood of the driders, black
 viscous fluid that burns the eyes unless contained in special beakers. Then,
 for this particular solution we added an arachnoid fur, from a spider that was
-purple in colour. Finally, one of the salty plant growths that flourish here.
+purple in color. Finally, one of the salty plant growths that flourish here.
 All these ingredients were gained with great peril, and once mixed together in
 Tyrel's machine, produced a solution so potent that we were forced to create
 special magic vials to hold it. The effects, though temporary, are nonetheless
@@ -879,7 +879,7 @@ A swamp vine splays across the ground like an open hand.~
 1 1 0 0 0
 E
 swamp vine~
-   This limp plant has the dark green colour of spinach, its lethargic trailing
+   This limp plant has the dark green color of spinach, its lethargic trailing
 limbs splaying out in all directions in a desperate hunt for richer soil.  All
 that is nourishing in the swamp has been condensed into this sickly pile of
 stems and leaves.
@@ -929,18 +929,18 @@ eyes once were, and rows of jagged teeth are openly exposed, seeming almost
 absurdly to be grinning.
 ~
 #1960
-white chainmail arm wrappings armour~
+white chainmail arm wrappings armor~
 white chainmail arm wrappings~
-A little pile of white chainmail armour lies here.~
+A little pile of white chainmail armor lies here.~
 ~
 9 0 0 0 0 ai 0 0 0 0 0 0 0
 5 0 0 0
 2 200 0 0 0
 E
-white chainmail arm wrappings armour~
+white chainmail arm wrappings armor~
    Tiny circles of strange metal are perfectly linked to form a glistening piece
-of armour that glows vaguely in moonlight.  There is no padding nor real shape
-to this armour, made simply to attach at the shoulders and hang protectively
+of armor that glows vaguely in moonlight.  There is no padding nor real shape
+to this armor, made simply to attach at the shoulders and hang protectively
 around the arms.
 ~
 #1961
@@ -954,7 +954,7 @@ A beautiful silvery helmet lies here.~
 E
 beautiful silvery helmet sleek helm~
    This elegantly forged helm is made from one solid piece of white metal that
-looks almost to beautiful to be used in armour, though it is more than hardy
+looks almost to beautiful to be used in armor, though it is more than hardy
 enough to withstand even the heaviest of blows.  Two long grasping pieces curve
 around the jaw, holding the piece in place without the need for straps.
 ~
@@ -976,8 +976,8 @@ A
 14 40
 #1963
 fireworks~
-a colourful firework~
-A colourful firework is lying here.~
+a colorful firework~
+A colorful firework is lying here.~
 ~
 12 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
@@ -985,7 +985,7 @@ A colourful firework is lying here.~
 T 1987
 E
 fireworks~
-   This colourfully wrapped firework has a long dangling fuse, just begging for
+   This colorfully wrapped firework has a long dangling fuse, just begging for
 you to LIGHT it.
 ~
 #1964
@@ -1000,7 +1000,7 @@ E
 irridescent webbed ring~
    Incredibly delicate, this beautiful ring looks to have been woven by master
 spider weavers, the fragile sparkling threads treated with some magic to
-solidify and glisten with unnatural colour.  Shades of blue and green shimmer
+solidify and glisten with unnatural color.  Shades of blue and green shimmer
 along the elegantly curving surfaces, purple and silver adding a darker hue when
 the light catches a certain way.
 ~
@@ -1111,7 +1111,7 @@ A summer tree stands here, lush and green.~
 #1973
 fall tree xxtree~
 a fall tree~
-A fall tree stands here, coloured red and gold.~
+A fall tree stands here, colored red and gold.~
 ~
 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0

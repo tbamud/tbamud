@@ -33,14 +33,14 @@ T 11800
 T 11801
 T 11802
 #11802
-child colouring~
-a colouring child~
-A child is colouring quietly with crayons here.
+child coloring~
+a coloring child~
+A child is coloring quietly with crayons here.
 ~
    This young girl looks to be between three and five years old.  Her bright
 blue eyes are slightly vacant as though she is far away in some imaginary place,
 and her lips move silently as though she is singing or whispering to herself.
-A coloured crayon moves back and forth as she draws around her splayed fingers,
+A colored crayon moves back and forth as she draws around her splayed fingers,
 leaving the white canvas of paper covered with the smeared dark outlines of
 hands.
 ~
@@ -77,7 +77,7 @@ A little girl, about four years old stands here.
    This little girl has soft brown hair that hangs in little ringlets around her
 face.  Bright starry eyes peer keenly around as though everything is new and
 exciting.  She fidgets constantly, as though a little hyper, and her small
-fingers are blistered from constant colouring or writing.
+fingers are blistered from constant coloring or writing.
 ~
 10 0 0 0 24 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -438,7 +438,7 @@ A shadow-man lounges slobbishly, watching television.
    This middle-aged man looks as though he has done nothing but lounge on a
 couch for the past ten years, a large pot belly protruding from his flabby
 torso.  His eyes are glazed and dull from watching television, a dark shadow of
-stubble spreading over his face and rust-coloured stains covering his
+stubble spreading over his face and rust-colored stains covering his
 three-fingered right hand.
 ~
 10 0 0 0 0 0 0 0 -1000 E
