@@ -441,7 +441,7 @@ emote clears his throat.
 wait 3s
 while %beers%
   eval beertens %beers% / 10
-  eval beerones %beers% - ( %beertens% * 10 )
+  eval beerones %beers% - (%beertens% * 10)
   switch %beerones%
     case 0
       unset alphabeers
