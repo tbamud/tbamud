@@ -329,7 +329,7 @@ D1
 0 0 30816
 S
 #30819
-Towne Road~
+Town Road~
    This well graveled road leads east into the settlement, a very tidy place
 where the streets are free of litter and all the homes are tended to regularly.
 The main road lies just to the west.  A small sign lies on the south side of the
@@ -346,16 +346,16 @@ D3
 0 0 30804
 E
 sign~
-   All travelers welcome in Cailveh Towne.
+   All travelers welcome in Cailveh Town.
 Bring no malice with ye upon entry, but only the goodwill harbored
 within your heart. May the Gods be with you.
 ~
 S
 #30820
-Intersection on Towne Road~
+Intersection on Town Road~
    Homes lie to the north and south; small, neat structures which look welcome
 and very non-threatening.  To the east is what must be the merchant's area,
-where most of the business of the towne is conducted.  The main road to the
+where most of the business of the town is conducted.  The main road to the
 tower and the King's Highway lies to the west.
 ~
 308 0 0 0 0 0
@@ -377,7 +377,7 @@ D3
 0 0 30819
 S
 #30821
-Towne Road~
+Town Road~
    Homes lie on the east and west sides of the road.  The road itself runs north
 and south for some distance past homes of all shape and size.
 ~
@@ -400,7 +400,7 @@ door~
 1 0 30832
 S
 #30822
-Towne Road~
+Town Road~
    Homes lie on the east and west sides of the road.  The road itself runs north
 and south for some distance past homes of all shape and size.
 ~
@@ -460,7 +460,7 @@ door~
 1 0 30823
 S
 #30825
-Towne Road~
+Town Road~
    This is the residential section of the community with homes lining both sides
 of the street.  Just north of here is a main intersection in the street, suth
 lies a small square.
@@ -646,7 +646,7 @@ door~
 1 0 30821
 S
 #30838
-Towne Road~
+Town Road~
    This small portion of road runs between the two main intersections of the
 settlement, bordering the north side and entryway into the local pub and dining
 establishment.  It is actually a very nice place to eat, having a strong
@@ -667,7 +667,7 @@ D3
 0 0 30820
 S
 #30839
-Towne Square~
+Town Square~
    A beautiful park lies along the eastern side of the road, full of beautiful
 flowers and trees.  The road travels north and south through the business
 district and also west past the local pub toward the main road.
@@ -691,7 +691,7 @@ D3
 0 0 30838
 S
 #30840
-Towne Road~
+Town Road~
    The road travels north to south past a small restaurant on the east and an
 herbalist on the west side of the road.  Just north of here is small square.
 ~
@@ -751,7 +751,7 @@ D2
 0 0 30841
 S
 #30843
-Towne Doctor~
+Town Doctor~
    It appears that the doctor is not in at this time.  The entire building lies
 silent and empty.  Devoid of life.  Odd.
 ~
@@ -811,8 +811,8 @@ D3
 0 0 30839
 S
 #30848
-The Towne Hall~
-   This pub, named the Towne Hall in jest, is only so named due to the fact that
+The Town Hall~
+   This pub, named the Town Hall in jest, is only so named due to the fact that
 after most day's work, most of the local residents end up coming here to dine
 with their fellow townsfolk.  Nightly 'meetings' are conducted over steaming
 plates of meat and vegetables, accompanied by laughter and the occasional music
@@ -837,9 +837,9 @@ D1
 0 0 30850
 S
 #30850
-Towne Road~
+Town Road~
    The road runs south past a number of businesses and the local chapel toward a
-wonderful garden, full of bloom and color.  To the north is the Towne Square.
+wonderful garden, full of bloom and color.  To the north is the Town Square.
 ~
 308 0 0 0 0 0
 D0
@@ -921,7 +921,7 @@ D3
 0 0 30853
 S
 #30855
-Towne Gardens~
+Town Gardens~
    These beautiful gardens are tended with love and care by all of the locals,
 kept as a haven for thought and quiet contemplation.  They are kep immaculate
 year round, with no exceptions.

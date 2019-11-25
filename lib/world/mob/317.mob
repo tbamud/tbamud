@@ -3,7 +3,7 @@ mayor mcgintey cove~
 the Mayor of McGintey Cove~
 The Mayor of McGintey Cove parades by you.
 ~
-   He looks quited decadent, draped in sheer, golden silk and satin teal
+   He looks quite decadent, draped in sheer, golden silk and satin teal
 sashes.  He turns his head suddenly to catch a glimpse of a young noblewoman
 and you see a small teal ornament hanging loosely from his right ear.  The
 trinket looks quite valuable.
@@ -43,9 +43,9 @@ presence there.
 BareHandAttack: 13
 E
 #31703
-proprieter man~
-the proprieter~
-The proprieter of the Inn is here, making sure everything is perfect.
+proprietor man~
+the proprietor~
+The proprietor of the Inn is here, making sure everything is perfect.
 ~
    He hurries here and there and everywhere, always fussing or whining that
 something is wrong or out of place.
@@ -60,7 +60,7 @@ waiter~
 a waiter~
 A waiter is here scurrying from table to table.
 ~
-   He keeps glancing up at the proprieter, as if he were a stray dog expecting
+   He keeps glancing up at the proprietor, as if he were a stray dog expecting
 to beat at any moment.  Poor fella, he probably gets at least one good tongue
 lashing a day.
 ~
@@ -140,7 +140,7 @@ sam dealer blackjack~
 Sam the blackjack dealer~
 Sam the blackjack dealer is here flipping cards to players.
 ~
-   Sam looks almost bored as he turns over one card afetr another.  You can
+   Sam looks almost bored as he turns over one card after another.  You can
 barely hear him mumble, 'push, we got a winner, oh too bad, and every now and
 then an almost audible blackjack!  '
 ~
@@ -218,7 +218,7 @@ waiter~
 the waiter~
 A well dressed waiter is moving gracefully through the room, serving customers.
 ~
-   Resplendant inhis black tuxedo and shined shoes, this man would be graceful
+   Resplendent in his black tuxedo and shined shoes, this man would be graceful
 falling down.
 ~
 10 0 0 0 0 0 0 0 300 E
@@ -242,7 +242,7 @@ E
 #31718
 receptionist~
 the receptionist~
-A receptionist sits behind an ornate mahoganey desk, taking reservations for the night.
+A receptionist sits behind an ornate mahogany desk, taking reservations for the night.
 ~
    She looks almost bored with her job as she efficiently writes dates, names,
 and times in ledger.

@@ -1,7 +1,7 @@
 #3700
 rat big~
 the big rat~
-A large rat is scurrying about here, squeeking as you approach.
+A large rat is scurrying about here, squeaking as you approach.
 ~
    As you look closer you see flecks of blood on the teeth of the rat.  It's so
 obvious because the rat is just about ready to sink those teeth into your warm
@@ -32,7 +32,7 @@ rat protector guard~
 the protector rat~
 A huge rat is here, growling as you get nearer. Careful - it bites!
 ~
-   This battlescarred rat is not going anywhere.  You, however are going to go
+   This battle-scarred rat is not going anywhere.  You, however are going to go
 right into its belly, after it's killed you.  Better get out of here.
 ~
 4202 0 0 0 0 0 0 0 -350 E
@@ -47,7 +47,7 @@ the king rat~
 A gigantic rat is here standing on top of a pile of glittering stones.
 ~
    The King rat is so large, magic is the only possible explanation.  There has
-long been rumours about the magicusers using sewer animals in their experiments.
+long been rumors about the magic-users using sewer animals in their experiments.
 This is the final proof.  As you study the rat closer you notice what looks like
 a small gleam of intelligence in its eyes.
 ~
@@ -159,8 +159,8 @@ a small rabbit~
 A small rabbit is nibbling on some grass here.
 ~
    You've seen them before..  And hunted them down like rats, when you were a
-kid..  They're small, furry and generate extreme amounts of small black perls
-whereever they go...
+kid..  They're small, furry and generate extreme amounts of small black pearls
+wherever they go...
 ~
 72 0 0 0 0 0 0 0 1000 E
 3 19 8 0d0+30 1d2+0
@@ -173,7 +173,7 @@ cat~
 a small cat~
 A small grey and black striped cat is waiting for a bird to catch..
 ~
-   It's extremely nice and sweet.  If you reach out you hand to carees it, it
+   It's extremely nice and sweet.  If you reach out your hand to caress it, it
 only bites and scratches so HALF your fingers are missing afterwards..
 ~
 72 0 0 0 524288 0 0 0 -50 E
