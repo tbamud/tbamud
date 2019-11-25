@@ -1,5 +1,5 @@
 #16900
-gibberling, bloodthirsty~
+gibberling bloodthirsty~
 a bloodthirsty gibberling~
 A bloodthirsty gibberling is here, grunting loudly.
 ~
@@ -16,7 +16,7 @@ BareHandAttack: 14
 Int: 5
 E
 #16901
-cougar, cuogar, ~
+cougar~
 the cougar~
 A cougar is on the prowl here.
 ~
@@ -30,7 +30,7 @@ for fresh meat to fill it's savage belly until the next kill.
 BareHandAttack: 9
 E
 #16902
-gibberling, shifty~
+gibberling shifty~
 the shifty gibberling~
 A shifty gibberling is lingering here.
 ~
@@ -45,7 +45,7 @@ creatures' beady black eyes.
 Int: 15
 E
 #16903
-gibberling, raider~
+gibberling raider~
 a gibberling raider~
 A gibberling raider is here, snarling like an animal.
 ~
@@ -61,7 +61,7 @@ warriors.
 8 8 1
 E
 #16904
-gibberling, mutant~
+gibberling mutant~
 the mutant gibberling~
 A mutant gibberling is going completely insane here!
 ~
@@ -77,7 +77,7 @@ Int: 5
 Wis: 5
 E
 #16905
-gibberling, king, chieftain~
+gibberling king chieftain~
 the gibberling chieftain~
 The king of the gibberlings is here!
 ~
@@ -116,7 +116,7 @@ Dex: 7
 Wis: 5
 E
 #16907
-fat, gibberling, butcher~
+fat gibberling butcher~
 the gibberling butcher~
 A fat female gibberling is here, loudly burping and grunting.
 ~
@@ -134,7 +134,7 @@ Int: 3
 Wis: 3
 E
 #16908
-gibberling, shaman~
+gibberling shaman~
 the gibberling shaman~
 A gibberling shaman stands here.
 ~
@@ -152,7 +152,7 @@ BareHandAttack: 12
 Wis: 15
 E
 #16909
-small, marmot~
+small marmot~
 a small marmot~
 A small marmot is scurrying about.
 ~

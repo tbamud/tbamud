@@ -3,7 +3,7 @@ guardsman man~
 a guardsman~
 A guardsman stands at ease near the barrier, casually watching your arrival.
 ~
-   The guardsman looks at you with a mixture of curiousity and mild animosity.
+   The guardsman looks at you with a mixture of curiosity and mild animosity.
 Seeing that you wear no colors for any of the Barons, he is not sure what to
 make of you.
 ~
@@ -46,7 +46,7 @@ a muddy little boy~
 A little boy covered in mud and filth plays with a pile of mud.
 ~
    He smiles up at you with a beguiling twinkle in his eye.  How could he know
-that his life is less than perect with such a fine pile of mud right outside
+that his life is less than perfect with such a fine pile of mud right outside
 his front door?
 ~
 10 0 0 0 0 0 0 0 400 E
@@ -273,7 +273,7 @@ E
 #30920
 soldier man~
 a soldier~
-A soldier tromps about the keep, stepping in clean rythym even though he is alone.
+A soldier tromps about the keep, stepping in clean rhythm even though he is alone.
 ~
    All of Westlawn's men have been trained so well that they continue to march
 in formation even when there is no formation.
@@ -546,7 +546,7 @@ bold noblewoman~
 a bold noblewoman~
 A noblewoman stands boldly with the men, taking her chances at being laughed out.
 ~
-   She holds her head defiantely, listening only slightly to what the noble
+   She holds her head defiantly, listening only slightly to what the noble
 whispers, worried more about her status being called down.
 ~
 10 0 0 0 0 0 0 0 100 E
@@ -573,9 +573,9 @@ Bud~
 Bud, the alemaster of the keep, brews his finest.
 ~
    Some people carry pride in themselves at being very fast, some are proud of
-their ability to fight, others love the adevnture of learning new spells.  Bud
-is proud of one thing only - the man loves his beer.  Crisp and clean, alway
-cold-filtered, never heat pasturized.
+their ability to fight, others love the adventure of learning new spells.  Bud
+is proud of one thing only - the man loves his beer.  Crisp and clean, always
+cold-filtered, never heat pasteurized.
 ~
 10 0 0 0 0 0 0 0 1000 E
 28 11 -6 5d5+280 4d4+4
