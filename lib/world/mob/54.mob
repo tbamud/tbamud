@@ -321,7 +321,7 @@ statue surya~
 the statue of Surya~
 The statue of Surya stands here.
 ~
-   The statue of Surya, the God in charge of the Sun, almost glows with a firey
+   The statue of Surya, the God in charge of the Sun, almost glows with a fiery
 aura.
 ~
 256026 0 0 0 16 0 0 0 1000 E
@@ -464,7 +464,7 @@ dockworker~
 the dockworker~
 A strong dockworker walks by moving crates.
 ~
-   Although seemingly dull witted, this hulking mass carries the huge crates
+   Although seemingly dull-witted, this hulking mass carries the huge crates
 from the boats like it was a box of lilies.
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -477,7 +477,7 @@ man taxcollector~
 the taxcollector~
 A small man walks around scribbling in a notebook.
 ~
-   The city's taxcollextor walks from store to store collecting the Sultan's fee
+   The city's taxcollector walks from store to store collecting the Sultan's fee
 for living in his grand city.
 ~
 200 0 0 0 0 0 0 0 0 E
@@ -504,7 +504,7 @@ Chulainn~
 Chulainn the Knight stands here.
 ~
    This large man does not seem to be surprised at your approach and looks at
-you quizically.
+you quizzically.
 ~
 6348 0 0 0 16 0 0 0 800 E
 15 15 1 3d3+150 2d2+2
@@ -540,7 +540,7 @@ E
 #5442
 man wandering prophet~
 the wandering prophet~
-A small grey-haired man walks around spouting gospel.
+A small gray-haired man walks around spouting gospel.
 ~
    This sad case may have been an evangelist in another lifetime.  He is known
 to stand on corners and accost passers-by with his doomsday preaching.
@@ -626,8 +626,8 @@ body of a four-legged beast.  She licks her lips as she looks at you greedily.
 E
 #5449
 dervish~
-the raggety dervish~
-A raggety dervish stands here.
+the raggedy dervish~
+A raggedy dervish stands here.
 ~
    This man looks like he could use a lot of rest.
 ~
@@ -675,9 +675,9 @@ fallen out of grace with the Sultan.
 4 4 1
 E
 #5453
-eunich~
-a eunich~
-A eunich stands here watching over the girls.
+eunuch~
+a eunuch~
+A eunuch stands here watching over the girls.
 ~
    You see a large man whose only duty is to protect the harem.  He has been
 castrated for the ladies' safety.
@@ -848,7 +848,7 @@ the blacksmith~
 The blacksmith stands here pumping air into his fire.
 ~
    You see a large human, dripping in sweat, standing before you.  He takes a
-break from his swealtering work to bid you welcome.
+break from his sweltering work to bid you welcome.
 ~
 26634 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -897,7 +897,7 @@ cryohydra~
 the cryohydra~
 The cryohydra stands here.
 ~
-   A grey-brown reptillian creature with amber eyes stands before you.
+   A gray-brown reptilian creature with amber eyes stands before you.
 ~
 100456 0 0 0 0 0 0 0 0 E
 8 18 5 1d1+80 1d2+1
@@ -921,7 +921,7 @@ dog death~
 the death dog~
 The death dog stands here.
 ~
-   A large two-headed hound barks at you vicously.
+   A large two-headed hound barks at you viciously.
 ~
 2152 0 0 0 0 0 0 0 0 E
 4 19 7 0d0+40 1d2+0
@@ -996,7 +996,7 @@ pegasus~
 the pegasus~
 The pegasus stands here, flexing its wings.
 ~
-   A magnificant winged steed, this horse looks much like the Arabian
+   A magnificent winged steed, this horse looks much like the Arabian
 thoroughbreds you have seen in stables.
 ~
 104522 0 0 0 144 0 0 0 1000 E
@@ -1022,7 +1022,7 @@ braheem~
 Braheem~
 Braheem stands here talking to the walls.
 ~
-   You see a powerful but slighty insane mage.
+   You see a powerful but slightly insane mage.
 ~
 26634 0 0 0 0 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5

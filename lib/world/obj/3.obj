@@ -466,16 +466,16 @@ scroll recall~
    The scroll has written a formulae of 'Word of Recall' upon it.
 ~
 #353
-wand grey~
-a grey wand of invisibility~
-A grey wand has carelessly been left here.~
+wand gray~
+a gray wand of invisibility~
+A gray wand has carelessly been left here.~
 ~
 3 g 0 0 0 ao 0 0 0 0 0 0 0
 12 2 2 29
 2 400 0 0 0
 E
-wand grey~
-   The wand is an old dark grey stick.  You notice a small symbol etched at
+wand gray~
+   The wand is an old dark gray stick.  You notice a small symbol etched at
 the base of the wand.  It looks like this:
 
      \ /

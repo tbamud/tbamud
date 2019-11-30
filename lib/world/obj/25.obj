@@ -651,9 +651,9 @@ A huge spiked club has been left here.~
 0 3 5 8
 29 750 200 0 0
 #2573
-robe grey~
-a grey robe~
-A pile of grey cloth has been left here.~
+robe gray~
+a gray robe~
+A pile of gray cloth has been left here.~
 ~
 15 gjk 0 0 0 ak 0 0 0 0 0 0 0
 50 0 -1 0
@@ -673,9 +673,9 @@ A glinting hoop of silvery metal is here.~
 A
 17 -5
 #2575
-cloak grey~
-a long grey cloak~
-A pile of grey cloth has been left here.~
+cloak gray~
+a long gray cloak~
+A pile of gray cloth has been left here.~
 ~
 9 gjk 0 0 0 ac 0 0 0 0 0 0 0
 0 0 0 0
@@ -687,7 +687,7 @@ A
 #2576
 staff~
 an iron shod staff~
-A grey piece of wood shod in iron has been left here.~
+A gray piece of wood shod in iron has been left here.~
 ~
 5 gjk 0 0 0 an 0 0 0 0 0 0 0
 0 2 7 8
@@ -882,9 +882,9 @@ A
 A
 17 -5
 #2593
-key grey metal~
-a grey key~
-A key made of a strange grey metal has been left here.~
+key gray metal~
+a gray key~
+A key made of a strange gray metal has been left here.~
 ~
 18 cdq 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0

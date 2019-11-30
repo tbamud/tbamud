@@ -238,7 +238,7 @@ switch %forest_sounds%
     %echo% @DThe area is surrounded by a visually impeneratable mist.@n
   break
   case 5
-    %echo% @DThe grey haze starts to glow a dim silvery shade as the moonlight strikes it.@n
+    %echo% @DThe gray haze starts to glow a dim silvery shade as the moonlight strikes it.@n
   break
   case 6
     %echo% @DThe damp fallen clouds swirl slightly in an eddying wind.@n

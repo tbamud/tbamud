@@ -934,7 +934,7 @@ An Intersection~
 mystical forces are pushing and pulling at each other from all around you.
 The sensation of being trapped, in the middle is almost tangible in the air
 here.
-   A grey tiled hallway leads south, black tiled east, white tiled west,
+   A gray tiled hallway leads south, black tiled east, white tiled west,
 and a multi-colored hallway swirling with patterns that remain just barely
 unrecognizable is to the north.
 ~
@@ -961,8 +961,8 @@ D5
 0 -1 2649
 S
 #2651
-A Grey Tiled Hallway~
-   You are in a grey tiled hallway leading north and south.  Dim balls
+A Gray Tiled Hallway~
+   You are in a gray tiled hallway leading north and south.  Dim balls
 of energy float here and there shedding a warm light, and showing the
 way.  A feeling of peace and balance comes over you.
 ~
@@ -977,11 +977,11 @@ D2
 0 -1 2652
 S
 #2652
-A Grey Tiled Hallway~
-   You are in a grey tiled hallway leading north and south.  Dim balls
+A Gray Tiled Hallway~
+   You are in a gray tiled hallway leading north and south.  Dim balls
 of energy float here and there shedding a warm light, and showing the
 way.  A feeling of peace and balance comes over you.
-   Large, grey metal double doors can be seen to the south.
+   Large, gray metal double doors can be seen to the south.
 ~
 26 72 0 0 0 0
 D0
@@ -990,12 +990,12 @@ D0
 0 -1 2651
 D2
 ~
-door grey~
+door gray~
 1 -1 2653
 S
 #2653
 The Antechamber~
-   You are in the antechamber of the Master Magician of the Grey Light.
+   You are in the antechamber of the Master Magician of the Gray Light.
 A feeling of strong magic floats in the air about you, almost as if you
 could taste the power held within these walls.
    Once your eyes adjust to the semi-light, you can make out a larger
@@ -1004,7 +1004,7 @@ room to the south.
 26 72 0 0 0 0
 D0
 ~
-door grey~
+door gray~
 1 -1 2652
 D2
 ~
@@ -1304,12 +1304,12 @@ A Wide Hallway~
    You are in a large hallway, wide enough to accommodate several people
 standing abreast.  The floor here is a swirl of multicolored patterns, in
 constant motion.
-   A huge, grey metal door blocks the way north, it looks quite sturdy.
+   A huge, gray metal door blocks the way north, it looks quite sturdy.
 ~
 26 72 0 0 0 0
 D0
 ~
-door metal grey~
+door metal gray~
 2 2593 2674
 D2
 ~
@@ -1330,7 +1330,7 @@ door obsidian black~
 2 2594 2675
 D2
 ~
-door metal grey~
+door metal gray~
 2 2593 2673
 S
 #2675
