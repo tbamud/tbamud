@@ -545,8 +545,8 @@ set  food[257] 32527
 set  food[258] 32528
 set  grub %%food[%max%]%%
 eval grub %grub%
-if %speech% == tea, earl grey, hot
-  %echo% A light flashes inside the replicator and a cup of hot earl grey tea appears.
+if %speech% == tea, earl gray, hot
+  %echo% A light flashes inside the replicator and a cup of hot earl gray tea appears.
   %load% o 24129 %actor% inv
 elseif %speech% == tea
   %echo% A light flashes inside the replicator and a cup of hot tea appears.
@@ -571,7 +571,7 @@ end
 ~
 eval location %self.room%
 if %location.vnum% == 24128
-  say tea, earl grey, hot
+  say tea, earl gray, hot
   wait 180 s
 end
 ~
@@ -585,7 +585,7 @@ if %self.vnum% == 24106 && %location.vnum% == 24133
 elseif %self.vnum% == 24101 && %location.vnum% == 24132
   say deck 1
 elseif %self.vnum% == 24106 && %location.vnum% == 24128
-  say tea, earl grey, hot
+  say tea, earl gray, hot
   wait 180 s
 else
   eval number %random.20%
@@ -948,7 +948,7 @@ switch %office%
     %echo% There is a squeaking sound emanating from a hole in the wall.
   break
   case 10
-    %echo% A small grey mouse scrambles out of her hole.
+    %echo% A small gray mouse scrambles out of her hole.
     %load% m 24117
   break
   default
@@ -956,11 +956,11 @@ switch %office%
 done
 ~
 #24130
-(24117) Small Grey Mouse Runs Away~
+(24117) Small Gray Mouse Runs Away~
 0 n 100
 ~
 wait 60 s
-%echo% A small grey mouse darts back into her hole.
+%echo% A small gray mouse darts back into her hole.
 %purge% self
 ~
 #24131
@@ -1214,8 +1214,8 @@ switch %food%
   default
   break
 done
-if %speech% == tea, earl grey, hot
-  %echo% A light flashes inside the replicator and a cup of hot earl grey tea appears.
+if %speech% == tea, earl gray, hot
+  %echo% A light flashes inside the replicator and a cup of hot earl gray tea appears.
   %load% o 24129 %actor% inv
 elseif %speech% == tea
   %echo% A light flashes inside the replicator and a cup of hot tea appears.

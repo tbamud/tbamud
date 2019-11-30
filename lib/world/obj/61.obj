@@ -27,7 +27,7 @@ A colossal tree blocks the way westward.~
 0 0 0 0 0
 E
 tree~
-   This enormous tree must be a thousand years old.  Its rough bark looks grey
+   This enormous tree must be a thousand years old.  Its rough bark looks gray
 and pale and is decorated with scratches and clawmarks.  On its west side is a
 small opening just above ground level.
 ~
@@ -37,28 +37,28 @@ opening~
 the tree is hollow.
 ~
 #6103
-branch grey long~
-a long, grey branch~
-A long, grey branch rests heavily on the ground.~
+branch gray long~
+a long, gray branch~
+A long, gray branch rests heavily on the ground.~
 ~
 1 0 0 0 0 ao 0 0 0 0 0 0 0
 0 0 25 0
 20 1 3 0 0
 E
-branch grey long~
+branch gray long~
    It is quite heavy and looks as if it has been dropped from great height.  It
 is long dead and very dry.  Could probably be lighted quite easily.
 ~
 #6104
-branch grey long~
-a long, grey branch~
-A long, grey branch rests heavily on the ground.~
+branch gray long~
+a long, gray branch~
+A long, gray branch rests heavily on the ground.~
 ~
 5 0 0 0 0 an 0 0 0 0 0 0 0
 0 2 6 7
 18 60 20 0 0
 E
-branch grey long~
+branch gray long~
    It is very heavy and looks as if it has been dropped from great height.  It
 is long and straight and the wood is very hard, still being full of sap.
 Although it does not fit very well in your hand, it could be used as a clumsy
@@ -67,15 +67,15 @@ but very heavy weapon.
 A
 18 -2
 #6105
-branch grey long~
-a long, grey branch~
-A long, grey branch rests heavily on the ground.~
+branch gray long~
+a long, gray branch~
+A long, gray branch rests heavily on the ground.~
 ~
 13 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
 40 1 0 0 0
 E
-branch grey long~
+branch gray long~
    It is very heavy and looks as if it has been dropped from great height.  It
 is somewhat twisted and the hard wood is still full of sap.
 ~

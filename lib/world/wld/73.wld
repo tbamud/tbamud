@@ -113,7 +113,7 @@ The Secret Room~
    There is dust all over the place.  It looks like nobody has been here
 for ages.  In the middle of the room you see a socket with a crystal globe.
 The globe glows with a pulsing light.  To the north you see a stone door.
-To the south you see a grey block.
+To the south you see a gray block.
 ~
 73 8 0 0 0 1
 D0
@@ -122,9 +122,9 @@ You see a round stone door.
 door round stone~
 1 -1 7304
 D2
-You see a grey block.
+You see a gray block.
 ~
-block grey~
+block gray~
 1 -1 7306
 E
 crystal globe~
@@ -145,7 +145,7 @@ the presence of something IN the mud.  The only obvious exit is to the west.
 D0
 You can see nothing at all.
 ~
-block grey~
+block gray~
 1 -1 7305
 D3
 ~
@@ -712,7 +712,7 @@ S
 #7333
 The End Of Long Tunnel~
    You are at a end of a long tunnel.  Right in front of you, you can see a
-grey mass.  To the east you can see a tremendously long tunnel, but you know
+gray mass.  To the east you can see a tremendously long tunnel, but you know
 that, you were just there.
 ~
 73 9 0 0 0 5
@@ -722,12 +722,12 @@ A long tunnel.  JUST like in the description!
 ~
 0 -1 7331
 D3
-A grey mass is blocking the way.
+A gray mass is blocking the way.
 ~
-mass grey~
+mass gray~
 1 -1 7334
 E
-grey mass~
+gray mass~
    The mass is nothing but a mass, but it is quite suspicious!
 ~
 S
