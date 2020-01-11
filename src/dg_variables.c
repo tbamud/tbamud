@@ -1628,7 +1628,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 void var_subst(void *go, struct script_data *sc, trig_data *trig,
                int type, char *line, char *buf)
 {
-  char tmp[MAX_INPUT_LENGTH], repl_str[MAX_INPUT_LENGTH - 1];
+  char tmp[MAX_INPUT_LENGTH], repl_str[MAX_INPUT_LENGTH - 20]; // - 20 to make room for "eval tmpvr "
   char *var = NULL, *field = NULL, *p = NULL;
   char tmp2[MAX_INPUT_LENGTH];
   char *subfield_p, subfield[MAX_INPUT_LENGTH];

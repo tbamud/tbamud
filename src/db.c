@@ -936,7 +936,7 @@ void index_boot(int mode)
   const char *index_filename, *prefix = NULL;	/* NULL or egcs 1.1 complains */
   FILE *db_index, *db_file;
   int line_number, rec_count = 0, size[2];
-  char buf2[PATH_MAX], buf1[MAX_STRING_LENGTH];
+  char buf2[PATH_MAX], buf1[PATH_MAX - 100];   // - 100 to make room for prefix
 
   switch (mode) {
   case DB_BOOT_WLD:
@@ -3900,7 +3900,7 @@ static void load_default_config( void )
 void load_config( void )
 {
   FILE *fl;
-  char line[MAX_STRING_LENGTH];
+  char line[READ_SIZE - 2]; // to make sure there's room for readding \r\n
   char tag[MAX_INPUT_LENGTH];
   int  num;
   char buf[MAX_INPUT_LENGTH];
