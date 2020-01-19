@@ -501,15 +501,22 @@ static void free_extra_descriptions(struct extra_descr_data *edesc)
 void destroy_db(void)
 {
   ssize_t cnt, itr;
-  struct char_data *chtmp;
+  struct char_data *chtmp, *i = character_list;
   struct obj_data *objtmp;
 
   /* Active Mobiles & Players */
+  while (i) {
+    chtmp = i;
+    i = i->next;
+
+    if (chtmp->master)
+      stop_follower(chtmp);
+  }
+
   while (character_list) {
     chtmp = character_list;
     character_list = character_list->next;
-    if (chtmp->master)
-      stop_follower(chtmp);
+
     free_char(chtmp);
   }
 
