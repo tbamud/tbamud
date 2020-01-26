@@ -1239,6 +1239,24 @@ static bitvector_t asciiflag_conv_aff(char *flag)
   return (flags);
 }
 
+/* Fix for crashes in the editor when formatting. E-descs are assumed to
+  * end with a \r\n. -Welcor */
+void ensure_newline_terminated(struct extra_descr_data* new_descr) {
+  char *with_term, *end;
+
+  if (new_descr->description == NULL) {
+    return;
+  }
+
+  end = strchr(new_descr->description, '\0');
+  if (end > new_descr->description && *(end - 1) != '\n') {
+    CREATE(with_term, char, strlen(new_descr->description) + 3);
+    sprintf(with_term, "%s\r\n", new_descr->description); /* snprintf ok : size checked above*/
+    free(new_descr->description);
+    new_descr->description = with_term;
+  }
+}
+
 /* load the rooms */
 void parse_room(FILE *fl, int virtual_nr)
 {
@@ -1346,17 +1364,8 @@ void parse_room(FILE *fl, int virtual_nr)
       CREATE(new_descr, struct extra_descr_data, 1);
       new_descr->keyword = fread_string(fl, buf2);
       new_descr->description = fread_string(fl, buf2);
-      /* Fix for crashes in the editor when formatting. E-descs are assumed to
-       * end with a \r\n. -Welcor */
-      {
-      	char *end = strchr(new_descr->description, '\0');
-      	if (end > new_descr->description && *(end-1) != '\n') {
-      	  CREATE(end, char, strlen(new_descr->description)+3);
-      	  sprintf(end, "%s\r\n", new_descr->description); /* snprintf ok : size checked above*/
-      	  free(new_descr->description);
-      	  new_descr->description = end;
-      	}
-      }
+      ensure_newline_terminated(new_descr);
+
       new_descr->next = world[room_nr].ex_description;
       world[room_nr].ex_description = new_descr;
       break;
