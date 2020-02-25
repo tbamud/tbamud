@@ -151,7 +151,8 @@ long event_time(struct event *event)
 /** Frees all events from event_q. */
 void event_free_all(void)
 {
-  queue_free(event_q);
+  if (event_q != NULL)
+    queue_free(event_q);
 }
 
 /** Boolean function to tell whether an event is queued or not. Does this by

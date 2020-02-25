@@ -936,7 +936,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
   case OEDIT_PERM:
     if ((number = atoi(arg)) == 0)
       break;
-    if (number > 0 && number <= NUM_AFF_FLAGS) {
+    if (number > 0 && number < NUM_AFF_FLAGS) {
       /* Setting AFF_CHARM on objects like this is dangerous. */
       if (number != AFF_CHARM) {
         TOGGLE_BIT_AR(GET_OBJ_AFFECT(OLC_OBJ(d)), number);
