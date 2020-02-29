@@ -847,7 +847,7 @@ static void load_affects(FILE *fl, struct char_data *ch)
           af.bitvector[2] =  num7;
           af.bitvector[3] =  num8;
       } else if (n_vars == 5) {       /* Old 32-bit conversion version */
-        if (num5 > 0 && num5 <= NUM_AFF_FLAGS)  /* Ignore invalid values */
+        if (num5 > 0 && num5 < NUM_AFF_FLAGS)  /* Ignore invalid values */
           SET_BIT_AR(af.bitvector, num5);
       } else {
         log("SYSERR: Invalid affects in pfile (%s), expecting 5 or 8 values", GET_NAME(ch));
