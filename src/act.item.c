@@ -770,7 +770,7 @@ void name_from_drinkcon(struct obj_data *obj)
 {
   char *new_name, *cur_name, *next;
   const char *liqname;
-  int liqlen, cpylen;
+  int liqlen, cpylen, maxlen;
 
   if (!obj || (GET_OBJ_TYPE(obj) != ITEM_DRINKCON && GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN))
     return;
@@ -785,7 +785,8 @@ void name_from_drinkcon(struct obj_data *obj)
   }
 
   liqlen = strlen(liqname);
-  CREATE(new_name, char, strlen(obj->name) - strlen(liqname)); /* +1 for NUL, -1 for space */
+  maxlen = strlen(obj->name) - strlen(liqname); /* +1 for NUL, -1 for space */
+  CREATE(new_name, char, maxlen);
 
   for (cur_name = obj->name; cur_name; cur_name = next) {
     if (*cur_name == ' ')
@@ -799,9 +800,13 @@ void name_from_drinkcon(struct obj_data *obj)
     if (!strn_cmp(cur_name, liqname, liqlen))
       continue;
 
-    if (*new_name)
+    if (*new_name) {
       strcat(new_name, " "); /* strcat: OK (size precalculated) */
-    strncat(new_name, cur_name, cpylen); /* strncat: OK (size precalculated) */
+      maxlen--;
+    }
+
+    strncat(new_name, cur_name, maxlen); /* strncat: OK (size precalculated) */
+    maxlen -= cpylen;
   }
 
   if (GET_OBJ_RNUM(obj) == NOTHING || obj->name != obj_proto[GET_OBJ_RNUM(obj)].name)
