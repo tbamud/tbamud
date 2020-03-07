@@ -61,31 +61,44 @@ static int mag_manacost(struct char_data *ch, int spellnum) {
   SINFO.mana_min);
 }
 
-static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
-    struct obj_data *tobj) {
-  char lbuf[256], buf[256], buf1[256], buf2[256]; /* FIXME */
-  const char *format;
+static char *obfuscate_spell(const char *unobfuscated) {
+  static char obfuscated[200];
+  int maxlen = 200;
 
-  struct char_data *i;
   int j, ofs = 0;
 
-  *buf = '\0';
-  strlcpy(lbuf, skill_name(spellnum), sizeof(lbuf));
+  *obfuscated = '\0';
 
-  while (lbuf[ofs]) {
+  while (unobfuscated[ofs]) {
     for (j = 0; *(syls[j].org); j++) {
-      if (!strncmp(syls[j].org, lbuf + ofs, strlen(syls[j].org))) {
-        strcat(buf, syls[j].news); /* strcat: BAD */
+      if (!strncmp(syls[j].org, unobfuscated + ofs, strlen(syls[j].org))) {
+        if (strlen(syls[j].news) < maxlen) {
+          strncat(obfuscated, syls[j].news, maxlen);
+          maxlen -= strlen(syls[j].news);
+        } else {
+          log("No room in obfuscated version of '%s' (currently obfuscated to '%s') to add syllable '%s'.",
+              unobfuscated, obfuscated, syls[j].news);
+        }
         ofs += strlen(syls[j].org);
         break;
       }
     }
     /* i.e., we didn't find a match in syls[] */
     if (!*syls[j].org) {
-      log("No entry in syllable table for substring of '%s'", lbuf);
+      log("No entry in syllable table for substring of '%s' starting at '%s'.", unobfuscated, unobfuscated + ofs);
       ofs++;
     }
   }
+  return obfuscated;
+}
+
+static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
+    struct obj_data *tobj) {
+  const char *format, *spell = skill_name(spellnum);
+  char act_buf_original[256], act_buf_obfuscated[256], *obfuscated = obfuscate_spell(spell);
+
+
+  struct char_data *i;
 
   if (tch != NULL && IN_ROOM(tch) == IN_ROOM(ch)) {
     if (tch == ch)
@@ -98,22 +111,22 @@ static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
   else
     format = "$n utters the words, '%s'.";
 
-  snprintf(buf1, sizeof(buf1), format, skill_name(spellnum));
-  snprintf(buf2, sizeof(buf2), format, buf);
+  snprintf(act_buf_original, sizeof(act_buf_original), format, spell);
+  snprintf(act_buf_obfuscated, sizeof(act_buf_obfuscated), format, obfuscated);
 
   for (i = world[IN_ROOM(ch)].people; i; i = i->next_in_room) {
     if (i == ch || i == tch || !i->desc || !AWAKE(i))
       continue;
     if (GET_CLASS(ch) == GET_CLASS(i))
-      perform_act(buf1, ch, tobj, tch, i);
+      perform_act(act_buf_original, ch, tobj, tch, i);
     else
-      perform_act(buf2, ch, tobj, tch, i);
+      perform_act(act_buf_obfuscated, ch, tobj, tch, i);
   }
 
   if (tch != NULL && tch != ch && IN_ROOM(tch) == IN_ROOM(ch)) {
-    snprintf(buf1, sizeof(buf1), "$n stares at you and utters the words, '%s'.",
-    GET_CLASS(ch) == GET_CLASS(tch) ? skill_name(spellnum) : buf);
-    act(buf1, FALSE, ch, NULL, tch, TO_VICT);
+    snprintf(act_buf_original, sizeof(act_buf_original), "$n stares at you and utters the words, '%s'.",
+    GET_CLASS(ch) == GET_CLASS(tch) ? spell : obfuscated);
+    act(act_buf_original, FALSE, ch, NULL, tch, TO_VICT);
   }
 }
 
