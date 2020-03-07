@@ -2994,10 +2994,15 @@ void init_lookup_table(void)
   }
 }
 
-static struct lookup_table_t *find_element_by_uid_in_lookup_table(long uid)
+static struct lookup_table_t *get_bucket_head(long uid)
 {
   int bucket = (int) (uid & (BUCKET_COUNT - 1));
-  struct lookup_table_t *lt = &lookup_table[bucket];
+  return &lookup_table[bucket];
+}
+
+static struct lookup_table_t *find_element_by_uid_in_lookup_table(long uid)
+{
+  struct lookup_table_t *lt = get_bucket_head(uid);
 
   for (;lt && lt->uid != uid ; lt = lt->next) ;
   return lt;
@@ -3034,8 +3039,7 @@ int has_obj_by_uid_in_lookup_table(long uid)
 
 void add_to_lookup_table(long uid, void *c)
 {
-  int bucket = (int) (uid & (BUCKET_COUNT - 1));
-  struct lookup_table_t *lt = &lookup_table[bucket];
+  struct lookup_table_t *lt = get_bucket_head(uid);
 
   if (lt && lt->uid == uid) {
    log("add_to_lookup updating existing value for uid=%ld (%p -> %p)", uid, lt->c, c);
@@ -3046,6 +3050,7 @@ void add_to_lookup_table(long uid, void *c)
   for (;lt && lt->next; lt = lt->next)
     if (lt->next->uid == uid) {
       log("add_to_lookup updating existing value for uid=%ld (%p -> %p)", uid, lt->next->c, c);
+      lt->next->c = c;
       return;
     }
 
