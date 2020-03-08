@@ -52,11 +52,12 @@ static void wear_message(struct char_data *ch, struct obj_data *obj, int where);
 
 static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont)
 {
+  long object_id = obj_script_id(obj);
 
   if (!drop_otrigger(obj, ch))
     return;
 
-  if (!obj) /* object might be extracted by drop_otrigger */
+  if (!has_obj_by_uid_in_lookup_table(object_id)) /* object might be extracted by drop_otrigger */
     return;
 
   if ((GET_OBJ_VAL(cont, 0) > 0) &&
@@ -409,24 +410,27 @@ static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_
       WAIT_STATE(ch, PULSE_VIOLENCE); /* to prevent coin-bombing */
       obj = create_money(amount);
       if (mode == SCMD_DONATE) {
-	send_to_char(ch, "You throw some gold into the air where it disappears in a puff of smoke!\r\n");
-	act("$n throws some gold into the air where it disappears in a puff of smoke!",
-	    FALSE, ch, 0, 0, TO_ROOM);
-	obj_to_room(obj, RDR);
-	act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
+	      send_to_char(ch, "You throw some gold into the air where it disappears in a puff of smoke!\r\n");
+	      act("$n throws some gold into the air where it disappears in a puff of smoke!",
+	          FALSE, ch, 0, 0, TO_ROOM);
+	      obj_to_room(obj, RDR);
+	      act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
       } else {
         char buf[MAX_STRING_LENGTH];
+        long object_id = obj_script_id(obj);
 
         if (!drop_wtrigger(obj, ch)) {
-          extract_obj(obj);
+          if (has_obj_by_uid_in_lookup_table(object_id))
+            extract_obj(obj);
+
           return;
         }
 
-	snprintf(buf, sizeof(buf), "$n drops %s.", money_desc(amount));
-	act(buf, TRUE, ch, 0, 0, TO_ROOM);
+	      snprintf(buf, sizeof(buf), "$n drops %s.", money_desc(amount));
+	      act(buf, TRUE, ch, 0, 0, TO_ROOM);
 
-	send_to_char(ch, "You drop some gold.\r\n");
-	obj_to_room(obj, IN_ROOM(ch));
+	      send_to_char(ch, "You drop some gold.\r\n");
+	      obj_to_room(obj, IN_ROOM(ch));
       }
     } else {
       char buf[MAX_STRING_LENGTH];
@@ -447,12 +451,19 @@ static int perform_drop(struct char_data *ch, struct obj_data *obj,
 {
   char buf[MAX_STRING_LENGTH];
   int value;
+  long object_id = obj_script_id(obj);
 
   if (!drop_otrigger(obj, ch))
     return 0;
 
+  if (!has_obj_by_uid_in_lookup_table(object_id))
+    return 0; // item was extracted by script
+
   if ((mode == SCMD_DROP) && !drop_wtrigger(obj, ch))
     return 0;
+
+  if (!has_obj_by_uid_in_lookup_table(object_id))
+    return 0; // item was extracted by script
 
   if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
     snprintf(buf, sizeof(buf), "You can't %s $p, it must be CURSED!", sname);

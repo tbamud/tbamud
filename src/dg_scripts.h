@@ -449,6 +449,8 @@ void wld_command_interpreter(room_data *room, char *argument);
 // id helpers
 extern long char_script_id(char_data *ch);
 extern long obj_script_id(obj_data *obj);
+extern int has_obj_by_uid_in_lookup_table(long uid);
+
 #define room_script_id(room)  ((long)(room)->number + ROOM_ID_BASE)
 
 #endif /* _DG_SCRIPTS_H_ */
