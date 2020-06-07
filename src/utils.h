@@ -70,6 +70,8 @@ void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
 char * convert_from_tabs(char * string);
 int count_non_protocol_chars(char * str);
+char *right_trim_whitespace(const char *string);
+void remove_from_string(char *string, const char *to_remove);
 
 /* Public functions made available form weather.c */
 void weather_and_time(int mode);
