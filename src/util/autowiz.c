@@ -85,7 +85,7 @@ void read_file(void)
   while (get_line(fl, line))
     if (*line != '~')
       recs++;
-    rewind(fl);
+  rewind(fl);
 
   for (i = 0; i < recs; i++) {
     get_line(fl, line);
