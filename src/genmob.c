@@ -17,6 +17,8 @@
 #include "genzon.h"
 #include "dg_olc.h"
 #include "spells.h"
+#include  <stdlib.h>
+
 
 /* local functions */
 static void extract_mobile_all(mob_vnum vnum);

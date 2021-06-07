@@ -22,6 +22,8 @@
 #include "genzon.h" /* for real_zone_by_thing */
 #include "act.h"
 #include "fight.h"
+#include  <stdlib.h>
+
 
 
 /* Local file scope functions. */

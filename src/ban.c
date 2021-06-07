@@ -17,6 +17,8 @@
 #include "handler.h"
 #include "db.h"
 #include "ban.h"
+#include  <stdlib.h>
+
 
 /* global variables locally defined, used externally */
 struct ban_list_element *ban_list = NULL;

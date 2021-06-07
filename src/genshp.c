@@ -14,6 +14,8 @@
 #include "genolc.h"
 #include "genshp.h"
 #include "genzon.h"
+#include  <stdlib.h>
+
 
 /* NOTE (gg): Didn't modify sedit much. Don't consider it as 'recent' as the
  * other editors with regard to updates or style. */

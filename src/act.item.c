@@ -22,6 +22,7 @@
 #include "oasis.h"
 #include "act.h"
 #include "quest.h"
+#include  <stdlib.h>
 
 
 /* local function prototypes */

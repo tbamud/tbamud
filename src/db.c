@@ -39,6 +39,8 @@
 #include "msgedit.h"
 #include "screen.h"
 #include <sys/stat.h>
+#include  <stdlib.h>
+
 
 /*  declarations of most of the 'global' variables */
 struct config_data config_info; /* Game configuration list.	 */

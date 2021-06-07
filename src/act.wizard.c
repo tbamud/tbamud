@@ -34,6 +34,7 @@
 #include "quest.h"
 #include "ban.h"
 #include "screen.h"
+#include  <stdlib.h>
 
 /* local utility functions with file scope */
 static int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg);

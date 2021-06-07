@@ -19,6 +19,8 @@
 #include "screen.h"
 #include "spells.h"
 #include "act.h"
+#include  <stdlib.h>
+
 
 /* local defined functions for local use */
 /* do_action and do_gmote utility function */

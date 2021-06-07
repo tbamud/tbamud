@@ -39,6 +39,8 @@
 #include "handler.h"
 #include "improved-edit.h"
 #include "modify.h"
+#include  <stdlib.h>
+
 
 /* Board appearance order. */
 #define	NEWEST_AT_TOP	FALSE

@@ -21,6 +21,8 @@
 #include "genzon.h"      /* for real_zone_by_thing */
 #include "constants.h"   /* for the *trig_types */
 #include "modify.h"      /* for smash_tilde */
+#include  <stdlib.h>
+
 
 
 /* local functions */

@@ -26,6 +26,8 @@
 #include "quest.h"
 #include "act.h"
 #include "genobj.h"
+#include  <stdlib.h>
+
 
 /* Utility functions */
 

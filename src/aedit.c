@@ -18,6 +18,8 @@
 #include "constants.h"
 #include "genolc.h"
 #include "act.h"
+#include  <stdlib.h>
+
 
 
 /* local utility functions */

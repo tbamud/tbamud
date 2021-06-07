@@ -28,6 +28,7 @@
 #include "modify.h"
 #include "asciimap.h"
 #include "quest.h"
+#include <stdlib.h>
 
 /* prototypes of local functions */
 /* do_diagnose utility functions */

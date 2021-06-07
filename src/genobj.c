@@ -19,6 +19,8 @@
 #include "handler.h"
 #include "interpreter.h"
 #include "boards.h" /* for board_info */
+#include  <stdlib.h>
+
 
 
 /* local functions */

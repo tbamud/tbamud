@@ -23,6 +23,8 @@
 #include "comm.h"
 #include "constants.h"
 #include "interpreter.h" /* For half_chop */
+#include  <stdlib.h>
+
 
 /* local functions */
 static void trig_data_init(trig_data *this_data);

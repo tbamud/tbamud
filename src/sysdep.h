@@ -87,7 +87,9 @@
 #include <memory.h>
 #endif
 
+/*
 extern char *malloc(), *calloc(), *realloc();
+*/
 extern void free ();
 
 extern void abort (), exit ();

@@ -10,6 +10,8 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include  <stdlib.h>
+
 
 /* Begin conf.h dependent includes */
 

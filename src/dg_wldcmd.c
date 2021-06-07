@@ -20,6 +20,8 @@
 #include "constants.h"
 #include "genzon.h" /* for zone_rnum real_zone_by_thing */
 #include "fight.h"  /* for die() */
+#include  <stdlib.h>
+
 
 /* Local functions, macros, defines and structs */
 

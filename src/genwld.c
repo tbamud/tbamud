@@ -18,6 +18,8 @@
 #include "shop.h"
 #include "dg_olc.h"
 #include "mud_event.h"
+#include  <stdlib.h>
+
 
 
 /* This function will copy the strings so be sure you free your own copies of 

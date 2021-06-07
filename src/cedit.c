@@ -17,6 +17,8 @@
 #include "oasis.h"
 #include "improved-edit.h"
 #include "modify.h"
+#include  <stdlib.h>
+
 
 /* local scope functions, not used externally */
 static void cedit_disp_menu(struct descriptor_data *d);

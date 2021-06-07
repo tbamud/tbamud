@@ -16,6 +16,8 @@
 #include "quest.h"
 #include "genolc.h"
 #include "genzon.h" /* for create_world_index */
+#include  <stdlib.h>
+
 
 
 /*-------------------------------------------------------------------*/

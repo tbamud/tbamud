@@ -25,6 +25,8 @@
 #include "constants.h"
 #include "comm.h"  /* For access to the game pulse */
 #include "mud_event.h"
+#include  <stdlib.h>
+
 
 /***************************************************************************
  * Begin mud specific event queue functions

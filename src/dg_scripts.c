@@ -29,6 +29,8 @@
 #include "genzon.h" /* for real_zone_by_thing */
 #include "act.h"
 #include "modify.h"
+#include  <stdlib.h>
+
 
 #define PULSES_PER_MUD_HOUR     (SECS_PER_MUD_HOUR*PASSES_PER_SEC)
 

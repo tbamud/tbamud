@@ -20,6 +20,8 @@
 #include "constants.h"
 #include "genzon.h" /* for access to real_zone_by_thing */
 #include "fight.h" /* for die() */
+#include  <stdlib.h>
+
 
 
 

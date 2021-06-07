@@ -23,6 +23,8 @@
 #include "spells.h"
 #include "dg_event.h"
 #include "constants.h"
+#include  <stdlib.h>
+
 
 /* frees memory associated with var */
 void free_var_el(struct trig_var_data *var)
