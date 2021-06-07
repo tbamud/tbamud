@@ -11,6 +11,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include  <stdlib.h>
 
 
 #define NOWHERE    -1		/* nil reference for room-database         */

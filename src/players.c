@@ -22,6 +22,7 @@
 #include "config.h" /* for pclean_criteria[] */
 #include "dg_scripts.h" /* To enable saving of player variables to disk */
 #include "quest.h"
+#include  <stdlib.h>
 
 #define LOAD_HIT	0
 #define LOAD_MANA	1

@@ -13,6 +13,7 @@
 #include "improved-edit.h"
 #include "dg_scripts.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 
 void send_editor_help(struct descriptor_data *d)

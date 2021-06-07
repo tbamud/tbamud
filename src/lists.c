@@ -11,6 +11,7 @@
 #include "utils.h"
 #include "db.h"
 #include "dg_event.h"
+#include  <stdlib.h>
 
 static struct iterator_data Iterator;
 static bool loop = FALSE;

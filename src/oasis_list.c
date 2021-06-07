@@ -24,7 +24,8 @@
 #include "quest.h"
 #include "modify.h"
 #include "spells.h"
- 
+#include  <stdlib.h>
+
 #define MAX_OBJ_LIST 100
  
 struct obj_list_item {

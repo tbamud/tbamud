@@ -21,6 +21,7 @@
 #include "act.h"
 #include "graph.h"
 #include "fight.h"
+#include  <stdlib.h>
 
 
 /* local file scope only function prototypes */

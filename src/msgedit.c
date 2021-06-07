@@ -18,6 +18,7 @@
 #include "genolc.h"
 #include "interpreter.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 /* Statics */
 static void free_messages_type(struct msg_type *msg);

@@ -17,6 +17,7 @@
 #include "genzon.h"
 #include "oasis.h"
 #include "dg_scripts.h"
+#include  <stdlib.h>
 
 /* Nasty internal macros to clean up the code. */
 #define MYCMD		(OLC_ZONE(d)->cmd[subcmd])

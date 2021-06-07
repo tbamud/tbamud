@@ -37,6 +37,7 @@
 #include "prefedit.h"
 #include "ibt.h"
 #include "mud_event.h"
+#include  <stdlib.h>
 
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);

@@ -21,6 +21,7 @@
 #include "constants.h"
 #include "graph.h"
 #include "fight.h"
+#include  <stdlib.h>
 
 /* local functions */
 static int VALID_EDGE(room_rnum x, int y);

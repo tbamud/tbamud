@@ -24,6 +24,7 @@
 #include "interpreter.h"
 #include "modify.h"
 #include "quest.h"
+#include  <stdlib.h>
 
 /*-------------------------------------------------------------------*/
 /*. Function prototypes . */

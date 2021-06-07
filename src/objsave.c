@@ -22,6 +22,7 @@
 #include "config.h"
 #include "modify.h"
 #include "genolc.h" /* for strip_cr and sprintascii */
+#include  <stdlib.h>
 
 /* these factors should be unique integers */
 #define RENT_FACTOR    1

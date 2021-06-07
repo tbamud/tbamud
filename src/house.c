@@ -19,6 +19,7 @@
 #include "house.h"
 #include "constants.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 /* local (file scope only) globals */
 static struct house_control_rec house_control[MAX_HOUSES];

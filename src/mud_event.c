@@ -14,6 +14,7 @@
 #include "constants.h"
 #include "comm.h"  /* For access to the game pulse */
 #include "mud_event.h"
+#include  <stdlib.h>
 
 /* Global List */
 struct list_data * world_events = NULL;

@@ -35,6 +35,7 @@
 #include "oasis.h"
 #include "improved-edit.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 IBT_DATA * first_bug  = NULL;
 IBT_DATA * last_bug   = NULL;

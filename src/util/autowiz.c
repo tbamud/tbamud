@@ -12,6 +12,7 @@
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
+#include  <stdlib.h>
 
 #define IMM_LMARG "   "
 #define IMM_NSIZE  16

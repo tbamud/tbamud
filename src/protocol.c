@@ -30,6 +30,7 @@
 #include "dg_scripts.h"
 #include "act.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 /* Globals */
 const char * RGBone = "F022";

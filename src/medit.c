@@ -26,6 +26,7 @@
 #include "screen.h"
 #include "fight.h"
 #include "modify.h"      /* for smash_tilde */
+#include  <stdlib.h>
 
 /* local functions */
 static void medit_setup_new(struct descriptor_data *d);

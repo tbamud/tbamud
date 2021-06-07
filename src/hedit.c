@@ -24,6 +24,7 @@
 #include "act.h"
 #include "hedit.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 /* local functions */
 static void hedit_disp_menu(struct descriptor_data *);

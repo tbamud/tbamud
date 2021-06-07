@@ -21,6 +21,7 @@
 #include "dg_olc.h"
 #include "constants.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 /* local functions */
 static void redit_setup_new(struct descriptor_data *d);

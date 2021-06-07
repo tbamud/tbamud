@@ -20,6 +20,7 @@
 #include "screen.h"
 #include "quest.h"
 #include "act.h" /* for do_tell */
+#include  <stdlib.h>
 
 
 /*--------------------------------------------------------------------------

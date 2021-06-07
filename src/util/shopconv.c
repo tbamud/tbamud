@@ -11,6 +11,7 @@
 #include "utils.h"
 #include "db.h"
 #include "shop.h"
+#include  <stdlib.h>
 
 void basic_mud_log(const char *x, ...)
 {

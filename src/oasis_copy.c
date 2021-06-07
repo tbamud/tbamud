@@ -23,6 +23,7 @@
 #include "improved-edit.h"
 #include "constants.h"
 #include "dg_scripts.h"
+#include  <stdlib.h>
 
 /* Local, filescope function prototypes */
 /* Utility function for buildwalk */

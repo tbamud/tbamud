@@ -16,6 +16,7 @@
 #include "oasis.h"
 #include "improved-edit.h"
 #include "modify.h"
+#include  <stdlib.h>
 
 extern time_t motdmod;
 extern time_t newsmod;

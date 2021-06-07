@@ -22,6 +22,7 @@
 #include "handler.h"
 #include "interpreter.h"
 #include "class.h"
+#include  <stdlib.h>
 
 
 /** Aportable random number function.

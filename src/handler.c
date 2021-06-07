@@ -24,6 +24,8 @@
 #include "fight.h"
 #include "quest.h"
 #include "mud_event.h"
+#include  <stdlib.h>
+
 
 /* local file scope variables */
 static int extractions_pending = 0;

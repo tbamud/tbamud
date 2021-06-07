@@ -26,6 +26,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ibt.h"
+#include  <stdlib.h>
 
 /* local (file scope) function prototpyes  */
 static char *next_page(char *str, struct char_data *ch);

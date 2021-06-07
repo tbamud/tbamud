@@ -27,6 +27,7 @@
 #include "quest.h"
 #include "ibt.h"
 #include "msgedit.h"
+#include  <stdlib.h>
 
 /* Global variables defined here, used elsewhere */
 const char *nrm, *grn, *cyn, *yel;

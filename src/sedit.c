@@ -19,6 +19,7 @@
 #include "oasis.h"
 #include "constants.h"
 #include "shop.h"
+#include  <stdlib.h>
 
 /* local functions */
 static void sedit_setup_new(struct descriptor_data *d);

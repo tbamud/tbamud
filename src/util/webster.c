@@ -9,6 +9,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include  <stdlib.h>
 
 
 #define MEM_USE 10000

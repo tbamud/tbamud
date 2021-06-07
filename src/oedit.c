@@ -24,6 +24,8 @@
 #include "dg_olc.h"
 #include "fight.h"
 #include "modify.h"
+#include  <stdlib.h>
+
 
 /* local functions */
 static void oedit_setup_new(struct descriptor_data *d);

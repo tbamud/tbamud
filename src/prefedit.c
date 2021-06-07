@@ -20,6 +20,7 @@
 #include "oasis.h"
 #include "prefedit.h"
 #include "screen.h"
+#include  <stdlib.h>
 
 /* Internal (static) functions */
 static void prefedit_setup(struct descriptor_data *d, struct char_data *vict);
