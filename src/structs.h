@@ -1276,7 +1276,7 @@ struct happyhour {
 struct recent_player
 {
    int    vnum;                   /* The ID number for this instance */
-   char   name[MAX_NAME_LENGTH];  /* The char name of the player     */
+   char   name[MAX_NAME_LENGTH+1];/* The char name of the player     */
    bool   new_player;             /* Is this a new player?           */
    bool   copyover_player;        /* Is this a player that was on during the last copyover? */
    time_t time;                   /* login time                      */
