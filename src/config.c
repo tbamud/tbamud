@@ -44,10 +44,10 @@ int script_players = NO;
  * players, as well as a variety of other "asshole player" protections. However,
  * if you decide you want to have an all-out knock-down drag-out PK Mud, just
  * set pk_allowed to YES - and anything goes. */
-int pk_allowed = NO;
+int pk_allowed = YES;
 
 /* Is playerthieving allowed? */
-int pt_allowed = NO;
+int pt_allowed = YES;
 
 /* Minimum level a player must be to shout/holler/gossip/auction. */
 int level_can_shout = 1;
@@ -85,7 +85,7 @@ int load_into_inventory = YES;
 
 /* "okay" etc. */
 const char *OK = "Okay.\r\n";
-const char *HUH = "Huh!?!\r\n";
+const char *HUH = "What?\r\n"; /* Was Huh!?! */
 const char *NOPERSON = "No one by that name here.\r\n";
 const char *NOEFFECT = "Nothing seems to happen.\r\n";
 
@@ -102,7 +102,7 @@ int no_mort_to_immort = YES;
 
 /* Are diagonal directions enabled?
 * If set to NO, then only the 6 directions n,e,s,w,u,d are allowed */
-int diagonal_dirs = NO;
+int diagonal_dirs = YES;
 
 /* RENT/CRASHSAVE OPTIONS */
 /* Should the MUD allow you to 'rent' for free?  (i.e. if you just quit, your
@@ -262,8 +262,8 @@ int use_new_socials = YES;
 
 const char *MENU =
 "\r\n"
-"Welcome to tbaMUD!\r\n"
-"\t(0\t)) Exit from tbaMUD.\r\n"
+"Welcome to Mad Mike's MUD!\r\n"
+"\t(0\t)) Exit from the MUD.\r\n"
 "\t(1\t)) Enter the game.\r\n"
 "\t(2\t)) Enter description.\r\n"
 "\t(3\t)) Read the background story.\r\n"
@@ -274,11 +274,11 @@ const char *MENU =
 
 const char *WELC_MESSG =
 "\r\n"
-"Welcome to tbaMUD!  May your visit here be... Enlightening"
+"Welcome to Mad Mike's MUD!"
 "\r\n\r\n";
 
 const char *START_MESSG =
-"Welcome.  This is your new tbaMUD character!  You can now earn gold,\r\n"
+"Welcome.  This is your new character!  You can now earn silver,\r\n"
 "gain experience, find weapons and equipment, and much more -- while\r\n"
 "meeting people from around the world!\r\n";
 
