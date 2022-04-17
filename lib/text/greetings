@@ -1,7 +1,11 @@
-                               T  B  A  M  U  D
-                                   2 0 2 1 
+(lib/text/greetings)
+    __  __           _    __  __ _ _        _        __  __ _   _ ____
+   |  \/  | __ _  __| |  |  \/  (_) | _____( )___   |  \/  | | | |  _ \
+   | |\/| |/ _` |/ _` |  | |\/| | | |/ / _ \// __|  | |\/| | | | | | | |
+   | |  | | (_| | (_| |  | |  | | |   <  __/ \__ \  | |  | | |_| | |_| |
+   |_|  |_|\__,_|\__,_|  |_|  |_|_|_|\_\___| |___/  |_|  |_|\___/|____/
 
    Based on CircleMUD by Jeremy Elson and DikuMUD by Hans-Henrik Staerfeldt,
         Katja Nyboe, Tom Madsen, Michael Seifert, and Sebastian Hammer
 
-By what name do you wish to be known? 
+By what name do you wish to be known?

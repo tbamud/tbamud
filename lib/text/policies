@@ -1,8 +1,118 @@
 (lib/text/policies)
 
-This file should list, in no uncertain terms, the policies you must abide
-by on this MUD.
+                          Mad Mike's MUD Policy Statement
 
-Bug the higher-ups to make some policies and write them in this file, lest
-a political disaster ensue...
+Last modification: Sun Apr 17 2022
 
+Prohibited Actions:
+The following actions are prohibited, and anyone caught breaking these rules
+will be subject to punishments such as imprisionment, being made an outcast,
+character deletion or a site ban.
+
+1.  Do not crash the game.
+This is punishable by every possible punishment under the law.  Crashers ruin
+the game for everyone, so if you are on during a crash and suspect that
+another character may have been the cause, please mail an immortal.
+
+2.  Do not sell quest or training items.
+The quests and training are a vital part of the game, and players are
+encouraged to share information, go on quests together, and share quest items.
+However, you should never sell or purchase _any_ quest or training item.
+
+3.  Do not drag aggressive monsters.
+Intentionally bringing aggressive monsters into areas that they do not belong
+is prohibited.  
+
+4.  Do not flood or 'spam' other players.
+The best way to handle this is to ignore the player, and allow an immortal to
+deal out the punishment.  This includes, but is not limited to, repeated
+flashes and emotes.
+
+5.  Do not multi-log.
+This is to insure that everyone has equal access to the game.  This does not
+mean that you can't have multiple characters, just that you should concentrate
+on playing _one_ at a time.  Do not log in more than one of your characters
+at a time!  This is regardless of the number of accounts or computers you
+have at your disposal.  Strange things have been known to happen to characters
+that abuse this policy.  NOTE: For policy purposes a log into the queue is
+considered a log into the game, and queue loading will be dealt with severely.
+
+6.  Do not use robots on the game.
+One of the most enjoyable aspects of MUD's is the interaction between players.
+Robots upset the balance of the game, and require the scenario to be made more
+difficult to accomodate them.
+
+7.  Do not skip level quests or power level for your class.
+Many classes are required to accomplish some task in addition to gaining
+enough experience and gold to level.  Power leveling is considered illegal and
+may result in you being trapped in a training room, or killed.
+
+8. Do not share characters.
+We are tired of getting mail from people complaining that their character was
+stolen/killed by someone they were 'sharing' their character with.  If you are
+caught sharing a character, the character will be deleted and you could be
+jailed.
+
+Player Etiquette:
+The following actions are not prohibited, but are discouraged because they
+lessen the enjoyment of the game for other players.  Consistent abuse of good
+etiquette will also earn punishment.
+
+1.  Do not get all.
+You should not get more than you deserve, especially since other players have
+usually worke hard to get whatever it is you are grabbing.
+
+2.  Do not summon players unknowingly to aggressive monsters.
+The best lesson here is to 'set nosummon', and if you are going to be
+summoned, be sure that it is by someone you can trust.
+
+3.  Please do not use excessively foul language.
+It is good to remember that the other players on the game are actually real
+people, and that the use of excessive racist, sexist, or foul language may
+offend some people.  If you are unable to control yourself, refrain from using
+such remarks when you broadcast.  This also includes the use of character
+names.
+
+Note on the Economy:
+The economy and commerce of the MUD is a product of players interaction.  As
+immortals we have no interest in attempting to control the  "invisible hand"
+of market forces, or imposing rules upon commerce.  With this noted, we offer
+the following advice:  Caveat emptor or let the buyer beware!
+
+Special Events:
+Occasionally immortals run special events, such as invasions, raving monsters,
+quests, or holiday events.  Many of these events can prove harmful and
+dangerous to low level characters.  ENGAGE IN THESE EVENTS AT YOUR OWN RISK!
+If you have any doubts, run and hide or log off for a while. 
+
+Immortal Policies:
+As you may imagine, running a MUD does take quite a bit of time and effort to
+do well.  At this time Mad Mike's MUD is running with a minimal crew of
+immortals.  Please do not expect a great deal of interaction or help from us
+since we are rarely on, and when we are it is to take care of matters critical
+for the functioning of the MUD.  If you have a problem, please try to solve it
+within the game community.  If your problem is something that necessitates the
+attention of an immortal, please mail us, and wait patiently.  We realize that
+it would be better if immortals were regularly available, and ask that you
+understand that we can no longer devote large amounts of time to interacting
+with players. In addition, please note that an immortal is the ultimate
+authority on matters of policy.  An immortal may make a policy statement on a
+matter not expressly stated in this policy.  If you feel that a policy
+decision made by an immortal is unresonable, then you may appeal to the other
+immortals for a ruling.
+
+Punishment:
+Punishment can include imprisonment, being made an outcast, character
+deletion or a site ban. Any of the above crimes can be punished with any of
+these punishments or a combination of these punishments.
+
+Players who have caused excessive problems will be made outcasts.  Outcasts
+should be shunned and killed whenever possible.  Outcasts may be killed by any
+other player and will find no haven until they are killed.  Any law abiding
+player who recovers a token of death of an outcast may turn it in to an
+immortal for a bounty. Outcasts are denoted with a (O).
+
+This file is subject to change without notice and players are encouraged to
+check it frequently.  Ignorance is no excuse. 
+
+Based on the Isengard MUD (Mordor codebase) policy statement.
