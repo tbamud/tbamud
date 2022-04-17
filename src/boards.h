@@ -13,7 +13,7 @@
 #ifndef _BOARDS_H_
 #define _BOARDS_H_
 
-#define NUM_OF_BOARDS		7	/* change if needed! */
+#define NUM_OF_BOARDS		1	/* change if needed! */
 #define MAX_BOARD_MESSAGES 	60      /* arbitrary -- change if needed */
 #define MAX_MESSAGE_LENGTH	4096	/* arbitrary -- change if needed */
 
