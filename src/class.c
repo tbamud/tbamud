@@ -1680,7 +1680,7 @@ int level_exp(int chclass, int level)
       case 18: return 3000000;
       case 19: return 3375000;
       case 20: return 3750000;
-      case 21: return 4000000;
+      /*case 21: return 4000000;
       case 22: return 4300000;
       case 23: return 4600000;
       case 24: return 4900000;
@@ -1689,7 +1689,7 @@ int level_exp(int chclass, int level)
       case 27: return 5950000;
       case 28: return 6400000;
       case 29: return 6850000;
-      case 30: return 7400000;
+      case 30: return 7400000;*/
       /* add new levels here */
       case LVL_IMMORT: return 8000000;
     }
@@ -1718,7 +1718,7 @@ int level_exp(int chclass, int level)
       case 18: return 2400000;
       case 19: return 2700000;
       case 20: return 3000000;
-      case 21: return 3250000;
+      /*case 21: return 3250000;
       case 22: return 3500000;
       case 23: return 3800000;
       case 24: return 4100000;
@@ -1727,7 +1727,7 @@ int level_exp(int chclass, int level)
       case 27: return 5200000;
       case 28: return 5600000;
       case 29: return 6000000;
-      case 30: return 6400000;
+      case 30: return 6400000;*/
       /* add new levels here */
       case LVL_IMMORT: return 7000000;
     }
@@ -1756,7 +1756,7 @@ int level_exp(int chclass, int level)
       case 18: return 2500000;
       case 19: return 3000000;
       case 20: return 3500000;
-      case 21: return 3650000;
+      /*case 21: return 3650000;
       case 22: return 3800000;
       case 23: return 4100000;
       case 24: return 4400000;
@@ -1765,7 +1765,7 @@ int level_exp(int chclass, int level)
       case 27: return 5500000;
       case 28: return 5900000;
       case 29: return 6300000;
-      case 30: return 6650000;
+      case 30: return 6650000;*/
       /* add new levels here */
       case LVL_IMMORT: return 7000000;
     }
@@ -1794,7 +1794,7 @@ int level_exp(int chclass, int level)
       case 18: return 2900000;
       case 19: return 3250000;
       case 20: return 3600000;
-      case 21: return 3900000;
+      /*case 21: return 3900000;
       case 22: return 4200000;
       case 23: return 4500000;
       case 24: return 4800000;
@@ -1803,7 +1803,7 @@ int level_exp(int chclass, int level)
       case 27: return 5950000;
       case 28: return 6400000;
       case 29: return 6850000;
-      case 30: return 7400000;
+      case 30: return 7400000;*/
       /* add new levels here */
       case LVL_IMMORT: return 8000000;
     }
@@ -1849,7 +1849,7 @@ const char *title_male(int chclass, int level)
       case 18: return "the Wizard";
       case 19: return "the Warlock";
       case 20: return "the Sorcerer";
-      case 21: return "the Necromancer";
+      /*case 21: return "the Necromancer";
       case 22: return "the Thaumaturge";
       case 23: return "the Student of the Occult";
       case 24: return "the Disciple of the Uncanny";
@@ -1858,7 +1858,7 @@ const char *title_male(int chclass, int level)
       case 27: return "the Crafter of Magics";
       case 28: return "the Shaman";
       case 29: return "the Keeper of Talismans";
-      case 30: return "the Archmage";
+      case 30: return "the Archmage";*/
       case LVL_IMMORT: return "the Immortal Warlock";
       case LVL_GOD: return "the Avatar of Magic";
       case LVL_GRGOD: return "the God of Magic";
@@ -1989,7 +1989,7 @@ const char *title_female(int chclass, int level)
       case 18: return "the Wizard";
       case 19: return "the War Witch";
       case 20: return "the Sorceress";
-      case 21: return "the Necromancress";
+      /*case 21: return "the Necromancress";
       case 22: return "the Thaumaturgess";
       case 23: return "the Student of the Occult";
       case 24: return "the Disciple of the Uncanny";
@@ -1998,7 +1998,7 @@ const char *title_female(int chclass, int level)
       case 27: return "the Crafter of Magics";
       case 28: return "Shaman";
       case 29: return "the Keeper of Talismans";
-      case 30: return "Archwitch";
+      case 30: return "Archwitch";*/
       case LVL_IMMORT: return "the Immortal Enchantress";
       case LVL_GOD: return "the Empress of Magic";
       case LVL_GRGOD: return "the Goddess of Magic";
