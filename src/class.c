@@ -1521,14 +1521,14 @@ void advance_level(struct char_data *ch)
  * performance hit because it's not used very often. */
 int backstab_mult(int level)
 {
-  if (level <= 7)
-    return 2;	  /* level 1 - 7 */
-  else if (level <= 13)
-    return 3;	  /* level 8 - 13 */
+  if (level <= 5)
+    return 2;	  /* level 1 - 5 */
+  else if (level <= 10)
+    return 3;	  /* level 6 - 10 */
+  else if (level <= 15)
+    return 4;	  /* level 11 - 15 */
   else if (level <= 20)
-    return 4;	  /* level 14 - 20 */
-  else if (level <= 28)
-    return 5;	  /* level 21 - 28 */
+    return 5;	  /* level 16 - 20 */
   else if (level < LVL_IMMORT)
     return 6;	  /* all remaining mortal levels */
   else
