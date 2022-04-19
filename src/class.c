@@ -26,16 +26,16 @@
 
 /* Names first */
 const char *class_abbrevs[] = {
-  "Mu",
-  "Cl",
+  "Ma",
+  "Pr",
   "Th",
   "Wa",
   "\n"
 };
 
 const char *pc_class_types[] = {
-  "Magic User",
-  "Cleric",
+  "Magician",
+  "Priest",
   "Thief",
   "Warrior",
   "\n"
@@ -45,10 +45,10 @@ const char *pc_class_types[] = {
 const char *class_menu =
 "\r\n"
 "Select a class:\r\n"
-"  [\t(C\t)]leric\r\n"
+"  [\t(M\t)]agician\r\n"
+"  [\t(P\t)]riest\r\n"
 "  [\t(T\t)]hief\r\n"
-"  [\t(W\t)]arrior\r\n"
-"  [\t(M\t)]agic-user\r\n";
+"  [\t(W\t)]arrior\r\n";
 
 /* The code to interpret a class letter -- used in interpreter.c when a new
  * character is selecting a class and by 'set class' in act.wizard.c. */
@@ -58,9 +58,9 @@ int parse_class(char arg)
 
   switch (arg) {
   case 'm': return CLASS_MAGIC_USER;
-  case 'c': return CLASS_CLERIC;
-  case 'w': return CLASS_WARRIOR;
+  case 'p': return CLASS_CLERIC;
   case 't': return CLASS_THIEF;
+  case 'w': return CLASS_WARRIOR;
   default:  return CLASS_UNDEFINED;
   }
 }
@@ -187,7 +187,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for mage paralyzation saving throw.");
+	log("SYSERR: Missing level for magician paralyzation saving throw.");
 	break;
       }
     case SAVING_ROD:	/* Rods */
@@ -234,7 +234,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for mage rod saving throw.");
+	log("SYSERR: Missing level for magician rod saving throw.");
 	break;
       }
     case SAVING_PETRI:	/* Petrification */
@@ -281,7 +281,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for mage petrification saving throw.");
+	log("SYSERR: Missing level for magician petrification saving throw.");
 	break;
       }
     case SAVING_BREATH:	/* Breath weapons */
@@ -328,7 +328,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for mage breath saving throw.");
+	log("SYSERR: Missing level for magician breath saving throw.");
 	break;
       }
     case SAVING_SPELL:	/* Generic spells */
@@ -375,7 +375,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for mage spell saving throw.");
+	log("SYSERR: Missing level for magician spell saving throw.");
 	break;
       }
     default:
@@ -429,7 +429,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for cleric paralyzation saving throw.");
+	log("SYSERR: Missing level for priest paralyzation saving throw.");
 	break;
       }
     case SAVING_ROD:	/* Rods */
@@ -476,7 +476,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for cleric rod saving throw.");
+	log("SYSERR: Missing level for priest rod saving throw.");
 	break;
       }
     case SAVING_PETRI:	/* Petrification */
@@ -523,7 +523,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for cleric petrification saving throw.");
+	log("SYSERR: Missing level for priest petrification saving throw.");
 	break;
       }
     case SAVING_BREATH:	/* Breath weapons */
@@ -570,7 +570,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for cleric breath saving throw.");
+	log("SYSERR: Missing level for priest breath saving throw.");
 	break;
       }
     case SAVING_SPELL:	/* Generic spells */
@@ -617,7 +617,7 @@ byte saving_throws(int class_num, int type, int level)
       case 39: return  0;
       case 40: return  0;
       default:
-	log("SYSERR: Missing level for cleric spell saving throw.");
+	log("SYSERR: Missing level for priest spell saving throw.");
 	break;
       }
     default:
@@ -1680,16 +1680,6 @@ int level_exp(int chclass, int level)
       case 18: return 3000000;
       case 19: return 3375000;
       case 20: return 3750000;
-      /*case 21: return 4000000;
-      case 22: return 4300000;
-      case 23: return 4600000;
-      case 24: return 4900000;
-      case 25: return 5200000;
-      case 26: return 5500000;
-      case 27: return 5950000;
-      case 28: return 6400000;
-      case 29: return 6850000;
-      case 30: return 7400000;*/
       /* add new levels here */
       case LVL_IMMORT: return 8000000;
     }
@@ -1718,16 +1708,6 @@ int level_exp(int chclass, int level)
       case 18: return 2400000;
       case 19: return 2700000;
       case 20: return 3000000;
-      /*case 21: return 3250000;
-      case 22: return 3500000;
-      case 23: return 3800000;
-      case 24: return 4100000;
-      case 25: return 4400000;
-      case 26: return 4800000;
-      case 27: return 5200000;
-      case 28: return 5600000;
-      case 29: return 6000000;
-      case 30: return 6400000;*/
       /* add new levels here */
       case LVL_IMMORT: return 7000000;
     }
@@ -1756,16 +1736,6 @@ int level_exp(int chclass, int level)
       case 18: return 2500000;
       case 19: return 3000000;
       case 20: return 3500000;
-      /*case 21: return 3650000;
-      case 22: return 3800000;
-      case 23: return 4100000;
-      case 24: return 4400000;
-      case 25: return 4700000;
-      case 26: return 5100000;
-      case 27: return 5500000;
-      case 28: return 5900000;
-      case 29: return 6300000;
-      case 30: return 6650000;*/
       /* add new levels here */
       case LVL_IMMORT: return 7000000;
     }
@@ -1794,16 +1764,6 @@ int level_exp(int chclass, int level)
       case 18: return 2900000;
       case 19: return 3250000;
       case 20: return 3600000;
-      /*case 21: return 3900000;
-      case 22: return 4200000;
-      case 23: return 4500000;
-      case 24: return 4800000;
-      case 25: return 5150000;
-      case 26: return 5500000;
-      case 27: return 5950000;
-      case 28: return 6400000;
-      case 29: return 6850000;
-      case 30: return 7400000;*/
       /* add new levels here */
       case LVL_IMMORT: return 8000000;
     }
