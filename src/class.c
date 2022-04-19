@@ -1829,127 +1829,210 @@ const char *title_male(int chclass, int level)
 
     case CLASS_MAGIC_USER:
     switch (level) {
-      case  1: return "the Apprentice of Magic";
-      case  2: return "the Spell Student";
-      case  3: return "the Scholar of Magic";
-      case  4: return "the Delver in Spells";
-      case  5: return "the Medium of Magic";
-      case  6: return "the Scribe of Magic";
-      case  7: return "the Seer";
-      case  8: return "the Sage";
-      case  9: return "the Illusionist";
-      case 10: return "the Abjurer";
-      case 11: return "the Invoker";
-      case 12: return "the Enchanter";
-      case 13: return "the Conjurer";
-      case 14: return "the Magician";
-      case 15: return "the Creator";
-      case 16: return "the Savant";
-      case 17: return "the Magus";
-      case 18: return "the Wizard";
-      case 19: return "the Warlock";
-      case 20: return "the Sorcerer";
-      /*case 21: return "the Necromancer";
-      case 22: return "the Thaumaturge";
-      case 23: return "the Student of the Occult";
-      case 24: return "the Disciple of the Uncanny";
-      case 25: return "the Minor Elemental";
-      case 26: return "the Greater Elemental";
-      case 27: return "the Crafter of Magics";
-      case 28: return "the Shaman";
-      case 29: return "the Keeper of Talismans";
-      case 30: return "the Archmage";*/
-      case LVL_IMMORT: return "the Immortal Warlock";
-      case LVL_GOD: return "the Avatar of Magic";
-      case LVL_GRGOD: return "the God of Magic";
-      default: return "the Mage";
+        case 1:
+            return "the Initiate";
+        case 2:
+            return "the Initiate";
+        case 3:
+            return "the Initiate";
+        case 4:
+            return "the Initiate";
+        case 5:
+            return "the Initiate";
+        case 6:
+            return "the Apprentice";
+        case 7:
+            return "the Apprentice";
+        case 8:
+            return "the Apprentice";
+        case 9:
+            return "the Apprentice";
+        case 10:
+            return "the Apprentice";
+        case 11:
+            return "the Journeyman";
+        case 12:
+            return "the Journeyman";
+        case 13:
+            return "the Journeyman";
+        case 14:
+            return "the Journeyman";
+        case 15:
+            return "the Journeyman";
+        case 16:
+            return "the Master";
+        case 17:
+            return "the Master";
+        case 18:
+            return "the Master";
+        case 19:
+            return "the Master";
+        case 20:
+            return "the Master";
+      case LVL_IMMORT:
+            return "the Immortal Magician";
+      case LVL_GOD:
+            return "the Lesser God of Magic";
+      case LVL_GRGOD:
+            return "the Greater God of Magic";
+      default:
+            return "the Magician";
     }
 
     case CLASS_CLERIC:
     switch (level) {
-      case  1: return "the Believer";
-      case  2: return "the Attendant";
-      case  3: return "the Acolyte";
-      case  4: return "the Novice";
-      case  5: return "the Missionary";
-      case  6: return "the Adept";
-      case  7: return "the Deacon";
-      case  8: return "the Vicar";
-      case  9: return "the Priest";
-      case 10: return "the Minister";
-      case 11: return "the Canon";
-      case 12: return "the Levite";
-      case 13: return "the Curate";
-      case 14: return "the Monk";
-      case 15: return "the Healer";
-      case 16: return "the Chaplain";
-      case 17: return "the Expositor";
-      case 18: return "the Bishop";
-      case 19: return "the Arch Bishop";
-      case 20: return "the Patriarch";
-      /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Cardinal";
-      case LVL_GOD: return "the Inquisitor";
-      case LVL_GRGOD: return "the God of Good and Evil";
-      default: return "the Cleric";
+        case 1:
+            return "the Neophyte";
+        case 2:
+            return "the Neophyte";
+        case 3:
+            return "the Neophyte";
+        case 4:
+            return "the Neophyte";
+        case 5:
+            return "the Neophyte";
+        case 6:
+            return "the Brother";
+        case 7:
+            return "the Brother";
+        case 8:
+            return "the Brother";
+        case 9:
+            return "the Brother";
+        case 10:
+            return "the Brother";
+        case 11:
+            return "the Priest";
+        case 12:
+            return "the Priest";
+        case 13:
+            return "the Priest";
+        case 14:
+            return "the Priest";
+        case 15:
+            return "the Priest";
+        case 16:
+            return "the High Priest";
+        case 17:
+            return "the High Priest";
+        case 18:
+            return "the High Priest";
+        case 19:
+            return "the High Priest";
+        case 20:
+            return "the High Priest";
+        case LVL_IMMORT:
+            return "the Immortal Priest";
+        case LVL_GOD:
+            return "the Lesser God of Religion";
+        case LVL_GRGOD:
+            return "the Greater God of Religion";
+      default:
+            return "the Priest";
     }
 
     case CLASS_THIEF:
     switch (level) {
-      case  1: return "the Pilferer";
-      case  2: return "the Footpad";
-      case  3: return "the Filcher";
-      case  4: return "the Pick-Pocket";
-      case  5: return "the Sneak";
-      case  6: return "the Pincher";
-      case  7: return "the Cut-Purse";
-      case  8: return "the Snatcher";
-      case  9: return "the Sharper";
-      case 10: return "the Rogue";
-      case 11: return "the Robber";
-      case 12: return "the Magsman";
-      case 13: return "the Highwayman";
-      case 14: return "the Burglar";
-      case 15: return "the Thief";
-      case 16: return "the Knifer";
-      case 17: return "the Quick-Blade";
-      case 18: return "the Killer";
-      case 19: return "the Brigand";
-      case 20: return "the Cut-Throat";
-      /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Assassin";
-      case LVL_GOD: return "the Demi God of Thieves";
-      case LVL_GRGOD: return "the God of Thieves and Tradesmen";
-      default: return "the Thief";
+        case 1:
+            return "the Apprentice";
+        case 2:
+            return "the Apprentice";
+        case 3:
+            return "the Apprentice";
+        case 4:
+            return "the Apprentice";
+        case 5:
+            return "the Apprentice";
+        case 6:
+            return "the Journeyman";
+        case 7:
+            return "the Journeyman";
+        case 8:
+            return "the Journeyman";
+        case 9:
+            return "the Journeyman";
+        case 10:
+            return "the Journeyman";
+        case 11:
+            return "the Master";
+        case 12:
+            return "the Master";
+        case 13:
+            return "the Master";
+        case 14:
+            return "the Master";
+        case 15:
+            return "the Master";
+        case 16:
+            return "the Guildmaster";
+        case 17:
+            return "the Guildmaster";
+        case 18:
+            return "the Guildmaster";
+        case 19:
+            return "the Guildmaster";
+        case 20:
+            return "the Guildmaster";
+        case LVL_IMMORT:
+            return "the Immortal Thief";
+        case LVL_GOD:
+            return "the Lesser God of Thieves";
+        case LVL_GRGOD:
+            return "the Greater God of Thieves";
+      default:
+            return "the Thief";
     }
 
     case CLASS_WARRIOR:
     switch(level) {
-      case  1: return "the Swordpupil";
-      case  2: return "the Recruit";
-      case  3: return "the Sentry";
-      case  4: return "the Fighter";
-      case  5: return "the Soldier";
-      case  6: return "the Warrior";
-      case  7: return "the Veteran";
-      case  8: return "the Swordsman";
-      case  9: return "the Fencer";
-      case 10: return "the Combatant";
-      case 11: return "the Hero";
-      case 12: return "the Myrmidon";
-      case 13: return "the Swashbuckler";
-      case 14: return "the Mercenary";
-      case 15: return "the Swordmaster";
-      case 16: return "the Lieutenant";
-      case 17: return "the Champion";
-      case 18: return "the Dragoon";
-      case 19: return "the Cavalier";
-      case 20: return "the Knight";
-      /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Warlord";
-      case LVL_GOD: return "the Extirpator";
-      case LVL_GRGOD: return "the God of War";
-      default: return "the Warrior";
+        case 1:
+            return "the Fighter";
+        case 2:
+            return "the Fighter";
+        case 3:
+            return "the Fighter";
+        case 4:
+            return "the Fighter";
+        case 5:
+            return "the Fighter";
+        case 6:
+            return "the Champion";
+        case 7:
+            return "the Champion";
+        case 8:
+            return "the Champion";
+        case 9:
+            return "the Champion";
+        case 10:
+            return "the Champion";
+        case 11:
+            return "the Hero";
+        case 12:
+            return "the Hero";
+        case 13:
+            return "the Hero";
+        case 14:
+            return "the Hero";
+        case 15:
+            return "the Hero";
+        case 16:
+            return "the Lord";
+        case 17:
+            return "the Lord";
+        case 18:
+            return "the Lord";
+        case 19:
+            return "the Lord";
+        case 20:
+            return "the Lord";
+        case LVL_IMMORT:
+            return "the Immortal Warrior";
+        case LVL_GOD:
+            return "the Lesser God of War";
+        case LVL_GRGOD:
+            return "The Greater God of War";
+        default:
+            return "the Warrior";
     }
   }
 
@@ -1969,127 +2052,210 @@ const char *title_female(int chclass, int level)
 
     case CLASS_MAGIC_USER:
     switch (level) {
-      case  1: return "the Apprentice of Magic";
-      case  2: return "the Spell Student";
-      case  3: return "the Scholar of Magic";
-      case  4: return "the Delveress in Spells";
-      case  5: return "the Medium of Magic";
-      case  6: return "the Scribess of Magic";
-      case  7: return "the Seeress";
-      case  8: return "the Sage";
-      case  9: return "the Illusionist";
-      case 10: return "the Abjuress";
-      case 11: return "the Invoker";
-      case 12: return "the Enchantress";
-      case 13: return "the Conjuress";
-      case 14: return "the Witch";
-      case 15: return "the Creator";
-      case 16: return "the Savant";
-      case 17: return "the Craftess";
-      case 18: return "the Wizard";
-      case 19: return "the War Witch";
-      case 20: return "the Sorceress";
-      /*case 21: return "the Necromancress";
-      case 22: return "the Thaumaturgess";
-      case 23: return "the Student of the Occult";
-      case 24: return "the Disciple of the Uncanny";
-      case 25: return "the Minor Elementress";
-      case 26: return "the Greater Elementress";
-      case 27: return "the Crafter of Magics";
-      case 28: return "Shaman";
-      case 29: return "the Keeper of Talismans";
-      case 30: return "Archwitch";*/
-      case LVL_IMMORT: return "the Immortal Enchantress";
-      case LVL_GOD: return "the Empress of Magic";
-      case LVL_GRGOD: return "the Goddess of Magic";
-      default: return "the Witch";
+        case 1:
+            return "the Initiate";
+        case 2:
+            return "the Initiate";
+        case 3:
+            return "the Initiate";
+        case 4:
+            return "the Initiate";
+        case 5:
+            return "the Initiate";
+        case 6:
+            return "the Apprentice";
+        case 7:
+            return "the Apprentice";
+        case 8:
+            return "the Apprentice";
+        case 9:
+            return "the Apprentice";
+        case 10:
+            return "the Apprentice";
+        case 11:
+            return "the Journeywoman";
+        case 12:
+            return "the Journeywoman";
+        case 13:
+            return "the Journeywoman";
+        case 14:
+            return "the Journeywoman";
+        case 15:
+            return "the Journeywoman";
+        case 16:
+            return "the Mistress";
+        case 17:
+            return "the Mistress";
+        case 18:
+            return "the Mistress";
+        case 19:
+            return "the Mistress";
+        case 20:
+            return "the Mistress";
+        case LVL_IMMORT:
+            return "the Immortal Magician";
+        case LVL_GOD:
+            return "the Lesser Goddess of Magic";
+        case LVL_GRGOD:
+            return "the Greater Goddess of Magic";
+        default:
+            return "the Magician";
     }
 
     case CLASS_CLERIC:
     switch (level) {
-      case  1: return "the Believer";
-      case  2: return "the Attendant";
-      case  3: return "the Acolyte";
-      case  4: return "the Novice";
-      case  5: return "the Missionary";
-      case  6: return "the Adept";
-      case  7: return "the Deaconess";
-      case  8: return "the Vicaress";
-      case  9: return "the Priestess";
-      case 10: return "the Lady Minister";
-      case 11: return "the Canon";
-      case 12: return "the Levitess";
-      case 13: return "the Curess";
-      case 14: return "the Nunne";
-      case 15: return "the Healess";
-      case 16: return "the Chaplain";
-      case 17: return "the Expositress";
-      case 18: return "the Bishop";
-      case 19: return "the Arch Lady of the Church";
-      case 20: return "the Matriarch";
-      /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Priestess";
-      case LVL_GOD: return "the Inquisitress";
-      case LVL_GRGOD: return "the Goddess of Good and Evil";
-      default: return "the Cleric";
+        case 1:
+            return "the Neophyte";
+        case 2:
+            return "the Neophyte";
+        case 3:
+            return "the Neophyte";
+        case 4:
+            return "the Neophyte";
+        case 5:
+            return "the Neophyte";
+        case 6:
+            return "the Sister";
+        case 7:
+            return "the Sister";
+        case 8:
+            return "the Sister";
+        case 9:
+            return "the Sister";
+        case 10:
+            return "the Sister";
+        case 11:
+            return "the Priestess";
+        case 12:
+            return "the Priestess";
+        case 13:
+            return "the Priestess";
+        case 14:
+            return "the Priestess";
+        case 15:
+            return "the Priestess";
+        case 16:
+            return "the High Priestess";
+        case 17:
+            return "the High Priestess";
+        case 18:
+            return "the High Priestess";
+        case 19:
+            return "the High Priestess";
+        case 20:
+            return "the High Priestess";
+        case LVL_IMMORT:
+            return "the Immortal Priestess";
+        case LVL_GOD:
+            return "the Lesser Goddess of Religion";
+        case LVL_GRGOD:
+            return "the Greater Goddess of Religion";
+        default:
+            return "the Priestess";
     }
 
     case CLASS_THIEF:
     switch (level) {
-      case  1: return "the Pilferess";
-      case  2: return "the Footpad";
-      case  3: return "the Filcheress";
-      case  4: return "the Pick-Pocket";
-      case  5: return "the Sneak";
-      case  6: return "the Pincheress";
-      case  7: return "the Cut-Purse";
-      case  8: return "the Snatcheress";
-      case  9: return "the Sharpress";
-      case 10: return "the Rogue";
-      case 11: return "the Robber";
-      case 12: return "the Magswoman";
-      case 13: return "the Highwaywoman";
-      case 14: return "the Burglaress";
-      case 15: return "the Thief";
-      case 16: return "the Knifer";
-      case 17: return "the Quick-Blade";
-      case 18: return "the Murderess";
-      case 19: return "the Brigand";
-      case 20: return "the Cut-Throat";
-      /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Assassin";
-      case LVL_GOD: return "the Demi Goddess of Thieves";
-      case LVL_GRGOD: return "the Goddess of Thieves and Tradesmen";
-      default: return "the Thief";
+        case 1:
+            return "the Apprentice";
+        case 2:
+            return "the Apprentice";
+        case 3:
+            return "the Apprentice";
+        case 4:
+            return "the Apprentice";
+        case 5:
+            return "the Apprentice";
+        case 6:
+            return "the Journeywoman";
+        case 7:
+            return "the Journeywoman";
+        case 8:
+            return "the Journeywoman";
+        case 9:
+            return "the Journeywoman";
+        case 10:
+            return "the Journeywoman";
+        case 11:
+            return "the Mistress";
+        case 12:
+            return "the Mistress";
+        case 13:
+            return "the Mistress";
+        case 14:
+            return "the Mistress";
+        case 15:
+            return "the Guildmistress";
+        case 16:
+            return "the Guildmistress";
+        case 17:
+            return "the Guildmistress";
+        case 18:
+            return "the Guildmistress";
+        case 19:
+            return "the Guildmistress";
+        case 20:
+            return "the Guildmistress";
+        case LVL_IMMORT:
+            return "the Immortal Thief";
+        case LVL_GOD:
+            return "the Lesser Goddess of Thieves";
+        case LVL_GRGOD:
+            return "the Greater Goddess of Thieves";
+        default:
+            return "the Thief";
     }
 
     case CLASS_WARRIOR:
     switch(level) {
-      case  1: return "the Swordpupil";
-      case  2: return "the Recruit";
-      case  3: return "the Sentress";
-      case  4: return "the Fighter";
-      case  5: return "the Soldier";
-      case  6: return "the Warrior";
-      case  7: return "the Veteran";
-      case  8: return "the Swordswoman";
-      case  9: return "the Fenceress";
-      case 10: return "the Combatess";
-      case 11: return "the Heroine";
-      case 12: return "the Myrmidon";
-      case 13: return "the Swashbuckleress";
-      case 14: return "the Mercenaress";
-      case 15: return "the Swordmistress";
-      case 16: return "the Lieutenant";
-      case 17: return "the Lady Champion";
-      case 18: return "the Lady Dragoon";
-      case 19: return "the Cavalier";
-      case 20: return "the Lady Knight";
-      /* no one ever thought up these titles 21-30 */
-      case LVL_IMMORT: return "the Immortal Lady of War";
-      case LVL_GOD: return "the Queen of Destruction";
-      case LVL_GRGOD: return "the Goddess of War";
-      default: return "the Warrior";
+        case 1:
+            return "the Fighter";
+        case 2:
+            return "the Fighter";
+        case 3:
+            return "the Fighter";
+        case 4:
+            return "the Fighter";
+        case 5:
+            return "the Fighter";
+        case 6:
+            return "the Championess";
+        case 7:
+            return "the Championess";
+        case 8:
+            return "the Championess";
+        case 9:
+            return "the Championess";
+        case 10:
+            return "the Championess";
+        case 11:
+            return "the Heroine";
+        case 12:
+            return "the Heroine";
+        case 13:
+            return "the Heroine";
+        case 14:
+            return "the Heroine";
+        case 15:
+            return "the Heroine";
+        case 16:
+            return "the Lady";
+        case 17:
+            return "the Lady";
+        case 18:
+            return "the Lady";
+        case 19:
+            return "the Lady";
+        case 20:
+            return "the Lady";
+        case LVL_IMMORT:
+            return "the Immortal Warrior";
+        case LVL_GOD:
+            return "the Lesser Goddess of War";
+        case LVL_GRGOD:
+            return "the Greater Goddess of War";
+        default:
+            return "the Warrior";
     }
   }
 
