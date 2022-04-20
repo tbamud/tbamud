@@ -26,6 +26,7 @@
 #include "quest.h"
 #include "act.h"
 #include "genobj.h"
+#include "race.h"
 
 /* Utility functions */
 
@@ -989,7 +990,20 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
              }
           break;
         case 'r':
-          if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */
+          if (!str_cmp(field, "race")) {
+            if (subfield && *subfield) {
+              int cl = get_race_by_name(subfield);
+              if (cl != -1) {
+                GET_RACE(c) = cl;
+                snprintf(str, slen, "1");
+              } else {
+                snprintf(str, slen, "0");
+              }
+            } else
+              sprinttype(GET_RACE(c), pc_race_types, str, slen);
+          }
+
+          else if (!str_cmp(field, "room")) {  /* in NOWHERE, return the void */
 /* see note in dg_scripts.h */
 #ifdef ACTOR_ROOM_IS_UID
             snprintf(str, slen, "%c%ld",UID_CHAR,

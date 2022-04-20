@@ -300,6 +300,7 @@ const char *connected_types[] = {
   "Confirm new PW",
   "Select sex",
   "Select class",
+  "Select race",
   "Reading MOTD",
   "Main Menu",
   "Get descript.",

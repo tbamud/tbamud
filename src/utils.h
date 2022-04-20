@@ -68,6 +68,7 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad);
 char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
+int get_race_by_name(char *racename);
 char * convert_from_tabs(char * string);
 int count_non_protocol_chars(char * str);
 char *right_trim_whitespace(const char *string);
@@ -487,6 +488,8 @@ do                                                              \
 
 /** Class of ch. */
 #define GET_CLASS(ch)   ((ch)->player.chclass)
+/** Race of ch. */
+#define GET_RACE(ch)   ((ch)->player.race)
 /** Height of ch. */
 #define GET_HEIGHT(ch)	((ch)->player.height)
 /** Weight of ch. */
@@ -864,6 +867,22 @@ do                                                              \
 /** 1 if ch is warrior class, 0 if not. */
 #define IS_WARRIOR(ch)		(!IS_NPC(ch) && \
         (GET_CLASS(ch) == CLASS_WARRIOR))
+
+/** Return the race abbreviation for ch. mr514 */
+#define RACE_ABBR(ch) (IS_NPC(ch) ? "--" : race_abbrevs[(int)GET_RACE(ch)])
+
+/** 1 if ch is human race, 0 if not. */
+#define IS_HUMAN(ch)       (!IS_NPC(ch) && \
+        (GET_RACE(ch) == RACE_HUMAN))
+/** 1 if ch is dwarf race, 0 if not. */
+#define IS_DWARF(ch)           (!IS_NPC(ch) && \
+        (GET_RACE(ch) == RACE_DWARF))
+/** 1 if ch is elf race, 0 if not. */
+#define IS_ELF(ch)            (!IS_NPC(ch) && \
+        (GET_RACE(ch) == RACE_ELF))
+/** 1 if ch is giant race, 0 if not. */
+#define IS_GIANT(ch)          (!IS_NPC(ch) && \
+        (GET_RACE(ch) == RACE_GIANT))
 
 /** Defines if ch is outdoors or not. */
 #define OUTSIDE(ch) (!ROOM_FLAGGED(IN_ROOM(ch), ROOM_INDOORS))

@@ -28,6 +28,7 @@
 #include "modify.h"
 #include "asciimap.h"
 #include "quest.h"
+#include "race.h"
 
 /* prototypes of local functions */
 /* do_diagnose utility functions */
@@ -844,6 +845,9 @@ ACMD(do_score)
 
   send_to_char(ch, "This ranks you as %s %s (level %d).\r\n",
 	  GET_NAME(ch), GET_TITLE(ch), GET_LEVEL(ch));
+
+  send_to_char(ch, "Race: %s, (# %d), Abbrev: %s.\r\n",
+    pc_race_types[GET_RACE(ch)], GET_RACE(ch), race_abbrevs[GET_RACE(ch)]);
 
   switch (GET_POS(ch)) {
   case POS_DEAD:

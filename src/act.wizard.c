@@ -34,6 +34,7 @@
 #include "quest.h"
 #include "ban.h"
 #include "screen.h"
+#include "race.h"
 
 /* local utility functions with file scope */
 static int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg);
@@ -2890,6 +2891,7 @@ static struct set_struct {
    { "wis", 		LVL_BUILDER, 	BOTH, 	NUMBER }, /* 55 */
    { "questpoints",     LVL_GOD,        PC,     NUMBER },
    { "questhistory",    LVL_GOD,        PC,   NUMBER },
+   { "race",            LVL_BUILDER,    BOTH,   MISC },
    { "\n", 0, BOTH, MISC }
   };
 
@@ -3303,6 +3305,15 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         }
         break;
       }
+
+    case 58: /* race */
+      if ((i = parse_race(*val_arg)) == RACE_UNDEFINED) {
+        send_to_char(ch, "That is not a race.\r\n");
+        return (0);
+      }
+      GET_RACE(vict) = i;
+      break;
+
     default:
       send_to_char(ch, "Can't set that!\r\n");
       return (0);

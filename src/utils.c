@@ -22,7 +22,7 @@
 #include "handler.h"
 #include "interpreter.h"
 #include "class.h"
-
+#include "race.h"
 
 /** Aportable random number function.
  * @param from The lower bounds of the random number.
@@ -1477,6 +1477,16 @@ int get_class_by_name(char *classname)
     int i;
     for (i=0; i<NUM_CLASSES; i++)
       if (is_abbrev(classname, pc_class_types[i])) return(i);
+
+    return (-1);
+}
+
+/* Handy function to get race ID number by name (abbreviations allowed) */
+int get_race_by_name(char *racename)
+{
+    int i;
+    for (i=0; i<NUM_RACES; i++)
+      if (is_abbrev(racename, pc_race_types[i])) return(i);
 
     return (-1);
 }
