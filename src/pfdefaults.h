@@ -19,7 +19,8 @@
 #define PFDEF_LEVEL		0
 #define PFDEF_HEIGHT		0
 #define PFDEF_WEIGHT		0
-#define PFDEF_ALIGNMENT		0
+#define PFDEF_LAWCHAOS		0
+#define PFDEF_GOODEVIL          0
 #define PFDEF_PLRFLAGS		0
 #define PFDEF_AFFFLAGS		0
 #define PFDEF_SAVETHROW		0

@@ -555,8 +555,8 @@ SPECIAL(cityguard)
       return (TRUE);
     }
 
-    if (FIGHTING(tch) && GET_ALIGNMENT(tch) < max_evil && (IS_NPC(tch) || IS_NPC(FIGHTING(tch)))) {
-      max_evil = GET_ALIGNMENT(tch);
+    if (FIGHTING(tch) && GET_GOODEVIL(tch) < max_evil && (IS_NPC(tch) || IS_NPC(FIGHTING(tch)))) {
+      max_evil = GET_GOODEVIL(tch);
       evil = tch;
     }
 
@@ -566,7 +566,7 @@ SPECIAL(cityguard)
     }
   }
 
-  if (evil && GET_ALIGNMENT(FIGHTING(evil)) >= 0) {
+  if (evil && GET_GOODEVIL(FIGHTING(evil)) >= 0) {
     act("$n screams 'PROTECT THE INNOCENT!  BANZAI!  CHARGE!  ARARARAGGGHH!'", FALSE, ch, 0, 0, TO_ROOM);
     hit(ch, evil, TYPE_UNDEFINED);
     return (TRUE);

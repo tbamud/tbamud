@@ -389,7 +389,7 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
         MOB_FLAGS(mob)[2], MOB_FLAGS(mob)[3],
         AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
         AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
-        GET_ALIGNMENT(mob),
+        GET_GOODEVIL(mob),
         GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
         GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
         GET_DAMROLL(mob));

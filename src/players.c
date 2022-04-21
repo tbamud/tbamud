@@ -256,7 +256,8 @@ int load_char(const char *name, struct char_data *ch)
     GET_LEVEL(ch) = PFDEF_LEVEL;
     GET_HEIGHT(ch) = PFDEF_HEIGHT;
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
-    GET_ALIGNMENT(ch) = PFDEF_ALIGNMENT;
+    GET_LAWCHAOS(ch) = PFDEF_LAWCHAOS;
+    GET_GOODEVIL(ch) = PFDEF_GOODEVIL;
     for (i = 0; i < NUM_OF_SAVING_THROWS; i++)
       GET_SAVE(ch, i) = PFDEF_SAVETHROW;
     GET_LOADROOM(ch) = PFDEF_LOADROOM;
@@ -331,7 +332,6 @@ int load_char(const char *name, struct char_data *ch)
           AFF_FLAGS(ch)[0] = asciiflag_conv(line);
 	}
 	if (!strcmp(tag, "Affs")) 	load_affects(fl, ch);
-        else if (!strcmp(tag, "Alin"))	GET_ALIGNMENT(ch)	= atoi(line);
 	else if (!strcmp(tag, "Alis"))	read_aliases_ascii(fl, ch, atoi(line));
 	break;
 
@@ -364,6 +364,7 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'G':
 	     if (!strcmp(tag, "Gold"))	GET_GOLD(ch)		= atoi(line);
+        else if (!strcmp(tag, "Good"))  GET_GOODEVIL(ch)        = atoi(line);
 	break;
 
       case 'H':
@@ -386,6 +387,7 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'L':
 	     if (!strcmp(tag, "Last"))	ch->player.time.logon	= atol(line);
+        else if (!strcmp(tag, "Lawc"))  GET_LAWCHAOS(ch)        = atoi(line);
   else if (!strcmp(tag, "Lern"))	GET_PRACTICES(ch)	= atoi(line);
 	else if (!strcmp(tag, "Levl"))	GET_LEVEL(ch)		= atoi(line);
         else if (!strcmp(tag, "Lmot"))   GET_LAST_MOTD(ch)   = atoi(line);
@@ -594,8 +596,8 @@ void save_char(struct char_data * ch)
   if (GET_HOST(ch))				fprintf(fl, "Host: %s\n", GET_HOST(ch));
   if (GET_HEIGHT(ch)	   != PFDEF_HEIGHT)	fprintf(fl, "Hite: %d\n", GET_HEIGHT(ch));
   if (GET_WEIGHT(ch)	   != PFDEF_WEIGHT)	fprintf(fl, "Wate: %d\n", GET_WEIGHT(ch));
-  if (GET_ALIGNMENT(ch)  != PFDEF_ALIGNMENT)	fprintf(fl, "Alin: %d\n", GET_ALIGNMENT(ch));
-
+  if (GET_LAWCHAOS(ch)     != PFDEF_LAWCHAOS)	fprintf(fl, "Lawc: %d\n", GET_LAWCHAOS(ch));
+  if (GET_GOODEVIL(ch)     != PFDEF_GOODEVIL)   fprintf(fl, "Good: %d\n", GET_GOODEVIL(ch));
 
   sprintascii(bits,  PLR_FLAGS(ch)[0]);
   sprintascii(bits2, PLR_FLAGS(ch)[1]);

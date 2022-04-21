@@ -1793,7 +1793,7 @@ void parse_mobile(FILE *mob_f, int nr)
     AFF_FLAGS(mob_proto + i)[2] = 0;
     AFF_FLAGS(mob_proto + i)[3] = 0;
 
-    GET_ALIGNMENT(mob_proto + i) = atoi(f3);
+    GET_GOODEVIL(mob_proto + i) = atoi(f3);
 
     /* Make some basic checks. */
     REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_CHARM);
@@ -1835,7 +1835,7 @@ void parse_mobile(FILE *mob_f, int nr)
     AFF_FLAGS(mob_proto + i)[2] = asciiflag_conv(f7);
     AFF_FLAGS(mob_proto + i)[3] = asciiflag_conv(f8);
 
-    GET_ALIGNMENT(mob_proto + i) = t[2];
+    GET_GOODEVIL(mob_proto + i) = t[2];
 
     for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
       check_bitvector_names(AFF_FLAGS(mob_proto + i)[taeller], affected_bits_count, buf2, "mobile affect");

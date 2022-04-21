@@ -2836,7 +2836,7 @@ static void msdp_update( void )
       ++PlayerCount;
 
       MSDPSetString( d, eMSDP_CHARACTER_NAME, GET_NAME(ch) );
-      MSDPSetNumber( d, eMSDP_ALIGNMENT, GET_ALIGNMENT(ch) );
+      MSDPSetNumber( d, eMSDP_ALIGNMENT, GET_GOODEVIL(ch) );
       MSDPSetNumber( d, eMSDP_EXPERIENCE, GET_EXP(ch) );
 
       MSDPSetNumber( d, eMSDP_HEALTH, GET_HIT(ch) );

@@ -497,7 +497,7 @@ static void medit_disp_stats_menu(struct descriptor_data *d)
       yel, (GET_NDD(mob) * GET_SDD(mob)) + GET_DAMROLL(mob), nrm,
 
       cyn, nrm, cyn, yel, GET_AC(mob), cyn, nrm,   cyn, nrm, cyn, yel, GET_HITROLL(mob), cyn, nrm,
-      cyn, nrm, cyn, yel, GET_EXP(mob), cyn, nrm,  cyn, nrm, cyn, yel, GET_ALIGNMENT(mob), cyn, nrm,
+      cyn, nrm, cyn, yel, GET_EXP(mob), cyn, nrm,  cyn, nrm, cyn, yel, GET_GOODEVIL(mob), cyn, nrm,
       cyn, nrm, cyn, yel, GET_GOLD(mob), cyn, nrm
       );
 
@@ -1059,7 +1059,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
     return;
 
   case MEDIT_ALIGNMENT:
-    GET_ALIGNMENT(OLC_MOB(d)) = LIMIT(i, -1000, 1000);
+    GET_GOODEVIL(OLC_MOB(d)) = LIMIT(i, -1000, 1000);
     OLC_VAL(d) = TRUE;
     medit_disp_stats_menu(d);
     return;

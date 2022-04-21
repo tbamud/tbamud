@@ -236,7 +236,7 @@ static void change_alignment(struct char_data *ch, struct char_data *victim)
 {
   /* new alignment change algorithm: if you kill a monster with alignment A,
    * you move 1/16th of the way to having alignment -A.  Simple and fast. */
-  GET_ALIGNMENT(ch) += (-GET_ALIGNMENT(victim) - GET_ALIGNMENT(ch)) / 16;
+  GET_GOODEVIL(ch) += (-GET_GOODEVIL(victim) - GET_GOODEVIL(ch)) / 16;
 }
 
 void death_cry(struct char_data *ch)

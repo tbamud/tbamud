@@ -177,6 +177,13 @@
 /** Total number of Genders */
 #define NUM_GENDERS   3
 
+/* Alignments Law vs Chaos */
+#define ALIGNMENT_NEUTRAL     0    /**< Alignment Neutral */
+#define ALIGNMENT_CHAOTIC     1    /**< Alignment Chaotic */
+#define ALIGNMENT_LAWFUL      2    /**< Alignment Lawful */
+/** Total number of alignments */
+#define NUM_ALIGNMENTS        3
+
 /* Positions */
 #define POS_DEAD       0	/**< Position = dead */
 #define POS_MORTALLYW  1	/**< Position = mortally wounded */
@@ -818,6 +825,13 @@ struct room_data
 };
 
 /* char-related structures */
+/** Player specific alignment information */
+struct alignment_data
+{
+  byte lawchaos; /**< Law vs. Chaos 0 neutral, 1 chaotic, 2 lawful */
+  int goodevil; /**< Good vs. Evil -1000 (evil) to 1000 (good) */
+};
+
 /** Memory structure used by NPCs to remember specific PCs. */
 struct memory_rec_struct
 {
@@ -924,7 +938,7 @@ struct char_point_data
  * common, but which must be saved to the players file for PC's. */
 struct char_special_data_saved
 {
-  int alignment;         /**< -1000 (evil) to 1000 (good) range. */
+  struct alignment_data alignment; /* 0 to 2 / -1000 (evil) to 1000 (good) */
   long idnum;            /**< PC's idnum; -1 for mobiles. */
   int act[PM_ARRAY_MAX]; /**< act flags for NPC's; player flag for PC's */
   int affected_by[AF_ARRAY_MAX]; /**< Bitvector for spells/skills affected by */

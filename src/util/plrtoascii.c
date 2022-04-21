@@ -218,7 +218,7 @@ void convert(char *filename)
 
 /* char_special_data_saved */
     csds = &(player.char_specials_saved);
-    if (csds->alignment != PFDEF_ALIGNMENT)
+    if (csds->alignment != PFDEF_GOODEVIL)
       fprintf(outfile, "Alin: %d\n", csds->alignment);
     fprintf(outfile, "Id  : %d\n", (int)csds->idnum);
     if (csds->act != PFDEF_PLRFLAGS)

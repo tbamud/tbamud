@@ -788,7 +788,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
   sprinttype(k->player.chclass, pc_class_types, buf, sizeof(buf));
   send_to_char(ch, "%s%s, Lev: [%s%2d%s], XP: [%s%7d%s], Align: [%4d]\r\n",
 	IS_NPC(k) ? "Mobile" : "Class: ", IS_NPC(k) ? "" : buf, CCYEL(ch, C_NRM), GET_LEVEL(k), CCNRM(ch, C_NRM),
-	CCYEL(ch, C_NRM), GET_EXP(k), CCNRM(ch, C_NRM), GET_ALIGNMENT(k));
+	CCYEL(ch, C_NRM), GET_EXP(k), CCNRM(ch, C_NRM), GET_GOODEVIL(k));
 
   if (!IS_NPC(k)) {
     char buf1[64], buf2[64];
@@ -2618,7 +2618,7 @@ ACMD(do_show)
       GET_CLASS(vict)]);
     send_to_char(ch, "Gold: %-8d  Bal: %-8d Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n",
       GET_GOLD(vict), GET_BANK_GOLD(vict), GET_EXP(vict),
-      GET_ALIGNMENT(vict), GET_PRACTICES(vict));
+      GET_GOODEVIL(vict), GET_PRACTICES(vict));
     send_to_char(ch, "Started: %-25.25s  Last: %-25.25s\r\n", buf1, buf2);
     send_to_char(ch, "Played: %dh %dm\r\n",
       (int) (vict->player.time.played / 3600),
@@ -2954,7 +2954,7 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       vict->player.time.birth = time(0) - ((value - 17) * SECS_PER_MUD_YEAR);
       break;
     case 3: /* align */
-      GET_ALIGNMENT(vict) = RANGE(-1000, 1000);
+      GET_GOODEVIL(vict) = RANGE(-1000, 1000);
       affect_total(vict);
       break;
     case 4: /* bank */

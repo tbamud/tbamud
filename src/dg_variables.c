@@ -615,9 +615,9 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           else if (!str_cmp(field, "align")) {
             if (subfield && *subfield) {
               int addition = atoi(subfield);
-             GET_ALIGNMENT(c) = MAX(-1000, MIN(addition, 1000));
+             GET_GOODEVIL(c) = MAX(-1000, MIN(addition, 1000));
             }
-	    snprintf(str, slen, "%d", GET_ALIGNMENT(c));
+	    snprintf(str, slen, "%d", GET_GOODEVIL(c));
           }
           else if (!str_cmp(field, "armor"))
             snprintf(str, slen, "%d", compute_armor_class(c));

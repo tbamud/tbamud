@@ -554,8 +554,10 @@ do                                                              \
 #define HUNTING(ch)	  ((ch)->char_specials.hunting)
 /** Saving throw i for character ch. */
 #define GET_SAVE(ch, i)	  ((ch)->char_specials.saved.apply_saving_throw[i])
-/** Alignment value for ch. */
-#define GET_ALIGNMENT(ch) ((ch)->char_specials.saved.alignment)
+/** Alignment Law vs. Chaos value for ch. */
+#define GET_LAWCHAOS(ch) ((ch)->char_specials.saved.alignment.lawchaos)
+/** Alignment Good vs. Evil value for ch. */
+#define GET_GOODEVIL(ch) ((ch)->char_specials.saved.alignment.goodevil)
 
 /** Return condition i (DRUNK, HUNGER, THIRST) of ch. */
 #define GET_COND(ch, i)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.conditions[(i)]))
@@ -661,9 +663,9 @@ do                                                              \
    (AFF_FLAGGED(ch, AFF_INFRAVISION) || (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_HOLYLIGHT)))
 
 /** Defines if ch is good. */
-#define IS_GOOD(ch)    (GET_ALIGNMENT(ch) >= 350)
+#define IS_GOOD(ch)    (GET_GOODEVIL(ch) >= 350)
 /** Defines if ch is evil. */
-#define IS_EVIL(ch)    (GET_ALIGNMENT(ch) <= -350)
+#define IS_EVIL(ch)    (GET_GOODEVIL(ch) <= -350)
 /** Defines if ch is neither good nor evil. */
 #define IS_NEUTRAL(ch) (!IS_GOOD(ch) && !IS_EVIL(ch))
 
