@@ -1564,3 +1564,14 @@ void remove_from_string(char *string, const char *to_remove)
     }
     
 }
+
+/* */
+const char *get_goodevil(struct char_data *ch)
+{
+    if (GET_GOODEVIL(ch) <= -350)
+	return "Evil";
+    else if (GET_GOODEVIL(ch) >= 350)
+	return "Good";
+    else
+	return "Neutral";
+}

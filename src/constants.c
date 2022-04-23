@@ -139,6 +139,16 @@ const char *genders[] =
   "\n"
 };
 
+/* PC and NPC alignments for the law vs. chaos axes.
+ * @pre Must be in the same order as the defines.
+ * Must end array with a single newline. */
+const char *get_lawchaos[] = {
+    "Neutral",
+    "Chaotic",
+    "Lawful",
+    "\n"
+};
+
 /** Character positions.
  * @pre Must be in the same order as the defines.
  * Must end array with a single newline. */
@@ -299,6 +309,7 @@ const char *connected_types[] = {
   "Get new PW",
   "Confirm new PW",
   "Select sex",
+  "Select alignment",
   "Select class",
   "Select race",
   "Reading MOTD",

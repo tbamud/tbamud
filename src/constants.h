@@ -20,6 +20,7 @@ extern const char *zone_bits[];
 extern const char *exit_bits[];
 extern const char *sector_types[];
 extern const char *genders[];
+extern const char *get_lawchaos[];
 extern const char *position_types[];
 extern const char *player_bits[];
 extern const char *action_bits[];

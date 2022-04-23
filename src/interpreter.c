@@ -1604,6 +1604,41 @@ void nanny(struct descriptor_data *d, char *arg)
       return;
     }
 
+      write_to_output(d,
+       "\r\nChaotic characters can attack and steal from others.");
+      write_to_output(d,
+       "\r\nChaotic characters can be attacked and stolen from by others.\r\n");
+      write_to_output(d,
+       "\r\nLawful characters can not attack or steal from others.");
+      write_to_output(d,
+       "\r\nLawful characters can not be attacked or stolen from by others.\r\n");
+      write_to_output(d,
+       "\r\nYou should choose to be lawful if this is your first character.\r\n");
+      write_to_output(d,
+       "\r\nAlignment also dictates which factions (guilds, kingdoms) you may join.\r\n");
+      write_to_output(d,
+       "\r\nWhat is your alignment, [C]haotic or [L]awful? ");
+      STATE(d) = CON_QALIGNMENT;
+      break;
+  case CON_QALIGNMENT:        /* Query alignment of new user. */
+    switch (*arg) {
+    case 'c':
+    case 'C':
+      d->character->char_specials.saved.alignment.lawchaos =
+          ALIGNMENT_CHAOTIC;
+      break;
+    case 'l':
+    case 'L':
+      d->character->char_specials.saved.alignment.lawchaos =
+          ALIGNMENT_LAWFUL;
+      break;
+    default:
+      write_to_output(d,
+                            "That is not an alignment.\r\n"
+                            "[C]haotic or [L]awful? ");
+      return;
+    }
+
     write_to_output(d, "%s\r\nClass: ", class_menu);
     STATE(d) = CON_QCLASS;
     break;

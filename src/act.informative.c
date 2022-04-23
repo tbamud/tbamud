@@ -814,6 +814,9 @@ ACMD(do_score)
   send_to_char(ch, "Your armor class is %d/10, and your alignment is %d.\r\n",
 	  compute_armor_class(ch), GET_GOODEVIL(ch));
 
+  send_to_char(ch, "Your alignment is %s %s.\r\n",
+          get_lawchaos[GET_LAWCHAOS(ch)], get_goodevil(ch));
+
   send_to_char(ch, "You have %d exp, %d gold coins, and %d questpoints.\r\n",
 	  GET_EXP(ch), GET_GOLD(ch), GET_QUESTPOINTS(ch));
 
