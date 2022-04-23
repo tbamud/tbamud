@@ -663,6 +663,13 @@ do                                                              \
 #define CAN_SEE_IN_DARK(ch) \
    (AFF_FLAGGED(ch, AFF_INFRAVISION) || (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_HOLYLIGHT)))
 
+/** Defines if ch is lawful. */
+#define IS_LAWFUL(ch)       (GET_LAWCHAOS(ch) == ALIGNMENT_LAWFUL)
+/** Defines if ch is chaotic. */
+#define IS_CHAOTIC(ch)      (GET_LAWCHAOS(ch) == ALIGNMENT_CHAOTIC)
+/** Defines if ch is neither lawful nor chaotic. */
+#define IS_TRUE_NEUTRAL(ch) (!IS_LAWFUL(ch) && !IS_CHAOTIC(ch))
+
 /** Defines if ch is good. */
 #define IS_GOOD(ch)    (GET_GOODEVIL(ch) >= 350)
 /** Defines if ch is evil. */

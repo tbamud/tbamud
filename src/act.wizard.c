@@ -2836,7 +2836,7 @@ static struct set_struct {
    { "ac",		LVL_BUILDER, 	BOTH, 	NUMBER },  /* 0  */
    { "afk",             LVL_BUILDER,	PC,	BINARY },  /* 1  */
    { "age",		LVL_GOD,	BOTH,	NUMBER },
-   { "align",		LVL_BUILDER, 	BOTH, 	NUMBER },
+   { "good",		LVL_BUILDER, 	BOTH, 	NUMBER },
    { "bank",		LVL_BUILDER, 	PC, 	NUMBER },
    { "brief",		LVL_GOD, 	PC, 	BINARY },  /* 5  */
    { "cha",		LVL_BUILDER, 	BOTH, 	NUMBER },
@@ -2892,6 +2892,7 @@ static struct set_struct {
    { "questpoints",     LVL_GOD,        PC,     NUMBER },
    { "questhistory",    LVL_GOD,        PC,   NUMBER },
    { "race",            LVL_BUILDER,    BOTH,   MISC },
+   { "law",             LVL_BUILDER,    BOTH,   NUMBER },
    { "\n", 0, BOTH, MISC }
   };
 
@@ -2953,7 +2954,7 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
        * some values below the starting age (17) anyway. -gg 5/27/98 */
       vict->player.time.birth = time(0) - ((value - 17) * SECS_PER_MUD_YEAR);
       break;
-    case 3: /* align */
+    case 3: /* good vs. evil alignment */
       GET_GOODEVIL(vict) = RANGE(-1000, 1000);
       affect_total(vict);
       break;
@@ -3312,6 +3313,11 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         return (0);
       }
       GET_RACE(vict) = i;
+      break;
+
+    case 59: /* law vs. chaos alignments */
+      GET_LAWCHAOS(vict) = RANGE(0, 2);
+      affect_total(vict);
       break;
 
     default:

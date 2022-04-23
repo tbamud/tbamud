@@ -85,6 +85,15 @@ ACMD(do_hit)
     if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch)) 
       check_killer(ch, vict);
 
+    if (CONFIG_PK_ALLOWED && IS_LAWFUL(vict)) {
+    send_to_char(ch, "That player can not be killed or stolen from.\r\n");
+    return;
+    }
+    if (CONFIG_PK_ALLOWED && IS_LAWFUL(ch)) {
+    send_to_char(ch, "You can not kill or steal from players.\r\n");
+    return;
+    }
+
     if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) { 
       if (GET_DEX(ch) > GET_DEX(vict) || (GET_DEX(ch) == GET_DEX(vict) && rand_number(1, 2) == 1))  /* if faster */
         hit(ch, vict, TYPE_UNDEFINED);  /* first */
