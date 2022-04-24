@@ -184,6 +184,13 @@
 /** Total number of alignments */
 #define NUM_ALIGNMENTS        3
 
+/* Kingdoms */
+#define KINGDOM_UNDEFINED     (-1) /**< Kingdom of NOWHERE */
+#define KINGDOM_RED           0    /**< Kingdom of Red */
+#define KINGDOM_BLUE          1    /**< Kingdom of Blue */
+/** Total number of kingdoms */
+#define NUM_KINGDOMS          2
+
 /* Positions */
 #define POS_DEAD       0	/**< Position = dead */
 #define POS_MORTALLYW  1	/**< Position = mortally wounded */
@@ -833,6 +840,13 @@ struct alignment_data
   int goodevil; /**< Good vs. Evil -1000 (evil) to 1000 (good) */
 };
 
+/** Player specific kingdom information */
+struct kingdom_data
+{
+  byte kingdom_name;  /* Kingdom name */
+  int kingdom_rank;  /* Kingdom rank */
+};
+
 /** Memory structure used by NPCs to remember specific PCs. */
 struct memory_rec_struct
 {
@@ -940,6 +954,7 @@ struct char_point_data
 struct char_special_data_saved
 {
   struct alignment_data alignment; /* 0 to 2 / -1000 (evil) to 1000 (good) */
+  struct kingdom_data kingdom; /* Kingdom name / Kingdom rank */
   long idnum;            /**< PC's idnum; -1 for mobiles. */
   int act[PM_ARRAY_MAX]; /**< act flags for NPC's; player flag for PC's */
   int affected_by[AF_ARRAY_MAX]; /**< Bitvector for spells/skills affected by */
@@ -1290,8 +1305,26 @@ struct guild_info_type
   int direction;
 };
 
+struct kingdom_info_type
+{
+  int kingdom_name;
+  room_vnum kingdom_room;
+  int kingdom_direction;
+  byte kingdom_wars[NUM_KINGDOMS];
+  int kingdom_wins[NUM_KINGDOMS];
+  int kingdom_losses[NUM_KINGDOMS];
+};
+
 /** Happy Hour Data */
 struct happyhour {
+  int qp_rate;
+  int exp_rate;
+  int gold_rate;
+  int ticks_left;
+};
+
+/* Wartime data. */
+struct wartime {
   int qp_rate;
   int exp_rate;
   int gold_rate;

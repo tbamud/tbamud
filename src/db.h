@@ -399,6 +399,9 @@ extern qst_rnum total_quests;
 /* Happyhour global */
 extern struct happyhour happy_data;
 
+/* Wartime global */
+extern struct wartime wartime_data;
+
 /* begin previously located in players.c, returned to db.c */
 extern struct player_index_element *player_table;
 extern int top_of_p_table;

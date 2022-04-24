@@ -35,6 +35,7 @@
 #include "ban.h"
 #include "screen.h"
 #include "race.h"
+#include "kingdom.h"
 
 /* local utility functions with file scope */
 static int perform_set(struct char_data *ch, struct char_data *vict, int mode, char *val_arg);
@@ -2893,6 +2894,8 @@ static struct set_struct {
    { "questhistory",    LVL_GOD,        PC,   NUMBER },
    { "race",            LVL_BUILDER,    BOTH,   MISC },
    { "law",             LVL_BUILDER,    BOTH,   NUMBER },
+   { "kingdom",         LVL_BUILDER,    BOTH,   MISC },
+   { "rank",            LVL_BUILDER,    BOTH,   NUMBER },
    { "\n", 0, BOTH, MISC }
   };
 
@@ -3319,6 +3322,18 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
       GET_LAWCHAOS(vict) = RANGE(0, 2);
       affect_total(vict);
       break;
+
+    case 60: /* kingdom name */
+        if ((i = parse_kingdom(*val_arg)) == KINGDOM_UNDEFINED) {
+            send_to_char(ch, "That is not a kingdom.\r\n");
+            return (0);
+        }
+        GET_KINGDOM(vict) = i;
+        break;
+    case 61: /* kingdom rank */
+        GET_KINGDOM_RANK(vict) = RANGE(-1000, 1000);
+        affect_total(vict);
+        break;
 
     default:
       send_to_char(ch, "Can't set that!\r\n");

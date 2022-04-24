@@ -559,6 +559,10 @@ do                                                              \
 #define GET_LAWCHAOS(ch) ((ch)->char_specials.saved.alignment.lawchaos)
 /** Alignment Good vs. Evil value for ch. */
 #define GET_GOODEVIL(ch) ((ch)->char_specials.saved.alignment.goodevil)
+/** Kingdom name for ch. */
+#define GET_KINGDOM(ch)         ((ch)->char_specials.saved.kingdom.kingdom_name)
+/** Kingdom rank for ch. */
+#define GET_KINGDOM_RANK(ch)    ((ch)->char_specials.saved.kingdom.kingdom_rank)
 
 /** Return condition i (DRUNK, HUNGER, THIRST) of ch. */
 #define GET_COND(ch, i)		CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.conditions[(i)]))
@@ -914,6 +918,16 @@ do                                                              \
 #define HAPPY_TIME   happy_data.ticks_left
 
 #define IS_HAPPYHOUR ((IS_HAPPYEXP || IS_HAPPYGOLD || IS_HAPPYQP) && (HAPPY_TIME > 0))
+
+/* Wartime defines. */
+#define IS_WARQP        (wartime_data.qp_rate > 0)
+#define IS_WAREXP       (wartime_data.exp_rate > 0)
+#define IS_WARGOLD      (wartime_data.gold_rate > 0)
+#define WAR_EXP         wartime_data.exp_rate
+#define WAR_GOLD        wartime_data.gold_rate
+#define WAR_QP          wartime_data.qp_rate
+#define WAR_TIME        wartime_data.ticks_left
+#define IS_WAR          ((IS_WAREXP || IS_WARGOLD || IS_WARQP) && (WAR_TIME > 0))
 
 /* OS compatibility */
 #ifndef NULL

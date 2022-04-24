@@ -338,6 +338,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "vdelete"  , "vdelete" , POS_DEAD    , do_vdelete  , LVL_BUILDER, 0 },
 
   { "wake"     , "wake"    , POS_SLEEPING, do_wake     , 0, 0 },
+  { "wartime"  , "wartime" , POS_DEAD    , do_wartime  , 0, 0 },
   { "wear"     , "wea"     , POS_RESTING , do_wear     , 0, 0 },
   { "weather"  , "weather" , POS_RESTING , do_weather  , 0, 0 },
   { "who"      , "wh"      , POS_DEAD    , do_who      , 0, 0 },

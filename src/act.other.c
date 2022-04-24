@@ -29,6 +29,7 @@
 #include "shop.h"
 #include "quest.h"
 #include "modify.h"
+#include "kingdom.h"
 
 /* Local defined utility functions */
 /* do_group utility functions */
@@ -969,4 +970,116 @@ ACMD(do_happyhour)
                      CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
                      (3600 / SECS_PER_MUD_HOUR) );
   }
+}
+
+static void show_wartime(struct char_data *ch)
+{
+    char warexp[80], wargold[80], warqp[80];
+    int secs_left, i = 0;
+
+    if ((IS_WAR) || (GET_LEVEL(ch) >= LVL_GRGOD)) {
+        if (WAR_TIME)
+            secs_left = ((WAR_TIME - 1) * SECS_PER_MUD_HOUR) + next_tick;
+        else
+            secs_left = 0;
+        sprintf(warqp, "%s+%d%%%s to Questpoints for kingdom quests\r\n",
+                CCYEL(ch, C_NRM), WAR_QP, CCNRM(ch, C_NRM));
+        sprintf(wargold, "%s+%d%%%s to Gold gained for kingdom kills\r\n",
+                CCYEL(ch, C_NRM), WAR_GOLD, CCNRM(ch, C_NRM));
+        sprintf(warexp, "%s+%d%%%s to Experience for kingdom kills\r\n",
+                CCYEL(ch, C_NRM), WAR_EXP, CCNRM(ch, C_NRM));
+        send_to_char(ch,
+                     "War!\r\n" "------------------\r\n"
+                     "%s%s%sTime Remaining: %s%d%s hours %s%d%s mins %s%d%s secs\r\n",
+                     (IS_WAREXP
+                      || (GET_LEVEL(ch) >= LVL_GOD)) ? warexp : "",
+                     (IS_WARGOLD
+                      || (GET_LEVEL(ch) >= LVL_GOD)) ? wargold : "",
+                     (IS_WARQP
+                      || (GET_LEVEL(ch) >= LVL_GOD)) ? warqp : "",
+                     CCYEL(ch, C_NRM), (secs_left / 3600), CCNRM(ch,
+                                                                 C_NRM),
+                     CCYEL(ch, C_NRM), (secs_left % 3600) / 60, CCNRM(ch,
+                                                                      C_NRM),
+                     CCYEL(ch, C_NRM), (secs_left % 60), CCNRM(ch, C_NRM));
+        send_to_char(ch, "Kingdom Scores:\r\n");
+        send_to_char(ch, "---------------\r\n");
+
+    for (i = 0; i < NUM_KINGDOMS; i++) {
+        send_to_char(ch, "Name: %s, Kills: %d, Losses: %d.\r\n",
+         pc_kingdom_types[kingdom_info[i].kingdom_name],
+          kingdom_info[i].kingdom_wins[i],
+           kingdom_info[i].kingdom_losses[i]);
+    }
+
+    } else {
+        send_to_char(ch, "Sorry, there is currently no war!\r\n");
+    }
+}
+
+ACMD(do_wartime)
+{
+    char arg[MAX_INPUT_LENGTH], val[MAX_INPUT_LENGTH];
+    int num;
+
+    if (GET_LEVEL(ch) < LVL_GOD) {
+        show_wartime(ch);
+        return;
+    }
+    /* Only Imms get here, so check args. */
+    two_arguments(argument, arg, val);
+    if (is_abbrev(arg, "experience")) {
+        num = MIN(MAX((atoi(val)), 0), 1000);
+        WAR_EXP = num;
+        send_to_char(ch, "War Exp rate set to +%d%%\r\n", WAR_EXP);
+    } else if ((is_abbrev(arg, "gold")) || (is_abbrev(arg, "coins"))) {
+        num = MIN(MAX((atoi(val)), 0), 1000);
+        WAR_GOLD = num;
+        send_to_char(ch, "War Gold rate set to +%d%%\r\n", WAR_GOLD);
+    } else if ((is_abbrev(arg, "time")) || (is_abbrev(arg, "ticks"))) {
+        num = MIN(MAX((atoi(val)), 0), 1000);
+        if (WAR_TIME && !num)
+            game_info("War has been stopped!");
+        else if (!WAR_TIME && num)
+            game_info("A War has started!");
+        kingdom_info[0].kingdom_wars[1] = 1;
+        kingdom_info[1].kingdom_wars[0] = 0;
+        WAR_TIME = num;
+        send_to_char(ch,
+                     "War Time set to %d ticks (%d hours %d mins and %d secs)\r\n",
+                     WAR_TIME, (WAR_TIME * SECS_PER_MUD_HOUR) / 3600,
+                     ((WAR_TIME * SECS_PER_MUD_HOUR) % 3600) / 60,
+                     (WAR_TIME * SECS_PER_MUD_HOUR) % 60);
+    } else if ((is_abbrev(arg, "qp")) || (is_abbrev(arg, "questpoints"))) {
+        num = MIN(MAX((atoi(val)), 0), 1000);
+        WAR_QP = num;
+        send_to_char(ch, "War Questpoints rate set to +%d%%\r\n", WAR_QP);
+    } else if (is_abbrev(arg, "show")) {
+        show_wartime(ch);
+    } else if (is_abbrev(arg, "default")) {
+        WAR_EXP = 100;
+        WAR_GOLD = 50;
+        WAR_QP = 50;
+        WAR_TIME = 48;
+        kingdom_info[0].kingdom_wars[1] = 1;
+        kingdom_info[1].kingdom_wars[0] = 0;
+        game_info("A War has started!");
+    } else {
+        send_to_char(ch,
+                     "Usage: %swar              %s- show usage (this info)\r\n"
+                     "       %swar show         %s- display current settings (what mortals see)\r\n"
+                     "       %swar time <ticks> %s- set war time and start timer\r\n"
+                     "       %swar qp <num>     %s- set qp percentage gain\r\n"
+                     "       %swar exp <num>    %s- set exp percentage gain\r\n"
+                     "       %swar gold <num>   %s- set gold percentage gain\r\n"
+                     "       \tywar default      \tw- sets a default setting for war\r\n\r\n"
+                     "Configure the war settings and start a war.\r\n"
+                     "Currently 1 hour IRL = %d ticks\r\n"
+                     "If no number is specified, 0 (off) is assumed.\r\nThe command \tywar time\tn will therefore stop the war timer.\r\n",
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM), CCYEL(ch, C_NRM),
+                     CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     CCYEL(ch, C_NRM), CCNRM(ch, C_NRM), CCYEL(ch, C_NRM),
+                     CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), CCNRM(ch, C_NRM),
+                     (3600 / SECS_PER_MUD_HOUR));
+    }
 }

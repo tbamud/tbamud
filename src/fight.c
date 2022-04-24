@@ -25,7 +25,7 @@
 #include "fight.h"
 #include "shop.h"
 #include "quest.h"
-
+#include "kingdom.h"
 
 /* locally defined global variables, used externally */
 /* head of l-list of fighting chars */
@@ -282,6 +282,14 @@ struct char_data *i;
   if (GROUP(ch))
     send_to_group(ch, GROUP(ch), "%s has died.\r\n", GET_NAME(ch));
 
+  if (GET_KINGDOM(ch) > -1) {
+    kingdom_info[GET_KINGDOM(ch)].kingdom_losses[GET_KINGDOM(ch)]++;
+  }
+  if (GET_KINGDOM(killer) > -1) {
+    kingdom_info[GET_KINGDOM(killer)]. kingdom_wins[GET_KINGDOM(killer)]++;
+    GET_KINGDOM_RANK(killer) += GET_LEVEL(ch);
+  }
+
   update_pos(ch);
 
   make_corpse(ch);
@@ -306,7 +314,7 @@ void die(struct char_data * ch, struct char_data * killer)
 static void perform_group_gain(struct char_data *ch, int base,
 			     struct char_data *victim)
 {
-  int share, hap_share;
+  int share, hap_share, war_share;
 
   share = MIN(CONFIG_MAX_EXP_GAIN, MAX(1, base));
 
@@ -316,6 +324,14 @@ static void perform_group_gain(struct char_data *ch, int base,
     hap_share = share + (int)((float)share * ((float)HAPPY_EXP / (float)(100)));
     share = MIN(CONFIG_MAX_EXP_GAIN, MAX(1, hap_share));
   }
+
+  if ((IS_WAR) && (IS_WAREXP))
+  {
+    /* This only reports the correct amount - the calc is done in gain_exp */
+    war_share = share + (int)((float)share * ((float)WAR_EXP / (float)(100)));
+    share = MIN(CONFIG_MAX_EXP_GAIN, MAX(1, war_share));
+  }
+
   if (share > 1)
     send_to_char(ch, "You receive your share of experience -- %d points.\r\n", share);
   else
@@ -353,7 +369,7 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
 
 static void solo_gain(struct char_data *ch, struct char_data *victim)
 {
-  int exp, happy_exp;
+  int exp, happy_exp, war_exp;
 
   exp = MIN(CONFIG_MAX_EXP_GAIN, GET_EXP(victim) / 3);
 
@@ -368,6 +384,11 @@ static void solo_gain(struct char_data *ch, struct char_data *victim)
   if (IS_HAPPYHOUR && IS_HAPPYEXP) {
     happy_exp = exp + (int)((float)exp * ((float)HAPPY_EXP / (float)(100)));
     exp = MAX(happy_exp, 1);
+  }
+
+  if (IS_WAR && IS_WAREXP) {
+    war_exp = exp + (int)((float)exp * ((float)WAR_EXP / (float)(100)));
+    exp = MAX(war_exp, 1);
   }
 
   if (exp > 1)
@@ -587,7 +608,7 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
  *	> 0	How much damage done. */
 int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
-  long local_gold = 0, happy_gold = 0;
+  long local_gold = 0, happy_gold = 0, war_gold = 0;
   char local_buf[256];
   struct char_data *tmp_char;
   struct obj_data *corpse_obj;
@@ -757,6 +778,14 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
         happy_gold = MAX(0, happy_gold);
         increase_gold(victim, happy_gold);
       }
+
+      if ((IS_WAR) && (IS_WARGOLD))
+      {
+        war_gold = (long)(GET_GOLD(victim) * (((float)(WAR_GOLD))/(float)100));
+        war_gold = MAX(0, war_gold);
+        increase_gold(victim, war_gold);
+      }
+
       local_gold = GET_GOLD(victim);
       sprintf(local_buf,"%ld", (long)local_gold);
     }

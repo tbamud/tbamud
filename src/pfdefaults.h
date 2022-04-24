@@ -21,6 +21,8 @@
 #define PFDEF_WEIGHT		0
 #define PFDEF_LAWCHAOS		0
 #define PFDEF_GOODEVIL          0
+#define PFDEF_KINGDOM           0
+#define PFDEF_KINGDOM_RANK      0
 #define PFDEF_PLRFLAGS		0
 #define PFDEF_AFFFLAGS		0
 #define PFDEF_SAVETHROW		0

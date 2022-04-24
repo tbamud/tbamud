@@ -22,6 +22,7 @@
 #include "fight.h"
 #include "screen.h"
 #include "mud_event.h"
+#include "kingdom.h"
 
 /* local file scope function prototypes */
 static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6);
@@ -380,6 +381,7 @@ void point_update(void)
 {
   struct char_data *i, *next_char;
   struct obj_data *j, *next_thing, *jj, *next_thing2;
+    int k = 0, k_wars = 0, k_wins = 0, k_losses = 0;
 
   /* characters */
   for (i = character_list; i; i = next_char) {
@@ -468,6 +470,30 @@ void point_update(void)
     HAPPY_TIME = 0;
    game_info("Happy hour has ended!");
   }
+
+  /* Take 1 from the wartime tick counter, and end wartime if zero */
+       if (WAR_TIME > 1)  WAR_TIME--;
+  else if (WAR_TIME == 1)   /* Last tick - set everything back to zero */
+  {
+    WAR_QP = 0;
+    WAR_EXP = 0;
+    WAR_GOLD = 0;
+    WAR_TIME = 0;
+        for (k = 0; k < NUM_KINGDOMS; k++) {
+            for (k_wars = 0; k_wars < NUM_KINGDOMS; k_wars++) {
+                kingdom_info[k].kingdom_wars[k_wars] = -1;
+            }
+            for (k_wins = 0; k_wins < NUM_KINGDOMS; k_wins++) {
+                kingdom_info[k].kingdom_wins[k_wins] = 0;
+            }
+            for (k_losses = 0; k_losses < NUM_KINGDOMS; k_losses++) {
+                kingdom_info[k].kingdom_losses[k_losses] = 0;
+        }
+  }
+
+   game_info("War time has ended!");
+  }
+
 }
 
 /* Note: amt may be negative */

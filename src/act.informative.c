@@ -29,6 +29,7 @@
 #include "asciimap.h"
 #include "quest.h"
 #include "race.h"
+#include "kingdom.h"
 
 /* prototypes of local functions */
 /* do_diagnose utility functions */
@@ -796,6 +797,7 @@ ACMD(do_gold)
 ACMD(do_score)
 {
   struct time_info_data playing_time;
+  int i = 0;
 
   if (IS_NPC(ch))
     return;
@@ -813,9 +815,6 @@ ACMD(do_score)
 
   send_to_char(ch, "Your armor class is %d/10, and your alignment is %d.\r\n",
 	  compute_armor_class(ch), GET_GOODEVIL(ch));
-
-  send_to_char(ch, "Your alignment is %s %s.\r\n",
-          get_lawchaos[GET_LAWCHAOS(ch)], get_goodevil(ch));
 
   send_to_char(ch, "You have %d exp, %d gold coins, and %d questpoints.\r\n",
 	  GET_EXP(ch), GET_GOLD(ch), GET_QUESTPOINTS(ch));
@@ -851,6 +850,25 @@ ACMD(do_score)
 
   send_to_char(ch, "Race: %s, (# %d), Abbrev: %s.\r\n",
     pc_race_types[GET_RACE(ch)], GET_RACE(ch), race_abbrevs[GET_RACE(ch)]);
+
+  send_to_char(ch, "Your alignment is %s %s.\r\n",
+          get_lawchaos[GET_LAWCHAOS(ch)], get_goodevil(ch));
+
+  send_to_char(ch, "Kingdom: %s (# %d), Abbrev: %s, Rank: %d.\r\n",
+   pc_kingdom_types[GET_KINGDOM(ch)], GET_KINGDOM(ch),
+    kingdom_abbrevs[GET_KINGDOM(ch)], GET_KINGDOM_RANK(ch));
+  send_to_char(ch, "Room: %d, Direction: %d.\r\n",
+   kingdom_info[GET_KINGDOM(ch)].kingdom_room,
+    kingdom_info[GET_KINGDOM(ch)].kingdom_direction);
+  send_to_char(ch, "Enemy Kingdoms:\r\n");
+  send_to_char(ch, "---------------\r\n");
+  for (i = 0; i < NUM_KINGDOMS; i++) {
+    if (!(kingdom_info[GET_KINGDOM(ch)].kingdom_wars[i] == -1))
+      send_to_char(ch, "Name: %s, Kills: %d, Losses: %d.\r\n",
+       pc_kingdom_types[kingdom_info[GET_KINGDOM(ch)].kingdom_wars[i]],
+        kingdom_info[i].kingdom_wins[i],
+         kingdom_info[i].kingdom_losses[i]);
+    }
 
   switch (GET_POS(ch)) {
   case POS_DEAD:

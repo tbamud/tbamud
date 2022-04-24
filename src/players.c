@@ -258,6 +258,8 @@ int load_char(const char *name, struct char_data *ch)
     GET_WEIGHT(ch) = PFDEF_WEIGHT;
     GET_LAWCHAOS(ch) = PFDEF_LAWCHAOS;
     GET_GOODEVIL(ch) = PFDEF_GOODEVIL;
+    GET_KINGDOM(ch) = PFDEF_KINGDOM;
+    GET_KINGDOM_RANK(ch) = PFDEF_KINGDOM_RANK;
     for (i = 0; i < NUM_OF_SAVING_THROWS; i++)
       GET_SAVE(ch, i) = PFDEF_SAVETHROW;
     GET_LOADROOM(ch) = PFDEF_LOADROOM;
@@ -385,6 +387,10 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Invs"))	GET_INVIS_LEV(ch)	= atoi(line);
 	break;
 
+      case 'K':
+             if (!strcmp(tag, "King"))  ch->char_specials.saved.kingdom.kingdom_name = atoi(line);
+        break;
+
       case 'L':
 	     if (!strcmp(tag, "Last"))	ch->player.time.logon	= atol(line);
         else if (!strcmp(tag, "Lawc"))  GET_LAWCHAOS(ch)        = atoi(line);
@@ -434,6 +440,7 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'R':
              if (!strcmp(tag, "Race"))  GET_RACE(ch)           = atoi(line);
+        else if (!strcmp(tag, "Rank"))  ch->char_specials.saved.kingdom.kingdom_rank = atoi(line);
 	else if (!strcmp(tag, "Room"))	GET_LOADROOM(ch)	= atoi(line);
 	break;
 
@@ -598,6 +605,8 @@ void save_char(struct char_data * ch)
   if (GET_WEIGHT(ch)	   != PFDEF_WEIGHT)	fprintf(fl, "Wate: %d\n", GET_WEIGHT(ch));
   if (GET_LAWCHAOS(ch)     != PFDEF_LAWCHAOS)	fprintf(fl, "Lawc: %d\n", GET_LAWCHAOS(ch));
   if (GET_GOODEVIL(ch)     != PFDEF_GOODEVIL)   fprintf(fl, "Good: %d\n", GET_GOODEVIL(ch));
+  if (GET_KINGDOM(ch)      != PFDEF_KINGDOM)    fprintf(fl, "King: %d\n", GET_KINGDOM(ch));
+  if (GET_KINGDOM_RANK(ch) != PFDEF_KINGDOM_RANK) fprintf(fl, "Rank: %d\n", GET_KINGDOM_RANK(ch));
 
   sprintascii(bits,  PLR_FLAGS(ch)[0]);
   sprintascii(bits2, PLR_FLAGS(ch)[1]);
