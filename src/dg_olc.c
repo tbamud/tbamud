@@ -1148,7 +1148,7 @@ int format_script(struct descriptor_data *d)
 
     *line = '\0';
     for (nlen = 0, i = 0;i<indent;i++) {
-      strncat(line, "  ", sizeof(line)-1);
+      strncat(line, "  ", sizeof(line) - strlen(line) - 1);
       nlen += 2;
     }
 
