@@ -492,7 +492,8 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
     send_to_char(ch, "It is pitch black...\r\n");
     return;
-  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
+  } 
+  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
     send_to_char(ch, "You see nothing but infinite darkness...\r\n");
     return;
   }
@@ -511,17 +512,19 @@ void look_at_room(struct char_data *ch, int ignore_brief)
       send_to_char(ch, "]");
     }
   }
-  else
+  else {
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
-  send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
+  }
+  send_to_char(ch, "%s\r\n", CCCYN(ch, C_NRM));
 
   if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
       ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
     if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
         str_and_map(world[target_room].description, ch, target_room);
-    else
+    }
+    else {
       send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
-  }
+    }
 
   /* autoexits */
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
