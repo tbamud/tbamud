@@ -443,44 +443,50 @@ ACMD(do_exits)
 {
   int door, len = 0;
 
-  if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
+  if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT)
+  {
     send_to_char(ch, "You can't see a damned thing, you're blind!\r\n");
     return;
   }
 
   send_to_char(ch, "Obvious exits:\r\n");
 
-  for (door = 0; door < DIR_COUNT; door++) {
+  for (door = 0; door < DIR_COUNT; door++)
+  {
     if (!EXIT(ch, door) || EXIT(ch, door)->to_room == NOWHERE)
       continue;
     if (EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) && !CONFIG_DISP_CLOSED_DOORS)
       continue;
     if (EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) && !PRF_FLAGGED(ch, PRF_HOLYLIGHT))
-	  continue;
+      continue;
 
     len++;
 
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS) && !EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED))
-      send_to_char(ch, "%-5s - [%5d]%s %s\r\n", dirs[door], GET_ROOM_VNUM(EXIT(ch, door)->to_room),
-      EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) ? " [HIDDEN]" : "", world[EXIT(ch, door)->to_room].name);
-    else if (CONFIG_DISP_CLOSED_DOORS && EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED)) {
-      /* But we tell them the door is closed */
+    {
+      send_to_char(ch, "%-5s -[%5d]%s %s\r\n", dirs[door], GET_ROOM_VNUM(EXIT(ch, door)->to_room),
+        EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) ? "[HIDDEN]" : "", world[EXIT(ch, door)->to_room].name);
+    }
+    else if (CONFIG_DISP_CLOSED_DOORS && EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED))
+    {
+      /*But we tell them the door is closed */
       send_to_char(ch, "%-5s - The %s is closed%s\r\n", dirs[door],
-		(EXIT(ch, door)->keyword)? fname(EXIT(ch, door)->keyword) : "opening",
-		EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) ? " and hidden." : ".");
-      }
+        (EXIT(ch, door)->keyword) ? fname(EXIT(ch, door)->keyword) : "opening",
+        EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) ? " and hidden." : ".");
+    }
     else
+    {
       send_to_char(ch, "%-5s - %s\r\n", dirs[door], IS_DARK(EXIT(ch, door)->to_room) &&
-		!CAN_SEE_IN_DARK(ch) ? "Too dark to tell." : world[EXIT(ch, door)->to_room].name);
+        !CAN_SEE_IN_DARK(ch) ? "Too dark to tell." : world[EXIT(ch, door)->to_room].name);
+    }
   }
-
-  if (!len)
-    send_to_char(ch, " None.\r\n");
+    if (!len)
+      send_to_char(ch, " None.\r\n");
 }
 
 void look_at_room(struct char_data *ch, int ignore_brief)
 {
-  trig_data *t;
+  trig_data * t;
   struct room_data *rm = &world[IN_ROOM(ch)];
   room_vnum target_room;
 
@@ -489,22 +495,28 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   if (!ch->desc)
     return;
 
-  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
+  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch))
+  {
     send_to_char(ch, "It is pitch black...\r\n");
     return;
-  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
+  }
+  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT)
+  {
     send_to_char(ch, "You see nothing but infinite darkness...\r\n");
     return;
   }
+
   send_to_char(ch, "%s", CCCYN(ch, C_NRM));
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+  {
     char buf[MAX_STRING_LENGTH];
 
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
-    send_to_char(ch, "%s [ %s] [ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
+    send_to_char(ch, "%s[ %s][ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
 
-    if (SCRIPT(rm)) {
+    if (SCRIPT(rm))
+    {
       send_to_char(ch, "[T");
       for (t = TRIGGERS(SCRIPT(rm)); t; t = t->next)
         send_to_char(ch, " %d", GET_TRIG_VNUM(t));
@@ -512,22 +524,28 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     }
   }
   else
+  {
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
-  send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
-
-  if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
-      ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
-    if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
-        str_and_map(world[target_room].description, ch, target_room);
-    else
-      send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
   }
 
-  /* autoexits */
+  send_to_char(ch, "%s\r\n", CCCYN(ch, C_NRM));
+
+  if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
+    ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH))
+  {
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+      str_and_map(world[target_room].description, ch, target_room);
+  }
+  else
+  {
+    send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
+  }
+
+  /*autoexits */
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
     do_auto_exits(ch);
 
-  /* now list characters & objects */
+  /*now list characters &objects */
   list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
   list_char_to_char(world[IN_ROOM(ch)].people, ch);
 }
