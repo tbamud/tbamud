@@ -675,21 +675,21 @@ void obj_to_room(struct obj_data *object, room_rnum room)
     log("SYSERR: Illegal value(s) passed to obj_to_room. (Room #%d/%d, obj %p)",
 	room, top_of_world, (void *)object);
   }
-	else {
-	  if (world[room].contents == NULL){  // if list is empty
-		  world[room].contents = object; // add object to list
+  else {
+    if (world[room].contents == NULL){  // if list is empty
+      world[room].contents = object; // add object to list
     }
-		else {
-			struct obj_data *i = world[room].contents; // define a temporary pointer
-			while (i->next_content != NULL) i = i->next_content; // find the first without a next_content
-			i->next_content = object; // add object at the end
-		}
-	object->next_content = NULL; // mostly for sanity. should do nothing.
-	IN_ROOM(object) = room
-	object->carried_by = NULL;
-	if (ROOM_FLAGGED(room, ROOM_HOUSE))
-	  SET_BIT_AR(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
-	}
+    else {
+      struct obj_data *i = world[room].contents; // define a temporary pointer
+      while (i->next_content != NULL) i = i->next_content; // find the first without a next_content
+        i->next_content = object; // add object at the end
+    }
+    object->next_content = NULL; // mostly for sanity. should do nothing.
+    IN_ROOM(object) = room
+    object->carried_by = NULL;
+    if (ROOM_FLAGGED(room, ROOM_HOUSE))
+      SET_BIT_AR(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
+  }
 }
 
 /* Take an object from a room */
