@@ -685,7 +685,7 @@ void obj_to_room(struct obj_data *object, room_rnum room)
         i->next_content = object; // add object at the end
     }
     object->next_content = NULL; // mostly for sanity. should do nothing.
-    IN_ROOM(object) = room
+    IN_ROOM(object) = room;
     object->carried_by = NULL;
     if (ROOM_FLAGGED(room, ROOM_HOUSE))
       SET_BIT_AR(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
