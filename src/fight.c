@@ -60,8 +60,7 @@ static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
-/** @todo refactor this function name */
-static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
+static char *num_weapon_msg(const char *str, const char *weapon_singular, const char *weapon_plural);
 static int compute_thaco(struct char_data *ch, struct char_data *vict);
 
 
@@ -379,7 +378,7 @@ static void solo_gain(struct char_data *ch, struct char_data *victim)
   change_alignment(ch, victim);
 }
 
-static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural)
+static char *num_weapon_msg(const char *str, const char *weapon_singular, const char *weapon_plural)
 {
   static char buf[256];
   char *cp = buf;
@@ -489,14 +488,14 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   else			msgnum = 8;
 
   /* damage message to onlookers */
-  buf = replace_string(dam_weapons[msgnum].to_room,
+  buf = num_weapon_msg(dam_weapons[msgnum].to_room,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
   act(buf, FALSE, ch, NULL, victim, TO_NOTVICT);
 
   /* damage message to damager */
   if (GET_LEVEL(ch) >= LVL_IMMORT)
 	send_to_char(ch, "(%d) ", dam);
-  buf = replace_string(dam_weapons[msgnum].to_char,
+  buf = num_weapon_msg(dam_weapons[msgnum].to_char,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
   act(buf, FALSE, ch, NULL, victim, TO_CHAR);
   send_to_char(ch, CCNRM(ch, C_CMP));
@@ -504,7 +503,7 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
   /* damage message to damagee */
   if (GET_LEVEL(victim) >= LVL_IMMORT)
     send_to_char(victim, "\tR(%d)", dam);
-  buf = replace_string(dam_weapons[msgnum].to_victim,
+  buf = num_weapon_msg(dam_weapons[msgnum].to_victim,
 	  attack_hit_text[w_type].singular, attack_hit_text[w_type].plural);
   act(buf, FALSE, ch, NULL, victim, TO_VICT | TO_SLEEP);
   send_to_char(victim, CCNRM(victim, C_CMP));
