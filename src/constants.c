@@ -601,169 +601,228 @@ const char *fullness[] =
   ""
 };
 
-/** Strength attribute affects.
+/* Strength attribute affects.
  * The fields are hit mod, damage mod, weight carried mod, and weight wielded
  * mod. */
+// d20 - str 10 = standard average human male strength.
+// d20 - hit mod = standardized for str 10 average.
+// d20 - dam mod = standardized for str 10 average.
+// d20 - weight carried mod = standardized for str 10 average.
+// d20 - weight carried mod formula = level * 15.
+// d20 - weight wielded = standardized for str 10 average.
 cpp_extern const struct str_app_type str_app[] = {
-  {-5, -4, 0, 0},	/* str = 0 */
-  {-5, -4, 3, 1},	/* str = 1 */
-  {-3, -2, 3, 2},
-  {-3, -1, 10, 3},
-  {-2, -1, 25, 4},
-  {-2, -1, 55, 5},	/* str = 5 */
-  {-1, 0, 80, 6},
-  {-1, 0, 90, 7},
-  {0, 0, 100, 8},
-  {0, 0, 100, 9},
-  {0, 0, 115, 10},	/* str = 10 */
-  {0, 0, 115, 11},
-  {0, 0, 140, 12},
-  {0, 0, 140, 13},
-  {0, 0, 170, 14},
-  {0, 0, 170, 15},	/* str = 15 */
-  {0, 1, 195, 16},
-  {1, 1, 220, 18},
-  {1, 2, 255, 20},	/* str = 18 */
-  {3, 7, 640, 40},
-  {3, 8, 700, 40},	/* str = 20 */
-  {4, 9, 810, 40},
-  {4, 10, 970, 40},
-  {5, 11, 1130, 40},
-  {6, 12, 1440, 40},
-  {7, 14, 1750, 40},	/* str = 25 */
-  {1, 3, 280, 22},	/* str = 18/0 - 18-50 */
-  {2, 3, 305, 24},	/* str = 18/51 - 18-75 */
-  {2, 4, 330, 26},	/* str = 18/76 - 18-90 */
-  {2, 5, 380, 28},	/* str = 18/91 - 18-99 */
-  {3, 6, 480, 30}	/* str = 18/100 */
+  {-10, -10, 0, 0},	/* str = 0 */
+  {-9, -9, 15, 1},	/* str = 1 */
+  {-8, -8, 30, 2},
+  {-7, -7, 45, 3},
+  {-6, -6, 60, 4},
+  {-5, -5, 75, 5},	/* str = 5 */
+  {-4, -4, 90, 6},
+  {-3, -3, 105, 7},
+  {-2, -2, 120, 8},
+  {-1, -1, 135, 9},
+  {0, 0, 150, 10},	/* str = 10 */
+  {1, 1, 165, 11},
+  {2, 2, 180, 12},
+  {3, 3, 195, 13},
+  {4, 4, 210, 14},
+  {5, 5, 225, 15},	/* str = 15 */
+  {6, 6, 240, 16},
+  {7, 7, 255, 17},
+  {8, 8, 270, 18},	/* str = 18 */
+  {9, 9, 285, 19},
+  {10, 10, 300, 20},	/* str = 20 */
+  {11, 11, 315, 21},
+  {12, 12, 330, 22},
+  {13, 13, 345, 23},
+  {14, 14, 360, 24},
+  {15, 15, 375, 25},	/* str = 25 */
+  {16, 16, 390, 26},
+  {17, 17, 405, 27},
+  {18, 18, 420, 28},
+  {19, 19, 435, 29},
+  {20, 20, 450, 30},	/* str = 30 */
+  {21, 21, 465, 31},
+  {22, 22, 480, 32},
+  {23, 23, 495, 33},
+  {24, 24, 510, 34} 	/* str = 34 */
 };
 
-/** Dexterity skill modifiers for thieves.
- * The fields are for pick pockets, pick locks, find traps, sneak and hide. */
+/* Dexterity skill modifiers for thieves.
+ * The fields are for pick pockets, pick locks, find traps, sneak, and hide. */
+//d20 - dex 10 = standard average human male dexterity.
+//d20 - pick pockets = standardized for dex 10 average.
+//d20 - pick locks = standardized for dex 10 average.
+//d20 - find traps = standardized for dex 10 average.
+//d20 - sneak = standardized for dex 10 average.
+//d20 - hide = standardized for dex 10 average.
 cpp_extern const struct dex_skill_type dex_app_skill[] = {
-  {-99, -99, -90, -99, -60},	/* dex = 0 */
-  {-90, -90, -60, -90, -50},	/* dex = 1 */
-  {-80, -80, -40, -80, -45},
-  {-70, -70, -30, -70, -40},
-  {-60, -60, -30, -60, -35},
-  {-50, -50, -20, -50, -30},	/* dex = 5 */
-  {-40, -40, -20, -40, -25},
-  {-30, -30, -15, -30, -20},
-  {-20, -20, -15, -20, -15},
-  {-15, -10, -10, -20, -10},
-  {-10, -5, -10, -15, -5},	/* dex = 10 */
-  {-5, 0, -5, -10, 0},
-  {0, 0, 0, -5, 0},
-  {0, 0, 0, 0, 0},
-  {0, 0, 0, 0, 0},
-  {0, 0, 0, 0, 0},		/* dex = 15 */
-  {0, 5, 0, 0, 0},
-  {5, 10, 0, 5, 5},
-  {10, 15, 5, 10, 10},		/* dex = 18 */
-  {15, 20, 10, 15, 15},
-  {15, 20, 10, 15, 15},		/* dex = 20 */
-  {20, 25, 10, 15, 20},
-  {20, 25, 15, 20, 20},
-  {25, 25, 15, 20, 20},
-  {25, 30, 15, 25, 25},
-  {25, 30, 15, 25, 25}		/* dex = 25 */
+  {-55, -55, -55, -55, -55},	/* dex = 0 */
+  {-50, -50, -50, -50, -50},	/* dex = 1 */
+  {-45, -45, -45, -45, -45},
+  {-40, -40, -40, -40, -40},
+  {-35, -35, -35, -35, -35},
+  {-30, -30, -30, -30, -30},	/* dex = 5 */
+  {-25, -25, -25, -25, -25},
+  {-20, -20, -20, -20, -20},
+  {-15, -15, -15, -15, -15},
+  {-10, -10, -10, -10, -10},
+  {0, 0, 0, 0, 0}, 	/* dex = 10 */
+  {1, 1, 1, 1, 1},
+  {2, 2, 2, 2, 2},
+  {3, 3, 3, 3, 3},
+  {4, 4, 4, 4, 4},
+  {5, 5, 5, 5, 5}, 	/* dex = 15 */
+  {6, 6, 6, 6, 6},
+  {7, 7, 7, 7, 7},
+  {8, 8, 8, 8, 8},		/* dex = 18 */
+  {9, 9, 9, 9, 9},
+  {10, 10, 10, 10, 10},		/* dex = 20 */
+  {11, 11, 11, 11, 11},
+  {12, 12, 12, 12, 12},
+  {13, 13, 13, 13, 13},
+  {14, 14, 14, 14, 14},
+  {15, 15, 15, 15, 15},		/* dex = 25 */
+  {16, 16, 16, 16, 16},
+  {17, 17, 17, 17, 17},
+  {18, 18, 18, 18, 18},
+  {19, 19, 19, 19, 19},
+  {20, 20, 20, 20, 20},		/* dex = 30 */
+  {21, 21, 21, 21, 21},
+  {22, 22, 22, 22, 22},
+  {23, 23, 23, 23, 23},
+  {24, 24, 24, 24, 24},		/* dex = 34 */
 };
 
-/** Dexterity attribute affects.
+/* Dexterity attribute affects.
  * The fields are reaction, missile attacks, and defensive (armor class). */
+// d20 - dex 10 = standard average human male dexterity.
+// d20 - reaction = standardized for dex 10 average.
+// d20 - missile attacks = standardized for dex 10 average.
+// d20 - defensive (armor class) = standardized for dex 10 average.
 cpp_extern const struct dex_app_type dex_app[] = {
-  {-7, -7, 6},		/* dex = 0 */
-  {-6, -6, 5},		/* dex = 1 */
-  {-4, -4, 5},
-  {-3, -3, 4},
-  {-2, -2, 3},
-  {-1, -1, 2},		/* dex = 5 */
-  {0, 0, 1},
-  {0, 0, 0},
-  {0, 0, 0},
-  {0, 0, 0},
-  {0, 0, 0},		/* dex = 10 */
-  {0, 0, 0},
-  {0, 0, 0},
-  {0, 0, 0},
-  {0, 0, 0},
-  {0, 0, -1},		/* dex = 15 */
-  {1, 1, -2},
-  {2, 2, -3},
-  {2, 2, -4},		/* dex = 18 */
-  {3, 3, -4},
-  {3, 3, -4},		/* dex = 20 */
-  {4, 4, -5},
-  {4, 4, -5},
-  {4, 4, -5},
-  {5, 5, -6},
-  {5, 5, -6}		/* dex = 25 */
+  {-10, -10, 10},	/* dex = 0 */
+  {-9, -9, 9},		/* dex = 1 */
+  {-8, -8, 8},
+  {-7, -7, 7},
+  {-6, -6, 6},
+  {-5, -5, 5},		/* dex = 5*/
+  {-4 -4, 4},
+  {3, -3, 3},
+  {2, -2, 2},
+  {1, -1, 1},
+  {0, 0, 0},			/* dex = 10 */
+  {1, 1, -1},
+  {2, 2, -2},
+  {3, 3, -3},
+  {4, 4, -4},
+  {5, 5, -5},		 /* dex = 15 */
+  {6, 6, -6},
+  {7, 7, -7},
+  {8, 8, -8},		 /* dex = 18 */
+  {9, 9, -9},
+  {10, 10, -10},		/* dex = 20 */
+  {11, 11, -11},
+  {12, 12, -12},
+  {13, 13, -13},
+  {14, 14, -14},
+  {15, 15, -15},		/* dex = 25 */
+  {16, 16, -16},
+  {17, 17, -17},
+  {18, 18, -18},
+  {19, 19, -29},
+  {20, 20, -20},		/* dex = 30 */
+  {21, 21, -21},
+  {22, 22, -22},
+  {23, 23, -23},
+  {24, 24, -24}	  	/* dex = 34 */
 };
 
-/** Constitution attribute affects.
+/* Constitution attribute affects.
  * The field referenced is for hitpoint bonus. */
+// d20 - con 10 = standard average human male constitution.
 cpp_extern const struct con_app_type con_app[] = {
-  {-4},		/* con = 0 */
-  {-3},		/* con = 1 */
-  {-2},
+  {-10},	/* con = 0 */
+  {-9},		/* con = 1 */
+  {-8},
+  {-7},
+  {-6},
+  {-5},		/* con = 5 */
+  {-4},
+  {-3},
   {-2},
   {-1},
-  {-1},		/* con = 5 */
-  {-1},
-  {0},
-  {0},
-  {0},
   {0},		/* con = 10 */
-  {0},
-  {0},
-  {0},
-  {0},
-  {1},		/* con = 15 */
+  {1},
   {2},
-  {2},
-  {3},		/* con = 18 */
   {3},
-  {4},		/* con = 20 */
-  {5},
-  {5},
-  {5},
+  {4},
+  {5},		/* con = 15 */
   {6},
-  {6}		/* con = 25 */
+  {7},
+  {8},		/* con = 18 */
+  {9},
+  {10},		/* con = 20 */
+  {11},
+  {12},
+  {13},
+  {14},
+  {15},		/* con = 25 */
+  {16},
+  {17},
+  {18},
+  {19},
+  {20},		/* con = 30 */
+  {21},
+  {22},
+  {23},
+  {24}		/* con = 34 */
 };
 
-/** Intelligence attribute affects.
+/* Intelligence attribute affects.
  * The field shows how much practicing affects a skill/spell. */
+// d20 - int 10 = standard average human male intelligence.
 cpp_extern const struct int_app_type int_app[] = {
-  {3},		/* int = 0 */
-  {5},		/* int = 1 */
+  {5},		/* int = 0 */
+  {6},		/* int = 1 */
   {7},
   {8},
   {9},
   {10},		/* int = 5 */
-  {11},
   {12},
-  {13},
-  {15},
-  {17},		/* int = 10 */
-  {19},
+  {14},
+  {16},
+  {18},
+  {20},		/* int = 10 */
   {22},
-  {25},
-  {30},
-  {35},		/* int = 15 */
+  {24},
+  {26},
+  {28},
+  {30},		/* int = 15 */
+  {35},
   {40},
-  {45},
-  {50},		/* int = 18 */
-  {53},
+  {45},		/* int = 18 */
+  {50},
   {55},		/* int = 20 */
   {56},
   {57},
   {58},
   {59},
-  {60}		/* int = 25 */
+  {60},		/* int = 25 */
+  {61},
+  {62},
+  {63},
+  {64},
+  {65},		/* int = 30 */
+  {66},
+  {67},
+  {68},
+  {69}		/* int = 34 */
 };
 
-/** Wisdom attribute affects.
+/* Wisdom attribute affects.
  * The field represents how many extra practice points are gained per level. */
+// d20 - wis 10 = standard average human male wisdom.
 cpp_extern const struct wis_app_type wis_app[] = {
   {0},	/* wis = 0 */
   {0},  /* wis = 1 */
@@ -775,22 +834,31 @@ cpp_extern const struct wis_app_type wis_app[] = {
   {0},
   {0},
   {0},
-  {0},  /* wis = 10 */
-  {0},
+  {1},  /* wis = 10 */
+  {1},
   {2},
   {2},
   {3},
   {3},  /* wis = 15 */
-  {3},
+  {4},
   {4},
   {5},	/* wis = 18 */
-  {6},
+  {5},
   {6},  /* wis = 20 */
   {6},
-  {6},
   {7},
   {7},
-  {7}  /* wis = 25 */
+  {8},
+  {8},  /* wis = 25 */
+  {8},
+  {9},
+  {9},
+  {10},
+  {10},  /* wis = 30 */
+  {11},
+  {11},
+  {12},
+  {12}   /* wis = 34 */
 };
 
 /** Define a set of opposite directions from the cardinal directions. */
