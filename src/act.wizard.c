@@ -2333,13 +2333,24 @@ ACMD(do_wizutil)
   else {
     switch (subcmd) {
     case SCMD_REROLL:
-      send_to_char(ch, "Rerolled...\r\n");
-      roll_real_abils(vict);
-      log("(GC) %s has rerolled %s.", GET_NAME(ch), GET_NAME(vict));
-      send_to_char(ch, "New stats: Str %d/%d, Int %d, Wis %d, Dex %d, Con %d, Cha %d\r\n",
-	      GET_STR(vict), GET_ADD(vict), GET_INT(vict), GET_WIS(vict),
-	      GET_DEX(vict), GET_CON(vict), GET_CHA(vict));
-      break;
+	  if (GET_LEVEL(vict) < LVL_IMMORT) {
+  		roll_real_abils(vict);
+  		log("(GC) %s has rerolled %s.", GET_NAME(ch), GET_NAME(vict));
+  	}
+  	else {
+  		vict->real_abils.str_add = 100;
+  		vict->real_abils.str = GET_LEVEL(vict);
+  		vict->real_abils.dex = GET_LEVEL(vict);
+  		vict->real_abils.con = GET_LEVEL(vict);
+  		vict->real_abils.intel = GET_LEVEL(vict);
+  		vict->real_abils.wis = GET_LEVEL(vict);
+  		vict->real_abils.cha = GET_LEVEL(vict);
+      log("(GC) %s has rerolled %s.", GET_NAME(ch), GET_NAME(vict))
+  	}
+  	send_to_char(ch, "New stats: Str %d/%d, Int %d, Wis %d, Dex %d, Con %d, Cha %d\r\n",
+  		GET_STR(vict), GET_ADD(vict), GET_INT(vict), GET_WIS(vict),
+  		GET_DEX(vict), GET_CON(vict), GET_CHA(vict));
+  	break;
     case SCMD_PARDON:
       if (!PLR_FLAGGED(vict, PLR_THIEF) && !PLR_FLAGGED(vict, PLR_KILLER)) {
 	send_to_char(ch, "Your victim is not flagged.\r\n");
