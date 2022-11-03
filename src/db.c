@@ -3509,12 +3509,24 @@ void init_char(struct char_data *ch)
     GET_EXP(ch) = 7000000;
 
     /* The implementor never goes through do_start(). */
-    GET_MAX_HIT(ch) = 500;
-    GET_MAX_MANA(ch) = 100;
-    GET_MAX_MOVE(ch) = 82;
+    GET_ADD(ch) = 100;
+    GET_STR(ch) = GET_LEVEL(ch);
+    GET_INT(ch) = GET_LEVEL(ch);
+    GET_WIS(ch) = GET_LEVEL(ch);
+    GET_DEX(ch) = GET_LEVEL(ch);
+    GET_CON(ch) = GET_LEVEL(ch);
+    GET_CHA(ch) = GET_LEVEL(ch);
+    GET_MAX_HIT(ch) = GET_LEVEL(ch) *10;
+    GET_MAX_MANA(ch) = GET_LEVEL(ch) *10;
+    GET_MAX_MOVE(ch) = GET_LEVEL(ch) *10;
     GET_HIT(ch) = GET_MAX_HIT(ch);
     GET_MANA(ch) = GET_MAX_MANA(ch);
     GET_MOVE(ch) = GET_MAX_MOVE(ch);
+    GET_HITROLL(ch) = GET_LEVEL(ch);
+    GET_DAMROLL(ch) = GET_LEVEL(ch);
+    GET_AC(ch) = -100;
+    GET_GOLD(ch) = 1000000; // convenience to test shops
+    SET_BIT_AR(PRF_FLAGS(ch), PRF_HOLYLIGHT);
   }
 
   set_title(ch, NULL);
@@ -3562,13 +3574,13 @@ void init_char(struct char_data *ch)
   for (i = 0; i < 5; i++)
     GET_SAVE(ch, i) = 0;
 
-  ch->real_abils.intel = 25;
-  ch->real_abils.wis = 25;
-  ch->real_abils.dex = 25;
-  ch->real_abils.str = 25;
-  ch->real_abils.str_add = 100;
-  ch->real_abils.con = 25;
-  ch->real_abils.cha = 25;
+	ch->real_abils.str_add = 100;
+  ch->real_abils.str = GET_LEVEL(ch);
+  ch->real_abils.dex = GET_LEVEL(ch);
+	ch->real_abils.con = GET_LEVEL(ch);
+	ch->real_abils.intel = GET_LEVEL(ch);
+  ch->real_abils.wis = GET_LEVEL(ch);
+  ch->real_abils.cha = GET_LEVEL(ch);
 
   for (i = 0; i < 3; i++)
     GET_COND(ch, i) = (GET_LEVEL(ch) == LVL_IMPL ? -1 : 24);
