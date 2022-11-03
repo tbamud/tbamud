@@ -3524,7 +3524,7 @@ void init_char(struct char_data *ch)
     GET_MOVE(ch) = GET_MAX_MOVE(ch);
     GET_HITROLL(ch) = GET_LEVEL(ch);
     GET_DAMROLL(ch) = GET_LEVEL(ch);
-    GET_AC(ch) = -100;
+    GET_AC(ch) = GET_LEVEL(ch);
     GET_GOLD(ch) = 1000000; // convenience to test shops
     SET_BIT_AR(PRF_FLAGS(ch), PRF_HOLYLIGHT);
   }
