@@ -461,6 +461,9 @@ int has_key(struct char_data *ch, obj_vnum key)
 {
   struct obj_data *o;
 
+  if (key == NOTHING)
+    return (0);
+
   for (o = ch->carrying; o; o = o->next_content)
     if (GET_OBJ_VNUM(o) == key)
       return (1);
