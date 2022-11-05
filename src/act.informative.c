@@ -534,13 +534,15 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH))
   {
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+  {
       str_and_map(world[target_room].description, ch, target_room);
   }
   else
   {
     send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
   }
-
+}
+  
   /*autoexits */
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
     do_auto_exits(ch);
