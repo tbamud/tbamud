@@ -537,7 +537,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   {
       str_and_map(world[target_room].description, ch, target_room);
   }
-  else
+    else
   {
     send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
   }
