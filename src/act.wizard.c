@@ -86,7 +86,7 @@ static int purge_room(room_rnum room)
   while (world[room].contents)
     extract_obj(world[room].contents);
 
-  return 1;
+  return 1
 }
 
 ACMD(do_wizhelp) 
