@@ -11,3 +11,4 @@ src/.accepted
 src/depend
 src/util/depend
 .editorconfig
+.vscode/settings.json

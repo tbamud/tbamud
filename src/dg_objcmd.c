@@ -47,9 +47,9 @@ static OCMD(do_omove);
 static OCMD(do_olog);
 
 struct obj_command_info {
-   char *command;
-   void        (*command_pointer)(obj_data *obj, char *argument, int cmd, int subcmd);
-   int        subcmd;
+  char *command;
+  void (*command_pointer)(obj_data *obj, char *argument, int cmd, int subcmd);
+  int subcmd;
 };
 
 /* do_osend */
@@ -141,15 +141,12 @@ static OCMD(do_oecho)
   if (!*argument)
     obj_log(obj, "oecho called with no args");
 
-  else if ((room = obj_room(obj)) != NOWHERE)
-  {
+  else if ((room = obj_room(obj)) != NOWHERE) {
     if (world[room].people) {
       sub_write(argument, world[room].people, TRUE, TO_ROOM);
       sub_write(argument, world[room].people, TRUE, TO_CHAR);
     }
-  }
-
-  else
+  } else
     obj_log(obj, "oecho called by object in NOWHERE");
 }
 
@@ -169,41 +166,27 @@ static OCMD(do_oforce)
 
   line = one_argument(argument, arg1);
 
-  if (!*arg1 || !*line)
-  {
-    obj_log(obj, "oforce called with too few args");
+  if (!*arg1 || !*line) {
+    obj_log(obj, "oforce called with too few args: requires target and command");
     return;
   }
 
-  if (!str_cmp(arg1, "all"))
-  {
+  if (!str_cmp(arg1, "all")) {
     if ((room = obj_room(obj)) == NOWHERE)
       obj_log(obj, "oforce called by object in NOWHERE");
-    else
-    {
-      for (ch = world[room].people; ch; ch = next_ch)
-      {
+    else {
+      for (ch = world[room].people; ch; ch = next_ch) {
         next_ch = ch->next_in_room;
         if (valid_dg_target(ch, 0))
-        {
           command_interpreter(ch, line);
-        }
       }
     }
-  }
-
-  else
-  {
-    if ((ch = get_char_by_obj(obj, arg1)))
-    {
+  } else {
+    if ((ch = get_char_by_obj(obj, arg1))) {
       if (valid_dg_target(ch, 0))
-      {
         command_interpreter(ch, line);
-      }
-    }
-
-    else
-      obj_log(obj, "oforce: no target found");
+    } else
+      obj_log(obj, "oforce: no target found: (arg == %s)", arg1);
   }
 }
 
@@ -216,10 +199,10 @@ static OCMD(do_ozoneecho)
   skip_spaces(&msg);
 
   if (!*room_number || !*msg)
-    obj_log(obj, "ozoneecho called with too few args");
+    obj_log(obj, "ozoneecho called with too few args: requires roomnum and message.");
 
   else if ((zone = real_zone_by_thing(atoi(room_number))) == NOWHERE)
-    obj_log(obj, "ozoneecho called for nonexistant zone");
+    obj_log(obj, "ozoneecho called for nonexistant zone: (arg == %s)", room_number);
 
   else {
     sprintf(buf, "%s\r\n", msg);
@@ -234,29 +217,24 @@ static OCMD(do_osend)
 
   msg = any_one_arg(argument, buf);
 
-  if (!*buf)
-  {
+  if (!*buf) {
     obj_log(obj, "osend called with no args");
     return;
   }
 
   skip_spaces(&msg);
 
-  if (!*msg)
-  {
+  if (!*msg) {
     obj_log(obj, "osend called without a message");
     return;
   }
 
-  if ((ch = get_char_by_obj(obj, buf)))
-  {
+  if ((ch = get_char_by_obj(obj, buf))) {
     if (subcmd == SCMD_OSEND)
       sub_write(msg, ch, TRUE, TO_CHAR);
     else if (subcmd == SCMD_OECHOAROUND)
       sub_write(msg, ch, TRUE, TO_ROOM);
-  }
-
-  else
+  } else
     obj_log(obj, "no target found for osend");
 }
 
@@ -285,9 +263,9 @@ static OCMD(do_otimer)
   one_argument(argument, arg);
 
   if (!*arg)
-    obj_log(obj, "otimer: missing argument");
+    obj_log(obj, "otimer: missing argument: requires numerical timer.");
   else if (!isdigit(*arg))
-    obj_log(obj, "otimer: bad argument");
+    obj_log(obj, "otimer: bad argument: (arg == %s)", arg);
   else
     GET_OBJ_TIMER(obj) = atoi(arg);
 }
@@ -306,11 +284,11 @@ static OCMD(do_otransform)
   if (!*arg)
     obj_log(obj, "otransform: missing argument");
   else if (!isdigit(*arg))
-    obj_log(obj, "otransform: bad argument");
+    obj_log(obj, "otransform: bad argument: (arg == %s)", arg);
   else {
     o = read_object(atoi(arg), VIRTUAL);
     if (o==NULL) {
-      obj_log(obj, "otransform: bad object vnum");
+      obj_log(obj, "otransform: bad object vnum: (arg == %s)", arg);
       return;
     }
 
@@ -335,9 +313,8 @@ static OCMD(do_otransform)
     tmpobj.next = obj->next;
     memcpy(obj, &tmpobj, sizeof(*obj));
 
-    if (wearer) {
+    if (wearer) 
       equip_char(wearer, obj, pos);
-    }
 
     extract_obj(o);
   }
@@ -380,7 +357,7 @@ static OCMD(do_opurge)
         dg_owner_purged = 1;
       extract_obj(o);
     } else
-      obj_log(obj, "opurge: bad argument");
+      obj_log(obj, "opurge: bad argument: (arg == %s)", arg);
 
     return;
   }
@@ -401,25 +378,21 @@ static OCMD(do_oteleport)
 
   two_arguments(argument, arg1, arg2);
 
-  if (!*arg1 || !*arg2)
-  {
-    obj_log(obj, "oteleport called with too few args");
+  if (!*arg1 || !*arg2) {
+    obj_log(obj, "oteleport called with too few args: requires target and room.");
     return;
   }
 
   target = find_obj_target_room(obj, arg2);
 
   if (target == NOWHERE)
-    obj_log(obj, "oteleport target is an invalid room");
-
-  else if (!str_cmp(arg1, "all"))
-  {
+    obj_log(obj, "oteleport target is an invalid room: (arg == %s)", arg2);
+  else if (!str_cmp(arg1, "all")) {
     rm = obj_room(obj);
     if (target == rm)
       obj_log(obj, "oteleport target is itself");
 
-    for (ch = world[rm].people; ch; ch = next_ch)
-    {
+    for (ch = world[rm].people; ch; ch = next_ch) {
       next_ch = ch->next_in_room;
       if (!valid_dg_target(ch, DG_ALLOW_GODS))
         continue;
@@ -427,20 +400,15 @@ static OCMD(do_oteleport)
       char_to_room(ch, target);
       enter_wtrigger(&world[IN_ROOM(ch)], ch, -1);
     }
-  }
-
-  else
-  {
+  } else {
     if ((ch = get_char_by_obj(obj, arg1))) {
       if (valid_dg_target(ch, DG_ALLOW_GODS)) {
         char_from_room(ch);
         char_to_room(ch, target);
         enter_wtrigger(&world[IN_ROOM(ch)], ch, -1);
       }
-    }
-
-    else
-      obj_log(obj, "oteleport: no target found");
+    } else
+      obj_log(obj, "oteleport: no target found: (arg == %s)", arg1);
   }
 }
 
@@ -457,14 +425,12 @@ static OCMD(do_dgoload)
 
   target = two_arguments(argument, arg1, arg2);
 
-  if (!*arg1 || !*arg2 || !is_number(arg2) || ((number = atoi(arg2)) < 0))
-  {
+  if (!*arg1 || !*arg2 || !is_number(arg2) || ((number = atoi(arg2)) < 0)) {
     obj_log(obj, "oload: bad syntax");
     return;
   }
 
-  if ((room = obj_room(obj)) == NOWHERE)
-  {
+  if ((room = obj_room(obj)) == NOWHERE) {
     obj_log(obj, "oload: object in NOWHERE trying to load");
     return;
   }
@@ -472,9 +438,9 @@ static OCMD(do_dgoload)
   /* load mob to target room - Jamie Nelson, April 13 2004 */
   if (is_abbrev(arg1, "mob")) {
     room_rnum rnum;
-    if (!target || !*target) {
+    if (!target || !*target)
       rnum = room;
-    } else {
+    else {
       if (!isdigit(*target) || (rnum = real_room(atoi(target))) == NOWHERE) {
         obj_log(obj, "oload: room target vnum doesn't exist "
           "(loading mob vnum %d to room %s)", number, target);
@@ -482,7 +448,7 @@ static OCMD(do_dgoload)
       }
     }
     if ((mob = read_mobile(number, VIRTUAL)) == NULL) {
-      obj_log(obj, "oload: bad mob vnum");
+      obj_log(obj, "oload: bad mob vnum: (arg == %s)", arg2);
       return;
     }
     char_to_room(mob, rnum);
@@ -498,7 +464,7 @@ static OCMD(do_dgoload)
 
   else if (is_abbrev(arg1, "obj")) {
     if ((object = read_object(number, VIRTUAL)) == NULL) {
-      obj_log(obj, "oload: bad object vnum");
+      obj_log(obj, "oload: bad object vnum: (arg == %s)", arg2);
       return;
     }
 
@@ -537,10 +503,8 @@ static OCMD(do_dgoload)
     obj_to_room(object, room);
     load_otrigger(object);
     return;
-  }
-
-  else
-    obj_log(obj, "oload: bad type");
+  } else
+    obj_log(obj, "oload: bad type: (arg == %s)", arg1);
 
 }
 
@@ -553,7 +517,7 @@ static OCMD(do_odamage) {
 
   /* who cares if it's a number ? if not it'll just be 0 */
   if (!*name || !*amount) {
-      obj_log(obj, "odamage: bad syntax");
+      obj_log(obj, "odamage: bad syntax: requires target and numerical damage.");
       return;
   }
 
@@ -561,7 +525,7 @@ static OCMD(do_odamage) {
   ch = get_char_by_obj(obj, name);
 
   if (!ch) {
-    obj_log(obj, "odamage: target not found");
+    obj_log(obj, "odamage: target not found: (arg == %s)", name);
     return;
   }
   script_damage(ch, dam);
@@ -604,13 +568,13 @@ static OCMD(do_odoor)
   int dir, fd, to_room;
 
   const char *door_field[] = {
-      "purge",
-      "description",
-      "flags",
-      "key",
-      "name",
-      "room",
-      "\n"
+    "purge",
+    "description",
+    "flags",
+    "key",
+    "name",
+    "room",
+    "\n"
   };
 
   argument = two_arguments(argument, target, direction);
@@ -618,22 +582,31 @@ static OCMD(do_odoor)
   skip_spaces(&value);
 
   if (!*target || !*direction || !*field) {
-    obj_log(obj, "odoor called with too few args");
+    obj_log(obj, "odoor called with too few args: requires target, direction and field.");
     return;
   }
 
   if ((rm = get_room(target)) == NULL) {
-    obj_log(obj, "odoor: invalid target");
+    obj_log(obj, "odoor: invalid target: (arg == %s)", target);
     return;
   }
 
   if ((dir = search_block(direction, dirs, FALSE)) == -1) {
-    obj_log(obj, "odoor: invalid direction");
+    char error_log[MAX_STRING_LENGTH];
+
+    sprintf(error_log, "odoor: invalid direction: (arg == %s) not found in:\n  [ ", direction);
+
+    for (i = 0; i < NUM_OF_DIRS; i++)
+      sprintf(error_log + strlen(error_log), "%s ", dirs[i]);
+
+    sprintf(error_log + strlen(error_log), "]");
+
+    obj_log(obj, error_log);
     return;
   }
 
   if ((fd = search_block(field, door_field, FALSE)) == -1) {
-    obj_log(obj, "odoor: invalid field");
+    obj_log(obj, "odoor: invalid field: (arg == %s)", field);
     return;
   }
 
@@ -681,7 +654,7 @@ static OCMD(do_odoor)
         if ((to_room = real_room(atoi(value))) != NOWHERE)
           newexit->to_room = to_room;
         else
-          obj_log(obj, "odoor: invalid door target");
+          obj_log(obj, "odoor: invalid door target: (arg == %s)", value);
         break;
     }
   }
@@ -766,16 +739,17 @@ static OCMD(do_omove)
 
   one_argument(argument, arg1);
 
-  if (!*arg1)
-  {
-    obj_log(obj, "omove called with too few args");
+  if (!*arg1) {
+    obj_log(obj, "omove called with too few args: requires destination.");
     return;
   }
 
   target = find_obj_target_room(obj, arg1);
 
-  if (target == NOWHERE)
-    obj_log(obj, "omove target is an invalid room");
+  if (target == NOWHERE) {
+    obj_log(obj, "omove target is an invalid room: (arg == %s)", arg1);
+    return;
+  }
 
   // Remove the object from it's current location
   if (obj->carried_by != NULL) {
