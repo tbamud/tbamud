@@ -282,205 +282,205 @@ static void trigedit_disp_types(struct descriptor_data *d)
 
 // Change a string for another without memory bugs
 static char *str_replace(const char *string, const char *substr, const char *replacement) {
-    char *tok = NULL;
-    char *newstr = NULL;
-    char *oldstr = NULL;
-    char *head = NULL;
-    
-    // if either substr or replacement is NULL, duplicate string a let caller handle it
-    if (substr == NULL || replacement == NULL) {
-        return strdup (string);
-    }
-    
-    newstr = strdup (string);
-    head = newstr;
-    while ((tok = strstr(head, substr))) {
-        oldstr = newstr;
-        newstr = malloc(strlen(oldstr) - strlen(substr) + strlen (replacement) + 1);
-        // Failed to alloc mem, free old string and return NULL
-        if (newstr == NULL) {
-            free (oldstr);
-            return NULL;
-        }
-        memcpy (newstr, oldstr, tok - oldstr);
-        memcpy (newstr + (tok - oldstr), replacement, strlen (replacement));
-        memcpy (newstr + (tok - oldstr) + strlen(replacement), tok + strlen (substr), strlen (oldstr) - strlen (substr) - (tok - oldstr));
-        memset (newstr + strlen (oldstr) - strlen(substr) + strlen (replacement) , 0, 1 );
+  char *tok = NULL;
+  char *newstr = NULL;
+  char *oldstr = NULL;
+  char *head = NULL;
 
-        // move back head right after the last replacement
-        head = newstr + (tok - oldstr) + strlen( replacement);
-        free (oldstr);
+  // if either substr or replacement is NULL, duplicate string a let caller handle it
+  if (substr == NULL || replacement == NULL) {
+    return strdup(string);
+  }
+
+  newstr = strdup(string);
+  head = newstr;
+  while ((tok = strstr(head, substr))) {
+    oldstr = newstr;
+    newstr = malloc(strlen(oldstr) - strlen(substr) + strlen(replacement) + 1);
+    // Failed to alloc mem, free old string and return NULL
+    if (newstr == NULL) {
+      free(oldstr);
+      return NULL;
     }
-    
-    return newstr;
+    memcpy(newstr, oldstr, tok - oldstr);
+    memcpy(newstr + (tok - oldstr), replacement, strlen(replacement));
+    memcpy(newstr + (tok - oldstr) + strlen(replacement), tok + strlen(substr), strlen(oldstr) - strlen(substr) - (tok - oldstr));
+    memset(newstr + strlen(oldstr) - strlen(substr) + strlen(replacement), 0, 1);
+
+    // move back head right after the last replacement
+    head = newstr + (tok - oldstr) + strlen(replacement);
+    free(oldstr);
+  }
+
+  return newstr;
 }
 
 // You can easily change the color code (\tn) to the old one (@n or &n)
 #define SYNTAX_TERMS        49
 static const char *syntax_color_replacement[SYNTAX_TERMS][2] =
 {
-    // script logic (10)
-    { "if",             "\tcif\tn" }, // 0
-    { "elseif",         "\tcelseif\tn" },
-    { "else",           "\tcelse\tn" },
-    { "end",            "\tcend\tn" },
-    { "switch",         "\tcswitch\tn" },
-    { "case",           "\tccase\tY" },
-    { "default",        "\tcdefault\tn" },
-    { "break",          "\tcbreak\tn" },
-    { "while",          "\tcwhile\tn" },
-    { "done",           "\tcdone\tn" },
-    // commands (15)
-    { "eval ",          "\tceval\tY " }, //10
-    { "nop ",           "\tcnop\tY " },
-    { "extract ",       "\tcextract\tY " },
-    { "dg_letter ",     "\tcdg_letter\tY " },
-    { "makeuid ",       "\tcmakeuid\tY " },
-    { "dg_cast ",       "\tcdg_cast\tY " },
-    { "dg_affect ",     "\tcdg_affect\tY " },
-    { "global ",        "\tcglobal\tY " },
-    { "context ",       "\tccontext\tY " },
-    { "remote ",        "\tcremot\tce\tY " },
-    { "rdelete ",       "\tcrdelete\tY " }, // 20
-    { "set ",           "\tcset\tY " },
-    { "unset ",         "\tcunset\tY " },
-    { "attach ",        "\tcattach\tY " },
-    { "detach ",        "\tcdetach\tY " },
-    // stopping (3)
-    { "wait",           "\trwait"   },
-    { "return",         "\trreturn" },
-    { "halt",           "\trhalt"   },
-    // operands (12)
-    { "||",             "\tc||\tY" },
-    { "&&",             "\tc&&\tY" },
-    { "==",             "\tc==\tY" }, // 30
-    { "!=",             "\tc!=\tY" },
-    { "<=",             "\tc<=\tY" },
-    { ">=",             "\tc>=\tY" },
-    { "< ",             "\tc< \tY" },
-    { "> ",             "\tc> \tY" },
-    { "/=",             "\tc/=\tY" },
-    { "!",              "\tc!\tn"  },
-    { "(",              "\tc(\tY"  },
-    { ")",              "\tc)\tn"  },
-    // corrective (4)
-    { "\tc!\tn=",       "\tc!=\tY" }, // 40
-    { "%s\tcend\tn%",    "\tm%\tosend%\tn" },
-    { "%\tc)",          "\tm%\tc)" },
-    { ")\tn%",          ")\tm%"},
-    // variables (5)
-    { "% ",             "\tm%\tn " },
-    { "%,",             "\tm%\tn," },
-    { "%.",             "\tm%\tn." },
-    { "%:",             "\tm%\tn:" },
-    { "%",              "\tm%\to" } // 48
+  // script logic (10)
+  { "if",             "\tcif\tn" }, // 0
+  { "elseif",         "\tcelseif\tn" },
+  { "else",           "\tcelse\tn" },
+  { "end",            "\tcend\tn" },
+  { "switch",         "\tcswitch\tn" },
+  { "case",           "\tccase\tY" },
+  { "default",        "\tcdefault\tn" },
+  { "break",          "\tcbreak\tn" },
+  { "while",          "\tcwhile\tn" },
+  { "done",           "\tcdone\tn" },
+  // commands (15)
+  { "eval ",          "\tceval\tY " }, //10
+  { "nop ",           "\tcnop\tY " },
+  { "extract ",       "\tcextract\tY " },
+  { "dg_letter ",     "\tcdg_letter\tY " },
+  { "makeuid ",       "\tcmakeuid\tY " },
+  { "dg_cast ",       "\tcdg_cast\tY " },
+  { "dg_affect ",     "\tcdg_affect\tY " },
+  { "global ",        "\tcglobal\tY " },
+  { "context ",       "\tccontext\tY " },
+  { "remote ",        "\tcremot\tce\tY " },
+  { "rdelete ",       "\tcrdelete\tY " }, // 20
+  { "set ",           "\tcset\tY " },
+  { "unset ",         "\tcunset\tY " },
+  { "attach ",        "\tcattach\tY " },
+  { "detach ",        "\tcdetach\tY " },
+  // stopping (3)
+  { "wait",           "\trwait"   },
+  { "return",         "\trreturn" },
+  { "halt",           "\trhalt"   },
+  // operands (12)
+  { "||",             "\tc||\tY" },
+  { "&&",             "\tc&&\tY" },
+  { "==",             "\tc==\tY" }, // 30
+  { "!=",             "\tc!=\tY" },
+  { "<=",             "\tc<=\tY" },
+  { ">=",             "\tc>=\tY" },
+  { "< ",             "\tc< \tY" },
+  { "> ",             "\tc> \tY" },
+  { "/=",             "\tc/=\tY" },
+  { "!",              "\tc!\tn"  },
+  { "(",              "\tc(\tY"  },
+  { ")",              "\tc)\tn"  },
+  // corrective (4)
+  { "\tc!\tn=",       "\tc!=\tY" }, // 40
+  { "%s\tcend\tn%",    "\tm%\tosend%\tn" },
+  { "%\tc)",          "\tm%\tc)" },
+  { ")\tn%",          ")\tm%"},
+  // variables (5)
+  { "% ",             "\tm%\tn " },
+  { "%,",             "\tm%\tn," },
+  { "%.",             "\tm%\tn." },
+  { "%:",             "\tm%\tn:" },
+  { "%",              "\tm%\to" } // 48
 };
 
 // Here you can include more commands usually used in your triggers
 #define COMMAND_TERMS   36
 static const char *command_color_replacement[COMMAND_TERMS][2] =
 {
-    // Mob specific commands (25)
-    { "mlog",            "\tcmlog\tn" },  // 0
-    { "masound",         "\tcmasound\tn" },
-    { "mkill",           "\tcmkill\tn" },
-    { "mjunk",           "\tcmjunk\tn" },
-    { "mdamage",         "\tcmdamage\tn" },
-    { "mdoor",           "\tcmdoor\tn" },
-    { "mecho",           "\tcmecho\tn" },
-    { "mrecho",          "\tcmrecho\tn" },
-    { "mechoaround",     "\tcmechoaround\tn" },
-    { "msend",           "\tcmsend\tn" },
-    { "mload",           "\tcmload\tn" }, // 10
-    { "mpurge",          "\tcmpurge\tn" },
-    { "mgoto",           "\tcmgoto\tn" },
-    { "mteleport",       "\tcmteleport\tn" },
-    { "mforce",          "\tcmforce\tn" },
-    { "mhunt",           "\tcmhunt\tn" },
-    { "mremember",       "\tcmremember\tn" },
-    { "mforget",         "\tcmforget\tn" },
-    { "mtransform",      "\tcmtransform\tn" },
-    { "mzoneecho",       "\tcmzoneecho\tn" },
-    { "mfollow",         "\tcmfollow\tn" }, // 20
-    { "mquest",          "\tcmquest\tn" },
-    { "malign",          "\tcmalign\tn" },
-    { "mcast",           "\tcmcast\tn" },
-    { "mdismiss",        "\tcmdismiss\tn" },
-    // common commands (10)
-    { "drop ",           "\tcdrop \tn" },
-    { "emote ",          "\tcemote \tn" },
-    { "give ",           "\tcgive \tn" },
-    { "say ",            "\tcsay \tn" },
-    { "tell ",           "\tctell \tn" },
-    { "unlock ",         "\tcunlock \tn" }, // 30
-    { "lock ",           "\tclock \tn" },
-    { "open ",           "\tcopen \tn" },
-    { "close ",          "\tcclose \tn" },
-    { "junk ",          "\tcjunk \tn" } // 34
+  // Mob specific commands (25)
+  { "mlog",            "\tcmlog\tn" },  // 0
+  { "masound",         "\tcmasound\tn" },
+  { "mkill",           "\tcmkill\tn" },
+  { "mjunk",           "\tcmjunk\tn" },
+  { "mdamage",         "\tcmdamage\tn" },
+  { "mdoor",           "\tcmdoor\tn" },
+  { "mecho",           "\tcmecho\tn" },
+  { "mrecho",          "\tcmrecho\tn" },
+  { "mechoaround",     "\tcmechoaround\tn" },
+  { "msend",           "\tcmsend\tn" },
+  { "mload",           "\tcmload\tn" }, // 10
+  { "mpurge",          "\tcmpurge\tn" },
+  { "mgoto",           "\tcmgoto\tn" },
+  { "mteleport",       "\tcmteleport\tn" },
+  { "mforce",          "\tcmforce\tn" },
+  { "mhunt",           "\tcmhunt\tn" },
+  { "mremember",       "\tcmremember\tn" },
+  { "mforget",         "\tcmforget\tn" },
+  { "mtransform",      "\tcmtransform\tn" },
+  { "mzoneecho",       "\tcmzoneecho\tn" },
+  { "mfollow",         "\tcmfollow\tn" }, // 20
+  { "mquest",          "\tcmquest\tn" },
+  { "malign",          "\tcmalign\tn" },
+  { "mcast",           "\tcmcast\tn" },
+  { "mdismiss",        "\tcmdismiss\tn" },
+  // common commands (10)
+  { "drop ",           "\tcdrop \tn" },
+  { "emote ",          "\tcemote \tn" },
+  { "give ",           "\tcgive \tn" },
+  { "say ",            "\tcsay \tn" },
+  { "tell ",           "\tctell \tn" },
+  { "unlock ",         "\tcunlock \tn" }, // 30
+  { "lock ",           "\tclock \tn" },
+  { "open ",           "\tcopen \tn" },
+  { "close ",          "\tcclose \tn" },
+  { "junk ",          "\tcjunk \tn" } // 34
 };
 
 
 static void script_syntax_highlighting(struct descriptor_data *d, char *string)
 {
-    ACMD(do_action);
-    char buffer[MAX_STRING_LENGTH] = "";
-    char *newlist, *curtok;
-    
-    size_t i;
+  ACMD(do_action);
+  char buffer[MAX_STRING_LENGTH] = "";
+  char *newlist, *curtok;
 
-    // Parse script text line by line
-    newlist = strdup(string);
-    for (curtok = strtok(newlist, "\r\n"); curtok; curtok = strtok(NULL, "\r\n")) {
-        char *line = strdup(curtok);
-        bool comment = FALSE;
-        
-        // Find if is a comment
-        for (i=0;i <= strlen(line);i++) {
-            // skip initial spaces
-            if (strncmp(&line[i], " ", 1) == 0) {
-                continue;
-            }
-            // is a comment, highlight
-            if (strncmp(&line[i], "*", 1) == 0) {
-                line = str_replace(line, "*", "\tg*");
-                comment = TRUE;
-                break;
-            }
-            // not a comment
-            else {
-                comment = FALSE;
-                break;
-            }
-        }
-        
-        // Highlight lines
-        if (!comment) {
-            // Syntax replacement
-            for (i=0;i < SYNTAX_TERMS;i++) {
-                line = str_replace(line, syntax_color_replacement[i][0], syntax_color_replacement[i][1]);
-            }
+  size_t i;
 
-            // Commands replacement
-            for (i=0;i < COMMAND_TERMS;i++) {
-                line = str_replace(line, command_color_replacement[i][0], command_color_replacement[i][1]);
-            }
-        
-            // Socials replacement (experimental)
-            int cmd;
-            for (cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++) {
-                if (complete_cmd_info[cmd].command_pointer == do_action) {
-                    char replace_social[MAX_INPUT_LENGTH];
-                    snprintf(replace_social, MAX_INPUT_LENGTH, "\tc%s\tn", complete_cmd_info[cmd].command);
-                    line = str_replace(line, complete_cmd_info[cmd].command, replace_social);
-                }
-            }
-        }
+  // Parse script text line by line
+  newlist = strdup(string);
+  for (curtok = strtok(newlist, "\r\n"); curtok; curtok = strtok(NULL, "\r\n")) {
+    char *line = strdup(curtok);
+    bool comment = FALSE;
 
-        strncat(buffer, line, sizeof(buffer) - strlen(buffer) - 1);
-        strncat(buffer, "\tn\r\n", sizeof(buffer) - strlen(buffer) - 1);
+    // Find if is a comment
+    for (i = 0;i <= strlen(line);i++) {
+      // skip initial spaces
+      if (strncmp(&line[i], " ", 1) == 0) {
+        continue;
+      }
+      // is a comment, highlight
+      if (strncmp(&line[i], "*", 1) == 0) {
+        line = str_replace(line, "*", "\tg*");
+        comment = TRUE;
+        break;
+      }
+      // not a comment
+      else {
+        comment = FALSE;
+        break;
+      }
     }
-    
-    page_string(d, buffer, TRUE);
+
+    // Highlight lines
+    if (!comment) {
+      // Syntax replacement
+      for (i = 0;i < SYNTAX_TERMS;i++) {
+        line = str_replace(line, syntax_color_replacement[i][0], syntax_color_replacement[i][1]);
+      }
+
+      // Commands replacement
+      for (i = 0;i < COMMAND_TERMS;i++) {
+        line = str_replace(line, command_color_replacement[i][0], command_color_replacement[i][1]);
+      }
+
+      // Socials replacement (experimental)
+      int cmd;
+      for (cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++) {
+        if (complete_cmd_info[cmd].command_pointer == do_action) {
+          char replace_social[MAX_INPUT_LENGTH];
+          snprintf(replace_social, MAX_INPUT_LENGTH, "\tc%s\tn", complete_cmd_info[cmd].command);
+          line = str_replace(line, complete_cmd_info[cmd].command, replace_social);
+        }
+      }
+    }
+
+    strncat(buffer, line, sizeof(buffer) - strlen(buffer) - 1);
+    strncat(buffer, "\tn\r\n", sizeof(buffer) - strlen(buffer) - 1);
+  }
+
+  page_string(d, buffer, TRUE);
 }
 /****************************************************************************************/
 
@@ -490,70 +490,70 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
 
   switch (OLC_MODE(d)) {
     case TRIGEDIT_MAIN_MENU:
-     switch (tolower(*arg)) {
-       case 'q':
-         if (OLC_VAL(d)) { /* Anything been changed? */
-           if (!GET_TRIG_TYPE(OLC_TRIG(d))) {
-             write_to_output(d, "Invalid Trigger Type! Answer a to abort quit!\r\n");
-           }
-           write_to_output(d, "Do you wish to save your changes? : ");
-           OLC_MODE(d) = TRIGEDIT_CONFIRM_SAVESTRING;
-         } else
-           cleanup_olc(d, CLEANUP_ALL);
-         return;
-       case '1':
-         OLC_MODE(d) = TRIGEDIT_NAME;
-         write_to_output(d, "Name: ");
-         break;
-       case '2':
-         OLC_MODE(d) = TRIGEDIT_INTENDED;
-         write_to_output(d, "0: Mobiles, 1: Objects, 2: Rooms: ");
-         break;
-       case '3':
-         OLC_MODE(d) = TRIGEDIT_TYPES;
-         trigedit_disp_types(d);
-         break;
-       case '4':
-         OLC_MODE(d) = TRIGEDIT_NARG;
-         write_to_output(d, "Numeric argument: ");
-         break;
-       case '5':
-         OLC_MODE(d) = TRIGEDIT_ARGUMENT;
-         write_to_output(d, "Argument: ");
-         break;
-       case '6':
-         OLC_MODE(d) = TRIGEDIT_COMMANDS;
-         write_to_output(d, "Enter trigger commands: (/s saves /h for help)\r\n\r\n");
-         d->backstr = NULL;
-         if (OLC_STORAGE(d)) {
-           clear_screen(d);
-           script_syntax_highlighting(d, OLC_STORAGE(d));
-           d->backstr = strdup(OLC_STORAGE(d));
-         }
-         d->str = &OLC_STORAGE(d);
-         d->max_str = MAX_CMD_LENGTH;
-         d->mail_to = 0;
-         OLC_VAL(d) = 1;
+      switch (tolower(*arg)) {
+        case 'q':
+          if (OLC_VAL(d)) { /* Anything been changed? */
+            if (!GET_TRIG_TYPE(OLC_TRIG(d))) {
+              write_to_output(d, "Invalid Trigger Type! Answer a to abort quit!\r\n");
+            }
+            write_to_output(d, "Do you wish to save your changes? : ");
+            OLC_MODE(d) = TRIGEDIT_CONFIRM_SAVESTRING;
+          } else
+            cleanup_olc(d, CLEANUP_ALL);
+          return;
+        case '1':
+          OLC_MODE(d) = TRIGEDIT_NAME;
+          write_to_output(d, "Name: ");
+          break;
+        case '2':
+          OLC_MODE(d) = TRIGEDIT_INTENDED;
+          write_to_output(d, "0: Mobiles, 1: Objects, 2: Rooms: ");
+          break;
+        case '3':
+          OLC_MODE(d) = TRIGEDIT_TYPES;
+          trigedit_disp_types(d);
+          break;
+        case '4':
+          OLC_MODE(d) = TRIGEDIT_NARG;
+          write_to_output(d, "Numeric argument: ");
+          break;
+        case '5':
+          OLC_MODE(d) = TRIGEDIT_ARGUMENT;
+          write_to_output(d, "Argument: ");
+          break;
+        case '6':
+          OLC_MODE(d) = TRIGEDIT_COMMANDS;
+          write_to_output(d, "Enter trigger commands: (/s saves /h for help)\r\n\r\n");
+          d->backstr = NULL;
+          if (OLC_STORAGE(d)) {
+            clear_screen(d);
+            script_syntax_highlighting(d, OLC_STORAGE(d));
+            d->backstr = strdup(OLC_STORAGE(d));
+          }
+          d->str = &OLC_STORAGE(d);
+          d->max_str = MAX_CMD_LENGTH;
+          d->mail_to = 0;
+          OLC_VAL(d) = 1;
 
-         break;
-       case 'w':
-       case 'W':
-         write_to_output(d, "Copy what trigger? ");
-         OLC_MODE(d) = TRIGEDIT_COPY;
-         break;
-       default:
-         trigedit_disp_menu(d);
-         return;
-     }
-     return;
+          break;
+        case 'w':
+        case 'W':
+          write_to_output(d, "Copy what trigger? ");
+          OLC_MODE(d) = TRIGEDIT_COPY;
+          break;
+        default:
+          trigedit_disp_menu(d);
+          return;
+      }
+      return;
 
     case TRIGEDIT_CONFIRM_SAVESTRING:
-      switch(tolower(*arg)) {
+      switch (tolower(*arg)) {
         case 'y':
           trigedit_save(d);
           mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
-                 "OLC: %s edits trigger %d", GET_NAME(d->character),
-                 OLC_NUM(d));
+            "OLC: %s edits trigger %d", GET_NAME(d->character),
+            OLC_NUM(d));
           /* fall through */
         case 'n':
           cleanup_olc(d, CLEANUP_ALL);
@@ -576,7 +576,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
       break;
 
     case TRIGEDIT_INTENDED:
-      if ((atoi(arg)>=MOB_TRIGGER) || (atoi(arg)<=WLD_TRIGGER))
+      if ((atoi(arg) >= MOB_TRIGGER) || (atoi(arg) <= WLD_TRIGGER))
         OLC_TRIG(d)->attach_type = atoi(arg);
       OLC_VAL(d)++;
       break;
@@ -588,7 +588,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
 
     case TRIGEDIT_ARGUMENT:
       smash_tilde(arg);
-      OLC_TRIG(d)->arglist = (*arg?strdup(arg):NULL);
+      OLC_TRIG(d)->arglist = (*arg ? strdup(arg) : NULL);
       OLC_VAL(d)++;
       break;
 
@@ -644,7 +644,6 @@ void trigedit_save(struct descriptor_data *d)
         free(cmd->cmd);
       free(cmd);
     }
-
 
     free(proto->arglist);
     free(proto->name);

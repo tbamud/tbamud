@@ -78,15 +78,15 @@ void event_cancel(struct event *event)
   if (!event) {
     log("SYSERR:  Attempted to cancel a NULL event");
     return;
-    }
+  }
 
-  if (!event->q_el) {
+  if (!event->q_el)
     log("SYSERR:  Attempted to cancel a non-NULL unqueued event, freeing anyway");
-  } else
+  else
     queue_deq(event_q, event->q_el);
 
   if (event->event_obj)
-      cleanup_event_obj(event);
+    cleanup_event_obj(event);
 
   free(event);
 }
@@ -212,18 +212,17 @@ struct q_element *queue_enq(struct dg_queue *q, void *data, long key)
 
   else {
     for (i = q->tail[bucket]; i; i = i->prev) {
-
       if (i->key < key) { /* found insertion point */
-	if (i == q->tail[bucket])
-	  q->tail[bucket] = qe;
-	else {
-	  qe->next = i->next;
-	  i->next->prev = qe;
-	}
+        if (i == q->tail[bucket])
+          q->tail[bucket] = qe;
+        else {
+          qe->next = i->next;
+          i->next->prev = qe;
+        }
 
-	qe->prev = i;
-	i->next = qe;
-	break;
+        qe->prev = i;
+        i->next = qe;
+        break;
       }
     }
 
@@ -323,13 +322,10 @@ void queue_free(struct dg_queue *q)
   struct q_element *qe, *next_qe;
   struct event *event;
 
-  for (i = 0; i < NUM_EVENT_QUEUES; i++)
-  {
-    for (qe = q->head[i]; qe; qe = next_qe) 
-    {
+  for (i = 0; i < NUM_EVENT_QUEUES; i++) {
+    for (qe = q->head[i]; qe; qe = next_qe) {
       next_qe = qe->next;
-      if ((event = (struct event *) qe->data) != NULL) 
-      {
+      if ((event = (struct event *) qe->data) != NULL) {
         if (event->event_obj)
           cleanup_event_obj(event);
 
@@ -338,7 +334,6 @@ void queue_free(struct dg_queue *q)
       free(qe);
     }
   }
-
   free(q);
 }
 

@@ -10,3 +10,4 @@ src/util/Makefile
 src/.accepted
 src/depend
 src/util/depend
+.editorconfig
