@@ -565,7 +565,7 @@ static OCMD(do_odoor)
   char field[MAX_INPUT_LENGTH], *value;
   room_data *rm;
   struct room_direction_data *newexit;
-  int dir, fd, to_room;
+  int dir, fd, to_room, i;
 
   const char *door_field[] = {
     "purge",
