@@ -132,30 +132,25 @@ WCMD(do_wsend)
 
   msg = any_one_arg(argument, buf);
 
-  if (!*buf)
-  {
+  if (!*buf) {
     wld_log(room, "wsend called with no args");
     return;
   }
 
   skip_spaces(&msg);
 
-  if (!*msg)
-  {
+  if (!*msg) {
     wld_log(room, "wsend called without a message");
     return;
   }
 
-  if ((ch = get_char_by_room(room, buf)))
-  {
+  if ((ch = get_char_by_room(room, buf))) {
     if (subcmd == SCMD_WSEND)
       sub_write(msg, ch, TRUE, TO_CHAR);
     else if (subcmd == SCMD_WECHOAROUND)
       sub_write(msg, ch, TRUE, TO_ROOM);
-  }
-
-  else
-    wld_log(room, "no target found for wsend");
+  } else
+    wld_log(room, "no target found for wsend: (arg == %s)", buf);
 }
 
 WCMD(do_wzoneecho)
@@ -203,13 +198,14 @@ WCMD(do_wdoor)
   int dir, fd, to_room, i;
 
   const char *door_field[] = {
-      "purge",
-      "description",
-      "flags",
-      "key",
-      "name",
-      "room",
-      "\n"};
+    "purge",
+    "description",
+    "flags",
+    "key",
+    "name",
+    "room",
+    "\n"
+  };
 
   argument = two_arguments(argument, target, direction);
   value = one_argument(argument, field);
@@ -217,13 +213,13 @@ WCMD(do_wdoor)
 
   if (!*target || !*direction || !*field)
   {
-    wld_log(room, "wdoor called with too few args");
+    wld_log(room, "wdoor called with too few args: requires target, direction, and field");
     return;
   }
 
   if ((rm = get_room(target)) == NULL)
   {
-    wld_log(room, "wdoor: invalid target (arg = %s)", target);
+    wld_log(room, "wdoor: invalid target: (arg = %s)", target);
     return;
   }
 
@@ -231,7 +227,7 @@ WCMD(do_wdoor)
   {
     char error_log[MAX_STRING_LENGTH];
 
-    sprintf(error_log, "wdoor: invalid direction (arg == %s) not found in:\n  [ ", direction);
+    sprintf(error_log, "wdoor: invalid direction: (arg == %s) not found in:\n  [ ", direction);
 
     for (i = 0; i < NUM_OF_DIRS; i++)
       sprintf(error_log + strlen(error_log), "%s ", dirs[i]);
@@ -297,7 +293,7 @@ WCMD(do_wdoor)
       if ((to_room = real_room(atoi(value))) != NOWHERE)
         newexit->to_room = to_room;
       else
-        wld_log(room, "wdoor: invalid door target (arg == %s)", value);
+        wld_log(room, "wdoor: invalid door target: (arg == %s)", value);
       break;
     }
   }
@@ -312,7 +308,7 @@ WCMD(do_wteleport)
   two_arguments(argument, arg1, arg2);
 
   if (!*arg1 || !*arg2) {
-    wld_log(room, "wteleport called with too few args");
+    wld_log(room, "wteleport called with too few args: requires target and destination.");
     return;
   }
 
@@ -320,7 +316,7 @@ WCMD(do_wteleport)
   target = real_room(nr);
 
   if (target == NOWHERE)
-    wld_log(room, "wteleport target is an invalid room");
+    wld_log(room, "wteleport target is an invalid room: (arg == %s)", arg2);
 
   else if (!str_cmp(arg1, "all")) {
     if (nr == room->number) {
@@ -350,7 +346,7 @@ WCMD(do_wteleport)
     }
 
     else
-      wld_log(room, "wteleport: no target found");
+      wld_log(room, "wteleport: no target found: (arg == %s)", arg1);
   }
 }
 
@@ -362,35 +358,22 @@ WCMD(do_wforce)
   line = one_argument(argument, arg1);
 
   if (!*arg1 || !*line) {
-    wld_log(room, "wforce called with too few args");
+    wld_log(room, "wforce called with too few args: requires target and action");
     return;
   }
 
-  if (!str_cmp(arg1, "all"))
-  {
-    for (ch = room->people; ch; ch = next_ch)
-    {
+  if (!str_cmp(arg1, "all")) {
+    for (ch = room->people; ch; ch = next_ch) {
       next_ch = ch->next_in_room;
-
       if (valid_dg_target(ch, 0))
-      {
         command_interpreter(ch, line);
-      }
     }
-  }
-
-  else
-  {
-    if ((ch = get_char_by_room(room, arg1)))
-    {
+  } else {
+    if ((ch = get_char_by_room(room, arg1))) {
       if (valid_dg_target(ch, 0))
-      {
         command_interpreter(ch, line);
-      }
-    }
-
-    else
-      wld_log(room, "wforce: no target found");
+    } else
+      wld_log(room, "wforce: no target found: (arg == %s)", arg1);
   }
 }
 
@@ -433,7 +416,7 @@ WCMD(do_wpurge)
     if (obj) {
       extract_obj(obj);
     } else
-      wld_log(room, "wpurge: bad argument");
+      wld_log(room, "wpurge: bad argument: (arg == %s)", arg);
 
     return;
   }
@@ -491,7 +474,7 @@ WCMD(do_wload)
 
   else if (is_abbrev(arg1, "obj")) {
     if ((object = read_object(number, VIRTUAL)) == NULL) {
-      wld_log(room, "wload: bad object vnum");
+      wld_log(room, "wload: bad object vnum: (arg == %s)", arg2);
       return;
     }
     /* special handling to make objects able to load on a person/in a container/worn etc. */
@@ -544,7 +527,7 @@ WCMD(do_wdamage) {
 
   /* who cares if it's a number ? if not it'll just be 0 */
   if (!*name || !*amount) {
-    wld_log(room, "wdamage: bad syntax");
+    wld_log(room, "wdamage: bad syntax: requires target and damage.");
     return;
   }
 
@@ -552,7 +535,7 @@ WCMD(do_wdamage) {
   ch = get_char_by_room(room, name);
 
   if (!ch) {
-    wld_log(room, "wdamage: target not found");
+    wld_log(room, "wdamage: target not found: (arg == %s)", name);
     return;
   }
 
@@ -583,7 +566,7 @@ WCMD(do_wat)
   else if ((ch = get_char_by_room(room, arg))) loc = IN_ROOM(ch);
   
   if (loc == NOWHERE) {
-    wld_log(room, "wat: location not found (%s)", arg);
+    wld_log(room, "wat: location not found: (arg == %s)", arg);
     return;
   }
   wld_command_interpreter(&world[loc], command);
@@ -598,7 +581,7 @@ WCMD(do_wmove)
   two_arguments(argument, arg1, arg2);
 
   if (!*arg1 || !*arg2) {
-    wld_log(room, "wmove called with too few args");
+    wld_log(room, "wmove called with too few args: requires target and destination.");
     return;
   }
 
@@ -617,10 +600,7 @@ WCMD(do_wmove)
       obj_from_room(obj);
       obj_to_room(obj, target);
     }
-  }
-
-  else
-  {
+  } else {
     if ((obj = get_obj_by_room(room, arg1))) {
       obj_from_room(obj);
       obj_to_room(obj, target);
@@ -665,7 +645,6 @@ void wld_command_interpreter(room_data *room, char *argument)
     return;
 
   line = any_one_arg(argument, arg);
-
 
   /* find the command */
   for (length = strlen(arg), cmd = 0;
