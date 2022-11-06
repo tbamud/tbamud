@@ -53,8 +53,7 @@ ACMD(do_masound)
   room_rnum was_in_room;
   int  door;
 
-  if (!MOB_OR_IMPL(ch))
-  {
+  if (!MOB_OR_IMPL(ch)) {
     send_to_char(ch, "%s", CONFIG_HUH);
     return;
   }
@@ -62,8 +61,7 @@ ACMD(do_masound)
   if (AFF_FLAGGED(ch, AFF_CHARM))
     return;
 
-  if (!*argument)
-  {
+  if (!*argument) {
     mob_log(ch, "masound called with no argument");
     return;
   }
@@ -71,13 +69,11 @@ ACMD(do_masound)
   skip_spaces(&argument);
 
   was_in_room = IN_ROOM(ch);
-  for (door = 0; door < DIR_COUNT; door++)
-  {
+  for (door = 0; door < DIR_COUNT; door++) {
     struct room_direction_data *newexit;
 
     if (((newexit = world[was_in_room].dir_option[door]) != NULL) &&
-      newexit->to_room != NOWHERE && newexit->to_room != was_in_room)
-    {
+      newexit->to_room != NOWHERE && newexit->to_room != was_in_room) {
       IN_ROOM(ch) = newexit->to_room;
       sub_write(argument, ch, TRUE, TO_ROOM);
     }
@@ -275,6 +271,7 @@ ACMD(do_mecho)
     mob_log(ch, "mecho called with no arguments");
     return;
   }
+
   p = argument;
   skip_spaces(&p);
 
@@ -309,19 +306,19 @@ ACMD(do_mzoneecho)
   int zone;
   char room_number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH], *msg;
 
-  if (!MOB_OR_IMPL(ch))
-  {
+  if (!MOB_OR_IMPL(ch)) {
     send_to_char(ch, "%s", CONFIG_HUH);
     return;
   }
+
   msg = any_one_arg(argument, room_number);
   skip_spaces(&msg);
 
   if (!*room_number || !*msg)
-    mob_log(ch, "mzoneecho called with too few args");
+    mob_log(ch, "mzoneecho called with too few args: requires room number and message.");
 
   else if ((zone = real_zone_by_thing(atoi(room_number))) == NOWHERE)
-    mob_log(ch, "mzoneecho called for nonexistant zone");
+    mob_log(ch, "mzoneecho called for nonexistant zone: (arg == %s)", room_number);
 
   else {
     sprintf(buf, "%s\r\n", msg);
@@ -356,7 +353,7 @@ ACMD(do_mload)
   target = two_arguments(argument, arg1, arg2);
 
   if (!*arg1 || !*arg2 || !is_number(arg2) || ((number = atoi(arg2)) < 0)) {
-    mob_log(ch, "mload: bad syntax");
+    mob_log(ch, "mload: bad syntax: requires type and vnum.");
     return;
   }
 
@@ -373,7 +370,7 @@ ACMD(do_mload)
       }
     }
     if ((mob = read_mobile(number, VIRTUAL)) == NULL) {
-      mob_log(ch, "mload: bad mob vnum");
+      mob_log(ch, "mload: bad mob vnum: (arg == %s)", arg2);
       return;
     }
     char_to_room(mob, rnum);
@@ -387,7 +384,7 @@ ACMD(do_mload)
 
   else if (is_abbrev(arg1, "obj")) {
     if ((object = read_object(number, VIRTUAL)) == NULL) {
-      mob_log(ch, "mload: bad object vnum");
+      mob_log(ch, "mload: bad object vnum: (arg == %s)", arg2);
       return;
     }
     if (SCRIPT(ch)) { /* It _should_ have, but it might be detached. */
@@ -431,7 +428,7 @@ ACMD(do_mload)
   }
 
   else
-    mob_log(ch, "mload: bad type");
+    mob_log(ch, "mload: bad type: (arg == %s)", arg1);
 }
 
 /* Lets the mobile purge all objects and other npcs in the room, or purge a 
@@ -489,7 +486,7 @@ ACMD(do_mpurge)
       extract_obj(obj);
       obj = NULL;
     } else
-      mob_log(ch, "mpurge: bad argument");
+      mob_log(ch, "mpurge: bad argument: bad argument: (arg == %s)", arg);
 
     return;
   }
@@ -526,7 +523,7 @@ ACMD(do_mgoto)
   }
 
   if ((location = find_target_room(ch, arg)) == NOWHERE) {
-    mob_log(ch, "mgoto: invalid location");
+    mob_log(ch, "mgoto: invalid location: bad argument: (arg == %s)", arg);
     return;
   }
 
@@ -560,7 +557,7 @@ ACMD(do_mat)
   }
 
   if ((location = find_target_room(ch, arg)) == NOWHERE) {
-    mob_log(ch, "mat: invalid location");
+    mob_log(ch, "mat: invalid location: bad argument: (arg == %s)", arg);
     return;
   }
 
@@ -595,14 +592,14 @@ ACMD(do_mteleport)
   two_arguments(argument, arg1, arg2);
 
   if (!*arg1 || !*arg2) {
-    mob_log(ch, "mteleport: bad syntax");
+    mob_log(ch, "mteleport: bad syntax: requires target and destination.");
     return;
   }
 
   target = find_target_room(ch, arg2);
 
   if (target == NOWHERE) {
-    mob_log(ch, "mteleport target is an invalid room");
+    mob_log(ch, "mteleport target is an invalid room: bad argument: (arg == %s)", arg2);
     return;
   }
 
@@ -624,11 +621,11 @@ ACMD(do_mteleport)
   } else {
     if (*arg1 == UID_CHAR) {
       if (!(vict = get_char(arg1))) {
-        mob_log(ch, "mteleport: victim (%s) does not exist",arg1);
+        mob_log(ch, "mteleport: victim (%s) does not exist", arg1);
         return;
       }
     } else if (!(vict = get_char_vis(ch, arg1, NULL, FIND_CHAR_WORLD))) {
-      mob_log(ch, "mteleport: victim (%s) does not exist",arg1);
+      mob_log(ch, "mteleport: victim (%s) does not exist", arg1);
       return;
     }
 
@@ -657,7 +654,7 @@ ACMD(do_mdamage) {
 
   /* who cares if it's a number ? if not it'll just be 0 */
   if (!*name || !*amount) {
-      mob_log(ch, "mdamage: bad syntax");
+      mob_log(ch, "mdamage: bad syntax: requires target and numerical damage.");
       return;
   }
 
@@ -694,7 +691,7 @@ ACMD(do_mforce)
   argument = one_argument(argument, arg);
 
   if (!*arg || !*argument) {
-    mob_log(ch, "mforce: bad syntax");
+    mob_log(ch, "mforce: bad syntax: requires target and command.");
     return;
   }
 
@@ -721,7 +718,7 @@ ACMD(do_mforce)
         return;
       }
     } else if ((victim = get_char_room_vis(ch, arg, NULL)) == NULL) {
-      mob_log(ch, "mforce: no such victim");
+      mob_log(ch, "mforce: no such victim: bad argument: (arg == %s)", arg);
       return;
     }
 
@@ -797,7 +794,7 @@ ACMD(do_mremember)
   argument = one_argument(argument, arg);
 
   if (!*arg) {
-    mob_log(ch, "mremember: bad syntax");
+    mob_log(ch, "mremember: bad syntax: requires target.");
     return;
   }
 
@@ -848,7 +845,7 @@ ACMD(do_mforget)
   one_argument(argument, arg);
 
   if (!*arg) {
-    mob_log(ch, "mforget: bad syntax");
+    mob_log(ch, "mforget: bad syntax: requires target.");
     return;
   }
 
@@ -911,7 +908,7 @@ ACMD(do_mtransform)
   if (!*arg)
     mob_log(ch, "mtransform: missing argument");
   else if (!isdigit(*arg) && *arg!='-')
-    mob_log(ch, "mtransform: bad argument");
+    mob_log(ch, "mtransform: bad argument: (arg == %s)", arg);
   else {
     if (isdigit(*arg))
       m = read_mobile(atoi(arg), VIRTUAL);
@@ -920,7 +917,7 @@ ACMD(do_mtransform)
       m = read_mobile(atoi(arg+1), VIRTUAL);
     }
     if (m==NULL) {
-      mob_log(ch, "mtransform: bad mobile vnum");
+      mob_log(ch, "mtransform: bad mobile vnum: (arg == %s)", arg);
       return;
     }
 
@@ -1019,22 +1016,31 @@ ACMD(do_mdoor)
   skip_spaces(&value);
 
   if (!*target || !*direction || !*field) {
-    mob_log(ch, "mdoor called with too few args");
+    mob_log(ch, "mdoor called with too few args: requires target, direction and field.");
     return;
   }
 
   if ((rm = get_room(target)) == NULL) {
-    mob_log(ch, "mdoor: invalid target");
+    mob_log(ch, "mdoor: invalid target: (arg == %s)", target);
     return;
   }
 
   if ((dir = search_block(direction, dirs, FALSE)) == -1) {
-    mob_log(ch, "mdoor: invalid direction");
+    char error_log[MAX_STRING_LENGTH];
+
+    sprintf(error_log, "mdoor: invalid direction: (arg == %s) not found in:\n  [ ", direction);
+
+    for (i = 0; i < NUM_OF_DIRS; i++)
+      sprintf(error_log + strlen(error_log), "%s ", dirs[i]);
+
+    sprintf(error_log + strlen(error_log), "]");
+
+    mob_log(ch, error_log);
     return;
   }
 
   if ((fd = search_block(field, door_field, FALSE)) == -1) {
-    mob_log(ch, "odoor: invalid field");
+    mob_log(ch, "odoor: invalid field: (arg == %s)", field);
     return;
   }
 
@@ -1082,7 +1088,7 @@ ACMD(do_mdoor)
         if ((to_room = real_room(atoi(value))) != NOWHERE)
           newexit->to_room = to_room;
         else
-          mob_log(ch, "mdoor: invalid door target");
+          mob_log(ch, "mdoor: invalid door target: (arg == %s)", value);
         break;
     }
   }
@@ -1105,7 +1111,7 @@ ACMD(do_mfollow)
   one_argument(argument, buf);
 
   if (!*buf) {
-    mob_log(ch, "mfollow: bad syntax");
+    mob_log(ch, "mfollow: bad syntax: requires target.");
     return;
   }
 
@@ -1124,7 +1130,6 @@ ACMD(do_mfollow)
 
   if (AFF_FLAGGED(ch, AFF_CHARM) && (ch->master))  /* can't override charm */
     return;
-
 
   /* stop following someone else first */
   if (ch->master) {

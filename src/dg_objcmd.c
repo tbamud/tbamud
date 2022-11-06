@@ -37,7 +37,7 @@ static OCMD(do_otimer);
 static OCMD(do_otransform);
 static OCMD(do_opurge);
 static OCMD(do_oteleport);
-static OCMD(do_dgoload);
+static OCMD(do_oload);
 static OCMD(do_odamage);
 static OCMD(do_oasound);
 static OCMD(do_odoor);
@@ -412,7 +412,7 @@ static OCMD(do_oteleport)
   }
 }
 
-static OCMD(do_dgoload)
+static OCMD(do_oload)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
   int number = 0, room;
@@ -776,7 +776,7 @@ static const struct obj_command_info obj_cmd_info[] = {
     { "oecho "      , do_oecho    , 0 },
     { "oechoaround ", do_osend    , SCMD_OECHOAROUND },
     { "oforce "     , do_oforce   , 0 },
-    { "oload "      , do_dgoload  , 0 },
+    { "oload "      , do_oload  , 0 },
     { "opurge "     , do_opurge   , 0 },
     { "orecho "     , do_orecho   , 0 },
     { "osend "      , do_osend    , SCMD_OSEND },
