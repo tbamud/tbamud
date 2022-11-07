@@ -495,59 +495,50 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   if (!ch->desc)
     return;
 
-  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch))
-  {
+  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)){
     send_to_char(ch, "It is pitch black...\r\n");
     return;
   }
-  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT)
-  {
+  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
     send_to_char(ch, "You see nothing but infinite darkness...\r\n");
     return;
   }
 
-  send_to_char(ch, "%s", CCCYN(ch, C_NRM));
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
-  {
+  send_to_char(ch, "%s", CCYEL(ch, C_NRM));
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
     char buf[MAX_STRING_LENGTH];
 
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
     send_to_char(ch, "%s[ %s][ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
 
-    if (SCRIPT(rm))
-    {
+    if (SCRIPT(rm)) {
       send_to_char(ch, "[T");
       for (t = TRIGGERS(SCRIPT(rm)); t; t = t->next)
         send_to_char(ch, " %d", GET_TRIG_VNUM(t));
       send_to_char(ch, "]");
     }
   }
-  else
-  {
+  else {
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
-  }
+  	send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
 
-  send_to_char(ch, "%s\r\n", CCCYN(ch, C_NRM));
+  	if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
+    	ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
+    	if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+      	str_and_map(world[target_room].description, ch, target_room);
+  	}
 
-  if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
-    ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH))
-  {
-    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
-      str_and_map(world[target_room].description, ch, target_room);
-  }
-  else
-  {
-    send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
-  }
+  	send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
 
-  /*autoexits */
-  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
-    do_auto_exits(ch);
+  	/*autoexits */
+  	if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
+    	do_auto_exits(ch);
 
-  /*now list characters &objects */
-  list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
-  list_char_to_char(world[IN_ROOM(ch)].people, ch);
+  	/*now list characters &objects */
+  	list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
+  	list_char_to_char(world[IN_ROOM(ch)].people, ch);
+	}
 }
 
 static void look_in_direction(struct char_data *ch, int dir)
@@ -1069,7 +1060,7 @@ int search_help(const char *argument, int level)
         mid++;
       if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
         break;
-        
+
       return (mid);
     }
     else if (chk > 0)
@@ -1296,7 +1287,7 @@ ACMD(do_who)
             GET_LEVEL(tch), CLASS_ABBR(tch),
             GET_NAME(tch), (*GET_TITLE(tch) ? " " : ""), GET_TITLE(tch),
             CCNRM(ch, C_SPR));
-        
+
         if (GET_INVIS_LEV(tch))
           send_to_char(ch, " (i%d)", GET_INVIS_LEV(tch));
         else if (AFF_FLAGGED(tch, AFF_INVISIBLE))
@@ -2130,7 +2121,7 @@ ACMD(do_toggle)
       for (i=0; *arg2 && *(sector_types[i]) != '\n'; i++)
         if (is_abbrev(arg2, sector_types[i]))
           break;
-      if (*(sector_types[i]) == '\n') 
+      if (*(sector_types[i]) == '\n')
         i=0;
       GET_BUILDWALK_SECTOR(ch) = i;
       send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
@@ -2383,9 +2374,9 @@ ACMD(do_whois)
   {
      CREATE(victim, struct char_data, 1);
      clear_char(victim);
-     
+
      new_mobile_data(victim);
-     
+
      CREATE(victim->player_specials, struct player_special_data, 1);
 
      if (load_char(buf, victim) > -1)
