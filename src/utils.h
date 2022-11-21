@@ -1061,6 +1061,8 @@ do                                                              \
 #define CONFIG_SPECIAL_IN_COMM config_info.operation.special_in_comm
 /** Activate debug mode? */
 #define CONFIG_DEBUG_MODE config_info.operation.debug_mode
+/** Use JSON data files ? */
+#define CONFIG_JSON_FILES config_info.operation.use_json_files
 
 /* Autowiz */
 /** Use autowiz or not? */
