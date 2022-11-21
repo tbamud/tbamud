@@ -1,12 +1,35 @@
 bin/*
+
 src/*.o
 src/util/*.o
+
+# Config Files
 config.cache
 config.log
 config.status
+
 src/Makefile
 src/conf.h
 src/util/Makefile
 src/.accepted
 src/depend
 src/util/depend
+
+# Lib Files
+lib/etc/plrmail
+lib/etc/last
+lib/plrfiles/*
+lib/plrfiles/*/*
+lib/plrobjs/*
+lib/plrobjs/*/*
+lib/etc/time
+
+# Log Files
+.fastboot
+log/*
+syslog.*
+syslog
+
+# Editors
+.editorconfig
+.vscode/*

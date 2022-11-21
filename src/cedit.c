@@ -132,7 +132,8 @@ static void cedit_setup(struct descriptor_data *d)
   OLC_CONFIG(d)->operation.ibt_autosave       = CONFIG_IBT_AUTOSAVE;
   OLC_CONFIG(d)->operation.protocol_negotiation = CONFIG_PROTOCOL_NEGOTIATION;
   OLC_CONFIG(d)->operation.special_in_comm    = CONFIG_SPECIAL_IN_COMM;
-  OLC_CONFIG(d)->operation.debug_mode    = CONFIG_DEBUG_MODE;
+  OLC_CONFIG(d)->operation.debug_mode         = CONFIG_DEBUG_MODE;
+  OLC_CONFIG(d)->operation.use_json_files     = CONFIG_JSON_FILES;
   
   /* Autowiz */
   OLC_CONFIG(d)->autowiz.use_autowiz          = CONFIG_USE_AUTOWIZ;
@@ -237,6 +238,7 @@ static void cedit_save_internally(struct descriptor_data *d)
   CONFIG_PROTOCOL_NEGOTIATION = OLC_CONFIG(d)->operation.protocol_negotiation;
   CONFIG_SPECIAL_IN_COMM      = OLC_CONFIG(d)->operation.special_in_comm;
   CONFIG_DEBUG_MODE           = OLC_CONFIG(d)->operation.debug_mode;
+  CONFIG_JSON_FILES           = OLC_CONFIG(d)->operation.use_json_files;
     
   /* Autowiz */
   CONFIG_USE_AUTOWIZ          = OLC_CONFIG(d)->autowiz.use_autowiz;
@@ -569,6 +571,10 @@ int save_config( IDXTYPE nowhere )
               "debug_mode = %d\n\n",
               CONFIG_DEBUG_MODE);
 
+  fprintf(fl, "* If yes, enable the use of json data files.\n"
+              "use_json_files = %d\n\n",
+              CONFIG_JSON_FILES);
+
   fclose(fl);
 
   if (in_save_list(NOWHERE, SL_CFG))
@@ -758,6 +764,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
   	"%sR%s) Enable Protocol Negotiation : %s%s\r\n"
   	"%sS%s) Enable Special Char in Comm : %s%s\r\n"
   	"%sT%s) Current Debug Mode : %s%s\r\n"
+  	"%sU%s) Use JSON Data Files : %s%s\r\n"
     "%sQ%s) Exit To The Main Menu\r\n"
     "Enter your choice : ",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.DFLT_PORT,
@@ -779,6 +786,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
     grn, nrm, cyn, OLC_CONFIG(d)->operation.protocol_negotiation ? "Yes" : "No",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.special_in_comm ? "Yes" : "No",
     grn, nrm, cyn, OLC_CONFIG(d)->operation.debug_mode == 0 ? "OFF" : (OLC_CONFIG(d)->operation.debug_mode == 1 ? "BRIEF" : (OLC_CONFIG(d)->operation.debug_mode == 2 ? "NORMAL" : "COMPLETE")),
+    grn, nrm, cyn, OLC_CONFIG(d)->operation.use_json_files ? "Yes" : "No",
     grn, nrm
     );
 
@@ -1272,6 +1280,11 @@ void cedit_parse(struct descriptor_data *d, char *arg)
            write_to_output(d, "Enter the current debug level (0: Off, 1: Brief, 2: Normal, 3: Complete) : ");
            OLC_MODE(d) = CEDIT_DEBUG_MODE;
            return;
+
+         case 'u':
+         case 'U':
+           TOGGLE_VAR(OLC_CONFIG(d)->operation.use_json_files);
+           break;
 
          case 'q':
          case 'Q':

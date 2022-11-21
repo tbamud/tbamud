@@ -1365,6 +1365,7 @@ struct game_operation
   int protocol_negotiation; /**< Enable the protocol negotiation system ? */
   int special_in_comm; /**< Enable use of a special character in communication channels ? */
   int debug_mode; /**< Current Debug Mode */
+  int use_json_files; /**< Enable use of JSON file system */
 };
 
 /** The Autowizard options. */
