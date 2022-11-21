@@ -557,7 +557,8 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       }
       if (OLC_ACTION(d)->command)
         free(OLC_ACTION(d)->command);
-        OLC_ACTION(d)->command = strdup(arg);
+        
+      OLC_ACTION(d)->command = strdup(arg);
 
       break;
 

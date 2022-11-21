@@ -1615,34 +1615,35 @@ void nanny(struct descriptor_data *d, char *arg)
     } else
       GET_CLASS(d->character) = load_result;
 
-      if (d->olc) {
-        free(d->olc);
-        d->olc = NULL;
-      }
-      if (GET_PFILEPOS(d->character) < 0)
+    if (d->olc) {
+      free(d->olc);
+      d->olc = NULL;
+    }
+    if (GET_PFILEPOS(d->character) < 0)
       GET_PFILEPOS(d->character) = create_entry(GET_PC_NAME(d->character));
+
     /* Now GET_NAME() will work properly. */
     init_char(d->character);
     save_char(d->character);
     save_player_index();
     write_to_output(d, "%s\r\n*** PRESS RETURN: ", motd);
     STATE(d) = CON_RMOTD;
+
     /* make sure the last log is updated correctly. */
-    GET_PREF(d->character)= rand_number(1, 128000);
-    GET_HOST(d->character)= strdup(d->host);
+    GET_PREF(d->character) = rand_number(1, 128000);
+    GET_HOST(d->character) = strdup(d->host);
 
     mudlog(NRM, LVL_GOD, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
 
     /* Add to the list of 'recent' players (since last reboot) */
     if (AddRecentPlayer(GET_NAME(d->character), d->host, TRUE, FALSE) == FALSE)
-    {
       mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
-    }
+    
     break;
 
   case CON_RMOTD:		/* read CR after printing motd   */
     write_to_output(d, "%s", CONFIG_MENU);
-    if (IS_HAPPYHOUR > 0){
+    if (IS_HAPPYHOUR > 0) {
       write_to_output(d, "\r\n");
       write_to_output(d, "\tyThere is currently a Happyhour!\tn\r\n");
       write_to_output(d, "\r\n");
