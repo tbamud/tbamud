@@ -62,10 +62,11 @@ void parse_trigger(FILE *trig_f, int nr)
     trig->cmdlist->cmd = strdup(strtok(s, "\n\r"));
     cle = trig->cmdlist;
 
-    while ((s = strtok(NULL, "\n\r"))) {
-	CREATE(cle->next, struct cmdlist_element, 1);
-	cle = cle->next;
-	cle->cmd = strdup(s);
+    while ((s = strtok(NULL, "\n\r")))
+    {
+      CREATE(cle->next, struct cmdlist_element, 1);
+      cle = cle->next;
+      cle->cmd = strdup(s);
     }
 
     free(cmds);
@@ -81,7 +82,7 @@ trig_data *read_trigger(int nr)
 
     if (nr >= top_of_trigt) return NULL;
     if ((t_index = trig_index[nr]) == NULL)
-	return NULL;
+      return NULL;
 
     CREATE(trig, trig_data, 1);
     trig_data_copy(trig, t_index->proto);

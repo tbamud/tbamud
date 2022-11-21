@@ -3867,6 +3867,7 @@ static void load_default_config( void )
   CONFIG_MINIMAP_SIZE           = default_minimap_size;
   CONFIG_SCRIPT_PLAYERS         = script_players;
   CONFIG_DEBUG_MODE             = debug_mode;
+  CONFIG_JSON_FILES             = use_json_files;
 
   /* Rent / crashsave options. */
   CONFIG_FREE_RENT              = free_rent;
@@ -4147,6 +4148,8 @@ void load_config( void )
           CONFIG_TUNNEL_SIZE = num;
         else if (!str_cmp(tag, "track_through_doors"))
           CONFIG_TRACK_T_DOORS = num;
+        else if (!str_cmp(tag, "use_json_files"))
+          CONFIG_JSON_FILES = num;
         break;
 
       case 'u':

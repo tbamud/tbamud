@@ -18,6 +18,7 @@
 #include "genolc.h"
 #include "interpreter.h"
 #include "modify.h"
+#include "jsIOn.h"
 
 /* Statics */
 static void free_messages_type(struct msg_type *msg);
@@ -70,7 +71,85 @@ void free_messages(void)
     }
 }
 
-void load_messages(void)
+#define STRDUP_OR_NULL(object) (object != NULL ? strdup(object) : NULL)
+#define STRING_FROM_JSON(object) (object != NULL && object->j_string != NULL ? strdup(object->j_string) : NULL)
+static void load_json_messages() {
+  JSONdata *base_object;
+  JSONdata *type_object;
+  JSONdata *msg_object;
+  JSONdata *individual_message_object;
+  JSONdata *msg_struct_array;
+
+  struct message_type *messages;
+  int i, msg_type;
+
+  base_object = json_read_from_disk(MESS_FILE".json");
+
+  for (i = 0; i < MAX_MESSAGES; i++) {
+    fight_messages[i].a_type = 0;
+    fight_messages[i].number_of_attacks = 0;
+    fight_messages[i].msg = NULL;
+  }
+
+  for (msg_object = base_object->child, i = 0; msg_object != NULL && i < MAX_MESSAGES; msg_object = msg_object->next) {
+    type_object = jsonGetValueFromObject(msg_object, "type");
+    if (type_object == NULL) {
+      log("SYSERR: Object in MESSAGES.json file without 'Type'.");
+      exit(1);
+    }
+    if (IS_JSON(type_object, jsonINT) == FALSE) {
+      log("SYSERR: Object in MESSAGES.json file with corrupted 'Type'.");
+      exit(1);
+    }
+
+    msg_type = type_object->j_integer;
+
+    if (i >= MAX_MESSAGES) {
+      log("SYSERR: Too many combat messages.  Increase MAX_MESSAGES and recompile.");
+      exit(1);
+    }
+
+    msg_struct_array = jsonGetValueFromObject(msg_object, "messages");
+
+    if (msg_struct_array == NULL) {
+      log("SYSERR: Object in MESSAGES.json without a messages array.");
+      exit(1);
+    }
+
+    if (IS_JSON(msg_struct_array, jsonARRAY) == FALSE) {
+      log("SYSERR: Object in MESSAGES.json has corrupt messages array.");
+      exit(1);
+    }
+
+    for (individual_message_object = msg_struct_array->child; individual_message_object != NULL; individual_message_object = individual_message_object->next) {
+      CREATE(messages, struct message_type, 1);
+      fight_messages[i].number_of_attacks++;
+      fight_messages[i].a_type = msg_type;
+      messages->next = fight_messages[i].msg;
+      fight_messages[i].msg = messages;
+
+      messages->god_msg.attacker_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "god_room_msg"));
+      messages->god_msg.victim_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "god_victim_msg"));
+      messages->god_msg.room_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "god_attacker_msg"));
+
+      messages->miss_msg.attacker_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "miss_attacker_msg"));
+      messages->miss_msg.victim_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "miss_victim_msg"));
+      messages->miss_msg.room_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "miss_room_msg"));
+
+      messages->hit_msg.attacker_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "hit_attacker_msg"));
+      messages->hit_msg.victim_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "hit_victim_msg"));
+      messages->hit_msg.room_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "hit_room_msg"));
+
+      messages->die_msg.attacker_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "die_attacker_msg"));
+      messages->die_msg.victim_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "die_victim_msg"));
+      messages->die_msg.room_msg = STRING_FROM_JSON(jsonGetValueFromObject(individual_message_object, "die_room_msg"));
+    }
+    i++;
+  }
+  json_free_object(base_object);
+}
+
+static void load_default_messages(void)
 {
   FILE *fl;
   int i, type;
@@ -93,7 +172,7 @@ void load_messages(void)
       if (fgets(chk, 128, fl) == NULL) {
         if (feof(fl))
           break;
-        else if(ferror(fl))
+        else if (ferror(fl))
           log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
         else
           log("SYSERR: Error reading combat message file %s", MESS_FILE);
@@ -101,17 +180,16 @@ void load_messages(void)
       }
     }
 
-    if(feof(fl)) {
+    if (feof(fl)) {
       break;
     }
 
     while (*chk == 'M') {
       if (fgets(chk, 128, fl) == NULL) {
-        if(feof(fl)) {
+        if (feof(fl)) {
           log("SYSERR: Unexpected end of file reading combat message file %s", MESS_FILE);
           break;
-        }
-        else if(ferror(fl))
+        } else if (ferror(fl))
           log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
         else
           log("SYSERR: Error reading combat message file %s", MESS_FILE);
@@ -120,7 +198,7 @@ void load_messages(void)
 
       sscanf(chk, " %d\n", &type);
       for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
-         (fight_messages[i].a_type); i++);
+        (fight_messages[i].a_type); i++);
       if (i >= MAX_MESSAGES) {
         log("SYSERR: Too many combat messages.  Increase MAX_MESSAGES and recompile.");
         exit(1);
@@ -149,6 +227,13 @@ void load_messages(void)
   log("Loaded %d Combat Messages...", i);
 }
 
+void load_messages(void) {
+  if (CONFIG_JSON_FILES == TRUE)
+    load_json_messages();
+  else
+    load_default_messages();
+}
+
 static void show_messages(struct char_data *ch)
 {
   int i, half = MAX_MESSAGES / 2, count = 0;
@@ -170,12 +255,65 @@ static void show_messages(struct char_data *ch)
 }
 
 #define PRINT_MSG(msg) (msg == NULL ? "#" : msg)
+static void save_json_messages_to_disk(void) {
+  JSONdata *new_array = NULL;
+  JSONdata *messages = NULL;
+  JSONdata *message_object = NULL;
+  JSONdata *new_object = NULL;
+  int i, cnt;
+  struct message_type *msg;
 
-void save_messages_to_disk(void)
+  new_array = jsonCreateArray(NULL);
+
+  for (i = 0, cnt = 0; i < MAX_MESSAGES; i++, cnt = 0) {
+    if (fight_messages[i].msg == NULL)
+      continue;
+
+    new_object = jsonCreateObject(NULL);
+    jsonAddObject(new_array, new_object);
+
+    if (fight_messages[i].a_type > 0 && fight_messages[i].a_type < TOP_SPELL_DEFINE)
+    {
+      jsonAddObject(new_object, jsonCreateString("name", PRINT_MSG(spell_info[fight_messages[i].a_type].name)));
+      jsonAddObject(new_object, jsonCreateInt("type", fight_messages[i].a_type));
+    }
+    else
+      jsonAddObject(new_object, jsonCreateInt("type", fight_messages[i].a_type));
+
+    messages = jsonCreateArray("messages");
+    jsonAddObject(new_object, messages);
+
+    for (msg = fight_messages[i].msg; msg; msg = msg->next, cnt++)
+    {
+      message_object = jsonCreateObject(NULL);
+      jsonAddObject(messages, message_object);
+
+      jsonAddObject(message_object, jsonCreateString("die_attacker_msg", PRINT_MSG(msg->die_msg.attacker_msg)));
+      jsonAddObject(message_object, jsonCreateString("die_victim_msg", PRINT_MSG(msg->die_msg.victim_msg)));
+      jsonAddObject(message_object, jsonCreateString("die_room_msg", PRINT_MSG(msg->die_msg.room_msg)));
+      jsonAddObject(message_object, jsonCreateString("miss_attacker_msg", PRINT_MSG(msg->miss_msg.attacker_msg)));
+      jsonAddObject(message_object, jsonCreateString("miss_victim_msg", PRINT_MSG(msg->miss_msg.victim_msg)));
+      jsonAddObject(message_object, jsonCreateString("miss_room_msg", PRINT_MSG(msg->miss_msg.room_msg)));
+      jsonAddObject(message_object, jsonCreateString("hit_attacker_msg", PRINT_MSG(msg->hit_msg.attacker_msg)));
+      jsonAddObject(message_object, jsonCreateString("hit_victim_msg", PRINT_MSG(msg->hit_msg.victim_msg)));
+      jsonAddObject(message_object, jsonCreateString("hit_room_msg", PRINT_MSG(msg->hit_msg.room_msg)));
+      jsonAddObject(message_object, jsonCreateString("god_attacker_msg", PRINT_MSG(msg->god_msg.attacker_msg)));
+      jsonAddObject(message_object, jsonCreateString("god_victim_msg", PRINT_MSG(msg->god_msg.victim_msg)));
+      jsonAddObject(message_object, jsonCreateString("god_room_msg", PRINT_MSG(msg->god_msg.room_msg)));
+    }
+  }
+
+  json_write_to_disk(MESS_FILE".json", new_array);
+  json_free_object(new_array);
+}
+
+static void save_default_messages_to_disk(void)
 {
   FILE *fp;
   int i;
   struct message_type *msg;
+
+  save_json_messages_to_disk();
 
   if (!(fp = fopen(MESS_FILE, "w"))) {
     log("SYSERR: Error writing combat message file %s: %s", MESS_FILE, strerror(errno));
@@ -225,6 +363,13 @@ void save_messages_to_disk(void)
   }  
   
   fclose(fp);
+}
+
+void save_messages_to_disk(void) {
+  if (CONFIG_JSON_FILES == YES)
+    save_json_messages_to_disk();
+  else
+    save_default_messages_to_disk();
 }
 
 static void msgedit_setup(struct descriptor_data *d)

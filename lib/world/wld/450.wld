@@ -1,0 +1,36 @@
+#45000
+Automated Test Zone~
+   This is the semi-automated test zone.  The purpose of this zone is to allow
+for easier testing procedures to ensure code and system stability.
+~
+111 0 0 0 0 0
+D1
+A new description!
+~
+~
+0 0 45001
+S
+#45001
+Test Room 1~
+This zone has an attached ROOM_TRIGGER activated by SPEECH.
+
+Arguments: pass | fail
+
+Speaking 'pass' will run a series of room commands which should complete with no errors. 
+Speaking 'fail' will run a series of room commands which should fail with errors. 
+~
+111 0 0 0 0 0
+D3
+~
+~
+0 0 45000
+S
+T 45000
+T 45001
+#45003
+A Room~
+You are in an unfinished room.
+~
+111 0 0 0 0 0
+S
+$~

@@ -516,16 +516,15 @@ void look_at_room(struct char_data *ch, int ignore_brief)
         send_to_char(ch, " %d", GET_TRIG_VNUM(t));
       send_to_char(ch, "]");
     }
-  }
-  else
+  } else
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
     
   send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
 
   if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
-      ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
-    if(!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
-        str_and_map(world[target_room].description, ch, target_room);
+    ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+      str_and_map(world[target_room].description, ch, target_room);
     else
       send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
   }

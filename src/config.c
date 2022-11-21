@@ -316,3 +316,6 @@ int special_in_comm = YES;
 
 /* Current Debug Mode */
 int debug_mode = OFF;
+
+/* Use JSON files? */
+int use_json_files = NO;

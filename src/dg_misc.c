@@ -134,6 +134,7 @@ void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, cha
         strdup(((struct obj_data *)go)->short_description);
     else if (type==WLD_TRIGGER)
       caster->player.short_descr = strdup("The gods");
+      
     caster->next_in_room = caster_room->people;
     caster_room->people = caster;
     caster->in_room = real_room(caster_room->number);

@@ -1,0 +1,8 @@
+#450
+Vatiken~
+-- Automated Test Zone --~
+45000 45099 30 2
+O 0 45001 1 45003 	(an 123456object)
+O 0 45000 100 45001 	(an unmovable object)
+S
+$
