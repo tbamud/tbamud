@@ -577,11 +577,12 @@ WCMD(do_wmove)
   obj_data *obj, *next_obj;
   room_rnum target, nr;
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+  int found_any = FALSE;
 
   two_arguments(argument, arg1, arg2);
 
   if (!*arg1 || !*arg2) {
-    wld_log(room, "wmove called with too few args: requires target and destination.");
+    wld_log(room, "wmove called with too few args: requires object and destination.");
     return;
   }
 
@@ -589,25 +590,27 @@ WCMD(do_wmove)
   target = real_room(nr);
 
   if (target == NOWHERE) {
-    wld_log(room, "wmove target is an invalid room");
+    wld_log(room, "wmove object is an invalid room");
   } else if (nr == room->number) {
-    wld_log(room, "wmove target room is itself");
+    wld_log(room, "wmove object room is itself");
   } else if (!str_cmp(arg1, "all")) {
 
-    for (obj = room->contents; obj; obj = next_obj)
-    {
+    for (obj = room->contents; obj; obj = next_obj) {
       next_obj = obj->next_content;
       obj_from_room(obj);
       obj_to_room(obj, target);
+      found_any = TRUE;
     }
+
+    if (CONFIG_DEBUG_MODE >= CMP && found_any == FALSE)
+      wld_log(room, "wmove unable to find any objects to move.");
+
   } else {
     if ((obj = get_obj_by_room(room, arg1))) {
       obj_from_room(obj);
       obj_to_room(obj, target);
-    }
-
-    else
-      wld_log(room, "wmove: no target found");
+    } else
+      wld_log(room, "wmove: no object found: (arg == %s)", arg1);
   }
 }
 
