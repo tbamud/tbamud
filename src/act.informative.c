@@ -519,7 +519,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
       send_to_char(ch, "]");
     }
   }
-  else {
+  else
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
   	send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
 
@@ -538,7 +538,6 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   	/*now list characters &objects */
   	list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
   	list_char_to_char(world[IN_ROOM(ch)].people, ch);
-	}
 }
 
 static void look_in_direction(struct char_data *ch, int dir)
