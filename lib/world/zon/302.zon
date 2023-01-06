@@ -2,6 +2,8 @@
 Matrix of C.A.W.~
 Campus II~
 30200 30299 30 2
+R 0 30200 30112 -1 	(a tam)
+O 1 30112 99 30200 	(a tam)
 M 0 30105 4 30284 	(Security)
 E 1 30115 99 16 	(a flashlight)
 M 0 30105 4 30284 	(Security)
@@ -32,8 +34,6 @@ M 0 30132 1 30284 	(Chris)
 M 0 30137 1 30284 	(Alex)
 M 0 30138 1 30284 	(Steve)
 M 0 30145 10 30284 	(a copy of Golden World)
-R 0 30200 30112 -1 	(a tam)
-O 1 30112 99 30200 	(a tam)
 M 0 30139 1 30245 	(Bob the storekeeper)
 G 1 30136 99 -1 	(a pale apple)
 G 1 30140 99 -1 	(a can of PopCoke)

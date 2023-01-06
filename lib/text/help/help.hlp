@@ -3312,7 +3312,7 @@ the earthquake spell.
 
 See also: WATERWALK, EARTHQUAKE
 #0
-FOLLOWERS
+FOLLOWERS UNFOLLOW
 
 Usage: follow <leader>
 
@@ -3350,7 +3350,7 @@ The 3rd number is liquid type from the following:
    value 1: Initial drink units. Must be 1 or greater.
    value 2: see below
    value 3: 0 for not poisoned. Otherwise, the number of hours until the poison 
-            burns off?
+            burns off.
 
    value 2: The type of liquid in the drink-container, one of:
    
@@ -9879,6 +9879,7 @@ tbalim test 61165
 return
 toggle nohassle on
 
+To list empty zones "show zone none"
 To setup test with zone 348
 return
 saveall
