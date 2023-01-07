@@ -520,10 +520,10 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
 
     switch (SHOP_BROKE_TEMPER(shop_nr)) {
     case 0:
-      do_action(keeper, strlcpy(actbuf, GET_NAME(ch), MAX_INPUT_LENGTH), cmd_puke, 0);
+      do_action(keeper, strcpy(actbuf, GET_NAME(ch)), cmd_puke, 0);
       return;
     case 1:
-      do_echo(keeper, strlcpy(actbuf, "smokes on his joint.", MAX_INPUT_LENGTH), cmd_emote, SCMD_EMOTE);	/* strcpy: OK */
+      do_echo(keeper, strcpy(actbuf, "smokes on his joint."), cmd_emote, SCMD_EMOTE);	/* strcpy: OK */
       return;
     default:
       return;
