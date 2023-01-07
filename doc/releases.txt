@@ -10,6 +10,7 @@ to rec.games.mud.diku which originally announced CircleMUD as a publicly
 available MUD source code. 
 
 tbaMUD Release history:
+Version 2023 release: January, 2023
 Version 2021 release: March, 2021
 Version 2020 release: January, 2020
 Version 2019 release: January, 2019
