@@ -10,5 +10,7 @@ src/util/Makefile
 src/.accepted
 src/depend
 src/util/depend
+
+# IDE settings
 .vscode
 .vscode/*
