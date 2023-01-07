@@ -53,7 +53,7 @@ static int  get_max_recent(void);
 static void clear_recent(struct recent_player *this);
 static struct recent_player *create_recent(void);
 const char *get_spec_func_name(SPECIAL(*func));
-bool zedit_get_levels(struct descriptor_data *d, char *buf);
+bool zedit_get_levels(struct descriptor_data *d, char *buf, size_t maxlen);
 
 /* Local Globals */
 static struct recent_player *recent_list = NULL;  /** Global list of recent players */
@@ -1402,19 +1402,19 @@ ACMD(do_vstat)
     extract_obj(obj);
     break;
   case 'r':
-    sprintf(buf2, "room %d", atoi(buf2));
+    snprintf(buf2, MAX_INPUT_LENGTH, "room %d", atoi(buf2));
     do_stat(ch, buf2, 0, 0);
     break;
   case 'z':
-    sprintf(buf2, "zone %d", atoi(buf2));
+    snprintf(buf2, MAX_INPUT_LENGTH, "zone %d", atoi(buf2));
     do_stat(ch, buf2, 0, 0);
     break;
   case 't':
-    sprintf(buf2, "%d", atoi(buf2));
+    snprintf(buf2, MAX_INPUT_LENGTH, "%d", atoi(buf2));
     do_tstat(ch, buf2, 0, 0);
     break;
   case 's':
-    sprintf(buf2, "shops %d", atoi(buf2));
+    snprintf(buf2, MAX_INPUT_LENGTH, "shops %d", atoi(buf2));
     do_show(ch, buf2, 0, 0);
     break;
   default:
@@ -2526,7 +2526,7 @@ ACMD(do_show)
     send_to_char(ch, "Show options:\r\n");
     for (j = 0, i = 1; fields[i].level; i++)
       if (fields[i].level <= GET_LEVEL(ch))
-	send_to_char(ch, "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
+        send_to_char(ch, "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
     send_to_char(ch, "\r\n");
     return;
   }
@@ -2793,7 +2793,7 @@ ACMD(do_show)
     for (r = 0; r < 6; r++)
       for (g = 0; g < 6; g++)
         for (b = 0; b < 6; b++) {
-          sprintf(colour, "F%d%d%d", r, g, b);
+          snprintf(colour, sizeof(colour), "F%d%d%d", r, g, b);
           nlen = snprintf(buf + len, sizeof(buf) - len,  "%s%s%s", ColourRGB(ch->desc, colour), colour, ++k % 6 == 0 ? "\tn\r\n" : "    ");
           if (len + nlen >= sizeof(buf))
             break;
@@ -3571,19 +3571,19 @@ static const int offlimit_zones[] = {0,12,13,14,-1};  /*what zones can no room c
 #define MIN_ROOM_DESC_LENGTH   80       /* at least one line - set to 0 to not care. */
 #define MAX_COLOUMN_WIDTH      80       /* at most 80 chars per line */
 
-ACMD (do_zcheck)
+ACMD(do_zcheck)
 {
   zone_rnum zrnum;
-  struct obj_data *obj;
-  struct char_data *mob = NULL;
-  room_vnum exroom=0;
-  int ac=0;
-  int affs=0, tohit, todam, value;
+  struct obj_data* obj;
+  struct char_data* mob = NULL;
+  room_vnum exroom = 0;
+  int ac = 0;
+  int affs = 0, tohit, todam, value;
   int i = 0, j = 0, k = 0, l = 0, m = 0, found = 0; /* found is used as a 'send now' flag*/
   char buf[MAX_STRING_LENGTH];
   float avg_dam;
   size_t len = 0;
-  struct extra_descr_data *ext, *ext2;
+  struct extra_descr_data* ext, * ext2;
   one_argument(argument, buf);
 
   if (!is_number(buf) || !strcmp(buf, "."))
@@ -3597,235 +3597,235 @@ ACMD (do_zcheck)
   } else
     send_to_char(ch, "Checking zone %d!\r\n", zone_table[zrnum].number);
 
- /* Check mobs */
+  /* Check mobs */
 
   send_to_char(ch, "Checking Mobs for limits...\r\n");
   /*check mobs first*/
-  for (i=0; i<top_of_mobt;i++) {
-      if (real_zone_by_thing(mob_index[i].vnum) == zrnum) {  /*is mob in this zone?*/
-        mob = &mob_proto[i];
-        if (!strcmp(mob->player.name, "mob unfinished") && (found=1))
+  for (i = 0; i < top_of_mobt;i++) {
+    if (real_zone_by_thing(mob_index[i].vnum) == zrnum) {  /*is mob in this zone?*/
+      mob = &mob_proto[i];
+      if (!strcmp(mob->player.name, "mob unfinished") && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Alias hasn't been set.\r\n");
+
+      if (!strcmp(mob->player.short_descr, "the unfinished mob") && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Short description hasn't been set.\r\n");
+
+      if (!strncmp(mob->player.long_descr, "An unfinished mob stands here.", 30) && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Long description hasn't been set.\r\n");
+
+      if (mob->player.description && *mob->player.description) {
+        if (!strncmp(mob->player.description, "It looks unfinished.", 20) && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Alias hasn't been set.\r\n");
-
-        if (!strcmp(mob->player.short_descr, "the unfinished mob") && (found=1))
+            "- Description hasn't been set.\r\n");
+        else if (strncmp(mob->player.description, "   ", 3) && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Short description hasn't been set.\r\n");
+            "- Description hasn't been formatted. (/fi)\r\n");
+      }
 
-        if (!strncmp(mob->player.long_descr, "An unfinished mob stands here.", 30) && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Long description hasn't been set.\r\n");
+      if (GET_LEVEL(mob) > MAX_LEVEL_ALLOWED && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Is level %d (limit: 1-%d)\r\n",
+          GET_LEVEL(mob), MAX_LEVEL_ALLOWED);
 
-        if (mob->player.description && *mob->player.description) {
-          if (!strncmp(mob->player.description, "It looks unfinished.", 20) && (found=1))
-            len += snprintf(buf + len, sizeof(buf) - len,
-                            "- Description hasn't been set.\r\n");
-          else if (strncmp(mob->player.description, "   ", 3) && (found=1))
-            len += snprintf(buf + len, sizeof(buf) - len,
-                            "- Description hasn't been formatted. (/fi)\r\n");
-        }
+      if (GET_DAMROLL(mob) > MAX_DAMROLL_ALLOWED && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Damroll of %d is too high (limit: %d)\r\n",
+          GET_DAMROLL(mob), MAX_DAMROLL_ALLOWED);
 
-        if (GET_LEVEL(mob)>MAX_LEVEL_ALLOWED && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Is level %d (limit: 1-%d)\r\n",
-                          GET_LEVEL(mob), MAX_LEVEL_ALLOWED);
+      if (GET_HITROLL(mob) > MAX_HITROLL_ALLOWED && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Hitroll of %d is too high (limit: %d)\r\n",
+          GET_HITROLL(mob), MAX_HITROLL_ALLOWED);
 
-        if (GET_DAMROLL(mob)>MAX_DAMROLL_ALLOWED && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Damroll of %d is too high (limit: %d)\r\n",
-                          GET_DAMROLL(mob), MAX_DAMROLL_ALLOWED);
+      /* avg. dam including damroll per round of combat */
+      avg_dam = (((mob->mob_specials.damsizedice / 2.0) * mob->mob_specials.damnodice) + GET_DAMROLL(mob));
+      if (avg_dam > MAX_MOB_DAM_ALLOWED && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- average damage of %4.1f is too high (limit: %d)\r\n",
+          avg_dam, MAX_MOB_DAM_ALLOWED);
 
-        if (GET_HITROLL(mob)>MAX_HITROLL_ALLOWED && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Hitroll of %d is too high (limit: %d)\r\n",
-                          GET_HITROLL(mob), MAX_HITROLL_ALLOWED);
+      if (mob->mob_specials.damsizedice == 1 &&
+        mob->mob_specials.damnodice == 1 &&
+        GET_LEVEL(mob) == 0 &&
+        (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Needs to be fixed - %sAutogenerate!%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
 
-        /* avg. dam including damroll per round of combat */
-        avg_dam = (((mob->mob_specials.damsizedice / 2.0) * mob->mob_specials.damnodice)+GET_DAMROLL(mob));
-        if (avg_dam>MAX_MOB_DAM_ALLOWED && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- average damage of %4.1f is too high (limit: %d)\r\n",
-                          avg_dam, MAX_MOB_DAM_ALLOWED);
-
-        if (mob->mob_specials.damsizedice == 1 &&
-            mob->mob_specials.damnodice == 1 &&
-            GET_LEVEL(mob) == 0 &&
-            (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Needs to be fixed - %sAutogenerate!%s\r\n", CCYEL(ch, C_NRM), CCNRM(ch, C_NRM));
-
-        if (MOB_FLAGGED(mob, MOB_AGGRESSIVE) && (MOB_FLAGGED(mob, MOB_AGGR_GOOD) || MOB_FLAGGED(mob, MOB_AGGR_EVIL) || MOB_FLAGGED(mob, MOB_AGGR_NEUTRAL)) && (found=1))
-	 len += snprintf(buf + len, sizeof(buf) - len,
+      if (MOB_FLAGGED(mob, MOB_AGGRESSIVE) && (MOB_FLAGGED(mob, MOB_AGGR_GOOD) || MOB_FLAGGED(mob, MOB_AGGR_EVIL) || MOB_FLAGGED(mob, MOB_AGGR_NEUTRAL)) && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
           "- Both aggresive and agressive to align.\r\n");
 
-        if ((GET_GOLD(mob) > MAX_MOB_GOLD_ALLOWED) && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Set to %d Gold (limit : %d).\r\n",
-                                  GET_GOLD(mob),
-                                  MAX_MOB_GOLD_ALLOWED);
+      if ((GET_GOLD(mob) > MAX_MOB_GOLD_ALLOWED) && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Set to %d Gold (limit : %d).\r\n",
+          GET_GOLD(mob),
+          MAX_MOB_GOLD_ALLOWED);
 
-        if (GET_EXP(mob)>MAX_EXP_ALLOWED && (found=1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Has %d experience (limit: %d)\r\n",
-                              GET_EXP(mob), MAX_EXP_ALLOWED);
-        if ((AFF_FLAGGED(mob, AFF_CHARM) || AFF_FLAGGED(mob, AFF_POISON)) && (found = 1))
-	  len += snprintf(buf + len, sizeof(buf) - len,
-                          "- Has illegal affection bits set (%s %s)\r\n",
-                              AFF_FLAGGED(mob, AFF_CHARM) ? "CHARM" : "",
-                              AFF_FLAGGED(mob, AFF_POISON) ? "POISON" : "");
+      if (GET_EXP(mob) > MAX_EXP_ALLOWED && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Has %d experience (limit: %d)\r\n",
+          GET_EXP(mob), MAX_EXP_ALLOWED);
+      if ((AFF_FLAGGED(mob, AFF_CHARM) || AFF_FLAGGED(mob, AFF_POISON)) && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Has illegal affection bits set (%s %s)\r\n",
+          AFF_FLAGGED(mob, AFF_CHARM) ? "CHARM" : "",
+          AFF_FLAGGED(mob, AFF_POISON) ? "POISON" : "");
 
 
-        if (!MOB_FLAGGED(mob, MOB_SENTINEL) && !MOB_FLAGGED(mob, MOB_STAY_ZONE) && (found = 1))
-          len += snprintf(buf + len, sizeof(buf) - len,
-                            "- Neither SENTINEL nor STAY_ZONE bits set.\r\n");
+      if (!MOB_FLAGGED(mob, MOB_SENTINEL) && !MOB_FLAGGED(mob, MOB_STAY_ZONE) && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Neither SENTINEL nor STAY_ZONE bits set.\r\n");
 
-        if (MOB_FLAGGED(mob, MOB_SPEC) && (found = 1))
-          snprintf(buf + len, sizeof(buf) - len,
-                            "- SPEC flag needs to be removed.\r\n");
+      if (MOB_FLAGGED(mob, MOB_SPEC) && (found = 1))
+        snprintf(buf + len, sizeof(buf) - len,
+          "- SPEC flag needs to be removed.\r\n");
 
-        /* Additional mob checks.*/
-        if (found) {
-          send_to_char(ch,
-                  "%s[%5d]%s %-30s: %s\r\n",
-                  CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
-                  CCYEL(ch, C_NRM), GET_NAME(mob),
-                  CCNRM(ch, C_NRM));
-          send_to_char(ch, "%s", buf);
-        }
-        /* reset buffers and found flag */
-        strcpy(buf, "");
-        found = 0;
-        len = 0;
-      }   /* mob is in zone */
-    }  /* check mobs */
+      /* Additional mob checks.*/
+      if (found) {
+        send_to_char(ch,
+          "%s[%5d]%s %-30s: %s\r\n",
+          CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
+          CCYEL(ch, C_NRM), GET_NAME(mob),
+          CCNRM(ch, C_NRM));
+        send_to_char(ch, "%s", buf);
+      }
+      /* reset buffers and found flag */
+      strncpy(buf, "", MAX_STRING_LENGTH);
+      found = 0;
+      len = 0;
+    }   /* mob is in zone */
+  }  /* check mobs */
 
- /* Check objects */
+/* Check objects */
   send_to_char(ch, "\r\nChecking Objects for limits...\r\n");
-  for (i=0; i<top_of_objt; i++) {
+  for (i = 0; i < top_of_objt; i++) {
     if (real_zone_by_thing(obj_index[i].vnum) == zrnum) { /*is object in this zone?*/
       obj = &obj_proto[i];
       switch (GET_OBJ_TYPE(obj)) {
-        case ITEM_MONEY:
-          if ((value = GET_OBJ_VAL(obj, 0))>MAX_OBJ_GOLD_ALLOWED && (found=1))
-            len += snprintf(buf + len, sizeof(buf) - len,
-                            "- Is worth %d (money limit %d coins).\r\n",
-                                 value, MAX_OBJ_GOLD_ALLOWED);
-          break;
-        case ITEM_WEAPON:
-          if (GET_OBJ_VAL(obj, 3) >= NUM_ATTACK_TYPES && (found=1))
-            len += snprintf(buf + len, sizeof(buf) - len,
-                            "- has out of range attack type %d.\r\n",
-                                 GET_OBJ_VAL(obj, 3));
+      case ITEM_MONEY:
+        if ((value = GET_OBJ_VAL(obj, 0)) > MAX_OBJ_GOLD_ALLOWED && (found = 1))
+          len += snprintf(buf + len, sizeof(buf) - len,
+            "- Is worth %d (money limit %d coins).\r\n",
+            value, MAX_OBJ_GOLD_ALLOWED);
+        break;
+      case ITEM_WEAPON:
+        if (GET_OBJ_VAL(obj, 3) >= NUM_ATTACK_TYPES && (found = 1))
+          len += snprintf(buf + len, sizeof(buf) - len,
+            "- has out of range attack type %d.\r\n",
+            GET_OBJ_VAL(obj, 3));
 
-          if (GET_OBJ_AVG_DAM(obj)>MAX_DAM_ALLOWED && (found=1))
+        if (GET_OBJ_AVG_DAM(obj) > MAX_DAM_ALLOWED && (found = 1))
+          len += snprintf(buf + len, sizeof(buf) - len,
+            "- Damroll is %2.1f (limit %d)\r\n",
+            GET_OBJ_AVG_DAM(obj), MAX_DAM_ALLOWED);
+        break;
+      case ITEM_ARMOR:
+        ac = GET_OBJ_VAL(obj, 0);
+        for (j = 0; j < TOTAL_WEAR_CHECKS;j++) {
+          if (CAN_WEAR(obj, zarmor[j].bitvector) && (ac > zarmor[j].ac_allowed) && (found = 1))
             len += snprintf(buf + len, sizeof(buf) - len,
-                            "- Damroll is %2.1f (limit %d)\r\n",
-                                 GET_OBJ_AVG_DAM(obj), MAX_DAM_ALLOWED);
-          break;
-        case ITEM_ARMOR:
-          ac=GET_OBJ_VAL(obj,0);
-          for (j=0; j<TOTAL_WEAR_CHECKS;j++) {
-            if (CAN_WEAR(obj,zarmor[j].bitvector) && (ac>zarmor[j].ac_allowed) && (found=1))
-              len += snprintf(buf + len, sizeof(buf) - len,
-                                   "- Has AC %d (%s limit is %d)\r\n",
-                                   ac, zarmor[j].message, zarmor[j].ac_allowed);
-          }
-          break;
+              "- Has AC %d (%s limit is %d)\r\n",
+              ac, zarmor[j].message, zarmor[j].ac_allowed);
+        }
+        break;
 
       }  /*switch on Item_Type*/
 
       if (!CAN_WEAR(obj, ITEM_WEAR_TAKE)) {
         if ((GET_OBJ_COST(obj) || (GET_OBJ_WEIGHT(obj) && GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN) ||
-           GET_OBJ_RENT(obj)) && (found = 1))
+          GET_OBJ_RENT(obj)) && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- is NO_TAKE, but has cost (%d) weight (%d) or rent (%d) set.\r\n",
-                          GET_OBJ_COST(obj), GET_OBJ_WEIGHT(obj), GET_OBJ_RENT(obj));
+            "- is NO_TAKE, but has cost (%d) weight (%d) or rent (%d) set.\r\n",
+            GET_OBJ_COST(obj), GET_OBJ_WEIGHT(obj), GET_OBJ_RENT(obj));
       } else {
-        if (GET_OBJ_COST(obj) == 0 && (found=1) && GET_OBJ_TYPE(obj) != ITEM_TRASH)
+        if (GET_OBJ_COST(obj) == 0 && (found = 1) && GET_OBJ_TYPE(obj) != ITEM_TRASH)
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- has 0 cost (min. 1).\r\n");
+            "- has 0 cost (min. 1).\r\n");
 
-        if (GET_OBJ_WEIGHT(obj) == 0 && (found=1))
+        if (GET_OBJ_WEIGHT(obj) == 0 && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- has 0 weight (min. 1).\r\n");
+            "- has 0 weight (min. 1).\r\n");
 
-        if (GET_OBJ_WEIGHT(obj) > MAX_OBJ_WEIGHT && (found=1))
+        if (GET_OBJ_WEIGHT(obj) > MAX_OBJ_WEIGHT && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "  Weight is too high: %d (limit  %d).\r\n",
-                          GET_OBJ_WEIGHT(obj), MAX_OBJ_WEIGHT);
+            "  Weight is too high: %d (limit  %d).\r\n",
+            GET_OBJ_WEIGHT(obj), MAX_OBJ_WEIGHT);
 
 
-        if (GET_OBJ_COST(obj) > MAX_OBJ_COST && (found=1))
+        if (GET_OBJ_COST(obj) > MAX_OBJ_COST && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- has %d cost (max %d).\r\n",
-                          GET_OBJ_COST(obj), MAX_OBJ_COST);
+            "- has %d cost (max %d).\r\n",
+            GET_OBJ_COST(obj), MAX_OBJ_COST);
       }
 
-      if (GET_OBJ_LEVEL(obj) > LVL_IMMORT-1 && (found=1))
+      if (GET_OBJ_LEVEL(obj) > LVL_IMMORT - 1 && (found = 1))
         len += snprintf(buf + len, sizeof(buf) - len,
-                          "- has min level set to %d (max %d).\r\n",
-                          GET_OBJ_LEVEL(obj), LVL_IMMORT-1);
+          "- has min level set to %d (max %d).\r\n",
+          GET_OBJ_LEVEL(obj), LVL_IMMORT - 1);
 
       if (obj->action_description && *obj->action_description &&
-          GET_OBJ_TYPE(obj) != ITEM_STAFF &&
-          GET_OBJ_TYPE(obj) != ITEM_WAND &&
-          GET_OBJ_TYPE(obj) != ITEM_SCROLL &&
-          GET_OBJ_TYPE(obj) != ITEM_NOTE && (found=1))
+        GET_OBJ_TYPE(obj) != ITEM_STAFF &&
+        GET_OBJ_TYPE(obj) != ITEM_WAND &&
+        GET_OBJ_TYPE(obj) != ITEM_SCROLL &&
+        GET_OBJ_TYPE(obj) != ITEM_NOTE && (found = 1))
         len += snprintf(buf + len, sizeof(buf) - len,
-                          "- has action_description set, but is inappropriate type.\r\n");
+          "- has action_description set, but is inappropriate type.\r\n");
 
       /*first check for over-all affections*/
-      for (affs=0, j = 0; j < MAX_OBJ_AFFECT; j++)
+      for (affs = 0, j = 0; j < MAX_OBJ_AFFECT; j++)
         if (obj->affected[j].modifier) affs++;
 
-      if (affs>MAX_AFFECTS_ALLOWED && (found=1))
+      if (affs > MAX_AFFECTS_ALLOWED && (found = 1))
         len += snprintf(buf + len, sizeof(buf) - len,
-                          "- has %d affects (limit %d).\r\n",
-                             affs, MAX_AFFECTS_ALLOWED);
+          "- has %d affects (limit %d).\r\n",
+          affs, MAX_AFFECTS_ALLOWED);
 
       /*check for out of range affections. */
-      for (j=0;j<MAX_OBJ_AFFECT;j++)
+      for (j = 0;j < MAX_OBJ_AFFECT;j++)
         if (zaffs[(int)obj->affected[j].location].max_aff != -99 && /* only care if a range is set */
-            (obj->affected[j].modifier > zaffs[(int)obj->affected[j].location].max_aff ||
-             obj->affected[j].modifier < zaffs[(int)obj->affected[j].location].min_aff ||
-             zaffs[(int)obj->affected[j].location].min_aff == zaffs[(int)obj->affected[j].location].max_aff) && (found=1))
+          (obj->affected[j].modifier > zaffs[(int)obj->affected[j].location].max_aff ||
+            obj->affected[j].modifier < zaffs[(int)obj->affected[j].location].min_aff ||
+            zaffs[(int)obj->affected[j].location].min_aff == zaffs[(int)obj->affected[j].location].max_aff) && (found = 1))
           len += snprintf(buf + len, sizeof(buf) - len,
-                          "- apply to %s is %d (limit %d - %d).\r\n",
-                               zaffs[(int)obj->affected[j].location].message,
-                               obj->affected[j].modifier,
-                               zaffs[(int)obj->affected[j].location].min_aff,
-                               zaffs[(int)obj->affected[j].location].max_aff);
+            "- apply to %s is %d (limit %d - %d).\r\n",
+            zaffs[(int)obj->affected[j].location].message,
+            obj->affected[j].modifier,
+            zaffs[(int)obj->affected[j].location].min_aff,
+            zaffs[(int)obj->affected[j].location].max_aff);
 
-     /* special handling of +hit and +dam because of +hit_n_dam */
-     for (todam=0, tohit=0, j=0;j<MAX_OBJ_AFFECT;j++) {
-       if (obj->affected[j].location == APPLY_HITROLL)
-         tohit += obj->affected[j].modifier;
-       if (obj->affected[j].location == APPLY_DAMROLL)
-         todam += obj->affected[j].modifier;
-     }
-     if (abs(todam) > MAX_APPLY_DAMROLL_TOTAL && (found=1))
-       len += snprintf(buf + len, sizeof(buf) - len,
-                       "- total damroll %d out of range (limit +/-%d.\r\n",
-                       todam, MAX_APPLY_DAMROLL_TOTAL);
-     if (abs(tohit) > MAX_APPLY_HITROLL_TOTAL && (found=1))
-       len += snprintf(buf + len, sizeof(buf) - len,
-                       "- total hitroll %d out of range (limit +/-%d).\r\n",
-                       tohit, MAX_APPLY_HITROLL_TOTAL);
+      /* special handling of +hit and +dam because of +hit_n_dam */
+      for (todam = 0, tohit = 0, j = 0;j < MAX_OBJ_AFFECT;j++) {
+        if (obj->affected[j].location == APPLY_HITROLL)
+          tohit += obj->affected[j].modifier;
+        if (obj->affected[j].location == APPLY_DAMROLL)
+          todam += obj->affected[j].modifier;
+      }
+      if (abs(todam) > MAX_APPLY_DAMROLL_TOTAL && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- total damroll %d out of range (limit +/-%d.\r\n",
+          todam, MAX_APPLY_DAMROLL_TOTAL);
+      if (abs(tohit) > MAX_APPLY_HITROLL_TOTAL && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- total hitroll %d out of range (limit +/-%d).\r\n",
+          tohit, MAX_APPLY_HITROLL_TOTAL);
 
 
-     for (ext2 = NULL, ext = obj->ex_description; ext; ext = ext->next)
-       if (strncmp(ext->description, "   ", 3))
-         ext2 = ext;
+      for (ext2 = NULL, ext = obj->ex_description; ext; ext = ext->next)
+        if (strncmp(ext->description, "   ", 3))
+          ext2 = ext;
 
-     if (ext2 && (found = 1))
-       snprintf(buf + len, sizeof(buf) - len,
-                       "- has unformatted extra description\r\n");
-     /* Additional object checks. */
-     if (found) {
+      if (ext2 && (found = 1))
+        snprintf(buf + len, sizeof(buf) - len,
+          "- has unformatted extra description\r\n");
+      /* Additional object checks. */
+      if (found) {
         send_to_char(ch, "[%5d] %-30s: \r\n", GET_OBJ_VNUM(obj), obj->short_description);
         send_to_char(ch, "%s", buf);
       }
-      strcpy(buf, "");
+      strncpy(buf, "", MAX_STRING_LENGTH);
       len = 0;
       found = 0;
     }   /*object is in zone*/
@@ -3833,73 +3833,73 @@ ACMD (do_zcheck)
 
   /* Check rooms */
   send_to_char(ch, "\r\nChecking Rooms for limits...\r\n");
-  for (i=0; i<top_of_world;i++) {
-    if (world[i].zone==zrnum) {
+  for (i = 0; i < top_of_world;i++) {
+    if (world[i].zone == zrnum) {
       for (j = 0; j < DIR_COUNT; j++) {
         /*check for exit, but ignore off limits if you're in an offlimit zone*/
         if (!world[i].dir_option[j])
           continue;
-        exroom=world[i].dir_option[j]->to_room;
-        if (exroom==NOWHERE)
+        exroom = world[i].dir_option[j]->to_room;
+        if (exroom == NOWHERE)
           continue;
         if (world[exroom].zone == zrnum)
           continue;
         if (world[exroom].zone == world[i].zone)
           continue;
 
-        for (k=0;offlimit_zones[k] != -1;k++) {
+        for (k = 0;offlimit_zones[k] != -1;k++) {
           if (world[exroom].zone == real_zone(offlimit_zones[k]) && (found = 1))
             len += snprintf(buf + len, sizeof(buf) - len,
-                            "- Exit %s cannot connect to %d (zone off limits).\r\n",
-                            dirs[j], world[exroom].number);
+              "- Exit %s cannot connect to %d (zone off limits).\r\n",
+              dirs[j], world[exroom].number);
         } /* for (k.. */
       } /* cycle directions */
 
-     if (ROOM_FLAGGED(i, ROOM_ATRIUM) || ROOM_FLAGGED(i, ROOM_HOUSE) || ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) || ROOM_FLAGGED(i, ROOM_OLC) || ROOM_FLAGGED(i, ROOM_BFS_MARK))
-         len += snprintf(buf + len, sizeof(buf) - len,
-         "- Has illegal affection bits set (%s %s %s %s %s)\r\n",
-                            ROOM_FLAGGED(i, ROOM_ATRIUM) ? "ATRIUM" : "",
-                            ROOM_FLAGGED(i, ROOM_HOUSE) ? "HOUSE" : "",
-                            ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) ? "HCRSH" : "",
-                            ROOM_FLAGGED(i, ROOM_OLC) ? "OLC" : "",
-                            ROOM_FLAGGED(i, ROOM_BFS_MARK) ? "*" : "");
+      if (ROOM_FLAGGED(i, ROOM_ATRIUM) || ROOM_FLAGGED(i, ROOM_HOUSE) || ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) || ROOM_FLAGGED(i, ROOM_OLC) || ROOM_FLAGGED(i, ROOM_BFS_MARK))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- Has illegal affection bits set (%s %s %s %s %s)\r\n",
+          ROOM_FLAGGED(i, ROOM_ATRIUM) ? "ATRIUM" : "",
+          ROOM_FLAGGED(i, ROOM_HOUSE) ? "HOUSE" : "",
+          ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) ? "HCRSH" : "",
+          ROOM_FLAGGED(i, ROOM_OLC) ? "OLC" : "",
+          ROOM_FLAGGED(i, ROOM_BFS_MARK) ? "*" : "");
 
-      if ((MIN_ROOM_DESC_LENGTH) && strlen(world[i].description)<MIN_ROOM_DESC_LENGTH && (found=1))
+      if ((MIN_ROOM_DESC_LENGTH) && strlen(world[i].description) < MIN_ROOM_DESC_LENGTH && (found = 1))
         len += snprintf(buf + len, sizeof(buf) - len,
           "- Room description is too short. (%4.4d of min. %d characters).\r\n",
           (int)strlen(world[i].description), MIN_ROOM_DESC_LENGTH);
 
-      if (strncmp(world[i].description, "   ", 3) && (found=1))
+      if (strncmp(world[i].description, "   ", 3) && (found = 1))
         len += snprintf(buf + len, sizeof(buf) - len,
-                        "- Room description not formatted with indent (/fi in the editor).\r\n");
+          "- Room description not formatted with indent (/fi in the editor).\r\n");
 
       /* strcspan = size of text in first arg before any character in second arg */
-      if ((strcspn(world[i].description, "\r\n")>MAX_COLOUMN_WIDTH) && (found=1))
+      if ((strcspn(world[i].description, "\r\n") > MAX_COLOUMN_WIDTH) && (found = 1))
         len += snprintf(buf + len, sizeof(buf) - len,
-                        "- Room description not wrapped at %d chars (/fi in the editor).\r\n",
-                             MAX_COLOUMN_WIDTH);
+          "- Room description not wrapped at %d chars (/fi in the editor).\r\n",
+          MAX_COLOUMN_WIDTH);
 
-     for (ext2 = NULL, ext = world[i].ex_description; ext; ext = ext->next)
-       if (strncmp(ext->description, "   ", 3))
-         ext2 = ext;
+      for (ext2 = NULL, ext = world[i].ex_description; ext; ext = ext->next)
+        if (strncmp(ext->description, "   ", 3))
+          ext2 = ext;
 
-     if (ext2 && (found = 1))
-       len += snprintf(buf + len, sizeof(buf) - len,
-                       "- has unformatted extra description\r\n");
+      if (ext2 && (found = 1))
+        len += snprintf(buf + len, sizeof(buf) - len,
+          "- has unformatted extra description\r\n");
 
       if (found) {
         send_to_char(ch, "[%5d] %-30s: \r\n",
-                       world[i].number, world[i].name ? world[i].name : "An unnamed room");
+          world[i].number, world[i].name ? world[i].name : "An unnamed room");
         send_to_char(ch, "%s", buf);
-        strcpy(buf, "");
+        strncpy(buf, "", MAX_STRING_LENGTH);
         len = 0;
         found = 0;
       }
     } /*is room in this zone?*/
   } /*checking rooms*/
 
-  for (i=0; i<top_of_world;i++) {
-    if (world[i].zone==zrnum) {
+  for (i = 0; i < top_of_world;i++) {
+    if (world[i].zone == zrnum) {
       m++;
       for (j = 0, k = 0; j < DIR_COUNT; j++)
         if (!world[i].dir_option[j])
@@ -4174,7 +4174,7 @@ ACMD(do_copyover)
       return;
     }
 
-   sprintf (buf, "\n\r *** COPYOVER by %s - please remain seated!\n\r", GET_NAME(ch));
+   snprintf(buf, sizeof(buf), "\n\r *** COPYOVER by %s - please remain seated!\n\r", GET_NAME(ch));
 
    /* write boot_time as first line in file */
    fprintf(fp, "%ld\n", (long)boot_time);
@@ -4208,8 +4208,8 @@ ACMD(do_copyover)
   fclose (fp);
 
   /* exec - descriptors are inherited */
-  sprintf (buf, "%d", port);
-  sprintf (buf2, "-C%d", mother_desc);
+  snprintf(buf, sizeof(buf), "%d", port);
+  snprintf(buf2, sizeof(buf2), "-C%d", mother_desc);
 
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
   if(chdir ("..") != 0) {
@@ -4470,7 +4470,7 @@ ACMD(do_changelog)
     return;
   }
 
-  sprintf(buf, "%s.bak", CHANGE_LOG_FILE);
+  snprintf(buf, READ_SIZE, "%s.bak", CHANGE_LOG_FILE);
   if (rename(CHANGE_LOG_FILE, buf)) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: Error making backup changelog file (%s)", buf);
@@ -4493,7 +4493,7 @@ ACMD(do_changelog)
     if (*line != '[')
       fprintf(new, "%s\n", line);
     else {
-      strcpy(last_buf, line);
+      strncpy(last_buf, line, READ_SIZE);
       break;
     }
   }
@@ -4501,7 +4501,7 @@ ACMD(do_changelog)
   rawtime = time(0);
   strftime(timestr, sizeof(timestr), "%b %d %Y", localtime(&rawtime));
 
-  sprintf(buf, "[%s] - %s", timestr, GET_NAME(ch));
+  snprintf(buf, READ_SIZE, "[%s] - %s", timestr, GET_NAME(ch));
 
   fprintf(new, "%s\n", buf);
   fprintf(new, "  %s\n", argument);
@@ -4523,12 +4523,13 @@ ACMD(do_changelog)
 ACMD(do_plist)
 {
   int i, len = 0, count = 0;
-  char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_NAME_LENGTH], timestr[MAX_STRING_LENGTH];
+  int PLIST_BUF_SIZE = MAX_STRING_LENGTH * 20;
+  char mode, buf[PLIST_BUF_SIZE], name_search[MAX_NAME_LENGTH], timestr[MAX_STRING_LENGTH];
   struct time_info_data time_away;
   int low = 0, high = LVL_IMPL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
 
   skip_spaces(&argument);
-  strcpy(buf, argument);        /* strcpy: OK (sizeof: argument == buf) */
+  strlcpy(buf, argument, PLIST_BUF_SIZE);
   name_search[0] = '\0';
 
   while (*buf) {
@@ -4538,7 +4539,7 @@ ACMD(do_plist)
     if (isdigit(*arg)) {
       if (sscanf(arg, "%d-%d", &low, &high) == 1)
         high = low;
-      strcpy(buf, buf1);        /* strcpy: OK (sizeof: buf1 == buf) */
+      strlcpy(buf, buf1, PLIST_BUF_SIZE);
     } else if (*arg == '-') {
       mode = *(arg + 1);        /* just in case; we destroy arg in the switch */
       switch (mode) {
@@ -4550,11 +4551,11 @@ ACMD(do_plist)
         half_chop(buf1, name_search, buf);
         break;
       case 'i':
-        strcpy(buf, buf1);
+        strlcpy(buf, buf1, PLIST_BUF_SIZE);
         low = LVL_IMMORT;
         break;
       case 'm':
-        strcpy(buf, buf1);
+        strlcpy(buf, buf1, PLIST_BUF_SIZE);
         high = LVL_IMMORT - 1;
         break;
       case 'd':
@@ -4671,7 +4672,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
   }
 
   /* Set up a few variables that will be needed */
-  sprintf(old_name, "%s", GET_NAME(vict));
+  snprintf(old_name, MAX_NAME_LENGTH, "%s", GET_NAME(vict));
   if (!get_filename(old_pfile, sizeof(old_pfile), PLR_FILE, old_name))
   {
     send_to_char(ch, "Unable to ascertain player's old pfile name.\r\n");
@@ -4692,7 +4693,7 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
   GET_PC_NAME(vict) = strdup(CAP(new_name));    // Change the name in the victims char struct
 
   /* Rename the player's pfile */
-  sprintf(buf, "mv %s %s", old_pfile, new_pfile);
+  snprintf(buf, MAX_STRING_LENGTH, "mv %s %s", old_pfile, new_pfile);
 
   /* Save the changed player index - the pfile is saved by perform_set */
   save_player_index();
@@ -4931,8 +4932,8 @@ static void clear_recent(struct recent_player *this)
 {
   this->vnum = 0;
   this->time = 0;
-  strcpy(this->name, "");
-  strcpy(this->host, "");
+  strcpy(this->name, ""); /* strcpy: OK */
+  strcpy(this->host, ""); /* strcpy: OK */
   this->next = NULL;
 }
 
@@ -4970,8 +4971,8 @@ bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr)
   this->time = ct;
   this->new_player = newplr;
   this->copyover_player = cpyplr;
-  strcpy(this->host, chhost);
-  strcpy(this->name, chname);
+  strlcpy(this->host, chhost, HOST_LENGTH);
+  strlcpy(this->name, chname, MAX_NAME_LENGTH);
   max_vnum = get_max_recent();
   this->vnum = max_vnum;   /* Possibly should be +1 ? */
 

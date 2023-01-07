@@ -119,8 +119,8 @@ static void write_ban_list(void)
 #define BAN_LIST_FORMAT "%-25.25s  %-8.8s  %-15.15s  %-16.16s\r\n"
 ACMD(do_ban)
 {
-  char flag[MAX_INPUT_LENGTH], site[MAX_INPUT_LENGTH], *nextchar;
   char timestr[16];
+  char flag[MAX_INPUT_LENGTH], site[MAX_INPUT_LENGTH], *nextchar;
   int i;
   struct ban_list_element *ban_node;
 
@@ -130,21 +130,21 @@ ACMD(do_ban)
       return;
     }
     send_to_char(ch, BAN_LIST_FORMAT,
-	    "Banned Site Name",
-	    "Ban Type",
-	    "Banned On",
-	    "Banned By");
+      "Banned Site Name",
+      "Ban Type",
+      "Banned On",
+      "Banned By");
     send_to_char(ch, BAN_LIST_FORMAT,
-	    "---------------------------------",
-	    "---------------------------------",
-	    "---------------------------------",
-	    "---------------------------------");
+      "---------------------------------",
+      "---------------------------------",
+      "---------------------------------",
+      "---------------------------------");
 
     for (ban_node = ban_list; ban_node; ban_node = ban_node->next) {
       if (ban_node->date) {
         strftime(timestr, sizeof(timestr), "%a %b %d %Y", localtime(&(ban_node->date)));
       } else
-	strcpy(timestr, "Unknown");	/* strcpy: OK (strlen("Unknown") < 16) */
+        strlcpy(timestr, "Unknown", sizeof(timestr));
 
       send_to_char(ch, BAN_LIST_FORMAT, ban_node->site, ban_types[ban_node->type], timestr, ban_node->name);
     }
@@ -184,7 +184,7 @@ ACMD(do_ban)
   ban_list = ban_node;
 
   mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s has banned %s for %s players.",
-	GET_NAME(ch), site, ban_types[ban_node->type]);
+    GET_NAME(ch), site, ban_types[ban_node->type]);
   send_to_char(ch, "Site banned.\r\n");
   write_ban_list();
 }

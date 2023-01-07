@@ -409,8 +409,8 @@ ACMD(do_hindex)
     return;
   }
 
-  len = sprintf(buf, "\t1Help index entries beginning with '%s':\t2\r\n", argument);
-  len2 = sprintf(buf2, "\t1Help index entries containing '%s':\t2\r\n", argument);
+  len = snprintf(buf, MAX_STRING_LENGTH, "\t1Help index entries beginning with '%s':\t2\r\n", argument);
+  len2 = snprintf(buf2, MAX_STRING_LENGTH, "\t1Help index entries containing '%s':\t2\r\n", argument);
   for (i = 0; i < top_of_helpt; i++) {
     if (is_abbrev(argument, help_table[i].keywords)
         && (GET_LEVEL(ch) >= help_table[i].min_level))

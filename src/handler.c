@@ -1319,7 +1319,7 @@ struct obj_data *create_money(int amount)
       snprintf(buf, sizeof(buf), "You guess there are, maybe, %d coins.",
 	      1000 * ((amount / 1000) + rand_number(0, (amount / 1000))));
     else
-      strcpy(buf, "There are a LOT of coins.");	/* strcpy: OK (is < 200) */
+      strlcpy(buf, "There are a LOT of coins.", sizeof(buf));
     new_descr->description = strdup(buf);
   }
 

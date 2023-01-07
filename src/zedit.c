@@ -385,25 +385,25 @@ static void zedit_disp_flag_menu(struct descriptor_data *d)
 }
 
 /*------------------------------------------------------------------*/
-static bool zedit_get_levels(struct descriptor_data *d, char *buf)
+static bool zedit_get_levels(struct descriptor_data *d, char *buf, size_t maxlen)
 {
   /* Create a string for the recommended levels for this zone. */
   if ((OLC_ZONE(d)->min_level == -1) && (OLC_ZONE(d)->max_level == -1)) {
-    sprintf(buf, "<Not Set!>");
+    snprintf(buf, maxlen, "<Not Set!>");
     return FALSE;
   }
 
   if (OLC_ZONE(d)->min_level == -1) {
-    sprintf(buf, "Up to level %d", OLC_ZONE(d)->max_level);
+    snprintf(buf, maxlen, "Up to level %d", OLC_ZONE(d)->max_level);
     return TRUE;
   }
 
   if (OLC_ZONE(d)->max_level == -1) {
-    sprintf(buf, "Above level %d", OLC_ZONE(d)->min_level);
+    snprintf(buf, maxlen, "Above level %d", OLC_ZONE(d)->min_level);
     return TRUE;
   }
 
-  sprintf(buf, "Levels %d to %d", OLC_ZONE(d)->min_level, OLC_ZONE(d)->max_level);
+  snprintf(buf, maxlen, "Levels %d to %d", OLC_ZONE(d)->min_level, OLC_ZONE(d)->max_level);
   return TRUE;
 }
 
@@ -420,7 +420,7 @@ static void zedit_disp_menu(struct descriptor_data *d)
   clear_screen(d);
 
   sprintbitarray(OLC_ZONE(d)->zone_flags, zone_bits, ZN_ARRAY_MAX, buf1);
-  levels_set = zedit_get_levels(d, lev_string);
+  levels_set = zedit_get_levels(d, lev_string, sizeof(lev_string));
 
   /* Menu header */
   send_to_char(d->character,
@@ -693,7 +693,7 @@ static void zedit_disp_levels(struct descriptor_data *d)
   char lev_string[50];
   bool levels_set = FALSE;
 
-  levels_set = zedit_get_levels(d, lev_string);
+  levels_set = zedit_get_levels(d, lev_string, 50);
 
   clear_screen(d);
   write_to_output(d,

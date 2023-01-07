@@ -391,7 +391,7 @@ int save_shops(zone_rnum zone_num)
       fprintf(shop_file, "-1\n");
 
       /* Save messages. Added some defaults as sanity checks. */
-      sprintf(buf,
+      snprintf(buf, MAX_STRING_LENGTH,
 	      "%s~\n"
 	      "%s~\n"
 	      "%s~\n"

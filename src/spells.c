@@ -173,11 +173,11 @@ static int isname_obj(char *search, char *list)
   int i;
 
   /* Force to lowercase for string comparisons */
-  sprintf(searchname, "%s", search);
+  snprintf(searchname, sizeof(searchname), "%s", search);
   for (i = 0; searchname[i]; i++)
     searchname[i] = LOWER(searchname[i]);
 
-  sprintf(namelist, "%s", list);
+  snprintf(namelist, sizeof(namelist), "%s", list);
   for (i = 0; namelist[i]; i++)
     namelist[i] = LOWER(namelist[i]);
 
@@ -220,7 +220,7 @@ ASPELL(spell_locate_object)
   }
 
   /*  added a global var to catch 2nd arg. */
-  sprintf(name, "%s", cast_arg2);
+  snprintf(name, MAX_INPUT_LENGTH, "%s", cast_arg2);
 
   j = GET_LEVEL(ch) / 2;  /* # items to show = twice char's level */
 
@@ -228,7 +228,7 @@ ASPELL(spell_locate_object)
     if (!isname_obj(name, i->name))
       continue;
 
-  send_to_char(ch, "%c%s", UPPER(*i->short_description), i->short_description + 1);
+    send_to_char(ch, "%c%s", UPPER(*i->short_description), i->short_description + 1);
 
     if (i->carried_by)
       send_to_char(ch, " is being carried by %s.\r\n", PERS(i->carried_by, ch));

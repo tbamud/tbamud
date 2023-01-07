@@ -117,21 +117,21 @@ char *str_str(char *cs, char *ct)
  * @param vnum The virtual number of a room.
  * @retval int Returns -1 if the room does not exist, or the total number of
  * PCs and NPCs in the room. */
-int trgvar_in_room(room_vnum vnum) 
+int trgvar_in_room(room_vnum vnum)
 {
-    room_rnum rnum = real_room(vnum);
-    int i = 0;
-    char_data *ch;
+  room_rnum rnum = real_room(vnum);
+  int i = 0;
+  char_data *ch;
 
-    if (rnum == NOWHERE) {
-        script_log("people.vnum: world[rnum] does not exist");
-        return (-1);
-    }
+  if (rnum == NOWHERE) {
+    script_log("people.vnum: world[rnum] does not exist");
+    return (-1);
+  }
 
-    for (ch = world[rnum].people; ch !=NULL; ch = ch->next_in_room)
-        i++;
+  for (ch = world[rnum].people; ch != NULL; ch = ch->next_in_room)
+    i++;
 
-    return i;
+  return i;
 }
 
 
@@ -144,23 +144,23 @@ int trgvar_in_room(room_vnum vnum)
  */
 obj_data *get_obj_in_list(char *name, obj_data *list)
 {
-    obj_data *i;
-    long id;
+  obj_data *i;
+  long id;
 
-    if (*name == UID_CHAR){
-      id = atoi(name + 1);
+  if (*name == UID_CHAR) {
+    id = atoi(name + 1);
 
-      for (i = list; i; i = i->next_content)
-        if (id == i->script_id)
-          return i;
-      
-    } else {
-      for (i = list; i; i = i->next_content)
-        if (isname(name, i->name))
-          return i;
-    }
+    for (i = list; i; i = i->next_content)
+      if (id == i->script_id)
+        return i;
 
-    return NULL;
+  } else {
+    for (i = list; i; i = i->next_content)
+      if (isname(name, i->name))
+        return i;
+  }
+
+  return NULL;
 }
 
 /** Find out if an NPC or PC is carrying an object.
@@ -755,53 +755,53 @@ static EVENTFUNC(trig_wait_event)
 
 static void do_stat_trigger(struct char_data *ch, trig_data *trig)
 {
-    struct cmdlist_element *cmd_list;
-    char sb[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
-    int len = 0;
+  struct cmdlist_element *cmd_list;
+  char sb[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
+  int len = 0;
 
-    if (!trig)
-    {
-        log("SYSERR: NULL trigger passed to do_stat_trigger.");
-        return;
+  if (!trig)
+  {
+    log("SYSERR: NULL trigger passed to do_stat_trigger.");
+    return;
+  }
+
+  len += snprintf(sb, sizeof(sb), "Name: '%s%s%s',  VNum: [%s%5d%s], RNum: [%5d]\r\n",
+    CCYEL(ch, C_NRM), GET_TRIG_NAME(trig), CCNRM(ch, C_NRM),
+    CCGRN(ch, C_NRM), GET_TRIG_VNUM(trig), CCNRM(ch, C_NRM),
+    GET_TRIG_RNUM(trig));
+
+  if (trig->attach_type == OBJ_TRIGGER) {
+    len += snprintf(sb + len, sizeof(sb) - len, "Trigger Intended Assignment: Objects\r\n");
+    sprintbit(GET_TRIG_TYPE(trig), otrig_types, buf, sizeof(buf));
+  } else if (trig->attach_type == WLD_TRIGGER) {
+    len += snprintf(sb + len, sizeof(sb) - len, "Trigger Intended Assignment: Rooms\r\n");
+    sprintbit(GET_TRIG_TYPE(trig), wtrig_types, buf, sizeof(buf));
+  } else {
+    len += snprintf(sb + len, sizeof(sb) - len, "Trigger Intended Assignment: Mobiles\r\n");
+    sprintbit(GET_TRIG_TYPE(trig), trig_types, buf, sizeof(buf));
+  }
+
+  len += snprintf(sb + len, sizeof(sb) - len, "Trigger Type: %s, Numeric Arg: %d, Arg list: %s\r\n",
+    buf, GET_TRIG_NARG(trig),
+    ((GET_TRIG_ARG(trig) && *GET_TRIG_ARG(trig))
+      ? GET_TRIG_ARG(trig) : "None"));
+
+  len += snprintf(sb + len, sizeof(sb) - len, "Commands:\r\n");
+
+  cmd_list = trig->cmdlist;
+  while (cmd_list) {
+    if (cmd_list->cmd)
+      len += snprintf(sb + len, sizeof(sb) - len, "%s\r\n", cmd_list->cmd);
+
+    if (len > MAX_STRING_LENGTH - 80) {
+      snprintf(sb + len, sizeof(sb) - len, "*** Overflow - script too long! ***\r\n");
+      break;
     }
 
-    len += snprintf(sb, sizeof(sb), "Name: '%s%s%s',  VNum: [%s%5d%s], RNum: [%5d]\r\n",
-              CCYEL(ch, C_NRM), GET_TRIG_NAME(trig), CCNRM(ch, C_NRM),
-              CCGRN(ch, C_NRM), GET_TRIG_VNUM(trig), CCNRM(ch, C_NRM),
-              GET_TRIG_RNUM(trig));
+    cmd_list = cmd_list->next;
+  }
 
-    if (trig->attach_type==OBJ_TRIGGER) {
-      len += snprintf(sb + len, sizeof(sb)-len, "Trigger Intended Assignment: Objects\r\n");
-      sprintbit(GET_TRIG_TYPE(trig), otrig_types, buf, sizeof(buf));
-    } else if (trig->attach_type==WLD_TRIGGER) {
-      len += snprintf(sb + len, sizeof(sb)-len, "Trigger Intended Assignment: Rooms\r\n");
-      sprintbit(GET_TRIG_TYPE(trig), wtrig_types, buf, sizeof(buf));
-    } else {
-      len += snprintf(sb + len, sizeof(sb)-len, "Trigger Intended Assignment: Mobiles\r\n");
-      sprintbit(GET_TRIG_TYPE(trig), trig_types, buf, sizeof(buf));
-    }
-
-    len += snprintf(sb + len, sizeof(sb)-len, "Trigger Type: %s, Numeric Arg: %d, Arg list: %s\r\n",
-                     buf, GET_TRIG_NARG(trig),
-                    ((GET_TRIG_ARG(trig) && *GET_TRIG_ARG(trig))
-                     ? GET_TRIG_ARG(trig) : "None"));
-
-    len += snprintf(sb + len, sizeof(sb)-len, "Commands:\r\n");
-
-    cmd_list = trig->cmdlist;
-    while (cmd_list) {
-      if (cmd_list->cmd)
-        len += snprintf(sb + len, sizeof(sb)-len, "%s\r\n", cmd_list->cmd);
-
-      if (len>MAX_STRING_LENGTH-80) {
-        snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
-        break;
-      }
-      
-      cmd_list = cmd_list->next;
-    }
-
-    page_string(ch->desc, sb, 1);
+  page_string(ch->desc, sb, 1);
 }
 
 /* find the name of what the uid points to */
@@ -991,11 +991,11 @@ ACMD(do_attach)
     add_trigger(SCRIPT(victim), trig, loc);
 
     if (IS_NPC(victim))
-    send_to_char(ch, "Trigger %d (%s) attached to %s [%d].\r\n",
-                 tn, GET_TRIG_NAME(trig), GET_SHORT(victim), GET_MOB_VNUM(victim));
-    else 
-    send_to_char(ch, "Trigger %d (%s) attached to player named %s.\r\n", 
-                 tn, GET_TRIG_NAME(trig), GET_NAME(victim));
+      send_to_char(ch, "Trigger %d (%s) attached to %s [%d].\r\n",
+        tn, GET_TRIG_NAME(trig), GET_SHORT(victim), GET_MOB_VNUM(victim));
+    else
+      send_to_char(ch, "Trigger %d (%s) attached to player named %s.\r\n",
+        tn, GET_TRIG_NAME(trig), GET_NAME(victim));
   }
 
   else if (is_abbrev(arg, "object") || is_abbrev(arg, "otr")) {
@@ -1357,19 +1357,19 @@ void script_log(const char *format, ...)
  * true on num="------". */
 static int is_num(char *arg)
 {
-   if (*arg == '\0')
+  if (*arg == '\0')
+    return FALSE;
+
+  if (*arg == '+' || *arg == '-')
+    arg++;
+
+  for (; *arg != '\0'; arg++)
+  {
+    if (!isdigit(*arg))
       return FALSE;
+  }
 
-   if (*arg == '+' || *arg == '-')
-      arg++;
-
-   for (; *arg != '\0'; arg++)
-   {
-      if (!isdigit(*arg))
-         return FALSE;
-   }
-
-   return TRUE;
+  return TRUE;
 }
 
 /* evaluates 'lhs op rhs', and copies to result */
@@ -1386,9 +1386,9 @@ static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
     rhs++;
 
   for (p = (unsigned char *) lhs; *p; p++);
-  for (--p; isspace(*p) && ((char *)p > lhs); *p-- = '\0');
+  for (--p; isspace(*p) && ((char *)p > lhs); *p-- = '\0'); // Valgrind -- ==8468== Use of uninitialised value of size 8
   for (p = (unsigned char *) rhs; *p; p++);
-  for (--p; isspace(*p) && ((char *)p > rhs); *p-- = '\0');
+  for (--p; isspace(*p) && ((char *)p > rhs); *p-- = '\0'); // Valgrind -- ==9269== Use of uninitialised value of size 8
 
 
   /* find the op, and figure out the value */
@@ -1506,7 +1506,7 @@ static char *matching_paren(char *p)
 
 /* evaluates line, and returns answer in result */
 static void eval_expr(char *line, char *result, void *go, struct script_data *sc,
-               trig_data *trig, int type)
+  trig_data *trig, int type)
 {
   char expr[MAX_INPUT_LENGTH], *p;
 
@@ -1516,7 +1516,7 @@ static void eval_expr(char *line, char *result, void *go, struct script_data *sc
   if (eval_lhs_op_rhs(line, result, go, sc, trig, type));
 
   else if (*line == '(') {
-    strcpy(expr, line);
+    strlcpy(expr, line, MAX_INPUT_LENGTH);
     p = matching_paren(expr);
     *p = '\0';
     eval_expr(expr + 1, result, go, sc, trig, type);
@@ -1528,7 +1528,7 @@ static void eval_expr(char *line, char *result, void *go, struct script_data *sc
 
 /* Evaluates expr if it is in the form lhs op rhs, and copies answer in result.
  * Returns 1 if expr is evaluated, else 0. */
-static int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc,
+static int eval_lhs_op_rhs(char *expr, char *result, void *go, struct script_data *sc, // Valgrind -- ==9269==  Uninitialised value was created by a stack allocation
                     trig_data *trig, int type)
 {
   char *p, *tokens[MAX_INPUT_LENGTH];
@@ -2402,7 +2402,7 @@ static void extract_value(struct script_data *sc, trig_data *trig, char *cmd)
 
   buf3 = any_one_arg(cmd, buf);
   half_chop(buf3, buf2, buf);
-  strcpy(to, buf2);
+  strlcpy(to, buf2, sizeof(to));
 
   num = atoi(buf);
   if (num < 1) {
@@ -2594,25 +2594,25 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
     } else if (!strn_cmp("done", p, 4)) {
       /* if in a while loop, cl->original is non-NULL */
       if (cl->original) {
-      char *orig_cmd = cl->original->cmd;
-      while (*orig_cmd && isspace(*orig_cmd)) orig_cmd++;
-      if (cl->original && process_if(orig_cmd + 6, go, sc, trig,
+        char *orig_cmd = cl->original->cmd;
+        while (*orig_cmd && isspace(*orig_cmd)) orig_cmd++;
+        if (cl->original && process_if(orig_cmd + 6, go, sc, trig,
           type)) {
-        cl = cl->original;
-        loops++;
-        GET_TRIG_LOOPS(trig)++;
-        if (loops == 30) {
-          process_wait(go, trig, type, "wait 1", cl);
-           depth--;
-          return ret_val;
-        }
+          cl = cl->original;
+          loops++;
+          GET_TRIG_LOOPS(trig)++;
+          if (loops == 30) {
+            process_wait(go, trig, type, "wait 1", cl);
+            depth--;
+            return ret_val;
+          }
           if (GET_TRIG_LOOPS(trig) >= 100) {
-          script_log("Trigger VNum %d has looped 100 times!!!",
-            GET_TRIG_VNUM(trig));
+            script_log("Trigger VNum %d has looped 100 times!!!",
+              GET_TRIG_VNUM(trig));
             break;
           }
         } else {
-         /* if we're falling through a switch statement, this ends it. */
+          /* if we're falling through a switch statement, this ends it. */
         }
       }
     } else if (!strn_cmp("break", p, 5)) {

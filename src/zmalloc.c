@@ -265,7 +265,7 @@ char *zstrdup(const char *src, char *file, int line)
   result = (char*)zmalloc(strlen(src) + 1, file, line);
   if (!result)
     return NULL;
-  strcpy(result, src);
+  strcpy(result, src); /* strcpy ok, size checked above */
   return result;
 #else
   result = (char*)malloc(strlen(src) + 1);
@@ -366,7 +366,7 @@ int main()
 
 /* Multiple frees test */
   tmp = (unsigned char*)malloc(200);
-  strcpy(tmp, "This should show up in the dump but truncated to MAX_ZDUMP_SIZE chars");
+  strcpy(tmp, "This should show up in the dump but truncated to MAX_ZDUMP_SIZE chars");  /* strcpy safe: Allocated above*/
   free(tmp);
   free(tmp);
 
@@ -376,7 +376,7 @@ int main()
 
 /* Unfreed mem test... You should see "UNfreed mem at line 370" (at end) because of this */
   tmp = (unsigned char*)malloc(200);
-  strcpy(tmp, "This is unfreed memory!");
+  strcpy(tmp, "This is unfreed memory!");  /* strcpy safe: Allocated above*/
 
 /* Buffer overrun test... You should see an ERR:endPad here */
   tmp = (unsigned char*)malloc(200);

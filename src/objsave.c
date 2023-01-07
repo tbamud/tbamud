@@ -66,8 +66,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
   }
 
   if (obj->action_description) {
-
-    strcpy(buf1, obj->action_description);
+    strlcpy(buf1, obj->action_description, MAX_STRING_LENGTH);
     strip_cr(buf1);
   } else
     *buf1 = 0;
@@ -141,7 +140,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
         if (!*ex_desc->keyword || !*ex_desc->description) {
           continue;
         }
-        strcpy(buf1, ex_desc->description);
+        strlcpy(buf1, ex_desc->description, MAX_STRING_LENGTH);
         strip_cr(buf1);
         fprintf(fp, "EDes:\n"
                  "%s~\n"
@@ -311,7 +310,8 @@ int Crash_delete_crashfile(struct char_data *ch)
 
 int Crash_clean_file(char *name)
 {
-  char filename[MAX_INPUT_LENGTH], filetype[20];
+  int FILETYPE_LENGTH = 20;
+  char filename[MAX_INPUT_LENGTH], filetype[FILETYPE_LENGTH];
   int numread;
   FILE *fl;
   int rentcode, timed, netcost, gold, account, nitems;
@@ -342,16 +342,16 @@ int Crash_clean_file(char *name)
       Crash_delete_file(name);
       switch (rentcode) {
       case RENT_CRASH:
-        strcpy(filetype, "crash");
+        strlcpy(filetype, "crash", FILETYPE_LENGTH);
         break;
       case RENT_FORCED:
-        strcpy(filetype, "forced rent");
+        strlcpy(filetype, "forced rent", FILETYPE_LENGTH);
         break;
       case RENT_TIMEDOUT:
-        strcpy(filetype, "idlesave");
+        strlcpy(filetype, "idlesave", FILETYPE_LENGTH);
         break;
       default:
-        strcpy(filetype, "UNKNOWN!");
+        strlcpy(filetype, "UNKNOWN!", FILETYPE_LENGTH);
         break;
       }
       log("    Deleting %s's %s file.", name, filetype);
@@ -793,7 +793,7 @@ static int Crash_report_unrentables(struct char_data *ch, struct char_data *rece
   if (obj) {
     if (Crash_is_unrentable(obj)) {
       has_norents = 1;
-      sprintf(buf, "$n tells you, 'You cannot store %s.'", OBJS(obj, ch));
+      snprintf(buf, sizeof(buf), "$n tells you, 'You cannot store %s.'", OBJS(obj, ch));
       act(buf, FALSE, recep, 0, ch, TO_VICT);
     }
     has_norents += Crash_report_unrentables(ch, recep, obj->contains);
@@ -812,7 +812,7 @@ static void Crash_report_rent(struct char_data *ch, struct char_data *recep, str
       (*nitems)++;
       *cost += MAX(0, (GET_OBJ_RENT(obj) * factor));
       if (display) {
-        sprintf(buf, "$n tells you, '%5d coins for %s..'",
+        snprintf(buf, sizeof(buf), "$n tells you, '%5d coins for %s..'",
                 (GET_OBJ_RENT(obj) * factor), OBJS(obj, ch));
         act(buf, FALSE, recep, 0, ch, TO_VICT);
       }
@@ -849,16 +849,16 @@ static int Crash_offer_rent(struct char_data *ch, struct char_data *recep,
     return FALSE;
   }
   if (numitems > CONFIG_MAX_OBJ_SAVE) {
-    sprintf(buf, "$n tells you, 'Sorry, but I cannot store more than %d items.'",
+    snprintf(buf, MAX_INPUT_LENGTH, "$n tells you, 'Sorry, but I cannot store more than %d items.'",
         CONFIG_MAX_OBJ_SAVE);
     act(buf, FALSE, recep, 0, ch, TO_VICT);
     return FALSE;
   }
   if (display) {
-    sprintf(buf, "$n tells you, 'Plus, my %d coin fee..'",
+    snprintf(buf, MAX_INPUT_LENGTH, "$n tells you, 'Plus, my %d coin fee..'",
         CONFIG_MIN_RENT_COST * factor);
     act(buf, FALSE, recep, 0, ch, TO_VICT);
-    sprintf(buf, "$n tells you, 'For a total of %ld coins%s.'",
+    snprintf(buf, MAX_INPUT_LENGTH, "$n tells you, 'For a total of %ld coins%s.'",
             totalcost, (factor == RENT_FACTOR ? " per day" : ""));
     act(buf, FALSE, recep, 0, ch, TO_VICT);
     if (totalcost > GET_GOLD(ch) + GET_BANK_GOLD(ch)) {
@@ -1212,7 +1212,7 @@ static int Crash_load_objs(struct char_data *ch) {
     sscanf(line,"%d %d %d %d %d %d",&rentcode, &timed, &netcost,&gold,&account,&nitems);
 
   if (rentcode == RENT_RENTED || rentcode == RENT_TIMEDOUT) {
-    sprintf(str, "%d", SECS_PER_REAL_DAY);
+    snprintf(str, sizeof(str), "%d", SECS_PER_REAL_DAY);
     num_of_days = (int)((float) (time(0) - timed) / atoi(str));
     cost = (unsigned int) (netcost * num_of_days);
     if (cost > (unsigned int)GET_GOLD(ch) + (unsigned int)GET_BANK_GOLD(ch)) {

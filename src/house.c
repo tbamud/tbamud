@@ -326,15 +326,15 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
     if (house_control[i].built_on) {
       strftime(built_on, sizeof(built_on), "%a %b %d %Y", localtime(&(house_control[i].built_on)));
     } else
-      strcpy(built_on, "Unknown"); /* strcpy: OK */
+      strlcpy(built_on, "Unknown", sizeof(built_on));
 
     if (house_control[i].last_payment) {
       strftime(last_pay, sizeof(last_pay), "%a %b %d %Y", localtime(&(house_control[i].last_payment)));
     } else
-      strcpy(last_pay, "None");	/* strcpy: OK */
+      strlcpy(last_pay, "None", sizeof(last_pay));
 
     /* Now we need a copy of the owner's name to capitalize. -gg 6/21/98 */
-    strcpy(own_name, temp);	/* strcpy: OK (names guaranteed <= MAX_NAME_LENGTH+1) */
+    strlcpy(own_name, temp, MAX_NAME_LENGTH);
     send_to_char(ch, "%7d %7d  %-15s    %2d    %-12s %s\r\n",
 	    house_control[i].vnum, house_control[i].atrium, built_on,
 	    house_control[i].num_of_guests, CAP(own_name), last_pay);

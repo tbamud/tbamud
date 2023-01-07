@@ -758,7 +758,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
         increase_gold(victim, happy_gold);
       }
       local_gold = GET_GOLD(victim);
-      sprintf(local_buf,"%ld", (long)local_gold);
+      snprintf(local_buf, sizeof(local_buf), "%ld", (long)local_gold);
     }
 
     die(victim, ch);

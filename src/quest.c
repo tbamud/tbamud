@@ -648,7 +648,7 @@ static void quest_show(struct char_data *ch, mob_vnum qm)
     send_to_char(ch, "There are no quests available here at the moment.\r\n");
 }
 
-static void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
+static void quest_stat(struct char_data *ch, char *argument)
 {
   qst_rnum rnum;
   mob_rnum qmrnum;
@@ -764,30 +764,30 @@ ACMD(do_quest)
                      quest_mort_usage : quest_imm_usage);
   else {
     switch (tp) {
-      case SCMD_QUEST_LIST:
-      case SCMD_QUEST_JOIN:
-        /* list, join should hve been handled by questmaster spec proc */
-        send_to_char(ch, "Sorry, but you cannot do that here!\r\n");
-        break;
-      case SCMD_QUEST_HISTORY:
-        quest_hist(ch);
-        break;
-      case SCMD_QUEST_LEAVE:
-        quest_quit(ch);
-        break;
-      case SCMD_QUEST_PROGRESS:
- quest_progress(ch);
- break;
-      case SCMD_QUEST_STATUS:
-        if (GET_LEVEL(ch) < LVL_IMMORT)
-          send_to_char(ch, "%s\r\n", quest_mort_usage);
-        else
-          quest_stat(ch, arg2);
-        break;
-      default: /* Whe should never get here, but... */
-        send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
-                     quest_mort_usage : quest_imm_usage);
- break;
+    case SCMD_QUEST_LIST:
+    case SCMD_QUEST_JOIN:
+      /* list, join should hve been handled by questmaster spec proc */
+      send_to_char(ch, "Sorry, but you cannot do that here!\r\n");
+      break;
+    case SCMD_QUEST_HISTORY:
+      quest_hist(ch);
+      break;
+    case SCMD_QUEST_LEAVE:
+      quest_quit(ch);
+      break;
+    case SCMD_QUEST_PROGRESS:
+      quest_progress(ch);
+      break;
+    case SCMD_QUEST_STATUS:
+      if (GET_LEVEL(ch) < LVL_IMMORT)
+        send_to_char(ch, "%s\r\n", quest_mort_usage);
+      else
+        quest_stat(ch, arg2);
+      break;
+    default: /* Whe should never get here, but... */
+      send_to_char(ch, "%s\r\n", GET_LEVEL(ch) < LVL_IMMORT ?
+        quest_mort_usage : quest_imm_usage);
+      break;
     } /* switch on subcmd number */
   }
 }

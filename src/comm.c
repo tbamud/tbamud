@@ -446,7 +446,7 @@ void copyover_recover()
     memset ((char *) d, 0, sizeof (struct descriptor_data));
     init_descriptor (d,desc); /* set up various stuff */
 
-    strcpy(d->host, host);
+    strlcpy(d->host, host, HOST_LENGTH);
     d->next = descriptor_list;
     descriptor_list = d;
 
@@ -1134,7 +1134,7 @@ static char *make_prompt(struct descriptor_data *d)
       "[ Return to continue, (q)uit, (r)efresh, (b)ack, or page number (%d/%d) ]",
       d->showstr_page, d->showstr_count);
   else if (d->str)
-    strcpy(prompt, "] ");	/* strcpy: OK (for 'MAX_PROMPT_LENGTH >= 3') */
+    strlcpy(prompt, "] ", MAX_PROMPT_LENGTH);
   else if (STATE(d) == CON_PLAYING && !IS_NPC(d->character)) {
     int count;
     size_t len = 0;
@@ -1302,7 +1302,7 @@ size_t vwrite_to_output(struct descriptor_data *t, const char *format, va_list a
 
   wantsize = size = vsnprintf(txt, sizeof(txt), format, args);
 
-  strcpy(txt, ProtocolOutput( t, txt, (int*)&wantsize )); /* <--- Add this line */
+  strlcpy(txt, ProtocolOutput( t, txt, (int*)&wantsize ), MAX_STRING_LENGTH); /* <--- Add this line */
   size = wantsize;                    /* <--- Add this line */
   if ( t->pProtocol->WriteOOB > 0 )   /* <--- Add this line */
     --t->pProtocol->WriteOOB;         /* <--- Add this line */
@@ -1830,7 +1830,7 @@ static ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space
  * above, 'tmp' lost the '+8' since it doesn't need it and the code has been
  * changed to reserve space by accepting one less character. (Do you really
  * need 256 characters on a line?) -gg 1/21/2000 */
-static int process_input(struct descriptor_data *t)
+static int process_input(struct descriptor_data* t)
 {
   int buf_length, failed_subst;
   ssize_t bytes_read;
@@ -1838,7 +1838,7 @@ static int process_input(struct descriptor_data *t)
   char *ptr, *read_point, *write_point, *nl_pos = NULL;
   char tmp[MAX_INPUT_LENGTH];
   static char read_buf[MAX_PROTOCOL_BUFFER] = { '\0' }; /* KaVir's plugin */
-  
+
   /* first, find the point where we left off reading data */
   buf_length = strlen(t->inbuf);
   read_point = t->inbuf + buf_length;
@@ -1856,9 +1856,9 @@ static int process_input(struct descriptor_data *t)
       read_buf[bytes_read] = '\0';
 
     /* Since we have recieved atleast 1 byte of data from the socket, lets run it through
-     * ProtocolInput() and rip out anything that is Out Of Band */ 
-    if ( bytes_read > 0 )
-      bytes_read = ProtocolInput( t, read_buf, bytes_read, t->inbuf );
+     * ProtocolInput() and rip out anything that is Out Of Band */
+    if (bytes_read > 0)
+      bytes_read = ProtocolInput(t, read_buf, bytes_read, t->inbuf);
 
     if (bytes_read < 0)	/* Error, disconnect them. */
       return (-1);
@@ -1871,30 +1871,30 @@ static int process_input(struct descriptor_data *t)
     /* search for a newline in the data we just read */
     for (ptr = read_point; *ptr && !nl_pos; ptr++)
       if (ISNEWL(*ptr))
-	      nl_pos = ptr;
+        nl_pos = ptr;
 
     read_point += bytes_read;
     space_left -= bytes_read;
 
-/* on some systems such as AIX, POSIX-standard nonblocking I/O is broken,
- * causing the MUD to hang when it encounters input not terminated by a
- * newline.  This was causing hangs at the Password: prompt, for example.
- * I attempt to compensate by always returning after the _first_ read, instead
- * of looping forever until a read returns -1.  This simulates non-blocking
- * I/O because the result is we never call read unless we know from select()
- * that data is ready (process_input is only called if select indicates that
- * this descriptor is in the read set).  JE 2/23/95. */
-#if !defined(POSIX_NONBLOCK_BROKEN)
-  } while (nl_pos == NULL);
-#else
-  } while (0);
+    /* on some systems such as AIX, POSIX-standard nonblocking I/O is broken,
+     * causing the MUD to hang when it encounters input not terminated by a
+     * newline.  This was causing hangs at the Password: prompt, for example.
+     * I attempt to compensate by always returning after the _first_ read, instead
+     * of looping forever until a read returns -1.  This simulates non-blocking
+     * I/O because the result is we never call read unless we know from select()
+     * that data is ready (process_input is only called if select indicates that
+     * this descriptor is in the read set).  JE 2/23/95. */
 
-  if (nl_pos == NULL)
+  #if !defined(POSIX_NONBLOCK_BROKEN)
+  } while (nl_pos == NULL);
+  #else
+  } while (0);
+    if (nl_pos == NULL)
     return (0);
-#endif /* POSIX_NONBLOCK_BROKEN */
+  #endif /* POSIX_NONBLOCK_BROKEN */
 
   /* okay, at this point we have at least one newline in the string; now we
-   * can copy the formatted data to a new array for further processing. */
+  * can copy the formatted data to a new array for further processing. */
 
   read_point = t->inbuf;
 
@@ -1905,19 +1905,19 @@ static int process_input(struct descriptor_data *t)
     /* The '> 1' reserves room for a '$ => $$' expansion. */
     for (ptr = read_point; (space_left > 1) && (ptr < nl_pos); ptr++) {
       if (*ptr == '\b' || *ptr == 127) { /* handle backspacing or delete key */
-	if (write_point > tmp) {
-	  if (*(--write_point) == '$') {
-	    write_point--;
-	    space_left += 2;
-	  } else
-	    space_left++;
-	}
+        if (write_point > tmp) {
+          if (*(--write_point) == '$') {
+            write_point--;
+            space_left += 2;
+          } else
+            space_left++;
+        }
       } else if (isascii(*ptr) && isprint(*ptr)) {
-	if ((*(write_point++) = *ptr) == '$') {		/* copy one character */
-	  *(write_point++) = '$';	/* if it's a $, double it */
-	  space_left -= 2;
-	} else
-	  space_left--;
+        if ((*(write_point++) = *ptr) == '$') {		/* copy one character */
+          *(write_point++) = '$';	/* if it's a $, double it */
+          space_left -= 2;
+        } else
+          space_left--;
       }
     }
 
@@ -1928,7 +1928,7 @@ static int process_input(struct descriptor_data *t)
 
       snprintf(buffer, sizeof(buffer), "Line too long.  Truncated to:\r\n%s\r\n", tmp);
       if (write_to_descriptor(t->descriptor, buffer) < 0)
-	return (-1);
+        return (-1);
     }
     if (t->snoop_by)
       write_to_output(t->snoop_by, "%% %s\r\n", tmp);
@@ -1939,38 +1939,38 @@ static int process_input(struct descriptor_data *t)
     else if (*tmp == '!' && *(tmp + 1)) {
       char *commandln = (tmp + 1);
       int starting_pos = t->history_pos,
-	  cnt = (t->history_pos == 0 ? HISTORY_SIZE - 1 : t->history_pos - 1);
+        cnt = (t->history_pos == 0 ? HISTORY_SIZE - 1 : t->history_pos - 1);
 
       skip_spaces(&commandln);
       for (; cnt != starting_pos; cnt--) {
-	if (t->history[cnt] && is_abbrev(commandln, t->history[cnt])) {
-	  strcpy(tmp, t->history[cnt]);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
-	  strcpy(t->last_input, tmp);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
+        if (t->history[cnt] && is_abbrev(commandln, t->history[cnt])) {
+          strcpy(tmp, t->history[cnt]);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
+          strcpy(t->last_input, tmp);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
           write_to_output(t, "%s\r\n", tmp);
-	  break;
-	}
+          break;
+        }
         if (cnt == 0)	/* At top, loop to bottom. */
-	  cnt = HISTORY_SIZE;
+          cnt = HISTORY_SIZE;
       }
     } else if (*tmp == '^') {
       if (!(failed_subst = perform_subst(t, t->last_input, tmp)))
-	strcpy(t->last_input, tmp);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
+        strcpy(t->last_input, tmp);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
     } else {
       strcpy(t->last_input, tmp);	/* strcpy: OK (by mutual MAX_INPUT_LENGTH) */
       if (t->history[t->history_pos])
-	free(t->history[t->history_pos]);	/* Clear the old line. */
+        free(t->history[t->history_pos]);	/* Clear the old line. */
       t->history[t->history_pos] = strdup(tmp);	/* Save the new. */
       if (++t->history_pos >= HISTORY_SIZE)	/* Wrap to top. */
-	t->history_pos = 0;
+        t->history_pos = 0;
     }
 
-   /* The '--' command flushes the queue. */
-   if ( (*tmp == '-') && (*(tmp+1) == '-') && !(*(tmp+2)) )
-   {
-     write_to_output(t, "All queued commands cancelled.\r\n");
-     flush_queues(t);  /* Flush the command queue */
-     failed_subst = 1;  /* Allow the read point to be moved, but don't add to queue */
-   }
+    /* The '--' command flushes the queue. */
+    if ((*tmp == '-') && (*(tmp + 1) == '-') && !(*(tmp + 2)))
+    {
+      write_to_output(t, "All queued commands cancelled.\r\n");
+      flush_queues(t);  /* Flush the command queue */
+      failed_subst = 1;  /* Allow the read point to be moved, but don't add to queue */
+    }
 
     if (!failed_subst)
       write_to_q(tmp, &t->input, 0);
@@ -1983,13 +1983,13 @@ static int process_input(struct descriptor_data *t)
     read_point = ptr = nl_pos;
     for (nl_pos = NULL; *ptr && !nl_pos; ptr++)
       if (ISNEWL(*ptr))
-	nl_pos = ptr;
+        nl_pos = ptr;
   }
 
   /* now move the rest of the buffer up to the beginning for the next pass */
   write_point = t->inbuf;
   while (*read_point)
-    *(write_point++) = *(read_point++);
+  *(write_point++) = *(read_point++);
   *write_point = '\0';
 
   return (1);
@@ -2348,7 +2348,7 @@ void game_info(const char *format, ...)
   char messg[MAX_STRING_LENGTH];
   if (format == NULL)
     return;
-  sprintf(messg, "\tcInfo: \ty");
+  snprintf(messg, MAX_STRING_LENGTH, "\tcInfo: \ty");
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING)
       continue;
@@ -2669,7 +2669,7 @@ char *act(const char *str, int hide_invisible, struct char_data *ch,
           !PLR_FLAGGED(i->character, PLR_WRITING) &&
           !ROOM_FLAGGED(IN_ROOM(i->character), ROOM_SOUNDPROOF)) {
 
-        sprintf(buf, "%s%s%s", CCYEL(i->character, C_NRM), str, CCNRM(i->character, C_NRM));
+        snprintf(buf, MAX_STRING_LENGTH, "%s%s%s", CCYEL(i->character, C_NRM), str, CCNRM(i->character, C_NRM));
         perform_act(buf, ch, obj, vict_obj, i->character);
       }
     }

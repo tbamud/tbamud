@@ -220,27 +220,27 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
               soc_mess_list[i].min_victim_position,
               soc_mess_list[i].min_level_char);
               
-      sprintf(buf, "%s\n%s\n%s\n%s\n",
+      snprintf(buf, MAX_STRING_LENGTH, "%s\n%s\n%s\n%s\n",
               ((soc_mess_list[i].char_no_arg)?soc_mess_list[i].char_no_arg:"#"),
               ((soc_mess_list[i].others_no_arg)?soc_mess_list[i].others_no_arg:"#"),
               ((soc_mess_list[i].char_found)?soc_mess_list[i].char_found:"#"),
               ((soc_mess_list[i].others_found)?soc_mess_list[i].others_found:"#"));
       fprintf(fp, "%s", convert_from_tabs(buf));
       
-      sprintf(buf, "%s\n%s\n%s\n%s\n",
+      snprintf(buf, MAX_STRING_LENGTH, "%s\n%s\n%s\n%s\n",
               ((soc_mess_list[i].vict_found)?soc_mess_list[i].vict_found:"#"),
               ((soc_mess_list[i].not_found)?soc_mess_list[i].not_found:"#"),
               ((soc_mess_list[i].char_auto)?soc_mess_list[i].char_auto:"#"),
               ((soc_mess_list[i].others_auto)?soc_mess_list[i].others_auto:"#"));
       fprintf(fp, "%s", convert_from_tabs(buf));
       
-      sprintf(buf, "%s\n%s\n%s\n",
+      snprintf(buf, MAX_STRING_LENGTH, "%s\n%s\n%s\n",
               ((soc_mess_list[i].char_body_found)?soc_mess_list[i].char_body_found:"#"),
               ((soc_mess_list[i].others_body_found)?soc_mess_list[i].others_body_found:"#"),
               ((soc_mess_list[i].vict_body_found)?soc_mess_list[i].vict_body_found:"#"));
       fprintf(fp, "%s", convert_from_tabs(buf));
       
-      sprintf(buf, "%s\n%s\n\n",
+      snprintf(buf, MAX_STRING_LENGTH, "%s\n%s\n\n",
               ((soc_mess_list[i].char_obj_found)?soc_mess_list[i].char_obj_found:"#"),
               ((soc_mess_list[i].others_obj_found)?soc_mess_list[i].others_obj_found:"#"));
       fprintf(fp, "%s", convert_from_tabs(buf));
@@ -557,7 +557,8 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       }
       if (OLC_ACTION(d)->command)
         free(OLC_ACTION(d)->command);
-        OLC_ACTION(d)->command = strdup(arg);
+        
+      OLC_ACTION(d)->command = strdup(arg);
 
       break;
 

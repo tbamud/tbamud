@@ -40,9 +40,9 @@ void free_varlist(struct trig_var_data *vd)
     struct trig_var_data *i, *j;
 
     for (i = vd; i;) {
-	j = i;
-	i = i->next;
-	free_var_el(j);
+      j = i;
+      i = i->next;
+      free_var_el(j);
     }
 }
 
@@ -52,7 +52,7 @@ int remove_var(struct trig_var_data **var_list, char *name)
   struct trig_var_data *i, *j;
 
   for (j = NULL, i = *var_list; i && str_cmp(name, i->name);
-       j = i, i = i->next);
+    j = i, i = i->next);
 
   if (i) {
     if (j) {
@@ -229,29 +229,29 @@ void copy_proto_script(void *source, void *dest, int type)
   struct trig_proto_list *tp_src = NULL, *tp_dst = NULL;
 
   switch (type) {
-    case MOB_TRIGGER:
-      tp_src = ((char_data *)source)->proto_script;
-      break;
-    case OBJ_TRIGGER:
-      tp_src = ((obj_data *)source)->proto_script;
-      break;
-    case WLD_TRIGGER:
-      tp_src = ((room_data *)source)->proto_script;
-      break;
+  case MOB_TRIGGER:
+    tp_src = ((char_data *)source)->proto_script;
+    break;
+  case OBJ_TRIGGER:
+    tp_src = ((obj_data *)source)->proto_script;
+    break;
+  case WLD_TRIGGER:
+    tp_src = ((room_data *)source)->proto_script;
+    break;
   }
 
   if (tp_src) {
     CREATE(tp_dst, struct trig_proto_list, 1);
     switch (type) {
-      case MOB_TRIGGER:
-        ((char_data *)dest)->proto_script = tp_dst;
-        break;
-      case OBJ_TRIGGER:
-        ((obj_data *)dest)->proto_script = tp_dst;
-        break;
-      case WLD_TRIGGER:
-        ((room_data *)dest)->proto_script = tp_dst;
-        break;
+    case MOB_TRIGGER:
+      ((char_data *)dest)->proto_script = tp_dst;
+      break;
+    case OBJ_TRIGGER:
+      ((obj_data *)dest)->proto_script = tp_dst;
+      break;
+    case WLD_TRIGGER:
+      ((room_data *)dest)->proto_script = tp_dst;
+      break;
     }
 
     while (tp_src) {

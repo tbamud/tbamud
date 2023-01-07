@@ -35,10 +35,10 @@ char *any_one_name(char *argument, char *first_arg)
     argument++;
 
   /* Find length of first word */
-  for(arg = first_arg ;
-    *argument && !isspace(*argument) && (!ispunct(*argument) || *argument == '#' || *argument == '-') ;
-  arg++, argument++)
-  *arg = LOWER(*argument);
+  for (arg = first_arg;
+       *argument && !isspace(*argument) && (!ispunct(*argument) || *argument == '#' || *argument == '-');
+       arg++, argument++)
+    *arg = LOWER(*argument);
   *arg = '\0';
 
   return argument;
@@ -49,7 +49,7 @@ static void sub_write_to_char(char_data *ch, char *tokens[], void *otokens[], ch
   char sb[MAX_STRING_LENGTH];
   int i;
 
-  strcpy(sb,"");
+  strlcpy(sb,"", MAX_STRING_LENGTH);
 
   for (i = 0; tokens[i + 1]; i++) {
     strcat(sb,tokens[i]);
@@ -180,10 +180,9 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets)
     sub_write_to_char(ch, tokens, otokens, type);
 
   if (IS_SET(targets, TO_ROOM))
-    for (to = world[IN_ROOM(ch)].people;
-      to; to = to->next_in_room)
-    if (to != ch && SENDOK(to))
-      sub_write_to_char(to, tokens, otokens, type);
+    for (to = world[IN_ROOM(ch)].people; to; to = to->next_in_room)
+      if (to != ch && SENDOK(to))
+        sub_write_to_char(to, tokens, otokens, type);
 }
 
 void send_to_zone(char *messg, zone_rnum zone)

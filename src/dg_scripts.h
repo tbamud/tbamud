@@ -443,7 +443,7 @@ void wld_command_interpreter(room_data *room, char *argument);
 * and obj_script_id().
 */
 #define ADD_UID_VAR(buf, trig, id, name, context) do { \
-		         sprintf(buf, "%c%ld", UID_CHAR, id); \
+		         snprintf(buf, sizeof(buf), "%c%ld", UID_CHAR, id); \
                          add_var(&GET_TRIG_VARS(trig), name, buf, context); } while (0)
 
 // id helpers

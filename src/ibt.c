@@ -239,15 +239,15 @@ void load_ibt_file(int mode)
    IBT_DATA *ibtData, *first_ibt, *last_ibt;
 
    switch(mode) {
-     case SCMD_BUG : sprintf( filename, "%s",BUGS_FILE );
+     case SCMD_BUG : snprintf( filename, MAX_INPUT_LENGTH, "%s",BUGS_FILE );
                      first_ibt = first_bug;
                      last_ibt  = last_bug;
                      break;
-     case SCMD_IDEA: sprintf( filename, "%s",IDEAS_FILE );
+     case SCMD_IDEA: snprintf( filename, MAX_INPUT_LENGTH, "%s",IDEAS_FILE );
                      first_ibt = first_idea;
                      last_ibt  = last_idea;
                      break;
-     case SCMD_TYPO: sprintf( filename, "%s",TYPOS_FILE );
+     case SCMD_TYPO: snprintf( filename, MAX_INPUT_LENGTH, "%s",TYPOS_FILE );
                      first_ibt = first_typo;
                      last_ibt  = last_typo;
                      break;
@@ -288,13 +288,13 @@ void save_ibt_file(int mode)
    char filename[256];
 
    switch(mode) {
-     case SCMD_BUG : sprintf( filename, "%s",BUGS_FILE );
+     case SCMD_BUG : snprintf( filename, sizeof(filename), "%s",BUGS_FILE );
                      first_ibt = first_bug;
                      break;
-     case SCMD_IDEA: sprintf( filename, "%s",IDEAS_FILE );
+     case SCMD_IDEA: snprintf( filename, sizeof(filename), "%s",IDEAS_FILE );
                      first_ibt = first_idea;
                      break;
-     case SCMD_TYPO: sprintf( filename, "%s",TYPOS_FILE );
+     case SCMD_TYPO: snprintf( filename, sizeof(filename), "%s",TYPOS_FILE );
                      first_ibt = first_typo;
                      break;
      default       : log("SYSERR: Invalid mode (%d) in save_ibt_file", mode);
@@ -447,7 +447,7 @@ static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch)
 ACMD(do_ibt)
 {
   char arg[MAX_STRING_LENGTH], arg2[MAX_STRING_LENGTH];
-  char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[128];
+  char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[129];
   int i, num_res, num_unres;
   size_t len = 0;
   IBT_DATA *ibtData, *first_ibt;
@@ -514,7 +514,7 @@ ACMD(do_ibt)
         if (ibtData->dated != 0) {
           strftime(timestr, sizeof(timestr), "%c", localtime(&(ibtData->dated)));
         } else {
-          strcpy(timestr, "Unknown");
+          strlcpy(timestr, "Unknown", sizeof(timestr));
         }
         send_to_char(ch, "%sSubmitted: %s%s\r\n", QCYN, QYEL, timestr);
         if (GET_LEVEL(ch) >= LVL_IMMORT) {
@@ -560,9 +560,9 @@ ACMD(do_ibt)
 
         /* Set up the 'important' flag */
         if (IBT_FLAGGED(ibtData, IBT_IMPORTANT))
-          sprintf(imp, "%s!%s", QBFRED, QNRM);
+          snprintf(imp, sizeof(imp), "%s!%s", QBFRED, QNRM);
         else
-          sprintf(imp, "%c", ' ');
+          snprintf(imp, sizeof(imp), "%c", ' ');
 
         if (IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
@@ -655,7 +655,7 @@ ACMD(do_ibt)
     send_to_char(ch, "Write your %s.\r\n", CMD_NAME);
     send_editor_help(ch->desc);
 
-    sprintf(buf, "$n starts to give %s %s.", TANA(CMD_NAME), CMD_NAME);
+    snprintf(buf, MAX_STRING_LENGTH, "$n starts to give %s %s.", TANA(CMD_NAME), CMD_NAME);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
 
     string_write(ch->desc, &(ibtData->body),MAX_IBT_LENGTH, 0, NULL);

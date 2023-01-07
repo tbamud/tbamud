@@ -676,7 +676,7 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
   int num_of_tokens = 0, num;
 
   /* First, parse the original string */
-  strcpy(buf2, orig);	/* strcpy: OK (orig:MAX_INPUT_LENGTH < buf2:MAX_RAW_INPUT_LENGTH) */
+  strlcpy(buf2, orig, MAX_RAW_INPUT_LENGTH);
   temp = strtok(buf2, " ");
   while (temp != NULL && num_of_tokens < NUM_TOKENS) {
     tokens[num_of_tokens++] = temp;
@@ -697,14 +697,14 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
     } else if (*temp == ALIAS_VAR_CHAR) {
       temp++;
       if ((num = *temp - '1') < num_of_tokens && num >= 0) {
-	strcpy(write_point, tokens[num]);	/* strcpy: OK */
-	write_point += strlen(tokens[num]);
+        strlcpy(write_point, tokens[num], MAX_RAW_INPUT_LENGTH - strlen(write_point));
+        write_point += strlen(tokens[num]);
       } else if (*temp == ALIAS_GLOB_CHAR) {
         skip_spaces(&orig);
-        strcpy(write_point, orig);		/* strcpy: OK */
-	write_point += strlen(orig);
+        strlcpy(write_point, orig, MAX_RAW_INPUT_LENGTH - strlen(write_point));
+        write_point += strlen(orig);
       } else if ((*(write_point++) = *temp) == '$')	/* redouble $ for act safety */
-	*(write_point++) = '$';
+        *(write_point++) = '$';
     } else
       *(write_point++) = *temp;
   }
@@ -1615,34 +1615,35 @@ void nanny(struct descriptor_data *d, char *arg)
     } else
       GET_CLASS(d->character) = load_result;
 
-      if (d->olc) {
-        free(d->olc);
-        d->olc = NULL;
-      }
-      if (GET_PFILEPOS(d->character) < 0)
+    if (d->olc) {
+      free(d->olc);
+      d->olc = NULL;
+    }
+    if (GET_PFILEPOS(d->character) < 0)
       GET_PFILEPOS(d->character) = create_entry(GET_PC_NAME(d->character));
+
     /* Now GET_NAME() will work properly. */
     init_char(d->character);
     save_char(d->character);
     save_player_index();
     write_to_output(d, "%s\r\n*** PRESS RETURN: ", motd);
     STATE(d) = CON_RMOTD;
+
     /* make sure the last log is updated correctly. */
-    GET_PREF(d->character)= rand_number(1, 128000);
-    GET_HOST(d->character)= strdup(d->host);
+    GET_PREF(d->character) = rand_number(1, 128000);
+    GET_HOST(d->character) = strdup(d->host);
 
     mudlog(NRM, LVL_GOD, TRUE, "%s [%s] new player.", GET_NAME(d->character), d->host);
 
     /* Add to the list of 'recent' players (since last reboot) */
     if (AddRecentPlayer(GET_NAME(d->character), d->host, TRUE, FALSE) == FALSE)
-    {
       mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE, "Failure to AddRecentPlayer (returned FALSE).");
-    }
+    
     break;
 
   case CON_RMOTD:		/* read CR after printing motd   */
     write_to_output(d, "%s", CONFIG_MENU);
-    if (IS_HAPPYHOUR > 0){
+    if (IS_HAPPYHOUR > 0) {
       write_to_output(d, "\r\n");
       write_to_output(d, "\tyThere is currently a Happyhour!\tn\r\n");
       write_to_output(d, "\r\n");

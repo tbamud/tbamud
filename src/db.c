@@ -1286,7 +1286,7 @@ void parse_room(FILE *fl, int virtual_nr)
 
   if (!get_line(fl, line)) {
     log("SYSERR: Expecting roomflags/sector type of room #%d but file ended!",
-	virtual_nr);
+      virtual_nr);
     exit(1);
   }
 
@@ -1307,17 +1307,17 @@ void parse_room(FILE *fl, int virtual_nr)
     /* In the old-style files, the 3rd item was the sector-type */
     world[room_nr].sector_type = atoi(flags2);
 
-   sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
+    sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
 
     /* No need to scan the other three sections; they're 0 anyway. */
     check_bitvector_names(world[room_nr].room_flags[0], room_bits_count, flags, "room");
 
-    if(bitsavetodisk) { /* Maybe the implementor just wants to look at the 128bit files */
+    if (bitsavetodisk) { /* Maybe the implementor just wants to look at the 128bit files */
       add_to_save_list(zone_table[real_zone_by_thing(virtual_nr)].number, 3);
       converting = TRUE;
     }
 
-  log("   done.");
+    log("   done.");
   } else if (retval == 6) {
     int taeller;
 
@@ -1327,15 +1327,15 @@ void parse_room(FILE *fl, int virtual_nr)
     world[room_nr].room_flags[3] = asciiflag_conv(flags4);
 
     sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
-    for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
+    for (taeller = 0; taeller < AF_ARRAY_MAX; taeller++)
       check_bitvector_names(world[room_nr].room_flags[taeller], room_bits_count, flags, "room");
 
     /* Added Sanity check */
     if (t[2] > NUM_ROOM_SECTORS) t[2] = SECT_INSIDE;
 
     world[room_nr].sector_type = t[2];
-    } else {
-      log("SYSERR: Format error in roomflags/sector type of room #%d", virtual_nr);
+  } else {
+    log("SYSERR: Format error in roomflags/sector type of room #%d", virtual_nr);
     exit(1);
   }
 
@@ -1373,7 +1373,7 @@ void parse_room(FILE *fl, int virtual_nr)
       /* DG triggers -- script is defined after the end of the room */
       letter = fread_letter(fl);
       ungetc(letter, fl);
-      while (letter=='T') {
+      while (letter == 'T') {
         dg_read_trigger(fl, &world[room_nr], WLD_TRIGGER);
         letter = fread_letter(fl);
         ungetc(letter, fl);
@@ -2279,7 +2279,8 @@ void free_help_table(void)
 
 void load_help(FILE * fl, char *name)
 {
-  char key[READ_SIZE + 1], next_key[READ_SIZE + 1], entry[32384];
+  int ENTRY_LENGTH = 32384;
+  char key[READ_SIZE + 1], next_key[READ_SIZE + 1], entry[ENTRY_LENGTH];
   size_t entrylen;
   char line[READ_SIZE + 1], hname[READ_SIZE + 1], *scan;
   struct help_index_element el;
@@ -2297,7 +2298,7 @@ void load_help(FILE * fl, char *name)
       entrylen += strlcpy(entry + entrylen, line, sizeof(entry) - entrylen);
 
       if (entrylen + 2 < sizeof(entry) - 1) {
-        strcpy(entry + entrylen, "\r\n"); /* strcpy: OK (size checked above) */
+        strlcpy(entry + entrylen, "\r\n", ENTRY_LENGTH - entrylen);
         entrylen += 2;
       }
       get_one_line(fl, line);
@@ -2307,7 +2308,7 @@ void load_help(FILE * fl, char *name)
       int keysize;
       const char *truncmsg = "\r\n*TRUNCATED*\r\n";
 
-      strcpy(entry + sizeof(entry) - strlen(truncmsg) - 1, truncmsg); /* strcpy: OK (assuming sane 'entry' size) */
+      strlcpy(entry + sizeof(entry) - strlen(truncmsg) - 1, truncmsg, ENTRY_LENGTH - entrylen);
 
       keysize = strlen(key) - 2;
       log("SYSERR: Help entry exceeded buffer space: %.*s", keysize, key);

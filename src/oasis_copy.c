@@ -338,7 +338,7 @@ int buildwalk(struct char_data *ch, int dir)
 
       OLC_ROOM(d)->name = strdup("New BuildWalk Room");
 
-      sprintf(buf, "This unfinished room was created by %s.\r\n", GET_NAME(ch));
+      snprintf(buf, MAX_INPUT_LENGTH, "This unfinished room was created by %s.\r\n", GET_NAME(ch));
       OLC_ROOM(d)->description = strdup(buf);
       OLC_ROOM(d)->zone = OLC_ZNUM(d);
       OLC_ROOM(d)->number = NOWHERE;

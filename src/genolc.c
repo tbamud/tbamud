@@ -341,7 +341,7 @@ ACMD(do_export_zone)
   /* If we fail, it might just be because the directory didn't exist.  Can't 
    * hurt to try again. Do it silently though ( no logs ). */ 
   if (!export_info_file(zrnum)) { 
-    sprintf(sysbuf, "mkdir %s", path);
+    snprintf(sysbuf, MAX_INPUT_LENGTH, "mkdir %s", path);
     errorcode = system(sysbuf);
   } 
   if (errorcode) {

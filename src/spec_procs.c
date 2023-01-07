@@ -117,7 +117,7 @@ void list_skills(struct char_data *ch)
     }
   }
   if (len >= sizeof(buf2))
-    strcpy(buf2 + sizeof(buf2) - strlen(overflow) - 1, overflow); /* strcpy: OK */
+    strlcpy(buf2 + sizeof(buf2) - strlen(overflow) - 1, overflow, MAX_STRING_LENGTH - len);
 
   page_string(ch->desc, buf2, TRUE);
 }

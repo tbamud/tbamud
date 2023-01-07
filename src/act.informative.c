@@ -486,7 +486,7 @@ ACMD(do_exits)
 
 void look_at_room(struct char_data *ch, int ignore_brief)
 {
-  trig_data * t;
+  trig_data *t;
   struct room_data *rm = &world[IN_ROOM(ch)];
   room_vnum target_room;
 
@@ -495,22 +495,20 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   if (!ch->desc)
     return;
 
-  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)){
+  if (IS_DARK(IN_ROOM(ch)) && !CAN_SEE_IN_DARK(ch)) {
     send_to_char(ch, "It is pitch black...\r\n");
     return;
-  }
-  else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
+  } else if (AFF_FLAGGED(ch, AFF_BLIND) && GET_LEVEL(ch) < LVL_IMMORT) {
     send_to_char(ch, "You see nothing but infinite darkness...\r\n");
     return;
   }
-
-  send_to_char(ch, "%s", CCYEL(ch, C_NRM));
+  send_to_char(ch, "%s", CCCYN(ch, C_NRM));
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS)) {
     char buf[MAX_STRING_LENGTH];
 
     sprintbitarray(ROOM_FLAGS(IN_ROOM(ch)), room_bits, RF_ARRAY_MAX, buf);
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
-    send_to_char(ch, "%s[ %s][ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
+    send_to_char(ch, "%s [ %s] [ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
 
     if (SCRIPT(rm)) {
       send_to_char(ch, "[T");
@@ -518,26 +516,26 @@ void look_at_room(struct char_data *ch, int ignore_brief)
         send_to_char(ch, " %d", GET_TRIG_VNUM(t));
       send_to_char(ch, "]");
     }
-  }
-  else
+  } else
     send_to_char(ch, "%s", world[IN_ROOM(ch)].name);
-  	send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
+    
+  send_to_char(ch, "%s\r\n", CCNRM(ch, C_NRM));
 
-  	if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
-    	ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
-    	if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
-      	str_and_map(world[target_room].description, ch, target_room);
-  	}
+  if ((!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_BRIEF)) || ignore_brief ||
+    ROOM_FLAGGED(IN_ROOM(ch), ROOM_DEATH)) {
+    if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOMAP) && can_see_map(ch))
+      str_and_map(world[target_room].description, ch, target_room);
+    else
+      send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
+  }
 
-  	send_to_char(ch, "%s", world[IN_ROOM(ch)].description);
+  /* autoexits */
+  if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
+    do_auto_exits(ch);
 
-  	/*autoexits */
-  	if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOEXIT))
-    	do_auto_exits(ch);
-
-  	/*now list characters &objects */
-  	list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
-  	list_char_to_char(world[IN_ROOM(ch)].people, ch);
+  /* now list characters & objects */
+  list_obj_to_char(world[IN_ROOM(ch)].contents, ch, SHOW_OBJ_LONG, FALSE);
+  list_char_to_char(world[IN_ROOM(ch)].people, ch);
 }
 
 static void look_in_direction(struct char_data *ch, int dir)
@@ -730,9 +728,9 @@ ACMD(do_look)
 
     if (subcmd == SCMD_READ) {
       if (!*arg)
-	send_to_char(ch, "Read what?\r\n");
+        send_to_char(ch, "Read what?\r\n");
       else
-	look_at_target(ch, strcpy(tempsave, arg));
+        look_at_target(ch, strcpy(tempsave, arg)); /* strcpy: OK */
       return;
     }
     if (!*arg)			/* "look" alone, without an argument at all */
@@ -743,21 +741,21 @@ ACMD(do_look)
     else if ((look_type = search_block(arg, dirs, FALSE)) >= 0)
       look_in_direction(ch, look_type);
     else if (is_abbrev(arg, "at"))
-      look_at_target(ch, strcpy(tempsave, arg2));
+      look_at_target(ch, strcpy(tempsave, arg2)); /* strcpy: OK */
     else if (is_abbrev(arg, "around")) {
       struct extra_descr_data *i;
 
       for (i = world[IN_ROOM(ch)].ex_description; i; i = i->next) {
         if (*i->keyword != '.') {
           send_to_char(ch, "%s%s:\r\n%s",
-          (found ? "\r\n" : ""), i->keyword, i->description);
+            (found ? "\r\n" : ""), i->keyword, i->description);
           found = 1;
         }
       }
       if (!found)
-         send_to_char(ch, "You couldn't find anything noticeable.\r\n");
+        send_to_char(ch, "You couldn't find anything noticeable.\r\n");
     } else
-      look_at_target(ch, strcpy(tempsave, arg));
+      look_at_target(ch, strcpy(tempsave, arg)); /* strcpy: OK */
   }
 }
 
@@ -1376,6 +1374,7 @@ ACMD(do_users)
   int low = 0, high = LVL_IMPL, num_can_see = 0;
   int showclass = 0, outlaws = 0, playing = 0, deadweight = 0;
   char buf[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
+  size_t len = 0;
 
   host_search[0] = name_search[0] = '\0';
 
@@ -1389,39 +1388,39 @@ ACMD(do_users)
       switch (mode) {
       case 'o':
       case 'k':
-	outlaws = 1;
-	playing = 1;
-	strcpy(buf, buf1);	/* strcpy: OK (sizeof: buf1 == buf) */
-	break;
+        outlaws = 1;
+        playing = 1;
+        strcpy(buf, buf1);	/* strcpy: OK (sizeof: buf1 == buf) */
+        break;
       case 'p':
-	playing = 1;
-	strcpy(buf, buf1);	/* strcpy: OK (sizeof: buf1 == buf) */
-	break;
+        playing = 1;
+        strcpy(buf, buf1);	/* strcpy: OK (sizeof: buf1 == buf) */
+        break;
       case 'd':
-	deadweight = 1;
-	strcpy(buf, buf1);	/* strcpy: OK (sizeof: buf1 == buf) */
-	break;
+        deadweight = 1;
+        strcpy(buf, buf1);	/* strcpy: OK (sizeof: buf1 == buf) */
+        break;
       case 'l':
-	playing = 1;
-	half_chop(buf1, arg, buf);
-	sscanf(arg, "%d-%d", &low, &high);
-	break;
+        playing = 1;
+        half_chop(buf1, arg, buf);
+        sscanf(arg, "%d-%d", &low, &high);
+        break;
       case 'n':
-	playing = 1;
-	half_chop(buf1, name_search, buf);
-	break;
+        playing = 1;
+        half_chop(buf1, name_search, buf);
+        break;
       case 'h':
-	playing = 1;
-	half_chop(buf1, host_search, buf);
-	break;
+        playing = 1;
+        half_chop(buf1, host_search, buf);
+        break;
       case 'c':
-	playing = 1;
-	half_chop(buf1, arg, buf);
-	showclass = find_class_bitvector(arg);
-	break;
+        playing = 1;
+        half_chop(buf1, arg, buf);
+        showclass = find_class_bitvector(arg);
+        break;
       default:
-	send_to_char(ch, "%s", USERS_FORMAT);
-	return;
+        send_to_char(ch, "%s", USERS_FORMAT);
+        return;
       }				/* end of switch */
 
     } else {			/* endif */
@@ -1430,8 +1429,8 @@ ACMD(do_users)
     }
   }				/* end while (parser) */
   send_to_char(ch,
-	 "Num Class   Name         State          Idl   Login\t*   Site\r\n"
-	 "--- ------- ------------ -------------- ----- -------- ------------------------\r\n");
+    "Num Class   Name         State          Idl   Login\t*   Site\r\n"
+    "--- ------- ------------ -------------- ----- -------- ------------------------\r\n");
 
   one_argument(argument, arg);
 
@@ -1453,7 +1452,7 @@ ACMD(do_users)
       if (!CAN_SEE(ch, tch) || GET_LEVEL(tch) < low || GET_LEVEL(tch) > high)
         continue;
       if (outlaws && !PLR_FLAGGED(tch, PLR_KILLER) &&
-	  !PLR_FLAGGED(tch, PLR_THIEF))
+        !PLR_FLAGGED(tch, PLR_THIEF))
         continue;
       if (showclass && !(showclass & (1 << GET_CLASS(tch))))
         continue;
@@ -1461,41 +1460,41 @@ ACMD(do_users)
         continue;
 
       if (d->original)
-	sprintf(classname, "[%2d %s]", GET_LEVEL(d->original),
-		CLASS_ABBR(d->original));
+        snprintf(classname, sizeof(classname), "[%2d %s]", GET_LEVEL(d->original),
+          CLASS_ABBR(d->original));
       else
-	sprintf(classname, "[%2d %s]", GET_LEVEL(d->character),
-		CLASS_ABBR(d->character));
+        snprintf(classname, sizeof(classname), "[%2d %s]", GET_LEVEL(d->character),
+          CLASS_ABBR(d->character));
     } else
-      strcpy(classname, "   -   ");
+      strlcpy(classname, "   -   ", sizeof(classname));
 
     strftime(timestr, sizeof(timestr), "%H:%M:%S", localtime(&(d->login_time)));
 
     if (STATE(d) == CON_PLAYING && d->original)
-      strcpy(state, "Switched");
+      strlcpy(state, "Switched", sizeof(state));
     else
-      strcpy(state, connected_types[STATE(d)]);
+      strlcpy(state, connected_types[STATE(d)], sizeof(state));
 
     if (d->character && STATE(d) == CON_PLAYING)
-      sprintf(idletime, "%5d", d->character->char_specials.timer *
-	      SECS_PER_MUD_HOUR / SECS_PER_REAL_MIN);
+      snprintf(idletime, sizeof(idletime), "%5d", d->character->char_specials.timer *
+        SECS_PER_MUD_HOUR / SECS_PER_REAL_MIN);
     else
-      strcpy(idletime, "     ");
+      strlcpy(idletime, "     ", sizeof(idletime));
 
-    sprintf(line, "%3d %-7s %-12s %-14s %-3s %-8s ", d->desc_num, classname,
-	d->original && d->original->player.name ? d->original->player.name :
-	d->character && d->character->player.name ? d->character->player.name :
-	"UNDEFINED",
-	state, idletime, timestr);
+    snprintf(line, sizeof(line), "%3d %-7s %-12s %-14s %-3s %-8s ", d->desc_num, classname,
+      d->original && d->original->player.name ? d->original->player.name :
+      d->character && d->character->player.name ? d->character->player.name :
+      "UNDEFINED",
+      state, idletime, timestr);
 
     if (*d->host)
-      sprintf(line + strlen(line), "[%s]\r\n", d->host);
+      len = snprintf(line + strlen(line), sizeof(line) - len, "[%s]\r\n", d->host);
     else
-      strcat(line, "[Hostname unknown]\r\n");
+      strncat(line, "[Hostname unknown]\r\n", sizeof(line));
 
     if (STATE(d) != CON_PLAYING) {
-      sprintf(line2, "%s%s%s", CCGRN(ch, C_SPR), line, CCNRM(ch, C_SPR));
-      strcpy(line, line2);
+      snprintf(line2, sizeof(line2), "%s%s%s", CCGRN(ch, C_SPR), line, CCNRM(ch, C_SPR));
+      strlcpy(line, line2, sizeof(line));
     }
     if (STATE(d) != CON_PLAYING || (STATE(d) == CON_PLAYING && CAN_SEE(ch, d->character))) {
       send_to_char(ch, "%s", line);
@@ -1835,7 +1834,7 @@ ACMD(do_toggle)
   int toggle, tp, wimp_lev, result = 0, len = 0, i;
   const char *types[] = { "off", "brief", "normal", "on", "\n" };
 
-    const struct {
+  const struct {
     char *command;
     bitvector_t toggle; /* this needs changing once hashmaps are implemented */
     char min_level;
@@ -1945,18 +1944,18 @@ ACMD(do_toggle)
 
   if (!*arg) {
     if (!GET_WIMP_LEV(ch))
-      strcpy(buf2, "OFF");        /* strcpy: OK */
+      strlcpy(buf2, "OFF", sizeof(buf2));
     else
-      sprintf(buf2, "%-3.3d", GET_WIMP_LEV(ch));  /* sprintf: OK */
+      snprintf(buf2, sizeof(buf2), "%-3.3d", GET_WIMP_LEV(ch));  /* sprintf: OK */
 
-	if (GET_LEVEL(ch) == LVL_IMPL) {
+    if (GET_LEVEL(ch) == LVL_IMPL) {
       send_to_char(ch,
         " SlowNameserver: %-3s   "
-	"                        "
-	" Trackthru Doors: %-3s\r\n",
+        "                        "
+        " Trackthru Doors: %-3s\r\n",
 
-	ONOFF(CONFIG_NS_IS_SLOW),
-	ONOFF(CONFIG_TRACK_T_DOORS));
+        ONOFF(CONFIG_NS_IS_SLOW),
+        ONOFF(CONFIG_TRACK_T_DOORS));
     }
 
     if (GET_LEVEL(ch) >= LVL_IMMORT) {
@@ -1984,78 +1983,78 @@ ACMD(do_toggle)
         ONOFF(PRF_FLAGGED(ch, PRF_ZONERESETS)));
     }
 
-  send_to_char(ch,
-    "Hit Pnt Display: %-3s    "
-    "          Brief: %-3s    "
-    "     Summonable: %-3s\r\n"
+    send_to_char(ch,
+      "Hit Pnt Display: %-3s    "
+      "          Brief: %-3s    "
+      "     Summonable: %-3s\r\n"
 
-    "   Move Display: %-3s    "
-    "        Compact: %-3s    "
-    "          Quest: %-3s\r\n"
+      "   Move Display: %-3s    "
+      "        Compact: %-3s    "
+      "          Quest: %-3s\r\n"
 
-    "   Mana Display: %-3s    "
-    "         NoTell: %-3s    "
-    "       NoRepeat: %-3s\r\n"
+      "   Mana Display: %-3s    "
+      "         NoTell: %-3s    "
+      "       NoRepeat: %-3s\r\n"
 
-    "      AutoExits: %-3s    "
-    "        NoShout: %-3s    "
-    "          Wimpy: %-3s\r\n"
+      "      AutoExits: %-3s    "
+      "        NoShout: %-3s    "
+      "          Wimpy: %-3s\r\n"
 
-    "       NoGossip: %-3s    "
-    "      NoAuction: %-3s    "
-    "        NoGrats: %-3s\r\n"
+      "       NoGossip: %-3s    "
+      "      NoAuction: %-3s    "
+      "        NoGrats: %-3s\r\n"
 
-    "       AutoLoot: %-3s    "
-    "       AutoGold: %-3s    "
-    "      AutoSplit: %-3s\r\n"
+      "       AutoLoot: %-3s    "
+      "       AutoGold: %-3s    "
+      "      AutoSplit: %-3s\r\n"
 
-    "        AutoSac: %-3s    "
-    "     AutoAssist: %-3s    "
-    "        AutoMap: %-3s\r\n"
+      "        AutoSac: %-3s    "
+      "     AutoAssist: %-3s    "
+      "        AutoMap: %-3s\r\n"
 
-    "     Pagelength: %-3d    "
-    "    Screenwidth: %-3d    "
-    "            AFK: %-3s\r\n"
+      "     Pagelength: %-3d    "
+      "    Screenwidth: %-3d    "
+      "            AFK: %-3s\r\n"
 
-    "        Autokey: %-3s    "
-    "       Autodoor: %-3s    "
-    "          Color: %s     \r\n ",
+      "        Autokey: %-3s    "
+      "       Autodoor: %-3s    "
+      "          Color: %s     \r\n ",
 
-    ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
-    ONOFF(PRF_FLAGGED(ch, PRF_BRIEF)),
-    ONOFF(PRF_FLAGGED(ch, PRF_SUMMONABLE)),
+      ONOFF(PRF_FLAGGED(ch, PRF_DISPHP)),
+      ONOFF(PRF_FLAGGED(ch, PRF_BRIEF)),
+      ONOFF(PRF_FLAGGED(ch, PRF_SUMMONABLE)),
 
-    ONOFF(PRF_FLAGGED(ch, PRF_DISPMOVE)),
-    ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)),
-    ONOFF(PRF_FLAGGED(ch, PRF_QUEST)),
+      ONOFF(PRF_FLAGGED(ch, PRF_DISPMOVE)),
+      ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)),
+      ONOFF(PRF_FLAGGED(ch, PRF_QUEST)),
 
-    ONOFF(PRF_FLAGGED(ch, PRF_DISPMANA)),
-    ONOFF(PRF_FLAGGED(ch, PRF_NOTELL)),
-    ONOFF(PRF_FLAGGED(ch, PRF_NOREPEAT)),
+      ONOFF(PRF_FLAGGED(ch, PRF_DISPMANA)),
+      ONOFF(PRF_FLAGGED(ch, PRF_NOTELL)),
+      ONOFF(PRF_FLAGGED(ch, PRF_NOREPEAT)),
 
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)),
-    ONOFF(PRF_FLAGGED(ch, PRF_NOSHOUT)),
-    buf2,
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)),
+      ONOFF(PRF_FLAGGED(ch, PRF_NOSHOUT)),
+      buf2,
 
-    ONOFF(PRF_FLAGGED(ch, PRF_NOGOSS)),
-    ONOFF(PRF_FLAGGED(ch, PRF_NOAUCT)),
-    ONOFF(PRF_FLAGGED(ch, PRF_NOGRATZ)),
+      ONOFF(PRF_FLAGGED(ch, PRF_NOGOSS)),
+      ONOFF(PRF_FLAGGED(ch, PRF_NOAUCT)),
+      ONOFF(PRF_FLAGGED(ch, PRF_NOGRATZ)),
 
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOLOOT)),
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOGOLD)),
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOSPLIT)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOLOOT)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOGOLD)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOSPLIT)),
 
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOSAC)),
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOASSIST)),
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOMAP)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOSAC)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOASSIST)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOMAP)),
 
-    GET_PAGE_LENGTH(ch),
-    GET_SCREEN_WIDTH(ch),
-    ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
+      GET_PAGE_LENGTH(ch),
+      GET_SCREEN_WIDTH(ch),
+      ONOFF(PRF_FLAGGED(ch, PRF_AFK)),
 
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTOKEY)),
-    ONOFF(PRF_FLAGGED(ch, PRF_AUTODOOR)),
-    types[COLOR_LEV(ch)]);
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTOKEY)),
+      ONOFF(PRF_FLAGGED(ch, PRF_AUTODOOR)),
+      types[COLOR_LEV(ch)]);
     return;
   }
 
@@ -2117,18 +2116,18 @@ ACMD(do_toggle)
     }
     result = PRF_TOG_CHK(ch, PRF_BUILDWALK);
     if (PRF_FLAGGED(ch, PRF_BUILDWALK)) {
-      for (i=0; *arg2 && *(sector_types[i]) != '\n'; i++)
+      for (i = 0; *arg2 && *(sector_types[i]) != '\n'; i++)
         if (is_abbrev(arg2, sector_types[i]))
           break;
       if (*(sector_types[i]) == '\n')
-        i=0;
+        i = 0;
       GET_BUILDWALK_SECTOR(ch) = i;
       send_to_char(ch, "Default sector type is %s\r\n", sector_types[i]);
       mudlog(CMP, GET_LEVEL(ch), TRUE,
-             "OLC: %s turned buildwalk on.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
+        "OLC: %s turned buildwalk on.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     } else
       mudlog(CMP, GET_LEVEL(ch), TRUE,
-             "OLC: %s turned buildwalk off.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
+        "OLC: %s turned buildwalk off.  Allowed zone %d", GET_NAME(ch), GET_OLC_ZONE(ch));
     break;
   case SCMD_AFK:
     if ((result = PRF_TOG_CHK(ch, PRF_AFK)))
@@ -2328,7 +2327,7 @@ void add_history(struct char_data *ch, char *str, int type)
   ct = time(0);
   strftime(time_str, sizeof(time_str), "%H:%M ", localtime(&ct));
 
-  sprintf(buf, "%s%s", time_str, str);
+  snprintf(buf, MAX_STRING_LENGTH, "%s%s", time_str, str);
 
   if (!tmp) {
     CREATE(GET_HISTORY(ch, type), struct txt_block, 1);
@@ -2444,25 +2443,25 @@ ACMD(do_whois)
     free_char (victim);
 }
 
-static bool get_zone_levels(zone_rnum znum, char *buf)
+static bool get_zone_levels(zone_rnum znum, char *buf, ssize_t len)
 {
   /* Create a string for the level restrictions for this zone. */
   if ((zone_table[znum].min_level == -1) && (zone_table[znum].max_level == -1)) {
-    sprintf(buf, "<Not Set!>");
+    snprintf(buf, len, "<Not Set!>");
     return FALSE;
   }
 
   if (zone_table[znum].min_level == -1) {
-    sprintf(buf, "Up to level %d", zone_table[znum].max_level);
+    snprintf(buf, len, "Up to level %d", zone_table[znum].max_level);
     return TRUE;
   }
 
   if (zone_table[znum].max_level == -1) {
-    sprintf(buf, "Above level %d", zone_table[znum].min_level);
+    snprintf(buf, len, "Above level %d", zone_table[znum].min_level);
     return TRUE;
   }
 
-  sprintf(buf, "Levels %d to %d", zone_table[znum].min_level, zone_table[znum].max_level);
+  snprintf(buf, len, "Levels %d to %d", zone_table[znum].min_level, zone_table[znum].max_level);
   return TRUE;
 }
 
@@ -2539,7 +2538,7 @@ ACMD(do_areas)
 
     if (show_zone) {
       if (overlap) overlap_shown = TRUE;
-      lev_set = get_zone_levels(i, lev_str);
+      lev_set = get_zone_levels(i, lev_str, MAX_INPUT_LENGTH);
       tmp_len = snprintf(buf+len, sizeof(buf)-len, "\tn(%3d) %s%-*s\tn %s%s\tn\r\n", ++zcount, overlap ? QRED : QCYN,
                  count_color_chars(zone_table[i].name)+30, zone_table[i].name,
                  lev_set ? "\tc" : "\tn", lev_set ? lev_str : "All Levels");

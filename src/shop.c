@@ -520,10 +520,10 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
 
     switch (SHOP_BROKE_TEMPER(shop_nr)) {
     case 0:
-      do_action(keeper, strcpy(actbuf, GET_NAME(ch)), cmd_puke, 0);	/* strcpy: OK (MAX_NAME_LENGTH < MAX_INPUT_LENGTH) */
+      do_action(keeper, strlcpy(actbuf, GET_NAME(ch), MAX_INPUT_LENGTH), cmd_puke, 0);
       return;
     case 1:
-      do_echo(keeper, strcpy(actbuf, "smokes on his joint."), cmd_emote, SCMD_EMOTE);	/* strcpy: OK */
+      do_echo(keeper, strlcpy(actbuf, "smokes on his joint.", MAX_INPUT_LENGTH), cmd_emote, SCMD_EMOTE);	/* strcpy: OK */
       return;
     default:
       return;
@@ -838,13 +838,12 @@ static void shopping_value(char *arg, struct char_data *ch, struct char_data *ke
 static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr, struct char_data *keeper, struct char_data *ch)
 {
   static char result[256];
-  char	itemname[128],
-	quantity[16];	/* "Unlimited" or "%d" */
+  char	itemname[128], quantity[16];	/* "Unlimited" or "%d" */
 
   if (shop_producing(obj, shop_nr))
-    strcpy(quantity, "Unlimited");	/* strcpy: OK (for 'quantity >= 10') */
+    strlcpy(quantity, "Unlimited", sizeof(quantity));
   else
-    sprintf(quantity, "%d", cnt);	/* sprintf: OK (for 'quantity >= 11', 32-bit int) */
+    snprintf(quantity, sizeof(quantity), "%d", cnt);	/* sprintf: OK (for 'quantity >= 11', 32-bit int) */
 
   switch (GET_OBJ_TYPE(obj)) {
   case ITEM_DRINKCON:
@@ -1321,14 +1320,14 @@ static void list_all_shops(struct char_data *ch)
        */
       if (len + headerlen + 1 >= sizeof(buf))
         break;
-      strcpy(buf + len, list_all_shops_header);	/* strcpy: OK (length checked above) */
+      strlcpy(buf + len, list_all_shops_header, MAX_STRING_LENGTH - len);
       len += headerlen;
     }
 
     if (SHOP_KEEPER(shop_nr) == NOBODY)
-      strcpy(buf1, "<NONE>");	/* strcpy: OK (for 'buf1 >= 7') */
+      strlcpy(buf1, "<NONE>", sizeof(buf1));
     else
-      sprintf(buf1, "%6d", mob_index[SHOP_KEEPER(shop_nr)].vnum);	/* sprintf: OK (for 'buf1 >= 11', 32-bit int) */
+      snprintf(buf1, sizeof(buf1), "%6d", mob_index[SHOP_KEEPER(shop_nr)].vnum);	/* sprintf: OK (for 'buf1 >= 11', 32-bit int) */
 
     len += snprintf(buf + len, sizeof(buf) - len,
         "%3d   %6d   %6d    %s   %3.2f   %3.2f    %s\r\n",

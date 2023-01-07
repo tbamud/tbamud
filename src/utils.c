@@ -272,11 +272,11 @@ void mudlog(int type, int level, int file, const char *str, ...)
   if (level < 0)
     return;
 
-  strcpy(buf, "[ ");	/* strcpy: OK */
+  strlcpy(buf, "[ ", MAX_STRING_LENGTH);
   va_start(args, str);
   vsnprintf(buf + 2, sizeof(buf) - 6, str, args);
   va_end(args);
-  strcat(buf, " ]\r\n");	/* strcat: OK */
+  strncat(buf, " ]\r\n", MAX_STRING_LENGTH);
 
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING || IS_NPC(i->character)) /* switch */
@@ -1485,7 +1485,7 @@ char * convert_from_tabs(char * string)
 {
   static char buf[MAX_STRING_LENGTH * 8];
   
-  strcpy(buf, string);
+  strlcpy(buf, string, MAX_STRING_LENGTH * 8);
   parse_tab(buf);
   return(buf);
 }

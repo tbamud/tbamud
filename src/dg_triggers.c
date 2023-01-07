@@ -31,61 +31,61 @@
 /* Copy first phrase into first_arg, returns rest of string. */
 char *one_phrase(char *arg, char *first_arg)
 {
-    skip_spaces(&arg);
+  skip_spaces(&arg);
 
-    if (!*arg)
-        *first_arg = '\0';
+  if (!*arg)
+    *first_arg = '\0';
 
-    else if (*arg == '"')
-    {
-        char *p, c;
+  else if (*arg == '"')
+  {
+    char *p, c;
 
-        p = matching_quote(arg);
-        c = *p;
-        *p = '\0';
-        strcpy(first_arg, arg + 1);
-        if (c == '\0')
-            return p;
-        else
-            return p + 1;
-    }
-
+    p = matching_quote(arg);
+    c = *p;
+    *p = '\0';
+    strcpy(first_arg, arg + 1);
+    if (c == '\0')
+      return p;
     else
-    {
-        char *s, *p;
+      return p + 1;
+  }
 
-        s = first_arg;
-        p = arg;
+  else
+  {
+    char *s, *p;
 
-        while (*p && !isspace(*p) && *p != '"')
-            *s++ = *p++;
+    s = first_arg;
+    p = arg;
 
-        *s = '\0';
-        return p;
-    }
+    while (*p && !isspace(*p) && *p != '"')
+      *s++ = *p++;
 
-    return arg;
+    *s = '\0';
+    return p;
+  }
+
+  return arg;
 }
 
 int is_substring(char *sub, char *string)
 {
-    char *s;
+  char *s;
 
-    if ((s = str_str(string, sub)))
-    {
-        int len = strlen(string);
-        int sublen = strlen(sub);
+  if ((s = str_str(string, sub)))
+  {
+    int len = strlen(string);
+    int sublen = strlen(sub);
 
-        /* check front */
-        if ((s == string || isspace(*(s - 1)) || ispunct(*(s - 1))) &&
+    /* check front */
+    if ((s == string || isspace(*(s - 1)) || ispunct(*(s - 1))) &&
 
-            /* check end */
-            ((s + sublen == string + len) || isspace(s[sublen]) ||
-             ispunct(s[sublen])))
-            return 1;
-    }
+      /* check end */
+      ((s + sublen == string + len) || isspace(s[sublen]) ||
+        ispunct(s[sublen])))
+      return 1;
+  }
 
-    return 0;
+  return 0;
 }
 
 /* Return 1 if str contains a word or phrase from wordlist. Phrases are in
@@ -93,17 +93,17 @@ int is_substring(char *sub, char *string)
  * return 0. */
 int word_check(char *str, char *wordlist)
 {
-    char words[MAX_INPUT_LENGTH], phrase[MAX_INPUT_LENGTH], *s;
+  char words[MAX_INPUT_LENGTH], phrase[MAX_INPUT_LENGTH], *s;
 
-    if (*wordlist=='*') return 1;
+  if (*wordlist == '*') return 1;
 
-    strcpy(words, wordlist);
+  strlcpy(words, wordlist, MAX_INPUT_LENGTH);
 
-    for (s = one_phrase(words, phrase); *phrase; s = one_phrase(s, phrase))
-        if (is_substring(phrase, str))
-            return 1;
+  for (s = one_phrase(words, phrase); *phrase; s = one_phrase(s, phrase))
+    if (is_substring(phrase, str))
+      return 1;
 
-    return 0;
+  return 0;
 }
 
 /*Mob triggers. */
@@ -201,7 +201,7 @@ int greet_mtrigger(char_data *actor, int dir)
   trig_data *t;
   char_data *ch;
   char buf[MAX_INPUT_LENGTH];
-  int intermediate, final=TRUE;
+  int intermediate, final = TRUE;
   struct trig_data *next_trig;
 
   if (!valid_dg_target(actor, DG_ALLOW_GODS))
@@ -209,16 +209,16 @@ int greet_mtrigger(char_data *actor, int dir)
 
   for (ch = world[IN_ROOM(actor)].people; ch; ch = ch->next_in_room) {
     if (!SCRIPT_CHECK(ch, MTRIG_GREET | MTRIG_GREET_ALL) ||
-        !AWAKE(ch) || FIGHTING(ch) || (ch == actor) ||
-        AFF_FLAGGED(ch, AFF_CHARM))
+      !AWAKE(ch) || FIGHTING(ch) || (ch == actor) ||
+      AFF_FLAGGED(ch, AFF_CHARM))
       continue;
 
     for (t = TRIGGERS(SCRIPT(ch)); t; t = next_trig) {
-		next_trig = t->next;
-		if (((IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET) && CAN_SEE(ch, actor)) ||
-           IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET_ALL)) &&
-          !GET_TRIG_DEPTH(t) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
-        if (dir>=0 && dir < DIR_COUNT)
+      next_trig = t->next;
+      if (((IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET) && CAN_SEE(ch, actor)) ||
+        IS_SET(GET_TRIG_TYPE(t), MTRIG_GREET_ALL)) &&
+        !GET_TRIG_DEPTH(t) && (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
+        if (dir >= 0 && dir < DIR_COUNT)
           add_var(&GET_TRIG_VARS(t), "direction", dirs[rev_dir[dir]], 0);
         else
           add_var(&GET_TRIG_VARS(t), "direction", "none", 0);
@@ -243,16 +243,16 @@ void entry_memory_mtrigger(char_data *ch)
     return;
 
   for (actor = world[IN_ROOM(ch)].people; actor && SCRIPT_MEM(ch);
-       actor = actor->next_in_room) {
-    if (actor!=ch && SCRIPT_MEM(ch)) {
+    actor = actor->next_in_room) {
+    if (actor != ch && SCRIPT_MEM(ch)) {
       for (mem = SCRIPT_MEM(ch); mem && SCRIPT_MEM(ch); mem = mem->next) {
-        if (char_script_id(actor)==mem->id) {
+        if (char_script_id(actor) == mem->id) {
           struct script_memory *prev;
           if (mem->cmd) command_interpreter(ch, mem->cmd);
           else {
             for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
               if (TRIGGER_CHECK(t, MTRIG_MEMORY) && (rand_number(1, 100) <=
-                  GET_TRIG_NARG(t))){
+                GET_TRIG_NARG(t))) {
                 ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
                 script_driver(&ch, t, MOB_TRIGGER, TRIG_NEW);
                 break;
@@ -260,7 +260,7 @@ void entry_memory_mtrigger(char_data *ch)
             }
           }
           /* delete the memory */
-          if (SCRIPT_MEM(ch)==mem) {
+          if (SCRIPT_MEM(ch) == mem) {
             SCRIPT_MEM(ch) = mem->next;
           } else {
             prev = SCRIPT_MEM(ch);
@@ -544,7 +544,7 @@ int cast_mtrigger(char_data *actor, char_data *ch, int spellnum)
     if (TRIGGER_CHECK(t, MTRIG_CAST) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
-      sprintf(buf, "%d", spellnum);
+      snprintf(buf, MAX_INPUT_LENGTH, "%d", spellnum);
       add_var(&GET_TRIG_VARS(t), "spell", buf, 0);
       add_var(&GET_TRIG_VARS(t), "spellname", skill_name(spellnum), 0);
       return script_driver(&ch, t, MOB_TRIGGER, TRIG_NEW);
@@ -624,7 +624,7 @@ void time_mtrigger(char_data *ch)
   for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
     if (TRIGGER_CHECK(t, MTRIG_TIME) &&
         (time_info.hours == GET_TRIG_NARG(t))) {
-      sprintf(buf, "%d", time_info.hours);
+      snprintf(buf, MAX_INPUT_LENGTH, "%d", time_info.hours);
       add_var(&GET_TRIG_VARS(t), "time", buf, 0);
       script_driver(&ch, t, MOB_TRIGGER, TRIG_NEW);
       break;
@@ -891,7 +891,7 @@ int cast_otrigger(char_data *actor, obj_data *obj, int spellnum)
     if (TRIGGER_CHECK(t, OTRIG_CAST) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
-      sprintf(buf, "%d", spellnum);
+      snprintf(buf, MAX_INPUT_LENGTH, "%d", spellnum);
       add_var(&GET_TRIG_VARS(t), "spell", buf, 0);
       add_var(&GET_TRIG_VARS(t), "spellname", skill_name(spellnum), 0);
       return script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
@@ -947,12 +947,12 @@ int consume_otrigger(obj_data *obj, char_data *actor, int cmd)
     if (TRIGGER_CHECK(t, OTRIG_CONSUME)) {
       ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
       switch (cmd) {
-              case OCMD_EAT:
-                add_var(&GET_TRIG_VARS(t), "command", "eat", 0);
-                break;
-              case OCMD_DRINK:
-                add_var(&GET_TRIG_VARS(t), "command", "drink", 0);
-                break;
+        case OCMD_EAT:
+          add_var(&GET_TRIG_VARS(t), "command", "eat", 0);
+          break;
+        case OCMD_DRINK:
+          add_var(&GET_TRIG_VARS(t), "command", "drink", 0);
+          break;
         case OCMD_QUAFF:
           add_var(&GET_TRIG_VARS(t), "command", "quaff", 0);
           break;
@@ -980,7 +980,7 @@ void time_otrigger(obj_data *obj)
   for (t = TRIGGERS(SCRIPT(obj)); t; t = t->next) {
     if (TRIGGER_CHECK(t, OTRIG_TIME) &&
         (time_info.hours == GET_TRIG_NARG(t))) {
-      sprintf(buf, "%d", time_info.hours);
+      snprintf(buf, MAX_INPUT_LENGTH, "%d", time_info.hours);
       add_var(&GET_TRIG_VARS(t), "time", buf, 0);
       script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
       break;
@@ -1161,7 +1161,7 @@ int cast_wtrigger(char_data *actor, char_data *vict, obj_data *obj, int spellnum
         ADD_UID_VAR(buf, t, char_script_id(vict), "victim", 0);
       if (obj)
         ADD_UID_VAR(buf, t, obj_script_id(obj), "object", 0);
-      sprintf(buf, "%d", spellnum);
+      snprintf(buf, MAX_INPUT_LENGTH, "%d", spellnum);
       add_var(&GET_TRIG_VARS(t), "spell", buf, 0);
       add_var(&GET_TRIG_VARS(t), "spellname", skill_name(spellnum), 0);
       return script_driver(&room, t, WLD_TRIGGER, TRIG_NEW);
@@ -1234,7 +1234,7 @@ void time_wtrigger(struct room_data *room)
   for (t = TRIGGERS(SCRIPT(room)); t; t = t->next) {
     if (TRIGGER_CHECK(t, WTRIG_TIME) &&
         (time_info.hours == GET_TRIG_NARG(t))) {
-      sprintf(buf, "%d", time_info.hours);
+      snprintf(buf, MAX_INPUT_LENGTH, "%d", time_info.hours);
       add_var(&GET_TRIG_VARS(t), "time", buf, 0);
       script_driver(&room, t, WLD_TRIGGER, TRIG_NEW);
       break;
