@@ -1830,7 +1830,7 @@ static ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space
  * above, 'tmp' lost the '+8' since it doesn't need it and the code has been
  * changed to reserve space by accepting one less character. (Do you really
  * need 256 characters on a line?) -gg 1/21/2000 */
-static int process_input(struct descriptor_data* t)
+static int process_input(struct descriptor_data *t)
 {
   int buf_length, failed_subst;
   ssize_t bytes_read;
