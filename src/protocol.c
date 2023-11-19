@@ -13,6 +13,11 @@
 #include <sys/types.h>
 #include "protocol.h"
 
+#ifdef _MSC_VER
+#include "telnet.h"
+#define alloca _alloca
+#endif
+
 /******************************************************************************
  The following section is for Diku/Merc derivatives.  Replace as needed.
  ******************************************************************************/
