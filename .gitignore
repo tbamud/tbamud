@@ -10,3 +10,6 @@ src/util/Makefile
 src/.accepted
 src/depend
 src/util/depend
+build/*
+!build/create_solution.bat
+!build/README.md
