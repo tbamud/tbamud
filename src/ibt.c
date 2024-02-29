@@ -177,6 +177,13 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
             }
             break;
 
+          case 'F':
+            if (!str_cmp(word, "Flags")) {
+              fMatch = TRUE;
+              fread_flags(fp, ibtData->flags, 4);
+            }
+            break;
+
           case 'I':
             TXT_KEY("IdNum", id_num, fread_line(fp));
             break;
