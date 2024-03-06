@@ -155,7 +155,7 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
 int main(int argc, char *argv[])
 {
   FILE *sfp, *nsfp;
-  char fn[256], part[256];
+  char fn[120], part[256];
   int result, index, i;
 
   if (argc < 2) {
@@ -173,20 +173,20 @@ int main(int argc, char *argv[])
       perror(fn);
     } else {
       if ((nsfp = fopen(fn, "w")) == NULL) {
-	printf("Error writing to %s.\n", fn);
-	continue;
+	      printf("Error writing to %s.\n", fn);
+	      continue;
       }
       printf("%s:\n", fn);
       result = boot_the_shops_conv(sfp, nsfp, fn);
       fclose(nsfp);
       fclose(sfp);
       if (result) {
-	sprintf(part, "mv %s.tmp %s", fn, fn);
-	i = system(part);
+	      sprintf(part, "mv %s.tmp %s", fn, fn);
+	      i = system(part);
       } else {
-	sprintf(part, "mv %s.tmp %s.bak", fn, fn);
-	i = system(part);
-	printf("Done!\n");
+	      sprintf(part, "mv %s.tmp %s.bak", fn, fn);
+	      i = system(part);
+	      printf("Done!\n");
       }
     }
   }
