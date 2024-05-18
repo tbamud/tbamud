@@ -1,4 +1,4 @@
-#include "test_handler.h"
+#include "test.handler.h"
 
 static void run_single_get_number_test(const char* input_param, const char *name_result, int number_result);
 
@@ -28,13 +28,6 @@ static void run_single_get_number_test(const char* input_param, const char *name
 /* Creating a test suite is pretty simple.  First, you'll need an
  * array of tests: */
 MunitTest handler_c_tests[] = {
-  {
-    (char*) "/get_number",
-    test_get_number,
-    NULL, // setup callback
-    NULL, // cleanup callback
-    MUNIT_TEST_OPTION_NONE,
-    NULL
-  },
+    STD_TEST("/get_number", test_get_number),
   { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 };

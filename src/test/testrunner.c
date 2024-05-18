@@ -1,8 +1,10 @@
 #include "testrunner.h"
-#include "test_handler.h"
+#include "test.handler.h"
+#include "test.act.item.h"
 
 static MunitSuite suites[] = { 
   { "/handler.c", handler_c_tests, NULL, 1, MUNIT_SUITE_OPTION_NONE }, 
+  { "/act.item.c", act_item_c_tests, NULL, 1, MUNIT_SUITE_OPTION_NONE }, 
   { NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 }; 
 
