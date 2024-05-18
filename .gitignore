@@ -71,3 +71,12 @@ lib/plrobjs/index
 /lib/etc/last
 # or mail
 lib/etc/plrmail
+
+# test object files, etc
+src/test/depend
+src/test/*.o
+src/test/testfile
+
+
+# ide etc.
+.vscode
