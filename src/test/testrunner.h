@@ -18,6 +18,10 @@
 #include "../quest.h"
 #include "../mud_event.h"
 #include "../munit/munit.h"
+#include <stdarg.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <cmocka.h>
 
 /**
  * Utility macro for defining tests.
@@ -29,5 +33,11 @@
  * This is a utility macro for the test suite listing.
 */
 #define STD_TEST(test_name, test_fun) { (char *)(test_name), (test_fun), NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
+
+/*
+ * test fixtures
+ */
+char_data* create_test_char_data();
+char *get_last_messages();
 
 #endif

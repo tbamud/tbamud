@@ -8,7 +8,8 @@ ASAN:=n
 UBSAN:=n
 EXTENSION:=
 TEST_ENV:=
-CFLAGS:=-Wall -Wno-char-subscripts -Wno-unused-but-set-variable
+CFLAGS:=-Wall -Wno-char-subscripts -Wno-unused-but-set-variable 
+CFLAGS+=-Wl,--wrap=send_to_char,--wrap=vwrite_to_output
 AGGRESSIVE_WARNINGS=n
 LIBS:=-lcrypt 
 
