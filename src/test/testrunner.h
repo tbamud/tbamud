@@ -37,7 +37,7 @@
 /*
  * test fixtures
  */
-char_data* create_test_char_data();
+char_data *get_test_char();
 char *get_last_messages();
 
 #endif
