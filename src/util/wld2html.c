@@ -257,6 +257,9 @@ void discrete_load(FILE * fl)
       fprintf(stderr, "Format error after room #%d\n", nr);
       exit(1);
     }
+    if (*line == 'T') //Toss triggers. THey currently break this util.
+      return;
+	  
     if (*line == '$')
       return;
 
