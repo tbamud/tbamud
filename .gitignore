@@ -80,3 +80,6 @@ src/test/testfile
 
 # ide etc.
 .vscode
+.project
+.settings
+
