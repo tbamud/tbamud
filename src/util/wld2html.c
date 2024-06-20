@@ -12,7 +12,6 @@
 #include "conf.h"
 #include "sysdep.h"
 
-
 #define NOWHERE    -1		/* nil reference for room-database         */
 
 /* The cardinal directions: used as index to room_data.dir_option[] */
@@ -22,13 +21,16 @@
 #define WEST           3
 #define UP             4
 #define DOWN           5
+#define NORTHWEST      6
+#define NORTHEAST      7
+#define SOUTHEAST      8
+#define SOUTHWEST      9
 
-#define NUM_OF_DIRS	6
+#define NUM_OF_DIRS    10
 
 #define CREATE(result, type, number)  do {\
 	if (!((result) = (type *) calloc ((number), sizeof(type))))\
 		{ perror("malloc failure"); abort(); } } while(0)
-
 
 /* Exit info: used in room_data.dir_option.exit_info */
 #define EX_ISDOOR		(1 << 0)	/* Exit is a door          */
@@ -45,7 +47,7 @@ typedef unsigned short int ush_int;
 typedef char bool;
 typedef char byte;
 
-typedef sh_int room_num;
+typedef int room_num;
 typedef sh_int obj_num;
 
 
@@ -133,13 +135,14 @@ struct room_data {
 
 struct room_data *world = NULL;	/* array of rooms                */
 int top_of_world = 0;		/* ref to top element of world   */
+int rec_count = 0;
 
 
 
 /* local functions */
 char *fread_string(FILE * fl, char *error);
 void setup_dir(FILE * fl, int room, int dir);
-void index_boot(char *name);
+void index_boot(int cnt, char **name);
 void discrete_load(FILE * fl);
 void parse_room(FILE * fl, int virtual_nr);
 void parse_mobile(FILE * mob_f, int nr);
@@ -150,7 +153,7 @@ void write_output(void);
 
 
 char *dir_names[] =
-{"North", "East", "South", "West", "Up", "Down"};
+{"North", "East", "South", "West", "Up", "Down","North West","North East","South East","South West"};
 
 
 /*************************************************************************
@@ -160,14 +163,12 @@ char *dir_names[] =
 /* body of the booting system */
 int main(int argc, char **argv)
 {
-  if (argc != 2) {
-    fprintf(stderr, "Usage: %s <world-file-name>\n", argv[0]);
+  if (argc < 2) {
+    fprintf(stderr, "Usage: %s <world-file-name(s)>\n", argv[0]);
     exit(1);
   }
-  index_boot(argv[1]);
 
-  log("Renumbering rooms.");
-  renum_world();
+  index_boot(argc,argv);
 
   log("Writing output.");
   write_output();
@@ -176,6 +177,21 @@ int main(int argc, char **argv)
   return (0);
 }
 
+/* Since the world is loaded into memory by index
+ * and not room number, we need to search through
+ * all rooms and return the correct one. This is
+ * used to generate door information (ie: the name)
+ */
+struct room_data* findRoom(int nr)
+{
+  int i;
+  
+  for (i=0;i<rec_count;i++)
+    if (world[i].number==nr)
+      return &world[i];
+
+  return NULL;
+}
 
 void write_output(void)
 {
@@ -184,11 +200,22 @@ void write_output(void)
   char buf[128];
   register int door, found;
 
-  for (i = 0; i <= top_of_world; i++) {
+  for (i=0;i<rec_count;i++) {
+    //print the record number, but no linefeed.
+    fprintf(stderr, "Record: %d ",i);
+    if (world[i].name == NULL) {
+      //linefeed the prior record since we're skipping this one.
+      log("");
+      //the name is blank, which means, most likely, the record is bad as well.
+      continue;
+    }
     sprintf(buf, "Writing %d.html", world[i].number);
     log(buf);
-    sprintf(buf, "%d.html", world[i].number);
-
+    //for some reason, if you use %d with sprintf it rolls over like its 16bit,
+    //but only if you use the buffer with fopen.
+    //using %ld and casting to long solves this in case someone really wants
+    //to use negative room numbers.
+    sprintf(buf, "%ld.html",(long)world[i].number);
     if (!(fl = fopen(buf, "w"))) {
       perror("opening output file");
       exit(1);
@@ -203,18 +230,22 @@ void write_output(void)
     found = 0;
     for (door = 0; door < NUM_OF_DIRS; door++)
       if (world[i].dir_option[door] &&
-	  world[i].dir_option[door]->to_room != NOWHERE) {
-	found = 1;
-	fprintf(fl, "<a href = \"%d.html\"> %s to %s</a> <p>\n",
-		world[world[i].dir_option[door]->to_room].number,
-		dir_names[door],
-		world[world[i].dir_option[door]->to_room].name);
+          world[i].dir_option[door]->to_room != NOWHERE) {
+        found = 1;
+	//this call gets a pointer to the room referenced by the to_room for the door.
+	//This fixes a lot of issues introduced with the whole 'renumbering rooms' call
+	//and the binary search that didn't work well.
+	struct room_data* to_room = findRoom(world[i].dir_option[door]->to_room);
+        fprintf(fl, "<a href = \"%d.html\"> %s to %s</a> <p>\n",
+                to_room->number,
+                dir_names[door],
+                to_room->name);
       }
     if (!found)
       fprintf(fl, "None!");
     fclose(fl);
   }
-}
+}  
 
 /* function to count how many hash-mark delimited records exist in a file */
 int count_hash_records(FILE * fl)
@@ -231,19 +262,35 @@ int count_hash_records(FILE * fl)
 
 
 
-void index_boot(char *name)
+void index_boot(int cnt, char **names)
 {
   FILE *db_file;
-  int rec_count = 0;
 
-  if (!(db_file = fopen(name, "r"))) {
-    perror("error opening world file");
-    exit(1);
+  //throw first entry away as that is the executable.
+  for (int i=1;i<cnt;i++) {
+    if (!(db_file = fopen(names[i], "r"))) {
+      perror("error opening world file");
+      exit(1);
+    }
+    //have to loop through files twice.
+    //once to get total record count
+    //second time to load them
+    rec_count += count_hash_records(db_file);
+    fclose(db_file);
   }
-  rec_count = count_hash_records(db_file);
+  sprintf(buf,"Total records: %d\n",rec_count);
+  log(buf);
+  //now that we know how many records in total
+  //we can create the memory structure
   CREATE(world, struct room_data, rec_count);
-  rewind(db_file);
-  discrete_load(db_file);
+  //now loop through files and load them
+  for (int i=1;i<cnt;i++) {
+    if (!(db_file = fopen(names[i], "r"))) {
+      perror("error opening world file");
+      exit(1);
+    }
+    discrete_load(db_file);
+  }
 }
 
 
@@ -258,7 +305,7 @@ void discrete_load(FILE * fl)
       exit(1);
     }
     if (*line == 'T') //Toss triggers. THey currently break this util.
-      return;
+      continue;
 	  
     if (*line == '$')
       return;
@@ -397,22 +444,6 @@ void setup_dir(FILE * fl, int room, int dir)
 }
 
 
-/* resolve all vnums into rnums in the world */
-void renum_world(void)
-{
-  register int room, door;
-
-  for (room = 0; room <= top_of_world; room++)
-    for (door = 0; door < NUM_OF_DIRS; door++)
-      if (world[room].dir_option[door])
-	if (world[room].dir_option[door]->to_room != NOWHERE)
-	  world[room].dir_option[door]->to_room =
-	      real_room(world[room].dir_option[door]->to_room,
-			world[room].number);
-}
-
-
-
 /*************************************************************************
 *  procedures for resetting, both play-time and boot-time	 	 *
 *********************************************************************** */
@@ -465,32 +496,6 @@ char *fread_string(FILE * fl, char *error)
   return (rslt);
 }
 
-
-
-/* returns the real number of the room with given virtual number */
-int real_room(int virtual, int reference)
-{
-  int bot, top, mid;
-
-  bot = 0;
-  top = top_of_world;
-
-  /* perform binary search on world-table */
-  for (;;) {
-    mid = (bot + top) / 2;
-
-    if ((world + mid)->number == virtual)
-      return (mid);
-    if (bot >= top) {
-      fprintf(stderr, "Room %d does not exist in database (referenced in room %d)\n", virtual, reference);
-      return (-1);
-    }
-    if ((world + mid)->number > virtual)
-      top = mid - 1;
-    else
-      bot = mid + 1;
-  }
-}
 
 
 /* get_line reads the next non-blank line off of the input stream.
