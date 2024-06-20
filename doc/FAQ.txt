@@ -257,6 +257,9 @@ http://tbamud.com
 All donated areas have been added to the latest version of tbaMUD. If you
 wish to donate some of your own work stop by the Builder Academy.
 
+https://github.com/rds1983 has generated maps of all the existing areas, 
+and they can be found here: https://mudmapbuilder.github.io/
+
 2.3.  I have questions about tbaMUD.  Where should I go?
 
 Stop by The Builder Academy at tbamud.com 9091 or the website at:
