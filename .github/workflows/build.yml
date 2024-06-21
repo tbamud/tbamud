@@ -20,7 +20,7 @@ jobs:
     - name: configure
       run: ./configure
     - name: list conf.h for testing
-      run cat src/conf.h
+      run: cat src/conf.h
     - name: build tests
       run: cd src && touch .accepted && make test
     - name: build
