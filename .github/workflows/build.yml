@@ -24,5 +24,5 @@ jobs:
     - name: build tests
       run: cd src && touch .accepted && make test
     - name: build
-      run: make clean && make
+      run: pwd && make clean && make all
       
