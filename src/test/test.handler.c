@@ -7,6 +7,7 @@ UNIT_TEST(test_get_number)
   run_single_get_number_test("1.feather", "feather", 1);
   run_single_get_number_test("2.feather", "feather", 2);
   run_single_get_number_test("1.feat", "feat", 1);
+  run_single_get_number_test("2.feat", "feat", 2);
   run_single_get_number_test("feather", "feather", 1);
   run_single_get_number_test("10.feather", "feather", 10);
 
