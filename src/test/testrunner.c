@@ -1,15 +1,13 @@
 #include "testrunner.h"
 #include "test.handler.h"
 #include "test.act.item.h"
+#include "test.example.h"
 
-static void simple_world();
-static void add_char();
-
-static char_data* test_char;
-
-static MunitSuite suites[] = { 
+static MunitSuite suites[] = {
   { "/handler.c", handler_c_tests, NULL, 1, MUNIT_SUITE_OPTION_NONE }, 
-  { "/act.item.c", act_item_c_tests, NULL, 1, MUNIT_SUITE_OPTION_NONE }, 
+  { "/act.item.c", act_item_c_tests, NULL, 1, MUNIT_SUITE_OPTION_NONE },
+  { "/test.example.c", test_example_c_tests, NULL, 1, MUNIT_SUITE_OPTION_NONE },
+
   { NULL, NULL, NULL, 0, MUNIT_SUITE_OPTION_NONE }
 }; 
 
@@ -24,36 +22,7 @@ static const MunitSuite test_suite = {
 
 int main(int argc, char* argv[MUNIT_ARRAY_PARAM(argc + 1)]) {
   logfile = stderr;
-  simple_world();
-  add_char();
   return munit_suite_main(&test_suite, (void*) "µnit", argc, argv);
-}
-
-
-/*
- * test-fixtures common for many tests
-*/
-
-static void simple_world()
-{
-  CREATE(world, struct room_data, 1);
-  top_of_world = 1;
-}
-
-char_data *get_test_char() {
-  return test_char;
-}
-
-static void add_char()
-{
-    char_data *ch = create_char();
-    CREATE(ch->player_specials, struct player_special_data, 1);
-    new_mobile_data(ch);
-    ch->char_specials.position = POS_STANDING;
-    CREATE(ch->desc, struct descriptor_data, 1);
-
-    char_to_room(ch, 0);
-    test_char = ch;
 }
 
 

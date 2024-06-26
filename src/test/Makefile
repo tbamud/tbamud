@@ -8,7 +8,7 @@ ASAN:=n
 UBSAN:=n
 EXTENSION:=
 TEST_ENV:=
-CFLAGS:=-Wall -Wno-char-subscripts -Wno-unused-but-set-variable 
+CFLAGS:=-Wall -Wno-char-subscripts -Wno-unused-but-set-variable -g
 CFLAGS+=-Wl,--wrap=send_to_char,--wrap=vwrite_to_output
 AGGRESSIVE_WARNINGS=n
 LIBS:=-lcrypt 
@@ -45,27 +45,31 @@ ifneq ($(CC),pgcc)
         endif
 endif
 
-MUNIT_FILES := ../munit/munit.h ../munit/munit.c
+#MUNIT_FILES := ../munit/munit.h ../munit/munit.c
 TEST_FILES := $(ls *.c)
 
 # exclude main.c to avoid having multiple entrypoints.
 OBJ_FILES_FROM_MUD_CODE != ls ../*.c | grep -v main.c | sed 's/\.c$$/.o/g' | xargs
-OBJ_FILES_FORM_MUNIT:= ../munit/munit.o
-OBJ_FILES_FROM_TESTS!= ls *.c | sed 's/\$$.c/.o/g' | xargs
+OBJ_FILES_FROM_MUNIT:= ../munit/munit.o
+OBJ_FILES_FROM_TESTS!= ls *.c | sed 's/\.c/.o/g' | xargs
 
-OBJ_FILES := $(OBJ_FILES_FROM_MUD_CODE) $(OBJ_FILES_FORM_MUNIT) $(OBJ_FILES_FROM_TESTS) $(LIBS)
+OBJ_FILES := $(OBJ_FILES_FROM_MUD_CODE) $(OBJ_FILES_FROM_MUNIT) $(OBJ_FILES_FROM_TESTS) $(LIBS)
 
-testfile: $(OBJ_FILES)
-	$(CC) $(CFLAGS) -o testfile $(OBJ_FILES)
+testrunner: $(OBJ_FILES)
+	$(CC) $(CFLAGS) -o testrunner $(OBJ_FILES)
 
-test: testfile
-	$(TEST_ENV) ./testfile
+test: testrunner
+	$(TEST_ENV) ./testrunner
+
+debug: testrunner
+	$(TEST_ENV) gdb -q --args ./testrunner --no-fork
+
 
 $%.o: %.c
 	$(CC) $< $(CFLAGS) -c -o $@ 
 
 clean:
-	rm -f *.o testfile depend
+	rm -f *.o testrunner depend
 all: test
 
 default: all

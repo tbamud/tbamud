@@ -1,27 +1,7 @@
 #ifndef TESTRUNNER_H
 #define TESTRUNNER_H
 
-#include "../conf.h"
-#include "../sysdep.h"
-#include "../structs.h"
-#include "../utils.h"
-#include "../comm.h"
-#include "../db.h"
-#include "../handler.h"
-#include "../screen.h"
-#include "../interpreter.h"
-#include "../spells.h"
-#include "../dg_scripts.h"
-#include "../act.h"
-#include "../class.h"
-#include "../fight.h"
-#include "../quest.h"
-#include "../mud_event.h"
-#include "../munit/munit.h"
-#include <stdarg.h>
-#include <stddef.h>
-#include <setjmp.h>
-#include <cmocka.h>
+#include "test.fixtures.h"
 
 /**
  * Utility macro for defining tests.
@@ -35,9 +15,15 @@
 #define STD_TEST(test_name, test_fun) { (char *)(test_name), (test_fun), NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 
 /*
- * test fixtures
+ * An "extended test" has setup or teardown but doesn't take any parameters.
+ * This is a utility macro for the test suite listing.
+*/
+#define EXT_TEST(test_name, test_fun, setup_fun, teardown_fun) { (char *)(test_name), (test_fun), (setup_fun), (teardown_fun), MUNIT_TEST_OPTION_NONE, NULL }
+
+
+/*
+ * Returns the latest messages sent through send_to_char() or act()
  */
-char_data *get_test_char();
 char *get_last_messages();
 
 #endif
