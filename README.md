@@ -1,3 +1,3 @@
-Files for tbaMUD.
+tbaMUD
 
-
+http://tbamud.com
