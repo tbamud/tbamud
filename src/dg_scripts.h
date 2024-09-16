@@ -135,6 +135,7 @@ struct cmdlist_element {
   char *cmd;				/* one line of a trigger */
   struct cmdlist_element *original;
   struct cmdlist_element *next;
+  int loops;        /* for counting number of runs in a while loop */
 };
 
 struct trig_var_data {
