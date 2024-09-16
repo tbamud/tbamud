@@ -1,29 +1,29 @@
 /**
 * @file sysdep.h
 * Machine-specific defs based on values in conf.h (from configure)
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 */
 #ifndef _SYSDEP_H_
 #define _SYSDEP_H_
 
 /* Configurables: tbaMUD uses the crypt(3) function to encrypt player passwords
  * in the players file so that they are never stored in plaintext form. However,
- * due to U.S. export restrictions on machine-readable cryptographic software, 
- * the crypt() function is not available on some operating systems such as 
- * FreeBSD.  By default, the 'configure' script will determine if you have 
- * crypt() available and enable or disable password encryption appropriately.  
+ * due to U.S. export restrictions on machine-readable cryptographic software,
+ * the crypt() function is not available on some operating systems such as
+ * FreeBSD.  By default, the 'configure' script will determine if you have
+ * crypt() available and enable or disable password encryption appropriately.
  * #define NOCRYPT (by uncommenting the line below) if you'd like to explicitly
  * disable password encryption (i.e., if you have moved your MUD from an OS that
  * does not support encryption to one that does). */
 /* #define NOCRYPT */
 
-/* If you are porting tbaMUD to a new (untested) platform and you find that 
+/* If you are porting tbaMUD to a new (untested) platform and you find that
  * POSIX-standard non-blocking I/O does *not* work, you can define the constant
  * below to work around the problem.  Not having non-blocking I/O can cause the
  * MUD to freeze if someone types part of a command while the MUD waits for the
@@ -32,17 +32,17 @@
  * NOTE: **DO** **NOT** use this constant unless you are SURE you understand
  * exactly what non-blocking I/O is, and you are SURE that your operating system
  * does NOT have it!  (The only UNIX system I've ever seen that has broken POSIX
- * non-blocking I/O is AIX 3.2.)  If your MUD is freezing but you're not sure 
- * why, do NOT use this constant.  Use this constant ONLY if you're sure that 
+ * non-blocking I/O is AIX 3.2.)  If your MUD is freezing but you're not sure
+ * why, do NOT use this constant.  Use this constant ONLY if you're sure that
  * your MUD is freezing because of a non-blocking I/O problem. */
 /* #define POSIX_NONBLOCK_BROKEN */
 
 /* The code prototypes library functions to avoid compiler warnings. (Operating
  * system header files *should* do this, but sometimes don't.) However, Circle's
  * prototypes cause the compilation to fail under some combinations of operating
- * systems and compilers. If your compiler reports "conflicting types" for 
- * functions, you need to define this constant to turn off library function 
- * prototyping.  Note, **DO** **NOT** blindly turn on this constant unless you 
+ * systems and compilers. If your compiler reports "conflicting types" for
+ * functions, you need to define this constant to turn off library function
+ * prototyping.  Note, **DO** **NOT** blindly turn on this constant unless you
  * are sure the problem is type conflicts between my header files and the header
  * files of your operating system.  The error message will look something like
  * this: In file included from comm.c:14:
@@ -51,7 +51,7 @@
  *    previous declaration of `random' */
 /* #define NO_LIBRARY_PROTOTYPES */
 
-/* If using the GNU C library, version 2+, then you can have it trace memory 
+/* If using the GNU C library, version 2+, then you can have it trace memory
  * allocations to check for leaks, uninitialized uses, and bogus free() calls.
  * To see if your version supports it, run:
  * info libc 'Allocation Debugging' 'Tracing malloc'
@@ -59,11 +59,11 @@
  *      MALLOC_TRACE=/tmp/circle-trace bin/circle
  * Read the entire "Allocation Debugging" section of the GNU C library
  * documentation before setting this to '1'. */
-#define CIRCLE_GNU_LIBC_MEMORY_TRACK	0	/* 0 = off, 1 = on */
+#define CIRCLE_GNU_LIBC_MEMORY_TRACK    0   /* 0 = off, 1 = on */
 
 /* Do not change anything below this line. */
 
-/* Set up various machine-specific things based on the values determined from 
+/* Set up various machine-specific things based on the values determined from
  * configure and conf.h. */
 
 #include <stdio.h>
@@ -173,7 +173,7 @@ extern void abort (), exit ();
 
 #ifndef HAVE_STRUCT_IN_ADDR
 struct in_addr {
-  unsigned long int s_addr;	/* for inet_addr, etc. */
+    unsigned long int s_addr; /* for inet_addr, etc. */
 }
 #endif
 
@@ -219,7 +219,7 @@ struct in_addr {
 #  include <signal.h>
 #  undef _POSIX_C_SOURCE
 # else
-#  include <signal.h>	/* GNU libc 6 already defines _POSIX_C_SOURCE. */
+#  include <signal.h>   /* GNU libc 6 already defines _POSIX_C_SOURCE. */
 # endif
 #endif
 
@@ -251,39 +251,39 @@ struct in_addr {
 #endif
 
 #if !defined(__GNUC__)
-# define __attribute__(x)	/* nothing */
+# define __attribute__(x)   /* nothing */
 #endif
 
 #if defined(__MWERKS__)
-# define isascii(c)	(((c) & ~0x7f) == 0)	/* So easy to have, but ... */
+# define isascii(c) (((c) & ~0x7f) == 0)    /* So easy to have, but ... */
 #endif
 
 /* Socket/header miscellany. */
 
-#if defined(CIRCLE_WINDOWS)	/* Definitions for Win32 */
+#if defined(CIRCLE_WINDOWS) /* Definitions for Win32 */
 
 # define snprintf _snprintf
 # define vsnprintf _vsnprintf
 # define PATH_MAX MAX_PATH
 
-# if !defined(__BORLANDC__) && !defined(LCC_WIN32)	/* MSVC */
+# if !defined(__BORLANDC__) && !defined(LCC_WIN32)  /* MSVC */
 #  define chdir _chdir
-#  pragma warning(disable:4761)		/* Integral size mismatch. */
-#  pragma warning(disable:4244)		/* Possible loss of data. */
+#  pragma warning(disable:4761)     /* Integral size mismatch. */
+#  pragma warning(disable:4244)     /* Possible loss of data. */
 # endif
 
-# if defined(__BORLANDC__)	/* Silence warnings we don't care about. */
-#  pragma warn -par	/* to turn off >parameter< 'ident' is never used. */
-#  pragma warn -pia	/* to turn off possibly incorrect assignment. 'if (!(x=a))' */
-#  pragma warn -sig	/* to turn off conversion may lose significant digits. */
+# if defined(__BORLANDC__)  /* Silence warnings we don't care about. */
+#  pragma warn -par /* to turn off >parameter< 'ident' is never used. */
+#  pragma warn -pia /* to turn off possibly incorrect assignment. 'if (!(x=a))' */
+#  pragma warn -sig /* to turn off conversion may lose significant digits. */
 # endif
 
-# ifndef _WINSOCK2API_	/* Winsock1 and Winsock 2 conflict. */
+# ifndef _WINSOCK2API_  /* Winsock1 and Winsock 2 conflict. */
 #  include <winsock.h>
 # endif
 
-# ifndef FD_SETSIZE	/* MSVC 6 is reported to have 64. */
-#  define FD_SETSIZE		1024
+# ifndef FD_SETSIZE /* MSVC 6 is reported to have 64. */
+#  define FD_SETSIZE        1024
 # endif
 
 #elif defined(CIRCLE_VMS)
@@ -302,17 +302,17 @@ struct in_addr {
 
 /* SOCKET -- must be after the winsock.h #include. */
 #ifdef CIRCLE_WINDOWS
-# define CLOSE_SOCKET(sock)	closesocket(sock)
-  typedef SOCKET		socket_t;
+# define CLOSE_SOCKET(sock) closesocket(sock)
+typedef SOCKET        socket_t;
 #else
-# define CLOSE_SOCKET(sock)	close(sock)
-  typedef int			socket_t;
+# define CLOSE_SOCKET(sock) close(sock)
+typedef int           socket_t;
 #endif
 
-#if defined(__cplusplus)	/* C++ */
-#define cpp_extern	extern
-#else				/* C */
-#define cpp_extern	/* Nothing */
+#if defined(__cplusplus)    /* C++ */
+#define cpp_extern  extern
+#else               /* C */
+#define cpp_extern  /* Nothing */
 #endif
 
 #ifndef CIRCLE_OS_X
@@ -341,224 +341,224 @@ struct in_addr {
 
 /* Function prototypes. */
 /* Header files of many OS's do not contain function prototypes for the
- * standard C library functions.  This produces annoying warning messages 
+ * standard C library functions.  This produces annoying warning messages
  * (sometimes, a lot of them) on such OS's when compiling with gcc's -Wall.
  *
- * Configuration script has been changed to detect which prototypes exist 
- * already; this header file only prototypes functions that aren't already 
- * prototyped by the system headers.  A clash should be impossible.  This 
+ * Configuration script has been changed to detect which prototypes exist
+ * already; this header file only prototypes functions that aren't already
+ * prototyped by the system headers.  A clash should be impossible.  This
  * should give us our strong type-checking back. */
 
 #ifndef NO_LIBRARY_PROTOTYPES
 
 #ifdef NEED_ATOI_PROTO
-   int atoi(const char *str);
+int atoi(const char *str);
 #endif
 
 #ifdef NEED_ATOL_PROTO
-   long atol(const char *str);
+long atol(const char *str);
 #endif
 
-/* bzero is deprecated - use memset() instead. This prototype is needed for 
+/* bzero is deprecated - use memset() instead. This prototype is needed for
  * FD_xxx macros on some machines. */
 #ifdef NEED_BZERO_PROTO
-   void bzero(char *b, int length);
+void bzero(char *b, int length);
 #endif
 
 #ifdef NEED_CRYPT_PROTO
-   char *crypt(const char *key, const char *salt);
+char *crypt(const char *key, const char *salt);
 #endif
 
 #ifdef NEED_FCLOSE_PROTO
-   int fclose(FILE *stream);
+int fclose(FILE *stream);
 #endif
 
 #ifdef NEED_FDOPEN_PROTO
-   FILE *fdopen(int fd, const char *mode);
+FILE *fdopen(int fd, const char *mode);
 #endif
 
 #ifdef NEED_FFLUSH_PROTO
-   int fflush(FILE *stream);
+int fflush(FILE *stream);
 #endif
 
 #ifdef NEED_FPRINTF_PROTO
-   int fprintf(FILE *strm, const char *format, /* args */ ... );
+int fprintf(FILE *strm, const char *format, /* args */ ... );
 #endif
 
 #ifdef NEED_FREAD_PROTO
-   size_t fread(void *ptr, size_t size, size_t nitems, FILE *stream);
+size_t fread(void *ptr, size_t size, size_t nitems, FILE *stream);
 #endif
 
 #ifdef NEED_FSCANF_PROTO
-  int fscanf(FILE *strm, const char *format, ...);
+int fscanf(FILE *strm, const char *format, ...);
 #endif
 
 #ifdef NEED_FSEEK_PROTO
-   int fseek(FILE *stream, long offset, int ptrname);
+int fseek(FILE *stream, long offset, int ptrname);
 #endif
 
 #ifdef NEED_FWRITE_PROTO
-  size_t fwrite(const void *ptr, size_t size, size_t nitems, FILE *stream);
+size_t fwrite(const void *ptr, size_t size, size_t nitems, FILE *stream);
 #endif
 
 #ifdef NEED_GETPID_PROTO
-   pid_t getpid(void);
+pid_t getpid(void);
 #endif
 
 #ifdef NEED_PERROR_PROTO
-   void perror(const char *s);
+void perror(const char *s);
 #endif
 
 #ifdef NEED_QSORT_PROTO
-   void qsort(void *base, size_t nel, size_t width,
-          int (*compar) (const void *, const void *));
+void qsort(void *base, size_t nel, size_t width,
+           int (*compar) (const void *, const void *));
 #endif
 
 #ifdef NEED_REWIND_PROTO
-   void rewind(FILE *stream);
+void rewind(FILE *stream);
 #endif
 
 #ifdef NEED_SPRINTF_PROTO
-   int sprintf(char *s, const char *format, /* args */ ... );
+int sprintf(char *s, const char *format, /* args */ ... );
 #endif
 
 #ifdef NEED_SSCANF_PROTO
-   int sscanf(const char *s, const char *format, ...);
+int sscanf(const char *s, const char *format, ...);
 #endif
 
 #ifdef NEED_STRDUP_PROTO
-   char *strdup(const char *txt);
+char *strdup(const char *txt);
 #endif
 
 #ifdef NEED_STRERROR_PROTO
-   char *strerror(int errnum);
+char *strerror(int errnum);
 #endif
 
 #ifdef NEED_STRLCPY_PROTO
-   size_t strlcpy(char *dest, const char *src, size_t copylen);
+size_t strlcpy(char *dest, const char *src, size_t copylen);
 #endif
 
 #ifdef NEED_SYSTEM_PROTO
-   int system(const char *string);
+int system(const char *string);
 #endif
 
 #ifdef NEED_TIME_PROTO
-   time_t time(time_t *tloc);
+time_t time(time_t *tloc);
 #endif
 
 #ifdef NEED_UNLINK_PROTO
-   int unlink(const char *path);
+int unlink(const char *path);
 #endif
 
 #ifdef NEED_REMOVE_PROTO
-   int remove(const char *path);
+int remove(const char *path);
 #endif
 
 #ifdef NEED_ACCEPT_PROTO
-   int accept(socket_t s, struct sockaddr *addr, int *addrlen);
+int accept(socket_t s, struct sockaddr *addr, int *addrlen);
 #endif
 
 #ifdef NEED_BIND_PROTO
-   int bind(socket_t s, const struct sockaddr *name, int namelen);
+int bind(socket_t s, const struct sockaddr *name, int namelen);
 #endif
 
 #ifdef NEED_CHDIR_PROTO
-   int chdir(const char *path);
+int chdir(const char *path);
 #endif
 
 #ifdef NEED_CLOSE_PROTO
-   int close(int fildes);
+int close(int fildes);
 #endif
 
 #ifdef NEED_FCNTL_PROTO
-   int fcntl(int fildes, int cmd, /* arg */ ...);
+int fcntl(int fildes, int cmd, /* arg */ ...);
 #endif
 
 #ifdef NEED_FPUTC_PROTO
-   int fputc(char c, FILE *stream);
+int fputc(char c, FILE *stream);
 #endif
 
 #ifdef NEED_FPUTS_PROTO
-   int fputs(const char *s, FILE *stream);
+int fputs(const char *s, FILE *stream);
 #endif
 
 #ifdef NEED_GETPEERNAME_PROTO
-   int getpeername(socket_t s, struct sockaddr *name, int *namelen);
+int getpeername(socket_t s, struct sockaddr *name, int *namelen);
 #endif
 
 #if defined(HAS_RLIMIT) && defined(NEED_GETRLIMIT_PROTO)
-   int getrlimit(int resource, struct rlimit *rlp);
+int getrlimit(int resource, struct rlimit *rlp);
 #endif
 
 #ifdef NEED_GETSOCKNAME_PROTO
-   int getsockname(socket_t s, struct sockaddr *name, int *namelen);
+int getsockname(socket_t s, struct sockaddr *name, int *namelen);
 #endif
 
 #ifdef NEED_GETTIMEOFDAY_PROTO
-   void gettimeofday(struct timeval *tp, void * );
+void gettimeofday(struct timeval *tp, void * );
 #endif
 
 #ifdef NEED_HTONL_PROTO
-   ulong htonl(u_long hostlong);
+ulong htonl(u_long hostlong);
 #endif
 
 #ifdef NEED_HTONS_PROTO
-   u_short htons(u_short hostshort);
+u_short htons(u_short hostshort);
 #endif
 
 #if defined(HAVE_INET_ADDR) && defined(NEED_INET_ADDR_PROTO)
-   unsigned long int inet_addr(const char *cp);
+unsigned long int inet_addr(const char *cp);
 #endif
 
 #if defined(HAVE_INET_ATON) && defined(NEED_INET_ATON_PROTO)
-   int inet_aton(const char *cp, struct in_addr *inp);
+int inet_aton(const char *cp, struct in_addr *inp);
 #endif
 
 #ifdef NEED_INET_NTOA_PROTO
-   char *inet_ntoa(const struct in_addr in);
+char *inet_ntoa(const struct in_addr in);
 #endif
 
 #ifdef NEED_LISTEN_PROTO
-   int listen(socket_t s, int backlog);
+int listen(socket_t s, int backlog);
 #endif
 
 #ifdef NEED_NTOHL_PROTO
-   u_long ntohl(u_long netlong);
+u_long ntohl(u_long netlong);
 #endif
 
 #ifdef NEED_PRINTF_PROTO
-   int printf(char *format, ...);
+int printf(char *format, ...);
 #endif
 
 #ifdef NEED_READ_PROTO
-   ssize_t read(int fildes, void *buf, size_t nbyte);
+ssize_t read(int fildes, void *buf, size_t nbyte);
 #endif
 
 #ifdef NEED_SELECT_PROTO
-   int select(int nfds, fd_set *readfds, fd_set *writefds,
-          fd_set *exceptfds, struct timeval *timeout);
+int select(int nfds, fd_set *readfds, fd_set *writefds,
+           fd_set *exceptfds, struct timeval *timeout);
 #endif
 
 #ifdef NEED_SETITIMER_PROTO
-   int setitimer(int which, const struct itimerval *value,
-          struct itimerval *ovalue);
+int setitimer(int which, const struct itimerval *value,
+              struct itimerval *ovalue);
 #endif
 
 #if defined(HAS_RLIMIT) && defined(NEED_SETRLIMIT_PROTO)
-   int setrlimit(int resource, const struct rlimit *rlp);
+int setrlimit(int resource, const struct rlimit *rlp);
 #endif
 
 #ifdef NEED_SETSOCKOPT_PROTO
-   int setsockopt(socket_t s, int level, int optname, const char *optval,
-		  int optlen);
+int setsockopt(socket_t s, int level, int optname, const char *optval,
+               int optlen);
 #endif
 
 #ifdef NEED_SOCKET_PROTO
-   int socket(int domain, int type, int protocol);
+int socket(int domain, int type, int protocol);
 #endif
 
 #ifdef NEED_WRITE_PROTO
-    ssize_t write(int fildes, const void *buf, size_t nbyte);
+ssize_t write(int fildes, const void *buf, size_t nbyte);
 #endif
 
 #endif /* NO_LIBRARY_PROTOTYPES */

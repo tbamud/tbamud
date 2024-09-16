@@ -69,19 +69,18 @@ typedef struct  ibt_data               IBT_DATA;
                                     break;                              \
                                 }
 
-struct ibt_data
-{
-  IBT_DATA   *next;                 /**< Pointer to next IBT in the list           */
-  IBT_DATA   *prev;                 /**< Pointer to previous IBT in the list       */
-  char       *text;                 /**< Header Text for this IBT                  */
-  char       *body;                 /**< Body Text for this IBT                    */
-  char       *name;                 /**< Name of the person who reported this IBT  */
-  char       *notes;                /**< Resolution Notes added by Administrators  */
-  int        level;                 /**< Level of the person who reported this IBT */
-  room_vnum  room;                  /**< Room in which this IBT was reported       */
-  long       id_num;                /**< The ID number of the player who logged it */
-  int        flags[IBT_ARRAY_MAX];  /**< IBT flags                                 */
-  long       dated;                 /**< When the IBT what reported                */
+struct ibt_data {
+    IBT_DATA   *next;                 /**< Pointer to next IBT in the list           */
+    IBT_DATA   *prev;                 /**< Pointer to previous IBT in the list       */
+    char       *text;                 /**< Header Text for this IBT                  */
+    char       *body;                 /**< Body Text for this IBT                    */
+    char       *name;                 /**< Name of the person who reported this IBT  */
+    char       *notes;                /**< Resolution Notes added by Administrators  */
+    int        level;                 /**< Level of the person who reported this IBT */
+    room_vnum  room;                  /**< Room in which this IBT was reported       */
+    long       id_num;                /**< The ID number of the player who logged it */
+    int        flags[IBT_ARRAY_MAX];  /**< IBT flags                                 */
+    long       dated;                 /**< When the IBT what reported                */
 };
 
 extern  IBT_DATA       *first_bug;

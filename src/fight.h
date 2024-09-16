@@ -1,12 +1,12 @@
 /**
 * @file fight.h
 * Fighting and violence functions and variables.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
 * CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 *
 */
@@ -16,8 +16,8 @@
 /* Structures and defines */
 /* Attacktypes with grammar */
 struct attack_hit_type {
-   const char *singular;
-   const char *plural;
+    const char *singular;
+    const char *plural;
 };
 
 /* Functions available in fight.c */
@@ -31,8 +31,7 @@ void hit(struct char_data *ch, struct char_data *victim, int type);
 void perform_violence(void);
 void raw_kill(struct char_data * ch, struct char_data * killer);
 void  set_fighting(struct char_data *ch, struct char_data *victim);
-int skill_message(int dam, struct char_data *ch, struct char_data *vict,
-          int attacktype);
+int skill_message(int dam, struct char_data *ch, struct char_data *vict, int attacktype);
 void  stop_fighting(struct char_data *ch);
 
 

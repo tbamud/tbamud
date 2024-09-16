@@ -1,13 +1,13 @@
 /**
 * @file hedit.h
 * Oasis OLC Help Editor.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
+*
 * Author: Steve Wolfe, Scott Meisenholder, Rhade
 * All rights reserved.  See license.doc for complete information.
-* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.                             
+* CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
 *
 */
 #ifndef _HEDIT_H_

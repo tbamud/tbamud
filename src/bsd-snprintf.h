@@ -1,9 +1,9 @@
 /**
 * @file bsd-snprintf.h
 * Used if your OS does not provide snprintf() or vsnprintf().
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
-* of, and continuation of, CircleMUD.               
+* of, and continuation of, CircleMUD.
 */
 
 /* This file taken from openbsd-compat of OpenSSH 3.1:

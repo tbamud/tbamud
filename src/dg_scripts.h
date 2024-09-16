@@ -53,8 +53,8 @@
 /* mob trigger types */
 #define MTRIG_GLOBAL           (1 << 0)      /* check even if zone empty   */
 #define MTRIG_RANDOM           (1 << 1)      /* checked randomly           */
-#define MTRIG_COMMAND          (1 << 2)	     /* character types a command  */
-#define MTRIG_SPEECH           (1 << 3)	     /* a char says a word/phrase  */
+#define MTRIG_COMMAND          (1 << 2)      /* character types a command  */
+#define MTRIG_SPEECH           (1 << 3)      /* a char says a word/phrase  */
 #define MTRIG_ACT              (1 << 4)      /* word or phrase sent to act */
 #define MTRIG_DEATH            (1 << 5)      /* character dies             */
 #define MTRIG_GREET            (1 << 6)      /* something enters room seen */
@@ -63,7 +63,7 @@
 #define MTRIG_RECEIVE          (1 << 9)      /* character is given obj     */
 #define MTRIG_FIGHT            (1 << 10)     /* each pulse while fighting  */
 #define MTRIG_HITPRCNT         (1 << 11)     /* fighting and below some hp */
-#define MTRIG_BRIBE	       (1 << 12)     /* coins are given to mob     */
+#define MTRIG_BRIBE            (1 << 12)     /* coins are given to mob     */
 #define MTRIG_LOAD             (1 << 13)     /* the mob is loaded          */
 #define MTRIG_MEMORY           (1 << 14)     /* mob see's someone remembered */
 #define MTRIG_CAST             (1 << 15)     /* mob targetted by spell     */
@@ -73,8 +73,8 @@
 #define MTRIG_TIME             (1 << 19)     /* trigger based on game hour */
 
 /* obj trigger types */
-#define OTRIG_GLOBAL           (1 << 0)	     /* unused                     */
-#define OTRIG_RANDOM           (1 << 1)	     /* checked randomly           */
+#define OTRIG_GLOBAL           (1 << 0)      /* unused                     */
+#define OTRIG_RANDOM           (1 << 1)      /* checked randomly           */
 #define OTRIG_COMMAND          (1 << 2)      /* character types a command  */
 
 #define OTRIG_TIMER            (1 << 5)     /* item's timer expires       */
@@ -94,12 +94,12 @@
 
 /* wld trigger types */
 #define WTRIG_GLOBAL           (1 << 0)      /* check even if zone empty   */
-#define WTRIG_RANDOM           (1 << 1)	     /* checked randomly           */
-#define WTRIG_COMMAND          (1 << 2)	     /* character types a command  */
+#define WTRIG_RANDOM           (1 << 1)      /* checked randomly           */
+#define WTRIG_COMMAND          (1 << 2)      /* character types a command  */
 #define WTRIG_SPEECH           (1 << 3)      /* a char says word/phrase    */
 
 #define WTRIG_RESET            (1 << 5)      /* zone has been reset        */
-#define WTRIG_ENTER            (1 << 6)	     /* character enters room      */
+#define WTRIG_ENTER            (1 << 6)      /* character enters room      */
 #define WTRIG_DROP             (1 << 7)      /* something dropped in room  */
 
 #define WTRIG_CAST             (1 << 15)     /* spell cast in room */
@@ -109,41 +109,40 @@
 #define WTRIG_TIME             (1 << 19)     /* trigger based on game hour */
 
 /* obj command trigger types */
-#define OCMD_EQUIP             (1 << 0)	     /* obj must be in char's equip */
-#define OCMD_INVEN             (1 << 1)	     /* obj must be in char's inven */
-#define OCMD_ROOM              (1 << 2)	     /* obj must be in char's room  */
+#define OCMD_EQUIP             (1 << 0)      /* obj must be in char's equip */
+#define OCMD_INVEN             (1 << 1)      /* obj must be in char's inven */
+#define OCMD_ROOM              (1 << 2)      /* obj must be in char's room  */
 
 /* obj consume trigger commands */
 #define OCMD_EAT    1
 #define OCMD_DRINK  2
 #define OCMD_QUAFF  3
 
-#define TRIG_NEW                0	     /* trigger starts from top  */
-#define TRIG_RESTART            1	     /* trigger restarting       */
+#define TRIG_NEW                0        /* trigger starts from top  */
+#define TRIG_RESTART            1        /* trigger restarting       */
 
 /* These are slightly off of PULSE_MOBILE so everything isnt happening at the
  * same time. */
 #define PULSE_DG_SCRIPT         (13 RL_SEC)
 
-#define MAX_SCRIPT_DEPTH      10          /* maximum depth triggers can
-					     recurse into each other */
+#define MAX_SCRIPT_DEPTH      10          /* maximum depth triggers can recurse into each other */
 
 #define SCRIPT_ERROR_CODE     -9999999   /* this shouldn't happen too often */
 
 /* one line of the trigger */
 struct cmdlist_element {
-  char *cmd;				/* one line of a trigger */
-  struct cmdlist_element *original;
-  struct cmdlist_element *next;
-  int loops;        /* for counting number of runs in a while loop */
+    char *cmd;                /* one line of a trigger */
+    struct cmdlist_element *original;
+    struct cmdlist_element *next;
+    int loops;                /* for counting number of runs in a while loop */
 };
 
 struct trig_var_data {
-  char *name;				/* name of variable  */
-  char *value;				/* value of variable */
-  long context;				/* 0: global context */
+    char *name;               /* name of variable  */
+    char *value;              /* value of variable */
+    long context;             /* 0: global context */
 
-  struct trig_var_data *next;
+    struct trig_var_data *next;
 };
 
 /** structure for triggers */
@@ -154,14 +153,14 @@ struct trig_data {
     char *name;                         /**< name of trigger                 */
     long trigger_type;                  /**< type of trigger (for bitvector) */
     struct cmdlist_element *cmdlist;    /**< top of command list             */
-    struct cmdlist_element *curr_state;	/**< ptr to current line of trigger  */
+    struct cmdlist_element *curr_state; /**< ptr to current line of trigger  */
     int narg;                           /**< numerical argument              */
     char *arglist;                      /**< argument list                   */
     int depth;                          /**< depth into nest ifs/whiles/etc  */
     int loops;                          /**< loop iteration counter          */
     struct event *wait_event;           /**< event to pause the trigger  */
     ubyte purged;                       /**< trigger is set to be purged     */
-    struct trig_var_data *var_list;	    /**< list of local vars for trigger  */
+    struct trig_var_data *var_list;     /**< list of local vars for trigger  */
 
     struct trig_data *next;
     struct trig_data *next_in_world;    /**< next in the global trigger list */
@@ -169,27 +168,27 @@ struct trig_data {
 
 /** a complete script (composed of several triggers) */
 struct script_data {
-  long types;                        /**< bitvector of trigger types */
-  struct trig_data *trig_list;       /**< list of triggers           */
-  struct trig_var_data *global_vars; /**< list of global variables   */
-  ubyte purged;                      /**< script is set to be purged */
-  long context;                      /**< current context for statics */
+    long types;                        /**< bitvector of trigger types */
+    struct trig_data *trig_list;       /**< list of triggers           */
+    struct trig_var_data *global_vars; /**< list of global variables   */
+    ubyte purged;                      /**< script is set to be purged */
+    long context;                      /**< current context for statics */
 
-  struct script_data *next;          /**< used for purged_scripts    */
+    struct script_data *next;          /**< used for purged_scripts    */
 };
 
 /* The event data for the wait command */
 struct wait_event_data {
-  struct trig_data *trigger;
-  void *go;
-  int type;
+    struct trig_data *trigger;
+    void *go;
+    int type;
 };
 
 /* used for actor memory triggers */
 struct script_memory {
-  long id;        /* id of who to remember */
-  char *cmd;        /* command, or NULL for generic */
-  struct script_memory *next;
+    long id;                          /* id of who to remember */
+    char *cmd;                        /* command, or NULL for generic */
+    struct script_memory *next;
 };
 
 /* typedefs that the dg functions rely on */
@@ -205,8 +204,8 @@ char *one_phrase(char *arg, char *first_arg);
 int is_substring(char *sub, char *string);
 int word_check(char *str, char *wordlist);
 
-void act_mtrigger(const char_data *ch, char *str,
-	char_data *actor, char_data *victim, obj_data *object, obj_data *target, char *arg);
+void act_mtrigger(const char_data *ch, char *str, char_data *actor, char_data *victim, obj_data *object,
+                  obj_data *target, char *arg);
 void speech_mtrigger(char_data *actor, char *str);
 void speech_wtrigger(char_data *actor, char *str);
 void greet_memory_mtrigger(char_data *ch);
@@ -218,17 +217,13 @@ int drop_otrigger(obj_data *obj, char_data *actor);
 void timer_otrigger(obj_data *obj);
 int get_otrigger(obj_data *obj, char_data *actor);
 int drop_wtrigger(obj_data *obj, char_data *actor);
-int give_otrigger(obj_data *obj, char_data *actor,
-         char_data *victim);
-int receive_mtrigger(char_data *ch, char_data *actor,
-         obj_data *obj);
-void bribe_mtrigger(char_data *ch, char_data *actor,
-         int amount);
+int give_otrigger(obj_data *obj, char_data *actor, char_data *victim);
+int receive_mtrigger(char_data *ch, char_data *actor, obj_data *obj);
+void bribe_mtrigger(char_data *ch, char_data *actor, int amount);
 int wear_otrigger(obj_data *obj, char_data *actor, int where);
 int remove_otrigger(obj_data *obj, char_data *actor);
 
-int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
-              char *argument, int type);
+int cmd_otrig(obj_data *obj, char_data *actor, char *cmd, char *argument, int type);
 int command_mtrigger(char_data *actor, char *cmd, char *argument);
 int command_otrigger(char_data *actor, char *cmd, char *argument);
 int command_wtrigger(char_data *actor, char *cmd, char *argument);
@@ -308,8 +303,7 @@ int trig_is_attached(struct script_data *sc, int trig_num);
 /* Thanks to Chris Gilbert for reminding me that there are other options. */
 int script_driver(void *go_adress, trig_data *trig, int type, int mode);
 trig_rnum real_trigger(trig_vnum vnum);
-void process_eval(void *go, struct script_data *sc, trig_data *trig,
-                 int type, char *cmd);
+void process_eval(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd);
 void read_saved_vars(struct char_data *ch);
 void save_char_vars(struct char_data *ch);
 void init_lookup_table(void);
@@ -329,12 +323,10 @@ void add_var(struct trig_var_data **var_list, const char *name, const char *valu
 int item_in_list(char *item, obj_data *list);
 char *skill_percent(struct char_data *ch, char *skill);
 int char_has_item(char *item, struct char_data *ch);
-void var_subst(void *go, struct script_data *sc, trig_data *trig,
-               int type, char *line, char *buf);
-int text_processed(char *field, char *subfield, struct trig_var_data *vd,
-                   char *str, size_t slen);
-void find_replacement(void *go, struct script_data *sc, trig_data *trig,
-                int type, char *var, char *field, char *subfield, char *str, size_t slen);
+void var_subst(void *go, struct script_data *sc, trig_data *trig, int type, char *line, char *buf);
+int text_processed(char *field, char *subfield, struct trig_var_data *vd, char *str, size_t slen);
+void find_replacement(void *go, struct script_data *sc, trig_data *trig, int type, char *var, char *field,
+                      char *subfield, char *str, size_t slen);
 
 /* From dg_handler.c */
 void free_var_el(struct trig_var_data *var);
@@ -355,10 +347,8 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets);
 void send_to_zone(char *messg, zone_rnum zone);
 
 /* from dg_misc.c */
-void do_dg_cast(void *go, struct script_data *sc, trig_data *trig,
-    int type, char *cmd);
-void do_dg_affect(void *go, struct script_data *sc, trig_data *trig,
-    int type, char *cmd);
+void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd);
+void do_dg_affect(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd);
 void send_char_pos(struct char_data *ch, int dam);
 int valid_dg_target(char_data *ch, int bitvector);
 void script_damage(char_data *vict, int dam);
@@ -407,13 +397,13 @@ void wld_command_interpreter(room_data *room, char *argument);
 #define UID_CHAR   '}'
 #define GET_TRIG_NAME(t)          ((t)->name)
 #define GET_TRIG_RNUM(t)          ((t)->nr)
-#define GET_TRIG_VNUM(t)	  (trig_index[(t)->nr]->vnum)
+#define GET_TRIG_VNUM(t)          (trig_index[(t)->nr]->vnum)
 #define GET_TRIG_TYPE(t)          ((t)->trigger_type)
-#define GET_TRIG_DATA_TYPE(t)	  ((t)->data_type)
+#define GET_TRIG_DATA_TYPE(t)     ((t)->data_type)
 #define GET_TRIG_NARG(t)          ((t)->narg)
 #define GET_TRIG_ARG(t)           ((t)->arglist)
-#define GET_TRIG_VARS(t)	  ((t)->var_list)
-#define GET_TRIG_WAIT(t)	  ((t)->wait_event)
+#define GET_TRIG_VARS(t)          ((t)->var_list)
+#define GET_TRIG_WAIT(t)          ((t)->wait_event)
 #define GET_TRIG_DEPTH(t)         ((t)->depth)
 #define GET_TRIG_LOOPS(t)         ((t)->loops)
 
@@ -421,22 +411,20 @@ void wld_command_interpreter(room_data *room, char *argument);
  * mob id's: MOB_ID_BASE to ROOM_ID_BASE - 1
  * room id's: ROOM_ID_BASE to OBJ_ID_BASE - 1
  * object id's: OBJ_ID_BASE and higher */
-#define MOB_ID_BASE	  10000000  /* 10000000 player IDNUMS should suffice */
-#define ROOM_ID_BASE    (10000000 + MOB_ID_BASE) /* 10000000 Mobs */
-#define OBJ_ID_BASE     (10000000 + ROOM_ID_BASE) /* 10000000 Rooms */
+#define MOB_ID_BASE               10000000                 /* 10000000 player IDNUMS should suffice */
+#define ROOM_ID_BASE             (10000000 + MOB_ID_BASE)  /* 10000000 Mobs */
+#define OBJ_ID_BASE              (10000000 + ROOM_ID_BASE) /* 10000000 Rooms */
 
-#define SCRIPT(o)		  ((o)->script)
-#define SCRIPT_MEM(c)             ((c)->memory)
+#define SCRIPT(o)                ((o)->script)
+#define SCRIPT_MEM(c)            ((c)->memory)
 
-#define SCRIPT_TYPES(s)		  ((s)->types)
-#define TRIGGERS(s)		  ((s)->trig_list)
+#define SCRIPT_TYPES(s)          ((s)->types)
+#define TRIGGERS(s)              ((s)->trig_list)
 
-#define GET_SHORT(ch)    ((ch)->player.short_descr)
+#define GET_SHORT(ch)            ((ch)->player.short_descr)
 
-#define SCRIPT_CHECK(go, type)   (SCRIPT(go) && \
-				  IS_SET(SCRIPT_TYPES(SCRIPT(go)), type))
-#define TRIGGER_CHECK(t, type)   (IS_SET(GET_TRIG_TYPE(t), type) && \
-				  !GET_TRIG_DEPTH(t))
+#define SCRIPT_CHECK(go, type)   (SCRIPT(go) && IS_SET(SCRIPT_TYPES(SCRIPT(go)), type))
+#define TRIGGER_CHECK(t, type)   (IS_SET(GET_TRIG_TYPE(t), type) && !GET_TRIG_DEPTH(t))
 
 
 /* This formerly used 'go' instead of 'id' and referenced 'go->id' but this is
@@ -444,8 +432,8 @@ void wld_command_interpreter(room_data *room, char *argument);
 * and obj_script_id().
 */
 #define ADD_UID_VAR(buf, trig, id, name, context) do { \
-		         sprintf(buf, "%c%ld", UID_CHAR, id); \
-                         add_var(&GET_TRIG_VARS(trig), name, buf, context); } while (0)
+                 sprintf(buf, "%c%ld", UID_CHAR, id); \
+                 add_var(&GET_TRIG_VARS(trig), name, buf, context); } while (0)
 
 // id helpers
 extern long char_script_id(char_data *ch);

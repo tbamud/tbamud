@@ -1,13 +1,13 @@
 /**
 * @file genwld.h
 * Generic OLC Library - Rooms.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-* 
+*
 * This source code, which was not part of the CircleMUD legacy code,
 * is attributed to:
-* By Levork. Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.                                                    
+* By Levork. Copyright 1996 by Harvey Gilpin, 1997-2001 by George Greer.
 */
 #ifndef _GENWLD_H_
 #define _GENWLD_H_

@@ -21,21 +21,21 @@
 #define IS_MOVE(cmdnum) (complete_cmd_info[cmdnum].command_pointer == do_move)
 
 void sort_commands(void);
-void	command_interpreter(struct char_data *ch, char *argument);
-int	search_block(char *arg, const char **list, int exact);
-char	*one_argument(char *argument, char *first_arg);
-char	*one_word(char *argument, char *first_arg);
-char	*any_one_arg(char *argument, char *first_arg);
-char	*two_arguments(char *argument, char *first_arg, char *second_arg);
-int	fill_word(char *argument);
+void command_interpreter(struct char_data *ch, char *argument);
+int search_block(char *arg, const char **list, int exact);
+char *one_argument(char *argument, char *first_arg);
+char *one_word(char *argument, char *first_arg);
+char *any_one_arg(char *argument, char *first_arg);
+char *two_arguments(char *argument, char *first_arg, char *second_arg);
+int fill_word(char *argument);
 int reserved_word(char *argument);
-void	half_chop(char *string, char *arg1, char *arg2);
-void	nanny(struct descriptor_data *d, char *arg);
-int	is_abbrev(const char *arg1, const char *arg2);
-int	is_number(const char *str);
-int	find_command(const char *command);
-void	skip_spaces(char **string);
-char	*delete_doubledollar(char *string);
+void half_chop(char *string, char *arg1, char *arg2);
+void nanny(struct descriptor_data *d, char *arg);
+int is_abbrev(const char *arg1, const char *arg2);
+int is_number(const char *str);
+int find_command(const char *command);
+void skip_spaces(char **string);
+char *delete_doubledollar(char *string);
 int special(struct char_data *ch, int cmd, char *arg);
 void free_alias(struct alias_data *a);
 int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
@@ -54,35 +54,35 @@ ACMD(do_alias);
 #define RESERVE_CMDS                7
 
 struct command_info {
-   const char *command;
-   const char *sort_as;
-   byte minimum_position;
-   void	(*command_pointer)
-	   (struct char_data *ch, char *argument, int cmd, int subcmd);
-   sh_int minimum_level;
-   int	subcmd;
+    const char *command;
+    const char *sort_as;
+    byte minimum_position;
+    void (*command_pointer)
+    (struct char_data *ch, char *argument, int cmd, int subcmd);
+    sh_int minimum_level;
+    int  subcmd;
 };
 
 struct mob_script_command_t {
-  const char *command_name;
-  void (*command_pointer)
-         (struct char_data *ch, char *argument, int cmd, int subcmd);
-  int subcmd;
+    const char *command_name;
+    void (*command_pointer)
+    (struct char_data *ch, char *argument, int cmd, int subcmd);
+    int subcmd;
 };
 
 struct alias_data {
-  char *alias;
-  char *replacement;
-  int type;
-  struct alias_data *next;
+    char *alias;
+    char *replacement;
+    int type;
+    struct alias_data *next;
 };
 
-#define ALIAS_SIMPLE	0
-#define ALIAS_COMPLEX	1
+#define ALIAS_SIMPLE    0
+#define ALIAS_COMPLEX   1
 
-#define ALIAS_SEP_CHAR	';'
-#define ALIAS_VAR_CHAR	'$'
-#define ALIAS_GLOB_CHAR	'*'
+#define ALIAS_SEP_CHAR  ';'
+#define ALIAS_VAR_CHAR  '$'
+#define ALIAS_GLOB_CHAR '*'
 
 /* SUBCOMMANDS: You can define these however you want to, and the definitions
  * of the subcommands are independent from function to function.*/

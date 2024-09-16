@@ -1,18 +1,18 @@
 /**
 * @file boards.h
 * Header file for the bulletin board system (boards.c).
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-*                                                                        
-* All rights reserved.  See license for complete information.                                                                
-* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University 
+*
+* All rights reserved.  See license for complete information.
+* Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University
 * CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.
-* 
+*
 * @todo Utility functions that could easily be moved elsewhere have been
 * marked. Suggest a review of all utility functions (aka. non ACMDs) and
 * determine if the utility functions should be placed into a lower level
-* shared module.               
+* shared module.
 *
 */
 #ifndef _BAN_H_
@@ -26,11 +26,11 @@
 
 #define BANNED_SITE_LENGTH    50
 struct ban_list_element {
-   char site[BANNED_SITE_LENGTH+1];
-   int  type;
-   time_t date;
-   char name[MAX_NAME_LENGTH+1];
-   struct ban_list_element *next;
+    char site[BANNED_SITE_LENGTH+1];
+    int  type;
+    time_t date;
+    char name[MAX_NAME_LENGTH+1];
+    struct ban_list_element *next;
 };
 
 /* Global functions */

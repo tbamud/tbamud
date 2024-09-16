@@ -36,24 +36,24 @@
 #define NUM_AQ_FLAGS        1
 /* Main quest struct ************************************************** */
 struct aq_data {
-  qst_vnum vnum;                /* Virtual nr of the quest              */
-  char     *name;               /* For qlist and the sort               */
-  char     *desc;               /* Description of the quest             */
-  char     *info;               /* Message displayed when accepted      */
-  char     *done;               /* Message displayed when completed     */
-  char     *quit;               /* Message displayed when quit quest    */
-  long     flags;               /* Flags (repeatable, etc               */
-  int      type;                /* Quest type                           */
-  mob_vnum qm;                  /* questmaster offering quest           */
-  int      target;              /* Target value                         */
-  obj_vnum prereq;              /* Object required to undertake quest   */
-  int      value[7];            /* Quest values                         */
-  int      gold_reward;         /* Number of gold coins given as reward */
-  int      exp_reward;          /* Experience points given as a reward  */
-  obj_vnum obj_reward;          /* vnum of object given as a reward     */
-  qst_vnum prev_quest;          /* Link to prev quest, NOTHING is open  */
-  qst_vnum next_quest;          /* Link to next quest, NOTHING is end   */
-  SPECIAL  (*func);             /* secondary spec_proc for the QM       */
+    qst_vnum vnum;                /* Virtual nr of the quest              */
+    char     *name;               /* For qlist and the sort               */
+    char     *desc;               /* Description of the quest             */
+    char     *info;               /* Message displayed when accepted      */
+    char     *done;               /* Message displayed when completed     */
+    char     *quit;               /* Message displayed when quit quest    */
+    long     flags;               /* Flags (repeatable, etc               */
+    int      type;                /* Quest type                           */
+    mob_vnum qm;                  /* questmaster offering quest           */
+    int      target;              /* Target value                         */
+    obj_vnum prereq;              /* Object required to undertake quest   */
+    int      value[7];            /* Quest values                         */
+    int      gold_reward;         /* Number of gold coins given as reward */
+    int      exp_reward;          /* Experience points given as a reward  */
+    obj_vnum obj_reward;          /* vnum of object given as a reward     */
+    qst_vnum prev_quest;          /* Link to prev quest, NOTHING is open  */
+    qst_vnum next_quest;          /* Link to next quest, NOTHING is end   */
+    SPECIAL  (*func);             /* secondary spec_proc for the QM       */
 };
 #define QST_NUM(i)             (aquest_table[i].vnum)
 #define QST_NAME(i)            (aquest_table[i].name)

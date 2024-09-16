@@ -1,13 +1,13 @@
 /**
 * @file mud_event.h
 * Mud_Event Header file.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-* 
+*
 * This source code, which was not part of the CircleMUD legacy code,
 * is attributed to:
-* Copyright 2012 by Joseph Arnusch.                                                    
+* Copyright 2012 by Joseph Arnusch.
 */
 
 #ifndef _MUD_EVENT_H_
@@ -30,17 +30,17 @@ typedef enum {
 } event_id;
 
 struct mud_event_list {
-  const char * event_name;
-  EVENTFUNC(*func);
-  int iEvent_Type;
+    const char * event_name;
+    EVENTFUNC(*func);
+    int iEvent_Type;
 };
 
 struct mud_event_data {
-  struct  event * pEvent;      /***< Pointer reference to the event */
-  event_id        iId;         /***< General ID reference */  
-  void          * pStruct;     /***< Pointer to NULL, Descriptor, Character .... */
-  char          * sVariables;	 /***< String variable */
-}; 
+    struct  event * pEvent;      /***< Pointer reference to the event */
+    event_id        iId;         /***< General ID reference */
+    void          * pStruct;     /***< Pointer to NULL, Descriptor, Character .... */
+    char          * sVariables;  /***< String variable */
+};
 
 /* Externals */
 extern struct list_data * world_events;

@@ -1,34 +1,34 @@
 /**
 * @file lists.h
 * Lists Header file.
-* 
+*
 * Part of the core tbaMUD source code distribution, which is a derivative
 * of, and continuation of, CircleMUD.
-* 
+*
 * This source code, which was not part of the CircleMUD legacy code,
 * is attributed to:
-* Copyright 2012 by Joseph Arnusch.                                                    
+* Copyright 2012 by Joseph Arnusch.
 */
 
 #ifndef _LISTS_HEADER
 #define _LISTS_HEADER
 
 struct item_data {
-  struct item_data * pPrevItem;
-  struct item_data * pNextItem;
-  void             * pContent;
+    struct item_data * pPrevItem;
+    struct item_data * pNextItem;
+    void             * pContent;
 };
 
 struct list_data {
-  struct item_data * pFirstItem;
-  struct item_data * pLastItem;
-  unsigned short int iIterators;
-  unsigned short int iSize;
+    struct item_data * pFirstItem;
+    struct item_data * pLastItem;
+    unsigned short int iIterators;
+    unsigned short int iSize;
 };
 
 struct iterator_data {
-  struct list_data * pList;
-  struct item_data * pItem;
+    struct list_data * pList;
+    struct item_data * pItem;
 };
 
 /* Externals */
