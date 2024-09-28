@@ -2579,7 +2579,6 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
          temp->original = cl;
       } else {
          cl = temp;
-         loops = 0;
       }
     } else if (!strn_cmp("switch ", p, 7)) {
       cl = find_case(trig, cl, go, sc, type, p + 7);
