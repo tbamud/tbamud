@@ -603,6 +603,10 @@ do                                                              \
 #define GET_QUEST_COUNTER(ch)  CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.quest_counter))
 /** Time remaining to complete the quest ch is currently on. */
 #define GET_QUEST_TIME(ch)     CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.quest_time))
+/** The completed quest at index i for this player */
+#define GET_COMPLETED_QUEST(ch, i)  CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.completed_quests[(i)]))
+/** The array of completed quests for ch */
+#define GET_COMPLETED_QUESTS(ch)  CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.completed_quests))
 /** The number of quests completed by ch. */
 #define GET_NUM_QUESTS(ch)     CHECK_PLAYER_SPECIAL((ch), ((ch)->player_specials->saved.num_completed_quests))
 /** The type of quest ch is currently participating in. */
