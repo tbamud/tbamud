@@ -166,8 +166,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     return 0;
 
   /* Charm effect: Does it override the movement? */
-  if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && was_in == IN_ROOM(ch->master))
-  {
+  if (AFF_FLAGGED(ch, AFF_CHARM) && ch->master && was_in == IN_ROOM(ch->master)) {
     send_to_char(ch, "The thought of leaving your master makes you weep.\r\n");
     act("$n bursts into tears.", FALSE, ch, 0, 0, TO_ROOM);
     return (0);
@@ -175,28 +174,23 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 
   /* Water, No Swimming Rooms: Does the deep water prevent movement? */
   if ((SECT(was_in) == SECT_WATER_NOSWIM) ||
-      (SECT(going_to) == SECT_WATER_NOSWIM))
-  {
-    if (!has_boat(ch))
-    {
+      (SECT(going_to) == SECT_WATER_NOSWIM)) {
+    if (!has_boat(ch)) {
       send_to_char(ch, "You need a boat to go there.\r\n");
       return (0);
     }
   }
 
   /* Flying Required: Does lack of flying prevent movement? */
-  if ((SECT(was_in) == SECT_FLYING) || (SECT(going_to) == SECT_FLYING))
-  {
-    if (!has_flight(ch))
-    {
+  if ((SECT(was_in) == SECT_FLYING) || (SECT(going_to) == SECT_FLYING)) {
+    if (!has_flight(ch)) {
       send_to_char(ch, "You need to be flying to go there!\r\n");
       return (0);
     }
   }
 
   /* Underwater Room: Does lack of underwater breathing prevent movement? */
-  if ((SECT(was_in) == SECT_UNDERWATER) || (SECT(going_to) == SECT_UNDERWATER))
-  {
+  if ((SECT(was_in) == SECT_UNDERWATER) || (SECT(going_to) == SECT_UNDERWATER)) {
     if (!has_scuba(ch) && !IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
       send_to_char(ch, "You need to be able to breathe water to go there!\r\n");
       return (0);
@@ -204,10 +198,8 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Houses: Can the player walk into the house? */
-  if (ROOM_FLAGGED(was_in, ROOM_ATRIUM))
-  {
-    if (!House_can_enter(ch, GET_ROOM_VNUM(going_to)))
-    {
+  if (ROOM_FLAGGED(was_in, ROOM_ATRIUM)) {
+    if (!House_can_enter(ch, GET_ROOM_VNUM(going_to))) {
       send_to_char(ch, "That's private property -- no trespassing!\r\n");
       return (0);
     }
@@ -223,15 +215,15 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
     return (0);
   }
-  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (GET_LEVEL(ch) < LVL_GRGOD)) {
+  if (ZONE_FLAGGED(GET_ROOM_ZONE(going_to), ZONE_NOIMMORT) && (GET_LEVEL(ch) >= LVL_IMMORT) && (
+        GET_LEVEL(ch) < LVL_GRGOD)) {
     send_to_char(ch, "A mysterious barrier forces you back! That area is off-limits.\r\n");
     return (0);
   }
 
   /* Room Size Capacity: Is the room full of people already? */
   if (ROOM_FLAGGED(going_to, ROOM_TUNNEL) &&
-      num_pc_in_room(&(world[going_to])) >= CONFIG_TUNNEL_SIZE)
-  {
+      num_pc_in_room(&(world[going_to])) >= CONFIG_TUNNEL_SIZE) {
     if (CONFIG_TUNNEL_SIZE > 1)
       send_to_char(ch, "There isn't enough room for you to go there!\r\n");
     else
@@ -240,8 +232,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   }
 
   /* Room Level Requirements: Is ch privileged enough to enter the room? */
-  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD)
-  {
+  if (ROOM_FLAGGED(going_to, ROOM_GODROOM) && GET_LEVEL(ch) < LVL_GOD) {
     send_to_char(ch, "You aren't godly enough to use that room!\r\n");
     return (0);
   }
@@ -250,11 +241,10 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
    * move points. */
   /* move points needed is avg. move loss for src and destination sect type */
   need_movement = (movement_loss[SECT(was_in)] +
-		   movement_loss[SECT(going_to)]) / 2;
+                   movement_loss[SECT(going_to)]) / 2;
 
   /* Move Point Requirement Check */
-  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch))
-  {
+  if (GET_MOVE(ch) < need_movement && !IS_NPC(ch)) {
     if (need_specials_check && ch->master)
       send_to_char(ch, "You are too exhausted to follow.\r\n");
     else
@@ -274,8 +264,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     GET_MOVE(ch) -= need_movement;
 
   /* Generate the leave message and display to others in the was_in room. */
-  if (!AFF_FLAGGED(ch, AFF_SNEAK))
-  {
+  if (!AFF_FLAGGED(ch, AFF_SNEAK)) {
     snprintf(leave_message, sizeof(leave_message), "$n leaves %s.", dirs[dir]);
     act(leave_message, TRUE, ch, 0, 0, TO_ROOM);
   }
@@ -307,9 +296,9 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     look_at_room(ch, 0);
 
   /* ... and Kill the player if the room is a death trap. */
-  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT)
-  {
-    mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to), world[going_to].name);
+  if (ROOM_FLAGGED(going_to, ROOM_DEATH) && GET_LEVEL(ch) < LVL_IMMORT) {
+    mudlog(BRF, LVL_IMMORT, TRUE, "%s hit death trap #%d (%s)", GET_NAME(ch), GET_ROOM_VNUM(going_to),
+           world[going_to].name);
     death_cry(ch);
     extract_char(ch);
     return (0);
@@ -319,15 +308,13 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* Fire memory and greet triggers, check and see if the greet trigger
    * prevents movement, and if so, move the player back to the previous room. */
   entry_memory_mtrigger(ch);
-  if (!greet_mtrigger(ch, dir))
-  {
+  if (!greet_mtrigger(ch, dir)) {
     char_from_room(ch);
     char_to_room(ch, was_in);
     look_at_room(ch, 0);
     /* Failed move, return a failure */
     return (0);
-  }
-  else
+  } else
     greet_memory_mtrigger(ch);
   /*---------------------------------------------------------------------*/
   /* End: Post-move operations. */
@@ -348,7 +335,8 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
     send_to_char(ch, "Alas, you cannot go that way...\r\n");
   else if ((!EXIT(ch, dir) && !buildwalk(ch, dir)) || EXIT(ch, dir)->to_room == NOWHERE)
     send_to_char(ch, "Alas, you cannot go that way...\r\n");
-  else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)))) {
+  else if (EXIT_FLAGGED(EXIT(ch, dir), EX_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || (
+                                                        !IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE)))) {
     if (EXIT(ch, dir)->keyword)
       send_to_char(ch, "The %s seems to be closed.\r\n", fname(EXIT(ch, dir)->keyword));
     else
@@ -364,9 +352,9 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check)
     for (k = ch->followers; k; k = next) {
       next = k->next;
       if ((IN_ROOM(k->follower) == was_in) &&
-	  (GET_POS(k->follower) >= POS_STANDING)) {
-	act("You follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
-	perform_move(k->follower, dir, 1);
+          (GET_POS(k->follower) >= POS_STANDING)) {
+        act("You follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
+        perform_move(k->follower, dir, 1);
       }
     }
     return (1);
@@ -384,14 +372,14 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
 {
   int door;
 
-  if (*dir) {			/* a direction was specified */
-    if ((door = search_block(dir, dirs, FALSE)) == -1) { /* Partial Match */
+  if (*dir) {                                                   /* a direction was specified */
+    if ((door = search_block(dir, dirs, FALSE)) == -1) {        /* Partial Match */
       if ((door = search_block(dir, autoexits, FALSE)) == -1) { /* Check 'short' dirs too */
         send_to_char(ch, "That's not a direction.\r\n");
         return (-1);
       }
     }
-    if (EXIT(ch, door)) {	/* Braces added according to indent. -gg */
+    if (EXIT(ch, door)) { /* Braces added according to indent. -gg */
       if (EXIT(ch, door)->keyword) {
         if (is_name(type, EXIT(ch, door)->keyword))
           return (door);
@@ -400,40 +388,34 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
           return (-1);
         }
       } else
-	return (door);
+        return (door);
     } else {
       send_to_char(ch, "I really don't see how you can %s anything there.\r\n", cmdname);
       return (-1);
     }
-  } else {			/* try to locate the keyword */
+  } else { /* try to locate the keyword */
     if (!*type) {
       send_to_char(ch, "What is it you want to %s?\r\n", cmdname);
       return (-1);
     }
-    for (door = 0; door < DIR_COUNT; door++)
-    {
-      if (EXIT(ch, door))
-      {
-        if (EXIT(ch, door)->keyword)
-        {
-          if (isname(type, EXIT(ch, door)->keyword))
-          {
+    for (door = 0; door < DIR_COUNT; door++) {
+      if (EXIT(ch, door)) {
+        if (EXIT(ch, door)->keyword) {
+          if (isname(type, EXIT(ch, door)->keyword)) {
             if ((!IS_NPC(ch)) && (!PRF_FLAGGED(ch, PRF_AUTODOOR)))
               return door;
-            else if (is_abbrev(cmdname, "open"))
-            {
+            else if (is_abbrev(cmdname, "open")) {
               if (IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))
                 return door;
               else if (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED))
                 return door;
-            }
-            else if ((is_abbrev(cmdname, "close")) && (!(IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))) )
+            } else if ((is_abbrev(cmdname, "close")) && (!(IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED))))
               return door;
-            else if ((is_abbrev(cmdname, "lock")) && (!(IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED))) )
+            else if ((is_abbrev(cmdname, "lock")) && (!(IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED))))
               return door;
-            else if ((is_abbrev(cmdname, "unlock")) && (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED)) )
+            else if ((is_abbrev(cmdname, "unlock")) && (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED)))
               return door;
-            else if ((is_abbrev(cmdname, "pick")) && (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED)) )
+            else if ((is_abbrev(cmdname, "pick")) && (IS_SET(EXIT(ch, door)->exit_info, EX_LOCKED)))
               return door;
           }
         }
@@ -483,20 +465,20 @@ int has_key(struct char_data *ch, obj_vnum key)
 /* cmd_door is required external from act.movement.c */
 const char *cmd_door[] =
 {
-  "open",
-  "close",
-  "unlock",
-  "lock",
-  "pick"
+    "open",
+    "close",
+    "unlock",
+    "lock",
+    "pick"
 };
 
 static const int flags_door[] =
 {
-  NEED_CLOSED | NEED_UNLOCKED,
-  NEED_OPEN,
-  NEED_CLOSED | NEED_LOCKED,
-  NEED_CLOSED | NEED_UNLOCKED,
-  NEED_CLOSED | NEED_LOCKED
+    NEED_CLOSED | NEED_UNLOCKED,
+    NEED_OPEN,
+    NEED_CLOSED | NEED_LOCKED,
+    NEED_CLOSED | NEED_UNLOCKED,
+    NEED_CLOSED | NEED_LOCKED
 };
 
 #define EXITN(room, door)		(world[room].dir_option[door])
@@ -576,15 +558,15 @@ static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int
   /* Notify the room. */
   if (len < sizeof(buf))
     snprintf(buf + len, sizeof(buf) - len, "%s%s.",
-      obj ? "" : "the ", obj ? "$p" : EXIT(ch, door)->keyword ? "$F" : "door");
+             obj ? "" : "the ", obj ? "$p" : EXIT(ch, door)->keyword ? "$F" : "door");
   if (!obj || IN_ROOM(obj) != NOWHERE)
     act(buf, FALSE, ch, obj, obj ? 0 : EXIT(ch, door)->keyword, TO_ROOM);
 
   /* Notify the other room */
   if (back && (scmd == SCMD_OPEN || scmd == SCMD_CLOSE))
-      send_to_room(EXIT(ch, door)->to_room, "The %s is %s%s from the other side.\r\n",
-        back->keyword ? fname(back->keyword) : "door", cmd_door[scmd],
-        scmd == SCMD_CLOSE ? "d" : "ed");
+    send_to_room(EXIT(ch, door)->to_room, "The %s is %s%s from the other side.\r\n",
+                 back->keyword ? fname(back->keyword) : "door", cmd_door[scmd],
+                 scmd == SCMD_CLOSE ? "d" : "ed");
 }
 
 static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
@@ -655,18 +637,16 @@ ACMD(do_gen_door)
       send_to_char(ch, "But it's currently open!\r\n");
     else if (!(DOOR_IS_LOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_LOCKED))
       send_to_char(ch, "Oh.. it wasn't locked, after all..\r\n");
-    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (has_key(ch, keynum)) )
-    {
+    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((
+               !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (has_key(ch, keynum))) {
       send_to_char(ch, "It is locked, but you have the key.\r\n");
       do_doorcmd(ch, obj, door, SCMD_UNLOCK);
       do_doorcmd(ch, obj, door, subcmd);
-    }
-    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (!has_key(ch, keynum)) )
-    {
+    } else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) && ((
+                 !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOKEY))) && (!has_key(ch, keynum))) {
       send_to_char(ch, "It is locked, and you do not have the key!\r\n");
-    }
-    else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
-             (GET_LEVEL(ch) < LVL_IMMORT || (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE))))
+    } else if (!(DOOR_IS_UNLOCKED(ch, obj, door)) && IS_SET(flags_door[subcmd], NEED_UNLOCKED) &&
+               (GET_LEVEL(ch) < LVL_IMMORT || (!IS_NPC(ch) && !PRF_FLAGGED(ch, PRF_NOHASSLE))))
       send_to_char(ch, "It seems to be locked.\r\n");
     else if (!has_key(ch, keynum) && (GET_LEVEL(ch) < LVL_GOD) && ((subcmd == SCMD_LOCK) || (subcmd == SCMD_UNLOCK)))
       send_to_char(ch, "You don't seem to have the proper key.\r\n");
@@ -683,7 +663,7 @@ ACMD(do_enter)
 
   one_argument(argument, buf);
 
-  if (*buf) {			/* an argument was supplied, search for door
+  if (*buf) { /* an argument was supplied, search for door
 				 * keyword */
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
@@ -699,12 +679,12 @@ ACMD(do_enter)
     /* try to locate an entrance */
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->to_room != NOWHERE)
-	  if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
-	      ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
-	    perform_move(ch, door, 1);
-	    return;
-	  }
+        if (EXIT(ch, door)->to_room != NOWHERE)
+          if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
+              ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
+            perform_move(ch, door, 1);
+            return;
+          }
     send_to_char(ch, "You can't seem to find anything to enter.\r\n");
   }
 }
@@ -718,12 +698,12 @@ ACMD(do_leave)
   else {
     for (door = 0; door < DIR_COUNT; door++)
       if (EXIT(ch, door))
-	if (EXIT(ch, door)->to_room != NOWHERE)
-	  if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
-	    !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
-	    perform_move(ch, door, 1);
-	    return;
-	  }
+        if (EXIT(ch, door)->to_room != NOWHERE)
+          if (!EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) &&
+              !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_INDOORS)) {
+            perform_move(ch, door, 1);
+            return;
+          }
     send_to_char(ch, "I see no obvious exits to the outside.\r\n");
   }
 }
@@ -737,16 +717,16 @@ ACMD(do_stand)
   case POS_SITTING:
     send_to_char(ch, "You stand up.\r\n");
     act("$n clambers to $s feet.", TRUE, ch, 0, 0, TO_ROOM);
-    /* Were they sitting in something? */
+  /* Were they sitting in something? */
     char_from_furniture(ch);
-    /* Will be sitting after a successful bash and may still be fighting. */
+  /* Will be sitting after a successful bash and may still be fighting. */
     GET_POS(ch) = FIGHTING(ch) ? POS_FIGHTING : POS_STANDING;
     break;
   case POS_RESTING:
     send_to_char(ch, "You stop resting, and stand up.\r\n");
     act("$n stops resting, and clambers on $s feet.", TRUE, ch, 0, 0, TO_ROOM);
     GET_POS(ch) = POS_STANDING;
-    /* Were they sitting in something. */
+  /* Were they sitting in something. */
     char_from_furniture(ch);
     break;
   case POS_SLEEPING:
@@ -758,7 +738,7 @@ ACMD(do_stand)
   default:
     send_to_char(ch, "You stop floating around, and put your feet on the ground.\r\n");
     act("$n stops floating around, and puts $s feet on the ground.",
-	TRUE, ch, 0, 0, TO_ROOM);
+        TRUE, ch, 0, 0, TO_ROOM);
     GET_POS(ch) = POS_STANDING;
     break;
   }
@@ -799,7 +779,7 @@ ACMD(do_sit)
       } else {
         if (OBJ_SAT_IN_BY(furniture) == NULL)
           OBJ_SAT_IN_BY(furniture) = ch;
-        for (tempch = OBJ_SAT_IN_BY(furniture); tempch != ch ; tempch = NEXT_SITTING(tempch)) {
+        for (tempch = OBJ_SAT_IN_BY(furniture); tempch != ch; tempch = NEXT_SITTING(tempch)) {
           if (NEXT_SITTING(tempch))
             continue;
           NEXT_SITTING(tempch) = ch;
@@ -884,7 +864,7 @@ ACMD(do_sleep)
   default:
     send_to_char(ch, "You stop floating around, and lie down to sleep.\r\n");
     act("$n stops floating around, and lie down to sleep.",
-	TRUE, ch, 0, 0, TO_ROOM);
+        TRUE, ch, 0, 0, TO_ROOM);
     GET_POS(ch) = POS_SLEEPING;
     break;
   }
@@ -942,9 +922,9 @@ ACMD(do_follow)
       return;
     }
   } else {
-    if (ch->master != (char_data*)  NULL) {
-      send_to_char(ch, "You are following %s.\r\n", 
-         GET_NAME(ch->master));
+    if (ch->master != (char_data *)NULL) {
+      send_to_char(ch, "You are following %s.\r\n",
+                   GET_NAME(ch->master));
     } else {
       send_to_char(ch, "Whom do you wish to follow?\r\n");
     }
@@ -957,7 +937,7 @@ ACMD(do_follow)
   }
   if (AFF_FLAGGED(ch, AFF_CHARM) && (ch->master)) {
     act("But you only feel like following $N!", FALSE, ch, 0, ch->master, TO_CHAR);
-  } else {			/* Not Charmed follow person */
+  } else { /* Not Charmed follow person */
     if (leader == ch) {
       if (!ch->master) {
         send_to_char(ch, "You are already following yourself.\r\n");
@@ -980,9 +960,9 @@ ACMD(do_follow)
 ACMD(do_unfollow)
 {
   if (ch->master) {
-    if (AFF_FLAGGED(ch, AFF_CHARM)) { 
-       send_to_char(ch, "You feel compelled to follow %s.\r\n",
-         GET_NAME(ch->master));
+    if (AFF_FLAGGED(ch, AFF_CHARM)) {
+      send_to_char(ch, "You feel compelled to follow %s.\r\n",
+                   GET_NAME(ch->master));
     } else {
       stop_follower(ch);
     }

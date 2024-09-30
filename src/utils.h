@@ -59,17 +59,17 @@ struct time_info_data *mud_time_passed(time_t t2, time_t t1);
 void prune_crlf(char *txt);
 void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums);
 int get_flag_by_name(const char *flag_list[], char *flag_name);
-int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read );
-int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read );
-size_t file_sizeof( FILE *file );
-int file_numlines( FILE *file );
-IDXTYPE atoidx( const char *str_to_conv );
+int file_head(FILE *file, char *buf, size_t bufsize, int lines_to_read);
+int file_tail(FILE *file, char *buf, size_t bufsize, int lines_to_read);
+size_t file_sizeof(FILE *file);
+int file_numlines(FILE *file);
+IDXTYPE atoidx(const char *str_to_conv);
 char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad);
 char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);
 int get_class_by_name(char *classname);
-char * convert_from_tabs(char * string);
-int count_non_protocol_chars(char * str);
+char *convert_from_tabs(char *string);
+int count_non_protocol_chars(char *str);
 char *right_trim_whitespace(const char *string);
 void remove_from_string(char *string, const char *to_remove);
 
@@ -139,7 +139,7 @@ int increase_bank(struct char_data *ch, int amt);
 int decrease_bank(struct char_data *ch, int amt);
 
 /* in class.c */
-void    advance_level(struct char_data *ch);
+void advance_level(struct char_data *ch);
 
 void char_from_furniture(struct char_data *ch);
 /** What ch is currently sitting on. */
@@ -255,8 +255,7 @@ void char_from_furniture(struct char_data *ch);
      temp = temp->next; \
       if (temp) \
          temp->next = (item)->next; \
-   } \
-
+   }
 /* Connect 'link' to the end of a double-linked list
  * The new item becomes the last in the linked list, and the last
  * pointer is updated.

@@ -22,15 +22,15 @@
 #include "act.h"
 #include "modify.h"
 
-static bool legal_communication(char * arg);
+static bool legal_communication(char *arg);
 
-static bool legal_communication(char * arg) 
+static bool legal_communication(char *arg)
 {
   while (*arg) {
     if (*arg == '@') {
       arg++;
       if (*arg == '(' || *arg == ')' || *arg == '<' || *arg == '>')
-        return FALSE; 
+        return FALSE;
     }
     arg++;
   }
@@ -46,7 +46,7 @@ ACMD(do_say)
   else {
     char buf[MAX_INPUT_LENGTH + 14], *msg;
     struct char_data *vict;
- 
+
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
       parse_at(argument);
 
@@ -74,7 +74,7 @@ ACMD(do_say)
 ACMD(do_gsay)
 {
   skip_spaces(&argument);
-  
+
   if (!GROUP(ch)) {
     send_to_char(ch, "But you are not a member of a group!\r\n");
     return;
@@ -82,17 +82,18 @@ ACMD(do_gsay)
   if (!*argument)
     send_to_char(ch, "Yes, but WHAT do you want to group-say?\r\n");
   else {
-		
+
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
-      parse_at(argument);		
-		
-    send_to_group(ch, ch->group, "%s%s%s says, '%s'%s\r\n", CCGRN(ch, C_NRM), CCGRN(ch, C_NRM), GET_NAME(ch), argument, CCNRM(ch, C_NRM));
-	
+      parse_at(argument);
+
+    send_to_group(ch, ch->group, "%s%s%s says, '%s'%s\r\n", CCGRN(ch, C_NRM), CCGRN(ch, C_NRM), GET_NAME(ch),
+                  argument, CCNRM(ch, C_NRM));
+
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
     else
       send_to_char(ch, "%sYou group-say, '%s'%s\r\n", CCGRN(ch, C_NRM), argument, CCNRM(ch, C_NRM));
-	}
+  }
 }
 
 static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)
@@ -107,7 +108,7 @@ static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg
     send_to_char(ch, "%s", CONFIG_OK);
   else {
     snprintf(buf, sizeof(buf), "%sYou tell $N, '%s'%s", CCRED(ch, C_NRM), arg, CCNRM(ch, C_NRM));
-    msg = act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);     
+    msg = act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
     add_history(ch, msg, HIST_TELL);
   }
 
@@ -127,11 +128,12 @@ static int is_tell_ok(struct char_data *ch, struct char_data *vict)
     send_to_char(ch, "You can't tell other people while you have notell on.\r\n");
   else if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD))
     send_to_char(ch, "The walls seem to absorb your words.\r\n");
-  else if (!IS_NPC(vict) && !vict->desc)        /* linkless */
+  else if (!IS_NPC(vict) && !vict->desc) /* linkless */
     act("$E's linkless at the moment.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   else if (PLR_FLAGGED(vict, PLR_WRITING))
     act("$E's writing a message right now; try again later.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
-  else if ((!IS_NPC(vict) && PRF_FLAGGED(vict, PRF_NOTELL)) || (ROOM_FLAGGED(IN_ROOM(vict), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD)))
+  else if ((!IS_NPC(vict) && PRF_FLAGGED(vict, PRF_NOTELL)) || (
+             ROOM_FLAGGED(IN_ROOM(vict), ROOM_SOUNDPROOF) && (GET_LEVEL(ch) < LVL_GOD)))
     act("$E can't hear you.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   else
     return (TRUE);
@@ -144,7 +146,7 @@ static int is_tell_ok(struct char_data *ch, struct char_data *vict)
 ACMD(do_tell)
 {
   struct char_data *vict = NULL;
-  char buf[MAX_INPUT_LENGTH + 25], buf2[MAX_INPUT_LENGTH];  // +25 to make room for constants
+  char buf[MAX_INPUT_LENGTH + 25], buf2[MAX_INPUT_LENGTH]; // +25 to make room for constants
 
   half_chop(argument, buf, buf2);
 
@@ -168,7 +170,7 @@ ACMD(do_tell)
     }
 
     /* Only a-z and +/- allowed. */
-    for (p = buf2, q = word; *p ; p++)
+    for (p = buf2, q = word; *p; p++)
       if ((LOWER(*p) <= 'z' && LOWER(*p) >= 'a') || (*p == '+') || (*p == '-'))
         *q++ = *p;
 
@@ -178,7 +180,7 @@ ACMD(do_tell)
       send_to_char(ch, "Sorry, only letters and +/- are allowed characters.\r\n");
       return;
     }
-    snprintf(buf, sizeof(buf), "../bin/webster %s %d &", word, (int) getpid());
+    snprintf(buf, sizeof(buf), "../bin/webster %s %d &", word, (int)getpid());
     last_webster_teller = GET_IDNUM(ch);
     send_to_char(ch, "You look up '%s' in Merriam-Webster.\r\n", word);
 #endif /* platform specific part */
@@ -190,7 +192,7 @@ ACMD(do_tell)
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
       parse_at(buf2);
     perform_tell(ch, vict, buf2);
-	}
+  }
 }
 
 ACMD(do_reply)
@@ -210,8 +212,8 @@ ACMD(do_reply)
     /* Make sure the person you're replying to is still playing by searching
      * for them.  Note, now last tell is stored as player IDnum instead of
      * a pointer, which is much better because it's safer, plus will still
-     * work if someone logs out and back in again. A descriptor list based 
-     * search would be faster although we could not find link dead people.  
+     * work if someone logs out and back in again. A descriptor list based
+     * search would be faster although we could not find link dead people.
      * Not that they can hear tells anyway. :) -gg 2/24/98 */
     while (tch && (IS_NPC(tch) || GET_IDNUM(tch) != GET_LAST_TELL(ch)))
       tch = tch->next;
@@ -222,7 +224,7 @@ ACMD(do_reply)
       if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
         parse_at(argument);
       perform_tell(ch, tch, argument);
-		}
+    }
   }
 }
 
@@ -269,7 +271,7 @@ ACMD(do_spec_comm)
     snprintf(buf1, sizeof(buf1), "$n %s you, '%s'", action_plur, buf2);
     act(buf1, FALSE, ch, 0, vict, TO_VICT);
 
-    if ((!IS_NPC(ch)) && (PRF_FLAGGED(ch, PRF_NOREPEAT))) 
+    if ((!IS_NPC(ch)) && (PRF_FLAGGED(ch, PRF_NOREPEAT)))
       send_to_char(ch, "%s", CONFIG_OK);
     else
       send_to_char(ch, "You %s %s, '%s'\r\n", action_sing, GET_NAME(vict), buf2);
@@ -374,19 +376,19 @@ ACMD(do_page)
     snprintf(buf, sizeof(buf), "\007\007*$n* %s", buf2);
     if (!str_cmp(arg, "all")) {
       if (GET_LEVEL(ch) > LVL_GOD) {
-	for (d = descriptor_list; d; d = d->next)
-	  if (STATE(d) == CON_PLAYING && d->character)
-	    act(buf, FALSE, ch, 0, d->character, TO_VICT);
+        for (d = descriptor_list; d; d = d->next)
+          if (STATE(d) == CON_PLAYING && d->character)
+            act(buf, FALSE, ch, 0, d->character, TO_VICT);
       } else
-	send_to_char(ch, "You will never be godly enough to do that!\r\n");
+        send_to_char(ch, "You will never be godly enough to do that!\r\n");
       return;
     }
     if ((vict = get_char_vis(ch, arg, NULL, FIND_CHAR_WORLD))) {
       act(buf, FALSE, ch, 0, vict, TO_VICT);
       if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
-	send_to_char(ch, "%s", CONFIG_OK);
+        send_to_char(ch, "%s", CONFIG_OK);
       else
-	act(buf, FALSE, ch, 0, vict, TO_CHAR);
+        act(buf, FALSE, ch, 0, vict, TO_CHAR);
     } else
       send_to_char(ch, "There is no such person in the game!\r\n");
   }
@@ -397,26 +399,26 @@ ACMD(do_gen_comm)
 {
   struct descriptor_data *i;
   char color_on[24];
-  char buf1[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH + 50], *msg;   // + 50 to make room for color codes
+  char buf1[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH + 50], *msg; // + 50 to make room for color codes
   bool emoting = FALSE;
 
   /* Array of flags which must _not_ be set in order for comm to be heard. */
   int channels[] = {
-    0,
-    PRF_NOSHOUT,
-    PRF_NOGOSS,
-    PRF_NOAUCT,
-    PRF_NOGRATZ,
-    PRF_NOGOSS,
-    0
+      0,
+      PRF_NOSHOUT,
+      PRF_NOGOSS,
+      PRF_NOAUCT,
+      PRF_NOGRATZ,
+      PRF_NOGOSS,
+      0
   };
 
   int hist_type[] = {
-    HIST_HOLLER,
-    HIST_SHOUT,
-    HIST_GOSSIP,
-    HIST_AUCTION,
-    HIST_GRATS,
+      HIST_HOLLER,
+      HIST_SHOUT,
+      HIST_GOSSIP,
+      HIST_AUCTION,
+      HIST_GRATS,
   };
 
   /* com_msgs: [0] Message if you can't perform the action because of noshout
@@ -424,35 +426,42 @@ ACMD(do_gen_comm)
    *           [2] message if you're not on the channel
    *           [3] a color string. */
   const char *com_msgs[][4] = {
-    {"You cannot holler!!\r\n",
-      "holler",
-      "",
-      KYEL},
-
-    {"You cannot shout!!\r\n",
-      "shout",
-      "Turn off your noshout flag first!\r\n",
-      KYEL},
-
-    {"You cannot gossip!!\r\n",
-      "gossip",
-      "You aren't even on the channel!\r\n",
-      KYEL},
-
-    {"You cannot auction!!\r\n",
-      "auction",
-      "You aren't even on the channel!\r\n",
-      KMAG},
-
-    {"You cannot congratulate!\r\n",
-      "congrat",
-      "You aren't even on the channel!\r\n",
-      KGRN},
-
-    {"You cannot gossip your emotions!\r\n",
-      "gossip",
-      "You aren't even on the channel!\r\n",
-      KYEL}
+      {
+          "You cannot holler!!\r\n",
+          "holler",
+          "",
+          KYEL
+      },
+      {
+          "You cannot shout!!\r\n",
+          "shout",
+          "Turn off your noshout flag first!\r\n",
+          KYEL
+      },
+      {
+          "You cannot gossip!!\r\n",
+          "gossip",
+          "You aren't even on the channel!\r\n",
+          KYEL
+      },
+      {
+          "You cannot auction!!\r\n",
+          "auction",
+          "You aren't even on the channel!\r\n",
+          KMAG
+      },
+      {
+          "You cannot congratulate!\r\n",
+          "congrat",
+          "You aren't even on the channel!\r\n",
+          KGRN
+      },
+      {
+          "You cannot gossip your emotions!\r\n",
+          "gossip",
+          "You aren't even on the channel!\r\n",
+          KYEL
+      }
   };
 
   if (PLR_FLAGGED(ch, PLR_NOSHOUT)) {
@@ -475,7 +484,8 @@ ACMD(do_gen_comm)
 
   /* Level_can_shout defined in config.c. */
   if (GET_LEVEL(ch) < CONFIG_LEVEL_CAN_SHOUT) {
-    send_to_char(ch, "You must be at least level %d before you can %s.\r\n", CONFIG_LEVEL_CAN_SHOUT, com_msgs[subcmd][1]);
+    send_to_char(ch, "You must be at least level %d before you can %s.\r\n", CONFIG_LEVEL_CAN_SHOUT,
+                 com_msgs[subcmd][1]);
     return;
   }
   /* Make sure the char is on the channel. */
@@ -506,12 +516,12 @@ ACMD(do_gen_comm)
   if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
     send_to_char(ch, "%s", CONFIG_OK);
   else {
-		if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
+    if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
       parse_at(argument);
-      
+
     snprintf(buf1, sizeof(buf1), "%sYou %s, '%s%s'%s", COLOR_LEV(ch) >= C_CMP ? color_on : "",
-        com_msgs[subcmd][1], argument, COLOR_LEV(ch) >= C_CMP ? color_on : "", CCNRM(ch, C_CMP));
-    
+             com_msgs[subcmd][1], argument, COLOR_LEV(ch) >= C_CMP ? color_on : "", CCNRM(ch, C_CMP));
+
     msg = act(buf1, FALSE, ch, 0, 0, TO_CHAR | TO_SLEEP);
     add_history(ch, msg, hist_type[subcmd]);
   }
@@ -520,7 +530,7 @@ ACMD(do_gen_comm)
 
   /* Now send all the strings out. */
   for (i = descriptor_list; i; i = i->next) {
-    if (STATE(i) != CON_PLAYING || i == ch->desc || !i->character )
+    if (STATE(i) != CON_PLAYING || i == ch->desc || !i->character)
       continue;
     if (!IS_NPC(ch) && (PRF_FLAGGED(i->character, channels[subcmd]) || PLR_FLAGGED(i->character, PLR_WRITING)))
       continue;
@@ -529,10 +539,10 @@ ACMD(do_gen_comm)
       continue;
 
     if (subcmd == SCMD_SHOUT && ((world[IN_ROOM(ch)].zone != world[IN_ROOM(i->character)].zone) ||
-         !AWAKE(i->character)))
+                                 !AWAKE(i->character)))
       continue;
 
-    snprintf(buf2, sizeof(buf2), "%s%s%s", (COLOR_LEV(i->character) >= C_NRM) ? color_on : "", buf1, KNRM); 
+    snprintf(buf2, sizeof(buf2), "%s%s%s", (COLOR_LEV(i->character) >= C_NRM) ? color_on : "", buf1, KNRM);
     msg = act(buf2, FALSE, ch, 0, i->character, TO_VICT | TO_SLEEP);
     add_history(i->character, msg, hist_type[subcmd]);
   }
@@ -551,7 +561,7 @@ ACMD(do_qcomm)
   else {
     char buf[MAX_STRING_LENGTH];
     struct descriptor_data *i;
-    
+
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
       parse_at(argument);
 

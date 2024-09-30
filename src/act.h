@@ -268,7 +268,6 @@ ACMD(do_action);
 ACMD(do_gmote);
 
 
-
 /*****************************************************************************
  * Begin Functions and defines for act.wizard.c
  ****************************************************************************/
@@ -327,7 +326,7 @@ ACMD(do_plist);
 ACMD(do_purge);
 ACMD(do_recent);
 ACMD(do_restore);
-void return_to_char(struct char_data * ch);
+void return_to_char(struct char_data *ch);
 ACMD(do_return);
 ACMD(do_saveall);
 ACMD(do_send);
