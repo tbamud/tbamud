@@ -1688,8 +1688,9 @@ static void perform_immort_where(char_data *ch, const char *arg)
         }
       }
   } else {
-    len = snprintf(buf, buf_size,
-      "   ### Mob name                   - Room #  Room name\r\n");
+    if (PRF_FLAGGED(ch, PRF_VERBOSE))
+      len = snprintf(buf, buf_size, "   ### Mob name                   - Room #  Room name\r\n");
+
     for (i = character_list; i; i = i->next)
       if (CAN_SEE(ch, i) && IN_ROOM(i) != NOWHERE && isname(arg, i->player.name)) {
         found = 1;
@@ -1720,7 +1721,7 @@ static void perform_immort_where(char_data *ch, const char *arg)
         len += nlen;
       }
 
-    if (len < buf_size) {
+    if (PRF_FLAGGED(ch, PRF_VERBOSE) && len < buf_size) {
       nlen = snprintf(buf + len, buf_size - len, "  ###  Object name                 Location\r\n");
       if (len + nlen >= buf_size) {
         snprintf(buf + len, buf_size - len, "%s", error_message);
