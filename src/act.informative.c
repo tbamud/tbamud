@@ -1611,7 +1611,7 @@ static size_t print_object_location(const int num, const obj_data *obj, const ch
   if (num > 0)
     nlen = snprintf(buf + len, buf_size - len, "O%4d. %-25s%s - ", num, obj->short_description, QNRM);
   else
-    nlen = snprintf(buf + len, buf_size - len, "%35s", " - ");
+    nlen = snprintf(buf + len, buf_size - len, "%37s", " - ");
 
   len += nlen;
   nlen = 0;
@@ -1631,11 +1631,18 @@ static size_t print_object_location(const int num, const obj_data *obj, const ch
 
   if (IN_ROOM(obj) != NOWHERE)
     nlen = snprintf(buf + len, buf_size - len, "[%5d] %s%s\r\n", GET_ROOM_VNUM(IN_ROOM(obj)), world[IN_ROOM(obj)].name, QNRM);
-  else if (obj->carried_by)
-    nlen = snprintf(buf + len, buf_size - len, "carried by %s%s\r\n", PERS(obj->carried_by, ch), QNRM);
-  else if (obj->worn_by)
+  else if (obj->carried_by) {
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+      nlen = snprintf(buf + len, buf_size - len, "carried by [%5d] %s%s\r\n", GET_MOB_VNUM(obj->carried_by), PERS(obj->carried_by, ch), QNRM);
+    else
+      nlen = snprintf(buf + len, buf_size - len, "carried by %s%s\r\n", PERS(obj->carried_by, ch), QNRM);
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IN_ROOM(obj->carried_by) != NOWHERE && len + nlen < buf_size)
+      nlen += snprintf(buf + len + nlen, buf_size - len - nlen, "%37sin [%5d] %s%s\r\n", " - ", GET_ROOM_VNUM(IN_ROOM(obj->carried_by)), world[IN_ROOM(obj->carried_by)].name, QNRM);
+  } else if (obj->worn_by) {
     nlen = snprintf(buf + len, buf_size - len, "worn by %s%s\r\n", PERS(obj->worn_by, ch), QNRM);
-  else if (obj->in_obj) {
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IN_ROOM(obj->worn_by) != NOWHERE && len + nlen < buf_size)
+      nlen += snprintf(buf + len + nlen, buf_size - len - nlen, "%37sin [%5d] %s%s\r\n", " - ", GET_ROOM_VNUM(IN_ROOM(obj->worn_by)), world[IN_ROOM(obj->worn_by)].name, QNRM);
+  } else if (obj->in_obj) {
     nlen = snprintf(buf + len, buf_size - len, "inside %s%s%s\r\n", obj->in_obj->short_description, QNRM, (recur ? ", which is" : " "));
     if (recur && nlen + len < buf_size) {
       len += nlen;
