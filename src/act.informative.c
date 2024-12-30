@@ -1636,11 +1636,14 @@ static size_t print_object_location(const int num, const obj_data *obj, const ch
       nlen = snprintf(buf + len, buf_size - len, "carried by [%5d] %s%s\r\n", GET_MOB_VNUM(obj->carried_by), PERS(obj->carried_by, ch), QNRM);
     else
       nlen = snprintf(buf + len, buf_size - len, "carried by %s%s\r\n", PERS(obj->carried_by, ch), QNRM);
-    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IN_ROOM(obj->carried_by) != NOWHERE && len + nlen < buf_size)
+    if (PRF_FLAGGED(ch, PRF_VERBOSE) && IN_ROOM(obj->carried_by) != NOWHERE && len + nlen < buf_size)
       nlen += snprintf(buf + len + nlen, buf_size - len - nlen, "%37sin [%5d] %s%s\r\n", " - ", GET_ROOM_VNUM(IN_ROOM(obj->carried_by)), world[IN_ROOM(obj->carried_by)].name, QNRM);
   } else if (obj->worn_by) {
-    nlen = snprintf(buf + len, buf_size - len, "worn by %s%s\r\n", PERS(obj->worn_by, ch), QNRM);
-    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS) && IN_ROOM(obj->worn_by) != NOWHERE && len + nlen < buf_size)
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+      nlen = snprintf(buf + len, buf_size - len, "worn by [%5d] %s%s\r\n", GET_MOB_VNUM(obj->worn_by), PERS(obj->worn_by, ch), QNRM);
+    else
+      nlen = snprintf(buf + len, buf_size - len, "worn by %s%s\r\n", PERS(obj->worn_by, ch), QNRM);
+    if (PRF_FLAGGED(ch, PRF_VERBOSE) && IN_ROOM(obj->worn_by) != NOWHERE && len + nlen < buf_size)
       nlen += snprintf(buf + len + nlen, buf_size - len - nlen, "%37sin [%5d] %s%s\r\n", " - ", GET_ROOM_VNUM(IN_ROOM(obj->worn_by)), world[IN_ROOM(obj->worn_by)].name, QNRM);
   } else if (obj->in_obj) {
     nlen = snprintf(buf + len, buf_size - len, "inside %s%s%s\r\n", obj->in_obj->short_description, QNRM, (recur ? ", which is" : " "));
@@ -2001,6 +2004,9 @@ ACMD(do_toggle)
     {"pagelength", 0, 0, "\n", "\n"},
     {"screenwidth", 0, 0, "\n", "\n"},
     {"color", 0, 0, "\n", "\n"},
+    {"verbose", PRF_VERBOSE, LVL_IMMORT,
+      "You will no longer see verbose output in listings.\n",
+      "You will now see verbose listings.\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
@@ -2034,7 +2040,8 @@ ACMD(do_toggle)
         "       NoHassle: %-3s    "
         "      Holylight: %-3s    "
         "      ShowVnums: %-3s\r\n"
-        "         Syslog: %-3s%s    ",
+        "         Syslog: %-3s    "
+        "        Verbose: %-3s%s  ",
 
         ONOFF(PRF_FLAGGED(ch, PRF_BUILDWALK)),
         ONOFF(PRF_FLAGGED(ch, PRF_NOWIZ)),
@@ -2043,6 +2050,7 @@ ACMD(do_toggle)
         ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
         ONOFF(PRF_FLAGGED(ch, PRF_SHOWVNUMS)),
         types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)],
+        ONOFF(PRF_FLAGGED(ch, PRF_VERBOSE)),
         GET_LEVEL(ch) == LVL_IMPL ? "" : "\r\n");
     }
     if (GET_LEVEL(ch) >= LVL_IMPL) {
