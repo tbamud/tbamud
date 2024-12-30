@@ -1596,7 +1596,7 @@ static int process_output(struct descriptor_data *t)
     result = write_to_descriptor(t->descriptor, osb);
 
   if (result < 0) {	/* Oops, fatal error. Bye! */
-    close_socket(t);
+//    close_socket(t); // close_socket is called after return of negative result
     return (-1);
   } else if (result == 0)	/* Socket buffer full. Try later. */
     return (0);

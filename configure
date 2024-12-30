@@ -1227,18 +1227,28 @@ if eval "test \"`echo '$ac_cv_func_'crypt`\" = yes"; then
   cat >> confdefs.h <<\EOF
 #define CIRCLE_CRYPT 1
 EOF
+  CRYPTLIB="-lcrypt"
+  echo "CRYPTLIB set to: $CRYPTLIB" 1>&6
 
 else
   echo "$ac_t""no" 1>&6
-echo $ac_n "checking for crypt in -lcrypt""... $ac_c" 1>&6
-echo "configure:1235: checking for crypt in -lcrypt" >&5
-ac_lib_var=`echo crypt'_'crypt | sed 'y%./+-%__p_%'`
-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-  echo $ac_n "(cached) $ac_c" 1>&6
-else
-  ac_save_LIBS="$LIBS"
-LIBS="-lcrypt  $LIBS"
-cat > conftest.$ac_ext <<EOF
+  echo $ac_n "checking for crypt in -lcrypt""... $ac_c" 1>&6
+  echo "configure:1235: checking for crypt in -lcrypt" >&5
+
+  OS_NAME=$(uname)
+  if [ "$OS_NAME" = "Darwin" ]; then
+    # macOS: No need for -lcrypt
+    CRYPTLIB=""
+    echo "CRYPTLIB not needed on macOS" 1>&6
+  else
+    # Other systems (Linux): Use -lcrypt
+    ac_lib_var=`echo crypt'_'crypt | sed 'y%./+-%__p_%'`
+    if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+      echo $ac_n "(cached) $ac_c" 1>&6
+    else
+      ac_save_LIBS="$LIBS"
+      LIBS="-lcrypt  $LIBS"
+      cat > conftest.$ac_ext <<EOF
 #line 1243 "configure"
 #include "confdefs.h"
 /* Override any gcc2 internal prototype to avoid an error.  */
@@ -1250,30 +1260,29 @@ int main() {
 crypt()
 ; return 0; }
 EOF
-if { (eval echo configure:1254: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-  rm -rf conftest*
-  eval "ac_cv_lib_$ac_lib_var=yes"
-else
-  echo "configure: failed program was:" >&5
-  cat conftest.$ac_ext >&5
-  rm -rf conftest*
-  eval "ac_cv_lib_$ac_lib_var=no"
-fi
-rm -f conftest*
-LIBS="$ac_save_LIBS"
-
-fi
-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-  echo "$ac_t""yes" 1>&6
-  cat >> confdefs.h <<\EOF
+      if { (eval echo configure:1254: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+        rm -rf conftest*
+        eval "ac_cv_lib_$ac_lib_var=yes"
+      else
+        echo "configure: failed program was:" >&5
+        cat conftest.$ac_ext >&5
+        rm -rf conftest*
+        eval "ac_cv_lib_$ac_lib_var=no"
+      fi
+      rm -f conftest*
+      LIBS="$ac_save_LIBS"
+    fi
+    if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+      echo "$ac_t""yes" 1>&6
+      cat >> confdefs.h <<\EOF
 #define CIRCLE_CRYPT 1
 EOF
- CRYPTLIB="-lcrypt"
-else
-  echo "$ac_t""no" 1>&6
-fi
-
-    
+      CRYPTLIB="-lcrypt"
+      echo "CRYPTLIB set to: $CRYPTLIB on Linux" 1>&6
+    else
+      echo "$ac_t""no" 1>&6
+    fi
+  fi
 fi
 
 
