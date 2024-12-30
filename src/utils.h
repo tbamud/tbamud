@@ -64,6 +64,8 @@ int file_tail(FILE *file, char *buf, size_t bufsize, int lines_to_read);
 size_t file_sizeof(FILE *file);
 int file_numlines(FILE *file);
 IDXTYPE atoidx(const char *str_to_conv);
+long parse_long(const char *str_to_conv);
+int parse_int(const char *str_to_conv);
 char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad);
 char *strpaste(char *str1, char *str2, char *joiner);
 void new_affect(struct affected_type *af);

@@ -180,7 +180,7 @@ room_rnum find_target_room(struct char_data *ch, char *rawroomstr)
   }
 
   if (isdigit(*roomstr) && !strchr(roomstr, '.')) {
-    if ((location = real_room((room_vnum)atoi(roomstr))) == NOWHERE) {
+    if ((location = real_room(atoidx(roomstr))) == NOWHERE) {
       send_to_char(ch, "No room exists with that number.\r\n");
       return (NOWHERE);
     }
@@ -1008,7 +1008,7 @@ ACMD(do_stat)
     if (!*buf2)
       room = &world[IN_ROOM(ch)];
     else {
-      room_rnum rnum = real_room(atoi(buf2));
+      room_rnum rnum = real_room(atoidx(buf2));
       if (rnum == NOWHERE) {
         send_to_char(ch, "That is not a valid room.\r\n");
         return;
@@ -1070,7 +1070,7 @@ ACMD(do_stat)
       print_zone(ch, zone_table[world[IN_ROOM(ch)].zone].number);
       return;
     } else {
-      print_zone(ch, atoi(buf2));
+      print_zone(ch, atoidx(buf2));
       return;
     }
   } else {
@@ -1329,7 +1329,7 @@ ACMD(do_load)
       return;
     }
 
-    if ((r_num = real_mobile(atoi(buf2))) == NOBODY) {
+    if ((r_num = real_mobile(atoidx(buf2))) == NOBODY) {
       send_to_char(ch, "There is no monster with that number.\r\n");
       return;
     }
@@ -1351,7 +1351,7 @@ ACMD(do_load)
       return;
     }
 
-    if ((r_num = real_object(atoi(buf2))) == NOTHING) {
+    if ((r_num = real_object(atoidx(buf2))) == NOTHING) {
       send_to_char(ch, "There is no object with that number.\r\n");
       return;
     }
@@ -1392,7 +1392,7 @@ ACMD(do_vstat)
 
   switch (LOWER(*buf)) {
   case 'm':
-    if ((r_num = real_mobile(atoi(buf2))) == NOBODY) {
+    if ((r_num = real_mobile(atoidx(buf2))) == NOBODY) {
       send_to_char(ch, "There is no monster with that number.\r\n");
       return;
     }
@@ -1402,7 +1402,7 @@ ACMD(do_vstat)
     extract_char(mob);
     break;
   case 'o':
-    if ((r_num = real_object(atoi(buf2))) == NOTHING) {
+    if ((r_num = real_object(atoidx(buf2))) == NOTHING) {
       send_to_char(ch, "There is no object with that number.\r\n");
       return;
     }
@@ -1411,19 +1411,19 @@ ACMD(do_vstat)
     extract_obj(obj);
     break;
   case 'r':
-    sprintf(buf2, "room %d", atoi(buf2));
+    sprintf(buf2, "room %d", atoidx(buf2));
     do_stat(ch, buf2, 0, 0);
     break;
   case 'z':
-    sprintf(buf2, "zone %d", atoi(buf2));
+    sprintf(buf2, "zone %d", atoidx(buf2));
     do_stat(ch, buf2, 0, 0);
     break;
   case 't':
-    sprintf(buf2, "%d", atoi(buf2));
+    sprintf(buf2, "%d", atoidx(buf2));
     do_tstat(ch, buf2, 0, 0);
     break;
   case 's':
-    sprintf(buf2, "shops %d", atoi(buf2));
+    sprintf(buf2, "shops %d", atoidx(buf2));
     do_show(ch, buf2, 0, 0);
     break;
   default:
@@ -3618,7 +3618,7 @@ ACMD(do_zcheck)
   if (!is_number(buf) || !strcmp(buf, "."))
     zrnum = world[IN_ROOM(ch)].zone;
   else
-    zrnum = real_zone(atoi(buf));
+    zrnum = real_zone(atoidx(buf));
 
   if (zrnum == NOWHERE) {
     send_to_char(ch, "Check what zone ?\r\n");
@@ -4179,17 +4179,17 @@ ACMD(do_checkloadstatus)
   }
 
   if (LOWER(*buf1) == 'm') {
-    mob_checkload(ch, atoi(buf2));
+    mob_checkload(ch, atoidx(buf2));
     return;
   }
 
   if (LOWER(*buf1) == 'o') {
-    obj_checkload(ch, atoi(buf2));
+    obj_checkload(ch, atoidx(buf2));
     return;
   }
 
   if (LOWER(*buf1) == 't') {
-    trg_checkload(ch, atoi(buf2));
+    trg_checkload(ch, atoidx(buf2));
     return;
   }
 }
@@ -4288,7 +4288,7 @@ ACMD(do_zpurge)
   if (*arg == '.' || !*arg) {
     zone = world[IN_ROOM(ch)].zone;
   } else if (is_number(arg)) {
-    zone = real_zone(atoi(arg));
+    zone = real_zone(atoidx(arg));
     if (zone == NOWHERE || zone > top_of_zone_table) {
       send_to_char(ch, "That zone doesn't exist!\r\n");
       return;
@@ -4802,7 +4802,7 @@ ACMD(do_zlock)
       send_to_char(ch, "There are currently no locked zones!\r\n");
     }
     return;
-  } else if ((znvnum = atoi(arg)) == 0) {
+  } else if ((znvnum = atoidx(arg)) == NOWHERE) {
     send_to_char(ch, "Usage: %szlock <zone number>%s\r\n", QYEL, QNRM);
     return;
   }
@@ -4895,7 +4895,7 @@ ACMD(do_zunlock)
       send_to_char(ch, "There are currently no unlocked zones!\r\n");
     }
     return;
-  } else if ((znvnum = atoi(arg)) == 0) {
+  } else if ((znvnum = atoidx(arg)) == NOWHERE) {
     send_to_char(ch, "Usage: %szunlock <zone number>%s\r\n", QYEL, QNRM);
     return;
   }

@@ -57,7 +57,7 @@ ACMD(do_oasis_redit)
     save = TRUE;
 
     if (is_number(buf2))
-      number = atoi(buf2);
+      number = atoidx(buf2);
     else if (GET_OLC_ZONE(ch) != NOWHERE) {
       zone_rnum zlok;
 
@@ -75,7 +75,7 @@ ACMD(do_oasis_redit)
 
   /* If a numeric argument was given (like a room number), get it. */
   if (number == NOWHERE)
-    number = atoi(buf1);
+    number = atoidx(buf1);
 
   if (number < IDXTYPE_MIN || number > IDXTYPE_MAX) {
     send_to_char(ch, "That room VNUM can't exist.\r\n");
@@ -799,11 +799,8 @@ void redit_parse(struct descriptor_data *d, char *arg)
     return;
 
   case REDIT_EXIT_KEY:
-    number = atoi(arg);
-    if (number < 0)
-      OLC_EXIT(d)->key = NOTHING;
-    else
-      OLC_EXIT(d)->key = number;
+    number = atoidx(arg);
+    OLC_EXIT(d)->key = number;
     redit_disp_exit_menu(d);
     return;
 
@@ -886,7 +883,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     break;
 
   case REDIT_COPY:
-    if ((number = real_room(atoi(arg))) != NOWHERE) {
+    if ((number = real_room(atoidx(arg))) != NOWHERE) {
       redit_setup_existing(d, number);
     } else
       write_to_output(d, "That room does not exist.\r\n");

@@ -2464,6 +2464,11 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...)
   va_list args;
   int j;
 
+  if (start == NOWHERE || finish == NOWHERE) {
+    log("send_to_range passed start room or end room NOWHERE.");
+    return;
+  }
+
   if (start > finish) {
     log("send_to_range passed start room value greater then finish.");
     return;

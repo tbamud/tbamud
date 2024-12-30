@@ -330,7 +330,7 @@ ACMD(do_export_zone)
     return; 
   } 
 
-  zvnum = atoi(argument); 
+  zvnum = atoidx(argument);
   zrnum = real_zone(zvnum); 
 
   if (zrnum == NOWHERE) { 

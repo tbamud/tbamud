@@ -1081,6 +1081,13 @@ struct descriptor_data {
     struct list_data * events;
 };
 
+typedef struct index_data index_data;
+typedef struct room_data room_data;
+typedef struct obj_data obj_data;
+typedef struct trig_data trig_data;
+typedef struct char_data char_data;
+typedef struct descriptor_data descriptor_data;
+
 /* other miscellaneous structures */
 /** Fight message display. This structure is used to hold the information to
  * be displayed for every different violent hit type. */

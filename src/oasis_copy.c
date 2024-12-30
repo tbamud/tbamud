@@ -37,7 +37,9 @@ static room_vnum redit_find_new_vnum(zone_rnum zone);
 ***********************************************************/
 ACMD(do_oasis_copy)
 {
-  int i, src_vnum, src_rnum, dst_vnum, dst_rnum;
+  int i;
+  room_vnum src_vnum, dst_vnum;
+  room_rnum src_rnum, dst_rnum;
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
   struct descriptor_data *d;
@@ -82,7 +84,7 @@ ACMD(do_oasis_copy)
   /* We can't copy non-existing data. */
   /* Note: the source data can be in any zone. It's not restricted */
   /* to the builder's designated OLC zone. */
-  src_vnum = atoi(buf1);
+  src_vnum = atoidx(buf1);
   src_rnum = (*oasis_copy_info[i].binary_search)(src_vnum);
   if (src_rnum == NOWHERE) {
     send_to_char(ch, "The source %s (#%d) does not exist.\r\n", oasis_copy_info[i].text, src_vnum);
@@ -90,7 +92,7 @@ ACMD(do_oasis_copy)
   }
 
   /* Don't copy if the target already exists. */
-  dst_vnum = atoi(buf2);
+  dst_vnum = atoidx(buf2);
   dst_rnum = (*oasis_copy_info[i].binary_search)(dst_vnum);
   if (dst_rnum != NOWHERE) {
     send_to_char(ch, "The target %s (#%d) already exists.\r\n", oasis_copy_info[i].text, dst_vnum);

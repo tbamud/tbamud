@@ -1520,12 +1520,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d,
           "That is an invalid choice!\r\n"
           "Enter the room's vnum where mortals should load into : ");
-      } else if (real_room(atoi(arg)) == NOWHERE) {
+      } else if (real_room(atoidx(arg)) == NOWHERE) {
         write_to_output(d,
           "That room doesn't exist!\r\n"
           "Enter the room's vnum where mortals should load into : ");
       } else {
-        OLC_CONFIG(d)->room_nums.mortal_start_room = atoi(arg);
+        OLC_CONFIG(d)->room_nums.mortal_start_room = atoidx(arg);
         cedit_disp_room_numbers(d);
       }
       break;
@@ -1535,12 +1535,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d,
           "That is an invalid choice!\r\n"
           "Enter the room's vnum where immortals should load into : ");
-      } else if (real_room(atoi(arg)) == NOWHERE) {
+      } else if (real_room(atoidx(arg)) == NOWHERE) {
         write_to_output(d,
           "That room doesn't exist!\r\n"
           "Enter the room's vnum where immortals should load into : ");
       } else {
-        OLC_CONFIG(d)->room_nums.immort_start_room = atoi(arg);
+        OLC_CONFIG(d)->room_nums.immort_start_room = atoidx(arg);
         cedit_disp_room_numbers(d);
       }
       break;
@@ -1550,12 +1550,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d,
           "That is an invalid choice!\r\n"
           "Enter the room's vnum where frozen people should load into : ");
-      } else if (real_room(atoi(arg)) == NOWHERE) {
+      } else if (real_room(atoidx(arg)) == NOWHERE) {
         write_to_output(d,
           "That room doesn't exist!\r\n"
           "Enter the room's vnum where frozen people should load into : ");
       } else {
-        OLC_CONFIG(d)->room_nums.frozen_start_room = atoi(arg);
+        OLC_CONFIG(d)->room_nums.frozen_start_room = atoidx(arg);
         cedit_disp_room_numbers(d);
       }
       break;
@@ -1565,12 +1565,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d,
           "That is an invalid choice!\r\n"
           "Enter the vnum for donation room #1 : ");
-      } else if (real_room(atoi(arg)) == NOWHERE) {
+      } else if (real_room(atoidx(arg)) == NOWHERE) {
         write_to_output(d,
           "That room doesn't exist!\r\n"
           "Enter the vnum for donation room #1 : ");
       } else {
-        OLC_CONFIG(d)->room_nums.donation_room_1 = atoi(arg);
+        OLC_CONFIG(d)->room_nums.donation_room_1 = atoidx(arg);
         cedit_disp_room_numbers(d);
       }
       break;
@@ -1580,12 +1580,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d,
           "That is an invalid choice!\r\n"
           "Enter the vnum for donation room #2 : ");
-      } else if (real_room(atoi(arg)) == NOWHERE) {
+      } else if (real_room(atoidx(arg)) == NOWHERE) {
         write_to_output(d,
           "That room doesn't exist!\r\n"
           "Enter the vnum for donation room #2 : ");
       } else {
-        OLC_CONFIG(d)->room_nums.donation_room_2 = atoi(arg);
+        OLC_CONFIG(d)->room_nums.donation_room_2 = atoidx(arg);
         cedit_disp_room_numbers(d);
       }
       break;
@@ -1595,12 +1595,12 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         write_to_output(d,
           "That is an invalid choice!\r\n"
           "Enter the vnum for donation room #3 : ");
-      } else if (real_room(atoi(arg)) == NOWHERE) {
+      } else if (real_room(atoidx(arg)) == NOWHERE) {
         write_to_output(d,
           "That room doesn't exist!\r\n"
           "Enter the vnum for donation room #3 : ");
       } else {
-        OLC_CONFIG(d)->room_nums.donation_room_3 = atoi(arg);
+        OLC_CONFIG(d)->room_nums.donation_room_3 = atoidx(arg);
         cedit_disp_room_numbers(d);
       }
       break;

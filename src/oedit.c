@@ -51,7 +51,9 @@ static void oedit_save_to_disk(int zone_num);
 /* Utility and exported functions */
 ACMD(do_oasis_oedit)
 {
-  int number = NOWHERE, save = 0, real_num;
+  int save = 0;
+  zone_vnum number = NOWHERE;
+  zone_rnum real_num;
   struct descriptor_data *d;
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
@@ -76,7 +78,7 @@ ACMD(do_oasis_oedit)
     save = TRUE;
 
     if (is_number(buf2))
-      number = atoi(buf2);
+      number = atoidx(buf2);
     else if (GET_OLC_ZONE(ch) > 0) {
       zone_rnum zlok;
 
@@ -94,7 +96,7 @@ ACMD(do_oasis_oedit)
 
   /* If a numeric argument was given, get it. */
   if (number == NOWHERE)
-    number = atoi(buf1);
+    number = atoidx(buf1);
 
   if (number < IDXTYPE_MIN || number > IDXTYPE_MAX) {
     send_to_char(ch, "That object VNUM can't exist.\r\n");
@@ -1182,7 +1184,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
     break;
 
   case OEDIT_COPY:
-    if ((number = real_object(atoi(arg))) != NOTHING) {
+    if ((number = real_object(atoidx(arg))) != NOTHING) {
       oedit_setup_existing(d, number);
     } else
       write_to_output(d, "That object does not exist.\r\n");

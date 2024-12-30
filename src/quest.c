@@ -653,7 +653,7 @@ static void quest_stat(struct char_data *ch, char argument[MAX_INPUT_LENGTH])
 
     if (!*argument)
         send_to_char(ch, "%s\r\n", quest_imm_usage);
-    else if ((rnum = real_quest(atoi(argument))) == NOTHING)
+    else if ((rnum = real_quest(atoidx(argument))) == NOTHING)
         send_to_char(ch, "That quest does not exist.\r\n");
     else {
         sprintbit(QST_FLAGS(rnum), aq_flags, buf, sizeof(buf));

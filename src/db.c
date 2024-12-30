@@ -3597,7 +3597,7 @@ room_rnum real_room(room_vnum vnum)
   bot = 0;
   top = top_of_world;
 
-  if (world[bot].number > vnum || world[top].number < vnum)
+  if (vnum == NOWHERE || world[bot].number > vnum || world[top].number < vnum)
     return (NOWHERE);
 
   /* perform binary search on world-table */
@@ -3623,7 +3623,7 @@ mob_rnum real_mobile(mob_vnum vnum)
   top = top_of_mobt;
 
   /* quickly reject out-of-range vnums */
-  if (mob_index[bot].vnum > vnum || mob_index[top].vnum < vnum)
+  if (vnum == NOBODY || mob_index[bot].vnum > vnum || mob_index[top].vnum < vnum)
     return (NOBODY);
 
   /* perform binary search on mob-table */
@@ -3649,7 +3649,7 @@ obj_rnum real_object(obj_vnum vnum)
   top = top_of_objt;
 
   /* quickly reject out-of-range vnums */
-  if (obj_index[bot].vnum > vnum || obj_index[top].vnum < vnum)
+  if (vnum == NOTHING || obj_index[bot].vnum > vnum || obj_index[top].vnum < vnum)
     return (NOTHING);
 
   /* perform binary search on obj-table */
@@ -3674,7 +3674,7 @@ zone_rnum real_zone(zone_vnum vnum)
   bot = 0;
   top = top_of_zone_table;
 
-  if (zone_table[bot].number > vnum || zone_table[top].number < vnum)
+  if (vnum == NOWHERE || zone_table[bot].number > vnum || zone_table[top].number < vnum)
     return (NOWHERE);
 
   /* perform binary search on zone-table */

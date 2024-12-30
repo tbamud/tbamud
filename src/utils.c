@@ -1239,7 +1239,7 @@ size_t file_sizeof( FILE *file )
 int file_numlines( FILE *file )
 {
   int numlines = 0;
-  char c;
+  int c;
 
   rewind(file);
 
@@ -1257,6 +1257,23 @@ int file_numlines( FILE *file )
   return numlines;
 }
 
+long parse_long(const char *str_to_conv)
+{
+  /* Check for errors */
+  errno = 0;
+
+  return strtol(str_to_conv, NULL, 10);
+}
+
+int parse_int(const char *str_to_conv)
+{
+  const long int result = parse_long(str_to_conv);
+
+  if (errno || result > INT_MAX || result < INT_MIN)
+    return 0;
+
+  return (int)result;
+}
 
 /** A string converter designed to deal with the compile sensitive IDXTYPE.
  * Relies on the friendlier strtol function.
@@ -1266,17 +1283,12 @@ int file_numlines( FILE *file )
  */
 IDXTYPE atoidx( const char *str_to_conv )
 {
-  long int result;
+  const long int result = parse_long(str_to_conv);
 
-  /* Check for errors */
-  errno = 0;
-
-  result = strtol(str_to_conv, NULL, 10);
-
-  if ( errno || (result > IDXTYPE_MAX) || (result < 0) )
+  if (errno || result > IDXTYPE_MAX || result < 0)
     return NOWHERE; /* All of the NO* settings should be the same */
-  else
-    return (IDXTYPE) result;
+
+  return (IDXTYPE)result;
 }
 
 #define isspace_ignoretabs(c) ((c)!='\t' && isspace(c))

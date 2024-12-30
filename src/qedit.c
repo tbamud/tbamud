@@ -692,7 +692,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
           return;
         }
       }
-      OLC_QUEST(d)->next_quest = (number == -1 ? NOTHING : atoi(arg));
+      OLC_QUEST(d)->next_quest = (number == -1 ? NOTHING : atoidx(arg));
       break;
     case QEDIT_PREVQUEST:
       if ((number = atoi(arg)) != -1) {
@@ -701,7 +701,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
           return;
         }
       }
-      OLC_QUEST(d)->prev_quest = (number == -1 ? NOTHING : atoi(arg));
+      OLC_QUEST(d)->prev_quest = (number == -1 ? NOTHING : atoidx(arg));
       break;
     case QEDIT_GOLD:
       OLC_QUEST(d)->gold_reward = LIMIT(number, 0, 99999);

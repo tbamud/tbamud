@@ -300,7 +300,7 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
 		if (*arg == '.')
 			toshow = GET_ROOM_VNUM(IN_ROOM(ch));
 		else
-			toshow = atoi(arg);
+			toshow = atoidx(arg);
 
 	  if ((i = find_house(toshow)) == NOWHERE) {
   	  send_to_char(ch, "Unknown house, \"%s\".\r\n", arg);
@@ -363,7 +363,7 @@ static void hcontrol_build_house(struct char_data *ch, char *arg)
     send_to_char(ch, "%s", HCONTROL_FORMAT);
     return;
   }
-  virt_house = atoi(arg1);
+  virt_house = atoidx(arg1);
   if ((real_house = real_room(virt_house)) == NOWHERE) {
     send_to_char(ch, "No such room exists.\r\n");
     return;
@@ -436,17 +436,17 @@ static void hcontrol_destroy_house(struct char_data *ch, char *arg)
     send_to_char(ch, "%s", HCONTROL_FORMAT);
     return;
   }
-  if ((i = find_house(atoi(arg))) == NOWHERE) {
+  if ((i = find_house(atoidx(arg))) == NOWHERE) {
     send_to_char(ch, "Unknown house.\r\n");
     return;
   }
   if ((real_atrium = real_room(house_control[i].atrium)) == NOWHERE)
-    log("SYSERR: House %d had invalid atrium %d!", atoi(arg), house_control[i].atrium);
+    log("SYSERR: House %s had invalid atrium %d!", arg, house_control[i].atrium);
   else
     REMOVE_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
 
   if ((real_house = real_room(house_control[i].vnum)) == NOWHERE)
-    log("SYSERR: House %d had invalid vnum %d!", atoi(arg), house_control[i].vnum);
+    log("SYSERR: House %s had invalid vnum %d!", arg, house_control[i].vnum);
   else {
     REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE);
     REMOVE_BIT_AR(ROOM_FLAGS(real_house), ROOM_PRIVATE);
@@ -475,7 +475,7 @@ static void hcontrol_pay_house(struct char_data *ch, char *arg)
 
   if (!*arg)
     send_to_char(ch, "%s", HCONTROL_FORMAT);
-  else if ((i = find_house(atoi(arg))) == NOWHERE)
+  else if ((i = find_house(atoidx(arg))) == NOWHERE)
     send_to_char(ch, "Unknown house.\r\n");
   else {
     mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "Payment for house %s collected by %s.", arg, GET_NAME(ch));

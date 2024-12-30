@@ -978,7 +978,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     }
     switch (OLC_CMD(d).command) {
     case 'M':
-      if ((pos = real_mobile(atoi(arg))) != NOBODY) {
+      if ((pos = real_mobile(atoidx(arg))) != NOBODY) {
 	OLC_CMD(d).arg1 = pos;
 	zedit_disp_arg2(d);
       } else
@@ -988,7 +988,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
     case 'P':
     case 'E':
     case 'G':
-      if ((pos = real_object(atoi(arg))) != NOTHING) {
+      if ((pos = real_object(atoidx(arg))) != NOTHING) {
 	OLC_CMD(d).arg1 = pos;
 	zedit_disp_arg2(d);
       } else
@@ -1044,8 +1044,8 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       OLC_MODE(d) = ZEDIT_SARG1;
       break;
     case 'T':
-      if (real_trigger(atoi(arg)) != NOTHING) {
-        OLC_CMD(d).arg2 = real_trigger(atoi(arg)); /* trigger */
+      if (real_trigger(atoidx(arg)) != NOTHING) {
+        OLC_CMD(d).arg2 = real_trigger(atoidx(arg)); /* trigger */
         OLC_CMD(d).arg3 = real_room(OLC_NUM(d));
         zedit_disp_menu(d);
       } else
@@ -1062,7 +1062,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
     case 'R':
-      if ((pos = real_object(atoi(arg))) != NOTHING) {
+      if ((pos = real_object(atoidx(arg))) != NOTHING) {
 	OLC_CMD(d).arg2 = pos;
 	zedit_disp_menu(d);
       } else
@@ -1096,7 +1096,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       }
       break;
     case 'P':
-      if ((pos = real_object(atoi(arg))) != NOTHING) {
+      if ((pos = real_object(atoidx(arg))) != NOTHING) {
 	OLC_CMD(d).arg3 = pos;
 	zedit_disp_menu(d);
       } else

@@ -186,7 +186,7 @@ obj_data *get_object_in_equip(char_data * ch, char *name)
         if (id == obj->script_id)
           return (obj);
   } else if (is_number(name)) {
-    obj_vnum ovnum = atoi(name);
+    obj_vnum ovnum = atoidx(name);
     for (j = 0; j < NUM_WEARS; j++)
       if ((obj = GET_EQ(ch, j)))
         if (GET_OBJ_VNUM(obj) == ovnum)
@@ -486,7 +486,7 @@ room_data *get_room(char *name)
 
   if (*name == UID_CHAR)
     return find_room(atoi(name + 1));
-  else if ((nr = real_room(atoi(name))) == NOWHERE)
+  else if ((nr = real_room(atoidx(name))) == NOWHERE)
     return NULL;
   else
     return &world[nr];
@@ -944,8 +944,11 @@ ACMD(do_attach)
   trig_data *trig;
   char targ_name[MAX_INPUT_LENGTH], trig_name[MAX_INPUT_LENGTH];
   char loc_name[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
-  int loc, tn, rn, num_arg;
+  int loc;
+  trig_rnum rn;
   room_rnum rnum;
+  IDXTYPE num_arg;
+  trig_vnum tn;
 
   argument = two_arguments(argument, arg, trig_name);
   two_arguments(argument, targ_name, loc_name);
@@ -955,8 +958,8 @@ ACMD(do_attach)
     return;
   }
 
-  num_arg = atoi(targ_name);
-  tn = atoi(trig_name);
+  num_arg = atoidx(targ_name);
+  tn = atoidx(trig_name);
   loc = (*loc_name) ? atoi(loc_name) : -1;
 
   if (is_abbrev(arg, "mobile") || is_abbrev(arg, "mtr")) {
@@ -1147,13 +1150,15 @@ ACMD(do_detach)
   struct room_data *room;
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], *snum;
   char *trigger = 0;
-  int num_arg, tn, rn;
+  IDXTYPE num_arg;
+  trig_vnum tn;
+  trig_rnum rn;
   room_rnum rnum;
   trig_data *trig;
 
   argument = two_arguments(argument, arg1, arg2);
   one_argument(argument, arg3);
-  tn = atoi(arg3);
+  tn = atoidx(arg3);
   rn = real_trigger(tn);
   trig = read_trigger(rn);
 
@@ -1164,7 +1169,7 @@ ACMD(do_detach)
   }
 
   /* vnum of mob/obj, if given */
-  num_arg = atoi(arg2);
+  num_arg = atoidx(arg2);
 
   if (!str_cmp(arg1, "room") || !str_cmp(arg1, "wtr")) {
     if (!*arg3 || (strchr(arg2, '.')))
@@ -1793,7 +1798,8 @@ static void process_attach(void *go, struct script_data *sc, trig_data *trig,
   char_data *c=NULL;
   obj_data *o=NULL;
   room_data *r=NULL;
-  long trignum, id;
+  long id;
+  trig_rnum trignum;
 
   id_p = two_arguments(cmd, arg, trignum_s);
   skip_spaces(&id_p);
@@ -1831,7 +1837,7 @@ static void process_attach(void *go, struct script_data *sc, trig_data *trig,
   }
 
   /* locate and load the trigger specified */
-  trignum = real_trigger(atoi(trignum_s));
+  trignum = real_trigger(atoidx(trignum_s));
   if (trignum == NOTHING || !(newtrig=read_trigger(trignum))) {
     script_log("Trigger: %s, VNum %d. attach invalid trigger: '%s'",
             GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), trignum_s);
@@ -2725,7 +2731,7 @@ trig_rnum real_trigger(trig_vnum vnum)
   bot = 0;
   top = top_of_trigt - 1;
 
-  if (!top_of_trigt || trig_index[bot]->vnum > vnum || trig_index[top]->vnum < vnum)
+  if (vnum == NOTHING || !top_of_trigt || trig_index[bot]->vnum > vnum || trig_index[top]->vnum < vnum)
     return (NOTHING);
 
   /* perform binary search on trigger-table */
@@ -2749,7 +2755,7 @@ ACMD(do_tstat)
 
   half_chop(argument, str, argument);
   if (*str) {
-    rnum = real_trigger(atoi(str));
+    rnum = real_trigger(atoidx(str));
     if (rnum == NOTHING) {
       send_to_char(ch, "That vnum does not exist.\r\n");
       return;
@@ -3096,7 +3102,7 @@ bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *
   return FALSE; 
 }
 
-int trig_is_attached(struct script_data *sc, int trig_num) 
+int trig_is_attached(struct script_data *sc, trig_vnum trig_num)
 { 
   trig_data *t; 
 

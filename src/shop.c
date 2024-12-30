@@ -1506,7 +1506,7 @@ void show_shops(struct char_data *ch, char *arg)
 	return;
       }
     } else if (is_number(arg))
-      shop_nr = real_shop(atoi(arg));
+      shop_nr = real_shop(atoidx(arg));
     else
       shop_nr = -1;
 

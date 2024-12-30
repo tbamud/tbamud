@@ -16,6 +16,7 @@
 #define _DG_SCRIPTS_H_
 
 #include "utils.h" /* To make sure ACMD is defined */
+#include "structs.h" /* To make sure we have access to typedefs */
 
 #define    MOB_TRIGGER   0
 #define    OBJ_TRIGGER   1
@@ -191,14 +192,6 @@ struct script_memory {
     struct script_memory *next;
 };
 
-/* typedefs that the dg functions rely on */
-typedef struct index_data index_data;
-typedef struct room_data room_data;
-typedef struct obj_data obj_data;
-typedef struct trig_data trig_data;
-typedef struct char_data char_data;
-
-
 /* function prototypes from dg_triggers.c */
 char *one_phrase(char *arg, char *first_arg);
 int is_substring(char *sub, char *string);
@@ -297,7 +290,7 @@ bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *
 void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
 void save_char_vars_ascii(FILE *file, struct char_data *ch);
 int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg);
-int trig_is_attached(struct script_data *sc, int trig_num);
+int trig_is_attached(struct script_data *sc, trig_vnum trig_num);
 
 /* To maintain strict-aliasing we'll have to do this trick with a union */
 /* Thanks to Chris Gilbert for reminding me that there are other options. */

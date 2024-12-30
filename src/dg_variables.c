@@ -98,7 +98,7 @@ int item_in_list(char *item, obj_data *list)
         count += item_in_list(item, i->contains);
     }
   } else if (is_number(item)) { /* check for vnum */
-    obj_vnum ovnum = atoi(item);
+    obj_vnum ovnum = atoidx(item);
 
     for (i = list; i; i = i->next_content) {
       if (GET_OBJ_VNUM(i) == ovnum)
@@ -256,6 +256,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
   struct room_data *room, *r = NULL;
   char *name;
   int num, count, i, j, doors;
+  IDXTYPE idx;
 
   char *log_cmd[]        = {"mlog ",        "olog ",        "wlog "       };
   char *send_cmd[]       = {"msend ",       "osend ",       "wsend "      };
@@ -429,7 +430,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         return;
       }
       else if (!str_cmp(var, "people")) {
-        snprintf(str, slen, "%d",((num = atoi(field)) > 0) ? trgvar_in_room(num) : 0);
+        snprintf(str, slen, "%d",((num = atoidx(field)) > 0) ? trgvar_in_room(num) : 0);
         return;
       }
       else if (!str_cmp(var, "happyhour")) {
@@ -469,8 +470,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           script_log("findmob.vnum(mvnum) - illegal syntax");
           strcpy(str, "0");
         } else {
-          room_rnum rrnum = real_room(atoi(field));
-          mob_vnum mvnum = atoi(subfield);
+          room_rnum rrnum = real_room(atoidx(field));
+          mob_vnum mvnum = atoidx(subfield);
 
           if (rrnum == NOWHERE) {
             script_log("findmob.vnum(ovnum): No room with vnum %d", atoi(field));
@@ -490,7 +491,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
           script_log("findobj.vnum(ovnum) - illegal syntax");
           strcpy(str, "0");
         } else {
-          room_rnum rrnum = real_room(atoi(field));
+          room_rnum rrnum = real_room(atoidx(field));
 
           if (rrnum == NOWHERE) {
             script_log("findobj.vnum(ovnum): No room with vnum %d", atoi(field));
@@ -978,7 +979,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
            else if (!str_cmp(field, "questdone"))
            {
                if (!IS_NPC(c) && subfield && *subfield) {
-                 int q_num = atoi(subfield);
+                 qst_vnum q_num = atoidx(subfield);
                  if (is_complete(c, q_num))
                    strcpy(str, "1");
                  else
@@ -1111,7 +1112,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               * something like if %actor.vnum(500)%. It should return false for PC's instead 
               * -- Fizban 02/18
               */ 
-              snprintf(str, slen, "%d", IS_NPC(c) ? (int)(GET_MOB_VNUM(c) == atoi(subfield)) : 0 );
+              snprintf(str, slen, "%d", IS_NPC(c) ? GET_MOB_VNUM(c) == atoidx(subfield) : 0 );
             } else {
               if (IS_NPC(c))
                 snprintf(str, slen, "%d", GET_MOB_VNUM(c));
@@ -1249,8 +1250,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
             if (!(subfield && *subfield))
               *str = '\0';
             else {
-              i = atoi(subfield);
-              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(o), i));
+              idx = atoidx(subfield);
+              snprintf(str, slen, "%d", trig_is_attached(SCRIPT(o), idx));
             }
           }
           break;
@@ -1311,7 +1312,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         case 'v':
           if (!str_cmp(field, "vnum"))
             if (subfield && *subfield) {
-              snprintf(str, slen, "%d", (int)(GET_OBJ_VNUM(o) == atoi(subfield)));
+              snprintf(str, slen, "%d", GET_OBJ_VNUM(o) == atoidx(subfield));
             } else {
               snprintf(str, slen, "%d", GET_OBJ_VNUM(o));
             }
@@ -1403,14 +1404,14 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
 
       else if (!str_cmp(field, "vnum")) {
         if (subfield && *subfield) {
-          snprintf(str, slen, "%d", (int)(r->number == atoi(subfield)));
+          snprintf(str, slen, "%d", r->number == atoidx(subfield));
         } else {
           snprintf(str, slen,"%d",r->number);
         }
       } else if (!str_cmp(field, "contents")) {
         if (subfield && *subfield) {
           for (obj = r->contents; obj; obj = obj->next_content) {
-            if (GET_OBJ_VNUM(obj) == atoi(subfield)) {
+            if (GET_OBJ_VNUM(obj) == atoidx(subfield)) {
               /* arg given, found */
               snprintf(str, slen, "%c%ld", UID_CHAR, obj_script_id(obj));
               return;
@@ -1457,8 +1458,8 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
         if (!(subfield && *subfield))
           *str = '\0';
         else {
-          i = atoi(subfield);
-          snprintf(str, slen, "%d", trig_is_attached(SCRIPT(r), i));
+          idx = atoidx(subfield);
+          snprintf(str, slen, "%d", trig_is_attached(SCRIPT(r), idx));
         }
       }
       else if (!str_cmp(field, "zonenumber"))

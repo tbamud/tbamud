@@ -375,7 +375,7 @@ ACMD(do_oasis_list)
   if (!*smin || *smin == '.') {
     rzone = world[IN_ROOM(ch)].zone;
   } else if (!*smax) {
-    rzone = real_zone(atoi(smin));
+    rzone = real_zone(atoidx(smin));
 
     if ((rzone == NOWHERE || rzone == 0) && subcmd == SCMD_OASIS_ZLIST && !isdigit(*smin)) {
       /* Must be zlist, with builder name as arg */
@@ -521,7 +521,7 @@ ACMD(do_oasis_links)
     zrnum = world[IN_ROOM(ch)].zone;
     zvnum = zone_table[zrnum].number;
   } else {
-    zvnum = atoi(arg);
+    zvnum = atoidx(arg);
     zrnum = real_zone(zvnum);
   }
 

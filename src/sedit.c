@@ -72,7 +72,7 @@ ACMD(do_oasis_sedit)
     save = TRUE;
 
     if (is_number(buf2))
-      number = atoi(buf2);
+      number = atoidx(buf2);
     else if (GET_OLC_ZONE(ch) > 0) {
       zone_rnum zlok;
 
@@ -90,7 +90,7 @@ ACMD(do_oasis_sedit)
 
   /* If a numeric argument was given, get it. */
   if (number == NOWHERE)
-    number = atoi(buf1);
+    number = atoidx(buf1);
 
   if (number < IDXTYPE_MIN || number > IDXTYPE_MAX) {
     send_to_char(ch, "That shop VNUM can't exist.\r\n");

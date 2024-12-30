@@ -400,7 +400,7 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       case 'O':
-       if (!strcmp(tag, "Olc "))  GET_OLC_ZONE(ch) = atoi(line);
+       if (!strcmp(tag, "Olc "))  GET_OLC_ZONE(ch) = atoidx(line);
   break;
 
       case 'P':
@@ -429,7 +429,7 @@ int load_char(const char *name, struct char_data *ch)
         break;
 
       case 'R':
-	     if (!strcmp(tag, "Room"))	GET_LOADROOM(ch)	= atoi(line);
+	     if (!strcmp(tag, "Room"))	GET_LOADROOM(ch)	= atoidx(line);
 	break;
 
       case 'S':
@@ -448,7 +448,7 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "Thr5"))	GET_SAVE(ch, 4)		= atoi(line);
 	else if (!strcmp(tag, "Titl"))	GET_TITLE(ch)		= strdup(line);
         else if (!strcmp(tag, "Trig") && CONFIG_SCRIPT_PLAYERS) {
-          if ((t_rnum = real_trigger(atoi(line))) != NOTHING) {
+          if ((t_rnum = real_trigger(atoidx(line))) != NOTHING) {
             t = read_trigger(t_rnum);
           if (!SCRIPT(ch))
             CREATE(SCRIPT(ch), struct script_data, 1);
