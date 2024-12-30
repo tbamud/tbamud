@@ -262,9 +262,10 @@
 #define PRF_AUTOMAP      31   /**< Show map at the side of room descs */
 #define PRF_AUTOKEY      32   /**< Automatically unlock locked doors when opening */
 #define PRF_AUTODOOR     33   /**< Use the next available door */
-#define PRF_ZONERESETS   34
+#define PRF_ZONERESETS   34   /**< Show when zones reset */
+#define PRF_VERBOSE      35   /**< Listings like where are more verbose */
 /** Total number of available PRF flags */
-#define NUM_PRF_FLAGS    35
+#define NUM_PRF_FLAGS    36
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
