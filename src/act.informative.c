@@ -1950,7 +1950,8 @@ ACMD(do_toggle)
     if (!GET_WIMP_LEV(ch))
       strcpy(buf2, "OFF");        /* strcpy: OK */
     else
-      sprintf(buf2, "%-3.3d", GET_WIMP_LEV(ch));  /* sprintf: OK */
+      snprintf(buf2, sizeof(buf2), "%-3.3d", GET_WIMP_LEV(ch));  /* thanks to Ironfist for the fix for the buffer overrun here */
+      
 
     if (GET_LEVEL(ch) == LVL_IMPL) {
       send_to_char(ch,
