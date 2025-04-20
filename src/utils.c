@@ -79,6 +79,15 @@ int MAX(int a, int b)
   return (a > b ? a : b);
 }
 
+/** Return the smaller number. Original note: Be wary of sign issues with this.
+ * @param a The first number.
+ * @param b The second number. */
+unsigned long ULMIN(unsigned long a, unsigned long b)
+{
+  return (a < b ? a : b);
+}
+
+
 /** Used to capitalize a string. Will not change any mud specific color codes.
  * @param txt The string to capitalize. */
 char *CAP(char *txt)
@@ -257,7 +266,7 @@ int touch(const char *path)
 void mudlog(int type, int level, int file, const char *str, ...)
 {
   char buf[MAX_STRING_LENGTH];
-  struct descriptor_data *i;
+  descriptor_data *i;
   va_list args;
 
   if (str == NULL)
@@ -481,7 +490,7 @@ time_t mud_time_to_secs(struct time_info_data *now)
  * @todo The minimum starting age of 17 is hardcoded in this function. Recommend
  * changing the minimum age to a property (variable) external to this function.
  * @param ch A valid player character. */
-struct time_info_data *age(struct char_data *ch)
+struct time_info_data *age(char_data *ch)
 {
   static struct time_info_data player_age;
 
@@ -497,9 +506,9 @@ struct time_info_data *age(struct char_data *ch)
  * is already being lead by the character.
  * @param ch The character trying to follow.
  * @param victim The character being followed. */
-bool circle_follow(struct char_data *ch, struct char_data *victim)
+bool circle_follow(char_data *ch, char_data *victim)
 {
-  struct char_data *k;
+  char_data *k;
 
   for (k = victim; k; k = k->master) {
     if (k == ch)
@@ -518,7 +527,7 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
  * the character will stop following the "master" they were following.
  * @param ch The character (NPC or PC) to stop from following.
  * */
-void stop_follower(struct char_data *ch)
+void stop_follower(char_data *ch)
 {
   struct follow_type *j, *k;
 
@@ -561,7 +570,7 @@ void stop_follower(struct char_data *ch)
  * character (PC or NPC).
  * @param ch The character to check for charmed followers.
  */
-int num_followers_charmed(struct char_data *ch)
+int num_followers_charmed(char_data *ch)
 {
   struct follow_type *lackey;
   int total = 0;
@@ -579,7 +588,7 @@ int num_followers_charmed(struct char_data *ch)
  * the character passed in as the argument.
  * @param ch The character (NPC or PC) to stop from following.
  * */
-void die_follower(struct char_data *ch)
+void die_follower(char_data *ch)
 {
   struct follow_type *j, *k;
 
@@ -598,7 +607,7 @@ void die_follower(struct char_data *ch)
  * be following anyone, otherwise core dump.
  * @param ch The character to follow.
  * @param leader The character to be followed. */
-void add_follower(struct char_data *ch, struct char_data *leader)
+void add_follower(char_data *ch, char_data *leader)
 {
   struct follow_type *k;
 
@@ -733,7 +742,7 @@ int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_nam
 int num_pc_in_room(struct room_data *room)
 {
   int i = 0;
-  struct char_data *ch;
+  char_data *ch;
 
   for (ch = room->people; ch != NULL; ch = ch->next_in_room)
     if (!IS_NPC(ch))
@@ -897,10 +906,10 @@ int levenshtein_distance(const char *s1, const char *s2)
  * @post ch is unattached from the furniture object.
  * @param ch The character to remove from the furniture object.
  */
-void char_from_furniture(struct char_data *ch)
+void char_from_furniture(char_data *ch)
 {
-  struct obj_data *furniture;
-  struct char_data *tempch;
+  obj_data *furniture;
+  char_data *tempch;
 
   if (!SITTING(ch))
     return;
@@ -957,7 +966,7 @@ void char_from_furniture(struct char_data *ch)
      list_length - So we can work with lists that don't end with /n
      show_nums   - when set to TRUE, it will show a number before the list entry.
 */
-void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums)
+void column_list(char_data *ch, int num_cols, const char **list, int list_length, bool show_nums)
 {
    size_t max_len = 0, len = 0, temp_len;
    int num_per_col, col_width, r, c, i, offset = 0;

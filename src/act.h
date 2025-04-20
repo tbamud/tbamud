@@ -57,7 +57,7 @@ char *find_exdesc(char *word, struct extra_descr_data *list);
 void space_to_minus(char *str);
 /** @todo Move to a help module? */
 int search_help(const char *argument, int level);
-void free_history(struct char_data *ch, int type);
+void free_history(char_data *ch, int type);
 void free_recent_players(void);
 /* functions with subcommands */
 /* do_commands */
@@ -109,10 +109,10 @@ ACMD(do_whois);
  ****************************************************************************/
 /* Utility Functions */
 /** @todo Compare with needs of find_eq_pos_script. */
-int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg);
-void name_from_drinkcon(struct obj_data *obj);
-void name_to_drinkcon(struct obj_data *obj, int type);
-void weight_change_object(struct obj_data *obj, int weight);
+int find_eq_pos(char_data *ch, obj_data *obj, char *arg);
+void name_from_drinkcon(obj_data *obj);
+void name_to_drinkcon(obj_data *obj, int type);
+void weight_change_object(obj_data *obj, int weight);
 /* functions with subcommands */
 /* do_drop */
 ACMD(do_drop);
@@ -275,11 +275,11 @@ ACMD(do_gmote);
 /** @todo should probably be moved to a more general file handler module */
 void clean_llog_entries(void);
 /** @todo This should be moved to a more general utility file */
-int script_command_interpreter(struct char_data *ch, char *arg);
-room_rnum find_target_room(struct char_data *ch, char *rawroomstr);
-void perform_immort_vis(struct char_data *ch);
-void snoop_check(struct char_data *ch);
-bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_name);
+int script_command_interpreter(char_data *ch, char *arg);
+room_rnum find_target_room(char_data *ch, char *rawroomstr);
+void perform_immort_vis(char_data *ch);
+void snoop_check(char_data *ch);
+bool change_player_name(char_data *ch, char_data *vict, char *new_name);
 bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr);
 /* Functions with subcommands */
 /* do_date */
@@ -326,7 +326,7 @@ ACMD(do_plist);
 ACMD(do_purge);
 ACMD(do_recent);
 ACMD(do_restore);
-void return_to_char(struct char_data *ch);
+void return_to_char(char_data *ch);
 ACMD(do_return);
 ACMD(do_saveall);
 ACMD(do_send);

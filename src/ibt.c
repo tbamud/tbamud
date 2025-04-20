@@ -56,12 +56,12 @@ static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt);
 static IBT_DATA *read_ibt(char *filename, FILE *fp);
 static IBT_DATA *get_first_ibt(int mode);
 static IBT_DATA *get_last_ibt(int mode);
-static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch);
+static bool is_ibt_logger(IBT_DATA *ibtData, char_data *ch);
 /* Internal (static) OLC functions */
-static void ibtedit_setup(struct descriptor_data *d);
-static void ibtedit_save(struct descriptor_data *d);
-static void ibtedit_disp_main_menu(struct descriptor_data *d);
-static void ibtedit_disp_flags(struct descriptor_data *d);
+static void ibtedit_setup(descriptor_data *d);
+static void ibtedit_save(descriptor_data *d);
+static void ibtedit_disp_main_menu(descriptor_data *d);
+static void ibtedit_disp_flags(descriptor_data *d);
 
 static IBT_DATA *new_ibt(void)
 {
@@ -436,7 +436,7 @@ static bool free_ibt(int mode, IBT_DATA *ibtData)
 }
 
 /* Return TRUE if 'ch' is the person who logged the IBT */
-static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch)
+static bool is_ibt_logger(IBT_DATA *ibtData, char_data *ch)
 {
   if ( ch && !IS_NPC(ch) && ibtData ) {
 
@@ -773,7 +773,7 @@ ACMD(do_ibt)
 ACMD(do_oasis_ibtedit)
 {
   int number = NOTHING;
-  struct descriptor_data *d;
+  descriptor_data *d;
   char buf1[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
   /* No editing as a mob or while being forced. */
@@ -845,7 +845,7 @@ ACMD(do_oasis_ibtedit)
 
 /*-------------------------------------------------------------------*/
 /* Copy IBT data into the OLC structure                              */
-static void ibtedit_setup(struct descriptor_data *d)
+static void ibtedit_setup(descriptor_data *d)
 {
   IBT_DATA *ibtData;
   int i;
@@ -877,7 +877,7 @@ static void ibtedit_setup(struct descriptor_data *d)
 
 /*-------------------------------------------------------------------*/
 /* Copy IBT data back to the correct list                            */
-static void ibtedit_save(struct descriptor_data *d)
+static void ibtedit_save(descriptor_data *d)
 {
   IBT_DATA *ibtData;
   int i;
@@ -944,9 +944,9 @@ void free_olc_ibt(IBT_DATA *toFree) {
 
 /*-------------------------------------------------------------------*/
 /* main ibtedit menu function...                                     */
-static void ibtedit_disp_main_menu(struct descriptor_data *d)
+static void ibtedit_disp_main_menu(descriptor_data *d)
 {
-  struct char_data *ch = d->character;
+  char_data *ch = d->character;
   char flg_text[MAX_STRING_LENGTH];
   room_rnum rr;
 
@@ -978,7 +978,7 @@ static void ibtedit_disp_main_menu(struct descriptor_data *d)
 }
 /*-------------------------------------------------------------------*/
 /* Display IBT-flags menu. */
-static void ibtedit_disp_flags(struct descriptor_data *d)
+static void ibtedit_disp_flags(descriptor_data *d)
 {
   char buf[MAX_STRING_LENGTH];
 
@@ -995,7 +995,7 @@ static void ibtedit_disp_flags(struct descriptor_data *d)
 }
 /*-------------------------------------------------------------------*/
 /* main clanedit parser function... interpreter throws all input to here. */
-void ibtedit_parse(struct descriptor_data *d, char *arg)
+void ibtedit_parse(descriptor_data *d, char *arg)
 {
   int i;
   char *oldtext = NULL;
@@ -1145,7 +1145,7 @@ void ibtedit_parse(struct descriptor_data *d, char *arg)
 }
 
 /*-------------------------------------------------------------------*/
-void ibtedit_string_cleanup(struct descriptor_data *d, int terminator)
+void ibtedit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
 

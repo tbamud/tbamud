@@ -24,17 +24,17 @@
 
 
 /* local functions */
-static void trigedit_disp_menu(struct descriptor_data *d);
-static void trigedit_disp_types(struct descriptor_data *d);
+static void trigedit_disp_menu(descriptor_data *d);
+static void trigedit_disp_types(descriptor_data *d);
 static void trigedit_create_index(int znum, char *type);
-static void trigedit_setup_new(struct descriptor_data *d);
+static void trigedit_setup_new(descriptor_data *d);
 
 
 /* Trigedit */
 ACMD(do_oasis_trigedit)
 {
   int number, real_num;
-  struct descriptor_data *d;
+  descriptor_data *d;
 
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
@@ -115,9 +115,9 @@ void script_save_to_disk(FILE *fp, void *item, int type)
   struct trig_proto_list *t;
 
   if (type==MOB_TRIGGER)
-    t = ((struct char_data *)item)->proto_script;
+    t = ((char_data *)item)->proto_script;
   else if (type==OBJ_TRIGGER)
-    t = ((struct obj_data *)item)->proto_script;
+    t = ((obj_data *)item)->proto_script;
   else if (type==WLD_TRIGGER)
     t = ((struct room_data *)item)->proto_script;
   else {
@@ -132,7 +132,7 @@ void script_save_to_disk(FILE *fp, void *item, int type)
   }
 }
 
-static void trigedit_setup_new(struct descriptor_data *d)
+static void trigedit_setup_new(descriptor_data *d)
 {
   struct trig_data *trig;
 
@@ -155,7 +155,7 @@ static void trigedit_setup_new(struct descriptor_data *d)
   OLC_VAL(d) = 0;  /* Has changed flag. (It hasn't so far, we just made it.) */
 }
 
-void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
+void trigedit_setup_existing(descriptor_data *d, int rtrg_num)
 {
   struct trig_data *trig;
   struct cmdlist_element *c;
@@ -182,7 +182,7 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
   OLC_VAL(d) = 0;  /* Has changed flag. (It hasn't so far, we just made it.) */
 }
 
-static void trigedit_disp_menu(struct descriptor_data *d)
+static void trigedit_disp_menu(descriptor_data *d)
 {
   struct trig_data *trig = OLC_TRIG(d);
   char *attach_type;
@@ -227,7 +227,7 @@ static void trigedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = TRIGEDIT_MAIN_MENU;
 }
 
-static void trigedit_disp_types(struct descriptor_data *d)
+static void trigedit_disp_types(descriptor_data *d)
 {
   int i, columns = 0;
   const char **types;
@@ -420,7 +420,7 @@ static const char *command_color_replacement[COMMAND_TERMS][2] =
 };
 
 
-static void script_syntax_highlighting(struct descriptor_data *d, char *string)
+static void script_syntax_highlighting(descriptor_data *d, char *string)
 {
     ACMD(do_action);
     char buffer[MAX_STRING_LENGTH] = "";
@@ -484,7 +484,7 @@ static void script_syntax_highlighting(struct descriptor_data *d, char *string)
 }
 /****************************************************************************************/
 
-void trigedit_parse(struct descriptor_data *d, char *arg)
+void trigedit_parse(descriptor_data *d, char *arg)
 {
   int i = 0;
 
@@ -618,7 +618,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
 }
 
 /* save the zone's triggers to internal memory and to disk */
-void trigedit_save(struct descriptor_data *d)
+void trigedit_save(descriptor_data *d)
 {
   int i;
   trig_rnum rnum;
@@ -629,7 +629,7 @@ void trigedit_save(struct descriptor_data *d)
   trig_data *live_trig;
   struct cmdlist_element *cmd, *next_cmd;
   struct index_data **new_index;
-  struct descriptor_data *dsc;
+  descriptor_data *dsc;
   FILE *trig_file;
   int zone, top;
   char buf[MAX_CMD_LENGTH];
@@ -911,7 +911,7 @@ static void trigedit_create_index(int znum, char *type)
   rename(new_name, old_name);
 }
 
-void dg_olc_script_copy(struct descriptor_data *d)
+void dg_olc_script_copy(descriptor_data *d)
 {
   struct trig_proto_list *origscript, *editscript;
 
@@ -936,7 +936,7 @@ void dg_olc_script_copy(struct descriptor_data *d)
       OLC_SCRIPT(d) = NULL;
 }
 
-void dg_script_menu(struct descriptor_data *d)
+void dg_script_menu(descriptor_data *d)
 {
   struct trig_proto_list *editscript;
   int i = 0;
@@ -972,7 +972,7 @@ void dg_script_menu(struct descriptor_data *d)
     grn, nrm, grn, nrm, grn, nrm);
 }
 
-int dg_script_edit_parse(struct descriptor_data *d, char *arg)
+int dg_script_edit_parse(descriptor_data *d, char *arg)
 {
   struct trig_proto_list *trig, *currtrig;
   int count, pos, vnum;
@@ -1077,7 +1077,7 @@ int dg_script_edit_parse(struct descriptor_data *d, char *arg)
   return 1;
 }
 
-void trigedit_string_cleanup(struct descriptor_data *d, int terminator)
+void trigedit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
     case TRIGEDIT_COMMANDS:
@@ -1086,7 +1086,7 @@ void trigedit_string_cleanup(struct descriptor_data *d, int terminator)
   }
 }
 
-int format_script(struct descriptor_data *d)
+int format_script(descriptor_data *d)
 {
   char nsc[MAX_CMD_LENGTH], *t, line[READ_SIZE];
   char *sc;

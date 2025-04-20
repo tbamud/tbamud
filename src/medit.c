@@ -28,23 +28,23 @@
 #include "modify.h"      /* for smash_tilde */
 
 /* local functions */
-static void medit_setup_new(struct descriptor_data *d);
-static void init_mobile(struct char_data *mob);
+static void medit_setup_new(descriptor_data *d);
+static void init_mobile(char_data *mob);
 static void medit_save_to_disk(zone_vnum zone_num);
-static void medit_disp_positions(struct descriptor_data *d);
-static void medit_disp_sex(struct descriptor_data *d);
-static void medit_disp_attack_types(struct descriptor_data *d);
+static void medit_disp_positions(descriptor_data *d);
+static void medit_disp_sex(descriptor_data *d);
+static void medit_disp_attack_types(descriptor_data *d);
 static bool medit_illegal_mob_flag(int fl);
 static int  medit_get_mob_flag_by_number(int num);
-static void medit_disp_mob_flags(struct descriptor_data *d);
-static void medit_disp_aff_flags(struct descriptor_data *d);
-static void medit_disp_menu(struct descriptor_data *d);
+static void medit_disp_mob_flags(descriptor_data *d);
+static void medit_disp_aff_flags(descriptor_data *d);
+static void medit_disp_menu(descriptor_data *d);
 
 /*  utility functions */
 ACMD(do_oasis_medit)
 {
   int number = NOBODY, save = 0, real_num;
-  struct descriptor_data *d;
+  descriptor_data *d;
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
@@ -175,12 +175,12 @@ static void medit_save_to_disk(zone_vnum foo)
   save_mobiles(real_zone(foo));
 }
 
-static void medit_setup_new(struct descriptor_data *d)
+static void medit_setup_new(descriptor_data *d)
 {
-  struct char_data *mob;
+  char_data *mob;
 
   /* Allocate a scratch mobile structure. */
-  CREATE(mob, struct char_data, 1);
+  CREATE(mob, char_data, 1);
 
   init_mobile(mob);
 
@@ -199,12 +199,12 @@ static void medit_setup_new(struct descriptor_data *d)
   OLC_ITEM_TYPE(d) = MOB_TRIGGER;
 }
 
-void medit_setup_existing(struct descriptor_data *d, int rmob_num)
+void medit_setup_existing(descriptor_data *d, int rmob_num)
 {
-  struct char_data *mob;
+  char_data *mob;
 
   /* Allocate a scratch mobile structure. */
-  CREATE(mob, struct char_data, 1);
+  CREATE(mob, char_data, 1);
 
   copy_mobile(mob, mob_proto + rmob_num);
 
@@ -220,7 +220,7 @@ void medit_setup_existing(struct descriptor_data *d, int rmob_num)
 }
 
 /* Ideally, this function should be in db.c, but I'll put it here for portability. */
-static void init_mobile(struct char_data *mob)
+static void init_mobile(char_data *mob)
 {
   clear_char(mob);
 
@@ -245,12 +245,12 @@ static void init_mobile(struct char_data *mob)
 }
 
 /* Save new/edited mob to memory. */
-void medit_save_internally(struct descriptor_data *d)
+void medit_save_internally(descriptor_data *d)
 {
   int i;
   mob_rnum new_rnum;
-  struct descriptor_data *dsc;
-  struct char_data *mob;
+  descriptor_data *dsc;
+  char_data *mob;
 
   i = (real_mobile(OLC_NUM(d)) == NOBODY);
 
@@ -303,7 +303,7 @@ void medit_save_internally(struct descriptor_data *d)
 
 /* Menu functions
    Display positions. (sitting, standing, etc) */
-static void medit_disp_positions(struct descriptor_data *d)
+static void medit_disp_positions(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -312,7 +312,7 @@ static void medit_disp_positions(struct descriptor_data *d)
 }
 
 /* Display the gender of the mobile. */
-static void medit_disp_sex(struct descriptor_data *d)
+static void medit_disp_sex(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -321,7 +321,7 @@ static void medit_disp_sex(struct descriptor_data *d)
 }
 
 /* Display attack types menu. */
-static void medit_disp_attack_types(struct descriptor_data *d)
+static void medit_disp_attack_types(descriptor_data *d)
 {
   int i;
 
@@ -370,7 +370,7 @@ static int medit_get_mob_flag_by_number(int num)
 }
 
 /* Display mob-flags menu. */
-static void medit_disp_mob_flags(struct descriptor_data *d)
+static void medit_disp_mob_flags(descriptor_data *d)
 {
   int i, count = 0, columns = 0;
   char flags[MAX_STRING_LENGTH];
@@ -390,7 +390,7 @@ static void medit_disp_mob_flags(struct descriptor_data *d)
 }
 
 /* Display affection flags menu. */
-static void medit_disp_aff_flags(struct descriptor_data *d)
+static void medit_disp_aff_flags(descriptor_data *d)
 {
   char flags[MAX_STRING_LENGTH];
 
@@ -404,9 +404,9 @@ static void medit_disp_aff_flags(struct descriptor_data *d)
 }
 
 /* Display main menu. */
-static void medit_disp_menu(struct descriptor_data *d)
+static void medit_disp_menu(descriptor_data *d)
 {
-  struct char_data *mob;
+  char_data *mob;
   char flags[MAX_STRING_LENGTH], flag2[MAX_STRING_LENGTH];
 
   mob = OLC_MOB(d);
@@ -459,9 +459,9 @@ static void medit_disp_menu(struct descriptor_data *d)
 }
 
 /* Display main menu. */
-static void medit_disp_stats_menu(struct descriptor_data *d)
+static void medit_disp_stats_menu(descriptor_data *d)
 {
-  struct char_data *mob;
+  char_data *mob;
   char buf[MAX_STRING_LENGTH];
 
   mob = OLC_MOB(d);
@@ -525,7 +525,7 @@ static void medit_disp_stats_menu(struct descriptor_data *d)
   OLC_MODE(d) = MEDIT_STATS_MENU;
 }
 
-void medit_parse(struct descriptor_data *d, char *arg)
+void medit_parse(descriptor_data *d, char *arg)
 {
   int i = -1, j;
   char *oldtext = NULL;
@@ -1103,7 +1103,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
   medit_disp_menu(d);
 }
 
-void medit_string_cleanup(struct descriptor_data *d, int terminator)
+void medit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
 
@@ -1114,7 +1114,7 @@ void medit_string_cleanup(struct descriptor_data *d, int terminator)
   }
 }
 
-void medit_autoroll_stats(struct descriptor_data *d)
+void medit_autoroll_stats(descriptor_data *d)
 {
   int mob_lev;
 

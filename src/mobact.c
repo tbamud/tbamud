@@ -24,12 +24,12 @@
 
 
 /* local file scope only function prototypes */
-static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack);
+static bool aggressive_mob_on_a_leash(char_data *slave, char_data *master, char_data *attack);
 
 void mobile_activity(void)
 {
-  struct char_data *ch, *next_ch, *vict;
-  struct obj_data *obj, *best_obj;
+  char_data *ch, *next_ch, *vict;
+  obj_data *obj, *best_obj;
   int door, found, max;
   memory_rec *names;
 
@@ -174,7 +174,7 @@ void mobile_activity(void)
 
 /* Mob Memory Routines */
 /* make ch remember victim */
-void remember(struct char_data *ch, struct char_data *victim)
+void remember(char_data *ch, char_data *victim)
 {
   memory_rec *tmp;
   bool present = FALSE;
@@ -195,7 +195,7 @@ void remember(struct char_data *ch, struct char_data *victim)
 }
 
 /* make ch forget victim */
-void forget(struct char_data *ch, struct char_data *victim)
+void forget(char_data *ch, char_data *victim)
 {
   memory_rec *curr, *prev = NULL;
 
@@ -219,7 +219,7 @@ void forget(struct char_data *ch, struct char_data *victim)
 }
 
 /* erase ch's memory */
-void clearMemory(struct char_data *ch)
+void clearMemory(char_data *ch)
 {
   memory_rec *curr, *next;
 
@@ -237,7 +237,7 @@ void clearMemory(struct char_data *ch)
 /* An aggressive mobile wants to attack something.  If they're under the 
  * influence of mind altering PC, then see if their master can talk them out 
  * of it, eye them down, or otherwise intimidate the slave. */
-static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack)
+static bool aggressive_mob_on_a_leash(char_data *slave, char_data *master, char_data *attack)
 {
   static int snarl_cmd;
   int dieroll;

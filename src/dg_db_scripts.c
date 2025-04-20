@@ -214,7 +214,7 @@ void dg_read_trigger(FILE *fp, void *proto, int type)
   }
 }
 
-void dg_obj_trigger(char *line, struct obj_data *obj)
+void dg_obj_trigger(char *line, obj_data *obj)
 {
   char junk[8];
   int vnum, rnum, count;
@@ -251,8 +251,8 @@ void dg_obj_trigger(char *line, struct obj_data *obj)
 
 void assign_triggers(void *i, int type)
 {
-  struct char_data *mob = NULL;
-  struct obj_data *obj = NULL;
+  char_data *mob = NULL;
+  obj_data *obj = NULL;
   struct room_data *room = NULL;
   int rnum;
   struct trig_proto_list *trg_proto;

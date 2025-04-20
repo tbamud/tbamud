@@ -37,7 +37,7 @@ struct ban_list_element {
 /* Utility Functions */
 void load_banned(void);
 int isbanned(char *hostname);
-int valid_name(char *newname);
+int valid_name(const char *newname);
 void read_invalid_list(void);
 void free_invalid_list(void);
 /* Command functions without subcommands */

@@ -20,7 +20,7 @@
 extern time_t motdmod;
 extern time_t newsmod;
 
-void tedit_string_cleanup(struct descriptor_data *d, int terminator)
+void tedit_string_cleanup(descriptor_data *d, int terminator)
 {
   FILE *fl;
   char *storage = OLC_STORAGE(d);

@@ -1066,8 +1066,8 @@ struct descriptor_data {
     char *output;                      /**< ptr to the current output buffer   */
     char **history;                    /**< History of commands, for ! mostly. */
     int history_pos;                   /**< Circular array position.       */
-    int bufptr;                        /**< ptr to end of current output       */
-    int bufspace;                      /**< space left in the output buffer    */
+    ssize_t bufptr;                     /**< ptr to end of current output       */
+    ssize_t bufspace;                   /**< space left in the output buffer    */
     struct txt_block *large_outbuf;    /**< ptr to large buffer, if we need it */
     struct txt_q input;                /**< q of unprocessed input     */
     struct char_data *character;       /**< linked to char          */

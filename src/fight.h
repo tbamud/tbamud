@@ -21,22 +21,22 @@ struct attack_hit_type {
 };
 
 /* Functions available in fight.c */
-void appear(struct char_data *ch);
-void check_killer(struct char_data *ch, struct char_data *vict);
-int compute_armor_class(struct char_data *ch);
-int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype);
-void death_cry(struct char_data *ch);
-void die(struct char_data * ch, struct char_data * killer);
-void hit(struct char_data *ch, struct char_data *victim, int type);
+void appear(char_data *ch);
+void check_killer(char_data *ch, char_data *vict);
+int compute_armor_class(char_data *ch);
+int damage(char_data *ch, char_data *victim, int dam, int attacktype);
+void death_cry(char_data *ch);
+void die(char_data * ch, char_data * killer);
+void hit(char_data *ch, char_data *victim, int type);
 void perform_violence(void);
-void raw_kill(struct char_data * ch, struct char_data * killer);
-void  set_fighting(struct char_data *ch, struct char_data *victim);
-int skill_message(int dam, struct char_data *ch, struct char_data *vict, int attacktype);
-void  stop_fighting(struct char_data *ch);
+void raw_kill(char_data * ch, char_data * killer);
+void  set_fighting(char_data *ch, char_data *victim);
+int skill_message(int dam, char_data *ch, char_data *vict, int attacktype);
+void  stop_fighting(char_data *ch);
 
 
 /* Global variables */
 extern struct attack_hit_type attack_hit_text[];
-extern struct char_data *combat_list;
+extern char_data *combat_list;
 
 #endif /* _FIGHT_H_*/

@@ -14,7 +14,6 @@
 #include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "ban.h"
 
@@ -28,44 +27,44 @@ static char *invalid_list[MAX_INVALID_NAMES];
 
 /* local utility functions */
 static void write_ban_list(void);
-static void _write_one_node(FILE *fp, struct ban_list_element *node);
+static void write_one_node(FILE *fp, struct ban_list_element *node);
 
 static const char *ban_types[] = {
-  "no",
-  "new",
-  "select",
-  "all",
-  "ERROR"
+    "no",
+    "new",
+    "select",
+    "all",
+    "ERROR"
 };
 
 void load_banned(void)
 {
   FILE *fl;
-  int i, date;
+  int i;
   char site_name[BANNED_SITE_LENGTH + 1], ban_type[100];
-  char name[MAX_NAME_LENGTH + 1];
+  char name[MAX_NAME_LENGTH + 1], date_str[30];
   struct ban_list_element *next_node;
 
   ban_list = 0;
 
-  if (!(fl = fopen(BAN_FILE, "r"))) {
+  if ((fl = fopen(BAN_FILE, "r")) != NULL) {
     if (errno != ENOENT) {
       log("SYSERR: Unable to open banfile '%s': %s", BAN_FILE, strerror(errno));
     } else
       log("   Ban file '%s' doesn't exist.", BAN_FILE);
     return;
   }
-  while (fscanf(fl, " %s %s %d %s ", ban_type, site_name, &date, name) == 4) {
+  while (fscanf(fl, " %s %s %s %s ", ban_type, site_name, date_str, name) == 4) {
     CREATE(next_node, struct ban_list_element, 1);
-    strncpy(next_node->site, site_name, BANNED_SITE_LENGTH);	/* strncpy: OK (n_n->site:BANNED_SITE_LENGTH+1) */
+    strncpy(next_node->site, site_name, BANNED_SITE_LENGTH); /* strncpy: OK (n_n->site:BANNED_SITE_LENGTH+1) */
     next_node->site[BANNED_SITE_LENGTH] = '\0';
-    strncpy(next_node->name, name, MAX_NAME_LENGTH);	/* strncpy: OK (n_n->name:MAX_NAME_LENGTH+1) */
+    strncpy(next_node->name, name, MAX_NAME_LENGTH); /* strncpy: OK (n_n->name:MAX_NAME_LENGTH+1) */
     next_node->name[MAX_NAME_LENGTH] = '\0';
-    next_node->date = date;
+    next_node->date = parse_int(date_str);
 
     for (i = BAN_NOT; i <= BAN_ALL; i++)
       if (!strcmp(ban_type, ban_types[i]))
-	next_node->type = i;
+        next_node->type = i;
 
     next_node->next = ban_list;
     ban_list = next_node;
@@ -81,25 +80,25 @@ int isbanned(char *hostname)
   char *nextchar;
 
   if (!hostname || !*hostname)
-    return (0);
+    return 0;
 
   i = 0;
   for (nextchar = hostname; *nextchar; nextchar++)
     *nextchar = LOWER(*nextchar);
 
   for (banned_node = ban_list; banned_node; banned_node = banned_node->next)
-    if (strstr(hostname, banned_node->site))	/* if hostname is a substring */
+    if (strstr(hostname, banned_node->site)) /* if hostname is a substring */
       i = MAX(i, banned_node->type);
 
-  return (i);
+  return i;
 }
 
-static void _write_one_node(FILE *fp, struct ban_list_element *node)
+static void write_one_node(FILE *fp, struct ban_list_element *node) // NOLINT(*-no-recursion)
 {
   if (node) {
-    _write_one_node(fp, node->next);
+    write_one_node(fp, node->next);
     fprintf(fp, "%s %s %ld %s\n", ban_types[node->type],
-	    node->site, (long) node->date, node->name);
+            node->site, node->date, node->name);
   }
 }
 
@@ -107,13 +106,12 @@ static void write_ban_list(void)
 {
   FILE *fl;
 
-  if (!(fl = fopen(BAN_FILE, "w"))) {
+  if ((fl = fopen(BAN_FILE, "w")) == NULL) {
     perror("SYSERR: Unable to open '" BAN_FILE "' for writing");
     return;
   }
-  _write_one_node(fl, ban_list);/* recursively write from end to start */
+  write_one_node(fl, ban_list); /* recursively write from end to start */
   fclose(fl);
-  return;
 }
 
 #define BAN_LIST_FORMAT "%-25.25s  %-8.8s  %-15.15s  %-16.16s\r\n"
@@ -130,21 +128,21 @@ ACMD(do_ban)
       return;
     }
     send_to_char(ch, BAN_LIST_FORMAT,
-	    "Banned Site Name",
-	    "Ban Type",
-	    "Banned On",
-	    "Banned By");
+                 "Banned Site Name",
+                 "Ban Type",
+                 "Banned On",
+                 "Banned By");
     send_to_char(ch, BAN_LIST_FORMAT,
-	    "---------------------------------",
-	    "---------------------------------",
-	    "---------------------------------",
-	    "---------------------------------");
+                 "---------------------------------",
+                 "---------------------------------",
+                 "---------------------------------",
+                 "---------------------------------");
 
     for (ban_node = ban_list; ban_node; ban_node = ban_node->next) {
       if (ban_node->date) {
         strftime(timestr, sizeof(timestr), "%a %b %d %Y", localtime(&(ban_node->date)));
       } else
-	strcpy(timestr, "Unknown");	/* strcpy: OK (strlen("Unknown") < 16) */
+        strcpy(timestr, "Unknown"); /* strcpy: OK (strlen("Unknown") < 16) */
 
       send_to_char(ch, BAN_LIST_FORMAT, ban_node->site, ban_types[ban_node->type], timestr, ban_node->name);
     }
@@ -168,11 +166,11 @@ ACMD(do_ban)
   }
 
   CREATE(ban_node, struct ban_list_element, 1);
-  strncpy(ban_node->site, site, BANNED_SITE_LENGTH);	/* strncpy: OK (b_n->site:BANNED_SITE_LENGTH+1) */
+  strncpy(ban_node->site, site, BANNED_SITE_LENGTH); /* strncpy: OK (b_n->site:BANNED_SITE_LENGTH+1) */
   ban_node->site[BANNED_SITE_LENGTH] = '\0';
   for (nextchar = ban_node->site; *nextchar; nextchar++)
     *nextchar = LOWER(*nextchar);
-  strncpy(ban_node->name, GET_NAME(ch), MAX_NAME_LENGTH);	/* strncpy: OK (b_n->size:MAX_NAME_LENGTH+1) */
+  strncpy(ban_node->name, GET_NAME(ch), MAX_NAME_LENGTH); /* strncpy: OK (b_n->size:MAX_NAME_LENGTH+1) */
   ban_node->name[MAX_NAME_LENGTH] = '\0';
   ban_node->date = time(0);
 
@@ -184,7 +182,7 @@ ACMD(do_ban)
   ban_list = ban_node;
 
   mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s has banned %s for %s players.",
-	GET_NAME(ch), site, ban_types[ban_node->type]);
+         GET_NAME(ch), site, ban_types[ban_node->type]);
   send_to_char(ch, "Site banned.\r\n");
   write_ban_list();
 }
@@ -216,19 +214,19 @@ ACMD(do_unban)
   REMOVE_FROM_LIST(ban_node, ban_list, next);
   send_to_char(ch, "Site unbanned.\r\n");
   mudlog(NRM, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s removed the %s-player ban on %s.",
-	GET_NAME(ch), ban_types[ban_node->type], ban_node->site);
+         // ReSharper disable once CppDFANullDereference
+         GET_NAME(ch), ban_types[ban_node->type], ban_node->site);
 
   free(ban_node);
   write_ban_list();
 }
 
 
-
 /* Check for invalid names (i.e., profanity, etc.) Written by Sharon P Garza. */
-int valid_name(char *newname)
+int valid_name(const char *newname)
 {
   int i, vowels = 0;
-  struct descriptor_data *dt;
+  descriptor_data *dt;
   char tempname[MAX_INPUT_LENGTH];
 
   /* Make sure someone isn't trying to create this same name.  We want to do a 
@@ -290,7 +288,7 @@ void read_invalid_list(void)
   FILE *fp;
   char temp[256];
 
-  if (!(fp = fopen(XNAME_FILE, "r"))) {
+  if ((fp = fopen(XNAME_FILE, "r")) != NULL) {
     perror("SYSERR: Unable to open '" XNAME_FILE "' for reading");
     return;
   }

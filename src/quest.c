@@ -70,7 +70,7 @@ qst_rnum real_quest(qst_vnum vnum)
     return (NOTHING);
 }
 
-int is_complete(const struct char_data *ch, qst_vnum vnum)
+int is_complete(const char_data *ch, qst_vnum vnum)
 {
     int i;
 
@@ -80,7 +80,7 @@ int is_complete(const struct char_data *ch, qst_vnum vnum)
     return FALSE;
 }
 
-qst_vnum find_quest_by_qmnum(struct char_data *ch, mob_vnum qm, int num)
+qst_vnum find_quest_by_qmnum(char_data *ch, mob_vnum qm, int num)
 {
     qst_rnum rnum;
     int found = 0;
@@ -232,7 +232,7 @@ void assign_the_quests(void)
 /*--------------------------------------------------------------------------*/
 /* Quest Completion Functions                                               */
 /*--------------------------------------------------------------------------*/
-void set_quest(const struct char_data *ch, qst_rnum rnum)
+void set_quest(const char_data *ch, qst_rnum rnum)
 {
     GET_QUEST(ch) = QST_NUM(rnum);
     GET_QUEST_TIME(ch) = QST_TIME(rnum);
@@ -240,7 +240,7 @@ void set_quest(const struct char_data *ch, qst_rnum rnum)
     SET_BIT_AR(PRF_FLAGS(ch), PRF_QUEST);
 }
 
-void clear_quest(const struct char_data *ch)
+void clear_quest(const char_data *ch)
 {
     GET_QUEST(ch) = NOTHING;
     GET_QUEST_TIME(ch) = -1;
@@ -248,7 +248,7 @@ void clear_quest(const struct char_data *ch)
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_QUEST);
 }
 
-void add_completed_quest(const struct char_data *ch, qst_vnum vnum)
+void add_completed_quest(const char_data *ch, qst_vnum vnum)
 {
     qst_vnum *temp;
     int i;
@@ -265,7 +265,7 @@ void add_completed_quest(const struct char_data *ch, qst_vnum vnum)
     GET_COMPLETED_QUESTS(ch) = temp;
 }
 
-void remove_completed_quest(const struct char_data *ch, qst_vnum vnum)
+void remove_completed_quest(const char_data *ch, qst_vnum vnum)
 {
     qst_vnum *temp;
     int i, j = 0;
@@ -282,11 +282,11 @@ void remove_completed_quest(const struct char_data *ch, qst_vnum vnum)
     GET_COMPLETED_QUESTS(ch) = temp;
 }
 
-void generic_complete_quest(struct char_data *ch)
+void generic_complete_quest(char_data *ch)
 {
     qst_rnum rnum;
     qst_vnum vnum = GET_QUEST(ch);
-    struct obj_data *new_obj;
+    obj_data *new_obj;
     int happy_qp, happy_gold, happy_exp;
 
     if (--GET_QUEST_COUNTER(ch) <= 0) {
@@ -358,10 +358,10 @@ void generic_complete_quest(struct char_data *ch)
     save_char(ch);
 }
 
-void autoquest_trigger_check(struct char_data *ch, const struct char_data *vict,
-                             const struct obj_data *object, int type)
+void autoquest_trigger_check(char_data *ch, const char_data *vict,
+                             const obj_data *object, int type)
 {
-    struct char_data *i;
+    char_data *i;
     qst_rnum rnum;
     int found = TRUE;
 
@@ -424,7 +424,7 @@ void autoquest_trigger_check(struct char_data *ch, const struct char_data *vict,
     }
 }
 
-void quest_timeout(struct char_data *ch)
+void quest_timeout(char_data *ch)
 {
     if ((GET_QUEST(ch) != NOTHING) && (GET_QUEST_TIME(ch) != -1)) {
         clear_quest(ch);
@@ -434,7 +434,7 @@ void quest_timeout(struct char_data *ch)
 
 void check_timed_quests(void)
 {
-    struct char_data *ch;
+    char_data *ch;
 
     for (ch = character_list; ch; ch = ch->next)
         if (!IS_NPC(ch) && (GET_QUEST(ch) != NOTHING) && (GET_QUEST_TIME(ch) != -1))
@@ -446,7 +446,7 @@ void check_timed_quests(void)
 /* Quest Command Helper Functions                                           */
 /*--------------------------------------------------------------------------*/
 
-void list_quests(struct char_data *ch, zone_rnum zone, qst_vnum vmin, qst_vnum vmax)
+void list_quests(char_data *ch, zone_rnum zone, qst_vnum vmin, qst_vnum vmax)
 {
     qst_rnum rnum;
     qst_vnum bottom, top;
@@ -472,7 +472,7 @@ void list_quests(struct char_data *ch, zone_rnum zone, qst_vnum vmin, qst_vnum v
         send_to_char(ch, "None found.\r\n");
 }
 
-static void quest_hist(struct char_data *ch)
+static void quest_hist(char_data *ch)
 {
     int i = 0, counter = 0;
     qst_rnum rnum = NOTHING;
@@ -495,7 +495,7 @@ static void quest_hist(struct char_data *ch)
         send_to_char(ch, "You haven't completed any quests yet.\r\n");
 }
 
-static void quest_join(struct char_data *ch, struct char_data *qm, char argument[MAX_INPUT_LENGTH])
+static void quest_join(char_data *ch, char_data *qm, char argument[MAX_INPUT_LENGTH])
 {
     qst_vnum vnum;
     qst_rnum rnum;
@@ -551,7 +551,7 @@ static void quest_join(struct char_data *ch, struct char_data *qm, char argument
     save_char(ch);
 }
 
-void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_INPUT_LENGTH])
+void quest_list(char_data *ch, char_data *qm, char argument[MAX_INPUT_LENGTH])
 {
     qst_vnum vnum;
     qst_rnum rnum;
@@ -576,7 +576,7 @@ void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
         send_to_char(ch, "There is no further information on that quest.\r\n");
 }
 
-static void quest_quit(struct char_data *ch)
+static void quest_quit(char_data *ch)
 {
     qst_rnum rnum;
 
@@ -602,7 +602,7 @@ static void quest_quit(struct char_data *ch)
     }
 }
 
-static void quest_progress(struct char_data *ch)
+static void quest_progress(char_data *ch)
 {
     qst_rnum rnum;
 
@@ -626,7 +626,7 @@ static void quest_progress(struct char_data *ch)
     }
 }
 
-static void quest_show(struct char_data *ch, mob_vnum qm)
+static void quest_show(char_data *ch, mob_vnum qm)
 {
     qst_rnum rnum;
     int counter = 0;
@@ -644,7 +644,7 @@ static void quest_show(struct char_data *ch, mob_vnum qm)
         send_to_char(ch, "There are no quests available here at the moment.\r\n");
 }
 
-static void quest_stat(struct char_data *ch, char argument[MAX_INPUT_LENGTH])
+static void quest_stat(char_data *ch, char argument[MAX_INPUT_LENGTH])
 {
     qst_rnum rnum;
     mob_rnum qmrnum;
@@ -792,7 +792,7 @@ SPECIAL(questmaster)
     qst_rnum rnum = 0;
     char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
     int tp;
-    struct char_data *qm = (struct char_data *)me;
+    char_data *qm = (char_data *)me;
 
     /* check that qm mob has quests assigned */
     while (rnum < total_quests && QST_MASTER(rnum) != GET_MOB_VNUM(qm))

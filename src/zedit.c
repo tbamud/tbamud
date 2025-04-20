@@ -24,21 +24,21 @@
 #define MAX_DUPLICATES 100
 
 /* local functions */
-static int start_change_command(struct descriptor_data *d, int pos);
-static void zedit_setup(struct descriptor_data *d, int room_num);
-static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
-static void zedit_save_internally(struct descriptor_data *d);
+static int start_change_command(descriptor_data *d, int pos);
+static void zedit_setup(descriptor_data *d, int room_num);
+static void zedit_new_zone(char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
+static void zedit_save_internally(descriptor_data *d);
 static void zedit_save_to_disk(int zone_num);
-static void zedit_disp_menu(struct descriptor_data *d);
-static void zedit_disp_comtype(struct descriptor_data *d);
-static void zedit_disp_arg1(struct descriptor_data *d);
-static void zedit_disp_arg2(struct descriptor_data *d);
-static void zedit_disp_arg3(struct descriptor_data *d);
+static void zedit_disp_menu(descriptor_data *d);
+static void zedit_disp_comtype(descriptor_data *d);
+static void zedit_disp_arg1(descriptor_data *d);
+static void zedit_disp_arg2(descriptor_data *d);
+static void zedit_disp_arg3(descriptor_data *d);
 
 ACMD(do_oasis_zedit)
 {
   int number = NOWHERE, save = 0, real_num;
-  struct descriptor_data *d;
+  descriptor_data *d;
   char *stop;
   char sbot[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
@@ -187,7 +187,7 @@ ACMD(do_oasis_zedit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-static void zedit_setup(struct descriptor_data *d, int room_num)
+static void zedit_setup(descriptor_data *d, int room_num)
 {
   struct zone_data *zone;
   int subcmd = 0, count = 0, cmd_room = NOWHERE, i;
@@ -248,11 +248,11 @@ static void zedit_setup(struct descriptor_data *d, int room_num)
 }
 
 /* Create a new zone. */
-static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top)
+static void zedit_new_zone(char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top)
 {
   int result;
   const char *error;
-  struct descriptor_data *dsc;
+  descriptor_data *dsc;
 
   if ((result = create_new_zone(vzone_num, bottom, top, &error)) == NOWHERE) {
     write_to_output(ch->desc, "%s", error);
@@ -285,7 +285,7 @@ static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum 
 
 /* Save all the information in the player's temporary buffer back into
  * the current zone table. */
-static void zedit_save_internally(struct descriptor_data *d)
+static void zedit_save_internally(descriptor_data *d)
 {
   int	mobloaded = FALSE,
 	objloaded = FALSE,
@@ -360,7 +360,7 @@ static void zedit_save_to_disk(int zone)
 }
 
 /* Error check user input and then setup change */
-static int start_change_command(struct descriptor_data *d, int pos)
+static int start_change_command(descriptor_data *d, int pos)
 {
   if (pos < 0 || pos >= count_commands(OLC_ZONE(d)->cmd))
     return 0;
@@ -371,7 +371,7 @@ static int start_change_command(struct descriptor_data *d, int pos)
 }
 
 /*------------------------------------------------------------------*/
-static void zedit_disp_flag_menu(struct descriptor_data *d)
+static void zedit_disp_flag_menu(descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
 
@@ -385,7 +385,7 @@ static void zedit_disp_flag_menu(struct descriptor_data *d)
 }
 
 /*------------------------------------------------------------------*/
-static bool zedit_get_levels(struct descriptor_data *d, char *buf)
+static bool zedit_get_levels(descriptor_data *d, char *buf)
 {
   /* Create a string for the recommended levels for this zone. */
   if ((OLC_ZONE(d)->min_level == -1) && (OLC_ZONE(d)->max_level == -1)) {
@@ -410,7 +410,7 @@ static bool zedit_get_levels(struct descriptor_data *d, char *buf)
 /*------------------------------------------------------------------*/
 /* Menu functions */
 /* the main menu */
-static void zedit_disp_menu(struct descriptor_data *d)
+static void zedit_disp_menu(descriptor_data *d)
 {
   int subcmd = 0, counter = 0;
   char buf1[MAX_STRING_LENGTH], lev_string[50];
@@ -549,7 +549,7 @@ static void zedit_disp_menu(struct descriptor_data *d)
 }
 
 /* Print the command type menu and setup response catch. */
-static void zedit_disp_comtype(struct descriptor_data *d)
+static void zedit_disp_comtype(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -570,7 +570,7 @@ static void zedit_disp_comtype(struct descriptor_data *d)
 
 /* Print the appropriate message for the command type for arg1 and set
    up the input catch clause */
-static void zedit_disp_arg1(struct descriptor_data *d)
+static void zedit_disp_arg1(descriptor_data *d)
 {
   write_to_output(d, "\r\n");
 
@@ -608,7 +608,7 @@ static void zedit_disp_arg1(struct descriptor_data *d)
 
 /* Print the appropriate message for the command type for arg2 and set
    up the input catch clause. */
-static void zedit_disp_arg2(struct descriptor_data *d)
+static void zedit_disp_arg2(descriptor_data *d)
 {
   int i;
 
@@ -649,7 +649,7 @@ static void zedit_disp_arg2(struct descriptor_data *d)
 
 /* Print the appropriate message for the command type for arg3 and set
    up the input catch clause. */
-static void zedit_disp_arg3(struct descriptor_data *d)
+static void zedit_disp_arg3(descriptor_data *d)
 {
 
   write_to_output(d, "\r\n");
@@ -688,7 +688,7 @@ static void zedit_disp_arg3(struct descriptor_data *d)
 /*
  * Print the recommended levels menu and setup response catch.
  */
-static void zedit_disp_levels(struct descriptor_data *d)
+static void zedit_disp_levels(descriptor_data *d)
 {
   char lev_string[50];
   bool levels_set = FALSE;
@@ -710,7 +710,7 @@ static void zedit_disp_levels(struct descriptor_data *d)
 }
 
 /* The event handler */
-void zedit_parse(struct descriptor_data *d, char *arg)
+void zedit_parse(descriptor_data *d, char *arg)
 {
   int pos, number;
 

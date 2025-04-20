@@ -228,7 +228,7 @@ struct help_index_element {
 
 /* for the "buffered" rent and house object loading */
 struct obj_save_data_t {
-    struct obj_data *obj;
+    obj_data *obj;
     int locate;
     struct obj_save_data_t *next;
 };
@@ -255,7 +255,7 @@ void  free_text_files(void);
 void  free_help_table(void);
 void  free_player_index(void);
 void  load_help(FILE *fl, char *name);
-void  new_mobile_data(struct char_data *ch);
+void  new_mobile_data(char_data *ch);
 
 zone_rnum real_zone(zone_vnum vnum);
 room_rnum real_room(room_vnum vnum);
@@ -264,45 +264,45 @@ obj_rnum real_object(obj_vnum vnum);
 
 /* Public Procedures from objsave.c */
 void  Crash_save_all(void);
-void  Crash_idlesave(struct char_data *ch);
-void  Crash_crashsave(struct char_data *ch);
-int Crash_load(struct char_data *ch);
-void  Crash_listrent(struct char_data *ch, char *name);
+void  Crash_idlesave(char_data *ch);
+void  Crash_crashsave(char_data *ch);
+int Crash_load(char_data *ch);
+void  Crash_listrent(char_data *ch, char *name);
 int Crash_clean_file(char *name);
-int Crash_delete_crashfile(struct char_data *ch);
+int Crash_delete_crashfile(char_data *ch);
 int Crash_delete_file(char *name);
 void update_obj_file(void);
-void Crash_rentsave(struct char_data *ch, int cost);
+void Crash_rentsave(char_data *ch, int cost);
 obj_save_data *objsave_parse_objects(FILE *fl);
-int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
+int objsave_save_obj_record(obj_data *obj, FILE *fl, int location);
 /* Special functions */
 SPECIAL(receptionist);
 SPECIAL(cryogenicist);
 
 /* Functions from players.c */
 void   tag_argument(char *argument, char *tag);
-int    load_char(const char *name, struct char_data *ch);
-void   save_char(struct char_data *ch);
-void   init_char(struct char_data *ch);
-struct char_data* create_char(void);
-struct char_data *read_mobile(mob_vnum nr, int type);
-int    vnum_mobile(char *searchname, struct char_data *ch);
-void   clear_char(struct char_data *ch);
-void   reset_char(struct char_data *ch);
-void   free_char(struct char_data *ch);
+int    load_char(const char *name, char_data *ch);
+void   save_char(char_data *ch);
+void   init_char(char_data *ch);
+char_data* create_char(void);
+char_data *read_mobile(mob_vnum nr, int type);
+int    vnum_mobile(char *searchname, char_data *ch);
+void   clear_char(char_data *ch);
+void   reset_char(char_data *ch);
+void   free_char(char_data *ch);
 void   save_player_index(void);
 long   get_ptable_by_name(const char *name);
 void   remove_player(int pfilepos);
 void   clean_pfiles(void);
 void   build_player_index(void);
 
-struct obj_data *create_obj(void);
-void   clear_object(struct obj_data *obj);
-void   free_obj(struct obj_data *obj);
-struct obj_data *read_object(obj_vnum nr, int type);
-int    vnum_object(char *searchname, struct char_data *ch);
-int    vnum_room(char *, struct char_data *);
-int    vnum_trig(char *, struct char_data *);
+obj_data *create_obj(void);
+void   clear_object(obj_data *obj);
+void   free_obj(obj_data *obj);
+obj_data *read_object(obj_vnum nr, int type);
+int    vnum_object(char *searchname, char_data *ch);
+int    vnum_room(char *, char_data *);
+int    vnum_trig(char *, char_data *);
 
 void setup_dir(FILE *fl, int room, int dir);
 void index_boot(int mode);
@@ -365,15 +365,15 @@ extern room_rnum top_of_world;
 extern struct zone_data *zone_table;
 extern zone_rnum top_of_zone_table;
 
-extern struct char_data *character_list;
+extern char_data *character_list;
 
 extern struct index_data *mob_index;
-extern struct char_data *mob_proto;
+extern char_data *mob_proto;
 extern mob_rnum top_of_mobt;
 
 extern struct index_data *obj_index;
-extern struct obj_data *object_list;
-extern struct obj_data *obj_proto;
+extern obj_data *object_list;
+extern obj_data *obj_proto;
 extern obj_rnum top_of_objt;
 
 extern struct social_messg *soc_mess_list;

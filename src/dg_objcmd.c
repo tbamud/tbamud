@@ -300,7 +300,7 @@ static OCMD(do_otransform)
 {
   char arg[MAX_INPUT_LENGTH];
   obj_data *o, tmpobj;
-  struct char_data *wearer=NULL;
+  char_data *wearer=NULL;
   int pos = 0;
 
   one_argument(argument, arg);
@@ -693,7 +693,7 @@ static OCMD(do_osetval)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
   int position, new_value, worn_on;
-  struct char_data *worn_by = NULL;
+  char_data *worn_by = NULL;
 
   two_arguments(argument, arg1, arg2);
   if (!*arg1 || !*arg2 || !is_number(arg1) || !is_number(arg2)) {
@@ -725,8 +725,8 @@ static OCMD(do_osetval)
 static OCMD(do_oat)
 {
   room_rnum loc = NOWHERE;
-  struct char_data *ch;
-  struct obj_data *object;
+  char_data *ch;
+  obj_data *object;
   char arg[MAX_INPUT_LENGTH], *command;
 
   command = any_one_arg(argument, arg);

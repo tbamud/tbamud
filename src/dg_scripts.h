@@ -259,8 +259,8 @@ ACMD(do_vdelete);
 ACMD(do_tstat);
 char *str_str(char *cs, char *ct);
 int find_eq_pos_script(char *arg);
-int can_wear_on_pos(struct obj_data *obj, int pos);
-struct char_data *find_char(long n);
+int can_wear_on_pos(obj_data *obj, int pos);
+char_data *find_char(long n);
 char_data *get_char(char *name);
 char_data *get_char_near_obj(obj_data *obj, char *name);
 char_data *get_char_in_room(room_data *room, char *name);
@@ -278,18 +278,18 @@ obj_data *get_object_in_equip(char_data * ch, char *name);
 void script_trigger_check(void);
 void check_time_triggers(void);
 void find_uid_name(char *uid, char *name, size_t nlen);
-void do_sstat_room(struct char_data * ch, room_data *r);
+void do_sstat_room(char_data * ch, room_data *r);
 void do_sstat_object(char_data *ch, obj_data *j);
 void do_sstat_character(char_data *ch, char_data *k);
 void add_trigger(struct script_data *sc, trig_data *t, int loc);
 void script_vlog(const char *format, va_list args);
 void script_log(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
 char *matching_quote(char *p);
-struct room_data *dg_room_of_obj(struct obj_data *obj);
+struct room_data *dg_room_of_obj(obj_data *obj);
 bool check_flags_by_name_ar(int *array, int numflags, char *search, const char *namelist[]);
-void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count);
-void save_char_vars_ascii(FILE *file, struct char_data *ch);
-int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg);
+void read_saved_vars_ascii(FILE *file, char_data *ch, int count);
+void save_char_vars_ascii(FILE *file, char_data *ch);
+int perform_set_dg_var(char_data *ch, char_data *vict, char *val_arg);
 int trig_is_attached(struct script_data *sc, trig_vnum trig_num);
 
 /* To maintain strict-aliasing we'll have to do this trick with a union */
@@ -297,8 +297,8 @@ int trig_is_attached(struct script_data *sc, trig_vnum trig_num);
 int script_driver(void *go_adress, trig_data *trig, int type, int mode);
 trig_rnum real_trigger(trig_vnum vnum);
 void process_eval(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd);
-void read_saved_vars(struct char_data *ch);
-void save_char_vars(struct char_data *ch);
+void read_saved_vars(char_data *ch);
+void save_char_vars(char_data *ch);
 void init_lookup_table(void);
 void add_to_lookup_table(long uid, void *c);
 void remove_from_lookup_table(long uid);
@@ -308,14 +308,14 @@ void parse_trigger(FILE *trig_f, int nr);
 trig_data *read_trigger(int nr);
 void trig_data_copy(trig_data *this_data, const trig_data *trg);
 void dg_read_trigger(FILE *fp, void *proto, int type);
-void dg_obj_trigger(char *line, struct obj_data *obj);
+void dg_obj_trigger(char *line, obj_data *obj);
 void assign_triggers(void *i, int type);
 
 /* From dg_variables.c */
 void add_var(struct trig_var_data **var_list, const char *name, const char *value, long id);
 int item_in_list(char *item, obj_data *list);
-char *skill_percent(struct char_data *ch, char *skill);
-int char_has_item(char *item, struct char_data *ch);
+char *skill_percent(char_data *ch, char *skill);
+int char_has_item(char *item, char_data *ch);
 void var_subst(void *go, struct script_data *sc, trig_data *trig, int type, char *line, char *buf);
 int text_processed(char *field, char *subfield, struct trig_var_data *vd, char *str, size_t slen);
 void find_replacement(void *go, struct script_data *sc, trig_data *trig, int type, char *var, char *field,
@@ -342,7 +342,7 @@ void send_to_zone(char *messg, zone_rnum zone);
 /* from dg_misc.c */
 void do_dg_cast(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd);
 void do_dg_affect(void *go, struct script_data *sc, trig_data *trig, int type, char *cmd);
-void send_char_pos(struct char_data *ch, int dam);
+void send_char_pos(char_data *ch, int dam);
 int valid_dg_target(char_data *ch, int bitvector);
 void script_damage(char_data *vict, int dam);
 
@@ -371,10 +371,10 @@ ACMD(do_mzoneecho);
 ACMD(do_mlog);
 
 /* from dg_olc.c... thinking these should be moved to oasis.h */
-void trigedit_save(struct descriptor_data *d);
-void trigedit_string_cleanup(struct descriptor_data *d, int terminator);
-int format_script(struct descriptor_data *d);
-void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
+void trigedit_save(descriptor_data *d);
+void trigedit_string_cleanup(descriptor_data *d, int terminator);
+int format_script(descriptor_data *d);
+void trigedit_setup_existing(descriptor_data *d, int rtrg_num);
 
 /* from dg_objcmd.c */
 room_rnum obj_room(obj_data *obj);

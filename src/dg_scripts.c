@@ -35,7 +35,7 @@
 /* Local functions not used elsewhere */
 static obj_data *find_obj(long n);
 static room_data *find_room(long n);
-static void do_stat_trigger(struct char_data *ch, trig_data *trig);
+static void do_stat_trigger(char_data *ch, trig_data *trig);
 static void script_stat(char_data *ch, struct script_data *sc);
 static int remove_trigger(struct script_data *sc, char *name);
 static int is_num(char *arg);
@@ -71,8 +71,8 @@ static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd);
 static struct cmdlist_element * find_case(struct trig_data *trig, struct cmdlist_element *cl,
           void *go, struct script_data *sc, int type, char *cond);
 static struct cmdlist_element *find_done(struct cmdlist_element *cl);
-static struct char_data *find_char_by_uid_in_lookup_table(long uid);
-static struct obj_data *find_obj_by_uid_in_lookup_table(long uid);
+static char_data *find_char_by_uid_in_lookup_table(long uid);
+static obj_data *find_obj_by_uid_in_lookup_table(long uid);
 static EVENTFUNC(trig_wait_event);
 
 
@@ -258,7 +258,7 @@ int find_eq_pos_script(char *arg)
  * @param pos The defined wear location to check.
  * @retval int TRUE if obj can be worn on pos, FALSE if not.
  */
-int can_wear_on_pos(struct obj_data *obj, int pos)
+int can_wear_on_pos(obj_data *obj, int pos)
 {
   switch (pos) {
     case WEAR_HOLD:
@@ -288,7 +288,7 @@ int can_wear_on_pos(struct obj_data *obj, int pos)
  * @retval char_data * Pointer to the character structure if it exists, or NULL
  * if it cannot be found.
  */
-struct char_data *find_char(long n)
+char_data *find_char(long n)
 {
   if (n>=ROOM_ID_BASE) /* See note in dg_scripts.h */
     return NULL;
@@ -722,14 +722,14 @@ static EVENTFUNC(trig_wait_event)
   {
     int found = FALSE;
     if (type == MOB_TRIGGER) {
-      struct char_data *tch;
+      char_data *tch;
       for (tch = character_list;tch && !found;tch = tch->next)
-        if (tch == (struct char_data *)go)
+        if (tch == (char_data *)go)
           found = TRUE;
     } else if (type == OBJ_TRIGGER) {
-      struct obj_data *obj;
+      obj_data *obj;
       for (obj = object_list;obj && !found;obj = obj->next)
-        if (obj == (struct obj_data *)go)
+        if (obj == (obj_data *)go)
           found = TRUE;
     } else {
       room_rnum i;
@@ -753,7 +753,7 @@ static EVENTFUNC(trig_wait_event)
   return 0;
 }
 
-static void do_stat_trigger(struct char_data *ch, trig_data *trig)
+static void do_stat_trigger(char_data *ch, trig_data *trig)
 {
     struct cmdlist_element *cmd_list;
     char sb[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
@@ -878,7 +878,7 @@ static void script_stat (char_data *ch, struct script_data *sc)
   }
 }
 
-void do_sstat_room(struct char_data * ch, struct room_data *rm)
+void do_sstat_room(char_data * ch, struct room_data *rm)
 {
   send_to_char(ch, "Triggers:\r\n");
   if (!SCRIPT(rm)) {
@@ -1326,7 +1326,7 @@ ACMD(do_detach)
 void script_vlog(const char *format, va_list args)
 {
   char output[MAX_STRING_LENGTH];
-  struct descriptor_data *i;
+  descriptor_data *i;
 
   /* parse the args, making the error message */ 
   vsnprintf(output, sizeof(output) - 2, format, args); 
@@ -1959,7 +1959,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
 
 }
 
-struct room_data *dg_room_of_obj(struct obj_data *obj)
+struct room_data *dg_room_of_obj(obj_data *obj)
 {
   if (IN_ROOM(obj) != NOWHERE) return &world[IN_ROOM(obj)];
   if (obj->carried_by)        return &world[IN_ROOM(obj->carried_by)];
@@ -2008,34 +2008,34 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
     }
 
     if (is_abbrev(arg, "mob")) {
-      struct char_data *c = NULL;
+      char_data *c = NULL;
       switch (type) {
         case WLD_TRIGGER:
           c = get_char_in_room((struct room_data *)go, name);
           break;
         case OBJ_TRIGGER:
-          c = get_char_near_obj((struct obj_data *)go, name);
+          c = get_char_near_obj((obj_data *)go, name);
           break;
         case MOB_TRIGGER:
-          c = get_char_room_vis((struct char_data *)go, name, NULL);
+          c = get_char_room_vis((char_data *)go, name, NULL);
           break;
       }
       if (c)
         snprintf(uid, sizeof(uid), "%c%ld", UID_CHAR, char_script_id(c));
     } else if (is_abbrev(arg, "obj")) {
-      struct obj_data *o = NULL;
+      obj_data *o = NULL;
       switch (type) {
         case WLD_TRIGGER:
           o = get_obj_in_room((struct room_data *)go, name);
           break;
         case OBJ_TRIGGER:
-          o = get_obj_near_obj((struct obj_data *)go, name);
+          o = get_obj_near_obj((obj_data *)go, name);
           break;
         case MOB_TRIGGER:
-          if ((o = get_obj_in_list_vis((struct char_data *)go, name, NULL,
-                    ((struct char_data *)go)->carrying)) == NULL)
-            o = get_obj_in_list_vis((struct char_data *)go, name, NULL,
-                    world[IN_ROOM((struct char_data *)go)].contents);
+          if ((o = get_obj_in_list_vis((char_data *)go, name, NULL,
+                    ((char_data *)go)->carrying)) == NULL)
+            o = get_obj_in_list_vis((char_data *)go, name, NULL,
+                    world[IN_ROOM((char_data *)go)].contents);
           break;
       }
       if (o)
@@ -2047,10 +2047,10 @@ static void makeuid_var(void *go, struct script_data *sc, trig_data *trig,
           r = real_room(((struct room_data *) go)->number);
           break;
         case OBJ_TRIGGER:
-          r = obj_room((struct obj_data *)go);
+          r = obj_room((obj_data *)go);
           break;
         case MOB_TRIGGER:
-          r = IN_ROOM((struct char_data *)go);
+          r = IN_ROOM((char_data *)go);
           break;
       }
       if (r != NOWHERE)
@@ -2267,7 +2267,7 @@ ACMD(do_vdelete)
 
 /* Called from do_set - return 0 for failure, 1 for success.  ch and vict are 
  * verified. */
-int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_arg)
+int perform_set_dg_var(char_data *ch, char_data *vict, char *val_arg)
 {
   char var_name[MAX_INPUT_LENGTH], *var_value;
 
@@ -2827,7 +2827,7 @@ static struct cmdlist_element *find_done(struct cmdlist_element *cl)
 
 
 /* load in a character's saved variables */
-void read_saved_vars(struct char_data *ch)
+void read_saved_vars(char_data *ch)
 {
   FILE *file;
   long context;
@@ -2874,7 +2874,7 @@ void read_saved_vars(struct char_data *ch)
 }
 
 /* save a characters variables out to disk */
-void save_char_vars(struct char_data *ch)
+void save_char_vars(char_data *ch)
 {
   FILE *file;
   char fn[127];
@@ -2913,7 +2913,7 @@ void save_char_vars(struct char_data *ch)
 }
 
 /* load in a character's saved variables from an ASCII pfile*/
-void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count)
+void read_saved_vars_ascii(FILE *file, char_data *ch, int count)
 {
   long context;
   char input_line[1024], *temp, *p;
@@ -2948,7 +2948,7 @@ void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count)
 }
 
 /* save a characters variables out to an ASCII pfile */
-void save_char_vars_ascii(FILE *file, struct char_data *ch)
+void save_char_vars_ascii(FILE *file, char_data *ch)
 {
   struct trig_var_data *vars;
   int count = 0;
@@ -3014,23 +3014,23 @@ static inline struct lookup_table_t *find_element_by_uid_in_lookup_table(long ui
   return lt;
 }
 
-static struct char_data *find_char_by_uid_in_lookup_table(long uid)
+static char_data *find_char_by_uid_in_lookup_table(long uid)
 {
   struct lookup_table_t *lt = find_element_by_uid_in_lookup_table(uid);
 
   if (lt)
-    return (struct char_data *)(lt->c);
+    return (char_data *)(lt->c);
 
   log("find_char_by_uid_in_lookup_table : No entity with number %ld in lookup table", uid);
   return NULL;
 }
 
-static struct obj_data *find_obj_by_uid_in_lookup_table(long uid)
+static obj_data *find_obj_by_uid_in_lookup_table(long uid)
 {
   struct lookup_table_t *lt = find_element_by_uid_in_lookup_table(uid);
 
   if (lt)
-    return (struct obj_data *)(lt->c);
+    return (obj_data *)(lt->c);
 
   log("find_obj_by_uid_in_lookup_table : No entity with number %ld in lookup table", uid);
   return NULL;

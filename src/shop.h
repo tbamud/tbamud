@@ -16,8 +16,8 @@
 SPECIAL(shop_keeper);
 void boot_the_shops(FILE *shop_f, char *filename, int rec_count);
 void assign_the_shopkeepers(void);
-void show_shops(struct char_data *ch, char *arg);
-int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim);
+void show_shops(char_data *ch, char *arg);
+int ok_damage_shopkeeper(char_data *ch, char_data *victim);
 void destroy_shops(void);
 
 struct shop_buy_data {

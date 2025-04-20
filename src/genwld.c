@@ -24,8 +24,8 @@
  * the description, title, and such. */
 room_rnum add_room(struct room_data *room)
 {
-  struct char_data *tch;
-  struct obj_data *tobj;
+  char_data *tch;
+  obj_data *tobj;
   int j, found = FALSE;
   room_rnum i;
 
@@ -123,8 +123,8 @@ int delete_room(room_rnum rnum)
 {
   room_rnum i;
   int j;
-  struct char_data *ppl, *next_ppl;
-  struct obj_data *obj, *next_obj;
+  char_data *ppl, *next_ppl;
+  obj_data *obj, *next_obj;
   struct room_data *room;
 
   if (rnum <= 0 || rnum > top_of_world)	/* Can't delete void yet. */

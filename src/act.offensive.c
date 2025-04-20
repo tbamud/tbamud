@@ -24,7 +24,7 @@
 ACMD(do_assist)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *helpee, *opponent;
+  char_data *helpee, *opponent;
 
   if (FIGHTING(ch)) {
     send_to_char(ch, "You're already fighting!  How can you assist someone else?\r\n");
@@ -68,7 +68,7 @@ ACMD(do_assist)
 ACMD(do_hit)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
 
   one_argument(argument, arg);
 
@@ -99,7 +99,7 @@ ACMD(do_hit)
 ACMD(do_kill)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
 
   if (GET_LEVEL(ch) < LVL_GRGOD || IS_NPC(ch) || !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
     do_hit(ch, argument, cmd, subcmd);
@@ -126,7 +126,7 @@ ACMD(do_kill)
 ACMD(do_backstab)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   int percent, prob;
 
   if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_BACKSTAB)) {
@@ -180,7 +180,7 @@ ACMD(do_order)
 {
   char name[MAX_INPUT_LENGTH], message[MAX_INPUT_LENGTH];
   bool found = FALSE;
-  struct char_data *vict;
+  char_data *vict;
   struct follow_type *k;
 
   half_chop(argument, name, message);
@@ -233,7 +233,7 @@ ACMD(do_order)
 ACMD(do_flee)
 {
   int i, attempt, loss;
-  struct char_data *was_fighting;
+  char_data *was_fighting;
 
   if (GET_POS(ch) < POS_FIGHTING) {
     send_to_char(ch, "You are in pretty bad shape, unable to flee!\r\n");
@@ -269,7 +269,7 @@ ACMD(do_flee)
 ACMD(do_bash)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   int percent, prob;
 
   one_argument(argument, arg);
@@ -331,7 +331,7 @@ ACMD(do_bash)
 ACMD(do_rescue)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict, *tmp_ch;
+  char_data *vict, *tmp_ch;
   int percent, prob;
 
   if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_RESCUE)) {
@@ -394,7 +394,7 @@ ACMD(do_rescue)
 
 EVENTFUNC(event_whirlwind)
 {
-  struct char_data *ch, *tch;
+  char_data *ch, *tch;
   struct mud_event_data *pMudEvent;
   struct list_data *room_list;
   int count;
@@ -406,7 +406,7 @@ EVENTFUNC(event_whirlwind)
   /* For the sake of simplicity, we will place the event data in easily
    * referenced pointers */
   pMudEvent = (struct mud_event_data *)event_obj;
-  ch = (struct char_data *)pMudEvent->pStruct;
+  ch = (char_data *)pMudEvent->pStruct;
 
   /* When using a list, we have to make sure to allocate the list as it
    * uses dynamic memory */
@@ -492,7 +492,7 @@ ACMD(do_whirlwind)
 ACMD(do_kick)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   int percent, prob;
 
   if (IS_NPC(ch) || !GET_SKILL(ch, SKILL_KICK)) {
@@ -510,6 +510,8 @@ ACMD(do_kick)
       return;
     }
   }
+  log("ch class = %d vict class = %d", GET_CLASS(ch), GET_CLASS(vict));
+
   if (vict == ch) {
     send_to_char(ch, "Aren't we funny today...\r\n");
     return;
@@ -529,7 +531,7 @@ ACMD(do_kick)
 ACMD(do_bandage)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   int percent, prob;
 
   if (!GET_SKILL(ch, SKILL_BANDAGE)) {

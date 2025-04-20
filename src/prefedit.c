@@ -22,17 +22,17 @@
 #include "screen.h"
 
 /* Internal (static) functions */
-static void prefedit_setup(struct descriptor_data *d, struct char_data *vict);
-static void prefedit_save_to_char(struct descriptor_data *d);
-static void prefedit_disp_main_menu(struct descriptor_data *d);
-static void prefedit_disp_toggles_menu(struct descriptor_data *d);
-static void prefedit_disp_prompt_menu(struct descriptor_data *d);
-static void prefedit_disp_color_menu(struct descriptor_data *d);
-static void prefedit_disp_syslog_menu(struct descriptor_data *d);
+static void prefedit_setup(descriptor_data *d, char_data *vict);
+static void prefedit_save_to_char(descriptor_data *d);
+static void prefedit_disp_main_menu(descriptor_data *d);
+static void prefedit_disp_toggles_menu(descriptor_data *d);
+static void prefedit_disp_prompt_menu(descriptor_data *d);
+static void prefedit_disp_color_menu(descriptor_data *d);
+static void prefedit_disp_syslog_menu(descriptor_data *d);
 
 /* Note: there is no setup_new, as you can ONLY edit an existing player */
 /*       vict is normally = d->character, except when imps edit players */
-static void prefedit_setup(struct descriptor_data *d, struct char_data *vict)
+static void prefedit_setup(descriptor_data *d, char_data *vict)
 {
   int i;
   struct prefs_data *toggles;
@@ -58,10 +58,10 @@ static void prefedit_setup(struct descriptor_data *d, struct char_data *vict)
   prefedit_disp_main_menu(d);
 }
 
-static void prefedit_save_to_char(struct descriptor_data *d)
+static void prefedit_save_to_char(descriptor_data *d)
 {
   int i;
-  struct char_data *vict;
+  char_data *vict;
 
   vict = PREFEDIT_GET_CHAR;
 
@@ -94,9 +94,9 @@ static void prefedit_save_to_char(struct descriptor_data *d)
   }
 }
 
-static void prefedit_disp_main_menu(struct descriptor_data *d)
+static void prefedit_disp_main_menu(descriptor_data *d)
 {
-  struct char_data *vict;
+  char_data *vict;
   char prompt_string[10], color_string[10], syslog_string[10];
   const char *multi_types[] = { "Off", "Brief", "Normal", "Complete", "\n" };
 
@@ -182,9 +182,9 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
   OLC_MODE(d) = PREFEDIT_MAIN_MENU;
 }
 
-static void prefedit_disp_toggles_menu(struct descriptor_data *d)
+static void prefedit_disp_toggles_menu(descriptor_data *d)
 {
-  struct char_data *vict;
+  char_data *vict;
 
   /* Set up the required variables and strings */
   vict = OLC_PREFS(d)->ch;
@@ -292,7 +292,7 @@ static void prefedit_disp_toggles_menu(struct descriptor_data *d)
   OLC_MODE(d) = PREFEDIT_TOGGLE_MENU;
 }
 
-static void prefedit_disp_prompt_menu(struct descriptor_data *d)
+static void prefedit_disp_prompt_menu(descriptor_data *d)
 {
   char prompt_string[7];
 
@@ -320,7 +320,7 @@ static void prefedit_disp_prompt_menu(struct descriptor_data *d)
   OLC_MODE(d) = PREFEDIT_PROMPT;
 }
 
-static void prefedit_disp_color_menu(struct descriptor_data *d)
+static void prefedit_disp_color_menu(descriptor_data *d)
 {
   send_to_char(d->character, "%sColor level\r\n"
                              "%s1%s) Off      %s(do not display any color - monochrome)%s\r\n"
@@ -337,7 +337,7 @@ static void prefedit_disp_color_menu(struct descriptor_data *d)
   OLC_MODE(d) = PREFEDIT_COLOR;
 }
 
-static void prefedit_disp_syslog_menu(struct descriptor_data *d)
+static void prefedit_disp_syslog_menu(descriptor_data *d)
 {
   send_to_char(d->character, "%sSyslog level\r\n"
                              "%s1%s) Off      %s(do not display any logs or error messages)%s\r\n"
@@ -354,7 +354,7 @@ static void prefedit_disp_syslog_menu(struct descriptor_data *d)
   OLC_MODE(d) = PREFEDIT_SYSLOG;
 }
 
-void prefedit_parse(struct descriptor_data * d, char *arg)
+void prefedit_parse(descriptor_data * d, char *arg)
 {
   int number;
 
@@ -762,7 +762,7 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
   prefedit_disp_main_menu(d);
 }
 
-void prefedit_Restore_Defaults(struct descriptor_data *d)
+void prefedit_Restore_Defaults(descriptor_data *d)
 {
   /* Let's do toggles one at a time */
   /* PRF_BRIEF      - Off */
@@ -909,8 +909,8 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
 
 ACMD(do_oasis_prefedit)
 {
-  struct descriptor_data *d;
-  struct char_data *vict;
+  descriptor_data *d;
+  char_data *vict;
   char buf[MAX_STRING_LENGTH];
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];

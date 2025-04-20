@@ -22,19 +22,19 @@
 
 /* local utility functions */
 static int aedit_find_command(const char *txt);
-static void aedit_disp_menu(struct descriptor_data *d);
-static void aedit_save_to_disk(struct descriptor_data *d);
+static void aedit_disp_menu(descriptor_data *d);
+static void aedit_save_to_disk(descriptor_data *d);
 /* used in aedit parse */
-static void aedit_setup_new(struct descriptor_data *d);
-static void aedit_setup_existing(struct descriptor_data *d, int real_num);
-static void aedit_save_internally(struct descriptor_data *d);
+static void aedit_setup_new(descriptor_data *d);
+static void aedit_setup_existing(descriptor_data *d, int real_num);
+static void aedit_save_internally(descriptor_data *d);
 
 
 /* Utils and exported functions. */
 ACMD(do_oasis_aedit)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct descriptor_data *d;
+  descriptor_data *d;
   int i;
 
   /* No building as a mob or while being forced. */
@@ -106,7 +106,7 @@ ACMD(do_oasis_aedit)
   mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "OLC: %s starts editing actions.", GET_NAME(ch));
 }
 
-static void aedit_setup_new(struct descriptor_data *d)
+static void aedit_setup_new(descriptor_data *d)
 {
   CREATE(OLC_ACTION(d), struct social_messg, 1);
   OLC_ACTION(d)->command = strdup(OLC_STORAGE(d));
@@ -132,7 +132,7 @@ static void aedit_setup_new(struct descriptor_data *d)
   OLC_VAL(d) = 0;
 }
 
-static void aedit_setup_existing(struct descriptor_data *d, int real_num)
+static void aedit_setup_existing(descriptor_data *d, int real_num)
 {
   CREATE(OLC_ACTION(d), struct social_messg, 1);
   OLC_ACTION(d)->command = strdup(soc_mess_list[real_num].command);
@@ -171,7 +171,7 @@ static void aedit_setup_existing(struct descriptor_data *d, int real_num)
   aedit_disp_menu(d);
 }
 
-static void aedit_save_internally(struct descriptor_data *d)
+static void aedit_save_internally(descriptor_data *d)
 {
   struct social_messg *new_soc_mess_list = NULL;
   int i;
@@ -202,7 +202,7 @@ static void aedit_save_internally(struct descriptor_data *d)
   aedit_save_to_disk(d); /* autosave by Rumble */
 }
 
-static void aedit_save_to_disk(struct descriptor_data *d)
+static void aedit_save_to_disk(descriptor_data *d)
 {
   FILE *fp;
   int i;
@@ -255,10 +255,10 @@ static void aedit_save_to_disk(struct descriptor_data *d)
 }
 
 /* The Main Menu. */
-static void aedit_disp_menu(struct descriptor_data *d)
+static void aedit_disp_menu(descriptor_data *d)
 {
   struct social_messg *action = OLC_ACTION(d);
-  struct char_data *ch = d->character;
+  char_data *ch = d->character;
 
   get_char_colors(ch);
 
@@ -326,7 +326,7 @@ static void aedit_disp_menu(struct descriptor_data *d)
 }
 
 /* The main loop. */
-void aedit_parse(struct descriptor_data *d, char *arg)
+void aedit_parse(descriptor_data *d, char *arg)
 {
   int i;
 

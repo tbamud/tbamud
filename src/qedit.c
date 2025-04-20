@@ -28,15 +28,15 @@
 /*-------------------------------------------------------------------*/
 /*. Function prototypes . */
 
-static void qedit_setup_new(struct descriptor_data *d);
-static void qedit_setup_existing(struct descriptor_data *d, qst_rnum rnum);
-static void qedit_disp_menu(struct descriptor_data *d);
-static void qedit_save_internally(struct descriptor_data *d);
+static void qedit_setup_new(descriptor_data *d);
+static void qedit_setup_existing(descriptor_data *d, qst_rnum rnum);
+static void qedit_disp_menu(descriptor_data *d);
+static void qedit_save_internally(descriptor_data *d);
 static void qedit_save_to_disk(int num);
 
 /*-------------------------------------------------------------------*/
 
-static void qedit_save_internally(struct descriptor_data *d)
+static void qedit_save_internally(descriptor_data *d)
 {
   add_quest(OLC_QUEST(d));
 }
@@ -54,7 +54,7 @@ ACMD(do_oasis_qedit)
 {
   int number = NOWHERE, save = 0;
   qst_rnum real_num;
-  struct descriptor_data *d;
+  descriptor_data *d;
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
 
@@ -192,7 +192,7 @@ ACMD(do_oasis_qedit)
          GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-static void qedit_setup_new(struct descriptor_data *d)
+static void qedit_setup_new(descriptor_data *d)
 {
   struct aq_data *quest;
 
@@ -231,7 +231,7 @@ static void qedit_setup_new(struct descriptor_data *d)
 
 /*-------------------------------------------------------------------*/
 
-static void qedit_setup_existing(struct descriptor_data *d, qst_rnum r_num)
+static void qedit_setup_existing(descriptor_data *d, qst_rnum r_num)
 {
   /*. Alloc some quest shaped space . */
   CREATE(OLC_QUEST(d), struct aq_data, 1);
@@ -248,7 +248,7 @@ static void qedit_setup_existing(struct descriptor_data *d, qst_rnum r_num)
 /*-------------------------------------------------------------------*/
 /*. Display main menu . */
 
-static void qedit_disp_menu(struct descriptor_data *d)
+static void qedit_disp_menu(descriptor_data *d)
 {
   struct aq_data *quest;
   char quest_flags[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
@@ -351,7 +351,7 @@ static void qedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = QEDIT_MAIN_MENU;
 }
 /* For quest type.  */
-static void qedit_disp_type_menu(struct descriptor_data *d)
+static void qedit_disp_type_menu(descriptor_data *d)
 {
   clear_screen(d);
   column_list(d->character, 0, quest_types, NUM_AQ_TYPES, TRUE);
@@ -359,7 +359,7 @@ static void qedit_disp_type_menu(struct descriptor_data *d)
   OLC_MODE(d) = QEDIT_TYPES;
 }
 /* For quest flags.  */
-static void qedit_disp_flag_menu(struct descriptor_data *d)
+static void qedit_disp_flag_menu(descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
 
@@ -375,7 +375,7 @@ static void qedit_disp_flag_menu(struct descriptor_data *d)
   The GARGANTUAN event handler
 **************************************************************************/
 
-void qedit_parse(struct descriptor_data *d, char *arg)
+void qedit_parse(descriptor_data *d, char *arg)
 {
   int number = atoi(arg);
   char *oldtext = NULL;
@@ -734,7 +734,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
   qedit_disp_menu(d);
 }
 
-void qedit_string_cleanup(struct descriptor_data *d, int terminator)
+void qedit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
   case QEDIT_INFO:

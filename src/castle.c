@@ -13,7 +13,6 @@
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
 #include "handler.h"
 #include "db.h"
 #include "spells.h"
@@ -30,18 +29,18 @@
 /* local, file scope restricted functions */
 static mob_vnum castle_virtual(mob_vnum offset);
 static room_rnum castle_real_room(room_vnum roomoffset);
-static struct char_data *find_npc_by_name(struct char_data *chAtChar, const char *pszName, int iLen);
-static int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room, int iProhibited_direction);
-static int member_of_staff(struct char_data *chChar);
-static int member_of_royal_guard(struct char_data *chChar);
-static struct char_data *find_guard(struct char_data *chAtChar);
-static struct char_data *get_victim(struct char_data *chAtChar);
-static int banzaii(struct char_data *ch);
-static int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim);
-static int is_trash(struct obj_data *i);
-static void fry_victim(struct char_data *ch);
-static int castle_cleaner(struct char_data *ch, int cmd, int gripe);
-static int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname);
+static char_data *find_npc_by_name(const char_data *chAtChar, const char *pszName, int iLen);
+static int block_way(char_data *ch, int cmd, char *arg, room_vnum iIn_room, int iProhibited_direction);
+static int member_of_staff(const char_data *chChar);
+static int member_of_royal_guard(const char_data *chChar);
+static char_data *find_guard(const char_data *chAtChar);
+static char_data *get_victim(const char_data *chAtChar);
+static int banzaii(char_data *ch);
+static int do_npc_rescue(char_data *ch_hero, char_data *ch_victim);
+static int is_trash(const obj_data *i);
+static void fry_victim(char_data *ch);
+static int castle_cleaner(char_data *ch, int cmd, int gripe);
+static int castle_twin_proc(char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname);
 static void castle_mob_spec(mob_vnum mobnum, SPECIAL(*specproc));
 /* Special procedures for Kings Castle by Pjotr. Coded by Sapowox. */
 SPECIAL(CastleGuard);
@@ -129,86 +128,86 @@ void assign_kings_castle(void)
 
 /* Routine: member_of_staff. Used to see if a character is a member of the 
  * castle staff. Used mainly by BANZAI:ng NPC:s. */
-static int member_of_staff(struct char_data *chChar)
+static int member_of_staff(const char_data *chChar)
 {
   int ch_num;
 
   if (!IS_NPC(chChar))
-    return (FALSE);
+    return FALSE;
 
   ch_num = GET_MOB_VNUM(chChar);
 
   if (ch_num == castle_virtual(1))
-    return (TRUE);
+    return TRUE;
 
   if (ch_num > castle_virtual(2) && ch_num < castle_virtual(15))
-    return (TRUE);
+    return TRUE;
 
   if (ch_num > castle_virtual(15) && ch_num < castle_virtual(18))
-    return (TRUE);
+    return TRUE;
 
   if (ch_num > castle_virtual(18) && ch_num < castle_virtual(30))
-    return (TRUE);
+    return TRUE;
 
-  return (FALSE);
+  return FALSE;
 }
 
 /* Function: member_of_royal_guard. Returns TRUE if the character is a guard on
  * duty, otherwise FALSE. Used by Peter the captain of the royal guard. */
-static int member_of_royal_guard(struct char_data *chChar)
+static int member_of_royal_guard(const char_data *chChar)
 {
   int ch_num;
 
   if (!chChar || !IS_NPC(chChar))
-    return (FALSE);
+    return FALSE;
 
   ch_num = GET_MOB_VNUM(chChar);
 
   if (ch_num == castle_virtual(3) || ch_num == castle_virtual(6))
-    return (TRUE);
+    return TRUE;
 
   if (ch_num > castle_virtual(7) && ch_num < castle_virtual(12))
-    return (TRUE);
+    return TRUE;
 
   if (ch_num > castle_virtual(23) && ch_num < castle_virtual(26))
-    return (TRUE);
+    return TRUE;
 
-  return (FALSE);
+  return FALSE;
 }
 
 /* Function: find_npc_by_name. Returns a pointer to an npc by the given name.
  * Used by Tim and Tom. */
-static struct char_data *find_npc_by_name(struct char_data *chAtChar,
+static char_data *find_npc_by_name(const char_data *chAtChar,
 		const char *pszName, int iLen)
 {
-  struct char_data *ch;
+  char_data *ch;
 
   for (ch = world[IN_ROOM(chAtChar)].people; ch; ch = ch->next_in_room)
     if (IS_NPC(ch) && !strncmp(pszName, ch->player.short_descr, iLen))
-      return (ch);
+      return ch;
 
-  return (NULL);
+  return NULL;
 }
 
-/* Function: find_guard. Returns the pointer to a guard on duty. Used by Peter 
+/* Function: find_guard. Returns the pointer to a guard on duty. Used by Peter
  * the Captain of the Royal Guard */
-static struct char_data *find_guard(struct char_data *chAtChar)
+static char_data *find_guard(const char_data *chAtChar)
 {
-  struct char_data *ch;
+  char_data *ch;
 
   for (ch = world[IN_ROOM(chAtChar)].people; ch; ch = ch->next_in_room)
     if (!FIGHTING(ch) && member_of_royal_guard(ch))
-      return (ch);
+      return ch;
 
-  return (NULL);
+  return NULL;
 }
 
-/* Function: get_victim. Returns a pointer to a randomly chosen character in 
- * the same room, fighting someone in the castle staff. Used by BANZAII-ing 
+/* Function: get_victim. Returns a pointer to a randomly chosen character in
+ * the same room, fighting someone in the castle staff. Used by BANZAII-ing
  * characters and King Welmar... */
-static struct char_data *get_victim(struct char_data *chAtChar)
+static char_data *get_victim(const char_data *chAtChar)
 {
-  struct char_data *ch;
+  char_data *ch;
   int iNum_bad_guys = 0, iVictim;
 
   for (ch = world[IN_ROOM(chAtChar)].people; ch; ch = ch->next_in_room)
@@ -216,11 +215,11 @@ static struct char_data *get_victim(struct char_data *chAtChar)
       iNum_bad_guys++;
 
   if (!iNum_bad_guys)
-    return (NULL);
+    return NULL;
 
   iVictim = rand_number(0, iNum_bad_guys);	/* How nice, we give them a chance */
   if (!iVictim)
-    return (NULL);
+    return NULL;
 
   iNum_bad_guys = 0;
 
@@ -234,39 +233,40 @@ static struct char_data *get_victim(struct char_data *chAtChar)
     if (++iNum_bad_guys != iVictim)
       continue;
 
-    return (ch);
+    return ch;
   }
 
-  return (NULL);
+  return NULL;
 }
 
-/* Banzaii. Makes a character banzaii on attackers of the castle staff. Used 
+/* Banzaii. Makes a character banzaii on attackers of the castle staff. Used
  * by Guards, Tim, Tom, Dick, David, Peter, Master, and the King. */
-static int banzaii(struct char_data *ch)
+static int banzaii(char_data *ch)
 {
-  struct char_data *chOpponent;
+  char_data *chOpponent;
 
-  if (!AWAKE(ch) || GET_POS(ch) == POS_FIGHTING || !(chOpponent = get_victim(ch)))
-    return (FALSE);
+  if (!AWAKE(ch) || GET_POS(ch) == POS_FIGHTING || (chOpponent = get_victim(ch)) == NULL)
+    return FALSE;
 
   act("$n roars: 'Protect the Kingdom of Great King Welmar!  BANZAIIII!!!'",
 	FALSE, ch, 0, 0, TO_ROOM);
   hit(ch, chOpponent, TYPE_UNDEFINED);
-  return (TRUE);
+  return TRUE;
 }
 
 /* Do_npc_rescue. Makes ch_hero rescue ch_victim. Used by Tim and Tom. */
-static int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
+static int do_npc_rescue(char_data *ch_hero, char_data *ch_victim)
 {
-  struct char_data *ch_bad_guy;
+  char_data *ch_bad_guy;
 
   for (ch_bad_guy = world[IN_ROOM(ch_hero)].people;
-       ch_bad_guy && (FIGHTING(ch_bad_guy) != ch_victim);
-       ch_bad_guy = ch_bad_guy->next_in_room);
+       ch_bad_guy && FIGHTING(ch_bad_guy) != ch_victim;
+       ch_bad_guy = ch_bad_guy->next_in_room)
+    ;
 
   /* NO WAY I'll rescue the one I'm fighting! */
   if (!ch_bad_guy || ch_bad_guy == ch_hero)
-    return (FALSE);
+    return FALSE;
 
   act("You bravely rescue $N.\r\n", FALSE, ch_hero, 0, ch_victim, TO_CHAR);
   act("You are rescued by $N, your loyal friend!\r\n",
@@ -280,54 +280,54 @@ static int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim)
 
   set_fighting(ch_hero, ch_bad_guy);
   set_fighting(ch_bad_guy, ch_hero);
-  return (TRUE);
+  return TRUE;
 }
 
-/* Procedure to block a person trying to enter a room. Used by Tim/Tom at Kings 
+/* Procedure to block a person trying to enter a room. Used by Tim/Tom at Kings
  * bedroom and Dick/David at treasury. */
-static int block_way(struct char_data *ch, int cmd, char *arg, room_vnum iIn_room,
+static int block_way(char_data *ch, int cmd, char *arg, room_vnum iIn_room,
 	          int iProhibited_direction)
 {
   if (cmd != ++iProhibited_direction)
-    return (FALSE);
+    return FALSE;
 
   if (ch->player.short_descr && !strncmp(ch->player.short_descr, "King Welmar", 11))
-    return (FALSE);
+    return FALSE;
 
   if (IN_ROOM(ch) != real_room(iIn_room))
-    return (FALSE);
+    return FALSE;
 
   if (!member_of_staff(ch))
     act("The guard roars at $n and pushes $m back.", FALSE, ch, 0, 0, TO_ROOM);
 
   send_to_char(ch, "The guard roars: 'Entrance is Prohibited!', and pushes you back.\r\n");
-  return (TRUE);
+  return TRUE;
 }
 
-/* Routine to check if an object is trash. Used by James the Butler and the 
+/* Routine to check if an object is trash. Used by James the Butler and the
  * Cleaning Lady. */
-static int is_trash(struct obj_data *i)
+static int is_trash(const obj_data *i)
 {
   if (!OBJWEAR_FLAGGED(i, ITEM_WEAR_TAKE))
-    return (FALSE);
+    return FALSE;
 
   if (GET_OBJ_TYPE(i) == ITEM_DRINKCON || GET_OBJ_COST(i) <= 10)
-    return (TRUE);
+    return TRUE;
 
-  return (FALSE);
+  return FALSE;
 }
 
-/* Fry_victim. Finds a suitabe victim, and cast some _NASTY_ spell on him. Used 
+/* Fry_victim. Finds a suitabe victim, and cast some _NASTY_ spell on him. Used
  * by King Welmar. */
-static void fry_victim(struct char_data *ch)
+static void fry_victim(char_data *ch)
 {
-  struct char_data *tch;
+  char_data *tch;
 
   if (ch->points.mana < 10)
     return;
 
   /* Find someone suitable to fry ! */
-  if (!(tch = get_victim(ch)))
+  if ((tch = get_victim(ch)) == NULL)
     return;
 
   switch (rand_number(0, 8)) {
@@ -358,8 +358,6 @@ static void fry_victim(struct char_data *ch)
   }
 
   ch->points.mana -= 10;
-
-  return;
 }
 
 /* King_welmar. Control the actions and movements of the King. */
@@ -397,18 +395,19 @@ SPECIAL(king_welmar)
       path_index = 0;
     }
   }
-  if (cmd || (GET_POS(ch) < POS_SLEEPING) ||
+  if (cmd || GET_POS(ch) < POS_SLEEPING ||
       (GET_POS(ch) == POS_SLEEPING && !move))
-    return (FALSE);
+    return FALSE;
 
   if (GET_POS(ch) == POS_FIGHTING) {
     fry_victim(ch);
-    return (FALSE);
-  } else if (banzaii(ch))
-    return (FALSE);
+    return FALSE;
+  }
+  if (banzaii(ch))
+    return FALSE;
 
   if (!move)
-    return (FALSE);
+    return FALSE;
 
   switch (path[path_index]) {
   case '0':
@@ -471,36 +470,40 @@ SPECIAL(king_welmar)
   case '.':
     move = FALSE;
     break;
+  default:
+    log("default case hit in king_welmar spec proc. path_index=%d path[path_index] = %c",
+      path_index, path[path_index]);
+    break;
   }
 
   path_index++;
-  return (FALSE);
+  return FALSE;
 }
 
-/* Training_master. Acts actions to the training room, if his students are 
- * present. Also allowes warrior-class to practice. Used by the Training 
+/* Training_master. Acts actions to the training room, if his students are
+ * present. Also allowes warrior-class to practice. Used by the Training
  * Master. */
 SPECIAL(training_master)
 {
-  struct char_data *pupil1, *pupil2 = NULL, *tch;
+  char_data *pupil1, *pupil2 = NULL, *tch;
 
-  if (!AWAKE(ch) || (GET_POS(ch) == POS_FIGHTING))
-    return (FALSE);
+  if (!AWAKE(ch) || GET_POS(ch) == POS_FIGHTING)
+    return FALSE;
 
   if (cmd)
-    return (FALSE);
+    return FALSE;
 
   if (banzaii(ch) || rand_number(0, 2))
-    return (FALSE);
+    return FALSE;
 
-  if (!(pupil1 = find_npc_by_name(ch, "Brian", 5)))
-    return (FALSE);
+  if ((pupil1 = find_npc_by_name(ch, "Brian", 5)) == NULL)
+    return FALSE;
 
-  if (!(pupil2 = find_npc_by_name(ch, "Mick", 4)))
-    return (FALSE);
+  if ((pupil2 = find_npc_by_name(ch, "Mick", 4)) == NULL)
+    return FALSE;
 
   if (FIGHTING(pupil1) || FIGHTING(pupil2))
-    return (FALSE);
+    return FALSE;
 
   if (rand_number(0, 1)) {
     tch = pupil1;
@@ -562,7 +565,7 @@ SPECIAL(training_master)
     break;
   }
 
-  return (FALSE);
+  return FALSE;
 }
 
 SPECIAL(tom)
@@ -576,12 +579,12 @@ SPECIAL(tim)
 }
 
 /* Common routine for the Castle Twins. */
-static int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname)
+static int castle_twin_proc(char_data *ch, int cmd, char *arg, int ctlnum, const char *twinname)
 {
-  struct char_data *king, *twin;
+  char_data *king, *twin;
 
   if (!AWAKE(ch))
-    return (FALSE);
+    return FALSE;
 
   if (cmd)
     return block_way(ch, cmd, arg, castle_virtual(ctlnum), 1);
@@ -595,18 +598,18 @@ static int castle_twin_proc(struct char_data *ch, int cmd, char *arg, int ctlnum
       do_npc_rescue(ch, king);
   }
 
-  if ((twin = find_npc_by_name(ch, twinname, strlen(twinname))) != NULL)
+  if ((twin = find_npc_by_name(ch, twinname, (int)strlen(twinname))) != NULL)
     if (FIGHTING(twin) && 2 * GET_HIT(twin) < GET_HIT(ch))
       do_npc_rescue(ch, twin);
 
   if (GET_POS(ch) != POS_FIGHTING)
     banzaii(ch);
 
-  return (FALSE);
+  return FALSE;
 }
 
 
-/* Routine for James the Butler. Complains if he finds any trash. This doesn't 
+/* Routine for James the Butler. Complains if he finds any trash. This doesn't
  * make sure he _can_ carry it. */
 SPECIAL(James)
 {
@@ -614,12 +617,12 @@ SPECIAL(James)
 }
 
 /* Common code for James and the Cleaning Woman. */
-static int castle_cleaner(struct char_data *ch, int cmd, int gripe)
+static int castle_cleaner(char_data *ch, int cmd, int gripe)
 {
-  struct obj_data *i;
+  obj_data *i;
 
   if (cmd || !AWAKE(ch) || GET_POS(ch) == POS_FIGHTING)
-    return (FALSE);
+    return FALSE;
 
   for (i = world[IN_ROOM(ch)].contents; i; i = i->next_content) {
     if (!is_trash(i))
@@ -632,10 +635,10 @@ static int castle_cleaner(struct char_data *ch, int cmd, int gripe)
     }
     obj_from_room(i);
     obj_to_char(i, ch);
-    return (TRUE);
+    return TRUE;
   }
 
-  return (FALSE);
+  return FALSE;
 }
 
 /* Routine for the Cleaning Woman. Picks up any trash she finds. */
@@ -647,36 +650,36 @@ SPECIAL(cleaning)
 /* CastleGuard. Standard routine for ordinary castle guards. */
 SPECIAL(CastleGuard)
 {
-  if (cmd || !AWAKE(ch) || (GET_POS(ch) == POS_FIGHTING))
-    return (FALSE);
+  if (cmd || !AWAKE(ch) || GET_POS(ch) == POS_FIGHTING)
+    return FALSE;
 
-  return (banzaii(ch));
+  return banzaii(ch);
 }
 
 /* DicknDave. Routine for the guards Dick and David. */
 SPECIAL(DicknDavid)
 {
   if (!AWAKE(ch))
-    return (FALSE);
+    return FALSE;
 
   if (!cmd && GET_POS(ch) != POS_FIGHTING)
     banzaii(ch);
 
-  return (block_way(ch, cmd, argument, castle_virtual(36), 1));
+  return block_way(ch, cmd, argument, castle_virtual(36), 1);
 }
 
 /*Peter. Routine for Captain of the Guards. */
 SPECIAL(peter)
 {
-  struct char_data *ch_guard = NULL;
+  char_data *ch_guard = NULL;
 
   if (cmd || !AWAKE(ch) || GET_POS(ch) == POS_FIGHTING)
-    return (FALSE);
+    return FALSE;
 
   if (banzaii(ch))
-    return (FALSE);
+    return FALSE;
 
-  if (!(rand_number(0, 3)) && (ch_guard = find_guard(ch)))
+  if (!rand_number(0, 3) && (ch_guard = find_guard(ch)) != NULL)
     switch (rand_number(0, 5)) {
     case 0:
       act("$N comes sharply into attention as $n inspects $M.",
@@ -725,32 +728,32 @@ SPECIAL(peter)
       break;
     }
 
-  return (FALSE);
+  return FALSE;
 }
 
-/* Procedure for Jerry and Michael in x08 of King's Castle. Code by Sapowox 
+/* Procedure for Jerry and Michael in x08 of King's Castle. Code by Sapowox
  * modified by Pjotr.(Original code from Master) */
 SPECIAL(jerry)
 {
-  struct char_data *gambler1, *gambler2 = NULL, *tch;
+  char_data *gambler1, *gambler2 = NULL, *tch;
 
-  if (!AWAKE(ch) || (GET_POS(ch) == POS_FIGHTING))
-    return (FALSE);
+  if (!AWAKE(ch) || GET_POS(ch) == POS_FIGHTING)
+    return FALSE;
 
   if (cmd)
-    return (FALSE);
+    return FALSE;
 
   if (banzaii(ch) || rand_number(0, 2))
-    return (FALSE);
+    return FALSE;
 
-  if (!(gambler1 = ch))
-    return (FALSE);
+  if ((gambler1 = ch) == NULL)
+    return FALSE;
 
-  if (!(gambler2 = find_npc_by_name(ch, "Michael", 7)))
-    return (FALSE);
+  if ((gambler2 = find_npc_by_name(ch, "Michael", 7)) == NULL)
+    return FALSE;
 
   if (FIGHTING(gambler1) || FIGHTING(gambler2))
-    return (FALSE);
+    return FALSE;
 
   if (rand_number(0, 1)) {
     tch = gambler1;
@@ -808,5 +811,5 @@ SPECIAL(jerry)
 	    FALSE, gambler1, 0, gambler2, TO_VICT);
     break;
   }
-  return (FALSE);
+  return FALSE;
 }

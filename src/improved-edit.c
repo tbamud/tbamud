@@ -15,7 +15,7 @@
 #include "modify.h"
 
 
-void send_editor_help(struct descriptor_data *d)
+void send_editor_help(descriptor_data *d)
 {
   if (using_improved_editor)
     write_to_output(d, "Instructions: /s to save, /h for more options.\r\n");
@@ -25,7 +25,7 @@ void send_editor_help(struct descriptor_data *d)
 
 #if CONFIG_IMPROVED_EDITOR
 
-int improved_editor_execute(struct descriptor_data *d, char *str)
+int improved_editor_execute(descriptor_data *d, char *str)
 {
   char actions[MAX_INPUT_LENGTH];
 
@@ -96,7 +96,7 @@ int improved_editor_execute(struct descriptor_data *d, char *str)
 }
 
 /* Handle some editor commands. */
-void parse_edit_action(int command, char *string, struct descriptor_data *d)
+void parse_edit_action(int command, char *string, descriptor_data *d)
 {
   int indent = 0, rep_all = 0, flags = 0, replaced, i, line_low, line_high, j = 0;
   unsigned int total_len;
@@ -503,7 +503,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
 
 /* Re-formats message type formatted char *. (for strings edited with d->str) 
  * (mostly olc and mail). */
-int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned int maxlen, int low, int high)
+int format_text(char **ptr_string, int mode, descriptor_data *d, unsigned int maxlen, int low, int high)
 {
   int line_chars, cap_next = TRUE, cap_next_next = FALSE, color_chars = 0, i, pass_line = 0;
   char *flow, *start = NULL, temp;

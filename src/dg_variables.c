@@ -65,7 +65,7 @@ void add_var(struct trig_var_data **var_list, const char *name, const char *valu
 }
 
 /* perhaps not the best place for this, but I didn't want a new file */
-char *skill_percent(struct char_data *ch, char *skill)
+char *skill_percent(char_data *ch, char *skill)
 {
   static char retval[16];
   int skillnum;
@@ -120,7 +120,7 @@ int item_in_list(char *item, obj_data *list)
 /* BOOLEAN return, just check if a player or mob has an item of any sort,
  * searched for by name or id. Searching equipment as well as inventory, and
  * containers. Jamie Nelson */
-int char_has_item(char *item, struct char_data *ch)
+int char_has_item(char *item, char_data *ch)
 {
 
   /* If this works, no more searching needed */
@@ -133,7 +133,7 @@ int char_has_item(char *item, struct char_data *ch)
     return 1;
 }
 
-static int handle_oset(struct obj_data * obj, char * argument)
+static int handle_oset(obj_data * obj, char * argument)
 {
   int i = 0;
   bool found = FALSE;
@@ -141,7 +141,7 @@ static int handle_oset(struct obj_data * obj, char * argument)
   
   struct oset_handler {
     const char * type;
-    bool (* name)(struct obj_data *, char *);
+    bool (* name)(obj_data *, char *);
   } handler[] = {
     { "alias",     oset_alias },
     { "apply",     oset_apply },
@@ -553,10 +553,10 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
               in_room = real_room(((struct room_data *) go)->number);
               break;
             case OBJ_TRIGGER:
-              in_room = obj_room((struct obj_data *) go);
+              in_room = obj_room((obj_data *) go);
               break;
             case MOB_TRIGGER:
-              in_room = IN_ROOM((struct char_data *)go);
+              in_room = IN_ROOM((char_data *)go);
               break;
           }
           if (in_room == NOWHERE) {

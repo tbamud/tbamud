@@ -21,7 +21,7 @@
 
 /* Statics */
 static void free_messages_type(struct msg_type *msg);
-static void msgedit_main_menu(struct descriptor_data * d);
+static void msgedit_main_menu(descriptor_data * d);
 static void copy_message_strings(struct message_type *tmsg, struct message_type * fmsg);
 static void copy_message_list(struct message_list *to, struct message_list *from);
 
@@ -149,7 +149,7 @@ void load_messages(void)
   log("Loaded %d Combat Messages...", i);
 }
 
-static void show_messages(struct char_data *ch)
+static void show_messages(char_data *ch)
 {
   int i, half = MAX_MESSAGES / 2, count = 0;
   char buf[MAX_STRING_LENGTH];
@@ -227,7 +227,7 @@ void save_messages_to_disk(void)
   fclose(fp);
 }
 
-static void msgedit_setup(struct descriptor_data *d)
+static void msgedit_setup(descriptor_data *d)
 {
   CREATE(OLC_MSG_LIST(d), struct message_list, 1);
   OLC_MSG_LIST(d)->msg = NULL;  
@@ -301,7 +301,7 @@ static void copy_message_strings(struct message_type *tmsg, struct message_type 
 ACMD(do_msgedit)
 {
   int num;
-  struct descriptor_data *d;
+  descriptor_data *d;
   
   if (!*argument) {
     show_messages(ch);
@@ -352,7 +352,7 @@ ACMD(do_msgedit)
     GET_NAME(ch), OLC_NUM(d));
 }
 
-static void msgedit_main_menu(struct descriptor_data * d)
+static void msgedit_main_menu(descriptor_data * d)
 {
   get_char_colors(d->character);
   
@@ -405,7 +405,7 @@ static void msgedit_main_menu(struct descriptor_data * d)
   OLC_MODE(d) = MSGEDIT_MAIN_MENU;  
 }
 
-void msgedit_parse(struct descriptor_data *d, char *arg)
+void msgedit_parse(descriptor_data *d, char *arg)
 {
   struct message_type * temp;
   static bool quit = FALSE;

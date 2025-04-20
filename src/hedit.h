@@ -19,8 +19,8 @@
 /* Utility functions */
 /*
  * All the following functions are declared in oasis.h
-  void hedit_parse(struct descriptor_data *, char *);
-  void hedit_string_cleanup(struct descriptor_data *, int);
+  void hedit_parse(descriptor_data *, char *);
+  void hedit_string_cleanup(descriptor_data *, int);
   ACMD(do_oasis_hedit);
 */
 /* Action fuctions */

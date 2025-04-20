@@ -31,32 +31,32 @@
 #define MAX_BAG_ROWS   5
 
 /* local functions */
-static int Crash_save(struct obj_data *obj, FILE *fp, int location);
-static void Crash_extract_norent_eq(struct char_data *ch);
-static void auto_equip(struct char_data *ch, struct obj_data *obj, int location);
-static int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist, int display, int factor);
-static int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, struct obj_data *obj);
-static void Crash_report_rent(struct char_data *ch, struct char_data *recep, struct obj_data *obj, long *cost, long *nitems, int display, int factor);
-static int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, char *arg, int mode);
-static void Crash_rent_deadline(struct char_data *ch, struct char_data *recep, long cost);
-static void Crash_restore_weight(struct obj_data *obj);
-static void Crash_extract_objs(struct obj_data *obj);
-static int Crash_is_unrentable(struct obj_data *obj);
-static void Crash_extract_norents(struct obj_data *obj);
-static void Crash_extract_expensive(struct obj_data *obj);
-static void Crash_calculate_rent(struct obj_data *obj, int *cost);
-static void Crash_cryosave(struct char_data *ch, int cost);
-static int Crash_load_objs(struct char_data *ch);
-static int handle_obj(struct obj_data *obj, struct char_data *ch, int locate, struct obj_data **cont_rows);
-static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch);
+static int Crash_save(obj_data *obj, FILE *fp, int location);
+static void Crash_extract_norent_eq(char_data *ch);
+static void auto_equip(char_data *ch, obj_data *obj, int location);
+static int Crash_offer_rent(char_data *ch, char_data *receptionist, int display, int factor);
+static int Crash_report_unrentables(char_data *ch, char_data *recep, obj_data *obj);
+static void Crash_report_rent(char_data *ch, char_data *recep, obj_data *obj, long *cost, long *nitems, int display, int factor);
+static int gen_receptionist(char_data *ch, char_data *recep, int cmd, char *arg, int mode);
+static void Crash_rent_deadline(char_data *ch, char_data *recep, long cost);
+static void Crash_restore_weight(obj_data *obj);
+static void Crash_extract_objs(obj_data *obj);
+static int Crash_is_unrentable(obj_data *obj);
+static void Crash_extract_norents(obj_data *obj);
+static void Crash_extract_expensive(obj_data *obj);
+static void Crash_calculate_rent(obj_data *obj, int *cost);
+static void Crash_cryosave(char_data *ch, int cost);
+static int Crash_load_objs(char_data *ch);
+static int handle_obj(obj_data *obj, char_data *ch, int locate, obj_data **cont_rows);
+static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, char_data *ch);
 
 /* Writes one object record to FILE.  Old name: Obj_to_store() */
-int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
+int objsave_save_obj_record(obj_data *obj, FILE *fp, int locate)
 {
   int counter2;
   struct extra_descr_data *ex_desc;
   char buf1[MAX_STRING_LENGTH +1];
-  struct obj_data *temp = NULL;
+  obj_data *temp = NULL;
 
   if (GET_OBJ_VNUM(obj) != NOTHING)
     temp=read_object(GET_OBJ_VNUM(obj), VIRTUAL);
@@ -164,7 +164,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 #undef TEST_OBJN
 
 /* AutoEQ by Burkhard Knopf. */
-static void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
+static void auto_equip(char_data *ch, obj_data *obj, int location)
 {
   int j;
 
@@ -280,7 +280,7 @@ int Crash_delete_file(char *name)
   return TRUE;
 }
 
-int Crash_delete_crashfile(struct char_data *ch)
+int Crash_delete_crashfile(char_data *ch)
 {
   char filename[MAX_INPUT_LENGTH];
   int numread;
@@ -376,7 +376,7 @@ void update_obj_file(void)
       Crash_clean_file(player_table[i].name);
 }
 
-void Crash_listrent(struct char_data *ch, char *name)
+void Crash_listrent(char_data *ch, char *name)
 {
   FILE *fl;
   char filename[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH], line[READ_SIZE];
@@ -447,14 +447,14 @@ void Crash_listrent(struct char_data *ch, char *name)
  *  0 - successful load, keep char in rent room.
  *  1 - load failure or load of crash items -- put char in temple.
  *  2 - rented equipment lost (no $) */
-int Crash_load(struct char_data *ch)
+int Crash_load(char_data *ch)
 {
   return (Crash_load_objs(ch));
 }
 
-static int Crash_save(struct obj_data *obj, FILE *fp, int location)
+static int Crash_save(obj_data *obj, FILE *fp, int location)
 {
-  struct obj_data *tmp;
+  obj_data *tmp;
   int result;
 
   if (obj) {
@@ -472,7 +472,7 @@ static int Crash_save(struct obj_data *obj, FILE *fp, int location)
   return (TRUE);
 }
 
-static void Crash_restore_weight(struct obj_data *obj)
+static void Crash_restore_weight(obj_data *obj)
 {
   if (obj) {
     Crash_restore_weight(obj->contains);
@@ -484,7 +484,7 @@ static void Crash_restore_weight(struct obj_data *obj)
 
 /* Get !RENT items from equipment to inventory and extract !RENT out of worn
  * containers. */
-static void Crash_extract_norent_eq(struct char_data *ch)
+static void Crash_extract_norent_eq(char_data *ch)
 {
   int j;
 
@@ -499,7 +499,7 @@ static void Crash_extract_norent_eq(struct char_data *ch)
   }
 }
 
-static void Crash_extract_objs(struct obj_data *obj)
+static void Crash_extract_objs(obj_data *obj)
 {
   if (obj) {
     Crash_extract_objs(obj->contains);
@@ -508,7 +508,7 @@ static void Crash_extract_objs(struct obj_data *obj)
   }
 }
 
-static int Crash_is_unrentable(struct obj_data *obj)
+static int Crash_is_unrentable(obj_data *obj)
 {
   if (!obj)
     return FALSE;
@@ -524,7 +524,7 @@ static int Crash_is_unrentable(struct obj_data *obj)
   return FALSE;
 }
 
-static void Crash_extract_norents(struct obj_data *obj)
+static void Crash_extract_norents(obj_data *obj)
 {
   if (obj) {
     Crash_extract_norents(obj->contains);
@@ -534,9 +534,9 @@ static void Crash_extract_norents(struct obj_data *obj)
   }
 }
 
-static void Crash_extract_expensive(struct obj_data *obj)
+static void Crash_extract_expensive(obj_data *obj)
 {
-  struct obj_data *tobj, *max;
+  obj_data *tobj, *max;
 
   max = obj;
   for (tobj = obj; tobj; tobj = tobj->next_content)
@@ -545,7 +545,7 @@ static void Crash_extract_expensive(struct obj_data *obj)
   extract_obj(max);
 }
 
-static void Crash_calculate_rent(struct obj_data *obj, int *cost)
+static void Crash_calculate_rent(obj_data *obj, int *cost)
 {
   if (obj) {
     *cost += MAX(0, GET_OBJ_RENT(obj));
@@ -554,7 +554,7 @@ static void Crash_calculate_rent(struct obj_data *obj, int *cost)
   }
 }
 
-void Crash_crashsave(struct char_data *ch)
+void Crash_crashsave(char_data *ch)
 {
   char buf[MAX_INPUT_LENGTH];
   int j;
@@ -592,7 +592,7 @@ void Crash_crashsave(struct char_data *ch)
   REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
 }
 
-void Crash_idlesave(struct char_data *ch)
+void Crash_idlesave(char_data *ch)
 {
   char buf[MAX_INPUT_LENGTH];
   int j;
@@ -666,7 +666,7 @@ void Crash_idlesave(struct char_data *ch)
   Crash_extract_objs(ch->carrying);
 }
 
-void Crash_rentsave(struct char_data *ch, int cost)
+void Crash_rentsave(char_data *ch, int cost)
 {
   char buf[MAX_INPUT_LENGTH];
   int j;
@@ -707,7 +707,7 @@ void Crash_rentsave(struct char_data *ch, int cost)
   Crash_extract_objs(ch->carrying);
 }
 
-static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch)
+static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, char_data *ch)
 {
   if (fprintf(fl, "%d %ld %d %d %d %d\r\n",
           rentcode,
@@ -725,7 +725,7 @@ static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, stru
 
 }
 
-static void Crash_cryosave(struct char_data *ch, int cost)
+static void Crash_cryosave(char_data *ch, int cost)
 {
   char buf[MAX_INPUT_LENGTH];
   int j;
@@ -769,7 +769,7 @@ static void Crash_cryosave(struct char_data *ch, int cost)
 }
 
 /* Routines used for the receptionist. */
-static void Crash_rent_deadline(struct char_data *ch, struct char_data *recep,
+static void Crash_rent_deadline(char_data *ch, char_data *recep,
                          long cost)
 {
   long rent_deadline;
@@ -784,8 +784,8 @@ static void Crash_rent_deadline(struct char_data *ch, struct char_data *recep,
 act(buf, FALSE, recep, 0, ch, TO_VICT);
 }
 
-static int Crash_report_unrentables(struct char_data *ch, struct char_data *recep,
-                             struct obj_data *obj)
+static int Crash_report_unrentables(char_data *ch, char_data *recep,
+                             obj_data *obj)
 {
   char buf[128];
   int has_norents = 0;
@@ -802,7 +802,7 @@ static int Crash_report_unrentables(struct char_data *ch, struct char_data *rece
   return (has_norents);
 }
 
-static void Crash_report_rent(struct char_data *ch, struct char_data *recep, struct
+static void Crash_report_rent(char_data *ch, char_data *recep, struct
     obj_data *obj, long *cost, long *nitems, int display, int factor)
 {
   static char buf[256];
@@ -822,7 +822,7 @@ static void Crash_report_rent(struct char_data *ch, struct char_data *recep, str
   }
 }
 
-static int Crash_offer_rent(struct char_data *ch, struct char_data *recep,
+static int Crash_offer_rent(char_data *ch, char_data *recep,
                      int display, int factor)
 {
   char buf[MAX_INPUT_LENGTH];
@@ -871,7 +871,7 @@ static int Crash_offer_rent(struct char_data *ch, struct char_data *recep,
   return (totalcost);
 }
 
-static int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd,
+static int gen_receptionist(char_data *ch, char_data *recep, int cmd,
     char *arg, int mode)
 {
   int cost;
@@ -952,17 +952,17 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
 
 SPECIAL(receptionist)
 {
-  return (gen_receptionist(ch, (struct char_data *)me, cmd, argument, RENT_FACTOR));
+  return (gen_receptionist(ch, (char_data *)me, cmd, argument, RENT_FACTOR));
 }
 
 SPECIAL(cryogenicist)
 {
-  return (gen_receptionist(ch, (struct char_data *)me, cmd, argument, CRYO_FACTOR));
+  return (gen_receptionist(ch, (char_data *)me, cmd, argument, CRYO_FACTOR));
 }
 
 void Crash_save_all(void)
 {
-  struct descriptor_data *d;
+  descriptor_data *d;
   for (d = descriptor_list; d; d = d->next) {
     if ((STATE(d) == CON_PLAYING) && !IS_NPC(d->character)) {
       if (PLR_FLAGGED(d->character, PLR_CRASH)) {
@@ -982,7 +982,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
   obj_save_data *head, *current, *tempsave;
   char f1[128], f2[128], f3[128], f4[128], line[READ_SIZE];
   int t[4],i, nr;
-  struct obj_data *temp;
+  obj_data *temp;
 
   CREATE(current, obj_save_data, 1);
   head = current;
@@ -1175,7 +1175,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
   return head;
 }
 
-static int Crash_load_objs(struct char_data *ch) {
+static int Crash_load_objs(char_data *ch) {
   FILE *fl;
   char filename[PATH_MAX];
   char line[READ_SIZE];
@@ -1183,7 +1183,7 @@ static int Crash_load_objs(struct char_data *ch) {
   char str[64];
   int i, num_of_days, orig_rent_code, num_objs=0;
   unsigned long cost;
-  struct obj_data *cont_row[MAX_BAG_ROWS];
+  obj_data *cont_row[MAX_BAG_ROWS];
   int rentcode = RENT_UNDEF;
   int timed=0,netcost=0,gold,account,nitems;
 	obj_save_data *loaded, *current;
@@ -1276,10 +1276,10 @@ static int Crash_load_objs(struct char_data *ch) {
     return 1;
 }
 
-static int handle_obj(struct obj_data *temp, struct char_data *ch, int locate, struct obj_data **cont_row)
+static int handle_obj(obj_data *temp, char_data *ch, int locate, obj_data **cont_row)
 {
   int j;
-  struct obj_data *obj1;
+  obj_data *obj1;
 
   if (!temp)  /* this should never happen, but.... */
     return FALSE;

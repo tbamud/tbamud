@@ -93,8 +93,8 @@ EVENTFUNC(event_countdown)
 void attach_mud_event(struct mud_event_data *pMudEvent, long time)
 {
   struct event * pEvent;
-  struct descriptor_data * d;
-  struct char_data * ch;
+  descriptor_data * d;
+  char_data * ch;
   struct room_data * room;
    
   pEvent = event_create(mud_event_index[pMudEvent->iId].func, pMudEvent, time);
@@ -106,11 +106,11 @@ void attach_mud_event(struct mud_event_data *pMudEvent, long time)
       add_to_list(pEvent, world_events);
     break;
     case EVENT_DESC:
-      d = (struct descriptor_data *) pMudEvent->pStruct;
+      d = (descriptor_data *) pMudEvent->pStruct;
       add_to_list(pEvent, d->events);
     break;
     case EVENT_CHAR:
-      ch = (struct char_data *) pMudEvent->pStruct;
+      ch = (char_data *) pMudEvent->pStruct;
       
       if (ch->events == NULL)
         ch->events = create_list();
@@ -146,8 +146,8 @@ struct mud_event_data *new_mud_event(event_id iId, void *pStruct, char *sVariabl
 
 void free_mud_event(struct mud_event_data *pMudEvent)
 {
-  struct descriptor_data * d;
-  struct char_data * ch;
+  descriptor_data * d;
+  char_data * ch;
   struct room_data * room;
 
   switch (mud_event_index[pMudEvent->iId].iEvent_Type) {
@@ -155,11 +155,11 @@ void free_mud_event(struct mud_event_data *pMudEvent)
       remove_from_list(pMudEvent->pEvent, world_events);
     break;
     case EVENT_DESC:
-      d = (struct descriptor_data *) pMudEvent->pStruct;
+      d = (descriptor_data *) pMudEvent->pStruct;
       remove_from_list(pMudEvent->pEvent, d->events);
     break;
     case EVENT_CHAR:
-      ch = (struct char_data *) pMudEvent->pStruct;
+      ch = (char_data *) pMudEvent->pStruct;
       remove_from_list(pMudEvent->pEvent, ch->events);
       
       if (ch->events->iSize == 0) {
@@ -185,7 +185,7 @@ void free_mud_event(struct mud_event_data *pMudEvent)
   free(pMudEvent);
 }
 
-struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
+struct mud_event_data * char_has_mud_event(char_data * ch, event_id iId)
 {
   struct event * pEvent;
   struct mud_event_data * pMudEvent = NULL;
@@ -215,7 +215,7 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
   return NULL;
 } 
 
-void clear_char_event_list(struct char_data * ch)
+void clear_char_event_list(char_data * ch)
 {
   struct event * pEvent;
     

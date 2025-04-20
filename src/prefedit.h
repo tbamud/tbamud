@@ -11,7 +11,7 @@
 
 /* Toggle structure held for OLC purposes */
 struct prefs_data {
-    struct char_data *ch;            /* Pointer to char being edited   */
+    char_data *ch;            /* Pointer to char being edited   */
     int   pref_flags[PR_ARRAY_MAX];  /* Copy of player's pref flags    */
     int   wimp_level;                /* Copy of player's wimp level    */
     int   page_length;               /* Copy of player's pagelength    */
@@ -53,7 +53,7 @@ struct prefs_data {
 #define PREFEDIT_TOGGLE_MENU              8
 
 /* External Functions in prefedit.c */
-void prefedit_Restore_Defaults(struct descriptor_data *d);
-void prefedit_parse(struct descriptor_data * d, char *arg);
+void prefedit_Restore_Defaults(descriptor_data *d);
+void prefedit_parse(descriptor_data * d, char *arg);
 ACMD(do_oasis_prefedit);
 

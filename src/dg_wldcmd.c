@@ -548,7 +548,7 @@ WCMD(do_wdamage) {
 WCMD(do_wat)     
 {
   room_rnum loc = NOWHERE;
-  struct char_data *ch;
+  char_data *ch;
   char arg[MAX_INPUT_LENGTH], *command; 
 
   command = any_one_arg(argument, arg); 

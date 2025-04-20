@@ -24,7 +24,7 @@
  * to allow for easier addition of parameters to the otherwise generic and
  * static function structure. */
 #define ACMD(name)  \
-   void name(struct char_data *ch, char *argument, int cmd, int subcmd)
+   void name(char_data *ch, char *argument, int cmd, int subcmd)
 
 /* external declarations and prototypes */
 
@@ -48,7 +48,7 @@ void sprintbitarray(int bitvector[], const char *names[], int maxar, char *resul
 int get_line(FILE *fl, char *buf);
 int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_name);
 time_t mud_time_to_secs(struct time_info_data *now);
-struct time_info_data *age(struct char_data *ch);
+struct time_info_data *age(char_data *ch);
 int num_pc_in_room(struct room_data *room);
 void core_dump_real(const char *who, int line);
 int count_color_chars(char *string);
@@ -57,7 +57,7 @@ int levenshtein_distance(const char *s1, const char *s2);
 struct time_info_data *real_time_passed(time_t t2, time_t t1);
 struct time_info_data *mud_time_passed(time_t t2, time_t t1);
 void prune_crlf(char *txt);
-void column_list(struct char_data *ch, int num_cols, const char **list, int list_length, bool show_nums);
+void column_list(char_data *ch, int num_cols, const char **list, int list_length, bool show_nums);
 int get_flag_by_name(const char *flag_list[], char *flag_name);
 int file_head(FILE *file, char *buf, size_t bufsize, int lines_to_read);
 int file_tail(FILE *file, char *buf, size_t bufsize, int lines_to_read);
@@ -107,43 +107,44 @@ unsigned long circle_random(void);
 
 int MAX(int a, int b);
 int MIN(int a, int b);
+unsigned long ULMIN(unsigned long a, unsigned long b);
 char *CAP(char *txt);
 
 /* Followers */
-int num_followers_charmed(struct char_data *ch);
-void die_follower(struct char_data *ch);
-void add_follower(struct char_data *ch, struct char_data *leader);
-void stop_follower(struct char_data *ch);
-bool circle_follow(struct char_data *ch, struct char_data *victim);
+int num_followers_charmed(char_data *ch);
+void die_follower(char_data *ch);
+void add_follower(char_data *ch, char_data *leader);
+void stop_follower(char_data *ch);
+bool circle_follow(char_data *ch, char_data *victim);
 
 /* in act.informative.c */
-void look_at_room(struct char_data *ch, int mode);
-void add_history(struct char_data *ch, char *msg, int type);
+void look_at_room(char_data *ch, int mode);
+void add_history(char_data *ch, char *msg, int type);
 
 /* in act.movmement.c */
-int do_simple_move(struct char_data *ch, int dir, int following);
-int perform_move(struct char_data *ch, int dir, int following);
+int do_simple_move(char_data *ch, int dir, int following);
+int perform_move(char_data *ch, int dir, int following);
 
 /* in limits.c */
-int mana_gain(struct char_data *ch);
-int hit_gain(struct char_data *ch);
-int move_gain(struct char_data *ch);
-void set_title(struct char_data *ch, char *title);
-void gain_exp(struct char_data *ch, int gain);
-void gain_exp_regardless(struct char_data *ch, int gain);
-void gain_condition(struct char_data *ch, int condition, int value);
+int mana_gain(char_data *ch);
+int hit_gain(char_data *ch);
+int move_gain(char_data *ch);
+void set_title(char_data *ch, char *title);
+void gain_exp(char_data *ch, int gain);
+void gain_exp_regardless(char_data *ch, int gain);
+void gain_condition(char_data *ch, int condition, int value);
 void point_update(void);
-void update_pos(struct char_data *victim);
+void update_pos(char_data *victim);
 void run_autowiz(void);
-int increase_gold(struct char_data *ch, int amt);
-int decrease_gold(struct char_data *ch, int amt);
-int increase_bank(struct char_data *ch, int amt);
-int decrease_bank(struct char_data *ch, int amt);
+int increase_gold(char_data *ch, int amt);
+int decrease_gold(char_data *ch, int amt);
+int increase_bank(char_data *ch, int amt);
+int decrease_bank(char_data *ch, int amt);
 
 /* in class.c */
-void advance_level(struct char_data *ch);
+void advance_level(char_data *ch);
 
-void char_from_furniture(struct char_data *ch);
+void char_from_furniture(char_data *ch);
 /** What ch is currently sitting on. */
 #define SITTING(ch)             ((ch)->char_specials.furniture)
 /** Who is sitting next to ch, if anyone. */
@@ -220,7 +221,7 @@ void char_from_furniture(struct char_data *ch);
 
 /** A calloc based memory allocation macro.
  * @param result Pointer to created memory.
- * @param type The type of memory (int, struct char_data, etc.).
+ * @param type The type of memory (int, char_data, etc.).
  * @param number How many of type to make. */
 #define CREATE(result, type, number)  do {\
     if ((number) * sizeof(type) <= 0)   \
@@ -231,7 +232,7 @@ void char_from_furniture(struct char_data *ch);
 /** A realloc based memory reallocation macro. Reminder: realloc can reduce
  * the size of an array as well as increase it.
  * @param result Pointer to created memory.
- * @param type The type of memory (int, struct char_data, etc.).
+ * @param type The type of memory (int, char_data, etc.).
  * @param number How many of type to make. */
 #define RECREATE(result, type, number) do {\
   if (!((result) = (type *) realloc ((result), sizeof(type) * (number))))\

@@ -1054,7 +1054,7 @@ INCLUDE_FILE_PATTERNS =
 # undefined via #undef or recursively expanded use the := operator 
 # instead of the = operator.
 
-PREDEFINED = "ACMD(name)=void name (struct char_data *ch, char *argument, int cmd, int subcmd)" "WCMD(name)=void name (room_data *room, char *argument, int cmd, int subcmd)" "OCMD(name)=void name(obj_data *obj, char *argument, int cmd, int subcmd)" "SPECIAL(name)=int name(struct char_data *ch, void *me, int cmd, char *argument)"
+PREDEFINED = "ACMD(name)=void name (char_data *ch, char *argument, int cmd, int subcmd)" "WCMD(name)=void name (room_data *room, char *argument, int cmd, int subcmd)" "OCMD(name)=void name(obj_data *obj, char *argument, int cmd, int subcmd)" "SPECIAL(name)=int name(char_data *ch, void *me, int cmd, char *argument)"
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then 
 # this tag can be used to specify a list of macro names that should be expanded. 

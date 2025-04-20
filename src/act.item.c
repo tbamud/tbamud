@@ -26,29 +26,29 @@
 
 /* local function prototypes */
 /* do_get utility functions */
-static int can_take_obj(struct char_data *ch, struct obj_data *obj);
-static void get_check_money(struct char_data *ch, struct obj_data *obj);
-static void get_from_container(struct char_data *ch, struct obj_data *cont, char *arg, int mode, int amount);
-static void get_from_room(struct char_data *ch, char *arg, int amount);
-static void perform_get_from_container(struct char_data *ch, struct obj_data *obj, struct obj_data *cont, int mode);
-static int perform_get_from_room(struct char_data *ch, struct obj_data *obj);
+static int can_take_obj(char_data *ch, obj_data *obj);
+static void get_check_money(char_data *ch, obj_data *obj);
+static void get_from_container(char_data *ch, obj_data *cont, char *arg, int mode, int amount);
+static void get_from_room(char_data *ch, char *arg, int amount);
+static void perform_get_from_container(char_data *ch, obj_data *obj, obj_data *cont, int mode);
+static int perform_get_from_room(char_data *ch, obj_data *obj);
 /* do_give utility functions */
-static struct char_data *give_find_vict(struct char_data *ch, char *arg);
-static void perform_give(struct char_data *ch, struct char_data *vict, struct obj_data *obj);
-static void perform_give_gold(struct char_data *ch, struct char_data *vict, int amount);
+static char_data *give_find_vict(char_data *ch, char *arg);
+static void perform_give(char_data *ch, char_data *vict, obj_data *obj);
+static void perform_give_gold(char_data *ch, char_data *vict, int amount);
 /* do_drop utility functions */
-static int perform_drop(struct char_data *ch, struct obj_data *obj, byte mode, const char *sname, room_rnum RDR);
-static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR);
+static int perform_drop(char_data *ch, obj_data *obj, byte mode, const char *sname, room_rnum RDR);
+static void perform_drop_gold(char_data *ch, int amount, byte mode, room_rnum RDR);
 /* do_put utility functions */
-static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont);
+static void perform_put(char_data *ch, obj_data *obj, obj_data *cont);
 /* do_remove utility functions */
-static void perform_remove(struct char_data *ch, int pos);
+static void perform_remove(char_data *ch, int pos);
 /* do_wear utility functions */
-static void perform_wear(struct char_data *ch, struct obj_data *obj, int where);
-static void wear_message(struct char_data *ch, struct obj_data *obj, int where);
+static void perform_wear(char_data *ch, obj_data *obj, int where);
+static void wear_message(char_data *ch, obj_data *obj, int where);
 
 
-static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont)
+static void perform_put(char_data *ch, obj_data *obj, obj_data *cont)
 {
   long object_id = obj_script_id(obj);
 
@@ -90,8 +90,8 @@ ACMD(do_put)
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
   char arg3[MAX_INPUT_LENGTH];
-  struct obj_data *obj, *next_obj, *cont;
-  struct char_data *tmp_char;
+  obj_data *obj, *next_obj, *cont;
+  char_data *tmp_char;
   int obj_dotmode, cont_dotmode, found = 0, howmany = 1;
   char *theobj, *thecont;
 
@@ -158,7 +158,7 @@ ACMD(do_put)
   }
 }
 
-static int can_take_obj(struct char_data *ch, struct obj_data *obj)
+static int can_take_obj(char_data *ch, obj_data *obj)
 {
   if (!(CAN_WEAR(obj, ITEM_WEAR_TAKE))) {
     act("$p: you can't take that!", FALSE, ch, obj, 0, TO_CHAR);
@@ -183,7 +183,7 @@ static int can_take_obj(struct char_data *ch, struct obj_data *obj)
   return (1);
 }
 
-static void get_check_money(struct char_data *ch, struct obj_data *obj)
+static void get_check_money(char_data *ch, obj_data *obj)
 {
   int value = GET_OBJ_VAL(obj, 0);
 
@@ -200,8 +200,8 @@ static void get_check_money(struct char_data *ch, struct obj_data *obj)
     send_to_char(ch, "There were %d coins.\r\n", value);
 }
 
-static void perform_get_from_container(struct char_data *ch, struct obj_data *obj,
-                                       struct obj_data *cont, int mode)
+static void perform_get_from_container(char_data *ch, obj_data *obj,
+                                       obj_data *cont, int mode)
 {
   if (mode == FIND_OBJ_INV || can_take_obj(ch, obj)) {
     if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
@@ -216,10 +216,10 @@ static void perform_get_from_container(struct char_data *ch, struct obj_data *ob
   }
 }
 
-void get_from_container(struct char_data *ch, struct obj_data *cont,
+void get_from_container(char_data *ch, obj_data *cont,
                         char *arg, int mode, int howmany)
 {
-  struct obj_data *obj, *next_obj;
+  obj_data *obj, *next_obj;
   int obj_dotmode, found = 0;
 
   obj_dotmode = find_all_dots(arg);
@@ -233,7 +233,7 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
       snprintf(buf, sizeof(buf), "There doesn't seem to be %s %s in $p.", AN(arg), arg);
       act(buf, FALSE, ch, cont, 0, TO_CHAR);
     } else {
-      struct obj_data *obj_next;
+      obj_data *obj_next;
       while (obj && howmany--) {
         obj_next = obj->next_content;
         perform_get_from_container(ch, obj, cont, mode);
@@ -266,7 +266,7 @@ void get_from_container(struct char_data *ch, struct obj_data *cont,
   }
 }
 
-static int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
+static int perform_get_from_room(char_data *ch, obj_data *obj)
 {
   if (can_take_obj(ch, obj) && get_otrigger(obj, ch)) {
     obj_from_room(obj);
@@ -279,9 +279,9 @@ static int perform_get_from_room(struct char_data *ch, struct obj_data *obj)
   return (0);
 }
 
-static void get_from_room(struct char_data *ch, char *arg, int howmany)
+static void get_from_room(char_data *ch, char *arg, int howmany)
 {
-  struct obj_data *obj, *next_obj;
+  obj_data *obj, *next_obj;
   int dotmode, found = 0;
 
   dotmode = find_all_dots(arg);
@@ -295,7 +295,7 @@ static void get_from_room(struct char_data *ch, char *arg, int howmany)
       }
       send_to_char(ch, "You don't see %s %s here.\r\n", AN(arg), arg);
     } else {
-      struct obj_data *obj_next;
+      obj_data *obj_next;
       while (obj && howmany--) {
         obj_next = obj->next_content;
         perform_get_from_room(ch, obj);
@@ -331,8 +331,8 @@ ACMD(do_get)
   char arg3[MAX_INPUT_LENGTH];
 
   int cont_dotmode, found = 0, mode;
-  struct obj_data *cont;
-  struct char_data *tmp_char;
+  obj_data *cont;
+  char_data *tmp_char;
 
   one_argument(two_arguments(argument, arg1, arg2), arg3); /* three_arguments */
 
@@ -395,9 +395,9 @@ ACMD(do_get)
   }
 }
 
-static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_rnum RDR)
+static void perform_drop_gold(char_data *ch, int amount, byte mode, room_rnum RDR)
 {
-  struct obj_data *obj;
+  obj_data *obj;
 
   if (amount <= 0)
     send_to_char(ch, "Heh heh heh.. we are jolly funny today, eh?\r\n");
@@ -445,7 +445,7 @@ static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_
 #define VANISH(mode) ((mode == SCMD_DONATE || mode == SCMD_JUNK) ? \
 		      "  It vanishes in a puff of smoke!" : "")
 
-static int perform_drop(struct char_data *ch, struct obj_data *obj,
+static int perform_drop(char_data *ch, obj_data *obj,
                         byte mode, const char *sname, room_rnum RDR)
 {
   char buf[MAX_STRING_LENGTH];
@@ -506,7 +506,7 @@ static int perform_drop(struct char_data *ch, struct obj_data *obj,
 ACMD(do_drop)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct obj_data *obj, *next_obj;
+  obj_data *obj, *next_obj;
   room_rnum RDR = 0;
   byte mode = SCMD_DROP;
   int dotmode, amount = 0, multi, num_don_rooms;
@@ -621,8 +621,8 @@ ACMD(do_drop)
   }
 }
 
-static void perform_give(struct char_data *ch, struct char_data *vict,
-                         struct obj_data *obj)
+static void perform_give(char_data *ch, char_data *vict,
+                         obj_data *obj)
 {
   if (!give_otrigger(obj, ch, vict))
     return;
@@ -652,9 +652,9 @@ static void perform_give(struct char_data *ch, struct char_data *vict,
 }
 
 /* utility function for give */
-static struct char_data *give_find_vict(struct char_data *ch, char *arg)
+static char_data *give_find_vict(char_data *ch, char *arg)
 {
-  struct char_data *vict;
+  char_data *vict;
 
   skip_spaces(&arg);
   if (!*arg)
@@ -669,7 +669,7 @@ static struct char_data *give_find_vict(struct char_data *ch, char *arg)
   return (NULL);
 }
 
-static void perform_give_gold(struct char_data *ch, struct char_data *vict,
+static void perform_give_gold(char_data *ch, char_data *vict,
                               int amount)
 {
   char buf[MAX_STRING_LENGTH];
@@ -701,8 +701,8 @@ ACMD(do_give)
 {
   char arg[MAX_STRING_LENGTH];
   int amount, dotmode;
-  struct char_data *vict;
-  struct obj_data *obj, *next_obj;
+  char_data *vict;
+  obj_data *obj, *next_obj;
 
   argument = one_argument(argument, arg);
 
@@ -759,10 +759,10 @@ ACMD(do_give)
   }
 }
 
-void weight_change_object(struct obj_data *obj, int weight)
+void weight_change_object(obj_data *obj, int weight)
 {
-  struct obj_data *tmp_obj;
-  struct char_data *tmp_ch;
+  obj_data *tmp_obj;
+  char_data *tmp_ch;
 
   if (IN_ROOM(obj) != NOWHERE) {
     GET_OBJ_WEIGHT(obj) += weight;
@@ -782,7 +782,7 @@ void weight_change_object(struct obj_data *obj, int weight)
   }
 }
 
-void name_from_drinkcon(struct obj_data *obj)
+void name_from_drinkcon(obj_data *obj)
 {
   const char *liqname;
   char *new_name;
@@ -799,7 +799,7 @@ void name_from_drinkcon(struct obj_data *obj)
 
 }
 
-void name_to_drinkcon(struct obj_data *obj, int type)
+void name_to_drinkcon(obj_data *obj, int type)
 {
   char *new_name;
 
@@ -818,7 +818,7 @@ void name_to_drinkcon(struct obj_data *obj, int type)
 ACMD(do_drink)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct obj_data *temp;
+  obj_data *temp;
   struct affected_type af;
   int amount, weight;
   int on_ground = 0;
@@ -948,7 +948,7 @@ ACMD(do_drink)
 ACMD(do_eat)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct obj_data *food;
+  obj_data *food;
   struct affected_type af;
   int amount;
 
@@ -1021,7 +1021,7 @@ ACMD(do_eat)
 ACMD(do_pour)
 {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
-  struct obj_data *from_obj = NULL, *to_obj = NULL;
+  obj_data *from_obj = NULL, *to_obj = NULL;
   int amount = 0;
 
   two_arguments(argument, arg1, arg2);
@@ -1156,7 +1156,7 @@ ACMD(do_pour)
   weight_change_object(to_obj, amount); /* Add weight */
 }
 
-static void wear_message(struct char_data *ch, struct obj_data *obj, int where)
+static void wear_message(char_data *ch, obj_data *obj, int where)
 {
   const char *wear_messages[][2] = {
       {"$n lights $p and holds it.",
@@ -1218,7 +1218,7 @@ static void wear_message(struct char_data *ch, struct obj_data *obj, int where)
   act(wear_messages[where][1], FALSE, ch, obj, 0, TO_CHAR);
 }
 
-static void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
+static void perform_wear(char_data *ch, obj_data *obj, int where)
 {
   /*
    * ITEM_WEAR_TAKE is used for objects that do not require special bits
@@ -1279,7 +1279,7 @@ static void perform_wear(struct char_data *ch, struct obj_data *obj, int where)
   equip_char(ch, obj, where);
 }
 
-int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg)
+int find_eq_pos(char_data *ch, obj_data *obj, char *arg)
 {
   int where = -1;
 
@@ -1340,7 +1340,7 @@ ACMD(do_wear)
 {
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
-  struct obj_data *obj, *next_obj;
+  obj_data *obj, *next_obj;
   int where, dotmode, items_worn = 0;
 
   two_arguments(argument, arg1, arg2);
@@ -1404,7 +1404,7 @@ ACMD(do_wear)
 ACMD(do_wield)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct obj_data *obj;
+  obj_data *obj;
 
   one_argument(argument, arg);
 
@@ -1427,7 +1427,7 @@ ACMD(do_wield)
 ACMD(do_grab)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct obj_data *obj;
+  obj_data *obj;
 
   one_argument(argument, arg);
 
@@ -1451,9 +1451,9 @@ ACMD(do_grab)
   }
 }
 
-static void perform_remove(struct char_data *ch, int pos)
+static void perform_remove(char_data *ch, int pos)
 {
-  struct obj_data *obj;
+  obj_data *obj;
 
   if (!(obj = GET_EQ(ch, pos)))
     log("SYSERR: perform_remove: bad pos %d passed.", pos);
@@ -1520,7 +1520,7 @@ ACMD(do_remove)
 ACMD(do_sac)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct obj_data *j, *jj, *next_thing2;
+  obj_data *j, *jj, *next_thing2;
 
   one_argument(argument, arg);
 

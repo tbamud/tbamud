@@ -35,7 +35,7 @@ const char *nrm, *grn, *cyn, *yel;
 static void free_config(struct config_data *data);
 
 /* Only player characters should be using OLC anyway. */
-void clear_screen(struct descriptor_data *d)
+void clear_screen(descriptor_data *d)
 {
   if (PRF_FLAGGED(d->character, PRF_CLS))
     write_to_output(d, "[H[J");
@@ -45,7 +45,7 @@ void clear_screen(struct descriptor_data *d)
 /* Set the color string pointers for that which this char will see at color
  * level NRM.  Changing the entries here will change the colour scheme
  * throughout the OLC. */
-void get_char_colors(struct char_data *ch)
+void get_char_colors(char_data *ch)
 {
   nrm = CCNRM(ch, C_NRM);
   grn = CCGRN(ch, C_NRM);
@@ -55,7 +55,7 @@ void get_char_colors(struct char_data *ch)
 
 /* This procedure frees up the strings and/or the structures attatched to a
  * descriptor, sets all flags back to how they should be. */
-void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
+void cleanup_olc(descriptor_data *d, byte cleanup_type)
 {
   /* Clean up WHAT? */
   if (d->olc == NULL)
@@ -253,7 +253,7 @@ static void free_config(struct config_data *data)
  * requesting access to modify this zone. Rnum is the real number of the zone
  * attempted to be modified. Returns TRUE if the builder has access, otherwisei
  * FALSE. */
-int can_edit_zone(struct char_data *ch, zone_rnum rnum)
+int can_edit_zone(char_data *ch, zone_rnum rnum)
 {
   /* no access if called with bad arguments */
   if (!ch->desc || IS_NPC(ch) || rnum == NOWHERE)
@@ -297,7 +297,7 @@ int can_edit_zone(struct char_data *ch, zone_rnum rnum)
   return (FALSE);
 }
 
-void send_cannot_edit(struct char_data *ch, zone_vnum zone)
+void send_cannot_edit(char_data *ch, zone_vnum zone)
 {
   char buf[MAX_STRING_LENGTH];
 

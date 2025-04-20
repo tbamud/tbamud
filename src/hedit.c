@@ -26,17 +26,17 @@
 #include "modify.h"
 
 /* local functions */
-static void hedit_disp_menu(struct descriptor_data *);
-static void hedit_setup_new(struct descriptor_data *);
-static void hedit_setup_existing(struct descriptor_data *, int);
-static void hedit_save_to_disk(struct descriptor_data *);
-static void hedit_save_internally(struct descriptor_data *);
+static void hedit_disp_menu(descriptor_data *);
+static void hedit_setup_new(descriptor_data *);
+static void hedit_setup_existing(descriptor_data *, int);
+static void hedit_save_to_disk(descriptor_data *);
+static void hedit_save_internally(descriptor_data *);
 
 
 ACMD(do_oasis_hedit)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct descriptor_data *d;
+  descriptor_data *d;
   int i;
 
   /* No building as a mob or while being forced. */
@@ -107,7 +107,7 @@ ACMD(do_oasis_hedit)
     TRUE, "OLC: %s starts editing help files.", GET_NAME(d->character));
 }
 
-static void hedit_setup_new(struct descriptor_data *d)
+static void hedit_setup_new(descriptor_data *d)
 {
   CREATE(OLC_HELP(d), struct help_index_element, 1);
 
@@ -120,7 +120,7 @@ static void hedit_setup_new(struct descriptor_data *d)
   hedit_disp_menu(d);
 }
 
-static void hedit_setup_existing(struct descriptor_data *d, int rnum)
+static void hedit_setup_existing(descriptor_data *d, int rnum)
 {
   CREATE(OLC_HELP(d), struct help_index_element, 1);
 
@@ -133,7 +133,7 @@ static void hedit_setup_existing(struct descriptor_data *d, int rnum)
   hedit_disp_menu(d);
 }
 
-static void hedit_save_internally(struct descriptor_data *d)
+static void hedit_save_internally(descriptor_data *d)
 {
   struct help_index_element *new_help_table = NULL;
 
@@ -154,7 +154,7 @@ static void hedit_save_internally(struct descriptor_data *d)
   hedit_save_to_disk(d);
 }
 
-static void hedit_save_to_disk(struct descriptor_data *d)
+static void hedit_save_to_disk(descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE];
@@ -187,7 +187,7 @@ static void hedit_save_to_disk(struct descriptor_data *d)
 }
 
 /* The main menu. */
-static void hedit_disp_menu(struct descriptor_data *d)
+static void hedit_disp_menu(descriptor_data *d)
 {
   get_char_colors(d->character);
 
@@ -205,7 +205,7 @@ static void hedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = HEDIT_MAIN_MENU;
 }
 
-void hedit_parse(struct descriptor_data *d, char *arg)
+void hedit_parse(descriptor_data *d, char *arg)
 {
   char buf[MAX_STRING_LENGTH];
   char *oldtext = "";
@@ -357,7 +357,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
   hedit_disp_menu(d);
 }
 
-void hedit_string_cleanup(struct descriptor_data *d, int terminator)
+void hedit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
   case HEDIT_ENTRY:

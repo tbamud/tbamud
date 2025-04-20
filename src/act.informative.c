@@ -31,24 +31,24 @@
 
 /* prototypes of local functions */
 /* do_diagnose utility functions */
-static void diag_char_to_char(struct char_data *i, struct char_data *ch);
+static void diag_char_to_char(char_data *i, char_data *ch);
 /* do_look and do_examine utility functions */
-static void do_auto_exits(struct char_data *ch);
-static void list_char_to_char(struct char_data *list, struct char_data *ch);
-static void list_one_char(struct char_data *i, struct char_data *ch);
-static void look_at_char(struct char_data *i, struct char_data *ch);
-static void look_at_target(struct char_data *ch, char *arg);
-static void look_in_direction(struct char_data *ch, int dir);
-static void look_in_obj(struct char_data *ch, char *arg);
+static void do_auto_exits(char_data *ch);
+static void list_char_to_char(char_data *list, char_data *ch);
+static void list_one_char(char_data *i, char_data *ch);
+static void look_at_char(char_data *i, char_data *ch);
+static void look_at_target(char_data *ch, char *arg);
+static void look_in_direction(char_data *ch, int dir);
+static void look_in_obj(char_data *ch, char *arg);
 /* do_look, do_inventory utility functions */
-static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show);
+static void list_obj_to_char(obj_data *list, char_data *ch, int mode, int show);
 /* do_look, do_equipment, do_examine, do_inventory */
-static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode);
-static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch);
+static void show_obj_to_char(obj_data *obj, char_data *ch, int mode);
+static void show_obj_modifiers(obj_data *obj, char_data *ch);
 /* do_where utility functions */
-static void perform_immort_where(struct char_data *ch, char *arg);
-static void perform_mortal_where(struct char_data *ch, char *arg);
-static void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
+static void perform_immort_where(char_data *ch, char *arg);
+static void perform_mortal_where(char_data *ch, char *arg);
+static void print_object_location(int num, obj_data *obj, char_data *ch, int recur);
 
 /* Subcommands */
 /* For show_obj_to_char 'mode'.    /-- arbitrary */
@@ -56,10 +56,10 @@ static void print_object_location(int num, struct obj_data *obj, struct char_dat
 #define SHOW_OBJ_SHORT    1
 #define SHOW_OBJ_ACTION   2
 
-static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode)
+static void show_obj_to_char(obj_data *obj, char_data *ch, int mode)
 {
   int found = 0;
-  struct char_data *temp;
+  char_data *temp;
 
   if (!obj || !ch) {
     log("SYSERR: NULL pointer in show_obj_to_char(): obj=%p ch=%p", (void *)obj, (void *)ch);
@@ -153,7 +153,7 @@ end:
   send_to_char(ch, "\r\n");
 }
 
-static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
+static void show_obj_modifiers(obj_data *obj, char_data *ch)
 {
   if (OBJ_FLAGGED(obj, ITEM_INVISIBLE))
     send_to_char(ch, " (invisible)");
@@ -171,9 +171,9 @@ static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch)
     send_to_char(ch, " ..It emits a faint humming sound!");
 }
 
-static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, int show)
+static void list_obj_to_char(obj_data *list, char_data *ch, int mode, int show)
 {
-  struct obj_data *i, *j, *display;
+  obj_data *i, *j, *display;
   bool found;
   int num;
 
@@ -219,7 +219,7 @@ static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mo
     send_to_char(ch, "  Nothing.\r\n");
 }
 
-static void diag_char_to_char(struct char_data *i, struct char_data *ch)
+static void diag_char_to_char(char_data *i, char_data *ch)
 {
   struct
   {
@@ -250,7 +250,7 @@ static void diag_char_to_char(struct char_data *i, struct char_data *ch)
   send_to_char(ch, "%c%s %s\r\n", UPPER(*pers), pers + 1, diagnosis[ar_index].text);
 }
 
-static void look_at_char(struct char_data *i, struct char_data *ch)
+static void look_at_char(char_data *i, char_data *ch)
 {
   int j, found;
 
@@ -284,9 +284,9 @@ static void look_at_char(struct char_data *i, struct char_data *ch)
   }
 }
 
-static void list_one_char(struct char_data *i, struct char_data *ch)
+static void list_one_char(char_data *i, char_data *ch)
 {
-  struct obj_data *furniture;
+  obj_data *furniture;
   const char *positions[] = {
       " is lying here, dead.",
       " is lying here, mortally wounded.",
@@ -395,9 +395,9 @@ static void list_one_char(struct char_data *i, struct char_data *ch)
     act("...$e glows with a bright light!", FALSE, i, 0, ch, TO_VICT);
 }
 
-static void list_char_to_char(struct char_data *list, struct char_data *ch)
+static void list_char_to_char(char_data *list, char_data *ch)
 {
-  struct char_data *i;
+  char_data *i;
 
   for (i = list; i; i = i->next_in_room)
     if (ch != i) {
@@ -415,7 +415,7 @@ static void list_char_to_char(struct char_data *list, struct char_data *ch)
     }
 }
 
-static void do_auto_exits(struct char_data *ch)
+static void do_auto_exits(char_data *ch)
 {
   int door, slen = 0;
 
@@ -481,7 +481,7 @@ ACMD(do_exits)
     send_to_char(ch, " None.\r\n");
 }
 
-void look_at_room(struct char_data *ch, int ignore_brief)
+void look_at_room(char_data *ch, int ignore_brief)
 {
   trig_data *t;
   struct room_data *rm = &world[IN_ROOM(ch)];
@@ -537,7 +537,7 @@ void look_at_room(struct char_data *ch, int ignore_brief)
   list_char_to_char(world[IN_ROOM(ch)].people, ch);
 }
 
-static void look_in_direction(struct char_data *ch, int dir)
+static void look_in_direction(char_data *ch, int dir)
 {
   if (EXIT(ch, dir)) {
     if (EXIT(ch, dir)->general_description)
@@ -553,10 +553,10 @@ static void look_in_direction(struct char_data *ch, int dir)
     send_to_char(ch, "Nothing special there...\r\n");
 }
 
-static void look_in_obj(struct char_data *ch, char *arg)
+static void look_in_obj(char_data *ch, char *arg)
 {
-  struct obj_data *obj = NULL;
-  struct char_data *dummy = NULL;
+  obj_data *obj = NULL;
+  char_data *dummy = NULL;
   int amt, bits;
 
   if (!*arg)
@@ -624,11 +624,11 @@ char *find_exdesc(char *word, struct extra_descr_data *list)
  * matches the target.  First, see if there is another char in the room with
  * the name.  Then check local objs for exdescs. Thanks to Angus Mezick for
  * the suggested fix to this problem. */
-static void look_at_target(struct char_data *ch, char *arg)
+static void look_at_target(char_data *ch, char *arg)
 {
   int bits, found = FALSE, j, fnum, i = 0;
-  struct char_data *found_char = NULL;
-  struct obj_data *obj, *found_obj = NULL;
+  char_data *found_char = NULL;
+  obj_data *obj, *found_obj = NULL;
   char *desc;
 
   if (!ch->desc)
@@ -758,8 +758,8 @@ ACMD(do_look)
 
 ACMD(do_examine)
 {
-  struct char_data *tmp_char;
-  struct obj_data *tmp_object;
+  char_data *tmp_char;
+  obj_data *tmp_object;
   char tempsave[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
 
   one_argument(argument, arg);
@@ -870,7 +870,7 @@ ACMD(do_score)
     if (!SITTING(ch))
       send_to_char(ch, "You are sitting.\r\n");
     else {
-      struct obj_data *furniture = SITTING(ch);
+      obj_data *furniture = SITTING(ch);
       send_to_char(ch, "You are sitting upon %s.\r\n", furniture->short_description);
     }
     break;
@@ -1116,8 +1116,8 @@ ACMD(do_help)
 /* Written by Rhade */
 ACMD(do_who)
 {
-  struct descriptor_data *d;
-  struct char_data *tch;
+  descriptor_data *d;
+  char_data *tch;
   int i, num_can_see = 0;
   char name_search[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
   char mode;
@@ -1367,8 +1367,8 @@ ACMD(do_users)
   char line[200], line2[220], idletime[10], classname[20];
   char state[30], timestr[9], mode;
   char name_search[MAX_INPUT_LENGTH], host_search[MAX_INPUT_LENGTH];
-  struct char_data *tch;
-  struct descriptor_data *d;
+  char_data *tch;
+  descriptor_data *d;
   int low = 0, high = LVL_IMPL, num_can_see = 0;
   int showclass = 0, outlaws = 0, playing = 0, deadweight = 0;
   char buf[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
@@ -1563,10 +1563,10 @@ ACMD(do_gen_ps)
   }
 }
 
-static void perform_mortal_where(struct char_data *ch, char *arg)
+static void perform_mortal_where(char_data *ch, char *arg)
 {
-  struct char_data *i;
-  struct descriptor_data *d;
+  char_data *i;
+  descriptor_data *d;
   int j;
 
   if (!*arg) {
@@ -1598,7 +1598,7 @@ static void perform_mortal_where(struct char_data *ch, char *arg)
   }
 }
 
-static void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
+static void print_object_location(int num, obj_data *obj, char_data *ch,
                                   int recur)
 {
   if (num > 0)
@@ -1627,11 +1627,11 @@ static void print_object_location(int num, struct obj_data *obj, struct char_dat
     send_to_char(ch, "in an unknown location\r\n");
 }
 
-static void perform_immort_where(struct char_data *ch, char *arg)
+static void perform_immort_where(char_data *ch, char *arg)
 {
-  struct char_data *i;
-  struct obj_data *k;
-  struct descriptor_data *d;
+  char_data *i;
+  obj_data *k;
+  descriptor_data *d;
   int num = 0, found = 0;
 
   if (!*arg) {
@@ -1760,7 +1760,7 @@ ACMD(do_levels)
 ACMD(do_consider)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct char_data *victim;
+  char_data *victim;
   int diff;
 
   one_argument(argument, buf);
@@ -1806,7 +1806,7 @@ ACMD(do_consider)
 ACMD(do_diagnose)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
 
   one_argument(argument, buf);
 
@@ -2335,7 +2335,7 @@ ACMD(do_commands)
   column_list(ch, 0, commands, no, FALSE);
 }
 
-void free_history(struct char_data *ch, int type)
+void free_history(char_data *ch, int type)
 {
   struct txt_block *tmp = GET_HISTORY(ch, type), *ftmp;
 
@@ -2384,7 +2384,7 @@ ACMD(do_history)
 
 #define HIST_LENGTH 100
 
-void add_history(struct char_data *ch, char *str, int type)
+void add_history(char_data *ch, char *str, int type)
 {
   int i = 0;
   char time_str[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
@@ -2426,7 +2426,7 @@ void add_history(struct char_data *ch, char *str, int type)
 
 ACMD(do_whois)
 {
-  struct char_data *victim = 0;
+  char_data *victim = 0;
   int hours;
   int got_from_file = 0;
   char buf[MAX_STRING_LENGTH];
@@ -2439,7 +2439,7 @@ ACMD(do_whois)
   }
 
   if (!(victim = get_player_vis(ch, buf, NULL, FIND_CHAR_WORLD))) {
-    CREATE(victim, struct char_data, 1);
+    CREATE(victim, char_data, 1);
     clear_char(victim);
 
     new_mobile_data(victim);
@@ -2637,7 +2637,7 @@ ACMD(do_areas)
     page_string(ch->desc, buf, TRUE);
 }
 
-static void list_scanned_chars(struct char_data *list, struct char_data *ch, int
+static void list_scanned_chars(char_data *list, char_data *ch, int
                                distance, int door)
 {
   char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH - 1];
@@ -2648,7 +2648,7 @@ static void list_scanned_chars(struct char_data *list, struct char_data *ch, int
       "far off to the"
   };
 
-  struct char_data *i;
+  char_data *i;
   int count = 0;
   *buf = '\0';
 

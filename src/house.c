@@ -27,18 +27,18 @@ static int num_of_houses = 0;
 /* local functions */
 static int House_get_filename(room_vnum vnum, char *filename, size_t maxlen);
 static int House_load(room_vnum vnum);
-static void House_restore_weight(struct obj_data *obj);
+static void House_restore_weight(obj_data *obj);
 static void House_delete_file(room_vnum vnum);
 static int find_house(room_vnum vnum);
 static void House_save_control(void);
-static void hcontrol_build_house(struct char_data *ch, char *arg);
-static void hcontrol_destroy_house(struct char_data *ch, char *arg);
-static void hcontrol_pay_house(struct char_data *ch, char *arg);
-static void House_listrent(struct char_data *ch, room_vnum vnum);
+static void hcontrol_build_house(char_data *ch, char *arg);
+static void hcontrol_destroy_house(char_data *ch, char *arg);
+static void hcontrol_pay_house(char_data *ch, char *arg);
+static void House_listrent(char_data *ch, room_vnum vnum);
 /* CONVERSION code starts here -- see comment below. */
-static int ascii_convert_house(struct char_data *ch, obj_vnum vnum);
-static void hcontrol_convert_houses(struct char_data *ch);
-static struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
+static int ascii_convert_house(char_data *ch, obj_vnum vnum);
+static void hcontrol_convert_houses(char_data *ch);
+static obj_data *Obj_from_store(struct obj_file_elem object, int *location);
 /* CONVERSION code ends here -- see comment below. */
 
 /* First, the basics: finding the filename; loading/saving objects */
@@ -88,9 +88,9 @@ static int House_load(room_vnum vnum)
 
 /* Save all objects for a house (recursive; initial call must be followed by a 
  * call to House_restore_weight)  Assumes file is open already. */
-int House_save(struct obj_data *obj, FILE *fp)
+int House_save(obj_data *obj, FILE *fp)
 {
-  struct obj_data *tmp;
+  obj_data *tmp;
   int result;
 
   if (obj) {
@@ -107,7 +107,7 @@ int House_save(struct obj_data *obj, FILE *fp)
 }
 
 /* restore weight of containers after House_save has changed them for saving */
-static void House_restore_weight(struct obj_data *obj)
+static void House_restore_weight(obj_data *obj)
 {
   if (obj) {
     House_restore_weight(obj->contains);
@@ -160,7 +160,7 @@ static void House_delete_file(room_vnum vnum)
 }
 
 /* List all objects in a house file */
-static void House_listrent(struct char_data *ch, room_vnum vnum)
+static void House_listrent(char_data *ch, room_vnum vnum)
 {
   FILE *fl;
   char filename[MAX_STRING_LENGTH];
@@ -288,7 +288,7 @@ static const char *HCONTROL_FORMAT =
 "       hcontrol pay <house vnum>\r\n"
 "       hcontrol show [house vnum | .]\r\n";
 
-void hcontrol_list_houses(struct char_data *ch, char *arg)
+void hcontrol_list_houses(char_data *ch, char *arg)
 {
   int i;
   char *temp;
@@ -343,7 +343,7 @@ void hcontrol_list_houses(struct char_data *ch, char *arg)
   }
 }
 
-static void hcontrol_build_house(struct char_data *ch, char *arg)
+static void hcontrol_build_house(char_data *ch, char *arg)
 {
   char arg1[MAX_INPUT_LENGTH];
   struct house_control_rec temp_house;
@@ -427,7 +427,7 @@ static void hcontrol_build_house(struct char_data *ch, char *arg)
   House_save_control();
 }
 
-static void hcontrol_destroy_house(struct char_data *ch, char *arg)
+static void hcontrol_destroy_house(char_data *ch, char *arg)
 {
   int i, j;
   room_rnum real_atrium, real_house;
@@ -469,7 +469,7 @@ static void hcontrol_destroy_house(struct char_data *ch, char *arg)
       SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
 }
 
-static void hcontrol_pay_house(struct char_data *ch, char *arg)
+static void hcontrol_pay_house(char_data *ch, char *arg)
 {
   int i;
 
@@ -564,7 +564,7 @@ void House_save_all(void)
 }
 
 /* note: arg passed must be house vnum, so there. */
-int House_can_enter(struct char_data *ch, room_vnum house)
+int House_can_enter(char_data *ch, room_vnum house)
 {
   int i, j;
 
@@ -583,7 +583,7 @@ int House_can_enter(struct char_data *ch, room_vnum house)
   return (0);
 }
 
-void House_list_guests(struct char_data *ch, int i, int quiet)
+void House_list_guests(char_data *ch, int i, int quiet)
 {
   int j, num_printed;
   char *temp;
@@ -622,7 +622,7 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
  * will let your house files load on the next bootup. -Welcor            *
  ************************************************************************/
 /* Code for conversion to ascii house rent files. */
-static void hcontrol_convert_houses(struct char_data *ch)
+static void hcontrol_convert_houses(char_data *ch)
 {
   int i;
 
@@ -656,11 +656,11 @@ static void hcontrol_convert_houses(struct char_data *ch)
 	send_to_char(ch, "All done.\r\n");
 }
 
-static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
+static int ascii_convert_house(char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
 	char infile[MAX_INPUT_LENGTH], *outfile;
-	struct obj_data *tmp;
+	obj_data *tmp;
 	int i, j=0;
 
   House_get_filename(vnum, infile, sizeof(infile));
@@ -722,9 +722,9 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 }
 
 /* The circle 3.1 function for reading rent files. No longer used by the rent system. */
-static struct obj_data *Obj_from_store(struct obj_file_elem object, int *location)
+static obj_data *Obj_from_store(struct obj_file_elem object, int *location)
 {
-  struct obj_data *obj;
+  obj_data *obj;
   obj_rnum itemnum;
   int j, taeller;
 

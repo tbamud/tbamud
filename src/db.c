@@ -46,14 +46,14 @@ struct config_data config_info; /* Game configuration list.	 */
 struct room_data *world = NULL;	/* array of rooms		 */
 room_rnum top_of_world = 0;	/* ref to top element of world	 */
 
-struct char_data *character_list = NULL; /* global linked list of chars	*/
+char_data *character_list = NULL; /* global linked list of chars	*/
 struct index_data *mob_index;	/* index table for mobile file	 */
-struct char_data *mob_proto;	/* prototypes for mobs		 */
+char_data *mob_proto;	/* prototypes for mobs		 */
 mob_rnum top_of_mobt = 0;	/* top of mobile index table	 */
 
-struct obj_data *object_list = NULL;	/* global linked list of objs	*/
+obj_data *object_list = NULL;	/* global linked list of objs	*/
 struct index_data *obj_index;	/* index table for object file	 */
-struct obj_data *obj_proto;	/* prototypes for objs		 */
+obj_data *obj_proto;	/* prototypes for objs		 */
 obj_rnum top_of_objt = 0;	/* top of object index table	 */
 
 struct zone_data *zone_table; /* zone table      */
@@ -128,9 +128,9 @@ static int converting = FALSE;
 
 /* Local (file scope) utility functions */
 static int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits);
-static int check_object_spell_number(struct obj_data *obj, int val);
-static int check_object_level(struct obj_data *obj, int val);
-static int check_object(struct obj_data *);
+static int check_object_spell_number(obj_data *obj, int val);
+static int check_object_level(obj_data *obj, int val);
+static int check_object(obj_data *);
 static void load_zones(FILE *fl, char *zonename);
 static int file_to_string(const char *name, char *buf);
 static int file_to_string_alloc(const char *name, char **buf);
@@ -501,8 +501,8 @@ static void free_extra_descriptions(struct extra_descr_data *edesc)
 void destroy_db(void)
 {
   ssize_t cnt, itr;
-  struct char_data *chtmp, *i = character_list;
-  struct obj_data *objtmp;
+  char_data *chtmp, *i = character_list;
+  obj_data *objtmp;
 
   /* Active Mobiles & Players */
   while (i) {
@@ -1040,17 +1040,17 @@ void index_boot(int mode)
     log("   %d rooms, %d bytes.", rec_count, size[0]);
     break;
   case DB_BOOT_MOB:
-    CREATE(mob_proto, struct char_data, rec_count);
+    CREATE(mob_proto, char_data, rec_count);
     CREATE(mob_index, struct index_data, rec_count);
     size[0] = sizeof(struct index_data) * rec_count;
-    size[1] = sizeof(struct char_data) * rec_count;
+    size[1] = sizeof(char_data) * rec_count;
     log("   %d mobs, %d bytes in index, %d bytes in prototypes.", rec_count, size[0], size[1]);
     break;
   case DB_BOOT_OBJ:
-    CREATE(obj_proto, struct obj_data, rec_count);
+    CREATE(obj_proto, obj_data, rec_count);
     CREATE(obj_index, struct index_data, rec_count);
     size[0] = sizeof(struct index_data) * rec_count;
-    size[1] = sizeof(struct obj_data) * rec_count;
+    size[1] = sizeof(obj_data) * rec_count;
     log("   %d objs, %d bytes in index, %d bytes in prototypes.", rec_count, size[0], size[1]);
     break;
   case DB_BOOT_ZON:
@@ -2349,7 +2349,7 @@ static int hsort(const void *a, const void *b)
   return (str_cmp(a1->keywords, b1->keywords));
 }
 
-int vnum_mobile(char *searchname, struct char_data *ch)
+int vnum_mobile(char *searchname, char_data *ch)
 {
   int nr, found = 0;
 
@@ -2362,7 +2362,7 @@ int vnum_mobile(char *searchname, struct char_data *ch)
   return (found);
 }
 
-int vnum_object(char *searchname, struct char_data *ch)
+int vnum_object(char *searchname, char_data *ch)
 {
   int nr, found = 0;
 
@@ -2375,7 +2375,7 @@ int vnum_object(char *searchname, struct char_data *ch)
   return (found);
 }
 
-int vnum_room(char *searchname, struct char_data *ch)
+int vnum_room(char *searchname, char_data *ch)
 {
  int nr, found = 0;
 
@@ -2387,7 +2387,7 @@ int vnum_room(char *searchname, struct char_data *ch)
   return (found);
 }
 
-int vnum_trig(char *searchname, struct char_data *ch)
+int vnum_trig(char *searchname, char_data *ch)
 {
  int nr, found = 0;
   for (nr = 0; nr < top_of_trigt; nr++)
@@ -2398,11 +2398,11 @@ int vnum_trig(char *searchname, struct char_data *ch)
 }
 
 /* create a character, and add it to the char list */
-struct char_data *create_char(void)
+char_data *create_char(void)
 {
-  struct char_data *ch;
+  char_data *ch;
 
-  CREATE(ch, struct char_data, 1);
+  CREATE(ch, char_data, 1);
   clear_char(ch);
   
   new_mobile_data(ch);
@@ -2415,7 +2415,7 @@ struct char_data *create_char(void)
   return (ch);
 }
 
-void new_mobile_data(struct char_data *ch)
+void new_mobile_data(char_data *ch)
 {
   ch->events   = NULL;
   ch->group    = NULL;
@@ -2423,10 +2423,10 @@ void new_mobile_data(struct char_data *ch)
 
 
 /* create a new mobile from a prototype */
-struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
+char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
 {
   mob_rnum i;
-  struct char_data *mob;
+  char_data *mob;
 
   if (type == VIRTUAL) {
     if ((i = real_mobile(nr)) == NOBODY) {
@@ -2436,7 +2436,7 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
   } else
     i = nr;
 
-  CREATE(mob, struct char_data, 1);
+  CREATE(mob, char_data, 1);
   clear_char(mob);
  
   *mob = mob_proto[i];
@@ -2470,11 +2470,11 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
 }
 
 /* create an object, and add it to the object list */
-struct obj_data *create_obj(void)
+obj_data *create_obj(void)
 {
-  struct obj_data *obj;
+  obj_data *obj;
 
-  CREATE(obj, struct obj_data, 1);
+  CREATE(obj, obj_data, 1);
   clear_object(obj);
   obj->next = object_list;
   object_list = obj;
@@ -2487,9 +2487,9 @@ struct obj_data *create_obj(void)
 }
 
 /* create a new object from a prototype */
-struct obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
+obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
 {
-  struct obj_data *obj;
+  obj_data *obj;
   obj_rnum i = type == VIRTUAL ? real_object(nr) : nr;
 
   if (i == NOTHING || i > top_of_objt) {
@@ -2497,7 +2497,7 @@ struct obj_data *read_object(obj_vnum nr, int type) /* and obj_rnum */
     return (NULL);
   }
 
-  CREATE(obj, struct obj_data, 1);
+  CREATE(obj, obj_data, 1);
   clear_object(obj);
   *obj = obj_proto[i];
   obj->next = object_list;
@@ -2565,7 +2565,7 @@ void zone_update(void)
       reset_zone(update_u->zone_to_reset);
       mudlog(CMP, LVL_IMPL+1, FALSE, "Auto zone reset: %s (Zone %d)",
           zone_table[update_u->zone_to_reset].name, zone_table[update_u->zone_to_reset].number);
-      struct descriptor_data *pt;
+      descriptor_data *pt;
       for (pt = descriptor_list; pt; pt = pt->next)
         if (IS_PLAYING(pt) && pt->character && PRF_FLAGGED(pt->character, PRF_ZONERESETS))
           send_to_char(pt->character, "%s[Auto zone reset: %s (Zone %d)]%s", 
@@ -2603,12 +2603,12 @@ static void log_zone_error(zone_rnum zone, int cmd_no, const char *message)
 void reset_zone(zone_rnum zone)
 {
   int cmd_no, last_cmd = 0;
-  struct char_data *mob = NULL;
-  struct obj_data *obj, *obj_to;
+  char_data *mob = NULL;
+  obj_data *obj, *obj_to;
   room_vnum rvnum;
   room_rnum rrnum;
-  struct char_data *tmob=NULL; /* for trigger assignment */
-  struct obj_data *tobj=NULL;  /* for trigger assignment */
+  char_data *tmob=NULL; /* for trigger assignment */
+  obj_data *tobj=NULL;  /* for trigger assignment */
 
   for (cmd_no = 0; ZCMD.command != 'S'; cmd_no++) {
 
@@ -2835,7 +2835,7 @@ void reset_zone(zone_rnum zone)
 /* for use in reset_zone; return TRUE if zone 'nr' is free of PC's  */
 int is_empty(zone_rnum zone_nr)
 {
-  struct descriptor_data *i;
+  descriptor_data *i;
 
   for (i = descriptor_list; i; i = i->next) {
     if (STATE(i) != CON_PLAYING)
@@ -3226,7 +3226,7 @@ static void free_followers(struct follow_type *k)
 }
 
 /* release memory allocated for a char struct */
-void free_char(struct char_data *ch)
+void free_char(char_data *ch)
 {
   int i;
   struct alias_data *a;
@@ -3320,7 +3320,7 @@ void free_char(struct char_data *ch)
 }
 
 /* release memory allocated for an obj struct */
-void free_obj(struct obj_data *obj)
+void free_obj(obj_data *obj)
 {
   if (GET_OBJ_RNUM(obj) == NOWHERE) {
     free_object_strings(obj);
@@ -3357,7 +3357,7 @@ static int file_to_string_alloc(const char *name, char **buf)
 {
   int temppage;
   char temp[MAX_STRING_LENGTH];
-  struct descriptor_data *in_use;
+  descriptor_data *in_use;
 
   for (in_use = descriptor_list; in_use; in_use = in_use->next)
     if (in_use->showstr_vector && *in_use->showstr_vector == *buf)
@@ -3435,7 +3435,7 @@ static int file_to_string(const char *name, char *buf)
 }
 
 /* clear some of the the working variables of a char */
-void reset_char(struct char_data *ch)
+void reset_char(char_data *ch)
 {
   int i;
 
@@ -3467,9 +3467,9 @@ void reset_char(struct char_data *ch)
 }
 
 /* clear ALL the working variables of a char; do NOT free any space alloc'ed */
-void clear_char(struct char_data *ch)
+void clear_char(char_data *ch)
 {
-  memset((char *) ch, 0, sizeof(struct char_data));
+  memset((char *) ch, 0, sizeof(char_data));
 
   IN_ROOM(ch) = NOWHERE;
   GET_PFILEPOS(ch) = -1;
@@ -3484,9 +3484,9 @@ void clear_char(struct char_data *ch)
     ch->points.max_mana = 100;
 }
 
-void clear_object(struct obj_data *obj)
+void clear_object(obj_data *obj)
 {
-  memset((char *) obj, 0, sizeof(struct obj_data));
+  memset((char *) obj, 0, sizeof(obj_data));
 
   obj->item_number = NOTHING;
   IN_ROOM(obj) = NOWHERE;
@@ -3495,7 +3495,7 @@ void clear_object(struct obj_data *obj)
 
 /* Called during character creation after picking character class (and then
  * never again for that character). */
-void init_char(struct char_data *ch)
+void init_char(char_data *ch)
 {
   int i;
 
@@ -3692,7 +3692,7 @@ zone_rnum real_zone(zone_vnum vnum)
 }
 
 /* Extend later to include more checks and add checks for unknown bitvectors. */
-static int check_object(struct obj_data *obj)
+static int check_object(obj_data *obj)
 {
   char objname[MAX_INPUT_LENGTH + 32];
   int error = FALSE, y;
@@ -3770,7 +3770,7 @@ static int check_object(struct obj_data *obj)
   return (error);
 }
 
-static int check_object_spell_number(struct obj_data *obj, int val)
+static int check_object_spell_number(obj_data *obj, int val)
 {
   int error = FALSE;
   const char *spellname;
@@ -3804,7 +3804,7 @@ static int check_object_spell_number(struct obj_data *obj, int val)
   return (error);
 }
 
-static int check_object_level(struct obj_data *obj, int val)
+static int check_object_level(obj_data *obj, int val)
 {
   int error = FALSE;
 

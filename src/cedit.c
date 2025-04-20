@@ -19,20 +19,20 @@
 #include "modify.h"
 
 /* local scope functions, not used externally */
-static void cedit_disp_menu(struct descriptor_data *d);
-static void cedit_save_internally(struct descriptor_data *d);
-static void cedit_disp_game_play_options(struct descriptor_data *d);
-static void cedit_disp_crash_save_options(struct descriptor_data *d);
-static void cedit_disp_room_numbers(struct descriptor_data *d);
-static void cedit_disp_operation_options(struct descriptor_data *d);
-static void cedit_disp_autowiz_options(struct descriptor_data *d);
+static void cedit_disp_menu(descriptor_data *d);
+static void cedit_save_internally(descriptor_data *d);
+static void cedit_disp_game_play_options(descriptor_data *d);
+static void cedit_disp_crash_save_options(descriptor_data *d);
+static void cedit_disp_room_numbers(descriptor_data *d);
+static void cedit_disp_operation_options(descriptor_data *d);
+static void cedit_disp_autowiz_options(descriptor_data *d);
 static void reassign_rooms(void);
-static void cedit_setup(struct descriptor_data *d);
+static void cedit_setup(descriptor_data *d);
 
 
 ACMD(do_oasis_cedit)
 {
-  struct descriptor_data *d;
+  descriptor_data *d;
   char buf1[MAX_STRING_LENGTH];
 
   /* No building as a mob or while being forced. */
@@ -72,7 +72,7 @@ ACMD(do_oasis_cedit)
   cedit_save_to_disk();
 }
 
-static void cedit_setup(struct descriptor_data *d)
+static void cedit_setup(descriptor_data *d)
 {
   /* Create the config_data struct. */
   CREATE(OLC_CONFIG(d), struct config_data, 1);
@@ -178,7 +178,7 @@ static void cedit_setup(struct descriptor_data *d)
   cedit_disp_menu(d);
 }
 
-static void cedit_save_internally(struct descriptor_data *d)
+static void cedit_save_internally(descriptor_data *d)
 {
   /* see if we need to reassign spec procs on rooms */
   int reassign = (CONFIG_DTS_ARE_DUMPS != OLC_CONFIG(d)->play.dts_are_dumps);
@@ -578,7 +578,7 @@ int save_config( IDXTYPE nowhere )
 }
 
 /* Menu functions - The main menu. */
-static void cedit_disp_menu(struct descriptor_data *d)
+static void cedit_disp_menu(descriptor_data *d)
 {
 
   get_char_colors(d->character);
@@ -606,7 +606,7 @@ static void cedit_disp_menu(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_MAIN_MENU;
 }
 
-static void cedit_disp_game_play_options(struct descriptor_data *d)
+static void cedit_disp_game_play_options(descriptor_data *d)
 {
   int m_opt;
   m_opt = OLC_CONFIG(d)->play.map_option;
@@ -679,7 +679,7 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_GAME_OPTIONS_MENU;
 }
 
-static void cedit_disp_crash_save_options(struct descriptor_data *d)
+static void cedit_disp_crash_save_options(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -707,7 +707,7 @@ static void cedit_disp_crash_save_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_CRASHSAVE_OPTIONS_MENU;
 }
 
-static void cedit_disp_room_numbers(struct descriptor_data *d)
+static void cedit_disp_room_numbers(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -733,7 +733,7 @@ static void cedit_disp_room_numbers(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_ROOM_NUMBERS_MENU;
 }
 
-static void cedit_disp_operation_options(struct descriptor_data *d)
+static void cedit_disp_operation_options(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -785,7 +785,7 @@ static void cedit_disp_operation_options(struct descriptor_data *d)
   OLC_MODE(d) = CEDIT_OPERATION_OPTIONS_MENU;
 }
 
-static void cedit_disp_autowiz_options(struct descriptor_data *d)
+static void cedit_disp_autowiz_options(descriptor_data *d)
 {
   get_char_colors(d->character);
   clear_screen(d);
@@ -804,7 +804,7 @@ static void cedit_disp_autowiz_options(struct descriptor_data *d)
 }
 
 /* The event handler. */
-void cedit_parse(struct descriptor_data *d, char *arg)
+void cedit_parse(descriptor_data *d, char *arg)
 {
   char *oldtext = NULL;
 
@@ -1729,7 +1729,7 @@ static void reassign_rooms(void)
   assign_rooms();
 }
 
-void cedit_string_cleanup(struct descriptor_data *d, int terminator)
+void cedit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
   case CEDIT_MENU:

@@ -42,13 +42,13 @@ ACMD(do_oasis_copy)
   room_rnum src_rnum, dst_rnum;
   char buf1[MAX_INPUT_LENGTH];
   char buf2[MAX_INPUT_LENGTH];
-  struct descriptor_data *d;
+  descriptor_data *d;
 
   struct {
     int con_type;
     IDXTYPE (*binary_search)(IDXTYPE vnum);
-    void (*save_func)(struct descriptor_data *d);
-    void (*setup_existing)(struct descriptor_data *d, int rnum);
+    void (*save_func)(descriptor_data *d);
+    void (*setup_existing)(descriptor_data *d, int rnum);
     const char *command;
     const char *text;
   } oasis_copy_info[] = {
@@ -158,7 +158,7 @@ ACMD(do_dig)
   room_rnum rrnum = NOWHERE;
   zone_rnum zone;
   int dir = 0, rawvnum;
-  struct descriptor_data *d = ch->desc; /* will save us some typing */
+  descriptor_data *d = ch->desc; /* will save us some typing */
 
   /* Grab the room's name (if available). */
   new_room_name = two_arguments(argument, sdir, sroom);
@@ -310,7 +310,7 @@ static room_vnum redit_find_new_vnum(zone_rnum zone)
   return(vnum);
 }
 
-int buildwalk(struct char_data *ch, int dir)
+int buildwalk(char_data *ch, int dir)
 {
   char buf[MAX_INPUT_LENGTH];
   room_vnum vnum;
@@ -326,7 +326,7 @@ int buildwalk(struct char_data *ch, int dir)
     } else if ((vnum = redit_find_new_vnum(world[IN_ROOM(ch)].zone)) == NOWHERE) {
       send_to_char(ch, "No free vnums are available in this zone!\r\n");
     } else {
-      struct descriptor_data *d = ch->desc;
+      descriptor_data *d = ch->desc;
       /* Give the descriptor an olc struct. This way we can let 
        * redit_save_internally handle the room adding. */
       if (d->olc) {

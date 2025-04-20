@@ -29,7 +29,7 @@
 
 /* locally defined global variables, used externally */
 /* head of l-list of fighting chars */
-struct char_data *combat_list = NULL;
+char_data *combat_list = NULL;
 /* Weapon attack texts */
 struct attack_hit_type attack_hit_text[] =
 {
@@ -51,23 +51,23 @@ struct attack_hit_type attack_hit_text[] =
 };
 
 /* local (file scope only) variables */
-static struct char_data *next_combat_list = NULL;
+static char_data *next_combat_list = NULL;
 
 /* local file scope utility functions */
-static void perform_group_gain(struct char_data *ch, int base, struct char_data *victim);
-static void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_type);
-static void make_corpse(struct char_data *ch);
-static void change_alignment(struct char_data *ch, struct char_data *victim);
-static void group_gain(struct char_data *ch, struct char_data *victim);
-static void solo_gain(struct char_data *ch, struct char_data *victim);
+static void perform_group_gain(char_data *ch, int base, char_data *victim);
+static void dam_message(int dam, char_data *ch, char_data *victim, int w_type);
+static void make_corpse(char_data *ch);
+static void change_alignment(char_data *ch, char_data *victim);
+static void group_gain(char_data *ch, char_data *victim);
+static void solo_gain(char_data *ch, char_data *victim);
 /** @todo refactor this function name */
 static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
-static int compute_thaco(struct char_data *ch, struct char_data *vict);
+static int compute_thaco(char_data *ch, char_data *vict);
 
 
 #define IS_WEAPON(type) (((type) >= TYPE_HIT) && ((type) < TYPE_SUFFERING))
 /* The Fight related routines */
-void appear(struct char_data *ch)
+void appear(char_data *ch)
 {
   if (affected_by_spell(ch, SPELL_INVISIBLE))
     affect_from_char(ch, SPELL_INVISIBLE);
@@ -82,7 +82,7 @@ void appear(struct char_data *ch)
 	FALSE, ch, 0, 0, TO_ROOM);
 }
 
-int compute_armor_class(struct char_data *ch)
+int compute_armor_class(char_data *ch)
 {
   int armorclass = GET_AC(ch);
 
@@ -92,7 +92,7 @@ int compute_armor_class(struct char_data *ch)
   return (MAX(-100, armorclass));      /* -100 is lowest */
 }
 
-void update_pos(struct char_data *victim)
+void update_pos(char_data *victim)
 {
   if ((GET_HIT(victim) > 0) && (GET_POS(victim) > POS_STUNNED))
     return;
@@ -108,7 +108,7 @@ void update_pos(struct char_data *victim)
     GET_POS(victim) = POS_STUNNED;
 }
 
-void check_killer(struct char_data *ch, struct char_data *vict)
+void check_killer(char_data *ch, char_data *vict)
 {
   if (PLR_FLAGGED(vict, PLR_KILLER) || PLR_FLAGGED(vict, PLR_THIEF))
     return;
@@ -123,7 +123,7 @@ void check_killer(struct char_data *ch, struct char_data *vict)
 }
 
 /* start one char fighting another (yes, it is horrible, I know... )  */
-void set_fighting(struct char_data *ch, struct char_data *vict)
+void set_fighting(char_data *ch, char_data *vict)
 {
   if (ch == vict)
     return;
@@ -147,9 +147,9 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
 }
 
 /* remove a char from the list of fighting chars */
-void stop_fighting(struct char_data *ch)
+void stop_fighting(char_data *ch)
 {
-  struct char_data *temp;
+  char_data *temp;
 
   if (ch == next_combat_list)
     next_combat_list = ch->next_fighting;
@@ -161,11 +161,11 @@ void stop_fighting(struct char_data *ch)
   update_pos(ch);
 }
 
-static void make_corpse(struct char_data *ch)
+static void make_corpse(char_data *ch)
 {
   char buf2[MAX_NAME_LENGTH + 64];
-  struct obj_data *corpse, *o;
-  struct obj_data *money;
+  obj_data *corpse, *o;
+  obj_data *money;
   int i, x, y;
 
   corpse = create_obj();
@@ -232,14 +232,14 @@ static void make_corpse(struct char_data *ch)
 }
 
 /* When ch kills victim */
-static void change_alignment(struct char_data *ch, struct char_data *victim)
+static void change_alignment(char_data *ch, char_data *victim)
 {
   /* new alignment change algorithm: if you kill a monster with alignment A,
    * you move 1/16th of the way to having alignment -A.  Simple and fast. */
   GET_ALIGNMENT(ch) += (-GET_ALIGNMENT(victim) - GET_ALIGNMENT(ch)) / 16;
 }
 
-void death_cry(struct char_data *ch)
+void death_cry(char_data *ch)
 {
   int door;
 
@@ -250,9 +250,9 @@ void death_cry(struct char_data *ch)
       send_to_room(world[IN_ROOM(ch)].dir_option[door]->to_room, "Your blood freezes as you hear someone's death cry.\r\n");
 }
 
-void raw_kill(struct char_data * ch, struct char_data * killer)
+void raw_kill(char_data * ch, char_data * killer)
 {
-struct char_data *i;
+char_data *i;
 
   if (FIGHTING(ch))
     stop_fighting(ch);
@@ -271,7 +271,7 @@ struct char_data *i;
 
   if (killer) {
     if (killer->group) {
-      while ((i = (struct char_data *) simple_list(killer->group->members)) != NULL)
+      while ((i = (char_data *) simple_list(killer->group->members)) != NULL)
         if(IN_ROOM(i) == IN_ROOM(ch)  || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
           autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);      
     } else
@@ -293,7 +293,7 @@ struct char_data *i;
   }
 }
 
-void die(struct char_data * ch, struct char_data * killer)
+void die(char_data * ch, char_data * killer)
 {
   gain_exp(ch, -(GET_EXP(ch) / 2));
   if (!IS_NPC(ch)) {
@@ -303,8 +303,8 @@ void die(struct char_data * ch, struct char_data * killer)
   raw_kill(ch, killer);
 }
 
-static void perform_group_gain(struct char_data *ch, int base,
-			     struct char_data *victim)
+static void perform_group_gain(char_data *ch, int base,
+			     char_data *victim)
 {
   int share, hap_share;
 
@@ -325,12 +325,12 @@ static void perform_group_gain(struct char_data *ch, int base,
   change_alignment(ch, victim);
 }
 
-static void group_gain(struct char_data *ch, struct char_data *victim)
+static void group_gain(char_data *ch, char_data *victim)
 {
   int tot_members = 0, base, tot_gain;
-  struct char_data *k;
+  char_data *k;
   
-  while ((k = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL)
+  while ((k = (char_data *) simple_list(GROUP(ch)->members)) != NULL)
     if (IN_ROOM(ch) == IN_ROOM(k))
       tot_members++;
 
@@ -346,12 +346,12 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
   else
     base = 0;
 
-  while ((k = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL)
+  while ((k = (char_data *) simple_list(GROUP(ch)->members)) != NULL)
     if (IN_ROOM(k) == IN_ROOM(ch))
       perform_group_gain(k, base, victim);
 }
 
-static void solo_gain(struct char_data *ch, struct char_data *victim)
+static void solo_gain(char_data *ch, char_data *victim)
 {
   int exp, happy_exp;
 
@@ -407,7 +407,7 @@ static char *replace_string(const char *str, const char *weapon_singular, const 
 }
 
 /* message for doing damage with a weapon */
-static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
+static void dam_message(int dam, char_data *ch, char_data *victim,
 		      int w_type)
 {
   char *buf;
@@ -512,13 +512,13 @@ static void dam_message(int dam, struct char_data *ch, struct char_data *victim,
 
 /*  message for doing damage with a spell or skill. Also used for weapon
  *  damage on miss and death blows. */
-int skill_message(int dam, struct char_data *ch, struct char_data *vict,
+int skill_message(int dam, char_data *ch, char_data *vict,
 		      int attacktype)
 {
   int i, j, nr;
   struct message_type *msg;
 
-  struct obj_data *weap = GET_EQ(ch, WEAR_WIELD);
+  obj_data *weap = GET_EQ(ch, WEAR_WIELD);
 
   /* @todo restructure the messages library to a pointer based system as
    * opposed to the current cyclic location system. */
@@ -585,12 +585,12 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
  *	< 0	Victim died.
  *	= 0	No damage.
  *	> 0	How much damage done. */
-int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+int damage(char_data *ch, char_data *victim, int dam, int attacktype)
 {
   long local_gold = 0, happy_gold = 0;
   char local_buf[256];
-  struct char_data *tmp_char;
-  struct obj_data *corpse_obj;
+  char_data *tmp_char;
+  obj_data *corpse_obj;
 
   if (GET_POS(victim) <= POS_DEAD) {
     /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
@@ -786,7 +786,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 /* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you
  * could use it for special cases like weapons that hit evil creatures easier
  * or a weapon that always misses attacking an animal. */
-static int compute_thaco(struct char_data *ch, struct char_data *victim)
+static int compute_thaco(char_data *ch, char_data *victim)
 {
   int calc_thaco;
 
@@ -802,9 +802,9 @@ static int compute_thaco(struct char_data *ch, struct char_data *victim)
   return calc_thaco;
 }
 
-void hit(struct char_data *ch, struct char_data *victim, int type)
+void hit(char_data *ch, char_data *victim, int type)
 {
-  struct obj_data *wielded = GET_EQ(ch, WEAR_WIELD);
+  obj_data *wielded = GET_EQ(ch, WEAR_WIELD);
   int w_type, victim_ac, calc_thaco, dam, diceroll;
 
   /* Check that the attacker and victim exist */
@@ -905,7 +905,7 @@ void hit(struct char_data *ch, struct char_data *victim, int type)
 /* control the fights going on.  Called every 2 seconds from comm.c. */
 void perform_violence(void)
 {
-  struct char_data *ch, *tch;
+  char_data *ch, *tch;
 
   for (ch = combat_list; ch; ch = next_combat_list) {
     next_combat_list = ch->next_fighting;
@@ -935,7 +935,7 @@ void perform_violence(void)
  if (GROUP(ch) && GROUP(ch)->members && GROUP(ch)->members->iSize) {
       struct iterator_data Iterator;
 
-      tch = (struct char_data *) merge_iterator(&Iterator, GROUP(ch)->members);
+      tch = (char_data *) merge_iterator(&Iterator, GROUP(ch)->members);
     for (; tch ; tch = next_in_list(&Iterator)) {
         if (tch == ch)
           continue;

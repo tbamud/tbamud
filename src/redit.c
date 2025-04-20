@@ -23,13 +23,13 @@
 #include "modify.h"
 
 /* local functions */
-static void redit_setup_new(struct descriptor_data *d);
-static void redit_disp_extradesc_menu(struct descriptor_data *d);
-static void redit_disp_exit_menu(struct descriptor_data *d);
-static void redit_disp_exit_flag_menu(struct descriptor_data *d);
-static void redit_disp_flag_menu(struct descriptor_data *d);
-static void redit_disp_sector_menu(struct descriptor_data *d);
-static void redit_disp_menu(struct descriptor_data *d);
+static void redit_setup_new(descriptor_data *d);
+static void redit_disp_extradesc_menu(descriptor_data *d);
+static void redit_disp_exit_menu(descriptor_data *d);
+static void redit_disp_exit_flag_menu(descriptor_data *d);
+static void redit_disp_flag_menu(descriptor_data *d);
+static void redit_disp_sector_menu(descriptor_data *d);
+static void redit_disp_menu(descriptor_data *d);
 
 /* Utils and exported functions. */
 ACMD(do_oasis_redit)
@@ -37,7 +37,7 @@ ACMD(do_oasis_redit)
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
   int number = NOWHERE, save = 0, real_num;
-  struct descriptor_data *d;
+  descriptor_data *d;
 
   /* No building as a mob or while being forced. */
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
@@ -152,7 +152,7 @@ ACMD(do_oasis_redit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-static void redit_setup_new(struct descriptor_data *d)
+static void redit_setup_new(descriptor_data *d)
 {
   CREATE(OLC_ROOM(d), struct room_data, 1);
 
@@ -165,7 +165,7 @@ static void redit_setup_new(struct descriptor_data *d)
   OLC_VAL(d) = 0;
 }
 
-void redit_setup_existing(struct descriptor_data *d, int real_num)
+void redit_setup_existing(descriptor_data *d, int real_num)
 {
   struct room_data *room;
   int counter;
@@ -231,10 +231,10 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   SCRIPT(room) = NULL;
 }
 
-void redit_save_internally(struct descriptor_data *d)
+void redit_save_internally(descriptor_data *d)
 {
   int j, room_num, new_room = FALSE;
-  struct descriptor_data *dsc;
+  descriptor_data *dsc;
 
   if (OLC_ROOM(d)->number == NOWHERE)
     new_room = TRUE;
@@ -312,7 +312,7 @@ void free_room(struct room_data *room)
 
 /* Menu functions */
 /* For extra descriptions. */
-static void redit_disp_extradesc_menu(struct descriptor_data *d)
+static void redit_disp_extradesc_menu(descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
@@ -333,7 +333,7 @@ static void redit_disp_extradesc_menu(struct descriptor_data *d)
 }
 
 /* For exits. */
-static void redit_disp_exit_menu(struct descriptor_data *d)
+static void redit_disp_exit_menu(descriptor_data *d)
 {
   char door_buf[24];
   /* if exit doesn't exist, alloc/create it */
@@ -377,7 +377,7 @@ static void redit_disp_exit_menu(struct descriptor_data *d)
 }
 
 /* For exit flags. */
-static void redit_disp_exit_flag_menu(struct descriptor_data *d)
+static void redit_disp_exit_flag_menu(descriptor_data *d)
 {
   get_char_colors(d->character);
   write_to_output(d, "%s0%s) No door\r\n"
@@ -389,7 +389,7 @@ static void redit_disp_exit_flag_menu(struct descriptor_data *d)
 }
 
 /* For room flags. */
-static void redit_disp_flag_menu(struct descriptor_data *d)
+static void redit_disp_flag_menu(descriptor_data *d)
 {
   char bits[MAX_STRING_LENGTH];
 
@@ -404,7 +404,7 @@ static void redit_disp_flag_menu(struct descriptor_data *d)
 }
 
 /* For sector type. */
-static void redit_disp_sector_menu(struct descriptor_data *d)
+static void redit_disp_sector_menu(descriptor_data *d)
 {
   clear_screen(d);
   column_list(d->character, 0, sector_types, NUM_ROOM_SECTORS, TRUE);
@@ -413,7 +413,7 @@ static void redit_disp_sector_menu(struct descriptor_data *d)
 }
 
 /* The main menu. */
-static void redit_disp_menu(struct descriptor_data *d)
+static void redit_disp_menu(descriptor_data *d)
 {
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
@@ -515,7 +515,7 @@ static void redit_disp_menu(struct descriptor_data *d)
 }
 
 /* The main loop*/
-void redit_parse(struct descriptor_data *d, char *arg)
+void redit_parse(descriptor_data *d, char *arg)
 {
   int number;
   char *oldtext = NULL;
@@ -917,7 +917,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
   redit_disp_menu(d);
 }
 
-void redit_string_cleanup(struct descriptor_data *d, int terminator)
+void redit_string_cleanup(descriptor_data *d, int terminator)
 {
   switch (OLC_MODE(d)) {
   case REDIT_DESC:

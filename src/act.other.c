@@ -32,8 +32,8 @@
 
 /* Local defined utility functions */
 /* do_group utility functions */
-static void print_group(struct char_data *ch);
-static void display_group_list(struct char_data *ch);
+static void print_group(char_data *ch);
+static void display_group_list(char_data *ch);
 
 ACMD(do_quit)
 {
@@ -145,8 +145,8 @@ ACMD(do_hide)
 
 ACMD(do_steal)
 {
-  struct char_data *vict;
-  struct obj_data *obj;
+  char_data *vict;
+  obj_data *obj;
   char vict_name[MAX_INPUT_LENGTH], obj_name[MAX_INPUT_LENGTH];
   int percent, gold, eq_pos, pcsteal = 0, ohoh = 0;
 
@@ -315,13 +315,13 @@ ACMD(do_title)
   }
 }
 
-static void print_group(struct char_data *ch)
+static void print_group(char_data *ch)
 {
-  struct char_data *k;
+  char_data *k;
 
   send_to_char(ch, "Your group consists of:\r\n");
 
-  while ((k = (struct char_data *)simple_list(ch->group->members)) != NULL)
+  while ((k = (char_data *)simple_list(ch->group->members)) != NULL)
     send_to_char(ch, "%-*s: %s[%4d/%-4d]H [%4d/%-4d]M [%4d/%-4d]V%s\r\n",
                  count_color_chars(GET_NAME(k)) + 22, GET_NAME(k),
                  GROUP_LEADER(GROUP(ch)) == k ? CBGRN(ch, C_NRM) : CCGRN(ch, C_NRM),
@@ -331,7 +331,7 @@ static void print_group(struct char_data *ch)
                  CCNRM(ch, C_NRM));
 }
 
-static void display_group_list(struct char_data *ch)
+static void display_group_list(char_data *ch)
 {
   struct group_data *group;
   int count = 0;
@@ -370,7 +370,7 @@ static void display_group_list(struct char_data *ch)
 ACMD(do_group)
 {
   char buf[MAX_STRING_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
 
   argument = one_argument(argument, buf);
 
@@ -495,7 +495,7 @@ ACMD(do_split)
   char buf[MAX_INPUT_LENGTH];
   int amount, num = 0, share, rest;
   size_t len;
-  struct char_data *k;
+  char_data *k;
 
   if (IS_NPC(ch))
     return;
@@ -514,7 +514,7 @@ ACMD(do_split)
     }
 
     if (GROUP(ch))
-      while ((k = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
+      while ((k = (char_data *)simple_list(GROUP(ch)->members)) != NULL)
         if (IN_ROOM(ch) == IN_ROOM(k) && !IS_NPC(k))
           num++;
 
@@ -537,7 +537,7 @@ ACMD(do_split)
                (rest == 1) ? "" : "s", (rest == 1) ? "was" : "were", GET_NAME(ch));
     }
 
-    while ((k = (struct char_data *)simple_list(GROUP(ch)->members)) != NULL)
+    while ((k = (char_data *)simple_list(GROUP(ch)->members)) != NULL)
       if (k != ch && IN_ROOM(ch) == IN_ROOM(k) && !IS_NPC(k)) {
         increase_gold(k, share);
         send_to_char(k, "%s", buf);
@@ -559,7 +559,7 @@ ACMD(do_split)
 ACMD(do_use)
 {
   char buf[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
-  struct obj_data *mag_item;
+  obj_data *mag_item;
 
   half_chop(argument, arg, buf);
   if (!*arg) {
@@ -860,7 +860,7 @@ ACMD(do_gen_tog)
   return;
 }
 
-static void show_happyhour(struct char_data *ch)
+static void show_happyhour(char_data *ch)
 {
   char happyexp[80], happygold[80], happyqp[80];
   int secs_left;

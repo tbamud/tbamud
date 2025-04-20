@@ -31,7 +31,7 @@
 /* locally defined functions of local (file) scope */
 static int compare_spells(const void *x, const void *y);
 static const char *how_good(int percent);
-static void npc_steal(struct char_data *ch, struct char_data *victim);
+static void npc_steal(char_data *ch, char_data *victim);
 
 /* Special procedures for mobiles. */
 static int spell_sort_info[MAX_SKILLS + 1];
@@ -96,7 +96,7 @@ static const char *prac_types[] = {
 #define MAXGAIN(ch) (prac_params[MAX_PER_PRAC][(int)GET_CLASS(ch)])
 #define SPLSKL(ch) (prac_types[prac_params[PRAC_TYPE][(int)GET_CLASS(ch)]])
 
-void list_skills(struct char_data *ch)
+void list_skills(char_data *ch)
 {
   const char *overflow = "\r\n**OVERFLOW**\r\n";
   int i, sortpos, ret;
@@ -167,7 +167,7 @@ SPECIAL(guild)
 
 SPECIAL(dump)
 {
-  struct obj_data *k;
+  obj_data *k;
   int value = 0;
 
   for (k = world[IN_ROOM(ch)].contents; k; k = world[IN_ROOM(ch)].contents) {
@@ -293,7 +293,7 @@ SPECIAL(mayor)
 
 /* General special procedures for mobiles. */
 
-static void npc_steal(struct char_data *ch, struct char_data *victim)
+static void npc_steal(char_data *ch, char_data *victim)
 {
   int gold;
 
@@ -334,7 +334,7 @@ SPECIAL(snake)
 
 SPECIAL(thief)
 {
-  struct char_data *cons;
+  char_data *cons;
 
   if (cmd || GET_POS(ch) != POS_STANDING)
     return (FALSE);
@@ -350,7 +350,7 @@ SPECIAL(thief)
 
 SPECIAL(magic_user)
 {
-  struct char_data *vict;
+  char_data *vict;
 
   if (cmd || GET_POS(ch) != POS_FIGHTING)
     return (FALSE);
@@ -422,7 +422,7 @@ SPECIAL(magic_user)
 SPECIAL(guild_guard) 
 { 
   int i, direction; 
-  struct char_data *guard = (struct char_data *)me; 
+  char_data *guard = (char_data *)me;
   const char *buf = "The guard humiliates you, and blocks your way.\r\n"; 
   const char *buf2 = "The guard humiliates $n, and blocks $s way."; 
 
@@ -487,7 +487,7 @@ SPECIAL(puff)
 
 SPECIAL(fido)
 {
-  struct obj_data *i, *temp, *next_obj;
+  obj_data *i, *temp, *next_obj;
 
   if (cmd || !AWAKE(ch))
     return (FALSE);
@@ -510,7 +510,7 @@ SPECIAL(fido)
 
 SPECIAL(janitor)
 {
-  struct obj_data *i;
+  obj_data *i;
 
   if (cmd || !AWAKE(ch))
     return (FALSE);
@@ -530,7 +530,7 @@ SPECIAL(janitor)
 
 SPECIAL(cityguard)
 {
-  struct char_data *tch, *evil, *spittle;
+  char_data *tch, *evil, *spittle;
   int max_evil, min_cha;
 
   if (cmd || !AWAKE(ch) || FIGHTING(ch))
@@ -595,7 +595,7 @@ SPECIAL(pet_shops)
 {
   char buf[MAX_STRING_LENGTH], pet_name[256];
   room_rnum pet_room;
-  struct char_data *pet;
+  char_data *pet;
 
   /* Gross. */
   pet_room = IN_ROOM(ch) + 1;

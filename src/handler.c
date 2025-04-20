@@ -29,9 +29,9 @@
 static int extractions_pending = 0;
 
 /* local file scope functions */
-static int apply_ac(struct char_data *ch, int eq_pos);
-static void update_object(struct obj_data *obj, int use);
-static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add);
+static int apply_ac(char_data *ch, int eq_pos);
+static void update_object(obj_data *obj, int use);
+static void affect_modify_ar(char_data * ch, byte loc, sbyte mod, int bitv[], bool add);
 
 char *fname(const char *namelist)
 {
@@ -105,7 +105,7 @@ int isname(const char *str, const char *namelist)
   return 0;
 }
 
-static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
+static void aff_apply_modify(char_data *ch, byte loc, sbyte mod, char *msg)
 {
   switch (loc) {
   case APPLY_NONE:
@@ -205,7 +205,7 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *ms
   } /* switch */
 }
 
-static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
+static void affect_modify_ar(char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
 {
   int i , j;
 
@@ -227,7 +227,7 @@ static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bit
 
 /* This updates a character by subtracting everything he is affected by
  * restoring original abilities, and then affecting all again. */
-void affect_total(struct char_data *ch)
+void affect_total(char_data *ch)
 {
   struct affected_type *af;
   int i, j;
@@ -279,7 +279,7 @@ void affect_total(struct char_data *ch)
 
 /* Insert an affect_type in a char_data structure. Automatically sets
  * apropriate bits and apply's */
-void affect_to_char(struct char_data *ch, struct affected_type *af)
+void affect_to_char(char_data *ch, struct affected_type *af)
 {
   struct affected_type *affected_alloc;
 
@@ -296,7 +296,7 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
 /* Remove an affected_type structure from a char (called when duration reaches
  * zero). Pointer *af must never be NIL!  Frees mem and calls
  * affect_location_apply */
-void affect_remove(struct char_data *ch, struct affected_type *af)
+void affect_remove(char_data *ch, struct affected_type *af)
 {
   struct affected_type *temp;
 
@@ -312,7 +312,7 @@ void affect_remove(struct char_data *ch, struct affected_type *af)
 }
 
 /* Call affect_remove with every affect from the spell "type" */
-void affect_from_char(struct char_data *ch, int type)
+void affect_from_char(char_data *ch, int type)
 {
   struct affected_type *hjp, *next;
 
@@ -325,7 +325,7 @@ void affect_from_char(struct char_data *ch, int type)
 
 /* Return TRUE if a char is affected by a spell (SPELL_XXX), FALSE indicates
  * not affected. */
-bool affected_by_spell(struct char_data *ch, int type)
+bool affected_by_spell(char_data *ch, int type)
 {
   struct affected_type *hjp;
 
@@ -336,7 +336,7 @@ bool affected_by_spell(struct char_data *ch, int type)
   return (FALSE);
 }
 
-void affect_join(struct char_data *ch, struct affected_type *af,
+void affect_join(char_data *ch, struct affected_type *af,
 		      bool add_dur, bool avg_dur, bool add_mod, bool avg_mod)
 {
   struct affected_type *hjp, *next;
@@ -365,9 +365,9 @@ void affect_join(struct char_data *ch, struct affected_type *af,
 }
 
 /* move a player out of a room */
-void char_from_room(struct char_data *ch)
+void char_from_room(char_data *ch)
 {
-  struct char_data *temp;
+  char_data *temp;
 
   if (ch == NULL || IN_ROOM(ch) == NOWHERE) {
     log("SYSERR: NULL character or NOWHERE in %s, char_from_room", __FILE__);
@@ -390,7 +390,7 @@ void char_from_room(struct char_data *ch)
 }
 
 /* place a character in a room */
-void char_to_room(struct char_data *ch, room_rnum room)
+void char_to_room(char_data *ch, room_rnum room)
 {
   if (ch == NULL || room == NOWHERE || room > top_of_world)
     log("SYSERR: Illegal value(s) passed to char_to_room. (Room: %d/%d Ch: %p",
@@ -417,7 +417,7 @@ void char_to_room(struct char_data *ch, room_rnum room)
 }
 
 /* Give an object to a char. */
-void obj_to_char(struct obj_data *object, struct char_data *ch)
+void obj_to_char(obj_data *object, char_data *ch)
 {
   if (object && ch) {
     object->next_content = ch->carrying;
@@ -437,9 +437,9 @@ void obj_to_char(struct obj_data *object, struct char_data *ch)
 }
 
 /* take an object from a char */
-void obj_from_char(struct obj_data *object)
+void obj_from_char(obj_data *object)
 {
-  struct obj_data *temp;
+  obj_data *temp;
 
   if (object == NULL) {
     log("SYSERR: NULL object passed to obj_from_char.");
@@ -458,7 +458,7 @@ void obj_from_char(struct obj_data *object)
 }
 
 /* Return the effect of a piece of armor in position eq_pos */
-static int apply_ac(struct char_data *ch, int eq_pos)
+static int apply_ac(char_data *ch, int eq_pos)
 {
   int factor;
 
@@ -489,7 +489,7 @@ static int apply_ac(struct char_data *ch, int eq_pos)
   return (factor * GET_OBJ_VAL(GET_EQ(ch, eq_pos), 0));
 }
 
-int invalid_align(struct char_data *ch, struct obj_data *obj)
+int invalid_align(char_data *ch, obj_data *obj)
 {
   if (OBJ_FLAGGED(obj, ITEM_ANTI_EVIL) && IS_EVIL(ch))
     return TRUE;
@@ -500,7 +500,7 @@ int invalid_align(struct char_data *ch, struct obj_data *obj)
   return FALSE;
 }
 
-void equip_char(struct char_data *ch, struct obj_data *obj, int pos)
+void equip_char(char_data *ch, obj_data *obj, int pos)
 {
   int j;
 
@@ -552,10 +552,10 @@ void equip_char(struct char_data *ch, struct obj_data *obj, int pos)
   affect_total(ch);
 }
 
-struct obj_data *unequip_char(struct char_data *ch, int pos)
+obj_data *unequip_char(char_data *ch, int pos)
 {
   int j;
-  struct obj_data *obj;
+  obj_data *obj;
 
   if ((pos < 0 || pos >= NUM_WEARS) || GET_EQ(ch, pos) == NULL) {
     core_dump();
@@ -611,9 +611,9 @@ int get_number(char **name)
 }
 
 /* Search a given list for an object number, and return a ptr to that obj */
-struct obj_data *get_obj_in_list_num(int num, struct obj_data *list)
+obj_data *get_obj_in_list_num(int num, obj_data *list)
 {
-  struct obj_data *i;
+  obj_data *i;
 
   for (i = list; i; i = i->next_content)
     if (GET_OBJ_RNUM(i) == num)
@@ -623,9 +623,9 @@ struct obj_data *get_obj_in_list_num(int num, struct obj_data *list)
 }
 
 /* search the entire world for an object number, and return a pointer  */
-struct obj_data *get_obj_num(obj_rnum nr)
+obj_data *get_obj_num(obj_rnum nr)
 {
-  struct obj_data *i;
+  obj_data *i;
 
   for (i = object_list; i; i = i->next)
     if (GET_OBJ_RNUM(i) == nr)
@@ -635,9 +635,9 @@ struct obj_data *get_obj_num(obj_rnum nr)
 }
 
 /* search a room for a char, and return a pointer if found..  */
-struct char_data *get_char_room(char *name, int *number, room_rnum room)
+char_data *get_char_room(char *name, int *number, room_rnum room)
 {
-  struct char_data *i;
+  char_data *i;
   int num;
 
   if (!number) {
@@ -657,9 +657,9 @@ struct char_data *get_char_room(char *name, int *number, room_rnum room)
 }
 
 /* search all over the world for a char num, and return a pointer if found */
-struct char_data *get_char_num(mob_rnum nr)
+char_data *get_char_num(mob_rnum nr)
 {
-  struct char_data *i;
+  char_data *i;
 
   for (i = character_list; i; i = i->next)
     if (GET_MOB_RNUM(i) == nr)
@@ -669,7 +669,7 @@ struct char_data *get_char_num(mob_rnum nr)
 }
 
 /* put an object in a room */
-void obj_to_room(struct obj_data *object, room_rnum room)
+void obj_to_room(obj_data *object, room_rnum room)
 {
   if (!object || room == NOWHERE || room > top_of_world){
     log("SYSERR: Illegal value(s) passed to obj_to_room. (Room #%d/%d, obj %p)",
@@ -680,7 +680,7 @@ void obj_to_room(struct obj_data *object, room_rnum room)
       world[room].contents = object; // add object to list
     }
     else {
-      struct obj_data *i = world[room].contents; // define a temporary pointer
+      obj_data *i = world[room].contents; // define a temporary pointer
       while (i->next_content != NULL) i = i->next_content; // find the first without a next_content
         i->next_content = object; // add object at the end
     }
@@ -693,10 +693,10 @@ void obj_to_room(struct obj_data *object, room_rnum room)
 }
 
 /* Take an object from a room */
-void obj_from_room(struct obj_data *object)
+void obj_from_room(obj_data *object)
 {
-  struct obj_data *temp;
-  struct char_data *t, *tempch;
+  obj_data *temp;
+  char_data *t, *tempch;
 
   if (!object || IN_ROOM(object) == NOWHERE) {
     log("SYSERR: NULL object (%p) or obj not in a room (%d) passed to obj_from_room",
@@ -722,9 +722,9 @@ void obj_from_room(struct obj_data *object)
 }
 
 /* put an object in an object (quaint)  */
-void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
+void obj_to_obj(obj_data *obj, obj_data *obj_to)
 {
-  struct obj_data *tmp_obj;
+  obj_data *tmp_obj;
 
   if (!obj || !obj_to || obj == obj_to) {
     log("SYSERR: NULL object (%p) or same source (%p) and target (%p) obj passed to obj_to_obj.",
@@ -749,9 +749,9 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
 }
 
 /* remove an object from an object */
-void obj_from_obj(struct obj_data *obj)
+void obj_from_obj(obj_data *obj)
 {
-  struct obj_data *temp, *obj_from;
+  obj_data *temp, *obj_from;
 
   if (obj->in_obj == NULL) {
     log("SYSERR: (%s): trying to illegally extract obj from obj.", __FILE__);
@@ -775,7 +775,7 @@ void obj_from_obj(struct obj_data *obj)
 }
 
 /* Set all carried_by to point to new owner */
-void object_list_new_owner(struct obj_data *list, struct char_data *ch)
+void object_list_new_owner(obj_data *list, char_data *ch)
 {
   if (list) {
     object_list_new_owner(list->contains, ch);
@@ -785,10 +785,10 @@ void object_list_new_owner(struct obj_data *list, struct char_data *ch)
 }
 
 /* Extract an object from the world */
-void extract_obj(struct obj_data *obj)
+void extract_obj(obj_data *obj)
 {
-  struct char_data *ch, *next = NULL;
-  struct obj_data *temp;
+  char_data *ch, *next = NULL;
+  obj_data *temp;
 
   if (obj->worn_by != NULL)
     if (unequip_char(obj->worn_by, obj->worn_on) != obj)
@@ -840,7 +840,7 @@ void extract_obj(struct obj_data *obj)
   free_obj(obj);
 }
 
-static void update_object(struct obj_data *obj, int use)
+static void update_object(obj_data *obj, int use)
 {
   /* dont update objects with a timer trigger */
   if (!SCRIPT_CHECK(obj, OTRIG_TIMER) && (GET_OBJ_TIMER(obj) > 0))
@@ -851,7 +851,7 @@ static void update_object(struct obj_data *obj, int use)
     update_object(obj->next_content, use);
 }
 
-void update_char_objects(struct char_data *ch)
+void update_char_objects(char_data *ch)
 {
   int i;
 
@@ -878,11 +878,11 @@ void update_char_objects(struct char_data *ch)
 }
 
 /* Extract a ch completely from the world, and leave his stuff behind */
-void extract_char_final(struct char_data *ch)
+void extract_char_final(char_data *ch)
 {
-  struct char_data *k, *temp;
-  struct descriptor_data *d;
-  struct obj_data *obj;
+  char_data *k, *temp;
+  descriptor_data *d;
+  obj_data *obj;
   int i;
 
   if (IN_ROOM(ch) == NOWHERE) {
@@ -1001,7 +1001,7 @@ void extract_char_final(struct char_data *ch)
  * Fixed a bug where it would over-count extractions if you try to extract the
  * same character twice (e.g. double-purging in a script) -khufu / EmpireMUD
  */
-void extract_char(struct char_data *ch)
+void extract_char(char_data *ch)
 {
   char_from_furniture(ch);
   clear_char_event_list(ch);
@@ -1022,7 +1022,7 @@ void extract_char(struct char_data *ch)
  * confusing some code. -gg This doesn't handle recursive extractions. */
 void extract_pending_chars(void)
 {
-  struct char_data *vict, *next_vict, *prev_vict;
+  char_data *vict, *next_vict, *prev_vict;
 
   if (extractions_pending < 0)
     log("SYSERR: Negative (%d) extractions pending.", extractions_pending);
@@ -1057,9 +1057,9 @@ void extract_pending_chars(void)
 
 /* Here follows high-level versions of some earlier routines, ie functions
  * which incorporate the actual player-data */
-struct char_data *get_player_vis(struct char_data *ch, char *name, int *number, int inroom)
+char_data *get_player_vis(char_data *ch, char *name, int *number, int inroom)
 {
-  struct char_data *i;
+  char_data *i;
   int num;
 
   if (!number) {
@@ -1084,9 +1084,9 @@ struct char_data *get_player_vis(struct char_data *ch, char *name, int *number, 
   return (NULL);
 }
 
-struct char_data *get_char_room_vis(struct char_data *ch, char *name, int *number)
+char_data *get_char_room_vis(char_data *ch, char *name, int *number)
 {
-  struct char_data *i;
+  char_data *i;
   int num;
 
   if (!number) {
@@ -1111,9 +1111,9 @@ struct char_data *get_char_room_vis(struct char_data *ch, char *name, int *numbe
   return (NULL);
 }
 
-struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *number)
+char_data *get_char_world_vis(char_data *ch, char *name, int *number)
 {
-  struct char_data *i;
+  char_data *i;
   int num;
 
   if (!number) {
@@ -1142,7 +1142,7 @@ struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *numb
   return (NULL);
 }
 
-struct char_data *get_char_vis(struct char_data *ch, char *name, int *number, int where)
+char_data *get_char_vis(char_data *ch, char *name, int *number, int where)
 {
   if (where == FIND_CHAR_ROOM)
     return get_char_room_vis(ch, name, number);
@@ -1152,9 +1152,9 @@ struct char_data *get_char_vis(struct char_data *ch, char *name, int *number, in
     return (NULL);
 }
 
-struct obj_data *get_obj_in_list_vis(struct char_data *ch, char *name, int *number, struct obj_data *list)
+obj_data *get_obj_in_list_vis(char_data *ch, char *name, int *number, obj_data *list)
 {
-  struct obj_data *i;
+  obj_data *i;
   int num;
 
   if (!number) {
@@ -1175,9 +1175,9 @@ struct obj_data *get_obj_in_list_vis(struct char_data *ch, char *name, int *numb
 }
 
 /* search the entire world for an object, and return a pointer  */
-struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *number)
+obj_data *get_obj_vis(char_data *ch, char *name, int *number)
 {
-  struct obj_data *i;
+  obj_data *i;
   int num;
 
   if (!number) {
@@ -1206,7 +1206,7 @@ struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *number)
   return (NULL);
 }
 
-struct obj_data *get_obj_in_equip_vis(struct char_data *ch, char *arg, int *number, struct obj_data *equipment[])
+obj_data *get_obj_in_equip_vis(char_data *ch, char *arg, int *number, obj_data *equipment[])
 {
   int j, num;
 
@@ -1226,7 +1226,7 @@ struct obj_data *get_obj_in_equip_vis(struct char_data *ch, char *arg, int *numb
   return (NULL);
 }
 
-int get_obj_pos_in_equip_vis(struct char_data *ch, char *arg, int *number, struct obj_data *equipment[])
+int get_obj_pos_in_equip_vis(char_data *ch, char *arg, int *number, obj_data *equipment[])
 {
   int j, num;
 
@@ -1282,9 +1282,9 @@ const char *money_desc(int amount)
   return ("an absolutely colossal mountain of gold coins");
 }
 
-struct obj_data *create_money(int amount)
+obj_data *create_money(int amount)
 {
-  struct obj_data *obj;
+  obj_data *obj;
   struct extra_descr_data *new_descr;
   char buf[200];
   int y;
@@ -1350,8 +1350,8 @@ struct obj_data *create_money(int amount)
  * The routine used to return a pointer to the next word in *arg (just
  * like the one_argument routine), but now it returns an integer that
  * describes what it filled in. */
-int generic_find(char *arg, bitvector_t bitvector, struct char_data *ch,
-		     struct char_data **tar_ch, struct obj_data **tar_obj)
+int generic_find(char *arg, bitvector_t bitvector, char_data *ch,
+		     char_data **tar_ch, obj_data **tar_obj)
 {
   int i, found, number;
   char name_val[MAX_INPUT_LENGTH];
@@ -1418,7 +1418,7 @@ int find_all_dots(char *arg)
 }
 
 /* Group Handlers */
-struct group_data * create_group(struct char_data * leader) 
+struct group_data * create_group(char_data * leader)
 {
   struct group_data * new_group;
   
@@ -1445,11 +1445,11 @@ struct group_data * create_group(struct char_data * leader)
 
 void free_group(struct group_data * group)
 {
-  struct char_data *tch;
+  char_data *tch;
 	struct iterator_data Iterator;
 	
   if (group->members->iSize) {
-		for (tch = (struct char_data *) merge_iterator(&Iterator, group->members);
+		for (tch = (char_data *) merge_iterator(&Iterator, group->members);
 		  tch; 
 		    tch = next_in_list(&Iterator))
           leave_group(tch);
@@ -1462,10 +1462,10 @@ void free_group(struct group_data * group)
   free(group);
 }
 
-void leave_group(struct char_data *ch)
+void leave_group(char_data *ch)
 {
   struct group_data *group;
-  struct char_data *tch;
+  char_data *tch;
   struct iterator_data Iterator;
   bool found_pc = FALSE;
 	
@@ -1478,7 +1478,7 @@ void leave_group(struct char_data *ch)
   ch->group = NULL;
   
   if (group->members->iSize) {
-    for (tch = (struct char_data *) merge_iterator(&Iterator, group->members);
+    for (tch = (char_data *) merge_iterator(&Iterator, group->members);
       tch; tch = next_in_list(&Iterator))
         if (!IS_NPC(tch)) 
           found_pc = TRUE;
@@ -1490,13 +1490,13 @@ void leave_group(struct char_data *ch)
     SET_BIT(GROUP_FLAGS(group), GROUP_NPC);
   
   if (GROUP_LEADER(group) == ch && group->members->iSize) {
-    group->leader = (struct char_data *) random_from_list(group->members);
+    group->leader = (char_data *) random_from_list(group->members);
     send_to_group(NULL, group, "%s has assumed leadership of the group.\r\n", GET_NAME(GROUP_LEADER(group)));
   } else if (group->members->iSize == 0)
     free_group(group); 
 }
 
-void join_group(struct char_data *ch, struct group_data *group)
+void join_group(char_data *ch, struct group_data *group)
 {
   add_to_list(ch, group->members);
 	

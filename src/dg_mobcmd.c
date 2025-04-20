@@ -699,7 +699,7 @@ ACMD(do_mforce)
     }
 
     if (!str_cmp(arg, "all")) {
-        struct descriptor_data *i;
+        descriptor_data *i;
         char_data *vch;
 
         for (i = descriptor_list; i ; i = i->next) {
@@ -1091,7 +1091,7 @@ ACMD(do_mdoor)
 ACMD(do_mfollow)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct char_data *leader;
+  char_data *leader;
   struct follow_type *j, *k;
 
   if (!MOB_OR_IMPL(ch)) {

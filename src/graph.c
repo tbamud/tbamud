@@ -141,7 +141,7 @@ static int find_first_step(room_rnum src, room_rnum target)
 ACMD(do_track)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   int dir;
 
   /* The character must have the track skill. */
@@ -195,11 +195,11 @@ ACMD(do_track)
   }
 }
 
-void hunt_victim(struct char_data *ch)
+void hunt_victim(char_data *ch)
 {
   int dir;
   byte found;
-  struct char_data *tmp;
+  char_data *tmp;
 
   if (!ch || !HUNTING(ch) || FIGHTING(ch))
     return;

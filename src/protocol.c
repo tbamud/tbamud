@@ -22,19 +22,12 @@
  The following section is for Diku/Merc derivatives.  Replace as needed.
  ******************************************************************************/
 
-#include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "screen.h"
-#include "improved-edit.h"
-#include "dg_scripts.h"
-#include "act.h"
-#include "modify.h"
 
 /* Globals */
 const char * RGBone = "F022";
@@ -214,7 +207,7 @@ static time_t s_Uptime  = 0;
 
 static void Negotiate            ( descriptor_t *apDescriptor );
 static void PerformHandshake     ( descriptor_t *apDescriptor, char aCmd, char aProtocol );
-static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *apData, int aSize );
+static void PerformSubnegotiation(descriptor_t *apDescriptor, char aCmd, char *apData);
 
 static void ParseMSDP            ( descriptor_t *apDescriptor, const char *apData );
 static void ExecuteMSDPPair      ( descriptor_t *apDescriptor, const char *apVariable, const char *apValue );
@@ -358,7 +351,7 @@ void ProtocolDestroy( protocol_t *apProtocol )
    free(apProtocol);
 }
 
-ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *apOut )
+ssize_t ProtocolInput( descriptor_t *apDescriptor, const char *apData, size_t aSize, char *apOut )
 {
    static char CmdBuf[MAX_PROTOCOL_BUFFER+1];
    static char IacBuf[MAX_PROTOCOL_BUFFER+1];
@@ -395,7 +388,7 @@ ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char
             pProtocol->bIACMode = false;
             IacBuf[IacIndex] = '\0';
             if ( IacIndex >= 2 )
-               PerformSubnegotiation( apDescriptor, IacBuf[0], &IacBuf[1], IacIndex-1 );
+               PerformSubnegotiation( apDescriptor, IacBuf[0], &IacBuf[1]);
             IacIndex = 0;
          }
          else
@@ -405,7 +398,7 @@ ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char
          isdigit(apData[Index+2]) && apData[Index+3] == 'z' )
       {
          char MXPBuffer [1024];
-         char *pMXPTag = NULL;
+         const char *pMXPTag = NULL;
          int i = 0; /* Loop counter */
 
          Index += 4; /* Skip to the start of the MXP sequence. */
@@ -525,7 +518,7 @@ ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char
    return (CmdIndex);
 }
 
-const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int *apLength )
+const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, size_t *apLength )
 {
    static char Result[MAX_OUTPUT_BUFFER+1];
    const char Tab[] = "\t";
@@ -1068,13 +1061,13 @@ void MSDPSend( descriptor_t *apDescriptor, variable_t aMSDP )
       if ( VariableNameTable[aMSDP].bString )
       {
          /* Should really be replaced with a dynamic buffer */
-         int RequiredBuffer = strlen(VariableNameTable[aMSDP].pName) + 
+         size_t RequiredBuffer = strlen(VariableNameTable[aMSDP].pName) +
             strlen(pProtocol->pVariables[aMSDP]->pValueString) + 12;
 
          if ( RequiredBuffer >= MAX_VARIABLE_LENGTH )
          {
             sprintf( MSDPBuffer, 
-               "MSDPSend: %s %d bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n", 
+               "MSDPSend: %s %ld bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n",
                VariableNameTable[aMSDP].pName, RequiredBuffer, 
                MAX_VARIABLE_LENGTH );
             ReportBug( MSDPBuffer );
@@ -1128,20 +1121,20 @@ void MSDPSendPair( descriptor_t *apDescriptor, const char *apVariable, const cha
       protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
       /* Should really be replaced with a dynamic buffer */
-      int RequiredBuffer = strlen(apVariable) + strlen(apValue) + 12;
+      size_t RequiredBuffer = strlen(apVariable) + strlen(apValue) + 12;
 
       if ( RequiredBuffer >= MAX_VARIABLE_LENGTH )
       {
          if ( RequiredBuffer - strlen(apValue) < MAX_VARIABLE_LENGTH )
          {
             sprintf( MSDPBuffer, 
-               "MSDPSendPair: %s %d bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n", 
+               "MSDPSendPair: %s %ld bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n",
                apVariable, RequiredBuffer, MAX_VARIABLE_LENGTH );
          }
          else /* The variable name itself is too long */
          {
             sprintf( MSDPBuffer, 
-               "MSDPSendPair: Variable name has a length of %d bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n", 
+               "MSDPSendPair: Variable name has a length of %ld bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n",
                RequiredBuffer, MAX_VARIABLE_LENGTH );
          }
 
@@ -1175,20 +1168,20 @@ void MSDPSendList( descriptor_t *apDescriptor, const char *apVariable, const cha
       protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
       /* Should really be replaced with a dynamic buffer */
-      int RequiredBuffer = strlen(apVariable) + strlen(apValue) + 12;
+      size_t RequiredBuffer = strlen(apVariable) + strlen(apValue) + 12;
 
       if ( RequiredBuffer >= MAX_VARIABLE_LENGTH )
       {
          if ( RequiredBuffer - strlen(apValue) < MAX_VARIABLE_LENGTH )
          {
             sprintf( MSDPBuffer, 
-               "MSDPSendList: %s %d bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n", 
+               "MSDPSendList: %s %ld bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n",
                apVariable, RequiredBuffer, MAX_VARIABLE_LENGTH );
          }
          else /* The variable name itself is too long */
          {
             sprintf( MSDPBuffer, 
-               "MSDPSendList: Variable name has a length of %d bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n", 
+               "MSDPSendList: Variable name has a length of %ld bytes (exceeds MAX_VARIABLE_LENGTH of %d).\n",
                RequiredBuffer, MAX_VARIABLE_LENGTH );
          }
 
@@ -1221,7 +1214,7 @@ void MSDPSendList( descriptor_t *apDescriptor, const char *apVariable, const cha
    }
 }
 
-void MSDPSetNumber( descriptor_t *apDescriptor, variable_t aMSDP, int aValue )
+void MSDPSetNumber(const descriptor_t *apDescriptor, variable_t aMSDP, int aValue )
 {
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
@@ -1238,7 +1231,7 @@ void MSDPSetNumber( descriptor_t *apDescriptor, variable_t aMSDP, int aValue )
    }
 }
 
-void MSDPSetString( descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue )
+void MSDPSetString(const descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue )
 {
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
@@ -1246,7 +1239,7 @@ void MSDPSetString( descriptor_t *apDescriptor, variable_t aMSDP, const char *ap
    {
       if ( VariableNameTable[aMSDP].bString )
       {
-         if ( strcmp(pProtocol->pVariables[aMSDP]->pValueString, apValue) )
+         if ( strcmp(pProtocol->pVariables[aMSDP]->pValueString, apValue) != 0 )
          {
             free(pProtocol->pVariables[aMSDP]->pValueString);
             pProtocol->pVariables[aMSDP]->pValueString = AllocString(apValue);
@@ -1256,7 +1249,7 @@ void MSDPSetString( descriptor_t *apDescriptor, variable_t aMSDP, const char *ap
    }
 }
 
-void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue )
+void MSDPSetTable(const descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue )
 {
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
@@ -1278,7 +1271,7 @@ void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
          strcat(pTable, apValue);
          strcat(pTable, MsdpTableStop);
 
-         if ( strcmp(pProtocol->pVariables[aMSDP]->pValueString, pTable) )
+         if ( strcmp(pProtocol->pVariables[aMSDP]->pValueString, pTable) != 0 )
          {
             free(pProtocol->pVariables[aMSDP]->pValueString);
             pProtocol->pVariables[aMSDP]->pValueString = pTable;
@@ -1292,7 +1285,7 @@ void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
    }
 }
 
-void MSDPSetArray( descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue )
+void MSDPSetArray(const descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue )
 {
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
@@ -1314,7 +1307,7 @@ void MSDPSetArray( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
          strcat(pArray, apValue);
          strcat(pArray, MsdpArrayStop);
 
-         if ( strcmp(pProtocol->pVariables[aMSDP]->pValueString, pArray) )
+         if ( strcmp(pProtocol->pVariables[aMSDP]->pValueString, pArray) != 0 )
          {
             free(pProtocol->pVariables[aMSDP]->pValueString);
             pProtocol->pVariables[aMSDP]->pValueString = pArray;
@@ -1344,7 +1337,7 @@ void MSSPSetPlayers( int aPlayers )
  MXP global functions.
  ******************************************************************************/
 
-const char *MXPCreateTag( descriptor_t *apDescriptor, const char *apTag )
+const char *MXPCreateTag(const descriptor_t *apDescriptor, const char *apTag )
 {
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
@@ -1408,7 +1401,7 @@ void SoundSend( descriptor_t *apDescriptor, const char *apTrigger )
  Colour global functions.
  ******************************************************************************/
 
-const char *ColourRGB( descriptor_t *apDescriptor, const char *apRGB )
+const char *ColourRGB(const descriptor_t *apDescriptor, const char *apRGB )
 {
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
    bool charHasColor = TRUE;
@@ -1599,6 +1592,7 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
          if ( aCmd == (char)DO )
             SendMSSP( apDescriptor );
          else if ( aCmd == (char)DONT )
+            //NOLINTNEXTLINE(*-suspicious-semicolon)
             ; /* Do nothing. */
          break;
 
@@ -1687,7 +1681,7 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
    }
 }
 
-static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *apData, int aSize )
+static void PerformSubnegotiation(descriptor_t *apDescriptor, char aCmd, char *apData)
 {
    protocol_t *pProtocol = apDescriptor->pProtocol;
 
@@ -1742,8 +1736,8 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
              * free to remove the second strcmp ;)
              */
             if ( pProtocol->pLastTTYPE == NULL || 
-               (strcmp(pProtocol->pLastTTYPE, pClientName) && 
-               strcmp(pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString, pClientName)) )
+               (strcmp(pProtocol->pLastTTYPE, pClientName) != 0 &&
+               strcmp(pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString, pClientName) != 0) )
             {
                char RequestTTYPE [] = { (char)IAC, (char)SB, TELOPT_TTYPE, SEND, (char)IAC, (char)SE, '\0' };
                const char *pStartPos = strstr( pClientName, "-" );
@@ -2108,7 +2102,7 @@ static void ExecuteMSDPPair( descriptor_t *apDescriptor, const char *apVariable,
 
                      if ( *apValue != '\0' && IsNumber(apValue) )
                      {
-                        int Value = atoi(apValue);
+                        const int Value = atoi(apValue);
                         if ( Value >= VariableNameTable[i].Min && 
                            Value <= VariableNameTable[i].Max )
                         {
@@ -2228,7 +2222,7 @@ static void SendMSSP( descriptor_t *apDescriptor )
 {
    char MSSPBuffer[MAX_MSSP_BUFFER];
    char MSSPPair[128];
-   int SizeBuffer = 3; /* IAC SB MSSP */
+   size_t SizeBuffer = 3; /* IAC SB MSSP */
    int i; /* Loop counter */
 
    /* Before updating the following table, please read the MSSP specification:
@@ -2352,7 +2346,7 @@ static void SendMSSP( descriptor_t *apDescriptor )
 
    for ( i = 0; MSSPTable[i].pName != NULL; ++i )
    {
-      int SizePair;
+      size_t SizePair;
 
       /* Retrieve the next MSSP variable/value pair */
       sprintf( MSSPPair, "%c%s%c%s", MSSP_VAR, MSSPTable[i].pName, MSSP_VAL, 
@@ -2513,7 +2507,7 @@ static char *AllocString( const char *apString )
 
    if ( apString != NULL )
    {
-      int Size = strlen(apString);
+      const size_t Size = strlen(apString);
       pResult = (char *) malloc(Size+1);
       if ( pResult != NULL )
          strcpy( pResult, apString );

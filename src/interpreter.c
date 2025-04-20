@@ -39,11 +39,11 @@
 #include "mud_event.h"
 
 /* local (file scope) functions */
-static int perform_dupe_check(struct descriptor_data *d);
+static int perform_dupe_check(descriptor_data *d);
 static struct alias_data *find_alias(struct alias_data *alias_list, char *str);
 static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
 static int _parse_name(char *arg, char *name);
-static bool perform_new_char_dupe_check(struct descriptor_data *d);
+static bool perform_new_char_dupe_check(descriptor_data *d);
 /* sort_commands utility */
 static int sort_commands_helper(const void *a, const void *b);
 
@@ -398,7 +398,7 @@ static const struct mob_script_command_t mob_script_commands[] = {
     { "\n", do_not_here, 0 }
 };
 
-int script_command_interpreter(struct char_data *ch, char *arg)
+int script_command_interpreter(char_data *ch, char *arg)
 {
     /* DG trigger commands */
 
@@ -475,7 +475,7 @@ void sort_commands(void)
 /* This is the actual command interpreter called from game_loop() in comm.c
  * It makes sure you are the proper level and position to execute the command,
  * then calls the appropriate function. */
-void command_interpreter(struct char_data *ch, char *argument)
+void command_interpreter(char_data *ch, char *argument)
 {
     int cmd, length;
     char *line;
@@ -724,7 +724,7 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
  *   0: String was modified in place; call command_interpreter immediately.
  *   1: String was _not_ modified in place; rather, the expanded aliases
  *      have been placed at the front of the character's input queue. */
-int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen)
+int perform_alias(descriptor_data *d, char *orig, size_t maxlen)
 {
     char first_arg[MAX_INPUT_LENGTH], *ptr;
     struct alias_data *a, *tmp;
@@ -967,10 +967,10 @@ int find_command(const char *command)
     return (-1);
 }
 
-int special(struct char_data *ch, int cmd, char *arg)
+int special(char_data *ch, int cmd, char *arg)
 {
-    struct obj_data *i;
-    struct char_data *k;
+    obj_data *i;
+    char_data *k;
     int j;
 
     /* special in room? */
@@ -1027,10 +1027,10 @@ static int _parse_name(char *arg, char *name)
 #define UNSWITCH    3
 
 /* This function seems a bit over-extended. */
-static int perform_dupe_check(struct descriptor_data *d)
+static int perform_dupe_check(descriptor_data *d)
 {
-    struct descriptor_data *k, *next_k;
-    struct char_data *target = NULL, *ch, *next_ch;
+    descriptor_data *k, *next_k;
+    char_data *target = NULL, *ch, *next_ch;
     int mode = 0;
     int pref_temp = 0; /* for "last" log */
     int id = GET_IDNUM(d->character);
@@ -1170,9 +1170,9 @@ static int perform_dupe_check(struct descriptor_data *d)
 }
 
 /* New Char dupe-check called at the start of character creation */
-static bool perform_new_char_dupe_check(struct descriptor_data *d)
+static bool perform_new_char_dupe_check(descriptor_data *d)
 {
-    struct descriptor_data *k, *next_k;
+    descriptor_data *k, *next_k;
     bool found = FALSE;
 
     /* Now that this descriptor has successfully logged in, disconnect all
@@ -1226,7 +1226,7 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
 }
 
 /* load the player, put them in the right room - used by copyover_recover too */
-int enter_player_game (struct descriptor_data *d)
+int enter_player_game (descriptor_data *d)
 {
     int load_result;
     room_vnum load_room;
@@ -1280,7 +1280,7 @@ int enter_player_game (struct descriptor_data *d)
 
 EVENTFUNC(get_protocols)
 {
-    struct descriptor_data *d;
+    descriptor_data *d;
     struct mud_event_data *pMudEvent;
     char buf[MAX_STRING_LENGTH];
     size_t len;
@@ -1289,7 +1289,7 @@ EVENTFUNC(get_protocols)
         return 0;
 
     pMudEvent = (struct mud_event_data *) event_obj;
-    d = (struct descriptor_data *) pMudEvent->pStruct;
+    d = (descriptor_data *) pMudEvent->pStruct;
 
     /* Clear extra white space from the "protocol scroll" */
     write_to_output(d, "[H[J");
@@ -1317,7 +1317,7 @@ EVENTFUNC(get_protocols)
 }
 
 /* deal with newcomers and other non-playing sockets */
-void nanny(struct descriptor_data *d, char *arg)
+void nanny(descriptor_data *d, char *arg)
 {
     int load_result;  /* Overloaded variable */
     int player_i;
@@ -1325,7 +1325,7 @@ void nanny(struct descriptor_data *d, char *arg)
     /* OasisOLC states */
     struct {
         int state;
-        void (*func)(struct descriptor_data *, char *);
+        void (*func)(descriptor_data *, char *);
     } olc_functions[] = {
         { CON_OEDIT, oedit_parse },
         { CON_ZEDIT, zedit_parse },
@@ -1359,7 +1359,7 @@ void nanny(struct descriptor_data *d, char *arg)
         return;
     case CON_GET_NAME:        /* wait for input of name */
         if (d->character == NULL) {
-            CREATE(d->character, struct char_data, 1);
+            CREATE(d->character, char_data, 1);
             clear_char(d->character);
             CREATE(d->character->player_specials, struct player_special_data, 1);
 
@@ -1396,7 +1396,7 @@ void nanny(struct descriptor_data *d, char *arg)
                         write_to_output(d, "Invalid name, please try another.\r\nName: ");
                         return;
                     }
-                    CREATE(d->character, struct char_data, 1);
+                    CREATE(d->character, char_data, 1);
                     clear_char(d->character);
                     CREATE(d->character->player_specials, struct player_special_data, 1);
 

@@ -30,8 +30,8 @@ ACMD(do_action)
   char arg[MAX_INPUT_LENGTH], part[MAX_INPUT_LENGTH];
   int act_nr;
   struct social_messg *action;
-  struct char_data *vict;
-  struct obj_data *targ;
+  char_data *vict;
+  obj_data *targ;
 
   if ((act_nr = find_action(cmd)) < 0) {
     send_to_char(ch, "That action is not supported.\r\n");
@@ -93,9 +93,9 @@ ACMD(do_action)
     act("$N is not in a proper position for that.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   else {
     if (*part) {
-      act(action->char_body_found, 0, ch, (struct obj_data *)part, vict, TO_CHAR | TO_SLEEP);
-      act(action->others_body_found, action->hide, ch, (struct obj_data *)part, vict, TO_NOTVICT);
-      act(action->vict_body_found, action->hide, ch, (struct obj_data *)part, vict, TO_VICT);
+      act(action->char_body_found, 0, ch, (obj_data *)part, vict, TO_CHAR | TO_SLEEP);
+      act(action->others_body_found, action->hide, ch, (obj_data *)part, vict, TO_NOTVICT);
+      act(action->vict_body_found, action->hide, ch, (obj_data *)part, vict, TO_VICT);
     } else {
       act(action->char_found, 0, ch, 0, vict, TO_CHAR | TO_SLEEP);
       act(action->others_found, action->hide, ch, 0, vict, TO_NOTVICT);
@@ -240,7 +240,7 @@ ACMD(do_gmote)
   int act_nr, length;
   char arg[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
   struct social_messg *action;
-  struct char_data *vict = NULL;
+  char_data *vict = NULL;
 
   half_chop(argument, buf, arg);
 

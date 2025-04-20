@@ -35,12 +35,12 @@
 #define PT_LLAST(i) (player_table[(i)].last)
 
 /* local functions */
-static void load_affects(FILE *fl, struct char_data *ch);
-static void load_skills(FILE *fl, struct char_data *ch);
-static void load_quests(FILE *fl, struct char_data *ch);
-static void load_HMVS(struct char_data *ch, const char *line, int mode);
-static void write_aliases_ascii(FILE *file, struct char_data *ch);
-static void read_aliases_ascii(FILE *file, struct char_data *ch, int count);
+static void load_affects(FILE *fl, char_data *ch);
+static void load_skills(FILE *fl, char_data *ch);
+static void load_quests(FILE *fl, char_data *ch);
+static void load_HMVS(char_data *ch, const char *line, int mode);
+static void write_aliases_ascii(FILE *file, char_data *ch);
+static void read_aliases_ascii(FILE *file, char_data *ch, int count);
 
 /* New version to build player index for ASCII Player Files. Generate index
  * table for the player file. */
@@ -225,7 +225,7 @@ char *get_name_by_id(long id)
 /* Stuff related to the save/load player system. */
 /* New load_char reads ASCII Player Files. Load a char, TRUE if loaded, FALSE
  * if not. */
-int load_char(const char *name, struct char_data *ch)
+int load_char(const char *name, char_data *ch)
 {
   int id, i;
   FILE *fl;
@@ -489,13 +489,13 @@ int load_char(const char *name, struct char_data *ch)
 
 /* Write the vital data of a player to the player file. */
 /* This is the ASCII Player Files save routine. */
-void save_char(struct char_data * ch)
+void save_char(char_data * ch)
 {
   FILE *fl;
   char filename[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127];
   int i, j, id, save_index = FALSE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
-  struct obj_data *char_eq[NUM_WEARS];
+  obj_data *char_eq[NUM_WEARS];
   trig_data *t;
 
   if (IS_NPC(ch) || GET_PFILEPOS(ch) < 0)
@@ -825,7 +825,7 @@ void clean_pfiles(void)
 
 /* load_affects function now handles both 32-bit and
    128-bit affect bitvectors for backward compatibility */
-static void load_affects(FILE *fl, struct char_data *ch)
+static void load_affects(FILE *fl, char_data *ch)
 {
   int num = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, num6 = 0, num7 = 0, num8 = 0, i, n_vars;
   char line[MAX_INPUT_LENGTH + 1];
@@ -858,7 +858,7 @@ static void load_affects(FILE *fl, struct char_data *ch)
   } while (num != 0);
 }
 
-static void load_skills(FILE *fl, struct char_data *ch)
+static void load_skills(FILE *fl, char_data *ch)
 {
   int num = 0, num2 = 0;
   char line[MAX_INPUT_LENGTH + 1];
@@ -871,7 +871,7 @@ static void load_skills(FILE *fl, struct char_data *ch)
   } while (num != 0);
 }
 
-void load_quests(FILE *fl, struct char_data *ch)
+void load_quests(FILE *fl, char_data *ch)
 {
   int num = NOTHING;
   char line[MAX_INPUT_LENGTH + 1];
@@ -884,7 +884,7 @@ void load_quests(FILE *fl, struct char_data *ch)
   } while (num != NOTHING);
 }
 
-static void load_HMVS(struct char_data *ch, const char *line, int mode)
+static void load_HMVS(char_data *ch, const char *line, int mode)
 {
   int num = 0, num2 = 0;
 
@@ -913,7 +913,7 @@ static void load_HMVS(struct char_data *ch, const char *line, int mode)
   }
 }
 
-static void write_aliases_ascii(FILE *file, struct char_data *ch)
+static void write_aliases_ascii(FILE *file, char_data *ch)
 {
   struct alias_data *temp;
   int count = 0;
@@ -936,7 +936,7 @@ static void write_aliases_ascii(FILE *file, struct char_data *ch)
                   temp->type);
 }
 
-static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
+static void read_aliases_ascii(FILE *file, char_data *ch, int count)
 {
   int i;
 

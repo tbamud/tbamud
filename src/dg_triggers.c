@@ -412,7 +412,7 @@ void act_mtrigger(const char_data *ch, char *str, char_data *actor,
 
 void fight_mtrigger(char_data *ch)
 {
-  struct char_data *actor;
+  char_data *actor;
   trig_data *t;
   char buf[MAX_INPUT_LENGTH];
 
@@ -437,7 +437,7 @@ void fight_mtrigger(char_data *ch)
 
 void hitprcnt_mtrigger(char_data *ch)
 {
-  struct char_data *actor;
+  char_data *actor;
   trig_data *t;
   char buf[MAX_INPUT_LENGTH];
 
@@ -649,7 +649,7 @@ void random_otrigger(obj_data *obj)
   }
 }
 
-void timer_otrigger(struct obj_data *obj)
+void timer_otrigger(obj_data *obj)
 {
   trig_data *t;
 

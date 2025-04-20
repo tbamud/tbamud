@@ -249,7 +249,7 @@ extern const char * RGBone;
 extern const char * RGBtwo;
 extern const char * RGBthree;
 
-ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char *apOut );
+ssize_t ProtocolInput( descriptor_t *apDescriptor, const char *apData, size_t aSize, char *apOut );
 
 /* Function: ProtocolOutput
  *
@@ -310,7 +310,7 @@ ssize_t ProtocolInput( descriptor_t *apDescriptor, char *apData, int aSize, char
  * Note that the MXP tags will automatically be removed if the user doesn't
  * support MXP, but it's very important you remember to close the tags.
  */
-const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int *apLength );
+const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, size_t *apLength );
 
 /******************************************************************************
  Copyover save/load functions.
@@ -394,7 +394,7 @@ void MSDPSendList( descriptor_t *apDescriptor, const char *apVariable, const cha
  *
  * You can also this function for bools, chars, enums, short ints, etc.
  */
-void MSDPSetNumber( descriptor_t *apDescriptor, variable_t aMSDP, int aValue );
+void MSDPSetNumber(const descriptor_t *apDescriptor, variable_t aMSDP, int aValue );
 
 /* Function: MSDPSetString
  *
@@ -403,7 +403,7 @@ void MSDPSetNumber( descriptor_t *apDescriptor, variable_t aMSDP, int aValue );
  * this is what the snippet does by default), but if the variable is only
  * set in one place you can just move its MDSPSend() call to there.
  */
-void MSDPSetString( descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue );
+void MSDPSetString(const descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue );
 
 /* Function: MSDPSetTable
  *
@@ -414,7 +414,7 @@ void MSDPSetString( descriptor_t *apDescriptor, variable_t aMSDP, const char *ap
  * sprintf( Buffer, "%c%s%c%s", (char)MSDP_VAR, Name, (char)MSDP_VAL, Value );
  * MSDPSetTable( d, eMSDP_TEST, Buffer );
  */
-void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue );
+void MSDPSetTable(const descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue );
 
 /* Function: MSDPSetArray
  *
@@ -425,7 +425,7 @@ void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
  * sprintf( Buffer, "%c%s%c%s", (char)MSDP_VAL, Val1, (char)MSDP_VAL, Val2 );
  * MSDPSetArray( d, eMSDP_TEST, Buffer );
  */
-void MSDPSetArray( descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue );
+void MSDPSetArray(const descriptor_t *apDescriptor, variable_t aMSDP, const char *apValue );
 
 /******************************************************************************
  MSSP functions.
@@ -450,7 +450,7 @@ void MSSPSetPlayers( int aPlayers );
  * provide a different sequence for other users, or better yet just embed MXP
  * tags for the ProtocolOutput() function.
  */
-const char *MXPCreateTag( descriptor_t *apDescriptor, const char *apTag );
+const char *MXPCreateTag(const descriptor_t *apDescriptor, const char *apTag );
 
 /* Function: MXPSendTag
  *
@@ -490,7 +490,7 @@ void SoundSend( descriptor_t *apDescriptor, const char *apTrigger );
  *
  * If you wish to embed colours in strings, use ProtocolOutput().
  */
-const char *ColourRGB( descriptor_t *apDescriptor, const char *apRGB );
+const char *ColourRGB(const descriptor_t *apDescriptor, const char *apRGB );
 
 /******************************************************************************
  Unicode (UTF-8 conversion) functions.

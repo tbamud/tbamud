@@ -28,10 +28,10 @@
 #include "ibt.h"
 
 /* local (file scope) function prototpyes  */
-static char *next_page(char *str, struct char_data *ch);
-static int count_pages(char *str, struct char_data *ch);
-static void playing_string_cleanup(struct descriptor_data *d, int action);
-static void exdesc_string_cleanup(struct descriptor_data *d, int action);
+static char *next_page(char *str, char_data *ch);
+static int count_pages(char *str, char_data *ch);
+static void playing_string_cleanup(descriptor_data *d, int action);
+static void exdesc_string_cleanup(descriptor_data *d, int action);
 
 /* Local (file scope) global variables */
 /* @deprecated string_fields appears to be no longer be used.
@@ -105,7 +105,7 @@ void parse_tab(char *str)
  * can use it to pass whatever else you may want through it.  The improved
  * editor patch when updated could use it to pass the old text buffer, for
  * instance. */
-void string_write(struct descriptor_data *d, char **writeto, size_t len, long mailto, void *data)
+void string_write(descriptor_data *d, char **writeto, size_t len, long mailto, void *data)
 {
   if (d->character && !IS_NPC(d->character))
     SET_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
@@ -122,7 +122,7 @@ void string_write(struct descriptor_data *d, char **writeto, size_t len, long ma
 
 /* Add user input to the 'current' string (as defined by d->str). This is still
  * overly complex. */
-void string_add(struct descriptor_data *d, char *str)
+void string_add(descriptor_data *d, char *str)
 {
   int action;
 
@@ -209,7 +209,7 @@ void string_add(struct descriptor_data *d, char *str)
     int i;
     struct {
       int mode;
-      void (*func)(struct descriptor_data *d, int action);
+      void (*func)(descriptor_data *d, int action);
     } cleanup_modes[] = {
       { CON_CEDIT  , cedit_string_cleanup },
       { CON_MEDIT  , medit_string_cleanup },
@@ -244,7 +244,7 @@ void string_add(struct descriptor_data *d, char *str)
      strcat(*d->str, "\r\n");
 }
 
-static void playing_string_cleanup(struct descriptor_data *d, int action)
+static void playing_string_cleanup(descriptor_data *d, int action)
 {
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
@@ -294,7 +294,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
   }
 }
 
-static void exdesc_string_cleanup(struct descriptor_data *d, int action)
+static void exdesc_string_cleanup(descriptor_data *d, int action)
 {
   if (action == STRINGADD_ABORT)
     write_to_output(d, "Description aborted.\r\n");
@@ -306,7 +306,7 @@ static void exdesc_string_cleanup(struct descriptor_data *d, int action)
 /* Modification of character skills. */
 ACMD(do_skillset)
 {
-  struct char_data *vict;
+  char_data *vict;
   char name[MAX_INPUT_LENGTH];
   char buf[MAX_INPUT_LENGTH], helpbuf[MAX_STRING_LENGTH];
   int skill, value, i, qend, pc, pl;
@@ -397,7 +397,7 @@ ACMD(do_skillset)
 
 /* By Michael Buselli. Traverse down the string until the begining of the next
  * page has been reached.  Return NULL if this is the last page of the string. */
-static char *next_page(char *str, struct char_data *ch)
+static char *next_page(char *str, char_data *ch)
 {
   int col = 1, line = 1, count, pw;
 
@@ -442,7 +442,7 @@ static char *next_page(char *str, struct char_data *ch)
 }
 
 /* Function that returns the number of pages in the string. */
-static int count_pages(char *str, struct char_data *ch)
+static int count_pages(char *str, char_data *ch)
 {
   int pages;
 
@@ -454,7 +454,7 @@ static int count_pages(char *str, struct char_data *ch)
 /* This function assigns all the pointers for showstr_vector for the
  * page_string function, after showstr_vector has been allocated and
  * showstr_count set. */
-void paginate_string(char *str, struct descriptor_data *d)
+void paginate_string(char *str, descriptor_data *d)
 {
   int i;
 
@@ -468,7 +468,7 @@ void paginate_string(char *str, struct descriptor_data *d)
 }
 
 /* The call that gets the paging ball rolling... */
-void page_string(struct descriptor_data *d, char *str, int keep_internal)
+void page_string(descriptor_data *d, char *str, int keep_internal)
 {
   char actbuf[MAX_INPUT_LENGTH] = "";
 
@@ -493,7 +493,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
 }
 
 /* The call that displays the next page. */
-void show_string(struct descriptor_data *d, char *input)
+void show_string(descriptor_data *d, char *input)
 {
   char buffer[MAX_STRING_LENGTH], buf[MAX_INPUT_LENGTH];
   int diff;

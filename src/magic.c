@@ -25,15 +25,15 @@
 
 
 /* local file scope function prototypes */
-static int mag_materials(struct char_data *ch, IDXTYPE item0, IDXTYPE item1, IDXTYPE item2, int extract, int verbose);
-static void perform_mag_groups(int level, struct char_data *ch, struct char_data *tch, int spellnum, int savetype);
+static int mag_materials(char_data *ch, IDXTYPE item0, IDXTYPE item1, IDXTYPE item2, int extract, int verbose);
+static void perform_mag_groups(int level, char_data *ch, char_data *tch, int spellnum, int savetype);
 
 
 /* Negative apply_saving_throw[] values make saving throws better! So do
  * negative modifiers.  Though people may be used to the reverse of that.
  * It's due to the code modifying the target saving throw instead of the
  * random number of the character as in some other systems. */
-int mag_savingthrow(struct char_data *ch, int type, int modifier)
+int mag_savingthrow(char_data *ch, int type, int modifier)
 {
   /* NPCs use warrior tables according to some book */
   int class_sav = CLASS_WARRIOR;
@@ -58,7 +58,7 @@ int mag_savingthrow(struct char_data *ch, int type, int modifier)
 void affect_update(void)
 {
   struct affected_type *af, *next;
-  struct char_data *i;
+  char_data *i;
 
   for (i = character_list; i; i = i->next)
     for (af = i->affected; af; af = next) {
@@ -92,15 +92,15 @@ void affect_update(void)
  * FALSE to send no in game messages from this function.
  * @retval int TRUE if ch has all materials to cast the spell, FALSE if not.
  */
-static int mag_materials(struct char_data *ch, IDXTYPE item0,
+static int mag_materials(char_data *ch, IDXTYPE item0,
     IDXTYPE item1, IDXTYPE item2, int extract, int verbose)
 {
   /* Begin Local variable definitions. */
   /*------------------------------------------------------------------------*/
   /* Used for object searches. */
-  struct obj_data *tobj = NULL;
+  obj_data *tobj = NULL;
   /* Points to found reagents. */
-  struct obj_data *obj0 = NULL, *obj1 = NULL, *obj2 = NULL;
+  obj_data *obj0 = NULL, *obj1 = NULL, *obj2 = NULL;
   /*------------------------------------------------------------------------*/
   /* End Local variable definitions. */
 
@@ -192,7 +192,7 @@ static int mag_materials(struct char_data *ch, IDXTYPE item0,
 /* Every spell that does damage comes through here.  This calculates the amount
  * of damage, adds in any modifiers, determines what the saves are, tests for
  * save and calls damage(). -1 = dead, otherwise the amount of damage done. */
-int mag_damage(int level, struct char_data *ch, struct char_data *victim,
+int mag_damage(int level, char_data *ch, char_data *victim,
 		     int spellnum, int savetype)
 {
   int dam = 0;
@@ -300,7 +300,7 @@ int mag_damage(int level, struct char_data *ch, struct char_data *victim,
  * affect_join(vict, aff, add_dur, avg_dur, add_mod, avg_mod) */
 #define MAX_SPELL_AFFECTS 5	/* change if more needed */
 
-void mag_affects(int level, struct char_data *ch, struct char_data *victim,
+void mag_affects(int level, char_data *ch, char_data *victim,
 		      int spellnum, int savetype)
 {
   struct affected_type af[MAX_SPELL_AFFECTS];
@@ -552,8 +552,8 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
 
 /* This function is used to provide services to mag_groups.  This function is
  * the one you should change to add new group spells. */
-static void perform_mag_groups(int level, struct char_data *ch,
-			struct char_data *tch, int spellnum, int savetype)
+static void perform_mag_groups(int level, char_data *ch,
+			char_data *tch, int spellnum, int savetype)
 {
   switch (spellnum) {
     case SPELL_GROUP_HEAL:
@@ -573,9 +573,9 @@ static void perform_mag_groups(int level, struct char_data *ch,
  * affect everyone grouped with the caster who is in the room, caster last. To
  * add new group spells, you shouldn't have to change anything in mag_groups.
  * Just add a new case to perform_mag_groups. */
-void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
+void mag_groups(int level, char_data *ch, int spellnum, int savetype)
 {
-  struct char_data *tch;
+  char_data *tch;
 
   if (ch == NULL)
     return;
@@ -583,7 +583,7 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
   if (!GROUP(ch))
     return;
     
-  while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
+  while ((tch = (char_data *) simple_list(GROUP(ch)->members)) != NULL) {
     if (IN_ROOM(tch) != IN_ROOM(ch))
       continue;
     if (tch == ch)
@@ -596,9 +596,9 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
 
 /* Mass spells affect every creature in the room except the caster. No spells
  * of this class currently implemented. */
-void mag_masses(int level, struct char_data *ch, int spellnum, int savetype)
+void mag_masses(int level, char_data *ch, int spellnum, int savetype)
 {
-  struct char_data *tch, *tch_next;
+  char_data *tch, *tch_next;
 
   for (tch = world[IN_ROOM(ch)].people; tch; tch = tch_next) {
     tch_next = tch->next_in_room;
@@ -614,9 +614,9 @@ void mag_masses(int level, struct char_data *ch, int spellnum, int savetype)
  * generally offensive spells.  This calls mag_damage to do the actual damage.
  * All spells listed here must also have a case in mag_damage() in order for
  * them to work. Area spells have limited targets within the room. */
-void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
+void mag_areas(int level, char_data *ch, int spellnum, int savetype)
 {
-  struct char_data *tch, *next_tch;
+  char_data *tch, *next_tch;
   const char *to_char = NULL, *to_room = NULL;
 
   if (ch == NULL)
@@ -702,11 +702,11 @@ static const char *mag_summon_fail_msgs[] = {
 #define OBJ_CLONE            161  /**< vnum for clone material. */
 #define MOB_ZOMBIE           11   /**< vnum for the zombie mob. */
 
-void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
+void mag_summons(int level, char_data *ch, obj_data *obj,
 		      int spellnum, int savetype)
 {
-  struct char_data *mob = NULL;
-  struct obj_data *tobj, *next_obj;
+  char_data *mob = NULL;
+  obj_data *tobj, *next_obj;
   int pfail = 0, msg = 0, fmsg = 0, num = 1, handle_corpse = FALSE, i;
   mob_vnum mob_num;
 
@@ -798,7 +798,7 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
 /*----------------------------------------------------------------------------*/
 
 
-void mag_points(int level, struct char_data *ch, struct char_data *victim,
+void mag_points(int level, char_data *ch, char_data *victim,
 		     int spellnum, int savetype)
 {
   int healing = 0, move = 0;
@@ -825,7 +825,7 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
   update_pos(victim);
 }
 
-void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
+void mag_unaffects(int level, char_data *ch, char_data *victim,
 		        int spellnum, int type)
 {
   int spell = 0, msg_not_affected = TRUE;
@@ -872,7 +872,7 @@ void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
     act(to_room, TRUE, victim, 0, ch, TO_ROOM);
 }
 
-void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
+void mag_alter_objs(int level, char_data *ch, obj_data *obj,
 		         int spellnum, int savetype)
 {
   const char *to_char = NULL, *to_room = NULL;
@@ -939,9 +939,9 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj,
     act(to_char, TRUE, ch, obj, 0, TO_ROOM);
 }
 
-void mag_creations(int level, struct char_data *ch, int spellnum)
+void mag_creations(int level, char_data *ch, int spellnum)
 {
-  struct obj_data *tobj;
+  obj_data *tobj;
   obj_vnum z;
 
   if (ch == NULL)
@@ -969,7 +969,7 @@ void mag_creations(int level, struct char_data *ch, int spellnum)
   load_otrigger(tobj);
 }
 
-void mag_rooms(int level, struct char_data *ch, int spellnum)
+void mag_rooms(int level, char_data *ch, int spellnum)
 {
   room_rnum rnum;
   int duration = 0;

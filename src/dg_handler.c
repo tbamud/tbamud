@@ -119,12 +119,12 @@ void extract_script(void *thing, int type)
 
   switch (type) {
     case MOB_TRIGGER:
-      mob = (struct char_data *)thing;
+      mob = (char_data *)thing;
       sc = SCRIPT(mob);
       SCRIPT(mob) = NULL;
       break;
     case OBJ_TRIGGER:
-      obj = (struct obj_data *)thing;
+      obj = (obj_data *)thing;
       sc = SCRIPT(obj);
       SCRIPT(obj) = NULL;
       break;
@@ -137,8 +137,8 @@ void extract_script(void *thing, int type)
 
 #if 1 /* debugging */
   {
-    struct char_data *i = character_list;
-    struct obj_data *j = object_list;
+    char_data *i = character_list;
+    obj_data *j = object_list;
     room_rnum k;
     if (sc) {
       for ( ; i ; i = i->next)
@@ -185,12 +185,12 @@ void free_proto_script(void *thing, int type)
 
   switch (type) {
     case MOB_TRIGGER:
-      mob = (struct char_data *)thing;
+      mob = (char_data *)thing;
       proto = mob->proto_script;
       mob->proto_script = NULL;
       break;
     case OBJ_TRIGGER:
-      obj = (struct obj_data *)thing;
+      obj = (obj_data *)thing;
       proto = obj->proto_script;
       obj->proto_script = NULL;
       break;
@@ -202,8 +202,8 @@ void free_proto_script(void *thing, int type)
   }
 #if 1 /* debugging */
   {
-    struct char_data *i = character_list;
-    struct obj_data *j = object_list;
+    char_data *i = character_list;
+    obj_data *j = object_list;
     room_rnum k;
     if (proto) {
       for ( ; i ; i = i->next)

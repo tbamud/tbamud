@@ -210,7 +210,7 @@ static int isname_obj(char *search, char *list)
 
 ASPELL(spell_locate_object)
 {
-  struct obj_data *i;
+  obj_data *i;
   char name[MAX_INPUT_LENGTH];
   int j;
 

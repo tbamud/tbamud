@@ -1343,7 +1343,7 @@ int thaco(int class_num, int level)
 /* Roll the 6 stats for a character... each stat is made of the sum of the best
  * 3 out of 4 rolls of a 6-sided die.  Each class then decides which priority
  * will be given for the best to worst stats. */
-void roll_real_abils(struct char_data *ch)
+void roll_real_abils(char_data *ch)
 {
   int i, j, k, temp;
   ubyte table[6];
@@ -1410,7 +1410,7 @@ void roll_real_abils(struct char_data *ch)
 }
 
 /* Some initializations for characters, including initial skills */
-void do_start(struct char_data *ch)
+void do_start(char_data *ch)
 {
   GET_LEVEL(ch) = 1;
   GET_EXP(ch) = 1;
@@ -1459,7 +1459,7 @@ void do_start(struct char_data *ch)
 
 /* This function controls the change to maxmove, maxmana, and maxhp for each
  * class every time they gain a level. */
-void advance_level(struct char_data *ch)
+void advance_level(char_data *ch)
 {
   int add_hp, add_mana = 0, add_move = 0, i;
 
@@ -1537,7 +1537,7 @@ int backstab_mult(int level)
 
 /* invalid_class is used by handler.c to determine if a piece of equipment is
  * usable by a particular class, based on the ITEM_ANTI_{class} bitvectors. */
-int invalid_class(struct char_data *ch, struct obj_data *obj)
+int invalid_class(char_data *ch, obj_data *obj)
 {
   if (OBJ_FLAGGED(obj, ITEM_ANTI_MAGIC_USER) && IS_MAGIC_USER(ch))
     return TRUE;

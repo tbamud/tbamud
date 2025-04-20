@@ -60,11 +60,11 @@ static int export_save_zone(zone_rnum zrnum);
 static int export_save_objects(zone_rnum zrnum);
 static int export_save_rooms(zone_rnum zrnum);
 static int export_save_triggers(zone_rnum zrnum);
-static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd);
+static int export_mobile_record(mob_vnum mvnum, char_data *mob, FILE *fd);
 static void export_script_save_to_disk(FILE *fp, void *item, int type);
 static int export_info_file(zone_rnum zrnum);
 
-int genolc_checkstring(struct descriptor_data *d, char *arg)
+int genolc_checkstring(descriptor_data *d, char *arg)
 {
   smash_tilde(arg);
   parse_at(arg);
@@ -589,7 +589,7 @@ static int export_save_mobiles(zone_rnum rznum)
   return TRUE;
 }
 
-static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
+static int export_mobile_record(mob_vnum mvnum, char_data *mob, FILE *fd)
 {
 
   char ldesc[MAX_STRING_LENGTH];
@@ -774,7 +774,7 @@ static int export_save_objects(zone_rnum zrnum)
   obj_vnum ovnum;
   int i;
   FILE *obj_file;
-  struct obj_data *obj;
+  obj_data *obj;
   struct extra_descr_data *ex_desc;
 
   if (!(obj_file = fopen("world/export/qq.obj", "w"))) {
@@ -996,9 +996,9 @@ static void export_script_save_to_disk(FILE *fp, void *item, int type)
   struct trig_proto_list *t;
 
   if (type==MOB_TRIGGER)
-    t = ((struct char_data *)item)->proto_script;
+    t = ((char_data *)item)->proto_script;
   else if (type==OBJ_TRIGGER)
-    t = ((struct obj_data *)item)->proto_script;
+    t = ((obj_data *)item)->proto_script;
   else if (type==WLD_TRIGGER)
     t = ((struct room_data *)item)->proto_script;
   else {

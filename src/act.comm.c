@@ -45,7 +45,7 @@ ACMD(do_say)
     send_to_char(ch, "Yes, but WHAT do you want to say?\r\n");
   else {
     char buf[MAX_INPUT_LENGTH + 14], *msg;
-    struct char_data *vict;
+    char_data *vict;
 
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
       parse_at(argument);
@@ -96,7 +96,7 @@ ACMD(do_gsay)
   }
 }
 
-static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg)
+static void perform_tell(char_data *ch, char_data *vict, char *arg)
 {
   char buf[MAX_STRING_LENGTH], *msg;
 
@@ -116,7 +116,7 @@ static void perform_tell(struct char_data *ch, struct char_data *vict, char *arg
     GET_LAST_TELL(vict) = GET_IDNUM(ch);
 }
 
-static int is_tell_ok(struct char_data *ch, struct char_data *vict)
+static int is_tell_ok(char_data *ch, char_data *vict)
 {
   if (!ch)
     log("SYSERR: is_tell_ok called with no characters");
@@ -145,7 +145,7 @@ static int is_tell_ok(struct char_data *ch, struct char_data *vict)
  * called frequently, and should IMHO be kept as tight as possible. */
 ACMD(do_tell)
 {
-  struct char_data *vict = NULL;
+  char_data *vict = NULL;
   char buf[MAX_INPUT_LENGTH + 25], buf2[MAX_INPUT_LENGTH]; // +25 to make room for constants
 
   half_chop(argument, buf, buf2);
@@ -197,7 +197,7 @@ ACMD(do_tell)
 
 ACMD(do_reply)
 {
-  struct char_data *tch = character_list;
+  char_data *tch = character_list;
 
   if (IS_NPC(ch))
     return;
@@ -231,7 +231,7 @@ ACMD(do_reply)
 ACMD(do_spec_comm)
 {
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   const char *action_sing, *action_plur, *action_others;
 
   switch (subcmd) {
@@ -281,7 +281,7 @@ ACMD(do_spec_comm)
 
 ACMD(do_write)
 {
-  struct obj_data *paper, *pen = NULL;
+  obj_data *paper, *pen = NULL;
   char *papername, *penname;
   char buf1[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
@@ -360,8 +360,8 @@ ACMD(do_write)
 
 ACMD(do_page)
 {
-  struct descriptor_data *d;
-  struct char_data *vict;
+  descriptor_data *d;
+  char_data *vict;
   char buf2[MAX_INPUT_LENGTH], arg[MAX_INPUT_LENGTH];
 
   half_chop(argument, arg, buf2);
@@ -397,7 +397,7 @@ ACMD(do_page)
 /* Generalized communication function by Fred C. Merkel (Torg). */
 ACMD(do_gen_comm)
 {
-  struct descriptor_data *i;
+  descriptor_data *i;
   char color_on[24];
   char buf1[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH + 50], *msg; // + 50 to make room for color codes
   bool emoting = FALSE;
@@ -560,7 +560,7 @@ ACMD(do_qcomm)
     send_to_char(ch, "%c%s?  Yes, fine, %s we must, but WHAT??\r\n", UPPER(*CMD_NAME), CMD_NAME + 1, CMD_NAME);
   else {
     char buf[MAX_STRING_LENGTH];
-    struct descriptor_data *i;
+    descriptor_data *i;
 
     if (CONFIG_SPECIAL_IN_COMM && legal_communication(argument))
       parse_at(argument);

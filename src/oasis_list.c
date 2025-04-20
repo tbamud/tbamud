@@ -32,18 +32,18 @@ struct obj_list_item {
   int val;
 };
 /* local functions */
-static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
-static void list_rooms(struct char_data *ch  , zone_rnum rnum, room_vnum vmin, room_vnum vmax);
-static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin , mob_vnum vmax );
-static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum vmax );
-static void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
-static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name);
+static void list_triggers(char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax);
+static void list_rooms(char_data *ch  , zone_rnum rnum, room_vnum vmin, room_vnum vmax);
+static void list_mobiles(char_data *ch, zone_rnum rnum, mob_vnum vmin , mob_vnum vmax );
+static void list_objects(char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum vmax );
+static void list_shops(char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
+static void list_zones(char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name);
 
-static void perform_mob_flag_list(struct char_data * ch, char *arg)
+static void perform_mob_flag_list(char_data * ch, char *arg)
 {
   int num, mob_flag, found = 0;
   size_t len;
-  struct char_data *mob;
+  char_data *mob;
   char buf[MAX_STRING_LENGTH];
 
   mob_flag = atoi(arg);
@@ -76,11 +76,11 @@ static void perform_mob_flag_list(struct char_data * ch, char *arg)
   return;
 }
 
-static void perform_mob_level_list(struct char_data * ch, char *arg)
+static void perform_mob_level_list(char_data * ch, char *arg)
 {
   int num, mob_level, found = 0;
   size_t len;
-  struct char_data *mob;
+  char_data *mob;
   char buf[MAX_STRING_LENGTH];
 
   mob_level = atoi(arg);
@@ -131,7 +131,7 @@ static void add_to_obj_list(struct obj_list_item *lst, int num_items, obj_vnum n
   }
 }
 
-static void perform_obj_type_list(struct char_data * ch, char *arg)
+static void perform_obj_type_list(char_data * ch, char *arg)
 {
   int num, itemtype, v1, v2, found = 0;
   size_t len = 0, tmp_len = 0;
@@ -246,7 +246,7 @@ static void perform_obj_type_list(struct char_data * ch, char *arg)
   page_string(ch->desc, buf, TRUE);
 }
 
-static void perform_obj_aff_list(struct char_data * ch, char *arg)
+static void perform_obj_aff_list(char_data * ch, char *arg)
 {
   int num, i, apply, v1 = 0, found = 0;
   size_t len = 0, tmp_len = 0;
@@ -331,7 +331,7 @@ static void perform_obj_aff_list(struct char_data * ch, char *arg)
   page_string(ch->desc, buf, TRUE);
 }
 
-static void perform_obj_name_list(struct char_data * ch, char *arg)
+static void perform_obj_name_list(char_data * ch, char *arg)
 {
   int num, found = 0;
   size_t len = 0, tmp_len = 0;
@@ -552,7 +552,7 @@ ACMD(do_oasis_links)
 
 /* Helper Functions */
 /* List all rooms in a zone. */
-static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
+static void list_rooms(char_data *ch, zone_rnum rnum, room_vnum vmin, room_vnum vmax)
 {
   room_rnum i;
   room_vnum bottom, top;
@@ -614,7 +614,7 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
 }
 
 /* List all mobiles in a zone. */
-static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum vmax)
+static void list_mobiles(char_data *ch, zone_rnum rnum, mob_vnum vmin, mob_vnum vmax)
 {
   mob_rnum i;
   mob_vnum bottom, top;
@@ -660,7 +660,7 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin, mo
 }
 
 /* List all objects in a zone. */
-static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, obj_vnum vmax)
+static void list_objects(char_data *ch, zone_rnum rnum, obj_vnum vmin, obj_vnum vmax)
 {
   obj_rnum i;
   obj_vnum bottom, top;
@@ -707,7 +707,7 @@ static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin, ob
 }
 
 /* List all shops in a zone. */
-static void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum vmax)
+static void list_shops(char_data *ch, zone_rnum rnum, shop_vnum vmin, shop_vnum vmax)
 {
   shop_rnum i;
   shop_vnum bottom, top;
@@ -751,7 +751,7 @@ static void list_shops(struct char_data *ch, zone_rnum rnum, shop_vnum vmin, sho
 }
 
 /* List all zones in the world (sort of like 'show zones'). */
-static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name)
+static void list_zones(char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name)
 {
   int counter = 0;
   size_t len = 0, tmp_len = 0;
@@ -804,7 +804,7 @@ static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zon
 }
 
 /* Prints all of the zone information for the selected zone. */
-void print_zone(struct char_data *ch, zone_vnum vnum)
+void print_zone(char_data *ch, zone_vnum vnum)
 {
   zone_rnum rnum;
   int size_rooms, size_objects, size_mobiles, size_quests, size_shops, size_trigs, i, largest_table;
@@ -899,7 +899,7 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
 }
 
 /* List code by Ronald Evers. */
-static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax)
+static void list_triggers(char_data *ch, zone_rnum rnum, trig_vnum vmin, trig_vnum vmax)
 {
   int i, bottom, top, counter = 0;
   char trgtypes[256];

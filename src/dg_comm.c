@@ -188,7 +188,7 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets)
 
 void send_to_zone(char *messg, zone_rnum zone)
 {
-  struct descriptor_data *i;
+  descriptor_data *i;
 
   if (!messg || !*messg)
     return;

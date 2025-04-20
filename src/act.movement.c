@@ -27,18 +27,18 @@
 
 /* local only functions */
 /* do_simple_move utility functions */
-static int has_boat(struct char_data *ch);
+static int has_boat(char_data *ch);
 /* do_gen_door utility functions */
-static int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname);
-static int has_key(struct char_data *ch, obj_vnum key);
-static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd);
-static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd);
+static int find_door(char_data *ch, const char *type, char *dir, const char *cmdname);
+static int has_key(char_data *ch, obj_vnum key);
+static void do_doorcmd(char_data *ch, obj_data *obj, int door, int scmd);
+static int ok_pick(char_data *ch, obj_vnum keynum, int pickproof, int scmd);
 
 
 /* simple function to determine if char can walk on water */
-static int has_boat(struct char_data *ch)
+static int has_boat(char_data *ch)
 {
-  struct obj_data *obj;
+  obj_data *obj;
   int i;
 
   if (GET_LEVEL(ch) > LVL_IMMORT)
@@ -61,9 +61,9 @@ static int has_boat(struct char_data *ch)
 }
 
 /* Simple function to determine if char can fly. */
-static int has_flight(struct char_data *ch)
+static int has_flight(char_data *ch)
 {
-  struct obj_data *obj;
+  obj_data *obj;
   int i;
 
   if (GET_LEVEL(ch) > LVL_IMMORT)
@@ -86,9 +86,9 @@ static int has_flight(struct char_data *ch)
 }
 
 /* Simple function to determine if char can scuba. */
-static int has_scuba(struct char_data *ch)
+static int has_scuba(char_data *ch)
 {
-  struct obj_data *obj;
+  obj_data *obj;
   int i;
 
   if (GET_LEVEL(ch) > LVL_IMMORT)
@@ -126,7 +126,7 @@ static int has_scuba(struct char_data *ch)
  * @param need_specials_check If TRUE will cause 
  * @retval int 1 for a successful move (ch is now in a new location)		
  * or 0 for a failed move (ch is still in the original location). */
-int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
+int do_simple_move(char_data *ch, int dir, int need_specials_check)
 {
   /* Begin Local variable definitions */
   /*---------------------------------------------------------------------*/
@@ -324,7 +324,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   return (1);
 }
 
-int perform_move(struct char_data *ch, int dir, int need_specials_check)
+int perform_move(char_data *ch, int dir, int need_specials_check)
 {
   room_rnum was_in;
   struct follow_type *k, *next;
@@ -368,7 +368,7 @@ ACMD(do_move)
   perform_move(ch, subcmd, 0);
 }
 
-static int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname)
+static int find_door(char_data *ch, const char *type, char *dir, const char *cmdname)
 {
   int door;
 
@@ -439,9 +439,9 @@ static int find_door(struct char_data *ch, const char *type, char *dir, const ch
   }
 }
 
-int has_key(struct char_data *ch, obj_vnum key)
+int has_key(char_data *ch, obj_vnum key)
 {
-  struct obj_data *o;
+  obj_data *o;
 
   if (key == NOTHING)
     return (0);
@@ -498,7 +498,7 @@ static const int flags_door[] =
 		(TOGGLE_BIT(GET_OBJ_VAL(obj, 1), CONT_LOCKED)) :\
 		(TOGGLE_BIT(EXITN(room, door)->exit_info, EX_LOCKED)))
 
-static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int scmd)
+static void do_doorcmd(char_data *ch, obj_data *obj, int door, int scmd)
 {
   char buf[MAX_STRING_LENGTH];
   size_t len;
@@ -569,7 +569,7 @@ static void do_doorcmd(struct char_data *ch, struct obj_data *obj, int door, int
                  scmd == SCMD_CLOSE ? "d" : "ed");
 }
 
-static int ok_pick(struct char_data *ch, obj_vnum keynum, int pickproof, int scmd)
+static int ok_pick(char_data *ch, obj_vnum keynum, int pickproof, int scmd)
 {
   int percent, skill_lvl;
 
@@ -610,8 +610,8 @@ ACMD(do_gen_door)
   int door = -1;
   obj_vnum keynum;
   char type[MAX_INPUT_LENGTH], dir[MAX_INPUT_LENGTH];
-  struct obj_data *obj = NULL;
-  struct char_data *victim = NULL;
+  obj_data *obj = NULL;
+  char_data *victim = NULL;
 
   skip_spaces(&argument);
   if (!*argument) {
@@ -747,8 +747,8 @@ ACMD(do_stand)
 ACMD(do_sit)
 {
   char arg[MAX_STRING_LENGTH];
-  struct obj_data *furniture;
-  struct char_data *tempch;
+  obj_data *furniture;
+  char_data *tempch;
   int found;
 
   one_argument(argument, arg);
@@ -873,7 +873,7 @@ ACMD(do_sleep)
 ACMD(do_wake)
 {
   char arg[MAX_INPUT_LENGTH];
-  struct char_data *vict;
+  char_data *vict;
   int self = 0;
 
   one_argument(argument, arg);
@@ -912,7 +912,7 @@ ACMD(do_wake)
 ACMD(do_follow)
 {
   char buf[MAX_INPUT_LENGTH];
-  struct char_data *leader;
+  char_data *leader;
 
   one_argument(argument, buf);
 

@@ -25,7 +25,7 @@
 
 /* local file scope function prototypes */
 static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int p6);
-static void check_idling(struct char_data *ch);
+static void check_idling(char_data *ch);
 
 
 /* When age < 15 return the value p0
@@ -58,7 +58,7 @@ static int graf(int grafage, int p0, int p1, int p2, int p3, int p4, int p5, int
  * that a character's age will now only affect the HMV gain per tick, and _not_
  * the HMV maximums. */
 /* manapoint gain pr. game hour */
-int mana_gain(struct char_data *ch)
+int mana_gain(char_data *ch)
 {
   int gain;
 
@@ -99,7 +99,7 @@ int mana_gain(struct char_data *ch)
 }
 
 /* Hitpoint gain pr. game hour */
-int hit_gain(struct char_data *ch)
+int hit_gain(char_data *ch)
 {
   int gain;
 
@@ -140,7 +140,7 @@ int hit_gain(struct char_data *ch)
 }
 
 /* move gain pr. game hour */
-int move_gain(struct char_data *ch)
+int move_gain(char_data *ch)
 {
   int gain;
 
@@ -175,7 +175,7 @@ int move_gain(struct char_data *ch)
   return (gain);
 }
 
-void set_title(struct char_data *ch, char *title)
+void set_title(char_data *ch, char *title)
 {
   if (GET_TITLE(ch) != NULL)
     free(GET_TITLE(ch));
@@ -220,7 +220,7 @@ void run_autowiz(void)
 #endif /* CIRCLE_UNIX || CIRCLE_WINDOWS */
 }
 
-void gain_exp(struct char_data *ch, int gain)
+void gain_exp(char_data *ch, int gain)
 {
   int is_altered = FALSE;
   int num_levels = 0;
@@ -267,7 +267,7 @@ void gain_exp(struct char_data *ch, int gain)
     run_autowiz();
   }
 
-void gain_exp_regardless(struct char_data *ch, int gain)
+void gain_exp_regardless(char_data *ch, int gain)
 {
   int is_altered = FALSE;
   int num_levels = 0;
@@ -302,7 +302,7 @@ void gain_exp_regardless(struct char_data *ch, int gain)
     run_autowiz();
 }
 
-void gain_condition(struct char_data *ch, int condition, int value)
+void gain_condition(char_data *ch, int condition, int value)
 {
   bool intoxicated;
 
@@ -336,7 +336,7 @@ void gain_condition(struct char_data *ch, int condition, int value)
 
 }
 
-static void check_idling(struct char_data *ch)
+static void check_idling(char_data *ch)
 {
   if (ch->char_specials.timer > CONFIG_IDLE_VOID) {
     if (GET_WAS_IN(ch) == NOWHERE && IN_ROOM(ch) != NOWHERE) {
@@ -378,8 +378,8 @@ static void check_idling(struct char_data *ch)
 /* Update PCs, NPCs, and objects */
 void point_update(void)
 {
-  struct char_data *i, *next_char;
-  struct obj_data *j, *next_thing, *jj, *next_thing2;
+  char_data *i, *next_char;
+  obj_data *j, *next_thing, *jj, *next_thing2;
 
   /* characters */
   for (i = character_list; i; i = next_char) {
@@ -471,7 +471,7 @@ void point_update(void)
 }
 
 /* Note: amt may be negative */
-int increase_gold(struct char_data *ch, int amt)
+int increase_gold(char_data *ch, int amt)
 {
   int curr_gold;
 
@@ -492,7 +492,7 @@ int increase_gold(struct char_data *ch, int amt)
   return (GET_GOLD(ch));
 }
 
-int decrease_gold(struct char_data *ch, int deduction)
+int decrease_gold(char_data *ch, int deduction)
 {
   int amt;
   amt = (deduction * -1);
@@ -500,7 +500,7 @@ int decrease_gold(struct char_data *ch, int deduction)
   return (GET_GOLD(ch));
 }
 
-int increase_bank(struct char_data *ch, int amt)
+int increase_bank(char_data *ch, int amt)
 {
   int curr_bank;
 
@@ -522,7 +522,7 @@ int increase_bank(struct char_data *ch, int amt)
   return (GET_BANK_GOLD(ch));
 }
 
-int decrease_bank(struct char_data *ch, int deduction)
+int decrease_bank(char_data *ch, int deduction)
 {
   int amt;
   amt = (deduction * -1);

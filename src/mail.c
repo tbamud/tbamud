@@ -21,9 +21,9 @@
 #include "modify.h"
 
 /* local (file scope) function prototypes */
-static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-static void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+static void postmaster_send_mail(char_data *ch, char_data *mailman, int cmd, char *arg);
+static void postmaster_check_mail(char_data *ch, char_data *mailman, int cmd, char *arg);
+static void postmaster_receive_mail(char_data *ch, char_data *mailman, int cmd, char *arg);
 static int mail_recip_ok(const char *name);
 static void write_mail_record(FILE *mail_file, struct mail_t *record);
 static void free_mail_record(struct mail_t *record);
@@ -257,19 +257,19 @@ SPECIAL(postmaster)
   }
 
   if (CMD_IS("mail")) {
-    postmaster_send_mail(ch, (struct char_data *)me, cmd, argument);
+    postmaster_send_mail(ch, (char_data *)me, cmd, argument);
     return (1);
   } else if (CMD_IS("check")) {
-    postmaster_check_mail(ch, (struct char_data *)me, cmd, argument);
+    postmaster_check_mail(ch, (char_data *)me, cmd, argument);
     return (1);
   } else if (CMD_IS("receive")) {
-    postmaster_receive_mail(ch, (struct char_data *)me, cmd, argument);
+    postmaster_receive_mail(ch, (char_data *)me, cmd, argument);
     return (1);
   } else
     return (0);
 }
 
-static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman,
+static void postmaster_send_mail(char_data *ch, char_data *mailman,
 			  int cmd, char *arg)
 {
   long recipient;
@@ -316,7 +316,7 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
   string_write(ch->desc, mailwrite, MAX_MAIL_SIZE, recipient, NULL);
 }
 
-static void postmaster_check_mail(struct char_data *ch, struct char_data *mailman,
+static void postmaster_check_mail(char_data *ch, char_data *mailman,
 			  int cmd, char *arg)
 {
   if (has_mail(GET_IDNUM(ch)))
@@ -325,11 +325,11 @@ static void postmaster_check_mail(struct char_data *ch, struct char_data *mailma
     act("$n tells you, 'Sorry, you don't have any mail waiting.'", FALSE, mailman, 0, ch, TO_VICT);
 }
 
-static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
+static void postmaster_receive_mail(char_data *ch, char_data *mailman,
 			  int cmd, char *arg)
 {
   char buf[256];
-  struct obj_data *obj;
+  obj_data *obj;
   int y;
 
   if (!has_mail(GET_IDNUM(ch))) {
@@ -364,9 +364,9 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
   }
 }
 
-void notify_if_playing(struct char_data *from, int recipient_id) 
+void notify_if_playing(char_data *from, int recipient_id)
 { 
-  struct descriptor_data *d; 
+  descriptor_data *d;
 
   for (d = descriptor_list; d; d = d->next) 
     if ((IS_PLAYING(d)) && (GET_IDNUM(d->character) == recipient_id) && (has_mail(GET_IDNUM(d->character)))) 

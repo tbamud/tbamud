@@ -51,10 +51,10 @@ struct board_info_type {
 #define MSG_LEVEL(i, j) (msg_index[i][j].level)
 
 SPECIAL(gen_board);
-int board_display_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
-int board_show_board(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
-int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
-int board_write_message(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
+int board_display_msg(int board_type, char_data *ch, char *arg, obj_data *board);
+int board_show_board(int board_type, char_data *ch, char *arg, obj_data *board);
+int board_remove_msg(int board_type, char_data *ch, char *arg, obj_data *board);
+int board_write_message(int board_type, char_data *ch, char *arg, obj_data *board);
 void board_save_board(int board_type);
 void board_load_board(int board_type);
 void board_clear_all(void);

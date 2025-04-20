@@ -21,11 +21,11 @@
 /* local functions */
 static void extract_mobile_all(mob_vnum vnum);
 
-int add_mobile(struct char_data *mob, mob_vnum vnum)
+int add_mobile(char_data *mob, mob_vnum vnum)
 {
   int rnum, i, found = FALSE, shop, cmd_no;
   zone_rnum zone;
-  struct char_data *live_mob;
+  char_data *live_mob;
 
   if ((rnum = real_mobile(vnum)) != NOBODY) {
     /* Copy over the mobile and free() the old strings. */
@@ -41,7 +41,7 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
     return rnum;
   }
 
-  RECREATE(mob_proto, struct char_data, top_of_mobt + 2);
+  RECREATE(mob_proto, char_data, top_of_mobt + 2);
   RECREATE(mob_index, struct index_data, top_of_mobt + 2);
   top_of_mobt++;
 
@@ -90,7 +90,7 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
   return found;
 }
 
-int copy_mobile(struct char_data *to, struct char_data *from)
+int copy_mobile(char_data *to, char_data *from)
 {
   free_mobile_strings(to);
   *to = *from;
@@ -101,7 +101,7 @@ int copy_mobile(struct char_data *to, struct char_data *from)
 
 static void extract_mobile_all(mob_vnum vnum)
 {
-  struct char_data *next, *ch;
+  char_data *next, *ch;
   int i;
 
   for (ch = character_list; ch; ch = next) {
@@ -140,8 +140,8 @@ static void extract_mobile_all(mob_vnum vnum)
 
 int delete_mobile(mob_rnum refpt)
 {
-  struct char_data *live_mob;
-  struct char_data *proto;
+  char_data *live_mob;
+  char_data *proto;
   int counter, cmd_no;
   mob_vnum vnum;
   zone_rnum zone;
@@ -169,7 +169,7 @@ int delete_mobile(mob_rnum refpt)
 
   top_of_mobt--;
   RECREATE(mob_index, struct index_data, top_of_mobt + 1);
-  RECREATE(mob_proto, struct char_data, top_of_mobt + 1);
+  RECREATE(mob_proto, char_data, top_of_mobt + 1);
 
   /* Update live mobile rnums. */
   for (live_mob = character_list; live_mob; live_mob = live_mob->next)
@@ -195,7 +195,7 @@ int delete_mobile(mob_rnum refpt)
   return refpt;
 }
 
-int copy_mobile_strings(struct char_data *t, struct char_data *f)
+int copy_mobile_strings(char_data *t, char_data *f)
 {
   if (f->player.name)
     t->player.name = strdup(f->player.name);
@@ -210,7 +210,7 @@ int copy_mobile_strings(struct char_data *t, struct char_data *f)
   return TRUE;
 }
 
-int update_mobile_strings(struct char_data *t, struct char_data *f)
+int update_mobile_strings(char_data *t, char_data *f)
 {
   if (f->player.name)
     t->player.name = f->player.name;
@@ -225,7 +225,7 @@ int update_mobile_strings(struct char_data *t, struct char_data *f)
   return TRUE;
 }
 
-int free_mobile_strings(struct char_data *mob)
+int free_mobile_strings(char_data *mob)
 {
   if (mob->player.name)
     free(mob->player.name);
@@ -242,7 +242,7 @@ int free_mobile_strings(struct char_data *mob)
 
 /* Free a mobile structure that has been edited. Take care of existing mobiles
  * and their mob_proto! */
-int free_mobile(struct char_data *mob)
+int free_mobile(char_data *mob)
 {
   mob_rnum i;
 
@@ -325,7 +325,7 @@ int save_mobiles(zone_rnum rznum)
   return written;
 }
 
-int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
+int write_mobile_espec(mob_vnum mvnum, char_data *mob, FILE *fd)
 {
   if (GET_ATTACK(mob) != 0)
     fprintf(fd, "BareHandAttack: %d\n", GET_ATTACK(mob));
@@ -357,7 +357,7 @@ int write_mobile_espec(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   return TRUE;
 }
 
-int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
+int write_mobile_record(mob_vnum mvnum, char_data *mob, FILE *fd)
 {
   char ldesc[MAX_STRING_LENGTH];
   char ddesc[MAX_STRING_LENGTH];
@@ -419,7 +419,7 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   return TRUE;
 }
 
-void check_mobile_strings(struct char_data *mob)
+void check_mobile_strings(char_data *mob)
 {
   mob_vnum mvnum = mob_index[mob->nr].vnum;
   check_mobile_string(mvnum, &GET_LDESC(mob), "long description");

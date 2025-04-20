@@ -22,10 +22,10 @@
 
 
 /* local functions */
-static int update_all_objects(struct obj_data *obj);
-static void copy_object_strings(struct obj_data *to, struct obj_data *from);
+static int update_all_objects(obj_data *obj);
+static void copy_object_strings(obj_data *to, obj_data *from);
 
-obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
+obj_rnum add_object(obj_data *newobj, obj_vnum ovnum)
 {
   int found = NOTHING;
   zone_rnum rznum = real_zone_by_thing(ovnum);
@@ -48,9 +48,9 @@ obj_rnum add_object(struct obj_data *newobj, obj_vnum ovnum)
  * and every object currently in the game to see which ones are pointing to
  * this prototype. If object is pointing to this prototype, then we need to
  * replace it with the new one. */
-static int update_all_objects(struct obj_data *refobj)
+static int update_all_objects(obj_data *refobj)
 {
-  struct obj_data *obj, swap;
+  obj_data *obj, swap;
   int count = 0;
 
   for (obj = object_list; obj; obj = obj->next) {
@@ -85,7 +85,7 @@ static int update_all_objects(struct obj_data *refobj)
 obj_rnum adjust_objects(obj_rnum refpt)
 {
   int shop, i, zone, cmd_no;
-  struct obj_data *obj;
+  obj_data *obj;
 
 #if CIRCLE_UNSIGNED_INDEX
   if (refpt == NOTHING || refpt > top_of_objt)
@@ -132,13 +132,13 @@ obj_rnum adjust_objects(obj_rnum refpt)
 /* Function handle the insertion of an object within the prototype framework.
  * Note that this does not adjust internal values of other objects, use
  * add_object() for that. */
-obj_rnum insert_object(struct obj_data *obj, obj_vnum ovnum)
+obj_rnum insert_object(obj_data *obj, obj_vnum ovnum)
 {
   obj_rnum i;
 
   top_of_objt++;
   RECREATE(obj_index, struct index_data, top_of_objt + 1);
-  RECREATE(obj_proto, struct obj_data, top_of_objt + 1);
+  RECREATE(obj_proto, obj_data, top_of_objt + 1);
 
   /* Start counting through both tables. */
   for (i = top_of_objt; i > 0; i--) {
@@ -156,7 +156,7 @@ obj_rnum insert_object(struct obj_data *obj, obj_vnum ovnum)
   return index_object(obj, ovnum, 0);
 }
 
-obj_rnum index_object(struct obj_data *obj, obj_vnum ovnum, obj_rnum ornum)
+obj_rnum index_object(obj_data *obj, obj_vnum ovnum, obj_rnum ornum)
 {
 #if CIRCLE_UNSIGNED_INDEX
   if (obj == NULL || ornum == NOTHING || ornum > top_of_objt)
@@ -184,7 +184,7 @@ int save_objects(zone_rnum zone_num)
   char pbuf1[MAX_STRING_LENGTH], pbuf2[MAX_STRING_LENGTH], pbuf3[MAX_STRING_LENGTH], pbuf4[MAX_STRING_LENGTH];
   int counter, counter2, realcounter;
   FILE *fp;
-  struct obj_data *obj;
+  obj_data *obj;
   struct extra_descr_data *ex_desc;
 
 #if CIRCLE_UNSIGNED_INDEX
@@ -299,7 +299,7 @@ int save_objects(zone_rnum zone_num)
 }
 
 /* Free all, unconditionally. */
-void free_object_strings(struct obj_data *obj)
+void free_object_strings(obj_data *obj)
 {
   if (obj->name)
     free(obj->name);
@@ -314,7 +314,7 @@ void free_object_strings(struct obj_data *obj)
 }
 
 /* For object instances that are not the prototype. */
-void free_object_strings_proto(struct obj_data *obj)
+void free_object_strings_proto(obj_data *obj)
 {
   int robj_num = GET_OBJ_RNUM(obj);
 
@@ -349,7 +349,7 @@ void free_object_strings_proto(struct obj_data *obj)
   }
 }
 
-static void copy_object_strings(struct obj_data *to, struct obj_data *from)
+static void copy_object_strings(obj_data *to, obj_data *from)
 {
   to->name = from->name ? strdup(from->name) : NULL;
   to->description = from->description ? strdup(from->description) : NULL;
@@ -362,18 +362,18 @@ static void copy_object_strings(struct obj_data *to, struct obj_data *from)
     to->ex_description = NULL;
 }
 
-int copy_object(struct obj_data *to, struct obj_data *from)
+int copy_object(obj_data *to, obj_data *from)
 {
   free_object_strings(to);
   return copy_object_main(to, from, TRUE);
 }
 
-int copy_object_preserve(struct obj_data *to, struct obj_data *from)
+int copy_object_preserve(obj_data *to, obj_data *from)
 {
   return copy_object_main(to, from, FALSE);
 }
 
-int copy_object_main(struct obj_data *to, struct obj_data *from, int free_object)
+int copy_object_main(obj_data *to, obj_data *from, int free_object)
 {
   *to = *from;
   copy_object_strings(to, from);
@@ -384,7 +384,7 @@ int delete_object(obj_rnum rnum)
 {
   obj_rnum i;
   zone_rnum zrnum;
-  struct obj_data *obj, *tmp, *next_obj;
+  obj_data *obj, *tmp, *next_obj;
   int shop, j, zone, cmd_no;
 
   if (rnum == NOTHING || rnum > top_of_objt)
@@ -404,7 +404,7 @@ int delete_object(obj_rnum rnum)
 
     /* extract_obj() will just axe contents. */
     if (tmp->contains) {
-      struct obj_data *this_content, *next_content;
+      obj_data *this_content, *next_content;
       for (this_content = tmp->contains; this_content; this_content = next_content) {
         next_content = this_content->next_content;
         if (IN_ROOM(tmp)) {
@@ -442,7 +442,7 @@ int delete_object(obj_rnum rnum)
 
   top_of_objt--;
   RECREATE(obj_index, struct index_data, top_of_objt + 1);
-  RECREATE(obj_proto, struct obj_data, top_of_objt + 1);
+  RECREATE(obj_proto, obj_data, top_of_objt + 1);
 
   /* Renumber notice boards. */
   for (j = 0; j < NUM_OF_BOARDS; j++)
@@ -487,7 +487,7 @@ int delete_object(obj_rnum rnum)
 }
 
 /* oset handling, this location should be temporary */
-bool oset_alias(struct obj_data *obj, char * argument)
+bool oset_alias(obj_data *obj, char * argument)
 { 
   static size_t max_len = 64;
   int i = GET_OBJ_RNUM(obj);
@@ -505,7 +505,7 @@ bool oset_alias(struct obj_data *obj, char * argument)
   return TRUE;
 }
 
-bool oset_apply(struct obj_data *obj, char * argument)
+bool oset_apply(obj_data *obj, char * argument)
 { 
   int i = 0, apply = -1, location = -1, mod = 0, empty = -1, value;
   char arg[MAX_INPUT_LENGTH];
@@ -558,7 +558,7 @@ bool oset_apply(struct obj_data *obj, char * argument)
   return TRUE;
 }
 
-bool oset_short_description(struct obj_data *obj, char * argument)
+bool oset_short_description(obj_data *obj, char * argument)
 { 
   static size_t max_len = 64;
   int i = GET_OBJ_RNUM(obj);
@@ -576,7 +576,7 @@ bool oset_short_description(struct obj_data *obj, char * argument)
   return TRUE;
 }
 
-bool oset_long_description(struct obj_data *obj, char * argument)
+bool oset_long_description(obj_data *obj, char * argument)
 {
   static size_t max_len = 128;
   int i = GET_OBJ_RNUM(obj);  

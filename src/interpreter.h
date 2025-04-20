@@ -21,7 +21,7 @@
 #define IS_MOVE(cmdnum) (complete_cmd_info[cmdnum].command_pointer == do_move)
 
 void sort_commands(void);
-void command_interpreter(struct char_data *ch, char *argument);
+void command_interpreter(char_data *ch, char *argument);
 int search_block(char *arg, const char **list, int exact);
 char *one_argument(char *argument, char *first_arg);
 char *one_word(char *argument, char *first_arg);
@@ -30,16 +30,16 @@ char *two_arguments(char *argument, char *first_arg, char *second_arg);
 int fill_word(char *argument);
 int reserved_word(char *argument);
 void half_chop(char *string, char *arg1, char *arg2);
-void nanny(struct descriptor_data *d, char *arg);
+void nanny(descriptor_data *d, char *arg);
 int is_abbrev(const char *arg1, const char *arg2);
 int is_number(const char *str);
 int find_command(const char *command);
 void skip_spaces(char **string);
 char *delete_doubledollar(char *string);
-int special(struct char_data *ch, int cmd, char *arg);
+int special(char_data *ch, int cmd, char *arg);
 void free_alias(struct alias_data *a);
-int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen);
-int enter_player_game (struct descriptor_data *d);
+int perform_alias(descriptor_data *d, char *orig, size_t maxlen);
+int enter_player_game (descriptor_data *d);
 /* ACMDs available through interpreter.c */
 ACMD(do_alias);
 
@@ -58,7 +58,7 @@ struct command_info {
     const char *sort_as;
     byte minimum_position;
     void (*command_pointer)
-    (struct char_data *ch, char *argument, int cmd, int subcmd);
+    (char_data *ch, char *argument, int cmd, int subcmd);
     sh_int minimum_level;
     int  subcmd;
 };
@@ -66,7 +66,7 @@ struct command_info {
 struct mob_script_command_t {
     const char *command_name;
     void (*command_pointer)
-    (struct char_data *ch, char *argument, int cmd, int subcmd);
+    (char_data *ch, char *argument, int cmd, int subcmd);
     int subcmd;
 };
 

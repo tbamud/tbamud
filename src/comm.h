@@ -17,13 +17,13 @@
 #define COPYOVER_FILE "copyover.dat"
 
 /* comm.c */
-void close_socket(struct descriptor_data *d);
+void close_socket(descriptor_data *d);
 void game_info(const char *messg, ...) __attribute__ ((format (printf, 1, 2)));
-size_t send_to_char(struct char_data *ch, const char *messg, ...) __attribute__((format (printf, 2, 3)));
+size_t send_to_char(const char_data *ch, const char *messg, ...) __attribute__((format (printf, 2, 3)));
 void send_to_all(const char *messg, ...) __attribute__ ((format (printf, 1, 2)));
 void send_to_room(room_rnum room, const char *messg, ...) __attribute__ ((format (printf, 2, 3)));
 void send_to_outdoor(const char *messg, ...) __attribute__ ((format (printf, 1, 2)));
-void send_to_group(struct char_data *ch, struct group_data *group, const char * msg, ...) __attribute__ ((format(printf, 3, 4)));
+void send_to_group(const char_data *ch, const struct group_data *group, const char * msg, ...) __attribute__ ((format(printf, 3, 4)));
 void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...) __attribute__ ((format (printf, 3, 4)));
 
 /* Act type settings and flags */
@@ -37,27 +37,27 @@ void send_to_range(room_vnum start, room_vnum finish, const char *messg, ...) __
 
 
 /* act functions */
-void perform_act(const char *orig, struct char_data *ch, struct obj_data *obj, void *vict_obj, struct char_data *to);
-char * act(const char *str, int hide_invisible, struct char_data *ch, struct obj_data *obj, void *vict_obj, int type);
+void perform_act(const char *orig, char_data *ch, obj_data *obj, void *vict_obj, char_data *to);
+char * act(const char *str, int hide_invisible, char_data *ch, obj_data *obj, void *vict_obj, int type);
 
 /* I/O functions */
 void write_to_q(const char *txt, struct txt_q *queue, int aliased);
-int write_to_descriptor(socket_t desc, const char *txt);
-size_t write_to_output(struct descriptor_data *d, const char *txt, ...) __attribute__ ((format (printf, 2, 3)));
-size_t vwrite_to_output(struct descriptor_data *d, const char *format, va_list args);
+ssize_t write_to_descriptor(socket_t desc, const char *txt);
+size_t write_to_output(descriptor_data *d, const char *txt, ...) __attribute__ ((format (printf, 2, 3)));
+size_t vwrite_to_output(descriptor_data *d, const char *format, va_list args);
 
 typedef RETSIGTYPE sigfunc(int);
 
-void echo_off(struct descriptor_data *d);
-void echo_on(struct descriptor_data *d);
+void echo_off(descriptor_data *d);
+void echo_on(descriptor_data *d);
 void game_loop(socket_t mother_desc);
-void heartbeat(int heart_pulse);
+void heartbeat(unsigned long heart_pulse);
 void copyover_recover(void);
 
 /** webster dictionary lookup */
 extern long last_webster_teller;
 
-extern struct descriptor_data *descriptor_list;
+extern descriptor_data *descriptor_list;
 extern int buf_largecount;
 extern int buf_overflows;
 extern int buf_switches;

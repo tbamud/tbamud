@@ -28,12 +28,12 @@ char cast_arg2[MAX_INPUT_LENGTH];
 const char *unused_spellname = "!UNUSED!"; /* So we can get &unused_spellname */
 
 /* Local (File Scope) Function Prototypes */
-static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
-    struct obj_data *tobj);
+static void say_spell(char_data *ch, int spellnum, char_data *tch,
+    obj_data *tobj);
 static void spello(int spl, const char *name, int max_mana, int min_mana,
     int mana_change, int minpos, int targets, int violent, int routines,
     const char *wearoff);
-static int mag_manacost(struct char_data *ch, int spellnum);
+static int mag_manacost(char_data *ch, int spellnum);
 
 /* Local (File Scope) Variables */
 struct syllable {
@@ -55,7 +55,7 @@ static struct syllable syls[] = { { " ", " " }, { "ar", "abra" },
         "t", "h" }, { "u", "e" }, { "v", "z" }, { "w", "x" }, { "x", "n" }, {
         "y", "l" }, { "z", "k" }, { "", "" } };
 
-static int mag_manacost(struct char_data *ch, int spellnum) {
+static int mag_manacost(char_data *ch, int spellnum) {
   return MAX(SINFO.mana_max - (SINFO.mana_change *
       (GET_LEVEL(ch) - SINFO.min_level[(int) GET_CLASS(ch)])),
   SINFO.mana_min);
@@ -92,13 +92,13 @@ static char *obfuscate_spell(const char *unobfuscated) {
   return obfuscated;
 }
 
-static void say_spell(struct char_data *ch, int spellnum, struct char_data *tch,
-    struct obj_data *tobj) {
+static void say_spell(char_data *ch, int spellnum, char_data *tch,
+    obj_data *tobj) {
   const char *format, *spell = skill_name(spellnum);
   char act_buf_original[256], act_buf_obfuscated[256], *obfuscated = obfuscate_spell(spell);
 
 
-  struct char_data *i;
+  char_data *i;
 
   if (tch != NULL && IN_ROOM(tch) == IN_ROOM(ch)) {
     if (tch == ch)
@@ -174,8 +174,8 @@ int find_skill_num(char *name) {
  * works -- all come through this function eventually. This is also the entry
  * point for non-spoken or unrestricted spells. Spellnum 0 is legal but silently
  * ignored here, to make callers simpler. */
-int call_magic(struct char_data *caster, struct char_data *cvict,
-    struct obj_data *ovict, int spellnum, int level, int casttype) {
+int call_magic(char_data *caster, char_data *cvict,
+    obj_data *ovict, int spellnum, int level, int casttype) {
   int savetype;
 
   if (spellnum < 1 || spellnum > TOP_SPELL_DEFINE)
@@ -304,11 +304,11 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
  * potion - [0] level	[1] spell num	[2] spell num	[3] spell num
  * Staves and wands will default to level 14 if the level is not specified; the
  * DikuMUD format did not specify staff and wand levels in the world files */
-void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument) {
+void mag_objectmagic(char_data *ch, obj_data *obj, char *argument) {
   char arg[MAX_INPUT_LENGTH];
   int i, k;
-  struct char_data *tch = NULL, *next_tch;
-  struct obj_data *tobj = NULL;
+  char_data *tch = NULL, *next_tch;
+  obj_data *tobj = NULL;
 
   one_argument(argument, arg);
 
@@ -448,8 +448,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
  * have the target char/obj and spell number.  It checks all restrictions,
  * prints the words, etc. Entry point for NPC casts.  Recommended entry point
  * for spells cast by NPCs via specprocs. */
-int cast_spell(struct char_data *ch, struct char_data *tch,
-    struct obj_data *tobj, int spellnum) {
+int cast_spell(char_data *ch, char_data *tch,
+    obj_data *tobj, int spellnum) {
   if (spellnum < 0 || spellnum > TOP_SPELL_DEFINE) {
     log("SYSERR: cast_spell trying to call spellnum %d/%d.", spellnum,
     TOP_SPELL_DEFINE);
@@ -503,8 +503,8 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
  * the spell can be cast, checks for sufficient mana and subtracts it, and
  * passes control to cast_spell(). */
 ACMD(do_cast) {
-  struct char_data *tch = NULL;
-  struct obj_data *tobj = NULL;
+  char_data *tch = NULL;
+  obj_data *tobj = NULL;
   char *s, *t;
   int number, mana, spellnum, i, target = 0;
 
