@@ -162,7 +162,9 @@ if (NOT HAVE_SOCKET)
 endif()
 
 # ========== Define generelt UNIX-system ==========
-set(CIRCLE_UNIX 1)
+if (UNIX)
+    set(CIRCLE_UNIX 1)
+endif()
 
 # ========== Generate conf.h ==========
 configure_file(
@@ -177,6 +179,7 @@ file(GLOB SRC_FILES src/*.c)
 add_executable(circle ${SRC_FILES})
 target_link_libraries(circle ${EXTRA_LIBS})
 
+add_subdirectory(src/util)
 
 if (MEMORY_DEBUG)
     message(STATUS "MEMORY_DEBUG is activated, setting up zmalloc")
