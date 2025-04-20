@@ -11,8 +11,6 @@ src/.accepted
 src/depend
 src/util/depend
 build/*
-!build/create_solution.bat
-!build/README.md
 
 # Do not commit files from players
 lib/plrfiles/A-E/*
