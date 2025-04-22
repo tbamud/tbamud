@@ -4,10 +4,10 @@
 #define _CONF_H_
 
 /* Define to empty if the keyword does not work.  */
-#cmakedefine const
+#define const @CONST_KEYWORD@
 
 /* Define if you don't have vprintf but do have _doprnt.  */
-#cmakedefine HAVE_DOPRNT TODO
+#cmakedefine HAVE_DOPRNT
 
 /* Define if you have <sys/wait.h> that is POSIX.1 compatible.  */
 #cmakedefine HAVE_SYS_WAIT_H
@@ -16,13 +16,13 @@
 #cmakedefine HAVE_VPRINTF
 
 /* Define to `int' if <sys/types.h> doesn't define.  */
-#cmakedefine pid_t
+#cmakedefine pid_t @pid_t@
 
 /* Define as the return type of signal handlers (int or void).  */
-#cmakedefine RETSIGTYPE
+#define RETSIGTYPE @RETSIGTYPE@
 
 /* Define to `unsigned' if <sys/types.h> doesn't define.  */
-#cmakedefine size_t
+#cmakedefine size_t @size_t@
 
 /* Define if you have the ANSI C header files.  */
 #cmakedefine STDC_HEADERS
@@ -43,10 +43,10 @@
 #cmakedefine HAVE_STRUCT_IN_ADDR
 
 /* Define to `int' if <sys/socket.h> doesn't define.  */
-#cmakedefine socklen_t
+#cmakedefine socklen_t @socklen_t@
 
 /* Define to `int' if <sys/types.h> doesn't define.  */
-#cmakedefine ssize_t
+#cmakedefine ssize_t @ssize_t@
 
 /* Define if you have the gettimeofday function.  */
 #cmakedefine HAVE_GETTIMEOFDAY
