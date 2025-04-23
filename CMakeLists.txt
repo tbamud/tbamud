@@ -41,6 +41,7 @@ check_include_file("string.h" HAVE_STRING_H)
 check_include_file("strings.h" HAVE_STRINGS_H)
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/select.h" HAVE_SYS_SELECT_H)
+check_include_file("sys/wait.h" HAVE_SYS_WAIT_H)
 check_include_file("sys/types.h" HAVE_SYS_TYPES_H)
 check_include_file("unistd.h" HAVE_UNISTD_H)
 check_include_file("memory.h" HAVE_MEMORY_H)
@@ -79,10 +80,16 @@ endmacro()
 
 # ========== Function checks ==========
 foreach(FUNC gettimeofday select snprintf strcasecmp strdup strerror
-        stricmp strlcpy strncasecmp strnicmp strstr vsnprintf
+        stricmp strlcpy strncasecmp strnicmp strstr vsnprintf vprintf
         inet_addr inet_aton)
-    check_function_exists(${FUNC} HAVE_${FUNC})
+    string(TOUPPER "${FUNC}" _upper_name)
+    check_function_exists(${FUNC} HAVE_${_upper_name})
 endforeach()
+
+if (NOT HAVE_VPRINTF)
+    check_function_exists(_doprnt HAVE_DOPRNT)
+endif()
+
 
 # ========== Type checks ==========
 check_type_size("pid_t" HAVE_PID_T)
@@ -245,18 +252,18 @@ check_c_source_compiles("
     int handler(int sig) { return 0; }
     int main() {
         signal(SIGINT, handler);
-        return 0;
+        return 1;
     }
-" SIGNAL_RETURNS_INT)
+" SIGNAL_RETURNS_INT FAIL_REGEX ".*incompatible pointer type.*")
 
 check_c_source_compiles("
     #include <signal.h>
     void handler(int sig) { }
     int main() {
         signal(SIGINT, handler);
-        return 0;
+        return 1;
     }
-" SIGNAL_RETURNS_VOID)
+" SIGNAL_RETURNS_VOID FAIL_REGEX ".*incompatible pointer type.*")
 
 if (SIGNAL_RETURNS_INT)
     message(STATUS "signal() returns int.")
@@ -352,7 +359,7 @@ int main() {
 ; return 0; }
     ")
     string(TOUPPER "${FUNCTION}" _upper_name)
-    check_c_source_compiles("${_code}" NEED_${_upper_name}_PROTO)
+    check_c_source_compiles("${_code}" NEED_${_upper_name}_PROTO FAIL_REGEX ".*incompatible pointer type.*")
     if (NEED_${_upper_name}_PROTO)
         message(STATUS "${FUNCTION}() has no prototype, NEED_${_upper_name}_PROTO set!")
     else()
