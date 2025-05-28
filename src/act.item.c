@@ -785,6 +785,9 @@ void name_from_drinkcon(struct obj_data *obj)
   if (!obj || (GET_OBJ_TYPE(obj) != ITEM_DRINKCON && GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN))
     return;
 
+  if (obj->name == obj_proto[GET_OBJ_RNUM(obj)].name)
+    obj->name = strdup(obj_proto[GET_OBJ_RNUM(obj)].name);
+
   liqname = drinknames[GET_OBJ_VAL(obj, 2)];
  
   remove_from_string(obj->name, liqname);
