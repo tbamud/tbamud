@@ -1768,7 +1768,26 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
                   Write(apDescriptor, RequestTTYPE);
             }
 
-            if ( PrefixString("Mudlet", pClientName) )
+            if ( PrefixString("MTTS ", pClientName) )
+            {
+               pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt = atoi(pClientName+5);
+
+               if (pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt & 1)
+               {
+                  pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt = 1;
+               }
+               if (pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt & 4)
+               {
+                  pProtocol->pVariables[eMSDP_UTF_8]->ValueInt = 1;
+               }
+               if (pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt & 8)
+               {
+                  pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt = 1;
+                  pProtocol->b256Support = eYES;
+               }
+
+            }
+            else if ( PrefixString("Mudlet", pClientName) )
             {
                /* Mudlet beta 15 and later supports 256 colours, but we can't 
                 * identify it from the mud - everything prior to 1.1 claims 
