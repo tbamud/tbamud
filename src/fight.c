@@ -620,6 +620,11 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
     dam = 0;
 
+  dam = damage_mtrigger(ch, victim, dam, attacktype);
+  if (dam == -1) {
+  	return (0);
+  }
+
   if (victim != ch) {
     /* Start the attacker fighting the victim */
     if (GET_POS(ch) > POS_STUNNED && (FIGHTING(ch) == NULL))
