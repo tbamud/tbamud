@@ -69,6 +69,8 @@ lib/plrobjs/index
 /lib/etc/last
 # or mail
 lib/etc/plrmail
+#or time
+lib/etc/time
 
 # test object files, etc
 src/test/depend
@@ -80,7 +82,7 @@ src/test/testfile
 .vscode
 .project
 .settings
-
+.idea
 .cproject
 
 # macOS generated files

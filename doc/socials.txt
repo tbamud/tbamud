@@ -110,12 +110,12 @@ is being specified. The command sort name is the shortest part of the command a
 player must type for it to match. The hide-flag can be either 0 or 1; if 1, the 
 social is hidden from OTHERS if they cannot see the character performing the 
 social. The action is not hidden from the VICTIM, even if s/he cannot see the 
-character performing the social, although in such cases the characterís name 
-will, of course, be replaced with ìsomeoneî. The min positions should be set to 
+character performing the social, although in such cases the character‚Äôs name 
+will, of course, be replaced with ‚Äúsomeone‚Äù. The min positions should be set to 
 dictate the minimum position a player must be in to target the victim and 
 perform the social. Min level allows you to further customize who can use what 
 socials.Where it makes sense to do so, text fields may be left empty. If 
-editing manually you should by put a ë#í in the first column on the line. Aedit 
+editing manually you should by put a ‚Äò#‚Äô in the first column on the line. Aedit 
 does this automatically.
 
 Examples:
