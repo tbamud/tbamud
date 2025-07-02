@@ -3,7 +3,7 @@ Builder Academy at telnet://tbamud.com:9091 or email rumble@tbamud.com -- Rumble
 
 tbaMUD File Manifest 
 
-The main ‘tbaMUD/’ directory has the following subdirectories and files: 
+The main â€˜tbaMUD/â€™ directory has the following subdirectories and files: 
 
 autorun - Shell script to run the MUD (./autorun &).
 FAQ - Frequently Aske Questions with answers.
@@ -16,7 +16,7 @@ lib/ - MUD data.
 log/ - System logs.
 src/ - Source code.
 
-The bin/directory contains only binaries: ‘circle’ (the main MUD) and its
+The bin/directory contains only binaries: â€˜circleâ€™ (the main MUD) and its
 utilities, which are described in utils.txt. 
 
 The doc/ directory has its own README file, describing the contents of each 
@@ -51,12 +51,12 @@ time - Where the MUD time is saved.
 
 The lib/misc/ directory contains the following files: 
 
-bugs - Bugs reported by players with the ’bug’ command.
-ideas - Ideas from players from ’idea’ command.
+bugs - Bugs reported by players with the â€™bugâ€™ command.
+ideas - Ideas from players from â€™ideaâ€™ command.
 messages - Spell and skill damage messages. 
 socials - Text file with text of the socials.
 socials.new - New format of socials you can edit via AEDIT.
-typos - Typos reported by players with the ’typo’ command.
+typos - Typos reported by players with the â€™typoâ€™ command.
 xnames - Text file of invalid names.
 
 The lib/plrobjs/ contains the following files and directories: 
@@ -80,18 +80,18 @@ zzz/
 The lib/text/ directory contains the following files: 
 
 background - Background story (for option 3 from main menu).
-credits - Text for ’credits’ command.
+credits - Text for â€™creditsâ€™ command.
 greetings - Greeting message.
-handbook - Text for Immortal Handbook (’handbook’ command).
-immlist - Text for ’immlist’ command.
+handbook - Text for Immortal Handbook (â€™handbookâ€™ command).
+immlist - Text for â€™immlistâ€™ command.
 imotd - Immortal MOTD --seen by immortals on login.
-info - Text for ’info’ command.
+info - Text for â€™infoâ€™ command.
 motd - MOTD --seen by mortals on login.
-news - Text for ’news’ command.
-policies - Text for ’policy’ command.
-wizlist - Text for ’wizlist’ command.
-/help/screen - Text for ’help’ command as a mortal with no arguments.
-/help/iscreen - Text for ’help’ command an an immortal with no arguments.
+news - Text for â€™newsâ€™ command.
+policies - Text for â€™policyâ€™ command.
+wizlist - Text for â€™wizlistâ€™ command.
+/help/screen - Text for â€™helpâ€™ command as a mortal with no arguments.
+/help/iscreen - Text for â€™helpâ€™ command an an immortal with no arguments.
 
 The lib/world/directory contains the following subdirectories: 
 
@@ -103,8 +103,8 @@ wld - Contains *.wld files (world files)
 zon - Contains *.zon files (zone files) 
 
 Each of the 6 subdirectories in the lib/world/ directory also contains two 
-additional files – one called ‘index’, which specifies which files in that 
-directory should be loaded when the MUD boots, and ‘index.mini’, which 
+additional files â€“ one called â€˜indexâ€™, which specifies which files in that 
+directory should be loaded when the MUD boots, and â€˜index.miniâ€™, which 
 specifies which files should be loaded if the MUD is booted with the -m 
 (mini-mud) option. 
 
@@ -128,6 +128,6 @@ trigger - Trigedit log messages.
 usage - Mud system usage (player load & memory usage info).
 
 The src/ directory contains all of the C and header files for the MUD, along 
-with a Makefile. The src/util/ directory contains source for tbaMUD’s utility 
+with a Makefile. The src/util/ directory contains source for tbaMUDâ€™s utility 
 programs. See admin.txt for more information on how to compile the MUD. See 
-utils.txt for more information on how to use tbaMUD’s utilities. 
+utils.txt for more information on how to use tbaMUDâ€™s utilities. 
