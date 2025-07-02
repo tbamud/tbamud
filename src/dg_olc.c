@@ -1091,70 +1091,85 @@ int format_script(struct descriptor_data *d)
   char nsc[MAX_CMD_LENGTH], *t, line[READ_SIZE];
   char *sc;
   size_t len = 0, nlen = 0, llen = 0;
-  int indent = 0, indent_next = FALSE, found_case = FALSE, i, line_num = 0, ret;
+  int indent = 0, indent_next = FALSE, line_num = 0, ret, i; // Declare i here
+  int block_stack[READ_SIZE]; // Stack to track block types
+  int stack_top = -1; // Initialize stack as empty
+  int switch_indent[READ_SIZE]; // Array to track switch indent levels
+  int switch_top = -1; // Index for switch_indent array
+  int case_indent = 0; // Track indent for case blocks
+  int in_switch = 0; // Flag to indicate if we're inside a switch block
 
   if (!d->str || !*d->str)
     return FALSE;
 
-  sc = strdup(*d->str); /* we work on a copy, because of strtok() */
+  sc = strdup(*d->str); // Work on a copy
   t = strtok(sc, "\n\r");
   *nsc = '\0';
 
   while (t) {
     line_num++;
     skip_spaces(&t);
-    if (!strn_cmp(t, "if ", 3) ||
-        !strn_cmp(t, "switch ", 7)) {
+
+    if (!strn_cmp(t, "switch ", 7)) {
       indent_next = TRUE;
-    } else if (!strn_cmp(t, "while ", 6)) {
-      found_case = TRUE;  /* so you can 'break' a loop without complains */
+      stack_top++;
+      block_stack[stack_top] = 's'; // 's' for switch
+      switch_top++;
+      switch_indent[switch_top] = indent; // Save current indent level for switch
+      in_switch++; // We're entering a switch block
+    } else if (!strn_cmp(t, "case", 4) || !strn_cmp(t, "default", 7)) {
+      if (in_switch > 0) { // If we're inside a switch
+        indent = switch_indent[switch_top] + 1; // Indent cases one level under switch
+        indent_next = TRUE; // Indent the next line after case
+        case_indent = indent; // Save indent for case block
+      }
+    } else if (!strn_cmp(t, "if ", 3) || !strn_cmp(t, "while ", 6)) {
       indent_next = TRUE;
-    } else if (!strn_cmp(t, "end", 3) ||
-               !strn_cmp(t, "done", 4)) {
-      if (!indent) {
+      stack_top++;
+      block_stack[stack_top] = 'l'; // 'l' for loop or conditional
+    } else if (!strn_cmp(t, "end", 3) || !strn_cmp(t, "done", 4)) {
+      if (stack_top < 0) {
         write_to_output(d, "Unmatched 'end' or 'done' (line %d)!\r\n", line_num);
         free(sc);
         return FALSE;
       }
-      indent--;
-      indent_next = FALSE;
+      if (block_stack[stack_top] == 's') {
+        indent = switch_indent[switch_top]; // Reset to the exact indent level where switch was declared
+        switch_top--; // Decrease switch stack if ending a switch
+        case_indent = 0; // Reset case indent since we're leaving the switch
+        in_switch--; // We're leaving a switch block
+      } else {
+        indent--; // For other blocks like while
+      }
+      stack_top--;
+      indent_next = FALSE; // Reset for next line
     } else if (!strn_cmp(t, "else", 4)) {
-      if (!indent) {
+      if (stack_top < 0 || block_stack[stack_top] != 'l') {
         write_to_output(d, "Unmatched 'else' (line %d)!\r\n", line_num);
         free(sc);
         return FALSE;
       }
-      indent--;
+      indent--; // Reduce indent for else, then increment for next statement
       indent_next = TRUE;
-    } else if (!strn_cmp(t, "case", 4) ||
-               !strn_cmp(t, "default", 7)) {
-      if (!indent) {
-        write_to_output(d, "Case/default outside switch (line %d)!\r\n", line_num);
-        free(sc);
-        return FALSE;
-      }
-      if (!found_case) /* so we don't indent multiple case statements without a break */
-        indent_next = TRUE;
-      found_case = TRUE;
     } else if (!strn_cmp(t, "break", 5)) {
-      if (!found_case || !indent ) {
-        write_to_output(d, "Break not in case (line %d)!\r\n", line_num);
+      if (stack_top < 0 || (block_stack[stack_top] != 's' && block_stack[stack_top] != 'l')) {
+        write_to_output(d, "Break not in case or loop (line %d)!\r\n", line_num);
         free(sc);
         return FALSE;
       }
-      found_case = FALSE;
-      indent--;
+      indent = case_indent + 1; // Indent break one level deeper than case
+      indent_next = FALSE; // Ensure no automatic increase for next line after break
     }
 
     *line = '\0';
-    for (nlen = 0, i = 0;i<indent;i++) {
+    for (nlen = 0, i = 0; i < indent; i++) {
       strncat(line, "  ", sizeof(line) - strlen(line) - 1);
       nlen += 2;
     }
 
     ret = snprintf(line + nlen, sizeof(line) - nlen, "%s\r\n", t);
     llen = (size_t)ret;
-    if (ret < 0 || llen + nlen + len > d->max_str - 1 ) {
+    if (ret < 0 || llen + nlen + len > d->max_str - 1) {
       write_to_output(d, "String too long, formatting aborted\r\n");
       free(sc);
       return FALSE;
@@ -1169,8 +1184,8 @@ int format_script(struct descriptor_data *d)
     t = strtok(NULL, "\n\r");
   }
 
-  if (indent)
-    write_to_output(d, "Unmatched if, while or switch ignored.\r\n");
+  if (stack_top >= 0)
+    write_to_output(d, "Unmatched block statements ignored.\r\n");
 
   free(*d->str);
   *d->str = strdup(nsc);

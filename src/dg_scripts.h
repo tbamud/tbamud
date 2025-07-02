@@ -71,6 +71,7 @@
 #define MTRIG_DOOR             (1 << 17)     /* door manipulated in room   */
 
 #define MTRIG_TIME             (1 << 19)     /* trigger based on game hour */
+#define MTRIG_DAMAGE           (1 << 20)     /* trigger whenever mob is damaged */
 
 /* obj trigger types */
 #define OTRIG_GLOBAL           (1 << 0)	     /* unused                     */
@@ -135,6 +136,7 @@ struct cmdlist_element {
   char *cmd;				/* one line of a trigger */
   struct cmdlist_element *original;
   struct cmdlist_element *next;
+  int loops;        /* for counting number of runs in a while loop */
 };
 
 struct trig_var_data {
@@ -263,6 +265,7 @@ void time_wtrigger(room_data *room);
 
 int login_wtrigger(struct room_data *room, char_data *actor);
 
+int damage_mtrigger(char_data *ch, char_data *victim, int dam, int attacktype);
 /* function prototypes from dg_scripts.c */
 ACMD(do_attach) ;
 ACMD(do_detach);
