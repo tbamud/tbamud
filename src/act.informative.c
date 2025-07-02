@@ -46,10 +46,10 @@ static void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mo
 static void show_obj_to_char(struct obj_data *obj, struct char_data *ch, int mode);
 static void show_obj_modifiers(struct obj_data *obj, struct char_data *ch);
 /* do_where utility functions */
-static void perform_immort_where(struct char_data *ch, char *arg);
+static void perform_immort_where(char_data *ch, const char *arg);
 static void perform_mortal_where(struct char_data *ch, char *arg);
-static void print_object_location(int num, struct obj_data *obj, struct char_data *ch, int recur);
-
+static size_t print_object_location(int num, const obj_data *obj, const char_data *ch,
+  char *buf, size_t len, size_t buf_size, int recur);
 /* Subcommands */
 /* For show_obj_to_char 'mode'.    /-- arbitrary */
 #define SHOW_OBJ_LONG     0
@@ -1603,41 +1603,71 @@ static void perform_mortal_where(struct char_data *ch, char *arg)
   }
 }
 
-static void print_object_location(int num, struct obj_data *obj, struct char_data *ch,
-                    int recur)
+static size_t print_object_location(const int num, const obj_data *obj, const char_data *ch, // NOLINT(*-no-recursion)
+                   char *buf, size_t len, const size_t buf_size, const int recur)
 {
+  size_t nlen = 0;
+
   if (num > 0)
-    send_to_char(ch, "O%3d. %-25s%s - ", num, obj->short_description, QNRM);
+    nlen = snprintf(buf + len, buf_size - len, "O%4d. %-25s%s - ", num, obj->short_description, QNRM);
   else
-    send_to_char(ch, "%33s", " - ");
+    nlen = snprintf(buf + len, buf_size - len, "%37s", " - ");
+
+  len += nlen;
+  nlen = 0;
+  if (len > buf_size)
+    return len; // let the caller know we overflowed
 
   if (SCRIPT(obj)) {
     if (!TRIGGERS(SCRIPT(obj))->next)
-      send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(obj))));
+      nlen = snprintf(buf + len, buf_size - len, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(obj))));
     else
-      send_to_char(ch, "[TRIGS] ");
+      nlen = snprintf(buf + len, buf_size - len, "[TRIGS] ");
   }
 
+  len += nlen;
+  if (len > buf_size)
+    return len; // let the caller know we overflowed
+
   if (IN_ROOM(obj) != NOWHERE)
-    send_to_char(ch, "[%5d] %s%s\r\n", GET_ROOM_VNUM(IN_ROOM(obj)), world[IN_ROOM(obj)].name, QNRM);
-  else if (obj->carried_by)
-    send_to_char(ch, "carried by %s%s\r\n", PERS(obj->carried_by, ch), QNRM);
-  else if (obj->worn_by)
-    send_to_char(ch, "worn by %s%s\r\n", PERS(obj->worn_by, ch), QNRM);
-  else if (obj->in_obj) {
-    send_to_char(ch, "inside %s%s%s\r\n", obj->in_obj->short_description, QNRM, (recur ? ", which is" : " "));
-    if (recur)
-      print_object_location(0, obj->in_obj, ch, recur);
+    nlen = snprintf(buf + len, buf_size - len, "[%5d] %s%s\r\n", GET_ROOM_VNUM(IN_ROOM(obj)), world[IN_ROOM(obj)].name, QNRM);
+  else if (obj->carried_by) {
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+      nlen = snprintf(buf + len, buf_size - len, "carried by [%5d] %s%s\r\n", GET_MOB_VNUM(obj->carried_by), PERS(obj->carried_by, ch), QNRM);
+    else
+      nlen = snprintf(buf + len, buf_size - len, "carried by %s%s\r\n", PERS(obj->carried_by, ch), QNRM);
+    if (PRF_FLAGGED(ch, PRF_VERBOSE) && IN_ROOM(obj->carried_by) != NOWHERE && len + nlen < buf_size)
+      nlen += snprintf(buf + len + nlen, buf_size - len - nlen, "%37sin [%5d] %s%s\r\n", " - ", GET_ROOM_VNUM(IN_ROOM(obj->carried_by)), world[IN_ROOM(obj->carried_by)].name, QNRM);
+  } else if (obj->worn_by) {
+    if (PRF_FLAGGED(ch, PRF_SHOWVNUMS))
+      nlen = snprintf(buf + len, buf_size - len, "worn by [%5d] %s%s\r\n", GET_MOB_VNUM(obj->worn_by), PERS(obj->worn_by, ch), QNRM);
+    else
+      nlen = snprintf(buf + len, buf_size - len, "worn by %s%s\r\n", PERS(obj->worn_by, ch), QNRM);
+    if (PRF_FLAGGED(ch, PRF_VERBOSE) && IN_ROOM(obj->worn_by) != NOWHERE && len + nlen < buf_size)
+      nlen += snprintf(buf + len + nlen, buf_size - len - nlen, "%37sin [%5d] %s%s\r\n", " - ", GET_ROOM_VNUM(IN_ROOM(obj->worn_by)), world[IN_ROOM(obj->worn_by)].name, QNRM);
+  } else if (obj->in_obj) {
+    nlen = snprintf(buf + len, buf_size - len, "inside %s%s%s\r\n", obj->in_obj->short_description, QNRM, (recur ? ", which is" : " "));
+    if (recur && nlen + len < buf_size) {
+      len += nlen;
+      nlen = 0;
+      len = print_object_location(0, obj->in_obj, ch, buf, len, buf_size, recur);
+    }
   } else
-    send_to_char(ch, "in an unknown location\r\n");
+    nlen = snprintf(buf + len, buf_size - len, "in an unknown location\r\n");
+  len += nlen;
+  return len;
 }
 
-static void perform_immort_where(struct char_data *ch, char *arg)
+static void perform_immort_where(char_data *ch, const char *arg)
 {
-  struct char_data *i;
-  struct obj_data *k;
+  char_data *i;
+  obj_data *k;
   struct descriptor_data *d;
-  int num = 0, found = 0;
+  int num = 0, found = FALSE; // "num" here needs to match the lookup in do_stat, so "stat 4.sword" finds the right one
+  const char *error_message = "\r\n***OVERFLOW***\r\n";
+  char buf[MAX_STRING_LENGTH];
+  size_t len = 0, nlen = 0;
+  const size_t buf_size = sizeof(buf) - strlen(error_message) - 1;
 
   if (!*arg) {
     send_to_char(ch, "Players  Room    Location                       Zone\r\n");
@@ -1658,26 +1688,64 @@ static void perform_immort_where(struct char_data *ch, char *arg)
         }
       }
   } else {
+    if (PRF_FLAGGED(ch, PRF_VERBOSE))
+      len = snprintf(buf, buf_size, "   ### Mob name                   - Room #  Room name\r\n");
+
     for (i = character_list; i; i = i->next)
       if (CAN_SEE(ch, i) && IN_ROOM(i) != NOWHERE && isname(arg, i->player.name)) {
         found = 1;
-        send_to_char(ch, "M%3d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
+        nlen = snprintf(buf + len, buf_size - len, "M%4d. %-25s%s - [%5d] %-25s%s", ++num, GET_NAME(i), QNRM,
                GET_ROOM_VNUM(IN_ROOM(i)), world[IN_ROOM(i)].name, QNRM);
+        if (len + nlen >= buf_size) {
+          len += snprintf(buf + len, buf_size - len, "%s", error_message);
+          break;
+        }
+        len += nlen;
         if (SCRIPT(i) && TRIGGERS(SCRIPT(i))) {
           if (!TRIGGERS(SCRIPT(i))->next)
-            send_to_char(ch, "[T%d] ", GET_TRIG_VNUM(TRIGGERS(SCRIPT(i))));
+            nlen = snprintf(buf + len, buf_size - len, "[T%d]", GET_TRIG_VNUM(TRIGGERS(SCRIPT(i))));
           else
-            send_to_char(ch, "[TRIGS] ");
+            nlen = snprintf(buf + len, buf_size - len, "[TRIGS]");
+
+          if (len + nlen >= buf_size) {
+            snprintf(buf + len, buf_size - len, "%s", error_message);
+            break;
+          }
+          len += nlen;
         }
-        send_to_char(ch, "%s\r\n", QNRM);
+        nlen = snprintf(buf + len, buf_size - len, "%s\r\n", QNRM);
+        if (len + nlen >= buf_size) {
+          snprintf(buf + len, buf_size - len, "%s", error_message);
+          break;
+        }
+        len += nlen;
       }
-    for (num = 0, k = object_list; k; k = k->next)
-      if (CAN_SEE_OBJ(ch, k) && isname(arg, k->name)) {
-        found = 1;
-        print_object_location(++num, k, ch, TRUE);
+
+    if (PRF_FLAGGED(ch, PRF_VERBOSE) && len < buf_size) {
+      nlen = snprintf(buf + len, buf_size - len, "  ###  Object name                 Location\r\n");
+      if (len + nlen >= buf_size) {
+        snprintf(buf + len, buf_size - len, "%s", error_message);
       }
+      len += nlen;
+    }
+
+    if (len < buf_size) {
+      for (k = object_list; k; k = k->next) {
+        if (CAN_SEE_OBJ(ch, k) && isname(arg, k->name)) {
+          found = 1;
+          len = print_object_location(++num, k, ch, buf, len, buf_size, TRUE);
+          if (len >= buf_size) {
+            snprintf(buf + buf_size, sizeof(buf) - buf_size, "%s", error_message);
+            break;
+          }
+        }
+      }
+    }
+
     if (!found)
       send_to_char(ch, "Couldn't find any such thing.\r\n");
+    else
+      page_string(ch->desc, buf, TRUE);
   }
 }
 
@@ -1937,6 +2005,9 @@ ACMD(do_toggle)
     {"pagelength", 0, 0, "\n", "\n"},
     {"screenwidth", 0, 0, "\n", "\n"},
     {"color", 0, 0, "\n", "\n"},
+    {"verbose", PRF_VERBOSE, LVL_IMMORT,
+      "You will no longer see verbose output in listings.\n",
+      "You will now see verbose listings.\n"},
     {"\n", 0, -1, "\n", "\n"} /* must be last */
   };
 
@@ -1971,7 +2042,8 @@ ACMD(do_toggle)
         "       NoHassle: %-3s    "
         "      Holylight: %-3s    "
         "      ShowVnums: %-3s\r\n"
-        "         Syslog: %-3s%s    ",
+        "         Syslog: %-3s    "
+        "        Verbose: %-3s%s  ",
 
         ONOFF(PRF_FLAGGED(ch, PRF_BUILDWALK)),
         ONOFF(PRF_FLAGGED(ch, PRF_NOWIZ)),
@@ -1980,6 +2052,7 @@ ACMD(do_toggle)
         ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
         ONOFF(PRF_FLAGGED(ch, PRF_SHOWVNUMS)),
         types[(PRF_FLAGGED(ch, PRF_LOG1) ? 1 : 0) + (PRF_FLAGGED(ch, PRF_LOG2) ? 2 : 0)],
+        ONOFF(PRF_FLAGGED(ch, PRF_VERBOSE)),
         GET_LEVEL(ch) == LVL_IMPL ? "" : "\r\n");
     }
     if (GET_LEVEL(ch) >= LVL_IMPL) {
