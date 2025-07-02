@@ -11,6 +11,8 @@ src/.accepted
 src/depend
 src/util/depend
 build/*
+!build/create_solution.bat
+!build/README.md
 
 # Do not commit files from players
 lib/plrfiles/A-E/*
@@ -69,7 +71,7 @@ lib/plrobjs/index
 /lib/etc/last
 # or mail
 lib/etc/plrmail
-#or time
+# or time
 lib/etc/time
 
 # test object files, etc
@@ -84,6 +86,7 @@ src/test/testfile
 .settings
 .idea
 .cproject
+
 
 # macOS generated files
 .DS_Store

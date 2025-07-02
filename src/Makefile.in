@@ -21,7 +21,7 @@ CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE)
 LIBS = @LIBS@ @CRYPTLIB@ @NETLIB@
 
 SRCFILES := $(shell ls *.c | sort)
-OBJFILES := $(patsubst %.c,%.o,$(SRCFILES))  
+OBJFILES := $(patsubst %.c,%.o,$(SRCFILES))
 
 default: all
 
