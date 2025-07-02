@@ -146,7 +146,8 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
                                "%sImmortal Preferences\r\n"
                                "%s1%s) Syslog Level %s[%s%8s%s]   %s4%s) ClsOLC    %s[%s%3s%s]\r\n"
                                "%s2%s) Show Flags   %s[%s%3s%s]        %s5%s) No WizNet %s[%s%3s%s]\r\n"
-                               "%s3%s) No Hassle    %s[%s%3s%s]        %s6%s) Holylight %s[%s%3s%s]\r\n",
+                               "%s3%s) No Hassle    %s[%s%3s%s]        %s6%s) Holylight %s[%s%3s%s]\r\n"
+                               "%s7%s) Verbose      %s[%s%3s%s]        ",
              CBWHT(d->character, C_NRM),
 /* Line 1 - syslog and clsolc */
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
@@ -159,12 +160,17 @@ static void prefedit_disp_main_menu(struct descriptor_data *d)
 /* Line 3 - nohassle and holylight */
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
              ONOFF(PREFEDIT_FLAGGED(PRF_NOHASSLE)), CCCYN(d->character, C_NRM), CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM),
-             CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(PREFEDIT_FLAGGED(PRF_HOLYLIGHT)), CCCYN(d->character, C_NRM)
+             CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM), ONOFF(PREFEDIT_FLAGGED(PRF_HOLYLIGHT)), CCCYN(d->character, C_NRM),
+/* Line 4 - Verbose */
+             CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
+             ONOFF(PREFEDIT_FLAGGED(PRF_VERBOSE)), CCCYN(d->character, C_NRM)
              );
     if (GET_LEVEL(PREFEDIT_GET_CHAR) == LVL_IMPL)
-      send_to_char(d->character, "%s7%s) Zone Resets  %s[%s%3s%s]\r\n",
+      send_to_char(d->character, "%s8%s) Zone Resets  %s[%s%3s%s]\r\n",
              CBYEL(d->character, C_NRM), CCNRM(d->character, C_NRM), CCCYN(d->character, C_NRM), CCYEL(d->character, C_NRM),
              ONOFF(PREFEDIT_FLAGGED(PRF_ZONERESETS)), CCCYN(d->character, C_NRM));
+    else
+      send_to_char(d->character, "\r\n");
   }
 
 /* Finishing Off */
@@ -505,7 +511,19 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
       }
       break;
 
-    case '7':
+  case '7':
+    if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMMORT)
+    {
+      send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
+      prefedit_disp_main_menu(d);
+    }
+    else
+    {
+      TOGGLE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_VERBOSE);
+    }
+    break;
+
+  case '8':
       if (GET_LEVEL(PREFEDIT_GET_CHAR) < LVL_IMPL)
       {
         send_to_char(d->character, "%sInvalid choice!%s\r\n", CBRED(d->character, C_NRM), CCNRM(d->character, C_NRM));
@@ -900,6 +918,10 @@ void prefedit_Restore_Defaults(struct descriptor_data *d)
   /* PRF_AUTODOOR   - On */
   if (PREFEDIT_FLAGGED(PRF_AUTODOOR))
      SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTODOOR);
+
+  /* PRF_VERBOSE    - On */
+  if (PREFEDIT_FLAGGED(PRF_VERBOSE))
+    SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_VERBOSE);
 
   /* Other (non-toggle) options */
   PREFEDIT_GET_WIMP_LEV   = 0;   /* Wimpy off by default */
