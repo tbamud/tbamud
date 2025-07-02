@@ -143,7 +143,7 @@ communication channels
 totally ignores all commands from that player until they are thawed. 
 --Even handier DELETE flag allows you to delete players on the fly. 
 --"set" command (mentioned above) allows you to freeze/unfreeze/ 
-delete/siteok/un-siteok players --even if they aren’t logged in! 
+delete/siteok/un-siteok players --even if they arenâ€™t logged in! 
 --Bad password attempts are written to the system log and saved; 
 if someone tries to hack your account, you see "4 LOGIN FAILURES 
 SINCE LAST SUCCESSFUL LOGIN" next time you log on. 

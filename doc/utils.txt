@@ -34,7 +34,7 @@ older CircleMUD data files to the versions used in CircleMUD v3, while others
 are used to convert currently existing files into different formats. 
 
 Overall, these utilities have been created in an attempt to make the tbaMUD 
-administrator’s life a bit easier, and to give the administrator some ideas of
+administratorâ€™s life a bit easier, and to give the administrator some ideas of
 further and more grandiose utilities to create. Some are no longer applicable
 but are retained as examples.
 
@@ -61,7 +61,7 @@ the second, and so forth.
 The split utility is designed to split large world files into smaller, zone 
 sized files that are easier to manage and maintain. The utility reads its input
 from the standard input and writes the output to files with names specified 
-within the larger world file. This is done by inserting ‘=filename’ into the 
+within the larger world file. This is done by inserting â€˜=filenameâ€™ into the 
 world file at the appropriate points, where filename is the name of the file 
 for the following section. 
 
@@ -141,8 +141,8 @@ The command line syntax for autowiz is as follows:
 autowiz <wizlev> <wizlistfile> <immlev> <immlistfile> [pid to signal] 
 
 where <wizlev> is equal to whatever LVL_GOD is set to in your tbaMUD server, 
-<wizlistfile> is the filename for the file containing the game’s Wizlist. 
-<immlev> should be set to your game’s LVL_IMMORT, while <immlistfile> 
+<wizlistfile> is the filename for the file containing the gameâ€™s Wizlist. 
+<immlev> should be set to your gameâ€™s LVL_IMMORT, while <immlistfile> 
 is the name of the Immlist file. 
 
 This utility must be recompiled if you make any changes to the player file structure. 
