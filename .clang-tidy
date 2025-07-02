@@ -1,0 +1,8 @@
+Checks: >
+  -*,
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*,
+  portability-*
+#WarningsAsErrors: '*'
+HeaderFilterRegex: 'src/.*'
