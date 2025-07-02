@@ -1372,15 +1372,21 @@ D5
 door~
 2 0 225
 E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+~
+E
 floor~
    The stone floor is the same shade of gray as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
 ~
-E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+S
+#391
+Bomber's Trial Vnum~
+You are in an unfinished room.
 ~
+3 0 0 0 0 0
 S
 #399
 Welcome to the Builder Academy~

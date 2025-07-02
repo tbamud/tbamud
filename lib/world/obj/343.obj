@@ -7,28 +7,6 @@ A granite fountain is gurgling here.~
 -1 2 15 0
 0 0 0 0 0
 E
-fountain basin~
-     The fountain is made of black granite and the water
-in it looks and inviting to drink. In the center is a
-'SPADE' shaped centerstone that seems to have writing
-all over it.
-~
-E
-spade~
-     The spade seems to be the headstone of the center of the
-fountain here. It is made of black stone and is an obelisk
-in shape. It has 'Directory' on the side of it and it also
-has a 'MAP' on the side of it as well.
-~
-E
-Map~
-Nth: God Hall - Nth, Inn, Post Office, Coffee Alcove
-Sth: God Hall - Sth, Bus. Ctr, Bldr Brd Rm, God Hall, Ext
-Est: God Hall - Est, Imm/Mrtl Brd Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
-Wst: God Hall - Wst, H.O.Jst/Chpl, Mtn Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
-Dwn: Midguaard
-~
-E
 Directory~
 ---------------------------------------------------------
 Immortal Name: ===== Room #  ======   Location: =======
@@ -56,6 +34,26 @@ Vatiken ------- 34339 -------- God Hall, Northwest
 Niamh ----------- 34351 ----------- God Hall, Southeast
 Fade ----------- 34337 ------------ God Hall, West
 Angela -------- 34636 --------God Hall, South Extension
+~
+E
+Map~
+Nth: God Hall - Nth, Inn, Post Office, Coffee Alcove
+Sth: God Hall - Sth, Bus. Ctr, Bldr Brd Rm, God Hall, Ext
+Est: God Hall - Est, Imm/Mrtl Brd Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
+Wst: God Hall - Wst, H.O.Jst/Chpl, Mtn Rm, Upr Imm Hall, Grd Lvl, God Hl - Ext
+Dwn: Midguaard
+~
+E
+spade~
+   The spade seems to be the headstone of the center of the fountain here.  It
+is made of black stone and is an obelisk in shape.  It has 'Directory' on the
+side of it and it also has a 'MAP' on the side of it as well.
+~
+E
+fountain basin~
+   The fountain is made of black granite and the water in it looks and inviting
+to drink.  In the center is a 'SPADE' shaped centerstone that seems to have
+writing all over it.
 ~
 #34301
 fouton~
@@ -287,8 +285,8 @@ A plush couch is here in front of a coffee table.~
 0 0 0 0 0
 E
 couch~
-     The couch is long, has a frame of oak wood and a long
-blue cushion. It happens to be a Futon (tm).
+   The couch is long, has a frame of oak wood and a long blue cushion.  It
+happens to be a Futon (tm).
 ~
 #34319
 LazyBoy recliner~
@@ -684,14 +682,14 @@ A toilet is here made of porclein.~
 1 0 0 0
 0 0 0 0 0
 E
-sign~
-   Be sure to Flush!
-~
-E
 toilet toidy throne~
    The toilet is made of white porcelien and it stands with a tank near the
 wall.  It has a wooden seat that is made of carved walnut and it has gold
 fixtures all around, which include the handles.
+~
+E
+sign~
+   Be sure to Flush!
 ~
 #34344
 sink~
@@ -702,14 +700,14 @@ A sink and long granite counter is here.~
 0 0 0 0
 0 0 0 0 0
 E
-counter~
-   The counters are made of granite and are immaculately carved with such
-precision into a smooth flowing shape and designs all over them.
-~
-E
 sink~
    The sink is clean and white, with a shiny chrome faucet system and drain in
 the bottom.
+~
+E
+counter~
+   The counters are made of granite and are immaculately carved with such
+precision into a smooth flowing shape and designs all over them.
 ~
 #34345
 tub clawtub~
@@ -720,15 +718,15 @@ An old fashioned claw tub and shower is here.~
 3 0 0 0
 0 0 0 0 0
 E
+tub~
+   The tub is made of iron and porcelin and it has claw feet in which it sits.
+It is quite large and deep holding several meters of water.
+~
+E
 shower~
    The shower is a gold tube and a nozzle that is located on one side of the tub
 and the water pours down over the person or persons.  The valve is located just
 above the fixture on the bottom of the tub that fills it.
-~
-E
-tub~
-   The tub is made of iron and porcelin and it has claw feet in which it sits.
-It is quite large and deep holding several meters of water.
 ~
 #34346
 bench~
@@ -752,15 +750,15 @@ A gurgling spring is here splashing into a golden basin.~
 -1 2 15 0
 0 0 0 0 0
 E
+spring~
+   The spring is just a free flowing stream of water that flows from the ground
+with a murmuring, gurgling sound.
+~
+E
 basin~
    The basin is made of gold and it holds the water as it splashes out from the
 spring from the ground.  When full it runs into what appears to be a channel
 leading to the lagoon.
-~
-E
-spring~
-   The spring is just a free flowing stream of water that flows from the ground
-with a murmuring, gurgling sound.
 ~
 #34348
 statue~
@@ -771,18 +769,18 @@ A guardian statue of Rumble is here next to a pedistal.~
 0 0 0 0
 0 0 0 31 0
 E
+pedistal~
+   The pedistal is made of rounded carved marble and it has unique designs,
+portraying extreme power.  The top of the pedistal is empty, but it seems that
+something should go there.
+~
+E
 statue Rumble rumble guardian~
    The statue is a guardian to this shrine, it depicts one of the immortals of
 TBA and his power and influence over all who worship here.  He stands clad as a
 Battle Mage, in flowing robes and carries a staff.  His hair is long and flowing
 as he seems to be raising the staff in battle.  You seem to feel at ease by this
 statue.
-~
-E
-pedistal~
-   The pedistal is made of rounded carved marble and it has unique designs,
-portraying extreme power.  The top of the pedistal is empty, but it seems that
-something should go there.
 ~
 #34349
 Opie~
@@ -793,17 +791,17 @@ A guardian statue of Opie is here.~
 0 0 0 0
 0 0 0 31 0
 E
+nametag~
+   The nametag reads Opie the Cunning and that is carved at the base of the
+statue near the foot of his statue.
+~
+E
 Opie Guardian~
    The statue is a guardian to this shine, it depicts one of the immortals of
 TBA and the influence of steath and cunning to all who worhip here.  He stands
 clad in carved battle armor of leather, a loose flowing shirt and a sash about
 his waist.  In his hand he carries a dagger that is thrust outward in a backstab
 motion.  You feel a strange surge of adventure looking at this statue.
-~
-E
-nametag~
-   The nametag reads Opie the Cunning and that is carved at the base of the
-statue near the foot of his statue.
 ~
 #34350
 Welcor~
@@ -814,16 +812,16 @@ A guardian statue of Welcor is here.~
 0 0 0 0
 0 0 0 31 0
 E
+nametag~
+   The nametag reads Welcor the Bishop and that is carved at the base of the
+statue near the foot of it.
+~
+E
 Welcor guardian~
    The statue is a guardian to this shine, it depicts one of the immortals of
 TBA and the influence of Justice to all who worship here.  He/She stands clad in
 a long flowing set of robes and he/she carries a warhammer in their hand.  The
 feeling of peace overwhelms the senses when you look at the statue that seems to
 be floating and glowing brightly.
-~
-E
-nametag~
-   The nametag reads Welcor the Bishop and that is carved at the base of the
-statue near the foot of it.
 ~
 $~

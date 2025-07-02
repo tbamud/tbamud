@@ -922,7 +922,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
       if (aff->bitvector[0] || aff->bitvector[1] || aff->bitvector[2] || aff->bitvector[3]) {
         if (aff->modifier)
           send_to_char(ch, ", ");
-        for (i=0; i<NUM_AFF_FLAGS; i++) {
+        for (i=1; i<NUM_AFF_FLAGS; i++) {
           if (IS_SET_AR(aff->bitvector, i)) {
             send_to_char(ch, "sets %s, ", affected_bits[i]);
           }

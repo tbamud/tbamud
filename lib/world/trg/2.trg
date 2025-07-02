@@ -127,6 +127,7 @@ Smelly Bum - M168~
 * By Rumble of The Builder Academy    tbamud.com 9091
 * A trig to let people smell the bum from 1 room away.
 * For the first move there is no from_room so set it.
+* Not working - something broke
 if !%from_room%
   eval from_room %self.room.vnum%
   global from_room
@@ -157,7 +158,6 @@ end
 *
 eval from_room %self.room.vnum%
 global from_room
-%echo% FROM:%from_room% TO:%inroom%
 ~
 #207
 Mob Blocks opening of chest~

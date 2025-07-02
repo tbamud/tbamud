@@ -268,7 +268,7 @@
 
 /* Affect bits: used in char_data.char_specials.saved.affected_by */
 /* WARNING: In the world files, NEVER set the bits marked "R" ("Reserved") */
-#define AFF_DONTUSE         0   /**< DON'T USE! */
+#define AFF_DONTUSE         0   /**< DON'T USE! This allows 0 to mean "no bits set" in the database */
 #define AFF_BLIND           1   /**< (R) Char is blind */
 #define AFF_INVISIBLE       2   /**< Char is invisible */
 #define AFF_DETECT_ALIGN    3   /**< Char is sensitive to align */
@@ -291,8 +291,8 @@
 #define AFF_HIDE           20   /**< Char is hidden */
 #define AFF_FREE           21   /**< Room for future expansion */
 #define AFF_CHARM          22   /**< Char is charmed */
-/** Total number of affect flags not including the don't use flag. */
-#define NUM_AFF_FLAGS   22
+/** Total number of affect flags */
+#define NUM_AFF_FLAGS   23
 
 /* Modes of connectedness: used by descriptor_data.state 		*/
 #define CON_PLAYING       0 /**< Playing - Nominal state 		*/
@@ -1276,7 +1276,7 @@ struct happyhour {
 struct recent_player
 {
    int    vnum;                   /* The ID number for this instance */
-   char   name[MAX_NAME_LENGTH];  /* The char name of the player     */
+   char   name[MAX_NAME_LENGTH+1];/* The char name of the player     */
    bool   new_player;             /* Is this a new player?           */
    bool   copyover_player;        /* Is this a player that was on during the last copyover? */
    time_t time;                   /* login time                      */

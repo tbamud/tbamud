@@ -2486,7 +2486,6 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
   char cmd[MAX_INPUT_LENGTH], *p;
   struct script_data *sc = 0;
   struct cmdlist_element *temp;
-  unsigned long loops = 0;
   void *go = NULL;
 
   void obj_command_interpreter(obj_data *obj, char *argument);
@@ -2578,8 +2577,8 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
       if (process_if(p + 6, go, sc, trig, type)) {
          temp->original = cl;
       } else {
+         cl->loops = 0;
          cl = temp;
-         loops = 0;
       }
     } else if (!strn_cmp("switch ", p, 7)) {
       cl = find_case(trig, cl, go, sc, type, p + 7);
@@ -2599,9 +2598,10 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
       if (cl->original && process_if(orig_cmd + 6, go, sc, trig,
           type)) {
         cl = cl->original;
-        loops++;
+        cl->loops++;
         GET_TRIG_LOOPS(trig)++;
-        if (loops == 30) {
+        if (cl->loops == 30) {
+          cl->loops = 0;
           process_wait(go, trig, type, "wait 1", cl);
            depth--;
           return ret_val;
@@ -2994,12 +2994,23 @@ void init_lookup_table(void)
   }
 }
 
-static struct char_data *find_char_by_uid_in_lookup_table(long uid)
+static inline struct lookup_table_t *get_bucket_head(long uid)
 {
   int bucket = (int) (uid & (BUCKET_COUNT - 1));
-  struct lookup_table_t *lt = &lookup_table[bucket];
+  return &lookup_table[bucket];
+}
+
+static inline struct lookup_table_t *find_element_by_uid_in_lookup_table(long uid)
+{
+  struct lookup_table_t *lt = get_bucket_head(uid);
 
   for (;lt && lt->uid != uid ; lt = lt->next) ;
+  return lt;
+}
+
+static struct char_data *find_char_by_uid_in_lookup_table(long uid)
+{
+  struct lookup_table_t *lt = find_element_by_uid_in_lookup_table(uid);
 
   if (lt)
     return (struct char_data *)(lt->c);
@@ -3010,10 +3021,7 @@ static struct char_data *find_char_by_uid_in_lookup_table(long uid)
 
 static struct obj_data *find_obj_by_uid_in_lookup_table(long uid)
 {
-  int bucket = (int) (uid & (BUCKET_COUNT - 1));
-  struct lookup_table_t *lt = &lookup_table[bucket];
-
-  for (;lt && lt->uid != uid ; lt = lt->next) ;
+  struct lookup_table_t *lt = find_element_by_uid_in_lookup_table(uid);
 
   if (lt)
     return (struct obj_data *)(lt->c);
@@ -3022,10 +3030,16 @@ static struct obj_data *find_obj_by_uid_in_lookup_table(long uid)
   return NULL;
 }
 
+int has_obj_by_uid_in_lookup_table(long uid)
+{
+  struct lookup_table_t *lt = find_element_by_uid_in_lookup_table(uid);
+
+  return lt != NULL;
+}
+
 void add_to_lookup_table(long uid, void *c)
 {
-  int bucket = (int) (uid & (BUCKET_COUNT - 1));
-  struct lookup_table_t *lt = &lookup_table[bucket];
+  struct lookup_table_t *lt = get_bucket_head(uid);
 
   if (lt && lt->uid == uid) {
    log("add_to_lookup updating existing value for uid=%ld (%p -> %p)", uid, lt->c, c);
@@ -3036,6 +3050,7 @@ void add_to_lookup_table(long uid, void *c)
   for (;lt && lt->next; lt = lt->next)
     if (lt->next->uid == uid) {
       log("add_to_lookup updating existing value for uid=%ld (%p -> %p)", uid, lt->next->c, c);
+      lt->next->c = c;
       return;
     }
 
@@ -3054,9 +3069,7 @@ void remove_from_lookup_table(long uid)
   if (uid == 0)
     return;
 
-  for (;lt;lt = lt->next)
-    if (lt->uid == uid)
-      flt = lt;
+  flt = find_element_by_uid_in_lookup_table(uid);
 
   if (flt) {
     for (lt = &lookup_table[bucket];lt->next != flt;lt = lt->next)

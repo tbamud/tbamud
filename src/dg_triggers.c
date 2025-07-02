@@ -462,6 +462,7 @@ int receive_mtrigger(char_data *ch, char_data *actor, obj_data *obj)
   trig_data *t;
   char buf[MAX_INPUT_LENGTH];
   int ret_val;
+  long object_id = obj_script_id(obj);
 
   if (!SCRIPT_CHECK(ch, MTRIG_RECEIVE) || AFF_FLAGGED(ch, AFF_CHARM))
     return 1;
@@ -471,9 +472,10 @@ int receive_mtrigger(char_data *ch, char_data *actor, obj_data *obj)
         (rand_number(1, 100) <= GET_TRIG_NARG(t))){
 
       ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
-      ADD_UID_VAR(buf, t, obj_script_id(obj), "object", 0);
+      ADD_UID_VAR(buf, t, object_id, "object", 0);
       ret_val = script_driver(&ch, t, MOB_TRIGGER, TRIG_NEW);
-      if (DEAD(actor) || DEAD(ch) || obj->carried_by != actor)
+      // check for purged item before dereferencing.
+      if (DEAD(actor) || DEAD(ch) || !has_obj_by_uid_in_lookup_table(object_id) || obj->carried_by != actor)
         return 0;
       else
         return ret_val;
@@ -1118,6 +1120,7 @@ int drop_wtrigger(obj_data *obj, char_data *actor)
   trig_data *t;
   char buf[MAX_INPUT_LENGTH];
   int ret_val;
+  long object_id = obj_script_id(obj);
 
   if (!actor || !SCRIPT_CHECK(&world[IN_ROOM(actor)], WTRIG_DROP))
     return 1;
@@ -1127,9 +1130,10 @@ int drop_wtrigger(obj_data *obj, char_data *actor)
     if (TRIGGER_CHECK(t, WTRIG_DROP) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
       ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
-      ADD_UID_VAR(buf, t, obj_script_id(obj), "object", 0);
+      ADD_UID_VAR(buf, t, object_id, "object", 0);
       ret_val = script_driver(&room, t, WLD_TRIGGER, TRIG_NEW);
-      if (obj->carried_by != actor)
+      // check for purged object before dereferencing.
+      if (!has_obj_by_uid_in_lookup_table(object_id) || obj->carried_by != actor)
         return 0;
       else
         return ret_val;

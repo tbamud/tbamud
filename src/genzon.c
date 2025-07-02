@@ -268,7 +268,7 @@ void create_world_index(int znum, const char *type)
   while (get_line(oldfile, buf)) {
     if (*buf == '$') {
       /* The following used to add a blank line, thanks to Brian Taylor for the fix. */
-      fprintf(newfile, "%s", (!found ? strncat(buf1, "\n$\n", sizeof(buf1)-1) : "$\n"));
+      fprintf(newfile, "%s", (!found ? strncat(buf1, "\n$\n", sizeof(buf1) - strlen(buf1) - 1) : "$\n"));
       break;
     } else if (!found) {
       sscanf(buf, "%d", &num);

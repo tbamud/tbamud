@@ -52,11 +52,12 @@ static void wear_message(struct char_data *ch, struct obj_data *obj, int where);
 
 static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont)
 {
+  long object_id = obj_script_id(obj);
 
   if (!drop_otrigger(obj, ch))
     return;
 
-  if (!obj) /* object might be extracted by drop_otrigger */
+  if (!has_obj_by_uid_in_lookup_table(object_id)) /* object might be extracted by drop_otrigger */
     return;
 
   if ((GET_OBJ_VAL(cont, 0) > 0) &&
@@ -409,24 +410,27 @@ static void perform_drop_gold(struct char_data *ch, int amount, byte mode, room_
       WAIT_STATE(ch, PULSE_VIOLENCE); /* to prevent coin-bombing */
       obj = create_money(amount);
       if (mode == SCMD_DONATE) {
-	send_to_char(ch, "You throw some gold into the air where it disappears in a puff of smoke!\r\n");
-	act("$n throws some gold into the air where it disappears in a puff of smoke!",
-	    FALSE, ch, 0, 0, TO_ROOM);
-	obj_to_room(obj, RDR);
-	act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
+	      send_to_char(ch, "You throw some gold into the air where it disappears in a puff of smoke!\r\n");
+	      act("$n throws some gold into the air where it disappears in a puff of smoke!",
+	          FALSE, ch, 0, 0, TO_ROOM);
+	      obj_to_room(obj, RDR);
+	      act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
       } else {
         char buf[MAX_STRING_LENGTH];
+        long object_id = obj_script_id(obj);
 
         if (!drop_wtrigger(obj, ch)) {
-          extract_obj(obj);
+          if (has_obj_by_uid_in_lookup_table(object_id))
+            extract_obj(obj);
+
           return;
         }
 
-	snprintf(buf, sizeof(buf), "$n drops %s.", money_desc(amount));
-	act(buf, TRUE, ch, 0, 0, TO_ROOM);
+	      snprintf(buf, sizeof(buf), "$n drops %s.", money_desc(amount));
+	      act(buf, TRUE, ch, 0, 0, TO_ROOM);
 
-	send_to_char(ch, "You drop some gold.\r\n");
-	obj_to_room(obj, IN_ROOM(ch));
+	      send_to_char(ch, "You drop some gold.\r\n");
+	      obj_to_room(obj, IN_ROOM(ch));
       }
     } else {
       char buf[MAX_STRING_LENGTH];
@@ -447,12 +451,19 @@ static int perform_drop(struct char_data *ch, struct obj_data *obj,
 {
   char buf[MAX_STRING_LENGTH];
   int value;
+  long object_id = obj_script_id(obj);
 
   if (!drop_otrigger(obj, ch))
     return 0;
 
+  if (!has_obj_by_uid_in_lookup_table(object_id))
+    return 0; // item was extracted by script
+
   if ((mode == SCMD_DROP) && !drop_wtrigger(obj, ch))
     return 0;
+
+  if (!has_obj_by_uid_in_lookup_table(object_id))
+    return 0; // item was extracted by script
 
   if (OBJ_FLAGGED(obj, ITEM_NODROP) && !PRF_FLAGGED(ch, PRF_NOHASSLE)) {
     snprintf(buf, sizeof(buf), "You can't %s $p, it must be CURSED!", sname);
@@ -768,45 +779,22 @@ void weight_change_object(struct obj_data *obj, int weight)
 
 void name_from_drinkcon(struct obj_data *obj)
 {
-  char *new_name, *cur_name, *next;
   const char *liqname;
-  int liqlen, cpylen;
+  char *new_name;
 
   if (!obj || (GET_OBJ_TYPE(obj) != ITEM_DRINKCON && GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN))
     return;
 
+  if (obj->name == obj_proto[GET_OBJ_RNUM(obj)].name)
+    obj->name = strdup(obj_proto[GET_OBJ_RNUM(obj)].name);
+
   liqname = drinknames[GET_OBJ_VAL(obj, 2)];
-  if (!isname(liqname, obj->name)) {
-    log("SYSERR: Can't remove liquid '%s' from '%s' (%d) item.", liqname, obj->name, obj->item_number);
-    /* SYSERR_DESC: From name_from_drinkcon(), this error comes about if the
-     * object noted (by keywords and item vnum) does not contain the liquid
-     * string being searched for. */
-    return;
-  }
-
-  liqlen = strlen(liqname);
-  CREATE(new_name, char, strlen(obj->name) - strlen(liqname)); /* +1 for NUL, -1 for space */
-
-  for (cur_name = obj->name; cur_name; cur_name = next) {
-    if (*cur_name == ' ')
-      cur_name++;
-
-    if ((next = strchr(cur_name, ' ')))
-      cpylen = next - cur_name;
-    else
-      cpylen = strlen(cur_name);
-
-    if (!strn_cmp(cur_name, liqname, liqlen))
-      continue;
-
-    if (*new_name)
-      strcat(new_name, " "); /* strcat: OK (size precalculated) */
-    strncat(new_name, cur_name, cpylen); /* strncat: OK (size precalculated) */
-  }
-
-  if (GET_OBJ_RNUM(obj) == NOTHING || obj->name != obj_proto[GET_OBJ_RNUM(obj)].name)
-    free(obj->name);
+ 
+  remove_from_string(obj->name, liqname);
+  new_name = right_trim_whitespace(obj->name);
+  free(obj->name);
   obj->name = new_name;
+ 
 }
 
 void name_to_drinkcon(struct obj_data *obj, int type)

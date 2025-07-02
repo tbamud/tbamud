@@ -65,6 +65,7 @@ D1
 ~
 0 0 4
 S
+T 56
 #4
 The Beginning~
    By simply following the different halls new builders will be taught the
@@ -135,7 +136,7 @@ HELP BREATHE@n
 D0
 ~
 ~
-0 0 24
+0 0 -1
 D1
 ~
 ~
@@ -143,7 +144,7 @@ D1
 D2
 ~
 ~
-0 0 25
+0 0 -1
 D3
 ~
 ~
@@ -151,7 +152,7 @@ D3
 D4
 ~
 ~
-0 0 26
+0 0 -1
 S
 #7
 Writing Good Descriptions~
@@ -215,7 +216,7 @@ D3
 D4
 ~
 ~
-0 0 27
+0 0 -1
 S
 #9
 How to Use Oedit~
@@ -570,6 +571,7 @@ John Stuart Mill
 ~
 0 8 0 0 0 0
 S
+T 308
 #34
 Pool of Images~
    A broad mosaic walkway wraps around the natural hotsprings in this cavernous
@@ -775,14 +777,14 @@ D2
 ~
 0 0 98
 E
+sky winds~
+   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
+~
+E
 floor~
    The stone floor is the same shade of gray as the sky and is completely plain
 and unscratched. It is probably too hard for anything to leave as much as a
 scratch on it.
-~
-E
-sky winds~
-   Cold winds plunge ceaselessly at you from the dark, cloudless sky.
 ~
 S
 $~

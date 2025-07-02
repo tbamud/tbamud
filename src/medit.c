@@ -396,8 +396,8 @@ static void medit_disp_aff_flags(struct descriptor_data *d)
 
   get_char_colors(d->character);
   clear_screen(d);
-  /* +1 since AFF_FLAGS don't start at 0. */
-  column_list(d->character, 0, affected_bits + 1, NUM_AFF_FLAGS, TRUE);
+  /* +1/-1 antics needed because AFF_FLAGS doesn't start at 0. */
+  column_list(d->character, 0, affected_bits + 1, NUM_AFF_FLAGS - 1, TRUE);
   sprintbitarray(AFF_FLAGS(OLC_MOB(d)), affected_bits, AF_ARRAY_MAX, flags);
   write_to_output(d, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ",
                           cyn, flags, nrm);
@@ -577,8 +577,8 @@ void medit_parse(struct descriptor_data *d, char *arg)
     case 'q':
     case 'Q':
       if (OLC_VAL(d)) {	/* Anything been changed? */
-	write_to_output(d, "Do you wish to save your changes? : ");
-	OLC_MODE(d) = MEDIT_CONFIRM_SAVESTRING;
+	      write_to_output(d, "Do you wish to save your changes? : ");
+	      OLC_MODE(d) = MEDIT_CONFIRM_SAVESTRING;
       } else
 	cleanup_olc(d, CLEANUP_ALL);
       return;
@@ -603,8 +603,8 @@ void medit_parse(struct descriptor_data *d, char *arg)
       send_editor_help(d);
       write_to_output(d, "Enter mob description:\r\n\r\n");
       if (OLC_MOB(d)->player.description) {
-	write_to_output(d, "%s", OLC_MOB(d)->player.description);
-	oldtext = strdup(OLC_MOB(d)->player.description);
+	      write_to_output(d, "%s", OLC_MOB(d)->player.description);
+	      oldtext = strdup(OLC_MOB(d)->player.description);
       }
       string_write(d, &OLC_MOB(d)->player.description, MAX_MOB_DESC, 0, oldtext);
       OLC_VAL(d) = 1;
@@ -898,7 +898,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
   case MEDIT_AFF_FLAGS:
     if ((i = atoi(arg)) <= 0)
       break;
-    else if (i <= NUM_AFF_FLAGS)
+    else if (i < NUM_AFF_FLAGS)
       TOGGLE_BIT_AR(AFF_FLAGS(OLC_MOB(d)), i);
 
     /* Remove unwanted bits right away. */
