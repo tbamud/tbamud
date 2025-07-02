@@ -24,7 +24,7 @@ if %actor.is_pc%
       say I believe the wellmaster should have something of clay that will work as a container.
     end
   else
-    say Good day %actor.name%. 
+    say Good day %actor.name%.
     wait 1 sec
     emote looks around suspiciously.
     wait 1 sec
@@ -35,7 +35,7 @@ if %actor.is_pc%
     say people aren't very friendly towards me since the last fire.
     emote looks down into the cauldron lost in thought with a grimace on her face.
     wait 3 sec
-    say But I have perfected it this time, don't listen to what they say. 
+    say But I have perfected it this time, don't listen to what they say.
     wait 1 sec
     say Bring me some Naphthalene, Palmitite and a proper container. I will give you a sampling of my liquid fire as payment.
     set 3_napalm_search 1
@@ -212,21 +212,21 @@ if %actor.level% < 30
   return 0
   %send% %actor% The Staff of Sanctum whispers: I will not serve you!
   %echoaround% %actor% The Staff of Sanctum exclaims: 'I will not serve
-those without honour.'
+those without honor.'
   %purge% self
 else
   wait 1s
   %send% %actor% The Staff of Sanctum whispers: I was made to serve,
 great one!
   %echoaround% %actor% The Staff of Sanctus exclaims: 'I will serve you
-honourable one.'
+honorable one.'
 end
 ~
 #314
 Room Command - Anti-quit~
 2 c 100
 quit~
-   %send% %actor% Powerful forces keep you here. 
+   %send% %actor% Powerful forces keep you here.
 ~
 #315
 Obj Command - No quit~
@@ -272,7 +272,7 @@ disarm %actor%
 Mob Fight - generic lightning bolt~
 0 k 10
 ~
-dg_cast 'lightning' %actor%
+dg_cast 'lightning bolt' %actor%
 ~
 #322
 Mob Fight - generic kick~
@@ -400,7 +400,7 @@ if %self.carried_by% == 0
   switch %self.vnum%
     case 201
       %damage% %actor% -10
-      break 
+      break
     case 202
       %damage% %actor% 10
       %send% %actor% Ouch, that hurt a little!
@@ -479,7 +479,7 @@ if napalm /= %cmd%
   if %actor.fighting% && !%arg%
     set arg %actor.fighting%
   end
-  if !%arg% 
+  if !%arg%
     %send% %actor% Throw it at Who?
     halt
   end
@@ -488,12 +488,12 @@ if napalm /= %cmd%
     halt
   end
   %send% %actor% You throw the napalm at %arg.name%, it strikes %arg.himher% and shatters, exploding into a ball of fire consuming %arg.himher% completely.
-  %echoaround% %actor% %actor.name% throws the napalm at %arg.name%. It shatters and explodes into a ball of fire consuming %arg.himher%. 
+  %echoaround% %actor% %actor.name% throws the napalm at %arg.name%. It shatters and explodes into a ball of fire consuming %arg.himher%.
   %asound% A large explosion is heard close by.
-  set stunned %arg.hitp% 
+  set stunned %arg.hitp%
   %damage% %arg% %stunned%
   wait 5 sec
-  %echoaround% %arg% %arg.name% collapses to the ground as the flames die down. %arg.heshe% seems to still be alive, but barely. 
+  %echoaround% %arg% %arg.name% collapses to the ground as the flames die down. %arg.heshe% seems to still be alive, but barely.
 end
 ~
 #338
@@ -535,7 +535,7 @@ elseif %cmd.mudcommand% == buy
     halt
   end
   *
-  if %actor.gold% < %pet_cost% 
+  if %actor.gold% < %pet_cost%
     tell %actor.name% You don't have enough gold for that.
   else
     * Need to load the mob, have it follow the player AND set the affect
@@ -566,24 +566,24 @@ recall~
 Mob Greet - Kind Soul - 13~
 0 g 100
 ~
-if %actor.is_pc%   
+if %actor.is_pc%
   wait 2 sec
   if !%actor.eq(light)%
-    Say you really shouldn't be wondering these parts without a light source %actor.name%.
+    say you really shouldn't be wondering these parts without a light source %actor.name%.
     shake
     %load% obj 200
     give light %actor.name%
     halt
   end
   if !%actor.eq(rfinger)% || !%actor.eq(lfinger)%
-    Say did you lose one of your rings?
+    say did you lose one of your rings?
     sigh
     %load% obj 201
     give ring %actor.name%
     halt
   end
   if !%actor.eq(neck1)% || !%actor.eq(neck2)%
-    Say you lose everything don't you?
+    say you lose everything don't you?
     roll
     %load% obj 203
     give necklace %actor.name%
@@ -596,68 +596,68 @@ if %actor.is_pc%
     halt
   end
   if !%actor.eq(head)%
-    Say protect that noggin of yours, %actor.name%.
+    say protect that noggin of yours, %actor.name%.
     %load% obj 206
     give helm %actor.name%
     halt
   end
   if !%actor.eq(legs)%
-    Say why do you always lose your pants %actor.name%?
+    say why do you always lose your pants %actor.name%?
     %load% obj 207
     give leggings %actor.name%
     halt
   end
   if !%actor.eq(feet)%
-    Say you can't go around barefoot %actor.name%.
+    say you can't go around barefoot %actor.name%.
     %load% obj 208
     give boots %actor.name%
     halt
   end
   if !%actor.eq(hands)%
-    Say need some gloves %actor.name%?
+    say need some gloves %actor.name%?
     %load% obj 209
     give gloves %actor.name%
     halt
   end
   if !%actor.eq(arms)%
-    Say you must be freezing %actor.name%.
+    say you must be freezing %actor.name%.
     %load% obj 210
     give sleeves %actor.name%
     halt
   end
   if !%actor.eq(shield)%
-    Say you need one of these to protect yourself %actor.name%.
+    say you need one of these to protect yourself %actor.name%.
     %load% obj 211
     give shield %actor.name%
     halt
   end
   if !%actor.eq(about)%
-    Say you are going to catch a cold %actor.name%.
+    say you are going to catch a cold %actor.name%.
     %load% obj 212
     give cape %actor.name%
     halt
   end
   if !%actor.eq(waist)%
-    Say better use this to hold your pants up %actor.name%.
+    say better use this to hold your pants up %actor.name%.
     %load% obj 213
     give belt %actor.name%
     halt
   end
   if !%actor.eq(rwrist)% || !%actor.eq(lwrist)%
-    Say misplace something?
+    say misplace something?
     smile
     %load% obj 215
     give wristguard %actor.name%
     halt
   end
   if !%actor.eq(wield)%
-    Say without a weapon you will be fido food %actor.name%.
+    say without a weapon you will be fido food %actor.name%.
     %load% obj 216
     give weapon %actor.name%
     halt
   end
   if !%actor.eq(hold)%
-    Say this might help you %actor.name%.
+    say this might help you %actor.name%.
     %load% obj 217
     give staff %actor.name%
     halt

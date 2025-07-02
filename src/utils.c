@@ -977,11 +977,6 @@ void column_list(struct char_data *ch, int num_cols, const char **list, int list
    /* Ensure that the number of columns is in the range 1-10 */
    num_cols = MIN(MAX(num_cols,1), 10);
 
-   /* Work out the longest list item */
-   for (i=0; i<list_length; i++)
-     if (max_len < strlen(list[i]))
-       max_len = strlen(list[i]);
-
    /* Calculate the width of each column */
    if (IS_NPC(ch))   col_width = 80 / num_cols;
    else              col_width = (GET_SCREEN_WIDTH(ch)) / num_cols;
@@ -1493,4 +1488,69 @@ char * convert_from_tabs(char * string)
   strcpy(buf, string);
   parse_tab(buf);
   return(buf);
+}
+
+/* This removes all trailing whitespace from the end of a string */
+char *right_trim_whitespace(const char *string)
+{
+  char *r = strdup(string);
+  if (r != NULL)
+  {
+    char *fr = r + strlen(string) - 1;
+    while( (isspace(*fr) || !isprint(*fr) || *fr == 0) && fr >= r) --fr;
+    *++fr = 0;
+  }
+
+  return r;
+}
+
+/**
+ * Remove all occurrences of a given word in string.
+ */
+void remove_from_string(char *string, const char *to_remove)
+{
+    int i, j, string_len, to_remove_len;
+    int found;
+
+    string_len   = strlen(string);      // Length of string
+    to_remove_len = strlen(to_remove); // Length of word to remove
+
+
+    for(i=0; i <= string_len - to_remove_len; i++)
+    {
+        /* Match word with string */
+        found = 1;
+        for(j=0; j<to_remove_len; j++)
+        {
+            if(string[i + j] != to_remove[j])
+            {
+                found = 0;
+                break;
+            }
+        }
+
+        /* If it is not a word */
+        if(string[i + j] != ' ' && string[i + j] != '\t' && string[i + j] != '\n' && string[i + j] != '\0') 
+        {
+            found = 0;
+        }
+
+        /*
+         * If word is found then shift all characters to left
+         * and decrement the string length
+         */
+        if(found == 1)
+        {
+            for(j=i; j<=string_len - to_remove_len; j++)
+            {
+                string[j] = string[j + to_remove_len];
+            }
+
+            string_len = string_len - to_remove_len;
+
+            // We will match next occurrence of word from current index.
+            i--;
+        }
+    }
+    
 }

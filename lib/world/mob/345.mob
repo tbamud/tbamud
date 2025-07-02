@@ -35,10 +35,10 @@ doctor man red~
 the bloody doctor~
 A doctor with a bloody lab coat stands here.
 ~
-   The doctor is a tall lanky man. His face is stubbly and his hair unkempt. 
+   The doctor is a tall lanky man. His face is stubbly and his hair unkempt.
 His eyes are sunken in to his skull and shown with the madness that affected
 some many others in this place. Perhaps the most startling aspect of him is his
-white lab coat that is now almost red wit the stains of blood. 
+white lab coat that is now almost red wit the stains of blood.
 ~
 18458 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -58,7 +58,7 @@ A mental patient shuffles along here.
 for so long. The skin is a pale white from the lack of sun and the stench
 coming from him is horrendous at best. Unable to figure out what he is doing,
 he is doomed to roam these halls forever. Even death is not a barrier for his
-suffering. 
+suffering.
 ~
 8396 0 0 0 0 0 0 0 0 E
 6 18 6 1d1+60 1d2+1
@@ -86,7 +86,7 @@ the tortured patient~
 A tortured patient stands here.
 ~
    The person before has been so horribly disfigured by the 'treatments' at this
-facility that it is no longer possible to tell if they are a man or a woman. 
+facility that it is no longer possible to tell if they are a man or a woman.
 It wears a tattered hospital gown and cowers in fear at almost everything.
 ~
 6344 0 0 0 0 0 0 0 -350 E

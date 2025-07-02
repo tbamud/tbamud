@@ -20,7 +20,7 @@ CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE)
 
 LIBS = @LIBS@ @CRYPTLIB@ @NETLIB@
 
-SRCFILES := $(wildcard *.c)
+SRCFILES := $(shell ls *.c | sort)
 OBJFILES := $(patsubst %.c,%.o,$(SRCFILES))  
 
 default: all

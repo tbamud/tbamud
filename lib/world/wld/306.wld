@@ -5,7 +5,7 @@ from the trunk upon which you precariously cling.  Up above are the many
 branchings of the Great Tree, the system of branches making a vweritable
 highway in the sky where movement can be seen from the many creatures which
 inhabit the tree even from here.  A hole in the trunk opens up into the tree
-northward, a small home visible inside.    
+northward, a small home visible inside.
 ~
 306 4 0 0 0 0
 D0
@@ -35,7 +35,7 @@ On the Trunk at the Lower Branch System~
    The tree's branches open out wide and full over the entire newbie area,
 making it possible to wander about the tree limbs, looking down upon Dibrova's
 world.  The way down to the main Newbie Area lies just below, a steady climb
-upward is also possible.  Branches lead out in every direction.    
+upward is also possible.  Branches lead out in every direction.
 ~
 306 4 0 0 0 0
 D0
@@ -68,7 +68,7 @@ On the Trunk at Mid Branch System~
    The tree's branches open out wide and full over the entire newbie area,
 making it possible to wander about the tree limbs, looking down upon Dibrova's
 world.  The way down to the main Newbie Area lies just below, a steady climb
-upward is also possible.  Branches lead out in every direction.    
+upward is also possible.  Branches lead out in every direction.
 ~
 306 4 0 0 0 0
 D0
@@ -99,9 +99,9 @@ S
 #30603
 On the Trunk at the Upper Branch System~
    This is as far up as is safely possible within the Great Tree.  The trunk
-above this point is not strong enough to hold any substantial weight.  
+above this point is not strong enough to hold any substantial weight.
 Branches lead off in every direction, the upper branch system still just as
-strong as the branches below.    
+strong as the branches below.
 ~
 306 4 0 0 0 0
 D0
@@ -128,8 +128,8 @@ S
 #30604
 Inside the Trunk~
    This inner trunk has been carved out and made into a cozy little home
-complete with a lounge chair and small bed made from twigs and leaves.  
-Another small chamber is connected to the north through a short archway.    
+complete with a lounge chair and small bed made from twigs and leaves.
+Another small chamber is connected to the north through a short archway.
 ~
 306 0 0 0 0 0
 D0
@@ -145,7 +145,7 @@ S
 Inside the Trunk~
    This is the inner abode of a treant, a being made from the very essence of
 the tree in which it resides.  Only the most foolish would attempt to defy a
-treant within its own home.    
+treant within its own home.
 ~
 306 0 0 0 0 0
 D2
@@ -157,7 +157,7 @@ S
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
 trunk itself.  Branchings lead off in every direction, the trunk being just to
-the south.    
+the south.
 ~
 306 0 0 0 0 0
 D0
@@ -180,7 +180,7 @@ S
 #30607
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
-trunk itself.  Branchings lead off to the south and the west from here.    
+trunk itself.  Branchings lead off to the south and the west from here.
 ~
 306 0 0 0 0 0
 D2
@@ -196,7 +196,7 @@ S
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
 trunk itself.  Branchings lead off in every direction, the trunk being just to
-the west.    
+the west.
 ~
 306 0 0 0 0 0
 D0
@@ -219,7 +219,7 @@ S
 #30609
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
-trunk itself.  Branchings lead off to the north and the west from here.    
+trunk itself.  Branchings lead off to the north and the west from here.
 ~
 306 0 0 0 0 0
 D0
@@ -235,7 +235,7 @@ S
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
 trunk itself.  Branchings lead off in every direction, the trunk being just to
-the north.    
+the north.
 ~
 306 0 0 0 0 0
 D0
@@ -258,7 +258,7 @@ S
 #30611
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
-trunk itself.  Branchings lead off to the north and the east from here.    
+trunk itself.  Branchings lead off to the north and the east from here.
 ~
 306 0 0 0 0 0
 D0
@@ -274,7 +274,7 @@ S
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
 trunk itself.  Branchings lead off in every direction, the trunk being just to
-the east.    
+the east.
 ~
 306 0 0 0 0 0
 D0
@@ -297,7 +297,7 @@ S
 #30613
 Traveling the Inner Branches~
    The branches here are very strong and thick due to their proximity to the
-trunk itself.  Branchings lead off to the south and the east from here.    
+trunk itself.  Branchings lead off to the south and the east from here.
 ~
 306 0 0 0 0 0
 D1
@@ -313,7 +313,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the tree lies to the east.    
+only way back to another section of the tree lies to the east.
 ~
 306 0 0 0 0 0
 D1
@@ -326,7 +326,7 @@ The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  Exits
 lead in every direction via the branch system, the inner branches lie just to
-the south.    
+the south.
 ~
 306 0 0 0 0 0
 D0
@@ -350,7 +350,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the tree lies to the west.    
+only way back to another section of the tree lies to the west.
 ~
 306 0 0 0 0 0
 D3
@@ -362,7 +362,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the Great Tree lies to the south.    
+only way back to another section of the Great Tree lies to the south.
 ~
 306 0 0 0 0 0
 D2
@@ -375,7 +375,7 @@ The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  Exits
 lead in every direction via the branch system, the inner branches lie just to
-the west.    
+the west.
 ~
 306 0 0 0 0 0
 D0
@@ -399,7 +399,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the Great Tree lies to the north.    
+only way back to another section of the Great Tree lies to the north.
 ~
 306 0 0 0 0 0
 D0
@@ -411,7 +411,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the Great Tree lies to the west.    
+only way back to another section of the Great Tree lies to the west.
 ~
 306 0 0 0 0 0
 D3
@@ -424,7 +424,7 @@ The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  Exits
 lead in every direction via the branch system, the inner branches lie just to
-the north.    
+the north.
 ~
 306 0 0 0 0 0
 D0
@@ -448,7 +448,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the Great Tree lies to the east.    
+only way back to another section of the Great Tree lies to the east.
 ~
 306 0 0 0 0 0
 D1
@@ -460,7 +460,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the Great Tree lies to the north.    
+only way back to another section of the Great Tree lies to the north.
 ~
 306 0 0 0 0 0
 D0
@@ -473,7 +473,7 @@ The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  Exits
 lead in every direction via the branch system, the inner branches lie just to
-the east.    
+the east.
 ~
 306 0 0 0 0 0
 D0
@@ -497,7 +497,7 @@ S
 The Outer Branches~
    The branches are still strong enough to hold a good amount of weight,
 however it would not be recommended that the limits be pushed too far.  The
-only way back to another section of the Great Tree lies to the south.    
+only way back to another section of the Great Tree lies to the south.
 ~
 306 0 0 0 0 0
 D2
@@ -510,7 +510,7 @@ Out on a Limb~
    Although the current level of height is not as high as it could be, judging
 from the branches that can be seen overhead, it still seems quite high when
 standing at the end of this tree limb, feeling it sway in the breeze.  The way
-back lies south.    
+back lies south.
 ~
 306 0 0 0 0 0
 D2
@@ -523,7 +523,7 @@ Out on a Limb~
    Although the current level of height is not as high as it could be, judging
 from the branches that can be seen overhead, it still seems quite high when
 standing at the end of this tree limb, feeling it sway in the breeze.  The way
-back lies west.    
+back lies west.
 ~
 306 0 0 0 0 0
 D3
@@ -536,7 +536,7 @@ Out on a Limb~
    Although the current level of height is not as high as it could be, judging
 from the branches that can be seen overhead, it still seems quite high when
 standing at the end of this tree limb, feeling it sway in the breeze.  The way
-back lies north.    
+back lies north.
 ~
 306 0 0 0 0 0
 D0
@@ -549,7 +549,7 @@ Out on a Limb~
    Although the current level of height is not as high as it could be, judging
 from the branches that can be seen overhead, it still seems quite high when
 standing at the end of this tree limb, feeling it sway in the breeze.  The way
-back lies east.    
+back lies east.
 ~
 306 0 0 0 0 0
 D1
@@ -562,7 +562,7 @@ Traveling the Inner Branches~
    The branches lead out from the trunk of the tree, about halfway up from the
 ground at this point.  The branches are still very strong, able to hold
 enormous weight if needed.  Exits lead in every direction, the main trunk just
-to the south.    
+to the south.
 ~
 306 0 0 0 0 0
 D0
@@ -585,8 +585,8 @@ S
 #30631
 Traveling the Inner Branches~
    The branches of the Great Tree span a very large area, allowing homes for a
-number of exotic creatures which somehow coexist within this tree in peace.  
-Branchings lie to the south and the west.    
+number of exotic creatures which somehow coexist within this tree in peace.
+Branchings lie to the south and the west.
 ~
 306 0 0 0 0 0
 D2
@@ -603,7 +603,7 @@ Traveling the Inner Branches~
    The branches lead out from the trunk of the tree, about halfway up from the
 ground at this point.  The branches are still very strong, able to hold
 enormous weight if needed.  Exits lead in every direction, the main trunk just
-to the west.    
+to the west.
 ~
 306 0 0 0 0 0
 D0
@@ -626,8 +626,8 @@ S
 #30633
 Traveling the Inner Branches~
    The branches of the Great Tree span a very large area, allowing homes for a
-number of exotic creatures which somehow coexist within this tree in peace.  
-Branchings lie to the north and the west.    
+number of exotic creatures which somehow coexist within this tree in peace.
+Branchings lie to the north and the west.
 ~
 306 0 0 0 0 0
 D0
@@ -644,7 +644,7 @@ Traveling the Inner Branches~
    The branches lead out from the trunk of the tree, about halfway up from the
 ground at this point.  The branches are still very strong, able to hold
 enormous weight if needed.  Exits lead in every direction, the main trunk just
-to the north.    
+to the north.
 ~
 306 0 0 0 0 0
 D0
@@ -667,8 +667,8 @@ S
 #30635
 Traveling the Inner Branches~
    The branches of the Great Tree span a very large area, allowing homes for a
-number of exotic creatures which somehow coexist within this tree in peace.  
-Branchings lie to the north and the east.    
+number of exotic creatures which somehow coexist within this tree in peace.
+Branchings lie to the north and the east.
 ~
 306 0 0 0 0 0
 D0
@@ -685,7 +685,7 @@ Traveling the Inner Branches~
    The branches lead out from the trunk of the tree, about halfway up from the
 ground at this point.  The branches are still very strong, able to hold
 enormous weight if needed.  Exits lead in every direction, the main trunk just
-to the east.    
+to the east.
 ~
 306 0 0 0 0 0
 D0
@@ -708,8 +708,8 @@ S
 #30637
 Traveling the Inner Branches~
    The branches of the Great Tree span a very large area, allowing homes for a
-number of exotic creatures which somehow coexist within this tree in peace.  
-Branchings lie to the south and the east.    
+number of exotic creatures which somehow coexist within this tree in peace.
+Branchings lie to the south and the east.
 ~
 306 0 0 0 0 0
 D1
@@ -725,7 +725,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only way back along a branch is to the east.    
+The only way back along a branch is to the east.
 ~
 306 0 0 0 0 0
 D1
@@ -736,7 +736,7 @@ S
 #30639
 The Outer Branches~
    The branches lead off in every direction from this point, the only
-solid-looking pathway along the branches is to the south.    
+solid-looking pathway along the branches is to the south.
 ~
 306 0 0 0 0 0
 D0
@@ -760,7 +760,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the west.    
+The only direction to travel is back along a branch to the west.
 ~
 306 0 0 0 0 0
 D3
@@ -772,7 +772,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the south.    
+The only direction to travel is back along a branch to the south.
 ~
 306 0 0 0 0 0
 D2
@@ -783,7 +783,7 @@ S
 #30642
 The Outer Branches~
    The branches lead off in every direction from this point, the only
-solid-looking pathway along the branches is to the west.    
+solid-looking pathway along the branches is to the west.
 ~
 306 0 0 0 0 0
 D0
@@ -807,7 +807,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the north.    
+The only direction to travel is back along a branch to the north.
 ~
 306 0 0 0 0 0
 D0
@@ -819,7 +819,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the west.    
+The only direction to travel is back along a branch to the west.
 ~
 306 0 0 0 0 0
 D3
@@ -830,7 +830,7 @@ S
 #30645
 The Outer Branches~
    The branches lead off in every direction from this point, the only
-solid-looking pathway along the branches is to the north.    
+solid-looking pathway along the branches is to the north.
 ~
 306 0 0 0 0 0
 D0
@@ -854,7 +854,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the east.    
+The only direction to travel is back along a branch to the east.
 ~
 306 0 0 0 0 0
 S
@@ -862,7 +862,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the north.    
+The only direction to travel is back along a branch to the north.
 ~
 306 0 0 0 0 0
 D0
@@ -873,7 +873,7 @@ S
 #30648
 The Outer Branches~
    The branches lead off in every direction from this point, the only
-solid-looking pathway along the branches is to the east.    
+solid-looking pathway along the branches is to the east.
 ~
 306 0 0 0 0 0
 D0
@@ -897,7 +897,7 @@ S
 The Outer Branches~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the south.    
+The only direction to travel is back along a branch to the south.
 ~
 306 0 0 0 0 0
 D2
@@ -910,7 +910,7 @@ Out on a Limb~
    The branch comes to a dead end, hanging high above the newbie area.  The
 branch continues out a bit further, however is is certainly not strong enough
 to hold any large amount of weight.  The only direction to go is back toward
-the trunk.    
+the trunk.
 ~
 306 0 0 0 0 0
 D2
@@ -923,7 +923,7 @@ Out on a Limb~
    The branch comes to a dead end, hanging high above the newbie area.  The
 branch continues out a bit further, however is is certainly not strong enough
 to hold any large amount of weight.  The only direction to go is back toward
-the trunk.    
+the trunk.
 ~
 306 0 0 0 0 0
 D3
@@ -936,7 +936,7 @@ Out on a Limb~
    The branch comes to a dead end, hanging high above the newbie area.  The
 branch continues out a bit further, however is is certainly not strong enough
 to hold any large amount of weight.  The only direction to go is back toward
-the trunk.    
+the trunk.
 ~
 306 0 0 0 0 0
 D0
@@ -949,7 +949,7 @@ Out on a Limb~
    The branch comes to a dead end, hanging high above the newbie area.  The
 branch continues out a bit further, however is is certainly not strong enough
 to hold any large amount of weight.  The only direction to go is back toward
-the trunk.    
+the trunk.
 ~
 306 0 0 0 0 0
 D1
@@ -961,7 +961,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D0
@@ -985,7 +985,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D2
@@ -1001,7 +1001,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D0
@@ -1025,7 +1025,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D0
@@ -1041,7 +1041,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D0
@@ -1065,7 +1065,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D0
@@ -1081,7 +1081,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D0
@@ -1105,7 +1105,7 @@ S
 Traveling the Inner Branches~
    These are the strongest of the upper branches, easily as thick as a giant's
 armspan.  Still, even with the strength of the Tree's trunk so close and the
-thickness of the branches themselves, they sway alarmingly with the wind.    
+thickness of the branches themselves, they sway alarmingly with the wind.
 ~
 306 0 0 0 0 0
 D1
@@ -1122,7 +1122,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D1
@@ -1134,7 +1134,7 @@ S
 The Outer Branches~
    The steady swaying of the Tree from the winds which buffet it at this
 altitude is strangely pacific, a very nonassuming sway which is absolutely no
-cause for alarm.  Branches of the Tree lie in every direction.    
+cause for alarm.  Branches of the Tree lie in every direction.
 ~
 306 0 0 0 0 0
 D0
@@ -1159,7 +1159,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D3
@@ -1172,7 +1172,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D2
@@ -1184,7 +1184,7 @@ S
 The Outer Branches~
    The steady swaying of the Tree from the winds which buffet it at this
 altitude is strangely pacific, a very nonassuming sway which is absolutely no
-cause for alarm.  Branches of the Tree lie in every direction.    
+cause for alarm.  Branches of the Tree lie in every direction.
 ~
 306 0 0 0 0 0
 D0
@@ -1209,7 +1209,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D0
@@ -1222,7 +1222,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D3
@@ -1234,7 +1234,7 @@ S
 The Outer Branches~
    The steady swaying of the Tree from the winds which buffet it at this
 altitude is strangely pacific, a very nonassuming sway which is absolutely no
-cause for alarm.  Branches of the Tree lie in every direction.    
+cause for alarm.  Branches of the Tree lie in every direction.
 ~
 306 0 0 0 0 0
 D0
@@ -1259,7 +1259,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D1
@@ -1272,7 +1272,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D0
@@ -1284,7 +1284,7 @@ S
 The Outer Branches~
    The steady swaying of the Tree from the winds which buffet it at this
 altitude is strangely pacific, a very nonassuming sway which is absolutely no
-cause for alarm.  Branches of the Tree lie in every direction.    
+cause for alarm.  Branches of the Tree lie in every direction.
 ~
 306 0 0 0 0 0
 D0
@@ -1309,7 +1309,7 @@ The Outer Branches~
    The top of the Great Tree is a beautiful, stunning panorama of views and
 vistas which look out over the entire world in all its splendor.  A slow wind
 blows by, ruffling the leaves all around, causing the branches to sway ever so
-slightly.    
+slightly.
 ~
 306 0 0 0 0 0
 D2
@@ -1320,7 +1320,7 @@ S
 #30674
 Out on a Limb~
    This is the absolute limit of the Tree's reach in both height and direction.
-The only way to go is back toward the trunk.    
+The only way to go is back toward the trunk.
 ~
 306 0 0 0 0 0
 D2
@@ -1331,7 +1331,7 @@ S
 #30675
 Out on a Limb~
    This is the absolute limit of the Tree's reach in both height and direction.
-The only way to go is back toward the trunk.    
+The only way to go is back toward the trunk.
 ~
 306 0 0 0 0 0
 D3
@@ -1342,7 +1342,7 @@ S
 #30676
 Out on a Limb~
    This is the absolute limit of the Tree's reach in both height and direction.
-The only way to go is back toward the trunk.    
+The only way to go is back toward the trunk.
 ~
 306 0 0 0 0 0
 D0
@@ -1353,7 +1353,7 @@ S
 #30677
 Out on a Limb~
    This is the absolute limit of the Tree's reach in both height and direction.
-The only way to go is back toward the trunk.    
+The only way to go is back toward the trunk.
 ~
 306 0 0 0 0 0
 D1
@@ -1365,7 +1365,7 @@ S
 Out on a Limb~
    The drop down below is a bit further than would be comfortable, bit in
 glancing up higher it is seen that there is still more height to be attained.
-The only direction to travel is back along a branch to the east.    
+The only direction to travel is back along a branch to the east.
 ~
 306 0 0 0 0 3
 D1

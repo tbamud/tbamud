@@ -653,7 +653,7 @@ end
 1 h 100
 ~
 eval where %self.room.vnum%
-if %where% == 1982 
+if %where% == 1982
   wait 1 sec
   %echo% The ground rumbles as a heavy stone slab slides back into place in the northern wall.
   %door% 1982 north purge
@@ -763,14 +763,14 @@ attach 1926 %self.id%
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == red
-%echoaround% %actor% %actor.name%'s muscles begin to bulge enormously as %actor.heshe% quaffs a 	Rred vial	n.
+%echoaround% %actor% %actor.name%'s muscles begin to bulge enormously as %actor.heshe% quaffs a @Rred vial@n.
 %send% %actor% You feel your muscles beginning to bulge enormously, your whole body becoming stronger and more hardy.
 dg_affect %actor% str 5 24
 dg_affect %actor% maxhit 100 24
 dg_affect %actor% armor 20 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -780,14 +780,14 @@ end
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == blue
-%echoaround% %actor% %actor.name%'s magical aura begins to glow brightly as %actor.heshe% quaffs a 	Bblue vial	n.
+%echoaround% %actor% %actor.name%'s magical aura begins to glow brightly as %actor.heshe% quaffs a @Bblue vial@n.
 %send% %actor% Your magical aura begins to glow brightly.
 dg_affect %actor% int 5 24
 dg_affect %actor% maxmana 100 24
 dg_affect %actor% wis 5 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -797,14 +797,14 @@ end
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == green
-%echoaround% %actor% %actor.name%'s movements become unnaturally fast as %actor.heshe% quaffs a 	Ggreen vial	n.
+%echoaround% %actor% %actor.name%'s movements become unnaturally fast as %actor.heshe% quaffs a @Ggreen vial@n.
 %send% %actor% You feel yourself becoming unnaturally agile and stealthy.
 dg_affect %actor% dex 5 24
 dg_affect %actor% maxmove 100 24
 dg_affect %actor% invis on 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -913,7 +913,7 @@ set next %i.next_in_list%
         set next_in_bag %in_bag.next_in_list%
 %echo% contains: %in_bag.vnum%
           break
-         
+
         set in_bag %next_in_bag%
       done
     set i %next%
@@ -971,18 +971,18 @@ tur~
 *This trig is meant to be used as part of a trio (1954, 1960, 1961)
 *This one is what gives you the finished product after tallying up
 *all the ingredients.
-*If everything has been done properly, a lovely coloured potion is 
+*If everything has been done properly, a lovely colored potion is
 *the reward. Otherwise, you end up with nothing.. or a big mess ;)
 **************
 set product 1949
-set colour colourless
+set color colorless
 if  %actor.varexists(zn19_red1)%
 rdelete zn19_red1 %actor.id%
 if  %actor.varexists(zn19_red2)%
 rdelete zn19_red2 %actor.id%
 if  %actor.varexists(zn19_all)%
 set product 1945
-set colour red
+set color red
 end
 end
 end
@@ -992,7 +992,7 @@ if  %actor.varexists(zn19_blue2)%
 rdelete zn19_blue2 %actor.id%
 if  %actor.varexists(zn19_all)%
 set product 1946
-set colour blue
+set color blue
 end
 end
 end
@@ -1002,21 +1002,21 @@ if  %actor.varexists(zn19_green2)%
 rdelete zn19_green2 %actor.id%
 if  %actor.varexists(zn19_all)%
 set product 1947
-set colour green
+set color green
 end
 end
 end
 if  %actor.varexists(zn19_black)%
 rdelete zn19_black %actor.id%
 set product 1952
-set colour black
+set color black
 end
 eval in_bag %self.contents%
 if %in_bag.vnum%==1949
-%echo% A stream of %colour% fluid gushes out of the machine's nozzle into the empty vial.
+%echo% A stream of %color% fluid gushes out of the machine's nozzle into the empty vial.
 %load% obj %product%
 else
-%echo% A stream of %colour% fluid gushes out of the machine's nozzle and splashes all over the floor.
+%echo% A stream of %color% fluid gushes out of the machine's nozzle and splashes all over the floor.
 end
 rdelete zn19_all %actor.id%
 %load% obj 1948
@@ -1028,14 +1028,14 @@ rdelete zn19_all %actor.id%
 quaff~
 if %cmd.mudcommand% == quaff
 if %arg% == black
-%echoaround% %actor% %actor.name% seems to stagger weakly as %actor.heshe% quaffs a 	Dblack vial.	n
+%echoaround% %actor% %actor.name% seems to stagger weakly as %actor.heshe% quaffs a @Dblack vial.@n
 %send% %actor% You suddenly feel quite weak and unwell.
 dg_affect %actor% maxmana -50 24
 dg_affect %actor% maxmove -50 24
 dg_affect %actor% maxhit -50 24
 %purge% %self%
 else
-%send% %actor% Try specifying the colour.
+%send% %actor% Try specifying the color.
 end
 end
 ~
@@ -1125,7 +1125,7 @@ end
 test load~
 2 c 100
 *~
-If %actor.name% == Detta
+if %actor.name% == Detta
 return 0
 else
 %send% %actor% An unmeasurable power holds you frozen.
@@ -1254,7 +1254,7 @@ end
 0 f 100
 ~
 eval where %self.room%
-%zoneecho% %where.vnum% 	BWith a last mighty breath Selvetarm cries out: It is impossible! The followers of Lloth cannot be vanquished!	n
+%zoneecho% %where.vnum% @BWith a last mighty breath Selvetarm cries out: It is impossible! The followers of Lloth cannot be vanquished!@n
 %force% %actor% xxtrigxx
 ~
 #1976
@@ -1287,7 +1287,7 @@ test while~
 ~
 %at% 1900 %load% obj 1901
 %send% %actor% You are not worthy!!
-set stunned %actor.hitp% - 1 
+set stunned %actor.hitp% - 1
 %damage% %actor% %stunned%
 eval num %random.99% + 1900
 %teleport% %actor% %num%
@@ -1295,7 +1295,7 @@ while %actor.inventory%
   eval item %actor.inventory%
   eval item_to_purge %%actor.inventory(%item.vnum%)%%
   eval stolen %item.vnum%
-  %purge% %item_to_purge% 
+  %purge% %item_to_purge%
   eval num2 %random.99% + 1900
   %at% %num2% %load% obj %stolen%
 done
@@ -1305,11 +1305,11 @@ while %i% < 18
   if %item%
     eval stolen %item.vnum%
     eval item_to_purge %%actor.eq(%i%)%%
-    %purge% %item_to_purge% 
+    %purge% %item_to_purge%
     eval num3 %random.99% + 1900
     %at% %num3% %load% obj %stolen%
   end
-  eval i %i% + 1 
+  eval i %i% + 1
 done
 ~
 #1980
@@ -1415,8 +1415,8 @@ if fireworks /= %arg%
   set col[5] M
   set col[6] Y
   set col[7] W
-  set  colour %%col[%cx%]%%
-  eval colour %colour%
+  set  color %%col[%cx%]%%
+  eval color %color%
   eval sx %random.7%
   set sou[1] an almighty bang
   set sou[2] a piercing whistle
@@ -1427,7 +1427,7 @@ if fireworks /= %arg%
   set sou[7] a shower of sparks
   set  sound %%sou[%sx%]%%
   eval sound %sound%
-  %echo% With %sound%, a	%colour% F I R E W O R K	n explodes into light.	n
+  %echo% With %sound%, a        %color% F I R E W O R K@n explodes into light.@n
   %purge% self
 else
   %send% %actor% Light what?

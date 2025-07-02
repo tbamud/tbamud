@@ -18,7 +18,7 @@ wait 3 sec
   say Take a look around, I have many maps to look at. I used to travel all the time...
 wait 2 sec
   sigh
-  say That is, until I met Oreo. That horrible cat chases me everytime I try to leave this place!
+  say That is, until I met Oreo. That horrible cat chases me every time I try to leave this place!
 wait 2 sec
   say Can you help me? I'll give you my most prized possession if you do.
 wait 1 sec

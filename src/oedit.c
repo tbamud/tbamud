@@ -53,7 +53,6 @@ ACMD(do_oasis_oedit)
 {
   int number = NOWHERE, save = 0, real_num;
   struct descriptor_data *d;
-  char *buf3;
   char buf1[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
 
@@ -62,7 +61,7 @@ ACMD(do_oasis_oedit)
     return;
 
   /* Parse any arguments. */
-  buf3 = two_arguments(argument, buf1, buf2);
+  two_arguments(argument, buf1, buf2);
 
   /* If there aren't any arguments they can't modify anything. */
   if (!*buf1) {
@@ -937,7 +936,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
   case OEDIT_PERM:
     if ((number = atoi(arg)) == 0)
       break;
-    if (number > 0 && number <= NUM_AFF_FLAGS) {
+    if (number > 0 && number < NUM_AFF_FLAGS) {
       /* Setting AFF_CHARM on objects like this is dangerous. */
       if (number != AFF_CHARM) {
         TOGGLE_BIT_AR(GET_OBJ_AFFECT(OLC_OBJ(d)), number);

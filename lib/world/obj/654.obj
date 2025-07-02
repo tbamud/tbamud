@@ -12,23 +12,23 @@ graffiti wall south~
 needs rooms that have already been created.  It's a very simple plan with 38
 houses, meant to simplify the placing of houses.  Feel free to make any changes.
 Look map for a better idea of the layout.
- 
+
    To assign the houses, stand in any main room with the player and use hcontrol.
- 
+
    *WARNING* Before setting the first house, please check for the file lib/house.
 This will sometimes be deleted as an empty file.  The house contents will not
 save without this directory!
- 
+
    If you want to use this subdivision but need more than 38 houses, First and
 Second Streets can be continued to the east by changing the room names and some
 of the exit descriptions.  First and Second Avenue would need to be changed to
-Third and Fourth Avenue.  
- 
+Third and Fourth Avenue.
+
    If you need more space, you might want to change #3 and #8 Second Street to
 continue the Avenues southward and change #3 and #8 First Street of the new
 section to match.  Of course, First and Second Street would become Third and
-Fourth Streets.  
- 
+Fourth Streets.
+
 Sorry for any errors.  Please wash this wall with zedit.
 Hugs,
 Parnassus for TBAmud

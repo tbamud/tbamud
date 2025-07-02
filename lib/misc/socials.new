@@ -2893,7 +2893,7 @@ $n looks at your $t and seems to think it could use a little trimming off the to
 You look at $p and think it could use a little trimming off the top.
 $n looks at $p and seems to think it could use a little trimming off the top.
 
-~halo halo 0 8 8 31
+~halo halo 0 8 8 1
 You whip out the ol' halo. That should prove your innocence.
 $n loads a halo and dons it.
 $N could use a good disguise.
@@ -6109,7 +6109,7 @@ $n looks around for a victim to strangle.
 You throw yourself against $N's throat, trying to squeeze the life out.
 $n throws $mself after $N's throat.
 $n throws $mself after your throat, you try to defend yourself.
-AARGH! They must have left... #&%£@!
+AARGH! They must have left...
 You put your hands around your throat and stop breathing.
 $n tries to strangle $mself, making a very strange noise and getting blue in the face.
 You strangle $M $t.
@@ -6507,6 +6507,21 @@ $n teases $N's $t.
 $n teases your $t.
 You tease $p.
 $n teases $p.
+
+~testsocial testsocial 0 8 8 2
+This action is unfinished.
+This action is unfinished.
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 
 ~thanks thank 0 5 0 0
 Thank you too.
@@ -7244,7 +7259,7 @@ You fall to your knees and worship $p.
 $n falls to $s knees and worships $p.
 
 ~wrong wrong 0 8 8 0
-You couldn't find the right if your life depended on it.
+You couldn't find the right social if your life depended on it.
 $n couldn't find the right social if $s life depended on it.
 #
 #

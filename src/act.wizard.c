@@ -922,7 +922,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
       if (aff->bitvector[0] || aff->bitvector[1] || aff->bitvector[2] || aff->bitvector[3]) {
         if (aff->modifier)
           send_to_char(ch, ", ");
-        for (i=0; i<NUM_AFF_FLAGS; i++) {
+        for (i=1; i<NUM_AFF_FLAGS; i++) {
           if (IS_SET_AR(aff->bitvector, i)) {
             send_to_char(ch, "sets %s, ", affected_bits[i]);
           }
@@ -1877,7 +1877,7 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
 static void mod_llog_entry(struct last_entry *llast,int type) {
   FILE *fp;
   struct last_entry mlast;
-  int size, recs, tmp, i, j;
+  int size, recs, tmp;
 
   if(!(fp=fopen(LAST_FILE,"r+"))) {
     log("Error opening last_file for reading and writing.");
@@ -1893,7 +1893,10 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
    * do (like searching for the last shutdown/etc..) */
   for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
-    i = fread(&mlast,sizeof(struct last_entry),1,fp);
+    if(fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
+      log("mod_llog_entry: read error or unexpected end of file.");
+      return;
+    }
     /* Another one to keep that stepback. */
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
 
@@ -1908,7 +1911,7 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
       }
       mlast.close_time=time(0);
       /*write it, and we're done!*/
-      j = fwrite(&mlast,sizeof(struct last_entry),1,fp);
+      fwrite(&mlast,sizeof(struct last_entry),1,fp);
       fclose(fp);
       return;
     }
@@ -1923,7 +1926,6 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
 void add_llog_entry(struct char_data *ch, int type) {
   FILE *fp;
   struct last_entry *llast;
-  int i;
 
   /* so if a char enteres a name, but bad password, otherwise loses link before
    * he gets a pref assinged, we won't record it */
@@ -1937,8 +1939,10 @@ void add_llog_entry(struct char_data *ch, int type) {
   /* we didn't - make a new one */
   if(llast == NULL) {  /* no entry found, add ..error if close! */
     CREATE(llast,struct last_entry,1);
-    strncpy(llast->username,GET_NAME(ch),16);
-    strncpy(llast->hostname,GET_HOST(ch),128);
+    strncpy(llast->username,GET_NAME(ch),15);
+    strncpy(llast->hostname,GET_HOST(ch),127);
+    llast->username[15]='\0';
+    llast->hostname[127]='\0';
     llast->idnum=GET_IDNUM(ch);
     llast->punique=GET_PREF(ch);
     llast->time=time(0);
@@ -1950,7 +1954,7 @@ void add_llog_entry(struct char_data *ch, int type) {
       free(llast);
       return;
     }
-    i = fwrite(llast,sizeof(struct last_entry),1,fp);
+    fwrite(llast,sizeof(struct last_entry),1,fp);
     fclose(fp);
   } else {
     /* We've found a login - update it */
@@ -1962,7 +1966,7 @@ void add_llog_entry(struct char_data *ch, int type) {
 void clean_llog_entries(void) {
   FILE *ofp, *nfp;
   struct last_entry mlast;
-  int recs, i, j;
+  int recs;
 
   if(!(ofp=fopen(LAST_FILE,"r")))
     return; /* no file, no gripe */
@@ -1987,8 +1991,11 @@ void clean_llog_entries(void) {
 
   /* copy the rest */
   while (!feof(ofp)) {
-    i = fread(&mlast,sizeof(struct last_entry),1,ofp);
-    j = fwrite(&mlast,sizeof(struct last_entry),1,nfp);
+    if(fread(&mlast,sizeof(struct last_entry),1,ofp) != 1 ) {
+      log("clean_llog_entries: read error or unexpected end of file.");
+      return;
+    }
+    fwrite(&mlast,sizeof(struct last_entry),1,nfp);
   }
   fclose(ofp);
   fclose(nfp);
@@ -2002,22 +2009,24 @@ static void list_llog_entries(struct char_data *ch)
 {
   FILE *fp;
   struct last_entry llast;
-  int i;
   char timestr[25];
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
-    log("bad things.");
+    log("llist_log_entries: could not open last log file %s.", LAST_FILE);
     send_to_char(ch, "Error! - no last log");
   }
   send_to_char(ch, "Last log\r\n");
-  i = fread(&llast, sizeof(struct last_entry), 1, fp);
 
-  strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M:%S", localtime(&llast.time));
-
-  while(!feof(fp)) {
-    send_to_char(ch, "%10s\t%d\t%s\t%s\r\n", llast.username, llast.punique,
+  while(fread(&llast, sizeof(struct last_entry), 1, fp) == 1) {
+    strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M:%S", localtime(&llast.time));
+    send_to_char(ch, "%10s    %d    %s    %s\r\n", llast.username, llast.punique,
         last_array[llast.close_type], timestr);
-    i = fread(&llast, sizeof(struct last_entry), 1, fp);
+      break;
+  }
+
+  if(ferror(fp)) {
+    log("llist_log_entries: error reading %s.", LAST_FILE);
+    send_to_char(ch, "Error reading last_log file.");
   }
 }
 
@@ -2039,7 +2048,7 @@ ACMD(do_last)
   time_t delta;
   struct char_data *vict = NULL;
   struct char_data *temp;
-  int recs, i, num = 0;
+  int recs, num = 0;
   FILE *fp;
   struct last_entry mlast;
 
@@ -2056,8 +2065,11 @@ ACMD(do_last)
         num = atoi(arg);
         if (num < 0)
           num = 0;
-      } else
+      } else {
         strncpy(name, arg, sizeof(name)-1);
+        name[sizeof(name) - 1] = '\0';
+      }
+      
       half_chop(argument, arg, argument);
     }
   }
@@ -2097,11 +2109,14 @@ ACMD(do_last)
   send_to_char(ch, "Last log\r\n");
   while(num > 0 && recs > 0) {
     fseek(fp,-1* ((long)sizeof(struct last_entry)),SEEK_CUR);
-    i = fread(&mlast,sizeof(struct last_entry),1,fp);
+    if(fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
+      send_to_char(ch, "Error reading log file.");
+      return;
+    }
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if(!*name ||(*name && !str_cmp(name, mlast.username))) {
       strftime(timestr, sizeof(timestr), "%a %b %d %Y %H:%M", localtime(&mlast.time));
-      send_to_char(ch,"%10.10s %20.20s %20.21s - ",
+      send_to_char(ch, "%10.10s %20.20s %20.21s - ",
         mlast.username, mlast.hostname, timestr);
       if((temp=is_in_game(mlast.idnum)) && mlast.punique == GET_PREF(temp)) {
         send_to_char(ch, "Still Playing  ");
@@ -2180,7 +2195,6 @@ ACMD(do_wiznet)
        buf2[MAX_INPUT_LENGTH + MAX_NAME_LENGTH + 32];
   struct descriptor_data *d;
   char emote = FALSE;
-  char any = FALSE;
   int level = LVL_IMMORT;
 
   skip_spaces(&argument);
@@ -2207,7 +2221,7 @@ ACMD(do_wiznet)
 
   case '@':
     send_to_char(ch, "God channel status:\r\n");
-    for (any = 0, d = descriptor_list; d; d = d->next) {
+    for (d = descriptor_list; d; d = d->next) {
       if (STATE(d) != CON_PLAYING || GET_LEVEL(d->character) < LVL_IMMORT)
         continue;
       if (!CAN_SEE(ch, d->character))
@@ -2422,7 +2436,7 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
 	zone_table[zone].age, zone_table[zone].lifespan,
         zone_table[zone].reset_mode ? ((zone_table[zone].reset_mode == 1) ? "Reset when no players are in zone" : "Normal reset") : "Never reset",
 	zone_table[zone].bot, zone_table[zone].top);
-        i = j = k = l = m = n = o = 0;
+        j = k = l = m = n = o = 0;
 
         for (i = 0; i < top_of_world; i++)
           if (world[i].number >= zone_table[zone].bot && world[i].number <= zone_table[zone].top)
@@ -3666,23 +3680,23 @@ ACMD (do_zcheck)
                             "- Neither SENTINEL nor STAY_ZONE bits set.\r\n");
 
         if (MOB_FLAGGED(mob, MOB_SPEC) && (found = 1))
-          len += snprintf(buf + len, sizeof(buf) - len,
+          snprintf(buf + len, sizeof(buf) - len,
                             "- SPEC flag needs to be removed.\r\n");
 
-          /* Additional mob checks.*/
-          if (found) {
-            send_to_char(ch,
-                    "%s[%5d]%s %-30s: %s\r\n",
-                    CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
-                    CCYEL(ch, C_NRM), GET_NAME(mob),
-                    CCNRM(ch, C_NRM));
-            send_to_char(ch, "%s", buf);
-          }
-          /* reset buffers and found flag */
-          strcpy(buf, "");
-          found = 0;
-          len = 0;
-        }   /* mob is in zone */
+        /* Additional mob checks.*/
+        if (found) {
+          send_to_char(ch,
+                  "%s[%5d]%s %-30s: %s\r\n",
+                  CCCYN(ch, C_NRM), GET_MOB_VNUM(mob),
+                  CCYEL(ch, C_NRM), GET_NAME(mob),
+                  CCNRM(ch, C_NRM));
+          send_to_char(ch, "%s", buf);
+        }
+        /* reset buffers and found flag */
+        strcpy(buf, "");
+        found = 0;
+        len = 0;
+      }   /* mob is in zone */
     }  /* check mobs */
 
  /* Check objects */
@@ -3804,7 +3818,7 @@ ACMD (do_zcheck)
          ext2 = ext;
 
      if (ext2 && (found = 1))
-       len += snprintf(buf + len, sizeof(buf) - len,
+       snprintf(buf + len, sizeof(buf) - len,
                        "- has unformatted extra description\r\n");
      /* Additional object checks. */
      if (found) {
@@ -3988,15 +4002,15 @@ static void obj_checkload(struct char_data *ch, obj_vnum ovnum)
                              mob_proto[lastmob_r].player.short_descr,
                              mob_index[lastmob_r].vnum,
                              ZCMD2.arg2);
-            break;
-          case 'R': /* rem obj from room */
-            lastroom_v = world[ZCMD2.arg1].number;
-            lastroom_r = ZCMD2.arg1;
-            if (ZCMD2.arg2 == ornum)
-              send_to_char(ch, "  [%5d] %s (Removed from room)\r\n",
-                               lastroom_v,
-                               world[lastroom_r].name);
-            break;
+          break;
+        case 'R': /* rem obj from room */
+          lastroom_v = world[ZCMD2.arg1].number;
+          lastroom_r = ZCMD2.arg1;
+          if (ZCMD2.arg2 == ornum)
+            send_to_char(ch, "  [%5d] %s (Removed from room)\r\n",
+                             lastroom_v,
+                             world[lastroom_r].name);
+          break;
       }/* switch */
     } /*for cmd_no......*/
   }  /*for zone...*/
@@ -4153,7 +4167,6 @@ ACMD(do_copyover)
   FILE *fp;
   struct descriptor_data *d, *d_next;
   char buf [100], buf2[100];
-  int i;
 
   fp = fopen (COPYOVER_FILE, "w");
     if (!fp) {
@@ -4199,16 +4212,20 @@ ACMD(do_copyover)
   sprintf (buf2, "-C%d", mother_desc);
 
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
-  i = chdir ("..");
+  if(chdir ("..") != 0) {
+    log("Error changing working directory: %s", strerror(errno));
+    send_to_char(ch, "Error changing working directory: %s.", strerror(errno));
+    exit(1);
+  }
 
   /* Close reserve and other always-open files and release other resources */
-   execl (EXE_FILE, "circle", buf2, buf, (char *) NULL);
+  execl (EXE_FILE, "circle", buf2, buf, (char *) NULL);
 
-   /* Failed - successful exec will not return */
-   perror ("do_copyover: execl");
-   send_to_char (ch, "Copyover FAILED!\n\r");
+  /* Failed - successful exec will not return */
+  perror ("do_copyover: execl");
+  send_to_char (ch, "Copyover FAILED!\n\r");
 
- exit (1); /* too much trouble to try to recover! */
+  exit (1); /* too much trouble to try to recover! */
 }
 
 ACMD(do_peace)
@@ -4229,17 +4246,15 @@ ACMD(do_peace)
 
 ACMD(do_zpurge)
 {
-  int vroom, room, vzone = 0, zone = 0;
+  int vroom, room, zone = 0;
   char arg[MAX_INPUT_LENGTH];
   int purge_all = FALSE;
   one_argument(argument, arg);
   if (*arg == '.' || !*arg) {
     zone = world[IN_ROOM(ch)].zone;
-    vzone = zone_table[zone].number;
   }
   else if (is_number(arg)) {
-    vzone = atoi(arg);
-    zone = real_zone(vzone);
+    zone = real_zone(atoi(arg));
     if (zone == NOWHERE || zone > top_of_zone_table) {
       send_to_char(ch, "That zone doesn't exist!\r\n");
       return;
@@ -4291,7 +4306,7 @@ ACMD(do_file)
   int req_file_lines = 0;      /* Number of total lines in file to be read. */
   int lines_read = 0;     /* Counts total number of lines read from the file. */
   int req_lines = 0;      /* Number of lines requested to be displayed. */
-  int i, j;               /* Generic loop counters. */
+  int i;                  /* Generic loop counter. */
   int l;                  /* Marks choice of file in fields array. */
   char field[MAX_INPUT_LENGTH];  /* Holds users choice of file to be read. */
   char value[MAX_INPUT_LENGTH];  /* Holds # lines to be read, if requested. */
@@ -4335,7 +4350,7 @@ ACMD(do_file)
    /* Display usage if no argument. */
    if (!*argument) {
      send_to_char(ch, "USAGE: file <filename> <num lines>\r\n\r\nFile options:\r\n");
-     for (j = 0, i = 0; fields[i].level; i++)
+     for (i = 0; fields[i].level; i++)
        if (fields[i].level <= GET_LEVEL(ch))
          send_to_char(ch, "%-15s%s\r\n", fields[i].cmd, fields[i].file);
      return;

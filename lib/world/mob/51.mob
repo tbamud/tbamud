@@ -3,7 +3,7 @@ goblin slave~
 the goblin slave~
 A goblin slave lies here asleep.
 ~
-   The defenseless goblin begs for mercy.  
+   The defenseless goblin begs for mercy.
 ~
 138 0 0 0 0 0 0 0 350 E
 1 20 9 0d0+10 1d2+0
@@ -15,7 +15,7 @@ drow commoner~
 the Drow commoner~
 A drow commoner is here, walking around on guard duty.
 ~
-   I doubt he is the type to give directions.  
+   I doubt he is the type to give directions.
 ~
 6248 0 0 0 16 0 0 0 -1000 E
 10 17 4 2d2+100 1d2+1
@@ -27,7 +27,7 @@ drow noble warrior~
 the drow warrior~
 A drow warrior stands here guarding his home.
 ~
-   He looks kind of annoyed!  
+   He looks kind of annoyed!
 ~
 6186 0 0 0 16 0 0 0 -1000 E
 12 16 2 2d2+120 2d2+2
@@ -39,7 +39,7 @@ drow noble mage~
 the drow mage~
 A drow mage is here protecting his home.
 ~
-   The mage prepares to cast a spell...  At you!!  
+   The mage prepares to cast a spell...  At you!!
 ~
 6186 0 0 0 16 0 0 0 -1000 E
 15 15 1 3d3+150 2d2+2
@@ -52,7 +52,7 @@ drow priestess~
 the drow priestess~
 A drow priestess is here shouting orders.
 ~
-   I wouldn't want go get on her bad side!  
+   I wouldn't want go get on her bad side!
 ~
 6186 0 0 0 16 0 0 0 -1000 E
 17 15 0 3d3+170 2d2+2
@@ -65,7 +65,7 @@ drow master~
 the drow master~
 A drow master stares at you angrily.
 ~
-   The drow master is ALWAYS ready for a fight.  
+   The drow master is ALWAYS ready for a fight.
 ~
 6186 0 0 0 16 0 0 0 -1000 E
 21 13 -2 4d4+210 3d3+3
@@ -77,7 +77,7 @@ drow weaponsmaster~
 the weaponsmaster~
 A drow weaponsmaster is here shadow boxing.
 ~
-   He definitely know his way around in combat.  
+   He definitely know his way around in combat.
 ~
 6186 0 0 0 65552 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3
@@ -89,7 +89,7 @@ drow matron mother~
 the Matron Mother~
 The Matron Mother of the house is standing here.
 ~
-   She looks really and truly annoyed that you have found your way here.  
+   She looks really and truly annoyed that you have found your way here.
 ~
 2090 0 0 0 65552 0 0 0 -1000 E
 24 12 -4 4d4+240 4d4+4
@@ -102,7 +102,7 @@ drow matron mother~
 the Matron Mother~
 The Matron Mother of the first house is waiting for you.
 ~
-   She looks like she is about to rip your head of and eat it.  
+   She looks like she is about to rip your head of and eat it.
 ~
 2090 0 0 0 65552 0 0 0 -1000 E
 25 12 -5 5d5+250 4d4+4
@@ -115,7 +115,7 @@ drider~
 the drider~
 The drider looks at you viciously while it draws its sword.
 ~
-   This half-spider, half-drow creature is a formidable opponent.  
+   This half-spider, half-drow creature is a formidable opponent.
 ~
 24680 0 0 0 65552 0 0 0 -1000 E
 8 18 5 1d1+80 1d2+1
@@ -127,7 +127,7 @@ drider~
 the drider~
 The drider looks at you viciously while it draws its sword.
 ~
-   This half-spider, half-drow creature is a formidable opponent.  
+   This half-spider, half-drow creature is a formidable opponent.
 ~
 24682 0 0 0 65552 0 0 0 -1000 E
 11 17 3 2d2+110 1d2+1
@@ -139,7 +139,7 @@ yochlol~
 the yochlol~
 A yochlol forms out of a swirling mist...
 ~
-   The yochlol is not in a good mood.  
+   The yochlol is not in a good mood.
 ~
 223290 0 0 0 65616 0 0 0 -1000 E
 23 13 -3 4d4+230 3d3+3

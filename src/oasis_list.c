@@ -830,7 +830,6 @@ void print_zone(struct char_data *ch, zone_vnum vnum)
   size_mobiles = 0;
   size_shops   = 0;
   size_trigs   = 0;
-  size_quests  = 0;
   top          = zone_table[rnum].top;
   bottom       = zone_table[rnum].bot;
 

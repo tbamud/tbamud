@@ -4,7 +4,7 @@ Gatheouse~
 open, and from the rust on the immense hinges, you would guess that they have
 been kept this way for years.  To the west is XXXX city proper, and
 eastwards is a long road, leading through the center of this residential
-district.    
+district.
 ~
 294 8 0 0 0 0
 D1
@@ -14,16 +14,16 @@ D1
 E
 gates~
    Big, steel, and rusty.  Looks like it would take an extremely violent act to
-close them...  
+close them...
 ~
 E
 credits info~
    Trade Road by Builder_5
 Copyright 1993 by Curious Areas Workshop
 *
-The 'Trade Road' area was built as a first effort for C.A.W., and was kept 
-relatively simple. 'Trade Road' is a small neighborhood addition for any 
-standard Diku town.  It has one eastern entrance, and one western exit, and 
+The 'Trade Road' area was built as a first effort for C.A.W., and was kept
+relatively simple. 'Trade Road' is a small neighborhood addition for any
+standard Diku town.  It has one eastern entrance, and one western exit, and
 one southern river-dock area.
 'Trade Road' is small; only 52 rooms, 21 mobs, 22 objects, and 5
 shops.  It consists mainly of one main road (Trade Road) with various
@@ -39,7 +39,7 @@ edit the following rooms:
 #00 -- add entrance/exit and change description to fit the outside area.
 #17 -- same.
 *
-The east exit is at #00, the west #17.  
+The east exit is at #00, the west #17.
 Docks lead away on the river to the south in room #34.
 Interesting areas without purpose (yet) are the:
 Library (#40)
@@ -57,13 +57,13 @@ in the two descriptions!!!) 'reverses' the area, allowing a west exit
 to east Trade Road.
 *
 Credits
-A Big Thanks to Builder_5 for supporting C.A.W. Also, kudos to Tarkin 
-of VieMud (viemud.org 4000) for allowing us to use his mud for 
-pre-release testing. This area was built with the aid of George 
+A Big Thanks to Builder_5 for supporting C.A.W. Also, kudos to Tarkin
+of VieMud (viemud.org 4000) for allowing us to use his mud for
+pre-release testing. This area was built with the aid of George
 Essl's Dikued program.  We would like to thank Mr. Essl for his time
 and determination to create and support Dikued.
 The following people have aided C.A.W. and Builder_5 in numerous ways,
-and all receive our deepest gratitude: Shane Finkel Josh 'Champion of 
+and all receive our deepest gratitude: Shane Finkel Josh 'Champion of
 Bagels' Megerman John D. Horner and the System Adminstrators of ODU
 Replace XXXX with a town name of your choosing.
 ~
@@ -73,7 +73,7 @@ Trade Road~
    This is the west-most end of Trade Road.  Eastwards, the road continues deep
 into the city, its length disguised by distance.  Just to the west, you see a
 largish gatheouse in the city wall.  It seems rather quiet in the area so close
-to a city gate...    
+to a city gate...
 ~
 294 0 0 0 0 0
 D0
@@ -96,13 +96,13 @@ D3
 0 0 29400
 E
 alley alleys~
-   There are alleys to the north and south.  
+   There are alleys to the north and south.
 ~
 E
 gatheouse~
    The gatheouse stands to the west, allowing entrance and exit through the city
 walls.  Approximately fifteen feet tall, the gates seem permanently open,
-allowing free passage.  
+allowing free passage.
 ~
 S
 #29402
@@ -111,11 +111,11 @@ Trade Road~
 odd around here; the air still.  A gate marks the end of the road to the west,
 and the road continues to the east.  Two shops stand across from each other
 here, the north seeming more busy, the south seeming to attract a better
-quality of customer.    
+quality of customer.
 ~
 294 0 0 0 0 1
 D0
-There's a small shop there with a sign above it.  The sign 
+There's a small shop there with a sign above it.  The sign
 has the form of a cow in silohuette on it.
 ~
 ~
@@ -125,9 +125,9 @@ D1
 ~
 0 0 29461
 D2
-A rather well kept shop is to the south, with a large steel 
-door propped open to the street by a wooden block.  A large 
-rectangular sign hangs in place of a window, 'Baubles and 
+A rather well kept shop is to the south, with a large steel
+door propped open to the street by a wooden block.  A large
+rectangular sign hangs in place of a window, 'Baubles and
 Beads.'
 ~
 ~
@@ -140,7 +140,7 @@ E
 gate gates gatheouse~
    The gatheouse stands to the west, allowing entrance and exit through the city
 walls.  Approximately fifteen feet tall, the gates seem permanently open,
-allowing free passage.  
+allowing free passage.
 ~
 E
 shop shops~
@@ -153,7 +153,7 @@ Trade Road~
    Here Trade Road is intersected by another, smaller road.  A street sign
 identifies it as 'Clay Street'.  A cursory look north and south reveals a shop
 or two, but not much else of interest.  Looking west, you spy a gate in the
-city wall, and Trade Road continues to the east.    
+city wall, and Trade Road continues to the east.
 ~
 294 0 0 0 0 1
 D0
@@ -176,7 +176,7 @@ E
 gate gates gatheouse~
    The gatheouse stands to the west, allowing entrance and exit through the city
 walls.  Approximately fifteen feet tall, the gates seem permanently open,
-allowing free passage.  
+allowing free passage.
 ~
 S
 #29404
@@ -184,7 +184,7 @@ Alley~
    You squeeze down this alleyway, scrunching up obscenely to pass by the
 rubbish.  The alley opens up between two buildings on Trade Road southwards,
 and to the north the alley continues.  There is a slight smell of decay that
-teases your nose, making you feel as if it were time to move on...    
+teases your nose, making you feel as if it were time to move on...
 ~
 294 0 0 0 0 1
 D0
@@ -198,14 +198,14 @@ Trade Road is to the south.
 0 0 29401
 E
 trash rubbish~
-   Garbage, trash, and filth.  You decide not to root through it.  
+   Garbage, trash, and filth.  You decide not to root through it.
 ~
 S
 #29405
 Alley~
    An alley leads south here from an entrace eastwards on Clay Street.  Trash
 and rubbish grime up your footwear as you tread lightly through the alleyway;
-obviously this is not one of the highlight attractions of XXXX.    
+obviously this is not one of the highlight attractions of XXXX.
 ~
 294 0 0 0 0 1
 D1
@@ -218,7 +218,7 @@ D2
 0 0 29437
 E
 trash rubbish~
-   Garbage, trash, and filth.  You decide not to root through it.  
+   Garbage, trash, and filth.  You decide not to root through it.
 ~
 S
 #29406
@@ -226,7 +226,7 @@ Clay Street~
    Clay Street continues east and west here.  Looking around, you spy few exits
 -- one going back down Clay Street to the east, over the wall, and a shop to
 the south.  The wall doesn't look too safe, however; what with all those guards
-on top.  The shop to the south looks like a considerably nicer place to go.  
+on top.  The shop to the south looks like a considerably nicer place to go.
 ~
 294 0 0 0 0 1
 D1
@@ -234,7 +234,7 @@ D1
 ~
 0 0 29454
 D2
-A small shop is to the south.  The sign is delicately 
+A small shop is to the south.  The sign is delicately
 lettered,
            "Sakifan's Library"
 ~
@@ -247,7 +247,7 @@ D3
 E
 wall~
    Looking up, you see a guard post right above you.  You wouldn't stand a
-chance; you'd be dead long before you reached the top to defend yourself.  
+chance; you'd be dead long before you reached the top to defend yourself.
 ~
 E
 shop~
@@ -256,7 +256,7 @@ Library"
 ~
 E
 guard guards~
-   A guard on patrol looks at your boredly and walks by...  
+   A guard on patrol looks at your boredly and walks by...
 ~
 S
 #29407
@@ -265,12 +265,12 @@ Clay Street~
 intersection of Trade Road and Clay Street.  To the north is a large building
 from which you hear a lot of laughing and general merryment.  The building
 seems tall and imposing, making the evident good times inside that much more
-out of place...    
+out of place...
 ~
 294 0 0 0 0 1
 D0
-There's a larger building to the north, looking to be some 
-sort of factory.  You smell a faint tinge of alcohol in the 
+There's a larger building to the north, looking to be some
+sort of factory.  You smell a faint tinge of alcohol in the
 air.
 ~
 ~
@@ -291,7 +291,7 @@ D3
 E
 building~
    There's a larger building to the north, looking to be some sort of factory.
-You smell a faint tinge of alcohol in the air.  
+You smell a faint tinge of alcohol in the air.
 ~
 S
 #29408
@@ -301,7 +301,7 @@ buildings in this area of town look fairly delapidated; this is not where
 'urban renewal' happens evidently.  Westwards, a single intact stone gargoyle
 marks the rubble of an ancient church.  A sad feeling akin to gloom presses
 down upon your shoulders, making your own load feel that much more heavier to
-bear here.    
+bear here.
 ~
 294 0 0 0 0 1
 D0
@@ -318,11 +318,11 @@ D3
 0 0 29456
 E
 gargoyle~
-   It grimaces at you.  You can almost hear its laugh.  
+   It grimaces at you.  You can almost hear its laugh.
 ~
 E
 rubble church path~
-   It looks like it was destroyed many, many years ago.  
+   It looks like it was destroyed many, many years ago.
 ~
 S
 #29409
@@ -330,7 +330,7 @@ Alley~
    A dead cat lies across the entrance to this alleyway as if some sort of
 guardian or omen.  None of the pedestrians on Trade Road to the north even
 glance in this direction as they pass on by.  The alley continues on to the
-south.  A strong smell of old blood and rot wafts through the area...    
+south.  A strong smell of old blood and rot wafts through the area...
 ~
 294 4 0 0 0 1
 D0
@@ -344,7 +344,7 @@ D2
 0 0 29410
 E
 cat dead~
-   Its been dead a few days.  Food for flies and rats.  
+   Its been dead a few days.  Food for flies and rats.
 ~
 S
 #29410
@@ -352,8 +352,8 @@ Alley~
    A table has been set up here, with a rather nice tablecloth and wooden
 utensils adorning it.  Two corpses sit propped up in chairs before the table,
 their relative decay giving their age to be about two weeks dead.  You shift
-your weight uneasily, startling two rats sniffing around the taller corpse.  
-The alley leads north and east from here.    
+your weight uneasily, startling two rats sniffing around the taller corpse.
+The alley leads north and east from here.
 ~
 294 0 0 0 0 1
 D0
@@ -367,11 +367,11 @@ D1
 E
 corpse corpses~
    They look like the bodies of some upper- to middle-class people; the clothes
-were once very nice, and you can tell the hair had once been well-kempt.  
+were once very nice, and you can tell the hair had once been well-kempt.
 ~
 E
 table utensils tablecloth cloth chairs chair~
-   A truly disgusting dining experience, to say the least!  
+   A truly disgusting dining experience, to say the least!
 ~
 S
 #29411
@@ -382,7 +382,7 @@ the south end of Clay Street to the east, and leads deeper in between the
 buildings to the west.  A strong smell makes your eyes water; there is graffiti
 on the walls, drawn with an unsteady hand and a large supply of fecal material.
 A more sinister smell teases you just below the stench here just before a
-breeze from the east blows it away from you.    
+breeze from the east blows it away from you.
 ~
 294 4 0 0 0 1
 D1
@@ -396,7 +396,7 @@ D3
 E
 pallet bed~
    Lice-ridden and rife with bedbugs, this is a truly unappetizing place to
-sleep.  
+sleep.
 ~
 E
 graffiti writing wall~
@@ -408,7 +408,7 @@ Clay Street~
    Clay Street ends right up against the southern wall here, the only way to go
 is back north towards Trade Road.  A small breeze teases you with an awful
 smell, and whisks it away just as quickly.  Something is making you feel rather
-uneasy about this area, but its probably just your imagination.    
+uneasy about this area, but its probably just your imagination.
 ~
 294 0 0 0 0 1
 D0
@@ -430,7 +430,7 @@ Clay Street~
    The intersection of Trade Road and Clay Street is just to the north from
 here.  To the south, Clay Road continues towards the southern city wall, not
 far away.  A nicely built building with an exquisite architecture is to the
-east, while the distinctive smell of tannin comes from a shop from the west.  
+east, while the distinctive smell of tannin comes from a shop from the west.
 ~
 294 0 0 0 0 1
 D0
@@ -455,16 +455,16 @@ off its hinges from heavy use.
 E
 wall~
    The wall is high and looks hard to climb.  The guards on top would knock you
-down long before you ever got up there, though.  Oh well.  
+down long before you ever got up there, though.  Oh well.
 ~
 E
 building~
-   A beautifully constructed shop is east of here.  
+   A beautifully constructed shop is east of here.
 ~
 E
 shop~
    There is an old shop to the west.  The door is almost falling off its hinges
-with heavy use.  
+with heavy use.
 ~
 S
 #29414
@@ -472,11 +472,11 @@ Trade Road~
    The traffic on this road seems light at best, becoming a bit thicker to the
 east.  Westwards, you see the intersection of Trade Road and Clay Street, which
 runs north-south.  A large open-air building is to the north, and southwards is
-a large open lot; a fairgrounds, closed for the time being.    
+a large open lot; a fairgrounds, closed for the time being.
 ~
 294 0 0 0 0 1
 D0
-A large building with many tethering posts outside is to 
+A large building with many tethering posts outside is to
 the north.
 ~
 ~
@@ -492,11 +492,11 @@ D3
 E
 fairgrounds fairground lot open~
    Its a wide area, suitable for flea markets, festivals, bazaars and carnivals.
-Right now it's closed, though.  
+Right now it's closed, though.
 ~
 E
 building~
-   A large building with many tethering posts outside is to the north.  
+   A large building with many tethering posts outside is to the north.
 ~
 S
 #29415
@@ -505,7 +505,7 @@ Trade Road~
 through the area.  You spot near-identical gatheouses to the east and west
 marking the boundries of Trade Road, and this neighborhood.  To the south is a
 large fairgrounds area, closed for the time being.  A building to the north
-seems to be locked up tight, with a large, 'FOR RENT' sign out front...    
+seems to be locked up tight, with a large, 'FOR RENT' sign out front...
 ~
 294 0 0 0 0 1
 D1
@@ -518,22 +518,22 @@ D3
 0 0 29414
 E
 sign~
-   It says 'For Rent'.  You would guess that the building is unoccupied.  
+   It says 'For Rent'.  You would guess that the building is unoccupied.
 ~
 E
 building~
-   It's for rent.  You can tell by the sign.  The sign says 'For Rent'.  
+   It's for rent.  You can tell by the sign.  The sign says 'For Rent'.
 ~
 E
 gatheouse gatehouses~
    The gatheouse stands to the west, allowing entrance and exit through the city
 walls.  Approximately fifteen feet tall, the gates seem permanently open,
-allowing free passage.  
+allowing free passage.
 ~
 E
 fairground fairgrounds~
    Its a wide area, suitable for flea markets, festivals, bazaars and carnivals.
-Right now it's closed, though.  
+Right now it's closed, though.
 ~
 S
 #29416
@@ -543,7 +543,7 @@ you with eyes and movements for the most part.  The citizenry seem quiet;
 depressed or merely sedentary you would guess.  Trade Road leads far to the
 west from here, and there is a largish gatheouse not far to the east.  A
 north-south running road labeled 'Staid Avenue' intersects here, taking much of
-the traffic away from the main road to the south.    
+the traffic away from the main road to the south.
 ~
 294 0 0 0 0 1
 D0
@@ -566,15 +566,15 @@ E
 gatheouse gatehouses gate gates~
    The gatheouse stands to the west, allowing entrance and exit through the city
 walls.  Approximately fifteen feet tall, the gates seem permanently open,
-allowing free passage.  
+allowing free passage.
 ~
 S
 #29417
 Gatheouse~
    This is a rather large gatheouse in the city wall.  Through the gates you
 can see farmlands.  The gate looks to be a good defensible point in the city
-wall, an architectural artifact of more dangerous times in these realms.  
-Westwards a large road leads through XXXX.    
+wall, an architectural artifact of more dangerous times in these realms.
+Westwards a large road leads through XXXX.
 ~
 294 0 0 0 0 1
 D3
@@ -584,21 +584,21 @@ D3
 E
 gate gates~
    Big and steel.  These gates were meant to keep people out.  They look like
-they'd do a good job.  
+they'd do a good job.
 ~
 E
 wall~
    The wall stands high and proud.  Guards walk along its length on top, looking
-out for the safety of the city, and intruders.  Makes you feel safe, somehow.  
+out for the safety of the city, and intruders.  Makes you feel safe, somehow.
 ~
 S
 #29418
 Staid Avenue~
    This is Staid Avenue, just north of where it intersects Trade Road.  The
-neighborhood here seems fairly low-class, but not unliveable by any means.  
+neighborhood here seems fairly low-class, but not unliveable by any means.
 Most of the buildings seem to be low cost housing for the common populace of
 XXXX; making you guess there is a very high population density in this area.
-  
+
 ~
 294 0 0 0 0 1
 D0
@@ -615,7 +615,7 @@ Staid Avenue~
    Staid Avenue continues through the city here, and to the north you spot
 another intersection of roads.  There seems to be many buildings used as
 domiciles in this area.  You wouldn't exactly call this neighborhood a 'bad'
-neighborhood yet, but the potential is certainly there.    
+neighborhood yet, but the potential is certainly there.
 ~
 294 0 0 0 0 1
 D0
@@ -628,7 +628,7 @@ D2
 0 0 29418
 E
 buildings building~
-   The seem to be low-class, low-quality, and heavily used.  
+   The seem to be low-class, low-quality, and heavily used.
 ~
 S
 #29420
@@ -637,7 +637,7 @@ Harple Road~
 Avenue leads south from here towards Trade Road and the southern section of the
 residential district.  Harple Road seems to run along part of the length of the
 wall here, lined with apartment buildings and a few duplexed houses.  To the
-north is one particularly bad looking boarding house.    
+north is one particularly bad looking boarding house.
 ~
 294 0 0 0 0 1
 D0
@@ -663,7 +663,7 @@ building buildings~
 ~
 E
 boarding house~
-   Its a nasty, ugly, run-down boarding house to the north.  
+   Its a nasty, ugly, run-down boarding house to the north.
 ~
 S
 #29421
@@ -672,7 +672,7 @@ Harple Road~
 buildings and houses typical of this section of town.  Idly, you notice an
 amazing lack of the graffiti typical of other large, heavily populated towns in
 this neighborhood.  Seems as if the average populace in XXXX is considerably
-more well-behaved than most other places.    
+more well-behaved than most other places.
 ~
 294 0 0 0 0 1
 D0
@@ -690,7 +690,7 @@ D3
 0 0 29423
 E
 buildings building house houses~
-   Its not a very nice place to visit, and you wouldn't want to live here.  
+   Its not a very nice place to visit, and you wouldn't want to live here.
 ~
 S
 #29422
@@ -698,7 +698,7 @@ Harple Road~
    Harple Road runs erratically here, the buildings on either side seemingly
 crooked and warped by the uneven ground.  Just to the west Staid Avenue runs
 south from Harple, towards Trade Road.  The neighborhood seems quiet, pensive
-even.  Strange...    
+even.  Strange...
 ~
 294 0 0 0 0 1
 D0
@@ -720,7 +720,7 @@ S
 Harple Road~
    This is the western end of Harple Road.  To the west you can see where Staid
 Avenue leads south from Harple not far from here.  There doesn't seem to be
-much going on around here at all...  A very calm neighborhood.    
+much going on around here at all...  A very calm neighborhood.
 ~
 294 0 0 0 0 1
 D1
@@ -746,7 +746,7 @@ stench puts you off for a moment; the alley is filled with garbage and human
 wastes.  Breathing through your mouth makes it a little more tolerable, but not
 by much.  The buildings to either side of you rise high up, cutting off most of
 the light available from the sky.  The stench and darkness raises your hackles,
-and you shiver involuntarily.    
+and you shiver involuntarily.
 ~
 294 0 0 0 0 1
 D1
@@ -760,11 +760,11 @@ D2
 0 0 29425
 E
 garbage trash waste wastes~
-   Human sewage.  Yuck.  
+   Human sewage.  Yuck.
 ~
 E
 buildings building~
-   They loom, tall and spooky over you.  
+   They loom, tall and spooky over you.
 ~
 S
 #29425
@@ -772,7 +772,7 @@ Alley~
    This is the southern end of an alley that connects with Clay Street to the
 west.  An ill wind ruffles your hair from the north, carrying a smell of
 sewage, of rot, sickness and decomposition.  Your stomach squirms like a live
-animal in your gut, making you feel distinctly uneasy.    
+animal in your gut, making you feel distinctly uneasy.
 ~
 294 0 0 0 0 1
 D0
@@ -789,7 +789,7 @@ S
 Staid Avenue~
    Staid Avenue heads south from Trade Road towards the river.  The quality of
 the shops and buildings in this area are getting noticeably worse now, and the
-litter in the street is getting thicker the farther south you go.    
+litter in the street is getting thicker the farther south you go.
 ~
 294 0 0 0 0 1
 D0
@@ -807,11 +807,11 @@ D2
 E
 river~
    The river flows by grandly, only slightly polluted by the city and its
-populace.  Looks nice, but get your drinking water from upstream.  
+populace.  Looks nice, but get your drinking water from upstream.
 ~
 E
 litter~
-   You see numerous copies of newbie pamplets.  Damn newbies!  
+   You see numerous copies of newbie pamplets.  Damn newbies!
 ~
 E
 shop shops building buildings~
@@ -823,7 +823,7 @@ Staid Avenue~
    You are near the southern end of Staid Road, where it intersects Klelk
 Boulevard near the river.  The neighborhood seems to be getting worse and worse
 the closer to the river you actually get.  Westwards is an open shop with a
-monstrous anchor out in front being used for a tethering post.    
+monstrous anchor out in front being used for a tethering post.
 ~
 294 0 0 0 0 1
 D0
@@ -842,11 +842,11 @@ A small shop is to the west.
 E
 river~
    The river flows by grandly, only slightly polluted by the city and its
-populace.  Looks nice, but get your drinking water from upstream.  
+populace.  Looks nice, but get your drinking water from upstream.
 ~
 E
 shop~
-   A small shop is to the west.  
+   A small shop is to the west.
 ~
 S
 #29428
@@ -856,7 +856,7 @@ the docks jutting out into the water, its wooden planks well-used by the crews
 of the trading ships that load and unload every day.  Lining the street on the
 north side of Klelk in both directions you see some of the typical dives you
 would expect close to the waterfront.  North from here Staid Avenue heads
-towards Trade Road and the central areas of the city.    
+towards Trade Road and the central areas of the city.
 ~
 294 0 0 0 0 1
 D0
@@ -874,16 +874,16 @@ D3
 E
 river~
    The river flows by grandly, only slightly polluted by the city and its
-populace.  Looks nice, but get your drinking water from upstream.  
+populace.  Looks nice, but get your drinking water from upstream.
 ~
 E
 dock docks~
-   The docks just out into the river for passing ships to moor against.  
-They're just to the south-east.  
+   The docks just out into the river for passing ships to moor against.
+They're just to the south-east.
 ~
 E
 dive dives~
-   There's a tavern to the north west from here.  
+   There's a tavern to the north west from here.
 ~
 S
 #29429
@@ -893,11 +893,11 @@ city.  The buildings here are run down, but not quite condemnable yet.  On the
 whole, this doesn't seem like a nice place to live, no matter how busy the area
 seems to be.  You would guess that the sailors of the river bring money to this
 section of town; hence all the low-grade shops and wayhouses, not to mention
-what might be called a 'tavern' to the north.    
+what might be called a 'tavern' to the north.
 ~
 294 0 0 0 0 1
 D0
-A horrible, disgusting tavern is to the north.  It's open 
+A horrible, disgusting tavern is to the north.  It's open
 though.
 ~
 ~
@@ -913,11 +913,11 @@ D3
 E
 river~
    The river flows by grandly, only slightly polluted by the city and its
-populace.  Looks nice, but get your drinking water from upstream.  
+populace.  Looks nice, but get your drinking water from upstream.
 ~
 E
 building buildings shop shops wayhouse wayhouses tavern taverns~
-   A horrible, disgusting tavers is to the north.  It's open.  
+   A horrible, disgusting tavers is to the north.  It's open.
 ~
 S
 #29430
@@ -925,7 +925,7 @@ Klelk Boulevard~
    Klelk Boulevard ends here, right up against the curving city wall.  The wall
 is especially high here, perhaps to protect the guards above from the rabble
 below.  The wall is stained with trash and refuse, obviously missed shots at
-the guards patrolling on the top...    
+the guards patrolling on the top...
 ~
 294 0 0 0 0 1
 D0
@@ -940,14 +940,14 @@ D1
 E
 wall~
    The wall stands high and proud.  Guards walk along its length on top, looking
-out for the safety of the city, and intruders.  Makes you feel safe, somehow.  
+out for the safety of the city, and intruders.  Makes you feel safe, somehow.
 ~
 S
 #29431
 Alley~
    This small alley seems well traveled.  Tracks in the dust and dirt lead
 through, in all directions.  The alley continues to the west, and south you see
-Klelk Boulevard.    
+Klelk Boulevard.
 ~
 294 0 0 0 0 1
 D2
@@ -965,7 +965,7 @@ Alley~
    This is a small alley, dusty and forgotten.  A few lone pieces of assorted
 junk lie about, unwanted and thrown away.  This alley seems not to be travelled
 at all, or used for trash and refuse.  The path between buildings continues to
-the east, and west is an opening up onto Clay Street.    
+the east, and west is an opening up onto Clay Street.
 ~
 294 0 0 0 0 1
 D1
@@ -979,8 +979,8 @@ The southern end of Clay Street is to the west.
 0 0 29412
 E
 junk~
-   Broken furniture, paper trash, and even an old shattered prosthetic arm.  
-Junk.  
+   Broken furniture, paper trash, and even an old shattered prosthetic arm.
+Junk.
 ~
 S
 #29433
@@ -989,7 +989,7 @@ Klelk Boulevard~
 to the east, but fresh mortarwork extends the wall right through the road.  To
 the south are the city docks, extending into the swiftly flowing river.  A lone
 ship sails past, travelling eastward and sporting a merchant's flag.  A ruined
-building nearly stands to the north.    
+building nearly stands to the north.
 ~
 294 0 0 0 0 1
 D0
@@ -1012,11 +1012,11 @@ mortarwork wall~
 ~
 E
 ship~
-   It sails out of sight as you watch.  
+   It sails out of sight as you watch.
 ~
 E
 dock docks~
-   There is a maze of wooden docks to the south.  
+   There is a maze of wooden docks to the south.
 ~
 S
 #29434
@@ -1025,7 +1025,7 @@ City Docks~
 wood, water, and hemp.  The docks are small-- much too small for how many water
 vessels seem to pass by this way.  One large ship is docked well away from the
 other boats, an odd sigil marked on its side in the place of a name.  Its
-gangway is up right now, however...  No entrance today.    
+gangway is up right now, however...  No entrance today.
 ~
 294 0 0 0 0 5
 D0
@@ -1035,25 +1035,25 @@ Klelk Boulevard is to the north.
 0 0 29433
 E
 ship~
-   Its a nice ship, well taken care of.  
+   Its a nice ship, well taken care of.
 ~
 E
 boat boats~
-   Fishing boats and the ilk.  Nothing of interest.  
+   Fishing boats and the ilk.  Nothing of interest.
 ~
 E
 dock docks~
    The wooden planks are well-worn.  Looks like it's time to build a new set of
-docks...  
+docks...
 ~
 E
 river~
    The river flows by grandly, only slightly polluted by the city and its
-populace.  Looks nice, but get your drinking water from upstream.  
+populace.  Looks nice, but get your drinking water from upstream.
 ~
 E
 sigil~
-   Replace this.  
+   Replace this.
 ~
 S
 #29435
@@ -1063,7 +1063,7 @@ screen door of the shop.  The scent of raw meat, blood and sweat are clearly
 noticable; standard for a good butchery shop.  A glass panel separates you from
 a bewildering array of various slabs and shoulders of beef, deer, rabbit, and
 others.  A sign hangs nearby, wooden numbers hanging from it on a large nail...
-Take a number?    
+Take a number?
 ~
 294 8 0 0 0 0
 D2
@@ -1073,20 +1073,20 @@ This shop steps out onto Trade Road to the south.
 0 0 29402
 E
 meat slabs slab meats shoulder shoulders beef deer rabbit~
-   Looks good, if you like raw meat.  
+   Looks good, if you like raw meat.
 ~
 E
 panel glass~
-   You believe this is called a 'sneeze guard'.  
+   You believe this is called a 'sneeze guard'.
 ~
 E
 blood~
    Blood is splattered on the countertop and floor.  What were you expecting
-from a butchery shop?  
+from a butchery shop?
 ~
 E
 sign number numbers~
-   Next number on the sign is number 4.  That's not too long of a wait...  
+   Next number on the sign is number 4.  That's not too long of a wait...
 ~
 S
 #29436
@@ -1097,7 +1097,7 @@ the shop; you see absolutely nothing to buy at all!  As you observe, it slowly
 becomes clear that this merchant's method of sale consists of having the
 customer describe what they want, whereupon the merchant brings something
 similar from the back through a large metal door.  This strikes you as a fairly
-inefficient method of shop-keeping, but very secure.    
+inefficient method of shop-keeping, but very secure.
 ~
 294 8 0 0 0 1
 D0
@@ -1111,11 +1111,11 @@ lantern lanterns~
 ~
 E
 bench chair chairs~
-   Normal looking wooden furniture.  That's all.  
+   Normal looking wooden furniture.  That's all.
 ~
 E
 door metal south back backroom~
-   It's locked, and you don't see a keyhole.  Strange...  
+   It's locked, and you don't see a keyhole.  Strange...
 ~
 S
 #29437
@@ -1144,7 +1144,7 @@ stonework around stand testament to a better age.  For a moment, your
 imagination calls images forth of a dynamic pulpit and a full set of pews
 around you...  Images quickly shattered by the rustle of your clothing in the
 wind and a distant sound of someone talking on the street.  A sense of sadness
-consumes you as you stand here, and then you turn to go.    
+consumes you as you stand here, and then you turn to go.
 ~
 294 4 0 0 0 4
 D1
@@ -1153,15 +1153,15 @@ D1
 0 0 29456
 E
 truck broken wooden~
-   Looks like a toy made with loving care, now shattered by carelessness.  
+   Looks like a toy made with loving care, now shattered by carelessness.
 ~
 E
 mortar stonework rock rocks~
-   Evidence of a grand church, and grander catastrophe.  
+   Evidence of a grand church, and grander catastrophe.
 ~
 E
 apple core cores~
-   A few hours old, not more than that.  
+   A few hours old, not more than that.
 ~
 S
 #29439
@@ -1172,7 +1172,7 @@ in the air, and the floorboards of the brewery are permanently stained brown
 and red from spilled alcohol.  Various signs with exciting slogans are
 scattered around the area, obviously for the worker's morale.  You also notice
 that several barrels are open for the employees enjoyment.  The owner of this
-establishment is obviously no terrible taskmaster!    
+establishment is obviously no terrible taskmaster!
 ~
 294 8 0 0 0 0
 D2
@@ -1182,17 +1182,17 @@ Clay Street is right outside here.
 0 0 29407
 E
 sign signs~
-   DON'T WORRY, BE HAPPY.  DRINK SOME BEER.  
+   DON'T WORRY, BE HAPPY.  DRINK SOME BEER.
 ~
 E
 barrel barrels beer wine~
-   There's a lot of alcohol here.  This brewery puts out a lot of fluid...  
-Enough to keep several tavern in brew.  
+   There's a lot of alcohol here.  This brewery puts out a lot of fluid...
+Enough to keep several tavern in brew.
 ~
 E
 floorboard floorboards board boards floor~
    Big stains and little stains.  The workers look at you funny as you spend
-time examining the floor...  
+time examining the floor...
 ~
 S
 #29440
@@ -1201,7 +1201,7 @@ Sakifan's Library~
 You boggle at the sheer mass of paper and ink surrounding you in this shopfor a
 moment.  If its in print, it's probably here...  Somewhere.  Looking around,
 you realize that's the key; finding what you need in these mounds and mountains
-of mess.    
+of mess.
 ~
 294 8 0 0 0 0
 D0
@@ -1213,15 +1213,15 @@ E
 book books shelf shelves stack stacks~
    "The Ways of Poke-Fu" "How to train a seagull" "Elementary Elementals"
 "Dwarven Rituals" "An annotated history of XXXX" "The art of pleasing a man" The
-last makes you blush a little bit, and you try not to obviously look at it.  
+last makes you blush a little bit, and you try not to obviously look at it.
 ~
 S
 #29441
 Leatherworker's Shop~
    The smell of old tannin wafts through the air in this shop.  A large
 countertop runs along the length of three of the interior walls, with many
-strips and bits of leather are lying on it in various stages of completion.  
-Many finished products are hanging on the walls, awaiting a buyer.    
+strips and bits of leather are lying on it in various stages of completion.
+Many finished products are hanging on the walls, awaiting a buyer.
 ~
 294 8 0 0 0 0
 D1
@@ -1231,15 +1231,15 @@ Clay Street runs north-south right outside.
 0 0 29413
 E
 countertop~
-   It's a plain wooden countertop about waist high.  
+   It's a plain wooden countertop about waist high.
 ~
 E
 strips strip bit bits leather~
-   Some look half-finished, the others look barely off the cow...  
+   Some look half-finished, the others look barely off the cow...
 ~
 E
 finished finish products~
-   Not bad, not bad at all...  For leather.  
+   Not bad, not bad at all...  For leather.
 ~
 S
 #29442
@@ -1248,7 +1248,7 @@ Ceran's Contracting~
 in front of it.  Along the walls are renderings of many of XXXX's buildings,
 and in the corner is an easel with sketchings of what looks to be a large trade
 center.  The air seems cooler in here than anywhere else, and you feel a faint
-draft from the ceiling.    
+draft from the ceiling.
 ~
 294 8 0 0 0 0
 D3
@@ -1258,17 +1258,17 @@ Clay Street is right outside.
 0 0 29413
 E
 desk chair chairs~
-   Standard pieces of wooden furniture.  What were you expecting?  
+   Standard pieces of wooden furniture.  What were you expecting?
 ~
 E
 rendering renderings picture pictures sketching sketchings~
    The sketchings are drawn with exquisite care.  The buildings depicted were
-designed almost as well.  
+designed almost as well.
 ~
 E
 easel trade center~
    Looks nice.  One problem, though....  Looks like its planned to be built
-right over top a bunch of apartment houses.  You guess this is 'progress'.  
+right over top a bunch of apartment houses.  You guess this is 'progress'.
 ~
 S
 #29443
@@ -1277,7 +1277,7 @@ Boarding House~
 house.  The wooden walls are stained with rot and gods know what else.  The
 floors are even worse.  A rickety old desk stands near the interior door, with
 a torn and ripped ledger book on it.  The air seems humid with sweat and
-desperation, making you feel distinctly uncomfortable.    
+desperation, making you feel distinctly uncomfortable.
 ~
 294 12 0 0 0 0
 D0
@@ -1291,12 +1291,12 @@ Harple Road runs by right outside.
 0 0 29420
 E
 walls floors desk floor wall~
-   Dirty.  Grungy.  Rotted.  Stained.  Damaged.  Defaced.  Awful.  
+   Dirty.  Grungy.  Rotted.  Stained.  Damaged.  Defaced.  Awful.
 ~
 E
 ledger book~
    There's only one page left in the book.  So many people have signed it that
-it is now illegible.  
+it is now illegible.
 ~
 S
 #29444
@@ -1306,7 +1306,7 @@ splitting off from it at regular intervals.  One ajar door lends you a glimpse
 into the tiny, tiny rooms; room enough for one bed, one chest of drawers, and
 one person to stand.  There seems to be plenty of room for dirt and grunge,
 however.  Looking around, you see no reason to enter the tiny rooms.  The lobby
-to the south is the only exit of interest.    
+to the south is the only exit of interest.
 ~
 294 8 0 0 0 0
 D2
@@ -1315,16 +1315,16 @@ D2
 0 0 29443
 E
 dirt grunge~
-   What exactly were you expecting to find?  
+   What exactly were you expecting to find?
 ~
 E
 bed chest drawer drawers~
-   These must be sec..  Er..  Thir...  Err..  Fourth hand furniture?  
+   These must be sec..  Er..  Thir...  Err..  Fourth hand furniture?
 ~
 E
 room rooms~
    Tiny, tiny things.  Sleeping in one would be a cramped affair to say the
-least!  
+least!
 ~
 S
 #29445
@@ -1333,7 +1333,7 @@ A private home~
 looks exactly the same as many of the other houses typical of this neighborhood
 of XXXX, but on the inside -- well, ok, it looks the same as all the rest.
 You see the standard trappings of family life; a careworn rocking chair in the
-corner, and a small toy truck abandoned on a sitting table nearby.    
+corner, and a small toy truck abandoned on a sitting table nearby.
 ~
 294 12 0 0 0 0
 D2
@@ -1343,11 +1343,11 @@ Harple Road is just outside.
 0 0 29422
 E
 rocking chair~
-   Time- and care-worn, this chair has seen a lot of grandchildren.  
+   Time- and care-worn, this chair has seen a lot of grandchildren.
 ~
 E
 truck toy~
-   Its a very crudely crafted toy.  The wheels move, though.  
+   Its a very crudely crafted toy.  The wheels move, though.
 ~
 S
 #29446
@@ -1356,7 +1356,7 @@ A private home~
 looks exactly the same as many of the other houses typical of this neighborhood
 of XXXX, but on the inside -- well, ok, it looks the same as all the rest.
 You see the standard trappings of family life; a stack of wood in the corner
-for the fireplace and a few loaves of dough wrapped in towels to rise.    
+for the fireplace and a few loaves of dough wrapped in towels to rise.
 ~
 294 12 0 0 0 0
 D0
@@ -1366,11 +1366,11 @@ Harple Road is just to the north.
 0 0 29422
 E
 wood stack fireplace~
-   Enough wood to last the winter, at least!  
+   Enough wood to last the winter, at least!
 ~
 E
 dough towels loaves~
-   Smells good, but it hasn't quite finished rising yet...  
+   Smells good, but it hasn't quite finished rising yet...
 ~
 S
 #29447
@@ -1380,7 +1380,7 @@ looks exactly the same as many of the other houses typical of this neighborhood
 of XXXX, but on the inside -- well, ok, it looks the same as all the rest.
 You see the standard trappings of family life; a plate with the crumbs of the
 last meal lying next to an overstuffed easy chair that faces the window and the
-street beyond.    
+street beyond.
 ~
 294 12 0 0 0 0
 D2
@@ -1391,11 +1391,11 @@ Harple Road is just south from here.
 E
 overstuffed easy chair~
    A very comfortable-looking chair, with enough crumbs between the crevices to
-support a colony of roaches.  
+support a colony of roaches.
 ~
 E
 plate crumb crumbs meal~
-   Looks like its been picked clean by the bugs that live here.  
+   Looks like its been picked clean by the bugs that live here.
 ~
 S
 #29448
@@ -1404,7 +1404,7 @@ A private home~
 looks exactly the same as many of the other houses typical of this neighborhood
 of XXXX, but on the inside -- well, ok, it looks the same as all the rest.
 You see the standard trappings of family life; a half-played out game of
-checkers on a table between two stiff-backed wooden chairs.    
+checkers on a table between two stiff-backed wooden chairs.
 ~
 294 12 0 0 0 0
 D0
@@ -1414,12 +1414,12 @@ The west end of Harple Road is to the north.
 0 0 29423
 E
 game checkers~
-   Black is winning.  
+   Black is winning.
 ~
 E
 wooden chair chairs table~
    Homemade, but better crafted than a lot of store-bought furniture you've
-seen...  
+seen...
 ~
 S
 #29449
@@ -1428,7 +1428,7 @@ A private home~
 looks exactly the same as many of the other houses typical of this neighborhood
 of XXXX, but on the inside -- well, ok, it looks the same as all the rest.
 You see the standard trappings of family life; an empty bottle of ale holding a
-copy of the XXXX city news down in the draft.    
+copy of the XXXX city news down in the draft.
 ~
 294 12 0 0 0 0
 D3
@@ -1438,7 +1438,7 @@ Staid avenue is just to the west.
 0 0 29426
 E
 bottle empty ale~
-   The label reads: 'Mystic Brew' and not much else.  
+   The label reads: 'Mystic Brew' and not much else.
 ~
 E
 news copy XXXX~
@@ -1452,7 +1452,7 @@ thought, you realize that the ropes and nets are the shop's wares, along with
 many other various useful sailing equipment.  The shopkeeper's desk is a simple
 plank of wood laid across two small anchors...  This place has a definite
 atmosphere!  An open window to the river lets the breeze over the river into
-the shop to ruffle your hair gently.    
+the shop to ruffle your hair gently.
 ~
 294 8 0 0 0 0
 D1
@@ -1463,12 +1463,12 @@ This shop is right on Staid Avenue to the east.
 E
 rope ropes net nets equipment anchor anchors~
    Nice stuff, affordably priced for the sailor's active budget.  You wonder if
-you could use anything here...  
+you could use anything here...
 ~
 E
 river~
    The river flows by grandly, only slightly polluted by the city and its
-populace.  Looks nice, but get your drinking water from upstream.  
+populace.  Looks nice, but get your drinking water from upstream.
 ~
 S
 #29451
@@ -1477,7 +1477,7 @@ Wrecked Shop~
 lightly through the moldy spilled grain and broken barrels to take a look
 around.  This place has been utterly trashed; your first guess would be
 goblins, your second, drunk sailors.  Considering the area, drunk sailors would
-probably be your best bet.  There's nothing here anymore, nothing at all.    
+probably be your best bet.  There's nothing here anymore, nothing at all.
 ~
 294 12 0 0 0 0
 D2
@@ -1487,7 +1487,7 @@ Klelk Boulevard runs beside the river to the south.
 0 0 29433
 E
 grain barrel barrels~
-   Useless.  Trashed.  
+   Useless.  Trashed.
 ~
 S
 #29452
@@ -1496,7 +1496,7 @@ Grebe's Tavern~
 carefully over the dead and/or drunk sailors on the floor toward the center of
 the room.  There's no decorations on the wall; they've all been ripped down in
 anger or for use as weapons at one time or another.  Looking around, you search
-vainly for a clean table to sit at, and then give up.    
+vainly for a clean table to sit at, and then give up.
 ~
 294 8 0 0 0 0
 D2
@@ -1506,11 +1506,11 @@ Klelk Boulevard is to the south.
 0 0 29429
 E
 table tables~
-   You find a table that's relatively vomit-free.  
+   You find a table that's relatively vomit-free.
 ~
 E
 wall walls~
-   Bare, except for the holes.  
+   Bare, except for the holes.
 ~
 S
 #29453
@@ -1519,7 +1519,7 @@ Trading Post~
 chaotic haphazard of valuble trade goods.  As you watch, a small man enters
 from the back room, grabs a box of something unidentifiable, and leaves just as
 quickly.  A schedule on the wall keeps track of the caravans and ships passing
-through the city -- very important information for a merchant.    
+through the city -- very important information for a merchant.
 ~
 294 8 0 0 0 0
 D2
@@ -1529,11 +1529,11 @@ Trade Road runs by outside.
 0 0 29414
 E
 bolt bolts cloth~
-   Nice material...  Would make a good shirt.  
+   Nice material...  Would make a good shirt.
 ~
 E
 barrel barrels spice spices~
-   Smells good.  Real....  Spicy.  
+   Smells good.  Real....  Spicy.
 ~
 E
 trade good goods~
@@ -1541,7 +1541,7 @@ trade good goods~
 ~
 E
 schedule~
-   Looks like another caravan from the east is due in any day now...  
+   Looks like another caravan from the east is due in any day now...
 ~
 S
 #29454
@@ -1549,7 +1549,7 @@ Clay Street~
    In this residential district the people have forsaken the protection given
 to them by the gods.  Strange portals occasionally appear without warning or
 reason.  Causing damage to anything that happens to be in their way.  Rumors
-abound of people being caught inside them and disappearing.    
+abound of people being caught inside them and disappearing.
 ~
 294 0 0 0 0 0
 D1
@@ -1566,7 +1566,7 @@ Clay Street~
    The people have grown hard living outside the city walls.  They have learned
 how to protect themselves.  These strange portals that appear sometimes bring
 with them strange monsters.  Things from the past and even some never thing
-never before even imagined.    
+never before even imagined.
 ~
 294 0 0 0 0 1
 D1
@@ -1583,7 +1583,7 @@ Rubble and Ruin~
    A strange pulsing can be felt in the air around you.  A large building lays
 in ruins.  One of those strange happening took place here.  Some type of portal
 opened in the midst of this building, the strange forces within it brought the
-walls down upon itself.    
+walls down upon itself.
 ~
 294 0 0 0 0 1
 D1
@@ -1600,7 +1600,7 @@ Clay Street~
    With the amount of chaos and destruction outside of XXXX it is a wonder
 that these people dare sleep at night.  Many casualties occur regularly in this
 area.  By the looks of the people they have come to accept their fate.  The
-street continues to the north and south.    
+street continues to the north and south.
 ~
 294 0 0 0 0 1
 D0
@@ -1617,7 +1617,7 @@ harple Road~
    The streets are ill-kept and uncrowded.  The buildings around you are run
 down and in need of some serious repair.  The residential district is not only
 outside the protective dome of XXXX, but also outside of it's rule.  No one
-even attempts to take care of this area or it's people.    
+even attempts to take care of this area or it's people.
 ~
 294 0 0 0 0 1
 D1
@@ -1634,7 +1634,7 @@ Staid Avenue~
    You hear a loud concussion and a scream in the distance.  Another victim to
 the now unstable world these people live in.  Safety only lies within the walls
 of XXXX.  The main trade road to the south intersects the avenue you are
-currently on.    
+currently on.
 ~
 294 0 0 0 0 1
 D0
@@ -1652,7 +1652,7 @@ Trade Road~
 residential district and then passes through some farmlands towards a distant
 city.  The road is in decent shape, good enough for the wagons and caravans to
 make good time on.  The road and everything around it is layered in a thick
-dust.    
+dust.
 ~
 294 0 0 0 0 1
 D1
@@ -1669,7 +1669,7 @@ Trade Road~
    The buildings to the north and south look mostly vacant and unused.  The
 citizenry here seem depressed and resigned to some awful fate that only they
 seem to understand or know.  The road continues to the east towards XXXX or
-west out towards the farmlands.    
+west out towards the farmlands.
 ~
 294 0 0 0 0 1
 D1
@@ -1686,16 +1686,16 @@ Trade Road~
    A haze of dust from a passing wagon makes it hard to breath the already
 stale air.  The wagon passes by quickly, the driver seeming to try to mind his
 own business.  The creak and groan of the wagon wheels reveals it must be
-carrying a heavy load.    
+carrying a heavy load.
 ~
 294 0 0 0 0 1
 S
 #29463
 Trade Road~
-   The farmlands to the west are known to be the breadbasket of XXXX.  
+   The farmlands to the west are known to be the breadbasket of XXXX.
 Without them the city would surely starve.  The farmers are well taken care of
 for their sacrifice of living outside of XXXX in harms way just to bring
-food to the city.  The Trade Road stretches to the east and west.    
+food to the city.  The Trade Road stretches to the east and west.
 ~
 294 0 0 0 0 1
 S
@@ -1704,7 +1704,7 @@ Trade Road~
    The normal hustle and bustle of the city is not evident in this section of
 the residential district.  A few people are about, but not the amount you would
 expect.  Bulidings line the Trade Road to the north and south, but they all
-seem to be empty.    
+seem to be empty.
 ~
 294 0 0 0 0 1
 S
@@ -1713,7 +1713,7 @@ Trade Road~
    The residential district was built long before XXXX was ever conceived.
 Many people continue to live here out of stubbornness and tradition.  A few
 moved within the city after the strange happenings began, but many people just
-can't leave where they were born and raised.    
+can't leave where they were born and raised.
 ~
 294 0 0 0 0 1
 D1
@@ -1730,7 +1730,7 @@ Trade Road~
    The road has become rutted and a little muddy here from the traffic of many
 wagons delivering goods for trade between XXXX, the farmlands, and the lands
 beyond.  With the appearance of portals throughout the realm the possibilities
-for trade are now boundless.  If you dare take the risk of exploring.    
+for trade are now boundless.  If you dare take the risk of exploring.
 ~
 294 0 0 0 0 1
 D1
@@ -1748,7 +1748,7 @@ Alley~
 once beautiful district is falling into ruin, not only is the land and
 buildings falling apart and decrepit, but so are the people.  People have now
 seen things that should never be forced upon the mortal eye.  Many of them are
-forever changed from that moment on.    
+forever changed from that moment on.
 ~
 294 0 0 0 0 1
 D1
@@ -1762,11 +1762,11 @@ D3
 S
 #29468
 Alley~
-   A strong smell wafts in from the east.  Smells like the town sewers.  
+   A strong smell wafts in from the east.  Smells like the town sewers.
 Recent studies by the Magi of XXXX have concluded that the number of
 "mentally challenged" people seems to be increasing exponentially.  It seems
 the damage done by Drakkar is far more elaborate than just the tearing of time
-and space.    
+and space.
 ~
 294 0 0 0 0 1
 D1
@@ -1783,7 +1783,7 @@ Klelk Boulevard~
    The smell of the ocean on a slight breeze coming from the southeast is a
 stark relief from the rest of this place.  The road is potted, rutted, and a
 slimy mess.  The buildings are about the same, a wonder they still stand.  The
-boulevard continues east and west.    
+boulevard continues east and west.
 ~
 294 0 0 0 0 1
 D1

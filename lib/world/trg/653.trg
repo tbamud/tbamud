@@ -8,7 +8,7 @@ Running the Elevator~
 *    apartment really needed an elevator.
 * Thanks to Axanon for letting me look at his really nice elevator triggers.
 * Be prepared for errors, use at your own risk.
-* Any errors are mine, any people named in this trigger are blameless!  
+* Any errors are mine, any people named in this trigger are blameless!
 *
 * Parnassus' Special Anti-Freeze Formula
 if %cmd.mudcommand% == nohassle
@@ -25,7 +25,7 @@ end
 *    commented line using CURFL instead of the one using ORDINAL .
 *  add additional floors along with %zone% and room number of the linking room.
 * (Also add mention of button and display in the linking room.  Set up door to the
-*    elevator, flagged as 2 - Pickproof door.) 
+*    elevator, flagged as 2 - Pickproof door.)
 set zone 653
 set maxfl 4
 set totfl 5
@@ -53,7 +53,7 @@ elseif %eleroom% == %Floor3%
   set Curex %Floor3%
 elseif %eleroom% == %Floor4%
   set CurFl 4
-  set Curex %Floor4% 
+  set Curex %Floor4%
 elseif %eleroom% == %Floor0%
   set CurFl 0
   set Curex %Floor0%
@@ -66,7 +66,7 @@ if %cmd% == push
     else
       ** Thanks to Kyle for figuring out how to make this part work.
       eval text %%self.%elevdoor%(bits)%%
-      if %text.contains(LOCKED)% && !%text.contains(PICKPROOF)% 
+      if %text.contains(LOCKED)% && !%text.contains(PICKPROOF)%
         %send% %actor% The elevator is already in motion.  Please be patient.
         halt
       end
@@ -97,7 +97,7 @@ if %cmd% == push
       if !%text.contains(CLOSED)%
         %send% %actor% The elevator is already here.
         halt
-      elseif %text.contains(LOCKED)% && !%text.contains(PICKPROOF)% 
+      elseif %text.contains(LOCKED)% && !%text.contains(PICKPROOF)%
         %send% %actor% The elevator is already in use.  Please wait and try again.
         halt
       end
@@ -131,7 +131,7 @@ if %cmd% == push
   elseif %targfl% < %Curfl%
     set dir down
     eval length %Curfl% - %targfl%
-  else 
+  else
     set dir nowhere
     set length 0
   end
@@ -151,9 +151,9 @@ if %cmd% == push
     %door% %Elevat% %elevdoor% purge
     %door% %Elevat% %elevdoor% room %Elevat%
     %door% %Elevat% %elevdoor% flags abc
-    %at% %Elevat% %echo% The elevator 	g*l u r c h e s*	n
-    %at% %Elevat% %echo% 	n              	G*l u r c h e s*	n
-    %at% %Elevat% %echo% 	n             	g*l u r c h e s*	n %dir%wards.
+    %at% %Elevat% %echo% The elevator @g*l u r c h e s*@n
+    %at% %Elevat% %echo% @n              @G*l u r c h e s*@n
+    %at% %Elevat% %echo% @n             @g*l u r c h e s*@n %dir%wards.
   end
   while %length%
     if %dir% == up
@@ -169,28 +169,28 @@ if %cmd% == push
       set ordinal 2nd
     elseif %Curfl% == 3
       set ordinal 3rd
-    elseif %Curfl% > 3 
+    elseif %Curfl% > 3
       set ordinal %Curfl%th
-    end 
+    end
     wait 15
-    %at% %Elevat% %echo% 	g     *DING!*	n
+    %at% %Elevat% %echo% @g     *DING!*@n
     %at% %Elevat% %echo% You have reached the %ordinal% floor.
     * It's easier to use the following line if you have over 20 floors (instead of the 21th floor)
     *    %at% %Elevat% %echo% You have reached floor %Curfl%.
     wait 5
     eval length %length% - 1
     if %CurFl% > %maxfl%
-      %echo%	r Something seems to be wrong with the elevator.	n
-      %echo%	r Please try again and if there's still a problem,	n
-      %echo%	r please report this to admin.	n
+      %echo%@r Something seems to be wrong with the elevator.@n
+      %echo%@r Please try again and if there's still a problem,@n
+      %echo%@r please report this to admin.@n
       set length 0
     end
   done
   if %origlen% > 0
     wait 2
-    %at% %Elevat% %echo% 	nThe elevator 	y*s h u d d e r s*	n
-    %at% %Elevat% %echo% 	n              	Y*s h u d d e r s*	n
-    %at% %Elevat% %echo% 	n             	y*s h u d d e r s*	n to a halt.
+    %at% %Elevat% %echo% @nThe elevator @y*s h u d d e r s*@n
+    %at% %Elevat% %echo% @n              @Y*s h u d d e r s*@n
+    %at% %Elevat% %echo% @n             @y*s h u d d e r s*@n to a halt.
   end
   wait 2
   set echofl 0
@@ -202,7 +202,7 @@ if %cmd% == push
     eval echofl %echofl% + 1
   done
   wait 1
-  %at% %targfl%  %echo% 	g     *DING!*	n
+  %at% %targfl%  %echo% @g     *DING!*@n
   wait 3
   %door% %Tarex% %roomdoor% room %Elevat%
   %door% %Tarex% %roomdoor% flags a
@@ -226,7 +226,7 @@ elseif %cmd.mudcommand% == look
     else
       eval text %%self.%elevdoor%(bits)%%
     end
-    if %text.contains(LOCKED)% && !%text.contains(PICKPROOF)% 
+    if %text.contains(LOCKED)% && !%text.contains(PICKPROOF)%
       %send% %actor% Numbers flash across the display.  The elevator is on the move.
       halt
     end

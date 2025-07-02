@@ -12,13 +12,13 @@ Calculator By Mordecai~
 *~
 * By Mordecai
 if %actor.is_pc%
-  Return 0
-  Eval sum %speech%
-  Eval test1 "%speech%"
-  Eval test %test1.strlen%
-  Eval che %sum%/1
-  If %che% == %sum%
-    %echo% 	WComputing results...	n
+  return 0
+  eval sum %speech%
+  eval test1 "%speech%"
+  eval test %test1.strlen%
+  eval che %sum%/1
+  if %che% == %sum%
+    %echo% @WComputing results...@n
     if (%speech%/===)
       if (%sum%==1)
         set sum Yes
@@ -26,41 +26,41 @@ if %actor.is_pc%
         set sum No
       end
     end
-    Eval st 2+%test%
-    Eval o .
-    Eval sumslen "%sum%
-    Eval len %st% - (%sumslen.strlen%-2)
-    If %len% > 0
-      Eval dif (%len%/2)
-      While %y.strlen% < %st%
-        Eval o .%o%
-        Eval y %o%
-        Eval m ?%m%
-        Eval p %m%
-        If %dif% == %y.strlen%
-          Eval wid1 %p%
+    eval st 2+%test%
+    eval o .
+    eval sumslen "%sum%
+    eval len %st% - (%sumslen.strlen%-2)
+    if %len% > 0
+      eval dif (%len%/2)
+      while %y.strlen% < %st%
+        eval o .%o%
+        eval y %o%
+        eval m ?%m%
+        eval p %m%
+        if %dif% == %y.strlen%
+          eval wid1 %p%
         end
       done
     end
     eval opt1 8 + %test%
     eval opt2 (2*%wid1.strlen%)+%sumslen.strlen%+5
-    %echo% 	WWizzzzzzzzzz....	n
+    %echo% @WWizzzzzzzzzz....@n
     if (%opt1%-2) == (%opt2%)
-      %echo% 	c...%y%...	n
-      %echo% 	c:	C..%y%..	c:	n
-      %echo% 	c:	C:	G   %speech% 	C  :	c:	n
-      %echo% 	c:	C:.%y%.:	c:	n
-      %echo% 	c:	C: %wid1%	G %sum% 	C%wid1% :	c:	n
-      %echo% 	c:	C:.%y%.:	c:	n
-      %echo% 	c:..%y%..:	n
+      %echo% @c...%y%...@n
+      %echo% @c:@C..%y%..@c:@n
+      %echo% @c:@C:@G   %speech% @C  :@c:@n
+      %echo% @c:@C:.%y%.:@c:@n
+      %echo% @c:@C: %wid1%@G %sum% @C%wid1% :@c:@n
+      %echo% @c:@C:.%y%.:@c:@n
+      %echo% @c:..%y%..:@n
     else
-      %echo% 	r....%y%...	n
-      %echo% 	r:	R...%y%..	r:	n
-      %echo% 	r:	R:	G    %speech% 	R  :	r:	n
-      %echo% 	r:	R:..%y%.:	r:	n
-      %echo% 	r:	R: %wid1%	G %sum% 	R%wid1% :	r:	n
-      %echo% 	r:	R:..%y%.:	r:	n
-      %echo% 	r:...%y%..:	n
+      %echo% @r....%y%...@n
+      %echo% @r:@R...%y%..@r:@n
+      %echo% @r:@R:@G    %speech% @R  :@r:@n
+      %echo% @r:@R:..%y%.:@r:@n
+      %echo% @r:@R: %wid1%@G %sum% @R%wid1% :@r:@n
+      %echo% @r:@R:..%y%.:@r:@n
+      %echo% @r:...%y%..:@n
     end
   end
 end
@@ -132,7 +132,7 @@ en~
 if %cmd.mudcommand% == enter && portal /= %arg%
   wait 1
   %send% %actor% A whirl of white light falls into your eyes, you fall into a huge water fall.
-  %echoaround% %actor% A whirl of white light falls into %actor.name% eyes, and %actor.heshe% falls into a huge water fall that appears under %actor.hisher% feet. 
+  %echoaround% %actor% A whirl of white light falls into %actor.name% eyes, and %actor.heshe% falls into a huge water fall that appears under %actor.hisher% feet.
   %teleport% %actor% 3001
   wait 1
   %force% %actor% look
@@ -143,72 +143,72 @@ Object Affects Example~
 1 n 100
 ~
 * By Rumble of The Builder Academy    tbamud.com 9091
-if %self.affects(BLIND)% 
+if %self.affects(BLIND)%
   %echo% This object is affected with blind.
-end 
-if %self.affects(INVIS)% 
+end
+if %self.affects(INVIS)%
   %echo% This object is affected with invisibility.
-end 
-if %self.affects(DET-ALIGN)% 
+end
+if %self.affects(DET-ALIGN)%
   %echo% This object is affected with detect alignment.
-end 
-if %self.affects(DET-INVIS)% 
+end
+if %self.affects(DET-INVIS)%
   %echo% This object is affected with detect invisibility.
-end 
-if %self.affects(DET-MAGIC)% 
+end
+if %self.affects(DET-MAGIC)%
   %echo% This object is affected with detect magic.
-end 
-if %self.affects(SENSE-LIFE)% 
+end
+if %self.affects(SENSE-LIFE)%
   %echo% This object is affected with sense life.
-end 
-if %self.affects(WATWALK)% 
+end
+if %self.affects(WATWALK)%
   %echo% This object is affected with water walk.
-end 
-if %self.affects(SANCT)% 
+end
+if %self.affects(SANCT)%
   %echo% This object is affected with sanctuary.
-end 
-if %self.affects(GROUP)% 
+end
+if %self.affects(GROUP)%
   %echo% This object is affected with group.
-end 
-if %self.affects(CURSE)% 
+end
+if %self.affects(CURSE)%
   %echo% This object is affected with curse.
-end 
-if %self.affects(INFRA)% 
+end
+if %self.affects(INFRA)%
   %echo% This object is affected with infravision.
-end 
-if %self.affects(POISON)% 
+end
+if %self.affects(POISON)%
   %echo% This object is affected with poison.
-end 
-if %self.affects(PROT-EVIL)% 
+end
+if %self.affects(PROT-EVIL)%
   %echo% This object is affected with protection from evil.
-end 
-if %self.affects(PROT-GOOD)% 
+end
+if %self.affects(PROT-GOOD)%
   %echo% This object is affected with protection from good.
-end 
-if %self.affects(SLEEP)% 
+end
+if %self.affects(SLEEP)%
   %echo% This object is affected with sleep.
-end 
-if %self.affects(NO_TRACK)% 
+end
+if %self.affects(NO_TRACK)%
   %echo% This object is affected with no track.
-end 
-if %self.affects(FLYING)% 
+end
+if %self.affects(FLYING)%
   %echo% This object is affected with flying.
-end 
-if %self.affects(SCUBA)% 
+end
+if %self.affects(SCUBA)%
   %echo% This object is affected with scuba.
-end 
-if %self.affects(SNEAK)% 
+end
+if %self.affects(SNEAK)%
   %echo% This object is affected with sneak.
-end 
-if %self.affects(HIDE)% 
+end
+if %self.affects(HIDE)%
   %echo% This object is affected with hide.
-end 
-if %self.affects(UNUSED)% 
+end
+if %self.affects(UNUSED)%
   %echo% This object is affected with unused.
-end 
-if %self.affects(CHARM)% 
+end
+if %self.affects(CHARM)%
   %echo% This object is affected with charm.
-end 
+end
 ~
 #1206
 (1207) Capturing~
@@ -226,46 +226,46 @@ end
 eval forest_sounds %random.25%
 switch %forest_sounds%
   case 1
-    %echo% 	gThe gently chirping of crickets peacefully resonate across the forest.	n
+    %echo% @gThe gently chirping of crickets peacefully resonate across the forest.@n
   break
   case 2
-    %echo% A haze of 	yfir	Wefl	yies	n dart inbetween some ancient cedars.
+    %echo% A haze of @yfir@Wefl@yies@n dart in between some ancient cedars.
   break
   case 3
-    %echo% 	DA thick fog drifts in, dampening the moss.	n
+    %echo% @DA thick fog drifts in, dampening the moss.@n
   break
   case 4
-    %echo% 	DThe area is surrounded by a visually impeneratable mist.	n
+    %echo% @DThe area is surrounded by a visually impeneratable mist.@n
   break
   case 5
-    %echo% 	DThe grey haze starts to glow a dim silvery shade as the moonlight strikes it.	n
+    %echo% @DThe gray haze starts to glow a dim silvery shade as the moonlight strikes it.@n
   break
   case 6
-    %echo% 	DThe damp fallen clouds swirl slightly in an eddying wind.	n
+    %echo% @DThe damp fallen clouds swirl slightly in an eddying wind.@n
   break
   case 7
-    %echo% 	DThe thick brume shifts and ebbs away slightly.	n
+    %echo% @DThe thick brume shifts and ebbs away slightly.@n
   break
   case 8
-    %echo% A hushed whispering sound seems to emanate from the patch of 	rt	wo	ra	wd	rs	wt	ro	wo	rl	ws	n.
+    %echo% A hushed whispering sound seems to emanate from the patch of @rt@wo@ra@wd@rs@wt@ro@wo@rl@ws@n.
   break
   case 9
-    %echo% The largest 	rt	wo	ra	wd	rs	wt	ro	wo	rl	n yawns openly and mumbles something to one of its friends.
+    %echo% The largest @rt@wo@ra@wd@rs@wt@ro@wo@rl@n yawns openly and mumbles something to one of its friends.
   break
   case 10
-    %echo% Like a diminutive choir, the patch of 	rt	wo	ra	wd	rs	wt	ro	wo	rl	ws	n let loose a high-pitched song of peace.
+    %echo% Like a diminutive choir, the patch of @rt@wo@ra@wd@rs@wt@ro@wo@rl@ws@n let loose a high-pitched song of peace.
   break
   case 11
     %echo% From the east, tiny voices talk amongst themselves in their own plant-like language.
   break
   case 12
-    %echo% The patch of 	rt	wo	ra	wd	rs	wt	ro	wo	rl	ws	n sway synchronisingly in the silver moonlight.
+    %echo% The patch of @rt@wo@ra@wd@rs@wt@ro@wo@rl@ws@n sway synchronisingly in the silver moonlight.
   break
   case 13
     %echo% The peaceful chirping of bird-song floats down from above.
   break
   case 14
-    %echo% 	gA piping little note sings down to you from above.	n
+    %echo% @gA piping little note sings down to you from above.@n
   break
   case 15
     %echo% The tweeting of a newly born bird calling to its mother echoes around the forest.
@@ -277,28 +277,28 @@ switch %forest_sounds%
     %echo% The sound of ruffling and the snapping of small twigs reaches your ears.
   break
   case 18
-    %echo% 	gA rapid chattering drifts down from the giant trees to the northeast.	n
+    %echo% @gA rapid chattering drifts down from the giant trees to the northeast.@n
   break
   case 19
     %echo% With inequable grace, a snowy white owl ghosts in on silent wings.
   break
   case 20
-    %echo% A 	dblack 	Dbat	n flutters across the forest, high above.
+    %echo% A @dblack @Dbat@n flutters across the forest, high above.
   break
   case 21
-    %echo% 	gA relaxed nattering can be heard in the top of a tree to the south.	n
+    %echo% @gA relaxed nattering can be heard in the top of a tree to the south.@n
   break
   case 22
-    %echo% A hedgehog slowly wanders inbetween some trees and out of view.
+    %echo% A hedgehog slowly wanders in between some trees and out of view.
   break
   case 23
     %echo% A faint wind breathes in from all directions, steeping the mists.
   break
   case 24
-    %echo% A 	rr	ya	bi	gn	cb	mo	rw	n-colored butterfly floats across the clearing.
+    %echo% A @rr@ya@bi@gn@cb@mo@rw@n-colored butterfly floats across the clearing.
   break
   case 25
-    %echo% A strange 	Yglowing 	wluminescence	n drifts off to the north, fading into the damp fog.
+    %echo% A strange @Yglowing @wluminescence@n drifts off to the north, fading into the damp fog.
   break
   default
   break
@@ -339,61 +339,61 @@ end
 Actor Pref Checking~
 2 q 100
 ~
-if %actor.pref(BRIEF)% 
+if %actor.pref(BRIEF)%
   %send% %actor% You have BRIEF on.
 end
 if %actor.pref(COMPACT)%
   %send% %actor% You have COMPACT on.
 end
-if %actor.pref(NO_SHOUT)% 
+if %actor.pref(NO_SHOUT)%
   %send% %actor% You have NO_SHOUT on.
 end
 if %actor.pref(NO_TELL)%
   %send% %actor% You have NO_TELL on.
 end
-if %actor.pref(D_HP)% 
+if %actor.pref(D_HP)%
   %send% %actor% You have D_HP on.
 end
 if %actor.pref(D_MANA)%
   %send% %actor% You have D_MANA on.
 end
-if %actor.pref(D_MOVE)% 
+if %actor.pref(D_MOVE)%
   %send% %actor% You have D_MOVE on.
 end
 if %actor.pref(AUTOEX)%
   %send% %actor% You have AUTOEX on.
 end
-if %actor.pref(NO_HASS)% 
+if %actor.pref(NO_HASS)%
   %send% %actor% You have NO_HASS on.
 end
 if %actor.pref(QUEST)%
   %send% %actor% You have QUEST on.
 end
-if %actor.pref(SUMN)% 
+if %actor.pref(SUMN)%
   %send% %actor% You have SUMN on.
 end
 if %actor.pref(NO_REP)%
   %send% %actor% You have NO_REP on.
 end
-if %actor.pref(LIGHT)% 
+if %actor.pref(LIGHT)%
   %send% %actor% You have LIGHT on.
 end
 if %actor.pref(C1)%
   %send% %actor% You have C1 on.
 end
-if %actor.pref(NO_WIZ)% 
+if %actor.pref(NO_WIZ)%
   %send% %actor% You have NO_WIZ on.
 end
 if %actor.pref(L1)%
   %send% %actor% You have L1 on.
 end
-if %actor.pref(L2)% 
+if %actor.pref(L2)%
   %send% %actor% You have L2 on.
 end
 if %actor.pref(NO_AUC)%
   %send% %actor% You have NO_AUC on.
 end
-if %actor.pref(NO_GOS)% 
+if %actor.pref(NO_GOS)%
   %send% %actor% You have NO_GOS on.
 end
 if %actor.pref(RMFLG)%
@@ -402,13 +402,13 @@ end
 if %actor.pref(D_AUTO)%
   %send% %actor% You have D_AUTO on.
 end
-if %actor.pref(CLS)% 
+if %actor.pref(CLS)%
   %send% %actor% You have CLS on.
 end
 if %actor.pref(BLDWLK)%
   %send% %actor% You have BLDWLK on.
 end
-if %actor.pref(AFK)% 
+if %actor.pref(AFK)%
   %send% %actor% You have AFK on.
 end
 if %actor.pref(AUTOLOOT)%
@@ -417,13 +417,13 @@ end
 if %actor.pref(AUTOGOLD)%
   %send% %actor% You have AUTOGOLD on.
 end
-if %actor.pref(AUTOSPLIT)% 
+if %actor.pref(AUTOSPLIT)%
   %send% %actor% You have AUTOSPLIT on.
 end
 if %actor.pref(AUTOSAC)%
   %send% %actor% You have AUTOSAC on.
 end
-if %actor.pref(AUTOASSIST)% 
+if %actor.pref(AUTOASSIST)%
   %send% %actor% You have AUTOASSIST on.
 end
 ~
@@ -473,7 +473,7 @@ if %cmd% == go
     set p_dir %arg%
     extract px 1 %playerco%
     extract py 2 %playerco%
-    set [%py%][%px%] 	g\*	n
+    set [%py%][%px%] @g\*@n
     switch %p_dir%
       case right
         if %px%!=10
@@ -522,7 +522,7 @@ if %cmd% == go
     eval holech %%[%py%][%px%]%%
     if %holech%/=@@
       if !(%chase%>0)
-        set alert 	MYou fall into a bottomless pit!	n
+        set alert @MYou fall into a bottomless pit!@n
         unset points
         set nextlev 0
         global nextlev
@@ -543,14 +543,14 @@ if %cmd% == go
       global points
       eval exo (%nextlev%*950)
       nop %actor.exp(%exo%)%
-      set [%py%][%px%] 	c.	n
+      set [%py%][%px%] @c.@n
       global [%py%][%px%]
       eval prize_count (%prize_count%)+1
       set winner [%prize_count%]
       if %prize_count%>=%numofprizes%
         eval nextlev (%nextlev%)+1
         global nextlev
-        set winner 	YYou Win!!!	n Moving to level %nextlev%.
+        set winner @YYou Win!!!@n Moving to level %nextlev%.
         set px 10
         set py 10
         set ax 1
@@ -577,22 +577,22 @@ if %cmd% == go
         eval spec_prize [%random.10%][%random.10%]
         global spec_prize
       else
-        set %spec_prize% 	yY	n
+        set %spec_prize% @yY@n
         eval spec_prize
         global spec_prize
       end
     end
     if %sizem%
-      set [%py%][%px%] 	GO	n
+      set [%py%][%px%] @GO@n
       unset sizem
     else
-      set [%py%][%px%] 	Go	n
+      set [%py%][%px%] @Go@n
       set sizem 1
       global sizem
     end
     extract ax 1 %animal%
     extract ay 2 %animal%
-    set [%ay%][%ax%] 	r\*	n
+    set [%ay%][%ax%] @r\*@n
     if !%dir_chosen%
       set dir_chosen 1
       if %px%>%ax%
@@ -665,7 +665,7 @@ if %cmd% == go
       set animal %ax% %ay%
       global animal
     end
-    eval [%ay%][%ax%] 	Ra	n
+    eval [%ay%][%ax%] @Ra@n
     eval ch_3 %%[%py%][%px%]%%
     set ch_3 %ch_3%
     if %ch_3.contains(a)%
@@ -685,7 +685,7 @@ if %cmd% == go
         set py 10
         %force% %actor% createnewgame
       else
-        set alert You have been eaten by the 	Ranimal	n.
+        set alert You have been eaten by the @Ranimal@n.
         set points 0
         global points
         set nextlev 0
@@ -731,26 +731,26 @@ if %cmd% == go
     if %cht%>0
       set chy You can FLY and chase the animal %cht% more times.
     end
-    set snd %send% %actor% 	n
+    set snd %send% %actor% @n
     %force% %actor% cls
     %snd%                    )       \\   /      (
     %snd%                   /\|\\      )\\_/(     /\|\\
     %snd% \*                / \| \\    (/\\\|/\\)   / \| \\         \*
     %snd% \|\`._____________/__\|__o____\\\`\|'/___o__\|__\\______.'\|
     %snd% \|                    '\^\` \|  \\\|/   '\^\`             \|
-    %snd% \|                        \|   V   level: %levlev%      \| Dir: 	C %arg%	n
-    %snd% \|   %printrow10%  \| 	M@@	n = Bottomless Pit     \| Points: 	Y%points%	n
-    %snd% \|   %printrow9%  \| 	yY	n = Power Up           \| Exp: 	C%exx%	n
-    %snd% \|   %printrow8%  \| 	Wp	n = Prize              \| AMU: %dedu%
-    %snd% \|   %printrow7%  \| 	Go	n = You                \|
-    %snd% \|   %printrow6%  \| 	Ra	n = Animal             \|
-    %snd% \|   %printrow5%  \| 	cTo Move Type:	n          \|
-    %snd% \|   %printrow4%  \| 	Cgo <up\|down\|left\|right>	n\|
+    %snd% \|                        \|   V   level: %levlev%      \| Dir: @C %arg%@n
+    %snd% \|   %printrow10%  \| @M@@@n = Bottomless Pit     \| Points: @Y%points%@n
+    %snd% \|   %printrow9%  \| @yY@n = Power Up           \| Exp: @C%exx%@n
+    %snd% \|   %printrow8%  \| @Wp@n = Prize              \| AMU: %dedu%
+    %snd% \|   %printrow7%  \| @Go@n = You                \|
+    %snd% \|   %printrow6%  \| @Ra@n = Animal             \|
+    %snd% \|   %printrow5%  \| @cTo Move Type:@n          \|
+    %snd% \|   %printrow4%  \| @Cgo <up\|down\|left\|right>@n\|
     %snd% \|   %printrow3%  \|                        \|
-    %snd% \|   %printrow2%  \| 	BCost of AMU exp per MV	n \|
-    %snd% \|   %printrow1%  \|    	BIf you have exp.	n    \|
+    %snd% \|   %printrow2%  \| @BCost of AMU exp per MV@n \|
+    %snd% \|   %printrow1%  \|    @BIf you have exp.@n    \|
     %snd% \|                        \|                        \|
-    %snd% \|                        \|  NEEDED: 	R%numop%	n HAVE: 	G%przc%	n   \|
+    %snd% \|                        \|  NEEDED: @R%numop%@n HAVE: @G%przc%@n   \|
     %snd% \| .______________________\|______________________. \|
     %snd% \|'         l    /\\ /     \\\\            \\ /\\    l \`\|
     %snd% \*          l  /   V       ))             V  \\  l  \*
@@ -807,8 +807,8 @@ eval animal 1 1
 global animal
 eval playerco 10 10
 global playerco
-set [1][1] 	ra	n
-set [10][10] 	Go	n
+set [1][1] @ra@n
+set [10][10] @Go@n
 global [1][1]
 global [10][10]
 eval numofprizes 0
@@ -823,25 +823,25 @@ while (%ww%>1)
   eval n %ww%
   eval row %random.10%
   eval r_col (%random.3%-1)
-  set [%n%][1] 	c.	n
+  set [%n%][1] @c.@n
   global [%n%][1]
-  set [%n%][2] 	c.	n
+  set [%n%][2] @c.@n
   global [%n%][2]
-  set [%n%][3] 	c.	n
+  set [%n%][3] @c.@n
   global [%n%][3]
-  set [%n%][4] 	c.	n
+  set [%n%][4] @c.@n
   global [%n%][4]
-  set [%n%][5] 	c.	n
+  set [%n%][5] @c.@n
   global [%n%][5]
-  set [%n%][6] 	c.	n
+  set [%n%][6] @c.@n
   global [%n%][6]
-  set [%n%][7] 	c.	n
+  set [%n%][7] @c.@n
   global [%n%][7]
-  set [%n%][8] 	c.	n
+  set [%n%][8] @c.@n
   global [%n%][8]
-  set [%n%][9] 	c.	n
+  set [%n%][9] @c.@n
   global [%n%][9]
-  set [%n%][10] 	c.	n
+  set [%n%][10] @c.@n
   global [%n%][10]
   if (%r_col%)
     while (%r_col%<3)
@@ -850,7 +850,7 @@ while (%ww%>1)
       if !(%posis%/=[%n%][%jj%])
         eval numofprizes %numofprizes%+1
         global numofprizes
-        eval [%n%][%jj%] 	Wp	n
+        eval [%n%][%jj%] @Wp@n
         global [%n%][%jj%]
         set posis %posis% [%n%][%jj%]
       end
@@ -866,13 +866,13 @@ if (%r_ttt%>0)
     eval j9 %random.10%
     eval cer %%[%j9%][%j8%]%%
     if !(%cer%/=p)
-      eval [%j9%][%j8%] 	M\@@	n
+      eval [%j9%][%j8%] @M\@@@n
       global [%j9%][%j8%]
     end
   done
 end
 if !(%[10][10]%/=p)
-  set [10][10] 	c.	n
+  set [10][10] @c.@n
   global [10][10]
 end
 ~
@@ -894,12 +894,12 @@ while %self.varexists(%j%)%
   done
   eval j %j%+1
 done
-%echo% 	yO===============SCORE======BOARD=====================O	n
+%echo% @yO===============SCORE======BOARD=====================O@n
 wait 1
 %echo% O=#==NAME============\|=Level=\|=Points==\|=EXP=========O
 set i 1
 set j 1
-while %self.varexists(%j%)% 
+while %self.varexists(%j%)%
   eval r %%self.%j%%%
   eval nam %r.car%
   extract ll 2 %r%
@@ -932,7 +932,7 @@ while %self.varexists(%j%)%
   if %d%<9
     set d 0%j%
   end
-  %echo% \|	g%d%	n: 	w%nam%	n %sp%\| 	c%ll%	n \| 	y%points%	n \| 	W%exp%	n
+  %echo% \|@g%d%@n: @w%nam%@n %sp%\| @c%ll%@n \| @y%points%@n \| @W%exp%@n
   eval j %j%+1
 done
 %echo% O=#==================================================O
@@ -988,7 +988,7 @@ Multiple Command Example Trig~
 2 c 100
 t~
 if %cmd% == test
-  * Careful not to use Arguments * or this trig will freeze you. 
+  * Careful not to use Arguments * or this trig will freeze you.
   * set the first arg
   set command %arg.car%
   * set the rest of the arg string
@@ -1006,45 +1006,45 @@ end
 Roomflag Test Trigger~
 2 g 100
 ~
-if %self.roomflag(DARK)% 
-  %echo% This is a dark room. 
-end 
-if %self.roomflag(DEATH)% 
-  %echo% This is a death trap - goodbye! 
-end 
-if %self.roomflag(NO_MOB)% 
-  %echo% Mobiles cannot enter this room. 
-end 
-if %self.roomflag(INDOORS)% 
-  %echo% This room is indoors. 
-end 
-if %self.roomflag(PEACEFUL)% 
-  %echo% You can't kill anything in this room. 
-end 
-if %self.roomflag(NO_TRACK)% 
-  %echo% You cannot track anything through this room. 
-end 
-if %self.roomflag(NO_MAGIC)% 
-  %echo% You cannot cast spells in here! 
-end 
-if %self.roomflag(TUNNEL)% 
-  %echo% This room is a narrow tunnel. 
-end 
-if %self.roomflag(PRIVATE)% 
-  %echo% This is a private room. 
-end 
-if %self.roomflag(GODROOM)% 
-  %echo% Only Gods can enter this room. 
-end 
-if %self.roomflag(HOUSE)% 
-  %echo% This is a house. 
-end 
-if %self.roomflag(HCRSH)% 
-  %echo% This is a house which will crash-save. 
-end 
-if %self.roomflag(ATRIUM)% 
-  %echo% This is an atrium for a house. 
-end 
+if %self.roomflag(DARK)%
+  %echo% This is a dark room.
+end
+if %self.roomflag(DEATH)%
+  %echo% This is a death trap - goodbye!
+end
+if %self.roomflag(NO_MOB)%
+  %echo% Mobiles cannot enter this room.
+end
+if %self.roomflag(INDOORS)%
+  %echo% This room is indoors.
+end
+if %self.roomflag(PEACEFUL)%
+  %echo% You can't kill anything in this room.
+end
+if %self.roomflag(NO_TRACK)%
+  %echo% You cannot track anything through this room.
+end
+if %self.roomflag(NO_MAGIC)%
+  %echo% You cannot cast spells in here!
+end
+if %self.roomflag(TUNNEL)%
+  %echo% This room is a narrow tunnel.
+end
+if %self.roomflag(PRIVATE)%
+  %echo% This is a private room.
+end
+if %self.roomflag(GODROOM)%
+  %echo% Only Gods can enter this room.
+end
+if %self.roomflag(HOUSE)%
+  %echo% This is a house.
+end
+if %self.roomflag(HCRSH)%
+  %echo% This is a house which will crash-save.
+end
+if %self.roomflag(ATRIUM)%
+  %echo% This is an atrium for a house.
+end
 ~
 #1221
 Test Trigger~
@@ -1105,7 +1105,7 @@ if %arg% == drawer
   %load% obj 7711
   %echo% The small drawer appears to be nothing more than a mere crack underneath the
   %echo% desk.  The only thing that gives it away is the small keyhole that winks at you
-  %echo% upon closer inspection.    
+  %echo% upon closer inspection.
 else
   return 0
 end
@@ -1114,9 +1114,9 @@ end
 autolook for (rm 1269) Elaseth's Oubliette~
 2 g 100
 ~
-%echo%  	n
-%echo%  	n
-%echo% 	DWelcome to hell. Next time heed the gods, they don't play games.	n
+%echo%  @n
+%echo%  @n
+%echo% @DWelcome to hell. Next time heed the gods, they don't play games.@n
 ~
 #1269
 harp~
@@ -1245,19 +1245,19 @@ Deal a single card from a deck~
 deal~
 switch %random.4%
   case 1
-    set col 
+    set col
     set suit Diamond
   break
   case 2
-    set col 
+    set col
     set suit Heart
   break
   case 3
-    set col 
+    set col
     set suit Club
   break
   case 4
-    set col 
+    set col
     set suit Spade
   break
   default
@@ -1418,19 +1418,19 @@ elseif %cmd% == deal
   %echo% while begins.
   switch %random.4%
     case 1
-      set col 
+      set col
       set suit Diamonds
     break
     case 2
-      set col 
+      set col
       set suit Hearts
     break
     case 3
-      set col 
+      set col
       set suit Clubs
     break
     case 4
-      set col 
+      set col
       set suit Spades
     break
     default
@@ -1480,7 +1480,7 @@ Damage trigger~
 eval num_hitp %actor.hitp%/2
 %echo% half hitp = %num_hitp%
 eval rx %%random.%num_hitp%%%
-%echo% rx %rx% 
+%echo% rx %rx%
 %damage% %actor% %rx%
 ~
 #1286
@@ -1513,7 +1513,7 @@ remote spech %world_global.id%
 ~
 set fire %random.900%
 wait %fire% sec
-%echo% 	bThe fire crackles softly in the fireplace.	n
+%echo% @bThe fire crackles softly in the fireplace.@n
 ~
 #1289
 (1209) Taylors Random Office Noises~
@@ -1522,19 +1522,19 @@ wait %fire% sec
 set office_noises %random.5%
 switch %office_noises%
   case 1
-    %echo% 	bLoud footsteps can be heard coming from the hall outside.	n
+    %echo% @bLoud footsteps can be heard coming from the hall outside.@n
   break
   case 2
-    %echo% 	bThe sound of thunder echoes in from outside.	n
+    %echo% @bThe sound of thunder echoes in from outside.@n
   break
   case 3
-    %echo% 	bA large book falls off the desk, hitting the floor with a loud thud.	n
+    %echo% @bA large book falls off the desk, hitting the floor with a loud thud.@n
   break
   case 4
-    %echo% 	bTalking can be heard coming from outside the door.	n
+    %echo% @bTalking can be heard coming from outside the door.@n
   break
   case 5
-    %echo% 	bThe sound of chirping birds flows in though the window.	n
+    %echo% @bThe sound of chirping birds flows in though the window.@n
   break
   default
   break
@@ -1545,7 +1545,7 @@ actor.eq(*) test~
 0 g 100
 ~
 if !%actor.eq(*)%
-  Say you are wearing nothing!
+  say you are wearing nothing!
 else
   say you are wearing something.
 end
@@ -1724,11 +1724,11 @@ Quest object loader~
 ~
 context %actor.id%
 say object vnum: %object.vnum%
- 
+
 set answer_yes say Yes, I want that object :)
 set answer_no say I already have that object !
 set answer_reward say There you go. Here's an object for you. Thanks!
- 
+
 if (%object.vnum% == 1301)
   if (%zone_12_object1%)
     %answer_no%
@@ -1769,17 +1769,17 @@ else
   say I do not want that object!
   return 0
 end
- 
-if (%zone_12_object1% && %zone_12_object2% && %zone_12_object3% && %zone_12_object4%) 
+
+if (%zone_12_object1% && %zone_12_object2% && %zone_12_object3% && %zone_12_object4%)
   %answer_reward%
   eval zone_12_reward_number %actor.zone_12_reward_number%+1
- 
+
   * cap this to a max of 12 rewards.
   if %zone_12_reward_number%>12
     set zone_12_reward_number 12
   end
   remote zone_12_reward_number %actor.id%
- 
+
   *  make sure all objects from 3016 and upwards have 'reward' as an alias
   eval loadnum 3015+%zone_12_reward_number%
   %load% o %loadnum%

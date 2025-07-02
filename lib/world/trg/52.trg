@@ -4,7 +4,7 @@ Near Death Trap Fall - 5249~
 ~
 * Near Death Trap stuns actor
 wait 2 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 wait 2 sec
 %send% %actor% You somehow survive the fall.

@@ -98,7 +98,7 @@ set actor %random.char%
 * only continue if an actor is defined.
 if %actor%
   * if they have lost more than half their hitpoints heal em
-  if %actor.hitp% < %actor.maxhitp% / 2 
+  if %actor.hitp% < %actor.maxhitp% / 2
     wait 1 sec
     say You are injured, let me help.
     wait 2 sec

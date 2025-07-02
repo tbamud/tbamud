@@ -18,7 +18,7 @@ knight quality~
 a knight~
 A knight of quality looks down upon you from his mount.
 ~
-   The knight is in full plate mail on a barded horse and carries a lance.    
+   The knight is in full plate mail on a barded horse and carries a lance.
 ~
 65546 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -33,7 +33,7 @@ King Arthur sits upon his throne awaiting the return of the grail.
 ~
    King Arthur is a black bearded, barrel-chested man.  He is in full plate
 armor emblazoned with the sign of a gold dragon.  He carries Excalibur in a
-strange looking sheath.    
+strange looking sheath.
 ~
 65546 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -47,7 +47,7 @@ a serf~
 A dirty serf shuffles along here.
 ~
    The serf is in rags, smells, and you actually think you can see lice on him.
-  
+
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -74,7 +74,7 @@ the black knight~
 A knight dressed in black armor says "NONE SHALL PASS"
 ~
    The black knight has black armor and a visored helm.  He stands resting on a
-two handed sword.    
+two handed sword.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -103,7 +103,7 @@ Sir Lancelot~
 Sir Lancelot, champion of the Round Table, smiles at you.
 ~
    Sir Lancelot is wearing polished steel armor.  His visor is up and his hand
-raises in salute to you.    
+raises in salute to you.
 ~
 65546 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -118,7 +118,7 @@ A beautifully dressed woman beckons you closer.
    Upon closer inspection you realize the woman is Morgan le Fey, the evil
 enchantress and the scourge of Camelot.  She snarls as you have seen through her
 disguise.  She is wearing silk robes which do little to hide her ugly, hateful,
-and twisted body.  
+and twisted body.
 ~
 2120 0 0 0 1572948 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -133,7 +133,7 @@ A lady-in-waiting bats her eyes at you!
 ~
    The lady-in-waiting snuggles up closer to you, pressing you for the details
 of your last campaign.  She is clad in a long gown and garlands of flowers are
-in her hair.  
+in her hair.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -175,7 +175,7 @@ a merchant~
 A brightly clothed merchant hawks his goods to you!
 ~
    The merchant wears a bright tunic to draw attention and signify his wares.
-  
+
 ~
 76 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -189,7 +189,7 @@ a monk~
 A monk is here, mumbling in Latin.
 ~
    The monk has a brown robe with a hood on it.  He has tied it off with a
-piece of rope.  The top of his head is shaved in the Fransician fashion.    
+piece of rope.  The top of his head is shaved in the Fransician fashion.
 ~
 72 0 0 0 8192 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -216,7 +216,7 @@ a bard~
 A bard is here, singing a sweet ballad.
 ~
    The bard is dressed in silk leggings, a leather vest, and bright orange
-shirt.    
+shirt.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -230,7 +230,7 @@ an entertainer~
 An entertainer is here, leaping with great acrobatic prowess!
 ~
    The entertainer is doing handsprings and backflips in a dizzying
-progression.    
+progression.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -243,7 +243,7 @@ servant~
 a servant~
 A servant is rushing by
 ~
-   The servant has a plate of hot food that looks delicious.    
+   The servant has a plate of hot food that looks delicious.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -257,7 +257,7 @@ a stablehand~
 A stablehand is cleaning up after the horses.
 ~
    He looks like he was raised in these stables.  He walks with a wide gait and
-has a piece of straw between his teeth.    
+has a piece of straw between his teeth.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -270,7 +270,7 @@ stirrup~
 Stirrup~
 Stirrup, the stable master of Camelot is here.
 ~
-   Stirrup is a short man, wearing a leather jerkin, and smells of the barn.  
+   Stirrup is a short man, wearing a leather jerkin, and smells of the barn.
 
 ~
 72 0 0 0 0 0 0 0 0 E
@@ -284,7 +284,7 @@ a riding horse~
 A riding horse is here.
 ~
    The riding horse is saddled with light tack, and has long slender limbs for
-speed.    
+speed.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -311,7 +311,7 @@ horse warhorse~
 a warhorse~
 A heavy warhorse paws the ground and snorts in preparation for battle!
 ~
-   The heavy warhorse has full chain barding and stands 17 hands.    
+   The heavy warhorse has full chain barding and stands 17 hands.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -325,7 +325,7 @@ a slave~
 A slave is here, cringing from everything.
 ~
    The slave is dirty and unkempt, but she retains a vestige of her former
-station and bearing.    
+station and bearing.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -369,7 +369,7 @@ a spectator~
 A spectator is enthralled in the jousting match.
 ~
    She jumps up and down screaming in an annoying ear-piercing shriek.  She is
-very much into the game and seems to have the hots for one of the jousters.  
+very much into the game and seems to have the hots for one of the jousters.
 
 ~
 2120 0 0 0 65536 0 0 0 0 E
@@ -384,7 +384,7 @@ a sheep~
 A sheep is grazing here.
 ~
    Looks like you could make some nice clothes out of the wool from that sheep.
-  
+
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -397,7 +397,7 @@ ram~
 a ram~
 A ram is guarding his flock.
 ~
-   Yet another animal with a set of horns.  He looks mean.    
+   Yet another animal with a set of horns.  He looks mean.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -411,7 +411,7 @@ an ox~
 An ox is pulling a plow, tilling the fields.
 ~
    A large beast with some impressive horns.  It looks like it could plow all
-day.    
+day.
 ~
 98376 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -438,7 +438,7 @@ goat~
 a goat~
 A goat with some wicked looking horns is about to charge.
 ~
-   You've done nothing to this goat but it seems ready to attack you.    
+   You've done nothing to this goat but it seems ready to attack you.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -451,7 +451,7 @@ mule~
 a stubborn mule~
 A stubborn mule is standing in your way.
 ~
-   This mule doesn't move for anybody.    
+   This mule doesn't move for anybody.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -478,7 +478,7 @@ shepherd~
 a shepherd~
 A shepherd is looking for his flock of sheep.
 ~
-   He watches over his flock, keeping an eye out for wolves.    
+   He watches over his flock, keeping an eye out for wolves.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -491,7 +491,7 @@ sheep dog~
 a sheep dog~
 A sheep dog barks at you playfully.
 ~
-   This dog seems smarter than most people you've known.    
+   This dog seems smarter than most people you've known.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -505,7 +505,7 @@ a farmer~
 A farmer is hard at work.
 ~
    He looks tired and overworked.  He must put in long hours and make very
-little money.    
+little money.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -518,7 +518,7 @@ guard~
 a guard~
 A guard is protecting the city.
 ~
-   He looks like he's in a bad mood.    
+   He looks like he's in a bad mood.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2

@@ -75,7 +75,7 @@ void load_messages(void)
   FILE *fl;
   int i, type;
   struct message_type *messages;
-  char chk[128], *buf;
+  char chk[128];
 
   if (!(fl = fopen(MESS_FILE, "r"))) {
     log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
@@ -88,13 +88,36 @@ void load_messages(void)
     fight_messages[i].msg = NULL;
   }
 
-  while (!feof(fl)) {
-    buf = fgets(chk, 128, fl);
-    while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-      buf = fgets(chk, 128, fl);
+  while (fgets(chk, 128, fl)) {
+    while (*chk == '\n' || *chk == '*') {
+      if (fgets(chk, 128, fl) == NULL) {
+        if (feof(fl))
+          break;
+        else if(ferror(fl))
+          log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
+        else
+          log("SYSERR: Error reading combat message file %s", MESS_FILE);
+        exit(1);
+      }
+    }
+
+    if(feof(fl)) {
+      break;
+    }
 
     while (*chk == 'M') {
-      buf = fgets(chk, 128, fl);
+      if (fgets(chk, 128, fl) == NULL) {
+        if(feof(fl)) {
+          log("SYSERR: Unexpected end of file reading combat message file %s", MESS_FILE);
+          break;
+        }
+        else if(ferror(fl))
+          log("SYSERR: Error reading combat message file %s: %s", MESS_FILE, strerror(errno));
+        else
+          log("SYSERR: Error reading combat message file %s", MESS_FILE);
+        exit(1);
+      }
+
       sscanf(chk, " %d\n", &type);
       for (i = 0; (i < MAX_MESSAGES) && (fight_messages[i].a_type != type) &&
          (fight_messages[i].a_type); i++);
@@ -120,9 +143,6 @@ void load_messages(void)
       messages->god_msg.attacker_msg = fread_action(fl, i);
       messages->god_msg.victim_msg = fread_action(fl, i);
       messages->god_msg.room_msg = fread_action(fl, i);
-      buf  = fgets(chk, 128, fl);
-      while (!feof(fl) && (*chk == '\n' || *chk == '*'))
-        buf  = fgets(chk, 128, fl);
     }
   }
   fclose(fl);
@@ -145,7 +165,7 @@ static void show_messages(struct char_data *ch)
         len += snprintf(buf + len, sizeof(buf) - len, "%-2d) [%-3d] %d, %-18s\r\n", half, fight_messages[half].a_type, fight_messages[half].number_of_attacks, fight_messages[half].a_type < TOP_SPELL_DEFINE ? spell_info[fight_messages[half].a_type].name : "Unknown");
     }
     
-  len += snprintf(buf + len, sizeof(buf) - len, "Total Messages: %d\r\n", count);  
+  snprintf(buf + len, sizeof(buf) - len, "Total Messages: %d\r\n", count);  
   page_string(ch->desc, buf, TRUE);
 }
 

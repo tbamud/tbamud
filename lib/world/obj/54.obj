@@ -556,7 +556,7 @@ A glowing blue vial lies here.~
 1 800 15 0 0
 E
 vial glowing blue~
-   The blueish liquid inside this potion bottle is glowing with a strange light.
+   The bluish liquid inside this potion bottle is glowing with a strange light.
 There is a small label that reads 'Protection'
 ~
 #5471
@@ -569,7 +569,7 @@ A deep-green potion lies here.~
 1 500 15 0 0
 E
 potion green~
-   The potion inside the bottle is a greenish colour and has a small label which
+   The potion inside the bottle is a greenish color and has a small label which
 reads 'Curative'
 ~
 #5472
@@ -643,16 +643,16 @@ A scroll of recall lies here.~
 12 42 -1 -1
 4 200 25 0 0
 #5479
-wand grey silver~
-a grey-silver wand~
-A grey-silver wand lies here.~
+wand gray silver~
+a gray-silver wand~
+A gray-silver wand lies here.~
 ~
 3 gnop 0 0 0 ao 0 0 0 0 0 0 0
 15 1 1 6
 1 1000 15 0 0
 E
-wand grey silver~
-   You see a small engraved storm cloud at the base of this wand.  
+wand gray silver~
+   You see a small engraved storm cloud at the base of this wand.
 ~
 #5480
 wand yellow~
@@ -664,7 +664,7 @@ A wand of glinting yellow lies here.~
 1 666 15 0 0
 E
 wand yellow~
-   You see a shape slowly fading into existance at the base of this wand.  
+   You see a shape slowly fading into existance at the base of this wand.
 ~
 #5481
 wand oak~
@@ -768,7 +768,7 @@ E
 spear gae bolg~
    The beautiful, glowing spear is close to eight feet long and has a bright,
 polished silver blade that tapers at the end into what must be the finest point
-you have ever seen.  
+you have ever seen.
 ~
 #5493
 key~
@@ -807,6 +807,6 @@ A large ornate mace floats above the ground here.~
 E
 wrath allah mace~
    This enormous weapon looks like it could pound the stuffing out of anything
-or anyone around.  
+or anyone around.
 ~
 $~

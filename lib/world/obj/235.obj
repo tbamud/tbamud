@@ -8,18 +8,18 @@ A pickaxe is here.~
 6 350 0 7
 E
 axe pickaxe~
-   The pickaxe is mostly used for diging but also can be used for combat.    
+   The pickaxe is mostly used for diging but also can be used for combat.
 ~
 #23501
 map dwarven mines~
 a map of the dwarven mines~
 A map of the dwarven mines was left here.~
-    O-O-O       O               v-^                  
-    |   |       |                                    
-    O   O-O-O-O-O         v         O-O-O-^-O-O-O-O  
-    |         |           |               |   | |    
-  O-O         O           ^               O   O O    
-  |                                       |     |    
+    O-O-O       O               v-^
+    |   |       |
+    O   O-O-O-O-O         v         O-O-O-^-O-O-O-O
+    |         |           |               |   | |
+  O-O         O           ^               O   O O
+  |                                       |     |
   O                                       O     O O-O
   |                                       |     | | |
   O-O-O-O-O-O-O-O                         O     O-O O
@@ -27,16 +27,16 @@ A map of the dwarven mines was left here.~
       O         O-O                       O-O-O-O   O
       |         |                               |   |
       O       O-O                             ^-O-O-O
-      |       |                                      
-^     O-O-O-O-O                                      
-|           |                                        
-O           O                                        
-|           |                                        
-O v-O-O-O   O-O-O-O               v                  
-|   |   |       |                                    
-O-O-v   O-O     O                                    
-          |     |                                    
-    ^-v-O-O-O-O-O                                    
+      |       |
+^     O-O-O-O-O
+|           |
+O           O
+|           |
+O v-O-O-O   O-O-O-O               v
+|   |   |       |
+O-O-v   O-O     O
+          |     |
+    ^-v-O-O-O-O-O
 ~
 16 0 0 0 0 a 0 0 0 0 0 0 0
 0 0 0 0
@@ -52,7 +52,7 @@ A large boulder is here.~
 E
 boulder~
    The boulder is enormous in size and would take more then one person to move
-it.    
+it.
 ~
 #23509
 pebble~
@@ -65,7 +65,7 @@ A small pebble is lying on the ground.~
 E
 small pebble rock~
    The pebble is quite dusty, but it's in the shape of a heart.  It might be
-worth holding onto.    
+worth holding onto.
 ~
 #23513
 rock pile~
@@ -78,7 +78,7 @@ A pile of rocks have been lazily discarded here.~
 E
 rock pile~
    There must be atleast twenty rocks here in this mess!  Someone should come
-by and move them.    
+by and move them.
 ~
 #23517
 stone mace~
@@ -91,7 +91,7 @@ A large stone mace.~
 E
 stone mace~
    The mace is quite heavy.  You notice it's in excellent condition.  It would
-protect you well.    
+protect you well.
 ~
 #23519
 skeleton~
@@ -104,7 +104,7 @@ A skeleton is lying on the ground before you.~
 E
 skeleton~
    This is the skeleton of one of the dwarven workers.  They must have been
-crushed to death during an avalanche.    
+crushed to death during an avalanche.
 ~
 #23520
 bag~
@@ -117,7 +117,7 @@ A leather bag was left here.~
 E
 leather bag~
    The bag looks brand new!  You can smell the leather every time you open the
-bag.  What a marvelous scent!    
+bag.  What a marvelous scent!
 ~
 #23523
 helmet~
@@ -130,7 +130,7 @@ A workers helmet was abandoned here.~
 E
 worker workers helmet hat~
    It looks very much like hard hat, but it some what larger.  There is a small
-hole in the front, where a light used to be.    
+hole in the front, where a light used to be.
 ~
 #23526
 enormous boulder~
@@ -143,7 +143,7 @@ An enormous boulder rolls past you!~
 E
 boulder~
    The boulder is the size of a small house!  It would easily crush you into
-the ground.    
+the ground.
 ~
 #23531
 torch~
@@ -156,7 +156,7 @@ A torch is hanging from the wall beside you.~
 E
 torch~
    The torch is rather ratty looking.  It looks half rotted and could easily
-fall apart.    
+fall apart.
 ~
 #23599
 long sword~

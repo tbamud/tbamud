@@ -474,7 +474,7 @@ static int sell_price(struct obj_data *obj, int shop_nr, struct char_data *keepe
 
 static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
 {
-  char tempstr[MAX_INPUT_LENGTH], tempbuf[MAX_INPUT_LENGTH];
+  char tempstr[MAX_INPUT_LENGTH - 10], tempbuf[MAX_INPUT_LENGTH];
   struct obj_data *obj, *last_obj = NULL;
   int goldamt = 0, buynum, bought = 0;
 
@@ -739,7 +739,7 @@ static void sort_keeper_objs(struct char_data *keeper, int shop_nr)
 
 static void shopping_sell(char *arg, struct char_data *ch, struct char_data *keeper, int shop_nr)
 {
-  char tempstr[MAX_INPUT_LENGTH], name[MAX_INPUT_LENGTH], tempbuf[MAX_INPUT_LENGTH];
+  char tempstr[MAX_INPUT_LENGTH - 10], name[MAX_INPUT_LENGTH], tempbuf[MAX_INPUT_LENGTH]; // - 10 to make room for constants in format
   struct obj_data *obj;
   int sellnum, sold = 0, goldamt = 0;
 
@@ -1083,13 +1083,20 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
 		       int new_format, int max)
 {
   int tindex, num, len = 0, error = 0;
-  char *ptr, buf[MAX_STRING_LENGTH], *buf1;
+  char *ptr, buf[MAX_STRING_LENGTH];
 
   if (!new_format)
     return (read_list(shop_f, list, 0, max, LIST_TRADE));
 
   do {
-    buf1 = fgets(buf, sizeof(buf), shop_f);
+    if (fgets(buf, sizeof(buf), shop_f) == NULL) {
+      if (feof(shop_f))
+        log("SYSERR: unexpected end of file reading shop file type list.");
+      else if (ferror(shop_f))
+        log("SYSERR: error reading reading shop file type list: %s", strerror(errno));
+      else
+        log("SYSERR: error reading reading shop file type list.");
+    }
     if ((ptr = strchr(buf, ';')) != NULL)
       *ptr = '\0';
     else
@@ -1101,7 +1108,7 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
       for (tindex = 0; *item_types[tindex] != '\n'; tindex++)
         if (!strn_cmp(item_types[tindex], buf, strlen(item_types[tindex]))) {
           num = tindex;
-          strcpy(buf, buf + strlen(item_types[tindex]));	/* strcpy: OK (always smaller) */
+          memmove(buf, buf + strlen(item_types[tindex]), strlen(buf) - strlen(item_types[tindex]) + 1);
           break;
         }
 

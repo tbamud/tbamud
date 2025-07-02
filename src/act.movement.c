@@ -461,6 +461,9 @@ int has_key(struct char_data *ch, obj_vnum key)
 {
   struct obj_data *o;
 
+  if (key == NOTHING)
+    return (0);
+
   for (o = ch->carrying; o; o = o->next_content)
     if (GET_OBJ_VNUM(o) == key)
       return (1);
@@ -770,8 +773,6 @@ ACMD(do_sit)
 
   one_argument(argument, arg);
 
-  if (!*arg)
-    found = 0;
   if (!(furniture = get_obj_in_list_vis(ch, arg, NULL, world[ch->in_room].contents)))
     found = 0;
   else

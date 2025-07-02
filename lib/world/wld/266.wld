@@ -4,10 +4,10 @@ Edge of the Walkway~
 good look at what lies below.  Way below.  The 'path' that you thought might
 lead down in a zig zag or perhaps in steps is actually a set of stone rungs
 notched into the cliff face.  The forest, so far below where you stand looking
-down upon it, seems strangely dark, strangely forbidding and very far away.  
+down upon it, seems strangely dark, strangely forbidding and very far away.
 Maybe it would just be best to forget climbing this ledge.  After all, isn't
 Thursday?  Seems like Grainy's in Jareth had a really good dinner special on
-Thursdays...  Yeah, that's it.  
+Thursdays...  Yeah, that's it.
 ~
 266 0 0 0 0 5
 D2
@@ -24,17 +24,17 @@ credits info~
 aka The Dark and Sinister Forest
 This is a forest zone surrounded on all four sides by an unscalable cliff
 face.  It is meant to hold four zones Banshide, the Haunted House and the
-Castle of the Vampyre.  This is an extremely high level zone, meant for 
-groups, the mobs are often aggro, Lord Ankou himself drives a band of 
-spectral minions before his cart which he rides throught the forest, so 
-players not only have to contend with Ankou as the highest level mob, but 
-also his minions who will fight for their Lord to the death.  The code for 
-the minions to follow Ankou can be found on the snippets page. This was 
-originally intended to connect to the farmlands, at their western-most side 
-at the chasm.  The lack of a way out of this zone is intentional, just a 
-little thing to get players stark raving mad when visiting here if they forget 
+Castle of the Vampyre.  This is an extremely high level zone, meant for
+groups, the mobs are often aggro, Lord Ankou himself drives a band of
+spectral minions before his cart which he rides throught the forest, so
+players not only have to contend with Ankou as the highest level mob, but
+also his minions who will fight for their Lord to the death.  The code for
+the minions to follow Ankou can be found on the snippets page. This was
+originally intended to connect to the farmlands, at their western-most side
+at the chasm.  The lack of a way out of this zone is intentional, just a
+little thing to get players stark raving mad when visiting here if they forget
 to bring a recall.
- 
+
 Zone 266 is linked to the following zones:
 263 Farmlands                      at 26600 (south) ---> 26354
 252 Castle of the Vampyre          at 26633 (east ) ---> 25200
@@ -58,9 +58,9 @@ Climbing down the Cliff~
 realize what a follhearty decision this was to climb this rocky face.  You can
 see birds playing below you, almost DIRECTLY below you in the treetops of the
 forest so far beneath your feet.  One wrong step, one slip of the hand on the
-tenuous handhold you already maintain, and you are birdfeed in the treetops.  
+tenuous handhold you already maintain, and you are birdfeed in the treetops.
 Maybe you should just climb up one more step, get off this walkway and call it
-all good.  
+all good.
 ~
 266 0 0 0 0 5
 D4
@@ -77,7 +77,7 @@ Climbing down the Cliff~
    This climb is going to take forever!  You are still not even halfway down the
 cliff and it seems like the closer to the forest you get, the darker and more
 forboding it gets.  Not to mention every time you look down, a wave of nausea
-racks your body, making you almost lose your grip on the rungs.  
+racks your body, making you almost lose your grip on the rungs.
 ~
 266 0 0 0 0 0
 D4
@@ -91,11 +91,11 @@ D5
 S
 #26603
 Halfway down a 'Trail'~
-   Well, here you are - halfway up or down depending on how you look at it.  
+   Well, here you are - halfway up or down depending on how you look at it.
 Your situation has improved a little bit.  It looks like if you fell now, you
 would only break a great many bones, rather than just die.  Of course, maybe
 dying would be preferable.  You see that the trees below are twisted and
-gnarled, all of them seeming more dead than alive.  Sure is encouraging.  
+gnarled, all of them seeming more dead than alive.  Sure is encouraging.
 ~
 266 0 0 0 0 5
 D4
@@ -113,7 +113,7 @@ Nearing the Forest Floor~
 that the birds you saw from up above playing in the treetops were actually
 buzzards which seem to constantly circle the treetops everywhere, fighting each
 other and anything that trys to get past them.  Looking up, you realize that the
-climb ahead would be a real bitch, maybe even impossible.  
+climb ahead would be a real bitch, maybe even impossible.
 ~
 266 0 0 0 0 0
 D4
@@ -130,10 +130,10 @@ Tree Top Level - Almost to the Ground~
    The trees that you have begun to descend through seem to try to grab your
 feet as you climb down the cliff.  The branches all snag your clothing, sharp
 and piercing as you climb down.  The buzzards won't seem to leave you alone and
-fighting here is just not what you had in mind when you began your descent.  
+fighting here is just not what you had in mind when you began your descent.
 The forest floor below you, all covered in shadows and mystery, is just a long
 jump down, but still a far enough jump that a broken leg or ankle would almost
-certainly result in a jumping attempt.  
+certainly result in a jumping attempt.
 ~
 266 0 0 0 0 5
 D4
@@ -153,7 +153,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along to
 your south, the forest growing right up to the edge and up the edge in some
 spots.  There is a set of rungs grooved into the cliff face here.  It looks as
-if you may be able to climb up!  
+if you may be able to climb up!
 ~
 266 5 0 0 0 3
 D0
@@ -178,7 +178,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -203,7 +203,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -228,7 +228,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -253,7 +253,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -278,7 +278,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -303,7 +303,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -328,7 +328,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -353,7 +353,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -378,7 +378,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -403,7 +403,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -428,7 +428,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -453,7 +453,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -480,7 +480,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along to
 your south, the forest growing right up to the edge and up the edge in some
-spots.  
+spots.
 ~
 266 1 0 0 0 3
 D0
@@ -503,7 +503,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along to
 your south, the forest growing right up to the edge and up the edge in some
-spots.  
+spots.
 ~
 266 1 0 0 0 3
 D0
@@ -524,7 +524,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -549,7 +549,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -574,7 +574,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -599,7 +599,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -624,7 +624,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -649,7 +649,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -674,7 +674,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -700,7 +700,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  Off to the east is a deep
-hollow, dark and foreboding.  
+hollow, dark and foreboding.
 ~
 266 1 0 0 0 3
 D0
@@ -721,7 +721,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -746,7 +746,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -771,7 +771,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -796,7 +796,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 0 0 0 0 3
 D0
@@ -824,7 +824,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along to
 your south, the forest growing right up to the edge and up the edge in some
 spots.  To the east there is some sort of break in the forest, maybe a clearing
-or something, although it doesn't look like it gets any lighter...  
+or something, although it doesn't look like it gets any lighter...
 ~
 266 1 0 0 0 3
 D0
@@ -872,7 +872,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -897,7 +897,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -923,7 +923,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  North is a deep hollow, one
-which looks to hold a great many dark secrets.  
+which looks to hold a great many dark secrets.
 ~
 266 1 0 0 0 3
 D1
@@ -945,7 +945,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the south the forest
-slopes steepy downhill into a deep valley or hollow.  
+slopes steepy downhill into a deep valley or hollow.
 ~
 266 1 0 0 0 3
 D0
@@ -967,7 +967,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along
-beside you on the south, hemming you into the forest.  
+beside you on the south, hemming you into the forest.
 ~
 266 1 0 0 0 3
 D0
@@ -988,7 +988,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1013,7 +1013,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1038,7 +1038,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1065,7 +1065,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  Towering high above the
 trees to your west is a huge, wood sided house which seems to lean to one side.
-It looks very old and very unsafe.  
+It looks very old and very unsafe.
 ~
 266 1 0 0 0 3
 D0
@@ -1090,7 +1090,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1115,7 +1115,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1140,7 +1140,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1167,7 +1167,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  South of you a large house
 rises from the forest floor, it's top floor higher than the towering trees all
-around you.  The house looks very old and very unsafe.  Also uninviting.  
+around you.  The house looks very old and very unsafe.  Also uninviting.
 ~
 266 1 0 0 0 3
 D0
@@ -1193,7 +1193,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the west is the cliff
-face, solid and unyielding, penning you into this awful place.  
+face, solid and unyielding, penning you into this awful place.
 ~
 266 1 0 0 0 3
 D0
@@ -1215,7 +1215,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the north is a huge
-house, very old and ugly.  There are no lights of any kind coming from it.  
+house, very old and ugly.  There are no lights of any kind coming from it.
 ~
 266 1 0 0 0 3
 D0
@@ -1240,7 +1240,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1265,7 +1265,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1291,7 +1291,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along
-beside you on the south, hemming you into the forest.  
+beside you on the south, hemming you into the forest.
 ~
 266 1 0 0 0 3
 D0
@@ -1313,7 +1313,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face runs along
-beside you on the south, hemming you into the forest.  
+beside you on the south, hemming you into the forest.
 ~
 266 1 0 0 0 3
 D0
@@ -1334,7 +1334,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1361,7 +1361,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the west is some sort of
 deep fell or hollow where the forest slopes downward out of sight toward the
-rocky cliff far to the west.  
+rocky cliff far to the west.
 ~
 266 1 0 0 0 3
 D0
@@ -1386,7 +1386,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1412,9 +1412,9 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  There is a large wood sided
-house to your east, one that stands extremely tall in this monstrous forest.  
+house to your east, one that stands extremely tall in this monstrous forest.
 The house looks to be in deplorable condition, it leans to one side looking as
-if it might fall over at any time.  
+if it might fall over at any time.
 ~
 266 1 0 0 0 3
 D0
@@ -1439,7 +1439,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1464,7 +1464,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1489,7 +1489,7 @@ Halfway Up a 'Trail'~
    You find your arms are getting way too tired to keep up the climbing the way
 you've been.  The top of the cliff still seems miles away from where you are
 now, and there is no spot on this cliff to just stop and take a break.  It might
-be a good idea to climb back down, and take your chances in the forest.  
+be a good idea to climb back down, and take your chances in the forest.
 ~
 266 0 0 0 0 0
 D4
@@ -1523,7 +1523,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the west is the cliff
-face, solid and unyielding, penning you into this awful place.  
+face, solid and unyielding, penning you into this awful place.
 ~
 266 1 0 0 0 3
 D0
@@ -1545,7 +1545,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky cliff runs along
-beside you on the west.  
+beside you on the west.
 ~
 266 1 0 0 0 3
 D0
@@ -1568,7 +1568,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face is to the
 west, hemming you into this evil forest.  To the south is some sort of hollow
-which leads downhill into territory that you cannot see from here.  
+which leads downhill into territory that you cannot see from here.
 ~
 266 1 0 0 0 3
 D0
@@ -1592,7 +1592,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff runs along your
 west side, an ever present reminder that you are trapped in this valley.  To the
 north there is some sort of hollow, or slope that leads downward into deeper
-forest.  Looks very ominous, caution is advised.  
+forest.  Looks very ominous, caution is advised.
 ~
 266 1 0 0 0 3
 D0
@@ -1616,7 +1616,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The cliff face makes an
 abrupt turn here, curving itself north and east, running along your south and
 west sides.  It looks as if this forest may be completely enclosed by this
-strange rock formation.  
+strange rock formation.
 ~
 266 1 0 0 0 3
 D0
@@ -1634,7 +1634,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky cliff makes a turn
-heading north and west, blocking you movement in that direction.  
+heading north and west, blocking you movement in that direction.
 ~
 266 1 0 0 0 3
 D0
@@ -1651,7 +1651,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1677,7 +1677,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky cliff makes a turn
-heading north and west, blocking you movement in that direction.  
+heading north and west, blocking you movement in that direction.
 ~
 266 1 0 0 0 3
 D0
@@ -1694,7 +1694,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1719,7 +1719,7 @@ Dark and Sinister Forest~
    The forest around you seems dead, all the trees and their branches seem
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
-the corner of your eye.  Always just out of sight.  
+the corner of your eye.  Always just out of sight.
 ~
 266 1 0 0 0 3
 D0
@@ -1767,7 +1767,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the north the forest runs
-downhill into a deep fell.  
+downhill into a deep fell.
 ~
 266 1 0 0 0 3
 D1
@@ -1790,7 +1790,7 @@ withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the south is a deep
 hollow, many miles across and quite deep from the looks of it.  Of course, it is
-hard to tell by looks since it is so dark here.  
+hard to tell by looks since it is so dark here.
 ~
 266 1 0 0 0 3
 D0
@@ -1814,7 +1814,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rock wall on your north
 is such a presence, such a large obstacle, you feel that this valley must have
 been created on purpose by some god, some higher power, to punish the
-inhabitants for wrongdoings.  Or something.  
+inhabitants for wrongdoings.  Or something.
 ~
 266 1 0 0 0 3
 D1
@@ -1836,7 +1836,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky wall still runs
-along on the north side.  You feel like a caged animal.  
+along on the north side.  You feel like a caged animal.
 ~
 266 1 0 0 0 3
 D1
@@ -1858,7 +1858,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  There is some sort of inner
-valley to the south, one that looks very deep and very dark.  
+valley to the south, one that looks very deep and very dark.
 ~
 266 1 0 0 0 3
 D0
@@ -1880,7 +1880,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -1902,7 +1902,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -1924,7 +1924,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -1946,7 +1946,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -1968,7 +1968,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -1990,7 +1990,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -2012,7 +2012,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -2054,7 +2054,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rock wall makes a curve
 here, hemming you in and hindering any movement east or north.  Over time, rocks
 have fallen off from the cliffsides and piled up at the base.  A set of small
-tracks seem to come and go from beneath two large rocks.  
+tracks seem to come and go from beneath two large rocks.
 ~
 266 1 0 0 0 3
 D2
@@ -2076,7 +2076,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rock wall runs along to
-the east.  
+the east.
 ~
 266 1 0 0 0 3
 D0
@@ -2100,7 +2100,7 @@ you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rock wall prevents any
 movement to the east.  To the west is a deep hollow, a very large one from the
 looks of it although it is hard to tell for sure in this darkness.  Looks almost
-like a valley inside this valley.  
+like a valley inside this valley.
 ~
 266 0 0 0 0 3
 D0
@@ -2118,7 +2118,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  To the east is the rocky
-wall that holds you captive in this God-Forsaken forest.  
+wall that holds you captive in this God-Forsaken forest.
 ~
 266 1 0 0 0 3
 D0
@@ -2140,7 +2140,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky cliff makes a turn
-heading north and west, blocking you movement in that direction.  
+heading north and west, blocking you movement in that direction.
 ~
 266 1 0 0 0 3
 D0
@@ -2158,7 +2158,7 @@ Dark and Sinister Forest~
 withered and brittle.  Strangely enough, with all the lingering death around
 you, there seems to be a great deal of movement around you, but always out of
 the corner of your eye.  Always just out of sight.  The rocky face runs along
-north of you preventing any further movement in that direction.  
+north of you preventing any further movement in that direction.
 ~
 266 1 0 0 0 3
 D1
@@ -2181,7 +2181,7 @@ out of the cliff rockbed.  A feeling in your gut tells you that this tunnel was
 not made by ordinary creatures.  Little tracks lead to and from a crude nest
 near the tunnel entrance.  A sudden movement catches your eye and you see the
 fleeing form of some small creature dashing outside through the rockfall.  You
-can explore the tunnel more to the north or head back outside.  
+can explore the tunnel more to the north or head back outside.
 ~
 266 325 0 0 0 0
 D0
@@ -2198,7 +2198,7 @@ Dark Tunnel~
    A think layer of dust covers the hewn floor.  The undisturbed state of things
 in the tunnel show that no one has passed through this way in ages.  The stone
 walls become more polished and smoother as one progresses northwards.  A faint
-odor of incense and spices lingers in the air.  
+odor of incense and spices lingers in the air.
 ~
 266 321 0 0 0 0
 D0
@@ -2219,7 +2219,7 @@ runes adorn the stone slab.  A faded trail of blood upon the slab catches your
 eye and you follow the trail to the floor.  There you see that you are standing
 in the middle of a pentagram inscribed into the stone floor.  Repressing a
 feeling of dread, you get on your knees to study a small indentation in the
-middle of the pentagram....  
+middle of the pentagram....
 ~
 266 73 0 0 0 0
 D2
@@ -2232,13 +2232,13 @@ pentagram~
 1 0 26695
 E
 slab~
-   It is encrypted with strange runes.  
+   It is encrypted with strange runes.
 ~
 E
 runes~
    The runes depict what appears to be the very same stone slab that they are
 inscribed upon.  The runes show a manlike being standing before the runes, the
-runes glowing fiercely, and then the man gone.  
+runes glowing fiercely, and then the man gone.
 ~
 S
 #26695

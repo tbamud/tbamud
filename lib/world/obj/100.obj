@@ -8,7 +8,7 @@ A flee-infested bunk filled with rags sits in one corner.~
 0 0 0 0 0
 E
 dirty bunk~
-   As you examine the bunk closer you notice some of the rags may not be as 
+   As you examine the bunk closer you notice some of the rags may not be as
 shabby as you originally thought. No one would miss them, would they?
 ~
 #10001
@@ -51,7 +51,7 @@ A beautiful, calm lake is sparkling here.~
 505 0 0 0 0
 E
 lake~
-   The lake is perfectly calm, no movement of any kind in the lake makes the 
+   The lake is perfectly calm, no movement of any kind in the lake makes the
 surface look like glass. The water looks clean and drinkable.
 ~
 #10004
@@ -64,7 +64,7 @@ A murky pond is stagnating here.~
 505 0 0 0 0
 E
 pond~
-   The pond is a deep brown color and smells funny. You think twice about 
+   The pond is a deep brown color and smells funny. You think twice about
 trying to take a drink from it.
 ~
 #10005
@@ -78,7 +78,7 @@ A fast moving river flows by you with a roar.~
 E
 river~
    The river is extremely wide here. You doubt you could make it across. The water
-looks very refreshing. 
+looks very refreshing.
 ~
 #10006
 trout~
@@ -133,7 +133,7 @@ A few coins have been left here.~
 1 1 0 0 0
 E
 coins~
-   The pile sparkles, coins of platinum, gold, silver, and bronze.    
+   The pile sparkles, coins of platinum, gold, silver, and bronze.
 ~
 #10010
 oak~
@@ -160,7 +160,7 @@ A maple tree sways gently in the breeze here.~
 E
 tree maple~
    This massive tree sways gently in the breeze. It towers above all the other
-trees in the area. If you could climb to the top you could probably get a good 
+trees in the area. If you could climb to the top you could probably get a good
 view of the area. But you see no branches that you could possibly reach.
 ~
 #10012
@@ -203,7 +203,7 @@ E
 brass lantern~
    The brass hood can be opened and closed allowing for dimming the light
 without actually extinguishing it.  The globe is filthy, but clear enough to
-let out a fair amount of light.    
+let out a fair amount of light.
 ~
 #10015
 fur backpack~
@@ -216,7 +216,7 @@ A pile of fur with straps on it looks like it might be a backpack.~
 E
 fur backpack~
    This backpack is made from deer hide and is extremely durable.  It can be
-worn about the body.    
+worn about the body.
 ~
 #10016
 deer venison meat~
@@ -229,6 +229,6 @@ This slab of venison is from a large, well-fed deer.~
 E
 deer meat venison~
    This large slab of meat has been recently cooked and, though dry, looks
-rather tasty.  
+rather tasty.
 ~
 $~

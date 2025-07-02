@@ -4,7 +4,7 @@ an electron~
 An electron is here, doing electron things.
 ~
    This electron is a few hundred thousand times larger than your typical
-electron.  It glows a bright yellow, and it crackles with energy.    
+electron.  It glows a bright yellow, and it crackles with energy.
 ~
 192712 0 0 0 65616 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
@@ -20,7 +20,7 @@ There is a large Pentium-166Mhz processor here.
    This is a *huge* processor.  It dwarfs everything you've seen so far.  The
 pins are huge, the cooling fan could probably chop a human in two.  The heat
 given off by something of that size is ungodly, you are sweating heavily under
-your armor.    
+your armor.
 ~
 256010 0 0 0 65536 0 0 0 0 E
 30 10 -8 6d6+300 5d5+5
@@ -32,7 +32,7 @@ fpu~
 an fpu~
 There is a massive floating point processor here.
 ~
-   This is basically a really $#@%!  Big calculator.    
+   This is basically a really $#@%!  Big calculator.
 ~
 256074 0 0 0 65536 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
@@ -45,7 +45,7 @@ a 16MB EDO SIMM chip~
 There is a 16MB EDO SIMM chip here, running programs.
 ~
    This looks like your typical 16MB SIMM, black chips fused to a silicon
-board, only this one's a lot larger, and oddly enough, looks mean.    
+board, only this one's a lot larger, and oddly enough, looks mean.
 ~
 221194 0 0 0 65536 0 0 0 0 E
 28 11 -6 5d5+280 4d4+4
@@ -58,7 +58,7 @@ a 28.8kbps modem~
 There is a 28.8kbps modem here, emitting a hideous noise.
 ~
    This is your typical modem, except the fact that it's alive, and a hundred
-times bigger.    
+times bigger.
 ~
 256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
@@ -71,7 +71,7 @@ a video card~
 There is a massive video card here.
 ~
    This video card is massive.  The chips are the size of small horses, and the
-metal connectors are the size of your fist.    
+metal connectors are the size of your fist.
 ~
 256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
@@ -84,7 +84,7 @@ a sound card~
 There is a gargantuan sound card here.
 ~
    This sound is huge, the ram chips are huge, and the connector for the CD-ROM
-drive is huge.    
+drive is huge.
 ~
 256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4
@@ -97,7 +97,7 @@ an SCSI controller~
 There is a huge SCSI controller here.
 ~
    This is your typical SCSI controller.  Ports for hard drives, CD-ROM drives
-and the like.    
+and the like.
 ~
 256010 0 0 0 65536 0 0 0 0 E
 29 11 -7 5d5+290 4d4+4

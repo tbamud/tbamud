@@ -136,6 +136,7 @@ struct cmdlist_element {
   char *cmd;				/* one line of a trigger */
   struct cmdlist_element *original;
   struct cmdlist_element *next;
+  int loops;        /* for counting number of runs in a while loop */
 };
 
 struct trig_var_data {
@@ -451,6 +452,8 @@ void wld_command_interpreter(room_data *room, char *argument);
 // id helpers
 extern long char_script_id(char_data *ch);
 extern long obj_script_id(obj_data *obj);
+extern int has_obj_by_uid_in_lookup_table(long uid);
+
 #define room_script_id(room)  ((long)(room)->number + ROOM_ID_BASE)
 
 #endif /* _DG_SCRIPTS_H_ */

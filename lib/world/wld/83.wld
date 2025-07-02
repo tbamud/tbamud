@@ -1,6 +1,6 @@
 #8300
 Glumgold's Sea [ INDEX ]~
-   
+
 @yBuilder      : @cMeyekul
 @yZone         : @c83 Glumgold's Sea
 @yPlayer Level : @c10-30
@@ -10,7 +10,7 @@ Glumgold's Sea [ INDEX ]~
 @yShops        : @c0
 @yTriggers     : @c22
 @yTheme        : @cAn oceanic zone.  These waters are controlled by Glumgold the Pirate.
-@yNotes        : @cPlayers have the option of a sea battle with Glumgold, but his ship is 
+@yNotes        : @cPlayers have the option of a sea battle with Glumgold, but his ship is
 @c               extremely tough.  The best way to take him down is from the inside.
 @c
 @c               Originally written for @oAnywhere But Home - anywhere.wolfpaw.net:5555@n
@@ -32,7 +32,7 @@ part of the sea.
 ~
 83 4 0 0 0 6
 D3
-The sea is all that you see to the west.    
+The sea is all that you see to the west.
 ~
 ~
 0 0 8305
@@ -41,7 +41,7 @@ S
 The Sea~
    The sea spreads out as far as you can see to the west, but land is in plain
 sight north and east.  However, reefs, trees, and dense seaweed make it
-impossible to reach the shore from here.    
+impossible to reach the shore from here.
 ~
 83 0 0 0 0 7
 D0
@@ -69,7 +69,7 @@ S
 The Sea~
    The sea spreads out as far as you can see to the west, but land is in sight
 north, south, and east.  However, reefs, trees, and dense seaweed make it
-impossible to reach the shore from here.    
+impossible to reach the shore from here.
 ~
 83 0 0 0 0 7
 D0
@@ -97,7 +97,7 @@ S
 The Sea~
    The sea spreads out as far as you can see to the west, but land is in plain
 sight north and east.  However, reefs, trees, and dense seaweed make it
-impossible to reach the shore from here.    
+impossible to reach the shore from here.
 ~
 83 0 0 0 0 7
 D0
@@ -116,7 +116,7 @@ You can barely see land far to the south.
 ~
 0 0 8305
 D3
-Rippling water is all that you see to the west.    
+Rippling water is all that you see to the west.
 ~
 ~
 0 0 8312
@@ -125,26 +125,26 @@ S
 The Sea~
    The sea spreads out as far as you can see to the west, but land is in plain
 sight north and east.  There is a clear and seemingly safe path to the shore
-due east.    
+due east.
 ~
 83 4 0 0 0 7
 D0
-Rippling water is all you see to the north.    
+Rippling water is all you see to the north.
 ~
 ~
 0 0 8304
 D1
-To the east, you see the shore.    
+To the east, you see the shore.
 ~
 ~
 0 0 8301
 D2
-Rippling water is all you see to the south.    
+Rippling water is all you see to the south.
 ~
 ~
 0 0 8306
 D3
-Rippling water is all that you see to the west.    
+Rippling water is all that you see to the west.
 ~
 ~
 0 0 8313
@@ -153,11 +153,11 @@ S
 The Sea~
    The sea spreads out as far as you can see to the west, but land is in plain
 sight north and east.  However, reefs, trees, and dense seaweed make it
-impossible to reach the shore from here.    
+impossible to reach the shore from here.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you see to the north.    
+Rippling water is all that you see to the north.
 ~
 ~
 0 0 8305
@@ -167,12 +167,12 @@ To the east you see land, but you cannot climb up on the shore from here.
 ~
 0 0 -1
 D2
-Rippling water is all that you see to the south.    
+Rippling water is all that you see to the south.
 ~
 ~
 0 0 8307
 D3
-Rippling water is all that you see to the west.    
+Rippling water is all that you see to the west.
 ~
 ~
 0 0 8314
@@ -181,7 +181,7 @@ S
 The Sea~
    The sea spreads out as far as you can see to the west, but land is in plain
 sight north and east.  However, reefs, trees, and dense seaweed make it
-impossible to reach the shore from here.    
+impossible to reach the shore from here.
 ~
 83 0 0 0 0 7
 D0
@@ -209,7 +209,7 @@ S
 The Sea~
    The sea spreads out as far as you can see to the south and west, but land is
 in plain sight north and east.  However, reefs, trees, and dense seaweed make
-it impossible to reach the shore from here.    
+it impossible to reach the shore from here.
 ~
 83 0 0 0 0 7
 D0
@@ -239,7 +239,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 0
 D0
@@ -269,7 +269,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -283,7 +283,7 @@ To the east, you see the shore.
 ~
 0 0 8302
 D2
-Rippling water is all that you see to the south.    
+Rippling water is all that you see to the south.
 ~
 ~
 0 0 8311
@@ -299,7 +299,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -329,7 +329,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -359,7 +359,7 @@ The Sea~
 east, the shore is just barely in sight.  Both to the north and south, nothing
 but water and sky can be seen except for the faint outline of the shore
 bordering the sea just under the horizon.  Below you, the deep blue sea looks
-very deep and formidable.  It is not recommended for swimmers.    
+very deep and formidable.  It is not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -368,7 +368,7 @@ Rippling water is all that you see to the north.
 ~
 0 0 8312
 D1
-To the east, you see the shore.    
+To the east, you see the shore.
 ~
 ~
 0 0 8305
@@ -389,7 +389,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -419,7 +419,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -449,7 +449,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers. 
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -479,7 +479,7 @@ The Sea~
 sight.  To the east, shore is just barely in sight.  Both to the north and
 south, nothing but water and sky can be seen except for the faint outline of
 the shore bordering the sea just under the horizon.  Below you, the deep blue
-sea looks very deep and formidable.  Not recommended for swimmers.    
+sea looks very deep and formidable.  Not recommended for swimmers.
 ~
 83 0 0 0 0 7
 D0
@@ -506,9 +506,9 @@ S
 #8318
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.    
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
@@ -531,28 +531,28 @@ S
 #8319
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.    
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8318
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8312
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8320
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8327
@@ -560,28 +560,28 @@ S
 #8320
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8319
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8313
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8321
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8328
@@ -589,28 +589,28 @@ S
 #8321
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8320
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8314
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8322
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8329
@@ -618,28 +618,28 @@ S
 #8322
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8321
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8315
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8323
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8333
@@ -647,28 +647,28 @@ S
 #8323
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8322
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8316
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8324
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8334
@@ -676,28 +676,28 @@ S
 #8324
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8323
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8317
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8325
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8335
@@ -705,28 +705,28 @@ S
 #8325
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8324
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8325
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8325
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8336
@@ -734,28 +734,28 @@ S
 #8326
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8326
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8318
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8327
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8337
@@ -763,28 +763,28 @@ S
 #8327
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8326
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8319
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8328
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8338
@@ -792,28 +792,28 @@ S
 #8328
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8327
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8320
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8329
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8338
@@ -821,28 +821,28 @@ S
 #8329
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8328
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8321
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8330
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8339
@@ -850,28 +850,28 @@ S
 #8330
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8329
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8321
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8331
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8340
@@ -879,28 +879,28 @@ S
 #8331
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8330
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8321
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8332
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8341
@@ -908,28 +908,28 @@ S
 #8332
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8331
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8322
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8333
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8342
@@ -937,28 +937,28 @@ S
 #8333
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8332
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8322
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8334
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8341
@@ -966,28 +966,28 @@ S
 #8334
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8333
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8323
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8335
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8342
@@ -995,28 +995,28 @@ S
 #8335
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8334
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8324
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8336
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8343
@@ -1024,28 +1024,28 @@ S
 #8336
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8335
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8325
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8336
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8344
@@ -1053,28 +1053,28 @@ S
 #8337
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8337
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8326
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8338
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8345
@@ -1082,28 +1082,28 @@ S
 #8338
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8337
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8328
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8339
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8345
@@ -1111,28 +1111,28 @@ S
 #8339
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8338
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8329
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8340
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8358
@@ -1140,28 +1140,28 @@ S
 #8340
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8339
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8330
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8341
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8346
@@ -1169,28 +1169,28 @@ S
 #8341
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8340
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8331
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8342
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8350
@@ -1198,28 +1198,28 @@ S
 #8342
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8341
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8332
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8343
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8372
@@ -1227,28 +1227,28 @@ S
 #8343
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8342
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8314
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8344
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8351
@@ -1256,28 +1256,28 @@ S
 #8344
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8343
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8336
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8344
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8351
@@ -1285,28 +1285,28 @@ S
 #8345
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8345
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8337
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8346
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8363
@@ -1314,28 +1314,28 @@ S
 #8346
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8345
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8340
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8347
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8359
@@ -1343,28 +1343,28 @@ S
 #8347
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8346
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8330
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8348
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8360
@@ -1372,28 +1372,28 @@ S
 #8348
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8347
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8331
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8348
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8369
@@ -1401,28 +1401,28 @@ S
 #8349
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8348
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8332
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8349
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8370
@@ -1430,28 +1430,28 @@ S
 #8350
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8349
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8341
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8351
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8370
@@ -1459,28 +1459,28 @@ S
 #8351
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8350
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8343
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8351
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8371
@@ -1488,28 +1488,28 @@ S
 #8352
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8361
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8355
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8353
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8364
@@ -1517,9 +1517,9 @@ S
 #8353
 Near a Small Island~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.    
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
@@ -1528,7 +1528,7 @@ Rippling water is all that you can see to the north.
 ~
 0 0 8352
 D1
-There is a small island to the east.    
+There is a small island to the east.
 ~
 ~
 0 0 8356
@@ -1546,28 +1546,28 @@ S
 #8354
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8353
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8357
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8367
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8366
@@ -1575,9 +1575,9 @@ S
 #8355
 Near a Small Island~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
@@ -1608,7 +1608,7 @@ the island is covered with a dense forrest.  Though it is very small, no more
 than a few hundred meters wide, there is a small hut almost in the direct
 center.  The hut is suspended about 3 meters from the ground by some wooden
 poles of some sort, the only means of entrance being the rope ladder hanging
-down from a hole in the center.    
+down from a hole in the center.
 ~
 83 0 0 0 0 2
 D0
@@ -1640,9 +1640,9 @@ S
 #8357
 Near a Small Island~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
@@ -1651,7 +1651,7 @@ You see a small island to the north.
 ~
 0 0 8356
 D1
-Rippling water is all that you can see to the east.    
+Rippling water is all that you can see to the east.
 ~
 ~
 0 0 8360
@@ -1669,28 +1669,28 @@ S
 #8358
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8363
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8355
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8359
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8355
@@ -1698,9 +1698,9 @@ S
 #8359
 Near a Small Island~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
@@ -1714,7 +1714,7 @@ Rippling water is all that you can see to the east.
 ~
 0 0 8346
 D2
-Rippling water is all that you can see to the south.    
+Rippling water is all that you can see to the south.
 ~
 ~
 0 0 8360
@@ -1727,28 +1727,28 @@ S
 #8360
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8359
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8347
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8369
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8357
@@ -1756,28 +1756,28 @@ S
 #8361
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8361
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8362
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8352
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8362
@@ -1785,28 +1785,28 @@ S
 #8362
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8362
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8363
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8355
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8361
@@ -1814,28 +1814,28 @@ S
 #8363
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8363
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8345
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8358
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8362
@@ -1843,28 +1843,28 @@ S
 #8364
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8364
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8352
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8373
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8373
@@ -1872,28 +1872,28 @@ S
 #8365
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8364
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8353
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8366
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8373
@@ -1901,28 +1901,28 @@ S
 #8366
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8365
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8367
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8366
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8373
@@ -1930,28 +1930,28 @@ S
 #8367
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8354
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8368
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8370
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8366
@@ -1959,28 +1959,28 @@ S
 #8368
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8357
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8369
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8370
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8367
@@ -1988,28 +1988,28 @@ S
 #8369
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8360
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8348
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8369
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8368
@@ -2017,28 +2017,28 @@ S
 #8370
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8368
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8349
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8371
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8372
@@ -2046,28 +2046,28 @@ S
 #8371
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8370
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8351
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8371
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8372
@@ -2075,28 +2075,28 @@ S
 #8372
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 0 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8366
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8342
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8366
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8372
@@ -2104,28 +2104,28 @@ S
 #8373
 The Sea~
    All around you, in every direction, you see nothing but the sea.  Even if
-the water seems peaceful, there is still danger lurking behind every wave.  
+the water seems peaceful, there is still danger lurking behind every wave.
 Below you, the water is a dark blue, indicating that it is very deep and
-extremely dangerous.  
+extremely dangerous.
 ~
 83 4 0 0 0 7
 D0
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8364
 D1
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8365
 D2
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8373
 D3
-Rippling water is all that you can see in every direction.    
+Rippling water is all that you can see in every direction.
 ~
 ~
 0 0 8373
@@ -2134,11 +2134,11 @@ S
 The Bow of a Pirate's Ship~
    You are standing on the bow of the ship, gazing over the railing at the
 rippling water.  There is a large wheel here, obviously used to steer the
-vessel.    
+vessel.
 ~
 83 0 0 0 0 0
 D2
-The Fore Deck is just south of here.    
+The Fore Deck is just south of here.
 ~
 ~
 0 0 8376
@@ -2147,7 +2147,7 @@ S
 The Starboard Side of the Boat~
    The edge of the boat here has no railing, and there is a rope ladder leading
 down to the water.  This could possibly be the only way off the boat, aside
-from walking the plank...    
+from walking the plank...
 ~
 83 4 0 0 0 0
 D3
@@ -2156,7 +2156,7 @@ D3
 0 0 8376
 D5
    The ladder extends down to the surface of the water, allowing you to board
-the boat on this side also.    
+the boat on this side also.
 ~
 ~
 0 0 8373
@@ -2167,26 +2167,26 @@ The Fore Deck of a Pirate's Ship~
    You are standing on the fore deck of the ship.  High above you, the crow's
 nest sits atop the mast.  All around you, the sea spreads out as far as your
 eyes can see.  East of here is a wooden plank extending past the side of the
-boat.  To the west, is a life boat ready to be dropped into the water.    
+boat.  To the west, is a life boat ready to be dropped into the water.
 ~
 83 0 0 0 0 0
 D0
-The bow of the ship is north of here.    
+The bow of the ship is north of here.
 ~
 ~
 0 0 8374
 D1
-A lifeboat hangs from the port side of the boat.    
+A lifeboat hangs from the port side of the boat.
 ~
 ~
 0 0 8375
 D2
-There is a door to the south.    
+There is a door to the south.
 ~
 ~
 0 0 8379
 D3
-A long plank extends from the starboard side of the boat.    
+A long plank extends from the starboard side of the boat.
 ~
 ~
 0 0 8377
@@ -2200,7 +2200,7 @@ S
 Walking the Plank...~
    A wooden plank, barely half a meter wide, is all that is holding you from
 falling into the churning sea below.  The salty air nearly blows you over to
-your doom.  The old board creeks beneath your weight...    
+your doom.  The old board creeks beneath your weight...
 ~
 83 0 0 0 0 0
 D1
@@ -2209,14 +2209,14 @@ D1
 0 0 8376
 D5
    The water is ice cold and would pretty much mean instant death if you were
-to fall in...    
+to fall in...
 ~
 ~
 0 0 8386
 E
 plank wooden~
    The old wooden plank is full of cracks and is swaying very uneasily under
-your weight.    
+your weight.
 ~
 S
 #8378
@@ -2227,12 +2227,12 @@ exquisite.
 ~
 83 12 0 0 0 0
 D2
-The Captain's Quarters extend to the south.    
+The Captain's Quarters extend to the south.
 ~
 ~
 0 0 8381
 D3
-The doorway to the west leads back to the hallway.    
+The doorway to the west leads back to the hallway.
 ~
 door captain~
 2 8305 8379
@@ -2240,28 +2240,28 @@ S
 #8379
 Inside a Pirate's Ship~
    You are standing in a hallway.  To the east is a door, it appears to lead to
-the Captain's room.  To the west is a door with something written on it.  
+the Captain's room.  To the west is a door with something written on it.
 North, there is a door that leads out on the deck.  South, the hallway
-continues.    
+continues.
 ~
 83 8 0 0 0 0
 D0
-The door to the north leads to the deck.    
+The door to the north leads to the deck.
 ~
 ~
 0 0 8376
 D1
-The Captain's quarters are to the east.    
+The Captain's quarters are to the east.
 ~
 door captain quarters~
 2 8305 8378
 D2
-The hallway continues south to some more doorways.    
+The hallway continues south to some more doorways.
 ~
 ~
 0 0 8382
 D3
-There is a door marked '@oGALLEY@n' to the west.    
+There is a door marked '@oGALLEY@n' to the west.
 ~
 door galley~
 1 0 8380
@@ -2271,7 +2271,7 @@ The Galley~
    You are in the galley of the ship.  This is where all the food and
 provisions are kept during a voyage.  The walls of the room are covered with
 shelves of food, supplies, and the like.  A few chests are also scattered about
-the room.    
+the room.
 ~
 83 8 0 0 0 0
 D1
@@ -2288,11 +2288,11 @@ T 8380
 The Captain's Quarters~
    This side of the captain's room is where his bed sits.  The bed looks very
 comfortable, and very expensive.  Oil paintings hang on the wall, showing
-various famous figures, as well as some figures you don't recognize.    
+various famous figures, as well as some figures you don't recognize.
 ~
 83 8 0 0 0 0
 D0
-The Captain's Quarters extend to the north.    
+The Captain's Quarters extend to the north.
 ~
 ~
 0 0 8378
@@ -2301,16 +2301,16 @@ S
 Inside a Pirate's Ship~
    You are standing in a hallway.  To the west there is an unmarked door, to
 the south is the stern of the ship, and the hallway continues north towards the
-bow.    
+bow.
 ~
 83 8 0 0 0 0
 D0
-The hallway continues north toward the bow.    
+The hallway continues north toward the bow.
 ~
 ~
 0 0 8379
 D3
-There is an unmarked door to the west.    
+There is an unmarked door to the west.
 ~
 door stairway~
 1 0 8383
@@ -2319,16 +2319,16 @@ S
 Near a Stairway~
    This room is filled mainly with a wide stairway spiraling down to a lower
 deck.  To the north is a door leading to what appears to be the galley, and the
-door to the east leads into a hallway.    
+door to the east leads into a hallway.
 ~
 83 8 0 0 0 0
 D0
-The ship's galley is north of here.    
+The ship's galley is north of here.
 ~
 door~
 1 -1 8380
 D1
-The doorway to the east leads into the upper hallway.    
+The doorway to the east leads into the upper hallway.
 ~
 door~
 1 -1 8382
@@ -2344,16 +2344,16 @@ The Mid-Deck~
 the main dining hall as well as the bar, dance floor, and sometimes as a bed.
 To the north, west and east, the deck spreads out more.  There is a small
 stairway leading down from here.  There is another stairway leading up to the
-top deck.  
+top deck.
 ~
 83 8 0 0 0 0
 D0
-This large room extends to the north.    
+This large room extends to the north.
 ~
 ~
 0 0 8387
 D3
-This large room extends to the west.    
+This large room extends to the west.
 ~
 ~
 0 0 8399
@@ -2398,7 +2398,7 @@ You have a wonderful view of the ocean from up here.  You see nothing but water 
 0 0 -1
 D4
    The Jolly Roger flies from a flagpole just above your head, warning other
-ships that this vessel is not to be messed with.    
+ships that this vessel is not to be messed with.
 ~
 ~
 0 0 -1
@@ -2430,19 +2430,19 @@ flag jolly roger~
    MMMMMMMMMMMMM    iMMMMMMMMMMMMMMMMMMMMMMMM   .MMMMMMMMMMMM
    MMMMMMMMMMMMMc>=MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM@n
- 
- 
+
+
    @gSome believe the Jolly Roger gets its name from the French
    "Jolie Rouge" or "Red Flag."  The flag was first used by a
    French order of militant monks known as the "Poor Soldiers
    of Christ and the Temple of Solomon" -- commonly known as
    "The Knights Templar."
- 
+
    Just as a terrorist to one is a freedom fighter to another,
    so it was with the Templars and their fleet. Wanted by the
    Pope and all the crowns of Europe, they came to be viewed,
    by the folks on the mainland, as pirates.
- 
+
    For more history of the Jolly Roger,
    visit@n http://www.skullandcrossbones.org
 ~
@@ -2461,9 +2461,9 @@ T 8385
 @
 @
 @
-@c                     ..and deeper you sink.  You begin to lose any hope of 
+@c                     ..and deeper you sink.  You begin to lose any hope of
 getting back to the surface as your arms grow tired of flailing about.  Your
-vision fades to black as you lose conciousness and drown in your sleep. 
+vision fades to black as you lose conciousness and drown in your sleep.
 @n
 ~
 83 4 0 0 0 6
@@ -2497,16 +2497,16 @@ T 8312
 The Mid-Deck~
    You are mid-deck in a large ship, close to the bow.  This deck is used as
 the main dining hall as well as the bar, dance floor, and sometimes as a bed.
-To the south and west, the deck spreads out more.  
+To the south and west, the deck spreads out more.
 ~
 83 8 0 0 0 0
 D2
-This large room extends to the south.    
+This large room extends to the south.
 ~
 ~
 0 0 8384
 D3
-This large room extends to the west.    
+This large room extends to the west.
 ~
 ~
 0 0 8393
@@ -2516,8 +2516,8 @@ A Cramped Cell~
    You find that this cell, much like any jail cell, appears very...  VERY
 small from the inside; even more so when the iron door is locking you from the
 relative freedom of the rest of the ship.  The north, east, and west walls of
-the cell are lined on the outside with slabs of rock and wooden slats.  
-Outside of the iron bars to the south is the rest of the filthy brig. 
+the cell are lined on the outside with slabs of rock and wooden slats.
+Outside of the iron bars to the south is the rest of the filthy brig.
 ~
 83 76 0 0 0 0
 D0
@@ -2525,7 +2525,7 @@ D0
 ~
 1 8307 8394
 D2
-The south door is the only exit from this cell.    
+The south door is the only exit from this cell.
 ~
 door iron cell~
 2 -1 8394
@@ -2535,16 +2535,16 @@ The Mid-Deck~
    You are mid-deck in a large ship, close to the bow.  This deck is used as
 the main dining hall as well as the bar, dance floor, and sometimes as a bed.
 To the south and east, the deck spreads out more.  There appears to be some
-sort of hatch on the floor. 
+sort of hatch on the floor.
 ~
 83 8 0 0 0 0
 D1
-This large room extends to the east.    
+This large room extends to the east.
 ~
 ~
 0 0 8387
 D2
-This large room extends to the south.    
+This large room extends to the south.
 ~
 ~
 0 0 8399
@@ -2559,11 +2559,11 @@ The Brig~
    Looking about the room you're in, it's easy to tell that the pirates don't
 intend for prisoners to enjoy their stays here.  The walls are unpainted and
 uncovered; the bare, rotting boards show through clearly.  A single cell north
-of here takes up most of the brig. 
+of here takes up most of the brig.
 ~
 83 8 0 0 0 0
 D0
-There is a prison cell north of here.    
+There is a prison cell north of here.
 ~
 door cell iron~
 2 8304 8392
@@ -2581,7 +2581,7 @@ S
 The Treasury~
    This is it, the mother load of the pirate ship.  This room is where
 everything the pirates loot or steal ends up.  Needless to say, the pirates
-wouldn't be very happy to find you sneaking around in here... 
+wouldn't be very happy to find you sneaking around in here...
 ~
 83 8 0 0 0 0
 D4
@@ -2594,7 +2594,7 @@ S
 A Small Hutt~
    You are in the middle of a small hut.  The walls are made of something
 similar to bamboo, tied together with small vines.  The only furniture in the
-hut is a small bed, a table, and a stove.    
+hut is a small bed, a table, and a stove.
 ~
 83 36 0 0 0 0
 D5
@@ -2607,11 +2607,11 @@ S
 On a Fishing Boat~
    You are standing near the stern of a fishing boat as it cruises down the
 river.  Tiny bones and fish scales litter the floor of this boat, making faint
-crunching noises as you walk about.    
+crunching noises as you walk about.
 ~
 83 4 0 0 0 0
 D0
-A large flap of canvas separates the cabin from the rest of the boat.    
+A large flap of canvas separates the cabin from the rest of the boat.
 ~
 flap canvas cloth~
 1 -1 8398
@@ -2625,7 +2625,7 @@ cloth acts as a door to the cabin.
 ~
 83 0 0 0 0 2
 D2
-A large flap of canvas separates the cabin from the rest of the boat.    
+A large flap of canvas separates the cabin from the rest of the boat.
 ~
 flap canvas cloth~
 1 -1 8397
@@ -2635,21 +2635,21 @@ The Mid-Deck~
    You are mid-deck in a large ship, close to the bow.  This deck is used as
 the main dining hall as well as the bar, dance floor, and sometimes as a bed.
 To the north and east, the deck spreads out more.  To the south, there is a
-door that has been barred shut from the other side.    
+door that has been barred shut from the other side.
 ~
 83 0 0 0 0 0
 D0
-This large room extends to the north.    
+This large room extends to the north.
 ~
 ~
 0 0 8393
 D1
-This large room extends to the east.    
+This large room extends to the east.
 ~
 ~
 0 0 8384
 D2
-The south door is barred shut from the other side.    
+The south door is barred shut from the other side.
 ~
 ~
 2 -1 -1

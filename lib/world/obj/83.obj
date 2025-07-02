@@ -9,7 +9,7 @@ A small boat is tied up here.~
 E
 small boat dingy~
    It may not be big, it may not be pretty, but it's a boat.  Appears to be
-somewhat seaworthy. 
+somewhat seaworthy.
 ~
 #8302
 old wooden sign~
@@ -55,7 +55,7 @@ E
 rations iron~
    This packet of rations contains food high in iron and other nutrients.
 Rations of this type are favorites of seamen on long voyages where storage
-space is limited and nutrition is invaluable. 
+space is limited and nutrition is invaluable.
 ~
 #8305
 key golden small~
@@ -75,7 +75,7 @@ A large, wooden crate stands here.~
 0 0 0 0
 E
 wooden crate~
-   This huge crate was once full of food rations.  
+   This huge crate was once full of food rations.
 ~
 #8307
 key iron large~
@@ -130,7 +130,7 @@ A large barrel stands here.~
 E
 barrel wooden cask~
    This huge barrel is full of beer--the fuel which keeps these pirates running
-on long voyages.    
+on long voyages.
 ~
 #8315
 bucket tar oil~
@@ -146,7 +146,7 @@ E
 bucket tar oil~
    The tar in this bucket is used by the pirates to quickly seal small leaks in
 the ship.  As the mixture cools, it hardens, and forms a permanent seal against
-the elements.    
+the elements.
 ~
 #8316
 bucket tar oil~
@@ -159,7 +159,7 @@ A bucket of tar sits here.~
 E
 bucket tar oil~
    The tar has cooled and sealed itself into the bucket.  The only way to
-remove the tar now would be to reheat the bucket.    
+remove the tar now would be to reheat the bucket.
 ~
 #8317
 tar clump spill~
@@ -173,7 +173,7 @@ T 8317
 E
 tar clump spill~
    Someone has sloshed some tar out of a bucket here and it has cooled and
-hardened to the ground.  How careless!    
+hardened to the ground.  How careless!
 ~
 #8318
 hook pirate~

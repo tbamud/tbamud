@@ -8,7 +8,7 @@ A pretty pink taffeta dress lies crumpled on the ground.~
 5 300 0 0 0
 E
 dress pink taffeta~
-   It's a beautifuly tailored pink dress.  You would look quite nice in it.  
+   It's a beautifuly tailored pink dress.  You would look quite nice in it.
 ~
 #26701
 dress blue silk~
@@ -20,7 +20,7 @@ A pretty blue silk dress is getting wrinkled and dirty lying on the ground.~
 5 300 0 0 0
 E
 dress blue silk~
-   It's a beautifully tailored silk dress.  You would look smashing in it.  
+   It's a beautifully tailored silk dress.  You would look smashing in it.
 ~
 #26702
 dress white cotton~
@@ -32,7 +32,7 @@ A pretty white cotton dress has been tossed to the ground.~
 5 300 0 0 0
 E
 dress white cotton~
-   It's a lovely cotton dress.  You would look quite the woman in it.  
+   It's a lovely cotton dress.  You would look quite the woman in it.
 ~
 #26703
 dress beige burlap~
@@ -44,7 +44,7 @@ An ugly beige burlap dress looks very like a sack of potatoes on the ground.~
 5 300 0 0 0
 E
 dress beige burlap~
-   Eyugh.  Gross.  You don't actually want to wear _this_, do you?  
+   Eyugh.  Gross.  You don't actually want to wear _this_, do you?
 ~
 #26704
 dress swirling beautiful multi-colored~
@@ -58,7 +58,7 @@ E
 dress swirling beautiful multi-colored~
    The dress is made from many different colors, and just seems to flow more
 than rest.  You would look more beautiful than you ever have in this luscious
-garb.  
+garb.
 ~
 A
 3 -2
@@ -76,7 +76,7 @@ E
 talisman demon-faced demon faced charming~
    It has a picture of a disgustingly ugly daemon on it.  It looks quite evil,
 but it also looks very powerful.  You can feel the magic flowing from it to your
-hand.  You're torn on whether to use it or not.  
+hand.  You're torn on whether to use it or not.
 ~
 #26706
 robe leisure~
@@ -105,7 +105,7 @@ A tar rattle just insists on your getting it.~
 2 1000 0 0 0
 E
 rattle tar~
-   Awww...  Look at it!  You just wnat to pick it right up and rattle it.  
+   Awww...  Look at it!  You just wnat to pick it right up and rattle it.
 ~
 A
 3 -3
@@ -121,7 +121,7 @@ A scroll with the description of a man screaming at the top of his lungs has bee
 15 400 0 0 0
 E
 scroll fear~
-   It looks pretty frightening.  
+   It looks pretty frightening.
 ~
 #26709
 crown spikes~
@@ -135,7 +135,7 @@ E
 crown spikes~
    The hat itself is rather disconcerting.  Huge, very sharp, razorlike spikes
 protrude from the top; it's pa268ed with cloth at the bottom, so it looks like
-it might be worth with relative comfort--but it sure looks sinister.  
+it might be worth with relative comfort--but it sure looks sinister.
 ~
 A
 1 2
@@ -152,7 +152,7 @@ A black, bloodstained robe is crumpled on the floor.~
 E
 robe fear black blood stained bloodstained~
    This strange robe seems to absorb the light around it.  It's stained with the
-blood of many men.  
+blood of many men.
 ~
 A
 12 20
@@ -169,7 +169,7 @@ A ball and chain lies on the ground.~
 E
 ball chain~
    It's a huge steel bowling ball--looks to way several hundred kilograms--with
-a long chain extended to one legiron...  
+a long chain extended to one legiron...
 ~
 A
 2 -3
@@ -206,7 +206,7 @@ A huge butcher knife has been left on the ground.~
 E
 knife butcher~
    It looks quite effective as a knife.  It's very sharp and has just the right
-amount of blood from previous kills.  
+amount of blood from previous kills.
 ~
 A
 18 3
@@ -238,7 +238,7 @@ A pair of pitch black leggings lie on the ground.~
 15 200 0 0 0
 E
 leggings pitch black~
-   The leggings are made from the same kind of stone the outer area of the 
+   The leggings are made from the same kind of stone the outer area of the
 High Path in Vice Island are. They are probably imported from the same place.
 ~
 A
@@ -255,7 +255,7 @@ A pair of pitch black boots lie on the ground.~
 15 300 0 0 0
 E
 boots pitch black~
-   The boots are made from the same kind of stone the outer area of the 
+   The boots are made from the same kind of stone the outer area of the
 High Path in Vice Island are. They are probably imported from the same place.
 ~
 A
@@ -270,7 +270,7 @@ A pair of pitch black gloves are on the ground.~
 15 1000 0 0 0
 E
 gloves pitch black~
-   The gloves are made from the same kind of stone the outer area of the 
+   The gloves are made from the same kind of stone the outer area of the
 High Path in Vice Island are. They are probably imported from the same place.
 ~
 A
@@ -285,7 +285,7 @@ The Blade of Terror has been thrown to the ground.~
 15 1000 0 0 0
 E
 blade pitch black terror~
-   The blade is made from the same kind of stone the outer area of the 
+   The blade is made from the same kind of stone the outer area of the
 High Path in Vice Island are. They are probably imported from the same place.
 ~
 A
@@ -302,7 +302,7 @@ A pitch black plate armor has been carelessly left behind.~
 20 1000 0 0 0
 E
 armor pitch black plate~
-   The armor is made from the same kind of stone the outer area of the 
+   The armor is made from the same kind of stone the outer area of the
 High Path in Vice Island are. They are probably imported from the same place.
 ~
 #26721
@@ -316,7 +316,7 @@ The Headdress of Terror has been dropped here.~
 E
 hea268ress terror~
    This hea268ress is made from the same metal as the Temple of Terror is made
-from.  Perhaps they came from the same blacksmith.  
+from.  Perhaps they came from the same blacksmith.
 ~
 A
 3 -3
@@ -332,7 +332,7 @@ A ring of pitch-black metal is half-sticking out of the floor.~
 2 800 0 0 0
 E
 ring pitch black~
-   The ring is made from the same kind of stone the outer area of the 
+   The ring is made from the same kind of stone the outer area of the
 High Path in Vice Island are. They are probably imported from the same place.
 ~
 A
@@ -347,8 +347,8 @@ A cloak of darkness is in a heap on the ground.~
 20 1000 0 0 0
 E
 cloak darkness~
-   The material the cloak is made from just seems to suck the light right in.  
-You can still see around you, but things just look dimmer.  It's rally o268.  
+   The material the cloak is made from just seems to suck the light right in.
+You can still see around you, but things just look dimmer.  It's rally o268.
 ~
 A
 4 -1
@@ -459,7 +459,7 @@ A glowing red potion bubbles in a canister on the ground.~
 E
 potion red glowing~
    It looks rather strange.  Somehow you get the feeling it might not be a good
-idea to quaff this one.  
+idea to quaff this one.
 ~
 #26736
 potion blue shining~
@@ -471,7 +471,7 @@ A shining blue potion is in a canister on the ground.~
 3 1000 0 0 0
 E
 potion blue shining~
-   It looks informative.  
+   It looks informative.
 ~
 #26737
 potion green~
@@ -507,7 +507,7 @@ A green cloak of wisdom is in a heap on the ground.~
 3 1000 0 30 0
 E
 cloak wisdom~
-   It's of a silvery metal, and practically eminates magic.  
+   It's of a silvery metal, and practically eminates magic.
 ~
 A
 4 3
@@ -523,7 +523,7 @@ A hazel cloak of forgetfulness is in a big heap on the ground.~
 3 1000 0 0 0
 E
 cloak forgetfulness~
-   It's of a strange hazel material, and doesn't look particularly helpful.  
+   It's of a strange hazel material, and doesn't look particularly helpful.
 ~
 A
 3 -5

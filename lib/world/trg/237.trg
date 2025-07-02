@@ -11,11 +11,11 @@ if (%inroom.vnum% == 23607)
   set trader_leaving 1
   global trader_leaving
 end
- 
+
 if (%inroom.vnum% == 3036)
   unset trader_leaving
 end
- 
+
 if %trader_leaving%
   switch %inroom.vnum%
 * start room 23607
@@ -23,7 +23,7 @@ if %trader_leaving%
 * Start room - need a speech here.
       say We'll leave at dawn.
       rest
-     wait until 07:00      
+     wait until 07:00
       stand
       wait 1 t
      say Are you ready to find adventure, men ?
@@ -52,7 +52,7 @@ if %trader_leaving%
       break
     case 23602
       wait 2 s
-* fall through 
+* fall through
     case 23601
     case 23700
     case 23701
@@ -350,7 +350,7 @@ attach 23703 %self.id%
 Test - NOT ATTACHED~
 2 p 100
 ~
-%echo% actor name %actor.name% 
+%echo% actor name %actor.name%
 %echo% spell number %spell%
 %echo% spell name %spellname%
 %echo% arg %arg%

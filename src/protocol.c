@@ -13,6 +13,11 @@
 #include <sys/types.h>
 #include "protocol.h"
 
+#ifdef _MSC_VER
+#include "telnet.h"
+#define alloca _alloca
+#endif
+
 /******************************************************************************
  The following section is for Diku/Merc derivatives.  Replace as needed.
  ******************************************************************************/
@@ -1530,7 +1535,6 @@ static void Negotiate( descriptor_t *apDescriptor )
 
 static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProtocol )
 {
-   bool_t bResult = true;
    protocol_t *pProtocol = apDescriptor->pProtocol;
 
    switch ( aProtocol )
@@ -1559,8 +1563,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
                Negotiate(apDescriptor);
             }
          }
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_NAWS:
@@ -1568,8 +1570,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
             pProtocol->bNAWS = true;
          else if ( aCmd == (char)WONT )
             pProtocol->bNAWS = false;
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_CHARSET:
@@ -1581,8 +1581,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
          }
          else if ( aCmd == (char)WONT )
             pProtocol->bCHARSET = false;
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_MSDP:
@@ -1595,8 +1593,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
          }
          else if ( aCmd == (char)DONT )
             pProtocol->bMSDP = false;
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_MSSP:
@@ -1604,8 +1600,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
             SendMSSP( apDescriptor );
          else if ( aCmd == (char)DONT )
             ; /* Do nothing. */
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_MCCP:
@@ -1619,8 +1613,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
             pProtocol->bMCCP = false;
             CompressEnd( apDescriptor );
          }
-         else // Anything else is invalid.
-            bResult = false;
          break;
 
       case (char)TELOPT_MSP:
@@ -1628,8 +1620,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
             pProtocol->bMSP = true;
          else if ( aCmd == (char)DONT )
             pProtocol->bMSP = false;
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_MXP:
@@ -1665,8 +1655,6 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
          }
          else if ( aCmd == (char)DONT )
             pProtocol->bMXP = false;
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       case (char)TELOPT_ATCP:
@@ -1692,12 +1680,10 @@ static void PerformHandshake( descriptor_t *apDescriptor, char aCmd, char aProto
          }
          else if ( aCmd == (char)WONT )
             pProtocol->bATCP = false;
-         else /* Anything else is invalid. */
-            bResult = false;
          break;
 
       default:
-         bResult = false;
+         break;
    }
 }
 
@@ -1782,7 +1768,26 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
                   Write(apDescriptor, RequestTTYPE);
             }
 
-            if ( PrefixString("Mudlet", pClientName) )
+            if ( PrefixString("MTTS ", pClientName) )
+            {
+               pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt = atoi(pClientName+5);
+
+               if (pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt & 1)
+               {
+                  pProtocol->pVariables[eMSDP_ANSI_COLORS]->ValueInt = 1;
+               }
+               if (pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt & 4)
+               {
+                  pProtocol->pVariables[eMSDP_UTF_8]->ValueInt = 1;
+               }
+               if (pProtocol->pVariables[eMSDP_CLIENT_VERSION]->ValueInt & 8)
+               {
+                  pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt = 1;
+                  pProtocol->b256Support = eYES;
+               }
+
+            }
+            else if ( PrefixString("Mudlet", pClientName) )
             {
                /* Mudlet beta 15 and later supports 256 colours, but we can't 
                 * identify it from the mud - everything prior to 1.1 claims 

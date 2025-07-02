@@ -6,13 +6,13 @@ eval rwrist %actor.eq(rwrist)%
 eval lwrist %actor.eq(lwrist)%
 if (%rwrist.vnum% == 2708)
 %send% %actor% A magical force seems to ebb, allowing you to pass.
- 
+
 elseif (%lwrist.vnum% == 2708)
 %send% %actor% A magical force seems to ebb, allowing you to pass.
- 
+
 elseif (%actor.varexists(Zn27_shacklepass)%)
 %send% %actor% A magical force seems to ebb, allowing you to pass.
- 
+
 else
 %send% %actor% A powerful force seems to repel you, preventing you from entering.
 %force% %actor% sit
@@ -53,7 +53,7 @@ else
   wait 3 s
   %send% %actor% The guard whispers to you 'She is most cruel, and if you can rid us of her we would be eternally grateful.'
   wait 2 s
-  %send% %actor% The guard whispers to you 'I will let you pass, though it may cost my life.' 
+  %send% %actor% The guard whispers to you 'I will let you pass, though it may cost my life.'
   wait 2 s
   %send% %actor% The guard whispers to you 'Please do not let us down!'
   set Zn27_greeted 1
@@ -69,7 +69,7 @@ end
 (2704) Mob hums randomly~
 0 b 25
 ~
-%echo% 	CA tiny wish	n hums quietly as it gives off a fresh breeze of air.
+%echo% @CA tiny wish@n hums quietly as it gives off a fresh breeze of air.
 ~
 #2704
 (2700) Mobs load and wear shackle~
@@ -133,7 +133,7 @@ end
  wait 1 s
 emote creaks as it turns to look at you.
 wait 2 s
-emote uses 	Ca suspended orb of glowing water	n, filling the room with a wave of light.
+emote uses @Ca suspended orb of glowing water@n, filling the room with a wave of light.
 wait 2 s
 say Ah, it does not touch you... and here I thought you were the Sorceress in disguise.
 wait 1 s
@@ -245,7 +245,7 @@ wait 1 s
 wait 1 s
 clap
 wait 1 s
-%send% %actor% A blind child feels for your arm and grips it. 
+%send% %actor% A blind child feels for your arm and grips it.
 fol %actor.name%
 wait 1 s
 %send% %actor% A blind child tells you 'Please pat me when you want me to stop following.'
@@ -274,11 +274,11 @@ wait 2 s
 say I think if he were here he would want you to have it though.
 wait 2 s
 say I hid it in that cupboard where you found me... in the floorboards.
- 
+
 set Zn27_childquest 1
 remote Zn27_childquest %actor.id%
- 
- 
+
+
 else
 wait 1 s
 follow %self%
@@ -324,7 +324,7 @@ wait 2 s
 rdelete Zn27_shacklereject %actor.id%
 else
 return 0
-end 
+end
 ~
 #2717
 (2707) Room resets shacklepass~
@@ -365,7 +365,7 @@ end
 (2729) Wall of fire prevents fleeing/leaving~
 2 q 100
 ~
-%send% %actor% 	RThe wall of fire burns you as you attempt unsuccessfully to pass through it.	n
+%send% %actor% @RThe wall of fire burns you as you attempt unsuccessfully to pass through it.@n
 %damage% %actor% 10
 return 0
 ~
@@ -375,11 +375,11 @@ return 0
 ~
 eval here %self.room%
 attach 2719 %here.id%
-%echo% 	RThe sorceress raises her arms, creating a massive wall of flame around you.	n
+%echo% @RThe sorceress raises her arms, creating a massive wall of flame around you.@n
 wait 5 s
 use staff
 wait 8 s
-%echo% 	RThe flames around you flicker and die, leaving a circle of ash.	n
+%echo% @RThe flames around you flicker and die, leaving a circle of ash.@n
 detach all %here.id%
 wait 3 s
 ~
@@ -479,7 +479,7 @@ end
 (2714) child quest on death~
 0 f 100
 ~
-%echo% 	BA partially-petrified memlin gasps with his dying breath: My daughter... find her... in the Sandy... Tunn...	n
+%echo% @BA partially-petrified memlin gasps with his dying breath: My daughter... find her... in the Sandy... Tunn...@n
 ~
 #2725
 test for Tink~
@@ -530,19 +530,19 @@ if %self.carried_by%
 eval actor %self.carried_by%
   if %actor.fighting%
     eval victim %actor.fighting%
-    %echoaround% %actor% 	R%actor.name%'s doll suddenly opens its eyes and causes %victim.name% to shudder in pain.	n
-    %send% %actor% 	RYour doll suddenly opens its eyes and causes %victim.name% to shudder in pain.	n
+    %echoaround% %actor% @R%actor.name%'s doll suddenly opens its eyes and causes %victim.name% to shudder in pain.@n
+    %send% %actor% @RYour doll suddenly opens its eyes and causes %victim.name% to shudder in pain.@n
     %damage% %victim% 100
 if (%actor.varexists(zn27_twice)%)
 rdelete Zn27_twice %actor.id%
 wait 3 s
-%send% %actor% 	RYour doll turns its head to look at you.	n
+%send% %actor% @RYour doll turns its head to look at you.@n
 wait 1 s
-%send% %actor% 	RYour doll says 'Thrice I have repaid my debt.'	n
+%send% %actor% @RYour doll says 'Thrice I have repaid my debt.'@n
 wait 1 s
-%send% %actor% 	RYour doll says 'And still I await my freedom.'	n
+%send% %actor% @RYour doll says 'And still I await my freedom.'@n
 wait 1 s
-%send% %actor% 	RThe doll suddenly transforms into a little girl and runs away.'	n
+%send% %actor% @RThe doll suddenly transforms into a little girl and runs away.'@n
 rdelete Zn27_offereddoll %actor.id%
 %purge% %self%
 elseif (%actor.varexists(zn27_once)%)
@@ -583,40 +583,40 @@ end
 0 f 100
 ~
 %load% obj 2724
-%echo% 	yAs the wrm collapses in death, one of its spines breaks off.	n
+%echo% @yAs the wrm collapses in death, one of its spines breaks off.@n
 ~
 #2732
-(2726) shard changes colour~
+(2726) shard changes color~
 1 g 100
 ~
 wait 1 s
 if (%actor.class% == Cleric)
-%echoaround% %actor% 	BThe shard suddenly glows blue in %actor.name%'s hand.	n
-%send% %actor% 	BThe shard suddenly glows blue in your hand, causing you to drop it.	n
+%echoaround% %actor% @BThe shard suddenly glows blue in %actor.name%'s hand.@n
+%send% %actor% @BThe shard suddenly glows blue in your hand, causing you to drop it.@n
 wait 2 s
 %load% obj 2727
-%echo% 	BThe shard whispers: Healer... heal thyself.	n
+%echo% @BThe shard whispers: Healer... heal thyself.@n
 %purge% %self%
 elseif (%actor.class% == Magic User)
-%echoaround% %actor% 	MThe shard suddenly glows purple in %actor.name%'s hand.	n
-%send% %actor% 	MThe shard suddenly glows purple in your hand, causing you to drop it.	n
+%echoaround% %actor% @MThe shard suddenly glows purple in %actor.name%'s hand.@n
+%send% %actor% @MThe shard suddenly glows purple in your hand, causing you to drop it.@n
 wait 2 s
 %load% obj 2730
-%echo% 	MThe shard whispers: Seeker... seek thyself.	n
+%echo% @MThe shard whispers: Seeker... seek thyself.@n
 %purge% %self%
 elseif (%actor.class% == Thief)
-%echoaround% %actor% 	GThe shard suddenly glows green in %actor.name%'s hand.	n
-%send% %actor% 	GThe shard suddenly glows green in your hand, causing you to drop it.	n
+%echoaround% %actor% @GThe shard suddenly glows green in %actor.name%'s hand.@n
+%send% %actor% @GThe shard suddenly glows green in your hand, causing you to drop it.@n
 wait 2 s
 %load% obj 2729
-%echo% 	GThe shard whispers: Deceiver... know thyself.	n
+%echo% @GThe shard whispers: Deceiver... know thyself.@n
 %purge% %self%
 elseif (%actor.class% == Warrior)
-%echoaround% %actor% 	RThe shard suddenly glows red in %actor.name%'s hand.	n
-%send% %actor% 	RThe shard suddenly glows red in your hand, causing you to drop it.	n
+%echoaround% %actor% @RThe shard suddenly glows red in %actor.name%'s hand.@n
+%send% %actor% @RThe shard suddenly glows red in your hand, causing you to drop it.@n
 wait 2 s
 %load% obj 2728
-%echo% 	RThe shard whispers: Conqueror... conquer thyself.	n
+%echo% @RThe shard whispers: Conqueror... conquer thyself.@n
 %purge% %self%
 end
 ~
@@ -657,14 +657,14 @@ end
 (2764) Deathtrap message~
 2 g 100
 ~
-%echo% You realise too late that only an empty chasm lies below. Plummeting faster and faster, you don't even have time to pray before you hit the ground!
+%echo% You realize too late that only an empty chasm lies below. Plummeting faster and faster, you don't even have time to pray before you hit the ground!
 wait 2 s
 %purge%
 eval person %self.people%
 if (%person% > 0)
 %teleport% %actor% 2700
 %force% %actor% look
-%send% %actor% 	RIf you weren't immortal you'd have just splatted.	n
+%send% %actor% @RIf you weren't immortal you'd have just splatted.@n
 end
 ~
 #2736
@@ -731,13 +731,13 @@ end
 1 j 100
 ~
 if (%actor.class% == Magic User)
-%send% %actor% 	MThe shard whispers: I am not for you, Seeker.	n
+%send% %actor% @MThe shard whispers: I am not for you, Seeker.@n
 return 0
 elseif (%actor.class% == Thief)
-%send% %actor% 	GThe shard whispers: I am not for you, Deceiver.	n
+%send% %actor% @GThe shard whispers: I am not for you, Deceiver.@n
 return 0
 elseif (%actor.class% == Warrior)
-%send% %actor% 	RThe shard whispers: I am not for you, Conqueror.	n
+%send% %actor% @RThe shard whispers: I am not for you, Conqueror.@n
 return 0
 end
 ~
@@ -746,13 +746,13 @@ end
 1 j 100
 ~
 if (%actor.class% == Magic User)
-%send% %actor% 	MThe shard whispers: I am not for you, Seeker.	n
+%send% %actor% @MThe shard whispers: I am not for you, Seeker.@n
 return 0
 elseif (%actor.class% == Cleric)
-%send% %actor% 	BThe shard whispers: I am not for you, Healer.	n
+%send% %actor% @BThe shard whispers: I am not for you, Healer.@n
 return 0
 elseif (%actor.class% == Thief)
-%send% %actor% 	GThe shard whispers: I am not for you, Deceiver.	n
+%send% %actor% @GThe shard whispers: I am not for you, Deceiver.@n
 return 0
 end
 ~
@@ -761,13 +761,13 @@ end
 1 j 100
 ~
 if (%actor.class% == Magic User)
-%send% %actor% 	MThe shard whispers: I am not for you, Seeker.	n
+%send% %actor% @MThe shard whispers: I am not for you, Seeker.@n
 return 0
 elseif (%actor.class% == Cleric)
-%send% %actor% 	BThe shard whispers: I am not for you, Healer.	n
+%send% %actor% @BThe shard whispers: I am not for you, Healer.@n
 return 0
 elseif (%actor.class% == Warrior)
-%send% %actor% 	RThe shard whispers: I am not for you, Conqueror.	n
+%send% %actor% @RThe shard whispers: I am not for you, Conqueror.@n
 return 0
 end
 ~
@@ -776,13 +776,13 @@ end
 1 j 100
 ~
 if (%actor.class% == Cleric)
-%send% %actor% 	BThe shard whispers: I am not for you, Healer.	n
+%send% %actor% @BThe shard whispers: I am not for you, Healer.@n
 return 0
 elseif (%actor.class% == Thief)
-%send% %actor% 	GThe shard whispers: I am not for you, Deceiver.	n
+%send% %actor% @GThe shard whispers: I am not for you, Deceiver.@n
 return 0
 elseif (%actor.class% == Warrior)
-%send% %actor% 	RThe shard whispers: I am not for you, Conqueror.	n
+%send% %actor% @RThe shard whispers: I am not for you, Conqueror.@n
 return 0
 end
 ~
@@ -792,7 +792,7 @@ end
 ~
 if !(%actor.varexists(wrm)%)
 wait 1 s
-%echo% A 	Rfire wrm	n enters the room, squealing as the ice suddenly singes its skin.
+%echo% A @Rfire wrm@n enters the room, squealing as the ice suddenly singes its skin.
 %load% mob 2709
 %damage% wrm 1000
 set wrm 1
@@ -1258,22 +1258,22 @@ wait 5 s
 wait 4 s
   say Very rarely, a Tor will suddenly fail whenever balance shifts extremely in the universe. These occasional shifts demand redirection of Imari focus, causing the power of the Tor to weaken and allowing the lifeform to awaken and emerge.
 wait 7 s
-  say The lifeform that emerges from a Tor is called a Nevim, a potent and unnatural concentration of lamen life, closest in power to the Imari themselves. 
+  say The lifeform that emerges from a Tor is called a Nevim, a potent and unnatural concentration of lamen life, closest in power to the Imari themselves.
 wait 4 s
-  say Nevim do not feel the pull of Navi and do not perceive the greater state of the cosmos, using their powers according to their own will and wreaking havoc upon the universal balance. 
+  say Nevim do not feel the pull of Navi and do not perceive the greater state of the cosmos, using their powers according to their own will and wreaking havoc upon the universal balance.
 wait 5 s
   say Shunned through fear and isolated from every other form of life, Nevim become bitter and angry, forces of destruction and causing much pain in an attempt to exorcise their own.
   wait 1 s
 elseif %room.vnum% == 2793
-  say The second wave brings forth the Denuo, the lesser beings, the second-born who live and die without changing form, colouring the lamen that flows through them but being entirely of miru. 
+  say The second wave brings forth the Denuo, the lesser beings, the second-born who live and die without changing form, coloring the lamen that flows through them but being entirely of miru.
   wait 3 s
   say The Khan'li, the Dynar, and myself of Memlin kind, are all examples of Denuo life.
 elseif %room.vnum% == 2794
   say Khan'li embrace the darkness of night and the heat of summer, inheriting through their forebearer Cui a kinship with fire, which they are not harmed by, though simple water acts like acid on their skin.
   wait 4 s
-  say Black and red are their colours and they enjoy sharp points, reflective surfaces for their inclination to repel light and singular works of beauty, believing themselves superior as the firstborn.
+  say Black and red are their colors and they enjoy sharp points, reflective surfaces for their inclination to repel light and singular works of beauty, believing themselves superior as the firstborn.
   wait 4 s
-  say They live mainly underground or in caves, seeking to escape the occasional rains and sculpting their showy palaces into mountains. 
+  say They live mainly underground or in caves, seeking to escape the occasional rains and sculpting their showy palaces into mountains.
   wait 3 s
   say They believe in domination of the strong over the weak and have hardly any sense of guilt or compassion, taking no pleasure in cruelty but exercising it without hesitation for the slightest benefit.
   wait 4 s
@@ -1281,7 +1281,7 @@ elseif %room.vnum% == 2794
   wait 4 s
   say They are passionate, ambitious, powerful, proud, single-minded and fearless.
 elseif %room.vnum% == 2795
-  say Dynar are smaller than the Khan'li, but just as adept at fighting, extremely fast, able to contort their bodies amazingly and putting their skills to use in the construction of elaborate weapons and studying of the world. 
+  say Dynar are smaller than the Khan'li, but just as adept at fighting, extremely fast, able to contort their bodies amazingly and putting their skills to use in the construction of elaborate weapons and studying of the world.
   wait 4 s
   say Pale-skinned, their blood is as the milky sap of trees, having slight phosphorescent properties which causes them to glow faintly in darkness.
   wait 3 s
@@ -1488,17 +1488,17 @@ end
 1 c 1
 use~
 if %arg% == ring
-  %send% %actor% 	C You attempt to draw on the power of %self.shortdesc%. 	n
-  %echoaround% %actor% 	C %actor.name% attempts to draw on the power of %self.shortdesc%. 	n
+  %send% %actor% @C You attempt to draw on the power of %self.shortdesc%. @n
+  %echoaround% %actor% @C %actor.name% attempts to draw on the power of %self.shortdesc%. @n
   wait 1 s
   if %self.timer% == 0
     eval give %actor.maxmana% * 2
     dg_affect %actor% maxmana %give% 10
-    %send% %actor% 	C You glow with energy as %self.shortdesc% infuses you with magical potential. 	n
-    %echoaround% %actor% 	C %actor.name% glows with energy as %self.shortdesc% infuses %actor.himher% with magical potential. 	n
+    %send% %actor% @C You glow with energy as %self.shortdesc% infuses you with magical potential. @n
+    %echoaround% %actor% @C %actor.name% glows with energy as %self.shortdesc% infuses %actor.himher% with magical potential. @n
     otimer 20
   else
-    %echo% 	c Alas, the power of %self.shortdesc% has not yet recovered. 	n
+    %echo% @c Alas, the power of %self.shortdesc% has not yet recovered. @n
   end
 end
 return 0
@@ -1515,8 +1515,8 @@ otimer 1
 1 f 100
 ~
 eval actor %self.worn_by%
-%send% %actor% 	C Your icy mana ring glows faintly blue, renewed with magical force. 	n 	n 	n 	n
-%echoaround% %actor% 	C %actor.name%'s icy mana ring glows faintly blue, renewed with magical force. 	n
+%send% %actor% @C Your icy mana ring glows faintly blue, renewed with magical force. @n @n @n @n
+%echoaround% %actor% @C %actor.name%'s icy mana ring glows faintly blue, renewed with magical force. @n
 ~
 #2784
 test corpse purge (use with 2785)~
@@ -1640,9 +1640,9 @@ end
 (2729) sorceress stops orb~
 0 c 100
 xxorbxx~
-%echo% 	RA fire elemental shrieks in terror at the sudden blast, but the Sorceress quickly raises a magical wall of fire.	n
+%echo% @RA fire elemental shrieks in terror at the sudden blast, but the Sorceress quickly raises a magical wall of fire.@n
 wait 2 s
-%echo% 	RThe fire absorbs the blue light from the orb.	n
+%echo% @RThe fire absorbs the blue light from the orb.@n
 wait 1 s
 emote snarls: Where did you get that?!
 ~
@@ -1650,14 +1650,14 @@ emote snarls: Where did you get that?!
 (2779) orb destroys staff~
 1 c 100
 xxorbxx~
-%echo% 	CA fire elemental shrieks and sizzles as a blue wave of light hits it.	n
+%echo% @CA fire elemental shrieks and sizzles as a blue wave of light hits it.@n
 wait 2 s
 %echo% The death cry of the Sorceress can be heard as her form materializes and slumps to the ground, dissolving into smoke.
 %load% obj 2773
 %load% obj 2776
 %load% obj 2772
 wait 2 s
-%echo% 	CA fire elemental finally withers, shrivelling into a tiny black skeleton.	n
+%echo% @CA fire elemental finally withers, shrivelling into a tiny black skeleton.@n
 %purge% %self%
 ~
 #2797
@@ -1666,7 +1666,7 @@ wait 2 s
 yes~
 emote smiles happily.
 wait 1 s
-say Its like this, see... 
+say Its like this, see...
 wait 1 s
 emote stands up and traces a circle in the sand.
 wait 2 s

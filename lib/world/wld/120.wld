@@ -31,12 +31,12 @@ trapdoor~
 E
 pencils pencil~
    An ordinary #2 lead pencil.  Judging by the teeth marks on the shaft, the
-user should see a dentist very soon!  
+user should see a dentist very soon!
 ~
 E
 scorecards~
    The cards all have been filled in with the judges evaluations of today's
-combatants.  It seems that Sparticus is having a good day.  
+combatants.  It seems that Sparticus is having a good day.
 ~
 S
 #12002
@@ -62,8 +62,8 @@ S
 The West Side Of The Commoner's Seating Area~
    This is the western side commoner's seating area.  There are row upon
 row of rough wooden benches bolted to the floor.  There is stadium garbage
-everywhere and the smell makes you want to puke.  Stairs lead up to Caesar's 
-private box, a small ramp leads down to the playing field and a hallway 
+everywhere and the smell makes you want to puke.  Stairs lead up to Caesar's
+private box, a small ramp leads down to the playing field and a hallway
 leads south.
 ~
 120 0 0 0 0 1
@@ -86,7 +86,7 @@ E
 seats benches~
    The benches are made of rough cut lumber that has dried and split over time.
 You would probably get splinters if sat on them.  The words 'BURT WAS HERE' have
-been carved into one of the benches with exquisite care.  
+been carved into one of the benches with exquisite care.
 ~
 S
 #12004
@@ -110,7 +110,7 @@ There is an acrid smell coming from that direction.
 E
 marks scratches~
    They look like they form the words "Onivel Cinemod Semaj" But you could be
-mistaken.  
+mistaken.
 ~
 S
 #12005
@@ -119,7 +119,7 @@ The Abandoned Gate~
 blocking your way and judging by the amount of rust and foliage growing on the
 bars, it hasn't been open for years.  Looking through the gate at the barren
 landscape that lies beyond, you can see why.  A dirt road leads off to the east,
-and a store is directly south.  
+and a store is directly south.
 ~
 120 0 0 0 0 1
 D1
@@ -133,7 +133,7 @@ You can barely make out a storefront through the foliage.
 ~
 0 -1 12006
 D3
-The gate has been permanently rusted shut and is further secured by a large 
+The gate has been permanently rusted shut and is further secured by a large
 chain and padlock.  Don't even bother THINKING about trying to open it.
 ~
 gate~
@@ -141,7 +141,7 @@ gate~
 E
 gate~
    The gate has been permanently rusted shut and is further secured by a large
-chain and padlock.  Don't even bother THINKING about trying to open it.  
+chain and padlock.  Don't even bother THINKING about trying to open it.
 ~
 S
 #12006
@@ -159,7 +159,7 @@ You can see a city gate to the north.
 ~
 0 -1 12005
 D2
-There is a very secure looking door blocking your progress.  
+There is a very secure looking door blocking your progress.
 ~
 door~
 2 12034 12007
@@ -167,7 +167,7 @@ E
 swords weapons armor halberds whips~
    Titus has enough hardware in here to outfit a large army.  Maybe that's why
 he has a lucrative contract to sell weapons to the Emperor's armies for
-outrageous prices.  
+outrageous prices.
 ~
 S
 #12007
@@ -179,14 +179,14 @@ years.  The only exit is through a door to the north.
 ~
 120 9 0 0 0 0
 D0
-Through the piles of weapons, you can see a door leading north to the rest of 
+Through the piles of weapons, you can see a door leading north to the rest of
 the store.
 ~
 door~
 2 12034 12006
 E
 weapons swords crates armor weapon sword crate~
-   There are literally thousands of each.  Take your pick.  
+   There are literally thousands of each.  Take your pick.
 ~
 S
 #12008
@@ -208,7 +208,7 @@ landscape country~
    You can see the entire city of Rome from here.  The buildings housing the
 Roman government are to the east.  To the south east, off in the distance, is
 the massive aqueduct and further in that direction lies the Mountain of the
-Gods.  
+Gods.
 ~
 S
 #12009
@@ -239,16 +239,16 @@ chariot~
    You see a two wheeled open cart which is obviously meant to be pulled by
 horses.  The flaming paint-job and the large '01' stenciled on the side identify
 the chariot as belonging to Drucilis 'Lightning-whip' Octavious, a favorite
-driver of the masses.  
+driver of the masses.
 ~
 E
 driver~
-   The driver is too busy changing a wheel on his chariot to notice you.  
+   The driver is too busy changing a wheel on his chariot to notice you.
 ~
 E
 gladiator~
    He is a big muscular man with lots of armor.  He sizes you up and decides
-that you aren't worth his time or trouble.  
+that you aren't worth his time or trouble.
 ~
 S
 #12010
@@ -265,7 +265,7 @@ the games.
 ~
 0 -1 12009
 D4
-You see a set of steps leading up into the spectator stands.  
+You see a set of steps leading up into the spectator stands.
 ~
 ~
 0 -1 12003
@@ -274,7 +274,7 @@ gladiator~
    He is in the final stages of a charge against his opponent...  THUD!  CLANG!
 CRASH!!!!...  Judging from the blood and the amount of distance that now
 separates the gladiators head from the rest of his body, you can safely assume
-that this was the final combat of his life.  
+that this was the final combat of his life.
 ~
 S
 #12011
@@ -298,7 +298,7 @@ Rows of stone bleachers lie to the west.
 E
 leech leeches~
    DISGUSTING!  Each is about the size of matchbox and very slimy.  You are VERY
-glad that you have access to a cleric!  
+glad that you have access to a cleric!
 ~
 S
 #12012
@@ -348,7 +348,7 @@ You hazard a guess that a bedroom lies in that direction.
 E
 furnishings furniture~
    The furniture that you see is very simple and plain.  It is made of rough
-hewn wood and fastened together with nails.  It looks very uncomfortable.  
+hewn wood and fastened together with nails.  It looks very uncomfortable.
 ~
 S
 #12014
@@ -366,14 +366,14 @@ You see the living quarters to the north.
 0 -1 12013
 E
 laundry wash clothing~
-   It smells of sweat and is covered with mud.  
+   It smells of sweat and is covered with mud.
 ~
 S
 #12015
 The Noblemans' Box~
-   These are the 'better' seats used primarily by the upper class of Rome.  
+   These are the 'better' seats used primarily by the upper class of Rome.
 There is a large seating area to the east and a staircase leading up here.  The
-view of the chariot track is pretty good.  
+view of the chariot track is pretty good.
 ~
 120 0 0 0 0 0
 D1
@@ -419,7 +419,7 @@ look around you, and all you see is tawny fur and gaping jaws... it is too
 late to run, too late to hide.
    Twelve lions rip you and your belongings into a gory mass of bloodied
 leather, bronze, and bone.
-   What's that old saying? 
+   What's that old saying?
    Cats killed the curious?  Something like that, I'm sure...
 ~
 120 12 0 0 0 0
@@ -489,7 +489,7 @@ stomach are strongly suggesting that you use it.
 ~
 120 8 0 0 0 0
 D3
-The living quarters lie in that direction.  Why don't you stop pussyfooting 
+The living quarters lie in that direction.  Why don't you stop pussyfooting
 around and go that way??!!  Please?
 ~
 ~
@@ -497,7 +497,7 @@ around and go that way??!!  Please?
 E
 roll paper~
    Hey!!  This is first-class stuff!!  - White Cloud brand with lotion.  The
-roll is about half-used.  
+roll is about half-used.
 ~
 E
 hole toilet~
@@ -505,7 +505,7 @@ hole toilet~
 pool black water about 2 feet below the surface of the ground.  As you lean
 closer to get a better look, your nose catches a concentrated dose of the
 fragrant aroma wafting upwards.  Your stomach decides that it has had enough of
-this shoddy treatment and you puke until it is empty.  
+this shoddy treatment and you puke until it is empty.
 ~
 S
 #12021
@@ -562,10 +562,10 @@ You see hundreds, perhaps thousands of people.
 S
 #12024
 The East Entrance To The Coliseum~
-   You are standing at the east entrance to the Coliseum.  There are people 
-everywhere, apparently in a mad rush to get in.  A statue of Tiberius, an 
-Emperor of a time long since passed, stands here looking out over the crowd.  
-There is a passage to the north, the ticket booth is to the south and a gate 
+   You are standing at the east entrance to the Coliseum.  There are people
+everywhere, apparently in a mad rush to get in.  A statue of Tiberius, an
+Emperor of a time long since passed, stands here looking out over the crowd.
+There is a passage to the north, the ticket booth is to the south and a gate
 opening to the city lies to the east.
 ~
 120 4 0 0 0 1
@@ -586,7 +586,7 @@ There are VERY long lines standing outside the ticket booth.
 0 -1 12025
 E
 statue tiberius~
-   The statue of Tiberius, made of iron, stands here.  
+   The statue of Tiberius, made of iron, stands here.
 ~
 S
 #12025
@@ -594,7 +594,7 @@ The Ticket Booth~
    Long lines are standing here, waiting to buy tickets.  There are three
 vendors working furiously.  Ticket stubs litter the ground and you can see
 that the people are getting very impatient.  There is a large, open cashbox
-here.  Main entrances to the Coliseum are to the north and west.  
+here.  Main entrances to the Coliseum are to the north and west.
 ~
 120 8 0 0 0 0
 D0
@@ -612,7 +612,7 @@ cashbox~
    It is a shame that the exchange rate for Roman money is so low.  What amounts
 to a fortune in Rome isn't even worth one gold coin.  The contents of the box
 add up to about...  Well forget it.  It isn't worth your time or trouble to
-carry it around.  
+carry it around.
 ~
 S
 #12026
@@ -640,7 +640,7 @@ The road leads west towards the highway.
 E
 structure~
    That would probably be the Coliseum.  There are a few good matches scheduled
-for today.  
+for today.
 ~
 S
 #12027
@@ -678,23 +678,23 @@ E
 trees tree shrubs shrub plants plant~
    All of the plants, trees and shrubs are perfectly trimmed, without so much as
 a dead leaf anywhere to be seen.  You welcome the shade that they give from the
-harsh sun above.  
+harsh sun above.
 ~
 E
 Neptune~
    The statue of Neptune is made of pure jade and is holding a crystal trident.
 It is sitting in the center of a small pond which has hundreds of beautiful fish
-swimming in it.  
+swimming in it.
 ~
 E
 Jupiter~
    A statue made of pure gold depicts Jupiter sitting on his throne.  The throne
-looks like it is made of silver.  
+looks like it is made of silver.
 ~
 E
 Venus~
    Venus, the Roman goddess of beauty and knowledge is displayed in a all of her
-splendor.  
+splendor.
 ~
 S
 #12028
@@ -715,17 +715,17 @@ You see a well manicured path that winds through the estate.
 E
 furniture~
    You hope to eventually be able to own a piece of furniture just like these
-someday.  These are only dreams, of course.  
+someday.  These are only dreams, of course.
 ~
 E
 windows~
    They are intricate and the scenes that they depict cast honor on several of
-the gods.  
+the gods.
 ~
 E
 floor tile~
    Very expensive!  A lot of master craftsmen labored long and hard to produce
-such a work of art.  
+such a work of art.
 ~
 S
 #12029
@@ -747,11 +747,11 @@ Nero Drive continues in that direction.
 0 -1 12030
 E
 road~
-   The road is wide and very muddy.  
+   The road is wide and very muddy.
 ~
 E
 gate~
-   The gate is made of solid iron and is well maintained.  
+   The gate is made of solid iron and is well maintained.
 ~
 S
 #12030
@@ -833,13 +833,13 @@ aqueduct and buildings of the Roman government.
 E
 aqueduct~
    To the southeast, off in the distance, stands a large stone structure that is
-used to channel water into the city.  
+used to channel water into the city.
 ~
 E
 vendor vendors~
    There are several sidewalk vendors here, selling fresh fruits and vegetables,
 home baked goods, fine jewelry and other items.  Most of the items for sale are
-of very high quality.  
+of very high quality.
 ~
 S
 #12033
@@ -924,7 +924,7 @@ gate~
 2 -1 -1
 E
 gate~
-   The gate appears to be closed and locked against intruders.  
+   The gate appears to be closed and locked against intruders.
 ~
 S
 #12036
@@ -952,23 +952,23 @@ door wooden~
 2 12035 12037
 E
 flowers plants flower plant~
-   The plants contribute to a very relaxing atmosphere.  
+   The plants contribute to a very relaxing atmosphere.
 ~
 E
 bookcase books~
    The books are very old and contain the wisdom of wise men from throughout the
-entire Roman empire.  They appear to be collecting dust.  
+entire Roman empire.  They appear to be collecting dust.
 ~
 E
 documents decrees paperwork document decree papers paper~
    The documents are all written on reed scrolls made in Egypt and have been
-sealed with wax.  
+sealed with wax.
 ~
 E
 desk~
    The desk is made of solid walnut and gold inlay.  It is exquisitely carved
 with superior craftsmanship, the likes of which has rarely been seen.  It was
-probably brought to Rome from Gaul.  
+probably brought to Rome from Gaul.
 ~
 S
 #12037
@@ -1032,8 +1032,8 @@ There are large crowds of people in that direction.
 0 -1 12032
 E
 crowds people~
-   It looks like some kind of bizarre or festival is occurring to the west.  
-There are hundreds of people of all classes shopping, talking or eating.  
+   It looks like some kind of bizarre or festival is occurring to the west.
+There are hundreds of people of all classes shopping, talking or eating.
 ~
 S
 #12040
@@ -1065,13 +1065,13 @@ sign~
 E
 aqueduct~
    The aqueduct is a massive stone structure that channels water into Rome from
-the Mountain of the Gods.  During the rainy season, it is filled to the top.  
-However, due to recent drought, the water level appears to be very low.  
+the Mountain of the Gods.  During the rainy season, it is filled to the top.
+However, due to recent drought, the water level appears to be very low.
 ~
 E
 telescope~
    If it were operational, it would offer a spectacular view of the Mountain of
-the Gods.  Unfortunately, it appears to have been vandalized.  
+the Gods.  Unfortunately, it appears to have been vandalized.
 ~
 S
 #12041
@@ -1107,7 +1107,7 @@ E
 slime algae~
    Due to the availability of moisture and nutrients, a green, viscous slime has
 grown and covered everything with a slippery coating.  It seems to go out of its
-way to drip on you.  
+way to drip on you.
 ~
 S
 #12042
@@ -1142,7 +1142,7 @@ You see the south gate through the door.
 E
 fog mist~
    This is some really strange stuff!  You have never seen anything this color
-before.  Your legs are totally obscured from the knee down.  
+before.  Your legs are totally obscured from the knee down.
 ~
 S
 #12043
@@ -1155,7 +1155,7 @@ and an exit leads south to the foyer.
 ~
 120 8 0 0 0 0
 D1
-There is a sign on the door that says:  MUNICIPAL COURT OF ROME.  It appears 
+There is a sign on the door that says:  MUNICIPAL COURT OF ROME.  It appears
 to be open.
 ~
 ~
@@ -1216,11 +1216,11 @@ The steps terminate onto Clay Avenue.
 0 -1 12046
 E
 statue statues~
-   There is really nothing noteworthy about them.  
+   There is really nothing noteworthy about them.
 ~
 E
 stairs stairway steps~
-   The stairs are immaculately polished and made of white marble.  
+   The stairs are immaculately polished and made of white marble.
 ~
 S
 #12046
@@ -1254,12 +1254,12 @@ There are some white marble steps leading up.
 E
 mountain~
    Off to the southwest, you can see a huge mountain that is partially obscured
-by the haze.  It is rumored that the gods reside there and protect the city.  
+by the haze.  It is rumored that the gods reside there and protect the city.
 ~
 E
 stone structure aqueduct~
    You see a massive stone structure, built several centuries ago, that is used
-to channel water into the city.  
+to channel water into the city.
 ~
 S
 #12047
@@ -1309,7 +1309,7 @@ E
 slime algae~
    Due to the availability of moisture and nutrients, a green viscous slime has
 grown and covered everything with a slippery coating.  It seems to go out of its
-way to drip on you.  
+way to drip on you.
 ~
 S
 #12049
@@ -1325,13 +1325,13 @@ wand...  Possibly the one responsible for the explosion a few minutes ago.  He
 removes a jeweler's loupe from his eye as he turns around.  'How in the name of
 Merlin did you get in here??!!  ' he asks.  'Oh, nevermind!  Since you are here,
 you can serve as witnesses to the final test of the new mages' spell:
-"ectowatt".  ' With this he makes a magical gesture and a paladin appears.  
+"ectowatt".  ' With this he makes a magical gesture and a paladin appears.
 Crossing his fingers, Froboz waves the wand his direction and what happens next
 is incredible!  The Paladin is enveloped in what appears to be a small, well
 contained, thermonuclear explosion.  When the smoke clears you can see that the
 paladin and all of equipment has been reduced to a large pile of flaming
 cinders.  Froboz throws his head back and cackles with insane glee.  'Now, my
-young friends, what can I do for you?  ', he asks.  
+young friends, what can I do for you?  ', he asks.
 ~
 120 8 0 0 0 0
 D3
@@ -1342,22 +1342,22 @@ door~
 E
 cinders ashes pile~
    The ashes are a very fine grayish white powder that seems to be the only
-worldly remains of Froboz's "test specimens".  
+worldly remains of Froboz's "test specimens".
 ~
 E
 workbench workbenches tubes beakers crucibles dishes~
    These are all tools of great power.  You cannot even begin to understand what
-any of this stuff does.  
+any of this stuff does.
 ~
 S
 #12050
 The Courtroom~
-   You stand inside of a large courtroom in which common civil disputes and 
+   You stand inside of a large courtroom in which common civil disputes and
 criminal matters are decided.  There is a judge's bench and a witness stand
 on the far side of the room and a jury's box along side.  The Emperor's seal
 is prominently displayed on the wall behind the judge's stand, reminding all
-who enter that he is an extension of his highness.  There is a door, possibly 
-leading to the judge's chambers, to the east and the waiting room is to the 
+who enter that he is an extension of his highness.  There is a door, possibly
+leading to the judge's chambers, to the east and the waiting room is to the
 west.
 ~
 120 8 0 0 0 0
@@ -1378,21 +1378,21 @@ The waiting room lies in that direction.
 0 -1 12043
 E
 seal~
-   The seal of the Emperor is mounted above the judge's stand.  
+   The seal of the Emperor is mounted above the judge's stand.
 ~
 E
 bench stand box jury~
    You see large wooden structures that are designed to separate the judge, jury
 and witnesses from the rest of the courtroom.  They are made of polished oak and
-are strictly functional.  
+are strictly functional.
 ~
 S
 #12051
 The East Gate Of Rome~
-   You are standing inside of the eastern gate of Rome.  There are two tall 
-spires built into the city wall, from which the guards can see the whole 
-eastern side of the city.  The gate is currently open and to the east, 
-there is a heavily used road, made of packed clay, that leads out of Rome. 
+   You are standing inside of the eastern gate of Rome.  There are two tall
+spires built into the city wall, from which the guards can see the whole
+eastern side of the city.  The gate is currently open and to the east,
+there is a heavily used road, made of packed clay, that leads out of Rome.
 Another road leads westward into the city.
 ~
 120 0 0 0 0 1
@@ -1409,7 +1409,7 @@ The clay street leads into the city.
 E
 gate~
    The gate is fabricated from iron and has been designed to keep intruders out
-of the city.  
+of the city.
 ~
 E
 spires towers~
@@ -1419,9 +1419,9 @@ manned by the city guards.  They are made of stone and stand about 40 feet tall.
 S
 #12052
 A Mountain Path~
-   You stand on a small trail that leads up and down.  It has recently been 
+   You stand on a small trail that leads up and down.  It has recently been
 raining and there are small puddles everywhere.  You are just below the
-clouds and the view of the surrounding countryside is breathtaking.  
+clouds and the view of the surrounding countryside is breathtaking.
 ~
 120 0 0 0 0 5
 D4
@@ -1436,7 +1436,7 @@ The trail leads down.
 0 -1 12056
 E
 trail~
-   The mountain trail is a little muddy, due to the recent rains.  
+   The mountain trail is a little muddy, due to the recent rains.
 ~
 S
 #12054
@@ -1472,7 +1472,7 @@ E
 slime algae~
    Due to the availability of moisture and nutrients, a green, viscous slime has
 grown and covered the everything with a slippery coating.  It seems to go out of
-its way to drip on you.  
+its way to drip on you.
 ~
 S
 #12055
@@ -1491,11 +1491,11 @@ E
 papers documents~
    There are hundreds of pages of petitions, lawsuits and court orders sitting
 on the desk.  One particularly interesting case involves a nobleman, a slave and
-a roll of toilet paper.  
+a roll of toilet paper.
 ~
 E
 tombs books~
-   The books are very large and filled with Roman legal precedent.  
+   The books are very large and filled with Roman legal precedent.
 ~
 S
 #12056
@@ -1518,12 +1518,12 @@ You see a small trail, leading down.
 0 -1 12059
 E
 trail path~
-   The path is a little muddy, possibly due to a recent thundershower.  
+   The path is a little muddy, possibly due to a recent thundershower.
 ~
 E
 tree trees vegetation~
    All of the vegetation is lush, green and in full bloom.  You wish that you
-could take the time to stop and enjoy it properly.  
+could take the time to stop and enjoy it properly.
 ~
 S
 #12057
@@ -1560,12 +1560,12 @@ E
 slime algae~
    Due to the availability of moisture and nutrients, a green, viscous slime has
 grown and covered everything with a slippery coating.  It seems to go out of its
-way to drip on you.  
+way to drip on you.
 ~
 S
 #12058
 The Valley Of The Gods~
-   You stand in a tranquil valley at the base of a large mountain.  A quiet 
+   You stand in a tranquil valley at the base of a large mountain.  A quiet
 stream, with fruit trees growing along its banks, winds its way peacefully
 through the valley and enters a large stone structure that lies to the west.
 There are birds singing and every now and then a ripple breaks the surface
@@ -1586,21 +1586,21 @@ E
 trees fruit~
    The fruit trees, nourished by the fertile ground at the edge of the stream
 and sustained by the brilliant sunshine, line the banks of the stream and are
-laden with fruit.  
+laden with fruit.
 ~
 E
 fish~
-   A variety of species swims peacefully in the cool, clear water.  
+   A variety of species swims peacefully in the cool, clear water.
 ~
 E
 stream brook~
    A stream of the clearest, cleanest water that you have ever seen winds its
-way through the valley.  
+way through the valley.
 ~
 S
 #12059
 A Mountain Path~
-   You are standing on a path that leads up through a stand of large trees.  
+   You are standing on a path that leads up through a stand of large trees.
 Everything is green and it seems like eternal spring - this is Mother Nature
 at her finest.  It is possible to descend into a tranquil valley from here.
 ~
@@ -1618,7 +1618,7 @@ The path widens out into a tranquil valley.
 E
 trees~
    The trees are old and tower hundreds of feet above the ground.  If you stand
-still and listen carefully, you can hear the birds singing.  
+still and listen carefully, you can hear the birds singing.
 ~
 S
 #12060
@@ -1640,7 +1640,7 @@ D1
 E
 cells cell~
    You can see small and very cramped cells which are filthy.  You shiver and
-vow to never do anything that would cause you to become a resident.  
+vow to never do anything that would cause you to become a resident.
 ~
 S
 #12061
@@ -1671,8 +1671,8 @@ D1
 S
 #12063
 The General Store~
-   You are standing in the only general store of Rome.  The walls and shelves 
-are covered with all of the various items required by Roman citizens and 
+   You are standing in the only general store of Rome.  The walls and shelves
+are covered with all of the various items required by Roman citizens and
 stalwart adventurers.  Clay Avenue lies to the south.
 ~
 120 8 0 0 0 0

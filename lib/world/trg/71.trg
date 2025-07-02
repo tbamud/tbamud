@@ -4,7 +4,7 @@ Near Death Trap Mid-Air - 7114, 7190~
 ~
 * Near Death Trap stuns actor
 wait 1 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% Watch your step next time.

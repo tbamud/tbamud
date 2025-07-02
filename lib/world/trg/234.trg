@@ -7,7 +7,7 @@ if %arg% == button
   %echoaround% %actor% As %actor.name% pushes a button, a secret door is revealed.
   %door% 23441 west flags a
   %door% 23441 west name door
-  %door% 23441 west room 23471 
+  %door% 23441 west room 23471
 else
   %send% %actor% Push what ?!
 end

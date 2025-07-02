@@ -42,7 +42,7 @@ ACMD(do_oasis_aedit)
   if (IS_NPC(ch) || !ch->desc || STATE(ch->desc) != CON_PLAYING)
     return;
     
-    if (CONFIG_NEW_SOCIALS == 0) {
+  if (CONFIG_NEW_SOCIALS == 0) {
     send_to_char(ch, "Socials cannot be edited at the moment.\r\n");
     return;
   }
@@ -185,7 +185,7 @@ static void aedit_save_internally(struct descriptor_data *d) {
    }
    /* pass the editted action back to the list - no need to add */
    else {
-      i = aedit_find_command(OLC_ACTION(d)->command);
+      aedit_find_command(OLC_ACTION(d)->command);
       OLC_ACTION(d)->act_nr = soc_mess_list[OLC_ZNUM(d)].act_nr;
       /* why did i do this..? hrm */
       free_action(soc_mess_list + OLC_ZNUM(d));
@@ -557,7 +557,7 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       }
       if (OLC_ACTION(d)->command)
         free(OLC_ACTION(d)->command);
-        OLC_ACTION(d)->command = strdup(arg);
+      OLC_ACTION(d)->command = strdup(arg);
 
       break;
 
@@ -566,10 +566,10 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
         aedit_disp_menu(d);
         return;
       }
-      if (OLC_ACTION(d)->sort_as) {
+      if (OLC_ACTION(d)->sort_as) 
         free(OLC_ACTION(d)->sort_as);
-        OLC_ACTION(d)->sort_as = strdup(arg);
-      }
+      OLC_ACTION(d)->sort_as = strdup(arg);
+      
       break;
 
     case AEDIT_MIN_CHAR_POS:

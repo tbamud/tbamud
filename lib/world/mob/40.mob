@@ -7,7 +7,7 @@ A large dreadful snake is at your feet, hissing at you.
 crossbands that are chevron-shaped.  These rattlesnakes are generally passive if
 not disturbed or pestered in some way.  When a rattlesnake is encountered, the
 safest reaction is to back away -- it will not try to attack you if you leave it
-alone.  
+alone.
 ~
 10 0 0 0 16 0 0 0 -200 E
 11 17 3 2d2+110 1d2+1
@@ -21,7 +21,7 @@ the green snake~
 A small green snake is here, and it doesn't look too friendly...
 ~
    It looks harmless.  It appears to be a slender garter snake.  It is about 2
-feet long and starts slithering away as you approach.  
+feet long and starts slithering away as you approach.
 ~
 10 0 0 0 0 0 0 0 -100 E
 7 18 5 1d1+70 1d2+1
@@ -34,7 +34,7 @@ centipede~
 the centipede~
 A small centipede is here, making its way across the floor.
 ~
-   It looks completely harmless.  
+   It looks completely harmless.
 ~
 10 0 0 0 0 0 0 0 100 E
 3 19 8 0d0+30 1d2+0
@@ -46,7 +46,7 @@ kobold~
 the kobold~
 An ugly kobold is here, searching for dinner.
 ~
-   It looks ugly.  
+   It looks ugly.
 ~
 76 0 0 0 0 0 0 0 -100 E
 4 19 7 0d0+40 1d2+0
@@ -58,7 +58,7 @@ orc~
 the orc~
 The orc walks around, looking for someone to kill.
 ~
-   You notice an evil look in its eyes...  
+   You notice an evil look in its eyes...
 ~
 108 0 0 0 0 0 0 0 -400 E
 5 19 7 1d1+50 1d2+0
@@ -70,7 +70,7 @@ orc large~
 the orc~
 A large orc is here, looking really mean.
 ~
-   He looks dreadful.  
+   He looks dreadful.
 ~
 76 0 0 0 0 0 0 0 -500 E
 7 18 5 1d1+70 1d2+1
@@ -82,7 +82,7 @@ warrior~
 the warrior~
 A tall warrior is here.  He has more scars than anyone you have ever seen.
 ~
-   He seems to be a strong, brainless fighter.  
+   He seems to be a strong, brainless fighter.
 ~
 110 0 0 0 0 0 0 0 -300 E
 12 16 2 2d2+120 2d2+2
@@ -94,7 +94,7 @@ warrior~
 the warrior~
 A tall warrior is here.
 ~
-   He seems to know his way with weapons.  
+   He seems to know his way with weapons.
 ~
 108 0 0 0 0 0 0 0 -400 E
 7 18 5 1d1+70 1d2+1
@@ -106,7 +106,7 @@ hobgoblin~
 the hobgoblin~
 A small hobgoblin stands here.
 ~
-   The hobgoblin looks quite lost.  
+   The hobgoblin looks quite lost.
 ~
 76 0 0 0 0 0 0 0 -300 E
 6 18 6 1d1+60 1d2+1
@@ -120,7 +120,7 @@ A brown snake watches you.
 ~
    The snake looks quite mean.  It stretches about 4 feet long.  The color
 pattern is variable, but the back is drab brown.  The snake stands its ground
-and hisses at you.  
+and hisses at you.
 ~
 10 0 0 0 0 0 0 0 -600 E
 10 17 4 2d2+100 1d2+1
@@ -133,7 +133,7 @@ centipede~
 the centipede~
 A white centipede is here.
 ~
-   The centipede doesn't really seem to notice you.  
+   The centipede doesn't really seem to notice you.
 ~
 10 0 0 0 0 0 0 0 -100 E
 5 19 7 1d1+50 1d2+0
@@ -145,7 +145,7 @@ hobgoblin~
 the hobgoblin~
 A large hobgoblin is here.
 ~
-   The hobgoblin looks quite dangerous.  
+   The hobgoblin looks quite dangerous.
 ~
 76 0 0 0 0 0 0 0 -500 E
 10 17 4 2d2+100 1d2+1
@@ -157,7 +157,7 @@ orc~
 the orc~
 An orc is here, looking for something (or perhaps someone?) to eat.
 ~
-   Well, he doesn't seem to be friendly.  
+   Well, he doesn't seem to be friendly.
 ~
 108 0 0 0 0 0 0 0 -800 E
 8 18 5 1d1+80 1d2+1
@@ -169,7 +169,7 @@ lion mountain~
 the mountain lion~
 A mountain lion is here, growling at you viciously.
 ~
-   The lion looks very nasty with huge claws and big teeth.  
+   The lion looks very nasty with huge claws and big teeth.
 ~
 104 0 0 0 0 0 0 0 -100 E
 5 19 7 1d1+50 1d2+0
@@ -182,7 +182,7 @@ the hill giant~
 A hill giant is here, tossing some rocks around.
 ~
    The hill giant looks like he's about 9 feet tall.  By his actions you quickly
-come to the conclusion that he isn't very intelligent.  
+come to the conclusion that he isn't very intelligent.
 ~
 65608 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2

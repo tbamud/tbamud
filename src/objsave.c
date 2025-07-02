@@ -1177,7 +1177,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
 
 static int Crash_load_objs(struct char_data *ch) {
   FILE *fl;
-  char filename[MAX_STRING_LENGTH];
+  char filename[PATH_MAX];
   char line[READ_SIZE];
   char buf[MAX_STRING_LENGTH];
   char str[64];
@@ -1196,7 +1196,7 @@ static int Crash_load_objs(struct char_data *ch) {
 
   if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      sprintf(buf, "SYSERR: READING OBJECT FILE %s (5)", filename);
+      snprintf(buf, MAX_STRING_LENGTH, "SYSERR: READING OBJECT FILE %s (5)", filename);
       perror(buf);
       send_to_char(ch, "\r\n********************* NOTICE *********************\r\n"
                        "There was a problem loading your objects from disk.\r\n"

@@ -45,7 +45,7 @@ horse shoe~
 a copper horse shoe~
 A roughly pressed copper horse shoe lays here.~
 ~
-11 g 0 0 0 ao 0 0 0 0 0 0 0
+12 g 0 0 0 ao 0 0 0 0 0 0 0
 0 0 0 0
 1 20 2 0
 A
@@ -66,8 +66,8 @@ A
 12 -20
 #11507
 book~
-a small grey book~
-A grey colour leather bounded book lays here.~
+a small gray book~
+A gray color leather bounded book lays here.~
 ~
 3 bcgp 0 0 0 a 0 0 0 0 0 0 0
 12 1 1 20
@@ -110,7 +110,7 @@ It is an old rusty key.~
 1 1 0 0
 E
 look key~
-   There is a small area with the words western hall etched on it.    
+   There is a small area with the words western hall etched on it.
 ~
 #11512
 small key~
@@ -142,7 +142,7 @@ This key looks very expensive and valuable.~
 1 1 0 0
 E
 look key~
-   There are the words Northern Hall etched in this key.    
+   There are the words Northern Hall etched in this key.
 ~
 #11515
 goblin spear~

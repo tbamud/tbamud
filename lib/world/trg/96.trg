@@ -93,10 +93,10 @@ King Challenge - 9653~
 if %actor.is_pc%
   wait 1 s
   %echo% A voice booms, "Welcome traveller! You have come far to seek my Sword.
-  %echo% I admire your perseverance. 
-  %echo% However, you must prove yourself one more time. 
-  %echo% You have proven your brawn, now show me your wit! 
-  %echo% Unless you are all brawn, in that case you may fight again. 
+  %echo% I admire your perseverance.
+  %echo% However, you must prove yourself one more time.
+  %echo% You have proven your brawn, now show me your wit!
+  %echo% Unless you are all brawn, in that case you may fight again.
   %echo% So, which shall it be? Brains or brawn?"
 end
 ~

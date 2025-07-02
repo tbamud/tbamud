@@ -21,11 +21,11 @@ E
 tree trees~
    The trees are quite tall considering most of them appear to be quite young.
 On one of the trees, crude letters forming the word 'Haon-Dor' have been carved
-into the bark.  
+into the bark.
 ~
 E
 trail~
-   The forest trail winds westwards through the trees.  
+   The forest trail winds westwards through the trees.
 ~
 S
 #6001
@@ -53,16 +53,16 @@ You see the narrow forest trail winding westwards in between the trees.
 0 -1 6002
 E
 birds insects animals~
-   Very cute little creatures, they seem to enjoy life.  
+   Very cute little creatures, they seem to enjoy life.
 ~
 E
 tree trees~
    The trees here are quite young and fresh.  They seem to accommodate many
-kinds of birds, insects and other small animals.  
+kinds of birds, insects and other small animals.
 ~
 E
 trail~
-   The forest trail winds east-west through the trees.  
+   The forest trail winds east-west through the trees.
 ~
 S
 #6002
@@ -90,15 +90,15 @@ You see the narrow forest trail winding westwards into the dense forest.
 E
 tree trees~
    The young, slender trees look beautiful, their fresh, green leaves moving
-lightly in the wind.  
+lightly in the wind.
 ~
 E
 trail~
-   The forest trail winds east-west through the trees.  
+   The forest trail winds east-west through the trees.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6003
@@ -120,11 +120,11 @@ You see the narrow trail winding westwards through the dense forest.
 E
 tree trees~
    The dense crowns of the mature trees leave only a fraction of the sky to be
-seen through the leaves.  
+seen through the leaves.
 ~
 E
 trail~
-   The forest trail seems almost fragile compared to the massive trunks.  
+   The forest trail seems almost fragile compared to the massive trunks.
 ~
 S
 #6004
@@ -151,15 +151,15 @@ The narrow trail almost seems to disappear between the enormous trunks.
 0 -1 6100
 E
 tree trees~
-   The crowns of the old trees almost cut out all light.  
+   The crowns of the old trees almost cut out all light.
 ~
 E
 trail~
-   The forest trail seems almost fragile compared to the massive trunks.  
+   The forest trail seems almost fragile compared to the massive trunks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6005
@@ -181,11 +181,11 @@ The small path leads south through the trees.
 0 -1 6006
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6006
@@ -207,11 +207,11 @@ The small path leads east through the trees.
 0 -1 6007
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6007
@@ -238,11 +238,11 @@ The small path leads west through the trees.
 0 -1 6006
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6008
@@ -269,25 +269,25 @@ The small path leads west through the trees.
 0 -1 6007
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 stump stumps~
    There are more stumps than logs and some of the stumps are partly covered in
-moss.  
+moss.
 ~
 E
 stake stakes~
-   The stakes keep the logs from rolling down.  
+   The stakes keep the logs from rolling down.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 E
 log logs~
    Even though the logs have been chopped to shorter pieces, they are quite
-heavy as they are fresh and still filled with sap.  
+heavy as they are fresh and still filled with sap.
 ~
 S
 #6009
@@ -313,16 +313,16 @@ The small path leads west through the light forest.
 0 -1 6008
 E
 tree trees~
-   The trees are fairly young, not much more than a hundred years or so.  
+   The trees are fairly young, not much more than a hundred years or so.
 ~
 E
 path paths~
-   The path is probably used by the cabin's inhabitants.  
+   The path is probably used by the cabin's inhabitants.
 ~
 E
 cabin logs log~
    It looks simple but comfortable and the slender trees make the whole place
-seem pretty idyllic.  It is a cabin built from wooden logs.  
+seem pretty idyllic.  It is a cabin built from wooden logs.
 ~
 S
 #6010
@@ -349,15 +349,15 @@ carving carvings carved~
 E
 table~
    A heavy table that doesn't even appear to rock.  It seems to have something
-carved on it.  
+carved on it.
 ~
 E
 chair~
-   It is made from oak and looks strong and sturdy.  
+   It is made from oak and looks strong and sturdy.
 ~
 E
 bed~
-   It is definitely not the most comfortable bed you have seen in your life.  
+   It is definitely not the most comfortable bed you have seen in your life.
 ~
 S
 #6011
@@ -378,11 +378,11 @@ The path leads south through the young trees.
 0 -1 6008
 E
 tree trees~
-   The trees are fairly young, not much more than a hundred years or so.  
+   The trees are fairly young, not much more than a hundred years or so.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6012
@@ -409,11 +409,11 @@ The small path leads south through the trees.
 0 -1 6021
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6013
@@ -435,11 +435,11 @@ The small path leads west through the trees.
 0 -1 6012
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6014
@@ -466,11 +466,11 @@ The small path leads west through the trees.
 E
 tree trees~
    The crowns of the old trees leave the forest in an unreal twilight
-illumination.  
+illumination.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6015
@@ -492,11 +492,11 @@ The small path leads west through the trees.
 0 -1 6014
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6016
@@ -523,11 +523,11 @@ The small path leads south through the trees.
 0 -1 6017
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6017
@@ -548,16 +548,16 @@ The small path leads west through the trees to a lighter part of the forest.
 0 -1 6018
 E
 up branches branch large~
-   The branch of a large oak stretches out above the path from the east.  
+   The branch of a large oak stretches out above the path from the east.
 ~
 E
 tree trees~
    The crowns of the old trees leave the forest in an unreal twilight
-illumination.  A large branch looms above you, over the path.  
+illumination.  A large branch looms above you, over the path.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6018
@@ -584,11 +584,11 @@ The path leads west to a dense part of the forest.
 E
 tree trees~
    The tall trees are young and slender, not much more than a hundred years or
-so.  
+so.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6019
@@ -610,11 +610,11 @@ The small path leads east through the trees to a lighter part of the forest.
 E
 tree trees~
    The crowns of the old trees leave the forest in an unreal twilight
-illumination.  
+illumination.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6020
@@ -636,11 +636,11 @@ The small path leads west through the trees.
 0 -1 6021
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6021
@@ -668,16 +668,16 @@ The cave is very dark.
 E
 cave entrance~
    The irregular opening is eight feet wide and six feet tall.  An acrid smell
-emanates from within.  
+emanates from within.
 ~
 E
 tree trees~
    The crowns of the old trees leave the forest in an unreal twilight
-illumination.  
+illumination.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6022
@@ -694,15 +694,15 @@ The cave opening is to the east.
 0 -1 6021
 E
 air smell~
-   Kind of transparent, but quite noticeable nevertheless.  
+   Kind of transparent, but quite noticeable nevertheless.
 ~
 E
 cave walls floor stone~
-   Quite uninteresting.  
+   Quite uninteresting.
 ~
 E
 debris~
-   It consists mostly of gnawed bones mixed with small pieces of torn fur.  
+   It consists mostly of gnawed bones mixed with small pieces of torn fur.
 ~
 S
 #6023
@@ -733,19 +733,19 @@ The small path leads south in between the trees.
 E
 birds bird circling~
    Many carrion birds are circling to the north, you presume they are waiting
-for their turn to feast on a corpse.  
+for their turn to feast on a corpse.
 ~
 E
 tree trees thicket~
-   The trees form a close thicket, blocking any exit to the west.  
+   The trees form a close thicket, blocking any exit to the west.
 ~
 E
 path~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 E
 grass~
-   The tall grass makes a nice hiding place for animals.  
+   The tall grass makes a nice hiding place for animals.
 ~
 S
 #6024
@@ -769,15 +769,15 @@ forest path.
 0 -1 6023
 E
 tree trees thicket~
-   The trees form a close thicket, blocking any exit to the south and east.  
+   The trees form a close thicket, blocking any exit to the south and east.
 ~
 E
 path trampled~
-   The trampled grass path leads to the lake north of here.  
+   The trampled grass path leads to the lake north of here.
 ~
 E
 grass~
-   The tall grass makes a nice hiding place for animals.  
+   The tall grass makes a nice hiding place for animals.
 ~
 S
 #6025
@@ -810,25 +810,25 @@ The smell of carrion drifts down to you from higher on the field to the west.
 E
 track tracks mud~
    You see tracks of both hooved and other sorts of animals.  Evidence of all
-sizes of animals is here in the mud, showing just how lively the forest is.  
+sizes of animals is here in the mud, showing just how lively the forest is.
 ~
 E
 birds bird circling~
    Many carrion birds are circling to the west, you presume they are waiting for
-their turn to feast on a corpse.  
+their turn to feast on a corpse.
 ~
 E
 tree trees thicket~
-   The trees form a close thicket, blocking any exit to the north or east.  
+   The trees form a close thicket, blocking any exit to the north or east.
 ~
 E
 lake~
    Animals from all around come here to drink.  The lake itself is not very big,
-but it stretches off to the north from here.  
+but it stretches off to the north from here.
 ~
 E
 grass~
-   The tall grass makes a nice hiding place for animals.  
+   The tall grass makes a nice hiding place for animals.
 ~
 S
 #6026
@@ -858,25 +858,25 @@ E
 animal animals small~
    Several pairs of eyes peer out at you, urging you to leave.  The just might
 decide that en masse they could kill you, so you probably don't want to tarry
-here.  
+here.
 ~
 E
 birds circling~
    Many birds of varying size circle overhead, waiting for you to leave.  You
-hope they don't decide that you could be a corpse with just a little effort.  
+hope they don't decide that you could be a corpse with just a little effort.
 ~
 E
 tree trees thicket~
-   The trees form a close thicket, blocking any exit to the north and west.  
+   The trees form a close thicket, blocking any exit to the north and west.
 ~
 E
 path~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 E
 grass~
    The tall grass makes a nice hiding place for animals.  You see some of the
-animals you frightened away peeking furtively out at you.  
+animals you frightened away peeking furtively out at you.
 ~
 S
 #6027
@@ -896,21 +896,21 @@ are doing.
 E
 reed reeds~
    Reeds grow up around the edges of the lake, providing cover for the small
-water fowl that live here.  
+water fowl that live here.
 ~
 E
 tree trees thicket~
-   Trees cover the bank on most sides, preventing you from docking there.  
+   Trees cover the bank on most sides, preventing you from docking there.
 ~
 E
 lake~
    Animals from all around come here to drink.  The lake itself is not very big,
-but it stretches off to the north from here.  
+but it stretches off to the north from here.
 ~
 E
 fish~
    Trout and perhaps a catfish or two swim about below you, totally ignoring
-your presence.  
+your presence.
 ~
 S
 #6028
@@ -931,11 +931,11 @@ The small path leads west through the trees.
 0 -1 6016
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6029
@@ -959,33 +959,33 @@ E
 top highest high~
    You could probably see most of the forest, and perhaps even the city from the
 top of the tree...  Of course, you'd have to deal with whatever that shape is
-pacing on one of the upper limbs.  
+pacing on one of the upper limbs.
 ~
 E
 limb limbs~
    They look quite sturdy, certainly capable of holding your weight should you
-decide to climb up the tree using them.  
+decide to climb up the tree using them.
 ~
 E
 animal shape~
    From here it looks vaguely feline, though you could get a much better view
-from in the tree.  You are not sure if it has seen you yet.  
+from in the tree.  You are not sure if it has seen you yet.
 ~
 E
 large oak tree~
    It has some lower branches that you think you could reach if you stretched.
 You might even be able to climb all the top, though from here it looks like
 something else had that idea before you.  There is a faint animal shape pacing
-on one of the highest branches.  
+on one of the highest branches.
 ~
 E
 trees~
    The trees are mostly old beeches and oaks, with one large oak off to your
-right.  
+right.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6030
@@ -1018,34 +1018,34 @@ E
 top highest high~
    You could probably see most of the forest, and perhaps even the city from the
 top of the tree...  Of course, you would have to deal with whatever that shape
-is that you see pacing on one of the upper limbs.  
+is that you see pacing on one of the upper limbs.
 ~
 E
 limb limbs~
    They look quite sturdy, certainly capable of holding your weight should you
-decide to climb around in the tree using them.  
+decide to climb around in the tree using them.
 ~
 E
 pacing pace animal shape~
    From here it looks feline.  You still don't think it has noticed you, despite
-the noise you made while climbing up here.  
+the noise you made while climbing up here.
 ~
 E
 feline~
    The shape above you moves with definite grace and confidence.  You think that
-it must be a Bobcat, stalking smaller tree-dwelling animals.  
+it must be a Bobcat, stalking smaller tree-dwelling animals.
 ~
 E
 animals bird birds~
    A variety of squirrels, chipmunks, and birds make their homes in this and the
 surrounding trees.  If you look closely you may be able to see some of their
-rapidly emptying nests.  
+rapidly emptying nests.
 ~
 E
 nest nests~
    After a short period of looking, you notice a bird's nest on a limb not far
 above you, and a large squirrel's nest in the crook of a large limb that
-stretches out towards the west.  
+stretches out towards the west.
 ~
 S
 #6031
@@ -1073,34 +1073,34 @@ E
 top highest high~
    You could probably see most of the forest, and perhaps even the city from the
 top of the tree...  Of course, you would have to deal with whatever that shape
-is that you see pacing on one of the upper limbs.  
+is that you see pacing on one of the upper limbs.
 ~
 E
 limb limbs~
    The limbs look quite sturdy, certainly capable of holding your weight should
-you decide to climb around in the tree using them.  
+you decide to climb around in the tree using them.
 ~
 E
 pacing pace animal shape~
    From here it looks feline.  You still don't think it has noticed you, despite
-the noise you made while climbing up here.  
+the noise you made while climbing up here.
 ~
 E
 feline~
    The shape above you moves with definite grace and confidence.  You think that
-it must be a Bobcat, stalking smaller tree-dwelling animals.  
+it must be a Bobcat, stalking smaller tree-dwelling animals.
 ~
 E
 animals bird birds~
    A variety of squirrels, chipmunks, and birds make their homes in this and the
 surrounding trees.  If you look closely you may be able to see some of their
-rapidly emptying nests.  
+rapidly emptying nests.
 ~
 E
 nest nests~
    You notice that several of the squirrels sought refuge in a large nest that
 is well within your reach.  Looking into the nest, you see two pairs of eyes
-staring back at you.  
+staring back at you.
 ~
 S
 #6032
@@ -1130,29 +1130,29 @@ E
 top highest high~
    You could probably see most of the forest, and perhaps even the city from the
 top of the tree...  Of course, you would have to deal with whatever that shape
-is that you see pacing on one of the upper limbs.  
+is that you see pacing on one of the upper limbs.
 ~
 E
 limb limbs~
    They look quite sturdy, certainly capable of holding your weight should you
-decide to climb around in the tree using them.  
+decide to climb around in the tree using them.
 ~
 E
 feline cat pacing pace shape~
    It looks like a Bobcat, and it seems quite intent on getting to a large bird
 that it has wounded.  It has not seen you yet, or perhaps just thinks you are
-too easy a meal.  
+too easy a meal.
 ~
 E
 animal animals bird birds~
    A variety of squirrels, chipmunks, and birds make their homes in this and the
 surrounding trees.  If you look closely you may be able to see some of their
-rapidly emptying nests.  
+rapidly emptying nests.
 ~
 E
 nest nests~
    A medium sized bird's nest is close to you here, and it looks like it has
-some nice looking eggs in it too!  
+some nice looking eggs in it too!
 ~
 S
 #6033
@@ -1179,7 +1179,7 @@ river chasm~
 It emerges from a dark opening in the side of a mountain and flows through
 Midgaard, and on into the forest.  It has eroded a deep chasm in the soft stone
 under the forest floor, and is not visible for long after it enters the forest
-proper.  
+proper.
 ~
 E
 mountain range northeast~
@@ -1188,16 +1188,16 @@ northeast.  You have heard rumors of many different sorts of creatures living
 there, varying from Dwarves and Humans to Ogres and various humanoid creatures.
 Some say that evil Dark Elves dwell in the underworld deep below the lands of
 the Dwarves.  The caves of Moria also are found there, populated by all sorts of
-evil creatures.  
+evil creatures.
 ~
 E
 around trees everywhere woods forest~
    Off to the southwest you can see a grass covered field, and a small lake;
 nortwest of you is a small cabin and a large pile of wood.  Far to west the
-treetops form a tight canopy, blocking out almost all sunlight and your view.  
+treetops form a tight canopy, blocking out almost all sunlight and your view.
 It is said that large wolves live there.  You've also heard rumors of horrible
 spiders and drow living there.  You'd be best off leaving that area to more
-experienced adventurers.  
+experienced adventurers.
 ~
 S
 #6060
@@ -1220,7 +1220,7 @@ Midgaard.
 0 -1 6001
 E
 tree trees~
-   They are mostly young oaks and tall beeches.  
+   They are mostly young oaks and tall beeches.
 ~
 E
 path paths shaded~
@@ -1246,7 +1246,7 @@ The path winds its way between the trees.
 E
 tree trees~
    The crowns of the old trees leave the forest in an unreal twilight
-illumination.  A large branch looms above you, over the path.  
+illumination.  A large branch looms above you, over the path.
 ~
 E
 path paths shaded shadowed~
@@ -1278,7 +1278,7 @@ The path winds its way between the trees.
 0 -1 6063
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded shadowy~
@@ -1304,11 +1304,11 @@ The path winds its way between the trees.
 0 -1 6062
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded~
-   The shaded path is probably used by the animals living in the forest.  
+   The shaded path is probably used by the animals living in the forest.
 ~
 S
 #6064
@@ -1330,11 +1330,11 @@ The path winds its way into darkness.
 0 -1 6100
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shadowy~
-   The shadowy path is probably used by the animals living in the forest.  
+   The shadowy path is probably used by the animals living in the forest.
 ~
 S
 #6065
@@ -1357,7 +1357,7 @@ The path winds its way between the trees.
 0 -1 6066
 E
 tree trees~
-   The trees are mostly young oaks and tall beeches.  
+   The trees are mostly young oaks and tall beeches.
 ~
 E
 path paths shaded~
@@ -1388,7 +1388,7 @@ The path winds its way between the trees.
 0 -1 6061
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded~
@@ -1416,12 +1416,12 @@ E
 under animal den~
    Under a log you think you see some sort of hole, or animal's den.  Looking
 closer, you can make out the form of what you believe to be a Badger resting
-inside of the den.  
+inside of the den.
 ~
 E
 clearing clear~
    When the large tree fell it must have brought a few of the smaller trees down
-with it in order to make a clearing like this.  
+with it in order to make a clearing like this.
 ~
 E
 fallen rotten decomposed tree~
@@ -1429,11 +1429,11 @@ fallen rotten decomposed tree~
 growing here in the clearing.  The few pieces that remain are not all that
 large, but one log in particular catches your eye and seems to remind you of
 something.  Under one of these logs would be a great place for an animal to make
-its den...  
+its den...
 ~
 E
 path paths~
-   The shaded paths are probably used by the animals living in the forest.  
+   The shaded paths are probably used by the animals living in the forest.
 ~
 S
 #6068
@@ -1460,11 +1460,11 @@ The path winds its way between the trees.
 0 -1 6069
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded~
-   The shaded path is probably used by the animals living in the forest.  
+   The shaded path is probably used by the animals living in the forest.
 ~
 S
 #6069
@@ -1486,11 +1486,11 @@ The path winds its way between the trees.
 0 -1 6064
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded shadowy~
-   The shadowy path is probably used by the animals living in the forest.  
+   The shadowy path is probably used by the animals living in the forest.
 ~
 S
 #6070
@@ -1523,12 +1523,12 @@ The trees seem to part, exposing a trail into the shade.
 0 -1 6072
 E
 tree trees~
-   The trees are younger here than to those to the west.  
+   The trees are younger here than to those to the west.
 ~
 E
 path paths~
    The path is long behind you now...  You aren't sure which direction it lies
-in anymore.  
+in anymore.
 ~
 S
 #6071
@@ -1556,7 +1556,7 @@ The path winds its way between the trees.
 0 -1 6072
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shadowy shadowed~
@@ -1587,7 +1587,7 @@ A lightly traveled path heads southward to a small clearing.
 0 -1 6067
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded~
@@ -1614,15 +1614,15 @@ The path winds its way between the trees.
 0 -1 6068
 E
 hill hills terrain~
-   To the northwest you see hills covered by dense forest.  
+   To the northwest you see hills covered by dense forest.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shadowy~
-   The shadowy path is probably used by the animals living in the forest.  
+   The shadowy path is probably used by the animals living in the forest.
 ~
 S
 #6074
@@ -1655,11 +1655,11 @@ Through the underbrush you see a small path winding its way northward.
 0 -1 6075
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
-   The narrow path is probably used by the animals living in the forest.  
+   The narrow path is probably used by the animals living in the forest.
 ~
 S
 #6075
@@ -1689,20 +1689,20 @@ The path winds its way between the trees.
 E
 trail~
    You think you see the beginnings of a small trail to the east, winding
-through the younger part of the forest.  
+through the younger part of the forest.
 ~
 E
 hills hill terrain~
    To the northwest the ground becomes more hilly.  You have heard that a
-halfling village is somewhere in the hills.  
+halfling village is somewhere in the hills.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded~
-   The shaded path is probably used by the animals living in the forest.  
+   The shaded path is probably used by the animals living in the forest.
 ~
 S
 #6076
@@ -1736,16 +1736,16 @@ All you see are trees and a shadowy path.
 0 -1 6073
 E
 hills hill~
-   Hills rise up all around you, blocking your view of the terrain.  
+   Hills rise up all around you, blocking your view of the terrain.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
    The path is probably around here somewhere...  If only you had paid more
-attention.  
+attention.
 ~
 S
 #6077
@@ -1779,16 +1779,16 @@ All you see are trees and hillsides.
 0 -1 6077
 E
 hills hill~
-   Hills rise up all around you, blocking your view of the terrain.  
+   Hills rise up all around you, blocking your view of the terrain.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
    The path is probably around here somewhere...  If only you had paid more
-attention.  
+attention.
 ~
 S
 #6078
@@ -1806,15 +1806,15 @@ The path winds its way between the trees.
 E
 hills hill~
    The terrian is very hilly and rough to the north and west.  You have heard
-that there is a halfling village somewhere in the hills.  
+that there is a halfling village somewhere in the hills.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths shaded~
-   The shaded path is probably used by the animals living in the forest.  
+   The shaded path is probably used by the animals living in the forest.
 ~
 S
 #6079
@@ -1848,16 +1848,16 @@ All you see are trees and hillsides.
 0 -1 6080
 E
 hills hill~
-   Hills rise up all around you, blocking your view of the terrain.  
+   Hills rise up all around you, blocking your view of the terrain.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
    The path is probably around here somewhere...  If only you had paid more
-attention.  
+attention.
 ~
 S
 #6080
@@ -1891,16 +1891,16 @@ All you see are trees and hillsides.
 0 -1 6081
 E
 hills hill~
-   Hills rise up all around you, blocking your view of the terrain.  
+   Hills rise up all around you, blocking your view of the terrain.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
    The path is probably around here somewhere...  If only you had paid more
-attention.  
+attention.
 ~
 S
 #6081
@@ -1934,16 +1934,16 @@ All you see are trees and a shadowy path.
 0 -1 6073
 E
 hills hill~
-   Hills rise up all around you, blocking your view of the terrain.  
+   Hills rise up all around you, blocking your view of the terrain.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 E
 path paths~
    The path is probably around here somewhere...  If only you had paid more
-attention.  
+attention.
 ~
 S
 #6082
@@ -1970,11 +1970,11 @@ All you see are trees and hillsides.
 0 -1 6076
 E
 hills hill~
-   Hills rise up all around you, blocking your view of the terrain.  
+   Hills rise up all around you, blocking your view of the terrain.
 ~
 E
 tree trees~
-   The trees are mostly old beeches and oaks.  
+   The trees are mostly old beeches and oaks.
 ~
 S
 #6090
@@ -1998,7 +1998,7 @@ shadows of the forest.
 0 -1 6000
 E
 road dust dusty~
-   The road is well used, and quite dusty.  
+   The road is well used, and quite dusty.
 ~
 E
 tree trees forest~
@@ -2006,14 +2006,14 @@ tree trees forest~
 ~
 E
 trail~
-   The forest trail winds westwards through the trees.  
+   The forest trail winds westwards through the trees.
 ~
 S
 #6091
 A Road Through The Plains~
    You are on a dust covered east-west road through the western plains.  An
 occasional hunter or adventurer can be seen, heading to or from the forest.
-To the east is the walled city, Midgaard, and to the west the road continues 
+To the east is the walled city, Midgaard, and to the west the road continues
 towards a large forest.
 ~
 60 4 0 0 0 2
@@ -2030,7 +2030,7 @@ northwest you the forest gives way to hills.
 0 -1 6090
 E
 road dust dusty~
-   The road is well used, and quite dusty.  
+   The road is well used, and quite dusty.
 ~
 E
 tree trees~
@@ -2040,14 +2040,14 @@ gain in height as you travel farther westward towards Haon-Dor
 E
 forest haondor haon-dor~
    The large forest of Haon-Dor spreads out to the west.  Small and large game
-is plentiful there...  As is adventure, and of course, danger!  
+is plentiful there...  As is adventure, and of course, danger!
 ~
 S
 #6092
 A Road Through The Plains~
    You are on a dust covered east-west road crossing the grassy plains between
-Midgaard the forest of Haon-Dor.  An occasional hunter or adventurer can be 
-seen, heading to or from the forest.  To the east is the walled city, Midgaard, 
+Midgaard the forest of Haon-Dor.  An occasional hunter or adventurer can be
+seen, heading to or from the forest.  To the east is the walled city, Midgaard,
 and to the west the road continues towards a large forest.
 ~
 60 4 0 0 0 1
@@ -2063,12 +2063,12 @@ To the west the road continues towards the forest.
 0 -1 6091
 E
 road dust dusty~
-   The road is well used, and quite dusty.  
+   The road is well used, and quite dusty.
 ~
 E
 forest~
    The large forest of Haon-dor spreads out to the west.  Small and large game
-is plentiful there...  As is adventure, and of course, danger!  
+is plentiful there...  As is adventure, and of course, danger!
 ~
 S
 $~

@@ -29,12 +29,12 @@ You see the muddy sewer continuing into the darkness to the south.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7002
 The Muddy Sewer Junction~
-   The muddy sewer stretches into the dark to the south.  It looks as if 
+   The muddy sewer stretches into the dark to the south.  It looks as if
 no person has ever put his foot here before.  It is too muddy for that
 anyway.  The sewer leads north, south and east from here.
 ~
@@ -57,12 +57,12 @@ South.  The muddy sewer ends in a mudhole that way.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7003
 The Mudhole~
-   You stand in mud all the way up to your thighs and it is not too 
+   You stand in mud all the way up to your thighs and it is not too
 comfortable since you are used to a somewhat different environment.
 The sewer leads to the north of here.  In the middle you can just
 make out an enormous drainpipe leading down.
@@ -81,7 +81,7 @@ The muddy drainpipe leads down through the mud, otherwise it is utterly dark.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7004
@@ -97,7 +97,7 @@ East.  The sewer leads into the sewer junction.
 ~
 0 -1 7009
 D5
-The Dark Pit leads down and down and down... well you can't see the 
+The Dark Pit leads down and down and down... well you can't see the
 bottom anyway.  There are bars that could function as a ladder on
 the side.
 ~
@@ -117,7 +117,7 @@ East.  The mud stretches on into the darkness.
 ~
 0 -1 7011
 D2
-South.  There is even more mud in that direction than where you are now.  
+South.  There is even more mud in that direction than where you are now.
 Incredible.
 ~
 ~
@@ -125,7 +125,7 @@ Incredible.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7006
@@ -149,7 +149,7 @@ the ground there as well.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7007
@@ -160,13 +160,13 @@ The bend in which you stand leads west and south.
 ~
 70 9 0 0 0 5
 D2
-The pipe leads into a intersection that goes south and east.  The floor here 
+The pipe leads into a intersection that goes south and east.  The floor here
 is still covered in mud.
 ~
 ~
 0 -1 7008
 D3
-The pipe (still filled with mud) leads into a intersection that goes north 
+The pipe (still filled with mud) leads into a intersection that goes north
 and south.  Interesting.
 ~
 ~
@@ -174,7 +174,7 @@ and south.  Interesting.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7008
@@ -199,7 +199,7 @@ leads north.
 ~
 0 -1 7014
 D2
-South.  There is much less mud in that direction.  Your light doesn't 
+South.  There is much less mud in that direction.  Your light doesn't
 uncover enough space for you to see much more than that it leads into
 some sort of junction.
 ~
@@ -208,7 +208,7 @@ some sort of junction.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7009
@@ -229,7 +229,7 @@ YYEEUUCH!  BOOH!  THAT looks like a nice place for creepy crawlies.
 ~
 0 -1 7017
 D2
-South.  This direction looks quite nice actually.  The pipe leads into 
+South.  This direction looks quite nice actually.  The pipe leads into
 a bend that goes east.
 ~
 ~
@@ -243,7 +243,7 @@ but the smell from there...>PHEWW<.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7010
@@ -266,7 +266,7 @@ S
 #7011
 The Muddy Sewer Pipe~
    You have entered a kind of tube intersection that leads south, west
-and east.  Your legs are covered in mud up to the knees.  REAL yucky!  
+and east.  Your legs are covered in mud up to the knees.  REAL yucky!
 ~
 70 9 0 0 0 5
 D1
@@ -288,7 +288,7 @@ West.  The mud reaches that way too, all the way up the walls.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7012
@@ -313,7 +313,7 @@ north.  But there is less mud in that direction, however odd that sounds.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7013
@@ -346,13 +346,13 @@ leading west.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 E
 sediment~
    It is NOT the kind of matter that would concern you too much, normally, but
 as you are in the middle of it, it just might become your main concern.  REAL
-YUCKY!  
+YUCKY!
 ~
 S
 #7014
@@ -379,7 +379,7 @@ place.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7015
@@ -404,12 +404,12 @@ see a thing.  There are metal bars in the side leading down into the darkness.
 E
 bars~
    These look like they're pretty slippery, and not very safe, but perhaps safe
-enough for you to climb down, WITH both hands on them.  
+enough for you to climb down, WITH both hands on them.
 ~
 S
 #7016
 The Ordinary Bend~
-   You are in the middle of a bend in the pipe system of the sewer system, 
+   You are in the middle of a bend in the pipe system of the sewer system,
 WHAT a place!!!  The pipe leads to the south and the east.
 ~
 70 9 0 0 0 1
@@ -459,7 +459,7 @@ To the north you can see a junction like this one, leading north and west.
 ~
 0 -1 7017
 D1
-To the east there is nothing of particular interest, though there is a 
+To the east there is nothing of particular interest, though there is a
 junction with pipelines leading north and east.
 ~
 ~
@@ -514,7 +514,7 @@ of sewer pipes leading west, north and east.
 S
 #7024
 The Sewer~
-   You are standing in mud up to your ankles.  This is an intersection with 
+   You are standing in mud up to your ankles.  This is an intersection with
 sewer pipes leading east, south and west.
 ~
 70 13 0 0 0 1
@@ -548,7 +548,7 @@ east.  You notice that the floor to the west is covered in mud.
 ~
 0 -1 7024
 D1
-East.  You see nothing of interest in that direction, just another 
+East.  You see nothing of interest in that direction, just another
 intersection.  This one leads east and south.
 ~
 ~
@@ -562,7 +562,7 @@ S
 #7026
 A Junction~
    This one seems interesting, a big difference from all the other junctions.
-It seems cleaner than the rest of them.  Weird.  Something that looks like 
+It seems cleaner than the rest of them.  Weird.  Something that looks like
 an air shaft leads upwards, but it looks far too slippery to climb.
 The pipes lead to the south, west and north.
 ~
@@ -586,7 +586,7 @@ be an intersection there but you're not quite sure.
 E
 mud~
    It is as dark as tar and looks like something out of a toilet, on top of
-that, the smell is absolutely overwhelming.  
+that, the smell is absolutely overwhelming.
 ~
 S
 #7028
@@ -611,7 +611,7 @@ To the west you can just make out an old well.
 S
 #7029
 The Triple Junction~
-   You stand in the middle of a huge junction of concrete sewer pipes.  The 
+   You stand in the middle of a huge junction of concrete sewer pipes.  The
 pipes lead into three different directions: east, south and west.
 ~
 70 9 0 0 0 1
@@ -627,7 +627,7 @@ an odd light.
 ~
 0 -1 7030
 D3
-To the west you can just make out another junction similar to the one 
+To the west you can just make out another junction similar to the one
 you are standing in.
 ~
 ~
@@ -636,9 +636,9 @@ S
 #7030
 The Quadruple Junction Under The Dump~
    You are standing in something that reminds you of an entry to an ant hive.
-There are enormous concrete pipes leading north, south, east and west.  
+There are enormous concrete pipes leading north, south, east and west.
 There is also a metal ladder built into the concrete wall leading up through
-a layer of garbage.  
+a layer of garbage.
 ~
 70 13 0 0 0 1
 D0
@@ -672,7 +672,7 @@ E
 ladder~
    It looks as if it is made of stainless steel, and it would function as a club
 of considerable power, but alas...  You can't take at all since it is firmly set
-into the concrete wall.  
+into the concrete wall.
 ~
 S
 #7031
@@ -715,7 +715,7 @@ West.  You can just make out a triple junction leading north and west.
 S
 #7035
 The Sewer Pipe Bend~
-   You can look in two different directions where the pipe goes: west and 
+   You can look in two different directions where the pipe goes: west and
 north.
 ~
 70 9 0 0 0 2
@@ -787,7 +787,7 @@ West.  You see another junction similar to this one leading north and south.
 S
 #7039
 The Sewer Store Room~
-   You stand in a small room lit by a single torch set in the wall.  The only 
+   You stand in a small room lit by a single torch set in the wall.  The only
 way out of here is to the north.
 ~
 70 8 0 0 0 1
@@ -810,7 +810,7 @@ To the south you can see the pipe leading further south into darkness.
 ~
 0 -1 7043
 D5
-Down and utter darkness.  There is absolutely nothing to be seen in that 
+Down and utter darkness.  There is absolutely nothing to be seen in that
 direction.
 ~
 ~
@@ -818,7 +818,7 @@ direction.
 E
 ladder~
    Firmly set into the wall of the shaft it is impossible to even move, in your
-estimate.  
+estimate.
 ~
 S
 #7043
@@ -970,7 +970,7 @@ You can see a room with a lot of light in it.  You can't make out any details.
 S
 #7051
 The Sewer Pipe~
-   You are in what reminds you of a foul sewer, as if you liked being here!  
+   You are in what reminds you of a foul sewer, as if you liked being here!
 You can see two exits leading either north or south.
 ~
 70 8 0 0 0 1
@@ -1029,7 +1029,7 @@ water leads east and a doorway leads west.
 ~
 70 9 0 0 0 3
 D1
-You can hardly make out much more than that the next place is in a pipe 
+You can hardly make out much more than that the next place is in a pipe
 with more water.
 ~
 ~
@@ -1040,7 +1040,7 @@ D3
 0 -1 7050
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7056
@@ -1062,7 +1062,7 @@ You see a lot of light, bright as daylight, but nothing of interest.
 S
 #7057
 The Dark Passageway~
-   You can't see anything but the ground where you put your feet.  The 
+   You can't see anything but the ground where you put your feet.  The
 passageway seems to continue south and north.
 ~
 70 9 0 0 0 1
@@ -1144,7 +1144,7 @@ You can just make out a triple junction leading north and west.
 0 -1 7049
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7061
@@ -1167,7 +1167,7 @@ that far.
 0 -1 7055
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7062
@@ -1190,7 +1190,7 @@ that far.
 0 -1 7063
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7063
@@ -1213,7 +1213,7 @@ that far.
 0 -1 7064
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7064
@@ -1242,7 +1242,7 @@ that far.
 0 -1 7065
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7065
@@ -1265,7 +1265,7 @@ that far.
 0 -1 7066
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7066
@@ -1294,7 +1294,7 @@ that far.
 0 -1 7067
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7067
@@ -1317,7 +1317,7 @@ that far.
 0 -1 7068
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7068
@@ -1340,15 +1340,15 @@ that far.
 0 -1 7060
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7069
 A Ledge By A Dark Pool~
    You can't see much here but the echo tells you that there is quite a drop
-down.  You can just make out a huge dark pool out there in the darkness, 
+down.  You can just make out a huge dark pool out there in the darkness,
 mostly because of the trickling of water.  The water from the sewer actually
-washes over this ledge and makes it quite slippery.  From here it drops, 
+washes over this ledge and makes it quite slippery.  From here it drops,
 like a waterfall, into the pool far down.
 ~
 70 9 0 0 0 5
@@ -1364,7 +1364,7 @@ You can't see a thing.  It is too dark.
 0 -1 7064
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 #7070
@@ -1393,7 +1393,7 @@ D5
 0 -1 7000
 E
 water~
-   It looks dark and murky, and emanates a foul stench.  
+   It looks dark and murky, and emanates a foul stench.
 ~
 S
 $~

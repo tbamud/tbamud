@@ -9,7 +9,7 @@ if thicket /= %arg%
    wdoor 4410 east name thicket
    wait 5 s
    %echo% The Thicket grows out again, magically.
-   wdoor 4410 east purge 
+   wdoor 4410 east purge
 else
    wsend %actor% Huh ?!?
 end
@@ -34,7 +34,7 @@ orc_death_cry~
 ~
 if %actor.vnum% == 4105 || %actor.vnum% == 4106
   say AAARRRGGH!!
-  %echo% %self.name% screams loudly and collapses on the ground. Dead.  
+  %echo% %self.name% screams loudly and collapses on the ground. Dead.
 end
 ~
 $~

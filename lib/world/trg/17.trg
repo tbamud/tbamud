@@ -22,7 +22,7 @@ end
 Excalibur - two handed sword - 1702~
 1 c 1
 ho~
-if %cmd.mudcommand% == hold 
+if %cmd.mudcommand% == hold
   %echo% You will have to remove %self.shortdesc% to hold anything else.
 end
 ~

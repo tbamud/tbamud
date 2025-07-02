@@ -31,7 +31,7 @@ Sir Benlad~
 Sir Benlad slaps you with his gauntlet and challenges you!
 ~
    Sir Benlad is clad in his renowned green armor, rumored to be impervious to
-normal weaponry.  He bears a huge battle axe.    
+normal weaponry.  He bears a huge battle axe.
 ~
 65608 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -44,7 +44,7 @@ Galahad~
 Sir Galahad~
 Sir Galahad, paragon of chivalry, bastard of Lancelot & Elane, stands here.
 ~
-   Sir Galahad is dressed all in white armor and walks with pride.    
+   Sir Galahad is dressed all in white armor and walks with pride.
 ~
 65608 0 0 0 80 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -59,7 +59,7 @@ A knight with armor of many colors stands here.
 ~
    Sir Gareth, son of Lot, aka Beaumains proudly wears his armor and shield of
 many colors.  He anxiously awaits an opportunity to help a damsel in distress.
-  
+
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -91,7 +91,7 @@ Sir Gawaine~
 Sir Gawaine, the strong, is on a mission of vengeance!
 ~
    Sir Gawaine, the red headed cousin of Arthur, is mounted, fully armored and
-wears his famous horned helm.    
+wears his famous horned helm.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -135,7 +135,7 @@ Sir Tristram~
 Sir Tristram smirks at you.
 ~
    Sir Tristram, suitor of Isolade, is considered by many to be second only to
-Lancelot in his skill of arms.    
+Lancelot in his skill of arms.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -179,7 +179,7 @@ A fool in motley cavorts here!
 ~
    Dagonet, the court jester of Arthur, is a master of his craft.  He dances on
 his hands while juggling a set of knives.  You get the impression that he could
-handle himself well in a fight.    
+handle himself well in a fight.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -193,7 +193,7 @@ Sir Turquine~
 A knight with a wolf helm cackles with glee!
 ~
    Turquine is dressed in scale mail and a wolf helm.  He is a slender whip of
-a man, and his eyes dart left and right.    
+a man, and his eyes dart left and right.
 ~
 72 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -208,7 +208,7 @@ A knight dressed in red shimmering armor faces you!
 ~
    Perimones, the red knight, has a red beard and mustache.  He is a short
 stocky man.  His ruby armor is shimmering in the sunlight, and he wears the
-silken red favor of Galenvine on his sleeve.    
+silken red favor of Galenvine on his sleeve.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -222,7 +222,7 @@ A nobleman stands here in all his finery.
 ~
    The nobleman wears the finest cotton and wool clothing available.  Riches
 adorn him in the form of chains, and a rather heavy looking purse.  He seems
-intent on going somewhere.    
+intent on going somewhere.
 ~
 76 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -236,7 +236,7 @@ a merchant~
 A brightly clothed merchant hawks his goods to you!
 ~
    The merchant wears a bright tunic to draw attention and signify his wares.
-  
+
 ~
 76 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -249,7 +249,7 @@ servant~
 a servant~
 A servant is rushing by.
 ~
-   The servant has a plate of hot food that looks delicious.    
+   The servant has a plate of hot food that looks delicious.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -263,7 +263,7 @@ a demon~
 A towering, black scaled demon has come to eat your soul!
 ~
    As it breathes, the ground you stand on rumbles and you are seared by its hot
-breath.  It is this demon which has been laughing at you in all your visions.  
+breath.  It is this demon which has been laughing at you in all your visions.
 Merlin has bound this demon here to use its power in the fabrication of magic
 items.  However his hold has slipped a few times, enabling the demon to give out
 a few artifacts to encourage the downfall of Camelot.
@@ -280,7 +280,7 @@ Iron Jack~
 Iron Jack, the armorer of Camelot, is here.
 ~
    Iron Jack wears his smith apron, leather leggings, and has corded muscular
-arms.    
+arms.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -294,7 +294,7 @@ Persante of Inde~
 Persante of Inde is here, marshalling the troops of Camelot.
 ~
    Persante is called the blue knight because of his brilliant blue armor.  He
-is mounted on a fine charger, and is waving his blue pennant.    
+is mounted on a fine charger, and is waving his blue pennant.
 ~
 65608 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -322,7 +322,7 @@ Lionel~
 Lionel, the knight, staggers past.
 ~
    Lionel is covered in blood, and is walking as if stunned.  It looks like he
-is going to fall.    
+is going to fall.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -402,7 +402,7 @@ cook~
 a cook~
 A fat cook is walking around with a spoons tasting all the food.
 ~
-   She must weigh over 200 pounds.    
+   She must weigh over 200 pounds.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -415,7 +415,7 @@ guard~
 a guard~
 A guard is standing a sharp watch.
 ~
-   He seems to be suspicious of everyone.    
+   He seems to be suspicious of everyone.
 ~
 10 0 0 0 0 0 0 0 0 E
 14 16 1 2d2+140 2d2+2
@@ -428,7 +428,7 @@ archer~
 a archer~
 An archer is dying here.
 ~
-   He looks like he'll die any minute now.    
+   He looks like he'll die any minute now.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -441,7 +441,7 @@ infantryman~
 a dying infantryman~
 An infantryman is dying here.
 ~
-   He looks to be almost dead.    
+   He looks to be almost dead.
 ~
 10 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -455,7 +455,7 @@ a dying knight~
 A knight is slowly bleeding to death.
 ~
    He has suffered several wounds during his battles.  It doesn't look like
-he'll last much longer.    
+he'll last much longer.
 ~
 2058 0 0 0 80 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -482,7 +482,7 @@ creature beast lion~
 a questing beast~
 A long necked, lion pawed, spotted creature is here gnawing on a femur.
 ~
-   It looks hungry!    
+   It looks hungry!
 ~
 106728 0 0 0 524308 0 0 0 0 E
 14 16 1 2d2+140 2d2+2

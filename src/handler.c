@@ -81,8 +81,7 @@ int is_name(const char *str, const char *namelist)
 
 /* allow abbreviations */
 #define WHITESPACE " \t"
-#define KEYWORDJOIN "_"
-int isname_tok(const char *str, const char *namelist)
+int isname(const char *str, const char *namelist)
 {
   char *newlist;
   char *curtok;
@@ -105,34 +104,6 @@ int isname_tok(const char *str, const char *namelist)
   free(newlist);
   return 0;
 }
-
-
-int isname (const char *str, const char *namelist)
-{
-  char *strlist;
-  char *substr;
-
-  if (!str || !*str || !namelist || !*namelist)
-    return 0;
-
-  if (!strcmp (str, namelist))	/* the easy way */
-    return 1;
-
-    strlist = strdup(str);
-    for (substr = strtok(strlist, KEYWORDJOIN); substr; substr = strtok (NULL, KEYWORDJOIN))
-    {
-        if (!substr) continue;
-        if (!isname_tok(substr, namelist)) 
-        {
-            free(strlist);
-            return 0;
-        }
-    }
-    /* If we didn't fail, assume we succeded because every token was matched */
-    free(strlist);
-    return 1;
-}
-
 
 static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *msg)
 {
@@ -700,12 +671,20 @@ struct char_data *get_char_num(mob_rnum nr)
 /* put an object in a room */
 void obj_to_room(struct obj_data *object, room_rnum room)
 {
-  if (!object || room == NOWHERE || room > top_of_world)
+  if (!object || room == NOWHERE || room > top_of_world){
     log("SYSERR: Illegal value(s) passed to obj_to_room. (Room #%d/%d, obj %p)",
 	room, top_of_world, (void *)object);
+  }
   else {
-    object->next_content = world[room].contents;
-    world[room].contents = object;
+    if (world[room].contents == NULL){  // if list is empty
+      world[room].contents = object; // add object to list
+    }
+    else {
+      struct obj_data *i = world[room].contents; // define a temporary pointer
+      while (i->next_content != NULL) i = i->next_content; // find the first without a next_content
+        i->next_content = object; // add object at the end
+    }
+    object->next_content = NULL; // mostly for sanity. should do nothing.
     IN_ROOM(object) = room;
     object->carried_by = NULL;
     if (ROOM_FLAGGED(room, ROOM_HOUSE))
@@ -756,7 +735,6 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
   obj->next_content = obj_to->contains;
   obj_to->contains = obj;
   obj->in_obj = obj_to;
-  tmp_obj = obj->in_obj;
 
   /* Add weight to container, unless unlimited. */
   if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
@@ -780,7 +758,6 @@ void obj_from_obj(struct obj_data *obj)
     return;
   }
   obj_from = obj->in_obj;
-  temp = obj->in_obj;
   REMOVE_FROM_LIST(obj, obj_from->contains, next_content);
 
   /* Subtract weight from containers container unless unlimited. */

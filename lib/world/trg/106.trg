@@ -1,5 +1,5 @@
 #10600
-Armourer - 10634~
+Armorer - 10634~
 0 g 100
 ~
 if %actor.is_pc%
@@ -18,7 +18,7 @@ Near Death Trap - 10650~
 ~
 * Near Death Trap stuns actor
 wait 1 sec
-set stunned %actor.hitp% 
+set stunned %actor.hitp%
 %damage% %actor% %stunned%
 wait 5 sec
 %send% %actor% The Gods pity you enough to allow you to survive.

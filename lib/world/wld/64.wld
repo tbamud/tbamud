@@ -114,7 +114,7 @@ In A Clearing~
    You come to a small clearing now, after walking for several
 minutes through the silent woods.  An odd block sticks up
 here and there in   the ground... wait a minute.  These
-stones seem a little too regular, and from the circle 
+stones seem a little too regular, and from the circle
 formation and size you could almost swear that they were...
 crenellations?  Could some sort of building been buried
 by the lava here?  A rusty ring sticks out of the earth
@@ -136,8 +136,8 @@ S
 A Stairwell~
    This small room is the top of a stairwell leading down
 deep into the tower.  A small trapdoor overhead leaks
-the light of day around its edges.  To the south is a 
-wooden door, preserved through the ages by means 
+the light of day around its edges.  To the south is a
+wooden door, preserved through the ages by means
 unknown.  To the west is a short hall.
 ~
 64 9 0 0 0 0
@@ -161,7 +161,7 @@ D5
 S
 #6408
 A Linen Closet~
-   This small room holds many types of linen on shelves 
+   This small room holds many types of linen on shelves
 along the walls.  They are undoubtedly preserved by
 magic against the toil of the ages, since they seem
 freshly washed and folded.  You wonder what sort of
@@ -176,12 +176,12 @@ door~
 E
 linen shelf shelves~
    White sheets, pillow-cases, etc.  Not really anything that you need, but
-interesting.  
+interesting.
 ~
 S
 #6409
 A Corridor~
-   This is only a clean corridor, that leads back to the 
+   This is only a clean corridor, that leads back to the
 stairwell to the east, and has doors leading to other
 rooms to the north and south.
 ~
@@ -227,16 +227,16 @@ door~
 1 -1 6409
 E
 desk~
-   The desk is basically uninteresting, as are the papers on top of it...  
+   The desk is basically uninteresting, as are the papers on top of it...
 ~
 E
 closet~
-   Nice clothes, but not your size at all.  
+   Nice clothes, but not your size at all.
 ~
 S
 #6412
 The Library~
-   A great mages' library is contained on this floor of 
+   A great mages' library is contained on this floor of
 the tower.  You feel you could learn anything you wanted
 to if you only looked and read long enough.  A door
 opens up back on the stairwell to the east.
@@ -253,7 +253,7 @@ bookcase~
 1 -1 6414
 E
 book books~
-   There are lots of books about everything here!  
+   There are lots of books about everything here!
 ~
 S
 #6413
@@ -278,7 +278,7 @@ S
 #6414
 A Hidden Hall~
    This is a small hidden hall with a secret entrance to the
-library on the north end of the west wall, and a trapdoor 
+library on the north end of the west wall, and a trapdoor
 on the south end.
 ~
 64 9 0 0 0 0
@@ -313,7 +313,7 @@ D5
 S
 #6416
 The Hidden Treasure Room~
-   You hit the jackpot!  A small room filled with treasure 
+   You hit the jackpot!  A small room filled with treasure
 chests!  Go get them!
 ~
 64 9 0 0 0 0
@@ -360,7 +360,7 @@ door~
 S
 #6419
 A Servant's Room~
-   This seems to be a small servant's bedroom, sparsely 
+   This seems to be a small servant's bedroom, sparsely
 decorated and outfitted with a bed, nightstand, chair
 and table, etc.  Nothing real important here.
 ~
@@ -372,7 +372,7 @@ door~
 S
 #6420
 A Hallway~
-   This hallway continues to the east, and has a door to 
+   This hallway continues to the east, and has a door to
 the north.  You could swear that the way this level is
 arranged... nah, couldn't be.
 ~
@@ -423,7 +423,7 @@ The Dining Hall~
 down the length of it.  Chairs are set up along the sides
 to accomodate approximately 10 people.  There are paintings
 and tapestries on the walls, adding color to the stonework,
-The cooled lava that had poured in the windows makes the place 
+The cooled lava that had poured in the windows makes the place
 seem eerie somehow .  There is a door to the north, and
 the stairwell is to the east.
 ~
@@ -439,7 +439,7 @@ D1
 E
 tapestry tapestries painting paintings~
    Many of these show scenes of high magic and heroism.  Just like almost every
-tapestry and painting you've seen.  
+tapestry and painting you've seen.
 ~
 S
 #6424
@@ -494,7 +494,7 @@ D2
 0 -1 6428
 E
 cell cells~
-   It is open, empty, and uninteresting.  
+   It is open, empty, and uninteresting.
 ~
 S
 #6427
@@ -509,7 +509,7 @@ D2
 0 -1 6426
 E
 cell cells~
-   It is open, empty, and uninteresting.  
+   It is open, empty, and uninteresting.
 ~
 S
 #6428
@@ -524,7 +524,7 @@ D0
 0 -1 6426
 E
 cell cells~
-   It is open, empty, and uninteresting.  
+   It is open, empty, and uninteresting.
 ~
 S
 #6429
@@ -561,17 +561,17 @@ E
 paper papers documents document~
    Well, one of the papers relate a story about how the mage of this tower,
 Rand, angered many kings, and relates how they set his armies on him.  You
-wonder if the lava outside was a failed attempt to destroy the armies...  
+wonder if the lava outside was a failed attempt to destroy the armies...
 ~
 E
 desk~
    It is cluttered with all sorts of papers.  Some look half interesting,
-actually.  
+actually.
 ~
 S
 #6431
 The Stairwell~
-   The stairwell continues up and down here, and there is a 
+   The stairwell continues up and down here, and there is a
 room to the west...
 ~
 64 9 0 0 0 0
@@ -603,7 +603,7 @@ D1
 S
 #6433
 The Stairwell~
-   This is where the stairwell finally ends.  There is a hall   
+   This is where the stairwell finally ends.  There is a hall
 to your west.
 ~
 64 9 0 0 0 0
@@ -619,7 +619,7 @@ S
 #6434
 A Hallway~
    This small hallway on the former 'ground floor' ran north-
-south.  To the east is the stairwell that leads up into 
+south.  To the east is the stairwell that leads up into
 the shadowy recesses of the tower.  To the west is the
 entrance way to the tower.  The north is completely blocked
 off by lava, and the way south is still clear.
@@ -659,7 +659,7 @@ door double~
 1 0 6436
 E
 sculpture tapestry sculptures tapestries~
-   They look nice, but aren't very valuable.  
+   They look nice, but aren't very valuable.
 ~
 S
 #6436
@@ -668,7 +668,7 @@ The Doorway~
 it up completely.  However:
    It seems when the lava came down a man was outside the
 doors.  He was blasted into the doors, and died instantly,
-but his skeleton still clutches a staff in perfect 
+but his skeleton still clutches a staff in perfect
 condition...
 ~
 64 9 0 0 0 0
@@ -680,7 +680,7 @@ double doors~
 S
 #6437
 The Hallway~
-    This is the southern part of the hallway.  There is 
+    This is the southern part of the hallway.  There is
 a door to the west, barred with gleaming bands of lights.
 To the north is more hallway.
 ~
@@ -727,7 +727,7 @@ S
 #6440
 An Alcove~
    This alcove leads into a huge room to your north, and
-to stairs leading down to the east, and stairs going 
+to stairs leading down to the east, and stairs going
 up to your west.
 ~
 64 9 0 0 0 0
@@ -759,11 +759,11 @@ D2
 0 -1 6440
 E
 beaker beakers flask flasks burner burners tong tongs~
-   Looks like normal, fragile lab equipment to you.  
+   Looks like normal, fragile lab equipment to you.
 ~
 E
 mortar mortars pestle pestles jar jars~
-   Looks like normal, fragile lab equipment to you.  
+   Looks like normal, fragile lab equipment to you.
 ~
 S
 #6442
@@ -819,7 +819,7 @@ pentagram~
 E
 being~
    You can't see it clearly through the energy field of the pentagram, but you
-sense that whatever it is, it is very, very, very, very angry.  
+sense that whatever it is, it is very, very, very, very angry.
 ~
 S
 #6445
@@ -827,7 +827,7 @@ Inside A Pentagram~
    Inside the pentagram the floor is covered in a fine golden dust.  The lines
 of the pentagram seem to be drawn in blood which has dried to a dark
 reddish-brown.  The edges of the pentagram seem to hold some unseen power or
-protection.  
+protection.
 ~
 64 12 0 0 0 0
 D2

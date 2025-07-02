@@ -22,7 +22,7 @@ A huge axe is lying here~
 8 600 60 0 0
 E
 axe~
-   The axe handle has the name 'Gaheris' inscibed on it.  
+   The axe handle has the name 'Gaheris' inscibed on it.
 ~
 A
 19 2
@@ -37,7 +37,7 @@ A two headed axe with the Hautdesert crest lies here.~
 E
 axe~
    The strange crest of Hautdesert is engraved on both heads of this large axe.
-  
+
 ~
 #1603
 crest~
@@ -50,7 +50,7 @@ The crest has a stag on a verdant field~
 E
 crest stag~
    The crest is about the size of your fist and is made of what looks like
-pewter.    
+pewter.
 ~
 #1604
 armor green~
@@ -63,7 +63,7 @@ A fine suit of green armor bearing the crest of Hautdesert glistens here!~
 E
 green armor~
    The strange crest of Hautdesert is engraved on the breast of this fine
-armor.  The strange green color is like no other metal you have ever seen.    
+armor.  The strange green color is like no other metal you have ever seen.
 ~
 A
 5 1
@@ -78,7 +78,7 @@ A cloak of many colors and the crest of Orkney lies here.~
 E
 colored cloak~
    The cloak is made from many patches of various shades and colors.  Making it
-look more like a clown's garment than something a warrior would wear.    
+look more like a clown's garment than something a warrior would wear.
 ~
 #1606
 colored shield~
@@ -103,7 +103,7 @@ A set of armbands of black iron lie here.~
 3 450 50 0 0
 E
 armbands~
-   Made of pure silver these armbands have been turned invisible.    
+   Made of pure silver these armbands have been turned invisible.
 ~
 A
 13 15
@@ -118,7 +118,7 @@ A scroll was left here.~
 E
 merlins scroll~
    The thick parchment is yellow from age and crumbling at the corners.  An
-arcane spell is written upon it.    
+arcane spell is written upon it.
 ~
 #1609
 merlins wand~
@@ -131,7 +131,7 @@ A wand, glowing with power, lies here.~
 E
 merlins wand~
    The wand is capped on both ends with clear crystal orbs.  Small sparks can
-be seen within each orb.    
+be seen within each orb.
 ~
 #1610
 white bracers~
@@ -144,7 +144,7 @@ A humming, blinding white bracer lies here!~
 E
 white bracers~
    These bracers are made from a strange white metal, or alloy.  They gleam and
-reflect a perfect image.    
+reflect a perfect image.
 ~
 A
 1 1
@@ -174,7 +174,7 @@ A clublike weapon with a spiked balled head lies here.~
 E
 club ball mace spiked~
    The spiked ball is affixed to the top of a long pole and looks deadly as a
-bludgeoning weapon.    
+bludgeoning weapon.
 ~
 A
 19 2
@@ -191,8 +191,8 @@ lettering backpack pack~
    You read the writing on the pack.  It says "To my dear friend Pellinore, may
 this pack make your journeys shorter and allow you to bring all the provisions
 you need.  Simply wear the pack, and the weight and number of items you carry
-will decrease, and you will be able to travel long distances without tiring.  
-May you succeed in your quest!  - Merlin".    
+will decrease, and you will be able to travel long distances without tiring.
+May you succeed in your quest!  - Merlin".
 ~
 #1614
 unholy spear~
@@ -204,9 +204,9 @@ A spear is here, glowing with an unholy dark light.~
 5 200 20 0 0
 E
 unholy spear~
-   You look at the unholy light surrounding the spear.  Your vision darkens.  
+   You look at the unholy light surrounding the spear.  Your vision darkens.
 Out of the darkness red glowing eyes laugh and dance at you.  A rage slowly
-fills you, you want to kill.  Rend.  Tear.  Rape.  Murder - ahhahahahah!    
+fills you, you want to kill.  Rend.  Tear.  Rape.  Murder - ahhahahahah!
 ~
 #1616
 wolf helm~
@@ -218,7 +218,7 @@ A helm with the semblance of a wolf is here~
 3 160 20 0 0
 E
 wolf helm~
-   The metal helm has been wrapped with the fur and head of a wolf.    
+   The metal helm has been wrapped with the fur and head of a wolf.
 ~
 A
 18 1
@@ -232,7 +232,7 @@ An old pen is leaking ink everywhere here.~
 3 3 0 0 0
 E
 pen~
-   This writing utensil could be used if only you had something to write on.  
+   This writing utensil could be used if only you had something to write on.
 ~
 #1618
 horned helm~
@@ -245,7 +245,7 @@ A burnished steel helm with oxen horns lies here.~
 E
 horned helm~
    This strange hide helm has a set of horns sticking out of the top, they look
-like goblin horns, but hard to tell.    
+like goblin horns, but hard to tell.
 ~
 #1619
 note~
@@ -267,7 +267,7 @@ A massive spiked iron ball is attached to a iron handle by a 3 foot chain.~
 E
 ball chain spiked~
    This spiked ball is attached to a long metal handle and can be swung as a
-bludgeoning weapon.    
+bludgeoning weapon.
 ~
 A
 18 1
@@ -284,6 +284,6 @@ A rod of black, runed metal swallows light here.~
 E
 rod command~
    The black, runed metal seems to absorb all heat and light it comes in
-contact with.    
+contact with.
 ~
 $~

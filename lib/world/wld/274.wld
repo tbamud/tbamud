@@ -4,7 +4,7 @@ Inside Southern Gate~
 it leads off into the village.  It is a street of dirt with a few stray cobbles,
 dating back when the Roman's conquered this land.  There are buildings on each
 side of the street.  A guard gate post is to the east here, where it is manned
-twenty-four by seven days a week.  
+twenty-four by seven days a week.
 ~
 274 20 0 0 0 1
 D0
@@ -24,8 +24,8 @@ gate~
 E
 credits~
    This Zone was created by Brett Lynnes and Andy McLeod We're just some bored
-college students from Montana...  So you don't need to credit us for it.  
-Besides, I sorta stole the idea off of a mud I played a while back.  
+college students from Montana...  So you don't need to credit us for it.
+Besides, I sorta stole the idea off of a mud I played a while back.
 Smurfville is an anooying place with lots of do-gooder smurfs and (of course)
 Gargamel's castle.  ** added bonus- Barney's playland I made the entrance on
 wld ##00
@@ -37,7 +37,7 @@ Inside Southern Gate~
 southern most village and free town of the realm knwon as Adria.  The street is
 dirt here, mud when it rains, but it continues to the north deeper into the
 small village.  To the east is a guard gate here and south is the gate itself
-that leaves this place.  
+that leaves this place.
 ~
 274 0 0 0 0 1
 D1
@@ -49,7 +49,7 @@ S
 Inside Guard Gate~
    The inside of the guard gate is empty, except for a desk, a lantern or two to
 light it at night and a chair.  There is a small cot in the corner for the guard
-to sleep, usually this is a two man job to guard the gates here.  
+to sleep, usually this is a two man job to guard the gates here.
 ~
 274 264 0 0 0 0
 D3
@@ -62,7 +62,7 @@ Southern End of Saint Brigid~
    Walking up a north-south street, the street continues toward what appears to
 be a town square in the distance to the the north.  The gate to the south
 clearly visible to the south.  A residence is to the east, and the Saint Brigid
-Bank is to the west.  
+Bank is to the west.
 ~
 274 0 0 0 0 1
 D0
@@ -85,8 +85,8 @@ S
 #27404
 Southern End of Saint Brigid~
    This is a north-south street, at the edge of a townsquare to the north.  It
-continues on to the south toward a gate in the distance or enters the square.  
-There is a residence here to the east or the church entry to the west.  
+continues on to the south toward a gate in the distance or enters the square.
+There is a residence here to the east or the church entry to the west.
 ~
 274 0 0 0 0 1
 D0
@@ -135,7 +135,7 @@ S
 On Western Side of Saint Brigid~
    This is a east-west street, at the edge of a townsquare to the east.  It
 continues on to the west toward a gate in the distance or enters the square.  A
-residence is to the south and the Apothecary is to the north.  
+residence is to the south and the Apothecary is to the north.
 ~
 274 0 0 0 0 1
 D0
@@ -159,7 +159,7 @@ S
 On Western Side of Saint Brigid~
    The street continues to the east and west, the smell of deicious bread makes
 it well known that you are outsie the Saint Brigid Bakery to the south.  North a
-residence is there too.  
+residence is there too.
 ~
 274 0 0 0 0 1
 D0
@@ -201,7 +201,7 @@ On Western Side of Saint Brigid.~
    The street continues to the west and east here.  There is an entry to what
 appears to be a heavily fortified building that makes up the Saint Brigid
 Jeweler and a residence to the south.  The street has a mud puddle here from a
-recent rain, making it a mud bath for those to cross.  
+recent rain, making it a mud bath for those to cross.
 ~
 274 0 0 0 0 0
 D0
@@ -223,7 +223,7 @@ D3
 S
 #27410
 Inside Western Gate~
-   This is the inside of the Western Gate.  The street begins or ends here.  
+   This is the inside of the Western Gate.  The street begins or ends here.
 Leading to the town square to the east in the distance.  There is a guard gate
 to the north here.  The gate is a simple one, attached to a six foot wall to
 partially fortify the village.
@@ -247,9 +247,9 @@ S
 #27411
 On Eastern Side of Saint Brigid~
    This is a east-west street, at the edge of a townsquare to the west.  It
-continues on to the east toward a gate in the distance or enters the square.  
+continues on to the east toward a gate in the distance or enters the square.
 The Saint Brigid Training Center is to the north and a path to the Belltower
-which is the main alarm for the village.  
+which is the main alarm for the village.
 ~
 274 0 0 0 0 1
 D0
@@ -273,7 +273,7 @@ S
 On Eastern Side of Saint Brigid~
    The street continues over a small hill here, to the west and east.  It is a
 bit narrow here but there is a way past.  The General Store is to the north and
-a residence is to the south.  
+a residence is to the south.
 ~
 274 0 0 0 0 1
 D0
@@ -295,10 +295,10 @@ D3
 S
 #27413
 Inside Eastern Gate~
-   This is the inside of the Eastern Gate.  The street begins or ends here.  
+   This is the inside of the Eastern Gate.  The street begins or ends here.
 Leading to the town square to the west in the distance.  There is a guard gate
 to the north here.  The gate is a simple one, attached to a six foot wall to
-partially fortify the village.  
+partially fortify the village.
 ~
 274 20 0 0 0 1
 D0
@@ -322,7 +322,7 @@ Outside Eastern Gate~
 southeast.  There is Malvern Forest's edge to the north and the road stays clear
 of it as it leaves the edge at this point.  There is a junction to the east,
 where a path breaks away and goes into the forest.  The Eastern Gate is to the
-west.  
+west.
 ~
 274 0 0 0 0 3
 D1
@@ -331,7 +331,7 @@ D1
 0 0 27426
 D3
    The gate is forged of iron, and it has spikes on the outside making it
-formidable as it is attached to the six foot wall.  
+formidable as it is attached to the six foot wall.
 ~
 gate~
 1 0 27413
@@ -339,7 +339,7 @@ S
 #27415
 On Northern Side of Saint Brigid~
    This is a north-south street, at the edge of a townsquare to the south.  It
-continues on to the south toward a gate in the distance or enters the square.  
+continues on to the south toward a gate in the distance or enters the square.
 A residence is to the east and Broderick's Tavern is to the west.
 ~
 274 0 0 0 0 1
@@ -364,7 +364,7 @@ S
 On Bridge Crossing Rhillion River~
    Standing on the bridge above the rushing wild river waters of the Rhillion
 River as it flows from the Aleser Mountains.  The bridge crosses safely over it
-and the street continues to the north and south.  
+and the street continues to the north and south.
 ~
 274 0 0 0 0 1
 D0
@@ -382,7 +382,7 @@ On Northern Side of Saint Brigid~
 are outside the Saint Brigid Blacksmithe Shoppe.  The reverb of the hammer
 strikes can be felt as one stands outside to the west.  East is the Armory in
 which all items from the Blacksmithe are sent to be sold.  The street cointinues
-onto the north and south.  North the gate can be seen in the distance.  
+onto the north and south.  North the gate can be seen in the distance.
 ~
 274 0 0 0 0 1
 D0
@@ -453,7 +453,7 @@ S
 Outside Northern Gate~
    You stand on the outside of the wall and the gate of Saint Brigid.  From here
 it is nothing more than forest that runs off to the north as the road snakes off
-through it.  The main gate is south.  
+through it.  The main gate is south.
 ~
 274 0 0 0 0 1
 D0
@@ -472,7 +472,7 @@ Beginning/End of Malvern Road~
    As you step into the forest, the ominous silence echoes around you with the
 form of rustling in the undergrowth, birds chirping, and even the occasional
 snap of the twig.  The road snakes onward north and south it comes to a clearing
-among the forest to civilization in the form of Saint Brigid.  
+among the forest to civilization in the form of Saint Brigid.
 ~
 274 0 0 0 0 3
 D2
@@ -509,7 +509,7 @@ Outside the Western Gate ~
 wood and the gate is a huge wooden gate that is fortified with sentery posts on
 top and arrow slits on the sides of the gate, all built over the roaring
 Rhillion River that seems run from underground into the open air.  The street
-continues east through the gate to the east or west into the mountains.  
+continues east through the gate to the east or west into the mountains.
 ~
 274 0 0 0 0 5
 D1
@@ -557,7 +557,7 @@ Saint Brigid-Furze Road~
 to the north into the forest from the road.  And looking closer you can see the
 remains of what was a house build there.  It seems there was a road to it but it
 got overgrown through the years of lack of use.  The road continues east or the
-west top the Western Saint Brigid Gate.  
+west top the Western Saint Brigid Gate.
 ~
 274 0 0 0 0 2
 D0
@@ -579,7 +579,7 @@ Saint Brigid-Furze Road~
 the edge of the forest to the north through meadows and groves of trees where
 the forest spreads out across the land like a snake with a thick emerald green
 folage.  The road seems to go west too toward civilization and toward a gate
-nearby.  
+nearby.
 ~
 274 0 0 0 0 3
 D3
@@ -591,7 +591,7 @@ S
 Narrow Forest Path~
    The path is pretty narrow but you manage to squeak through the trees and
 undergrowth to the north through the foliage toward the structure.  The only way
-back to the road is to the south.  
+back to the road is to the south.
 ~
 274 0 0 0 0 3
 D0
@@ -664,7 +664,7 @@ A Residence~
    The residences are simple shacks with a large cooking area on one end and a
 sleeping arragement of folding beds on the other, the shacks are dingy with dirt
 floors, and have a warm stone hearth in the center of it to heat it.  The only
-exit is south onto the street.  
+exit is south onto the street.
 ~
 274 8 0 0 0 0
 D2
@@ -696,7 +696,7 @@ the shop keeper who works behind her counter on the north wall, where her
 assistants work behind a cauldron that brew some sort of noxious potion.  They
 sell water here, and you wonder if it was could be tained from all the chemicals
 they used in these awful potions.  The only exit out of the smell is to the
-south onto the street.  
+south onto the street.
 ~
 274 28 0 0 0 0
 D2
@@ -734,7 +734,7 @@ S
 Bottom of Belltower~
    Standing at the bottom of the narrow tower that makes up the belltower.  The
 only way is to the north to the main street or climbing the ladder to the top of
-the tower itself.  
+the tower itself.
 ~
 274 0 0 0 0 1
 D0
@@ -778,7 +778,7 @@ Top of Bell Tower~
    This is the top of the bell-tower.  You stand inside the large massive bell
 that now hangs here and covered by the roof over it which makes up the steeple
 of the tower.  The only way down is the ladder to the bottom.  From here is a
-pretty good view of everything around the village in the distance.  
+pretty good view of everything around the village in the distance.
 ~
 274 301 0 0 0 1
 D5
@@ -794,7 +794,7 @@ a staircase here leading upward to the upper floor that is open and can look
 down over the main hall.  It is where the Hotel bedrooms and the working girls
 are located.  The exit to the street is to the east.  The foyer here is dity and
 dusty and barren of any furnishings because of the many fights that break out
-usually outside the Inn.  A dangerous place here.  
+usually outside the Inn.  A dangerous place here.
 ~
 274 12 0 0 0 0
 D1
@@ -828,7 +828,7 @@ Francis' Blacksmith Shoppe/Forge~
    The forge area is very hot here, an array of vices, benches, tools, presses,
 andother tools that are setup throughout the whole room.  His main fire forge
 dominates the center of the room with a stack going up through the planked
-ceiling of wood that covers it.  The only exit is east into the open street.  
+ceiling of wood that covers it.  The only exit is east into the open street.
 ~
 274 24 0 0 0 0
 D1
@@ -907,7 +907,7 @@ Foyer of Saint Brigid Church~
 the west and south from the entry/exit point.  It has tiled floor here and
 paneled walls, with artwork, sculptures of wood and marble, and art that depict
 many events in religous history.  Two main doors to the south look like the main
-entry point to the chapel as it continues on.  
+entry point to the chapel as it continues on.
 ~
 274 8 0 0 0 0
 D1
@@ -954,7 +954,7 @@ D2
 D3
    A set of double doors made of oak are here, and they have stained glass in
 the center of them.  They have huge bronze hinges holding them to the wall and
-bronze handles to allow them to be opened.  
+bronze handles to allow them to be opened.
 
 ~
 door~
@@ -967,7 +967,7 @@ Inside Main Chapel~
 side doors to the north and south exiting out into side halls.  It is not like
 any Chapel you have seen, instead of pews there are simple wood benches.  There
 are relics and statues and art lining the walls but that is all.  Main door to
-the east exit to the main hallway exit.  
+the east exit to the main hallway exit.
 ~
 274 220 0 0 0 0
 D0
@@ -994,8 +994,8 @@ S
 #27454
 In Front of Altar~
    At the main altar, here a podium stands for the the Cure to speak and do his
-sermons in front of a sinister altar made of marble, trimmed in oak and gold.  
-Simple steps lead east down to the audience level here.  
+sermons in front of a sinister altar made of marble, trimmed in oak and gold.
+Simple steps lead east down to the audience level here.
 ~
 274 12 0 0 0 0
 D5
@@ -1025,7 +1025,7 @@ Small Alcove~
    Inside a small alcove the hallway ends into a circular chamber.  It is here
 that you can sit and pray, or just relax as light from a skylight lets the light
 from the outside shine down into the room, The hallway returns to the east/north
-or a door north leads into the main chapel.  
+or a door north leads into the main chapel.
 ~
 274 8 0 0 0 0
 D0
@@ -1044,7 +1044,7 @@ Small Alcove~
    Inside a small alcove the hallway ends into a circular chamber.  It is here
 that you can sit and pray, or just relax as light from a skylight lets the light
 from the outside shine down into the room, The hallway returns to the east to
-the foyer or south into the main chapel.  
+the foyer or south into the main chapel.
 ~
 274 8 0 0 0 0
 D1
@@ -1053,7 +1053,7 @@ D1
 0 0 27450
 D2
    An oak door is here with bronze hinges and fixtures.  It seems to be a side
-door into the main chapel.  
+door into the main chapel.
 ~
 door~
 1 0 27453
@@ -1063,7 +1063,7 @@ Main Hall~
    This is the main hall where many tables lie throughout, crammed with many
 unwashed bodies of adventurers who seek fortune and glory.  There is a bar to
 the west that spreads along the western wall and east is the exit.  A bandstand
-seems to be to the north where live entertainment plays.  
+seems to be to the north where live entertainment plays.
 ~
 274 8 0 0 0 0
 D0
@@ -1084,7 +1084,7 @@ At the Bar~
    The bar here dominates the western wall and serves the patrons of the tavern.
 It has a long counter here made of oak and behind it is a large display that
 show many bottles of booze which is served here.  The display also has a mirror
-that reflects your image there.  The main hall is to the east.  
+that reflects your image there.  The main hall is to the east.
 ~
 274 8 0 0 0 0
 D1
@@ -1097,12 +1097,12 @@ Upper Floor~
    Standing on the top of the narrow staircase that leads down to the foyer
 below.  The open hallway continues to the west, passing the many bedrooms that
 are located in this hall for the working girls to do business with the
-adventurers who pass through here. 
+adventurers who pass through here.
 ~
 274 8 0 0 0 0
 D1
    An oak door with bronze hinges and fixtures are here.  On the door is the
-number 'One' nailed here.  
+number 'One' nailed here.
 ~
 door~
 1 0 27464
@@ -1136,7 +1136,7 @@ D1
 0 0 27460
 D2
    An oak door with bronze hinges and fixtures are here.  On the door, the
-number 'Three' is nailed here.  
+number 'Three' is nailed here.
 ~
 door~
 1 0 27466
@@ -1179,7 +1179,7 @@ Upper Floor~
    The hall ends here.  You stand outside the Madam's room to the north who
 takes an active participation in working with the adventurers too.  The hallway
 returns to the south passing the bedrooms as before.  Below it is is harder to
-see the hall but you can see enough, and hear it all.  
+see the hall but you can see enough, and hear it all.
 ~
 274 8 0 0 0 0
 D0
@@ -1274,7 +1274,7 @@ Bedroom Six~
    The bedroom here is a simple one, with a large bed in the middle and that of
 a dresser with a mirror to one side.  It has a fireplace in the corner that when
 used warms the entire room.  Otherwise it is relatively empty.  The only exit is
-a door to the east.  
+a door to the east.
 ~
 274 8 0 0 0 0
 D0
@@ -1292,11 +1292,11 @@ Madam Guineveer's Room~
    Inside the Madam's room, it is a sinister red lighted room with lanterns
 throughout covered in red parchment to make it that color.  A bed seems to be in
 the center of the room, shaped in the form of a heart and it is covered with a
-hand-sewn comforter over the rough looking thin sheets that are under it.  
+hand-sewn comforter over the rough looking thin sheets that are under it.
 Large pillows are sitting on the top near the headboard made of ash wood and the
 foot also made of ash wood.  There is a dresser on the left side of this large
 room and what appears to be mirrors throughout.  Kinky...  The only exit is
-south through the door into the hall.  
+south through the door into the hall.
 ~
 274 8 0 0 0 0
 D2
@@ -1322,7 +1322,7 @@ Bandstand~
    An empty bandstand is here, half cluttered with broken chairs and tables
 after the many fights that break out in this rough establishment.  It probably
 was once used but when the place got rough it was not able to be used the way it
-was intended.  The main hall is to the south.  
+was intended.  The main hall is to the south.
 ~
 274 8 0 0 0 0
 D2
@@ -1334,7 +1334,7 @@ S
 Town Square~
    The townsquare is circular and it goes off in all directions to each section
 of the village.  It is empty right now, usually it is hopping with vendors and
-sellers of sorts but not right now for some reason.  
+sellers of sorts but not right now for some reason.
 ~
 274 0 0 0 0 0
 D0
@@ -1409,7 +1409,7 @@ S
 Inside Cornfield~
    At the edge of the cornfield.  The road is adjacent to the east and leaves
 and ears of corn can be seen to the west.  You can just carely force your way
-through the stalks.  
+through the stalks.
 ~
 274 0 0 0 0 0
 D1
@@ -1469,7 +1469,7 @@ S
 Edge of Cornfield~
    A large ditch makes it impssible to cross to the south and the fences to the
 west and north to cross any further out of this field.  The only way it seems is
-to the east deeper into the field.  
+to the east deeper into the field.
 ~
 274 0 0 0 0 0
 D1
@@ -1481,7 +1481,7 @@ S
 Edge of Cotton Patch~
    You stand at the edge of a cotton path, with thick growth of the plants here
 and thick tufts of white from the cotton plants plainly visible here.  The patch
-continues east and south.  West is the road.  
+continues east and south.  West is the road.
 ~
 274 0 0 0 0 2
 D1
@@ -1540,7 +1540,7 @@ S
 #27483
 Edge of Cotton Patch~
    The north east fence line is here, the patch continues to the west and south
-through the thick growth, and wisps of cotton.  
+through the thick growth, and wisps of cotton.
 ~
 274 0 0 0 0 2
 D2
@@ -1621,7 +1621,7 @@ S
 #27487
 Edge of Cornfield~
    Walking along a fence you can continue to the north, south or east in which
-you gcan easily ghet lost inside the cornfield itself.  
+you gcan easily ghet lost inside the cornfield itself.
 ~
 274 0 0 0 0 0
 D0
@@ -1661,7 +1661,7 @@ S
 Middle of Cotton Patch~
    The middle of the cotton patch is disorienting, but you are thankfully able
 to see to the west the road that runs between the fields.  Field runs off in
-three directions, north, west, and east.  
+three directions, north, west, and east.
 ~
 274 0 0 0 0 2
 D0
@@ -1704,7 +1704,7 @@ S
 #27491
 Edge of Cotton Patch~
    This is the eastern end of the fence.  The only way back is north, south or
-west to the road that runs between the patch of cotton and corn fields.  
+west to the road that runs between the patch of cotton and corn fields.
 ~
 274 0 0 0 0 2
 D0
@@ -1745,7 +1745,7 @@ S
 Inside Cornfield~
    You are lost in a corn field, the surroundings are do disorientating that
 each direction seems like the same and you struggle to orient yourself.  You can
-go off in all directions.  
+go off in all directions.
 ~
 274 0 0 0 0 0
 D0
@@ -1798,7 +1798,7 @@ S
 Edge of Cotton Patch~
    You stand at the edge of a cotton path, with thick growth of the plants here
 and thick tufts of white from the cotton plants plainly visible here.  The patch
-continues to the north and east, west is the road.  
+continues to the north and east, west is the road.
 
 ~
 274 0 0 0 0 2
@@ -1818,7 +1818,7 @@ S
 #27497
 Edge of Cotton Patch~
    This is the edge of the cotton path at the fence.  There is no other way to
-go here through the plants than west, north or east.  
+go here through the plants than west, north or east.
 ~
 274 0 0 0 0 2
 D0
@@ -1837,7 +1837,7 @@ S
 #27498
 Edge of Cotton Patch~
    This is the edge of the cotton path at the fence.  There is no other way to
-go here than west, east or north through the wisps of cotton.  
+go here than west, east or north through the wisps of cotton.
 ~
 274 0 0 0 0 2
 D0
@@ -1856,7 +1856,7 @@ S
 #27499
 Edge of Cotton Patch~
    This is the southeastern end and fence of the Cotton Field.  There is no way
-to go from here than north or west through the wisps of cotton.  
+to go from here than north or west through the wisps of cotton.
 ~
 274 0 0 0 0 2
 D0

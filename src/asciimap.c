@@ -516,7 +516,7 @@ static void perform_map( struct char_data *ch, char *argument, bool worldmap )
   count += sprintf(buf + count, "\tn%s Swim\\\\", map_info[SECT_WATER_SWIM].disp);
   count += sprintf(buf + count, "\tn%s Boat\\\\", map_info[SECT_WATER_NOSWIM].disp);
   count += sprintf(buf + count, "\tn%s Flying\\\\", map_info[SECT_FLYING].disp);
-  count += sprintf(buf + count, "\tn%s Underwater\\\\", map_info[SECT_UNDERWATER].disp);
+  sprintf(buf + count, "\tn%s Underwater\\\\", map_info[SECT_UNDERWATER].disp);
 
   strcpy(buf, strfrmt(buf, LEGEND_WIDTH, CANVAS_HEIGHT + 2, FALSE, TRUE, TRUE));
 
@@ -585,9 +585,9 @@ MapArea(target_room, ch, centre, centre, min, max, ns_size/2, ew_size/2, worldma
     char_size = 3*(size+1) + (size) + 4;
 
   if(worldmap)
-    send_to_char(ch, "%s", strpaste(WorldMap(centre, size, MAP_CIRCLE, MAP_COMPACT), strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), " \tn"));
+    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), WorldMap(centre, size, MAP_CIRCLE, MAP_COMPACT), " \tn"));
   else
-    send_to_char(ch, "%s", strpaste(CompactStringMap(centre, size), strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), " \tn"));
+    send_to_char(ch, "%s", strpaste(strfrmt(str, GET_SCREEN_WIDTH(ch) - char_size, size*2 + 1, FALSE, TRUE, TRUE), CompactStringMap(centre, size), " \tn"));
 
 }
 

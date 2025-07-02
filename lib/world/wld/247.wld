@@ -2,7 +2,7 @@
 A Gravel Road on the Graveyard~
    You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road, grave markers poke up out of the ground.
-An iron grate is to the north.    
+An iron grate is to the north.
 ~
 247 0 0 0 0 1
 D1
@@ -23,17 +23,17 @@ The tombstones to the west look a bit older than the ones to the east.
 E
 credits info~
    Graveyard by Rasta (Eric Pilcher) for KallistiMUD
-In spite of it being my first attempt at an area, it didn't turn out to bad.  
-In fact, I was a bit shocked to receive praise now and then. The area connects 
-to South Midgaard at the grate (sexton has key).  It includes, although they 
-are modified, the original path amongst the evergreens and chapel that is found 
+In spite of it being my first attempt at an area, it didn't turn out to bad.
+In fact, I was a bit shocked to receive praise now and then. The area connects
+to South Midgaard at the grate (sexton has key).  It includes, although they
+are modified, the original path amongst the evergreens and chapel that is found
 in stock diku.
 I recommend you do the following:
-Replace the name "Someone" on the tombstones (.wld file) with the names of some 
-of your past players, gods, or your own creative names.  On Kallisti, I used 
-the Gods.  The collesuim belonging to the Implementor. Vary the contents of the 
-tombstones.  These are containers you can put small items in. If you have a 
-problem with key hoarders, consider a second entrance to the catacombs.  
+Replace the name "Someone" on the tombstones (.wld file) with the names of some
+of your past players, gods, or your own creative names.  On Kallisti, I used
+the Gods.  The collesuim belonging to the Implementor. Vary the contents of the
+tombstones.  These are containers you can put small items in. If you have a
+problem with key hoarders, consider a second entrance to the catacombs.
 Perhaps through the sewers. Most of all, enjoy!
 Builder      : Rasta
 Zone         : 247 Graveyard
@@ -49,7 +49,7 @@ S
 A Gravel Road on the Graveyard~
    You are on a well-kept gravel road that leads north and south through the
 graveyard.  Both sides of the road are lined with grave markers poking up out
-of the ground.    
+of the ground.
 ~
 247 0 0 0 0 1
 D0
@@ -77,7 +77,7 @@ S
 A Gravel Road on the Graveyard~
    You are on a well-kept gravel road that leads north and south through the
 graveyard.  Both sides of the road are lined with grave markers poking up out
-of the ground.    
+of the ground.
 ~
 247 0 0 0 0 1
 D0
@@ -105,7 +105,7 @@ S
 A Gravel Road on the Graveyard~
    You are on a well-kept gravel road that leads north and south through the
 graveyard.  Both sides of the road are lined with grave markers poking up out
-of the ground.    
+of the ground.
 ~
 247 0 0 0 0 1
 D0
@@ -134,7 +134,7 @@ S
 In front of the Chapel~
    You are on an open space before a small chapel.  A gravel road leads north
 through the graveyard and the chapel entrance is to the south.  A few flowers
-have been trampled into the dirt.    
+have been trampled into the dirt.
 ~
 247 0 0 0 0 1
 D0
@@ -161,18 +161,18 @@ door~
 1 -1 24704
 E
 benches rows~
-   The benches are not of the comfortable kind.  
+   The benches are not of the comfortable kind.
 ~
 E
 glass windows~
-   The windows must be meant to be dark.  At least they are completely clean.  
+   The windows must be meant to be dark.  At least they are completely clean.
 ~
 S
 #24706
 A Grave~
    This area of the cemetery is relatively new.  The ground seems to settle
 beneath your feet and the smell of freshly dug dirt hits your nostrils.  The
-gravel path is to the west and there are more graves to the east and south.  
+gravel path is to the west and there are more graves to the east and south.
 ~
 247 0 0 0 0 2
 D1
@@ -192,14 +192,14 @@ The gravel path is to the west.
 0 -1 24700
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24707
 A Grave~
    This area of the cemetery is relatively new.  The ground seems to settle
 beneath your feet and the smell of freshly dug dirt hits your nostrils.  The
-gravel path is to the west and there are more graves to the east and south.  
+gravel path is to the west and there are more graves to the east and south.
 ~
 247 0 0 0 0 2
 D1
@@ -219,14 +219,14 @@ To the west lies another cemetery plot.
 0 -1 24706
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24708
 The undertaker's cottage~
    This is a sparsely furnished run-down shack.  There's not really much of
 anything here at all.  Sections of the wall have been scarred by what appears
-to be someone trying to break out.    
+to be someone trying to break out.
 ~
 247 8 0 0 0 0
 D3
@@ -239,7 +239,7 @@ S
 A Grave~
    The graves here are kept neatly tended.  The groundskeeper must take pride
 in his work.  The gravel path is to the west and more plots lie to the north,
-east and south.    
+east and south.
 ~
 247 0 0 0 0 2
 D0
@@ -271,7 +271,7 @@ S
 A Grave~
    The graves here are kept neatly tended.  The groundskeeper must take pride
 in his work.  Dark evergreen trees grow to the east.  More plots lie to the
-north, west and south.    
+north, west and south.
 ~
 247 0 0 0 0 2
 D0
@@ -291,14 +291,14 @@ To the west lies another cemetery plot.
 0 -1 24709
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24711
 A Grave~
    The graves here are kept neatly tended.  The groundskeeper must take pride
 in his work.  More plots lie to the north, east and south and the gravel path
-lies west.    
+lies west.
 ~
 247 0 0 0 0 2
 D0
@@ -322,14 +322,14 @@ The gravel path is to the west.
 0 -1 24702
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24712
 A Grave~
    The graves here are kept neatly tended.  The groundskeeper must take pride
 in his work.  Dark evergreen trees grow east of here.  More plots lie to the
-north, west and south.    
+north, west and south.
 ~
 247 0 0 0 0 2
 D0
@@ -349,14 +349,14 @@ To the west lies another cemetery plot.
 0 -1 24711
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24713
 A Grave~
    The graves here are kept neatly tended.  The groundskeeper must take pride
 in his work.  Dark evergreen trees grow to the south.  To the west is the
-gravel path and more plots lie to the north and east.    
+gravel path and more plots lie to the north and east.
 ~
 247 0 0 0 0 2
 D0
@@ -376,7 +376,7 @@ The gravel path is to the west.
 0 -1 24703
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24714
@@ -386,7 +386,7 @@ dug it's way out from underneath.  The grave stone itself has been knocked over
 and where once an epitaph appeared, there is now only claw marks.  Dark
 evergreen trees grow to the south and east, although there is an opening to
 east where something has smashed through the tree limbs.  More plots lie to the
-north and west.    
+north and west.
 ~
 247 0 0 0 0 2
 D0
@@ -410,7 +410,7 @@ A makeshift trail~
    This trail seems to have been created recently.  There are claw marks on the
 trees and broken branches litter the ground.  Although the trail is dark, these
 markers clearly show you the path.  The trail continues to the east, the
-cemetery lies west.    
+cemetery lies west.
 ~
 247 4 0 0 0 3
 D1
@@ -431,7 +431,7 @@ A small clearing~
 all dead and bare earth covers the ground.  Several of the trees have fallen
 over creating impassable deadfalls to the north and east.  Similar dead trees
 have form what resembles a cave to the south.  The nauseating stench of decay
-drifts from somewhere and you sense a powerful evil nearby.    
+drifts from somewhere and you sense a powerful evil nearby.
 ~
 247 0 0 0 0 2
 D2
@@ -449,7 +449,7 @@ S
 The barrow~
    You have stumbled into the lair of a barrow wight and his ghoul followers.
 This place reeks of decay.  Bones and decaying corpses are strewn about the
-place, and you really hope that you don't become part of this carnage.    
+place, and you really hope that you don't become part of this carnage.
 ~
 247 9 0 0 0 0
 D0
@@ -463,7 +463,7 @@ A Grave~
    The graves here are slightly older than the ones to the east of the gravel
 path.  A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
-continues to the west and south.  The gravel path is back to the east.    
+continues to the west and south.  The gravel path is back to the east.
 ~
 247 0 0 0 0 2
 D1
@@ -483,14 +483,14 @@ To the west lies another cemetery plot.
 0 -1 24719
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24719
 A Grave~
    A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
-continues to the west, south and east.    
+continues to the west, south and east.
 ~
 247 0 0 0 0 2
 D1
@@ -510,14 +510,14 @@ To the west lies another cemetery plot.
 0 -1 24720
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24720
 A Grave~
    A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
-continues to the east, south and west.    
+continues to the east, south and west.
 ~
 247 0 0 0 0 2
 D1
@@ -537,7 +537,7 @@ To the west lies another cemetery plot.
 0 -1 24762
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24721
@@ -546,7 +546,7 @@ A Grave~
 path.  A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the north, west and south.  The gravel path is back to the east.
-  
+
 ~
 247 0 0 0 0 2
 D0
@@ -571,7 +571,7 @@ To the west lies another cemetery plot.
 0 -1 24722
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24722
@@ -579,7 +579,7 @@ A Grave~
    The fog is much more dense in this part of the cemetery and the mist seems
 to take humanoid forms as ghostly apparitions.  You feel a rising power of some
 sort emanating from the southwest.  The cemetery continues in all directions.
-  
+
 ~
 247 0 0 0 0 2
 D0
@@ -604,14 +604,14 @@ To the west lies another cemetery plot.
 0 -1 24723
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24723
 A Grave~
    The fog is much more dense in this part of the cemetery and the mist seems
 to take humanoid forms as ghostly apparitions.  You feel a rising power
-emanating from the south.  The cemetery continues in all directions.    
+emanating from the south.  The cemetery continues in all directions.
 ~
 247 0 0 0 0 2
 D0
@@ -636,7 +636,7 @@ To the west lies another cemetery plot.
 0 -1 24763
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24724
@@ -645,7 +645,7 @@ A Grave~
 path.  A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  The cemetery
 continues to the north, west and south.  The gravel path is back to the east.
-  
+
 ~
 247 0 0 0 0 2
 D0
@@ -670,14 +670,14 @@ To the west lies another cemetery plot.
 0 -1 24725
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24725
 A Grave~
    The fog seems much heavier in this part of the cemetery and the mist seems
 to take humanoid forms as ghostly apparitions.  You feel a rising power
-emanating from the west.  The cemetery continues in all directions.    
+emanating from the west.  The cemetery continues in all directions.
 ~
 247 0 0 0 0 2
 D0
@@ -702,7 +702,7 @@ To the west lies another cemetery plot.
 0 -1 24726
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24726
@@ -710,7 +710,7 @@ A Grave~
    The fog seems to hang over this part of the cemetery and the mist seems to
 take humanoid forms as ghostly apparitions.  There is a very strong power field
 of some sort emanating from a mausoleum to the west.  The cemetery continues to
-the north, east and south.    
+the north, east and south.
 ~
 247 0 0 0 0 2
 D0
@@ -740,7 +740,7 @@ door writing~
 ~
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24727
@@ -749,7 +749,7 @@ A Grave~
 path.  A light fog seems to hang over this part of the cemetery and the mist
 sometimes seems to take humanoid forms as ghostly apparitions.  Dark evergreen
 trees grow to the south.  The cemetery continues north and west.  The gravel
-path is back to the east.    
+path is back to the east.
 ~
 247 0 0 0 0 2
 D0
@@ -769,7 +769,7 @@ To the west lies another cemetery plot.
 0 -1 24728
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24728
@@ -777,7 +777,7 @@ A Grave~
    The fog seems to hang over this part of the cemetery and the mist seems to
 take humanoid forms as ghostly apparitions.  A rising power emanates from the
 northwest.  Dark evergreen trees grow to the south.  The cemetery continues to
-the north, east and west.    
+the north, east and west.
 ~
 247 0 0 0 0 2
 D0
@@ -797,14 +797,14 @@ To the west lies another cemetery plot.
 0 -1 24729
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24729
 A Grave~
    The fog seems to hang over this part of the cemetery and the mist seems to
 take humanoid forms as ghostly apparitions.  A rising power emanates from the
-north.  The cemetery continues to the north, east and west.    
+north.  The cemetery continues to the north, east and west.
 ~
 247 0 0 0 0 2
 D0
@@ -824,14 +824,14 @@ To the west lies another cemetery plot.
 0 -1 24764
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24730
 The Great Tomb~
    The mausoleum is made of smooth marble.  It is quite cold in here but feels
 peaceful enough.  The very walls seem to glow blue and it showers the room in a
-ghostly light.  There is an iron vault embedded into the west wall.    
+ghostly light.  There is an iron vault embedded into the west wall.
 ~
 247 8 0 0 0 0
 D1
@@ -847,7 +847,7 @@ vault~
 E
 vault~
    It looks very solid.  You'd probably need something like a crowbar to open
-it.  
+it.
 ~
 S
 #24731
@@ -855,7 +855,7 @@ Inside the Vault~
    You climb inside the iron vault.  It is a very tight squeeze in here.  You
 rest your hand on the north wall of the vault for support, except that your
 hand disappears into the darkness.  This north wall must be only a clever
-illusion and not really exist at all!  You wonder what lies down there.    
+illusion and not really exist at all!  You wonder what lies down there.
 ~
 247 13 0 0 0 0
 D0
@@ -871,11 +871,11 @@ vault~
 S
 #24732
 A very dark room~
-   Your feeble light source does little to penetrate the darkness in here.  
+   Your feeble light source does little to penetrate the darkness in here.
 Blackness surrounds you, you can't even see the walls in this room.  Even the
 doorway behind you seems to have disappeared.  Suddenly something occurs to you
 that sends chills up and down your spine.  You get a bad feeling that you are
-not alone in here!    
+not alone in here!
 ~
 247 521 0 0 0 0
 D1
@@ -890,7 +890,7 @@ Catacomb entrance~
 mausoleum.  You wonder when it was built, and why.  Small rodents (not worth
 killing) run around on the floor.  There is a door to the west which is pitch
 black in color.  The hallway continues to the east, you hear a faint moaning
-coming from that direction.    
+coming from that direction.
 ~
 247 9 0 0 0 0
 D1
@@ -913,7 +913,7 @@ S
 The Catacombs~
    The corridor continues both east and west.  It is very dirty in here,
 cobwebs hang from the ceiling corners and small bones litter the floor.  A
-faint moaning is coming from the east.    
+faint moaning is coming from the east.
 ~
 247 9 0 0 0 0
 D1
@@ -932,7 +932,7 @@ A Split in the Corridor~
    There is a triple junction here, with the corridor running both east, west
 and south.  The passage way east looks as it hasn't been disturbed for some
 time and cobwebs seem to grow thick in that direction.  A faint moaning sound
-can be heard to the south.    
+can be heard to the south.
 ~
 247 9 0 0 0 0
 D1
@@ -955,7 +955,7 @@ S
 The Catacombs~
    The corridor continues both east and west.  It is very dirty in here,
 cobwebs hang from the ceiling corners and small bones litter the floor.  A
-faint moaning is coming from the west.    
+faint moaning is coming from the west.
 ~
 247 9 0 0 0 0
 D1
@@ -974,7 +974,7 @@ The Catacombs~
    The corridor continues both east and west.  It is very dirty in here,
 cobwebs are everywhere and seem to be getting thicker to the east.  You have a
 feeling that it's been a very long time since anyone has been in this part of
-the catacombs.    
+the catacombs.
 ~
 247 9 0 0 0 0
 D1
@@ -995,7 +995,7 @@ covered head to toe with cobwebs now.  They seem to cling to your body like
 glue and it is impossible for you to avoid them.  You've yet to notice a single
 spider, however.  The northern wall is in ruins as if something has broken it's
 way through.  Large blocks of stone litter the corridor.  You could probably
-squeeze through the hole if you so desired.    
+squeeze through the hole if you so desired.
 ~
 247 13 0 0 0 0
 D1
@@ -1012,10 +1012,10 @@ S
 #24740
 The Cobwebbed Catacomb~
    This area is almost solid cobwebs.  You trudge through them, trying to clear
-a path.  As you brush them aside you notice that you've come to a dead end.  
+a path.  As you brush them aside you notice that you've come to a dead end.
 Closer examination reveals an archway to the south.  But so many cobwebs cover
 the archway that they've formed a completely opaque door.  The corridor
-continues back to the west.    
+continues back to the west.
 ~
 247 9 0 0 0 0
 D2
@@ -1034,7 +1034,7 @@ The Ancient Tomb~
    The air is very stale in here.  Cobwebs cover the walls and ceiling, however
 the middle of the room is relatively clear of them.  In each corner of this
 chamber, an ancient sarcophagus lies against the wall.  There is a low grinding
-noise as they all start to open.  The only exit is north.    
+noise as they all start to open.  The only exit is north.
 ~
 247 520 0 0 0 0
 D0
@@ -1047,7 +1047,7 @@ S
 The Catacombs~
    The corridor continues both north and south.  The floor is littered with
 broken bits of bone and small scraps of burial wrappings.  You hear a distinct
-moaning sound coming from the south.    
+moaning sound coming from the south.
 ~
 247 9 0 0 0 0
 D0
@@ -1066,7 +1066,7 @@ The Catacombs~
    The corridor continues both north and east.  The floor is littered with
 broken bits of bone and small scraps of burial wrappings.  There is an iron
 door to the south and a loud moaning seems to be coming from the other side of
-it.    
+it.
 ~
 247 9 0 0 0 0
 D0
@@ -1091,7 +1091,7 @@ The Chamber of Sorrow~
 They look very moth eaten and mildewed.  A black sarcophagus lies on the floor
 in the center of the room, and leaning over it, sobbing deeply, rests a
 banshee.  She seems to be too interested in crying and wailing than to notice
-you.  The door stands to the north and there are no other exits.    
+you.  The door stands to the north and there are no other exits.
 ~
 247 521 0 0 0 0
 D0
@@ -1104,7 +1104,7 @@ S
 The Catacombs~
    The corridor continues both east and west.  The floor is littered with
 broken bits of bone and small scraps of burial wrappings.  A distinct moaning
-sound can be heard back to the west.    
+sound can be heard back to the west.
 ~
 247 9 0 0 0 0
 D1
@@ -1123,7 +1123,7 @@ The Catacombs~
    The corridor bends here and continues to the west and south.  A faint
 moaning sound can be heard to the west.  The air is very stale in here.  The
 floor is littered with the decaying corpses of small rodents and splinters of
-broken bones.    
+broken bones.
 ~
 247 9 0 0 0 0
 D2
@@ -1141,7 +1141,7 @@ S
 The Catacombs~
    The corridor splits here leaving exits to the north, east and south.  The
 air seems hot and dry and reeks of staleness.  Splinters of broken bone litter
-the floor and a few cobwebs hang from the ceiling.    
+the floor and a few cobwebs hang from the ceiling.
 ~
 247 9 0 0 0 0
 D0
@@ -1164,7 +1164,7 @@ S
 The Catacombs~
    The corridor here forms a small alcove with the passageway back to the west
 and a warped looking hardwood door to the east.  You fell chills up and down
-your spine as you approach the door.  You wonder what might lie behind it.    
+your spine as you approach the door.  You wonder what might lie behind it.
 ~
 247 9 0 0 0 0
 D1
@@ -1183,7 +1183,7 @@ The Coffers~
    The floor of this room is littered with coins.  Many of which have tarnished
 with age throughout the centuries.  There must be a fortune in here and you
 wonder who it once belonged to.  Transparent figures guard this treasure and
-they don't look happy that you have found it.    
+they don't look happy that you have found it.
 ~
 247 521 0 0 0 0
 D3
@@ -1196,7 +1196,7 @@ S
 The Catacombs~
    The corridor here continues north and south.  The air here is very stale and
 the smell of decay and dry rot reeks heavily.  You wonder where exactly these
-catacombs lead.    
+catacombs lead.
 ~
 247 9 0 0 0 0
 D0
@@ -1215,7 +1215,7 @@ The Catacombs~
    The corridor here bends and takes off to the north and west.  There is a
 golden door to the east with a flaming skull emblazoned on it.  The air is cold
 here and there is sort of a light draft.  The air seems to seep out from the
-cracks in the doorframe.    
+cracks in the doorframe.
 ~
 247 9 0 0 0 0
 D0
@@ -1239,7 +1239,7 @@ The Catacombs~
    There is a slight breeze in this part of the corridor.  You stand in a long
 hall running east to west.  This corridor looks ancient.  Chunks of ceiling
 have fallen to the floor and there are small scraps of leather, bone, cloth,
-and other such items strewn about.    
+and other such items strewn about.
 ~
 247 9 0 0 0 0
 D1
@@ -1258,7 +1258,7 @@ The Catacombs~
    There is a gentle breeze in this part of the corridor.  You stand in a long
 hall running east to west.  This corridor looks ancient.  Chunks of ceiling
 have fallen to the floor and there are small scraps of leather, bone, cloth,
-and other such items strewn about.    
+and other such items strewn about.
 ~
 247 9 0 0 0 0
 D1
@@ -1277,7 +1277,7 @@ The Catacombs~
    There is a strong breeze in this part of the corridor.  You stand in a long
 hall running east to west.  This corridor looks ancient.  Chunks of ceiling
 have fallen to the floor and there are small scraps of leather, bone, cloth,
-and other such items strewn about.    
+and other such items strewn about.
 ~
 247 9 0 0 0 0
 D1
@@ -1297,7 +1297,7 @@ The Catacombs~
 hall running east to west.  The west looks very dark ahead and you can no
 longer see the floor in that direction.  There is another passageway to the
 north.  The there are small cracks in the walls here and the floor is littered
-with debris from the ceiling.    
+with debris from the ceiling.
 ~
 247 9 0 0 0 0
 D0
@@ -1322,20 +1322,20 @@ The Pit of Lost Souls~
 your feet.  You are falling, and you think to yourself, "Oh, no, I hit a DT".
 However, moments before you would have splattered to your death, a decaying
 corpse breaks your fall.  Looking around, you see that corpses fill this room.
-There are no exits.    
+There are no exits.
 ~
 247 653 0 0 0 0
 E
 corpse body~
    They look like they've been here a while.  You hope you don't have to stay
-here with them much longer!  
+here with them much longer!
 ~
 S
 #24757
 The Catacombs~
    The corridor here stretches north to south.  This area looks extremely old
 and the ceiling seems to want to cave in.  There are larger and larger chunks
-of stone that have fallen in.  You wonder just how save this passageway is.  
+of stone that have fallen in.  You wonder just how save this passageway is.
 ~
 247 9 0 0 0 0
 D0
@@ -1381,9 +1381,9 @@ The Ancient Tomb~
    You see before you an altar which rests on dais steps against the west wall.
 Upon the altar lies a skull on top of a pile of fine white dust.  Two large
 rubies are placed within its eye sockets and its teeth glint of sparkling
-diamonds.  You do not like the way it looks back at you and seems to grin.  
+diamonds.  You do not like the way it looks back at you and seems to grin.
 You feel a presence of great evil in this room and you feel that you should
-turn back, before something bad happens.    
+turn back, before something bad happens.
 ~
 247 521 0 0 0 0
 D1
@@ -1396,7 +1396,7 @@ S
 The Guardian Chamber~
    You have entered what looks like a waiting room.  There is a high vaulted
 ceiling here and an archway leads to the east.  There is a faint red light
-coming from the east and you hear what sounds like high voltage electricity.  
+coming from the east and you hear what sounds like high voltage electricity.
 ~
 247 521 0 0 0 0
 D1
@@ -1415,7 +1415,7 @@ The Death Master's Laboratory~
    You have entered the laboratory of the Death Master.  He was once a high
 level cleric, but laughed in the face of the gods, so we put him down here for
 you to try and kill.  Black candles provide light as the Death Master attempts
-to bring life back into a once dead corpse.    
+to bring life back into a once dead corpse.
 ~
 247 521 0 0 0 0
 D3
@@ -1428,7 +1428,7 @@ S
 A Grave~
    The mist chills your bones as you enter this area, yet you feel a calm
 peace.  Figures move through the swirling fog.  The cemetery continues to the
-west east and south.    
+west east and south.
 ~
 247 0 0 0 0 2
 D1
@@ -1448,7 +1448,7 @@ To the west lies another cemetery plot.
 0 -1 24768
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24763
@@ -1456,7 +1456,7 @@ A Grave~
    The mist chills your bones as you enter this area, yet you feel a calm
 peace.  Figures move through the swirling fog.  The smooth stone wall of a
 mausoleum is to the south.  The cemetery continues to the north, east and west.
-  
+
 ~
 247 0 0 0 0 2
 D0
@@ -1476,7 +1476,7 @@ To the west lies another cemetery plot.
 0 -1 24767
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24764
@@ -1485,7 +1485,7 @@ A Grave~
 exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the south.  The smooth stone wall
 of a mausoleum is to the north, and the cemetery continues to the east and
-west.    
+west.
 ~
 247 0 0 0 0 2
 D1
@@ -1500,14 +1500,14 @@ To the west lies another cemetery plot.
 0 -1 24765
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24765
 A Grave~
    Leaves crunch beneath your feet, your breath gently turns to mist as you
 exhale.  The still clam put your thoughts at ease as you stare into the
-swirling fog.  The cemetery continues to the west, north and east.    
+swirling fog.  The cemetery continues to the west, north and east.
 ~
 247 0 0 0 0 2
 D0
@@ -1527,7 +1527,7 @@ To the west lies another cemetery plot.
 0 -1 24769
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24766
@@ -1535,7 +1535,7 @@ A Grave~
    Leaves crunch beneath your feet, your breath gently turns to mist as you
 exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  The smooth stone wall of a mausoleum is to the east, and the
-cemetery continues to the north, south and west.    
+cemetery continues to the north, south and west.
 ~
 247 0 0 0 0 2
 D0
@@ -1555,14 +1555,14 @@ To the west lies another cemetery plot.
 0 -1 24770
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24767
 A Grave~
    Leaves crunch beneath your feet, your breath gently turns to mist as you
 exhale.  The still calm put your thoughts at ease as you stare into the
-swirling fog.  The cemetery continues in all directions.    
+swirling fog.  The cemetery continues in all directions.
 ~
 247 0 0 0 0 2
 D0
@@ -1587,7 +1587,7 @@ To the west lies another cemetery plot.
 0 -1 24771
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24768
@@ -1595,7 +1595,7 @@ A Grave~
    The cold earth and the light mist, and the pale moonlight mix to give you a
 cold clammy feel.  A faint sweet smell of decay hangs in the air, yet you feel
 calm and at peace in this place.  The cemetery continues to the west, east and
-south.    
+south.
 ~
 247 0 0 0 0 2
 D1
@@ -1615,7 +1615,7 @@ To the west lies another cemetery plot.
 0 -1 24772
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24769
@@ -1623,7 +1623,7 @@ A cemetery plot~
    Leaves crunch beneath your feet, your breath gently turns to mist as you
 exhale.  The still calm puts your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the south and west.  The cemetery
-continues to the north and east.    
+continues to the north and east.
 ~
 247 0 0 0 0 2
 D0
@@ -1638,7 +1638,7 @@ To the east lies another cemetery plot.
 0 -1 24765
 E
 grave stone~
-   A blank stone rests here......  Maybe it will have your name on it.  
+   A blank stone rests here......  Maybe it will have your name on it.
 ~
 S
 #24770
@@ -1647,7 +1647,7 @@ A Grave~
 exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the west.  The smooth stone wall of
 a mausoleum is to the east, and the cemetery continues to the north and south.
-  
+
 ~
 247 0 0 0 0 2
 D0
@@ -1667,7 +1667,7 @@ To the south lies another cemetery plot.
 0 -1 24769
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24771
@@ -1675,7 +1675,7 @@ A Grave~
    Leaves crunch beneath your feet, your breath gently turns to mist as you
 exhale.  The still calm put your thoughts at ease as you stare into the
 swirling fog.  Dark evergreen trees grow to the west.  The cemetery continues
-to the north, east and south.    
+to the north, east and south.
 ~
 247 0 0 0 0 2
 D0
@@ -1695,7 +1695,7 @@ To the south lies another cemetery plot.
 0 -1 24770
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 #24772
@@ -1703,7 +1703,7 @@ A Grave~
    The cold earth and the light mist, and the pale moonlight mix to give you a
 cold clammy feel.  A faint sweet smell of decay hangs in the air, yet you feel
 calm and at peace in this place.  Dark evergreen trees grow to the west and the
-cemetery continues to the east and south.    
+cemetery continues to the east and south.
 ~
 247 0 0 0 0 2
 D1
@@ -1718,7 +1718,7 @@ To the south lies another cemetery plot.
 0 -1 24771
 E
 grave stone~
-   Here lies Someone.  R.  I.  P.  
+   Here lies Someone.  R.  I.  P.
 ~
 S
 $~

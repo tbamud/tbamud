@@ -39,7 +39,7 @@ if %actor.is_pc%
       dg_cast 'bless' %actor%
     elseif %actor.align% > -300
       say it is not too late for you to mend your ways.
-    else 
+    else
       emote grins and says, 'You, %actor.name%, are truly wretched.'
       say Blasphemy! %actor.name%, your presence will stain this temple no more!
       kill %actor.name%

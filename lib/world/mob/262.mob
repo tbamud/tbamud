@@ -4,7 +4,7 @@ a brown bear~
 A huge brown bear roars its defiance and opens its jaws in a snarl!
 ~
    It moves its head this way and that, as if looking for the best spot to bite
-you.  
+you.
 ~
 72 0 0 0 0 0 0 0 0 E
 10 17 4 2d2+100 1d2+1
@@ -18,7 +18,7 @@ a rattlesnake~
 A rattlesnake slithers up near you, raising head and tail in anticipation.
 ~
    Roughly 5 feet in length, this snake could very well give you a bit of
-trouble if you mess with it too much.  Best to just sort of ease on past.  
+trouble if you mess with it too much.  Best to just sort of ease on past.
 ~
 76 0 0 0 0 0 0 0 0 E
 7 18 5 1d1+70 1d2+1
@@ -32,7 +32,7 @@ a timberwolf~
 A wolf slinks past you, looking at you out of the corner of its eye.
 ~
    It looks sleek and swift, not very large at all, but large enough to give you
-a few nips in the ass if you mess with it.  
+a few nips in the ass if you mess with it.
 ~
 65608 0 0 0 0 0 0 0 0 E
 12 16 2 2d2+120 2d2+2
@@ -46,7 +46,7 @@ an enormous black bear~
 An enormous black bear rears up on two legs and roars!
 ~
    Its gaping jaws drip saliva, saliva that is probably the prep for the bear's
-mouth where it intends to bodily put you!  
+mouth where it intends to bodily put you!
 ~
 72 0 0 0 0 0 0 0 0 E
 13 16 2 2d2+130 2d2+2
@@ -60,7 +60,7 @@ a huge grizzly bear~
 A huge grizzly bear lumbers along, minding its own business.
 ~
    It doesn't even acknowledge the fact that you are near, it just moves right
-along on its way.  
+along on its way.
 ~
 76 0 0 0 0 0 0 0 0 E
 15 15 1 3d3+150 2d2+2
@@ -74,7 +74,7 @@ a little fox~
 A little fox runs past you, happily playing its day away.
 ~
    It jumps from leaf to leaf in huge bounds, trapping the leaf and biting the
-hell out of it, the going onto its next 'victim'.  
+hell out of it, the going onto its next 'victim'.
 ~
 72 0 0 0 0 0 0 0 0 E
 9 17 4 1d1+90 1d2+1

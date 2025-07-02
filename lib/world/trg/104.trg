@@ -115,9 +115,9 @@ if %actor.is_pc%
           say Hello there young one.
           wait 2 sec
           say I am the village elder, the oldest and wisest of them all.
-          wait 4 sec          
+          wait 4 sec
           say %actor.name%, if you bring me back the item from the center of the maze, I will reward you with great riches and power.
-          wait 4 sec          
+          wait 4 sec
           say Will you accept my quest? Will you go to the center of the maze and retrieve the sacred item?
         end
       end
@@ -175,7 +175,7 @@ if %object.vnum% == 10429
   wait 2 s
   %send% %actor% %self.name% hands you the coins, you feel a slight surge of energy.
   %echoaround% %actor% %self.name% rummages through a bag and pulls out a couple coins.
-  wait 2 s 
+  wait 2 s
   %echoaround% %actor% %self.name% hands the coins to %actor.name% , a small light emits from the coins.
   nop %actor.gold(150)%
   nop %actor.exp(400)%
@@ -262,12 +262,12 @@ if %actor.is_pc%
   wait 2s
   %send% %actor% You begin to feel your self lose sight of the room.
   %echoaround% %actor% %actor.name%'s eyes shut and %actor.heshe% slumps over.
-  %actor.pos(Sleeping)%
+  nop %actor.pos(sleeping)%
   wait 3s
-  %echoaround% %actor% Strange words can be heard comeing from somewhere, and %actor.name%'s body floats into the air and vanishes.
+  %echoaround% %actor% Strange words can be heard coming from somewhere, and %actor.name%'s body floats into the air and vanishes.
   wait 1s
   %teleport% %actor% 10424
-  %lag% %actor.name% 200
+  nop %actor.wait(200)%
 end
 ~
 #10499
