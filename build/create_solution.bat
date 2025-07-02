@@ -1,1 +1,0 @@
-cmake -B . -S ..\src -G "Visual Studio 17 2022"

@@ -9,16 +9,16 @@ every platform that exists. This document is for experienced programmers
 trying to make tbaMUD work on their platform. 
 
 tbaMUD should work on most UNIX platforms without any modifications; simply run
-the ìconfigureî script and it should automatically detect what type of system 
+the ‚Äúconfigure‚Äù script and it should automatically detect what type of system 
 you have and anything that may be strange about it. These findings are all 
 stored in a header file called conf.h which is created in the src directory 
 from a template called conf.h.in. A Makefile is also created from the template 
 Makefile.in. 
 
-Non-UNIX platforms are a problem. Some canít run tbaMUD at all. However, any 
+Non-UNIX platforms are a problem. Some can‚Äôt run tbaMUD at all. However, any 
 multitasking OS that has an ANSI C compiler, and supports non-blocking I/O and 
 socket-based TCP/IP networking, should theoretically be able to run tbaMUD; for
-example, OS/2, AmigaOS, Mac OS (Classic versions; Mac OS X supports tbaMUDís 
+example, OS/2, AmigaOS, Mac OS (Classic versions; Mac OS X supports tbaMUD‚Äôs 
 configure script from the command line), and all versions of Windows. 
 
 The port can be very easy or very difficult, depending mainly on whether or nor
@@ -26,7 +26,7 @@ your OS supports the Berkeley socket API.
 
 The general steps for porting tbaMUD to a non-UNIX platform are listed below. A
 number of tips for porting can be found after the porting steps. Note that we 
-have already ported tba to Windows, so if youíre confused as to how to perform 
+have already ported tba to Windows, so if you‚Äôre confused as to how to perform 
 some of these steps, you can look at what we have done as an example (see the 
 files README.CYGWIN). 
 
@@ -36,11 +36,11 @@ trying to port the code.
 
 Porting the Code 
 
-Step 1. Create a ìconf.hî file for your system. Copy the template ìconf.h.inî 
-to ìconf.hî, and then define or undefine each item as directed by the comments
+Step 1. Create a ‚Äúconf.h‚Äù file for your system. Copy the template ‚Äúconf.h.in‚Äù 
+to ‚Äúconf.h‚Äù, and then define or undefine each item as directed by the comments
 and based on the characteristics of your system. To write the conf.h file, 
-youíll need to know which header files are included with your system, the 
-return type of signals, whether or not your compiler supports the ëconstí 
+you‚Äôll need to know which header files are included with your system, the 
+return type of signals, whether or not your compiler supports the ‚Äòconst‚Äô 
 keyword, and whether or not you have various functions such as crypt()and 
 random(). Also, you can ignore the HAVE_LIBxxx and HAVE_xxx_PROTO constants at 
 the end of conf.h.in; they are not used in the code (they are part of UNIX 
@@ -58,12 +58,12 @@ be in the source file comm.c.
 
 Step 4. Test your changes! Make sure that multiple people can log in 
 simultaneously and that they can all type commands at the same time. No player 
-should ever have a ìfrozenî screen just because another is waiting at a prompt.
+should ever have a ‚Äúfrozen‚Äù screen just because another is waiting at a prompt.
 Leave the MUD up for at least 24 hours, preferably with people playing it, to 
 make sure that your changes are stable. Make sure that automatic events such as
 zone resets, point regeneration, and corpse decomposition are being timed 
 correctly (a tick should be about 75 seconds). Try resetting all the zones 
-repeatedly by typing ìzr *î many times. Play the MUD and make sure that the 
+repeatedly by typing ‚Äúzr *‚Äù many times. Play the MUD and make sure that the 
 basic commands (killing mobs as a mortal, casting spells, etc.) work correctly. 
 
 Step 5. If you are satisfied that your changes work correctly, you are 
@@ -71,20 +71,20 @@ encouraged to submit them to be included as part of the tbaMUD distribution so
 that future releases of tbaMUD will support your platform. This prevents you 
 from re-porting the code every time a new version is released and allows other 
 people who use your platform to enjoy tbaMUD as well. To submit your changes 
-you must make a patch file using the GNU ëdiffí program. diff will create a 
-patch file which can be later used with the ëpatchí utility to incorporate 
+you must make a patch file using the GNU ‚Äòdiff‚Äô program. diff will create a 
+patch file which can be later used with the ‚Äòpatch‚Äô utility to incorporate 
 your changes into the stock tbaMUD distribution. For example, if you have a 
-copy of tbaMUD in the ìstock-tbaî directory, and your changes are in ìmy-tbaî, 
+copy of tbaMUD in the ‚Äústock-tba‚Äù directory, and your changes are in ‚Äúmy-tba‚Äù, 
 you can create a patch file like this: 
 
 diff -u --new-file --recursive stock-tba/src my-tba/src > patch 
 
-This will create a file called ëpatchí with your patches. You should then try 
-to use the ëpatchí program (the inverse of ëdiffí) on a copy of tbaMUD to make
+This will create a file called ‚Äòpatch‚Äô with your patches. You should then try 
+to use the ‚Äòpatch‚Äô program (the inverse of ‚Äòdiff‚Äô) on a copy of tbaMUD to make
 sure that tbaMUD is correctly changed to incorporate your patches. This step is
-very important: if you donít create these patches correctly, your work will be 
+very important: if you don‚Äôt create these patches correctly, your work will be 
 useless because no one will be able to figure out what you did! Make sure to 
-read the documentation to ëdiffí and ëpatchí if you donít understand how to use
+read the documentation to ‚Äòdiff‚Äô and ‚Äòpatch‚Äô if you don‚Äôt understand how to use
 them. If your patches work, CELEBRATE!! 
 
 Step 6. Write a README file for your operating system that describes everything
@@ -107,7 +107,7 @@ Each system to which tba is already ported has a CIRCLE_xx constant associated
 with it: CIRCLE_UNIX for plain vanilla UNIX tbaMUD, CIRCLE_WINDOWS for MS 
 Windows, CIRCLE_OS2 for IBM OS/2, and CIRCLE_AMIGA for the Amiga. You must use 
 a similar constant for your system. At the top of your conf.h, make sure to 
-comment out ì#define CIRCLE_UNIXî and add ì#define CIRCLE_YOUR_SYSTEMî. 
+comment out ‚Äú#define CIRCLE_UNIX‚Äù and add ‚Äú#define CIRCLE_YOUR_SYSTEM‚Äù. 
 
 3.2 ANSI C and GCC 
 As long as your system has an ANSI C compiler, all of the code (except for 
@@ -122,22 +122,22 @@ you use gcc.
 Make absolutely sure to use non-blocking I/O; i.e. make sure to enable the 
 option so that the read() system call will immediately return with an error if
 there is no data available. If you do not use non-blocking I/O, read() will 
-ìblock,î meaning it will wait infinitely for one particular player to type 
+‚Äúblock,‚Äù meaning it will wait infinitely for one particular player to type 
 something even if other players are trying to enter commands. If your system 
 does not implement non-blocking I/O correctly, try using the 
 POSIX_NONBLOCK_BROKEN constant in sysdep.h. 
 
 3.4 Timing 
 tbaMUD needs a fairly precise (on the order of 5 or 10 ms) timer in order to 
-correctly schedule events such as zone resets, point regeneration (ìticksî), 
+correctly schedule events such as zone resets, point regeneration (‚Äúticks‚Äù), 
 corpse decomposition, and other automatic tasks. If your system supports the 
 select() system call with sufficient precision, the default timing code should 
-work correctly. If not, youíll have to find out which system calls your system 
+work correctly. If not, you‚Äôll have to find out which system calls your system 
 supports for determining how much time has passed and replace the select() 
 timing method. 
 
 3.5 Signals and Signal Handlers 
-A note about signals: Most systems donít support the concept of signals in the
+A note about signals: Most systems don‚Äôt support the concept of signals in the
 same way that UNIX does. Since signals are not a critical part of how tbaMUD 
 works anyway (they are only used for updating the wizlist and some other 
 trivial things), all signal handling is turned off by default when compiling 
@@ -147,7 +147,7 @@ conf.h file and all signal code will be ignored automatically.
 
 4 Final Note 
 IMPORTANT: Remember to keep any changes you make surrounded by #ifdef 
-statements (i.e. ì#ifdef CIRCLE_WINDOWS ... #endifî). If you make absolutely 
+statements (i.e. ‚Äú#ifdef CIRCLE_WINDOWS ... #endif‚Äù). If you make absolutely 
 sure to mark all of your changes with #ifdef statements, then your patches 
 (once you get them to work) will be suitable for incorporation into the 
 tbaMUD distribution, meaning that tbaMUD will officially support your platform. 

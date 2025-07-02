@@ -594,10 +594,10 @@ void aedit_parse(descriptor_data *d, char *arg)
       aedit_disp_menu(d);
       return;
     }
-    if (OLC_ACTION(d)->sort_as) {
+    if (OLC_ACTION(d)->sort_as)
       free(OLC_ACTION(d)->sort_as);
       OLC_ACTION(d)->sort_as = strdup(arg);
-    }
+
     break;
 
   case AEDIT_MIN_CHAR_POS:

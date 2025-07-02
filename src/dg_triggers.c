@@ -554,6 +554,33 @@ int cast_mtrigger(char_data *actor, char_data *ch, int spellnum)
   return 1;
 }
 
+int damage_mtrigger(char_data *actor, char_data *victim, int dam, int attacktype)
+{
+  trig_data *t;
+  char buf[MAX_INPUT_LENGTH];
+
+  if (victim == NULL)
+    return dam;
+
+  if (!SCRIPT_CHECK(victim, MTRIG_DAMAGE) || AFF_FLAGGED(victim, AFF_CHARM))
+    return dam;
+
+  for (t = TRIGGERS(SCRIPT(victim)); t; t = t->next) {
+    if (TRIGGER_CHECK(t, MTRIG_DAMAGE) &&
+        (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
+      ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
+      ADD_UID_VAR(buf, t, char_script_id(victim), "victim", 0);
+      sprintf(buf, "%d", dam);
+      add_var(&GET_TRIG_VARS(t), "damage", buf, 0);
+      add_var(&GET_TRIG_VARS(t), "attacktype", skill_name(attacktype), 0);
+      return script_driver(&victim, t, MOB_TRIGGER, TRIG_NEW);
+    }
+  }
+
+  return dam;
+}
+
+
 int leave_mtrigger(char_data *actor, int dir)
 {
   trig_data *t;
