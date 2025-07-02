@@ -546,7 +546,6 @@ ACMD(do_split)
     if (rest) {
       send_to_char(ch, "%d coin%s %s not splitable, so you keep the money.\r\n",
 		rest, (rest == 1) ? "" : "s", (rest == 1) ? "was" : "were");
-      increase_gold(ch, rest);
     }
   } else {
     send_to_char(ch, "How many coins do you wish to split with your group?\r\n");

@@ -1,6 +1,6 @@
 #30200
-The Top Of The Greasepole~
-   You've made it to the top!  All you have to do now is get down...
+The Top of the Greasepole~
+You've made it to the top! All you have to do now is get down.
 ~
 302 4 0 0 0 5
 D5
@@ -8,6 +8,11 @@ It's a long slide down.
 ~
 ~
 0 -1 30192
+E
+pole greasepole~
+   The pole still looks pretty bad, but it doesn't look quite as bad as before.
+
+~
 E
 info credits~
    See zone description room for Campus.
@@ -49,11 +54,6 @@ Links: 64e to catacombs
 301, 302 and 303.  Please ensure that any entrances into the area are flagged
 nomob to keep them in.  -  Parna for TBAMud.)
 ~
-E
-pole greasepole~
-   The pole still looks pretty bad, but it doesn't look quite as bad as before.
-
-~
 S
 #30201
 Reception Desk~
@@ -71,12 +71,12 @@ D2
 ~
 0 -1 30142
 E
-mail~
-   Why are you trying to look at the mail, it's private!
-~
-E
 hooks hook key keys~
    Unfortunately you don't see any keys hanging off of any of the hooks.
+~
+E
+mail~
+   Why are you trying to look at the mail, it's private!
 ~
 S
 #30202
@@ -92,9 +92,10 @@ This way leads back to the reception desk.
 door~
 1 30103 30201
 E
-chair~
-   The chair is not unusual in any way whatsoever.  The chair is in excellent
-condition.
+filing cabinet files~
+   Looking through the files you see that Wally World was originally slated to
+have at least eleven levels but the designers got sick and tired of it and gave
+up after just a few levels.
 ~
 E
 desk~
@@ -102,10 +103,9 @@ desk~
 excellent condition.
 ~
 E
-filing cabinet files~
-   Looking through the files you see that Wally World was originally slated to
-have at least eleven levels but the designers got sick and tired of it and gave
-up after just a few levels.
+chair~
+   The chair is not unusual in any way whatsoever.  The chair is in excellent
+condition.
 ~
 S
 #30203
@@ -230,13 +230,13 @@ You can't tell where this leads.
 door~
 1 -1 30210
 E
-door~
-   The door on the west has the number 206 and the door on the east, 205.
-~
-E
 floor carpet~
    This is a nice, groovy, red patterned carpet which extends all the way down
 the hall.
+~
+E
+door~
+   The door on the west has the number 206 and the door on the east, 205.
 ~
 S
 #30209
@@ -300,14 +300,14 @@ You can't tell where this leads.
 door~
 1 -1 30213
 E
-door~
-   The door on the west has the number 204 and the door on the east, 203 while
-the door to the north has the number 201.
-~
-E
 floor carpet~
    This is a nice, groovy, red patterned carpet which extends all the way down
 the hall.
+~
+E
+door~
+   The door on the west has the number 204 and the door on the east, 203 while
+the door to the north has the number 201.
 ~
 S
 #30212
@@ -388,13 +388,13 @@ You can't tell where this leads.
 door~
 1 -1 30217
 E
-door~
-   The door on the west has the number 208 and the door on the east, 207.
-~
-E
 floor carpet~
    This is a nice, groovy, red patterned carpet which extends all the way down
 the hall.
+~
+E
+door~
+   The door on the west has the number 208 and the door on the east, 207.
 ~
 S
 #30216
@@ -458,14 +458,14 @@ You can't tell where this leads.
 door~
 1 -1 30220
 E
-door~
-   The door on the west has the number 210 and the door on the east, 209 and the
-door to the south has the number 202.
-~
-E
 floor carpet~
    This is a nice, groovy, red patterned carpet which extends all the way down
 the hall.
+~
+E
+door~
+   The door on the west has the number 210 and the door on the east, 209 and the
+door to the south has the number 202.
 ~
 S
 #30219
@@ -654,13 +654,13 @@ The trapdoor leads up... beyond that, you aren't sure where it goes.
 trapdoor door~
 1 -1 30233
 E
+trapdoor~
+   The trapdoor is neatly fastened with a small hook.
+~
+E
 desk chair plush~
    The desk and chairs are neatly arranged as if in preparation for an upcoming
 meeting or something of the sort.
-~
-E
-trapdoor~
-   The trapdoor is neatly fastened with a small hook.
 ~
 S
 #30229
@@ -770,12 +770,12 @@ A chute leads down from this room.
 ~
 0 -1 30235
 E
-chute~
-   The chute is rather smooth and looks to be a fun ride.
-~
-E
 grate~
    Beyond the grate you can see the attic.
+~
+E
+chute~
+   The chute is rather smooth and looks to be a fun ride.
 ~
 S
 #30235
@@ -871,12 +871,12 @@ An exit from this hellhole.
 ~
 0 -1 30240
 E
-mess~
-   Need you ask?
-~
-E
 hell hole hellhole~
    Never seen one before?
+~
+E
+mess~
+   Need you ask?
 ~
 S
 #30240
@@ -897,12 +897,12 @@ A run-down house lies to the west.
 ~
 0 -1 30239
 E
-house run-down~
-   It's in bad shape.
-~
-E
 overturned police policemobile mobile~
    It is blocking the road quite nicely.  Maybe it is meant to impede passage.
+~
+E
+house run-down~
+   It's in bad shape.
 ~
 S
 #30241
@@ -1344,16 +1344,16 @@ The auditorium is to the north.
 ~
 0 -1 30259
 E
-drab brown curtains curtain~
-   They are just your average, everyday, drab brown curtains.
+sturdy wooden plank planks~
+   They are sturdy.  They are wooden.  They are planks.
 ~
 E
 cords cord pulley pulleys~
    Hey!  It can make you look like you are flying!
 ~
 E
-sturdy wooden plank planks~
-   They are sturdy.  They are wooden.  They are planks.
+drab brown curtains curtain~
+   They are just your average, everyday, drab brown curtains.
 ~
 S
 #30262
@@ -1403,12 +1403,12 @@ It's the same stairwell.
 ~
 0 -1 30257
 E
-cobweb cobwebs web webs~
-   Don't disturb them now!
-~
-E
 huge stone door~
    The huge stone door looks very inviting.
+~
+E
+cobweb cobwebs web webs~
+   Don't disturb them now!
 ~
 S
 #30265
@@ -1785,10 +1785,6 @@ It is too dark to tell.
 ~
 0 -1 30276
 E
-door~
-   This door is covered with all types of non-magical sigils.
-~
-E
 sigils~
    The sigils seem to form some strange shapes:
                        SSSSS
@@ -1804,6 +1800,10 @@ sigils~
                   SS  SSS
                    SSSSS
 I wonder what it could be?
+~
+E
+door~
+   This door is covered with all types of non-magical sigils.
 ~
 S
 #30281
@@ -1851,12 +1851,12 @@ You are repulsed by this exit since the exit to the east is well lit.
 ~
 0 -1 30274
 E
-light~
-   It's nice, warm, and inviting.
-~
-E
 dark~
    Are you mad?
+~
+E
+light~
+   It's nice, warm, and inviting.
 ~
 S
 #30283
@@ -1875,12 +1875,12 @@ Back into darkness, I don't think so!
 ~
 0 -1 30282
 E
-light~
-   It's nice, warm, and inviting.
-~
-E
 dark~
    Are you mad?
+~
+E
+light~
+   It's nice, warm, and inviting.
 ~
 S
 #30284
@@ -1916,10 +1916,6 @@ This is just an exit.
 ~
 0 -1 30106
 E
-door~
-   This door is covered with all types of non-magical sigils.
-~
-E
 sigils~
    The sigils seem to form some strange shapes:
         MMM     MMM    OOO      OOO    !!
@@ -1928,6 +1924,10 @@ sigils~
         MM  MMM  MM  OO   OO  OO   OO  !!
         MM   M   MM   OO OO    OO OO
         MM       MM    OOO      OOO    !!
+~
+E
+door~
+   This door is covered with all types of non-magical sigils.
 ~
 S
 #30285
