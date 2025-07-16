@@ -56,7 +56,7 @@ static struct char_data *next_combat_list = NULL;
 /* local file scope utility functions */
 static void perform_group_gain(struct char_data *ch, int base, struct char_data *victim);
 static void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_type);
-static void make_corpse(struct char_data *ch);
+static obj_data *make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
@@ -161,7 +161,7 @@ void stop_fighting(struct char_data *ch)
   update_pos(ch);
 }
 
-static void make_corpse(struct char_data *ch)
+static obj_data *make_corpse(struct char_data *ch)
 {
   char buf2[MAX_NAME_LENGTH + 64];
   struct obj_data *corpse, *o;
@@ -229,6 +229,7 @@ static void make_corpse(struct char_data *ch)
   IS_CARRYING_W(ch) = 0;
 
   obj_to_room(corpse, IN_ROOM(ch));
+  return corpse;
 }
 
 /* When ch kills victim */
@@ -250,9 +251,10 @@ void death_cry(struct char_data *ch)
       send_to_room(world[IN_ROOM(ch)].dir_option[door]->to_room, "Your blood freezes as you hear someone's death cry.\r\n");
 }
 
-void raw_kill(struct char_data * ch, struct char_data * killer)
+struct obj_data *raw_kill(struct char_data *ch, struct char_data *killer)
 {
-struct char_data *i;
+  struct char_data *i;
+  obj_data *corpse;
 
   if (FIGHTING(ch))
     stop_fighting(ch);
@@ -284,23 +286,24 @@ struct char_data *i;
 
   update_pos(ch);
 
-  make_corpse(ch);
+  corpse = make_corpse(ch);
   extract_char(ch);
 
   if (killer) {
     autoquest_trigger_check(killer, NULL, NULL, AQ_MOB_SAVE);
     autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
   }
+  return corpse;
 }
 
-void die(struct char_data * ch, struct char_data * killer)
+struct obj_data *die(struct char_data *ch, struct char_data *killer)
 {
   gain_exp(ch, -(GET_EXP(ch) / 2));
   if (!IS_NPC(ch)) {
     REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
     REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
   }
-  raw_kill(ch, killer);
+  return raw_kill(ch, killer);
 }
 
 static void perform_group_gain(struct char_data *ch, int base,
@@ -581,16 +584,54 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
   return (0);
 }
 
+static void perform_autohandling(char_data *ch, const char_data *victim, int local_gold, const obj_data *corpse_obj) {
+  char local_buf[256];
+  obj_data *i;
+  int count = 0, found = FALSE;
+
+  if (IN_ROOM(ch) == NOWHERE || ch == victim) {
+    return;
+  }
+  // find the last corpse in the room
+  for (i = world[IN_ROOM(ch)].contents; i ; i = i->next_content) {
+    if (is_name("corpse", i->name) && CAN_SEE_OBJ(ch, i)) {
+      count++;
+    }
+    if (i == corpse_obj) {
+      found = TRUE;
+      break; // stop looking
+    }
+  }
+  if (count == 0 || !found) {
+    return; // no corpse here - it may have been removed by some other method.
+  }
+  if (GROUP(ch) && local_gold > 0 && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
+    sprintf(local_buf,"all.coin %d.corpse", count);
+    do_get(ch, local_buf, 0, 0);
+    sprintf(local_buf,"%d", local_gold);
+    do_split(ch, local_buf, 0, 0);
+  } else if (!IS_NPC(ch)  && PRF_FLAGGED(ch, PRF_AUTOGOLD)) {
+    sprintf(local_buf,"all.coin %d.corpse", count);
+    do_get(ch, local_buf, 0, 0);
+  }
+  if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOLOOT)) {
+    sprintf(local_buf,"all %d.corpse", count);
+    do_get(ch, local_buf, 0, 0);
+  }
+  if (IS_NPC(victim) && !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOSAC)) {
+    sprintf(local_buf,"%d.corpse", count);
+    do_sac(ch, local_buf,0,0);
+  }
+}
+
 /* This function returns the following codes:
  *	< 0	Victim died.
  *	= 0	No damage.
  *	> 0	How much damage done. */
 int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
-  long local_gold = 0, happy_gold = 0;
-  char local_buf[256];
-  struct char_data *tmp_char;
-  struct obj_data *corpse_obj;
+  int local_gold = 0, happy_gold = 0;
+  obj_data *corpse_obj;
 
   if (GET_POS(victim) <= POS_DEAD) {
     /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
@@ -758,31 +799,15 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     if (IS_NPC(victim)) {
       if ((IS_HAPPYHOUR) && (IS_HAPPYGOLD))
       {
-        happy_gold = (long)(GET_GOLD(victim) * (((float)(HAPPY_GOLD))/(float)100));
+        happy_gold = (int)(GET_GOLD(victim) * (((float)(HAPPY_GOLD))/(float)100));
         happy_gold = MAX(0, happy_gold);
         increase_gold(victim, happy_gold);
       }
       local_gold = GET_GOLD(victim);
-      sprintf(local_buf,"%ld", (long)local_gold);
     }
 
-    die(victim, ch);
-    if (GROUP(ch) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
-      generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
-      if (corpse_obj) {
-        do_get(ch, "all.coin corpse", 0, 0);
-        do_split(ch, local_buf, 0, 0);
-      }
-      /* need to remove the gold from the corpse */
-    } else if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOGOLD)) {
-      do_get(ch, "all.coin corpse", 0, 0);
-    }
-    if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOLOOT)) {
-      do_get(ch, "all corpse", 0, 0);
-    }
-    if (IS_NPC(victim) && !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOSAC)) {
-      do_sac(ch,"corpse",0,0);
-    }
+    corpse_obj = die(victim, ch);
+    perform_autohandling(ch, victim, local_gold, corpse_obj);
     return (-1);
   }
   return (dam);
