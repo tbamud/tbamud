@@ -9,7 +9,6 @@ set(TOOLS
   sign
   split
   wld2html
-  webster
 )
 
 # common includes and flags
