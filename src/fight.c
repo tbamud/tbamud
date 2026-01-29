@@ -127,23 +127,19 @@ void check_killer(struct char_data *ch, struct char_data *vict)
 
 bool pk_allowed(struct char_data *ch, struct char_data *victim)
 {
-    if (IS_NPC(ch) || IS_NPC(victim))
-        return true;  // NPCs not restricted
+  /* NPCs are never restricted */
+  if (IS_NPC(ch) || IS_NPC(victim))
+    return true;
 
-    switch (CONFIG_PK_SETTING) {
-        case CONFIG_PK_OFF:
-            return false;
+  if (CONFIG_PK_SETTING == CONFIG_PK_OFF)
+    return false;
 
-        case CONFIG_PK_FREEFORALL:
-            return true;
+  if (CONFIG_PK_SETTING == CONFIG_PK_LIMITED)
+    check_killer(ch, victim);
 
-        case CONFIG_PK_LIMITED:
-            check_killer(ch, victim);
-            return true;
-        default:
-            return false;
-    }
+  return true;
 }
+
 
 /* start one char fighting another (yes, it is horrible, I know... )  */
 void set_fighting(struct char_data *ch, struct char_data *vict)
