@@ -3838,8 +3838,8 @@ static void load_default_config( void )
   /* This function is called only once, at boot-time. We assume config_info is
    * empty. -Welcor */
   /* Game play options. */
-  CONFIG_PK_ALLOWED 	        = pk_allowed;
-  CONFIG_PT_ALLOWED             = pt_allowed;
+  CONFIG_PK_SETTING 	          = pk_setting;
+  CONFIG_PT_SETTING             = pt_setting;
   CONFIG_LEVEL_CAN_SHOUT 	    = level_can_shout;
   CONFIG_HOLLER_MOVE_COST 	    = holler_move_cost;
   CONFIG_TUNNEL_SIZE 	        = tunnel_size;
@@ -4113,12 +4113,12 @@ void load_config( void )
         break;
 
       case 'p':
-        if (!str_cmp(tag, "pk_allowed"))
-          CONFIG_PK_ALLOWED = num;
+        if (!str_cmp(tag, "pk_setting"))
+          CONFIG_PK_SETTING = num;
         else if (!str_cmp(tag, "protocol_negotiation"))
           CONFIG_PROTOCOL_NEGOTIATION = num;
-        else if (!str_cmp(tag, "pt_allowed"))
-          CONFIG_PT_ALLOWED = num;
+        else if (!str_cmp(tag, "pt_setting"))
+          CONFIG_PT_SETTING = num;
         break;
 
       case 'r':

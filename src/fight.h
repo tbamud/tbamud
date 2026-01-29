@@ -34,6 +34,7 @@ void  set_fighting(struct char_data *ch, struct char_data *victim);
 int skill_message(int dam, struct char_data *ch, struct char_data *vict,
           int attacktype);
 void  stop_fighting(struct char_data *ch);
+bool pk_allowed(struct char_data *ch, struct char_data *victim);
 
 
 /* Global variables */

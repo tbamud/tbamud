@@ -939,9 +939,15 @@ do                                                              \
 #define CONFIG_CONFFILE         config_info.CONFFILE
 
 /** Player killing allowed or not? */
-#define CONFIG_PK_ALLOWED       config_info.play.pk_allowed
+#define CONFIG_PK_SETTING       config_info.play.pk_setting
+#define CONFIG_PK_OFF           0 /* Players are prevented from damaging or fighting other players in code */
+#define CONFIG_PK_LIMITED       1 /* Players may damage and fight but will be flagged PLR_KILLER */
+#define CONFIG_PK_FREEFORALL    2 /* No restrictions or flags for player damaging or killing */
 /** Player thieving allowed or not? */
-#define CONFIG_PT_ALLOWED       config_info.play.pt_allowed
+#define CONFIG_PT_SETTING       config_info.play.pt_setting
+#define CONFIG_PT_OFF           0 /* Players are prevented from stealing from other players in code */
+#define CONFIG_PT_LIMITED       1 /* Players may steal from other players but will be flagged PLR_THIEF if caught */
+#define CONFIG_PT_FREEFORALL    2 /* No restrictions or flags for player stealing */
 /** What level to use the shout command? */
 #define CONFIG_LEVEL_CAN_SHOUT  config_info.play.level_can_shout
 /** How many move points does holler cost? */

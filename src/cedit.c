@@ -79,8 +79,8 @@ static void cedit_setup(struct descriptor_data *d)
 
   /* Copy the current configuration from the config_info to this one and copy
    * the game play options from the configuration info struct. */
-  OLC_CONFIG(d)->play.pk_allowed          = CONFIG_PK_ALLOWED;
-  OLC_CONFIG(d)->play.pt_allowed          = CONFIG_PT_ALLOWED;
+  OLC_CONFIG(d)->play.pk_setting          = CONFIG_PK_SETTING;
+  OLC_CONFIG(d)->play.pt_setting          = CONFIG_PT_SETTING;
   OLC_CONFIG(d)->play.level_can_shout     = CONFIG_LEVEL_CAN_SHOUT;
   OLC_CONFIG(d)->play.holler_move_cost    = CONFIG_HOLLER_MOVE_COST;
   OLC_CONFIG(d)->play.tunnel_size         = CONFIG_TUNNEL_SIZE;
@@ -183,8 +183,8 @@ static void cedit_save_internally(struct descriptor_data *d)
   /* see if we need to reassign spec procs on rooms */
   int reassign = (CONFIG_DTS_ARE_DUMPS != OLC_CONFIG(d)->play.dts_are_dumps);
   /* Copy the data back from the descriptor to the config_info structure. */
-  CONFIG_PK_ALLOWED          = OLC_CONFIG(d)->play.pk_allowed;
-  CONFIG_PT_ALLOWED          = OLC_CONFIG(d)->play.pt_allowed;
+  CONFIG_PK_SETTING          = OLC_CONFIG(d)->play.pk_setting;
+  CONFIG_PT_SETTING          = OLC_CONFIG(d)->play.pt_setting;
   CONFIG_LEVEL_CAN_SHOUT     = OLC_CONFIG(d)->play.level_can_shout;
   CONFIG_HOLLER_MOVE_COST    = OLC_CONFIG(d)->play.holler_move_cost;
   CONFIG_TUNNEL_SIZE         = OLC_CONFIG(d)->play.tunnel_size;
@@ -339,9 +339,9 @@ int save_config( IDXTYPE nowhere )
   );
 
   fprintf(fl, "* Is player killing allowed on the mud?\n"
-              "pk_allowed = %d\n\n", CONFIG_PK_ALLOWED);
+              "pk_setting = %d\n\n", CONFIG_PK_SETTING);
   fprintf(fl, "* Is player thieving allowed on the mud?\n"
-  	      "pt_allowed = %d\n\n", CONFIG_PT_ALLOWED);
+  	      "pt_setting = %d\n\n", CONFIG_PT_SETTING);
   fprintf(fl, "* What is the minimum level a player can shout/gossip/etc?\n"
               "level_can_shout = %d\n\n", CONFIG_LEVEL_CAN_SHOUT);
   fprintf(fl, "* How many movement points does shouting cost the player?\n"
@@ -608,8 +608,10 @@ static void cedit_disp_menu(struct descriptor_data *d)
 
 static void cedit_disp_game_play_options(struct descriptor_data *d)
 {
-  int m_opt;
+  int m_opt, pk_setting, pt_setting;
   m_opt = OLC_CONFIG(d)->play.map_option;
+  pk_setting = OLC_CONFIG(d)->play.pk_setting;
+  pt_setting = OLC_CONFIG(d)->play.pt_setting;
   get_char_colors(d->character);
   clear_screen(d);
 
@@ -644,8 +646,8 @@ static void cedit_disp_game_play_options(struct descriptor_data *d)
         "%s8%s) Scripts on PC's         : %s%s\r\n"
         "%sQ%s) Exit To The Main Menu\r\n"
         "Enter your choice : ",
-        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.pk_allowed),
-        grn, nrm, cyn, CHECK_VAR(OLC_CONFIG(d)->play.pt_allowed),
+        grn, nrm, cyn, pk_setting == 0 ? "Off" : (pk_setting == 1 ? "Limited" : (pk_setting == 2 ? "Free-for-all" : "Invalid!")),
+        grn, nrm, cyn, pt_setting == 0 ? "Off" : (pt_setting == 1 ? "Limited" : (pt_setting == 2 ? "Free-for-all" : "Invalid!")),
         grn, nrm, cyn, OLC_CONFIG(d)->play.level_can_shout,
         grn, nrm, cyn, OLC_CONFIG(d)->play.holler_move_cost,
         grn, nrm, cyn, OLC_CONFIG(d)->play.tunnel_size,
@@ -883,13 +885,21 @@ void cedit_parse(struct descriptor_data *d, char *arg)
       switch (*arg) {
         case 'a':
         case 'A':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.pk_allowed);
-          break;
+          write_to_output(d, "1) No Player Killing\r\n");
+          write_to_output(d, "2) Limited Player Killing\r\n");
+          write_to_output(d, "3) Free-for-all!\r\n");
+          write_to_output(d, "Enter choice: ");
+          OLC_MODE(d) = CEDIT_PK_SETTING;
+          return;
 
         case 'b':
         case 'B':
-          TOGGLE_VAR(OLC_CONFIG(d)->play.pt_allowed);
-          break;
+          write_to_output(d, "1) No Player Thieving\r\n");
+          write_to_output(d, "2) Limited Player Thieving\r\n");
+          write_to_output(d, "3) Free-for-all!\r\n");
+          write_to_output(d, "Enter choice: ");
+          OLC_MODE(d) = CEDIT_PT_SETTING;
+          return;
 
         case 'c':
         case 'C':
@@ -1704,6 +1714,30 @@ void cedit_parse(struct descriptor_data *d, char *arg)
         cedit_disp_game_play_options(d);
       } else {
         OLC_CONFIG(d)->play.minimap_size = MIN(MAX((atoi(arg)), 1), 12);
+        cedit_disp_game_play_options(d);
+      }
+      break;
+
+    case CEDIT_PK_SETTING:
+      if (!*arg || (atoi(arg) < 0) || (atoi(arg) > 3) ) {
+        write_to_output(d,
+          "That is an invalid choice!\r\n"
+          "Select 1, 2 or 3 (0 to cancel) :");
+      } else {
+        if ((atoi(arg) >= 1) && (atoi(arg) <= 3))
+          OLC_CONFIG(d)->play.pk_setting = (atoi(arg) - 1);
+        cedit_disp_game_play_options(d);
+      }
+      break;
+
+    case CEDIT_PT_SETTING:
+      if (!*arg || (atoi(arg) < 0) || (atoi(arg) > 3) ) {
+        write_to_output(d,
+          "That is an invalid choice!\r\n"
+          "Select 1, 2 or 3 (0 to cancel) :");
+      } else {
+        if ((atoi(arg) >= 1) && (atoi(arg) <= 3))
+          OLC_CONFIG(d)->play.pt_setting = (atoi(arg) - 1);
         cedit_disp_game_play_options(d);
       }
       break;

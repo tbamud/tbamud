@@ -120,7 +120,7 @@ ASPELL(spell_summon)
     return;
   }
 
-  if (!CONFIG_PK_ALLOWED) {
+  if (CONFIG_PK_SETTING == CONFIG_PK_OFF) {
     if (MOB_FLAGGED(victim, MOB_AGGRESSIVE)) {
       act("As the words escape your lips and $N travels\r\n"
 	  "through time and space towards you, you realize that $E is\r\n"
@@ -265,7 +265,7 @@ ASPELL(spell_charm)
   else if (AFF_FLAGGED(victim, AFF_CHARM) || level < GET_LEVEL(victim))
     send_to_char(ch, "You fail.\r\n");
   /* player charming another player - no legal reason for this */
-  else if (!CONFIG_PK_ALLOWED && !IS_NPC(victim))
+  else if ((CONFIG_PK_SETTING == CONFIG_PK_OFF) && !IS_NPC(victim))
     send_to_char(ch, "You fail - shouldn't be doing it anyway.\r\n");
   else if (circle_follow(victim, ch))
     send_to_char(ch, "Sorry, following in circles is not allowed.\r\n");

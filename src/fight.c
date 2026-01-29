@@ -110,16 +110,39 @@ void update_pos(struct char_data *victim)
 
 void check_killer(struct char_data *ch, struct char_data *vict)
 {
-  if (PLR_FLAGGED(vict, PLR_KILLER) || PLR_FLAGGED(vict, PLR_THIEF))
+  if (PLR_FLAGGED(vict, PLR_KILLER) || PLR_FLAGGED(vict, PLR_THIEF)) {
     return;
-  if (PLR_FLAGGED(ch, PLR_KILLER) || IS_NPC(ch) || IS_NPC(vict) || ch == vict)
-    return;
+  }
+
+  if (PLR_FLAGGED(ch, PLR_KILLER) || IS_NPC(ch) || IS_NPC(vict) || ch == vict){
+      return;
+  }
 
   SET_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
   send_to_char(ch, "If you want to be a PLAYER KILLER, so be it...\r\n");
   mudlog(BRF, MAX(LVL_IMMORT, MAX(GET_INVIS_LEV(ch), GET_INVIS_LEV(vict))), 
     TRUE, "PC Killer bit set on %s for initiating attack on %s at %s.",
     GET_NAME(ch), GET_NAME(vict), world[IN_ROOM(vict)].name);
+}
+
+bool pk_allowed(struct char_data *ch, struct char_data *victim)
+{
+    if (IS_NPC(ch) || IS_NPC(victim))
+        return true;  // NPCs not restricted
+
+    switch (CONFIG_PK_SETTING) {
+        case CONFIG_PK_OFF:
+            return false;
+
+        case CONFIG_PK_FREEFORALL:
+            return true;
+
+        case CONFIG_PK_LIMITED:
+            check_killer(ch, victim);
+            return true;
+        default:
+            return false;
+    }
 }
 
 /* start one char fighting another (yes, it is horrible, I know... )  */
@@ -133,6 +156,12 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
     return;
   }
 
+
+  if (!pk_allowed(ch, vict)) {
+    send_to_char(ch, "Player killing is not permitted.\r\n");
+    return;
+  }
+
   ch->next_fighting = combat_list;
   combat_list = ch;
 
@@ -142,8 +171,6 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
   FIGHTING(ch) = vict;
   GET_POS(ch) = POS_FIGHTING;
 
-  if (!CONFIG_PK_ALLOWED)
-    check_killer(ch, vict);
 }
 
 /* remove a char from the list of fighting chars */
@@ -603,6 +630,12 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     return (-1);			/* -je, 7/7/92 */
   }
 
+  /* Check for PK if this is not a PK MUD */
+  if (!pk_allowed(ch, victim)) {
+    send_to_char(ch, "Player killing is not permitted.\r\n");
+    return (0);
+  }
+
   /* peaceful rooms */
   if (ch->nr != real_mobile(DG_CASTER_PROXY) &&
       ch != victim && ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL)) {
@@ -649,13 +682,6 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   /* Cut damage in half if victim has sanct, to a minimum 1 */
   if (AFF_FLAGGED(victim, AFF_SANCTUARY) && dam >= 2)
     dam /= 2;
-
-  /* Check for PK if this is not a PK MUD */
-  if (!CONFIG_PK_ALLOWED) {
-    check_killer(ch, victim);
-    if (PLR_FLAGGED(ch, PLR_KILLER) && (ch != victim))
-      dam = 0;
-  }
 
   /* Set the maximum damage per round and subtract the hit points */
   dam = MAX(MIN(dam, 100), 0);
