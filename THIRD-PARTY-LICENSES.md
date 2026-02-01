@@ -24,3 +24,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Python 3.12 (CPython)
+
+Copyright (c) 2001-2024 Python Software Foundation
+
+Python Software Foundation License Version 2 (PSF-2.0)
+
+This project embeds CPython and is subject to the PSF-2.0 license. See the
+Python source distribution or documentation for the full license text.

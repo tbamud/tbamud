@@ -22,7 +22,7 @@
 #include "genolc.h"
 #include "oasis.h"
 #include "improved-edit.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "constants.h"
 #include "act.h" /* ACMDs located within the act*.c files */
 #include "ban.h"
@@ -334,6 +334,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "trigedit" , "trigedit", POS_DEAD    , do_oasis_trigedit, LVL_BUILDER, 0 },
   { "typo"     , "typo"    , POS_DEAD    , do_ibt      , 0, SCMD_TYPO },
   { "tlist"    , "tlist"   , POS_DEAD    , do_oasis_list, LVL_BUILDER, SCMD_OASIS_TLIST },
+  { "pylist"   , "pylist"  , POS_DEAD    , do_pylist   , LVL_BUILDER, 0 },
   { "tcopy"    , "tcopy"   , POS_DEAD    , do_oasis_copy, LVL_GOD, CON_TRIGEDIT },
   { "tstat"    , "tstat"   , POS_DEAD    , do_tstat    , LVL_BUILDER, 0 },
 

@@ -18,7 +18,7 @@
 #include "db.h"
 #include "spells.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "oasis.h"
 #include "act.h"
 #include "quest.h"

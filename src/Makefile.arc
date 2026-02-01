@@ -76,7 +76,7 @@ act.o.wizard: act.c.wizard h.conf h.sysdep h.structs \
 o.set: c.set h.conf h.sysdep h.structs \
   h.utils h.comm h.interpreter h.handler \
   h.db h.constants h.genobj h.genolc h.genwld h.genzon h.oasis \
-  h.improved-edit h.modify h.dg_scripts h.set
+  h.improved-edit h.modify h.set
 	$(CC) -c $(CFLAGS) c.set -o o.set
 o.ban: c.ban h.conf h.sysdep h.structs h.utils h.comm h.interpreter h.handler h.db
 	$(CC) -c $(CFLAGS) c.ban
@@ -159,7 +159,7 @@ o.weather: c.weather h.conf h.sysdep h.structs h.utils h.comm h.handler \
   h.interpreter h.db
 	$(CC) -c $(CFLAGS) c.weather
 o.players: c.players h.conf h.sysdep h.structs h.utils h.db h.handler \
-  h.pfdefaults h.dg_scripts h.comm h.interpreter h.genolc h.config h.spells 
+  h.pfdefaults h.comm h.interpreter h.genolc h.config h.spells 
 	$(CC) -c $(CFLAGS) c.players
 o.quest: c.quest h.conf h.sysdep h.structs h.utils h.interpreter h.handler \
   h.comm h.db h.screen h.quest

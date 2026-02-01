@@ -1,27 +1,15 @@
 /**
-* @file dg_event.c
-* This file contains a simplified event system to allow trigedit 
-* to use the "wait" command, causing a delay in the middle of a script.
-* This system could easily be expanded by coders who wish to implement
-* an event driven mud.
+* @file py_event.c
 * 
-* Part of the core tbaMUD source code distribution, which is a derivative
-* of, and continuation of, CircleMUD.
-* 
-* This source code, which was not part of the CircleMUD legacy code,
-* was created by the following people:                                      
-* $Author: Mark A. Heilpern/egreen/Welcor $                              
-* $Date: 2004/10/11 12:07:00$                                            
-* $Revision: 1.0.14 $                                                    
+* This set of code was not originally part of the circlemud distribution.
 */
-
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
-#include "dg_event.h"
+#include "py_event.h"
 #include "constants.h"
 #include "comm.h"  /* For access to the game pulse */
 #include "mud_event.h"

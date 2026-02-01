@@ -69,8 +69,9 @@
 #include "house.h"
 #include "oasis.h"
 #include "genolc.h"
-#include "dg_scripts.h"
-#include "dg_event.h"
+#include "py_triggers.h"
+#include "py_event.h"
+#include "py_scripts.h"
 #include "screen.h" /* to support the gemote act type command */
 #include "constants.h" /* For mud versions */
 #include "boards.h"
@@ -513,6 +514,8 @@ static void init_game(ush_int local_port)
   /* set up hash table for find_char() */
   init_lookup_table();
 
+  python_scripts_init();
+
   boot_db();
 
 #if defined(CIRCLE_UNIX) || defined(CIRCLE_MACINTOSH)
@@ -529,6 +532,8 @@ static void init_game(ush_int local_port)
   log("Entering game loop.");
 
   game_loop(mother_desc);
+
+  python_scripts_shutdown();
 
   Crash_save_all();
 

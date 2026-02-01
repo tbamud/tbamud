@@ -1,21 +1,11 @@
 /**
-* @file dg_event.h
-* This file contains defines for the simplified event system to allow trigedit 
-* to use the "wait" command, causing a delay in the middle of a script.
-* This system could easily be expanded by coders who wish to implement
-* an event driven mud.
+* @file py_event.h
 * 
-* Part of the core tbaMUD source code distribution, which is a derivative
-* of, and continuation of, CircleMUD.
-* 
-* This source code, which was not part of the CircleMUD legacy code,
-* is attributed to:                                      
-* $Author: Mark A. Heilpern/egreen/Welcor $                              
-* $Date: 2004/10/11 12:07:00$                                            
-* $Revision: 1.0.14 $                                                    
+* This set of code was not originally part of the circlemud distribution.
 */
-#ifndef _DG_EVENT_H_
-#define _DG_EVENT_H_
+
+#ifndef _PY_EVENT_H_
+#define _PY_EVENT_H_
 
 /** How often will heartbeat() call the 'wait' event function?
  * @deprecated Currently not used. */
@@ -80,4 +70,4 @@ long queue_elmt_key(struct q_element *qe);
 void queue_free(struct dg_queue *q);
 int  event_is_queued(struct event *event);
 
-#endif /* _DG_EVENT_H_ */
+#endif /* _PY_EVENT_H_ */

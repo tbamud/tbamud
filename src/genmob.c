@@ -15,7 +15,7 @@
 #include "genolc.h"
 #include "genmob.h"
 #include "genzon.h"
-#include "dg_olc.h"
+#include "py_olc.h"
 #include "spells.h"
 #include "toml_utils.h"
 
@@ -479,6 +479,9 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
   fprintf(fd, "alignment = %d\n", GET_ALIGNMENT(mob));
   toml_write_kv_string(fd, "mob_type", "enhanced");
 
+  /* --- DG Scripts --- */
+  script_save_to_disk(fd, mob, MOB_TRIGGER);
+
   fprintf(fd, "\n[mob.simple]\n");
   fprintf(fd, "level = %d\n", GET_LEVEL(mob));
   fprintf(fd, "hit_dice = %d\n", GET_HIT(mob));
@@ -526,9 +529,6 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
     fprintf(fd, "vnum = %d\n", (int)e->vnum);
     fprintf(fd, "quantity = %d\n", MAX(1, e->quantity));
   }
-
-  /* --- DG Scripts --- */
-  script_save_to_disk(fd, mob, MOB_TRIGGER);
 
   /* --- Skinning yields --- */
   {

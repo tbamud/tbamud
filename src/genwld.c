@@ -16,7 +16,7 @@
 #include "genwld.h"
 #include "genzon.h"
 #include "shop.h"
-#include "dg_olc.h"
+#include "py_olc.h"
 #include "mud_event.h"
 #include "toml_utils.h"
 
@@ -310,6 +310,8 @@ int save_rooms(zone_rnum rzone)
               room->room_flags[2], room->room_flags[3]);
       fprintf(sf, "sector = %d\n", room->sector_type);
 
+      script_save_to_disk(sf, room, WLD_TRIGGER);
+
       /* Now you write out the exits for the room. */
       for (j = 0; j < DIR_COUNT; j++) {
         if (R_EXIT(room, j)) {
@@ -356,7 +358,6 @@ int save_rooms(zone_rnum rzone)
           fprintf(sf, "dc = %d\n", entry->dc);
         }
       }
-      script_save_to_disk(sf, room, WLD_TRIGGER);
       fputc('\n', sf);
     }
   }

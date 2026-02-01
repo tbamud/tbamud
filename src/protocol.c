@@ -32,7 +32,7 @@
 #include "db.h"
 #include "screen.h"
 #include "improved-edit.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "act.h"
 #include "modify.h"
 

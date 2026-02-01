@@ -1,21 +1,13 @@
-/**************************************************************************
-*  File: dg_triggers.c                                     part of tbaMUD *
-*  Usage: Contains all the trigger functions for scripts.                 *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Death's Gate MUD is based on CircleMUD, Copyright (C) 1993, 94.        *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-*                                                                         *
-*  $Author: galion/Mark A. Heilpern/egreen/Welcor $                       *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file py_triggers.c
+* 
+* This set of code was not originally part of the circlemud distribution.
+*/
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
@@ -23,6 +15,7 @@
 #include "db.h"
 #include "oasis.h"
 #include "constants.h"
+#include "py_scripts.h"
 #include "spells.h"  /* for skill_name() */
 #include "act.h"    /* for cmd_door[] */
 
@@ -510,12 +503,23 @@ void load_mtrigger(char_data *ch)
   trig_data *t;
   int result = 0;
 
-  if (!SCRIPT_CHECK(ch, MTRIG_LOAD))
+  if (!SCRIPT_CHECK(ch, MTRIG_LOAD)) {
+    if (ch && IS_NPC(ch)) {
+      char buf[MAX_STRING_LENGTH];
+      snprintf(buf, sizeof(buf), "load_mtrigger: no MTRIG_LOAD for %s [%d]", GET_SHORT(ch), GET_MOB_VNUM(ch));
+      python_debug_log(buf);
+    }
     return;
+  }
 
   for (t = TRIGGERS(SCRIPT(ch)); t; t = t->next) {
     if (TRIGGER_CHECK(t, MTRIG_LOAD) &&
         (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
+      if (ch && IS_NPC(ch)) {
+        char buf[MAX_STRING_LENGTH];
+        snprintf(buf, sizeof(buf), "load_mtrigger: firing trigger %d for %s [%d]", GET_TRIG_VNUM(t), GET_SHORT(ch), GET_MOB_VNUM(ch));
+        python_debug_log(buf);
+      }
       result = script_driver(&ch, t, MOB_TRIGGER, TRIG_NEW);
       break;
     }

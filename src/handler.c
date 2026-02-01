@@ -18,7 +18,7 @@
 #include "screen.h"
 #include "interpreter.h"
 #include "spells.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "act.h"
 #include "class.h"
 #include "fight.h"

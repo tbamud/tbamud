@@ -64,6 +64,7 @@ Changes in v1.3.0-alpha:
  * Migration away from OLC with new commands "qcreate", "qset", and "qsave" for builders to create quests
  * Updated mset, oset, and rset commands with missing parameters
  * Added NPC extra descriptions for future support
+ * Introduced Python scripting as DG Scripts replacement, using "pylist" and storing scripts in lib/scripts
 
 Features that will be implemented in the next few releases:
 

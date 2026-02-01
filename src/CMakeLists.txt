@@ -15,6 +15,8 @@ file(GLOB CIRCLE_SOURCES
 	"*.c"
 )
 
+list(FILTER CIRCLE_SOURCES EXCLUDE REGEX ".*/dg_.*\\.c$")
+
 add_executable(circle ${CIRCLE_SOURCES})
 target_sources(circle PRIVATE ${CMAKE_SOURCE_DIR}/third_party/tomlc99/toml.c)
 target_include_directories(circle PRIVATE ${CMAKE_SOURCE_DIR}/third_party/tomlc99)

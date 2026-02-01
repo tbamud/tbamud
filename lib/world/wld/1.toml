@@ -2,7 +2,7 @@
 vnum = 100
 name = "Caravan Gate"
 description = "   Two large doors, each at least ten feet in height, make up the massive gate\nset into the walls that surround the city.  Made of agafari wood, mekillot hide,\nrusted old studs and iron hinges, they provide access into the city for\ntravelers and traders alike.  A massive stone block sits off to the side of the\nroad, which seems to have been carved to the exact size and shape of the gate\nitself.  Caravans and wagons can be seen passing through at all hours of the day\nwhen the gates are open, with some pausing just inside the gate to unload while\nothers continue on their way to the inner city.\n   To the north and south, Wall Road continues onward. To the west, the main\nthoroughfare of Caravan Way passes by several buildings.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 1
 
 [[room.exit]]
@@ -12,6 +12,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 146
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -19,6 +20,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 135
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -31,7 +33,7 @@ to_room = 101
 vnum = 101
 name = "Caravan Way"
 description = "   This broad avenue is wide enough for several mounted riders to easily\nnavigate, or even a pair of wagons to pass by without incident.  Buildings line\nthe road offering services to travelers and visitors of the city.  Street\nvendors line the sides, with an occasional shout to draw attention to their\nwares.  The route through the city itself is made up of brick, though several\nappear cracked and broken when given a thorough inspection.\n   Caravan Way continues to the west and east. A placard with a stylized\neyeball, ear, and lips hangs as a standard above a building to the north,\nwhile the smell of a stable wafts from the south.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -41,6 +43,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 131
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -48,6 +51,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 100
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -55,6 +59,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 136
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -67,7 +72,7 @@ to_room = 102
 vnum = 102
 name = "Caravan Way"
 description = "   This broad avenue is wide enough for several mounted riders to easily\nnavigate, or even a pair of wagons to pass by without incident.  Buildings line\nthe road offering services to travelers and visitors of the city.  Street\nvendors line the sides, with an occasional shout to draw attention to their\nwares.  The route through the city itself is made up of brick, though several\nappear cracked and broken when given a thorough inspection.\n   Caravan Way continues to the west and east. To the south is a two-story\nbuilding with a sign hanging above the entrance of crossed swords.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -77,6 +82,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 101
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -84,6 +90,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 132
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -96,7 +103,7 @@ to_room = 103
 vnum = 103
 name = "Caravan Way"
 description = "   This broad avenue is wide enough for several mounted riders to easily\nnavigate, or even a pair of wagons to pass by without incident.  Buildings line\nthe road offering services to travelers and visitors of the city.  Street\nvendors line the sides, with an occasional shout to draw attention to their\nwares.  The route through the city itself is made up of brick, though several\nappear cracked and broken when given a thorough inspection.\n   Caravan Way continues to the north and east. To the south, a side street\npasses between some buildings.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -106,6 +113,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 104
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -113,6 +121,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 102
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -135,6 +144,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 103
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -157,6 +167,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 155
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -164,6 +175,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 104
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -186,6 +198,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 105
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -208,6 +221,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 106
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -215,6 +229,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 108
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -237,6 +252,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 107
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -244,6 +260,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 134
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -266,6 +283,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 133
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -273,6 +291,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 108
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -295,6 +314,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 109
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -317,6 +337,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 122
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -324,6 +345,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 110
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -346,6 +368,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 111
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -353,6 +376,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 128
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -375,6 +399,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 123
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -382,6 +407,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 112
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -389,6 +415,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 160
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -411,6 +438,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 124
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -418,6 +446,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 113
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -440,6 +469,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 116
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -447,6 +477,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 114
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -469,6 +500,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 117
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -476,6 +508,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 115
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -498,6 +531,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 118
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -505,6 +539,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 125
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -512,6 +547,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 116
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -534,6 +570,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 182
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -541,6 +578,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 119
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -563,6 +601,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 120
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -585,6 +624,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 127
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -592,6 +632,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 121
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -599,6 +640,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 126
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -621,6 +663,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 198
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -628,6 +671,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 122
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -650,6 +694,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 121
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -782,7 +827,7 @@ to_room = 117
 vnum = 131
 name = "Draqoman Station"
 description = "   This large building has a variety of tables and seats available in it, and\nseems to be a meeting point for those new to the city.  The walls are lined with\nsconces to provide light throughout the evening, and barrels of water can be\nseen in the northern side of the room.  Conversations can be heard in hushed\ntones, while others may be more boisterous as if between old friends.  A crude\nmap of the city can be seen upon one wall, giving the impression this would be a\ngood place to learn more about where certain landmarks are.\n   To the south lies Caravan Way, while to the east Wall Road can be seen.\n"
-flags = [131080, 0, 0, 0]
+flags = [163848, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -792,6 +837,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 146
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -804,7 +850,7 @@ to_room = 101
 vnum = 132
 name = "Grik's Weapons"
 description = "   The walls of this building have been made out of uneven blocks of sandstone.\nPiled haphazardly on top of each other, they somehow remain stable despite\nlooking precarious and ready to fall anytime.  Upon the walls are hooks that\nhave weapons placed on them, as well as trophies from gladiator tournaments.  A\ncounter sits in the southwest corner of the room, and a stairway behind it leads\nupward to a trapdoor in the ceiling.\n   Outside to the north lies Caravan Way.\n"
-flags = [0, 0, 0, 0]
+flags = [32776, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -829,6 +875,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 107
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -851,6 +898,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 108
+
 [[room.exit]]
 dir = 4
 description = ""
@@ -863,7 +911,7 @@ to_room = 200
 vnum = 135
 name = "Wall Road"
 description = "   Following along the walls of the city is a small road only large enough for a\npair of mounted riders to traverse side by side.  The walls are thick and\nprimarily made of adobe brick, rising at least ten feet.  The occasional figure\ncan be seen walking the walls, keeping an eye on the horizon.  The buildings\nnear the gate are small and unassuming.  Most have no windows and a simple\nwooden door.\n   Wall Road continues to the south, while Caravan Gate can be seen to the \nnorth. To the west the smell of a stables wafts out onto the road.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -873,6 +921,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 100
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -880,6 +929,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 137
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -892,7 +942,7 @@ to_room = 136
 vnum = 136
 name = "Messenger's Mount"
 description = "   This two story building eminates a smell from the multitude of beasts within\nthat is all that is needed to knowing that this is a stable.  Various pens have\nbeen set up here, holding kanks, erdlus, crodlus, and occasionally other more\nuncommon livestock.  Traders and caravans come and go, leaving and retrieving\nmounts.  Animal handlers can be seen moving about with food and water, as well\nas shoveling dung to be taken away.\n   A small staircase is upon the southern wall and heads upward to the\nsecond floor. To the north lies Caravan Way, and to the east Wall Road can\nbe seen.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -902,6 +952,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 101
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -914,7 +965,7 @@ to_room = 135
 vnum = 137
 name = "Wall Road"
 description = "   Following along the walls of the city is a small road only large enough for a\npair of mounted riders to traverse side by side.  The walls are thick and\nprimarily made of adobe brick, rising at least ten feet.  The occasional figure\ncan be seen walking the walls, keeping an eye on the horizon.  The buildings\nnear the gate are small and unassuming.  Most have no windows and a simple\nwooden door.\n   Wall Road continues to the north and south. Buildings rise up to the west,\nwhile the city walls are to the east.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -924,6 +975,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 135
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -946,6 +998,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 137
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -968,6 +1021,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 138
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -990,6 +1044,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 139
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1012,6 +1067,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 140
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1034,6 +1090,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 143
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -1056,6 +1113,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 144
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1078,6 +1136,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 145
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1085,6 +1144,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 143
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1107,6 +1167,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 103
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1119,7 +1180,7 @@ to_room = 144
 vnum = 146
 name = "Wall Road"
 description = "   Following along the walls of the city is a small road only large enough for a\npair of mounted riders to traverse side by side.  The walls are thick and\nprimarily made of adobe brick, rising at least ten feet.  The occasional figure\ncan be seen walking the walls, keeping an eye on the horizon.  The buildings\nnear the gate are small and unassuming.  Most have no windows and a simple\nwooden door.\n   Wall Road continues to the north, while the Caravan Gate can be seen to\nthe south. A placard with a stylized eyeball, ears, and lips hangs as a\nstandard above a building to the west.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -1129,6 +1190,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 147
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1136,6 +1198,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 100
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1148,7 +1211,7 @@ to_room = 131
 vnum = 147
 name = "Wall Road"
 description = "   Following along the walls of the city is a small road only large enough for a\npair of mounted riders to traverse side by side.  The walls are thick and\nprimarily made of adobe brick, rising at least ten feet.  The occasional figure\ncan be seen walking the walls, keeping an eye on the horizon.  The buildings\nnear the gate are small and unassuming.  Most have no windows and a simple\nwooden door.\n   Wall Road continues to the north and south. Buildings rise up to the west,\nwhile the city walls are to the east.\n"
-flags = [0, 0, 0, 0]
+flags = [32768, 0, 0, 0]
 sector = 0
 
 [[room.exit]]
@@ -1158,6 +1221,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 148
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1180,6 +1244,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 149
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1202,6 +1267,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 148
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1224,6 +1290,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 149
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1231,6 +1298,7 @@ keyword = "door"
 exit_info = 1
 key = 0
 to_room = 157
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1253,6 +1321,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 150
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1275,6 +1344,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 151
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1282,6 +1352,7 @@ keyword = "door"
 exit_info = 9
 key = 0
 to_room = 156
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1304,6 +1375,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 152
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1326,6 +1398,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 153
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1333,6 +1406,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 155
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1355,6 +1429,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 154
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1452,6 +1527,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 115
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1474,6 +1550,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 163
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -1481,6 +1558,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 161
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1503,6 +1581,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 164
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1525,6 +1604,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 165
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1547,6 +1627,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 178
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1554,6 +1635,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 164
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1576,6 +1658,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 165
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1598,6 +1681,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 166
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1620,6 +1704,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 167
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1642,6 +1727,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 168
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1664,6 +1750,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 169
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1686,6 +1773,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 170
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1708,6 +1796,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 171
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1730,6 +1819,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 172
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -1752,6 +1842,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 175
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1774,6 +1865,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 176
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1796,6 +1888,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 177
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1818,6 +1911,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 162
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1840,6 +1934,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 179
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1862,6 +1957,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 180
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1869,6 +1965,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 178
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1891,6 +1988,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 181
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1913,6 +2011,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 183
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1920,6 +2019,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 182
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -1942,6 +2042,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 181
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1964,6 +2065,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 194
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -1986,6 +2088,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 179
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2008,6 +2111,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 186
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -2015,6 +2119,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 184
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2037,6 +2142,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 192
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -2044,6 +2150,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 193
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -2051,6 +2158,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 185
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2073,6 +2181,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 191
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -2080,6 +2189,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 186
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -2087,6 +2197,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 188
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2109,6 +2220,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 187
+
 [[room.exit]]
 dir = 1
 description = ""
@@ -2116,6 +2228,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 185
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2198,6 +2311,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 186
+
 [[room.exit]]
 dir = 4
 description = "A trapdoor in the ceiling can be passed through by climbing a set of stairs.\n"
@@ -2220,6 +2334,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 195
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2242,6 +2357,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 196
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2264,6 +2380,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 199
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -2271,6 +2388,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 197
+
 [[room.exit]]
 dir = 3
 description = ""
@@ -2293,6 +2411,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 196
+
 [[room.exit]]
 dir = 2
 description = ""
@@ -2315,6 +2434,7 @@ keyword = ""
 exit_info = 0
 key = 0
 to_room = 197
+
 [[room.exit]]
 dir = 2
 description = ""

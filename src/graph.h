@@ -16,5 +16,6 @@
 
 ACMD(do_track);
 void hunt_victim(struct char_data *ch);
+int find_first_step_no_doors(room_rnum src, room_rnum target);
 
 #endif /* _GRAPH_H_*/

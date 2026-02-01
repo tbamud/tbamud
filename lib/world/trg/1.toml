@@ -1,1 +1,8 @@
-trigger = []
+[[trigger]]
+vnum = 100
+name = "sample_patrol.py"
+attach_type = 0
+flags = 8192
+narg = 100
+arglist = ""
+script = "sample_patrol.py"

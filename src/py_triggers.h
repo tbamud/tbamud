@@ -1,19 +1,10 @@
 /**
-* @file dg_scripts.h
-* Header file for script structures, constants, and function prototypes for
-* dg_scripts.c
-*
-* Part of the core tbaMUD source code distribution, which is a derivative
-* of, and continuation of, CircleMUD.
-*
-* This source code, which was not part of the CircleMUD legacy code,
-* was created by the following people:
-* $Author: Mark A. Heilpern/egreen/Welcor $
-* $Date: 2004/10/11 12:07:00$
-* $Revision: 1.0.14 $
+* @file py_triggers.h
+* 
+* This set of code was not originally part of the circlemud distribution.
 */
-#ifndef _DG_SCRIPTS_H_
-#define _DG_SCRIPTS_H_
+#ifndef _PY_TRIGGERS_H_
+#define _PY_TRIGGERS_H_
 
 #include "utils.h" /* To make sure ACMD is defined */
 
@@ -154,6 +145,7 @@ struct trig_data {
     byte data_type;                     /**< type of game_data for trig      */
     char *name;                         /**< name of trigger                 */
     long trigger_type;                  /**< type of trigger (for bitvector) */
+    char *script;                       /**< python script path              */
     struct cmdlist_element *cmdlist;    /**< top of command list             */
     struct cmdlist_element *curr_state;	/**< ptr to current line of trigger  */
     int narg;                           /**< numerical argument              */
@@ -310,8 +302,6 @@ int trig_is_attached(struct script_data *sc, int trig_num);
 /* Thanks to Chris Gilbert for reminding me that there are other options. */
 int script_driver(void *go_adress, trig_data *trig, int type, int mode);
 trig_rnum real_trigger(trig_vnum vnum);
-void process_eval(void *go, struct script_data *sc, trig_data *trig,
-                 int type, char *cmd);
 void read_saved_vars(struct char_data *ch);
 void save_char_vars(struct char_data *ch);
 void init_lookup_table(void);
@@ -328,15 +318,6 @@ void assign_triggers(void *i, int type);
 
 /* From dg_variables.c */
 void add_var(struct trig_var_data **var_list, const char *name, const char *value, long id);
-int item_in_list(char *item, obj_data *list);
-char *skill_percent(struct char_data *ch, char *skill);
-int char_has_item(char *item, struct char_data *ch);
-void var_subst(void *go, struct script_data *sc, trig_data *trig,
-               int type, char *line, char *buf);
-int text_processed(char *field, char *subfield, struct trig_var_data *vd,
-                   char *str, size_t slen);
-void find_replacement(void *go, struct script_data *sc, trig_data *trig,
-                int type, char *var, char *field, char *subfield, char *str, size_t slen);
 
 /* From dg_handler.c */
 void free_var_el(struct trig_var_data *var);
@@ -456,4 +437,4 @@ extern int has_obj_by_uid_in_lookup_table(long uid);
 
 #define room_script_id(room)  ((long)(room)->number + ROOM_ID_BASE)
 
-#endif /* _DG_SCRIPTS_H_ */
+#endif /* _PY_TRIGGERS_H_ */

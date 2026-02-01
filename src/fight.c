@@ -19,7 +19,7 @@
 #include "spells.h"
 #include "screen.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "act.h"
 #include "class.h"
 #include "fight.h"

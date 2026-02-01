@@ -35,6 +35,7 @@
 #define LIB_PLRVARS	":plrvars:"
 #define LIB_PLRFILES	":plrfiles:"
 #define LIB_ACCTFILES	":acctfiles:"
+#define LIB_SCRIPTS	":scripts:"
 #define LIB_HOUSE	":house:"
 #define SLASH		":"
 #elif defined(CIRCLE_AMIGA) || defined(CIRCLE_UNIX) || defined(CIRCLE_WINDOWS) || defined(CIRCLE_ACORN) || defined(CIRCLE_VMS)
@@ -49,6 +50,7 @@
 #define LIB_HOUSE	"house/"
 #define LIB_PLRFILES    "plrfiles/"
 #define LIB_ACCTFILES   "acctfiles/"
+#define LIB_SCRIPTS	"scripts/"
 #define SLASH		"/"
 #else
 #error "Unknown path components."
@@ -85,6 +87,7 @@
 #define ZON_PREFIX  LIB_WORLD"zon"SLASH	/* zon defs & command tables */
 #define SHP_PREFIX  LIB_WORLD"shp"SLASH	/* shop definitions	*/
 #define TRG_PREFIX  LIB_WORLD"trg"SLASH	/* trigger files	*/
+#define SCRIPTS_PREFIX LIB_SCRIPTS	/* python scripts	*/
 #define HLP_PREFIX  LIB_TEXT"help"SLASH /* Help files           */
 #define QST_PREFIX  LIB_WORLD"qst"SLASH /* quest files          */
 
@@ -128,6 +131,7 @@
 #define BADPWS_LOGFILE     PREFIX_LOGFILE"badpws"
 #define OLC_LOGFILE        PREFIX_LOGFILE"olc"
 #define TRIGGER_LOGFILE    PREFIX_LOGFILE"trigger"
+#define SCRIPT_LOGFILE     "../log/script.log"
 /**/
 /* END: Assumed default locations for logfiles, mainly used in do_file. */
 

@@ -512,7 +512,6 @@ SET_C=\
     $(DISTDIR)\src\oasis.h\
     $(DISTDIR)\src\improved-edit.h\
     $(DISTDIR)\src\modify.h\
-    $(DISTDIR)\src\dg_scripts.h\
     $(DISTDIR)\src\set.h\
 
 set.obj: $(SET_C) $(DISTDIR)\src\set.c

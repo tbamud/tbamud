@@ -8,6 +8,14 @@
 
 #include "conf.h"
 #include "sysdep.h"
+
+#include <dirent.h>
+#include <errno.h>
+#include <limits.h>
+#include <sys/stat.h>
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -20,7 +28,7 @@
 #include "shop.h"
 #include "screen.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "quest.h"
 #include "modify.h"
 #include "spells.h"
@@ -38,6 +46,7 @@ static void list_mobiles(struct char_data *ch, zone_rnum rnum, mob_vnum vmin , m
 static void list_objects(struct char_data *ch, zone_rnum rnum, obj_vnum vmin , obj_vnum vmax );
 static void list_shops(struct char_data *ch  , zone_rnum rnum, shop_vnum vmin, shop_vnum vmax);
 static void list_zones(struct char_data *ch, zone_rnum rnum, zone_vnum vmin, zone_vnum vmax, char *name);
+static int pylist_name_cmp(const void *a, const void *b);
 
 static void perform_mob_flag_list(struct char_data * ch, char *arg)
 {
@@ -358,6 +367,20 @@ static void perform_obj_name_list(struct char_data * ch, char *arg)
   page_string(ch->desc, buf, TRUE);
 }
 
+static int pylist_name_cmp(const void *a, const void *b)
+{
+  const char *left = *(const char *const *)a;
+  const char *right = *(const char *const *)b;
+
+  if (!left && !right)
+    return 0;
+  if (!left)
+    return -1;
+  if (!right)
+    return 1;
+  return strcmp(left, right);
+}
+
 /* Ingame Commands */
 ACMD(do_oasis_list)
 {
@@ -497,6 +520,94 @@ ACMD(do_oasis_list)
       mudlog(BRF, LVL_IMMORT, TRUE,
         "SYSERR: do_oasis_list: Unknown list option: %d", subcmd);
   }
+}
+
+ACMD(do_pylist)
+{
+  DIR *dir;
+  struct dirent *entry;
+  struct stat st;
+  char path[PATH_MAX];
+  char **names = NULL;
+  size_t count = 0;
+  size_t capacity = 0;
+  size_t i;
+  size_t len = 0;
+  size_t buf_size = 8192;
+  char *buf;
+
+  if (!ch->desc)
+    return;
+
+  dir = opendir(SCRIPTS_PREFIX);
+  if (!dir) {
+    send_to_char(ch, "Unable to open scripts directory (%s).\r\n", strerror(errno));
+    return;
+  }
+
+  while ((entry = readdir(dir)) != NULL) {
+    if (entry->d_name[0] == '.')
+      continue;
+    if (!str_cmp(entry->d_name, ".keep"))
+      continue;
+    if (!strstr(entry->d_name, ".py"))
+      continue;
+
+    snprintf(path, sizeof(path), "%s%s", SCRIPTS_PREFIX, entry->d_name);
+    if (stat(path, &st) < 0)
+      continue;
+    if (!S_ISREG(st.st_mode))
+      continue;
+
+    if (capacity == count) {
+      size_t new_cap = capacity ? (capacity * 2) : 32;
+      RECREATE(names, char *, new_cap);
+      capacity = new_cap;
+    }
+
+    names[count++] = strdup(entry->d_name);
+  }
+
+  closedir(dir);
+
+  if (count == 0) {
+    send_to_char(ch, "No scripts found in %s.\r\n", SCRIPTS_PREFIX);
+    return;
+  }
+
+  qsort(names, count, sizeof(*names), pylist_name_cmp);
+
+  CREATE(buf, char, buf_size);
+  len = snprintf(buf, buf_size,
+                 "Index Script Name\r\n"
+                 "----- ------------------------------\r\n");
+
+  for (i = 0; i < count; i++) {
+    char line[MAX_STRING_LENGTH];
+    size_t line_len;
+
+    snprintf(line, sizeof(line), "%4zu) %s\r\n", i + 1, names[i]);
+    line_len = strlen(line);
+
+    if (len + line_len + 1 > buf_size) {
+      size_t new_size = buf_size;
+      while (len + line_len + 1 > new_size)
+        new_size *= 2;
+      RECREATE(buf, char, new_size);
+      buf_size = new_size;
+    }
+
+    memcpy(buf + len, line, line_len + 1);
+    len += line_len;
+  }
+
+  page_string(ch->desc, buf, TRUE);
+
+  for (i = 0; i < count; i++)
+    if (names[i])
+      free(names[i]);
+  free(names);
+  free(buf);
 }
 
 ACMD(do_oasis_links)
@@ -916,8 +1027,8 @@ static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, 
 
   /* Store the header for the room listing. */
   send_to_char (ch,
-  "Index VNum    Trigger Name                                  Type\r\n"
-  "----- ------- --------------------------------------------- ---------\r\n");
+  "Index VNum    Trigger Name                  Script                 Type\r\n"
+  "----- ------- ----------------------------- ---------------------- ---------\r\n");
 
   /* Loop through the world and find each room. */
   for (i = 0; i < top_of_trigt; i++) {
@@ -925,8 +1036,10 @@ static void list_triggers(struct char_data *ch, zone_rnum rnum, trig_vnum vmin, 
     if ((trig_index[i]->vnum >= bottom) && (trig_index[i]->vnum <= top)) {
       counter++;
 
-      send_to_char(ch, "%4d) [%s%5d%s] %s%-45.45s%s ",
-        counter, QGRN, trig_index[i]->vnum, QNRM, QCYN, trig_index[i]->proto->name, QNRM);
+      send_to_char(ch, "%4d) [%s%5d%s] %s%-29.29s%s %-22.22s ",
+        counter, QGRN, trig_index[i]->vnum, QNRM, QCYN,
+        trig_index[i]->proto->name, QNRM,
+        trig_index[i]->proto->script ? trig_index[i]->proto->script : "-");
 
       if (trig_index[i]->proto->attach_type == OBJ_TRIGGER) {
         sprintbit(GET_TRIG_TYPE(trig_index[i]->proto), otrig_types, trgtypes, sizeof(trgtypes));

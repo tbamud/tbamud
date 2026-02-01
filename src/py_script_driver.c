@@ -1,26 +1,18 @@
 /**
-* @file dg_scripts.c
-* Contains the main script driver interface.
+* @file py_script_driver.c
 * 
-* Part of the core tbaMUD source code distribution, which is a derivative
-* of, and continuation of, CircleMUD.
-* 
-* This source code, which was not part of the CircleMUD legacy code,
-* was created by the following people:                                      
-* $Author: Mark A. Heilpern/egreen/Welcor $                              
-* $Date: 2004/10/11 12:07:00$                                            
-* $Revision: 1.0.14 $                                                    
+* This set of code was not originally part of the circlemud distribution.
 */
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
 #include "handler.h"
-#include "dg_event.h"
+#include "py_event.h"
 #include "db.h"
 #include "screen.h"
 #include "constants.h"
@@ -31,6 +23,7 @@
 #include "modify.h"
 #include "toml.h"
 #include "toml_utils.h"
+#include "py_scripts.h"
 
 #define PULSES_PER_MUD_HOUR     (SECS_PER_MUD_HOUR*PASSES_PER_SEC)
 
@@ -40,6 +33,7 @@ static room_data *find_room(long n);
 static void do_stat_trigger(struct char_data *ch, trig_data *trig);
 static void script_stat(char_data *ch, struct script_data *sc);
 static int remove_trigger(struct script_data *sc, char *name);
+#if 0 /* DG scripting language removed */
 static int is_num(char *arg);
 static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
           struct script_data *sc, trig_data *trig);
@@ -73,9 +67,12 @@ static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd);
 static struct cmdlist_element * find_case(struct trig_data *trig, struct cmdlist_element *cl,
           void *go, struct script_data *sc, int type, char *cond);
 static struct cmdlist_element *find_done(struct cmdlist_element *cl);
+#endif
 static struct char_data *find_char_by_uid_in_lookup_table(long uid);
 static struct obj_data *find_obj_by_uid_in_lookup_table(long uid);
+#if 0 /* DG scripting language removed */
 static EVENTFUNC(trig_wait_event);
+#endif
 
 
 /* Return pointer to first occurrence of string ct in cs, or NULL if not 
@@ -708,6 +705,7 @@ void check_time_triggers(void)
   }
 }
 
+#if 0 /* DG scripting language removed */
 static EVENTFUNC(trig_wait_event)
 {
   struct wait_event_data *wait_event_obj = (struct wait_event_data *)event_obj;
@@ -756,10 +754,10 @@ static EVENTFUNC(trig_wait_event)
   /* Do not reenqueue*/
   return 0;
 }
+#endif
 
 static void do_stat_trigger(struct char_data *ch, trig_data *trig)
 {
-    struct cmdlist_element *cmd_list;
     char sb[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
     int len = 0;
 
@@ -790,20 +788,8 @@ static void do_stat_trigger(struct char_data *ch, trig_data *trig)
                     ((GET_TRIG_ARG(trig) && *GET_TRIG_ARG(trig))
                      ? GET_TRIG_ARG(trig) : "None"));
 
-    len += snprintf(sb + len, sizeof(sb)-len, "Commands:\r\n");
-
-    cmd_list = trig->cmdlist;
-    while (cmd_list) {
-      if (cmd_list->cmd)
-        len += snprintf(sb + len, sizeof(sb)-len, "%s\r\n", cmd_list->cmd);
-
-      if (len>MAX_STRING_LENGTH-80) {
-        snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
-        break;
-      }
-      
-      cmd_list = cmd_list->next;
-    }
+    len += snprintf(sb + len, sizeof(sb)-len, "Script: %s\r\n",
+                     (trig->script && *trig->script) ? trig->script : "None");
 
     page_string(ch->desc, sb, 1);
 }
@@ -1357,6 +1343,7 @@ void script_log(const char *format, ...)
   va_end(args);
 }
 
+#if 0 /* DG scripting language removed */
 /* Returns 1 if string is all digits, else 0. Bugfixed - would have returned 
  * true on num="------". */
 static int is_num(char *arg)
@@ -1474,6 +1461,7 @@ static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
       sprintf(result, "%d", !*rhs);
   }
 }
+#endif
 
 /* p points to the first quote, returns the matching end quote, or the last 
  * non-null char in p.*/
@@ -1490,6 +1478,7 @@ char *matching_quote(char *p)
   return p;
 }
 
+#if 0 /* DG scripting language removed */
 /* p points to the first paren.  returns a pointer to the matching closing 
  * paren, or the last non-null char in p. */
 static char *matching_paren(char *p)
@@ -2262,6 +2251,7 @@ ACMD(do_vdelete)
 
   send_to_char(ch, "Deleted.\r\n");
 }
+#endif
 
 /* Called from do_set - return 0 for failure, 1 for success.  ch and vict are 
  * verified. */
@@ -2282,6 +2272,7 @@ int perform_set_dg_var(struct char_data *ch, struct char_data *vict, char *val_a
   return 1;
 }
 
+#if 0 /* DG scripting language removed */
 /* Delete a variable from the globals of another script.
  * 'rdelete <variable_name> <uid>' */
 static void process_rdelete(struct script_data *sc, trig_data *trig, char *cmd)
@@ -2465,6 +2456,7 @@ static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd)
   *(junk+1) = '\0';
   add_var(&GET_TRIG_VARS(trig), varname, junk, sc->context);
 }
+#endif
 
 /* This is the core driver for scripts.
  * Arguments:
@@ -2486,14 +2478,8 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
 {
   static int depth = 0;
   int ret_val = 1;
-  struct cmdlist_element *cl;
-  char cmd[MAX_INPUT_LENGTH], *p;
-  struct script_data *sc = 0;
-  struct cmdlist_element *temp;
   void *go = NULL;
-
-  void obj_command_interpreter(obj_data *obj, char *argument);
-  void wld_command_interpreter(struct room_data *room, char *argument);
+  struct script_data *sc = NULL;
 
   switch (type) {
     case MOB_TRIGGER:
@@ -2542,178 +2528,23 @@ int script_driver(void *go_adress, trig_data *trig, int type, int mode)
   if (mode == TRIG_NEW) {
     GET_TRIG_DEPTH(trig) = 1;
     GET_TRIG_LOOPS(trig) = 0;
-    sc->context = 0;
+    if (sc)
+      sc->context = 0;
   }
 
   dg_owner_purged = 0;
 
-  for (cl = (mode == TRIG_NEW) ? trig->cmdlist : trig->curr_state;
-      cl && GET_TRIG_DEPTH(trig); cl = cl->next) {
-    for (p = cl->cmd; *p && isspace(*p); p++);
+  ret_val = python_trigger_run(go, trig, type, mode);
 
-    if (*p == '*') /* comment */
-      continue;
-
-    else if (!strn_cmp(p, "if ", 3)) {
-      if (process_if(p + 3, go, sc, trig, type))
-        GET_TRIG_DEPTH(trig)++;
-      else
-        cl = find_else_end(trig, cl, go, sc, type);
-    }
-
-    else if (!strn_cmp("elseif ", p, 7) ||
-       !strn_cmp("else", p, 4)) {
-      /* If not in an if-block, ignore the extra 'else[if]' and warn about it. */
-      if (GET_TRIG_DEPTH(trig) == 1) {
-        script_log("Trigger VNum %d has 'else' without 'if'.",
-                   GET_TRIG_VNUM(trig));
-        continue;
-      }
-      cl = find_end(trig, cl);
-      GET_TRIG_DEPTH(trig)--;
-    } else if (!strn_cmp("while ", p, 6)) {
-      temp = find_done(cl);
-      if (!temp) {
-        script_log("Trigger VNum %d has 'while' without 'done'.",
-                   GET_TRIG_VNUM(trig));
-        return ret_val;
-      }
-      if (process_if(p + 6, go, sc, trig, type)) {
-         temp->original = cl;
-      } else {
-         cl->loops = 0;
-         cl = temp;
-      }
-    } else if (!strn_cmp("switch ", p, 7)) {
-      cl = find_case(trig, cl, go, sc, type, p + 7);
-    } else if (!strn_cmp("end", p, 3)) {
-      /* If not in an if-block, ignore the extra 'end' and warn about it. */
-      if (GET_TRIG_DEPTH(trig) == 1) {
-        script_log("Trigger VNum %d has 'end' without 'if'.",
-                   GET_TRIG_VNUM(trig));
-        continue;
-      }
-      GET_TRIG_DEPTH(trig)--;
-    } else if (!strn_cmp("done", p, 4)) {
-      /* if in a while loop, cl->original is non-NULL */
-      if (cl->original) {
-      char *orig_cmd = cl->original->cmd;
-      while (*orig_cmd && isspace(*orig_cmd)) orig_cmd++;
-      if (cl->original && process_if(orig_cmd + 6, go, sc, trig,
-          type)) {
-        cl = cl->original;
-        cl->loops++;
-        GET_TRIG_LOOPS(trig)++;
-        if (cl->loops == 30) {
-          cl->loops = 0;
-          process_wait(go, trig, type, "wait 1", cl);
-           depth--;
-          return ret_val;
-        }
-          if (GET_TRIG_LOOPS(trig) >= 100) {
-          script_log("Trigger VNum %d has looped 100 times!!!",
-            GET_TRIG_VNUM(trig));
-            break;
-          }
-        } else {
-         /* if we're falling through a switch statement, this ends it. */
-        }
-      }
-    } else if (!strn_cmp("break", p, 5)) {
-      cl = find_done(cl);
-    } else if (!strn_cmp("case", p, 4)) {
-       /* Do nothing, this allows multiple cases to a single instance */
-    }
-
-    else {
-      var_subst(go, sc, trig, type, p, cmd);
-
-      if (!strn_cmp(cmd, "eval ", 5))
-        process_eval(go, sc, trig, type, cmd);
-
-      else if (!strn_cmp(cmd, "nop ", 4)); /* nop: do nothing */
-
-      else if (!strn_cmp(cmd, "extract ", 8))
-        extract_value(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "dg_letter ", 10))
-        dg_letter_value(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "makeuid ", 8))
-        makeuid_var(go, sc, trig, type, cmd);
-
-      else if (!strn_cmp(cmd, "halt", 4))
-        break;
-
-      else if (!strn_cmp(cmd, "dg_cast ", 8))
-        do_dg_cast(go, sc, trig, type, cmd);
-
-      else if (!strn_cmp(cmd, "dg_affect ", 10))
-        do_dg_affect(go, sc, trig, type, cmd);
-
-      else if (!strn_cmp(cmd, "global ", 7))
-        process_global(sc, trig, cmd, sc->context);
-
-      else if (!strn_cmp(cmd, "context ", 8))
-        process_context(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "remote ", 7))
-        process_remote(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "rdelete ", 8))
-        process_rdelete(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "return ", 7))
-        ret_val = process_return(trig, cmd);
-
-      else if (!strn_cmp(cmd, "set ", 4))
-        process_set(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "unset ", 6))
-        process_unset(sc, trig, cmd);
-
-      else if (!strn_cmp(cmd, "wait ", 5)) {
-        process_wait(go, trig, type, cmd, cl);
-        depth--;
-        return ret_val;
-      }
-
-      else if (!strn_cmp(cmd, "attach ", 7))
-        process_attach(go, sc, trig, type, cmd);
-
-      else if (!strn_cmp(cmd, "detach ", 7))
-        process_detach(go, sc, trig, type, cmd);
-
-      else {
-        switch (type) {
-          case MOB_TRIGGER:
-            if (!script_command_interpreter((char_data *) go, cmd))
-            command_interpreter((char_data *) go, cmd);
-            break;
-          case OBJ_TRIGGER:
-            obj_command_interpreter((obj_data *) go, cmd);
-            break;
-          case WLD_TRIGGER:
-            wld_command_interpreter((struct room_data *) go, cmd);
-            break;
-        }
-        if (dg_owner_purged) {
-          depth--;
-          if (type == OBJ_TRIGGER)
-            *(obj_data **)go_adress = NULL;
-          return ret_val;
-        }
-      }
-    }
+  if (dg_owner_purged) {
+    depth--;
+    if (type == OBJ_TRIGGER)
+      *(obj_data **)go_adress = NULL;
+    return ret_val;
   }
 
-  switch (type) { /* the script may have been detached */
-    case MOB_TRIGGER:    sc = SCRIPT((char_data *) go);           break;
-    case OBJ_TRIGGER:    sc = SCRIPT((obj_data *) go);            break;
-    case WLD_TRIGGER:    sc = SCRIPT((room_data *) go);    break;
-  }
   if (sc)
-  free_varlist(GET_TRIG_VARS(trig));
+    free_varlist(GET_TRIG_VARS(trig));
   GET_TRIG_VARS(trig) = NULL;
   GET_TRIG_DEPTH(trig) = 0;
 
@@ -2764,6 +2595,95 @@ ACMD(do_tstat)
     send_to_char(ch, "Usage: tstat <vnum>\r\n");
 }
 
+/* Command-line interface to rdelete. Named vdelete so people didn't think it
+ * was to delete rooms. */
+ACMD(do_vdelete)
+{
+  struct trig_var_data *vd, *vd_prev=NULL;
+  struct script_data *sc_remote=NULL;
+  char *var, *uid_p;
+  char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
+  long uid;
+  room_data *room;
+  char_data *mob;
+  obj_data *obj;
+
+  two_arguments(argument, buf, buf2);
+  var = buf;
+  uid_p = buf2;
+  skip_spaces(&var);
+  skip_spaces(&uid_p);
+
+
+  if (!*buf || !*buf2) {
+    send_to_char(ch, "Usage: vdelete { <variablename> | * | all } <id>\r\n");
+    return;
+  }
+
+  /* find the target script from the uid number */
+  uid = atoi(buf2);
+  if (uid<=0) {
+    send_to_char(ch, "vdelete: illegal id specified.\r\n");
+    return;
+  }
+
+  if ((room = find_room(uid))) {
+    sc_remote = SCRIPT(room);
+  } else if ((mob = find_char(uid))) {
+    sc_remote = SCRIPT(mob);
+  } else if ((obj = find_obj(uid))) {
+    sc_remote = SCRIPT(obj);
+  } else {
+    send_to_char(ch, "vdelete: cannot resolve specified id.\r\n");
+    return;
+  }
+
+  if (sc_remote==NULL) {
+    send_to_char(ch, "That id represents no global variables.(1)\r\n");
+    return;
+  }
+
+  if (sc_remote->global_vars==NULL) {
+    send_to_char(ch, "That id represents no global variables.(2)\r\n");
+    return;
+  }
+
+  if (*var == '*' || is_abbrev(var, "all")) {
+    struct trig_var_data *vd_next;
+    for (vd = sc_remote->global_vars; vd; vd = vd_next) {
+      vd_next = vd->next;
+      free(vd->value);
+      free(vd->name);
+      free(vd);
+    }
+    sc_remote->global_vars = NULL;
+    send_to_char(ch, "All variables deleted from that id.\r\n");
+    return;
+  }
+
+  /* find the global */
+  for (vd = sc_remote->global_vars; vd; vd_prev = vd, vd = vd->next)
+    if (!str_cmp(vd->name, var))
+      break;
+
+  if (!vd) {
+    send_to_char(ch, "That variable cannot be located.\r\n");
+    return;
+  }
+
+  /* ok, delete the variable */
+  if (vd_prev) vd_prev->next = vd->next;
+  else sc_remote->global_vars = vd->next;
+
+  /* and free up the space */
+  free(vd->value);
+  free(vd->name);
+  free(vd);
+
+  send_to_char(ch, "Deleted.\r\n");
+}
+
+#if 0 /* DG scripting language removed */
 /* Scans for a case/default instance. Returns the line containg the correct 
  * case instance, or the last line of the trigger if not found. */
 static struct cmdlist_element *
@@ -2822,6 +2742,7 @@ static struct cmdlist_element *find_done(struct cmdlist_element *cl)
 
   return c;
 }
+#endif
 
 
 /* load in a character's saved variables */

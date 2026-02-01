@@ -18,7 +18,7 @@
 #include "db.h"
 #include "constants.h"
 #include "interpreter.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "act.h"
 #include "fight.h"
 

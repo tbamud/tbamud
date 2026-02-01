@@ -24,7 +24,7 @@
 #include "handler.h"
 #include "constants.h"
 #include "improved-edit.h"
-#include "dg_olc.h"
+#include "py_olc.h"
 #include "screen.h"
 #include "fight.h"
 #include "modify.h"      /* for smash_tilde */

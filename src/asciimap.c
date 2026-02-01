@@ -20,7 +20,7 @@
 #include "spells.h"
 #include "house.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "asciimap.h"
 
 /******************************************************************************

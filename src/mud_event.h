@@ -13,7 +13,7 @@
 #ifndef _MUD_EVENT_H_
 #define _MUD_EVENT_H_
 
-#include "dg_event.h"
+#include "py_event.h"
 
 #define EVENT_WORLD 0
 #define EVENT_DESC  1

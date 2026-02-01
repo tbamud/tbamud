@@ -434,6 +434,7 @@ flags = [8, 0, 0, 0]
 aff_flags = [0, 0, 0, 0]
 alignment = 0
 mob_type = "enhanced"
+triggers = [100]
 
 [mob.simple]
 level = 1

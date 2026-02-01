@@ -17,11 +17,15 @@ PROFILE =
 
 BINDIR = ../bin
 
-CFLAGS = -g -O2 $(MYFLAGS) $(PROFILE) -I../third_party/tomlc99
+PYTHON_CONFIG ?= python3.12-config
+PY_CFLAGS := $(shell $(PYTHON_CONFIG) --includes 2>/dev/null | tr ' ' '\n' | awk '!seen[$$0]++' | tr '\n' ' ')
+PY_LIBS := $(shell $(PYTHON_CONFIG) --embed --ldflags 2>/dev/null)
 
-LIBS =  -lcrypt 
+CFLAGS = -g -O2 $(MYFLAGS) $(PROFILE) -I../third_party/tomlc99 $(PY_CFLAGS)
 
-SRCFILES := $(shell ls *.c | sort) ../third_party/tomlc99/toml.c
+LIBS =  -lcrypt $(PY_LIBS)
+
+SRCFILES := $(shell ls *.c | grep -v '^dg_' | sort) ../third_party/tomlc99/toml.c
 OBJFILES := $(patsubst %.c,%.o,$(SRCFILES))  
 
 default: all

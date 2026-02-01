@@ -15,7 +15,7 @@
 #include "genolc.h"
 #include "genobj.h"
 #include "genzon.h"
-#include "dg_olc.h"
+#include "py_olc.h"
 #include "handler.h"
 #include "interpreter.h"
 #include "boards.h" /* for board_info */

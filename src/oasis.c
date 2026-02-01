@@ -21,7 +21,7 @@
 #include "genobj.h"
 #include "oasis.h"
 #include "screen.h"
-#include "dg_olc.h"
+#include "py_olc.h"
 #include "act.h"
 #include "handler.h" /* for is_name */
 #include "quest.h"

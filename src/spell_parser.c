@@ -17,7 +17,7 @@
 #include "handler.h"
 #include "comm.h"
 #include "db.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "fight.h"  /* for hit() */
 
 #define SINFO spell_info[spellnum]

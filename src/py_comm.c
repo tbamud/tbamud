@@ -1,21 +1,13 @@
-/**************************************************************************
-*  File: dg_comm.c                                         Part of tbaMUD *
-*  Usage: Contains routines to handle mud to player communication.        *
-*                                                                         *
-*  All rights reserved.  See license for complete information.            *
-*                                                                         *
-*  Death's Gate MUD is based on CircleMUD, Copyright (C) 1993, 94.        *
-*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
-*                                                                         *
-*  $Author: Mark A. Heilpern/egreen/Welcor $                              *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file py_comm.c
+* 
+* This set of code was not originally part of the circlemud distribution.
+*/
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "utils.h"
 #include "comm.h"
 #include "handler.h"

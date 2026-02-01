@@ -35,12 +35,406 @@
 #include "modify.h"
 #include "genobj.h"
 #include "genmob.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "fight.h"
 #include "toml.h"
+
+#define PY_SCRIPT_EXT ".py"
+
+static void script_toml_escape(const char *input, char *output, size_t outsz)
+{
+  size_t len = 0;
+  const char *p = input ? input : "";
+
+  if (!outsz)
+    return;
+
+  while (*p && len + 2 < outsz) {
+    if (*p == '\\' || *p == '"') {
+      output[len++] = '\\';
+      if (len + 1 >= outsz)
+        break;
+    }
+    output[len++] = *p++;
+  }
+
+  output[len] = '\0';
+}
+
+static int script_normalize_name(const char *input, char *output, size_t outsz)
+{
+  const char *ext;
+
+  if (!input || !*input || !output || outsz < 4)
+    return 0;
+
+  if (strchr(input, '/'))
+    return 0;
+
+  strlcpy(output, input, outsz);
+  ext = strrchr(output, '.');
+  if (!ext)
+    strlcat(output, PY_SCRIPT_EXT, outsz);
+
+  return 1;
+}
+
+static int script_exists(const char *script_name)
+{
+  char path[PATH_MAX];
+  struct stat st;
+
+  if (!script_name || !*script_name)
+    return 0;
+
+  snprintf(path, sizeof(path), "%s%s", SCRIPTS_PREFIX, script_name);
+  if (stat(path, &st) < 0)
+    return 0;
+
+  return S_ISREG(st.st_mode);
+}
+
+static int script_find_trigger_by_script(const char *script, zone_rnum znum, int attach_type)
+{
+  int i;
+  int bottom, top;
+
+  if (!script || !*script)
+    return NOTHING;
+
+  if (znum != NOWHERE) {
+    bottom = zone_table[znum].bot;
+    top = zone_table[znum].top;
+  } else {
+    bottom = INT_MIN;
+    top = INT_MAX;
+  }
+
+  for (i = 0; i < top_of_trigt; i++) {
+    if (!trig_index[i] || !trig_index[i]->proto)
+      continue;
+    if (trig_index[i]->vnum < bottom || trig_index[i]->vnum > top)
+      continue;
+    if (trig_index[i]->proto->attach_type != attach_type)
+      continue;
+    if (!trig_index[i]->proto->script)
+      continue;
+    if (!str_cmp(trig_index[i]->proto->script, script))
+      return trig_index[i]->vnum;
+  }
+
+  return NOTHING;
+}
+
+static int script_find_next_trigger_vnum(zone_rnum znum)
+{
+  int vnum;
+  int bottom;
+  int top;
+
+  if (znum == NOWHERE)
+    return NOTHING;
+
+  bottom = zone_table[znum].bot;
+  top = zone_table[znum].top;
+
+  for (vnum = bottom; vnum <= top; vnum++) {
+    if (real_trigger(vnum) == NOTHING)
+      return vnum;
+  }
+
+  return NOTHING;
+}
+
+static int script_default_trigger_type(int attach_type)
+{
+  switch (attach_type) {
+    case MOB_TRIGGER: return MTRIG_LOAD;
+    case OBJ_TRIGGER: return OTRIG_LOAD;
+    case WLD_TRIGGER: return WTRIG_RESET;
+    default: return 0;
+  }
+}
+
+static int script_default_trigger_narg(int attach_type, long trigger_type)
+{
+  if (attach_type == MOB_TRIGGER && (trigger_type & MTRIG_LOAD))
+    return 100;
+  if (attach_type == OBJ_TRIGGER && (trigger_type & OTRIG_LOAD))
+    return 100;
+  if (attach_type == WLD_TRIGGER && (trigger_type & WTRIG_RESET))
+    return 100;
+  return 0;
+}
+
+static const char *script_default_trigger_name(const char *script)
+{
+  const char *base;
+  const char *dot;
+
+  if (!script || !*script)
+    return "script";
+
+  base = script;
+  dot = strrchr(base, '.');
+  if (dot && dot > base)
+    return base;
+
+  return base;
+}
+
+static int script_insert_trigger_index(trig_data *trig, int vnum)
+{
+  struct index_data **new_index;
+  struct trig_data *proto;
+  struct trig_data *live_trig;
+  trig_rnum i, rnum = NOTHING;
+
+  if (!trig || vnum <= 0)
+    return NOTHING;
+
+  CREATE(new_index, struct index_data *, top_of_trigt + 1);
+
+  for (i = 0; i < top_of_trigt; i++) {
+    if (rnum == NOTHING && trig_index[i]->vnum > vnum) {
+      rnum = i;
+      CREATE(new_index[rnum], struct index_data, 1);
+      new_index[rnum]->vnum = vnum;
+      new_index[rnum]->number = 0;
+      new_index[rnum]->func = NULL;
+      proto = trig;
+      new_index[rnum]->proto = proto;
+      proto->nr = rnum;
+      new_index[i + 1] = trig_index[i];
+      trig_index[i]->proto->nr = i + 1;
+    } else {
+      if (rnum == NOTHING) {
+        new_index[i] = trig_index[i];
+      } else {
+        new_index[i + 1] = trig_index[i];
+        trig_index[i]->proto->nr = i + 1;
+      }
+    }
+  }
+
+  if (rnum == NOTHING) {
+    rnum = top_of_trigt;
+    CREATE(new_index[rnum], struct index_data, 1);
+    new_index[rnum]->vnum = vnum;
+    new_index[rnum]->number = 0;
+    new_index[rnum]->func = NULL;
+    proto = trig;
+    new_index[rnum]->proto = proto;
+    proto->nr = rnum;
+  }
+
+  free(trig_index);
+  trig_index = new_index;
+  top_of_trigt++;
+
+  for (live_trig = trigger_list; live_trig; live_trig = live_trig->next_in_world)
+    GET_TRIG_RNUM(live_trig) += (GET_TRIG_RNUM(live_trig) != NOTHING && GET_TRIG_RNUM(live_trig) >= rnum);
+
+  return rnum;
+}
+
+static int script_append_trigger_toml(int znum, trig_data *trig, int vnum)
+{
+  char fname[PATH_MAX];
+  FILE *fp;
+  char name_buf[MAX_INPUT_LENGTH];
+  char arg_buf[MAX_INPUT_LENGTH];
+  char script_buf[MAX_INPUT_LENGTH];
+
+  if (!trig || vnum <= 0)
+    return 0;
+
+  snprintf(fname, sizeof(fname), "%s/%d.toml", TRG_PREFIX, znum);
+  fp = fopen(fname, "a");
+  if (!fp)
+    return 0;
+
+  script_toml_escape(trig->name ? trig->name : "script", name_buf, sizeof(name_buf));
+  script_toml_escape(trig->arglist ? trig->arglist : "", arg_buf, sizeof(arg_buf));
+  script_toml_escape(trig->script ? trig->script : "", script_buf, sizeof(script_buf));
+
+  fprintf(fp, "\n[[trigger]]\n");
+  fprintf(fp, "vnum = %d\n", vnum);
+  fprintf(fp, "name = \"%s\"\n", name_buf);
+  fprintf(fp, "attach_type = %d\n", trig->attach_type);
+  fprintf(fp, "flags = %ld\n", trig->trigger_type);
+  fprintf(fp, "narg = %d\n", trig->narg);
+  fprintf(fp, "arglist = \"%s\"\n", arg_buf);
+  fprintf(fp, "script = \"%s\"\n", script_buf);
+
+  fclose(fp);
+  return 1;
+}
+
+static int script_create_trigger_for_zone(zone_rnum znum, int attach_type, const char *script)
+{
+  trig_data *trig;
+  int vnum;
+  int rnum;
+
+  if (znum == NOWHERE || !script || !*script)
+    return NOTHING;
+
+  vnum = script_find_next_trigger_vnum(znum);
+  if (vnum == NOTHING)
+    return NOTHING;
+
+  CREATE(trig, trig_data, 1);
+  memset(trig, 0, sizeof(*trig));
+  trig->name = strdup(script_default_trigger_name(script));
+  trig->attach_type = (byte)attach_type;
+  trig->trigger_type = (long)script_default_trigger_type(attach_type);
+  trig->narg = script_default_trigger_narg(attach_type, trig->trigger_type);
+  trig->arglist = strdup("");
+  trig->script = strdup(script);
+
+  rnum = script_insert_trigger_index(trig, vnum);
+  if (rnum == NOTHING) {
+    if (trig->name)
+      free(trig->name);
+    if (trig->arglist)
+      free(trig->arglist);
+    if (trig->script)
+      free(trig->script);
+    free(trig);
+    return NOTHING;
+  }
+
+  if (!script_append_trigger_toml(zone_table[znum].number, trig, vnum))
+    return NOTHING;
+
+  return vnum;
+}
+
+static int script_resolve_trigger_vnum(struct char_data *ch, const char *arg,
+                                      zone_rnum znum, int attach_type)
+{
+  char script_name[MAX_INPUT_LENGTH];
+  int vnum;
+
+  if (!arg || !*arg)
+    return NOTHING;
+
+  if (is_number(arg))
+    return atoi(arg);
+
+  if (!script_normalize_name(arg, script_name, sizeof(script_name))) {
+    send_to_char(ch, "Script name is invalid.\r\n");
+    return NOTHING;
+  }
+
+  if (!script_exists(script_name)) {
+    send_to_char(ch, "Script file %s not found.\r\n", script_name);
+    return NOTHING;
+  }
+
+  vnum = script_find_trigger_by_script(script_name, znum, attach_type);
+  if (vnum != NOTHING)
+    return vnum;
+
+  vnum = script_create_trigger_for_zone(znum, attach_type, script_name);
+  if (vnum == NOTHING) {
+    send_to_char(ch, "No available trigger vnums in this zone.\r\n");
+    return NOTHING;
+  }
+
+  send_to_char(ch, "Created trigger %d for script %s.\r\n", vnum, script_name);
+  return vnum;
+}
+
+static int script_find_attached_trigger_vnum(struct trig_proto_list *list,
+                                             const char *script, int attach_type)
+{
+  struct trig_proto_list *tp;
+  int rnum;
+
+  if (!script || !*script)
+    return NOTHING;
+
+  for (tp = list; tp; tp = tp->next) {
+    rnum = real_trigger(tp->vnum);
+    if (rnum == NOTHING || !trig_index[rnum] || !trig_index[rnum]->proto)
+      continue;
+    if (trig_index[rnum]->proto->attach_type != attach_type)
+      continue;
+    if (!trig_index[rnum]->proto->script)
+      continue;
+    if (!str_cmp(trig_index[rnum]->proto->script, script))
+      return tp->vnum;
+  }
+
+  return NOTHING;
+}
 #include "quest.h"
 
 #include "set.h"
+
+static int proto_trigger_has(struct trig_proto_list *list, int vnum)
+{
+  for (; list; list = list->next)
+    if (list->vnum == vnum)
+      return 1;
+  return 0;
+}
+
+static int proto_trigger_add(struct trig_proto_list **list, int vnum)
+{
+  struct trig_proto_list *trig, *tail;
+
+  if (!list)
+    return 0;
+
+  if (proto_trigger_has(*list, vnum))
+    return 0;
+
+  CREATE(trig, struct trig_proto_list, 1);
+  trig->vnum = vnum;
+  trig->next = NULL;
+
+  if (!*list) {
+    *list = trig;
+    return 1;
+  }
+
+  tail = *list;
+  while (tail->next)
+    tail = tail->next;
+  tail->next = trig;
+  return 1;
+}
+
+static int proto_trigger_remove(struct trig_proto_list **list, int vnum)
+{
+  struct trig_proto_list *cur, *prev, *next;
+  int removed = 0;
+
+  if (!list)
+    return 0;
+
+  prev = NULL;
+  cur = *list;
+  while (cur) {
+    next = cur->next;
+    if (cur->vnum == vnum) {
+      if (prev)
+        prev->next = next;
+      else
+        *list = next;
+      free(cur);
+      removed = 1;
+    } else {
+      prev = cur;
+    }
+    cur = next;
+  }
+
+  return removed;
+}
 
 static void rset_show_usage(struct char_data *ch)
 {
@@ -58,6 +452,7 @@ static void rset_show_usage(struct char_data *ch)
     "  rset add hidden <direction>\r\n"
     "  rset add forage <object vnum> <dc check>\r\n"
     "  rset add edesc <keyword> <description>\r\n"
+    "  rset add script <script name>\r\n"
     "  rset add desc\r\n"
     "  rset del <field>\r\n"
     "  rset clear force\r\n"
@@ -110,6 +505,7 @@ static void rset_show_add_usage(struct char_data *ch)
     "  rset add hidden <direction>\r\n"
     "  rset add forage <object vnum> <dc check>\r\n"
     "  rset add edesc <keyword> <description>\r\n"
+    "  rset add script <script name>\r\n"
     "  rset add desc\r\n");
 }
 
@@ -128,6 +524,7 @@ static void rset_show_del_usage(struct char_data *ch)
     "  rset del hidden <direction>\r\n"
     "  rset del forage <object vnum>\r\n"
     "  rset del edesc <keyword>\r\n"
+    "  rset del script <script name>\r\n"
     "\r\n"
     "Examples:\r\n"
     "  rset del flags INDOORS QUITSAFE\r\n"
@@ -136,7 +533,8 @@ static void rset_show_del_usage(struct char_data *ch)
     "  rset del key n\r\n"
     "  rset del hidden n\r\n"
     "  rset del forage 301\r\n"
-    "  rset del edesc mosaic\r\n");
+    "  rset del edesc mosaic\r\n"
+    "  rset del script rat_patrol.py\r\n");
 }
 
 static void rset_show_validate_usage(struct char_data *ch)
@@ -748,6 +1146,8 @@ ACMD(do_rset)
   char arg3[MAX_INPUT_LENGTH];
   struct room_data *room;
   room_rnum rnum;
+  trig_data *trig;
+  int tn, rn;
 
   if (IS_NPC(ch) || ch->desc == NULL) {
     send_to_char(ch, "rset is only usable by connected players.\r\n");
@@ -1169,6 +1569,43 @@ ACMD(do_rset)
       return;
     }
 
+    if (is_abbrev(arg2, "script")) {
+      argument = one_argument(argument, arg3);
+      if (!*arg3) {
+        rset_show_add_usage(ch);
+        return;
+      }
+
+      tn = script_resolve_trigger_vnum(ch, arg3, room->zone, WLD_TRIGGER);
+      if (tn == NOTHING)
+        return;
+      rn = real_trigger(tn);
+      if (rn == NOTHING || trig_index[rn] == NULL || trig_index[rn]->proto == NULL) {
+        send_to_char(ch, "That trigger does not exist.\r\n");
+        return;
+      }
+      trig = trig_index[rn]->proto;
+
+      if (!proto_trigger_add(&room->proto_script, tn)) {
+        send_to_char(ch, "That trigger is already attached.\r\n");
+        return;
+      }
+
+      if (SCRIPT(room))
+        extract_script(room, WLD_TRIGGER);
+      assign_triggers(room, WLD_TRIGGER);
+      rset_mark_room_modified(rnum);
+
+      if (!save_rooms(room->zone)) {
+        send_to_char(ch, "Failed to write room data to disk.\r\n");
+        return;
+      }
+
+      send_to_char(ch, "Trigger %d (%s) attached to room %d.\r\n",
+                   tn, GET_TRIG_NAME(trig), room->number);
+      return;
+    }
+
     if (set_alias) {
       int flag;
 
@@ -1498,6 +1935,53 @@ ACMD(do_rset)
       return;
     }
 
+    if (is_abbrev(arg2, "script")) {
+      const char *tname = "unknown";
+      char script_name[MAX_INPUT_LENGTH];
+
+      argument = one_argument(argument, arg3);
+      if (!*arg3) {
+        rset_show_del_usage(ch);
+        return;
+      }
+
+      if (is_number(arg3)) {
+        tn = atoi(arg3);
+      } else {
+        if (!script_normalize_name(arg3, script_name, sizeof(script_name))) {
+          send_to_char(ch, "Script name is invalid.\r\n");
+          return;
+        }
+        tn = script_find_attached_trigger_vnum(room->proto_script, script_name, WLD_TRIGGER);
+        if (tn == NOTHING) {
+          send_to_char(ch, "That script is not attached.\r\n");
+          return;
+        }
+      }
+      rn = real_trigger(tn);
+      if (rn != NOTHING && trig_index[rn] && trig_index[rn]->proto)
+        tname = GET_TRIG_NAME(trig_index[rn]->proto);
+
+      if (!proto_trigger_remove(&room->proto_script, tn)) {
+        send_to_char(ch, "That trigger is not attached.\r\n");
+        return;
+      }
+
+      if (SCRIPT(room))
+        extract_script(room, WLD_TRIGGER);
+      assign_triggers(room, WLD_TRIGGER);
+      rset_mark_room_modified(rnum);
+
+      if (!save_rooms(room->zone)) {
+        send_to_char(ch, "Failed to write room data to disk.\r\n");
+        return;
+      }
+
+      send_to_char(ch, "Trigger %d (%s) removed from room %d.\r\n",
+                   tn, tname, room->number);
+      return;
+    }
+
     rset_show_del_usage(ch);
     return;
   }
@@ -1557,6 +2041,7 @@ static void oset_show_usage(struct char_data *ch)
     "  oset add cost <obj> <value>\r\n"
     "  oset add oval <obj> <oval number> <value>\r\n"
     "  oset add edesc <obj> <keyword> <description>\r\n"
+    "  oset add script <obj> <script name>\r\n"
     "  oset del <obj> <field>\r\n"
     "  oset clear <obj> force\r\n"
     "  oset validate <obj>\r\n");
@@ -1578,7 +2063,8 @@ static void oset_show_add_usage(struct char_data *ch)
     "  oset add weight <obj> <value>\r\n"
     "  oset add cost <obj> <value>\r\n"
     "  oset add oval <obj> <oval number> <value>\r\n"
-    "  oset add edesc <obj> <keyword> <description>\r\n");
+    "  oset add edesc <obj> <keyword> <description>\r\n"
+    "  oset add script <obj> <script name>\r\n");
 }
 
 static void oset_show_add_keywords_usage(struct char_data *ch)
@@ -1714,6 +2200,7 @@ static void oset_show_del_usage(struct char_data *ch)
     "  oset del <obj> wear <wear type> [wear types]\r\n"
     "  oset del <obj> oval <oval number|oval name>\r\n"
     "  oset del <obj> edesc <keyword>\r\n"
+    "  oset del <obj> script <script name>\r\n"
     "\r\n"
     "Examples:\r\n"
     "  oset del sword keywords sword\r\n"
@@ -2132,6 +2619,8 @@ ACMD(do_oset)
   char arg3[MAX_INPUT_LENGTH];
   char arg4[MAX_INPUT_LENGTH];
   struct obj_data *obj;
+  trig_data *trig;
+  int tn, rn;
 
   if (IS_NPC(ch) || ch->desc == NULL) {
     send_to_char(ch, "oset is only usable by connected players.\r\n");
@@ -2504,6 +2993,88 @@ ACMD(do_oset)
       return;
     }
 
+    if (is_abbrev(arg2, "script")) {
+      obj_rnum robj_num;
+      obj_vnum vnum;
+      zone_rnum znum;
+
+      argument = one_argument(argument, arg3);
+      if (!*arg3) {
+        oset_show_add_usage(ch);
+        return;
+      }
+      skip_spaces(&argument);
+      if (!*argument) {
+        oset_show_add_usage(ch);
+        return;
+      }
+
+      obj = oset_get_target_obj_keyword(ch, arg3);
+      if (!obj) {
+        send_to_char(ch, "You don't seem to have %s %s.\r\n", AN(arg3), arg3);
+        return;
+      }
+
+      robj_num = GET_OBJ_RNUM(obj);
+      vnum = GET_OBJ_VNUM(obj);
+      if (robj_num == NOTHING || vnum == NOTHING) {
+        send_to_char(ch, "That object has no valid vnum.\r\n");
+        return;
+      }
+
+      if (!can_edit_zone(ch, real_zone_by_thing(vnum))) {
+        send_to_char(ch, "You do not have permission to modify that zone.\r\n");
+        return;
+      }
+
+      znum = real_zone_by_thing(vnum);
+      if (znum == NOWHERE) {
+        send_to_char(ch, "That object has no valid zone.\r\n");
+        return;
+      }
+
+      tn = script_resolve_trigger_vnum(ch, argument, znum, OBJ_TRIGGER);
+      if (tn == NOTHING)
+        return;
+      rn = real_trigger(tn);
+      if (rn == NOTHING || trig_index[rn] == NULL || trig_index[rn]->proto == NULL) {
+        send_to_char(ch, "That trigger does not exist.\r\n");
+        return;
+      }
+      trig = trig_index[rn]->proto;
+
+      if (!proto_trigger_add(&obj_proto[robj_num].proto_script, tn)) {
+        send_to_char(ch, "That trigger is already attached.\r\n");
+        return;
+      }
+
+      {
+        struct obj_data *obj_it;
+        struct obj_data *target_obj = obj;
+
+        for (obj_it = object_list; obj_it; obj_it = obj_it->next) {
+          if (obj_it->item_number != robj_num)
+            continue;
+          if (SCRIPT(obj_it))
+            extract_script(obj_it, OBJ_TRIGGER);
+          free_proto_script(obj_it, OBJ_TRIGGER);
+          copy_proto_script(&obj_proto[robj_num], obj_it, OBJ_TRIGGER);
+          assign_triggers(obj_it, OBJ_TRIGGER);
+        }
+
+        if (znum == NOWHERE || !save_objects(znum)) {
+          send_to_char(ch, "Failed to write object data to disk.\r\n");
+          return;
+        }
+
+        send_to_char(ch, "Trigger %d (%s) attached to %s [%d].\r\n",
+                     tn, GET_TRIG_NAME(trig),
+                     (target_obj->short_description ? target_obj->short_description : target_obj->name),
+                     GET_OBJ_VNUM(target_obj));
+      }
+      return;
+    }
+
     oset_show_add_usage(ch);
     return;
   }
@@ -2673,6 +3244,89 @@ ACMD(do_oset)
       return;
     }
 
+    if (is_abbrev(arg3, "script")) {
+      obj_rnum robj_num;
+      obj_vnum vnum;
+      zone_rnum znum;
+      const char *tname = "unknown";
+      char script_name[MAX_INPUT_LENGTH];
+
+      argument = one_argument(argument, arg4);
+      if (!*arg4) {
+        oset_show_del_usage(ch);
+        return;
+      }
+
+      obj = oset_get_target_obj_keyword(ch, arg2);
+      if (!obj) {
+        send_to_char(ch, "You don't seem to have %s %s.\r\n", AN(arg2), arg2);
+        return;
+      }
+
+      robj_num = GET_OBJ_RNUM(obj);
+      vnum = GET_OBJ_VNUM(obj);
+      if (robj_num == NOTHING || vnum == NOTHING) {
+        send_to_char(ch, "That object has no valid vnum.\r\n");
+        return;
+      }
+
+      if (!can_edit_zone(ch, real_zone_by_thing(vnum))) {
+        send_to_char(ch, "You do not have permission to modify that zone.\r\n");
+        return;
+      }
+
+      if (is_number(arg4)) {
+        tn = atoi(arg4);
+      } else {
+        if (!script_normalize_name(arg4, script_name, sizeof(script_name))) {
+          send_to_char(ch, "Script name is invalid.\r\n");
+          return;
+        }
+        tn = script_find_attached_trigger_vnum(obj_proto[robj_num].proto_script,
+                                               script_name, OBJ_TRIGGER);
+        if (tn == NOTHING) {
+          send_to_char(ch, "That script is not attached.\r\n");
+          return;
+        }
+      }
+
+      rn = real_trigger(tn);
+      if (rn != NOTHING && trig_index[rn] && trig_index[rn]->proto)
+        tname = GET_TRIG_NAME(trig_index[rn]->proto);
+
+      if (!proto_trigger_remove(&obj_proto[robj_num].proto_script, tn)) {
+        send_to_char(ch, "That trigger is not attached.\r\n");
+        return;
+      }
+
+      {
+        struct obj_data *obj_it;
+        struct obj_data *target_obj = obj;
+
+        for (obj_it = object_list; obj_it; obj_it = obj_it->next) {
+          if (obj_it->item_number != robj_num)
+            continue;
+          if (SCRIPT(obj_it))
+            extract_script(obj_it, OBJ_TRIGGER);
+          free_proto_script(obj_it, OBJ_TRIGGER);
+          copy_proto_script(&obj_proto[robj_num], obj_it, OBJ_TRIGGER);
+          assign_triggers(obj_it, OBJ_TRIGGER);
+        }
+
+        znum = real_zone_by_thing(vnum);
+        if (znum == NOWHERE || !save_objects(znum)) {
+          send_to_char(ch, "Failed to write object data to disk.\r\n");
+          return;
+        }
+
+        send_to_char(ch, "Trigger %d (%s) removed from %s [%d].\r\n",
+                     tn, tname,
+                     (target_obj->short_description ? target_obj->short_description : target_obj->name),
+                     GET_OBJ_VNUM(target_obj));
+      }
+      return;
+    }
+
     oset_show_del_usage(ch);
     return;
   }
@@ -2754,6 +3408,7 @@ static void mset_show_usage(struct char_data *ch)
     "  mset add flags <npc> <flags> [flags]\r\n"
     "  mset add affect <npc> <affect> [affects]\r\n"
     "  mset add skinning <npc> <vnum> <dc>\r\n"
+    "  mset add script <npc> <script name>\r\n"
     "  mset del <npc>\r\n"
     "  mset clear <npc>\r\n"
     "  mset validate <npc>\r\n");
@@ -3004,7 +3659,8 @@ static void mset_show_del_usage(struct char_data *ch)
     "  mset del <npc> skill <skill name>\r\n"
     "  mset del <npc> flags <flags> [flags]\r\n"
     "  mset del <npc> affect <affect> [affects]\r\n"
-    "  mset del <npc> skinning <vnum>\r\n");
+    "  mset del <npc> skinning <vnum>\r\n"
+    "  mset del <npc> script <script name>\r\n");
 }
 
 static void mset_show_del_edesc_usage(struct char_data *ch)
@@ -3407,6 +4063,8 @@ ACMD(do_mset)
   struct char_data *mob;
   mob_rnum rnum;
   mob_vnum vnum;
+  trig_data *trig;
+  int tn, rn;
 
   if (IS_NPC(ch) || ch->desc == NULL) {
     send_to_char(ch, "mset is only usable by connected players.\r\n");
@@ -3498,6 +4156,56 @@ ACMD(do_mset)
       }
 
       send_to_char(ch, "Name set.\r\n");
+      return;
+    }
+
+    if (is_abbrev(arg2, "script")) {
+      zone_rnum znum;
+
+      skip_spaces(&argument);
+      if (!*argument) {
+        mset_show_usage(ch);
+        return;
+      }
+
+      znum = real_zone_by_thing(vnum);
+      if (znum == NOWHERE) {
+        send_to_char(ch, "That NPC has no valid zone.\r\n");
+        return;
+      }
+
+      tn = script_resolve_trigger_vnum(ch, argument, znum, MOB_TRIGGER);
+      if (tn == NOTHING)
+        return;
+      rn = real_trigger(tn);
+      if (rn == NOTHING || trig_index[rn] == NULL || trig_index[rn]->proto == NULL) {
+        send_to_char(ch, "That trigger does not exist.\r\n");
+        return;
+      }
+      trig = trig_index[rn]->proto;
+
+      if (!proto_trigger_add(&mob_proto[rnum].proto_script, tn)) {
+        send_to_char(ch, "That trigger is already attached.\r\n");
+        return;
+      }
+
+      for (struct char_data *mob_it = character_list; mob_it; mob_it = mob_it->next) {
+        if (GET_MOB_RNUM(mob_it) != rnum)
+          continue;
+        if (SCRIPT(mob_it))
+          extract_script(mob_it, MOB_TRIGGER);
+        free_proto_script(mob_it, MOB_TRIGGER);
+        copy_proto_script(&mob_proto[rnum], mob_it, MOB_TRIGGER);
+        assign_triggers(mob_it, MOB_TRIGGER);
+      }
+
+      if (znum == NOWHERE || !save_mobiles(znum)) {
+        send_to_char(ch, "Failed to write mobile data to disk.\r\n");
+        return;
+      }
+
+      send_to_char(ch, "Trigger %d (%s) attached to %s [%d].\r\n",
+                   tn, GET_TRIG_NAME(trig), GET_SHORT(mob), GET_MOB_VNUM(mob));
       return;
     }
 
@@ -4040,6 +4748,61 @@ ACMD(do_mset)
 
     if (!can_edit_zone(ch, real_zone_by_thing(vnum))) {
       send_to_char(ch, "You do not have permission to modify that zone.\r\n");
+      return;
+    }
+
+    if (is_abbrev(arg3, "script")) {
+      zone_rnum znum;
+      const char *tname = "unknown";
+      char script_name[MAX_INPUT_LENGTH];
+
+      if (!*argument) {
+        mset_show_del_usage(ch);
+        return;
+      }
+
+      if (is_number(argument)) {
+        tn = atoi(argument);
+      } else {
+        if (!script_normalize_name(argument, script_name, sizeof(script_name))) {
+          send_to_char(ch, "Script name is invalid.\r\n");
+          return;
+        }
+        tn = script_find_attached_trigger_vnum(mob_proto[rnum].proto_script,
+                                               script_name, MOB_TRIGGER);
+        if (tn == NOTHING) {
+          send_to_char(ch, "That script is not attached.\r\n");
+          return;
+        }
+      }
+
+      rn = real_trigger(tn);
+      if (rn != NOTHING && trig_index[rn] && trig_index[rn]->proto)
+        tname = GET_TRIG_NAME(trig_index[rn]->proto);
+
+      if (!proto_trigger_remove(&mob_proto[rnum].proto_script, tn)) {
+        send_to_char(ch, "That trigger is not attached.\r\n");
+        return;
+      }
+
+      for (struct char_data *mob_it = character_list; mob_it; mob_it = mob_it->next) {
+        if (GET_MOB_RNUM(mob_it) != rnum)
+          continue;
+        if (SCRIPT(mob_it))
+          extract_script(mob_it, MOB_TRIGGER);
+        free_proto_script(mob_it, MOB_TRIGGER);
+        copy_proto_script(&mob_proto[rnum], mob_it, MOB_TRIGGER);
+        assign_triggers(mob_it, MOB_TRIGGER);
+      }
+
+      znum = real_zone_by_thing(vnum);
+      if (znum == NOWHERE || !save_mobiles(znum)) {
+        send_to_char(ch, "Failed to write mobile data to disk.\r\n");
+        return;
+      }
+
+      send_to_char(ch, "Trigger %d (%s) removed from %s [%d].\r\n",
+                   tn, tname, GET_SHORT(mob), GET_MOB_VNUM(mob));
       return;
     }
 
@@ -7286,6 +8049,8 @@ static int roomsave_restore_room_mobs(struct roomsave_room *room, room_rnum rnum
 
     if (!saw_inventory)
       RS_apply_inventory_loadout(mob);
+
+    load_mtrigger(mob);
 
     count++;
   }

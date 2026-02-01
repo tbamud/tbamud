@@ -14,7 +14,7 @@
 #include "toml.h"
 #include "toml_utils.h"
 #include "genzon.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 
 /* local functions */
 static void remove_cmd_from_list(struct reset_com **list, int pos);

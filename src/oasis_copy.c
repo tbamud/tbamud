@@ -22,7 +22,7 @@
 #include "oasis.h"
 #include "improved-edit.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 
 /* Local, filescope function prototypes */
 /* Utility function for buildwalk */

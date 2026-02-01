@@ -5,7 +5,4 @@ attach_type = 0
 flags = 65536
 narg = 1
 arglist = ""
-commands = [
-  "* No Script",
-]
-
+script = ""

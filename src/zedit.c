@@ -16,7 +16,7 @@
 #include "genolc.h"
 #include "genzon.h"
 #include "oasis.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 
 /* Nasty internal macros to clean up the code. */
 #define MYCMD		(OLC_ZONE(d)->cmd[subcmd])

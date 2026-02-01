@@ -1,6 +1,9 @@
 [[room]]
 vnum = 100
-saved_at = 1759514843
+saved_at = 1769960339
+
+[[room.mob]]
+vnum = 104
 
 [[room.mob]]
 vnum = 100
@@ -284,4 +287,12 @@ contents = []
 [[room]]
 vnum = 101
 saved_at = 1767296996
+
+[[room]]
+vnum = 132
+saved_at = 1769720941
+
+[[room]]
+vnum = 102
+saved_at = 1769960333
 

@@ -18,7 +18,7 @@
 #include "genzon.h"
 #include "oasis.h"
 #include "improved-edit.h"
-#include "dg_olc.h"
+#include "py_olc.h"
 #include "constants.h"
 #include "modify.h"
 

@@ -24,6 +24,7 @@
 
 /* local functions */
 static int VALID_EDGE(room_rnum x, int y);
+static int VALID_EDGE_NO_DOORS(room_rnum x, int y);
 static void bfs_enqueue(room_rnum room, int dir);
 static void bfs_dequeue(void);
 static void bfs_clear_queue(void);
@@ -49,6 +50,18 @@ static int VALID_EDGE(room_rnum x, int y)
   if (world[x].dir_option[y] == NULL || TOROOM(x, y) == NOWHERE)
     return 0;
   if (CONFIG_TRACK_T_DOORS == FALSE && IS_CLOSED(x, y))
+    return 0;
+  if (ROOM_FLAGGED(TOROOM(x, y), ROOM_NOTRACK) || IS_MARKED(TOROOM(x, y)))
+    return 0;
+
+  return 1;
+}
+
+static int VALID_EDGE_NO_DOORS(room_rnum x, int y)
+{
+  if (world[x].dir_option[y] == NULL || TOROOM(x, y) == NOWHERE)
+    return 0;
+  if (IS_CLOSED(x, y))
     return 0;
   if (ROOM_FLAGGED(TOROOM(x, y), ROOM_NOTRACK) || IS_MARKED(TOROOM(x, y)))
     return 0;
@@ -130,6 +143,50 @@ static int find_first_step(room_rnum src, room_rnum target)
 	  MARK(TOROOM(queue_head->room, curr_dir));
 	  bfs_enqueue(TOROOM(queue_head->room, curr_dir), queue_head->dir);
 	}
+      bfs_dequeue();
+    }
+  }
+
+  return (BFS_NO_PATH);
+}
+
+int find_first_step_no_doors(room_rnum src, room_rnum target)
+{
+  int curr_dir;
+  room_rnum curr_room;
+
+  if (src == NOWHERE || target == NOWHERE || src > top_of_world || target > top_of_world) {
+    log("SYSERR: Illegal value %d or %d passed to find_first_step_no_doors. (%s)", src, target, __FILE__);
+    return (BFS_ERROR);
+  }
+  if (src == target)
+    return (BFS_ALREADY_THERE);
+
+  /* clear marks first, some OLC systems will save the mark. */
+  for (curr_room = 0; curr_room <= top_of_world; curr_room++)
+    UNMARK(curr_room);
+
+  MARK(src);
+
+  /* first, enqueue the first steps, saving which direction we're going. */
+  for (curr_dir = 0; curr_dir < DIR_COUNT; curr_dir++)
+    if (VALID_EDGE_NO_DOORS(src, curr_dir)) {
+      MARK(TOROOM(src, curr_dir));
+      bfs_enqueue(TOROOM(src, curr_dir), curr_dir);
+    }
+
+  /* now, do the classic BFS. */
+  while (queue_head) {
+    if (queue_head->room == target) {
+      curr_dir = queue_head->dir;
+      bfs_clear_queue();
+      return (curr_dir);
+    } else {
+      for (curr_dir = 0; curr_dir < DIR_COUNT; curr_dir++)
+        if (VALID_EDGE_NO_DOORS(queue_head->room, curr_dir)) {
+          MARK(TOROOM(queue_head->room, curr_dir));
+          bfs_enqueue(TOROOM(queue_head->room, curr_dir), queue_head->dir);
+        }
       bfs_dequeue();
     }
   }

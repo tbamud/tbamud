@@ -117,7 +117,7 @@ act.wizard.o: act.wizard.c conf.h sysdep.h structs.h utils.h comm.h \
 	$(CC) -c $(CFLAGS) act.wizard.c
 set.o: set.c conf.h sysdep.h structs.h utils.h comm.h \
   interpreter.h handler.h db.h constants.h genolc.h genwld.h genzon.h \
-  oasis.h improved-edit.h modify.h genobj.h dg_scripts.h set.h
+  oasis.h improved-edit.h modify.h genobj.h set.h
 	$(CC) -c $(CFLAGS) set.c
 ban.o: ban.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h
 	$(CC) -c $(CFLAGS) ban.c

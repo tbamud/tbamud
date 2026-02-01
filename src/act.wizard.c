@@ -21,7 +21,7 @@
 #include "screen.h"
 #include "constants.h"
 #include "oasis.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "shop.h"
 #include "act.h"
 #include "genzon.h" /* for real_zone_by_thing */
@@ -355,13 +355,14 @@ static void stat_format_script_triggers(struct script_data *sc, char *buf, size_
     if (len)
       stat_appendf(buf, buf_size, &len, "\n");
 
-    stat_appendf(buf, buf_size, &len, "#%d %s (%s %s) narg=%d arg=%s",
+    stat_appendf(buf, buf_size, &len, "#%d %s (%s %s) narg=%d arg=%s script=%s",
       GET_TRIG_VNUM(t),
       GET_TRIG_NAME(t),
       attach,
       type_buf,
       GET_TRIG_NARG(t),
-      (GET_TRIG_ARG(t) && *GET_TRIG_ARG(t)) ? GET_TRIG_ARG(t) : "None");
+      (GET_TRIG_ARG(t) && *GET_TRIG_ARG(t)) ? GET_TRIG_ARG(t) : "None",
+      (t->script && *t->script) ? t->script : "None");
 
     if (GET_TRIG_WAIT(t))
       stat_appendf(buf, buf_size, &len, " [wait]");

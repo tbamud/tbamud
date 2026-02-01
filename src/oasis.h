@@ -489,5 +489,6 @@ void print_zone(struct char_data *ch, zone_rnum rnum);
 /** @deprecated is do_oasis_links intentionally dead code? */
 ACMD(do_oasis_links);
 ACMD(do_oasis_list);
+ACMD(do_pylist);
 
 #endif /* _OASIS_H_ */

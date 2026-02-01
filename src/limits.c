@@ -18,7 +18,7 @@
 #include "db.h"
 #include "handler.h"
 #include "interpreter.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "class.h"
 #include "fight.h"
 #include "screen.h"

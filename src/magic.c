@@ -18,7 +18,7 @@
 #include "db.h"
 #include "interpreter.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "class.h"
 #include "fight.h"
 #include "mud_event.h"

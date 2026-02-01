@@ -19,7 +19,7 @@
 #include "spells.h"
 #include "screen.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "mud_event.h"
 #include "mail.h"         /**< For the has_mail function */
 #include "act.h"

@@ -22,8 +22,8 @@
 #include "constants.h"
 #include "oasis.h"
 #include "species.h"
-#include "dg_scripts.h"
-#include "dg_event.h"
+#include "py_triggers.h"
+#include "py_event.h"
 #include "act.h"
 #include "ban.h"
 #include "spec_procs.h"
@@ -1957,6 +1957,22 @@ static void parse_mobile_toml(toml_table_t *mob_tab)
       if (v.ok)
         add_proto_trigger(&mob_proto[i], MOB_TRIGGER, (int)v.u.i);
     }
+  } else {
+    toml_table_t *enh_tab = toml_table_in(mob_tab, "enhanced");
+    toml_table_t *save_tab = NULL;
+    if (enh_tab)
+      save_tab = toml_table_in(enh_tab, "saving_throws");
+    if (save_tab) {
+      toml_array_t *tarr = toml_array_in(save_tab, "triggers");
+      if (tarr) {
+        int n = toml_array_nelem(tarr);
+        for (j = 0; j < n; j++) {
+          toml_datum_t v = toml_int_at(tarr, j);
+          if (v.ok)
+            add_proto_trigger(&mob_proto[i], MOB_TRIGGER, (int)v.u.i);
+        }
+      }
+    }
   }
 
   mob_proto[i].aff_abils = mob_proto[i].real_abils;
@@ -2143,28 +2159,12 @@ static void parse_trigger_toml(toml_table_t *trig_tab)
   trig->trigger_type = (long)toml_get_int_default(trig_tab, "flags", 0);
   trig->narg = toml_get_int_default(trig_tab, "narg", 0);
   trig->arglist = toml_get_string_dup(trig_tab, "arglist");
+  trig->script = toml_get_string_dup(trig_tab, "script");
 
-  arr = toml_array_in(trig_tab, "commands");
-  if (arr) {
-    n = toml_array_nelem(arr);
-    for (i = 0; i < n; i++) {
-      toml_datum_t v = toml_string_at(arr, i);
-      if (!v.ok || !v.u.s)
-        continue;
-      if (!trig->cmdlist) {
-        CREATE(trig->cmdlist, struct cmdlist_element, 1);
-        trig->cmdlist->cmd = strdup(v.u.s);
-        trig->cmdlist->next = NULL;
-        cle = trig->cmdlist;
-      } else {
-        CREATE(cle->next, struct cmdlist_element, 1);
-        cle = cle->next;
-        cle->cmd = strdup(v.u.s);
-        cle->next = NULL;
-      }
-      free(v.u.s);
-    }
-  }
+  (void)arr;
+  (void)i;
+  (void)n;
+  (void)cle;
 
   trig_index[top_of_trigt++] = t_index;
 }

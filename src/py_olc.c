@@ -1,11 +1,8 @@
-/**************************************************************************
-*  File: dg_olc.c                                          Part of tbaMUD *
-*  Usage: This source file is used in extending Oasis OLC for trigedit.   *
-*                                                                         *
-*  $Author: Chris Jacobsen/Mark A. Heilpern/egreen/Welcor $               *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file py_olc.h
+* 
+* This set of code was not originally part of the circlemud distribution.
+*/
 
 #include "conf.h"
 #include "sysdep.h"
@@ -16,8 +13,8 @@
 #include "genolc.h"
 #include "interpreter.h"
 #include "oasis.h"
-#include "dg_olc.h"
-#include "dg_event.h"
+#include "py_olc.h"
+#include "py_event.h"
 #include "genzon.h"      /* for real_zone_by_thing */
 #include "constants.h"   /* for the *trig_types */
 #include "modify.h"      /* for smash_tilde */

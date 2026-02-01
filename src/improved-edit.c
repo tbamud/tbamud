@@ -11,7 +11,7 @@
 #include "comm.h"
 #include "interpreter.h"
 #include "improved-edit.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "modify.h"
 
 

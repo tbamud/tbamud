@@ -22,7 +22,7 @@
 #include "improved-edit.h"
 #include "oasis.h"
 #include "class.h"
-#include "dg_scripts.h" /* for trigedit_string_cleanup */
+#include "py_triggers.h" /* for trigedit_string_cleanup */
 #include "modify.h"
 #include "quest.h"
 #include "ibt.h"

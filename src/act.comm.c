@@ -20,7 +20,7 @@
 #include "constants.h"
 #include "spells.h"
 #include "improved-edit.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "act.h"
 #include "modify.h"
 #include <ctype.h>

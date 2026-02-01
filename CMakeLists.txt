@@ -391,6 +391,8 @@ configure_file(
 )
 
 
+# ========== Python ==========
+find_package(Python3 3.12 REQUIRED COMPONENTS Development)
 
 # ========== Source-filer ==========
 file(GLOB SRC_FILES src/*.c)
@@ -398,8 +400,9 @@ list(APPEND SRC_FILES third_party/tomlc99/toml.c)
 
 # ========== Bygg kjørbar ==========
 add_executable(circle ${SRC_FILES})
-target_link_libraries(circle ${EXTRA_LIBS})
+target_link_libraries(circle ${EXTRA_LIBS} Python3::Python)
 target_include_directories(circle PRIVATE ${CMAKE_SOURCE_DIR}/third_party/tomlc99)
+target_include_directories(circle PRIVATE ${Python3_INCLUDE_DIRS})
 
 add_subdirectory(src/util)
 

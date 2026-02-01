@@ -1,20 +1,13 @@
 /**
-* @file dg_olc.h
-* This source file is used in extending Oasis OLC for trigedit.
+* @file py_olc.c
 * 
-* Part of the core tbaMUD source code distribution, which is a derivative
-* of, and continuation of, CircleMUD.
-* 
-* This source code, which was not part of the CircleMUD legacy code,
-* was created by the following people:                                      
-* $Author: Mark A. Heilpern/egreen/Welcor $                              
-* $Date: 2004/10/11 12:07:00$                                            
-* $Revision: 1.0.14 $                                                    
+* This set of code was not originally part of the circlemud distribution.
 */
-#ifndef _DG_OLC_H_
-#define _DG_OLC_H_
 
-#include "dg_scripts.h"
+#ifndef _PY_OLC_H_
+#define _PY_OLC_H_
+
+#include "py_triggers.h"
 
 #define NUM_TRIG_TYPE_FLAGS		21
 
@@ -46,4 +39,4 @@ void dg_script_menu(struct descriptor_data *d);
 int dg_script_edit_parse(struct descriptor_data *d, char *arg);
 
 
-#endif /* _DG_OLC_H_ */
+#endif /* _PY_OLC_H_ */

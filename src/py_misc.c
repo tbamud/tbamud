@@ -1,21 +1,18 @@
-/**************************************************************************
-*  File: dg_misc.c                                         Part of tbaMUD *
-*  Usage: Contains general functions for script usage.                    *
-*                                                                         *
-*  $Author: Mark A. Heilpern/egreen/Welcor $                              *
-*  $Date: 2004/10/11 12:07:00$                                            *
-*  $Revision: 1.0.14 $                                                    *
-**************************************************************************/
+/**
+* @file py_misc.c
+* 
+* This set of code was not originally part of the circlemud distribution.
+*/
 
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
 #include "utils.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "comm.h"
 #include "interpreter.h"
 #include "handler.h"
-#include "dg_event.h"
+#include "py_event.h"
 #include "db.h"
 #include "screen.h"
 #include "spells.h"
@@ -25,6 +22,15 @@
 
 /* copied from spell_parser.c: */
 #define SINFO spell_info[spellnum]
+
+struct room_data *dg_room_of_obj(struct obj_data *obj)
+{
+  if (IN_ROOM(obj) != NOWHERE) return &world[IN_ROOM(obj)];
+  if (obj->carried_by)        return &world[IN_ROOM(obj->carried_by)];
+  if (obj->worn_by)           return &world[IN_ROOM(obj->worn_by)];
+  if (obj->in_obj)            return (dg_room_of_obj(obj->in_obj));
+  return NULL;
+}
 
 
 /* Cast a spell; can be called by mobiles, objects and rooms, and no level
@@ -307,4 +313,3 @@ void script_damage(struct char_data *vict, int dam)
     die(vict, NULL);
   }
 }
-

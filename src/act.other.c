@@ -20,7 +20,7 @@
 #include "screen.h"
 #include "house.h"
 #include "constants.h"
-#include "dg_scripts.h"
+#include "py_triggers.h"
 #include "act.h"
 #include "spec_procs.h"
 #include "class.h"
