@@ -39,15 +39,25 @@
 /* Can Scripts be attached to players? */
 int script_players = NO;
 
-/* pk_allowed sets the tone of the entire game.  If pk_allowed is set to NO,
- * then players will not be allowed to kill, summon, charm, or sleep other
- * players, as well as a variety of other "asshole player" protections. However,
- * if you decide you want to have an all-out knock-down drag-out PK Mud, just
- * set pk_allowed to YES - and anything goes. */
-int pk_allowed = NO;
+/* pk_setting sets the tone of the entire game.  
+ *  
+ * CONFIG_PK_OFF           0  Players are prevented from damaging or fighting other players in code 
+ * CONFIG_PK_LIMITED       1  Players may damage and fight but will be flagged PLR_KILLER 
+ * CONFIG_PK_FREEFORALL    2  No restrictions or flags for player damaging or killing 
+ * 
+ * If pk_setting is set to 0, then players will not be allowed to kill, summon, charm, or sleep other
+ * players, as well as a variety of other "asshole player" protections.
+ * However, if you decide you want to have an all-out knock-down drag-out PK Mud, just
+ * set pk_setting to 2 - and anything goes. */
+int pk_setting = 0;
 
-/* Is playerthieving allowed? */
-int pt_allowed = NO;
+/* Is playerthieving allowed? 
+*
+* CONFIG_PT_OFF           0  Players are prevented from stealing from other players in code 
+* CONFIG_PT_LIMITED       1  Players may steal from other players but will be flagged PLR_THIEF if caught 
+* CONFIG_PT_FREEFORALL    2  No restrictions or flags for player stealing 
+*/
+int pt_setting = 0;
 
 /* Minimum level a player must be to shout/holler/gossip/auction. */
 int level_can_shout = 1;

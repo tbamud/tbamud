@@ -54,7 +54,7 @@ ACMD(do_assist)
     else if (!CAN_SEE(ch, opponent))
       act("You can't see who is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
          /* prevent accidental pkill */
-    else if (!CONFIG_PK_ALLOWED && !IS_NPC(opponent))
+    else if (!pk_allowed(ch, opponent))
       send_to_char(ch, "You cannot kill other players.\r\n");
     else {
       send_to_char(ch, "You join the fight!\r\n");
@@ -82,8 +82,10 @@ ACMD(do_hit)
   } else if (AFF_FLAGGED(ch, AFF_CHARM) && (ch->master == vict))
     act("$N is just such a good friend, you simply can't hit $M.", FALSE, ch, 0, vict, TO_CHAR);
   else {
-    if (!CONFIG_PK_ALLOWED && !IS_NPC(vict) && !IS_NPC(ch)) 
-      check_killer(ch, vict);
+    if (!pk_allowed(ch, vict)) {
+        send_to_char(ch, "Player killing is not allowed.\r\n");
+        return;
+    }
 
     if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) { 
       if (GET_DEX(ch) > GET_DEX(vict) || (GET_DEX(ch) == GET_DEX(vict) && rand_number(1, 2) == 1))  /* if faster */

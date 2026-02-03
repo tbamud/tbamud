@@ -154,6 +154,7 @@ ACMD(do_steal)
     send_to_char(ch, "You have no idea how to do that.\r\n");
     return;
   }
+
   if (ROOM_FLAGGED(IN_ROOM(ch), ROOM_PEACEFUL)) {
     send_to_char(ch, "This room just has such a peaceful, easy feeling...\r\n");
     return;
@@ -169,20 +170,26 @@ ACMD(do_steal)
     return;
   }
 
+  /* Check if player stealing is allowed */
+  if (!IS_NPC(vict)) {
+    if (CONFIG_PT_SETTING == CONFIG_PT_OFF) {
+      send_to_char(ch, "Stealing from players is not allowed.\r\n");
+      return;
+    }
+    pcsteal = (CONFIG_PT_SETTING == CONFIG_PT_LIMITED);
+  }
+
   /* 101% is a complete failure */
   percent = rand_number(1, 101) - dex_app_skill[GET_DEX(ch)].p_pocket;
 
   if (GET_POS(vict) < POS_SLEEPING)
     percent = -1;		/* ALWAYS SUCCESS, unless heavy object. */
 
-  if (!CONFIG_PT_ALLOWED && !IS_NPC(vict))
-    pcsteal = 1;
-
   if (!AWAKE(vict))	/* Easier to steal from sleeping people. */
     percent -= 50;
 
   /* No stealing if not allowed. If it is no stealing from Imm's or Shopkeepers. */
-  if (GET_LEVEL(vict) >= LVL_IMMORT || pcsteal || GET_MOB_SPEC(vict) == shop_keeper)
+  if (GET_LEVEL(vict) >= LVL_IMMORT || GET_MOB_SPEC(vict) == shop_keeper)
     percent = 101;		/* Failure */
 
   if (str_cmp(obj_name, "coins") && str_cmp(obj_name, "gold")) {
@@ -221,6 +228,12 @@ ACMD(do_steal)
       if (percent > GET_SKILL(ch, SKILL_STEAL)) {
 	ohoh = TRUE;
 	send_to_char(ch, "Oops..\r\n");
+  
+  /* Player got caught and stealing is limited via cedit */
+  if ( (pcsteal) && (!PLR_FLAGGED(ch, PLR_THIEF))) {
+        SET_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
+  }
+
 	act("$n tried to steal something from you!", FALSE, ch, 0, vict, TO_VICT);
 	act("$n tries to steal something from $N.", TRUE, ch, 0, vict, TO_NOTVICT);
       } else {			/* Steal the item */
@@ -242,6 +255,10 @@ ACMD(do_steal)
   } else {			/* Steal some coins */
     if (AWAKE(vict) && (percent > GET_SKILL(ch, SKILL_STEAL))) {
       ohoh = TRUE;
+        /* Player got caught and stealing is limited via cedit */
+      if ( (pcsteal) && (!PLR_FLAGGED(ch, PLR_THIEF))) {
+        SET_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
+      }
       send_to_char(ch, "Oops..\r\n");
       act("You discover that $n has $s hands in your wallet.", FALSE, ch, 0, vict, TO_VICT);
       act("$n tries to steal gold from $N.", TRUE, ch, 0, vict, TO_NOTVICT);

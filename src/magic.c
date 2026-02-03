@@ -473,7 +473,7 @@ void mag_affects(int level, struct char_data *ch, struct char_data *victim,
     break;
 
   case SPELL_SLEEP:
-    if (!CONFIG_PK_ALLOWED && !IS_NPC(ch) && !IS_NPC(victim))
+    if ((CONFIG_PK_SETTING == CONFIG_PK_OFF) && !IS_NPC(ch) && !IS_NPC(victim))
       return;
     if (MOB_FLAGGED(victim, MOB_NOSLEEP))
       return;
@@ -650,7 +650,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
       continue;
     if (!IS_NPC(tch) && GET_LEVEL(tch) >= LVL_IMMORT)
       continue;
-    if (!CONFIG_PK_ALLOWED && !IS_NPC(ch) && !IS_NPC(tch))
+    if ((CONFIG_PK_SETTING == CONFIG_PK_OFF) && !IS_NPC(ch) && !IS_NPC(tch))
       continue;
     if (!IS_NPC(ch) && IS_NPC(tch) && AFF_FLAGGED(tch, AFF_CHARM))
       continue;

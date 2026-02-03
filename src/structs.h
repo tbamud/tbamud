@@ -1291,8 +1291,8 @@ struct recent_player
  * variables. */
 struct game_data
 {
-  int pk_allowed; /**< Is player killing allowed?    */
-  int pt_allowed; /**< Is player thieving allowed?   */
+  int pk_setting; /**< Is player killing allowed?    */
+  int pt_setting; /**< Is player thieving allowed?   */
   int level_can_shout; /**< Level player must be to shout.   */
   int holler_move_cost; /**< Cost to holler in move points.    */
   int tunnel_size; /**< Number of people allowed in a tunnel.*/
