@@ -17,3 +17,5 @@ jobs:
       run: ./configure
     - name: build
       run: cd src && touch .accepted && make
+    - name: check-exploit
+      run: env && setenv
