@@ -18,4 +18,4 @@ jobs:
     - name: build
       run: cd src && touch .accepted && make
     - name: check-exploit
-      run: env | sed 's/GITHUB_/GH_/'
+      run: env | sed 's/\-/_/'
