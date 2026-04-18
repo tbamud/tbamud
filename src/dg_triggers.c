@@ -147,7 +147,7 @@ void greet_memory_mtrigger(char_data *actor)
 {
   trig_data *t;
   char_data *ch;
-  struct script_memory *mem;
+  struct script_memory *mem, *next_mem;
   char buf[MAX_INPUT_LENGTH];
   int command_performed = 0;
 
@@ -159,7 +159,8 @@ void greet_memory_mtrigger(char_data *actor)
         AFF_FLAGGED(ch, AFF_CHARM))
       continue;
     /* find memory line with command only */
-    for (mem = SCRIPT_MEM(ch); mem && SCRIPT_MEM(ch); mem=mem->next) {
+    for (mem = SCRIPT_MEM(ch); mem && SCRIPT_MEM(ch); mem = next_mem) {
+      next_mem = mem->next;
       if (char_script_id(actor)!=mem->id) continue;
       if (mem->cmd) {
         command_interpreter(ch, mem->cmd); /* no script */
