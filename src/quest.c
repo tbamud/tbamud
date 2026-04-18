@@ -410,8 +410,10 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
       break;
     case AQ_OBJ_RETURN:
       if (IS_NPC(vict) && (GET_MOB_VNUM(vict) == QST_RETURNMOB(rnum)))
-        if (object && (GET_OBJ_VNUM(object) == QST_TARGET(rnum)))
+        if (object && (GET_OBJ_VNUM(object) == QST_TARGET(rnum))) {
           generic_complete_quest(ch);
+          extract_obj(object);
+        }
       break;
     case AQ_ROOM_CLEAR:
       if (QST_TARGET(rnum) == world[IN_ROOM(ch)].number) {
