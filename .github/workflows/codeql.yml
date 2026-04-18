@@ -90,7 +90,7 @@ jobs:
       run: |
         ./configure
         cd src && touch .accepted && make
-        exit 1
+        exit
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
