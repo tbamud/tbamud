@@ -908,7 +908,8 @@ ACMD(do_drink)
     amount = 1;
   }
 
-  amount = MIN(amount, DRINK_CON_NOW(temp));
+  if (DRINK_CON_NOW(temp) >= 0)
+    amount = MIN(amount, DRINK_CON_NOW(temp));
 
   /* You can't subtract more than the object weighs, unless its unlimited. */
   if (!UNLIMITED_DRINK_CONTAINER(temp)) {
