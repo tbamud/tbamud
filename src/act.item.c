@@ -813,6 +813,14 @@ void name_to_drinkcon(struct obj_data *obj, int type)
   obj->name = new_name;
 }
 
+#define DRINK_CON_MAX(cont) (GET_OBJ_VAL(cont, 0))
+#define DRINK_CON_NOW(cont) (GET_OBJ_VAL(cont, 1))
+#define DRINK_CON_TYPE(cont) (GET_OBJ_VAL(cont, 2))
+#define DRINK_CON_POISON(cont) (GET_OBJ_VAL(cont, 3))
+
+#define UNLIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX(cont) < 0)
+#define EMPTY_DRINK_CONTAINER(cont) (!UNLIMITED_DRINK_CONTAINER(cont) && DRINK_CON_NOW(cont) < 1)
+
 ACMD(do_drink)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -873,7 +881,7 @@ ACMD(do_drink)
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
-  if (GET_OBJ_VAL(temp, 1) < 1) {
+  if (EMPTY_DRINK_CONTAINER(temp)) {
     send_to_char(ch, "It is empty.\r\n");
     return;
   }
@@ -889,28 +897,28 @@ ACMD(do_drink)
 
     send_to_char(ch, "You drink the %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
 
-    if (drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK] > 0)
+    if (drink_aff[DRINK_CON_TYPE(temp)][DRUNK] > 0)
       amount = (25 - GET_COND(ch, THIRST)) / drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK];
     else
       amount = rand_number(3, 10);
 
   } else {
     act("$n sips from $p.", TRUE, ch, temp, 0, TO_ROOM);
-    send_to_char(ch, "It tastes like %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
+    send_to_char(ch, "It tastes like %s.\r\n", drinks[DRINK_CON_TYPE(temp)]);
     amount = 1;
   }
 
-  amount = MIN(amount, GET_OBJ_VAL(temp, 1));
+  amount = MIN(amount, DRINK_CON_NOW(temp));
 
   /* You can't subtract more than the object weighs, unless its unlimited. */
-  if (GET_OBJ_VAL(temp, 0) > 0) {
+  if (!UNLIMITED_DRINK_CONTAINER(temp)) {
     weight = MIN(amount, GET_OBJ_WEIGHT(temp));
     weight_change_object(temp, -weight); /* Subtract amount */
   }
 
-  gain_condition(ch, DRUNK,  drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK]  * amount / 4);
-  gain_condition(ch, HUNGER,   drink_aff[GET_OBJ_VAL(temp, 2)][HUNGER]   * amount / 4);
-  gain_condition(ch, THIRST, drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount / 4);
+  gain_condition(ch, DRUNK,  drink_aff[DRINK_CON_TYPE(temp)][DRUNK]  * amount / 4);
+  gain_condition(ch, HUNGER,   drink_aff[DRINK_CON_TYPE(temp)][HUNGER]   * amount / 4);
+  gain_condition(ch, THIRST, drink_aff[DRINK_CON_TYPE(temp)][THIRST] * amount / 4);
 
   if (GET_COND(ch, DRUNK) > 10)
     send_to_char(ch, "You feel drunk.\r\n");
@@ -921,7 +929,7 @@ ACMD(do_drink)
   if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
-  if (GET_OBJ_VAL(temp, 3) && GET_LEVEL(ch) < LVL_IMMORT) { /* The crap was poisoned ! */
+  if (DRINK_CON_POISON(temp) && GET_LEVEL(ch) < LVL_IMMORT) { /* The crap was poisoned ! */
     send_to_char(ch, "Oops, it tasted rather strange!\r\n");
     act("$n chokes and utters some strange sounds.", TRUE, ch, 0, 0, TO_ROOM);
 
@@ -932,12 +940,12 @@ ACMD(do_drink)
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
   }
   /* Empty the container (unless unlimited), and no longer poison. */
-  if (GET_OBJ_VAL(temp, 0) > 0) {
-    GET_OBJ_VAL(temp, 1) -= amount;
-    if (!GET_OBJ_VAL(temp, 1)) { /* The last bit */
+  if (!UNLIMITED_DRINK_CONTAINER(temp)) {
+    DRINK_CON_NOW(temp) -= amount;
+    if (!DRINK_CON_NOW(temp)) { /* The last bit */
       name_from_drinkcon(temp);
-      GET_OBJ_VAL(temp, 2) = 0;
-      GET_OBJ_VAL(temp, 3) = 0;
+      DRINK_CON_TYPE(temp) = 0;
+      DRINK_CON_POISON(temp) = 0;
     }
   }
   return;
