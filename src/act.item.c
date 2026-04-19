@@ -908,9 +908,10 @@ ACMD(do_drink)
     amount = 1;
   }
 
-   // Some drink containers have a negative value for "max" but a current value of 0. 
-   // In these cases we want to allow the player to drink from the container, even though it is technically "empty" by the current value.
-   // the amount will not be altered here, but will be limited by the current value before being applied to the current content.
+  /* For limited drink containers with remaining contents, don't drink more
+   * than the amount currently in the container. Unlimited containers are
+   * handled separately and are not clamped here.
+   */
   if (LIMITED_DRINK_CONTAINER(temp) && DRINK_CON_NOW(temp) > 0)
     amount = MIN(amount, DRINK_CON_NOW(temp));
 
