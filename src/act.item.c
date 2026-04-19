@@ -819,7 +819,7 @@ void name_to_drinkcon(struct obj_data *obj, int type)
 #define DRINK_CON_POISON(cont) (GET_OBJ_VAL((cont), 3))
 
 #define LIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) > 0 && DRINK_CON_NOW((cont)) >= 0)
-#define EMPTY_DRINK_CONTAINER(cont) (!UNLIMITED_DRINK_CONTAINER((cont)) && DRINK_CON_NOW((cont)) < 1)
+#define EMPTY_DRINK_CONTAINER(cont) (LIMITED_DRINK_CONTAINER((cont)) && DRINK_CON_NOW((cont)) < 1)
 
 ACMD(do_drink)
 {
