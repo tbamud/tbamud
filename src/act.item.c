@@ -818,7 +818,7 @@ void name_to_drinkcon(struct obj_data *obj, int type)
 #define DRINK_CON_TYPE(cont) (GET_OBJ_VAL((cont), 2))
 #define DRINK_CON_POISON(cont) (GET_OBJ_VAL((cont), 3))
 
-#define UNLIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) < 0 || DRINK_CON_NOW((cont)) < 0)
+#define LIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) > 0 && DRINK_CON_NOW((cont)) >= 0)
 #define EMPTY_DRINK_CONTAINER(cont) (!UNLIMITED_DRINK_CONTAINER((cont)) && DRINK_CON_NOW((cont)) < 1)
 
 ACMD(do_drink)
@@ -910,11 +910,12 @@ ACMD(do_drink)
 
    // Some drink containers have a negative value for "max" but a current value of 0. 
    // In these cases we want to allow the player to drink from the container, even though it is technically "empty" by the current value.
-  if (!UNLIMITED_DRINK_CONTAINER(temp))
+   // the amount will not be altered here, but will be limited by the current value before being applied to the current content.
+  if (LIMITED_DRINK_CONTAINER(temp) && DRINK_CON_NOW(temp) > 0)
     amount = MIN(amount, DRINK_CON_NOW(temp));
 
   /* You can't subtract more than the object weighs, unless its unlimited. */
-  if (!UNLIMITED_DRINK_CONTAINER(temp)) {
+  if (LIMITED_DRINK_CONTAINER(temp)) {
     weight = MIN(amount, GET_OBJ_WEIGHT(temp));
     weight_change_object(temp, -weight); /* Subtract amount */
   }
@@ -943,7 +944,8 @@ ACMD(do_drink)
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
   }
   /* Empty the container (unless unlimited), and no longer poison. */
-  if (!UNLIMITED_DRINK_CONTAINER(temp)) {
+  if (LIMITED_DRINK_CONTAINER(temp)) {
+    amount = MIN(amount, DRINK_CON_NOW(temp)); // never subtract more than the current amount
     DRINK_CON_NOW(temp) -= amount;
     if (!DRINK_CON_NOW(temp)) { /* The last bit */
       name_from_drinkcon(temp);
