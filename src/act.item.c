@@ -892,13 +892,13 @@ ACMD(do_drink)
   if (subcmd == SCMD_DRINK) {
     char buf[MAX_STRING_LENGTH];
 
-    snprintf(buf, sizeof(buf), "$n drinks %s from $p.", drinks[GET_OBJ_VAL(temp, 2)]);
+    snprintf(buf, sizeof(buf), "$n drinks %s from $p.", drinks[DRINK_CON_TYPE(temp)]);
     act(buf, TRUE, ch, temp, 0, TO_ROOM);
 
-    send_to_char(ch, "You drink the %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
+    send_to_char(ch, "You drink the %s.\r\n", drinks[DRINK_CON_TYPE(temp)]);
 
     if (drink_aff[DRINK_CON_TYPE(temp)][DRUNK] > 0)
-      amount = (25 - GET_COND(ch, THIRST)) / drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK];
+      amount = (25 - GET_COND(ch, THIRST)) / drink_aff[DRINK_CON_TYPE(temp)][DRUNK];
     else
       amount = rand_number(3, 10);
 
@@ -951,6 +951,14 @@ ACMD(do_drink)
   }
   return;
 }
+
+#undefine DRINK_CON_MAX
+#undefine DRINK_CON_NOW
+#undefine DRINK_CON_TYPE
+#undefine DRINK_CON_POISON
+
+#undefine UNLIMITED_DRINK_CONTAINER
+#undefine EMPTY_DRINK_CONTAINER
 
 ACMD(do_eat)
 {
