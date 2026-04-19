@@ -908,7 +908,9 @@ ACMD(do_drink)
     amount = 1;
   }
 
-  if (DRINK_CON_NOW(temp) >= 0)
+   // Some drink containers have a negative value for "max" but a current value of 0. 
+   // In these cases we want to allow the player to drink from the container, even though it is technically "empty" by the current value.
+  if (!UNLIMITED_DRINK_CONTAINER(temp) && DRINK_CON_NOW(temp) >= 0)
     amount = MIN(amount, DRINK_CON_NOW(temp));
 
   /* You can't subtract more than the object weighs, unless its unlimited. */
