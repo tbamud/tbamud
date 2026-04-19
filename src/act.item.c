@@ -818,7 +818,7 @@ void name_to_drinkcon(struct obj_data *obj, int type)
 #define DRINK_CON_TYPE(cont) (GET_OBJ_VAL((cont), 2))
 #define DRINK_CON_POISON(cont) (GET_OBJ_VAL((cont), 3))
 
-#define UNLIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) < 0)
+#define UNLIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) <= 0 || DRINK_CON_NOW((cont)) < 0)
 #define EMPTY_DRINK_CONTAINER(cont) (!UNLIMITED_DRINK_CONTAINER((cont)) && DRINK_CON_NOW((cont)) < 1)
 
 ACMD(do_drink)
@@ -910,7 +910,7 @@ ACMD(do_drink)
 
    // Some drink containers have a negative value for "max" but a current value of 0. 
    // In these cases we want to allow the player to drink from the container, even though it is technically "empty" by the current value.
-  if (!UNLIMITED_DRINK_CONTAINER(temp) && DRINK_CON_NOW(temp) >= 0)
+  if (!UNLIMITED_DRINK_CONTAINER(temp))
     amount = MIN(amount, DRINK_CON_NOW(temp));
 
   /* You can't subtract more than the object weighs, unless its unlimited. */
