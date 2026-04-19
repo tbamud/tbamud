@@ -952,13 +952,13 @@ ACMD(do_drink)
   return;
 }
 
-#undefine DRINK_CON_MAX
-#undefine DRINK_CON_NOW
-#undefine DRINK_CON_TYPE
-#undefine DRINK_CON_POISON
+#undef DRINK_CON_MAX
+#undef DRINK_CON_NOW
+#undef DRINK_CON_TYPE
+#undef DRINK_CON_POISON
 
-#undefine UNLIMITED_DRINK_CONTAINER
-#undefine EMPTY_DRINK_CONTAINER
+#undef UNLIMITED_DRINK_CONTAINER
+#undef EMPTY_DRINK_CONTAINER
 
 ACMD(do_eat)
 {
