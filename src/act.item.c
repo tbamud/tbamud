@@ -813,13 +813,13 @@ void name_to_drinkcon(struct obj_data *obj, int type)
   obj->name = new_name;
 }
 
-#define DRINK_CON_MAX(cont) (GET_OBJ_VAL(cont, 0))
-#define DRINK_CON_NOW(cont) (GET_OBJ_VAL(cont, 1))
-#define DRINK_CON_TYPE(cont) (GET_OBJ_VAL(cont, 2))
-#define DRINK_CON_POISON(cont) (GET_OBJ_VAL(cont, 3))
+#define DRINK_CON_MAX(cont) (GET_OBJ_VAL((cont), 0))
+#define DRINK_CON_NOW(cont) (GET_OBJ_VAL((cont), 1))
+#define DRINK_CON_TYPE(cont) (GET_OBJ_VAL((cont), 2))
+#define DRINK_CON_POISON(cont) (GET_OBJ_VAL((cont), 3))
 
-#define UNLIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX(cont) < 0)
-#define EMPTY_DRINK_CONTAINER(cont) (!UNLIMITED_DRINK_CONTAINER(cont) && DRINK_CON_NOW(cont) < 1)
+#define UNLIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) < 0)
+#define EMPTY_DRINK_CONTAINER(cont) (!UNLIMITED_DRINK_CONTAINER((cont)) && DRINK_CON_NOW((cont)) < 1)
 
 ACMD(do_drink)
 {
