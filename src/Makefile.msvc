@@ -39,7 +39,7 @@ OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.o
 asciimap.obj act.offensive.obj act.other.obj act.social.obj act.wizard.obj \
 ban.obj boards.obj castle.obj class.obj config.obj constants.obj db.obj \
 dg_event.obj dg_scripts.obj dg_triggers.obj fight.obj genolc.obj graph.obj \
-handler.obj house.obj ibt.obj interpreter.obj limits.obj lists.obj magic.obj \
+handler.obj house.obj ibt.obj interpreter.obj limits.obj lists.obj magic.obj main.obj \
 mail.obj msgedit.obj mobact.obj modify.obj mud_event.obj oasis.obj oasis_copy.obj \
 oasis_delete.obj oasis_list.obj objsave.obj protocol.obj shop.obj spec_assign.obj \
 spec_procs.obj spell_parser.obj improved-edit.obj spells.obj utils.obj weather.obj \
@@ -59,113 +59,312 @@ circle.exe : $(OBJFILES)
 # Dependencies for the object files (automagically generated with
 # gcc -MM)
 
-act.comm.obj: act.comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
-  handler.h db.h screen.h
+act.comm.obj: act.comm.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h screen.h improved-edit.h \
+ dg_scripts.h act.h modify.h
 	$(CC) -c $(CFLAGS) act.comm.c
-act.informative.obj: act.informative.c conf.h sysdep.h structs.h utils.h comm.h \
-  interpreter.h handler.h db.h spells.h screen.h constants.h
+act.informative.obj: act.informative.c conf.h sysdep.h structs.h protocol.h \
+ lists.h utils.h comm.h interpreter.h handler.h db.h spells.h screen.h \
+ constants.h dg_scripts.h mud_event.h dg_event.h mail.h act.h class.h \
+ fight.h modify.h asciimap.h quest.h
 	$(CC) -c $(CFLAGS) act.informative.c
-act.item.obj: act.item.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
-  handler.h db.h spells.h
+act.item.obj: act.item.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h spells.h constants.h \
+ dg_scripts.h oasis.h act.h quest.h
 	$(CC) -c $(CFLAGS) act.item.c
-act.movement.obj: act.movement.c conf.h sysdep.h structs.h utils.h comm.h \
-  interpreter.h handler.h db.h spells.h house.h constants.h
+act.movement.obj: act.movement.c conf.h sysdep.h structs.h protocol.h \
+ lists.h utils.h comm.h interpreter.h handler.h db.h spells.h house.h \
+ constants.h dg_scripts.h act.h fight.h oasis.h
 	$(CC) -c $(CFLAGS) act.movement.c
-act.offensive.obj: act.offensive.c conf.h sysdep.h structs.h utils.h comm.h \
-  interpreter.h handler.h db.h spells.h
+act.offensive.obj: act.offensive.c conf.h sysdep.h structs.h protocol.h \
+ lists.h utils.h comm.h interpreter.h handler.h db.h spells.h act.h \
+ fight.h mud_event.h dg_event.h
 	$(CC) -c $(CFLAGS) act.offensive.c
-act.other.obj: act.other.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
-  handler.h db.h spells.h screen.h house.h
+act.other.obj: act.other.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h spells.h screen.h house.h \
+ constants.h dg_scripts.h act.h spec_procs.h class.h fight.h mail.h \
+ shop.h quest.h modify.h
 	$(CC) -c $(CFLAGS) act.other.c
-act.social.obj: act.social.c conf.h sysdep.h structs.h utils.h comm.h \
-  interpreter.h handler.h db.h spells.h
+act.social.obj: act.social.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h screen.h spells.h act.h
 	$(CC) -c $(CFLAGS) act.social.c
-act.wizard.obj: act.wizard.c conf.h sysdep.h structs.h utils.h comm.h \
-  interpreter.h handler.h db.h spells.h house.h screen.h constants.h
+act.wizard.obj: act.wizard.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h spells.h house.h screen.h \
+ constants.h oasis.h dg_scripts.h shop.h act.h genzon.h class.h genolc.h \
+ genobj.h fight.h modify.h quest.h ban.h
 	$(CC) -c $(CFLAGS) act.wizard.c
-ban.obj: ban.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h
+aedit.obj: aedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h handler.h comm.h db.h oasis.h screen.h constants.h \
+ genolc.h act.h
+	$(CC) -c $(CFLAGS) aedit.c
+asciimap.obj: asciimap.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h spells.h house.h constants.h \
+ dg_scripts.h asciimap.h
+	$(CC) -c $(CFLAGS) asciimap.c
+ban.obj: ban.c conf.h sysdep.h structs.h protocol.h lists.h utils.h comm.h \
+ interpreter.h handler.h db.h ban.h
 	$(CC) -c $(CFLAGS) ban.c
-boards.obj: boards.c conf.h sysdep.h structs.h utils.h comm.h db.h boards.h \
-  interpreter.h handler.h
+boards.obj: boards.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h db.h boards.h interpreter.h handler.h improved-edit.h modify.h
 	$(CC) -c $(CFLAGS) boards.c
-castle.obj: castle.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h \
-  handler.h db.h spells.h
+bsd-snprintf.obj: bsd-snprintf.c conf.h sysdep.h
+castle.obj: castle.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h handler.h db.h spells.h act.h spec_procs.h fight.h
 	$(CC) -c $(CFLAGS) castle.c
-class.obj: class.c conf.h sysdep.h structs.h db.h utils.h spells.h interpreter.h
+cedit.obj: cedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h db.h constants.h genolc.h oasis.h improved-edit.h \
+ modify.h
+	$(CC) -c $(CFLAGS) cedit.c
+class.obj: class.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h spells.h interpreter.h constants.h act.h class.h
 	$(CC) -c $(CFLAGS) class.c
-comm.obj: comm.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h \
-  db.h house.h
+comm.obj: comm.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h handler.h db.h house.h oasis.h genolc.h \
+ dg_scripts.h dg_event.h screen.h constants.h boards.h act.h ban.h \
+ msgedit.h fight.h spells.h modify.h quest.h ibt.h mud_event.h
 	$(CC) -c $(CFLAGS) comm.c
-config.obj: config.c conf.h sysdep.h structs.h
+config.obj: config.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h config.h asciimap.h
 	$(CC) -c $(CFLAGS) config.c
-constants.obj: constants.c conf.h sysdep.h structs.h
+constants.obj: constants.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h interpreter.h constants.h
 	$(CC) -c $(CFLAGS) constants.c
-db.obj: db.c conf.h sysdep.h structs.h utils.h db.h comm.h handler.h spells.h mail.h \
-  interpreter.h house.h
+db.obj: db.c conf.h sysdep.h structs.h protocol.h lists.h utils.h db.h \
+ comm.h handler.h spells.h mail.h interpreter.h house.h constants.h \
+ oasis.h dg_scripts.h dg_event.h act.h ban.h spec_procs.h genzon.h \
+ genolc.h genobj.h config.h fight.h modify.h shop.h quest.h ibt.h \
+ mud_event.h msgedit.h screen.h
 	$(CC) -c $(CFLAGS) db.c
-fight.obj: fight.c conf.h sysdep.h structs.h utils.h comm.h handler.h interpreter.h \
-  db.h spells.h screen.h
+dg_comm.obj: dg_comm.c conf.h sysdep.h structs.h protocol.h lists.h \
+ dg_scripts.h utils.h comm.h handler.h db.h constants.h
+	$(CC) -c $(CFLAGS) dg_comm.c
+dg_db_scripts.obj: dg_db_scripts.c conf.h sysdep.h structs.h protocol.h \
+ lists.h dg_scripts.h utils.h db.h handler.h dg_event.h comm.h \
+ constants.h interpreter.h
+	$(CC) -c $(CFLAGS) dg_db_scripts.c
+dg_event.obj: dg_event.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h db.h dg_event.h constants.h comm.h mud_event.h
+	$(CC) -c $(CFLAGS) dg_event.c
+dg_handler.obj: dg_handler.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h dg_scripts.h comm.h db.h handler.h spells.h dg_event.h \
+ constants.h
+	$(CC) -c $(CFLAGS) dg_handler.c
+dg_misc.obj: dg_misc.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ dg_scripts.h comm.h interpreter.h handler.h dg_event.h db.h screen.h \
+ spells.h constants.h fight.h
+	$(CC) -c $(CFLAGS) dg_misc.c
+dg_mobcmd.obj: dg_mobcmd.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h screen.h dg_scripts.h db.h handler.h interpreter.h comm.h \
+ spells.h constants.h genzon.h act.h fight.h
+	$(CC) -c $(CFLAGS) dg_mobcmd.c
+dg_objcmd.obj: dg_objcmd.c conf.h sysdep.h structs.h protocol.h lists.h \
+ screen.h dg_scripts.h utils.h comm.h interpreter.h handler.h db.h \
+ constants.h genzon.h fight.h
+	$(CC) -c $(CFLAGS) dg_objcmd.c
+dg_olc.obj: dg_olc.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h db.h genolc.h interpreter.h oasis.h dg_olc.h dg_scripts.h \
+ dg_event.h genzon.h constants.h modify.h
+	$(CC) -c $(CFLAGS) dg_olc.c
+dg_scripts.obj: dg_scripts.c conf.h sysdep.h structs.h protocol.h lists.h \
+ dg_scripts.h utils.h comm.h interpreter.h handler.h dg_event.h db.h \
+ screen.h constants.h spells.h oasis.h genzon.h act.h modify.h
+	$(CC) -c $(CFLAGS) dg_scripts.c
+dg_triggers.obj: dg_triggers.c conf.h sysdep.h structs.h protocol.h lists.h \
+ dg_scripts.h utils.h comm.h interpreter.h handler.h db.h oasis.h \
+ constants.h spells.h act.h
+	$(CC) -c $(CFLAGS) dg_triggers.c
+dg_variables.obj: dg_variables.c conf.h sysdep.h structs.h protocol.h \
+ lists.h dg_scripts.h utils.h comm.h interpreter.h handler.h dg_event.h \
+ db.h fight.h screen.h constants.h spells.h oasis.h class.h quest.h act.h \
+ genobj.h
+	$(CC) -c $(CFLAGS) dg_variables.c
+dg_wldcmd.obj: dg_wldcmd.c conf.h sysdep.h structs.h protocol.h lists.h \
+ screen.h dg_scripts.h utils.h comm.h interpreter.h handler.h db.h \
+ constants.h genzon.h fight.h
+	$(CC) -c $(CFLAGS) dg_wldcmd.c
+fight.obj: fight.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h handler.h interpreter.h db.h spells.h screen.h constants.h \
+ dg_scripts.h act.h class.h fight.h shop.h quest.h
 	$(CC) -c $(CFLAGS) fight.c
-graph.obj: graph.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h \
-  db.h spells.h
-	$(CC) -c $(CFLAGS) graph.c
-handler.obj: handler.c conf.h sysdep.h structs.h utils.h comm.h db.h handler.h \
-  interpreter.h spells.h
-	$(CC) -c $(CFLAGS) handler.c
-house.obj: house.c conf.h sysdep.h structs.h comm.h handler.h db.h interpreter.h \
-  utils.h house.h constants.h
-	$(CC) -c $(CFLAGS) house.c
-interpreter.obj: interpreter.c conf.h sysdep.h structs.h comm.h interpreter.h db.h \
-  utils.h spells.h handler.h mail.h screen.h
-	$(CC) -c $(CFLAGS) interpreter.c
-limits.obj: limits.c conf.h sysdep.h structs.h utils.h spells.h comm.h db.h \
-  handler.h
-	$(CC) -c $(CFLAGS) limits.c
-magic.obj: magic.c conf.h sysdep.h structs.h utils.h comm.h spells.h handler.h db.h
-	$(CC) -c $(CFLAGS) magic.c
-mail.obj: mail.c conf.h sysdep.h structs.h utils.h comm.h db.h interpreter.h \
-  handler.h mail.h
-	$(CC) -c $(CFLAGS) mail.c
-mobact.obj: mobact.c conf.h sysdep.h structs.h utils.h db.h comm.h interpreter.h \
-  handler.h spells.h
-	$(CC) -c $(CFLAGS) mobact.c
-modify.obj: modify.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h db.h \
-  comm.h spells.h mail.h boards.h
-	$(CC) -c $(CFLAGS) modify.c
-objsave.obj: objsave.c conf.h sysdep.h structs.h comm.h handler.h db.h \
-  interpreter.h utils.h spells.h
-	$(CC) -c $(CFLAGS) objsave.c
-players.o: players.c conf.h sysdep.h structs.h utils.h db.h handler.h pfdefaults.h
-	$(CC) -c $(CFLAGS) players.c
-random.obj: random.c
-	$(CC) -c $(CFLAGS) random.c
-shop.obj: shop.c conf.h sysdep.h structs.h comm.h handler.h db.h interpreter.h \
-  utils.h shop.h
-	$(CC) -c $(CFLAGS) shop.c
-spec_assign.obj: spec_assign.c conf.h sysdep.h structs.h db.h interpreter.h \
-  utils.h
-	$(CC) -c $(CFLAGS) spec_assign.c
-spec_procs.obj: spec_procs.c conf.h sysdep.h structs.h utils.h comm.h \
-  interpreter.h handler.h db.h spells.h
-	$(CC) -c $(CFLAGS) spec_procs.c
-spell_parser.obj: spell_parser.c conf.h sysdep.h structs.h utils.h interpreter.h \
-  spells.h handler.h comm.h db.h
-	$(CC) -c $(CFLAGS) spell_parser.c
-spells.obj: spells.c conf.h sysdep.h structs.h utils.h comm.h spells.h handler.h \
-  db.h constants.h
-	$(CC) -c $(CFLAGS) spells.c
-utils.obj: utils.c conf.h sysdep.h structs.h utils.h comm.h screen.h spells.h \
-  handler.h
-	$(CC) -c $(CFLAGS) utils.c
-weather.obj: weather.c conf.h sysdep.h structs.h utils.h comm.h handler.h \
-  interpreter.h db.h
-	$(CC) -c $(CFLAGS) weather.c
-quest.obj: quest.c conf.h sysdep.h structs.h utils.h interpreter.h handler.h \
-  comm.h db.h screen.h quest.h
-	$(CC) -c $(CFLAGS) quest.c
-qedit.obj: qedit.c conf.h sysdep.h structs.h utils.h comm.h db.h oasis.h \
-  improved-edit.h screen.h genolc.h genzon.h interpreter.h quest.h
-	$(CC) -c $(CFLAGS) qedit.c
-genqst.obj: genqst.c conf.h sysdep.h structs.h utils.h db.h quest.h \
-  genolc.h genzon.h 
+genmob.obj: genmob.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h shop.h handler.h genolc.h genmob.h genzon.h dg_olc.h dg_scripts.h \
+ spells.h
+	$(CC) -c $(CFLAGS) genmob.c
+genobj.obj: genobj.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h shop.h constants.h genolc.h genobj.h genzon.h dg_olc.h dg_scripts.h \
+ handler.h interpreter.h boards.h
+	$(CC) -c $(CFLAGS) genobj.c
+genolc.obj: genolc.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h handler.h comm.h shop.h oasis.h genolc.h genwld.h genmob.h genshp.h \
+ genzon.h genobj.h dg_olc.h dg_scripts.h constants.h interpreter.h act.h \
+ modify.h quest.h
+	$(CC) -c $(CFLAGS) genolc.c
+genqst.obj: genqst.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h quest.h genolc.h genzon.h
 	$(CC) -c $(CFLAGS) genqst.c
+genshp.obj: genshp.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h shop.h genolc.h genshp.h genzon.h
+	$(CC) -c $(CFLAGS) genshp.c
+genwld.obj: genwld.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h handler.h comm.h genolc.h genwld.h genzon.h shop.h dg_olc.h \
+ dg_scripts.h mud_event.h dg_event.h
+	$(CC) -c $(CFLAGS) genwld.c
+genzon.obj: genzon.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h genolc.h genzon.h dg_scripts.h
+	$(CC) -c $(CFLAGS) genzon.c
+graph.obj: graph.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h handler.h db.h spells.h act.h constants.h graph.h \
+ fight.h
+	$(CC) -c $(CFLAGS) graph.c
+handler.obj: handler.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h db.h handler.h screen.h interpreter.h spells.h dg_scripts.h act.h \
+ class.h fight.h quest.h mud_event.h dg_event.h
+	$(CC) -c $(CFLAGS) handler.c
+hedit.obj: hedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h db.h boards.h oasis.h genolc.h genzon.h handler.h \
+ improved-edit.h act.h hedit.h modify.h
+	$(CC) -c $(CFLAGS) hedit.c
+house.obj: house.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h handler.h db.h interpreter.h house.h constants.h modify.h
+	$(CC) -c $(CFLAGS) house.c
+ibt.obj: ibt.c conf.h sysdep.h structs.h protocol.h lists.h utils.h comm.h \
+ db.h handler.h interpreter.h constants.h screen.h act.h ibt.h oasis.h \
+ improved-edit.h modify.h
+	$(CC) -c $(CFLAGS) ibt.c
+improved-edit.obj: improved-edit.c conf.h sysdep.h structs.h protocol.h \
+ lists.h utils.h db.h comm.h interpreter.h improved-edit.h dg_scripts.h \
+ modify.h
+interpreter.obj: interpreter.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h db.h spells.h handler.h mail.h screen.h \
+ genolc.h oasis.h improved-edit.h dg_scripts.h constants.h act.h ban.h \
+ class.h graph.h hedit.h house.h config.h modify.h quest.h asciimap.h \
+ prefedit.h ibt.h mud_event.h dg_event.h
+	$(CC) -c $(CFLAGS) interpreter.c
+limits.obj: limits.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ spells.h comm.h db.h handler.h interpreter.h dg_scripts.h class.h \
+ fight.h screen.h mud_event.h dg_event.h
+	$(CC) -c $(CFLAGS) limits.c
+lists.obj: lists.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h dg_event.h
+	$(CC) -c $(CFLAGS) lists.c
+magic.obj: magic.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h spells.h handler.h db.h interpreter.h constants.h dg_scripts.h \
+ class.h fight.h mud_event.h dg_event.h
+	$(CC) -c $(CFLAGS) magic.c
+mail.obj: mail.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h db.h interpreter.h handler.h mail.h modify.h
+	$(CC) -c $(CFLAGS) mail.c
+main.obj: main.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h handler.h db.h house.h oasis.h genolc.h \
+ dg_scripts.h dg_event.h screen.h constants.h boards.h act.h ban.h \
+ msgedit.h fight.h spells.h modify.h quest.h ibt.h mud_event.h
+	$(CC) -c $(CFLAGS) main.c
+medit.obj: medit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h comm.h spells.h db.h shop.h genolc.h genmob.h genzon.h \
+ genshp.h oasis.h handler.h constants.h improved-edit.h dg_olc.h \
+ dg_scripts.h screen.h fight.h modify.h
+	$(CC) -c $(CFLAGS) medit.c
+mobact.obj: mobact.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h comm.h interpreter.h handler.h spells.h constants.h act.h graph.h \
+ fight.h
+	$(CC) -c $(CFLAGS) mobact.c
+modify.obj: modify.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h handler.h db.h comm.h spells.h mail.h boards.h \
+ improved-edit.h oasis.h class.h dg_scripts.h modify.h quest.h ibt.h
+	$(CC) -c $(CFLAGS) modify.c
+msgedit.obj: msgedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h screen.h spells.h db.h msgedit.h oasis.h genolc.h interpreter.h \
+ modify.h
+	$(CC) -c $(CFLAGS) msgedit.c
+mud_event.obj: mud_event.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h db.h dg_event.h constants.h comm.h mud_event.h
+	$(CC) -c $(CFLAGS) mud_event.c
+oasis.obj: oasis.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h comm.h db.h shop.h genolc.h genmob.h genshp.h genzon.h \
+ genwld.h genobj.h oasis.h screen.h dg_olc.h dg_scripts.h act.h handler.h \
+ quest.h ibt.h msgedit.h
+	$(CC) -c $(CFLAGS) oasis.c
+oasis_copy.obj: oasis_copy.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h shop.h genshp.h genolc.h \
+ genzon.h genwld.h oasis.h improved-edit.h constants.h dg_scripts.h
+	$(CC) -c $(CFLAGS) oasis_copy.c
+oasis_delete.obj: oasis_delete.c conf.h sysdep.h structs.h protocol.h \
+ lists.h utils.h comm.h interpreter.h handler.h db.h genolc.h oasis.h \
+ improved-edit.h
+	$(CC) -c $(CFLAGS) oasis_delete.c
+oasis_list.obj: oasis_list.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h genolc.h oasis.h \
+ improved-edit.h shop.h screen.h constants.h dg_scripts.h quest.h \
+ modify.h spells.h
+	$(CC) -c $(CFLAGS) oasis_list.c
+objsave.obj: objsave.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h handler.h db.h interpreter.h spells.h act.h class.h config.h \
+ modify.h genolc.h
+	$(CC) -c $(CFLAGS) objsave.c
+oedit.obj: oedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h spells.h db.h boards.h constants.h shop.h genolc.h \
+ genobj.h genzon.h oasis.h improved-edit.h dg_olc.h dg_scripts.h fight.h \
+ modify.h
+	$(CC) -c $(CFLAGS) oedit.c
+players.obj: players.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h handler.h pfdefaults.h dg_scripts.h comm.h interpreter.h genolc.h \
+ config.h quest.h
+	$(CC) -c $(CFLAGS) players.c
+prefedit.obj: prefedit.c conf.h sysdep.h structs.h protocol.h lists.h \
+ comm.h utils.h handler.h interpreter.h db.h oasis.h prefedit.h screen.h
+	$(CC) -c $(CFLAGS) prefedit.c
+protocol.obj: protocol.c conf.h protocol.h sysdep.h structs.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h screen.h improved-edit.h \
+ dg_scripts.h act.h modify.h
+	$(CC) -c $(CFLAGS) protocol.c
+qedit.obj: qedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h db.h oasis.h improved-edit.h screen.h genolc.h genzon.h \
+ interpreter.h modify.h quest.h
+	$(CC) -c $(CFLAGS) qedit.c
+quest.obj: quest.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h handler.h db.h comm.h screen.h quest.h act.h
+	$(CC) -c $(CFLAGS) quest.c
+random.obj: random.c conf.h sysdep.h structs.h protocol.h lists.h utils.h
+	$(CC) -c $(CFLAGS) random.c
+redit.obj: redit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h db.h boards.h genolc.h genwld.h genzon.h oasis.h \
+ improved-edit.h dg_olc.h dg_scripts.h constants.h modify.h
+	$(CC) -c $(CFLAGS) redit.c
+sedit.obj: sedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h db.h shop.h genolc.h genshp.h genzon.h oasis.h \
+ constants.h
+	$(CC) -c $(CFLAGS) sedit.c
+shop.obj: shop.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h handler.h db.h interpreter.h shop.h genshp.h constants.h act.h \
+ modify.h spells.h screen.h
+	$(CC) -c $(CFLAGS) shop.c
+spec_assign.obj: spec_assign.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h db.h interpreter.h spec_procs.h ban.h boards.h mail.h
+	$(CC) -c $(CFLAGS) spec_assign.c
+spec_procs.obj: spec_procs.c conf.h sysdep.h structs.h protocol.h lists.h \
+ utils.h comm.h interpreter.h handler.h db.h spells.h constants.h act.h \
+ spec_procs.h class.h fight.h modify.h
+	$(CC) -c $(CFLAGS) spec_procs.c
+spell_parser.obj: spell_parser.c conf.h sysdep.h structs.h protocol.h \
+ lists.h utils.h interpreter.h spells.h handler.h comm.h db.h \
+ dg_scripts.h fight.h
+	$(CC) -c $(CFLAGS) spell_parser.c
+spells.obj: spells.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h spells.h handler.h db.h constants.h interpreter.h dg_scripts.h \
+ act.h fight.h
+	$(CC) -c $(CFLAGS) spells.c
+tedit.obj: tedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ interpreter.h comm.h db.h genolc.h oasis.h improved-edit.h modify.h
+	$(CC) -c $(CFLAGS) tedit.c
+utils.obj: utils.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ db.h comm.h modify.h screen.h spells.h handler.h interpreter.h class.h
+	$(CC) -c $(CFLAGS) utils.c
+weather.obj: weather.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h db.h
+	$(CC) -c $(CFLAGS) weather.c
+zedit.obj: zedit.c conf.h sysdep.h structs.h protocol.h lists.h utils.h \
+ comm.h interpreter.h db.h constants.h genolc.h genzon.h oasis.h \
+ dg_scripts.h
+	$(CC) -c $(CFLAGS) zedit.c
+zmalloc.obj: zmalloc.c conf.h
+	$(CC) -c $(CFLAGS) zmalloc.c

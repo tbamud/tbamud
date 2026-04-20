@@ -592,14 +592,16 @@ int get_number(char **name)
 {
   int i;
   char *ppos;
-  char number[MAX_INPUT_LENGTH];
+  char number[MAX_INPUT_LENGTH], tmp[MAX_INPUT_LENGTH];
 
   *number = '\0';
 
   if ((ppos = strchr(*name, '.')) != NULL) {
     *ppos++ = '\0';
     strlcpy(number, *name, sizeof(number));
-    strcpy(*name, ppos);	/* strcpy: OK (always smaller) */
+    // avoid overlapping strings in strcpy which is undefined behaviour
+    strcpy(tmp, ppos);  /* strcpy: OK (always smaller) */
+    strcpy(*name, tmp);	/* strcpy: OK (always smaller) */
 
     for (i = 0; *(number + i); i++)
       if (!isdigit(*(number + i)))

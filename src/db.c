@@ -44,26 +44,26 @@
 struct config_data config_info; /* Game configuration list.	 */
 
 struct room_data *world = NULL;	/* array of rooms		 */
-room_rnum top_of_world = 0;	/* ref to top element of world	 */
+room_rnum top_of_world = NOWHERE;	/* ref to top element of world	 */
 
 struct char_data *character_list = NULL; /* global linked list of chars	*/
 struct index_data *mob_index;	/* index table for mobile file	 */
 struct char_data *mob_proto;	/* prototypes for mobs		 */
-mob_rnum top_of_mobt = 0;	/* top of mobile index table	 */
+mob_rnum top_of_mobt = NOBODY;	/* top of mobile index table	 */
 
 struct obj_data *object_list = NULL;	/* global linked list of objs	*/
 struct index_data *obj_index;	/* index table for object file	 */
 struct obj_data *obj_proto;	/* prototypes for objs		 */
-obj_rnum top_of_objt = 0;	/* top of object index table	 */
+obj_rnum top_of_objt = NOTHING;	/* top of object index table	 */
 
 struct zone_data *zone_table; /* zone table      */
-zone_rnum top_of_zone_table = 0;/* top element of zone tab   */
+zone_rnum top_of_zone_table = NOTHING;/* top element of zone tab   */
 
 /* begin previously located in players.c */
 struct player_index_element *player_table = NULL; /* index to plr file   */
-int top_of_p_table = 0;   /* ref to top of table     */
-int top_of_p_file = 0;    /* ref of size of p file   */
-long top_idnum = 0;       /* highest idnum in use    */
+int top_of_p_table = NOBODY;   /* ref to top of table     */
+int top_of_p_file = NOBODY;    /* ref of size of p file   */
+long top_idnum = NOBODY;       /* highest idnum in use    */
 /* end previously located in players.c */
 
 struct message_list fight_messages[MAX_MESSAGES];	/* fighting messages	 */
@@ -528,84 +528,91 @@ void destroy_db(void)
   }
 
   /* Rooms */
-  for (cnt = 0; cnt <= top_of_world; cnt++) {
-    if (world[cnt].name)
-      free(world[cnt].name);
-    if (world[cnt].description)
-      free(world[cnt].description);
-    free_extra_descriptions(world[cnt].ex_description);
+  if (top_of_world != NOWHERE) {
+    for (cnt = 0; cnt <= top_of_world; cnt++) {
+      if (world[cnt].name)
+        free(world[cnt].name);
+      if (world[cnt].description)
+        free(world[cnt].description);
+      free_extra_descriptions(world[cnt].ex_description);
 
-  if (world[cnt].events != NULL) {
-	  if (world[cnt].events->iSize > 0) {
-		struct event * pEvent;
+      if (world[cnt].events != NULL) {
+        if (world[cnt].events->iSize > 0) {
+          struct event * pEvent;
 
-		while ((pEvent = simple_list(world[cnt].events)) != NULL)
-		  event_cancel(pEvent);
-	  }
-	  free_list(world[cnt].events);
-    world[cnt].events = NULL;
-  }
+          while ((pEvent = simple_list(world[cnt].events)) != NULL)
+            event_cancel(pEvent);
+        }
+        free_list(world[cnt].events);
+        world[cnt].events = NULL;
+      }
 
-    /* free any assigned scripts */
-    if (SCRIPT(&world[cnt]))
-      extract_script(&world[cnt], WLD_TRIGGER);
-    /* free script proto list */
-    free_proto_script(&world[cnt], WLD_TRIGGER);
+      /* free any assigned scripts */
+      if (SCRIPT(&world[cnt]))
+        extract_script(&world[cnt], WLD_TRIGGER);
+      /* free script proto list */
+      free_proto_script(&world[cnt], WLD_TRIGGER);
 
-    for (itr = 0; itr < NUM_OF_DIRS; itr++) { /* NUM_OF_DIRS here, not DIR_COUNT */
-      if (!world[cnt].dir_option[itr])
-        continue;
+      for (itr = 0; itr < NUM_OF_DIRS; itr++) { /* NUM_OF_DIRS here, not DIR_COUNT */
+        if (world[cnt].dir_option[itr] == NULL)
+          continue;
 
-      if (world[cnt].dir_option[itr]->general_description)
-        free(world[cnt].dir_option[itr]->general_description);
-      if (world[cnt].dir_option[itr]->keyword)
-        free(world[cnt].dir_option[itr]->keyword);
-      free(world[cnt].dir_option[itr]);
+        if (world[cnt].dir_option[itr]->general_description)
+          free(world[cnt].dir_option[itr]->general_description);
+        if (world[cnt].dir_option[itr]->keyword)
+          free(world[cnt].dir_option[itr]->keyword);
+        free(world[cnt].dir_option[itr]);
+      }
     }
+    free(world);
+    top_of_world = NOWHERE;
   }
-  free(world);
-  top_of_world = 0;
 
-  /* Objects */
-  for (cnt = 0; cnt <= top_of_objt; cnt++) {
-    if (obj_proto[cnt].name)
-      free(obj_proto[cnt].name);
-    if (obj_proto[cnt].description)
-      free(obj_proto[cnt].description);
-    if (obj_proto[cnt].short_description)
-      free(obj_proto[cnt].short_description);
-    if (obj_proto[cnt].action_description)
-      free(obj_proto[cnt].action_description);
-    free_extra_descriptions(obj_proto[cnt].ex_description);
+    /* Objects */
+  if (top_of_objt != NOTHING) {
+    for (cnt = 0; cnt <= top_of_objt; cnt++) {
+      if (obj_proto[cnt].name)
+        free(obj_proto[cnt].name);
+      if (obj_proto[cnt].description)
+        free(obj_proto[cnt].description);
+      if (obj_proto[cnt].short_description)
+        free(obj_proto[cnt].short_description);
+      if (obj_proto[cnt].action_description)
+        free(obj_proto[cnt].action_description);
+      free_extra_descriptions(obj_proto[cnt].ex_description);
 
-    /* free script proto list */
-    free_proto_script(&obj_proto[cnt], OBJ_TRIGGER);
+      /* free script proto list */
+      free_proto_script(&obj_proto[cnt], OBJ_TRIGGER);
+    }
+    free(obj_proto);
+    free(obj_index);
+    top_of_objt = NOTHING;
   }
-  free(obj_proto);
-  free(obj_index);
 
   /* Mobiles */
-  for (cnt = 0; cnt <= top_of_mobt; cnt++) {
-    if (mob_proto[cnt].player.name)
-      free(mob_proto[cnt].player.name);
-    if (mob_proto[cnt].player.title)
-      free(mob_proto[cnt].player.title);
-    if (mob_proto[cnt].player.short_descr)
-      free(mob_proto[cnt].player.short_descr);
-    if (mob_proto[cnt].player.long_descr)
-      free(mob_proto[cnt].player.long_descr);
-    if (mob_proto[cnt].player.description)
-      free(mob_proto[cnt].player.description);
+  if (top_of_mobt != NOBODY) {
+    for (cnt = 0; cnt <= top_of_mobt; cnt++) {
+      if (mob_proto[cnt].player.name)
+        free(mob_proto[cnt].player.name);
+      if (mob_proto[cnt].player.title)
+        free(mob_proto[cnt].player.title);
+      if (mob_proto[cnt].player.short_descr)
+        free(mob_proto[cnt].player.short_descr);
+      if (mob_proto[cnt].player.long_descr)
+        free(mob_proto[cnt].player.long_descr);
+      if (mob_proto[cnt].player.description)
+        free(mob_proto[cnt].player.description);
 
-    /* free script proto list */
-    free_proto_script(&mob_proto[cnt], MOB_TRIGGER);
+      /* free script proto list */
+      free_proto_script(&mob_proto[cnt], MOB_TRIGGER);
 
-    while (mob_proto[cnt].affected)
-      affect_remove(&mob_proto[cnt], mob_proto[cnt].affected);
+      while (mob_proto[cnt].affected)
+        affect_remove(&mob_proto[cnt], mob_proto[cnt].affected);
+    }
+    free(mob_proto);
+    free(mob_index);
+    top_of_mobt = NOBODY;
   }
-  free(mob_proto);
-  free(mob_index);
-
   /* Shops */
   destroy_shops();
 
@@ -615,26 +622,29 @@ void destroy_db(void)
   /* Zones */
 #define THIS_CMD zone_table[cnt].cmd[itr]
 
-  for (cnt = 0; cnt <= top_of_zone_table; cnt++) {
-    if (zone_table[cnt].name)
-      free(zone_table[cnt].name);
-    if (zone_table[cnt].builders)
-      free(zone_table[cnt].builders);
-    if (zone_table[cnt].cmd) {
-      /* first see if any vars were defined in this zone */
-      for (itr = 0;THIS_CMD.command != 'S';itr++)
-        if (THIS_CMD.command == 'V') {
-          if (THIS_CMD.sarg1)
-            free(THIS_CMD.sarg1);
-          if (THIS_CMD.sarg2)
-            free(THIS_CMD.sarg2);
-        }
-      /* then free the command list */
-      free(zone_table[cnt].cmd);
+  if (top_of_zone_table != NOWHERE)
+  {
+    for (cnt = 0; cnt <= top_of_zone_table; cnt++) {
+      if (zone_table[cnt].name)
+        free(zone_table[cnt].name);
+      if (zone_table[cnt].builders)
+        free(zone_table[cnt].builders);
+      if (zone_table[cnt].cmd) {
+        /* first see if any vars were defined in this zone */
+        for (itr = 0;THIS_CMD.command != 'S';itr++)
+          if (THIS_CMD.command == 'V') {
+            if (THIS_CMD.sarg1)
+              free(THIS_CMD.sarg1);
+            if (THIS_CMD.sarg2)
+              free(THIS_CMD.sarg2);
+          }
+        /* then free the command list */
+        free(zone_table[cnt].cmd);
+      }
     }
+    free(zone_table);
+    top_of_zone_table = NOWHERE;
   }
-  free(zone_table);
-
 #undef THIS_CMD
 
   /* zone table reset queue */
@@ -648,27 +658,30 @@ void destroy_db(void)
   }
 
   /* Triggers */
-  for (cnt=0; cnt < top_of_trigt; cnt++) {
-    if (trig_index[cnt]->proto) {
-      /* make sure to nuke the command list (memory leak) */
-      /* free_trigger() doesn't free the command list */
-      if (trig_index[cnt]->proto->cmdlist) {
-        struct cmdlist_element *i, *j;
-        i = trig_index[cnt]->proto->cmdlist;
-        while (i) {
-          j = i->next;
-          if (i->cmd)
-            free(i->cmd);
-          free(i);
-          i = j;
+  if (top_of_trigt != NOTHING)
+  {
+    for (cnt=0; cnt < top_of_trigt; cnt++) {
+      if (trig_index[cnt]->proto) {
+        /* make sure to nuke the command list (memory leak) */
+        /* free_trigger() doesn't free the command list */
+        if (trig_index[cnt]->proto->cmdlist) {
+          struct cmdlist_element *i, *j;
+          i = trig_index[cnt]->proto->cmdlist;
+          while (i) {
+            j = i->next;
+            if (i->cmd)
+              free(i->cmd);
+            free(i);
+            i = j;
+          }
         }
+        free_trigger(trig_index[cnt]->proto);
       }
-      free_trigger(trig_index[cnt]->proto);
+      free(trig_index[cnt]);
     }
-    free(trig_index[cnt]);
+    free(trig_index);
+    top_of_trigt = NOTHING;
   }
-  free(trig_index);
-
   /* Events */
   event_free_all();
 

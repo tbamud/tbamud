@@ -191,7 +191,7 @@ void gettimeofday(struct timeval *t, struct timezone *dummy)
 
 #endif	/* CIRCLE_WINDOWS || CIRCLE_MACINTOSH */
 
-int main(int argc, char **argv)
+int _main(int argc, char **argv)
 {
   int pos = 1;
   const char *dir;
@@ -382,6 +382,7 @@ int main(int argc, char **argv)
 
   return (0);
 }
+
 
 /* Reload players after a copyover */
 void copyover_recover()

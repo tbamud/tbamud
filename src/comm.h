@@ -17,6 +17,7 @@
 #define COPYOVER_FILE "copyover.dat"
 
 /* comm.c */
+int _main(int argc, char **argv);
 void close_socket(struct descriptor_data *d);
 void game_info(const char *messg, ...) __attribute__ ((format (printf, 1, 2)));
 size_t send_to_char(struct char_data *ch, const char *messg, ...) __attribute__
