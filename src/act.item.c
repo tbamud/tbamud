@@ -777,6 +777,15 @@ void weight_change_object(struct obj_data *obj, int weight)
   }
 }
 
+#define DRINK_CON_MAX(cont) (GET_OBJ_VAL((cont), 0))
+#define DRINK_CON_NOW(cont) (GET_OBJ_VAL((cont), 1))
+#define DRINK_CON_TYPE(cont) (GET_OBJ_VAL((cont), 2))
+#define DRINK_CON_POISON(cont) (GET_OBJ_VAL((cont), 3))
+
+#define LIMITED_DRINK_CONTAINER(cont) (DRINK_CON_MAX((cont)) >= 0 && DRINK_CON_NOW((cont)) >= 0)
+#define EMPTY_DRINK_CONTAINER(cont) (LIMITED_DRINK_CONTAINER((cont)) && DRINK_CON_NOW((cont)) < 1)
+
+
 void name_from_drinkcon(struct obj_data *obj)
 {
   const char *liqname;
@@ -788,13 +797,12 @@ void name_from_drinkcon(struct obj_data *obj)
   if (obj->name == obj_proto[GET_OBJ_RNUM(obj)].name)
     obj->name = strdup(obj_proto[GET_OBJ_RNUM(obj)].name);
 
-  liqname = drinknames[GET_OBJ_VAL(obj, 2)];
+  liqname = drinknames[DRINK_CON_TYPE(obj)];
  
   remove_from_string(obj->name, liqname);
   new_name = right_trim_whitespace(obj->name);
   free(obj->name);
   obj->name = new_name;
- 
 }
 
 void name_to_drinkcon(struct obj_data *obj, int type)
@@ -812,6 +820,7 @@ void name_to_drinkcon(struct obj_data *obj, int type)
 
   obj->name = new_name;
 }
+
 
 ACMD(do_drink)
 {
@@ -873,7 +882,7 @@ ACMD(do_drink)
     send_to_char(ch, "Your stomach can't contain anymore!\r\n");
     return;
   }
-  if (GET_OBJ_VAL(temp, 1) < 1) {
+  if (EMPTY_DRINK_CONTAINER(temp)) {
     send_to_char(ch, "It is empty.\r\n");
     return;
   }
@@ -884,33 +893,38 @@ ACMD(do_drink)
   if (subcmd == SCMD_DRINK) {
     char buf[MAX_STRING_LENGTH];
 
-    snprintf(buf, sizeof(buf), "$n drinks %s from $p.", drinks[GET_OBJ_VAL(temp, 2)]);
+    snprintf(buf, sizeof(buf), "$n drinks %s from $p.", drinks[DRINK_CON_TYPE(temp)]);
     act(buf, TRUE, ch, temp, 0, TO_ROOM);
 
-    send_to_char(ch, "You drink the %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
+    send_to_char(ch, "You drink the %s.\r\n", drinks[DRINK_CON_TYPE(temp)]);
 
-    if (drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK] > 0)
-      amount = (25 - GET_COND(ch, THIRST)) / drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK];
+    if (drink_aff[DRINK_CON_TYPE(temp)][DRUNK] > 0)
+      amount = (25 - GET_COND(ch, THIRST)) / drink_aff[DRINK_CON_TYPE(temp)][DRUNK];
     else
       amount = rand_number(3, 10);
 
   } else {
     act("$n sips from $p.", TRUE, ch, temp, 0, TO_ROOM);
-    send_to_char(ch, "It tastes like %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
+    send_to_char(ch, "It tastes like %s.\r\n", drinks[DRINK_CON_TYPE(temp)]);
     amount = 1;
   }
 
-  amount = MIN(amount, GET_OBJ_VAL(temp, 1));
+  /* For limited drink containers with remaining contents, don't drink more
+   * than the amount currently in the container. Unlimited containers are
+   * handled separately and are not clamped here.
+   */
+  if (LIMITED_DRINK_CONTAINER(temp))
+    amount = MIN(amount, DRINK_CON_NOW(temp));
 
   /* You can't subtract more than the object weighs, unless its unlimited. */
-  if (GET_OBJ_VAL(temp, 0) > 0) {
+  if (LIMITED_DRINK_CONTAINER(temp)) {
     weight = MIN(amount, GET_OBJ_WEIGHT(temp));
     weight_change_object(temp, -weight); /* Subtract amount */
   }
 
-  gain_condition(ch, DRUNK,  drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK]  * amount / 4);
-  gain_condition(ch, HUNGER,   drink_aff[GET_OBJ_VAL(temp, 2)][HUNGER]   * amount / 4);
-  gain_condition(ch, THIRST, drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount / 4);
+  gain_condition(ch, DRUNK,  drink_aff[DRINK_CON_TYPE(temp)][DRUNK]  * amount / 4);
+  gain_condition(ch, HUNGER,   drink_aff[DRINK_CON_TYPE(temp)][HUNGER]   * amount / 4);
+  gain_condition(ch, THIRST, drink_aff[DRINK_CON_TYPE(temp)][THIRST] * amount / 4);
 
   if (GET_COND(ch, DRUNK) > 10)
     send_to_char(ch, "You feel drunk.\r\n");
@@ -921,7 +935,7 @@ ACMD(do_drink)
   if (GET_COND(ch, HUNGER) > 20)
     send_to_char(ch, "You are full.\r\n");
 
-  if (GET_OBJ_VAL(temp, 3) && GET_LEVEL(ch) < LVL_IMMORT) { /* The crap was poisoned ! */
+  if (DRINK_CON_POISON(temp) && GET_LEVEL(ch) < LVL_IMMORT) { /* The crap was poisoned ! */
     send_to_char(ch, "Oops, it tasted rather strange!\r\n");
     act("$n chokes and utters some strange sounds.", TRUE, ch, 0, 0, TO_ROOM);
 
@@ -932,12 +946,13 @@ ACMD(do_drink)
     affect_join(ch, &af, FALSE, FALSE, FALSE, FALSE);
   }
   /* Empty the container (unless unlimited), and no longer poison. */
-  if (GET_OBJ_VAL(temp, 0) > 0) {
-    GET_OBJ_VAL(temp, 1) -= amount;
-    if (!GET_OBJ_VAL(temp, 1)) { /* The last bit */
+  if (LIMITED_DRINK_CONTAINER(temp)) {
+    amount = MIN(amount, DRINK_CON_NOW(temp)); // never subtract more than the current amount
+    DRINK_CON_NOW(temp) -= amount;
+    if (!DRINK_CON_NOW(temp)) { /* The last bit */
       name_from_drinkcon(temp);
-      GET_OBJ_VAL(temp, 2) = 0;
-      GET_OBJ_VAL(temp, 3) = 0;
+      DRINK_CON_TYPE(temp) = 0;
+      DRINK_CON_POISON(temp) = 0;
     }
   }
   return;
@@ -1064,7 +1079,7 @@ ACMD(do_pour)
       return;
     }
   }
-  if (GET_OBJ_VAL(from_obj, 1) == 0) {
+  if (EMPTY_DRINK_CONTAINER(from_obj)) {
     act("The $p is empty.", FALSE, ch, from_obj, 0, TO_CHAR);
     return;
   }
@@ -1074,19 +1089,22 @@ ACMD(do_pour)
       return;
     }
     if (!str_cmp(arg2, "out")) {
-      if (GET_OBJ_VAL(from_obj, 0) > 0) {
-        act("$n empties $p.", TRUE, ch, from_obj, 0, TO_ROOM);
-        act("You empty $p.", FALSE, ch, from_obj, 0, TO_CHAR);
-
-        weight_change_object(from_obj, -GET_OBJ_VAL(from_obj, 1)); /* Empty */
-
-        name_from_drinkcon(from_obj);
-        GET_OBJ_VAL(from_obj, 1) = 0;
-        GET_OBJ_VAL(from_obj, 2) = 0;
-        GET_OBJ_VAL(from_obj, 3) = 0;
+      if (!LIMITED_DRINK_CONTAINER(from_obj)) {
+        send_to_char(ch, "You can't pour that out! There's simply too much in it.\r\n");
+        return;
       }
-      else
-        send_to_char(ch, "You can't possibly pour that container out!\r\n");
+
+      /* pour out */
+      act("$n empties $p.", TRUE, ch, from_obj, 0, TO_ROOM);
+      act("You empty $p.", FALSE, ch, from_obj, 0, TO_CHAR);
+
+      weight_change_object(from_obj, -DRINK_CON_NOW(from_obj)); /* Empty */
+
+      name_from_drinkcon(from_obj);
+        
+      DRINK_CON_NOW(from_obj) = 0;
+      DRINK_CON_TYPE(from_obj) = 0;
+      DRINK_CON_POISON(from_obj) = 0;
 
       return;
     }
@@ -1094,8 +1112,7 @@ ACMD(do_pour)
       send_to_char(ch, "You can't find it!\r\n");
       return;
     }
-    if ((GET_OBJ_TYPE(to_obj) != ITEM_DRINKCON) &&
-	(GET_OBJ_TYPE(to_obj) != ITEM_FOUNTAIN)) {
+    if ((GET_OBJ_TYPE(to_obj) != ITEM_DRINKCON) && (GET_OBJ_TYPE(to_obj) != ITEM_FOUNTAIN)) {
       send_to_char(ch, "You can't pour anything into that.\r\n");
       return;
     }
@@ -1104,58 +1121,61 @@ ACMD(do_pour)
     send_to_char(ch, "A most unproductive effort.\r\n");
     return;
   }
-  if ((GET_OBJ_VAL(to_obj, 0) < 0) ||
-      (!(GET_OBJ_VAL(to_obj, 1) < GET_OBJ_VAL(to_obj, 0)))) {
+  if (!EMPTY_DRINK_CONTAINER(to_obj) && DRINK_CON_TYPE(to_obj) != DRINK_CON_TYPE(from_obj)) {
     send_to_char(ch, "There is already another liquid in it!\r\n");
     return;
   }
-  if (!(GET_OBJ_VAL(to_obj, 1) < GET_OBJ_VAL(to_obj, 0))) {
+  // Not allowed to fill an unlimited container, or a container that is already full.
+  if (!LIMITED_DRINK_CONTAINER(to_obj) || DRINK_CON_NOW(to_obj) >= DRINK_CON_MAX(to_obj)) {
     send_to_char(ch, "There is no room for more.\r\n");
     return;
   }
   if (subcmd == SCMD_POUR)
-    send_to_char(ch, "You pour the %s into the %s.", drinks[GET_OBJ_VAL(from_obj, 2)], arg2);
+    send_to_char(ch, "You pour the %s into the %s.\r\n", drinks[DRINK_CON_TYPE(from_obj)], arg2);
 
   if (subcmd == SCMD_FILL) {
     act("You gently fill $p from $P.", FALSE, ch, to_obj, from_obj, TO_CHAR);
     act("$n gently fills $p from $P.", TRUE, ch, to_obj, from_obj, TO_ROOM);
   }
   /* New alias */
-  if (GET_OBJ_VAL(to_obj, 1) == 0)
-    name_to_drinkcon(to_obj, GET_OBJ_VAL(from_obj, 2));
+  if (EMPTY_DRINK_CONTAINER(to_obj))
+    name_to_drinkcon(to_obj, DRINK_CON_TYPE(from_obj));
 
   /* First same type liq. */
-  GET_OBJ_VAL(to_obj, 2) = GET_OBJ_VAL(from_obj, 2);
+  DRINK_CON_TYPE(to_obj) = DRINK_CON_TYPE(from_obj);
 
   /* Then how much to pour */
-  if (GET_OBJ_VAL(from_obj, 0) > 0) {
-    GET_OBJ_VAL(from_obj, 1) -= (amount =
-        (GET_OBJ_VAL(to_obj, 0) - GET_OBJ_VAL(to_obj, 1)));
+  if (LIMITED_DRINK_CONTAINER(from_obj)) {
+    amount = MIN(DRINK_CON_NOW(from_obj), DRINK_CON_MAX(to_obj) - DRINK_CON_NOW(to_obj));
+    DRINK_CON_NOW(from_obj) -= amount;
+    DRINK_CON_NOW(to_obj) += amount;
 
-    GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
-
-    if (GET_OBJ_VAL(from_obj, 1) < 0) {	/* There was too little */
-      GET_OBJ_VAL(to_obj, 1) += GET_OBJ_VAL(from_obj, 1);
-      amount += GET_OBJ_VAL(from_obj, 1);
+    if (DRINK_CON_NOW(from_obj) == 0) {	/* It was emptied  */
       name_from_drinkcon(from_obj);
-      GET_OBJ_VAL(from_obj, 1) = 0;
-      GET_OBJ_VAL(from_obj, 2) = 0;
-      GET_OBJ_VAL(from_obj, 3) = 0;
+      DRINK_CON_NOW(from_obj) = 0;
+      DRINK_CON_TYPE(from_obj) = 0;
+      DRINK_CON_POISON(from_obj) = 0;
     }
-  }
-  else {
-    GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
-    amount = GET_OBJ_VAL(to_obj, 0);
+  } else {
+    amount = DRINK_CON_MAX(to_obj) - DRINK_CON_NOW(to_obj);
+    DRINK_CON_NOW(to_obj) = DRINK_CON_MAX(to_obj);
   }
   /* Poisoned? */
-  GET_OBJ_VAL(to_obj, 3) = (GET_OBJ_VAL(to_obj, 3) || GET_OBJ_VAL(from_obj, 3))
-;
+  DRINK_CON_POISON(to_obj) = (DRINK_CON_POISON(to_obj) || DRINK_CON_POISON(from_obj));
   /* Weight change, except for unlimited. */
-  if (GET_OBJ_VAL(from_obj, 0) > 0) {
+  if (LIMITED_DRINK_CONTAINER(from_obj)) {
     weight_change_object(from_obj, -amount);
   }
   weight_change_object(to_obj, amount); /* Add weight */
 }
+
+#undef DRINK_CON_MAX
+#undef DRINK_CON_NOW
+#undef DRINK_CON_TYPE
+#undef DRINK_CON_POISON
+
+#undef LIMITED_DRINK_CONTAINER
+#undef EMPTY_DRINK_CONTAINER
 
 static void wear_message(struct char_data *ch, struct obj_data *obj, int where)
 {
