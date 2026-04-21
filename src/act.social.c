@@ -56,7 +56,7 @@ ACMD(do_action)
   if (!action->char_found)
     *arg = '\0';
 
-  if (action->char_found && argument)
+  if (action->char_found)
     one_argument(argument, arg);
   else
     *arg = '\0';
