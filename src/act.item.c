@@ -1103,7 +1103,7 @@ ACMD(do_pour)
       act("$n empties $p.", TRUE, ch, from_obj, 0, TO_ROOM);
       act("You empty $p.", FALSE, ch, from_obj, 0, TO_CHAR);
 
-      weight_change_object(from_obj, -GET_OBJ_VAL(from_obj, 1)); /* Empty */
+      weight_change_object(from_obj, -DRINK_CON_NOW(from_obj)); /* Empty */
 
       name_from_drinkcon(from_obj);
         
