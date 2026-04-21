@@ -202,9 +202,9 @@ SPECIAL(mayor)
 {
   char actbuf[MAX_INPUT_LENGTH];
 
-  const char open_path[] =
+  static const char open_path[] =
 	"W3a3003b33000c111d0d111Oe333333Oe22c222112212111a1S.";
-  const char close_path[] =
+  static const char close_path[] =
 	"W3a3003b33000c111d0d111CE333333CE22c222112212111a1S.";
 
   static const char *path = NULL;

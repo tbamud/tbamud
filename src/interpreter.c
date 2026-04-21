@@ -1612,8 +1612,9 @@ void nanny(struct descriptor_data *d, char *arg)
     if (load_result == CLASS_UNDEFINED) {
       write_to_output(d, "\r\nThat's not a class.\r\nClass: ");
       return;
-    } else
+    } else {
       GET_CLASS(d->character) = load_result;
+    }
 
       if (d->olc) {
         free(d->olc);

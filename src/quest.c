@@ -650,7 +650,7 @@ static void quest_show(struct char_data *ch, mob_vnum qm)
     send_to_char(ch, "There are no quests available here at the moment.\r\n");
 }
 
-static void quest_stat(struct char_data *ch, char argument[MAX_STRING_LENGTH])
+static void quest_stat(struct char_data *ch, char *argument)
 {
   qst_rnum rnum;
   mob_rnum qmrnum;
