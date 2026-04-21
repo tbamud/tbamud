@@ -1089,11 +1089,6 @@ ACMD(do_pour)
       return;
     }
     if (!str_cmp(arg2, "out")) {
-      if (EMPTY_DRINK_CONTAINER(from_obj)) {
-        send_to_char(ch, "It's already empty!\r\n");
-        return;
-      }
-      
       if (!LIMITED_DRINK_CONTAINER(from_obj)) {
         send_to_char(ch, "You can't pour that out! There's simply too much in it.\r\n");
         return;
