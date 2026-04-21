@@ -1052,7 +1052,7 @@ static void read_line(FILE *shop_f, const char *string, void *data)
 {
   char buf[READ_SIZE];
 
-  if (!get_line(shop_f, buf) || !sscanf(buf, string, data)) {
+  if (!get_line(shop_f, buf) || sscanf(buf, string, data) != 1) {
     log("SYSERR: Error in shop #%d, near '%s' with '%s'", SHOP_NUM(top_shop), buf, string);
     exit(1);
   }
