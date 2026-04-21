@@ -1131,7 +1131,7 @@ ACMD(do_pour)
     return;
   }
   if (subcmd == SCMD_POUR)
-    send_to_char(ch, "You pour the %s into the %s.", drinks[DRINK_CON_TYPE(from_obj)], arg2);
+    send_to_char(ch, "You pour the %s into the %s.\r\n", drinks[DRINK_CON_TYPE(from_obj)], arg2);
 
   if (subcmd == SCMD_FILL) {
     act("You gently fill $p from $P.", FALSE, ch, to_obj, from_obj, TO_CHAR);
