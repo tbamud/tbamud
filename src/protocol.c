@@ -2102,20 +2102,25 @@ static void ExecuteMSDPPair( descriptor_t *apDescriptor, const char *apVariable,
                         !strcmp(apDescriptor->pProtocol->pVariables[i]->pValueString, "Unknown") )
                      {
                         /* Store the new value if it's valid */
-                        char *pBuffer = alloca(VariableNameTable[i].Max+1);
+                        char *pBuffer = malloc(VariableNameTable[i].Max + 1);
                         int j; /* Loop counter */
 
-                        for ( j = 0; j < VariableNameTable[i].Max && *apValue != '\0'; ++apValue )
+                        if ( pBuffer != NULL )
                         {
-                           if ( isprint(*apValue) )
-                              pBuffer[j++] = *apValue;
-                        }
-                        pBuffer[j++] = '\0';
+                           for ( j = 0; j < VariableNameTable[i].Max && *apValue != '\0'; ++apValue )
+                           {
+                              if ( isprint(*apValue) )
+                                 pBuffer[j++] = *apValue;
+                           }
+                           pBuffer[j++] = '\0';
 
-                        if ( j >= VariableNameTable[i].Min )
-                        {
-                           free(apDescriptor->pProtocol->pVariables[i]->pValueString);
-                           apDescriptor->pProtocol->pVariables[i]->pValueString = AllocString(pBuffer);
+                           if ( j >= VariableNameTable[i].Min )
+                           {
+                              free(apDescriptor->pProtocol->pVariables[i]->pValueString);
+                              apDescriptor->pProtocol->pVariables[i]->pValueString = AllocString(pBuffer);
+                           }
+
+                           free(pBuffer);
                         }
                      }
                   }
