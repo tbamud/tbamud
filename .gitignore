@@ -93,3 +93,9 @@ src/test/testfile
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Unit test binaries (built artifacts)
+tests/test_utils
+tests/test_random
+tests/test_interpreter
+tests/test_class
