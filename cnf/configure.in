@@ -210,6 +210,6 @@ AC_CHECK_PROTO(unlink)
 AC_CHECK_PROTO(vsnprintf)
 AC_CHECK_PROTO(write)
 
-AC_OUTPUT(src/Makefile src/util/Makefile)
+AC_OUTPUT(src/Makefile src/util/Makefile tests/Makefile)
 #
 echo "Configuration completed.  To compile, type:  cd src; make"
