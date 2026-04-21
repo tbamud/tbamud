@@ -486,7 +486,7 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
       }
       /* Addition inspired by Jamie Nelson. */
       else if (!str_cmp(var, "findobj")) {
-        if (!field || !*field || !subfield || !*subfield) {
+        if (!*field || !subfield || !*subfield) {
           script_log("findobj.vnum(ovnum) - illegal syntax");
           strcpy(str, "0");
         } else {
