@@ -421,7 +421,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
         strncat(buf, *d->str, sizeof(buf) - strlen(buf) - 1);
       *s = temp;
       strncat(buf, buf2, sizeof(buf) - strlen(buf) - 1);
-      if (s && *s)
+      if (*s)
         strncat(buf, s, sizeof(buf) - strlen(buf) - 1);
       RECREATE(*d->str, char, strlen(buf) + 3);
 
