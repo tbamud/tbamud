@@ -20,3 +20,5 @@ jobs:
       run: ./configure
     - name: build
       run: cd src && touch .accepted && make
+    - name: test
+      run: cd tests && make test
