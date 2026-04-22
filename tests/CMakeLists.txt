@@ -34,11 +34,14 @@ set(TEST_INCLUDES
 
 # Suppress warnings that fire in generated stubs / vendored code and in the
 # mud sources when compiled outside their normal full-build context.
-set(TEST_CFLAGS
-    -Wno-unused-parameter
-    -Wno-unused-function
-    -Wno-unused-variable
-)
+set(TEST_CFLAGS)
+if(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
+    list(APPEND TEST_CFLAGS
+        -Wno-unused-parameter
+        -Wno-unused-function
+        -Wno-unused-variable
+    )
+endif()
 
 # Helper macro: add_mud_test(name SRC1 [SRC2 …])
 # Creates an executable, registers it with CTest.
