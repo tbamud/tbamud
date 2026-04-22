@@ -7,6 +7,7 @@ config.status
 src/Makefile
 src/conf.h
 src/util/Makefile
+tests/Makefile
 src/.accepted
 src/depend
 src/util/depend
