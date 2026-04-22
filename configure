@@ -5711,7 +5711,7 @@ EOF
 
 cat >> $CONFIG_STATUS <<EOF
 
-CONFIG_FILES=\${CONFIG_FILES-"src/Makefile src/util/Makefile"}
+CONFIG_FILES=\${CONFIG_FILES-"src/Makefile src/util/Makefile tests/Makefile"}
 EOF
 cat >> $CONFIG_STATUS <<\EOF
 for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

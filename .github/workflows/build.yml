@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: read
+  checks: write
+  pull-requests: write
 
 jobs:
   build:
@@ -19,4 +21,15 @@ jobs:
     - name: configure
       run: ./configure
     - name: build
-      run: cd src && touch .accepted && make
+      working-directory: src
+      run: touch .accepted && make
+    - name: test
+      working-directory: tests
+      run: make test
+    - name: publish test results
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Unity Tests
+        path: tests/test-results/*.xml
+        reporter: java-junit

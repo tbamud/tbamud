@@ -7,6 +7,7 @@ config.status
 src/Makefile
 src/conf.h
 src/util/Makefile
+tests/Makefile
 src/.accepted
 src/depend
 src/util/depend
@@ -93,3 +94,10 @@ src/test/testfile
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Unit test binaries (built artifacts)
+tests/test_utils
+tests/test_random
+tests/test_interpreter
+tests/test_class
+tests/test-results/

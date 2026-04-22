@@ -1,0 +1,96 @@
+# tests/Makefile.in
+# Autoconf template — processed by configure to produce tests/Makefile.
+#
+# Build and run the tbaMUD unit-test suite.
+# Usage (after running ./configure from the project root):
+#
+#   cd tests && make        # build all test binaries
+#   cd tests && make test   # build and run all tests
+
+CC        = @CC@
+MYFLAGS   = @MYFLAGS@
+CFLAGS    = @CFLAGS@ $(MYFLAGS)
+LIBS      = @LIBS@ @CRYPTLIB@ @NETLIB@
+
+SRCDIR    = ../src
+UNITYDIR  = vendor/unity
+
+# Include paths:
+#   ../src   — mud headers and the generated conf.h
+#   vendor/unity — Unity framework headers
+INCFLAGS  = -I$(SRCDIR) -I$(UNITYDIR)
+
+# Suppress warnings that fire in generated stubs / vendored code
+WARNFLAGS = -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable
+
+COMPILE   = $(CC) $(CFLAGS) $(WARNFLAGS) $(INCFLAGS)
+
+# Common object files compiled into every test binary
+UNITY_SRC  = $(UNITYDIR)/unity.c
+STUBS_SRC  = test_stubs.c
+
+# tbaMUD source files used by the tests
+UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
+
+# All test binaries
+TESTS = test_utils test_random test_interpreter test_class
+
+.PHONY: all test clean
+
+all: $(TESTS)
+
+# ---------------------------------------------------------------------------
+# test_utils — covers src/utils.c
+# ---------------------------------------------------------------------------
+test_utils: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) test_utils.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_random — covers src/random.c and rand_number/dice in src/utils.c
+# ---------------------------------------------------------------------------
+test_random: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) test_random.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_interpreter — covers string helpers in src/interpreter.c
+# ---------------------------------------------------------------------------
+test_interpreter: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                  $(SRCDIR)/interpreter.c test_interpreter.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_class — covers src/class.c
+# ---------------------------------------------------------------------------
+test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+            $(SRCDIR)/class.c test_class.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# Run all tests and produce JUnit XML files in test-results/
+# ---------------------------------------------------------------------------
+test: $(TESTS)
+	@echo "=========================================="
+	@echo "Running tbaMUD unit tests"
+	@echo "=========================================="
+	@mkdir -p test-results
+	@status=0; \
+	for t in $(TESTS); do \
+		t_start=$$(date +%s%3N); \
+		./$$t > test-results/$$t.out 2>&1; \
+		rc=$$?; \
+		t_end=$$(date +%s%3N); \
+		elapsed=$$(awk "BEGIN{printf \"%.3f\", ($$t_end - $$t_start)/1000}"); \
+		cat test-results/$$t.out; \
+		python3 unity_to_junit.py $$t test-results/$$t.xml "$$elapsed" < test-results/$$t.out; \
+		if [ $$rc -eq 0 ]; then \
+			echo "[PASS] $$t"; \
+		else \
+			echo "[FAIL] $$t"; \
+			status=1; \
+		fi; \
+	done; \
+	exit $$status
+
+clean:
+	rm -f $(TESTS)
+	rm -rf test-results

@@ -400,6 +400,7 @@ add_executable(circle ${SRC_FILES})
 target_link_libraries(circle ${EXTRA_LIBS})
 
 add_subdirectory(src/util)
+add_subdirectory(tests)
 
 if (MEMORY_DEBUG)
     message(STATUS "MEMORY_DEBUG is activated, setting up zmalloc")
