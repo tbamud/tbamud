@@ -2,7 +2,7 @@
 """Convert Unity test-runner output to JUnit XML.
 
 Usage:
-    ./test_binary | python3 unity_to_junit.py <suite_name> <output.xml>
+    ./test_binary | python3 unity_to_junit.py <suite_name> <output.xml> [elapsed_seconds]
 
 Unity emits one result line per test:
     path/to/file.c:LINE:TEST_NAME:PASS
@@ -39,7 +39,9 @@ def parse_unity(lines):
     return tests, total, failures, ignored
 
 
-def build_xml(suite_name, tests, total, failures, ignored):
+def build_xml(suite_name, tests, total, failures, ignored, elapsed):
+    # Distribute total time evenly across tests for per-testcase timing.
+    per_test = round(elapsed / total, 6) if total else 0.0
     suite = ET.Element(
         "testsuite",
         name=suite_name,
@@ -47,9 +49,13 @@ def build_xml(suite_name, tests, total, failures, ignored):
         failures=str(failures),
         errors="0",
         skipped=str(ignored),
+        time=f"{elapsed:.6f}",
     )
     for name, result, message in tests:
-        case = ET.SubElement(suite, "testcase", name=name, classname=suite_name)
+        case = ET.SubElement(
+            suite, "testcase",
+            name=name, classname=suite_name, time=f"{per_test:.6f}",
+        )
         if result == "FAIL":
             f = ET.SubElement(case, "failure", message=message)
             f.text = message
@@ -59,12 +65,13 @@ def build_xml(suite_name, tests, total, failures, ignored):
 
 
 def main():
-    if len(sys.argv) != 3:
-        print(f"usage: {sys.argv[0]} <suite_name> <output.xml>", file=sys.stderr)
+    if len(sys.argv) < 3 or len(sys.argv) > 4:
+        print(f"usage: {sys.argv[0]} <suite_name> <output.xml> [elapsed_seconds]", file=sys.stderr)
         sys.exit(1)
     suite_name, output_file = sys.argv[1], sys.argv[2]
+    elapsed = float(sys.argv[3]) if len(sys.argv) == 4 else 0.0
     tests, total, failures, ignored = parse_unity(sys.stdin.readlines())
-    tree = build_xml(suite_name, tests, total, failures, ignored)
+    tree = build_xml(suite_name, tests, total, failures, ignored, elapsed)
     ET.indent(tree, space="  ")
     tree.write(output_file, encoding="unicode", xml_declaration=True)
 

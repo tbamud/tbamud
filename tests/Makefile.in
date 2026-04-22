@@ -75,10 +75,13 @@ test: $(TESTS)
 	@mkdir -p test-results
 	@status=0; \
 	for t in $(TESTS); do \
+		t_start=$$(date +%s%3N); \
 		./$$t > test-results/$$t.out 2>&1; \
 		rc=$$?; \
+		t_end=$$(date +%s%3N); \
+		elapsed=$$(awk "BEGIN{printf \"%.3f\", ($$t_end - $$t_start)/1000}"); \
 		cat test-results/$$t.out; \
-		python3 unity_to_junit.py $$t test-results/$$t.xml < test-results/$$t.out; \
+		python3 unity_to_junit.py $$t test-results/$$t.xml "$$elapsed" < test-results/$$t.out; \
 		if [ $$rc -eq 0 ]; then \
 			echo "[PASS] $$t"; \
 		else \
