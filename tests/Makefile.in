@@ -66,38 +66,28 @@ test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
-# Run all tests
+# Run all tests and produce JUnit XML files in test-results/
 # ---------------------------------------------------------------------------
 test: $(TESTS)
 	@echo "=========================================="
 	@echo "Running tbaMUD unit tests"
 	@echo "=========================================="
+	@mkdir -p test-results
 	@status=0; \
-	if ./test_utils; then \
-		echo "[PASS] test_utils"; \
-	else \
-		echo "[FAIL] test_utils"; \
-		status=1; \
-	fi; \
-	if ./test_random; then \
-		echo "[PASS] test_random"; \
-	else \
-		echo "[FAIL] test_random"; \
-		status=1; \
-	fi; \
-	if ./test_interpreter; then \
-		echo "[PASS] test_interpreter"; \
-	else \
-		echo "[FAIL] test_interpreter"; \
-		status=1; \
-	fi; \
-	if ./test_class; then \
-		echo "[PASS] test_class"; \
-	else \
-		echo "[FAIL] test_class"; \
-		status=1; \
-	fi; \
+	for t in $(TESTS); do \
+		./$$t > test-results/$$t.out 2>&1; \
+		rc=$$?; \
+		cat test-results/$$t.out; \
+		python3 unity_to_junit.py $$t test-results/$$t.xml < test-results/$$t.out; \
+		if [ $$rc -eq 0 ]; then \
+			echo "[PASS] $$t"; \
+		else \
+			echo "[FAIL] $$t"; \
+			status=1; \
+		fi; \
+	done; \
 	exit $$status
 
 clean:
 	rm -f $(TESTS)
+	rm -rf test-results
