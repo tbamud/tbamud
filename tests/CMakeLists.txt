@@ -81,8 +81,13 @@ add_mud_test(test_interpreter
     ${CMAKE_CURRENT_SOURCE_DIR}/test_interpreter.c
 )
 
-# crypt() is referenced from interpreter.c (nanny password hashing)
-target_link_libraries(test_interpreter PRIVATE crypt)
+# crypt() is referenced from interpreter.c (nanny password hashing).
+# Reuse the crypt library detected by the top-level build when one is needed;
+# on platforms where crypt() is provided by libc, no extra link library is
+# required.
+if(CRYPT_LIBRARY)
+    target_link_libraries(test_interpreter PRIVATE ${CRYPT_LIBRARY})
+endif()
 
 # ---------------------------------------------------------------------------
 # test_class — covers src/class.c
