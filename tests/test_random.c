@@ -24,7 +24,7 @@ void tearDown(void) { logfile = NULL; }
  * Precomputed for seed=1:
  *   call 1 → 16807
  *   call 2 → 282475249
- *   call 3 → 1622136673
+ *   call 3 → 1622650073
  * ========================================================= */
 
 void test_circle_random_deterministic_first(void)
