@@ -72,10 +72,32 @@ test: $(TESTS)
 	@echo "=========================================="
 	@echo "Running tbaMUD unit tests"
 	@echo "=========================================="
-	@./test_utils   && echo "[PASS] test_utils"   || echo "[FAIL] test_utils"
-	@./test_random  && echo "[PASS] test_random"  || echo "[FAIL] test_random"
-	@./test_interpreter && echo "[PASS] test_interpreter" || echo "[FAIL] test_interpreter"
-	@./test_class   && echo "[PASS] test_class"   || echo "[FAIL] test_class"
+	@status=0; \
+	if ./test_utils; then \
+		echo "[PASS] test_utils"; \
+	else \
+		echo "[FAIL] test_utils"; \
+		status=1; \
+	fi; \
+	if ./test_random; then \
+		echo "[PASS] test_random"; \
+	else \
+		echo "[FAIL] test_random"; \
+		status=1; \
+	fi; \
+	if ./test_interpreter; then \
+		echo "[PASS] test_interpreter"; \
+	else \
+		echo "[FAIL] test_interpreter"; \
+		status=1; \
+	fi; \
+	if ./test_class; then \
+		echo "[PASS] test_class"; \
+	else \
+		echo "[FAIL] test_class"; \
+		status=1; \
+	fi; \
+	exit $$status
 
 clean:
 	rm -f $(TESTS)
