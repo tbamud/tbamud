@@ -291,8 +291,10 @@ WCMD(do_wdoor)
         case 5:  /* room        */
             if ((to_room = real_room(atoi(value))) != NOWHERE)
                 newexit->to_room = to_room;
-            else
+            else {
+                newexit->to_room = NOWHERE;
                 wld_log(room, "wdoor: invalid door target (arg == %s)", value);
+            }
             break;
         }
     }

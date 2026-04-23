@@ -692,8 +692,10 @@ static OCMD(do_odoor)
         case 5:  /* room        */
             if ((to_room = real_room(atoi(value))) != NOWHERE)
                 newexit->to_room = to_room;
-            else
+            else {
+                newexit->to_room = NOWHERE;
                 obj_log(obj, "odoor: invalid door target (arg == %s)", value);
+            }
             break;
         }
     }
