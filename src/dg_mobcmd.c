@@ -1024,17 +1024,27 @@ ACMD(do_mdoor)
     }
 
     if ((rm = get_room(target)) == NULL) {
-        mob_log(ch, "mdoor: invalid target");
+        mob_log(ch, "mdoor: invalid target (arg == %s)", target);
         return;
     }
 
     if ((dir = search_block(direction, dirs, FALSE)) == -1) {
-        mob_log(ch, "mdoor: invalid direction");
+        char dirs_str[256];
+        int di, doff = 0;
+        dirs_str[0] = '\0';
+        for (di = 0; *dirs[di] != '\n'; di++)
+            doff += snprintf(dirs_str + doff, sizeof(dirs_str) - doff, "%s%s", doff ? " " : "", dirs[di]);
+        mob_log(ch, "mdoor: invalid direction (arg == %s) not found in: [ %s ]", direction, dirs_str);
         return;
     }
 
     if ((fd = search_block(field, door_field, FALSE)) == -1) {
-        mob_log(ch, "odoor: invalid field");
+        char fields_str[256];
+        int fi, foff = 0;
+        fields_str[0] = '\0';
+        for (fi = 0; *door_field[fi] != '\n'; fi++)
+            foff += snprintf(fields_str + foff, sizeof(fields_str) - foff, "%s%s", foff ? " " : "", door_field[fi]);
+        mob_log(ch, "mdoor: invalid field (arg == %s) not found in: [ %s ]", field, fields_str);
         return;
     }
 
@@ -1081,8 +1091,10 @@ ACMD(do_mdoor)
         case 5:  /* room        */
             if ((to_room = real_room(atoi(value))) != NOWHERE)
                 newexit->to_room = to_room;
-            else
-                mob_log(ch, "mdoor: invalid door target");
+            else {
+                newexit->to_room = NOWHERE;
+                mob_log(ch, "mdoor: invalid door target (arg == %s)", value);
+            }
             break;
         }
     }

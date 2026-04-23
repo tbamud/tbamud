@@ -625,17 +625,27 @@ static OCMD(do_odoor)
     }
 
     if ((rm = get_room(target)) == NULL) {
-        obj_log(obj, "odoor: invalid target");
+        obj_log(obj, "odoor: invalid target (arg == %s)", target);
         return;
     }
 
     if ((dir = search_block(direction, dirs, FALSE)) == -1) {
-        obj_log(obj, "odoor: invalid direction");
+        char dirs_str[256];
+        int di, doff = 0;
+        dirs_str[0] = '\0';
+        for (di = 0; *dirs[di] != '\n'; di++)
+            doff += snprintf(dirs_str + doff, sizeof(dirs_str) - doff, "%s%s", doff ? " " : "", dirs[di]);
+        obj_log(obj, "odoor: invalid direction (arg == %s) not found in: [ %s ]", direction, dirs_str);
         return;
     }
 
     if ((fd = search_block(field, door_field, FALSE)) == -1) {
-        obj_log(obj, "odoor: invalid field");
+        char fields_str[256];
+        int fi, foff = 0;
+        fields_str[0] = '\0';
+        for (fi = 0; *door_field[fi] != '\n'; fi++)
+            foff += snprintf(fields_str + foff, sizeof(fields_str) - foff, "%s%s", foff ? " " : "", door_field[fi]);
+        obj_log(obj, "odoor: invalid field (arg == %s) not found in: [ %s ]", field, fields_str);
         return;
     }
 
@@ -682,8 +692,10 @@ static OCMD(do_odoor)
         case 5:  /* room        */
             if ((to_room = real_room(atoi(value))) != NOWHERE)
                 newexit->to_room = to_room;
-            else
-                obj_log(obj, "odoor: invalid door target");
+            else {
+                newexit->to_room = NOWHERE;
+                obj_log(obj, "odoor: invalid door target (arg == %s)", value);
+            }
             break;
         }
     }
