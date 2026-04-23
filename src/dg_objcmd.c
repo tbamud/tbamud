@@ -635,7 +635,7 @@ static OCMD(do_odoor)
         dirs_str[0] = '\0';
         for (di = 0; *dirs[di] != '\n'; di++)
             doff += snprintf(dirs_str + doff, sizeof(dirs_str) - doff, "%s%s", doff ? " " : "", dirs[di]);
-        obj_log(obj, "odoor: invalid direction (arg == %s) not found in:\n  [ %s ]", direction, dirs_str);
+        obj_log(obj, "odoor: invalid direction (arg == %s) not found in: [ %s ]", direction, dirs_str);
         return;
     }
 
@@ -645,7 +645,7 @@ static OCMD(do_odoor)
         fields_str[0] = '\0';
         for (fi = 0; *door_field[fi] != '\n'; fi++)
             foff += snprintf(fields_str + foff, sizeof(fields_str) - foff, "%s%s", foff ? " " : "", door_field[fi]);
-        obj_log(obj, "odoor: invalid field (arg == %s) not found in:\n  [ %s ]", field, fields_str);
+        obj_log(obj, "odoor: invalid field (arg == %s) not found in: [ %s ]", field, fields_str);
         return;
     }
 

@@ -1034,7 +1034,7 @@ ACMD(do_mdoor)
         dirs_str[0] = '\0';
         for (di = 0; *dirs[di] != '\n'; di++)
             doff += snprintf(dirs_str + doff, sizeof(dirs_str) - doff, "%s%s", doff ? " " : "", dirs[di]);
-        mob_log(ch, "mdoor: invalid direction (arg == %s) not found in:\n  [ %s ]", direction, dirs_str);
+        mob_log(ch, "mdoor: invalid direction (arg == %s) not found in: [ %s ]", direction, dirs_str);
         return;
     }
 
@@ -1044,7 +1044,7 @@ ACMD(do_mdoor)
         fields_str[0] = '\0';
         for (fi = 0; *door_field[fi] != '\n'; fi++)
             foff += snprintf(fields_str + foff, sizeof(fields_str) - foff, "%s%s", foff ? " " : "", door_field[fi]);
-        mob_log(ch, "mdoor: invalid field (arg == %s) not found in:\n  [ %s ]", field, fields_str);
+        mob_log(ch, "mdoor: invalid field (arg == %s) not found in: [ %s ]", field, fields_str);
         return;
     }
 
