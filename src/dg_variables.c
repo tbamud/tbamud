@@ -1636,6 +1636,13 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
   int paren_count = 0;
   int dots = 0;
 
+  /* reject lines that would overflow our fixed-size buffers */
+  if (strnlen(line, MAX_INPUT_LENGTH) >= MAX_INPUT_LENGTH) {
+    script_log("Trigger VNum %d: variable substitution line too long, ignoring.", GET_TRIG_VNUM(trig));
+    *buf = '\0';
+    return;
+  }
+
   /* skip out if no %'s */
   if (!strchr(line, '%')) {
     strcpy(buf, line);
