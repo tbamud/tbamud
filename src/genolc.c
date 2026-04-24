@@ -277,7 +277,10 @@ int sprintascii(char *out, bitvector_t bits)
   return j;
 }
 
-/* converts illegal filename chars into appropriate equivalents */ 
+/* converts illegal filename chars into appropriate equivalents.
+ * Uses an allowlist: alphanumerics, underscore, hyphen, and dot are kept;
+ * spaces are converted to underscores; all other characters (including shell
+ * metacharacters such as ; | & ` $ > < \n) are silently dropped. */ 
 static void fix_filename(const char *str, char *outbuf, size_t maxlen)
 { 
   const char *in = str;
@@ -285,21 +288,17 @@ static void fix_filename(const char *str, char *outbuf, size_t maxlen)
   int count = 0;
 
   while (*in) {
-    switch(*in) {
-      case ' ': *out = '_'; out++; break;
-      case '(': *out = '{'; out++; break;
-      case ')': *out = '}'; out++; break;
- 
-      /* skip the following */ 
-      case '\'':             break; 
-      case '"':              break; 
- 
-      /* Legal character */ 
-      default: *out = *in;  out++;break;
-    } 
+    if (isalnum((unsigned char)*in) || *in == '_' || *in == '-' || *in == '.') {
+      /* Safe characters kept as-is */
+      *out++ = *in;
+      if (++count == maxlen - 1) break;
+    } else if (*in == ' ') {
+      /* Spaces become underscores */
+      *out++ = '_';
+      if (++count == maxlen - 1) break;
+    }
+    /* All other characters, including shell metacharacters, are dropped */
     in++;
-    count++;
-    if (count == maxlen - 1) break;
   }
   *out = '\0';
 }
