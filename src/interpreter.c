@@ -41,7 +41,7 @@
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);
 static struct alias_data *find_alias(struct alias_data *alias_list, char *str);
-static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
+static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a, struct char_data *ch);
 static int _parse_name(char *arg, char *name);
 static bool perform_new_char_dupe_check(struct descriptor_data *d);
 /* sort_commands utility */
@@ -668,7 +668,7 @@ ACMD(do_alias)
  * commands. */
 #define NUM_TOKENS       9
 
-static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a)
+static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a, struct char_data *ch)
 {
   struct txt_q temp_queue;
   char *tokens[NUM_TOKENS], *temp, *write_point;
@@ -697,15 +697,25 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
     } else if (*temp == ALIAS_VAR_CHAR) {
       temp++;
       if ((num = *temp - '1') < num_of_tokens && num >= 0) {
-	strcpy(write_point, tokens[num]);	/* strcpy: OK */
+        if ((write_point - buf) + strlen(tokens[num]) >= MAX_RAW_INPUT_LENGTH) {
+          send_to_char(ch, "Alias expansion too long.\r\n");
+          return;
+        }
+	strcpy(write_point, tokens[num]);
 	write_point += strlen(tokens[num]);
       } else if (*temp == ALIAS_GLOB_CHAR) {
         skip_spaces(&orig);
-        strcpy(write_point, orig);		/* strcpy: OK */
+        if ((write_point - buf) + strlen(orig) >= MAX_RAW_INPUT_LENGTH) {
+          send_to_char(ch, "Alias expansion too long.\r\n");
+          return;
+        }
+        strcpy(write_point, orig);
 	write_point += strlen(orig);
-      } else if ((*(write_point++) = *temp) == '$')	/* redouble $ for act safety */
-	*(write_point++) = '$';
-    } else
+      } else if (write_point - buf + 2 < MAX_RAW_INPUT_LENGTH) {
+        if ((*(write_point++) = *temp) == '$')	/* redouble $ for act safety */
+	  *(write_point++) = '$';
+      }
+    } else if (write_point - buf + 1 < MAX_RAW_INPUT_LENGTH)
       *(write_point++) = *temp;
   }
 
@@ -755,7 +765,7 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen)
     strlcpy(orig, a->replacement, maxlen);
     return (0);
   } else {
-    perform_complex_alias(&d->input, ptr, a);
+    perform_complex_alias(&d->input, ptr, a, d->character);
     return (1);
   }
 }
