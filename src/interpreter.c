@@ -671,6 +671,7 @@ ACMD(do_alias)
 static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a, struct char_data *ch)
 {
   struct txt_q temp_queue;
+  struct txt_block *qtmp;
   char *tokens[NUM_TOKENS], *temp, *write_point;
   char buf2[MAX_RAW_INPUT_LENGTH], buf[MAX_RAW_INPUT_LENGTH];	/* raw? */
   int num_of_tokens = 0, num;
@@ -697,26 +698,27 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
     } else if (*temp == ALIAS_VAR_CHAR) {
       temp++;
       if ((num = *temp - '1') < num_of_tokens && num >= 0) {
-        if ((write_point - buf) + strlen(tokens[num]) >= MAX_RAW_INPUT_LENGTH) {
-          send_to_char(ch, "Alias expansion too long.\r\n");
-          return;
-        }
+        if ((write_point - buf) + strlen(tokens[num]) >= MAX_RAW_INPUT_LENGTH)
+          goto overflow;
 	strcpy(write_point, tokens[num]);
 	write_point += strlen(tokens[num]);
       } else if (*temp == ALIAS_GLOB_CHAR) {
         skip_spaces(&orig);
-        if ((write_point - buf) + strlen(orig) >= MAX_RAW_INPUT_LENGTH) {
-          send_to_char(ch, "Alias expansion too long.\r\n");
-          return;
-        }
+        if ((write_point - buf) + strlen(orig) >= MAX_RAW_INPUT_LENGTH)
+          goto overflow;
         strcpy(write_point, orig);
 	write_point += strlen(orig);
-      } else if (write_point - buf + 2 < MAX_RAW_INPUT_LENGTH) {
+      } else {
+        if (write_point - buf + 2 >= MAX_RAW_INPUT_LENGTH)
+          goto overflow;
         if ((*(write_point++) = *temp) == '$')	/* redouble $ for act safety */
 	  *(write_point++) = '$';
       }
-    } else if (write_point - buf + 1 < MAX_RAW_INPUT_LENGTH)
+    } else {
+      if (write_point - buf + 1 >= MAX_RAW_INPUT_LENGTH)
+        goto overflow;
       *(write_point++) = *temp;
+    }
   }
 
   *write_point = '\0';
@@ -729,6 +731,16 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
   else {
     temp_queue.tail->next = input_q->head;
     input_q->head = temp_queue.head;
+  }
+  return;
+
+overflow:
+  send_to_char(ch, "Alias expansion too long.\r\n");
+  while (temp_queue.head) {
+    qtmp = temp_queue.head;
+    temp_queue.head = qtmp->next;
+    free(qtmp->text);
+    free(qtmp);
   }
 }
 
