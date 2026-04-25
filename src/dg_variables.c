@@ -1722,5 +1722,5 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
       left -= len;
     } /* else if *p .. */
   } /* while *p .. */
-  buf[sizeof(buf) - 1] = '\0';
+  *buf = '\0';
 }
