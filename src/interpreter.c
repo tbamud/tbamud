@@ -41,7 +41,7 @@
 /* local (file scope) functions */
 static int perform_dupe_check(struct descriptor_data *d);
 static struct alias_data *find_alias(struct alias_data *alias_list, char *str);
-static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a, struct char_data *ch);
+static int perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a);
 static int _parse_name(char *arg, char *name);
 static bool perform_new_char_dupe_check(struct descriptor_data *d);
 /* sort_commands utility */
@@ -668,7 +668,7 @@ ACMD(do_alias)
  * commands. */
 #define NUM_TOKENS       9
 
-static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a, struct char_data *ch)
+static int perform_complex_alias(struct txt_q *input_q, char *orig, struct alias_data *a)
 {
   struct txt_q temp_queue;
   struct txt_block *qtmp;
@@ -732,16 +732,16 @@ static void perform_complex_alias(struct txt_q *input_q, char *orig, struct alia
     temp_queue.tail->next = input_q->head;
     input_q->head = temp_queue.head;
   }
-  return;
+  return (0);
 
 overflow:
-  send_to_char(ch, "Alias expansion too long.\r\n");
   while (temp_queue.head) {
     qtmp = temp_queue.head;
     temp_queue.head = qtmp->next;
     free(qtmp->text);
     free(qtmp);
   }
+  return (-1);
 }
 
 /* Given a character and a string, perform alias replacement on it.
@@ -777,7 +777,8 @@ int perform_alias(struct descriptor_data *d, char *orig, size_t maxlen)
     strlcpy(orig, a->replacement, maxlen);
     return (0);
   } else {
-    perform_complex_alias(&d->input, ptr, a, d->character);
+    if (perform_complex_alias(&d->input, ptr, a) < 0)
+      send_to_char(d->character, "Alias expansion too long.\r\n");
     return (1);
   }
 }
