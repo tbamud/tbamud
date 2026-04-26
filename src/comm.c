@@ -415,7 +415,7 @@ void copyover_recover()
 
   for (;;) {
     fOld = TRUE;
-    if (fscanf(fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt) != 5) {
+    if (fscanf(fp, "%d %ld %511s %1023s %1023s\n", &desc, &pref, name, host, guiopt) != 5) {
       if(!feof(fp)) {
         if(ferror(fp))
           log("SYSERR: error reading copyover file %s: %s", COPYOVER_FILE, strerror(errno));
