@@ -35,21 +35,23 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
     free(trimmed);
   }
 
-  mid = size / 2;
-  left = malloc(mid + 1);
-  right = malloc((size - mid) + 1);
-  if (left && right) {
-    memcpy(left, data, mid);
-    left[mid] = '\0';
-    memcpy(right, data + mid, size - mid);
-    right[size - mid] = '\0';
-    if (size <= 128)
-      (void)levenshtein_distance(left, right);
-    if (*right != '\0')
-      remove_from_string(left, right);
+  if (size > 0) {
+    mid = size / 2;
+    left = malloc(mid + 1);
+    right = malloc((size - mid) + 1);
+    if (left && right) {
+      memcpy(left, data, mid);
+      left[mid] = '\0';
+      memcpy(right, data + mid, size - mid);
+      right[size - mid] = '\0';
+      if (size <= 128)
+        (void)levenshtein_distance(left, right);
+      if (*right != '\0')
+        remove_from_string(left, right);
+    }
+    free(left);
+    free(right);
   }
-  free(left);
-  free(right);
   free(buf);
 
   return 0;

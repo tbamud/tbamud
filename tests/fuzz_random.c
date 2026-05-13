@@ -7,6 +7,11 @@
 #include "structs.h"
 #include "utils.h"
 
+#define RAND_BOUND_SPAN 100001U
+#define RAND_BOUND_BIAS 50000
+#define DICE_BOUND_SPAN 256U
+#define DICE_BOUND_BIAS 32
+
 static uint32_t read_u32(const uint8_t *data, size_t size, size_t offset)
 {
   uint32_t v = 0;
@@ -36,8 +41,8 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
   (void)circle_random();
   (void)circle_random();
 
-  from = (int)(from_raw % 100001U) - 50000;
-  to = (int)(to_raw % 100001U) - 50000;
+  from = (int)(from_raw % RAND_BOUND_SPAN) - RAND_BOUND_BIAS;
+  to = (int)(to_raw % RAND_BOUND_SPAN) - RAND_BOUND_BIAS;
   if (from > to) {
     int tmp = from;
     from = to;
@@ -49,8 +54,8 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
   if (r < low || r > high)
     abort();
 
-  num = (int)(num_raw % 256U) - 32;
-  sides = (int)(sides_raw % 256U) - 32;
+  num = (int)(num_raw % DICE_BOUND_SPAN) - DICE_BOUND_BIAS;
+  sides = (int)(sides_raw % DICE_BOUND_SPAN) - DICE_BOUND_BIAS;
   d = dice(num, sides);
   if (num <= 0 || sides <= 0) {
     if (d != 0)
