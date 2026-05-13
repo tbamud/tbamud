@@ -10,16 +10,12 @@
 #include "comm.h"
 #include "interpreter.h"
 
-extern FILE *logfile;
-
 int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 {
   char *buf;
   char first_arg[MAX_INPUT_LENGTH];
   char second_arg[MAX_INPUT_LENGTH];
   size_t mid;
-
-  logfile = stderr;
 
   if (!data)
     return 0;
@@ -42,7 +38,6 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
   (void)is_abbrev(buf, buf + mid);
 
   free(buf);
-  logfile = NULL;
 
   return 0;
 }

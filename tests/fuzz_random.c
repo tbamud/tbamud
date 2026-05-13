@@ -7,8 +7,6 @@
 #include "structs.h"
 #include "utils.h"
 
-extern FILE *logfile;
-
 static uint32_t read_u32(const uint8_t *data, size_t size, size_t offset)
 {
   uint32_t v = 0;
@@ -25,8 +23,6 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
   uint32_t seed, from_raw, to_raw, num_raw, sides_raw;
   int from, to, low, high, r, num, sides, d;
 
-  logfile = stderr;
-
   if (!data)
     return 0;
 
@@ -42,9 +38,14 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 
   from = (int)(from_raw % 100001U) - 50000;
   to = (int)(to_raw % 100001U) - 50000;
+  if (from > to) {
+    int tmp = from;
+    from = to;
+    to = tmp;
+  }
   r = rand_number(from, to);
-  low = (from < to) ? from : to;
-  high = (from > to) ? from : to;
+  low = from;
+  high = to;
   if (r < low || r > high)
     abort();
 
@@ -57,6 +58,5 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
   } else if (d < num || d > num * sides)
     abort();
 
-  logfile = NULL;
   return 0;
 }

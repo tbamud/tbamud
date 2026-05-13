@@ -8,14 +8,10 @@
 #include "structs.h"
 #include "utils.h"
 
-extern FILE *logfile;
-
 int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 {
   char *buf, *left, *right, *trimmed;
   size_t mid;
-
-  logfile = stderr;
 
   if (!data)
     return 0;
@@ -55,7 +51,6 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
   free(left);
   free(right);
   free(buf);
-  logfile = NULL;
 
   return 0;
 }

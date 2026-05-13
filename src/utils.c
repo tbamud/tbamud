@@ -1509,7 +1509,7 @@ char *right_trim_whitespace(const char *string)
       return r;
 
     fr = r + len - 1;
-    while (fr >= r && (isspace((unsigned char)*fr) || !isprint((unsigned char)*fr)))
+    while (fr >= r && (isspace((unsigned char)*fr) || !isprint((unsigned char)*fr) || *fr == '\0'))
       --fr;
     *(fr + 1) = '\0';
   }
