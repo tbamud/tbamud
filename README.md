@@ -23,6 +23,23 @@ cd tests && make test
 [PASS] test_class
 ```
 
+### Fuzzers
+
+The `tests/` suite also includes optional libFuzzer harnesses:
+
+```
+./configure
+cd tests && make fuzz
+```
+
+Run a short smoke pass:
+
+```
+cd tests && make fuzz-smoke
+```
+
+`make test` remains unchanged and does not run fuzzers.
+
 ### CI
 
 The GitHub Actions workflow (`.github/workflows/build.yml`) runs `make test`
@@ -31,4 +48,3 @@ report via the `dorny/test-reporter` action.
 
 See [doc/testing.md](doc/testing.md) for full details on adding new tests and
 understanding the test infrastructure.
-
