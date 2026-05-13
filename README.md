@@ -38,6 +38,8 @@ Run a short smoke pass:
 cd tests && make fuzz-smoke
 ```
 
+By default, the fuzz targets use `clang` (libFuzzer-enabled build).
+
 `make test` remains unchanged and does not run fuzzers.
 
 ### CI

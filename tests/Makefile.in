@@ -36,6 +36,8 @@ UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 TESTS = test_utils test_random test_interpreter test_class
 FUZZERS = fuzz_utils fuzz_random fuzz_interpreter
 FUZZFLAGS ?= -fsanitize=fuzzer,address,undefined -fno-omit-frame-pointer
+FUZZCC ?= clang
+FUZZ_COMPILE = $(FUZZCC) $(CFLAGS) $(WARNFLAGS) $(INCFLAGS)
 
 .PHONY: all test fuzz fuzz-smoke clean
 
@@ -71,14 +73,14 @@ test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 # libFuzzer targets (opt-in): build with `make fuzz`
 # ---------------------------------------------------------------------------
 fuzz_utils: $(STUBS_SRC) $(UTILS_SRC) fuzz_utils.c
-	$(COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
+	$(FUZZ_COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
 
 fuzz_random: $(STUBS_SRC) $(UTILS_SRC) fuzz_random.c
-	$(COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
+	$(FUZZ_COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
 
 fuzz_interpreter: $(STUBS_SRC) $(UTILS_SRC) \
                  $(SRCDIR)/interpreter.c fuzz_interpreter.c
-	$(COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
+	$(FUZZ_COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
 
 fuzz: $(FUZZERS)
 

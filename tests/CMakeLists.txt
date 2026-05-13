@@ -107,7 +107,7 @@ add_mud_test(test_class
 # Optional libFuzzer harnesses
 # ---------------------------------------------------------------------------
 if(ENABLE_FUZZERS)
-    if(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
+    if(CMAKE_C_COMPILER_ID MATCHES "^(Clang|AppleClang)$")
         set(FUZZ_CFLAGS
             -fsanitize=fuzzer,address,undefined
             -fno-omit-frame-pointer
@@ -145,5 +145,7 @@ if(ENABLE_FUZZERS)
         if(CRYPT_LIBRARY)
             target_link_libraries(fuzz_interpreter PRIVATE ${CRYPT_LIBRARY})
         endif()
+    else()
+        message(STATUS "ENABLE_FUZZERS=ON requires Clang/AppleClang (libFuzzer).")
     endif()
 endif()

@@ -87,6 +87,9 @@ cd tests
 make fuzz-smoke
 ```
 
+The fuzz targets use `clang` by default (`FUZZCC=clang`) to ensure libFuzzer
+support.
+
 `make test` and CI behavior are unchanged; fuzzers are opt-in.
 
 ## Test suites

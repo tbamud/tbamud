@@ -133,9 +133,13 @@ char *strdup(const char *source)
  * @param txt The writable string to prune. */
 void prune_crlf(char *txt)
 {
-  int i = strlen(txt) - 1;
+  int i;
 
-  while (txt[i] == '\n' || txt[i] == '\r')
+  if (txt == NULL || *txt == '\0')
+    return;
+
+  i = strlen(txt) - 1;
+  while (i >= 0 && (txt[i] == '\n' || txt[i] == '\r'))
     txt[i--] = '\0';
 }
 
@@ -812,12 +816,15 @@ int count_non_protocol_chars(char * str)
     }
     if (*string == '@' || *string == '\t') {
       string++;
+      if (!*string)
+        break;
       if (*string != '[' && *string != '<' && *string != '>' && *string != '(' && *string != ')')
         string++;
       else if (*string == '[') {
         while (*string && *string != ']')
           string++;
-        string++;
+        if (*string == ']')
+          string++;
       } else
         string++;
       continue;
@@ -1494,11 +1501,17 @@ char * convert_from_tabs(char * string)
 char *right_trim_whitespace(const char *string)
 {
   char *r = strdup(string);
-  if (r != NULL)
-  {
-    char *fr = r + strlen(string) - 1;
-    while( (isspace(*fr) || !isprint(*fr) || *fr == 0) && fr >= r) --fr;
-    *++fr = 0;
+  if (r != NULL) {
+    size_t len = strlen(r);
+    char *fr;
+
+    if (len == 0)
+      return r;
+
+    fr = r + len - 1;
+    while (fr >= r && (isspace((unsigned char)*fr) || !isprint((unsigned char)*fr)))
+      --fr;
+    *(fr + 1) = '\0';
   }
 
   return r;

@@ -49,7 +49,8 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
     right[size - mid] = '\0';
     if (size <= 128)
       (void)levenshtein_distance(left, right);
-    remove_from_string(left, right);
+    if (*right != '\0')
+      remove_from_string(left, right);
   }
   free(left);
   free(right);
