@@ -34,8 +34,12 @@ UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
 TESTS = test_utils test_random test_interpreter test_class
+FUZZERS = fuzz_utils fuzz_random fuzz_interpreter
+FUZZFLAGS ?= -fsanitize=fuzzer,address,undefined -fno-omit-frame-pointer
+FUZZCC ?= clang
+FUZZ_COMPILE = $(FUZZCC) $(CFLAGS) $(WARNFLAGS) $(INCFLAGS)
 
-.PHONY: all test clean
+.PHONY: all test fuzz fuzz-smoke clean
 
 all: $(TESTS)
 
@@ -66,6 +70,38 @@ test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
+# libFuzzer targets (opt-in): build with `make fuzz`
+# ---------------------------------------------------------------------------
+fuzz_utils: $(STUBS_SRC) $(UTILS_SRC) fuzz_utils.c
+	$(FUZZ_COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
+
+fuzz_random: $(STUBS_SRC) $(UTILS_SRC) fuzz_random.c
+	$(FUZZ_COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
+
+fuzz_interpreter: $(STUBS_SRC) $(UTILS_SRC) \
+                 $(SRCDIR)/interpreter.c fuzz_interpreter.c
+	$(FUZZ_COMPILE) $(FUZZFLAGS) -o $@ $^ $(LIBS)
+
+fuzz: $(FUZZERS)
+
+fuzz-smoke: fuzz
+	@echo "=========================================="
+	@echo "Running short libFuzzer smoke tests"
+	@echo "=========================================="
+	@status=0; \
+	for f in $(FUZZERS); do \
+		./$$f -runs=100 -max_total_time=5 >/dev/null 2>&1; \
+		rc=$$?; \
+		if [ $$rc -eq 0 ]; then \
+			echo "[PASS] $$f"; \
+		else \
+			echo "[FAIL] $$f"; \
+			status=1; \
+		fi; \
+	done; \
+	exit $$status
+
+# ---------------------------------------------------------------------------
 # Run all tests and produce JUnit XML files in test-results/
 # ---------------------------------------------------------------------------
 test: $(TESTS)
@@ -92,5 +128,5 @@ test: $(TESTS)
 	exit $$status
 
 clean:
-	rm -f $(TESTS)
+	rm -f $(TESTS) $(FUZZERS)
 	rm -rf test-results

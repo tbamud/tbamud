@@ -13,6 +13,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 enable_testing()
+option(ENABLE_FUZZERS "Build libFuzzer targets in tests/" OFF)
 
 # ---------------------------------------------------------------------------
 # Common settings shared by all test targets
@@ -101,3 +102,50 @@ add_mud_test(test_class
     ${MUD_SRCDIR}/random.c
     ${CMAKE_CURRENT_SOURCE_DIR}/test_class.c
 )
+
+# ---------------------------------------------------------------------------
+# Optional libFuzzer harnesses
+# ---------------------------------------------------------------------------
+if(ENABLE_FUZZERS)
+    if(CMAKE_C_COMPILER_ID MATCHES "^(Clang|AppleClang)$")
+        set(FUZZ_CFLAGS
+            -fsanitize=fuzzer,address,undefined
+            -fno-omit-frame-pointer
+        )
+
+        macro(add_mud_fuzzer FUZZ_NAME)
+            add_executable(${FUZZ_NAME}
+                ${STUBS_SRC}
+                ${ARGN}
+            )
+            target_include_directories(${FUZZ_NAME} PRIVATE ${TEST_INCLUDES})
+            target_compile_options(${FUZZ_NAME} PRIVATE ${TEST_CFLAGS} ${FUZZ_CFLAGS})
+            target_link_options(${FUZZ_NAME} PRIVATE ${FUZZ_CFLAGS})
+        endmacro()
+
+        add_mud_fuzzer(fuzz_utils
+            ${MUD_SRCDIR}/utils.c
+            ${MUD_SRCDIR}/random.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/fuzz_utils.c
+        )
+
+        add_mud_fuzzer(fuzz_random
+            ${MUD_SRCDIR}/utils.c
+            ${MUD_SRCDIR}/random.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/fuzz_random.c
+        )
+
+        add_mud_fuzzer(fuzz_interpreter
+            ${MUD_SRCDIR}/interpreter.c
+            ${MUD_SRCDIR}/utils.c
+            ${MUD_SRCDIR}/random.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/fuzz_interpreter.c
+        )
+
+        if(CRYPT_LIBRARY)
+            target_link_libraries(fuzz_interpreter PRIVATE ${CRYPT_LIBRARY})
+        endif()
+    else()
+        message(STATUS "ENABLE_FUZZERS=ON requires Clang/AppleClang (libFuzzer).")
+    endif()
+endif()

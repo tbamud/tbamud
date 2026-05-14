@@ -17,6 +17,9 @@ tests/
   test_interpreter.c   – Tests for src/interpreter.c
   test_random.c        – Tests for src/random.c
   test_utils.c         – Tests for src/utils.c
+  fuzz_interpreter.c   – libFuzzer target for interpreter string helpers
+  fuzz_random.c        – libFuzzer target for random helpers
+  fuzz_utils.c         – libFuzzer target for utility string helpers
   vendor/unity/        – Vendored Unity test framework
 ```
 
@@ -67,6 +70,27 @@ To remove all test binaries and result files:
 cd tests
 make clean
 ```
+
+## Fuzz testing (optional)
+
+Build libFuzzer binaries from `tests/`:
+
+```sh
+cd tests
+make fuzz
+```
+
+Run a short smoke fuzzing pass:
+
+```sh
+cd tests
+make fuzz-smoke
+```
+
+The fuzz targets use `clang` by default (`FUZZCC=clang`) to ensure libFuzzer
+support.
+
+`make test` and CI behavior are unchanged; fuzzers are opt-in.
 
 ## Test suites
 

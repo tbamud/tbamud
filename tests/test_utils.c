@@ -42,6 +42,13 @@ void test_prune_crlf_no_op_on_clean(void)
     TEST_ASSERT_EQUAL_STRING("hello", s);
 }
 
+void test_prune_crlf_empty_string(void)
+{
+    char s[] = "";
+    prune_crlf(s);
+    TEST_ASSERT_EQUAL_STRING("", s);
+}
+
 void test_prune_crlf_multiple_trailing(void)
 {
     char s[] = "hi\r\n\r\n";
@@ -256,6 +263,16 @@ void test_count_non_protocol_chars_bracket_tag(void)
     TEST_ASSERT_EQUAL_INT(2, count_non_protocol_chars("@[bold]hi"));
 }
 
+void test_count_non_protocol_chars_trailing_marker(void)
+{
+    TEST_ASSERT_EQUAL_INT(0, count_non_protocol_chars("@"));
+}
+
+void test_count_non_protocol_chars_trailing_tab_marker(void)
+{
+    TEST_ASSERT_EQUAL_INT(0, count_non_protocol_chars("\t"));
+}
+
 /* =========================================================
  * atoidx
  * ========================================================= */
@@ -406,6 +423,7 @@ int main(void)
     RUN_TEST(test_prune_crlf_strips_crlf);
     RUN_TEST(test_prune_crlf_strips_lf_only);
     RUN_TEST(test_prune_crlf_no_op_on_clean);
+    RUN_TEST(test_prune_crlf_empty_string);
     RUN_TEST(test_prune_crlf_multiple_trailing);
 
     /* str_cmp */
@@ -451,6 +469,8 @@ int main(void)
     RUN_TEST(test_count_non_protocol_chars_empty);
     RUN_TEST(test_count_non_protocol_chars_newlines_skipped);
     RUN_TEST(test_count_non_protocol_chars_bracket_tag);
+    RUN_TEST(test_count_non_protocol_chars_trailing_marker);
+    RUN_TEST(test_count_non_protocol_chars_trailing_tab_marker);
 
     /* atoidx */
     RUN_TEST(test_atoidx_valid_number);
