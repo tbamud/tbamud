@@ -504,18 +504,15 @@ char *fread_string(FILE * fl, char *error)
  */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
 
   do {
-    buf2 = fgets(temp, 256, fl);
+    if (fgets(temp, 256, fl) == NULL)
+      return (0);
     if (*temp)
       temp[strlen(temp) - 1] = '\0';
-  } while (!feof(fl) && (*temp == '*' || !*temp));
+  } while (*temp == '*' || !*temp);
 
-  if (feof(fl))
-    return (0);
-  else {
-    strcpy(buf, temp);
-    return (1);
-  }
+  strcpy(buf, temp);
+  return (1);
 }

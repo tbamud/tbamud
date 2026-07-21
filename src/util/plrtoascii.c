@@ -158,7 +158,7 @@ void convert(char *filename)
   FILE *fl, *outfile, *index_file;
   struct char_file_u_plrtoascii player;
   char index_name[40], outname[40], bits[127];
-  int i, j;
+  int i;
   struct char_special_data_saved_plrtoascii *csds;
   struct player_special_data_saved_plrtoascii *psds;
   struct char_ability_data_plrtoascii *cad;
@@ -175,11 +175,12 @@ void convert(char *filename)
     exit(1);
   }
   for (;;) {
-    j = fread(&player, sizeof(struct char_file_u_plrtoascii), 1, fl);
-    if (feof(fl)) {
-      fclose(fl);
-      fclose(index_file);
-      exit(1);
+    if (fread(&player, sizeof(struct char_file_u_plrtoascii), 1, fl) != 1) {
+      if (feof(fl)) {
+        fclose(fl);
+        fclose(index_file);
+        exit(1);
+      }
     }
 
     if (!plr_filename(player.name, outname))

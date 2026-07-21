@@ -253,18 +253,13 @@ char *CAP(char *txt)
   return (txt);
 }
 
-/* get_line reads the next non-blank line off of the input stream. The newline 
- * character is removed from the input.  Lines which begin with '*' are 
- * considered to be comments. Returns the number of lines advanced in the 
- * file. */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
   int lines = 0;
 
   do {
-    buf2 = fgets(temp, 256, fl);
-    if (feof(fl))
+    if (fgets(temp, 256, fl) == NULL)
       return (0);
     lines++;
   } while (*temp == '*' || *temp == '\n');
@@ -273,7 +268,6 @@ int get_line(FILE * fl, char *buf)
   strcpy(buf, temp);
   return (lines);
 }
-
 bitvector_t asciiflag_conv(char *flag)
 {
   bitvector_t flags = 0;

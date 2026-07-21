@@ -57,12 +57,12 @@ if test $ac_cv_prog_gcc = yes; then
   dnl    If can't use -Wno-char-subscripts, use no flags at all.
 
   if test ${ac_cv_char_warn:-ERROR} = no; then
-    MYFLAGS="-Wall"
+    MYFLAGS="-std=gnu99 -Wall"
   else
     if test ${ac_cv_gcc_ncs:-ERROR} = yes; then
-      MYFLAGS="-Wall -Wno-char-subscripts"
+      MYFLAGS="-std=gnu99 -Wall -Wno-char-subscripts"
     else
-      MYFLAGS=""
+      MYFLAGS="-std=gnu99"
     fi
   fi
 

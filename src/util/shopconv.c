@@ -58,14 +58,16 @@ char *fread_string(FILE * fl, const char *error)
 
 void do_list(FILE * shop_f, FILE * newshop_f, int max)
 {
-  int count, temp, i;
-  char buf[MAX_STRING_LENGTH], *buf2;
+  int count, temp;
+  char buf[MAX_STRING_LENGTH];
 
   for (count = 0; count < max; count++) {
-    i = fscanf(shop_f, "%d", &temp);
-    buf2 = fgets(buf, MAX_STRING_LENGTH - 1, shop_f);
-    if (temp > 0)
-      fprintf(newshop_f, "%d%s", temp, buf);
+    if (fscanf(shop_f, "%d", &temp) == 1) {
+      if (fgets(buf, MAX_STRING_LENGTH - 1, shop_f) != NULL) {
+        if (temp > 0)
+          fprintf(newshop_f, "%d%s", temp, buf);
+      }
+    }
   }
 
   fprintf(newshop_f, "-1\n");
@@ -74,11 +76,12 @@ void do_list(FILE * shop_f, FILE * newshop_f, int max)
 
 void do_float(FILE * shop_f, FILE * newshop_f)
 {
-  float f;
+  float f = 0.0f;
   char str[20];
-  int i;
 
-  i = fscanf(shop_f, "%f \n", &f);
+  if (fscanf(shop_f, "%f \n", &f) == 1) {
+    // Read successfully
+  }
   sprintf(str, "%f", f);
   while ((str[strlen(str) - 1] == '0') && (str[strlen(str) - 2] != '.'))
     str[strlen(str) - 1] = 0;
@@ -88,9 +91,11 @@ void do_float(FILE * shop_f, FILE * newshop_f)
 
 void do_int(FILE * shop_f, FILE * newshop_f)
 {
-  int i, j;
+  int i = 0;
 
-  j = fscanf(shop_f, "%d \n", &i);
+  if (fscanf(shop_f, "%d \n", &i) == 1) {
+    // Read successfully
+  }
   fprintf(newshop_f, "%d \n", i);
 }
 
@@ -156,7 +161,7 @@ int main(int argc, char *argv[])
 {
   FILE *sfp, *nsfp;
   char fn[120], part[256];
-  int result, index, i;
+  int result, index;
 
   if (argc < 2) {
     printf("Usage: shopconv <file1> [file2] [file3] ...\n");
@@ -165,7 +170,9 @@ int main(int argc, char *argv[])
   for (index = 1; index < argc; index++) {
     sprintf(fn, "%s", argv[index]);
     sprintf(part, "mv %s %s.tmp", fn, fn);
-    i = system(part);
+    if (system(part) != 0) {
+      // ignore
+    }
     sprintf(part, "%s.tmp", fn);
     sfp = fopen(part, "r");
     if (sfp == NULL) {
@@ -182,10 +189,14 @@ int main(int argc, char *argv[])
       fclose(sfp);
       if (result) {
 	      sprintf(part, "mv %s.tmp %s", fn, fn);
-	      i = system(part);
+	      if (system(part) != 0) {
+	        // ignore
+	      }
       } else {
 	      sprintf(part, "mv %s.tmp %s.bak", fn, fn);
-	      i = system(part);
+	      if (system(part) != 0) {
+	        // ignore
+	      }
 	      printf("Done!\n");
       }
     }
