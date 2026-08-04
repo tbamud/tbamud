@@ -11,6 +11,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -236,8 +237,7 @@ char *read_delete(long recipient)
   fclose(mail_file);
   fclose(new_file);
 
-  remove(MAIL_FILE);
-  rename(MAIL_FILE_TMP, MAIL_FILE);
+  (void)system_rename_file(MAIL_FILE_TMP, MAIL_FILE);
 
   return strdup(buf);
 }

@@ -7,6 +7,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -313,13 +314,12 @@ ACMD(do_export_zone)
 #else /* all other configurations */
   zone_rnum zrnum; 
   zone_vnum zvnum; 
-  char sysbuf[MAX_INPUT_LENGTH]; 
   char zone_name[READ_SIZE], fixed_file_name[READ_SIZE];
-  int success, errorcode = 0;
+  int success;
 
   /* system command locations are relative to where the binary IS, not where it
    * was run from, thus we act like we are in the bin folder, because we are*/ 
-  char *path = "../lib/world/export/"; 
+  const char *path = "../lib/world/export/";
 
   if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL) 
     return; 
@@ -340,11 +340,7 @@ ACMD(do_export_zone)
 
   /* If we fail, it might just be because the directory didn't exist.  Can't 
    * hurt to try again. Do it silently though ( no logs ). */ 
-  if (!export_info_file(zrnum)) { 
-    sprintf(sysbuf, "mkdir %s", path);
-    errorcode = system(sysbuf);
-  } 
-  if (errorcode) {
+  if (!export_info_file(zrnum) && system_make_directory(path) != 0) {
     send_to_char(ch, "Failed to create export directory.\r\n");
     return;
   }
@@ -375,27 +371,14 @@ ACMD(do_export_zone)
   /* Make sure the name of the zone doesn't make the filename illegal. */ 
   fix_filename(zone_name, fixed_file_name, sizeof(fixed_file_name));
 
-  /* Remove the old copy. */ 
-  snprintf(sysbuf, sizeof(sysbuf), "rm %s%s.tar.gz", path, fixed_file_name);
-  errorcode = system(sysbuf);
-  if (errorcode) {
-    send_to_char(ch, "Failed to delete previous zip file. This is usually benign.\r\n");
-  }
-
-
-  /* Tar the new copy. */ 
-  snprintf(sysbuf, sizeof(sysbuf), "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, fixed_file_name, path, path, path, path, path, path, path);
-  errorcode = system(sysbuf);
-  if (errorcode) {
-    send_to_char(ch, "Failed to tar files.\r\n");
+  if (system_remove_archive_pair(path, fixed_file_name) != 0) {
+    send_to_char(ch, "Failed to remove a previous archive.\r\n");
     return;
   }
 
-  /* Gzip it. */ 
-  snprintf(sysbuf, sizeof(sysbuf), "gzip %s%s.tar", path, fixed_file_name);
-  errorcode = system(sysbuf);
-  if (errorcode) {
-    send_to_char(ch, "Failed to gzip tar file.\r\n");
+  if (system_archive_tar_gz(path, fixed_file_name,
+                            "qq.info qq.wld qq.zon qq.mob qq.obj qq.trg qq.shp") != 0) {
+    send_to_char(ch, "Failed to create the compressed archive.\r\n");
     return;
   }
 

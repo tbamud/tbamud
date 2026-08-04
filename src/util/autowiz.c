@@ -259,19 +259,27 @@ char *CAP(char *txt)
  * file. */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
   int lines = 0;
 
-  do {
-    buf2 = fgets(temp, 256, fl);
-    if (feof(fl))
-      return (0);
-    lines++;
-  } while (*temp == '*' || *temp == '\n');
+  while (fgets(temp, sizeof(temp), fl)) {
+    size_t length;
 
-  temp[strlen(temp) - 1] = '\0';
-  strcpy(buf, temp);
-  return (lines);
+    lines++;
+    if (*temp == '*' || *temp == '\n')
+      continue;
+
+    length = strlen(temp);
+    if (length > 0 && temp[length - 1] == '\n')
+      temp[--length] = '\0';
+    if (length > 0 && temp[length - 1] == '\r')
+      temp[length - 1] = '\0';
+
+    strcpy(buf, temp);
+    return (lines);
+  }
+
+  return (0);
 }
 
 bitvector_t asciiflag_conv(char *flag)

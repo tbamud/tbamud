@@ -10,6 +10,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -2000,8 +2001,7 @@ void clean_llog_entries(void) {
   fclose(ofp);
   fclose(nfp);
 
-  remove(LAST_FILE);
-  rename("etc/nlast", LAST_FILE);
+  (void)system_rename_file("etc/nlast", LAST_FILE);
 }
 
 /* debugging stuff, if you wanna see the whole file */
@@ -4182,19 +4182,20 @@ ACMD(do_copyover)
    /* write boot_time as first line in file */
    fprintf(fp, "%ld\n", (long)boot_time);
 
-   /* For each playing descriptor, save its state */
-   for (d = descriptor_list; d ; d = d_next) {
-     struct char_data * och = d->character;
-   
-   /* If d is currently in someone else's body, return them. */  
-   if (och && d->original)
-     return_to_char(och);
-        
-   /* We delete from the list , so need to save this */
-     d_next = d->next;
+  /* For each playing descriptor, save its state. */
+  for (d = descriptor_list; d; d = d_next) {
+    struct char_data *och = d->character;
 
-  /* drop those logging on */
-   if (!d->character || d->connected > CON_PLAYING) {
+    /* If d is currently in someone else's body, return them. */
+    if (och && d->original) {
+      return_to_char(och);
+    }
+
+    /* We delete from the list, so save the next descriptor first. */
+    d_next = d->next;
+
+    /* Drop those logging on. */
+    if (!d->character || d->connected > CON_PLAYING) {
      write_to_descriptor (d->descriptor, "\n\rSorry, we are rebooting. Come back in a few minutes.\n\r");
      close_socket (d); /* throw'em out */
    } else {
@@ -4474,7 +4475,7 @@ ACMD(do_changelog)
   }
 
   sprintf(buf, "%s.bak", CHANGE_LOG_FILE);
-  if (rename(CHANGE_LOG_FILE, buf)) {
+  if (system_rename_file(CHANGE_LOG_FILE, buf)) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: Error making backup changelog file (%s)", buf);
     return;

@@ -10,6 +10,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -776,7 +777,7 @@ void remove_player(int pfilepos)
   /* Unlink all player-owned files */
   for (i = 0; i < MAX_FILES; i++) {
     if (get_filename(filename, sizeof(filename), i, player_table[pfilepos].name))
-      unlink(filename);
+      (void)system_remove_file(filename);
   }
 
   strftime(timestr, sizeof(timestr), "%c", localtime(&(player_table[pfilepos].last)));
@@ -827,11 +828,10 @@ void clean_pfiles(void)
    128-bit affect bitvectors for backward compatibility */
 static void load_affects(FILE *fl, struct char_data *ch)
 {
-  int num = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, num6 = 0, num7 = 0, num8 = 0, i, n_vars;
+  int num = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0, num6 = 0, num7 = 0, num8 = 0, n_vars;
   char line[MAX_INPUT_LENGTH + 1];
   struct affected_type af;
 
-  i = 0;
   do {
     new_affect(&af);
     get_line(fl, line);
@@ -853,7 +853,6 @@ static void load_affects(FILE *fl, struct char_data *ch)
         log("SYSERR: Invalid affects in pfile (%s), expecting 5 or 8 values", GET_NAME(ch));
       }
       affect_to_char(ch, &af);
-      i++;
     }
   } while (num != 0);
 }

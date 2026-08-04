@@ -1,47 +1,64 @@
 # CircleMUD Makefile.in - Makefile template used by 'configure'
 # for the 'util' directory
 
-# C compiler to use
+# C compiler and configure-detected flags
 CC = @CC@
-
-# Any special flags you want to pass to the compiler
+CONFIG_CFLAGS = @CFLAGS@
 MYFLAGS = @MYFLAGS@ -DCIRCLE_UTIL
 
-#flags for profiling (see hacker.doc for more information)
-PROFILE = 
+# Flags for profiling (see hacker.doc for more information)
+PROFILE =
+
+# Build modes. Utilities do not enable the MUD's MEMORY_DEBUG allocator.
+BUILD_MODE ?= prod
+BASE_CFLAGS := $(filter-out -g% -O%,$(CONFIG_CFLAGS))
+
+ifeq ($(BUILD_MODE),dev)
+MODE_CFLAGS = -g3 -O0
+else ifeq ($(BUILD_MODE),prod)
+MODE_CFLAGS = -O2
+else
+$(error BUILD_MODE must be dev or prod)
+endif
 
 ##############################################################################
 # Do Not Modify Anything Below This Line (unless you know what you're doing) #
 ##############################################################################
 
-# binary destination directory
 BINDIR = ../../bin
-# location of Circle include files
 INCDIR = ..
+BUILD_FLAGS_FILE = .build-flags
 
-CFLAGS = @CFLAGS@ $(MYFLAGS) $(PROFILE) -I$(INCDIR)
+CFLAGS = $(BASE_CFLAGS) $(MODE_CFLAGS) $(MYFLAGS) $(PROFILE) -I$(INCDIR)
+
+UTIL_TARGETS = \
+	$(BINDIR)/asciipasswd \
+	$(BINDIR)/autowiz \
+	$(BINDIR)/plrtoascii \
+	$(BINDIR)/rebuildIndex \
+	$(BINDIR)/rebuildMailIndex \
+	$(BINDIR)/shopconv \
+	$(BINDIR)/sign \
+	$(BINDIR)/split \
+	$(BINDIR)/wld2html
+
+.PHONY: default all asciipasswd autowiz plrtoascii rebuildIndex rebuildMailIndex shopconv sign split wld2html clean FORCE
 
 default: all
 
-all: $(BINDIR)/asciipasswd $(BINDIR)/autowiz $(BINDIR)/plrtoascii $(BINDIR)/rebuildIndex $(BINDIR)/rebuildMailIndex $(BINDIR)/shopconv $(BINDIR)/sign $(BINDIR)/split $(BINDIR)/wld2html 
+all: $(UTIL_TARGETS)
 
 asciipasswd: $(BINDIR)/asciipasswd
-
 autowiz: $(BINDIR)/autowiz
-
 plrtoascii: $(BINDIR)/plrtoascii
-
 rebuildIndex: $(BINDIR)/rebuildIndex
-
 rebuildMailIndex: $(BINDIR)/rebuildMailIndex
-
 shopconv: $(BINDIR)/shopconv
-
 sign: $(BINDIR)/sign
-
 split: $(BINDIR)/split
-
 wld2html: $(BINDIR)/wld2html
+
+$(UTIL_TARGETS): $(BUILD_FLAGS_FILE)
 
 $(BINDIR)/asciipasswd: asciipasswd.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/asciipasswd asciipasswd.c @CRYPTLIB@
@@ -70,10 +87,19 @@ $(BINDIR)/split: split.c
 $(BINDIR)/wld2html: wld2html.c
 	$(CC) $(CFLAGS) -o $(BINDIR)/wld2html wld2html.c
 
-# Dependencies for the object files (automagically generated with
-# gcc -MM)
+$(BUILD_FLAGS_FILE): FORCE
+	@printf '%s\n' 'BUILD_MODE=$(BUILD_MODE)' 'CC=$(CC)' 'CFLAGS=$(CFLAGS)' > $@.tmp
+	@if test -r $@ && cmp -s $@ $@.tmp; then rm -f $@.tmp; else mv $@.tmp $@; fi
 
+clean:
+	rm -f depend $(BUILD_FLAGS_FILE) $(BUILD_FLAGS_FILE).tmp
+
+# Dependencies for the utility sources (automagically generated with gcc -MM)
 depend:
-	$(CC) -I$(INCDIR) -MM *.c > depend
+	$(CC) $(CFLAGS) -MM *.c > depend
 
+FORCE:
+
+ifneq ($(MAKECMDGOALS),clean)
 -include depend
+endif

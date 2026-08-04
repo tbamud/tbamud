@@ -11,7 +11,12 @@ tests/Makefile
 src/.accepted
 src/depend
 src/util/depend
+src/.build-flags*
+src/util/.build-flags*
+tests/.build-flags*
 build/*
+.killscript
+zmalloc.log
 
 # Do not commit files from players
 lib/plrfiles/A-E/*
@@ -87,8 +92,8 @@ src/test/testfile
 .cproject
 
 # macOS generated files
-.DS_Store
-.DS_Store?
+**/.DS_Store
+**/.DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
@@ -100,4 +105,6 @@ tests/test_utils
 tests/test_random
 tests/test_interpreter
 tests/test_class
+tests/test_system
+tests/*.dSYM/
 tests/test-results/

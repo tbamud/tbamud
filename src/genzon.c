@@ -7,6 +7,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -279,7 +280,7 @@ void create_world_index(int znum, const char *type)
         /* index file already had an entry for this zone. */
         fclose(oldfile);
         fclose(newfile);
-        remove(new_name);
+        (void)system_remove_file(new_name);
         return;
       }
     }
@@ -289,8 +290,7 @@ void create_world_index(int znum, const char *type)
   fclose(newfile);
   fclose(oldfile);
   /* Out with the old, in with the new. */
-  remove(old_name);
-  rename(new_name, old_name);
+  (void)system_rename_file(new_name, old_name);
 }
 
 void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
@@ -483,8 +483,7 @@ int save_zone(zone_rnum zone_num)
   fputs("S\n$\n", zfile);
   fclose(zfile);
   snprintf(oldname, sizeof(oldname), "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(fname, oldname);
+  (void)system_rename_file(fname, oldname);
 
   if (in_save_list(zone_table[zone_num].number, SL_ZON))
     remove_from_save_list(zone_table[zone_num].number, SL_ZON);

@@ -30,6 +30,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -413,7 +414,7 @@ void board_save_board(int board_type)
   char *tmp1, *tmp2 = NULL;
 
   if (!num_of_msgs[board_type]) {
-    remove(FILENAME(board_type));
+    (void)system_remove_file(FILENAME(board_type));
     return;
   }
   if (!(fl = fopen(FILENAME(board_type), "wb"))) {
@@ -550,5 +551,5 @@ void board_clear_board(int board_type)
 static void board_reset_board(int board_type)
 {
   board_clear_board(board_type);
-  remove(FILENAME(board_type));
+  (void)system_remove_file(FILENAME(board_type));
 }

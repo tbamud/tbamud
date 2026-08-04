@@ -10,6 +10,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "spells.h"
@@ -211,7 +212,7 @@ void run_autowiz(void)
     if (res < sizeof(buf)) {
       mudlog(CMP, LVL_IMMORT, FALSE, "Initiating autowiz.");
       reboot_wizlists();
-      int rval = system(buf);
+      int rval = system_run_command(buf);
       if(rval != 0)
         mudlog(BRF, LVL_IMMORT, TRUE, "Warning: autowiz failed with return value %d", rval);
     } else

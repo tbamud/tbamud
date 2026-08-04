@@ -11,38 +11,14 @@ dnl Find the 'more' program
 AC_CHECK_PROGS(MORE, less most more cat)
 
 dnl Checks for programs.
+dnl Autoconf 2.13 emits an implicit-int main() in AC_PROG_CC. The checked-in
+dnl configure script uses int main(void) so current Apple clang can run it.
 AC_PROG_CC
 
-dnl If we're using gcc, use gcc options.
-dnl If not, test for various common switches to make a 'cc' compiler
-dnl compile ANSI C code.
+dnl Enable the compiler's standard warning set without suppressing individual
+dnl diagnostics. Source warnings should be fixed instead of hidden here.
 if test $ac_cv_prog_gcc = yes; then
-
-  dnl Determine if gcc -Wall causes warnings on isascii(), etc.
-  AC_CACHE_CHECK(whether ${CC-cc} -Wall also needs -Wno-char-subscripts,
-	ac_cv_char_warn,
-  [
-    OLDCFLAGS=$CFLAGS
-    CFLAGS="$CFLAGS -Wall -Werror"
-    AC_TRY_COMPILE([#include <ctype.h>],
-       [ int i; char c = '0';
-         i = isascii(c);
-         i = isdigit(c);
-         i = isprint(c);
-       ], ac_cv_char_warn=no, ac_cv_char_warn=yes)
-    CFLAGS=$OLDCFLAGS
-  ])
-
-  dnl If Determine if gcc can accept -Wno-char-subscripts
-  AC_CACHE_CHECK(whether ${CC-cc} accepts -Wno-char-subscripts, ac_cv_gcc_ncs,
-  [
-    OLDCFLAGS=$CFLAGS
-    CFLAGS="$CFLAGS -Wno-char-subscripts"
-    AC_TRY_COMPILE(, , ac_cv_gcc_ncs=yes, ac_cv_gcc_ncs=no)
-    CFLAGS=$OLDCFLAGS
-  ])
-
-  dnl If Determine if gcc can accept -fno-builtin
+  dnl AC_CHECK_PROTO uses this capability to avoid compiler built-in prototypes.
   AC_CACHE_CHECK(whether ${CC-cc} accepts -fno-builtin, ac_cv_gcc_fnb,
   [
     OLDCFLAGS=$CFLAGS
@@ -51,25 +27,10 @@ if test $ac_cv_prog_gcc = yes; then
     CFLAGS=$OLDCFLAGS
   ])
 
-  dnl If gcc -Wall gives no warnings with isascii(), use "-Wall";
-  dnl Otherwise, if gcc -Wall gives isascii warnings:
-  dnl    If we can use -Wno-char-subscripts, use "-Wall -Wno-char-subscripts"
-  dnl    If can't use -Wno-char-subscripts, use no flags at all.
-
-  if test ${ac_cv_char_warn:-ERROR} = no; then
-    MYFLAGS="-Wall"
-  else
-    if test ${ac_cv_gcc_ncs:-ERROR} = yes; then
-      MYFLAGS="-Wall -Wno-char-subscripts"
-    else
-      MYFLAGS=""
-    fi
-  fi
-
+  MYFLAGS="-Wall"
 else
-  dnl We aren't using gcc so we can't assume any special flags.
+  ac_cv_gcc_fnb=no
   MYFLAGS=""
-
 fi
 
 dnl Checks for libraries.  We check for the library only if the function is
@@ -83,8 +44,14 @@ AC_CHECK_FUNC(socket, ,
 AC_CHECK_FUNC(malloc, ,
     [AC_CHECK_LIB(malloc, malloc)])
 
-AC_CHECK_FUNC(crypt, AC_DEFINE(CIRCLE_CRYPT),
-    [AC_CHECK_LIB(crypt, crypt, AC_DEFINE(CIRCLE_CRYPT) CRYPTLIB="-lcrypt")]
+dnl Prefer libcrypt when it is available, as required by modern Linux systems.
+dnl Fall back to libc for systems such as macOS that provide crypt() directly.
+AC_CHECK_LIB(crypt, crypt,
+    [AC_DEFINE(CIRCLE_CRYPT)
+     CRYPTLIB="-lcrypt"],
+    [AC_CHECK_FUNC(crypt,
+        [AC_DEFINE(CIRCLE_CRYPT)
+         CRYPTLIB=""])]
     )
 
 dnl Checks for header files.
@@ -212,4 +179,6 @@ AC_CHECK_PROTO(write)
 
 AC_OUTPUT(src/Makefile src/util/Makefile tests/Makefile)
 #
-echo "Configuration completed.  To compile, type:  cd src; make"
+echo "Configuration completed."
+echo "Production build (default): cd src && make"
+echo "Development build:          cd src && make BUILD_MODE=dev"

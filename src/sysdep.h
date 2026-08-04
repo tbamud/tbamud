@@ -63,24 +63,6 @@
 
 /* Do not change anything below this line. */
 
-#if defined(__APPLE__) && defined(__MACH__)
-/* Machine-specific dependencies for running on modern macOS systems 10.13+ (High Sierra)
-*  Updated by Victor Augusto Borges Dias de Almeida (aka Stoneheart), 26 June 2024.
-* 
-*  Tested on:
-*    - macOS 10.13: High Sierra (Lobo) - September 25, 2017 (Latest: 10.13.6)
-*    - macOS 10.14: Mojave (Liberty) - September 24, 2018 (Latest: 10.14.6)
-*    - macOS 10.15: Catalina (Jazz) - October 7, 2019 (Latest: 10.15.7)
-*    - macOS 11: Big Sur (GoldenGate) - November 12, 2020 (Latest: 11.7.10)
-*    - macOS 12: Monterey (Star) - October 25, 2021 (Latest: 12.7)
-*    - macOS 13: Ventura (Rome) - November 7, 2022 (Latest: 13.7)
-*    - macOS 14: Sonoma (Sunburst) - November 7, 2023 (Latest: 14.3)
-*
-*  This file works on Apple Silicon Chips (M1, M2, M3) without futher configurations.
-*/
-#define CIRCLE_MAC_OS   1
-#endif
-
 /* Set up various machine-specific things based on the values determined from 
  * configure and conf.h. */
 
@@ -96,7 +78,7 @@
 #include <strings.h>
 #endif
 
-#if     (defined (STDC_HEADERS) || defined (__GNU_LIBRARY__) || defined(CIRCLE_MAC_OS))
+#if defined(STDC_HEADERS) || defined(__GNU_LIBRARY__)
 #include <stdlib.h>
 
 #else   /* No standard headers.  */
@@ -167,10 +149,8 @@ extern void abort(), exit();
 #include <sys/errno.h>
 #endif
 
-#ifndef CIRCLE_MAC_OS
 #ifdef HAVE_CRYPT_H
 #include <crypt.h>
-#endif
 #endif
 
 #ifdef TIME_WITH_SYS_TIME
@@ -273,10 +253,6 @@ struct in_addr {
 # define __attribute__(x)	/* nothing */
 #endif
 
-#if defined(__MWERKS__)
-# define isascii(c)	(((c) & ~0x7f) == 0)	/* So easy to have, but ... */
-#endif
-
 /* Socket/header miscellany. */
 
 #if defined(CIRCLE_WINDOWS)	/* Definitions for Win32 */
@@ -305,17 +281,7 @@ struct in_addr {
 #  define FD_SETSIZE		1024
 # endif
 
-#elif defined(CIRCLE_VMS)
-
-/* Necessary Definitions For DEC C With DEC C Sockets Under OpenVMS. */
-# if defined(DECC)
-#  include <stdio.h>
-#  include <time.h>
-#  include <stropts.h>
-#  include <unixio.h>
-# endif
-
-#elif !defined(CIRCLE_MACINTOSH) && !defined(CIRCLE_UNIX) && !defined(CIRCLE_ACORN)
+#elif !defined(CIRCLE_UNIX)
 # error "You forgot to include conf.h or do not have a valid system define."
 #endif
 
@@ -334,7 +300,6 @@ struct in_addr {
 #define cpp_extern	/* Nothing */
 #endif
 
-#ifndef CIRCLE_OS_X
 /* Guess if we have the getrlimit()/setrlimit() functions */
 #if defined(RLIMIT_NOFILE) || defined (RLIMIT_OFILE)
 #define HAS_RLIMIT
@@ -342,7 +307,6 @@ struct in_addr {
 # define RLIMIT_NOFILE RLIMIT_OFILE
 #endif
 #endif
-#endif /*CIRCLE_OS_X*/
 
 /* Make sure we have STDERR_FILENO */
 #ifndef STDERR_FILENO
@@ -453,10 +417,8 @@ struct in_addr {
    char *strerror(int errnum);
 #endif
 
-#ifndef CIRCLE_MAC_OS
 #ifdef NEED_STRLCPY_PROTO
    size_t strlcpy(char *dest, const char *src, size_t copylen);
-#endif
 #endif
 
 #ifdef NEED_SYSTEM_PROTO

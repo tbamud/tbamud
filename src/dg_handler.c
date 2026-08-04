@@ -14,6 +14,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "dg_scripts.h"
@@ -271,7 +272,7 @@ void delete_variables(const char *charname)
   if (!get_filename(filename, sizeof(filename), SCRIPT_VARS_FILE, charname))
     return;
 
-  if (remove(filename) < 0 && errno != ENOENT)
+  if (system_remove_file(filename) < 0)
     log("SYSERR: deleting variable file %s: %s", filename, strerror(errno));
 }
 
