@@ -10,6 +10,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -155,7 +156,7 @@ static void House_delete_file(room_vnum vnum)
     return;
   }
   fclose(fl);
-  if (remove(filename) < 0)
+  if (system_remove_file(filename) < 0)
     log("SYSERR: Error deleting house file #%d. (2): %s", vnum, strerror(errno));
 }
 

@@ -7,6 +7,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -385,8 +386,7 @@ int save_rooms(zone_rnum rzone)
   /* Old file we're replacing. */
   snprintf(buf, sizeof(buf), "%s/%d.wld", WLD_PREFIX, zone_table[rzone].number);
 
-  remove(buf);
-  rename(filename, buf);
+  (void)system_rename_file(filename, buf);
 
   if (in_save_list(zone_table[rzone].number, SL_WLD))
     remove_from_save_list(zone_table[rzone].number, SL_WLD);

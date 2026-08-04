@@ -7,6 +7,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -316,8 +317,7 @@ int save_mobiles(zone_rnum rznum)
   written = ftell(mobfd);
   fclose(mobfd);
   snprintf(usedfname, sizeof(usedfname), "%s%d.mob", MOB_PREFIX, vznum);
-  remove(usedfname);
-  rename(mobfname, usedfname);
+  (void)system_rename_file(mobfname, usedfname);
 
   if (in_save_list(vznum, SL_MOB))
     remove_from_save_list(vznum, SL_MOB);

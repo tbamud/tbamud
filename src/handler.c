@@ -70,12 +70,13 @@ int is_name(const char *str, const char *namelist)
         break;
     }
 
-    /* skip to next name */
-   for (; isalpha(*curname); curname++)
-     ; /* semi-colon moved to suppress warning */
-     if (!*curname)
-       return (0);
-    curname++;                  /* first char of new name */
+    /* Skip to the next name. */
+    for (; isalpha(*curname); curname++) {
+      /* Nothing to do. */
+    }
+    if (!*curname)
+      return (0);
+    curname++;                  /* First character of the new name. */
   }
 }
 

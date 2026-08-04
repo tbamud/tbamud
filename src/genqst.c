@@ -10,6 +10,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -267,8 +268,7 @@ int save_quests(zone_rnum zone_num)
   /* Old file we're replacing. */
   snprintf(oldname, sizeof(oldname), "%s/%d.qst",
            QST_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(filename, oldname);
+  (void)system_rename_file(filename, oldname);
 
   /* Do we need to update the index file? */
   if (num_quests > 0)

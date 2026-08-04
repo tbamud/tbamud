@@ -286,15 +286,6 @@ static void boot_social_messages(void)
       soc_mess_list[curr_soc].min_level_char = 0;
     }
 
-#ifdef CIRCLE_ACORN
-    if (fgetc(fl) != '\n')
-      log("SYSERR: Acorn bug workaround failed.");
-      /* SYSERR_DESC: The only time that this error should ever arise is if you
-       * are running your MUD on the Acorn platform.  The error arises when the
-       * server cannot properly read a '\n' out of the file at the end of the
-       * first line of the social (that with 'hide' and 'min position').  This
-       * is in boot_social_messages(). */
-#endif
 
     soc_mess_list[curr_soc].char_no_arg = fread_action(fl, nr);
     soc_mess_list[curr_soc].others_no_arg = fread_action(fl, nr);

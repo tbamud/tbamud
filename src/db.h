@@ -24,19 +24,6 @@
 #define DB_BOOT_TRG	6
 #define DB_BOOT_QST 7
 
-#if defined(CIRCLE_MACINTOSH)
-#define LIB_WORLD	":world:"
-#define LIB_TEXT	":text:"
-#define LIB_TEXT_HELP   ":text:help:"
-#define LIB_MISC	":misc:"
-#define LIB_ETC		":etc:"
-#define LIB_PLRTEXT	":plrtext:"
-#define LIB_PLROBJS	":plrobjs:"
-#define LIB_PLRVARS	":plrvars:"
-#define LIB_PLRFILES	":plrfiles:"
-#define LIB_HOUSE	":house:"
-#define SLASH		":"
-#elif defined(CIRCLE_AMIGA) || defined(CIRCLE_UNIX) || defined(CIRCLE_WINDOWS) || defined(CIRCLE_ACORN) || defined(CIRCLE_VMS)
 #define LIB_WORLD	"world/"
 #define LIB_TEXT	"text/"
 #define LIB_TEXT_HELP   "text/help/"
@@ -48,30 +35,16 @@
 #define LIB_HOUSE	"house/"
 #define LIB_PLRFILES    "plrfiles/"
 #define SLASH		"/"
-#else
-#error "Unknown path components."
-#endif
 
 #define SUF_OBJS	"objs"
 #define SUF_TEXT	"text"
 #define SUF_MEM	        "mem"
 #define SUF_PLR		"plr"
 
-#if defined(CIRCLE_AMIGA)
-#define EXE_FILE "/bin/circle" /* maybe use argv[0] but it's not reliable */
-#define KILLSCRIPT_FILE "/.killscript"  /* autorun: shut mud down       */
-#define PAUSE_FILE      "/pause"        /* autorun: don't restart mud   */
-#elif defined(CIRCLE_MACINTOSH)
-#define EXE_FILE "::bin:circle" /* maybe use argv[0] but it's not reliable */
-#define FASTBOOT_FILE	"::.fastboot"	/* autorun: boot without sleep	*/
-#define KILLSCRIPT_FILE	"::.killscript"	/* autorun: shut mud down	*/
-#define PAUSE_FILE	"::pause"	/* autorun: don't restart mud	*/
-#else
 #define EXE_FILE "bin/circle" /* maybe use argv[0] but it's not reliable */
 #define FASTBOOT_FILE   "../.fastboot"  /* autorun: boot without sleep  */
 #define KILLSCRIPT_FILE "../.killscript"/* autorun: shut mud down       */
 #define PAUSE_FILE      "../pause"      /* autorun: don't restart mud   */
-#endif
 
 /* names of various files and directories */
 #define INDEX_FILE	"index"		/* index of world files		*/

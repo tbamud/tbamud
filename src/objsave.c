@@ -10,6 +10,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -274,7 +275,7 @@ int Crash_delete_file(char *name)
   fclose(fl);
 
   /* if it fails, NOT because of no file */
-  if (remove(filename) < 0 && errno != ENOENT)
+  if (system_remove_file(filename) < 0)
     log("SYSERR: deleting crash file %s (2): %s", filename, strerror(errno));
 
   return TRUE;

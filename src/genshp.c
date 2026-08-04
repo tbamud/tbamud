@@ -7,6 +7,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
@@ -432,8 +433,7 @@ int save_shops(zone_rnum zone_num)
   fprintf(shop_file, "$~\n");
   fclose(shop_file);
   snprintf(oldname, sizeof(oldname), "%s/%d.shp", SHP_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(fname, oldname);
+  (void)system_rename_file(fname, oldname);
 
   if (num_shops > 0)
     create_world_index(zone_table[zone_num].number, "shp");

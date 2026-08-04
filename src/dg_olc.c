@@ -9,6 +9,7 @@
 
 #include "conf.h"
 #include "sysdep.h"
+#include "system.h"
 #include "structs.h"
 #include "utils.h"
 #include "comm.h"
@@ -857,8 +858,7 @@ void trigedit_save(struct descriptor_data *d)
   snprintf(buf, sizeof(buf), "%s/%d.trg", TRG_PREFIX, zone);
 #endif
 
-  remove(buf);
-  rename(fname, buf);
+  (void)system_rename_file(fname, buf);
 
   write_to_output(d, "Trigger saved to disk.\r\n");
   trigedit_create_index(zone, "trg");
@@ -907,8 +907,7 @@ static void trigedit_create_index(int znum, char *type)
   fclose(oldfile);
 
   /* Out with the old, in with the new. */
-  remove(old_name);
-  rename(new_name, old_name);
+  (void)system_rename_file(new_name, old_name);
 }
 
 void dg_olc_script_copy(struct descriptor_data *d)
