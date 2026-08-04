@@ -396,6 +396,62 @@ static const struct mob_script_command_t mob_script_commands[] = {
   { "mlog"     , do_mlog     , 0 },
   { "\n" , do_not_here , 0 } };
 
+/**
+ * @brief Checks whether a token is a mob-only DG script command.
+ *
+ * @details Queries mob_script_commands[], the same table used at runtime by
+ * script_command_interpreter(), instead of keeping a separate list. Used by
+ * the trigedit syntax modules to classify and colour script lines.
+ *
+ * @param command First token of a script line.
+ * @return true only on a full (non-abbreviated) match in the `m*` table.
+ */
+bool dg_mob_command_exists(const char *command)
+{
+    if (!command || !*command) {
+        return false;
+    }
+
+    for (int i = 0; *mob_script_commands[i].command_name != '\n'; i++) {
+        if (!str_cmp(command, mob_script_commands[i].command_name)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @brief Checks whether a token can be dispatched by the normal interpreter.
+ *
+ * @details Accepts command names, sort keys and abbreviations, mirroring the
+ * resolution done by command_interpreter(). Immortal-only commands are
+ * rejected because an NPC running a script cannot use them.
+ *
+ * @param command First token of a script line.
+ * @return true for commands an NPC may attempt to execute.
+ */
+bool dg_player_command_exists(const char *command)
+{
+    const struct command_info *commands = complete_cmd_info ? complete_cmd_info : cmd_info;
+
+    if (!command || !*command) {
+        return false;
+    }
+
+    for (int i = 0; *commands[i].command != '\n'; i++) {
+        if (!commands[i].command_pointer || commands[i].minimum_level >= LVL_IMMORT) {
+            continue;
+        }
+        if ((commands[i].command && is_abbrev(command, commands[i].command))
+            || (commands[i].sort_as && *commands[i].sort_as && is_abbrev(command, commands[i].sort_as))) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 int script_command_interpreter(struct char_data *ch, char *arg) {
   /* DG trigger commands */
 

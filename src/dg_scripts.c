@@ -16,6 +16,7 @@
 #include "sysdep.h"
 #include "structs.h"
 #include "dg_scripts.h"
+#include "dg_olc_syntax.h"
 #include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
@@ -790,8 +791,24 @@ static void do_stat_trigger(struct char_data *ch, trig_data *trig)
 
     cmd_list = trig->cmdlist;
     while (cmd_list) {
-      if (cmd_list->cmd)
-        len += snprintf(sb + len, sizeof(sb)-len, "%s\r\n", cmd_list->cmd);
+      if (cmd_list->cmd) {
+        char *highlighted = command_syntax_highlighting(cmd_list->cmd, trig->attach_type);
+
+        if (highlighted) {
+          /* snprintf returns the length the line would have taken; without
+           * the clamp a truncated line would push len past sb and the next
+           * sizeof(sb)-len would underflow. Highlighting can inflate a line
+           * by ~40%, so that is reachable. */
+          int written = snprintf(sb + len, sizeof(sb)-len, "%s", highlighted);
+
+          free(highlighted);
+
+          if (written < 0 || (size_t)written >= sizeof(sb) - len)
+            len = sizeof(sb) - 1;
+          else
+            len += written;
+        }
+      }
 
       if (len>MAX_STRING_LENGTH-80) {
         snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");
