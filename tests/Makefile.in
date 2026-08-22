@@ -33,7 +33,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class
+TESTS = test_utils test_random test_interpreter test_class test_lists
 
 .PHONY: all test clean
 
@@ -63,6 +63,13 @@ test_interpreter: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 # ---------------------------------------------------------------------------
 test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
             $(SRCDIR)/class.c test_class.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_lists — covers src/lists.c
+# ---------------------------------------------------------------------------
+test_lists: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+            $(SRCDIR)/lists.c test_lists.c
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------

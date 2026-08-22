@@ -361,7 +361,7 @@ static void display_group_list(struct char_data * ch)
 			if (IS_SET(GROUP_FLAGS(group), GROUP_NPC))
 			  continue;
       if (GROUP_LEADER(group) && !IS_SET(GROUP_FLAGS(group), GROUP_ANON))
-        send_to_char(ch, "%-2d) %s%-12s     %-2d              %s%s\r\n", 
+        send_to_char(ch, "%-2d) %s%-12s     %-2zu              %s%s\r\n",
           ++count,
           IS_SET(GROUP_FLAGS(group), GROUP_OPEN) ? CCGRN(ch, C_NRM) : CCRED(ch, C_NRM), 
           GET_NAME(GROUP_LEADER(group)), group->members->iSize, zone_table[world[IN_ROOM(GROUP_LEADER(group))].zone].name,

@@ -13,17 +13,26 @@
 #ifndef _LISTS_HEADER
 #define _LISTS_HEADER
 
+#include <stddef.h>
+
+/* Lists own their item nodes but never the caller-provided pContent.  NULL
+ * content is not supported because NULL is also the iteration terminator. */
 struct item_data {
   struct item_data * pPrevItem;
   struct item_data * pNextItem;
+  struct item_data * pNextRemoved;
   void             * pContent;
+  unsigned char      isRemoved;
 };
 
 struct list_data {
   struct item_data * pFirstItem;
   struct item_data * pLastItem;
-  unsigned short int iIterators;
-  unsigned short int iSize;
+  struct item_data * pRemovedItems;
+  size_t             iIterators;
+  size_t             iSize;
+  /* Destruction waits for active iterators to detach. */
+  unsigned char      pendingFree;
 };
 
 struct iterator_data {

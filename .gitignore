@@ -100,4 +100,5 @@ tests/test_utils
 tests/test_random
 tests/test_interpreter
 tests/test_class
+tests/test_lists
 tests/test-results/
