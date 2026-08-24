@@ -82,7 +82,7 @@ zone_rnum create_new_zone(zone_vnum vzone_num, room_vnum bottom, room_vnum top, 
     return NOWHERE;
   }
 
-  for (i = 0; i < top_of_zone_table; i++)
+  for (i = 0; i <= top_of_zone_table; i++)
     if (zone_table[i].number == vzone_num) {
       *error = "That virtual zone already exists.\r\n";
       return NOWHERE;
