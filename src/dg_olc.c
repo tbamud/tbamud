@@ -26,7 +26,6 @@
 /* local functions */
 static void trigedit_disp_menu(struct descriptor_data *d);
 static void trigedit_disp_types(struct descriptor_data *d);
-static void trigedit_create_index(int znum, char *type);
 static void trigedit_setup_new(struct descriptor_data *d);
 
 
@@ -880,54 +879,7 @@ void trigedit_save(struct descriptor_data *d)
   rename(fname, buf);
 
   write_to_output(d, "Trigger saved to disk.\r\n");
-  trigedit_create_index(zone, "trg");
-}
-
-static void trigedit_create_index(int znum, char *type)
-{
-  FILE *newfile, *oldfile;
-  char new_name[128], old_name[128], *prefix;
-  char buf[MAX_STRING_LENGTH], buf1[MAX_STRING_LENGTH];
-  int num, found = FALSE;
-
-  prefix = TRG_PREFIX;
-
-  snprintf(old_name, sizeof(old_name), "%s/index", prefix);
-  snprintf(new_name, sizeof(new_name), "%s/newindex", prefix);
-
-  if (!(oldfile = fopen(old_name, "r"))) {
-    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: DG_OLC: Failed to open %s", old_name);
-    return;
-  } else if (!(newfile = fopen(new_name, "w"))) {
-    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: DG_OLC: Failed to open %s", new_name);
-    return;
-  }
-
-  /* Index contents must be in order: search through the old file for the right
-   * place, insert the new file, then copy the rest over. */
-  snprintf(buf1, sizeof(buf1), "%d.%s", znum, type);
-  while (get_line(oldfile, buf)) {
-    if (*buf == '$') {
-      fprintf(newfile, "%s\n$\n", (!found ? buf1 : ""));
-      break;
-    } else if (!found) {
-      sscanf(buf, "%d", &num);
-      if (num == znum)
-        found = TRUE;
-      else if (num > znum) {
-        found = TRUE;
-        fprintf(newfile, "%s\n", buf1);
-      }
-    }
-    fprintf(newfile, "%s\n", buf);
-  }
-
-  fclose(newfile);
-  fclose(oldfile);
-
-  /* Out with the old, in with the new. */
-  remove(old_name);
-  rename(new_name, old_name);
+  create_world_index(zone, "trg");
 }
 
 void dg_olc_script_copy(struct descriptor_data *d)
