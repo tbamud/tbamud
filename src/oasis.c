@@ -194,23 +194,33 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   /* Restore descriptor playing status. */
   if (d->character) {
     REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
-    act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
-    if (cleanup_type == CLEANUP_CONFIG)
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), 
-        TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
-    else if (STATE(d) == CON_TEDIT)
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
-       TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
-    else if (STATE(d) == CON_HEDIT)
-      mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
-       TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
-    else
-      mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
-        TRUE, "OLC: %s stops editing zone %d allowed zone %d", 
-        GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
+    /* Only a descriptor that actually entered an editor should announce
+     * leaving one.  dig, buildwalk and the copy commands borrow an
+     * oasis_olc_data so that an editor's save function can do the
+     * insertion for them and never touch STATE, so without this they told
+     * the room "$n stops using OLC." and logged "stops editing zone N" for
+     * a session that never started.  All three log what they really did
+     * instead. */
+    if (STATE(d) != CON_PLAYING) {
+      act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
-    STATE(d) = CON_PLAYING;
+      if (cleanup_type == CLEANUP_CONFIG)
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), 
+          TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
+      else if (STATE(d) == CON_TEDIT)
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
+      else if (STATE(d) == CON_HEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
+      else
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+          TRUE, "OLC: %s stops editing zone %d allowed zone %d", 
+          GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
+
+      STATE(d) = CON_PLAYING;
+    }
   }
 
   free(d->olc);
