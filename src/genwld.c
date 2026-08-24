@@ -242,25 +242,37 @@ int delete_room(room_rnum rnum)
     }
   } while (i > 0);
 
-  /* Find what zone that room was in so we can update the loading table. */
-  for (i = 0; i <= top_of_zone_table; i++)
+  /* Find what zone that room was in so we can update the loading table.
+   * Every zone whose commands are cancelled or renumbered here has to be
+   * written back out as well, or its .zon keeps pointing at a room that
+   * no longer exists.  save_zone() drops cancelled ('*') commands, so
+   * saving is what actually removes them. */
+  for (i = 0; i <= top_of_zone_table; i++) {
+    int zone_touched = FALSE;
+
     for (j = 0; ZCMD(i , j).command != 'S'; j++)
       switch (ZCMD(i, j).command) {
       case 'M':
       case 'O':
       case 'T':
       case 'V':
-	if (ZCMD(i, j).arg3 == rnum)
+	if (ZCMD(i, j).arg3 == rnum) {
 	  ZCMD(i, j).command = '*';	/* Cancel command. */
-	else if (ZCMD(i, j).arg3 > rnum)
+	  zone_touched = TRUE;
+	} else if (ZCMD(i, j).arg3 > rnum) {
 	  ZCMD(i, j).arg3 -= (ZCMD(i, j).arg3 != NOWHERE); /* with unsigned NOWHERE > any rnum */
+	  zone_touched = TRUE;
+	}
 	break;
       case 'D':
       case 'R':
-	if (ZCMD(i, j).arg1 == rnum)
+	if (ZCMD(i, j).arg1 == rnum) {
 	  ZCMD(i, j).command = '*';	/* Cancel command. */
-	else if (ZCMD(i, j).arg1 > rnum)
+	  zone_touched = TRUE;
+	} else if (ZCMD(i, j).arg1 > rnum) {
 	  ZCMD(i, j).arg1 -= (ZCMD(i, j).arg1 != NOWHERE); /* with unsigned NOWHERE > any rnum */
+	  zone_touched = TRUE;
+	}
       case 'G':
       case 'P':
       case 'E':
@@ -270,6 +282,10 @@ int delete_room(room_rnum rnum)
       default:
         mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: delete_room: Unknown zone entry found!");
       }
+
+    if (zone_touched)
+      add_to_save_list(zone_table[i].number, SL_ZON);
+  }
 
   /* Remove this room from all shop lists. */
   for (i = 0; i <= top_shop; i++) {

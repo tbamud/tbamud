@@ -469,35 +469,53 @@ int delete_object(obj_rnum rnum)
     for (j = 0; SHOP_PRODUCT(shop, j) != NOTHING; j++)
       SHOP_PRODUCT(shop, j) -= (SHOP_PRODUCT(shop, j) > rnum);
 
-  /* Renumber zone table. */
+  /* Renumber zone table.  A zone whose commands are removed or renumbered
+   * here has to be written back out as well, or its .zon keeps referring to
+   * an object that no longer exists. */
   for (zone = 0; zone <= top_of_zone_table; zone++) {
+    int zone_touched = FALSE;
+
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++) {
       switch (ZCMD(zone, cmd_no).command) {
       case 'P':
         if (ZCMD(zone, cmd_no).arg3 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
-        } else
-          ZCMD(zone, cmd_no).arg3 -= (ZCMD(zone, cmd_no).arg3 > rnum);
+          zone_touched = TRUE;
+        } else if (ZCMD(zone, cmd_no).arg3 > rnum) {
+          ZCMD(zone, cmd_no).arg3--;
+          zone_touched = TRUE;
+        }
         /* No break here - drop into next case. */
       case 'O':
       case 'G':
       case 'E':
         if (ZCMD(zone, cmd_no).arg1 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
-        } else
-          ZCMD(zone, cmd_no).arg1 -= (ZCMD(zone, cmd_no).arg1 > rnum);
+          zone_touched = TRUE;
+        } else if (ZCMD(zone, cmd_no).arg1 > rnum) {
+          ZCMD(zone, cmd_no).arg1--;
+          zone_touched = TRUE;
+        }
 	break;
       case 'R':
         if (ZCMD(zone, cmd_no).arg2 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
-        } else
-          ZCMD(zone, cmd_no).arg2 -= (ZCMD(zone, cmd_no).arg2 > rnum);
+          zone_touched = TRUE;
+        } else if (ZCMD(zone, cmd_no).arg2 > rnum) {
+          ZCMD(zone, cmd_no).arg2--;
+          zone_touched = TRUE;
+        }
 	break;
       }
     }
+
+    if (zone_touched)
+      add_to_save_list(zone_table[zone].number, SL_ZON);
   }
 
-  save_objects(zrnum);
+  /* Flag rather than write; oedit's delete branch honours CONFIG_OLC_SAVE. */
+  if (zrnum != NOWHERE)
+    add_to_save_list(zone_table[zrnum].number, SL_OBJ);
 
   return rnum;
 }

@@ -894,9 +894,14 @@ void redit_parse(struct descriptor_data *d, char *arg)
   
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_room(real_room(OLC_ROOM(d)->number)))
+      if (delete_room(real_room(OLC_ROOM(d)->number))) {
         write_to_output(d, "Room deleted.\r\n");
-     else
+        /* Same toggle the save path honours.  save_all() writes the
+         * room file and every zone file delete_room() just flagged,
+         * and nothing else -- it is driven by the save list. */
+        if (CONFIG_OLC_SAVE)
+          save_all();
+      } else
         write_to_output(d, "Couldn't delete the room!.\r\n");
 
       cleanup_olc(d, CLEANUP_ALL);
