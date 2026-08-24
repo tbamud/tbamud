@@ -386,6 +386,7 @@ ACMD(do_skillset)
   } else if (spell_info[skill].min_level[(pc)] > pl) {
     send_to_char(ch, "%s is a level %d %s.\r\n", GET_NAME(vict), pl, pc_class_types[pc]);
     send_to_char(ch, "The minimum level for %s is %d for %ss.\r\n", spell_info[skill].name, spell_info[skill].min_level[(pc)], pc_class_types[pc]);
+    return;
   }
 
   /* find_skill_num() guarantees a valid spell_info[] index, or -1, and we
