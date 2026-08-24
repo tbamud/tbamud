@@ -243,6 +243,24 @@ void redit_save_internally(struct descriptor_data *d)
   /* FIXME: Why is this not set elsewhere? */
   OLC_ROOM(d)->zone = OLC_ZNUM(d);
 
+  /* redit_disp_exit_menu() allocates an exit as soon as its menu is shown,
+   * so that the submenu has something to edit.  Merely looking at a
+   * direction therefore leaves a room_direction_data behind, and save_rooms()
+   * writes every non-NULL exit -- browsing a room's exits and saving used to
+   * bake "0 0 -1" into the world file.  Drop the ones the builder never
+   * filled in.  An exit with a description, a keyword or door flags is kept
+   * even when it leads nowhere: that is the idiom for a direction you can
+   * look at but not walk through. */
+  for (j = 0; j < DIR_COUNT; j++) {
+    struct room_direction_data *exit = OLC_ROOM(d)->dir_option[j];
+
+    if (exit && exit->to_room == NOWHERE && exit->exit_info == 0 &&
+        exit->keyword == NULL && exit->general_description == NULL) {
+      free(exit);
+      OLC_ROOM(d)->dir_option[j] = NULL;
+    }
+  }
+
   if ((room_num = add_room(OLC_ROOM(d))) == NOWHERE) {
     write_to_output(d, "Something went wrong...\r\n");
     log("SYSERR: redit_save_internally: Something failed! (%d)", room_num);
