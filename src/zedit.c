@@ -1056,8 +1056,11 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'D':
       pos = atoi(arg);
-      /* Count directions. */
-      if (pos < 0 || pos > DIR_COUNT)
+      /* Count directions.  reset_zone() refuses anything >= DIR_COUNT, so
+       * accepting DIR_COUNT itself only buys the builder a command that is
+       * disabled at the next reset -- and with the diagonals configured on,
+       * an index one past dir_option[] and past the end of dirs[]. */
+      if (pos < 0 || pos >= DIR_COUNT)
 	write_to_output(d, "Try again : ");
       else {
 	OLC_CMD(d).arg2 = pos;
