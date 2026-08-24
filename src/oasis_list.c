@@ -141,6 +141,14 @@ static void perform_obj_type_list(struct char_data * ch, char *arg)
 
   itemtype = atoi(arg);
 
+  /* The header indexes item_types[] straight away; the switch below has the
+   * message for a bad type but only reaches it once an object of that type
+   * turns up, which for a bad type never happens. */
+  if (itemtype < 0 || itemtype >= NUM_ITEM_TYPES) {
+    send_to_char(ch, "Not a valid item type");
+    return;
+  }
+
   len = snprintf(buf, sizeof(buf), "Listing all objects of type %s[%s]%s\r\n",
        QYEL, item_types[itemtype], QNRM);
 
