@@ -76,8 +76,13 @@ room_rnum add_room(struct room_data *room)
   log("GenOLC: add_room: Added room %d at index #%d.", room->number, found);
   /* found is equal to the array index where we added the room. */
 
-  /* Find what zone that room was in so we can update the loading table. */
-  for (i = room->zone; i <= top_of_zone_table; i++)
+  /* Update every zone's loading table, not just this room's zone and the
+   * ones above it.  Nothing confines a reset command to the zone that owns
+   * the room it targets -- the stock world ships 26 aimed at a zone higher
+   * than the one they sit in -- and such a command, pointing at a room at
+   * or after the insertion point, needs the same fixup.  delete_room() has
+   * always scanned from 0 for exactly this reason. */
+  for (i = 0; i <= top_of_zone_table; i++)
     for (j = 0; ZCMD(i, j).command != 'S'; j++)
       switch (ZCMD(i, j).command) {
       case 'M':
