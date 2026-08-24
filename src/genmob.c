@@ -141,7 +141,6 @@ static void extract_mobile_all(mob_vnum vnum)
 int delete_mobile(mob_rnum refpt)
 {
   struct char_data *live_mob;
-  struct char_data *proto;
   int counter, cmd_no;
   mob_vnum vnum;
   zone_rnum zone;
@@ -156,10 +155,12 @@ int delete_mobile(mob_rnum refpt)
   }
 
   vnum = mob_index[refpt].vnum;
-  proto = &mob_proto[refpt];
   
   extract_mobile_all(vnum);
-  extract_char(proto);
+  /* The prototype is not in character_list, so extracting it only raises
+   * extractions_pending for a character extract_pending_chars() can never
+   * find -- one "SYSERR: Couldn't find 1 extractions as counted." per
+   * deletion.  The table entry is overwritten by the shift below anyway. */
 
   for (counter = refpt; counter < top_of_mobt; counter++) {
     mob_index[counter] = mob_index[counter + 1];
