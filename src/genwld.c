@@ -27,6 +27,7 @@ room_rnum add_room(struct room_data *room)
   struct char_data *tch;
   struct obj_data *tobj;
   int j, found = FALSE;
+  byte tlight;
   room_rnum i;
 
   if (room == NULL)
@@ -37,9 +38,15 @@ room_rnum add_room(struct room_data *room)
       extract_script(&world[i], WLD_TRIGGER);
     tch = world[i].people;
     tobj = world[i].contents;
+    tlight = world[i].light;
     copy_room(&world[i], room);
     world[i].people = tch;
     world[i].contents = tobj;
+    /* light counts the light sources currently in the room, so it belongs
+     * to the live room and not to the copy being saved.  redit captured it
+     * when editing began; restoring that would undo every torch that has
+     * come or gone since, and the count never recovers. */
+    world[i].light = tlight;
     add_to_save_list(zone_table[room->zone].number, SL_WLD);
     log("GenOLC: add_room: Updated existing room #%d.", room->number);
     return i;
@@ -108,6 +115,12 @@ room_rnum add_room(struct room_data *room)
   r_mortal_start_room += (r_mortal_start_room >= found);
   r_immort_start_room += (r_immort_start_room >= found);
   r_frozen_start_room += (r_frozen_start_room >= found);
+
+  /* Characters idled into the void keep their room in was_in_room and are
+   * in no world[].people list, so the in_room pass above cannot reach
+   * them.  Without this they come back one room off. */
+  for (tch = character_list; tch; tch = tch->next)
+    GET_WAS_IN(tch) += (GET_WAS_IN(tch) != NOWHERE && GET_WAS_IN(tch) >= found);
 
   /* Update world exits. */
   i = top_of_world + 1;
