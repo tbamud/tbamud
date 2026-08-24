@@ -334,6 +334,12 @@ static void redit_disp_extradesc_menu(struct descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
+  /* This menu prints grn/nrm/yel directly, and those are file-scope
+   * globals shared by every builder.  Without this call it renders with
+   * whichever builder displayed a menu last: a builder with colour off
+   * blanks it for everyone, and a builder with colour on hands raw escape
+   * sequences to someone who turned colour off on purpose. */
+  get_char_colors(d->character);
   clear_screen(d);
   write_to_output(d,
 	  "%s1%s) Keywords: %s%s\r\n"
