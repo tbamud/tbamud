@@ -290,10 +290,10 @@ static void perform_obj_aff_list(struct char_data * ch, char *arg)
       if ((r_num = real_object(lst[i].vobj)) != NOTHING) {
         tmp_len = snprintf(buf+len, sizeof(buf)-len, "%s%3d%s) %s[%s%5d%s] %s%3d %s%-*s %s[%s]%s%s\r\n",
                   QGRN, ++found, QNRM, QCYN, QYEL, lst[i].vobj, QCYN,
-                  QYEL, lst[i].val, QCYN, 42+count_color_chars(obj_proto[num].short_description),
+                  QYEL, lst[i].val, QCYN, 42+count_color_chars(obj_proto[r_num].short_description),
                   obj_proto[r_num].short_description,
-                  QYEL, item_types[obj_proto[num].obj_flags.type_flag], QNRM,
-                  obj_proto[num].proto_script ? " [TRIG]" : "");
+                  QYEL, item_types[obj_proto[r_num].obj_flags.type_flag], QNRM,
+                  obj_proto[r_num].proto_script ? " [TRIG]" : "");
         len += tmp_len;
         if (len > sizeof(buf))
           break;
@@ -321,7 +321,7 @@ static void perform_obj_aff_list(struct char_data * ch, char *arg)
     if ((r_num = real_object(lst[i].vobj)) != NOTHING) {
       tmp_len = snprintf(buf+len, sizeof(buf)-len, "%s%3d%s) %s[%s%8d%s] %s%3d %s%-*s %s[%s]%s%s\r\n",
                 QGRN, ++found, QNRM, QCYN, QYEL, lst[i].vobj, QCYN,
-                QYEL, lst[i].val, QCYN, 42+count_color_chars(obj_proto[num].short_description),
+                QYEL, lst[i].val, QCYN, 42+count_color_chars(obj_proto[r_num].short_description),
                 obj_proto[r_num].short_description,
                 QYEL, item_types[obj_proto[r_num].obj_flags.type_flag], QNRM,
                 obj_proto[r_num].proto_script ? " [TRIG]" : "");
