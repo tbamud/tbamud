@@ -407,14 +407,17 @@ int delete_object(obj_rnum rnum)
       struct obj_data *this_content, *next_content;
       for (this_content = tmp->contains; this_content; this_content = next_content) {
         next_content = this_content->next_content;
-        if (IN_ROOM(tmp)) {
+        if (IN_ROOM(tmp) != NOWHERE) {
           /* Transfer stuff from object to room. */
           obj_from_obj(this_content);
           obj_to_room(this_content, IN_ROOM(tmp));
-        } else if (tmp->worn_by || tmp->carried_by) {
-          /* Transfer stuff from object to person inventory. */
-          obj_from_char(this_content);
-          obj_to_char(this_content, tmp->carried_by);
+        } else if (tmp->carried_by || tmp->worn_by) {
+          /* Transfer stuff from object to person inventory.  The contents
+           * are in a container, so they come out with obj_from_obj(), not
+           * obj_from_char(); and a worn container has a NULL carried_by,
+           * so the holder has to be taken from whichever is set. */
+          obj_from_obj(this_content);
+          obj_to_char(this_content, tmp->carried_by ? tmp->carried_by : tmp->worn_by);
         } else if (tmp->in_obj) {
           /* Transfer stuff from object to containing object. */
           obj_from_obj(this_content);
