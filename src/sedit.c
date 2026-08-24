@@ -436,7 +436,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
   int i;
 
   if (OLC_MODE(d) > SEDIT_NUMERICAL_RESPONSE) {
-    if (!isdigit(arg[0]) && ((*arg == '-') && (!isdigit(arg[1])))) {
+    if (!*arg || (!isdigit(arg[0]) && (*arg != '-' || !isdigit(arg[1])))) {
       write_to_output(d, "Field must be numerical, try again : ");
       return;
     }
