@@ -51,7 +51,6 @@ static struct {
   { -1, NULL, NULL },
 };
 /* for Zone Export */
-static int zone_exits = 0;
 
 /* Local (file scope) functions */
 /* Zone export functions */
@@ -65,6 +64,7 @@ static int export_archive(const char *filename);
 static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd);
 static void export_script_save_to_disk(FILE *fp, void *item, int type);
 static int export_info_file(zone_rnum zrnum);
+static int count_zone_exits(zone_rnum zrnum);
 
 int genolc_checkstring(struct descriptor_data *d, char *arg)
 {
@@ -465,6 +465,33 @@ static int export_archive(const char *filename)
   return ok;
 }
 
+/* An exit that leaves the zone is something the recipient has to reattach
+ * by hand, so the info file has a section listing them -- but that section
+ * was gated on a file-static export_save_rooms only set afterwards, which
+ * meant it never ran and every info file ever produced claimed the zone
+ * was self-contained. Work the answer out here instead. */
+static int count_zone_exits(zone_rnum zrnum)
+{
+  int i, j, found = 0;
+
+  for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
+    room_rnum rnum = real_room(i);
+
+    if (rnum == NOWHERE)
+      continue;
+
+    for (j = 0; j < DIR_COUNT; j++) {
+      struct room_direction_data *pexit = R_EXIT(&world[rnum], j);
+
+      if (!pexit || pexit->to_room == NOWHERE)
+        continue;
+      if (world[pexit->to_room].zone != zrnum)
+        found++;
+    }
+  }
+  return found;
+}
+
 static int export_info_file(zone_rnum zrnum)
 {
   int i;
@@ -489,7 +516,7 @@ static int export_info_file(zone_rnum zrnum)
   fprintf(info_file, "   have been changed to QQ. In other words, if you decide to have this zone as\n");
   fprintf(info_file, "   zone 123, replace all occurences of QQ with 123 and rename the qq.zon file\n");
   fprintf(info_file, "   to 123.zon (etc.). And of course add 123.zon to the respective index file.\n");
-  if (zone_exits) {
+  if (count_zone_exits(zrnum)) {
     fprintf(info_file, "2. Exits out of this zone have been ZZ'd. So all doors leading out have ZZ??\n");
     fprintf(info_file, "   instead of the room vnum (?? are numbers 00 - 99).\n");
     fprintf(info_file, "   In this zone, the exit rooms in question are:\n");
@@ -515,7 +542,6 @@ static int export_info_file(zone_rnum zrnum)
                            room->number%100, dirs[j]);
       }
     }
-    zone_exits = 0;
   } else {
     fprintf(info_file, "2. This area doesn't have any exits _out_ of the zone.\n");
     fprintf(info_file, "   More info on connections can be found in the zone description room (QQ00).\n");
@@ -1028,7 +1054,6 @@ static int export_save_rooms(zone_rnum zrnum)
 			      R_EXIT(room, j)->key == NOTHING ? "" : "QQ",
 			      R_EXIT(room, j)->key == NOTHING ? -1 : R_EXIT(room, j)->key % 100 ,
 			      world[R_EXIT(room, j)->to_room].number%100);
-            zone_exits++;
           }
 	}
       }
