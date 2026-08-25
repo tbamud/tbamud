@@ -214,6 +214,12 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
       else if (STATE(d) == CON_HEDIT)
         mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
          TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
+      /* aedit reuses OLC_ZNUM as the SOCIAL index, so the zone_table lookup
+       * below reads a random zone -- or past the table, since there are far
+       * more socials than zones.  It logs what it was really editing. */
+      else if (STATE(d) == CON_AEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing actions.", GET_NAME(d->character));
       else
         mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
           TRUE, "OLC: %s stops editing zone %d allowed zone %d", 
