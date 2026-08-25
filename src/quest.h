@@ -77,6 +77,11 @@ struct aq_data {
 #define QST_EXP(i)             (aquest_table[i].exp_reward)
 #define QST_OBJ(i)             (aquest_table[i].obj_reward)
 
+/* quest_types[] is indexed by the quest's type, and a quest whose type has
+ * never been set holds AQ_UNDEFINED (-1) -- which is how every qedit on a
+ * new vnum starts.  Reading quest_types[-1] is the pointer below the array. */
+#define QST_TYPE_NAME(t)       (((t) >= 0 && (t) < NUM_AQ_TYPES) ?                                 quest_types[(t)] : "Undefined")
+
 #define QST_FUNC(i)            (aquest_table[i].func)
 #define QST_PREV(i)            (aquest_table[i].prev_quest)
 #define QST_NEXT(i)            (aquest_table[i].next_quest)

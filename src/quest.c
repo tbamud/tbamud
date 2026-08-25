@@ -733,7 +733,7 @@ static void quest_stat(struct char_data *ch, char *argument)
  (QST_QUIT(rnum) &&
   (str_cmp(QST_QUIT(rnum), "undefined") != 0)
           ? QST_QUIT(rnum) : "Nothing\r\n"),
-     quest_types[QST_TYPE(rnum)],
+     QST_TYPE_NAME(QST_TYPE(rnum)),
  QST_TARGET(rnum) == NOBODY ? -1 : QST_TARGET(rnum),
  targetname,
  QST_QUANTITY(rnum),

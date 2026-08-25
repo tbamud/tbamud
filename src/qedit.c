@@ -346,7 +346,7 @@ static void qedit_disp_menu(struct descriptor_data *d)
     quest->quit && (str_cmp(quest->quit, "undefined"))
      ? quest->quit : "Nothing\r\n",
     quest_flags,
-    quest_types[quest->type],
+    QST_TYPE_NAME(quest->type),
     quest->type == AQ_OBJ_RETURN ? buf2 : "",
     quest->qm == NOBODY ? -1 :     quest->qm,
     real_mobile(quest->qm) == NOBODY ? "Invalid Mob" : mob_proto[(real_mobile(quest->qm))].player.short_descr,
