@@ -60,6 +60,7 @@ static int export_save_zone(zone_rnum zrnum);
 static int export_save_objects(zone_rnum zrnum);
 static int export_save_rooms(zone_rnum zrnum);
 static int export_save_triggers(zone_rnum zrnum);
+static int export_save_quests(zone_rnum zrnum);
 static int export_archive(const char *filename);
 static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd);
 static void export_script_save_to_disk(FILE *fp, void *item, int type);
@@ -401,6 +402,10 @@ ACMD(do_export_zone)
     send_to_char(ch, "Triggers not saved!\r\n");
     success = FALSE;
   }
+  if (!export_save_quests(zrnum)) {
+    send_to_char(ch, "Quests not saved!\r\n");
+    success = FALSE;
+  }
 
   /* If anything went wrong, don't try to tar the files. */ 
   if (success) { 
@@ -429,16 +434,16 @@ ACMD(do_export_zone)
  * interpolated into. */
 static int export_archive(const char *filename)
 {
-  static const char *parts[] = { "info", "wld", "zon", "mob", "obj", "trg", "shp" };
-  struct archive_member members[7];
+  static const char *parts[] = { "info", "wld", "zon", "mob", "obj", "trg", "shp", "qst" };
+  struct archive_member members[8];
   struct byte_buf tarred, gzipped;
   char member_path[READ_SIZE];
-  unsigned char *bodies[7];
+  unsigned char *bodies[8];
   time_t now = time(0);
   int i, count = 0, ok = TRUE;
   FILE *fp;
 
-  for (i = 0; i < 7; i++) {
+  for (i = 0; i < 8; i++) {
     long size;
 
     snprintf(member_path, sizeof(member_path), "world/export/qq.%s", parts[i]);
@@ -1123,6 +1128,88 @@ static void export_script_save_to_disk(FILE *fp, void *item, int type)
 }
 
 /* save the zone's triggers to internal memory and to disk */
+/* The help text lists .qst among the files that make up a zone, but the
+ * exporter never wrote one, so a zone's autoquests did not travel with
+ * it. Same record layout as genqst.c's save_quests, with the vnums this
+ * zone owns QQ'd like every other exported file.
+ *
+ * An unset field may hold the NOBODY/NOTHING sentinel or a plain -1
+ * depending on which editor last wrote the quest -- the stock 1.qst
+ * has -1 in its return-mob slot -- so both count as unset. */
+static int export_save_quests(zone_rnum zrnum)
+{
+  FILE *quest_file;
+  char quest_flags[MAX_STRING_LENGTH];
+  char quest_desc[MAX_STRING_LENGTH], quest_info[MAX_STRING_LENGTH];
+  char quest_done[MAX_STRING_LENGTH], quest_quit[MAX_STRING_LENGTH];
+  qst_vnum i;
+
+  if (!(quest_file = fopen("world/export/qq.qst", "w"))) {
+    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_quests : Cannot open file!");
+    return FALSE;
+  }
+
+  for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
+    qst_rnum rnum = real_quest(i);
+
+    if (rnum == NOTHING)
+      continue;
+
+    strncpy(quest_desc, QST_DESC(rnum) ? QST_DESC(rnum) : "undefined", sizeof(quest_desc) - 1);
+    strncpy(quest_info, QST_INFO(rnum) ? QST_INFO(rnum) : "undefined", sizeof(quest_info) - 1);
+    strncpy(quest_done, QST_DONE(rnum) ? QST_DONE(rnum) : "undefined", sizeof(quest_done) - 1);
+    strncpy(quest_quit, QST_QUIT(rnum) ? QST_QUIT(rnum) : "undefined", sizeof(quest_quit) - 1);
+    strip_cr(quest_desc);
+    strip_cr(quest_info);
+    strip_cr(quest_done);
+    strip_cr(quest_quit);
+    sprintascii(quest_flags, QST_FLAGS(rnum));
+
+    fprintf(quest_file,
+      "#QQ%02d\n"
+      "%s%c\n"
+      "%s%c\n"
+      "%s%c\n"
+      "%s%c\n"
+      "%s%c\n"
+      "%d %s%02d %s %s%02d %s%02d %s%02d %s%02d\n"
+      "%d %d %d %d %d %s%02d %d\n"
+      "%d %d %s%02d\n"
+      "S\n",
+      QST_NUM(rnum) % 100,
+      QST_NAME(rnum) ? QST_NAME(rnum) : "Untitled", STRING_TERMINATOR,
+      quest_desc, STRING_TERMINATOR,
+      quest_info, STRING_TERMINATOR,
+      quest_done, STRING_TERMINATOR,
+      quest_quit, STRING_TERMINATOR,
+      QST_TYPE(rnum),
+      QST_MASTER(rnum) == NOBODY || QST_MASTER(rnum) < 0 ? "" : "QQ",
+      QST_MASTER(rnum) == NOBODY || QST_MASTER(rnum) < 0 ? -1 : QST_MASTER(rnum) % 100,
+      quest_flags,
+      QST_TARGET(rnum) == NOTHING || QST_TARGET(rnum) < 0 ? "" : "QQ",
+      QST_TARGET(rnum) == NOTHING || QST_TARGET(rnum) < 0 ? -1 : QST_TARGET(rnum) % 100,
+      QST_PREV(rnum) == NOTHING || QST_PREV(rnum) < 0 ? "" : "QQ",
+      QST_PREV(rnum) == NOTHING || QST_PREV(rnum) < 0 ? -1 : QST_PREV(rnum) % 100,
+      QST_NEXT(rnum) == NOTHING || QST_NEXT(rnum) < 0 ? "" : "QQ",
+      QST_NEXT(rnum) == NOTHING || QST_NEXT(rnum) < 0 ? -1 : QST_NEXT(rnum) % 100,
+      QST_PREREQ(rnum) == NOTHING || QST_PREREQ(rnum) < 0 ? "" : "QQ",
+      QST_PREREQ(rnum) == NOTHING || QST_PREREQ(rnum) < 0 ? -1 : QST_PREREQ(rnum) % 100,
+      QST_POINTS(rnum), QST_PENALTY(rnum), QST_MINLEVEL(rnum),
+      QST_MAXLEVEL(rnum), QST_TIME(rnum),
+      QST_RETURNMOB(rnum) == NOBODY || QST_RETURNMOB(rnum) < 0 ? "" : "QQ",
+      QST_RETURNMOB(rnum) == NOBODY || QST_RETURNMOB(rnum) < 0 ? -1 : QST_RETURNMOB(rnum) % 100,
+      QST_QUANTITY(rnum),
+      QST_GOLD(rnum), QST_EXP(rnum),
+      QST_OBJ(rnum) == NOTHING || QST_OBJ(rnum) < 0 ? "" : "QQ",
+      QST_OBJ(rnum) == NOTHING || QST_OBJ(rnum) < 0 ? NOTHING : QST_OBJ(rnum) % 100
+    );
+  }
+
+  fprintf(quest_file, "$~\n");
+  fclose(quest_file);
+  return TRUE;
+}
+
 static int export_save_triggers(zone_rnum zrnum)
 {
   int i;
