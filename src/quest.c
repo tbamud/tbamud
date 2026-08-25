@@ -756,18 +756,23 @@ static void quest_stat(struct char_data *ch, char *argument)
    QST_TIME(rnum) == 1 ? "" : "s");
     else
       send_to_char(ch, "Limit : There is no time limit on this quest.\r\n");
+    /* A chain link can outlive what it points at: deleting a quest leaves
+     * every quest that named it holding a vnum real_quest() answers NOTHING
+     * for, and QST_DESC(NOTHING) reads aquest_table[65535]. */
     send_to_char(ch, "Prior :");
     if (QST_PREV(rnum) == NOTHING)
       send_to_char(ch, " \tyNone.\tn\r\n");
     else
       send_to_char(ch, " [\ty%5d\tn] \tc%s\tn\r\n",
-        QST_PREV(rnum), QST_DESC(real_quest(QST_PREV(rnum))));
+        QST_PREV(rnum), real_quest(QST_PREV(rnum)) == NOTHING ?
+          "an unknown quest" : QST_DESC(real_quest(QST_PREV(rnum))));
     send_to_char(ch, "Next  :");
     if (QST_NEXT(rnum) == NOTHING)
       send_to_char(ch, " \tyNone.\tn\r\n");
     else
       send_to_char(ch, " [\ty%5d\tn] \tc%s\tn\r\n",
-        QST_NEXT(rnum), QST_DESC(real_quest(QST_NEXT(rnum))));
+        QST_NEXT(rnum), real_quest(QST_NEXT(rnum)) == NOTHING ?
+          "an unknown quest" : QST_DESC(real_quest(QST_NEXT(rnum))));
   }
 }
 
