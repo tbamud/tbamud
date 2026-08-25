@@ -36,7 +36,7 @@ LFLAGS=/OUT:circle.exe /nologo /subsystem:console
 MAKE = $(MAKE) /NOLOGO /S
 
 OBJFILES = comm.obj act.comm.obj act.informative.obj act.movement.obj act.item.obj \
-asciimap.obj act.offensive.obj act.other.obj act.social.obj act.wizard.obj \
+archive.obj asciimap.obj act.offensive.obj act.other.obj act.social.obj act.wizard.obj \
 ban.obj boards.obj castle.obj class.obj config.obj constants.obj db.obj \
 dg_event.obj dg_scripts.obj dg_triggers.obj fight.obj genolc.obj graph.obj \
 handler.obj house.obj ibt.obj interpreter.obj limits.obj lists.obj magic.obj \
@@ -83,6 +83,8 @@ act.social.obj: act.social.c conf.h sysdep.h structs.h utils.h comm.h \
 act.wizard.obj: act.wizard.c conf.h sysdep.h structs.h utils.h comm.h \
   interpreter.h handler.h db.h spells.h house.h screen.h constants.h
 	$(CC) -c $(CFLAGS) act.wizard.c
+archive.obj: archive.c conf.h sysdep.h structs.h utils.h archive.h
+	$(CC) -c $(CFLAGS) archive.c
 ban.obj: ban.c conf.h sysdep.h structs.h utils.h comm.h interpreter.h handler.h db.h
 	$(CC) -c $(CFLAGS) ban.c
 boards.obj: boards.c conf.h sysdep.h structs.h utils.h comm.h db.h boards.h \

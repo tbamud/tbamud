@@ -15,6 +15,7 @@
 #include "shop.h"
 #include "oasis.h"
 #include "genolc.h"
+#include "archive.h"
 #include "genwld.h"
 #include "genmob.h"
 #include "genshp.h"
@@ -60,6 +61,7 @@ static int export_save_zone(zone_rnum zrnum);
 static int export_save_objects(zone_rnum zrnum);
 static int export_save_rooms(zone_rnum zrnum);
 static int export_save_triggers(zone_rnum zrnum);
+static int export_archive(const char *filename);
 static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd);
 static void export_script_save_to_disk(FILE *fp, void *item, int type);
 static int export_info_file(zone_rnum zrnum);
@@ -296,47 +298,52 @@ int sprintascii(char *out, bitvector_t bits)
 
 /* converts illegal filename chars into appropriate equivalents */ 
 static void fix_filename(const char *str, char *outbuf, size_t maxlen)
-{ 
+{
   const char *in = str;
   char *out = outbuf;
-  int count = 0;
+  size_t count = 0;
 
-  while (*in) {
-    switch(*in) {
-      case ' ': *out = '_'; out++; break;
-      case '(': *out = '{'; out++; break;
-      case ')': *out = '}'; out++; break;
- 
-      /* skip the following */ 
-      case '\'':             break; 
-      case '"':              break; 
- 
-      /* Legal character */ 
-      default: *out = *in;  out++;break;
-    } 
+  /* The result names a file under world/export/, so it has to be only a
+   * file name: a zone called "../../bin/circle" must not send the archive
+   * anywhere but into that directory. Anything outside the set below is
+   * dropped rather than passed through. */
+  while (*in && count + 1 < maxlen) {
+    switch (*in) {
+      case ' ': *out++ = '_'; count++; break;
+      case '(': *out++ = '{'; count++; break;
+      case ')': *out++ = '}'; count++; break;
+
+      default:
+        if (isalnum((unsigned char) *in) || *in == '_' || *in == '-') {
+          *out++ = *in;
+          count++;
+        }
+        break;
+    }
     in++;
-    count++;
-    if (count == maxlen - 1) break;
   }
   *out = '\0';
+
+  /* A name made entirely of characters we dropped would leave an empty
+   * string, and "world/export/.tar.gz" is not what anyone meant. */
+  if (*outbuf == '\0')
+    strlcpy(outbuf, "zone", maxlen);
 }
 
 /* Export command by Kyle */ 
-ACMD(do_export_zone) 
-{ 
-#ifdef CIRCLE_WINDOWS
-   /* tar and gzip are usually not available */
-    send_to_char(ch, "Sorry, that is not available in the windows port.\r\n");
-#else /* all other configurations */
-  zone_rnum zrnum; 
-  zone_vnum zvnum; 
-  char sysbuf[MAX_INPUT_LENGTH]; 
+ACMD(do_export_zone)
+{
+  zone_rnum zrnum;
+  zone_vnum zvnum;
   char zone_name[READ_SIZE], fixed_file_name[READ_SIZE];
-  int success, errorcode = 0;
+  /* Room for the directory prefix and the .tar.gz on top of a
+   * full-length zone name. */
+  char filename[READ_SIZE * 2];
+  int success;
 
-  /* system command locations are relative to where the binary IS, not where it
-   * was run from, thus we act like we are in the bin folder, because we are*/ 
-  char *path = "../lib/world/export/"; 
+  /* The MUD chdir()s to its data directory at boot, so every path here is
+   * relative to that -- the same paths the export writers below use. */
+  const char *path = "world/export/";
 
   if (IS_NPC(ch) || GET_LEVEL(ch) < LVL_IMPL) 
     return; 
@@ -357,11 +364,7 @@ ACMD(do_export_zone)
 
   /* If we fail, it might just be because the directory didn't exist.  Can't 
    * hurt to try again. Do it silently though ( no logs ). */ 
-  if (!export_info_file(zrnum)) { 
-    sprintf(sysbuf, "mkdir %s", path);
-    errorcode = system(sysbuf);
-  } 
-  if (errorcode) {
+  if (!export_info_file(zrnum) && archive_mkdir("world/export") != 0) {
     send_to_char(ch, "Failed to create export directory.\r\n");
     return;
   }
@@ -389,35 +392,77 @@ ACMD(do_export_zone)
     send_to_char(ch, "Ran into problems writing to files.\r\n"); 
     return; 
   }
-  /* Make sure the name of the zone doesn't make the filename illegal. */ 
+  /* Make sure the name of the zone doesn't make the filename illegal. */
   fix_filename(zone_name, fixed_file_name, sizeof(fixed_file_name));
 
-  /* Remove the old copy. */ 
-  snprintf(sysbuf, sizeof(sysbuf), "rm %s%s.tar.gz", path, fixed_file_name);
-  errorcode = system(sysbuf);
-  if (errorcode) {
-    send_to_char(ch, "Failed to delete previous zip file. This is usually benign.\r\n");
-  }
-
-
-  /* Tar the new copy. */ 
-  snprintf(sysbuf, sizeof(sysbuf), "tar -cf %s%s.tar %sqq.info %sqq.wld %sqq.zon %sqq.mob %sqq.obj %sqq.trg %sqq.shp", path, fixed_file_name, path, path, path, path, path, path, path);
-  errorcode = system(sysbuf);
-  if (errorcode) {
-    send_to_char(ch, "Failed to tar files.\r\n");
+  snprintf(filename, sizeof(filename), "%s%s.tar.gz", path, fixed_file_name);
+  if (!export_archive(filename)) {
+    send_to_char(ch, "Failed to write the archive.\r\n");
     return;
   }
 
-  /* Gzip it. */ 
-  snprintf(sysbuf, sizeof(sysbuf), "gzip %s%s.tar", path, fixed_file_name);
-  errorcode = system(sysbuf);
-  if (errorcode) {
-    send_to_char(ch, "Failed to gzip tar file.\r\n");
-    return;
+  send_to_char(ch, "Files tar'ed to \"%s\"\r\n", filename);
+}
+
+/* Build <filename> from the files export just wrote. Nothing here runs a
+ * shell: archive.c emits the tar and gzip bytes directly, which is what
+ * lets the command work on every platform rather than being #ifdef'd out
+ * of the Windows port, and leaves no command line for a zone name to be
+ * interpolated into. */
+static int export_archive(const char *filename)
+{
+  static const char *parts[] = { "info", "wld", "zon", "mob", "obj", "trg", "shp" };
+  struct archive_member members[7];
+  struct byte_buf tarred, gzipped;
+  char member_path[READ_SIZE];
+  unsigned char *bodies[7];
+  time_t now = time(0);
+  int i, count = 0, ok = TRUE;
+  FILE *fp;
+
+  for (i = 0; i < 7; i++) {
+    long size;
+
+    snprintf(member_path, sizeof(member_path), "world/export/qq.%s", parts[i]);
+    if (!(fp = fopen(member_path, "rb"))) {
+      mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_archive: cannot read %s", member_path);
+      ok = FALSE;
+      break;
+    }
+    fseek(fp, 0, SEEK_END);
+    size = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+    CREATE(bodies[count], unsigned char, size ? size : 1);
+    members[count].len = fread(bodies[count], 1, size, fp);
+    fclose(fp);
+
+    snprintf(member_path, sizeof(member_path), "qq.%s", parts[i]);
+    members[count].name = strdup(member_path);
+    members[count].data = bodies[count];
+    count++;
   }
 
-  send_to_char(ch, "Files tar'ed to \"%s%s.tar.gz\"\r\n", path, fixed_file_name);
-#endif /* platform specific part */
+  if (ok) {
+    buf_init(&tarred);
+    buf_init(&gzipped);
+    archive_tar(&tarred, members, count, now);
+    archive_gzip(&gzipped, tarred.data, tarred.len, now);
+
+    if (!(fp = fopen(filename, "wb")))
+      ok = FALSE;
+    else {
+      ok = (fwrite(gzipped.data, 1, gzipped.len, fp) == gzipped.len);
+      fclose(fp);
+    }
+    buf_free(&tarred);
+    buf_free(&gzipped);
+  }
+
+  for (i = 0; i < count; i++) {
+    free(bodies[i]);
+    free((char *) members[i].name);
+  }
+  return ok;
 }
 
 static int export_info_file(zone_rnum zrnum)
