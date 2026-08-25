@@ -131,6 +131,7 @@ int delete_quest(qst_rnum rnum)
   qst_rnum i;
   zone_rnum rznum;
   mob_vnum qm = QST_MASTER(rnum);
+  mob_rnum qmrnum;
   SPECIAL (*tempfunc);
   int  quests_remaining = 0;
 
@@ -165,8 +166,8 @@ int delete_quest(qst_rnum rnum)
       if (QST_MASTER(i) == qm)
         quests_remaining++;
     }
-    if (quests_remaining == 0)
-      mob_index[qm].func = tempfunc; // point back to original spec proc
+    if (quests_remaining == 0 && (qmrnum = real_mobile(qm)) != NOBODY)
+      mob_index[qmrnum].func = tempfunc; // point back to original spec proc
   }
   return TRUE;
 }
