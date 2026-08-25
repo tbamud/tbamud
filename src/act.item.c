@@ -1584,7 +1584,7 @@ ACMD(do_sac)
     obj_from_obj(jj);
 
     if (j->carried_by)
-      obj_to_room(jj, IN_ROOM(j));
+      obj_to_room(jj, IN_ROOM(j->carried_by));
     else if (IN_ROOM(j) != NOWHERE)
       obj_to_room(jj, IN_ROOM(j));
     else
