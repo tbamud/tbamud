@@ -1006,5 +1006,5 @@ void mag_rooms(int level, struct char_data *ch, int spellnum)
   send_to_char(ch, "%s\r\n", msg);
   act(room, FALSE, ch, 0, 0, TO_ROOM);
   
-  NEW_EVENT(eSPL_DARKNESS, &world[rnum], NULL, duration * PASSES_PER_SEC);
+  NEW_EVENT(eSPL_DARKNESS, &world[rnum], NULL, duration * SECS_PER_MUD_HOUR * PASSES_PER_SEC);
 }
