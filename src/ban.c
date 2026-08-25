@@ -41,9 +41,10 @@ static const char *ban_types[] = {
 void load_banned(void)
 {
   FILE *fl;
-  int i, date;
+  int i, date, c;
   char site_name[BANNED_SITE_LENGTH + 1], ban_type[100];
   char name[MAX_NAME_LENGTH + 1];
+  char line[READ_SIZE], extra;
   struct ban_list_element *next_node;
 
   ban_list = 0;
@@ -55,7 +56,15 @@ void load_banned(void)
       log("   Ban file '%s' doesn't exist.", BAN_FILE);
     return;
   }
-  while (fscanf(fl, " %s %s %d %s ", ban_type, site_name, &date, name) == 4) {
+  while (fgets(line, sizeof(line), fl)) {
+    if (!strchr(line, '\n') && !feof(fl)) {
+      while ((c = fgetc(fl)) != '\n' && c != EOF)
+        ;
+      continue;
+    }
+
+    if (sscanf(line, " %99s %50s %d %20s %c", ban_type, site_name, &date, name, &extra) != 4)
+      continue;
     CREATE(next_node, struct ban_list_element, 1);
     strncpy(next_node->site, site_name, BANNED_SITE_LENGTH);	/* strncpy: OK (n_n->site:BANNED_SITE_LENGTH+1) */
     next_node->site[BANNED_SITE_LENGTH] = '\0';
