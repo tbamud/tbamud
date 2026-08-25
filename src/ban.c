@@ -296,12 +296,13 @@ void read_invalid_list(void)
   }
 
   num_invalid = 0;
-  while (get_line(fp, temp) && num_invalid < MAX_INVALID_NAMES)
-    invalid_list[num_invalid++] = strdup(temp);
+  while (get_line(fp, temp)) {
+    if (num_invalid >= MAX_INVALID_NAMES) {
+      log("SYSERR: Too many invalid names; change MAX_INVALID_NAMES in ban.c");
+      exit(1);
+    }
 
-  if (num_invalid >= MAX_INVALID_NAMES) {
-    log("SYSERR: Too many invalid names; change MAX_INVALID_NAMES in ban.c");
-    exit(1);
+    invalid_list[num_invalid++] = strdup(temp);
   }
 
   fclose(fp);
