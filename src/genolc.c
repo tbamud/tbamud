@@ -946,6 +946,9 @@ static int export_save_rooms(zone_rnum zrnum)
 	      dflag = 2;
 	    else
 	      dflag = 1;
+
+	    if (IS_SET(R_EXIT(room, j)->exit_info, EX_HIDDEN))
+	      dflag += 2;
 	  } else
 	    dflag = 0;
 
