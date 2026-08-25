@@ -2943,7 +2943,7 @@ EXPORT
    Used by the IMP's to export a zone for other MUD's. This command replaces
 the zone number with QQ's. This allows any decent text-editor to "find and
 replace" the QQ's with a zone number of your choice. The zone will be saved
-into a compressed file as: <zone #>_<zone name>.tgz i.e. 1_Sanctus.tgz
+into a compressed file as: <zone #>_<zone name>.tar.gz i.e. 1_Sanctus.tar.gz
    Use your preferred client to unpack and then a text editor to find and
 replace the QQ's with your zone number. If you want to keep the existing zone
 number make sure to say so when you ask for an export. The easiest way to add

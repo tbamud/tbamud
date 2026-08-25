@@ -418,7 +418,11 @@ ACMD(do_export_zone)
   /* Make sure the name of the zone doesn't make the filename illegal. */
   fix_filename(zone_name, fixed_file_name, sizeof(fixed_file_name));
 
-  snprintf(filename, sizeof(filename), "%s%s.tar.gz", path, fixed_file_name);
+  /* "<zone #>_<zone name>.tgz" is what the help has promised since it was
+   * written; the code wrote "<zone name>.tar.gz", so two zones sharing a
+   * name overwrote each other in world/export/. */
+  snprintf(filename, sizeof(filename), "%s%d_%s.tar.gz", path,
+           zone_table[zrnum].number, fixed_file_name);
   if (!export_archive(filename)) {
     send_to_char(ch, "Failed to write the archive.\r\n");
     return;
