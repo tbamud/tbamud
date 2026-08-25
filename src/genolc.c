@@ -66,6 +66,8 @@ static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 static void export_script_save_to_disk(FILE *fp, void *item, int type);
 static int export_info_file(zone_rnum zrnum);
 static int count_zone_exits(zone_rnum zrnum);
+static int count_zone_keys(zone_rnum zrnum);
+static int key_in_zone(obj_vnum key, zone_rnum zrnum);
 
 int genolc_checkstring(struct descriptor_data *d, char *arg)
 {
@@ -497,6 +499,44 @@ static int export_archive(const char *filename)
  * was gated on a file-static export_save_rooms only set afterwards, which
  * meant it never ran and every info file ever produced claimed the zone
  * was self-contained. Work the answer out here instead. */
+/* Is this object vnum one of the zone's own? */
+static int key_in_zone(obj_vnum key, zone_rnum zrnum)
+{
+  return key >= genolc_zone_bottom(zrnum) && key <= zone_table[zrnum].top;
+}
+
+/* Does this key name an object the zone cannot take with it?  Only those
+ * have to be ZZ'd and reported.  NOTHING and 0 are both "no lock" rather
+ * than a reference somewhere else -- most of the stock world spells it 0 --
+ * and counting those would list every ordinary doorway in the zone. */
+static int key_is_foreign(obj_vnum key, zone_rnum zrnum)
+{
+  return key != NOTHING && key > 0 && !key_in_zone(key, zrnum);
+}
+
+/* Doors locked with a key from another zone are ZZ'd like an exit that
+ * leaves the zone, and are just as fatal to the recipient's boot, so the
+ * info file has to list them too. */
+static int count_zone_keys(zone_rnum zrnum)
+{
+  int i, j, found = 0;
+
+  for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
+    room_rnum rnum = real_room(i);
+
+    if (rnum == NOWHERE)
+      continue;
+
+    for (j = 0; j < DIR_COUNT; j++) {
+      struct room_direction_data *pexit = R_EXIT(&world[rnum], j);
+
+      if (pexit && key_is_foreign(pexit->key, zrnum))
+        found++;
+    }
+  }
+  return found;
+}
+
 static int count_zone_exits(zone_rnum zrnum)
 {
   int i, j, found = 0;
@@ -572,6 +612,30 @@ static int export_info_file(zone_rnum zrnum)
   } else {
     fprintf(info_file, "2. This area doesn't have any exits _out_ of the zone.\n");
     fprintf(info_file, "   More info on connections can be found in the zone description room (QQ00).\n");
+  }
+
+  if (count_zone_keys(zrnum)) {
+    fprintf(info_file, "\n3. Some doors here are locked with keys that belong to other zones.\n");
+    fprintf(info_file, "   Those key vnums have been ZZ'd for the same reason as the exits\n");
+    fprintf(info_file, "   above, and need pointing at real objects before the zone will load:\n");
+
+    for (i = genolc_zone_bottom(zrnum); i <= zone_table[zrnum].top; i++) {
+      room_rnum rnum = real_room(i);
+      int j;
+
+      if (rnum == NOWHERE)
+        continue;
+
+      for (j = 0; j < DIR_COUNT; j++) {
+        struct room_direction_data *pexit = R_EXIT(&world[rnum], j);
+
+        if (!pexit || !key_is_foreign(pexit->key, zrnum))
+          continue;
+
+        fprintf(info_file, "      Room QQ%02d : %s door, key was object %d\n",
+                world[rnum].number % 100, dirs[j], pexit->key);
+      }
+    }
   }
 
   fprintf(info_file, "\nAdditional zone information is available in the zone description room QQ00.\n");
@@ -994,6 +1058,8 @@ static int export_save_objects(zone_rnum zrnum)
 static int export_save_rooms(zone_rnum zrnum)
 {
   int i;
+  const char *key_tag;
+  int key_num;
   struct room_data *room;
   FILE *room_file;
   char buf[MAX_STRING_LENGTH];
@@ -1055,6 +1121,25 @@ static int export_save_rooms(zone_rnum zrnum)
 	  else
 	    *buf1 = '\0';
 
+	  /* A key from another zone cannot come with the zone, so mark it
+	   * the way an exit leaving the zone is marked rather than mapping
+	   * it onto whatever object holds that slot in the recipient's
+	   * copy. */
+	  if (R_EXIT(room, j)->key == NOTHING) {
+	    key_tag = "";
+	    key_num = -1;
+	  } else {
+	    /* A key of 0 is "no lock" rather than a reference somewhere
+	     * else, so it is written back as it stands rather than marked. */
+	    if (key_is_foreign(R_EXIT(room, j)->key, zrnum))
+	      key_tag = "ZZ";
+	    else if (key_in_zone(R_EXIT(room, j)->key, zrnum))
+	      key_tag = "QQ";
+	    else
+	      key_tag = "";
+	    key_num = R_EXIT(room, j)->key % 100;
+	  }
+
 	  /* Now write the exit to the file. */
           if (R_EXIT(room, j)->to_room == NOWHERE || world[R_EXIT(room, j)->to_room].zone == zrnum)
 	    fprintf(room_file,"D%d\n"
@@ -1065,8 +1150,8 @@ static int export_save_rooms(zone_rnum zrnum)
 			      buf,
 			      buf1,
 			      dflag,
-			      R_EXIT(room, j)->key == NOTHING ? "" : "QQ",
-			      R_EXIT(room, j)->key == NOTHING ? -1 : R_EXIT(room, j)->key % 100 ,
+			      key_tag,
+			      key_num,
 			      R_EXIT(room, j)->to_room == NOTHING ? "" : "QQ",
 			      R_EXIT(room, j)->to_room != NOTHING ? (world[R_EXIT(room, j)->to_room].number%100) : -1);
           else {
@@ -1078,8 +1163,8 @@ static int export_save_rooms(zone_rnum zrnum)
 			      buf,
 			      buf1,
 			      dflag,
-			      R_EXIT(room, j)->key == NOTHING ? "" : "QQ",
-			      R_EXIT(room, j)->key == NOTHING ? -1 : R_EXIT(room, j)->key % 100 ,
+			      key_tag,
+			      key_num,
 			      world[R_EXIT(room, j)->to_room].number%100);
           }
 	}
