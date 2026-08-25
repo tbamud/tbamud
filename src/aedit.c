@@ -577,7 +577,9 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
         return;
       }
       i = atoi(arg);
-      if ((i < POS_DEAD) && (i > POS_STANDING))  {
+      /* && can never hold: every integer typed here was accepted, and the
+       * menu then rendered position_types[] at it. */
+      if ((i < POS_DEAD) || (i > POS_STANDING))  {
         aedit_disp_menu(d);
         return;
       }
@@ -593,7 +595,8 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
         return;
       }
       i = atoi(arg);
-      if ((i < 0) && (i > LVL_IMPL))  {
+      /* Same broken guard as the two position prompts above. */
+      if ((i < 0) || (i > LVL_IMPL))  {
         aedit_disp_menu(d);
         return;
       }
