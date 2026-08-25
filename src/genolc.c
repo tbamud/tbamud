@@ -369,20 +369,38 @@ ACMD(do_export_zone)
     return;
   }
 
-  if (!(success = export_info_file(zrnum))) 
-    send_to_char(ch, "Info file not saved!\r\n"); 
-  if (!(success = export_save_shops(zrnum))) 
-    send_to_char(ch, "Shops not saved!\r\n"); 
-  if (!(success = export_save_mobiles(zrnum))) 
-    send_to_char(ch, "Mobiles not saved!\r\n"); 
-  if (!(success = export_save_objects(zrnum))) 
-    send_to_char(ch, "Objects not saved!\r\n"); 
-  if (!(success = export_save_zone(zrnum))) 
-    send_to_char(ch, "Zone info not saved!\r\n"); 
-  if (!(success = export_save_rooms(zrnum))) 
-    send_to_char(ch, "Rooms not saved!\r\n"); 
-  if (!(success = export_save_triggers(zrnum))) 
-    send_to_char(ch, "Triggers not saved!\r\n"); 
+  /* Every writer's result is kept: assigning to one `success` meant only
+   * the LAST one decided whether the archive was built, so a failure
+   * anywhere else was reported and then packaged anyway. */
+  success = TRUE;
+  if (!export_info_file(zrnum)) {
+    send_to_char(ch, "Info file not saved!\r\n");
+    success = FALSE;
+  }
+  if (!export_save_shops(zrnum)) {
+    send_to_char(ch, "Shops not saved!\r\n");
+    success = FALSE;
+  }
+  if (!export_save_mobiles(zrnum)) {
+    send_to_char(ch, "Mobiles not saved!\r\n");
+    success = FALSE;
+  }
+  if (!export_save_objects(zrnum)) {
+    send_to_char(ch, "Objects not saved!\r\n");
+    success = FALSE;
+  }
+  if (!export_save_zone(zrnum)) {
+    send_to_char(ch, "Zone info not saved!\r\n");
+    success = FALSE;
+  }
+  if (!export_save_rooms(zrnum)) {
+    send_to_char(ch, "Rooms not saved!\r\n");
+    success = FALSE;
+  }
+  if (!export_save_triggers(zrnum)) {
+    send_to_char(ch, "Triggers not saved!\r\n");
+    success = FALSE;
+  }
 
   /* If anything went wrong, don't try to tar the files. */ 
   if (success) { 
