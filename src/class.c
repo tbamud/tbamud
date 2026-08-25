@@ -73,8 +73,20 @@ bitvector_t find_class_bitvector(const char *arg)
 {
   size_t rpos, ret = 0;
 
-  for (rpos = 0; rpos < strlen(arg); rpos++)
-    ret |= (1 << parse_class(arg[rpos]));
+  for (rpos = 0; rpos < strlen(arg); rpos++) {
+    int chclass = parse_class(arg[rpos]);
+
+    /* parse_class() answers CLASS_UNDEFINED (-1) for a letter that names no
+     * class, and shifting by a negative count is undefined.  The compilers
+     * this has been built with mask the count and set bit 31, which no real
+     * class uses -- so `who -c x` and `users -c x` list nobody.  That is the
+     * sensible answer; keep it, with a bit that is actually reserved for it
+     * rather than one the shift happened to land on. */
+    if (chclass == CLASS_UNDEFINED)
+      ret |= CLASS_BIT_UNKNOWN;
+    else
+      ret |= (1 << chclass);
+  }
 
   return (ret);
 }
