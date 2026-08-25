@@ -983,7 +983,8 @@ void extract_char_final(struct char_data *ch)
       extract_script_mem(SCRIPT_MEM(ch));
   } else {
     save_char(ch);
-    Crash_delete_crashfile(ch);
+    if (GET_PFILEPOS(ch) >= 0)
+      Crash_delete_crashfile(ch);
   }
 
   /* If there's a descriptor, they're in the menu now. */
