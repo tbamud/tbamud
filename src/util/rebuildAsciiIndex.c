@@ -16,12 +16,14 @@ int atoi(const char *str);
 long atol(const char *str);
 
 
-void walkdir(FILE* index_file, char *dir);
+int walkdir(FILE* index_file, char *dir);
 int get_line(FILE *fl, char *buf);
 
 int main(int argc, char** argv)
 {
  	FILE *index_file;
+	int errors;
+
   if ( argc == 1 )	{
 	  printf("Usage: %s indexfile\n",argv[0]);
 	  return 0;
@@ -30,11 +32,12 @@ int main(int argc, char** argv)
     perror("error opening index file");
     return 1;
   }
-	walkdir(index_file, ".");
+
+  errors = walkdir(index_file, ".");
 
   fprintf(index_file, "~\n");
   fclose(index_file);
- 	return 0;
+	return errors ? 1 : 0;
 }
 
 char *parsename(char *filename) {
@@ -64,11 +67,21 @@ char *findLine(FILE *plr_file, char *tag) {
 }
 
 long parseid(FILE *plr_file) {
-	return atol(findLine(plr_file, "Id  :"));
+	char *fromFile = findLine(plr_file, "Id  :");
+
+	if (fromFile == NULL)
+		return -1;
+
+	return atol(fromFile);
 }
 
 int parselevel(FILE *plr_file) {
-	return atoi(findLine(plr_file, "Levl:"));
+	char *fromFile = findLine(plr_file, "Levl:");
+
+	if (fromFile == NULL)
+		return -1;
+
+	return atoi(fromFile);
 }
 
 int parseadminlevel(FILE *plr_file, int level) {
@@ -83,26 +96,35 @@ int parseadminlevel(FILE *plr_file, int level) {
 }
 
 long parselast(FILE *plr_file) {
-	return atol(findLine(plr_file, "Last:"));
+	char *fromFile = findLine(plr_file, "Last:");
+
+	if (fromFile == NULL)
+		return -1;
+
+	return atol(fromFile);
 }
 
 
-void walkdir(FILE *index_file, char *dir) {
+int walkdir(FILE *index_file, char *dir) {
  	char filename_qfd[1000] ;
 	struct dirent *dp;
  	DIR *dfd;
+	int errors = 0;
 
  	if ((dfd = opendir(dir)) == NULL)
  	{
 	  fprintf(stderr, "Can't open %s\n", dir);
-	  return;
+	  return 1;
  	}
+
  	while ((dp = readdir(dfd)) != NULL)
  	{
 	  struct stat stbuf ;
 	  sprintf( filename_qfd , "%s/%s",dir,dp->d_name) ;
+
 	  if( stat(filename_qfd,&stbuf ) == -1 ) {
    		fprintf(stdout, "Unable to stat file: %s\n",filename_qfd) ;
+		errors++;
    		continue ;
   	}
 
@@ -110,26 +132,65 @@ void walkdir(FILE *index_file, char *dir) {
 			if (!strcmp(".", dp->d_name) || !strcmp("..", dp->d_name))
    			continue;
 
-   		walkdir(index_file, filename_qfd);
+		errors += walkdir(index_file, filename_qfd);
   	} else {
 			char *name = parsename(dp->d_name);
 
 			if (name != NULL) {
   			FILE *plr_file = fopen(filename_qfd, "r");
- 				long id = parseid(plr_file);
 
-  			int level = parselevel(plr_file);
- 				int adminlevel = parseadminlevel(plr_file, level);
- 				if (level > 30)
- 					level = 30;
- 				long last = parselast(plr_file);
+			if (plr_file == NULL) {
+				perror(filename_qfd);
+				errors++;
+				continue;
+			}
 
- 				fprintf(index_file, "%ld %s %d %d 0 %ld\n", id, name, level, adminlevel, last);
+			long id = parseid(plr_file);
+			if (id < 0) {
+				fprintf(stderr,
+				        "Skipping %s: missing Id field\n",
+				        filename_qfd);
+				fclose(plr_file);
+				errors++;
+				continue;
+			}
+
+			int level = parselevel(plr_file);
+			if (level < 0) {
+				fprintf(stderr,
+				        "Skipping %s: missing Levl field\n",
+				        filename_qfd);
+				fclose(plr_file);
+				errors++;
+				continue;
+			}
+
+			long last = parselast(plr_file);
+			if (last < 0) {
+				fprintf(stderr,
+				        "Skipping %s: missing Last field\n",
+				        filename_qfd);
+				fclose(plr_file);
+				errors++;
+				continue;
+			}
+
+			int adminlevel = parseadminlevel(plr_file, level);
+
+			if (level > 30)
+				level = 30;
+
+			fprintf(index_file,
+			        "%ld %s %d %d 0 %ld\n",
+			        id, name, level, adminlevel, last);
 
         fclose(plr_file);
   		}
   	}
  	}
+
+	closedir(dfd);
+	return errors;
 }
 
 int get_line(FILE *fl, char *buf)
