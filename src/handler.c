@@ -797,7 +797,7 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
   obj->in_obj = obj_to;
 
   /* Add weight to container, unless unlimited. */
-  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
+  if (GET_OBJ_VAL(obj->in_obj, 0) > 0 || IS_CORPSE(obj->in_obj)) {
     for (tmp_obj = obj->in_obj; tmp_obj->in_obj; tmp_obj = tmp_obj->in_obj)
       GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
 
@@ -821,7 +821,7 @@ void obj_from_obj(struct obj_data *obj)
   REMOVE_FROM_LIST(obj, obj_from->contains, next_content);
 
   /* Subtract weight from containers container unless unlimited. */
-  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
+  if (GET_OBJ_VAL(obj->in_obj, 0) > 0 || IS_CORPSE(obj->in_obj)) {
     for (temp = obj->in_obj; temp->in_obj; temp = temp->in_obj)
       GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
 
