@@ -82,7 +82,11 @@ ACMD(do_oasis_qedit)
       if ((zlok = real_zone(GET_OLC_ZONE(ch))) == NOWHERE)
         number = NOWHERE;
       else
-        number = genolc_zone_bottom(zlok);
+        /* The lookup below resolves this as a zone NUMBER, so that is what
+         * the builder's assigned zone has to become here.  Handing it
+         * genolc_zone_bottom()'s vnum made every argument-less save fail
+         * with "Sorry, there is no zone for that number!". */
+        number = zone_table[zlok].number;
     }
 
     if (number == NOWHERE) {
@@ -134,7 +138,10 @@ ACMD(do_oasis_qedit)
   /****************************************************************************/
   /** Find the zone.                                                         **/
   /****************************************************************************/
-  if ((OLC_ZNUM(d) = real_zone_by_thing(number)) == NOWHERE) {
+  /* 'qedit save <n>' names a zone; 'qedit <n>' names a quest vnum.  The
+   * two need different lookups -- as the other five editors already do. */
+  if ((OLC_ZNUM(d) = save ? real_zone(number)
+                          : real_zone_by_thing(number)) == NOWHERE) {
     send_to_char(ch, "Sorry, there is no zone for that number!\r\n");
     free(d->olc);
     d->olc = NULL;

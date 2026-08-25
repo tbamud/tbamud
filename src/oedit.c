@@ -83,7 +83,11 @@ ACMD(do_oasis_oedit)
       if ((zlok = real_zone(GET_OLC_ZONE(ch))) == NOWHERE)
         number = NOWHERE;
       else
-        number = genolc_zone_bottom(zlok);
+        /* The lookup below resolves this as a zone NUMBER, so that is what
+         * the builder's assigned zone has to become here.  Handing it
+         * genolc_zone_bottom()'s vnum made every argument-less save fail
+         * with "Sorry, there is no zone for that number!". */
+        number = zone_table[zlok].number;
     }
 
     if (number == NOWHERE) {
