@@ -1393,7 +1393,12 @@ void setup_dir(FILE *fl, int room, int dir)
   int t[5];
   char line[READ_SIZE], buf2[128];
 
-  snprintf(buf2, sizeof(buf2), "room #%d, direction D%d", GET_ROOM_VNUM(room)+1, dir);
+  /* Not GET_ROOM_VNUM(room): top_of_world is not advanced to this room
+   * until its 'S' line is read, which happens after these D blocks, so
+   * the macro answers NOWHERE for every room but rnum 0 and the label
+   * reads "room #65536".  world[room].number was set by parse_room and
+   * is the vnum being read. */
+  snprintf(buf2, sizeof(buf2), "room #%d, direction D%d", world[room].number, dir);
 
   if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir)) {
     log("Warning: Diagonal direction disabled: %s", buf2);
