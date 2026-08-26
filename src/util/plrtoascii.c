@@ -187,7 +187,7 @@ void convert(char *filename)
     printf("writing: %s\n", outname);
 
     fprintf(index_file, "%ld %s %d 0 %ld\n", 
-	player.char_specials_saved.idnum, bits, player.level,
+	player.char_specials_saved.idnum, player.name, player.level,
 	(long)player.last_logon);
 
     if (!(outfile = fopen(outname, "w"))) {
