@@ -91,19 +91,25 @@ static int House_load(room_vnum vnum)
 int House_save(struct obj_data *obj, FILE *fp)
 {
   struct obj_data *tmp;
-  int result;
+  int result = TRUE;
 
   if (obj) {
-    House_save(obj->contains, fp);
-    House_save(obj->next_content, fp);
-    result = objsave_save_obj_record(obj, fp, 0);
-    if (!result)
-      return (0);
+    if (!House_save(obj->contains, fp))
+      result = FALSE;
+    if (!House_save(obj->next_content, fp))
+      result = FALSE;
+    if (!objsave_save_obj_record(obj, fp, 0))
+      result = FALSE;
 
+    /*
+     * Keep the temporary weight bookkeeping balanced even after a write
+     * failure so House_restore_weight() can always restore the live objects.
+     */
     for (tmp = obj->in_obj; tmp; tmp = tmp->in_obj)
       GET_OBJ_WEIGHT(tmp) -= GET_OBJ_WEIGHT(obj);
   }
-  return (1);
+
+  return result;
 }
 
 /* restore weight of containers after House_save has changed them for saving */
@@ -120,7 +126,7 @@ static void House_restore_weight(struct obj_data *obj)
 /* Save all objects in a house */
 void House_crashsave(room_vnum vnum)
 {
-  int rnum;
+  int rnum, result;
   char buf[MAX_STRING_LENGTH];
   FILE *fp;
 
@@ -132,12 +138,26 @@ void House_crashsave(room_vnum vnum)
     perror("SYSERR: Error saving house file");
     return;
   }
-  if (!House_save(world[rnum].contents, fp)) {
+
+  result = House_save(world[rnum].contents, fp);
+  House_restore_weight(world[rnum].contents);
+
+  if (!result) {
     fclose(fp);
     return;
   }
-  fclose(fp);
-  House_restore_weight(world[rnum].contents);
+
+  if (fflush(fp) == EOF || ferror(fp)) {
+    log("SYSERR: Error finalizing house file %s.", buf);
+    fclose(fp);
+    return;
+  }
+
+  if (fclose(fp) == EOF) {
+    log("SYSERR: Error closing house file %s.", buf);
+    return;
+  }
+
   REMOVE_BIT_AR(ROOM_FLAGS(rnum), ROOM_HOUSE_CRASH);
 }
 
