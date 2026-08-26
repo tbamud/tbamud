@@ -120,13 +120,20 @@ int walkdir(FILE *index_file, char *dir) {
  	while ((dp = readdir(dfd)) != NULL)
  	{
 	  struct stat stbuf ;
-	  sprintf( filename_qfd , "%s/%s",dir,dp->d_name) ;
+	  {
+	    int n = snprintf(filename_qfd, sizeof(filename_qfd), "%s/%s", dir, dp->d_name);
+	    if (n < 0 || n >= (int)sizeof(filename_qfd)) {
+	      fprintf(stderr, "Path too long: %s/%s\n", dir, dp->d_name);
+	      errors++;
+	      continue;
+	    }
+	  }
 
-	  if( stat(filename_qfd,&stbuf ) == -1 ) {
-   		fprintf(stdout, "Unable to stat file: %s\n",filename_qfd) ;
-		errors++;
-   		continue ;
-  	}
+	  if (stat(filename_qfd, &stbuf) == -1) {
+	    perror(filename_qfd);
+	    errors++;
+	    continue;
+	  }
 
   	if ( ( stbuf.st_mode & S_IFMT ) == S_IFDIR ) {
 			if (!strcmp(".", dp->d_name) || !strcmp("..", dp->d_name))
