@@ -46,7 +46,7 @@ static int Crash_is_unrentable(struct obj_data *obj);
 static void Crash_extract_norents(struct obj_data *obj);
 static void Crash_extract_expensive(struct obj_data *obj);
 static void Crash_calculate_rent(struct obj_data *obj, int *cost);
-static void Crash_cryosave(struct char_data *ch, int cost);
+static int Crash_cryosave(struct char_data *ch, int cost);
 static int Crash_load_objs(struct char_data *ch);
 static int handle_obj(struct obj_data *obj, struct char_data *ch, int locate, struct obj_data **cont_rows);
 static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch);
@@ -619,7 +619,7 @@ void Crash_crashsave(struct char_data *ch)
   REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
 }
 
-void Crash_idlesave(struct char_data *ch)
+int Crash_idlesave(struct char_data *ch)
 {
   char buf[MAX_INPUT_LENGTH];
   int j;
@@ -627,13 +627,13 @@ void Crash_idlesave(struct char_data *ch)
   FILE *fp;
 
   if (IS_NPC(ch))
-    return;
+    return FALSE;
 
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
-    return;
+    return FALSE;
 
   if (!(fp = fopen(buf, "w")))
-    return;
+    return FALSE;
 
   Crash_extract_norent_eq(ch);
   Crash_extract_norents(ch->carrying);
@@ -663,75 +663,104 @@ void Crash_idlesave(struct char_data *ch)
 
   if (ch->carrying == NULL) {
     for (j = 0; j < NUM_WEARS && GET_EQ(ch, j) == NULL; j++) /* Nothing */ ;
-    if (j == NUM_WEARS) {  /* No equipment or inventory. */
+    if (j == NUM_WEARS) {
       fclose(fp);
       Crash_delete_file(GET_NAME(ch));
-      return;
+      return TRUE;
     }
   }
 
-  if (!objsave_write_rentcode(fp, RENT_TIMEDOUT, cost, ch))
-  	return;
+  if (!objsave_write_rentcode(fp, RENT_TIMEDOUT, cost, ch)) {
+    fclose(fp);
+    return FALSE;
+  }
 
   for (j = 0; j < NUM_WEARS; j++) {
     if (GET_EQ(ch, j)) {
-      if (!Crash_save(GET_EQ(ch, j), fp, j + 1)) {
-        fclose(fp);
-        return;
-      }
+      int result = Crash_save(GET_EQ(ch, j), fp, j + 1);
+
       Crash_restore_weight(GET_EQ(ch, j));
-      Crash_extract_objs(GET_EQ(ch, j));
+      if (!result) {
+        fclose(fp);
+        return FALSE;
+      }
     }
   }
-  if (!Crash_save(ch->carrying, fp, 0)) {
-    fclose(fp);
-    return;
+
+  {
+    int result = Crash_save(ch->carrying, fp, 0);
+
+    Crash_restore_weight(ch->carrying);
+    if (!result) {
+      fclose(fp);
+      return FALSE;
+    }
   }
-  fprintf(fp, "$~\n");
-  fclose(fp);
+
+  if (!objsave_finish_file(fp))
+    return FALSE;
+
+  for (j = 0; j < NUM_WEARS; j++)
+    if (GET_EQ(ch, j))
+      Crash_extract_objs(GET_EQ(ch, j));
 
   Crash_extract_objs(ch->carrying);
+  return TRUE;
 }
 
-void Crash_rentsave(struct char_data *ch, int cost)
+int Crash_rentsave(struct char_data *ch, int cost)
 {
   char buf[MAX_INPUT_LENGTH];
   int j;
   FILE *fp;
 
   if (IS_NPC(ch))
-    return;
+    return FALSE;
 
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
-    return;
+    return FALSE;
 
   if (!(fp = fopen(buf, "w")))
-    return;
+    return FALSE;
 
   Crash_extract_norent_eq(ch);
   Crash_extract_norents(ch->carrying);
 
-  if (!objsave_write_rentcode(fp, RENT_RENTED, cost, ch))
-  	return;
+  if (!objsave_write_rentcode(fp, RENT_RENTED, cost, ch)) {
+    fclose(fp);
+    return FALSE;
+  }
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
-      if (!Crash_save(GET_EQ(ch,j), fp, j + 1)) {
-        fclose(fp);
-        return;
-      }
+      int result = Crash_save(GET_EQ(ch, j), fp, j + 1);
+
       Crash_restore_weight(GET_EQ(ch, j));
+      if (!result) {
+        fclose(fp);
+        return FALSE;
+      }
+    }
+
+  {
+    int result = Crash_save(ch->carrying, fp, 0);
+
+    Crash_restore_weight(ch->carrying);
+    if (!result) {
+      fclose(fp);
+      return FALSE;
+    }
+  }
+
+  if (!objsave_finish_file(fp))
+    return FALSE;
+
+  for (j = 0; j < NUM_WEARS; j++)
+    if (GET_EQ(ch, j))
       Crash_extract_objs(GET_EQ(ch, j));
 
-    }
-  if (!Crash_save(ch->carrying, fp, 0)) {
-    fclose(fp);
-    return;
-  }
-  fprintf(fp, "$~\n");
-  fclose(fp);
-
   Crash_extract_objs(ch->carrying);
+  return TRUE;
 }
 
 static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch)
@@ -752,47 +781,68 @@ static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, stru
 
 }
 
-static void Crash_cryosave(struct char_data *ch, int cost)
+static int Crash_cryosave(struct char_data *ch, int cost)
 {
   char buf[MAX_INPUT_LENGTH];
-  int j;
+  int j, old_gold;
   FILE *fp;
 
   if (IS_NPC(ch))
-    return;
+    return FALSE;
 
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
-    return;
+    return FALSE;
 
   if (!(fp = fopen(buf, "w")))
-    return;
+    return FALSE;
 
   Crash_extract_norent_eq(ch);
   Crash_extract_norents(ch->carrying);
 
+  old_gold = GET_GOLD(ch);
   GET_GOLD(ch) = MAX(0, GET_GOLD(ch) - cost);
 
-  if (!objsave_write_rentcode(fp, RENT_CRYO, 0, ch))
-  	return;
+  if (!objsave_write_rentcode(fp, RENT_CRYO, 0, ch)) {
+    fclose(fp);
+    GET_GOLD(ch) = old_gold;
+    return FALSE;
+  }
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j)) {
-      if (!Crash_save(GET_EQ(ch, j), fp, j + 1)) {
-        fclose(fp);
-        return;
-      }
+      int result = Crash_save(GET_EQ(ch, j), fp, j + 1);
+
       Crash_restore_weight(GET_EQ(ch, j));
-      Crash_extract_objs(GET_EQ(ch, j));
+      if (!result) {
+        fclose(fp);
+        GET_GOLD(ch) = old_gold;
+        return FALSE;
+      }
     }
-  if (!Crash_save(ch->carrying, fp, 0)) {
-    fclose(fp);
-    return;
+
+  {
+    int result = Crash_save(ch->carrying, fp, 0);
+
+    Crash_restore_weight(ch->carrying);
+    if (!result) {
+      fclose(fp);
+      GET_GOLD(ch) = old_gold;
+      return FALSE;
+    }
   }
-  fprintf(fp, "$~\n");
-  fclose(fp);
+
+  if (!objsave_finish_file(fp)) {
+    GET_GOLD(ch) = old_gold;
+    return FALSE;
+  }
+
+  for (j = 0; j < NUM_WEARS; j++)
+    if (GET_EQ(ch, j))
+      Crash_extract_objs(GET_EQ(ch, j));
 
   Crash_extract_objs(ch->carrying);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_CRYO);
+  return TRUE;
 }
 
 /* Routines used for the receptionist. */
@@ -952,20 +1002,28 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
       Crash_rent_deadline(ch, recep, cost);
 
     if (mode == RENT_FACTOR) {
-      act("$n stores your belongings and helps you into your private chamber.", FALSE, recep, 0, ch, TO_VICT);
-      Crash_rentsave(ch, cost);
-      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has rented (%d/day, %d tot.)",
-		GET_NAME(ch), cost, GET_GOLD(ch) + GET_BANK_GOLD(ch));
-    } else {			/* cryo */
-      act("$n stores your belongings and helps you into your private chamber.\r\n"
-	  "A white mist appears in the room, chilling you to the bone...\r\n"
-	  "You begin to lose consciousness...",
-	  FALSE, recep, 0, ch, TO_VICT);
-      Crash_cryosave(ch, cost);
-      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has cryo-rented.", GET_NAME(ch));
-      SET_BIT_AR(PLR_FLAGS(ch), PLR_CRYO);
-    }
+      if (!Crash_rentsave(ch, cost)) {
+        act("$n tells you, 'I was unable to store your belongings. Please try again.'",
+            FALSE, recep, 0, ch, TO_VICT);
+        return TRUE;
+      }
 
+      act("$n stores your belongings and helps you into your private chamber.", FALSE, recep, 0, ch, TO_VICT);
+      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has rented (%d/day, %d tot.)",
+                GET_NAME(ch), cost, GET_GOLD(ch) + GET_BANK_GOLD(ch));
+    } else {                    /* cryo */
+      if (!Crash_cryosave(ch, cost)) {
+        act("$n tells you, 'I was unable to store your belongings. Please try again.'",
+            FALSE, recep, 0, ch, TO_VICT);
+        return TRUE;
+      }
+
+      act("$n stores your belongings and helps you into your private chamber.\r\n"
+          "A white mist appears in the room, chilling you to the bone...\r\n"
+          "You begin to lose consciousness...",
+          FALSE, recep, 0, ch, TO_VICT);
+      mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(ch)), TRUE, "%s has cryo-rented.", GET_NAME(ch));
+    }
     act("$n helps $N into $S private chamber.", FALSE, recep, 0, ch, TO_NOTVICT);
 
     GET_LOADROOM(ch) = GET_ROOM_VNUM(IN_ROOM(ch));
