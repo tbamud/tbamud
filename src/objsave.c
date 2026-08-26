@@ -40,6 +40,7 @@ static void Crash_report_rent(struct char_data *ch, struct char_data *recep, str
 static int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, char *arg, int mode);
 static void Crash_rent_deadline(struct char_data *ch, struct char_data *recep, long cost);
 static void Crash_restore_weight(struct obj_data *obj);
+static int objsave_finish_file(FILE *fp);
 static void Crash_extract_objs(struct obj_data *obj);
 static int Crash_is_unrentable(struct obj_data *obj);
 static void Crash_extract_norents(struct obj_data *obj);
@@ -157,7 +158,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 
   extract_obj(temp);
 
-  return 1;
+  return !ferror(fp);
 }
 
 #undef TEST_OBJS
@@ -455,21 +456,38 @@ int Crash_load(struct char_data *ch)
 static int Crash_save(struct obj_data *obj, FILE *fp, int location)
 {
   struct obj_data *tmp;
-  int result;
+  int result = TRUE;
 
   if (obj) {
-    Crash_save(obj->next_content, fp, location);
-    Crash_save(obj->contains, fp, MIN(0, location) - 1);
+    if (!Crash_save(obj->next_content, fp, location))
+      result = FALSE;
+    if (!Crash_save(obj->contains, fp, MIN(0, location) - 1))
+      result = FALSE;
 
-    result = objsave_save_obj_record(obj, fp, location);
+    if (!objsave_save_obj_record(obj, fp, location))
+      result = FALSE;
 
     for (tmp = obj->in_obj; tmp; tmp = tmp->in_obj)
       GET_OBJ_WEIGHT(tmp) -= GET_OBJ_WEIGHT(obj);
-
-    if (!result)
-      return FALSE;
   }
-  return (TRUE);
+
+  return result;
+}
+
+static int objsave_finish_file(FILE *fp)
+{
+  int result = TRUE;
+
+  if (fprintf(fp, "$~\n") < 0)
+    result = FALSE;
+  if (fflush(fp) == EOF)
+    result = FALSE;
+  if (ferror(fp))
+    result = FALSE;
+  if (fclose(fp) == EOF)
+    result = FALSE;
+
+  return result;
 }
 
 static void Crash_restore_weight(struct obj_data *obj)
@@ -569,26 +587,35 @@ void Crash_crashsave(struct char_data *ch)
   if (!(fp = fopen(buf, "w")))
     return;
 
-  if (!objsave_write_rentcode(fp, RENT_CRASH, 0, ch))
-  	return;
-
-  for (j = 0; j < NUM_WEARS; j++)
-    if (GET_EQ(ch, j)) {
-      if (!Crash_save(GET_EQ(ch, j), fp, j + 1)) {
-        fclose(fp);
-        return;
-      }
-      Crash_restore_weight(GET_EQ(ch, j));
-    }
-
-  if (!Crash_save(ch->carrying, fp, 0)) {
+  if (!objsave_write_rentcode(fp, RENT_CRASH, 0, ch)) {
     fclose(fp);
     return;
   }
-  Crash_restore_weight(ch->carrying);
 
-  fprintf(fp, "$~\n");
-  fclose(fp);
+  for (j = 0; j < NUM_WEARS; j++)
+    if (GET_EQ(ch, j)) {
+      int result = Crash_save(GET_EQ(ch, j), fp, j + 1);
+
+      Crash_restore_weight(GET_EQ(ch, j));
+      if (!result) {
+        fclose(fp);
+        return;
+      }
+    }
+
+  {
+    int result = Crash_save(ch->carrying, fp, 0);
+
+    Crash_restore_weight(ch->carrying);
+    if (!result) {
+      fclose(fp);
+      return;
+    }
+  }
+
+  if (!objsave_finish_file(fp))
+    return;
+
   REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
 }
 
@@ -968,7 +995,6 @@ void Crash_save_all(void)
       if (PLR_FLAGGED(d->character, PLR_CRASH)) {
         Crash_crashsave(d->character);
         save_char(d->character);
-        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRASH);
       }
     }
   }
