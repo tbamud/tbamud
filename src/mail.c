@@ -25,9 +25,15 @@ static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman
 static void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
 static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
 static int mail_recip_ok(const char *name);
-static void write_mail_record(FILE *mail_file, struct mail_t *record);
+static int write_mail_record(FILE *mail_file, struct mail_t *record);
 static void free_mail_record(struct mail_t *record);
-static struct mail_t *read_mail_record(FILE *mail_file);
+static int read_mail_record(FILE *mail_file, struct mail_t **record);
+
+enum mail_read_result {
+  MAIL_READ_ERROR = -1,
+  MAIL_READ_EOF = 0,
+  MAIL_READ_RECORD = 1
+};
 
 static int mail_recip_ok(const char *name)
 {
@@ -47,40 +53,51 @@ static void free_mail_record(struct mail_t *record)
   free(record);
 }
 
-static struct mail_t *read_mail_record(FILE *mail_file)
+static int read_mail_record(FILE *mail_file, struct mail_t **record)
 {
   char line[READ_SIZE];
   long sender, recipient;
   time_t sent_time;
-  struct mail_t *record;
 
-  if (!get_line(mail_file, line))
-  	return NULL;
+  *record = NULL;
 
-  if (sscanf(line, "### %ld %ld %ld", &recipient, &sender, (long *)&sent_time) != 3) {
-  	log("Mail system - fatal error - malformed mail header");
-  	log("Line was: %s", line);
-  	return NULL;
+  if (!get_line(mail_file, line)) {
+    if (ferror(mail_file)) {
+      log("Mail system - error reading mail file");
+      return MAIL_READ_ERROR;
+    }
+
+    return MAIL_READ_EOF;
   }
 
-  CREATE(record, struct mail_t, 1);
+  if (sscanf(line, "### %ld %ld %ld",
+             &recipient, &sender, (long *)&sent_time) != 3) {
+    log("Mail system - fatal error - malformed mail header");
+    log("Line was: %s", line);
+    return MAIL_READ_ERROR;
+  }
 
-  record->recipient = recipient;
-  record->sender = sender;
-  record->sent_time = sent_time;
-  record->body = fread_string(mail_file, "read mail record");
+  CREATE(*record, struct mail_t, 1);
 
-  return record;
+  (*record)->recipient = recipient;
+  (*record)->sender = sender;
+  (*record)->sent_time = sent_time;
+  (*record)->body = fread_string(mail_file, "read mail record");
+
+  return MAIL_READ_RECORD;
 }
 
-static void write_mail_record(FILE *mail_file, struct mail_t *record)
+static int write_mail_record(FILE *mail_file, struct mail_t *record)
 {
-	fprintf(mail_file, "### %ld %ld %ld\n"
-	                   "%s~\n",
-                     record->recipient,
-                     record->sender,
-                     (long)record->sent_time,
-                     record->body );
+  if (fprintf(mail_file, "### %ld %ld %ld\n"
+                         "%s~\n",
+              record->recipient,
+              record->sender,
+              (long)record->sent_time,
+              record->body ? record->body : "") < 0)
+    return FALSE;
+
+  return !ferror(mail_file);
 }
 
 /* int scan_file(none)
@@ -91,7 +108,7 @@ static void write_mail_record(FILE *mail_file, struct mail_t *record)
 int scan_file(void)
 {
   FILE *mail_file;
-  int count = 0;
+  int count = 0, result;
   struct mail_t *record;
 
   if (!(mail_file = fopen(MAIL_FILE, "r"))) {
@@ -100,17 +117,20 @@ int scan_file(void)
     return TRUE;
   }
 
-  record = read_mail_record(mail_file);
-
-  while (record) {
+  while ((result = read_mail_record(mail_file, &record)) == MAIL_READ_RECORD) {
     free_mail_record(record);
-    record = read_mail_record(mail_file);
     count++;
   }
 
   fclose(mail_file);
- 	log("   Mail file read -- %d messages.", count);
- 	return TRUE;
+
+  if (result == MAIL_READ_ERROR) {
+    log("   Mail file is malformed.");
+    return FALSE;
+  }
+
+  log("   Mail file read -- %d messages.", count);
+  return TRUE;
 }
 
 /* int has_mail(long #1)
@@ -121,25 +141,31 @@ int scan_file(void)
 int has_mail(long recipient)
 {
   FILE *mail_file;
+  int result;
   struct mail_t *record;
 
   if (!(mail_file = fopen(MAIL_FILE, "r"))) {
-    perror("read_delete: Mail file not accessible.");
+    perror("has_mail: Mail file not accessible.");
     return FALSE;
   }
 
-  record = read_mail_record(mail_file);
-
-  while (record) {
-  	if (record->recipient == recipient) {
-  		free_mail_record(record);
-  		fclose(mail_file);
-  		return TRUE;
+  while ((result = read_mail_record(mail_file, &record)) == MAIL_READ_RECORD) {
+    if (record->recipient == recipient) {
+      free_mail_record(record);
+      fclose(mail_file);
+      return TRUE;
     }
+
     free_mail_record(record);
-    record = read_mail_record(mail_file);
   }
+
   fclose(mail_file);
+
+  if (result == MAIL_READ_ERROR) {
+    log("Mail system - could not complete mail lookup due to malformed data.");
+    no_mail = 1;
+  }
+
   return FALSE;
 }
 
@@ -181,60 +207,97 @@ void store_mail(long to, long from, char *message_pointer)
 char *read_delete(long recipient)
 {
   FILE *mail_file, *new_file;
-  struct mail_t *record, *record_to_keep = NULL;
+  struct mail_t *record = NULL, *record_to_keep = NULL;
   char buf[MAX_STRING_LENGTH];
+  int result;
 
   if (!(mail_file = fopen(MAIL_FILE, "r"))) {
     perror("read_delete: Mail file not accessible.");
-    return strdup("Mail system malfunction - please report this");
+    return NULL;
   }
 
   if (!(new_file = fopen(MAIL_FILE_TMP, "w"))) {
     perror("read_delete: new Mail file not accessible.");
     fclose(mail_file);
-    return strdup("Mail system malfunction - please report this");
+    return NULL;
   }
 
-  record = read_mail_record(mail_file);
-
-  while (record) {
-  	if (!record_to_keep && record->recipient == recipient) {
-  		record_to_keep = record;
-  		record = read_mail_record(mail_file);
-  		continue; /* don't write and free this one just yet */
+  while ((result = read_mail_record(mail_file, &record)) == MAIL_READ_RECORD) {
+    if (!record_to_keep && record->recipient == recipient) {
+      record_to_keep = record;
+      record = NULL;
+      continue;
     }
-    write_mail_record(new_file, record);
+
+    if (!write_mail_record(new_file, record)) {
+      log("Mail system - error writing temporary mail file");
+      free_mail_record(record);
+      record = NULL;
+      result = MAIL_READ_ERROR;
+      break;
+    }
+
     free_mail_record(record);
-    record = read_mail_record(mail_file);
+    record = NULL;
   }
 
-  if (!record_to_keep)
-  	sprintf(buf, "Mail system error - please report");
-  else {
+  if (result == MAIL_READ_ERROR) {
+    if (record)
+      free_mail_record(record);
+    if (record_to_keep)
+      free_mail_record(record_to_keep);
+
+    fclose(mail_file);
+    fclose(new_file);
+    return NULL;
+  }
+
+  if (!record_to_keep) {
+    fclose(mail_file);
+    fclose(new_file);
+    return NULL;
+  }
+
+  if (fflush(new_file) == EOF || ferror(new_file)) {
+    log("Mail system - error finalizing temporary mail file");
+    free_mail_record(record_to_keep);
+    fclose(mail_file);
+    fclose(new_file);
+    return NULL;
+  }
+
+  if (fclose(new_file) == EOF) {
+    log("Mail system - error closing temporary mail file");
+    free_mail_record(record_to_keep);
+    fclose(mail_file);
+    return NULL;
+  }
+
+  fclose(mail_file);
+
+  {
     char timestr[25], *from, *to;
 
-    strftime(timestr, sizeof(timestr), "%c", localtime(&(record_to_keep->sent_time)));
+    strftime(timestr, sizeof(timestr), "%c",
+             localtime(&(record_to_keep->sent_time)));
 
     from = get_name_by_id(record_to_keep->sender);
     to = get_name_by_id(record_to_keep->recipient);
 
- 		snprintf(buf, sizeof(buf),
+    snprintf(buf, sizeof(buf),
              " * * * * tbaMUD Mail System * * * *\r\n"
              "Date: %s\r\n"
              "To  : %s\r\n"
              "From: %s\r\n"
              "\r\n"
              "%s",
-
              timestr,
              to ? to : "Unknown",
              from ? from : "Unknown",
-             record_to_keep->body ? record_to_keep->body : "No message" );
-
-    free_mail_record(record_to_keep);
+             record_to_keep->body ? record_to_keep->body : "No message");
   }
-  fclose(mail_file);
-  fclose(new_file);
+
+  free_mail_record(record_to_keep);
 
   remove(MAIL_FILE);
   rename(MAIL_FILE_TMP, MAIL_FILE);
@@ -353,9 +416,13 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
     GET_OBJ_RENT(obj) = 10;
     obj->action_description = read_delete(GET_IDNUM(ch));
 
-    if (obj->action_description == NULL)
-      obj->action_description =
-	strdup("Mail system error - please report.  Error #11.\r\n");
+    if (obj->action_description == NULL) {
+      extract_obj(obj);
+      no_mail = 1;
+      act("$n tells you, 'The mail system encountered a problem. Please report it.'",
+          FALSE, mailman, 0, ch, TO_VICT);
+      break;
+    }
 
     obj_to_char(obj, ch);
 
