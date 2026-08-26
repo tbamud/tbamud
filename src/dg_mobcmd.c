@@ -300,7 +300,7 @@ ACMD(do_mlog)
     p = argument;
     skip_spaces(&p);
 
-    mob_log(ch, p);
+    mob_log(ch, "%s", p);
 
 }
 
