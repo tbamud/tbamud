@@ -400,8 +400,12 @@ void qedit_parse(struct descriptor_data *d, char *arg)
           mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
      "OLC: %s edits quest %d", GET_NAME(d->character), OLC_NUM(d));
           if (CONFIG_OLC_SAVE) {
-            qedit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
-            write_to_output(d, "Quest %d saved to disk.\r\n", OLC_NUM(d));
+            if (qedit_save_to_disk(real_zone_by_thing(OLC_NUM(d))))
+              write_to_output(d, "Quest %d saved to disk.\r\n", OLC_NUM(d));
+            else
+              write_to_output(d,
+                "Unable to save quest %d to disk. Changes remain marked for saving.\r\n",
+                OLC_NUM(d));
           } else
             write_to_output(d, "Quest %d saved to memory.\r\n", OLC_NUM(d));
           cleanup_olc(d, CLEANUP_STRUCTS);
@@ -425,8 +429,10 @@ void qedit_parse(struct descriptor_data *d, char *arg)
    else
             write_to_output(d, "Couldn't delete the quest!\r\n");
           if (CONFIG_OLC_SAVE) {
-            qedit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
-            write_to_output(d, "Quest file saved to disk.\r\n");
+            if (qedit_save_to_disk(real_zone_by_thing(OLC_NUM(d))))
+              write_to_output(d, "Quest file saved to disk.\r\n");
+            else
+              write_to_output(d, "Unable to save quest file to disk.\r\n");
           } else
             write_to_output(d, "Quest file saved to memory.\r\n");
           cleanup_olc(d, CLEANUP_ALL);
