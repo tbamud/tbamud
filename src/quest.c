@@ -444,7 +444,7 @@ void check_timed_quests(void)
 
   for (ch = character_list; ch; ch = ch->next)
     if (!IS_NPC(ch) && (GET_QUEST(ch) != NOTHING) && (GET_QUEST_TIME(ch) != -1))
-      if (--GET_QUEST_TIME(ch) == 0)
+      if (GET_QUEST_TIME(ch) <= 0 || --GET_QUEST_TIME(ch) == 0)
         quest_timeout(ch);
 }
 

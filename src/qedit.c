@@ -672,6 +672,11 @@ void qedit_parse(struct descriptor_data *d, char *arg)
         break;
       }
     case QEDIT_TIMELIMIT:
+      if (number == 0) {
+        write_to_output(d, "Time limit must be -1 for none or between 1 and 100.\r\n"
+                           "Enter time limit to complete (-1 for none) : ");
+        return;
+      }
       OLC_QUEST(d)->value[4] = LIMIT(number, -1, 100);
       break;
     case QEDIT_RETURNMOB:
