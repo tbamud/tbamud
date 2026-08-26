@@ -79,40 +79,116 @@ void free_quest(struct aq_data *quest)
 
 /*-------------------------------------------------------------------*/
 
+static SPECIAL (*questmaster_secondary(mob_vnum qm))
+{
+  qst_rnum i;
+
+  for (i = 0; i < total_quests; i++)
+    if (QST_MASTER(i) == qm && QST_FUNC(i))
+      return QST_FUNC(i);
+
+  return NULL;
+}
+
+static void questmaster_set_secondary(mob_vnum qm, SPECIAL (*func))
+{
+  qst_rnum i;
+
+  for (i = 0; i < total_quests; i++)
+    if (QST_MASTER(i) == qm)
+      QST_FUNC(i) = func;
+}
+
+static int questmaster_quest_count(mob_vnum qm)
+{
+  qst_rnum i;
+  int count = 0;
+
+  for (i = 0; i < total_quests; i++)
+    if (QST_MASTER(i) == qm)
+      count++;
+
+  return count;
+}
+
 int add_quest(struct aq_data *nqst)
 {
   qst_rnum rnum;
-  mob_rnum qmrnum;
+  mob_rnum qmrnum, old_qmrnum;
+  mob_vnum old_qm = NOBODY;
   zone_rnum rznum = real_zone_by_thing(nqst->vnum);
+  SPECIAL (*old_func) = NULL;
+  SPECIAL (*secondary) = NULL;
 
-  /* The quest already exists, just update it.  */
+  /* The quest already exists, just update it. */
   if ((rnum = real_quest(nqst->vnum)) != NOWHERE) {
+    old_qm = QST_MASTER(rnum);
+    old_func = QST_FUNC(rnum);
+
+    if (!old_func && old_qm != NOBODY)
+      old_func = questmaster_secondary(old_qm);
+
     copy_quest(&aquest_table[rnum], nqst, TRUE);
+
+    /*
+     * func is runtime questmaster state, not authored quest data.  Recompute
+     * it below instead of carrying the old master's value through an edit.
+     */
+    QST_FUNC(rnum) = NULL;
   } else {
     /* increase the number of quest table entries */
     total_quests++;
-    RECREATE(aquest_table, struct aq_data, total_quests );
+    RECREATE(aquest_table, struct aq_data, total_quests);
     /* Initialise top quest strings to null */
     QST_NAME(total_quests - 1) = NULL;
     QST_DESC(total_quests - 1) = NULL;
     QST_INFO(total_quests - 1) = NULL;
     QST_DONE(total_quests - 1) = NULL;
     QST_QUIT(total_quests - 1) = NULL;
-    /* Now process enties from the top down to see where the new one goes */
+    /* Process entries from the top down to see where the new one goes. */
     for (rnum = total_quests - 1; rnum > 0; rnum--) {
       if (nqst->vnum > QST_NUM(rnum - 1))
-        break; //found the place
-      aquest_table[rnum] = aquest_table[rnum - 1]; //shift quest up one
+        break;
+      aquest_table[rnum] = aquest_table[rnum - 1];
     }
     copy_quest(&aquest_table[rnum], nqst, FALSE);
+    QST_FUNC(rnum) = NULL;
   }
+
+  /*
+   * If an edited quest moved away from its previous master, restore that
+   * mob's original special when it no longer has quests.
+   */
+  if (old_qm != NOBODY && old_qm != QST_MASTER(rnum)) {
+    if (questmaster_quest_count(old_qm) == 0) {
+      old_qmrnum = real_mobile(old_qm);
+      if (old_qmrnum != NOBODY)
+        mob_index[old_qmrnum].func = old_func;
+    } else {
+      questmaster_set_secondary(old_qm, old_func);
+    }
+  }
+
   qmrnum = real_mobile(QST_MASTER(rnum));
-  /* Make sure we assign spec procs to the questmaster */
-  if (qmrnum != NOBODY && mob_index[qmrnum].func &&
-     mob_index[qmrnum].func != questmaster)
-     QST_FUNC(rnum) = mob_index[qmrnum].func;
-  if(qmrnum != NOBODY) 
+
+  if (qmrnum != NOBODY) {
+    /*
+     * Reuse the established secondary proc when this mob already has quests.
+     * If this is its first quest, preserve the mob's current special instead.
+     */
+    if (old_qm == QST_MASTER(rnum))
+      secondary = old_func;
+    else
+      secondary = questmaster_secondary(QST_MASTER(rnum));
+
+    if (!secondary && mob_index[qmrnum].func != questmaster)
+      secondary = mob_index[qmrnum].func;
+
+    questmaster_set_secondary(QST_MASTER(rnum), secondary);
     mob_index[qmrnum].func = questmaster;
+  } else {
+    QST_FUNC(rnum) = NULL;
+  }
 
   /* And make sure we save the updated quest information to disk */
   if (rznum != NOWHERE)
@@ -133,42 +209,54 @@ int delete_quest(qst_rnum rnum)
   mob_vnum qm = QST_MASTER(rnum);
   mob_rnum qmrnum;
   SPECIAL (*tempfunc);
-  int  quests_remaining = 0;
+  int quests_remaining = 0;
 
   if (rnum >= total_quests)
     return FALSE;
-  rznum = real_zone_by_thing(QST_NUM(rnum)); 
+
+  rznum = real_zone_by_thing(QST_NUM(rnum));
+
   log("GenOLC: delete_quest: Deleting quest #%d (%s).",
        QST_NUM(rnum), QST_NAME(rnum));
-  /* make a note of the quest master's secondary spec proc */
-  tempfunc = QST_FUNC(rnum);
 
+  /* Remember the questmaster's original secondary spec proc. */
+  tempfunc = QST_FUNC(rnum);
+  if (!tempfunc && qm != NOBODY)
+    tempfunc = questmaster_secondary(qm);
 
   free_quest_strings(&aquest_table[rnum]);
-  for (i = rnum; i < total_quests - 1; i++) {
+
+  for (i = rnum; i < total_quests - 1; i++)
     aquest_table[i] = aquest_table[i + 1];
-  }
+
   total_quests--;
+
   if (total_quests > 0)
     RECREATE(aquest_table, struct aq_data, total_quests);
   else {
     free(aquest_table);
-    aquest_table = NULL; 
-   }
+    aquest_table = NULL;
+  }
+
   if (rznum != NOWHERE)
-     add_to_save_list(zone_table[rznum].number, SL_QST);
+    add_to_save_list(zone_table[rznum].number, SL_QST);
   else
     mudlog(BRF, LVL_BUILDER, TRUE,
            "SYSERR: GenOLC: Cannot determine quest zone.");
-  /* does the questmaster mob have any quests left? */
+
   if (qm != NOBODY) {
-    for (i = 0; i < total_quests; i++) {
-      if (QST_MASTER(i) == qm)
-        quests_remaining++;
+    quests_remaining = questmaster_quest_count(qm);
+
+    if ((qmrnum = real_mobile(qm)) != NOBODY) {
+      if (quests_remaining == 0)
+        mob_index[qmrnum].func = tempfunc;
+      else {
+        questmaster_set_secondary(qm, tempfunc);
+        mob_index[qmrnum].func = questmaster;
+      }
     }
-    if (quests_remaining == 0 && (qmrnum = real_mobile(qm)) != NOBODY)
-      mob_index[qmrnum].func = tempfunc; // point back to original spec proc
   }
+
   return TRUE;
 }
 
