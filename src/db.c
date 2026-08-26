@@ -1263,6 +1263,38 @@ void ensure_newline_terminated(struct extra_descr_data* new_descr) {
   }
 }
 
+/* A scanf field width bounds the STORE, not the SCAN.  Given a token longer
+ * than the width, %<n>s copies n characters, appends the NUL -- and leaves
+ * the read position inside the token.  The whitespace directive that follows
+ * matches zero characters there, so the NEXT conversion picks up the rest of
+ * the same token as if it were the next field.  Everything after it shifts
+ * along by one and the conversion count still reaches its total, so the
+ * caller's `retval == 6` test sees a perfectly ordinary line and loads a
+ * room whose sector type used to be half of its flags.
+ *
+ * Bounding the buffers stopped the overflow; it did not stop that.  So
+ * refuse the line before it is parsed: no legal field in a world file is
+ * this long, and a file that carries one is not one we can read correctly.
+ * Checked per whitespace-separated token, so it covers the numeric fields
+ * on the same line as well. */
+static int line_has_overlong_field(const char *line)
+{
+  const char *p = line;
+
+  while (*p) {
+    size_t run = 0;
+
+    while (*p && isspace((unsigned char)*p))
+      p++;
+    while (p[run] && !isspace((unsigned char)p[run]))
+      run++;
+    if (run > WORLD_FLAG_FIELD)
+      return TRUE;
+    p += run;
+  }
+  return FALSE;
+}
+
 /* load the rooms */
 void parse_room(FILE *fl, int virtual_nr)
 {
@@ -1294,6 +1326,12 @@ void parse_room(FILE *fl, int virtual_nr)
   if (!get_line(fl, line)) {
     log("SYSERR: Expecting roomflags/sector type of room #%d but file ended!",
 	virtual_nr);
+    exit(1);
+  }
+
+  if (line_has_overlong_field(line)) {
+    log("SYSERR: Room #%d has a field longer than %d characters.",
+	virtual_nr, WORLD_FLAG_FIELD);
     exit(1);
   }
 
@@ -1789,6 +1827,12 @@ void parse_mobile(FILE *mob_f, int nr)
   if (!get_line(mob_f, line)) {
     log("SYSERR: Format error after string section of mob #%d\n"
 	"...expecting line of form '# # # {S | E}', but file ended!", nr);
+    exit(1);
+  }
+
+  if (line_has_overlong_field(line)) {
+    log("SYSERR: Mob #%d has a field longer than %d characters.",
+	nr, WORLD_FLAG_FIELD);
     exit(1);
   }
 
