@@ -54,7 +54,9 @@ typedef signed char sbyte;
 typedef unsigned char ubyte;
 typedef signed short int sh_int;
 typedef unsigned short int ush_int;
+#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 202311L
 typedef char bool;
+#endif
 typedef char byte;
 
 typedef int room_num;
@@ -514,10 +516,11 @@ char *fread_string(FILE * fl, char *error)
  */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
 
   do {
-    buf2 = fgets(temp, 256, fl);
+    /* Result deliberately unexamined, as before. */
+    if (fgets(temp, 256, fl) == NULL) { }
     if (*temp)
       temp[strlen(temp) - 1] = '\0';
   } while (!feof(fl) && (*temp == '*' || !*temp));

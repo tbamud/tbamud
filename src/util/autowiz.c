@@ -268,11 +268,12 @@ char *CAP(char *txt)
  * file. */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
   int lines = 0;
 
   do {
-    buf2 = fgets(temp, 256, fl);
+    /* Result deliberately unexamined: feof() below is the existing check. */
+    if (fgets(temp, 256, fl) == NULL) { }
     if (feof(fl))
       return (0);
     lines++;

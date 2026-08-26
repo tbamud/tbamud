@@ -71,11 +71,15 @@ typedef struct descriptor_data descriptor_t;
  Types.
  ******************************************************************************/
 
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L
+typedef bool bool_t; /* C23: false/true are keywords, not enum constants. */
+#else
 typedef enum
 {
    false, 
    true
 } bool_t;
+#endif
 
 typedef enum
 {
