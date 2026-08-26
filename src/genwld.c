@@ -273,6 +273,7 @@ int delete_room(room_rnum rnum)
 	  ZCMD(i, j).arg1 -= (ZCMD(i, j).arg1 != NOWHERE); /* with unsigned NOWHERE > any rnum */
 	  zone_touched = TRUE;
 	}
+	break;
       case 'G':
       case 'P':
       case 'E':

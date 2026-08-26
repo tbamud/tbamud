@@ -231,6 +231,17 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   SCRIPT(room) = NULL;
 }
 
+/* redit records "the builder never filled this in" three different ways.
+ * A field never visited is NULL.  One visited and left blank comes back
+ * from str_udup() (genolc.c) as the literal string "undefined", because
+ * that is what it substitutes for empty input.  The string editor can
+ * leave an empty string.  All three mean the same thing to the exit
+ * pruning below, and only the first of them is a null pointer. */
+static int exit_field_unset(const char *text)
+{
+  return text == NULL || *text == '\0' || !strcmp(text, "undefined");
+}
+
 void redit_save_internally(struct descriptor_data *d)
 {
   int j, room_num, new_room = FALSE;
@@ -250,12 +261,23 @@ void redit_save_internally(struct descriptor_data *d)
    * bake "0 0 -1" into the world file.  Drop the ones the builder never
    * filled in.  An exit with a description, a keyword or door flags is kept
    * even when it leads nowhere: that is the idiom for a direction you can
-   * look at but not walk through. */
+   * look at but not walk through.
+   *
+   * The fields are tested with exit_field_unset() rather than against NULL,
+   * because opening the keyword prompt and pressing return does not leave a
+   * null pointer -- str_udup() turns empty input into the string
+   * "undefined", which is not a keyword anybody typed and not one the
+   * builder wants written to the world file.  Testing NULL alone kept the
+   * exit in the commonest way of creating a blank one. */
   for (j = 0; j < DIR_COUNT; j++) {
     struct room_direction_data *exit = OLC_ROOM(d)->dir_option[j];
 
     if (exit && exit->to_room == NOWHERE && exit->exit_info == 0 &&
-        exit->keyword == NULL && exit->general_description == NULL) {
+        exit_field_unset(exit->keyword) &&
+        exit_field_unset(exit->general_description)) {
+      /* Now that a dropped exit can carry strings, they go with it. */
+      free(exit->keyword);
+      free(exit->general_description);
       free(exit);
       OLC_ROOM(d)->dir_option[j] = NULL;
     }

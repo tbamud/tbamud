@@ -220,8 +220,12 @@ int delete_mobile(mob_rnum refpt)
   /* Flag rather than write: medit's delete branch decides whether this
    * goes to disk now, honouring CONFIG_OLC_SAVE like every other OLC
    * change.  With the toggle off it waits for a saveall, as it should. */
-  if (real_zone_by_thing(vnum) != NOWHERE)
-    add_to_save_list(zone_table[real_zone_by_thing(vnum)].number, SL_MOB);
+  {
+    zone_rnum zrnum = real_zone_by_thing(vnum);
+
+    if (zrnum != NOWHERE)
+      add_to_save_list(zone_table[zrnum].number, SL_MOB);
+  }
 
   return refpt;
 }
