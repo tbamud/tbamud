@@ -180,7 +180,7 @@ static void DG_SYNTAX_PRINTF(4, 5) report_syntax_error(
     }
 
     if (*error_count == 0) {
-        write_to_output(d, "\tOProblems found in the script:\r\n\n");
+        write_to_output(d, "\tOProblems found in the script:\r\n\r\n");
     }
 
     va_start(args, format);
