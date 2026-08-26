@@ -971,14 +971,18 @@ int is_abbrev(const char *arg1, const char *arg2)
 }
 
 /* Return first space-delimited token in arg1; remainder of string in arg2.
- * NOTE: Requires sizeof(arg2) >= sizeof(string) */
+ * NOTE: Requires sizeof(arg2) >= sizeof(string)
+ * NOTE: arg2 may alias string -- half_chop(buf, arg, buf) is how most of the
+ *       tree consumes a line one token at a time -- so the remainder is moved
+ *       with memmove().  arg1 must NOT alias string; any_one_arg() writes it
+ *       while still reading. */
 void half_chop(char *string, char *arg1, char *arg2)
 {
   char *temp;
 
   temp = any_one_arg(string, arg1);
   skip_spaces(&temp);
-  strcpy(arg2, temp);	/* strcpy: OK (documentation) */
+  memmove(arg2, temp, strlen(temp) + 1);	/* memmove: arg2 may alias string */
 }
 
 /* Used in specprocs, mostly.  (Exactly) matches "command" to cmd number */

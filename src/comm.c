@@ -1622,7 +1622,8 @@ static int process_output(struct descriptor_data *t)
 
   } else {
     /* Not all data in buffer sent.  result < output buffersize. */
-    strcpy(t->output, t->output + result);	/* strcpy: OK (overlap) */
+    memmove(t->output, t->output + result,
+	    strlen(t->output + result) + 1);	/* memmove: the copy overlaps */
     t->bufptr   -= result;
     t->bufspace += result;
   }
