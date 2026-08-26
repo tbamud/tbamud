@@ -217,7 +217,20 @@ void walkdir(FILE *index_file, char *dir) {
 
       if (name != NULL) {
         /* Grab the data from the mail file and throw it in the index */
-        mail_file = fopen(filename_qfd, "r");
+        if ((mail_file = fopen(filename_qfd, "r")) == NULL) {
+          fprintf(stderr, "Unable to open mail file %s: ", filename_qfd);
+          perror("");
+          continue;
+        }
+
+        if (findLine(mail_file, "MlID:") == NULL ||
+            findLine(mail_file, "Send:") == NULL ||
+            findLine(mail_file, "Reci:") == NULL ||
+            findLine(mail_file, "Sent:") == NULL) {
+          fprintf(stderr, "Skipping malformed mail file: %s\n", filename_qfd);
+          fclose(mail_file);
+          continue;
+        }
 
         id        = parse_mailid(mail_file);
         sender    = parse_sender(mail_file);
