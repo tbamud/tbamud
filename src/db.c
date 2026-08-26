@@ -1268,8 +1268,9 @@ void parse_room(FILE *fl, int virtual_nr)
 {
   static int room_nr = 0, zone = 0;
   int t[10], i, retval;
-  char line[READ_SIZE], flags[128], flags2[128], flags3[128];
-  char flags4[128], buf2[MAX_STRING_LENGTH], buf[128];
+  char line[READ_SIZE], flags[WORLD_FLAG_FIELD + 1];
+  char flags2[WORLD_FLAG_FIELD + 1], flags3[WORLD_FLAG_FIELD + 1];
+  char flags4[WORLD_FLAG_FIELD + 1], buf2[MAX_STRING_LENGTH], buf[128];
   struct extra_descr_data *new_descr;
   char letter;
 
@@ -1296,7 +1297,8 @@ void parse_room(FILE *fl, int virtual_nr)
     exit(1);
   }
 
-  if (((retval = sscanf(line, " %d %s %s %s %s %d ", t, flags, flags2, flags3, flags4, t + 2)) == 3) && (bitwarning == TRUE)) {
+  if (((retval = sscanf(line, " %d " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT
+                       " " FLAG_FIELD_FMT " %d ", t, flags, flags2, flags3, flags4, t + 2)) == 3) && (bitwarning == TRUE)) {
     log("WARNING: Conventional world files detected. See config.c.");
     exit(1);
   } else if ((retval == 3) && (bitwarning == FALSE)) {
@@ -1755,7 +1757,10 @@ void parse_mobile(FILE *mob_f, int nr)
   static int i = 0;
   int j, t[10], retval;
   char line[READ_SIZE], *tmpptr, letter;
-  char f1[128], f2[128], f3[128], f4[128], f5[128], f6[128], f7[128], f8[128], buf2[128];
+  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
+  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1];
+  char f5[WORLD_FLAG_FIELD + 1], f6[WORLD_FLAG_FIELD + 1];
+  char f7[WORLD_FLAG_FIELD + 1], f8[WORLD_FLAG_FIELD + 1], buf2[128];
 
   mob_index[i].vnum = nr;
   mob_index[i].number = 0;
@@ -1787,7 +1792,9 @@ void parse_mobile(FILE *mob_f, int nr)
     exit(1);
   }
 
-  if (((retval = sscanf(line, "%s %s %s %s %s %s %s %s %d %c", f1, f2, f3, f4, f5, f6, f7, f8, t + 2, &letter)) != 10) && (bitwarning == TRUE)) {
+  if (((retval = sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT
+                       " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT
+                       " %d %c", f1, f2, f3, f4, f5, f6, f7, f8, t + 2, &letter)) != 10) && (bitwarning == TRUE)) {
     /* Let's make the implementor read some, before converting his world files. */
     log("WARNING: Conventional mobile files detected. See config.c.");
     exit(1);

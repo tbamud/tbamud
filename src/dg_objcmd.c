@@ -160,7 +160,7 @@ static OCMD(do_olog)
   skip_spaces(&argument);
 
   if (*argument)
-    obj_log(obj, argument);
+    obj_log(obj, "%s", argument);
 }
 
 static OCMD(do_oforce)

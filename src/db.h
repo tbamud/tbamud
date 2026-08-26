@@ -130,6 +130,13 @@
 /* END: Assumed default locations for logfiles, mainly used in do_file. */
 
 #define CONFIG_FILE	LIB_ETC"config"    /* OasisOLC * GAME CONFIG FL */
+
+/** Longest single flag field a world file may carry.  The arrays that
+ * receive these fields are sized from it, and so are the scanf widths that
+ * bound them -- see SCANF_WIDTH in utils.h. */
+#define WORLD_FLAG_FIELD  127
+/** One bounded flag field, for the world-file parsers. */
+#define FLAG_FIELD_FMT    "%" SCANF_WIDTH(WORLD_FLAG_FIELD) "s"
 #define PLAYER_FILE	LIB_ETC"players"   /* the player database	*/
 #define MAIL_FILE	LIB_ETC"plrmail"   /* for the mudmail system	*/
 #define MAIL_FILE_TMP	LIB_ETC"plrmail_tmp"   /* for the mudmail system	*/

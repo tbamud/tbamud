@@ -122,7 +122,7 @@ WCMD(do_wlog)
   if (!*argument)
     return;
 
-  wld_log(room, argument);
+  wld_log(room, "%s", argument);
 }
 
 WCMD(do_wsend)
