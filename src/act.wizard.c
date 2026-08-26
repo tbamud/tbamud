@@ -2252,10 +2252,10 @@ ACMD(do_wiznet)
   }
   if (level > LVL_IMMORT) {
     snprintf(buf1, sizeof(buf1), "\tc%s: <%d> %s%s\tn\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "\tcSomeone: <%d> %s%s\tn\r\n", level, emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf2), "\tcSomeone: <%d> %s%s\tn\r\n", level, emote ? "<--- " : "", argument);
 } else {
     snprintf(buf1, sizeof(buf1), "\tc%s: %s%s\tn\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf1), "\tcSomeone: %s%s\tn\r\n", emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf2), "\tcSomeone: %s%s\tn\r\n", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
