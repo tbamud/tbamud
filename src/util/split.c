@@ -51,7 +51,7 @@ int main(void)
       }
       if (!(outfile = fopen((line + 1), "a"))) {
 	perror("Error opening output file");
-	exit(0);
+	exit(1);
       }
       fputs(line + 1, index);
       fputs("\n", index);
