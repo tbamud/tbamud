@@ -2870,6 +2870,45 @@ static void msdp_update( void )
           MSDPSetString( d, eMSDP_OPPONENT_NAME, "" ); 
       }
 
+      /* Where the player is. The variable table has always advertised
+       * these four as reportable, but nothing ever set them, so a client
+       * that asked for them waited forever and every mapper was pushed
+       * back onto scraping the room description out of the scroll.
+       */
+      if ( IN_ROOM(ch) != NOWHERE )
+      {
+          char exits[MAX_INPUT_LENGTH];
+          size_t exit_len = 0;
+          int door;
+
+          MSDPSetString( d, eMSDP_ROOM_NAME, world[IN_ROOM(ch)].name );
+          MSDPSetNumber( d, eMSDP_ROOM_VNUM, GET_ROOM_VNUM(IN_ROOM(ch)) );
+          MSDPSetString( d, eMSDP_AREA_NAME,
+              zone_table[GET_ROOM_ZONE(IN_ROOM(ch))].name );
+
+          /* A table of direction -> destination vnum, holding exactly the
+           * exits the autoexit line would show this character: closed doors
+           * only where the game displays them, hidden ones only to holylight.
+           * A mapper must not learn a door the player cannot see.
+           */
+          *exits = '\0';
+          for ( door = 0; door < DIR_COUNT; door++ )
+          {
+              if ( !EXIT(ch, door) || EXIT(ch, door)->to_room == NOWHERE )
+                  continue;
+              if ( EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) && !CONFIG_DISP_CLOSED_DOORS )
+                  continue;
+              if ( EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) && !PRF_FLAGGED(ch, PRF_HOLYLIGHT) )
+                  continue;
+              if ( exit_len >= sizeof(exits) - 1 )
+                  break;
+              exit_len += snprintf( exits + exit_len, sizeof(exits) - exit_len,
+                  "%c%s%c%d", (char)MSDP_VAR, autoexits[door], (char)MSDP_VAL,
+                  GET_ROOM_VNUM(EXIT(ch, door)->to_room) );
+          }
+          MSDPSetTable( d, eMSDP_ROOM_EXITS, exits );
+      }
+
       MSDPUpdate( d );
     }
 
