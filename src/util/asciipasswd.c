@@ -19,9 +19,10 @@ char *CAP(char *txt) {
 }
 
 int main(int argc, char **argv) {
-  if (argc != 3)
+  if (argc != 3) {
     fprintf(stderr, "Usage: %s name password\n", argv[0]);
-  else
+    return (1);
+  } else
     printf("Name: %s\nPass: %s\n", CAP(argv[1]), CRYPT(argv[2], CAP(argv[1])));
   return (0);
 }
