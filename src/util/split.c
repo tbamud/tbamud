@@ -34,10 +34,12 @@ int main(void)
   }
   while (fgets(line, BSZ, stdin)) {
     if (*line == MAGIC_CHAR) {
-      if ((newline = strchr(line, '\n')))
+      if ((newline = strpbrk(line, "\r\n"))) {
         *newline = '\0';
-      else {
+      } else {
         next_char = fgetc(stdin);
+        if (next_char == '\r')
+          next_char = fgetc(stdin);
         if (next_char != '\n' && next_char != EOF) {
           fprintf(stderr, "Input line too long.\n");
           exit(1);
