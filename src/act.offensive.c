@@ -561,7 +561,7 @@ ACMD(do_bandage)
   percent = rand_number(1, 101);        /* 101% is a complete failure */
   prob = GET_SKILL(ch, SKILL_BANDAGE);
 
-  if (percent <= prob) {
+  if (percent > prob) {
     act("Your attempt to bandage fails.", FALSE, ch, 0, 0, TO_CHAR);
     act("$n tries to bandage $N, but fails miserably.", TRUE, ch, 
       0, vict, TO_NOTVICT);

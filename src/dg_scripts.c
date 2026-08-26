@@ -733,7 +733,7 @@ static EVENTFUNC(trig_wait_event)
           found = TRUE;
     } else {
       room_rnum i;
-      for (i = 0;i<top_of_world && !found;i++)
+      for (i = 0;i<=top_of_world && !found;i++)
         if (&world[i] == (struct room_data *)go)
           found = TRUE;
     }
