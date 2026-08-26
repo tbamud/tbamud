@@ -218,7 +218,8 @@ void walkdir(FILE *index_file, char *dir) {
       if (name != NULL) {
         /* Grab the data from the mail file and throw it in the index */
         if ((mail_file = fopen(filename_qfd, "r")) == NULL) {
-          fprintf(stderr, "Unable to open mail file: %s\n", filename_qfd);
+          fprintf(stderr, "Unable to open mail file %s: ", filename_qfd);
+          perror("");
           continue;
         }
 
