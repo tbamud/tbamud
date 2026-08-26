@@ -1039,7 +1039,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         default:
           write_to_output(d, "\r\nThat is an invalid choice!\r\n");
-          cedit_disp_game_play_options(d);
       }
 
       cedit_disp_game_play_options(d);
