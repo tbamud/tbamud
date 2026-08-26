@@ -523,6 +523,27 @@ static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
 }
 #undef ZOCMD
 
+/* snprintf() answers the length it WOULD have written, not the length it
+ * wrote.  The column trackers in the listings below add that answer to a
+ * running width and wrap the line at 62, so taking it at face value walks
+ * the width past what the character actually received and the wrap fires
+ * early -- the same class of mistake as adding send_to_char()'s return
+ * value, which is what these lists used to do.  Report the bytes the buffer
+ * really holds.
+ *
+ * The buffers stay MAX_INPUT_LENGTH: 512 characters is far more than a name
+ * or a short description needs, and the clamp means that if one ever did
+ * overrun, the width stays honest about what was sent rather than silently
+ * drifting. */
+static int stored_len(int written, size_t bufsize)
+{
+  if (written < 0)
+    return 0;
+  if ((size_t)written >= bufsize)
+    return (int)bufsize - 1;
+  return written;
+}
+
 static void do_stat_room(struct char_data *ch, struct room_data *rm)
 {
   char buf2[MAX_STRING_LENGTH];
@@ -558,8 +579,8 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
 
     {
       char lbuf[MAX_INPUT_LENGTH];
-      column += snprintf(lbuf, sizeof(lbuf), "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
-		!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB"));
+      column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
+		!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")), sizeof(lbuf));
       send_to_char(ch, "%s", lbuf);
     }
     if (column >= 62) {
@@ -582,7 +603,7 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
 
       {
         char lbuf[MAX_INPUT_LENGTH];
-        column += snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j->short_description);
+        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j->short_description), sizeof(lbuf));
         send_to_char(ch, "%s", lbuf);
       }
       if (column >= 62) {
@@ -749,7 +770,7 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
     for (found = 0, j2 = j->contains; j2; j2 = j2->next_content) {
       {
         char lbuf[MAX_INPUT_LENGTH];
-        column += snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j2->short_description);
+        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j2->short_description), sizeof(lbuf));
         send_to_char(ch, "%s", lbuf);
       }
       if (column >= 62) {
@@ -909,7 +930,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
   if (!IS_NPC(k))
     send_to_char(ch, "Hunger: %d, Thirst: %d, Drunk: %d\r\n", GET_COND(k, HUNGER), GET_COND(k, THIRST), GET_COND(k, DRUNK));
 
-  column = snprintf(buf, sizeof(buf), "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>");
+  column = stored_len(snprintf(buf, sizeof(buf), "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>"), sizeof(buf));
   send_to_char(ch, "%s", buf);
   if (!k->followers)
     send_to_char(ch, " <none>\r\n");
@@ -917,7 +938,7 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
     for (fol = k->followers; fol; fol = fol->next) {
       {
         char lbuf[MAX_INPUT_LENGTH];
-        column += snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
+        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", PERS(fol->follower, ch)), sizeof(lbuf));
         send_to_char(ch, "%s", lbuf);
       }
       if (column >= 62) {
