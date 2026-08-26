@@ -122,7 +122,10 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
             "/ra 'a' 'b'-  replace all occurences of text <a> within buffer with text <b>\r\n"
             "              usage: /r[a] 'pattern' 'replacement'\r\n"
             "/t         -  toggles '@' and tabs\r\n"
-            "/s         -  saves text\r\n");
+            "/s         -  saves text\r\n"
+            "\r\n"
+            "A line number or range narrows /d, /f, /fi, /l and /n to those lines:\r\n"
+            "              usage: /fi 5  (line 5)   /fi 5-9  (lines 5 through 9)\r\n");
     break;
   case PARSE_TOGGLE:
     if (!*d->str) {
