@@ -418,6 +418,9 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* Maximum number of items players are allowed to rent.\n"
    	      "max_obj_save = %d\n\n", CONFIG_MAX_OBJ_SAVE);
 
+  fprintf(fl, "* Surcharge added on top of item costs when renting.\n"
+              "min_rent_cost = %d\n\n", CONFIG_MIN_RENT_COST);
+
   fprintf(fl, "* Should the game automatically save people?\n"
               "auto_save = %d\n\n", CONFIG_AUTO_SAVE);
 
