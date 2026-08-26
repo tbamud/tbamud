@@ -324,14 +324,15 @@ void generic_complete_quest(struct char_data *ch)
       }
     }
     if (QST_EXP(rnum)) {
-      gain_exp(ch, QST_EXP(rnum));
       if ((IS_HAPPYHOUR) && (IS_HAPPYEXP)) {
         happy_exp = (int)(QST_EXP(rnum) * (((float)(100+HAPPY_EXP))/(float)100));
         happy_exp = MAX(happy_exp, 0);
+        gain_exp(ch, happy_exp);
         send_to_char(ch,
               "You have been awarded %d experience for your service.\r\n",
               happy_exp);
       } else {
+        gain_exp(ch, QST_EXP(rnum));
         send_to_char(ch,
               "You have been awarded %d experience points for your service.\r\n",
               QST_EXP(rnum));
