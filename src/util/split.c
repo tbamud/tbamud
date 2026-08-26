@@ -24,7 +24,8 @@
 
 int main(void)
 {
-  char line[BSZ + 1];
+  char line[BSZ + 1], *newline;
+  int next_char;
   FILE *index = 0, *outfile = 0;
 
   if (!(index = fopen(INDEX_NAME, "w"))) {
@@ -33,7 +34,17 @@ int main(void)
   }
   while (fgets(line, BSZ, stdin)) {
     if (*line == MAGIC_CHAR) {
-      *(strchr(line, '\n')) = '\0';
+      if ((newline = strpbrk(line, "\r\n"))) {
+        *newline = '\0';
+      } else {
+        next_char = fgetc(stdin);
+        if (next_char == '\r')
+          next_char = fgetc(stdin);
+        if (next_char != '\n' && next_char != EOF) {
+          fprintf(stderr, "Input line too long.\n");
+          exit(1);
+        }
+      }
       if (outfile) {
 /*	fputs("$\n", outfile);*/
 	fclose(outfile);
