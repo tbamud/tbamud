@@ -116,9 +116,15 @@ room_rnum add_room(struct room_data *room)
   r_immort_start_room += (r_immort_start_room >= found);
   r_frozen_start_room += (r_frozen_start_room >= found);
 
-  /* Characters idled into the void keep their room in was_in_room and are
-   * in no world[].people list, so the in_room pass above cannot reach
-   * them.  Without this they come back one room off. */
+  /* was_in_room is a bare room rnum kept on the character; it is not a link
+   * into any room's people list, so the pass above cannot reach it.  That
+   * pass walks world[i].people for each room it shifts and fixes IN_ROOM
+   * alone.  A character idled into the void is in world[1].people --
+   * limits.c does char_from_room() then char_to_room(ch, 1) -- and index 1
+   * is shifted only when the new room lands at or below it, which is
+   * almost never.  The room they were pulled out of, recorded here, is a
+   * different index entirely and may well be at or above the insertion
+   * point.  Without this they come back one room off. */
   for (tch = character_list; tch; tch = tch->next)
     GET_WAS_IN(tch) += (GET_WAS_IN(tch) != NOWHERE && GET_WAS_IN(tch) >= found);
 
