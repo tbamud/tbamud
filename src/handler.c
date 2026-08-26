@@ -1411,7 +1411,7 @@ int find_all_dots(char *arg)
   if (!strcmp(arg, "all"))
     return (FIND_ALL);
   else if (!strncmp(arg, "all.", 4)) {
-    strcpy(arg, arg + 4);	/* strcpy: OK (always less) */
+    memmove(arg, arg + 4, strlen(arg + 4) + 1);	/* memmove: the copy overlaps */
     return (FIND_ALLDOT);
   } else
     return (FIND_INDIV);
