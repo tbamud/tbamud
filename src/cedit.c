@@ -1226,7 +1226,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
              oldtext = strdup(OLC_CONFIG(d)->operation.MENU);
            }
 
-           string_write(d, &OLC_CONFIG(d)->operation.MENU, MAX_INPUT_LENGTH, 0, oldtext);
+           string_write(d, &OLC_CONFIG(d)->operation.MENU, MAX_CONFIG_TEXT, 0, oldtext);
            return;
 
          case 'm':
@@ -1241,7 +1241,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
              oldtext = str_udup(OLC_CONFIG(d)->operation.WELC_MESSG);
            }
 
-           string_write(d, &OLC_CONFIG(d)->operation.WELC_MESSG, MAX_INPUT_LENGTH, 0, oldtext);
+           string_write(d, &OLC_CONFIG(d)->operation.WELC_MESSG, MAX_CONFIG_TEXT, 0, oldtext);
            return;
 
          case 'n':
@@ -1256,7 +1256,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
              oldtext = strdup(OLC_CONFIG(d)->operation.START_MESSG);
            }
 
-           string_write(d, &OLC_CONFIG(d)->operation.START_MESSG, MAX_INPUT_LENGTH, 0, oldtext);
+           string_write(d, &OLC_CONFIG(d)->operation.START_MESSG, MAX_CONFIG_TEXT, 0, oldtext);
            return;
 
          case 'o':
