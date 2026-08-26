@@ -2665,7 +2665,7 @@ ACMD(do_show)
   "  %5d triggers         %5d shops\r\n"
   "  %5d large bufs       %5d autoquests\r\n"
 	"  %5d buf switches     %5d overflows\r\n"
-	"  %5d lists\r\n",
+	"  %5zu lists\r\n",
 	i, con,
 	top_of_p_table + 1,
 	j, top_of_mobt + 1,

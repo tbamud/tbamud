@@ -101,3 +101,13 @@ add_mud_test(test_class
     ${MUD_SRCDIR}/random.c
     ${CMAKE_CURRENT_SOURCE_DIR}/test_class.c
 )
+
+# ---------------------------------------------------------------------------
+# test_lists — covers src/lists.c
+# ---------------------------------------------------------------------------
+add_mud_test(test_lists
+    ${MUD_SRCDIR}/lists.c
+    ${MUD_SRCDIR}/utils.c
+    ${MUD_SRCDIR}/random.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_lists.c
+)
