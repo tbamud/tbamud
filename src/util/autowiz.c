@@ -272,14 +272,22 @@ int get_line(FILE * fl, char *buf)
   int lines = 0;
 
   do {
-    /* Result deliberately unexamined: feof() below is the existing check. */
-    if (fgets(temp, 256, fl) == NULL) { }
-    if (feof(fl))
+    /* A failed read ends the file for our purposes, and it has to be
+     * tested here: on failure fgets() leaves temp untouched, so the old
+     * code went on to inspect whatever the previous iteration left in it
+     * -- or, on the very first call, uninitialised stack. */
+    if (fgets(temp, sizeof(temp), fl) == NULL) {
+      if (ferror(fl))
+        perror("reading world file");
       return (0);
+    }
     lines++;
   } while (*temp == '*' || *temp == '\n');
 
-  temp[strlen(temp) - 1] = '\0';
+  /* Strip the line terminator rather than the last character, whatever it
+   * is: a final line with no newline used to lose a real character, and an
+   * empty temp indexed temp[-1]. */
+  temp[strcspn(temp, "\r\n")] = '\0';
   strcpy(buf, temp);
   return (lines);
 }

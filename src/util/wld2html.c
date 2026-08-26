@@ -519,16 +519,18 @@ int get_line(FILE * fl, char *buf)
   char temp[256];
 
   do {
-    /* Result deliberately unexamined, as before. */
-    if (fgets(temp, 256, fl) == NULL) { }
-    if (*temp)
-      temp[strlen(temp) - 1] = '\0';
-  } while (!feof(fl) && (*temp == '*' || !*temp));
+    /* On failure fgets() leaves temp untouched, so the old loop re-examined
+     * the previous line -- or uninitialised stack on the first call. */
+    if (fgets(temp, sizeof(temp), fl) == NULL) {
+      if (ferror(fl))
+        perror("reading world file");
+      return (0);
+    }
+    /* Strip the terminator, not the last character: a final line with no
+     * newline used to lose one. */
+    temp[strcspn(temp, "\r\n")] = '\0';
+  } while (*temp == '*' || !*temp);
 
-  if (feof(fl))
-    return (0);
-  else {
-    strcpy(buf, temp);
-    return (1);
-  }
+  strcpy(buf, temp);
+  return (1);
 }

@@ -56,15 +56,43 @@ char *fread_string(FILE * fl, const char *error)
 }
 
 
+/* system() answers -1 when the command could not be started at all, and the
+ * shell's exit status otherwise.  Every use here renames the file the next
+ * step is about to open, so a failure that goes unreported turns into a
+ * confusing error further on -- or, worse, leaves the .tmp holding the only
+ * copy of the shop file. */
+static int run(const char *cmd)
+{
+  int status = system(cmd);
+
+  if (status == -1) {
+    perror(cmd);
+    return (0);
+  }
+  if (status != 0) {
+    fprintf(stderr, "shopconv: `%s' failed (status %d).\n", cmd, status);
+    return (0);
+  }
+  return (1);
+}
+
 void do_list(FILE * shop_f, FILE * newshop_f, int max)
 {
   int count, temp;
   char buf[MAX_STRING_LENGTH];
 
   for (count = 0; count < max; count++) {
-    /* Results deliberately unexamined, as before. */
-    if (fscanf(shop_f, "%d", &temp) != 1) { }
-    if (fgets(buf, MAX_STRING_LENGTH - 1, shop_f) == NULL) { }
+    /* A failed conversion leaves temp untouched, so the old loop ran to
+     * `max` re-testing the same stale value and never advanced the file. */
+    if (fscanf(shop_f, "%d", &temp) != 1) {
+      fprintf(stderr, "shopconv: expected %d list entries, file ran out after %d.\n",
+              max, count);
+      break;
+    }
+    if (fgets(buf, MAX_STRING_LENGTH - 1, shop_f) == NULL) {
+      fprintf(stderr, "shopconv: unexpected end of file inside a list.\n");
+      break;
+    }
     if (temp > 0)
       fprintf(newshop_f, "%d%s", temp, buf);
   }
@@ -76,13 +104,30 @@ void do_list(FILE * shop_f, FILE * newshop_f, int max)
 void do_float(FILE * shop_f, FILE * newshop_f)
 {
   float f;
-  char str[20];
+  size_t len;
+  /* %f has no width of its own and prints the whole integer part, so the
+   * width is the magnitude, not the format: near FLT_MAX it is 46
+   * characters.  The old char[20] overflowed for anything from about 1e11
+   * up, straight off an fscanf("%f") of a shop file -- exactly the kind of
+   * file MUDs pass round.  Sized for the widest float there is, and written
+   * with snprintf so the bound comes from the array either way. */
+  char str[64];
 
-  /* Result deliberately unexamined, as before. */
-  if (fscanf(shop_f, "%f \n", &f) != 1) { }
-  sprintf(str, "%f", f);
-  while ((str[strlen(str) - 1] == '0') && (str[strlen(str) - 2] != '.'))
-    str[strlen(str) - 1] = 0;
+  /* f is uninitialised until this succeeds, and printing it is the next
+   * thing that happens. */
+  if (fscanf(shop_f, "%f \n", &f) != 1) {
+    fprintf(stderr, "shopconv: expected a number.\n");
+    exit(1);
+  }
+  snprintf(str, sizeof(str), "%f", f);
+
+  /* Trim trailing zeros, keeping one after the point.  Indexing from
+   * strlen() twice per iteration underflowed on a string shorter than two
+   * characters -- "inf" and "nan" do not reach the loop body, but nothing
+   * here said so. */
+  len = strlen(str);
+  while (len > 2 && str[len - 1] == '0' && str[len - 2] != '.')
+    str[--len] = '\0';
   fprintf(newshop_f, "%s \n", str);
 }
 
@@ -91,8 +136,10 @@ void do_int(FILE * shop_f, FILE * newshop_f)
 {
   int i;
 
-  /* Result deliberately unexamined, as before. */
-  if (fscanf(shop_f, "%d \n", &i) != 1) { }
+  if (fscanf(shop_f, "%d \n", &i) != 1) {
+    fprintf(stderr, "shopconv: expected a number.\n");
+    exit(1);
+  }
   fprintf(newshop_f, "%d \n", i);
 }
 
@@ -167,8 +214,8 @@ int main(int argc, char *argv[])
   for (index = 1; index < argc; index++) {
     sprintf(fn, "%s", argv[index]);
     sprintf(part, "mv %s %s.tmp", fn, fn);
-    /* Result deliberately unexamined, as before. */
-    if (system(part) == -1) { }
+    if (!run(part))
+      continue;
     sprintf(part, "%s.tmp", fn);
     sfp = fopen(part, "r");
     if (sfp == NULL) {
@@ -185,12 +232,10 @@ int main(int argc, char *argv[])
       fclose(sfp);
       if (result) {
 	      sprintf(part, "mv %s.tmp %s", fn, fn);
-	      /* Result deliberately unexamined, as before. */
-    if (system(part) == -1) { }
+	      run(part);
       } else {
 	      sprintf(part, "mv %s.tmp %s.bak", fn, fn);
-	      /* Result deliberately unexamined, as before. */
-    if (system(part) == -1) { }
+	      run(part);
 	      printf("Done!\n");
       }
     }
