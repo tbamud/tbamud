@@ -248,9 +248,13 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
-      store_mail(d->mail_to, GET_IDNUM(d->character), *d->str);
-      write_to_output(d, "Message sent!\r\n");
-      notify_if_playing(d->character, d->mail_to);
+      if (store_mail(d->mail_to, GET_IDNUM(d->character), *d->str)) {
+        write_to_output(d, "Message sent!\r\n");
+        notify_if_playing(d->character, d->mail_to);
+      } else {
+        write_to_output(d, "Unable to send your message. Please try again later.\r\n");
+        no_mail = 1;
+      }
     } else
       write_to_output(d, "Mail aborted.\r\n");
     

@@ -238,16 +238,17 @@ int has_mail(long recipient)
  * call store_mail to store mail.  (hard, huh? :-) )  Pass 3 arguments:
  * who the mail is to (long), who it's from (long), and a pointer to the
  * actual message text (char *). */
-void store_mail(long to, long from, char *message_pointer)
+int store_mail(long to, long from, char *message_pointer)
 {
   FILE *mail_file;
   struct mail_t *record;
-  int written;
+  int result;
 
   if (!(mail_file = fopen(MAIL_FILE, "a"))) {
     perror("store_mail: Mail file not accessible.");
-    return;
+    return FALSE;
   }
+
   CREATE(record, struct mail_t, 1);
 
   record->recipient = to;
@@ -255,12 +256,21 @@ void store_mail(long to, long from, char *message_pointer)
   record->sent_time = time(0);
   record->body = message_pointer;
 
-  written = write_mail_record(mail_file, record);
-  if (fclose(mail_file) == EOF)
-    written = FALSE;
-  if (!written)
-    log("SYSERR: store_mail: error writing mail from %ld to %ld to %s", from, to, MAIL_FILE);
+  result = write_mail_record(mail_file, record);
   free(record); /* don't free the body */
+
+  if (!result || fflush(mail_file) == EOF || ferror(mail_file)) {
+    log("Mail system - error writing mail message");
+    fclose(mail_file);
+    return FALSE;
+  }
+
+  if (fclose(mail_file) == EOF) {
+    log("Mail system - error closing mail file after write");
+    return FALSE;
+  }
+
+  return TRUE;
 }
 
 /* char *read_delete(long #1)
