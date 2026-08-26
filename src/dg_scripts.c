@@ -2851,7 +2851,7 @@ void read_saved_vars(struct char_data *ch)
   }
   /* walk through each line in the file parsing variables */
   do {
-    if (get_line(file, input_line)>0) {
+    if (get_line(file, input_line, sizeof(input_line))>0) {
       p = temp = strdup(input_line);
       temp = any_one_arg(temp, varname);
       temp = any_one_arg(temp, context_str);
@@ -2928,7 +2928,7 @@ void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count)
   /* walk through each line in the file parsing variables */
   for (i = 0; i < count; i++)
   {
-    if (get_line(file, input_line)>0) {
+    if (get_line(file, input_line, sizeof(input_line))>0) {
       p = temp = strdup(input_line);
       temp = any_one_arg(temp, varname);
       temp = any_one_arg(temp, context_str);

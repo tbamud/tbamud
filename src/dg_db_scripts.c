@@ -48,7 +48,7 @@ void parse_trigger(FILE *trig_f, int nr)
     trig->nr = top_of_trigt;
     trig->name = fread_string(trig_f, errors);
 
-    get_line(trig_f, line);
+    get_line(trig_f, line, sizeof(line));
     k = sscanf(line, "%d %s %d", &attach_type, flags, t);
     trig->attach_type = (byte)attach_type;
     trig->trigger_type = (long)asciiflag_conv(flags);
@@ -138,7 +138,7 @@ void dg_read_trigger(FILE *fp, void *proto, int type)
   room_data *room;
   struct trig_proto_list *trg_proto, *new_trg;
 
-  get_line(fp, line);
+  get_line(fp, line, sizeof(line));
   count = sscanf(line, TRIG_TAG_FMT " %d", junk, &vnum);
 
   if (count != 2) {

@@ -59,7 +59,7 @@ void build_player_index(void)
     return;
   }
 
-  while (get_line(plr_index, line))
+  while (get_line(plr_index, line, sizeof(line)))
     if (*line != '~')
       rec_count++;
   rewind(plr_index);
@@ -72,7 +72,7 @@ void build_player_index(void)
 
   CREATE(player_table, struct player_index_element, rec_count);
   for (i = 0; i < rec_count; i++) {
-    get_line(plr_index, line);
+    get_line(plr_index, line, sizeof(line));
     /* Checked, because a short count here is not a partial record -- it is a
      * record wearing the one before it.  arg2 and bits are declared outside
      * this loop, so whatever the previous line put in them is still there,
@@ -320,7 +320,7 @@ int load_char(const char *name, struct char_data *ch)
     for (i = 0; i < PR_ARRAY_MAX; i++)
       PRF_FLAGS(ch)[i] = PFDEF_PREFFLAGS;
 
-    while (get_line(fl, line)) {
+    while (get_line(fl, line, sizeof(line))) {
       tag_argument(line, tag);
 
       switch (*tag) {
@@ -948,7 +948,7 @@ static void load_affects(FILE *fl, struct char_data *ch)
   i = 0;
   do {
     new_affect(&af);
-    get_line(fl, line);
+    get_line(fl, line, sizeof(line));
     n_vars = sscanf(line, "%d %d %d %d %d %d %d %d", &num, &num2, &num3, &num4, &num5, &num6, &num7, &num8);
     if (num > 0) {
       af.spell = num;
@@ -978,7 +978,7 @@ static void load_skills(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    get_line(fl, line);
+    get_line(fl, line, sizeof(line));
     sscanf(line, "%d %d", &num, &num2);
       if (num != 0)
 	GET_SKILL(ch, num) = num2;
@@ -991,7 +991,7 @@ void load_quests(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    get_line(fl, line);
+    get_line(fl, line, sizeof(line));
     sscanf(line, "%d", &num);
     if (num != NOTHING)
       add_completed_quest(ch, num);
@@ -1066,15 +1066,15 @@ static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
     char abuf[MAX_INPUT_LENGTH+1], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
 
     /* Read the aliased command. */
-    get_line(file, abuf);
+    get_line(file, abuf, sizeof(abuf));
 
     /* Read the replacement. This needs to have a space prepended before placing in
      * the in-memory struct. The space may be there already, but we can't be certain! */
     rbuf[0] = ' ';
-    get_line(file, rbuf+1);
+    get_line(file, rbuf + 1, sizeof(rbuf) - 1);
 
     /* read the type */
-    get_line(file, tbuf);
+    get_line(file, tbuf, sizeof(tbuf));
 
     if (abuf[0] && rbuf[1] && *tbuf) {
       struct alias_data *temp;

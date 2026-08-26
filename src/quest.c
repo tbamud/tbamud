@@ -159,7 +159,7 @@ void parse_quest(FILE *quest_f, int nr)
   aquest_table[i].info = fread_string(quest_f, buf2);
   aquest_table[i].done = fread_string(quest_f, buf2);
   aquest_table[i].quit = fread_string(quest_f, buf2);
-  if (!get_line(quest_f, line) ||
+  if (!get_line(quest_f, line, sizeof(line)) ||
       (retval = sscanf(line, " %d %d " FLAG_FIELD_FMT " %d %d %d %d",
              t, t+1, f1, t+2, t+3, t + 4, t + 5)) != 7) {
     log("Format error in numeric line (expected 7, got %d), %s\n",
@@ -173,7 +173,7 @@ void parse_quest(FILE *quest_f, int nr)
   aquest_table[i].prev_quest = (t[3] == -1) ? NOTHING : t[3];
   aquest_table[i].next_quest = (t[4] == -1) ? NOTHING : t[4];
   aquest_table[i].prereq     = (t[5] == -1) ? NOTHING : t[5];
-  if (!get_line(quest_f, line) ||
+  if (!get_line(quest_f, line, sizeof(line)) ||
       (retval = sscanf(line, " %d %d %d %d %d %d %d",
           t, t+1, t+2, t+3, t+4, t + 5, t + 6)) != 7) {
     log("Format error in numeric line (expected 7, got %d), %s\n",
@@ -183,7 +183,7 @@ void parse_quest(FILE *quest_f, int nr)
   for (j = 0; j < 7; j++)
     aquest_table[i].value[j] = t[j];
 
-  if (!get_line(quest_f, line) ||
+  if (!get_line(quest_f, line, sizeof(line)) ||
       (retval = sscanf(line, " %d %d %d",
              t, t+1, t+2)) != 3) {
     log("Format error in numeric (rewards) line (expected 3, got %d), %s\n",
@@ -196,7 +196,7 @@ void parse_quest(FILE *quest_f, int nr)
   aquest_table[i].obj_reward  = (t[2] == -1) ? NOTHING : t[2];
 
   for (;;) {
-    if (!get_line(quest_f, line)) {
+    if (!get_line(quest_f, line, sizeof(line))) {
       log("Format error in %s\n", line);
       exit(1);
     }

@@ -62,7 +62,7 @@ int	dice(int number, int size);
 size_t	sprintbit(bitvector_t vektor, const char *names[], char *result, size_t reslen);
 size_t	sprinttype(int type, const char *names[], char *result, size_t reslen);
 void sprintbitarray(int bitvector[], const char *names[], int maxar, char *result);
-int get_line(FILE *fl, char *buf);
+int get_line(FILE *fl, char *buf, size_t bufsize);
 int get_filename(char *filename, size_t fbufsize, int mode, const char *orig_name);
 time_t mud_time_to_secs(struct time_info_data *now);
 struct time_info_data *age(struct char_data *ch);

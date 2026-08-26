@@ -66,7 +66,7 @@ void read_file(void)
 {
   void add_name(byte level, char *name);
   char *CAP(char *txt);
-  int get_line(FILE * fl, char *buf);
+  int get_line(FILE * fl, char *buf, size_t bufsize);
   bitvector_t asciiflag_conv(char *flag);
 
   FILE *fl;
@@ -82,13 +82,13 @@ void read_file(void)
   }
   /* count the number of players in the index */
   recs = 0;
-  while (get_line(fl, line))
+  while (get_line(fl, line, sizeof(line)))
     if (*line != '~')
       recs++;
   rewind(fl);
 
   for (i = 0; i < recs; i++) {
-    get_line(fl, line);
+    get_line(fl, line, sizeof(line));
     /* Same file, same reason as build_player_index(): name and bits outlive
      * the iteration, so a short count would put the previous player's level
      * and flags on this one.  A wizlist is not worth aborting over, so skip
@@ -266,31 +266,36 @@ char *CAP(char *txt)
  * character is removed from the input.  Lines which begin with '*' are 
  * considered to be comments. Returns the number of lines advanced in the 
  * file. */
-int get_line(FILE * fl, char *buf)
+int get_line(FILE * fl, char *buf, size_t bufsize)
 {
-  char temp[256];
   int lines = 0;
+  size_t sl = 0;
+
+  if (bufsize < 2)
+    return (0);
 
   do {
-    /* A failed read ends the file for our purposes, and it has to be
-     * tested here: on failure fgets() leaves temp untouched, so the old
-     * code went on to inspect whatever the previous iteration left in it
-     * -- or, on the very first call, uninitialised stack. */
-    if (fgets(temp, sizeof(temp), fl) == NULL) {
+    if (!fgets(buf, bufsize, fl)) {
       if (ferror(fl))
         perror("reading player index");
       return (0);
     }
+    }
     lines++;
-    /* Strip the line terminator rather than the last character, whatever it
-     * is: a final line with no newline used to lose a real character, and an
-     * empty temp indexed temp[-1].  Stripping here rather than after the
-     * loop also means a blank line is seen as blank when the terminator is
-     * CRLF, which testing for '\n' alone does not catch. */
-    temp[strcspn(temp, "\r\n")] = '\0';
-  } while (*temp == '*' || !*temp);
+    /* Discard the tail of a line that did not fit; a fragment left in the
+     * stream is read as a line of its own by the next call. */
+    sl = strlen(buf);
+    if (sl > 0 && buf[sl - 1] != '\n') {
+      int c;
+      while ((c = getc(fl)) != EOF && c != '\n')
+        ;
+    }
+  } while (*buf == '*' || *buf == '\n' || *buf == '\r');
 
-  strcpy(buf, temp);
+  /* Last line of file doesn't always have a \n, but it should. */
+  while (sl > 0 && (buf[sl - 1] == '\n' || buf[sl - 1] == '\r'))
+    buf[--sl] = '\0';
+
   return (lines);
 }
 

@@ -631,24 +631,34 @@ void add_follower(struct char_data *ch, struct char_data *leader)
  * @param[in] fl The file to be read from.
  * @param[out] buf The next non-blank line read from the file. Buffer given must
  * be at least READ_SIZE (256) characters large. */
-int get_line(FILE *fl, char *buf)
+int get_line(FILE *fl, char *buf, size_t bufsize)
 {
-  char temp[READ_SIZE];
   int lines = 0;
-  int sl;
+  size_t sl = 0;
+
+  if (bufsize < 2)
+    return (0);
 
   do {
-    if (!fgets(temp, READ_SIZE, fl))
+    if (!fgets(buf, bufsize, fl))
       return (0);
     lines++;
-  } while (*temp == '*' || *temp == '\n' || *temp == '\r');
+    /* If the line was longer than the caller's buffer, discard the tail.  A
+     * fragment left in the stream is read as a line of its own by the next
+     * call, which desynchronises every record-oriented parser that reads a
+     * fixed number of lines per record. */
+    sl = strlen(buf);
+    if (sl > 0 && buf[sl - 1] != '\n') {
+      int c;
+      while ((c = getc(fl)) != EOF && c != '\n')
+        ;
+    }
+  } while (*buf == '*' || *buf == '\n' || *buf == '\r');
 
   /* Last line of file doesn't always have a \n, but it should. */
-  sl = strlen(temp);
-  while (sl > 0 && (temp[sl - 1] == '\n' || temp[sl - 1] == '\r'))
-    temp[--sl] = '\0';
+  while (sl > 0 && (buf[sl - 1] == '\n' || buf[sl - 1] == '\r'))
+    buf[--sl] = '\0';
 
-  strcpy(buf, temp); /* strcpy: OK, if buf >= READ_SIZE (256) */
   return (lines);
 }
 
@@ -1076,7 +1086,7 @@ int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
   {
     /* Don't use get_line to set lines_read because get_line will return
      * the number of comments skipped during reading. */
-    readstatus = get_line( file, line );
+    readstatus = get_line(file, line, sizeof(line));
 
     if (readstatus > 0)
     {
@@ -1167,7 +1177,7 @@ int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
   {
     /* Don't use get_line to set lines_read because get_line will return
      * the number of comments skipped during reading. */
-    readstatus = get_line( file, line );
+    readstatus = get_line(file, line, sizeof(line));
 
     if (readstatus > 0)
     {
