@@ -340,19 +340,46 @@ int save_quests(zone_rnum zone_num)
         QST_QUANTITY(rnum), QST_GOLD(rnum), QST_EXP(rnum), QST_OBJ(rnum)
       );
       
-      if(n < MAX_STRING_LENGTH) {
-        fprintf(sf, "%s", convert_from_tabs(buf));
-        num_quests++;
-      } else {
-        mudlog(BRF,LVL_BUILDER,TRUE, 
-               "SYSERR: Could not save quest #%d due to size (%d > maximum of %d).", 
-               QST_NUM(rnum), n, MAX_STRING_LENGTH);
+      if (n < 0) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not format quest #%d for saving.",
+               QST_NUM(rnum));
+        fclose(sf);
+        return FALSE;
       }
+
+      if (n >= MAX_STRING_LENGTH) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not save quest #%d due to size (%d >= maximum of %d).",
+               QST_NUM(rnum), n, MAX_STRING_LENGTH);
+        fclose(sf);
+        return FALSE;
+      }
+
+      if (fprintf(sf, "%s", convert_from_tabs(buf)) < 0) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Error writing quest #%d to %s.",
+               QST_NUM(rnum), filename);
+        fclose(sf);
+        return FALSE;
+      }
+
+      num_quests++;
     }
   }
-  /* Write the final line and close it.  */
-  fprintf(sf, "$~\n");
-  fclose(sf);
+  /* Write the final line and verify the temporary file is complete. */
+  if (fprintf(sf, "$~\n") < 0 || fflush(sf) == EOF || ferror(sf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error finalizing quest file %s.", filename);
+    fclose(sf);
+    return FALSE;
+  }
+
+  if (fclose(sf) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing quest file %s.", filename);
+    return FALSE;
+  }
 
   /* Old file we're replacing. */
   snprintf(oldname, sizeof(oldname), "%s/%d.qst",

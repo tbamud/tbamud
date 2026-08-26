@@ -32,7 +32,7 @@ static void qedit_setup_new(struct descriptor_data *d);
 static void qedit_setup_existing(struct descriptor_data *d, qst_rnum rnum);
 static void qedit_disp_menu(struct descriptor_data *d);
 static void qedit_save_internally(struct descriptor_data *d);
-static void qedit_save_to_disk(int num);
+static int qedit_save_to_disk(int num);
 
 /*-------------------------------------------------------------------*/
 
@@ -41,9 +41,9 @@ static void qedit_save_internally(struct descriptor_data *d)
   add_quest(OLC_QUEST(d));
 }
 
-static void qedit_save_to_disk(int num)
+static int qedit_save_to_disk(int num)
 {
-  save_quests(num);
+  return save_quests(num);
 }
 
 /*-------------------------------------------------------------------*\
@@ -158,14 +158,23 @@ ACMD(do_oasis_qedit)
   if (save) {
     send_to_char(ch, "Saving all quests in zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
-      "OLC: %s saves quest info for zone %d.",
-      GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
     /**************************************************************************/
     /** Save the quest to the quest file.                                    **/
     /**************************************************************************/
-    qedit_save_to_disk(OLC_ZNUM(d));
+    if (qedit_save_to_disk(OLC_ZNUM(d))) {
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "OLC: %s saves quest info for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    } else {
+      send_to_char(ch,
+        "Unable to save all quests in zone %d. Changes remain marked for saving.\r\n",
+        zone_table[OLC_ZNUM(d)].number);
+
+      mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "SYSERR: OLC: %s failed to save quest info for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    }
 
     /**************************************************************************/
     /** Free the OLC structure.                                              **/
