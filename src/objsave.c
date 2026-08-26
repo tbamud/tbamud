@@ -898,6 +898,55 @@ int Crash_rentsave(struct char_data *ch, int cost)
   return TRUE;
 }
 
+int Crash_copyoversave(struct char_data *ch)
+{
+  char buf[MAX_INPUT_LENGTH];
+  int j;
+  FILE *fp;
+
+  if (IS_NPC(ch))
+    return FALSE;
+
+  if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
+    return FALSE;
+
+  if (!(fp = fopen(buf, "w")))
+    return FALSE;
+
+  /*
+   * Copyover preserves the live character state rather than renting the
+   * character out.  Use crash-save semantics so an aborted copyover still
+   * leaves a valid recovery snapshot without rent charges or object filtering.
+   */
+  if (!objsave_write_rentcode(fp, RENT_CRASH, 0, ch)) {
+    fclose(fp);
+    return FALSE;
+  }
+
+  for (j = 0; j < NUM_WEARS; j++)
+    if (GET_EQ(ch, j)) {
+      int result = Crash_save(GET_EQ(ch, j), fp, j + 1);
+
+      Crash_restore_weight(GET_EQ(ch, j));
+      if (!result) {
+        fclose(fp);
+        return FALSE;
+      }
+    }
+
+  {
+    int result = Crash_save(ch->carrying, fp, 0);
+
+    Crash_restore_weight(ch->carrying);
+    if (!result) {
+      fclose(fp);
+      return FALSE;
+    }
+  }
+
+  return objsave_finish_file(fp);
+}
+
 static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, struct char_data *ch)
 {
   if (fprintf(fl, "%d %ld %d %d %d %d\r\n",
