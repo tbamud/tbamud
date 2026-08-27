@@ -659,7 +659,7 @@ int get_number(char **name)
   if ((ppos = strchr(*name, '.')) != NULL) {
     *ppos++ = '\0';
     strlcpy(number, *name, sizeof(number));
-    strcpy(*name, ppos);	/* strcpy: OK (always smaller) */
+    memmove(*name, ppos, strlen(ppos) + 1);	/* memmove: the copy overlaps */
 
     for (i = 0; *(number + i); i++)
       if (!isdigit(*(number + i)))
