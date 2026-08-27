@@ -1939,10 +1939,21 @@ void add_llog_entry(struct char_data *ch, int type) {
   /* we didn't - make a new one */
   if(llast == NULL) {  /* no entry found, add ..error if close! */
     CREATE(llast,struct last_entry,1);
-    strncpy(llast->username,GET_NAME(ch),15);
-    strncpy(llast->hostname,GET_HOST(ch),127);
-    llast->username[15]='\0';
-    llast->hostname[127]='\0';
+    /* Four numbers, none of which came from the array being written: 15 and
+     * 127 against a username[16] and a hostname[256].  The username pair
+     * happens to line up; the hostname pair does not, and has been filling
+     * half the field for as long as it has been that size.  Nothing overruns
+     * -- GET_HOST() is strdup'd from a char[HOST_LENGTH + 1] -- so this
+     * changes no stored byte, and the record is a fixed-size struct written
+     * whole, so the file format does not move either.  It just stops being
+     * four numbers that have to be checked against a header in another file.
+     * strncpy() still does not terminate when the source fills the field, so
+     * each copy keeps its own terminator, next to it rather than two lines
+     * down. */
+    strncpy(llast->username, GET_NAME(ch), sizeof(llast->username) - 1);
+    llast->username[sizeof(llast->username) - 1] = '\0';
+    strncpy(llast->hostname, GET_HOST(ch), sizeof(llast->hostname) - 1);
+    llast->hostname[sizeof(llast->hostname) - 1] = '\0';
     llast->idnum=GET_IDNUM(ch);
     llast->punique=GET_PREF(ch);
     llast->time=time(0);
