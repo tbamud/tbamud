@@ -146,7 +146,7 @@ fi
 
 dnl Check for the 'struct in_addr' definition. Ugly, yes.
 if test $ac_cv_header_netinet_in_h = no; then
-  ac_cv_struct_in_addr = no
+  ac_cv_struct_in_addr=no
 else
   if test $ac_cv_header_sys_types_h = yes; then
     headers=`cat << EOF
@@ -170,7 +170,7 @@ fi
 
 dnl Check for the 'typedef socklen_t' definition. Even uglier, yes.
 if test $ac_cv_header_sys_socket_h = no; then
-  ac_cv_socklen_t = no;
+  ac_cv_socklen_t=no
 else
   AC_CACHE_CHECK([for typedef socklen_t], ac_cv_socklen_t,
     [ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/socket.h>]], [[socklen_t sl; sl=0; (void)sl;]])], ac_cv_socklen_t=yes, ac_cv_socklen_t=no)])

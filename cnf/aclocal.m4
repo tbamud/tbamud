@@ -8,10 +8,18 @@ dnl been read.  If the system already prototyped it the two declarations
 dnl collide and the compile fails, which is the answer we want: no
 dnl NEED_<FUNCTION>_PROTO.  If the compile succeeds nothing had declared it,
 dnl so sysdep.h has to.
+dnl
+dnl The probe names sysdep.h by a path relative to the top of the tree, so the
+dnl compiler has to be told where that is.  Without -I$srcdir a build from a
+dnl separate directory cannot find the header at all, every probe fails to
+dnl compile, and a failed compile here is read as "already prototyped" -- so
+dnl all 56 would silently answer the opposite of the truth.
 AC_DEFUN([AC_CHECK_PROTO],
 [m4_pushdef([ac_Proto], [ac_cv_prototype_]m4_translit([$1], [./+-], [__p_]))dnl
 AC_CACHE_CHECK([if $1 is prototyped], [ac_Proto],
 [
+  OLDCPPFLAGS=$CPPFLAGS
+  CPPFLAGS="$CPPFLAGS -I$srcdir"
   dnl -fno-builtin keeps gcc's own idea of the signature out of the way.
   if test "${ac_cv_gcc_fnb-no}" = yes; then
     OLDCFLAGS=$CFLAGS
@@ -30,6 +38,7 @@ void $1(int a, char b, int c, char d, int e, char f, int g, char h);
   if test "${ac_cv_gcc_fnb-no}" = yes; then
     CFLAGS=$OLDCFLAGS
   fi
+  CPPFLAGS=$OLDCPPFLAGS
 ])
 AS_IF([test "$ac_Proto" = no],
   [AC_DEFINE([NEED_]m4_toupper([$1])[_PROTO], [1],
