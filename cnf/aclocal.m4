@@ -52,18 +52,18 @@ dnl
 dnl Some crypt() implementations only look at the first eight characters of
 dnl the password, so two different passwords can hash the same.  Detect that
 dnl and let the game work around it.
+dnl
+dnl Build the probe before believing it.  AC_RUN_IFELSE reports a program that
+dnl would not compile through the same branch as one that ran and answered no,
+dnl and "no" here means "this crypt is fine" -- the answer that leaves the
+dnl workaround switched off.  crypt() is the part that goes missing: glibc
+dnl moved its declaration into <crypt.h>, and since GCC 14 an implicit
+dnl declaration is an error rather than a warning, so on a system without that
+dnl header the probe stops compiling and the old code called it a pass.  Ask
+dnl the compiler separately, and say "unknown" out loud rather than guess.
 AC_DEFUN([AC_UNSAFE_CRYPT],
-[
-  AC_CACHE_CHECK([whether crypt needs over 10 characters], ac_cv_unsafe_crypt, [
-    if test ${ac_cv_header_crypt_h-no} = yes; then
-      use_crypt_header="#include <crypt.h>"
-    fi
-    if test ${ac_cv_lib_crypt_crypt-no} = yes; then
-      ORIGLIBS=$LIBS
-      LIBS="-lcrypt $LIBS"
-    fi
-    AC_RUN_IFELSE([AC_LANG_SOURCE([[
-#define _XOPEN_SOURCE
+[m4_pushdef([_TBA_CRYPT_PROG], [AC_LANG_SOURCE([[
+#define _XOPEN_SOURCE 700
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -81,12 +81,36 @@ int main(void)
     exit(0);
   exit(1);
 }
-]])], [ac_cv_unsafe_crypt=yes], [ac_cv_unsafe_crypt=no], [ac_cv_unsafe_crypt=no])])
+]])])dnl
+  AC_CACHE_CHECK([whether crypt needs over 10 characters], ac_cv_unsafe_crypt, [
+    if test ${ac_cv_header_crypt_h-no} = yes; then
+      use_crypt_header="#include <crypt.h>"
+    fi
+    if test ${ac_cv_lib_crypt_crypt-no} = yes; then
+      ORIGLIBS=$LIBS
+      LIBS="-lcrypt $LIBS"
+    fi
+    AC_COMPILE_IFELSE([_TBA_CRYPT_PROG],
+      [AC_RUN_IFELSE([_TBA_CRYPT_PROG],
+         [ac_cv_unsafe_crypt=yes],
+         [ac_cv_unsafe_crypt=no],
+         [ac_cv_unsafe_crypt=no])],
+      [ac_cv_unsafe_crypt=unknown])
+    dnl Restore inside the cache block: when the value comes from the cache
+    dnl this whole body is skipped, and a restore left outside it would run
+    dnl with ORIGLIBS unset and empty LIBS for the rest of configure.
+    if test ${ac_cv_lib_crypt_crypt-no} = yes; then
+      LIBS=$ORIGLIBS
+    fi
+  ])
+if test $ac_cv_unsafe_crypt = unknown; then
+  AC_MSG_WARN([the crypt() probe would not build, so this was not tested.
+Continuing as though crypt() were safe.  If this system's crypt() only looks
+at the first eight characters of a password, define HAVE_UNSAFE_CRYPT by hand.])
+fi
 if test $ac_cv_unsafe_crypt = yes; then
   AC_DEFINE([HAVE_UNSAFE_CRYPT], [1],
     [Define if we don't have proper support for the system's crypt().])
 fi
-if test ${ac_cv_lib_crypt_crypt-no} = yes; then
-  LIBS=$ORIGLIBS
-fi
+m4_popdef([_TBA_CRYPT_PROG])dnl
 ])

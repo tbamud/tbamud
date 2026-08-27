@@ -4081,7 +4081,6 @@ then :
 fi
 
 
-
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether crypt needs over 10 characters" >&5
 printf %s "checking whether crypt needs over 10 characters... " >&6; }
 if test ${ac_cv_unsafe_crypt+y}
@@ -4096,14 +4095,39 @@ else case e in #(
       ORIGLIBS=$LIBS
       LIBS="-lcrypt $LIBS"
     fi
-    if test "$cross_compiling" = yes
+    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#define _XOPEN_SOURCE 700
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+$use_crypt_header
+
+int main(void)
+{
+  char pwd[11], pwd2[11];
+
+  strncpy(pwd, (char *)crypt("FooBar", "BazQux"), 10);
+  pwd[10] = '\0';
+  strncpy(pwd2, (char *)crypt("xyzzy", "BazQux"), 10);
+  pwd2[10] = '\0';
+  if (strcmp(pwd, pwd2) == 0)
+    exit(0);
+  exit(1);
+}
+
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  if test "$cross_compiling" = yes
 then :
   ac_cv_unsafe_crypt=no
 else case e in #(
   e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
-#define _XOPEN_SOURCE
+#define _XOPEN_SOURCE 700
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -4134,18 +4158,32 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
   conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
 esac
 fi
- ;;
+
+else case e in #(
+  e) ac_cv_unsafe_crypt=unknown ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+                if test ${ac_cv_lib_crypt_crypt-no} = yes; then
+      LIBS=$ORIGLIBS
+    fi
+   ;;
 esac
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_unsafe_crypt" >&5
 printf "%s\n" "$ac_cv_unsafe_crypt" >&6; }
+if test $ac_cv_unsafe_crypt = unknown; then
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: the crypt() probe would not build, so this was not tested.
+Continuing as though crypt() were safe.  If this system's crypt() only looks
+at the first eight characters of a password, define HAVE_UNSAFE_CRYPT by hand." >&5
+printf "%s\n" "$as_me: WARNING: the crypt() probe would not build, so this was not tested.
+Continuing as though crypt() were safe.  If this system's crypt() only looks
+at the first eight characters of a password, define HAVE_UNSAFE_CRYPT by hand." >&2;}
+fi
 if test $ac_cv_unsafe_crypt = yes; then
 
 printf "%s\n" "#define HAVE_UNSAFE_CRYPT 1" >>confdefs.h
 
-fi
-if test ${ac_cv_lib_crypt_crypt-no} = yes; then
-  LIBS=$ORIGLIBS
 fi
 
 
