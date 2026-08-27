@@ -132,14 +132,14 @@ void trig_data_copy(trig_data *this_data, const trig_data *trg)
 void dg_read_trigger(FILE *fp, void *proto, int type)
 {
   char line[READ_SIZE];
-  char junk[8];
+  char junk[TRIG_TAG_FIELD + 1];
   int vnum, rnum, count;
   char_data *mob;
   room_data *room;
   struct trig_proto_list *trg_proto, *new_trg;
 
   get_line(fp, line);
-  count = sscanf(line,"%7s %d",junk,&vnum);
+  count = sscanf(line, TRIG_TAG_FMT " %d", junk, &vnum);
 
   if (count != 2) {
     mudlog(BRF, LVL_BUILDER, TRUE,

@@ -147,6 +147,14 @@
 #define BOOT_TOKEN_FIELD  255
 /** One bounded token, for the readers that scan straight out of a FILE. */
 #define BOOT_TOKEN_FMT    "%" SCANF_WIDTH(BOOT_TOKEN_FIELD) "s"
+
+/** The leading tag on a trigger-assignment line -- the "T" in "T 1234".  Both
+ * trigger readers scan it into an eight-byte buffer, and one of them already
+ * bounded it with a literal 7.  Named so the buffer and the width move
+ * together, which a literal pair cannot. */
+#define TRIG_TAG_FIELD    7
+/** One bounded trigger tag. */
+#define TRIG_TAG_FMT      "%" SCANF_WIDTH(TRIG_TAG_FIELD) "s"
 #define PLAYER_FILE	LIB_ETC"players"   /* the player database	*/
 #define MAIL_FILE	LIB_ETC"plrmail"   /* for the mudmail system	*/
 #define MAIL_FILE_TMP	LIB_ETC"plrmail_tmp"   /* for the mudmail system	*/
