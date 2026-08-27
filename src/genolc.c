@@ -479,10 +479,21 @@ ACMD(do_export_zone)
     return;
   }
 
-  /* Zone 656 would start at vnum 65600, past the ceiling every vnum has,
-   * so the files could not load anywhere. */
-  if (target > 655 || (*arg2 && is_number(arg2) && target < 0)) {
-    send_to_char(ch, "Pick a target zone between 1 and 655.\r\n");
+  /* A target renumbers the zone into target*100 .. target*100 + its width,
+   * and that highest vnum has to be one the recipient can store: inside
+   * IDXTYPE, and not IDXTYPE_MAX itself, which is NOWHERE and NOTHING on an
+   * unsigned-index build.  Nothing on the load path range-checks a vnum --
+   * parse_room() takes an int and truncates at world[room_nr].number, and
+   * load_zones() reads the header with %hd -- so a target that does not fit
+   * yields files that are quietly wrong rather than files that are refused.
+   *
+   * Derived from IDXTYPE_MAX rather than written as a literal, so the two
+   * cannot drift apart.  The literal this replaces, 655, was already one
+   * too many: zone 655 reaches vnum 65599 and only its first 35 slots fit
+   * in an unsigned short.  With CIRCLE_UNSIGNED_INDEX 0 it was out by a
+   * factor of two. */
+  if (*arg2 && is_number(arg2) && target < 0) {
+    send_to_char(ch, "A target zone cannot be negative.\r\n");
     return;
   }
 
@@ -494,6 +505,18 @@ ACMD(do_export_zone)
     send_to_char(ch, "Zone 0 cannot be a target: an exit to room 0 loads as "
                      "no exit at all.\r\n");
     return;
+  }
+
+  if (target >= 0) {
+    long highest = (long)target * 100 +
+                   ((long)zone_table[zrnum].top - genolc_zone_bottom(zrnum));
+
+    if (highest >= (long)IDXTYPE_MAX) {
+      send_to_char(ch, "Zone %d would put this zone's highest vnum at %ld, "
+                       "and no vnum above %ld can be stored.\r\n",
+                   target, highest, (long)IDXTYPE_MAX - 1);
+      return;
+    }
   }
 
   fmt.bot = genolc_zone_bottom(zrnum);
