@@ -137,8 +137,10 @@ AC_TYPE_PID_T
 AC_TYPE_SIZE_T
 AC_TYPE_SSIZE_T
 
-dnl AC_HEADER_TIME was withdrawn in autoconf 2.70.  This is the body it used
-dnl to expand to; sysdep.h still switches on TIME_WITH_SYS_TIME.
+dnl AC_HEADER_TIME was withdrawn in autoconf 2.70.  It compiled <sys/types.h>,
+dnl <sys/time.h> and <time.h> together and defined TIME_WITH_SYS_TIME if that
+dnl worked; on any C89 implementation it could not fail, so only the header
+dnl check is left.  sysdep.h still switches on TIME_WITH_SYS_TIME.
 if test ${ac_cv_header_sys_time_h:-no} = yes; then
   AC_DEFINE([TIME_WITH_SYS_TIME], [1],
     [Define if you can safely include both <sys/time.h> and <time.h>.])
