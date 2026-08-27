@@ -174,6 +174,17 @@ int delete_room(room_rnum rnum)
     r_frozen_start_room = 0;	/* The Void */
   }
 
+  /* Deleting one of these is handled above; deleting a room *below* one is
+   * not, and add_room() has always incremented all three for exactly that
+   * reason.  Without the decrement, a start room quietly points one room
+   * high for the rest of the boot -- and it is read on every login, not on
+   * some rare path.  check_start_rooms() resolves all three at boot and
+   * falls back rather than leaving NOWHERE, so no guard is needed here,
+   * just as add_room() needs none. */
+  r_mortal_start_room -= (r_mortal_start_room > rnum);
+  r_immort_start_room -= (r_immort_start_room > rnum);
+  r_frozen_start_room -= (r_frozen_start_room > rnum);
+
   /* Dump the contents of this room into the Void.  We could also just extract 
    * the people, mobs, and objects here. */
   for (obj = world[rnum].contents; obj; obj = next_obj) {
