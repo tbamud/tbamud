@@ -66,7 +66,7 @@ long atol(const char *str);
 #define MAIL_DRAFT    6  /* Mail is a draft (not yet sent)          */
 
 void walkdir(FILE* index_file, char *dir);
-int get_line(FILE *fl, char *buf);
+int get_line(FILE *fl, char *buf, size_t bufsize);
 long asciiflag_conv(char *flag);
 int sprintascii(char *out, long bits);
 
@@ -115,7 +115,7 @@ char *findLine(FILE *plr_file, char *tag) {
 	static char line[5000];
 	rewind(plr_file);
 
-	while (get_line(plr_file, line)) {
+	while (get_line(plr_file, line, sizeof(line))) {
 		if(!strncmp(tag, line, strlen(tag))) {
 			return line+strlen(tag);
 		}
@@ -264,24 +264,32 @@ void walkdir(FILE *index_file, char *dir) {
   }
 }
 
-int get_line(FILE *fl, char *buf)
+int get_line(FILE *fl, char *buf, size_t bufsize)
 {
-  char temp[READ_SIZE];
   int lines = 0;
-  int sl;
+  size_t sl = 0;
+
+  if (bufsize < 2)
+    return (0);
 
   do {
-    if (!fgets(temp, READ_SIZE, fl))
+    if (!fgets(buf, bufsize, fl))
       return (0);
     lines++;
-  } while (*temp == '*' || *temp == '\n' || *temp == '\r');
+    /* Discard the tail of a line that did not fit; a fragment left in the
+     * stream is read as a line of its own by the next call. */
+    sl = strlen(buf);
+    if (sl > 0 && buf[sl - 1] != '\n') {
+      int c;
+      while ((c = getc(fl)) != EOF && c != '\n')
+        ;
+    }
+  } while (*buf == '*' || *buf == '\n' || *buf == '\r');
 
-  /* Last line of file doesn't always have a \n, but it should. */
-  sl = strlen(temp);
-  while (sl > 0 && (temp[sl - 1] == '\n' || temp[sl - 1] == '\r'))
-    temp[--sl] = '\0';
+  /* Last line of file does not always end in a newline, but it should. */
+  while (sl > 0 && (buf[sl - 1] == '\n' || buf[sl - 1] == '\r'))
+    buf[--sl] = '\0';
 
-  strcpy(buf, temp); /* strcpy: OK, if buf >= READ_SIZE (256) */
   return (lines);
 }
 

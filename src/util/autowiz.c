@@ -280,7 +280,6 @@ int get_line(FILE * fl, char *buf, size_t bufsize)
         perror("reading player index");
       return (0);
     }
-    }
     lines++;
     /* Discard the tail of a line that did not fit; a fragment left in the
      * stream is read as a line of its own by the next call. */
