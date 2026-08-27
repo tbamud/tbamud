@@ -18,3 +18,17 @@ Commit 'configure' and 'src/conf.h.in' along with whatever you changed.
 Both are tracked so that people building the mud do not need autoconf.
 
 Requires autoconf 2.69 or newer; 2.72 generated the files in the tree now.
+
+One file autoheader does not write
+----------------------------------
+
+'src/conf.h.cmake.in' holds the same symbols for the CMake build, which
+configures it instead of 'src/conf.h.in'.  Nothing generates it and nothing
+checks it against this directory, so it only stays in step by hand.  Add an
+AC_DEFINE that anything under src/ reads and you have to add it there too,
+or the CMake build compiles without it and says nothing.
+
+The two agree as things stand.  'src/conf.h.cmake.in' is short only the ten
+symbols autoconf emits of its own accord -- the six PACKAGE_* and
+HAVE_STDIO_H, HAVE_STDLIB_H, HAVE_STDINT_H, HAVE_INTTYPES_H -- and no tbaMUD
+source reads any of them.
