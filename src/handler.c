@@ -205,6 +205,35 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *ms
   } /* switch */
 }
 
+/* Is this AFF bit one the mob's own mob file sets, and one that nothing in
+ * the game deliberately takes away?
+ *
+ * AFF_INVISIBLE and AFF_HIDE are excluded, and that is the whole of the
+ * exception.  The game has explicit mechanics that reveal a mob -- appear()
+ * when it is attacked, and the hide check -- so those two are the game's to
+ * remove, and a mob it has revealed has to stay revealed.  Treating them as
+ * innate would hand an invisibility spell cast on a revealed mob the means
+ * to give its innate invisibility back when the spell expired.  Whether a
+ * mob should ever become invisible again, and on what, is a decision for
+ * each MUD rather than one to make here.
+ *
+ * Nothing else the mob file sets has such a mechanic: no stock code path
+ * removes SANCTUARY, DETECT_INVIS, SENSE_LIFE or NOTRACK from a mob on
+ * purpose, so for those the prototype really is a source that outlives any
+ * spell or item, and dropping it is the bug this guards.  CHARM, POISON and
+ * SLEEP cannot arise here at all -- db.c strips all three from every
+ * prototype at boot and medit does the same on save. */
+static int aff_flag_is_innate(struct char_data *ch, int flag)
+{
+  if (!IS_NPC(ch) || GET_MOB_RNUM(ch) == NOBODY)
+    return FALSE;
+
+  if (flag == AFF_INVISIBLE || flag == AFF_HIDE)
+    return FALSE;
+
+  return IS_SET_AR(AFF_FLAGS(&mob_proto[GET_MOB_RNUM(ch)]), flag);
+}
+
 static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
 {
   int i , j;
@@ -215,10 +244,30 @@ static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bit
         if(IS_SET_AR(bitv, (i*32)+j))
           SET_BIT_AR(AFF_FLAGS(ch), (i*32)+j);
   } else {
+    /* A mob's mob-file AFF bits are a source, like equipment or a spell, and
+     * unlike those two they do not go away while the mob lives.  This branch
+     * runs when some OTHER source is withdrawn, so clearing a bit the
+     * prototype also sets throws away a flag nothing asked to remove: give a
+     * mob with innate sanctuary an item whose perm-affects include sanctuary,
+     * take it away again, and the mob is left without sanctuary for the rest
+     * of its life.
+     *
+     * Only this bookkeeping path is guarded, and only for the bits
+     * aff_flag_is_innate() answers for -- which deliberately excludes the two
+     * the game reveals a mob by removing.  Deliberate removals call
+     * REMOVE_BIT_AR directly and are untouched either way, so a mob that has
+     * been revealed stays revealed.  Nothing here restores a bit; it only
+     * declines to drop one whose source is still present.  Death and repop
+     * remains the only way a mob returns to its mob-file state, which is also
+     * the only restoration the game has: reset_zone() reads a new mobile when
+     * fewer than the maximum exist and never touches an existing one. */
     for(i = 0; i < AF_ARRAY_MAX; i++)
       for(j = 0; j < 32; j++)
-        if(IS_SET_AR(bitv, (i*32)+j))
+        if(IS_SET_AR(bitv, (i*32)+j)) {
+          if (aff_flag_is_innate(ch, (i*32)+j))
+            continue;
           REMOVE_BIT_AR(AFF_FLAGS(ch), (i*32)+j);
+        }
     mod = -mod;
   }
 
