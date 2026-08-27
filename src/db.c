@@ -3710,6 +3710,24 @@ static int check_object(struct obj_data *obj)
     log("SYSERR: Object #%d (%s) has negative cost/day (%d).",
 	GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_RENT(obj));
 
+  /* item_types[] is indexed by this directly -- olist, stat and the two spell
+   * displays all do it -- and nothing between the file and those readers
+   * bounds it.  parse_object() assigns the file's number straight into a
+   * signed char, so a type of 200 in an .obj file arrives as a negative one
+   * and reads before the array rather than past it.
+   *
+   * Corrected rather than only reported, because this function's result is
+   * discarded by its only caller: a line in the log would leave the bad type
+   * sitting in the prototype for every reader to trip over.  Correcting a
+   * malformed world value at load is what parse_object() already does for a
+   * drink container lighter than its own contents.  It also has to happen
+   * before the switch below, which dispatches on this same value. */
+  if ((GET_OBJ_TYPE(obj) < 0 || GET_OBJ_TYPE(obj) >= NUM_ITEM_TYPES) && (error = TRUE)) {
+    log("SYSERR: Object #%d (%s) has unknown type %d, treating it as UNDEFINED.",
+	GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_TYPE(obj));
+    GET_OBJ_TYPE(obj) = ITEM_UNDEFINED;
+  }
+
   snprintf(objname, sizeof(objname), "Object #%d (%s)", GET_OBJ_VNUM(obj), obj->short_description);
   for(y = 0; y < TW_ARRAY_MAX; y++) {
     error |= check_bitvector_names(GET_OBJ_WEAR(obj)[y], wear_bits_count, objname, "object wear");

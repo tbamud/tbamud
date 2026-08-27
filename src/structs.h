@@ -362,6 +362,7 @@
 
 /* object-related defines */
 /* Item types: used by obj_data.obj_flags.type_flag */
+#define ITEM_UNDEFINED  0		/**< No type, or one we do not know	*/
 #define ITEM_LIGHT      1		/**< Item is a light source	*/
 #define ITEM_SCROLL     2		/**< Item is a scroll		*/
 #define ITEM_WAND       3		/**< Item is a wand		*/
