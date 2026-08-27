@@ -794,18 +794,20 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     if (GROUP(ch) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
       generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
-        do_get(ch, "all.coin corpse", 0, 0);
+        do_get(ch, "all.coin last.corpse", 0, 0);
         do_split(ch, local_buf, 0, 0);
       }
       /* need to remove the gold from the corpse */
     } else if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOGOLD)) {
-      do_get(ch, "all.coin corpse", 0, 0);
+      do_get(ch, "all.coin last.corpse", 0, 0);
     }
     if (!IS_NPC(ch) && (ch != victim) && PRF_FLAGGED(ch, PRF_AUTOLOOT)) {
-      do_get(ch, "all corpse", 0, 0);
+      /* last.corpse, not corpse: obj_to_room() appends, so a plain name
+       * finds the oldest corpse in the room, not the one just made. */
+      do_get(ch, "all last.corpse", 0, 0);
     }
     if (IS_NPC(victim) && !IS_NPC(ch) && PRF_FLAGGED(ch, PRF_AUTOSAC)) {
-      do_sac(ch,"corpse",0,0);
+      do_sac(ch, "last.corpse", 0, 0);
     }
     return (-1);
   }
