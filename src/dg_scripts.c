@@ -1513,6 +1513,19 @@ static void eval_expr(char *line, char *result, void *go, struct script_data *sc
   while (*line && isspace(*line))
     line++;
 
+  /* Same reason var_subst() checks: the condition on an 'if', 'while' or
+   * 'switch' is a slice of a trigger line, which carries no length limit of
+   * its own, while expr[] here, line[] in eval_lhs_op_rhs() and the tokens[]
+   * array beside it are all sized MAX_INPUT_LENGTH.  An over-long condition
+   * evaluates to nothing, which reads as false. */
+  if (strlen(line) >= MAX_INPUT_LENGTH) {
+    script_log("Trigger: %s, VNum %d, type: %d. Expression is %d characters, over the %d limit: '%.60s...'",
+               GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), type,
+               (int)strlen(line), MAX_INPUT_LENGTH - 1, line);
+    *result = '\0';
+    return;
+  }
+
   if (eval_lhs_op_rhs(line, result, go, sc, trig, type));
 
   else if (*line == '(') {
