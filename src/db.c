@@ -243,7 +243,7 @@ static void boot_social_messages(void)
 
   /* now read 'em */
   for (line_number = 0;; ++line_number) {
-    if (fscanf(fl, " %s ", next_soc) != 1) {
+    if (fscanf(fl, " " BOOT_TOKEN_FMT " ", next_soc) != 1) {
       if(feof(fl))
         log("SYSERR: unexpected end of file encountered in socials file %s", SOCMESS_FILE_NEW);
       else if(ferror(fl))
@@ -254,7 +254,7 @@ static void boot_social_messages(void)
     }
     if (*next_soc == '$') break;
     if (CONFIG_NEW_SOCIALS == TRUE) {
-      if (fscanf(fl, " %s %d %d %d %d \n",
+      if (fscanf(fl, " " BOOT_TOKEN_FMT " %d %d %d %d \n",
   		sorted, &hide, &min_char_pos, &min_pos, &min_lvl) != 5) {
       log("SYSERR: format error in social file near social '%s'", next_soc);
       /* SYSERR_DESC: From boot_social_messages(), this error is output when
@@ -994,7 +994,7 @@ void index_boot(int mode)
 
   for (line_number = 0;; ++line_number) {
     /* first, count the number of records in the file so we can malloc */
-    if (fscanf(db_index, "%s\n", buf1) != 1) {
+    if (fscanf(db_index, BOOT_TOKEN_FMT "\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s. "
             "Ensure that the last line of the file starts with the character '$'.",
@@ -1079,7 +1079,7 @@ void index_boot(int mode)
   rewind(db_index);
 
   for (line_number = 1;; ++line_number) {
-    if (fscanf(db_index, "%s\n", buf1) != 1) {
+    if (fscanf(db_index, BOOT_TOKEN_FMT "\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s",
             prefix, index_filename);

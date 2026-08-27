@@ -48,8 +48,8 @@ void build_player_index(void)
 {
   int rec_count = 0, i;
   FILE *plr_index;
-  char index_name[40], line[256], bits[64];
-  char arg2[80];
+  char index_name[40], line[256], bits[WORLD_FLAG_FIELD + 1];
+  char arg2[MAX_NAME_LENGTH + 1];
 
   sprintf(index_name, "%s%s", LIB_PLRFILES, INDEX_FILE);
   if (!(plr_index = fopen(index_name, "r"))) {
@@ -72,7 +72,8 @@ void build_player_index(void)
   CREATE(player_table, struct player_index_element, rec_count);
   for (i = 0; i < rec_count; i++) {
     get_line(plr_index, line);
-    sscanf(line, "%ld %s %d %s %ld", &player_table[i].id, arg2,
+    sscanf(line, "%ld %" SCANF_WIDTH(MAX_NAME_LENGTH) "s %d " FLAG_FIELD_FMT " %ld",
+      &player_table[i].id, arg2,
       &player_table[i].level, bits, (long *)&player_table[i].last);
     CREATE(player_table[i].name, char, strlen(arg2) + 1);
     strcpy(player_table[i].name, arg2);
@@ -231,7 +232,8 @@ int load_char(const char *name, struct char_data *ch)
   FILE *fl;
   char filename[40];
   char buf[128], buf2[128], line[MAX_INPUT_LENGTH + 1], tag[6];
-  char f1[128], f2[128], f3[128], f4[128];
+  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
+  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1];
   trig_data *t = NULL;
   trig_rnum t_rnum = NOTHING;
 
@@ -312,7 +314,7 @@ int load_char(const char *name, struct char_data *ch)
       case 'A':
         if (!strcmp(tag, "Ac  "))	GET_AC(ch)		= atoi(line);
 	else if (!strcmp(tag, "Act ")) {
-         if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
+         if (sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4) == 4) {
           PLR_FLAGS(ch)[0] = asciiflag_conv(f1);
           PLR_FLAGS(ch)[1] = asciiflag_conv(f2);
           PLR_FLAGS(ch)[2] = asciiflag_conv(f3);
@@ -320,7 +322,7 @@ int load_char(const char *name, struct char_data *ch)
         } else
           PLR_FLAGS(ch)[0] = asciiflag_conv(line);
       } else if (!strcmp(tag, "Aff ")) {
-        if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
+        if (sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4) == 4) {
           AFF_FLAGS(ch)[0] = asciiflag_conv(f1);
           AFF_FLAGS(ch)[1] = asciiflag_conv(f2);
           AFF_FLAGS(ch)[2] = asciiflag_conv(f3);
@@ -410,7 +412,7 @@ int load_char(const char *name, struct char_data *ch)
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
         else if (!strcmp(tag, "Pref")) {
-          if (sscanf(line, "%s %s %s %s", f1, f2, f3, f4) == 4) {
+          if (sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4) == 4) {
             PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
             PRF_FLAGS(ch)[1] = asciiflag_conv(f2);
             PRF_FLAGS(ch)[2] = asciiflag_conv(f3);

@@ -137,6 +137,16 @@
 #define WORLD_FLAG_FIELD  127
 /** One bounded flag field, for the world-file parsers. */
 #define FLAG_FIELD_FMT    "%" SCANF_WIDTH(WORLD_FLAG_FIELD) "s"
+
+/** Longest single whitespace-separated token the boot-time record readers
+ * will accept -- a social name, an index-file entry.  Unlike the flag fields
+ * above, these land in buffers that are also used to read whole lines, so the
+ * bound cannot be derived from the array: it is a deliberate ceiling well
+ * under every one of them, and it truncates rather than overflows.  Nothing
+ * legitimate comes near it, and a file carrying more is malformed. */
+#define BOOT_TOKEN_FIELD  255
+/** One bounded token, for the readers that scan straight out of a FILE. */
+#define BOOT_TOKEN_FMT    "%" SCANF_WIDTH(BOOT_TOKEN_FIELD) "s"
 #define PLAYER_FILE	LIB_ETC"players"   /* the player database	*/
 #define MAIL_FILE	LIB_ETC"plrmail"   /* for the mudmail system	*/
 #define MAIL_FILE_TMP	LIB_ETC"plrmail_tmp"   /* for the mudmail system	*/

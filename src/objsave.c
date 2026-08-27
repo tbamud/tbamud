@@ -1201,7 +1201,8 @@ void Crash_save_all(void)
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
   obj_save_data *head, *current, *tempsave;
-  char f1[128], f2[128], f3[128], f4[128], line[READ_SIZE];
+  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
+  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1], line[READ_SIZE];
   int t[4],i, nr;
   struct obj_data *temp;
 
@@ -1334,7 +1335,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'F':
       if (!strcmp(tag, "Flag")) {
-        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4);
         GET_OBJ_EXTRA(temp)[0] = asciiflag_conv(f1);
         GET_OBJ_EXTRA(temp)[1] = asciiflag_conv(f2);
         GET_OBJ_EXTRA(temp)[2] = asciiflag_conv(f3);
@@ -1351,7 +1352,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'P':
       if (!strcmp(tag, "Perm")) {
-        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4);
         GET_OBJ_AFFECT(temp)[0] = asciiflag_conv(f1);
         GET_OBJ_AFFECT(temp)[1] = asciiflag_conv(f2);
         GET_OBJ_AFFECT(temp)[2] = asciiflag_conv(f3);
@@ -1372,7 +1373,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'W':
       if (!strcmp(tag, "Wear")) {
-        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
+        sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4);
         GET_OBJ_WEAR(temp)[0] = asciiflag_conv(f1);
         GET_OBJ_WEAR(temp)[1] = asciiflag_conv(f2);
         GET_OBJ_WEAR(temp)[2] = asciiflag_conv(f3);

@@ -71,8 +71,8 @@ void read_file(void)
 
   FILE *fl;
   int recs, i, last = 0, level = 0, flags = 0;
-  char index_name[40], line[256], bits[64];
-  char name[MAX_NAME_LENGTH];
+  char index_name[40], line[256], bits[WORLD_FLAG_FIELD + 1];
+  char name[MAX_NAME_LENGTH + 1];
   long id = 0;
 
   sprintf(index_name, "%s%s", LIB_PLRFILES, INDEX_FILE);
@@ -89,7 +89,8 @@ void read_file(void)
 
   for (i = 0; i < recs; i++) {
     get_line(fl, line);
-    sscanf(line, "%ld %s %d %s %d", &id, name, &level, bits, &last);
+    sscanf(line, "%ld %" SCANF_WIDTH(MAX_NAME_LENGTH) "s %d " FLAG_FIELD_FMT " %d",
+           &id, name, &level, bits, &last);
     CAP(name);
     flags = asciiflag_conv(bits);
     if (level >= MIN_LEVEL &&
