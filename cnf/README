@@ -17,7 +17,10 @@ To regenerate, run both of these from the top of the tree -- not from here:
 Commit 'configure' and 'src/conf.h.in' along with whatever you changed.
 Both are tracked so that people building the mud do not need autoconf.
 
-Requires autoconf 2.69 or newer; 2.72 generated the files in the tree now.
+Requires autoconf 2.69 or newer.  The files in the tree now came from 2.72.
+An older one will regenerate them, but it rewrites 'configure' wholesale --
+the diff comes out enormous and almost none of it is yours.  Match 2.72
+unless you mean to move the tree to something else.
 
 One file autoheader does not write
 ----------------------------------

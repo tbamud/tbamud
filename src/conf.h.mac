@@ -1,4 +1,4 @@
-/* src/conf.h.in.  Generated automatically from configure.in by autoheader.  */
+/* src/conf.h for the Macintosh build -- maintained by hand, not generated.  */
 
 #ifndef _CONF_H_
 #define _CONF_H_
