@@ -937,7 +937,7 @@ int count_hash_records(FILE *fl)
   char buf[128];
   int count = 0;
 
-  while (fgets(buf, 128, fl))
+  while (fgets(buf, sizeof(buf), fl))
     if (*buf == '#')
       count++;
 
@@ -2155,7 +2155,7 @@ static void load_zones(FILE *fl, char *zonename)
   int i, cmd_no, num_of_cmds = 0, line_num = 0, tmp, error;
   char *ptr, buf[READ_SIZE], zname[READ_SIZE], buf2[MAX_STRING_LENGTH];
   int zone_fix = FALSE;
-  char t1[80], t2[80];
+  char t1[ZCMD_STR_FIELD + 1], t2[ZCMD_STR_FIELD + 1];
   char zbuf1[MAX_STRING_LENGTH], zbuf2[MAX_STRING_LENGTH];
   char zbuf3[MAX_STRING_LENGTH], zbuf4[MAX_STRING_LENGTH];
 
@@ -2271,7 +2271,7 @@ static void load_zones(FILE *fl, char *zonename)
       if (sscanf(ptr, " %d %d %d ", &tmp, &ZCMD.arg1, &ZCMD.arg2) != 3)
 	error = 1;
     } else if (ZCMD.command=='V') { /* a string-arg command */
-      if (sscanf(ptr, " %d %d %d %d %79s %79[^\f\n\r\t\v]", &tmp, &ZCMD.arg1, &ZCMD.arg2,
+      if (sscanf(ptr, " %d %d %d %d " ZCMD_STR_FMT " " ZCMD_TXT_FMT, &tmp, &ZCMD.arg1, &ZCMD.arg2,
 		 &ZCMD.arg3, t1, t2) != 6)
 	error = 1;
       else {
@@ -2922,14 +2922,22 @@ int is_empty(zone_rnum zone_nr)
 /* read and allocate space for a '~'-terminated string from a given file */
 char *fread_string(FILE *fl, const char *error)
 {
-  char buf[MAX_STRING_LENGTH], tmp[513];
+  /* fgets() stores at most FREAD_CHUNK - 1 characters and a NUL, so the NUL
+   * can land at FREAD_CHUNK - 1.  The else branch below then writes from
+   * there: '\r', '\n' and '\0', ending two past the NUL.  So the array has to
+   * be the fgets bound plus two, and it was the fgets bound plus one -- a
+   * line of FREAD_CHUNK - 1 characters with no newline among them wrote one
+   * byte off the end of the stack.  Deriving both from one constant is what
+   * keeps the two in step; that they were written as 512 and 513 is how they
+   * drifted apart in the first place. */
+  char buf[MAX_STRING_LENGTH], tmp[FREAD_CHUNK + 2];
   char *point;
   int done = 0, length = 0, templength;
 
   *buf = '\0';
 
   do {
-    if (!fgets(tmp, 512, fl)) {
+    if (!fgets(tmp, FREAD_CHUNK, fl)) {
       log("SYSERR: fread_string: format error at or near %s", error);
       exit(1);
     }
@@ -2970,7 +2978,9 @@ char *fread_string(FILE *fl, const char *error)
 /* fread_clean_string is the same as fread_string, but skips preceding spaces */
 char *fread_clean_string(FILE *fl, const char *error)
 {
-  char buf[MAX_STRING_LENGTH], tmp[513];
+  /* Same three-byte tail as fread_string(), and this one always takes it --
+   * there is no branch here that rewrites in place -- so the same plus-two. */
+  char buf[MAX_STRING_LENGTH], tmp[FREAD_CHUNK + 2];
   char *point, c;
   int done = 0, length = 0, templength;
 
@@ -2989,7 +2999,7 @@ char *fread_clean_string(FILE *fl, const char *error)
   ungetc( c, fl );
 
   do {
-    if (!fgets(tmp, 512, fl)) {
+    if (!fgets(tmp, FREAD_CHUNK, fl)) {
       log("SYSERR: fread_clean_string: format error at or near %s", error);
       exit(1);
     }

@@ -155,6 +155,21 @@
 #define TRIG_TAG_FIELD    7
 /** One bounded trigger tag. */
 #define TRIG_TAG_FMT      "%" SCANF_WIDTH(TRIG_TAG_FIELD) "s"
+
+/** How much of a line fread_string() and fread_clean_string() take per pass.
+ * Their buffer is this plus TWO, not plus one: fgets() can leave the NUL at
+ * FREAD_CHUNK - 1, and the code then writes a CR, an LF and a NUL starting
+ * there. Written as 512 against a [513] array, those two facts drifted apart
+ * and the last of the three bytes landed off the end. */
+#define FREAD_CHUNK       512
+
+/** The two string arguments of a 'V' zone command, scanned into a pair of
+ * arrays sized from the same constant rather than from a matching literal. */
+#define ZCMD_STR_FIELD    79
+/** The 'V' command's name argument. */
+#define ZCMD_STR_FMT      "%" SCANF_WIDTH(ZCMD_STR_FIELD) "s"
+/** Its value argument, which runs to the end of the line. */
+#define ZCMD_TXT_FMT      "%" SCANF_WIDTH(ZCMD_STR_FIELD) "[^\f\n\r\t\v]"
 #define PLAYER_FILE	LIB_ETC"players"   /* the player database	*/
 #define MAIL_FILE	LIB_ETC"plrmail"   /* for the mudmail system	*/
 #define MAIL_FILE_TMP	LIB_ETC"plrmail_tmp"   /* for the mudmail system	*/
