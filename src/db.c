@@ -3665,16 +3665,58 @@ void init_char(struct char_data *ch)
   GET_SCREEN_WIDTH(ch) = PAGE_WIDTH;
   
   /* Set Beginning Toggles Here */
-  SET_BIT_AR(PRF_FLAGS(ch), PRF_AUTOEXIT);
+  set_default_prefs(ch, PRF_FLAGS(ch));
+}
+
+/* The default preference toggles, in one place.  This used to live only here,
+ * spelled out inline, while prefedit's "restore defaults" kept a second and
+ * longer list of its own -- and the two disagreed about six flags, so
+ * restoring defaults handed a player a set no newly created character had ever
+ * had.  Whichever list is right, there cannot be two of them.
+ *
+ * A character brand new from init_char() and one restored by prefedit now get
+ * the same answer, and adding a toggle means editing one function.
+ *
+ * The colour test below is the one init_char() has always used, and it is
+ * worth being plain about what it does rather than what it looks like.
+ * pVariables is an array of pointers, and ProtocolCreate() mallocs an entry for
+ * every variable in it, so the entry is never NULL and the condition is true
+ * whenever ch->desc is: colour goes on for anyone with a descriptor, not only
+ * for a client that advertised it.  That is the established behaviour and this
+ * does not change it.  Reading the value instead of the pointer would turn
+ * colour off for every client that never negotiates MSDP, which is a decision
+ * for each MUD to make deliberately rather than one to slip in here. */
+void set_default_prefs(struct char_data *ch, int flags[])
+{
+  int i;
+
+  for (i = 0; i < PR_ARRAY_MAX; i++)
+    flags[i] = 0;
+
+  SET_BIT_AR(flags, PRF_AUTOEXIT);
+  SET_BIT_AR(flags, PRF_DISPHP);
+  SET_BIT_AR(flags, PRF_DISPMANA);
+  SET_BIT_AR(flags, PRF_DISPMOVE);
+
   if (ch->desc)
-    if (ch->desc->pProtocol->pVariables[eMSDP_ANSI_COLORS] || 
+    if (ch->desc->pProtocol->pVariables[eMSDP_ANSI_COLORS] ||
       ch->desc->pProtocol->pVariables[eMSDP_XTERM_256_COLORS]) {
-      SET_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_1);
-      SET_BIT_AR(PRF_FLAGS(ch), PRF_COLOR_2);
-    } 
-  SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);  
-  SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
-  SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
+      SET_BIT_AR(flags, PRF_COLOR_1);
+      SET_BIT_AR(flags, PRF_COLOR_2);
+    }
+
+  /* The three the game grants for rank rather than for taste.  prefedit is the
+   * caller that needs the test: it restores an existing character, who may be
+   * any level.  From init_char() it is very nearly dead -- a new character is
+   * level 0 -- but not entirely, because the first character created on a
+   * fresh MUD has been made LVL_IMPL a few lines above.  That implementor is
+   * now given these three at creation; before, it started with none of them
+   * and had to set them by hand. */
+  if (GET_LEVEL(ch) > LVL_IMMORT) {
+    SET_BIT_AR(flags, PRF_NOHASSLE);
+    SET_BIT_AR(flags, PRF_HOLYLIGHT);
+    SET_BIT_AR(flags, PRF_SHOWVNUMS);
+  }
 }
 
 /* returns the real number of the room with given virtual number */

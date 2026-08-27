@@ -390,6 +390,11 @@ int count_hash_records(FILE *fl);
 bitvector_t asciiflag_conv(char *flag);
 void renum_world(void);
 void load_config( void );
+/** Write the default preference toggles for ch into flags.  The one
+ * definition of what "default" means: init_char() applies it to a new
+ * character and prefedit's restore applies it to an existing one, so the two
+ * cannot answer differently. */
+void set_default_prefs(struct char_data *ch, int flags[]);
 
 /* Various Files */
 extern char *credits;
