@@ -1756,7 +1756,7 @@ static void reassign_rooms(void)
   int i;
 
   /* remove old funcs */
-  for (i = 0; i < top_of_world; i++)
+  for (i = 0; i <= top_of_world; i++)
     world[i].func = NULL;
 
   /* reassign spec_procs */
