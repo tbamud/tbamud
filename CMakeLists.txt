@@ -25,10 +25,35 @@ if (CMAKE_COMPILER_IS_GNUCC)
     check_c_compiler_flag(-Wall SUPPORTS_WALL)
     check_c_compiler_flag(-Wno-char-subscripts SUPPORTS_WNO_CHAR_SUBSCRIPTS)
 
+    # Does -Wall actually warn about isascii(char) here?  cnf/configure.ac asks
+    # the same question with the same program, and the two build systems have no
+    # business disagreeing about MYFLAGS.  Adding -Wno-char-subscripts merely
+    # because the compiler accepts the flag suppresses the warning on every
+    # compiler that stopped emitting it, which has been all of them for years.
+    set(_tba_saved_required_flags "${CMAKE_REQUIRED_FLAGS}")
+    set(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -Wall -Werror")
+    check_c_source_compiles("
+        #include <ctype.h>
+        int main(void) {
+            int i; char c = '0';
+            i = isascii(c);
+            i = isdigit(c);
+            i = isprint(c);
+            (void)i;
+            return 0;
+        }
+    " CTYPE_CLEAN_UNDER_WALL)
+    set(CMAKE_REQUIRED_FLAGS "${_tba_saved_required_flags}")
+
     if (SUPPORTS_WALL)
-        set(MYFLAGS "-Wall")
-        if (SUPPORTS_WNO_CHAR_SUBSCRIPTS)
-            set(MYFLAGS "${MYFLAGS} -Wno-char-subscripts")
+        if (CTYPE_CLEAN_UNDER_WALL)
+            set(MYFLAGS "-Wall")
+        elseif (SUPPORTS_WNO_CHAR_SUBSCRIPTS)
+            set(MYFLAGS "-Wall -Wno-char-subscripts")
+        else()
+            # -Wall warns and the suppression is unavailable: same call
+            # configure.ac makes, which is to give up on -Wall entirely.
+            set(MYFLAGS "")
         endif()
         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MYFLAGS}")
     endif()
