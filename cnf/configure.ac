@@ -1,11 +1,34 @@
-dnl Process this file with autoconf to produce a configure script.
-AC_INIT(src/act.comm.c)
+dnl Process this file with autoconf to produce a configure script.  Run both
+dnl of these from the top of the tree, not from cnf/:
+dnl
+dnl   autoconf  -I cnf -o configure cnf/configure.ac
+dnl   autoheader -I cnf            cnf/configure.ac
+dnl
+dnl autoheader writes src/conf.h.in; configure turns that into src/conf.h.
+dnl Never edit configure or src/conf.h.in by hand -- the next regeneration
+dnl throws the edit away without saying so.
+
+AC_PREREQ([2.69])
+
+dnl The name and version below only feed the PACKAGE_* defines.  No tbaMUD
+dnl source reads them; the version players see is tbamud_version, in
+dnl src/constants.c.
+AC_INIT([tbaMUD],[2025],[https://github.com/tbamud/tbamud/issues])
+AC_CONFIG_SRCDIR([src/act.comm.c])
+AC_CONFIG_HEADERS([src/conf.h])
+
+dnl src/conf.h.in used to carry this guard by hand.  autoheader owns the
+dnl file now, so the guard has to be declared here to survive regeneration.
+AH_TOP([#ifndef _CONF_H_
+#define _CONF_H_])
+AH_BOTTOM([#endif /* _CONF_H_ */])
+
 AC_SUBST(MYFLAGS)
 AC_SUBST(NETLIB)
 AC_SUBST(CRYPTLIB)
 
-AC_CONFIG_HEADER(src/conf.h)
-AC_DEFINE(CIRCLE_UNIX)
+AC_DEFINE([CIRCLE_UNIX], [1],
+  [Define if we're compiling CircleMUD under any type of UNIX system.])
 
 dnl Find the 'more' program
 AC_CHECK_PROGS(MORE, less most more cat)
@@ -16,7 +39,7 @@ AC_PROG_CC
 dnl If we're using gcc, use gcc options.
 dnl If not, test for various common switches to make a 'cc' compiler
 dnl compile ANSI C code.
-if test $ac_cv_prog_gcc = yes; then
+if test "$GCC" = yes; then
 
   dnl Determine if gcc -Wall causes warnings on isascii(), etc.
   AC_CACHE_CHECK(whether ${CC-cc} -Wall also needs -Wno-char-subscripts,
@@ -24,13 +47,13 @@ if test $ac_cv_prog_gcc = yes; then
   [
     OLDCFLAGS=$CFLAGS
     CFLAGS="$CFLAGS -Wall -Werror"
-    AC_TRY_COMPILE([#include <ctype.h>],
-       [ int i; char c = '0';
+    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <ctype.h>]],
+       [[ int i; char c = '0';
          i = isascii(c);
          i = isdigit(c);
          i = isprint(c);
          (void)i;
-       ], ac_cv_char_warn=no, ac_cv_char_warn=yes)
+       ]])], ac_cv_char_warn=no, ac_cv_char_warn=yes)
     CFLAGS=$OLDCFLAGS
   ])
 
@@ -39,7 +62,7 @@ if test $ac_cv_prog_gcc = yes; then
   [
     OLDCFLAGS=$CFLAGS
     CFLAGS="$CFLAGS -Wno-char-subscripts"
-    AC_TRY_COMPILE(, , ac_cv_gcc_ncs=yes, ac_cv_gcc_ncs=no)
+    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[]])], ac_cv_gcc_ncs=yes, ac_cv_gcc_ncs=no)
     CFLAGS=$OLDCFLAGS
   ])
 
@@ -48,7 +71,7 @@ if test $ac_cv_prog_gcc = yes; then
   [
     OLDCFLAGS=$CFLAGS
     CFLAGS="$CFLAGS -fno-builtin"
-    AC_TRY_COMPILE(, , ac_cv_gcc_fnb=yes, ac_cv_gcc_fnb=no)
+    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]], [[]])], ac_cv_gcc_fnb=yes, ac_cv_gcc_fnb=no)
     CFLAGS=$OLDCFLAGS
   ])
 
@@ -84,12 +107,21 @@ AC_CHECK_FUNC(socket, ,
 AC_CHECK_FUNC(malloc, ,
     [AC_CHECK_LIB(malloc, malloc)])
 
-AC_CHECK_FUNC(crypt, AC_DEFINE(CIRCLE_CRYPT),
-    [AC_CHECK_LIB(crypt, crypt, AC_DEFINE(CIRCLE_CRYPT) CRYPTLIB="-lcrypt")]
+AC_CHECK_FUNC(crypt,
+    [AC_DEFINE([CIRCLE_CRYPT], [1],
+       [Define if the system is capable of using crypt() to encrypt.])],
+    [AC_CHECK_LIB(crypt, crypt,
+       [AC_DEFINE([CIRCLE_CRYPT], [1],
+          [Define if the system is capable of using crypt() to encrypt.])
+        CRYPTLIB="-lcrypt"])]
     )
 
 dnl Checks for header files.
-AC_HEADER_STDC
+dnl AC_HEADER_STDC became a no-op in autoconf 2.70: every hosted C
+dnl implementation has had the C89 headers for decades, so the probe could
+dnl only ever answer yes.  sysdep.h still reads STDC_HEADERS, so define it
+dnl here rather than leave it silently undefined.
+AC_DEFINE([STDC_HEADERS], [1], [Define if you have the ANSI C header files.])
 AC_HEADER_SYS_WAIT
 AC_CHECK_HEADERS(fcntl.h sys/fcntl.h errno.h net/errno.h string.h strings.h)
 AC_CHECK_HEADERS(limits.h sys/time.h sys/select.h sys/types.h unistd.h)
@@ -103,8 +135,14 @@ dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
 AC_TYPE_PID_T
 AC_TYPE_SIZE_T
-AC_CHECK_TYPE(ssize_t, int)
-AC_HEADER_TIME
+AC_TYPE_SSIZE_T
+
+dnl AC_HEADER_TIME was withdrawn in autoconf 2.70.  This is the body it used
+dnl to expand to; sysdep.h still switches on TIME_WITH_SYS_TIME.
+if test ${ac_cv_header_sys_time_h:-no} = yes; then
+  AC_DEFINE([TIME_WITH_SYS_TIME], [1],
+    [Define if you can safely include both <sys/time.h> and <time.h>.])
+fi
 
 dnl Check for the 'struct in_addr' definition. Ugly, yes.
 if test $ac_cv_header_netinet_in_h = no; then
@@ -121,10 +159,11 @@ EOF
   fi
 
   AC_CACHE_CHECK([for struct in_addr], ac_cv_struct_in_addr,
-    [ AC_TRY_COMPILE([$headers],[struct in_addr tp; tp.s_addr;], ac_cv_struct_in_addr=yes, ac_cv_struct_in_addr=no)])
+    [ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[$headers]], [[struct in_addr tp; (void)tp.s_addr;]])], ac_cv_struct_in_addr=yes, ac_cv_struct_in_addr=no)])
 
   if test $ac_cv_struct_in_addr = yes; then
-    AC_DEFINE(HAVE_STRUCT_IN_ADDR)
+    AC_DEFINE([HAVE_STRUCT_IN_ADDR], [1],
+      [Define if the system has struct in_addr.])
   fi
 fi
 
@@ -134,16 +173,21 @@ if test $ac_cv_header_sys_socket_h = no; then
   ac_cv_socklen_t = no;
 else
   AC_CACHE_CHECK([for typedef socklen_t], ac_cv_socklen_t,
-    [ AC_TRY_COMPILE([#include <sys/socket.h>],[socklen_t sl; sl=0;], ac_cv_socklen_t=yes, ac_cv_socklen_t=no)])
+    [ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/socket.h>]], [[socklen_t sl; sl=0; (void)sl;]])], ac_cv_socklen_t=yes, ac_cv_socklen_t=no)])
 fi
 
 if test $ac_cv_socklen_t = no; then
-  AC_DEFINE(socklen_t, int)
+  AC_DEFINE([socklen_t], [int],
+    [Define to 'int' if <sys/socket.h> doesn't define.])
 fi
 
 
 dnl Checks for library functions.
-AC_TYPE_SIGNAL
+dnl AC_TYPE_SIGNAL was withdrawn in autoconf 2.70: C89 fixed the return type
+dnl at void, and the probe it used to run is the one that answered 'int' on a
+dnl modern compiler and broke the build without a word.
+AC_DEFINE([RETSIGTYPE], [void],
+  [Define as the return type of signal handlers (int or void).])
 AC_FUNC_VPRINTF
 AC_CHECK_FUNCS(gettimeofday select snprintf strcasecmp strdup strerror stricmp strlcpy strncasecmp strnicmp strstr vsnprintf)
 
@@ -211,6 +255,7 @@ AC_CHECK_PROTO(unlink)
 AC_CHECK_PROTO(vsnprintf)
 AC_CHECK_PROTO(write)
 
-AC_OUTPUT(src/Makefile src/util/Makefile tests/Makefile)
+AC_CONFIG_FILES([src/Makefile src/util/Makefile tests/Makefile])
+AC_OUTPUT
 #
 echo "Configuration completed.  To compile, type:  cd src; make"

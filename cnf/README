@@ -1,0 +1,20 @@
+Autoconf sources for tbaMUD
+===========================
+
+  configure.ac   what autoconf reads
+  aclocal.m4     tbaMUD's own macros: AC_CHECK_PROTO and AC_UNSAFE_CRYPT
+
+The 'configure' script at the top of the tree and 'src/conf.h.in' are both
+generated from these two files.  Do not edit either one by hand.  The next
+regeneration discards the edit without saying so, which is how the tree
+ended up carrying a 'configure' that no longer matched its own source.
+
+To regenerate, run both of these from the top of the tree -- not from here:
+
+  autoconf   -I cnf -o configure cnf/configure.ac
+  autoheader -I cnf              cnf/configure.ac
+
+Commit 'configure' and 'src/conf.h.in' along with whatever you changed.
+Both are tracked so that people building the mud do not need autoconf.
+
+Requires autoconf 2.69 or newer; 2.72 generated the files in the tree now.

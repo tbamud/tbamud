@@ -1,3 +1,4 @@
+# @configure_input@
 # CircleMUD Makefile.in - Makefile template used by 'configure'
 # for the 'util' directory
 

@@ -1,14 +1,23 @@
-AC_DEFUN(AC_CHECK_PROTO,
-[
-ac_safe=translit($1, './+-', '__p_');
+dnl Local macros for cnf/configure.ac.  autoconf and autoheader pick this up
+dnl from the -I cnf on their command lines; see the header of configure.ac.
 
-AC_MSG_CHECKING([if $1 is prototyped])
-AC_CACHE_VAL(ac_cv_prototype_$ac_safe, [#
-  if test $ac_cv_gcc_fnb = yes; then
+dnl AC_CHECK_PROTO(FUNCTION)
+dnl
+dnl Declare FUNCTION with a deliberately wrong signature after sysdep.h has
+dnl been read.  If the system already prototyped it the two declarations
+dnl collide and the compile fails, which is the answer we want: no
+dnl NEED_<FUNCTION>_PROTO.  If the compile succeeds nothing had declared it,
+dnl so sysdep.h has to.
+AC_DEFUN([AC_CHECK_PROTO],
+[m4_pushdef([ac_Proto], [ac_cv_prototype_]m4_translit([$1], [./+-], [__p_]))dnl
+AC_CACHE_CHECK([if $1 is prototyped], [ac_Proto],
+[
+  dnl -fno-builtin keeps gcc's own idea of the signature out of the way.
+  if test "${ac_cv_gcc_fnb-no}" = yes; then
     OLDCFLAGS=$CFLAGS
     CFLAGS="$CFLAGS -fno-builtin"
   fi
-AC_TRY_COMPILE([
+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
 #define NO_LIBRARY_PROTOTYPES
 #define __COMM_C__
 #define __ACT_OTHER_C__
@@ -17,26 +26,25 @@ AC_TRY_COMPILE([
   error - already defined!
 #endif
 void $1(int a, char b, int c, char d, int e, char f, int g, char h);
-],dnl
-,
-eval "ac_cv_prototype_$ac_safe=no",eval "ac_cv_prototype_$ac_safe=yes")
-  if test $ac_cv_gcc_fnb = yes; then
+]], [[]])], [ac_Proto=no], [ac_Proto=yes])
+  if test "${ac_cv_gcc_fnb-no}" = yes; then
     CFLAGS=$OLDCFLAGS
   fi
 ])
-
-if eval "test \"`echo '$ac_cv_prototype_'$ac_safe`\" = yes"; then
-  AC_MSG_RESULT(yes)
-else
-  AC_DEFINE(builtin(format, NEED_%s_PROTO, translit($1, 'a-z', 'A-Z')), , Check for a prototype to $1.)
-  AC_MSG_RESULT(no)
-fi
+AS_IF([test "$ac_Proto" = no],
+  [AC_DEFINE([NEED_]m4_toupper([$1])[_PROTO], [1],
+     [Check for a prototype to $1.])])
+m4_popdef([ac_Proto])dnl
 ])
 
-dnl @@@t1="MAKE_PROTO_SAFE($1)"; t2="MAKE_PROTO_NAME($t1)"; literals="$literals $t2"@@@])
 
-
-AC_DEFUN(AC_UNSAFE_CRYPT, [
+dnl AC_UNSAFE_CRYPT
+dnl
+dnl Some crypt() implementations only look at the first eight characters of
+dnl the password, so two different passwords can hash the same.  Detect that
+dnl and let the game work around it.
+AC_DEFUN([AC_UNSAFE_CRYPT],
+[
   AC_CACHE_CHECK([whether crypt needs over 10 characters], ac_cv_unsafe_crypt, [
     if test ${ac_cv_header_crypt_h-no} = yes; then
       use_crypt_header="#include <crypt.h>"
@@ -45,10 +53,9 @@ AC_DEFUN(AC_UNSAFE_CRYPT, [
       ORIGLIBS=$LIBS
       LIBS="-lcrypt $LIBS"
     fi
-    AC_TRY_RUN(
-changequote(<<, >>)dnl
-<<
+    AC_RUN_IFELSE([AC_LANG_SOURCE([[
 #define _XOPEN_SOURCE
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 $use_crypt_header
@@ -65,11 +72,10 @@ int main(void)
     exit(0);
   exit(1);
 }
->>
-changequote([, ])dnl
-, ac_cv_unsafe_crypt=yes, ac_cv_unsafe_crypt=no, ac_cv_unsafe_crypt=no)])
+]])], [ac_cv_unsafe_crypt=yes], [ac_cv_unsafe_crypt=no], [ac_cv_unsafe_crypt=no])])
 if test $ac_cv_unsafe_crypt = yes; then
-  AC_DEFINE(HAVE_UNSAFE_CRYPT)
+  AC_DEFINE([HAVE_UNSAFE_CRYPT], [1],
+    [Define if we don't have proper support for the system's crypt().])
 fi
 if test ${ac_cv_lib_crypt_crypt-no} = yes; then
   LIBS=$ORIGLIBS

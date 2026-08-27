@@ -1,3 +1,4 @@
+# @configure_input@
 # tbaMUD Makefile.in - Makefile template used by 'configure'
 # Clean-up provided by seqwith.
 
