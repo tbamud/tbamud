@@ -840,7 +840,21 @@ ACMD(do_score)
     send_to_char(ch, "and you are not on a quest at the moment.\r\n");
   else
   {
-    send_to_char(ch, "and your current quest is: %s", QST_NAME(real_quest(GET_QUEST(ch))));
+    qst_rnum rnum = real_quest(GET_QUEST(ch));
+
+    /* GET_QUEST() holding something is not the same as it still resolving.
+     * delete_quest() does not clear the vnum from the players who are on
+     * that quest, so this has to survive real_quest() answering NOTHING
+     * rather than read aquest_table[NOTHING].  Every other reader of
+     * GET_QUEST() already tests this -- quest_progress(), quest_quit() and
+     * autoquest_trigger_check() all do -- and score was the one that did
+     * not.  Saying so rather than clearing it here: the quest commands
+     * clear the stale vnum the next time one of them is used, and score
+     * reports state, it does not repair it. */
+    if (rnum == NOTHING)
+      send_to_char(ch, "and your current quest no longer exists");
+    else
+      send_to_char(ch, "and your current quest is: %s", QST_NAME(rnum));
 
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_SHOWVNUMS))
         send_to_char(ch, " [%d]\r\n", GET_QUEST(ch));
