@@ -485,8 +485,16 @@ static int Crash_save(struct obj_data *obj, FILE *fp, int location)
     if (!objsave_save_obj_record(obj, fp, location))
       result = FALSE;
 
+    /* Take this object's weight back out of the containers that were
+     * carrying it, so the record just written holds each container's own
+     * weight.  Only the ones that track it have it to give back: subtracting
+     * from a container that never added it is what left an unlimited one
+     * lighter by its contents every time it was saved, and negative if it was
+     * saved often enough.  Crash_restore_weight() below asks the same
+     * question, so the two remain exact inverses. */
     for (tmp = obj->in_obj; tmp; tmp = tmp->in_obj)
-      GET_OBJ_WEIGHT(tmp) -= GET_OBJ_WEIGHT(obj);
+      if (TRACKS_CONTENT_WEIGHT(tmp))
+        GET_OBJ_WEIGHT(tmp) -= GET_OBJ_WEIGHT(obj);
   }
 
   return result;
@@ -553,7 +561,7 @@ static void Crash_restore_weight(struct obj_data *obj)
   if (obj) {
     Crash_restore_weight(obj->contains);
     Crash_restore_weight(obj->next_content);
-    if (obj->in_obj)
+    if (obj->in_obj && TRACKS_CONTENT_WEIGHT(obj->in_obj))
       GET_OBJ_WEIGHT(obj->in_obj) += GET_OBJ_WEIGHT(obj);
   }
 }
