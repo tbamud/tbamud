@@ -267,6 +267,22 @@ int delete_room(room_rnum rnum)
         SHOP_ROOM(i, j) = 0; /* set to the void */
     }
   }
+  /* was_in_room is a bare room rnum kept on the character, not a link into
+   * any room's people list, so the shift below cannot reach it -- that loop
+   * walks world[i].people and repairs IN_ROOM alone, and a linkdead
+   * character is not in the room it records.  This is add_room()'s pass in
+   * reverse: the room they were pulled out of is gone, so there is nothing
+   * to send them back to and the reference is dropped; a room deleted below
+   * it moves their index down like every other rnum here.  NOWHERE is what
+   * game_loop() already tests for before returning anyone, so clearing it
+   * leaves them where they are rather than somewhere arbitrary. */
+  for (ppl = character_list; ppl; ppl = ppl->next) {
+    if (GET_WAS_IN(ppl) == rnum)
+      GET_WAS_IN(ppl) = NOWHERE;
+    else if (GET_WAS_IN(ppl) > rnum)
+      GET_WAS_IN(ppl) -= (GET_WAS_IN(ppl) != NOWHERE); /* with unsigned NOWHERE > any rnum */
+  }
+
   /* Now we actually move the rooms down. */
   for (i = rnum; i < top_of_world; i++) {
     world[i] = world[i + 1];
