@@ -81,6 +81,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ibt.h" /* for free_ibt_lists */
+#include "class.h" /* for level_exp, in the MSDP experience variables */
 #include "mud_event.h"
 
 #ifndef INVALID_SOCKET
@@ -2853,6 +2854,100 @@ static void msdp_update( void )
       MSDPSetNumber( d, eMSDP_MOVEMENT, GET_MOVE(ch) );
       MSDPSetNumber( d, eMSDP_MOVEMENT_MAX, GET_MAX_MOVE(ch) );
       MSDPSetNumber( d, eMSDP_AC, compute_armor_class(ch) );
+
+      /* The rest of the character sheet. These are advertised in the same
+       * table as the ones above and were never set either, so a client that
+       * asked for them waited forever -- which is indistinguishable from the
+       * server not supporting MSDP at all, the same argument as the room
+       * variables below.
+       */
+      MSDPSetNumber( d, eMSDP_HITROLL, GET_HITROLL(ch) );
+      MSDPSetNumber( d, eMSDP_DAMROLL, GET_DAMROLL(ch) );
+      MSDPSetNumber( d, eMSDP_PRACTICE, GET_PRACTICES(ch) );
+
+      /* GET_STR() and friends read aff_abils, real_abils holds the scores
+       * without modifiers, and that is exactly the split MSDP asks for with
+       * its plain and _PERM pair. tbaMUD's exceptional strength lives in a
+       * separate GET_ADD() that MSDP has no variable for, so STR reports the
+       * whole number a player sees on their sheet and nothing reports the
+       * fraction.
+       */
+      MSDPSetNumber( d, eMSDP_STR,      GET_STR(ch) );
+      MSDPSetNumber( d, eMSDP_INT,      GET_INT(ch) );
+      MSDPSetNumber( d, eMSDP_WIS,      GET_WIS(ch) );
+      MSDPSetNumber( d, eMSDP_DEX,      GET_DEX(ch) );
+      MSDPSetNumber( d, eMSDP_CON,      GET_CON(ch) );
+      MSDPSetNumber( d, eMSDP_STR_PERM, ch->real_abils.str );
+      MSDPSetNumber( d, eMSDP_INT_PERM, ch->real_abils.intel );
+      MSDPSetNumber( d, eMSDP_WIS_PERM, ch->real_abils.wis );
+      MSDPSetNumber( d, eMSDP_DEX_PERM, ch->real_abils.dex );
+      MSDPSetNumber( d, eMSDP_CON_PERM, ch->real_abils.con );
+
+      /* The same sum score prints, so a client and the score sheet cannot
+       * disagree. level_exp() logs a SYSERR for any level above LVL_IMPL, so
+       * the top level is asked about its own total instead of a next level
+       * that does not exist -- otherwise this would log once a second for
+       * every implementor online.
+       */
+      if ( GET_LEVEL(ch) < LVL_IMPL )
+      {
+          int needed = level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1);
+
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_MAX, needed );
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_TNL, MAX(0, needed - GET_EXP(ch)) );
+      }
+      else
+      {
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_MAX, GET_EXP(ch) );
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_TNL, 0 );
+      }
+
+      /* An array of the spells currently on the character, named the way stat
+       * names them. One spell can hold several affects -- a single cast fills
+       * one per apply -- so each is listed once rather than once per slot.
+       */
+      {
+          char affects[MAX_INPUT_LENGTH];
+          size_t aff_len = 0;
+          struct affected_type *af, *earlier;
+
+          *affects = '\0';
+          for ( af = ch->affected; af != NULL; af = af->next )
+          {
+              bool listed = FALSE;
+
+              for ( earlier = ch->affected; earlier != af; earlier = earlier->next )
+              {
+                  if ( earlier->spell == af->spell )
+                  {
+                      listed = TRUE;
+                      break;
+                  }
+              }
+
+              if ( listed )
+                  continue;
+              if ( aff_len >= sizeof(affects) - 1 )
+                  break;
+              aff_len += snprintf( affects + aff_len, sizeof(affects) - aff_len,
+                  "%c%s", (char)MSDP_VAL, skill_name(af->spell) );
+          }
+          MSDPSetArray( d, eMSDP_AFFECTS, affects );
+      }
+
+      /* Who and when. protocol.c already sends SERVER_ID by hand when a
+       * client turns MSDP or ATCP on, but never through the variable table,
+       * so a client that REPORTed it rather than reading the handshake got
+       * nothing. This puts it where the other variables are.
+       */
+      MSDPSetString( d, eMSDP_SERVER_ID,   MUD_NAME );
+      MSDPSetNumber( d, eMSDP_SERVER_TIME, (int) time(0) );
+      MSDPSetNumber( d, eMSDP_WORLD_TIME,  time_info.hours );
+
+      /* RACE is left alone deliberately. It is the one advertised variable
+       * with nothing behind it: stock tbaMUD has no race, only class, and
+       * answering with an invented value would be worse than the silence.
+       */
 
       /* This would be better moved elsewhere */
       if ( pOpponent != NULL )
