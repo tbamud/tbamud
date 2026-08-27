@@ -211,9 +211,17 @@ int delete_quest(qst_rnum rnum)
   SPECIAL (*tempfunc);
   int quests_remaining = 0;
 
-  if (rnum >= total_quests)
+  if (rnum == NOTHING || rnum >= total_quests)
     return FALSE;
 
+  /* Read the questmaster only after the bounds check above -- and note the
+   * check names NOTHING itself rather than trusting the wrap to catch it.
+   * (IDXTYPE)-1 lands above total_quests while indexes are unsigned but
+   * below it when they are signed, so the comparison alone would let the
+   * sentinel through; delete_object() names it the same way.  qedit hands
+   * us real_quest()'s NOTHING when a builder deletes a quest that was
+   * never added, and as an initialiser this read indexed
+   * aquest_table[65535] before the check had a chance to reject it. */
   qm = QST_MASTER(rnum);
   rznum = real_zone_by_thing(QST_NUM(rnum));
 
