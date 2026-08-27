@@ -160,7 +160,22 @@ int delete_mobile(mob_rnum refpt)
   /* The prototype is not in character_list, so extracting it only raises
    * extractions_pending for a character extract_pending_chars() can never
    * find -- one "SYSERR: Couldn't find 1 extractions as counted." per
-   * deletion.  The table entry is overwritten by the shift below anyway. */
+   * deletion. */
+
+  /* Nothing else will free these.  read_mobile() copies the whole struct, so
+   * every live instance shares the prototype's string pointers, and both
+   * free_char() and free_mobile() therefore refuse to free a string that
+   * points at a prototype -- correctly, or the first mob to die would take
+   * the prototype's name with it.  That leaves the prototype's own copy with
+   * no owner, and the shift below overwrites the struct that holds it.
+   *
+   * Safe here and only here: extract_mobile_all() above walks every instance
+   * of this vnum and NULLs its five string pointers and its proto_script
+   * first, freeing whichever of them were not shared.  So by this line
+   * nothing points at what is about to be freed.  This is the same set
+   * destroy_db() frees for every prototype at shutdown. */
+  free_mobile_strings(&mob_proto[refpt]);
+  free_proto_script(&mob_proto[refpt], MOB_TRIGGER);
 
   for (counter = refpt; counter < top_of_mobt; counter++) {
     mob_index[counter] = mob_index[counter + 1];

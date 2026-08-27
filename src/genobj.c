@@ -437,6 +437,19 @@ int delete_object(obj_rnum rnum)
     GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) > rnum);
   }
 
+  /* The same leak delete_mobile() has, for the same reason: read_object()
+   * copies the whole struct, so an instance shares the prototype's strings
+   * and nothing that frees an instance will touch one that points at a
+   * prototype.  The prototype's own copy has no owner, and the shift below
+   * overwrites the struct holding it.
+   *
+   * Safe here because object extraction is immediate rather than deferred:
+   * the loop above extracts every instance of this rnum and the assert then
+   * confirms none is left, so nothing points at what is freed.  Same set
+   * destroy_db() frees for every object prototype at shutdown. */
+  free_object_strings(&obj_proto[rnum]);
+  free_proto_script(&obj_proto[rnum], OBJ_TRIGGER);
+
   for (i = rnum; i < top_of_objt; i++) {
     obj_index[i] = obj_index[i + 1];
     obj_proto[i] = obj_proto[i + 1];
