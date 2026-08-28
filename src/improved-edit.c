@@ -215,6 +215,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     break;
   case PARSE_DELETE:
     switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
+    case -1:
     case 0:
       write_to_output(d, "You must specify a line number or range to delete.\r\n");
       return;
@@ -271,6 +272,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     *buf = '\0';
     if (*string)
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
+      case -1:
       case 0:
         line_low = 1;
         line_high = 999999;
@@ -329,6 +331,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     *buf = '\0';
     if (*string)
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
+      case -1:
       case 0:
         line_low = 1;
         line_high = 999999;
