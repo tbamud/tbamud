@@ -362,6 +362,69 @@ static void fix_filename(const char *str, char *outbuf, size_t maxlen)
  * room: the number to raise is this one. */
 #define XV_RING 16
 
+/* Every out-of-zone reference the export marks, so the info file can list
+ * them all.  Sections 2 and 3 name the exits and door keys with the rooms
+ * they sit in, but nothing walked the zone commands, the trigger
+ * attachments, the container keys or the quest fields -- those were marked
+ * and never mentioned, and each one stops the recipient's boot.  Recording
+ * them where xv() renders them cannot miss a writer, and cannot drift when
+ * one is added. */
+#define ZZ_MAX 512
+
+static struct {
+  char file[8];
+  int vnum;
+} zz_seen[ZZ_MAX];
+static int zz_count = 0;
+static int zz_dropped = 0;
+static char zz_file[8] = "";
+
+static void zz_reset(void)
+{
+  zz_count = 0;
+  zz_dropped = 0;
+  *zz_file = '\0';
+}
+
+static void zz_record(int vnum)
+{
+  int i;
+
+  for (i = 0; i < zz_count; i++)
+    if (zz_seen[i].vnum == vnum && !strcmp(zz_seen[i].file, zz_file))
+      return;
+
+  if (zz_count >= ZZ_MAX) {
+    zz_dropped++;
+    return;
+  }
+  strlcpy(zz_seen[zz_count].file, zz_file, sizeof(zz_seen[zz_count].file));
+  zz_seen[zz_count].vnum = vnum;
+  zz_count++;
+}
+
+/* A string on its way to a world file.  The MUD holds colour codes as tabs
+ * and every gen writer turns them back into @ on the way out; the exporter
+ * did not, so exported files were the only ones on disk carrying raw
+ * control characters -- and the QQ scheme asks the recipient to open them
+ * in a text editor, where a tab-to-space pass silently eats every code.
+ * convert_from_tabs() has a single static buffer, so it cannot be used
+ * twice in one fprintf; this is the same ring xv() uses, sized against the
+ * widest user (the seven shop messages). */
+#define XS_RING 8
+
+static const char *xs(const char *str)
+{
+  static char ring[XS_RING][MAX_STRING_LENGTH];
+  static int next = 0;
+  char *out = ring[next];
+
+  next = (next + 1) % XS_RING;
+  strlcpy(out, str ? str : "", MAX_STRING_LENGTH);
+  parse_tab(out);
+  return out;
+}
+
 /* Render one vnum. Several of these appear in a single fprintf, so the
  * results rotate through a ring of buffers. */
 static const char *xv(const struct export_fmt *fmt, int vnum)
@@ -376,8 +439,10 @@ static const char *xv(const struct export_fmt *fmt, int vnum)
   /* The NOTHING/NOWHERE sentinel is not a vnum and must not be marked. */
   if (vnum == NOTHING || vnum == NOWHERE)
     snprintf(out, len, "%d", vnum);
-  else if (vnum < fmt->bot || vnum > fmt->top)
+  else if (vnum < fmt->bot || vnum > fmt->top) {
+    zz_record(vnum);
     snprintf(out, len, "ZZ%02d", vnum % 100);
+  }
   else if (fmt->target < 0)
     snprintf(out, len, "QQ%02d", vnum % 100);
   else
@@ -420,6 +485,7 @@ static FILE *export_open(const struct export_fmt *fmt, const char *ext)
 {
   char path[READ_SIZE];
 
+  strlcpy(zz_file, ext, sizeof(zz_file));   /* whose marks these are */
   snprintf(path, sizeof(path), "world/export/%s.%s", fmt->stem, ext);
   return fopen(path, "w");
 }
@@ -533,21 +599,17 @@ ACMD(do_export_zone)
     send_to_char(ch, "Note: this zone is wider than the 100-vnum grid the "
                      "export scheme assumes.\r\n"); 
 
-  /* If we fail, it might just be because the directory didn't exist.  Can't 
-   * hurt to try again. Do it silently though ( no logs ). */ 
-  if (!export_info_file(zrnum, &fmt) && archive_mkdir("world/export") != 0) {
+  if (archive_mkdir("world/export") != 0) {
     send_to_char(ch, "Failed to create export directory.\r\n");
     return;
   }
+
+  zz_reset();
 
   /* Every writer's result is kept: assigning to one `success` meant only
    * the LAST one decided whether the archive was built, so a failure
    * anywhere else was reported and then packaged anyway. */
   success = TRUE;
-  if (!export_info_file(zrnum, &fmt)) {
-    send_to_char(ch, "Info file not saved!\r\n");
-    success = FALSE;
-  }
   if (!export_save_shops(zrnum, &fmt)) {
     send_to_char(ch, "Shops not saved!\r\n");
     success = FALSE;
@@ -574,6 +636,11 @@ ACMD(do_export_zone)
   }
   if (!export_save_quests(zrnum, &fmt)) {
     send_to_char(ch, "Quests not saved!\r\n");
+    success = FALSE;
+  }
+  /* Last: it reports what the writers above marked. */
+  if (!export_info_file(zrnum, &fmt)) {
+    send_to_char(ch, "Info file not saved!\r\n");
     success = FALSE;
   }
 
@@ -831,6 +898,20 @@ static int export_info_file(zone_rnum zrnum, const struct export_fmt *fmt)
   fprintf(info_file, "please stop by TBA and talk to Rumble.\n\n");
   fprintf(info_file, "We at The Builder's Academy hope you will enjoy using the area.\n\n");
 
+  if (zz_count) {
+    fprintf(info_file, "\nEvery reference that had to be ZZ'd, by file. Each names a vnum this\n");
+    fprintf(info_file, "zone does not own; the sections above give the room and door for the\n");
+    fprintf(info_file, "ones they cover, and this is all of them:\n");
+
+    for (i = 0; i < zz_count; i++)
+      fprintf(info_file, "      %s.%-4s  ZZ%02d  (was %d)\n",
+              fmt->stem, zz_seen[i].file, zz_seen[i].vnum % 100, zz_seen[i].vnum);
+
+    if (zz_dropped)
+      fprintf(info_file, "      ... and %d more, too many to list.\n", zz_dropped);
+    fprintf(info_file, "\n");
+  }
+
   fprintf(info_file, "Rumble - Admin of TBA\n");
   fprintf(info_file, "Welcor - Coder of TBA\n");
   fprintf(info_file, "\ntelnet://tbamud.com:9091/\n");
@@ -859,14 +940,12 @@ static int export_save_shops(zone_rnum zrnum, const struct export_fmt *fmt)
       fprintf(shop_file, "#%s~\n", xv(fmt, i));
       shop = &shop_index[rshop];
 
-      /* Save the products. */
-      for (j = 0; S_PRODUCT(shop, j) != NOTHING; j++) {
-        if (obj_index[S_PRODUCT(shop, j)].vnum < genolc_zone_bottom(zrnum) ||
-            obj_index[S_PRODUCT(shop, j)].vnum > zone_table[zrnum].top)
-          continue;
-
+      /* Save the products.  A product from another zone used to be dropped
+       * here, so the recipient's shop quietly stocked fewer items than the
+       * sender's and nothing said so.  Mark it like every other reference
+       * that cannot travel instead. */
+      for (j = 0; S_PRODUCT(shop, j) != NOTHING; j++)
 	fprintf(shop_file, "%s\n", xv(fmt, obj_index[S_PRODUCT(shop, j)].vnum));
-      }
       fprintf(shop_file, "-1\n");
 
       /* Save the rates. */
@@ -895,13 +974,13 @@ static int export_save_shops(zone_rnum zrnum, const struct export_fmt *fmt)
 	      "%ld\n"
 	      "%s\n"
 	      "%d\n",
-	      S_NOITEM1(shop) ? S_NOITEM1(shop) : "%s Ke?!",
-	      S_NOITEM2(shop) ? S_NOITEM2(shop) : "%s Ke?!",
-	      S_NOBUY(shop) ? S_NOBUY(shop) : "%s Ke?!",
-	      S_NOCASH1(shop) ? S_NOCASH1(shop) : "%s Ke?!",
-	      S_NOCASH2(shop) ? S_NOCASH2(shop) : "%s Ke?!",
-	      S_BUY(shop) ? S_BUY(shop) : "%s Ke?! %d?",
-	      S_SELL(shop) ? S_SELL(shop) : "%s Ke?! %d?",
+	      xs(S_NOITEM1(shop) ? S_NOITEM1(shop) : "%s Ke?!"),
+	      xs(S_NOITEM2(shop) ? S_NOITEM2(shop) : "%s Ke?!"),
+	      xs(S_NOBUY(shop) ? S_NOBUY(shop) : "%s Ke?!"),
+	      xs(S_NOCASH1(shop) ? S_NOCASH1(shop) : "%s Ke?!"),
+	      xs(S_NOCASH2(shop) ? S_NOCASH2(shop) : "%s Ke?!"),
+	      xs(S_BUY(shop) ? S_BUY(shop) : "%s Ke?! %d?"),
+	      xs(S_SELL(shop) ? S_SELL(shop) : "%s Ke?! %d?"),
 	      S_BROKE_TEMPER(shop),
 	      S_BITVECTOR(shop),
 	      S_KEEPER(shop) == NOBODY ? "-1"
@@ -909,14 +988,9 @@ static int export_save_shops(zone_rnum zrnum, const struct export_fmt *fmt)
 	      S_NOTRADE(shop)
 	      );
 
-      /* Save the rooms. */
-      for (j = 0;S_ROOM(shop, j) != NOWHERE; j++) {
-        if (S_ROOM(shop, j) < genolc_zone_bottom(zrnum) ||
-            S_ROOM(shop, j) > zone_table[zrnum].top)
-          continue;
-
+      /* Save the rooms -- likewise marked rather than dropped. */
+      for (j = 0;S_ROOM(shop, j) != NOWHERE; j++)
         fprintf(shop_file, "%s\n", xv(fmt, S_ROOM(shop, j)));
-      }
       fprintf(shop_file, "-1\n");
 
       /* Save open/closing times. */
@@ -963,8 +1037,12 @@ static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd,
 
   ldesc[MAX_STRING_LENGTH - 1] = '\0';
   ddesc[MAX_STRING_LENGTH - 1] = '\0';
-  strip_cr(strncpy(ldesc, GET_LDESC(mob), MAX_STRING_LENGTH - 1));
-  strip_cr(strncpy(ddesc, GET_DDESC(mob), MAX_STRING_LENGTH - 1));
+  strlcpy(ldesc, GET_LDESC(mob), MAX_STRING_LENGTH);
+  strlcpy(ddesc, GET_DDESC(mob), MAX_STRING_LENGTH);
+  strip_cr(ldesc);
+  strip_cr(ddesc);
+  parse_tab(ldesc);
+  parse_tab(ddesc);
 
   fprintf(fd,	"#%s\n"
 		"%s%c\n"
@@ -972,8 +1050,8 @@ static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd,
 		"%s%c\n"
 		"%s%c\n",
 	xv(fmt, mvnum),
-	GET_ALIAS(mob), STRING_TERMINATOR,
-	GET_SDESC(mob), STRING_TERMINATOR,
+	xs(GET_ALIAS(mob)), STRING_TERMINATOR,
+	xs(GET_SDESC(mob)), STRING_TERMINATOR,
 	ldesc, STRING_TERMINATOR,
 	ddesc, STRING_TERMINATOR
   );
@@ -1078,7 +1156,7 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 		xv(fmt, mob_index[ZCMD(zrnum, subcmd).arg1].vnum),
 		ZCMD(zrnum, subcmd).arg2,
 		xv(fmt, world[ZCMD(zrnum, subcmd).arg3].number),
-		mob_proto[ZCMD(zrnum, subcmd).arg1].player.short_descr);
+		xs(mob_proto[ZCMD(zrnum, subcmd).arg1].player.short_descr));
       break;
     case 'O':
       fprintf(zone_file, "O %d %s %d %s \t(%s)\n",
@@ -1086,14 +1164,14 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 		xv(fmt, obj_index[ZCMD(zrnum, subcmd).arg1].vnum),
 		ZCMD(zrnum, subcmd).arg2,
 		xv(fmt, world[ZCMD(zrnum, subcmd).arg3].number),
-		obj_proto[ZCMD(zrnum, subcmd).arg1].short_description);
+		xs(obj_proto[ZCMD(zrnum, subcmd).arg1].short_description));
       break;
     case 'G':
       fprintf(zone_file, "G %d %s %d -1 \t(%s)\n",
 		ZCMD(zrnum, subcmd).if_flag,
                 xv(fmt, obj_index[ZCMD(zrnum, subcmd).arg1].vnum),
                 ZCMD(zrnum, subcmd).arg2,
-                obj_proto[ZCMD(zrnum, subcmd).arg1].short_description);
+                xs(obj_proto[ZCMD(zrnum, subcmd).arg1].short_description));
       break;
     case 'E':
       fprintf(zone_file, "E %d %s %d %d \t(%s)\n",
@@ -1101,7 +1179,7 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 		 xv(fmt, obj_index[ZCMD(zrnum, subcmd).arg1].vnum),
 		 ZCMD(zrnum, subcmd).arg2,
 		 ZCMD(zrnum, subcmd).arg3,
-		 obj_proto[ZCMD(zrnum, subcmd).arg1].short_description);
+		 xs(obj_proto[ZCMD(zrnum, subcmd).arg1].short_description));
       break;
     case 'P':
       fprintf(zone_file, "P %d %s %d %s \t(%s)\n",
@@ -1109,7 +1187,7 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 		xv(fmt, obj_index[ZCMD(zrnum, subcmd).arg1].vnum),
 		ZCMD(zrnum, subcmd).arg2,
 		xv(fmt, obj_index[ZCMD(zrnum, subcmd).arg3].vnum),
-		obj_proto[ZCMD(zrnum, subcmd).arg1].short_description);
+		xs(obj_proto[ZCMD(zrnum, subcmd).arg1].short_description));
       break;
     case 'D':
       fprintf(zone_file, "D %d %s %d %d \t(%s)\n",
@@ -1117,14 +1195,14 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 		xv(fmt, world[ZCMD(zrnum, subcmd).arg1].number),
 		ZCMD(zrnum, subcmd).arg2,
 		ZCMD(zrnum, subcmd).arg3,
-		world[ZCMD(zrnum, subcmd).arg1].name);
+		xs(world[ZCMD(zrnum, subcmd).arg1].name));
       break;
     case 'R':
       fprintf(zone_file, "R %d %s %s -1 \t(%s)\n",
 		ZCMD(zrnum, subcmd).if_flag,
 		xv(fmt, world[ZCMD(zrnum, subcmd).arg1].number),
 		xv(fmt, obj_index[ZCMD(zrnum, subcmd).arg2].vnum),
-		obj_proto[ZCMD(zrnum, subcmd).arg2].short_description);
+		xs(obj_proto[ZCMD(zrnum, subcmd).arg2].short_description));
       break;
     case 'T':
       fprintf(zone_file, "T %d %d %s %s \t(%s)\n",
@@ -1132,7 +1210,7 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 		ZCMD(zrnum, subcmd).arg1,
 		xv(fmt, trig_index[ZCMD(zrnum, subcmd).arg2]->vnum),
 		xv(fmt, world[ZCMD(zrnum, subcmd).arg3].number),
-		GET_TRIG_NAME(trig_index[ZCMD(zrnum, subcmd).arg2]->proto));
+		xs(GET_TRIG_NAME(trig_index[ZCMD(zrnum, subcmd).arg2]->proto)));
       break;
     case 'V':
       fprintf(zone_file, "V %d %d %d %s %s %s\n",
@@ -1178,8 +1256,9 @@ static int export_save_objects(zone_rnum zrnum, const struct export_fmt *fmt)
   for (ovnum = genolc_zone_bottom(zrnum); ovnum <= zone_table[zrnum].top; ovnum++) {
     if ((ornum = real_object(ovnum)) != NOTHING) {
       if ((obj = &obj_proto[ornum])->action_description) {
-	strncpy(buf, obj->action_description, sizeof(buf) - 1);
+	strlcpy(buf, obj->action_description, sizeof(buf));
 	strip_cr(buf);
+	parse_tab(buf);
       } else
 	*buf = '\0';
 
@@ -1191,9 +1270,9 @@ static int export_save_objects(zone_rnum zrnum, const struct export_fmt *fmt)
 	      "%s~\n",
 
 	      xv(fmt, GET_OBJ_VNUM(obj)),
-	      (obj->name && *obj->name) ? obj->name : "undefined",
-	      (obj->short_description && *obj->short_description) ? obj->short_description : "undefined",
-	      (obj->description && *obj->description) ?	obj->description : "undefined",
+	      xs((obj->name && *obj->name) ? obj->name : "undefined"),
+	      xs((obj->short_description && *obj->short_description) ? obj->short_description : "undefined"),
+	      xs((obj->description && *obj->description) ? obj->description : "undefined"),
 	      buf);
 
       sprintascii(ebuf1, GET_OBJ_EXTRA(obj)[0]);
@@ -1244,11 +1323,12 @@ static int export_save_objects(zone_rnum zrnum, const struct export_fmt *fmt)
 	    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: export_save_objects: Corrupt ex_desc!");
 	    continue;
 	  }
-	  strncpy(buf, ex_desc->description, sizeof(buf) - 1);
+	  strlcpy(buf, ex_desc->description, sizeof(buf));
 	  strip_cr(buf);
+	  parse_tab(buf);
 	  fprintf(obj_file, "E\n"
 		  "%s~\n"
-		  "%s~\n", ex_desc->keyword, buf);
+		  "%s~\n", xs(ex_desc->keyword), buf);
 	}
       }
       /* Do we have affects? */
@@ -1292,8 +1372,9 @@ static int export_save_rooms(zone_rnum zrnum, const struct export_fmt *fmt)
       room = &world[rnum];
 
       /* Copy the description and strip off trailing newlines. */
-      strncpy(buf, room->description ? room->description : "Empty room.", sizeof(buf)-1 );
+      strlcpy(buf, room->description ? room->description : "Empty room.", sizeof(buf));
       strip_cr(buf);
+      parse_tab(buf);
 
       /* Save the numeric and string section of the file. */
       fprintf(room_file, 	"#%s\n"
@@ -1301,7 +1382,7 @@ static int export_save_rooms(zone_rnum zrnum, const struct export_fmt *fmt)
 			"%s%c\n"
 			"%s %d %d %d %d %d\n",
 		xv(fmt, room->number),
-		room->name ? room->name : "Untitled", STRING_TERMINATOR,
+		xs(room->name ? room->name : "Untitled"), STRING_TERMINATOR,
 		buf, STRING_TERMINATOR,
 		xz(fmt),
 		room->room_flags[0], room->room_flags[1],
@@ -1313,8 +1394,9 @@ static int export_save_rooms(zone_rnum zrnum, const struct export_fmt *fmt)
 	if (R_EXIT(room, j)) {
 	  int dflag;
 	  if (R_EXIT(room, j)->general_description) {
-	    strncpy(buf, R_EXIT(room, j)->general_description, sizeof(buf)-1);
+	    strlcpy(buf, R_EXIT(room, j)->general_description, sizeof(buf));
 	    strip_cr(buf);
+	    parse_tab(buf);
 	  } else
 	    *buf = '\0';
 
@@ -1330,9 +1412,10 @@ static int export_save_rooms(zone_rnum zrnum, const struct export_fmt *fmt)
 	  } else
 	    dflag = 0;
 
-	  if (R_EXIT(room, j)->keyword)
-	    strncpy(buf1, R_EXIT(room, j)->keyword, sizeof(buf1)-1 );
-	  else
+	  if (R_EXIT(room, j)->keyword) {
+	    strlcpy(buf1, R_EXIT(room, j)->keyword, sizeof(buf1));
+	    parse_tab(buf1);
+	  } else
 	    *buf1 = '\0';
 
 	  /* A key from another zone cannot come with the zone, so mark it
@@ -1381,12 +1464,12 @@ static int export_save_rooms(zone_rnum zrnum, const struct export_fmt *fmt)
         struct extra_descr_data *xdesc;
 
 	for (xdesc = room->ex_description; xdesc; xdesc = xdesc->next) {
-	  strncpy(buf, xdesc->description, sizeof(buf) - 1);
-	  buf[sizeof(buf) - 1] = '\0';
+	  strlcpy(buf, xdesc->description, sizeof(buf));
 	  strip_cr(buf);
+	  parse_tab(buf);
 	  fprintf(room_file,	"E\n"
 			"%s~\n"
-			"%s~\n", xdesc->keyword, buf);
+			"%s~\n", xs(xdesc->keyword), buf);
 	}
       }
       fprintf(room_file, "S\n");
@@ -1452,14 +1535,18 @@ static int export_save_quests(zone_rnum zrnum, const struct export_fmt *fmt)
     if (rnum == NOTHING)
       continue;
 
-    strncpy(quest_desc, QST_DESC(rnum) ? QST_DESC(rnum) : "undefined", sizeof(quest_desc) - 1);
-    strncpy(quest_info, QST_INFO(rnum) ? QST_INFO(rnum) : "undefined", sizeof(quest_info) - 1);
-    strncpy(quest_done, QST_DONE(rnum) ? QST_DONE(rnum) : "undefined", sizeof(quest_done) - 1);
-    strncpy(quest_quit, QST_QUIT(rnum) ? QST_QUIT(rnum) : "undefined", sizeof(quest_quit) - 1);
+    strlcpy(quest_desc, QST_DESC(rnum) ? QST_DESC(rnum) : "undefined", sizeof(quest_desc));
+    strlcpy(quest_info, QST_INFO(rnum) ? QST_INFO(rnum) : "undefined", sizeof(quest_info));
+    strlcpy(quest_done, QST_DONE(rnum) ? QST_DONE(rnum) : "undefined", sizeof(quest_done));
+    strlcpy(quest_quit, QST_QUIT(rnum) ? QST_QUIT(rnum) : "undefined", sizeof(quest_quit));
     strip_cr(quest_desc);
     strip_cr(quest_info);
     strip_cr(quest_done);
     strip_cr(quest_quit);
+    parse_tab(quest_desc);
+    parse_tab(quest_info);
+    parse_tab(quest_done);
+    parse_tab(quest_quit);
     sprintascii(quest_flags, QST_FLAGS(rnum));
 
     /* Eight vnums in one call: the widest record there is, and what
@@ -1476,7 +1563,7 @@ static int export_save_quests(zone_rnum zrnum, const struct export_fmt *fmt)
       "%d %d %s\n"
       "S\n",
       xv(fmt, QST_NUM(rnum)),
-      QST_NAME(rnum) ? QST_NAME(rnum) : "Untitled", STRING_TERMINATOR,
+      xs(QST_NAME(rnum) ? QST_NAME(rnum) : "Untitled"), STRING_TERMINATOR,
       quest_desc, STRING_TERMINATOR,
       quest_info, STRING_TERMINATOR,
       quest_done, STRING_TERMINATOR,
@@ -1527,7 +1614,7 @@ static int export_save_triggers(zone_rnum zrnum, const struct export_fmt *fmt)
       fprintf(trig_file,      "%s%c\n"
                               "%d %s %d\n"
                               "%s%c\n",
-           (GET_TRIG_NAME(trig)) ? (GET_TRIG_NAME(trig)) : "unknown trigger", STRING_TERMINATOR,
+           xs((GET_TRIG_NAME(trig)) ? (GET_TRIG_NAME(trig)) : "unknown trigger"), STRING_TERMINATOR,
            trig->attach_type,
            *bitBuf ? bitBuf : "0", GET_TRIG_NARG(trig),
            GET_TRIG_ARG(trig) ? GET_TRIG_ARG(trig) : "", STRING_TERMINATOR);
