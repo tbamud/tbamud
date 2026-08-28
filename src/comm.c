@@ -392,10 +392,16 @@ void copyover_recover()
 {
   struct descriptor_data *d;
   FILE *fp;
-  char host[1024], guiopt[1024];
+  /* Each of these is sized from the field the writer took it out of, rather
+   * than from a round number: the name is a player name, the host is copied
+   * straight into d->host, and the gui string is whatever CopyoverGet() built.
+   * host mattered most -- it was read unbounded into a kilobyte and then
+   * strcpy'd into HOST_LENGTH + 1 bytes. */
+  char host[HOST_LENGTH + 1], guiopt[COPYOVER_GUI_FIELD + 1];
+  char name[MAX_NAME_LENGTH + 1];
+  char line[READ_SIZE], junk[2];
   int desc, i, player_i;
-  bool fOld;
-  char name[MAX_INPUT_LENGTH];
+  bool fOld, saw_terminator = FALSE;
   long pref;
 
   log ("Copyover recovery initiated");
@@ -417,20 +423,31 @@ void copyover_recover()
   if (i != 1) 
     log("SYSERR: Error reading boot time.");
 
-  for (;;) {
+  /* A line at a time.  Scanning fields straight out of the FILE left the name,
+   * the host and the gui string with nothing bounding them, and it left this
+   * loop with no way to stop: the file ends with a bare "-1", which satisfies
+   * only the first conversion, so the old `!= 5` test could not tell the
+   * terminator from a malformed line.  It fell through on feof and got away
+   * with it because desc happened to hold -1 by then.  A file that ended
+   * without the terminator -- truncated by a full disk, say -- left desc
+   * holding the previous record and span there rebuilding that descriptor;
+   * an empty one read desc before anything had set it. */
+  while (get_line(fp, line)) {
     fOld = TRUE;
-    if (fscanf(fp, "%d %ld %s %s %s\n", &desc, &pref, name, host, guiopt) != 5) {
-      if(!feof(fp)) {
-        if(ferror(fp))
-          log("SYSERR: error reading copyover file %s: %s", COPYOVER_FILE, strerror(errno));
-        else if(!feof(fp))
-          log("SYSERR: could not scan line in copyover file %s.", COPYOVER_FILE);
-        exit(1);
-      }
+
+    if (sscanf(line, "%d", &desc) == 1 && desc == -1) {
+      saw_terminator = TRUE;
+      break;
     }
 
-    if (desc == -1)
-      break;
+    /* Trailing %1s is a sentinel, not a field: a truncated host would
+     * otherwise push the rest of itself into guiopt and still count five. */
+    if (sscanf(line, "%d %ld %" SCANF_WIDTH(MAX_NAME_LENGTH) "s %"
+	       SCANF_WIDTH(HOST_LENGTH) "s %" SCANF_WIDTH(COPYOVER_GUI_FIELD) "s %1s",
+	       &desc, &pref, name, host, guiopt, junk) != 5) {
+      log("SYSERR: could not scan line in copyover file %s: %s", COPYOVER_FILE, line);
+      exit(1);
+    }
 
     /* Write something, and check if it goes error-free */
     if (write_to_descriptor (desc, "\n\rRestoring from copyover...\n\r") < 0) {
@@ -443,7 +460,8 @@ void copyover_recover()
     memset ((char *) d, 0, sizeof (struct descriptor_data));
     init_descriptor (d,desc); /* set up various stuff */
 
-    strcpy(d->host, host);
+    strncpy(d->host, host, HOST_LENGTH);	/* strncpy: OK (d->host:HOST_LENGTH+1) */
+    d->host[HOST_LENGTH] = '\0';
     d->next = descriptor_list;
     descriptor_list = d;
 
@@ -495,6 +513,18 @@ void copyover_recover()
       }
     }
   }
+
+  /* Running out of file is now how the loop can end, so say which way it did.
+   * Neither of these used to be reachable: the loop had no exit but the
+   * terminator, so a file without one did not fall out here, it spun. */
+  if (!saw_terminator) {
+    if (ferror(fp))
+      log("SYSERR: error reading copyover file %s: %s", COPYOVER_FILE, strerror(errno));
+    else
+      log("SYSERR: copyover file %s ended without its '-1' terminator; "
+          "any descriptors past that point are lost.", COPYOVER_FILE);
+  }
+
   fclose (fp);
 }
 

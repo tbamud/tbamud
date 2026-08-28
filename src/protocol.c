@@ -889,7 +889,7 @@ void ProtocolNegotiate( descriptor_t *apDescriptor )
 
 const char *CopyoverGet( descriptor_t *apDescriptor )
 {
-   static char Buffer[64];
+   static char Buffer[COPYOVER_GUI_FIELD + 1];
    char *pBuffer = Buffer;
    protocol_t *pProtocol = apDescriptor ? apDescriptor->pProtocol : NULL;
 
