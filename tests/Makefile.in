@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -87,6 +87,13 @@ test_mud_event: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 test_handler_prefix: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                      $(SRCDIR)/handler.c $(SRCDIR)/interpreter.c $(SRCDIR)/lists.c \
                      test_handler_prefix.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_improved_edit - covers format_text() and replace_str() in src/improved-edit.c
+# ---------------------------------------------------------------------------
+test_improved_edit: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                    $(SRCDIR)/improved-edit.c test_improved_edit.c
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------

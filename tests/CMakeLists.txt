@@ -152,3 +152,11 @@ add_mud_test(test_handler_prefix
 if(CRYPT_LIBRARY)
     target_link_libraries(test_handler_prefix PRIVATE ${CRYPT_LIBRARY})
 endif()
+# test_improved_edit — covers format_text() and replace_str() in src/improved-edit.c
+# ---------------------------------------------------------------------------
+add_mud_test(test_improved_edit
+    ${MUD_SRCDIR}/improved-edit.c
+    ${MUD_SRCDIR}/utils.c
+    ${MUD_SRCDIR}/random.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_improved_edit.c
+)

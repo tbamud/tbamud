@@ -598,3 +598,20 @@ __attribute__((weak))
 void send_to_group(struct char_data *ch, struct group_data *group,
                    const char *msg, ...)
 { (void)ch; (void)group; (void)msg; }
+
+/* =========================================================
+ * Stubs needed when improved-edit.c is in the build
+ *
+ * parse_edit_action() dispatches to these three; format_text() and
+ * replace_str(), which is what test_improved_edit covers, reach none of them.
+ * ========================================================= */
+
+__attribute__((weak))
+void parse_at(char *str) { (void)str; }
+
+__attribute__((weak))
+int format_script(struct descriptor_data *d) { (void)d; return 0; }
+
+__attribute__((weak))
+void half_chop(char *string, char *arg1, char *arg2)
+{ (void)string; if (arg1) *arg1 = 0; if (arg2) *arg2 = 0; }
