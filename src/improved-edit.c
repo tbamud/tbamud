@@ -545,7 +545,15 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
       return 0;
     }
     strncat(formatted, strcat(start, "\n"), sizeof(formatted) - strlen(formatted) - 1);
-    flow = strstr(flow, "\n");
+    /* strtok() answers the whole of what is left when there is no newline in
+     * it, so reaching here does not mean another line follows.  On the last
+     * line of a string that does not end in one, strstr() answers NULL and
+     * ++flow read from address 1.  The line asked for is past the end, which
+     * is what the strtok() test above already reports. */
+    if ((flow = strstr(flow, "\n")) == NULL) {
+      write_to_output(d, "There aren't that many lines!\r\n");
+      return 0;
+    }
     strncpy(str, ++flow, sizeof(str) - 1);
   }
 
