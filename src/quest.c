@@ -582,7 +582,7 @@ static void quest_join(struct char_data *ch, struct char_data *qm, char argument
 void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_INPUT_LENGTH])
 {
   qst_vnum vnum;
-  qst_rnum rnum;
+  qst_rnum rnum, prev;
 
   if ((vnum = find_quest_by_qmnum(ch, GET_MOB_VNUM(qm), atoi(argument))) == NOTHING)
     send_to_char(ch, "That is not a valid quest!\r\n");
@@ -593,9 +593,19 @@ void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
                       vnum,
          QST_DESC(rnum),
          QST_INFO(rnum));
-    if (QST_PREV(rnum) != NOTHING)
-      send_to_char(ch, "You have to have completed quest %s first.\r\n",
-          QST_NAME(real_quest(QST_PREV(rnum))));
+    if (QST_PREV(rnum) != NOTHING) {
+      /* Holding a vnum and that vnum still resolving are two different
+       * things.  Deleting a quest leaves every quest that named it as a
+       * prerequisite holding a link real_quest() now answers NOTHING for,
+       * and QST_NAME() is a bare aquest_table[i], so the read is
+       * aquest_table[65535].name.  quest_stat() guards the same dangling
+       * link on the immortal side; this is the one a mortal reaches. */
+      if ((prev = real_quest(QST_PREV(rnum))) == NOTHING)
+        send_to_char(ch, "You have to have completed an unknown quest first.\r\n");
+      else
+        send_to_char(ch, "You have to have completed quest %s first.\r\n",
+            QST_NAME(prev));
+    }
     if (QST_TIME(rnum) != -1)
       send_to_char(ch,
          "There is a time limit of %d turn%s to complete the quest.\r\n",
