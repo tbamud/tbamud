@@ -373,8 +373,18 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
         s++;
         temp = *s;
         *s = '\0';
-        char buf3[13];
-        sprintf(buf3, "%4d: ", (i - 1));
+        /* %4d is a minimum width, not a maximum: the widest int prints as
+         * eleven characters, and ": " and the terminator want three more, so
+         * the format can write fourteen bytes into thirteen.  Nothing reaches
+         * that today -- i counts the newlines in *d->str, string_write() caps
+         * that buffer at d->max_str and string_add() holds it there, and the
+         * largest any caller asks for is MAX_CMD_LENGTH, so the number is five
+         * digits at the most -- but that bound is two files away and sprintf()
+         * does not consult it.  Sized clear of the widest int rather than
+         * exactly to it, and written with snprintf so the bound comes from the
+         * array either way. */
+        char buf3[32];
+        snprintf(buf3, sizeof(buf3), "%4d: ", (i - 1));
         strncat(buf, buf3, sizeof(buf) - strlen(buf) - 1);
         strncat(buf, t, sizeof(buf) - strlen(buf) - 1);
         *s = temp;
