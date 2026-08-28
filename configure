@@ -696,7 +696,7 @@ cat > conftest.$ac_ext << EOF
 #line 697 "configure"
 #include "confdefs.h"
 
-main(){return(0);}
+int main(void){return 0;}
 EOF
 if { (eval echo configure:702: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
   ac_cv_prog_cc_works=yes
@@ -788,6 +788,44 @@ else
   fi
 fi
 
+
+# tbaMUD is written against C89/C99, where `bool` (structs.h) and `false` /
+# `true` (protocol.h) are ordinary identifiers. GCC 15 and Clang 19 default to
+# C23, in which all three are keywords, so pin the language the source is
+# actually written in. CMakeLists.txt pins the same one via CMAKE_C_STANDARD.
+echo $ac_n "checking whether ${CC-cc} accepts -std=gnu99""... $ac_c" 1>&6
+if eval "test \"`echo '$''{'ac_cv_c_std_gnu99'+set}'`\" = set"; then
+  echo $ac_n "(cached) $ac_c" 1>&6
+else
+  
+    OLDCFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS -std=gnu99"
+    cat > conftest.$ac_ext <<EOF
+#include "confdefs.h"
+
+int main() {
+
+; return 0; }
+EOF
+if { (eval $ac_compile) 2>&5; }; then
+  rm -rf conftest*
+  ac_cv_c_std_gnu99=yes
+else
+  echo "configure: failed program was:" >&5
+  cat conftest.$ac_ext >&5
+  rm -rf conftest*
+  ac_cv_c_std_gnu99=no
+fi
+rm -f conftest*
+    CFLAGS=$OLDCFLAGS
+  
+fi
+
+echo "$ac_t""$ac_cv_c_std_gnu99" 1>&6
+
+if test $ac_cv_c_std_gnu99 = yes; then
+    CFLAGS="$CFLAGS -std=gnu99"
+fi
 
 if test $ac_cv_prog_gcc = yes; then
 
