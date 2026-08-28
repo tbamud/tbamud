@@ -992,6 +992,7 @@ struct mob_special_data
   byte default_pos;   /**< Default position (standing, sleeping, etc.) */
   byte damnodice;     /**< The number of dice to roll for damage */
   byte damsizedice;   /**< The size of each die rolled for damage. */
+  int innate_aff[AF_ARRAY_MAX]; /**< AFF flags this mob was created with */
 };
 
 /** An affect structure. */

@@ -505,3 +505,79 @@ STUB_ACMD(do_zreset)
 STUB_ACMD(do_zunlock)
 
 #undef STUB_ACMD
+
+/* =========================================================
+ * Stubs needed when handler.c is in the build
+ *
+ * handler.c reaches into fight.c, quest.c, mobact.c, objsave.c, dg_scripts.c
+ * and mud_event.c.  None of that is under test here, so it is stubbed; link
+ * lists.c alongside handler.c for the group list, which is exercised.
+ * ========================================================= */
+
+/* ---------- db.c ---------- */
+struct obj_data           *object_list      = NULL;
+struct obj_data           *obj_proto        = NULL;
+
+/* ---------- fight.c ---------- */
+struct char_data          *combat_list      = NULL;
+
+__attribute__((weak))
+void stop_fighting(struct char_data *ch) { (void)ch; }
+
+/* ---------- quest.c ---------- */
+__attribute__((weak))
+void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
+                             struct obj_data *object, int type)
+{ (void)ch; (void)vict; (void)object; (void)type; }
+
+/* ---------- mobact.c ---------- */
+__attribute__((weak))
+void forget(struct char_data *ch, struct char_data *victim)
+{ (void)ch; (void)victim; }
+
+__attribute__((weak))
+void clearMemory(struct char_data *ch) { (void)ch; }
+
+/* ---------- objsave.c ---------- */
+__attribute__((weak))
+int Crash_delete_crashfile(struct char_data *ch) { (void)ch; return 0; }
+
+/* ---------- dg_scripts.c ---------- */
+__attribute__((weak))
+void extract_script(void *thing, int type) { (void)thing; (void)type; }
+
+__attribute__((weak))
+void extract_script_mem(struct script_memory *sc) { (void)sc; }
+
+__attribute__((weak))
+void free_proto_script(void *thing, int type) { (void)thing; (void)type; }
+
+/* ---------- mud_event.c ---------- */
+__attribute__((weak))
+void event_cancel(struct event *event) { (void)event; }
+
+__attribute__((weak))
+void clear_char_event_list(struct char_data *ch) { (void)ch; }
+
+/* ---------- db.c (object allocation) ---------- */
+__attribute__((weak))
+struct obj_data *create_obj(void) { return NULL; }
+
+__attribute__((weak))
+void free_obj(struct obj_data *obj) { (void)obj; }
+
+/* ---------- class.c ---------- */
+__attribute__((weak))
+int invalid_class(struct char_data *ch, struct obj_data *obj)
+{ (void)ch; (void)obj; return 0; }
+
+/* ---------- interpreter.c ---------- */
+__attribute__((weak))
+char *one_argument(char *argument, char *first_arg)
+{ if (first_arg) *first_arg = '\0'; return argument; }
+
+/* ---------- comm.c (group messaging) ---------- */
+__attribute__((weak))
+void send_to_group(struct char_data *ch, struct group_data *group,
+                   const char *msg, ...)
+{ (void)ch; (void)group; (void)msg; }

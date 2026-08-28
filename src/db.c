@@ -2492,6 +2492,7 @@ void new_mobile_data(struct char_data *ch)
 struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
 {
   mob_rnum i;
+  int j;
   struct char_data *mob;
 
   if (type == VIRTUAL) {
@@ -2506,6 +2507,16 @@ struct char_data *read_mobile(mob_vnum nr, int type) /* and mob_rnum */
   clear_char(mob);
  
   *mob = mob_proto[i];
+
+  /* Remember the flags this mob is created with, so that affect bookkeeping
+   * can tell one of them from a flag some spell or item put there.  Kept on
+   * the mob rather than read back out of the prototype later, because the two
+   * drift: medit can edit a prototype under a mob already in the world, and
+   * %transform% leaves a mob wearing another prototype's flags while
+   * GET_MOB_RNUM() still names the one it was loaded from. */
+  for (j = 0; j < AF_ARRAY_MAX; j++)
+    GET_INNATE_AFF(mob)[j] = AFF_FLAGS(mob)[j];
+
   mob->next = character_list;
   character_list = mob;
   

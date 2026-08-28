@@ -205,8 +205,15 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *ms
   } /* switch */
 }
 
-/* Is this AFF bit one the mob's own mob file sets, and one that nothing in
- * the game deliberately takes away?
+/* Is this AFF bit one the mob was created with, and one that nothing in the
+ * game deliberately takes away?
+ *
+ * The question is asked of the mob, not of mob_proto[GET_MOB_RNUM(ch)].  The
+ * two are the same at read_mobile() and can drift apart afterwards -- medit
+ * writes a prototype out from under mobs already in the world, and
+ * %transform% leaves a mob wearing another prototype's flags while its rnum
+ * still names the one it was loaded from -- and it is what the mob was made
+ * with, not what its vnum says today, that a spell has no business removing.
  *
  * AFF_INVISIBLE and AFF_HIDE are excluded, and that is the whole of the
  * exception.  The game has explicit mechanics that reveal a mob -- appear()
@@ -217,21 +224,20 @@ static void aff_apply_modify(struct char_data *ch, byte loc, sbyte mod, char *ms
  * mob should ever become invisible again, and on what, is a decision for
  * each MUD rather than one to make here.
  *
- * Nothing else the mob file sets has such a mechanic: no stock code path
+ * Nothing else a mob file sets has such a mechanic: no stock code path
  * removes SANCTUARY, DETECT_INVIS, SENSE_LIFE or NOTRACK from a mob on
- * purpose, so for those the prototype really is a source that outlives any
- * spell or item, and dropping it is the bug this guards.  CHARM, POISON and
- * SLEEP cannot arise here at all -- db.c strips all three from every
- * prototype at boot and medit does the same on save. */
-static int aff_flag_is_innate(struct char_data *ch, int flag)
+ * purpose, so for those the mob's own flags really are a source that outlives
+ * any spell or item, and dropping them is the bug this guards. */
+static bool aff_flag_is_innate(struct char_data *ch, int flag)
 {
-  if (!IS_NPC(ch) || GET_MOB_RNUM(ch) == NOBODY)
+  if (!IS_NPC(ch))
     return FALSE;
 
   if (flag == AFF_INVISIBLE || flag == AFF_HIDE)
     return FALSE;
 
-  return IS_SET_AR(AFF_FLAGS(&mob_proto[GET_MOB_RNUM(ch)]), flag);
+  /* bool is a signed char here, so do not hand back the masked bit itself. */
+  return IS_SET_AR(GET_INNATE_AFF(ch), flag) ? TRUE : FALSE;
 }
 
 static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bitv[], bool add)
@@ -244,23 +250,28 @@ static void affect_modify_ar(struct char_data * ch, byte loc, sbyte mod, int bit
         if(IS_SET_AR(bitv, (i*32)+j))
           SET_BIT_AR(AFF_FLAGS(ch), (i*32)+j);
   } else {
-    /* A mob's mob-file AFF bits are a source, like equipment or a spell, and
-     * unlike those two they do not go away while the mob lives.  This branch
-     * runs when some OTHER source is withdrawn, so clearing a bit the
-     * prototype also sets throws away a flag nothing asked to remove: give a
-     * mob with innate sanctuary an item whose perm-affects include sanctuary,
-     * take it away again, and the mob is left without sanctuary for the rest
-     * of its life.
+    /* The AFF bits a mob is created with are a source, like equipment or a
+     * spell, and unlike those two they do not go away while the mob lives.
+     * This branch runs when some OTHER source is withdrawn, so clearing a bit
+     * the mob came with throws away a flag nothing asked to remove: give a mob
+     * with innate sanctuary an item whose perm-affects include sanctuary, take
+     * it away again, and the mob is left without sanctuary for the rest of its
+     * life.
      *
      * Only this bookkeeping path is guarded, and only for the bits
      * aff_flag_is_innate() answers for -- which deliberately excludes the two
-     * the game reveals a mob by removing.  Deliberate removals call
-     * REMOVE_BIT_AR directly and are untouched either way, so a mob that has
-     * been revealed stays revealed.  Nothing here restores a bit; it only
-     * declines to drop one whose source is still present.  Death and repop
-     * remains the only way a mob returns to its mob-file state, which is also
-     * the only restoration the game has: reset_zone() reads a new mobile when
-     * fewer than the maximum exist and never touches an existing one. */
+     * the game reveals a mob by removing.  Both of those are taken off with
+     * REMOVE_BIT_AR directly (appear(), do_hide(), the hide check in
+     * command_interpreter()) and so are untouched either way, and a mob that
+     * has been revealed stays revealed.  Removals of the remaining bits that
+     * do come through here are declined on purpose: for those, a mob keeping
+     * the flag it was made with is the intended outcome.
+     *
+     * Nothing here restores a bit; it only declines to drop one whose source
+     * is still present.  Death and repop remain the only way a mob returns to
+     * its mob-file state, which is also the only restoration the game has:
+     * reset_zone() reads a new mobile when fewer than the maximum exist and
+     * never touches an existing one. */
     for(i = 0; i < AF_ARRAY_MAX; i++)
       for(j = 0; j < 32; j++)
         if(IS_SET_AR(bitv, (i*32)+j)) {
