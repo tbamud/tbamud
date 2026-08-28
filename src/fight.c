@@ -792,7 +792,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
 
     die(victim, ch);
     if (GROUP(ch) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
-      generic_find("corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
+      generic_find("last.corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
         do_get(ch, "all.coin last.corpse", 0, 0);
         do_split(ch, local_buf, 0, 0);

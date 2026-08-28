@@ -569,7 +569,7 @@ static void look_in_obj(struct char_data *ch, char *arg)
     send_to_char(ch, "Look in what?\r\n");
   else if (!(bits = generic_find(arg, FIND_OBJ_INV | FIND_OBJ_ROOM |
                  FIND_OBJ_EQUIP, ch, &dummy, &obj))) {
-    send_to_char(ch, "There doesn't seem to be %s %s here.\r\n", AN(arg), arg);
+    send_to_char(ch, "There doesn't seem to be %s %s here.\r\n", AN(skip_number(arg)), skip_number(arg));
   } else if ((GET_OBJ_TYPE(obj) != ITEM_DRINKCON) &&
          (GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN) &&
          (GET_OBJ_TYPE(obj) != ITEM_CONTAINER))
@@ -639,6 +639,15 @@ static void look_at_target(struct char_data *ch, char *arg)
   struct char_data *found_char = NULL;
   struct obj_data *obj, *found_obj = NULL;
   char *desc;
+  /* A last.<name> lookup cannot stop at the match it wants -- it only knows
+   * which one that was once the lists run out -- so it holds the description
+   * instead of printing on sight.  Room descriptions page, the rest do not.
+   * The description it keeps is the found object's own; if nothing answered to
+   * the name as an object, it is the last match anywhere.  Taking any last
+   * match would let one object's description be shown for another, since this
+   * count and generic_find()'s are walked separately. */
+  char *last_desc = NULL;
+  int last_paged = FALSE;
 
   if (!ch->desc)
     return;
@@ -669,35 +678,76 @@ static void look_at_target(struct char_data *ch, char *arg)
   }
 
   /* Does the argument match an extra desc in the room? */
-  if ((desc = find_exdesc(arg, world[IN_ROOM(ch)].ex_description)) != NULL && ++i == fnum) {
-    page_string(ch->desc, desc, FALSE);
-    return;
+  if ((desc = find_exdesc(arg, world[IN_ROOM(ch)].ex_description)) != NULL) {
+    if (fnum == FIND_INDEX_LAST) {
+      if (found_obj == NULL) {
+	last_desc = desc;
+	last_paged = TRUE;
+      }
+    } else if (++i == fnum) {
+      page_string(ch->desc, desc, FALSE);
+      return;
+    }
   }
 
   /* Does the argument match an extra desc in the char's equipment? */
   for (j = 0; j < NUM_WEARS && !found; j++)
     if (GET_EQ(ch, j) && CAN_SEE_OBJ(ch, GET_EQ(ch, j)))
-      if ((desc = find_exdesc(arg, GET_EQ(ch, j)->ex_description)) != NULL && ++i == fnum) {
-    send_to_char(ch, "%s", desc);
-    found = TRUE;
+      if ((desc = find_exdesc(arg, GET_EQ(ch, j)->ex_description)) != NULL) {
+	if (fnum == FIND_INDEX_LAST) {
+	  if (found_obj == NULL || GET_EQ(ch, j) == found_obj) {
+	    last_desc = desc;
+	    last_paged = FALSE;
+	  }
+	} else if (++i == fnum) {
+	  send_to_char(ch, "%s", desc);
+	  found = TRUE;
+	}
       }
 
   /* Does the argument match an extra desc in the char's inventory? */
   for (obj = ch->carrying; obj && !found; obj = obj->next_content) {
     if (CAN_SEE_OBJ(ch, obj))
-      if ((desc = find_exdesc(arg, obj->ex_description)) != NULL && ++i == fnum) {
-    send_to_char(ch, "%s", desc);
-    found = TRUE;
+      if ((desc = find_exdesc(arg, obj->ex_description)) != NULL) {
+	if (fnum == FIND_INDEX_LAST) {
+	  if (found_obj == NULL || obj == found_obj) {
+	    last_desc = desc;
+	    last_paged = FALSE;
+	  }
+	} else if (++i == fnum) {
+	  send_to_char(ch, "%s", desc);
+	  found = TRUE;
+	}
       }
   }
 
   /* Does the argument match an extra desc of an object in the room? */
   for (obj = world[IN_ROOM(ch)].contents; obj && !found; obj = obj->next_content)
     if (CAN_SEE_OBJ(ch, obj))
-      if ((desc = find_exdesc(arg, obj->ex_description)) != NULL && ++i == fnum) {
-    send_to_char(ch, "%s", desc);
-    found = TRUE;
+      if ((desc = find_exdesc(arg, obj->ex_description)) != NULL) {
+	if (fnum == FIND_INDEX_LAST) {
+	  if (found_obj == NULL || obj == found_obj) {
+	    last_desc = desc;
+	    last_paged = FALSE;
+	  }
+	} else if (++i == fnum) {
+	  send_to_char(ch, "%s", desc);
+	  found = TRUE;
+	}
       }
+
+  /* last.<name> ran every list to the end; whatever it settled on is the one.
+   * Nothing settles when the object it found has no description of its own,
+   * and it falls through to that object below.  A room description still pages
+   * and returns, as it does above. */
+  if (last_desc) {
+    if (last_paged) {
+      page_string(ch->desc, last_desc, FALSE);
+      return;
+    }
+    send_to_char(ch, "%s", last_desc);
+    found = TRUE;
+  }
 
   /* If an object was found back in generic_find */
   if (bits) {

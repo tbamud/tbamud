@@ -34,6 +34,7 @@ char	*fname(const char *namelist);
 #define FIND_INDEX_LAST	(-1)
 
 int	get_number(char **name);
+const char *skip_number(const char *name);
 
 /* objects */
 void	obj_to_char(struct obj_data *object, struct char_data *ch);

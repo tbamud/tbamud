@@ -125,7 +125,7 @@ ACMD(do_put)
   } else {
     generic_find(thecont, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
     if (!cont)
-      send_to_char(ch, "You don't see %s %s here.\r\n", AN(thecont), thecont);
+      send_to_char(ch, "You don't see %s %s here.\r\n", AN(skip_number(thecont)), skip_number(thecont));
     else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER)
       act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
     else if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
@@ -361,7 +361,7 @@ ACMD(do_get)
     if (cont_dotmode == FIND_INDIV) {
       mode = generic_find(arg2, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
       if (!cont)
-	send_to_char(ch, "You don't have %s %s.\r\n", AN(arg2), arg2);
+	send_to_char(ch, "You don't have %s %s.\r\n", AN(skip_number(arg2)), skip_number(arg2));
       else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER)
 	act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
       else

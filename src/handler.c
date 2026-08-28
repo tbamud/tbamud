@@ -676,6 +676,32 @@ int get_number(char **name)
   return (1);
 }
 
+/* The keyword half of a "<number>.name" or "last.name" argument, for naming it
+ * back to the player.  get_number() strips the prefix from the buffer it is
+ * handed, but generic_find() works on a copy, so its callers still hold the
+ * whole thing when a lookup fails and they come to say what was not found.
+ * Only a prefix get_number() would really have consumed is skipped: "abc.foo"
+ * is not a lookup we understand, and echoing it as "foo" would hide what the
+ * player actually typed.  Nor is a prefix with no keyword after it -- there is
+ * nothing better to show than the lot. */
+const char *skip_number(const char *name)
+{
+  const char *ppos;
+  int i;
+
+  if ((ppos = strchr(name, '.')) == NULL || !*(ppos + 1) || ppos == name)
+    return (name);
+
+  if (ppos - name == 4 && !strn_cmp(name, "last", 4))
+    return (ppos + 1);
+
+  for (i = 0; name + i < ppos; i++)
+    if (!isdigit(name[i]))
+      return (name);
+
+  return (ppos + 1);
+}
+
 /* Search a given list for an object number, and return a ptr to that obj */
 struct obj_data *get_obj_in_list_num(int num, struct obj_data *list)
 {
