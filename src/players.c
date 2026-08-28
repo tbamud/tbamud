@@ -411,7 +411,18 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       case 'N':
-	     if (!strcmp(tag, "Name"))	GET_PC_NAME(ch)	= strdup(line);
+	     if (!strcmp(tag, "Name")) {
+	       /* GET_PC_NAME is a pointer, so strdup() takes whatever length the
+	        * file carried, and get_line() lets that be most of 250 bytes.
+	        * Creation bounds a name a player types, but nothing bounds this
+	        * line, and the rest of the tree copies GET_NAME into fixed fields
+	        * on the assumption that it holds a name.  Bound it here, where
+	        * MAX_NAME_LENGTH is, rather than at each of those copies. */
+	       char namebuf[MAX_NAME_LENGTH + 1];
+
+	       strlcpy(namebuf, line, sizeof(namebuf));
+	       GET_PC_NAME(ch) = strdup(namebuf);
+	     }
 	break;
 
       case 'O':
