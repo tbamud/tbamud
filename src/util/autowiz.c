@@ -278,16 +278,18 @@ int get_line(FILE * fl, char *buf)
      * -- or, on the very first call, uninitialised stack. */
     if (fgets(temp, sizeof(temp), fl) == NULL) {
       if (ferror(fl))
-        perror("reading world file");
+        perror("reading player index");
       return (0);
     }
     lines++;
-  } while (*temp == '*' || *temp == '\n');
+    /* Strip the line terminator rather than the last character, whatever it
+     * is: a final line with no newline used to lose a real character, and an
+     * empty temp indexed temp[-1].  Stripping here rather than after the
+     * loop also means a blank line is seen as blank when the terminator is
+     * CRLF, which testing for '\n' alone does not catch. */
+    temp[strcspn(temp, "\r\n")] = '\0';
+  } while (*temp == '*' || !*temp);
 
-  /* Strip the line terminator rather than the last character, whatever it
-   * is: a final line with no newline used to lose a real character, and an
-   * empty temp indexed temp[-1]. */
-  temp[strcspn(temp, "\r\n")] = '\0';
   strcpy(buf, temp);
   return (lines);
 }

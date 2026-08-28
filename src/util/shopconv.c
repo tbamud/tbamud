@@ -70,13 +70,25 @@ static int run(const char *cmd)
     return (0);
   }
   if (status != 0) {
+    /* Where system() answers a wait status rather than a plain exit code the
+     * code sits in the high byte, so a `mv' that exited 1 would otherwise be
+     * reported as 256.  Platforms with no <sys/wait.h> never define these
+     * macros, and there system() already hands back the exit code itself. */
+#ifdef WEXITSTATUS
+    if (WIFEXITED(status))
+      fprintf(stderr, "shopconv: `%s' failed (status %d).\n", cmd,
+              WEXITSTATUS(status));
+    else
+      fprintf(stderr, "shopconv: `%s' did not complete.\n", cmd);
+#else
     fprintf(stderr, "shopconv: `%s' failed (status %d).\n", cmd, status);
+#endif
     return (0);
   }
   return (1);
 }
 
-void do_list(FILE * shop_f, FILE * newshop_f, int max)
+int do_list(FILE * shop_f, FILE * newshop_f, int max)
 {
   int count, temp;
   char buf[MAX_STRING_LENGTH];
@@ -87,29 +99,31 @@ void do_list(FILE * shop_f, FILE * newshop_f, int max)
     if (fscanf(shop_f, "%d", &temp) != 1) {
       fprintf(stderr, "shopconv: expected %d list entries, file ran out after %d.\n",
               max, count);
-      break;
+      return (0);
     }
     if (fgets(buf, MAX_STRING_LENGTH - 1, shop_f) == NULL) {
       fprintf(stderr, "shopconv: unexpected end of file inside a list.\n");
-      break;
+      return (0);
     }
     if (temp > 0)
       fprintf(newshop_f, "%d%s", temp, buf);
   }
 
   fprintf(newshop_f, "-1\n");
+  return (1);
 }
 
 
-void do_float(FILE * shop_f, FILE * newshop_f)
+int do_float(FILE * shop_f, FILE * newshop_f)
 {
   float f;
   size_t len;
   /* %f has no width of its own and prints the whole integer part, so the
    * width is the magnitude, not the format: near FLT_MAX it is 46
-   * characters.  The old char[20] overflowed for anything from about 1e11
-   * up, straight off an fscanf("%f") of a shop file -- exactly the kind of
-   * file MUDs pass round.  Sized for the widest float there is, and written
+   * characters.  %f writes `digits + 7' characters plus the NUL, so char[20]
+   * held twelve integer digits and overflowed from thirteen -- about 1e12 --
+   * straight off an fscanf("%f") of a shop file, exactly the kind of file
+   * MUDs pass round.  Sized for the widest float there is, and written
    * with snprintf so the bound comes from the array either way. */
   char str[64];
 
@@ -117,7 +131,7 @@ void do_float(FILE * shop_f, FILE * newshop_f)
    * thing that happens. */
   if (fscanf(shop_f, "%f \n", &f) != 1) {
     fprintf(stderr, "shopconv: expected a number.\n");
-    exit(1);
+    return (0);
   }
   snprintf(str, sizeof(str), "%f", f);
 
@@ -129,18 +143,20 @@ void do_float(FILE * shop_f, FILE * newshop_f)
   while (len > 2 && str[len - 1] == '0' && str[len - 2] != '.')
     str[--len] = '\0';
   fprintf(newshop_f, "%s \n", str);
+  return (1);
 }
 
 
-void do_int(FILE * shop_f, FILE * newshop_f)
+int do_int(FILE * shop_f, FILE * newshop_f)
 {
   int i;
 
   if (fscanf(shop_f, "%d \n", &i) != 1) {
     fprintf(stderr, "shopconv: expected a number.\n");
-    exit(1);
+    return (0);
   }
   fprintf(newshop_f, "%d \n", i);
+  return (1);
 }
 
 
@@ -170,21 +186,30 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
       free(buf);		/* Plug memory leak! */
       printf("   #%d\n", temp);
 
-      do_list(shop_f, newshop_f, MAX_PROD);	/* Produced Items */
+      /* Any of these failing means the file is not what it claims to be.
+       * Returning 1 is this function's existing "leave the file alone"
+       * answer, and main() then puts the original back from the .tmp. */
+      if (!do_list(shop_f, newshop_f, MAX_PROD))	/* Produced Items */
+	return (1);
 
-      do_float(shop_f, newshop_f);	/* Ratios */
-      do_float(shop_f, newshop_f);
+      if (!do_float(shop_f, newshop_f))	/* Ratios */
+	return (1);
+      if (!do_float(shop_f, newshop_f))
+	return (1);
 
-      do_list(shop_f, newshop_f, MAX_TRADE);	/* Bought Items */
+      if (!do_list(shop_f, newshop_f, MAX_TRADE))	/* Bought Items */
+	return (1);
 
       for (count = 0; count < 7; count++)	/* Keeper msgs */
 	do_string(shop_f, newshop_f, buf2);
 
       for (count = 0; count < 5; count++)	/* Misc   */
-	do_int(shop_f, newshop_f);
+	if (!do_int(shop_f, newshop_f))
+	  return (1);
       fprintf(newshop_f, "-1\n");
       for (count = 0; count < 4; count++)	/* Open/Close     */
-	do_int(shop_f, newshop_f);
+	if (!do_int(shop_f, newshop_f))
+	  return (1);
 
     } else {
       if (*buf == '$') {	/* EOF */
@@ -232,11 +257,15 @@ int main(int argc, char *argv[])
       fclose(sfp);
       if (result) {
 	      sprintf(part, "mv %s.tmp %s", fn, fn);
-	      run(part);
+	      if (!run(part))
+	        fprintf(stderr, "shopconv: %s.tmp still holds the original %s.\n",
+	                fn, fn);
       } else {
 	      sprintf(part, "mv %s.tmp %s.bak", fn, fn);
-	      run(part);
-	      printf("Done!\n");
+	      /* Only a rename that actually happened leaves the original safe,
+	       * so it is what "Done!" is reporting on. */
+	      if (run(part))
+	        printf("Done!\n");
       }
     }
   }
