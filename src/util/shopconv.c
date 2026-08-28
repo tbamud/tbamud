@@ -17,6 +17,11 @@ void basic_mud_log(const char *x, ...)
   puts(x);
 }
 
+/* Answers NULL if the file ran out or the string would not fit, having said
+ * which; the caller must check.  Exiting here instead would leave main() no
+ * chance to put the original file back, and it is main() that renamed it.
+ * An empty string comes back as an allocated "" rather than NULL, so the two
+ * cases stay apart -- boot_the_shops_conv() dereferences what it is given. */
 char *fread_string(FILE * fl, const char *error)
 {
   char buf[MAX_STRING_LENGTH], tmp[512], *rslt, *point;
@@ -27,31 +32,29 @@ char *fread_string(FILE * fl, const char *error)
   do {
     if (!fgets(tmp, sizeof(tmp), fl)) {
       printf("fread_string: format error at or near %s\n", error);
-      exit(1);
+      return (NULL);
     }
     if (strlen(tmp) + strlen(buf) > MAX_STRING_LENGTH) {
       printf("SYSERR: fread_string: string too large (shopconv.c)");
-      exit(1);
+      return (NULL);
     } else
       strcat(buf, tmp);
 
-    for (point = buf + strlen(buf) - 2; point >= buf && isspace(*point);
-	 point--);
-    if ((flag = (*point == '~'))) {
-      if (*(buf + strlen(buf) - 3) == '\n')
-	*(buf + strlen(buf) - 2) = '\0';
-      else
-	*(buf + strlen(buf) - 2) = '\0';
-    }
+    /* Walk back over trailing whitespace to the terminator.  The old scan
+     * started at buf + strlen(buf) - 2, which is before buf for a line
+     * shorter than two characters, and read *point after stepping below buf
+     * -- a lone "~" line was enough to run off the front of the array. */
+    point = buf + strlen(buf);
+    while (point > buf && isspace((unsigned char) *(point - 1)))
+      point--;
+    if ((flag = (point > buf && *(point - 1) == '~')))
+      *(point - 1) = '\0';
   } while (!flag);
 
   /* do the allocate boogie  */
 
-  if (strlen(buf) > 0) {
-    CREATE(rslt, char, strlen(buf) + 1);
-    strcpy(rslt, buf);
-  } else
-    rslt = NULL;
+  CREATE(rslt, char, strlen(buf) + 1);
+  strcpy(rslt, buf);
   return (rslt);
 }
 
@@ -87,6 +90,22 @@ static int run(const char *cmd)
   }
   return (1);
 }
+
+/* main() renames the shop file out of the way before it reads it, so every
+ * path that gives up after that point has to put it back -- otherwise the
+ * only copy is left sitting in the .tmp under a name nobody looks for. */
+static int restore(const char *fn)
+{
+  char cmd[512];
+
+  snprintf(cmd, sizeof(cmd), "mv %s.tmp %s", fn, fn);
+  if (!run(cmd)) {
+    fprintf(stderr, "shopconv: %s.tmp still holds the original %s.\n", fn, fn);
+    return (0);
+  }
+  return (1);
+}
+
 
 int do_list(FILE * shop_f, FILE * newshop_f, int max)
 {
@@ -160,13 +179,15 @@ int do_int(FILE * shop_f, FILE * newshop_f)
 }
 
 
-void do_string(FILE * shop_f, FILE * newshop_f, char *msg)
+int do_string(FILE * shop_f, FILE * newshop_f, char *msg)
 {
   char *ptr;
 
-  ptr = fread_string(shop_f, msg);
+  if ((ptr = fread_string(shop_f, msg)) == NULL)
+    return (0);
   fprintf(newshop_f, "%s~\n", ptr);
   free(ptr);
+  return (1);
 }
 
 
@@ -185,7 +206,8 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
   sprintf(buf2, "beginning of shop file %s", filename);
   fprintf(newshop_f, "CircleMUD %s Shop File~\n", VERSION3_TAG);
   for (;;) {
-    buf = fread_string(shop_f, buf2);
+    if ((buf = fread_string(shop_f, buf2)) == NULL)
+      return (CONV_ERROR);
     if (*buf == '#') {		/* New shop */
       sscanf(buf, "#%d\n", &temp);
       sprintf(buf2, "shop #%d in shop file %s", temp, filename);
@@ -208,7 +230,8 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
 	return (CONV_ERROR);
 
       for (count = 0; count < 7; count++)	/* Keeper msgs */
-	do_string(shop_f, newshop_f, buf2);
+	if (!do_string(shop_f, newshop_f, buf2))
+	  return (CONV_ERROR);
 
       for (count = 0; count < 5; count++)	/* Misc   */
 	if (!do_int(shop_f, newshop_f))
@@ -227,7 +250,8 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
 	printf("%s: New format detected, conversion aborted!\n", filename);
 	free(buf);		/* Plug memory leak! */
 	return (CONV_ALREADY);
-      }
+      } else
+	free(buf);		/* Anything else: skipped, not kept */
     }
   }
   return (CONV_DONE);
@@ -253,12 +277,14 @@ int main(int argc, char *argv[])
     sprintf(part, "%s.tmp", fn);
     sfp = fopen(part, "r");
     if (sfp == NULL) {
-      strcat(fn, " could not be opened");
-      perror(fn);
+      perror(part);
+      restore(fn);
       status = 1;
     } else {
       if ((nsfp = fopen(fn, "w")) == NULL) {
 	      printf("Error writing to %s.\n", fn);
+	      fclose(sfp);
+	      restore(fn);
 	      status = 1;
 	      continue;
       }
@@ -269,12 +295,8 @@ int main(int argc, char *argv[])
       if (result != CONV_DONE) {
 	      if (result == CONV_ERROR)
 	        status = 1;
-	      sprintf(part, "mv %s.tmp %s", fn, fn);
-	      if (!run(part)) {
-	        fprintf(stderr, "shopconv: %s.tmp still holds the original %s.\n",
-	                fn, fn);
+	      if (!restore(fn))
 	        status = 1;
-	      }
       } else {
 	      sprintf(part, "mv %s.tmp %s.bak", fn, fn);
 	      /* Only a rename that actually happened leaves the original safe,
