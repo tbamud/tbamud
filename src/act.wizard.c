@@ -1544,17 +1544,11 @@ ACMD(do_advance)
 
   if (oldlevel >= LVL_IMMORT && newlevel < LVL_IMMORT) {
     /* If they are no longer an immortal, remove the immortal only flags. */
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG1);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_NOHASSLE);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
-    REMOVE_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
+    remove_rank_prefs(PRF_FLAGS(victim));
     if (!PLR_FLAGGED(victim, PLR_NOWIZLIST))
       run_autowiz();
   } else if (oldlevel < LVL_IMMORT && newlevel >= LVL_IMMORT) {
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_LOG2);
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_HOLYLIGHT);
-    SET_BIT_AR(PRF_FLAGS(victim), PRF_SHOWVNUMS);
+    set_rank_prefs(PRF_FLAGS(victim));
     SET_BIT_AR(PRF_FLAGS(victim), PRF_AUTOEXIT);
         for (i = 1; i <= MAX_SKILLS; i++)
           SET_SKILL(victim, i, 100);

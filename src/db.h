@@ -395,6 +395,11 @@ void load_config( void );
  * character and prefedit's restore applies it to an existing one, so the two
  * cannot answer differently. */
 void set_default_prefs(struct char_data *ch, int flags[]);
+/** Set, and clear, the preference flags a character holds by rank.  The one
+ * definition of which flags those are: set_default_prefs() applies it to an
+ * immortal and do_advance() applies it on the way up and down. */
+void set_rank_prefs(int flags[]);
+void remove_rank_prefs(int flags[]);
 
 /* Various Files */
 extern char *credits;

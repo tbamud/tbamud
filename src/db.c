@@ -3705,23 +3705,50 @@ void set_default_prefs(struct char_data *ch, int flags[])
       SET_BIT_AR(flags, PRF_COLOR_2);
     }
 
-  /* The three the game grants for rank rather than for taste.  prefedit is the
-   * caller that needs the test: it restores an existing character, who may be
-   * any level.  From init_char() it is very nearly dead -- a new character is
-   * level 0 -- but not entirely, because the first character created on a
-   * fresh MUD has been made LVL_IMPL a few lines above.  That implementor is
-   * now given these three at creation; before, it started with none of them
-   * and had to set them by hand.
+  /* What the game grants for rank rather than for taste, from the same list
+   * do_advance() uses when it promotes someone.  prefedit is the caller that
+   * needs the test: it restores an existing character, who may be any level.
+   * From init_char() it is very nearly dead -- a new character is level 0 --
+   * but not entirely, because the first character created on a fresh MUD has
+   * been made LVL_IMPL a few lines above.  That implementor is now given the
+   * set at creation; before, it started with none of it and set it by hand.
    *
    * The boundary is >= LVL_IMMORT, the one prefedit's own menu uses to decide
-   * who is shown these three, and the one do_advance() draws: it strips all
-   * three below LVL_IMMORT and grants two of them at it.  A character at
+   * who is shown these, and the one do_advance() draws.  A character at
    * exactly LVL_IMMORT is an immortal. */
-  if (GET_LEVEL(ch) >= LVL_IMMORT) {
-    SET_BIT_AR(flags, PRF_NOHASSLE);
-    SET_BIT_AR(flags, PRF_HOLYLIGHT);
-    SET_BIT_AR(flags, PRF_SHOWVNUMS);
-  }
+  if (GET_LEVEL(ch) >= LVL_IMMORT)
+    set_rank_prefs(flags);
+}
+
+/* The preference flags a character holds by rank rather than by taste.  One
+ * list, because there were two: do_advance() granted LOG2, HOLYLIGHT and
+ * SHOWVNUMS on promotion while set_default_prefs() granted NOHASSLE,
+ * HOLYLIGHT and SHOWVNUMS, and the demotion arm stripped all of them.  So a
+ * character demoted and promoted again came back without the NOHASSLE it had,
+ * while HOLYLIGHT and SHOWVNUMS returned by themselves.
+ *
+ * The set is what demotion has always taken away, which is the game's own
+ * statement of which flags belong to rank rather than to the player.  The
+ * syslog bits are the one wrinkle: demotion clears both, to put the level at
+ * Off, and this sets only LOG2, which is Normal. */
+void set_rank_prefs(int flags[])
+{
+  SET_BIT_AR(flags, PRF_NOHASSLE);
+  SET_BIT_AR(flags, PRF_HOLYLIGHT);
+  SET_BIT_AR(flags, PRF_SHOWVNUMS);
+  SET_BIT_AR(flags, PRF_LOG2);   /* with LOG1 clear, syslog level Normal */
+}
+
+/* The same set on the way back down, plus PRF_LOG1: the two syslog bits are
+ * one level from 0 to 3, so both have to go to turn it off rather than leave
+ * it at Brief. */
+void remove_rank_prefs(int flags[])
+{
+  REMOVE_BIT_AR(flags, PRF_NOHASSLE);
+  REMOVE_BIT_AR(flags, PRF_HOLYLIGHT);
+  REMOVE_BIT_AR(flags, PRF_SHOWVNUMS);
+  REMOVE_BIT_AR(flags, PRF_LOG1);
+  REMOVE_BIT_AR(flags, PRF_LOG2);
 }
 
 /* returns the real number of the room with given virtual number */
