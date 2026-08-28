@@ -4605,7 +4605,10 @@ ACMD(do_changelog)
 ACMD(do_plist)
 {
   int i, len = 0, count = 0;
-  char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_NAME_LENGTH], timestr[MAX_STRING_LENGTH];
+  /* name_search is filled by half_chop(), which does not bound its
+   * destination, so it has to hold what an input line can carry rather than
+   * what a name can.  MAX_NAME_LENGTH + 1 would still be one token short. */
+  char mode, buf[MAX_STRING_LENGTH * 20], name_search[MAX_INPUT_LENGTH], timestr[MAX_STRING_LENGTH];
   struct time_info_data time_away;
   int low = 0, high = LVL_IMPL, low_day = 0, high_day = 10000, low_hr = 0, high_hr = 24;
 
@@ -4701,7 +4704,11 @@ bool change_player_name(struct char_data *ch, struct char_data *vict, char *new_
 {
   struct char_data *temp_ch=NULL;
   int plr_i = 0, i, k;
-  char old_name[MAX_NAME_LENGTH], old_pfile[50], new_pfile[50], buf[MAX_STRING_LENGTH];
+  /* MAX_NAME_LENGTH + 1, as every other name field in the tree has it: a name
+   * of exactly MAX_NAME_LENGTH characters is legal -- creation and the check
+   * below both reject only what is longer -- so the terminator needs a byte
+   * of its own before sprintf() puts GET_NAME here. */
+  char old_name[MAX_NAME_LENGTH + 1], old_pfile[50], new_pfile[50], buf[MAX_STRING_LENGTH];
 
   if (!ch)
   {

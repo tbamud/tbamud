@@ -2414,7 +2414,10 @@ static void extract_value(struct script_data *sc, trig_data *trig, char *cmd)
 {
   char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
   char *buf3;
-  char to[128];
+  /* Filled by strcpy() from buf2, which holds a token off the trigger line
+   * and is MAX_INPUT_LENGTH itself, so this has to match it -- as
+   * dg_letter_value()'s varname below already does. */
+  char to[MAX_INPUT_LENGTH];
   int num;
 
   buf3 = any_one_arg(cmd, buf);
@@ -2844,8 +2847,12 @@ void read_saved_vars(struct char_data *ch)
   long context;
   char fn[127];
   char input_line[1024], *temp, *p;
-  char varname[32];
-  char context_str[16];
+  /* Both are filled by any_one_arg() out of a line get_line() has already
+   * capped at READ_SIZE, and neither copy is bounded, so READ_SIZE is the
+   * size they have to be -- which is the size read_saved_vars_ascii() gives
+   * the same two fields. */
+  char varname[READ_SIZE];
+  char context_str[READ_SIZE];
 
   /* If getting to the menu from inside the game, the vars aren't removed. So 
    * let's not allocate them again. */
