@@ -431,8 +431,14 @@ int load_char(const char *name, struct char_data *ch)
 
       case 'P':
        if (!strcmp(tag, "Page"))  GET_PAGE_LENGTH(ch) = atoi(line);
-	else if (!strcmp(tag, "Pass"))	strlcpy(GET_PASSWD(ch), line,
-	                                        sizeof(ch->player.passwd));
+	else if (!strcmp(tag, "Pass")) {
+	  /* GET_PASSWD is a fixed field of MAX_PWD_LENGTH + 1 bytes, and the
+	   * line is whatever get_line() read -- as much as READ_SIZE.  A strcpy
+	   * past the end of it walks into the rest of char_player_data.  A pfile
+	   * the MUD wrote never carries one that long; a hand-edited or damaged
+	   * one can, and this is the parser that has to survive it. */
+	  strlcpy(GET_PASSWD(ch), line, sizeof(GET_PASSWD(ch)));
+	}
 	else if (!strcmp(tag, "Plyd"))	ch->player.time.played	= atoi(line);
 	else if (!strcmp(tag, "PfIn"))	POOFIN(ch)		= strdup(line);
 	else if (!strcmp(tag, "PfOt"))	POOFOUT(ch)		= strdup(line);
