@@ -2883,13 +2883,17 @@ static void msdp_update( void )
       MSDPSetNumber( d, eMSDP_DEX_PERM, ch->real_abils.dex );
       MSDPSetNumber( d, eMSDP_CON_PERM, ch->real_abils.con );
 
-      /* The same sum score prints, so a client and the score sheet cannot
-       * disagree. level_exp() logs a SYSERR for any level above LVL_IMPL, so
-       * the top level is asked about its own total instead of a next level
-       * that does not exist -- otherwise this would log once a second for
-       * every implementor online.
+      /* The same sum score prints, and cut off where score cuts it off.
+       * score stops at LVL_IMMORT because immortal levels are not earned
+       * with experience: above LVL_IMMORT level_exp() returns a fixed
+       * offset from EXP_MAX rather than a total anyone works toward, so
+       * reporting it would tell a level 31 immortal they are two million
+       * exp short of a level 32 that no amount of exp reaches -- once a
+       * second, for as long as they are online. An immortal is told their
+       * own total and nothing left to earn, which is what score implies
+       * by printing nothing at all.
        */
-      if ( GET_LEVEL(ch) < LVL_IMPL )
+      if ( GET_LEVEL(ch) < LVL_IMMORT )
       {
           int needed = level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1);
 
