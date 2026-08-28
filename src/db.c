@@ -3009,12 +3009,22 @@ char *fread_clean_string(FILE *fl, const char *error)
     /* If there is a '~', end the string; else put an "\r\n" over the '\n'. */
     /* now only removes trailing ~'s -- Welcor */
     point = strchr(tmp, '\0');
-    for (point-- ; (*point=='\r' || *point=='\n'); point--);
+    /* Same walk and same tail as fread_string().  The guard and the in-place
+     * branch below are one mechanism, not two: without the guard a chunk that
+     * is nothing but newlines walks point off the FRONT of tmp, and the guard
+     * is what makes it possible for point to still be sitting on a carriage
+     * return or a newline when the walk stops -- which is the case the branch
+     * rewrites in place instead of appending past.  This copy had neither. */
+    for (point-- ; (*point=='\r' || *point=='\n') && point > tmp; point--);
     if (*point=='~') {
       *point='\0';
       done = 1;
     } else {
-      *(++point) = '\r';
+      if (*point == '\n' || *point == '\r')
+        *point = '\r';
+      else
+        *(++point) = '\r';
+
       *(++point) = '\n';
       *(++point) = '\0';
     }
