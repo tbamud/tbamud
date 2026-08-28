@@ -170,6 +170,13 @@ void do_string(FILE * shop_f, FILE * newshop_f, char *msg)
 }
 
 
+/* boot_the_shops_conv() results.  Anything other than CONV_DONE leaves the
+ * file as it was; only CONV_ERROR is a failure worth an exit status, since
+ * being handed a file that is already v3.0 is not an error. */
+#define CONV_DONE	0	/* converted                             */
+#define CONV_ALREADY	1	/* already v3.0, nothing to do           */
+#define CONV_ERROR	2	/* malformed input, file left untouched  */
+
 static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
 {
   char *buf, buf2[150];
@@ -187,29 +194,29 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
       printf("   #%d\n", temp);
 
       /* Any of these failing means the file is not what it claims to be.
-       * Returning 1 is this function's existing "leave the file alone"
-       * answer, and main() then puts the original back from the .tmp. */
+       * CONV_ERROR leaves the file alone, as CONV_ALREADY does, but is
+       * the one main() reports in its exit status. */
       if (!do_list(shop_f, newshop_f, MAX_PROD))	/* Produced Items */
-	return (1);
+	return (CONV_ERROR);
 
       if (!do_float(shop_f, newshop_f))	/* Ratios */
-	return (1);
+	return (CONV_ERROR);
       if (!do_float(shop_f, newshop_f))
-	return (1);
+	return (CONV_ERROR);
 
       if (!do_list(shop_f, newshop_f, MAX_TRADE))	/* Bought Items */
-	return (1);
+	return (CONV_ERROR);
 
       for (count = 0; count < 7; count++)	/* Keeper msgs */
 	do_string(shop_f, newshop_f, buf2);
 
       for (count = 0; count < 5; count++)	/* Misc   */
 	if (!do_int(shop_f, newshop_f))
-	  return (1);
+	  return (CONV_ERROR);
       fprintf(newshop_f, "-1\n");
       for (count = 0; count < 4; count++)	/* Open/Close     */
 	if (!do_int(shop_f, newshop_f))
-	  return (1);
+	  return (CONV_ERROR);
 
     } else {
       if (*buf == '$') {	/* EOF */
@@ -219,18 +226,18 @@ static int boot_the_shops_conv(FILE * shop_f, FILE * newshop_f, char *filename)
       } else if (strstr(buf, VERSION3_TAG)) {
 	printf("%s: New format detected, conversion aborted!\n", filename);
 	free(buf);		/* Plug memory leak! */
-	return (1);
+	return (CONV_ALREADY);
       }
     }
   }
-  return (0);
+  return (CONV_DONE);
 }
 
 int main(int argc, char *argv[])
 {
   FILE *sfp, *nsfp;
   char fn[120], part[256];
-  int result, index;
+  int result, index, status = 0;
 
   if (argc < 2) {
     printf("Usage: shopconv <file1> [file2] [file3] ...\n");
@@ -239,36 +246,46 @@ int main(int argc, char *argv[])
   for (index = 1; index < argc; index++) {
     sprintf(fn, "%s", argv[index]);
     sprintf(part, "mv %s %s.tmp", fn, fn);
-    if (!run(part))
+    if (!run(part)) {
+      status = 1;
       continue;
+    }
     sprintf(part, "%s.tmp", fn);
     sfp = fopen(part, "r");
     if (sfp == NULL) {
       strcat(fn, " could not be opened");
       perror(fn);
+      status = 1;
     } else {
       if ((nsfp = fopen(fn, "w")) == NULL) {
 	      printf("Error writing to %s.\n", fn);
+	      status = 1;
 	      continue;
       }
       printf("%s:\n", fn);
       result = boot_the_shops_conv(sfp, nsfp, fn);
       fclose(nsfp);
       fclose(sfp);
-      if (result) {
+      if (result != CONV_DONE) {
+	      if (result == CONV_ERROR)
+	        status = 1;
 	      sprintf(part, "mv %s.tmp %s", fn, fn);
-	      if (!run(part))
+	      if (!run(part)) {
 	        fprintf(stderr, "shopconv: %s.tmp still holds the original %s.\n",
 	                fn, fn);
+	        status = 1;
+	      }
       } else {
 	      sprintf(part, "mv %s.tmp %s.bak", fn, fn);
 	      /* Only a rename that actually happened leaves the original safe,
 	       * so it is what "Done!" is reporting on. */
 	      if (run(part))
 	        printf("Done!\n");
+	      else
+	        status = 1;
       }
     }
   }
 
-  return (0);
+  return (status);
 }
