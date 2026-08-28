@@ -336,7 +336,7 @@ static int transaction_amt(char *arg)
    * that if we only have one argument, like 'buy 5', buy #5. By Andrey Fidrya */
   buywhat = one_argument(arg, buf);
   if (*buywhat && *buf && is_number(buf)) {
-    strcpy(arg, arg + strlen(buf) + 1);	/* strcpy: OK (always smaller) */
+    memmove(arg, arg + strlen(buf) + 1, strlen(arg + strlen(buf) + 1) + 1);	/* memmove: the copy overlaps */
     return (atoi(buf));
   }
   return (1);
