@@ -3755,7 +3755,7 @@ ACMD (do_zcheck)
                           "- is NO_TAKE, but has cost (%d) weight (%d) or rent (%d) set.\r\n",
                           GET_OBJ_COST(obj), GET_OBJ_WEIGHT(obj), GET_OBJ_RENT(obj));
       } else {
-        if (GET_OBJ_COST(obj) == 0 && (found=1) && GET_OBJ_TYPE(obj) != ITEM_TRASH)
+        if (GET_OBJ_TYPE(obj) != ITEM_TRASH && GET_OBJ_COST(obj) == 0 && (found=1))
           len += snprintf(buf + len, sizeof(buf) - len,
                           "- has 0 cost (min. 1).\r\n");
 
@@ -3869,7 +3869,7 @@ ACMD (do_zcheck)
         } /* for (k.. */
       } /* cycle directions */
 
-     if (ROOM_FLAGGED(i, ROOM_ATRIUM) || ROOM_FLAGGED(i, ROOM_HOUSE) || ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) || ROOM_FLAGGED(i, ROOM_OLC) || ROOM_FLAGGED(i, ROOM_BFS_MARK))
+     if ((ROOM_FLAGGED(i, ROOM_ATRIUM) || ROOM_FLAGGED(i, ROOM_HOUSE) || ROOM_FLAGGED(i, ROOM_HOUSE_CRASH) || ROOM_FLAGGED(i, ROOM_OLC) || ROOM_FLAGGED(i, ROOM_BFS_MARK)) && (found = 1))
          len += snprintf(buf + len, sizeof(buf) - len,
          "- Has illegal affection bits set (%s %s %s %s %s)\r\n",
                             ROOM_FLAGGED(i, ROOM_ATRIUM) ? "ATRIUM" : "",
@@ -3905,10 +3905,10 @@ ACMD (do_zcheck)
         send_to_char(ch, "[%5d] %-30s: \r\n",
                        world[i].number, world[i].name ? world[i].name : "An unnamed room");
         send_to_char(ch, "%s", buf);
-        strcpy(buf, "");
-        len = 0;
-        found = 0;
       }
+      strcpy(buf, "");
+      len = 0;
+      found = 0;
     } /*is room in this zone?*/
   } /*checking rooms*/
 
