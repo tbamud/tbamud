@@ -624,13 +624,18 @@ void add_follower(struct char_data *ch, struct char_data *leader)
 /** Reads the next non-blank line off of the input stream. Empty lines are
  * skipped. Lines which begin with '*' are considered to be comments and are
  * skipped.
- * @pre Caller must allocate memory for buf.
- * @post If a there is a line to be read, the newline character is removed from
- * the file line ending and the string is returned. Else a null string is
- * returned in buf.
+ * @pre Caller must allocate memory for buf, and bufsize must be its real size.
+ * @post If there is a line to be read, the line ending is removed and the
+ * result is placed in buf. A line too long for buf is truncated to fit and the
+ * rest of that line is discarded, so the next call always resumes on the
+ * following line of the file rather than on a fragment of this one.
  * @param[in] fl The file to be read from.
- * @param[out] buf The next non-blank line read from the file. Buffer given must
- * be at least READ_SIZE (256) characters large. */
+ * @param[out] buf The next non-blank line read from the file.
+ * @param[in] bufsize The size of buf in bytes, including room for the
+ * terminating null. Must be at least 2.
+ * @retval 0 No line could be read; the contents of buf are unspecified.
+ * @retval >0 The number of lines advanced in the file, counting any comment or
+ * blank lines skipped to reach the one returned. */
 int get_line(FILE *fl, char *buf, size_t bufsize)
 {
   int lines = 0;
