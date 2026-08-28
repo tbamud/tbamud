@@ -146,7 +146,7 @@ long parse_send_time(FILE *plr_file) {
 char *parse_subject(FILE *plr_file) {
 	static char subj[1000];
 	char *txt = findLine(plr_file, "Subj:");
-	sprintf(subj, "%s", (txt == NULL) ? "(null)" : txt);
+	snprintf(subj, sizeof(subj), "%s", (txt == NULL) ? "(null)" : txt);
 	return (subj);
 }
 
