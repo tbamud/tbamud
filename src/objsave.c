@@ -79,6 +79,21 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
   } else
     *buf1 = 0;
 
+#define TEST_OBJS(obj1, obj2, field) ((!obj1->field || !obj2->field || \
+                                      strcmp(obj1->field, obj2->field)))
+#define TEST_OBJN(field) (obj->obj_flags.field != temp->obj_flags.field)
+
+/* TEST_OBJN compares one member of this object against the prototype's, which
+ * is what is wanted for the scalar fields it is used on.  Three of these
+ * fields are arrays, though, and an array member decays to its address -- so
+ * for those the test asked whether two different objects occupy the same
+ * memory.  They do not, so the three flag lines were written for every object
+ * rather than for the ones that had changed, and the guards read as if they
+ * were doing something they had never done.  Compare the contents, which is
+ * what the Vals: test below already does one element at a time. */
+#define TEST_OBJA(field, len) (memcmp(obj->obj_flags.field, temp->obj_flags.field, \
+                               (len) * sizeof(obj->obj_flags.field[0])) != 0)
+
   fprintf(fp, "#%d\n", GET_OBJ_VNUM(obj));
   if (locate)
     fprintf(fp, "Loc : %d\n", locate);
@@ -93,12 +108,8 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
              GET_OBJ_VAL(obj, 2),
              GET_OBJ_VAL(obj, 3)
              );
-  if (GET_OBJ_EXTRA(obj) != GET_OBJ_EXTRA(temp))
+  if (TEST_OBJA(extra_flags, EF_ARRAY_MAX))
     fprintf(fp, "Flag: %d %d %d %d\n", GET_OBJ_EXTRA(obj)[0], GET_OBJ_EXTRA(obj)[1], GET_OBJ_EXTRA(obj)[2], GET_OBJ_EXTRA(obj)[3]);
-
-#define TEST_OBJS(obj1, obj2, field) ((!obj1->field || !obj2->field || \
-                                      strcmp(obj1->field, obj2->field)))
-#define TEST_OBJN(field) (obj->obj_flags.field != temp->obj_flags.field)
 
   if (TEST_OBJS(obj, temp, name))
     fprintf(fp, "Name: %s\n", obj->name ? obj->name : "Undefined");
@@ -122,9 +133,9 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
     fprintf(fp, "Cost: %d\n", GET_OBJ_COST(obj));
   if (TEST_OBJN(cost_per_day))
     fprintf(fp, "Rent: %d\n", GET_OBJ_RENT(obj));
-  if (TEST_OBJN(bitvector))
+  if (TEST_OBJA(bitvector, AF_ARRAY_MAX))
     fprintf(fp, "Perm: %d %d %d %d\n", GET_OBJ_AFFECT(obj)[0], GET_OBJ_AFFECT(obj)[1], GET_OBJ_AFFECT(obj)[2], GET_OBJ_AFFECT(obj)[3]);
-  if (TEST_OBJN(wear_flags))
+  if (TEST_OBJA(wear_flags, TW_ARRAY_MAX))
     fprintf(fp, "Wear: %d %d %d %d\n", GET_OBJ_WEAR(obj)[0], GET_OBJ_WEAR(obj)[1], GET_OBJ_WEAR(obj)[2], GET_OBJ_WEAR(obj)[3]);
 
   /* Do we have affects? */
@@ -169,6 +180,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 
 #undef TEST_OBJS
 #undef TEST_OBJN
+#undef TEST_OBJA
 
 /* AutoEQ by Burkhard Knopf. */
 static void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
