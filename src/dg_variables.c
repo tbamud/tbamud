@@ -1731,8 +1731,14 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
 
       find_replacement(go, sc, trig, type, var, field, subfield, repl_str, sizeof(repl_str));
 
+      /* strncat() stops after left characters, so advance by what it really
+       * wrote.  Advancing by the whole length of repl_str instead walks buf
+       * past the end of the caller's buffer whenever a replacement does not
+       * fit, and the terminator written after the loop then lands there. */
       strncat(buf, repl_str, left);
       len = strlen(repl_str);
+      if (len > left)
+        len = left;
       buf += len;
       left -= len;
     } /* else if *p .. */
