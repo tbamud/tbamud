@@ -172,7 +172,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       break;
     case 2:
       if (line_high < line_low) {
-        write_to_output(d, "That range is invalid.\\r\\n");
+        write_to_output(d, "That range is invalid.\r\n");
         return;
       }
     break;
