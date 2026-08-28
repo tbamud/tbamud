@@ -206,7 +206,7 @@ int delete_quest(qst_rnum rnum)
 {
   qst_rnum i;
   zone_rnum rznum;
-  mob_vnum qm = QST_MASTER(rnum);
+  mob_vnum qm;
   mob_rnum qmrnum;
   SPECIAL (*tempfunc);
   int quests_remaining = 0;
@@ -214,6 +214,7 @@ int delete_quest(qst_rnum rnum)
   if (rnum >= total_quests)
     return FALSE;
 
+  qm = QST_MASTER(rnum);
   rznum = real_zone_by_thing(QST_NUM(rnum));
 
   log("GenOLC: delete_quest: Deleting quest #%d (%s).",
