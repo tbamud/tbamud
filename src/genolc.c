@@ -1005,19 +1005,44 @@ static int export_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd,
 
 static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
 {
-  int subcmd;
+  int subcmd, flag_tot = 0, i;
   FILE *zone_file;
+  /* sprintascii() writes one letter per bit and a NUL: 33 bytes at the
+   * 32-bit bitvector_t its own flag string is sized for. */
+  char zbuf1[64], zbuf2[64], zbuf3[64], zbuf4[64];
+  char extra[MAX_INPUT_LENGTH];
 
   if (!(zone_file = export_open(fmt, "zon"))) {
     mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_save_zone : Cannot open file!");
     return FALSE;
   }
 
+  /* save_zone writes this header at one of two widths, and the wider one --
+   * the "New tbaMUD data line" -- is the only one carrying the four zone
+   * flag words and the level range.  Only the narrow one was ever exported,
+   * so neither travelled.  load_zones() reads both, so the tail is left off
+   * when the zone genuinely has nothing to put in it. */
+  for (i = 0; i < ZN_ARRAY_MAX; i++)
+    flag_tot += zone_table[zrnum].zone_flags[i];
+
+  if (flag_tot == 0 && zone_table[zrnum].min_level == -1
+                    && zone_table[zrnum].max_level == -1)
+    *extra = '\0';
+  else {
+    sprintascii(zbuf1, zone_table[zrnum].zone_flags[0]);
+    sprintascii(zbuf2, zone_table[zrnum].zone_flags[1]);
+    sprintascii(zbuf3, zone_table[zrnum].zone_flags[2]);
+    sprintascii(zbuf4, zone_table[zrnum].zone_flags[3]);
+    snprintf(extra, sizeof(extra), " %s %s %s %s %d %d",
+             zbuf1, zbuf2, zbuf3, zbuf4,
+             zone_table[zrnum].min_level, zone_table[zrnum].max_level);
+  }
+
   /* Print zone header to file. */
   fprintf(zone_file, "#%s\n"
                  "%s~\n"
                  "%s~\n"
-                 "%s %s %d %d\n",
+                 "%s %s %d %d%s\n",
 	  xz(fmt),
 	  (zone_table[zrnum].builders && *zone_table[zrnum].builders)
 		? zone_table[zrnum].builders : "None.",
@@ -1026,7 +1051,8 @@ static int export_save_zone(zone_rnum zrnum, const struct export_fmt *fmt)
           xv(fmt, genolc_zone_bottom(zrnum)),
 	  xv(fmt, zone_table[zrnum].top),
 	  zone_table[zrnum].lifespan,
-	  zone_table[zrnum].reset_mode
+	  zone_table[zrnum].reset_mode,
+	  extra
 	  );
 
 	/* Handy Quick Reference Chart for Zone Values.
