@@ -2946,7 +2946,7 @@ char *fread_clean_string(FILE *fl, const char *error)
     /* If there is a '~', end the string; else put an "\r\n" over the '\n'. */
     /* now only removes trailing ~'s -- Welcor */
     point = strchr(tmp, '\0');
-    for (point-- ; (*point=='\r' || *point=='\n'); point--);
+    for (point-- ; (*point=='\r' || *point=='\n') && point > tmp; point--);
     if (*point=='~') {
       *point='\0';
       done = 1;
