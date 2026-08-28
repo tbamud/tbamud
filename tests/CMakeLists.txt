@@ -134,3 +134,21 @@ add_mud_test(test_mud_event
     ${MUD_SRCDIR}/random.c
     ${CMAKE_CURRENT_SOURCE_DIR}/test_mud_event.c
 )
+
+# ---------------------------------------------------------------------------
+# test_handler_prefix — covers the keyword-prefix helpers in src/handler.c
+# interpreter.c is here for one_argument, lists.c for the group list handler.c uses.
+# ---------------------------------------------------------------------------
+add_mud_test(test_handler_prefix
+    ${MUD_SRCDIR}/handler.c
+    ${MUD_SRCDIR}/interpreter.c
+    ${MUD_SRCDIR}/lists.c
+    ${MUD_SRCDIR}/utils.c
+    ${MUD_SRCDIR}/random.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_handler_prefix.c
+)
+
+# interpreter.c brings crypt() along with it, as above.
+if(CRYPT_LIBRARY)
+    target_link_libraries(test_handler_prefix PRIVATE ${CRYPT_LIBRARY})
+endif()
