@@ -3711,8 +3711,13 @@ void set_default_prefs(struct char_data *ch, int flags[])
    * level 0 -- but not entirely, because the first character created on a
    * fresh MUD has been made LVL_IMPL a few lines above.  That implementor is
    * now given these three at creation; before, it started with none of them
-   * and had to set them by hand. */
-  if (GET_LEVEL(ch) > LVL_IMMORT) {
+   * and had to set them by hand.
+   *
+   * The boundary is >= LVL_IMMORT, the one prefedit's own menu uses to decide
+   * who is shown these three, and the one do_advance() draws: it strips all
+   * three below LVL_IMMORT and grants two of them at it.  A character at
+   * exactly LVL_IMMORT is an immortal. */
+  if (GET_LEVEL(ch) >= LVL_IMMORT) {
     SET_BIT_AR(flags, PRF_NOHASSLE);
     SET_BIT_AR(flags, PRF_HOLYLIGHT);
     SET_BIT_AR(flags, PRF_SHOWVNUMS);
