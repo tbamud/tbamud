@@ -586,9 +586,11 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
         cap_next = TRUE;
       }
 
-      /* This is so that if we stopped on a sentence, we move off the sentence 
-       * delimiter. */
-      while (strchr(".!?", *flow)) {
+      /* This is so that if we stopped on a sentence, we move off the sentence
+       * delimiter.  The *flow test is not redundant: strchr() answers a match
+       * for the terminator too -- strchr(s, 0) points at s own NUL -- so at
+       * the end of the string this walked off the end of it. */
+      while (*flow && strchr(".!?", *flow)) {
         cap_next_next = TRUE;
         flow++;
       }
@@ -598,7 +600,10 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
        * to the \r (or \n) character after the delimiter. Thus *flow will be 
        * non-null, and an extra (blank) line might be added erroneously. We 
        * fix it by skipping the newline characters in between. - Welcor */
-      if (strchr("\n\r", *flow)) {
+      /* Same again: without the *flow test the end of the string reads as a
+       * delimiter, and then the flow++ below -- which is safe only because a
+       * real \r or \n has something after it -- steps past the terminator. */
+      if (*flow && strchr("\n\r", *flow)) {
         *flow = '\0';  /* terminate 'start' string */
         flow++;        /* we know this is safe     */
         if (*flow == '\n' && i++ >= high)
