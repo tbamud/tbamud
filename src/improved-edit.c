@@ -723,12 +723,17 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, un
     }
   }
 
-  if (i <= 0)
+  /* Nothing matched, or the size test above gave up part way: *string is left
+   * as it was, but the working copy still has to go back.  Returning from
+   * here without freeing it leaked max_size bytes -- d->max_str of them, so
+   * up to the whole of the editor buffer -- every time /r found nothing. */
+  if (i <= 0) {
+    free(replace_buffer);
     return 0;
-  else {
-    RECREATE(*string, char, strlen(replace_buffer) + 3);
-    strcpy(*string, replace_buffer);
   }
+
+  RECREATE(*string, char, strlen(replace_buffer) + 3);
+  strcpy(*string, replace_buffer);
   free(replace_buffer);
   return i;
 }
