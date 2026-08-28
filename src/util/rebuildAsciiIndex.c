@@ -113,7 +113,7 @@ int walkdir(FILE *index_file, char *dir) {
 
  	if ((dfd = opendir(dir)) == NULL)
  	{
-	  fprintf(stderr, "Can't open %s\n", dir);
+	  perror(dir);
 	  return 1;
  	}
 
