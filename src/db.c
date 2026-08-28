@@ -2861,17 +2861,25 @@ int is_empty(zone_rnum zone_nr)
 }
 
 /* Functions of a general utility nature. */
+
+/* fgets() below is given FREAD_STRING_LINE, so it stores at most
+ * FREAD_STRING_LINE - 1 characters and a terminator.  When the line did not
+ * end in a newline, the CR, LF and terminator appended after the last of
+ * those characters reach two bytes further than fgets() itself could, which
+ * is what the + 2 on tmp[] below is for. */
+#define FREAD_STRING_LINE 512
+
 /* read and allocate space for a '~'-terminated string from a given file */
 char *fread_string(FILE *fl, const char *error)
 {
-  char buf[MAX_STRING_LENGTH], tmp[513];
+  char buf[MAX_STRING_LENGTH], tmp[FREAD_STRING_LINE + 2];
   char *point;
   int done = 0, length = 0, templength;
 
   *buf = '\0';
 
   do {
-    if (!fgets(tmp, 512, fl)) {
+    if (!fgets(tmp, FREAD_STRING_LINE, fl)) {
       log("SYSERR: fread_string: format error at or near %s", error);
       exit(1);
     }
@@ -2912,7 +2920,7 @@ char *fread_string(FILE *fl, const char *error)
 /* fread_clean_string is the same as fread_string, but skips preceding spaces */
 char *fread_clean_string(FILE *fl, const char *error)
 {
-  char buf[MAX_STRING_LENGTH], tmp[513];
+  char buf[MAX_STRING_LENGTH], tmp[FREAD_STRING_LINE + 2];
   char *point, c;
   int done = 0, length = 0, templength;
 
@@ -2931,7 +2939,7 @@ char *fread_clean_string(FILE *fl, const char *error)
   ungetc( c, fl );
 
   do {
-    if (!fgets(tmp, 512, fl)) {
+    if (!fgets(tmp, FREAD_STRING_LINE, fl)) {
       log("SYSERR: fread_clean_string: format error at or near %s", error);
       exit(1);
     }
