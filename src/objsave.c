@@ -1198,11 +1198,38 @@ void Crash_save_all(void)
 /* Parses the object records stored in fl, and returns the first object in a
  * linked list, which also handles location if worn. This list can then be
  * handled by house code, listrent code, autoeq code, etc. */
+/* The four flag words of a Flag, Perm or Wear line.  The scratch buffers are
+ * its own rather than the caller's on purpose: the caller loops over every
+ * record in the file, and buffers that outlive an iteration are how a short
+ * scan hands an object the flags of the object before it.  Nothing here ever
+ * looked at the conversion count, so that swap was silent.
+ *
+ * A line that does not carry four fields now leaves the caller's flags where
+ * they are and says so.  Untouched is the right answer rather than a
+ * fallback: the writer emits one of these lines only when the object differs
+ * from its prototype, so an unreadable line lands on exactly what an absent
+ * one means. */
+static void parse_flag_quad(const char *line, const char *tag, int *out)
+{
+  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
+  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1];
+
+  if (sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT,
+	     f1, f2, f3, f4) != 4) {
+    log("SYSERR: objsave: malformed '%s' line, keeping prototype value: %s", tag, line);
+    return;
+  }
+
+  out[0] = asciiflag_conv(f1);
+  out[1] = asciiflag_conv(f2);
+  out[2] = asciiflag_conv(f3);
+  out[3] = asciiflag_conv(f4);
+}
+
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
   obj_save_data *head, *current, *tempsave;
-  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
-  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1], line[READ_SIZE];
+  char line[READ_SIZE];
   int t[4],i, nr;
   struct obj_data *temp;
 
@@ -1302,8 +1329,17 @@ obj_save_data *objsave_parse_objects(FILE *fl)
         snprintf(error, sizeof(error)-1, "rent(Ades):%s", temp->name);
         temp->action_description = fread_string(fl, error);
       } else if (!strcmp(tag, "Aff ")) {
-        sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]);
-        if (t[0] < MAX_OBJ_AFFECT) {
+        /* Two checks that were not here.  The count, because t[] outlives the
+         * iteration and a short scan would place this affect at the slot the
+         * previous record used.  And the low end of the slot: the ceiling was
+         * tested, the floor was not, so a negative slot in the file indexed
+         * behind a fixed array and wrote through it. */
+        if (sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]) != 3)
+          log("SYSERR: objsave: malformed 'Aff ' line, skipping: %s", line);
+        else if (t[0] < 0 || t[0] >= MAX_OBJ_AFFECT)
+          log("SYSERR: objsave: affect slot %d outside 0..%d, skipping: %s",
+              t[0], MAX_OBJ_AFFECT - 1, line);
+        else {
           temp->affected[t[0]].location = t[1];
           temp->affected[t[0]].modifier = t[2];
         }
@@ -1335,11 +1371,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'F':
       if (!strcmp(tag, "Flag")) {
-        sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4);
-        GET_OBJ_EXTRA(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_EXTRA(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_EXTRA(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_EXTRA(temp)[3] = asciiflag_conv(f4);
+        parse_flag_quad(line, tag, GET_OBJ_EXTRA(temp));
       }
       break;
     case 'L':
@@ -1352,11 +1384,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'P':
       if (!strcmp(tag, "Perm")) {
-        sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4);
-        GET_OBJ_AFFECT(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_AFFECT(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_AFFECT(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_AFFECT(temp)[3] = asciiflag_conv(f4);
+        parse_flag_quad(line, tag, GET_OBJ_AFFECT(temp));
       }
       break;
     case 'R':
@@ -1373,20 +1401,21 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'W':
       if (!strcmp(tag, "Wear")) {
-        sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT, f1, f2, f3, f4);
-        GET_OBJ_WEAR(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_WEAR(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_WEAR(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_WEAR(temp)[3] = asciiflag_conv(f4);
+        parse_flag_quad(line, tag, GET_OBJ_WEAR(temp));
       }
       else if (!strcmp(tag, "Wght"))
         GET_OBJ_WEIGHT(temp) = num;
       break;
     case 'V':
       if (!strcmp(tag, "Vals")) {
-        sscanf(line, "%d %d %d %d", &t[0], &t[1], &t[2], &t[3]);
-        for (i = 0; i < NUM_OBJ_VAL_POSITIONS; i++)
-          GET_OBJ_VAL(temp, i) = t[i];
+        /* Same t[] as the affect line above, same reason to check the count:
+         * three values where four were expected used to leave the fourth
+         * holding whatever the last record put there. */
+        if (sscanf(line, "%d %d %d %d", &t[0], &t[1], &t[2], &t[3]) != 4)
+          log("SYSERR: objsave: malformed 'Vals' line, keeping prototype values: %s", line);
+        else
+          for (i = 0; i < NUM_OBJ_VAL_POSITIONS; i++)
+            GET_OBJ_VAL(temp, i) = t[i];
       }
       break;
     default:
