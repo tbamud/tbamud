@@ -170,6 +170,20 @@
 #define ZCMD_STR_FMT      "%" SCANF_WIDTH(ZCMD_STR_FIELD) "s"
 /** Its value argument, which runs to the end of the line. */
 #define ZCMD_TXT_FMT      "%" SCANF_WIDTH(ZCMD_STR_FIELD) "[^\f\n\r\t\v]"
+
+/** Longest name the player index will read back.  Deliberately not
+ * MAX_NAME_LENGTH: that bounds what this MUD will *create*, and this bounds
+ * what it will *accept*, which are not the same number.  An index written by
+ * a MUD with a larger MAX_NAME_LENGTH -- or carried across a merge, which is
+ * how player files move between forks -- has to keep loading.  Narrowing the
+ * read to MAX_NAME_LENGTH would not truncate the name and stop: the following
+ * %d would fail on the remainder, the conversion count would come up short,
+ * and the record would keep the level, flags and last-login of the record
+ * before it.  79 is the width the reader has always had. */
+#define PLR_INDEX_NAME_FIELD  79
+/** One bounded player-index name. */
+#define PLR_INDEX_NAME_FMT    "%" SCANF_WIDTH(PLR_INDEX_NAME_FIELD) "s"
+
 #define PLAYER_FILE	LIB_ETC"players"   /* the player database	*/
 #define MAIL_FILE	LIB_ETC"plrmail"   /* for the mudmail system	*/
 #define MAIL_FILE_TMP	LIB_ETC"plrmail_tmp"   /* for the mudmail system	*/

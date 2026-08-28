@@ -49,7 +49,7 @@ void build_player_index(void)
   int rec_count = 0, i;
   FILE *plr_index;
   char index_name[40], line[256], bits[WORLD_FLAG_FIELD + 1];
-  char arg2[MAX_NAME_LENGTH + 1];
+  char arg2[PLR_INDEX_NAME_FIELD + 1];
 
   sprintf(index_name, "%s%s", LIB_PLRFILES, INDEX_FILE);
   if (!(plr_index = fopen(index_name, "r"))) {
@@ -72,9 +72,17 @@ void build_player_index(void)
   CREATE(player_table, struct player_index_element, rec_count);
   for (i = 0; i < rec_count; i++) {
     get_line(plr_index, line);
-    sscanf(line, "%ld %" SCANF_WIDTH(MAX_NAME_LENGTH) "s %d " FLAG_FIELD_FMT " %ld",
-      &player_table[i].id, arg2,
-      &player_table[i].level, bits, (long *)&player_table[i].last);
+    /* Checked, because a short count here is not a partial record -- it is a
+     * record wearing the one before it.  arg2 and bits are declared outside
+     * this loop, so whatever the previous line put in them is still there,
+     * and the level, flags and last-login of the entry before this one would
+     * be adopted by this one without a word.  Five or nothing. */
+    if (sscanf(line, "%ld " PLR_INDEX_NAME_FMT " %d " FLAG_FIELD_FMT " %ld",
+        &player_table[i].id, arg2,
+        &player_table[i].level, bits, (long *)&player_table[i].last) != 5) {
+      log("SYSERR: Malformed record %d in player index %s: %s", i, index_name, line);
+      exit(1);
+    }
     CREATE(player_table[i].name, char, strlen(arg2) + 1);
     strcpy(player_table[i].name, arg2);
     player_table[i].flags = asciiflag_conv(bits);
