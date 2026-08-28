@@ -949,7 +949,10 @@ void index_boot(int mode)
   const char *index_filename, *prefix = NULL;	/* NULL or egcs 1.1 complains */
   FILE *db_index, *db_file;
   int line_number, rec_count = 0, size[2];
-  char buf2[PATH_MAX], buf1[PATH_MAX - 100];   // - 100 to make room for prefix
+  /* buf1 holds one index entry, buf2 that entry behind its prefix.  buf1 is
+   * sized from the entry it holds now rather than from PATH_MAX, which is not
+   * the same number on every platform -- see INDEX_ENTRY_FIELD in db.h. */
+  char buf2[PATH_MAX], buf1[INDEX_ENTRY_FIELD + 1];
 
   switch (mode) {
   case DB_BOOT_WLD:
@@ -994,7 +997,7 @@ void index_boot(int mode)
 
   for (line_number = 0;; ++line_number) {
     /* first, count the number of records in the file so we can malloc */
-    if (fscanf(db_index, BOOT_TOKEN_FMT "\n", buf1) != 1) {
+    if (fscanf(db_index, INDEX_ENTRY_FMT "\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s. "
             "Ensure that the last line of the file starts with the character '$'.",
@@ -1079,7 +1082,7 @@ void index_boot(int mode)
   rewind(db_index);
 
   for (line_number = 1;; ++line_number) {
-    if (fscanf(db_index, BOOT_TOKEN_FMT "\n", buf1) != 1) {
+    if (fscanf(db_index, INDEX_ENTRY_FMT "\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s",
             prefix, index_filename);

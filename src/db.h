@@ -138,15 +138,31 @@
 /** One bounded flag field, for the world-file parsers. */
 #define FLAG_FIELD_FMT    "%" SCANF_WIDTH(WORLD_FLAG_FIELD) "s"
 
-/** Longest single whitespace-separated token the boot-time record readers
- * will accept -- a social name, an index-file entry.  Unlike the flag fields
- * above, these land in buffers that are also used to read whole lines, so the
- * bound cannot be derived from the array: it is a deliberate ceiling well
- * under every one of them, and it truncates rather than overflows.  Nothing
- * legitimate comes near it, and a file carrying more is malformed. */
+/** Longest single whitespace-separated token the social reader will accept.
+ * Unlike the flag fields above, these land in buffers that are also used to
+ * read whole lines, so the bound cannot be derived from the array: it is a
+ * deliberate ceiling under every one of them, and it truncates rather than
+ * overflows.  Both of them, so the claim can be checked rather than taken:
+ * next_soc[MAX_STRING_LENGTH] and sorted[MAX_INPUT_LENGTH], 49152 and 512,
+ * on every platform.
+ *
+ * The index-file entries were bounded by this as well, and for them the claim
+ * was false.  Their buffer was PATH_MAX - 100, and PATH_MAX is 4096 on Linux
+ * but MAX_PATH under CIRCLE_WINDOWS -- 260, making the buffer 160 bytes while
+ * this writes up to 256.  A ceiling nothing can be measured against is not
+ * one, so they have their own width below, taken from their own array. */
 #define BOOT_TOKEN_FIELD  255
 /** One bounded token, for the readers that scan straight out of a FILE. */
 #define BOOT_TOKEN_FMT    "%" SCANF_WIDTH(BOOT_TOKEN_FIELD) "s"
+
+/** Longest entry an index file may carry -- a world filename such as
+ * "30.wld", or the "$" that ends the list.  Sized in its own right rather
+ * than as PATH_MAX less room for a prefix: that expression named two
+ * different sizes on two platforms without saying so, and a bound written
+ * against one of them was 96 bytes past the other. */
+#define INDEX_ENTRY_FIELD 127
+/** One bounded index-file entry. */
+#define INDEX_ENTRY_FMT   "%" SCANF_WIDTH(INDEX_ENTRY_FIELD) "s"
 
 /** The leading tag on a trigger-assignment line -- the "T" in "T 1234".  Both
  * trigger readers scan it into an eight-byte buffer, and one of them already
