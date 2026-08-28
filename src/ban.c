@@ -57,10 +57,13 @@ void load_banned(void)
     return;
   }
   while (fgets(line, sizeof(line), fl)) {
-    if (!strchr(line, '\n') && !feof(fl)) {
-      while ((c = fgetc(fl)) != '\n' && c != EOF)
-        ;
-      continue;
+    if (!strchr(line, '\n')) {
+      c = fgetc(fl);
+      if (c != EOF) {
+        while (c != '\n' && c != EOF)
+          c = fgetc(fl);
+        continue;
+      }
     }
 
     if (sscanf(line, " %99s %50s %d %20s %c", ban_type, site_name, &date, name, &extra) != 4)
