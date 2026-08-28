@@ -61,9 +61,21 @@ dnl moved its declaration into <crypt.h>, and since GCC 14 an implicit
 dnl declaration is an error rather than a warning, so on a system without that
 dnl header the probe stops compiling and the old code called it a pass.  Ask
 dnl the compiler separately, and say "unknown" out loud rather than guess.
+dnl
+dnl Cross-compiling reaches the same wrong answer by the other road: the probe
+dnl builds but cannot be run, and AC_RUN_IFELSE's fourth argument is what it
+dnl settles for.  That is a guess too, so it says "unknown" as well.  The one
+dnl "no" left is the probe running and reporting two distinct hashes.
+dnl
+dnl _XOPEN_SOURCE is left without a value on purpose.  Asking for 700 means
+dnl XPG7, which headers older than 2011 reject outright -- and an old UNIX is
+dnl exactly where an eight-character crypt() is still to be found, so that is
+dnl the last place this probe can afford to stop compiling.  It buys nothing
+dnl in return: on glibc only <crypt.h> decides whether crypt() is declared,
+dnl whatever _XOPEN_SOURCE says.
 AC_DEFUN([AC_UNSAFE_CRYPT],
 [m4_pushdef([_TBA_CRYPT_PROG], [AC_LANG_SOURCE([[
-#define _XOPEN_SOURCE 700
+#define _XOPEN_SOURCE
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -83,6 +95,7 @@ int main(void)
 }
 ]])])dnl
   AC_CACHE_CHECK([whether crypt needs over 10 characters], ac_cv_unsafe_crypt, [
+    use_crypt_header=
     if test ${ac_cv_header_crypt_h-no} = yes; then
       use_crypt_header="#include <crypt.h>"
     fi
@@ -94,7 +107,7 @@ int main(void)
       [AC_RUN_IFELSE([_TBA_CRYPT_PROG],
          [ac_cv_unsafe_crypt=yes],
          [ac_cv_unsafe_crypt=no],
-         [ac_cv_unsafe_crypt=no])],
+         [ac_cv_unsafe_crypt=unknown])],
       [ac_cv_unsafe_crypt=unknown])
     dnl Restore inside the cache block: when the value comes from the cache
     dnl this whole body is skipped, and a restore left outside it would run
@@ -104,9 +117,10 @@ int main(void)
     fi
   ])
 if test $ac_cv_unsafe_crypt = unknown; then
-  AC_MSG_WARN([the crypt() probe would not build, so this was not tested.
-Continuing as though crypt() were safe.  If this system's crypt() only looks
-at the first eight characters of a password, define HAVE_UNSAFE_CRYPT by hand.])
+  AC_MSG_WARN([the crypt() probe did not run -- it would not build, or this
+is a cross-compile -- so this was not tested.  Continuing as though crypt()
+were safe.  If this system's crypt() only looks at the first eight
+characters of a password, define HAVE_UNSAFE_CRYPT by hand.])
 fi
 if test $ac_cv_unsafe_crypt = yes; then
   AC_DEFINE([HAVE_UNSAFE_CRYPT], [1],

@@ -4088,6 +4088,7 @@ then :
   printf %s "(cached) " >&6
 else case e in #(
   e)
+    use_crypt_header=
     if test ${ac_cv_header_crypt_h-no} = yes; then
       use_crypt_header="#include <crypt.h>"
     fi
@@ -4098,7 +4099,7 @@ else case e in #(
     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
-#define _XOPEN_SOURCE 700
+#define _XOPEN_SOURCE
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -4122,12 +4123,12 @@ if ac_fn_c_try_compile "$LINENO"
 then :
   if test "$cross_compiling" = yes
 then :
-  ac_cv_unsafe_crypt=no
+  ac_cv_unsafe_crypt=unknown
 else case e in #(
   e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
-#define _XOPEN_SOURCE 700
+#define _XOPEN_SOURCE
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -4173,12 +4174,14 @@ fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_unsafe_crypt" >&5
 printf "%s\n" "$ac_cv_unsafe_crypt" >&6; }
 if test $ac_cv_unsafe_crypt = unknown; then
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: the crypt() probe would not build, so this was not tested.
-Continuing as though crypt() were safe.  If this system's crypt() only looks
-at the first eight characters of a password, define HAVE_UNSAFE_CRYPT by hand." >&5
-printf "%s\n" "$as_me: WARNING: the crypt() probe would not build, so this was not tested.
-Continuing as though crypt() were safe.  If this system's crypt() only looks
-at the first eight characters of a password, define HAVE_UNSAFE_CRYPT by hand." >&2;}
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: the crypt() probe did not run -- it would not build, or this
+is a cross-compile -- so this was not tested.  Continuing as though crypt()
+were safe.  If this system's crypt() only looks at the first eight
+characters of a password, define HAVE_UNSAFE_CRYPT by hand." >&5
+printf "%s\n" "$as_me: WARNING: the crypt() probe did not run -- it would not build, or this
+is a cross-compile -- so this was not tested.  Continuing as though crypt()
+were safe.  If this system's crypt() only looks at the first eight
+characters of a password, define HAVE_UNSAFE_CRYPT by hand." >&2;}
 fi
 if test $ac_cv_unsafe_crypt = yes; then
 
