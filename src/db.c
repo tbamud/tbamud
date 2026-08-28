@@ -1861,9 +1861,6 @@ void parse_mobile(FILE *mob_f, int nr)
     GET_ALIGNMENT(mob_proto + i) = atoi(f3);
 
     /* Make some basic checks. */
-    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_CHARM);
-    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_POISON);
-    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_SLEEP);
     if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_GOOD))
       REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_AGGR_GOOD);
     if (MOB_FLAGGED(mob_proto + i, MOB_AGGRESSIVE) && MOB_FLAGGED(mob_proto + i, MOB_AGGR_NEUTRAL))
@@ -1914,6 +1911,27 @@ void parse_mobile(FILE *mob_f, int nr)
     /* Rather bad to load mobiles with this bit already set. */
     log("SYSERR: Mob #%d has reserved bit MOB_NOTDEADYET set.", nr);
     REMOVE_BIT_AR(MOB_FLAGS(mob_proto + i), MOB_NOTDEADYET);
+  }
+
+  /* CHARM, POISON and SLEEP say something is being done to a mob rather than
+   * something it is, and nothing in the game puts them back once they are
+   * gone, so a mob file that sets one leaves the mob that way for the rest of
+   * its life.  medit strips all three on save; this is the same check for the
+   * files medit has never touched.  It used to sit in the conversion branch
+   * above and so ran only on pre-128-bit mob files, which is to say on none
+   * of a modern world's.  Say which mob is at fault rather than fixing it
+   * quietly: the mob file still has the bit, and only a builder can take it
+   * out for good. */
+  if (AFF_FLAGGED(mob_proto + i, AFF_CHARM) ||
+      AFF_FLAGGED(mob_proto + i, AFF_POISON) ||
+      AFF_FLAGGED(mob_proto + i, AFF_SLEEP)) {
+    log("SYSERR: Mob #%d has illegal affection bits set:%s%s%s -- removing them.", nr,
+        AFF_FLAGGED(mob_proto + i, AFF_CHARM)  ? " CHARM"  : "",
+        AFF_FLAGGED(mob_proto + i, AFF_POISON) ? " POISON" : "",
+        AFF_FLAGGED(mob_proto + i, AFF_SLEEP)  ? " SLEEP"  : "");
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_CHARM);
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_POISON);
+    REMOVE_BIT_AR(AFF_FLAGS(mob_proto + i), AFF_SLEEP);
   }
 
   switch (UPPER(letter)) {
