@@ -816,12 +816,15 @@ AUTOLOOT
 
 Usage: toggle autoloot
 
-   Enables you to automatically "take all corpse" from any mob you kill.  You 
-will loot everything (including cursed objects) until you can no longer carry 
-anymore weight.  If this happens and and you also have autosac enabled, the 
-items you cannot pick up will be left on the ground.
+   Enables you to automatically "take all last.corpse" from any mob you kill.
+You will loot everything (including cursed objects) until you can no longer
+carry anymore weight.  If this happens and and you also have autosac enabled,
+the items you cannot pick up will be left on the ground.
 
-See Also: TOGGLE, TAKE, SPLIT
+   'last.corpse' rather than 'corpse' so that a room with several corpses in
+it is looted from the newest, which is the one you just made.
+
+See Also: TOGGLE, TAKE, SPLIT, LAST-PREFIX
 #0
 AUTOMAPPING MAPS
 
@@ -3465,8 +3468,13 @@ Examples:
   > get all all.bag
   > take all.bread all.bag
   > get all 2.corpse (to retrieve items from the second corpse in a room)
+  > get all last.corpse (the corpse that arrived most recently)
 
-See also: DROP, PUT, AUTOLOOT, AUTOGOLD
+A plain 'corpse' finds the oldest one in the room, so with several on the
+floor 'last.corpse' is usually the one you want.  See LAST-PREFIX for the
+numbered and 'last.' forms in full.
+
+See also: DROP, PUT, AUTOLOOT, AUTOGOLD, LAST-PREFIX
 #0
 GITHUB SVN SUBVERSION
 
@@ -4342,6 +4350,15 @@ Things dropped or left in a room go on the end of that room's list, so
 which is why autoloot, autogold and autosac use it.  Your inventory and the
 people in a room are built the other way round, newest first, so 'last.'
 picks the oldest of those.  Either way it is the far end of the list.
+
+What you are wearing is not a list in that sense.  'last.' there means the
+last worn position, counting down the way your equipment is listed.
+
+'last.' reaches the things you can see: what you carry, what you wear, and
+what is in the room with you.  A search that widens to the whole world -- a
+'locate object', or an immortal hunting something that is nowhere nearby --
+does not take it, because nothing out there sits in an order you could have
+pointed at.  Use a number there instead.
 
 '0.<name>' is a third form: it means the player of that name, rather than a
 mobile that happens to answer to it as well.

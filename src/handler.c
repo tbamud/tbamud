@@ -1216,7 +1216,7 @@ struct char_data *get_char_room_vis(struct char_data *ch, char *name, int *numbe
 
 struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *number)
 {
-  struct char_data *i, *last = NULL;
+  struct char_data *i;
   int num;
 
   if (!number) {
@@ -1230,6 +1230,11 @@ struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *numb
   if (*number == 0)
     return get_player_vis(ch, name, NULL, 0);
 
+  /* As in get_obj_vis(): character_list has no order the player can see, so
+   * last. stops at the room above rather than walking every mobile alive. */
+  if (*number == FIND_INDEX_LAST)
+    return (NULL);
+
   for (i = character_list; i && *number; i = i->next) {
     if (IN_ROOM(ch) == IN_ROOM(i))
       continue;
@@ -1237,16 +1242,12 @@ struct char_data *get_char_world_vis(struct char_data *ch, char *name, int *numb
       continue;
     if (!CAN_SEE(ch, i))
       continue;
-    if (*number == FIND_INDEX_LAST) {
-      last = i;
-      continue;
-    }
     if (--(*number) != 0)
       continue;
 
     return (i);
   }
-  return (last);
+  return (NULL);
 }
 
 struct char_data *get_char_vis(struct char_data *ch, char *name, int *number, int where)
@@ -1287,7 +1288,7 @@ struct obj_data *get_obj_in_list_vis(struct char_data *ch, char *name, int *numb
 /* search the entire world for an object, and return a pointer  */
 struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *number)
 {
-  struct obj_data *i, *last = NULL;
+  struct obj_data *i;
   int num;
 
   if (!number) {
@@ -1306,17 +1307,21 @@ struct obj_data *get_obj_vis(struct char_data *ch, char *name, int *number)
   if ((i = get_obj_in_list_vis(ch, name, number, world[IN_ROOM(ch)].contents)) != NULL)
     return (i);
 
+  /* last. asks for the far end of a list the player can see.  object_list is
+   * not one: its order is the order things happened to be created in, so the
+   * answer would mean nothing, and finding it would cost a walk of every
+   * object in the game on every lookup.  The lists above still take it. */
+  if (*number == FIND_INDEX_LAST)
+    return (NULL);
+
   /* ok.. no luck yet. scan the entire obj list   */
   for (i = object_list; i && *number; i = i->next)
     if (isname(name, i->name))
-      if (CAN_SEE_OBJ(ch, i)) {
-	if (*number == FIND_INDEX_LAST)
-	  last = i;
-	else if (--(*number) == 0)
+      if (CAN_SEE_OBJ(ch, i))
+	if (--(*number) == 0)
 	  return (i);
-      }
 
-  return (last);
+  return (NULL);
 }
 
 struct obj_data *get_obj_in_equip_vis(struct char_data *ch, char *arg, int *number, struct obj_data *equipment[])

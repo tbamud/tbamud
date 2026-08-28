@@ -835,6 +835,8 @@ ACMD(do_drink)
   struct affected_type af;
   int amount, weight;
   int on_ground = 0;
+  char *name;
+  int number;
 
   one_argument(argument, arg);
 
@@ -862,8 +864,13 @@ ACMD(do_drink)
     return;
     }
   }
-  if (!(temp = get_obj_in_list_vis(ch, arg, NULL, ch->carrying))) {
-    if (!(temp = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents))) {
+  /* As in do_sac(): read the prefix once so the second list is searched for
+   * the same thing as the first. */
+  name = arg;
+  number = get_number(&name);
+
+  if (!(temp = get_obj_in_list_vis(ch, name, &number, ch->carrying))) {
+    if (!(temp = get_obj_in_list_vis(ch, name, &number, world[IN_ROOM(ch)].contents))) {
       send_to_char(ch, "You can't find it!\r\n");
       return;
     } else
@@ -1536,6 +1543,8 @@ ACMD(do_sac)
 {
   char arg[MAX_INPUT_LENGTH];
   struct obj_data *j, *jj, *next_thing2;
+  char *name;
+  int number;
 
   one_argument(argument, arg);
 
@@ -1543,8 +1552,14 @@ ACMD(do_sac)
     send_to_char(ch, "Sacrifice what?\n\r");
     return;
   }
-    
-  if (!(j = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents)) && (!(j = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)))) {
+
+  /* Read the number. or last. once and count across both lists.  Left to
+   * itself, get_obj_in_list_vis() strips the prefix from arg on the first
+   * call, and the second would search for the bare keyword. */
+  name = arg;
+  number = get_number(&name);
+
+  if (!(j = get_obj_in_list_vis(ch, name, &number, world[IN_ROOM(ch)].contents)) && (!(j = get_obj_in_list_vis(ch, name, &number, ch->carrying)))) {
     send_to_char(ch, "It doesn't seem to be here.\n\r");
     return;
   }
