@@ -197,8 +197,6 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
   if (ch->events->iSize == 0)
     return NULL;
 
-  clear_simple_list();  
-
   while ((pEvent = (struct event *) simple_list(ch->events)) != NULL) {
     if (!pEvent->isMudEvent)
       continue;
@@ -229,8 +227,6 @@ void clear_char_event_list(struct char_data * ch)
   if (ch->events->iSize == 0)
     return;
     
-  clear_simple_list();  
-
   while ((pEvent = (struct event *) simple_list(ch->events)) != NULL) {
     event_cancel(pEvent);
   } 
