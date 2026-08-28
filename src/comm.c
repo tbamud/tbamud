@@ -2989,6 +2989,13 @@ static void msdp_update( void )
            * exits the autoexit line would show this character: closed doors
            * only where the game displays them, hidden ones only to holylight.
            * A mapper must not learn a door the player cannot see.
+           *
+           * A closed door is listed with an empty destination. do_exits
+           * withholds the vnum and the room name behind a closed door from
+           * everyone -- showvnums immortals included -- and says only that
+           * it is closed. So the direction is reported, because the player
+           * sees it in the autoexit line, and where it leads is not,
+           * because they cannot see that until they open it.
            */
           *exits = '\0';
           for ( door = 0; door < DIR_COUNT; door++ )
@@ -3001,9 +3008,13 @@ static void msdp_update( void )
                   continue;
               if ( exit_len >= sizeof(exits) - 1 )
                   break;
-              exit_len += snprintf( exits + exit_len, sizeof(exits) - exit_len,
-                  "%c%s%c%d", (char)MSDP_VAR, autoexits[door], (char)MSDP_VAL,
-                  GET_ROOM_VNUM(EXIT(ch, door)->to_room) );
+              if ( EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) )
+                  exit_len += snprintf( exits + exit_len, sizeof(exits) - exit_len,
+                      "%c%s%c", (char)MSDP_VAR, autoexits[door], (char)MSDP_VAL );
+              else
+                  exit_len += snprintf( exits + exit_len, sizeof(exits) - exit_len,
+                      "%c%s%c%d", (char)MSDP_VAR, autoexits[door], (char)MSDP_VAL,
+                      GET_ROOM_VNUM(EXIT(ch, door)->to_room) );
           }
           MSDPSetTable( d, eMSDP_ROOM_EXITS, exits );
       }
