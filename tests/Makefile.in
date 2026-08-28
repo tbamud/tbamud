@@ -33,7 +33,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event
 
 .PHONY: all test clean
 
@@ -70,6 +70,14 @@ test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 # ---------------------------------------------------------------------------
 test_lists: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
             $(SRCDIR)/lists.c test_lists.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_mud_event — covers char_has_mud_event() in src/mud_event.c
+# ---------------------------------------------------------------------------
+test_mud_event: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                $(SRCDIR)/lists.c $(SRCDIR)/dg_event.c $(SRCDIR)/mud_event.c \
+                test_mud_event.c
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------

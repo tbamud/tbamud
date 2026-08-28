@@ -23,6 +23,7 @@
 #include "interpreter.h"
 #include "class.h"
 #include "dg_scripts.h"
+#include "dg_event.h"
 #include "protocol.h"
 
 #include <stdarg.h>
@@ -38,6 +39,7 @@ FILE                      *logfile          = NULL;  /* tests init to stderr in 
 struct descriptor_data    *descriptor_list  = NULL;
 int                        no_specials      = 0;
 int                        circle_restrict  = 0;
+unsigned long              pulse            = 0;
 
 /* db.c */
 struct room_data          *world            = NULL;
@@ -83,6 +85,10 @@ __attribute__((weak)) const char *pc_class_types[] = { "\n" };
 __attribute__((weak))
 size_t send_to_char(struct char_data *ch, const char *messg, ...)
 { (void)ch; (void)messg; return 0; }
+
+__attribute__((weak))
+void send_to_room(room_rnum room, const char *messg, ...)
+{ (void)room; (void)messg; }
 
 __attribute__((weak))
 char *act(const char *str, int hide_invisible, struct char_data *ch,
@@ -149,6 +155,11 @@ int is_abbrev(const char *arg1, const char *arg2)
 __attribute__((weak))
 int parse_class(char arg)
 { (void)arg; return CLASS_UNDEFINED; }
+
+/* Referenced as a mud_event_index[] callback in mud_event.c. */
+__attribute__((weak))
+EVENTFUNC(get_protocols)
+{ (void)event_obj; return 0; }
 
 /* ---------- class.c ---------- */
 __attribute__((weak))
@@ -266,6 +277,12 @@ int command_wtrigger(struct char_data *actor, char *cmd, char *argument)
 __attribute__((weak))
 void look_at_room(struct char_data *ch, int ignore_brief)
 { (void)ch; (void)ignore_brief; }
+
+/* ---------- act.offensive.c ---------- */
+/* Referenced as a mud_event_index[] callback in mud_event.c. */
+__attribute__((weak))
+EVENTFUNC(event_whirlwind)
+{ (void)event_obj; return 0; }
 
 /* ---------- protocol.c ---------- */
 __attribute__((weak))
