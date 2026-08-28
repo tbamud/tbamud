@@ -209,6 +209,10 @@ struct mud_event_data * char_has_mud_event(struct char_data * ch, event_id iId)
     }
   }
 
+  /* simple_list() shares one cursor; a traversal that can exit early has to
+   * hand it back, so release it on every path out of the loop. */
+  clear_simple_list();
+
   if (found)
     return (pMudEvent);
   
