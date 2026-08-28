@@ -389,11 +389,35 @@ ACMD(do_skillset)
     return;
   }
   if ((spell_info[skill].min_level[(pc)] >= LVL_IMMORT) && (pl < LVL_IMMORT)) {
-    send_to_char(ch, "%s cannot be learned by mortals.\r\n", spell_info[skill].name);
+    int c, learners = 0;
+
+    /* min_level is LVL_IMMORT both for a skill no mortal may learn and for
+     * a class that may not learn it, so the two have to be told apart here
+     * or a warrior's skill offered to a mage reads as though nobody can
+     * learn it. */
+    for (c = 0; c < NUM_CLASSES; c++)
+      if (spell_info[skill].min_level[c] < LVL_IMMORT)
+        learners++;
+
+    if (!learners)
+      send_to_char(ch, "%s cannot be learned by mortals.\r\n", spell_info[skill].name);
+    else {
+      send_to_char(ch, "%s cannot be learned by the %s class.\r\n",
+                   spell_info[skill].name, pc_class_types[pc]);
+      send_to_char(ch, "It is learned by:\r\n");
+      for (c = 0; c < NUM_CLASSES; c++)
+        if (spell_info[skill].min_level[c] < LVL_IMMORT)
+          send_to_char(ch, "  %-12s at level %d.\r\n",
+                       pc_class_types[c], spell_info[skill].min_level[c]);
+    }
     return;
   } else if (spell_info[skill].min_level[(pc)] > pl) {
     send_to_char(ch, "%s is a level %d %s.\r\n", GET_NAME(vict), pl, pc_class_types[pc]);
-    send_to_char(ch, "The minimum level for %s is %d for %ss.\r\n", spell_info[skill].name, spell_info[skill].min_level[(pc)], pc_class_types[pc]);
+    send_to_char(ch, "The minimum level for %s is %d for the %s class.\r\n", spell_info[skill].name, spell_info[skill].min_level[(pc)], pc_class_types[pc]);
+    /* Deliberate: an immortal may set a skill the character has not
+     * levelled into.  Say so, rather than leaving two lines that read
+     * like a refusal in front of a change that happened anyway. */
+    send_to_char(ch, "Setting it anyway.\r\n");
   }
 
   /* find_skill_num() guarantees a valid spell_info[] index, or -1, and we
