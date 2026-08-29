@@ -1708,6 +1708,7 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
             /* Store the client name. */
             const int MaxClientLength = 64;
             char *pClientName = alloca(MaxClientLength+1);
+            const char *pVersion;
             int i = 0, j = 1;
             bool_t bStopCyclicTTYPE = false;
 
@@ -1804,13 +1805,18 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
                 */ 
                pProtocol->b256Support = eSOMETIMES;
 
-               if ( strlen(pClientName) > 7 )
+               pVersion = pClientName + 6;
+               while ( *pVersion && !isalnum((unsigned char)*pVersion) )
+                  ++pVersion;
+
+               if ( *pVersion )
                {
+                  char *pVersionCopy = AllocString(pVersion);
                   pClientName[6] = '\0';
                   free(pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString);
                   pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString = AllocString(pClientName);
                   free(pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString);
-                  pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString = AllocString(pClientName+7);
+                  pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString = pVersionCopy;
 
                   /* Mudlet 1.1 and later supports 256 colours. */
                   if ( strcmp(pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString, "1.1") >= 0 )
@@ -1832,13 +1838,18 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
                pProtocol->pVariables[eMSDP_XTERM_256_COLORS]->ValueInt = 1;
                pProtocol->b256Support = eYES;
 
-               if ( strlen(pClientName) > 9 )
+               pVersion = pClientName + 8;
+               while ( *pVersion && !isalnum((unsigned char)*pVersion) )
+                  ++pVersion;
+
+               if ( *pVersion )
                {
+                  char *pVersionCopy = AllocString(pVersion);
                   pClientName[8] = '\0';
                   free(pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString);
                   pProtocol->pVariables[eMSDP_CLIENT_ID]->pValueString = AllocString(pClientName);
                   free(pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString);
-                  pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString = AllocString(pClientName+9);
+                  pProtocol->pVariables[eMSDP_CLIENT_VERSION]->pValueString = pVersionCopy;
                }
             }
             else if ( MatchString(pClientName, "MUSHCLIENT") || 
