@@ -10999,6 +10999,58 @@ Variables:
 
 Example: @RTSTAT 153, 1371, 62, 2721, 167@n
 #31
+TRIGEDIT-MOB-DAMAGE TRIG-MOB-DAMAGE MOB-DAMAGE DAMAGE-TRIGGER MDAMAGE-TRIGGER
+ 
+Activated when the mobile takes damage, before that damage is applied.
+A charmed mobile never fires this trigger. If the mobile has more than
+one Damage trigger, only the first one to fire is run.
+ 
+Numeric Arg : percent chance the trigger fires, rolled on every damage
+              event. Note this differs from HitPrcnt, where the number
+              is a percentage of the mobile's maximum hit points that
+              it must have fallen to, rather than a chance.
+Argument    : not used.
+ 
+Variables:
+%actor%      - the character dealing the damage.
+%self%       - the mobile taking it.
+%victim%     - the mobile taking it, the same as %self%.
+%damdealt%   - the damage about to be applied.
+%attacktype% - the skill or spell being used. UNDEFINED for an ordinary
+               weapon hit, which has no skill behind it.
+ 
+The value this trigger returns IS the damage the mobile takes:
+ 
+  return -1   nothing lands, and no fight starts.
+  return 0    the blow misses, but the fight still begins.
+  return >0   the mobile takes that much instead. Sanctuary and the
+              damage cap still apply to it afterwards, exactly as they
+              would have to the original amount.
+  no return   the damage is applied unchanged.
+ 
+Example, reflecting a blow back at whoever struck it:
+ 
+  mdamage %actor% %damdealt%
+ 
+%damage% is the command alias for mdamage, so that line can equally be
+written @R%damage% %actor% %damdealt%@n. mdamage does not go through the
+combat code: it starts no fight, fires no trigger on the character it
+hits, ignores sanctuary, and cannot harm an immortal. If it kills a
+player, the death is logged as a script kill.
+ 
+Example, a mobile that reacts once it has taken 50 damage in total:
+ 
+  eval totaldam %damdealt% + %totaldam%
+  global totaldam
+  if %totaldam% > 50
+    mecho The creature's wounds begin to close.
+  end
+ 
+An unset variable counts as zero, so totaldam needs no initialising, and
+no return is needed -- the damage lands as it was.
+ 
+See also: TRIGEDIT-MOB-HITPRCNT, TRIGEDIT-MOB-FIGHTING, TRIG-COMMANDS
+#31
 TRIGEDIT-MOB-DEATH TRIG-MOB-DEATH MOB-DEATH MOBDEATH MDEATH  
 
 Activated when this mobile dies just before the death cry. You can not %purge%
@@ -11892,6 +11944,7 @@ accessed by typing:                                |  TRIGEDIT-MOB-MEMORY    |
 i.e. @RHELP TRIGEDIT-MOB-ACT@n                         |  TRIGEDIT-MOB-LEAVE     |
                                                    |  TRIGEDIT-MOB-DOOR      |
                                                    |  TRIGEDIT-MOB-TIME      |
+                                                   |  TRIGEDIT-MOB-DAMAGE    |
 See also: TRIG-COMMANDS, VARIABLES, EXPRESSIONS    |=========================|
 #31
 TRIGEDIT-VARIABLES VARIABLES TRIG-VARS TRIG-VARIABLES TRIGGER-VARIABLES VARS %VARIABLES% %VARIABLE% %% %TRIGGER% %TRIGGERS% %COMMAND% %WORD% VARIABLES-REFERENCE REFERENCES %VAR% DG-VARIABLES TRIGEDIT-VARS %VARIABLE%
