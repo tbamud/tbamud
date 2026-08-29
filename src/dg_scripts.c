@@ -2500,8 +2500,14 @@ static void dg_letter_value(struct script_data *sc, trig_data *trig, char *cmd)
      TRIG_RESTART restarted after a 'wait' */
 int script_driver(void *go_adress, trig_data *trig, int type, int mode)
 {
+  return script_driver_default(go_adress, trig, type, mode, 1);
+}
+
+int script_driver_default(void *go_adress, trig_data *trig, int type, int mode,
+                         int default_ret)
+{
   static int depth = 0;
-  int ret_val = 1;
+  int ret_val = default_ret;
   struct cmdlist_element *cl;
   char cmd[MAX_INPUT_LENGTH], *p;
   struct script_data *sc = 0;

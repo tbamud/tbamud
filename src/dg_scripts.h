@@ -309,6 +309,12 @@ int trig_is_attached(struct script_data *sc, int trig_num);
 /* To maintain strict-aliasing we'll have to do this trick with a union */
 /* Thanks to Chris Gilbert for reminding me that there are other options. */
 int script_driver(void *go_adress, trig_data *trig, int type, int mode);
+/* As script_driver, but says what a script that never runs `return` should
+ * yield. script_driver passes 1, which every trigger type but one reads as
+ * "allow"; the damage trigger reads its return as an amount and passes the
+ * damage that was incoming, so that not returning leaves the hit alone. */
+int script_driver_default(void *go_adress, trig_data *trig, int type, int mode,
+                         int default_ret);
 trig_rnum real_trigger(trig_vnum vnum);
 void process_eval(void *go, struct script_data *sc, trig_data *trig,
                  int type, char *cmd);
