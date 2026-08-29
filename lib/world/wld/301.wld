@@ -1899,6 +1899,34 @@ You can see the central annex to the east.
 ~
 0 -1 30137
 S
+#30170
+The Post Office~
+   This seems to be the standard post office given to any university by the
+wonderful XXX government.  You can tell that it is a university post office
+because of the surplus amount of obscene graffiti upon the walls.  The back
+hall is south of here.
+~
+301 8 0 0 0 0
+D2
+You can see the back hall from here complete with humming bank machines.
+~
+~
+0 -1 30138
+E
+graffiti~
+   You really don't want to read this!  (if you want to continue reading type
+"look wirt")
+~
+E
+wirt~
+   You really are a sucker for punishment now aren't you?  If you still want to
+read it type "look prawn"
+~
+E
+prawn~
+      You see nothing special.  The Prawn is in excellent condition.
+~
+S
 #30171
 The Special Hidden Room~
    This room is completely empty except for the things you can see in it.  The
@@ -1927,34 +1955,6 @@ E
 pamphlet leaflet photograph photo~
    This portrays various bodily functions and things vaguely related that turn
 even your stomach...  Blech!
-~
-S
-#30170
-The Post Office~
-   This seems to be the standard post office given to any university by the
-wonderful XXX government.  You can tell that it is a university post office
-because of the surplus amount of obscene graffiti upon the walls.  The back
-hall is south of here.
-~
-301 8 0 0 0 0
-D2
-You can see the back hall from here complete with humming bank machines.
-~
-~
-0 -1 30138
-E
-graffiti~
-   You really don't want to read this!  (if you want to continue reading type
-"look wirt")
-~
-E
-wirt~
-   You really are a sucker for punishment now aren't you?  If you still want to
-read it type "look prawn"
-~
-E
-prawn~
-      You see nothing special.  The Prawn is in excellent condition.
 ~
 S
 #30173
