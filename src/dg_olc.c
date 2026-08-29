@@ -29,6 +29,7 @@ static const char **trigedit_type_table(int attach_type);
 static int trigedit_type_count(int attach_type);
 static void trigedit_disp_types(struct descriptor_data *d);
 static void trigedit_setup_new(struct descriptor_data *d);
+static int trigedit_write_zone(zone_rnum zrnum, int invis_lev);
 
 
 /* Trigedit */
@@ -651,6 +652,85 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
 }
 
 /* save the zone's triggers to internal memory and to disk */
+/* Write one zone's triggers out, and refresh the index.
+ *
+ * Lifted out of trigedit_save so anything that changes a zone's triggers can
+ * persist them the same way. Copying the writer instead is how this codebase
+ * ended up with two sets of world writers that drifted apart. */
+static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
+{
+  FILE *trig_file;
+  int zone, top, i;
+  trig_rnum rnum;
+  struct trig_data *trig;
+  struct cmdlist_element *cmd;
+  char fname[MAX_INPUT_LENGTH], buf[MAX_CMD_LENGTH], bitBuf[MAX_INPUT_LENGTH];
+
+  zone = zone_table[zrnum].number;
+  top = zone_table[zrnum].top;
+
+#ifdef CIRCLE_MAC
+  snprintf(fname, sizeof(fname), "%s:%i.new", TRG_PREFIX, zone);
+#else
+  snprintf(fname, sizeof(fname), "%s/%i.new", TRG_PREFIX, zone);
+#endif
+
+  if (!(trig_file = fopen(fname, "w"))) {
+    mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
+           "SYSERR: OLC: Can't open trig file \"%s\"", fname);
+    return FALSE;
+  }
+
+  for (i = zone_table[zrnum].bot; i <= top; i++) {
+    if ((rnum = real_trigger(i)) != NOTHING) {
+      trig = trig_index[rnum]->proto;
+
+      if (fprintf(trig_file, "#%d\n", i) < 0) {
+        mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
+               "SYSERR: OLC: Can't write trig file!");
+        fclose(trig_file);
+        return FALSE;
+      }
+      sprintascii(bitBuf, GET_TRIG_TYPE(trig));
+      fprintf(trig_file,      "%s%c\n"
+                              "%d %s %d\n"
+                              "%s%c\n",
+           (GET_TRIG_NAME(trig)) ? (GET_TRIG_NAME(trig)) : "unknown trigger", STRING_TERMINATOR,
+           trig->attach_type,
+           *bitBuf ? bitBuf : "0", GET_TRIG_NARG(trig),
+           GET_TRIG_ARG(trig) ? GET_TRIG_ARG(trig) : "", STRING_TERMINATOR);
+
+      /* Build the text for the script */
+      strcpy(buf,""); /* strcpy OK for MAX_CMD_LENGTH > 0*/
+      for (cmd = trig->cmdlist; cmd; cmd = cmd->next) {
+        strcat(buf, cmd->cmd);
+        strcat(buf, "\n");
+      }
+
+      if (!buf[0])
+        strcpy(buf, "* Empty script");
+
+      fprintf(trig_file, "%s%c\n", buf, STRING_TERMINATOR);
+      *buf = '\0';
+    }
+  }
+
+  fprintf(trig_file, "$%c\n", STRING_TERMINATOR);
+  fclose(trig_file);
+
+#ifdef CIRCLE_MAC
+  snprintf(buf, sizeof(buf), "%s:%d.trg", TRG_PREFIX, zone);
+#else
+  snprintf(buf, sizeof(buf), "%s/%d.trg", TRG_PREFIX, zone);
+#endif
+
+  remove(buf);
+  rename(fname, buf);
+
+  create_world_index(zone, "trg");
+  return TRUE;
+}
+
 void trigedit_save(struct descriptor_data *d)
 {
   int i;
@@ -665,11 +745,6 @@ void trigedit_save(struct descriptor_data *d)
   struct descriptor_data *dsc;
   zone_rnum zon;
   int cmd_no;
-  FILE *trig_file;
-  int zone, top;
-  char buf[MAX_CMD_LENGTH];
-  char bitBuf[MAX_INPUT_LENGTH];
-  char fname[MAX_INPUT_LENGTH];
 
   if ((rnum = real_trigger(OLC_NUM(d))) != NOTHING) {
     proto = trig_index[rnum]->proto;
@@ -862,69 +937,9 @@ void trigedit_save(struct descriptor_data *d)
    * control because if we lose this after having assigned a new trigger to an 
    * item, we will get SYSERR's upton reboot that could make things hard to 
    * debug. */
-  zone = zone_table[OLC_ZNUM(d)].number;
-  top = zone_table[OLC_ZNUM(d)].top;
-
-#ifdef CIRCLE_MAC
-  snprintf(fname, sizeof(fname), "%s:%i.new", TRG_PREFIX, zone);
-#else
-  snprintf(fname, sizeof(fname), "%s/%i.new", TRG_PREFIX, zone);
-#endif
-
-  if (!(trig_file = fopen(fname, "w"))) {
-    mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE,
-           "SYSERR: OLC: Can't open trig file \"%s\"", fname);
+  if (!trigedit_write_zone(OLC_ZNUM(d), GET_INVIS_LEV(d->character)))
     return;
-  }
-
-  for (i = zone_table[OLC_ZNUM(d)].bot; i <= top; i++) {
-    if ((rnum = real_trigger(i)) != NOTHING) {
-      trig = trig_index[rnum]->proto;
-
-      if (fprintf(trig_file, "#%d\n", i) < 0) {
-        mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE,
-               "SYSERR: OLC: Can't write trig file!");
-        fclose(trig_file);
-        return;
-      }
-      sprintascii(bitBuf, GET_TRIG_TYPE(trig));
-      fprintf(trig_file,      "%s%c\n"
-                              "%d %s %d\n"
-                              "%s%c\n",
-           (GET_TRIG_NAME(trig)) ? (GET_TRIG_NAME(trig)) : "unknown trigger", STRING_TERMINATOR,
-           trig->attach_type,
-           *bitBuf ? bitBuf : "0", GET_TRIG_NARG(trig),
-           GET_TRIG_ARG(trig) ? GET_TRIG_ARG(trig) : "", STRING_TERMINATOR);
-
-      /* Build the text for the script */
-      strcpy(buf,""); /* strcpy OK for MAX_CMD_LENGTH > 0*/
-      for (cmd = trig->cmdlist; cmd; cmd = cmd->next) {
-        strcat(buf, cmd->cmd);
-        strcat(buf, "\n");
-      }
-
-      if (!buf[0])
-        strcpy(buf, "* Empty script");
-
-      fprintf(trig_file, "%s%c\n", buf, STRING_TERMINATOR);
-      *buf = '\0';
-    }
-  }
-
-  fprintf(trig_file, "$%c\n", STRING_TERMINATOR);
-  fclose(trig_file);
-
-#ifdef CIRCLE_MAC
-  snprintf(buf, sizeof(buf), "%s:%d.trg", TRG_PREFIX, zone);
-#else
-  snprintf(buf, sizeof(buf), "%s/%d.trg", TRG_PREFIX, zone);
-#endif
-
-  remove(buf);
-  rename(fname, buf);
-
   write_to_output(d, "Trigger saved to disk.\r\n");
-  create_world_index(zone, "trg");
 }
 
 void dg_olc_script_copy(struct descriptor_data *d)
