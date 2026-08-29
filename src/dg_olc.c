@@ -19,6 +19,9 @@
 #include "dg_olc.h"
 #include "dg_event.h"
 #include "genzon.h"      /* for real_zone_by_thing */
+#include "genmob.h"      /* for save_mobiles */
+#include "genobj.h"      /* for save_objects */
+#include "genwld.h"      /* for save_rooms */
 #include "constants.h"   /* for the *trig_types */
 #include "modify.h"      /* for smash_tilde */
 
@@ -214,6 +217,7 @@ static void trigedit_disp_menu(struct descriptor_data *d)
   "%s5)%s Arguments    : %s%s\r\n"
   "%s6)%s Commands:\r\n%s%s\r\n"
   "%sW%s) Copy Trigger\r\n"
+  "%sX%s) Delete Trigger\r\n"
   "%sQ)%s Quit\r\n"
   "Enter Choice :",
 
@@ -224,7 +228,7 @@ static void trigedit_disp_menu(struct descriptor_data *d)
   grn, nrm, yel, trig->narg,			/* numeric arg            */
   grn, nrm, yel, trig->arglist?trig->arglist:"",/* strict arg             */
   grn, nrm, cyn, OLC_STORAGE(d),		/* the command list       */
-  grn, nrm, grn, nrm);                          /* quit colors            */
+  grn, nrm, grn, nrm, grn, nrm);                /* copy/delete/quit       */
 
   OLC_MODE(d) = TRIGEDIT_MAIN_MENU;
 }
@@ -575,11 +579,68 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
          write_to_output(d, "Copy what trigger? ");
          OLC_MODE(d) = TRIGEDIT_COPY;
          break;
+       case 'x':
+       case 'X':
+         if (real_trigger(OLC_NUM(d)) == NOTHING) {
+           write_to_output(d, "That trigger has never been saved -- quit without saving instead.\r\n");
+           trigedit_disp_menu(d);
+           return;
+         }
+         write_to_output(d, "Are you sure you want to delete this trigger? ");
+         OLC_MODE(d) = TRIGEDIT_CONFIRM_DELETE;
+         break;
        default:
          trigedit_disp_menu(d);
          return;
      }
      return;
+
+    case TRIGEDIT_CONFIRM_DELETE:
+      switch (tolower(*arg)) {
+        case 'y': {
+          /* Resolve by VNUM, the way trigedit_save does. OLC_TRIG's rnum
+           * is not trustworthy here: another builder saving a trigger
+           * renumbers it underneath this editor, and for a trigger that
+           * has never been saved it is NOTHING to begin with. */
+          trig_rnum drnum = real_trigger(OLC_NUM(d));
+          zone_rnum dzone = real_zone_by_thing(OLC_NUM(d));
+
+          if (drnum != NOTHING && delete_trigger(drnum)) {
+            if (dzone == NOWHERE ||
+                !trigedit_write_zone(dzone, GET_INVIS_LEV(d->character)))
+              /* Not "a reboot will bring it back": by the time the write is
+               * attempted the prototypes that referenced this trigger have
+               * already been saved without it, so a reboot returns the
+               * trigger on its own. That ordering is deliberate -- the
+               * other way round strands dangling references instead -- but
+               * the builder should be told which of the two they have. */
+              write_to_output(d, "The trigger is gone from memory, but its own file could not be "
+                                 "written. A reboot brings the trigger back, though not the things "
+                                 "it was attached to -- those have already been saved without it. "
+                                 "See the syslog.\r\n");
+            else
+              write_to_output(d, "Trigger deleted.\r\n");
+            mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+                   "OLC: %s deletes trigger %d", GET_NAME(d->character),
+                   OLC_NUM(d));
+            cleanup_olc(d, CLEANUP_ALL);
+            return;
+          }
+          /* Nothing was deleted, so nothing is thrown away either --
+           * cleanup_olc here would discard the builder's unsaved work. */
+          write_to_output(d, "Could not delete that trigger.\r\n");
+          trigedit_disp_menu(d);
+          return;
+        }
+        case 'n':
+          trigedit_disp_menu(d);
+          return;
+        default:
+          write_to_output(d, "Invalid choice!\r\n");
+          write_to_output(d, "Delete this trigger? : ");
+          return;
+      }
+      break;
 
     case TRIGEDIT_CONFIRM_SAVESTRING:
       switch(tolower(*arg)) {
@@ -689,6 +750,7 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
         mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
                "SYSERR: OLC: Can't write trig file!");
         fclose(trig_file);
+        remove(fname);	/* as the close-failure path below does */
         return FALSE;
       }
       sprintascii(bitBuf, GET_TRIG_TYPE(trig));
@@ -716,7 +778,18 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
   }
 
   fprintf(trig_file, "$%c\n", STRING_TERMINATOR);
-  fclose(trig_file);
+
+  /* A full disk surfaces here rather than at any of the fprintf calls
+   * above, so checking only the open reports success for a file that
+   * never landed. The delete path tells the builder their trigger is
+   * gone for good on the strength of this return. */
+  if (fclose(trig_file)) {
+    mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
+           "SYSERR: OLC: Can't write trig file \"%s\": %s",
+           fname, strerror(errno));
+    remove(fname);
+    return FALSE;
+  }
 
 #ifdef CIRCLE_MAC
   snprintf(buf, sizeof(buf), "%s:%d.trg", TRG_PREFIX, zone);
@@ -724,8 +797,20 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
   snprintf(buf, sizeof(buf), "%s/%d.trg", TRG_PREFIX, zone);
 #endif
 
-  remove(buf);
-  rename(fname, buf);
+  /* Try the replace before removing the target. Where rename overwrites,
+   * a failure then leaves the old file exactly where it was; removing
+   * first means a failed rename has already thrown the zone's triggers
+   * away, with nothing put back. Platforms that cannot overwrite still
+   * get their remove, on the retry. */
+  if (rename(fname, buf)) {
+    remove(buf);
+    if (rename(fname, buf)) {
+      mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
+             "SYSERR: OLC: Can't rename \"%s\" to \"%s\": %s",
+             fname, buf, strerror(errno));
+      return FALSE;
+    }
+  }
 
   create_world_index(zone, "trg");
   return TRUE;
@@ -1115,6 +1200,323 @@ void trigedit_string_cleanup(struct descriptor_data *d, int terminator)
       trigedit_disp_menu(d);
       break;
   }
+}
+
+/* Remove every live copy of one trigger from a thing's script, and say how
+ * many went. The live trigger knows its rnum but not its owner, so the
+ * owners are what get walked. */
+static int trigedit_strip_live(struct script_data *sc, trig_rnum rnum)
+{
+  struct trig_data *i, *next_i, *prev = NULL;
+  int removed = 0;
+
+  if (!sc)
+    return 0;
+
+  for (i = TRIGGERS(sc); i; i = next_i) {
+    next_i = i->next;
+    if (i->nr != rnum) {
+      prev = i;
+      continue;
+    }
+    if (prev)
+      prev->next = next_i;
+    else
+      TRIGGERS(sc) = next_i;
+    extract_trigger(i);
+    removed++;
+  }
+
+  if (removed) {
+    /* Same bookkeeping remove_trigger does: an emptied or shortened list
+     * must stop advertising types it no longer has. */
+    SCRIPT_TYPES(sc) = 0;
+    for (i = TRIGGERS(sc); i; i = i->next)
+      SCRIPT_TYPES(sc) |= GET_TRIG_TYPE(i);
+  }
+
+  return removed;
+}
+
+/* Drop one vnum from a prototype's default-trigger list. proto_script holds
+ * VNUMS, not rnums, which is why deleting a trigger needs no renumbering
+ * pass the way delete_object does. */
+static int trigedit_strip_proto(struct trig_proto_list **list, trig_vnum vnum)
+{
+  struct trig_proto_list *pl, *next_pl, *prev = NULL;
+  int removed = 0;
+
+  for (pl = *list; pl; pl = next_pl) {
+    next_pl = pl->next;
+    if (pl->vnum != vnum) {
+      prev = pl;
+      continue;
+    }
+    if (prev)
+      prev->next = next_pl;
+    else
+      *list = next_pl;
+    free(pl);
+    removed++;
+  }
+
+  return removed;
+}
+
+/* Which of a zone's files a trigger delete makes stale. */
+#define TRIGDEL_MOB	(1 << 0)
+#define TRIGDEL_OBJ	(1 << 1)
+#define TRIGDEL_WLD	(1 << 2)
+#define TRIGDEL_ZON	(1 << 3)
+
+/* Delete a trigger prototype outright: every live copy, every reference from
+ * a mobile/object/room prototype, and the index entry itself.
+ *
+ * Note the guard. top_of_trigt is a COUNT here (trig_index[top_of_trigt++]
+ * on load), unlike top_of_mobt/top_of_objt/top_of_world, which are last
+ * indices -- so this bounds with >= where delete_object bounds with >. */
+int delete_trigger(trig_rnum rnum)
+{
+  trig_rnum i;
+  trig_vnum vnum;
+  zone_rnum zrnum;
+  struct char_data *ch;
+  struct obj_data *obj;
+  room_rnum rm;
+  int live = 0, refs = 0, cmd_no, n;
+  char *dirty;
+  zone_rnum z, zon;
+  struct descriptor_data *dsc;
+
+  if (rnum == NOTHING || rnum >= top_of_trigt)
+    return FALSE;
+
+  /* Which zone files this delete makes stale, by rnum. Marked as the
+   * prototypes are stripped and written out at the end, once each. */
+  CREATE(dirty, char, top_of_zone_table + 1);
+
+  vnum = trig_index[rnum]->vnum;
+  zrnum = real_zone_by_thing(vnum);
+
+  log("GenOLC: delete_trigger: Deleting trigger #%d (%s).", vnum,
+      trig_index[rnum]->proto->name ? trig_index[rnum]->proto->name : "unnamed");
+
+  /* 1. Detach and free every attached copy, wherever it is running. */
+  /* Every remove_trigger caller in the tree finishes by extracting a script
+   * that has gone empty. Copying the removal without that leaves SCRIPT
+   * non-NULL with TRIGGERS NULL -- a state nothing else produces, and one
+   * act.informative.c dereferences unguarded on the object paths. */
+  for (ch = character_list; ch; ch = ch->next)
+    if ((n = trigedit_strip_live(SCRIPT(ch), rnum))) {
+      live += n;
+      if (!TRIGGERS(SCRIPT(ch)))
+        extract_script(ch, MOB_TRIGGER);
+    }
+  for (obj = object_list; obj; obj = obj->next)
+    if ((n = trigedit_strip_live(SCRIPT(obj), rnum))) {
+      live += n;
+      if (!TRIGGERS(SCRIPT(obj)))
+        extract_script(obj, OBJ_TRIGGER);
+    }
+  for (rm = 0; rm <= top_of_world; rm++)
+    if ((n = trigedit_strip_live(SCRIPT(&world[rm]), rnum))) {
+      live += n;
+      if (!TRIGGERS(SCRIPT(&world[rm])))
+        extract_script(&world[rm], WLD_TRIGGER);
+    }
+
+  /* 2. Stop the prototypes handing it out again on the next load, and mark
+   *    the zones that changed so the reference goes from the .mob/.obj/.wld
+   *    files too. Stripping only the in-memory copy is not enough: on the
+   *    next boot the file still says `T <vnum>` and dg_read_trigger logs
+   *    "Trigger vnum #N asked for but non-existant!" for every one, on
+   *    every reboot, forever. */
+  for (i = 0; i <= top_of_mobt; i++)
+    if (trigedit_strip_proto(&mob_proto[i].proto_script, vnum)) {
+      refs++;
+      z = real_zone_by_thing(mob_index[i].vnum);
+      if (z != NOWHERE) {
+        add_to_save_list(zone_table[z].number, SL_MOB);
+        dirty[z] |= TRIGDEL_MOB;
+      }
+    }
+  for (i = 0; i <= top_of_objt; i++)
+    if (trigedit_strip_proto(&obj_proto[i].proto_script, vnum)) {
+      refs++;
+      z = real_zone_by_thing(obj_index[i].vnum);
+      if (z != NOWHERE) {
+        add_to_save_list(zone_table[z].number, SL_OBJ);
+        dirty[z] |= TRIGDEL_OBJ;
+      }
+    }
+  for (rm = 0; rm <= top_of_world; rm++)
+    if (trigedit_strip_proto(&world[rm].proto_script, vnum)) {
+      refs++;
+      add_to_save_list(zone_table[world[rm].zone].number, SL_WLD);
+      dirty[world[rm].zone] |= TRIGDEL_WLD;
+    }
+
+  for (dsc = descriptor_list; dsc; dsc = dsc->next)
+    if (dsc->olc && OLC_SCRIPT(dsc))
+      refs += trigedit_strip_proto(&OLC_SCRIPT(dsc), vnum);
+
+  if (live || refs)
+    log("GenOLC: delete_trigger: detached %d live copy/copies and %d "
+        "prototype reference(s).", live, refs);
+
+  /* 3. The prototype and its index slot. */
+  free_trigger(trig_index[rnum]->proto);
+  free(trig_index[rnum]);
+
+  for (i = rnum; i < top_of_trigt - 1; i++) {
+    trig_index[i] = trig_index[i + 1];
+    trig_index[i]->proto->nr = i;
+  }
+  top_of_trigt--;
+
+  if (top_of_trigt > 0)
+    RECREATE(trig_index, struct index_data *, top_of_trigt);
+  else {
+    free(trig_index);
+    trig_index = NULL;
+  }
+
+  /* 4. Any live trigger above the hole is now pointing one slot too high. */
+  {
+    struct trig_data *t;
+    for (t = trigger_list; t; t = t->next_in_world)
+      if (t->nr != NOTHING && t->nr > rnum)
+        t->nr--;
+  }
+
+  /* Anyone else sitting in trigedit above the hole is now one slot high.
+   * trigedit_save does the mirror of this when it inserts. */
+  {
+    struct descriptor_data *dsc;
+    for (dsc = descriptor_list; dsc; dsc = dsc->next)
+      if (STATE(dsc) == CON_TRIGEDIT && OLC_TRIG(dsc))
+        if (GET_TRIG_RNUM(OLC_TRIG(dsc)) != NOTHING &&
+            GET_TRIG_RNUM(OLC_TRIG(dsc)) > rnum)
+          GET_TRIG_RNUM(OLC_TRIG(dsc))--;
+  }
+
+  /* The caller persists the zone: only it knows the builder's invis level,
+   * and passing 0 here would announce an invisible builder's error to every
+   * god. Triggers are not in the save-list system -- there is no SL_TRIG,
+   * because trigedit writes straight to disk so a reboot cannot strand an
+   * item pointing at a trigger that was never saved. */
+  /* And the zone resets. A 'T' naming the trigger that is going has nothing
+   * left to attach, so it goes too; the rest shift down. delete_object does
+   * the same for its own commands -- except that after delete_zone_command
+   * the next command slides into this slot, so cmd_no must not advance or a
+   * second consecutive 'T' is skipped. */
+  for (zon = 0; zon <= top_of_zone_table; zon++)
+    for (cmd_no = 0; ZCMD(zon, cmd_no).command != 'S'; cmd_no++)
+      if (ZCMD(zon, cmd_no).command == 'T' &&
+          ZCMD(zon, cmd_no).arg2 != NOTHING) {
+        if (ZCMD(zon, cmd_no).arg2 == rnum) {
+          delete_zone_command(&zone_table[zon], cmd_no);
+          add_to_save_list(zone_table[zon].number, SL_ZON);
+          dirty[zon] |= TRIGDEL_ZON;
+          cmd_no--;
+        } else if (ZCMD(zon, cmd_no).arg2 > rnum) {
+          ZCMD(zon, cmd_no).arg2--;
+          add_to_save_list(zone_table[zon].number, SL_ZON);
+          dirty[zon] |= TRIGDEL_ZON;
+        }
+      }
+
+  /* And the zedit copies of those same commands. zedit_setup takes whole
+   * reset_com structs out of zone_table, so a 'T' command's rnum exists
+   * twice over -- once in the live table and once inside every open zedit.
+   *
+   * The snapshot is disabled in place rather than removed, which is what
+   * the live table above does. It has to be. zedit holds a cursor into
+   * this array across prompts -- OLC_CMD(d) is cmd[OLC_VAL(d)] -- and
+   * delete_zone_command reallocates the block one element shorter, so
+   * shifting entries out from under that cursor writes past the end of
+   * the new allocation and can take the 'S' terminator with it.
+   *
+   * '*' is the mark renum_zone_table already puts on a reset command
+   * that cannot resolve. reset_zone ignores it, save_zone drops it on
+   * the way out, and zedit's menu stops reading trig_index for it -- so
+   * the zone still reaches disk without the reference, and every index
+   * into the array stays where the editor left it. */
+  for (dsc = descriptor_list; dsc; dsc = dsc->next)
+    if (STATE(dsc) == CON_ZEDIT && OLC_ZONE(dsc) && OLC_ZONE(dsc)->cmd) {
+      int dead = 0, on_it = FALSE;
+      /* OLC_VAL only names a command while one is being filled in; in the
+       * menu it is a leftover. */
+      int editing = (OLC_MODE(dsc) == ZEDIT_COMMAND_TYPE ||
+                     OLC_MODE(dsc) == ZEDIT_IF_FLAG ||
+                     OLC_MODE(dsc) == ZEDIT_ARG1 ||
+                     OLC_MODE(dsc) == ZEDIT_ARG2 ||
+                     OLC_MODE(dsc) == ZEDIT_ARG3 ||
+                     OLC_MODE(dsc) == ZEDIT_SARG1 ||
+                     OLC_MODE(dsc) == ZEDIT_SARG2);
+
+      for (cmd_no = 0; OLC_ZONE(dsc)->cmd[cmd_no].command != 'S'; cmd_no++)
+        if (OLC_ZONE(dsc)->cmd[cmd_no].command == 'T' &&
+            OLC_ZONE(dsc)->cmd[cmd_no].arg2 != NOTHING) {
+          if (OLC_ZONE(dsc)->cmd[cmd_no].arg2 == rnum) {
+            OLC_ZONE(dsc)->cmd[cmd_no].command = '*';
+            dead++;
+            if (editing && cmd_no == OLC_VAL(dsc))
+              on_it = TRUE;
+          } else if (OLC_ZONE(dsc)->cmd[cmd_no].arg2 > rnum)
+            OLC_ZONE(dsc)->cmd[cmd_no].arg2--;
+        }
+
+      /* Say so rather than letting a command quietly stop working under
+       * someone who is looking straight at it. */
+      if (dead)
+        write_to_output(dsc, "\r\nTrigger %d has been deleted; %d reset "
+                             "command%s in the zone you are editing no longer "
+                             "does anything.\r\n", vnum, dead,
+                        dead == 1 ? "" : "s");
+
+      /* And if one of them is the command they are part-way through
+       * filling in, take them off it. Every argument prompt switches on
+       * the command byte, none of them has a case for '*', and their
+       * default is cleanup_olc -- so the next answer they typed would
+       * throw away every unsaved change to the whole zone and log a
+       * SYSERR blaming zedit for it. The menu does not read OLC_VAL, and
+       * its parser redraws on anything it does not recognise. */
+      if (on_it) {
+        OLC_MODE(dsc) = ZEDIT_MAIN_MENU;
+        write_to_output(dsc, "That was the command you were editing, so you "
+                             "are back at the zone menu -- press return for "
+                             "it.\r\n");
+      }
+    }
+
+  /* Write the stale files now instead of only queueing them. The trigger
+   * has already left the .trg by the time this returns, so a server that
+   * dies before the next saveall comes back up with prototypes still
+   * naming a trigger that no longer exists -- and dg_read_trigger logs
+   * "asked for but non-existant" for every one of them, on every boot
+   * after that. Queueing alone inverts the order: the thing depended on
+   * goes first and its dependents follow only if someone saves. Review
+   * reproduced exactly that with a SIGKILL. delete_object writes its own
+   * zone the same way, and each save_ call clears its own save-list
+   * entry, so nobody else's pending edits are flushed with them. */
+  for (z = 0; z <= top_of_zone_table; z++) {
+    if (dirty[z] & TRIGDEL_MOB)
+      save_mobiles(z);
+    if (dirty[z] & TRIGDEL_OBJ)
+      save_objects(z);
+    if (dirty[z] & TRIGDEL_WLD)
+      save_rooms(z);
+    if (dirty[z] & TRIGDEL_ZON)
+      save_zone(z);
+  }
+  free(dirty);
+
+  if (zrnum == NOWHERE)
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: GenOLC: delete_trigger: Cannot determine trigger zone.");
+
+  return TRUE;
 }
 
 int format_script(struct descriptor_data *d)
