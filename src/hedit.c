@@ -67,6 +67,13 @@ ACMD(do_oasis_hedit)
   if (!str_cmp("save", arg)) {
     mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves help files.",
            GET_NAME(ch));
+    /* The delete path pairs its add_to_save_list with the removal inside
+     * hedit_save_to_disk. This one never adds, so the removal finds nothing
+     * and logs "remove_from_save_list: Saved item not found." on every
+     * `hedit save`. Pairing it here silences that without changing what
+     * reaches disk -- it is exactly the noise this commit complains about
+     * elsewhere, and fixing it only for the delete was inconsistent. */
+    add_to_save_list(HEDIT_PERMISSION, SL_HLP);
     hedit_save_to_disk(d);
     send_to_char(ch, "Saving help files.\r\n");
     return;
@@ -83,6 +90,9 @@ ACMD(do_oasis_hedit)
   OLC_STORAGE(d) = strdup(arg);
   
   OLC_ZNUM(d) = search_help(OLC_STORAGE(d), LVL_IMPL);
+  /* Remember which table this index belongs to; the delete refuses if it
+   * is rebuilt underneath the editor. */
+  OLC_HELP_VERSION(d) = help_table_version;
 
   /* Bound the row before reading it. search_help() answers NOWHERE whenever
    * the keyword has no entry, which is every `hedit <something new>` -- the
@@ -163,6 +173,7 @@ static void hedit_save_internally(struct descriptor_data *d)
     new_help_table[top_of_helpt++] = *OLC_HELP(d);
     free(help_table);
     help_table = new_help_table;
+    help_table_version++;
   } else
     help_table[OLC_ZNUM(d)] = *OLC_HELP(d);
 
@@ -202,6 +213,103 @@ static void hedit_save_to_disk(struct descriptor_data *d)
   index_boot(DB_BOOT_HLP);
 }
 
+/* The row this editor opened, provided the table it was opened against is
+ * still the one in memory.
+ *
+ * OLC_ZNUM is a help_table index captured when the editor opened, and the
+ * table is rebuilt and re-sorted by `reload xhelp` and `reload all` -- which
+ * hedit's one-editor lock does not cover, because they are not hedit. Acting
+ * on the stale index removes whatever now occupies that slot: a different
+ * entry entirely, with nothing in the log to say which one. So this is a
+ * version check and a bounds check and nothing more; the reasoning for why
+ * that is enough, and why re-deriving the row was not, is inside.
+ *
+ * Returns -1 if the table has been rebuilt since the editor opened or the
+ * index is out of range, which is the honest answer either way. */
+static int hedit_find_row(struct descriptor_data *d)
+{
+  /* OLC_ZNUM is the row hedit_setup_existing read to fill the editor, and
+   * nothing moves it afterwards -- the CONFIRM_EDIT 'n' walk happens before
+   * setup. So once the table is known not to have been rebuilt, that index
+   * still names the entry on the builder's screen, and there is nothing
+   * left for a re-resolution to add.
+   *
+   * This used to re-derive the row from the keyword and compare. That is
+   * worse than redundant. Both halves came from the CURRENT table, so it
+   * could not tell "unchanged" from "something else slid into this slot":
+   * a reload that removed the open entry let another entry's canonical row
+   * land on the captured index, and the delete took seven rows the builder
+   * never saw. It caught the reload that cost nothing and missed the one
+   * that cost an entry -- while also refusing the legitimate case of a
+   * builder who walked past a twin with 'n' to reach the one they wanted.
+   *
+   * The version counter asks the question that was actually being asked.
+   * Everything now rests on bumping it wherever help_table is rebuilt or
+   * replaced; see its declaration in db.c. */
+  if (OLC_HELP_VERSION(d) != help_table_version)
+    return -1;
+
+  if (OLC_ZNUM(d) == NOWHERE || OLC_ZNUM(d) >= top_of_helpt)
+    return -1;
+
+  return OLC_ZNUM(d);
+}
+
+/* Remove a help entry, and every row that shares its text.
+ *
+ * An entry with N keywords is stored as N rows, all sharing one `entry`
+ * pointer -- the loader strdups the text once and copies the struct per
+ * keyword. help_table is then sorted by keyword (db.c, hsort), so those rows
+ * are NOT adjacent and cannot be found by walking the `duplicate` counter.
+ * They are found by the shared pointer instead; deleting one row alone would
+ * leave the others pointing at freed text. */
+static int hedit_delete_entry(int rnum)
+{
+  char *text;
+  int i, w = 0, removed = 0, keep;
+
+  if (rnum < 0 || rnum >= top_of_helpt)
+    return FALSE;
+
+  text = help_table[rnum].entry;
+
+  /* Never leave the table empty. hedit_save_to_disk writes help.hlp and
+   * index_boot reads it straight back; on a file with no entries at all
+   * that is 'boot error - 0 records counted' and exit(1) -- which takes
+   * the running server down mid-command AND fails every boot after it,
+   * until somebody edits the file by hand. */
+  for (i = 0, keep = 0; i < top_of_helpt; i++)
+    if (!(text ? (help_table[i].entry == text) : (i == rnum)))
+      keep++;
+  if (keep == 0)
+    return FALSE;
+
+  for (i = 0; i < top_of_helpt; i++) {
+    /* A NULL text would match every empty row, so that case takes only the
+     * row it was actually asked for. */
+    if (text ? (help_table[i].entry == text) : (i == rnum)) {
+      if (help_table[i].keywords)
+        free(help_table[i].keywords);
+      removed++;
+      continue;
+    }
+    if (w != i)
+      help_table[w] = help_table[i];
+    w++;
+  }
+
+  if (text)
+    free(text);		/* shared by the whole set; freed once, after the sweep */
+
+  top_of_helpt = w;
+  /* The table changed shape, so anyone holding an index into it is
+   * holding a stale one. Nothing outlives this command today, but the
+   * counter's whole value is that it is bumped without needing to know
+   * that. */
+  help_table_version++;
+  return removed > 0;
+}
+
 /* The main menu. */
 static void hedit_disp_menu(struct descriptor_data *d)
 {
@@ -211,11 +319,13 @@ static void hedit_disp_menu(struct descriptor_data *d)
       "%s-- Help file editor\r\n"
       "%s1%s) Entry       :\r\n%s%s"
       "%s2%s) Min Level   : %s%d\r\n"
+      "%sX%s) Delete this help entry\r\n"
       "%sQ%s) Quit\r\n"
       "Enter choice : ",
        nrm,
        grn, nrm, yel, OLC_HELP(d)->entry,
        grn, nrm, yel, OLC_HELP(d)->min_level,
+       grn, nrm,
        grn, nrm
   );
   OLC_MODE(d) = HEDIT_MAIN_MENU;
@@ -302,6 +412,51 @@ void hedit_parse(struct descriptor_data *d, char *arg)
     }
     return;
 
+  case HEDIT_CONFIRM_DELETE: {
+    int row;
+    switch (*arg) {
+    case 'y':
+    case 'Y':
+      row = hedit_find_row(d);
+      if (row >= 0 && hedit_delete_entry(row)) {
+        /* hedit_save_to_disk ends by removing this from the save list, so
+         * it has to be on it -- hedit_save_internally adds it immediately
+         * before saving for exactly this reason. Without the add, every
+         * deletion logs "remove_from_save_list: Saved item not found." */
+        add_to_save_list(HEDIT_PERMISSION, SL_HLP);
+        mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+               "OLC: %s deletes help entry '%s'", GET_NAME(d->character),
+               OLC_HELP(d)->keywords ? OLC_HELP(d)->keywords : "unnamed");
+        write_to_output(d, "Help entry deleted.\r\n");
+        /* Rewrites help.hlp from the table and reboots it, which is how
+         * every other hedit change reaches disk. */
+        hedit_save_to_disk(d);
+        cleanup_olc(d, CLEANUP_ALL);
+        return;
+      }
+      /* Nothing was removed, so nothing is thrown away either --
+       * cleanup_olc here would discard the builder's unsaved work on top
+       * of refusing the delete. */
+      if (hedit_find_row(d) >= 0)
+        /* Found, so the refusal came from the last-entry guard. Saying it
+         * was reloaded would be false twice over, with the entry still on
+         * screen underneath. */
+        write_to_output(d, "That is the last help entry left. The MUD cannot boot from a help file with none, so it will not be deleted.\r\n");
+      else
+        write_to_output(d, "That entry is no longer in the help table. It may have been reloaded while you were editing it. Nothing was deleted.\r\n");
+      hedit_disp_menu(d);
+      return;
+    case 'n':
+    case 'N':
+      hedit_disp_menu(d);
+      return;
+    default:
+      write_to_output(d, "Invalid choice!\r\n");
+      write_to_output(d, "Delete this help entry, and every keyword that reaches it? : ");
+      return;
+    }
+  }
+
   case HEDIT_MAIN_MENU:
     switch (*arg) {
     case 'q':
@@ -315,6 +470,16 @@ void hedit_parse(struct descriptor_data *d, char *arg)
         cleanup_olc(d, CLEANUP_ALL);
       }
       break;
+    case 'x':
+    case 'X':
+      if (hedit_find_row(d) < 0) {
+        write_to_output(d, "That entry is not in the help table -- either it was never saved, or the table was reloaded while you were editing. Quit without saving.\r\n");
+        hedit_disp_menu(d);
+        return;
+      }
+      write_to_output(d, "Delete this help entry, and every keyword that reaches it? : ");
+      OLC_MODE(d) = HEDIT_CONFIRM_DELETE;
+      return;
     case '1':
       OLC_MODE(d) = HEDIT_ENTRY;
       clear_screen(d);

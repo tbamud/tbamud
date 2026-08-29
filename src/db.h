@@ -341,6 +341,7 @@ extern char *ideas;
 
 /* The ingame helpfile */
 extern int top_of_helpt;
+extern long help_table_version;
 extern struct help_index_element *help_table;
 
 /* Mud configurable variables */
