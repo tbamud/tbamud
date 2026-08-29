@@ -108,6 +108,12 @@ char *typos = NULL;             /* typos file                    */
 char *ideas = NULL;             /* ideas file                    */
 
 int top_of_helpt = 0;
+/* Bumped every time help_table is rebuilt or replaced. hedit's delete
+ * stashes it when the editor opens and refuses if it has moved: an index
+ * alone cannot tell "the table is unchanged" from "something else has
+ * slid into that slot", and a reload that removes the entry being edited
+ * produces exactly the second. */
+long help_table_version = 0;
 struct help_index_element *help_table = NULL;
 
 struct social_messg *soc_mess_list = NULL;      /* list of socials */
@@ -2280,6 +2286,7 @@ void free_help_table(void)
     help_table = NULL;
   }
   top_of_helpt = 0;
+  help_table_version++;
 }
 
 void load_help(FILE * fl, char *name)
