@@ -875,9 +875,8 @@ const char *trig_types[] = {
   "Cast",
   "Leave",
   "Door",
-  "UNUSED",
+  "Damage",
   "Time",
-	"Damage",
   "\n"
 };
 

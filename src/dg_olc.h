@@ -16,7 +16,7 @@
 
 #include "dg_scripts.h"
 
-#define NUM_TRIG_TYPE_FLAGS		21
+#define NUM_TRIG_TYPE_FLAGS		20
 
 /* Submodes of TRIGEDIT connectedness. */
 #define TRIGEDIT_MAIN_MENU              0
