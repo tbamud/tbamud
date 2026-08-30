@@ -420,6 +420,23 @@ static const char *command_color_replacement[COMMAND_TERMS][2] =
 };
 
 
+/* str_replace() returns a NEW allocation and leaves its input alone, so the
+ * caller owns both. Every `line = str_replace(line, ...)` in the highlighter
+ * below therefore dropped the previous line on the floor.
+ *
+ * On failure str_replace answers NULL, having freed only its own intermediate
+ * copy -- the input is still ours and still valid -- so that line is left
+ * unhighlighted rather than lost. */
+static void replace_in_line(char **line, const char *from, const char *to)
+{
+  char *old = *line, *replaced = str_replace(old, from, to);
+
+  if (replaced) {
+    *line = replaced;
+    free(old);
+  }
+}
+
 static void script_syntax_highlighting(struct descriptor_data *d, char *string)
 {
     ACMD(do_action);
@@ -442,7 +459,7 @@ static void script_syntax_highlighting(struct descriptor_data *d, char *string)
             }
             // is a comment, highlight
             if (strncmp(&line[i], "*", 1) == 0) {
-                line = str_replace(line, "*", "\tg*");
+                replace_in_line(&line, "*", "\tg*");
                 comment = TRUE;
                 break;
             }
@@ -457,12 +474,12 @@ static void script_syntax_highlighting(struct descriptor_data *d, char *string)
         if (!comment) {
             // Syntax replacement
             for (i=0;i < SYNTAX_TERMS;i++) {
-                line = str_replace(line, syntax_color_replacement[i][0], syntax_color_replacement[i][1]);
+                replace_in_line(&line, syntax_color_replacement[i][0], syntax_color_replacement[i][1]);
             }
 
             // Commands replacement
             for (i=0;i < COMMAND_TERMS;i++) {
-                line = str_replace(line, command_color_replacement[i][0], command_color_replacement[i][1]);
+                replace_in_line(&line, command_color_replacement[i][0], command_color_replacement[i][1]);
             }
         
             // Socials replacement (experimental)
@@ -471,15 +488,17 @@ static void script_syntax_highlighting(struct descriptor_data *d, char *string)
                 if (complete_cmd_info[cmd].command_pointer == do_action) {
                     char replace_social[MAX_INPUT_LENGTH];
                     snprintf(replace_social, MAX_INPUT_LENGTH, "\tc%s\tn", complete_cmd_info[cmd].command);
-                    line = str_replace(line, complete_cmd_info[cmd].command, replace_social);
+                    replace_in_line(&line, complete_cmd_info[cmd].command, replace_social);
                 }
             }
         }
 
         strncat(buffer, line, sizeof(buffer) - strlen(buffer) - 1);
         strncat(buffer, "\tn\r\n", sizeof(buffer) - strlen(buffer) - 1);
+        free(line);
     }
     
+    free(newlist);
     page_string(d, buffer, TRUE);
 }
 /****************************************************************************************/
