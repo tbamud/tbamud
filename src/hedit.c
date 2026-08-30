@@ -163,7 +163,20 @@ static void hedit_save_internally(struct descriptor_data *d)
 {
   struct help_index_element *new_help_table = NULL;
 
-  if (OLC_ZNUM(d) == NOWHERE) {
+  /* Out of range counts as new, not as a row to overwrite. NOWHERE is not
+   * the only value that gets here: answering 'n' at "Do you wish to edit
+   * the '<keyword>' help file?" steps OLC_ZNUM to the next row so a
+   * builder can page through duplicate-keyword twins, which works because
+   * duplicates sort adjacently. On the first non-match it sets
+   * top_of_helpt + 1, which the walk's own increment then takes to
+   * top_of_helpt + 2 before routing to the add prompt. Saving there wrote two elements past the
+   * end of help_table -- a 32-byte heap write, silent on a normal build,
+   * six keystrokes after an ordinary `hedit <existing keyword>`.
+   *
+   * The bound closes a second route as well: the walk can leave the index
+   * at exactly top_of_helpt, which is equally out of range and equally
+   * written through here. */
+  if (OLC_ZNUM(d) == NOWHERE || OLC_ZNUM(d) >= top_of_helpt) {
     int i;
     CREATE(new_help_table, struct help_index_element, top_of_helpt + 2);
 
@@ -378,7 +391,15 @@ void hedit_parse(struct descriptor_data *d, char *arg)
         else
           OLC_ZNUM(d) = top_of_helpt + 1;
 
-      if (OLC_ZNUM(d) > top_of_helpt) {
+      /* >=, not >. The loop can also leave OLC_ZNUM at exactly top_of_helpt,
+       * by running to its own bound rather than through the else -- which is
+       * what happens when the last row in the table is a primary keyword and
+       * the builder declines it. `>` is false there, so this took the edit
+       * branch and read help_table[top_of_helpt]: one element past the end,
+       * and a segfault on an ordinary build. The break path always leaves a
+       * value below the bound, so this only changes that case, and the add
+       * prompt below prints OLC_STORAGE rather than the row. */
+      if (OLC_ZNUM(d) >= top_of_helpt) {
         write_to_output(d, "Do you wish to add the '%s' help file? ",
             OLC_STORAGE(d));
         OLC_MODE(d) = HEDIT_CONFIRM_ADD;
