@@ -793,20 +793,20 @@ static void do_stat_trigger(struct char_data *ch, trig_data *trig)
     while (cmd_list) {
       if (cmd_list->cmd) {
         char *highlighted = command_syntax_highlighting(cmd_list->cmd, trig->attach_type);
+        const char *to_print = highlighted ? highlighted : cmd_list->cmd;
+        const char *suffix = highlighted ? "" : "\r\n";
+        int written = snprintf(sb + len, sizeof(sb) - (size_t)len,
+                               "%s%s", to_print, suffix);
 
         if (highlighted) {
-          /* snprintf returns the length the line would have taken; without
-           * the clamp a truncated line would push len past sb and the next
-           * sizeof(sb)-len would underflow. Highlighting can inflate a line
-           * by ~40%, so that is reachable. */
-          int written = snprintf(sb + len, sizeof(sb)-len, "%s", highlighted);
-
           free(highlighted);
+        }
 
-          if (written < 0 || (size_t)written >= sizeof(sb) - len)
-            len = sizeof(sb) - 1;
-          else
-            len += written;
+        if (written < 0 || (size_t)written >= sizeof(sb) - (size_t)len) {
+          len = (int)sizeof(sb) - 1;
+          sb[len] = '\0';
+        } else {
+          len += written;
         }
       }
 

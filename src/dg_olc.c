@@ -190,20 +190,22 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
  */
 static int count_trigger_lines(const char *string)
 {
+    int count = 0;
+    bool in_line = false;
+
     if (!string || !*string) {
         return 0;
     }
 
-    char *copy = strdup(string);
-    char *line = strtok(copy, "\r\n");
-    int count = 0;
-
-    while (line != NULL) {
-        count++;
-        line = strtok(NULL, "\r\n");
+    for (const char *p = string; *p; p++) {
+        if (*p == '\r' || *p == '\n') {
+            in_line = false;
+        } else if (!in_line) {
+            in_line = true;
+            count++;
+        }
     }
 
-    free(copy);
     return count;
 }
 
