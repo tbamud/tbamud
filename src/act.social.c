@@ -163,16 +163,18 @@ void create_command_list(void)
    * leave a caught thief being handed his slippers by the baker instead of
    * being slapped, until the next reboot; adding one moved it the other way.
    * These are cheap and only run when the table is rebuilt, which is boot
-   * and aedit.
-   *
-   * cmd_sort_info is the one index cache NOT retaken here: sort_commands()
-   * rebuilds it, and both callers of this function happen to call that
-   * straight afterwards. If you add a third caller, call sort_commands()
-   * too or do_commands() and do_wizhelp() will walk off the end of it. */
+   * and aedit. */
   assign_shop_command_indices();
   assign_mobact_command_indices();
   assign_spec_command_indices();
   assign_quest_command_indices();
+
+  /* cmd_sort_info indexes this table and is sized from it, so it belongs
+   * here rather than with each caller in turn. A caller that rebuilds the
+   * table and forgets to re-sort leaves do_commands() and do_wizhelp()
+   * reading an order that is stale and -- once a social has been added --
+   * shorter than the table it indexes. */
+  sort_commands();
 }
 
 void free_command_list(void)

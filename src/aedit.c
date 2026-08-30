@@ -192,9 +192,7 @@ static void aedit_save_internally(struct descriptor_data *d) {
       soc_mess_list[OLC_ZNUM(d)] = *OLC_ACTION(d);
    }
 
-   create_command_list();
-   /* aedit patch -- M. Scott */
-   sort_commands();
+   create_command_list(); /* aedit patch -- M. Scott */
 
    add_to_save_list(AEDIT_PERMISSION, SL_ACT);
    aedit_save_to_disk(d); /* autosave by Rumble */
