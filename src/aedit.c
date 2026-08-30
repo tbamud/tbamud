@@ -198,6 +198,48 @@ static void aedit_save_internally(struct descriptor_data *d) {
    aedit_save_to_disk(d); /* autosave by Rumble */
 }
 
+/* Remove a social from soc_mess_list.
+ *
+ * soc_mess_list's own act_nr needs no renumbering: it indexes the MERGED
+ * command table, and create_command_list() rebuilds that from scratch and
+ * reassigns every one. That is NOT true of the merged table's outside
+ * users, and an earlier version of this comment said the array was the only
+ * thing to get right. Four statics cache a find_command() result and are
+ * never reassigned -- cmd_slap and cmd_puke in shop.c, snarl_cmd in
+ * mobact.c, spit_social in spec_procs.c -- and between them they reach
+ * do_action() at five call sites, where they then resolve the wrong social
+ * until the next reboot. Delete a social that sorts BEFORE `slap` and a
+ * caught thief gets whatever now sits at slap's old index. Adding one moves
+ * it the other way, so this is upstream's bug and not the delete's, but the
+ * delete is a second way in. It is fixed at those four statics rather than
+ * here, in #284, which retakes every one of them from create_command_list()
+ * -- the same place the table they index is built. That belongs there and
+ * not in this editor: it changes what a shopkeeper does to a caught thief,
+ * not anything about deleting a social.
+ *
+ * Note top_of_socialt is a LAST INDEX, not a count -- unlike top_of_helpt
+ * next door in hedit -- so the bound is `> top_of_socialt` and the shift
+ * stops one short of it. */
+static int aedit_delete_social(int rnum)
+{
+  int i;
+
+  if (rnum < 0 || rnum > top_of_socialt)
+    return FALSE;
+
+  log("GenOLC: aedit_delete_social: Deleting social '%s'.",
+      soc_mess_list[rnum].command ? soc_mess_list[rnum].command : "unnamed");
+
+  free_action(soc_mess_list + rnum);
+
+  for (i = rnum; i < top_of_socialt; i++)
+    soc_mess_list[i] = soc_mess_list[i + 1];
+
+  top_of_socialt--;
+
+  return TRUE;
+}
+
 static void aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
@@ -274,6 +316,7 @@ static void aedit_disp_menu(struct descriptor_data * d) {
            "%sk%s) Victim[BODY PRT]: %s%s\r\n"
            "%sl%s) Char       [OBJ]: %s%s\r\n"
            "%sm%s) Others     [OBJ]: %s%s\r\n"
+           "%sX%s) Delete this social\r\n"
            "%sq%s) Quit\r\n"
            "Enter Choice:",
            nrm, grn, nrm,
@@ -314,6 +357,7 @@ static void aedit_disp_menu(struct descriptor_data * d) {
            action->char_obj_found ? action->char_obj_found : "<Null>",
            grn, nrm, cyn,
            action->others_obj_found ? action->others_obj_found : "<Null>",
+           grn, nrm,
            grn, nrm);
 
    OLC_MODE(d) = AEDIT_MAIN_MENU;
@@ -398,8 +442,69 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
       }
       return;
 
+    case AEDIT_CONFIRM_DELETE:
+      switch (*arg) {
+       case 'y': case 'Y': {
+         /* Captured before the delete frees the row it names. */
+         char sname[MAX_INPUT_LENGTH];
+
+         snprintf(sname, sizeof(sname), "%s",
+                  (OLC_ZNUM(d) >= 0 && OLC_ZNUM(d) <= top_of_socialt &&
+                   soc_mess_list[OLC_ZNUM(d)].command)
+                    ? soc_mess_list[OLC_ZNUM(d)].command : "?");
+
+         if (aedit_delete_social(OLC_ZNUM(d))) {
+           /* create_command_list rebuilds the merged table and reassigns
+            * every act_nr; sort_commands then reorders the lookup. Both are
+            * what aedit_save_internally does after any other change. */
+           create_command_list();
+           sort_commands();
+           add_to_save_list(AEDIT_PERMISSION, SL_ACT);
+           aedit_save_to_disk(d);
+           mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+                  "OLC: %s deletes social %s", GET_NAME(d->character), sname);
+           write_to_output(d, "Social deleted.\r\n");
+           cleanup_olc(d, CLEANUP_ALL);
+           return;
+         }
+         write_to_output(d, "Could not delete that social.\r\n");
+         aedit_disp_menu(d);
+         return;
+       }
+       case 'n': case 'N':
+         aedit_disp_menu(d);
+         return;
+       default:
+         write_to_output(d, "Invalid choice!\r\n");
+         /* The TABLE's name, not the working copy's. Menu key n rewrites
+          * the copy and leaves soc_mess_list alone, so a rename followed
+          * by a delete offered to remove a social that does not exist
+          * while removing the one that does. */
+         write_to_output(d, "Delete '%s'? : ",
+                         (OLC_ZNUM(d) >= 0 && OLC_ZNUM(d) <= top_of_socialt &&
+                          soc_mess_list[OLC_ZNUM(d)].command)
+                           ? soc_mess_list[OLC_ZNUM(d)].command : "this social");
+         return;
+      }
+
     case AEDIT_MAIN_MENU:
       switch (*arg) {
+       case 'x': case 'X':
+         if (OLC_ZNUM(d) < 0 || OLC_ZNUM(d) > top_of_socialt) {
+           write_to_output(d, "That social has not been saved yet -- quit without saving instead.\r\n");
+           aedit_disp_menu(d);
+           return;
+         }
+         /* The TABLE's name, not the working copy's. Menu key n rewrites
+          * the copy and leaves soc_mess_list alone, so a rename followed
+          * by a delete offered to remove a social that does not exist
+          * while removing the one that does. */
+         write_to_output(d, "Delete '%s'? : ",
+                         (OLC_ZNUM(d) >= 0 && OLC_ZNUM(d) <= top_of_socialt &&
+                          soc_mess_list[OLC_ZNUM(d)].command)
+                           ? soc_mess_list[OLC_ZNUM(d)].command : "this social");
+         OLC_MODE(d) = AEDIT_CONFIRM_DELETE;
+         return;
        case 'q': case 'Q':
          if (OLC_VAL(d))  { /* Something was modified */
             write_to_output(d, "Do you wish to save your changes? : ");

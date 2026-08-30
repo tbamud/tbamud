@@ -183,6 +183,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define AEDIT_VICT_VICT_BODY_FOUND     20
 #define AEDIT_OBJ_CHAR_FOUND           21
 #define AEDIT_OBJ_OTHERS_FOUND         22
+#define AEDIT_CONFIRM_DELETE           23
 
 /* Submodes of OEDIT connectedness. */
 #define OEDIT_MAIN_MENU              	1
