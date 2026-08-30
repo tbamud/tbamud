@@ -16,6 +16,7 @@
 #include "sysdep.h"
 #include "structs.h"
 #include "dg_scripts.h"
+#include "dg_olc_syntax.h"
 #include "utils.h"
 #include "comm.h"
 #include "interpreter.h"
@@ -790,8 +791,24 @@ static void do_stat_trigger(struct char_data *ch, trig_data *trig)
 
     cmd_list = trig->cmdlist;
     while (cmd_list) {
-      if (cmd_list->cmd)
-        len += snprintf(sb + len, sizeof(sb)-len, "%s\r\n", cmd_list->cmd);
+      if (cmd_list->cmd) {
+        char *highlighted = command_syntax_highlighting(cmd_list->cmd, trig->attach_type);
+        const char *to_print = highlighted ? highlighted : cmd_list->cmd;
+        const char *suffix = highlighted ? "" : "\r\n";
+        int written = snprintf(sb + len, sizeof(sb) - (size_t)len,
+                               "%s%s", to_print, suffix);
+
+        if (highlighted) {
+          free(highlighted);
+        }
+
+        if (written < 0 || (size_t)written >= sizeof(sb) - (size_t)len) {
+          len = (int)sizeof(sb) - 1;
+          sb[len] = '\0';
+        } else {
+          len += written;
+        }
+      }
 
       if (len>MAX_STRING_LENGTH-80) {
         snprintf(sb + len, sizeof(sb)-len, "*** Overflow - script too long! ***\r\n");

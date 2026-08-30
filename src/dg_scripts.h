@@ -392,8 +392,15 @@ ACMD(do_mlog);
 /* from dg_olc.c... thinking these should be moved to oasis.h */
 void trigedit_save(struct descriptor_data *d);
 void trigedit_string_cleanup(struct descriptor_data *d, int terminator);
-int format_script(struct descriptor_data *d);
 void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num);
+
+/* Script command lookups shared with the trigedit syntax modules
+ * (dg_olc_syntax*.c). Each one queries the very dispatch table used at
+ * runtime, so the editor never drifts from what the game accepts. */
+bool dg_mob_command_exists(const char *command);
+bool dg_obj_command_exists(const char *command);
+bool dg_wld_command_exists(const char *command);
+bool dg_player_command_exists(const char *command);
 
 /* from dg_objcmd.c */
 room_rnum obj_room(obj_data *obj);

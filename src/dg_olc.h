@@ -15,6 +15,7 @@
 #define _DG_OLC_H_
 
 #include "dg_scripts.h"
+#include "dg_olc_syntax.h"
 
 #define NUM_TRIG_TYPE_FLAGS		21
 

@@ -830,6 +830,34 @@ static const struct obj_command_info obj_cmd_info[] = {
     { "\n", 0, 0 }        /* this must be last */
 };
 
+/**
+ * @brief Checks whether a token is accepted by the object command dispatcher.
+ *
+ * @details Reproduces the lookup done by obj_command_interpreter() -- a
+ * prefix match of the token against each table entry -- so abbreviations are
+ * recognised exactly like they are at runtime. Index 0 ("RESERVED") is
+ * skipped. Used by the trigedit syntax modules to classify script lines.
+ *
+ * @param command First token of a script line.
+ * @return true when the object dispatcher would accept the token.
+ */
+bool dg_obj_command_exists(const char *command)
+{
+    if (!command || !*command) {
+        return false;
+    }
+
+    size_t length = strlen(command);
+
+    for (int i = 1; *obj_cmd_info[i].command != '\n'; i++) {
+        if (!strncmp(obj_cmd_info[i].command, command, length)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 /* This is the command interpreter used by objects, called by script_driver. */
 void obj_command_interpreter(obj_data *obj, char *argument)
 {

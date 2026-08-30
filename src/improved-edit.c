@@ -12,6 +12,7 @@
 #include "interpreter.h"
 #include "improved-edit.h"
 #include "dg_scripts.h"
+#include "dg_olc_syntax.h"
 #include "modify.h"
 
 
