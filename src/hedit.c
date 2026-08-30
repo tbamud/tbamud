@@ -187,8 +187,34 @@ static void hedit_save_internally(struct descriptor_data *d)
     free(help_table);
     help_table = new_help_table;
     help_table_version++;
-  } else
+  } else {
+    /* The row is overwritten wholesale, so whatever it was holding has to go
+     * first -- the caller hands this function ownership of OLC_HELP's strings
+     * (CLEANUP_STRUCTS, not CLEANUP_ALL, with a comment saying so) and the
+     * old ones are then owned by nobody at all.
+     *
+     * keywords belongs to this row alone. entry is shared with the row's
+     * duplicates -- that is how one entry answers to several keywords -- so
+     * it can only be freed once nothing points at it, and the duplicates are
+     * pointed at the replacement in the same pass. They have to be: without
+     * that they would spend the rest of the function holding a pointer that
+     * has just been freed, and `help <the other keyword>` would read it. */
+    int i;
+    char *oldkey = help_table[OLC_ZNUM(d)].keywords;
+    char *oldentry = help_table[OLC_ZNUM(d)].entry;
+
     help_table[OLC_ZNUM(d)] = *OLC_HELP(d);
+
+    if (oldentry)
+      for (i = 0; i < top_of_helpt; i++)
+        if (i != OLC_ZNUM(d) && help_table[i].entry == oldentry)
+          help_table[i].entry = OLC_HELP(d)->entry;
+
+    if (oldkey)
+      free(oldkey);
+    if (oldentry)
+      free(oldentry);
+  }
 
   add_to_save_list(HEDIT_PERMISSION, SL_HLP);
   hedit_save_to_disk(d);
