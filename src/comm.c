@@ -2051,6 +2051,34 @@ void close_socket(struct descriptor_data *d)
     d->snoop_by->snooping = NULL;
   }
 
+  /* The descriptor's own copy of the text an editor started with, kept so
+   * that /a can put it back. Nothing else points at it: a save frees it, and
+   * an abort from an editor state hands it to *d->str and clears the field
+   * -- so if it is still here the edit was interrupted and this is the only
+   * reference left.
+   *
+   * It used to be freed only for a character NOT flagged PLR_WRITING, with
+   * the comment "editing description ... not olc" beside it. That is one
+   * editor out of all of them, and the only one it ever worked for:
+   * string_write() sets PLR_WRITING on the way in and every OLC command sets
+   * it too, so the test was true for exactly one caller -- the description
+   * editor off the main menu, which fills d->backstr by hand and never goes
+   * through string_write. Every other interrupted edit kept its copy.
+   *
+   * The IS_NPC test went with the flag test: it was there so PLR_FLAGGED was
+   * not read off a mobile, and with no flag left to read there is nothing to
+   * guard. A switched god who drops the link owns this string as anyone does.
+   *
+   * Outside the d->character block, not inside it. perform_dupe_check clears
+   * k->character before it sets STATE(k) = CON_CLOSE, so a descriptor closed
+   * mid-edit by its owner logging in again arrives here with no character at
+   * all -- and that is a link loss like any other. Nothing below reads
+   * character state, so there is nothing to move it in for. */
+  if (d->backstr) {
+    free(d->backstr);
+    d->backstr = NULL;
+  }
+
   if (d->character) {
     /* If we're switched, this resets the mobile taken. */
     d->character->desc = NULL;
@@ -2061,9 +2089,6 @@ void close_socket(struct descriptor_data *d)
         free(*(d->str));
       free(d->str);
       d->str = NULL;
-    } else if (d->backstr && !IS_NPC(d->character) && !PLR_FLAGGED(d->character, PLR_WRITING)) {
-      free(d->backstr);      /* editing description ... not olc */
-      d->backstr = NULL;
     }
 
     add_llog_entry(d->character, LAST_DISCONNECT);
