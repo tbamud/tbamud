@@ -407,6 +407,124 @@ void modify_shop_string(char **str, char *new_s)
   *str = strdup(pointer);
 }
 
+/* How many shops name this mobile as their keeper. */
+static int shops_kept_by(mob_rnum keeper)
+{
+  shop_rnum i;
+  int n = 0;
+
+  if (keeper == NOBODY)
+    return 0;
+
+  for (i = 0; i <= top_shop; i++)
+    if (SHOP_KEEPER(i) == keeper)
+      n++;
+
+  return n;
+}
+
+/* Put both mobiles right after a shop's keeper has been changed.
+ *
+ * The rule the boot establishes is that a mobile runs shop_keeper exactly
+ * while some shop names it, and assign_the_shopkeepers displaces whatever proc
+ * the mobile already had into SHOP_FUNC so it can be handed back. Changing a
+ * keeper through sedit used to install shop_keeper on the new mobile and do
+ * nothing at all about the old one, which left it answering `list` and `buy`
+ * with "Sorry, but you cannot do that here!" -- a shopkeeper for no shop.
+ *
+ * `oldfunc` is the proc this shop was holding for its previous keeper, read
+ * before add_shop overwrote the record. It is only the mobile's own proc when
+ * THIS is the shop holding it: assign_the_shopkeepers stashes it in the first
+ * shop that names the mobile and leaves the rest NULL. So when the mobile
+ * still keeps others, the proc has to move to one of them rather than be
+ * dropped, or releasing shops in one order destroys it and the other order
+ * does not.
+ *
+ * MOB_SPEC is not SET on the incoming keeper: special() dispatches on the
+ * index entry and never reads the flag, and assign_the_shopkeepers does not
+ * set it either, so setting it here would diverge from what a reboot gives.
+ * It IS cleared off a mobile released with nothing left to dispatch, and
+ * written out -- see below for why the write is not optional.
+ *
+ * Returns the mobile it released, or NOBODY. */
+mob_rnum reassign_shopkeeper(shop_vnum vnum, mob_rnum oldkeeper, SPECIAL(*oldfunc))
+{
+  shop_rnum rshop = real_shop(vnum), i;
+  mob_rnum newkeeper, released = NOBODY;
+
+  if (rshop == NOWHERE)
+    return NOBODY;
+
+  newkeeper = SHOP_KEEPER(rshop);
+  if (newkeeper == oldkeeper)
+    return NOBODY;
+
+  /* The mobile that is no longer this shop's keeper. */
+  if (oldkeeper != NOBODY && oldkeeper <= top_of_mobt) {
+    if (shops_kept_by(oldkeeper) == 0) {
+      /* Nothing names it now, so it stops being a shopkeeper and takes its
+       * own proc back. */
+      if (mob_index[oldkeeper].func == shop_keeper)
+        mob_index[oldkeeper].func = oldfunc;
+
+      /* And with nothing left to dispatch it is not a SPEC mobile either.
+       * Stock shopkeepers carry MOB_SPEC in their .mob entry and no other
+       * proc, so this is the ordinary case rather than the odd one. Left
+       * set, mobile_activity logs "Attempting to call non-existing mob
+       * function" for every copy that spawns -- and strips the bit from the
+       * LIVE mobile only, so the prototype hands it out again on the next
+       * respawn, and the file hands it out again after every reboot.
+       *
+       * All three therefore, and the write is what makes it stick: mutating
+       * the prototype and leaving the file alone would put the change on
+       * disk at whatever later moment somebody saved that zone for an
+       * unrelated reason. Written here only when the keeper lives in the
+       * zone this shop is already in; anywhere else it is queued, because
+       * reaching across to write a zone the builder may not own would also
+       * flush whatever else that zone had pending. */
+      if (mob_index[oldkeeper].func == NULL &&
+          MOB_FLAGGED(&mob_proto[oldkeeper], MOB_SPEC)) {
+        struct char_data *mob;
+        zone_rnum kzone;
+
+        REMOVE_BIT_AR(MOB_FLAGS(&mob_proto[oldkeeper]), MOB_SPEC);
+        for (mob = character_list; mob; mob = mob->next)
+          if (IS_NPC(mob) && GET_MOB_RNUM(mob) == oldkeeper)
+            REMOVE_BIT_AR(MOB_FLAGS(mob), MOB_SPEC);
+
+        kzone = real_zone_by_thing(mob_index[oldkeeper].vnum);
+        if (kzone != NOWHERE) {
+          add_to_save_list(zone_table[kzone].number, SL_MOB);
+          if (kzone == real_zone_by_thing(vnum))
+            save_mobiles(kzone);
+        }
+        released = oldkeeper;
+      }
+    } else if (oldfunc) {
+      /* It still keeps others, so it stays as it is -- but if the proc was
+       * being held HERE it has to move somewhere that survives. */
+      for (i = 0; i <= top_shop; i++)
+        if (SHOP_KEEPER(i) == oldkeeper && SHOP_FUNC(i) == NULL) {
+          SHOP_FUNC(i) = oldfunc;
+          break;
+        }
+    }
+  }
+
+  /* And the mobile that now is. SHOP_FUNC is written unconditionally: this
+   * record still holds whatever add_shop copied out of the editor, which is
+   * the OLD keeper's proc, and leaving it there makes the shop run an
+   * unrelated mobile's spec proc. */
+  if (newkeeper != NOBODY && newkeeper <= top_of_mobt) {
+    SHOP_FUNC(rshop) = mob_index[newkeeper].func != shop_keeper
+                         ? mob_index[newkeeper].func : NULL;
+    mob_index[newkeeper].func = shop_keeper;
+  } else
+    SHOP_FUNC(rshop) = NULL;
+
+  return released;
+}
+
 int add_shop(struct shop_data *nshp)
 {
   shop_rnum rshop;

@@ -35,8 +35,35 @@ static void sedit_disp_menu(struct descriptor_data *d);
 
 void sedit_save_internally(struct descriptor_data *d)
 {
+  shop_rnum rshop = real_shop(OLC_NUM(d));
+  mob_rnum oldkeeper = NOBODY, released;
+  SPECIAL(*oldfunc) = NULL;
+
+  /* Read before add_shop overwrites the record: the mobile this shop used to
+   * keep, and the spec proc that mobile had before it was made a keeper. */
+  if (rshop != NOWHERE) {
+    oldkeeper = SHOP_KEEPER(rshop);
+    oldfunc = SHOP_FUNC(rshop);
+  }
+
   OLC_SHOP(d)->vnum = OLC_NUM(d);
   add_shop(OLC_SHOP(d));
+
+  released = reassign_shopkeeper(OLC_NUM(d), oldkeeper, oldfunc);
+
+  /* A released keeper that lives in another zone has its mobile file
+   * queued rather than written -- see reassign_shopkeeper. Queued is
+   * silent, so say which zone is now waiting on a save; until it happens
+   * a reboot brings the stale flag back. */
+  if (released != NOBODY) {
+    zone_rnum kz = real_zone_by_thing(mob_index[released].vnum);
+
+    if (kz != NOWHERE && kz != real_zone_by_thing(OLC_NUM(d)) &&
+        in_save_list(zone_table[kz].number, SL_MOB))
+      write_to_output(d, "The old keeper (mobile %d) lives in zone %d; that "
+                         "zone's mobile file still needs saving.\r\n",
+                      mob_index[released].vnum, zone_table[kz].number);
+  }
 }
 
 static void sedit_save_to_disk(int num)
@@ -788,12 +815,11 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 	write_to_output(d, "That mobile does not exist, try again : ");
 	return;
       }
+    /* Only the working copy. Converting the mobile here made typing a vnum
+     * enough to turn it into a shopkeeper -- before any save, and with no way
+     * back if the builder quit without saving. The conversion belongs with
+     * the save, which is where the old keeper can be released too. */
     S_KEEPER(OLC_SHOP(d)) = i;
-    if (i == -1)
-      break;
-    /* Fiddle with special procs. */
-    S_FUNC(OLC_SHOP(d)) = mob_index[i].func != shop_keeper ? mob_index[i].func : NULL;
-    mob_index[i].func = shop_keeper;
     break;
   case SEDIT_OPEN1:
     S_OPEN1(OLC_SHOP(d)) = LIMIT(atoi(arg), 0, 28);
