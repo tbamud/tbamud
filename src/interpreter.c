@@ -461,6 +461,10 @@ void sort_commands(void)
     num_of_cmds++;
   num_of_cmds++;  /* \n */
 
+  /* Rebuilt, not built. aedit rebuilds the command table on every save and
+   * calls this again to match; each of those runs allocated a fresh array
+   * and dropped the previous one on the floor. */
+  free(cmd_sort_info);
   CREATE(cmd_sort_info, int, num_of_cmds);
 
   for (a = 0; a < num_of_cmds; a++)

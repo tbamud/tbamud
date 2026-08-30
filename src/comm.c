@@ -355,7 +355,11 @@ int main(int argc, char **argv)
     free_messages();        /* fight.c */
     free_text_files();      /* db.c */
     board_clear_all();      /* boards.c */
+    /* NULL, not just freed: sort_commands() releases this pointer before
+     * replacing it, so a call after this point would free it twice where
+     * it used to only leak. Nothing runs after this block today. */
     free(cmd_sort_info);    /* act.informative.c */
+    cmd_sort_info = NULL;
     free_command_list();    /* act.informative.c */
     free_social_messages(); /* act.social.c */
     free_help_table();      /* db.c */
