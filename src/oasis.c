@@ -172,6 +172,18 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
      free(OLC_STORAGE(d));
      OLC_STORAGE(d) = NULL;
    }
+   /* hedit alone. Unconditional like the block above, and for the same
+    * reason: it is a copy this editor owns. CLEANUP_STRUCTS skips
+    * OLC_HELP's strings because those are handed to the help table on the
+    * way out; this one is never handed to anything. */
+   if (OLC_HELP_KEY(d)) {
+     free(OLC_HELP_KEY(d));
+     OLC_HELP_KEY(d) = NULL;
+   }
+   if (OLC_HELP_TEXT(d)) {
+     free(OLC_HELP_TEXT(d));
+     OLC_HELP_TEXT(d) = NULL;
+   }
    /* Free this one regardless. If we've left olc, we've either made a fresh
     * copy of it in the trig index, or we lost connection. Either way, we need
     * to get rid of this. */
