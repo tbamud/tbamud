@@ -26,6 +26,18 @@
 /* local file scope only function prototypes */
 static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack);
 
+static int snarl_cmd;
+
+/* The merged command table is rebuilt from scratch whenever a social is
+ * added or removed, and every index into it moves with it. The values
+ * below are indices into that table, handed straight to do_action(), so
+ * they have to be taken again each time it is rebuilt rather than once at
+ * boot. create_command_list() calls this; see the note there. */
+void assign_mobact_command_indices(void)
+{
+  snarl_cmd = find_command("snarl");
+}
+
 void mobile_activity(void)
 {
   struct char_data *ch, *next_ch, *vict;
@@ -239,7 +251,6 @@ void clearMemory(struct char_data *ch)
  * of it, eye them down, or otherwise intimidate the slave. */
 static bool aggressive_mob_on_a_leash(struct char_data *slave, struct char_data *master, struct char_data *attack)
 {
-  static int snarl_cmd;
   int dieroll;
 
   if (!master || !AFF_FLAGGED(slave, AFF_CHARM))

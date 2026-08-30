@@ -208,12 +208,22 @@ void parse_quest(FILE *quest_f, int nr)
   }
 } /* parse_quest */
 
+/* The merged command table is rebuilt from scratch whenever a social is
+ * added or removed, and every index into it moves with it. The values
+ * below are indices into that table, handed straight to do_action(), so
+ * they have to be taken again each time it is rebuilt rather than once at
+ * boot. create_command_list() calls this; see the note there. */
+void assign_quest_command_indices(void)
+{
+  cmd_tell = find_command("tell");
+}
+
 void assign_the_quests(void)
 {
   qst_rnum rnum;
   mob_rnum mrnum;
 
-  cmd_tell = find_command("tell");
+  assign_quest_command_indices();
 
   for (rnum = 0; rnum < total_quests; rnum ++) {
     if (QST_MASTER(rnum) == NOBODY) {
