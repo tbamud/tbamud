@@ -1048,7 +1048,31 @@ int search_help(const char *argument, int level)
   int chk, bot, top, mid, minlen;
 
    bot = 0;
-   top = top_of_helpt;
+   /* top_of_helpt is a COUNT -- load_help fills the table with
+    * help_table[top_of_helpt++] -- so the last row is top_of_helpt - 1.
+    * Every other walk of this table in the tree bounds itself with
+    * `< top_of_helpt`; this one seeded an inclusive search at the count
+    * itself, so mid could land exactly one element past the end and the
+    * strn_cmp below read a keywords pointer out of whatever follows the
+    * allocation.
+    *
+    * It is a hard crash, not a stray read. index_boot callocs the table to
+    * exactly rec_count rows, so help_table[top_of_helpt] is not part of the
+    * table at all: its keywords field is whatever the allocator keeps past
+    * the block (the next chunk's size word, 0x71 when measured), and
+    * strn_cmp dereferences it. Plain builds die there just as sanitised
+    * ones do.
+    *
+    * Reachable by any player at any level: do_help passes straight through
+    * here, and any argument that sorts after the last keyword walks the
+    * search up to the top. With the stock help files that is `~` followed
+    * by anything.
+    *
+    * An empty table would be safe too -- top becomes -1 and the loop does
+    * not run -- though it cannot arise: index_boot exit(1)s on a help file
+    * with no records, and free_help_table NULLs the table, which do_help
+    * checks. */
+   top = top_of_helpt - 1;
    minlen = strlen(argument);
 
   while (bot <= top) {
@@ -1058,7 +1082,21 @@ int search_help(const char *argument, int level)
       while ((mid > 0) && !strn_cmp(argument, help_table[mid - 1].keywords, minlen))
          mid--;
 
-      while (level < help_table[mid].min_level && mid < (bot + top) / 2)
+      /* Walk past rows this player is not high enough for, and stop at the
+       * end of the RUN OF MATCHES rather than at wherever the binary search
+       * happened to land. The old bound was (bot + top) / 2 -- the mid it
+       * just came from -- so which restricted entries a mortal could see
+       * depended on the shape of the search, and moving `top` by one moved
+       * it. With `help sco`, master landed on `score` (min_level 0) and
+       * answered; bounding at the corrected mid landed on `scopy`
+       * (min_level 31) with nowhere to advance to, and a mortal got
+       * "There is no help on that word." Thirty-odd abbreviations changed
+       * that way, in both directions.
+       *
+       * The run of matches is the honest bound: advance while the next row
+       * still matches the argument, and stop at the table edge. */
+      while (level < help_table[mid].min_level && mid + 1 < top_of_helpt &&
+             !strn_cmp(argument, help_table[mid + 1].keywords, minlen))
         mid++;
       if (strn_cmp(argument, help_table[mid].keywords, minlen) || level < help_table[mid].min_level)
         break;
