@@ -551,6 +551,9 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
       if ( apData[j] == '\t' )
       {
          const char *pCopyFrom = NULL;
+         /* The unicode substitute is copied out further down, after the block
+          * that fills it has ended, so it cannot live inside that block. */
+         char UnicodeSubstitute[8] = {'\0'};
 
          switch ( apData[++j] )
          {
@@ -679,7 +682,11 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
             case '[':
                if ( tolower(apData[++j]) == 'u' )
                {
-                  char Buffer[8] = {'\0'}, BugString[256];
+                  /* An alias, not an array: sizeof(Buffer) is a pointer's
+                   * size here, which on LP64 is coincidentally the old array
+                   * size. Bound the writes below by the array itself. */
+                  char *Buffer = UnicodeSubstitute;
+                  char BugString[256];
                   int Index = 0;
                   int Number = 0;
                   bool_t bDone = false, bValid = true;
