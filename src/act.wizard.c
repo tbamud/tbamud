@@ -4326,6 +4326,479 @@ ACMD(do_peace)
   }
 }
 
+/* Has this zone been through zdelete?
+ *
+ * The test is absence from the zone index, not the presence of a .deleted
+ * file: that is the invariant zdelete establishes, and it is the one thing
+ * nothing else undoes by accident. save_zone() rewrites a .zon whenever a
+ * zone is unlocked or saved, so a file-pair test disarms itself the first
+ * time that happens; only create_world_index puts a line back. A zone still
+ * in zone_table but missing from the index is one deleted since the boot. */
+static int zone_was_deleted(zone_vnum zvnum)
+{
+  FILE *fl;
+  char name[64], line[READ_SIZE];
+  int num;
+
+  snprintf(name, sizeof(name), "%s%s", ZON_PREFIX, INDEX_FILE);
+  if (!(fl = fopen(name, "r"))) {
+    /* Say so rather than quietly answering "not deleted": an unreadable zone
+     * index dooms the next boot anyway, but the operator should hear it from
+     * here and not from the reboot. */
+    log("SYSERR: OLC: Cannot read %s; the deleted-zone check is disabled.",
+        name);
+    return FALSE;   /* do not stand in the operator's way over an I/O error */
+  }
+
+  /* Compare the number, not the text. Padding is invisible to every other
+   * reader of these files -- index_boot takes a whitespace-delimited token,
+   * create_world_index and strip_index_entry scan a number -- and the
+   * recovery this command prints has the operator editing them by hand. */
+  while (get_line(fl, line, sizeof(line)))
+    if (sscanf(line, "%d", &num) == 1 && num == zvnum) {
+      fclose(fl);
+      return FALSE;
+    }
+
+  fclose(fl);
+  return TRUE;
+}
+
+/* Bounds-checked "does this rnum belong to the zone" tests. Reset commands
+ * whose lookup failed at boot hold NOWHERE, so none of these may be trusted
+ * as an index without checking it first. */
+static int zd_mob_in(zone_rnum z, int rnum)
+{
+  return (rnum >= 0 && rnum <= top_of_mobt &&
+          real_zone_by_thing(mob_index[rnum].vnum) == z);
+}
+
+static int zd_obj_in(zone_rnum z, int rnum)
+{
+  return (rnum >= 0 && rnum <= top_of_objt &&
+          real_zone_by_thing(obj_index[rnum].vnum) == z);
+}
+
+static int zd_room_in(zone_rnum z, int rnum)
+{
+  return (rnum >= 0 && rnum <= top_of_world && world[rnum].zone == z);
+}
+
+static int zd_trig_in(zone_rnum z, int rnum)
+{
+  return (rnum >= 0 && rnum < top_of_trigt &&
+          real_zone_by_thing(trig_index[rnum]->vnum) == z);
+}
+
+/* Does one of this reset command's arguments name something the zone owns?
+ * Such a command belongs to another zone's file, so it survives the deletion
+ * and logs a zone-file SYSERR on every boot afterwards. */
+static int zd_cmd_touches(zone_rnum z, struct reset_com *zc)
+{
+  switch (zc->command) {
+  case 'M':
+    return (zd_mob_in(z, zc->arg1) || zd_room_in(z, zc->arg3));
+  case 'O':
+    return (zd_obj_in(z, zc->arg1) || zd_room_in(z, zc->arg3));
+  case 'G':
+  case 'E':
+    return zd_obj_in(z, zc->arg1);
+  case 'P':
+    return (zd_obj_in(z, zc->arg1) || zd_obj_in(z, zc->arg3));
+  case 'D':
+    return zd_room_in(z, zc->arg1);
+  case 'R':
+    return (zd_room_in(z, zc->arg1) || zd_obj_in(z, zc->arg2));
+  case 'T':
+    return (zd_trig_in(z, zc->arg2) || zd_room_in(z, zc->arg3));
+  case 'V':
+    return zd_room_in(z, zc->arg3);
+  }
+  return FALSE;
+}
+
+/* Is vnum a room this zone owns? Used to keep a start room from going. */
+static int zdelete_zone_holds(zone_rnum zrnum, room_vnum vnum)
+{
+  room_rnum rnum = real_room(vnum);
+
+  return (rnum != NOWHERE && world[rnum].zone == zrnum);
+}
+
+/* zdelete: take a zone out of the world.
+ *
+ * The zone's files are set aside and its lines come out of each world
+ * index and index.mini, so the next boot does not read it. Nothing in memory moves: the
+ * rooms, mobiles and objects the running game is holding stay exactly where
+ * they are, and every rnum in play stays valid. Deleting the members one at a
+ * time instead would renumber boards, shop rooms and zone commands for every
+ * room removed, underneath the players, to no purpose -- the zone goes away at
+ * the reboot either way.
+ *
+ * Exits leading into the zone are left alone. After the reboot they resolve to
+ * NOWHERE, which means they stop being listed and cannot be walked, and
+ * nothing anywhere says why. The confirmation is the only place that
+ * information ever exists, so it names them. */
+ACMD(do_zdelete)
+{
+  static const struct {
+    const char *ext;
+    const char *prefix;
+  } world_files[] = {
+    { "wld", WLD_PREFIX }, { "mob", MOB_PREFIX }, { "obj", OBJ_PREFIX },
+    { "zon", ZON_PREFIX }, { "shp", SHP_PREFIX }, { "qst", QST_PREFIX },
+    { "trg", TRG_PREFIX }
+  };
+  char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+  char oldname[256], newname[256];
+  struct descriptor_data *d;
+  struct trig_proto_list *tp;
+  struct obj_data *obj;
+  struct char_data *tch;
+  FILE *fl;
+  zone_rnum zrnum;
+  zone_vnum zvnum;
+  room_rnum to;
+  int rooms = 0, mobs = 0, objs = 0, trigs = 0, shops = 0, quests = 0;
+  int inbound = 0, listed = 0, players = 0, moved = 0, attached = 0;
+  int resets = 0, carried = 0, owners = 0, hit, i, door, cno;
+  int confirming = FALSE, was_armed;
+  zone_vnum armed_zone = NOWHERE;
+
+  two_arguments(argument, arg, arg2);
+
+  /* Take the standing report away first, and put one back only where a fresh
+   * report is actually printed below. The interpreter cancels an armed zone
+   * for every command that is not this one; it cannot do it for this one,
+   * because that would cancel the confirmation itself. So every way out of
+   * here other than a new report has to end the old one, or "zdelete 36
+   * confirm" leaves zone 35 armed and the next "zdelete confirm" deletes a
+   * zone whose number is nowhere on the screen. */
+  was_armed = ch->desc ? ch->desc->zdelete_armed : FALSE;
+  if (ch->desc) {
+    armed_zone = ch->desc->zdelete_zone;
+    ch->desc->zdelete_armed = FALSE;
+  }
+  if (was_armed && str_cmp(arg, "confirm"))
+    send_to_char(ch, "The pending deletion of zone %d is cancelled.\r\n",
+                 armed_zone);
+
+  if (!*arg) {
+    send_to_char(ch,
+        "Syntax: zdelete <zone vnum>   what deleting it would cost\r\n"
+        "        zdelete confirm      delete the zone that report named\r\n"
+        "\r\nIt always takes both. Nothing is deleted by a command that has "
+        "not first shown you what the deletion does, and the second command "
+        "names no zone, so there is no number left to mistype.\r\n");
+    return;
+  }
+
+  if (!str_cmp(arg, "confirm")) {
+    /* The zone comes from the report, never from this line. */
+    if (*arg2) {
+      send_to_char(ch, "zdelete confirm takes nothing after it -- the zone is "
+                       "the one the report named, so that there is no number "
+                       "here to get wrong.\r\n");
+      if (was_armed)
+        send_to_char(ch, "The pending deletion of zone %d is cancelled; run "
+                         "zdelete %d again if you meant it.\r\n",
+                     armed_zone, armed_zone);
+      return;
+    }
+    if (!was_armed) {
+      send_to_char(ch, "You have not been shown a zone to delete. Run "
+                       "zdelete <zone vnum> first, and read what it says.\r\n");
+      return;
+    }
+    zvnum = armed_zone;
+    if ((zrnum = real_zone(zvnum)) == NOWHERE) {
+      send_to_char(ch, "Zone %d is gone already.\r\n", zvnum);
+      return;
+    }
+    confirming = TRUE;
+  } else {
+    if (*arg2) {
+      send_to_char(ch, "zdelete takes the zone on its own. Run zdelete %s to "
+                       "see what deleting it would cost, then zdelete confirm "
+                       "to go through with it.\r\n", arg);
+      return;
+    }
+    /* atoidx's strtol does not report that it consumed nothing, so a word
+     * would come back as zone 0 -- "zdelete conf" should not report on the
+     * void. Require a number first. */
+    if (!isdigit(*arg)) {
+      send_to_char(ch, "There is no zone %s.\r\n", arg);
+      return;
+    }
+    /* atoidx, not atoi: atoi narrows to int inside itself, so a range check
+     * placed after it is one integer width too late and 2^32+35 arrives as
+     * zone 35. atoidx does the comparison while the value is still a long. */
+    zvnum = atoidx(arg);
+    if (zvnum == NOWHERE || (zrnum = real_zone(zvnum)) == NOWHERE) {
+      send_to_char(ch, "There is no zone %s.\r\n", arg);
+      return;
+    }
+  }
+
+  /* A zone holding a start room cannot go: the next boot would have nowhere to
+   * put anyone who was not already somewhere valid. */
+  if (zdelete_zone_holds(zrnum, CONFIG_MORTAL_START) ||
+      zdelete_zone_holds(zrnum, CONFIG_IMMORTAL_START) ||
+      zdelete_zone_holds(zrnum, CONFIG_FROZEN_START) ||
+      zdelete_zone_holds(zrnum, 0)) {
+    send_to_char(ch, "Zone %d holds a start room. Move the start rooms in "
+                     "cedit first.\r\n", zvnum);
+    return;
+  }
+
+  for (i = 0; i <= top_of_world; i++)
+    if (world[i].zone == zrnum)
+      rooms++;
+  for (i = 0; i <= top_of_mobt; i++)
+    if (real_zone_by_thing(mob_index[i].vnum) == zrnum)
+      mobs++;
+  for (i = 0; i <= top_of_objt; i++)
+    if (real_zone_by_thing(obj_index[i].vnum) == zrnum)
+      objs++;
+  /* top_of_trigt is a count, unlike the three above. */
+  for (i = 0; i < top_of_trigt; i++)
+    if (real_zone_by_thing(trig_index[i]->vnum) == zrnum)
+      trigs++;
+  for (i = 0; i <= top_shop; i++)
+    if (real_zone_by_thing(SHOP_NUM(i)) == zrnum)
+      shops++;
+  for (i = 0; i < total_quests; i++)
+    if (real_zone_by_thing(QST_NUM(i)) == zrnum)
+      quests++;
+
+  /* character_list, not descriptor_list: a linkless body is still standing in
+   * the zone and is the one player who cannot be told anything at all. This
+   * also picks up anyone sitting in an editor, who is the likeliest person to
+   * be surprised, and skips a switched immortal's mob while still counting
+   * the body they left behind. */
+  for (tch = character_list; tch; tch = tch->next)
+    if (!IS_NPC(tch) && IN_ROOM(tch) != NOWHERE &&
+        world[IN_ROOM(tch)].zone == zrnum)
+      players++;
+
+  if (!confirming) {
+    send_to_char(ch, "Zone %d: %s\r\n", zvnum, zone_table[zrnum].name);
+    send_to_char(ch, "  %d room%s, %d mobile%s, %d object%s, %d trigger%s, "
+                     "%d shop%s, %d quest%s\r\n",
+                 rooms, rooms == 1 ? "" : "s", mobs, mobs == 1 ? "" : "s",
+                 objs, objs == 1 ? "" : "s", trigs, trigs == 1 ? "" : "s",
+                 shops, shops == 1 ? "" : "s", quests, quests == 1 ? "" : "s");
+
+    /* The exits are the part nothing will tell you afterwards. */
+    for (i = 0; i <= top_of_world; i++) {
+      if (world[i].zone == zrnum)
+        continue;
+      for (door = 0; door < NUM_OF_DIRS; door++) {
+        if (!W_EXIT(i, door))
+          continue;
+        to = W_EXIT(i, door)->to_room;
+        if (to == NOWHERE || world[to].zone != zrnum)
+          continue;
+        if (!inbound)
+          send_to_char(ch, "\r\nExits leading into it, which will become dead "
+                           "ends with no message:\r\n");
+        inbound++;
+        if (listed < 20) {
+          listed++;
+          send_to_char(ch, "  zone %-4d room %-6d %-5s -> %d\r\n",
+                       zone_table[world[i].zone].number, world[i].number,
+                       dirs[door], world[to].number);
+        }
+      }
+    }
+    if (inbound > listed)
+      send_to_char(ch, "  ... and %d more.\r\n", inbound - listed);
+    if (!inbound)
+      send_to_char(ch, "\r\nNo exits lead into it.\r\n");
+    /* Triggers are the second way out of the zone, and a noisier one: a
+     * prototype elsewhere that attaches one of its triggers logs a SYSERR on
+     * every boot from here on, not merely once. */
+    for (i = 0; i <= top_of_world; i++) {
+      if (world[i].zone == zrnum)
+        continue;
+      for (tp = world[i].proto_script, hit = 0; tp; tp = tp->next)
+        if (real_zone_by_thing(tp->vnum) == zrnum) {
+          attached++;
+          if (!hit++)
+            owners++;
+        }
+    }
+    for (i = 0; i <= top_of_mobt; i++) {
+      if (real_zone_by_thing(mob_index[i].vnum) == zrnum)
+        continue;
+      for (tp = mob_proto[i].proto_script, hit = 0; tp; tp = tp->next)
+        if (real_zone_by_thing(tp->vnum) == zrnum) {
+          attached++;
+          if (!hit++)
+            owners++;
+        }
+    }
+    for (i = 0; i <= top_of_objt; i++) {
+      if (real_zone_by_thing(obj_index[i].vnum) == zrnum)
+        continue;
+      for (tp = obj_proto[i].proto_script, hit = 0; tp; tp = tp->next)
+        if (real_zone_by_thing(tp->vnum) == zrnum) {
+          attached++;
+          if (!hit++)
+            owners++;
+        }
+    }
+    if (attached)
+      send_to_char(ch, "%d trigger attachment%s on %d thing%s outside the "
+                       "zone name a trigger inside it; each attachment logs a "
+                       "SYSERR at every boot.\r\n",
+                   attached, attached == 1 ? "" : "s", owners,
+                   owners == 1 ? "" : "s");
+
+    /* Reset commands live in the zone file of the zone that runs them, so
+     * another zone loading this one's mobs or objects keeps trying. */
+    for (i = 0; i <= top_of_zone_table; i++) {
+      if (i == zrnum || !zone_table[i].cmd)
+        continue;
+      for (cno = 0; ZCMD(i, cno).command != 'S'; cno++)
+        if (ZCMD(i, cno).command != '*' && zd_cmd_touches(zrnum, &ZCMD(i, cno)))
+          resets++;
+    }
+    if (resets)
+      send_to_char(ch, "%d reset command%s in other zones load%s something "
+                       "from this one; each is a SYSERR at every boot.\r\n",
+                   resets, resets == 1 ? "" : "s", resets == 1 ? "s" : "");
+
+    /* The counts above are prototypes. The instances are what players own. */
+    for (obj = object_list; obj; obj = obj->next)
+      if (real_zone_by_thing(GET_OBJ_VNUM(obj)) == zrnum)
+        carried++;
+    if (objs)
+      send_to_char(ch, "\r\nEvery object of this zone is destroyed by the "
+                       "reboot -- %d of them exist right now, and so is every "
+                       "copy in a player file, rent file or house. The player "
+                       "is not told; the item is dropped as it loads.\r\n",
+                   carried);
+
+    if (players)
+      send_to_char(ch, "%d player%s standing in it; they will be moved to a "
+                       "start room by the reboot.\r\n",
+                   players, players == 1 ? " is" : "s are");
+
+    send_to_char(ch, "\r\nThe zone's files are set aside, not erased, and "
+                     "nothing in memory moves: it is gone at the next "
+                     "reboot.\r\nTo go through with it, the next command is "
+                   "just:  zdelete confirm\r\n");
+
+    /* Armed on this descriptor alone, and only until the very next command:
+     * the interpreter cancels it for anything that is not the confirmation.
+     * The zone is remembered here rather than retyped, so the command that
+     * deletes carries no number to get wrong. */
+    if (ch->desc) {
+      ch->desc->zdelete_zone = zvnum;
+      ch->desc->zdelete_armed = TRUE;
+    }
+    return;
+  }
+
+  /* NOBUILD below stops anyone entering an editor on the zone, but it cannot
+   * reach one that is already open: that save writes the files straight back.
+   *
+   * Only these states have a real zone in OLC_ZNUM. aedit keeps a social
+   * index there, hedit a help index, ibt a 0 or a 1 and cedit a 0 -- so
+   * testing every descriptor with an editor open would refuse the deletion of
+   * zone 1 because somebody was editing the second social. */
+  for (d = descriptor_list; d; d = d->next) {
+    switch (STATE(d)) {
+    case CON_REDIT:
+    case CON_ZEDIT:
+    case CON_MEDIT:
+    case CON_SEDIT:
+    case CON_OEDIT:
+    case CON_TRIGEDIT:
+    case CON_QEDIT:
+      break;
+    default:
+      continue;
+    }
+    if (!d->olc || OLC_ZNUM(d) != zrnum)
+      continue;
+    send_to_char(ch, "%s has an editor open on zone %d. A save from it would "
+                     "write the zone's files back after this; have them leave "
+                     "the editor first.\r\n",
+                 (d->character && GET_NAME(d->character)) ?
+                     GET_NAME(d->character) : "Someone", zvnum);
+    return;
+  }
+
+  /* An earlier deletion's files are not ours to overwrite: rename() would
+   * replace them without a word, and what they hold is the only copy of a
+   * zone somebody already deleted once. */
+  for (i = 0; i < 7; i++) {
+    snprintf(newname, sizeof(newname), "%s%d.%s.deleted",
+             world_files[i].prefix, zvnum, world_files[i].ext);
+    if ((fl = fopen(newname, "r"))) {
+      fclose(fl);
+      send_to_char(ch, "%s is already there from an earlier deletion.\r\n"
+                       "Move it aside first; this would overwrite it.\r\n",
+                   newname);
+      return;
+    }
+  }
+
+  for (i = 0; i < 7; i++) {
+    snprintf(oldname, sizeof(oldname), "%s%d.%s", world_files[i].prefix,
+             zvnum, world_files[i].ext);
+    snprintf(newname, sizeof(newname), "%s%d.%s.deleted",
+             world_files[i].prefix, zvnum, world_files[i].ext);
+    /* Index first, and only rename if it worked: an index naming a file that
+     * is gone stops the next boot dead, while a file no index names is simply
+     * never read. */
+    if (!remove_world_index(zvnum, world_files[i].ext)) {
+      send_to_char(ch, "Could not rewrite the %s index files -- see the "
+                       "syslog.\r\n"
+                       "Zone %d is now only partly deleted: %d file%s already "
+                       "been set aside and %s was left in place. The world "
+                       "still boots, because a file no index names is never "
+                       "read. Put it right by hand before trying again.\r\n",
+                   world_files[i].ext, zvnum, moved,
+                   moved == 1 ? " has" : "s have", oldname);
+      return;
+    }
+    /* Not every zone has all seven; a missing one is nothing to report. */
+    if (rename(oldname, newname) == 0)
+      moved++;
+  }
+
+  /* The zone is still in memory, so every editor still works on it, and a
+   * save would write its file back -- unindexed for most types, but
+   * save_shops and save_quests call create_world_index and would put the
+   * index line back too. NOBUILD is what can_edit_zone already honours, and
+   * it stops anyone entering an editor from here on; the pending saves are
+   * dropped because saveall and the shutdown flush do not consult it. */
+  SET_BIT_AR(ZONE_FLAGS(zrnum), ZONE_NOBUILD);
+  drop_zone_saves(zvnum);
+
+  mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE,
+         "(GC) %s has deleted zone %d (%s): %d file%s set aside, "
+         "%d room%s, %d mobile%s, %d object%s.",
+         GET_NAME(ch), zvnum, zone_table[zrnum].name, moved,
+         moved == 1 ? "" : "s", rooms, rooms == 1 ? "" : "s", mobs,
+         mobs == 1 ? "" : "s", objs, objs == 1 ? "" : "s");
+
+  send_to_char(ch, "Zone %d is out of the world index; %d file%s set aside "
+                   "as <name>.deleted, and the zone is now NOBUILD so that no "
+                   "editor writes it back.\r\nIt stays loaded until the next "
+                   "reboot.\r\nTo put it back: rename those files to their "
+                   "original names, and add each one to its index -- and to "
+                   "its index.mini if it was listed there -- in ASCENDING "
+                   "numeric order. The index order is the order the tables "
+                   "are built in, and they are binary-searched, so a line "
+                   "appended at the end loads the zone but leaves parts of "
+                   "the world unreachable.\r\n",
+               zvnum, moved, moved == 1 ? " was" : "s were");
+}
+
 ACMD(do_zpurge)
 {
   int vroom, room, zone = 0;
@@ -4909,7 +5382,7 @@ ACMD(do_zunlock)
   zone_vnum znvnum;
   zone_rnum zn;
   char      arg[MAX_INPUT_LENGTH];
-  int       counter = 0;
+  int       counter = 0, skipped = 0;
   bool      fail = FALSE;
 
   one_argument(argument, arg);
@@ -4929,6 +5402,16 @@ ACMD(do_zunlock)
     }
     for (zn = 0; zn <= top_of_zone_table; zn++) {
       if (ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
+        /* A deleted zone is locked too, and save_zone() below would write its
+         * .zon back with nothing in the index naming it. Skip it here as the
+         * single-zone form refuses it, or "unlock every zone" quietly undoes
+         * part of a deletion nobody mentioned. */
+        if (zone_was_deleted(zone_table[zn].number)) {
+          send_to_char(ch, "Zone %d has been deleted; leaving it locked.\r\n",
+                       zone_table[zn].number);
+          skipped++;
+          continue;
+        }
         counter++;
         REMOVE_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);
         if (save_zone(zn)) {
@@ -4939,7 +5422,8 @@ ACMD(do_zunlock)
       }
     }
     if (counter == 0) {
-      send_to_char(ch, "There are no locked zones to unlock!\r\n");
+      send_to_char(ch, skipped ? "No other locked zones to unlock.\r\n"
+                               : "There are no locked zones to unlock!\r\n");
       return;
     }
     if (fail) {
@@ -4986,6 +5470,16 @@ ACMD(do_zunlock)
   /* If we get here, player has typed 'zunlock <num>' */
   if (!ZONE_FLAGGED(zn, ZONE_NOBUILD)) {
     send_to_char(ch, "Zone %d is already unlocked!\r\n", znvnum);
+    return;
+  }
+  /* A zone that zdelete took out of the world is locked as well, and
+   * unlocking it would write its .zon straight back -- save_zone below does
+   * exactly that -- leaving a file the index no longer names. */
+  if (zone_was_deleted(znvnum)) {
+    send_to_char(ch, "Zone %d has been deleted -- it is no longer in the zone "
+                     "index.\r\nUnlocking it would write its .zon back with "
+                     "nothing naming it, and reopen it to every editor. "
+                     "Restore the zone first.\r\n", znvnum);
     return;
   }
   REMOVE_BIT_AR(ZONE_FLAGS(zn), ZONE_NOBUILD);

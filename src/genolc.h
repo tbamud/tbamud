@@ -17,6 +17,7 @@
 
 int genolc_checkstring(struct descriptor_data *d, char *arg);
 int remove_from_save_list(zone_vnum, int type);
+void drop_zone_saves(zone_vnum zone);
 int add_to_save_list(zone_vnum, int type);
 int in_save_list(zone_vnum, int type);
 void strip_cr(char *);

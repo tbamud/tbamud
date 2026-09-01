@@ -293,6 +293,105 @@ void create_world_index(int znum, const char *type)
   rename(new_name, old_name);
 }
 
+/* Rewrite one index file without znum's line. `complain` is FALSE for
+ * index.mini, which a world is not obliged to have at all. */
+static int strip_index_entry(const char *prefix, const char *index_name,
+                             int znum, int complain)
+{
+  FILE *newfile, *oldfile;
+  char new_name[48], old_name[48];
+  int num, found = FALSE;
+  char buf[MAX_STRING_LENGTH];
+
+  snprintf(old_name, sizeof(old_name), "%s/%s", prefix, index_name);
+  snprintf(new_name, sizeof(new_name), "%s/new%s", prefix, index_name);
+
+  if (!(oldfile = fopen(old_name, "r"))) {
+    if (complain) {
+      mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to open %s.", old_name);
+      return FALSE;
+    }
+    return TRUE;   /* index.mini is optional; its absence is not a failure */
+  } else if (!(newfile = fopen(new_name, "w"))) {
+    mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to open %s.", new_name);
+    fclose(oldfile);
+    return FALSE;
+  }
+
+  while (get_line(oldfile, buf, sizeof(buf))) {
+    if (*buf == '$') {
+      fprintf(newfile, "$\n");
+      break;
+    }
+    if (!found && sscanf(buf, "%d", &num) == 1 && num == znum) {
+      found = TRUE;   /* the line being removed; do not copy it */
+      continue;
+    }
+    fprintf(newfile, "%s\n", buf);
+  }
+
+  fclose(newfile);
+  fclose(oldfile);
+
+  /* Only disturb the real index if there was something to take out of it. */
+  if (found) {
+    remove(old_name);
+    if (rename(new_name, old_name) != 0) {
+      mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to install %s.",
+             old_name);
+      return FALSE;
+    }
+  } else
+    remove(new_name);
+
+  return TRUE;
+}
+
+/* Take a zone back out of the world index files: the inverse of
+ * create_world_index. The files themselves are left for the caller. */
+int remove_world_index(int znum, const char *type)
+{
+  char *prefix;
+
+  switch (*type) {
+  case 'z':
+    prefix = ZON_PREFIX;
+    break;
+  case 'w':
+    prefix = WLD_PREFIX;
+    break;
+  case 'o':
+    prefix = OBJ_PREFIX;
+    break;
+  case 'm':
+    prefix = MOB_PREFIX;
+    break;
+  case 's':
+    prefix = SHP_PREFIX;
+    break;
+  case 't':
+    prefix = TRG_PREFIX;
+    break;
+  case 'q':
+    prefix = QST_PREFIX;
+    break;
+  default:
+    /* Caller messed up. */
+    return FALSE;
+  }
+
+  /* Both indexes, index.mini first, and stop if that half fails. A zone still
+   * named in index.mini after its file has gone stops a -m boot dead, because
+   * index_boot exits on a listed file it cannot open; but a zone merely absent
+   * from index.mini is only not loaded in mini mode, which is harmless. Doing
+   * the harmless one first and returning on failure is what keeps the
+   * boot-critical index untouched when the pair cannot be completed. */
+  if (!strip_index_entry(prefix, MINDEX_FILE, znum, FALSE))
+    return FALSE;
+
+  return strip_index_entry(prefix, INDEX_FILE, znum, TRUE);
+}
+
 void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
 {
   int subcmd = 0, cmd_room = -2;

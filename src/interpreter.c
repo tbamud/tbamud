@@ -363,6 +363,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zunlock"  , "zunlock" , POS_DEAD    , do_zunlock  , LVL_GOD, 0 },
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_BUILDER, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
+  { "zdelete"  , "zdelete" , POS_DEAD    , do_zdelete  , LVL_IMPL, 0 },
 
   { "\n", "zzzzzzz", 0, 0, 0, 0 } };    /* this must be last */
 
@@ -522,6 +523,20 @@ void command_interpreter(struct char_data *ch, char *argument)
        !strncmp(complete_cmd_info[cmd].command, arg, length))
       if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
         break;
+
+  /* A zdelete report stands for exactly one command. Every command other than
+   * zdelete itself cancels it here; zdelete cannot be cancelled here, because
+   * that would cancel the confirmation it exists to allow, so do_zdelete ends
+   * its own report on every path but a fresh one. Between the two, a
+   * confirmation can only ever land on the zone the operator was looking at
+   * when they typed it. */
+  if (ch->desc && ch->desc->zdelete_armed &&
+      (*complete_cmd_info[cmd].command == '\n' ||
+       complete_cmd_info[cmd].command_pointer != do_zdelete)) {
+    ch->desc->zdelete_armed = FALSE;
+    send_to_char(ch, "The pending deletion of zone %d is cancelled.\r\n",
+                 ch->desc->zdelete_zone);
+  }
 
   /* it's not a 'real' command, so it's a social */
 
