@@ -33,6 +33,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ban.h"
+#include "spec_procs.h"
 #include "screen.h"
 
 /* local utility functions with file scope */
@@ -797,10 +798,10 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
 
     send_to_char(ch, "Created: [%s], Last Logon: [%s]\r\n", buf1, buf2);
 
-    send_to_char(ch, "Played: [%dh %dm], Age: [%d], STL[%d]/per[%d]/NSTL[%d]",
+    send_to_char(ch, "Played: [%dh %dm], Age: [%d], Prac: [%d] (+%d/lvl, %d%%/prac)",
             k->player.time.played / 3600, (k->player.time.played % 3600) / 60,
-            age(k)->year, GET_PRACTICES(k), int_app[GET_INT(k)].learn,
-	    wis_app[GET_WIS(k)].bonus);
+            age(k)->year, GET_PRACTICES(k), practices_per_level(k),
+            practice_gain_percent(k));
     /* Display OLC zone for immorts. */
     if (GET_LEVEL(k) >= LVL_BUILDER) {
       if (GET_OLC_ZONE(k)==AEDIT_PERMISSION)
