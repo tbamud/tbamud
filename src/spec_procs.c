@@ -96,6 +96,16 @@ static const char *prac_types[] = {
 #define MAXGAIN(ch) (prac_params[MAX_PER_PRAC][(int)GET_CLASS(ch)])
 #define SPLSKL(ch) (prac_types[prac_params[PRAC_TYPE][(int)GET_CLASS(ch)]])
 
+/* How far one practice session moves a skill, in percentage points.
+ * Intelligence sets the figure and the class bounds it: a warrior gains twelve
+ * however clever he is, and a caster twenty-five however dull. Exposed so that
+ * anything reporting the number to a player reports what practising will
+ * actually give them. */
+int practice_gain_percent(struct char_data *ch)
+{
+  return MIN(MAXGAIN(ch), MAX(MINGAIN(ch), int_app[GET_INT(ch)].learn));
+}
+
 void list_skills(struct char_data *ch)
 {
   const char *overflow = "\r\n**OVERFLOW**\r\n";
@@ -155,7 +165,7 @@ SPECIAL(guild)
   GET_PRACTICES(ch)--;
 
   percent = GET_SKILL(ch, skill_num);
-  percent += MIN(MAXGAIN(ch), MAX(MINGAIN(ch), int_app[GET_INT(ch)].learn));
+  percent += practice_gain_percent(ch);
 
   SET_SKILL(ch, skill_num, MIN(LEARNED(ch), percent));
 

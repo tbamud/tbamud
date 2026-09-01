@@ -1457,6 +1457,19 @@ void do_start(struct char_data *ch)
     SET_BIT_AR(PLR_FLAGS(ch), PLR_SITEOK);
 }
 
+/* Practice sessions gained on reaching a new level. Wisdom sets the figure and
+ * the class bounds it: a caster never gains fewer than two, and everyone else
+ * gains one or two however wise they are, so wisdom past 12 buys a warrior
+ * nothing. Exposed so that anything reporting the number to a player reports
+ * what levelling will actually give them. */
+int practices_per_level(struct char_data *ch)
+{
+  if (IS_MAGIC_USER(ch) || IS_CLERIC(ch))
+    return MAX(2, wis_app[GET_WIS(ch)].bonus);
+
+  return MIN(2, MAX(1, wis_app[GET_WIS(ch)].bonus));
+}
+
 /* This function controls the change to maxmove, maxmana, and maxhp for each
  * class every time they gain a level. */
 void advance_level(struct char_data *ch)
@@ -1500,10 +1513,7 @@ void advance_level(struct char_data *ch)
   if (GET_LEVEL(ch) > 1)
     ch->points.max_mana += add_mana;
 
-  if (IS_MAGIC_USER(ch) || IS_CLERIC(ch))
-    GET_PRACTICES(ch) += MAX(2, wis_app[GET_WIS(ch)].bonus);
-  else
-    GET_PRACTICES(ch) += MIN(2, MAX(1, wis_app[GET_WIS(ch)].bonus));
+  GET_PRACTICES(ch) += practices_per_level(ch);
 
   if (GET_LEVEL(ch) >= LVL_IMMORT) {
     for (i = 0; i < 3; i++)
