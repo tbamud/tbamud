@@ -23,6 +23,7 @@
 #include "mud_event.h"
 #include "mail.h"         /**< For the has_mail function */
 #include "act.h"
+#include "oasis.h"
 #include "class.h"
 #include "fight.h"
 #include "modify.h"
@@ -941,8 +942,12 @@ ACMD(do_score)
     else
       send_to_char(ch, "%sPOOFOUT: %s%s disappears in a puff of smoke.%s\r\n", QYEL, QCYN, GET_NAME(ch), QNRM);
 
-    send_to_char(ch, "Your current zone: %s%d%s\r\n", CCCYN(ch, C_NRM), GET_OLC_ZONE(ch),
- CCNRM(ch, C_NRM));
+    if (GET_LEVEL(ch) >= LVL_BUILDER) {
+      char olcbuf[MAX_INPUT_LENGTH];
+
+      sprint_olc_access(ch, olcbuf, sizeof(olcbuf));
+      send_to_char(ch, "Your OLC access: [%s%s%s]\r\n", CCCYN(ch, C_NRM), olcbuf, CCNRM(ch, C_NRM));
+    }
   }
 }
 

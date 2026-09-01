@@ -24,6 +24,8 @@
 #define HEDIT_PERMISSION  888  /* arbitrary number higher then max zone vnum*/
 #define ALL_PERMISSION    666  /* arbitrary number higher then max zone vnum*/
 
+void sprint_olc_access(struct char_data *ch, char *buf, size_t buflen);
+
 /* Macros, defines, structs and globals for the OLC suite.  You will need
    to adjust these numbers if you ever add more. Note: Most of the NUM_ and
    MAX_ limits have been moved to more appropriate locations. */

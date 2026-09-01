@@ -309,6 +309,23 @@ static void free_config(struct config_data *data)
   free(data);
 }
 
+void sprint_olc_access(struct char_data *ch, char *buf, size_t buflen)
+{
+  if (!buflen)
+    return;
+
+  if (GET_OLC_ZONE(ch) == AEDIT_PERMISSION)
+    strlcpy(buf, "Aedit", buflen);
+  else if (GET_OLC_ZONE(ch) == HEDIT_PERMISSION)
+    strlcpy(buf, "Hedit", buflen);
+  else if (GET_OLC_ZONE(ch) == ALL_PERMISSION)
+    strlcpy(buf, "All", buflen);
+  else if (GET_OLC_ZONE(ch) == NOWHERE)
+    strlcpy(buf, "OFF", buflen);
+  else
+    snprintf(buf, buflen, "%d", GET_OLC_ZONE(ch));
+}
+
 /* Checks to see if a builder can modify the specified zone. Ch is the imm
  * requesting access to modify this zone. Rnum is the real number of the zone
  * attempted to be modified. Returns TRUE if the builder has access, otherwisei
