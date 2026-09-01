@@ -84,7 +84,23 @@ ACMD(do_oasis_hedit)
   
   OLC_ZNUM(d) = search_help(OLC_STORAGE(d), LVL_IMPL);
 
-  if (help_table[OLC_ZNUM(d)].duplicate) {
+  /* Bound the row before reading it. search_help() answers NOWHERE whenever
+   * the keyword has no entry, which is every `hedit <something new>` -- the
+   * ordinary way to create one -- and NOWHERE is an unsigned 65535, so the
+   * read lands 2MB from the base of the table (65535 rows of 32 bytes), well
+   * past the end of it.
+   *
+   * What that costs depends on the build. Under a sanitiser it is a reliable
+   * SEGV. On a plain build the address has so far always been mapped, and
+   * what comes back is garbage: measured once as duplicate = 593, non-zero,
+   * which sends the loop below scanning every row for an entry pointer that
+   * came from nowhere. That one had a NULL entry so nothing matched, but a
+   * value that collided with a live row would open an unrelated help file.
+   *
+   * `< top_of_helpt` rather than `!= NOWHERE`: search_help can only answer
+   * NOWHERE or an in-range row, so the two are equivalent today, but a bound
+   * stays right if that ever stops being true. */
+  if (OLC_ZNUM(d) < top_of_helpt && help_table[OLC_ZNUM(d)].duplicate) {
     for (i = 0; i < top_of_helpt; i++)
       if (help_table[i].duplicate == 0 && help_table[i].entry == help_table[OLC_ZNUM(d)].entry) {
         OLC_ZNUM(d) = i;
