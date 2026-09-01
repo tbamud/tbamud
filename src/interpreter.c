@@ -363,6 +363,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zunlock"  , "zunlock" , POS_DEAD    , do_zunlock  , LVL_GOD, 0 },
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_BUILDER, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
+  { "zdelete"  , "zdelete" , POS_DEAD    , do_zdelete  , LVL_IMPL, 0 },
 
   { "\n", "zzzzzzz", 0, 0, 0, 0 } };    /* this must be last */
 

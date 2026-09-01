@@ -165,6 +165,23 @@ void free_ex_descriptions(struct extra_descr_data *head)
   }
 }
 
+/* Forget every pending save for a zone, quietly -- remove_from_save_list
+ * complains when an item is absent, and most of a zone's types never have one.
+ * Used when a zone leaves the world: an edit still sitting in the list would
+ * write its files back, and save_shops and save_quests would re-index them. */
+void drop_zone_saves(zone_vnum zone)
+{
+  struct save_list_data *item, *next_item, *temp;
+
+  for (item = save_list; item; item = next_item) {
+    next_item = item->next;
+    if (item->zone != zone)
+      continue;
+    REMOVE_FROM_LIST(item, save_list, next);
+    free(item);
+  }
+}
+
 int remove_from_save_list(zone_vnum zone, int type)
 {
   struct save_list_data *ritem, *temp;
