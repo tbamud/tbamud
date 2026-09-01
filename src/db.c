@@ -3495,7 +3495,9 @@ void clear_object(struct obj_data *obj)
 
   obj->item_number = NOTHING;
   IN_ROOM(obj) = NOWHERE;
-  obj->worn_on = NOWHERE;
+  /* A wear slot, not a room.  NOWHERE only became the -1 that unequip_char()
+   * uses because converting 65535 to sh_int yields -1. */
+  obj->worn_on = -1;
 }
 
 /* Called during character creation after picking character class (and then
