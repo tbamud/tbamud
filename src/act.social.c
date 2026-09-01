@@ -19,6 +19,9 @@
 #include "screen.h"
 #include "spells.h"
 #include "act.h"
+#include "shop.h"
+#include "spec_procs.h"
+#include "quest.h"
 
 /* local defined functions for local use */
 /* do_action and do_gmote utility function */
@@ -153,6 +156,25 @@ void create_command_list(void)
   }
 	complete_cmd_info[k] = cmd_info[i];
   log("Command info rebuilt, %d total commands.", k);
+
+  /* Every index into the table just moved. Anything holding one has to take
+   * it again -- a stale index still names a command, just the wrong one, so
+   * nothing reports an error. Deleting a social sorted before "slap" used to
+   * leave a caught thief being handed his slippers by the baker instead of
+   * being slapped, until the next reboot; adding one moved it the other way.
+   * These are cheap and only run when the table is rebuilt, which is boot
+   * and aedit. */
+  assign_shop_command_indices();
+  assign_mobact_command_indices();
+  assign_spec_command_indices();
+  assign_quest_command_indices();
+
+  /* cmd_sort_info indexes this table and is sized from it, so it belongs
+   * here rather than with each caller in turn. A caller that rebuilds the
+   * table and forgets to re-sort leaves do_commands() and do_wizhelp()
+   * reading an order that is stale and -- once a social has been added --
+   * shorter than the table it indexes. */
+  sort_commands();
 }
 
 void free_command_list(void)

@@ -84,6 +84,7 @@ struct aq_data {
 /* Implemented in quest.c */
 void destroy_quests(void);
 void assign_the_quests(void);
+void assign_quest_command_indices(void);
 void parse_quest(FILE *quest_f, int nr);
 int  count_quests(qst_vnum low, qst_vnum high);
 void list_quests(struct char_data *ch, zone_rnum zone, qst_vnum vmin, qst_vnum vmax);

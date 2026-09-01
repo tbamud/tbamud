@@ -750,8 +750,7 @@ void boot_db(void)
   log("Assigning spell and skill levels.");
   init_spell_levels();
 
-  log("Sorting command list and spells.");
-  sort_commands();
+  log("Sorting spells.");
   sort_spells();
 
   log("Booting mail system.");

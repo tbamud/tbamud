@@ -1240,15 +1240,25 @@ void boot_the_shops(FILE *shop_f, char *filename, int rec_count)
   }
 }
 
-void assign_the_shopkeepers(void)
+/* The merged command table is rebuilt from scratch whenever a social is
+ * added or removed, and every index into it moves with it. The values
+ * below are indices into that table, handed straight to do_action(), so
+ * they have to be taken again each time it is rebuilt rather than once at
+ * boot. create_command_list() calls this; see the note there. */
+void assign_shop_command_indices(void)
 {
-  int cindex;
-
   cmd_say = find_command("say");
   cmd_tell = find_command("tell");
   cmd_emote = find_command("emote");
   cmd_slap = find_command("slap");
   cmd_puke = find_command("puke");
+}
+
+void assign_the_shopkeepers(void)
+{
+  int cindex;
+
+  assign_shop_command_indices();
 
   for (cindex = 0; cindex <= top_shop; cindex++) {
     if (SHOP_KEEPER(cindex) == NOBODY)

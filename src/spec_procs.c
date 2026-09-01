@@ -132,6 +132,18 @@ void list_skills(struct char_data *ch)
   page_string(ch->desc, buf2, TRUE);
 }
 
+static int spit_social;
+
+/* The merged command table is rebuilt from scratch whenever a social is
+ * added or removed, and every index into it moves with it. The values
+ * below are indices into that table, handed straight to do_action(), so
+ * they have to be taken again each time it is rebuilt rather than once at
+ * boot. create_command_list() calls this; see the note there. */
+void assign_spec_command_indices(void)
+{
+  spit_social = find_command("spit");
+}
+
 SPECIAL(guild)
 {
   int skill_num, percent;
@@ -584,8 +596,6 @@ SPECIAL(cityguard)
 
   /* Reward the socially inept. */
   if (spittle && !rand_number(0, 9)) {
-    static int spit_social;
-
     if (!spit_social)
       spit_social = find_command("spit");
 

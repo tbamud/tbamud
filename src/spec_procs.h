@@ -52,4 +52,6 @@ SPECIAL(cityguard);
 SPECIAL(pet_shops);
 SPECIAL(bank);
 
+void assign_spec_command_indices(void);
+
 #endif /* _SPEC_PROCS_H_ */
