@@ -27,6 +27,7 @@
 #include "quest.h"
 #include "ibt.h"
 #include "msgedit.h"
+#include "constants.h" /* for connected_types */
 
 /* Global variables defined here, used elsewhere */
 const char *nrm, *grn, *cyn, *yel;
@@ -194,23 +195,82 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   /* Restore descriptor playing status. */
   if (d->character) {
     REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
-    act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
-    if (cleanup_type == CLEANUP_CONFIG)
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), 
-        TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
-    else if (STATE(d) == CON_TEDIT)
-      mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
-       TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
-    else if (STATE(d) == CON_HEDIT)
-      mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
-       TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
-    else
-      mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
-        TRUE, "OLC: %s stops editing zone %d allowed zone %d", 
-        GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
+    /* Only a descriptor that actually entered an editor should announce
+     * leaving one.  dig, buildwalk and the copy commands borrow an
+     * oasis_olc_data so that an editor's save function can do the
+     * insertion for them and never touch STATE, so without this they told
+     * the room "$n stops using OLC." and logged "stops editing zone N" for
+     * a session that never started.  All three log what they really did
+     * instead. */
+    if (STATE(d) != CON_PLAYING) {
+      act("$n stops using OLC.", TRUE, d->character, NULL, NULL, TO_ROOM);
 
-    STATE(d) = CON_PLAYING;
+      if (cleanup_type == CLEANUP_CONFIG)
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), 
+          TRUE, "OLC: %s stops editing the game configuration", GET_NAME(d->character));
+      else if (STATE(d) == CON_TEDIT)
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing text files.", GET_NAME(d->character));
+      else if (STATE(d) == CON_HEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing help files.", GET_NAME(d->character));
+      /* aedit reuses OLC_ZNUM as the SOCIAL index, so the zone_table lookup
+       * below reads a random zone -- or past the table, since there are far
+       * more socials than zones.  It logs what it was really editing. */
+      else if (STATE(d) == CON_AEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing actions.", GET_NAME(d->character));
+      /* aedit is not the only editor whose OLC_ZNUM is not a zone. Four
+       * reach this line holding something else, and three of them are
+       * still to go. msgedit and prefedit never write the field, so they
+       * report zone_table[0] whatever the builder was doing. ibtedit does
+       * write it, but as a dirty flag -- 0 or 1, set at ibt.c:828 and
+       * 1064/1077/1143 and read back at 1028 -- so once anything has
+       * changed it reports zone_table[1] instead. In range, and never once
+       * true.
+       *
+       * They say what they were editing. The wording is this function's
+       * own rather than an echo of each entry line: prefedit logs nothing
+       * at all on the way in, and msgedit and ibtedit name the individual
+       * record, which is not what is being left. */
+      else if (STATE(d) == CON_MSGEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing messages.", GET_NAME(d->character));
+      else if (STATE(d) == CON_PREFEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing preferences.", GET_NAME(d->character));
+      else if (STATE(d) == CON_IBTEDIT)
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "OLC: %s stops editing ideas, bugs and typos.", GET_NAME(d->character));
+      /* Nothing reaches this today, and two things have to hold for that.
+       * Every state left sets OLC_ZNUM from real_zone() or
+       * real_zone_by_thing() and refuses to open when that answers NOWHERE.
+       * And the callers that arrive still in CON_PLAYING are covered by the
+       * STATE(d) != CON_PLAYING guard above -- which is what closes
+       * aedit.c:95, where cleanup_olc is called with OLC_ZNUM at
+       * top_of_socialt + 1 nine lines before STATE is set to CON_AEDIT. The
+       * CON_AEDIT branch above would not have caught that one; this bound
+       * did, before the guard was in front of it.
+       *
+       * It stays so that the next editor to keep something else in that
+       * field gets a line naming itself rather than a read off the end of
+       * the table. `>` and not `>=`: top_of_zone_table is a last index,
+       * not a count. NOWHERE needs no test of its own -- it is 65535, and
+       * a table with a higher last index than that would have an rnum
+       * colliding with NOWHERE, which breaks far more than this line. */
+      else if (OLC_ZNUM(d) > top_of_zone_table)
+        mudlog(BRF, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+         TRUE, "SYSERR: cleanup_olc: %s left %d in OLC_ZNUM while in %s, "
+               "which is not a zone.", GET_NAME(d->character),
+               OLC_ZNUM(d), connected_types[STATE(d)]);
+      else
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)),
+          TRUE, "OLC: %s stops editing zone %d allowed zone %d", 
+          GET_NAME(d->character), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(d->character));
+
+      STATE(d) = CON_PLAYING;
+    }
   }
 
   free(d->olc);

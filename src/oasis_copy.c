@@ -143,6 +143,10 @@ ACMD(do_oasis_copy)
   (*oasis_copy_info[i].setup_existing)(d, src_rnum);
   (*oasis_copy_info[i].save_func)(d);
 
+  mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+    "OLC: %s copies %s %d to %d", GET_NAME(ch), oasis_copy_info[i].text,
+    src_vnum, dst_vnum);
+
   /* Currently CLEANUP_ALL should be used for everything. */
   cleanup_olc(d, CLEANUP_ALL);
   send_to_char(ch, "Done.\r\n");
@@ -259,6 +263,9 @@ ACMD(do_dig)
     OLC_VAL(d) = 0;
 
     send_to_char(ch, "New room (%d) created.\r\n", rvnum);
+    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+      "OLC: %s digs room %d %s of room %d", GET_NAME(ch), rvnum, dirs[dir],
+      GET_ROOM_VNUM(IN_ROOM(ch)));
     cleanup_olc(d, CLEANUP_ALL);
     /* Update rrnum to the correct room rnum after adding the room. */
     rrnum = real_room(rvnum);
@@ -358,6 +365,8 @@ int buildwalk(struct char_data *ch, int dir)
 
       /* Report room creation to user */
       send_to_char(ch, "%sRoom #%d created by BuildWalk.%s\r\n", yel, vnum, nrm);
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "OLC: %s creates room %d with buildwalk", GET_NAME(ch), vnum);
       cleanup_olc(d, CLEANUP_STRUCTS);
 
       return (1);
