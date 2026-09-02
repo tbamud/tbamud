@@ -71,10 +71,29 @@ int parse_class(char arg)
  * the limit of your bitvector_t, typically 0-31. */
 bitvector_t find_class_bitvector(const char *arg)
 {
-  size_t rpos, ret = 0;
+  size_t rpos, len = strlen(arg);
+  bitvector_t ret = 0;
 
-  for (rpos = 0; rpos < strlen(arg); rpos++)
-    ret |= (1 << parse_class(arg[rpos]));
+  for (rpos = 0; rpos < len; rpos++) {
+    int chclass = parse_class(arg[rpos]);
+
+    /* parse_class() answers CLASS_UNDEFINED (-1) for a letter that names no
+     * class, and shifting by a negative count is undefined.  The compilers
+     * this has been built with mask the count and set bit 31, which no real
+     * class uses -- so `who -c x` and `users -c x` list nobody.  That is the
+     * sensible answer; keep it, with a bit that is actually reserved for it
+     * rather than one the shift happened to land on.
+     *
+     * The shift operand is bitvector_t, not int: `1` is an int, so
+     * `1 << chclass` is undefined once a MUD has 31 classes -- the same
+     * fault as the negative count above, waiting at the other end of the
+     * range.  The header comment invites exactly that ("up to the limit of
+     * your bitvector_t"), so make the type match the promise. */
+    if (chclass == CLASS_UNDEFINED)
+      ret |= CLASS_BIT_UNKNOWN;
+    else
+      ret |= ((bitvector_t)1 << chclass);
+  }
 
   return (ret);
 }

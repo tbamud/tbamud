@@ -1027,6 +1027,20 @@ static int add_to_shop_list(struct shop_buy_data *list, int type, int *len, int 
     if (*len < MAX_SHOP_OBJ) {
       if (type == LIST_PRODUCE)
 	*val = real_object(*val);
+      else if (type == LIST_TRADE && (*val < 0 || *val >= NUM_ITEM_TYPES)) {
+	/* A trade entry names an item type, but both readers fall through to a
+	 * bare %d when the line does not match one of the names, so a .shp file
+	 * can put any number here -- a negative one included: read_type_list()
+	 * hands the terminating value to this function before it tests it, and
+	 * the old-format reader never tests it at all.  list_detailed_shop() and
+	 * sedit's trade menu then index item_types[] with it, and with unsigned
+	 * NOTHING a negative type reads before the table rather than past it.
+	 * Drop the entry rather than keep a
+	 * type nothing can be: NOTHING is what the loop below already does with
+	 * a value it cannot use. */
+	log("SYSERR: Shop file lists unknown item type %d, dropping it.", *val);
+	*val = NOTHING;
+      }
       if (*val != NOTHING) {
 	BUY_TYPE(list[*len]) = *val;
 	BUY_WORD(list[(*len)++]) = NULL;
@@ -1124,6 +1138,12 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
       ptr++;
     while (isspace(*(END_OF(ptr) - 1)))
       *(END_OF(ptr) - 1) = '\0';
+    /* The -1 terminator is not an entry.  It used to be handed to
+     * add_to_shop_list() regardless, which with unsigned NOTHING stored it
+     * as a trade type of -1; add_to_shop_list() now rejects a negative
+     * type, so stop here instead of logging the terminator as an error. */
+    if (num < 0)
+      break;
     error += add_to_shop_list(list, LIST_TRADE, &len, &num);
     if (*ptr)
       BUY_WORD(list[len - 1]) = strdup(ptr);

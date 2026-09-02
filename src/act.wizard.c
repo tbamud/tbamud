@@ -524,6 +524,27 @@ static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
 }
 #undef ZOCMD
 
+/* snprintf() answers the length it WOULD have written, not the length it
+ * wrote.  The column trackers in the listings below add that answer to a
+ * running width and wrap the line at 62, so taking it at face value walks
+ * the width past what the character actually received and the wrap fires
+ * early -- the same class of mistake as adding send_to_char()'s return
+ * value, which is what these lists used to do.  Report the bytes the buffer
+ * really holds.
+ *
+ * The buffers stay MAX_INPUT_LENGTH: 512 characters is far more than a name
+ * or a short description needs, and the clamp means that if one ever did
+ * overrun, the width stays honest about what was sent rather than silently
+ * drifting. */
+static int stored_len(int written, size_t bufsize)
+{
+  if (written < 0)
+    return 0;
+  if ((size_t)written >= bufsize)
+    return (int)bufsize - 1;
+  return written;
+}
+
 static void do_stat_room(struct char_data *ch, struct room_data *rm)
 {
   char buf2[MAX_STRING_LENGTH];
@@ -557,8 +578,12 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
     if (!CAN_SEE(ch, k))
       continue;
 
-    column += send_to_char(ch, "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
-		!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB"));
+    {
+      char lbuf[MAX_INPUT_LENGTH];
+      column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
+		!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")), sizeof(lbuf));
+      send_to_char(ch, "%s", lbuf);
+    }
     if (column >= 62) {
       send_to_char(ch, "%s\r\n", k->next_in_room ? "," : "");
       found = FALSE;
@@ -566,6 +591,8 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
     }
   }
   send_to_char(ch, "%s", CCNRM(ch, C_NRM));
+  if (column != 0)
+    send_to_char(ch, "\r\n");
 
   if (rm->contents) {
     send_to_char(ch, "Contents:%s", CCGRN(ch, C_NRM));
@@ -575,7 +602,11 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
       if (!CAN_SEE_OBJ(ch, j))
 	continue;
 
-      column += send_to_char(ch, "%s %s", found++ ? "," : "", j->short_description);
+      {
+        char lbuf[MAX_INPUT_LENGTH];
+        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j->short_description), sizeof(lbuf));
+        send_to_char(ch, "%s", lbuf);
+      }
       if (column >= 62) {
 	send_to_char(ch, "%s\r\n", j->next_content ? "," : "");
 	found = FALSE;
@@ -583,6 +614,8 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
       }
     }
     send_to_char(ch, "%s", CCNRM(ch, C_NRM));
+    if (column != 0)
+      send_to_char(ch, "\r\n");
   }
 
   for (i = 0; i < DIR_COUNT; i++) {
@@ -736,7 +769,11 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
     column = 9;	/* ^^^ strlen ^^^ */
 
     for (found = 0, j2 = j->contains; j2; j2 = j2->next_content) {
-      column += send_to_char(ch, "%s %s", found++ ? "," : "", j2->short_description);
+      {
+        char lbuf[MAX_INPUT_LENGTH];
+        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j2->short_description), sizeof(lbuf));
+        send_to_char(ch, "%s", lbuf);
+      }
       if (column >= 62) {
 	send_to_char(ch, "%s\r\n", j2->next_content ? "," : "");
 	found = FALSE;
@@ -744,6 +781,8 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
       }
     }
     send_to_char(ch, "%s", CCNRM(ch, C_NRM));
+    if (column != 0)
+      send_to_char(ch, "\r\n");
   }
 
   found = FALSE;
@@ -886,12 +925,17 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
   if (!IS_NPC(k))
     send_to_char(ch, "Hunger: %d, Thirst: %d, Drunk: %d\r\n", GET_COND(k, HUNGER), GET_COND(k, THIRST), GET_COND(k, DRUNK));
 
-  column = send_to_char(ch, "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>");
+  column = stored_len(snprintf(buf, sizeof(buf), "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>"), sizeof(buf));
+  send_to_char(ch, "%s", buf);
   if (!k->followers)
     send_to_char(ch, " <none>\r\n");
   else {
     for (fol = k->followers; fol; fol = fol->next) {
-      column += send_to_char(ch, "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
+      {
+        char lbuf[MAX_INPUT_LENGTH];
+        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", PERS(fol->follower, ch)), sizeof(lbuf));
+        send_to_char(ch, "%s", lbuf);
+      }
       if (column >= 62) {
         send_to_char(ch, "%s\r\n", fol->next ? "," : "");
         found = FALSE;
@@ -2666,7 +2710,7 @@ ACMD(do_show)
 	j, top_of_mobt + 1,
 	k, top_of_objt + 1,
 	top_of_world + 1, top_of_zone_table + 1,
-	top_of_trigt + 1, top_shop + 1,
+	top_of_trigt, top_shop + 1,
 	buf_largecount, total_quests,
 	buf_switches, buf_overflows, global_lists->iSize
 	);
