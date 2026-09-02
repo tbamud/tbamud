@@ -230,14 +230,16 @@ int has_mail(long recipient)
   return FALSE;
 }
 
-/* void store_mail(long #1, long #2, char * #3)
+/* int store_mail(long #1, long #2, char * #3)
  * #1 - id number of the person to mail to.
  * #2 - id number of the person the mail is from.
  * #3 - The actual message to send.
  *
  * call store_mail to store mail.  (hard, huh? :-) )  Pass 3 arguments:
  * who the mail is to (long), who it's from (long), and a pointer to the
- * actual message text (char *). */
+ * actual message text (char *).  Returns TRUE once the record is written,
+ * flushed and closed, FALSE if any of that failed and the letter is not
+ * safely in the spool. */
 int store_mail(long to, long from, char *message_pointer)
 {
   FILE *mail_file;
