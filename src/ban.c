@@ -41,9 +41,10 @@ static const char *ban_types[] = {
 void load_banned(void)
 {
   FILE *fl;
-  int i, date;
+  int i, date, c;
   char site_name[BANNED_SITE_LENGTH + 1], ban_type[100];
   char name[MAX_NAME_LENGTH + 1];
+  char line[READ_SIZE], extra;
   struct ban_list_element *next_node;
 
   ban_list = 0;
@@ -55,7 +56,26 @@ void load_banned(void)
       log("   Ban file '%s' doesn't exist.", BAN_FILE);
     return;
   }
-  while (fscanf(fl, " %s %s %d %s ", ban_type, site_name, &date, name) == 4) {
+  while (fgets(line, sizeof(line), fl)) {
+    if (!strchr(line, '\n')) {
+      c = fgetc(fl);
+      if (c != EOF) {
+        while (c != '\n' && c != EOF)
+          c = fgetc(fl);
+        log("SYSERR: Ban file '%s': record longer than %d characters discarded.", BAN_FILE, READ_SIZE - 1);
+        continue;
+      }
+    }
+
+    /* Field widths match ban_type[100], site_name[BANNED_SITE_LENGTH + 1] and
+     * name[MAX_NAME_LENGTH + 1]; the trailing %c rejects lines with extra fields. */
+    if (sscanf(line, " %99s %50s %d %20s %c", ban_type, site_name, &date, name, &extra) != 4) {
+      if (sscanf(line, " %c", &extra) == 1) {
+        line[strcspn(line, "\r\n")] = '\0';
+        log("SYSERR: Ban file '%s': malformed record skipped: %s", BAN_FILE, line);
+      }
+      continue;
+    }
     CREATE(next_node, struct ban_list_element, 1);
     strncpy(next_node->site, site_name, BANNED_SITE_LENGTH);	/* strncpy: OK (n_n->site:BANNED_SITE_LENGTH+1) */
     next_node->site[BANNED_SITE_LENGTH] = '\0';
