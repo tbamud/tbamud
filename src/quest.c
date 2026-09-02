@@ -582,7 +582,7 @@ static void quest_join(struct char_data *ch, struct char_data *qm, char argument
 void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_INPUT_LENGTH])
 {
   qst_vnum vnum;
-  qst_rnum rnum;
+  qst_rnum rnum, prev;
 
   if ((vnum = find_quest_by_qmnum(ch, GET_MOB_VNUM(qm), atoi(argument))) == NOTHING)
     send_to_char(ch, "That is not a valid quest!\r\n");
@@ -593,9 +593,19 @@ void quest_list(struct char_data *ch, struct char_data *qm, char argument[MAX_IN
                       vnum,
          QST_DESC(rnum),
          QST_INFO(rnum));
-    if (QST_PREV(rnum) != NOTHING)
-      send_to_char(ch, "You have to have completed quest %s first.\r\n",
-          QST_NAME(real_quest(QST_PREV(rnum))));
+    if (QST_PREV(rnum) != NOTHING) {
+      /* Holding a vnum and that vnum still resolving are two different
+       * things.  Deleting a quest leaves every quest that named it as a
+       * prerequisite holding a link real_quest() now answers NOTHING for,
+       * and QST_NAME() is a bare aquest_table[i], so the read is
+       * aquest_table[65535].name.  quest_stat() guards the same dangling
+       * link on the immortal side; this is the one a mortal reaches. */
+      if ((prev = real_quest(QST_PREV(rnum))) == NOTHING)
+        send_to_char(ch, "You have to have completed an unknown quest first.\r\n");
+      else
+        send_to_char(ch, "You have to have completed quest %s first.\r\n",
+            QST_NAME(prev));
+    }
     if (QST_TIME(rnum) != -1)
       send_to_char(ch,
          "There is a time limit of %d turn%s to complete the quest.\r\n",
@@ -733,7 +743,7 @@ static void quest_stat(struct char_data *ch, char *argument)
  (QST_QUIT(rnum) &&
   (str_cmp(QST_QUIT(rnum), "undefined") != 0)
           ? QST_QUIT(rnum) : "Nothing\r\n"),
-     quest_types[QST_TYPE(rnum)],
+     QST_TYPE_NAME(QST_TYPE(rnum)),
  QST_TARGET(rnum) == NOBODY ? -1 : QST_TARGET(rnum),
  targetname,
  QST_QUANTITY(rnum),
@@ -756,18 +766,23 @@ static void quest_stat(struct char_data *ch, char *argument)
    QST_TIME(rnum) == 1 ? "" : "s");
     else
       send_to_char(ch, "Limit : There is no time limit on this quest.\r\n");
+    /* A chain link can outlive what it points at: deleting a quest leaves
+     * every quest that named it holding a vnum real_quest() answers NOTHING
+     * for, and QST_DESC(NOTHING) reads aquest_table[65535]. */
     send_to_char(ch, "Prior :");
     if (QST_PREV(rnum) == NOTHING)
       send_to_char(ch, " \tyNone.\tn\r\n");
     else
       send_to_char(ch, " [\ty%5d\tn] \tc%s\tn\r\n",
-        QST_PREV(rnum), QST_DESC(real_quest(QST_PREV(rnum))));
+        QST_PREV(rnum), real_quest(QST_PREV(rnum)) == NOTHING ?
+          "an unknown quest" : QST_DESC(real_quest(QST_PREV(rnum))));
     send_to_char(ch, "Next  :");
     if (QST_NEXT(rnum) == NOTHING)
       send_to_char(ch, " \tyNone.\tn\r\n");
     else
       send_to_char(ch, " [\ty%5d\tn] \tc%s\tn\r\n",
-        QST_NEXT(rnum), QST_DESC(real_quest(QST_NEXT(rnum))));
+        QST_NEXT(rnum), real_quest(QST_NEXT(rnum)) == NOTHING ?
+          "an unknown quest" : QST_DESC(real_quest(QST_NEXT(rnum))));
   }
 }
 
