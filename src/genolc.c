@@ -695,11 +695,26 @@ static int export_archive(const char *filename, const struct export_fmt *fmt)
       ok = FALSE;
       break;
     }
-    fseek(fp, 0, SEEK_END);
-    size = ftell(fp);
-    fseek(fp, 0, SEEK_SET);
+    /* ftell() answers -1 on failure, and handed to CREATE() as a size that
+     * is a request for the whole address space; a short read would package
+     * a truncated member and say nothing.  Neither is a file worth sending. */
+    if (fseek(fp, 0, SEEK_END) != 0 || (size = ftell(fp)) < 0 ||
+        fseek(fp, 0, SEEK_SET) != 0) {
+      mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_archive: cannot size %s: %s",
+             member_path, strerror(errno));
+      fclose(fp);
+      ok = FALSE;
+      break;
+    }
     CREATE(bodies[count], unsigned char, size ? size : 1);
     members[count].len = fread(bodies[count], 1, size, fp);
+    if (members[count].len != (size_t) size || ferror(fp)) {
+      mudlog(BRF, LVL_GOD, TRUE, "SYSERR: export_archive: short read on %s", member_path);
+      fclose(fp);
+      free(bodies[count]);
+      ok = FALSE;
+      break;
+    }
     fclose(fp);
 
     snprintf(member_path, sizeof(member_path), "%s.%s", fmt->stem, parts[i]);
