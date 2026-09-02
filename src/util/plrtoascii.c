@@ -182,11 +182,16 @@ void convert(char *filename)
        * the next name -- silently duplicating a character.  Separate the
        * two: end of file is how this loop has always finished, an error is
        * not, and neither may continue with a stale struct. */
-      if (ferror(fl))
+      int failed = ferror(fl);
+
+      if (failed)
         perror("error reading playerfile");
       fclose(fl);
       fclose(index_file);
-      exit(1);
+      /* End of file is how a conversion finishes, and it used to exit 1 all
+       * the same, so a script could not tell a converted playerfile from a
+       * failed one.  Only a read error is a failure. */
+      exit(failed ? 1 : 0);
     }
 
     if (!plr_filename(player.name, outname))
