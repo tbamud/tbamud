@@ -2743,7 +2743,7 @@ ACMD(do_areas)
     page_string(ch->desc, buf, TRUE);
 }
 
-static void list_scanned_chars(struct char_data * list, struct char_data * ch, int
+static bool list_scanned_chars(struct char_data * list, struct char_data * ch, int
 distance, int door)
 {
   char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH - 1];
@@ -2770,7 +2770,7 @@ distance, int door)
      count++;
 
   if (!count)
-    return;
+    return (FALSE);
 
   for (i = list; i; i = i->next_in_room) {
 
@@ -2795,6 +2795,7 @@ distance, int door)
 
   }
   send_to_char(ch, "%s", buf);
+  return (TRUE);
 }
 
 ACMD(do_scan)
@@ -2825,10 +2826,9 @@ ACMD(do_scan)
             send_to_char(ch, "%s: It is too dark to see anything.\r\n", dirs[door]);
           found=TRUE;
         } else {
-          if (world[scanned_room].people) {
-            list_scanned_chars(world[scanned_room].people, ch, range - 1, door);
+          if (world[scanned_room].people &&
+              list_scanned_chars(world[scanned_room].people, ch, range - 1, door))
             found=TRUE;
-          }
         }
       }                  // end of if
       else
