@@ -214,7 +214,7 @@ static void make_corpse(struct char_data *ch)
   SET_BIT_AR(GET_OBJ_EXTRA(corpse), ITEM_NODONATE);
   GET_OBJ_VAL(corpse, 0) = 0;	/* You can't store stuff in a corpse */
   GET_OBJ_VAL(corpse, 3) = 1;	/* corpse identifier */
-  GET_OBJ_WEIGHT(corpse) = GET_WEIGHT(ch) + IS_CARRYING_W(ch);
+  GET_OBJ_WEIGHT(corpse) = GET_WEIGHT(ch);
   GET_OBJ_RENT(corpse) = 100000;
   if (IS_NPC(ch))
     GET_OBJ_TIMER(corpse) = CONFIG_MAX_NPC_CORPSE_TIME;
@@ -223,8 +223,10 @@ static void make_corpse(struct char_data *ch)
 
   /* transfer character's inventory to the corpse */
   corpse->contains = ch->carrying;
-  for (o = corpse->contains; o != NULL; o = o->next_content)
+  for (o = corpse->contains; o != NULL; o = o->next_content) {
     o->in_obj = corpse;
+    GET_OBJ_WEIGHT(corpse) += GET_OBJ_WEIGHT(o);
+  }
   object_list_new_owner(corpse, NULL);
 
   /* transfer character's equipment to the corpse */

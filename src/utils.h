@@ -751,6 +751,13 @@ do                                                              \
 /** Defines if an obj is a corpse. */
 #define IS_CORPSE(obj)		(GET_OBJ_TYPE(obj) == ITEM_CONTAINER && \
 					GET_OBJ_VAL((obj), 3) == 1)
+/** Does this container's own weight include what is inside it?  A container
+ * with a capacity tracks its contents; the "unlimited" ones (val0 == 0) never
+ * have, and a corpse tracks despite carrying val0 == 0.  Every place that adds
+ * or subtracts content weight has to ask the same question -- when the two
+ * halves disagree, the difference is written to a rent file and the container
+ * comes back lighter. */
+#define TRACKS_CONTENT_WEIGHT(obj)	(GET_OBJ_VAL((obj), 0) > 0 || IS_CORPSE(obj))
 
 /** Can the obj be worn on body part? */
 #define CAN_WEAR(obj, part)	OBJWEAR_FLAGGED((obj), (part))

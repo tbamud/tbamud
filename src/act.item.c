@@ -60,7 +60,13 @@ static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_d
   if (!has_obj_by_uid_in_lookup_table(object_id)) /* object might be extracted by drop_otrigger */
     return;
 
-  if ((GET_OBJ_VAL(cont, 0) > 0) &&
+  /* A corpse tracks its contents but has no capacity of its own, so the
+   * test below would refuse it with "won't fit" -- true, but not the reason.
+   * Say the reason: nothing goes into a corpse, which is what make_corpse()
+   * has always meant by giving it no capacity. */
+  if (IS_CORPSE(cont))
+    act("You can't put anything in $P.", FALSE, ch, obj, cont, TO_CHAR);
+  else if (TRACKS_CONTENT_WEIGHT(cont) &&
       (GET_OBJ_WEIGHT(cont) + GET_OBJ_WEIGHT(obj) > GET_OBJ_VAL(cont, 0)))
     act("$p won't fit in $P.", FALSE, ch, obj, cont, TO_CHAR);
   else if (OBJ_FLAGGED(obj, ITEM_NODROP) && IN_ROOM(cont) != NOWHERE)

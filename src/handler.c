@@ -796,8 +796,8 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to)
   obj_to->contains = obj;
   obj->in_obj = obj_to;
 
-  /* Add weight to container, unless unlimited. */
-  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
+  /* Add weight to container, unless it is one that does not track. */
+  if (TRACKS_CONTENT_WEIGHT(obj->in_obj)) {
     for (tmp_obj = obj->in_obj; tmp_obj->in_obj; tmp_obj = tmp_obj->in_obj)
       GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
 
@@ -820,8 +820,8 @@ void obj_from_obj(struct obj_data *obj)
   obj_from = obj->in_obj;
   REMOVE_FROM_LIST(obj, obj_from->contains, next_content);
 
-  /* Subtract weight from containers container unless unlimited. */
-  if (GET_OBJ_VAL(obj->in_obj, 0) > 0) {
+  /* Subtract it again on the way out, by the same rule. */
+  if (TRACKS_CONTENT_WEIGHT(obj->in_obj)) {
     for (temp = obj->in_obj; temp->in_obj; temp = temp->in_obj)
       GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
 
