@@ -1636,13 +1636,16 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
   int paren_count = 0;
   int dots = 0;
 
-  /* A trigger command line has no length limit of its own: parse_trigger()
-   * hands out whatever strtok() finds between the newlines of a script body,
-   * and the body is read with fread_string(), so a single line can be far
-   * longer than the MAX_INPUT_LENGTH buffers everything below works in -- both
-   * the tmp[] copy here and the cmd[] the caller passes as buf.  Refuse the
-   * line rather than copy it, and hand back an empty result so the caller runs
-   * nothing instead of running a truncated command. */
+  /* A trigger command line has no length limit of its own.  A .trg file
+   * cannot deliver one over 511 characters -- fread_string() splits a long
+   * file line into separate entries -- but the string editor can: /ra grows
+   * a line without limit, and trigedit_save() rebuilds the command list with
+   * strtok() and arms every live instance before the builder leaves the
+   * editor.  So a single line can be far longer than the MAX_INPUT_LENGTH
+   * buffers everything below works in -- both the tmp[] copy here and the
+   * cmd[] the caller passes as buf.  Refuse the line rather than copy it, and
+   * hand back an empty result so the caller runs nothing instead of running a
+   * truncated command. */
   if (strlen(line) >= MAX_INPUT_LENGTH) {
     script_log("Trigger: %s, VNum %d, type: %d. Line is %d characters, over the %d limit: '%.60s...'",
                GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), type,
