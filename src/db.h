@@ -345,6 +345,8 @@ int Crash_delete_file(char *name);
 void update_obj_file(void);
 int Crash_rentsave(struct char_data *ch, int cost);
 obj_save_data *objsave_parse_objects(FILE *fl);
+void objsave_reassemble(obj_save_data *loaded,
+                        void (*place)(struct obj_data *obj, void *dest), void *dest);
 int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
 /* Special functions */
 SPECIAL(receptionist);
