@@ -550,9 +550,9 @@ void command_interpreter(struct char_data *ch, char *argument)
           send_to_char(ch, "\r\nDid you mean:\r\n");
           found = 1;
         }
-        /* The same clickable form the help suggestions use; a <send> with
-         * no href sends its text, which for a command is what we want. */
-        send_to_char(ch, "  \t<send>%s\t</send>\r\n", cmd_info[cmd].command);
+        /* \t( \t) is a <send> with no href, which sends its own text: for a
+         * command that is exactly what a click should do. */
+        send_to_char(ch, "  \t(%s\t)\r\n", cmd_info[cmd].command);
       }
     }
   }

@@ -1222,8 +1222,14 @@ ACMD(do_help)
         }
         /* MXP's attribute is href; a <send> with no href sends its own text
          * as the command, so the old link= form ran the keyword instead of
-         * asking for its help. */
-        send_to_char(ch, "  \t<send href=\"help %s\">%s\t</send>\r\n", help_table[i].keywords, help_table[i].keywords);
+         * asking for its help.
+         * A keyword can hold tag characters (the stock file has <topic> and
+         * show->zones), and the protocol layer closes a tag at the first
+         * '>' it meets, so those are listed as plain text. */
+        if (strpbrk(help_table[i].keywords, "<>\"&"))
+          send_to_char(ch, "  %s\r\n", help_table[i].keywords);
+        else
+          send_to_char(ch, "  \t<send href=\"help %s\">%s\t</send>\r\n", help_table[i].keywords, help_table[i].keywords);
       }
     }
     return;
