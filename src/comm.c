@@ -2143,23 +2143,20 @@ void close_socket(struct descriptor_data *d)
   free_list(d->events);
 
   /*. Kill any OLC stuff .*/
-  switch (d->connected) {
-    case CON_OEDIT:
-    case CON_REDIT:
-    case CON_ZEDIT:
-    case CON_MEDIT:
-    case CON_SEDIT:
-    case CON_TEDIT:
-    case CON_TRIGEDIT:
-    case CON_AEDIT:
-    case CON_HEDIT:
-    case CON_QEDIT:
-    case CON_MSGEDIT:
-      cleanup_olc(d, CLEANUP_ALL);
-      break;
-    default:
-      break;
-  }
+  /* Every OLC state, without listing them. utils.h has had IS_IN_OLC() --
+   * the FIRST_OLC_STATE..LAST_OLC_STATE range -- since before any of the
+   * editors this switch kept forgetting, and nothing has ever called it.
+   * Enumerating the states is what left cedit, prefedit and ibtedit out for
+   * as long as they have existed, and the next editor added would have gone
+   * the same way. The two are equivalent today: the switch listed exactly
+   * CON_OEDIT through CON_MSGEDIT, which is the range.
+   *
+   * cedit apart, because cleanup_olc picks its log line off the cleanup
+   * type and CLEANUP_ALL would have it announce a zone it was never
+   * editing. Its own three exits all pass CLEANUP_CONFIG; so does this, so
+   * a builder who drops the link is logged the same as one who quits. */
+  if (IS_IN_OLC(d))
+    cleanup_olc(d, STATE(d) == CON_CEDIT ? CLEANUP_CONFIG : CLEANUP_ALL);
 
   free(d);
 }
