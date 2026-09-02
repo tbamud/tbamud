@@ -32,7 +32,6 @@
 
 /* local functions */
 static int Crash_save(struct obj_data *obj, FILE *fp, int location);
-static void Crash_extract_norent_eq(struct char_data *ch);
 static void auto_equip(struct char_data *ch, struct obj_data *obj, int location);
 static int Crash_offer_rent(struct char_data *ch, struct char_data *receptionist, int display, int factor);
 static int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, struct obj_data *obj);
@@ -41,10 +40,17 @@ static int gen_receptionist(struct char_data *ch, struct char_data *recep, int c
 static void Crash_rent_deadline(struct char_data *ch, struct char_data *recep, long cost);
 static void Crash_restore_weight(struct obj_data *obj);
 static int objsave_finish_file(FILE *fp);
+static FILE *objsave_open_tmp(const char *path, char *tmp, size_t tmpsz);
+static void objsave_abandon_file(FILE *fp, const char *tmp);
+static int objsave_commit_file(FILE *fp, const char *tmp, const char *path);
 static void Crash_extract_objs(struct obj_data *obj);
 static int Crash_is_unrentable(struct obj_data *obj);
-static void Crash_extract_norents(struct obj_data *obj);
-static void Crash_extract_expensive(struct obj_data *obj);
+struct norent_aside;
+static struct norent_aside *Crash_set_aside_all(struct char_data *ch);
+static void Crash_set_aside_expensive(struct obj_data *obj, struct norent_aside **list);
+static void Crash_restore_norents(struct char_data *ch, struct norent_aside *list);
+static void Crash_discard_norents(struct norent_aside *list);
+static int Crash_save_failed(struct char_data *ch, struct norent_aside *list);
 static void Crash_calculate_rent(struct obj_data *obj, int *cost);
 static int Crash_cryosave(struct char_data *ch, int cost);
 static int Crash_load_objs(struct char_data *ch);
@@ -490,6 +496,46 @@ static int objsave_finish_file(FILE *fp)
   return result;
 }
 
+/* Rent files are written under a scratch name beside the real one and
+ * renamed into place only once every record is on disk and the stream has
+ * closed cleanly.  A save that fails part way through therefore leaves the
+ * previous file intact instead of a truncated one, which matters now that a
+ * failed save leaves the player in the game with that file as their
+ * fallback. */
+static FILE *objsave_open_tmp(const char *path, char *tmp, size_t tmpsz)
+{
+  if (snprintf(tmp, tmpsz, "%s.tmp", path) >= (int)tmpsz)
+    return NULL;
+
+  return fopen(tmp, "w");
+}
+
+static void objsave_abandon_file(FILE *fp, const char *tmp)
+{
+  fclose(fp);
+  remove(tmp);
+}
+
+static int objsave_commit_file(FILE *fp, const char *tmp, const char *path)
+{
+  if (!objsave_finish_file(fp)) {
+    remove(tmp);
+    return FALSE;
+  }
+
+  if (rename(tmp, path) == 0)
+    return TRUE;
+
+  /* Windows will not rename over an existing file. */
+  remove(path);
+  if (rename(tmp, path) == 0)
+    return TRUE;
+
+  log("SYSERR: Unable to rename %s to %s: %s", tmp, path, strerror(errno));
+  remove(tmp);
+  return FALSE;
+}
+
 static void Crash_restore_weight(struct obj_data *obj)
 {
   if (obj) {
@@ -502,19 +548,124 @@ static void Crash_restore_weight(struct obj_data *obj)
 
 /* Get !RENT items from equipment to inventory and extract !RENT out of worn
  * containers. */
-static void Crash_extract_norent_eq(struct char_data *ch)
+/* An object the rent file will not hold, taken off the character for the
+ * length of the save.  It used to be extracted before the file was written,
+ * which was harmless while a failed save still logged the player out.  A
+ * failed save now keeps them in the game and asks them to try again, and
+ * they should not pay for that with their keys and norent gear.  So each one
+ * is detached with a note of where it came from, and is either extracted
+ * once the file is safely on disk or put back if it is not. */
+struct norent_aside {
+  struct obj_data *obj;
+  struct obj_data *container;	/* the object it was inside, if any */
+  int wear;			/* wear position, or -1 */
+  struct norent_aside *next;
+};
+
+static void Crash_aside_push(struct norent_aside **list, struct obj_data *obj,
+                             struct obj_data *container, int wear)
 {
+  struct norent_aside *a;
+
+  CREATE(a, struct norent_aside, 1);
+  a->obj = obj;
+  a->container = container;
+  a->wear = wear;
+  a->next = *list;
+  *list = a;
+}
+
+/* Walks an inventory or contents chain.  Contents are visited before their
+ * container, so an unrentable object inside an unrentable container is
+ * pushed first; the list is walked from the head when restoring, so the
+ * container goes back on the character before the object goes back into
+ * it. */
+static void Crash_set_aside_norents(struct obj_data *obj, struct norent_aside **list)
+{
+  struct obj_data *next;
+
+  for (; obj; obj = next) {
+    next = obj->next_content;
+    Crash_set_aside_norents(obj->contains, list);
+    if (Crash_is_unrentable(obj)) {
+      struct obj_data *container = obj->in_obj;
+
+      if (container)
+        obj_from_obj(obj);
+      else
+        obj_from_char(obj);
+      Crash_aside_push(list, obj, container, -1);
+    }
+  }
+}
+
+static struct norent_aside *Crash_set_aside_all(struct char_data *ch)
+{
+  struct norent_aside *list = NULL;
   int j;
 
   for (j = 0; j < NUM_WEARS; j++) {
-    if (GET_EQ(ch, j) == NULL)
+    struct obj_data *eq = GET_EQ(ch, j);
+
+    if (eq == NULL)
       continue;
 
-    if (Crash_is_unrentable(GET_EQ(ch, j)))
-      obj_to_char(unequip_char(ch, j), ch);
+    if (Crash_is_unrentable(eq))
+      Crash_aside_push(&list, unequip_char(ch, j), NULL, j);
     else
-      Crash_extract_norents(GET_EQ(ch, j));
+      Crash_set_aside_norents(eq->contains, &list);
   }
+  Crash_set_aside_norents(ch->carrying, &list);
+
+  return list;
+}
+
+/* Forced rent, when the character cannot pay: the dearest thing in the
+ * inventory goes.  Detached like a norent object rather than extracted, for
+ * the same reason. */
+static void Crash_set_aside_expensive(struct obj_data *obj, struct norent_aside **list)
+{
+  struct obj_data *tobj, *max;
+
+  max = obj;
+  for (tobj = obj; tobj; tobj = tobj->next_content)
+    if (GET_OBJ_RENT(tobj) > GET_OBJ_RENT(max))
+      max = tobj;
+  obj_from_char(max);
+  Crash_aside_push(list, max, NULL, -1);
+}
+
+static void Crash_restore_norents(struct char_data *ch, struct norent_aside *list)
+{
+  struct norent_aside *next;
+
+  for (; list; list = next) {
+    next = list->next;
+    if (list->wear >= 0)
+      equip_char(ch, list->obj, list->wear);	/* to inventory if it now refuses them */
+    else if (list->container)
+      obj_to_obj(list->obj, list->container);
+    else
+      obj_to_char(list->obj, ch);
+    free(list);
+  }
+}
+
+static void Crash_discard_norents(struct norent_aside *list)
+{
+  struct norent_aside *next;
+
+  for (; list; list = next) {
+    next = list->next;
+    extract_obj(list->obj);
+    free(list);
+  }
+}
+
+static int Crash_save_failed(struct char_data *ch, struct norent_aside *list)
+{
+  Crash_restore_norents(ch, list);
+  return FALSE;
 }
 
 static void Crash_extract_objs(struct obj_data *obj)
@@ -535,33 +686,14 @@ static int Crash_is_unrentable(struct obj_data *obj)
       GET_OBJ_RENT(obj) < 0 ||
       GET_OBJ_RNUM(obj) == NOTHING ||
       GET_OBJ_TYPE(obj) == ITEM_KEY) {
- log("Crash_is_unrentable: removing object %s", obj->short_description);
+    log("Crash_is_unrentable: %s is unrentable", obj->short_description);
     return TRUE;
   }
 
   return FALSE;
 }
 
-static void Crash_extract_norents(struct obj_data *obj)
-{
-  if (obj) {
-    Crash_extract_norents(obj->contains);
-    Crash_extract_norents(obj->next_content);
-    if (Crash_is_unrentable(obj))
-      extract_obj(obj);
-  }
-}
 
-static void Crash_extract_expensive(struct obj_data *obj)
-{
-  struct obj_data *tobj, *max;
-
-  max = obj;
-  for (tobj = obj; tobj; tobj = tobj->next_content)
-    if (GET_OBJ_RENT(tobj) > GET_OBJ_RENT(max))
-      max = tobj;
-  extract_obj(max);
-}
 
 static void Crash_calculate_rent(struct obj_data *obj, int *cost)
 {
@@ -574,7 +706,7 @@ static void Crash_calculate_rent(struct obj_data *obj, int *cost)
 
 void Crash_crashsave(struct char_data *ch)
 {
-  char buf[MAX_INPUT_LENGTH];
+  char buf[MAX_INPUT_LENGTH], tmp[MAX_INPUT_LENGTH + 8];
   int j;
   FILE *fp;
 
@@ -584,11 +716,11 @@ void Crash_crashsave(struct char_data *ch)
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
     return;
 
-  if (!(fp = fopen(buf, "w")))
+  if (!(fp = objsave_open_tmp(buf, tmp, sizeof(tmp))))
     return;
 
   if (!objsave_write_rentcode(fp, RENT_CRASH, 0, ch)) {
-    fclose(fp);
+    objsave_abandon_file(fp, tmp);
     return;
   }
 
@@ -598,7 +730,7 @@ void Crash_crashsave(struct char_data *ch)
 
       Crash_restore_weight(GET_EQ(ch, j));
       if (!result) {
-        fclose(fp);
+        objsave_abandon_file(fp, tmp);
         return;
       }
     }
@@ -608,12 +740,12 @@ void Crash_crashsave(struct char_data *ch)
 
     Crash_restore_weight(ch->carrying);
     if (!result) {
-      fclose(fp);
+      objsave_abandon_file(fp, tmp);
       return;
     }
   }
 
-  if (!objsave_finish_file(fp))
+  if (!objsave_commit_file(fp, tmp, buf))
     return;
 
   REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
@@ -621,10 +753,11 @@ void Crash_crashsave(struct char_data *ch)
 
 int Crash_idlesave(struct char_data *ch)
 {
-  char buf[MAX_INPUT_LENGTH];
+  char buf[MAX_INPUT_LENGTH], tmp[MAX_INPUT_LENGTH + 8];
   int j;
   int cost, cost_eq;
   FILE *fp;
+  struct norent_aside *aside;
 
   if (IS_NPC(ch))
     return FALSE;
@@ -632,11 +765,10 @@ int Crash_idlesave(struct char_data *ch)
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
     return FALSE;
 
-  if (!(fp = fopen(buf, "w")))
+  if (!(fp = objsave_open_tmp(buf, tmp, sizeof(tmp))))
     return FALSE;
 
-  Crash_extract_norent_eq(ch);
-  Crash_extract_norents(ch->carrying);
+  aside = Crash_set_aside_all(ch);
 
   cost = 0;
   Crash_calculate_rent(ch->carrying, &cost);
@@ -654,7 +786,7 @@ int Crash_idlesave(struct char_data *ch)
         obj_to_char(unequip_char(ch, j), ch);
 
     while ((cost > GET_GOLD(ch) + GET_BANK_GOLD(ch)) && ch->carrying) {
-      Crash_extract_expensive(ch->carrying);
+      Crash_set_aside_expensive(ch->carrying, &aside);
       cost = 0;
       Crash_calculate_rent(ch->carrying, &cost);
       cost *= 2;
@@ -664,15 +796,16 @@ int Crash_idlesave(struct char_data *ch)
   if (ch->carrying == NULL) {
     for (j = 0; j < NUM_WEARS && GET_EQ(ch, j) == NULL; j++) /* Nothing */ ;
     if (j == NUM_WEARS) {
-      fclose(fp);
+      objsave_abandon_file(fp, tmp);
       Crash_delete_file(GET_NAME(ch));
+      Crash_discard_norents(aside);
       return TRUE;
     }
   }
 
   if (!objsave_write_rentcode(fp, RENT_TIMEDOUT, cost, ch)) {
-    fclose(fp);
-    return FALSE;
+    objsave_abandon_file(fp, tmp);
+    return Crash_save_failed(ch, aside);
   }
 
   for (j = 0; j < NUM_WEARS; j++) {
@@ -681,8 +814,8 @@ int Crash_idlesave(struct char_data *ch)
 
       Crash_restore_weight(GET_EQ(ch, j));
       if (!result) {
-        fclose(fp);
-        return FALSE;
+        objsave_abandon_file(fp, tmp);
+        return Crash_save_failed(ch, aside);
       }
     }
   }
@@ -692,27 +825,29 @@ int Crash_idlesave(struct char_data *ch)
 
     Crash_restore_weight(ch->carrying);
     if (!result) {
-      fclose(fp);
-      return FALSE;
+      objsave_abandon_file(fp, tmp);
+      return Crash_save_failed(ch, aside);
     }
   }
 
-  if (!objsave_finish_file(fp))
-    return FALSE;
+  if (!objsave_commit_file(fp, tmp, buf))
+    return Crash_save_failed(ch, aside);
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j))
       Crash_extract_objs(GET_EQ(ch, j));
 
+  Crash_discard_norents(aside);
   Crash_extract_objs(ch->carrying);
   return TRUE;
 }
 
 int Crash_rentsave(struct char_data *ch, int cost)
 {
-  char buf[MAX_INPUT_LENGTH];
+  char buf[MAX_INPUT_LENGTH], tmp[MAX_INPUT_LENGTH + 8];
   int j;
   FILE *fp;
+  struct norent_aside *aside;
 
   if (IS_NPC(ch))
     return FALSE;
@@ -720,15 +855,14 @@ int Crash_rentsave(struct char_data *ch, int cost)
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
     return FALSE;
 
-  if (!(fp = fopen(buf, "w")))
+  if (!(fp = objsave_open_tmp(buf, tmp, sizeof(tmp))))
     return FALSE;
 
-  Crash_extract_norent_eq(ch);
-  Crash_extract_norents(ch->carrying);
+  aside = Crash_set_aside_all(ch);
 
   if (!objsave_write_rentcode(fp, RENT_RENTED, cost, ch)) {
-    fclose(fp);
-    return FALSE;
+    objsave_abandon_file(fp, tmp);
+    return Crash_save_failed(ch, aside);
   }
 
   for (j = 0; j < NUM_WEARS; j++)
@@ -737,8 +871,8 @@ int Crash_rentsave(struct char_data *ch, int cost)
 
       Crash_restore_weight(GET_EQ(ch, j));
       if (!result) {
-        fclose(fp);
-        return FALSE;
+        objsave_abandon_file(fp, tmp);
+        return Crash_save_failed(ch, aside);
       }
     }
 
@@ -747,18 +881,19 @@ int Crash_rentsave(struct char_data *ch, int cost)
 
     Crash_restore_weight(ch->carrying);
     if (!result) {
-      fclose(fp);
-      return FALSE;
+      objsave_abandon_file(fp, tmp);
+      return Crash_save_failed(ch, aside);
     }
   }
 
-  if (!objsave_finish_file(fp))
-    return FALSE;
+  if (!objsave_commit_file(fp, tmp, buf))
+    return Crash_save_failed(ch, aside);
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j))
       Crash_extract_objs(GET_EQ(ch, j));
 
+  Crash_discard_norents(aside);
   Crash_extract_objs(ch->carrying);
   return TRUE;
 }
@@ -783,9 +918,10 @@ static int objsave_write_rentcode(FILE *fl, int rentcode, int cost_per_day, stru
 
 static int Crash_cryosave(struct char_data *ch, int cost)
 {
-  char buf[MAX_INPUT_LENGTH];
+  char buf[MAX_INPUT_LENGTH], tmp[MAX_INPUT_LENGTH + 8];
   int j, old_gold;
   FILE *fp;
+  struct norent_aside *aside;
 
   if (IS_NPC(ch))
     return FALSE;
@@ -793,19 +929,18 @@ static int Crash_cryosave(struct char_data *ch, int cost)
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
     return FALSE;
 
-  if (!(fp = fopen(buf, "w")))
+  if (!(fp = objsave_open_tmp(buf, tmp, sizeof(tmp))))
     return FALSE;
 
-  Crash_extract_norent_eq(ch);
-  Crash_extract_norents(ch->carrying);
+  aside = Crash_set_aside_all(ch);
 
   old_gold = GET_GOLD(ch);
   GET_GOLD(ch) = MAX(0, GET_GOLD(ch) - cost);
 
   if (!objsave_write_rentcode(fp, RENT_CRYO, 0, ch)) {
-    fclose(fp);
+    objsave_abandon_file(fp, tmp);
     GET_GOLD(ch) = old_gold;
-    return FALSE;
+    return Crash_save_failed(ch, aside);
   }
 
   for (j = 0; j < NUM_WEARS; j++)
@@ -814,9 +949,9 @@ static int Crash_cryosave(struct char_data *ch, int cost)
 
       Crash_restore_weight(GET_EQ(ch, j));
       if (!result) {
-        fclose(fp);
+        objsave_abandon_file(fp, tmp);
         GET_GOLD(ch) = old_gold;
-        return FALSE;
+        return Crash_save_failed(ch, aside);
       }
     }
 
@@ -825,21 +960,22 @@ static int Crash_cryosave(struct char_data *ch, int cost)
 
     Crash_restore_weight(ch->carrying);
     if (!result) {
-      fclose(fp);
+      objsave_abandon_file(fp, tmp);
       GET_GOLD(ch) = old_gold;
-      return FALSE;
+      return Crash_save_failed(ch, aside);
     }
   }
 
-  if (!objsave_finish_file(fp)) {
+  if (!objsave_commit_file(fp, tmp, buf)) {
     GET_GOLD(ch) = old_gold;
-    return FALSE;
+    return Crash_save_failed(ch, aside);
   }
 
   for (j = 0; j < NUM_WEARS; j++)
     if (GET_EQ(ch, j))
       Crash_extract_objs(GET_EQ(ch, j));
 
+  Crash_discard_norents(aside);
   Crash_extract_objs(ch->carrying);
   SET_BIT_AR(PLR_FLAGS(ch), PLR_CRYO);
   return TRUE;
