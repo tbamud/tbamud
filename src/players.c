@@ -50,6 +50,7 @@ void build_player_index(void)
   FILE *plr_index;
   char index_name[40], line[256], bits[WORLD_FLAG_FIELD + 1];
   char arg2[PLR_INDEX_NAME_FIELD + 1];
+  long last;
 
   sprintf(index_name, "%s%s", LIB_PLRFILES, INDEX_FILE);
   if (!(plr_index = fopen(index_name, "r"))) {
@@ -79,10 +80,14 @@ void build_player_index(void)
      * be adopted by this one without a word.  Five or nothing. */
     if (sscanf(line, "%ld " PLR_INDEX_NAME_FMT " %d " FLAG_FIELD_FMT " %ld",
         &player_table[i].id, arg2,
-        &player_table[i].level, bits, (long *)&player_table[i].last) != 5) {
+        &player_table[i].level, bits, &last) != 5) {
       log("SYSERR: Malformed record %d in player index %s: %s", i, index_name, line);
       exit(1);
     }
+    /* Written as a long, so read as one and converted; pointing sscanf at a
+     * time_t through a long pointer is only right where the two are the
+     * same size. */
+    player_table[i].last = (time_t)last;
     CREATE(player_table[i].name, char, strlen(arg2) + 1);
     strcpy(player_table[i].name, arg2);
     player_table[i].flags = asciiflag_conv(bits);
