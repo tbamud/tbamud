@@ -97,7 +97,8 @@ proc_syslog () {
     len=`echo $rec|cut -f 2 -d:`
     pattern=`echo $rec|cut -f 3- -d:`
 
-    fgrep $pattern syslog >> $name
+    # The game appends to these files itself now, as it logs (see
+    # log_to_topic_files in src/utils.c); only the trim below is still ours.
     if [ $len -gt 0 ]; then
       temp=`mktemp $name.XXXXXX`
       tail -n $len $name > $temp
