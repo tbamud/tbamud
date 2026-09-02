@@ -5124,6 +5124,63 @@ printf "%s\n" "#define NEED_FCNTL_PROTO 1" >>confdefs.h
 
 fi
 
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if fdopen is prototyped" >&5
+printf %s "checking if fdopen is prototyped... " >&6; }
+if test ${ac_cv_prototype_fdopen+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  OLDCPPFLAGS=$CPPFLAGS
+  CPPFLAGS="$CPPFLAGS -I$srcdir"
+    if test "${ac_cv_gcc_fnb-no}" = yes; then
+    OLDCFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS -fno-builtin"
+  fi
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#define NO_LIBRARY_PROTOTYPES
+#define __COMM_C__
+#define __ACT_OTHER_C__
+#include "src/sysdep.h"
+#ifdef fdopen
+  error - already defined!
+#endif
+void fdopen(int a, char b, int c, char d, int e, char f, int g, char h);
+
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  ac_cv_prototype_fdopen=no
+else case e in #(
+  e) ac_cv_prototype_fdopen=yes ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+  if test "${ac_cv_gcc_fnb-no}" = yes; then
+    CFLAGS=$OLDCFLAGS
+  fi
+  CPPFLAGS=$OLDCPPFLAGS
+ ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_prototype_fdopen" >&5
+printf "%s\n" "$ac_cv_prototype_fdopen" >&6; }
+if test "$ac_cv_prototype_fdopen" = no
+then :
+
+printf "%s\n" "#define NEED_FDOPEN_PROTO 1" >>confdefs.h
+
+fi
+
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if fflush is prototyped" >&5
 printf %s "checking if fflush is prototyped... " >&6; }
 if test ${ac_cv_prototype_fflush+y}

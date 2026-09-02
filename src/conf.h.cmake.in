@@ -195,6 +195,9 @@
 /* Check for a prototype to fcntl. */
 #cmakedefine NEED_FCNTL_PROTO
 
+/* Check for a prototype to fdopen. */
+#cmakedefine NEED_FDOPEN_PROTO
+
 /* Check for a prototype to fflush. */
 #cmakedefine NEED_FFLUSH_PROTO
 

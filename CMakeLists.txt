@@ -327,6 +327,7 @@ set(PROTO_FUNCTIONS
         close
         fclose
         fcntl
+        fdopen
         fflush
         fprintf
         fputc
