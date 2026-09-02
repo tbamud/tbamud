@@ -2598,7 +2598,7 @@ int script_driver_default(void *go_adress, trig_data *trig, int type, int mode,
       if (!temp) {
         script_log("Trigger VNum %d has 'while' without 'done'.",
                    GET_TRIG_VNUM(trig));
-        return ret_val;
+        break;
       }
       if (process_if(p + 6, go, sc, trig, type)) {
          temp->original = cl;
