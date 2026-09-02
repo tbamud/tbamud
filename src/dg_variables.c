@@ -1636,6 +1636,24 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
   int paren_count = 0;
   int dots = 0;
 
+  /* A trigger command line has no length limit of its own.  A .trg file
+   * cannot deliver one over 511 characters -- fread_string() splits a long
+   * file line into separate entries -- but the string editor can: /ra grows
+   * a line without limit, and trigedit_save() rebuilds the command list with
+   * strtok() and arms every live instance before the builder leaves the
+   * editor.  So a single line can be far longer than the MAX_INPUT_LENGTH
+   * buffers everything below works in -- both the tmp[] copy here and the
+   * cmd[] the caller passes as buf.  Refuse the line rather than copy it, and
+   * hand back an empty result so the caller runs nothing instead of running a
+   * truncated command. */
+  if (strlen(line) >= MAX_INPUT_LENGTH) {
+    script_log("Trigger: %s, VNum %d, type: %d. Line is %d characters, over the %d limit: '%.60s...'",
+               GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), type,
+               (int)strlen(line), MAX_INPUT_LENGTH - 1, line);
+    *buf = '\0';
+    return;
+  }
+
   /* skip out if no %'s */
   if (!strchr(line, '%')) {
     strcpy(buf, line);
@@ -1716,8 +1734,14 @@ void var_subst(void *go, struct script_data *sc, trig_data *trig,
 
       find_replacement(go, sc, trig, type, var, field, subfield, repl_str, sizeof(repl_str));
 
+      /* strncat() stops after left characters, so advance by what it really
+       * wrote.  Advancing by the whole length of repl_str instead walks buf
+       * past the end of the caller's buffer whenever a replacement does not
+       * fit, and the terminator written after the loop then lands there. */
       strncat(buf, repl_str, left);
       len = strlen(repl_str);
+      if (len > left)
+        len = left;
       buf += len;
       left -= len;
     } /* else if *p .. */

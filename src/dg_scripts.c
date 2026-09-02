@@ -1385,10 +1385,14 @@ static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
   while (*rhs && isspace(*rhs))
     rhs++;
 
+  /* Test the bound before dereferencing.  On an empty operand the scan
+   * above stops on the terminator, --p then steps in front of the buffer,
+   * and reading *p there is out of bounds.  Both tests were already here,
+   * only in the order that reads first. */
   for (p = (unsigned char *) lhs; *p; p++);
-  for (--p; isspace(*p) && ((char *)p > lhs); *p-- = '\0');
+  for (--p; ((char *)p > lhs) && isspace(*p); *p-- = '\0');
   for (p = (unsigned char *) rhs; *p; p++);
-  for (--p; isspace(*p) && ((char *)p > rhs); *p-- = '\0');
+  for (--p; ((char *)p > rhs) && isspace(*p); *p-- = '\0');
 
 
   /* find the op, and figure out the value */
@@ -1512,6 +1516,19 @@ static void eval_expr(char *line, char *result, void *go, struct script_data *sc
 
   while (*line && isspace(*line))
     line++;
+
+  /* Same reason var_subst() checks: the condition on an 'if', 'while' or
+   * 'switch' is a slice of a trigger line, which carries no length limit of
+   * its own, while expr[] here, line[] in eval_lhs_op_rhs() and the tokens[]
+   * array beside it are all sized MAX_INPUT_LENGTH.  An over-long condition
+   * evaluates to nothing, which reads as false. */
+  if (strlen(line) >= MAX_INPUT_LENGTH) {
+    script_log("Trigger: %s, VNum %d, type: %d. Expression is %d characters, over the %d limit: '%.60s...'",
+               GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), type,
+               (int)strlen(line), MAX_INPUT_LENGTH - 1, line);
+    *result = '\0';
+    return;
+  }
 
   if (eval_lhs_op_rhs(line, result, go, sc, trig, type));
 
