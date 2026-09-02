@@ -1429,7 +1429,7 @@ static void list_detailed_shop(struct char_data *ch, int shop_nr)
     int linelen;
 
     if (!IS_SET(flag, SHOP_TRADE_WITH(shop_nr))){
-      if (sindex) {
+      if (found) {
         send_to_char(ch, ", ");
         column += 2;
       }
