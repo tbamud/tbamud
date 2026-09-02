@@ -1504,13 +1504,33 @@ static void check_start_rooms(void)
 void renum_world(void)
 {
   int room, door;
+  room_vnum vnum;
+  room_rnum rnum;
 
   for (room = 0; room <= top_of_world; room++)
     for (door = 0; door < NUM_OF_DIRS; door++)
-      if (world[room].dir_option[door])
-	if (world[room].dir_option[door]->to_room != NOWHERE)
-	  world[room].dir_option[door]->to_room =
-	    real_room(world[room].dir_option[door]->to_room);
+      if (world[room].dir_option[door]) {
+	vnum = world[room].dir_option[door]->to_room;
+	if (vnum == NOWHERE)
+	  continue;	/* a description-only direction, written as -1 or 0 */
+
+	/* Report an exit naming a room that is not loaded. This is the last
+	 * point at which it CAN be reported: the lookup below overwrites the
+	 * vnum, and afterwards a dangling exit and a deliberate
+	 * description-only direction are both simply NOWHERE and cannot be
+	 * told apart. Until now nothing said anything at all -- the exit
+	 * stopped working and stopped being listed, with no trace anywhere. */
+	/* Not in mini-mud mode: index.mini loads a handful of files, so most
+	 * of the world legitimately is not there and every other boot-time
+	 * vnum diagnostic in this file skips it for the same reason. A
+	 * developer who is taught to ignore these stops reading them. */
+	rnum = real_room(vnum);
+	if (rnum == NOWHERE && !mini_mud)
+	  log("SYSERR: Room #%d exit %s leads to room #%d, which could not be found.",
+	      world[room].number, dirs[door], vnum);
+
+	world[room].dir_option[door]->to_room = rnum;
+      }
 }
 
 /** This is not the same ZCMD as used elsewhere. GRUMBLE... namespace conflict
