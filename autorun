@@ -44,26 +44,25 @@ FLAGS='-q'
 BACKLOGS=6
 
 # Each record in the following variable contains information for one log file.
-# The fields are filename:maxlines:pattern where filename is the name of the
-# log file, maxlines is the maximum number of lines in the file (0 for
-# unlimited) and pattern is a pattern which must be matched for a line to get
-# copied from syslog to this log file.
+# The fields are filename:maxlines where filename is the name of the log file
+# and maxlines is the maximum number of lines to keep in it (0 for unlimited).
+# The game writes these files itself as it logs; which syslog lines go to
+# which file is decided by the topic_logs table in src/utils.c.
 LOGFILES='
-delete:0:self-delete
-delete:0:PCLEAN
-dts:0:death trap
-rip:0:killed
-restarts:0:Running
-levels:0:advanced
-rentgone:0:equipment lost
-usage:5000:usage
-newplayers:0:new player
-errors:5000:SYSERR
-godcmds:0:(GC)
-badpws:0:Bad PW
-olc:5000:OLC
-help:0:get help on
-trigger:5000:trigger
+delete:0
+dts:0
+rip:0
+restarts:0
+levels:0
+rentgone:0
+usage:5000
+newplayers:0
+errors:5000
+godcmds:0
+badpws:0
+olc:5000
+help:0
+trigger:5000
 '
 
 # The following is the number of lines in syslog.CRASH.  Set to 0 to disable
@@ -76,7 +75,7 @@ LEN_CRASHLOG=30
 # Functions #
 #############
 
-# The proc_syslog function will grep the logs for the various different info
+# The proc_syslog function will trim the topic files under log/ to length
 # and rotate the logs in the log directory.
 proc_syslog () {
   # Return if there's no syslog
@@ -87,19 +86,18 @@ proc_syslog () {
     tail -n $LEN_CRASHLOG syslog > syslog.CRASH
   fi
 
-  # Append to the specialty logfiles and truncate to maximum length if
-  # applicable
+  # Truncate the specialty logfiles to their maximum length if applicable
   OLD_IFS=$IFS
   IFS='
 '
   for rec in $LOGFILES; do
     name=log/`echo $rec|cut -f 1 -d:`
     len=`echo $rec|cut -f 2 -d:`
-    pattern=`echo $rec|cut -f 3- -d:`
 
-    # The game appends to these files itself now, as it logs (see
-    # log_to_topic_files in src/utils.c); only the trim below is still ours.
-    if [ $len -gt 0 ]; then
+    # The game appends to these files itself as it logs (see
+    # log_to_topic_files in src/utils.c); only the trim is ours.  A file the
+    # game has not written to yet does not exist, so there is nothing to trim.
+    if [ $len -gt 0 -a -f $name ]; then
       temp=`mktemp $name.XXXXXX`
       tail -n $len $name > $temp
       mv -f $temp $name

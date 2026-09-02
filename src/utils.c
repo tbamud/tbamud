@@ -221,14 +221,22 @@ static const struct {
 
 /* Append one already-formatted syslog line to every topic file it matches.
  * Nothing in here may call log(): it would recurse.  A topic file that
- * cannot be opened (no log/ directory, say) is simply not kept. */
+ * cannot be opened (no log/ directory, say) is simply not kept.  Several
+ * patterns can share a file; a line matching more than one of them is
+ * written to that file once. */
 static void log_to_topic_files(const char *timestr, const char *line)
 {
   FILE *fl;
-  int i;
+  int i, j;
 
   for (i = 0; topic_logs[i].pattern; i++) {
     if (!strstr(line, topic_logs[i].pattern))
+      continue;
+    for (j = 0; j < i; j++)
+      if (!strcmp(topic_logs[j].file, topic_logs[i].file) &&
+          strstr(line, topic_logs[j].pattern))
+        break;
+    if (j < i)
       continue;
     if ((fl = fopen(topic_logs[i].file, "a")) == NULL)
       continue;
@@ -254,7 +262,8 @@ void basic_mud_vlog(const char *format, va_list args)
   for (i=0;i<21;i++) timestr[i]=0;
   strftime(timestr, sizeof(timestr), "%b %d %H:%M:%S %Y", localtime(&ct));
 
-  vsnprintf(line, sizeof(line), format, args);
+  if (vsnprintf(line, sizeof(line), format, args) < 0)
+    strcpy(line, "SYSERR: log() could not format its message.");	/* strcpy: OK (literal < MAX_STRING_LENGTH) */
   fprintf(logfile, "%-20.20s :: %s\n", timestr, line);
   fflush(logfile);
 
