@@ -69,9 +69,8 @@
 #define MTRIG_CAST             (1 << 15)     /* mob targetted by spell     */
 #define MTRIG_LEAVE            (1 << 16)     /* someone leaves room seen   */
 #define MTRIG_DOOR             (1 << 17)     /* door manipulated in room   */
-
+#define MTRIG_DAMAGE           (1 << 18)     /* mob takes damage           */
 #define MTRIG_TIME             (1 << 19)     /* trigger based on game hour */
-#define MTRIG_DAMAGE           (1 << 20)     /* trigger whenever mob is damaged */
 
 /* obj trigger types */
 #define OTRIG_GLOBAL           (1 << 0)	     /* unused                     */
