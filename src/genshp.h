@@ -21,6 +21,7 @@ void free_shop_string(struct shop_data *shop);
 void free_shop(struct shop_data *shop);
 void modify_shop_string(char **str, char *newstr);
 int add_shop(struct shop_data *shop);
+mob_rnum reassign_shopkeeper(shop_vnum vnum, mob_rnum oldkeeper, SPECIAL(*oldfunc));
 int save_shops(zone_rnum zone_num);
 shop_rnum real_shop(shop_vnum vnum);
 int delete_shop(shop_rnum rnum);
