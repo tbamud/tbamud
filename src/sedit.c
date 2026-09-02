@@ -436,7 +436,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
   int i;
 
   if (OLC_MODE(d) > SEDIT_NUMERICAL_RESPONSE) {
-    if (!isdigit(arg[0]) && ((*arg == '-') && (!isdigit(arg[1])))) {
+    if (!*arg || (!isdigit(arg[0]) && (*arg != '-' || !isdigit(arg[1])))) {
       write_to_output(d, "Field must be numerical, try again : ");
       return;
     }
@@ -726,7 +726,10 @@ void sedit_parse(struct descriptor_data *d, char *arg)
 	write_to_output(d, "That object does not exist, try again : ");
 	return;
       }
-    if (i > 0)
+    /* i is an rnum here, and rnum 0 is a real object -- the lowest vnum in
+     * the world.  Guarding on > 0 dropped it with no message at all; the
+     * room case below already uses >= 0. */
+    if (i >= 0)
       add_shop_to_int_list(&(S_PRODUCTS(OLC_SHOP(d))), i);
     sedit_products_menu(d);
     return;

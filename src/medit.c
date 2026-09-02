@@ -532,7 +532,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   if (OLC_MODE(d) > MEDIT_NUMERICAL_RESPONSE) {
     i = atoi(arg);
-    if (!*arg || (!isdigit(arg[0]) && ((*arg == '-') && !isdigit(arg[1])))) {
+    if (!*arg || (!isdigit(arg[0]) && (*arg != '-' || !isdigit(arg[1])))) {
       write_to_output(d, "Try again : ");
       return;
     }
@@ -1073,9 +1073,13 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))) != NOBODY)
+      if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))) != NOBODY) {
         write_to_output(d, "Mobile deleted.\r\n");
-      else
+        /* save_all() writes the mob file and every zone file the delete
+         * just flagged, and nothing else -- it walks the save list. */
+        if (CONFIG_OLC_SAVE)
+          save_all();
+      } else
         write_to_output(d, "Couldn't delete the mobile!\r\n");
 
       cleanup_olc(d, CLEANUP_ALL);

@@ -231,6 +231,17 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   SCRIPT(room) = NULL;
 }
 
+/* redit records "the builder never filled this in" three different ways.
+ * A field never visited is NULL.  One visited and left blank comes back
+ * from str_udup() (genolc.c) as the literal string "undefined", because
+ * that is what it substitutes for empty input.  The string editor can
+ * leave an empty string.  All three mean the same thing to the exit
+ * pruning below, and only the first of them is a null pointer. */
+static int exit_field_unset(const char *text)
+{
+  return text == NULL || *text == '\0' || !strcmp(text, "undefined");
+}
+
 void redit_save_internally(struct descriptor_data *d)
 {
   int j, room_num, new_room = FALSE;
@@ -242,6 +253,35 @@ void redit_save_internally(struct descriptor_data *d)
   OLC_ROOM(d)->number = OLC_NUM(d); 
   /* FIXME: Why is this not set elsewhere? */
   OLC_ROOM(d)->zone = OLC_ZNUM(d);
+
+  /* redit_disp_exit_menu() allocates an exit as soon as its menu is shown,
+   * so that the submenu has something to edit.  Merely looking at a
+   * direction therefore leaves a room_direction_data behind, and save_rooms()
+   * writes every non-NULL exit -- browsing a room's exits and saving used to
+   * bake "0 0 -1" into the world file.  Drop the ones the builder never
+   * filled in.  An exit with a description, a keyword or door flags is kept
+   * even when it leads nowhere: that is the idiom for a direction you can
+   * look at but not walk through.
+   *
+   * The fields are tested with exit_field_unset() rather than against NULL,
+   * because opening the keyword prompt and pressing return does not leave a
+   * null pointer -- str_udup() turns empty input into the string
+   * "undefined", which is not a keyword anybody typed and not one the
+   * builder wants written to the world file.  Testing NULL alone kept the
+   * exit in the commonest way of creating a blank one. */
+  for (j = 0; j < DIR_COUNT; j++) {
+    struct room_direction_data *exit = OLC_ROOM(d)->dir_option[j];
+
+    if (exit && exit->to_room == NOWHERE && exit->exit_info == 0 &&
+        exit_field_unset(exit->keyword) &&
+        exit_field_unset(exit->general_description)) {
+      /* Now that a dropped exit can carry strings, they go with it. */
+      free(exit->keyword);
+      free(exit->general_description);
+      free(exit);
+      OLC_ROOM(d)->dir_option[j] = NULL;
+    }
+  }
 
   if ((room_num = add_room(OLC_ROOM(d))) == NOWHERE) {
     write_to_output(d, "Something went wrong...\r\n");
@@ -316,6 +356,12 @@ static void redit_disp_extradesc_menu(struct descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
+  /* This menu prints grn/nrm/yel directly, and those are file-scope
+   * globals shared by every builder.  Without this call it renders with
+   * whichever builder displayed a menu last: a builder with colour off
+   * blanks it for everyone, and a builder with colour on hands raw escape
+   * sequences to someone who turned colour off on purpose. */
+  get_char_colors(d->character);
   clear_screen(d);
   write_to_output(d,
 	  "%s1%s) Keywords: %s%s\r\n"
@@ -894,9 +940,14 @@ void redit_parse(struct descriptor_data *d, char *arg)
   
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_room(real_room(OLC_ROOM(d)->number)))
+      if (delete_room(real_room(OLC_ROOM(d)->number))) {
         write_to_output(d, "Room deleted.\r\n");
-     else
+        /* Same toggle the save path honours.  save_all() writes the
+         * room file and every zone file delete_room() just flagged,
+         * and nothing else -- it is driven by the save list. */
+        if (CONFIG_OLC_SAVE)
+          save_all();
+      } else
         write_to_output(d, "Couldn't delete the room!.\r\n");
 
       cleanup_olc(d, CLEANUP_ALL);

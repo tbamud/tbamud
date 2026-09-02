@@ -191,22 +191,41 @@ int delete_mobile(mob_rnum refpt)
   for (live_mob = character_list; live_mob; live_mob = live_mob->next)
     GET_MOB_RNUM(live_mob) -= (GET_MOB_RNUM(live_mob) >= refpt);
 
-  /* Update zone table. */
-  for (zone = 0; zone <= top_of_zone_table; zone++)
+  /* Update zone table.  A zone whose commands are removed or renumbered
+   * here has to be written back out as well, or its .zon keeps loading a
+   * mobile that no longer exists. */
+  for (zone = 0; zone <= top_of_zone_table; zone++) {
+    int zone_touched = FALSE;
+
     for (cmd_no = 0; ZCMD(zone, cmd_no).command != 'S'; cmd_no++)
       if (ZCMD(zone, cmd_no).command == 'M'){
        if (ZCMD(zone, cmd_no).arg1 == refpt) {
         delete_zone_command(&zone_table[zone], cmd_no);
-        } else
-          ZCMD(zone, cmd_no).arg1 -= (ZCMD(zone, cmd_no).arg1 > refpt);
+        zone_touched = TRUE;
+        } else if (ZCMD(zone, cmd_no).arg1 > refpt) {
+          ZCMD(zone, cmd_no).arg1--;
+          zone_touched = TRUE;
         }
+        }
+
+    if (zone_touched)
+      add_to_save_list(zone_table[zone].number, SL_ZON);
+  }
 
   /* Update shop keepers. */
   if (shop_index)
     for (counter = 0; counter <= top_shop; counter++)
       SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) >= refpt);
 
-  save_mobiles(real_zone_by_thing(vnum));
+  /* Flag rather than write: medit's delete branch decides whether this
+   * goes to disk now, honouring CONFIG_OLC_SAVE like every other OLC
+   * change.  With the toggle off it waits for a saveall, as it should. */
+  {
+    zone_rnum zrnum = real_zone_by_thing(vnum);
+
+    if (zrnum != NOWHERE)
+      add_to_save_list(zone_table[zrnum].number, SL_MOB);
+  }
 
   return refpt;
 }

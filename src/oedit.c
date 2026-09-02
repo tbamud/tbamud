@@ -1190,9 +1190,13 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 
   case OEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_object(GET_OBJ_RNUM(OLC_OBJ(d))) != NOTHING)
+      if (delete_object(GET_OBJ_RNUM(OLC_OBJ(d))) != NOTHING) {
         write_to_output(d, "Object deleted.\r\n");
-      else
+        /* save_all() writes the object file and every zone file the delete
+         * just flagged, and nothing else -- it walks the save list. */
+        if (CONFIG_OLC_SAVE)
+          save_all();
+      } else
         write_to_output(d, "Couldn't delete the object!\r\n");
 
       cleanup_olc(d, CLEANUP_ALL);
