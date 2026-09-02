@@ -268,17 +268,28 @@ char *CAP(char *txt)
  * file. */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
   int lines = 0;
 
   do {
-    buf2 = fgets(temp, 256, fl);
-    if (feof(fl))
+    /* A failed read ends the file for our purposes, and it has to be
+     * tested here: on failure fgets() leaves temp untouched, so the old
+     * code went on to inspect whatever the previous iteration left in it
+     * -- or, on the very first call, uninitialised stack. */
+    if (fgets(temp, sizeof(temp), fl) == NULL) {
+      if (ferror(fl))
+        perror("reading player index");
       return (0);
+    }
     lines++;
-  } while (*temp == '*' || *temp == '\n');
+    /* Strip the line terminator rather than the last character, whatever it
+     * is: a final line with no newline used to lose a real character, and an
+     * empty temp indexed temp[-1].  Stripping here rather than after the
+     * loop also means a blank line is seen as blank when the terminator is
+     * CRLF, which testing for '\n' alone does not catch. */
+    temp[strcspn(temp, "\r\n")] = '\0';
+  } while (*temp == '*' || !*temp);
 
-  temp[strlen(temp) - 1] = '\0';
   strcpy(buf, temp);
   return (lines);
 }

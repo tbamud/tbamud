@@ -54,7 +54,9 @@ typedef signed char sbyte;
 typedef unsigned char ubyte;
 typedef signed short int sh_int;
 typedef unsigned short int ush_int;
+#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 202311L
 typedef char bool;
+#endif
 typedef char byte;
 
 typedef int room_num;
@@ -514,18 +516,21 @@ char *fread_string(FILE * fl, char *error)
  */
 int get_line(FILE * fl, char *buf)
 {
-  char temp[256], *buf2;
+  char temp[256];
 
   do {
-    buf2 = fgets(temp, 256, fl);
-    if (*temp)
-      temp[strlen(temp) - 1] = '\0';
-  } while (!feof(fl) && (*temp == '*' || !*temp));
+    /* On failure fgets() leaves temp untouched, so the old loop re-examined
+     * the previous line -- or uninitialised stack on the first call. */
+    if (fgets(temp, sizeof(temp), fl) == NULL) {
+      if (ferror(fl))
+        perror("reading world file");
+      return (0);
+    }
+    /* Strip the terminator, not the last character: a final line with no
+     * newline used to lose one. */
+    temp[strcspn(temp, "\r\n")] = '\0';
+  } while (*temp == '*' || !*temp);
 
-  if (feof(fl))
-    return (0);
-  else {
-    strcpy(buf, temp);
-    return (1);
-  }
+  strcpy(buf, temp);
+  return (1);
 }

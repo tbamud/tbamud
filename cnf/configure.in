@@ -29,6 +29,7 @@ if test $ac_cv_prog_gcc = yes; then
          i = isascii(c);
          i = isdigit(c);
          i = isprint(c);
+         (void)i;
        ], ac_cv_char_warn=no, ac_cv_char_warn=yes)
     CFLAGS=$OLDCFLAGS
   ])

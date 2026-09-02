@@ -158,7 +158,7 @@ void convert(char *filename)
   FILE *fl, *outfile, *index_file;
   struct char_file_u_plrtoascii player;
   char index_name[40], outname[40], bits[127];
-  int i, j;
+  int i;
   struct char_special_data_saved_plrtoascii *csds;
   struct player_special_data_saved_plrtoascii *psds;
   struct char_ability_data_plrtoascii *cad;
@@ -175,11 +175,23 @@ void convert(char *filename)
     exit(1);
   }
   for (;;) {
-    j = fread(&player, sizeof(struct char_file_u_plrtoascii), 1, fl);
-    if (feof(fl)) {
+    if (fread(&player, sizeof(struct char_file_u_plrtoascii), 1, fl) != 1) {
+      /* A short read leaves `player` holding the previous record.  The old
+       * code only tested feof(), so an I/O error part way through the file
+       * fell out of the test and wrote that stale record out again under
+       * the next name -- silently duplicating a character.  Separate the
+       * two: end of file is how this loop has always finished, an error is
+       * not, and neither may continue with a stale struct. */
+      int failed = ferror(fl);
+
+      if (failed)
+        perror("error reading playerfile");
       fclose(fl);
       fclose(index_file);
-      exit(1);
+      /* End of file is how a conversion finishes, and it used to exit 1 all
+       * the same, so a script could not tell a converted playerfile from a
+       * failed one.  Only a read error is a failure. */
+      exit(failed ? 1 : 0);
     }
 
     if (!plr_filename(player.name, outname))
