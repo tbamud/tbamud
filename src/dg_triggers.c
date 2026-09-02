@@ -574,9 +574,9 @@ int damage_mtrigger(char_data *actor, char_data *victim, int dam, int attacktype
       ADD_UID_VAR(buf, t, char_script_id(actor), "actor", 0);
       ADD_UID_VAR(buf, t, char_script_id(victim), "victim", 0);
       sprintf(buf, "%d", dam);
-      add_var(&GET_TRIG_VARS(t), "damage", buf, 0);
+      add_var(&GET_TRIG_VARS(t), "damdealt", buf, 0);
       add_var(&GET_TRIG_VARS(t), "attacktype", skill_name(attacktype), 0);
-      return script_driver(&victim, t, MOB_TRIGGER, TRIG_NEW);
+      return script_driver_default(&victim, t, MOB_TRIGGER, TRIG_NEW, dam);
     }
   }
 
