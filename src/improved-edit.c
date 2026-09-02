@@ -545,7 +545,15 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
       return 0;
     }
     strncat(formatted, strcat(start, "\n"), sizeof(formatted) - strlen(formatted) - 1);
-    flow = strstr(flow, "\n");
+    /* strtok() answers the whole of what is left when there is no newline in
+     * it, so reaching here does not mean another line follows.  On the last
+     * line of a string that does not end in one, strstr() answers NULL and
+     * ++flow read from address 1.  The line asked for is past the end, which
+     * is what the strtok() test above already reports. */
+    if ((flow = strstr(flow, "\n")) == NULL) {
+      write_to_output(d, "There aren't that many lines!\r\n");
+      return 0;
+    }
     strncpy(str, ++flow, sizeof(str) - 1);
   }
 
@@ -586,9 +594,11 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
         cap_next = TRUE;
       }
 
-      /* This is so that if we stopped on a sentence, we move off the sentence 
-       * delimiter. */
-      while (strchr(".!?", *flow)) {
+      /* This is so that if we stopped on a sentence, we move off the sentence
+       * delimiter.  The *flow test is not redundant: strchr() answers a match
+       * for the terminator too -- strchr(s, 0) points at s own NUL -- so at
+       * the end of the string this walked off the end of it. */
+      while (*flow && strchr(".!?", *flow)) {
         cap_next_next = TRUE;
         flow++;
       }
@@ -598,7 +608,10 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
        * to the \r (or \n) character after the delimiter. Thus *flow will be 
        * non-null, and an extra (blank) line might be added erroneously. We 
        * fix it by skipping the newline characters in between. - Welcor */
-      if (strchr("\n\r", *flow)) {
+      /* Same again: without the *flow test the end of the string reads as a
+       * delimiter, and then the flow++ below -- which is safe only because a
+       * real \r or \n has something after it -- steps past the terminator. */
+      if (*flow && strchr("\n\r", *flow)) {
         *flow = '\0';  /* terminate 'start' string */
         flow++;        /* we know this is safe     */
         if (*flow == '\n' && i++ >= high)
@@ -710,12 +723,17 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, un
     }
   }
 
-  if (i <= 0)
+  /* Nothing matched, or the size test above gave up part way: *string is left
+   * as it was, but the working copy still has to go back.  Returning from
+   * here without freeing it leaked max_size bytes -- d->max_str of them, so
+   * up to the whole of the editor buffer -- every time /r found nothing. */
+  if (i <= 0) {
+    free(replace_buffer);
     return 0;
-  else {
-    RECREATE(*string, char, strlen(replace_buffer) + 3);
-    strcpy(*string, replace_buffer);
   }
+
+  RECREATE(*string, char, strlen(replace_buffer) + 3);
+  strcpy(*string, replace_buffer);
   free(replace_buffer);
   return i;
 }
