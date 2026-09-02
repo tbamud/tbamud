@@ -704,24 +704,24 @@ static void Crash_calculate_rent(struct obj_data *obj, int *cost)
   }
 }
 
-void Crash_crashsave(struct char_data *ch)
+int Crash_crashsave(struct char_data *ch)
 {
   char buf[MAX_INPUT_LENGTH], tmp[MAX_INPUT_LENGTH + 8];
   int j;
   FILE *fp;
 
   if (IS_NPC(ch))
-    return;
+    return FALSE;
 
   if (!get_filename(buf, sizeof(buf), CRASH_FILE, GET_NAME(ch)))
-    return;
+    return FALSE;
 
   if (!(fp = objsave_open_tmp(buf, tmp, sizeof(tmp))))
-    return;
+    return FALSE;
 
   if (!objsave_write_rentcode(fp, RENT_CRASH, 0, ch)) {
     objsave_abandon_file(fp, tmp);
-    return;
+    return FALSE;
   }
 
   for (j = 0; j < NUM_WEARS; j++)
@@ -731,7 +731,7 @@ void Crash_crashsave(struct char_data *ch)
       Crash_restore_weight(GET_EQ(ch, j));
       if (!result) {
         objsave_abandon_file(fp, tmp);
-        return;
+        return FALSE;
       }
     }
 
@@ -741,14 +741,15 @@ void Crash_crashsave(struct char_data *ch)
     Crash_restore_weight(ch->carrying);
     if (!result) {
       objsave_abandon_file(fp, tmp);
-      return;
+      return FALSE;
     }
   }
 
   if (!objsave_commit_file(fp, tmp, buf))
-    return;
+    return FALSE;
 
   REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
+  return TRUE;
 }
 
 int Crash_idlesave(struct char_data *ch)

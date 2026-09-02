@@ -33,7 +33,6 @@
 #include "modify.h"
 #include "quest.h"
 #include "ban.h"
-#include "spec_procs.h"
 #include "screen.h"
 
 /* local utility functions with file scope */
@@ -524,27 +523,6 @@ static void list_zone_commands_room(struct char_data *ch, room_vnum rvnum)
 }
 #undef ZOCMD
 
-/* snprintf() answers the length it WOULD have written, not the length it
- * wrote.  The column trackers in the listings below add that answer to a
- * running width and wrap the line at 62, so taking it at face value walks
- * the width past what the character actually received and the wrap fires
- * early -- the same class of mistake as adding send_to_char()'s return
- * value, which is what these lists used to do.  Report the bytes the buffer
- * really holds.
- *
- * The buffers stay MAX_INPUT_LENGTH: 512 characters is far more than a name
- * or a short description needs, and the clamp means that if one ever did
- * overrun, the width stays honest about what was sent rather than silently
- * drifting. */
-static int stored_len(int written, size_t bufsize)
-{
-  if (written < 0)
-    return 0;
-  if ((size_t)written >= bufsize)
-    return (int)bufsize - 1;
-  return written;
-}
-
 static void do_stat_room(struct char_data *ch, struct room_data *rm)
 {
   char buf2[MAX_STRING_LENGTH];
@@ -578,12 +556,8 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
     if (!CAN_SEE(ch, k))
       continue;
 
-    {
-      char lbuf[MAX_INPUT_LENGTH];
-      column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
-		!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")), sizeof(lbuf));
-      send_to_char(ch, "%s", lbuf);
-    }
+    column += send_to_char(ch, "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
+		!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB"));
     if (column >= 62) {
       send_to_char(ch, "%s\r\n", k->next_in_room ? "," : "");
       found = FALSE;
@@ -591,8 +565,6 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
     }
   }
   send_to_char(ch, "%s", CCNRM(ch, C_NRM));
-  if (column != 0)
-    send_to_char(ch, "\r\n");
 
   if (rm->contents) {
     send_to_char(ch, "Contents:%s", CCGRN(ch, C_NRM));
@@ -602,11 +574,7 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
       if (!CAN_SEE_OBJ(ch, j))
 	continue;
 
-      {
-        char lbuf[MAX_INPUT_LENGTH];
-        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j->short_description), sizeof(lbuf));
-        send_to_char(ch, "%s", lbuf);
-      }
+      column += send_to_char(ch, "%s %s", found++ ? "," : "", j->short_description);
       if (column >= 62) {
 	send_to_char(ch, "%s\r\n", j->next_content ? "," : "");
 	found = FALSE;
@@ -614,8 +582,6 @@ static void do_stat_room(struct char_data *ch, struct room_data *rm)
       }
     }
     send_to_char(ch, "%s", CCNRM(ch, C_NRM));
-    if (column != 0)
-      send_to_char(ch, "\r\n");
   }
 
   for (i = 0; i < DIR_COUNT; i++) {
@@ -769,11 +735,7 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
     column = 9;	/* ^^^ strlen ^^^ */
 
     for (found = 0, j2 = j->contains; j2; j2 = j2->next_content) {
-      {
-        char lbuf[MAX_INPUT_LENGTH];
-        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", j2->short_description), sizeof(lbuf));
-        send_to_char(ch, "%s", lbuf);
-      }
+      column += send_to_char(ch, "%s %s", found++ ? "," : "", j2->short_description);
       if (column >= 62) {
 	send_to_char(ch, "%s\r\n", j2->next_content ? "," : "");
 	found = FALSE;
@@ -781,8 +743,6 @@ static void do_stat_object(struct char_data *ch, struct obj_data *j)
       }
     }
     send_to_char(ch, "%s", CCNRM(ch, C_NRM));
-    if (column != 0)
-      send_to_char(ch, "\r\n");
   }
 
   found = FALSE;
@@ -837,16 +797,22 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
 
     send_to_char(ch, "Created: [%s], Last Logon: [%s]\r\n", buf1, buf2);
 
-    send_to_char(ch, "Played: [%dh %dm], Age: [%d], Prac: [%d] (+%d/lvl, %d%%/prac)",
+    send_to_char(ch, "Played: [%dh %dm], Age: [%d], STL[%d]/per[%d]/NSTL[%d]",
             k->player.time.played / 3600, (k->player.time.played % 3600) / 60,
-            age(k)->year, GET_PRACTICES(k), practices_per_level(k),
-            practice_gain_percent(k));
-    /* Display OLC zone for builders. */
+            age(k)->year, GET_PRACTICES(k), int_app[GET_INT(k)].learn,
+	    wis_app[GET_WIS(k)].bonus);
+    /* Display OLC zone for immorts. */
     if (GET_LEVEL(k) >= LVL_BUILDER) {
-      char olcbuf[MAX_INPUT_LENGTH];
-
-      sprint_olc_access(k, olcbuf, sizeof(olcbuf));
-      send_to_char(ch, ", OLC[%s%s%s]", CCCYN(ch, C_NRM), olcbuf, CCNRM(ch, C_NRM));
+      if (GET_OLC_ZONE(k)==AEDIT_PERMISSION)
+        send_to_char(ch, ", OLC[%sAedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+      else if (GET_OLC_ZONE(k)==HEDIT_PERMISSION)
+        send_to_char(ch, ", OLC[%sHedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+      else if (GET_OLC_ZONE(k) == ALL_PERMISSION)
+        send_to_char(ch, ", OLC[%sAll%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+      else if (GET_OLC_ZONE(k)==NOWHERE)
+        send_to_char(ch, ", OLC[%sOFF%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+      else
+        send_to_char(ch, ", OLC[%s%d%s]", CCCYN(ch, C_NRM), GET_OLC_ZONE(k), CCNRM(ch, C_NRM));
     }
     send_to_char(ch, "\r\n");
   }
@@ -925,17 +891,12 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
   if (!IS_NPC(k))
     send_to_char(ch, "Hunger: %d, Thirst: %d, Drunk: %d\r\n", GET_COND(k, HUNGER), GET_COND(k, THIRST), GET_COND(k, DRUNK));
 
-  column = stored_len(snprintf(buf, sizeof(buf), "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>"), sizeof(buf));
-  send_to_char(ch, "%s", buf);
+  column = send_to_char(ch, "Master is: %s, Followers are:", k->master ? GET_NAME(k->master) : "<none>");
   if (!k->followers)
     send_to_char(ch, " <none>\r\n");
   else {
     for (fol = k->followers; fol; fol = fol->next) {
-      {
-        char lbuf[MAX_INPUT_LENGTH];
-        column += stored_len(snprintf(lbuf, sizeof(lbuf), "%s %s", found++ ? "," : "", PERS(fol->follower, ch)), sizeof(lbuf));
-        send_to_char(ch, "%s", lbuf);
-      }
+      column += send_to_char(ch, "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
       if (column >= 62) {
         send_to_char(ch, "%s\r\n", fol->next ? "," : "");
         found = FALSE;
@@ -2291,10 +2252,10 @@ ACMD(do_wiznet)
   }
   if (level > LVL_IMMORT) {
     snprintf(buf1, sizeof(buf1), "\tc%s: <%d> %s%s\tn\r\n", GET_NAME(ch), level, emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf2), "\tcSomeone: <%d> %s%s\tn\r\n", level, emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "\tcSomeone: <%d> %s%s\tn\r\n", level, emote ? "<--- " : "", argument);
 } else {
     snprintf(buf1, sizeof(buf1), "\tc%s: %s%s\tn\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
-    snprintf(buf2, sizeof(buf2), "\tcSomeone: %s%s\tn\r\n", emote ? "<--- " : "", argument);
+    snprintf(buf2, sizeof(buf1), "\tcSomeone: %s%s\tn\r\n", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
@@ -2480,15 +2441,15 @@ static size_t print_zone_to_buf(char *bufptr, size_t left, zone_rnum zone, int l
 	zone_table[zone].bot, zone_table[zone].top);
         j = k = l = m = n = o = 0;
 
-        for (i = 0; i <= top_of_world; i++)
+        for (i = 0; i < top_of_world; i++)
           if (world[i].number >= zone_table[zone].bot && world[i].number <= zone_table[zone].top)
             j++;
 
-        for (i = 0; i <= top_of_objt; i++)
+        for (i = 0; i < top_of_objt; i++)
           if (obj_index[i].vnum >= zone_table[zone].bot && obj_index[i].vnum <= zone_table[zone].top)
             k++;
 
-        for (i = 0; i <= top_of_mobt; i++)
+        for (i = 0; i < top_of_mobt; i++)
           if (mob_index[i].vnum >= zone_table[zone].bot && mob_index[i].vnum <= zone_table[zone].top)
             l++;
 
@@ -2704,13 +2665,13 @@ ACMD(do_show)
   "  %5d triggers         %5d shops\r\n"
   "  %5d large bufs       %5d autoquests\r\n"
 	"  %5d buf switches     %5d overflows\r\n"
-	"  %5zu lists\r\n",
+	"  %5d lists\r\n",
 	i, con,
 	top_of_p_table + 1,
 	j, top_of_mobt + 1,
 	k, top_of_objt + 1,
 	top_of_world + 1, top_of_zone_table + 1,
-	top_of_trigt, top_shop + 1,
+	top_of_trigt + 1, top_shop + 1,
 	buf_largecount, total_quests,
 	buf_switches, buf_overflows, global_lists->iSize
 	);
@@ -3643,7 +3604,7 @@ ACMD (do_zcheck)
 
   send_to_char(ch, "Checking Mobs for limits...\r\n");
   /*check mobs first*/
-  for (i=0; i<=top_of_mobt;i++) {
+  for (i=0; i<top_of_mobt;i++) {
       if (real_zone_by_thing(mob_index[i].vnum) == zrnum) {  /*is mob in this zone?*/
         mob = &mob_proto[i];
         if (!strcmp(mob->player.name, "mob unfinished") && (found=1))
@@ -3743,7 +3704,7 @@ ACMD (do_zcheck)
 
  /* Check objects */
   send_to_char(ch, "\r\nChecking Objects for limits...\r\n");
-  for (i=0; i<=top_of_objt; i++) {
+  for (i=0; i<top_of_objt; i++) {
     if (real_zone_by_thing(obj_index[i].vnum) == zrnum) { /*is object in this zone?*/
       obj = &obj_proto[i];
       switch (GET_OBJ_TYPE(obj)) {
@@ -3875,7 +3836,7 @@ ACMD (do_zcheck)
 
   /* Check rooms */
   send_to_char(ch, "\r\nChecking Rooms for limits...\r\n");
-  for (i=0; i<=top_of_world;i++) {
+  for (i=0; i<top_of_world;i++) {
     if (world[i].zone==zrnum) {
       for (j = 0; j < DIR_COUNT; j++) {
         /*check for exit, but ignore off limits if you're in an offlimit zone*/
@@ -3940,7 +3901,7 @@ ACMD (do_zcheck)
     } /*is room in this zone?*/
   } /*checking rooms*/
 
-  for (i=0; i<=top_of_world;i++) {
+  for (i=0; i<top_of_world;i++) {
     if (world[i].zone==zrnum) {
       m++;
       for (j = 0, k = 0; j < DIR_COUNT; j++)
@@ -4132,7 +4093,7 @@ static void trg_checkload(struct char_data *ch, trig_vnum tvnum)
     } /*for cmd_no......*/
   }  /*for zone...*/
 
-  for (i = 0; i <= top_of_mobt; i++) {
+  for (i = 0; i < top_of_mobt; i++) {
     if (!mob_proto[i].proto_script)
       continue;
 
@@ -4145,7 +4106,7 @@ static void trg_checkload(struct char_data *ch, trig_vnum tvnum)
       }
   }
 
-  for (j = 0; j <= top_of_objt; j++) {
+  for (j = 0; j < top_of_objt; j++) {
     if (!obj_proto[j].proto_script)
       continue;
 
@@ -4158,7 +4119,7 @@ static void trg_checkload(struct char_data *ch, trig_vnum tvnum)
       }
   }
 
-  for (k = 0;k <= top_of_world; k++) {
+  for (k = 0;k < top_of_world; k++) {
     if (!world[k].proto_script)
       continue;
 
@@ -4207,71 +4168,135 @@ ACMD(do_checkloadstatus)
 ACMD(do_copyover)
 {
   FILE *fp;
-  struct descriptor_data *d, *d_next;
-  char buf [100], buf2[100];
+  struct descriptor_data *d, *d_next, *initiator;
+  struct char_data *och;
+  char buf[100], buf2[100];
+  int file_ok = TRUE;
 
-  fp = fopen (COPYOVER_FILE, "w");
-    if (!fp) {
-      send_to_char (ch, "Copyover file not writeable, aborted.\n\r");
+  initiator = ch->desc;
+
+  /*
+   * First return switched descriptors to their real characters and save every
+   * playing character without removing objects from the live game.
+   */
+  for (d = descriptor_list; d; d = d->next) {
+    och = d->character;
+
+    if (och && d->original) {
+      return_to_char(och);
+      och = d->character;
+    }
+
+    if (!och || d->connected > CON_PLAYING)
+      continue;
+
+    GET_LOADROOM(och) = GET_ROOM_VNUM(IN_ROOM(och));
+
+    /* A crash save, not a rent: nothing is taken off the character, no
+     * rent is charged, and keys and norent items come through the reboot
+     * with everything else. */
+    if (!Crash_crashsave(och)) {
+      if (initiator && initiator->character)
+        ch = initiator->character;
+
+      send_to_char(ch,
+          "Copyover aborted: unable to save %s's belongings.\r\n",
+          GET_NAME(och));
+      mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE,
+          "Copyover aborted: failed to save %s's belongings.",
+          GET_NAME(och));
       return;
     }
 
-   sprintf (buf, "\n\r *** COPYOVER by %s - please remain seated!\n\r", GET_NAME(ch));
+    save_char(och);
+  }
 
-   /* write boot_time as first line in file */
-   fprintf(fp, "%ld\n", (long)boot_time);
+  /*
+   * return_to_char() may have changed the character associated with the
+   * descriptor that issued the command.
+   */
+  if (initiator && initiator->character)
+    ch = initiator->character;
 
-   /* For each playing descriptor, save its state */
-   for (d = descriptor_list; d ; d = d_next) {
-     struct char_data * och = d->character;
-   
-   /* If d is currently in someone else's body, return them. */  
-   if (och && d->original)
-     return_to_char(och);
-        
-   /* We delete from the list , so need to save this */
-     d_next = d->next;
+  /*
+   * Only create the recovery file once every character has been persisted
+   * successfully.
+   */
+  fp = fopen(COPYOVER_FILE, "w");
+  if (!fp) {
+    send_to_char(ch, "Copyover file not writeable, aborted.\n\r");
+    return;
+  }
 
-  /* drop those logging on */
-   if (!d->character || d->connected > CON_PLAYING) {
-     write_to_descriptor (d->descriptor, "\n\rSorry, we are rebooting. Come back in a few minutes.\n\r");
-     close_socket (d); /* throw'em out */
-   } else {
-      fprintf (fp, "%d %ld %s %s %s\n", d->descriptor, GET_PREF(och), GET_NAME(och), d->host, CopyoverGet(d));
-      /* save och */
-      GET_LOADROOM(och) = GET_ROOM_VNUM(IN_ROOM(och));
-      /* One player's rent file failing is no reason to abandon a copyover
-       * everyone else has already been rented for; the previous file is
-       * still on disk and is what they will reload from. */
-      if (!Crash_rentsave(och, 0))
-        mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: copyover: could not write %s's rent file; they reload from the previous one.", GET_NAME(och));
-      save_char(och);
-      write_to_descriptor (d->descriptor, buf);
+  snprintf(buf, sizeof(buf),
+      "\n\r *** COPYOVER by %s - please remain seated!\n\r",
+      GET_NAME(ch));
+
+  if (fprintf(fp, "%ld\n", (long)boot_time) < 0)
+    file_ok = FALSE;
+
+  for (d = descriptor_list; d && file_ok; d = d->next) {
+    och = d->character;
+
+    if (!och || d->connected > CON_PLAYING)
+      continue;
+
+    if (fprintf(fp, "%d %ld %s %s %s\n",
+            d->descriptor, GET_PREF(och), GET_NAME(och),
+            d->host, CopyoverGet(d)) < 0)
+      file_ok = FALSE;
+  }
+
+  if (file_ok && fprintf(fp, "-1\n") < 0)
+    file_ok = FALSE;
+  if (file_ok && fflush(fp) == EOF)
+    file_ok = FALSE;
+  if (ferror(fp))
+    file_ok = FALSE;
+  if (fclose(fp) == EOF)
+    file_ok = FALSE;
+
+  if (!file_ok) {
+    send_to_char(ch, "Copyover file write failed, aborted.\r\n");
+    mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE,
+        "Copyover aborted: recovery file could not be completed.");
+    return;
+  }
+
+  /*
+   * Persistence and recovery metadata are complete.  Only now close sockets
+   * that cannot survive copyover and notify the players that remain.
+   */
+  for (d = descriptor_list; d; d = d_next) {
+    d_next = d->next;
+
+    if (!d->character || d->connected > CON_PLAYING) {
+      write_to_descriptor(d->descriptor,
+          "\n\rSorry, we are rebooting. Come back in a few minutes.\n\r");
+      close_socket(d);
+    } else {
+      write_to_descriptor(d->descriptor, buf);
     }
   }
 
-  fprintf (fp, "-1\n");
-  fclose (fp);
-
-  /* exec - descriptors are inherited */
-  sprintf (buf, "%d", port);
-  sprintf (buf2, "-C%d", mother_desc);
+  snprintf(buf, sizeof(buf), "%d", port);
+  snprintf(buf2, sizeof(buf2), "-C%d", mother_desc);
 
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
-  if(chdir ("..") != 0) {
+  if (chdir("..") != 0) {
     log("Error changing working directory: %s", strerror(errno));
     send_to_char(ch, "Error changing working directory: %s.", strerror(errno));
     exit(1);
   }
 
   /* Close reserve and other always-open files and release other resources */
-  execl (EXE_FILE, "circle", buf2, buf, (char *) NULL);
+  execl(EXE_FILE, "circle", buf2, buf, (char *) NULL);
 
   /* Failed - successful exec will not return */
-  perror ("do_copyover: execl");
-  send_to_char (ch, "Copyover FAILED!\n\r");
+  perror("do_copyover: execl");
+  send_to_char(ch, "Copyover FAILED!\n\r");
 
-  exit (1); /* too much trouble to try to recover! */
+  exit(1); /* too much trouble to try to recover! */
 }
 
 ACMD(do_peace)

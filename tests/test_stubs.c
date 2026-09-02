@@ -205,7 +205,7 @@ __attribute__((weak))
 void free_char_from_db(struct char_data *ch) { (void)ch; }
 
 __attribute__((weak))
-void Crash_crashsave(struct char_data *ch) { (void)ch; }
+int Crash_crashsave(struct char_data *ch) { (void)ch; return 1; }
 
 __attribute__((weak))
 int Crash_load(struct char_data *ch) { (void)ch; return 0; }
