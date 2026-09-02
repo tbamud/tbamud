@@ -654,6 +654,8 @@ do                                                              \
 #define GET_DEFAULT_POS(ch)	((ch)->mob_specials.default_pos)
 /** Return the memory of ch. */
 #define MEMORY(ch)		((ch)->mob_specials.memory)
+/** Return the affect bitarray ch was created with. NPCs only. */
+#define GET_INNATE_AFF(ch)	((ch)->mob_specials.innate_aff)
 
 /** Return the equivalent strength of ch if ch has level 18 strength. */
 #define STRENGTH_APPLY_INDEX(ch) \

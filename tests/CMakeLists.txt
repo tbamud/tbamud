@@ -111,3 +111,14 @@ add_mud_test(test_lists
     ${MUD_SRCDIR}/random.c
     ${CMAKE_CURRENT_SOURCE_DIR}/test_lists.c
 )
+
+# ---------------------------------------------------------------------------
+# test_handler — covers innate-affect handling in src/handler.c
+# ---------------------------------------------------------------------------
+add_mud_test(test_handler
+    ${MUD_SRCDIR}/handler.c
+    ${MUD_SRCDIR}/lists.c
+    ${MUD_SRCDIR}/utils.c
+    ${MUD_SRCDIR}/random.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_handler.c
+)
