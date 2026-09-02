@@ -34,6 +34,23 @@
 /** Standard line size, used for many string limits. */
 #define READ_SIZE	256
 
+/* Stringify a macro's VALUE. Two levels are required: the inner macro
+ * stringifies its argument, so the outer one has to expand it first. */
+#define STRINGIFY_(x)   #x
+#define STRINGIFY(x)    STRINGIFY_(x)
+
+/** A scanf field width for a buffer declared `[N + 1]`: N characters plus
+ * the terminating NUL that scanf always appends.  Written as
+ *
+ *     char name[MAX_NAME_LENGTH + 1];
+ *     sscanf(line, "%" SCANF_WIDTH(MAX_NAME_LENGTH) "s", name);
+ *
+ * the bound comes from the same constant that sizes the array, so the two
+ * cannot drift apart.  A literal width can drift silently in either
+ * direction -- truncating if the buffer is later grown, overflowing if it
+ * is shrunk -- and nothing diagnoses it. */
+#define SCANF_WIDTH(n)  STRINGIFY(n)
+
 /* Public functions made available from utils.c. Documentation for all functions
  * are made available with the function definition. */
 void basic_mud_log(const char *format, ...) __attribute__ ((format (printf, 1, 2)));

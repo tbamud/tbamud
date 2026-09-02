@@ -243,7 +243,7 @@ static void boot_social_messages(void)
 
   /* now read 'em */
   for (line_number = 0;; ++line_number) {
-    if (fscanf(fl, " %s ", next_soc) != 1) {
+    if (fscanf(fl, " " BOOT_TOKEN_FMT " ", next_soc) != 1) {
       if(feof(fl))
         log("SYSERR: unexpected end of file encountered in socials file %s", SOCMESS_FILE_NEW);
       else if(ferror(fl))
@@ -254,7 +254,7 @@ static void boot_social_messages(void)
     }
     if (*next_soc == '$') break;
     if (CONFIG_NEW_SOCIALS == TRUE) {
-      if (fscanf(fl, " %s %d %d %d %d \n",
+      if (fscanf(fl, " " BOOT_TOKEN_FMT " %d %d %d %d \n",
   		sorted, &hide, &min_char_pos, &min_pos, &min_lvl) != 5) {
       log("SYSERR: format error in social file near social '%s'", next_soc);
       /* SYSERR_DESC: From boot_social_messages(), this error is output when
@@ -937,7 +937,7 @@ int count_hash_records(FILE *fl)
   char buf[128];
   int count = 0;
 
-  while (fgets(buf, 128, fl))
+  while (fgets(buf, sizeof(buf), fl))
     if (*buf == '#')
       count++;
 
@@ -949,7 +949,10 @@ void index_boot(int mode)
   const char *index_filename, *prefix = NULL;	/* NULL or egcs 1.1 complains */
   FILE *db_index, *db_file;
   int line_number, rec_count = 0, size[2];
-  char buf2[PATH_MAX], buf1[PATH_MAX - 100];   // - 100 to make room for prefix
+  /* buf1 holds one index entry, buf2 that entry behind its prefix.  buf1 is
+   * sized from the entry it holds now rather than from PATH_MAX, which is not
+   * the same number on every platform -- see INDEX_ENTRY_FIELD in db.h. */
+  char buf2[PATH_MAX], buf1[INDEX_ENTRY_FIELD + 1];
 
   switch (mode) {
   case DB_BOOT_WLD:
@@ -994,7 +997,7 @@ void index_boot(int mode)
 
   for (line_number = 0;; ++line_number) {
     /* first, count the number of records in the file so we can malloc */
-    if (fscanf(db_index, "%s\n", buf1) != 1) {
+    if (fscanf(db_index, INDEX_ENTRY_FMT "\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s. "
             "Ensure that the last line of the file starts with the character '$'.",
@@ -1079,7 +1082,7 @@ void index_boot(int mode)
   rewind(db_index);
 
   for (line_number = 1;; ++line_number) {
-    if (fscanf(db_index, "%s\n", buf1) != 1) {
+    if (fscanf(db_index, INDEX_ENTRY_FMT "\n", buf1) != 1) {
       if (feof(db_index))
         log("SYSERR: boot error -- unexpected end of file encountered in index file ./%s%s",
             prefix, index_filename);
@@ -1263,13 +1266,46 @@ void ensure_newline_terminated(struct extra_descr_data* new_descr) {
   }
 }
 
+/* A scanf field width bounds the STORE, not the SCAN.  Given a token longer
+ * than the width, %<n>s copies n characters, appends the NUL -- and leaves
+ * the read position inside the token.  The whitespace directive that follows
+ * matches zero characters there, so the NEXT conversion picks up the rest of
+ * the same token as if it were the next field.  Everything after it shifts
+ * along by one and the conversion count still reaches its total, so the
+ * caller's `retval == 6` test sees a perfectly ordinary line and loads a
+ * room whose sector type used to be half of its flags.
+ *
+ * Bounding the buffers stopped the overflow; it did not stop that.  So
+ * refuse the line before it is parsed: no legal field in a world file is
+ * this long, and a file that carries one is not one we can read correctly.
+ * Checked per whitespace-separated token, so it covers the numeric fields
+ * on the same line as well. */
+static int line_has_overlong_field(const char *line)
+{
+  const char *p = line;
+
+  while (*p) {
+    size_t run = 0;
+
+    while (*p && isspace((unsigned char)*p))
+      p++;
+    while (p[run] && !isspace((unsigned char)p[run]))
+      run++;
+    if (run > WORLD_FLAG_FIELD)
+      return TRUE;
+    p += run;
+  }
+  return FALSE;
+}
+
 /* load the rooms */
 void parse_room(FILE *fl, int virtual_nr)
 {
   static int room_nr = 0, zone = 0;
   int t[10], i, retval;
-  char line[READ_SIZE], flags[128], flags2[128], flags3[128];
-  char flags4[128], buf2[MAX_STRING_LENGTH], buf[128];
+  char line[READ_SIZE], flags[WORLD_FLAG_FIELD + 1];
+  char flags2[WORLD_FLAG_FIELD + 1], flags3[WORLD_FLAG_FIELD + 1];
+  char flags4[WORLD_FLAG_FIELD + 1], buf2[MAX_STRING_LENGTH], buf[128];
   struct extra_descr_data *new_descr;
   char letter;
 
@@ -1296,7 +1332,14 @@ void parse_room(FILE *fl, int virtual_nr)
     exit(1);
   }
 
-  if (((retval = sscanf(line, " %d %s %s %s %s %d ", t, flags, flags2, flags3, flags4, t + 2)) == 3) && (bitwarning == TRUE)) {
+  if (line_has_overlong_field(line)) {
+    log("SYSERR: Room #%d has a field longer than %d characters.",
+	virtual_nr, WORLD_FLAG_FIELD);
+    exit(1);
+  }
+
+  if (((retval = sscanf(line, " %d " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT
+                       " " FLAG_FIELD_FMT " %d ", t, flags, flags2, flags3, flags4, t + 2)) == 3) && (bitwarning == TRUE)) {
     log("WARNING: Conventional world files detected. See config.c.");
     exit(1);
   } else if ((retval == 3) && (bitwarning == FALSE)) {
@@ -1755,7 +1798,10 @@ void parse_mobile(FILE *mob_f, int nr)
   static int i = 0;
   int j, t[10], retval;
   char line[READ_SIZE], *tmpptr, letter;
-  char f1[128], f2[128], f3[128], f4[128], f5[128], f6[128], f7[128], f8[128], buf2[128];
+  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
+  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1];
+  char f5[WORLD_FLAG_FIELD + 1], f6[WORLD_FLAG_FIELD + 1];
+  char f7[WORLD_FLAG_FIELD + 1], f8[WORLD_FLAG_FIELD + 1], buf2[128];
 
   mob_index[i].vnum = nr;
   mob_index[i].number = 0;
@@ -1787,7 +1833,15 @@ void parse_mobile(FILE *mob_f, int nr)
     exit(1);
   }
 
-  if (((retval = sscanf(line, "%s %s %s %s %s %s %s %s %d %c", f1, f2, f3, f4, f5, f6, f7, f8, t + 2, &letter)) != 10) && (bitwarning == TRUE)) {
+  if (line_has_overlong_field(line)) {
+    log("SYSERR: Mob #%d has a field longer than %d characters.",
+	nr, WORLD_FLAG_FIELD);
+    exit(1);
+  }
+
+  if (((retval = sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT
+                       " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT
+                       " %d %c", f1, f2, f3, f4, f5, f6, f7, f8, t + 2, &letter)) != 10) && (bitwarning == TRUE)) {
     /* Let's make the implementor read some, before converting his world files. */
     log("WARNING: Conventional mobile files detected. See config.c.");
     exit(1);
@@ -2104,7 +2158,7 @@ static void load_zones(FILE *fl, char *zonename)
   int i, cmd_no, num_of_cmds = 0, line_num = 0, tmp, error;
   char *ptr, buf[READ_SIZE], zname[READ_SIZE], buf2[MAX_STRING_LENGTH];
   int zone_fix = FALSE;
-  char t1[80], t2[80];
+  char t1[ZCMD_STR_FIELD + 1], t2[ZCMD_STR_FIELD + 1];
   char zbuf1[MAX_STRING_LENGTH], zbuf2[MAX_STRING_LENGTH];
   char zbuf3[MAX_STRING_LENGTH], zbuf4[MAX_STRING_LENGTH];
 
@@ -2220,7 +2274,7 @@ static void load_zones(FILE *fl, char *zonename)
       if (sscanf(ptr, " %d %d %d ", &tmp, &ZCMD.arg1, &ZCMD.arg2) != 3)
 	error = 1;
     } else if (ZCMD.command=='V') { /* a string-arg command */
-      if (sscanf(ptr, " %d %d %d %d %79s %79[^\f\n\r\t\v]", &tmp, &ZCMD.arg1, &ZCMD.arg2,
+      if (sscanf(ptr, " %d %d %d %d " ZCMD_STR_FMT " " ZCMD_TXT_FMT, &tmp, &ZCMD.arg1, &ZCMD.arg2,
 		 &ZCMD.arg3, t1, t2) != 6)
 	error = 1;
       else {
@@ -2871,14 +2925,22 @@ int is_empty(zone_rnum zone_nr)
 /* read and allocate space for a '~'-terminated string from a given file */
 char *fread_string(FILE *fl, const char *error)
 {
-  char buf[MAX_STRING_LENGTH], tmp[513];
+  /* fgets() stores at most FREAD_CHUNK - 1 characters and a NUL, so the NUL
+   * can land at FREAD_CHUNK - 1.  The else branch below then writes from
+   * there: '\r', '\n' and '\0', ending two past the NUL.  So the array has to
+   * be the fgets bound plus two, and it was the fgets bound plus one -- a
+   * line of FREAD_CHUNK - 1 characters with no newline among them wrote one
+   * byte off the end of the stack.  Deriving both from one constant is what
+   * keeps the two in step; that they were written as 512 and 513 is how they
+   * drifted apart in the first place. */
+  char buf[MAX_STRING_LENGTH], tmp[FREAD_CHUNK + 2];
   char *point;
   int done = 0, length = 0, templength;
 
   *buf = '\0';
 
   do {
-    if (!fgets(tmp, 512, fl)) {
+    if (!fgets(tmp, FREAD_CHUNK, fl)) {
       log("SYSERR: fread_string: format error at or near %s", error);
       exit(1);
     }
@@ -2919,7 +2981,9 @@ char *fread_string(FILE *fl, const char *error)
 /* fread_clean_string is the same as fread_string, but skips preceding spaces */
 char *fread_clean_string(FILE *fl, const char *error)
 {
-  char buf[MAX_STRING_LENGTH], tmp[513];
+  /* Same three-byte tail as fread_string(), and this one always takes it --
+   * there is no branch here that rewrites in place -- so the same plus-two. */
+  char buf[MAX_STRING_LENGTH], tmp[FREAD_CHUNK + 2];
   char *point, c;
   int done = 0, length = 0, templength;
 
@@ -2938,19 +3002,29 @@ char *fread_clean_string(FILE *fl, const char *error)
   ungetc( c, fl );
 
   do {
-    if (!fgets(tmp, 512, fl)) {
+    if (!fgets(tmp, FREAD_CHUNK, fl)) {
       log("SYSERR: fread_clean_string: format error at or near %s", error);
       exit(1);
     }
     /* If there is a '~', end the string; else put an "\r\n" over the '\n'. */
     /* now only removes trailing ~'s -- Welcor */
     point = strchr(tmp, '\0');
-    for (point-- ; (*point=='\r' || *point=='\n'); point--);
+    /* Same walk and same tail as fread_string().  The guard and the in-place
+     * branch below are one mechanism, not two: without the guard a chunk that
+     * is nothing but newlines walks point off the FRONT of tmp, and the guard
+     * is what makes it possible for point to still be sitting on a carriage
+     * return or a newline when the walk stops -- which is the case the branch
+     * rewrites in place instead of appending past.  This copy had neither. */
+    for (point-- ; (*point=='\r' || *point=='\n') && point > tmp; point--);
     if (*point=='~') {
       *point='\0';
       done = 1;
     } else {
-      *(++point) = '\r';
+      if (*point == '\n' || *point == '\r')
+        *point = '\r';
+      else
+        *(++point) = '\r';
+
       *(++point) = '\n';
       *(++point) = '\0';
     }

@@ -131,7 +131,7 @@ void parse_quest(FILE *quest_f, int nr)
   static char line[256];
   static int i = 0, j;
   int retval = 0, t[7];
-  char f1[128], buf2[MAX_STRING_LENGTH];
+  char f1[WORLD_FLAG_FIELD + 1], buf2[MAX_STRING_LENGTH];
   aquest_table[i].vnum = nr;
   aquest_table[i].qm = NOBODY;
   aquest_table[i].name = NULL;
@@ -160,7 +160,7 @@ void parse_quest(FILE *quest_f, int nr)
   aquest_table[i].done = fread_string(quest_f, buf2);
   aquest_table[i].quit = fread_string(quest_f, buf2);
   if (!get_line(quest_f, line) ||
-      (retval = sscanf(line, " %d %d %s %d %d %d %d",
+      (retval = sscanf(line, " %d %d " FLAG_FIELD_FMT " %d %d %d %d",
              t, t+1, f1, t+2, t+3, t + 4, t + 5)) != 7) {
     log("Format error in numeric line (expected 7, got %d), %s\n",
         retval, line);

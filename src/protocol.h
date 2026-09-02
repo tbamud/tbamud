@@ -323,6 +323,12 @@ const char *ProtocolOutput( descriptor_t *apDescriptor, const char *apData, int 
  Copyover save/load functions.
  ******************************************************************************/
 
+/** Longest string CopyoverGet() can return: a screen size, then one letter
+ * per negotiated option.  Named here rather than left as the literal on its
+ * buffer, because the copyover reader has to size its own array from the same
+ * number -- and it had picked an unrelated one. */
+#define COPYOVER_GUI_FIELD  63
+
 /* Function: CopyoverGet
  *
  * Returns the protocol values stored as a short string.  If your mud uses 

@@ -71,8 +71,8 @@ void read_file(void)
 
   FILE *fl;
   int recs, i, last = 0, level = 0, flags = 0;
-  char index_name[40], line[256], bits[64];
-  char name[MAX_NAME_LENGTH];
+  char index_name[40], line[256], bits[WORLD_FLAG_FIELD + 1];
+  char name[PLR_INDEX_NAME_FIELD + 1];
   long id = 0;
 
   sprintf(index_name, "%s%s", LIB_PLRFILES, INDEX_FILE);
@@ -89,7 +89,16 @@ void read_file(void)
 
   for (i = 0; i < recs; i++) {
     get_line(fl, line);
-    sscanf(line, "%ld %s %d %s %d", &id, name, &level, bits, &last);
+    /* Same file, same reason as build_player_index(): name and bits outlive
+     * the iteration, so a short count would put the previous player's level
+     * and flags on this one.  A wizlist is not worth aborting over, so skip
+     * the record rather than exit. */
+    if (sscanf(line, "%ld " PLR_INDEX_NAME_FMT " %d " FLAG_FIELD_FMT " %d",
+               &id, name, &level, bits, &last) != 5) {
+      fprintf(stderr, "Skipping malformed record %d in player index %s: %s\n",
+              i, index_name, line);
+      continue;
+    }
     CAP(name);
     flags = asciiflag_conv(bits);
     if (level >= MIN_LEVEL &&

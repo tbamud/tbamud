@@ -15,6 +15,15 @@
 
 #define FLAG(n) (1 << (n))
 
+/* Standalone: no utils.h here either, so the same two-step stringify.  The
+ * header fields below are read out of a 5000-byte line into 33-byte buffers,
+ * which is the widest gap between source and destination anywhere in the
+ * tree. */
+#define MI_STRINGIFY_(x)  #x
+#define MI_STRINGIFY(x)   MI_STRINGIFY_(x)
+#define MAIL_HDR_FIELD    32
+#define MAIL_HDR_FMT      "%" MI_STRINGIFY(MAIL_HDR_FIELD) "s"
+
 #ifndef FALSE
 typedef enum _boolean_type {
   FALSE=0, TRUE
@@ -140,11 +149,13 @@ char *parse_subject(FILE *plr_file) {
 /* Search file for mail flags and return as bitvector */
 int parse_mail_flags(FILE *plr_file) {
   int fl[4], ret=0;
-  char *txt, f1[33], f2[33], f3[33], f4[33];
+  char *txt, f1[MAIL_HDR_FIELD + 1], f2[MAIL_HDR_FIELD + 1];
+  char f3[MAIL_HDR_FIELD + 1], f4[MAIL_HDR_FIELD + 1];
 
   if ((txt = findLine(plr_file, "Flag:")) != NULL) {
     /* Read the flags */
-    if (sscanf(txt, "%s %s %s %s", f1, f2, f3, f4) == 4) {
+    if (sscanf(txt, MAIL_HDR_FMT " " MAIL_HDR_FMT " " MAIL_HDR_FMT " " MAIL_HDR_FMT,
+               f1, f2, f3, f4) == 4) {
       fl[0] = asciiflag_conv(f1);
       fl[1] = asciiflag_conv(f2);
       fl[2] = asciiflag_conv(f3);

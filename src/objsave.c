@@ -79,6 +79,21 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
   } else
     *buf1 = 0;
 
+#define TEST_OBJS(obj1, obj2, field) ((!obj1->field || !obj2->field || \
+                                      strcmp(obj1->field, obj2->field)))
+#define TEST_OBJN(field) (obj->obj_flags.field != temp->obj_flags.field)
+
+/* TEST_OBJN compares one member of this object against the prototype's, which
+ * is what is wanted for the scalar fields it is used on.  Three of these
+ * fields are arrays, though, and an array member decays to its address -- so
+ * for those the test asked whether two different objects occupy the same
+ * memory.  They do not, so the three flag lines were written for every object
+ * rather than for the ones that had changed, and the guards read as if they
+ * were doing something they had never done.  Compare the contents, which is
+ * what the Vals: test below already does one element at a time. */
+#define TEST_OBJA(field, len) (memcmp(obj->obj_flags.field, temp->obj_flags.field, \
+                               (len) * sizeof(obj->obj_flags.field[0])) != 0)
+
   fprintf(fp, "#%d\n", GET_OBJ_VNUM(obj));
   if (locate)
     fprintf(fp, "Loc : %d\n", locate);
@@ -93,12 +108,8 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
              GET_OBJ_VAL(obj, 2),
              GET_OBJ_VAL(obj, 3)
              );
-  if (GET_OBJ_EXTRA(obj) != GET_OBJ_EXTRA(temp))
+  if (TEST_OBJA(extra_flags, EF_ARRAY_MAX))
     fprintf(fp, "Flag: %d %d %d %d\n", GET_OBJ_EXTRA(obj)[0], GET_OBJ_EXTRA(obj)[1], GET_OBJ_EXTRA(obj)[2], GET_OBJ_EXTRA(obj)[3]);
-
-#define TEST_OBJS(obj1, obj2, field) ((!obj1->field || !obj2->field || \
-                                      strcmp(obj1->field, obj2->field)))
-#define TEST_OBJN(field) (obj->obj_flags.field != temp->obj_flags.field)
 
   if (TEST_OBJS(obj, temp, name))
     fprintf(fp, "Name: %s\n", obj->name ? obj->name : "Undefined");
@@ -122,9 +133,9 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
     fprintf(fp, "Cost: %d\n", GET_OBJ_COST(obj));
   if (TEST_OBJN(cost_per_day))
     fprintf(fp, "Rent: %d\n", GET_OBJ_RENT(obj));
-  if (TEST_OBJN(bitvector))
+  if (TEST_OBJA(bitvector, AF_ARRAY_MAX))
     fprintf(fp, "Perm: %d %d %d %d\n", GET_OBJ_AFFECT(obj)[0], GET_OBJ_AFFECT(obj)[1], GET_OBJ_AFFECT(obj)[2], GET_OBJ_AFFECT(obj)[3]);
-  if (TEST_OBJN(wear_flags))
+  if (TEST_OBJA(wear_flags, TW_ARRAY_MAX))
     fprintf(fp, "Wear: %d %d %d %d\n", GET_OBJ_WEAR(obj)[0], GET_OBJ_WEAR(obj)[1], GET_OBJ_WEAR(obj)[2], GET_OBJ_WEAR(obj)[3]);
 
   /* Do we have affects? */
@@ -169,6 +180,7 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int locate)
 
 #undef TEST_OBJS
 #undef TEST_OBJN
+#undef TEST_OBJA
 
 /* AutoEQ by Burkhard Knopf. */
 static void auto_equip(struct char_data *ch, struct obj_data *obj, int location)
@@ -1198,10 +1210,38 @@ void Crash_save_all(void)
 /* Parses the object records stored in fl, and returns the first object in a
  * linked list, which also handles location if worn. This list can then be
  * handled by house code, listrent code, autoeq code, etc. */
+/* The four flag words of a Flag, Perm or Wear line.  The scratch buffers are
+ * its own rather than the caller's on purpose: the caller loops over every
+ * record in the file, and buffers that outlive an iteration are how a short
+ * scan hands an object the flags of the object before it.  Nothing here ever
+ * looked at the conversion count, so that swap was silent.
+ *
+ * A line that does not carry four fields now leaves the caller's flags where
+ * they are and says so.  Untouched is the right answer rather than a
+ * fallback: the writer emits one of these lines only when the object differs
+ * from its prototype, so an unreadable line lands on exactly what an absent
+ * one means. */
+static void parse_flag_quad(const char *line, const char *tag, int *out)
+{
+  char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
+  char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1];
+
+  if (sscanf(line, FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT " " FLAG_FIELD_FMT,
+	     f1, f2, f3, f4) != 4) {
+    log("SYSERR: objsave: malformed '%s' line, keeping prototype value: %s", tag, line);
+    return;
+  }
+
+  out[0] = asciiflag_conv(f1);
+  out[1] = asciiflag_conv(f2);
+  out[2] = asciiflag_conv(f3);
+  out[3] = asciiflag_conv(f4);
+}
+
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
   obj_save_data *head, *current, *tempsave;
-  char f1[128], f2[128], f3[128], f4[128], line[READ_SIZE];
+  char line[READ_SIZE];
   int t[4],i, nr;
   struct obj_data *temp;
 
@@ -1301,8 +1341,17 @@ obj_save_data *objsave_parse_objects(FILE *fl)
         snprintf(error, sizeof(error)-1, "rent(Ades):%s", temp->name);
         temp->action_description = fread_string(fl, error);
       } else if (!strcmp(tag, "Aff ")) {
-        sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]);
-        if (t[0] < MAX_OBJ_AFFECT) {
+        /* Two checks that were not here.  The count, because t[] outlives the
+         * iteration and a short scan would place this affect at the slot the
+         * previous record used.  And the low end of the slot: the ceiling was
+         * tested, the floor was not, so a negative slot in the file indexed
+         * behind a fixed array and wrote through it. */
+        if (sscanf(line, "%d %d %d", &t[0], &t[1], &t[2]) != 3)
+          log("SYSERR: objsave: malformed 'Aff ' line, skipping: %s", line);
+        else if (t[0] < 0 || t[0] >= MAX_OBJ_AFFECT)
+          log("SYSERR: objsave: affect slot %d outside 0..%d, skipping: %s",
+              t[0], MAX_OBJ_AFFECT - 1, line);
+        else {
           temp->affected[t[0]].location = t[1];
           temp->affected[t[0]].modifier = t[2];
         }
@@ -1334,11 +1383,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'F':
       if (!strcmp(tag, "Flag")) {
-        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
-        GET_OBJ_EXTRA(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_EXTRA(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_EXTRA(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_EXTRA(temp)[3] = asciiflag_conv(f4);
+        parse_flag_quad(line, tag, GET_OBJ_EXTRA(temp));
       }
       break;
     case 'L':
@@ -1351,11 +1396,7 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'P':
       if (!strcmp(tag, "Perm")) {
-        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
-        GET_OBJ_AFFECT(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_AFFECT(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_AFFECT(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_AFFECT(temp)[3] = asciiflag_conv(f4);
+        parse_flag_quad(line, tag, GET_OBJ_AFFECT(temp));
       }
       break;
     case 'R':
@@ -1372,20 +1413,21 @@ obj_save_data *objsave_parse_objects(FILE *fl)
       break;
     case 'W':
       if (!strcmp(tag, "Wear")) {
-        sscanf(line, "%s %s %s %s", f1, f2, f3, f4);
-        GET_OBJ_WEAR(temp)[0] = asciiflag_conv(f1);
-        GET_OBJ_WEAR(temp)[1] = asciiflag_conv(f2);
-        GET_OBJ_WEAR(temp)[2] = asciiflag_conv(f3);
-        GET_OBJ_WEAR(temp)[3] = asciiflag_conv(f4);
+        parse_flag_quad(line, tag, GET_OBJ_WEAR(temp));
       }
       else if (!strcmp(tag, "Wght"))
         GET_OBJ_WEIGHT(temp) = num;
       break;
     case 'V':
       if (!strcmp(tag, "Vals")) {
-        sscanf(line, "%d %d %d %d", &t[0], &t[1], &t[2], &t[3]);
-        for (i = 0; i < NUM_OBJ_VAL_POSITIONS; i++)
-          GET_OBJ_VAL(temp, i) = t[i];
+        /* Same t[] as the affect line above, same reason to check the count:
+         * three values where four were expected used to leave the fourth
+         * holding whatever the last record put there. */
+        if (sscanf(line, "%d %d %d %d", &t[0], &t[1], &t[2], &t[3]) != 4)
+          log("SYSERR: objsave: malformed 'Vals' line, keeping prototype values: %s", line);
+        else
+          for (i = 0; i < NUM_OBJ_VAL_POSITIONS; i++)
+            GET_OBJ_VAL(temp, i) = t[i];
       }
       break;
     default:

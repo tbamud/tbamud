@@ -88,9 +88,9 @@ void load_messages(void)
     fight_messages[i].msg = NULL;
   }
 
-  while (fgets(chk, 128, fl)) {
+  while (fgets(chk, sizeof(chk), fl)) {
     while (*chk == '\n' || *chk == '*') {
-      if (fgets(chk, 128, fl) == NULL) {
+      if (fgets(chk, sizeof(chk), fl) == NULL) {
         if (feof(fl))
           break;
         else if(ferror(fl))
@@ -106,7 +106,7 @@ void load_messages(void)
     }
 
     while (*chk == 'M') {
-      if (fgets(chk, 128, fl) == NULL) {
+      if (fgets(chk, sizeof(chk), fl) == NULL) {
         if(feof(fl)) {
           log("SYSERR: Unexpected end of file reading combat message file %s", MESS_FILE);
           break;

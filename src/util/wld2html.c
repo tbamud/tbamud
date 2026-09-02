@@ -28,6 +28,16 @@
 
 #define NUM_OF_DIRS    10
 
+/* This builds without utils.h, so it carries its own two-step stringify and
+ * flag-field width, the same way it already carries its own get_line().  The
+ * value matches db.h's WORLD_FLAG_FIELD deliberately: this reads the same
+ * .wld files, through the same parser shape, and had the same unbounded %s
+ * into a 128-byte buffer from a 256-byte line. */
+#define WLD_STRINGIFY_(x)  #x
+#define WLD_STRINGIFY(x)   WLD_STRINGIFY_(x)
+#define WLD_FLAG_FIELD     127
+#define WLD_FLAG_FMT       "%" WLD_STRINGIFY(WLD_FLAG_FIELD) "s"
+
 #define CREATE(result, type, number)  do {\
 	if (!((result) = (type *) calloc ((number), sizeof(type))))\
 		{ perror("malloc failure"); abort(); } } while(0)
@@ -355,7 +365,7 @@ void parse_room(FILE * fl, int virtual_nr)
 {
   static int room_nr = 0, zone = 0;
   int t[10], i;
-  char line[256], flags[128];
+  char line[256], flags[WLD_FLAG_FIELD + 1];
   struct extra_descr_data *new_descr;
 
   sprintf(buf2, "room #%d", virtual_nr);
@@ -365,7 +375,7 @@ void parse_room(FILE * fl, int virtual_nr)
   world[room_nr].name = fread_string(fl, buf2);
   world[room_nr].description = fread_string(fl, buf2);
 
-  if (!get_line(fl, line) || sscanf(line, " %d %s %d ", t, flags, t + 2) != 3) {
+  if (!get_line(fl, line) || sscanf(line, " %d " WLD_FLAG_FMT " %d ", t, flags, t + 2) != 3) {
     fprintf(stderr, "Format error in room #%d\n", virtual_nr);
     exit(1);
   }
