@@ -5052,8 +5052,17 @@ bool AddRecentPlayer(char *chname, char *chhost, bool newplr, bool cpyplr)
   this->time = ct;
   this->new_player = newplr;
   this->copyover_player = cpyplr;
-  strcpy(this->host, chhost);
-  strcpy(this->name, chname);
+  /* Both destinations are fixed fields of struct recent_player: host is
+   * HOST_LENGTH+1 and name is MAX_NAME_LENGTH+1, and neither argument is
+   * bounded to them.  chname is GET_NAME(), which load_char() takes off the
+   * Name tag with strdup() and never bounds.  chhost is d->host, which
+   * new_descriptor() caps at HOST_LENGTH -- but only for the two callers
+   * that log a player in.  The copyover caller never goes through it:
+   * copyover_recover() fills d->host from the copyover file instead, with
+   * an unbounded scan and an unbounded copy of its own.  Sizing each copy
+   * to its own destination relies on neither. */
+  strlcpy(this->host, chhost, sizeof(this->host)); /* strlcpy: OK */
+  strlcpy(this->name, chname, sizeof(this->name)); /* strlcpy: OK */
   max_vnum = get_max_recent();
   this->vnum = max_vnum;   /* Possibly should be +1 ? */
 
