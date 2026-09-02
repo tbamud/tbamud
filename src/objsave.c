@@ -1248,6 +1248,84 @@ static void parse_flag_quad(const char *line, const char *tag, int *out)
   out[3] = asciiflag_conv(f4);
 }
 
+/* Rebuild the containment a saved object list describes, and hand every
+ * object that ends up at the top -- the ones written at location 0, and
+ * anything whose container never turned up -- to place().
+ *
+ * The file is written contents first: Crash_save() and House_save() both
+ * recurse into what an object holds before writing the object itself, going
+ * one location deeper per level, so a record at location -n is inside the
+ * next record that arrives at -(n-1).  Records are held by depth until that
+ * container arrives.  A container that never does leaves its contents to
+ * place(), which is what handle_obj() does for a character with obj_to_char().
+ * A positive location is a wear position, which means nothing outside a
+ * character and is treated as top level here.
+ *
+ * handle_obj() above does the same job for a rent file, interleaved with the
+ * equipment handling only a character needs.  This is the part of it that a
+ * room can use. */
+void objsave_reassemble(obj_save_data *loaded,
+                        void (*place)(struct obj_data *obj, void *dest), void *dest)
+{
+  struct obj_data *cont_row[MAX_BAG_ROWS], *obj, *next, *tail;
+  obj_save_data *current;
+  int j, depth;
+
+  for (j = 0; j < MAX_BAG_ROWS; j++)
+    cont_row[j] = NULL;
+
+  for (current = loaded; current; current = current->next) {
+    if (!(obj = current->obj))
+      continue;
+    depth = current->locate < 0 ? -current->locate : 0;
+
+    /* Anything still waiting deeper than this object's own contents belongs
+     * to a container that never came. */
+    for (j = MAX_BAG_ROWS - 1; j > depth; j--)
+      for (; cont_row[j]; cont_row[j] = next) {
+        next = cont_row[j]->next_content;
+        cont_row[j]->next_content = NULL;
+        place(cont_row[j], dest);
+      }
+
+    /* Row `depth' holds this object's contents, if it has any.  Something
+     * that is not a container cannot take them back, so they surface. */
+    if (depth < MAX_BAG_ROWS)
+      for (; cont_row[depth]; cont_row[depth] = next) {
+        next = cont_row[depth]->next_content;
+        cont_row[depth]->next_content = NULL;
+        if (GET_OBJ_TYPE(obj) == ITEM_CONTAINER)
+          obj_to_obj(cont_row[depth], obj);
+        else
+          place(cont_row[depth], dest);
+      }
+
+    if (depth == 0 || depth > MAX_BAG_ROWS) {
+      /* Top level -- or nested deeper than the rows can follow, in which
+       * case the top is the nearest place it can be put without losing it. */
+      place(obj, dest);
+    } else {
+      /* Wait for the container, at the end of its row so the contents keep
+       * the order they were written in. */
+      obj->next_content = NULL;
+      if ((tail = cont_row[depth - 1])) {
+        while (tail->next_content)
+          tail = tail->next_content;
+        tail->next_content = obj;
+      } else
+        cont_row[depth - 1] = obj;
+    }
+  }
+
+  /* Whatever is left waiting has no container in the file at all. */
+  for (j = MAX_BAG_ROWS - 1; j >= 0; j--)
+    for (; cont_row[j]; cont_row[j] = next) {
+      next = cont_row[j]->next_content;
+      cont_row[j]->next_content = NULL;
+      place(cont_row[j], dest);
+    }
+}
+
 obj_save_data *objsave_parse_objects(FILE *fl)
 {
   obj_save_data *head, *current, *tempsave;

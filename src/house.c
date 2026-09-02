@@ -52,6 +52,12 @@ static int House_get_filename(room_vnum vnum, char *filename, size_t maxlen)
   return (1);
 }
 
+/* Where objsave_reassemble() puts a house's top-level objects. */
+static void House_place(struct obj_data *obj, void *dest)
+{
+  obj_to_room(obj, *(room_rnum *) dest);
+}
+
 /* Load all objects for a house */
 static int House_load(room_vnum vnum)
 {
@@ -69,11 +75,16 @@ static int House_load(room_vnum vnum)
 
 	loaded = objsave_parse_objects(fl);
 
-	for (current = loaded; current != NULL; current = current->next)
-    obj_to_room(current->obj, rnum);
+  /* Put each object back where the file says it was: inside its container,
+   * or on the floor.  Every record used to go straight to the room, so a
+   * bag stored in a house came back empty after a reboot with its contents
+   * lying beside it -- and the file could not have said otherwise, because
+   * House_save() never wrote a location either.  objsave_reassemble() reads
+   * the locations Crash_load_objs() has always read for a rent file. */
+  objsave_reassemble(loaded, House_place, &rnum);
 
 	/* now it's safe to free the obj_save_data list - all members of it
-	 * have been put in the correct lists by obj_to_room()
+	 * have been put in the correct lists by objsave_reassemble()
 	 */
 	while (loaded != NULL) {
 		current = loaded;
@@ -86,19 +97,31 @@ static int House_load(room_vnum vnum)
   return (1);
 }
 
-/* Save all objects for a house (recursive; initial call must be followed by a 
- * call to House_restore_weight)  Assumes file is open already. */
-int House_save(struct obj_data *obj, FILE *fp)
+/* Save all objects for a house (recursive; initial call must be followed by a
+ * call to House_restore_weight)  Assumes file is open already.
+ *
+ * location is 0 for the floor and one lower for each level of container,
+ * the same scheme Crash_save() writes and objsave_reassemble() reads.  It
+ * used to be written as 0 for everything, so a house file recorded no
+ * containment at all and every reboot spilled every container.
+ *
+ * The order matters as much as the number: siblings first, then contents,
+ * then the object itself, so that an object's contents sit directly before
+ * it in the file with nothing else at their depth in between.  Contents
+ * first and then siblings -- the old order -- would have left a bag's
+ * contents separated from the bag by the next bag's, and the reader would
+ * have filed them into the wrong one. */
+int House_save(struct obj_data *obj, FILE *fp, int location)
 {
   struct obj_data *tmp;
   int result = TRUE;
 
   if (obj) {
-    if (!House_save(obj->contains, fp))
+    if (!House_save(obj->next_content, fp, location))
       result = FALSE;
-    if (!House_save(obj->next_content, fp))
+    if (!House_save(obj->contains, fp, MIN(0, location) - 1))
       result = FALSE;
-    if (!objsave_save_obj_record(obj, fp, 0))
+    if (!objsave_save_obj_record(obj, fp, location))
       result = FALSE;
 
     /*
@@ -146,7 +169,7 @@ void House_crashsave(room_vnum vnum)
     return;
   }
 
-  result = House_save(world[rnum].contents, fp);
+  result = House_save(world[rnum].contents, fp, 0);
   House_restore_weight(world[rnum].contents);
 
   if (!result) {
