@@ -145,7 +145,11 @@ const char *skill_name(int num) {
 int find_skill_num(char *name) {
   int skindex, ok;
   char *temp, *temp2;
-  char first[256], first2[256], tempbuf[256];
+  /* first and tempbuf only ever hold a spell_info[].name.  first2 holds a
+   * token taken from name, and the callers that matter pass typed input --
+   * do_cast hands over the text between the quotes -- so it has to be able to
+   * hold what one input line can carry. */
+  char first[256], first2[MAX_INPUT_LENGTH], tempbuf[256];
 
   for (skindex = 1; skindex <= TOP_SPELL_DEFINE; skindex++) {
     if (is_abbrev(name, spell_info[skindex].name))
