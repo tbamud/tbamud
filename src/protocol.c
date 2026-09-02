@@ -1269,12 +1269,13 @@ void MSDPSetTable( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
 
    if ( pProtocol != NULL && apValue != NULL )
    {
-      if ( *apValue == '\0' )
-      {
-         /* It's easier to call MSDPSetString if the value is empty */
-         MSDPSetString(apDescriptor, aMSDP, apValue);
-      }
-      else if ( VariableNameTable[aMSDP].bString )
+      /* An empty value is still sent as a table, not as a bare string.
+       * A variable must not change type with its contents, or a client
+       * that indexes it has the type pulled out from under it. The path
+       * below wraps an empty value as MSDP_TABLE_OPEN MSDP_TABLE_CLOSE,
+       * which is exactly the empty table.
+       */
+      if ( VariableNameTable[aMSDP].bString )
       {
          const char MsdpTableStart[] = { (char)MSDP_TABLE_OPEN, '\0' };
          const char MsdpTableStop[]  = { (char)MSDP_TABLE_CLOSE, '\0' };
@@ -1305,12 +1306,13 @@ void MSDPSetArray( descriptor_t *apDescriptor, variable_t aMSDP, const char *apV
 
    if ( pProtocol != NULL && apValue != NULL )
    {
-      if ( *apValue == '\0' )
-      {
-         /* It's easier to call MSDPSetString if the value is empty */
-         MSDPSetString(apDescriptor, aMSDP, apValue);
-      }
-      else if ( VariableNameTable[aMSDP].bString )
+      /* An empty value is still sent as an array, not as a bare string.
+       * A variable must not change type with its contents, or a client
+       * that indexes it has the type pulled out from under it. The path
+       * below wraps an empty value as MSDP_ARRAY_OPEN MSDP_ARRAY_CLOSE,
+       * which is exactly the empty array.
+       */
+      if ( VariableNameTable[aMSDP].bString )
       {
          const char MsdpArrayStart[] = { (char)MSDP_ARRAY_OPEN, '\0' };
          const char MsdpArrayStop[]  = { (char)MSDP_ARRAY_CLOSE, '\0' };

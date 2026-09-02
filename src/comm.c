@@ -81,6 +81,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ibt.h" /* for free_ibt_lists */
+#include "class.h" /* for level_exp, in the MSDP experience variables */
 #include "mud_event.h"
 
 #ifndef INVALID_SOCKET
@@ -2854,6 +2855,104 @@ static void msdp_update( void )
       MSDPSetNumber( d, eMSDP_MOVEMENT_MAX, GET_MAX_MOVE(ch) );
       MSDPSetNumber( d, eMSDP_AC, compute_armor_class(ch) );
 
+      /* The rest of the character sheet. These are advertised in the same
+       * table as the ones above and were never set either, so a client that
+       * asked for them waited forever -- which is indistinguishable from the
+       * server not supporting MSDP at all, the same argument as the room
+       * variables below.
+       */
+      MSDPSetNumber( d, eMSDP_HITROLL, GET_HITROLL(ch) );
+      MSDPSetNumber( d, eMSDP_DAMROLL, GET_DAMROLL(ch) );
+      MSDPSetNumber( d, eMSDP_PRACTICE, GET_PRACTICES(ch) );
+
+      /* GET_STR() and friends read aff_abils, real_abils holds the scores
+       * without modifiers, and that is exactly the split MSDP asks for with
+       * its plain and _PERM pair. tbaMUD's exceptional strength lives in a
+       * separate GET_ADD() that MSDP has no variable for, so STR reports the
+       * whole number a player sees on their sheet and nothing reports the
+       * fraction.
+       */
+      MSDPSetNumber( d, eMSDP_STR,      GET_STR(ch) );
+      MSDPSetNumber( d, eMSDP_INT,      GET_INT(ch) );
+      MSDPSetNumber( d, eMSDP_WIS,      GET_WIS(ch) );
+      MSDPSetNumber( d, eMSDP_DEX,      GET_DEX(ch) );
+      MSDPSetNumber( d, eMSDP_CON,      GET_CON(ch) );
+      MSDPSetNumber( d, eMSDP_STR_PERM, ch->real_abils.str );
+      MSDPSetNumber( d, eMSDP_INT_PERM, ch->real_abils.intel );
+      MSDPSetNumber( d, eMSDP_WIS_PERM, ch->real_abils.wis );
+      MSDPSetNumber( d, eMSDP_DEX_PERM, ch->real_abils.dex );
+      MSDPSetNumber( d, eMSDP_CON_PERM, ch->real_abils.con );
+
+      /* The same sum score prints, and cut off where score cuts it off.
+       * score stops at LVL_IMMORT because immortal levels are not earned
+       * with experience: above LVL_IMMORT level_exp() returns a fixed
+       * offset from EXP_MAX rather than a total anyone works toward, so
+       * reporting it would tell a level 31 immortal they are two million
+       * exp short of a level 32 that no amount of exp reaches -- once a
+       * second, for as long as they are online. An immortal is told their
+       * own total and nothing left to earn, which is what score implies
+       * by printing nothing at all.
+       */
+      if ( GET_LEVEL(ch) < LVL_IMMORT )
+      {
+          int needed = level_exp(GET_CLASS(ch), GET_LEVEL(ch) + 1);
+
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_MAX, needed );
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_TNL, MAX(0, needed - GET_EXP(ch)) );
+      }
+      else
+      {
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_MAX, GET_EXP(ch) );
+          MSDPSetNumber( d, eMSDP_EXPERIENCE_TNL, 0 );
+      }
+
+      /* An array of the spells currently on the character, named the way stat
+       * names them. One spell can hold several affects -- a single cast fills
+       * one per apply -- so each is listed once rather than once per slot.
+       */
+      {
+          char affects[MAX_INPUT_LENGTH];
+          size_t aff_len = 0;
+          struct affected_type *af, *earlier;
+
+          *affects = '\0';
+          for ( af = ch->affected; af != NULL; af = af->next )
+          {
+              bool listed = FALSE;
+
+              for ( earlier = ch->affected; earlier != af; earlier = earlier->next )
+              {
+                  if ( earlier->spell == af->spell )
+                  {
+                      listed = TRUE;
+                      break;
+                  }
+              }
+
+              if ( listed )
+                  continue;
+              if ( aff_len >= sizeof(affects) - 1 )
+                  break;
+              aff_len += snprintf( affects + aff_len, sizeof(affects) - aff_len,
+                  "%c%s", (char)MSDP_VAL, skill_name(af->spell) );
+          }
+          MSDPSetArray( d, eMSDP_AFFECTS, affects );
+      }
+
+      /* Who and when. protocol.c already sends SERVER_ID by hand when a
+       * client turns MSDP or ATCP on, but never through the variable table,
+       * so a client that REPORTed it rather than reading the handshake got
+       * nothing. This puts it where the other variables are.
+       */
+      MSDPSetString( d, eMSDP_SERVER_ID,   MUD_NAME );
+      MSDPSetNumber( d, eMSDP_SERVER_TIME, (int) time(0) );
+      MSDPSetNumber( d, eMSDP_WORLD_TIME,  time_info.hours );
+
+      /* RACE is left alone deliberately. It is the one advertised variable
+       * with nothing behind it: stock tbaMUD has no race, only class, and
+       * answering with an invented value would be worse than the silence.
+       */
+
       /* This would be better moved elsewhere */
       if ( pOpponent != NULL )
       {
@@ -2868,6 +2967,56 @@ static void msdp_update( void )
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, 0 );
           MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, 0 ); 
           MSDPSetString( d, eMSDP_OPPONENT_NAME, "" ); 
+      }
+
+      /* Where the player is. The variable table has always advertised
+       * these four as reportable, but nothing ever set them, so a client
+       * that asked for them waited forever and every mapper was pushed
+       * back onto scraping the room description out of the scroll.
+       */
+      if ( IN_ROOM(ch) != NOWHERE )
+      {
+          char exits[MAX_INPUT_LENGTH];
+          size_t exit_len = 0;
+          int door;
+
+          MSDPSetString( d, eMSDP_ROOM_NAME, world[IN_ROOM(ch)].name );
+          MSDPSetNumber( d, eMSDP_ROOM_VNUM, GET_ROOM_VNUM(IN_ROOM(ch)) );
+          MSDPSetString( d, eMSDP_AREA_NAME,
+              zone_table[GET_ROOM_ZONE(IN_ROOM(ch))].name );
+
+          /* A table of direction -> destination vnum, holding exactly the
+           * exits the autoexit line would show this character: closed doors
+           * only where the game displays them, hidden ones only to holylight.
+           * A mapper must not learn a door the player cannot see.
+           *
+           * A closed door is listed with an empty destination. do_exits
+           * withholds the vnum and the room name behind a closed door from
+           * everyone -- showvnums immortals included -- and says only that
+           * it is closed. So the direction is reported, because the player
+           * sees it in the autoexit line, and where it leads is not,
+           * because they cannot see that until they open it.
+           */
+          *exits = '\0';
+          for ( door = 0; door < DIR_COUNT; door++ )
+          {
+              if ( !EXIT(ch, door) || EXIT(ch, door)->to_room == NOWHERE )
+                  continue;
+              if ( EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) && !CONFIG_DISP_CLOSED_DOORS )
+                  continue;
+              if ( EXIT_FLAGGED(EXIT(ch, door), EX_HIDDEN) && !PRF_FLAGGED(ch, PRF_HOLYLIGHT) )
+                  continue;
+              if ( exit_len >= sizeof(exits) - 1 )
+                  break;
+              if ( EXIT_FLAGGED(EXIT(ch, door), EX_CLOSED) )
+                  exit_len += snprintf( exits + exit_len, sizeof(exits) - exit_len,
+                      "%c%s%c", (char)MSDP_VAR, autoexits[door], (char)MSDP_VAL );
+              else
+                  exit_len += snprintf( exits + exit_len, sizeof(exits) - exit_len,
+                      "%c%s%c%d", (char)MSDP_VAR, autoexits[door], (char)MSDP_VAL,
+                      GET_ROOM_VNUM(EXIT(ch, door)->to_room) );
+          }
+          MSDPSetTable( d, eMSDP_ROOM_EXITS, exits );
       }
 
       MSDPUpdate( d );
