@@ -352,22 +352,28 @@ static void check_idling(struct char_data *ch)
       char_from_room(ch);
       char_to_room(ch, 1);
     } else if (ch->char_specials.timer > CONFIG_IDLE_RENT_TIME) {
+      int saved;
+
+      if (CONFIG_FREE_RENT)
+        saved = Crash_rentsave(ch, 0);
+      else
+        saved = Crash_idlesave(ch);
+
+      if (!saved)
+        return;
+
       if (IN_ROOM(ch) != NOWHERE)
-	char_from_room(ch);
+        char_from_room(ch);
       char_to_room(ch, 3);
       if (ch->desc) {
-	STATE(ch->desc) = CON_DISCONNECT;
-	/*
-	 * For the 'if (d->character)' test in close_socket().
-	 * -gg 3/1/98 (Happy anniversary.)
-	 */
-	ch->desc->character = NULL;
-	ch->desc = NULL;
+        STATE(ch->desc) = CON_DISCONNECT;
+        /*
+         * For the 'if (d->character)' test in close_socket().
+         * -gg 3/1/98 (Happy anniversary.)
+         */
+        ch->desc->character = NULL;
+        ch->desc = NULL;
       }
-      if (CONFIG_FREE_RENT)
-	Crash_rentsave(ch, 0);
-      else
-	Crash_idlesave(ch);
       mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "%s force-rented and extracted (idle).", GET_NAME(ch));
       add_llog_entry(ch, LAST_IDLEOUT);
       extract_char(ch);

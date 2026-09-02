@@ -4240,7 +4240,11 @@ ACMD(do_copyover)
       fprintf (fp, "%d %ld %s %s %s\n", d->descriptor, GET_PREF(och), GET_NAME(och), d->host, CopyoverGet(d));
       /* save och */
       GET_LOADROOM(och) = GET_ROOM_VNUM(IN_ROOM(och));
-      Crash_rentsave(och,0);
+      /* One player's rent file failing is no reason to abandon a copyover
+       * everyone else has already been rented for; the previous file is
+       * still on disk and is what they will reload from. */
+      if (!Crash_rentsave(och, 0))
+        mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: copyover: could not write %s's rent file; they reload from the previous one.", GET_NAME(och));
       save_char(och);
       write_to_descriptor (d->descriptor, buf);
     }
