@@ -1138,6 +1138,12 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
       ptr++;
     while (isspace(*(END_OF(ptr) - 1)))
       *(END_OF(ptr) - 1) = '\0';
+    /* The -1 terminator is not an entry.  It used to be handed to
+     * add_to_shop_list() regardless, which with unsigned NOTHING stored it
+     * as a trade type of -1; add_to_shop_list() now rejects a negative
+     * type, so stop here instead of logging the terminator as an error. */
+    if (num < 0)
+      break;
     error += add_to_shop_list(list, LIST_TRADE, &len, &num);
     if (*ptr)
       BUY_WORD(list[len - 1]) = strdup(ptr);
