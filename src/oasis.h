@@ -318,6 +318,9 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define SEDIT_NAMELIST_MENU		13
 #define SEDIT_NAMELIST			14
 #define SEDIT_COPY                      15
+/* Must stay BELOW SEDIT_NUMERICAL_RESPONSE: sedit_parse rejects any
+ * non-numeric input for every mode above it, and this one wants y/n. */
+#define SEDIT_CONFIRM_DELETE            16
 
 #define SEDIT_NUMERICAL_RESPONSE	20
 #define SEDIT_OPEN1			21

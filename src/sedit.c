@@ -407,6 +407,7 @@ static void sedit_disp_menu(struct descriptor_data *d)
 	  "%sP%s) Products Menu\r\n"
 	  "%sT%s) Accept Types Menu\r\n"
           "%sW%s) Copy Shop\r\n"
+          "%sX%s) Delete Shop\r\n"
 	  "%sQ%s) Quit\r\n"
 	  "Enter Choice : ",
 
@@ -428,7 +429,7 @@ static void sedit_disp_menu(struct descriptor_data *d)
 	  grn, nrm, yel, S_SELL(shop),
 	  grn, nrm, cyn, buf1,
 	  grn, nrm, cyn, buf2,
-	  grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm
+	  grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm
   );
 
   OLC_MODE(d) = SEDIT_MAIN_MENU;
@@ -438,6 +439,8 @@ static void sedit_disp_menu(struct descriptor_data *d)
 void sedit_parse(struct descriptor_data *d, char *arg)
 {
   int i;
+  zone_rnum kzone;
+  mob_vnum keepvnum;
 
   if (OLC_MODE(d) > SEDIT_NUMERICAL_RESPONSE) {
     if (!*arg || (!isdigit(arg[0]) && (*arg != '-' || !isdigit(arg[1])))) {
@@ -471,9 +474,104 @@ void sedit_parse(struct descriptor_data *d, char *arg)
       return;
     }
 
+  case SEDIT_CONFIRM_DELETE:
+    switch (*arg) {
+    case 'y':
+    case 'Y': {
+      /* Resolve by VNUM, never the stored index: another builder saving a
+       * shop renumbers this one underneath the editor, and real_shop is how
+       * every other path here finds a shop. */
+      shop_rnum drnum = real_shop(OLC_NUM(d));
+
+      /* A keeper that stops being one loses MOB_SPEC, and the mob file is
+       * written so that sticks. Anyone holding that mobile in medit took
+       * their copy before the change and would save the flag straight back
+       * -- to disk, and across the reboot -- putting back the SYSERR the
+       * clearing exists to stop. So the two do not happen at once. sedit
+       * already refuses a shop another descriptor holds; this is the same
+       * refusal, one record along. */
+      if (drnum != NOWHERE && SHOP_KEEPER(drnum) != NOBODY) {
+        mob_vnum kvnum = mob_index[SHOP_KEEPER(drnum)].vnum;
+        struct descriptor_data *dsc;
+
+        for (dsc = descriptor_list; dsc; dsc = dsc->next)
+          if (dsc != d && STATE(dsc) == CON_MEDIT && dsc->olc &&
+              OLC_NUM(dsc) == kvnum) {
+            write_to_output(d, "This shop's keeper (mobile %d) is currently "
+                               "being edited by %s.\r\n", kvnum,
+                            GET_NAME(dsc->character));
+            sedit_disp_menu(d);
+            return;
+          }
+      }
+
+      /* Read before the delete: afterwards drnum names a different shop,
+       * or none. Only used to tell the builder about a keeper whose mob
+       * file is in another zone -- see below. */
+      kzone = NOWHERE;
+      keepvnum = NOBODY;
+      if (drnum != NOWHERE && SHOP_KEEPER(drnum) != NOBODY) {
+        keepvnum = mob_index[SHOP_KEEPER(drnum)].vnum;
+        kzone = real_zone_by_thing(keepvnum);
+      }
+
+      if (drnum != NOWHERE && delete_shop(drnum)) {
+        mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
+               "OLC: %s deletes shop %d", GET_NAME(d->character), OLC_NUM(d));
+        write_to_output(d, "Shop deleted.\r\n");
+        /* delete_shop marks the zone; whether that reaches disk now is
+         * the same question every other editor answers here. qedit's
+         * delete says so explicitly rather than leaving the builder to
+         * guess whether a reboot will bring it back. */
+        if (CONFIG_OLC_SAVE) {
+          sedit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
+          write_to_output(d, "Shop file saved to disk.\r\n");
+        } else
+          write_to_output(d, "Shop file saved to memory.\r\n");
+
+        /* A keeper that stopped being one loses MOB_SPEC, and that is only
+         * written out here when it lives in the zone this delete already
+         * writes. Anywhere else it is queued -- correct, since reaching
+         * across to write a zone the builder may not own would also flush
+         * somebody else's pending work there. But the queue is silent, and
+         * "saved to disk" reads like the whole job is done, so say what is
+         * left. Until that save happens a reboot brings the flag back. */
+        if (kzone != NOWHERE && kzone != real_zone_by_thing(OLC_NUM(d)) &&
+            in_save_list(zone_table[kzone].number, SL_MOB))
+          write_to_output(d, "The keeper (mobile %d) lives in zone %d; that "
+                             "zone's mobile file still needs saving.\r\n",
+                          keepvnum, zone_table[kzone].number);
+        cleanup_olc(d, CLEANUP_ALL);
+        return;
+      }
+      /* Nothing went, so nothing is discarded either. */
+      write_to_output(d, "Could not delete that shop.\r\n");
+      sedit_disp_menu(d);
+      return;
+    }
+    case 'n':
+    case 'N':
+      sedit_disp_menu(d);
+      return;
+    default:
+      write_to_output(d, "Invalid choice!\r\n");
+      write_to_output(d, "Delete this shop? : ");
+      return;
+    }
+
   case SEDIT_MAIN_MENU:
     i = 0;
     switch (*arg) {
+    case 'x':
+    case 'X':
+      if (real_shop(OLC_NUM(d)) == NOWHERE) {
+        write_to_output(d, "That shop has never been saved -- quit without saving instead.\r\n");
+        sedit_disp_menu(d);
+        return;
+      }
+      write_to_output(d, "Are you sure you want to delete this shop? ");
+      OLC_MODE(d) = SEDIT_CONFIRM_DELETE;
+      return;
     case 'w':
     case 'W':
       write_to_output(d, "Copy what shop? ");

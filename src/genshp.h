@@ -23,6 +23,7 @@ void modify_shop_string(char **str, char *newstr);
 int add_shop(struct shop_data *shop);
 int save_shops(zone_rnum zone_num);
 shop_rnum real_shop(shop_vnum vnum);
+int delete_shop(shop_rnum rnum);
 
 /* Handy macros. */
 #define S_NUM(i)		((i)->vnum)

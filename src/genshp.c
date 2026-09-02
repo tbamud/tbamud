@@ -14,6 +14,7 @@
 #include "genolc.h"
 #include "genshp.h"
 #include "genzon.h"
+#include "genmob.h"	/* for save_mobiles */
 
 /* NOTE (gg): Didn't modify sedit much. Don't consider it as 'recent' as the
  * other editors with regard to updates or style. */
@@ -246,6 +247,123 @@ void free_shop(struct shop_data *shop)
   free(S_ROOMS(shop));
   free(S_PRODUCTS(shop));
   free(shop);
+}
+
+/* Remove a shop from shop_index.
+ *
+ * shop_index is an array of shop_data, not of pointers, so free_shop() is the
+ * wrong tool -- it ends with free(shop), right for a heap-allocated one
+ * (OLC_SHOP) and wrong for an array element. The contents are released
+ * individually here, with the same helpers free_shop() uses.
+ *
+ * top_shop is a LAST INDEX, not a count, so the guard is `> top_shop` and the
+ * shift stops one short of it. real_shop() binary-searches this array by vnum,
+ * so it has to stay sorted -- which a straight compaction preserves.
+ *
+ * The keeper needs the most care, and NOT the way delete_quest handles a
+ * questmaster -- review showed that shape is unsafe here.
+ * assign_the_shopkeepers() displaces the mob's own spec proc into SHOP_FUNC
+ * and points mob_index at shop_keeper. It runs once, at boot, and its guard
+ * stashes the proc in only the FIRST shop it walks for a given keeper, so a
+ * mob keeping two shops has its proc in the lower-rnum one and NULL in the
+ * other. Simply dropping it when other shops remain therefore destroys the
+ * only copy: delete the shops in ascending order and the mob's own proc is
+ * gone for good. It is handed to a surviving shop instead. delete_quest
+ * needs none of this because add_quest re-stashes on every add. */
+int delete_shop(shop_rnum rnum)
+{
+  shop_rnum i, inherit = NOWHERE;
+  zone_rnum rznum, kzone;
+  mob_rnum keeper;
+  struct char_data *mob;
+  SPECIAL (*tempfunc);
+  int shops_remaining = 0;
+
+  if (rnum == NOWHERE || rnum > top_shop)
+    return FALSE;
+
+  rznum = real_zone_by_thing(SHOP_NUM(rnum));
+  keeper = SHOP_KEEPER(rnum);
+  tempfunc = SHOP_FUNC(rnum);
+
+  log("GenOLC: delete_shop: Deleting shop #%d.", SHOP_NUM(rnum));
+
+  free_shop_strings(&shop_index[rnum]);
+  free_shop_type_list(&(S_NAMELISTS(&shop_index[rnum])));
+  free(S_ROOMS(&shop_index[rnum]));
+  free(S_PRODUCTS(&shop_index[rnum]));
+
+  for (i = rnum; i < top_shop; i++)
+    shop_index[i] = shop_index[i + 1];
+
+  top_shop--;
+
+  if (top_shop >= 0)
+    RECREATE(shop_index, struct shop_data, top_shop + 1);
+  else {
+    free(shop_index);
+    shop_index = NULL;
+  }
+
+  if (keeper != NOBODY) {
+    for (i = 0; i <= top_shop; i++)
+      if (SHOP_KEEPER(i) == keeper) {
+        shops_remaining++;
+        if (inherit == NOWHERE && SHOP_FUNC(i) == NULL)
+          inherit = i;
+      }
+
+    if (shops_remaining) {
+      /* Somebody else still keeps a shop for this mob, so it stays a
+       * shopkeeper -- but the proc it had before it became one may have
+       * been living in the record just freed. Give it to a survivor that
+       * has none. */
+      if (tempfunc && inherit != NOWHERE)
+        SHOP_FUNC(inherit) = tempfunc;
+    } else {
+      /* Its last shop. Hand the proc back, but only if shop_keeper is
+       * still what is there to replace: a keeper reassigned since boot
+       * should keep the reassignment rather than have it overwritten. */
+      if (mob_index[keeper].func == shop_keeper)
+        mob_index[keeper].func = tempfunc;
+
+      /* And it is not a shopkeeper any more. MOB_SPEC left set over a NULL
+       * func makes mobile_activity log "Attempting to call non-existing mob
+       * function" -- once for every copy that spawns, and again after every
+       * reboot, because it strips the bit from the live mob and never from
+       * the prototype the next copy is read from. So: the prototype, the
+       * copies already walking around, and the .mob file they are loaded
+       * from, which is the only one of the three that survives a reboot. */
+      if (mob_index[keeper].func == NULL &&
+          MOB_FLAGGED(&mob_proto[keeper], MOB_SPEC)) {
+        REMOVE_BIT_AR(MOB_FLAGS(&mob_proto[keeper]), MOB_SPEC);
+        for (mob = character_list; mob; mob = mob->next)
+          if (IS_NPC(mob) && GET_MOB_RNUM(mob) == keeper)
+            REMOVE_BIT_AR(MOB_FLAGS(mob), MOB_SPEC);
+
+        kzone = real_zone_by_thing(mob_index[keeper].vnum);
+        if (kzone != NOWHERE) {
+          add_to_save_list(zone_table[kzone].number, SL_MOB);
+          /* Written now only when it is the zone this delete is already
+           * writing. Keepers do not have to live in their shop's zone,
+           * and reaching across to write a file the builder may have no
+           * right to edit is not this command's business -- that one is
+           * queued for the next save instead. The in-memory correction
+           * above happens either way. */
+          if (kzone == rznum)
+            save_mobiles(kzone);
+        }
+      }
+    }
+  }
+
+  if (rznum != NOWHERE)
+    add_to_save_list(zone_table[rznum].number, SL_SHP);
+  else
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: GenOLC: delete_shop: Cannot determine shop zone.");
+
+  return TRUE;
 }
 
 /* Returns the real number of the shop with given virtual number. We take so
