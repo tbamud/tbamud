@@ -3146,6 +3146,12 @@ static int perform_set(struct char_data *ch, struct char_data *vict, int mode, c
         send_to_char(ch, "Name has not been changed!\r\n");
         return (0);
       }
+      /* The wizlist and the immlist are both built from player names, so a
+       * rename leaves whichever list the player is on showing the old name
+       * until something unrelated regenerates it.  run_autowiz() already
+       * decides who belongs on each list, and honours use_autowiz, so there
+       * is no test worth duplicating here. */
+      run_autowiz();
       break;
     case 33: /* nodelete */
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_NODELETE);

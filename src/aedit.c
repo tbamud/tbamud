@@ -576,8 +576,16 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
         aedit_disp_menu(d);
         return;
       }
+      /* atoi() answers 0 for a word, and 0 is POS_DEAD -- inside the range
+       * tested below, so the range cannot refuse a typo on its own. */
+      if (!isdigit(*arg) && (*arg != '-' || !isdigit(arg[1]))) {
+        aedit_disp_menu(d);
+        return;
+      }
       i = atoi(arg);
-      if ((i < POS_DEAD) && (i > POS_STANDING))  {
+      /* && can never hold: every integer typed here was accepted, and the
+       * menu then rendered position_types[] at it. */
+      if ((i < POS_DEAD) || (i > POS_STANDING))  {
         aedit_disp_menu(d);
         return;
       }
@@ -592,8 +600,14 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
         aedit_disp_menu(d);
         return;
       }
+      /* Same two holes, with level 0 as what atoi() hands back for a word. */
+      if (!isdigit(*arg) && (*arg != '-' || !isdigit(arg[1]))) {
+        aedit_disp_menu(d);
+        return;
+      }
       i = atoi(arg);
-      if ((i < 0) && (i > LVL_IMPL))  {
+      /* Same broken guard as the two position prompts above. */
+      if ((i < 0) || (i > LVL_IMPL))  {
         aedit_disp_menu(d);
         return;
       }

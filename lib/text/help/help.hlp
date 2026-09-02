@@ -10085,13 +10085,14 @@ Editor command formats: /<letter>
 @n/c         -  clears the buffer.
 @n/d#        -  deletes line #, or a range #-#.
 @n/e# <text> -  changes the line at # with <text>.
-@n/f         -  formats text. 
+@n/f         -  formats text, or a range #-#.
 @n/fi        -  indented formatting of text (highly recommended for all desc's).
-                paragraphs can be formatted by /f 1-4 (first from lines 1-4, 
-                and /f 5-9 (second from lines 5-9).
+                A line number or range narrows /d, /f, /fi, /l and /n to
+                those lines, so two paragraphs can be kept apart by running
+                /fi 1-4 on the first and /fi 5-9 on the second.
 @n/h         -  list text editor commands.
 @n/i# <text> -  inserts <text> before line #.
-@n/l         -  lists buffer.
+@n/l         -  lists buffer, or a range #-#.
 @n/n         -  lists buffer with line numbers, or a range #-#.
 @n/r 'a' 'b' -  replace 1st occurence of text <a> in buffer with text.
 @n/ra 'a' 'b'-  replace all occurences of text <a> within buffer with text.

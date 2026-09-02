@@ -122,7 +122,10 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
             "/ra 'a' 'b'-  replace all occurences of text <a> within buffer with text <b>\r\n"
             "              usage: /r[a] 'pattern' 'replacement'\r\n"
             "/t         -  toggles '@' and tabs\r\n"
-            "/s         -  saves text\r\n");
+            "/s         -  saves text\r\n"
+            "\r\n"
+            "A line number or range narrows /d, /f, /fi, /l and /n to those lines:\r\n"
+            "              usage: /fi 5  (line 5)   /fi 5-9  (lines 5 through 9)\r\n");
     break;
   case PARSE_TOGGLE:
     if (!*d->str) {
@@ -169,7 +172,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       break;
     case 2:
       if (line_high < line_low) {
-        write_to_output(d, "That range is invalid.\\r\\n");
+        write_to_output(d, "That range is invalid.\r\n");
         return;
       }
     break;
@@ -212,6 +215,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     break;
   case PARSE_DELETE:
     switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
+    case -1:
     case 0:
       write_to_output(d, "You must specify a line number or range to delete.\r\n");
       return;
@@ -268,6 +272,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     *buf = '\0';
     if (*string)
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
+      case -1:
       case 0:
         line_low = 1;
         line_high = 999999;
@@ -326,6 +331,7 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
     *buf = '\0';
     if (*string)
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
+      case -1:
       case 0:
         line_low = 1;
         line_high = 999999;
