@@ -1,4 +1,4 @@
-/* src/conf.h.in.  Generated automatically from cnf/configure.in by autoheader.  */
+/* src/conf.h for OpenVMS -- maintained by hand, not generated.  */
 
 #ifndef _CONF_H_
 #define _CONF_H_

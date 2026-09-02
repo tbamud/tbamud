@@ -1,6 +1,6 @@
 /* CircleMUD for Amiga conf.h file - manually created (N. Franceschi 26 Jul 1996)
 
-/* src/conf.h.in.  Generated automatically from configure.in by autoheader.  */
+   Not generated -- this file is maintained by hand.  */
 
 #ifndef _CONF_H_
 #define _CONF_H_

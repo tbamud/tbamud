@@ -1,3 +1,4 @@
+# @configure_input@
 # tests/Makefile.in
 # Autoconf template — processed by configure to produce tests/Makefile.
 #
