@@ -90,6 +90,10 @@ struct oasis_olc_data {
   zone_rnum zone_num;            /* current zone             */
   room_vnum number;              /* vnum of subject          */
   int value;                     /* mostly 'has changed' flag*/
+  long help_version;             /* hedit: help_table generation at open */
+  char *help_key;                /* hedit: keyword of the row it opened  */
+  char *help_text;               /* hedit: that row's text, as opened     */
+  int help_line_shared;          /* hedit: keyword line not unique at open*/
   char *storage;                 /* used for 'tedit'         */
   struct char_data *mob;         /* used for 'medit'         */
   struct room_data *room;        /* used for 'redit'         */
@@ -120,6 +124,10 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_MODE(d)    (OLC(d)->mode)     /**< Parse input mode.	*/
 #define OLC_NUM(d)     (OLC(d)->number)   /**< Room/Obj VNUM.	*/
 #define OLC_VAL(d)     (OLC(d)->value)    /**< Scratch variable.	*/
+#define OLC_HELP_VERSION(d) (OLC(d)->help_version)  /**< hedit: table generation */
+#define OLC_HELP_KEY(d)     (OLC(d)->help_key)      /**< hedit: opened keyword */
+#define OLC_HELP_TEXT(d)    (OLC(d)->help_text)     /**< hedit: opened text    */
+#define OLC_HELP_LINE_SHARED(d) (OLC(d)->help_line_shared) /**< hedit: see hedit_relocate */
 #define OLC_ZNUM(d)    (OLC(d)->zone_num) /**< Real zone number.	*/
 
 #define OLC_STORAGE(d) (OLC(d)->storage)  /**< char pointer.	*/
@@ -393,6 +401,7 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define HEDIT_ENTRY                     4
 #define HEDIT_KEYWORDS                  5
 #define HEDIT_MIN_LEVEL                 6
+#define HEDIT_CONFIRM_DELETE            7
 
 int  save_config( IDXTYPE nowhere );
 
