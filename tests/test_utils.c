@@ -437,11 +437,13 @@ static void topic_leave(void)
         unlink(path);
     }
     TEST_ASSERT_EQUAL_INT(0, chdir(topic_cwd));
+    /* A directory that will not go is a topic file the game wrote that
+     * these tests did not expect; make that visible. */
     snprintf(path, sizeof(path), "%s/log", topic_root);
-    rmdir(path);
+    TEST_ASSERT_EQUAL_INT(0, rmdir(path));
     snprintf(path, sizeof(path), "%s/lib", topic_root);
-    rmdir(path);
-    rmdir(topic_root);
+    TEST_ASSERT_EQUAL_INT(0, rmdir(path));
+    TEST_ASSERT_EQUAL_INT(0, rmdir(topic_root));
 }
 
 /* Lines in ../log/<name>, or -1 if the file does not exist. */
