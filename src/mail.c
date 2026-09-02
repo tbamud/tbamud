@@ -53,11 +53,67 @@ static void free_mail_record(struct mail_t *record)
   free(record);
 }
 
+/* The body, up to the '~' that ends it.  This is fread_string() without the
+ * exit(): that function is for world files, where a truncated string means
+ * the boot cannot continue, but a truncated letter in the spool is exactly
+ * the corruption the callers here are built to report and survive.  Same
+ * line handling as fread_string(), so a spool it wrote reads back the same
+ * way: line ends become \r\n, the terminator is dropped, and @-codes are
+ * parsed.  Answers MAIL_READ_RECORD with *body set (NULL for an empty
+ * letter), or MAIL_READ_ERROR. */
+static int read_mail_body(FILE *mail_file, char **body)
+{
+  char buf[MAX_STRING_LENGTH], tmp[513];
+  char *point;
+  int done = 0, length = 0, templength;
+
+  *body = NULL;
+  *buf = '\0';
+
+  do {
+    if (!fgets(tmp, sizeof(tmp) - 1, mail_file)) {
+      log("Mail system - mail file ends inside a message body");
+      return MAIL_READ_ERROR;
+    }
+
+    point = strchr(tmp, '\0');
+    for (point--; (*point == '\r' || *point == '\n') && point > tmp; point--);
+    if (*point == '~') {
+      *point = '\0';
+      done = 1;
+    } else {
+      if (*point == '\n' || *point == '\r')
+        *point = '\r';
+      else
+        *(++point) = '\r';
+
+      *(++point) = '\n';
+      *(++point) = '\0';
+    }
+
+    templength = point - tmp;
+
+    if (length + templength >= MAX_STRING_LENGTH) {
+      log("Mail system - message body longer than %d characters", MAX_STRING_LENGTH);
+      return MAIL_READ_ERROR;
+    }
+
+    strcat(buf + length, tmp);	/* strcat: OK (size checked above) */
+    length += templength;
+  } while (!done);
+
+  parse_at(buf);
+  if (*buf)
+    *body = strdup(buf);
+
+  return MAIL_READ_RECORD;
+}
+
 static int read_mail_record(FILE *mail_file, struct mail_t **record)
 {
   char line[READ_SIZE];
-  long sender, recipient;
-  time_t sent_time;
+  long sender, recipient, sent_time;
+  char *body;
 
   *record = NULL;
 
@@ -70,19 +126,24 @@ static int read_mail_record(FILE *mail_file, struct mail_t **record)
     return MAIL_READ_EOF;
   }
 
-  if (sscanf(line, "### %ld %ld %ld",
-             &recipient, &sender, (long *)&sent_time) != 3) {
+  /* The stamp is written as a long, so it is read as one and converted;
+   * pointing sscanf at a time_t through a long pointer is only right where
+   * the two happen to be the same size. */
+  if (sscanf(line, "### %ld %ld %ld", &recipient, &sender, &sent_time) != 3) {
     log("Mail system - fatal error - malformed mail header");
     log("Line was: %s", line);
     return MAIL_READ_ERROR;
   }
 
+  if (read_mail_body(mail_file, &body) != MAIL_READ_RECORD)
+    return MAIL_READ_ERROR;
+
   CREATE(*record, struct mail_t, 1);
 
   (*record)->recipient = recipient;
   (*record)->sender = sender;
-  (*record)->sent_time = sent_time;
-  (*record)->body = fread_string(mail_file, "read mail record");
+  (*record)->sent_time = (time_t)sent_time;
+  (*record)->body = body;
 
   return MAIL_READ_RECORD;
 }
@@ -181,6 +242,7 @@ void store_mail(long to, long from, char *message_pointer)
 {
   FILE *mail_file;
   struct mail_t *record;
+  int written;
 
   if (!(mail_file = fopen(MAIL_FILE, "a"))) {
     perror("store_mail: Mail file not accessible.");
@@ -193,9 +255,12 @@ void store_mail(long to, long from, char *message_pointer)
   record->sent_time = time(0);
   record->body = message_pointer;
 
-  write_mail_record(mail_file, record);
+  written = write_mail_record(mail_file, record);
+  if (fclose(mail_file) == EOF)
+    written = FALSE;
+  if (!written)
+    log("SYSERR: store_mail: error writing mail from %ld to %ld to %s", from, to, MAIL_FILE);
   free(record); /* don't free the body */
-  fclose(mail_file);
 }
 
 /* char *read_delete(long #1)
@@ -249,12 +314,14 @@ char *read_delete(long recipient)
 
     fclose(mail_file);
     fclose(new_file);
+    remove(MAIL_FILE_TMP);
     return NULL;
   }
 
   if (!record_to_keep) {
     fclose(mail_file);
     fclose(new_file);
+    remove(MAIL_FILE_TMP);
     return NULL;
   }
 
@@ -263,6 +330,7 @@ char *read_delete(long recipient)
     free_mail_record(record_to_keep);
     fclose(mail_file);
     fclose(new_file);
+    remove(MAIL_FILE_TMP);
     return NULL;
   }
 
@@ -270,6 +338,7 @@ char *read_delete(long recipient)
     log("Mail system - error closing temporary mail file");
     free_mail_record(record_to_keep);
     fclose(mail_file);
+    remove(MAIL_FILE_TMP);
     return NULL;
   }
 
