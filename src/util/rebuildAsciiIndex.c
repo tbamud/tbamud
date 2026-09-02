@@ -78,8 +78,11 @@ long parseid(FILE *plr_file) {
 int parselevel(FILE *plr_file) {
 	char *fromFile = findLine(plr_file, "Levl:");
 
+	/* The game omits the Levl tag when the level is the default (0), which
+	 * is the case for characters saved during creation before do_start()
+	 * runs. Match load_char() and treat a missing tag as level 0. */
 	if (fromFile == NULL)
-		return -1;
+		return 0;
 
 	return atoi(fromFile);
 }
@@ -163,14 +166,6 @@ int walkdir(FILE *index_file, char *dir) {
 			}
 
 			int level = parselevel(plr_file);
-			if (level < 0) {
-				fprintf(stderr,
-				        "Skipping %s: missing Levl field\n",
-				        filename_qfd);
-				fclose(plr_file);
-				errors++;
-				continue;
-			}
 
 			long last = parselast(plr_file);
 			if (last < 0) {
