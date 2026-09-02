@@ -289,7 +289,7 @@ static void zedit_save_internally(struct descriptor_data *d)
 {
   int	mobloaded = FALSE,
 	objloaded = FALSE,
-	subcmd, i;
+	subcmd, pos, i;
   room_rnum room_num = real_room(OLC_NUM(d));
 
   if (room_num == NOWHERE) {
@@ -300,7 +300,7 @@ static void zedit_save_internally(struct descriptor_data *d)
   remove_room_zone_commands(OLC_ZNUM(d), room_num);
 
   /* Now add all the entries in the players descriptor list */
-  for (subcmd = 0; MYCMD.command != 'S'; subcmd++) {
+  for (subcmd = 0, pos = 0; MYCMD.command != 'S'; subcmd++) {
     /* Since Circle does not keep track of what rooms the 'G', 'E', and
      * 'P' commands are exitted in, but OasisOLC groups zone commands
      * by rooms, this creates interesting problems when builders use these
@@ -332,7 +332,10 @@ static void zedit_save_internally(struct descriptor_data *d)
         mobloaded = objloaded = FALSE;
         break;
     }
-    add_cmd_to_list(&(zone_table[OLC_ZNUM(d)].cmd), &MYCMD, subcmd);
+    /* The insert position must count only the commands actually written:
+     * a skipped 'G'/'E'/'P' above leaves subcmd running ahead of the list,
+     * and add_cmd_to_list() silently discards anything past the end. */
+    add_cmd_to_list(&(zone_table[OLC_ZNUM(d)].cmd), &MYCMD, pos++);
   }
 
   /* Finally, if zone headers have been changed, copy over */

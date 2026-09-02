@@ -407,14 +407,17 @@ int delete_object(obj_rnum rnum)
       struct obj_data *this_content, *next_content;
       for (this_content = tmp->contains; this_content; this_content = next_content) {
         next_content = this_content->next_content;
-        if (IN_ROOM(tmp)) {
+        if (IN_ROOM(tmp) != NOWHERE) {
           /* Transfer stuff from object to room. */
           obj_from_obj(this_content);
           obj_to_room(this_content, IN_ROOM(tmp));
-        } else if (tmp->worn_by || tmp->carried_by) {
-          /* Transfer stuff from object to person inventory. */
-          obj_from_char(this_content);
-          obj_to_char(this_content, tmp->carried_by);
+        } else if (tmp->carried_by || tmp->worn_by) {
+          /* Transfer stuff from object to person inventory.  The contents
+           * are in a container, so they come out with obj_from_obj(), not
+           * obj_from_char(); and a worn container has a NULL carried_by,
+           * so the holder has to be taken from whichever is set. */
+          obj_from_obj(this_content);
+          obj_to_char(this_content, tmp->carried_by ? tmp->carried_by : tmp->worn_by);
         } else if (tmp->in_obj) {
           /* Transfer stuff from object to containing object. */
           obj_from_obj(this_content);
@@ -433,6 +436,19 @@ int delete_object(obj_rnum rnum)
   for (tmp = object_list; tmp; tmp = tmp->next) {
     GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) > rnum);
   }
+
+  /* The same leak delete_mobile() has, for the same reason: read_object()
+   * copies the whole struct, so an instance shares the prototype's strings
+   * and nothing that frees an instance will touch one that points at a
+   * prototype.  The prototype's own copy has no owner, and the shift below
+   * overwrites the struct holding it.
+   *
+   * Safe here because object extraction is immediate rather than deferred:
+   * the loop above extracts every instance of this rnum and the assert then
+   * confirms none is left, so nothing points at what is freed.  Same set
+   * destroy_db() frees for every object prototype at shutdown. */
+  free_object_strings(&obj_proto[rnum]);
+  free_proto_script(&obj_proto[rnum], OBJ_TRIGGER);
 
   for (i = rnum; i < top_of_objt; i++) {
     obj_index[i] = obj_index[i + 1];

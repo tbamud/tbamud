@@ -27,6 +27,7 @@ room_rnum add_room(struct room_data *room)
   struct char_data *tch;
   struct obj_data *tobj;
   int j, found = FALSE;
+  byte tlight;
   room_rnum i;
 
   if (room == NULL)
@@ -37,9 +38,15 @@ room_rnum add_room(struct room_data *room)
       extract_script(&world[i], WLD_TRIGGER);
     tch = world[i].people;
     tobj = world[i].contents;
+    tlight = world[i].light;
     copy_room(&world[i], room);
     world[i].people = tch;
     world[i].contents = tobj;
+    /* light counts the light sources currently in the room, so it belongs
+     * to the live room and not to the copy being saved.  redit captured it
+     * when editing began; restoring that would undo every torch that has
+     * come or gone since, and the count never recovers. */
+    world[i].light = tlight;
     add_to_save_list(zone_table[room->zone].number, SL_WLD);
     log("GenOLC: add_room: Updated existing room #%d.", room->number);
     return i;
@@ -76,8 +83,13 @@ room_rnum add_room(struct room_data *room)
   log("GenOLC: add_room: Added room %d at index #%d.", room->number, found);
   /* found is equal to the array index where we added the room. */
 
-  /* Find what zone that room was in so we can update the loading table. */
-  for (i = room->zone; i <= top_of_zone_table; i++)
+  /* Update every zone's loading table, not just this room's zone and the
+   * ones above it.  Nothing confines a reset command to the zone that owns
+   * the room it targets -- the stock world ships 26 aimed at a zone higher
+   * than the one they sit in -- and such a command, pointing at a room at
+   * or after the insertion point, needs the same fixup.  delete_room() has
+   * always scanned from 0 for exactly this reason. */
+  for (i = 0; i <= top_of_zone_table; i++)
     for (j = 0; ZCMD(i, j).command != 'S'; j++)
       switch (ZCMD(i, j).command) {
       case 'M':
@@ -103,6 +115,18 @@ room_rnum add_room(struct room_data *room)
   r_mortal_start_room += (r_mortal_start_room >= found);
   r_immort_start_room += (r_immort_start_room >= found);
   r_frozen_start_room += (r_frozen_start_room >= found);
+
+  /* was_in_room is a bare room rnum kept on the character; it is not a link
+   * into any room's people list, so the pass above cannot reach it.  That
+   * pass walks world[i].people for each room it shifts and fixes IN_ROOM
+   * alone.  A character idled into the void is in world[1].people --
+   * limits.c does char_from_room() then char_to_room(ch, 1) -- and index 1
+   * is shifted only when the new room lands at or below it, which is
+   * almost never.  The room they were pulled out of, recorded here, is a
+   * different index entirely and may well be at or above the insertion
+   * point.  Without this they come back one room off. */
+  for (tch = character_list; tch; tch = tch->next)
+    GET_WAS_IN(tch) += (GET_WAS_IN(tch) != NOWHERE && GET_WAS_IN(tch) >= found);
 
   /* Update world exits. */
   i = top_of_world + 1;
@@ -149,6 +173,17 @@ int delete_room(room_rnum rnum)
     log("WARNING: GenOLC: delete_room: Deleting frozen start room!");
     r_frozen_start_room = 0;	/* The Void */
   }
+
+  /* Deleting one of these is handled above; deleting a room *below* one is
+   * not, and add_room() has always incremented all three for exactly that
+   * reason.  Without the decrement, a start room quietly points one room
+   * high for the rest of the boot -- and it is read on every login, not on
+   * some rare path.  check_start_rooms() resolves all three at boot and
+   * falls back rather than leaving NOWHERE, so no guard is needed here,
+   * just as add_room() needs none. */
+  r_mortal_start_room -= (r_mortal_start_room > rnum);
+  r_immort_start_room -= (r_immort_start_room > rnum);
+  r_frozen_start_room -= (r_frozen_start_room > rnum);
 
   /* Dump the contents of this room into the Void.  We could also just extract 
    * the people, mobs, and objects here. */
@@ -243,6 +278,22 @@ int delete_room(room_rnum rnum)
         SHOP_ROOM(i, j) = 0; /* set to the void */
     }
   }
+  /* was_in_room is a bare room rnum kept on the character, not a link into
+   * any room's people list, so the shift below cannot reach it -- that loop
+   * walks world[i].people and repairs IN_ROOM alone, and a linkdead
+   * character is not in the room it records.  This is add_room()'s pass in
+   * reverse: the room they were pulled out of is gone, so there is nothing
+   * to send them back to and the reference is dropped; a room deleted below
+   * it moves their index down like every other rnum here.  NOWHERE is what
+   * game_loop() already tests for before returning anyone, so clearing it
+   * leaves them where they are rather than somewhere arbitrary. */
+  for (ppl = character_list; ppl; ppl = ppl->next) {
+    if (GET_WAS_IN(ppl) == rnum)
+      GET_WAS_IN(ppl) = NOWHERE;
+    else if (GET_WAS_IN(ppl) > rnum)
+      GET_WAS_IN(ppl) -= (GET_WAS_IN(ppl) != NOWHERE); /* with unsigned NOWHERE > any rnum */
+  }
+
   /* Now we actually move the rooms down. */
   for (i = rnum; i < top_of_world; i++) {
     world[i] = world[i + 1];
