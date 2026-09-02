@@ -135,6 +135,10 @@ static void init_game(ush_int port);
 static void signal_setup(void);
 static socket_t init_socket(ush_int port);
 static int new_descriptor(socket_t s);
+
+/** How many waiting connections one pulse will accept before getting on
+ * with the game.  At ten pulses a second this is 500 logins a second. */
+#define MAX_ACCEPTS_PER_PULSE 50
 static int get_max_players(void);
 static int process_output(struct descriptor_data *t);
 static int process_input(struct descriptor_data *t);
@@ -676,7 +680,13 @@ static socket_t init_socket(ush_int local_port)
     exit(1);
   }
   nonblock(s);
-  listen(s, 5);
+  /* A backlog of 5 was the number since CircleMUD, and a reconnect flood
+   * after a crash shows what it costs: the queue fills, the kernel drops
+   * the SYNs behind it, and every client past the fifth sits in TCP's
+   * retransmit back-off -- 250 players took 42 seconds to be greeted.  128
+   * is what the kernel caps at by default and holds a whole burst while the
+   * game loop drains it. */
+  listen(s, 128);
   return (s);
 }
 
@@ -861,9 +871,19 @@ void game_loop(socket_t local_mother_desc)
       perror("SYSERR: Select poll");
       return;
     }
-    /* If there are new connections waiting, accept them. */
-    if (FD_ISSET(local_mother_desc, &input_set))
-      new_descriptor(local_mother_desc);
+    /* If there are new connections waiting, accept them.  All of them, up
+     * to a limit, not one per pulse: at one a pulse a burst of reconnects
+     * drained at ten a second, and with the backlog above that meant
+     * waiting in the kernel's queue instead of being refused.  The mother
+     * socket is nonblocking, so new_descriptor() answers -1 as soon as the
+     * queue is empty.  The limit keeps a flood from starving the pulse. */
+    if (FD_ISSET(local_mother_desc, &input_set)) {
+      int accepted;
+
+      for (accepted = 0; accepted < MAX_ACCEPTS_PER_PULSE; accepted++)
+        if (new_descriptor(local_mother_desc) < 0)
+          break;
+    }
 
     /* Kick out the freaky folks in the exception set and marked for close */
     for (d = descriptor_list; d; d = next_d) {

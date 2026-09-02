@@ -773,7 +773,9 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
 
     if (!IS_NPC(victim)) {
-      mudlog(BRF, MAX(LVL_IMMORT, MAX(GET_INVIS_LEV(ch), GET_INVIS_LEV(victim))), 
+      /* ch is whatever did the killing, and a mob has no invis level to
+       * read: asking for one logs a SYSERR on every such death. */
+      mudlog(BRF, MAX(LVL_IMMORT, MAX(IS_NPC(ch) ? 0 : GET_INVIS_LEV(ch), GET_INVIS_LEV(victim))), 
         TRUE, "%s killed by %s at %s", GET_NAME(victim), GET_NAME(ch), world[IN_ROOM(victim)].name);
       if (MOB_FLAGGED(ch, MOB_MEMORY))
 	forget(ch, victim);

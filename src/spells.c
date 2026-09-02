@@ -136,7 +136,8 @@ ASPELL(spell_summon)
 	      GET_NAME(ch), world[IN_ROOM(ch)].name);
 
       send_to_char(ch, "You failed because %s has summon protection on.\r\n", GET_NAME(victim));
-      mudlog(BRF, MAX(LVL_IMMORT, MAX(GET_INVIS_LEV(ch), GET_INVIS_LEV(victim))), TRUE, 
+      /* A mob can cast this through a script, and has no invis level. */
+      mudlog(BRF, MAX(LVL_IMMORT, MAX(IS_NPC(ch) ? 0 : GET_INVIS_LEV(ch), GET_INVIS_LEV(victim))), TRUE, 
         "%s failed summoning %s to %s.", GET_NAME(ch), GET_NAME(victim), world[IN_ROOM(ch)].name);
       return;
     }
