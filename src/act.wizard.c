@@ -802,18 +802,12 @@ static void do_stat_character(struct char_data *ch, struct char_data *k)
             k->player.time.played / 3600, (k->player.time.played % 3600) / 60,
             age(k)->year, GET_PRACTICES(k), practices_per_level(k),
             practice_gain_percent(k));
-    /* Display OLC zone for immorts. */
+    /* Display OLC zone for builders. */
     if (GET_LEVEL(k) >= LVL_BUILDER) {
-      if (GET_OLC_ZONE(k)==AEDIT_PERMISSION)
-        send_to_char(ch, ", OLC[%sAedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
-      else if (GET_OLC_ZONE(k)==HEDIT_PERMISSION)
-        send_to_char(ch, ", OLC[%sHedit%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
-      else if (GET_OLC_ZONE(k) == ALL_PERMISSION)
-        send_to_char(ch, ", OLC[%sAll%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
-      else if (GET_OLC_ZONE(k)==NOWHERE)
-        send_to_char(ch, ", OLC[%sOFF%s]", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
-      else
-        send_to_char(ch, ", OLC[%s%d%s]", CCCYN(ch, C_NRM), GET_OLC_ZONE(k), CCNRM(ch, C_NRM));
+      char olcbuf[MAX_INPUT_LENGTH];
+
+      sprint_olc_access(k, olcbuf, sizeof(olcbuf));
+      send_to_char(ch, ", OLC[%s%s%s]", CCCYN(ch, C_NRM), olcbuf, CCNRM(ch, C_NRM));
     }
     send_to_char(ch, "\r\n");
   }
