@@ -1027,11 +1027,15 @@ static int add_to_shop_list(struct shop_buy_data *list, int type, int *len, int 
     if (*len < MAX_SHOP_OBJ) {
       if (type == LIST_PRODUCE)
 	*val = real_object(*val);
-      else if (type == LIST_TRADE && *val >= NUM_ITEM_TYPES) {
+      else if (type == LIST_TRADE && (*val < 0 || *val >= NUM_ITEM_TYPES)) {
 	/* A trade entry names an item type, but both readers fall through to a
 	 * bare %d when the line does not match one of the names, so a .shp file
-	 * can put any number here.  list_detailed_shop() and sedit's trade menu
-	 * then index item_types[] with it.  Drop the entry rather than keep a
+	 * can put any number here -- a negative one included: read_type_list()
+	 * hands the terminating value to this function before it tests it, and
+	 * the old-format reader never tests it at all.  list_detailed_shop() and
+	 * sedit's trade menu then index item_types[] with it, and with unsigned
+	 * NOTHING a negative type reads before the table rather than past it.
+	 * Drop the entry rather than keep a
 	 * type nothing can be: NOTHING is what the loop below already does with
 	 * a value it cannot use. */
 	log("SYSERR: Shop file lists unknown item type %d, dropping it.", *val);
