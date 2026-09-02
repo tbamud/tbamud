@@ -1220,7 +1220,10 @@ ACMD(do_help)
           send_to_char(ch, "\r\nDid you mean:\r\n");
           found = 1;
         }
-        send_to_char(ch, "  \t<send link=\"Help %s\">%s\t</send>\r\n", help_table[i].keywords, help_table[i].keywords);
+        /* MXP's attribute is href; a <send> with no href sends its own text
+         * as the command, so the old link= form ran the keyword instead of
+         * asking for its help. */
+        send_to_char(ch, "  \t<send href=\"help %s\">%s\t</send>\r\n", help_table[i].keywords, help_table[i].keywords);
       }
     }
     return;
