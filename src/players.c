@@ -494,7 +494,7 @@ int load_char(const char *name, struct char_data *ch)
 static int replace_player_file(const char *newname, const char *filename)
 {
 #ifdef CIRCLE_WINDOWS
-  char backup[MAX_STRING_LENGTH];
+  char backup[MAX_INPUT_LENGTH + 8];
   int had_original = TRUE;
   int n;
 
@@ -507,8 +507,16 @@ static int replace_player_file(const char *newname, const char *filename)
   /*
    * Windows rename() does not reliably replace an existing destination.
    * Move the current file aside first so it can be restored if installing
-   * the completed replacement fails.
+   * the completed replacement fails.  A backup left behind by a crash
+   * between the two renames would make that first rename fail too, so it
+   * is cleared out of the way first.
    */
+  if (remove(backup) < 0 && errno != ENOENT) {
+    log("SYSERR: Couldn't clear stale player backup %s: %s",
+        backup, strerror(errno));
+    return FALSE;
+  }
+
   if (rename(filename, backup) < 0) {
     if (errno == ENOENT)
       had_original = FALSE;
@@ -552,7 +560,7 @@ static int replace_player_file(const char *newname, const char *filename)
 void save_char(struct char_data * ch)
 {
   FILE *fl;
-  char filename[MAX_STRING_LENGTH], tempname[MAX_STRING_LENGTH];
+  char filename[MAX_INPUT_LENGTH], tempname[MAX_INPUT_LENGTH + 8];
   char buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127];
   int i, j, id, n, save_index = FALSE, save_ok = TRUE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
