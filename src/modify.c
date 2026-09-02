@@ -248,9 +248,17 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
-      store_mail(d->mail_to, GET_IDNUM(d->character), *d->str);
-      write_to_output(d, "Message sent!\r\n");
-      notify_if_playing(d->character, d->mail_to);
+      if (store_mail(d->mail_to, GET_IDNUM(d->character), *d->str)) {
+        write_to_output(d, "Message sent!\r\n");
+        notify_if_playing(d->character, d->mail_to);
+      } else {
+        /* The spool could not be written, so nothing further is sent to it
+         * this session; the sender should hear that rather than be told to
+         * try again. */
+        write_to_output(d, "Unable to send your message: the mail system is out of order until an immortal looks at it.\r\n");
+        mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: Mail from %s could not be stored; mail disabled.", GET_NAME(d->character));
+        no_mail = 1;
+      }
     } else
       write_to_output(d, "Mail aborted.\r\n");
     
