@@ -2943,13 +2943,27 @@ EXPORT
    Used by the IMP's to export a zone for other MUD's. This command replaces
 the zone number with QQ's. This allows any decent text-editor to "find and
 replace" the QQ's with a zone number of your choice. The zone will be saved
-into a compressed file as: <zone #>_<zone name>.tgz i.e. 1_Sanctus.tgz
+into a compressed file as: <zone #>_<zone name>.tar.gz i.e. 1_Sanctus.tar.gz
+(or .zip if the export asked for one).
    Use your preferred client to unpack and then a text editor to find and
 replace the QQ's with your zone number. If you want to keep the existing zone
 number make sure to say so when you ask for an export. The easiest way to add
 a new zone is to first create the new zone and then overwrite the created 
 files. A zone consist of up to 6 different files that are located in their own
 directories in lib/world/: <zone_#>.mob .obj .shp .trg .qst .wld .zon
+
+   Syntax: export <zone vnum> [<target zone>] [zip]
+
+   export 577           QQ scheme, files named qq.*, archive 577_Name.tar.gz
+   export 577 400       renumbered into 400, files 400.*, 400_Name.tar.gz
+   export 577 zip       QQ scheme, archive 577_Name.zip
+   export 577 400 zip   renumbered into 400, archive 400_Name.zip
+
+   With a target zone the vnums and the file names are already the ones the
+zone will use, so there is no find-and-replace to do and nothing to rename --
+only the index files to add them to. References that leave the zone are
+marked ZZ in either form and have to be pointed at something real before the
+zone will load.
 
 #31
 EXPRESSIONS TRIG-EXPRESSIONS TRIGEDIT-EXPRESSIONS INCREMENTS MATHEMATICAL NUMBERS TRIGEDIT-NUMBERS != <> LOGIC && /= || \ RNUMBERS + OPERATORS OPERATIONS == EQUAL ADDITION SUBTRACTION
