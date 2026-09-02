@@ -26,7 +26,7 @@ Building somewhere other than the source tree
 --------------------------------------------
 
 'configure' runs from an empty directory and writes a correct 'src/conf.h'
-there: AC_CHECK_PROTO passes -I$srcdir, so its 56 probes still find
+there: AC_CHECK_PROTO passes -I$srcdir, so its 57 probes still find
 'src/sysdep.h' and answer the same as they do in the tree.  'make' does not
 follow.  None of the three 'Makefile.in' carries VPATH or @srcdir@, so the
 compile looks for the sources beside the object files, finds none and stops
