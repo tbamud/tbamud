@@ -24,6 +24,7 @@ static void free_messages_type(struct msg_type *msg);
 static void msgedit_main_menu(struct descriptor_data * d);
 static void copy_message_strings(struct message_type *tmsg, struct message_type * fmsg);
 static void copy_message_list(struct message_list *to, struct message_list *from);
+static void msgedit_free_slot(int nr);
 
 static void free_messages_type(struct msg_type *msg)
 {
@@ -68,6 +69,29 @@ void free_messages(void)
       fight_messages[i].msg = fight_messages[i].msg->next;
       free(former);
     }
+}
+
+/* Return one fight_messages slot to the state every unused slot is already
+ * in at boot: no messages, no attack type, no count. free_message_list is
+ * not usable for this -- it ends with free(mlist), and these lists are
+ * heads inside a static array rather than allocations of their own. */
+static void msgedit_free_slot(int nr)
+{
+  struct message_type *former;
+
+  while (fight_messages[nr].msg) {
+    former = fight_messages[nr].msg;
+
+    free_messages_type(&former->die_msg);
+    free_messages_type(&former->miss_msg);
+    free_messages_type(&former->hit_msg);
+    free_messages_type(&former->god_msg);
+
+    fight_messages[nr].msg = former->next;
+    free(former);
+  }
+  fight_messages[nr].a_type = 0;
+  fight_messages[nr].number_of_attacks = 0;
 }
 
 void load_messages(void)
@@ -163,7 +187,16 @@ static void show_messages(struct char_data *ch)
       len += snprintf(buf + len, sizeof(buf) - len, "%-2d) [%-3d] %d, %-18s%s", i, fight_messages[i].a_type, fight_messages[i].number_of_attacks, fight_messages[i].a_type < TOP_SPELL_DEFINE ? spell_info[fight_messages[i].a_type].name : "Unknown", half < MAX_MESSAGES && fight_messages[half].msg ? "   " : "\r\n");
       if (half < MAX_MESSAGES && fight_messages[half].msg)
         len += snprintf(buf + len, sizeof(buf) - len, "%-2d) [%-3d] %d, %-18s\r\n", half, fight_messages[half].a_type, fight_messages[half].number_of_attacks, fight_messages[half].a_type < TOP_SPELL_DEFINE ? spell_info[fight_messages[half].a_type].name : "Unknown");
-    }
+    } else if (half < MAX_MESSAGES && fight_messages[half].msg &&
+               len < sizeof(buf))
+      /* The right-hand entry used to be printed only from inside the
+       * left-hand one, so an empty slot on the left hid a live attack
+       * type on the right -- from the only listing the editor offers,
+       * and for the rest of the uptime. Nothing could empty a slot
+       * before this, so nothing had ever run into it. It takes a row of
+       * its own rather than being padded across, which keeps the format
+       * the same as the line above. */
+      len += snprintf(buf + len, sizeof(buf) - len, "%-2d) [%-3d] %d, %-18s\r\n", half, fight_messages[half].a_type, fight_messages[half].number_of_attacks, fight_messages[half].a_type < TOP_SPELL_DEFINE ? spell_info[fight_messages[half].a_type].name : "Unknown");
     
   snprintf(buf + len, sizeof(buf) - len, "Total Messages: %d\r\n", count);  
   page_string(ch->desc, buf, TRUE);
@@ -398,6 +431,9 @@ static void msgedit_main_menu(struct descriptor_data * d)
   write_to_output(d, "\r\n%sN%s)%s %s", grn, yel, nrm, OLC_MSG(d)->next ? "Next" : "New");
   if (OLC_MSG(d) != OLC_MSG_LIST(d)->msg)
     write_to_output(d, " %sP%s)%s Previous", grn, yel, nrm);
+  if (OLC_MSG_LIST(d)->msg->next)
+    write_to_output(d, " %sX%s)%s Delete Set", grn, yel, nrm);
+  write_to_output(d, " %sZ%s)%s Delete Type", grn, yel, nrm);
   if (OLC_VAL(d))
     write_to_output(d, " %sS%s)%s Save", grn, yel, nrm);
   write_to_output(d, " %sQ%s)%s Quit\r\n"
@@ -519,6 +555,73 @@ void msgedit_parse(struct descriptor_data *d, char *arg)
           
           msgedit_main_menu(d);
         return;
+        case 'X':
+        case 'x':
+          /* The last set cannot go this way. fight.c walks this list and
+           * then reads the node it stopped on without checking it, so a
+           * type left with no sets at all crashes on the next swing of
+           * it. Z removes the type and its sets together instead. */
+          if (OLC_MSG_LIST(d)->msg->next == NULL) {
+            write_to_output(d, "That is the only message set for this attack"
+                               " type. Use Z to delete the type itself.\r\n");
+            msgedit_main_menu(d);
+            return;
+          }
+          {
+            struct message_type *prev = NULL, *gone = OLC_MSG(d);
+
+            if (gone == OLC_MSG_LIST(d)->msg)
+              OLC_MSG_LIST(d)->msg = gone->next;
+            else {
+              for (prev = OLC_MSG_LIST(d)->msg; prev && prev->next != gone;
+                   prev = prev->next)
+                ;
+              if (!prev) {	/* not in this list: leave it where it is */
+                msgedit_main_menu(d);
+                return;
+              }
+              prev->next = gone->next;
+            }
+
+            /* Land on the set before the one that went, so P) and N) both
+             * still mean what they did. Deleting the first leaves the new
+             * first. */
+            OLC_MSG(d) = prev ? prev : OLC_MSG_LIST(d)->msg;
+
+            free_messages_type(&gone->die_msg);
+            free_messages_type(&gone->miss_msg);
+            free_messages_type(&gone->hit_msg);
+            free_messages_type(&gone->god_msg);
+            free(gone);
+
+            if (OLC_MSG_LIST(d)->number_of_attacks > 0)
+              OLC_MSG_LIST(d)->number_of_attacks--;
+          }
+          OLC_VAL(d) = 1;
+          msgedit_main_menu(d);
+        return;
+        case 'Z':
+        case 'z':
+          {
+            struct message_type *m;
+            int sets = 0;
+
+            /* Both numbers come from the LIVE slot, not the working copy.
+             * 1) and X) change the copy and only reach fight_messages on
+             * save, while Z deletes the live slot outright -- so naming
+             * the copy would ask a builder to confirm one record and then
+             * destroy a different one. Counted rather than read off
+             * number_of_attacks, which is one short for a type first
+             * written in this editor. */
+            for (m = fight_messages[OLC_NUM(d)].msg; m; m = m->next)
+              sets++;
+            write_to_output(d, "Delete attack type %d and %d message set%s"
+                               " with it? y/n : ",
+                            fight_messages[OLC_NUM(d)].a_type,
+                            sets, sets == 1 ? "" : "s");
+          }
+          OLC_MODE(d) = MSGEDIT_CONFIRM_DELETE;
+        return;
         case 'S':
         case 's':
           write_to_output(d, "Do you wish to save? Y/N : ");
@@ -553,6 +656,32 @@ void msgedit_parse(struct descriptor_data *d, char *arg)
         return;     
       } 
         
+      msgedit_main_menu(d);
+    return;
+    case MSGEDIT_CONFIRM_DELETE:
+      if (*arg == 'Y' || *arg == 'y') {
+        /* Before the free, and it has to stay there: a_type is read out of
+         * the live slot that the next line empties, so moving this below
+         * would quietly start recording every deletion as type 0.
+         *
+         * mudlog, not log: merely opening this editor already reaches the
+         * god channel, and this is the one action here that cannot be
+         * undone. Same class and level as that one, so an invisible
+         * builder stays invisible. */
+        mudlog(CMP, MAX(LVL_IMMORT, GET_INVIS_LEV(d->character)), TRUE,
+               "OLC: %s deletes attack type %d in message slot %d",
+               GET_NAME(d->character), fight_messages[OLC_NUM(d)].a_type,
+               OLC_NUM(d));
+        msgedit_free_slot(OLC_NUM(d));
+        save_messages_to_disk();
+        write_to_output(d, "Attack type deleted.\r\n");
+        /* Not routed through the `quit' flag the save path uses: that one
+         * is function-static, so one builder setting it exits the next
+         * builder to answer a prompt. */
+        cleanup_olc(d, CLEANUP_ALL);
+        return;
+      }
+      write_to_output(d, "Delete aborted.\r\n");
       msgedit_main_menu(d);
     return;
     case MSGEDIT_TYPE:

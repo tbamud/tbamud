@@ -40,3 +40,4 @@ void free_message_list(struct message_list * mlist);
 #define MSGEDIT_GOD_CHAR      13
 #define MSGEDIT_GOD_VICT      14
 #define MSGEDIT_GOD_ROOM      15
+#define MSGEDIT_CONFIRM_DELETE 16
