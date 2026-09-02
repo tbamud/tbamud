@@ -371,7 +371,7 @@ int save_config( IDXTYPE nowhere )
   fprintf(fl, "* Should players who reach enough exp be prevented from automatically levelling to immortal?\n"
               "no_mort_to_immort = %d\n\n", CONFIG_NO_MORT_TO_IMMORT);
   fprintf(fl, "* Should closed doors be shown on autoexit / exit?\n"
-              "disp_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
+              "display_closed_doors = %d\n\n", CONFIG_DISP_CLOSED_DOORS);
   fprintf(fl, "* Are diagonal directions enabled?\n"
               "diagonal_dirs = %d\n\n", CONFIG_DIAGONAL_DIRS);
   fprintf(fl, "* Who can use the map functions? 0=off, 1=on, 2=imm_only\n"
@@ -417,6 +417,9 @@ int save_config( IDXTYPE nowhere )
 
   fprintf(fl, "* Maximum number of items players are allowed to rent.\n"
    	      "max_obj_save = %d\n\n", CONFIG_MAX_OBJ_SAVE);
+
+  fprintf(fl, "* Surcharge added on top of item costs when renting.\n"
+              "min_rent_cost = %d\n\n", CONFIG_MIN_RENT_COST);
 
   fprintf(fl, "* Should the game automatically save people?\n"
               "auto_save = %d\n\n", CONFIG_AUTO_SAVE);
@@ -1039,7 +1042,6 @@ void cedit_parse(struct descriptor_data *d, char *arg)
 
         default:
           write_to_output(d, "\r\nThat is an invalid choice!\r\n");
-          cedit_disp_game_play_options(d);
       }
 
       cedit_disp_game_play_options(d);
@@ -1224,7 +1226,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
              oldtext = strdup(OLC_CONFIG(d)->operation.MENU);
            }
 
-           string_write(d, &OLC_CONFIG(d)->operation.MENU, MAX_INPUT_LENGTH, 0, oldtext);
+           string_write(d, &OLC_CONFIG(d)->operation.MENU, MAX_CONFIG_TEXT, 0, oldtext);
            return;
 
          case 'm':
@@ -1239,7 +1241,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
              oldtext = str_udup(OLC_CONFIG(d)->operation.WELC_MESSG);
            }
 
-           string_write(d, &OLC_CONFIG(d)->operation.WELC_MESSG, MAX_INPUT_LENGTH, 0, oldtext);
+           string_write(d, &OLC_CONFIG(d)->operation.WELC_MESSG, MAX_CONFIG_TEXT, 0, oldtext);
            return;
 
          case 'n':
@@ -1254,7 +1256,7 @@ void cedit_parse(struct descriptor_data *d, char *arg)
              oldtext = strdup(OLC_CONFIG(d)->operation.START_MESSG);
            }
 
-           string_write(d, &OLC_CONFIG(d)->operation.START_MESSG, MAX_INPUT_LENGTH, 0, oldtext);
+           string_write(d, &OLC_CONFIG(d)->operation.START_MESSG, MAX_CONFIG_TEXT, 0, oldtext);
            return;
 
          case 'o':

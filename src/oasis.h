@@ -45,6 +45,10 @@ void sprint_olc_access(struct char_data *ch, char *buf, size_t buflen);
 #define MAX_EXTRA_DESC  512
 #define MAX_MOB_DESC	1024
 #define MAX_OBJ_DESC	512
+/* cedit's three login-time text screens: the menu, the welcome message
+ * and the newbie start message.  Bounded well under save_config()'s own
+ * char[MAX_STRING_LENGTH] writer, whose strcpy is unchecked. */
+#define MAX_CONFIG_TEXT	4096
 #define MAX_DUPLICATES  100  /* when loading in zedit */
 
 /* arbitrary limits - roll your own */

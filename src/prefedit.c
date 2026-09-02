@@ -18,6 +18,7 @@
 #include "interpreter.h"
 #include "db.h"
 #include "oasis.h"
+#include "pfdefaults.h" /* PFDEF_*, the non-toggle defaults */
 #include "prefedit.h"
 #include "screen.h"
 
@@ -782,151 +783,16 @@ void prefedit_parse(struct descriptor_data * d, char *arg)
 
 void prefedit_Restore_Defaults(struct descriptor_data *d)
 {
-  /* Let's do toggles one at a time */
-  /* PRF_BRIEF      - Off */
-  if (PREFEDIT_FLAGGED(PRF_BRIEF))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_BRIEF);
+  /* One list, shared with init_char(), rather than a second copy here that
+   * had drifted six flags away from it.  Restoring defaults now gives exactly
+   * what a newly created character is given. */
+  set_default_prefs(PREFEDIT_GET_CHAR, PREFEDIT_GET_FLAGS);
 
-  /* PRF_COMPACT    - Off */
-  if (PREFEDIT_FLAGGED(PRF_COMPACT))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_COMPACT);
-
-  /* PRF_NOSHOUT       - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOSHOUT))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOSHOUT);
-
-  /* PRF_NOTELL     - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOTELL))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOTELL);
-
-  /* PRF_DISPHP     - On */
-  if (!PREFEDIT_FLAGGED(PRF_DISPHP))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPHP);
-
-  /* PRF_DISPMANA   - On */
-  if (!PREFEDIT_FLAGGED(PRF_DISPMANA))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMANA);
-
-  /* PRF_DISPMOVE   - On */
-  if (!PREFEDIT_FLAGGED(PRF_DISPMOVE))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPMOVE);
-
-  /* PRF_AUTOEXIT   - On */
-  if (!PREFEDIT_FLAGGED(PRF_AUTOEXIT))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOEXIT);
-
-  /* PRF_NOHASSLE   - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_NOHASSLE) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOHASSLE);
-  else
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOHASSLE);
-
-  /* PRF_QUEST      - Off */
-  if (PREFEDIT_FLAGGED(PRF_QUEST))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_QUEST);
-
-  /* PRF_SUMMONABLE - Off */
-  if (PREFEDIT_FLAGGED(PRF_SUMMONABLE))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SUMMONABLE);
-
-  /* PRF_NOREPEAT   - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOREPEAT))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOREPEAT);
-
-  /* PRF_HOLYLIGHT  - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_HOLYLIGHT) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
-  else
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_HOLYLIGHT);
-
-  /* PRF_COLOR      - On (Complete) */
-  if (!PREFEDIT_FLAGGED(PRF_COLOR_1))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_COLOR_1);
-  if (!PREFEDIT_FLAGGED(PRF_COLOR_2))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_COLOR_2);
-
-  /* PRF_NOWIZ      - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOWIZ))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOWIZ);
-
-  /* PRF_LOG1       - Off */
-  if (PREFEDIT_FLAGGED(PRF_LOG1))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_LOG1);
-
-  /* PRF_LOG2       - Off */
-  if (PREFEDIT_FLAGGED(PRF_LOG2))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_LOG2);
-
-  /* PRF_NOAUCT     - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOAUCT))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOAUCT);
-
-  /* PRF_NOGOSS     - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOGOSS))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOGOSS);
-
-  /* PRF_NOGRATZ    - Off */
-  if (PREFEDIT_FLAGGED(PRF_NOGRATZ))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_NOGRATZ);
-
-  /* PRF_SHOWVNUMS  - On for Imms */
-  if (!PREFEDIT_FLAGGED(PRF_SHOWVNUMS) && GET_LEVEL(PREFEDIT_GET_CHAR) > LVL_IMMORT)
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHOWVNUMS);
-  else
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_SHOWVNUMS);
-
-  /* PRF_DISPAUTO   - Off */
-  if (PREFEDIT_FLAGGED(PRF_DISPAUTO))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_DISPAUTO);
-
-  /* PRF_CLS - Off */
-  if (PREFEDIT_FLAGGED(PRF_CLS))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_CLS);
-
-  /* PRF_AFK - Off */
-  if (PREFEDIT_FLAGGED(PRF_AFK))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AFK);
-
-  /* PRF_AUTOLOOT   - On */
-  if (!PREFEDIT_FLAGGED(PRF_AUTOLOOT))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOLOOT);
-
-  /* PRF_AUTOGOLD   - On */
-  if (!PREFEDIT_FLAGGED(PRF_AUTOGOLD))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOGOLD);
-
-  /* PRF_AUTOSPLIT  - Off */
-  if (PREFEDIT_FLAGGED(PRF_AUTOSPLIT))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOSPLIT);
-
-  /* PRF_AUTOSAC    - Off */
-  if (PREFEDIT_FLAGGED(PRF_AUTOSAC))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOSAC);
-
-  /* PRF_AUTOASSIST - Off */
-  if (PREFEDIT_FLAGGED(PRF_AUTOASSIST))
-     REMOVE_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOASSIST);
-
-  /* PRF_AUTOMAP    - On */
-  if (PREFEDIT_FLAGGED(PRF_AUTOMAP))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOMAP);
-
-  /* PRF_AUTOKEY    - On */
-  if (PREFEDIT_FLAGGED(PRF_AUTOKEY))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTOKEY);
-
-  /* PRF_AUTODOOR   - On */
-  if (PREFEDIT_FLAGGED(PRF_AUTODOOR))
-     SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_AUTODOOR);
-
-  /* PRF_VERBOSE    - On */
-  if (PREFEDIT_FLAGGED(PRF_VERBOSE))
-    SET_BIT_AR(PREFEDIT_GET_FLAGS, PRF_VERBOSE);
-
-  /* Other (non-toggle) options */
-  PREFEDIT_GET_WIMP_LEV   = 0;   /* Wimpy off by default */
-  PREFEDIT_GET_PAGELENGTH = 22;  /* Default telnet screen is 22 lines   */
-  PREFEDIT_GET_SCREENWIDTH = 80; /* Default telnet screen is 80 columns */
+  /* Other (non-toggle) options, from the same constants the player file uses
+   * for a missing field rather than from numbers written out again here. */
+  PREFEDIT_GET_WIMP_LEV    = PFDEF_WIMPLEV;
+  PREFEDIT_GET_PAGELENGTH  = PFDEF_PAGELENGTH;
+  PREFEDIT_GET_SCREENWIDTH = PFDEF_SCREENWIDTH;
 }
 
 ACMD(do_oasis_prefedit)
@@ -977,9 +843,10 @@ ACMD(do_oasis_prefedit)
       if (d->olc && OLC_PREFS(d)->ch == vict) {
         if (ch == vict)
           send_to_char(ch, "Your preferences are currently being edited by %s.\r\n", PERS(d->character, ch));
-        else
+        else {
           sprintf(buf, "$S$u preferences are currently being edited by %s.", PERS(d->character, ch));
-        act(buf, FALSE, ch, 0, vict, TO_CHAR);
+          act(buf, FALSE, ch, 0, vict, TO_CHAR);
+        }
         return;
       }
     }
