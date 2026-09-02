@@ -1511,9 +1511,14 @@ char *right_trim_whitespace(const char *string)
   char *r = strdup(string);
   if (r != NULL)
   {
-    char *fr = r + strlen(string) - 1;
-    while( (isspace(*fr) || !isprint(*fr) || *fr == 0) && fr >= r) --fr;
-    *++fr = 0;
+    /* Walk back from the NUL, not from the last character: on an empty or
+     * all-blank string the old loop stepped to r[-1] and read it, because
+     * the `fr >= r' guard was the second half of the condition. */
+    char *fr = r + strlen(string);
+    while (fr > r && (isspace((unsigned char) fr[-1]) ||
+                      !isprint((unsigned char) fr[-1])))
+      --fr;
+    *fr = 0;
   }
 
   return r;
