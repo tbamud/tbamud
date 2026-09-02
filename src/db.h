@@ -266,7 +266,7 @@ obj_rnum real_object(obj_vnum vnum);
 /* Public Procedures from objsave.c */
 void  Crash_save_all(void);
 int   Crash_idlesave(struct char_data *ch);
-void  Crash_crashsave(struct char_data *ch);
+int   Crash_crashsave(struct char_data *ch);
 int Crash_load(struct char_data *ch);
 void  Crash_listrent(struct char_data *ch, char *name);
 int Crash_clean_file(char *name);
@@ -274,7 +274,6 @@ int Crash_delete_crashfile(struct char_data *ch);
 int Crash_delete_file(char *name);
 void update_obj_file(void);
 int Crash_rentsave(struct char_data *ch, int cost);
-int Crash_copyoversave(struct char_data *ch);
 obj_save_data *objsave_parse_objects(FILE *fl);
 int objsave_save_obj_record(struct obj_data *obj, FILE *fl, int location);
 /* Special functions */

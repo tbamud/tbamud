@@ -4192,7 +4192,10 @@ ACMD(do_copyover)
 
     GET_LOADROOM(och) = GET_ROOM_VNUM(IN_ROOM(och));
 
-    if (!Crash_copyoversave(och)) {
+    /* A crash save, not a rent: nothing is taken off the character, no
+     * rent is charged, and keys and norent items come through the reboot
+     * with everything else. */
+    if (!Crash_crashsave(och)) {
       if (initiator && initiator->character)
         ch = initiator->character;
 
