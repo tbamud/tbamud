@@ -1802,10 +1802,8 @@ static ssize_t perform_socket_read(socket_t desc, char *read_point, size_t space
     return (ret);
 
   /* read() returned 0, meaning we got an EOF. */
-  if (ret == 0) {
-    log("WARNING: EOF on socket read (connection broken by peer)");
-    return (-1);
-  }
+  if (ret == 0)
+    return (-2);  /* Distinct return so callers can log with host info. */
 
   /* Read returned a value < 0: there was an error. */
 #if defined(CIRCLE_WINDOWS)	/* Windows */
@@ -1886,9 +1884,11 @@ static int process_input(struct descriptor_data *t)
     if ( bytes_read > 0 )
       bytes_read = ProtocolInput( t, read_buf, bytes_read, t->inbuf );
 
-    if (bytes_read < 0)	/* Error, disconnect them. */
+    if (bytes_read < 0) {  /* Error or EOF, disconnect them. */
+      if (bytes_read == -2)
+        log("WARNING: EOF on socket read (connection broken by peer) [%s]", t->host);
       return (-1);
-    else if (bytes_read == 0)	/* Just blocking, no problems. */
+    } else if (bytes_read == 0)	/* Just blocking, no problems. */
       return (0);
 
     /* at this point, we know we got some data from the read */
@@ -2136,11 +2136,11 @@ void close_socket(struct descriptor_data *d)
       save_char(link_challenged);
       mudlog(NRM, MAX(LVL_IMMORT, GET_INVIS_LEV(link_challenged)), TRUE, "Closing link to: %s.", GET_NAME(link_challenged));
     } else {
-      mudlog(CMP, LVL_IMMORT, TRUE, "Losing player: %s.", GET_NAME(d->character) ? GET_NAME(d->character) : "<null>");
+      mudlog(CMP, LVL_IMMORT, TRUE, "Losing player: %s [%s].", GET_NAME(d->character) ? GET_NAME(d->character) : "<null>", d->host);
       free_char(d->character);
     }
   } else
-    mudlog(CMP, LVL_IMMORT, TRUE, "Losing descriptor without char.");
+    mudlog(CMP, LVL_IMMORT, TRUE, "Losing descriptor without char from [%s].", d->host);
 
   /* JE 2/22/95 -- part of my unending quest to make switch stable */
   if (d->original && d->original->desc)
