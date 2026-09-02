@@ -2847,12 +2847,12 @@ void read_saved_vars(struct char_data *ch)
   long context;
   char fn[127];
   char input_line[1024], *temp, *p;
-  /* Both are filled by any_one_arg() out of a line get_line() has already
-   * capped at READ_SIZE, and neither copy is bounded, so READ_SIZE is the
-   * size they have to be -- which is the size read_saved_vars_ascii() gives
-   * the same two fields. */
-  char varname[READ_SIZE];
-  char context_str[READ_SIZE];
+  /* Both are filled by any_one_arg() out of input_line, and neither copy is
+   * bounded, so each has to be able to hold the whole line.  get_line() fills
+   * the caller's buffer to its own size now, so the cap is input_line's, not
+   * READ_SIZE's. */
+  char varname[sizeof(input_line)];
+  char context_str[sizeof(input_line)];
 
   /* If getting to the menu from inside the game, the vars aren't removed. So 
    * let's not allocate them again. */
@@ -2935,8 +2935,9 @@ void read_saved_vars_ascii(FILE *file, struct char_data *ch, int count)
 {
   long context;
   char input_line[1024], *temp, *p;
-  char varname[READ_SIZE];
-  char context_str[READ_SIZE];
+  /* As in read_saved_vars(): sized to the line they are taken from. */
+  char varname[sizeof(input_line)];
+  char context_str[sizeof(input_line)];
   int i;
 
   /* If getting to the menu from inside the game, the vars aren't removed. So 
