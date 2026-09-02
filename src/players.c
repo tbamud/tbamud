@@ -487,13 +487,82 @@ int load_char(const char *name, struct char_data *ch)
   return(id);
 }
 
+/*
+ * Install a completed temporary player file without discarding the previous
+ * valid save first.
+ */
+static int replace_player_file(const char *newname, const char *filename)
+{
+#ifdef CIRCLE_WINDOWS
+  char backup[MAX_INPUT_LENGTH + 8];
+  int had_original = TRUE;
+  int n;
+
+  n = snprintf(backup, sizeof(backup), "%s.bak", filename);
+  if (n < 0 || n >= (int)sizeof(backup)) {
+    log("SYSERR: Player backup filename is too long: %s", filename);
+    return FALSE;
+  }
+
+  /*
+   * Windows rename() does not reliably replace an existing destination.
+   * Move the current file aside first so it can be restored if installing
+   * the completed replacement fails.  A backup left behind by a crash
+   * between the two renames would make that first rename fail too, so it
+   * is cleared out of the way first.
+   */
+  if (remove(backup) < 0 && errno != ENOENT) {
+    log("SYSERR: Couldn't clear stale player backup %s: %s",
+        backup, strerror(errno));
+    return FALSE;
+  }
+
+  if (rename(filename, backup) < 0) {
+    if (errno == ENOENT)
+      had_original = FALSE;
+    else {
+      log("SYSERR: Couldn't preserve player file %s: %s",
+          filename, strerror(errno));
+      return FALSE;
+    }
+  }
+
+  if (rename(newname, filename) < 0) {
+    int saved_errno = errno;
+
+    if (had_original && rename(backup, filename) < 0)
+      log("SYSERR: Couldn't restore player file %s from %s: %s",
+          filename, backup, strerror(errno));
+
+    log("SYSERR: Couldn't install player file %s: %s",
+        filename, strerror(saved_errno));
+    return FALSE;
+  }
+
+  if (had_original && remove(backup) < 0 && errno != ENOENT)
+    log("SYSERR: Couldn't remove player backup %s: %s",
+        backup, strerror(errno));
+
+  return TRUE;
+#else
+  if (rename(newname, filename) < 0) {
+    log("SYSERR: Couldn't install player file %s: %s",
+        filename, strerror(errno));
+    return FALSE;
+  }
+
+  return TRUE;
+#endif
+}
+
 /* Write the vital data of a player to the player file. */
 /* This is the ASCII Player Files save routine. */
 void save_char(struct char_data * ch)
 {
   FILE *fl;
-  char filename[40], buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127];
-  int i, j, id, save_index = FALSE;
+  char filename[MAX_INPUT_LENGTH], tempname[MAX_INPUT_LENGTH + 8];
+  char buf[MAX_STRING_LENGTH], bits[127], bits2[127], bits3[127], bits4[127];
+  int i, j, id, n, save_index = FALSE, save_ok = TRUE;
   struct affected_type *aff, tmp_aff[MAX_AFFECT];
   struct obj_data *char_eq[NUM_WEARS];
   trig_data *t;
@@ -521,8 +590,17 @@ void save_char(struct char_data * ch)
 
   if (!get_filename(filename, sizeof(filename), PLR_FILE, GET_NAME(ch)))
     return;
-  if (!(fl = fopen(filename, "w"))) {
-    mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Couldn't open player file %s for write", filename);
+
+  n = snprintf(tempname, sizeof(tempname), "%s.tmp", filename);
+  if (n < 0 || n >= (int)sizeof(tempname)) {
+    mudlog(NRM, LVL_GOD, TRUE,
+           "SYSERR: Temporary player filename is too long for %s", filename);
+    return;
+  }
+
+  if (!(fl = fopen(tempname, "w"))) {
+    mudlog(NRM, LVL_GOD, TRUE,
+           "SYSERR: Couldn't open temporary player file %s for write", tempname);
     return;
   }
 
@@ -691,7 +769,11 @@ void save_char(struct char_data * ch)
   write_aliases_ascii(fl, ch);
   save_char_vars_ascii(fl, ch);
 
-  fclose(fl);
+  if (fflush(fl) == EOF || ferror(fl))
+    save_ok = FALSE;
+
+  if (fclose(fl) == EOF)
+    save_ok = FALSE;
 
   /* More char_to_store code to add spell and eq affections back in. */
   for (i = 0; i < MAX_AFFECT; i++) {
@@ -711,6 +793,23 @@ void save_char(struct char_data * ch)
 #endif
   }
   /* end char_to_store code */
+
+  if (!save_ok) {
+    mudlog(NRM, LVL_GOD, TRUE,
+           "SYSERR: Failed writing temporary player file %s; previous save preserved",
+           tempname);
+    if (remove(tempname) < 0 && errno != ENOENT)
+      log("SYSERR: Couldn't remove failed temporary player file %s: %s",
+          tempname, strerror(errno));
+    return;
+  }
+
+  if (!replace_player_file(tempname, filename)) {
+    if (remove(tempname) < 0 && errno != ENOENT)
+      log("SYSERR: Couldn't remove temporary player file %s: %s",
+          tempname, strerror(errno));
+    return;
+  }
 
   if ((id = get_ptable_by_name(GET_NAME(ch))) < 0)
     return;
