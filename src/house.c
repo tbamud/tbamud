@@ -104,8 +104,15 @@ int House_save(struct obj_data *obj, FILE *fp)
     /*
      * Keep the temporary weight bookkeeping balanced even after a write
      * failure so House_restore_weight() can always restore the live objects.
+     *
+     * Only containers that track their contents have this weight to give
+     * back, and only up to the first one that does not: a weight that never
+     * climbed past a closed container is not in the containers above it
+     * either.  Taking it out of them anyway is what wrote a house's unlimited
+     * containers to disk lighter than they are.  House_restore_weight() below
+     * covers exactly the same run, so the two stay exact inverses.
      */
-    for (tmp = obj->in_obj; tmp; tmp = tmp->in_obj)
+    for (tmp = obj->in_obj; tmp && TRACKS_CONTENT_WEIGHT(tmp); tmp = tmp->in_obj)
       GET_OBJ_WEIGHT(tmp) -= GET_OBJ_WEIGHT(obj);
   }
 
@@ -118,7 +125,7 @@ static void House_restore_weight(struct obj_data *obj)
   if (obj) {
     House_restore_weight(obj->contains);
     House_restore_weight(obj->next_content);
-    if (obj->in_obj)
+    if (obj->in_obj && TRACKS_CONTENT_WEIGHT(obj->in_obj))
       GET_OBJ_WEIGHT(obj->in_obj) += GET_OBJ_WEIGHT(obj);
   }
 }
