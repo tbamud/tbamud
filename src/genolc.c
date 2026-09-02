@@ -95,25 +95,42 @@ char *str_udupnl(const char *txt)
 /* Original use: to be called at shutdown time. */
 int save_all(void)
 {
-  while (save_list) {
-    if (save_list->type < 0 || save_list->type > SL_MAX) {
-      switch (save_list->type) {
+  struct save_list_data *entry, *next;
+  int all_saved = TRUE;
+
+  /* A saver takes its own entry off the list when it succeeds and leaves
+   * it there when it does not, so the next entry is taken before the call
+   * and the walk uses its own pointer rather than the list head.  The old
+   * loop re-read the head each time and moved on only when a saver
+   * answered a negative number -- which none of them do: every one
+   * reports failure as FALSE.  So a zone that would not save was retried
+   * without end, and the whole game stalled in saveall, the autosave tick
+   * or shutdown.  Now the entry stays for the next attempt and the loop
+   * carries on to the rest. */
+  for (entry = save_list; entry; entry = next) {
+    next = entry->next;
+
+    if (entry->type < 0 || entry->type > SL_MAX) {
+      switch (entry->type) {
         case SL_ACT:
           log("Actions not saved - can not autosave. Use 'aedit save'.");
-          save_list = save_list->next;    /* Fatal error, skip this one. */
           break;
         case SL_HLP:
           log("Help not saved - can not autosave. Use 'hedit save'.");
-          save_list = save_list->next;    /* Fatal error, skip this one. */
           break;
         default:
-          log("SYSERR: GenOLC: Invalid save type %d in save list.\n", save_list->type);
+          log("SYSERR: GenOLC: Invalid save type %d in save list.\n", entry->type);
           break;
-        }
-      } else if ((*save_types[save_list->type].func) (real_zone(save_list->zone)) < 0)
-        save_list = save_list->next;      /* Fatal error, skip this one. */
-    }
-    return TRUE;
+      }
+      /* Nothing here can save it, so it is dropped rather than reported
+       * again on every pass; the old loop dropped it too, by walking past
+       * it and leaking the entry. */
+      remove_from_save_list(entry->zone, entry->type);
+    } else if (!(*save_types[entry->type].func) (real_zone(entry->zone)))
+      all_saved = FALSE;
+  }
+
+  return all_saved;
 }
 
 /* NOTE: This changes the buffer passed in. */
