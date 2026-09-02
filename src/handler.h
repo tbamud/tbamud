@@ -27,7 +27,14 @@ struct obj_data *create_money(int amount);
 int	isname(const char *str, const char *namelist);
 int	is_name(const char *str, const char *namelist);
 char	*fname(const char *namelist);
+/** Returned by get_number() for a "last.<name>" prefix: the caller wants
+ * the match nearest the end of the list rather than the Nth from the front.
+ * A negative value cannot collide with a real index -- the searches count
+ * down from a positive one and already read 0 as "not a number". */
+#define FIND_INDEX_LAST	(-1)
+
 int	get_number(char **name);
+const char *skip_number(const char *name);
 
 /* objects */
 void	obj_to_char(struct obj_data *object, struct char_data *ch);

@@ -125,7 +125,7 @@ ACMD(do_put)
   } else {
     generic_find(thecont, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
     if (!cont)
-      send_to_char(ch, "You don't see %s %s here.\r\n", AN(thecont), thecont);
+      send_to_char(ch, "You don't see %s %s here.\r\n", AN(skip_number(thecont)), skip_number(thecont));
     else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER)
       act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
     else if (OBJVAL_FLAGGED(cont, CONT_CLOSED) && (GET_LEVEL(ch) < LVL_IMMORT || !PRF_FLAGGED(ch, PRF_NOHASSLE)))
@@ -361,7 +361,7 @@ ACMD(do_get)
     if (cont_dotmode == FIND_INDIV) {
       mode = generic_find(arg2, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
       if (!cont)
-	send_to_char(ch, "You don't have %s %s.\r\n", AN(arg2), arg2);
+	send_to_char(ch, "You don't have %s %s.\r\n", AN(skip_number(arg2)), skip_number(arg2));
       else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER)
 	act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
       else
@@ -835,6 +835,8 @@ ACMD(do_drink)
   struct affected_type af;
   int amount, weight;
   int on_ground = 0;
+  char *name;
+  int number;
 
   one_argument(argument, arg);
 
@@ -862,8 +864,13 @@ ACMD(do_drink)
     return;
     }
   }
-  if (!(temp = get_obj_in_list_vis(ch, arg, NULL, ch->carrying))) {
-    if (!(temp = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents))) {
+  /* As in do_sac(): read the prefix once so the second list is searched for
+   * the same thing as the first. */
+  name = arg;
+  number = get_number(&name);
+
+  if (!(temp = get_obj_in_list_vis(ch, name, &number, ch->carrying))) {
+    if (!(temp = get_obj_in_list_vis(ch, name, &number, world[IN_ROOM(ch)].contents))) {
       send_to_char(ch, "You can't find it!\r\n");
       return;
     } else
@@ -1536,6 +1543,8 @@ ACMD(do_sac)
 {
   char arg[MAX_INPUT_LENGTH];
   struct obj_data *j, *jj, *next_thing2;
+  char *name;
+  int number;
 
   one_argument(argument, arg);
 
@@ -1543,8 +1552,14 @@ ACMD(do_sac)
     send_to_char(ch, "Sacrifice what?\n\r");
     return;
   }
-    
-  if (!(j = get_obj_in_list_vis(ch, arg, NULL, world[IN_ROOM(ch)].contents)) && (!(j = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)))) {
+
+  /* Read the number. or last. once and count across both lists.  Left to
+   * itself, get_obj_in_list_vis() strips the prefix from arg on the first
+   * call, and the second would search for the bare keyword. */
+  name = arg;
+  number = get_number(&name);
+
+  if (!(j = get_obj_in_list_vis(ch, name, &number, world[IN_ROOM(ch)].contents)) && (!(j = get_obj_in_list_vis(ch, name, &number, ch->carrying)))) {
     send_to_char(ch, "It doesn't seem to be here.\n\r");
     return;
   }
