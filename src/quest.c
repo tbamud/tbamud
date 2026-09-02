@@ -220,8 +220,9 @@ void assign_quest_command_indices(void)
 
 void assign_the_quests(void)
 {
-  qst_rnum rnum;
+  qst_rnum i, rnum;
   mob_rnum mrnum;
+  SPECIAL (*secondary);
 
   assign_quest_command_indices();
 
@@ -234,10 +235,21 @@ void assign_the_quests(void)
       log("SYSERR: Quest #%d has an invalid questmaster.", QST_NUM(rnum));
       continue;
     }
-    if (mob_index[(mrnum)].func &&
- mob_index[(mrnum)].func != questmaster)
-      QST_FUNC(rnum) = mob_index[(mrnum)].func;
-    mob_index[(mrnum)].func = questmaster;
+
+    /*
+     * The questmaster special replaces the mob's original special proc.
+     * Give every quest for this master the same secondary proc so runtime
+     * behavior does not depend on quest ordering or which quest is deleted.
+     */
+    if (mob_index[mrnum].func != questmaster) {
+      secondary = mob_index[mrnum].func;
+
+      for (i = 0; i < total_quests; i++)
+        if (QST_MASTER(i) == QST_MASTER(rnum))
+          QST_FUNC(i) = secondary;
+
+      mob_index[mrnum].func = questmaster;
+    }
   }
 }
 
