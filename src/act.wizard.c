@@ -4571,7 +4571,7 @@ ACMD(do_changelog)
     return;
   }
 
-  while (get_line(fl, line)) {
+  while (get_line(fl, line, sizeof(line))) {
     if (*line != '[')
       fprintf(new, "%s\n", line);
     else {
@@ -4591,7 +4591,7 @@ ACMD(do_changelog)
   if (strcmp(buf, last_buf))
     fprintf(new, "%s\n", line);
 
-  while (get_line(fl, line))
+  while (get_line(fl, line, sizeof(line)))
     fprintf(new, "%s\n", line);
 
   fclose(fl);

@@ -316,7 +316,7 @@ void read_invalid_list(void)
   }
 
   num_invalid = 0;
-  while (get_line(fp, temp)) {
+  while (get_line(fp, temp, sizeof(temp))) {
     if (num_invalid >= MAX_INVALID_NAMES) {
       log("SYSERR: Too many invalid names; change MAX_INVALID_NAMES in ban.c");
       exit(1);

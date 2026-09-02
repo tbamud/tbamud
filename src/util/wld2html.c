@@ -68,7 +68,7 @@ char buf1[MAX_STRING_LENGTH];
 char buf2[MAX_STRING_LENGTH];
 char arg[MAX_STRING_LENGTH];
 
-int get_line(FILE * fl, char *buf);
+int get_line(FILE * fl, char *buf, size_t bufsize);
 int real_room(int virtual, int reference);
 
 /* room-related structures *********************************************** */
@@ -312,7 +312,7 @@ void discrete_load(FILE * fl)
   char line[256];
 
   for (;;) {
-    if (!get_line(fl, line)) {
+    if (!get_line(fl, line, sizeof(line))) {
       fprintf(stderr, "Format error after room #%d\n", nr);
       exit(1);
     }
@@ -377,7 +377,7 @@ void parse_room(FILE * fl, int virtual_nr)
   world[room_nr].name = fread_string(fl, buf2);
   world[room_nr].description = fread_string(fl, buf2);
 
-  if (!get_line(fl, line) || sscanf(line, " %d " WLD_FLAG_FMT " %d ", t, flags, t + 2) != 3) {
+  if (!get_line(fl, line, sizeof(line)) || sscanf(line, " %d " WLD_FLAG_FMT " %d ", t, flags, t + 2) != 3) {
     fprintf(stderr, "Format error in room #%d\n", virtual_nr);
     exit(1);
   }
@@ -395,7 +395,7 @@ void parse_room(FILE * fl, int virtual_nr)
   sprintf(buf, "Format error in room #%d (expecting D/E/S)", virtual_nr);
 
   for (;;) {
-    if (!get_line(fl, line)) {
+    if (!get_line(fl, line, sizeof(line))) {
       fprintf(stderr, "%s\n", buf);
       exit(1);
     }
@@ -436,7 +436,7 @@ void setup_dir(FILE * fl, int room, int dir)
   world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
   world[room].dir_option[dir]->keyword = fread_string(fl, buf2);
 
-  if (!get_line(fl, line)) {
+  if (!get_line(fl, line, sizeof(line))) {
     fprintf(stderr, "Format error, %s\n", buf2);
     exit(1);
   }
@@ -514,23 +514,34 @@ char *fread_string(FILE * fl, char *error)
  * The newline character is removed from the input.  Lines which begin
  * with '*' are considered to be comments.
  */
-int get_line(FILE * fl, char *buf)
+int get_line(FILE * fl, char *buf, size_t bufsize)
 {
-  char temp[256];
+  int lines = 0;
+  size_t sl = 0;
+
+  if (bufsize < 2)
+    return (0);
 
   do {
-    /* On failure fgets() leaves temp untouched, so the old loop re-examined
-     * the previous line -- or uninitialised stack on the first call. */
-    if (fgets(temp, sizeof(temp), fl) == NULL) {
+    if (!fgets(buf, bufsize, fl)) {
       if (ferror(fl))
         perror("reading world file");
       return (0);
     }
-    /* Strip the terminator, not the last character: a final line with no
-     * newline used to lose one. */
-    temp[strcspn(temp, "\r\n")] = '\0';
-  } while (*temp == '*' || !*temp);
+    lines++;
+    /* Discard the tail of a line that did not fit; a fragment left in the
+     * stream is read as a line of its own by the next call. */
+    sl = strlen(buf);
+    if (sl > 0 && buf[sl - 1] != '\n') {
+      int c;
+      while ((c = getc(fl)) != EOF && c != '\n')
+        ;
+    }
+  } while (*buf == '*' || *buf == '\n' || *buf == '\r');
 
-  strcpy(buf, temp);
-  return (1);
+  /* Last line of file does not always end in a newline, but it should. */
+  while (sl > 0 && (buf[sl - 1] == '\n' || buf[sl - 1] == '\r'))
+    buf[--sl] = '\0';
+
+  return (lines);
 }

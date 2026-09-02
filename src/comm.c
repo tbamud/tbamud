@@ -433,7 +433,7 @@ void copyover_recover()
    * without the terminator -- truncated by a full disk, say -- left desc
    * holding the previous record and span there rebuilding that descriptor;
    * an empty one read desc before anything had set it. */
-  while (get_line(fp, line)) {
+  while (get_line(fp, line, sizeof(line))) {
     fOld = TRUE;
 
     if (sscanf(line, "%d", &desc) == 1 && desc == -1) {

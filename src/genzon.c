@@ -265,7 +265,7 @@ void create_world_index(int znum, const char *type)
   /* Index contents must be in order: search through the old file for the right
    * place, insert the new file, then copy the rest over. */
   snprintf(buf1, sizeof(buf1), "%d.%s", znum, type);
-  while (get_line(oldfile, buf)) {
+  while (get_line(oldfile, buf, sizeof(buf))) {
     if (*buf == '$') {
       /* The following used to add a blank line, thanks to Brian Taylor for the fix. */
       fprintf(newfile, "%s", (!found ? strncat(buf1, "\n$\n", sizeof(buf1) - strlen(buf1) - 1) : "$\n"));

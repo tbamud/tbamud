@@ -117,7 +117,7 @@ static int read_mail_record(FILE *mail_file, struct mail_t **record)
 
   *record = NULL;
 
-  if (!get_line(mail_file, line)) {
+  if (!get_line(mail_file, line, sizeof(line))) {
     if (ferror(mail_file)) {
       log("Mail system - error reading mail file");
       return MAIL_READ_ERROR;

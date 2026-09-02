@@ -1144,7 +1144,7 @@ void discrete_load(FILE *fl, int mode, char *filename)
     /* We have to do special processing with the obj files because they have no
      * end-of-record marker. */
     if (mode != DB_BOOT_OBJ || nr < 0)
-      if (!get_line(fl, line)) {
+      if (!get_line(fl, line, sizeof(line))) {
 	if (nr == -1) {
 	  log("SYSERR: %s file %s is empty!", modes[mode], filename);
 	} else {
@@ -1326,7 +1326,7 @@ void parse_room(FILE *fl, int virtual_nr)
   world[room_nr].name = fread_string(fl, buf2);
   world[room_nr].description = fread_string(fl, buf2);
 
-  if (!get_line(fl, line)) {
+  if (!get_line(fl, line, sizeof(line))) {
     log("SYSERR: Expecting roomflags/sector type of room #%d but file ended!",
 	virtual_nr);
     exit(1);
@@ -1401,7 +1401,7 @@ void parse_room(FILE *fl, int virtual_nr)
   snprintf(buf, sizeof(buf), "SYSERR: Format error in room #%d (expecting D/E/S)", virtual_nr);
 
   for (;;) {
-    if (!get_line(fl, line)) {
+    if (!get_line(fl, line, sizeof(line))) {
       log("%s", buf);
       exit(1);
     }
@@ -1458,7 +1458,7 @@ void setup_dir(FILE *fl, int room, int dir)
   world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
   world[room].dir_option[dir]->keyword = fread_string(fl, buf2);
 
-  if (!get_line(fl, line)) {
+  if (!get_line(fl, line, sizeof(line))) {
     log("SYSERR: Format error, %s", buf2);
     exit(1);
   }
@@ -1597,7 +1597,7 @@ static void parse_simple_mob(FILE *mob_f, int i, int nr)
   mob_proto[i].real_abils.con = 11;
   mob_proto[i].real_abils.cha = 11;
 
-  if (!get_line(mob_f, line)) {
+  if (!get_line(mob_f, line, sizeof(line))) {
     log("SYSERR: Format error in mob #%d, file ended after S flag!", nr);
     exit(1);
   }
@@ -1626,7 +1626,7 @@ static void parse_simple_mob(FILE *mob_f, int i, int nr)
   mob_proto[i].mob_specials.damsizedice = t[7];
   GET_DAMROLL(mob_proto + i) = t[8];
 
-  if (!get_line(mob_f, line)) {
+  if (!get_line(mob_f, line, sizeof(line))) {
       log("SYSERR: Format error in mob #%d, second line after S flag\n"
 	  "...expecting line of form '# #', but file ended!", nr);
       exit(1);
@@ -1641,7 +1641,7 @@ static void parse_simple_mob(FILE *mob_f, int i, int nr)
   GET_GOLD(mob_proto + i) = t[0];
   GET_EXP(mob_proto + i) = t[1];
 
-  if (!get_line(mob_f, line)) {
+  if (!get_line(mob_f, line, sizeof(line))) {
     log("SYSERR: Format error in last line of mob #%d\n"
 	"...expecting line of form '# # #', but file ended!", nr);
     exit(1);
@@ -1779,7 +1779,7 @@ static void parse_enhanced_mob(FILE *mob_f, int i, int nr)
 
   parse_simple_mob(mob_f, i, nr);
 
-  while (get_line(mob_f, line)) {
+  while (get_line(mob_f, line, sizeof(line))) {
     if (!strcmp(line, "E"))	/* end of the enhanced section */
       return;
     else if (*line == '#') {	/* we've hit the next mob, maybe? */
@@ -1827,7 +1827,7 @@ void parse_mobile(FILE *mob_f, int nr)
   GET_TITLE(mob_proto + i) = NULL;
 
   /* Numeric data */
-  if (!get_line(mob_f, line)) {
+  if (!get_line(mob_f, line, sizeof(line))) {
     log("SYSERR: Format error after string section of mob #%d\n"
 	"...expecting line of form '# # # {S | E}', but file ended!", nr);
     exit(1);
@@ -1986,7 +1986,7 @@ char *parse_object(FILE *obj_f, int nr)
   obj_proto[i].action_description = fread_string(obj_f, buf2);
 
   /* numeric data */
-  if (!get_line(obj_f, line)) {
+  if (!get_line(obj_f, line, sizeof(line))) {
     log("SYSERR: Expecting first numeric line of %s, but file ended!", buf2);
     exit(1);
   }
@@ -2046,7 +2046,7 @@ char *parse_object(FILE *obj_f, int nr)
   /* Object flags checked in check_object(). */
   GET_OBJ_TYPE(obj_proto + i) = t[0];
 
-  if (!get_line(obj_f, line)) {
+  if (!get_line(obj_f, line, sizeof(line))) {
     log("SYSERR: Expecting second numeric line of %s, but file ended!", buf2);
     exit(1);
   }
@@ -2059,7 +2059,7 @@ char *parse_object(FILE *obj_f, int nr)
   GET_OBJ_VAL(obj_proto + i, 2) = t[2];
   GET_OBJ_VAL(obj_proto + i, 3) = t[3];
 
-  if (!get_line(obj_f, line)) {
+  if (!get_line(obj_f, line, sizeof(line))) {
     log("SYSERR: Expecting third numeric line of %s, but file ended!", buf2);
     exit(1);
   }
@@ -2101,7 +2101,7 @@ char *parse_object(FILE *obj_f, int nr)
   j = 0;
 
   for (;;) {
-    if (!get_line(obj_f, line)) {
+    if (!get_line(obj_f, line, sizeof(line))) {
       log("SYSERR: Format error in %s", buf2);
       exit(1);
     }
@@ -2118,7 +2118,7 @@ char *parse_object(FILE *obj_f, int nr)
 	log("SYSERR: Too many A fields (%d max), %s", MAX_OBJ_AFFECT, buf2);
 	exit(1);
       }
-      if (!get_line(obj_f, line)) {
+      if (!get_line(obj_f, line, sizeof(line))) {
 	log("SYSERR: Format error in 'A' field, %s\n"
 	    "...expecting 2 numeric constants but file ended!", buf2);
 	exit(1);
@@ -2166,12 +2166,12 @@ static void load_zones(FILE *fl, char *zonename)
 
   /* Skip first 3 lines lest we mistake the zone name for a command. */
   for (tmp = 0; tmp < 3; tmp++)
-    get_line(fl, buf);
+    get_line(fl, buf, sizeof(buf));
 
   /* More accurate count. Previous was always 4 or 5 too high. -gg Note that if
    * a new zone command is added to reset_zone(), this string will need to be
    * updated to suit. - ae. */
-  while (get_line(fl, buf))
+  while (get_line(fl, buf, sizeof(buf)))
     if ((strchr("MOPGERDTV", buf[0]) && buf[1] == ' ') || (buf[0] == 'S' && buf[1] == '\0'))
       num_of_cmds++;
 
@@ -2183,7 +2183,7 @@ static void load_zones(FILE *fl, char *zonename)
   } else
     CREATE(Z.cmd, struct reset_com, num_of_cmds);
 
-  line_num += get_line(fl, buf);
+  line_num += get_line(fl, buf, sizeof(buf));
 
   if (sscanf(buf, "#%hd", &Z.number) != 1) {
     log("SYSERR: Format error in %s, line %d", zname, line_num);
@@ -2191,12 +2191,12 @@ static void load_zones(FILE *fl, char *zonename)
   }
   snprintf(buf2, sizeof(buf2), "beginning of zone #%d", Z.number);
 
-  line_num += get_line(fl, buf);
+  line_num += get_line(fl, buf, sizeof(buf));
   if ((ptr = strchr(buf, '~')) != NULL) /* take off the '~' if it's there */
     *ptr = '\0';
   Z.builders = strdup(buf);
 
-  line_num += get_line(fl, buf);
+  line_num += get_line(fl, buf, sizeof(buf));
   if ((ptr = strchr(buf, '~')) != NULL)	/* take off the '~' if it's there */
     *ptr = '\0';
   Z.name = strdup(buf);
@@ -2206,7 +2206,7 @@ static void load_zones(FILE *fl, char *zonename)
   for (i=0; i<ZN_ARRAY_MAX; i++)
     Z.zone_flags[i] = 0;
 
-  line_num += get_line(fl, buf);
+  line_num += get_line(fl, buf, sizeof(buf));
   /* Look for 10 items first (new tbaMUD), if not found, try 4 (old tbaMUD) */
   if  (sscanf(buf, " %hd %hd %d %d %s %s %s %s %d %d", &Z.bot, &Z.top, &Z.lifespan,
       &Z.reset_mode, zbuf1, zbuf2, zbuf3, zbuf4, &Z.min_level, &Z.max_level) != 10)
@@ -2249,7 +2249,7 @@ static void load_zones(FILE *fl, char *zonename)
   for (;;) {
     /* skip reading one line if we fixed above (line is correct already) */
     if (zone_fix != TRUE) {
-      if ((tmp = get_line(fl, buf)) == 0) {
+      if ((tmp = get_line(fl, buf, sizeof(buf))) == 0) {
         log("SYSERR: Format error in %s - premature end of file", zname);
         exit(1);
       }
@@ -4115,7 +4115,7 @@ void load_config( void )
   }
 
   /* Load the game configuration file. */
-  while (get_line(fl, line)) {
+  while (get_line(fl, line, sizeof(line))) {
     split_argument(line, tag);
     num = atoi(line);
 
