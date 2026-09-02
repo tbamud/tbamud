@@ -188,12 +188,69 @@ int strn_cmp(const char *arg1, const char *arg2, int n)
  * @param format The message to log. Standard printf formatting and variable
  * arguments are allowed.
  * @param args The comma delimited, variable substitutions to make in str. */
+/* The per-topic files under log/ that the file command reads.  The autorun
+ * script used to fill them by grepping the syslog when the game exited, so
+ * between restarts they were stale, and a copyover never exits, so on a game
+ * that only ever copyovers they never changed at all.  The game appends each
+ * matching line itself now, as it is logged.  autorun still rotates the
+ * syslog and trims these files to their length; it no longer greps.
+ *
+ * The patterns are autorun's, matched as fgrep matched them: anywhere in the
+ * line, case-sensitively. */
+static const struct {
+  const char *pattern;
+  const char *file;
+} topic_logs[] = {
+  { "self-delete",    DELETES_LOGFILE    },
+  { "PCLEAN",         DELETES_LOGFILE    },
+  { "death trap",     DTS_LOGFILE        },
+  { "killed",         RIP_LOGFILE        },
+  { "Running",        RESTARTS_LOGFILE   },
+  { "advanced",       LEVELS_LOGFILE     },
+  { "equipment lost", RENTGONE_LOGFILE   },
+  { "usage",          USAGE_LOGFILE      },
+  { "new player",     NEWPLAYERS_LOGFILE },
+  { "SYSERR",         ERRORS_LOGFILE     },
+  { "(GC)",           GODCMDS_LOGFILE    },
+  { "Bad PW",         BADPWS_LOGFILE     },
+  { "OLC",            OLC_LOGFILE        },
+  { "get help on",    HELP_LOGFILE       },
+  { "trigger",        TRIGGER_LOGFILE    },
+  { NULL, NULL }
+};
+
+/* Append one already-formatted syslog line to every topic file it matches.
+ * Nothing in here may call log(): it would recurse.  A topic file that
+ * cannot be opened (no log/ directory, say) is simply not kept.  Several
+ * patterns can share a file; a line matching more than one of them is
+ * written to that file once. */
+static void log_to_topic_files(const char *timestr, const char *line)
+{
+  FILE *fl;
+  int i, j;
+
+  for (i = 0; topic_logs[i].pattern; i++) {
+    if (!strstr(line, topic_logs[i].pattern))
+      continue;
+    for (j = 0; j < i; j++)
+      if (!strcmp(topic_logs[j].file, topic_logs[i].file) &&
+          strstr(line, topic_logs[j].pattern))
+        break;
+    if (j < i)
+      continue;
+    if ((fl = fopen(topic_logs[i].file, "a")) == NULL)
+      continue;
+    fprintf(fl, "%-20.20s :: %s\n", timestr, line);
+    fclose(fl);
+  }
+}
+
 void basic_mud_vlog(const char *format, va_list args)
 {
   time_t ct = time(0);
-  char timestr[21];
+  char timestr[21], line[MAX_STRING_LENGTH];
   int i;
-  
+
   if (logfile == NULL) {
     puts("SYSERR: Using log() before stream was initialized!");
     return;
@@ -205,10 +262,12 @@ void basic_mud_vlog(const char *format, va_list args)
   for (i=0;i<21;i++) timestr[i]=0;
   strftime(timestr, sizeof(timestr), "%b %d %H:%M:%S %Y", localtime(&ct));
 
-  fprintf(logfile, "%-20.20s :: ", timestr);
-  vfprintf(logfile, format, args);
-  fputc('\n', logfile);
+  if (vsnprintf(line, sizeof(line), format, args) < 0)
+    strcpy(line, "SYSERR: log() could not format its message.");	/* strcpy: OK (literal < MAX_STRING_LENGTH) */
+  fprintf(logfile, "%-20.20s :: %s\n", timestr, line);
   fflush(logfile);
+
+  log_to_topic_files(timestr, line);
 }
 
 /** Log messages directly to syslog on disk, no display to in game immortals.

@@ -115,6 +115,7 @@
 #define PREFIX_LOGFILE     "../log/"
 #define LEVELS_LOGFILE     PREFIX_LOGFILE"levels"
 #define RIP_LOGFILE        PREFIX_LOGFILE"rip"
+#define DTS_LOGFILE        PREFIX_LOGFILE"dts"
 #define NEWPLAYERS_LOGFILE PREFIX_LOGFILE"newplayers"
 #define RENTGONE_LOGFILE   PREFIX_LOGFILE"rentgone"
 #define ERRORS_LOGFILE     PREFIX_LOGFILE"errors"

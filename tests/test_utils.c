@@ -10,6 +10,8 @@
 #include "structs.h"
 #include "utils.h"
 
+#include <sys/stat.h>
+
 /* Redirect mud log output so basic_mud_vlog() doesn't print the
  * "SYSERR: Using log() before stream was initialized!" warning. */
 extern FILE *logfile;
@@ -398,6 +400,107 @@ void test_mud_time_passed_months(void)
  * main
  * ========================================================= */
 
+/* =========================================================
+ * basic_mud_log: the log/ topic files
+ * ========================================================= */
+
+/* The topic files are opened as ../log/<name>, the game's view from lib/.
+ * Stand in a scratch tree laid out the same way while these tests run. */
+static char topic_root[64], topic_cwd[1024];
+
+static void topic_enter(void)
+{
+    char path[128];
+
+    strcpy(topic_root, "/tmp/tbamud_topic_XXXXXX");
+    TEST_ASSERT_NOT_NULL(mkdtemp(topic_root));
+    TEST_ASSERT_NOT_NULL(getcwd(topic_cwd, sizeof(topic_cwd)));
+    snprintf(path, sizeof(path), "%s/log", topic_root);
+    TEST_ASSERT_EQUAL_INT(0, mkdir(path, 0700));
+    snprintf(path, sizeof(path), "%s/lib", topic_root);
+    TEST_ASSERT_EQUAL_INT(0, mkdir(path, 0700));
+    TEST_ASSERT_EQUAL_INT(0, chdir(path));
+    logfile = tmpfile();
+    TEST_ASSERT_NOT_NULL(logfile);
+}
+
+static void topic_leave(void)
+{
+    static const char *names[] = { "delete", "rip", NULL };
+    char path[128];
+    int i;
+
+    fclose(logfile);
+    logfile = NULL;
+    for (i = 0; names[i]; i++) {
+        snprintf(path, sizeof(path), "%s/log/%s", topic_root, names[i]);
+        unlink(path);
+    }
+    TEST_ASSERT_EQUAL_INT(0, chdir(topic_cwd));
+    /* A directory that will not go is a topic file the game wrote that
+     * these tests did not expect; make that visible. */
+    snprintf(path, sizeof(path), "%s/log", topic_root);
+    TEST_ASSERT_EQUAL_INT(0, rmdir(path));
+    snprintf(path, sizeof(path), "%s/lib", topic_root);
+    TEST_ASSERT_EQUAL_INT(0, rmdir(path));
+    TEST_ASSERT_EQUAL_INT(0, rmdir(topic_root));
+}
+
+/* Lines in ../log/<name>, or -1 if the file does not exist. */
+static int topic_lines(const char *name)
+{
+    char path[64], buf[512];
+    FILE *fl;
+    int n = 0;
+
+    snprintf(path, sizeof(path), "../log/%s", name);
+    if ((fl = fopen(path, "r")) == NULL)
+        return -1;
+    while (fgets(buf, sizeof(buf), fl))
+        n++;
+    fclose(fl);
+    return n;
+}
+
+void test_log_topic_file_gets_matching_line(void)
+{
+    char path[64], buf[512];
+    FILE *fl;
+
+    topic_enter();
+    basic_mud_log("Probe killed by a test at Nowhere");
+    TEST_ASSERT_EQUAL_INT(1, topic_lines("rip"));
+    snprintf(path, sizeof(path), "../log/%s", "rip");
+    fl = fopen(path, "r");
+    TEST_ASSERT_NOT_NULL(fl);
+    TEST_ASSERT_NOT_NULL(fgets(buf, sizeof(buf), fl));
+    fclose(fl);
+    TEST_ASSERT_NOT_NULL(strstr(buf, " :: Probe killed by a test at Nowhere\n"));
+    /* and the syslog still got it too */
+    rewind(logfile);
+    TEST_ASSERT_NOT_NULL(fgets(buf, sizeof(buf), logfile));
+    TEST_ASSERT_NOT_NULL(strstr(buf, " :: Probe killed by a test at Nowhere\n"));
+    topic_leave();
+}
+
+void test_log_topic_file_written_once_for_shared_patterns(void)
+{
+    topic_enter();
+    /* self-delete and PCLEAN both route to log/delete */
+    basic_mud_log("Probe self-delete during PCLEAN");
+    TEST_ASSERT_EQUAL_INT(1, topic_lines("delete"));
+    topic_leave();
+}
+
+void test_log_no_topic_file_for_unmatched_line(void)
+{
+    topic_enter();
+    basic_mud_log("Nothing here matches a topic");
+    TEST_ASSERT_EQUAL_INT(-1, topic_lines("delete"));
+    TEST_ASSERT_EQUAL_INT(-1, topic_lines("rip"));
+    topic_leave();
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -477,6 +580,11 @@ int main(void)
     RUN_TEST(test_mud_time_passed_hours);
     RUN_TEST(test_mud_time_passed_days);
     RUN_TEST(test_mud_time_passed_months);
+
+    /* basic_mud_log: log/ topic files */
+    RUN_TEST(test_log_topic_file_gets_matching_line);
+    RUN_TEST(test_log_topic_file_written_once_for_shared_patterns);
+    RUN_TEST(test_log_no_topic_file_for_unmatched_line);
 
     return UNITY_END();
 }

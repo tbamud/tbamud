@@ -535,7 +535,7 @@ before they become critical. If a SYSERR does occur, try to determine if a
 change you’ve made recently has caused it. Ignoring SYSERRs is like ignoring 
 compiler warnings: you can be tempted to ignore them because the game keeps 
 going even if they exist, but you can easily get yourself into trouble by not 
-listening. The autorun script saves all SYSERRs to the file log/errors. 
+listening. The game saves every SYSERR to the file log/errors as it happens. 
 
 6 MUD Maintenance 
 6.1 Technical Maintenance 
