@@ -684,9 +684,14 @@ static socket_t init_socket(ush_int local_port)
    * after a crash shows what it costs: the queue fills, the kernel drops
    * the SYNs behind it, and every client past the fifth sits in TCP's
    * retransmit back-off -- 250 players took 42 seconds to be greeted.  128
-   * is what the kernel caps at by default and holds a whole burst while the
-   * game loop drains it. */
-  listen(s, 128);
+   * holds a whole burst while the game loop drains it, and is within what
+   * every kernel this runs on allows (Linux clamps the request to
+   * net.core.somaxconn, 128 on old kernels and 4096 since 5.4). */
+  if (listen(s, 128) < 0) {
+    perror("SYSERR: listen");
+    CLOSE_SOCKET(s);
+    exit(1);
+  }
   return (s);
 }
 
@@ -876,7 +881,10 @@ void game_loop(socket_t local_mother_desc)
      * drained at ten a second, and with the backlog above that meant
      * waiting in the kernel's queue instead of being refused.  The mother
      * socket is nonblocking, so new_descriptor() answers -1 as soon as the
-     * queue is empty.  The limit keeps a flood from starving the pulse. */
+     * queue is empty.  The limit keeps a flood from starving the pulse.
+     * Each accept still pays for one reverse lookup unless nameserver_is_slow
+     * is set; batching moves that cost into fewer pulses, it does not add to
+     * it, and a resolver slow enough to matter stalled the old loop too. */
     if (FD_ISSET(local_mother_desc, &input_set)) {
       int accepted;
 
@@ -1532,6 +1540,22 @@ static int new_descriptor(socket_t s)
   /* accept the new connection */
   i = sizeof(peer);
   if ((desc = accept(s, (struct sockaddr *) &peer, &i)) == INVALID_SOCKET) {
+    /* The mother socket is nonblocking and the game loop accepts until we
+     * say the queue is empty, so an empty queue is the expected way out of
+     * every burst and not worth a line in the log. */
+#if defined(CIRCLE_WINDOWS)
+    if (WSAGetLastError() == WSAEWOULDBLOCK)
+      return (-1);
+#else
+#ifdef EAGAIN		/* POSIX */
+    if (errno == EAGAIN)
+      return (-1);
+#endif
+#ifdef EWOULDBLOCK	/* BSD */
+    if (errno == EWOULDBLOCK)
+      return (-1);
+#endif
+#endif /* CIRCLE_WINDOWS */
     perror("SYSERR: accept");
     return (-1);
   }
