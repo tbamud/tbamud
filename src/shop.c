@@ -1406,7 +1406,7 @@ static void list_detailed_shop(struct char_data *ch, int shop_nr)
     column += linelen;
   }
   if (!sindex)
-    send_to_char(ch, "Rooms:      None!");
+    send_to_char(ch, "None!");
 
   send_to_char(ch, "\r\nShopkeeper: ");
   if (SHOP_KEEPER(shop_nr) != NOBODY) {
@@ -1475,7 +1475,7 @@ static void list_detailed_shop(struct char_data *ch, int shop_nr)
     column += linelen;
   }
   if (!sindex)
-    send_to_char(ch, "Produces:   Nothing!");
+    send_to_char(ch, "Nothing!");
 
   send_to_char(ch, "\r\nBuys:       ");
   column = 12;	/* ^^^ strlen ^^^ */
@@ -1505,7 +1505,7 @@ static void list_detailed_shop(struct char_data *ch, int shop_nr)
     column += linelen;
   }
   if (!sindex)
-    send_to_char(ch, "Buys:       Nothing!");
+    send_to_char(ch, "Nothing!");
 
   send_to_char(ch, "\r\nBuy at:     [%4.2f], Sell at: [%4.2f], Open: [%d-%d, %d-%d]\r\n",
 	SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr), SHOP_OPEN1(shop_nr),
