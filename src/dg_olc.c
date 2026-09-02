@@ -663,6 +663,8 @@ void trigedit_save(struct descriptor_data *d)
   struct cmdlist_element *cmd, *next_cmd;
   struct index_data **new_index;
   struct descriptor_data *dsc;
+  zone_rnum zon;
+  int cmd_no;
   FILE *trig_file;
   int zone, top;
   char buf[MAX_CMD_LENGTH];
@@ -704,6 +706,7 @@ void trigedit_save(struct descriptor_data *d)
 
     /* make the prorotype look like what we have */
     trig_data_copy(proto, trig);
+    proto->nr = rnum;
 
     /* go through the mud and replace existing triggers         */
     live_trig = trigger_list;
@@ -817,13 +820,40 @@ void trigedit_save(struct descriptor_data *d)
 
     /* HERE IT HAS TO GO THROUGH AND FIX ALL SCRIPTS/TRIGS OF HIGHER RNUM */
     for (live_trig = trigger_list; live_trig; live_trig = live_trig->next_in_world)
-      GET_TRIG_RNUM(live_trig) += (GET_TRIG_RNUM(live_trig) != NOTHING && GET_TRIG_RNUM(live_trig) > rnum);
+      GET_TRIG_RNUM(live_trig) += (GET_TRIG_RNUM(live_trig) != NOTHING &&
+                                   GET_TRIG_RNUM(live_trig) >= rnum);
 
     /* Update other trigs being edited. */
      for (dsc = descriptor_list; dsc; dsc = dsc->next)
-       if (STATE(dsc) == CON_TRIGEDIT)
-         if (GET_TRIG_RNUM(OLC_TRIG(dsc)) >= rnum)
+       if (STATE(dsc) == CON_TRIGEDIT && OLC_TRIG(dsc))
+         if (GET_TRIG_RNUM(OLC_TRIG(dsc)) != NOTHING &&
+             GET_TRIG_RNUM(OLC_TRIG(dsc)) >= rnum)
            GET_TRIG_RNUM(OLC_TRIG(dsc))++;
+
+    /* Zone reset 'T' commands hold an rnum too: renum_zone_table turns
+     * ZCMD.arg2 into one at boot, and nothing has ever repaired it here.
+     * Left alone, inserting a trigger makes every reset below it attach
+     * the wrong one -- and a later zedit save writes that wrong vnum to
+     * disk, so the zone stays broken across reboots. */
+    for (zon = 0; zon <= top_of_zone_table; zon++)
+      for (cmd_no = 0; ZCMD(zon, cmd_no).command != 'S'; cmd_no++)
+        if (ZCMD(zon, cmd_no).command == 'T' &&
+            ZCMD(zon, cmd_no).arg2 != NOTHING &&
+            ZCMD(zon, cmd_no).arg2 >= rnum)
+          ZCMD(zon, cmd_no).arg2++;
+
+    /* And the zedit copies. zedit_setup takes whole reset_com structs out
+     * of zone_table, so a 'T' command's rnum exists twice: once in the live
+     * table and once inside every open zedit. Repairing only the first
+     * leaves the editor to write its stale copy back on save -- undoing
+     * this and putting the wrong vnum in the .zon file, silently. */
+    for (dsc = descriptor_list; dsc; dsc = dsc->next)
+      if (STATE(dsc) == CON_ZEDIT && OLC_ZONE(dsc) && OLC_ZONE(dsc)->cmd)
+        for (cmd_no = 0; OLC_ZONE(dsc)->cmd[cmd_no].command != 'S'; cmd_no++)
+          if (OLC_ZONE(dsc)->cmd[cmd_no].command == 'T' &&
+              OLC_ZONE(dsc)->cmd[cmd_no].arg2 != NOTHING &&
+              OLC_ZONE(dsc)->cmd[cmd_no].arg2 >= rnum)
+            OLC_ZONE(dsc)->cmd[cmd_no].arg2++;
 
   }
 
