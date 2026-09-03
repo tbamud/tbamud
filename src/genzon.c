@@ -307,11 +307,14 @@ static int strip_index_entry(const char *prefix, const char *index_name,
   snprintf(new_name, sizeof(new_name), "%s/new%s", prefix, index_name);
 
   if (!(oldfile = fopen(old_name, "r"))) {
-    if (complain) {
-      mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to open %s.", old_name);
+    /* index.mini is optional, so its absence is not a failure. Anything
+     * other than absence -- unreadable, or an I/O error -- is, for either. */
+    if (complain || errno != ENOENT) {
+      mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to open %s: %s.",
+             old_name, strerror(errno));
       return FALSE;
     }
-    return TRUE;   /* index.mini is optional; its absence is not a failure */
+    return TRUE;
   } else if (!(newfile = fopen(new_name, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to open %s.", new_name);
     fclose(oldfile);

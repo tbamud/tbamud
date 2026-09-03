@@ -13572,7 +13572,8 @@ Usage: zdelete <zone #>
 
    'zdelete <zone #>' only reports: what the zone holds, which rooms in other
 zones have exits leading into it, what attaches its triggers, what loads its
-mobs and objects, and how many players are standing in it. Nothing is changed.
+mobs and objects, which houses it holds or opens onto, and how many players
+are standing in it. Nothing is changed.
 
    'zdelete confirm' then deletes the zone that report named. It takes no zone
 number, so there is nothing to mistype, and it will not work at all until a

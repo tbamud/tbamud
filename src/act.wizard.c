@@ -4461,7 +4461,7 @@ ACMD(do_zdelete)
   room_rnum to;
   int rooms = 0, mobs = 0, objs = 0, trigs = 0, shops = 0, quests = 0;
   int inbound = 0, listed = 0, players = 0, moved = 0, attached = 0;
-  int resets = 0, carried = 0, owners = 0, hit, i, door, cno;
+  int resets = 0, carried = 0, owners = 0, houses = 0, hit, i, door, cno;
   int confirming = FALSE, was_armed;
   zone_vnum armed_zone = NOWHERE;
 
@@ -4570,6 +4570,7 @@ ACMD(do_zdelete)
   for (i = 0; i < total_quests; i++)
     if (real_zone_by_thing(QST_NUM(i)) == zrnum)
       quests++;
+  houses = House_count_in_zone(zrnum);
 
   /* character_list, not descriptor_list: a linkless body is still standing in
    * the zone and is the one player who cannot be told anything at all. This
@@ -4680,6 +4681,16 @@ ACMD(do_zdelete)
                        "is not told; the item is dropped as it loads.\r\n",
                    carried);
 
+    /* A house is player property too, and the loss is the same shape: the
+     * house table is rebuilt at boot from what still resolves, and a house
+     * whose room or atrium is gone is simply not put back. */
+    if (houses)
+      send_to_char(ch, "%d house%s in it or entered from it: the reboot skips "
+                       "a house whose room or atrium is gone, so each drops "
+                       "out of house control and the file holding its "
+                       "contents is left orphaned. The owner is not told.\r\n",
+                   houses, houses == 1 ? " is" : "s are");
+
     if (players)
       send_to_char(ch, "%d player%s standing in it; they will be moved to a "
                        "start room by the reboot.\r\n",
@@ -4744,6 +4755,14 @@ ACMD(do_zdelete)
                    newname);
       return;
     }
+    /* Only "no such file" means the way is clear. Anything else means we
+     * cannot tell, and rename() would replace the file just the same: it
+     * needs write on the directory, not read on the file. */
+    if (errno != ENOENT) {
+      send_to_char(ch, "Cannot tell whether %s exists (%s); not risking "
+                       "it.\r\n", newname, strerror(errno));
+      return;
+    }
   }
 
   for (i = 0; i < 7; i++) {
@@ -4765,9 +4784,18 @@ ACMD(do_zdelete)
                    moved == 1 ? " has" : "s have", oldname);
       return;
     }
-    /* Not every zone has all seven; a missing one is nothing to report. */
+    /* Not every zone has all seven; a missing one is nothing to report. A
+     * file that is there and would not move is: its index line is gone, so
+     * the next boot does not read it, but it is not set aside either. */
     if (rename(oldname, newname) == 0)
       moved++;
+    else if (errno != ENOENT) {
+      mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: zdelete: cannot rename %s: %s.",
+             oldname, strerror(errno));
+      send_to_char(ch, "%s could not be set aside (%s). Nothing in the index "
+                       "names it now, so the next boot does not read it, but "
+                       "it is still in place.\r\n", oldname, strerror(errno));
+    }
   }
 
   /* The zone is still in memory, so every editor still works on it, and a

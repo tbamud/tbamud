@@ -331,6 +331,28 @@ void House_boot(void)
   House_save_control();
 }
 
+/* How many houses stand in this zone, or are entered from a room in it. Both
+ * go the same way when the zone does: House_boot skips a house whose room or
+ * atrium no longer resolves, so it drops out of house control at the next
+ * save and the file holding its contents is left behind, orphaned. */
+int House_count_in_zone(zone_rnum zone)
+{
+  int i, count = 0;
+  room_rnum r;
+
+  for (i = 0; i < num_of_houses; i++) {
+    r = real_room(house_control[i].vnum);
+    if (r != NOWHERE && world[r].zone == zone) {
+      count++;
+      continue;
+    }
+    r = real_room(house_control[i].atrium);
+    if (r != NOWHERE && world[r].zone == zone)
+      count++;
+  }
+  return (count);
+}
+
 /* "House Control" functions */
 static const char *HCONTROL_FORMAT =
 "Usage: hcontrol build <house vnum> <exit direction> <player name>\r\n"
