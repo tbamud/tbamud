@@ -4345,8 +4345,8 @@ static int zone_was_deleted(zone_vnum zvnum)
     /* Say so rather than quietly answering "not deleted": an unreadable zone
      * index dooms the next boot anyway, but the operator should hear it from
      * here and not from the reboot. */
-    log("SYSERR: OLC: Cannot read %s; the deleted-zone check is disabled.",
-        name);
+    log("SYSERR: OLC: Cannot read %s: %s; the deleted-zone check is disabled.",
+        name, strerror(errno));
     return FALSE;   /* do not stand in the operator's way over an I/O error */
   }
 
@@ -4524,10 +4524,13 @@ ACMD(do_zdelete)
                        "to go through with it.\r\n", arg);
       return;
     }
-    /* atoidx's strtol does not report that it consumed nothing, so a word
-     * would come back as zone 0 -- "zdelete conf" should not report on the
-     * void. Require a number first. */
-    if (!isdigit(*arg)) {
+    /* atoidx's strtol does not report where it stopped, so a word would
+     * come back as zone 0 -- "zdelete conf" should not report on the void
+     * -- and "35foo" as zone 35. Require a number, and nothing else. */
+    for (i = 0; arg[i]; i++)
+      if (!isdigit(arg[i]))
+        break;
+    if (!i || arg[i]) {
       send_to_char(ch, "There is no zone %s.\r\n", arg);
       return;
     }
