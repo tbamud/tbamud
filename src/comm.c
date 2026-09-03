@@ -881,10 +881,12 @@ void game_loop(socket_t local_mother_desc)
      * drained at ten a second, and with the backlog above that meant
      * waiting in the kernel's queue instead of being refused.  The mother
      * socket is nonblocking, so new_descriptor() answers -1 as soon as the
-     * queue is empty.  The limit keeps a flood from starving the pulse.
-     * Each accept still pays for one reverse lookup unless nameserver_is_slow
-     * is set; batching moves that cost into fewer pulses, it does not add to
-     * it, and a resolver slow enough to matter stalled the old loop too. */
+     * queue is empty.  The limit bounds how long a flood can hold the pulse.
+     * Each accept still blocks on one reverse lookup unless nameserver_is_slow
+     * is set, and batching concentrates that cost: fifty lookups at 50ms each
+     * is 2.5 seconds spent in a single pulse, where the old loop spent 50ms a
+     * pulse.  A host that expects reconnect floods should set
+     * nameserver_is_slow. */
     if (FD_ISSET(local_mother_desc, &input_set)) {
       int accepted;
 
