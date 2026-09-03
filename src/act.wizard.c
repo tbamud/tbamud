@@ -4462,6 +4462,7 @@ ACMD(do_zdelete)
   int rooms = 0, mobs = 0, objs = 0, trigs = 0, shops = 0, quests = 0;
   int inbound = 0, listed = 0, players = 0, moved = 0, attached = 0;
   int resets = 0, carried = 0, owners = 0, houses = 0, hit, i, door, cno;
+  int qmasters = 0, qtargets = 0, shoplost = 0, j;
   int confirming = FALSE, was_armed;
   zone_vnum armed_zone = NOWHERE;
 
@@ -4670,6 +4671,52 @@ ACMD(do_zdelete)
                        "from this one; each is a SYSERR at every boot.\r\n",
                    resets, resets == 1 ? "" : "s", resets == 1 ? "s" : "");
 
+    /* A quest elsewhere keeps its questmaster's vnum; at boot the lookup
+     * fails and the quest is logged as having no questmaster. Its target is
+     * only looked for when a player tries, and is simply never found. */
+    for (i = 0; i < total_quests; i++) {
+      if (real_zone_by_thing(QST_NUM(i)) == zrnum)
+        continue;
+      if (real_zone_by_thing(QST_MASTER(i)) == zrnum)
+        qmasters++;
+      if (real_zone_by_thing(QST_TARGET(i)) == zrnum)
+        qtargets++;
+    }
+    if (qmasters)
+      send_to_char(ch, "%d quest%s in other zones ha%s a questmaster in this "
+                       "one; each is a SYSERR at every boot.\r\n",
+                   qmasters, qmasters == 1 ? "" : "s",
+                   qmasters == 1 ? "s" : "ve");
+    if (qtargets)
+      send_to_char(ch, "%d quest%s in other zones ha%s a target in this one, "
+                       "and can never be completed after the reboot.\r\n",
+                   qtargets, qtargets == 1 ? "" : "s",
+                   qtargets == 1 ? "s" : "ve");
+    /* A shop elsewhere keeps its keeper's, rooms' and products' vnums and
+     * loses whichever of them are here without a word: the keeper lookup
+     * gives NOBODY, a room is simply not a shop room any more, and a
+     * missing product becomes the list terminator, so every product listed
+     * after it goes too. */
+    for (i = 0; i <= top_shop; i++) {
+      if (real_zone_by_thing(SHOP_NUM(i)) == zrnum)
+        continue;
+      hit = zd_mob_in(zrnum, SHOP_KEEPER(i));
+      for (j = 0; !hit && SHOP_ROOM(i, j) != NOWHERE; j++)
+        if (real_zone_by_thing(SHOP_ROOM(i, j)) == zrnum)
+          hit = TRUE;
+      for (j = 0; !hit && SHOP_PRODUCT(i, j) != NOTHING; j++)
+        if (zd_obj_in(zrnum, SHOP_PRODUCT(i, j)))
+          hit = TRUE;
+      if (hit)
+        shoplost++;
+    }
+    if (shoplost)
+      send_to_char(ch, "%d shop%s in other zones ha%s a keeper, a room or a "
+                       "product in this one, and lose%s it silently at the "
+                       "reboot.\r\n",
+                   shoplost, shoplost == 1 ? "" : "s",
+                   shoplost == 1 ? "s" : "ve", shoplost == 1 ? "s" : "");
+
     /* The counts above are prototypes. The instances are what players own. */
     for (obj = object_list; obj; obj = obj->next)
       if (real_zone_by_thing(GET_OBJ_VNUM(obj)) == zrnum)
@@ -4777,9 +4824,10 @@ ACMD(do_zdelete)
       send_to_char(ch, "Could not rewrite the %s index files -- see the "
                        "syslog.\r\n"
                        "Zone %d is now only partly deleted: %d file%s already "
-                       "been set aside and %s was left in place. The world "
-                       "still boots, because a file no index names is never "
-                       "read. Put it right by hand before trying again.\r\n",
+                       "been set aside and %s was left in place. A file no "
+                       "index names is never read, so the world still boots "
+                       "unless the syslog says an index itself could not be "
+                       "put back. Put it right by hand before trying again.\r\n",
                    world_files[i].ext, zvnum, moved,
                    moved == 1 ? " has" : "s have", oldname);
       return;

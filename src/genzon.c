@@ -338,11 +338,19 @@ static int strip_index_entry(const char *prefix, const char *index_name,
 
   /* Only disturb the real index if there was something to take out of it. */
   if (found) {
-    remove(old_name);
+    /* rename() replaces the old index in one step where it can, so the
+     * file is never absent. Where it will not replace one that exists --
+     * Windows -- the old one has to go first, and that is the one case that
+     * can leave no index at all; the rewritten copy is then still in
+     * new_name, and the log says so. */
     if (rename(new_name, old_name) != 0) {
-      mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to install %s.",
-             old_name);
-      return FALSE;
+      remove(old_name);
+      if (rename(new_name, old_name) != 0) {
+        mudlog(BRF, LVL_IMPL, TRUE, "SYSERR: OLC: Failed to install %s: %s. "
+               "The rewritten index is in %s.", old_name, strerror(errno),
+               new_name);
+        return FALSE;
+      }
     }
   } else
     remove(new_name);
