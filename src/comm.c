@@ -1544,10 +1544,15 @@ static int new_descriptor(socket_t s)
   if ((desc = accept(s, (struct sockaddr *) &peer, &i)) == INVALID_SOCKET) {
     /* The mother socket is nonblocking and the game loop accepts until we
      * say the queue is empty, so an empty queue is the expected way out of
-     * every burst and not worth a line in the log. */
+     * every burst and not worth a line in the log.  A client that hung up
+     * while it waited in the queue is not the queue running dry: there is
+     * nobody to greet, but there may be more behind it, so the loop goes
+     * on. */
 #if defined(CIRCLE_WINDOWS)
     if (WSAGetLastError() == WSAEWOULDBLOCK)
       return (-1);
+    if (WSAGetLastError() == WSAECONNRESET)
+      return (0);
 #else
 #ifdef EAGAIN		/* POSIX */
     if (errno == EAGAIN)
@@ -1556,6 +1561,10 @@ static int new_descriptor(socket_t s)
 #ifdef EWOULDBLOCK	/* BSD */
     if (errno == EWOULDBLOCK)
       return (-1);
+#endif
+#ifdef ECONNABORTED	/* the client gave up before we reached it */
+    if (errno == ECONNABORTED)
+      return (0);
 #endif
 #endif /* CIRCLE_WINDOWS */
     perror("SYSERR: accept");
