@@ -135,6 +135,10 @@ static void init_game(ush_int port);
 static void signal_setup(void);
 static socket_t init_socket(ush_int port);
 static int new_descriptor(socket_t s);
+
+/** How many waiting connections one pulse will accept before getting on
+ * with the game.  At ten pulses a second this is 500 logins a second. */
+#define MAX_ACCEPTS_PER_PULSE 50
 static int get_max_players(void);
 static int process_output(struct descriptor_data *t);
 static int process_input(struct descriptor_data *t);
@@ -676,7 +680,18 @@ static socket_t init_socket(ush_int local_port)
     exit(1);
   }
   nonblock(s);
-  listen(s, 5);
+  /* A backlog of 5 was the number since CircleMUD, and a reconnect flood
+   * after a crash shows what it costs: the queue fills, the kernel drops
+   * the SYNs behind it, and every client past the fifth sits in TCP's
+   * retransmit back-off -- 250 players took 42 seconds to be greeted.  128
+   * holds a whole burst while the game loop drains it, and is within what
+   * every kernel this runs on allows (Linux clamps the request to
+   * net.core.somaxconn, 128 on old kernels and 4096 since 5.4). */
+  if (listen(s, 128) < 0) {
+    perror("SYSERR: listen");
+    CLOSE_SOCKET(s);
+    exit(1);
+  }
   return (s);
 }
 
@@ -861,9 +876,24 @@ void game_loop(socket_t local_mother_desc)
       perror("SYSERR: Select poll");
       return;
     }
-    /* If there are new connections waiting, accept them. */
-    if (FD_ISSET(local_mother_desc, &input_set))
-      new_descriptor(local_mother_desc);
+    /* If there are new connections waiting, accept them.  All of them, up
+     * to a limit, not one per pulse: at one a pulse a burst of reconnects
+     * drained at ten a second, and with the backlog above that meant
+     * waiting in the kernel's queue instead of being refused.  The mother
+     * socket is nonblocking, so new_descriptor() answers -1 as soon as the
+     * queue is empty.  The limit bounds how long a flood can hold the pulse.
+     * Each accept still blocks on one reverse lookup unless nameserver_is_slow
+     * is set, and batching concentrates that cost: fifty lookups at 50ms each
+     * is 2.5 seconds spent in a single pulse, where the old loop spent 50ms a
+     * pulse.  A host that expects reconnect floods should set
+     * nameserver_is_slow. */
+    if (FD_ISSET(local_mother_desc, &input_set)) {
+      int accepted;
+
+      for (accepted = 0; accepted < MAX_ACCEPTS_PER_PULSE; accepted++)
+        if (new_descriptor(local_mother_desc) < 0)
+          break;
+    }
 
     /* Kick out the freaky folks in the exception set and marked for close */
     for (d = descriptor_list; d; d = next_d) {
@@ -1512,6 +1542,31 @@ static int new_descriptor(socket_t s)
   /* accept the new connection */
   i = sizeof(peer);
   if ((desc = accept(s, (struct sockaddr *) &peer, &i)) == INVALID_SOCKET) {
+    /* The mother socket is nonblocking and the game loop accepts until we
+     * say the queue is empty, so an empty queue is the expected way out of
+     * every burst and not worth a line in the log.  A client that hung up
+     * while it waited in the queue is not the queue running dry: there is
+     * nobody to greet, but there may be more behind it, so the loop goes
+     * on. */
+#if defined(CIRCLE_WINDOWS)
+    if (WSAGetLastError() == WSAEWOULDBLOCK)
+      return (-1);
+    if (WSAGetLastError() == WSAECONNRESET)
+      return (0);
+#else
+#ifdef EAGAIN		/* POSIX */
+    if (errno == EAGAIN)
+      return (-1);
+#endif
+#ifdef EWOULDBLOCK	/* BSD */
+    if (errno == EWOULDBLOCK)
+      return (-1);
+#endif
+#ifdef ECONNABORTED	/* the client gave up before we reached it */
+    if (errno == ECONNABORTED)
+      return (0);
+#endif
+#endif /* CIRCLE_WINDOWS */
     perror("SYSERR: accept");
     return (-1);
   }
