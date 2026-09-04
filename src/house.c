@@ -710,6 +710,7 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
 	char infile[MAX_INPUT_LENGTH], *outfile;
+	struct obj_file_elem object;
 	struct obj_data *tmp;
 	int i, j=0;
 
@@ -733,32 +734,41 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
     return (0);
   }
 
-  while (!feof(in)) {
-    struct obj_file_elem object;
-    if (fread(&object, sizeof(struct obj_file_elem), 1, in) != 1)
-      return (0);
-    if (ferror(in)) {
-      perror("SYSERR: Reading house file in House_load");
-      send_to_char(ch, "...read error in house rent file.\r\n");
+  /* Running out of file is how this loop is meant to end -- the record
+   * count is not stored anywhere.  Returning on the short read at the end
+   * left every conversion short of the "$~" terminator its output needs,
+   * with both files still open and the caller told the house had failed,
+   * which stopped it before the second house.  Tell the two apart after
+   * the loop instead: an error is an error, the end of the file is not. */
+  while (fread(&object, sizeof(struct obj_file_elem), 1, in) == 1)
+  {
+    tmp = Obj_from_store(object, &i);
+    if (!objsave_save_obj_record(tmp, out, i))
+    {
+      send_to_char(ch, "...write error in house rent file.\r\n");
       free(outfile);
       fclose(in);
       fclose(out);
       return (0);
     }
-    if (!feof(in))
-    {
-    	tmp = Obj_from_store(object, &i);
-      if (!objsave_save_obj_record(tmp, out, i))
-      {
-	      send_to_char(ch, "...write error in house rent file.\r\n");
-	      free(outfile);
-	      fclose(in);
-	      fclose(out);
-	      return (0);
-      }
-      j++;
-    }
+    j++;
   }
+
+  if (ferror(in)) {
+    perror("SYSERR: Reading house file in House_load");
+    send_to_char(ch, "...read error in house rent file.\r\n");
+    free(outfile);
+    fclose(in);
+    fclose(out);
+    return (0);
+  }
+
+  /* A file that stops part-way through a record is not an error to stdio,
+   * and the bytes are unusable either way -- but this is a one-way
+   * migration, so say that something was dropped rather than report a
+   * clean conversion. */
+  if (ftell(in) % (long) sizeof(struct obj_file_elem) != 0)
+    send_to_char(ch, "\r\n...rent file ends part-way through a record; the tail was skipped\r\n");
 
 	fprintf(out, "$~\n");
 
