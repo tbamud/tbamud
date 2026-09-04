@@ -2560,7 +2560,10 @@ ACMD(do_show)
     if (self)
       print_zone_to_buf(buf, sizeof(buf), world[IN_ROOM(ch)].zone, 1);
     else if (*value && is_number(value)) {
-      for (zvn = atoi(value), zrn = 0; zone_table[zrn].number != zvn && zrn <= top_of_zone_table; zrn++);
+      /* The bound has to be tested before the table is read: on a number no
+       * zone has, the old order read zone_table[top_of_zone_table + 1] and
+       * only then noticed it had run off the end. */
+      for (zvn = atoi(value), zrn = 0; zrn <= top_of_zone_table && zone_table[zrn].number != zvn; zrn++);
       if (zrn <= top_of_zone_table)
 	print_zone_to_buf(buf, sizeof(buf), zrn, 1);
       else {
