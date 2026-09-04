@@ -36,7 +36,7 @@ typedef enum _boolean_type {
 
 /* 128-bit flag defines (from utils.h) */
 #define Q_FIELD(x)  ((int) (x) / 32)
-#define Q_BIT(x)    (1 << ((x) % 32))
+#define Q_BIT(x)    (1U << ((x) % 32))
 #define IS_SET_AR(var, bit)       ((var)[Q_FIELD(bit)] & Q_BIT(bit))
 #define SET_BIT_AR(var, bit)      ((var)[Q_FIELD(bit)] |= Q_BIT(bit))
 
