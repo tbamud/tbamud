@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit
+TESTS = test_utils test_random test_interpreter test_class test_lists test_handler test_mud_event test_handler_prefix test_improved_edit
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -70,6 +70,13 @@ test_class: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 # ---------------------------------------------------------------------------
 test_lists: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
             $(SRCDIR)/lists.c test_lists.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_handler — covers innate-affect handling in src/handler.c
+# ---------------------------------------------------------------------------
+test_handler: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+              $(SRCDIR)/handler.c $(SRCDIR)/lists.c test_handler.c
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
