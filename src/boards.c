@@ -67,6 +67,7 @@ static int find_board(struct char_data *ch);
 static void init_boards(void);
 static void board_reset_board(int board_type);
 static void board_clear_board(int board_type);
+static void board_load_failed(int board_type, FILE *fl);
 
 static int find_slot(void)
 {
@@ -445,36 +446,70 @@ void board_save_board(int board_type)
   fclose(fl);
 }
 
+/* A board file that cannot be read through to the end cannot be trusted at
+ * all: the index says where every later message begins, so one short read
+ * leaves the rest of the file meaningless.  Say what went wrong, close the
+ * file and throw the board away. */
+static void board_load_failed(int board_type, FILE *fl)
+{
+  if (feof(fl))
+    log("SYSERR: Unexpected EOF encountered in board file %d! Resetting.", board_type);
+  else if (ferror(fl))
+    log("SYSERR: Error reading board file %d: %s. Resetting.", board_type, strerror(errno));
+  else
+    log("SYSERR: Error reading board file %d. Resetting.", board_type);
+
+  fclose(fl);
+  board_reset_board(board_type);
+}
+
 void board_load_board(int board_type)
 {
   FILE *fl;
-  int i, len1, len2;
+  int i, count, len1, len2;
   char *tmp1, *tmp2;
+  struct board_msginfo rec;
 
   if (!(fl = fopen(FILENAME(board_type), "rb"))) {
     if (errno != ENOENT)
       perror("SYSERR: Error reading board");
     return;
   }
-  if (fread(&(num_of_msgs[board_type]), sizeof(int), 1, fl) != 1)
+  /* Read into locals throughout.  fread() still writes the bytes it did
+   * manage to read when it comes up short, so reading straight into the
+   * live count or the live index puts however much of the file was there
+   * into them -- and every failure below hands the index to
+   * board_clear_board() to free and to index msg_storage[] with. */
+  if (fread(&count, sizeof(int), 1, fl) != 1) {
+    board_load_failed(board_type, fl);
     return;
-  if (num_of_msgs[board_type] < 1 || num_of_msgs[board_type] > MAX_BOARD_MESSAGES) {
+  }
+  if (count < 1 || count > MAX_BOARD_MESSAGES) {
     log("SYSERR: Board file %d corrupt.  Resetting.", board_type);
+    fclose(fl);
     board_reset_board(board_type);
     return;
   }
+  num_of_msgs[board_type] = count;
   for (i = 0; i < num_of_msgs[board_type]; i++) {
-    if (fread(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl) != 1) {
-      if (feof(fl))
-        log("SYSERR: Unexpected EOF encountered in board file %d! Resetting.", board_type);
-      else if (ferror(fl))
-        log("SYSERR: Error reading board file %d: %s. Resetting.", board_type, strerror(errno));
-      else
-        log("SYSERR: Error reading board file %d. Resetting.", board_type);
-      board_reset_board(board_type);
+    if (fread(&rec, sizeof(struct board_msginfo), 1, fl) != 1) {
+      board_load_failed(board_type, fl);
+      return;
     }
+
+    /* board_save_board() writes the index record out whole, so the file
+     * carries the heading pointer and the slot number of the process that
+     * saved it -- a heap address from a run that has since exited, and a
+     * slot belonging to whatever was loaded then.  Take only the three
+     * fields that still mean something, and leave the heading and the slot
+     * as init_boards() left them: none, and -1.  They are set below. */
+    MSG_LEVEL(board_type, i) = rec.level;
+    msg_index[board_type][i].heading_len = rec.heading_len;
+    msg_index[board_type][i].message_len = rec.message_len;
+
     if ((len1 = msg_index[board_type][i].heading_len) <= 0) {
       log("SYSERR: Board file %d corrupt!  Resetting.", board_type);
+      fclose(fl);
       board_reset_board(board_type);
       return;
     }
@@ -482,32 +517,29 @@ void board_load_board(int board_type)
     CREATE(tmp1, char, len1);
 
     if (fread(tmp1, sizeof(char), len1, fl) != len1) {
-      if (feof(fl))
-        log("SYSERR: Unexpected EOF encountered in board file %d! Resetting.", board_type);
-      else if (ferror(fl))
-        log("SYSERR: Error reading board file %d: %s. Resetting.", board_type, strerror(errno));
-      else
-        log("SYSERR: Error reading board file %d. Resetting.", board_type);
-      board_reset_board(board_type);
+      free(tmp1);
+      board_load_failed(board_type, fl);
+      return;
     }
 
-    MSG_HEADING(board_type, i) = tmp1;
-
+    /* The heading goes into the index only once there is a slot to hang it
+     * on.  Stored first, it belonged to an entry board_clear_board() skips
+     * -- the slot is still -1 there -- so the reset below would walk past
+     * it. */
     if ((MSG_SLOTNUM(board_type, i) = find_slot()) == -1) {
       log("SYSERR: Out of slots booting board %d!  Resetting...", board_type);
+      free(tmp1);
+      fclose(fl);
       board_reset_board(board_type);
       return;
     }
+    MSG_HEADING(board_type, i) = tmp1;
     if ((len2 = msg_index[board_type][i].message_len) > 0) {
       CREATE(tmp2, char, len2);
       if (fread(tmp2, sizeof(char), len2, fl) != sizeof(char) * len2) {
-        if (feof(fl))
-          log("SYSERR: Unexpected EOF encountered in board file %d! Resetting.", board_type);
-        else if (ferror(fl))
-          log("SYSERR: Error reading board file %d: %s. Resetting.", board_type, strerror(errno));
-        else
-          log("SYSERR: Error reading board file %d. Resetting.", board_type);
-        board_reset_board(board_type);
+        free(tmp2);
+        board_load_failed(board_type, fl);
+        return;
       }
 
       msg_storage[MSG_SLOTNUM(board_type, i)] = tmp2;
