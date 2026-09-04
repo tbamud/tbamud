@@ -345,7 +345,7 @@ do                                                              \
 /** Return the bitarray field number x is in. */
 #define Q_FIELD(x)  ((int) (x) / 32)
 /** Return the bit to set in a bitarray field. */
-#define Q_BIT(x)    (1 << ((x) % 32))
+#define Q_BIT(x)    (1U << ((x) % 32))
 /** 1 if bit is set in the bitarray represented by var, 0 if not. */
 #define IS_SET_AR(var, bit)       ((var)[Q_FIELD(bit)] & Q_BIT(bit))
 /** Set a specific bit in the bitarray represented by var to 1. */
