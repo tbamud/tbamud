@@ -2576,17 +2576,23 @@ ACMD(do_show)
         builder = 1;
       for (len = zrn = 0; zrn <= top_of_zone_table; zrn++) {
         if (*value) {
-          buf2 = strtok(strdup(zone_table[zrn].builders), " ");
-          while (buf2) {
+          /* strtok() writes into the string it is given, so the builder list
+           * has to be copied -- and the copy has to be freed again, which the
+           * strtok(strdup(...)) this replaces never did. */
+          char *builders = strdup(zone_table[zrn].builders);
+          bool found = FALSE;
+
+          for (buf2 = strtok(builders, " "); buf2; buf2 = strtok(NULL, " "))
             if (!str_cmp(buf2, value)) {
-              if (builder == 1)
-                builder++;
+              found = TRUE;
               break;
-          }
-            buf2 = strtok(NULL, " ");
-          }
-          if (!buf2)
-	    continue;
+            }
+          free(builders);
+
+          if (!found)
+            continue;
+          if (builder == 1)
+            builder++;
 	}
 	nlen = print_zone_to_buf(buf + len, sizeof(buf) - len, zrn, 0);
         if (len + nlen >= sizeof(buf))
