@@ -565,13 +565,28 @@ void board_clear_board(int board_type)
   int i;
 
   for (i = 0; i < MAX_BOARD_MESSAGES; i++) {
-    if (MSG_SLOTNUM(board_type, i) == -1)
+    int slot = MSG_SLOTNUM(board_type, i);
+
+    if (slot == -1)
       continue; /* don't try to free non-existant slots */
     if (MSG_HEADING(board_type, i))
       free(MSG_HEADING(board_type, i));
-    if (msg_storage[MSG_SLOTNUM(board_type, i)])
-      free(msg_storage[MSG_SLOTNUM(board_type, i)]);
-    msg_storage_taken[MSG_SLOTNUM(board_type, i)] = 0;
+    /* Defence in depth, not a live fault: with the record no longer read
+     * out of the file, the number here can only be -1 or something
+     * find_slot() returned.  board_display_msg() and board_remove_msg()
+     * both bound it anyway before using it as an index, and this is the
+     * one place left that did not. */
+    if (slot >= 0 && slot < INDEX_SIZE) {
+      if (msg_storage[slot])
+        free(msg_storage[slot]);
+      /* find_slot() hands a released slot straight back out, and the
+       * string editor appends to whatever the slot already points at, so
+       * the pointer has to be released with it.  board_remove_msg() has
+       * always cleared both; this cleared only the one, and the first
+       * message written after a reset built on freed memory. */
+      msg_storage[slot] = NULL;
+      msg_storage_taken[slot] = 0;
+    }
     memset((char *)&(msg_index[board_type][i]),0,sizeof(struct board_msginfo));
     msg_index[board_type][i].slot_num = -1;
   }
