@@ -212,6 +212,81 @@ void test_replace_str_replaces_every_occurrence_when_asked(void)
     free(*p);
 }
 
+void test_replace_str_rejects_overflow_without_changing_the_original(void)
+{
+    char *buf = heap_copy("a a a");
+    int result = replace_str(&buf, "a", "1234", 1, 10);
+
+    TEST_ASSERT_EQUAL_STRING("a a a", buf);
+    TEST_ASSERT_EQUAL_INT(-1, result);
+    free(buf);
+}
+
+void test_replace_str_counts_the_unmatched_tail_in_the_limit(void)
+{
+    char *buf = heap_copy("a a end!");
+
+    TEST_ASSERT_EQUAL_INT(-1, replace_str(&buf, "a", "xxx", 1, 11));
+    TEST_ASSERT_EQUAL_STRING("a a end!", buf);
+    free(buf);
+}
+
+void test_replace_str_reserves_space_for_the_terminator(void)
+{
+    char *buf = heap_copy("a");
+
+    TEST_ASSERT_EQUAL_INT(-1, replace_str(&buf, "a", "four", 0, 4));
+    TEST_ASSERT_EQUAL_STRING("a", buf);
+    TEST_ASSERT_EQUAL_INT(1, replace_str(&buf, "a", "four", 0, 5));
+    TEST_ASSERT_EQUAL_STRING("four", buf);
+    free(buf);
+}
+
+void test_replace_str_allows_an_exact_fit_with_multiple_matches(void)
+{
+    char *buf = heap_copy("a a end!");
+
+    TEST_ASSERT_EQUAL_INT(2, replace_str(&buf, "a", "xx", 1, 11));
+    TEST_ASSERT_EQUAL_STRING("xx xx end!", buf);
+    free(buf);
+}
+
+void test_replace_str_reports_no_match_for_a_longer_pattern(void)
+{
+    char *buf = heap_copy("a");
+
+    TEST_ASSERT_EQUAL_INT(0, replace_str(&buf, "long pattern", "x", 1, 32));
+    TEST_ASSERT_EQUAL_STRING("a", buf);
+    free(buf);
+}
+
+void test_replace_str_can_remove_matches(void)
+{
+    char *buf = heap_copy("abcabc");
+
+    TEST_ASSERT_EQUAL_INT(2, replace_str(&buf, "abc", "", 1, 1));
+    TEST_ASSERT_EQUAL_STRING("", buf);
+    free(buf);
+}
+
+void test_replace_str_rejects_zero_capacity(void)
+{
+    char *buf = heap_copy("a");
+
+    TEST_ASSERT_EQUAL_INT(-1, replace_str(&buf, "a", "", 0, 0));
+    TEST_ASSERT_EQUAL_STRING("a", buf);
+    free(buf);
+}
+
+void test_replace_str_ignores_an_empty_pattern(void)
+{
+    char *buf = heap_copy("text");
+
+    TEST_ASSERT_EQUAL_INT(0, replace_str(&buf, "", "x", 1, 32));
+    TEST_ASSERT_EQUAL_STRING("text", buf);
+    free(buf);
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -230,6 +305,14 @@ int main(void)
     RUN_TEST(test_replace_str_replaces_the_first_occurrence);
     RUN_TEST(test_replace_str_keeps_the_text_either_side_of_a_match);
     RUN_TEST(test_replace_str_replaces_every_occurrence_when_asked);
+    RUN_TEST(test_replace_str_rejects_overflow_without_changing_the_original);
+    RUN_TEST(test_replace_str_counts_the_unmatched_tail_in_the_limit);
+    RUN_TEST(test_replace_str_reserves_space_for_the_terminator);
+    RUN_TEST(test_replace_str_allows_an_exact_fit_with_multiple_matches);
+    RUN_TEST(test_replace_str_reports_no_match_for_a_longer_pattern);
+    RUN_TEST(test_replace_str_can_remove_matches);
+    RUN_TEST(test_replace_str_rejects_zero_capacity);
+    RUN_TEST(test_replace_str_ignores_an_empty_pattern);
 
     return UNITY_END();
 }

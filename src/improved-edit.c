@@ -203,15 +203,14 @@ void parse_edit_action(int command, char *string, struct descriptor_data *d)
       /*wb's fix for empty buffer replacement crashing */
     } else if ((!*d->str)) {
       return;
-    } else if ((total_len = ((strlen(t) - strlen(s)) + strlen(*d->str))) <= d->max_str) {
+    } else {
       if ((replaced = replace_str(d->str, s, t, rep_all, d->max_str)) > 0) {
         write_to_output(d, "Replaced %d occurence%sof '%s' with '%s'.\r\n", replaced, ((replaced != 1) ? "s " : " "), s, t);
       } else if (replaced == 0) {
         write_to_output(d, "String '%s' not found.\r\n", s);
       } else
         write_to_output(d, "ERROR: Replacement string causes buffer overflow, aborted replace.\r\n");
-    } else
-      write_to_output(d, "Not enough space left in buffer.\r\n");
+    }
     break;
   case PARSE_DELETE:
     switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
@@ -682,60 +681,53 @@ int format_text(char **ptr_string, int mode, struct descriptor_data *d, unsigned
 
 int replace_str(char **string, char *pattern, char *replacement, int rep_all, unsigned int max_size)
 {
-  char *replace_buffer = NULL;
-  char *flow, *jetsam, temp;
-  int len, i;
+  char *replace_buffer, *out;
+  const char *flow, *match;
+  size_t pattern_len = strlen(pattern), replacement_len = strlen(replacement);
+  size_t result_len, prefix_len;
+  int count = 0, i;
 
-  if ((strlen(*string) - strlen(pattern)) + strlen(replacement) > max_size)
+  if (max_size == 0)
     return -1;
-
-  CREATE(replace_buffer, char, max_size);
-  i = 0;
-  jetsam = *string;
-  flow = *string;
-  *replace_buffer = '\0';
-
-  if (rep_all) {
-    while ((flow = (char *)strstr(flow, pattern)) != NULL) {
-      i++;
-      temp = *flow;
-      *flow = '\0';
-      if ((strlen(replace_buffer) + strlen(jetsam) + strlen(replacement)) > max_size) {
-        i = -1;
-        break;
-      }
-      strncat(replace_buffer, jetsam, max_size - strlen(replace_buffer) -1);
-      strncat(replace_buffer, replacement, max_size - strlen(replace_buffer) - 1);
-      *flow = temp;
-      flow += strlen(pattern);
-      jetsam = flow;
-    }
-    strncat(replace_buffer, jetsam, max_size - strlen(replace_buffer) - 1);
-  } else {
-    if ((flow = (char *)strstr(*string, pattern)) != NULL) {
-      i++;
-      flow += strlen(pattern);
-      len = ((char *)flow - (char *)*string) - strlen(pattern);
-      strncpy(replace_buffer, *string, len < max_size - 1 ? len : max_size - 1);
-      replace_buffer[max_size - 1] = '\0';
-      strncat(replace_buffer, replacement, max_size - strlen(replace_buffer) - 1);
-      strncat(replace_buffer, flow, max_size - strlen(replace_buffer) - 1);
-    }
-  }
-
-  /* Nothing matched, or the size test above gave up part way: *string is left
-   * as it was, but the working copy still has to go back.  Returning from
-   * here without freeing it leaked max_size bytes -- d->max_str of them, so
-   * up to the whole of the editor buffer -- every time /r found nothing. */
-  if (i <= 0) {
-    free(replace_buffer);
+  if (pattern_len == 0)
     return 0;
-  }
 
-  RECREATE(*string, char, strlen(replace_buffer) + 3);
-  strcpy(*string, replace_buffer);
-  free(replace_buffer);
-  return i;
+  /* Count non-overlapping matches without modifying the original buffer. */
+  flow = *string;
+  while ((match = strstr(flow, pattern)) != NULL) {
+    count++;
+    flow = match + pattern_len;
+    if (!rep_all)
+      break;
+  }
+  if (count == 0)
+    return 0;
+
+  /* Include the untouched suffix and the terminator. Check before adding
+   * replacement bytes so that the size arithmetic cannot wrap. */
+  result_len = strlen(*string) - (size_t) count * pattern_len;
+  if (result_len >= max_size ||
+      replacement_len > (max_size - 1 - result_len) / (size_t) count)
+    return -1;
+  result_len += (size_t) count * replacement_len;
+
+  CREATE(replace_buffer, char, result_len + 1);
+  out = replace_buffer;
+  flow = *string;
+  for (i = 0; i < count; i++) {
+    match = strstr(flow, pattern);
+    prefix_len = (size_t) (match - flow);
+    memcpy(out, flow, prefix_len);
+    out += prefix_len;
+    memcpy(out, replacement, replacement_len);
+    out += replacement_len;
+    flow = match + pattern_len;
+  }
+  strcpy(out, flow);
+
+  free(*string);
+  *string = replace_buffer;
+  return count;
 }
 
 #endif
