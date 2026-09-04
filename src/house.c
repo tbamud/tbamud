@@ -712,7 +712,7 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	char infile[MAX_INPUT_LENGTH], *outfile;
 	struct obj_file_elem object;
 	struct obj_data *tmp;
-	int i, j=0;
+	int i, j=0, skipped=0;
 
   House_get_filename(vnum, infile, sizeof(infile));
 
@@ -743,6 +743,14 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
   while (fread(&object, sizeof(struct obj_file_elem), 1, in) == 1)
   {
     tmp = Obj_from_store(object, &i);
+    /* The item's prototype may have been deleted since the house was
+     * last saved, and then Obj_from_store() has nothing to build and
+     * returns NULL.  objsave_save_obj_record() reads the object it is
+     * given straight away, without looking. */
+    if (tmp == NULL) {
+      skipped++;
+      continue;
+    }
     if (!objsave_save_obj_record(tmp, out, i))
     {
       send_to_char(ch, "...write error in house rent file.\r\n");
@@ -777,7 +785,12 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 
 	free(outfile);
 
-	send_to_char(ch, "...%d items", j);
+	/* An operator running a one-way migration should hear what it left
+	 * behind, not just what it carried over. */
+	if (skipped)
+		send_to_char(ch, "...%d items, %d skipped (no prototype)", j, skipped);
+	else
+		send_to_char(ch, "...%d items", j);
 	return 1;
 }
 
