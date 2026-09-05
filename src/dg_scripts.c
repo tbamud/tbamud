@@ -1147,7 +1147,7 @@ ACMD(do_detach)
   struct room_data *room;
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], *snum;
   char *trigger = 0;
-  char trigdesc[MAX_INPUT_LENGTH];
+  char trigdesc[MAX_INPUT_LENGTH + 8];
   int num_arg, tn, rn;
   room_rnum rnum;
 
