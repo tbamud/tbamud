@@ -785,7 +785,20 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	fprintf(out, "$~\n");
 
 	fclose(in);
-	fclose(out);
+
+	/* Everything written above may still be in the stream's buffer: a
+	 * house's worth of objects rarely fills one, so objsave_save_obj_record()
+	 * reports success for every record and the write only reaches the disk
+	 * here.  An unchecked close would hand back a converted file that is
+	 * empty, and say "...%d items" over it. */
+	if (fclose(out))
+	{
+		send_to_char(ch, "...write error saving the converted file.\r\n");
+		remove(outfile);
+		free(outfile);
+		return (0);
+	}
+
 
 	free(outfile);
 
