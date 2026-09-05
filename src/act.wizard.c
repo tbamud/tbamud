@@ -1846,10 +1846,16 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   recs = size/sizeof(struct last_entry);
   /* we'll search last to first, since it's faster than any thing else we can
    * do (like searching for the last shutdown/etc..) */
-  for(tmp=recs-1; tmp > 0; tmp--) {
+  /* One iteration per record.  Starting at recs-1 gave one fewer, and the
+   * one it dropped was the last to be reached: the oldest entry in the
+   * file was never compared.  mod_llog_entry(), which walks the file the
+   * same way, has always counted from recs. */
+  for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
-    if (fread(&mlast,sizeof(struct last_entry),1,fp) != 1)
+    if (fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
+      fclose(fp);
       return NULL;
+    }
         /*another one to keep that stepback */
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
 
@@ -1888,7 +1894,13 @@ static void mod_llog_entry(struct last_entry *llast,int type) {
   for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if(fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
-      log("mod_llog_entry: read error or unexpected end of file.");
+      if (feof(fp))
+        log("SYSERR: mod_llog_entry: unexpected end of file reading %s.", LAST_FILE);
+      else if (ferror(fp))
+        log("SYSERR: mod_llog_entry: error reading %s: %s", LAST_FILE, strerror(errno));
+      else
+        log("SYSERR: mod_llog_entry: error reading %s.", LAST_FILE);
+      fclose(fp);
       return;
     }
     /* Another one to keep that stepback. */
@@ -2049,8 +2061,9 @@ static void list_llog_entries(struct char_data *ch)
   char timestr[25];
 
   if(!(fp=fopen(LAST_FILE,"r"))) {
-    log("llist_log_entries: could not open last log file %s.", LAST_FILE);
-    send_to_char(ch, "Error! - no last log");
+    log("SYSERR: list_llog_entries: could not open %s: %s", LAST_FILE, strerror(errno));
+    send_to_char(ch, "Error! - no last log\r\n");
+    return;
   }
   send_to_char(ch, "Last log\r\n");
 
@@ -2062,9 +2075,11 @@ static void list_llog_entries(struct char_data *ch)
   }
 
   if(ferror(fp)) {
-    log("llist_log_entries: error reading %s.", LAST_FILE);
-    send_to_char(ch, "Error reading last_log file.");
+    log("SYSERR: list_llog_entries: error reading %s: %s", LAST_FILE, strerror(errno));
+    send_to_char(ch, "Error reading last_log file.\r\n");
   }
+
+  fclose(fp);
 }
 
 static struct char_data *is_in_game(long idnum) {
@@ -2147,7 +2162,8 @@ ACMD(do_last)
   while(num > 0 && recs > 0) {
     fseek(fp,-1* ((long)sizeof(struct last_entry)),SEEK_CUR);
     if(fread(&mlast,sizeof(struct last_entry),1,fp) != 1) {
-      send_to_char(ch, "Error reading log file.");
+      send_to_char(ch, "Error reading log file.\r\n");
+      fclose(fp);
       return;
     }
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
