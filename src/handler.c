@@ -97,7 +97,7 @@ int isname(const char *str, const char *namelist)
     if(curtok && is_abbrev(str, curtok)) {
       /* Don't allow abbreviated numbers. - Sryth */
       if (isdigit(*str) && (atoi(str) != atoi(curtok)))
-        return 0;
+        continue;
       free(newlist);
       return 1;
     }

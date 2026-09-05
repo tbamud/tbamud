@@ -1,7 +1,7 @@
 /**
  * @file test_handler_prefix.c
- * Unit tests for the keyword-prefix helpers in src/handler.c:
- * get_number() and skip_number().
+ * Unit tests for the keyword helpers in src/handler.c:
+ * get_number(), skip_number() and isname().
  */
 
 #include "unity.h"
@@ -87,6 +87,33 @@ void test_last_with_empty_keyword_leaves_empty_name(void)
 }
 
 /* =========================================================
+ * isname  -- does a typed keyword name this thing
+ * ========================================================= */
+
+void test_isname_matches_a_whole_keyword(void)
+{
+  TEST_ASSERT_TRUE(isname("sword", "long sword blade"));
+  TEST_ASSERT_TRUE(isname("bla", "long sword blade"));
+  TEST_ASSERT_FALSE(isname("axe", "long sword blade"));
+}
+
+/* A number must be typed in full: "1" is not the guard called "13". */
+void test_isname_will_not_abbreviate_a_number(void)
+{
+  TEST_ASSERT_FALSE(isname("1", "13 guard"));
+  TEST_ASSERT_TRUE(isname("13", "13 guard"));
+}
+
+/* ...but a keyword that does not abbreviate cannot be ruled out by one
+ * that does. Rejecting the whole list on the first longer number gave
+ * up on the keywords still to come. */
+void test_isname_keeps_looking_past_a_longer_number(void)
+{
+  TEST_ASSERT_TRUE(isname("1", "13 1"));
+  TEST_ASSERT_TRUE(isname("2", "20 21 2 sword"));
+}
+
+/* =========================================================
  * skip_number  -- the keyword half, for error messages
  * ========================================================= */
 
@@ -131,6 +158,9 @@ int main(void)
   RUN_TEST(test_last_prefix_is_case_insensitive);
   RUN_TEST(test_find_index_last_cannot_collide_with_a_count);
   RUN_TEST(test_last_with_empty_keyword_leaves_empty_name);
+  RUN_TEST(test_isname_matches_a_whole_keyword);
+  RUN_TEST(test_isname_will_not_abbreviate_a_number);
+  RUN_TEST(test_isname_keeps_looking_past_a_longer_number);
   RUN_TEST(test_skip_number_leaves_a_bare_keyword);
   RUN_TEST(test_skip_number_strips_last_and_digits);
   RUN_TEST(test_skip_number_keeps_a_prefix_get_number_rejects);

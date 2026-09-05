@@ -136,7 +136,7 @@ add_mud_test(test_mud_event
 )
 
 # ---------------------------------------------------------------------------
-# test_handler_prefix — covers the keyword-prefix helpers in src/handler.c
+# test_handler_prefix — covers the keyword helpers in src/handler.c
 # interpreter.c is here for one_argument, lists.c for the group list handler.c uses.
 # ---------------------------------------------------------------------------
 add_mud_test(test_handler_prefix
