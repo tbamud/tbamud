@@ -626,8 +626,13 @@ int save_shops(zone_rnum zone_num)
 		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
       fprintf(shop_file, "-1\n");
 
-      /* Save messages. Added some defaults as sanity checks. */
-      sprintf(buf,
+      /* Save messages. Added some defaults as sanity checks.
+       *
+       * Seven strings into one MAX_STRING_LENGTH buffer.  sedit sets them
+       * from single-line input, so through the editor they cannot reach it;
+       * a .shp file edited by hand has no such limit, and sprintf was not
+       * looking. */
+      snprintf(buf, sizeof(buf),
 	      "%s~\n"
 	      "%s~\n"
 	      "%s~\n"
