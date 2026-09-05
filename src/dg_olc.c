@@ -727,6 +727,7 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
   struct cmdlist_element *cmd;
   char fname[MAX_INPUT_LENGTH], buf[MAX_CMD_LENGTH], bitBuf[MAX_INPUT_LENGTH];
   size_t buflen;
+  int truncated = FALSE;
 
   zone = zone_table[zrnum].number;
   top = zone_table[zrnum].top;
@@ -773,6 +774,7 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
        * one.  Say loudly which trigger it was. */
       buflen = 0;
       buf[0] = '\0';
+      truncated = FALSE;
       for (cmd = trig->cmdlist; cmd; cmd = cmd->next) {
         size_t cmdlen = cmd->cmd ? strlen(cmd->cmd) : 0;
 
@@ -780,6 +782,7 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
           mudlog(BRF, LVL_BUILDER, TRUE,
                  "SYSERR: Trigger %d is longer than %d bytes; the rest was not saved.",
                  GET_TRIG_VNUM(trig), (int)sizeof(buf));
+          truncated = TRUE;
           break;
         }
 
@@ -790,8 +793,13 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
         buf[buflen] = '\0';
       }
 
+      /* An empty buffer here means one of two different things, and calling
+       * both of them empty puts a lie in the .trg -- the file would say the
+       * trigger has no body, and the next boot would agree with it.  A first
+       * command too long for the buffer leaves nothing written at all. */
       if (!buf[0])
-        strcpy(buf, "* Empty script");
+        strcpy(buf, truncated ? "* Script too long to save; the original was not empty"
+                              : "* Empty script");
 
       fprintf(trig_file, "%s%c\n", buf, STRING_TERMINATOR);
       *buf = '\0';
