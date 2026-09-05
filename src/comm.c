@@ -3011,7 +3011,13 @@ static void msdp_update( void )
       /* This would be better moved elsewhere */
       if ( pOpponent != NULL )
       {
-          int hit_points = (GET_HIT(pOpponent) * 100) / GET_MAX_HIT(pOpponent);
+          /* A mob can have a maximum of zero hit points -- medit accepts
+           * hp dice of 0d0 and db.c then computes dice(0,0)+0 -- and every
+           * playing descriptor runs this once a second while its character
+           * fights, so one player attacking such a mob divides by zero and
+           * takes the whole server down. */
+          int max_hit = GET_MAX_HIT(pOpponent);
+          int hit_points = max_hit > 0 ? (GET_HIT(pOpponent) * 100) / max_hit : 0;
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, hit_points );
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH_MAX, 100 );
           MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_LEVEL(pOpponent) );
