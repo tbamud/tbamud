@@ -263,18 +263,52 @@ static int find_house(room_vnum vnum)
 static void House_save_control(void)
 {
   FILE *fl;
+  char tempfile[128];
 
-  if (!(fl = fopen(HCONTROL_FILE, "wb"))) {
-    perror("SYSERR: Unable to open house control file.");
+  /* Build the new file beside the old one and put it in place only once it
+   * is whole.  Writing straight to HCONTROL_FILE truncated it
+   * before a single record had reached the disk, so a save that failed
+   * part-way left a short or empty control file where a good one had been,
+   * and every house in it was gone at the next boot.
+   *
+   * A full disk is the ordinary way in, and it does not fail where it
+   * looks like it should: fopen("wb") only truncates, which costs no
+   * blocks, and a set of records small enough to fit the stream buffer --
+   * twenty-one houses at 192 bytes against the usual 4096 -- is copied
+   * into it and reported written.  The failure appears at the fclose(),
+   * whose result nothing looked at. */
+  snprintf(tempfile, sizeof(tempfile), "%s.tmp", HCONTROL_FILE);
+
+  if (!(fl = fopen(tempfile, "wb"))) {
+    perror("SYSERR: Unable to open the temporary house control file");
     return;
   }
   /* write all the house control recs in one fell swoop.  Pretty nifty, eh? */
   if (fwrite(house_control, sizeof(struct house_control_rec), num_of_houses, fl) != (size_t)num_of_houses) {
-    perror("SYSERR: Unable to save house control file.");
-    return;	  
+    perror("SYSERR: Unable to save house control file on write");
+    fclose(fl);
+    remove(tempfile);
+    return;
+  }
+  if (fclose(fl)) {
+    perror("SYSERR: Unable to save house control file on close");
+    remove(tempfile);
+    return;
   }
 
-  fclose(fl);
+  /* Install it the way objsave.c and dg_olc.c install theirs: try the
+   * rename, and only if that fails remove the destination and try again.
+   * rename() replaces the destination outright on POSIX, so the ordinary
+   * path leaves no moment when the control file is missing; Windows
+   * refuses a rename onto a name that already exists, which is what the
+   * retry is for. */
+  if (rename(tempfile, HCONTROL_FILE)) {
+    remove(HCONTROL_FILE);
+    if (rename(tempfile, HCONTROL_FILE)) {
+      perror("SYSERR: Unable to put the house control file in place");
+      remove(tempfile);
+    }
+  }
 }
 
 /* Call from boot_db - will load control recs, load objs, set atrium bits. 
