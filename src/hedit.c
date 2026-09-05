@@ -891,7 +891,7 @@ ACMD(do_helpcheck)
 
 ACMD(do_hindex)
 {
-  int len, len2, count = 0, count2=0, i;
+  int len, len2, nlen, count = 0, count2=0, i;
   char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
   skip_spaces(&argument);
@@ -901,32 +901,60 @@ ACMD(do_hindex)
     return;
   }
 
-  len = sprintf(buf, "\t1Help index entries beginning with '%s':\t2\r\n", argument);
-  len2 = sprintf(buf2, "\t1Help index entries containing '%s':\t2\r\n", argument);
+  len = snprintf(buf, sizeof(buf), "\t1Help index entries beginning with '%s':\t2\r\n", argument);
+  len2 = snprintf(buf2, sizeof(buf2), "\t1Help index entries containing '%s':\t2\r\n", argument);
+  /* snprintf() returns the length it wanted to write, so adding it blind
+   * carries len past sizeof(buf): buf + len is then off the end of the
+   * array and sizeof(buf) - len underflows into a huge size_t, making the
+   * next call an unbounded write.  Nothing here tested it at all, and
+   * there are five more writes after the loop.  Take the length
+   * separately and add it only when it fits, the way boards.c:255-258
+   * does.
+   *
+   * A stock help table is about 2600 rows at roughly twenty bytes a row,
+   * so it takes an argument matching most of them to fill 48K -- but the
+   * table is what hedit exists to grow, and the two buffers are joined
+   * into one at the end, which halves the room. */
   for (i = 0; i < top_of_helpt; i++) {
     if (is_abbrev(argument, help_table[i].keywords)
-        && (GET_LEVEL(ch) >= help_table[i].min_level))
-      len +=
-          snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
+        && (GET_LEVEL(ch) >= help_table[i].min_level)) {
+      nlen = snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
                    (++count % 3 ? "" : "\r\n"));
-    else if (strstr(help_table[i].keywords, argument)
-        && (GET_LEVEL(ch) >= help_table[i].min_level))
-      len2 +=
-          snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
+      if (nlen < 0 || len + nlen >= (int)sizeof(buf))
+        break;
+      len += nlen;
+    } else if (strstr(help_table[i].keywords, argument)
+        && (GET_LEVEL(ch) >= help_table[i].min_level)) {
+      nlen = snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
                    (++count2 % 3 ? "" : "\r\n"));
+      if (nlen < 0 || len2 + nlen >= (int)sizeof(buf2))
+        break;
+      len2 += nlen;
+    }
   }
-  if (count % 3)
-    len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
-  if (count2 % 3)
-    len2 += snprintf(buf2 + len2, sizeof(buf2) - len2, "\r\n");
+  if (count % 3) {
+    nlen = snprintf(buf + len, sizeof(buf) - len, "\r\n");
+    if (nlen >= 0 && len + nlen < (int)sizeof(buf))
+      len += nlen;
+  }
+  if (count2 % 3) {
+    nlen = snprintf(buf2 + len2, sizeof(buf2) - len2, "\r\n");
+    if (nlen >= 0 && len2 + nlen < (int)sizeof(buf2))
+      len2 += nlen;
+  }
 
-  if (!count)
-    len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
+  if (!count) {
+    nlen = snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
+    if (nlen >= 0 && len + nlen < (int)sizeof(buf))
+      len += nlen;
+  }
   if (!count2)
     snprintf(buf2 + len2, sizeof(buf2) - len2, "  None.\r\n");
 
   // Join the two strings
-  len += snprintf(buf + len, sizeof(buf) - len, "%s", buf2);
+  nlen = snprintf(buf + len, sizeof(buf) - len, "%s", buf2);
+  if (nlen >= 0 && len + nlen < (int)sizeof(buf))
+    len += nlen;
 
   snprintf(buf + len, sizeof(buf) - len, "\t1Applicable Index Entries: \t3%d\r\n"
                                                  "\t1Total Index Entries: \t3%d\tn\r\n", count + count2, top_of_helpt);
