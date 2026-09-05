@@ -22,6 +22,7 @@
 #include "config.h" /* for pclean_criteria[] */
 #include "dg_scripts.h" /* To enable saving of player variables to disk */
 #include "quest.h"
+#include "spells.h" /* for TOP_SPELL_DEFINE */
 
 #define LOAD_HIT	0
 #define LOAD_MANA	1
@@ -966,8 +967,24 @@ static void load_affects(FILE *fl, struct char_data *ch)
   i = 0;
   do {
     new_affect(&af);
-    get_line(fl, line, sizeof(line));
+    /* As in load_skills: without this the loop never ends, and each turn
+     * of it calls affect_to_char(), so the list grows until memory runs
+     * out rather than merely hanging. */
+    if (!get_line(fl, line, sizeof(line)))
+      break;
     n_vars = sscanf(line, "%d %d %d %d %d %d %d %d", &num, &num2, &num3, &num4, &num5, &num6, &num7, &num8);
+    if (n_vars < 1)
+      break;
+    /* An affect's spell number runs to TOP_SPELL_DEFINE, which is the size
+     * of spell_info[] -- not to MAX_SKILLS, which bounds the skills array
+     * and is a smaller, different thing.  SPELL_DG_AFFECT is 298, so a
+     * player carrying a script-applied affect saves one above MAX_SKILLS
+     * as a matter of course. */
+    if (num > TOP_SPELL_DEFINE) {
+      log("SYSERR: load_affects: spell %d out of range in %s's pfile", num,
+          GET_NAME(ch) ? GET_NAME(ch) : "a player");
+      continue;
+    }
     if (num > 0) {
       af.spell = num;
       af.duration = num2;
@@ -982,7 +999,14 @@ static void load_affects(FILE *fl, struct char_data *ch)
         if (num5 > 0 && num5 < NUM_AFF_FLAGS)  /* Ignore invalid values */
           SET_BIT_AR(af.bitvector, num5);
       } else {
+        /* Not a shape this format has.  sscanf leaves the fields it could
+         * not fill alone, so duration, modifier and location would be
+         * whatever the record before this one put there -- an affect
+         * wearing the previous affect's values.  It was logged and then
+         * applied regardless.  build_player_index() above refuses a short
+         * record for exactly this reason. */
         log("SYSERR: Invalid affects in pfile (%s), expecting 5 or 8 values", GET_NAME(ch));
+        continue;
       }
       affect_to_char(ch, &af);
       i++;
@@ -996,10 +1020,23 @@ static void load_skills(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    get_line(fl, line, sizeof(line));
-    sscanf(line, "%d %d", &num, &num2);
-      if (num != 0)
-	GET_SKILL(ch, num) = num2;
+    /* get_line() answers 0 at end of file, and its contract leaves the
+     * buffer unspecified when it does.  Ignoring that return meant parsing
+     * that buffer again -- and because sscanf leaves what it cannot fill
+     * alone, num kept the value that ended the previous line, so a pfile
+     * whose skill list lost its terminator never left this loop.  The MUD
+     * is single threaded: that is the whole game hung on one login. */
+    if (!get_line(fl, line, sizeof(line)))
+      break;
+    if (sscanf(line, "%d %d", &num, &num2) != 2)
+      break;
+    /* num indexes skills[MAX_SKILLS + 1] and arrives straight out of the
+     * file, so it has to be inside the array before it is written to. */
+    if (num > 0 && num <= MAX_SKILLS)
+      GET_SKILL(ch, num) = num2;
+    else if (num != 0)
+      log("SYSERR: load_skills: skill %d out of range in %s's pfile", num,
+          GET_NAME(ch) ? GET_NAME(ch) : "a player");
   } while (num != 0);
 }
 
@@ -1009,8 +1046,13 @@ void load_quests(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    get_line(fl, line, sizeof(line));
-    sscanf(line, "%d", &num);
+    /* As in load_skills: end of file has to end the loop, or this one
+     * appends the same quest to the list until the process runs out of
+     * memory. */
+    if (!get_line(fl, line, sizeof(line)))
+      break;
+    if (sscanf(line, "%d", &num) != 1)
+      break;
     if (num != NOTHING)
       add_completed_quest(ch, num);
   } while (num != NOTHING);
