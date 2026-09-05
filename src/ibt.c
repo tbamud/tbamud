@@ -637,9 +637,14 @@ ACMD(do_ibt)
         if (nlen >= 0 && len + nlen < sizeof(buf))
           len += nlen;
       } else {
-        /* Nothing was listed, so len is still the heading alone and cannot
-         * have overshot. */
-        len += snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
+        /* Nothing was listed on this path -- every len += in the loop is
+         * paired with one of the counters -- so len is the heading alone and
+         * this cannot overshoot today.  Written the same way as the three
+         * above it regardless, so that the buffer staying in range is visible
+         * here rather than resting on a property of two counters. */
+        nlen = snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
+        if (nlen >= 0 && len + nlen < sizeof(buf))
+          len += nlen;
       }
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
         nlen = snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
