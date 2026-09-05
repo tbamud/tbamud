@@ -564,7 +564,7 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
 {
   room_rnum i;
   room_vnum bottom, top;
-  int j, counter = 0;
+  int j, counter = 0, nlen;
   size_t len;
   char buf[MAX_STRING_LENGTH];
 
@@ -582,20 +582,27 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
   "----- ------- -------------------------------------------- -----\r\n",
   sizeof(buf));
 
-  if (!top_of_world)
-    return;
-
   for (i = 0; i <= top_of_world; i++) {
 
     /** Check to see if this room is one of the ones needed to be listed.    **/
     if ((world[i].number >= bottom) && (world[i].number <= top)) {
       counter++;
 
-      len += snprintf(buf + len, sizeof(buf) - len, "%4d) [%s%-5d%s] %s%-*s%s %s",
+      /* snprintf() returns the length it wanted to write, so adding it
+       * blind carries len past sizeof(buf): buf + len is then off the end
+       * of the array and sizeof(buf) - len underflows into a huge size_t.
+       * The test at the foot of the loop is too late for the exits below,
+       * which are written first.  Stop on the line that does not fit
+       * rather than keep part of it -- every line here carries colour
+       * codes, and half of one is a broken escape sequence. */
+      nlen = snprintf(buf + len, sizeof(buf) - len, "%4d) [%s%-5d%s] %s%-*s%s %s",
                           counter, QGRN, world[i].number, QNRM,
                           QCYN, count_color_chars(world[i].name)+44, world[i].name, QNRM,
                           world[i].proto_script ? "[TRIG] " : ""
                           );
+      if (nlen < 0 || len + nlen >= sizeof(buf))
+        break;
+      len += nlen;
 
       for (j = 0; j < DIR_COUNT; j++) {
         if (W_EXIT(i, j) == NULL)
@@ -604,14 +611,18 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
           continue;
 
         if (world[W_EXIT(i, j)->to_room].zone != world[i].zone)
-          len += snprintf(buf + len, sizeof(buf) - len, "(%s%d%s)", QYEL, world[W_EXIT(i, j)->to_room].number, QNRM);
-
+        {
+          nlen = snprintf(buf + len, sizeof(buf) - len, "(%s%d%s)", QYEL, world[W_EXIT(i, j)->to_room].number, QNRM);
+          if (nlen < 0 || len + nlen >= sizeof(buf))
+            break;
+          len += nlen;
+        }
       }
 
-      len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
-      
-      if (len > sizeof(buf))
+      nlen = snprintf(buf + len, sizeof(buf) - len, "\r\n");
+      if (nlen < 0 || len + nlen >= sizeof(buf))
 		break;
+      len += nlen;
     }
   }
 
