@@ -710,6 +710,7 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
 	char infile[MAX_INPUT_LENGTH], backup[MAX_INPUT_LENGTH], *outfile;
+	char probe[32], *q;
 	struct obj_file_elem object;
 	struct obj_data *tmp;
 	int i, j=0, skipped=0;
@@ -737,6 +738,30 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
   	free(outfile);
     return (0);
   }
+
+	/* House_crashsave() writes the ascii format to this very name, so on any
+	 * MUD that has saved a house since ascii object files arrived, the file
+	 * this command is pointed at has already been converted -- by the game,
+	 * in the ordinary course of running.  Read as 72-byte binary records it
+	 * yields vnums nothing resolves, every record is skipped as having no
+	 * prototype, and an empty file is written in its place: the house is
+	 * emptied and the command reports success.
+	 *
+	 * An ascii object file opens with '#' and a vnum alone on the line.  A
+	 * binary record opens with its item_number, whose second byte is the
+	 * high half of a small integer and so is not a digit. */
+	if (fgets(probe, sizeof(probe), in) != NULL && *probe == '#')
+	{
+		for (q = probe + 1; isdigit(*q); q++);
+		if (q > probe + 1 && (*q == '\n' || *q == '\r'))
+		{
+			send_to_char(ch, "...already in the ascii format; nothing to convert");
+			fclose(in);
+			free(outfile);
+			return (1);
+		}
+	}
+	rewind(in);
 
   if (!(out = fopen(outfile, "w")))
   {
