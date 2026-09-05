@@ -1435,7 +1435,7 @@ static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
     if (is_num(lhs) && is_num(rhs))
       sprintf(result, "%d", atoi(lhs) >= atoi(rhs));
     else
-      sprintf(result, "%d", str_cmp(lhs, rhs) <= 0);
+      sprintf(result, "%d", str_cmp(lhs, rhs) >= 0);
   }
 
   else if (!strcmp("<", op)) {
