@@ -1155,6 +1155,18 @@ int file_head( FILE *file, char *buf, size_t bufsize, int lines_to_read )
     if (readstatus > 0)
     {
       n = snprintf( buf + buflen, bufsize - buflen, "%s\r\n", line);
+      /* snprintf() returns the length it WANTED to write.  Adding that
+       * unconditionally takes buflen past bufsize once the buffer fills,
+       * and the overflow marker below is then placed at buf + buflen -
+       * strlen(overflow) - 1, which is off the end of the caller's array.
+       * On truncation, say the buffer is exactly full instead. */
+      if (n < 0)
+        break;
+      if ((size_t) n >= bufsize - buflen)
+      {
+        buflen = bufsize;
+        break;
+      }
       buflen += n;
       lines_read++;
     }
@@ -1246,6 +1258,18 @@ int file_tail( FILE *file, char *buf, size_t bufsize, int lines_to_read )
     if (readstatus > 0)
     {
       n = snprintf( buf + buflen, bufsize - buflen, "%s\r\n", line);
+      /* snprintf() returns the length it WANTED to write.  Adding that
+       * unconditionally takes buflen past bufsize once the buffer fills,
+       * and the overflow marker below is then placed at buf + buflen -
+       * strlen(overflow) - 1, which is off the end of the caller's array.
+       * On truncation, say the buffer is exactly full instead. */
+      if (n < 0)
+        break;
+      if ((size_t) n >= bufsize - buflen)
+      {
+        buflen = bufsize;
+        break;
+      }
       buflen += n;
       lines_read++;
     }
