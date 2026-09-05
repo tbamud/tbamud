@@ -23,11 +23,11 @@
 /* local utility functions */
 static int aedit_find_command(const char *txt);
 static void aedit_disp_menu(struct descriptor_data * d);
-static void aedit_save_to_disk(struct descriptor_data *d);
+static int aedit_save_to_disk(struct descriptor_data *d);
 /* used in aedit parse */
 static void aedit_setup_new(struct descriptor_data *d);
 static void aedit_setup_existing(struct descriptor_data *d, int real_num);
-static void aedit_save_internally(struct descriptor_data *d);
+static int aedit_save_internally(struct descriptor_data *d);
 
 
 
@@ -77,8 +77,8 @@ ACMD(do_oasis_aedit)
      * save`, and a failed save here left nothing behind for `olc` to
      * list.  hedit's save command is paired for the same reason. */
     add_to_save_list(AEDIT_PERMISSION, SL_ACT);
-    aedit_save_to_disk(d);
-    send_to_char(ch, "Done.\r\n");
+    if (aedit_save_to_disk(d))
+      send_to_char(ch, "Done.\r\n");
     return;
   }
 
@@ -177,7 +177,7 @@ static void aedit_setup_existing(struct descriptor_data *d, int real_num) {
    aedit_disp_menu(d);
 }
 
-static void aedit_save_internally(struct descriptor_data *d) {
+static int aedit_save_internally(struct descriptor_data *d) {
    struct social_messg *new_soc_mess_list = NULL;
    int i;
 
@@ -202,7 +202,7 @@ static void aedit_save_internally(struct descriptor_data *d) {
    create_command_list(); /* aedit patch -- M. Scott */
 
    add_to_save_list(AEDIT_PERMISSION, SL_ACT);
-   aedit_save_to_disk(d); /* autosave by Rumble */
+   return aedit_save_to_disk(d); /* autosave by Rumble */
 }
 
 /* Remove a social from soc_mess_list.
@@ -247,7 +247,7 @@ static int aedit_delete_social(int rnum)
   return TRUE;
 }
 
-static void aedit_save_to_disk(struct descriptor_data *d) {
+static int aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
    char buf[MAX_STRING_LENGTH];
@@ -263,14 +263,14 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
     * failed one leaves the entry where the caller put it. */
    if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", SOCMESS_FILE_NEW) >= (int)sizeof(tmp_name)) {
      log("SYSERR: Socials file name too long to write beside: %s", SOCMESS_FILE_NEW);
-     return;
+     return FALSE;
    }
 
    if (!(fp = fopen(tmp_name, "w")))  {
      log("SYSERR: Can't open socials file '%s': %s", tmp_name, strerror(errno));
      if (d->character)
        send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
-     return;
+     return FALSE;
    }
 
    for (i = 0; i <= top_of_socialt; i++)  {
@@ -323,7 +323,7 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
      if (d->character)
        send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
      remove(tmp_name);
-     return;
+     return FALSE;
    }
 
    /* rename() replaces the destination outright on POSIX; the Windows C
@@ -336,11 +336,12 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
        if (d->character)
          send_to_char(d->character, "Could not put the socials file in place; the save is still pending.\r\n");
        remove(tmp_name);
-       return;
+       return FALSE;
      }
    }
 
    remove_from_save_list(AEDIT_PERMISSION, SL_ACT);
+   return TRUE;
 }
 
 /* The Main Menu. */
@@ -417,19 +418,20 @@ static void aedit_disp_menu(struct descriptor_data * d) {
 
 /* The main loop. */
 void aedit_parse(struct descriptor_data * d, char *arg) {
-   int i;
+   int i, saved = FALSE;
 
    switch (OLC_MODE(d)) {
     case AEDIT_CONFIRM_SAVESTRING:
       switch (*arg) {
        case 'y': case 'Y':
-         aedit_save_internally(d);
+         saved = aedit_save_internally(d);
          mudlog (CMP, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits action %s",
                  GET_NAME(d->character), OLC_ACTION(d)->command);
 
          /* do not free the strings.. just the structure */
          cleanup_olc(d, CLEANUP_STRUCTS);
-         write_to_output(d, "Action saved to disk.\r\n");
+         if (saved)
+           write_to_output(d, "Action saved to disk.\r\n");
          break;
        case 'n': case 'N':
          /* free everything up, including strings etc */

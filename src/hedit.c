@@ -29,8 +29,8 @@
 static void hedit_disp_menu(struct descriptor_data *);
 static void hedit_setup_new(struct descriptor_data *);
 static void hedit_setup_existing(struct descriptor_data *, int);
-static void hedit_save_to_disk(struct descriptor_data *);
-static int hedit_save_internally(struct descriptor_data *);
+static int hedit_save_to_disk(struct descriptor_data *);
+static int hedit_save_internally(struct descriptor_data *, int *wrote);
 static int hedit_same_keyword_line(const char *, const char *);
 
 
@@ -75,8 +75,8 @@ ACMD(do_oasis_hedit)
      * reaches disk -- it is exactly the noise this commit complains about
      * elsewhere, and fixing it only for the delete was inconsistent. */
     add_to_save_list(HEDIT_PERMISSION, SL_HLP);
-    hedit_save_to_disk(d);
-    send_to_char(ch, "Saving help files.\r\n");
+    if (hedit_save_to_disk(d))
+      send_to_char(ch, "Saving help files.\r\n");
     return;
   }
 
@@ -336,7 +336,7 @@ static int hedit_relocate(struct descriptor_data *d)
 
 /* FALSE means nothing was written and nothing was discarded; the caller says
  * why and leaves the builder in the editor. */
-static int hedit_save_internally(struct descriptor_data *d)
+static int hedit_save_internally(struct descriptor_data *d, int *wrote)
 {
   struct help_index_element *new_help_table = NULL;
 
@@ -431,11 +431,11 @@ static int hedit_save_internally(struct descriptor_data *d)
   }
 
   add_to_save_list(HEDIT_PERMISSION, SL_HLP);
-  hedit_save_to_disk(d);
+  *wrote = hedit_save_to_disk(d);
   return TRUE;
 }
 
-static void hedit_save_to_disk(struct descriptor_data *d)
+static int hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], tmp_name[READ_SIZE];
@@ -458,14 +458,14 @@ static void hedit_save_to_disk(struct descriptor_data *d)
    * help file that would not boot the next one either. */
   if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", index_name) >= (int)sizeof(tmp_name)) {
     log("SYSERR: Help file name too long to write beside: %s", index_name);
-    return;
+    return FALSE;
   }
 
   if (!(fp = fopen(tmp_name, "w"))) {
     log("SYSERR: Could not write help index file: %s", strerror(errno));
     if (d->character)
       send_to_char(d->character, "Could not write the help file; the save is still pending.\r\n");
-    return;
+    return FALSE;
   }
 
   for (i = 0; i < top_of_helpt; i++) {
@@ -493,7 +493,7 @@ static void hedit_save_to_disk(struct descriptor_data *d)
     if (d->character)
       send_to_char(d->character, "Could not write the help file; the save is still pending.\r\n");
     remove(tmp_name);
-    return;
+    return FALSE;
   }
 
   /* rename() replaces the destination outright on POSIX; the Windows C
@@ -506,7 +506,7 @@ static void hedit_save_to_disk(struct descriptor_data *d)
       if (d->character)
         send_to_char(d->character, "Could not put the help file in place; the save is still pending.\r\n");
       remove(tmp_name);
-      return;
+      return FALSE;
     }
   }
 
@@ -515,6 +515,7 @@ static void hedit_save_to_disk(struct descriptor_data *d)
   /* Reboot the help files. */
   free_help_table();     
   index_boot(DB_BOOT_HLP);
+  return TRUE;
 }
 
 /* The row this editor opened, provided the table it was opened against is
@@ -638,6 +639,7 @@ static void hedit_disp_menu(struct descriptor_data *d)
 void hedit_parse(struct descriptor_data *d, char *arg)
 {
   char buf[MAX_STRING_LENGTH];
+  int wrote = FALSE;
   char *oldtext = NULL;
   int number;
 
@@ -670,7 +672,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
        * invitation to try again. */
       snprintf(buf, sizeof(buf), "OLC: %s edits help for %s.", GET_NAME(d->character),
                OLC_HELP(d)->keywords);
-      if (!hedit_save_internally(d)) {
+      if (!hedit_save_internally(d, &wrote)) {
         write_to_output(d, "The help files were reloaded while you were editing, and the "
                            "entry you opened can no longer be picked out with certainty "
                            "from what is there now. Writing to the wrong one would "
@@ -683,7 +685,8 @@ void hedit_parse(struct descriptor_data *d, char *arg)
         return;
       }
       mudlog(TRUE, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), CMP, "%s", buf);
-      write_to_output(d, "Help saved to disk.\r\n");
+      if (wrote)
+        write_to_output(d, "Help saved to disk.\r\n");
 
       /* Do not free strings, just the help structure. */
       cleanup_olc(d, CLEANUP_STRUCTS);
