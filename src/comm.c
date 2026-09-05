@@ -3018,6 +3018,17 @@ static void msdp_update( void )
            * takes the whole server down. */
           int max_hit = GET_MAX_HIT(pOpponent);
           int health_percent = max_hit > 0 ? (GET_HIT(pOpponent) * 100) / max_hit : 0;
+
+          /* OPPONENT_HEALTH_MAX below is the constant 100, so this is a
+           * percentage and has to stay on that scale.  Neither end is
+           * guaranteed by what goes into it: update_pos() leaves an
+           * opponent alive down to -10 hit points, and only the victim
+           * stops fighting there, so the player is still pointed at a
+           * negative one; and `set maxhit' lowers the maximum without
+           * lowering what is already in it.  EXPERIENCE_TNL above is
+           * bounded the same way. */
+          health_percent = MAX(0, MIN(100, health_percent));
+
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, health_percent );
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH_MAX, 100 );
           MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_LEVEL(pOpponent) );
