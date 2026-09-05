@@ -245,6 +245,7 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
    int i;
    char buf[MAX_STRING_LENGTH];
    char tmp_name[READ_SIZE];
+   int saved = TRUE;
 
    /* Write beside the socials file and rename over it once it is whole.
     * This opened the live file with "w+", which truncates it, and called
@@ -300,7 +301,15 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
 
    fprintf(fp, "$\n");
 
-   if (fflush(fp) == EOF || ferror(fp) || fclose(fp) == EOF) {
+   /* fclose() gets its own statement: in one || chain a failed fflush or a
+    * set ferror short-circuits past it, so the stream stays open -- and an
+    * open file is one Windows will not let remove() take away. */
+   if (fflush(fp) == EOF || ferror(fp))
+     saved = FALSE;
+   if (fclose(fp) == EOF)
+     saved = FALSE;
+
+   if (!saved) {
      log("SYSERR: Could not write socials file '%s': %s", tmp_name, strerror(errno));
      if (d->character)
        send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
@@ -315,6 +324,8 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
      remove(SOCMESS_FILE_NEW);
      if (rename(tmp_name, SOCMESS_FILE_NEW)) {
        log("SYSERR: Could not put the socials file in place: %s", strerror(errno));
+       if (d->character)
+         send_to_char(d->character, "Could not put the socials file in place; the save is still pending.\r\n");
        remove(tmp_name);
        return;
      }

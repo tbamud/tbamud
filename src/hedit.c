@@ -439,7 +439,7 @@ static void hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], tmp_name[READ_SIZE];
-  int i;
+  int i, saved = TRUE;
 
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
 
@@ -461,6 +461,8 @@ static void hedit_save_to_disk(struct descriptor_data *d)
 
   if (!(fp = fopen(tmp_name, "w"))) {
     log("SYSERR: Could not write help index file: %s", strerror(errno));
+    if (d->character)
+      send_to_char(d->character, "Could not write the help file; the save is still pending.\r\n");
     return;
   }
 
@@ -476,8 +478,18 @@ static void hedit_save_to_disk(struct descriptor_data *d)
   /* Write final line and close. */
   fprintf(fp, "$~\n");
 
-  if (fflush(fp) == EOF || ferror(fp) || fclose(fp) == EOF) {
+  /* fclose() gets its own statement: in one || chain a failed fflush or a
+   * set ferror short-circuits past it, so the stream stays open -- and an
+   * open file is one Windows will not let remove() take away. */
+  if (fflush(fp) == EOF || ferror(fp))
+    saved = FALSE;
+  if (fclose(fp) == EOF)
+    saved = FALSE;
+
+  if (!saved) {
     log("SYSERR: Could not write help index file: %s", strerror(errno));
+    if (d->character)
+      send_to_char(d->character, "Could not write the help file; the save is still pending.\r\n");
     remove(tmp_name);
     return;
   }
@@ -489,6 +501,8 @@ static void hedit_save_to_disk(struct descriptor_data *d)
     remove(index_name);
     if (rename(tmp_name, index_name)) {
       log("SYSERR: Could not put the help file in place: %s", strerror(errno));
+      if (d->character)
+        send_to_char(d->character, "Could not put the help file in place; the save is still pending.\r\n");
       remove(tmp_name);
       return;
     }
