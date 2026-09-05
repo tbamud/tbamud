@@ -542,6 +542,12 @@ void board_load_board(int board_type)
       board_reset_board(board_type);
       return;
     }
+    /* board_save_board() writes strlen() + 1 bytes for each of these, so
+     * on any file this MUD wrote the last byte is already the terminator
+     * and the buffer is a string.  One damaged in place need not be, and
+     * board_show_board() prints the heading with %s. */
+    tmp1[len1 - 1] = '\0';
+
     MSG_HEADING(board_type, i) = tmp1;
     if ((len2 = msg_index[board_type][i].message_len) > 0) {
       CREATE(tmp2, char, len2);
@@ -550,6 +556,13 @@ void board_load_board(int board_type)
         board_load_failed(board_type, fl);
         return;
       }
+
+      /* The body has to be a string for the same reason and two more:
+       * board_display_msg() prints it with %s, and board_save_board()
+       * takes strlen() of it to size the record and then writes that many
+       * bytes -- so an over-read here is not only shown to the reader, it
+       * is written back into the board file by the next post. */
+      tmp2[len2 - 1] = '\0';
 
       msg_storage[MSG_SLOTNUM(board_type, i)] = tmp2;
     } else
