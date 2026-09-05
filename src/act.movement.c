@@ -780,6 +780,26 @@ ACMD(do_sit)
 
   switch (GET_POS(ch)) {
   case POS_STANDING:
+    /* Standing is not the same as unseated.  stop_fighting() and
+     * update_pos() both set POS_STANDING without unlinking, and a trigger
+     * can set it outright through %actor.pos(standing)%, so a character can
+     * reach here standing with SITTING(ch) still set and still in the old
+     * furniture's list.  Leave it before anything else: every branch below
+     * either seats ch somewhere new -- which used to assign over SITTING(ch)
+     * and strand the old list holding a pointer char_from_furniture() could
+     * no longer reach -- or refuses, and a refusal has no business leaving
+     * that state behind either.
+     *
+     * Unlinking here cannot take anyone off a seat they legitimately hold:
+     * the only way into this branch with SITTING(ch) set is that broken
+     * state, in which the game has already told them they are standing.
+     * char_from_furniture() returns at once when SITTING(ch) is NULL, which
+     * is every ordinary sit.
+     *
+     * do_stand() calls it in both of its seated cases; do_sit did not call
+     * it at all. */
+    char_from_furniture(ch);
+
     if (found == 0) {
       send_to_char(ch, "You sit down.\r\n");
       act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
