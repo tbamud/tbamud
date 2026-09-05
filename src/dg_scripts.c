@@ -37,7 +37,7 @@ static obj_data *find_obj(long n);
 static room_data *find_room(long n);
 static void do_stat_trigger(struct char_data *ch, trig_data *trig);
 static void script_stat(char_data *ch, struct script_data *sc);
-static int remove_trigger(struct script_data *sc, char *name);
+static int remove_trigger(struct script_data *sc, char *name, char *removed, size_t rlen);
 static int is_num(char *arg);
 static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
           struct script_data *sc, trig_data *trig);
@@ -1093,7 +1093,12 @@ ACMD(do_attach)
  * trigger, otherwise 1.  If it matters, you might need to check to see if all 
  * the triggers were removed after this function returns, in order to remove 
  * the script. */
-static int remove_trigger(struct script_data *sc, char *name)
+/* removed, when given, is filled with the trigger this actually took out.
+ * The caller cannot work that out from the argument it passed: a numeric
+ * token matches by position first and only then by vnum -- see the comment
+ * in the loop below -- so for the small numbers a builder types, the
+ * trigger removed is usually not the one whose vnum the number names. */
+static int remove_trigger(struct script_data *sc, char *name, char *removed, size_t rlen)
 {
   trig_data *i, *j;
   int num = 0, string = FALSE, n;
@@ -1129,6 +1134,10 @@ static int remove_trigger(struct script_data *sc, char *name)
   }
 
   if (i) {
+    /* Before extract_trigger() frees it. */
+    if (removed && rlen)
+      snprintf(removed, rlen, "%d (%s)", trig_index[i->nr]->vnum, GET_TRIG_NAME(i));
+
     if (j) {
       j->next = i->next;
       extract_trigger(i);
@@ -1157,15 +1166,18 @@ ACMD(do_detach)
   struct room_data *room;
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], *snum;
   char *trigger = 0;
-  int num_arg, tn, rn;
+  char trigdesc[MAX_INPUT_LENGTH + 8];
+  int num_arg;
   room_rnum rnum;
-  trig_data *trig;
 
   argument = two_arguments(argument, arg1, arg2);
   one_argument(argument, arg3);
-  tn = atoi(arg3);
-  rn = real_trigger(tn);
-  trig = read_trigger(rn);
+
+  /* What the builder typed, until remove_trigger() says what it actually
+   * took out.  atoi() on this used to name a trigger by vnum, which is
+   * wrong twice over: a name gives 0, and a small number is a position
+   * rather than a vnum. */
+  snprintf(trigdesc, sizeof(trigdesc), "'%s'", *arg3 ? arg3 : arg2);
 
   if (!*arg1 || !*arg2) {
     send_to_char(ch, "Usage: detach [ mob | object | room ] { target } { trigger |"
@@ -1205,8 +1217,8 @@ ACMD(do_detach)
       else
         snum = arg2;
 
-    if (remove_trigger(SCRIPT(room), snum)) {
-      send_to_char(ch, "Trigger %d (%s) removed from %d.\r\n", tn, GET_TRIG_NAME(trig), world[rnum].number);
+    if (remove_trigger(SCRIPT(room), snum, trigdesc, sizeof(trigdesc))) {
+      send_to_char(ch, "Trigger %s removed from %d.\r\n", trigdesc, world[rnum].number);
       
       if (!TRIGGERS(SCRIPT(room)))
         extract_script(room, WLD_TRIGGER);
@@ -1287,9 +1299,9 @@ ACMD(do_detach)
         send_to_char(ch, "All triggers removed from %s.\r\n", IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
       }
 
-      else if (trigger && remove_trigger(SCRIPT(victim), trigger)) {
-        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
-          tn, GET_TRIG_NAME(trig), IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
+      else if (trigger && remove_trigger(SCRIPT(victim), trigger, trigdesc, sizeof(trigdesc))) {
+        send_to_char(ch, "Trigger %s removed from %s.\r\n", 
+          trigdesc, IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
 
         if (!TRIGGERS(SCRIPT(victim))) {
           extract_script(victim, MOB_TRIGGER);
@@ -1313,9 +1325,12 @@ ACMD(do_detach)
                 object->name);
       }
 
-      else if (remove_trigger(SCRIPT(object), trigger)) {
-        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
-          tn, GET_TRIG_NAME(trig), object->short_description ? object->short_description : 
+      /* "You must specify a trigger to remove" above leaves trigger NULL,
+       * and remove_trigger() runs strstr() and isdigit() on it.  The mob
+       * branch has this guard. */
+      else if (trigger && remove_trigger(SCRIPT(object), trigger, trigdesc, sizeof(trigdesc))) {
+        send_to_char(ch, "Trigger %s removed from %s.\r\n", 
+          trigdesc, object->short_description ? object->short_description : 
           object->name);
         if (!TRIGGERS(SCRIPT(object))) {
           extract_script(object, OBJ_TRIGGER);
@@ -1967,7 +1982,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
       extract_script(c, MOB_TRIGGER);
       return;
     }
-    if (remove_trigger(SCRIPT(c), trignum_s)) {
+    if (remove_trigger(SCRIPT(c), trignum_s, NULL, 0)) {
       if (!TRIGGERS(SCRIPT(c))) {
         extract_script(c, MOB_TRIGGER);
       }
@@ -1980,7 +1995,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
       extract_script(o, OBJ_TRIGGER);
       return;
     }
-    if (remove_trigger(SCRIPT(o), trignum_s)) {
+    if (remove_trigger(SCRIPT(o), trignum_s, NULL, 0)) {
       if (!TRIGGERS(SCRIPT(o))) {
         extract_script(o, OBJ_TRIGGER);
       }
@@ -1993,7 +2008,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
       extract_script(r, WLD_TRIGGER);
       return;
     }
-    if (remove_trigger(SCRIPT(r), trignum_s)) {
+    if (remove_trigger(SCRIPT(r), trignum_s, NULL, 0)) {
       if (!TRIGGERS(SCRIPT(r))) {
         extract_script(r, WLD_TRIGGER);
       }
