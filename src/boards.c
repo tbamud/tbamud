@@ -516,7 +516,15 @@ void board_load_board(int board_type)
     msg_index[board_type][i].heading_len = rec.heading_len;
     msg_index[board_type][i].message_len = rec.message_len;
 
-    if ((len1 = msg_index[board_type][i].heading_len) <= 0) {
+    /* Both lengths come out of the file, and CREATE() aborts the process
+     * when an allocation fails, so a damaged length must not reach it.
+     * board_write_message() builds a heading in a MAX_INPUT_LENGTH buffer
+     * and the editor caps a body at MAX_MESSAGE_LENGTH, so nothing this
+     * MUD wrote can be longer than these. */
+    len1 = msg_index[board_type][i].heading_len;
+    len2 = msg_index[board_type][i].message_len;
+    if (len1 <= 0 || len1 > MAX_INPUT_LENGTH ||
+        len2 < 0  || len2 > MAX_MESSAGE_LENGTH) {
       log("SYSERR: Board file %d corrupt!  Resetting.", board_type);
       fclose(fl);
       board_reset_board(board_type);
@@ -549,7 +557,7 @@ void board_load_board(int board_type)
     tmp1[len1 - 1] = '\0';
 
     MSG_HEADING(board_type, i) = tmp1;
-    if ((len2 = msg_index[board_type][i].message_len) > 0) {
+    if (len2 > 0) {
       CREATE(tmp2, char, len2);
       if (fread(tmp2, sizeof(char), len2, fl) != sizeof(char) * len2) {
         free(tmp2);
