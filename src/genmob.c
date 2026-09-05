@@ -187,9 +187,11 @@ int delete_mobile(mob_rnum refpt)
   RECREATE(mob_index, struct index_data, top_of_mobt + 1);
   RECREATE(mob_proto, struct char_data, top_of_mobt + 1);
 
-  /* Update live mobile rnums. */
+  /* Update live mobile rnums.  A PC, and any mob with no prototype,
+   * carries NOBODY (the unsigned index maximum); it must not be touched,
+   * exactly as add_mobile() already avoids touching it. */
   for (live_mob = character_list; live_mob; live_mob = live_mob->next)
-    GET_MOB_RNUM(live_mob) -= (GET_MOB_RNUM(live_mob) >= refpt);
+    GET_MOB_RNUM(live_mob) -= (GET_MOB_RNUM(live_mob) != NOBODY && GET_MOB_RNUM(live_mob) >= refpt);
 
   /* Update zone table.  A zone whose commands are removed or renumbered
    * here has to be written back out as well, or its .zon keeps loading a
@@ -215,7 +217,11 @@ int delete_mobile(mob_rnum refpt)
   /* Update shop keepers. */
   if (shop_index)
     for (counter = 0; counter <= top_shop; counter++)
-      SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) >= refpt);
+      /* A keeperless shop stores NOBODY here, and shop.c compares against
+       * that sentinel directly -- shop.c:1284 and shop.c:1358 both read
+       * SHOP_KEEPER(...) == NOBODY.  Decrementing it turns the sentinel
+       * into a real rnum, and the shop acquires a keeper it never had. */
+      SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) != NOBODY && SHOP_KEEPER(counter) >= refpt);
 
   /* Flag rather than write: medit's delete branch decides whether this
    * goes to disk now, honouring CONFIG_OLC_SAVE like every other OLC
