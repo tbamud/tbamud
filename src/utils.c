@@ -1363,6 +1363,17 @@ IDXTYPE atoidx( const char *str_to_conv )
    next line will start with the same color.
    Ends every line with \tn to prevent color bleeds.
 */
+/* Copy src to dst, stopping at end so the result stays inside the buffer,
+ * and answer the new write point.  strfrmt() assembled its output with
+ * sprintf() and a pointer nothing bounded. */
+static char *strfrmt_append(char *dst, const char *end, const char *src)
+{
+  while (*src && dst < end)
+    *dst++ = *src++;
+  *dst = '\0';
+  return dst;
+}
+
 char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
 {
   static char ret[MAX_STRING_LENGTH];
@@ -1371,9 +1382,23 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
   char *lp = line;
   char *rp = ret;
   char *wp;
+  /* Last byte each buffer may be written to, leaving room for the NUL. */
+  const char *lend = line + sizeof(line) - 1;
+  const char *rend = ret + sizeof(ret) - 1;
   int wlen = 0, llen = 0, lcount = 0;
   char last_color='n';
   bool new_line_started = FALSE;
+
+  /* w is the width of the box, and it drives the padding fills below.  It
+   * arrives as the player's screen width less the width of the map beside
+   * it, and str_and_map() does not clamp CONFIG_MINIMAP_SIZE, so a large
+   * minimap on a forty-column screen makes it negative -- which the
+   * memset() at the foot of this function turned into a size_t of about
+   * eighteen quintillion. */
+  if (w < 0)
+    w = 0;
+  if (w > (int)sizeof(line) - 8)
+    w = (int)sizeof(line) - 8;
 
   memset(line, '\0', MAX_INPUT_LENGTH);
   /* Nomalize spaces and newlines */
@@ -1395,11 +1420,11 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
         /* Start a new line */
         if(hpad)
           for(; llen < w; llen++)
-            *lp++ = ' ';
-        *lp++ = '\r';
-        *lp++ = '\n';
-        *lp++ = '\0';
-        rp += sprintf(rp, "%s", line);
+            if (lp < lend) *lp++ = ' ';
+        if (lp < lend) *lp++ = '\r';
+        if (lp < lend) *lp++ = '\n';
+        *lp = '\0';
+        rp = strfrmt_append(rp, rend, line);
         llen = 0;
         lcount++;
         lp = line;
@@ -1428,14 +1453,13 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
       /* Start a new line */
       if(hpad)
         for(; llen < w; llen++)
-          *lp++ = ' ';
-      *lp++ = '\t';  /* 'normal' color */
-      *lp++ = 'n';
-      *lp++ = '\r'; /* New line */
-      *lp++ = '\n';
-      *lp++ = '\0';
-      sprintf(rp, "%s", line);
-      rp += strlen(line);
+          if (lp < lend) *lp++ = ' ';
+      if (lp < lend) *lp++ = '\t';  /* 'normal' color */
+      if (lp < lend) *lp++ = 'n';
+      if (lp < lend) *lp++ = '\r'; /* New line */
+      if (lp < lend) *lp++ = '\n';
+      *lp = '\0';
+      rp = strfrmt_append(rp, rend, line);
       llen = 0;
       lcount++;
       lp = line;
@@ -1447,33 +1471,39 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
     }
     /* add word to line */
     if (lp!=line && new_line_started!=TRUE) {
-      *lp++ = ' ';
+      if (lp < lend) *lp++ = ' ';
       llen++;
     }
     new_line_started = FALSE;
     llen += wlen ;
-    for( ; wp!=sp ; *lp++ = *wp++);
+    /* wlen counts printable width and this copies bytes, so the two part
+     * company over colour codes -- and a word with no space in it is not
+     * broken at all, whatever its length.  Neither of those is a reason to
+     * write past the end of line. */
+    for( ; wp!=sp && lp<lend ; *lp++ = *wp++);
   }
   /* Copy over the last line */
   if(lp!=line) {
     if(hpad)
       for(; llen < w; llen++)
-        *lp++ = ' ';
-    *lp++ = '\r';
-    *lp++ = '\n';
-    *lp++ = '\0';
-    sprintf(rp, "%s", line);
-    rp += strlen(line);
+        if (lp < lend) *lp++ = ' ';
+    if (lp < lend) *lp++ = '\r';
+    if (lp < lend) *lp++ = '\n';
+    *lp = '\0';
+    rp = strfrmt_append(rp, rend, line);
     lcount++;
   }
   if(vpad) {
     while(lcount < h) {
       if(hpad) {
-        memset(rp, ' ', w);
-        rp += w;
+        int pad = w < rend - rp ? w : (int)(rend - rp);
+        if (pad > 0) {
+          memset(rp, ' ', pad);
+          rp += pad;
+        }
       }
-      *rp++ = '\r';
-      *rp++ = '\n';
+      if (rp < rend) *rp++ = '\r';
+      if (rp < rend) *rp++ = '\n';
       lcount++;
     }
     *rp = '\0';
