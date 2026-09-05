@@ -759,6 +759,10 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
       fclose(out);
       return (0);
     }
+    /* Obj_from_store() builds the object with read_object(), which puts
+     * it in object_list and counts it against the prototype.  It exists
+     * only to be written out, so it goes again once it has been. */
+    extract_obj(tmp);
     j++;
   }
 
