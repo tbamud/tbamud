@@ -620,8 +620,14 @@ ACMD(do_ibt)
          * Drop the line that does not fit rather than keep half of it --
          * every line here ends in a colour code, and half of one is a
          * broken escape sequence on the player's screen. */
-        if (nlen < 0 || len + nlen >= sizeof(buf))
+        if (nlen < 0 || len + nlen >= sizeof(buf)) {
+          /* snprintf() has already written as much of the line as fits and
+           * terminated it.  Cut the buffer back to the last complete line,
+           * or page_string() below prints the fragment -- which is the
+           * half-written colour code this is meant to avoid. */
+          buf[len] = '\0';
           break;
+        }
         len += nlen;
       }
       if ((num_res + num_unres) > 0) {
@@ -636,6 +642,8 @@ ACMD(do_ibt)
                 QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
         if (nlen >= 0 && len + nlen < sizeof(buf))
           len += nlen;
+        else
+          buf[len] = '\0';
       } else {
         /* Nothing was listed on this path -- every len += in the loop is
          * paired with one of the counters -- so len is the heading alone and
@@ -645,11 +653,15 @@ ACMD(do_ibt)
         nlen = snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
         if (nlen >= 0 && len + nlen < sizeof(buf))
           len += nlen;
+        else
+          buf[len] = '\0';
       }
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
         nlen = snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
         if (nlen >= 0 && len + nlen < sizeof(buf))
           len += nlen;
+        else
+          buf[len] = '\0';
       }
       snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
     } else {
