@@ -217,8 +217,10 @@ int delete_mobile(mob_rnum refpt)
   /* Update shop keepers. */
   if (shop_index)
     for (counter = 0; counter <= top_shop; counter++)
-      /* A keeperless shop stores NOBODY here, which shop.c tests for by
-       * name; decrementing it turns that sentinel into a real rnum. */
+      /* A keeperless shop stores NOBODY here, and shop.c compares against
+       * that sentinel directly -- shop.c:1284 and shop.c:1358 both read
+       * SHOP_KEEPER(...) == NOBODY.  Decrementing it turns the sentinel
+       * into a real rnum, and the shop acquires a keeper it never had. */
       SHOP_KEEPER(counter) -= (SHOP_KEEPER(counter) != NOBODY && SHOP_KEEPER(counter) >= refpt);
 
   /* Flag rather than write: medit's delete branch decides whether this
