@@ -240,6 +240,15 @@ static void sedit_setup_new(struct descriptor_data *d)
 
 void sedit_setup_existing(struct descriptor_data *d, int rshop_num)
 {
+  /* The W) Copy menu item calls this again on a descriptor that already
+   * holds a working copy, and the CREATE below assigns over it.  Release
+   * it first, the way cleanup_olc() does on the way out.  On the way in
+   * there is nothing here yet and the test is false. */
+  if (OLC_SHOP(d)) {
+    free_shop(OLC_SHOP(d));
+    OLC_SHOP(d) = NULL;
+  }
+
   /* Create a scratch shop structure. */
   CREATE(OLC_SHOP(d), struct shop_data, 1);
 

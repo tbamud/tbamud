@@ -207,6 +207,22 @@ void medit_setup_existing(struct descriptor_data *d, int rmob_num)
 {
   struct char_data *mob;
 
+  /* The W) Copy menu item calls this again on a descriptor that already
+   * holds a working copy, and what follows assigns over it.  Release it
+   * first, the way cleanup_olc() does on the way out of the editor;
+   * OLC_SCRIPT is a separate list that dg_olc_script_copy() below is about
+   * to replace, so it goes too.  On the way in there is nothing here yet
+   * and both tests are false. */
+  if (OLC_MOB(d)) {
+    free_mobile(OLC_MOB(d));
+    OLC_MOB(d) = NULL;
+  }
+  while (OLC_SCRIPT(d)) {
+    struct trig_proto_list *next_proto = OLC_SCRIPT(d)->next;
+    free(OLC_SCRIPT(d));
+    OLC_SCRIPT(d) = next_proto;
+  }
+
   /* Allocate a scratch mobile structure. */
   CREATE(mob, struct char_data, 1);
 

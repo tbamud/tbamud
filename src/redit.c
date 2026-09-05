@@ -174,6 +174,20 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   struct room_data *room;
   int counter;
 
+  /* The W) Copy menu item calls this again on a descriptor that already
+   * holds a working copy, and what follows assigns over it.  Release it
+   * first, the way cleanup_olc() does on the way out of the editor;
+   * OLC_SCRIPT is a separate list that dg_olc_script_copy() below is about
+   * to replace, so it goes too.  On the way in there is nothing here yet
+   * and both tests are false. */
+  if (OLC_ROOM(d))
+    free_room(OLC_ROOM(d));
+  while (OLC_SCRIPT(d)) {
+    struct trig_proto_list *next_proto = OLC_SCRIPT(d)->next;
+    free(OLC_SCRIPT(d));
+    OLC_SCRIPT(d) = next_proto;
+  }
+
   /* Build a copy of the room for editing. */
   CREATE(room, struct room_data, 1);
 
@@ -251,7 +265,16 @@ void redit_save_internally(struct descriptor_data *d)
   int j, room_num, new_room = FALSE;
   struct descriptor_data *dsc;
 
-  if (OLC_ROOM(d)->number == NOWHERE)
+  /* Ask whether the vnum exists rather than reading a field the working
+   * copy may have brought with it.  redit_setup_new() sets number to
+   * NOWHERE, but redit_setup_existing() does *room = world[real_num],
+   * which brings the source room's vnum along -- so redit on a fresh vnum
+   * followed by W) Copy saved a genuinely new room with new_room false,
+   * skipping the loop at the foot of this function that shifts every other
+   * builder's zedit and redit rnums up past the insertion.  Their next save
+   * wrote rnums one short.  oedit and medit ask real_object() and
+   * real_mobile() the same way. */
+  if (real_room(OLC_NUM(d)) == NOWHERE)
     new_room = TRUE;
 
   OLC_ROOM(d)->number = OLC_NUM(d); 
