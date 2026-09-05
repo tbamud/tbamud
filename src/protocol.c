@@ -53,9 +53,43 @@ static void Write( descriptor_t *apDescriptor, const char *apData )
    write_to_output( apDescriptor, apData, 0 );
 }
 
+/* Seconds between repeats of the same protocol bug report.  See ReportBug. */
+#define REPORT_BUG_INTERVAL 60
+
 static void ReportBug( const char *apText )
 {
-   log( "%s", apText);
+   /* Most of these report a malformed colour code, and the text carrying
+    * it is not always the MUD's own: ProtocolOutput() runs over every line
+    * on its way to a player, so a say or a gossip holding "@[f" is
+    * reported once for each player who can see it.  do_title() runs
+    * parse_at() over what the player typed and stores the result, so a
+    * malformed code put in a title is reported again on every who list,
+    * score and level-up for the rest of the uptime.
+    *
+    * The report is worth keeping -- a bad colour code in a room
+    * description is a real thing to fix.  Saying it thousands of times is
+    * not, and it buries the reports that matter.  Say it, then say how
+    * often. */
+   static char sLastBug[512];
+   static time_t sLastReport;
+   static int sSuppressed;
+   time_t now = time(0);
+   bool_t bSame = !strcmp( sLastBug, apText );
+
+   if ( bSame && now - sLastReport < REPORT_BUG_INTERVAL )
+   {
+      sSuppressed++;
+      return;
+   }
+
+   if ( bSame && sSuppressed > 0 )
+      log( "%s (%d more since the last report)", apText, sSuppressed );
+   else
+      log( "%s", apText);
+
+   snprintf( sLastBug, sizeof(sLastBug), "%s", apText );
+   sLastReport = now;
+   sSuppressed = 0;
 }
 
 static void InfoMessage( descriptor_t *apDescriptor, const char *apData )
