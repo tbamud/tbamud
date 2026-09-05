@@ -53,9 +53,60 @@ static void Write( descriptor_t *apDescriptor, const char *apData )
    write_to_output( apDescriptor, apData, 0 );
 }
 
+/* Seconds between repeats of the same protocol bug report.  See ReportBug. */
+#define REPORT_BUG_INTERVAL 60
+
 static void ReportBug( const char *apText )
 {
-   log( "%s", apText);
+   /* Most of these report a malformed colour code, and the text carrying
+    * it is not always the MUD's own: ProtocolOutput() runs over every line
+    * on its way to a player, so a say or a gossip holding "@[f" is
+    * reported once for each player who can see it.  do_title() runs
+    * parse_at() over what the player typed and stores the result, so a
+    * malformed code put in a title is reported again on every who list,
+    * score and level-up for the rest of the uptime.
+    *
+    * The report is worth keeping -- a bad colour code in a room
+    * description is a real thing to fix.  Saying it thousands of times is
+    * not, and it buries the reports that matter.  Say it, then say how
+    * often. */
+   static char sLastBug[512];
+   static time_t sLastReport;
+   static int sSuppressed;
+   char text[512];
+   size_t len;
+   time_t now = time(0);
+   bool_t bSame;
+
+   /* Most callers end their text with a newline and log() adds one of its
+    * own, so the count below would come out on a line by itself with no
+    * timestamp in front of it.  Trim first, and compare the trimmed form,
+    * so two reports differing only in a line ending are still the same
+    * report. */
+   snprintf( text, sizeof(text), "%s", apText );
+   len = strlen(text);
+   while ( len > 0 && (text[len - 1] == '\n' || text[len - 1] == '\r') )
+      text[--len] = '\0';
+
+   bSame = !strcmp( sLastBug, text );
+
+   /* now < sLastReport is a clock that has gone backwards.  Report rather
+    * than suppress until it has caught up, or one report could silence the
+    * next for however far back it jumped. */
+   if ( bSame && now >= sLastReport && now - sLastReport < REPORT_BUG_INTERVAL )
+   {
+      sSuppressed++;
+      return;
+   }
+
+   if ( bSame && sSuppressed > 0 )
+      log( "%s (%d more since the last report)", text, sSuppressed );
+   else
+      log( "%s", text );
+
+   snprintf( sLastBug, sizeof(sLastBug), "%s", text );
+   sLastReport = now;
+   sSuppressed = 0;
 }
 
 static void InfoMessage( descriptor_t *apDescriptor, const char *apData )
