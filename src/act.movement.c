@@ -781,6 +781,11 @@ ACMD(do_sit)
   switch (GET_POS(ch)) {
   case POS_STANDING:
     if (found == 0) {
+      /* Sitting on the floor is still leaving the furniture, and this
+       * branch is reachable in the same standing-but-seated state as the
+       * one below it: without this the couch goes on counting an occupant
+       * who is sitting on the ground, and holding a pointer to them. */
+      char_from_furniture(ch);
       send_to_char(ch, "You sit down.\r\n");
       act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
       GET_POS(ch) = POS_SITTING;
