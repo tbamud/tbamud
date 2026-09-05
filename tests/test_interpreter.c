@@ -380,6 +380,70 @@ void test_pca_dollar_dollar(void)
     destroy_test_alias(a);
 }
 
+/* A replacement whose last character is a bare '$' leaves the scan on the
+ * terminator, and the walk used to step over it and carry on through
+ * whatever followed in memory.  These two build the replacement with known
+ * bytes after its terminator, so the over-read has a definite result rather
+ * than an accidental one: a ';' out there opens a second command, and the
+ * queue is where it shows up. */
+static void set_replacement_with_trailing_bytes(struct alias_data *a,
+                                                const char *beyond)
+{
+    size_t len = strlen(a->replacement), tail = strlen(beyond);
+    char *buf;
+
+    CREATE(buf, char, len + 1 + tail + 1);
+    memcpy(buf, a->replacement, len + 1);
+    memcpy(buf + len + 1, beyond, tail + 1);
+    free(a->replacement);
+    a->replacement = buf;
+}
+
+void test_pca_trailing_dollar_stops_at_the_terminator(void)
+{
+    struct alias_data         *a = make_test_alias("f", "say hi$");
+    struct descriptor_data     d;
+    struct char_data           ch;
+    struct player_special_data psd;
+    char orig[] = "f";
+
+    set_replacement_with_trailing_bytes(a, ";shout boo");
+    alias_env_init(&d, &ch, &psd, a);
+    perform_alias(&d, orig, sizeof(orig));
+
+    TEST_ASSERT_NOT_NULL(d.input.head);
+    TEST_ASSERT_EQUAL_STRING("say hi", d.input.head->text);
+    /* Nothing past the replacement's terminator may reach the queue. */
+    TEST_ASSERT_NULL(d.input.head->next);
+
+    free_txt_q(&d.input);
+    destroy_test_alias(a);
+}
+
+/* Stopping at the terminator must not drop the segment being built when the
+ * trailing '$' is reached. */
+void test_pca_trailing_dollar_keeps_earlier_segments(void)
+{
+    struct alias_data         *a = make_test_alias("seq", "go north;go east$");
+    struct descriptor_data     d;
+    struct char_data           ch;
+    struct player_special_data psd;
+    char orig[] = "seq";
+
+    set_replacement_with_trailing_bytes(a, ";shout boo");
+    alias_env_init(&d, &ch, &psd, a);
+    perform_alias(&d, orig, sizeof(orig));
+
+    TEST_ASSERT_NOT_NULL(d.input.head);
+    TEST_ASSERT_EQUAL_STRING("go north", d.input.head->text);
+    TEST_ASSERT_NOT_NULL(d.input.head->next);
+    TEST_ASSERT_EQUAL_STRING("go east", d.input.head->next->text);
+    TEST_ASSERT_NULL(d.input.head->next->next);
+
+    free_txt_q(&d.input);
+    destroy_test_alias(a);
+}
+
 /* Overflow via $*: 255 "$*" tokens × 50-char argument exceeds
  * MAX_RAW_INPUT_LENGTH.  The queue must be empty after the call. */
 void test_pca_overflow_glob(void)
@@ -495,6 +559,8 @@ int main(void)
     RUN_TEST(test_pca_token1_expansion);
     RUN_TEST(test_pca_separator);
     RUN_TEST(test_pca_dollar_dollar);
+    RUN_TEST(test_pca_trailing_dollar_stops_at_the_terminator);
+    RUN_TEST(test_pca_trailing_dollar_keeps_earlier_segments);
     RUN_TEST(test_pca_overflow_glob);
     RUN_TEST(test_pca_overflow_token);
 
