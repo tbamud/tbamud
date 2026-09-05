@@ -610,13 +610,16 @@ static void look_in_obj(struct char_data *ch, char *arg)
         {
           char buf2[MAX_STRING_LENGTH];
 
-          /* Capacity divides here, and nothing has established that it is not
-           * zero -- oedit's drink-container case takes any integer for both
-           * of these, and check_object() looks at neither.  A capacity of 0
-           * with anything but 0 in it is SIGFPE and the MUD is gone.
+          /* Capacity divides here, and nothing has established that it is
+           * not zero.  oedit's drink-container arm takes any integer for
+           * the capacity and the contents both, and check_object() only
+           * compares the two when the capacity is already above zero -- so
+           * it never establishes the thing this line needs.  A capacity of
+           * 0 with anything but 0 in it is SIGFPE and the MUD is gone.
            *
-           * fullness[] holds four entries and no sentinel, and a negative
-           * amount in the container makes amt negative. */
+           * fullness[] holds four entries and ends in "", not the "\n"
+           * sentinel the string tables use, and a negative amount in the
+           * container makes amt negative. */
           if (GET_OBJ_VAL(obj, 0) <= 0)
             amt = 0;
           else

@@ -3952,9 +3952,10 @@ static int check_object(struct obj_data *obj)
 		GET_OBJ_VNUM(obj), obj->short_description, obj->name);
 
     /* The liquid type indexes four tables of NUM_LIQ_TYPES entries and was
-     * never looked at here.  The uses are bounded now, but an operator
-     * should hear about it at boot rather than wonder why a bottle holds
-     * water. */
+     * never looked at here.  oedit bounds what it writes, so a value out of
+     * range came from the file, from a script, or from a rent or house
+     * restore.  The uses are bounded now, but an operator should hear about
+     * it at boot rather than wonder why a bottle holds water. */
     if ((GET_OBJ_VAL(obj, 2) < 0 || GET_OBJ_VAL(obj, 2) >= NUM_LIQ_TYPES)
         && (error = TRUE))
       log("SYSERR: Object #%d (%s) has liquid type %d, outside 0-%d.",

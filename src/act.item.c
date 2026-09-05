@@ -787,13 +787,20 @@ void weight_change_object(struct obj_data *obj, int weight)
 #define DRINK_CON_NOW(cont) (GET_OBJ_VAL((cont), 1))
 #define DRINK_CON_TYPE(cont) (GET_OBJ_VAL((cont), 2))
 /* The same value, bounded to something that can index drinks[],
- * drinknames[], color_liquid[] and drink_aff[], all of which hold
- * NUM_LIQ_TYPES entries and none of which has a sentinel.  Nothing
- * between the .obj file and here checks it: oedit's drink-container case
- * falls through to the arm that accepts any integer, check_object() looks
- * at the last keyword and the contents but never the type, and rent and
- * house files restore all four values raw.  DRINK_CON_TYPE itself has to
- * stay an lvalue -- pour and empty assign through it. */
+ * drinknames[], color_liquid[] and drink_aff[].  The three string tables
+ * do end in a "\n" sentinel, but that only helps sprinttype(), which walks
+ * to it; every use below indexes them directly, which it does not help at
+ * all.  drink_aff[] is an int table with no sentinel to have.
+ *
+ * oedit does clamp this one, to 0..NUM_LIQ_TYPES-1 (its VALUE_3 arm) -- it
+ * is the capacity and the contents it leaves open.  What arrives unchecked
+ * is everything that does not come through oedit: parse_object() stores
+ * what the .obj file says, check_object() tests the last keyword and the
+ * contents but never the type, %osetval% sets any value to any integer,
+ * and rent and house files restore all four raw.
+ *
+ * DRINK_CON_TYPE itself has to stay an lvalue -- pour and empty assign
+ * through it. */
 #define DRINK_CON_LIQ(cont) (GET_OBJ_VAL((cont), 2) < 0 || \
                              GET_OBJ_VAL((cont), 2) >= NUM_LIQ_TYPES ? \
                              LIQ_WATER : GET_OBJ_VAL((cont), 2))
