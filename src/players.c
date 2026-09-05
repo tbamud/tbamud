@@ -244,7 +244,7 @@ int load_char(const char *name, struct char_data *ch)
   int id, i;
   FILE *fl;
   char filename[40];
-  char buf[128], buf2[128], line[MAX_INPUT_LENGTH + 1], tag[6];
+  char buf2[128], line[MAX_INPUT_LENGTH + 1], tag[6];
   char f1[WORLD_FLAG_FIELD + 1], f2[WORLD_FLAG_FIELD + 1];
   char f3[WORLD_FLAG_FIELD + 1], f4[WORLD_FLAG_FIELD + 1];
   trig_data *t = NULL;
@@ -505,7 +505,7 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       default:
-	/* Formatted into buf and then never looked at, so an unrecognised
+	/* Formatted into a buffer and then never looked at, so an unrecognised
 	 * tag -- the mark of a pfile from a different build, or a damaged
 	 * one -- passed without a word. */
 	log("SYSERR: Unknown tag %s in pfile %s", tag, name);
