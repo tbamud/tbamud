@@ -1183,8 +1183,14 @@ static char *read_shop_message(int mnum, room_vnum shr, FILE *shop_f, const char
   }
 
   if (err) {
+    /* Every caller stores this straight into shop_index[] and every
+     * consumer hands it to snprintf() as the FORMAT, so returning NULL
+     * turns a rejected message into a crash the first time a player
+     * reaches it.  Give back a message carrying no specifiers at all, so
+     * the arguments the callers pass are simply unused and no consumer can
+     * be left reading a vararg that is not there. */
     free(tbuf);
-    return (NULL);
+    return (strdup("Something is wrong with this shop's messages."));
   }
   return (tbuf);
 }
