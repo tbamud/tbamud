@@ -70,6 +70,13 @@ ACMD(do_oasis_aedit)
   if (!str_cmp("save", arg)) {
     mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves socials.", GET_NAME(ch));
     send_to_char(ch, "Writing social file.\r\n");
+    /* The other two callers queue the social before saving, and
+     * aedit_save_to_disk removes it again once the write is through.
+     * This one never queued, so the removal found nothing and logged
+     * "remove_from_save_list: Saved item not found." on every `aedit
+     * save`, and a failed save here left nothing behind for `olc` to
+     * list.  hedit's save command is paired for the same reason. */
+    add_to_save_list(AEDIT_PERMISSION, SL_ACT);
     aedit_save_to_disk(d);
     send_to_char(ch, "Done.\r\n");
     return;
@@ -244,11 +251,25 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
    char buf[MAX_STRING_LENGTH];
-   if (!(fp = fopen(SOCMESS_FILE_NEW, "w+")))  {
-     char error[MAX_STRING_LENGTH];
-     snprintf(error, sizeof(error), "Can't open socials file '%s'", SOCMESS_FILE);
-     perror(error);
-     exit(1);
+   char tmp_name[READ_SIZE];
+
+   /* Write beside the socials file and rename over it once it is whole.
+    * This opened the live file with "w+", which truncates it, and called
+    * exit(1) if that failed -- so an immortal saving a social onto a
+    * read-only mount took the whole MUD down with them.  Say so and
+    * return instead.  Every caller queues the social before saving, and
+    * only a save that got through reaches the removal at the end, so a
+    * failed one leaves the entry where the caller put it. */
+   if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", SOCMESS_FILE_NEW) >= (int)sizeof(tmp_name)) {
+     log("SYSERR: Socials file name too long to write beside: %s", SOCMESS_FILE_NEW);
+     return;
+   }
+
+   if (!(fp = fopen(tmp_name, "w")))  {
+     log("SYSERR: Can't open socials file '%s': %s", tmp_name, strerror(errno));
+     if (d->character)
+       send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
+     return;
    }
 
    for (i = 0; i <= top_of_socialt; i++)  {
@@ -287,7 +308,27 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
    }
 
    fprintf(fp, "$\n");
-   fclose(fp);
+
+   if (fflush(fp) == EOF || ferror(fp) || fclose(fp) == EOF) {
+     log("SYSERR: Could not write socials file '%s': %s", tmp_name, strerror(errno));
+     if (d->character)
+       send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
+     remove(tmp_name);
+     return;
+   }
+
+   /* rename() replaces the destination outright on POSIX; the Windows C
+    * runtime refuses a name that already exists, hence the second try.
+    * objsave.c:548-556 installs rent files the same way. */
+   if (rename(tmp_name, SOCMESS_FILE_NEW)) {
+     remove(SOCMESS_FILE_NEW);
+     if (rename(tmp_name, SOCMESS_FILE_NEW)) {
+       log("SYSERR: Could not put the socials file in place: %s", strerror(errno));
+       remove(tmp_name);
+       return;
+     }
+   }
+
    remove_from_save_list(AEDIT_PERMISSION, SL_ACT);
 }
 
