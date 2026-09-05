@@ -1375,15 +1375,13 @@ obj_save_data *objsave_parse_objects(FILE *fl)
     if (*line == '#') {
       /* check for false alarm. */
       if (sscanf(line, "#%d", &nr) == 1) {
-        /* If we attempt to load an object with a legal VNUM 0-65534, that
-         * does not exist, skip it. If the object has a VNUM of NOTHING or
-         * 65535, then we assume it doesn't exist on purpose. (Custom Item,
-         * Coins, Corpse, etc...) */
-        if (real_object(nr) == NOTHING && nr != NOTHING) {
-            log("SYSERR: Prevented loading of non-existant item #%d.", nr);
-            continue;
-          }
-          
+        /* Close out the object before this one first, whatever happens
+         * next.  The skip below used to jump over this, so temp was left
+         * pointing at the previous object and every tag line belonging to
+         * the skipped record -- Name, Desc, Vals, Wear, Loc -- was applied
+         * to it instead.  Wrapping up here sets temp to NULL, which is what
+         * the "progressing through a non-existant object" test below is
+         * for. */
         if (temp) {
           current->obj = temp;
           CREATE(current->next, obj_save_data, 1);
@@ -1392,6 +1390,15 @@ obj_save_data *objsave_parse_objects(FILE *fl)
           current->locate = 0;
           temp = NULL;
         }
+
+        /* If we attempt to load an object with a legal VNUM 0-65534, that
+         * does not exist, skip it. If the object has a VNUM of NOTHING or
+         * 65535, then we assume it doesn't exist on purpose. (Custom Item,
+         * Coins, Corpse, etc...) */
+        if (real_object(nr) == NOTHING && nr != NOTHING) {
+            log("SYSERR: Prevented loading of non-existant item #%d.", nr);
+            continue;
+          }
       } else
         continue;
         
@@ -1458,9 +1465,14 @@ obj_save_data *objsave_parse_objects(FILE *fl)
         struct extra_descr_data *new_desc;
         char error[40];
         snprintf(error, sizeof(error)-1, "rent(Edes): %s", temp->name);
+        /* item_number is already the rnum -- parse_object() stores the index
+         * there and read_object() copies it -- so passing it to
+         * real_object(), which takes a vnum, returned NOTHING for almost
+         * every object and indexed obj_proto[65535]. */
         if (temp->item_number != NOTHING && /* Regular object */
+            temp->item_number <= top_of_objt &&
             temp->ex_description &&   /* with ex_desc == prototype */
-            (temp->ex_description == obj_proto[real_object(temp->item_number)].ex_description))
+            (temp->ex_description == obj_proto[temp->item_number].ex_description))
           temp->ex_description = NULL;
         CREATE(new_desc, struct extra_descr_data, 1);
         new_desc->keyword = fread_string(fl, error);
