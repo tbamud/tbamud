@@ -277,7 +277,14 @@ static void House_save_control(void)
    * twenty-one houses at 192 bytes against the usual 4096 -- is copied
    * into it and reported written.  The failure appears at the fclose(),
    * whose result nothing looked at. */
-  snprintf(tempfile, sizeof(tempfile), "%s.tmp", HCONTROL_FILE);
+  /* objsave_open_tmp() (objsave.c:529), which this follows, tests the name
+   * it builds.  HCONTROL_FILE is "etc/hcontrol" and cannot fill 128 bytes,
+   * but a truncated name here would defeat the whole point: the rename
+   * below would put some other file over the control file. */
+  if (snprintf(tempfile, sizeof(tempfile), "%s.tmp", HCONTROL_FILE) >= (int)sizeof(tempfile)) {
+    log("SYSERR: House control file name too long to write beside: %s", HCONTROL_FILE);
+    return;
+  }
 
   if (!(fl = fopen(tempfile, "wb"))) {
     perror("SYSERR: Unable to open the temporary house control file");
