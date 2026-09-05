@@ -1355,6 +1355,12 @@ void parse_room(FILE *fl, int virtual_nr)
 
     /* In the old-style files, the 3rd item was the sector-type */
     world[room_nr].sector_type = atoi(flags2);
+    if (world[room_nr].sector_type < 0 ||
+        world[room_nr].sector_type >= NUM_ROOM_SECTORS) {
+      log("SYSERR: Sector type %d out of range in room #%d, using inside.",
+          world[room_nr].sector_type, virtual_nr);
+      world[room_nr].sector_type = SECT_INSIDE;
+    }
 
    sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
 
@@ -1379,8 +1385,14 @@ void parse_room(FILE *fl, int virtual_nr)
     for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
       check_bitvector_names(world[room_nr].room_flags[taeller], room_bits_count, flags, "room");
 
-    /* Added Sanity check */
-    if (t[2] > NUM_ROOM_SECTORS) t[2] = SECT_INSIDE;
+    /* Added Sanity check.  Sectors run 0 to NUM_ROOM_SECTORS - 1, so the
+     * test has to be >=: sector 10 was passing it and then indexing
+     * movement_loss[], which has exactly NUM_ROOM_SECTORS entries.  A
+     * negative sector was never tested for at all. */
+    if (t[2] < 0 || t[2] >= NUM_ROOM_SECTORS) {
+      log("SYSERR: Sector type %d out of range in room #%d, using inside.", t[2], virtual_nr);
+      t[2] = SECT_INSIDE;
+    }
 
     world[room_nr].sector_type = t[2];
     } else {
@@ -1441,6 +1453,7 @@ void setup_dir(FILE *fl, int room, int dir)
 {
   int t[5];
   char line[READ_SIZE], buf2[128];
+  char *general_description, *keyword;
 
   /* Not GET_ROOM_VNUM(room): top_of_world is not advanced to this room
    * until its 'S' line is read, which happens after these D blocks, so
@@ -1449,14 +1462,13 @@ void setup_dir(FILE *fl, int room, int dir)
    * is the vnum being read. */
   snprintf(buf2, sizeof(buf2), "room #%d, direction D%d", world[room].number, dir);
 
-  if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir)) {
-    log("Warning: Diagonal direction disabled: %s", buf2);
-    return;
-  }
-
-  CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
-  world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
-  world[room].dir_option[dir]->keyword = fread_string(fl, buf2);
+  /* Read the block before deciding what to do with it.  A direction this
+   * build will not store still occupies two ~-terminated strings and a
+   * numeric line in the file, and leaving them in the stream makes the
+   * next pass round parse_room's loop read the exit's description as
+   * though it were a directive. */
+  general_description = fread_string(fl, buf2);
+  keyword = fread_string(fl, buf2);
 
   if (!get_line(fl, line, sizeof(line))) {
     log("SYSERR: Format error, %s", buf2);
@@ -1466,6 +1478,35 @@ void setup_dir(FILE *fl, int room, int dir)
     log("SYSERR: Format error, %s", buf2);
     exit(1);
   }
+
+  /* dir indexes dir_option[NUM_OF_DIRS] and comes from atoi() on the D
+   * line, so nothing has established that it is a direction at all. */
+  if (dir < 0 || dir >= NUM_OF_DIRS) {
+    log("SYSERR: Direction out of range, %s (0-%d)", buf2, NUM_OF_DIRS - 1);
+    free(general_description);
+    free(keyword);
+    return;
+  }
+
+  if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir)) {
+    log("Warning: Diagonal direction disabled: %s", buf2);
+    free(general_description);
+    free(keyword);
+    return;
+  }
+
+  /* A second D block for the same direction would otherwise drop the
+   * first one's two strings on the floor. */
+  if (world[room].dir_option[dir]) {
+    log("SYSERR: Duplicate %s, replacing the first one", buf2);
+    free(world[room].dir_option[dir]->general_description);
+    free(world[room].dir_option[dir]->keyword);
+    free(world[room].dir_option[dir]);
+  }
+
+  CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
+  world[room].dir_option[dir]->general_description = general_description;
+  world[room].dir_option[dir]->keyword = keyword;
   if (t[0] == 1)
     world[room].dir_option[dir]->exit_info = EX_ISDOOR;
   else if (t[0] == 2)
