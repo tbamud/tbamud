@@ -51,6 +51,7 @@ void	obj_from_obj(struct obj_data *obj);
 void	object_list_new_owner(struct obj_data *list, struct char_data *ch);
 
 void	extract_obj(struct obj_data *obj);
+struct obj_data **protect_obj_walk(struct obj_data **next);
 
 void update_char_objects(struct char_data *ch);
 
