@@ -429,12 +429,17 @@ void setup_dir(FILE * fl, int room, int dir)
 {
   int t[5];
   char line[256];
+  char *general_description, *keyword;
 
   sprintf(buf2, "room #%d, direction D%d", world[room].number, dir);
 
-  CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
-  world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
-  world[room].dir_option[dir]->keyword = fread_string(fl, buf2);
+  /* Read the block before deciding what to do with it: a direction this
+   * program cannot store still occupies two ~-terminated strings and a
+   * numeric line, and leaving them in the stream would make the next pass
+   * round parse_room()'s loop read the exit's description as a directive.
+   * db.c's setup_dir() was corrected the same way. */
+  general_description = fread_string(fl, buf2);
+  keyword = fread_string(fl, buf2);
 
   if (!get_line(fl, line, sizeof(line))) {
     fprintf(stderr, "Format error, %s\n", buf2);
@@ -444,6 +449,20 @@ void setup_dir(FILE * fl, int room, int dir)
     fprintf(stderr, "Format error, %s\n", buf2);
     exit(1);
   }
+
+  /* dir indexes dir_option[NUM_OF_DIRS] and comes from atoi() on the D
+   * line, so nothing has established that it is a direction at all. */
+  if (dir < 0 || dir >= NUM_OF_DIRS) {
+    fprintf(stderr, "Direction out of range, %s (0-%d), ignored\n",
+            buf2, NUM_OF_DIRS - 1);
+    free(general_description);
+    free(keyword);
+    return;
+  }
+
+  CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
+  world[room].dir_option[dir]->general_description = general_description;
+  world[room].dir_option[dir]->keyword = keyword;
   if (t[0] == 1)
     world[room].dir_option[dir]->exit_info = EX_ISDOOR;
   else if (t[0] == 2)
