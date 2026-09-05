@@ -903,6 +903,15 @@ ACMD(do_hindex)
 
   len = snprintf(buf, sizeof(buf), "\t1Help index entries beginning with '%s':\t2\r\n", argument);
   len2 = snprintf(buf2, sizeof(buf2), "\t1Help index entries containing '%s':\t2\r\n", argument);
+
+  /* Not reachable: argument is one command line, so at most
+   * MAX_INPUT_LENGTH against a MAX_STRING_LENGTH buffer.  Bounded anyway,
+   * so that everything below is safe on its own terms rather than on that
+   * arithmetic staying true. */
+  if (len < 0 || len >= (int)sizeof(buf))
+    len = sizeof(buf) - 1;
+  if (len2 < 0 || len2 >= (int)sizeof(buf2))
+    len2 = sizeof(buf2) - 1;
   /* snprintf() returns the length it wanted to write, so adding it blind
    * carries len past sizeof(buf): buf + len is then off the end of the
    * array and sizeof(buf) - len underflows into a huge size_t, making the
@@ -920,15 +929,20 @@ ACMD(do_hindex)
         && (GET_LEVEL(ch) >= help_table[i].min_level)) {
       nlen = snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
                    (++count % 3 ? "" : "\r\n"));
-      if (nlen < 0 || len + nlen >= (int)sizeof(buf))
+      if (nlen < 0 || len + nlen >= (int)sizeof(buf)) {
+        /* snprintf() has already written what fits and terminated it. */
+        buf[len] = '\0';
         break;
+      }
       len += nlen;
     } else if (strstr(help_table[i].keywords, argument)
         && (GET_LEVEL(ch) >= help_table[i].min_level)) {
       nlen = snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
                    (++count2 % 3 ? "" : "\r\n"));
-      if (nlen < 0 || len2 + nlen >= (int)sizeof(buf2))
+      if (nlen < 0 || len2 + nlen >= (int)sizeof(buf2)) {
+        buf2[len2] = '\0';
         break;
+      }
       len2 += nlen;
     }
   }
@@ -936,17 +950,23 @@ ACMD(do_hindex)
     nlen = snprintf(buf + len, sizeof(buf) - len, "\r\n");
     if (nlen >= 0 && len + nlen < (int)sizeof(buf))
       len += nlen;
+    else
+      buf[len] = '\0';
   }
   if (count2 % 3) {
     nlen = snprintf(buf2 + len2, sizeof(buf2) - len2, "\r\n");
     if (nlen >= 0 && len2 + nlen < (int)sizeof(buf2))
       len2 += nlen;
+    else
+      buf2[len2] = '\0';
   }
 
   if (!count) {
     nlen = snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
     if (nlen >= 0 && len + nlen < (int)sizeof(buf))
       len += nlen;
+    else
+      buf[len] = '\0';
   }
   if (!count2)
     snprintf(buf2 + len2, sizeof(buf2) - len2, "  None.\r\n");
@@ -955,6 +975,8 @@ ACMD(do_hindex)
   nlen = snprintf(buf + len, sizeof(buf) - len, "%s", buf2);
   if (nlen >= 0 && len + nlen < (int)sizeof(buf))
     len += nlen;
+  else
+    buf[len] = '\0';
 
   snprintf(buf + len, sizeof(buf) - len, "\t1Applicable Index Entries: \t3%d\r\n"
                                                  "\t1Total Index Entries: \t3%d\tn\r\n", count + count2, top_of_helpt);
