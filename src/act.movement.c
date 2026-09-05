@@ -781,6 +781,11 @@ ACMD(do_sit)
   switch (GET_POS(ch)) {
   case POS_STANDING:
     if (found == 0) {
+      /* Sitting on the floor is still leaving the furniture, and this
+       * branch is reachable in the same standing-but-seated state as the
+       * one below it: without this the couch goes on counting an occupant
+       * who is sitting on the ground, and holding a pointer to them. */
+      char_from_furniture(ch);
       send_to_char(ch, "You sit down.\r\n");
       act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
       GET_POS(ch) = POS_SITTING;
@@ -797,6 +802,19 @@ ACMD(do_sit)
         act("There is no where left to sit upon $p.", TRUE, ch, furniture, 0, TO_CHAR);
         return;
       } else {
+        /* Leave whatever ch is on before joining this one.  Standing is not
+         * the same as unseated: stop_fighting(), update_pos() and die() all
+         * set POS_STANDING and none of them unlinks, so a character can
+         * reach here standing with SITTING(ch) still set and still in the
+         * old furniture's list.  Assigning over SITTING(ch) below then left
+         * that list holding a pointer to a character that will not be
+         * removed from it -- one that char_from_furniture() cannot reach
+         * afterwards, because it only ever unlinks from SITTING(ch).
+         *
+         * do_stand() calls this in both of its seated cases; do_sit did not
+         * call it at all. */
+        char_from_furniture(ch);
+
         if (OBJ_SAT_IN_BY(furniture) == NULL)
           OBJ_SAT_IN_BY(furniture) = ch;
         for (tempch = OBJ_SAT_IN_BY(furniture); tempch != ch ; tempch = NEXT_SITTING(tempch)) {
