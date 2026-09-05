@@ -449,7 +449,11 @@ int load_char(const char *name, struct char_data *ch)
             PRF_FLAGS(ch)[2] = asciiflag_conv(f3);
             PRF_FLAGS(ch)[3] = asciiflag_conv(f4);
           } else
-	    PRF_FLAGS(ch)[0] = asciiflag_conv(f1);
+            /* The Act and Aff blocks above convert the line itself here,
+             * and this converted f1 -- which sscanf leaves alone when it
+             * matches nothing, so an empty Pref: line took whatever the
+             * block before it had put there. */
+	    PRF_FLAGS(ch)[0] = asciiflag_conv(line);
 	  }
         break;
 
@@ -501,7 +505,10 @@ int load_char(const char *name, struct char_data *ch)
 	break;
 
       default:
-	sprintf(buf, "SYSERR: Unknown tag %s in pfile %s", tag, name);
+	/* Formatted into buf and then never looked at, so an unrecognised
+	 * tag -- the mark of a pfile from a different build, or a damaged
+	 * one -- passed without a word. */
+	log("SYSERR: Unknown tag %s in pfile %s", tag, name);
       }
     }
   }
@@ -881,7 +888,12 @@ void tag_argument(char *argument, char *tag)
   char *tmp = argument, *ttag = tag, *wrt = argument;
   int i;
 
-  for (i = 0; i < 4; i++)
+  /* Stop at the end of the line.  A pfile line shorter than four
+   * characters was copied out of past its terminator, and the walk
+   * below then started from there looking for a NUL that the array may
+   * not contain.  A short tag matches nothing and falls to the unknown
+   * tag branch, which is the right answer for a line like that. */
+  for (i = 0; i < 4 && *tmp; i++)
     *(ttag++) = *(tmp++);
   *ttag = '\0';
 
@@ -1083,16 +1095,24 @@ static void read_aliases_ascii(FILE *file, struct char_data *ch, int count)
   for (i = 0; i < count; i++) {
     char abuf[MAX_INPUT_LENGTH+1], rbuf[MAX_INPUT_LENGTH+1], tbuf[MAX_INPUT_LENGTH];
 
-    /* Read the aliased command. */
-    get_line(file, abuf, sizeof(abuf));
-
-    /* Read the replacement. This needs to have a space prepended before placing in
-     * the in-memory struct. The space may be there already, but we can't be certain! */
+    /* get_line() answers 0 at the end of the file and leaves the buffer
+     * untouched.  These three are declared inside the loop and never
+     * initialised, so a count larger than the records that follow -- a
+     * truncated pfile, or an Alis: line that was edited by hand -- read
+     * three buffers of stack per pass, tested them, and strdup'd
+     * whatever happened to be in them, walking on past the end of the
+     * array if no NUL turned up. */
     rbuf[0] = ' ';
-    get_line(file, rbuf + 1, sizeof(rbuf) - 1);
 
-    /* read the type */
-    get_line(file, tbuf, sizeof(tbuf));
+    /* Read the aliased command, then the replacement -- which needs a
+     * space prepended before it goes in the in-memory struct, and may or
+     * may not have one already -- then the type. */
+    if (!get_line(file, abuf, sizeof(abuf)) ||
+        !get_line(file, rbuf + 1, sizeof(rbuf) - 1) ||
+        !get_line(file, tbuf, sizeof(tbuf))) {
+      log("SYSERR: Alias list ends early: %d of %d read.", i, count);
+      break;
+    }
 
     if (abuf[0] && rbuf[1] && *tbuf) {
       struct alias_data *temp;
