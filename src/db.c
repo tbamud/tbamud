@@ -1029,7 +1029,8 @@ void index_boot(int mode)
     }
   }
 
-  /* Exit if 0 records, unless this is shops */
+  /* Exit if 0 records, unless this is shops or quests: a world may have
+   * neither, and neither is required for the MUD to run. */
   if (!rec_count) {
     if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST) {
       /* Every other way out of this function closes the index or exits. */
@@ -1912,7 +1913,7 @@ void parse_mobile(FILE *mob_f, int nr)
         log("SYSERR: %s #%d is in no zone; not queueing it for conversion.",
             "Mobile", nr);
       else
-        add_to_save_list(zone_table[tzone].number, 0);
+        add_to_save_list(zone_table[tzone].number, SL_MOB);
       converting =TRUE;
     }
 
@@ -2083,7 +2084,7 @@ char *parse_object(FILE *obj_f, int nr)
         log("SYSERR: %s #%d is in no zone; not queueing it for conversion.",
             "Object", nr);
       else
-        add_to_save_list(zone_table[tzone].number, 1);
+        add_to_save_list(zone_table[tzone].number, SL_OBJ);
       converting = TRUE;
     }
 
