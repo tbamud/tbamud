@@ -73,21 +73,38 @@ static void ReportBug( const char *apText )
    static char sLastBug[512];
    static time_t sLastReport;
    static int sSuppressed;
+   char text[512];
+   size_t len;
    time_t now = time(0);
-   bool_t bSame = !strcmp( sLastBug, apText );
+   bool_t bSame;
 
-   if ( bSame && now - sLastReport < REPORT_BUG_INTERVAL )
+   /* Most callers end their text with a newline and log() adds one of its
+    * own, so the count below would come out on a line by itself with no
+    * timestamp in front of it.  Trim first, and compare the trimmed form,
+    * so two reports differing only in a line ending are still the same
+    * report. */
+   snprintf( text, sizeof(text), "%s", apText );
+   len = strlen(text);
+   while ( len > 0 && (text[len - 1] == '\n' || text[len - 1] == '\r') )
+      text[--len] = '\0';
+
+   bSame = !strcmp( sLastBug, text );
+
+   /* now < sLastReport is a clock that has gone backwards.  Report rather
+    * than suppress until it has caught up, or one report could silence the
+    * next for however far back it jumped. */
+   if ( bSame && now >= sLastReport && now - sLastReport < REPORT_BUG_INTERVAL )
    {
       sSuppressed++;
       return;
    }
 
    if ( bSame && sSuppressed > 0 )
-      log( "%s (%d more since the last report)", apText, sSuppressed );
+      log( "%s (%d more since the last report)", text, sSuppressed );
    else
-      log( "%s", apText);
+      log( "%s", text );
 
-   snprintf( sLastBug, sizeof(sLastBug), "%s", apText );
+   snprintf( sLastBug, sizeof(sLastBug), "%s", text );
    sLastReport = now;
    sSuppressed = 0;
 }
