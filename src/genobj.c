@@ -432,9 +432,14 @@ int delete_object(obj_rnum rnum)
   /* Make sure all are removed. */
   assert(obj_index[rnum].number == 0);
 
-  /* Adjust rnums of all other objects. */
+  /* Adjust rnums of all other objects.  A live object with no prototype
+   * -- a corpse, a money pile, an item loaded from a rent file -- carries
+   * NOTHING here, which is the unsigned index maximum, so it must be left
+   * alone: decrementing it makes free_obj() take the has-a-prototype branch
+   * and index obj_proto[] out of bounds.  add_object() has always had this
+   * guard; the delete path was missing it. */
   for (tmp = object_list; tmp; tmp = tmp->next) {
-    GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) > rnum);
+    GET_OBJ_RNUM(tmp) -= (GET_OBJ_RNUM(tmp) != NOTHING && GET_OBJ_RNUM(tmp) > rnum);
   }
 
   /* The same leak delete_mobile() has, for the same reason: read_object()
