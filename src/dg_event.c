@@ -33,6 +33,11 @@
 /** The mud specific queue of events. */
 static struct dg_queue *event_q;
 
+/* The event event_process() is currently inside, and whether something
+ * cancelled it from within its own function.  See event_cancel(). */
+static struct event *executing_event = NULL;
+static int executing_event_cancelled = FALSE;
+
 
 /** Initializes the main event queue event_q.
  * @post The main event queue, event_q, has been created and initialized.
@@ -80,6 +85,19 @@ void event_cancel(struct event *event)
     return;
     }
 
+  if (event == executing_event) {
+    /* The function on the stack belongs to this event.  Freeing it here
+     * would leave event_process() to re-enqueue it or free it again when
+     * that function returns.  Release what it owns and let event_process()
+     * do the rest. */
+    if (event->event_obj) {
+      cleanup_event_obj(event);
+      event->event_obj = NULL;
+    }
+    executing_event_cancelled = TRUE;
+    return;
+  }
+
   if (!event->q_el) {
     log("SYSERR:  Attempted to cancel a non-NULL unqueued event, freeing anyway");
   } else
@@ -122,8 +140,29 @@ void event_process(void)
      * event function. */
     the_event->q_el = NULL;
 
+    /* And say which event that is, so event_cancel() can tell.  A NULL
+     * q_el used to be its only signal, and it reads that as "unqueued,
+     * free it anyway" -- which frees the event whose function is on the
+     * stack, leaving the lines below to re-enqueue it or free it a second
+     * time.  extract_char() reaches event_cancel() through
+     * clear_char_event_list(), and a character can be extracted from
+     * inside an event function. */
+    executing_event = the_event;
+    executing_event_cancelled = FALSE;
+
     /* call event func, reenqueue event if retval > 0 */
-    if ((new_time = (the_event->func)(the_event->event_obj)) > 0)
+    new_time = (the_event->func)(the_event->event_obj);
+
+    executing_event = NULL;
+
+    if (executing_event_cancelled)
+    {
+      /* Cancelled from inside its own function.  event_cancel() released
+       * what the event owned and left the event itself for here. */
+      executing_event_cancelled = FALSE;
+      free(the_event);
+    }
+    else if (new_time > 0)
       the_event->q_el = queue_enq(event_q, the_event, new_time + pulse);
     else
     {
@@ -142,6 +181,11 @@ void event_process(void)
 long event_time(struct event *event)
 {
   long when;
+
+  /* q_el is NULL while event_process() is inside this event's function,
+   * which is exactly when something beneath it might ask. */
+  if (!event || !event->q_el)
+    return (0);
 
   when = queue_elmt_key(event->q_el);
 
