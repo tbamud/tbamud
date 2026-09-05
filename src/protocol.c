@@ -120,7 +120,11 @@ static const char s_Gauge5[]  = "\005\002Opponent\002darkred\002OPPONENT_HEALTH\
 #define STRING_READ_ONLY           true,  false, false, false, -1, -1,  0, NULL
 #define BOOLEAN_SET_TO(x)          false, true,  false, false,  0,  1,  x, NULL
 #define STRING_WITH_LENGTH_OF(x,y) true,  true,  false, false,  x,  y,  0, NULL
-#define STRING_WRITE_ONCE(x,y)     true,  true,  true,  false, -1, -1,  0, NULL
+/* STRING_WRITE_ONCE took a minimum and a maximum length and then threw
+ * both away, hardcoding the -1, -1 that the macros with no length use.  A
+ * Max of -1 makes ExecuteMSDPPair() call malloc(0) and then write the
+ * terminator into it. */
+#define STRING_WRITE_ONCE(x,y)     true,  true,  true,  false,  x,  y,  0, NULL
 #define STRING_GUI(x)              true,  false, false, true,  -1, -1,  0, x
 
 static variable_name_t VariableNameTable[eMSDP_MAX+1] = 
@@ -1714,7 +1718,7 @@ static void PerformSubnegotiation( descriptor_t *apDescriptor, char aCmd, char *
 
             for ( ; apData[j] != '\0' && i < MaxClientLength; ++j )
             {
-               if ( isprint(apData[j]) )
+               if ( isprint((unsigned char)apData[j]) )
                   pClientName[i++] = apData[j];
             }
             pClientName[i] = '\0';
@@ -2129,10 +2133,13 @@ static void ExecuteMSDPPair( descriptor_t *apDescriptor, const char *apVariable,
                         {
                            for ( j = 0; j < VariableNameTable[i].Max && *apValue != '\0'; ++apValue )
                            {
-                              if ( isprint(*apValue) )
+                              if ( isprint((unsigned char)*apValue) )
                                  pBuffer[j++] = *apValue;
                            }
-                           pBuffer[j++] = '\0';
+                           /* The terminator is not part of the length the
+                            * test below is about: counting it made a Min
+                            * of 1 accept an empty value. */
+                           pBuffer[j] = '\0';
 
                            if ( j >= VariableNameTable[i].Min )
                            {
