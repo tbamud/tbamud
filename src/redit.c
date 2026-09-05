@@ -265,7 +265,16 @@ void redit_save_internally(struct descriptor_data *d)
   int j, room_num, new_room = FALSE;
   struct descriptor_data *dsc;
 
-  if (OLC_ROOM(d)->number == NOWHERE)
+  /* Ask whether the vnum exists rather than reading a field the working
+   * copy may have brought with it.  redit_setup_new() sets number to
+   * NOWHERE, but redit_setup_existing() does *room = world[real_num],
+   * which brings the source room's vnum along -- so redit on a fresh vnum
+   * followed by W) Copy saved a genuinely new room with new_room false,
+   * skipping the loop at the foot of this function that shifts every other
+   * builder's zedit and redit rnums up past the insertion.  Their next save
+   * wrote rnums one short.  oedit and medit ask real_object() and
+   * real_mobile() the same way. */
+  if (real_room(OLC_NUM(d)) == NOWHERE)
     new_room = TRUE;
 
   OLC_ROOM(d)->number = OLC_NUM(d); 
