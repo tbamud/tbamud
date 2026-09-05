@@ -2560,7 +2560,10 @@ ACMD(do_show)
     if (self)
       print_zone_to_buf(buf, sizeof(buf), world[IN_ROOM(ch)].zone, 1);
     else if (*value && is_number(value)) {
-      for (zvn = atoi(value), zrn = 0; zone_table[zrn].number != zvn && zrn <= top_of_zone_table; zrn++);
+      /* The bound has to be tested before the table is read: on a number no
+       * zone has, the old order read zone_table[top_of_zone_table + 1] and
+       * only then noticed it had run off the end. */
+      for (zvn = atoi(value), zrn = 0; zrn <= top_of_zone_table && zone_table[zrn].number != zvn; zrn++);
       if (zrn <= top_of_zone_table)
 	print_zone_to_buf(buf, sizeof(buf), zrn, 1);
       else {
@@ -2573,17 +2576,32 @@ ACMD(do_show)
         builder = 1;
       for (len = zrn = 0; zrn <= top_of_zone_table; zrn++) {
         if (*value) {
-          buf2 = strtok(strdup(zone_table[zrn].builders), " ");
-          while (buf2) {
+          /* strtok() writes into the string it is given, so the builder list
+           * has to be copied -- and the copy has to be freed again, which the
+           * strtok(strdup(...)) this replaces never did. */
+          char *builders = strdup(zone_table[zrn].builders);
+          bool found = FALSE;
+
+          /* strtok(NULL, ...) means "carry on with the last string I gave
+           * you", so entering the loop with a failed strdup would resume
+           * the walk through the copy the previous zone has just freed. */
+          if (builders == NULL) {
+            log("SYSERR: do_show: cannot copy the builder list of zone %d.",
+                zone_table[zrn].number);
+            continue;
+          }
+
+          for (buf2 = strtok(builders, " "); buf2; buf2 = strtok(NULL, " "))
             if (!str_cmp(buf2, value)) {
-              if (builder == 1)
-                builder++;
+              found = TRUE;
               break;
-          }
-            buf2 = strtok(NULL, " ");
-          }
-          if (!buf2)
-	    continue;
+            }
+          free(builders);
+
+          if (!found)
+            continue;
+          if (builder == 1)
+            builder++;
 	}
 	nlen = print_zone_to_buf(buf + len, sizeof(buf) - len, zrn, 0);
         if (len + nlen >= sizeof(buf))
