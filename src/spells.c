@@ -173,12 +173,14 @@ static int isname_obj(char *search, char *list)
   int match = 1;
   int i;
 
-  /* Force to lowercase for string comparisons */
-  sprintf(searchname, "%s", search);
+  /* Force to lowercase for string comparisons.  `search` reaches here from
+   * cast_arg2, which is MAX_INPUT_LENGTH and holds whatever the player
+   * typed after the spell name, so it does not fit searchname[128]. */
+  strlcpy(searchname, search, sizeof(searchname));
   for (i = 0; searchname[i]; i++)
     searchname[i] = LOWER(searchname[i]);
 
-  sprintf(namelist, "%s", list);
+  strlcpy(namelist, list, sizeof(namelist));
   for (i = 0; namelist[i]; i++)
     namelist[i] = LOWER(namelist[i]);
 
