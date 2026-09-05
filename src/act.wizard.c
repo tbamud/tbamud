@@ -1994,19 +1994,51 @@ void clean_llog_entries(void) {
   /* skip first entries */
   fseek(ofp,(recs-MAX_LAST_ENTRIES)* (sizeof(struct last_entry)),SEEK_CUR);
 
-  /* copy the rest */
-  while (!feof(ofp)) {
-    if(fread(&mlast,sizeof(struct last_entry),1,ofp) != 1 ) {
-      log("clean_llog_entries: read error or unexpected end of file.");
-      return;
-    }
+  /* Copy the rest.  Reaching the end of the file is how this loop is
+   * meant to finish: feof() is not set until a read has already run out
+   * of file, so testing it first sends the last, successful iteration
+   * round once more, and the read that then fails is not an error --
+   * it is the end.  Reporting it as one returned past the rename that is
+   * the point of the whole function.  A real read error is a different
+   * thing and has to keep the file it could not read. */
+  while (fread(&mlast,sizeof(struct last_entry),1,ofp) == 1)
     fwrite(&mlast,sizeof(struct last_entry),1,nfp);
+
+  if (ferror(ofp)) {
+    log("SYSERR: clean_llog_entries: error reading %s: %s", LAST_FILE, strerror(errno));
+    fclose(ofp);
+    fclose(nfp);
+    remove("etc/nlast");
+    return;
   }
   fclose(ofp);
-  fclose(nfp);
 
+  /* The copy is only worth swapping in if all of it reached the disk.
+   * Ask the stream first -- fclose() answers for the final flush, so a
+   * write that failed earlier and left nothing pending would not show up
+   * there -- and then ask the close. */
+  if (ferror(nfp)) {
+    log("SYSERR: clean_llog_entries: error writing etc/nlast.");
+    fclose(nfp);
+    remove("etc/nlast");
+    return;
+  }
+  if (fclose(nfp)) {
+    log("SYSERR: clean_llog_entries: error writing etc/nlast: %s", strerror(errno));
+    remove("etc/nlast");
+    return;
+  }
+
+  /* remove() before rename() is what the rest of the tree does, because
+   * Windows will not rename onto a name that exists.  It does mean the
+   * old file is gone before the new one is in place, so a rename that
+   * fails here leaves no last file at all and the trimmed copy sitting
+   * under the wrong name -- worth a line in the log, given the whole
+   * point of the function is to replace a good file with this one. */
   remove(LAST_FILE);
-  rename("etc/nlast", LAST_FILE);
+  if (rename("etc/nlast", LAST_FILE))
+    log("SYSERR: clean_llog_entries: cannot put etc/nlast in place as %s: %s",
+        LAST_FILE, strerror(errno));
 }
 
 /* debugging stuff, if you wanna see the whole file */
