@@ -600,8 +600,13 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
                           QCYN, count_color_chars(world[i].name)+44, world[i].name, QNRM,
                           world[i].proto_script ? "[TRIG] " : ""
                           );
-      if (nlen < 0 || len + nlen >= sizeof(buf))
+      if (nlen < 0 || len + nlen >= sizeof(buf)) {
+        /* snprintf() has already written as much of the line as fits and
+         * terminated it.  Cut the buffer back to the last complete line,
+         * or page_string() below shows the fragment anyway. */
+        buf[len] = '\0';
         break;
+      }
       len += nlen;
 
       for (j = 0; j < DIR_COUNT; j++) {
@@ -613,15 +618,19 @@ static void list_rooms(struct char_data *ch, zone_rnum rnum, room_vnum vmin, roo
         if (world[W_EXIT(i, j)->to_room].zone != world[i].zone)
         {
           nlen = snprintf(buf + len, sizeof(buf) - len, "(%s%d%s)", QYEL, world[W_EXIT(i, j)->to_room].number, QNRM);
-          if (nlen < 0 || len + nlen >= sizeof(buf))
+          if (nlen < 0 || len + nlen >= sizeof(buf)) {
+            buf[len] = '\0';
             break;
+          }
           len += nlen;
         }
       }
 
       nlen = snprintf(buf + len, sizeof(buf) - len, "\r\n");
-      if (nlen < 0 || len + nlen >= sizeof(buf))
+      if (nlen < 0 || len + nlen >= sizeof(buf)) {
+        buf[len] = '\0';
 		break;
+      }
       len += nlen;
     }
   }
