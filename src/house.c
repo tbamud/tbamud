@@ -709,7 +709,7 @@ static void hcontrol_convert_houses(struct char_data *ch)
 static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
-	char infile[MAX_INPUT_LENGTH], backup[MAX_INPUT_LENGTH], *outfile;
+	char infile[MAX_INPUT_LENGTH], backup[MAX_INPUT_LENGTH + 8], *outfile;
 	char probe[32], *q;
 	struct obj_file_elem object;
 	struct obj_data *tmp;
