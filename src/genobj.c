@@ -288,10 +288,42 @@ int save_objects(zone_rnum zone_num)
 
   /* Write the final line, close the file. */
   fprintf(fp, "$~\n");
-  fclose(fp);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated object file over a good one.
+   * This is the shape genqst.c:383-405 already uses. */
+  if (fflush(fp) == EOF || ferror(fp)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing object file %s.", filename);
+    fclose(fp);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
+  if (fclose(fp) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing object file %s.", filename);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
   snprintf(buf, sizeof(buf), "%s/%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
-  remove(buf);
-  rename(filename, buf);
+  /* rename() replaces the destination outright on POSIX, so the old file
+   * is never briefly absent; the Windows C runtime refuses a name that
+   * already exists, which is what the retry is for.  dg_olc.c:805-807
+   * installs trigger files the same way. */
+  if (rename(filename, buf)) {
+    remove(buf);
+    if (rename(filename, buf)) {
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not put the object file %s in place.", buf);
+      remove(filename);
+      return FALSE;
+    }
+  }
 
   if (in_save_list(zone_table[zone_num].number, SL_OBJ))
     remove_from_save_list(zone_table[zone_num].number, SL_OBJ);
