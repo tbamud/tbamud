@@ -966,8 +966,22 @@ static void load_affects(FILE *fl, struct char_data *ch)
   i = 0;
   do {
     new_affect(&af);
-    get_line(fl, line, sizeof(line));
+    /* As in load_skills: without this the loop never ends, and each turn
+     * of it calls affect_to_char(), so the list grows until memory runs
+     * out rather than merely hanging. */
+    if (!get_line(fl, line, sizeof(line)))
+      break;
     n_vars = sscanf(line, "%d %d %d %d %d %d %d %d", &num, &num2, &num3, &num4, &num5, &num6, &num7, &num8);
+    if (n_vars < 1)
+      break;
+    /* af.spell is later used to index spell_info[]; MAX_SKILLS is the
+     * range this file already uses for skills and spells, and is inside
+     * that array. */
+    if (num > MAX_SKILLS) {
+      log("SYSERR: load_affects: spell %d out of range in %s's pfile", num,
+          GET_NAME(ch) ? GET_NAME(ch) : "a player");
+      continue;
+    }
     if (num > 0) {
       af.spell = num;
       af.duration = num2;
@@ -996,10 +1010,21 @@ static void load_skills(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    get_line(fl, line, sizeof(line));
-    sscanf(line, "%d %d", &num, &num2);
-      if (num != 0)
-	GET_SKILL(ch, num) = num2;
+    /* get_line() returns 0 at end of file and leaves the buffer as it was,
+     * so a pfile whose skill list lost its terminator would re-parse the
+     * previous line for ever.  The MUD is single threaded: that is the whole
+     * game hung on one player's login. */
+    if (!get_line(fl, line, sizeof(line)))
+      break;
+    if (sscanf(line, "%d %d", &num, &num2) != 2)
+      break;
+    /* num indexes skills[MAX_SKILLS + 1] and arrives straight out of the
+     * file, so it has to be inside the array before it is written to. */
+    if (num > 0 && num <= MAX_SKILLS)
+      GET_SKILL(ch, num) = num2;
+    else if (num != 0)
+      log("SYSERR: load_skills: skill %d out of range in %s's pfile", num,
+          GET_NAME(ch) ? GET_NAME(ch) : "a player");
   } while (num != 0);
 }
 
@@ -1009,8 +1034,13 @@ void load_quests(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    get_line(fl, line, sizeof(line));
-    sscanf(line, "%d", &num);
+    /* As in load_skills: end of file has to end the loop, or this one
+     * appends the same quest to the list until the process runs out of
+     * memory. */
+    if (!get_line(fl, line, sizeof(line)))
+      break;
+    if (sscanf(line, "%d", &num) != 1)
+      break;
     if (num != NOTHING)
       add_completed_quest(ch, num);
   } while (num != NOTHING);
