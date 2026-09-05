@@ -703,6 +703,14 @@ static int perform_complex_alias(struct txt_q *input_q, char *orig, struct alias
       write_point = buf;
     } else if (*temp == ALIAS_VAR_CHAR) {
       temp++;
+      /* A replacement ending in a bare '$' leaves nothing for temp to point
+       * at.  Every branch below treats the '$' as an introducer and writes
+       * only what the code after it stands for, so there is nothing to write
+       * here -- but the last of them copied the terminator into the output
+       * buffer, and the loop's own temp++ then stepped over it and carried on
+       * reading whatever followed the replacement in memory. */
+      if (!*temp)
+        break;
       if ((num = *temp - '1') < num_of_tokens && num >= 0) {
         if ((write_point - buf) + strlen(tokens[num]) >= MAX_RAW_INPUT_LENGTH)
           goto overflow;
