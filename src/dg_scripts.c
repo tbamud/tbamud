@@ -1480,7 +1480,11 @@ static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
 char *matching_quote(char *p)
 {
   for (p++; *p && (*p != '"'); p++) {
-    if (*p == '\\')
+    /* Only step over the escaped character if there is one.  On a
+     * backslash immediately before the terminator this lands on the
+     * terminator, and the loop's own p++ then carries the scan past the
+     * end of the string. */
+    if (*p == '\\' && p[1])
       p++;
   }
 
