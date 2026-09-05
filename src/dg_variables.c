@@ -589,8 +589,15 @@ void find_replacement(void *go, struct script_data *sc, trig_data *trig,
     if (c) {
       if (!str_cmp(field, "global")) { /* get global of something else */
         if (IS_NPC(c) && c->script) {
+          /* The callee dereferences `field` immediately, so it cannot be
+           * given NULL; "" is what it wants here anyway -- an empty field
+           * means "return the variable's own value", which is the whole
+           * point of %<char>.global(<var>)%.  And it has to return: the
+           * line below sets *str to a marker and would otherwise throw
+           * away the value that was just fetched. */
           find_replacement(go, c->script, NULL, MOB_TRIGGER,
-            subfield, NULL, NULL, str, slen);
+            subfield, "", NULL, str, slen);
+          return;
         }
       }
       /* set str to some 'non-text' first */
