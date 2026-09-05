@@ -709,12 +709,31 @@ static void hcontrol_convert_houses(struct char_data *ch)
 static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
-	char infile[MAX_INPUT_LENGTH], *outfile;
+	char infile[MAX_INPUT_LENGTH], backup[MAX_INPUT_LENGTH + 8], *outfile;
 	struct obj_file_elem object;
 	struct obj_data *tmp;
+	struct stat backup_st;
 	int i, j=0, skipped=0;
 
   House_get_filename(vnum, infile, sizeof(infile));
+	snprintf(backup, sizeof(backup), "%s.bin", infile);
+
+	/* A house whose binary original is already set aside has been through
+	 * this once.  Running the command again would read the converted ascii
+	 * file as though it were binary and rename the result over that
+	 * original -- the one copy of the house that cannot be rebuilt.
+	 *
+	 * Ask stat() rather than opening it.  Opening tells us less and costs
+	 * more: a named pipe left at this name answers open(O_RDONLY) by
+	 * waiting for a writer that never comes, which stops the whole MUD,
+	 * and a directory there answers it successfully, which would report a
+	 * house converted that is still binary.  Only a regular file is a
+	 * backup. */
+	if (stat(backup, &backup_st) == 0 && S_ISREG(backup_st.st_mode))
+	{
+		send_to_char(ch, "...already converted\r\n");
+		return (1);
+	}
 
 	CREATE(outfile, char, strlen(infile)+7);
 	sprintf(outfile, "%s.ascii", infile);
@@ -799,6 +818,26 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 		return (0);
 	}
 
+	/* The converted file has to take the place of the one it was made
+	 * from, or nothing will ever read it: House_load() opens <vnum>.house
+	 * and only that.  Keep the original beside it as <vnum>.house.bin, so
+	 * a conversion that turned out badly can be undone by moving one file
+	 * back. */
+	if (rename(infile, backup))
+	{
+		send_to_char(ch, "...cannot set the original aside; left it alone\r\n");
+		remove(outfile);
+		free(outfile);
+		return (0);
+	}
+	if (rename(outfile, infile))
+	{
+		send_to_char(ch, "...cannot put the converted file in place\r\n");
+		rename(backup, infile);
+		remove(outfile);
+		free(outfile);
+		return (0);
+	}
 
 	free(outfile);
 
