@@ -1382,8 +1382,14 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
   char *lp = line;
   char *rp = ret;
   char *wp;
-  /* Last byte each buffer may be written to, leaving room for the NUL. */
-  const char *lend = line + sizeof(line) - 1;
+  /* Where content may be written to in each buffer.  line stops five bytes
+   * short of its end so that the sequence that closes a line always fits:
+   * the longest is 	 n  
+ and the NUL.  Without that reservation a
+   * nearly-full line would have its terminator dropped by the same guards
+   * that stop the overflow, and two lines of the box would run together
+   * instead. */
+  const char *lend = line + sizeof(line) - 6;
   const char *rend = ret + sizeof(ret) - 1;
   int wlen = 0, llen = 0, lcount = 0;
   char last_color='n';
