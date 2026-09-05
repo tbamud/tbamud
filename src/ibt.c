@@ -455,7 +455,7 @@ ACMD(do_ibt)
 {
   char arg[MAX_STRING_LENGTH], arg2[MAX_STRING_LENGTH];
   char buf[MAX_STRING_LENGTH], *arg_text, imp[30], timestr[128];
-  int i, num_res, num_unres;
+  int i, num_res, num_unres, nlen;
   size_t len = 0;
   IBT_DATA *ibtData, *first_ibt;
   int ano=0;
@@ -573,10 +573,10 @@ ACMD(do_ibt)
 
         if (IBT_FLAGGED(ibtData, IBT_RESOLVED)) {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
-            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d|%s%s\r\n",
+            nlen = snprintf(buf + len, sizeof(buf) - len, "%s%s%3d|%s%s\r\n",
                                   imp, QGRN, i, ibtData->text, QNRM);
           } else {
-            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+            nlen = snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
                                   imp, QGRN, i, QGRN,
                                   QGRN, ibtData->name, QGRN,
                                   QGRN, ibtData->room, QGRN,
@@ -586,11 +586,11 @@ ACMD(do_ibt)
           num_res++;
         } else if (IBT_FLAGGED(ibtData, IBT_INPROGRESS)) {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
-            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
+            nlen = snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QYEL, i, QGRN,
                                   QYEL, ibtData->text, QNRM);
           } else {
-            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+            nlen = snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
                                   imp, QYEL, i, QGRN,
                                   QYEL, ibtData->name, QGRN,
                                   QYEL, ibtData->room, QGRN,
@@ -600,11 +600,11 @@ ACMD(do_ibt)
           num_unres++;
         } else {
           if (GET_LEVEL(ch) < LVL_IMMORT) {
-            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
+            nlen = snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
                                   QRED, ibtData->text, QNRM);
           } else {
-            len += snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
+            nlen = snprintf(buf + len, sizeof(buf) - len, "%s%s%3d%s|%s%-12s%s|%s%6d%s|%s%5d%s|%s%s%s\r\n",
                                   imp, QRED, i, QGRN,
                                   QRED, ibtData->name, QGRN,
                                   QRED, ibtData->room, QGRN,
@@ -613,11 +613,25 @@ ACMD(do_ibt)
           }
           num_unres++;
         }
-        if (len > sizeof(buf))
+        /* snprintf() returns the length it wanted to write, so adding it
+         * blind would carry len past sizeof(buf): buf + len would then be
+         * off the end of the array and sizeof(buf) - len would underflow
+         * into a huge size_t, making the next call an unbounded write.
+         * Drop the line that does not fit rather than keep half of it --
+         * every line here ends in a colour code, and half of one is a
+         * broken escape sequence on the player's screen. */
+        if (nlen < 0 || len + nlen >= sizeof(buf)) {
+          /* snprintf() has already written as much of the line as fits and
+           * terminated it.  Cut the buffer back to the last complete line,
+           * or page_string() below prints the fragment -- which is the
+           * half-written colour code this is meant to avoid. */
+          buf[len] = '\0';
           break;
+        }
+        len += nlen;
       }
       if ((num_res + num_unres) > 0) {
-        len += snprintf(buf + len, sizeof(buf) - len,
+        nlen = snprintf(buf + len, sizeof(buf) - len,
                 "\n\r%s%d %ss in file. %s%d%s resolved, %s%d%s unresolved%s\r\n"
                 "%s%ss in %sRED%s are unresolved %ss.\r\n"
                 "%s%ss in %sYELLOW%s are in-progress %ss.\r\n"
@@ -626,11 +640,28 @@ ACMD(do_ibt)
                 QCYN, ibt_types[subcmd], QRED, QCYN, CMD_NAME,
                 QCYN, ibt_types[subcmd], QYEL, QCYN, CMD_NAME,
                 QCYN, ibt_types[subcmd], QGRN, QCYN, CMD_NAME);
+        if (nlen >= 0 && len + nlen < sizeof(buf))
+          len += nlen;
+        else
+          buf[len] = '\0';
       } else {
-        len += snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
+        /* Nothing was listed on this path -- every len += in the loop is
+         * paired with one of the counters -- so len is the heading alone and
+         * this cannot overshoot today.  Written the same way as the three
+         * above it regardless, so that the buffer staying in range is visible
+         * here rather than resting on a property of two counters. */
+        nlen = snprintf(buf + len, sizeof(buf) - len, "No %ss have been found that were reported by you!\r\n", CMD_NAME);
+        if (nlen >= 0 && len + nlen < sizeof(buf))
+          len += nlen;
+        else
+          buf[len] = '\0';
       }
       if (GET_LEVEL(ch) >= LVL_GRGOD) {
-        len += snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
+        nlen = snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s remove, resolve or edit to change the list..%s\r\n", QCYN, CMD_NAME, QNRM);
+        if (nlen >= 0 && len + nlen < sizeof(buf))
+          len += nlen;
+        else
+          buf[len] = '\0';
       }
       snprintf(buf + len, sizeof(buf) - len, "%sYou may use %s%s show <number>%s to see more indepth about the %s.%s\r\n", QCYN, QYEL, CMD_NAME, QCYN, CMD_NAME, QNRM);
     } else {
