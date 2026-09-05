@@ -725,7 +725,9 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	if ((in = fopen(backup, "rb")) != NULL)
 	{
 		fclose(in);
-		send_to_char(ch, "...already converted\r\n");
+		/* No newline: hcontrol_convert_houses() writes "...done" after any
+		 * non-zero return, and the whole line is one house. */
+		send_to_char(ch, "...already converted");
 		return (1);
 	}
 
@@ -758,7 +760,9 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	 * zero byte, which is none of the three. */
 	if (fgets(probe, sizeof(probe), in) != NULL && *probe == '#')
 	{
-		for (q = probe + 1; isdigit(*q); q++);
+		/* Cast: this is deliberately reading a file that may be binary, and
+		 * isdigit() of a negative char is undefined where char is signed. */
+		for (q = probe + 1; isdigit((unsigned char)*q); q++);
 		if (q > probe + 1 && (*q == '\n' || *q == '\r') &&
 		    fgets(probe, sizeof(probe), in) != NULL &&
 		    (*probe == '#' || *probe == '$' ||
@@ -800,9 +804,12 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
     if (!objsave_save_obj_record(tmp, out, i))
     {
       send_to_char(ch, "...write error in house rent file.\r\n");
-      free(outfile);
       fclose(in);
       fclose(out);
+      /* After the close: Windows will not remove a file that is open,
+       * and the paths below already do it in this order. */
+      remove(outfile);
+      free(outfile);
       return (0);
     }
     /* Obj_from_store() builds the object with read_object(), which puts
@@ -815,9 +822,10 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
   if (ferror(in)) {
     perror("SYSERR: Reading house file in House_load");
     send_to_char(ch, "...read error in house rent file.\r\n");
-    free(outfile);
     fclose(in);
     fclose(out);
+    remove(outfile);
+    free(outfile);
     return (0);
   }
 
