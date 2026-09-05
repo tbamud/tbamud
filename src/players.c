@@ -999,7 +999,14 @@ static void load_affects(FILE *fl, struct char_data *ch)
         if (num5 > 0 && num5 < NUM_AFF_FLAGS)  /* Ignore invalid values */
           SET_BIT_AR(af.bitvector, num5);
       } else {
+        /* Not a shape this format has.  sscanf leaves the fields it could
+         * not fill alone, so duration, modifier and location would be
+         * whatever the record before this one put there -- an affect
+         * wearing the previous affect's values.  It was logged and then
+         * applied regardless.  build_player_index() above refuses a short
+         * record for exactly this reason. */
         log("SYSERR: Invalid affects in pfile (%s), expecting 5 or 8 values", GET_NAME(ch));
+        continue;
       }
       affect_to_char(ch, &af);
       i++;
@@ -1013,10 +1020,12 @@ static void load_skills(FILE *fl, struct char_data *ch)
   char line[MAX_INPUT_LENGTH + 1];
 
   do {
-    /* get_line() returns 0 at end of file and leaves the buffer as it was,
-     * so a pfile whose skill list lost its terminator would re-parse the
-     * previous line for ever.  The MUD is single threaded: that is the whole
-     * game hung on one player's login. */
+    /* get_line() answers 0 at end of file, and its contract leaves the
+     * buffer unspecified when it does.  Ignoring that return meant parsing
+     * that buffer again -- and because sscanf leaves what it cannot fill
+     * alone, num kept the value that ended the previous line, so a pfile
+     * whose skill list lost its terminator never left this loop.  The MUD
+     * is single threaded: that is the whole game hung on one login. */
     if (!get_line(fl, line, sizeof(line)))
       break;
     if (sscanf(line, "%d %d", &num, &num2) != 2)
