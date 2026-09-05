@@ -71,6 +71,19 @@ static void obj_log(obj_data *obj, const char *format, ...)
 }
 
 /* returns the real room number that the object or object's carrier is in */
+/* Is obj inside container, at any depth?  extract_obj() is recursive, so
+ * anything holding the running object must be left alone. */
+static int obj_contains_obj(obj_data *container, obj_data *obj)
+{
+    obj_data *i;
+
+    for (i = obj->in_obj; i; i = i->in_obj)
+        if (i == container)
+            return TRUE;
+
+    return FALSE;
+}
+
 room_rnum obj_room(obj_data *obj)
 {
     if (IN_ROOM(obj) != NOWHERE)
@@ -366,7 +379,12 @@ static OCMD(do_opurge)
 
         for (o = world[rm].contents; o; o = next_obj ) {
            next_obj = o->next_content;
-           if (o != obj)
+           /* extract_obj() frees an object's contents along with it, so
+            * skipping obj alone is not enough: the running object may be
+            * inside one of these, and freeing that container frees obj --
+            * and the trigger executing out of it -- while this loop and
+            * script_driver are still standing on both. */
+           if (o != obj && !obj_contains_obj(o, obj))
              extract_obj(o);
         }
       }
@@ -378,7 +396,11 @@ static OCMD(do_opurge)
     if (!ch) {
       o = get_obj_by_obj(obj, arg);
       if (o) {
-        if (o==obj)
+        /* Purging a container purges what is inside it, so the running
+         * object is gone either way -- named directly, or held by the
+         * thing that was named.  script_driver has to be told in both
+         * cases or it carries on over freed memory. */
+        if (o == obj || obj_contains_obj(o, obj))
           dg_owner_purged = 1;
         extract_obj(o);
       } else
@@ -416,9 +438,21 @@ static OCMD(do_oteleport)
 
     else if (!str_cmp(arg1, "all"))
     {
-        rm = obj_room(obj);
+        /* obj_room() answers NOWHERE for an object that is in no room, on
+         * nobody and in nothing -- which do_omove could leave it as, below.
+         * NOWHERE is 65535, so world[rm].people would be far past the end
+         * of the table.  do_oforce has this test; this did not. */
+        if ((rm = obj_room(obj)) == NOWHERE)
+        {
+            obj_log(obj, "oteleport called by an object that is nowhere");
+            return;
+        }
+
         if (target == rm)
+        {
             obj_log(obj, "oteleport target is itself");
+            return;
+        }
 
         for (ch = world[rm].people; ch; ch = next_ch)
         {
@@ -740,6 +774,7 @@ static OCMD(do_oat)
   struct char_data *ch;
   struct obj_data *object;
   char arg[MAX_INPUT_LENGTH], *command;
+  int saved_purged;
 
   command = any_one_arg(argument, arg);
 
@@ -766,11 +801,25 @@ static OCMD(do_oat)
   if (!(object = read_object(GET_OBJ_VNUM(obj), VIRTUAL)))
     return;
 
+  /* obj_command_interpreter() is called directly here rather than through
+   * script_driver(), so this path owns dg_owner_purged: the command may
+   * purge the object it was given, and leaving the flag set afterwards
+   * would make script_driver abort the *real* object's script and report
+   * the action as failed.  Save it, and use it to decide whether there is
+   * still an object to extract. */
+  saved_purged = dg_owner_purged;
+  dg_owner_purged = 0;
+
   obj_to_room(object, loc);
   obj_command_interpreter(object, command);
 
-  if (object->in_room == loc) 
+  /* Wherever the command left it, it was ours: this is a duplicate made
+   * to carry one command and nothing else.  Testing that it was still in
+   * loc meant a command that moved it left it in the world for good. */
+  if (!dg_owner_purged)
     extract_obj(object);
+
+  dg_owner_purged = saved_purged;
 }
 
 static OCMD(do_omove)
@@ -788,8 +837,15 @@ static OCMD(do_omove)
 
     target = find_obj_target_room(obj, arg1);
 
+    /* No return here meant the object was detached from wherever it was
+     * and then handed to obj_to_room(obj, NOWHERE), which only logs: left
+     * on object_list in no room, on nobody and in nothing, unreachable and
+     * never freed. */
     if (target == NOWHERE)
+    {
         obj_log(obj, "omove target is an invalid room");
+        return;
+    }
 
     // Remove the object from it's current location
     if (obj->carried_by != NULL) {
