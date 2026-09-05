@@ -525,11 +525,17 @@ ACMD(do_qcomm)
 
     if (!IS_NPC(ch) && PRF_FLAGGED(ch, PRF_NOREPEAT))
       send_to_char(ch, "%s", CONFIG_OK);
+    /* act()'s fifth argument is vict_obj, which perform_act() casts to a
+     * char_data * for $N $M $S $E and an obj_data * for $O $P $A.  Passing
+     * the player's own text there means "qsay $N" reads IS_NPC, IN_ROOM and
+     * the rest at struct offsets inside the input buffer, then indexes
+     * world[] with whatever it finds.  There is no victim in a message the
+     * speaker sends to themselves; NULL makes those codes print <NULL>. */
     else if (subcmd == SCMD_QSAY) {
       snprintf(buf, sizeof(buf), "You quest-say, '%s'", argument);
-      act(buf, FALSE, ch, 0, argument, TO_CHAR);
+      act(buf, FALSE, ch, 0, 0, TO_CHAR);
     } else
-      act(argument, FALSE, ch, 0, argument, TO_CHAR);
+      act(argument, FALSE, ch, 0, 0, TO_CHAR);
 
     if (subcmd == SCMD_QSAY)
       snprintf(buf, sizeof(buf), "$n quest-says, '%s'", argument);
