@@ -849,7 +849,12 @@ static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr,
   switch (GET_OBJ_TYPE(obj)) {
   case ITEM_DRINKCON:
     if (GET_OBJ_VAL(obj, 1))
-      snprintf(itemname, sizeof(itemname), "%s of %s", obj->short_description, drinks[GET_OBJ_VAL(obj, 2)]);
+      /* Indexing drinks[] directly, so its "\n" sentinel does not apply --
+       * that is for sprinttype(), which walks to it.  The liquid type has
+       * not been bounded on the way here. */
+      snprintf(itemname, sizeof(itemname), "%s of %s", obj->short_description,
+               drinks[GET_OBJ_VAL(obj, 2) < 0 || GET_OBJ_VAL(obj, 2) >= NUM_LIQ_TYPES ?
+                      LIQ_WATER : GET_OBJ_VAL(obj, 2)]);
     else
       strlcpy(itemname, obj->short_description, sizeof(itemname));
     break;

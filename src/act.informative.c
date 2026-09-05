@@ -609,7 +609,27 @@ static void look_in_obj(struct char_data *ch, char *arg)
         else
         {
           char buf2[MAX_STRING_LENGTH];
-          amt = (GET_OBJ_VAL(obj, 1) * 3) / GET_OBJ_VAL(obj, 0);
+
+          /* Capacity divides here, and nothing has established that it is
+           * not zero.  oedit's drink-container arm takes any integer for
+           * the capacity and the contents both, and check_object() only
+           * compares the two when the capacity is already above zero -- so
+           * it never establishes the thing this line needs.  A capacity of
+           * 0 with anything but 0 in it is SIGFPE and the MUD is gone.
+           *
+           * fullness[] holds four entries and ends in "", not the "\n"
+           * sentinel the string tables use, and a negative amount in the
+           * container makes amt negative. */
+          if (GET_OBJ_VAL(obj, 0) <= 0)
+            amt = 0;
+          else
+            amt = (GET_OBJ_VAL(obj, 1) * 3) / GET_OBJ_VAL(obj, 0);
+
+          if (amt < 0)
+            amt = 0;
+          else if (amt > 3)
+            amt = 3;
+
           sprinttype(GET_OBJ_VAL(obj, 2), color_liquid, buf2, sizeof(buf2));
           send_to_char(ch, "It's %sfull of a %s liquid.\r\n", fullness[amt], buf2);
         }
