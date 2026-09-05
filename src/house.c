@@ -747,13 +747,22 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	 * prototype, and an empty file is written in its place: the house is
 	 * emptied and the command reports success.
 	 *
-	 * An ascii object file opens with '#' and a vnum alone on the line.  A
-	 * binary record opens with its item_number, whose second byte is the
-	 * high half of a small integer and so is not a digit. */
+	 * An ascii object file opens with '#' and a vnum alone on the line,
+	 * and the line after it is another such vnum, the '$~' that ends the
+	 * file, or one of objsave_save_obj_record()'s tags, which are four
+	 * characters and a colon.  A binary record can reach the first of
+	 * those by chance -- item_number 0x3023 through 0x3923 puts '#' and a
+	 * digit in the first two bytes, and a wear position of 10 or 13 puts a
+	 * newline in the third -- so the second line is checked too.  Past the
+	 * newline of such a record lies the high half of that wear position, a
+	 * zero byte, which is none of the three. */
 	if (fgets(probe, sizeof(probe), in) != NULL && *probe == '#')
 	{
 		for (q = probe + 1; isdigit(*q); q++);
-		if (q > probe + 1 && (*q == '\n' || *q == '\r'))
+		if (q > probe + 1 && (*q == '\n' || *q == '\r') &&
+		    fgets(probe, sizeof(probe), in) != NULL &&
+		    (*probe == '#' || *probe == '$' ||
+		     (strlen(probe) > 4 && probe[4] == ':')))
 		{
 			send_to_char(ch, "...already in the ascii format; nothing to convert");
 			fclose(in);
