@@ -315,15 +315,25 @@ void generic_complete_quest(struct char_data *ch)
   struct obj_data *new_obj;
   int happy_qp, happy_gold, happy_exp;
 
+  /* AQ_MOB_FIND calls this once per matching mob in the room, and the first
+   * call clears the quest -- so a second copy of the target mob arrives
+   * here with GET_QUEST(ch) already NOTHING, and real_quest() answers
+   * NOTHING for it.  Every QST_ macro below is a bare aquest_table[rnum].
+   *
+   * The test belongs above the decrement, not after it.  clear_quest()
+   * leaves the counter at 0, so by the line below it has already gone to
+   * -1, and returning from inside the block would leave it there: the
+   * only thing that puts it back is the clear_quest() at the far end of
+   * the same block.  There is nothing to complete, so nothing here should
+   * run at all -- not the decrement and not the save_char() below.
+   *
+   * A quest deleted while a player was on it lands here too, and is left
+   * alone rather than completed out of whatever aquest_table[65535] held.
+   * The player can still 'quest quit'. */
+  if ((rnum = real_quest(vnum)) == NOTHING)
+    return;
+
   if (--GET_QUEST_COUNTER(ch) <= 0) {
-    rnum = real_quest(vnum);
-    /* AQ_MOB_FIND calls this once per matching mob in the room, and the
-     * first call clears the quest -- so a second copy of the target mob
-     * arrives here with GET_QUEST(ch) already NOTHING, and real_quest()
-     * answers NOTHING for it.  Every QST_ macro below is a bare
-     * aquest_table[rnum]. */
-    if (rnum == NOTHING)
-      return;
     if (IS_HAPPYHOUR && IS_HAPPYQP) {
       happy_qp = (int)(QST_POINTS(rnum) * (((float)(100+HAPPY_QP))/(float)100));
       happy_qp = MAX(happy_qp, 0);
