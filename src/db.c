@@ -1029,10 +1029,14 @@ void index_boot(int mode)
     }
   }
 
-  /* Exit if 0 records, unless this is shops */
+  /* Exit if 0 records, unless this is shops or quests: a world may have
+   * neither, and neither is required for the MUD to run. */
   if (!rec_count) {
-    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST)
+    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST) {
+      /* Every other way out of this function closes the index or exits. */
+      fclose(db_index);
       return;
+    }
     log("SYSERR: boot error - 0 records counted in %s/%s.", prefix,
 	index_filename);
     exit(1);
@@ -1897,7 +1901,19 @@ void parse_mobile(FILE *mob_f, int nr)
     letter = *f4;
 
     if(bitsavetodisk) {
-      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 0);
+      /* real_zone_by_thing() answers NOWHERE when the vnum falls outside
+       * every zone's range, and NOWHERE is 65535 -- so this read past the
+       * end of zone_table and queued whatever it found there for saving,
+       * which rewrites the wrong file.  parse_room() cannot reach this
+       * because it has already forced the vnum into the zone it is
+       * reading; nothing makes a mobile or an object do the same. */
+      zone_rnum tzone = real_zone_by_thing(nr);
+
+      if (tzone == NOWHERE)
+        log("SYSERR: %s #%d is in no zone; not queueing it for conversion.",
+            "Mobile", nr);
+      else
+        add_to_save_list(zone_table[tzone].number, SL_MOB);
       converting =TRUE;
     }
 
@@ -2056,7 +2072,19 @@ char *parse_object(FILE *obj_f, int nr)
     GET_OBJ_AFFECT(obj_proto + i)[3] = 0;
 
     if(bitsavetodisk) {
-      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 1);
+      /* real_zone_by_thing() answers NOWHERE when the vnum falls outside
+       * every zone's range, and NOWHERE is 65535 -- so this read past the
+       * end of zone_table and queued whatever it found there for saving,
+       * which rewrites the wrong file.  parse_room() cannot reach this
+       * because it has already forced the vnum into the zone it is
+       * reading; nothing makes a mobile or an object do the same. */
+      zone_rnum tzone = real_zone_by_thing(nr);
+
+      if (tzone == NOWHERE)
+        log("SYSERR: %s #%d is in no zone; not queueing it for conversion.",
+            "Object", nr);
+      else
+        add_to_save_list(zone_table[tzone].number, SL_OBJ);
       converting = TRUE;
     }
 
