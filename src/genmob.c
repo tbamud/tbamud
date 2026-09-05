@@ -352,7 +352,7 @@ int save_mobiles(zone_rnum rznum)
   /* Verify the temporary file is complete before it replaces anything.
    * A failed write reports itself at the flush or the close, the records
    * before it having reached only the stream's buffer, so renaming
-   * without looking put a truncated mobile file over a good one.
+   * without looking would put a truncated mobile file over a good one.
    * This is the shape genqst.c:383-405 already uses. */
   /* The byte count the caller logs.  It was taken and reported whether
    * or not the file had been written; the tests below now return before

@@ -669,7 +669,7 @@ int save_shops(zone_rnum zone_num)
   /* Verify the temporary file is complete before it replaces anything.
    * A failed write reports itself at the flush or the close, the records
    * before it having reached only the stream's buffer, so renaming
-   * without looking put a truncated shop file over a good one.
+   * without looking would put a truncated shop file over a good one.
    * This is the shape genqst.c:383-405 already uses. */
   if (fflush(shop_file) == EOF || ferror(shop_file)) {
     mudlog(BRF, LVL_BUILDER, TRUE,

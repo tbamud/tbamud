@@ -294,13 +294,15 @@ void create_world_index(int znum, const char *type)
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: OLC: Error writing %s.", new_name);
     fclose(newfile);
-    remove(new_name);
+    if (!CONFIG_DEBUG_MODE)
+      remove(new_name);
     return;
   }
   if (fclose(newfile) == EOF) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: OLC: Error closing %s.", new_name);
-    remove(new_name);
+    if (!CONFIG_DEBUG_MODE)
+      remove(new_name);
     return;
   }
 
@@ -508,7 +510,7 @@ int save_zone(zone_rnum zone_num)
   /* Verify the temporary file is complete before it replaces anything.
    * A failed write reports itself at the flush or the close, the records
    * before it having reached only the stream's buffer, so renaming
-   * without looking put a truncated zone file over a good one.
+   * without looking would put a truncated zone file over a good one.
    * This is the shape genqst.c:383-405 already uses. */
   if (fflush(zfile) == EOF || ferror(zfile)) {
     mudlog(BRF, LVL_BUILDER, TRUE,
