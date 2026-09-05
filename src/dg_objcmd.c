@@ -396,7 +396,11 @@ static OCMD(do_opurge)
     if (!ch) {
       o = get_obj_by_obj(obj, arg);
       if (o) {
-        if (o==obj)
+        /* Purging a container purges what is inside it, so the running
+         * object is gone either way -- named directly, or held by the
+         * thing that was named.  script_driver has to be told in both
+         * cases or it carries on over freed memory. */
+        if (o == obj || obj_contains_obj(o, obj))
           dg_owner_purged = 1;
         extract_obj(o);
       } else
