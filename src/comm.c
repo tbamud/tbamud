@@ -3017,8 +3017,8 @@ static void msdp_update( void )
            * fights, so one player attacking such a mob divides by zero and
            * takes the whole server down. */
           int max_hit = GET_MAX_HIT(pOpponent);
-          int hit_points = max_hit > 0 ? (GET_HIT(pOpponent) * 100) / max_hit : 0;
-          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, hit_points );
+          int health_percent = max_hit > 0 ? (GET_HIT(pOpponent) * 100) / max_hit : 0;
+          MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH, health_percent );
           MSDPSetNumber( d, eMSDP_OPPONENT_HEALTH_MAX, 100 );
           MSDPSetNumber( d, eMSDP_OPPONENT_LEVEL, GET_LEVEL(pOpponent) );
           MSDPSetString( d, eMSDP_OPPONENT_NAME, PERS(pOpponent, ch) );
