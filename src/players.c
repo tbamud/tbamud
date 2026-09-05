@@ -22,6 +22,7 @@
 #include "config.h" /* for pclean_criteria[] */
 #include "dg_scripts.h" /* To enable saving of player variables to disk */
 #include "quest.h"
+#include "spells.h" /* for TOP_SPELL_DEFINE */
 
 #define LOAD_HIT	0
 #define LOAD_MANA	1
@@ -974,10 +975,12 @@ static void load_affects(FILE *fl, struct char_data *ch)
     n_vars = sscanf(line, "%d %d %d %d %d %d %d %d", &num, &num2, &num3, &num4, &num5, &num6, &num7, &num8);
     if (n_vars < 1)
       break;
-    /* af.spell is later used to index spell_info[]; MAX_SKILLS is the
-     * range this file already uses for skills and spells, and is inside
-     * that array. */
-    if (num > MAX_SKILLS) {
+    /* An affect's spell number runs to TOP_SPELL_DEFINE, which is the size
+     * of spell_info[] -- not to MAX_SKILLS, which bounds the skills array
+     * and is a smaller, different thing.  SPELL_DG_AFFECT is 298, so a
+     * player carrying a script-applied affect saves one above MAX_SKILLS
+     * as a matter of course. */
+    if (num > TOP_SPELL_DEFINE) {
       log("SYSERR: load_affects: spell %d out of range in %s's pfile", num,
           GET_NAME(ch) ? GET_NAME(ch) : "a player");
       continue;
