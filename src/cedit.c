@@ -318,9 +318,23 @@ int save_config( IDXTYPE nowhere )
 {
   FILE *fl;
   char buf[MAX_STRING_LENGTH];
+  char *tmp_name;
 
-  if (!(fl = fopen(CONFIG_CONFFILE, "w"))) {
+  /* Build the new file beside the old one and put it in place only once
+   * it is whole.  Opening CONFIG_CONFFILE with "w" truncated the live
+   * configuration before a single line had been written, and neither the
+   * writes nor the close were looked at -- so a save that failed part way
+   * returned TRUE over a config file the next boot would read as far as
+   * the damage and no further. */
+  /* CONFIG_CONFFILE is whatever was passed to -c, so it has no length known
+   * here.  Sizing the scratch name from a fixed buffer would refuse a save
+   * that the plain open would have managed, so take it from the name. */
+  CREATE(tmp_name, char, strlen(CONFIG_CONFFILE) + 5);
+  sprintf(tmp_name, "%s.tmp", CONFIG_CONFFILE); /* sprintf: OK, sized above */
+
+  if (!(fl = fopen(tmp_name, "w"))) {
     perror("SYSERR: save_config");
+    free(tmp_name);
     return (FALSE);
   }
 
@@ -572,10 +586,53 @@ int save_config( IDXTYPE nowhere )
               "debug_mode = %d\n\n",
               CONFIG_DEBUG_MODE);
 
-  fclose(fl);
+  /* ferror() reports a flag the stream has been carrying, possibly from a
+   * write several lines back, and errno is not required to still describe
+   * it -- printing strerror(0) says "Success" in the middle of a failure
+   * message.  Say nothing rather than something untrue. */
+  if (fflush(fl) == EOF || ferror(fl)) {
+    int err = errno;
+
+    if (err)
+      log("SYSERR: save_config: error writing %s: %s", tmp_name, strerror(err));
+    else
+      log("SYSERR: save_config: error writing %s", tmp_name);
+    fclose(fl);
+    remove(tmp_name);
+    free(tmp_name);
+    return (FALSE);
+  }
+
+  if (fclose(fl) == EOF) {
+    int err = errno;
+
+    if (err)
+      log("SYSERR: save_config: error closing %s: %s", tmp_name, strerror(err));
+    else
+      log("SYSERR: save_config: error closing %s", tmp_name);
+    remove(tmp_name);
+    free(tmp_name);
+    return (FALSE);
+  }
+
+  /* rename() replaces the destination outright on POSIX, so the config
+   * file is never briefly absent; the Windows C runtime refuses a name
+   * that already exists, which is what the retry is for.
+   * dg_olc.c:805-807 installs trigger files the same way. */
+  if (rename(tmp_name, CONFIG_CONFFILE)) {
+    remove(CONFIG_CONFFILE);
+    if (rename(tmp_name, CONFIG_CONFFILE)) {
+      log("SYSERR: save_config: could not put %s in place: %s", CONFIG_CONFFILE, strerror(errno));
+      remove(tmp_name);
+      free(tmp_name);
+      return (FALSE);
+    }
+  }
 
   if (in_save_list(NOWHERE, SL_CFG))
     remove_from_save_list(NOWHERE, SL_CFG);
+
+  free(tmp_name);
 
   return (TRUE);
 }
