@@ -397,6 +397,15 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
     MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
     MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
   }
+
+  /* The shift leaves the entry the last message moved out of still
+   * holding that message's heading and slot.  Nothing reads it again --
+   * num_of_msgs no longer counts it -- but board_clear_board() walks
+   * every entry there is and skips only slot -1, so at shutdown it
+   * freed the heading a second time. */
+  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
+  msg_index[board_type][ind].slot_num = -1;
+
   num_of_msgs[board_type]--;
 
   send_to_char(ch, "Message removed.\r\n");
