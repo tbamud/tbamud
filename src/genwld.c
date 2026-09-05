@@ -448,13 +448,44 @@ int save_rooms(zone_rnum rzone)
 
   /* Write the final line and close it. */
   fprintf(sf, "$~\n");
-  fclose(sf);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking put a truncated room file over a good one.
+   * This is the shape genqst.c:383-405 already uses. */
+  if (fflush(sf) == EOF || ferror(sf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing room file %s.", filename);
+    fclose(sf);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
+  if (fclose(sf) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing room file %s.", filename);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
 
   /* Old file we're replacing. */
   snprintf(buf, sizeof(buf), "%s/%d.wld", WLD_PREFIX, zone_table[rzone].number);
 
-  remove(buf);
-  rename(filename, buf);
+  /* rename() replaces the destination outright on POSIX, so the old file
+   * is never briefly absent; the Windows C runtime refuses a name that
+   * already exists, which is what the retry is for.  dg_olc.c:805-807
+   * installs trigger files the same way. */
+  if (rename(filename, buf)) {
+    remove(buf);
+    if (rename(filename, buf)) {
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not put the room file %s in place.", buf);
+      remove(filename);
+      return FALSE;
+    }
+  }
 
   if (in_save_list(zone_table[rzone].number, SL_WLD))
     remove_from_save_list(zone_table[rzone].number, SL_WLD);

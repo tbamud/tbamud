@@ -666,10 +666,42 @@ int save_shops(zone_rnum zone_num)
     }
   }
   fprintf(shop_file, "$~\n");
-  fclose(shop_file);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking put a truncated shop file over a good one.
+   * This is the shape genqst.c:383-405 already uses. */
+  if (fflush(shop_file) == EOF || ferror(shop_file)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing shop file %s.", fname);
+    fclose(shop_file);
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
+  if (fclose(shop_file) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing shop file %s.", fname);
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
   snprintf(oldname, sizeof(oldname), "%s/%d.shp", SHP_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(fname, oldname);
+  /* rename() replaces the destination outright on POSIX, so the old file
+   * is never briefly absent; the Windows C runtime refuses a name that
+   * already exists, which is what the retry is for.  dg_olc.c:805-807
+   * installs trigger files the same way. */
+  if (rename(fname, oldname)) {
+    remove(oldname);
+    if (rename(fname, oldname)) {
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not put the shop file %s in place.", oldname);
+      remove(fname);
+      return FALSE;
+    }
+  }
 
   if (num_shops > 0)
     create_world_index(zone_table[zone_num].number, "shp");

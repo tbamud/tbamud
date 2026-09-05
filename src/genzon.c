@@ -286,11 +286,35 @@ void create_world_index(int znum, const char *type)
     fprintf(newfile, "%s\n", buf);
   }
 
-  fclose(newfile);
   fclose(oldfile);
-  /* Out with the old, in with the new. */
-  remove(old_name);
-  rename(new_name, old_name);
+
+  /* The index names the zone files that will be booted, so a truncated one
+   * silently drops zones from the world at the next reboot. */
+  if (fflush(newfile) == EOF || ferror(newfile)) {
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: OLC: Error writing %s.", new_name);
+    fclose(newfile);
+    remove(new_name);
+    return;
+  }
+  if (fclose(newfile) == EOF) {
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: OLC: Error closing %s.", new_name);
+    remove(new_name);
+    return;
+  }
+
+  /* Out with the old, in with the new.  rename() replaces the destination
+   * outright on POSIX; Windows refuses a name that already exists, hence
+   * the retry.  dg_olc.c:805-807 does the same. */
+  if (rename(new_name, old_name)) {
+    remove(old_name);
+    if (rename(new_name, old_name)) {
+      mudlog(BRF, LVL_IMPL, TRUE,
+             "SYSERR: OLC: Could not put %s in place.", old_name);
+      remove(new_name);
+    }
+  }
 }
 
 void remove_room_zone_commands(zone_rnum zone, room_rnum room_num)
@@ -481,10 +505,42 @@ int save_zone(zone_rnum zone_num)
               ZCMD(zone_num, subcmd).sarg1, ZCMD(zone_num, subcmd).sarg2);
   }
   fputs("S\n$\n", zfile);
-  fclose(zfile);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking put a truncated zone file over a good one.
+   * This is the shape genqst.c:383-405 already uses. */
+  if (fflush(zfile) == EOF || ferror(zfile)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing zone file %s.", fname);
+    fclose(zfile);
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
+  if (fclose(zfile) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing zone file %s.", fname);
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
   snprintf(oldname, sizeof(oldname), "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(fname, oldname);
+  /* rename() replaces the destination outright on POSIX, so the old file
+   * is never briefly absent; the Windows C runtime refuses a name that
+   * already exists, which is what the retry is for.  dg_olc.c:805-807
+   * installs trigger files the same way. */
+  if (rename(fname, oldname)) {
+    remove(oldname);
+    if (rename(fname, oldname)) {
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not put the zone file %s in place.", oldname);
+      remove(fname);
+      return FALSE;
+    }
+  }
 
   if (in_save_list(zone_table[zone_num].number, SL_ZON))
     remove_from_save_list(zone_table[zone_num].number, SL_ZON);

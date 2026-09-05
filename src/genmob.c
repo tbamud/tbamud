@@ -348,11 +348,47 @@ int save_mobiles(zone_rnum rznum)
       log("SYSERR: GenOLC: Error writing mobile #%d.", i);
   }
   fputs("$\n", mobfd);
+
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking put a truncated mobile file over a good one.
+   * This is the shape genqst.c:383-405 already uses. */
+  /* The byte count the caller logs.  It was taken and reported whether
+   * or not the file had been written; the tests below now return before
+   * it is used. */
   written = ftell(mobfd);
-  fclose(mobfd);
+  if (fflush(mobfd) == EOF || ferror(mobfd)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing mobile file %s.", mobfname);
+    fclose(mobfd);
+    if (!CONFIG_DEBUG_MODE)
+      remove(mobfname);
+    return FALSE;
+  }
+
+  if (fclose(mobfd) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing mobile file %s.", mobfname);
+    if (!CONFIG_DEBUG_MODE)
+      remove(mobfname);
+    return FALSE;
+  }
+
   snprintf(usedfname, sizeof(usedfname), "%s%d.mob", MOB_PREFIX, vznum);
-  remove(usedfname);
-  rename(mobfname, usedfname);
+  /* rename() replaces the destination outright on POSIX, so the old file
+   * is never briefly absent; the Windows C runtime refuses a name that
+   * already exists, which is what the retry is for.  dg_olc.c:805-807
+   * installs trigger files the same way. */
+  if (rename(mobfname, usedfname)) {
+    remove(usedfname);
+    if (rename(mobfname, usedfname)) {
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not put the mobile file %s in place.", usedfname);
+      remove(mobfname);
+      return FALSE;
+    }
+  }
 
   if (in_save_list(vznum, SL_MOB))
     remove_from_save_list(vznum, SL_MOB);
