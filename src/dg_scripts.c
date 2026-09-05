@@ -634,8 +634,13 @@ void script_trigger_check(void)
     if (SCRIPT(ch)) {
       sc = SCRIPT(ch);
 
+      /* character_list holds characters that are in no room -- one
+       * between char_from_room() and char_to_room(), for instance --
+       * and IN_ROOM is NOWHERE for them, which is 65535.  A global
+       * trigger still fires; the zone test simply has no zone to ask
+       * about. */
       if (IS_SET(SCRIPT_TYPES(sc), WTRIG_RANDOM) &&
-          (!is_empty(world[IN_ROOM(ch)].zone) ||
+          ((IN_ROOM(ch) != NOWHERE && !is_empty(world[IN_ROOM(ch)].zone)) ||
            IS_SET(SCRIPT_TYPES(sc), WTRIG_GLOBAL)))
         random_mtrigger(ch);
     }
@@ -675,8 +680,13 @@ void check_time_triggers(void)
     if (SCRIPT(ch)) {
       sc = SCRIPT(ch);
 
+      /* character_list holds characters that are in no room -- one
+       * between char_from_room() and char_to_room(), for instance --
+       * and IN_ROOM is NOWHERE for them, which is 65535.  A global
+       * trigger still fires; the zone test simply has no zone to ask
+       * about. */
       if (IS_SET(SCRIPT_TYPES(sc), WTRIG_TIME) &&
-          (!is_empty(world[IN_ROOM(ch)].zone) ||
+          ((IN_ROOM(ch) != NOWHERE && !is_empty(world[IN_ROOM(ch)].zone)) ||
            IS_SET(SCRIPT_TYPES(sc), WTRIG_GLOBAL)))
         time_mtrigger(ch);
     }
@@ -1725,8 +1735,16 @@ static void process_wait(void *go, trig_data *trig, int type, char *cmd,
     /* valid forms of time are 14:30 and 1430 */
     if (sscanf(arg, "until %ld:%ld", &hr, &min) == 2)
       min += (hr * 60);
-    else
+    else if (sscanf(arg, "until %ld", &hr) == 1)
       min = (hr % 100) + ((hr / 100) * 60);
+    else {
+      /* Neither form matched, so hr holds whatever was on the stack.  It
+       * was used anyway, and the pulse count computed from it went to
+       * event_create(). */
+      script_log("Trigger: %s, VNum %d. wait until w/o a time: '%s'",
+              GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), cl->cmd);
+      return;
+    }
 
     /* calculate the pulse of the day of "until" time */
     ntime = (min * SECS_PER_MUD_HOUR * PASSES_PER_SEC) / 60;
@@ -1742,7 +1760,18 @@ static void process_wait(void *go, trig_data *trig, int type, char *cmd,
   }
 
   else {
-    if (sscanf(arg, "%ld %c", &when, &c) == 2) {
+    /* One field is 'wait 30'; two is 'wait 30 s'.  None means the
+     * argument was not a number at all -- most easily a %variable% that
+     * was never set -- and when was used uninitialised. */
+    int fields = sscanf(arg, "%ld %c", &when, &c);
+
+    if (fields < 1) {
+      script_log("Trigger: %s, VNum %d. wait w/o a number: '%s'",
+              GET_TRIG_NAME(trig), GET_TRIG_VNUM(trig), cl->cmd);
+      return;
+    }
+
+    if (fields == 2) {
       if (c == 't')
         when *= PULSES_PER_MUD_HOUR;
       else if (c == 's')
@@ -1972,9 +2001,15 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
 
 struct room_data *dg_room_of_obj(struct obj_data *obj)
 {
+  /* The carriers get the test the object itself already had: a character
+   * between char_from_room() and char_to_room(), or one holding things
+   * before being put in a room at all, is in NOWHERE -- and NOWHERE is
+   * 65535, so world[NOWHERE] is a long way past the end of the table. */
   if (IN_ROOM(obj) != NOWHERE) return &world[IN_ROOM(obj)];
-  if (obj->carried_by)        return &world[IN_ROOM(obj->carried_by)];
-  if (obj->worn_by)           return &world[IN_ROOM(obj->worn_by)];
+  if (obj->carried_by && IN_ROOM(obj->carried_by) != NOWHERE)
+    return &world[IN_ROOM(obj->carried_by)];
+  if (obj->worn_by && IN_ROOM(obj->worn_by) != NOWHERE)
+    return &world[IN_ROOM(obj->worn_by)];
   if (obj->in_obj)            return (dg_room_of_obj(obj->in_obj));
   return NULL;
 }
