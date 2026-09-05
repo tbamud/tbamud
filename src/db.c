@@ -2206,12 +2206,31 @@ static void load_zones(FILE *fl, char *zonename)
   for (tmp = 0; tmp < 3; tmp++)
     get_line(fl, buf, sizeof(buf));
 
-  /* More accurate count. Previous was always 4 or 5 too high. -gg Note that if
-   * a new zone command is added to reset_zone(), this string will need to be
-   * updated to suit. - ae. */
-  while (get_line(fl, buf, sizeof(buf)))
-    if ((strchr("MOPGERDTV", buf[0]) && buf[1] == ' ') || (buf[0] == 'S' && buf[1] == '\0'))
-      num_of_cmds++;
+  /* Count a line for every one the loop below can write, and never fewer.
+   * Z.cmd is allocated to this number and indexed by cmd_no, so a line the
+   * parser accepts and this pass does not is a struct reset_com written
+   * past the end of the allocation.  Testing the command letter here and
+   * calling skip_spaces() there made the two disagree over a command with
+   * leading whitespace, a tab after the letter, a letter outside the list,
+   * and the '$' form of the terminator: all four are parsed, none were
+   * counted.
+   *
+   * Counting every line that is not a comment cannot come out short.  It
+   * is one over in the ordinary case, because the numeric constants line
+   * is still ahead of us here, and exactly right for a zone with no
+   * builders line, where the parser reuses that line as its first command.
+   * A spare entry costs one zeroed struct per zone and is never reached --
+   * reset_zone() stops at the 'S'.  Nothing here has to be kept up to date
+   * when a new command letter is added, either. */
+  while (get_line(fl, buf, sizeof(buf))) {
+    ptr = buf;
+    skip_spaces(&ptr);
+    if (*ptr == '*')
+      continue;
+    num_of_cmds++;
+    if (*ptr == 'S' || *ptr == '$')
+      break;
+  }
 
   rewind(fl);
 
@@ -2298,6 +2317,15 @@ static void load_zones(FILE *fl, char *zonename)
     ptr = buf;
     skip_spaces(&ptr);
 
+    /* Before the write, not after it.  The count and this loop have to
+     * agree, and the test that they did was made once the whole file had
+     * been parsed -- by which time whatever they disagreed about had
+     * already been written past the end of Z.cmd. */
+    if (cmd_no >= num_of_cmds) {
+      log("SYSERR: More commands in %s than the %d counted.", zname, num_of_cmds);
+      exit(1);
+    }
+
     if ((ZCMD.command = *ptr) == '*')
       continue;
 
@@ -2333,11 +2361,6 @@ static void load_zones(FILE *fl, char *zonename)
     }
     ZCMD.line = line_num;
     cmd_no++;
-  }
-
-  if (num_of_cmds != cmd_no + 1) {
-    log("SYSERR: Zone command count mismatch for %s. Estimated: %d, Actual: %d", zname, num_of_cmds, cmd_no + 1);
-    exit(1);
   }
 
   top_of_zone_table = zone++;
@@ -2816,7 +2839,11 @@ void reset_zone(zone_rnum zone)
       if (obj_index[ZCMD.arg1].number < ZCMD.arg2) {
 	if (ZCMD.arg3 < 0 || ZCMD.arg3 >= NUM_WEARS) {
           char error[MAX_INPUT_LENGTH];
-	  snprintf(error, sizeof(error), "invalid equipment pos number (mob %s, obj %d, pos %d)", GET_NAME(mob), obj_index[ZCMD.arg2].vnum, ZCMD.arg3);
+	  /* arg1 is the object, arg2 the load count -- the tests either side
+	   * of this one both use arg1.  Indexing obj_index[] with the count
+	   * named an unrelated object, and read past the table on a world
+	   * holding fewer objects than the count. */
+	  snprintf(error, sizeof(error), "invalid equipment pos number (mob %s, obj %d, pos %d)", GET_NAME(mob), obj_index[ZCMD.arg1].vnum, ZCMD.arg3);
 	  ZONE_ERROR(error);
 	} else {
 	  obj = read_object(ZCMD.arg1, REAL);
@@ -2889,13 +2916,17 @@ void reset_zone(zone_rnum zone)
         add_trigger(SCRIPT(tobj), read_trigger(ZCMD.arg2), -1);
         last_cmd = 1;
       } else if (ZCMD.arg1==WLD_TRIGGER) {
+        /* The V case below has the else and is the shape this wants: the
+         * test logged the room number and then indexed world[] with it
+         * regardless, which for NOWHERE is world[65535]. */
         if (ZCMD.arg3 == NOWHERE || ZCMD.arg3>top_of_world) {
           ZONE_ERROR("Invalid room number in trigger assignment");
+        } else {
+          if (!world[ZCMD.arg3].script)
+            CREATE(world[ZCMD.arg3].script, struct script_data, 1);
+          add_trigger(world[ZCMD.arg3].script, read_trigger(ZCMD.arg2), -1);
+          last_cmd = 1;
         }
-        if (!world[ZCMD.arg3].script)
-          CREATE(world[ZCMD.arg3].script, struct script_data, 1);
-        add_trigger(world[ZCMD.arg3].script, read_trigger(ZCMD.arg2), -1);
-        last_cmd = 1;
       }
 
       break;
