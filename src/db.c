@@ -3950,6 +3950,16 @@ static int check_object(struct obj_data *obj)
     if (search_block(onealias, drinknames, TRUE) < 0 && (error = TRUE))
       log("SYSERR: Object #%d (%s) doesn't have drink type as last keyword. (%s)",
 		GET_OBJ_VNUM(obj), obj->short_description, obj->name);
+
+    /* The liquid type indexes four tables of NUM_LIQ_TYPES entries and was
+     * never looked at here.  The uses are bounded now, but an operator
+     * should hear about it at boot rather than wonder why a bottle holds
+     * water. */
+    if ((GET_OBJ_VAL(obj, 2) < 0 || GET_OBJ_VAL(obj, 2) >= NUM_LIQ_TYPES)
+        && (error = TRUE))
+      log("SYSERR: Object #%d (%s) has liquid type %d, outside 0-%d.",
+		GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_VAL(obj, 2),
+		NUM_LIQ_TYPES - 1);
   }
   /* Fall through. */
   case ITEM_FOUNTAIN:
