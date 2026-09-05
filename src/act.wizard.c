@@ -4565,6 +4565,13 @@ ACMD(do_changelog)
   if (!(fl = fopen(buf, "r"))) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: Error opening backup changelog file (%s)", buf);
+    /* The rename above has already moved the changelog, so this returns
+     * with nothing under its own name -- the same loss as the branch
+     * below, one open earlier. */
+    if (rename(buf, CHANGE_LOG_FILE))
+      mudlog(BRF, LVL_IMPL, TRUE,
+             "SYSERR: Changelog left as %s; could not restore it", buf);
+    send_to_char(ch, "Could not read the changelog.\r\n");
     return;
   }
 
@@ -4606,7 +4613,21 @@ ACMD(do_changelog)
     fprintf(new, "%s\n", line);
 
   fclose(fl);
-  fclose(new);
+
+  /* A write that fails reports itself at the flush or the close, and the
+   * entries before it have only reached the stream's buffer.  Neither was
+   * looked at, so a full disk truncated the changelog and the immortal was
+   * told the change had been added.  The backup is still beside it, which
+   * is the one thing that makes this recoverable, so say where it is. */
+  if (fflush(new) == EOF || ferror(new) || fclose(new) == EOF) {
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: Error writing changelog (%s); the previous one is at %s.bak",
+           CHANGE_LOG_FILE, CHANGE_LOG_FILE);
+    send_to_char(ch, "The changelog could not be written; the previous one is kept as %s.bak\r\n",
+                 CHANGE_LOG_FILE);
+    return;
+  }
+
   send_to_char(ch, "Change added.\r\n");
 }
 
