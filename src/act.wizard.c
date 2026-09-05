@@ -2582,6 +2582,15 @@ ACMD(do_show)
           char *builders = strdup(zone_table[zrn].builders);
           bool found = FALSE;
 
+          /* strtok(NULL, ...) means "carry on with the last string I gave
+           * you", so entering the loop with a failed strdup would resume
+           * the walk through the copy the previous zone has just freed. */
+          if (builders == NULL) {
+            log("SYSERR: do_show: cannot copy the builder list of zone %d.",
+                zone_table[zrn].number);
+            continue;
+          }
+
           for (buf2 = strtok(builders, " "); buf2; buf2 = strtok(NULL, " "))
             if (!str_cmp(buf2, value)) {
               found = TRUE;
