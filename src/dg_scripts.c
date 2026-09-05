@@ -1147,15 +1147,27 @@ ACMD(do_detach)
   struct room_data *room;
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], *snum;
   char *trigger = 0;
+  char trigdesc[MAX_INPUT_LENGTH];
   int num_arg, tn, rn;
   room_rnum rnum;
-  trig_data *trig;
 
   argument = two_arguments(argument, arg1, arg2);
   one_argument(argument, arg3);
   tn = atoi(arg3);
   rn = real_trigger(tn);
-  trig = read_trigger(rn);
+
+  /* Name what is being removed, for the messages below.  This used to be
+   * read_trigger(rn), which is not a lookup: it builds a whole trigger
+   * instance, counts it in the prototype's number, and returns NULL when
+   * rn is NOTHING.  The instance was never extracted, and the NULL was
+   * dereferenced by GET_TRIG_NAME() in all three success messages -- so
+   * every detach by trigger name or by position, which is what the usage
+   * line invites, crashed the MUD.  The prototype has the name. */
+  if (rn != NOTHING && rn < top_of_trigt && trig_index[rn])
+    snprintf(trigdesc, sizeof(trigdesc), "%d (%s)", tn,
+             GET_TRIG_NAME(trig_index[rn]->proto));
+  else
+    snprintf(trigdesc, sizeof(trigdesc), "'%s'", *arg3 ? arg3 : arg2);
 
   if (!*arg1 || !*arg2) {
     send_to_char(ch, "Usage: detach [ mob | object | room ] { target } { trigger |"
@@ -1196,7 +1208,7 @@ ACMD(do_detach)
         snum = arg2;
 
     if (remove_trigger(SCRIPT(room), snum)) {
-      send_to_char(ch, "Trigger %d (%s) removed from %d.\r\n", tn, GET_TRIG_NAME(trig), world[rnum].number);
+      send_to_char(ch, "Trigger %s removed from %d.\r\n", trigdesc, world[rnum].number);
       
       if (!TRIGGERS(SCRIPT(room)))
         extract_script(room, WLD_TRIGGER);
@@ -1278,8 +1290,8 @@ ACMD(do_detach)
       }
 
       else if (trigger && remove_trigger(SCRIPT(victim), trigger)) {
-        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
-          tn, GET_TRIG_NAME(trig), IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
+        send_to_char(ch, "Trigger %s removed from %s.\r\n", 
+          trigdesc, IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
 
         if (!TRIGGERS(SCRIPT(victim))) {
           extract_script(victim, MOB_TRIGGER);
@@ -1303,9 +1315,12 @@ ACMD(do_detach)
                 object->name);
       }
 
-      else if (remove_trigger(SCRIPT(object), trigger)) {
-        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
-          tn, GET_TRIG_NAME(trig), object->short_description ? object->short_description : 
+      /* "You must specify a trigger to remove" above leaves trigger NULL,
+       * and remove_trigger() runs strstr() and isdigit() on it.  The mob
+       * branch has this guard. */
+      else if (trigger && remove_trigger(SCRIPT(object), trigger)) {
+        send_to_char(ch, "Trigger %s removed from %s.\r\n", 
+          trigdesc, object->short_description ? object->short_description : 
           object->name);
         if (!TRIGGERS(SCRIPT(object))) {
           extract_script(object, OBJ_TRIGGER);
