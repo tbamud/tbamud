@@ -318,8 +318,20 @@ int save_config( IDXTYPE nowhere )
 {
   FILE *fl;
   char buf[MAX_STRING_LENGTH];
+  char tmp_name[READ_SIZE];
 
-  if (!(fl = fopen(CONFIG_CONFFILE, "w"))) {
+  /* Build the new file beside the old one and put it in place only once
+   * it is whole.  Opening CONFIG_CONFFILE with "w" truncated the live
+   * configuration before a single line had been written, and neither the
+   * writes nor the close were looked at -- so a save that failed part way
+   * returned TRUE over a config file the next boot would read as far as
+   * the damage and no further. */
+  if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", CONFIG_CONFFILE) >= (int)sizeof(tmp_name)) {
+    log("SYSERR: save_config: name too long to write beside: %s", CONFIG_CONFFILE);
+    return (FALSE);
+  }
+
+  if (!(fl = fopen(tmp_name, "w"))) {
     perror("SYSERR: save_config");
     return (FALSE);
   }
@@ -572,7 +584,31 @@ int save_config( IDXTYPE nowhere )
               "debug_mode = %d\n\n",
               CONFIG_DEBUG_MODE);
 
-  fclose(fl);
+  if (fflush(fl) == EOF || ferror(fl)) {
+    log("SYSERR: save_config: error writing %s: %s", tmp_name, strerror(errno));
+    fclose(fl);
+    remove(tmp_name);
+    return (FALSE);
+  }
+
+  if (fclose(fl) == EOF) {
+    log("SYSERR: save_config: error closing %s: %s", tmp_name, strerror(errno));
+    remove(tmp_name);
+    return (FALSE);
+  }
+
+  /* rename() replaces the destination outright on POSIX, so the config
+   * file is never briefly absent; the Windows C runtime refuses a name
+   * that already exists, which is what the retry is for.
+   * dg_olc.c:805-807 installs trigger files the same way. */
+  if (rename(tmp_name, CONFIG_CONFFILE)) {
+    remove(CONFIG_CONFFILE);
+    if (rename(tmp_name, CONFIG_CONFFILE)) {
+      log("SYSERR: save_config: could not put %s in place: %s", CONFIG_CONFFILE, strerror(errno));
+      remove(tmp_name);
+      return (FALSE);
+    }
+  }
 
   if (in_save_list(NOWHERE, SL_CFG))
     remove_from_save_list(NOWHERE, SL_CFG);
