@@ -1846,7 +1846,11 @@ struct last_entry *find_llog_entry(int punique, long idnum) {
   recs = size/sizeof(struct last_entry);
   /* we'll search last to first, since it's faster than any thing else we can
    * do (like searching for the last shutdown/etc..) */
-  for(tmp=recs-1; tmp > 0; tmp--) {
+  /* One iteration per record.  Starting at recs-1 gave one fewer, and the
+   * one it dropped was the last to be reached: the oldest entry in the
+   * file was never compared.  mod_llog_entry(), which walks the file the
+   * same way, has always counted from recs. */
+  for(tmp=recs; tmp > 0; tmp--) {
     fseek(fp,-1*((long)sizeof(struct last_entry)),SEEK_CUR);
     if (fread(&mlast,sizeof(struct last_entry),1,fp) != 1)
       return NULL;
