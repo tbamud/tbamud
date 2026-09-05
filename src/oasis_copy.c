@@ -336,7 +336,9 @@ int buildwalk(struct char_data *ch, int dir)
        * redit_save_internally handle the room adding. */
       if (d->olc) {
         mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: buildwalk(): Player already had olc structure.");
-        free(d->olc);
+        /* free() releases the struct and nothing it points at, so
+         * whatever editor left this behind left its working copy too. */
+        cleanup_olc(d, CLEANUP_ALL);
       }
       CREATE(d->olc, struct oasis_olc_data, 1);
       OLC_ZNUM(d) = world[IN_ROOM(ch)].zone;
@@ -356,8 +358,15 @@ int buildwalk(struct char_data *ch, int dir)
       redit_save_internally(d);
       OLC_VAL(d) = 0;
 
-      /* Link rooms */
-      rnum = real_room(vnum);
+      /* Link rooms.  redit_save_internally() can fail to add the room,
+       * and real_room() then answers NOWHERE, which is 65535 -- an index
+       * a long way past the end of world[].  redit's own save path tests
+       * for this at redit.c:290. */
+      if ((rnum = real_room(vnum)) == NOWHERE) {
+        send_to_char(ch, "Something went wrong creating the room.\r\n");
+        cleanup_olc(d, CLEANUP_ALL);
+        return (0);
+      }
       CREATE(EXIT(ch, dir), struct room_direction_data, 1);
       EXIT(ch, dir)->to_room = rnum;
       CREATE(world[rnum].dir_option[rev_dir[dir]], struct room_direction_data, 1);
@@ -367,7 +376,12 @@ int buildwalk(struct char_data *ch, int dir)
       send_to_char(ch, "%sRoom #%d created by BuildWalk.%s\r\n", yel, vnum, nrm);
       mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
         "OLC: %s creates room %d with buildwalk", GET_NAME(ch), vnum);
-      cleanup_olc(d, CLEANUP_STRUCTS);
+      /* CLEANUP_STRUCTS is a bare free() of the room, and add_room()
+       * deep-copies the name and description through copy_room_strings(),
+       * so the two strdup'd above were dropped on the floor -- every room
+       * a builder walks into a wall to create.  do_dig, which is the same
+       * sequence, uses CLEANUP_ALL. */
+      cleanup_olc(d, CLEANUP_ALL);
 
       return (1);
 

@@ -174,6 +174,20 @@ void redit_setup_existing(struct descriptor_data *d, int real_num)
   struct room_data *room;
   int counter;
 
+  /* The W) Copy menu item calls this again on a descriptor that already
+   * holds a working copy, and what follows assigns over it.  Release it
+   * first, the way cleanup_olc() does on the way out of the editor;
+   * OLC_SCRIPT is a separate list that dg_olc_script_copy() below is about
+   * to replace, so it goes too.  On the way in there is nothing here yet
+   * and both tests are false. */
+  if (OLC_ROOM(d))
+    free_room(OLC_ROOM(d));
+  while (OLC_SCRIPT(d)) {
+    struct trig_proto_list *next_proto = OLC_SCRIPT(d)->next;
+    free(OLC_SCRIPT(d));
+    OLC_SCRIPT(d) = next_proto;
+  }
+
   /* Build a copy of the room for editing. */
   CREATE(room, struct room_data, 1);
 
