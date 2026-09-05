@@ -613,12 +613,20 @@ SPECIAL(cityguard)
 #define PET_PRICE(pet) (GET_LEVEL(pet) * 300)
 SPECIAL(pet_shops)
 {
-  char buf[MAX_STRING_LENGTH], pet_name[256];
+  /* one_argument() and two_arguments() copy a whole word with nothing
+   * bounding them, so a destination has to hold what one input line can
+   * carry.  MAX_INPUT_LENGTH is the contract every other caller keeps;
+   * this one was 256, and a line is 511 usable characters. */
+  char buf[MAX_STRING_LENGTH], pet_name[MAX_INPUT_LENGTH];
   room_rnum pet_room;
   struct char_data *pet;
 
-  /* Gross. */
+  /* Gross.  And unchecked: a pet shop on the last room of the world
+   * table sends every lookup below one past the end of it. */
   pet_room = IN_ROOM(ch) + 1;
+
+  if (pet_room > top_of_world)
+    return (FALSE);
 
   if (CMD_IS("list")) {
     send_to_char(ch, "Available pets are:\r\n");
