@@ -438,12 +438,29 @@ static int hedit_save_internally(struct descriptor_data *d)
 static void hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
-  char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE];
+  char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], tmp_name[READ_SIZE];
   int i;
 
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
-  if (!(fp = fopen(index_name, "w"))) {
-    log("SYSERR: Could not write help index file");
+
+  /* Build the new help file beside the old one and put it in place only
+   * once it is whole.  Opening the real file with "w" truncated it before
+   * a single entry had been written, and nothing looked at the result of a
+   * write or of the close -- which is where a full disk reports itself,
+   * the entries before it having only reached the stream's buffer.
+   *
+   * That is worse here than in the other savers, because of the two lines
+   * at the foot of this function: the table is thrown away and read back
+   * from the file just written, and index_boot() calls exit(1) when it
+   * finds no records.  A failed save therefore took the running MUD down
+   * and left behind a help file that would not boot the next one either. */
+  if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", index_name) >= (int)sizeof(tmp_name)) {
+    log("SYSERR: Help file name too long to write beside: %s", index_name);
+    return;
+  }
+
+  if (!(fp = fopen(tmp_name, "w"))) {
+    log("SYSERR: Could not write help index file: %s", strerror(errno));
     return;
   }
 
@@ -458,7 +475,24 @@ static void hedit_save_to_disk(struct descriptor_data *d)
   }
   /* Write final line and close. */
   fprintf(fp, "$~\n");
-  fclose(fp);
+
+  if (fflush(fp) == EOF || ferror(fp) || fclose(fp) == EOF) {
+    log("SYSERR: Could not write help index file: %s", strerror(errno));
+    remove(tmp_name);
+    return;
+  }
+
+  /* rename() replaces the destination outright on POSIX; the Windows C
+   * runtime refuses a name that already exists, which is what the second
+   * attempt is for.  objsave.c:548-556 installs rent files the same way. */
+  if (rename(tmp_name, index_name)) {
+    remove(index_name);
+    if (rename(tmp_name, index_name)) {
+      log("SYSERR: Could not put the help file in place: %s", strerror(errno));
+      remove(tmp_name);
+      return;
+    }
+  }
 
   remove_from_save_list(HEDIT_PERMISSION, SL_HLP);
 

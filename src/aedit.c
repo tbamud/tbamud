@@ -244,11 +244,23 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
    char buf[MAX_STRING_LENGTH];
-   if (!(fp = fopen(SOCMESS_FILE_NEW, "w+")))  {
-     char error[MAX_STRING_LENGTH];
-     snprintf(error, sizeof(error), "Can't open socials file '%s'", SOCMESS_FILE);
-     perror(error);
-     exit(1);
+   char tmp_name[READ_SIZE];
+
+   /* Write beside the socials file and rename over it once it is whole.
+    * This opened the live file with "w+", which truncates it, and called
+    * exit(1) if that failed -- so an immortal saving a social on a full
+    * disk or a read-only mount took the whole MUD down with them.  Say so
+    * and leave the save on the list instead. */
+   if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", SOCMESS_FILE_NEW) >= (int)sizeof(tmp_name)) {
+     log("SYSERR: Socials file name too long to write beside: %s", SOCMESS_FILE_NEW);
+     return;
+   }
+
+   if (!(fp = fopen(tmp_name, "w")))  {
+     log("SYSERR: Can't open socials file '%s': %s", tmp_name, strerror(errno));
+     if (d->character)
+       send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
+     return;
    }
 
    for (i = 0; i <= top_of_socialt; i++)  {
@@ -287,7 +299,27 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
    }
 
    fprintf(fp, "$\n");
-   fclose(fp);
+
+   if (fflush(fp) == EOF || ferror(fp) || fclose(fp) == EOF) {
+     log("SYSERR: Could not write socials file '%s': %s", tmp_name, strerror(errno));
+     if (d->character)
+       send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
+     remove(tmp_name);
+     return;
+   }
+
+   /* rename() replaces the destination outright on POSIX; the Windows C
+    * runtime refuses a name that already exists, hence the second try.
+    * objsave.c:548-556 installs rent files the same way. */
+   if (rename(tmp_name, SOCMESS_FILE_NEW)) {
+     remove(SOCMESS_FILE_NEW);
+     if (rename(tmp_name, SOCMESS_FILE_NEW)) {
+       log("SYSERR: Could not put the socials file in place: %s", strerror(errno));
+       remove(tmp_name);
+       return;
+     }
+   }
+
    remove_from_save_list(AEDIT_PERMISSION, SL_ACT);
 }
 
