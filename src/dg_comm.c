@@ -164,7 +164,13 @@ void sub_write(char *arg, char_data *ch, byte find_invis, int targets)
       break;
 
       case '\\':
+        /* A backslash at the very end of the line leaves nothing to
+         * escape: stepping over it and copying puts the terminator into
+         * the output and moves p past the end of the string, after which
+         * the loop reads whatever follows in memory. */
         p++;
+        if (!*p)
+          break;
         *s++ = *p++;
       break;
 
