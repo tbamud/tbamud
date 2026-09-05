@@ -38,7 +38,12 @@ char *fname(const char *namelist)
   static char holder[READ_SIZE];
   char *point;
 
-  for (point = holder; isalpha(*namelist); namelist++, point++)
+  /* The keyword list is not length-capped anywhere it comes from: oedit
+   * and redit store it with str_udup() straight off a MAX_INPUT_LENGTH
+   * input line, and fread_string() reads one out of a world file with no
+   * bound at all.  holder is READ_SIZE. */
+  for (point = holder; isalpha(*namelist) && point < holder + sizeof(holder) - 1;
+       namelist++, point++)
     *point = *namelist;
 
   *point = '\0';
