@@ -4544,6 +4544,9 @@ ACMD(do_changelog)
   char timestr[12], line[READ_SIZE], last_buf[READ_SIZE],
       buf[READ_SIZE];
   FILE *fl, *new;
+  int found_header = FALSE;
+
+  *last_buf = '\0';
 
   skip_spaces(&argument);
 
@@ -4568,6 +4571,13 @@ ACMD(do_changelog)
   if (!(new = fopen(CHANGE_LOG_FILE, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: Error opening new changelog file (%s)", CHANGE_LOG_FILE);
+    /* The changelog was renamed to the backup above, so returning here
+     * leaves nothing under its own name at all.  Put it back. */
+    fclose(fl);
+    if (rename(buf, CHANGE_LOG_FILE))
+      mudlog(BRF, LVL_IMPL, TRUE,
+             "SYSERR: Changelog left as %s; could not restore it", buf);
+    send_to_char(ch, "Could not open the changelog for writing.\r\n");
     return;
   }
 
@@ -4576,6 +4586,7 @@ ACMD(do_changelog)
       fprintf(new, "%s\n", line);
     else {
       strcpy(last_buf, line);
+      found_header = TRUE;
       break;
     }
   }
@@ -4588,7 +4599,7 @@ ACMD(do_changelog)
   fprintf(new, "%s\n", buf);
   fprintf(new, "  %s\n", argument);
 
-  if (strcmp(buf, last_buf))
+  if (found_header && strcmp(buf, last_buf))
     fprintf(new, "%s\n", line);
 
   while (get_line(fl, line, sizeof(line)))
