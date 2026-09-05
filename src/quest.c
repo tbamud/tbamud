@@ -317,6 +317,13 @@ void generic_complete_quest(struct char_data *ch)
 
   if (--GET_QUEST_COUNTER(ch) <= 0) {
     rnum = real_quest(vnum);
+    /* AQ_MOB_FIND calls this once per matching mob in the room, and the
+     * first call clears the quest -- so a second copy of the target mob
+     * arrives here with GET_QUEST(ch) already NOTHING, and real_quest()
+     * answers NOTHING for it.  Every QST_ macro below is a bare
+     * aquest_table[rnum]. */
+    if (rnum == NOTHING)
+      return;
     if (IS_HAPPYHOUR && IS_HAPPYQP) {
       happy_qp = (int)(QST_POINTS(rnum) * (((float)(100+HAPPY_QP))/(float)100));
       happy_qp = MAX(happy_qp, 0);
