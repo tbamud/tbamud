@@ -1110,7 +1110,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
       return;
     } else
       write_to_output(d, "Please answer 'Y' or 'N': ");
-    break;
+    return;
 
   default:
     /* We should never get here. */

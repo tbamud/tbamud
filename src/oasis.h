@@ -270,6 +270,9 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_AFF_FLAGS             6
 #define MEDIT_CONFIRM_SAVESTRING    7
 #define MEDIT_STATS_MENU            8
+/* Must stay BELOW MEDIT_NUMERICAL_RESPONSE: medit_parse rejects any
+ * non-numeric input for every mode above it, and this one wants y/n. */
+#define MEDIT_DELETE                9
 
 /* Numerical responses. */
 #define MEDIT_NUMERICAL_RESPONSE	10
@@ -289,7 +292,6 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define MEDIT_ATTACK			24
 #define MEDIT_LEVEL			25
 #define MEDIT_ALIGNMENT			26
-#define MEDIT_DELETE                    27
 #define MEDIT_COPY                      28
 #define MEDIT_STR                       29
 #define MEDIT_INT                       30
