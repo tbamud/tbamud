@@ -453,7 +453,7 @@ void zedit_parse(struct descriptor_data *d, char *arg);
 ACMD(do_oasis_zedit);
 
 /* public functions from cedit.c */
-void cedit_save_to_disk( void );
+int cedit_save_to_disk( void );
 void cedit_parse(struct descriptor_data *d, char *arg);
 void cedit_string_cleanup(struct descriptor_data *d, int terminator);
 ACMD(do_oasis_cedit);
