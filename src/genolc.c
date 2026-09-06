@@ -101,7 +101,13 @@ int genolc_checkstring(struct descriptor_data *d, char *arg)
  * briefly absent and a failure there is a real one: clearing the
  * destination to try again would throw away a good file for nothing.
  * Windows, whose rename() refuses a name already in use, reports that as
- * EEXIST or EACCES, and that is the one case the retry is for.  Returns
+ * EEXIST -- measured on ucrtbase and on msvcrt -- and that is the one case
+ * the retry is for.  Not EACCES: that is what both runtimes report when
+ * something else holds the scratch file open, which on Windows is
+ * routinely a virus scanner reading the file the MUD has just written.
+ * Clearing the destination for that would delete the live world file and
+ * then fail the retry anyway, because the scratch is still locked.
+ * Returns
  * TRUE once scratch is dest, FALSE with errno from the failed attempt
  * otherwise. */
 int genolc_install_file(const char *scratch, const char *dest)
@@ -109,7 +115,7 @@ int genolc_install_file(const char *scratch, const char *dest)
   if (rename(scratch, dest) == 0)
     return TRUE;
 
-  if (errno != EEXIST && errno != EACCES)
+  if (errno != EEXIST)
     return FALSE;
 
   remove(dest);

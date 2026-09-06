@@ -3493,9 +3493,23 @@ ACMD(do_saveall)
  if (GET_LEVEL(ch) < LVL_BUILDER)
     send_to_char (ch, "You are not holy enough to use this privelege.\n\r");
  else {
-    save_all();
+    /* save_all() answers for the queued world files.  A queued social or
+     * help entry is not one of those: SL_ACT and SL_HLP are past SL_MAX
+     * and their save_types[] rows carry no function, so the entry is
+     * logged and dropped without changing the answer.  Only the aedit and
+     * hedit editors write those two files, by either of the routes their
+     * own log line names.  The savers name the file that failed in the
+     * syslog, which is
+     * gated on level and on the builder's PRF_LOG channel, so the command
+     * has to say that something did not. */
+    int saved = save_all();
+
     House_save_all();
-    send_to_char(ch, "World and house files saved.\n\r");
+    if (saved)
+      send_to_char(ch, "World and house files saved.\n\r");
+    else
+      send_to_char(ch, "House files saved. Some world files could not be "
+                       "written; see the syslog.\n\r");
  }
 }
 

@@ -22,7 +22,7 @@
 
 /* local functions */
 static void sedit_setup_new(struct descriptor_data *d);
-static void sedit_save_to_disk(int zone_num);
+static int sedit_save_to_disk(int zone_num);
 static void sedit_products_menu(struct descriptor_data *d);
 static void sedit_compact_rooms_menu(struct descriptor_data *d);
 static void sedit_rooms_menu(struct descriptor_data *d);
@@ -66,9 +66,9 @@ void sedit_save_internally(struct descriptor_data *d)
   }
 }
 
-static void sedit_save_to_disk(int num)
+static int sedit_save_to_disk(int num)
 {
-  save_shops(num);
+  return save_shops(num);
 }
 
 /* utility functions */
@@ -172,12 +172,19 @@ ACMD(do_oasis_sedit)
   if (save) {
     send_to_char(ch, "Saving all shops in zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
-      "OLC: %s saves shop info for zone %d.",
-      GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
     /* Save the shops to the shop file. */
-    save_shops(OLC_ZNUM(d));
+    if (save_shops(OLC_ZNUM(d)))
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "OLC: %s saves shop info for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    else {
+      send_to_char(ch, "Unable to save all shops in zone %d. The changes are "
+        "still in memory.\r\n", zone_table[OLC_ZNUM(d)].number);
+      mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "SYSERR: OLC: %s failed to save shop info for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    }
 
     /* Free the OLC structure. */
     free(d->olc);
@@ -485,8 +492,11 @@ void sedit_parse(struct descriptor_data *d, char *arg)
              "OLC: %s edits shop %d", GET_NAME(d->character),
              OLC_NUM(d));
       if (CONFIG_OLC_SAVE) {
-        sedit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
-        write_to_output(d, "Shop saved to disk.\r\n");
+        if (sedit_save_to_disk(real_zone_by_thing(OLC_NUM(d))))
+          write_to_output(d, "Shop saved to disk.\r\n");
+        else
+          write_to_output(d, "Unable to save shop %d to disk. The change is "
+                             "still in memory.\r\n", OLC_NUM(d));
       } else
         write_to_output(d, "Shop saved to memory.\r\n");
 
@@ -551,8 +561,11 @@ void sedit_parse(struct descriptor_data *d, char *arg)
          * delete says so explicitly rather than leaving the builder to
          * guess whether a reboot will bring it back. */
         if (CONFIG_OLC_SAVE) {
-          sedit_save_to_disk(real_zone_by_thing(OLC_NUM(d)));
-          write_to_output(d, "Shop file saved to disk.\r\n");
+          if (sedit_save_to_disk(real_zone_by_thing(OLC_NUM(d))))
+            write_to_output(d, "Shop file saved to disk.\r\n");
+          else
+            write_to_output(d, "Unable to save the shop file to disk. The "
+                               "change is still in memory.\r\n");
         } else
           write_to_output(d, "Shop file saved to memory.\r\n");
 
