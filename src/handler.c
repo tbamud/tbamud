@@ -879,6 +879,43 @@ void object_list_new_owner(struct obj_data *list, struct char_data *ch)
   }
 }
 
+/* An object-list walk hands its "next" pointer here so that extract_obj()
+ * can move it along instead of leaving it pointing at memory it has just
+ * freed.  It answers the registration it replaced, and the caller puts that
+ * back on the way out, so a walk always leaves the one around it registered
+ * rather than unregistered.
+ *
+ * That is not the same as nesting.  One pointer is held at a time, so while
+ * an inner walk is registered an extraction does not move the outer walk's
+ * next -- it is only restored, not maintained, and it can be restored
+ * pointing at something freed in the meantime.  Nothing does that today:
+ * the three callers are script_trigger_check(), check_time_triggers() and
+ * point_update(), which the heartbeat calls directly and which cannot reach
+ * one another.  A fourth caller that could would need this to keep every
+ * registration rather than the innermost.
+ *
+ * The registration is a single pointer restored by hand at the end of each
+ * span, so a return or a goto out of one would leave it aimed at a dead
+ * stack frame, which every later extraction would then read through and
+ * write through whenever the comparison matched.  None of the three has
+ * one; check before adding a fourth.
+ *
+ * Characters do not need this: extract_char() only marks them and the free
+ * happens in extract_pending_chars() at the end of the pulse.  An object is
+ * freed the moment it is extracted, so any walk whose body can run a script
+ * is walking a list that can change underneath it -- and two of the
+ * twenty-two random object triggers shipped in lib/world/trg purge the
+ * object they are attached to. */
+static struct obj_data **obj_walk_next = NULL;
+
+struct obj_data **protect_obj_walk(struct obj_data **next)
+{
+  struct obj_data **was = obj_walk_next;
+
+  obj_walk_next = next;
+  return was;
+}
+
 /* Extract an object from the world */
 void extract_obj(struct obj_data *obj)
 {
@@ -911,6 +948,11 @@ void extract_obj(struct obj_data *obj)
     extract_obj(obj->contains);
 
   REMOVE_FROM_LIST(obj, object_list, next);
+
+  /* REMOVE_FROM_LIST leaves obj->next alone, so a walk standing on this
+   * object can be moved on to the one after it before the free below. */
+  if (obj_walk_next && *obj_walk_next == obj)
+    *obj_walk_next = obj->next;
 
   if (GET_OBJ_RNUM(obj) != NOTHING)
     (obj_index[GET_OBJ_RNUM(obj)].number)--;
