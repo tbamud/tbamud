@@ -2029,16 +2029,10 @@ void clean_llog_entries(void) {
     return;
   }
 
-  /* remove() before rename() is what the rest of the tree does, because
-   * Windows will not rename onto a name that exists.  It does mean the
-   * old file is gone before the new one is in place, so a rename that
-   * fails here leaves no last file at all and the trimmed copy sitting
-   * under the wrong name -- worth a line in the log, given the whole
-   * point of the function is to replace a good file with this one. */
-  remove(LAST_FILE);
-  if (rename("etc/nlast", LAST_FILE))
+  if (!genolc_install_file("etc/nlast", LAST_FILE)) {
     log("SYSERR: clean_llog_entries: cannot put etc/nlast in place as %s: %s",
         LAST_FILE, strerror(errno));
+  }
 }
 
 /* debugging stuff, if you wanna see the whole file */

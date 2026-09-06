@@ -96,6 +96,26 @@ int genolc_checkstring(struct descriptor_data *d, char *arg)
   return TRUE;
 }
 
+/* Put the finished scratch file in place of the file it replaces.  POSIX
+ * rename() replaces the destination outright, so the original is never
+ * briefly absent and a failure there is a real one: clearing the
+ * destination to try again would throw away a good file for nothing.
+ * Windows, whose rename() refuses a name already in use, reports that as
+ * EEXIST or EACCES, and that is the one case the retry is for.  Returns
+ * TRUE once scratch is dest, FALSE with errno from the failed attempt
+ * otherwise. */
+int genolc_install_file(const char *scratch, const char *dest)
+{
+  if (rename(scratch, dest) == 0)
+    return TRUE;
+
+  if (errno != EEXIST && errno != EACCES)
+    return FALSE;
+
+  remove(dest);
+  return rename(scratch, dest) == 0;
+}
+
 char *str_udup(const char *txt)
 {
   return strdup((txt && *txt) ? txt : "undefined");
