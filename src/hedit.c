@@ -439,7 +439,7 @@ static int hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
   char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], tmp_name[READ_SIZE];
-  int i, saved = TRUE;
+  int i, n, saved = TRUE;
 
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
 
@@ -456,7 +456,11 @@ static int hedit_save_to_disk(struct descriptor_data *d)
    * at count_alias_records()'s "Unexpected end of help file", db.c:929-931.
    * A failed save therefore took the running MUD down and left behind a
    * help file that would not boot the next one either. */
-  if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", index_name) >= (int)sizeof(tmp_name)) {
+  /* Test for a negative return as well: sysdep.h makes snprintf() the
+   * Windows _snprintf(), which answers a truncation with -1 rather than
+   * the length it wanted, and leaves the buffer unterminated. */
+  n = snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", index_name);
+  if (n < 0 || n >= (int)sizeof(tmp_name)) {
     log("SYSERR: Help file name too long to write beside: %s", index_name);
     return FALSE;
   }

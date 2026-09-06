@@ -252,16 +252,23 @@ static int aedit_save_to_disk(struct descriptor_data *d) {
    int i;
    char buf[MAX_STRING_LENGTH];
    char tmp_name[READ_SIZE];
-   int saved = TRUE;
+   int n, saved = TRUE;
 
    /* Write beside the socials file and rename over it once it is whole.
     * This opened the live file with "w+", which truncates it, and called
     * exit(1) if that failed -- so an immortal saving a social onto a
     * read-only mount took the whole MUD down with them.  Say so and
-    * return instead.  Every caller queues the social before saving, and
-    * only a save that got through reaches the removal at the end, so a
-    * failed one leaves the entry where the caller put it. */
-   if (snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", SOCMESS_FILE_NEW) >= (int)sizeof(tmp_name)) {
+    * return instead, and let the caller decide what to tell them.
+    *
+    * Nothing is left pending by this function: it only ever removes from
+    * the save list.  Every caller queues the social before saving, and
+    * only a save that got through reaches that removal, so a failed one
+    * leaves the entry where the caller put it. */
+   /* Test for a negative return as well: sysdep.h makes snprintf() the
+    * Windows _snprintf(), which answers a truncation with -1 rather than
+    * the length it wanted, and leaves the buffer unterminated. */
+   n = snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", SOCMESS_FILE_NEW);
+   if (n < 0 || n >= (int)sizeof(tmp_name)) {
      log("SYSERR: Socials file name too long to write beside: %s", SOCMESS_FILE_NEW);
      return FALSE;
    }
@@ -514,10 +521,15 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
            create_command_list();
            sort_commands();
            add_to_save_list(AEDIT_PERMISSION, SL_ACT);
-           aedit_save_to_disk(d);
            mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
                   "OLC: %s deletes social %s", GET_NAME(d->character), sname);
+           /* Say it before writing, the way hedit's delete does: the social
+            * is gone from memory whatever the disk does, and a write that
+            * fails says so for itself.  Saying it afterwards puts an
+            * affirmative under the failure, which is the shape this change
+            * exists to remove. */
            write_to_output(d, "Social deleted.\r\n");
+           aedit_save_to_disk(d);
            cleanup_olc(d, CLEANUP_ALL);
            return;
          }
