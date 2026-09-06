@@ -1304,8 +1304,8 @@ int delete_trigger(trig_rnum rnum)
   /* 1. Detach and free every attached copy, wherever it is running. */
   /* Every remove_trigger caller in the tree finishes by extracting a script
    * that has gone empty. Copying the removal without that leaves SCRIPT
-   * non-NULL with TRIGGERS NULL -- a state nothing else produces, and one
-   * act.informative.c dereferences unguarded on the object paths. */
+   * non-NULL with TRIGGERS NULL, which act.informative.c dereferences
+   * unguarded on the object paths. */
   for (ch = character_list; ch; ch = ch->next)
     if ((n = trigedit_strip_live(SCRIPT(ch), rnum))) {
       live += n;

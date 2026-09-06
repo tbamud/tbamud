@@ -108,7 +108,6 @@ void extract_trigger(struct trig_data *trig)
   free_trigger(trig);
 }
 
-/* remove all triggers from a mob/obj/room */
 /* Take a script's triggers off it and leave the rest of it standing. Saving a
  * room in redit is not the same as taking the room out of the world: the
  * trigger list is the part the builder has been editing, while the variables a
@@ -132,6 +131,9 @@ void extract_script_triggers(struct script_data *sc)
   SCRIPT_TYPES(sc) = 0;
 }
 
+/* Remove a mob's, object's or room's script entirely: its triggers, its
+ * variables and the script itself.  Callers must check for NULL first --
+ * this dereferences the script, unlike extract_script_triggers(). */
 void extract_script(void *thing, int type)
 {
   struct script_data *sc = NULL;

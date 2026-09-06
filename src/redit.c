@@ -323,6 +323,16 @@ void redit_save_internally(struct descriptor_data *d)
 
   world[room_num].proto_script = OLC_SCRIPT(d);
   assign_triggers(&world[room_num], WLD_TRIGGER);
+
+  /* add_room() keeps the room's script across a save so its variables
+   * survive, and assign_triggers() has just put the builder's list on it.
+   * If that list is empty and the room has no variables either, there is
+   * nothing left to keep.  Every other path that takes a room's last
+   * trigger away extracts the script behind it rather than leaving an
+   * empty one standing; do the same here. */
+  if (SCRIPT(&world[room_num]) && !TRIGGERS(SCRIPT(&world[room_num])) &&
+      !SCRIPT(&world[room_num])->global_vars)
+    extract_script(&world[room_num], WLD_TRIGGER);
   /* end trigger update */
 
   /* Don't adjust numbers on a room update. */
