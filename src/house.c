@@ -703,6 +703,7 @@ static void hcontrol_convert_houses(struct char_data *ch)
 	  	send_to_char(ch, "...done\r\n");
 	  }
   }
+
 	send_to_char(ch, "All done.\r\n");
 }
 
@@ -710,9 +711,11 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
 	char infile[MAX_INPUT_LENGTH], backup[MAX_INPUT_LENGTH + 8], *outfile;
+	char probe[32], *q;
 	struct obj_file_elem object;
 	struct obj_data *tmp;
 	struct stat backup_st;
+	long len;
 	int i, j=0, skipped=0;
 
   House_get_filename(vnum, infile, sizeof(infile));
@@ -731,7 +734,9 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	 * backup. */
 	if (stat(backup, &backup_st) == 0 && S_ISREG(backup_st.st_mode))
 	{
-		send_to_char(ch, "...already converted\r\n");
+		/* No newline: hcontrol_convert_houses() writes "...done" after any
+		 * non-zero return, and the whole line is one house. */
+		send_to_char(ch, "...already converted");
 		return (1);
 	}
 
@@ -744,6 +749,93 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
   	free(outfile);
     return (0);
   }
+
+	/* House_crashsave() writes the ascii format to this very name, so for any
+	 * house saved since ascii object files arrived, the file this command
+	 * is pointed at is ascii already -- not converted, but
+	 * overwritten with whatever the room held at the time, the binary
+	 * contents gone with it.  Read as 72-byte binary records it yields
+	 * vnums that mostly resolve to nothing, so what is written in its place
+	 * bears no relation to the house: at best it is emptied, and the
+	 * command reports success.
+	 *
+	 * An ascii object file opens with '#' and a vnum alone on the line.
+	 * The line after it is blank for any object with nothing altered from
+	 * its prototype: House_crashsave() calls House_save() with a locate
+	 * of 0, so objsave_save_obj_record() omits its "Loc :" line, and such
+	 * an object has no other tag to write either.  It emits the vnum and
+	 * then the blank line that closes every record.  Failing that it is one
+	 * of that function's tags, which are four characters and a colon.  The
+	 * '#' and '$~' the test also accepts cannot stand there in a file this
+	 * codebase wrote, since a record always closes with its blank line
+	 * first; they are allowed for a file that came from somewhere else.
+	 *
+	 * A binary record can reach the first line by chance -- item_number
+	 * 0x3023, 0x3123 and so on to 0x3923 put '#' and a digit in the
+	 * first two bytes, and a location of 10 puts a newline in the third
+	 * -- so the second line is checked too.  10 is a wear position, and
+	 * the high half of a wear position is a zero byte, which is none of
+	 * the alternatives, so such a record still converts.  Nothing else
+	 * in the record ends the first line where the test expects: fgets()
+	 * stops at '\n' and not at a carriage return, so a location of 13
+	 * sends the read on into the record's other bytes, and what the
+	 * second line then holds is arbitrary -- converted, almost always,
+	 * which is the safe direction.  Note which way the two mistakes fall:
+	 * reading an ascii file as binary empties the house, while reading a
+	 * binary file as ascii only refuses to convert it.  The test belongs
+	 * on the loose side of that. */
+	/* Measure before reading anything.  fseek() on a stream that is not
+	 * seekable fails without touching it, where a read would block: a
+	 * named pipe left at this path answers open(O_RDWR) at once and then
+	 * never reaches end of file, because this process holds the write
+	 * end itself.  Refusing here costs a converted house nothing and
+	 * keeps the probe below from hanging the MUD on one. */
+	if (fseek(in, 0L, SEEK_END) != 0)
+	{
+	  send_to_char(ch, "...nothing to convert");
+	  fclose(in);
+	  free(outfile);
+	  return (1);
+	}
+	len = ftell(in);
+	rewind(in);
+
+	if (fgets(probe, sizeof(probe), in) != NULL && *probe == '#')
+	{
+		/* Cast: this is deliberately reading a file that may be binary, and
+		 * isdigit() of a negative char is undefined where char is signed. */
+		for (q = probe + 1; isdigit((unsigned char)*q); q++);
+		if (q > probe + 1 && (*q == '\n' || *q == '\r') &&
+		    fgets(probe, sizeof(probe), in) != NULL &&
+		    (*probe == '#' || *probe == '$' ||
+		     *probe == '\n' || *probe == '\r' ||
+		     (strlen(probe) > 4 && probe[4] == ':')))
+		{
+			send_to_char(ch, "...already in the ascii format; nothing to convert");
+			fclose(in);
+			free(outfile);
+			return (1);
+		}
+	}
+	rewind(in);
+
+	/* Below the probe, so a real ascii house shorter than one record is
+	 * still told apart from a binary one.  What is left here is a file
+	 * too short to hold a 72-byte record and not recognisable as ascii:
+	 * House_crashsave() writes no terminator, so a house whose room is
+	 * empty is saved as a file of no length; this function itself writes
+	 * "$~" alone, three bytes, for a house whose every record was skipped
+	 * for want of a prototype; and a binary file can be left part-way
+	 * through its first record.  Read as binary none of them is a record
+	 * at all, and a "$~" would be installed over the file and the house
+	 * taken out of saving for the rest of the run. */
+	if (len < (long) sizeof(struct obj_file_elem))
+	{
+	  send_to_char(ch, "...nothing to convert");
+	  fclose(in);
+	  free(outfile);
+	  return (1);
+	}
 
   if (!(out = fopen(outfile, "w")))
   {
@@ -773,9 +865,12 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
     if (!objsave_save_obj_record(tmp, out, i))
     {
       send_to_char(ch, "...write error in house rent file.\r\n");
-      free(outfile);
       fclose(in);
       fclose(out);
+      /* After the close: Windows will not remove a file that is open,
+       * and the paths below already do it in this order. */
+      remove(outfile);
+      free(outfile);
       return (0);
     }
     /* Obj_from_store() builds the object with read_object(), which puts
@@ -788,9 +883,10 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
   if (ferror(in)) {
     perror("SYSERR: Reading house file in House_load");
     send_to_char(ch, "...read error in house rent file.\r\n");
-    free(outfile);
     fclose(in);
     fclose(out);
+    remove(outfile);
+    free(outfile);
     return (0);
   }
 
