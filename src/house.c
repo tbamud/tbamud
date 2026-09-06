@@ -39,6 +39,8 @@ static void House_listrent(struct char_data *ch, room_vnum vnum);
 static int ascii_convert_house(struct char_data *ch, obj_vnum vnum);
 static void hcontrol_convert_houses(struct char_data *ch);
 static struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
+static bool house_converted_this_run(room_vnum vnum);
+static void house_forget_conversion(room_vnum vnum);
 /* CONVERSION code ends here -- see comment below. */
 
 /* First, the basics: finding the filename; loading/saving objects */
@@ -162,6 +164,16 @@ void House_crashsave(room_vnum vnum)
 
   if ((rnum = real_room(vnum)) == NOWHERE)
     return;
+
+  /* CONVERSION code starts here -- see comment below. */
+  /* A house converted this run is on disk and not in the room; writing the
+   * room over it would undo the conversion.  The test belongs here rather
+   * than in House_save_all(), because do_save() calls this too -- and a
+   * house owner typing "save" is not a rare event. */
+  if (house_converted_this_run(vnum))
+    return;
+  /* CONVERSION code ends here -- see comment below. */
+
   if (!House_get_filename(vnum, buf, sizeof(buf)))
     return;
   if (!(fp = fopen(buf, "wb"))) {
@@ -194,11 +206,22 @@ void House_crashsave(room_vnum vnum)
 /* Delete a house save file */
 static void House_delete_file(room_vnum vnum)
 {
-  char filename[MAX_INPUT_LENGTH];
+  char filename[MAX_INPUT_LENGTH], binname[MAX_INPUT_LENGTH + 8];
   FILE *fl;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
+
+  /* CONVERSION code starts here -- see comment below. */
+  /* A converted house left its binary original beside the new file.  With
+   * the house gone that copy is orphaned, and it would make the converter
+   * refuse a later house built on the same vnum as already converted --
+   * which would also stay out of saving for the rest of the run. */
+  snprintf(binname, sizeof(binname), "%s.bin", filename);
+  remove(binname);
+  house_forget_conversion(vnum);
+  /* CONVERSION code ends here -- see comment below. */
+
   if (!(fl = fopen(filename, "rb"))) {
     if (errno != ENOENT)
       log("SYSERR: Error deleting house file #%d. (1): %s", vnum, strerror(errno));
@@ -672,6 +695,35 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
  * will let your house files load on the next bootup. -Welcor            *
  ************************************************************************/
 /* Code for conversion to ascii house rent files. */
+
+/* Houses converted since this boot.  For these the file is the house and
+ * the room is not, so House_crashsave() leaves them alone; see the comment
+ * where they are recorded. */
+static room_vnum *converted_houses = NULL;
+static int num_converted_houses = 0;
+
+static bool house_converted_this_run(room_vnum vnum)
+{
+  int i;
+
+  for (i = 0; i < num_converted_houses; i++)
+    if (converted_houses[i] == vnum)
+      return (TRUE);
+
+  return (FALSE);
+}
+
+static void house_forget_conversion(room_vnum vnum)
+{
+  int i;
+
+  for (i = 0; i < num_converted_houses; i++)
+    if (converted_houses[i] == vnum) {
+      converted_houses[i] = converted_houses[--num_converted_houses];
+      return;
+    }
+}
+
 static void hcontrol_convert_houses(struct char_data *ch)
 {
   int i, failed = 0;
@@ -713,6 +765,10 @@ static void hcontrol_convert_houses(struct char_data *ch)
 	             failed, failed == 1 ? "" : "s");
   else
 	send_to_char(ch, "All done.\r\n");
+
+  if (num_converted_houses)
+	send_to_char(ch, "Converted houses are not saved again until a reboot, "
+	                 "which loads them.\r\n");
 }
 
 static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
@@ -858,6 +914,20 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	  return (1);
 	}
 
+  /* The scratch name is ordinarily absent, so stat() failing is the
+   * common case and not an error.  What it rules out is something at that
+   * name that is not a file: opening a named pipe for writing waits for a
+   * reader that never comes, and this sweep now visits every house, so
+   * one left anywhere under lib/house would stop the MUD rather than one
+   * house.  A regular file is safe to truncate. */
+  if (stat(outfile, &backup_st) == 0 && !S_ISREG(backup_st.st_mode))
+  {
+    send_to_char(ch, "...output name is not a file\r\n");
+    free(outfile);
+    fclose(in);
+    return (0);
+  }
+
   if (!(out = fopen(outfile, "w")))
   {
   	send_to_char(ch, "...cannot open output file\r\n");
@@ -960,6 +1030,25 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 	}
 
 	free(outfile);
+
+	/* The file is the house now; the room is not.  The room was loaded at
+	 * boot from the binary file, which parsed to nothing, so it holds what
+	 * the zone stocked and anything dropped in it since -- and
+	 * House_crashsave() writes that back over the file, from
+	 * House_save_all() on every autosave, at shutdown and on saveall for
+	 * any house room an object has come or gone in, which the zone reset
+	 * alone is enough to cause, and from do_save() whenever the room is
+	 * flagged.  So the
+	 * conversion would be undone by the next save, minutes later, having
+	 * reported success.
+	 *
+	 * Loading the file into the room instead would double every object the
+	 * two have in common -- a house saved from a room the zone stocks holds
+	 * that stock, and the zone has stocked it again since boot.  So the
+	 * house is left out of the saving instead, until the reboot this
+	 * command's own comment recommends, which loads the file properly. */
+	RECREATE(converted_houses, room_vnum, num_converted_houses + 1);
+	converted_houses[num_converted_houses++] = vnum;
 
 	/* An operator running a one-way migration should hear what it left
 	 * behind, not just what it carried over. */
