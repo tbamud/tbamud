@@ -1325,6 +1325,22 @@ void parse_room(FILE *fl, int virtual_nr)
       log("SYSERR: Room %d is outside of any zone.", virtual_nr);
       exit(1);
     }
+  /* Test the lower bound again, against the zone the loop stopped on.  The
+   * one above ran against whichever zone the previous room landed in, and
+   * this loop only ever advances, so a vnum falling in a gap between one
+   * zone's top and the next zone's bot passes both and is filed under a
+   * zone that does not contain it.  Gaps are legal -- the .zon reader
+   * rejects only bot > top, and the shipped world has thirty-six of them.
+   * Whether any zone covers such a room at all is a separate question:
+   * real_zone_by_thing() searches [bot,top] over the whole table, so it
+   * can find one further along that the loader's forward scan never
+   * reached, and then world[].zone and the lookup disagree. */
+  if (virtual_nr < zone_table[zone].bot) {
+    log("SYSERR: Room %d falls between zones %d and %d in the order the "
+        "index gives them, so the loader cannot file it.",
+        virtual_nr, zone_table[zone - 1].number, zone_table[zone].number);
+    exit(1);
+  }
   world[room_nr].zone = zone;
   world[room_nr].number = virtual_nr;
   world[room_nr].name = fread_string(fl, buf2);
@@ -1366,7 +1382,20 @@ void parse_room(FILE *fl, int virtual_nr)
     check_bitvector_names(world[room_nr].room_flags[0], room_bits_count, flags, "room");
 
     if(bitsavetodisk) { /* Maybe the implementor just wants to look at the 128bit files */
-      add_to_save_list(zone_table[real_zone_by_thing(virtual_nr)].number, SL_WLD);
+      /* The checks above have already placed this room inside
+       * zone_table[zone] and world[room_nr].zone records it, so the file
+       * the loader has filed it under is known here without asking
+       * real_zone_by_thing().
+       * That function searches [bot,top] and gives up on anything above
+       * zone_table[top_of_zone_table].top -- the LAST zone's top, not the
+       * highest top of any zone -- so a table whose final entry has a low
+       * range answers NOWHERE for every room above it however correctly
+       * the room is filed, and zone_table[NOWHERE] reads off the end of
+       * the table, or off the front of it where IDXTYPE is signed.
+       * Asking the room's own zone is what genwld.c and oasis_copy.c do
+       * for the same list, it cannot go out of bounds, and it converts the
+       * room instead of skipping it. */
+      add_to_save_list(zone_table[zone].number, SL_WLD);
       converting = TRUE;
     }
 
