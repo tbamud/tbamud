@@ -776,6 +776,7 @@ static OCMD(do_oat)
   struct obj_data *object, *walk;
   char arg[MAX_INPUT_LENGTH], *command;
   int saved_purged;
+  long id, owner_id;
 
   command = any_one_arg(argument, arg);
 
@@ -810,6 +811,19 @@ static OCMD(do_oat)
   saved_purged = dg_owner_purged;
   dg_owner_purged = 0;
 
+  /* Stamp the object this script is running on as well.  A command run
+   * from here can reach back to it -- oforce the character carrying it to
+   * drop it, into a drop trigger that purges it -- and that purge sets the
+   * flag for a reason: the caller's script_driver() has to abort rather
+   * than go on using a freed object.  Restoring the saved value blindly
+   * would wipe exactly that signal. */
+  owner_id = obj_script_id(obj);
+
+  /* Stamp it before the command runs.  Script ids come from a counter
+   * that only goes up, and free_obj() drops them from the lookup table,
+   * so no later object can carry this one. */
+  id = obj_script_id(object);
+
   obj_to_room(object, loc);
   obj_command_interpreter(object, command);
 
@@ -822,16 +836,32 @@ static OCMD(do_oat)
    * that command fires gets its own script_driver(), which zeroes the flag
    * on the way in and, when a script purges its own object, returns
    * without clearing it -- so the value read here can belong to a script
-   * three frames down.  Look for the object instead: object_list holds
-   * every object that exists, and REMOVE_FROM_LIST in extract_obj() is
-   * what takes one off it. */
+   * three frames down.
+   *
+   * Look for the object instead.  object_list holds every object that
+   * exists and REMOVE_FROM_LIST in extract_obj() is what takes one off
+   * it -- but the address alone is not enough: free() hands the same
+   * block straight back, and read_object() puts what it builds at the
+   * head of the list, so a command that purges this duplicate and then
+   * loads anything leaves the new object sitting at the old address,
+   * first in the list, wearing the pointer being looked for.  Match the
+   * script id too; those are never reused. */
   for (walk = object_list; walk; walk = walk->next)
-    if (walk == object) {
+    if (walk == object && walk->script_id == id) {
       extract_obj(object);
       break;
     }
 
-  dg_owner_purged = saved_purged;
+  /* Put the saved value back only if the object this script belongs to
+   * survived the command.  If it did not, leave the flag set, whoever set
+   * it: it is the only way the caller learns that its own object is gone. */
+  for (walk = object_list; walk; walk = walk->next)
+    if (walk == obj && walk->script_id == owner_id) {
+      dg_owner_purged = saved_purged;
+      return;
+    }
+
+  dg_owner_purged = 1;
 }
 
 static OCMD(do_omove)
