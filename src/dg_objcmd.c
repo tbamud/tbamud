@@ -70,7 +70,6 @@ static void obj_log(obj_data *obj, const char *format, ...)
   va_end(args);
 }
 
-/* returns the real room number that the object or object's carrier is in */
 /* Is obj inside container, at any depth?  extract_obj() is recursive, so
  * anything holding the running object must be left alone. */
 static int obj_contains_obj(obj_data *container, obj_data *obj)
@@ -84,6 +83,7 @@ static int obj_contains_obj(obj_data *container, obj_data *obj)
     return FALSE;
 }
 
+/* returns the real room number that the object or object's carrier is in */
 room_rnum obj_room(obj_data *obj)
 {
     if (IN_ROOM(obj) != NOWHERE)
@@ -773,7 +773,7 @@ static OCMD(do_oat)
 {
   room_rnum loc = NOWHERE;
   struct char_data *ch;
-  struct obj_data *object;
+  struct obj_data *object, *walk;
   char arg[MAX_INPUT_LENGTH], *command;
   int saved_purged;
 
@@ -803,11 +803,10 @@ static OCMD(do_oat)
     return;
 
   /* obj_command_interpreter() is called directly here rather than through
-   * script_driver(), so this path owns dg_owner_purged: the command may
-   * purge the object it was given, and leaving the flag set afterwards
-   * would make script_driver abort the *real* object's script and report
-   * the action as failed.  Save it, and use it to decide whether there is
-   * still an object to extract. */
+   * script_driver(), so this path has to put dg_owner_purged back: the
+   * command may purge the object it was given, and leaving the flag set
+   * afterwards would make script_driver abort the *real* object's script
+   * and report the action as failed. */
   saved_purged = dg_owner_purged;
   dg_owner_purged = 0;
 
@@ -816,9 +815,21 @@ static OCMD(do_oat)
 
   /* Wherever the command left it, it was ours: this is a duplicate made
    * to carry one command and nothing else.  Testing that it was still in
-   * loc meant a command that moved it left it in the world for good. */
-  if (!dg_owner_purged)
-    extract_obj(object);
+   * loc meant a command that moved it left it in the world for good.
+   *
+   * dg_owner_purged cannot answer whether it is still there.  Running a
+   * command somewhere else is what this command is for, and any script
+   * that command fires gets its own script_driver(), which zeroes the flag
+   * on the way in and, when a script purges its own object, returns
+   * without clearing it -- so the value read here can belong to a script
+   * three frames down.  Look for the object instead: object_list holds
+   * every object that exists, and REMOVE_FROM_LIST in extract_obj() is
+   * what takes one off it. */
+  for (walk = object_list; walk; walk = walk->next)
+    if (walk == object) {
+      extract_obj(object);
+      break;
+    }
 
   dg_owner_purged = saved_purged;
 }
