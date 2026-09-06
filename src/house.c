@@ -865,6 +865,9 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
     if (!objsave_save_obj_record(tmp, out, i))
     {
       send_to_char(ch, "...write error in house rent file.\r\n");
+      /* Built by Obj_from_store() above and not written out, so it is
+       * still in object_list and still counted against its prototype. */
+      extract_obj(tmp);
       fclose(in);
       fclose(out);
       /* After the close: Windows will not remove a file that is open,
