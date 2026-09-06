@@ -674,7 +674,7 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
 /* Code for conversion to ascii house rent files. */
 static void hcontrol_convert_houses(struct char_data *ch)
 {
-  int i;
+  int i, failed = 0;
 
 	if (GET_LEVEL(ch) < LVL_IMPL)
 		{
@@ -693,10 +693,13 @@ static void hcontrol_convert_houses(struct char_data *ch)
   for (i = 0; i < num_of_houses; i++) {
 	  send_to_char(ch, "  %d", house_control[i].vnum);
 
+	  /* One house's failure is its own.  ascii_convert_house() has said what
+	   * went wrong and left that house's files as it found them; stopping
+	   * here would leave every house after it unconverted for a reason that
+	   * has nothing to do with them. */
 	  if (!ascii_convert_house(ch, house_control[i].vnum))
 	  {
-	  	/* Let ascii_convert_house() tell about the error. */
-	  	return;
+	  	failed++;
 	  }
 	  else
 	  {
@@ -704,6 +707,11 @@ static void hcontrol_convert_houses(struct char_data *ch)
 	  }
   }
 
+  if (failed)
+	send_to_char(ch, "All done, except for %d house%s left unconverted; "
+	                 "see the errors above.\r\n",
+	             failed, failed == 1 ? "" : "s");
+  else
 	send_to_char(ch, "All done.\r\n");
 }
 
@@ -745,9 +753,22 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 
   if (!(in = fopen(infile, "r+b")))	/* no file found */
   {
-  	send_to_char(ch, "...no object file found\r\n");
+  	/* No rent file at all is unusual -- one deleted by hand, or a
+  	 * control file brought in without them.  hcontrol build writes a
+  	 * zero-byte one the moment a house is created, so a house nobody
+  	 * has stored anything in still has a file.  Either way there is
+  	 * nothing to convert and nothing wrong.  A file that is there and
+  	 * will not open is a different thing and has to be said. */
+  	if (errno != ENOENT)
+  	{
+  	  send_to_char(ch, "...cannot open the rent file: %s\r\n",
+  	               strerror(errno));
+  	  free(outfile);
+  	  return (0);
+  	}
+  	send_to_char(ch, "...no rent file");
   	free(outfile);
-    return (0);
+    return (1);
   }
 
 	/* House_crashsave() writes the ascii format to this very name, so for any
