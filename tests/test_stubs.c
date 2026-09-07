@@ -61,10 +61,10 @@ struct config_data         config_info;            /* zero-init */
 time_t                     motdmod          = 0;
 time_t                     newsmod          = 0;
 
-/* interpreter needs some start-room vnum stubs */
-ush_int r_mortal_start_room = 0;
-ush_int r_immort_start_room = 0;
-ush_int r_frozen_start_room = 0;
+/* interpreter needs some start-room rnum stubs */
+room_rnum r_mortal_start_room = 0;
+room_rnum r_immort_start_room = 0;
+room_rnum r_frozen_start_room = 0;
 
 /* config.c */
 int selfdelete_fastwipe = 0;
