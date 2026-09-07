@@ -437,7 +437,7 @@ ACMD(do_oasis_oedit);
 void redit_setup_existing(struct descriptor_data *d, int rnum);
 void redit_string_cleanup(struct descriptor_data *d, int terminator);
 void redit_save_internally(struct descriptor_data *d);
-void redit_save_to_disk(zone_vnum zone_num);
+int redit_save_to_disk(zone_vnum zone_num);
 void redit_parse(struct descriptor_data *d, char *arg);
 void free_room(struct room_data *room);
 ACMD(do_oasis_redit);

@@ -342,7 +342,9 @@ int save_mobiles(zone_rnum rznum)
   vznum = zone_table[rznum].number;
   snprintf(mobfname, sizeof(mobfname), "%s%d.new", MOB_PREFIX, vznum);
   if ((mobfd = fopen(mobfname, "w")) == NULL) {
-    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: GenOLC: Cannot open mob file for writing.");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: GenOLC: Cannot open the mobile file %s for writing: %s",
+           mobfname, strerror(errno));
     return FALSE;
   }
 
@@ -351,14 +353,47 @@ int save_mobiles(zone_rnum rznum)
       continue;
     check_mobile_strings(&mob_proto[rmob]);
     if (write_mobile_record(i, &mob_proto[rmob], mobfd) < 0)
-      log("SYSERR: GenOLC: Error writing mobile #%d.", i);
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: GenOLC: Error writing mobile #%d to %s: %s",
+             i, mobfname, strerror(errno));
   }
   fputs("$\n", mobfd);
+
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated mobile file over a good one.
+   * This is the shape save_quests() already uses. */
+  /* The byte count this function logs below.  It was taken and reported
+   * whether or not the file had been written; the tests below now return
+   * before it is used. */
   written = ftell(mobfd);
-  fclose(mobfd);
+  if (fflush(mobfd) == EOF || ferror(mobfd)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing mobile file %s: %s",
+           mobfname, strerror(errno));
+    fclose(mobfd);
+    if (!CONFIG_DEBUG_MODE)
+      remove(mobfname);
+    return FALSE;
+  }
+
+  if (fclose(mobfd) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing mobile file %s: %s",
+           mobfname, strerror(errno));
+    if (!CONFIG_DEBUG_MODE)
+      remove(mobfname);
+    return FALSE;
+  }
+
   snprintf(usedfname, sizeof(usedfname), "%s%d.mob", MOB_PREFIX, vznum);
-  remove(usedfname);
-  rename(mobfname, usedfname);
+  if (!genolc_install_file(mobfname, usedfname)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the mobile file %s in place: %s",
+           usedfname, strerror(errno));
+    return FALSE;
+  }
 
   if (in_save_list(vznum, SL_MOB))
     remove_from_save_list(vznum, SL_MOB);

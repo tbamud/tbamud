@@ -351,9 +351,11 @@ int save_rooms(zone_rnum rzone)
   log("GenOLC: save_rooms: Saving rooms in zone #%d (%d-%d).",
 	zone_table[rzone].number, genolc_zone_bottom(rzone), zone_table[rzone].top);
 
-  snprintf(filename, sizeof(filename), "%s/%d.new", WLD_PREFIX, zone_table[rzone].number);
+  snprintf(filename, sizeof(filename), "%s%d.new", WLD_PREFIX, zone_table[rzone].number);
   if (!(sf = fopen(filename, "w"))) {
-    perror("SYSERR: save_rooms");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not open the room file %s: %s",
+           filename, strerror(errno));
     return FALSE;
   }
 
@@ -448,13 +450,39 @@ int save_rooms(zone_rnum rzone)
 
   /* Write the final line and close it. */
   fprintf(sf, "$~\n");
-  fclose(sf);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated room file over a good one.
+   * This is the shape save_quests() already uses. */
+  if (fflush(sf) == EOF || ferror(sf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing room file %s: %s",
+           filename, strerror(errno));
+    fclose(sf);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
+  if (fclose(sf) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing room file %s: %s",
+           filename, strerror(errno));
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
 
   /* Old file we're replacing. */
-  snprintf(buf, sizeof(buf), "%s/%d.wld", WLD_PREFIX, zone_table[rzone].number);
+  snprintf(buf, sizeof(buf), "%s%d.wld", WLD_PREFIX, zone_table[rzone].number);
 
-  remove(buf);
-  rename(filename, buf);
+  if (!genolc_install_file(filename, buf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the room file %s in place: %s",
+           buf, strerror(errno));
+    return FALSE;
+  }
 
   if (in_save_list(zone_table[rzone].number, SL_WLD))
     remove_from_save_list(zone_table[rzone].number, SL_WLD);

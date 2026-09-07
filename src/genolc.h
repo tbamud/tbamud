@@ -53,6 +53,7 @@ extern struct save_list_data *save_list;
 
 #define LIMIT(var, low, high)	MIN(high, MAX(var, low))
 
+int genolc_install_file(const char *scratch, const char *dest);
 room_vnum genolc_zone_bottom(zone_rnum rznum);
 room_vnum genolc_zonep_bottom(struct zone_data *zone);
 extern void free_save_list(void);

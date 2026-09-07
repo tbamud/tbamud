@@ -593,12 +593,16 @@ int save_shops(zone_rnum zone_num)
     return FALSE;
   }
 
-  snprintf(fname, sizeof(fname), "%s/%d.new", SHP_PREFIX, zone_table[zone_num].number);
+  snprintf(fname, sizeof(fname), "%s%d.new", SHP_PREFIX, zone_table[zone_num].number);
   if (!(shop_file = fopen(fname, "w"))) {
-    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: OLC: Cannot open shop file!");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: OLC: Cannot open the shop file %s: %s",
+           fname, strerror(errno));
     return FALSE;
   } else if (fprintf(shop_file, "CircleMUD v3.0 Shop File~\n") < 0) {
-    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: OLC: Cannot write to shop file!");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: OLC: Cannot write to the shop file %s: %s",
+           fname, strerror(errno));
     fclose(shop_file);
     return FALSE;
   }
@@ -666,10 +670,37 @@ int save_shops(zone_rnum zone_num)
     }
   }
   fprintf(shop_file, "$~\n");
-  fclose(shop_file);
-  snprintf(oldname, sizeof(oldname), "%s/%d.shp", SHP_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(fname, oldname);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated shop file over a good one.
+   * This is the shape save_quests() already uses. */
+  if (fflush(shop_file) == EOF || ferror(shop_file)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing shop file %s: %s",
+           fname, strerror(errno));
+    fclose(shop_file);
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
+  if (fclose(shop_file) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing shop file %s: %s",
+           fname, strerror(errno));
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
+  snprintf(oldname, sizeof(oldname), "%s%d.shp", SHP_PREFIX, zone_table[zone_num].number);
+  if (!genolc_install_file(fname, oldname)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the shop file %s in place: %s",
+           oldname, strerror(errno));
+    return FALSE;
+  }
 
   if (num_shops > 0)
     create_world_index(zone_table[zone_num].number, "shp");

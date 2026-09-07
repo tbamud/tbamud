@@ -28,7 +28,7 @@ static int start_change_command(struct descriptor_data *d, int pos);
 static void zedit_setup(struct descriptor_data *d, int room_num);
 static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum bottom, room_vnum top);
 static void zedit_save_internally(struct descriptor_data *d);
-static void zedit_save_to_disk(int zone_num);
+static int zedit_save_to_disk(int zone_num);
 static void zedit_disp_menu(struct descriptor_data *d);
 static void zedit_disp_comtype(struct descriptor_data *d);
 static void zedit_disp_arg1(struct descriptor_data *d);
@@ -157,12 +157,19 @@ ACMD(do_oasis_zedit)
   if (save) {
     send_to_char(ch, "Saving all zone information for zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
-      "OLC: %s saves zone information for zone %d.", GET_NAME(ch),
-      zone_table[OLC_ZNUM(d)].number);
 
     /* Save the zone information to the zone file. */
-    save_zone(OLC_ZNUM(d));
+    if (save_zone(OLC_ZNUM(d)))
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "OLC: %s saves zone information for zone %d.", GET_NAME(ch),
+        zone_table[OLC_ZNUM(d)].number);
+    else {
+      send_to_char(ch, "Unable to save zone information for zone %d. The "
+        "changes are still in memory.\r\n", zone_table[OLC_ZNUM(d)].number);
+      mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "SYSERR: OLC: %s failed to save zone information for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    }
 
     /* Free the descriptor's OLC structure. */
     free(d->olc);
@@ -281,10 +288,18 @@ static void zedit_new_zone(struct char_data *ch, zone_vnum vzone_num, room_vnum 
     }
   }
 
-  zedit_save_to_disk(result); /* save to disk .. */
-
   mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s creates new zone #%d", GET_NAME(ch), vzone_num);
-  write_to_output(ch->desc, "Zone created successfully.\r\n");
+
+  /* create_new_zone() has written the zone's seven files and indexed them
+   * before this runs, so what fails here is a rewrite of the .zon it just
+   * wrote.  Whether that first copy is good is not something this can say:
+   * create_new_zone() does not check its own writes, and its index
+   * installs answer nothing. */
+  if (zedit_save_to_disk(result))
+    write_to_output(ch->desc, "Zone created successfully.\r\n");
+  else
+    write_to_output(ch->desc, "Zone created. The zone file could not be "
+                              "written; see the syslog.\r\n");
 }
 
 /* Save all the information in the player's temporary buffer back into
@@ -361,9 +376,9 @@ static void zedit_save_internally(struct descriptor_data *d)
   add_to_save_list(zone_table[OLC_ZNUM(d)].number, SL_ZON);
 }
 
-static void zedit_save_to_disk(int zone)
+static int zedit_save_to_disk(int zone)
 {
-  save_zone(zone);
+  return save_zone(zone);
 }
 
 /* Error check user input and then setup change */
@@ -729,8 +744,11 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       /* Save the zone in memory, hiding invisible people. */
       zedit_save_internally(d);
       if (CONFIG_OLC_SAVE) {
-        write_to_output(d, "Saving zone info to disk.\r\n");
-        zedit_save_to_disk(OLC_ZNUM(d));
+        if (zedit_save_to_disk(OLC_ZNUM(d)))
+          write_to_output(d, "Saving zone info to disk.\r\n");
+        else
+          write_to_output(d, "Unable to save zone info to disk. The change is "
+                             "still in memory.\r\n");
       } else
         write_to_output(d, "Saving zone info in memory.\r\n");
 
