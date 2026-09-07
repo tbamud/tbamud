@@ -617,9 +617,24 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
            * has never been saved it is NOTHING to begin with. */
           trig_rnum drnum = real_trigger(OLC_NUM(d));
           zone_rnum dzone = real_zone_by_thing(OLC_NUM(d));
+          int stale = 0;
 
-          if (drnum != NOTHING && delete_trigger(drnum)) {
-            if (dzone == NOWHERE ||
+          if (drnum != NOTHING && delete_trigger(drnum, &stale)) {
+            if (stale > 0)
+              /* A zone that still referenced the trigger holds a record too
+               * large to save, so its file could not be rewritten and still
+               * names the trigger. Leave the trigger in its own .trg to
+               * match: removing it now would strand that reference on the
+               * next reboot, the very thing delete_trigger's write guards
+               * against. Kept whole, a reboot restores the trigger and its
+               * attachments together, and the queued zone tries again, so
+               * the delete lands once the over-size record is cut down. */
+              write_to_output(d, "The trigger is gone from memory, but a zone that referenced it "
+                                 "holds a record too large to save and could not be rewritten. The "
+                                 "trigger has been kept in its own file to match, so a reboot "
+                                 "restores it and the things attached to it; the deletion will not "
+                                 "reach disk until that zone can be saved. See the syslog.\r\n");
+            else if (dzone == NOWHERE ||
                 !trigedit_write_zone(dzone, GET_INVIS_LEV(d->character)))
               /* Not "a reboot will bring it back": by the time the write is
                * attempted the prototypes that referenced this trigger have
@@ -1340,7 +1355,7 @@ static int trigedit_strip_proto(struct trig_proto_list **list, trig_vnum vnum)
  * Note the guard. top_of_trigt is a COUNT here (trig_index[top_of_trigt++]
  * on load), unlike top_of_mobt/top_of_objt/top_of_world, which are last
  * indices -- so this bounds with >= where delete_object bounds with >. */
-int delete_trigger(trig_rnum rnum)
+int delete_trigger(trig_rnum rnum, int *stale_refs)
 {
   trig_rnum i;
   trig_vnum vnum;
@@ -1348,7 +1363,7 @@ int delete_trigger(trig_rnum rnum)
   struct char_data *ch;
   struct obj_data *obj;
   room_rnum rm;
-  int live = 0, refs = 0, cmd_no, n;
+  int live = 0, refs = 0, cmd_no, n, stale = 0;
   char *dirty;
   zone_rnum z, zon;
   struct descriptor_data *dsc;
@@ -1555,27 +1570,37 @@ int delete_trigger(trig_rnum rnum)
       }
     }
 
-  /* Write the stale files now instead of only queueing them. The trigger
-   * has already left the .trg by the time this returns, so a server that
-   * dies before the next saveall comes back up with prototypes still
-   * naming a trigger that no longer exists -- and dg_read_trigger logs
-   * "asked for but non-existant" for every one of them, on every boot
-   * after that. Queueing alone inverts the order: the thing depended on
-   * goes first and its dependents follow only if someone saves. Review
-   * reproduced exactly that with a SIGKILL. delete_object writes its own
-   * zone the same way, and each save_ call clears its own save-list
-   * entry, so nobody else's pending edits are flushed with them. */
+  /* Write the stale files now instead of only queueing them. The caller
+   * removes the trigger from its own .trg once this returns, so a server
+   * that dies before the next saveall would otherwise come back up with
+   * prototypes still naming a trigger that no longer exists -- and
+   * dg_read_trigger logs "asked for but non-existant" for every one of
+   * them, on every boot after that. Queueing alone inverts the order: the
+   * thing depended on goes first and its dependents follow only if someone
+   * saves. Review reproduced exactly that with a SIGKILL. Each save_ call
+   * clears its own save-list entry, so nobody else's pending edits are
+   * flushed with them.
+   *
+   * A saver reports FALSE when it cannot write -- a zone holding a record
+   * too large to save cannot be rewritten at all, and its file still names
+   * the trigger. Count those: the caller must not then remove the trigger
+   * from the .trg, or that reference is stranded on the next reboot, which
+   * is the whole thing this write exists to prevent. The zone stays queued
+   * either way, so the delete completes once the record is cut down. */
   for (z = 0; z <= top_of_zone_table; z++) {
     if (dirty[z] & TRIGDEL_MOB)
-      save_mobiles(z);
+      stale += !save_mobiles(z);
     if (dirty[z] & TRIGDEL_OBJ)
-      save_objects(z);
+      stale += !save_objects(z);
     if (dirty[z] & TRIGDEL_WLD)
-      save_rooms(z);
+      stale += !save_rooms(z);
     if (dirty[z] & TRIGDEL_ZON)
-      save_zone(z);
+      stale += !save_zone(z);
   }
   free(dirty);
+
+  if (stale_refs)
+    *stale_refs = stale;
 
   if (zrnum == NOWHERE)
     mudlog(BRF, LVL_BUILDER, TRUE,

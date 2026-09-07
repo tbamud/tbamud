@@ -270,7 +270,7 @@ void free_shop(struct shop_data *shop)
  * only copy: delete the shops in ascending order and the mob's own proc is
  * gone for good. It is handed to a surviving shop instead. delete_quest
  * needs none of this because add_quest re-stashes on every add. */
-int delete_shop(shop_rnum rnum)
+int delete_shop(shop_rnum rnum, bool *keeper_unsaved)
 {
   shop_rnum i, inherit = NOWHERE;
   zone_rnum rznum, kzone;
@@ -278,6 +278,9 @@ int delete_shop(shop_rnum rnum)
   struct char_data *mob;
   SPECIAL (*tempfunc);
   int shops_remaining = 0;
+
+  if (keeper_unsaved)
+    *keeper_unsaved = FALSE;
 
   if (rnum == NOWHERE || rnum > top_shop)
     return FALSE;
@@ -349,9 +352,14 @@ int delete_shop(shop_rnum rnum)
            * and reaching across to write a file the builder may have no
            * right to edit is not this command's business -- that one is
            * queued for the next save instead. The in-memory correction
-           * above happens either way. */
-          if (kzone == rznum)
-            save_mobiles(kzone);
+           * above happens either way.
+           *
+           * When that write cannot be done -- the zone holds a record too
+           * large to save -- the flag is corrected in memory but its .mob
+           * still carries it, so a reboot calls the missing spec again.
+           * Say so; the zone stays queued and the write retries. */
+          if (kzone == rznum && !save_mobiles(kzone) && keeper_unsaved)
+            *keeper_unsaved = TRUE;
         }
       }
     }
@@ -495,8 +503,15 @@ mob_rnum reassign_shopkeeper(shop_vnum vnum, mob_rnum oldkeeper, SPECIAL(*oldfun
         kzone = real_zone_by_thing(mob_index[oldkeeper].vnum);
         if (kzone != NOWHERE) {
           add_to_save_list(zone_table[kzone].number, SL_MOB);
-          if (kzone == real_zone_by_thing(vnum))
-            save_mobiles(kzone);
+          /* If the zone cannot be rewritten -- it holds a record too large
+           * to save -- the flag is off in memory but its .mob still carries
+           * it, and a reboot calls the missing spec until the record is cut
+           * down. The zone stays queued; name it so an operator can act. */
+          if (kzone == real_zone_by_thing(vnum) && !save_mobiles(kzone))
+            mudlog(BRF, LVL_BUILDER, TRUE,
+                   "SYSERR: GenOLC: reassign_shopkeeper: zone %d holds a record too large to "
+                   "save; keeper #%d keeps its shopkeeper flag on disk until the zone can be "
+                   "saved.", zone_table[kzone].number, mob_index[oldkeeper].vnum);
         }
         released = oldkeeper;
       }
