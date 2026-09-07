@@ -33,6 +33,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ban.h"
+#include "protocol.h" /* for ReportBugFlush */
 #include "screen.h"
 
 /* local utility functions with file scope */
@@ -4366,6 +4367,12 @@ ACMD(do_copyover)
 
   snprintf(buf, sizeof(buf), "%d", port);
   snprintf(buf2, sizeof(buf2), "-C%d", mother_desc);
+
+  /* This process is about to be replaced, so anything the protocol bug
+   * throttle is still holding goes out now or not at all -- and before the
+   * chdir below, because log_to_topic_files() opens its files by a path
+   * relative to lib, so after it a topic line lands outside the tree. */
+  ReportBugFlush();
 
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
   if (chdir("..") != 0) {
