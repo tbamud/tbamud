@@ -622,13 +622,14 @@ static void look_in_obj(struct char_data *ch, char *arg)
            * 0 -1 0 0 and ships in a room zone 3 resets it into.
            *
            * fullness[] holds four entries and ends in "", not the "\n"
-           * sentinel the string tables use.  Negative contents make amt
-           * negative, and contents above about 7.15e8 make the multiply
-           * overflow into a negative too, which nothing bounds. */
-          if (GET_OBJ_VAL(obj, 0) <= 0)
+           * sentinel the string tables use.  Clamp nonpositive contents
+           * before calculating fullness, and widen the multiplication to
+           * avoid signed int overflow.  The guard above ensures contents
+           * do not exceed capacity, so the quotient fits in amt (0..3). */
+          if (GET_OBJ_VAL(obj, 0) <= 0 || GET_OBJ_VAL(obj, 1) <= 0)
             amt = 0;
           else
-            amt = (GET_OBJ_VAL(obj, 1) * 3) / GET_OBJ_VAL(obj, 0);
+            amt = (GET_OBJ_VAL(obj, 1) * 3LL) / GET_OBJ_VAL(obj, 0);
 
           if (amt < 0)
             amt = 0;
