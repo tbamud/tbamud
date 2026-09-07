@@ -1029,10 +1029,14 @@ void index_boot(int mode)
     }
   }
 
-  /* Exit if 0 records, unless this is shops */
+  /* Exit if 0 records, unless this is shops or quests: a world may have
+   * neither, and neither is required for the MUD to run. */
   if (!rec_count) {
-    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST)
+    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST) {
+      /* Every other way out of this function closes the index or exits. */
+      fclose(db_index);
       return;
+    }
     log("SYSERR: boot error - 0 records counted in %s/%s.", prefix,
 	index_filename);
     exit(1);
@@ -1321,6 +1325,22 @@ void parse_room(FILE *fl, int virtual_nr)
       log("SYSERR: Room %d is outside of any zone.", virtual_nr);
       exit(1);
     }
+  /* Test the lower bound again, against the zone the loop stopped on.  The
+   * one above ran against whichever zone the previous room landed in, and
+   * this loop only ever advances, so a vnum falling in a gap between one
+   * zone's top and the next zone's bot passes both and is filed under a
+   * zone that does not contain it.  Gaps are legal -- the .zon reader
+   * rejects only bot > top, and the shipped world has thirty-six of them.
+   * Whether any zone covers such a room at all is a separate question:
+   * real_zone_by_thing() searches [bot,top] over the whole table, so it
+   * can find one further along that the loader's forward scan never
+   * reached, and then world[].zone and the lookup disagree. */
+  if (virtual_nr < zone_table[zone].bot) {
+    log("SYSERR: Room %d falls between zones %d and %d in the order the "
+        "index gives them, so the loader cannot file it.",
+        virtual_nr, zone_table[zone - 1].number, zone_table[zone].number);
+    exit(1);
+  }
   world[room_nr].zone = zone;
   world[room_nr].number = virtual_nr;
   world[room_nr].name = fread_string(fl, buf2);
@@ -1368,7 +1388,20 @@ void parse_room(FILE *fl, int virtual_nr)
     check_bitvector_names(world[room_nr].room_flags[0], room_bits_count, flags, "room");
 
     if(bitsavetodisk) { /* Maybe the implementor just wants to look at the 128bit files */
-      add_to_save_list(zone_table[real_zone_by_thing(virtual_nr)].number, 3);
+      /* The checks above have already placed this room inside
+       * zone_table[zone] and world[room_nr].zone records it, so the file
+       * the loader has filed it under is known here without asking
+       * real_zone_by_thing().
+       * That function searches [bot,top] and gives up on anything above
+       * zone_table[top_of_zone_table].top -- the LAST zone's top, not the
+       * highest top of any zone -- so a table whose final entry has a low
+       * range answers NOWHERE for every room above it however correctly
+       * the room is filed, and zone_table[NOWHERE] reads off the end of
+       * the table, or off the front of it where IDXTYPE is signed.
+       * Asking the room's own zone is what genwld.c and oasis_copy.c do
+       * for the same list, it cannot go out of bounds, and it converts the
+       * room instead of skipping it. */
+      add_to_save_list(zone_table[zone].number, SL_WLD);
       converting = TRUE;
     }
 
@@ -1938,7 +1971,29 @@ void parse_mobile(FILE *mob_f, int nr)
     letter = *f4;
 
     if(bitsavetodisk) {
-      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 0);
+      /* real_zone_by_thing() answers NOWHERE when it cannot place the
+       * vnum, and this indexed zone_table with it -- past the end of the
+       * table where IDXTYPE is unsigned, before the start where it is
+       * signed.  add_to_save_list() re-checks the zone number it is
+       * handed, so what usually follows is the boot walking off the table
+       * rather than the wrong file being rewritten; either way the read is
+       * out of bounds.  parse_room has a zone of its own to file the room
+       * under; here the lookup is the only answer there is, so a vnum it
+       * cannot place is not queued.  What becomes of the record after
+       * that is not something this knows.  A vnum no zone covers is
+       * dropped by a rewrite of the file it sits in, since the savers
+       * walk their own zone's range; but the lookup also gives up on a
+       * vnum some zone does cover, when its search never reaches that
+       * entry, and then the outcome turns on which file the record
+       * happens to sit in.  So the message says what was established and
+       * no more. */
+      zone_rnum tzone = real_zone_by_thing(nr);
+
+      if (tzone == NOWHERE)
+        log("SYSERR: No zone found for mobile #%d; it is not queued for "
+            "conversion.", nr);
+      else
+        add_to_save_list(zone_table[tzone].number, SL_MOB);
       converting =TRUE;
     }
 
@@ -2097,7 +2152,29 @@ char *parse_object(FILE *obj_f, int nr)
     GET_OBJ_AFFECT(obj_proto + i)[3] = 0;
 
     if(bitsavetodisk) {
-      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 1);
+      /* real_zone_by_thing() answers NOWHERE when it cannot place the
+       * vnum, and this indexed zone_table with it -- past the end of the
+       * table where IDXTYPE is unsigned, before the start where it is
+       * signed.  add_to_save_list() re-checks the zone number it is
+       * handed, so what usually follows is the boot walking off the table
+       * rather than the wrong file being rewritten; either way the read is
+       * out of bounds.  parse_room has a zone of its own to file the room
+       * under; here the lookup is the only answer there is, so a vnum it
+       * cannot place is not queued.  What becomes of the record after
+       * that is not something this knows.  A vnum no zone covers is
+       * dropped by a rewrite of the file it sits in, since the savers
+       * walk their own zone's range; but the lookup also gives up on a
+       * vnum some zone does cover, when its search never reaches that
+       * entry, and then the outcome turns on which file the record
+       * happens to sit in.  So the message says what was established and
+       * no more. */
+      zone_rnum tzone = real_zone_by_thing(nr);
+
+      if (tzone == NOWHERE)
+        log("SYSERR: No zone found for object #%d; it is not queued for "
+            "conversion.", nr);
+      else
+        add_to_save_list(zone_table[tzone].number, SL_OBJ);
       converting = TRUE;
     }
 
