@@ -263,18 +263,57 @@ static int find_house(room_vnum vnum)
 static void House_save_control(void)
 {
   FILE *fl;
+  /* Fixed at compile time: HCONTROL_FILE is a string literal and so is the
+   * suffix.  objsave_open_tmp(), which the rest of this follows, measures
+   * the name it builds because its path is made at runtime from a player
+   * name; there is nothing here that could come out any other length. */
+  static const char tempfile[] = HCONTROL_FILE ".tmp";
 
-  if (!(fl = fopen(HCONTROL_FILE, "wb"))) {
-    perror("SYSERR: Unable to open house control file.");
+  /* Build the new file beside the old one and put it in place only once it
+   * is whole.  Writing straight to HCONTROL_FILE truncated it
+   * before a single record had reached the disk, so a save that failed
+   * part-way left a truncated control file where a good one had been.
+   * Where nothing at all reached the disk -- the common case, since the
+   * records usually fit the stream buffer -- every house in it was gone
+   * at the next boot; where the tear fell later, only the records past it
+   * were lost.
+   *
+   * A full disk is the ordinary way in, and it does not fail where it
+   * looks like it should: fopen("wb") only truncates, which costs no
+   * blocks, and a set of records small enough to fit the stream buffer --
+   * twenty-one houses at 192 bytes against the usual 4096 -- is copied
+   * into it and reported written.  The failure appears at the fclose(),
+   * whose result nothing looked at. */
+  if (!(fl = fopen(tempfile, "wb"))) {
+    perror("SYSERR: Unable to open the temporary house control file");
     return;
   }
   /* write all the house control recs in one fell swoop.  Pretty nifty, eh? */
   if (fwrite(house_control, sizeof(struct house_control_rec), num_of_houses, fl) != (size_t)num_of_houses) {
-    perror("SYSERR: Unable to save house control file.");
-    return;	  
+    perror("SYSERR: Unable to save house control file on write");
+    fclose(fl);
+    remove(tempfile);
+    return;
+  }
+  if (fclose(fl)) {
+    perror("SYSERR: Unable to save house control file on close");
+    remove(tempfile);
+    return;
   }
 
-  fclose(fl);
+  /* Replace without deleting the old file first: a failed rename may be
+   * caused by a locked temporary file, not by the destination existing.
+   * The Windows CRT cannot replace an existing file with rename(). */
+#ifdef CIRCLE_WINDOWS
+  if (!MoveFileExA(tempfile, HCONTROL_FILE, MOVEFILE_REPLACE_EXISTING)) {
+    log("SYSERR: Unable to put the house control file in place: Windows error %lu",
+        (unsigned long)GetLastError());
+#else
+  if (rename(tempfile, HCONTROL_FILE)) {
+    perror("SYSERR: Unable to put the house control file in place");
+#endif
+    remove(tempfile);
+  }
 }
 
 /* Call from boot_db - will load control recs, load objs, set atrium bits. 
