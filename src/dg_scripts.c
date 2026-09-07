@@ -1125,8 +1125,11 @@ static int remove_trigger(struct script_data *sc, char *name, char *removed, siz
 
   if (i) {
     /* Before extract_trigger() frees it. */
-    if (removed && rlen)
+    if (removed && rlen) {
       snprintf(removed, rlen, "%d (%s)", trig_index[i->nr]->vnum, GET_TRIG_NAME(i));
+      /* Windows uses _snprintf(), which may not terminate a truncated name. */
+      removed[rlen - 1] = '\0';
+    }
 
     if (j) {
       j->next = i->next;
