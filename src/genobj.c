@@ -225,11 +225,28 @@ int save_objects(zone_rnum zone_num)
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
         
-      if(n >= MAX_STRING_LENGTH) {
-        mudlog(BRF,LVL_BUILDER,TRUE,
-               "SYSERR: Could not save object #%d due to size (%d > maximum of %d).",
-               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH);
-        continue;
+      /* A record that will not fit ends the save.  Carrying on would write
+       * every other object over the good file and take this one off the disk,
+       * and the object is still in memory to be repaired. */
+      if (n < 0) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not format object #%d for saving; zone %d not saved.",
+               GET_OBJ_VNUM(obj), zone_table[zone_num].number);
+        fclose(fp);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
+      }
+
+      if (n >= MAX_STRING_LENGTH) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not save object #%d due to size (%d >= maximum of %d); "
+               "zone %d not saved.",
+               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH, zone_table[zone_num].number);
+        fclose(fp);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
       }
       
       fprintf(fp, "%s", convert_from_tabs(buf2));
