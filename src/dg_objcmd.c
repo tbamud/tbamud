@@ -740,6 +740,7 @@ static OCMD(do_oat)
   struct char_data *ch;
   struct obj_data *object;
   char arg[MAX_INPUT_LENGTH], *command;
+  long owner_id;
 
   command = any_one_arg(argument, arg);
 
@@ -766,11 +767,27 @@ static OCMD(do_oat)
   if (!(object = read_object(GET_OBJ_VNUM(obj), VIRTUAL)))
     return;
 
+  /* The command below runs with the duplicate as its object, so nothing it
+   * does can tell that the object whose script is running is standing in
+   * that room as well.  A bare opurge there frees it -- it is just another
+   * object in the room -- and opurge sets dg_owner_purged only for the
+   * object it was handed, which is the duplicate.  Take the running
+   * object's script id first: ids come from a counter that only goes up
+   * and free_obj() drops them from the table, so the id answers afterwards
+   * what the pointer no longer can. */
+  owner_id = obj_script_id(obj);
+
   obj_to_room(object, loc);
   obj_command_interpreter(object, command);
 
   if (object->in_room == loc) 
     extract_obj(object);
+
+  /* Gone.  script_driver() is standing on that object and on the trigger
+   * extract_script() freed along with it, and reads both again as soon as
+   * this returns; setting the flag is what stops it. */
+  if (!has_obj_by_uid_in_lookup_table(owner_id))
+    dg_owner_purged = 1;
 }
 
 static OCMD(do_omove)
