@@ -23,6 +23,7 @@
 /* local utility functions */
 static int aedit_find_command(const char *txt);
 static void aedit_disp_menu(struct descriptor_data * d);
+static int aedit_replace_file(const char *tmp_name, const char *path);
 static int aedit_save_to_disk(struct descriptor_data *d);
 /* used in aedit parse */
 static void aedit_setup_new(struct descriptor_data *d);
@@ -247,6 +248,63 @@ static int aedit_delete_social(int rnum)
   return TRUE;
 }
 
+/* Install a completed file without discarding the previous valid one when
+ * Windows rename() cannot replace an existing destination. */
+static int aedit_replace_file(const char *tmp_name, const char *path)
+{
+#ifdef CIRCLE_WINDOWS
+  char backup[READ_SIZE];
+  int had_original = TRUE;
+  int n;
+
+  n = snprintf(backup, sizeof(backup), "%s.bak", path);
+  if (n < 0 || n >= (int)sizeof(backup)) {
+    log("SYSERR: Socials backup filename is too long: %s", path);
+    return FALSE;
+  }
+
+  if (remove(backup) < 0 && errno != ENOENT) {
+    log("SYSERR: Could not clear stale socials backup '%s': %s",
+        backup, strerror(errno));
+    return FALSE;
+  }
+
+  if (rename(path, backup) < 0) {
+    if (errno == ENOENT)
+      had_original = FALSE;
+    else {
+      log("SYSERR: Could not preserve socials file '%s': %s",
+          path, strerror(errno));
+      return FALSE;
+    }
+  }
+
+  if (rename(tmp_name, path) < 0) {
+    int saved_errno = errno;
+
+    if (had_original && rename(backup, path) < 0)
+      log("SYSERR: Could not restore socials file '%s' from '%s': %s",
+          path, backup, strerror(errno));
+    log("SYSERR: Could not put the socials file in place: %s",
+        strerror(saved_errno));
+    return FALSE;
+  }
+
+  if (had_original && remove(backup) < 0 && errno != ENOENT)
+    log("SYSERR: Could not remove socials backup '%s': %s",
+        backup, strerror(errno));
+
+  return TRUE;
+#else
+  if (rename(tmp_name, path) < 0) {
+    log("SYSERR: Could not put the socials file in place: %s", strerror(errno));
+    return FALSE;
+  }
+
+  return TRUE;
+#endif
+}
+
 static int aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
@@ -333,18 +391,11 @@ static int aedit_save_to_disk(struct descriptor_data *d) {
      return FALSE;
    }
 
-   /* rename() replaces the destination outright on POSIX; the Windows C
-    * runtime refuses a name that already exists, hence the second try.
-    * objsave.c:548-556 installs rent files the same way. */
-   if (rename(tmp_name, SOCMESS_FILE_NEW)) {
-     remove(SOCMESS_FILE_NEW);
-     if (rename(tmp_name, SOCMESS_FILE_NEW)) {
-       log("SYSERR: Could not put the socials file in place: %s", strerror(errno));
-       if (d->character)
-         send_to_char(d->character, "Could not put the socials file in place; the save is still pending.\r\n");
-       remove(tmp_name);
-       return FALSE;
-     }
+   if (!aedit_replace_file(tmp_name, SOCMESS_FILE_NEW)) {
+     if (d->character)
+       send_to_char(d->character, "Could not put the socials file in place; the save is still pending.\r\n");
+     remove(tmp_name);
+     return FALSE;
    }
 
    remove_from_save_list(AEDIT_PERMISSION, SL_ACT);
