@@ -681,24 +681,23 @@ void random_otrigger(obj_data *obj)
 
 void timer_otrigger(struct obj_data *obj)
 {
-  trig_data *t, *next_trig;
+  trig_data *t;
 
   if (!SCRIPT_CHECK(obj, OTRIG_TIMER))
     return;
 
   /* Every timer trigger on the object fires, so this walk carries on where
-   * random_otrigger() and time_otrigger() break.  That makes the successor
-   * worth taking before the driver runs, and the object worth checking
-   * after it: a script that purges its own object reaches extract_obj(),
-   * which frees the trigger list this loop is standing on.  script_driver()
-   * clears obj to say the object is gone. */
-  for (t = TRIGGERS(SCRIPT(obj)); t; t = next_trig) {
-    next_trig = t->next;
+   * random_otrigger() and time_otrigger() break.  A script that purges its
+   * own object reaches extract_obj(), which frees the trigger list this loop
+   * is standing on.  script_driver() clears obj to say the object is gone,
+   * so check it before reading the current trigger's successor. */
+  for (t = TRIGGERS(SCRIPT(obj)); t; ) {
     if (TRIGGER_CHECK(t, OTRIG_TIMER)) {
       script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
       if (!obj)
         return;
     }
+    t = t->next;
   }
 
   return;
@@ -732,19 +731,21 @@ int get_otrigger(obj_data *obj, char_data *actor)
 int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
               char *argument, int type)
 {
-  trig_data *t, *next_trig;
+  trig_data *t;
   char buf[MAX_INPUT_LENGTH];
 
   if (obj && SCRIPT_CHECK(obj, OTRIG_COMMAND))
-    for (t = TRIGGERS(SCRIPT(obj)); t; t = next_trig) {
-      next_trig = t->next;
-      if (!TRIGGER_CHECK(t, OTRIG_COMMAND))
+    for (t = TRIGGERS(SCRIPT(obj)); t; ) {
+      if (!TRIGGER_CHECK(t, OTRIG_COMMAND)) {
+        t = t->next;
         continue;
+      }
 
       if (IS_SET(GET_TRIG_NARG(t), type) &&
           (!GET_TRIG_ARG(t) || !*GET_TRIG_ARG(t))) {
         mudlog(NRM, LVL_BUILDER, TRUE, "SYSERR: O-Command Trigger #%d has no text argument!",
           GET_TRIG_VNUM(t));
+        t = t->next;
         continue;
       }
 
@@ -767,14 +768,62 @@ int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
         if (!obj)
           return 0;
       }
+      t = t->next;
     }
 
   return 0;
 }
 
+struct command_otrigger_object {
+  obj_data *obj;
+  long id;
+};
+
+/* Run command triggers for the objects that were in list when the walk
+ * started and are still there when their turn arrives.  Scripts can purge
+ * any object in the list, so check each saved pointer's unique ID before
+ * dereferencing it. */
+static int command_otrigger_list(obj_data *list, char_data *actor, char *cmd,
+                                 char *argument, int type, room_rnum room)
+{
+  struct command_otrigger_object *objects;
+  obj_data *obj;
+  size_t count = 0, i = 0;
+
+  for (obj = list; obj; obj = obj->next_content)
+    count++;
+
+  if (!count)
+    return 0;
+
+  CREATE(objects, struct command_otrigger_object, count);
+  for (obj = list; obj; obj = obj->next_content) {
+    objects[i].obj = obj;
+    objects[i++].id = obj_script_id(obj);
+  }
+
+  for (i = 0; i < count; i++) {
+    if (!has_obj_by_uid_in_lookup_table(objects[i].id))
+      continue;
+
+    obj = objects[i].obj;
+    if ((type == OCMD_INVEN && obj->carried_by != actor) ||
+        (type == OCMD_ROOM && IN_ROOM(obj) != room))
+      continue;
+
+    if (cmd_otrig(obj, actor, cmd, argument, type)) {
+      free(objects);
+      return 1;
+    }
+  }
+
+  free(objects);
+  return 0;
+}
+
 int command_otrigger(char_data *actor, char *cmd, char *argument)
 {
-  obj_data *obj, *next_obj;
+  room_rnum room;
   int i;
 
   /* prevent people we like from becoming trapped :P */
@@ -786,21 +835,14 @@ int command_otrigger(char_data *actor, char *cmd, char *argument)
       if (cmd_otrig(GET_EQ(actor, i), actor, cmd, argument, OCMD_EQUIP))
         return 1;
 
-  /* cmd_otrig() runs a script, and a script can purge the object it is
-   * attached to, so take the successor before the call.  The equipment loop
-   * needs none of this: it reads the slot again each time round, and
-   * extract_obj() empties the slot on its way out. */
-  for (obj = actor->carrying; obj; obj = next_obj) {
-    next_obj = obj->next_content;
-    if (cmd_otrig(obj, actor, cmd, argument, OCMD_INVEN))
-      return 1;
-  }
+  if (command_otrigger_list(actor->carrying, actor, cmd, argument, OCMD_INVEN,
+                            NOWHERE))
+    return 1;
 
-  for (obj = world[IN_ROOM(actor)].contents; obj; obj = next_obj) {
-    next_obj = obj->next_content;
-    if (cmd_otrig(obj, actor, cmd, argument, OCMD_ROOM))
-      return 1;
-  }
+  room = IN_ROOM(actor);
+  if (command_otrigger_list(world[room].contents, actor, cmd, argument,
+                            OCMD_ROOM, room))
+    return 1;
 
   return 0;
 }
@@ -957,7 +999,7 @@ int cast_otrigger(char_data *actor, obj_data *obj, int spellnum)
 
 int leave_otrigger(room_data *room, char_data *actor, int dir)
 {
-  trig_data *t, *next_trig;
+  trig_data *t;
   char buf[MAX_INPUT_LENGTH];
   int temp, final = 1;
   obj_data *obj, *obj_next;
@@ -970,8 +1012,7 @@ int leave_otrigger(room_data *room, char_data *actor, int dir)
     if (!SCRIPT_CHECK(obj, OTRIG_LEAVE))
       continue;
 
-    for (t = TRIGGERS(SCRIPT(obj)); t; t = next_trig) {
-      next_trig = t->next;
+    for (t = TRIGGERS(SCRIPT(obj)); t; ) {
       if (TRIGGER_CHECK(t, OTRIG_LEAVE) &&
           (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
         if (dir>=0 && dir < DIR_COUNT)
@@ -987,6 +1028,7 @@ int leave_otrigger(room_data *room, char_data *actor, int dir)
         if (!obj)
           break;
       }
+      t = t->next;
     }
   }
 
