@@ -204,6 +204,9 @@ int delete_mobile(mob_rnum refpt)
        if (ZCMD(zone, cmd_no).arg1 == refpt) {
         delete_zone_command(&zone_table[zone], cmd_no);
         zone_touched = TRUE;
+        /* The next command has slid into this slot, so do not advance
+         * past it. */
+        cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg1 > refpt) {
           ZCMD(zone, cmd_no).arg1--;
           zone_touched = TRUE;

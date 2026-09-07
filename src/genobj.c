@@ -532,6 +532,11 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg3 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          /* The next command has slid into this slot, so do not advance
+           * past it -- and it is not the 'P' the fallthrough below expects,
+           * so this one is done. */
+          cmd_no--;
+          break;
         } else if (ZCMD(zone, cmd_no).arg3 > rnum) {
           ZCMD(zone, cmd_no).arg3--;
           zone_touched = TRUE;
@@ -543,6 +548,7 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg1 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg1 > rnum) {
           ZCMD(zone, cmd_no).arg1--;
           zone_touched = TRUE;
@@ -552,6 +558,7 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg2 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg2 > rnum) {
           ZCMD(zone, cmd_no).arg2--;
           zone_touched = TRUE;
