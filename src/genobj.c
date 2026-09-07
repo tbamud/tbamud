@@ -207,7 +207,10 @@ int save_objects(zone_rnum zone_num)
   for (counter = genolc_zone_bottom(zone_num); counter <= zone_table[zone_num].top; counter++) {
     if ((realcounter = real_object(counter)) != NOTHING) {
       if ((obj = &obj_proto[realcounter])->action_description) {
-        strncpy(buf, obj->action_description, sizeof(buf) - 1);
+        /* strlcpy() always terminates; the strncpy() this replaces did not
+         * when the string filled the buffer, and strip_cr() then read past
+         * it. */
+        strlcpy(buf, obj->action_description, sizeof(buf));
         strip_cr(buf);
       } else
         *buf = '\0';
@@ -272,7 +275,7 @@ int save_objects(zone_rnum zone_num)
 	    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
 	    continue;
 	  }
-	  strncpy(buf, ex_desc->description, sizeof(buf) - 1);
+	  strlcpy(buf, ex_desc->description, sizeof(buf));
 	  strip_cr(buf);
 	  fprintf(fp, "E\n"
 		  "%s~\n"
