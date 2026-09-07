@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -94,6 +94,13 @@ test_handler_prefix: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 # ---------------------------------------------------------------------------
 test_improved_edit: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                     $(SRCDIR)/improved-edit.c test_improved_edit.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_obj_walk - covers extraction during object-list iteration
+# ---------------------------------------------------------------------------
+test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+               $(SRCDIR)/handler.c $(SRCDIR)/lists.c test_obj_walk.c
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------

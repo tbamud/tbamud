@@ -135,6 +135,14 @@ add_mud_test(test_mud_event
     ${CMAKE_CURRENT_SOURCE_DIR}/test_mud_event.c
 )
 
+add_mud_test(test_obj_walk
+    ${MUD_SRCDIR}/handler.c
+    ${MUD_SRCDIR}/lists.c
+    ${MUD_SRCDIR}/utils.c
+    ${MUD_SRCDIR}/random.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_obj_walk.c
+)
+
 # ---------------------------------------------------------------------------
 # test_handler_prefix — covers the keyword helpers in src/handler.c
 # interpreter.c is here for one_argument, lists.c for the group list handler.c uses.

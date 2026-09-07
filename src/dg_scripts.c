@@ -625,7 +625,8 @@ obj_data *get_obj_by_room(room_data *room, char *name)
 void script_trigger_check(void)
 {
   char_data *ch;
-  obj_data *obj;
+  obj_data *obj, *next_obj;
+  struct obj_data **saved_walk;
   struct room_data *room=NULL;
   room_rnum nr;
   struct script_data *sc;
@@ -646,7 +647,15 @@ void script_trigger_check(void)
     }
   }
 
-  for (obj = object_list; obj; obj = obj->next) {
+  /* random_otrigger() runs a script, and a script can purge the object
+   * it is attached to -- which frees it at once.  obj = obj->next then reads
+   * the freed object, and the walk carries on into whatever is there.
+   * Take next first, and register it so extract_obj() can move it along if
+   * the script purges that one instead. */
+  saved_walk = protect_obj_walk(&next_obj);
+  for (obj = object_list; obj; obj = next_obj) {
+    next_obj = obj->next;
+
     if (SCRIPT(obj)) {
       sc = SCRIPT(obj);
 
@@ -654,6 +663,7 @@ void script_trigger_check(void)
         random_otrigger(obj);
     }
   }
+  protect_obj_walk(saved_walk);
 
   for (nr = 0; nr <= top_of_world; nr++) {
     if (SCRIPT(&world[nr])) {
@@ -671,7 +681,8 @@ void script_trigger_check(void)
 void check_time_triggers(void)
 {
   char_data *ch;
-  obj_data *obj;
+  obj_data *obj, *next_obj;
+  struct obj_data **saved_walk;
   struct room_data *room=NULL;
   int nr;
   struct script_data *sc;
@@ -692,7 +703,15 @@ void check_time_triggers(void)
     }
   }
 
-  for (obj = object_list; obj; obj = obj->next) {
+  /* time_otrigger() runs a script, and a script can purge the object
+   * it is attached to -- which frees it at once.  obj = obj->next then reads
+   * the freed object, and the walk carries on into whatever is there.
+   * Take next first, and register it so extract_obj() can move it along if
+   * the script purges that one instead. */
+  saved_walk = protect_obj_walk(&next_obj);
+  for (obj = object_list; obj; obj = next_obj) {
+    next_obj = obj->next;
+
     if (SCRIPT(obj)) {
       sc = SCRIPT(obj);
 
@@ -700,6 +719,7 @@ void check_time_triggers(void)
         time_otrigger(obj);
     }
   }
+  protect_obj_walk(saved_walk);
 
   for (nr = 0; nr <= top_of_world; nr++) {
     if (SCRIPT(&world[nr])) {
