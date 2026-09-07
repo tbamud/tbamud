@@ -164,21 +164,34 @@ void trigedit_setup_existing(struct descriptor_data *d, int rtrg_num)
 {
   struct trig_data *trig;
   struct cmdlist_element *c;
+  size_t len;
   /* Allocate a scratch trigger structure. */
   CREATE(trig, struct trig_data, 1);
 
   trig_data_copy(trig, trig_index[rtrg_num]->proto);
 
-  /* convert cmdlist to a char string */
-  c = trig->cmdlist;
-  CREATE(OLC_STORAGE(d), char, MAX_CMD_LENGTH);
-  strcpy(OLC_STORAGE(d), "");
+  /* Convert cmdlist to a char string.  Size the buffer from the script,
+   * not from the editor's cap: a trigger read from a .trg file carries no
+   * such cap -- only fread_string's, which is three times the size and
+   * fatal at boot -- and the strcat() pair below measured nothing, so
+   * merely opening such a trigger to look at it wrote past the
+   * allocation.  This needs two bytes a line where the writer needs one,
+   * so it overflows first.  Never go below MAX_CMD_LENGTH, so a builder
+   * keeps the same room to type into as before. */
+  len = 1;
+  for (c = trig->cmdlist; c; c = c->next)
+    len += (c->cmd ? strlen(c->cmd) : 0) + 2;
+  if (len < MAX_CMD_LENGTH)
+    len = MAX_CMD_LENGTH;
 
-  while (c)
+  CREATE(OLC_STORAGE(d), char, len);
+  *OLC_STORAGE(d) = '\0';
+
+  for (c = trig->cmdlist; c; c = c->next)
   {
-    strcat(OLC_STORAGE(d), c->cmd);
+    if (c->cmd)
+      strcat(OLC_STORAGE(d), c->cmd);
     strcat(OLC_STORAGE(d), "\r\n");
-    c = c->next;
   }
   /* Now trig->cmdlist is something to pass to the text editor it will be 
    * converted back to a real cmdlist_element list later. */
@@ -725,10 +738,52 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
   trig_rnum rnum;
   struct trig_data *trig;
   struct cmdlist_element *cmd;
-  char fname[MAX_INPUT_LENGTH], buf[MAX_CMD_LENGTH], bitBuf[MAX_INPUT_LENGTH];
+  char fname[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH], bitBuf[MAX_INPUT_LENGTH];
+  int wrote;
+  size_t need;
 
   zone = zone_table[zrnum].number;
   top = zone_table[zrnum].top;
+
+  /* fread_string() gives up at boot when a string reaches
+   * MAX_STRING_LENGTH.  What it counts is not the text plus two bytes a
+   * line: it reads with fgets(tmp, FREAD_CHUNK, fl) and puts a CR and an
+   * LF back after every chunk, so a command longer than FREAD_CHUNK - 1
+   * costs two bytes for each chunk it spans -- 510 characters read back
+   * as 512, but 511 read back as 515.  Count it the way the loader does.
+   *
+   * Two things push a file over.  The writer below always puts a script's
+   * ~ on a line of its own, where a hand-written .trg is allowed to leave
+   * it at the end of the last command, so a file in that style comes back
+   * two bytes longer than it went out; and a command at or past a chunk
+   * boundary gains two bytes of its own.  Either way a script already at
+   * the cap crosses it.  Nothing the editor produces can reach that --
+   * what a builder types is capped at a third of it -- but what a .trg
+   * carries is not.
+   *
+   * Refuse the whole zone rather than write a file the next boot will not
+   * read.  Nothing is opened, so the file on disk stays as it was, and
+   * both callers already take the answer.  Refusing in the editor instead
+   * would not cover it: this rewrites every trigger in the zone, so the
+   * one that cannot be written need never be opened. */
+  for (i = zone_table[zrnum].bot; i <= top; i++)
+    if ((rnum = real_trigger(i)) != NOTHING) {
+      need = 0;
+      for (cmd = trig_index[rnum]->proto->cmdlist; cmd; cmd = cmd->next)
+        if (cmd->cmd) {
+          size_t len = strlen(cmd->cmd);
+
+          need += len + 2 * ((len + FREAD_CHUNK - 1) / (FREAD_CHUNK - 1));
+        }
+
+      if (need >= MAX_STRING_LENGTH) {
+        mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
+               "SYSERR: OLC: Trigger %d's script reads back as %lu bytes, "
+               "over the %d the loader accepts; zone %d not written.",
+               i, (unsigned long) need, MAX_STRING_LENGTH - 1, zone);
+        return FALSE;
+      }
+    }
 
 #ifdef CIRCLE_MAC
   snprintf(fname, sizeof(fname), "%s:%i.new", TRG_PREFIX, zone);
@@ -762,18 +817,28 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
            *bitBuf ? bitBuf : "0", GET_TRIG_NARG(trig),
            GET_TRIG_ARG(trig) ? GET_TRIG_ARG(trig) : "", STRING_TERMINATOR);
 
-      /* Build the text for the script */
-      strcpy(buf,""); /* strcpy OK for MAX_CMD_LENGTH > 0*/
-      for (cmd = trig->cmdlist; cmd; cmd = cmd->next) {
-        strcat(buf, cmd->cmd);
-        strcat(buf, "\n");
-      }
+      /* Write each command straight to the file.  The script used to be
+       * assembled in a 16K stack buffer first, by a strcat() pair that
+       * measured nothing: the editor caps what a builder can type at
+       * MAX_CMD_LENGTH, so anything trigedit produced fitted, but a
+       * trigger read from a .trg file carries no such cap and the shipped
+       * world already holds one within 266 bytes of it.
+       *
+       * The buffer was doing no work of its own -- the commands reach the
+       * file in the same order either way -- so removing it takes its
+       * bound away with it.  The bound the file format does have is
+       * fread_string's, and that one is checked above the open. */
+      wrote = FALSE;
+      for (cmd = trig->cmdlist; cmd; cmd = cmd->next)
+        if (cmd->cmd) {
+          fprintf(trig_file, "%s\n", cmd->cmd);
+          wrote = TRUE;
+        }
 
-      if (!buf[0])
-        strcpy(buf, "* Empty script");
+      if (!wrote)
+        fprintf(trig_file, "* Empty script");
 
-      fprintf(trig_file, "%s%c\n", buf, STRING_TERMINATOR);
-      *buf = '\0';
+      fprintf(trig_file, "%c\n", STRING_TERMINATOR);
     }
   }
 

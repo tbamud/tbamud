@@ -581,7 +581,7 @@ int save_shops(zone_rnum zone_num)
 {
   int i, j, rshop, num_shops = 0;
   FILE *shop_file;
-  char fname[128], oldname[128], buf[MAX_STRING_LENGTH];
+  char fname[128], oldname[128];
   struct shop_data *shop;
 
 #if CIRCLE_UNSIGNED_INDEX
@@ -630,33 +630,46 @@ int save_shops(zone_rnum zone_num)
 		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
       fprintf(shop_file, "-1\n");
 
-      /* Save messages. Added some defaults as sanity checks. */
-      sprintf(buf,
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%d\n"
-	      "%ld\n"
-	      "%d\n"
-	      "%d\n",
-	      S_NOITEM1(shop) ? S_NOITEM1(shop) : "%s Ke?!",
-	      S_NOITEM2(shop) ? S_NOITEM2(shop) : "%s Ke?!",
-	      S_NOBUY(shop) ? S_NOBUY(shop) : "%s Ke?!",
-	      S_NOCASH1(shop) ? S_NOCASH1(shop) : "%s Ke?!",
-	      S_NOCASH2(shop) ? S_NOCASH2(shop) : "%s Ke?!",
-	      S_BUY(shop) ? S_BUY(shop) : "%s Ke?! %d?",
-	      S_SELL(shop) ? S_SELL(shop) : "%s Ke?! %d?",
-	      S_BROKE_TEMPER(shop),
-	      S_BITVECTOR(shop),
-	      S_KEEPER(shop) == NOBODY ? -1 : mob_index[S_KEEPER(shop)].vnum,
-	      S_NOTRADE(shop)
-	      );
-        
-        fputs(convert_from_tabs(buf), shop_file);
+      /* Save messages. Added some defaults as sanity checks.
+       *
+       * One string per call, because convert_from_tabs() hands back a
+       * single static buffer and the next call overwrites it.  These used
+       * to be assembled into one MAX_STRING_LENGTH buffer first, which put
+       * a bound on the seven together that the .shp format does not have:
+       * read_shop_message() accepts up to MAX_STRING_LENGTH for each of
+       * them on its own.  Writing them one at a time takes that bound off
+       * the seven together, so nothing has to be truncated.
+       *
+       * It does not take off the one the format has.  fread_string() puts
+       * a CR and an LF back after every FREAD_CHUNK - 1 bytes it reads, so
+       * a message that came in at the cap goes back out two bytes longer
+       * for each chunk it spans, and the next boot refuses the file.
+       * trigedit_write_zone() measures that before it writes; this does
+       * not, and a shop message is reachable only from sedit, which takes
+       * one interpreter line at a time.  A message long enough to matter
+       * has to come from a hand-written .shp. */
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOITEM1(shop) ? S_NOITEM1(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOITEM2(shop) ? S_NOITEM2(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOBUY(shop) ? S_NOBUY(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOCASH1(shop) ? S_NOCASH1(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOCASH2(shop) ? S_NOCASH2(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_BUY(shop) ? S_BUY(shop) : "%s Ke?! %d?"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_SELL(shop) ? S_SELL(shop) : "%s Ke?! %d?"));
+      fprintf(shop_file, "%d\n"
+                         "%ld\n"
+                         "%d\n"
+                         "%d\n",
+              S_BROKE_TEMPER(shop),
+              S_BITVECTOR(shop),
+              S_KEEPER(shop) == NOBODY ? -1 : mob_index[S_KEEPER(shop)].vnum,
+              S_NOTRADE(shop));
 
       /* Save the rooms. */
       for (j = 0;S_ROOM(shop, j) != NOWHERE; j++)
