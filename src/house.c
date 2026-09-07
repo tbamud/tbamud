@@ -301,18 +301,18 @@ static void House_save_control(void)
     return;
   }
 
-  /* Install it the way objsave.c and dg_olc.c install theirs: try the
-   * rename, and only if that fails remove the destination and try again.
-   * rename() replaces the destination outright on POSIX, so the ordinary
-   * path leaves no moment when the control file is missing; Windows
-   * refuses a rename onto a name that already exists, which is what the
-   * retry is for. */
+  /* Replace without deleting the old file first: a failed rename may be
+   * caused by a locked temporary file, not by the destination existing.
+   * The Windows CRT cannot replace an existing file with rename(). */
+#ifdef CIRCLE_WINDOWS
+  if (!MoveFileExA(tempfile, HCONTROL_FILE, MOVEFILE_REPLACE_EXISTING)) {
+    log("SYSERR: Unable to put the house control file in place: Windows error %lu",
+        (unsigned long)GetLastError());
+#else
   if (rename(tempfile, HCONTROL_FILE)) {
-    remove(HCONTROL_FILE);
-    if (rename(tempfile, HCONTROL_FILE)) {
-      perror("SYSERR: Unable to put the house control file in place");
-      remove(tempfile);
-    }
+    perror("SYSERR: Unable to put the house control file in place");
+#endif
+    remove(tempfile);
   }
 }
 
