@@ -681,14 +681,23 @@ void random_otrigger(obj_data *obj)
 
 void timer_otrigger(struct obj_data *obj)
 {
-  trig_data *t;
+  trig_data *t, *next_trig;
 
   if (!SCRIPT_CHECK(obj, OTRIG_TIMER))
     return;
 
-  for (t = TRIGGERS(SCRIPT(obj)); t; t = t->next) {
+  /* Every timer trigger on the object fires, so this walk carries on where
+   * random_otrigger() and time_otrigger() break.  That makes the successor
+   * worth taking before the driver runs, and the object worth checking
+   * after it: a script that purges its own object reaches extract_obj(),
+   * which frees the trigger list this loop is standing on.  script_driver()
+   * clears obj to say the object is gone. */
+  for (t = TRIGGERS(SCRIPT(obj)); t; t = next_trig) {
+    next_trig = t->next;
     if (TRIGGER_CHECK(t, OTRIG_TIMER)) {
       script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
+      if (!obj)
+        return;
     }
   }
 
@@ -723,11 +732,12 @@ int get_otrigger(obj_data *obj, char_data *actor)
 int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
               char *argument, int type)
 {
-  trig_data *t;
+  trig_data *t, *next_trig;
   char buf[MAX_INPUT_LENGTH];
 
   if (obj && SCRIPT_CHECK(obj, OTRIG_COMMAND))
-    for (t = TRIGGERS(SCRIPT(obj)); t; t = t->next) {
+    for (t = TRIGGERS(SCRIPT(obj)); t; t = next_trig) {
+      next_trig = t->next;
       if (!TRIGGER_CHECK(t, OTRIG_COMMAND))
         continue;
 
@@ -750,6 +760,12 @@ int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
 
         if (script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW))
           return 1;
+
+        /* A trigger that returned zero has not claimed the command, so the
+         * object's remaining triggers still get a look -- unless the script
+         * purged the object, which freed them. */
+        if (!obj)
+          return 0;
       }
     }
 
@@ -758,7 +774,7 @@ int cmd_otrig(obj_data *obj, char_data *actor, char *cmd,
 
 int command_otrigger(char_data *actor, char *cmd, char *argument)
 {
-  obj_data *obj;
+  obj_data *obj, *next_obj;
   int i;
 
   /* prevent people we like from becoming trapped :P */
@@ -770,13 +786,21 @@ int command_otrigger(char_data *actor, char *cmd, char *argument)
       if (cmd_otrig(GET_EQ(actor, i), actor, cmd, argument, OCMD_EQUIP))
         return 1;
 
-  for (obj = actor->carrying; obj; obj = obj->next_content)
+  /* cmd_otrig() runs a script, and a script can purge the object it is
+   * attached to, so take the successor before the call.  The equipment loop
+   * needs none of this: it reads the slot again each time round, and
+   * extract_obj() empties the slot on its way out. */
+  for (obj = actor->carrying; obj; obj = next_obj) {
+    next_obj = obj->next_content;
     if (cmd_otrig(obj, actor, cmd, argument, OCMD_INVEN))
       return 1;
+  }
 
-  for (obj = world[IN_ROOM(actor)].contents; obj; obj = obj->next_content)
+  for (obj = world[IN_ROOM(actor)].contents; obj; obj = next_obj) {
+    next_obj = obj->next_content;
     if (cmd_otrig(obj, actor, cmd, argument, OCMD_ROOM))
       return 1;
+  }
 
   return 0;
 }
@@ -933,7 +957,7 @@ int cast_otrigger(char_data *actor, obj_data *obj, int spellnum)
 
 int leave_otrigger(room_data *room, char_data *actor, int dir)
 {
-  trig_data *t;
+  trig_data *t, *next_trig;
   char buf[MAX_INPUT_LENGTH];
   int temp, final = 1;
   obj_data *obj, *obj_next;
@@ -946,7 +970,8 @@ int leave_otrigger(room_data *room, char_data *actor, int dir)
     if (!SCRIPT_CHECK(obj, OTRIG_LEAVE))
       continue;
 
-    for (t = TRIGGERS(SCRIPT(obj)); t; t = t->next) {
+    for (t = TRIGGERS(SCRIPT(obj)); t; t = next_trig) {
+      next_trig = t->next;
       if (TRIGGER_CHECK(t, OTRIG_LEAVE) &&
           (rand_number(1, 100) <= GET_TRIG_NARG(t))) {
         if (dir>=0 && dir < DIR_COUNT)
@@ -957,6 +982,10 @@ int leave_otrigger(room_data *room, char_data *actor, int dir)
         temp = script_driver(&obj, t, OBJ_TRIGGER, TRIG_NEW);
         if (temp == 0)
           final = 0;
+        /* Purged by its own script: its triggers went with it, and
+         * obj_next carries the room walk on. */
+        if (!obj)
+          break;
       }
     }
   }
