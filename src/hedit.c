@@ -29,8 +29,9 @@
 static void hedit_disp_menu(struct descriptor_data *);
 static void hedit_setup_new(struct descriptor_data *);
 static void hedit_setup_existing(struct descriptor_data *, int);
-static void hedit_save_to_disk(struct descriptor_data *);
-static int hedit_save_internally(struct descriptor_data *);
+static int hedit_replace_file(const char *, const char *);
+static int hedit_save_to_disk(struct descriptor_data *);
+static int hedit_save_internally(struct descriptor_data *, int *wrote);
 static int hedit_same_keyword_line(const char *, const char *);
 
 
@@ -75,8 +76,8 @@ ACMD(do_oasis_hedit)
      * reaches disk -- it is exactly the noise this commit complains about
      * elsewhere, and fixing it only for the delete was inconsistent. */
     add_to_save_list(HEDIT_PERMISSION, SL_HLP);
-    hedit_save_to_disk(d);
-    send_to_char(ch, "Saving help files.\r\n");
+    if (hedit_save_to_disk(d))
+      send_to_char(ch, "Saving help files.\r\n");
     return;
   }
 
@@ -336,7 +337,7 @@ static int hedit_relocate(struct descriptor_data *d)
 
 /* FALSE means nothing was written and nothing was discarded; the caller says
  * why and leaves the builder in the editor. */
-static int hedit_save_internally(struct descriptor_data *d)
+static int hedit_save_internally(struct descriptor_data *d, int *wrote)
 {
   struct help_index_element *new_help_table = NULL;
 
@@ -431,20 +432,102 @@ static int hedit_save_internally(struct descriptor_data *d)
   }
 
   add_to_save_list(HEDIT_PERMISSION, SL_HLP);
-  hedit_save_to_disk(d);
+  *wrote = hedit_save_to_disk(d);
   return TRUE;
 }
 
-static void hedit_save_to_disk(struct descriptor_data *d)
+/* Install a completed file without discarding the previous valid one when
+ * Windows rename() cannot replace an existing destination. */
+static int hedit_replace_file(const char *tmp_name, const char *path)
+{
+#ifdef CIRCLE_WINDOWS
+  char backup[READ_SIZE];
+  int had_original = TRUE;
+  int n;
+
+  n = snprintf(backup, sizeof(backup), "%s.bak", path);
+  if (n < 0 || n >= (int)sizeof(backup)) {
+    log("SYSERR: Help backup filename is too long: %s", path);
+    return FALSE;
+  }
+
+  if (remove(backup) < 0 && errno != ENOENT) {
+    log("SYSERR: Could not clear stale help backup '%s': %s",
+        backup, strerror(errno));
+    return FALSE;
+  }
+
+  if (rename(path, backup) < 0) {
+    if (errno == ENOENT)
+      had_original = FALSE;
+    else {
+      log("SYSERR: Could not preserve help file '%s': %s",
+          path, strerror(errno));
+      return FALSE;
+    }
+  }
+
+  if (rename(tmp_name, path) < 0) {
+    int saved_errno = errno;
+
+    if (had_original && rename(backup, path) < 0)
+      log("SYSERR: Could not restore help file '%s' from '%s': %s",
+          path, backup, strerror(errno));
+    log("SYSERR: Could not put the help file in place: %s",
+        strerror(saved_errno));
+    return FALSE;
+  }
+
+  if (had_original && remove(backup) < 0 && errno != ENOENT)
+    log("SYSERR: Could not remove help backup '%s': %s",
+        backup, strerror(errno));
+
+  return TRUE;
+#else
+  if (rename(tmp_name, path) < 0) {
+    log("SYSERR: Could not put the help file in place: %s", strerror(errno));
+    return FALSE;
+  }
+
+  return TRUE;
+#endif
+}
+
+static int hedit_save_to_disk(struct descriptor_data *d)
 {
   FILE *fp;
-  char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE];
-  int i;
+  char buf1[MAX_STRING_LENGTH], index_name[READ_SIZE], tmp_name[READ_SIZE];
+  int i, n, saved = TRUE;
 
   snprintf(index_name, sizeof(index_name), "%s%s", HLP_PREFIX, HELP_FILE);
-  if (!(fp = fopen(index_name, "w"))) {
-    log("SYSERR: Could not write help index file");
-    return;
+
+  /* Build the new help file beside the old one and put it in place only
+   * once it is whole.  Opening the real file with "w" truncated it before
+   * a single entry had been written, and nothing looked at the result of a
+   * write or of the close -- which is where a full disk reports itself,
+   * the entries before it having only reached the stream's buffer.
+   *
+   * That is worse here than in the other savers, because of the two lines
+   * at the foot of this function: the table is thrown away and read back
+   * from the file just written, and the reader calls exit(1) rather than
+   * returning when the file does not parse.  A truncated help file stops
+   * at count_alias_records()'s "Unexpected end of help file", db.c:929-931.
+   * A failed save therefore took the running MUD down and left behind a
+   * help file that would not boot the next one either. */
+  /* Test for a negative return as well: sysdep.h makes snprintf() the
+   * Windows _snprintf(), which answers a truncation with -1 rather than
+   * the length it wanted, and leaves the buffer unterminated. */
+  n = snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", index_name);
+  if (n < 0 || n >= (int)sizeof(tmp_name)) {
+    log("SYSERR: Help file name too long to write beside: %s", index_name);
+    return FALSE;
+  }
+
+  if (!(fp = fopen(tmp_name, "w"))) {
+    log("SYSERR: Could not write help index file: %s", strerror(errno));
+    if (d->character)
+      send_to_char(d->character, "Could not write the help file; the save is still pending.\r\n");
+    return FALSE;
   }
 
   for (i = 0; i < top_of_helpt; i++) {
@@ -458,13 +541,36 @@ static void hedit_save_to_disk(struct descriptor_data *d)
   }
   /* Write final line and close. */
   fprintf(fp, "$~\n");
-  fclose(fp);
+
+  /* fclose() gets its own statement: in one || chain a failed fflush or a
+   * set ferror short-circuits past it, so the stream stays open -- and an
+   * open file is one Windows will not let remove() take away. */
+  if (fflush(fp) == EOF || ferror(fp))
+    saved = FALSE;
+  if (fclose(fp) == EOF)
+    saved = FALSE;
+
+  if (!saved) {
+    log("SYSERR: Could not write help index file: %s", strerror(errno));
+    if (d->character)
+      send_to_char(d->character, "Could not write the help file; the save is still pending.\r\n");
+    remove(tmp_name);
+    return FALSE;
+  }
+
+  if (!hedit_replace_file(tmp_name, index_name)) {
+    if (d->character)
+      send_to_char(d->character, "Could not put the help file in place; the save is still pending.\r\n");
+    remove(tmp_name);
+    return FALSE;
+  }
 
   remove_from_save_list(HEDIT_PERMISSION, SL_HLP);
 
   /* Reboot the help files. */
   free_help_table();     
   index_boot(DB_BOOT_HLP);
+  return TRUE;
 }
 
 /* The row this editor opened, provided the table it was opened against is
@@ -588,6 +694,7 @@ static void hedit_disp_menu(struct descriptor_data *d)
 void hedit_parse(struct descriptor_data *d, char *arg)
 {
   char buf[MAX_STRING_LENGTH];
+  int wrote = FALSE;
   char *oldtext = NULL;
   int number;
 
@@ -620,7 +727,7 @@ void hedit_parse(struct descriptor_data *d, char *arg)
        * invitation to try again. */
       snprintf(buf, sizeof(buf), "OLC: %s edits help for %s.", GET_NAME(d->character),
                OLC_HELP(d)->keywords);
-      if (!hedit_save_internally(d)) {
+      if (!hedit_save_internally(d, &wrote)) {
         write_to_output(d, "The help files were reloaded while you were editing, and the "
                            "entry you opened can no longer be picked out with certainty "
                            "from what is there now. Writing to the wrong one would "
@@ -633,7 +740,8 @@ void hedit_parse(struct descriptor_data *d, char *arg)
         return;
       }
       mudlog(TRUE, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), CMP, "%s", buf);
-      write_to_output(d, "Help saved to disk.\r\n");
+      if (wrote)
+        write_to_output(d, "Help saved to disk.\r\n");
 
       /* Do not free strings, just the help structure. */
       cleanup_olc(d, CLEANUP_STRUCTS);

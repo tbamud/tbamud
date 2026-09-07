@@ -23,11 +23,12 @@
 /* local utility functions */
 static int aedit_find_command(const char *txt);
 static void aedit_disp_menu(struct descriptor_data * d);
-static void aedit_save_to_disk(struct descriptor_data *d);
+static int aedit_replace_file(const char *tmp_name, const char *path);
+static int aedit_save_to_disk(struct descriptor_data *d);
 /* used in aedit parse */
 static void aedit_setup_new(struct descriptor_data *d);
 static void aedit_setup_existing(struct descriptor_data *d, int real_num);
-static void aedit_save_internally(struct descriptor_data *d);
+static int aedit_save_internally(struct descriptor_data *d);
 
 
 
@@ -70,8 +71,15 @@ ACMD(do_oasis_aedit)
   if (!str_cmp("save", arg)) {
     mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE, "OLC: %s saves socials.", GET_NAME(ch));
     send_to_char(ch, "Writing social file.\r\n");
-    aedit_save_to_disk(d);
-    send_to_char(ch, "Done.\r\n");
+    /* The other two callers queue the social before saving, and
+     * aedit_save_to_disk removes it again once the write is through.
+     * This one never queued, so the removal found nothing and logged
+     * "remove_from_save_list: Saved item not found." on every `aedit
+     * save`, and a failed save here left nothing behind for `olc` to
+     * list.  hedit's save command is paired for the same reason. */
+    add_to_save_list(AEDIT_PERMISSION, SL_ACT);
+    if (aedit_save_to_disk(d))
+      send_to_char(ch, "Done.\r\n");
     return;
   }
 
@@ -170,7 +178,7 @@ static void aedit_setup_existing(struct descriptor_data *d, int real_num) {
    aedit_disp_menu(d);
 }
 
-static void aedit_save_internally(struct descriptor_data *d) {
+static int aedit_save_internally(struct descriptor_data *d) {
    struct social_messg *new_soc_mess_list = NULL;
    int i;
 
@@ -195,7 +203,7 @@ static void aedit_save_internally(struct descriptor_data *d) {
    create_command_list(); /* aedit patch -- M. Scott */
 
    add_to_save_list(AEDIT_PERMISSION, SL_ACT);
-   aedit_save_to_disk(d); /* autosave by Rumble */
+   return aedit_save_to_disk(d); /* autosave by Rumble */
 }
 
 /* Remove a social from soc_mess_list.
@@ -240,15 +248,94 @@ static int aedit_delete_social(int rnum)
   return TRUE;
 }
 
-static void aedit_save_to_disk(struct descriptor_data *d) {
+/* Install a completed file without discarding the previous valid one when
+ * Windows rename() cannot replace an existing destination. */
+static int aedit_replace_file(const char *tmp_name, const char *path)
+{
+#ifdef CIRCLE_WINDOWS
+  char backup[READ_SIZE];
+  int had_original = TRUE;
+  int n;
+
+  n = snprintf(backup, sizeof(backup), "%s.bak", path);
+  if (n < 0 || n >= (int)sizeof(backup)) {
+    log("SYSERR: Socials backup filename is too long: %s", path);
+    return FALSE;
+  }
+
+  if (remove(backup) < 0 && errno != ENOENT) {
+    log("SYSERR: Could not clear stale socials backup '%s': %s",
+        backup, strerror(errno));
+    return FALSE;
+  }
+
+  if (rename(path, backup) < 0) {
+    if (errno == ENOENT)
+      had_original = FALSE;
+    else {
+      log("SYSERR: Could not preserve socials file '%s': %s",
+          path, strerror(errno));
+      return FALSE;
+    }
+  }
+
+  if (rename(tmp_name, path) < 0) {
+    int saved_errno = errno;
+
+    if (had_original && rename(backup, path) < 0)
+      log("SYSERR: Could not restore socials file '%s' from '%s': %s",
+          path, backup, strerror(errno));
+    log("SYSERR: Could not put the socials file in place: %s",
+        strerror(saved_errno));
+    return FALSE;
+  }
+
+  if (had_original && remove(backup) < 0 && errno != ENOENT)
+    log("SYSERR: Could not remove socials backup '%s': %s",
+        backup, strerror(errno));
+
+  return TRUE;
+#else
+  if (rename(tmp_name, path) < 0) {
+    log("SYSERR: Could not put the socials file in place: %s", strerror(errno));
+    return FALSE;
+  }
+
+  return TRUE;
+#endif
+}
+
+static int aedit_save_to_disk(struct descriptor_data *d) {
    FILE *fp;
    int i;
    char buf[MAX_STRING_LENGTH];
-   if (!(fp = fopen(SOCMESS_FILE_NEW, "w+")))  {
-     char error[MAX_STRING_LENGTH];
-     snprintf(error, sizeof(error), "Can't open socials file '%s'", SOCMESS_FILE);
-     perror(error);
-     exit(1);
+   char tmp_name[READ_SIZE];
+   int n, saved = TRUE;
+
+   /* Write beside the socials file and rename over it once it is whole.
+    * This opened the live file with "w+", which truncates it, and called
+    * exit(1) if that failed -- so an immortal saving a social onto a
+    * read-only mount took the whole MUD down with them.  Say so and
+    * return instead, and let the caller decide what to tell them.
+    *
+    * Nothing is left pending by this function: it only ever removes from
+    * the save list.  Every caller queues the social before saving, and
+    * only a save that got through reaches that removal, so a failed one
+    * leaves the entry where the caller put it. */
+   /* Test for a negative return as well: sysdep.h makes snprintf() the
+    * Windows _snprintf(), which answers a truncation with -1 rather than
+    * the length it wanted, and leaves the buffer unterminated. */
+   n = snprintf(tmp_name, sizeof(tmp_name), "%s.tmp", SOCMESS_FILE_NEW);
+   if (n < 0 || n >= (int)sizeof(tmp_name)) {
+     log("SYSERR: Socials file name too long to write beside: %s", SOCMESS_FILE_NEW);
+     return FALSE;
+   }
+
+   if (!(fp = fopen(tmp_name, "w")))  {
+     log("SYSERR: Can't open socials file '%s': %s", tmp_name, strerror(errno));
+     if (d->character)
+       send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
+     return FALSE;
    }
 
    for (i = 0; i <= top_of_socialt; i++)  {
@@ -287,8 +374,32 @@ static void aedit_save_to_disk(struct descriptor_data *d) {
    }
 
    fprintf(fp, "$\n");
-   fclose(fp);
+
+   /* fclose() gets its own statement: in one || chain a failed fflush or a
+    * set ferror short-circuits past it, so the stream stays open -- and an
+    * open file is one Windows will not let remove() take away. */
+   if (fflush(fp) == EOF || ferror(fp))
+     saved = FALSE;
+   if (fclose(fp) == EOF)
+     saved = FALSE;
+
+   if (!saved) {
+     log("SYSERR: Could not write socials file '%s': %s", tmp_name, strerror(errno));
+     if (d->character)
+       send_to_char(d->character, "Could not write the socials file; the save is still pending.\r\n");
+     remove(tmp_name);
+     return FALSE;
+   }
+
+   if (!aedit_replace_file(tmp_name, SOCMESS_FILE_NEW)) {
+     if (d->character)
+       send_to_char(d->character, "Could not put the socials file in place; the save is still pending.\r\n");
+     remove(tmp_name);
+     return FALSE;
+   }
+
    remove_from_save_list(AEDIT_PERMISSION, SL_ACT);
+   return TRUE;
 }
 
 /* The Main Menu. */
@@ -365,19 +476,20 @@ static void aedit_disp_menu(struct descriptor_data * d) {
 
 /* The main loop. */
 void aedit_parse(struct descriptor_data * d, char *arg) {
-   int i;
+   int i, saved = FALSE;
 
    switch (OLC_MODE(d)) {
     case AEDIT_CONFIRM_SAVESTRING:
       switch (*arg) {
        case 'y': case 'Y':
-         aedit_save_internally(d);
+         saved = aedit_save_internally(d);
          mudlog (CMP, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits action %s",
                  GET_NAME(d->character), OLC_ACTION(d)->command);
 
          /* do not free the strings.. just the structure */
          cleanup_olc(d, CLEANUP_STRUCTS);
-         write_to_output(d, "Action saved to disk.\r\n");
+         if (saved)
+           write_to_output(d, "Action saved to disk.\r\n");
          break;
        case 'n': case 'N':
          /* free everything up, including strings etc */
@@ -460,10 +572,15 @@ void aedit_parse(struct descriptor_data * d, char *arg) {
            create_command_list();
            sort_commands();
            add_to_save_list(AEDIT_PERMISSION, SL_ACT);
-           aedit_save_to_disk(d);
            mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
                   "OLC: %s deletes social %s", GET_NAME(d->character), sname);
+           /* Say it before writing, the way hedit's delete does: the social
+            * is gone from memory whatever the disk does, and a write that
+            * fails says so for itself.  Saying it afterwards puts an
+            * affirmative under the failure, which is the shape this change
+            * exists to remove. */
            write_to_output(d, "Social deleted.\r\n");
+           aedit_save_to_disk(d);
            cleanup_olc(d, CLEANUP_ALL);
            return;
          }
