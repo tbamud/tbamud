@@ -33,6 +33,7 @@
 #include "modify.h"
 #include "quest.h"
 #include "ban.h"
+#include "protocol.h" /* for ReportBugFlush */
 #include "screen.h"
 
 /* local utility functions with file scope */
@@ -2041,16 +2042,10 @@ void clean_llog_entries(void) {
     return;
   }
 
-  /* remove() before rename() is what the rest of the tree does, because
-   * Windows will not rename onto a name that exists.  It does mean the
-   * old file is gone before the new one is in place, so a rename that
-   * fails here leaves no last file at all and the trimmed copy sitting
-   * under the wrong name -- worth a line in the log, given the whole
-   * point of the function is to replace a good file with this one. */
-  remove(LAST_FILE);
-  if (rename("etc/nlast", LAST_FILE))
+  if (!genolc_install_file("etc/nlast", LAST_FILE)) {
     log("SYSERR: clean_llog_entries: cannot put etc/nlast in place as %s: %s",
         LAST_FILE, strerror(errno));
+  }
 }
 
 /* debugging stuff, if you wanna see the whole file */
@@ -3515,9 +3510,23 @@ ACMD(do_saveall)
  if (GET_LEVEL(ch) < LVL_BUILDER)
     send_to_char (ch, "You are not holy enough to use this privelege.\n\r");
  else {
-    save_all();
+    /* save_all() answers for the queued world files.  A queued social or
+     * help entry is not one of those: SL_ACT and SL_HLP are past SL_MAX
+     * and their save_types[] rows carry no function, so the entry is
+     * logged and dropped without changing the answer.  Only the aedit and
+     * hedit editors write those two files, by either of the routes their
+     * own log line names.  The savers name the file that failed in the
+     * syslog, which is
+     * gated on level and on the builder's PRF_LOG channel, so the command
+     * has to say that something did not. */
+    int saved = save_all();
+
     House_save_all();
-    send_to_char(ch, "World and house files saved.\n\r");
+    if (saved)
+      send_to_char(ch, "World and house files saved.\n\r");
+    else
+      send_to_char(ch, "House files saved. Some world files could not be "
+                       "written; see the syslog.\n\r");
  }
 }
 
@@ -4359,6 +4368,12 @@ ACMD(do_copyover)
   snprintf(buf, sizeof(buf), "%d", port);
   snprintf(buf2, sizeof(buf2), "-C%d", mother_desc);
 
+  /* This process is about to be replaced, so anything the protocol bug
+   * throttle is still holding goes out now or not at all -- and before the
+   * chdir below, because log_to_topic_files() opens its files by a path
+   * relative to lib, so after it a topic line lands outside the tree. */
+  ReportBugFlush();
+
   /* Ugh, seems it is expected we are 1 step above lib - this may be dangerous! */
   if (chdir("..") != 0) {
     log("Error changing working directory: %s", strerror(errno));
@@ -4610,6 +4625,9 @@ ACMD(do_changelog)
   char timestr[12], line[READ_SIZE], last_buf[READ_SIZE],
       buf[READ_SIZE];
   FILE *fl, *new;
+  int found_header = FALSE, bad;
+
+  *last_buf = '\0';
 
   skip_spaces(&argument);
 
@@ -4618,22 +4636,68 @@ ACMD(do_changelog)
     return;
   }
 
-  sprintf(buf, "%s.bak", CHANGE_LOG_FILE);
+  snprintf(buf, sizeof(buf), "%s.bak", CHANGE_LOG_FILE);
+
+  /* Set the changelog aside under the backup name.  rename() replaces an
+   * existing destination on POSIX, so the backup every successful
+   * changelog leaves behind is simply overwritten and the remove below
+   * never runs; the Windows C runtime refuses a name that already exists,
+   * which is what the second attempt is for.  objsave.c:548-556 installs
+   * rent files with the same three steps; the errno test narrowing the
+   * remove to that one case is this function's own.
+   *
+   * Clearing the backup up front instead would delete it before knowing
+   * there is a changelog to put in its place, and a changelog that is
+   * missing while its backup is present is precisely the state a refused
+   * open below used to leave behind -- so on ENOENT the backup is the
+   * last copy of the history and is left alone. */
   if (rename(CHANGE_LOG_FILE, buf)) {
-    mudlog(BRF, LVL_IMPL, TRUE,
-           "SYSERR: Error making backup changelog file (%s)", buf);
-    return;
+    int err = errno;
+
+    if (err == EEXIST && remove(buf) == 0)
+      err = rename(CHANGE_LOG_FILE, buf) ? errno : 0;
+
+    if (err) {
+      mudlog(BRF, LVL_IMPL, TRUE,
+             "SYSERR: Error making backup changelog file (%s): %s",
+             buf, strerror(err));
+      send_to_char(ch, "Could not set the changelog aside; nothing was changed.\r\n");
+      return;
+    }
   }
 
   if (!(fl = fopen(buf, "r"))) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: Error opening backup changelog file (%s)", buf);
+    /* The rename above has already moved the changelog, so this returns
+     * with nothing under its own name -- the same loss as the branch
+     * below, one open earlier. */
+    if (rename(buf, CHANGE_LOG_FILE)) {
+      mudlog(BRF, LVL_IMPL, TRUE,
+             "SYSERR: Changelog left as %s; could not restore it", buf);
+      send_to_char(ch, "Could not read the changelog, and it is left as %s.\r\n", buf);
+      return;
+    }
+    send_to_char(ch, "Could not read the changelog; your entry was not "
+                     "added.\r\n");
     return;
   }
 
   if (!(new = fopen(CHANGE_LOG_FILE, "w"))) {
     mudlog(BRF, LVL_IMPL, TRUE,
            "SYSERR: Error opening new changelog file (%s)", CHANGE_LOG_FILE);
+    /* The changelog was renamed to the backup above, so returning here
+     * leaves nothing under its own name at all.  Put it back. */
+    fclose(fl);
+    if (rename(buf, CHANGE_LOG_FILE)) {
+      mudlog(BRF, LVL_IMPL, TRUE,
+             "SYSERR: Changelog left as %s; could not restore it", buf);
+      send_to_char(ch, "Could not open the changelog for writing; it is left as %s.\r\n",
+                   buf);
+      return;
+    }
+    send_to_char(ch, "Could not open the changelog for writing; your entry "
+                     "was not added.\r\n");
     return;
   }
 
@@ -4642,6 +4706,7 @@ ACMD(do_changelog)
       fprintf(new, "%s\n", line);
     else {
       strcpy(last_buf, line);
+      found_header = TRUE;
       break;
     }
   }
@@ -4654,14 +4719,58 @@ ACMD(do_changelog)
   fprintf(new, "%s\n", buf);
   fprintf(new, "  %s\n", argument);
 
-  if (strcmp(buf, last_buf))
+  if (found_header && strcmp(buf, last_buf))
     fprintf(new, "%s\n", line);
 
   while (get_line(fl, line, sizeof(line)))
     fprintf(new, "%s\n", line);
 
   fclose(fl);
-  fclose(new);
+
+  /* A write that fails reports itself at the flush or the close, and what
+   * the failing write had already handed to the kernel stays on disk.
+   * Neither was looked at, so a full disk left the changelog truncated at
+   * whatever had reached it -- for the shipped file, thousands of bytes --
+   * and the immortal was told the change had been added.  Which of the two
+   * reports it depends on how much is still in the stream's buffer: for a
+   * changelog smaller than the buffer that is all of it, and for the
+   * shipped one most has already gone to the kernel and failed there,
+   * which is why ferror() is consulted as well as the flush.
+   *
+   * fclose() is tested on its own rather than as the third arm of an ||,
+   * because || stops at the first arm that is true: a failing fflush --
+   * the ordinary full-disk case, and the one this exists for -- would
+   * skip it and leak the stream.
+   *
+   * buf held the backup's name until the header was built into it above,
+   * so build it again.  Put the backup back rather than only naming it:
+   * the rename needs no free space, and leaving the truncation in place
+   * means the next changelog renames it over the backup and reports
+   * success, taking the history with it. */
+  bad = (fflush(new) == EOF || ferror(new));
+  if (fclose(new) == EOF)
+    bad = TRUE;
+
+  if (bad) {
+    snprintf(buf, sizeof(buf), "%s.bak", CHANGE_LOG_FILE);
+    mudlog(BRF, LVL_IMPL, TRUE,
+           "SYSERR: Error writing changelog (%s); restoring it from %s",
+           CHANGE_LOG_FILE, buf);
+    if (rename(buf, CHANGE_LOG_FILE)) {
+      remove(CHANGE_LOG_FILE);
+      if (rename(buf, CHANGE_LOG_FILE)) {
+        mudlog(BRF, LVL_IMPL, TRUE,
+               "SYSERR: Changelog left as %s; could not restore it", buf);
+        send_to_char(ch, "The changelog could not be written, and the previous "
+                         "one is left as %s.\r\n", buf);
+        return;
+      }
+    }
+    send_to_char(ch, "The changelog could not be written. The previous one has "
+                     "been put back, and your entry was not added.\r\n");
+    return;
+  }
+
   send_to_char(ch, "Change added.\r\n");
 }
 

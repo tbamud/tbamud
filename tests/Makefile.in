@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_genolc_savers
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -97,6 +97,13 @@ test_improved_edit: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
+# test_obj_walk - covers extraction during object-list iteration
+# ---------------------------------------------------------------------------
+test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+               $(SRCDIR)/handler.c $(SRCDIR)/lists.c test_obj_walk.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
 # Run all tests and produce JUnit XML files in test-results/
 # ---------------------------------------------------------------------------
 test: $(TESTS)
@@ -125,3 +132,14 @@ test: $(TESTS)
 clean:
 	rm -f $(TESTS)
 	rm -rf test-results
+
+# Link only the saver call paths, without unrelated editor/game dependencies.
+# The fixture provides its own small set of stubs instead of test_stubs.c.
+SAVER_LDFLAGS = -Wl,--gc-sections
+ifeq ($(shell uname -s),Darwin)
+SAVER_LDFLAGS = -Wl,-dead_strip
+endif
+test_genolc_savers: $(UNITY_SRC) test_genolc_savers.c \
+                    $(SRCDIR)/genmob.c $(SRCDIR)/genobj.c $(SRCDIR)/genwld.c \
+                    $(SRCDIR)/genolc.c $(SRCDIR)/genzon.c
+	$(COMPILE) -ffunction-sections -fdata-sections -o $@ $^ $(SAVER_LDFLAGS) $(LIBS)

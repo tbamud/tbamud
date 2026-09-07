@@ -106,3 +106,4 @@ tests/test-results/
 # autoconf leaves these behind when regenerating configure
 autom4te.cache/
 *~
+tests/test_genolc_savers

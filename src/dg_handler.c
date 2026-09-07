@@ -108,11 +108,35 @@ void extract_trigger(struct trig_data *trig)
   free_trigger(trig);
 }
 
-/* remove all triggers from a mob/obj/room */
+/* Take a script's triggers off it and leave the rest of it standing. Saving a
+ * room in redit is not the same as taking the room out of the world: the
+ * trigger list is the part the builder has been editing, while the variables a
+ * script has stored on the room are the room's own state and outlive the
+ * edit. */
+void extract_script_triggers(struct script_data *sc)
+{
+  struct trig_data *trig, *next_trig;
+
+  if (!sc)
+    return;
+
+  for (trig = TRIGGERS(sc); trig; trig = next_trig) {
+    next_trig = trig->next;
+    extract_trigger(trig);
+  }
+  TRIGGERS(sc) = NULL;
+
+  /* add_trigger() ors into this, so a type just taken off the list would
+   * otherwise go on being claimed for the rest of the reboot. */
+  SCRIPT_TYPES(sc) = 0;
+}
+
+/* Remove a mob's, object's or room's script entirely: its triggers, its
+ * variables and the script itself.  Callers must check for NULL first --
+ * this dereferences the script, unlike extract_script_triggers(). */
 void extract_script(void *thing, int type)
 {
   struct script_data *sc = NULL;
-  struct trig_data *trig, *next_trig;
   char_data *mob;
   obj_data *obj;
   room_data *room;
@@ -152,11 +176,7 @@ void extract_script(void *thing, int type)
     }
   }
 #endif
-  for (trig = TRIGGERS(sc); trig; trig = next_trig) {
-    next_trig = trig->next;
-    extract_trigger(trig);
-  }
-  TRIGGERS(sc) = NULL;
+  extract_script_triggers(sc);
 
   /* Thanks to James Long for tracking down this memory leak */
   free_varlist(sc->global_vars);

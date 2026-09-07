@@ -37,7 +37,7 @@ static obj_data *find_obj(long n);
 static room_data *find_room(long n);
 static void do_stat_trigger(struct char_data *ch, trig_data *trig);
 static void script_stat(char_data *ch, struct script_data *sc);
-static int remove_trigger(struct script_data *sc, char *name);
+static int remove_trigger(struct script_data *sc, char *name, char *removed, size_t rlen);
 static int is_num(char *arg);
 static void eval_op(char *op, char *lhs, char *rhs, char *result, void *go,
           struct script_data *sc, trig_data *trig);
@@ -625,7 +625,8 @@ obj_data *get_obj_by_room(room_data *room, char *name)
 void script_trigger_check(void)
 {
   char_data *ch;
-  obj_data *obj;
+  obj_data *obj, *next_obj;
+  struct obj_data **saved_walk;
   struct room_data *room=NULL;
   room_rnum nr;
   struct script_data *sc;
@@ -646,7 +647,15 @@ void script_trigger_check(void)
     }
   }
 
-  for (obj = object_list; obj; obj = obj->next) {
+  /* random_otrigger() runs a script, and a script can purge the object
+   * it is attached to -- which frees it at once.  obj = obj->next then reads
+   * the freed object, and the walk carries on into whatever is there.
+   * Take next first, and register it so extract_obj() can move it along if
+   * the script purges that one instead. */
+  saved_walk = protect_obj_walk(&next_obj);
+  for (obj = object_list; obj; obj = next_obj) {
+    next_obj = obj->next;
+
     if (SCRIPT(obj)) {
       sc = SCRIPT(obj);
 
@@ -654,6 +663,7 @@ void script_trigger_check(void)
         random_otrigger(obj);
     }
   }
+  protect_obj_walk(saved_walk);
 
   for (nr = 0; nr <= top_of_world; nr++) {
     if (SCRIPT(&world[nr])) {
@@ -671,7 +681,8 @@ void script_trigger_check(void)
 void check_time_triggers(void)
 {
   char_data *ch;
-  obj_data *obj;
+  obj_data *obj, *next_obj;
+  struct obj_data **saved_walk;
   struct room_data *room=NULL;
   int nr;
   struct script_data *sc;
@@ -692,7 +703,15 @@ void check_time_triggers(void)
     }
   }
 
-  for (obj = object_list; obj; obj = obj->next) {
+  /* time_otrigger() runs a script, and a script can purge the object
+   * it is attached to -- which frees it at once.  obj = obj->next then reads
+   * the freed object, and the walk carries on into whatever is there.
+   * Take next first, and register it so extract_obj() can move it along if
+   * the script purges that one instead. */
+  saved_walk = protect_obj_walk(&next_obj);
+  for (obj = object_list; obj; obj = next_obj) {
+    next_obj = obj->next;
+
     if (SCRIPT(obj)) {
       sc = SCRIPT(obj);
 
@@ -700,6 +719,7 @@ void check_time_triggers(void)
         time_otrigger(obj);
     }
   }
+  protect_obj_walk(saved_walk);
 
   for (nr = 0; nr <= top_of_world; nr++) {
     if (SCRIPT(&world[nr])) {
@@ -1093,7 +1113,12 @@ ACMD(do_attach)
  * trigger, otherwise 1.  If it matters, you might need to check to see if all 
  * the triggers were removed after this function returns, in order to remove 
  * the script. */
-static int remove_trigger(struct script_data *sc, char *name)
+/* removed, when given, is filled with the trigger this actually took out.
+ * The caller cannot work that out from the argument it passed: a numeric
+ * token matches by position first and only then by vnum -- see the comment
+ * in the loop below -- so for the small numbers a builder types, the
+ * trigger removed is usually not the one whose vnum the number names. */
+static int remove_trigger(struct script_data *sc, char *name, char *removed, size_t rlen)
 {
   trig_data *i, *j;
   int num = 0, string = FALSE, n;
@@ -1129,6 +1154,13 @@ static int remove_trigger(struct script_data *sc, char *name)
   }
 
   if (i) {
+    /* Before extract_trigger() frees it. */
+    if (removed && rlen) {
+      snprintf(removed, rlen, "%d (%s)", trig_index[i->nr]->vnum, GET_TRIG_NAME(i));
+      /* Windows uses _snprintf(), which may not terminate a truncated name. */
+      removed[rlen - 1] = '\0';
+    }
+
     if (j) {
       j->next = i->next;
       extract_trigger(i);
@@ -1157,15 +1189,18 @@ ACMD(do_detach)
   struct room_data *room;
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], *snum;
   char *trigger = 0;
-  int num_arg, tn, rn;
+  char trigdesc[MAX_INPUT_LENGTH + 8];
+  int num_arg;
   room_rnum rnum;
-  trig_data *trig;
 
   argument = two_arguments(argument, arg1, arg2);
   one_argument(argument, arg3);
-  tn = atoi(arg3);
-  rn = real_trigger(tn);
-  trig = read_trigger(rn);
+
+  /* What the builder typed, until remove_trigger() says what it actually
+   * took out.  atoi() on this used to name a trigger by vnum, which is
+   * wrong twice over: a name gives 0, and a number is matched as a
+   * position before it is tried as a vnum. */
+  snprintf(trigdesc, sizeof(trigdesc), "'%s'", *arg3 ? arg3 : arg2);
 
   if (!*arg1 || !*arg2) {
     send_to_char(ch, "Usage: detach [ mob | object | room ] { target } { trigger |"
@@ -1205,8 +1240,8 @@ ACMD(do_detach)
       else
         snum = arg2;
 
-    if (remove_trigger(SCRIPT(room), snum)) {
-      send_to_char(ch, "Trigger %d (%s) removed from %d.\r\n", tn, GET_TRIG_NAME(trig), world[rnum].number);
+    if (remove_trigger(SCRIPT(room), snum, trigdesc, sizeof(trigdesc))) {
+      send_to_char(ch, "Trigger %s removed from %d.\r\n", trigdesc, world[rnum].number);
       
       if (!TRIGGERS(SCRIPT(room)))
         extract_script(room, WLD_TRIGGER);
@@ -1287,9 +1322,9 @@ ACMD(do_detach)
         send_to_char(ch, "All triggers removed from %s.\r\n", IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
       }
 
-      else if (trigger && remove_trigger(SCRIPT(victim), trigger)) {
-        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
-          tn, GET_TRIG_NAME(trig), IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
+      else if (trigger && remove_trigger(SCRIPT(victim), trigger, trigdesc, sizeof(trigdesc))) {
+        send_to_char(ch, "Trigger %s removed from %s.\r\n", 
+          trigdesc, IS_NPC(victim) ? GET_SHORT(victim) : GET_NAME(victim));
 
         if (!TRIGGERS(SCRIPT(victim))) {
           extract_script(victim, MOB_TRIGGER);
@@ -1313,9 +1348,12 @@ ACMD(do_detach)
                 object->name);
       }
 
-      else if (remove_trigger(SCRIPT(object), trigger)) {
-        send_to_char(ch, "Trigger %d (%s) removed from %s.\r\n", 
-          tn, GET_TRIG_NAME(trig), object->short_description ? object->short_description : 
+      /* "You must specify a trigger to remove" above leaves trigger NULL,
+       * and remove_trigger() runs strstr() and isdigit() on it.  The mob
+       * branch has this guard. */
+      else if (trigger && remove_trigger(SCRIPT(object), trigger, trigdesc, sizeof(trigdesc))) {
+        send_to_char(ch, "Trigger %s removed from %s.\r\n", 
+          trigdesc, object->short_description ? object->short_description : 
           object->name);
         if (!TRIGGERS(SCRIPT(object))) {
           extract_script(object, OBJ_TRIGGER);
@@ -1967,7 +2005,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
       extract_script(c, MOB_TRIGGER);
       return;
     }
-    if (remove_trigger(SCRIPT(c), trignum_s)) {
+    if (remove_trigger(SCRIPT(c), trignum_s, NULL, 0)) {
       if (!TRIGGERS(SCRIPT(c))) {
         extract_script(c, MOB_TRIGGER);
       }
@@ -1980,7 +2018,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
       extract_script(o, OBJ_TRIGGER);
       return;
     }
-    if (remove_trigger(SCRIPT(o), trignum_s)) {
+    if (remove_trigger(SCRIPT(o), trignum_s, NULL, 0)) {
       if (!TRIGGERS(SCRIPT(o))) {
         extract_script(o, OBJ_TRIGGER);
       }
@@ -1993,7 +2031,7 @@ static void process_detach(void *go, struct script_data *sc, trig_data *trig,
       extract_script(r, WLD_TRIGGER);
       return;
     }
-    if (remove_trigger(SCRIPT(r), trignum_s)) {
+    if (remove_trigger(SCRIPT(r), trignum_s, NULL, 0)) {
       if (!TRIGGERS(SCRIPT(r))) {
         extract_script(r, WLD_TRIGGER);
       }

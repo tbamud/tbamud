@@ -1029,10 +1029,14 @@ void index_boot(int mode)
     }
   }
 
-  /* Exit if 0 records, unless this is shops */
+  /* Exit if 0 records, unless this is shops or quests: a world may have
+   * neither, and neither is required for the MUD to run. */
   if (!rec_count) {
-    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST)
+    if (mode == DB_BOOT_SHP || mode == DB_BOOT_QST) {
+      /* Every other way out of this function closes the index or exits. */
+      fclose(db_index);
       return;
+    }
     log("SYSERR: boot error - 0 records counted in %s/%s.", prefix,
 	index_filename);
     exit(1);
@@ -1321,6 +1325,22 @@ void parse_room(FILE *fl, int virtual_nr)
       log("SYSERR: Room %d is outside of any zone.", virtual_nr);
       exit(1);
     }
+  /* Test the lower bound again, against the zone the loop stopped on.  The
+   * one above ran against whichever zone the previous room landed in, and
+   * this loop only ever advances, so a vnum falling in a gap between one
+   * zone's top and the next zone's bot passes both and is filed under a
+   * zone that does not contain it.  Gaps are legal -- the .zon reader
+   * rejects only bot > top, and the shipped world has thirty-six of them.
+   * Whether any zone covers such a room at all is a separate question:
+   * real_zone_by_thing() searches [bot,top] over the whole table, so it
+   * can find one further along that the loader's forward scan never
+   * reached, and then world[].zone and the lookup disagree. */
+  if (virtual_nr < zone_table[zone].bot) {
+    log("SYSERR: Room %d falls between zones %d and %d in the order the "
+        "index gives them, so the loader cannot file it.",
+        virtual_nr, zone_table[zone - 1].number, zone_table[zone].number);
+    exit(1);
+  }
   world[room_nr].zone = zone;
   world[room_nr].number = virtual_nr;
   world[room_nr].name = fread_string(fl, buf2);
@@ -1355,6 +1375,12 @@ void parse_room(FILE *fl, int virtual_nr)
 
     /* In the old-style files, the 3rd item was the sector-type */
     world[room_nr].sector_type = atoi(flags2);
+    if (world[room_nr].sector_type < 0 ||
+        world[room_nr].sector_type >= NUM_ROOM_SECTORS) {
+      log("SYSERR: Sector type %d out of range in room #%d, using inside.",
+          world[room_nr].sector_type, virtual_nr);
+      world[room_nr].sector_type = SECT_INSIDE;
+    }
 
    sprintf(flags, "room #%d", virtual_nr);	/* sprintf: OK (until 399-bit integers) */
 
@@ -1362,7 +1388,20 @@ void parse_room(FILE *fl, int virtual_nr)
     check_bitvector_names(world[room_nr].room_flags[0], room_bits_count, flags, "room");
 
     if(bitsavetodisk) { /* Maybe the implementor just wants to look at the 128bit files */
-      add_to_save_list(zone_table[real_zone_by_thing(virtual_nr)].number, 3);
+      /* The checks above have already placed this room inside
+       * zone_table[zone] and world[room_nr].zone records it, so the file
+       * the loader has filed it under is known here without asking
+       * real_zone_by_thing().
+       * That function searches [bot,top] and gives up on anything above
+       * zone_table[top_of_zone_table].top -- the LAST zone's top, not the
+       * highest top of any zone -- so a table whose final entry has a low
+       * range answers NOWHERE for every room above it however correctly
+       * the room is filed, and zone_table[NOWHERE] reads off the end of
+       * the table, or off the front of it where IDXTYPE is signed.
+       * Asking the room's own zone is what genwld.c and oasis_copy.c do
+       * for the same list, it cannot go out of bounds, and it converts the
+       * room instead of skipping it. */
+      add_to_save_list(zone_table[zone].number, SL_WLD);
       converting = TRUE;
     }
 
@@ -1379,8 +1418,14 @@ void parse_room(FILE *fl, int virtual_nr)
     for(taeller=0; taeller < AF_ARRAY_MAX; taeller++)
       check_bitvector_names(world[room_nr].room_flags[taeller], room_bits_count, flags, "room");
 
-    /* Added Sanity check */
-    if (t[2] > NUM_ROOM_SECTORS) t[2] = SECT_INSIDE;
+    /* Added Sanity check.  Sectors run 0 to NUM_ROOM_SECTORS - 1, so the
+     * test has to be >=: sector 10 was passing it and then indexing
+     * movement_loss[], which has exactly NUM_ROOM_SECTORS entries.  A
+     * negative sector was never tested for at all. */
+    if (t[2] < 0 || t[2] >= NUM_ROOM_SECTORS) {
+      log("SYSERR: Sector type %d out of range in room #%d, using inside.", t[2], virtual_nr);
+      t[2] = SECT_INSIDE;
+    }
 
     world[room_nr].sector_type = t[2];
     } else {
@@ -1441,6 +1486,7 @@ void setup_dir(FILE *fl, int room, int dir)
 {
   int t[5];
   char line[READ_SIZE], buf2[128];
+  char *general_description, *keyword;
 
   /* Not GET_ROOM_VNUM(room): top_of_world is not advanced to this room
    * until its 'S' line is read, which happens after these D blocks, so
@@ -1449,14 +1495,13 @@ void setup_dir(FILE *fl, int room, int dir)
    * is the vnum being read. */
   snprintf(buf2, sizeof(buf2), "room #%d, direction D%d", world[room].number, dir);
 
-  if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir)) {
-    log("Warning: Diagonal direction disabled: %s", buf2);
-    return;
-  }
-
-  CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
-  world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
-  world[room].dir_option[dir]->keyword = fread_string(fl, buf2);
+  /* Read the block before deciding what to do with it.  A direction this
+   * build will not store still occupies two ~-terminated strings and a
+   * numeric line in the file, and leaving them in the stream makes the
+   * next pass round parse_room's loop read the exit's description as
+   * though it were a directive. */
+  general_description = fread_string(fl, buf2);
+  keyword = fread_string(fl, buf2);
 
   if (!get_line(fl, line, sizeof(line))) {
     log("SYSERR: Format error, %s", buf2);
@@ -1466,6 +1511,35 @@ void setup_dir(FILE *fl, int room, int dir)
     log("SYSERR: Format error, %s", buf2);
     exit(1);
   }
+
+  /* dir indexes dir_option[NUM_OF_DIRS] and comes from atoi() on the D
+   * line, so nothing has established that it is a direction at all. */
+  if (dir < 0 || dir >= NUM_OF_DIRS) {
+    log("SYSERR: Direction out of range, %s (0-%d)", buf2, NUM_OF_DIRS - 1);
+    free(general_description);
+    free(keyword);
+    return;
+  }
+
+  if (!CONFIG_DIAGONAL_DIRS && IS_DIAGONAL(dir)) {
+    log("Warning: Diagonal direction disabled: %s", buf2);
+    free(general_description);
+    free(keyword);
+    return;
+  }
+
+  /* A second D block for the same direction would otherwise drop the
+   * first one's struct and both of its strings on the floor. */
+  if (world[room].dir_option[dir]) {
+    log("SYSERR: Duplicate %s, replacing the first one", buf2);
+    free(world[room].dir_option[dir]->general_description);
+    free(world[room].dir_option[dir]->keyword);
+    free(world[room].dir_option[dir]);
+  }
+
+  CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
+  world[room].dir_option[dir]->general_description = general_description;
+  world[room].dir_option[dir]->keyword = keyword;
   if (t[0] == 1)
     world[room].dir_option[dir]->exit_info = EX_ISDOOR;
   else if (t[0] == 2)
@@ -1897,7 +1971,29 @@ void parse_mobile(FILE *mob_f, int nr)
     letter = *f4;
 
     if(bitsavetodisk) {
-      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 0);
+      /* real_zone_by_thing() answers NOWHERE when it cannot place the
+       * vnum, and this indexed zone_table with it -- past the end of the
+       * table where IDXTYPE is unsigned, before the start where it is
+       * signed.  add_to_save_list() re-checks the zone number it is
+       * handed, so what usually follows is the boot walking off the table
+       * rather than the wrong file being rewritten; either way the read is
+       * out of bounds.  parse_room has a zone of its own to file the room
+       * under; here the lookup is the only answer there is, so a vnum it
+       * cannot place is not queued.  What becomes of the record after
+       * that is not something this knows.  A vnum no zone covers is
+       * dropped by a rewrite of the file it sits in, since the savers
+       * walk their own zone's range; but the lookup also gives up on a
+       * vnum some zone does cover, when its search never reaches that
+       * entry, and then the outcome turns on which file the record
+       * happens to sit in.  So the message says what was established and
+       * no more. */
+      zone_rnum tzone = real_zone_by_thing(nr);
+
+      if (tzone == NOWHERE)
+        log("SYSERR: No zone found for mobile #%d; it is not queued for "
+            "conversion.", nr);
+      else
+        add_to_save_list(zone_table[tzone].number, SL_MOB);
       converting =TRUE;
     }
 
@@ -2056,7 +2152,29 @@ char *parse_object(FILE *obj_f, int nr)
     GET_OBJ_AFFECT(obj_proto + i)[3] = 0;
 
     if(bitsavetodisk) {
-      add_to_save_list(zone_table[real_zone_by_thing(nr)].number, 1);
+      /* real_zone_by_thing() answers NOWHERE when it cannot place the
+       * vnum, and this indexed zone_table with it -- past the end of the
+       * table where IDXTYPE is unsigned, before the start where it is
+       * signed.  add_to_save_list() re-checks the zone number it is
+       * handed, so what usually follows is the boot walking off the table
+       * rather than the wrong file being rewritten; either way the read is
+       * out of bounds.  parse_room has a zone of its own to file the room
+       * under; here the lookup is the only answer there is, so a vnum it
+       * cannot place is not queued.  What becomes of the record after
+       * that is not something this knows.  A vnum no zone covers is
+       * dropped by a rewrite of the file it sits in, since the savers
+       * walk their own zone's range; but the lookup also gives up on a
+       * vnum some zone does cover, when its search never reaches that
+       * entry, and then the outcome turns on which file the record
+       * happens to sit in.  So the message says what was established and
+       * no more. */
+      zone_rnum tzone = real_zone_by_thing(nr);
+
+      if (tzone == NOWHERE)
+        log("SYSERR: No zone found for object #%d; it is not queued for "
+            "conversion.", nr);
+      else
+        add_to_save_list(zone_table[tzone].number, SL_OBJ);
       converting = TRUE;
     }
 
@@ -3981,6 +4099,17 @@ static int check_object(struct obj_data *obj)
     if (search_block(onealias, drinknames, TRUE) < 0 && (error = TRUE))
       log("SYSERR: Object #%d (%s) doesn't have drink type as last keyword. (%s)",
 		GET_OBJ_VNUM(obj), obj->short_description, obj->name);
+
+    /* The liquid type indexes three tables that act.item.c indexes
+     * directly, and was never looked at here.  oedit bounds what it writes, so a value out of
+     * range came from the file, from a script, or from a rent or house
+     * restore.  The uses are bounded now, but an operator should hear about
+     * it at boot rather than wonder why a bottle holds water. */
+    if ((GET_OBJ_VAL(obj, 2) < 0 || GET_OBJ_VAL(obj, 2) >= NUM_LIQ_TYPES)
+        && (error = TRUE))
+      log("SYSERR: Object #%d (%s) has liquid type %d, outside 0-%d.",
+		GET_OBJ_VNUM(obj), obj->short_description, GET_OBJ_VAL(obj, 2),
+		NUM_LIQ_TYPES - 1);
   }
   /* Fall through. */
   case ITEM_FOUNTAIN:

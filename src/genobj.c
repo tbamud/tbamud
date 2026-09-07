@@ -196,9 +196,11 @@ int save_objects(zone_rnum zone_num)
     return FALSE;
   }
 
-  snprintf(filename, sizeof(filename), "%s/%d.new", OBJ_PREFIX, zone_table[zone_num].number);
+  snprintf(filename, sizeof(filename), "%s%d.new", OBJ_PREFIX, zone_table[zone_num].number);
   if (!(fp = fopen(filename, "w+"))) {
-    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: Cannot open objects file %s!", filename);
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: OLC: Cannot open the object file %s: %s",
+           filename, strerror(errno));
     return FALSE;
   }
   /* Start running through all objects in this zone. */
@@ -223,11 +225,28 @@ int save_objects(zone_rnum zone_num)
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
         
-      if(n >= MAX_STRING_LENGTH) {
-        mudlog(BRF,LVL_BUILDER,TRUE,
-               "SYSERR: Could not save object #%d due to size (%d > maximum of %d).",
-               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH);
-        continue;
+      /* A record that will not fit ends the save.  Carrying on would write
+       * every other object over the good file and take this one off the disk,
+       * and the object is still in memory to be repaired. */
+      if (n < 0) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not format object #%d for saving; zone %d not saved.",
+               GET_OBJ_VNUM(obj), zone_table[zone_num].number);
+        fclose(fp);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
+      }
+
+      if (n >= MAX_STRING_LENGTH) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not save object #%d due to size (%d >= maximum of %d); "
+               "zone %d not saved.",
+               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH, zone_table[zone_num].number);
+        fclose(fp);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
       }
       
       fprintf(fp, "%s", convert_from_tabs(buf2));
@@ -267,7 +286,7 @@ int save_objects(zone_rnum zone_num)
 	for (ex_desc = obj->ex_description; ex_desc; ex_desc = ex_desc->next) {
 	  /* Sanity check to prevent nasty protection faults. */
 	  if (!ex_desc->keyword || !ex_desc->description || !*ex_desc->keyword || !*ex_desc->description) {
-	    mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
+	    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
 	    continue;
 	  }
 	  strncpy(buf, ex_desc->description, sizeof(buf) - 1);
@@ -288,10 +307,37 @@ int save_objects(zone_rnum zone_num)
 
   /* Write the final line, close the file. */
   fprintf(fp, "$~\n");
-  fclose(fp);
-  snprintf(buf, sizeof(buf), "%s/%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
-  remove(buf);
-  rename(filename, buf);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated object file over a good one.
+   * This is the shape save_quests() already uses. */
+  if (fflush(fp) == EOF || ferror(fp)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing object file %s: %s",
+           filename, strerror(errno));
+    fclose(fp);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
+  if (fclose(fp) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing object file %s: %s",
+           filename, strerror(errno));
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
+  snprintf(buf, sizeof(buf), "%s%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
+  if (!genolc_install_file(filename, buf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the object file %s in place: %s",
+           buf, strerror(errno));
+    return FALSE;
+  }
 
   if (in_save_list(zone_table[zone_num].number, SL_OBJ))
     remove_from_save_list(zone_table[zone_num].number, SL_OBJ);
@@ -486,6 +532,11 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg3 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          /* The next command has slid into this slot, so do not advance
+           * past it -- and it is not the 'P' the fallthrough below expects,
+           * so this one is done. */
+          cmd_no--;
+          break;
         } else if (ZCMD(zone, cmd_no).arg3 > rnum) {
           ZCMD(zone, cmd_no).arg3--;
           zone_touched = TRUE;
@@ -497,6 +548,7 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg1 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg1 > rnum) {
           ZCMD(zone, cmd_no).arg1--;
           zone_touched = TRUE;
@@ -506,6 +558,7 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg2 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg2 > rnum) {
           ZCMD(zone, cmd_no).arg2--;
           zone_touched = TRUE;

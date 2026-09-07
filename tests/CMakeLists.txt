@@ -135,6 +135,14 @@ add_mud_test(test_mud_event
     ${CMAKE_CURRENT_SOURCE_DIR}/test_mud_event.c
 )
 
+add_mud_test(test_obj_walk
+    ${MUD_SRCDIR}/handler.c
+    ${MUD_SRCDIR}/lists.c
+    ${MUD_SRCDIR}/utils.c
+    ${MUD_SRCDIR}/random.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_obj_walk.c
+)
+
 # ---------------------------------------------------------------------------
 # test_handler_prefix — covers the keyword helpers in src/handler.c
 # interpreter.c is here for one_argument, lists.c for the group list handler.c uses.
@@ -160,3 +168,27 @@ add_mud_test(test_improved_edit
     ${MUD_SRCDIR}/random.c
     ${CMAKE_CURRENT_SOURCE_DIR}/test_improved_edit.c
 )
+
+# This fixture uses section garbage collection to link the real saver paths
+# without the unrelated OLC editor functions. MSVC resolves those discarded
+# functions' dependencies before elimination, so it cannot link this target.
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
+    add_executable(test_genolc_savers
+        ${UNITY_SRC}
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_genolc_savers.c
+        ${MUD_SRCDIR}/genmob.c
+        ${MUD_SRCDIR}/genobj.c
+        ${MUD_SRCDIR}/genwld.c
+        ${MUD_SRCDIR}/genolc.c
+        ${MUD_SRCDIR}/genzon.c
+    )
+    target_include_directories(test_genolc_savers PRIVATE ${TEST_INCLUDES})
+    target_compile_options(test_genolc_savers PRIVATE
+        -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_genolc_savers APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_genolc_savers APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    add_test(NAME test_genolc_savers COMMAND test_genolc_savers)
+endif()

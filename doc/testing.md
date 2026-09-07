@@ -148,3 +148,25 @@ on every push and pull request against `master`.  After the tests finish the
 `dorny/test-reporter` action reads `tests/test-results/*.xml` and publishes a
 formatted report as a GitHub Check with pass/fail counts and per-suite
 execution times.
+
+## World saver regression tests
+
+`test_genolc_savers` runs the actual room, object and mobile savers against
+files in a fresh temporary directory, without touching the shipped world.
+For each saver, it writes a valid zone, queues an edit to the first record,
+and makes the second record exceed `MAX_STRING_LENGTH` using strings that
+individually fit the loader limit. It checks failure, byte-for-byte preservation
+of the installed file, retention of the pending save, and scratch-file cleanup.
+The same scenarios run with debug mode enabled, where the partial scratch file
+must remain. Repairing the oversized record and retrying must save both records
+and the edit, clear the pending save, and consume the scratch file.
+
+The fixture stubs world lookups, logging, trigger output and tab conversion;
+it tests no triggers or tabs. Save-list operations and file installation use
+production code. It does not drive the interactive editors or world loader.
+
+Run with `make test` as usual, or `make test_genolc_savers` followed by
+`./test_genolc_savers` from `tests/`. CMake also registers it with CTest for
+GCC/Clang. Linking requires section garbage collection to omit unrelated game
+functions. Native MSVC cannot link this isolated target and CMake skips it
+there; WSL/Linux execution is not a native Windows runtime check.

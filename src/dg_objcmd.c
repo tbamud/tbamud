@@ -70,6 +70,19 @@ static void obj_log(obj_data *obj, const char *format, ...)
   va_end(args);
 }
 
+/* Is obj inside container, at any depth?  extract_obj() is recursive, so
+ * anything holding the running object must be left alone. */
+static int obj_contains_obj(obj_data *container, obj_data *obj)
+{
+    obj_data *i;
+
+    for (i = obj->in_obj; i; i = i->in_obj)
+        if (i == container)
+            return TRUE;
+
+    return FALSE;
+}
+
 /* returns the real room number that the object or object's carrier is in */
 room_rnum obj_room(obj_data *obj)
 {
@@ -366,7 +379,12 @@ static OCMD(do_opurge)
 
         for (o = world[rm].contents; o; o = next_obj ) {
            next_obj = o->next_content;
-           if (o != obj)
+           /* extract_obj() frees an object's contents along with it, so
+            * skipping obj alone is not enough: the running object may be
+            * inside one of these, and freeing that container frees obj --
+            * and the trigger executing out of it -- while this loop and
+            * script_driver are still standing on both. */
+           if (o != obj && !obj_contains_obj(o, obj))
              extract_obj(o);
         }
       }
@@ -378,7 +396,11 @@ static OCMD(do_opurge)
     if (!ch) {
       o = get_obj_by_obj(obj, arg);
       if (o) {
-        if (o==obj)
+        /* Purging a container purges what is inside it, so the running
+         * object is gone either way -- named directly, or held by the
+         * thing that was named.  script_driver has to be told in both
+         * cases or it carries on over freed memory. */
+        if (o == obj || obj_contains_obj(o, obj))
           dg_owner_purged = 1;
         extract_obj(o);
       } else
@@ -416,9 +438,22 @@ static OCMD(do_oteleport)
 
     else if (!str_cmp(arg1, "all"))
     {
-        rm = obj_room(obj);
+        /* obj_room() answers NOWHERE for an object that is in no room, on
+         * nobody and in nothing -- which do_omove used to leave it as,
+         * below, until the return added there in this commit.
+         * NOWHERE is 65535, so world[rm].people would be far past the end
+         * of the table.  do_oforce has this test; this did not. */
+        if ((rm = obj_room(obj)) == NOWHERE)
+        {
+            obj_log(obj, "oteleport called by an object that is nowhere");
+            return;
+        }
+
         if (target == rm)
+        {
             obj_log(obj, "oteleport target is itself");
+            return;
+        }
 
         for (ch = world[rm].people; ch; ch = next_ch)
         {
@@ -738,9 +773,10 @@ static OCMD(do_oat)
 {
   room_rnum loc = NOWHERE;
   struct char_data *ch;
-  struct obj_data *object;
+  struct obj_data *object, *walk;
   char arg[MAX_INPUT_LENGTH], *command;
-  long owner_id;
+  int saved_purged;
+  long id, owner_id;
 
   command = any_one_arg(argument, arg);
 
@@ -767,26 +803,62 @@ static OCMD(do_oat)
   if (!(object = read_object(GET_OBJ_VNUM(obj), VIRTUAL)))
     return;
 
-  /* The command below runs with the duplicate as its object, so nothing it
-   * does can tell that the object whose script is running is standing in
-   * that room as well.  A bare opurge there frees it -- it is just another
-   * object in the room -- and opurge sets dg_owner_purged only for the
-   * object it was handed, which is the duplicate.  Take the running
-   * object's script id first: ids come from a counter that only goes up
-   * and free_obj() drops them from the table, so the id answers afterwards
-   * what the pointer no longer can. */
+  /* obj_command_interpreter() is called directly here rather than through
+   * script_driver(), so this path has to put dg_owner_purged back: the
+   * command may purge the object it was given, and leaving the flag set
+   * afterwards would make script_driver abort the *real* object's script
+   * and report the action as failed. */
+  saved_purged = dg_owner_purged;
+  dg_owner_purged = 0;
+
+  /* Stamp the object this script is running on as well.  A command run
+   * from here can reach back to it -- oforce the character carrying it to
+   * drop it, into a drop trigger that purges it -- and that purge sets the
+   * flag for a reason: the caller's script_driver() has to abort rather
+   * than go on using a freed object.  Restoring the saved value blindly
+   * would wipe exactly that signal. */
   owner_id = obj_script_id(obj);
+
+  /* Stamp it before the command runs.  Script ids come from a counter
+   * that only goes up, and free_obj() drops them from the lookup table,
+   * so no later object can carry this one. */
+  id = obj_script_id(object);
 
   obj_to_room(object, loc);
   obj_command_interpreter(object, command);
 
-  if (object->in_room == loc) 
-    extract_obj(object);
+  /* Wherever the command left it, it was ours: this is a duplicate made
+   * to carry one command and nothing else.  Testing that it was still in
+   * loc meant a command that moved it left it in the world for good.
+   *
+   * dg_owner_purged cannot answer whether it is still there.  Running a
+   * command somewhere else is what this command is for, and any script
+   * that command fires gets its own script_driver(), which zeroes the flag
+   * on the way in and, when a script purges its own object, returns
+   * without clearing it -- so the value read here can belong to a script
+   * three frames down.
+   *
+   * Look for the object instead.  object_list holds every object that
+   * exists and REMOVE_FROM_LIST in extract_obj() is what takes one off
+   * it -- but the address alone is not enough: free() hands the same
+   * block straight back, and read_object() puts what it builds at the
+   * head of the list, so a command that purges this duplicate and then
+   * loads anything leaves the new object sitting at the old address,
+   * first in the list, wearing the pointer being looked for.  Match the
+   * script id too; those are never reused. */
+  for (walk = object_list; walk; walk = walk->next)
+    if (walk == object && walk->script_id == id) {
+      extract_obj(object);
+      break;
+    }
 
-  /* Gone.  script_driver() is standing on that object and on the trigger
-   * extract_script() freed along with it, and reads both again as soon as
-   * this returns; setting the flag is what stops it. */
-  if (!has_obj_by_uid_in_lookup_table(owner_id))
+  /* Restore the saved flag only if the script owner survived.  The command
+   * runs as the duplicate, so purging the owner need not set the flag.
+   * free_obj() removes the owner's UID from the lookup table; checking it
+   * avoids touching the possibly freed owner or scanning object_list. */
+  if (has_obj_by_uid_in_lookup_table(owner_id))
+    dg_owner_purged = saved_purged;
+  else
     dg_owner_purged = 1;
 }
 
@@ -805,8 +877,15 @@ static OCMD(do_omove)
 
     target = find_obj_target_room(obj, arg1);
 
+    /* No return here meant the object was detached from wherever it was
+     * and then handed to obj_to_room(obj, NOWHERE), which only logs: left
+     * on object_list in no room, on nobody and in nothing, unreachable and
+     * never freed. */
     if (target == NOWHERE)
+    {
         obj_log(obj, "omove target is an invalid room");
+        return;
+    }
 
     // Remove the object from it's current location
     if (obj->carried_by != NULL) {

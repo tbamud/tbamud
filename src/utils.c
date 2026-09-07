@@ -1379,6 +1379,17 @@ IDXTYPE atoidx( const char *str_to_conv )
 
 #define isspace_ignoretabs(c) ((c)!='\t' && isspace(c))
 
+/* Copy src to dst, stopping at end so the result stays inside the buffer,
+ * and answer the new write point.  strfrmt() assembled its output with
+ * sprintf() and a pointer nothing bounded. */
+static char *strfrmt_append(char *dst, const char *end, const char *src)
+{
+  while (*src && dst < end)
+    *dst++ = *src++;
+  *dst = '\0';
+  return dst;
+}
+
 /*
    strfrmt (String Format) function
    Used by automap/map system
@@ -1395,9 +1406,31 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
   char *lp = line;
   char *rp = ret;
   char *wp;
+  /* Where a word, a space or a pad may be written to.  line stops five
+   * bytes short of its end to keep room for the longest sequence that
+   * closes a line -- "\tn\r\n" and the terminator -- so the writes that
+   * close one need no bound of their own.  That holds because every other
+   * write through lp below is guarded by this, bar the colour restore,
+   * which runs on a line just reset to empty.  Without the reservation a
+   * full line would lose its newline to the same guards that stop the
+   * overflow, and two lines of the box would run together. */
+  const char *lend = line + sizeof(line) - 5;
+  const char *rend = ret + sizeof(ret) - 1;
   int wlen = 0, llen = 0, lcount = 0;
   char last_color='n';
   bool new_line_started = FALSE;
+
+  /* w is the width of the box, and it drives the padding fills below.  It
+   * arrives as the player's screen width less the width of the map beside
+   * it, and str_and_map() does not clamp CONFIG_MINIMAP_SIZE, so a large
+   * minimap on a forty-column screen makes it negative -- which the
+   * memset() at the foot of this function turned into a size_t of about
+   * eighteen quintillion.  Wider than a line can hold is meaningless too,
+   * and only spins the fills. */
+  if (w < 0)
+    w = 0;
+  if (w > (int)sizeof(line) - 5)
+    w = (int)sizeof(line) - 5;
 
   memset(line, '\0', MAX_INPUT_LENGTH);
   /* Nomalize spaces and newlines */
@@ -1419,18 +1452,22 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
         /* Start a new line */
         if(hpad)
           for(; llen < w; llen++)
-            *lp++ = ' ';
+            if (lp < lend) *lp++ = ' ';
         *lp++ = '\r';
         *lp++ = '\n';
-        *lp++ = '\0';
-        rp += sprintf(rp, "%s", line);
+        *lp = '\0';
+        rp = strfrmt_append(rp, rend, line);
         llen = 0;
         lcount++;
         lp = line;
       } else if (*sp=='`'||*sp=='$'||*sp=='#') {
         if (sp[1] && (sp[1]==*sp))
           wlen++; /* One printable char here */
-        sp += 2; /* Eat the whole code regardless */
+        /* Eat the whole code, but not the terminator.  A description whose
+         * last character is one of these has nothing after it, and stepping
+         * two would carry the scan below past the end of the string.  redit
+         * takes any text, so that is a builder's typo away. */
+        sp += sp[1] ? 2 : 1;
       } else if (*sp=='\t'&&sp[1]) {
         char MXPcode = sp[1]=='[' ? ']' : sp[1]=='<' ? '>' : '\0';
 	
@@ -1452,14 +1489,13 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
       /* Start a new line */
       if(hpad)
         for(; llen < w; llen++)
-          *lp++ = ' ';
+          if (lp < lend) *lp++ = ' ';
       *lp++ = '\t';  /* 'normal' color */
       *lp++ = 'n';
       *lp++ = '\r'; /* New line */
       *lp++ = '\n';
-      *lp++ = '\0';
-      sprintf(rp, "%s", line);
-      rp += strlen(line);
+      *lp = '\0';
+      rp = strfrmt_append(rp, rend, line);
       llen = 0;
       lcount++;
       lp = line;
@@ -1471,33 +1507,40 @@ char *strfrmt(char *str, int w, int h, int justify, int hpad, int vpad)
     }
     /* add word to line */
     if (lp!=line && new_line_started!=TRUE) {
-      *lp++ = ' ';
+      if (lp < lend) *lp++ = ' ';
       llen++;
     }
     new_line_started = FALSE;
     llen += wlen ;
-    for( ; wp!=sp ; *lp++ = *wp++);
+    /* wlen counts printable width and this copies bytes, so the two part
+     * company over colour codes -- and a word with no space in it is not
+     * broken at all, whatever its length.  Neither of those is a reason
+     * to write past the end of line. */
+    for( ; wp!=sp && lp<lend ; *lp++ = *wp++);
   }
   /* Copy over the last line */
   if(lp!=line) {
     if(hpad)
       for(; llen < w; llen++)
-        *lp++ = ' ';
+        if (lp < lend) *lp++ = ' ';
     *lp++ = '\r';
     *lp++ = '\n';
-    *lp++ = '\0';
-    sprintf(rp, "%s", line);
-    rp += strlen(line);
+    *lp = '\0';
+    rp = strfrmt_append(rp, rend, line);
     lcount++;
   }
   if(vpad) {
     while(lcount < h) {
       if(hpad) {
-        memset(rp, ' ', w);
-        rp += w;
+        int pad = w < rend - rp ? w : (int)(rend - rp);
+
+        if (pad > 0) {
+          memset(rp, ' ', pad);
+          rp += pad;
+        }
       }
-      *rp++ = '\r';
-      *rp++ = '\n';
+      if (rp < rend) *rp++ = '\r';
+      if (rp < rend) *rp++ = '\n';
       lcount++;
     }
     *rp = '\0';

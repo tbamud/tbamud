@@ -30,7 +30,7 @@
 /* local functions */
 static void medit_setup_new(struct descriptor_data *d);
 static void init_mobile(struct char_data *mob);
-static void medit_save_to_disk(zone_vnum zone_num);
+static int medit_save_to_disk(zone_vnum zone_num);
 static void medit_disp_positions(struct descriptor_data *d);
 static void medit_disp_sex(struct descriptor_data *d);
 static void medit_disp_attack_types(struct descriptor_data *d);
@@ -140,12 +140,19 @@ ACMD(do_oasis_medit)
   if (save) {
     send_to_char(ch, "Saving all mobiles in zone %d.\r\n",
       zone_table[OLC_ZNUM(d)].number);
-    mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
-      "OLC: %s saves mobile info for zone %d.",
-      GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
 
     /* Save the mobiles. */
-    save_mobiles(OLC_ZNUM(d));
+    if (save_mobiles(OLC_ZNUM(d)))
+      mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "OLC: %s saves mobile info for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    else {
+      send_to_char(ch, "Unable to save all mobiles in zone %d. The changes are "
+        "still in memory.\r\n", zone_table[OLC_ZNUM(d)].number);
+      mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
+        "SYSERR: OLC: %s failed to save mobile info for zone %d.",
+        GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+    }
 
     /* Free the olc structure stored in the descriptor. */
     free(d->olc);
@@ -174,9 +181,9 @@ ACMD(do_oasis_medit)
     GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, GET_OLC_ZONE(ch));
 }
 
-static void medit_save_to_disk(zone_vnum foo)
+static int medit_save_to_disk(zone_vnum foo)
 {
-  save_mobiles(real_zone(foo));
+  return save_mobiles(real_zone(foo));
 }
 
 static void medit_setup_new(struct descriptor_data *d)
@@ -571,8 +578,11 @@ void medit_parse(struct descriptor_data *d, char *arg)
       medit_save_internally(d);
       mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s edits mob %d", GET_NAME(d->character), OLC_NUM(d));
       if (CONFIG_OLC_SAVE) {
-        medit_save_to_disk(zone_table[real_zone_by_thing(OLC_NUM(d))].number);
-        write_to_output(d, "Mobile saved to disk.\r\n");
+        if (medit_save_to_disk(zone_table[real_zone_by_thing(OLC_NUM(d))].number))
+          write_to_output(d, "Mobile saved to disk.\r\n");
+        else
+          write_to_output(d, "Unable to save mobile %d to disk. The change is "
+                             "still in memory.\r\n", OLC_NUM(d));
       } else
         write_to_output(d, "Mobile saved to memory.\r\n");
       cleanup_olc(d, CLEANUP_ALL);
@@ -1095,10 +1105,12 @@ void medit_parse(struct descriptor_data *d, char *arg)
     if (*arg == 'y' || *arg == 'Y') {
       if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))) != NOBODY) {
         write_to_output(d, "Mobile deleted.\r\n");
-        /* save_all() writes the mob file and every zone file the delete
-         * just flagged, and nothing else -- it walks the save list. */
-        if (CONFIG_OLC_SAVE)
-          save_all();
+        /* save_all() writes the mob file and every zone file the
+         * delete just flagged -- and whatever else is on the save list,
+         * which is why the answer below is not about this delete alone. */
+        if (CONFIG_OLC_SAVE && !save_all())
+          write_to_output(d, "Not every world file that was waiting to be "
+                             "saved could be written; see the syslog.\r\n");
       } else
         write_to_output(d, "Couldn't delete the mobile!\r\n");
 
@@ -1110,7 +1122,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
       return;
     } else
       write_to_output(d, "Please answer 'Y' or 'N': ");
-    break;
+    return;
 
   default:
     /* We should never get here. */

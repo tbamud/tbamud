@@ -349,6 +349,7 @@ void free_varlist(struct trig_var_data *vd);
 int remove_var(struct trig_var_data **var_list, char *name);
 void free_trigger(trig_data *trig);
 void extract_trigger(struct trig_data *trig);
+void extract_script_triggers(struct script_data *sc);
 void extract_script(void *thing, int type);
 void extract_script_mem(struct script_memory *sc);
 void free_proto_script(void *thing, int type);

@@ -175,7 +175,7 @@ ACMD(do_oasis_qedit)
         GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
     } else {
       send_to_char(ch,
-        "Unable to save all quests in zone %d. Changes remain marked for saving.\r\n",
+        "Unable to save all quests in zone %d. The change is still in memory.\r\n",
         zone_table[OLC_ZNUM(d)].number);
 
       mudlog(BRF, MAX(LVL_BUILDER, GET_INVIS_LEV(ch)), TRUE,
@@ -411,7 +411,7 @@ void qedit_parse(struct descriptor_data *d, char *arg)
               write_to_output(d, "Quest %d saved to disk.\r\n", OLC_NUM(d));
             else
               write_to_output(d,
-                "Unable to save quest %d to disk. Changes remain marked for saving.\r\n",
+                "Unable to save quest %d to disk. The change is still in memory.\r\n",
                 OLC_NUM(d));
           } else
             write_to_output(d, "Quest %d saved to memory.\r\n", OLC_NUM(d));

@@ -386,6 +386,7 @@ void point_update(void)
 {
   struct char_data *i, *next_char;
   struct obj_data *j, *next_thing, *jj, *next_thing2;
+  struct obj_data **saved_walk;
 
   /* characters */
   for (i = character_list; i; i = next_char) {
@@ -419,7 +420,15 @@ void point_update(void)
     }
   }
 
-  /* objects */
+  /* objects.  next_thing is saved before the body, which is right for the
+   * object being looked at -- but timer_otrigger() and the corpse-decay
+   * act() calls both run scripts, and a script can purge any object, this
+   * one's successor included.  Register the pointer so extract_obj() can
+   * move it along rather than leave it pointing at freed memory.
+   * That keeps the walk going when the object being looked at is freed.
+   * It does not cover the corpse branch below, which goes on using j after
+   * its own act() -- a separate defect, and not one this addresses. */
+  saved_walk = protect_obj_walk(&next_thing);
   for (j = object_list; j; j = next_thing) {
     next_thing = j->next;	/* Next in object list */
 
@@ -463,6 +472,7 @@ void point_update(void)
         timer_otrigger(j);
     }
   }
+  protect_obj_walk(saved_walk);
 
   /* Take 1 from the happy-hour tick counter, and end happy-hour if zero */
        if (HAPPY_TIME > 1)  HAPPY_TIME--;

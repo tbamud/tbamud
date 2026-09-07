@@ -444,13 +444,20 @@ static char *next_page(char *str, struct char_data *ch)
     else if (line > (GET_PAGE_LENGTH(ch) - (PRF_FLAGGED(ch, PRF_COMPACT) ? 1 : 2)))
       return (str);
 
-    /* Check for the beginning of an ANSI color code block. */
+    /* Check for the beginning of an ANSI color code block.  Stop at the
+     * last character before the terminator as well as at the 'm': a string
+     * can end part way through a code, and stepping onto the '\0' here
+     * leaves the str++ above to carry the walk past the end of the buffer.
+     * Stopping short of it instead lets the test at the top of the loop
+     * end the page, which is what the end of the string means. */
     else if (*str == '\x1B')  /* Jump to the end of the ANSI code, or max 9 chars */
-      for (count=0; *str != 'm' && count < 9; count++)
+      for (count=0; *str != 'm' && *(str + 1) && count < 9; count++)
         str++;
 
+    /* Likewise for a colour code of this MUD's own: a string ending in a
+     * lone tab has no letter to skip over, only the terminator. */
     else if (*str == '\t') {
-      if (*(str + 1) != '\t')
+      if (*(str + 1) && *(str + 1) != '\t')
         str++;
     }
 

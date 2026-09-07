@@ -572,6 +572,10 @@ static void init_game(ush_int local_port)
 
   game_loop(mother_desc);
 
+  /* Nothing runs after this, so anything the bug throttle is still holding
+   * goes out now or not at all. */
+  ReportBugFlush();
+
   Crash_save_all();
   House_save_all();
 
@@ -808,6 +812,13 @@ void game_loop(socket_t local_mother_desc)
 
     /* Sleep if we don't have any connections */
     if (descriptor_list == NULL) {
+      /* The select() below has no timeout, so the heartbeat stops until
+       * somebody connects.  Anything a protocol bug report is still
+       * holding would sit there with it -- and the commonest way a
+       * player-driven flood ends is that player logging off, which is
+       * this branch.  Flush rather than tick: their slot is seconds old,
+       * and nothing will be running to retire it when the minute is up. */
+      ReportBugFlush();
       log("No connections.  Going to sleep.");
       FD_ZERO(&input_set);
       FD_SET(local_mother_desc, &input_set);
@@ -1079,6 +1090,12 @@ void heartbeat(int heart_pulse)
 
   if (!(heart_pulse % PULSE_USAGE))
     record_usage();
+
+  /* Retires protocol bug reports whose repeat window has passed, so that a
+   * flood which stops still has its count reported rather than waiting for
+   * the next unrelated report to carry it out. */
+  if (!(heart_pulse % PULSE_AUTOSAVE))
+    ReportBugTick();
 
   if (!(heart_pulse % PULSE_TIMESAVE))
   save_mud_time(&time_info);

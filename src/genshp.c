@@ -581,7 +581,7 @@ int save_shops(zone_rnum zone_num)
 {
   int i, j, rshop, num_shops = 0;
   FILE *shop_file;
-  char fname[128], oldname[128], buf[MAX_STRING_LENGTH];
+  char fname[128], oldname[128];
   struct shop_data *shop;
 
 #if CIRCLE_UNSIGNED_INDEX
@@ -593,12 +593,16 @@ int save_shops(zone_rnum zone_num)
     return FALSE;
   }
 
-  snprintf(fname, sizeof(fname), "%s/%d.new", SHP_PREFIX, zone_table[zone_num].number);
+  snprintf(fname, sizeof(fname), "%s%d.new", SHP_PREFIX, zone_table[zone_num].number);
   if (!(shop_file = fopen(fname, "w"))) {
-    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: OLC: Cannot open shop file!");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: OLC: Cannot open the shop file %s: %s",
+           fname, strerror(errno));
     return FALSE;
   } else if (fprintf(shop_file, "CircleMUD v3.0 Shop File~\n") < 0) {
-    mudlog(BRF, LVL_GOD, TRUE, "SYSERR: OLC: Cannot write to shop file!");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: OLC: Cannot write to the shop file %s: %s",
+           fname, strerror(errno));
     fclose(shop_file);
     return FALSE;
   }
@@ -626,33 +630,46 @@ int save_shops(zone_rnum zone_num)
 		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
       fprintf(shop_file, "-1\n");
 
-      /* Save messages. Added some defaults as sanity checks. */
-      sprintf(buf,
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%s~\n"
-	      "%d\n"
-	      "%ld\n"
-	      "%d\n"
-	      "%d\n",
-	      S_NOITEM1(shop) ? S_NOITEM1(shop) : "%s Ke?!",
-	      S_NOITEM2(shop) ? S_NOITEM2(shop) : "%s Ke?!",
-	      S_NOBUY(shop) ? S_NOBUY(shop) : "%s Ke?!",
-	      S_NOCASH1(shop) ? S_NOCASH1(shop) : "%s Ke?!",
-	      S_NOCASH2(shop) ? S_NOCASH2(shop) : "%s Ke?!",
-	      S_BUY(shop) ? S_BUY(shop) : "%s Ke?! %d?",
-	      S_SELL(shop) ? S_SELL(shop) : "%s Ke?! %d?",
-	      S_BROKE_TEMPER(shop),
-	      S_BITVECTOR(shop),
-	      S_KEEPER(shop) == NOBODY ? -1 : mob_index[S_KEEPER(shop)].vnum,
-	      S_NOTRADE(shop)
-	      );
-        
-        fputs(convert_from_tabs(buf), shop_file);
+      /* Save messages. Added some defaults as sanity checks.
+       *
+       * One string per call, because convert_from_tabs() hands back a
+       * single static buffer and the next call overwrites it.  These used
+       * to be assembled into one MAX_STRING_LENGTH buffer first, which put
+       * a bound on the seven together that the .shp format does not have:
+       * read_shop_message() accepts up to MAX_STRING_LENGTH for each of
+       * them on its own.  Writing them one at a time takes that bound off
+       * the seven together, so nothing has to be truncated.
+       *
+       * It does not take off the one the format has.  fread_string() puts
+       * a CR and an LF back after every FREAD_CHUNK - 1 bytes it reads, so
+       * a message that came in at the cap goes back out two bytes longer
+       * for each chunk it spans, and the next boot refuses the file.
+       * trigedit_write_zone() measures that before it writes; this does
+       * not, and a shop message is reachable only from sedit, which takes
+       * one interpreter line at a time.  A message long enough to matter
+       * has to come from a hand-written .shp. */
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOITEM1(shop) ? S_NOITEM1(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOITEM2(shop) ? S_NOITEM2(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOBUY(shop) ? S_NOBUY(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOCASH1(shop) ? S_NOCASH1(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_NOCASH2(shop) ? S_NOCASH2(shop) : "%s Ke?!"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_BUY(shop) ? S_BUY(shop) : "%s Ke?! %d?"));
+      fprintf(shop_file, "%s~\n",
+              convert_from_tabs(S_SELL(shop) ? S_SELL(shop) : "%s Ke?! %d?"));
+      fprintf(shop_file, "%d\n"
+                         "%ld\n"
+                         "%d\n"
+                         "%d\n",
+              S_BROKE_TEMPER(shop),
+              S_BITVECTOR(shop),
+              S_KEEPER(shop) == NOBODY ? -1 : mob_index[S_KEEPER(shop)].vnum,
+              S_NOTRADE(shop));
 
       /* Save the rooms. */
       for (j = 0;S_ROOM(shop, j) != NOWHERE; j++)
@@ -666,10 +683,37 @@ int save_shops(zone_rnum zone_num)
     }
   }
   fprintf(shop_file, "$~\n");
-  fclose(shop_file);
-  snprintf(oldname, sizeof(oldname), "%s/%d.shp", SHP_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(fname, oldname);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated shop file over a good one.
+   * This is the shape save_quests() already uses. */
+  if (fflush(shop_file) == EOF || ferror(shop_file)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing shop file %s: %s",
+           fname, strerror(errno));
+    fclose(shop_file);
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
+  if (fclose(shop_file) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing shop file %s: %s",
+           fname, strerror(errno));
+    if (!CONFIG_DEBUG_MODE)
+      remove(fname);
+    return FALSE;
+  }
+
+  snprintf(oldname, sizeof(oldname), "%s%d.shp", SHP_PREFIX, zone_table[zone_num].number);
+  if (!genolc_install_file(fname, oldname)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the shop file %s in place: %s",
+           oldname, strerror(errno));
+    return FALSE;
+  }
 
   if (num_shops > 0)
     create_world_index(zone_table[zone_num].number, "shp");

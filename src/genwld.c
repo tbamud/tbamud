@@ -26,6 +26,7 @@ room_rnum add_room(struct room_data *room)
 {
   struct char_data *tch;
   struct obj_data *tobj;
+  struct script_data *sc;
   int j, found = FALSE;
   byte tlight;
   room_rnum i;
@@ -34,8 +35,13 @@ room_rnum add_room(struct room_data *room)
     return NOWHERE;
 
   if ((i = real_room(room->number)) != NOWHERE) {
-    if (SCRIPT(&world[i]))
-      extract_script(&world[i], WLD_TRIGGER);
+    /* Updating a room is not destroying it.  extract_script() would free the
+     * variables a script has stored on this room along with the triggers, and
+     * the trigger list is the only part of it redit has been editing, so drop
+     * that and keep the script itself.  redit_save_internally() attaches the
+     * builder's new list to it a moment later. */
+    sc = SCRIPT(&world[i]);
+    extract_script_triggers(sc);
     tch = world[i].people;
     tobj = world[i].contents;
     tlight = world[i].light;
@@ -47,6 +53,9 @@ room_rnum add_room(struct room_data *room)
      * when editing began; restoring that would undo every torch that has
      * come or gone since, and the count never recovers. */
     world[i].light = tlight;
+    /* copy_room() brought the edit copy's null script across with the rest of
+     * the struct; put the room's own back. */
+    SCRIPT(&world[i]) = sc;
     add_to_save_list(zone_table[room->zone].number, SL_WLD);
     log("GenOLC: add_room: Updated existing room #%d.", room->number);
     return i;
@@ -351,9 +360,11 @@ int save_rooms(zone_rnum rzone)
   log("GenOLC: save_rooms: Saving rooms in zone #%d (%d-%d).",
 	zone_table[rzone].number, genolc_zone_bottom(rzone), zone_table[rzone].top);
 
-  snprintf(filename, sizeof(filename), "%s/%d.new", WLD_PREFIX, zone_table[rzone].number);
+  snprintf(filename, sizeof(filename), "%s%d.new", WLD_PREFIX, zone_table[rzone].number);
   if (!(sf = fopen(filename, "w"))) {
-    perror("SYSERR: save_rooms");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not open the room file %s: %s",
+           filename, strerror(errno));
     return FALSE;
   }
 
@@ -381,11 +392,28 @@ int save_rooms(zone_rnum rzone)
 	  room->room_flags[3], room->sector_type 
       );
       
-      if(n >= MAX_STRING_LENGTH) {
-        mudlog(BRF,LVL_BUILDER,TRUE,
-               "SYSERR: Could not save room #%d due to size (%d > maximum of %d).",
-               room->number, n, MAX_STRING_LENGTH);
-        continue;
+      /* A record that will not fit ends the save.  Carrying on would write
+       * every other room over the good file and take this one off the disk,
+       * and the room is still in memory to be repaired. */
+      if (n < 0) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not format room #%d for saving; zone %d not saved.",
+               room->number, zone_table[rzone].number);
+        fclose(sf);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
+      }
+
+      if (n >= MAX_STRING_LENGTH) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not save room #%d due to size (%d >= maximum of %d); "
+               "zone %d not saved.",
+               room->number, n, MAX_STRING_LENGTH, zone_table[rzone].number);
+        fclose(sf);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
       }
 
   fprintf(sf, "%s", convert_from_tabs(buf2));
@@ -448,13 +476,39 @@ int save_rooms(zone_rnum rzone)
 
   /* Write the final line and close it. */
   fprintf(sf, "$~\n");
-  fclose(sf);
+  /* Verify the temporary file is complete before it replaces anything.
+   * A failed write reports itself at the flush or the close, the records
+   * before it having reached only the stream's buffer, so renaming
+   * without looking would put a truncated room file over a good one.
+   * This is the shape save_quests() already uses. */
+  if (fflush(sf) == EOF || ferror(sf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error writing room file %s: %s",
+           filename, strerror(errno));
+    fclose(sf);
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
+
+  if (fclose(sf) == EOF) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Error closing room file %s: %s",
+           filename, strerror(errno));
+    if (!CONFIG_DEBUG_MODE)
+      remove(filename);
+    return FALSE;
+  }
 
   /* Old file we're replacing. */
-  snprintf(buf, sizeof(buf), "%s/%d.wld", WLD_PREFIX, zone_table[rzone].number);
+  snprintf(buf, sizeof(buf), "%s%d.wld", WLD_PREFIX, zone_table[rzone].number);
 
-  remove(buf);
-  rename(filename, buf);
+  if (!genolc_install_file(filename, buf)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the room file %s in place: %s",
+           buf, strerror(errno));
+    return FALSE;
+  }
 
   if (in_save_list(zone_table[rzone].number, SL_WLD))
     remove_from_save_list(zone_table[rzone].number, SL_WLD);

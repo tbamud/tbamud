@@ -294,10 +294,12 @@ int save_quests(zone_rnum zone_num)
         zone_table[zone_num].number,
  genolc_zone_bottom(zone_num), zone_table[zone_num].top);
 
-  snprintf(filename, sizeof(filename), "%s/%d.new",
+  snprintf(filename, sizeof(filename), "%s%d.new",
  QST_PREFIX, zone_table[zone_num].number);
   if (!(sf = fopen(filename, "w"))) {
-    perror("SYSERR: save_quests");
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: save_quests: Cannot open the quest file %s: %s",
+           filename, strerror(errno));
     return FALSE;
   }
   for (i = genolc_zone_bottom(zone_num); i <= zone_table[zone_num].top; i++) {
@@ -370,8 +372,8 @@ int save_quests(zone_rnum zone_num)
 
       if (fprintf(sf, "%s", convert_from_tabs(buf)) < 0) {
         mudlog(BRF, LVL_BUILDER, TRUE,
-               "SYSERR: Error writing quest #%d to %s.",
-               QST_NUM(rnum), filename);
+               "SYSERR: Error writing quest #%d to %s: %s",
+               QST_NUM(rnum), filename, strerror(errno));
         fclose(sf);
         if (!CONFIG_DEBUG_MODE)
           remove(filename);
@@ -384,7 +386,8 @@ int save_quests(zone_rnum zone_num)
   /* Write the final line and verify the temporary file is complete. */
   if (fprintf(sf, "$~\n") < 0 || fflush(sf) == EOF || ferror(sf)) {
     mudlog(BRF, LVL_BUILDER, TRUE,
-           "SYSERR: Error finalizing quest file %s.", filename);
+           "SYSERR: Error finalizing quest file %s: %s",
+           filename, strerror(errno));
     fclose(sf);
     if (!CONFIG_DEBUG_MODE)
       remove(filename);
@@ -393,17 +396,23 @@ int save_quests(zone_rnum zone_num)
 
   if (fclose(sf) == EOF) {
     mudlog(BRF, LVL_BUILDER, TRUE,
-           "SYSERR: Error closing quest file %s.", filename);
+           "SYSERR: Error closing quest file %s: %s",
+           filename, strerror(errno));
     if (!CONFIG_DEBUG_MODE)
       remove(filename);
     return FALSE;
   }
 
   /* Old file we're replacing. */
-  snprintf(oldname, sizeof(oldname), "%s/%d.qst",
+  snprintf(oldname, sizeof(oldname), "%s%d.qst",
            QST_PREFIX, zone_table[zone_num].number);
-  remove(oldname);
-  rename(filename, oldname);
+
+  if (!genolc_install_file(filename, oldname)) {
+    mudlog(BRF, LVL_BUILDER, TRUE,
+           "SYSERR: Could not put the quest file %s in place: %s",
+           oldname, strerror(errno));
+    return FALSE;
+  }
 
   /* Do we need to update the index file? */
   if (num_quests > 0)

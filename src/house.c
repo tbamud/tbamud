@@ -39,6 +39,8 @@ static void House_listrent(struct char_data *ch, room_vnum vnum);
 static int ascii_convert_house(struct char_data *ch, obj_vnum vnum);
 static void hcontrol_convert_houses(struct char_data *ch);
 static struct obj_data *Obj_from_store(struct obj_file_elem object, int *location);
+static bool house_converted_this_run(room_vnum vnum);
+static void house_forget_conversion(room_vnum vnum);
 /* CONVERSION code ends here -- see comment below. */
 
 /* First, the basics: finding the filename; loading/saving objects */
@@ -162,6 +164,16 @@ void House_crashsave(room_vnum vnum)
 
   if ((rnum = real_room(vnum)) == NOWHERE)
     return;
+
+  /* CONVERSION code starts here -- see comment below. */
+  /* A house converted this run is on disk and not in the room; writing the
+   * room over it would undo the conversion.  The test belongs here rather
+   * than in House_save_all(), because do_save() calls this too -- and a
+   * house owner typing "save" is not a rare event. */
+  if (house_converted_this_run(vnum))
+    return;
+  /* CONVERSION code ends here -- see comment below. */
+
   if (!House_get_filename(vnum, buf, sizeof(buf)))
     return;
   if (!(fp = fopen(buf, "wb"))) {
@@ -194,11 +206,22 @@ void House_crashsave(room_vnum vnum)
 /* Delete a house save file */
 static void House_delete_file(room_vnum vnum)
 {
-  char filename[MAX_INPUT_LENGTH];
+  char filename[MAX_INPUT_LENGTH], binname[MAX_INPUT_LENGTH + 8];
   FILE *fl;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
+
+  /* CONVERSION code starts here -- see comment below. */
+  /* A converted house left its binary original beside the new file.  With
+   * the house gone that copy is orphaned, and it would make the converter
+   * refuse a later house built on the same vnum as already converted --
+   * which would also stay out of saving for the rest of the run. */
+  snprintf(binname, sizeof(binname), "%s.bin", filename);
+  remove(binname);
+  house_forget_conversion(vnum);
+  /* CONVERSION code ends here -- see comment below. */
+
   if (!(fl = fopen(filename, "rb"))) {
     if (errno != ENOENT)
       log("SYSERR: Error deleting house file #%d. (1): %s", vnum, strerror(errno));
@@ -263,18 +286,57 @@ static int find_house(room_vnum vnum)
 static void House_save_control(void)
 {
   FILE *fl;
+  /* Fixed at compile time: HCONTROL_FILE is a string literal and so is the
+   * suffix.  objsave_open_tmp(), which the rest of this follows, measures
+   * the name it builds because its path is made at runtime from a player
+   * name; there is nothing here that could come out any other length. */
+  static const char tempfile[] = HCONTROL_FILE ".tmp";
 
-  if (!(fl = fopen(HCONTROL_FILE, "wb"))) {
-    perror("SYSERR: Unable to open house control file.");
+  /* Build the new file beside the old one and put it in place only once it
+   * is whole.  Writing straight to HCONTROL_FILE truncated it
+   * before a single record had reached the disk, so a save that failed
+   * part-way left a truncated control file where a good one had been.
+   * Where nothing at all reached the disk -- the common case, since the
+   * records usually fit the stream buffer -- every house in it was gone
+   * at the next boot; where the tear fell later, only the records past it
+   * were lost.
+   *
+   * A full disk is the ordinary way in, and it does not fail where it
+   * looks like it should: fopen("wb") only truncates, which costs no
+   * blocks, and a set of records small enough to fit the stream buffer --
+   * twenty-one houses at 192 bytes against the usual 4096 -- is copied
+   * into it and reported written.  The failure appears at the fclose(),
+   * whose result nothing looked at. */
+  if (!(fl = fopen(tempfile, "wb"))) {
+    perror("SYSERR: Unable to open the temporary house control file");
     return;
   }
   /* write all the house control recs in one fell swoop.  Pretty nifty, eh? */
   if (fwrite(house_control, sizeof(struct house_control_rec), num_of_houses, fl) != (size_t)num_of_houses) {
-    perror("SYSERR: Unable to save house control file.");
-    return;	  
+    perror("SYSERR: Unable to save house control file on write");
+    fclose(fl);
+    remove(tempfile);
+    return;
+  }
+  if (fclose(fl)) {
+    perror("SYSERR: Unable to save house control file on close");
+    remove(tempfile);
+    return;
   }
 
-  fclose(fl);
+  /* Replace without deleting the old file first: a failed rename may be
+   * caused by a locked temporary file, not by the destination existing.
+   * The Windows CRT cannot replace an existing file with rename(). */
+#ifdef CIRCLE_WINDOWS
+  if (!MoveFileExA(tempfile, HCONTROL_FILE, MOVEFILE_REPLACE_EXISTING)) {
+    log("SYSERR: Unable to put the house control file in place: Windows error %lu",
+        (unsigned long)GetLastError());
+#else
+  if (rename(tempfile, HCONTROL_FILE)) {
+    perror("SYSERR: Unable to put the house control file in place");
+#endif
+    remove(tempfile);
+  }
 }
 
 /* Call from boot_db - will load control recs, load objs, set atrium bits. 
@@ -672,9 +734,38 @@ void House_list_guests(struct char_data *ch, int i, int quiet)
  * will let your house files load on the next bootup. -Welcor            *
  ************************************************************************/
 /* Code for conversion to ascii house rent files. */
-static void hcontrol_convert_houses(struct char_data *ch)
+
+/* Houses converted since this boot.  For these the file is the house and
+ * the room is not, so House_crashsave() leaves them alone; see the comment
+ * where they are recorded. */
+static room_vnum *converted_houses = NULL;
+static int num_converted_houses = 0;
+
+static bool house_converted_this_run(room_vnum vnum)
 {
   int i;
+
+  for (i = 0; i < num_converted_houses; i++)
+    if (converted_houses[i] == vnum)
+      return (TRUE);
+
+  return (FALSE);
+}
+
+static void house_forget_conversion(room_vnum vnum)
+{
+  int i;
+
+  for (i = 0; i < num_converted_houses; i++)
+    if (converted_houses[i] == vnum) {
+      converted_houses[i] = converted_houses[--num_converted_houses];
+      return;
+    }
+}
+
+static void hcontrol_convert_houses(struct char_data *ch)
+{
+  int i, failed = 0;
 
 	if (GET_LEVEL(ch) < LVL_IMPL)
 		{
@@ -693,35 +784,186 @@ static void hcontrol_convert_houses(struct char_data *ch)
   for (i = 0; i < num_of_houses; i++) {
 	  send_to_char(ch, "  %d", house_control[i].vnum);
 
+	  /* One house's failure is its own.  ascii_convert_house() has said what
+	   * went wrong and left that house's files as it found them; stopping
+	   * here would leave every house after it unconverted for a reason that
+	   * has nothing to do with them. */
 	  if (!ascii_convert_house(ch, house_control[i].vnum))
 	  {
-	  	/* Let ascii_convert_house() tell about the error. */
-	  	return;
+	  	failed++;
 	  }
 	  else
 	  {
 	  	send_to_char(ch, "...done\r\n");
 	  }
   }
+
+  if (failed)
+	send_to_char(ch, "All done, except for %d house%s left unconverted; "
+	                 "see the errors above.\r\n",
+	             failed, failed == 1 ? "" : "s");
+  else
 	send_to_char(ch, "All done.\r\n");
+
+  if (num_converted_houses)
+	send_to_char(ch, "Converted houses are not saved again until a reboot, "
+	                 "which loads them.\r\n");
 }
 
 static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
 {
 	FILE *in, *out;
-	char infile[MAX_INPUT_LENGTH], *outfile;
+	char infile[MAX_INPUT_LENGTH], backup[MAX_INPUT_LENGTH + 8], *outfile;
+	char probe[32], *q;
+	struct obj_file_elem object;
 	struct obj_data *tmp;
-	int i, j=0;
+	struct stat backup_st;
+	long len;
+	int i, j=0, skipped=0;
 
   House_get_filename(vnum, infile, sizeof(infile));
+	snprintf(backup, sizeof(backup), "%s.bin", infile);
+
+	/* A house whose binary original is already set aside has been through
+	 * this once.  Running the command again would read the converted ascii
+	 * file as though it were binary and rename the result over that
+	 * original -- the one copy of the house that cannot be rebuilt.
+	 *
+	 * Ask stat() rather than opening it.  Opening tells us less and costs
+	 * more: a named pipe left at this name answers open(O_RDONLY) by
+	 * waiting for a writer that never comes, which stops the whole MUD,
+	 * and a directory there answers it successfully, which would report a
+	 * house converted that is still binary.  Only a regular file is a
+	 * backup. */
+	if (stat(backup, &backup_st) == 0 && S_ISREG(backup_st.st_mode))
+	{
+		/* No newline: hcontrol_convert_houses() writes "...done" after any
+		 * non-zero return, and the whole line is one house. */
+		send_to_char(ch, "...already converted");
+		return (1);
+	}
 
 	CREATE(outfile, char, strlen(infile)+7);
 	sprintf(outfile, "%s.ascii", infile);
 
   if (!(in = fopen(infile, "r+b")))	/* no file found */
   {
-  	send_to_char(ch, "...no object file found\r\n");
+  	/* No rent file at all is unusual -- one deleted by hand, or a
+  	 * control file brought in without them.  hcontrol build writes a
+  	 * zero-byte one the moment a house is created, so a house nobody
+  	 * has stored anything in still has a file.  Either way there is
+  	 * nothing to convert and nothing wrong.  A file that is there and
+  	 * will not open is a different thing and has to be said. */
+  	if (errno != ENOENT)
+  	{
+  	  send_to_char(ch, "...cannot open the rent file: %s\r\n",
+  	               strerror(errno));
+  	  free(outfile);
+  	  return (0);
+  	}
+  	send_to_char(ch, "...no rent file");
   	free(outfile);
+    return (1);
+  }
+
+	/* House_crashsave() writes the ascii format to this very name, so for any
+	 * house saved since ascii object files arrived, the file this command
+	 * is pointed at is ascii already -- not converted, but
+	 * overwritten with whatever the room held at the time, the binary
+	 * contents gone with it.  Read as 72-byte binary records it yields
+	 * vnums that mostly resolve to nothing, so what is written in its place
+	 * bears no relation to the house: at best it is emptied, and the
+	 * command reports success.
+	 *
+	 * An ascii object file opens with '#' and a vnum alone on the line.
+	 * The line after it is blank for any object with nothing altered from
+	 * its prototype: House_crashsave() calls House_save() with a locate
+	 * of 0, so objsave_save_obj_record() omits its "Loc :" line, and such
+	 * an object has no other tag to write either.  It emits the vnum and
+	 * then the blank line that closes every record.  Failing that it is one
+	 * of that function's tags, which are four characters and a colon.  The
+	 * '#' and '$~' the test also accepts cannot stand there in a file this
+	 * codebase wrote, since a record always closes with its blank line
+	 * first; they are allowed for a file that came from somewhere else.
+	 *
+	 * A binary record can reach the first line by chance -- item_number
+	 * 0x3023, 0x3123 and so on to 0x3923 put '#' and a digit in the
+	 * first two bytes, and a location of 10 puts a newline in the third
+	 * -- so the second line is checked too.  10 is a wear position, and
+	 * the high half of a wear position is a zero byte, which is none of
+	 * the alternatives, so such a record still converts.  Nothing else
+	 * in the record ends the first line where the test expects: fgets()
+	 * stops at '\n' and not at a carriage return, so a location of 13
+	 * sends the read on into the record's other bytes, and what the
+	 * second line then holds is arbitrary -- converted, almost always,
+	 * which is the safe direction.  Note which way the two mistakes fall:
+	 * reading an ascii file as binary empties the house, while reading a
+	 * binary file as ascii only refuses to convert it.  The test belongs
+	 * on the loose side of that. */
+	/* Measure before reading anything.  fseek() on a stream that is not
+	 * seekable fails without touching it, where a read would block: a
+	 * named pipe left at this path answers open(O_RDWR) at once and then
+	 * never reaches end of file, because this process holds the write
+	 * end itself.  Refusing here costs a converted house nothing and
+	 * keeps the probe below from hanging the MUD on one. */
+	if (fseek(in, 0L, SEEK_END) != 0)
+	{
+	  send_to_char(ch, "...nothing to convert");
+	  fclose(in);
+	  free(outfile);
+	  return (1);
+	}
+	len = ftell(in);
+	rewind(in);
+
+	if (fgets(probe, sizeof(probe), in) != NULL && *probe == '#')
+	{
+		/* Cast: this is deliberately reading a file that may be binary, and
+		 * isdigit() of a negative char is undefined where char is signed. */
+		for (q = probe + 1; isdigit((unsigned char)*q); q++);
+		if (q > probe + 1 && (*q == '\n' || *q == '\r') &&
+		    fgets(probe, sizeof(probe), in) != NULL &&
+		    (*probe == '#' || *probe == '$' ||
+		     *probe == '\n' || *probe == '\r' ||
+		     (strlen(probe) > 4 && probe[4] == ':')))
+		{
+			send_to_char(ch, "...already in the ascii format; nothing to convert");
+			fclose(in);
+			free(outfile);
+			return (1);
+		}
+	}
+	rewind(in);
+
+	/* Below the probe, so a real ascii house shorter than one record is
+	 * still told apart from a binary one.  What is left here is a file
+	 * too short to hold a 72-byte record and not recognisable as ascii:
+	 * House_crashsave() writes no terminator, so a house whose room is
+	 * empty is saved as a file of no length; this function itself writes
+	 * "$~" alone, three bytes, for a house whose every record was skipped
+	 * for want of a prototype; and a binary file can be left part-way
+	 * through its first record.  Read as binary none of them is a record
+	 * at all, and a "$~" would be installed over the file and the house
+	 * taken out of saving for the rest of the run. */
+	if (len < (long) sizeof(struct obj_file_elem))
+	{
+	  send_to_char(ch, "...nothing to convert");
+	  fclose(in);
+	  free(outfile);
+	  return (1);
+	}
+
+  /* The scratch name is ordinarily absent, so stat() failing is the
+   * common case and not an error.  What it rules out is something at that
+   * name that is not a file: opening a named pipe for writing waits for a
+   * reader that never comes, and this sweep now visits every house, so
+   * one left anywhere under lib/house would stop the MUD rather than one
+   * house.  A regular file is safe to truncate. */
+  if (stat(outfile, &backup_st) == 0 && !S_ISREG(backup_st.st_mode))
+  {
+    send_to_char(ch, "...output name is not a file\r\n");
+    free(outfile);
+    fclose(in);
     return (0);
   }
 
@@ -733,41 +975,126 @@ static int ascii_convert_house(struct char_data *ch, obj_vnum vnum)
     return (0);
   }
 
-  while (!feof(in)) {
-    struct obj_file_elem object;
-    if (fread(&object, sizeof(struct obj_file_elem), 1, in) != 1)
-      return (0);
-    if (ferror(in)) {
-      perror("SYSERR: Reading house file in House_load");
-      send_to_char(ch, "...read error in house rent file.\r\n");
-      free(outfile);
+  /* Running out of file is how this loop is meant to end -- the record
+   * count is not stored anywhere.  Returning on the short read at the end
+   * left every conversion short of the "$~" terminator its output needs,
+   * with both files still open and the caller told the house had failed,
+   * which stopped it before the second house.  Tell the two apart after
+   * the loop instead: an error is an error, the end of the file is not. */
+  while (fread(&object, sizeof(struct obj_file_elem), 1, in) == 1)
+  {
+    tmp = Obj_from_store(object, &i);
+    /* The item's prototype may have been deleted since the house was
+     * last saved, and then Obj_from_store() has nothing to build and
+     * returns NULL.  objsave_save_obj_record() reads the object it is
+     * given straight away, without looking. */
+    if (tmp == NULL) {
+      skipped++;
+      continue;
+    }
+    if (!objsave_save_obj_record(tmp, out, i))
+    {
+      send_to_char(ch, "...write error in house rent file.\r\n");
+      /* Built by Obj_from_store() above and not written out, so it is
+       * still in object_list and still counted against its prototype. */
+      extract_obj(tmp);
       fclose(in);
       fclose(out);
+      /* After the close: Windows will not remove a file that is open,
+       * and the paths below already do it in this order. */
+      remove(outfile);
+      free(outfile);
       return (0);
     }
-    if (!feof(in))
-    {
-    	tmp = Obj_from_store(object, &i);
-      if (!objsave_save_obj_record(tmp, out, i))
-      {
-	      send_to_char(ch, "...write error in house rent file.\r\n");
-	      free(outfile);
-	      fclose(in);
-	      fclose(out);
-	      return (0);
-      }
-      j++;
-    }
+    /* Obj_from_store() builds the object with read_object(), which puts
+     * it in object_list and counts it against the prototype.  It exists
+     * only to be written out, so it goes again once it has been. */
+    extract_obj(tmp);
+    j++;
   }
+
+  if (ferror(in)) {
+    perror("SYSERR: Reading house file in House_load");
+    send_to_char(ch, "...read error in house rent file.\r\n");
+    fclose(in);
+    fclose(out);
+    remove(outfile);
+    free(outfile);
+    return (0);
+  }
+
+  /* A file that stops part-way through a record is not an error to stdio,
+   * and the bytes are unusable either way -- but this is a one-way
+   * migration, so say that something was dropped rather than report a
+   * clean conversion. */
+  if (ftell(in) % (long) sizeof(struct obj_file_elem) != 0)
+    send_to_char(ch, "\r\n...rent file ends part-way through a record; the tail was skipped\r\n");
 
 	fprintf(out, "$~\n");
 
 	fclose(in);
-	fclose(out);
+
+	/* Everything written above may still be in the stream's buffer: a
+	 * house's worth of objects rarely fills one, so objsave_save_obj_record()
+	 * reports success for every record and the write only reaches the disk
+	 * here.  An unchecked close would hand back a converted file that is
+	 * empty, and say "...%d items" over it. */
+	if (fclose(out))
+	{
+		send_to_char(ch, "...write error saving the converted file.\r\n");
+		remove(outfile);
+		free(outfile);
+		return (0);
+	}
+
+	/* The converted file has to take the place of the one it was made
+	 * from, or nothing will ever read it: House_load() opens <vnum>.house
+	 * and only that.  Keep the original beside it as <vnum>.house.bin, so
+	 * a conversion that turned out badly can be undone by moving one file
+	 * back. */
+	if (rename(infile, backup))
+	{
+		send_to_char(ch, "...cannot set the original aside; left it alone\r\n");
+		remove(outfile);
+		free(outfile);
+		return (0);
+	}
+	if (rename(outfile, infile))
+	{
+		send_to_char(ch, "...cannot put the converted file in place\r\n");
+		rename(backup, infile);
+		remove(outfile);
+		free(outfile);
+		return (0);
+	}
 
 	free(outfile);
 
-	send_to_char(ch, "...%d items", j);
+	/* The file is the house now; the room is not.  The room was loaded at
+	 * boot from the binary file, which parsed to nothing, so it holds what
+	 * the zone stocked and anything dropped in it since -- and
+	 * House_crashsave() writes that back over the file, from
+	 * House_save_all() on every autosave, at shutdown and on saveall for
+	 * any house room an object has come or gone in, which the zone reset
+	 * alone is enough to cause, and from do_save() whenever the room is
+	 * flagged.  So the
+	 * conversion would be undone by the next save, minutes later, having
+	 * reported success.
+	 *
+	 * Loading the file into the room instead would double every object the
+	 * two have in common -- a house saved from a room the zone stocks holds
+	 * that stock, and the zone has stocked it again since boot.  So the
+	 * house is left out of the saving instead, until the reboot this
+	 * command's own comment recommends, which loads the file properly. */
+	RECREATE(converted_houses, room_vnum, num_converted_houses + 1);
+	converted_houses[num_converted_houses++] = vnum;
+
+	/* An operator running a one-way migration should hear what it left
+	 * behind, not just what it carried over. */
+	if (skipped)
+		send_to_char(ch, "...%d items, %d skipped (no prototype)", j, skipped);
+	else
+		send_to_char(ch, "...%d items", j);
 	return 1;
 }
 
