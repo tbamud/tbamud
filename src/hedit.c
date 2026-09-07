@@ -896,7 +896,7 @@ ACMD(do_helpcheck)
 
 ACMD(do_hindex)
 {
-  int len, len2, nlen, count = 0, count2=0, i;
+  int len, len2, nlen, count = 0, count2 = 0, i;
   int limit = (int)MAX_STRING_LENGTH - HINDEX_TAIL;
   int cut = FALSE, cut2 = FALSE;
   int matched = 0, matched2 = 0;
@@ -921,17 +921,17 @@ ACMD(do_hindex)
      * from empty.  Taking the whole array as a string would hand
      * page_string() 48K of uninitialised stack. */
     len = 0;
-    buf[0] = 0;
-  } else if (len > limit) {
+    buf[0] = '\0';
+  } else if (len >= limit) {
     len = limit;
-    buf[len] = 0;
+    buf[len] = '\0';
   }
   if (len2 < 0) {
     len2 = 0;
-    buf2[0] = 0;
-  } else if (len2 >= (int)sizeof(buf2)) {
-    len2 = sizeof(buf2) - 1;
-    buf2[len2] = 0;
+    buf2[0] = '\0';
+  } else if (len2 >= limit) {
+    len2 = limit;
+    buf2[len2] = '\0';
   }
   /* snprintf() returns the length it wanted to write, so adding it blind
    * carries len past sizeof(buf): buf + len is then off the end of the
@@ -975,9 +975,14 @@ ACMD(do_hindex)
         && (GET_LEVEL(ch) >= help_table[i].min_level)) {
       matched2++;
       if (!cut2) {
-        nlen = snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
+        /* Same bound and margin as buf.  Nothing past limit can reach the
+         * page, since the join below copies buf2 into what is left of
+         * buf; and the margin keeps the row terminator affordable here
+         * too, rather than leaving a partial row for the join to cut
+         * back. */
+        nlen = snprintf(buf2 + len2, (size_t)(limit - len2), "%-20.20s%s", help_table[i].keywords,
                      ((count2 + 1) % 3 ? "" : "\r\n"));
-        if (nlen < 0 || len2 + nlen >= (int)sizeof(buf2)) {
+        if (nlen < 0 || len2 + nlen >= limit - 2) {
           buf2[len2] = '\0';
           cut2 = TRUE;
         } else {
@@ -1004,8 +1009,8 @@ ACMD(do_hindex)
       buf[len] = '\0';
   }
   if (count2 % 3) {
-    nlen = snprintf(buf2 + len2, sizeof(buf2) - len2, "\r\n");
-    if (nlen >= 0 && len2 + nlen < (int)sizeof(buf2))
+    nlen = snprintf(buf2 + len2, (size_t)(limit - len2), "\r\n");
+    if (nlen >= 0 && len2 + nlen < limit)
       len2 += nlen;
     else
       buf2[len2] = '\0';
@@ -1019,21 +1024,33 @@ ACMD(do_hindex)
       buf[len] = '\0';
   }
   if (!count2)
-    snprintf(buf2 + len2, sizeof(buf2) - len2, "  None.\r\n");
+    snprintf(buf2 + len2, (size_t)(limit - len2), "  None.\r\n");
 
   /* Join the two listings.  Copy what fits and cut back to the last
    * complete line rather than dropping the second listing whole: it is
    * only ever too big when the table has grown, and that is exactly when
-   * throwing away thousands of entries and their heading is worst. */
-  nlen = snprintf(buf + len, (size_t)(limit - len), "%s", buf2);
-  if (nlen >= 0 && len + nlen < limit)
-    len += nlen;
-  else {
-    char *last = strrchr(buf + len, '\n');
-
-    len = last ? (int)(last - buf) + 1 : len;
-    buf[len] = '\0';
+   * throwing away thousands of entries and their heading is worst.
+   *
+   * Terminate before searching.  Under CIRCLE_WINDOWS snprintf is
+   * _snprintf (sysdep.h), which on truncation fills every byte, writes
+   * no terminator and returns -1, so strrchr() would run off the end. */
+  if (len >= limit)
     cut2 = TRUE;
+  else {
+    int room = limit - len;
+
+    nlen = snprintf(buf + len, (size_t)room, "%s", buf2);
+    if (nlen >= 0 && nlen < room)
+      len += nlen;
+    else {
+      char *last;
+
+      buf[len + room - 1] = '\0';
+      last = strrchr(buf + len, '\n');
+      len = last ? (int)(last - buf) + 1 : len;
+      buf[len] = '\0';
+      cut2 = TRUE;
+    }
   }
 
   /* Written into the room held back above, so it always fits.
