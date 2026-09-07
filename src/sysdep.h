@@ -285,6 +285,13 @@ struct in_addr {
 # define vsnprintf _vsnprintf
 # define PATH_MAX MAX_PATH
 
+/* The UCRT's <sys/stat.h> gives S_IFMT and S_IFREG but not the POSIX test
+ * built from them, so anything asking stat() whether a name is a plain
+ * file has to bring its own. */
+# ifndef S_ISREG
+#  define S_ISREG(m)	(((m) & S_IFMT) == S_IFREG)
+# endif
+
 # if !defined(__BORLANDC__) && !defined(LCC_WIN32)	/* MSVC */
 #  define chdir _chdir
 #  pragma warning(disable:4761)		/* Integral size mismatch. */
