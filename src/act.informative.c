@@ -513,7 +513,10 @@ void look_at_room(struct char_data *ch, int ignore_brief)
     send_to_char(ch, "[%5d] ", GET_ROOM_VNUM(IN_ROOM(ch)));
     send_to_char(ch, "%s[ %s][ %s ]", world[IN_ROOM(ch)].name, buf, sector_types[world[IN_ROOM(ch)].sector_type]);
 
-    if (SCRIPT(rm)) {
+    /* Triggers, not merely a script: a room can hold one for its variables
+     * alone, and a bare [T] reads as a room with triggers it will not
+     * name. */
+    if (SCRIPT(rm) && TRIGGERS(SCRIPT(rm))) {
       send_to_char(ch, "[T");
       for (t = TRIGGERS(SCRIPT(rm)); t; t = t->next)
         send_to_char(ch, " %d", GET_TRIG_VNUM(t));

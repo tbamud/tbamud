@@ -26,6 +26,7 @@ room_rnum add_room(struct room_data *room)
 {
   struct char_data *tch;
   struct obj_data *tobj;
+  struct script_data *sc;
   int j, found = FALSE;
   byte tlight;
   room_rnum i;
@@ -34,8 +35,13 @@ room_rnum add_room(struct room_data *room)
     return NOWHERE;
 
   if ((i = real_room(room->number)) != NOWHERE) {
-    if (SCRIPT(&world[i]))
-      extract_script(&world[i], WLD_TRIGGER);
+    /* Updating a room is not destroying it.  extract_script() would free the
+     * variables a script has stored on this room along with the triggers, and
+     * the trigger list is the only part of it redit has been editing, so drop
+     * that and keep the script itself.  redit_save_internally() attaches the
+     * builder's new list to it a moment later. */
+    sc = SCRIPT(&world[i]);
+    extract_script_triggers(sc);
     tch = world[i].people;
     tobj = world[i].contents;
     tlight = world[i].light;
@@ -47,6 +53,9 @@ room_rnum add_room(struct room_data *room)
      * when editing began; restoring that would undo every torch that has
      * come or gone since, and the count never recovers. */
     world[i].light = tlight;
+    /* copy_room() brought the edit copy's null script across with the rest of
+     * the struct; put the room's own back. */
+    SCRIPT(&world[i]) = sc;
     add_to_save_list(zone_table[room->zone].number, SL_WLD);
     log("GenOLC: add_room: Updated existing room #%d.", room->number);
     return i;
