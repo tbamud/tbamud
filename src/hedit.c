@@ -889,9 +889,17 @@ ACMD(do_helpcheck)
   }
 }
 
+/* Room held back at the end of buf so that the footer, and the line saying
+ * the listing was cut, can always be written however full the listings are.
+ * The footer is two lines of about forty bytes; the rest is slack. */
+#define HINDEX_TAIL 256
+
 ACMD(do_hindex)
 {
-  int len, len2, count = 0, count2=0, i;
+  int len, len2, nlen, count = 0, count2 = 0, i;
+  int limit = (int)MAX_STRING_LENGTH - HINDEX_TAIL;
+  int cut = FALSE, cut2 = FALSE;
+  int matched = 0, matched2 = 0;
   char buf[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
   skip_spaces(&argument);
@@ -901,35 +909,163 @@ ACMD(do_hindex)
     return;
   }
 
-  len = sprintf(buf, "\t1Help index entries beginning with '%s':\t2\r\n", argument);
-  len2 = sprintf(buf2, "\t1Help index entries containing '%s':\t2\r\n", argument);
+  len = snprintf(buf, sizeof(buf), "\t1Help index entries beginning with '%s':\t2\r\n", argument);
+  len2 = snprintf(buf2, sizeof(buf2), "\t1Help index entries containing '%s':\t2\r\n", argument);
+
+  /* Not reachable: argument is one command line, so at most
+   * MAX_INPUT_LENGTH against a MAX_STRING_LENGTH buffer.  Bounded anyway,
+   * so that everything below is safe on its own terms rather than on that
+   * arithmetic staying true. */
+  if (len < 0) {
+    /* An output error, not a truncation: nothing was written, so start
+     * from empty.  Taking the whole array as a string would hand
+     * page_string() 48K of uninitialised stack. */
+    len = 0;
+    buf[0] = '\0';
+  } else if (len >= limit) {
+    len = limit;
+    buf[len] = '\0';
+  }
+  if (len2 < 0) {
+    len2 = 0;
+    buf2[0] = '\0';
+  } else if (len2 >= limit) {
+    len2 = limit;
+    buf2[len2] = '\0';
+  }
+  /* snprintf() returns the length it wanted to write, so adding it blind
+   * carries len past sizeof(buf): buf + len is then off the end of the
+   * array and sizeof(buf) - len underflows into a huge size_t, making the
+   * next call an unbounded write.  Nothing here tested it at all, and
+   * there are six more writes after the loop.  Take the length
+   * separately and add it only when it fits, the way boards.c:256-259
+   * does.
+   *
+   * A stock help table is about 2600 rows at roughly twenty bytes a row,
+   * so it takes an argument matching most of them to fill 48K -- but the
+   * table is what hedit exists to grow, and the two buffers are joined
+   * into one at the end, which halves the room. */
   for (i = 0; i < top_of_helpt; i++) {
     if (is_abbrev(argument, help_table[i].keywords)
-        && (GET_LEVEL(ch) >= help_table[i].min_level))
-      len +=
-          snprintf(buf + len, sizeof(buf) - len, "%-20.20s%s", help_table[i].keywords,
-                   (++count % 3 ? "" : "\r\n"));
-    else if (strstr(help_table[i].keywords, argument)
-        && (GET_LEVEL(ch) >= help_table[i].min_level))
-      len2 +=
-          snprintf(buf2 + len2, sizeof(buf2) - len2, "%-20.20s%s", help_table[i].keywords,
-                   (++count2 % 3 ? "" : "\r\n"));
+        && (GET_LEVEL(ch) >= help_table[i].min_level)) {
+      /* count is what is on the page and drives the layout; matched is
+       * what the argument found.  They were one variable, incremented
+       * inside the argument list of the write that might be rejected, so
+       * the layout counted rows it had not written. */
+      matched++;
+      if (!cut) {
+        nlen = snprintf(buf + len, (size_t)(limit - len), "%-20.20s%s", help_table[i].keywords,
+                     ((count + 1) % 3 ? "" : "\r\n"));
+        /* Two bytes under the limit, so the row terminator written after
+         * the loop always fits.  Cutting on the last cell that fits
+         * exactly can leave one or two bytes, which is not enough for
+         * it, and then the join fails, strrchr() finds nothing to cut
+         * back to, and the footer runs on to the end of the last
+         * keyword. */
+        if (nlen < 0 || len + nlen >= limit - 2) {
+          /* snprintf() has already written what fits and terminated it. */
+          buf[len] = '\0';
+          cut = TRUE;
+        } else {
+          len += nlen;
+          count++;
+        }
+      }
+    } else if (strstr(help_table[i].keywords, argument)
+        && (GET_LEVEL(ch) >= help_table[i].min_level)) {
+      matched2++;
+      if (!cut2) {
+        /* Same bound and margin as buf.  Nothing past limit can reach the
+         * page, since the join below copies buf2 into what is left of
+         * buf; and the margin keeps the row terminator affordable here
+         * too, rather than leaving a partial row for the join to cut
+         * back. */
+        nlen = snprintf(buf2 + len2, (size_t)(limit - len2), "%-20.20s%s", help_table[i].keywords,
+                     ((count2 + 1) % 3 ? "" : "\r\n"));
+        if (nlen < 0 || len2 + nlen >= limit - 2) {
+          buf2[len2] = '\0';
+          cut2 = TRUE;
+        } else {
+          len2 += nlen;
+          count2++;
+        }
+      }
+    }
+    /* No break.  One listing filling up used to end the shared loop and
+     * stop the other collecting: they are separate buffers with separate
+     * lengths, and help_table is sorted by keyword, so the abbreviation
+     * matches are one contiguous block while the substring matches are
+     * spread across the alphabet -- whichever came later was never
+     * reached.  Ending it once both are full would stop the counting too,
+     * and the footer reports what the argument matched.  The two writes
+     * above are already skipped once their buffer is cut, so what is left
+     * is the walk master made anyway. */
   }
-  if (count % 3)
-    len += snprintf(buf + len, sizeof(buf) - len, "\r\n");
-  if (count2 % 3)
-    len2 += snprintf(buf2 + len2, sizeof(buf2) - len2, "\r\n");
+  if (count % 3) {
+    nlen = snprintf(buf + len, (size_t)(limit - len), "\r\n");
+    if (nlen >= 0 && len + nlen < limit)
+      len += nlen;
+    else
+      buf[len] = '\0';
+  }
+  if (count2 % 3) {
+    nlen = snprintf(buf2 + len2, (size_t)(limit - len2), "\r\n");
+    if (nlen >= 0 && len2 + nlen < limit)
+      len2 += nlen;
+    else
+      buf2[len2] = '\0';
+  }
 
-  if (!count)
-    len += snprintf(buf + len, sizeof(buf) - len, "  None.\r\n");
+  if (!count) {
+    nlen = snprintf(buf + len, (size_t)(limit - len), "  None.\r\n");
+    if (nlen >= 0 && len + nlen < limit)
+      len += nlen;
+    else
+      buf[len] = '\0';
+  }
   if (!count2)
-    snprintf(buf2 + len2, sizeof(buf2) - len2, "  None.\r\n");
+    snprintf(buf2 + len2, (size_t)(limit - len2), "  None.\r\n");
 
-  // Join the two strings
-  len += snprintf(buf + len, sizeof(buf) - len, "%s", buf2);
+  /* Join the two listings.  Copy what fits and cut back to the last
+   * complete line rather than dropping the second listing whole: it is
+   * only ever too big when the table has grown, and that is exactly when
+   * throwing away thousands of entries and their heading is worst.
+   *
+   * Terminate before searching.  Under CIRCLE_WINDOWS snprintf is
+   * _snprintf (sysdep.h), which on truncation fills every byte, writes
+   * no terminator and returns -1, so strrchr() would run off the end. */
+  if (len >= limit)
+    cut2 = TRUE;
+  else {
+    int room = limit - len;
 
-  snprintf(buf + len, sizeof(buf) - len, "\t1Applicable Index Entries: \t3%d\r\n"
-                                                 "\t1Total Index Entries: \t3%d\tn\r\n", count + count2, top_of_helpt);
+    nlen = snprintf(buf + len, (size_t)room, "%s", buf2);
+    if (nlen >= 0 && nlen < room)
+      len += nlen;
+    else {
+      char *last;
+
+      buf[len + room - 1] = '\0';
+      last = strrchr(buf + len, '\n');
+      len = last ? (int)(last - buf) + 1 : len;
+      buf[len] = '\0';
+      cut2 = TRUE;
+    }
+  }
+
+  /* Written into the room held back above, so it always fits.
+   *
+   * The counts are of what the argument matched, which is what this
+   * footer has always reported and is not always what is on the page: an
+   * entry can be left out because its buffer filled, or because the join
+   * above took only part of the second listing.  Without the line saying
+   * so, a short listing under a large total reads as a display fault
+   * rather than as a listing that would not fit. */
+  snprintf(buf + len, sizeof(buf) - len,
+           "%s\t1Applicable Index Entries: \t3%d\r\n"
+           "\t1Total Index Entries: \t3%d\tn\r\n",
+           (cut || cut2) ? "\t1The listing was too long to show in full.\tn\r\n" : "",
+           matched + matched2, top_of_helpt);
 
   page_string(ch->desc, buf, TRUE);
 }
