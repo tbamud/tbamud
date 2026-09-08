@@ -34,6 +34,59 @@ static void trigedit_disp_types(struct descriptor_data *d);
 static void trigedit_setup_new(struct descriptor_data *d);
 static int trigedit_write_zone(zone_rnum zrnum, int invis_lev);
 
+/* Failed reference writes must block EVERY rewrite of the trigger's zone,
+ * including saves of other triggers. Keep vnums because zone rnums can move. */
+static struct trigger_save_dependency {
+  zone_vnum trigger_zone, reference_zone;
+  int type;
+  struct trigger_save_dependency *next;
+} *trigger_save_dependencies;
+
+static void trigedit_defer_reference(zone_rnum target, zone_rnum reference, int type)
+{
+  struct trigger_save_dependency *dep;
+
+  if (target == NOWHERE)
+    return;
+  for (dep = trigger_save_dependencies; dep; dep = dep->next)
+    if (dep->trigger_zone == zone_table[target].number &&
+        dep->reference_zone == zone_table[reference].number && dep->type == type)
+      return;
+  CREATE(dep, struct trigger_save_dependency, 1);
+  dep->trigger_zone = zone_table[target].number;
+  dep->reference_zone = zone_table[reference].number;
+  dep->type = type;
+  dep->next = trigger_save_dependencies;
+  trigger_save_dependencies = dep;
+}
+
+static int trigedit_references_pending(zone_vnum zone)
+{
+  struct trigger_save_dependency **link = &trigger_save_dependencies, *dep;
+  int pending = FALSE;
+
+  while ((dep = *link)) {
+    if (!in_save_list(dep->reference_zone, dep->type)) {
+      *link = dep->next;
+      free(dep);
+    } else {
+      if (dep->trigger_zone == zone)
+        pending = TRUE;
+      link = &dep->next;
+    }
+  }
+  return pending;
+}
+
+/* Deferred saves have no initiating descriptor. Do not expose an invisible
+ * builder through the writer's error broadcasts. */
+int save_triggers(zone_rnum zrnum)
+{
+  if (zrnum == NOWHERE || zrnum > top_of_zone_table)
+    return FALSE;
+  return trigedit_write_zone(zrnum, LVL_IMPL);
+}
+
 
 /* Trigedit */
 ACMD(do_oasis_trigedit)
@@ -621,31 +674,18 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
 
           if (drnum != NOTHING && delete_trigger(drnum, &stale)) {
             if (stale > 0)
-              /* A zone that still referenced the trigger holds a record too
-               * large to save, so its file could not be rewritten and still
-               * names the trigger. Leave the trigger in its own .trg to
-               * match: removing it now would strand that reference on the
-               * next reboot, the very thing delete_trigger's write guards
-               * against. Kept whole, a reboot restores the trigger and its
-               * attachments together, and the queued zone tries again, so
-               * the delete lands once the over-size record is cut down. */
-              write_to_output(d, "The trigger is gone from memory, but a zone that referenced it "
-                                 "holds a record too large to save and could not be rewritten. The "
-                                 "trigger has been kept in its own file to match, so a reboot "
-                                 "restores it and the things attached to it; the deletion will not "
-                                 "reach disk until that zone can be saved. See the syslog.\r\n");
+              write_to_output(d, "The trigger is gone from memory, but some reference files "
+                                 "could not be saved. Its trigger file is queued and will stay "
+                                 "unchanged until those files save successfully. Fix the save "
+                                 "errors shown in the syslog and run saveall to finish the "
+                                 "deletion. A reboot before then restores the trigger with "
+                                 "only the references still on disk.\r\n");
             else if (dzone == NOWHERE ||
                 !trigedit_write_zone(dzone, GET_INVIS_LEV(d->character)))
-              /* Not "a reboot will bring it back": by the time the write is
-               * attempted the prototypes that referenced this trigger have
-               * already been saved without it, so a reboot returns the
-               * trigger on its own. That ordering is deliberate -- the
-               * other way round strands dangling references instead -- but
-               * the builder should be told which of the two they have. */
-              write_to_output(d, "The trigger is gone from memory, but its own file could not be "
-                                 "written. A reboot brings the trigger back, though not the things "
-                                 "it was attached to -- those have already been saved without it. "
-                                 "See the syslog.\r\n");
+              write_to_output(d, "The trigger is gone from memory, but its file could not be "
+                                 "saved. See the syslog and retry with saveall. Until the file "
+                                 "is saved, a reboot restores the trigger with any references "
+                                 "still on disk.\r\n");
             else
               write_to_output(d, "Trigger deleted.\r\n");
             mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
@@ -759,6 +799,13 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
 
   zone = zone_table[zrnum].number;
   top = zone_table[zrnum].top;
+
+  if (trigedit_references_pending(zone)) {
+    mudlog(BRF, MAX(LVL_GOD, invis_lev), TRUE,
+           "OLC: Trigger file for zone %d still depends on unsaved world references; "
+           "save those files before retrying the trigger save.", zone);
+    return FALSE;
+  }
 
   /* fread_string() gives up at boot when a string reaches
    * MAX_STRING_LENGTH.  What it counts is not the text plus two bytes a
@@ -893,6 +940,7 @@ static int trigedit_write_zone(zone_rnum zrnum, int invis_lev)
   }
 
   create_world_index(zone, "trg");
+  remove_from_save_list(zone, SL_TRG);
   return TRUE;
 }
 
@@ -1480,11 +1528,10 @@ int delete_trigger(trig_rnum rnum, int *stale_refs)
           GET_TRIG_RNUM(OLC_TRIG(dsc))--;
   }
 
-  /* The caller persists the zone: only it knows the builder's invis level,
-   * and passing 0 here would announce an invisible builder's error to every
-   * god. Triggers are not in the save-list system -- there is no SL_TRIG,
-   * because trigedit writes straight to disk so a reboot cannot strand an
-   * item pointing at a trigger that was never saved. */
+  /* The caller tries to persist immediately with the builder's invis level.
+   * Queue a retry as well, including failures of the trigger file itself. */
+  if (zrnum != NOWHERE)
+    add_to_save_list(zone_table[zrnum].number, SL_TRG);
   /* And the zone resets. A 'T' naming the trigger that is going has nothing
    * left to attach, so it goes too; the rest shift down. delete_object does
    * the same for its own commands -- except that after delete_zone_command
@@ -1588,14 +1635,22 @@ int delete_trigger(trig_rnum rnum, int *stale_refs)
    * is the whole thing this write exists to prevent. The zone stays queued
    * either way, so the delete completes once the record is cut down. */
   for (z = 0; z <= top_of_zone_table; z++) {
-    if (dirty[z] & TRIGDEL_MOB)
-      stale += !save_mobiles(z);
-    if (dirty[z] & TRIGDEL_OBJ)
-      stale += !save_objects(z);
-    if (dirty[z] & TRIGDEL_WLD)
-      stale += !save_rooms(z);
-    if (dirty[z] & TRIGDEL_ZON)
-      stale += !save_zone(z);
+    if ((dirty[z] & TRIGDEL_MOB) && !save_mobiles(z)) {
+      stale++;
+      trigedit_defer_reference(zrnum, z, SL_MOB);
+    }
+    if ((dirty[z] & TRIGDEL_OBJ) && !save_objects(z)) {
+      stale++;
+      trigedit_defer_reference(zrnum, z, SL_OBJ);
+    }
+    if ((dirty[z] & TRIGDEL_WLD) && !save_rooms(z)) {
+      stale++;
+      trigedit_defer_reference(zrnum, z, SL_WLD);
+    }
+    if ((dirty[z] & TRIGDEL_ZON) && !save_zone(z)) {
+      stale++;
+      trigedit_defer_reference(zrnum, z, SL_ZON);
+    }
   }
   free(dirty);
 

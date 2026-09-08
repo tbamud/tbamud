@@ -76,6 +76,15 @@ make clean
 | `test_random` | `src/random.c`, `rand_number`/`dice` in `src/utils.c` | `test_random.c` |
 | `test_interpreter` | `src/interpreter.c` | `test_interpreter.c` |
 | `test_class` | `src/class.c` | `test_class.c` |
+| `test_trigger_save` | Trigger deletion, deferred writes and `save_all` | `test_trigger_save.c` |
+
+`test_trigger_save` injects failures in the mobile/object/room/reset savers
+while exercising the real trigger deletion, trigger-file writer and save-list
+code. It verifies that stale disk references block subsequent trigger saves,
+that `saveall` retries dependencies before trigger files, and that a failed
+trigger-file write remains queued. It writes only inside a temporary directory.
+This harness requires POSIX temporary-directory APIs and linker dead-code
+elimination; it is not a native Windows runtime test.
 
 ## Writing a new test
 
