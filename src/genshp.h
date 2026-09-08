@@ -24,7 +24,7 @@ int add_shop(struct shop_data *shop);
 mob_rnum reassign_shopkeeper(shop_vnum vnum, mob_rnum oldkeeper, SPECIAL(*oldfunc));
 int save_shops(zone_rnum zone_num);
 shop_rnum real_shop(shop_vnum vnum);
-int delete_shop(shop_rnum rnum);
+int delete_shop(shop_rnum rnum, bool *keeper_unsaved);
 
 /* Handy macros. */
 #define S_NUM(i)		((i)->vnum)

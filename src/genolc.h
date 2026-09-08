@@ -45,7 +45,8 @@ extern struct save_list_data *save_list;
 #define SL_ZON	4
 #define SL_CFG	5
 #define SL_QST  6
-#define SL_MAX  6	
+#define SL_TRG  7
+#define SL_MAX  7
 #define SL_ACT SL_MAX + 1 /* must be above MAX */ 
 #define SL_HLP SL_MAX + 2
 

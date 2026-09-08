@@ -47,6 +47,7 @@ void dg_script_menu(struct descriptor_data *d);
 int dg_script_edit_parse(struct descriptor_data *d, char *arg);
 
 
-int delete_trigger(trig_rnum rnum);
+int delete_trigger(trig_rnum rnum, int *stale_refs);
+int save_triggers(zone_rnum zrnum);
 
 #endif /* _DG_OLC_H_ */

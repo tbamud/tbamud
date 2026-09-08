@@ -561,7 +561,8 @@ void sedit_parse(struct descriptor_data *d, char *arg)
         kzone = real_zone_by_thing(keepvnum);
       }
 
-      if (drnum != NOWHERE && delete_shop(drnum)) {
+      bool keeper_unsaved = FALSE;
+      if (drnum != NOWHERE && delete_shop(drnum, &keeper_unsaved)) {
         mudlog(CMP, MAX(LVL_BUILDER, GET_INVIS_LEV(d->character)), TRUE,
                "OLC: %s deletes shop %d", GET_NAME(d->character), OLC_NUM(d));
         write_to_output(d, "Shop deleted.\r\n");
@@ -590,6 +591,15 @@ void sedit_parse(struct descriptor_data *d, char *arg)
           write_to_output(d, "The keeper (mobile %d) lives in zone %d; that "
                              "zone's mobile file still needs saving.\r\n",
                           keepvnum, zone_table[kzone].number);
+        /* The keeper lived in this zone, so delete_shop tried to write it
+         * now -- but it holds a record too large to save, so the flag is
+         * off in memory and still on disk. A reboot calls the missing spec
+         * until the record is cut down; the zone stays queued and retries. */
+        else if (keeper_unsaved)
+          write_to_output(d, "The keeper (mobile %d) is no longer a shopkeeper, but this zone "
+                             "holds a record too large to save, so its mobile file still carries "
+                             "the shopkeeper flag. A reboot calls the missing spec until that "
+                             "record is cut down. See the syslog.\r\n", keepvnum);
         cleanup_olc(d, CLEANUP_ALL);
         return;
       }

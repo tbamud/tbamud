@@ -34,10 +34,21 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_genolc_savers
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers
 .PHONY: all test clean
 
 all: $(TESTS)
+
+# Link only the deletion/writer/save-list paths; the full editors depend on
+# the running game. This harness uses POSIX temporary directories.
+ifeq ($(shell uname -s),Darwin)
+TRIGGER_GC_LDFLAGS = -Wl,-dead_strip
+else
+TRIGGER_GC_LDFLAGS = -Wl,--gc-sections
+endif
+test_trigger_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                   $(SRCDIR)/dg_olc.c $(SRCDIR)/genolc.c test_trigger_save.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
 # test_utils — covers src/utils.c

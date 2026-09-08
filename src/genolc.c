@@ -46,6 +46,7 @@ static struct {
   { SL_ZON, save_zone, "zone" },
   { SL_CFG, save_config, "config" },
   { SL_QST, save_quests, "quest" },
+  { SL_TRG, save_triggers, "trigger" },
   { SL_ACT, NULL, "social" },
   { SL_HLP, NULL, "help" },
   { -1, NULL, NULL },
@@ -161,6 +162,10 @@ int save_all(void)
   for (entry = save_list; entry; entry = next) {
     next = entry->next;
 
+    /* Trigger deletions depend on world references reaching disk first. */
+    if (entry->type == SL_TRG)
+      continue;
+
     if (entry->type < 0 || entry->type > SL_MAX) {
       switch (entry->type) {
         case SL_ACT:
@@ -178,6 +183,13 @@ int save_all(void)
        * it and leaking the entry. */
       remove_from_save_list(entry->zone, entry->type);
     } else if (!(*save_types[entry->type].func) (real_zone(entry->zone)))
+      all_saved = FALSE;
+  }
+
+  /* A separate pass also handles trigger entries at the head of the list. */
+  for (entry = save_list; entry; entry = next) {
+    next = entry->next;
+    if (entry->type == SL_TRG && !save_triggers(real_zone(entry->zone)))
       all_saved = FALSE;
   }
 
