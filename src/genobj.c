@@ -207,7 +207,10 @@ int save_objects(zone_rnum zone_num)
   for (counter = genolc_zone_bottom(zone_num); counter <= zone_table[zone_num].top; counter++) {
     if ((realcounter = real_object(counter)) != NOTHING) {
       if ((obj = &obj_proto[realcounter])->action_description) {
-        strncpy(buf, obj->action_description, sizeof(buf) - 1);
+        /* strlcpy() always terminates; the strncpy() this replaces did not
+         * when the string filled the buffer, and strip_cr() then read past
+         * it. */
+        strlcpy(buf, obj->action_description, sizeof(buf));
         strip_cr(buf);
       } else
         *buf = '\0';
@@ -225,11 +228,28 @@ int save_objects(zone_rnum zone_num)
 	      (obj->description && *obj->description) ?	obj->description : "undefined",
 	      buf);
         
-      if(n >= MAX_STRING_LENGTH) {
-        mudlog(BRF,LVL_BUILDER,TRUE,
-               "SYSERR: Could not save object #%d due to size (%d > maximum of %d).",
-               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH);
-        continue;
+      /* A record that will not fit ends the save.  Carrying on would write
+       * every other object over the good file and take this one off the disk,
+       * and the object is still in memory to be repaired. */
+      if (n < 0) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not format object #%d for saving; zone %d not saved.",
+               GET_OBJ_VNUM(obj), zone_table[zone_num].number);
+        fclose(fp);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
+      }
+
+      if (n >= MAX_STRING_LENGTH) {
+        mudlog(BRF, LVL_BUILDER, TRUE,
+               "SYSERR: Could not save object #%d due to size (%d >= maximum of %d); "
+               "zone %d not saved.",
+               GET_OBJ_VNUM(obj), n, MAX_STRING_LENGTH, zone_table[zone_num].number);
+        fclose(fp);
+        if (!CONFIG_DEBUG_MODE)
+          remove(filename);
+        return FALSE;
       }
       
       fprintf(fp, "%s", convert_from_tabs(buf2));
@@ -272,7 +292,7 @@ int save_objects(zone_rnum zone_num)
 	    mudlog(BRF, LVL_BUILDER, TRUE, "SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!");
 	    continue;
 	  }
-	  strncpy(buf, ex_desc->description, sizeof(buf) - 1);
+	  strlcpy(buf, ex_desc->description, sizeof(buf));
 	  strip_cr(buf);
 	  fprintf(fp, "E\n"
 		  "%s~\n"
@@ -515,6 +535,11 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg3 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          /* The next command has slid into this slot, so do not advance
+           * past it -- and it is not the 'P' the fallthrough below expects,
+           * so this one is done. */
+          cmd_no--;
+          break;
         } else if (ZCMD(zone, cmd_no).arg3 > rnum) {
           ZCMD(zone, cmd_no).arg3--;
           zone_touched = TRUE;
@@ -526,6 +551,7 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg1 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg1 > rnum) {
           ZCMD(zone, cmd_no).arg1--;
           zone_touched = TRUE;
@@ -535,6 +561,7 @@ int delete_object(obj_rnum rnum)
         if (ZCMD(zone, cmd_no).arg2 == rnum) {
           delete_zone_command(&zone_table[zone], cmd_no);
           zone_touched = TRUE;
+          cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg2 > rnum) {
           ZCMD(zone, cmd_no).arg2--;
           zone_touched = TRUE;

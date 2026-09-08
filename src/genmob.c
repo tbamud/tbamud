@@ -204,6 +204,9 @@ int delete_mobile(mob_rnum refpt)
        if (ZCMD(zone, cmd_no).arg1 == refpt) {
         delete_zone_command(&zone_table[zone], cmd_no);
         zone_touched = TRUE;
+        /* The next command has slid into this slot, so do not advance
+         * past it. */
+        cmd_no--;
         } else if (ZCMD(zone, cmd_no).arg1 > refpt) {
           ZCMD(zone, cmd_no).arg1--;
           zone_touched = TRUE;
@@ -352,10 +355,15 @@ int save_mobiles(zone_rnum rznum)
     if ((rmob = real_mobile(i)) == NOBODY)
       continue;
     check_mobile_strings(&mob_proto[rmob]);
-    if (write_mobile_record(i, &mob_proto[rmob], mobfd) < 0)
-      mudlog(BRF, LVL_BUILDER, TRUE,
-             "SYSERR: GenOLC: Error writing mobile #%d to %s: %s",
-             i, mobfname, strerror(errno));
+    /* write_mobile_record() has named the mobile, its size and the zone.  A
+     * record it could not write ends the save, leaving the mob file as it
+     * was rather than renaming a copy without that mobile over it. */
+    if (!write_mobile_record(i, &mob_proto[rmob], mobfd)) {
+      fclose(mobfd);
+      if (!CONFIG_DEBUG_MODE)
+        remove(mobfname);
+      return FALSE;
+    }
   }
   fputs("$\n", mobfd);
 
@@ -456,41 +464,54 @@ int write_mobile_record(mob_vnum mvnum, struct char_data *mob, FILE *fd)
 	ddesc, STRING_TERMINATOR
   );
 
-  if(n < MAX_STRING_LENGTH) {
-    fprintf(fd, "%s", convert_from_tabs(buf));
-  
-    fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
-        "%d %d %d %dd%d+%d %dd%d+%d\n",
-        MOB_FLAGS(mob)[0], MOB_FLAGS(mob)[1],
-        MOB_FLAGS(mob)[2], MOB_FLAGS(mob)[3],
-        AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
-        AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
-        GET_ALIGNMENT(mob),
-        GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
-        GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
-        GET_DAMROLL(mob));
-  
-    fprintf(fd, 	"%d %d\n"
-      "%d %d %d\n",
-      GET_GOLD(mob), GET_EXP(mob),
-      GET_POS(mob), GET_DEFAULT_POS(mob), GET_SEX(mob)
-    );
-  
-    if (write_mobile_espec(mvnum, mob, fd) < 0)
-      log("SYSERR: GenOLC: Error writing E-specs for mobile #%d.", mvnum);
-  
-    script_save_to_disk(fd, mob, MOB_TRIGGER);
-  
-  
-  #if CONFIG_GENOLC_MOBPROG
-    if (write_mobile_mobprog(mvnum, mob, fd) < 0)
-      log("SYSERR: GenOLC: Error writing MobProgs for mobile #%d.", mvnum);
-  #endif
-  } else {
-    mudlog(BRF,LVL_BUILDER,TRUE,
-           "SYSERR: Could not save mobile #%d due to size (%d > maximum of %d)",
-           mvnum, n, MAX_STRING_LENGTH);
+  /* A record that will not fit is the caller's to act on: it holds the file
+   * this one would have gone into, and every mobile already written to it.
+   * The message names the zone that goes unsaved with it, as the room and
+   * object savers do, so the caller has nothing to add. */
+  if (n < 0 || n >= MAX_STRING_LENGTH) {
+    zone_rnum zrnum = real_zone_by_thing(mvnum);
+    int zvnum = zrnum == NOWHERE ? -1 : (int) zone_table[zrnum].number;
+
+    if (n < 0)
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not format mobile #%d for saving; zone %d not saved.",
+             mvnum, zvnum);
+    else
+      mudlog(BRF, LVL_BUILDER, TRUE,
+             "SYSERR: Could not save mobile #%d due to size (%d >= maximum of %d); "
+             "zone %d not saved.",
+             mvnum, n, MAX_STRING_LENGTH, zvnum);
+    return FALSE;
   }
+
+  fprintf(fd, "%s", convert_from_tabs(buf));
+
+  fprintf(fd, "%d %d %d %d %d %d %d %d %d E\n"
+      "%d %d %d %dd%d+%d %dd%d+%d\n",
+      MOB_FLAGS(mob)[0], MOB_FLAGS(mob)[1],
+      MOB_FLAGS(mob)[2], MOB_FLAGS(mob)[3],
+      AFF_FLAGS(mob)[0], AFF_FLAGS(mob)[1],
+      AFF_FLAGS(mob)[2], AFF_FLAGS(mob)[3],
+      GET_ALIGNMENT(mob),
+      GET_LEVEL(mob), 20 - GET_HITROLL(mob), GET_AC(mob) / 10, GET_HIT(mob),
+      GET_MANA(mob), GET_MOVE(mob), GET_NDD(mob), GET_SDD(mob),
+      GET_DAMROLL(mob));
+
+  fprintf(fd, 	"%d %d\n"
+    "%d %d %d\n",
+    GET_GOLD(mob), GET_EXP(mob),
+    GET_POS(mob), GET_DEFAULT_POS(mob), GET_SEX(mob)
+  );
+
+  write_mobile_espec(mvnum, mob, fd);
+
+  script_save_to_disk(fd, mob, MOB_TRIGGER);
+
+
+#if CONFIG_GENOLC_MOBPROG
+  if (write_mobile_mobprog(mvnum, mob, fd) < 0)
+    log("SYSERR: GenOLC: Error writing MobProgs for mobile #%d.", mvnum);
+#endif
   
   return TRUE;
 }

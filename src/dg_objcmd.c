@@ -852,16 +852,14 @@ static OCMD(do_oat)
       break;
     }
 
-  /* Put the saved value back only if the object this script belongs to
-   * survived the command.  If it did not, leave the flag set, whoever set
-   * it: it is the only way the caller learns that its own object is gone. */
-  for (walk = object_list; walk; walk = walk->next)
-    if (walk == obj && walk->script_id == owner_id) {
-      dg_owner_purged = saved_purged;
-      return;
-    }
-
-  dg_owner_purged = 1;
+  /* Restore the saved flag only if the script owner survived.  The command
+   * runs as the duplicate, so purging the owner need not set the flag.
+   * free_obj() removes the owner's UID from the lookup table; checking it
+   * avoids touching the possibly freed owner or scanning object_list. */
+  if (has_obj_by_uid_in_lookup_table(owner_id))
+    dg_owner_purged = saved_purged;
+  else
+    dg_owner_purged = 1;
 }
 
 static OCMD(do_omove)
