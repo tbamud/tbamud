@@ -376,8 +376,10 @@ int save_rooms(zone_rnum rzone)
 
       room = (world + rnum);
 
-      /* Copy the description and strip off trailing newlines. */
-      strncpy(buf, room->description ? room->description : "Empty room.", sizeof(buf)-1 );
+      /* Copy the description and strip off trailing newlines.  strlcpy()
+       * always terminates; the strncpy() this replaces did not when the
+       * string filled the buffer, and strip_cr() then read past it. */
+      strlcpy(buf, room->description ? room->description : "Empty room.", sizeof(buf));
       strip_cr(buf);
 
       /* Save the numeric and string section of the file. */
@@ -423,7 +425,7 @@ int save_rooms(zone_rnum rzone)
 	if (R_EXIT(room, j)) {
 	  int dflag;
 	  if (R_EXIT(room, j)->general_description) {
-	    strncpy(buf, R_EXIT(room, j)->general_description, sizeof(buf)-1);
+	    strlcpy(buf, R_EXIT(room, j)->general_description, sizeof(buf));
 	    strip_cr(buf);
 	  } else
 	    *buf = '\0';
@@ -442,7 +444,7 @@ int save_rooms(zone_rnum rzone)
 	    dflag = 0;
 
 	  if (R_EXIT(room, j)->keyword)
-	    strncpy(buf1, R_EXIT(room, j)->keyword, sizeof(buf1)-1 );
+	    strlcpy(buf1, R_EXIT(room, j)->keyword, sizeof(buf1));
 	  else
 	    *buf1 = '\0';
 
