@@ -345,6 +345,7 @@ ACMD(do_wizlock);
 ACMD(do_wiznet);
 ACMD(do_wizupdate);
 ACMD(do_zcheck);
+ACMD(do_zdelete);
 ACMD(do_zlock);
 ACMD(do_zpurge);
 ACMD(do_zreset);
