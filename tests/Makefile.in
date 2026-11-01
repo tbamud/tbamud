@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -60,6 +60,12 @@ test_utils: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) test_utils.c
 # test_random — covers src/random.c and rand_number/dice in src/utils.c
 # ---------------------------------------------------------------------------
 test_random: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) test_random.c
+	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_ibt — covers the IBT_DATA structure in src/ibt.h
+# ---------------------------------------------------------------------------
+test_ibt: $(UNITY_SRC) test_ibt.c
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
