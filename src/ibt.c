@@ -79,7 +79,7 @@ static IBT_DATA *new_ibt(void)
    ibtData->level      = 0;
    ibtData->id_num     = NOBODY;
    ibtData->room       = NOWHERE;
-   ibtData->dated      = 0;
+   ibtData->dated      = time(NULL);
 
    for (i=0; i<IBT_ARRAY_MAX; i++)
      ibtData->flags[i]   = 0;
@@ -162,7 +162,7 @@ static IBT_DATA *read_ibt( char *filename, FILE *fp )
                 STRFREE( id_num );
               }  
               if ( dated ) {
-                ibtData->dated = atol(dated);
+                ibtData->dated = (time_t)atoll(dated);
                 STRFREE( dated );
               }  
               if ( !ibtData->name )
@@ -329,7 +329,9 @@ void save_ibt_file(int mode)
        if (ibtData->id_num != NOBODY)
          fprintf(fp,"IdNum     %ld\n",ibtData->id_num);
        if (ibtData->dated != 0)
-         fprintf(fp,"Dated     %ld\n",ibtData->dated);
+         /* long long is at least 64 bits, so it holds any time_t in use (even
+          * where long is 32 bits); the text format is the same as before. */
+         fprintf(fp,"Dated     %lld\n",(long long)ibtData->dated);
        fprintf(fp,"Level     %d\n",ibtData->level);
        fprintf(fp,"Room      %d\n",ibtData->room);
        fprintf(fp,"Flags     %d %d %d %d\n",ibtData->flags[0],ibtData->flags[1],
