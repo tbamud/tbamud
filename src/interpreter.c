@@ -363,6 +363,7 @@ cpp_extern const struct command_info cmd_info[] = {
   { "zunlock"  , "zunlock" , POS_DEAD    , do_zunlock  , LVL_GOD, 0 },
   { "zcheck"   , "zcheck"  , POS_DEAD    , do_zcheck   , LVL_BUILDER, 0 },
   { "zpurge"   , "zpurge"  , POS_DEAD    , do_zpurge   , LVL_BUILDER, 0 },
+  { "zdelete"  , "zdelete" , POS_DEAD    , do_zdelete  , LVL_IMPL, 0 },
 
   { "\n", "zzzzzzz", 0, 0, 0, 0 } };    /* this must be last */
 
@@ -475,6 +476,22 @@ void sort_commands(void)
 }
 
 
+/* A zdelete report stands for exactly one command, and this is what ends
+ * it. It is called for every command that is not zdelete itself, and for
+ * one a command trigger or the script interpreter took over -- that was
+ * still a command typed after the report, whatever became of it. zdelete
+ * cannot be cancelled here, because that would cancel the confirmation it
+ * exists to allow, so do_zdelete ends its own report on every path but a
+ * fresh one. */
+static void cancel_zdelete(struct char_data *ch)
+{
+  if (!ch->desc || !ch->desc->zdelete_armed)
+    return;
+  ch->desc->zdelete_armed = FALSE;
+  send_to_char(ch, "The pending deletion of zone %d is cancelled.\r\n",
+               ch->desc->zdelete_zone);
+}
+
 /* This is the actual command interpreter called from game_loop() in comm.c
  * It makes sure you are the proper level and position to execute the command,
  * then calls the appropriate function. */
@@ -508,13 +525,18 @@ void command_interpreter(struct char_data *ch, char *argument)
     cont = command_wtrigger(ch, arg, line);              /* any world triggers ? */
     if (!cont) cont = command_mtrigger(ch, arg, line);   /* any mobile triggers ? */
     if (!cont) cont = command_otrigger(ch, arg, line);   /* any object triggers ? */
-    if (cont) return;                                    /* yes, command trigger took over */
+    if (cont) {                                          /* yes, command trigger took over */
+      cancel_zdelete(ch);
+      return;
+    }
   }
 
   /* Allow IMPLs to switch into mobs to test the commands. */
    if (IS_NPC(ch) && ch->desc && GET_LEVEL(ch->desc->original) >= LVL_IMPL) {
-     if (script_command_interpreter(ch, argument))
+     if (script_command_interpreter(ch, argument)) {
+       cancel_zdelete(ch);
        return;
+     }
    }
 
   for (length = strlen(arg), cmd = 0; *complete_cmd_info[cmd].command != '\n'; cmd++)
@@ -522,6 +544,13 @@ void command_interpreter(struct char_data *ch, char *argument)
        !strncmp(complete_cmd_info[cmd].command, arg, length))
       if (GET_LEVEL(ch) >= complete_cmd_info[cmd].minimum_level)
         break;
+
+  /* Every command but zdelete ends a standing zdelete report, so a
+   * confirmation can only ever land on the zone the operator was looking at
+   * when they typed it. */
+  if (*complete_cmd_info[cmd].command == '\n' ||
+      complete_cmd_info[cmd].command_pointer != do_zdelete)
+    cancel_zdelete(ch);
 
   /* it's not a 'real' command, so it's a social */
 

@@ -6393,7 +6393,7 @@ Examples:
 
 See also: CHARM
 #0
-ORDINAL-DIRECTIONS NORTHWEST NORTHEAST SOUTHWEST SOUTHEAST NW SW SE NE STATLIST GEDIT TRUST ZDELETE MOUNTS RIDE TAME PARALYZE PARALYSE HASTE BLOCKING IGNORE COOK CAMPFIRES HORSES ZONE-DELETE IMC LINKLOAD INTERMUD
+ORDINAL-DIRECTIONS NORTHWEST NORTHEAST SOUTHWEST SOUTHEAST NW SW SE NE STATLIST GEDIT TRUST MOUNTS RIDE TAME PARALYZE PARALYSE HASTE BLOCKING IGNORE COOK CAMPFIRES HORSES IMC LINKLOAD INTERMUD
 
    Not implemented.
 
@@ -13563,6 +13563,45 @@ Thanks to everyone who has donated their time and effort.
 
 See also: AREAS, STOCK, TELEPORTER
 #0
+ZDELETE ZDELETES ZONE-DELETE DELETE-ZONE
+
+Usage: zdelete <zone #>
+       zdelete confirm
+
+   Removes a zone from the world. It always takes both commands.
+
+   'zdelete <zone #>' only reports: what the zone holds, which rooms in other
+zones have exits leading into it, what attaches its triggers, what loads its
+mobs and objects, which shops and quests elsewhere depend on it, which houses
+it holds or opens onto, and how many players are standing in it. Nothing is
+changed.
+
+   'zdelete confirm' then deletes the zone that report named. It takes no zone
+number, so there is nothing to mistype, and it will not work at all until a
+report has been shown to you.
+
+   The report stands for one command only. Anything else you type - another
+command, a social, even a typo - cancels it, and you are told so. Nothing is
+ever deleted except by 'zdelete confirm' typed directly after the report for
+that zone.
+
+   The zone's files are renamed to <name>.deleted and its line is taken out of
+each world index, so the next reboot does not load it. Nothing in memory
+changes, so the zone is still there, and still resets, until that reboot.
+
+   Exits leading into the zone are left alone. After the reboot they cannot be
+walked and are not listed, and nothing in the game says why. That is what the
+report before the confirmation is for - it is the only place that information
+ever appears.
+
+   To undo a deletion, rename the .deleted files back to their original names
+and restore their index lines - in both index and index.mini, wherever the
+zone was listed, and in ascending numeric order, because the index order is
+the order the tables are built in and they are binary-searched. A zone holding
+one of the start rooms cannot be deleted at all.
+
+See also: ZEDIT, ZLIST, ZPURGE, ZRESET
+#34
 ZPURGES
 
 Usage: zpurge <zone #>
