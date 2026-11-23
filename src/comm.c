@@ -932,6 +932,9 @@ void game_loop(socket_t local_mother_desc)
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
 
+      if (STATE(d) == CON_CLOSE || STATE(d) == CON_DISCONNECT)
+        continue;
+
       /* Not combined to retain --(d->wait) behavior. -gg 2/20/98 If no wait
        * state, no subtraction.  If there is a wait state then 1 is subtracted.
        * Therefore we don't go less than 0 ever and don't require an 'if'
@@ -2186,8 +2189,8 @@ void close_socket(struct descriptor_data *d)
     d->backstr = NULL;
   }
 
-  if (d->mail_to >= BOARD_MAGIC && d->str) {
-    board_abort_write(d->mail_to - BOARD_MAGIC, d->str);
+  if (d->mail_to >= BOARD_MAGIC && d->str &&
+      board_abort_write(d->mail_to - BOARD_MAGIC, d->str)) {
     d->str = NULL;
     d->mail_to = 0;
   }

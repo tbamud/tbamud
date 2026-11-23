@@ -264,6 +264,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     
     free(*d->str);
     free(d->str);
+    return;
   }
 
   if (d->mail_to >= BOARD_MAGIC) {
@@ -274,6 +275,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       d->str = NULL;
       board_save_board(d->mail_to - BOARD_MAGIC);
     }
+    return;
   }
   if (PLR_FLAGGED(d->character, PLR_IDEA)) {
     if (action == STRINGADD_SAVE && *d->str){

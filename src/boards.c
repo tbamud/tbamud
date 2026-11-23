@@ -446,22 +446,24 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
 
 /* Cancel an in-progress board post identified by the descriptor's d->str
  * pointer (&msg_storage[slot_num]), releasing its slot and removing the
- * index entry. */
-void board_abort_write(int board_type, char **writeto)
+ * index entry. Returns 1 if a matching post was found and removed, 0 otherwise. */
+int board_abort_write(int board_type, char **writeto)
 {
   int ind, slot_num;
 
   if (board_type < 0 || board_type >= NUM_OF_BOARDS || !writeto)
-    return;
+    return (0);
 
   for (ind = 0; ind < num_of_msgs[board_type]; ind++) {
     slot_num = MSG_SLOTNUM(board_type, ind);
     if (slot_num >= 0 && slot_num < INDEX_SIZE &&
         &(msg_storage[slot_num]) == writeto) {
       board_delete_msg(board_type, ind);
-      return;
+      return (1);
     }
   }
+
+  return (0);
 }
 
 void board_save_board(int board_type)
