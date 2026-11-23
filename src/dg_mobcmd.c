@@ -165,6 +165,9 @@ ACMD(do_mjunk)
     dotmode = find_all_dots(arg);
 
     if (dotmode == FIND_INDIV) {
+        int last_pos = -1;
+        obj_data *last_obj = NULL;
+
         name = arg;
         if (!(number = get_number(&name)) || !*name) {
             mob_log(ch, "mjunk called with invalid argument");
@@ -172,16 +175,29 @@ ACMD(do_mjunk)
         }
         /* Thanks to Carlos Myers for fixing the line below */
         for (pos = 0; pos < NUM_WEARS; pos++)
-            if (GET_EQ(ch, pos) && isname(name, GET_EQ(ch, pos)->name) &&
-                --number == 0) {
-                extract_obj(unequip_char(ch, pos));
-                return;
+            if (GET_EQ(ch, pos) && isname(name, GET_EQ(ch, pos)->name)) {
+                if (number == FIND_INDEX_LAST)
+                    last_pos = pos;
+                else if (--number == 0) {
+                    extract_obj(unequip_char(ch, pos));
+                    return;
+                }
             }
+        if (last_pos >= 0) {
+            extract_obj(unequip_char(ch, last_pos));
+            return;
+        }
         for (obj = ch->carrying; obj != NULL; obj = obj->next_content)
-            if (isname(name, obj->name) && --number == 0) {
-                extract_obj(obj);
-                return;
+            if (isname(name, obj->name)) {
+                if (number == FIND_INDEX_LAST)
+                    last_obj = obj;
+                else if (--number == 0) {
+                    extract_obj(obj);
+                    return;
+                }
             }
+        if (last_obj != NULL)
+            extract_obj(last_obj);
         return;
     }
 
