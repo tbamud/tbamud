@@ -183,20 +183,25 @@ int board_write_message(int board_type, struct char_data *ch, char *arg, struct 
     send_to_char(ch, "The board is full.\r\n");
     return (1);
   }
-  if ((NEW_MSG_INDEX(board_type).slot_num = find_slot()) == -1) {
-    send_to_char(ch, "The board is malfunctioning - sorry.\r\n");
-    log("SYSERR: Board: failed to find empty slot on write.");
-    return (1);
-  }
-  /* skip blanks */
+
+  /* Validate the headline before claiming a storage slot: find_slot() marks
+   * the slot taken as a side effect, and slots are only released through a
+   * committed msg_index entry. */
   skip_spaces(&arg);
   delete_doubledollar(arg);
 
   /* JE Truncate headline at 80 chars if it's longer than that. */
-  arg[80] = '\0';
+  if (strlen(arg) > 80)
+    arg[80] = '\0';
 
   if (!*arg) {
     send_to_char(ch, "We must have a headline!\r\n");
+    return (1);
+  }
+
+  if ((NEW_MSG_INDEX(board_type).slot_num = find_slot()) == -1) {
+    send_to_char(ch, "The board is malfunctioning - sorry.\r\n");
+    log("SYSERR: Board: failed to find empty slot on write.");
     return (1);
   }
   ct = time(0);
