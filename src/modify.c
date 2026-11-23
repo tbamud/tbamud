@@ -290,31 +290,37 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       write_to_output(d, "Post not aborted, use REMOVE <post #>.\r\n");
   }
   if (PLR_FLAGGED(d->character, PLR_IDEA)) {
-    if (action == STRINGADD_SAVE && *d->str){
+    if (action == STRINGADD_SAVE && d->str && *d->str) {
+      d->str = NULL;
       write_to_output(d, "Idea saved!\r\n");
       save_ibt_file(SCMD_IDEA);
     } else {
       write_to_output(d, "Idea aborted!\r\n");
       clean_ibt_list(SCMD_IDEA, d->str);
     }
+    return;
   }
   if (PLR_FLAGGED(d->character, PLR_BUG)) {
-    if (action == STRINGADD_SAVE && *d->str){
+    if (action == STRINGADD_SAVE && d->str && *d->str) {
+      d->str = NULL;
       write_to_output(d, "Bug saved!\r\n");
       save_ibt_file(SCMD_BUG);
     } else {
       write_to_output(d, "Bug aborted!\r\n");
       clean_ibt_list(SCMD_BUG, d->str);
     }
+    return;
   }
   if (PLR_FLAGGED(d->character, PLR_TYPO)) {
-    if (action == STRINGADD_SAVE && *d->str){
+    if (action == STRINGADD_SAVE && d->str && *d->str) {
+      d->str = NULL;
       write_to_output(d, "Typo saved!\r\n");
       save_ibt_file(SCMD_TYPO);
     } else {
       write_to_output(d, "Typo aborted!\r\n");
       clean_ibt_list(SCMD_TYPO, d->str);
     }
+    return;
   }
 }
 

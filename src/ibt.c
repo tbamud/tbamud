@@ -282,6 +282,20 @@ void load_ibt_file(int mode)
    return;
 }
 
+static bool ibt_is_in_progress(const IBT_DATA *ibtData)
+{
+  struct descriptor_data *d;
+
+  if (!ibtData)
+    return FALSE;
+
+  for (d = descriptor_list; d; d = d->next)
+    if (d->str == &(ibtData->body))
+      return TRUE;
+
+  return FALSE;
+}
+
 void save_ibt_file(int mode)
 {
    IBT_DATA *ibtData, *first_ibt;
@@ -312,6 +326,8 @@ void save_ibt_file(int mode)
    {
      for (ibtData = first_ibt;ibtData;ibtData=ibtData->next)
      {
+       if (ibt_is_in_progress(ibtData))
+         continue;
        if (ibtData->text && *(ibtData->text))
          fprintf(fp,"Text      %s~\n",ibtData->text);
        if (ibtData->body && *(ibtData->body))
@@ -370,30 +386,36 @@ static IBT_DATA *get_ibt_by_num(int mode, int target_num)
   return NULL;
 }
 
-/* Search the IBT list, and return true if ibt is found there */
-static bool ibt_in_list(int mode, IBT_DATA *ibt)
+/* Find the 1-based position of an IBT entry in its list, or 0 if not present. */
+static int ibt_find_num(int mode, const IBT_DATA *ibt)
 {
   IBT_DATA *target_ibt, *first_ibt;
+  int num = 0;
 
-  if ((first_ibt = get_first_ibt(mode)) == NULL) return FALSE;
+  if ((first_ibt = get_first_ibt(mode)) == NULL)
+    return (0);
 
-  for (target_ibt=first_ibt;target_ibt;target_ibt=target_ibt->next) {
-    if (target_ibt == ibt) {
-      return TRUE;
-    }
+  for (target_ibt = first_ibt; target_ibt; target_ibt = target_ibt->next) {
+    num++;
+    if (target_ibt == ibt)
+      return (num);
   }
-  return FALSE;
+  return (0);
 }
 
 /* Free up an IBT struct, removing it from the list if necessary */
 /* returns TRUE on success                                       */
 static bool free_ibt(int mode, IBT_DATA *ibtData)
 {
+  int removed_num;
+
   if (ibtData == NULL) return FALSE;
 
   /* If this IBT is in the IBT list, take it out */
-  if (ibt_in_list(mode, ibtData)) {
-	switch(mode) {
+  if ((removed_num = ibt_find_num(mode, ibtData)) > 0) {
+    struct descriptor_data *d;
+
+    switch(mode) {
       case SCMD_BUG : UNLINK(ibtData,first_bug,last_bug,next,prev);
                       break;
       case SCMD_IDEA: UNLINK(ibtData,first_idea,last_idea,next,prev);
@@ -401,6 +423,12 @@ static bool free_ibt(int mode, IBT_DATA *ibtData)
       case SCMD_TYPO: UNLINK(ibtData,first_typo,last_typo,next,prev);
                       break;
     }
+
+    /* Removing an entry shifts later entries down by 1; keep open editors aligned. */
+    for (d = descriptor_list; d; d = d->next)
+      if (STATE(d) == CON_IBTEDIT && d->olc && OLC_VAL(d) == mode &&
+          OLC_NUM(d) > removed_num)
+        OLC_NUM(d)--;
   }
 
   /* Free the strings first */
@@ -509,7 +537,8 @@ ACMD(do_ibt)
           send_to_char(ch, "%sRoom : %s%d\r\n",QCYN, QYEL, ibtData->room);
         }
         send_to_char(ch, "%sTitle: %s%s\r\n",QCYN, QYEL, ibtData->text);
-        send_to_char(ch, "%s%s Details%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->body);
+        send_to_char(ch, "%s%s Details%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL,
+                     ibtData->body ? ibtData->body : "");
         if (ibtData->notes && *(ibtData->notes))
           send_to_char(ch, "%s%s Notes%s\r\n%s\r\n",QCYN, ibt_types[subcmd], QYEL, ibtData->notes);
         send_to_char(ch, "%s%s Status: %s%s%s%s\r\n",QCYN, ibt_types[subcmd],
@@ -666,6 +695,11 @@ ACMD(do_ibt)
     if (!*arg_text) {
       send_to_char(ch, "You need to add a heading!\r\n");
       return;
+    }
+    if (!IS_NPC(ch)) {
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_IDEA);
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_BUG);
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_TYPO);
     }
     switch (subcmd) {
       case SCMD_IDEA: SET_BIT_AR(PLR_FLAGS(ch), PLR_IDEA);
