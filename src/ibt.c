@@ -1212,25 +1212,17 @@ void free_ibt_lists()
   free_ibt_list(&first_typo, &last_typo);
 }
 
-void clean_ibt_list(int mode)
+void clean_ibt_list(int mode, char **writeto)
 {
-  IBT_DATA *ibtData = get_first_ibt(mode), *ibtTemp;
-  struct descriptor_data *d;
-  bool in_use;
+  IBT_DATA *ibtData;
 
-  while (ibtData) {
-    ibtTemp = ibtData;
-    ibtData = ibtData->next;
-    if (!ibtTemp->body || !*ibtTemp->body) {
-      in_use = FALSE;
-      for (d = descriptor_list; d; d = d->next) {
-        if (d->str == &(ibtTemp->body)) {
-          in_use = TRUE;
-          break;
-        }
-      }
-      if (!in_use)
-        free_ibt(mode, ibtTemp);
+  if (!writeto)
+    return;
+
+  for (ibtData = get_first_ibt(mode); ibtData; ibtData = ibtData->next) {
+    if (&(ibtData->body) == writeto) {
+      free_ibt(mode, ibtData);
+      return;
     }
   }
 }

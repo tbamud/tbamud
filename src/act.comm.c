@@ -312,6 +312,12 @@ ACMD(do_write)
 
     /* Something on it, display it as that's in input buffer. */
     if (paper->action_description) {
+      /* Object instances share action_description with obj_proto until
+       * modified; give this note its own copy before the editor reallocates,
+       * modifies, or frees it. */
+      if (GET_OBJ_RNUM(paper) != NOTHING &&
+          paper->action_description == obj_proto[GET_OBJ_RNUM(paper)].action_description)
+        paper->action_description = strdup(paper->action_description);
       backstr = strdup(paper->action_description);
       send_to_char(ch, "There's something written on it already:\r\n");
       send_to_char(ch, "%s", paper->action_description);

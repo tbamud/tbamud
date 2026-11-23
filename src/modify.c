@@ -190,14 +190,11 @@ void string_add(struct descriptor_data *d, char *str)
           if (d->mail_to >= BOARD_MAGIC) {
             /* Handled in playing_string_cleanup(). */
           } else if (d->character && !IS_NPC(d->character) &&
-                     PLR_FLAGGED(d->character, PLR_MAILING)) {
-            /* playing_string_cleanup() frees *d->str and d->str. */
-          } else if (d->character && !IS_NPC(d->character) &&
-                     (PLR_FLAGGED(d->character, PLR_IDEA) ||
+                     (PLR_FLAGGED(d->character, PLR_MAILING) ||
+                      PLR_FLAGGED(d->character, PLR_IDEA) ||
                       PLR_FLAGGED(d->character, PLR_BUG) ||
                       PLR_FLAGGED(d->character, PLR_TYPO))) {
-            free(*d->str);
-            *d->str = NULL;
+            /* Handled in playing_string_cleanup(). */
           } else {
             free(*d->str);
             *d->str    = d->backstr;
@@ -298,8 +295,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_IDEA);
     } else {
       write_to_output(d, "Idea aborted!\r\n");
-      d->str = NULL;
-      clean_ibt_list(SCMD_IDEA);
+      clean_ibt_list(SCMD_IDEA, d->str);
     }
   }
   if (PLR_FLAGGED(d->character, PLR_BUG)) {
@@ -308,8 +304,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_BUG);
     } else {
       write_to_output(d, "Bug aborted!\r\n");
-      d->str = NULL;
-      clean_ibt_list(SCMD_BUG);
+      clean_ibt_list(SCMD_BUG, d->str);
     }
   }
   if (PLR_FLAGGED(d->character, PLR_TYPO)) {
@@ -318,8 +313,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_TYPO);
     } else {
       write_to_output(d, "Typo aborted!\r\n");
-      d->str = NULL;
-      clean_ibt_list(SCMD_TYPO);
+      clean_ibt_list(SCMD_TYPO, d->str);
     }
   }
 }
