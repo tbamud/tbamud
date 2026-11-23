@@ -141,8 +141,8 @@ ACMD(do_mkill)
  * them. */
 ACMD(do_mjunk)
 {
-    char arg[MAX_INPUT_LENGTH];
-    int pos, junk_all = 0;
+    char arg[MAX_INPUT_LENGTH], *name;
+    int pos, number, dotmode;
     obj_data *obj;
     obj_data *obj_next;
 
@@ -161,29 +161,63 @@ ACMD(do_mjunk)
         return;
     }
 
-    if (!str_cmp(arg, "all")) junk_all = 1;
+    /* find_all_dots() strips a leading "all." from arg in place. */
+    dotmode = find_all_dots(arg);
 
-    if ((find_all_dots(arg) != FIND_INDIV) && !junk_all) {
-      /* Thanks to Carlos Myers for fixing the line below */
-      if ((pos = get_obj_pos_in_equip_vis(ch, arg, NULL, ch->equipment)) >= 0) {
-         extract_obj(unequip_char(ch, pos));
-         return;
-      }
-      if ((obj = get_obj_in_list_vis(ch, arg, NULL, ch->carrying)) != NULL )
-        extract_obj(obj);
-      return;
-    } else {
-        for (obj = ch->carrying; obj != NULL; obj = obj_next) {
-            obj_next = obj->next_content;
-            if (arg[3] == '\0' || isname(arg+4, obj->name)) {
-                extract_obj(obj);
-            }
+    if (dotmode == FIND_INDIV) {
+        int last_pos = -1;
+        obj_data *last_obj = NULL;
+
+        name = arg;
+        if (!(number = get_number(&name)) || !*name) {
+            mob_log(ch, "mjunk called with invalid argument");
+            return;
         }
-      /* Thanks to Carlos Myers for fixing the line below */
-      while ((pos = get_obj_pos_in_equip_vis(ch, arg, NULL, ch->equipment)) >= 0)
-        extract_obj(unequip_char(ch, pos));
+        /* Thanks to Carlos Myers for fixing the line below */
+        for (pos = 0; pos < NUM_WEARS; pos++)
+            if (GET_EQ(ch, pos) && isname(name, GET_EQ(ch, pos)->name)) {
+                if (number == FIND_INDEX_LAST)
+                    last_pos = pos;
+                else if (--number == 0) {
+                    extract_obj(unequip_char(ch, pos));
+                    return;
+                }
+            }
+        if (last_pos >= 0) {
+            extract_obj(unequip_char(ch, last_pos));
+            return;
+        }
+        for (obj = ch->carrying; obj != NULL; obj = obj->next_content)
+            if (isname(name, obj->name)) {
+                if (number == FIND_INDEX_LAST)
+                    last_obj = obj;
+                else if (--number == 0) {
+                    extract_obj(obj);
+                    return;
+                }
+            }
+        if (last_obj != NULL)
+            extract_obj(last_obj);
+        return;
     }
-    return;
+
+    if (dotmode == FIND_ALLDOT && !*arg) {
+        mob_log(ch, "mjunk called with 'all.' and no keyword");
+        return;
+    }
+
+    for (obj = ch->carrying; obj != NULL; obj = obj_next) {
+        obj_next = obj->next_content;
+        if (dotmode == FIND_ALL || isname(arg, obj->name)) {
+            extract_obj(obj);
+        }
+    }
+
+    if (dotmode == FIND_ALLDOT) {
+        for (pos = 0; pos < NUM_WEARS; pos++)
+            if (GET_EQ(ch, pos) && isname(arg, GET_EQ(ch, pos)->name))
+                extract_obj(unequip_char(ch, pos));
+    }
 }
 
 /* prints the message to everyone in the room other than the mob and victim */
