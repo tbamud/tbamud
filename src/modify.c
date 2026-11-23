@@ -186,6 +186,26 @@ void string_add(struct descriptor_data *d, char *str)
           d->backstr = NULL;
           d->str     = NULL;
           break;
+        case CON_PLAYING:
+          if (d->mail_to >= BOARD_MAGIC) {
+            /* Board posts cannot be aborted; playing_string_cleanup() saves
+             * the board and notifies the player. */
+          } else if (d->character && !IS_NPC(d->character) &&
+                     PLR_FLAGGED(d->character, PLR_MAILING)) {
+            /* playing_string_cleanup() frees *d->str and d->str. */
+          } else if (d->character && !IS_NPC(d->character) &&
+                     (PLR_FLAGGED(d->character, PLR_IDEA) ||
+                      PLR_FLAGGED(d->character, PLR_BUG) ||
+                      PLR_FLAGGED(d->character, PLR_TYPO))) {
+            free(*d->str);
+            *d->str = NULL;
+          } else {
+            free(*d->str);
+            *d->str    = d->backstr;
+            d->backstr = NULL;
+            write_to_output(d, "Note aborted.\r\n");
+          }
+          break;
         default:
           log("SYSERR: string_add: Aborting write from unknown origin.");
           break;
@@ -279,6 +299,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_IDEA);
     } else {
       write_to_output(d, "Idea aborted!\r\n");
+      d->str = NULL;
       clean_ibt_list(SCMD_IDEA);
     }
   }
@@ -288,6 +309,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_BUG);
     } else {
       write_to_output(d, "Bug aborted!\r\n");
+      d->str = NULL;
       clean_ibt_list(SCMD_BUG);
     }
   }
@@ -297,6 +319,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       save_ibt_file(SCMD_TYPO);
     } else {
       write_to_output(d, "Typo aborted!\r\n");
+      d->str = NULL;
       clean_ibt_list(SCMD_TYPO);
     }
   }

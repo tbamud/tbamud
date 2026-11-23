@@ -52,10 +52,9 @@ static const char *ibt_types[]={
 
 /* Internal (static) functions */
 static IBT_DATA *new_ibt(void);
-static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt);
+static void free_ibt_list(IBT_DATA **first_ibt, IBT_DATA **last_ibt);
 static IBT_DATA *read_ibt(char *filename, FILE *fp);
 static IBT_DATA *get_first_ibt(int mode);
-static IBT_DATA *get_last_ibt(int mode);
 static bool is_ibt_logger(IBT_DATA *ibtData, struct char_data *ch);
 /* Internal (static) OLC functions */
 static void ibtedit_setup(struct descriptor_data *d);
@@ -87,20 +86,18 @@ static IBT_DATA *new_ibt(void)
    return ibtData;
 }
 
-static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt)
+static void free_ibt_list(IBT_DATA **first_ibt, IBT_DATA **last_ibt)
 {
-  IBT_DATA **top_ptr, **bot_ptr, *this_ibt;
+  IBT_DATA *this_ibt;
 
-  if ((first_ibt == NULL) || (last_ibt == NULL)) return;
+  if (!first_ibt || !last_ibt || (*first_ibt == NULL) || (*last_ibt == NULL))
+    return;
 
-  top_ptr = &(first_ibt);
-  bot_ptr = &(last_ibt);
-
-  while (first_ibt) {
-    this_ibt = first_ibt;
+  while (*first_ibt) {
+    this_ibt = *first_ibt;
 
     /* Disconnect from the list */
-    UNLINK(this_ibt, first_ibt, last_ibt, next, prev);
+    UNLINK(this_ibt, *first_ibt, *last_ibt, next, prev);
 
     /* Free the strings first */
     if (this_ibt->body)  STRFREE(this_ibt->body);
@@ -112,8 +109,8 @@ static void free_ibt_list(IBT_DATA *first_ibt, IBT_DATA *last_ibt)
     DISPOSE(this_ibt);
   }
 
-  *(top_ptr) = NULL;
-  *(bot_ptr) = NULL;
+  *first_ibt = NULL;
+  *last_ibt = NULL;
 }
 static IBT_DATA *read_ibt( char *filename, FILE *fp )
 {
@@ -243,31 +240,28 @@ void load_ibt_file(int mode)
 {
    char filename[MAX_INPUT_LENGTH];
    FILE *fp;
-   IBT_DATA *ibtData, *first_ibt, *last_ibt;
+   IBT_DATA *ibtData, **first_ibt, **last_ibt;
 
    switch(mode) {
      case SCMD_BUG : sprintf( filename, "%s",BUGS_FILE );
-                     first_ibt = first_bug;
-                     last_ibt  = last_bug;
+                     first_ibt = &first_bug;
+                     last_ibt  = &last_bug;
                      break;
      case SCMD_IDEA: sprintf( filename, "%s",IDEAS_FILE );
-                     first_ibt = first_idea;
-                     last_ibt  = last_idea;
+                     first_ibt = &first_idea;
+                     last_ibt  = &last_idea;
                      break;
      case SCMD_TYPO: sprintf( filename, "%s",TYPOS_FILE );
-                     first_ibt = first_typo;
-                     last_ibt  = last_typo;
+                     first_ibt = &first_typo;
+                     last_ibt  = &last_typo;
                      break;
      default       : log("SYSERR: Invalid mode (%d) in load_ibt_file", mode);
                      return;
    }
 
    /* Remove and free the old list */
-   if ((first_ibt) && (last_ibt)) {
+   if ((*first_ibt) && (*last_ibt))
      free_ibt_list(first_ibt, last_ibt);
-     first_ibt = NULL;
-     last_ibt = NULL;
-   }
 
    if( ( fp = fopen( filename, "r" ) ) == NULL ) {
       log("No File: %s", filename);
@@ -360,23 +354,6 @@ static IBT_DATA *get_first_ibt(int mode)
   return (first_ibt);
 }
 
-static IBT_DATA *get_last_ibt(int mode)
-{
-  IBT_DATA *last_ibt = NULL;
-
-  switch(mode) {
-    case SCMD_BUG : last_ibt = last_bug;
-                    break;
-    case SCMD_IDEA: last_ibt = last_idea;
-                    break;
-    case SCMD_TYPO: last_ibt = last_typo;
-                    break;
-    default       : log("SYSERR: Invalid mode (%d) in get_last_ibt", mode);
-                    break;
-  }
-  return (last_ibt);
-}
-
 static IBT_DATA *get_ibt_by_num(int mode, int target_num)
 {
   int no=0;
@@ -427,9 +404,10 @@ static bool free_ibt(int mode, IBT_DATA *ibtData)
   }
 
   /* Free the strings first */
-  if (ibtData->body) STRFREE(ibtData->body);
-  if (ibtData->name) STRFREE(ibtData->name);
-  if (ibtData->text) STRFREE(ibtData->text);
+  if (ibtData->body)  STRFREE(ibtData->body);
+  if (ibtData->name)  STRFREE(ibtData->name);
+  if (ibtData->text)  STRFREE(ibtData->text);
+  if (ibtData->notes) STRFREE(ibtData->notes);
 
   /* And free the struct */
   DISPOSE(ibtData);
@@ -683,6 +661,8 @@ ACMD(do_ibt)
   }
   else if (is_abbrev(arg,"submit"))
   {
+    if (!ch->desc)
+      return;
     if (!*arg_text) {
       send_to_char(ch, "You need to add a heading!\r\n");
       return;
@@ -771,6 +751,18 @@ ACMD(do_ibt)
       send_to_char(ch, "%s not found\r\n", ibt_types[subcmd]);
       return;
     } else {
+      struct descriptor_data *d;
+
+      for (d = descriptor_list; d; d = d->next) {
+        if (d->str == &(ibtData->body)) {
+          send_to_char(ch, "Wait until the author finishes writing that %s before removing it.\r\n", CMD_NAME);
+          return;
+        }
+        if (STATE(d) == CON_IBTEDIT && d->olc && OLC_VAL(d) == subcmd) {
+          send_to_char(ch, "Someone is currently editing a %s; try again after they finish.\r\n", CMD_NAME);
+          return;
+        }
+      }
       if (free_ibt(subcmd, ibtData)) {
         send_to_char(ch,"%s%s Number %d removed.%s\r\n", QCYN, ibt_types[subcmd], ano, QNRM);
         if (CONFIG_IBT_AUTOSAVE) {
@@ -845,7 +837,7 @@ ACMD(do_oasis_ibtedit)
   /* Check that whatever it is isn't already being edited. */
   for (d = descriptor_list; d; d = d->next) {
     if (STATE(d) == CON_IBTEDIT) {
-      if (d->olc && OLC_NUM(d) == number) {
+      if (d->olc && OLC_VAL(d) == subcmd && OLC_NUM(d) == number) {
         send_to_char(ch, "That %s is currently being edited by %s.\r\n",
           ibt_types[subcmd], GET_NAME(d->character));
         return;
@@ -930,20 +922,28 @@ static void ibtedit_save(struct descriptor_data *d)
       ibtData->text = STRALLOC(OLC_IBT(d)->text);
       STRFREE(OLC_IBT(d)->text);
     }
+    if (ibtData->body) {
+      STRFREE(ibtData->body);
+      ibtData->body = NULL;
+    }
     if ((OLC_IBT(d)->body) && *(OLC_IBT(d)->body)) {
-      if (ibtData->body) STRFREE(ibtData->body);
       ibtData->body = STRALLOC(OLC_IBT(d)->body);
       STRFREE(OLC_IBT(d)->body);
+      OLC_IBT(d)->body = NULL;
     }
     if ((OLC_IBT(d)->name) && *(OLC_IBT(d)->name)) {
       if (ibtData->name) STRFREE(ibtData->name);
       ibtData->name = STRALLOC(OLC_IBT(d)->name);
       STRFREE(OLC_IBT(d)->name);
     }
+    if (ibtData->notes) {
+      STRFREE(ibtData->notes);
+      ibtData->notes = NULL;
+    }
     if ((OLC_IBT(d)->notes) && *(OLC_IBT(d)->notes)) {
-      if (ibtData->notes) STRFREE(ibtData->notes);
       ibtData->notes = STRALLOC(OLC_IBT(d)->notes);
       STRFREE(OLC_IBT(d)->notes);
+      OLC_IBT(d)->notes = NULL;
     }
     ibtData->level = OLC_IBT(d)->level;
     ibtData->room  = OLC_IBT(d)->room;
@@ -1201,24 +1201,30 @@ void ibtedit_string_cleanup(struct descriptor_data *d, int terminator)
 /*-------------------------------------------------------------------*/
 void free_ibt_lists()
 {
-  IBT_DATA *first_ibt, *last_ibt;
-  int mode;
-
-  for( mode=0; mode <=2; mode++){
-    first_ibt = get_first_ibt(mode);
-    last_ibt = get_last_ibt(mode);
-    free_ibt_list(first_ibt, last_ibt);
-  }
+  free_ibt_list(&first_bug, &last_bug);
+  free_ibt_list(&first_idea, &last_idea);
+  free_ibt_list(&first_typo, &last_typo);
 }
 
 void clean_ibt_list(int mode)
 {
   IBT_DATA *ibtData = get_first_ibt(mode), *ibtTemp;
+  struct descriptor_data *d;
+  bool in_use;
+
   while (ibtData) {
     ibtTemp = ibtData;
     ibtData = ibtData->next;
     if (!ibtTemp->body || !*ibtTemp->body) {
-      free_ibt(mode, ibtTemp);
+      in_use = FALSE;
+      for (d = descriptor_list; d; d = d->next) {
+        if (d->str == &(ibtTemp->body)) {
+          in_use = TRUE;
+          break;
+        }
+      }
+      if (!in_use)
+        free_ibt(mode, ibtTemp);
     }
   }
 }
