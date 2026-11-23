@@ -264,14 +264,18 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     
     free(*d->str);
     free(d->str);
+    return;
   }
 
-/* We have no way of knowing which slot the post was sent to so we can only
- * give the message.   */
   if (d->mail_to >= BOARD_MAGIC) {
-    board_save_board(d->mail_to - BOARD_MAGIC);
-    if (action == STRINGADD_ABORT)
-      write_to_output(d, "Post not aborted, use REMOVE <post #>.\r\n");
+    if (action == STRINGADD_ABORT) {
+      board_abort_write(d->mail_to - BOARD_MAGIC, d->str);
+      write_to_output(d, "Post aborted.\r\n");
+    } else {
+      d->str = NULL;
+      board_save_board(d->mail_to - BOARD_MAGIC);
+    }
+    return;
   }
   if (PLR_FLAGGED(d->character, PLR_IDEA)) {
     if (action == STRINGADD_SAVE && *d->str){
