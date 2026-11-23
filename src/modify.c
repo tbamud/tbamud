@@ -271,6 +271,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
       board_abort_write(d->mail_to - BOARD_MAGIC, d->str);
       write_to_output(d, "Post aborted.\r\n");
     } else {
+      d->str = NULL;
       board_save_board(d->mail_to - BOARD_MAGIC);
     }
   }
