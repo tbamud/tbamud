@@ -806,6 +806,7 @@ ACMD(do_ibt)
 ACMD(do_oasis_ibtedit)
 {
   int number = NOTHING;
+  IBT_DATA *ibtData;
   struct descriptor_data *d;
   char buf1[MAX_STRING_LENGTH], buf2[MAX_STRING_LENGTH];
 
@@ -829,13 +830,18 @@ ACMD(do_oasis_ibtedit)
     number = atoi(buf1);
 
   /* Validate that the IBT number exists */
-  if (get_ibt_by_num(subcmd, number) == NULL) {
+  if ((ibtData = get_ibt_by_num(subcmd, number)) == NULL) {
     send_to_char(ch, "That %s number doesn't exist!\r\n", ibt_types[subcmd]);
     return;
   }
 
-  /* Check that whatever it is isn't already being edited. */
+  /* Check that whatever it is isn't already being written or edited. */
   for (d = descriptor_list; d; d = d->next) {
+    if (d->str == &(ibtData->body)) {
+      send_to_char(ch, "Wait until the author finishes writing that %s before editing it.\r\n",
+        CMD_NAME);
+      return;
+    }
     if (STATE(d) == CON_IBTEDIT) {
       if (d->olc && OLC_VAL(d) == subcmd && OLC_NUM(d) == number) {
         send_to_char(ch, "That %s is currently being edited by %s.\r\n",

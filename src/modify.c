@@ -188,8 +188,7 @@ void string_add(struct descriptor_data *d, char *str)
           break;
         case CON_PLAYING:
           if (d->mail_to >= BOARD_MAGIC) {
-            /* Board posts cannot be aborted; playing_string_cleanup() saves
-             * the board and notifies the player. */
+            /* Handled in playing_string_cleanup(). */
           } else if (d->character && !IS_NPC(d->character) &&
                      PLR_FLAGGED(d->character, PLR_MAILING)) {
             /* playing_string_cleanup() frees *d->str and d->str. */
