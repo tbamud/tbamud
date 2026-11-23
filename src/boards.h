@@ -55,6 +55,7 @@ int board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
 int board_show_board(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
 int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
 int board_write_message(int board_type, struct char_data *ch, char *arg, struct obj_data *board);
+void board_abort_write(int board_type, char **writeto);
 void board_save_board(int board_type);
 void board_load_board(int board_type);
 void board_clear_all(void);

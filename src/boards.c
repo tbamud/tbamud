@@ -421,6 +421,46 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
   return (1);
 }
 
+/* Cancel an in-progress board post identified by the descriptor's d->str
+ * pointer (&msg_storage[slot_num]), releasing its slot and removing the
+ * index entry. */
+void board_abort_write(int board_type, char **writeto)
+{
+  int ind, slot_num = -1;
+
+  if (board_type < 0 || board_type >= NUM_OF_BOARDS || !writeto)
+    return;
+
+  for (ind = 0; ind < num_of_msgs[board_type]; ind++) {
+    slot_num = MSG_SLOTNUM(board_type, ind);
+    if (slot_num >= 0 && slot_num < INDEX_SIZE &&
+        &(msg_storage[slot_num]) == writeto)
+      break;
+  }
+  if (ind >= num_of_msgs[board_type])
+    return;
+
+  if (msg_storage[slot_num])
+    free(msg_storage[slot_num]);
+  msg_storage[slot_num] = NULL;
+  msg_storage_taken[slot_num] = 0;
+  if (MSG_HEADING(board_type, ind))
+    free(MSG_HEADING(board_type, ind));
+
+  for (; ind < num_of_msgs[board_type] - 1; ind++) {
+    MSG_HEADING(board_type, ind) = MSG_HEADING(board_type, ind + 1);
+    MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
+    MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
+  }
+
+  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
+  msg_index[board_type][ind].slot_num = -1;
+
+  num_of_msgs[board_type]--;
+
+  board_save_board(board_type);
+}
+
 void board_save_board(int board_type)
 {
   FILE *fl;
