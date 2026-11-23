@@ -166,15 +166,22 @@ ACMD(do_mjunk)
 
     if (dotmode == FIND_INDIV) {
         name = arg;
-        if (!(number = get_number(&name)))
-            return;
-        /* Thanks to Carlos Myers for fixing the line below */
-        if ((pos = get_obj_pos_in_equip_vis(ch, name, &number, ch->equipment)) >= 0) {
-            extract_obj(unequip_char(ch, pos));
+        if (!(number = get_number(&name)) || !*name) {
+            mob_log(ch, "mjunk called with invalid argument");
             return;
         }
-        if ((obj = get_obj_in_list_vis(ch, name, &number, ch->carrying)) != NULL)
-            extract_obj(obj);
+        /* Thanks to Carlos Myers for fixing the line below */
+        for (pos = 0; pos < NUM_WEARS; pos++)
+            if (GET_EQ(ch, pos) && isname(name, GET_EQ(ch, pos)->name) &&
+                --number == 0) {
+                extract_obj(unequip_char(ch, pos));
+                return;
+            }
+        for (obj = ch->carrying; obj != NULL; obj = obj->next_content)
+            if (isname(name, obj->name) && --number == 0) {
+                extract_obj(obj);
+                return;
+            }
         return;
     }
 
@@ -192,8 +199,7 @@ ACMD(do_mjunk)
 
     if (dotmode == FIND_ALLDOT) {
         for (pos = 0; pos < NUM_WEARS; pos++)
-            if (GET_EQ(ch, pos) && CAN_SEE_OBJ(ch, GET_EQ(ch, pos)) &&
-                isname(arg, GET_EQ(ch, pos)->name))
+            if (GET_EQ(ch, pos) && isname(arg, GET_EQ(ch, pos)->name))
                 extract_obj(unequip_char(ch, pos));
     }
 }
