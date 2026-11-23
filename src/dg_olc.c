@@ -739,7 +739,7 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
       break;
 
     case TRIGEDIT_INTENDED:
-      if (*arg && isdigit((unsigned char)arg[0])) {
+      if (*arg && !arg[1] && isdigit((unsigned char)arg[0])) {
         i = atoi(arg);
         if (i >= MOB_TRIGGER && i <= WLD_TRIGGER) {
           OLC_TRIG(d)->attach_type = i;
