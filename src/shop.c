@@ -1108,6 +1108,8 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
     return (read_list(shop_f, list, 0, max, LIST_TRADE));
 
   do {
+    int prev_len;
+
     if (fgets(buf, sizeof(buf), shop_f) == NULL) {
       if (feof(shop_f))
         log("SYSERR: unexpected end of file reading shop file type list.");
@@ -1115,10 +1117,11 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
         log("SYSERR: error reading reading shop file type list: %s", strerror(errno));
       else
         log("SYSERR: error reading reading shop file type list.");
+      break;
     }
     if ((ptr = strchr(buf, ';')) != NULL)
       *ptr = '\0';
-    else
+    else if (*buf)
       *(END_OF(buf) - 1) = '\0';
 
     num = -1;
@@ -1134,14 +1137,14 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
     ptr = buf;
     if (num == -1) {
       sscanf(buf, "%d", &num);
-      while (!isdigit(*ptr))
+      while (*ptr && !isdigit((unsigned char)*ptr))
 	ptr++;
-      while (isdigit(*ptr))
+      while (isdigit((unsigned char)*ptr))
 	ptr++;
     }
-    while (isspace(*ptr))
+    while (isspace((unsigned char)*ptr))
       ptr++;
-    while (isspace(*(END_OF(ptr) - 1)))
+    while (*ptr && isspace((unsigned char)*(END_OF(ptr) - 1)))
       *(END_OF(ptr) - 1) = '\0';
     /* The -1 terminator is not an entry.  It used to be handed to
      * add_to_shop_list() regardless, which with unsigned NOTHING stored it
@@ -1149,8 +1152,9 @@ static int read_type_list(FILE *shop_f, struct shop_buy_data *list,
      * type, so stop here instead of logging the terminator as an error. */
     if (num < 0)
       break;
+    prev_len = len;
     error += add_to_shop_list(list, LIST_TRADE, &len, &num);
-    if (*ptr)
+    if (*ptr && len > prev_len)
       BUY_WORD(list[len - 1]) = strdup(ptr);
   } while (num >= 0);
   return (end_read_list(list, len, error));
