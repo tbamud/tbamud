@@ -2186,6 +2186,12 @@ void close_socket(struct descriptor_data *d)
     d->backstr = NULL;
   }
 
+  if (d->mail_to >= BOARD_MAGIC && d->str) {
+    board_abort_write(d->mail_to - BOARD_MAGIC, d->str);
+    d->str = NULL;
+    d->mail_to = 0;
+  }
+
   if (d->character) {
     /* If we're switched, this resets the mobile taken. */
     d->character->desc = NULL;

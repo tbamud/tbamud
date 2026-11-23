@@ -349,7 +349,7 @@ static int board_msg_is_in_progress(int slot_num)
     return (0);
 
   for (d = descriptor_list; d; d = d->next)
-    if (STATE(d) == CON_PLAYING && d->str == &(msg_storage[slot_num]))
+    if (d->str == &(msg_storage[slot_num]))
       return (1);
 
   return (0);
