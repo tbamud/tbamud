@@ -745,8 +745,11 @@ void trigedit_parse(struct descriptor_data *d, char *arg)
           OLC_TRIG(d)->attach_type = i;
           GET_TRIG_TYPE(OLC_TRIG(d)) &= (1U << trigedit_type_count(i)) - 1U;
           OLC_VAL(d)++;
+          break;
         }
       }
+      write_to_output(d, "Invalid choice! Must be %d (Mobiles), %d (Objects), or %d (Rooms).\r\n",
+                      MOB_TRIGGER, OBJ_TRIGGER, WLD_TRIGGER);
       break;
 
     case TRIGEDIT_NARG:
