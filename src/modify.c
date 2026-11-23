@@ -120,6 +120,61 @@ void string_write(struct descriptor_data *d, char **writeto, size_t len, long ma
   d->mail_to = mailto;
 }
 
+/* Abort an active string editor session without further user input
+ * (for example when the writer's character is extracted mid-edit). */
+void string_abort(struct descriptor_data *d)
+{
+  if (!d || !d->str)
+    return;
+
+  switch (STATE(d)) {
+    case CON_CEDIT:
+    case CON_TEDIT:
+    case CON_REDIT:
+    case CON_MEDIT:
+    case CON_OEDIT:
+    case CON_PLR_DESC:
+    case CON_TRIGEDIT:
+    case CON_HEDIT:
+    case CON_QEDIT:
+    case CON_IBTEDIT:
+      free(*d->str);
+      *d->str    = d->backstr;
+      d->backstr = NULL;
+      break;
+    case CON_PLAYING:
+      if (d->character) {
+        if (PLR_FLAGGED(d->character, PLR_IDEA) ||
+            PLR_FLAGGED(d->character, PLR_BUG) ||
+            PLR_FLAGGED(d->character, PLR_TYPO)) {
+          free(*d->str);
+          *d->str = NULL;
+        }
+        playing_string_cleanup(d, STRINGADD_ABORT);
+      }
+      break;
+    default:
+      log("SYSERR: string_abort: Aborting write from unknown origin (%d).", STATE(d));
+      break;
+  }
+
+  if (d->backstr) {
+    free(d->backstr);
+    d->backstr = NULL;
+  }
+
+  d->str = NULL;
+  d->mail_to = 0;
+  d->max_str = 0;
+  if (d->character && !IS_NPC(d->character)) {
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+  }
+}
+
 /* Add user input to the 'current' string (as defined by d->str). This is still
  * overly complex. */
 void string_add(struct descriptor_data *d, char *str)

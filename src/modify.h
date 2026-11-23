@@ -30,6 +30,7 @@ ACMD(do_skillset);
 /* Following function prototypes moved here from comm.h */
 void  string_write(struct descriptor_data *d, char **txt, size_t len, long mailto, void *data);
 void  string_add(struct descriptor_data *d, char *str);
+void  string_abort(struct descriptor_data *d);
 void  page_string(struct descriptor_data *d, char *str, int keep_internal);
 /* page string function & defines */
 #define PAGE_LENGTH 22

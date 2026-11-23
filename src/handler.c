@@ -24,6 +24,8 @@
 #include "fight.h"
 #include "quest.h"
 #include "mud_event.h"
+#include "modify.h"
+#include "oasis.h"
 
 /* local file scope variables */
 static int extractions_pending = 0;
@@ -1049,6 +1051,8 @@ void extract_char_final(struct char_data *ch)
      * body of someone switching as above) so we need to put the switcher back
      * to their own body. If this body is not possessed, the owner won't have a
      * body after the removal so dump them to the main menu. */
+    if (ch->desc->str)
+      string_abort(ch->desc);
     if (ch->desc->original)
       do_return(ch, NULL, 0, 0);
     else {
@@ -1063,6 +1067,8 @@ void extract_char_final(struct char_data *ch)
         if (d->character && GET_IDNUM(ch) == GET_IDNUM(d->character))
           STATE(d) = CON_CLOSE;
       }
+      if (IS_IN_OLC(ch->desc))
+        cleanup_olc(ch->desc, STATE(ch->desc) == CON_CEDIT ? CLEANUP_CONFIG : CLEANUP_ALL);
       STATE(ch->desc) = CON_MENU;
       write_to_output(ch->desc, "%s", CONFIG_MENU);
     }
