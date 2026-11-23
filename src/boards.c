@@ -68,6 +68,7 @@ static void init_boards(void);
 static void board_reset_board(int board_type);
 static void board_clear_board(int board_type);
 static void board_load_failed(int board_type, FILE *fl);
+static void board_delete_msg(int board_type, int ind);
 
 static int find_slot(void)
 {
@@ -339,6 +340,38 @@ int board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
   return (1);
 }
 
+static void board_delete_msg(int board_type, int ind)
+{
+  int slot_num = MSG_SLOTNUM(board_type, ind);
+
+  if (slot_num >= 0 && slot_num < INDEX_SIZE) {
+    if (msg_storage[slot_num])
+      free(msg_storage[slot_num]);
+    msg_storage[slot_num] = NULL;
+    msg_storage_taken[slot_num] = 0;
+  }
+  if (MSG_HEADING(board_type, ind))
+    free(MSG_HEADING(board_type, ind));
+
+  for (; ind < num_of_msgs[board_type] - 1; ind++) {
+    MSG_HEADING(board_type, ind) = MSG_HEADING(board_type, ind + 1);
+    MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
+    MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
+  }
+
+  /* The shift leaves the entry the last message moved out of still
+   * holding that message's heading and slot.  Nothing reads it again --
+   * num_of_msgs no longer counts it -- but board_clear_board() walks
+   * every entry there is and skips only slot -1, so at shutdown it
+   * freed the heading a second time. */
+  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
+  msg_index[board_type][ind].slot_num = -1;
+
+  num_of_msgs[board_type]--;
+
+  board_save_board(board_type);
+}
+
 int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
   int ind, msg, slot_num;
@@ -390,33 +423,11 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
       send_to_char(ch, "At least wait until the author is finished before removing it!\r\n");
       return (1);
     }
-  if (msg_storage[slot_num])
-    free(msg_storage[slot_num]);
-  msg_storage[slot_num] = 0;
-  msg_storage_taken[slot_num] = 0;
-  if (MSG_HEADING(board_type, ind))
-    free(MSG_HEADING(board_type, ind));
-
-  for (; ind < num_of_msgs[board_type] - 1; ind++) {
-    MSG_HEADING(board_type, ind) = MSG_HEADING(board_type, ind + 1);
-    MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
-    MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
-  }
-
-  /* The shift leaves the entry the last message moved out of still
-   * holding that message's heading and slot.  Nothing reads it again --
-   * num_of_msgs no longer counts it -- but board_clear_board() walks
-   * every entry there is and skips only slot -1, so at shutdown it
-   * freed the heading a second time. */
-  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
-  msg_index[board_type][ind].slot_num = -1;
-
-  num_of_msgs[board_type]--;
+  board_delete_msg(board_type, ind);
 
   send_to_char(ch, "Message removed.\r\n");
   snprintf(buf, sizeof(buf), "$n just removed message %d.", msg);
   act(buf, FALSE, ch, 0, 0, TO_ROOM);
-  board_save_board(board_type);
 
   return (1);
 }
@@ -426,7 +437,7 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
  * index entry. */
 void board_abort_write(int board_type, char **writeto)
 {
-  int ind, slot_num = -1;
+  int ind, slot_num;
 
   if (board_type < 0 || board_type >= NUM_OF_BOARDS || !writeto)
     return;
@@ -434,31 +445,11 @@ void board_abort_write(int board_type, char **writeto)
   for (ind = 0; ind < num_of_msgs[board_type]; ind++) {
     slot_num = MSG_SLOTNUM(board_type, ind);
     if (slot_num >= 0 && slot_num < INDEX_SIZE &&
-        &(msg_storage[slot_num]) == writeto)
-      break;
+        &(msg_storage[slot_num]) == writeto) {
+      board_delete_msg(board_type, ind);
+      return;
+    }
   }
-  if (ind >= num_of_msgs[board_type])
-    return;
-
-  if (msg_storage[slot_num])
-    free(msg_storage[slot_num]);
-  msg_storage[slot_num] = NULL;
-  msg_storage_taken[slot_num] = 0;
-  if (MSG_HEADING(board_type, ind))
-    free(MSG_HEADING(board_type, ind));
-
-  for (; ind < num_of_msgs[board_type] - 1; ind++) {
-    MSG_HEADING(board_type, ind) = MSG_HEADING(board_type, ind + 1);
-    MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
-    MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
-  }
-
-  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
-  msg_index[board_type][ind].slot_num = -1;
-
-  num_of_msgs[board_type]--;
-
-  board_save_board(board_type);
 }
 
 void board_save_board(int board_type)
