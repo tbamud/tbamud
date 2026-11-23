@@ -253,6 +253,7 @@ const char *preference_bits[] = {
   "AUTOKEY",
   "AUTODOOR",
   "ZONERESETS",
+  "VERBOSE",
   "\n"
 };
 
