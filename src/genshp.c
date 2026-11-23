@@ -639,10 +639,12 @@ int save_shops(zone_rnum zone_num)
                          S_SELLPROFIT(shop));
 
       /* Save the buy types and namelists. */
-      for (j = 0;S_BUYTYPE(shop, j) != NOTHING; j++)
-        fprintf(shop_file, "%d%s\n",
-                S_BUYTYPE(shop, j),
-		S_BUYWORD(shop, j) ? S_BUYWORD(shop, j) : "");
+      for (j = 0; S_BUYTYPE(shop, j) != NOTHING; j++) {
+        if (S_BUYWORD(shop, j) && *S_BUYWORD(shop, j))
+          fprintf(shop_file, "%d %s\n", S_BUYTYPE(shop, j), S_BUYWORD(shop, j));
+        else
+          fprintf(shop_file, "%d\n", S_BUYTYPE(shop, j));
+      }
       fprintf(shop_file, "-1\n");
 
       /* Save messages. Added some defaults as sanity checks.
