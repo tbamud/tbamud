@@ -23,7 +23,20 @@
 #include "hedit.h"
 #include "fight.h"
 #include "act.h"
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+#include <direct.h>
+#include <windows.h>
+#define test_mkdir(path) _mkdir(path)
+#define test_chdir(path) _chdir(path)
+#define test_rmdir(path) _rmdir(path)
+#define test_getcwd(buf, size) _getcwd(buf, size)
+#else
 #include <sys/stat.h>
+#define test_mkdir(path) mkdir(path, 0700)
+#define test_chdir(path) chdir(path)
+#define test_rmdir(path) rmdir(path)
+#define test_getcwd(buf, size) getcwd(buf, size)
+#endif
 
 /* Globals defined strongly in test_stubs.c */
 extern FILE *logfile;
@@ -243,8 +256,8 @@ static struct room_data fixture_room;
 static struct obj_data fixture_protos[2];
 static struct index_data fixture_obj_index[2];
 static char orig_cwd[4096];
-static char tmp_template[] = "/tmp/tbamud-editor-test-XXXXXX";
-static char *active_tmpdir = NULL;
+static char active_tmpdir[4096];
+static int has_tmpdir = 0;
 
 static struct char_data *make_test_char(const char *name, int level, long idnum, struct descriptor_data *d)
 {
@@ -398,13 +411,27 @@ void setUp(void)
   obj_index = fixture_obj_index;
   top_of_objt = 0;
 
-  if (!getcwd(orig_cwd, sizeof(orig_cwd)))
+  if (!test_getcwd(orig_cwd, sizeof(orig_cwd)))
     TEST_FAIL_MESSAGE("getcwd failed");
-  strcpy(tmp_template, "/tmp/tbamud-editor-test-XXXXXX");
-  active_tmpdir = mkdtemp(tmp_template);
-  TEST_ASSERT_NOT_NULL(active_tmpdir);
-  TEST_ASSERT_EQUAL_INT(0, chdir(active_tmpdir));
-  TEST_ASSERT_EQUAL_INT(0, mkdir("misc", 0700));
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+  {
+    char root[MAX_PATH];
+    if (!GetTempPathA(sizeof(root), root) ||
+        !GetTempFileNameA(root, "edt", 0, active_tmpdir))
+      TEST_FAIL_MESSAGE("GetTempFileNameA failed");
+    if (!DeleteFileA(active_tmpdir) || test_mkdir(active_tmpdir) != 0)
+      TEST_FAIL_MESSAGE("failed to create temp dir");
+  }
+#else
+  strcpy(active_tmpdir, "/tmp/tbamud-editor-test-XXXXXX");
+  TEST_ASSERT_NOT_NULL(mkdtemp(active_tmpdir));
+#endif
+  if (test_chdir(active_tmpdir) != 0) {
+    (void)test_rmdir(active_tmpdir);
+    TEST_FAIL_MESSAGE("chdir to temp dir failed");
+  }
+  has_tmpdir = 1;
+  TEST_ASSERT_EQUAL_INT(0, test_mkdir("misc"));
 }
 
 void tearDown(void)
@@ -432,14 +459,14 @@ void tearDown(void)
   zone_table = NULL;
   top_of_zone_table = -1;
 
-  if (active_tmpdir) {
+  if (has_tmpdir) {
     (void)remove("misc/bugs");
     (void)remove("misc/ideas");
     (void)remove("misc/typos");
-    (void)rmdir("misc");
-    if (chdir(orig_cwd) != 0) {}
-    (void)rmdir(active_tmpdir);
-    active_tmpdir = NULL;
+    (void)test_rmdir("misc");
+    if (test_chdir(orig_cwd) != 0) {}
+    (void)test_rmdir(active_tmpdir);
+    has_tmpdir = 0;
   }
   logfile = NULL;
 }
