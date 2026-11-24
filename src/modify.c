@@ -253,19 +253,22 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
   if (d->str == &d->note_buf) {
     if (action == STRINGADD_SAVE) {
       struct obj_data *note = d->note_obj;
-      if (note) {
+      if (note && GET_OBJ_TYPE(note) == ITEM_NOTE && d->character &&
+          (note->carried_by == d->character || note->worn_by == d->character)) {
         if (note->action_description &&
             (GET_OBJ_RNUM(note) == NOTHING ||
              note->action_description != obj_proto[GET_OBJ_RNUM(note)].action_description))
           free(note->action_description);
         note->action_description = d->note_buf;
         d->note_buf = NULL;
+        if (!IS_NPC(d->character))
+          SET_BIT_AR(PLR_FLAGS(d->character), PLR_CRASH);
       } else {
         if (d->note_buf) {
           free(d->note_buf);
           d->note_buf = NULL;
         }
-        write_to_output(d, "The note you were writing on is no longer there.\r\n");
+        write_to_output(d, "The note you were writing on is no longer available.\r\n");
       }
     } else {
       if (d->note_buf) {

@@ -504,12 +504,14 @@ static void test_note_save_after_prototype_refresh_preserves_proto(void)
   send_editor_line(&d, "Saved note addition");
   refresh_note_proto("Refreshed proto text\r\n");
 
+  REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_CRASH);
   send_editor_line(&d, "/s");
 
   TEST_ASSERT_NULL(d.str);
   TEST_ASSERT_NULL(d.note_buf);
   TEST_ASSERT_NULL(d.note_obj);
   TEST_ASSERT_FALSE(PLR_FLAGGED(ch, PLR_WRITING));
+  TEST_ASSERT_TRUE(PLR_FLAGGED(ch, PLR_CRASH));
   TEST_ASSERT_EQUAL_STRING("Refreshed proto text\r\n", fixture_protos[0].action_description);
   TEST_ASSERT_TRUE(paper->action_description != fixture_protos[0].action_description);
   TEST_ASSERT_NOT_NULL(strstr(paper->action_description, "Saved note addition"));
@@ -590,6 +592,19 @@ static void test_disconnected_ibt_writer_aborted_before_save_and_renumbers_edito
   send_editor_line(&d2, "Actual bug body");
   send_editor_line(&d2, "/s");
   TEST_ASSERT_NULL(d2.str);
+
+  /* Verify concurrent save wrote only bug #2 and skipped in-progress bug #1 */
+  {
+    FILE *fp = fopen("misc/bugs", "rb");
+    char filebuf[MAX_STRING_LENGTH];
+    size_t n;
+    TEST_ASSERT_NOT_NULL(fp);
+    n = fread(filebuf, 1, sizeof(filebuf) - 1, fp);
+    filebuf[n] = '\0';
+    fclose(fp);
+    TEST_ASSERT_NOT_NULL(strstr(filebuf, "Second completed bug"));
+    TEST_ASSERT_NULL(strstr(filebuf, "First unfinished bug"));
+  }
 
   /* Close author 1's socket path */
   TEST_ASSERT_EQUAL_INT(1, ibt_abort_write(d1.str));
@@ -731,6 +746,59 @@ static void test_login_clears_report_flags_and_note_abort_ignores_stale_flags(vo
   free_test_char(ch_note);
 }
 
+static void test_note_save_rejects_transformed_or_transferred_paper(void)
+{
+  struct descriptor_data d1, d2;
+  struct char_data *ch1, *ch2;
+  struct obj_data *paper1 = NULL, *paper2 = NULL;
+  char arg[MAX_INPUT_LENGTH];
+
+  memset(&d1, 0, sizeof(d1));
+  memset(&d2, 0, sizeof(d2));
+  ch1 = make_test_char("Writer1", 10, 5001, &d1);
+  ch2 = make_test_char("Holder2", 10, 5002, &d2);
+
+  /* Case 1: in-place transformation away from ITEM_NOTE */
+  attach_pen_and_paper(ch1, "Original note\r\n", &paper1);
+  snprintf(arg, sizeof(arg), "paper");
+  do_write(ch1, arg, 0, 0);
+  send_editor_line(&d1, "Transformed draft");
+  GET_OBJ_TYPE(paper1) = ITEM_OTHER;
+  REMOVE_BIT_AR(PLR_FLAGS(ch1), PLR_CRASH);
+  send_editor_line(&d1, "/s");
+
+  TEST_ASSERT_NULL(d1.str);
+  TEST_ASSERT_NULL(d1.note_buf);
+  TEST_ASSERT_NULL(d1.note_obj);
+  TEST_ASSERT_EQUAL_STRING("Original note\r\n", paper1->action_description);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(ch1, PLR_CRASH));
+
+  /* Case 2: paper transferred to another holder mid-edit */
+  extract_obj(paper1);
+  extract_obj(unequip_char(ch1, WEAR_HOLD));
+  attach_pen_and_paper(ch1, "Original note\r\n", &paper2);
+  snprintf(arg, sizeof(arg), "paper");
+  do_write(ch1, arg, 0, 0);
+  send_editor_line(&d1, "Transferred draft");
+  obj_from_char(paper2);
+  obj_to_char(paper2, ch2);
+  REMOVE_BIT_AR(PLR_FLAGS(ch1), PLR_CRASH);
+  REMOVE_BIT_AR(PLR_FLAGS(ch2), PLR_CRASH);
+  send_editor_line(&d1, "/s");
+
+  TEST_ASSERT_NULL(d1.str);
+  TEST_ASSERT_NULL(d1.note_buf);
+  TEST_ASSERT_NULL(d1.note_obj);
+  TEST_ASSERT_EQUAL_STRING("Original note\r\n", paper2->action_description);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(ch1, PLR_CRASH));
+  TEST_ASSERT_FALSE(PLR_FLAGGED(ch2, PLR_CRASH));
+
+  unlink_descriptor(&d1);
+  unlink_descriptor(&d2);
+  free_test_char(ch1);
+  free_test_char(ch2);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -740,5 +808,6 @@ int main(void)
   RUN_TEST(test_disconnected_ibt_writer_aborted_before_save_and_renumbers_editor);
   RUN_TEST(test_ibt_remove_only_blocks_matching_edited_number);
   RUN_TEST(test_login_clears_report_flags_and_note_abort_ignores_stale_flags);
+  RUN_TEST(test_note_save_rejects_transformed_or_transferred_paper);
   return UNITY_END();
 }
