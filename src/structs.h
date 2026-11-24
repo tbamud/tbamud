@@ -1090,6 +1090,8 @@ struct descriptor_data
   int showstr_page;         /**< which page are we currently showing?	*/
   char **str;               /**< for the modify-str system		*/
   char *backstr;            /**< backup string for modify-str system	*/
+  char *note_buf;           /**< draft buffer while writing a paper note */
+  struct obj_data *note_obj;/**< target note object for note_buf         */
   size_t max_str;           /**< maximum size of string in modify-str	*/
   long mail_to;             /**< name for mail system			*/
   int has_prompt;           /**< is the user at a prompt?             */

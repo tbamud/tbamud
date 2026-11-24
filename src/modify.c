@@ -186,6 +186,10 @@ void string_add(struct descriptor_data *d, char *str)
           d->backstr = NULL;
           d->str     = NULL;
           break;
+        case CON_PLAYING:
+          /* Mail, board posts, IBT submissions, and notes are cleaned up
+           * in playing_string_cleanup(). */
+          break;
         default:
           log("SYSERR: string_add: Aborting write from unknown origin.");
           break;
@@ -246,6 +250,37 @@ void string_add(struct descriptor_data *d, char *str)
 
 static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
+  if (d->str == &d->note_buf) {
+    if (action == STRINGADD_SAVE) {
+      struct obj_data *note = d->note_obj;
+      if (note && GET_OBJ_TYPE(note) == ITEM_NOTE && d->character &&
+          (note->carried_by == d->character || note->worn_by == d->character)) {
+        if (note->action_description &&
+            (GET_OBJ_RNUM(note) == NOTHING ||
+             note->action_description != obj_proto[GET_OBJ_RNUM(note)].action_description))
+          free(note->action_description);
+        note->action_description = d->note_buf;
+        d->note_buf = NULL;
+        if (!IS_NPC(d->character))
+          SET_BIT_AR(PLR_FLAGS(d->character), PLR_CRASH);
+      } else {
+        if (d->note_buf) {
+          free(d->note_buf);
+          d->note_buf = NULL;
+        }
+        write_to_output(d, "The note you were writing on is no longer available.\r\n");
+      }
+    } else {
+      if (d->note_buf) {
+        free(d->note_buf);
+        d->note_buf = NULL;
+      }
+      write_to_output(d, "Note aborted.\r\n");
+    }
+    d->note_obj = NULL;
+    return;
+  }
+
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
       if (store_mail(d->mail_to, GET_IDNUM(d->character), *d->str)) {
@@ -278,31 +313,37 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     return;
   }
   if (PLR_FLAGGED(d->character, PLR_IDEA)) {
-    if (action == STRINGADD_SAVE && *d->str){
+    if (action == STRINGADD_SAVE && d->str && *d->str) {
+      d->str = NULL;
       write_to_output(d, "Idea saved!\r\n");
       save_ibt_file(SCMD_IDEA);
     } else {
       write_to_output(d, "Idea aborted!\r\n");
-      clean_ibt_list(SCMD_IDEA);
+      clean_ibt_list(SCMD_IDEA, d->str);
     }
+    return;
   }
   if (PLR_FLAGGED(d->character, PLR_BUG)) {
-    if (action == STRINGADD_SAVE && *d->str){
+    if (action == STRINGADD_SAVE && d->str && *d->str) {
+      d->str = NULL;
       write_to_output(d, "Bug saved!\r\n");
       save_ibt_file(SCMD_BUG);
     } else {
       write_to_output(d, "Bug aborted!\r\n");
-      clean_ibt_list(SCMD_BUG);
+      clean_ibt_list(SCMD_BUG, d->str);
     }
+    return;
   }
   if (PLR_FLAGGED(d->character, PLR_TYPO)) {
-    if (action == STRINGADD_SAVE && *d->str){
+    if (action == STRINGADD_SAVE && d->str && *d->str) {
+      d->str = NULL;
       write_to_output(d, "Typo saved!\r\n");
       save_ibt_file(SCMD_TYPO);
     } else {
       write_to_output(d, "Typo aborted!\r\n");
-      clean_ibt_list(SCMD_TYPO);
+      clean_ibt_list(SCMD_TYPO, d->str);
     }
+    return;
   }
 }
 
