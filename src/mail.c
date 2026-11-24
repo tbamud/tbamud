@@ -237,8 +237,8 @@ char *read_delete(long recipient)
   fclose(mail_file);
   fclose(new_file);
 
-  (void)system_rename_file(MAIL_FILE_TMP, MAIL_FILE);
-
+  if (system_rename_file(MAIL_FILE_TMP, MAIL_FILE) != 0)
+    log("SYSERR: mail: failed to replace %s with %s: %s", MAIL_FILE, MAIL_FILE_TMP, strerror(errno));
   return strdup(buf);
 }
 
