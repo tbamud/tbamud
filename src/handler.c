@@ -26,6 +26,7 @@
 #include "mud_event.h"
 #include "modify.h"
 #include "oasis.h"
+#include "prefedit.h"
 
 /* local file scope variables */
 static int extractions_pending = 0;
@@ -1028,6 +1029,20 @@ void update_char_objects(struct char_data *ch)
     update_object(ch->carrying, 1);
 }
 
+/* Abort any active string editor, OLC session, and pager on a descriptor
+ * while it is still attached to the active writer/character. */
+void close_descriptor_editors(struct descriptor_data *d)
+{
+  if (!d)
+    return;
+
+  if (d->str)
+    string_abort(d);
+  if (IS_IN_OLC(d))
+    cleanup_olc(d, STATE(d) == CON_CEDIT ? CLEANUP_CONFIG : CLEANUP_ALL);
+  clear_pager(d);
+}
+
 /* Extract a ch completely from the world, and leave his stuff behind */
 void extract_char_final(struct char_data *ch)
 {
@@ -1042,12 +1057,24 @@ void extract_char_final(struct char_data *ch)
     exit(1);
   }
 
+  /* Close any preference editor on another descriptor targeting ch. */
+  if (!IS_NPC(ch)) {
+    for (d = descriptor_list; d; d = d->next) {
+      if (d != ch->desc && STATE(d) == CON_PREFEDIT && d->olc &&
+          OLC_PREFS(d) && OLC_PREFS(d)->ch == ch) {
+        write_to_output(d, "The player whose preferences you were editing is no longer available.\r\n");
+        close_descriptor_editors(d);
+      }
+    }
+  }
+
   /* We're booting the character of someone who has switched so first we need
-   * to stuff them back into their own body.  This will set ch->desc we're
-   * checking below this loop to the proper value. */
+   * to stuff them back into their own body.  Clean up any open editor/OLC/pager
+   * while d->character still points to the switched writer. */
   if (!IS_NPC(ch) && !ch->desc) {
     for (d = descriptor_list; d; d = d->next)
       if (d->original == ch) {
+        close_descriptor_editors(d);
 	do_return(d->character, NULL, 0, 0);
         break;
       }
@@ -1058,8 +1085,7 @@ void extract_char_final(struct char_data *ch)
      * body of someone switching as above) so we need to put the switcher back
      * to their own body. If this body is not possessed, the owner won't have a
      * body after the removal so dump them to the main menu. */
-    if (ch->desc->str)
-      string_abort(ch->desc);
+    close_descriptor_editors(ch->desc);
     if (ch->desc->original)
       do_return(ch, NULL, 0, 0);
     else {
@@ -1074,8 +1100,6 @@ void extract_char_final(struct char_data *ch)
         if (d->character && GET_IDNUM(ch) == GET_IDNUM(d->character))
           STATE(d) = CON_CLOSE;
       }
-      if (IS_IN_OLC(ch->desc))
-        cleanup_olc(ch->desc, STATE(ch->desc) == CON_CEDIT ? CLEANUP_CONFIG : CLEANUP_ALL);
       STATE(ch->desc) = CON_MENU;
       write_to_output(ch->desc, "%s", CONFIG_MENU);
     }

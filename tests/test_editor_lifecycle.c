@@ -21,6 +21,13 @@
 #include "quest.h"
 #include "dg_scripts.h"
 #include "hedit.h"
+#include "prefedit.h"
+#include "shop.h"
+#include "genmob.h"
+#include "genshp.h"
+#include "msgedit.h"
+#include "house.h"
+#include "limits.h"
 #include "fight.h"
 #include "act.h"
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
@@ -49,6 +56,7 @@ extern struct obj_data *obj_proto;
 extern struct index_data *obj_index;
 extern obj_rnum top_of_objt;
 extern struct config_data config_info;
+extern char *motd;
 
 /* Additional globals needed by linked production modules */
 struct zone_data *zone_table = NULL;
@@ -69,14 +77,24 @@ char *immlist = NULL;
 char *policies = NULL;
 char *handbook = NULL;
 char *help = NULL;
+char *ihelp = NULL;
 int no_mail = 1;
-const char *connected_types[] = { "\n" };
+const char *connected_types[35] = {
+  "Playing", "Disconnecting", "Get name", "Confirm name", "Get password",
+  "Get new PW", "Confirm new PW", "Select sex", "Select class", "Reading MOTD",
+  "Main menu", "Enter descript.", "Changing PW 1", "Changing PW 2", "Changing PW 3",
+  "Self-Delete 1", "Self-Delete 2", "Disconnecting", "Object edit", "Room edit",
+  "Zone edit", "Mobile edit", "Shop edit", "Text edit", "Config edit",
+  "Social edit", "Trigger edit", "Help edit", "Quest edit", "Preferences edit",
+  "IBT edit", "Message edit", "Protocol", "\n"
+};
 const char *class_abbrevs[] = { "Mu", "\n" };
+const char *syslog_types[] = { "Off", "Brief", "Normal", "Complete", "\n" };
 
-/* Stubs for external helpers referenced by modify.c / genobj.c / interpreter.c / act.comm.c */
+/* Stubs for external helpers referenced by linked production modules */
 obj_rnum real_object(obj_vnum vnum) { return (vnum == 3000 && obj_proto) ? 0 : NOTHING; }
+zone_rnum real_zone(zone_vnum vnum) { return (zone_table && top_of_zone_table >= 0 && vnum == 30) ? 0 : NOWHERE; }
 zone_rnum real_zone_by_thing(room_vnum vnum) { (void)vnum; return (zone_table && top_of_zone_table >= 0) ? 0 : NOWHERE; }
-int add_to_save_list(zone_vnum zone, int type) { (void)zone; (void)type; return 0; }
 int store_mail(long to, long from, char *message_pointer) { (void)to; (void)from; (void)message_pointer; return 1; }
 void notify_if_playing(struct char_data *from, int recipient_id) { (void)from; (void)recipient_id; }
 int board_abort_write(int board_type, char **writeto) { (void)board_type; (void)writeto; return 0; }
@@ -85,7 +103,6 @@ void cedit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; 
 void medit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
 void oedit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
 void redit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
-void tedit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
 void trigedit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
 void hedit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
 void qedit_string_cleanup(struct descriptor_data *d, int terminator) { (void)d; (void)terminator; }
@@ -100,19 +117,30 @@ void aedit_parse(struct descriptor_data *d, char *arg) { (void)d; (void)arg; }
 void hedit_parse(struct descriptor_data *d, char *arg) { (void)d; (void)arg; }
 void qedit_parse(struct descriptor_data *d, char *arg) { (void)d; (void)arg; }
 void msgedit_parse(struct descriptor_data *d, char *arg) { (void)d; (void)arg; }
-void prefedit_parse(struct descriptor_data *d, char *arg) { (void)d; (void)arg; }
 void trigedit_parse(struct descriptor_data *d, char *arg) { (void)d; (void)arg; }
 void genolc_free_obj(struct obj_data *obj) { (void)obj; }
+void free_room(struct room_data *room) { free(room); }
+int free_mobile(struct char_data *mob) { free(mob); return 1; }
+void free_shop(struct shop_data *shop) { free(shop); }
+void free_quest(struct aq_data *quest) { free(quest); }
+void free_action(struct social_messg *mess) { free(mess); }
+void free_help(struct help_index_element *h) { free(h); }
+void free_message_list(struct message_list *mlist) { free(mlist); }
+void free_trigger(trig_data *trig) { free(trig); }
+void set_default_prefs(struct char_data *ch, int flags[]) { (void)ch; (void)flags; }
+int House_can_enter(struct char_data *ch, room_vnum house) { (void)ch; (void)house; return 1; }
+void reboot_wizlists(void) {}
+void update_pos(struct char_data *victim) { (void)victim; }
+int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+{ (void)ch; (void)victim; (void)dam; (void)attacktype; return 0; }
+void timer_otrigger(obj_data *obj) { (void)obj; }
+void game_info(const char *messg, ...) { (void)messg; }
+int free_strings(void *data, int type) { (void)data; (void)type; return 1; }
+int Crash_rentsave(struct char_data *ch, int cost) { (void)ch; (void)cost; return 1; }
+int Crash_idlesave(struct char_data *ch) { (void)ch; return 1; }
 
 struct board_info_type board_info[NUM_OF_BOARDS];
 int top_shop = -1;
-const char *nrm = "", *grn = "", *cyn = "", *yel = "";
-void get_char_colors(struct char_data *ch) { (void)ch; }
-void clear_screen(struct descriptor_data *d) { (void)d; }
-void cleanup_olc(struct descriptor_data *d, byte cleanup_type) { (void)d; (void)cleanup_type; }
-void copy_ex_descriptions(struct extra_descr_data **to, struct extra_descr_data *from)
-{ (void)to; (void)from; }
-void free_ex_descriptions(struct extra_descr_data *head) { (void)head; }
 
 char *fread_word(FILE *fp)
 {
@@ -252,7 +280,7 @@ static struct command_info test_cmds[] = {
 };
 
 static struct zone_data fixture_zone;
-static struct room_data fixture_room;
+static struct room_data fixture_rooms[4];
 static struct obj_data fixture_protos[2];
 static struct index_data fixture_obj_index[2];
 static char orig_cwd[4096];
@@ -268,7 +296,15 @@ static struct char_data *make_test_char(const char *name, int level, long idnum,
   ch->player.name = strdup(name);
   ch->player.level = level;
   ch->char_specials.saved.idnum = idnum;
-  IN_ROOM(ch) = 0;
+  IN_ROOM(ch) = NOWHERE;
+  GET_POS(ch) = POS_STANDING;
+  GET_HIT(ch) = GET_MAX_HIT(ch) = 100;
+  GET_MANA(ch) = GET_MAX_MANA(ch) = 100;
+  GET_MOVE(ch) = GET_MAX_MOVE(ch) = 100;
+  GET_WAS_IN(ch) = NOWHERE;
+  ch->next = character_list;
+  character_list = ch;
+  char_to_room(ch, 0);
   d->character = ch;
   d->connected = CON_PLAYING;
   d->next = descriptor_list;
@@ -279,12 +315,23 @@ static struct char_data *make_test_char(const char *name, int level, long idnum,
 
 static void free_test_char(struct char_data *ch)
 {
+  struct char_data **cur;
   if (!ch)
     return;
+  for (cur = &character_list; *cur; ) {
+    if (*cur == ch)
+      *cur = ch->next;
+    else
+      cur = &(*cur)->next;
+  }
+  if (ch->desc)
+    clear_pager(ch->desc);
   while (ch->carrying)
     extract_obj(ch->carrying);
   if (GET_EQ(ch, WEAR_HOLD))
     extract_obj(unequip_char(ch, WEAR_HOLD));
+  if (IN_ROOM(ch) != NOWHERE)
+    char_from_room(ch);
   if (ch->desc && ch->desc->note_buf) {
     free(ch->desc->note_buf);
     ch->desc->note_buf = NULL;
@@ -389,6 +436,13 @@ void setUp(void)
 
   memset(&config_info, 0, sizeof(config_info));
   config_info.operation.ibt_autosave = 1;
+  config_info.operation.use_new_socials = 0;
+  CONFIG_MENU = "0) Exit\r\n1) Enter\r\n";
+  CONFIG_OK = "Okay.\r\n";
+  CONFIG_FREE_RENT = 1;
+  CONFIG_IDLE_VOID = 5;
+  CONFIG_IDLE_RENT_TIME = 10;
+  CONFIG_IDLE_MAX_LEVEL = LVL_IMMORT;
 
   memset(&fixture_zone, 0, sizeof(fixture_zone));
   fixture_zone.number = 30;
@@ -397,11 +451,17 @@ void setUp(void)
   zone_table = &fixture_zone;
   top_of_zone_table = 0;
 
-  memset(&fixture_room, 0, sizeof(fixture_room));
-  fixture_room.number = 3000;
-  fixture_room.name = "Test Room";
-  world = &fixture_room;
-  top_of_world = 0;
+  memset(fixture_rooms, 0, sizeof(fixture_rooms));
+  fixture_rooms[0].number = 3000;
+  fixture_rooms[0].name = "Test Room";
+  fixture_rooms[1].number = 1;
+  fixture_rooms[1].name = "The Void";
+  fixture_rooms[2].number = 2;
+  fixture_rooms[2].name = "Limbo";
+  fixture_rooms[3].number = 3;
+  fixture_rooms[3].name = "Idle Storage";
+  world = fixture_rooms;
+  top_of_world = 3;
 
   memset(fixture_protos, 0, sizeof(fixture_protos));
   memset(fixture_obj_index, 0, sizeof(fixture_obj_index));
@@ -432,6 +492,7 @@ void setUp(void)
   }
   has_tmpdir = 1;
   TEST_ASSERT_EQUAL_INT(0, test_mkdir("misc"));
+  TEST_ASSERT_EQUAL_INT(0, test_mkdir("text"));
 }
 
 void tearDown(void)
@@ -459,11 +520,23 @@ void tearDown(void)
   zone_table = NULL;
   top_of_zone_table = -1;
 
+  if (motd) {
+    free(motd);
+    motd = NULL;
+  }
+  if (news) {
+    free(news);
+    news = NULL;
+  }
+
   if (has_tmpdir) {
     (void)remove("misc/bugs");
     (void)remove("misc/ideas");
     (void)remove("misc/typos");
+    (void)remove("text/motd");
+    (void)remove("text/news");
     (void)test_rmdir("misc");
+    (void)test_rmdir("text");
     if (test_chdir(orig_cwd) != 0) {}
     (void)test_rmdir(active_tmpdir);
     has_tmpdir = 0;
@@ -826,6 +899,305 @@ static void test_note_save_rejects_transformed_or_transferred_paper(void)
   free_test_char(ch2);
 }
 
+static void test_extract_char_aborts_editor_and_dismisses_pager(void)
+{
+  struct descriptor_data d;
+  struct char_data *ch;
+  char cmd[MAX_INPUT_LENGTH];
+  int i;
+
+  memset(&d, 0, sizeof(d));
+  ch = make_test_char("PagerVictim", 10, 5001, &d);
+  GET_PAGE_LENGTH(ch) = 10;
+
+  snprintf(cmd, sizeof(cmd), "submit Multi-page draft bug");
+  do_ibt(ch, cmd, 0, SCMD_BUG);
+  TEST_ASSERT_NOT_NULL(d.str);
+  for (i = 0; i < 25; i++) {
+    char line[64];
+    snprintf(line, sizeof(line), "Report line %d", i + 1);
+    send_editor_line(&d, line);
+  }
+
+  /* Open /l pager inside the editor */
+  send_editor_line(&d, "/l");
+  TEST_ASSERT_TRUE(d.showstr_count > 1);
+  TEST_ASSERT_NOT_NULL(d.showstr_vector);
+  TEST_ASSERT_NOT_NULL(d.showstr_head);
+
+  extract_char_final(ch);
+
+  TEST_ASSERT_NULL(d.str);
+  TEST_ASSERT_NULL(first_bug);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(ch, PLR_BUG));
+  TEST_ASSERT_FALSE(PLR_FLAGGED(ch, PLR_WRITING));
+  TEST_ASSERT_EQUAL_INT(0, d.showstr_count);
+  TEST_ASSERT_EQUAL_INT(0, d.showstr_page);
+  TEST_ASSERT_NULL(d.showstr_vector);
+  TEST_ASSERT_NULL(d.showstr_head);
+  TEST_ASSERT_EQUAL_INT(CON_MENU, STATE(&d));
+
+  unlink_descriptor(&d);
+  free_test_char(ch);
+}
+
+static void test_extract_switched_prefedit_and_switched_original_body(void)
+{
+  struct descriptor_data d_imp, d_vict, d_imp2, d_rvict;
+  struct char_data *imp, *vict, *vict2, *imp2, *rvict;
+  char arg[MAX_INPUT_LENGTH];
+
+  /* Case A: controlled player extracted during prefedit */
+  memset(&d_imp, 0, sizeof(d_imp));
+  memset(&d_vict, 0, sizeof(d_vict));
+  imp = make_test_char("ImpOne", LVL_IMPL, 6001, &d_imp);
+  vict = make_test_char("ControlledPC", 10, 6002, &d_vict);
+  /* Make vict linkless so do_switch can possess vict */
+  unlink_descriptor(&d_vict);
+  vict->desc = NULL;
+
+  snprintf(arg, sizeof(arg), "ControlledPC");
+  do_switch(imp, arg, 0, 0);
+  TEST_ASSERT_EQUAL_PTR(vict, d_imp.character);
+  TEST_ASSERT_EQUAL_PTR(imp, d_imp.original);
+
+  arg[0] = '\0';
+  do_oasis_prefedit(vict, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_PREFEDIT, STATE(&d_imp));
+  TEST_ASSERT_NOT_NULL(d_imp.olc);
+  TEST_ASSERT_EQUAL_PTR(vict, OLC_PREFS(&d_imp)->ch);
+
+  extract_char_final(vict);
+
+  TEST_ASSERT_NULL(d_imp.olc);
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_imp));
+  TEST_ASSERT_EQUAL_PTR(imp, d_imp.character);
+  TEST_ASSERT_NULL(d_imp.original);
+  TEST_ASSERT_EQUAL_PTR(&d_imp, imp->desc);
+  TEST_ASSERT_NULL(vict->desc);
+
+  /* Case B: implementor's original body extracted while switched body writes IBT */
+  vict2 = make_test_char("SwitchedWriter", 10, 6003, &d_vict);
+  unlink_descriptor(&d_vict);
+  vict2->desc = NULL;
+
+  snprintf(arg, sizeof(arg), "SwitchedWriter");
+  do_switch(imp, arg, 0, 0);
+  TEST_ASSERT_EQUAL_PTR(vict2, d_imp.character);
+  TEST_ASSERT_EQUAL_PTR(imp, d_imp.original);
+
+  snprintf(arg, sizeof(arg), "submit Unfinished switched bug");
+  do_ibt(vict2, arg, 0, SCMD_BUG);
+  send_editor_line(&d_imp, "Draft body from switched writer");
+  TEST_ASSERT_NOT_NULL(first_bug);
+  TEST_ASSERT_TRUE(PLR_FLAGGED(vict2, PLR_BUG));
+
+  extract_char_final(imp);
+
+  TEST_ASSERT_NULL(first_bug);
+  TEST_ASSERT_NULL(d_imp.str);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(vict2, PLR_BUG));
+  TEST_ASSERT_FALSE(PLR_FLAGGED(vict2, PLR_WRITING));
+  TEST_ASSERT_NULL(vict2->desc);
+  TEST_ASSERT_EQUAL_INT(CON_MENU, STATE(&d_imp));
+
+  /* Case C: remote prefedit <player> without switch closes when target extracts */
+  memset(&d_imp2, 0, sizeof(d_imp2));
+  memset(&d_rvict, 0, sizeof(d_rvict));
+  imp2 = make_test_char("ImpTwo", LVL_IMPL, 6004, &d_imp2);
+  rvict = make_test_char("RemoteVict", 10, 6005, &d_rvict);
+
+  snprintf(arg, sizeof(arg), "RemoteVict");
+  do_oasis_prefedit(imp2, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_PREFEDIT, STATE(&d_imp2));
+  TEST_ASSERT_NOT_NULL(d_imp2.olc);
+
+  extract_char_final(rvict);
+
+  TEST_ASSERT_NULL(d_imp2.olc);
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_imp2));
+
+  unlink_descriptor(&d_imp);
+  unlink_descriptor(&d_imp2);
+  unlink_descriptor(&d_rvict);
+  free_test_char(imp);
+  free_test_char(vict);
+  free_test_char(vict2);
+  free_test_char(imp2);
+  free_test_char(rvict);
+}
+
+static void test_player_purge_and_idle_rent_cleanup_editors_and_olc(void)
+{
+  struct descriptor_data d_imp, d_mail, d_olc, d_idle1, d_idle2;
+  struct char_data *imp, *p_mail, *p_olc, *p_idle1, *p_idle2;
+  char **mail_slot;
+  char arg[MAX_INPUT_LENGTH];
+  int i;
+
+  memset(&d_imp, 0, sizeof(d_imp));
+  memset(&d_mail, 0, sizeof(d_mail));
+  memset(&d_olc, 0, sizeof(d_olc));
+  imp = make_test_char("PurgerImp", LVL_IMPL, 7001, &d_imp);
+  p_mail = make_test_char("MailPurge", 10, 7002, &d_mail);
+  p_olc = make_test_char("OlcPurge", 10, 7003, &d_olc);
+
+  /* Case A1: purge player mid-mail with active pager */
+  GET_PAGE_LENGTH(p_mail) = 6;
+  SET_BIT_AR(PLR_FLAGS(p_mail), PLR_MAILING);
+  mail_slot = calloc(1, sizeof(char *));
+  TEST_ASSERT_NOT_NULL(mail_slot);
+  string_write(&d_mail, mail_slot, MAX_MAIL_SIZE, 999, NULL);
+  for (i = 0; i < 15; i++)
+    send_editor_line(&d_mail, "Unsent mail line");
+  send_editor_line(&d_mail, "/l");
+  TEST_ASSERT_TRUE(d_mail.showstr_count > 1);
+
+  snprintf(arg, sizeof(arg), "MailPurge");
+  do_purge(imp, arg, 0, 0);
+  extract_pending_chars();
+
+  TEST_ASSERT_NULL(d_mail.str);
+  TEST_ASSERT_EQUAL_INT(0, d_mail.showstr_count);
+  TEST_ASSERT_NULL(d_mail.showstr_vector);
+  TEST_ASSERT_NULL(d_mail.showstr_head);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_mail));
+  TEST_ASSERT_NULL(d_mail.character);
+
+  /* Case A2: purge player in CON_PREFEDIT */
+  arg[0] = '\0';
+  do_oasis_prefedit(p_olc, arg, 0, 0);
+  TEST_ASSERT_NOT_NULL(d_olc.olc);
+  TEST_ASSERT_EQUAL_INT(CON_PREFEDIT, STATE(&d_olc));
+
+  snprintf(arg, sizeof(arg), "OlcPurge");
+  do_purge(imp, arg, 0, 0);
+  extract_pending_chars();
+
+  TEST_ASSERT_NULL(d_olc.olc);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_olc));
+  TEST_ASSERT_NULL(d_olc.character);
+
+  /* Case B: idle rent via point_update() cleans up active IBT+pager and OLC */
+  memset(&d_idle1, 0, sizeof(d_idle1));
+  memset(&d_idle2, 0, sizeof(d_idle2));
+  p_idle1 = make_test_char("IdleWriter", 10, 7004, &d_idle1);
+  p_idle2 = make_test_char("IdlePrefs", 10, 7005, &d_idle2);
+
+  GET_PAGE_LENGTH(p_idle1) = 6;
+  snprintf(arg, sizeof(arg), "submit Idle unfinished bug");
+  do_ibt(p_idle1, arg, 0, SCMD_BUG);
+  for (i = 0; i < 15; i++)
+    send_editor_line(&d_idle1, "Idle bug line");
+  send_editor_line(&d_idle1, "/l");
+  TEST_ASSERT_NOT_NULL(first_bug);
+  TEST_ASSERT_TRUE(d_idle1.showstr_count > 1);
+
+  arg[0] = '\0';
+  do_oasis_prefedit(p_idle2, arg, 0, 0);
+  TEST_ASSERT_NOT_NULL(d_idle2.olc);
+
+  GET_WAS_IN(p_idle1) = 0;
+  p_idle1->char_specials.timer = CONFIG_IDLE_RENT_TIME + 1;
+  GET_WAS_IN(p_idle2) = 0;
+  p_idle2->char_specials.timer = CONFIG_IDLE_RENT_TIME + 1;
+
+  point_update();
+  extract_pending_chars();
+
+  TEST_ASSERT_NULL(first_bug);
+  TEST_ASSERT_NULL(d_idle1.str);
+  TEST_ASSERT_EQUAL_INT(0, d_idle1.showstr_count);
+  TEST_ASSERT_EQUAL_INT(CON_DISCONNECT, STATE(&d_idle1));
+  TEST_ASSERT_NULL(d_idle1.character);
+  TEST_ASSERT_NULL(d_idle2.olc);
+  TEST_ASSERT_EQUAL_INT(CON_DISCONNECT, STATE(&d_idle2));
+  TEST_ASSERT_NULL(d_idle2.character);
+
+  unlink_descriptor(&d_imp);
+  unlink_descriptor(&d_mail);
+  unlink_descriptor(&d_olc);
+  unlink_descriptor(&d_idle1);
+  unlink_descriptor(&d_idle2);
+  free_test_char(imp);
+  free_test_char(p_mail);
+  free_test_char(p_olc);
+  free_test_char(p_idle1);
+  free_test_char(p_idle2);
+}
+
+static void test_tedit_private_draft_concurrent_save_and_basic_editor_extraction(void)
+{
+  struct descriptor_data d1, d2, d3;
+  struct char_data *b1, *b2, *b3;
+  char arg[MAX_INPUT_LENGTH];
+  FILE *fp;
+  char diskbuf[256];
+  size_t n;
+
+  memset(&d1, 0, sizeof(d1));
+  memset(&d2, 0, sizeof(d2));
+  memset(&d3, 0, sizeof(d3));
+  b1 = make_test_char("BuilderOne", LVL_IMPL, 8001, &d1);
+  b2 = make_test_char("BuilderTwo", LVL_IMPL, 8002, &d2);
+  b3 = make_test_char("BuilderThree", LVL_IMPL, 8003, &d3);
+
+  motd = strdup("Initial MOTD\r\n");
+
+  /* Builder 1 opens MOTD and edits draft; live MOTD must stay untouched */
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b1, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d1));
+  send_editor_line(&d1, "Builder 1 unsaved line");
+  TEST_ASSERT_EQUAL_STRING("Initial MOTD\r\n", motd);
+
+  /* Builder 2 opens MOTD, replaces content, and saves */
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b2, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d2));
+  send_editor_line(&d2, "/c");
+  send_editor_line(&d2, "Builder 2 saved MOTD");
+  send_editor_line(&d2, "/s");
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d2));
+  TEST_ASSERT_NULL(d2.olc);
+  TEST_ASSERT_EQUAL_STRING("Builder 2 saved MOTD\r\n", motd);
+
+  fp = fopen("text/motd", "rb");
+  TEST_ASSERT_NOT_NULL(fp);
+  n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+  diskbuf[n] = '\0';
+  fclose(fp);
+  TEST_ASSERT_EQUAL_STRING("Builder 2 saved MOTD\n", diskbuf);
+
+  /* Extracting Builder 1 must NOT roll live MOTD back to Initial MOTD */
+  extract_char_final(b1);
+  TEST_ASSERT_EQUAL_INT(CON_MENU, STATE(&d1));
+  TEST_ASSERT_NULL(d1.olc);
+  TEST_ASSERT_NULL(d1.str);
+  TEST_ASSERT_EQUAL_STRING("Builder 2 saved MOTD\r\n", motd);
+
+  /* Extracting a builder who typed nothing (with NULL backstr, as in basic
+   * editor mode) must keep the live MOTD intact. */
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b3, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d3));
+  TEST_ASSERT_NULL(d3.backstr);
+
+  extract_char_final(b3);
+  TEST_ASSERT_EQUAL_INT(CON_MENU, STATE(&d3));
+  TEST_ASSERT_NULL(d3.olc);
+  TEST_ASSERT_NULL(d3.str);
+  TEST_ASSERT_NOT_NULL(motd);
+  TEST_ASSERT_EQUAL_STRING("Builder 2 saved MOTD\r\n", motd);
+
+  unlink_descriptor(&d1);
+  unlink_descriptor(&d2);
+  unlink_descriptor(&d3);
+  free_test_char(b1);
+  free_test_char(b2);
+  free_test_char(b3);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -836,5 +1208,9 @@ int main(void)
   RUN_TEST(test_ibt_remove_only_blocks_matching_edited_number);
   RUN_TEST(test_login_clears_report_flags_and_note_abort_ignores_stale_flags);
   RUN_TEST(test_note_save_rejects_transformed_or_transferred_paper);
+  RUN_TEST(test_extract_char_aborts_editor_and_dismisses_pager);
+  RUN_TEST(test_extract_switched_prefedit_and_switched_original_body);
+  RUN_TEST(test_player_purge_and_idle_rent_cleanup_editors_and_olc);
+  RUN_TEST(test_tedit_private_draft_concurrent_save_and_basic_editor_extraction);
   return UNITY_END();
 }

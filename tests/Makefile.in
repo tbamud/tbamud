@@ -123,8 +123,11 @@ test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 test_editor_lifecycle: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                        $(SRCDIR)/lists.c $(SRCDIR)/handler.c \
                        $(SRCDIR)/interpreter.c $(SRCDIR)/act.comm.c \
+                       $(SRCDIR)/act.wizard.c $(SRCDIR)/limits.c \
                        $(SRCDIR)/modify.c $(SRCDIR)/improved-edit.c \
-                       $(SRCDIR)/ibt.c $(SRCDIR)/genobj.c \
+                       $(SRCDIR)/ibt.c $(SRCDIR)/genolc.c \
+                       $(SRCDIR)/genobj.c $(SRCDIR)/oasis.c \
+                       $(SRCDIR)/tedit.c $(SRCDIR)/prefedit.c \
                        test_editor_lifecycle.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 

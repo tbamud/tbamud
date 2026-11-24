@@ -189,10 +189,16 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         ${MUD_SRCDIR}/handler.c
         ${MUD_SRCDIR}/interpreter.c
         ${MUD_SRCDIR}/act.comm.c
+        ${MUD_SRCDIR}/act.wizard.c
+        ${MUD_SRCDIR}/limits.c
         ${MUD_SRCDIR}/modify.c
         ${MUD_SRCDIR}/improved-edit.c
         ${MUD_SRCDIR}/ibt.c
+        ${MUD_SRCDIR}/genolc.c
         ${MUD_SRCDIR}/genobj.c
+        ${MUD_SRCDIR}/oasis.c
+        ${MUD_SRCDIR}/tedit.c
+        ${MUD_SRCDIR}/prefedit.c
         ${CMAKE_CURRENT_SOURCE_DIR}/test_editor_lifecycle.c
     )
     target_include_directories(test_editor_lifecycle PRIVATE ${TEST_INCLUDES})

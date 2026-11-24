@@ -138,20 +138,14 @@ void string_abort(struct descriptor_data *d)
     case CON_HEDIT:
     case CON_QEDIT:
     case CON_IBTEDIT:
-      free(*d->str);
+      if (*d->str)
+        free(*d->str);
       *d->str    = d->backstr;
       d->backstr = NULL;
       break;
     case CON_PLAYING:
-      if (d->character) {
-        if (PLR_FLAGGED(d->character, PLR_IDEA) ||
-            PLR_FLAGGED(d->character, PLR_BUG) ||
-            PLR_FLAGGED(d->character, PLR_TYPO)) {
-          free(*d->str);
-          *d->str = NULL;
-        }
+      if (d->character)
         playing_string_cleanup(d, STRINGADD_ABORT);
-      }
       break;
     default:
       log("SYSERR: string_abort: Aborting write from unknown origin (%d).", STATE(d));
@@ -336,7 +330,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     return;
   }
 
-  if (PLR_FLAGGED(d->character, PLR_MAILING)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
       if (store_mail(d->mail_to, GET_IDNUM(d->character), *d->str)) {
         write_to_output(d, "Message sent!\r\n");
@@ -367,7 +361,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     }
     return;
   }
-  if (PLR_FLAGGED(d->character, PLR_IDEA)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_IDEA)) {
     if (action == STRINGADD_SAVE && d->str && *d->str) {
       d->str = NULL;
       write_to_output(d, "Idea saved!\r\n");
@@ -378,7 +372,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     }
     return;
   }
-  if (PLR_FLAGGED(d->character, PLR_BUG)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_BUG)) {
     if (action == STRINGADD_SAVE && d->str && *d->str) {
       d->str = NULL;
       write_to_output(d, "Bug saved!\r\n");
@@ -389,7 +383,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     }
     return;
   }
-  if (PLR_FLAGGED(d->character, PLR_TYPO)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_TYPO)) {
     if (action == STRINGADD_SAVE && d->str && *d->str) {
       d->str = NULL;
       write_to_output(d, "Typo saved!\r\n");
@@ -631,6 +625,24 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
   show_string(d, actbuf);
 }
 
+/* Dismiss any active pager state on a descriptor. */
+void clear_pager(struct descriptor_data *d)
+{
+  if (!d)
+    return;
+
+  if (d->showstr_vector) {
+    free(d->showstr_vector);
+    d->showstr_vector = NULL;
+  }
+  if (d->showstr_head) {
+    free(d->showstr_head);
+    d->showstr_head = NULL;
+  }
+  d->showstr_count = 0;
+  d->showstr_page = 0;
+}
+
 /* The call that displays the next page. */
 void show_string(struct descriptor_data *d, char *input)
 {
@@ -641,13 +653,7 @@ void show_string(struct descriptor_data *d, char *input)
 
   /* Q is for quit. :) */
   if (LOWER(*buf) == 'q') {
-    free(d->showstr_vector);
-    d->showstr_vector = NULL;
-    d->showstr_count = 0;
-    if (d->showstr_head) {
-      free(d->showstr_head);
-      d->showstr_head = NULL;
-    }
+    clear_pager(d);
     return;
   }
   /* Back up one page internally so we can display it again. */
@@ -671,13 +677,7 @@ void show_string(struct descriptor_data *d, char *input)
    * bleeding. - Welcor */
   if (d->showstr_page + 1 >= d->showstr_count) {
     send_to_char(d->character, "%s\tn", d->showstr_vector[d->showstr_page]);
-    free(d->showstr_vector);
-    d->showstr_vector = NULL;
-    d->showstr_count = 0;
-    if (d->showstr_head) {
-      free(d->showstr_head);
-      d->showstr_head = NULL;
-    }
+    clear_pager(d);
   }
   /* Or if we have more to show.... */
   else {

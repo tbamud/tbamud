@@ -185,6 +185,11 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
      free(OLC_STORAGE(d));
      OLC_STORAGE(d) = NULL;
    }
+   if (OLC_TEDIT_STR(d)) {
+     free(OLC_TEDIT_STR(d));
+     OLC_TEDIT_STR(d) = NULL;
+   }
+   OLC_TEDIT_TARGET(d) = NULL;
    /* hedit alone. Unconditional like the block above, and for the same
     * reason: it is a copy this editor owns. CLEANUP_STRUCTS skips
     * OLC_HELP's strings because those are handed to the help table on the
@@ -219,7 +224,8 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
 
   /* Restore descriptor playing status. */
   if (d->character) {
-    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+    if (!IS_NPC(d->character))
+      REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
 
     /* Only a descriptor that actually entered an editor should announce
      * leaving one.  dig, buildwalk and the copy commands borrow an

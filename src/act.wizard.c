@@ -1260,6 +1260,7 @@ void return_to_char(struct char_data * ch)
   * will damage our character's pointer to our descriptor (which is assigned
   * below in this function). */
   if (ch->desc->original->desc) {
+    close_descriptor_editors(ch->desc->original->desc);
     ch->desc->original->desc->character = NULL;
     STATE(ch->desc->original->desc) = CON_DISCONNECT;
   }
@@ -1454,6 +1455,7 @@ ACMD(do_purge)
       if (!IS_NPC(vict)) {
 	mudlog(BRF, MAX(LVL_GOD, GET_INVIS_LEV(ch)), TRUE, "(GC) %s has purged %s.", GET_NAME(ch), GET_NAME(vict));
 	if (vict->desc) {
+	  close_descriptor_editors(vict->desc);
 	  STATE(vict->desc) = CON_CLOSE;
 	  vict->desc->character = NULL;
 	  vict->desc = NULL;

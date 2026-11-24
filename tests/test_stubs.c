@@ -125,6 +125,12 @@ void parse_tab(char *str) { (void)str; }
 __attribute__((weak))
 void string_abort(struct descriptor_data *d) { (void)d; }
 
+__attribute__((weak))
+void clear_pager(struct descriptor_data *d) { (void)d; }
+
+__attribute__((weak))
+void close_descriptor_editors(struct descriptor_data *d) { (void)d; }
+
 /* ---------- oasis.c ---------- */
 __attribute__((weak))
 void cleanup_olc(struct descriptor_data *d, byte cleanup_type)

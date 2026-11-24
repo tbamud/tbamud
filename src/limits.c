@@ -366,6 +366,7 @@ static void check_idling(struct char_data *ch)
         char_from_room(ch);
       char_to_room(ch, 3);
       if (ch->desc) {
+        close_descriptor_editors(ch->desc);
         STATE(ch->desc) = CON_DISCONNECT;
         /*
          * For the 'if (d->character)' test in close_socket().

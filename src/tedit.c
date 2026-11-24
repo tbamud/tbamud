@@ -23,9 +23,10 @@ extern time_t newsmod;
 void tedit_string_cleanup(struct descriptor_data *d, int terminator)
 {
   FILE *fl;
-  char *storage = OLC_STORAGE(d);
+  char *storage = d->olc ? OLC_STORAGE(d) : NULL;
+  char **target = d->olc ? OLC_TEDIT_TARGET(d) : NULL;
 
-  if (!storage)
+  if (!storage || !target)
     terminator = STRINGADD_ABORT;
 
   switch (terminator) {
@@ -33,11 +34,39 @@ void tedit_string_cleanup(struct descriptor_data *d, int terminator)
     if (!(fl = fopen(storage, "w")))
       mudlog(CMP, LVL_IMPL, TRUE, "SYSERR: Can't write file '%s'.", storage);
     else {
-      if (*d->str) {
-        strip_cr(*d->str);
-        fputs(*d->str, fl);
+      char *draft = d->str ? *d->str : OLC_TEDIT_STR(d);
+      char *new_live;
+
+      if (draft) {
+        char *disk_copy = strdup(draft);
+        if (disk_copy) {
+          strip_cr(disk_copy);
+          fputs(disk_copy, fl);
+          free(disk_copy);
+        }
       }
       fclose(fl);
+
+      new_live = draft ? draft : strdup("");
+      OLC_TEDIT_STR(d) = NULL;
+
+      if (*target) {
+        struct descriptor_data *in_use;
+        for (in_use = descriptor_list; in_use; in_use = in_use->next) {
+          if (!in_use->showstr_count || in_use->showstr_head ||
+              !in_use->showstr_vector || *in_use->showstr_vector != *target)
+            continue;
+          in_use->showstr_head = strdup(*target);
+          if (in_use->showstr_head) {
+            int temppage = in_use->showstr_page;
+            paginate_string(in_use->showstr_head, in_use);
+            in_use->showstr_page = temppage;
+          }
+        }
+        free(*target);
+      }
+      *target = new_live;
+
       mudlog(CMP, MAX(LVL_GOD, GET_INVIS_LEV(d->character)), TRUE, "OLC: %s saves '%s'.", GET_NAME(d->character), storage);
       write_to_output(d, "Saved.\r\n");
       if (!strcmp(storage, NEWS_FILE))
@@ -56,6 +85,7 @@ void tedit_string_cleanup(struct descriptor_data *d, int terminator)
   }
 
   /* Common cleanup code. */
+  d->str = NULL;
   cleanup_olc(d, CLEANUP_ALL);
   STATE(d) = CON_PLAYING;
 }
@@ -64,7 +94,6 @@ ACMD(do_tedit)
 {
   int l, i = 0;
   char field[MAX_INPUT_LENGTH];
-  char *backstr = NULL;
 
   struct {
     char *cmd;
@@ -131,19 +160,21 @@ ACMD(do_tedit)
 
   if (ch->desc->olc) {
     mudlog(BRF, LVL_IMMORT, TRUE, "SYSERR: do_tedit: Player already had olc structure.");
-    free(ch->desc->olc);
+    cleanup_olc(ch->desc, CLEANUP_ALL);
   }
   CREATE(ch->desc->olc, struct oasis_olc_data, 1);
 
   if (*fields[l].buffer) {
     send_to_char(ch, "%s", *fields[l].buffer);
-    backstr = strdup(*fields[l].buffer);
+    OLC_TEDIT_STR(ch->desc) = strdup(*fields[l].buffer);
   }
 
   OLC_STORAGE(ch->desc) = strdup(fields[l].filename);
-  string_write(ch->desc, (char **)fields[l].buffer, fields[l].size, 0, backstr);
+  OLC_TEDIT_TARGET(ch->desc) = fields[l].buffer;
+  string_write(ch->desc, &OLC_TEDIT_STR(ch->desc), fields[l].size, 0, NULL);
 
   act("$n begins editing a scroll.", TRUE, ch, 0, 0, TO_ROOM);
-  SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
+  if (!IS_NPC(ch))
+    SET_BIT_AR(PLR_FLAGS(ch), PLR_WRITING);
   STATE(ch->desc) = CON_TEDIT;
 }
