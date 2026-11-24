@@ -12,7 +12,7 @@
 #include "genobj.h"
 #include "genwld.h"
 #include "dg_olc.h"
-#ifdef CIRCLE_WINDOWS
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
 #include <direct.h>
 #include <windows.h>
 #define test_mkdir(path) _mkdir(path)
@@ -20,6 +20,7 @@
 #define test_rmdir(path) _rmdir(path)
 #define test_getcwd(buf, size) _getcwd(buf, size)
 #else
+#include <sys/stat.h>
 #define test_mkdir(path) mkdir(path, 0700)
 #define test_chdir(path) chdir(path)
 #define test_rmdir(path) rmdir(path)
@@ -169,12 +170,56 @@ static void test_rooms_debug_scratch(void) { exercise_save(0, 1); }
 static void test_objects_debug_scratch(void) { exercise_save(1, 1); }
 static void test_mobiles_debug_scratch(void) { exercise_save(2, 1); }
 
+static void test_failed_install_preserves_existing_dest(void)
+{
+    FILE *fp;
+
+    fp = fopen("world/wld/30.wld", "wb");
+    TEST_ASSERT_NOT_NULL(fp);
+    fputs("preserved destination\n", fp);
+    fclose(fp);
+
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+    {
+        HANDLE h;
+        fp = fopen("world/wld/30.new", "wb");
+        TEST_ASSERT_NOT_NULL(fp);
+        fputs("locked scratch\n", fp);
+        fclose(fp);
+
+        h = CreateFileA("world/wld/30.new", GENERIC_READ,
+                        FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
+                        OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        TEST_ASSERT_TRUE(h != INVALID_HANDLE_VALUE);
+        TEST_ASSERT_FALSE(genolc_install_file("world/wld/30.new", "world/wld/30.wld"));
+        CloseHandle(h);
+        remove("world/wld/30.new");
+    }
+#else
+    if (geteuid() != 0) {
+        TEST_ASSERT_EQUAL_INT(0, test_mkdir("world/ro_src"));
+        fp = fopen("world/ro_src/30.new", "wb");
+        TEST_ASSERT_NOT_NULL(fp);
+        fputs("locked scratch\n", fp);
+        fclose(fp);
+        TEST_ASSERT_EQUAL_INT(0, chmod("world/ro_src", 0500));
+        TEST_ASSERT_FALSE(genolc_install_file("world/ro_src/30.new", "world/wld/30.wld"));
+        TEST_ASSERT_EQUAL_INT(0, chmod("world/ro_src", 0700));
+        TEST_ASSERT_EQUAL_INT(0, remove("world/ro_src/30.new"));
+        TEST_ASSERT_EQUAL_INT(0, test_rmdir("world/ro_src"));
+    }
+#endif
+
+    read_file("world/wld/30.wld", result, sizeof(result));
+    TEST_ASSERT_EQUAL_STRING("preserved destination\n", result);
+}
+
 int main(void)
 {
     char cwd[4096], temp[4096];
     int status;
     if (!test_getcwd(cwd, sizeof(cwd))) return 1;
-#ifdef CIRCLE_WINDOWS
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
     {
         char root[MAX_PATH];
         if (!GetTempPathA(sizeof(root), root) ||
@@ -195,6 +240,7 @@ int main(void)
     RUN_TEST(test_rooms_debug_scratch);
     RUN_TEST(test_objects_debug_scratch);
     RUN_TEST(test_mobiles_debug_scratch);
+    RUN_TEST(test_failed_install_preserves_existing_dest);
     status = UNITY_END();
     test_rmdir("world/wld");
     test_rmdir("world/obj");

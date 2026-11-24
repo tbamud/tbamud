@@ -27,6 +27,10 @@
 #include "act.h"        /* for the space_to_minus function */
 #include "modify.h"      /* for smash_tilde */
 #include "quest.h"
+#include <errno.h>
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+#include <windows.h>
+#endif
 
 /* Global variables defined here, used elsewhere */
 /* List of zones to be saved. */
@@ -97,30 +101,39 @@ int genolc_checkstring(struct descriptor_data *d, char *arg)
   return TRUE;
 }
 
-/* Put the finished scratch file in place of the file it replaces.  POSIX
- * rename() replaces the destination outright, so the original is never
- * briefly absent and a failure there is a real one: clearing the
- * destination to try again would throw away a good file for nothing.
- * Windows, whose rename() refuses a name already in use, reports that as
- * EEXIST -- measured on ucrtbase and on msvcrt -- and that is the one case
- * the retry is for.  Not EACCES: that is what both runtimes report when
- * something else holds the scratch file open, which on Windows is
- * routinely a virus scanner reading the file the MUD has just written.
- * Clearing the destination for that would delete the live world file and
- * then fail the retry anyway, because the scratch is still locked.
- * Returns
- * TRUE once scratch is dest, FALSE with errno from the failed attempt
- * otherwise. */
+/* Put the finished scratch file in place of the file it replaces without
+ * deleting dest beforehand.  On Windows, CRT rename() checks whether dest
+ * exists before checking whether scratch can be moved, so removing dest on
+ * EEXIST and retrying deletes the live file and then fails if scratch or
+ * dest is locked.  MoveFileExA(..., MOVEFILE_REPLACE_EXISTING) and POSIX
+ * rename() both replace in one step and leave dest intact on failure. */
 int genolc_install_file(const char *scratch, const char *dest)
 {
-  if (rename(scratch, dest) == 0)
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+  if (MoveFileExA(scratch, dest, MOVEFILE_REPLACE_EXISTING))
     return TRUE;
 
-  if (errno != EEXIST)
-    return FALSE;
-
-  remove(dest);
+  switch (GetLastError()) {
+  case ERROR_FILE_NOT_FOUND:
+  case ERROR_PATH_NOT_FOUND:
+    errno = ENOENT;
+    break;
+  case ERROR_ACCESS_DENIED:
+  case ERROR_SHARING_VIOLATION:
+  case ERROR_LOCK_VIOLATION:
+    errno = EACCES;
+    break;
+  case ERROR_ALREADY_EXISTS:
+    errno = EEXIST;
+    break;
+  default:
+    errno = EIO;
+    break;
+  }
+  return FALSE;
+#else
   return rename(scratch, dest) == 0;
+#endif
 }
 
 char *str_udup(const char *txt)

@@ -1176,7 +1176,7 @@ static void test_tedit_private_draft_concurrent_save_and_basic_editor_extraction
   TEST_ASSERT_NULL(d2.olc);
   TEST_ASSERT_EQUAL_STRING("Builder 2 saved MOTD\r\n", motd);
 
-  fp = fopen("text/motd", "rb");
+  fp = fopen("text/motd", "r");
   TEST_ASSERT_NOT_NULL(fp);
   n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
   diskbuf[n] = '\0';
@@ -1396,7 +1396,7 @@ static void test_tedit_detects_stale_draft_conflict_and_keeps_draft(void)
   TEST_ASSERT_TRUE(PLR_FLAGGED(b2, PLR_WRITING));
   TEST_ASSERT_EQUAL_STRING("First builder saved MOTD\r\n", motd);
 
-  fp = fopen("text/motd", "rb");
+  fp = fopen("text/motd", "r");
   TEST_ASSERT_NOT_NULL(fp);
   n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
   diskbuf[n] = '\0';
@@ -1432,7 +1432,7 @@ static void test_tedit_confirms_disk_write_and_rename_before_publishing(void)
 
   /* Seed existing MOTD both in memory and on disk */
   motd = strdup("Existing MOTD on disk\r\n");
-  fp = fopen("text/motd", "wb");
+  fp = fopen("text/motd", "w");
   TEST_ASSERT_NOT_NULL(fp);
   fputs("Existing MOTD on disk\n", fp);
   fclose(fp);
@@ -1451,15 +1451,78 @@ static void test_tedit_confirms_disk_write_and_rename_before_publishing(void)
   TEST_ASSERT_NOT_NULL(d.str);
   TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\r\n", *d.str);
   TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\r\n", motd);
-  fp = fopen("text/motd", "rb");
+  fp = fopen("text/motd", "r");
   TEST_ASSERT_NOT_NULL(fp);
   n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
   diskbuf[n] = '\0';
   fclose(fp);
   TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\n", diskbuf);
 
-#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
-  /* 2. Simulate disk-full / quota mid-write failure via RLIMIT_FSIZE */
+  /* 2. Verify existing file survives a failed genolc_install_file replacement */
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+  {
+    HANDLE hScratch, hDest;
+    fp = fopen("text/locked_scratch.tmp", "w");
+    TEST_ASSERT_NOT_NULL(fp);
+    fputs("Replacement scratch\n", fp);
+    fclose(fp);
+
+    hScratch = CreateFileA("text/locked_scratch.tmp", GENERIC_READ,
+                           FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
+                           OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    TEST_ASSERT_TRUE(hScratch != INVALID_HANDLE_VALUE);
+    TEST_ASSERT_FALSE(genolc_install_file("text/locked_scratch.tmp", "text/motd"));
+    CloseHandle(hScratch);
+    (void)remove("text/locked_scratch.tmp");
+
+    fp = fopen("text/motd", "r");
+    TEST_ASSERT_NOT_NULL(fp);
+    n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+    diskbuf[n] = '\0';
+    fclose(fp);
+    TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\n", diskbuf);
+
+    /* Also verify end-to-end tedit /s preserves locked existing destination */
+    hDest = CreateFileA("text/motd", GENERIC_READ, FILE_SHARE_READ, NULL,
+                        OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    TEST_ASSERT_TRUE(hDest != INVALID_HANDLE_VALUE);
+    send_editor_line(&d, "/s");
+    CloseHandle(hDest);
+
+    TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d));
+    TEST_ASSERT_NOT_NULL(d.str);
+    TEST_ASSERT_NULL(fopen("text/motd.tmp", "r"));
+    fp = fopen("text/motd", "r");
+    TEST_ASSERT_NOT_NULL(fp);
+    n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+    diskbuf[n] = '\0';
+    fclose(fp);
+    TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\n", diskbuf);
+  }
+#else
+  if (geteuid() != 0) {
+    TEST_ASSERT_EQUAL_INT(0, test_mkdir("text/ro_src"));
+    fp = fopen("text/ro_src/locked_scratch.tmp", "w");
+    TEST_ASSERT_NOT_NULL(fp);
+    fputs("Replacement scratch\n", fp);
+    fclose(fp);
+    TEST_ASSERT_EQUAL_INT(0, chmod("text/ro_src", 0500));
+
+    TEST_ASSERT_FALSE(genolc_install_file("text/ro_src/locked_scratch.tmp", "text/motd"));
+
+    TEST_ASSERT_EQUAL_INT(0, chmod("text/ro_src", 0700));
+    TEST_ASSERT_EQUAL_INT(0, remove("text/ro_src/locked_scratch.tmp"));
+    TEST_ASSERT_EQUAL_INT(0, test_rmdir("text/ro_src"));
+
+    fp = fopen("text/motd", "r");
+    TEST_ASSERT_NOT_NULL(fp);
+    n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+    diskbuf[n] = '\0';
+    fclose(fp);
+    TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\n", diskbuf);
+  }
+
+  /* 2b. Simulate disk-full / quota mid-write failure via RLIMIT_FSIZE */
   {
     struct rlimit old_lim, small_lim;
     void (*old_handler)(int) = signal(SIGXFSZ, SIG_IGN);
@@ -1474,9 +1537,9 @@ static void test_tedit_confirms_disk_write_and_rename_before_publishing(void)
     TEST_ASSERT_NOT_NULL(d.str);
     TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\r\n", *d.str);
     TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\r\n", motd);
-    TEST_ASSERT_NULL(fopen("text/motd.tmp", "rb"));
+    TEST_ASSERT_NULL(fopen("text/motd.tmp", "r"));
 
-    fp = fopen("text/motd", "rb");
+    fp = fopen("text/motd", "r");
     TEST_ASSERT_NOT_NULL(fp);
     n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
     diskbuf[n] = '\0';
@@ -1494,7 +1557,7 @@ static void test_tedit_confirms_disk_write_and_rename_before_publishing(void)
   TEST_ASSERT_NULL(d.str);
   TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\r\n", motd);
 
-  fp = fopen("text/motd", "rb");
+  fp = fopen("text/motd", "r");
   TEST_ASSERT_NOT_NULL(fp);
   n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
   diskbuf[n] = '\0';
