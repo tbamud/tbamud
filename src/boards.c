@@ -68,6 +68,8 @@ static void init_boards(void);
 static void board_reset_board(int board_type);
 static void board_clear_board(int board_type);
 static void board_load_failed(int board_type, FILE *fl);
+static int board_msg_is_in_progress(int slot_num);
+static void board_delete_msg(int board_type, int ind);
 
 static int find_slot(void)
 {
@@ -183,20 +185,25 @@ int board_write_message(int board_type, struct char_data *ch, char *arg, struct 
     send_to_char(ch, "The board is full.\r\n");
     return (1);
   }
-  if ((NEW_MSG_INDEX(board_type).slot_num = find_slot()) == -1) {
-    send_to_char(ch, "The board is malfunctioning - sorry.\r\n");
-    log("SYSERR: Board: failed to find empty slot on write.");
-    return (1);
-  }
-  /* skip blanks */
+
+  /* Validate the headline before claiming a storage slot: find_slot() marks
+   * the slot taken as a side effect, and slots are only released through a
+   * committed msg_index entry. */
   skip_spaces(&arg);
   delete_doubledollar(arg);
 
   /* JE Truncate headline at 80 chars if it's longer than that. */
-  arg[80] = '\0';
+  if (strlen(arg) > 80)
+    arg[80] = '\0';
 
   if (!*arg) {
     send_to_char(ch, "We must have a headline!\r\n");
+    return (1);
+  }
+
+  if ((NEW_MSG_INDEX(board_type).slot_num = find_slot()) == -1) {
+    send_to_char(ch, "The board is malfunctioning - sorry.\r\n");
+    log("SYSERR: Board: failed to find empty slot on write.");
     return (1);
   }
   ct = time(0);
@@ -334,11 +341,54 @@ int board_display_msg(int board_type, struct char_data *ch, char *arg, struct ob
   return (1);
 }
 
+static int board_msg_is_in_progress(int slot_num)
+{
+  struct descriptor_data *d;
+
+  if (slot_num < 0 || slot_num >= INDEX_SIZE)
+    return (0);
+
+  for (d = descriptor_list; d; d = d->next)
+    if (d->str == &(msg_storage[slot_num]))
+      return (1);
+
+  return (0);
+}
+
+static void board_delete_msg(int board_type, int ind)
+{
+  int slot_num = MSG_SLOTNUM(board_type, ind);
+
+  if (slot_num >= 0 && slot_num < INDEX_SIZE) {
+    if (msg_storage[slot_num])
+      free(msg_storage[slot_num]);
+    msg_storage[slot_num] = NULL;
+    msg_storage_taken[slot_num] = 0;
+  }
+  if (MSG_HEADING(board_type, ind))
+    free(MSG_HEADING(board_type, ind));
+
+  for (; ind < num_of_msgs[board_type] - 1; ind++) {
+    MSG_HEADING(board_type, ind) = MSG_HEADING(board_type, ind + 1);
+    MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
+    MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
+  }
+
+  /* The shift leaves the entry the last message moved out of still
+   * holding that message's heading and slot.  Nothing reads it again --
+   * num_of_msgs no longer counts it -- but board_clear_board() walks
+   * every entry there is and skips only slot -1, so at shutdown it
+   * freed the heading a second time. */
+  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
+  msg_index[board_type][ind].slot_num = -1;
+
+  num_of_msgs[board_type]--;
+}
+
 int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj_data *board)
 {
   int ind, msg, slot_num;
   char number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
-  struct descriptor_data *d;
 
   one_argument(arg, number);
 
@@ -380,33 +430,11 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
     log("SYSERR: The board is seriously screwed up. (Room #%d)", GET_ROOM_VNUM(IN_ROOM(ch)));
     return (1);
   }
-  for (d = descriptor_list; d; d = d->next)
-    if (STATE(d) == CON_PLAYING && d->str == &(msg_storage[slot_num])) {
-      send_to_char(ch, "At least wait until the author is finished before removing it!\r\n");
-      return (1);
-    }
-  if (msg_storage[slot_num])
-    free(msg_storage[slot_num]);
-  msg_storage[slot_num] = 0;
-  msg_storage_taken[slot_num] = 0;
-  if (MSG_HEADING(board_type, ind))
-    free(MSG_HEADING(board_type, ind));
-
-  for (; ind < num_of_msgs[board_type] - 1; ind++) {
-    MSG_HEADING(board_type, ind) = MSG_HEADING(board_type, ind + 1);
-    MSG_SLOTNUM(board_type, ind) = MSG_SLOTNUM(board_type, ind + 1);
-    MSG_LEVEL(board_type, ind) = MSG_LEVEL(board_type, ind + 1);
+  if (board_msg_is_in_progress(slot_num)) {
+    send_to_char(ch, "At least wait until the author is finished before removing it!\r\n");
+    return (1);
   }
-
-  /* The shift leaves the entry the last message moved out of still
-   * holding that message's heading and slot.  Nothing reads it again --
-   * num_of_msgs no longer counts it -- but board_clear_board() walks
-   * every entry there is and skips only slot -1, so at shutdown it
-   * freed the heading a second time. */
-  memset((char *)&(msg_index[board_type][ind]), 0, sizeof(struct board_msginfo));
-  msg_index[board_type][ind].slot_num = -1;
-
-  num_of_msgs[board_type]--;
+  board_delete_msg(board_type, ind);
 
   send_to_char(ch, "Message removed.\r\n");
   snprintf(buf, sizeof(buf), "$n just removed message %d.", msg);
@@ -416,13 +444,39 @@ int board_remove_msg(int board_type, struct char_data *ch, char *arg, struct obj
   return (1);
 }
 
+/* Cancel an in-progress board post identified by the descriptor's d->str
+ * pointer (&msg_storage[slot_num]), releasing its slot and removing the
+ * index entry. Returns 1 if a matching post was found and removed, 0 otherwise. */
+int board_abort_write(int board_type, char **writeto)
+{
+  int ind, slot_num;
+
+  if (board_type < 0 || board_type >= NUM_OF_BOARDS || !writeto)
+    return (0);
+
+  for (ind = 0; ind < num_of_msgs[board_type]; ind++) {
+    slot_num = MSG_SLOTNUM(board_type, ind);
+    if (slot_num >= 0 && slot_num < INDEX_SIZE &&
+        &(msg_storage[slot_num]) == writeto) {
+      board_delete_msg(board_type, ind);
+      return (1);
+    }
+  }
+
+  return (0);
+}
+
 void board_save_board(int board_type)
 {
   FILE *fl;
-  int i;
+  int i, saved_msgs = 0;
   char *tmp1, *tmp2 = NULL;
 
-  if (!num_of_msgs[board_type]) {
+  for (i = 0; i < num_of_msgs[board_type]; i++)
+    if (!board_msg_is_in_progress(MSG_SLOTNUM(board_type, i)))
+      saved_msgs++;
+
+  if (!saved_msgs) {
     remove(FILENAME(board_type));
     return;
   }
@@ -430,9 +484,12 @@ void board_save_board(int board_type)
     perror("SYSERR: Error writing board");
     return;
   }
-  fwrite(&(num_of_msgs[board_type]), sizeof(int), 1, fl);
+  fwrite(&saved_msgs, sizeof(int), 1, fl);
 
   for (i = 0; i < num_of_msgs[board_type]; i++) {
+    if (board_msg_is_in_progress(MSG_SLOTNUM(board_type, i)))
+      continue;
+
     if ((tmp1 = MSG_HEADING(board_type, i)) != NULL)
       msg_index[board_type][i].heading_len = strlen(tmp1) + 1;
     else
