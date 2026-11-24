@@ -180,6 +180,34 @@ add_mud_test(test_improved_edit
 # without the unrelated OLC editor functions. MSVC resolves those discarded
 # functions' dependencies before elimination, so it cannot link this target.
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
+    add_executable(test_editor_lifecycle
+        ${UNITY_SRC}
+        ${STUBS_SRC}
+        ${MUD_SRCDIR}/utils.c
+        ${MUD_SRCDIR}/random.c
+        ${MUD_SRCDIR}/lists.c
+        ${MUD_SRCDIR}/handler.c
+        ${MUD_SRCDIR}/interpreter.c
+        ${MUD_SRCDIR}/act.comm.c
+        ${MUD_SRCDIR}/modify.c
+        ${MUD_SRCDIR}/improved-edit.c
+        ${MUD_SRCDIR}/ibt.c
+        ${MUD_SRCDIR}/genobj.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_editor_lifecycle.c
+    )
+    target_include_directories(test_editor_lifecycle PRIVATE ${TEST_INCLUDES})
+    target_compile_options(test_editor_lifecycle PRIVATE ${TEST_CFLAGS}
+        -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_editor_lifecycle APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_editor_lifecycle APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    if(CRYPT_LIBRARY)
+        target_link_libraries(test_editor_lifecycle PRIVATE ${CRYPT_LIBRARY})
+    endif()
+    add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
+
     add_executable(test_genolc_savers
         ${UNITY_SRC}
         ${CMAKE_CURRENT_SOURCE_DIR}/test_genolc_savers.c

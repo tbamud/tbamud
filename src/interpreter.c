@@ -1183,6 +1183,9 @@ static int perform_dupe_check(struct descriptor_data *d)
   d->character->char_specials.timer = 0;
   REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
   REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+  REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
   STATE(d) = CON_PLAYING;
   MXPSendTag( d, "<VERSION>" );
 
@@ -1459,6 +1462,9 @@ void nanny(struct descriptor_data *d, char *arg)
           /* undo it just in case they are set */
           REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
           REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+          REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+          REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+          REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
           REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
           d->character->player.time.logon = time(0);
           write_to_output(d, "Password: ");

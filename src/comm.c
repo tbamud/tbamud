@@ -488,6 +488,9 @@ void copyover_recover()
       if (!PLR_FLAGGED(d->character, PLR_DELETED)) {
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
       } else
         fOld = FALSE;
@@ -931,6 +934,9 @@ void game_loop(socket_t local_mother_desc)
     /* Process commands we just read from process_input */
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
+
+      if (STATE(d) == CON_CLOSE || STATE(d) == CON_DISCONNECT)
+        continue;
 
       /* Not combined to retain --(d->wait) behavior. -gg 2/20/98 If no wait
        * state, no subtraction.  If there is a wait state then 1 is subtracted.
@@ -2185,6 +2191,30 @@ void close_socket(struct descriptor_data *d)
     free(d->backstr);
     d->backstr = NULL;
   }
+
+  if (d->mail_to >= BOARD_MAGIC && d->str &&
+      board_abort_write(d->mail_to - BOARD_MAGIC, d->str)) {
+    d->str = NULL;
+    d->mail_to = 0;
+  }
+
+  if (d->str == &d->note_buf) {
+    if (d->note_buf) {
+      free(d->note_buf);
+      d->note_buf = NULL;
+    }
+    d->note_obj = NULL;
+    d->str = NULL;
+  } else {
+    if (d->note_buf) {
+      free(d->note_buf);
+      d->note_buf = NULL;
+    }
+    d->note_obj = NULL;
+  }
+
+  if (d->str && ibt_abort_write(d->str))
+    d->str = NULL;
 
   if (d->character) {
     /* If we're switched, this resets the mobile taken. */

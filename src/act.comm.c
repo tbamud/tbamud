@@ -308,11 +308,18 @@ ACMD(do_write)
   else if (GET_OBJ_TYPE(paper) != ITEM_NOTE)
     act("You can't write on $p.", FALSE, ch, paper, 0, TO_CHAR);
   else {
-    char *backstr = NULL;
+    /* Edit on a descriptor-owned draft buffer so prototype refreshes
+     * (update_all_objects) or object extraction (extract_obj) cannot corrupt
+     * or free the active editor buffer. */
+    if (ch->desc->note_buf) {
+      free(ch->desc->note_buf);
+      ch->desc->note_buf = NULL;
+    }
+    ch->desc->note_obj = paper;
 
     /* Something on it, display it as that's in input buffer. */
     if (paper->action_description) {
-      backstr = strdup(paper->action_description);
+      ch->desc->note_buf = strdup(paper->action_description);
       send_to_char(ch, "There's something written on it already:\r\n");
       send_to_char(ch, "%s", paper->action_description);
     }
@@ -320,7 +327,7 @@ ACMD(do_write)
     /* We can write. */
     act("$n begins to jot down a note.", TRUE, ch, 0, 0, TO_ROOM);
     send_editor_help(ch->desc);
-    string_write(ch->desc, &paper->action_description, MAX_NOTE_LENGTH, 0, backstr);
+    string_write(ch->desc, &ch->desc->note_buf, MAX_NOTE_LENGTH, 0, NULL);
   }
 }
 
