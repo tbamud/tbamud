@@ -187,20 +187,8 @@ void string_add(struct descriptor_data *d, char *str)
           d->str     = NULL;
           break;
         case CON_PLAYING:
-          if (d->mail_to >= BOARD_MAGIC) {
-            /* Handled in playing_string_cleanup(). */
-          } else if (d->character && !IS_NPC(d->character) &&
-                     (PLR_FLAGGED(d->character, PLR_MAILING) ||
-                      PLR_FLAGGED(d->character, PLR_IDEA) ||
-                      PLR_FLAGGED(d->character, PLR_BUG) ||
-                      PLR_FLAGGED(d->character, PLR_TYPO))) {
-            /* Handled in playing_string_cleanup(). */
-          } else {
-            free(*d->str);
-            *d->str    = d->backstr;
-            d->backstr = NULL;
-            write_to_output(d, "Note aborted.\r\n");
-          }
+          /* Mail, board posts, IBT submissions, and notes are cleaned up
+           * in playing_string_cleanup(). */
           break;
         default:
           log("SYSERR: string_add: Aborting write from unknown origin.");
@@ -262,6 +250,34 @@ void string_add(struct descriptor_data *d, char *str)
 
 static void playing_string_cleanup(struct descriptor_data *d, int action)
 {
+  if (d->str == &d->note_buf) {
+    if (action == STRINGADD_SAVE) {
+      struct obj_data *note = d->note_obj;
+      if (note) {
+        if (note->action_description &&
+            (GET_OBJ_RNUM(note) == NOTHING ||
+             note->action_description != obj_proto[GET_OBJ_RNUM(note)].action_description))
+          free(note->action_description);
+        note->action_description = d->note_buf;
+        d->note_buf = NULL;
+      } else {
+        if (d->note_buf) {
+          free(d->note_buf);
+          d->note_buf = NULL;
+        }
+        write_to_output(d, "The note you were writing on is no longer there.\r\n");
+      }
+    } else {
+      if (d->note_buf) {
+        free(d->note_buf);
+        d->note_buf = NULL;
+      }
+      write_to_output(d, "Note aborted.\r\n");
+    }
+    d->note_obj = NULL;
+    return;
+  }
+
   if (PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
       if (store_mail(d->mail_to, GET_IDNUM(d->character), *d->str)) {

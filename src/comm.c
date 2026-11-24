@@ -488,6 +488,9 @@ void copyover_recover()
       if (!PLR_FLAGGED(d->character, PLR_DELETED)) {
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+        REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
         REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_CRYO);
       } else
         fOld = FALSE;
@@ -2194,6 +2197,24 @@ void close_socket(struct descriptor_data *d)
     d->str = NULL;
     d->mail_to = 0;
   }
+
+  if (d->str == &d->note_buf) {
+    if (d->note_buf) {
+      free(d->note_buf);
+      d->note_buf = NULL;
+    }
+    d->note_obj = NULL;
+    d->str = NULL;
+  } else {
+    if (d->note_buf) {
+      free(d->note_buf);
+      d->note_buf = NULL;
+    }
+    d->note_obj = NULL;
+  }
+
+  if (d->str && ibt_abort_write(d->str))
+    d->str = NULL;
 
   if (d->character) {
     /* If we're switched, this resets the mobile taken. */

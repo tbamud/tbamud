@@ -979,6 +979,13 @@ void extract_obj(struct obj_data *obj)
   if (GET_OBJ_RNUM(obj) == NOTHING || obj->proto_script != obj_proto[GET_OBJ_RNUM(obj)].proto_script)
     free_proto_script(obj, OBJ_TRIGGER);
 
+  {
+    struct descriptor_data *d;
+    for (d = descriptor_list; d; d = d->next)
+      if (d->note_obj == obj)
+        d->note_obj = NULL;
+  }
+
   free_obj(obj);
 }
 

@@ -792,8 +792,9 @@ ACMD(do_ibt)
           send_to_char(ch, "Wait until the author finishes writing that %s before removing it.\r\n", CMD_NAME);
           return;
         }
-        if (STATE(d) == CON_IBTEDIT && d->olc && OLC_VAL(d) == subcmd) {
-          send_to_char(ch, "Someone is currently editing a %s; try again after they finish.\r\n", CMD_NAME);
+        if (STATE(d) == CON_IBTEDIT && d->olc && OLC_VAL(d) == subcmd && OLC_NUM(d) == ano) {
+          send_to_char(ch, "That %s is currently being edited by %s.\r\n",
+            ibt_types[subcmd], d->character ? GET_NAME(d->character) : "someone");
           return;
         }
       }
@@ -1259,4 +1260,25 @@ void clean_ibt_list(int mode, char **writeto)
       return;
     }
   }
+}
+
+int ibt_abort_write(char **writeto)
+{
+  static const int modes[] = { SCMD_IDEA, SCMD_BUG, SCMD_TYPO };
+  size_t i;
+
+  if (!writeto)
+    return (0);
+
+  for (i = 0; i < sizeof(modes) / sizeof(modes[0]); i++) {
+    IBT_DATA *ibtData;
+    for (ibtData = get_first_ibt(modes[i]); ibtData; ibtData = ibtData->next) {
+      if (&(ibtData->body) == writeto) {
+        free_ibt(modes[i], ibtData);
+        return (1);
+      }
+    }
+  }
+
+  return (0);
 }

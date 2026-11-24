@@ -101,3 +101,4 @@ void ibtedit_string_cleanup(struct descriptor_data *d, int terminator);
 void free_ibt_lists(void);
 void free_olc_ibt(IBT_DATA *toFree);
 void clean_ibt_list(int mode, char **writeto);
+int ibt_abort_write(char **writeto);
