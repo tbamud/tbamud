@@ -39,6 +39,8 @@
 #define test_getcwd(buf, size) _getcwd(buf, size)
 #else
 #include <sys/stat.h>
+#include <sys/resource.h>
+#include <signal.h>
 #define test_mkdir(path) mkdir(path, 0700)
 #define test_chdir(path) chdir(path)
 #define test_rmdir(path) rmdir(path)
@@ -239,6 +241,14 @@ char *fread_clean_string(FILE *fl, const char *error)
 /* Test-local hooks overriding weak symbols in test_stubs.c */
 static int hook_load_char = 0;
 static bitvector_t hook_plr_flags[PM_ARRAY_MAX];
+static int free_char_count = 0;
+static struct char_data *last_freed_char = NULL;
+
+void free_char(struct char_data *ch)
+{
+  free_char_count++;
+  last_freed_char = ch;
+}
 
 int load_char(const char *name, struct char_data *ch)
 {
@@ -432,6 +442,8 @@ void setUp(void)
   object_list = NULL;
   character_list = NULL;
   hook_load_char = 0;
+  free_char_count = 0;
+  last_freed_char = NULL;
   memset(hook_plr_flags, 0, sizeof(hook_plr_flags));
 
   memset(&config_info, 0, sizeof(config_info));
@@ -534,7 +546,9 @@ void tearDown(void)
     (void)remove("misc/ideas");
     (void)remove("misc/typos");
     (void)remove("text/motd");
+    (void)remove("text/motd.tmp");
     (void)remove("text/news");
+    (void)remove("text/news.tmp");
     (void)test_rmdir("misc");
     (void)test_rmdir("text");
     if (test_chdir(orig_cwd) != 0) {}
@@ -1198,6 +1212,326 @@ static void test_tedit_private_draft_concurrent_save_and_basic_editor_extraction
   free_test_char(b3);
 }
 
+static void test_tedit_save_preserves_pager_byte_offsets_after_pagelength_change(void)
+{
+  struct descriptor_data d_reader, d_builder;
+  struct char_data *reader, *builder;
+  char old_buf[2048];
+  char arg[MAX_INPUT_LENGTH], empty_in[4];
+  ptrdiff_t offsets[32];
+  int orig_count, orig_page, i;
+  size_t old_len;
+
+  memset(&d_reader, 0, sizeof(d_reader));
+  memset(&d_builder, 0, sizeof(d_builder));
+  reader = make_test_char("MotdReader", 10, 9001, &d_reader);
+  builder = make_test_char("MotdBuilder", LVL_IMPL, 9002, &d_builder);
+
+  old_buf[0] = '\0';
+  for (i = 0; i < 30; i++) {
+    char line[64];
+    snprintf(line, sizeof(line), "Old MOTD line %02d\r\n", i + 1);
+    strcat(old_buf, line);
+  }
+  motd = strdup(old_buf);
+  old_len = strlen(motd);
+
+  /* Reader starts paging motd in-place (keep_internal == 0) at page_length 6 */
+  GET_PAGE_LENGTH(reader) = 6;
+  page_string(&d_reader, motd, 0);
+  TEST_ASSERT_TRUE(d_reader.showstr_count >= 4);
+  TEST_ASSERT_TRUE(d_reader.showstr_count < 32);
+  TEST_ASSERT_NULL(d_reader.showstr_head);
+  TEST_ASSERT_EQUAL_PTR(motd, d_reader.showstr_vector[0]);
+
+  /* Advance one page and record every page pointer's byte offset */
+  empty_in[0] = '\0';
+  show_string(&d_reader, empty_in);
+  orig_count = d_reader.showstr_count;
+  orig_page = d_reader.showstr_page;
+  for (i = 0; i < orig_count; i++) {
+    TEST_ASSERT_NOT_NULL(d_reader.showstr_vector[i]);
+    offsets[i] = d_reader.showstr_vector[i] - motd;
+    TEST_ASSERT_TRUE(offsets[i] >= 0 && (size_t)offsets[i] <= old_len);
+  }
+
+  /* Reader increases page length mid-read so recomputing pages would leave
+   * trailing showstr_vector entries pointing into freed old motd. */
+  GET_PAGE_LENGTH(reader) = 50;
+
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(builder, arg, 0, 0);
+  send_editor_line(&d_builder, "/c");
+  send_editor_line(&d_builder, "Brand new short MOTD");
+  send_editor_line(&d_builder, "/s");
+
+  TEST_ASSERT_NOT_NULL(d_reader.showstr_head);
+  TEST_ASSERT_EQUAL_STRING(old_buf, d_reader.showstr_head);
+  TEST_ASSERT_EQUAL_INT(orig_count, d_reader.showstr_count);
+  TEST_ASSERT_EQUAL_INT(orig_page, d_reader.showstr_page);
+  for (i = 0; i < orig_count; i++) {
+    TEST_ASSERT_EQUAL_PTR(d_reader.showstr_head + offsets[i], d_reader.showstr_vector[i]);
+  }
+
+  /* Stepping through remaining pages succeeds cleanly and dismisses at end */
+  while (d_reader.showstr_count > 0) {
+    empty_in[0] = '\0';
+    show_string(&d_reader, empty_in);
+  }
+  TEST_ASSERT_NULL(d_reader.showstr_head);
+  TEST_ASSERT_NULL(d_reader.showstr_vector);
+
+  unlink_descriptor(&d_reader);
+  unlink_descriptor(&d_builder);
+  free_test_char(reader);
+  free_test_char(builder);
+}
+
+static void test_extract_occupied_original_body_resolves_both_descriptors(void)
+{
+  struct descriptor_data d_owner, d_occ, d_mob;
+  struct char_data *owner, *occupant, *mob;
+  char arg[MAX_INPUT_LENGTH];
+
+  memset(&d_owner, 0, sizeof(d_owner));
+  memset(&d_occ, 0, sizeof(d_occ));
+  memset(&d_mob, 0, sizeof(d_mob));
+
+  owner = make_test_char("OrigOwner", LVL_IMPL, 9101, &d_owner);
+  occupant = make_test_char("BodyOccupant", LVL_IMPL, 9102, &d_occ);
+  mob = make_test_char("TargetBody", 10, 9103, &d_mob);
+  unlink_descriptor(&d_mob);
+  mob->desc = NULL;
+
+  /* Owner switches into mob, leaving owner->desc == NULL */
+  snprintf(arg, sizeof(arg), "TargetBody");
+  do_switch(owner, arg, 0, 0);
+  TEST_ASSERT_EQUAL_PTR(mob, d_owner.character);
+  TEST_ASSERT_EQUAL_PTR(owner, d_owner.original);
+  TEST_ASSERT_NULL(owner->desc);
+
+  /* Occupant switches into owner's unoccupied original body */
+  snprintf(arg, sizeof(arg), "OrigOwner");
+  do_switch(occupant, arg, 0, 0);
+  TEST_ASSERT_EQUAL_PTR(&d_occ, owner->desc);
+  TEST_ASSERT_EQUAL_PTR(owner, d_occ.character);
+  TEST_ASSERT_EQUAL_PTR(occupant, d_occ.original);
+  TEST_ASSERT_NULL(occupant->desc);
+
+  /* Put both descriptors into active editors/OLC before extracting owner */
+  arg[0] = '\0';
+  do_oasis_prefedit(owner, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_PREFEDIT, STATE(&d_occ));
+
+  snprintf(arg, sizeof(arg), "submit Owner switched bug");
+  do_ibt(mob, arg, 0, SCMD_BUG);
+  send_editor_line(&d_owner, "Unfinished body");
+  TEST_ASSERT_NOT_NULL(first_bug);
+
+  free_char_count = 0;
+  extract_char_final(owner);
+
+  /* Occupant returned cleanly to their own body */
+  TEST_ASSERT_NULL(d_occ.olc);
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_occ));
+  TEST_ASSERT_EQUAL_PTR(occupant, d_occ.character);
+  TEST_ASSERT_NULL(d_occ.original);
+  TEST_ASSERT_EQUAL_PTR(&d_occ, occupant->desc);
+
+  /* Owner's switched draft was aborted, owner restored to d_owner at CON_MENU,
+   * and owner was NOT freed while d_owner still references it. */
+  TEST_ASSERT_NULL(first_bug);
+  TEST_ASSERT_NULL(d_owner.str);
+  TEST_ASSERT_NULL(d_owner.original);
+  TEST_ASSERT_EQUAL_PTR(owner, d_owner.character);
+  TEST_ASSERT_EQUAL_PTR(&d_owner, owner->desc);
+  TEST_ASSERT_NULL(mob->desc);
+  TEST_ASSERT_EQUAL_INT(CON_MENU, STATE(&d_owner));
+  TEST_ASSERT_EQUAL_INT(0, free_char_count);
+
+  unlink_descriptor(&d_owner);
+  unlink_descriptor(&d_occ);
+  free_test_char(owner);
+  free_test_char(occupant);
+  free_test_char(mob);
+}
+
+static void test_tedit_detects_stale_draft_conflict_and_keeps_draft(void)
+{
+  struct descriptor_data d1, d2;
+  struct char_data *b1, *b2;
+  char arg[MAX_INPUT_LENGTH];
+  char diskbuf[256];
+  FILE *fp;
+  size_t n;
+
+  memset(&d1, 0, sizeof(d1));
+  memset(&d2, 0, sizeof(d2));
+  b1 = make_test_char("FirstSaver", LVL_IMPL, 9201, &d1);
+  b2 = make_test_char("StaleSaver", LVL_IMPL, 9202, &d2);
+
+  motd = strdup("Baseline MOTD\r\n");
+
+  /* Both builders open MOTD from the same baseline */
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b1, arg, 0, 0);
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b2, arg, 0, 0);
+
+  /* First builder saves an update */
+  send_editor_line(&d1, "/c");
+  send_editor_line(&d1, "First builder saved MOTD");
+  send_editor_line(&d1, "/s");
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d1));
+  TEST_ASSERT_EQUAL_STRING("First builder saved MOTD\r\n", motd);
+
+  /* Second builder tries to save untouched stale draft: must be refused,
+   * preserving first builder's save on disk/memory and keeping b2's draft. */
+  send_editor_line(&d2, "/s");
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d2));
+  TEST_ASSERT_NOT_NULL(d2.olc);
+  TEST_ASSERT_NOT_NULL(d2.str);
+  TEST_ASSERT_NOT_NULL(*d2.str);
+  TEST_ASSERT_EQUAL_STRING("Baseline MOTD\r\n", *d2.str);
+  TEST_ASSERT_TRUE(PLR_FLAGGED(b2, PLR_WRITING));
+  TEST_ASSERT_EQUAL_STRING("First builder saved MOTD\r\n", motd);
+
+  fp = fopen("text/motd", "rb");
+  TEST_ASSERT_NOT_NULL(fp);
+  n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+  diskbuf[n] = '\0';
+  fclose(fp);
+  TEST_ASSERT_EQUAL_STRING("First builder saved MOTD\n", diskbuf);
+
+  /* Second builder can still edit their kept draft and cleanly abort */
+  send_editor_line(&d2, "Second builder extra line");
+  TEST_ASSERT_NOT_NULL(strstr(*d2.str, "Second builder extra line"));
+  send_editor_line(&d2, "/a");
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d2));
+  TEST_ASSERT_NULL(d2.olc);
+  TEST_ASSERT_NULL(d2.str);
+  TEST_ASSERT_EQUAL_STRING("First builder saved MOTD\r\n", motd);
+
+  unlink_descriptor(&d1);
+  unlink_descriptor(&d2);
+  free_test_char(b1);
+  free_test_char(b2);
+}
+
+static void test_tedit_confirms_disk_write_and_rename_before_publishing(void)
+{
+  struct descriptor_data d;
+  struct char_data *b;
+  char arg[MAX_INPUT_LENGTH];
+  char diskbuf[256];
+  FILE *fp;
+  size_t n;
+
+  memset(&d, 0, sizeof(d));
+  b = make_test_char("DiskBuilder", LVL_IMPL, 9301, &d);
+
+  /* Seed existing MOTD both in memory and on disk */
+  motd = strdup("Existing MOTD on disk\r\n");
+  fp = fopen("text/motd", "wb");
+  TEST_ASSERT_NOT_NULL(fp);
+  fputs("Existing MOTD on disk\n", fp);
+  fclose(fp);
+
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b, arg, 0, 0);
+  send_editor_line(&d, "/c");
+  send_editor_line(&d, "Updated MOTD text requiring disk confirmation");
+
+  /* 1. Block temp file creation by placing a directory at text/motd.tmp */
+  TEST_ASSERT_EQUAL_INT(0, test_mkdir("text/motd.tmp"));
+  send_editor_line(&d, "/s");
+  TEST_ASSERT_EQUAL_INT(0, test_rmdir("text/motd.tmp"));
+
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d));
+  TEST_ASSERT_NOT_NULL(d.str);
+  TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\r\n", *d.str);
+  TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\r\n", motd);
+  fp = fopen("text/motd", "rb");
+  TEST_ASSERT_NOT_NULL(fp);
+  n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+  diskbuf[n] = '\0';
+  fclose(fp);
+  TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\n", diskbuf);
+
+#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
+  /* 2. Simulate disk-full / quota mid-write failure via RLIMIT_FSIZE */
+  {
+    struct rlimit old_lim, small_lim;
+    void (*old_handler)(int) = signal(SIGXFSZ, SIG_IGN);
+    TEST_ASSERT_EQUAL_INT(0, getrlimit(RLIMIT_FSIZE, &old_lim));
+    small_lim = old_lim;
+    small_lim.rlim_cur = 4;
+    TEST_ASSERT_EQUAL_INT(0, setrlimit(RLIMIT_FSIZE, &small_lim));
+    send_editor_line(&d, "/s");
+    TEST_ASSERT_EQUAL_INT(0, setrlimit(RLIMIT_FSIZE, &old_lim));
+
+    TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d));
+    TEST_ASSERT_NOT_NULL(d.str);
+    TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\r\n", *d.str);
+    TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\r\n", motd);
+    TEST_ASSERT_NULL(fopen("text/motd.tmp", "rb"));
+
+    fp = fopen("text/motd", "rb");
+    TEST_ASSERT_NOT_NULL(fp);
+    n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+    diskbuf[n] = '\0';
+    fclose(fp);
+    TEST_ASSERT_EQUAL_STRING("Existing MOTD on disk\n", diskbuf);
+    if (old_handler != SIG_ERR)
+      signal(SIGXFSZ, old_handler);
+  }
+#endif
+
+  /* 3. Once disk is writable, retrying /s from the preserved draft succeeds */
+  send_editor_line(&d, "/s");
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d));
+  TEST_ASSERT_NULL(d.olc);
+  TEST_ASSERT_NULL(d.str);
+  TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\r\n", motd);
+
+  fp = fopen("text/motd", "rb");
+  TEST_ASSERT_NOT_NULL(fp);
+  n = fread(diskbuf, 1, sizeof(diskbuf) - 1, fp);
+  diskbuf[n] = '\0';
+  fclose(fp);
+  TEST_ASSERT_EQUAL_STRING("Updated MOTD text requiring disk confirmation\n", diskbuf);
+
+  /* 4. Simulate rename (genolc_install_file) failure after temp file write succeeds */
+  news = strdup("Live news in memory\r\n");
+  TEST_ASSERT_EQUAL_INT(0, test_mkdir("text/news"));
+  fp = fopen("text/news/lock", "wb");
+  TEST_ASSERT_NOT_NULL(fp);
+  fclose(fp);
+
+  snprintf(arg, sizeof(arg), "news");
+  do_tedit(b, arg, 0, 0);
+  send_editor_line(&d, "/c");
+  send_editor_line(&d, "News draft blocked at rename");
+  send_editor_line(&d, "/s");
+
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d));
+  TEST_ASSERT_NOT_NULL(d.str);
+  TEST_ASSERT_EQUAL_STRING("News draft blocked at rename\r\n", *d.str);
+  TEST_ASSERT_EQUAL_STRING("Live news in memory\r\n", news);
+  TEST_ASSERT_NULL(fopen("text/news.tmp", "rb"));
+
+  TEST_ASSERT_EQUAL_INT(0, remove("text/news/lock"));
+  TEST_ASSERT_EQUAL_INT(0, test_rmdir("text/news"));
+  send_editor_line(&d, "/s");
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d));
+  TEST_ASSERT_NULL(d.olc);
+  TEST_ASSERT_NULL(d.str);
+  TEST_ASSERT_EQUAL_STRING("News draft blocked at rename\r\n", news);
+
+  unlink_descriptor(&d);
+  free_test_char(b);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -1212,5 +1546,9 @@ int main(void)
   RUN_TEST(test_extract_switched_prefedit_and_switched_original_body);
   RUN_TEST(test_player_purge_and_idle_rent_cleanup_editors_and_olc);
   RUN_TEST(test_tedit_private_draft_concurrent_save_and_basic_editor_extraction);
+  RUN_TEST(test_tedit_save_preserves_pager_byte_offsets_after_pagelength_change);
+  RUN_TEST(test_extract_occupied_original_body_resolves_both_descriptors);
+  RUN_TEST(test_tedit_detects_stale_draft_conflict_and_keeps_draft);
+  RUN_TEST(test_tedit_confirms_disk_write_and_rename_before_publishing);
   return UNITY_END();
 }

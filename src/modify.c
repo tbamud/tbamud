@@ -279,8 +279,15 @@ void string_add(struct descriptor_data *d, char *str)
     };
 
     for (i = 0; cleanup_modes[i].func; i++)
-      if (STATE(d) == cleanup_modes[i].mode)
+      if (STATE(d) == cleanup_modes[i].mode) {
         (*cleanup_modes[i].func)(d, action);
+        break;
+      }
+
+    /* A cleanup handler (such as tedit on conflict or I/O error) may decline
+     * to close the editor so the writer keeps their draft. */
+    if (STATE(d) == CON_TEDIT && d->str)
+      return;
 
     /* Common post cleanup code. */
     d->str = NULL;

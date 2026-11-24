@@ -1068,41 +1068,41 @@ void extract_char_final(struct char_data *ch)
     }
   }
 
-  /* We're booting the character of someone who has switched so first we need
-   * to stuff them back into their own body.  Clean up any open editor/OLC/pager
-   * while d->character still points to the switched writer. */
-  if (!IS_NPC(ch) && !ch->desc) {
-    for (d = descriptor_list; d; d = d->next)
+  /* If another character is currently switched into ch, return that occupant
+   * to their own body first so ch->desc is free before restoring ch's owner. */
+  if (ch->desc && ch->desc->original) {
+    close_descriptor_editors(ch->desc);
+    do_return(ch, NULL, 0, 0);
+  }
+
+  /* Look up ch's original owner independently of ch->desc (which may just
+   * have held an occupant above). Clean up any open editor/OLC/pager while
+   * d->character still points to the switched writer, then return them to ch. */
+  if (!IS_NPC(ch)) {
+    for (d = descriptor_list; d; d = d->next) {
       if (d->original == ch) {
         close_descriptor_editors(d);
-	do_return(d->character, NULL, 0, 0);
+        do_return(d->character, NULL, 0, 0);
         break;
       }
+    }
   }
 
   if (ch->desc) {
-    /* This time we're extracting the body someone has switched into (not the
-     * body of someone switching as above) so we need to put the switcher back
-     * to their own body. If this body is not possessed, the owner won't have a
-     * body after the removal so dump them to the main menu. */
     close_descriptor_editors(ch->desc);
-    if (ch->desc->original)
-      do_return(ch, NULL, 0, 0);
-    else {
-      /* Now we boot anybody trying to log in with the same character, to help
-       * guard against duping.  CON_DISCONNECT is used to close a descriptor
-       * without extracting the d->character associated with it, for being
-       * link-dead, so we want CON_CLOSE to clean everything up. If we're
-       * here, we know it's a player so no IS_NPC check required. */
-      for (d = descriptor_list; d; d = d->next) {
-        if (d == ch->desc)
-          continue;
-        if (d->character && GET_IDNUM(ch) == GET_IDNUM(d->character))
-          STATE(d) = CON_CLOSE;
-      }
-      STATE(ch->desc) = CON_MENU;
-      write_to_output(ch->desc, "%s", CONFIG_MENU);
+    /* Now we boot anybody trying to log in with the same character, to help
+     * guard against duping.  CON_DISCONNECT is used to close a descriptor
+     * without extracting the d->character associated with it, for being
+     * link-dead, so we want CON_CLOSE to clean everything up. If we're
+     * here, we know it's a player so no IS_NPC check required. */
+    for (d = descriptor_list; d; d = d->next) {
+      if (d == ch->desc)
+        continue;
+      if (d->character && GET_IDNUM(ch) == GET_IDNUM(d->character))
+        STATE(d) = CON_CLOSE;
     }
+    STATE(ch->desc) = CON_MENU;
+    write_to_output(ch->desc, "%s", CONFIG_MENU);
   }
 
   /* On with the character's assets... */

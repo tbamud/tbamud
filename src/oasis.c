@@ -189,7 +189,12 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
      free(OLC_TEDIT_STR(d));
      OLC_TEDIT_STR(d) = NULL;
    }
+   if (OLC_TEDIT_ORIG(d)) {
+     free(OLC_TEDIT_ORIG(d));
+     OLC_TEDIT_ORIG(d) = NULL;
+   }
    OLC_TEDIT_TARGET(d) = NULL;
+   OLC_TEDIT_VERSION(d) = 0;
    /* hedit alone. Unconditional like the block above, and for the same
     * reason: it is a copy this editor owns. CLEANUP_STRUCTS skips
     * OLC_HELP's strings because those are handed to the help table on the
