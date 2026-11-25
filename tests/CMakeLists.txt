@@ -241,6 +241,9 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     else()
         set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
     endif()
+    if(CRYPT_LIBRARY)
+        target_link_libraries(test_quest PRIVATE ${CRYPT_LIBRARY})
+    endif()
     add_test(NAME test_quest COMMAND test_quest)
 
     add_executable(test_genolc_savers
