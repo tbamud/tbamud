@@ -239,6 +239,55 @@ static void test_rescue_needs_the_captive_in_the_room(void)
   assert_not_rescued(holder);
 }
 
+static void test_a_player_death_does_not_complete_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *victim = new_player(CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  GET_POS(victim) = POS_DEAD;
+  SET_BIT_AR(PLR_FLAGS(victim), PLR_NOTDEADYET);
+  autoquest_trigger_check(holder, victim, NULL, AQ_MOB_SAVE);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_an_npc_death_in_another_room_does_not_complete_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, HALL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  holder_sees_death(holder, guard);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_a_missing_kill_victim_does_not_complete_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  autoquest_trigger_check(holder, NULL, NULL, AQ_MOB_SAVE);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_a_living_pet_does_not_complete_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  autoquest_trigger_check(holder, pet, NULL, AQ_MOB_SAVE);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
 static void test_rescue_fails_when_the_captive_died_first(void)
 {
   struct char_data *holder = new_player(CELL);
@@ -570,6 +619,10 @@ int main(void)
   RUN_TEST(test_rescue_completes_when_the_captive_is_left_alive);
   RUN_TEST(test_rescue_waits_while_a_captor_lives);
   RUN_TEST(test_rescue_needs_the_captive_in_the_room);
+  RUN_TEST(test_a_player_death_does_not_complete_the_rescue);
+  RUN_TEST(test_an_npc_death_in_another_room_does_not_complete_the_rescue);
+  RUN_TEST(test_a_missing_kill_victim_does_not_complete_the_rescue);
+  RUN_TEST(test_a_living_pet_does_not_complete_the_rescue);
   RUN_TEST(test_rescue_fails_when_the_captive_died_first);
   RUN_TEST(test_killing_a_copy_of_the_captive_is_no_rescue);
   RUN_TEST(test_a_dying_captive_does_not_count);
