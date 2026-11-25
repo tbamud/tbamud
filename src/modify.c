@@ -120,6 +120,55 @@ void string_write(struct descriptor_data *d, char **writeto, size_t len, long ma
   d->mail_to = mailto;
 }
 
+/* Abort an active string editor session without further user input
+ * (for example when the writer's character is extracted mid-edit). */
+void string_abort(struct descriptor_data *d)
+{
+  if (!d || !d->str)
+    return;
+
+  switch (STATE(d)) {
+    case CON_CEDIT:
+    case CON_TEDIT:
+    case CON_REDIT:
+    case CON_MEDIT:
+    case CON_OEDIT:
+    case CON_PLR_DESC:
+    case CON_TRIGEDIT:
+    case CON_HEDIT:
+    case CON_QEDIT:
+    case CON_IBTEDIT:
+      if (*d->str)
+        free(*d->str);
+      *d->str    = d->backstr;
+      d->backstr = NULL;
+      break;
+    case CON_PLAYING:
+      if (d->character)
+        playing_string_cleanup(d, STRINGADD_ABORT);
+      break;
+    default:
+      log("SYSERR: string_abort: Aborting write from unknown origin (%d).", STATE(d));
+      break;
+  }
+
+  if (d->backstr) {
+    free(d->backstr);
+    d->backstr = NULL;
+  }
+
+  d->str = NULL;
+  d->mail_to = 0;
+  d->max_str = 0;
+  if (d->character && !IS_NPC(d->character)) {
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_BUG);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_IDEA);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_TYPO);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_MAILING);
+    REMOVE_BIT_AR(PLR_FLAGS(d->character), PLR_WRITING);
+  }
+}
+
 /* Add user input to the 'current' string (as defined by d->str). This is still
  * overly complex. */
 void string_add(struct descriptor_data *d, char *str)
@@ -230,8 +279,15 @@ void string_add(struct descriptor_data *d, char *str)
     };
 
     for (i = 0; cleanup_modes[i].func; i++)
-      if (STATE(d) == cleanup_modes[i].mode)
+      if (STATE(d) == cleanup_modes[i].mode) {
         (*cleanup_modes[i].func)(d, action);
+        break;
+      }
+
+    /* A cleanup handler (such as tedit on conflict or I/O error) may decline
+     * to close the editor so the writer keeps their draft. */
+    if (STATE(d) == CON_TEDIT && d->str)
+      return;
 
     /* Common post cleanup code. */
     d->str = NULL;
@@ -281,7 +337,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     return;
   }
 
-  if (PLR_FLAGGED(d->character, PLR_MAILING)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_MAILING)) {
     if (action == STRINGADD_SAVE && *d->str) {
       if (store_mail(d->mail_to, GET_IDNUM(d->character), *d->str)) {
         write_to_output(d, "Message sent!\r\n");
@@ -312,7 +368,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     }
     return;
   }
-  if (PLR_FLAGGED(d->character, PLR_IDEA)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_IDEA)) {
     if (action == STRINGADD_SAVE && d->str && *d->str) {
       d->str = NULL;
       write_to_output(d, "Idea saved!\r\n");
@@ -323,7 +379,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     }
     return;
   }
-  if (PLR_FLAGGED(d->character, PLR_BUG)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_BUG)) {
     if (action == STRINGADD_SAVE && d->str && *d->str) {
       d->str = NULL;
       write_to_output(d, "Bug saved!\r\n");
@@ -334,7 +390,7 @@ static void playing_string_cleanup(struct descriptor_data *d, int action)
     }
     return;
   }
-  if (PLR_FLAGGED(d->character, PLR_TYPO)) {
+  if (d->character && !IS_NPC(d->character) && PLR_FLAGGED(d->character, PLR_TYPO)) {
     if (action == STRINGADD_SAVE && d->str && *d->str) {
       d->str = NULL;
       write_to_output(d, "Typo saved!\r\n");
@@ -576,6 +632,24 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
   show_string(d, actbuf);
 }
 
+/* Dismiss any active pager state on a descriptor. */
+void clear_pager(struct descriptor_data *d)
+{
+  if (!d)
+    return;
+
+  if (d->showstr_vector) {
+    free(d->showstr_vector);
+    d->showstr_vector = NULL;
+  }
+  if (d->showstr_head) {
+    free(d->showstr_head);
+    d->showstr_head = NULL;
+  }
+  d->showstr_count = 0;
+  d->showstr_page = 0;
+}
+
 /* The call that displays the next page. */
 void show_string(struct descriptor_data *d, char *input)
 {
@@ -586,13 +660,7 @@ void show_string(struct descriptor_data *d, char *input)
 
   /* Q is for quit. :) */
   if (LOWER(*buf) == 'q') {
-    free(d->showstr_vector);
-    d->showstr_vector = NULL;
-    d->showstr_count = 0;
-    if (d->showstr_head) {
-      free(d->showstr_head);
-      d->showstr_head = NULL;
-    }
+    clear_pager(d);
     return;
   }
   /* Back up one page internally so we can display it again. */
@@ -616,13 +684,7 @@ void show_string(struct descriptor_data *d, char *input)
    * bleeding. - Welcor */
   if (d->showstr_page + 1 >= d->showstr_count) {
     send_to_char(d->character, "%s\tn", d->showstr_vector[d->showstr_page]);
-    free(d->showstr_vector);
-    d->showstr_vector = NULL;
-    d->showstr_count = 0;
-    if (d->showstr_head) {
-      free(d->showstr_head);
-      d->showstr_head = NULL;
-    }
+    clear_pager(d);
   }
   /* Or if we have more to show.... */
   else {

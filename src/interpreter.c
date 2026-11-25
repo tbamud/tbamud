@@ -1121,6 +1121,7 @@ static int perform_dupe_check(struct descriptor_data *d)
       /* Original descriptor was switched, booting it and restoring normal body control. */
 
       write_to_output(d, "\r\nMultiple login detected -- disconnecting.\r\n");
+      close_descriptor_editors(k);
       STATE(k) = CON_CLOSE;
       pref_temp=GET_PREF(k->character);
       if (!target) {
@@ -1134,11 +1135,13 @@ static int perform_dupe_check(struct descriptor_data *d)
     } else if (k->character && GET_IDNUM(k->character) == id && k->original) {
       /* Character taking over their own body, while an immortal was switched to it. */
 
+      close_descriptor_editors(k);
       do_return(k->character, NULL, 0, 0);
     } else if (k->character && GET_IDNUM(k->character) == id) {
       /* Character taking over their own body. */
       pref_temp=GET_PREF(k->character);
 
+      close_descriptor_editors(k);
       if (!target && STATE(k) == CON_PLAYING) {
 	write_to_output(k, "\r\nThis body has been usurped!\r\n");
 	target = k->character;
@@ -1249,8 +1252,11 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
   struct descriptor_data *k, *next_k;
   bool found = FALSE;
 
-  /* Now that this descriptor has successfully logged in, disconnect all
-   * other descriptors controlling a character with the same ID number. */
+  if (!d || !d->character || !GET_NAME(d->character))
+    return (FALSE);
+
+  /* Once the player confirms a new character name, disconnect any other
+   * descriptors already using that name. */
 
   for (k = descriptor_list; k; k = next_k) {
     next_k = k->next;
@@ -1258,16 +1264,14 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
     if (k == d)
       continue;
 
-   if (k->character == NULL)
+    if (k->character == NULL || GET_NAME(k->character) == NULL)
       continue;
 
     /* Do the player names match? */
-    if (!strcmp(GET_NAME(k->character), GET_NAME(d->character))) {
+    if (!str_cmp(GET_NAME(k->character), GET_NAME(d->character))) {
       /* Check the other character is still in creation? */
-      if ((STATE(k) > CON_PLAYING) && (STATE(k) < CON_QCLASS)) {
-        /* Boot the older one */
-        k->character->desc = NULL;
-        k->character = NULL;
+      if ((STATE(k) > CON_PLAYING) && (STATE(k) <= CON_QCLASS)) {
+        /* Boot the older one; keep k->character attached so close_socket frees it */
         k->original = NULL;
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
         STATE(k) = CON_CLOSE;
@@ -1277,14 +1281,17 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
         found = TRUE;
       } else {
         /* Something went VERY wrong, boot both chars */
-        k->character->desc = NULL;
-        k->character = NULL;
+        close_descriptor_editors(k);
+        if (IS_PLAYING(k) || STATE(k) == CON_DISCONNECT) {
+          k->character->desc = NULL;
+          k->character = NULL;
+        }
         k->original = NULL;
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
         STATE(k) = CON_CLOSE;
 
-        d->character->desc = NULL;
-        d->character = NULL;
+        /* Keep d->character attached so close_socket frees the creation struct */
+        close_descriptor_editors(d);
         d->original = NULL;
         write_to_output(d, "\r\nSorry, due to multiple connections, all your connections are being closed.\r\n");
         write_to_output(d, "\r\nPlease reconnect.\r\n");
@@ -1292,7 +1299,7 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
 
         mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Multiple logins with 1st in-game and the 2nd in char creation.");
 
-        found = TRUE;
+        return (TRUE);
       }
     }
   }
@@ -1533,6 +1540,8 @@ void nanny(struct descriptor_data *d, char *arg)
 	return;
       }
       perform_new_char_dupe_check(d);
+      if (STATE(d) == CON_CLOSE)
+	return;
       write_to_output(d, "New character.\r\nGive me a password for %s: ", GET_PC_NAME(d->character));
       echo_off(d);
       STATE(d) = CON_NEWPASSWD;

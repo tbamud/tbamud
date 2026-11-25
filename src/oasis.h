@@ -99,6 +99,10 @@ struct oasis_olc_data {
   char *help_text;               /* hedit: that row's text, as opened     */
   int help_line_shared;          /* hedit: keyword line not unique at open*/
   char *storage;                 /* used for 'tedit'         */
+  char *tedit_str;               /* tedit: private draft     */
+  char *tedit_orig;              /* tedit: text at open      */
+  char **tedit_target;           /* tedit: live text target  */
+  unsigned long tedit_version;   /* tedit: save generation   */
   struct char_data *mob;         /* used for 'medit'         */
   struct room_data *room;        /* used for 'redit'         */
   struct obj_data *obj;          /* used for 'oedit'         */
@@ -135,6 +139,10 @@ extern const char *nrm, *grn, *cyn, *yel;
 #define OLC_ZNUM(d)    (OLC(d)->zone_num) /**< Real zone number.	*/
 
 #define OLC_STORAGE(d) (OLC(d)->storage)  /**< char pointer.	*/
+#define OLC_TEDIT_STR(d)     (OLC(d)->tedit_str)     /**< tedit draft.	*/
+#define OLC_TEDIT_ORIG(d)    (OLC(d)->tedit_orig)    /**< tedit baseline.	*/
+#define OLC_TEDIT_TARGET(d)  (OLC(d)->tedit_target)  /**< tedit target.	*/
+#define OLC_TEDIT_VERSION(d) (OLC(d)->tedit_version) /**< tedit version.	*/
 #define OLC_ROOM(d)    (OLC(d)->room)     /**< Room structure.	*/
 #define OLC_OBJ(d)     (OLC(d)->obj)      /**< Object structure.	*/
 #define OLC_ZONE(d)    (OLC(d)->zone)     /**< Zone structure.	*/

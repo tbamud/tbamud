@@ -122,6 +122,20 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
 __attribute__((weak))
 void parse_tab(char *str) { (void)str; }
 
+__attribute__((weak))
+void string_abort(struct descriptor_data *d) { (void)d; }
+
+__attribute__((weak))
+void clear_pager(struct descriptor_data *d) { (void)d; }
+
+__attribute__((weak))
+void close_descriptor_editors(struct descriptor_data *d) { (void)d; }
+
+/* ---------- oasis.c ---------- */
+__attribute__((weak))
+void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
+{ (void)d; (void)cleanup_type; }
+
 /* ---------- handler.c ---------- */
 __attribute__((weak))
 bool affected_by_spell(struct char_data *ch, int spell)
