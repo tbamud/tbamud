@@ -438,12 +438,21 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
             generic_complete_quest(ch);
       break;
     case AQ_MOB_SAVE:
-      /* A holder who has just died earns nothing, and neither does killing
-       * a copy of the mob to be rescued: raw_kill() passes the mob that
-       * died as vict, and another copy left in the room would count. */
-      if (DEAD(ch) ||
-          (vict && IS_NPC(vict) && GET_MOB_VNUM(vict) == QST_TARGET(rnum)))
+      /* A holder who has just died earns nothing. */
+      if (DEAD(ch))
         break;
+      if (vict && IS_NPC(vict)) {
+        /* raw_kill() passes the mob that died.  Killing a copy of the mob
+         * to be rescued is no rescue, though another copy left in the room
+         * would count. */
+        if (DEAD(vict) && GET_MOB_VNUM(vict) == QST_TARGET(rnum))
+          break;
+        /* A heal or bandage passes the mob it brought back from dying.  Only
+         * the mob to be rescued counts: healing a pet, which may stay, would
+         * otherwise finish a rescue in a room someone else cleared. */
+        if (!DEAD(vict) && GET_MOB_VNUM(vict) != QST_TARGET(rnum))
+          break;
+      }
       found = FALSE;
       for (i = world[IN_ROOM(ch)].people; i; i = i->next_in_room) {
         if (!IS_NPC(i) || MOB_FLAGGED(i, MOB_NOTDEADYET))

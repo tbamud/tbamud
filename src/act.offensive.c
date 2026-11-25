@@ -579,8 +579,8 @@ ACMD(do_bandage)
   GET_HIT(vict) = 0;
   update_pos(vict);
   /* The rescue check runs when a captor dies.  If the captive was dying
-   * then, bandaging it is what finishes the rescue.  Pass no vict: the
-   * check takes vict to be a mob that has just died. */
+   * then, bandaging it is what finishes the rescue; vict goes along so the
+   * check counts the bandage only if vict is the captive. */
   if (was_dying && IS_NPC(vict))
-    autoquest_trigger_check(ch, NULL, NULL, AQ_MOB_SAVE);
+    autoquest_trigger_check(ch, vict, NULL, AQ_MOB_SAVE);
 }

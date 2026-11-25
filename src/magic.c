@@ -826,10 +826,10 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
   GET_MOVE(victim) = MIN(GET_MAX_MOVE(victim), GET_MOVE(victim) + move);
   update_pos(victim);
   /* The rescue check runs when a captor dies.  If the captive was dying
-   * then, healing it is what finishes the rescue.  Pass no vict: the
-   * check takes vict to be a mob that has just died. */
+   * then, healing it is what finishes the rescue; victim goes along so the
+   * check counts the heal only if victim is the captive. */
   if (was_dying && IS_NPC(victim) && GET_POS(victim) >= POS_STUNNED)
-    autoquest_trigger_check(ch, NULL, NULL, AQ_MOB_SAVE);
+    autoquest_trigger_check(ch, victim, NULL, AQ_MOB_SAVE);
 }
 
 void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
