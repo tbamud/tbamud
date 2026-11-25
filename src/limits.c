@@ -220,6 +220,13 @@ void run_autowiz(void)
 #endif /* CIRCLE_UNIX || CIRCLE_WINDOWS */
 }
 
+int apply_happy_hour_exp_bonus(int gain)
+{
+  if (IS_HAPPYHOUR && IS_HAPPYEXP)
+    gain += (int)((float)gain * ((float)HAPPY_EXP / (float)100));
+  return gain;
+}
+
 void gain_exp(struct char_data *ch, int gain)
 {
   int is_altered = FALSE;
@@ -233,9 +240,7 @@ void gain_exp(struct char_data *ch, int gain)
     return;
   }
   if (gain > 0) {
-    if ((IS_HAPPYHOUR) && (IS_HAPPYEXP))
-      gain += (int)((float)gain * ((float)HAPPY_EXP / (float)(100)));
-
+    gain = apply_happy_hour_exp_bonus(gain);
     gain = MIN(CONFIG_MAX_EXP_GAIN, gain);	/* put a cap on the max gain per kill */
     GET_EXP(ch) += gain;
     while (GET_LEVEL(ch) < LVL_IMMORT - CONFIG_NO_MORT_TO_IMMORT &&
@@ -272,10 +277,7 @@ void gain_exp_regardless(struct char_data *ch, int gain)
   int is_altered = FALSE;
   int num_levels = 0;
 
-  if ((IS_HAPPYHOUR) && (IS_HAPPYEXP))
-    gain += (int)((float)gain * ((float)HAPPY_EXP / (float)(100)));
-
-  GET_EXP(ch) += gain;
+  GET_EXP(ch) += apply_happy_hour_exp_bonus(gain);
   if (GET_EXP(ch) < 0)
     GET_EXP(ch) = 0;
 
