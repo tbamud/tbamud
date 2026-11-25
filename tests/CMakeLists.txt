@@ -214,6 +214,28 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     endif()
     add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
 
+    # Rescue and Find-mob checks in quest.c, with the rescue check
+    # char_to_room() runs; section GC drops the quest commands.
+    add_executable(test_quest
+        ${UNITY_SRC}
+        ${STUBS_SRC}
+        ${MUD_SRCDIR}/utils.c
+        ${MUD_SRCDIR}/random.c
+        ${MUD_SRCDIR}/lists.c
+        ${MUD_SRCDIR}/handler.c
+        ${MUD_SRCDIR}/quest.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_quest.c
+    )
+    target_include_directories(test_quest PRIVATE ${TEST_INCLUDES})
+    target_compile_options(test_quest PRIVATE ${TEST_CFLAGS}
+        -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    add_test(NAME test_quest COMMAND test_quest)
+
     add_executable(test_genolc_savers
         ${UNITY_SRC}
         ${CMAKE_CURRENT_SOURCE_DIR}/test_genolc_savers.c

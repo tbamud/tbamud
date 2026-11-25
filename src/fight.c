@@ -312,9 +312,23 @@ struct char_data *i;
   make_corpse(ch);
   extract_char(ch);
 
+  /* Rescues and room clears are judged in the room where ch died, for the
+   * whole side that fought there: a charmed killer's master, and every
+   * member of the killer's group who is present.  ch goes along so a rescue
+   * can tell when the mob that died was the one to be saved. */
   if (killer) {
-    autoquest_trigger_check(killer, NULL, NULL, AQ_MOB_SAVE);
-    autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
+    if (IS_NPC(killer) && AFF_FLAGGED(killer, AFF_CHARM) && killer->master)
+      killer = killer->master;
+    if (GROUP(killer)) {
+      while ((i = (struct char_data *) simple_list(GROUP(killer)->members)) != NULL)
+        if (IN_ROOM(i) == IN_ROOM(ch)) {
+          autoquest_trigger_check(i, ch, NULL, AQ_MOB_SAVE);
+          autoquest_trigger_check(i, ch, NULL, AQ_ROOM_CLEAR);
+        }
+    } else if (IN_ROOM(killer) == IN_ROOM(ch)) {
+      autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
+      autoquest_trigger_check(killer, ch, NULL, AQ_ROOM_CLEAR);
+    }
   }
 }
 
