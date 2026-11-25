@@ -868,7 +868,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'x':
     case 'X':
-      write_to_output(d, "Are you sure you want to delete this object? ");
+      write_to_output(d, "Are you sure you want to delete object %d? ", OLC_NUM(d));
       OLC_MODE(d) = OEDIT_DELETE;
       break;
     default:
@@ -1221,7 +1221,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 
   case OEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_object(GET_OBJ_RNUM(OLC_OBJ(d))) != NOTHING) {
+      if (delete_object(real_object(OLC_NUM(d))) != NOTHING) {
         write_to_output(d, "Object deleted.\r\n");
         /* save_all() writes the object file and every zone file the
          * delete just flagged -- and whatever else is on the save list,
