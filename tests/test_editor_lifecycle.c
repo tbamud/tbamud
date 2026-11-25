@@ -1865,26 +1865,42 @@ static void free_creation_char(struct char_data *ch)
 
 static void test_new_char_dupe_check_older_creation_and_ingame_collision(void)
 {
-  struct descriptor_data d_older, d_new1, d_trailing, d_ingame, d_new2;
-  struct char_data *ch_older, *ch_new1, *bystander, *builder, *ch_new2;
+  struct descriptor_data d_unnamed, d_older, d_qclass, d_new1, d_trailing, d_ingame, d_new2;
+  struct char_data *ch_unnamed, *ch_older, *ch_qclass, *ch_new1, *bystander, *builder, *ch_new2;
   char arg[MAX_INPUT_LENGTH];
 
-  /* Case A: older connection is also in char creation -> boot older, proceed */
-  ch_older = make_creation_char("NewbieOne", &d_older, CON_NEWPASSWD);
-  ch_new1 = make_creation_char("NewbieOne", &d_new1, CON_NAME_CNFRM);
+  /* Case A: unnamed CON_GET_NAME descriptor is skipped; older connections in
+   * CON_NEWPASSWD and at the CON_QCLASS boundary (matched case-insensitively)
+   * are booted with characters kept attached while the new session proceeds. */
+  ch_unnamed = make_creation_char("temp", &d_unnamed, CON_GET_NAME);
+  free(ch_unnamed->player.name);
+  ch_unnamed->player.name = NULL;
+
+  ch_older = make_creation_char("McNewbie", &d_older, CON_NEWPASSWD);
+  ch_qclass = make_creation_char("MCNEWBIE", &d_qclass, CON_QCLASS);
+  ch_new1 = make_creation_char("Mcnewbie", &d_new1, CON_NAME_CNFRM);
 
   snprintf(arg, sizeof(arg), "Y");
   nanny(&d_new1, arg);
 
+  TEST_ASSERT_EQUAL_INT(CON_GET_NAME, STATE(&d_unnamed));
+  TEST_ASSERT_EQUAL_PTR(ch_unnamed, d_unnamed.character);
   TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_older));
   TEST_ASSERT_EQUAL_PTR(ch_older, d_older.character);
   TEST_ASSERT_EQUAL_PTR(&d_older, ch_older->desc);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_qclass));
+  TEST_ASSERT_EQUAL_PTR(ch_qclass, d_qclass.character);
+  TEST_ASSERT_EQUAL_PTR(&d_qclass, ch_qclass->desc);
   TEST_ASSERT_EQUAL_INT(CON_NEWPASSWD, STATE(&d_new1));
   TEST_ASSERT_EQUAL_PTR(ch_new1, d_new1.character);
 
   unlink_descriptor(&d_new1);
+  unlink_descriptor(&d_qclass);
   unlink_descriptor(&d_older);
+  unlink_descriptor(&d_unnamed);
+  free_creation_char(ch_unnamed);
   free_creation_char(ch_older);
+  free_creation_char(ch_qclass);
   free_creation_char(ch_new1);
 
   /* Case B: first connection is in-game (in CON_TEDIT) and a trailing
@@ -1901,7 +1917,7 @@ static void test_new_char_dupe_check_older_creation_and_ingame_collision(void)
   TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d_ingame));
   send_editor_line(&d_ingame, "Unsaved collision draft");
 
-  ch_new2 = make_creation_char("CollisionBuilder", &d_new2, CON_NAME_CNFRM);
+  ch_new2 = make_creation_char("Collisionbuilder", &d_new2, CON_NAME_CNFRM);
   /* Verify list order: d_new2 -> d_ingame -> d_trailing */
   TEST_ASSERT_EQUAL_PTR(&d_ingame, d_new2.next);
   TEST_ASSERT_EQUAL_PTR(&d_trailing, d_ingame.next);

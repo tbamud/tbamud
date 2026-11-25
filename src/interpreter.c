@@ -1223,6 +1223,9 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
   struct descriptor_data *k, *next_k;
   bool found = FALSE;
 
+  if (!d || !d->character || !GET_NAME(d->character))
+    return (FALSE);
+
   /* Now that this descriptor has successfully logged in, disconnect all
    * other descriptors controlling a character with the same ID number. */
 
@@ -1232,13 +1235,13 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
     if (k == d)
       continue;
 
-   if (k->character == NULL)
+    if (k->character == NULL || GET_NAME(k->character) == NULL)
       continue;
 
     /* Do the player names match? */
-    if (!strcmp(GET_NAME(k->character), GET_NAME(d->character))) {
+    if (!str_cmp(GET_NAME(k->character), GET_NAME(d->character))) {
       /* Check the other character is still in creation? */
-      if ((STATE(k) > CON_PLAYING) && (STATE(k) < CON_QCLASS)) {
+      if ((STATE(k) > CON_PLAYING) && (STATE(k) <= CON_QCLASS)) {
         /* Boot the older one; keep k->character attached so close_socket frees it */
         k->original = NULL;
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
@@ -1250,8 +1253,10 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
       } else {
         /* Something went VERY wrong, boot both chars */
         close_descriptor_editors(k);
-        k->character->desc = NULL;
-        k->character = NULL;
+        if (IS_PLAYING(k) || STATE(k) == CON_DISCONNECT) {
+          k->character->desc = NULL;
+          k->character = NULL;
+        }
         k->original = NULL;
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
         STATE(k) = CON_CLOSE;
