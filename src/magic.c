@@ -827,10 +827,10 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
   update_pos(victim);
   /* The rescue check runs when a captor dies.  If the captive was dying
    * then, healing it is what finishes the rescue, for the healer's side as
-   * for the killer's.  Pass no vict: the check takes vict to be a mob that
-   * has just died. */
+   * for the killer's; victim goes along so the check counts the heal only if
+   * victim is the captive. */
   if (was_dying && IS_NPC(victim) && GET_POS(victim) >= POS_STUNNED)
-    autoquest_group_check(ch, NULL, IN_ROOM(victim), AQ_MOB_SAVE);
+    autoquest_group_check(ch, victim, IN_ROOM(victim), AQ_MOB_SAVE);
 }
 
 void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,

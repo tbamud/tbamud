@@ -436,6 +436,47 @@ static void test_healing_a_captive_that_was_not_dying_finishes_nothing(void)
   assert_not_rescued(holder);
 }
 
+/* The holder's own pet, left dying in a cell someone else cleared. */
+static struct char_data *new_dying_pet(struct char_data *master, room_rnum room)
+{
+  static char name[] = "pet";
+  struct char_data *pet = new_pet(master, room);
+
+  pet->player.name = name;
+  GET_MAX_HIT(pet) = 20;
+  GET_HIT(pet) = -4;
+  GET_POS(pet) = POS_INCAP;
+  return pet;
+}
+
+/* A pet may stay with the captive, so healing one changes nothing about the
+ * rescue; only the captive's own recovery can finish it. */
+static void test_healing_a_dying_pet_finishes_nothing(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_dying_pet(holder, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  mag_points(20, holder, pet, SPELL_CURE_CRITIC, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(pet));
+  assert_not_rescued(holder);
+}
+
+static void test_bandaging_a_dying_pet_finishes_nothing(void)
+{
+  char arg[] = "pet";
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_dying_pet(holder, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  SET_SKILL(holder, SKILL_BANDAGE, 101);
+  give_quest(holder, Q_RESCUE);
+  do_bandage(holder, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STUNNED, GET_POS(pet));
+  assert_not_rescued(holder);
+}
+
 /* From here on the checks run where the game runs them: raw_kill(),
  * mag_points() and do_bandage(). */
 
@@ -624,6 +665,8 @@ int main(void)
   RUN_TEST(test_healing_a_captive_left_dying_finishes_the_rescue);
   RUN_TEST(test_bandaging_a_captive_left_dying_finishes_the_rescue);
   RUN_TEST(test_healing_a_captive_that_was_not_dying_finishes_nothing);
+  RUN_TEST(test_healing_a_dying_pet_finishes_nothing);
+  RUN_TEST(test_bandaging_a_dying_pet_finishes_nothing);
   RUN_TEST(test_a_pets_kill_completes_the_rescue);
   RUN_TEST(test_a_groupmates_kill_completes_the_rescue);
   RUN_TEST(test_a_groupmates_pets_kill_completes_the_rescue);
