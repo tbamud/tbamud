@@ -7424,7 +7424,9 @@ main menu, you will be shown a list to choose from:
 				  killing blow.
 4) Save mob       - Player needs to protect or save a particular mobile.
                   Ends: When the player kills the last other mobile in
-                  the room and the target is still there and stable.
+                  the room while the target is there and not dying
+                  (incapacitated or mortally wounded).  If it is dying,
+                  the player can still finish by healing or bandaging it.
                   Players' charmed pets may stay with the target.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.

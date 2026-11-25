@@ -450,7 +450,8 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
           continue;
         if (GET_MOB_VNUM(i) == QST_TARGET(rnum)) {
           /* Incapacitated and mortally wounded mobs bleed to death in
-           * point_update(); a stunned one recovers by itself. */
+           * point_update() unless healed or bandaged, which runs this
+           * check again; a stunned one recovers by itself. */
           if (GET_POS(i) >= POS_STUNNED)
             found = TRUE;
         } else if (!AFF_FLAGGED(i, AFF_CHARM) || !i->master ||

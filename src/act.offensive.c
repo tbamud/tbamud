@@ -20,6 +20,7 @@
 #include "act.h"
 #include "fight.h"
 #include "mud_event.h"
+#include "quest.h"
 
 ACMD(do_assist)
 {
@@ -531,7 +532,7 @@ ACMD(do_bandage)
 {
   char arg[MAX_INPUT_LENGTH];
   struct char_data * vict;
-  int percent, prob;
+  int percent, prob, was_dying;
 
   if (!GET_SKILL(ch, SKILL_BANDAGE))
   {
@@ -574,6 +575,12 @@ ACMD(do_bandage)
     vict, TO_NOTVICT);
   act("Someone bandages you, and you feel a bit better now.",
          FALSE, ch, 0, vict, TO_VICT);
+  was_dying = GET_POS(vict) < POS_STUNNED;
   GET_HIT(vict) = 0;
   update_pos(vict);
+  /* The rescue check runs when a captor dies.  If the captive was dying
+   * then, bandaging it is what finishes the rescue.  Pass no vict: the
+   * check takes vict to be a mob that has just died. */
+  if (was_dying && IS_NPC(vict))
+    autoquest_trigger_check(ch, NULL, NULL, AQ_MOB_SAVE);
 }

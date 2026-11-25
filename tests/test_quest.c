@@ -1,4 +1,6 @@
-/* Rescue quests need a living, stable captive and a living player. */
+/* Rescue quests need a living, stable captive and a living player.  A
+ * captive left dying when the last guard falls can still be healed or
+ * bandaged to finish the rescue. */
 #include "unity.h"
 #include "conf.h"
 #include "sysdep.h"
@@ -6,6 +8,8 @@
 #include "utils.h"
 #include "db.h"
 #include "handler.h"
+#include "spells.h"
+#include "act.h"
 #include "quest.h"
 
 /* Globals defined strongly in test_stubs.c */
@@ -25,6 +29,32 @@ obj_rnum real_object(obj_vnum vnum) { (void)vnum; return NOTHING; }
 struct obj_data *read_object(obj_vnum nr, int type) { (void)nr; (void)type; return NULL; }
 void gain_exp(struct char_data *ch, int gain) { (void)ch; (void)gain; }
 int increase_gold(struct char_data *ch, int amt) { (void)ch; return amt; }
+
+/* mag_points() and do_bandage() call into fight.c, which would bring in
+ * the whole combat system.  update_pos() is fight.c's, line for line;
+ * damage() is reached only by a failed bandage, which no test makes. */
+void update_pos(struct char_data *victim)
+{
+  if ((GET_HIT(victim) > 0) && (GET_POS(victim) > POS_STUNNED))
+    return;
+  else if (GET_HIT(victim) > 0)
+    GET_POS(victim) = POS_STANDING;
+  else if (GET_HIT(victim) <= -11)
+    GET_POS(victim) = POS_DEAD;
+  else if (GET_HIT(victim) <= -6)
+    GET_POS(victim) = POS_MORTALLYW;
+  else if (GET_HIT(victim) <= -3)
+    GET_POS(victim) = POS_INCAP;
+  else
+    GET_POS(victim) = POS_STUNNED;
+}
+
+int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+{
+  (void)ch; (void)victim; (void)dam; (void)attacktype;
+  TEST_FAIL_MESSAGE("damage() reached");
+  return 0;
+}
 
 enum { CELL, HALL };                   /* room rnums */
 enum { CAPTIVE, GUARD, PET };          /* mob rnums */
@@ -289,6 +319,68 @@ static void test_a_dead_holder_is_not_rewarded(void)
   assert_not_rescued(holder);
 }
 
+/* A captive left incapacitated, as by an earthquake that also killed the
+ * last guard. */
+static struct char_data *new_dying_captive(room_rnum room)
+{
+  static char name[] = "captive";
+  struct char_data *captive = new_mob(CAPTIVE, room);
+
+  captive->player.name = name;
+  GET_MAX_HIT(captive) = 20;
+  GET_HIT(captive) = -4;
+  GET_POS(captive) = POS_INCAP;
+  return captive;
+}
+
+static void test_healing_a_captive_left_dying_finishes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  give_quest(holder, Q_RESCUE);
+  holder_sees_death(holder, guard);
+  assert_not_rescued(holder);
+
+  /* cure critic heals at least 11, so the captive ends up standing. */
+  mag_points(20, holder, captive, SPELL_CURE_CRITIC, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(captive));
+  assert_rescued(holder);
+}
+
+static void test_bandaging_a_captive_left_dying_finishes_the_rescue(void)
+{
+  char arg[] = "captive";
+  struct char_data *holder = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  /* The roll is rand_number(1, 101), so 101 never fails. */
+  SET_SKILL(holder, SKILL_BANDAGE, 101);
+  give_quest(holder, Q_RESCUE);
+  holder_sees_death(holder, guard);
+  assert_not_rescued(holder);
+
+  do_bandage(holder, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STUNNED, GET_POS(captive));
+  assert_rescued(holder);
+}
+
+/* Healing only finishes a rescue the captive's dying held up; healing a
+ * captive in a cell someone else cleared does not. */
+static void test_healing_a_captive_that_was_not_dying_finishes_nothing(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *captive = new_mob(CAPTIVE, CELL);
+
+  GET_MAX_HIT(captive) = 20;
+  GET_HIT(captive) = 5;
+  give_quest(holder, Q_RESCUE);
+  mag_points(20, holder, captive, SPELL_CURE_CRITIC, 0);
+  assert_not_rescued(holder);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -302,5 +394,8 @@ int main(void)
   RUN_TEST(test_a_players_pet_may_stay_with_the_captive);
   RUN_TEST(test_a_captors_charmed_minion_blocks_the_rescue);
   RUN_TEST(test_a_dead_holder_is_not_rewarded);
+  RUN_TEST(test_healing_a_captive_left_dying_finishes_the_rescue);
+  RUN_TEST(test_bandaging_a_captive_left_dying_finishes_the_rescue);
+  RUN_TEST(test_healing_a_captive_that_was_not_dying_finishes_nothing);
   return UNITY_END();
 }
