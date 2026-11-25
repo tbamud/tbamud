@@ -414,16 +414,16 @@ static bool rescue_room_is_clear(room_rnum room, int target,
                                  const struct char_data *patient)
 {
   struct char_data *mob;
-  bool captive_is_stable = false;
+  bool captive_is_stable = FALSE;
 
   for (mob = world[room].people; mob; mob = mob->next_in_room) {
     if (!IS_NPC(mob) || MOB_FLAGGED(mob, MOB_NOTDEADYET))
       continue;
     if (GET_MOB_VNUM(mob) == target) {
       if ((!patient || mob == patient) && GET_POS(mob) >= POS_STUNNED)
-        captive_is_stable = true;
+        captive_is_stable = TRUE;
     } else if (!is_players_pet(mob)) {
-      return false;
+      return FALSE;
     }
   }
   return captive_is_stable;
