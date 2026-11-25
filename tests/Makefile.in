@@ -34,7 +34,8 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle test_quest
+QUEST_TESTS = test_quest test_quest_credit test_rescue_movement
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle $(QUEST_TESTS)
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -121,12 +122,15 @@ test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
-# test_quest - covers rescue eligibility in src/quest.c.
-# Section GC drops the quest commands, which need the running game.
+# Test rescue eligibility, combat credit, and rescue checks after movement.
+# Section GC drops commands and other paths that need the running game.
 # ---------------------------------------------------------------------------
-test_quest: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
-            $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c \
-            test_quest.c
+test_quest: test_quest.c
+test_quest_credit: $(SRCDIR)/fight.c test_quest_credit.c
+test_rescue_movement: $(SRCDIR)/act.movement.c $(SRCDIR)/constants.c test_rescue_movement.c
+
+$(QUEST_TESTS): $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 test_editor_lifecycle: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \

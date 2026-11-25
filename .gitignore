@@ -102,6 +102,8 @@ tests/test_interpreter
 tests/test_class
 tests/test_lists
 tests/test_quest
+tests/test_quest_credit
+tests/test_rescue_movement
 tests/test-results/
 
 # autoconf leaves these behind when regenerating configure

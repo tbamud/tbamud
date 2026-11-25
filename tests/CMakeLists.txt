@@ -214,26 +214,37 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     endif()
     add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
 
-    # Rescue eligibility in quest.c; section GC drops the quest commands.
-    add_executable(test_quest
-        ${UNITY_SRC}
-        ${STUBS_SRC}
+    # Rescue eligibility, combat credit, and rescue checks after movement.
+    set(QUEST_TEST_SOURCES
         ${MUD_SRCDIR}/utils.c
         ${MUD_SRCDIR}/random.c
         ${MUD_SRCDIR}/lists.c
         ${MUD_SRCDIR}/handler.c
         ${MUD_SRCDIR}/quest.c
+    )
+    add_mud_test(test_quest
+        ${QUEST_TEST_SOURCES}
         ${CMAKE_CURRENT_SOURCE_DIR}/test_quest.c
     )
-    target_include_directories(test_quest PRIVATE ${TEST_INCLUDES})
-    target_compile_options(test_quest PRIVATE ${TEST_CFLAGS}
-        -ffunction-sections -fdata-sections)
-    if(APPLE)
-        set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
-    else()
-        set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
-    endif()
-    add_test(NAME test_quest COMMAND test_quest)
+    add_mud_test(test_quest_credit
+        ${QUEST_TEST_SOURCES}
+        ${MUD_SRCDIR}/fight.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_quest_credit.c
+    )
+    add_mud_test(test_rescue_movement
+        ${QUEST_TEST_SOURCES}
+        ${MUD_SRCDIR}/act.movement.c
+        ${MUD_SRCDIR}/constants.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_rescue_movement.c
+    )
+    foreach(quest_test IN ITEMS test_quest test_quest_credit test_rescue_movement)
+        target_compile_options(${quest_test} PRIVATE -ffunction-sections -fdata-sections)
+        if(APPLE)
+            set_property(TARGET ${quest_test} APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+        else()
+            set_property(TARGET ${quest_test} APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+        endif()
+    endforeach()
 
     add_executable(test_genolc_savers
         ${UNITY_SRC}
