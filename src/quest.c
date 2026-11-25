@@ -482,6 +482,19 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
   }
 }
 
+void check_rescue_on_arrival(struct char_data *ch)
+{
+  qst_rnum rnum;
+
+  /* Multi-target rescues count kills so repeat visits cannot spend a goal. */
+  if (IS_NPC(ch) || GET_QUEST(ch) == NOTHING ||
+      (rnum = real_quest(GET_QUEST(ch))) == NOTHING ||
+      QST_TYPE(rnum) != AQ_MOB_SAVE || QST_QUANTITY(rnum) != 1)
+    return;
+
+  autoquest_trigger_check(ch, NULL, NULL, AQ_MOB_SAVE);
+}
+
 void quest_timeout(struct char_data *ch)
 {
   if ((GET_QUEST(ch) != NOTHING) && (GET_QUEST_TIME(ch) != -1)) {

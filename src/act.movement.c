@@ -23,6 +23,7 @@
 #include "act.h"
 #include "fight.h"
 #include "oasis.h" /* for buildwalk */
+#include "quest.h"
 
 
 /* local only functions */
@@ -334,6 +335,8 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
 
   /* Only here is the move successful *and* complete. Return success for
    * calling functions to handle post move operations. */
+  if (IN_ROOM(ch) == going_to && GET_POS(ch) > POS_DEAD && !DEAD(ch))
+    check_rescue_on_arrival(ch);
   return (1);
 }
 
