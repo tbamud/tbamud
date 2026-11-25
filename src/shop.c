@@ -840,6 +840,8 @@ static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr,
   static char result[256];
   char	itemname[128],
 	quantity[16];	/* "Unlimited" or "%d" */
+  bool quest_item = OBJ_FLAGGED(obj, ITEM_QUEST);
+  int price = quest_item ? GET_OBJ_COST(obj) : buy_price(obj, shop_nr, keeper, ch);
 
   if (shop_producing(obj, shop_nr))
     strcpy(quantity, "Unlimited");	/* strcpy: OK (for 'quantity >= 10') */
@@ -873,7 +875,7 @@ static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr,
 
   snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d%s\r\n",
       aindex, quantity, count_color_chars(itemname)+48, itemname,
-      buy_price(obj, shop_nr, keeper, ch), OBJ_FLAGGED(obj, ITEM_QUEST) ? " qp" : "");
+      price, quest_item ? " qp" : "");
 
   return (result);
 }
@@ -910,25 +912,29 @@ static void shopping_list(char *arg, struct char_data *ch, struct char_data *kee
 	  if (!*name || isname(name, last_obj->name)) {
 	    strncat(buf, list_object(last_obj, cnt, lindex, shop_nr, keeper, ch), sizeof(buf) - len - 1);	/* strncat: OK */
             len = strlen(buf);
-            if (len + 1 >= sizeof(buf))
-              break;
             found = TRUE;
             if (OBJ_FLAGGED(last_obj, ITEM_QUEST))
               has_quest = TRUE;
+            if (len + 1 >= sizeof(buf))
+              break;
 	  }
 	  cnt = 1;
 	  last_obj = obj;
 	}
       }
-  lindex++;
+  if (last_obj && len + 1 < sizeof(buf) &&
+      (!*name || isname(name, last_obj->name))) {
+    strncat(buf, list_object(last_obj, cnt, lindex + 1, shop_nr, keeper, ch), sizeof(buf) - len - 1);
+    found = TRUE;
+    if (OBJ_FLAGGED(last_obj, ITEM_QUEST))
+      has_quest = TRUE;
+  }
+
   if (!last_obj)	/* we actually have nothing in our list for sale, period */
     send_to_char(ch, "Currently, there is nothing for sale.\r\n");
-  else if (*name && !found)	/* nothing the char was looking for was found */
+  else if (!found)
     send_to_char(ch, "Presently, none of those are for sale.\r\n");
   else {
-    if (!*name || isname(name, last_obj->name))	/* show last obj */
-      if (len < sizeof(buf))
-        strncat(buf, list_object(last_obj, cnt, lindex, shop_nr, keeper, ch), sizeof(buf) - len - 1);	/* strncat: OK */
     page_string(ch->desc, buf, TRUE);
     if (has_quest)
       send_to_char(ch, "Items flagged \"qp\" require quest points to purchase.\r\n");
