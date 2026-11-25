@@ -1226,8 +1226,8 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
   if (!d || !d->character || !GET_NAME(d->character))
     return (FALSE);
 
-  /* Now that this descriptor has successfully logged in, disconnect all
-   * other descriptors controlling a character with the same ID number. */
+  /* Once the player confirms a new character name, disconnect any other
+   * descriptors already using that name. */
 
   for (k = descriptor_list; k; k = next_k) {
     next_k = k->next;
