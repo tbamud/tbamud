@@ -1877,8 +1877,8 @@ static void test_new_char_dupe_check_older_creation_and_ingame_collision(void)
   nanny(&d_new1, arg);
 
   TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_older));
-  TEST_ASSERT_NULL(d_older.character);
-  TEST_ASSERT_NULL(ch_older->desc);
+  TEST_ASSERT_EQUAL_PTR(ch_older, d_older.character);
+  TEST_ASSERT_EQUAL_PTR(&d_older, ch_older->desc);
   TEST_ASSERT_EQUAL_INT(CON_NEWPASSWD, STATE(&d_new1));
   TEST_ASSERT_EQUAL_PTR(ch_new1, d_new1.character);
 
@@ -1919,8 +1919,8 @@ static void test_new_char_dupe_check_older_creation_and_ingame_collision(void)
   TEST_ASSERT_EQUAL_STRING("MOTD before creation collision\r\n", motd);
 
   TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_new2));
-  TEST_ASSERT_NULL(d_new2.character);
-  TEST_ASSERT_NULL(ch_new2->desc);
+  TEST_ASSERT_EQUAL_PTR(ch_new2, d_new2.character);
+  TEST_ASSERT_EQUAL_PTR(&d_new2, ch_new2->desc);
 
   TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_trailing));
   TEST_ASSERT_EQUAL_PTR(bystander, d_trailing.character);

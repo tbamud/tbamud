@@ -1239,9 +1239,7 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
     if (!strcmp(GET_NAME(k->character), GET_NAME(d->character))) {
       /* Check the other character is still in creation? */
       if ((STATE(k) > CON_PLAYING) && (STATE(k) < CON_QCLASS)) {
-        /* Boot the older one */
-        k->character->desc = NULL;
-        k->character = NULL;
+        /* Boot the older one; keep k->character attached so close_socket frees it */
         k->original = NULL;
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
         STATE(k) = CON_CLOSE;
@@ -1258,9 +1256,8 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
         STATE(k) = CON_CLOSE;
 
+        /* Keep d->character attached so close_socket frees the creation struct */
         close_descriptor_editors(d);
-        d->character->desc = NULL;
-        d->character = NULL;
         d->original = NULL;
         write_to_output(d, "\r\nSorry, due to multiple connections, all your connections are being closed.\r\n");
         write_to_output(d, "\r\nPlease reconnect.\r\n");
