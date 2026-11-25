@@ -1595,6 +1595,239 @@ static void test_tedit_confirms_disk_write_and_rename_before_publishing(void)
   free_test_char(b);
 }
 
+
+static void login_duplicate_via_nanny(struct descriptor_data *d_new,
+                                      const char *name, int level, long idnum)
+{
+  struct char_data *login_ch = calloc(1, sizeof(*login_ch));
+  const char *crypted;
+  char pw_in[MAX_INPUT_LENGTH];
+
+  TEST_ASSERT_NOT_NULL(login_ch);
+  login_ch->player_specials = calloc(1, sizeof(*login_ch->player_specials));
+  TEST_ASSERT_NOT_NULL(login_ch->player_specials);
+  login_ch->player.name = strdup(name);
+  login_ch->player.level = level;
+  login_ch->char_specials.saved.idnum = idnum;
+  IN_ROOM(login_ch) = NOWHERE;
+
+  crypted = CRYPT("secret", "aa");
+  strncpy(GET_PASSWD(login_ch), crypted, MAX_PWD_LENGTH);
+  GET_PASSWD(login_ch)[MAX_PWD_LENGTH] = '\0';
+
+  memset(d_new, 0, sizeof(*d_new));
+  snprintf(d_new->host, sizeof(d_new->host), "localhost");
+  d_new->character = login_ch;
+  login_ch->desc = d_new;
+  STATE(d_new) = CON_PASSWORD;
+  d_new->next = descriptor_list;
+  descriptor_list = d_new;
+
+  last_freed_char = NULL;
+  snprintf(pw_in, sizeof(pw_in), "secret");
+  nanny(d_new, pw_in);
+
+  if (last_freed_char == login_ch) {
+    if (login_ch->player.name)
+      free(login_ch->player.name);
+    if (GET_HOST(login_ch))
+      free(GET_HOST(login_ch));
+    if (login_ch->player_specials && login_ch->player_specials != &dummy_mob)
+      free(login_ch->player_specials);
+    free(login_ch);
+    last_freed_char = NULL;
+  }
+}
+
+static void test_dupe_login_closes_editors_and_usurps_olc_builder(void)
+{
+  struct descriptor_data d_old, d_new, d_sw, d_mob, d_re1, d_imp, d_vict, d_re2;
+  struct char_data *b, *imp_sw, *mob, *imp2, *vict;
+  char arg[MAX_INPUT_LENGTH];
+  int i;
+
+  /* Case A: duplicate login while builder is in CON_TEDIT with draft + pager */
+  memset(&d_old, 0, sizeof(d_old));
+  b = make_test_char("DupeBuilder", LVL_IMPL, 9401, &d_old);
+  GET_PAGE_LENGTH(b) = 6;
+  motd = strdup("Live MOTD before dupe\r\n");
+
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(b, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d_old));
+  TEST_ASSERT_NOT_NULL(d_old.olc);
+  for (i = 0; i < 15; i++)
+    send_editor_line(&d_old, "Unsaved tedit line before duplicate login");
+  send_editor_line(&d_old, "/l");
+  TEST_ASSERT_TRUE(d_old.showstr_count > 1);
+
+  login_duplicate_via_nanny(&d_new, "DupeBuilder", LVL_IMPL, 9401);
+
+  TEST_ASSERT_NULL(d_old.olc);
+  TEST_ASSERT_NULL(d_old.str);
+  TEST_ASSERT_NULL(d_old.backstr);
+  TEST_ASSERT_EQUAL_INT(0, d_old.showstr_count);
+  TEST_ASSERT_NULL(d_old.showstr_vector);
+  TEST_ASSERT_NULL(d_old.showstr_head);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_old));
+  TEST_ASSERT_NULL(d_old.character);
+
+  /* cleanup_olc restored CON_PLAYING before usurp check so d_new usurped b */
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_new));
+  TEST_ASSERT_EQUAL_PTR(b, d_new.character);
+  TEST_ASSERT_EQUAL_PTR(&d_new, b->desc);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(b, PLR_WRITING));
+  TEST_ASSERT_EQUAL_STRING("Live MOTD before dupe\r\n", motd);
+
+  unlink_descriptor(&d_old);
+  unlink_descriptor(&d_new);
+  free_test_char(b);
+
+  /* Case B: switched original descriptor writing IBT when owner logs in again */
+  memset(&d_sw, 0, sizeof(d_sw));
+  memset(&d_mob, 0, sizeof(d_mob));
+  imp_sw = make_test_char("SwitchedDupeImp", LVL_IMPL, 9402, &d_sw);
+  mob = make_test_char("DupeTargetBody", 10, 9403, &d_mob);
+  unlink_descriptor(&d_mob);
+  mob->desc = NULL;
+
+  snprintf(arg, sizeof(arg), "DupeTargetBody");
+  do_switch(imp_sw, arg, 0, 0);
+  snprintf(arg, sizeof(arg), "submit Unfinished switched dupe bug");
+  do_ibt(mob, arg, 0, SCMD_BUG);
+  send_editor_line(&d_sw, "Draft line on switched body");
+  TEST_ASSERT_NOT_NULL(first_bug);
+
+  login_duplicate_via_nanny(&d_re1, "SwitchedDupeImp", LVL_IMPL, 9402);
+
+  TEST_ASSERT_NULL(first_bug);
+  TEST_ASSERT_NULL(d_sw.str);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_sw));
+  TEST_ASSERT_NULL(d_sw.character);
+  TEST_ASSERT_NULL(d_sw.original);
+  TEST_ASSERT_NULL(mob->desc);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(mob, PLR_BUG));
+  TEST_ASSERT_FALSE(PLR_FLAGGED(mob, PLR_WRITING));
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_re1));
+  TEST_ASSERT_EQUAL_PTR(imp_sw, d_re1.character);
+  TEST_ASSERT_EQUAL_PTR(&d_re1, imp_sw->desc);
+
+  unlink_descriptor(&d_sw);
+  unlink_descriptor(&d_re1);
+  free_test_char(imp_sw);
+  free_test_char(mob);
+
+  /* Case C: player reconnects while an immortal is switched into them in prefedit */
+  memset(&d_imp, 0, sizeof(d_imp));
+  memset(&d_vict, 0, sizeof(d_vict));
+  imp2 = make_test_char("OccupyingImp", LVL_IMPL, 9404, &d_imp);
+  vict = make_test_char("ReconnectingPC", 10, 9405, &d_vict);
+  unlink_descriptor(&d_vict);
+  vict->desc = NULL;
+
+  snprintf(arg, sizeof(arg), "ReconnectingPC");
+  do_switch(imp2, arg, 0, 0);
+  arg[0] = '\0';
+  do_oasis_prefedit(vict, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_PREFEDIT, STATE(&d_imp));
+  TEST_ASSERT_NOT_NULL(d_imp.olc);
+
+  login_duplicate_via_nanny(&d_re2, "ReconnectingPC", 10, 9405);
+
+  TEST_ASSERT_NULL(d_imp.olc);
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_imp));
+  TEST_ASSERT_EQUAL_PTR(imp2, d_imp.character);
+  TEST_ASSERT_NULL(d_imp.original);
+  TEST_ASSERT_EQUAL_PTR(&d_imp, imp2->desc);
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_re2));
+  TEST_ASSERT_EQUAL_PTR(vict, d_re2.character);
+  TEST_ASSERT_EQUAL_PTR(&d_re2, vict->desc);
+
+  unlink_descriptor(&d_imp);
+  unlink_descriptor(&d_re2);
+  free_test_char(imp2);
+  free_test_char(vict);
+}
+
+static void test_dc_on_olc_builder_and_menu_editor(void)
+{
+  struct descriptor_data d_imp, d_bld, d_menu;
+  struct char_data *imp, *bld, *menu_ch;
+  char arg[MAX_INPUT_LENGTH];
+  int i;
+
+  memset(&d_imp, 0, sizeof(d_imp));
+  memset(&d_bld, 0, sizeof(d_bld));
+  d_imp.desc_num = 1;
+  d_bld.desc_num = 2;
+  imp = make_test_char("DcImp", LVL_IMPL, 9501, &d_imp);
+  bld = make_test_char("DcBuilder", LVL_GRGOD, 9502, &d_bld);
+  GET_PAGE_LENGTH(bld) = 6;
+
+  motd = strdup("MOTD before dc\r\n");
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(bld, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d_bld));
+  TEST_ASSERT_NOT_NULL(d_bld.olc);
+  for (i = 0; i < 15; i++)
+    send_editor_line(&d_bld, "Unsaved line before dc");
+  send_editor_line(&d_bld, "/l");
+  TEST_ASSERT_TRUE(d_bld.showstr_count > 1);
+
+  free_char_count = 0;
+  snprintf(arg, sizeof(arg), "2");
+  do_dc(imp, arg, 0, 0);
+
+  TEST_ASSERT_NULL(d_bld.olc);
+  TEST_ASSERT_NULL(d_bld.str);
+  TEST_ASSERT_NULL(d_bld.backstr);
+  TEST_ASSERT_EQUAL_INT(0, d_bld.showstr_count);
+  TEST_ASSERT_NULL(d_bld.showstr_vector);
+  TEST_ASSERT_NULL(d_bld.showstr_head);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(bld, PLR_WRITING));
+  TEST_ASSERT_EQUAL_INT(CON_DISCONNECT, STATE(&d_bld));
+  TEST_ASSERT_EQUAL_INT(0, free_char_count);
+  TEST_ASSERT_EQUAL_STRING("MOTD before dc\r\n", motd);
+
+  /* Non-playing descriptor in CON_PLR_DESC gets aborted and set to CON_CLOSE */
+  memset(&d_menu, 0, sizeof(d_menu));
+  d_menu.desc_num = 3;
+  menu_ch = calloc(1, sizeof(*menu_ch));
+  TEST_ASSERT_NOT_NULL(menu_ch);
+  menu_ch->player_specials = calloc(1, sizeof(*menu_ch->player_specials));
+  TEST_ASSERT_NOT_NULL(menu_ch->player_specials);
+  menu_ch->player.name = strdup("MenuDescUser");
+  menu_ch->player.level = 10;
+  menu_ch->player.description = strdup("Half-edited desc\r\n");
+  d_menu.character = menu_ch;
+  menu_ch->desc = &d_menu;
+  d_menu.backstr = strdup("Original desc\r\n");
+  d_menu.str = &menu_ch->player.description;
+  d_menu.max_str = PLR_DESC_LENGTH;
+  STATE(&d_menu) = CON_PLR_DESC;
+  d_menu.next = descriptor_list;
+  descriptor_list = &d_menu;
+
+  snprintf(arg, sizeof(arg), "3");
+  do_dc(imp, arg, 0, 0);
+
+  TEST_ASSERT_NULL(d_menu.str);
+  TEST_ASSERT_NULL(d_menu.backstr);
+  TEST_ASSERT_EQUAL_STRING("Original desc\r\n", menu_ch->player.description);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_menu));
+
+  unlink_descriptor(&d_menu);
+  free(menu_ch->player.description);
+  free(menu_ch->player.name);
+  free(menu_ch->player_specials);
+  free(menu_ch);
+
+  unlink_descriptor(&d_imp);
+  unlink_descriptor(&d_bld);
+  free_test_char(imp);
+  free_test_char(bld);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -1613,5 +1846,7 @@ int main(void)
   RUN_TEST(test_extract_occupied_original_body_resolves_both_descriptors);
   RUN_TEST(test_tedit_detects_stale_draft_conflict_and_keeps_draft);
   RUN_TEST(test_tedit_confirms_disk_write_and_rename_before_publishing);
+  RUN_TEST(test_dupe_login_closes_editors_and_usurps_olc_builder);
+  RUN_TEST(test_dc_on_olc_builder_and_menu_editor);
   return UNITY_END();
 }

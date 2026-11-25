@@ -1092,6 +1092,7 @@ static int perform_dupe_check(struct descriptor_data *d)
       /* Original descriptor was switched, booting it and restoring normal body control. */
 
       write_to_output(d, "\r\nMultiple login detected -- disconnecting.\r\n");
+      close_descriptor_editors(k);
       STATE(k) = CON_CLOSE;
       pref_temp=GET_PREF(k->character);
       if (!target) {
@@ -1105,11 +1106,13 @@ static int perform_dupe_check(struct descriptor_data *d)
     } else if (k->character && GET_IDNUM(k->character) == id && k->original) {
       /* Character taking over their own body, while an immortal was switched to it. */
 
+      close_descriptor_editors(k);
       do_return(k->character, NULL, 0, 0);
     } else if (k->character && GET_IDNUM(k->character) == id) {
       /* Character taking over their own body. */
       pref_temp=GET_PREF(k->character);
 
+      close_descriptor_editors(k);
       if (!target && STATE(k) == CON_PLAYING) {
 	write_to_output(k, "\r\nThis body has been usurped!\r\n");
 	target = k->character;
@@ -1248,12 +1251,14 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
         found = TRUE;
       } else {
         /* Something went VERY wrong, boot both chars */
+        close_descriptor_editors(k);
         k->character->desc = NULL;
         k->character = NULL;
         k->original = NULL;
         write_to_output(k, "\r\nMultiple login detected -- disconnecting.\r\n");
         STATE(k) = CON_CLOSE;
 
+        close_descriptor_editors(d);
         d->character->desc = NULL;
         d->character = NULL;
         d->original = NULL;
