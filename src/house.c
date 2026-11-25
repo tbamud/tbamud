@@ -19,6 +19,7 @@
 #include "house.h"
 #include "constants.h"
 #include "modify.h"
+#include "genolc.h"
 
 /* local (file scope only) globals */
 static struct house_control_rec house_control[MAX_HOUSES];
@@ -159,7 +160,7 @@ static void House_restore_weight(struct obj_data *obj)
 void House_crashsave(room_vnum vnum)
 {
   int rnum, result;
-  char buf[MAX_STRING_LENGTH];
+  char filename[MAX_STRING_LENGTH], tempfile[MAX_STRING_LENGTH + sizeof(".tmp")];
   FILE *fp;
 
   if ((rnum = real_room(vnum)) == NOWHERE)
@@ -174,29 +175,33 @@ void House_crashsave(room_vnum vnum)
     return;
   /* CONVERSION code ends here -- see comment below. */
 
-  if (!House_get_filename(vnum, buf, sizeof(buf)))
+  if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
-  if (!(fp = fopen(buf, "wb"))) {
-    perror("SYSERR: Error saving house file");
+  snprintf(tempfile, sizeof(tempfile), "%s.tmp", filename);
+  if (!(fp = fopen(tempfile, "wb"))) {
+    perror("SYSERR: Unable to open the temporary house file");
     return;
   }
 
   result = House_save(world[rnum].contents, fp, 0);
   House_restore_weight(world[rnum].contents);
 
-  if (!result) {
-    fclose(fp);
-    return;
-  }
-
   if (fflush(fp) == EOF || ferror(fp)) {
-    log("SYSERR: Error finalizing house file %s.", buf);
-    fclose(fp);
-    return;
+    log("SYSERR: Error finalizing house file %s.", tempfile);
+    result = FALSE;
+  }
+  if (fclose(fp) == EOF) {
+    log("SYSERR: Error closing house file %s.", tempfile);
+    result = FALSE;
   }
 
-  if (fclose(fp) == EOF) {
-    log("SYSERR: Error closing house file %s.", buf);
+  if (!result) {
+    remove(tempfile);
+    return;
+  }
+  if (!genolc_install_file(tempfile, filename)) {
+    log("SYSERR: Unable to replace house file %s: %s", filename, strerror(errno));
+    remove(tempfile);
     return;
   }
 
