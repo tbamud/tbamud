@@ -72,9 +72,10 @@ static int has_flight(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
-  /* Non-wearable flying items in inventory will do it. */
+  /* Flying items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && OBJAFF_FLAGGED(obj, AFF_FLYING))
+    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && find_eq_pos(ch, obj, NULL) < 0 &&
+        !CAN_WEAR(obj, ITEM_WEAR_WIELD) && !can_hold_obj(obj))
       return (1);
 
   /* Any equipped objects with AFF_FLYING will do it too. */

@@ -1471,6 +1471,13 @@ ACMD(do_wield)
   }
 }
 
+bool can_hold_obj(const struct obj_data *obj)
+{
+  return CAN_WEAR(obj, ITEM_WEAR_HOLD) || GET_OBJ_TYPE(obj) == ITEM_LIGHT ||
+         GET_OBJ_TYPE(obj) == ITEM_WAND || GET_OBJ_TYPE(obj) == ITEM_STAFF ||
+         GET_OBJ_TYPE(obj) == ITEM_SCROLL || GET_OBJ_TYPE(obj) == ITEM_POTION;
+}
+
 ACMD(do_grab)
 {
   char arg[MAX_INPUT_LENGTH];
@@ -1484,18 +1491,10 @@ ACMD(do_grab)
     send_to_char(ch, "You don't seem to have %s %s.\r\n", AN(arg), arg);
   else if (GET_LEVEL(ch) < GET_OBJ_LEVEL(obj))
     send_to_char(ch, "You are not experienced enough to use that.\r\n");
-  else {
-    if (GET_OBJ_TYPE(obj) == ITEM_LIGHT)
-      perform_wear(ch, obj, WEAR_LIGHT);
-    else {
-      if (!CAN_WEAR(obj, ITEM_WEAR_HOLD) && GET_OBJ_TYPE(obj) != ITEM_WAND &&
-      GET_OBJ_TYPE(obj) != ITEM_STAFF && GET_OBJ_TYPE(obj) != ITEM_SCROLL &&
-	  GET_OBJ_TYPE(obj) != ITEM_POTION)
-	send_to_char(ch, "You can't hold that.\r\n");
-      else
-	perform_wear(ch, obj, WEAR_HOLD);
-    }
-  }
+  else if (!can_hold_obj(obj))
+    send_to_char(ch, "You can't hold that.\r\n");
+  else
+    perform_wear(ch, obj, GET_OBJ_TYPE(obj) == ITEM_LIGHT ? WEAR_LIGHT : WEAR_HOLD);
 }
 
 static void perform_remove(struct char_data *ch, int pos)
