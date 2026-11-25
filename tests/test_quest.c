@@ -7,6 +7,8 @@
 #include "structs.h"
 #include "utils.h"
 #include "db.h"
+#include "dg_scripts.h"
+#include "fight.h"
 #include "handler.h"
 #include "spells.h"
 #include "act.h"
@@ -22,6 +24,7 @@ extern mob_rnum top_of_mobt;
 /* db.c is not linked, so the quest table lives here. */
 struct aq_data *aquest_table = NULL;
 qst_rnum total_quests = 0;
+struct message_list fight_messages[MAX_MESSAGES];
 
 /* generic_complete_quest() refers to these; the fixture quests reward no
  * gold, experience or object, so none of them is reached. */
@@ -30,30 +33,33 @@ struct obj_data *read_object(obj_vnum nr, int type) { (void)nr; (void)type; retu
 void gain_exp(struct char_data *ch, int gain) { (void)ch; (void)gain; }
 int increase_gold(struct char_data *ch, int amt) { (void)ch; return amt; }
 
-/* mag_points() and do_bandage() call into fight.c, which would bring in
- * the whole combat system.  update_pos() is fight.c's, line for line;
- * damage() is reached only by a failed bandage, which no test makes. */
-void update_pos(struct char_data *victim)
+/* Combat runs without world scripts, shops, fleeing or mobile memory. */
+mob_rnum real_mobile(mob_vnum vnum) { (void)vnum; return NOBODY; }
+int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim)
+{ (void)ch; (void)victim; return TRUE; }
+int damage_mtrigger(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+{ (void)ch; (void)victim; (void)attacktype; return dam; }
+int death_mtrigger(struct char_data *ch, struct char_data *killer)
+{ (void)ch; (void)killer; return TRUE; }
+int remove_otrigger(struct obj_data *obj, struct char_data *ch)
+{ (void)obj; (void)ch; return TRUE; }
+void remember(struct char_data *ch, struct char_data *victim)
+{ (void)ch; (void)victim; }
+int do_simple_move(struct char_data *ch, int dir, int following)
 {
-  if ((GET_HIT(victim) > 0) && (GET_POS(victim) > POS_STUNNED))
-    return;
-  else if (GET_HIT(victim) > 0)
-    GET_POS(victim) = POS_STANDING;
-  else if (GET_HIT(victim) <= -11)
-    GET_POS(victim) = POS_DEAD;
-  else if (GET_HIT(victim) <= -6)
-    GET_POS(victim) = POS_MORTALLYW;
-  else if (GET_HIT(victim) <= -3)
-    GET_POS(victim) = POS_INCAP;
-  else
-    GET_POS(victim) = POS_STUNNED;
+  (void)ch; (void)dir; (void)following;
+  TEST_FAIL_MESSAGE("unexpected movement during combat");
+  return FALSE;
 }
 
-int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+struct obj_data *create_obj(void)
 {
-  (void)ch; (void)victim; (void)dam; (void)attacktype;
-  TEST_FAIL_MESSAGE("damage() reached");
-  return 0;
+  struct obj_data *obj = calloc(1, sizeof(*obj));
+
+  TEST_ASSERT_NOT_NULL(obj);
+  obj->next = object_list;
+  object_list = obj;
+  return obj;
 }
 
 enum { CELL, HALL };                   /* room rnums */
@@ -90,6 +96,8 @@ static struct char_data *new_char(void)
   TEST_ASSERT_NOT_NULL(ch);
   TEST_ASSERT_TRUE(num_made < (int)(sizeof(made) / sizeof(made[0])));
   made[num_made++] = ch;
+  ch->next = character_list;
+  character_list = ch;
   IN_ROOM(ch) = NOWHERE;
   GET_POS(ch) = POS_STANDING;
   return ch;
@@ -114,6 +122,7 @@ static struct char_data *new_mob(mob_rnum nr, room_rnum room)
   SET_BIT_AR(MOB_FLAGS(mob), MOB_ISNPC);
   mob->nr = nr;
   mob->player_specials = &dummy_mob;
+  mob_index[nr].number++;
   char_to_room(mob, room);
   return mob;
 }
@@ -185,7 +194,11 @@ void setUp(void)
 void tearDown(void)
 {
   int n;
+  struct obj_data *obj;
 
+  extract_pending_chars();
+  character_list = NULL;
+  combat_list = NULL;
   for (n = 0; n < num_made; n++) {
     struct char_data *ch = made[n];
 
@@ -194,6 +207,13 @@ void tearDown(void)
       free(ch->player_specials);
     }
     free(ch);
+  }
+  while ((obj = object_list)) {
+    object_list = obj->next;
+    free(obj->name);
+    free(obj->description);
+    free(obj->short_description);
+    free(obj);
   }
   num_made = 0;
   world = NULL;
@@ -354,6 +374,57 @@ static void test_a_captors_charmed_minion_blocks_the_rescue(void)
   give_quest(holder, Q_RESCUE);
   holder_sees_death(holder, guard);
   assert_not_rescued(holder);
+}
+
+static struct char_data *new_combat_pet(struct char_data *owner)
+{
+  static char name[] = "pet";
+  struct char_data *pet = new_mob(PET, IN_ROOM(owner));
+  struct affected_type charm;
+
+  pet->player.name = pet->player.short_descr = name;
+  GET_HIT(pet) = GET_MAX_HIT(pet) = 10;
+  add_follower(pet, owner);
+  new_affect(&charm);
+  charm.spell = SPELL_CHARM;
+  charm.duration = 10;
+  SET_BIT_AR(charm.bitvector, AFF_CHARM);
+  affect_to_char(pet, &charm);
+  TEST_ASSERT_TRUE(AFF_FLAGGED(pet, AFF_CHARM));
+  return pet;
+}
+
+static void test_killing_another_players_charmed_pet_does_not_complete_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *owner = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  TEST_ASSERT_TRUE(DEAD(pet));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_killing_a_pet_after_the_owners_first_hit_does_not_complete_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(holder);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(1, damage(holder, pet, 1, TYPE_HIT));
+  TEST_ASSERT_FALSE(DEAD(pet));
+  TEST_ASSERT_FALSE(AFF_FLAGGED(pet, AFF_CHARM));
+  TEST_ASSERT_NULL(pet->master);
+  assert_not_rescued(holder);
+
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  TEST_ASSERT_TRUE(DEAD(pet));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
 }
 
 static void test_a_dead_holder_is_not_rewarded(void)
@@ -629,6 +700,8 @@ int main(void)
   RUN_TEST(test_a_stunned_captive_still_counts);
   RUN_TEST(test_a_players_pet_may_stay_with_the_captive);
   RUN_TEST(test_a_captors_charmed_minion_blocks_the_rescue);
+  RUN_TEST(test_killing_another_players_charmed_pet_does_not_complete_the_rescue);
+  RUN_TEST(test_killing_a_pet_after_the_owners_first_hit_does_not_complete_the_rescue);
   RUN_TEST(test_a_dead_holder_is_not_rewarded);
   RUN_TEST(test_healing_a_captive_left_dying_finishes_the_rescue);
   RUN_TEST(test_a_heal_that_leaves_the_captive_dying_finishes_nothing);

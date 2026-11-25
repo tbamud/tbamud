@@ -214,7 +214,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     endif()
     add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
 
-    # Rescue eligibility in quest.c, and the healing spells and bandage that
+    # Rescue eligibility in quest.c, combat in fight.c, and the treatments that
     # finish a rescue a dying captive held up.  interpreter.c supplies the
     # real one_argument() for "bandage <name>".  Section GC drops the quest
     # commands and the rest of magic.c, act.offensive.c and interpreter.c.
@@ -226,6 +226,8 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         ${MUD_SRCDIR}/lists.c
         ${MUD_SRCDIR}/handler.c
         ${MUD_SRCDIR}/quest.c
+        ${MUD_SRCDIR}/fight.c
+        ${MUD_SRCDIR}/constants.c
         ${MUD_SRCDIR}/magic.c
         ${MUD_SRCDIR}/act.offensive.c
         ${MUD_SRCDIR}/interpreter.c
