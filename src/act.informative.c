@@ -2742,8 +2742,10 @@ ACMD(do_areas)
       } else if ((hilev == -1) && (lolev >= ZONE_MINLVL(i)) && (lolev <= ZONE_MAXLVL(i))) {
         /* Single number supplied, it's in this zone's range */
         show_zone = TRUE;
-      } else if ((hilev != -1) && (lolev >= ZONE_MINLVL(i)) && (hilev <= ZONE_MAXLVL(i))) {
-        /* Range supplied, it's completely within this zone's range (no overlap) */
+      } else if (hilev != -1 &&
+                 ((lolev >= ZONE_MINLVL(i) && hilev <= ZONE_MAXLVL(i)) ||
+                  (ZONE_MAXLVL(i) >= 0 && lolev <= ZONE_MINLVL(i) && hilev >= ZONE_MAXLVL(i)))) {
+        /* One range completely contains the other. */
         show_zone = TRUE;
       } else if ((hilev != -1) && ((lolev >= ZONE_MINLVL(i) && lolev <= ZONE_MAXLVL(i)) || (hilev <= ZONE_MAXLVL(i) && hilev >= ZONE_MINLVL(i)))) {
         /* Range supplied, it overlaps this zone's range */
