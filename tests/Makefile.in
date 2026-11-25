@@ -121,15 +121,16 @@ test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
-# test_quest - covers rescue eligibility in src/quest.c, and the healing
-# spells and bandage that finish a rescue held up by a dying captive.
+# test_quest - covers rescue eligibility in src/quest.c, the quest credit
+# raw_kill() in src/fight.c gives the killer's side, and the healing spells
+# and bandage that finish a rescue held up by a dying captive.
 # interpreter.c supplies the real one_argument() for "bandage <name>".
-# Section GC drops the quest commands and the rest of magic.c,
+# Section GC drops the quest commands and the rest of fight.c, magic.c,
 # act.offensive.c and interpreter.c, which need the running game.
 # ---------------------------------------------------------------------------
 test_quest: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
-            $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c \
-            $(SRCDIR)/magic.c $(SRCDIR)/act.offensive.c \
+            $(SRCDIR)/quest.c $(SRCDIR)/fight.c $(SRCDIR)/handler.c \
+            $(SRCDIR)/lists.c $(SRCDIR)/magic.c $(SRCDIR)/act.offensive.c \
             $(SRCDIR)/interpreter.c test_quest.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 

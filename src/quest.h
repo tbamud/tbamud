@@ -97,6 +97,7 @@ void set_quest(struct char_data *ch, qst_rnum rnum);
 void clear_quest(struct char_data *ch);
 void generic_complete_quest(struct char_data *ch);
 void autoquest_trigger_check(struct char_data *ch, struct char_data *vict, struct obj_data *object, int type);
+void autoquest_group_check(struct char_data *ch, struct char_data *vict, room_rnum room, int type);
 qst_rnum real_quest(qst_vnum vnum);
 int is_complete(struct char_data *ch, qst_vnum vnum);
 qst_vnum find_quest_by_qmnum(struct char_data *ch, mob_rnum qm, int num);

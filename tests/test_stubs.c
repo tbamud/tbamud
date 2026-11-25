@@ -287,6 +287,15 @@ __attribute__((weak))
 int command_wtrigger(struct char_data *actor, char *cmd, char *argument)
 { (void)actor; (void)cmd; (void)argument; return 0; }
 
+/* raw_kill() and make_corpse() in fight.c */
+__attribute__((weak))
+int death_mtrigger(struct char_data *ch, struct char_data *actor)
+{ (void)ch; (void)actor; return 1; }
+
+__attribute__((weak))
+int remove_otrigger(struct obj_data *obj, struct char_data *actor)
+{ (void)obj; (void)actor; return 1; }
+
 /* ---------- act.informative.c ---------- */
 __attribute__((weak))
 void look_at_room(struct char_data *ch, int ignore_brief)
@@ -551,7 +560,8 @@ struct obj_data           *object_list      = NULL;
 struct obj_data           *obj_proto        = NULL;
 
 /* ---------- fight.c ---------- */
-struct char_data          *combat_list      = NULL;
+/* Weak, like con_app above: test_quest links fight.c, which defines it. */
+__attribute__((weak)) struct char_data *combat_list = NULL;
 
 __attribute__((weak))
 void stop_fighting(struct char_data *ch) { (void)ch; }

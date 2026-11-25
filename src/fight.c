@@ -312,9 +312,13 @@ struct char_data *i;
   make_corpse(ch);
   extract_char(ch);
 
-  if (killer) {
-    autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
-    autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
+  /* The killer's side gets the credit, in the room where ch died.  Dying of
+   * one's own wounds, as poison and bleeding out do, has no killer's side.
+   * ch goes along so a rescue can tell when the mob that died was the one
+   * to be saved. */
+  if (killer && killer != ch) {
+    autoquest_group_check(killer, ch, IN_ROOM(ch), AQ_MOB_SAVE);
+    autoquest_group_check(killer, NULL, IN_ROOM(ch), AQ_ROOM_CLEAR);
   }
 }
 

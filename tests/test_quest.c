@@ -1,6 +1,8 @@
 /* Rescue quests need a living, stable captive and a living player.  A
  * captive left dying when the last guard falls can still be healed or
- * bandaged to finish the rescue. */
+ * bandaged to finish the rescue.  Kills, heals and bandages count for the
+ * side that made them: a charmed pet's master and the whole group, if they
+ * are in the room. */
 #include "unity.h"
 #include "conf.h"
 #include "sysdep.h"
@@ -10,6 +12,7 @@
 #include "handler.h"
 #include "spells.h"
 #include "act.h"
+#include "fight.h"
 #include "quest.h"
 
 /* Globals defined strongly in test_stubs.c */
@@ -30,41 +33,54 @@ struct obj_data *read_object(obj_vnum nr, int type) { (void)nr; (void)type; retu
 void gain_exp(struct char_data *ch, int gain) { (void)ch; (void)gain; }
 int increase_gold(struct char_data *ch, int amt) { (void)ch; return amt; }
 
-/* mag_points() and do_bandage() call into fight.c, which would bring in
- * the whole combat system.  update_pos() is fight.c's, line for line;
- * damage() is reached only by a failed bandage, which no test makes. */
-void update_pos(struct char_data *victim)
+/* make_corpse() in raw_kill() fills in the object it gets here. */
+static struct obj_data *corpses[8];
+static int num_corpses;
+
+struct obj_data *create_obj(void)
 {
-  if ((GET_HIT(victim) > 0) && (GET_POS(victim) > POS_STUNNED))
-    return;
-  else if (GET_HIT(victim) > 0)
-    GET_POS(victim) = POS_STANDING;
-  else if (GET_HIT(victim) <= -11)
-    GET_POS(victim) = POS_DEAD;
-  else if (GET_HIT(victim) <= -6)
-    GET_POS(victim) = POS_MORTALLYW;
-  else if (GET_HIT(victim) <= -3)
-    GET_POS(victim) = POS_INCAP;
-  else
-    GET_POS(victim) = POS_STUNNED;
+  struct obj_data *obj = calloc(1, sizeof(*obj));
+
+  TEST_ASSERT_NOT_NULL(obj);
+  TEST_ASSERT_TRUE(num_corpses < (int)(sizeof(corpses) / sizeof(corpses[0])));
+  corpses[num_corpses++] = obj;
+  return obj;
 }
 
-int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+/* damage() in fight.c, which only a failed bandage calls, reaches these.  No
+ * test makes a bandage fail, and real_mobile() is the first of them damage()
+ * calls, so it fails the test if one ever does. */
+struct message_list fight_messages[MAX_MESSAGES];
+mob_rnum real_mobile(mob_vnum vnum)
 {
-  (void)ch; (void)victim; (void)dam; (void)attacktype;
+  (void)vnum;
   TEST_FAIL_MESSAGE("damage() reached");
-  return 0;
+  return NOBODY;
 }
+int ok_damage_shopkeeper(struct char_data *ch, struct char_data *victim)
+{ (void)ch; (void)victim; return TRUE; }
+int damage_mtrigger(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+{ (void)ch; (void)victim; (void)attacktype; return dam; }
+void remember(struct char_data *ch, struct char_data *victim) { (void)ch; (void)victim; }
+int do_simple_move(struct char_data *ch, int dir, int following)
+{ (void)ch; (void)dir; (void)following; return 0; }
+
+/* mag_groups() can also cast group armor and group recall, which reach these;
+ * the tests cast only group heal. */
+byte saving_throws(int class_num, int type, int level)
+{ (void)class_num; (void)type; (void)level; return 0; }
+ASPELL(spell_recall) { (void)level; (void)ch; (void)victim; (void)obj; }
 
 enum { CELL, HALL };                   /* room rnums */
 enum { CAPTIVE, GUARD, PET };          /* mob rnums */
 
 #define Q_RESCUE 10   /* save the captive */
+#define Q_CLEAR  30   /* clear the cell */
 
 static char empty[] = "";
 static struct room_data rooms[2];
 static struct index_data mobs[3];
-static struct aq_data quests[1];
+static struct aq_data quests[2];
 static struct char_data *made[16];
 static int num_made;
 
@@ -113,6 +129,7 @@ static struct char_data *new_mob(mob_rnum nr, room_rnum room)
 
   SET_BIT_AR(MOB_FLAGS(mob), MOB_ISNPC);
   mob->nr = nr;
+  mob->player.short_descr = empty;  /* make_corpse() names the corpse */
   mob->player_specials = &dummy_mob;
   char_to_room(mob, room);
   return mob;
@@ -130,6 +147,17 @@ static struct char_data *new_pet(struct char_data *master, room_rnum room)
 static void give_quest(struct char_data *ch, qst_vnum vnum)
 {
   set_quest(ch, real_quest(vnum));
+}
+
+static void group_up(struct char_data *leader, struct char_data *member)
+{
+  join_group(member, GROUP(leader) ? GROUP(leader) : create_group(leader));
+}
+
+static void move_to(struct char_data *ch, room_rnum room)
+{
+  char_from_room(ch);
+  char_to_room(ch, room);
 }
 
 /* What extract_char() does to a mob before raw_kill() runs the checks. */
@@ -157,6 +185,18 @@ static void assert_not_rescued(struct char_data *holder)
   TEST_ASSERT_FALSE(is_complete(holder, Q_RESCUE));
 }
 
+static void assert_cleared(struct char_data *holder)
+{
+  TEST_ASSERT_EQUAL_INT(NOTHING, GET_QUEST(holder));
+  TEST_ASSERT_TRUE(is_complete(holder, Q_CLEAR));
+}
+
+static void assert_not_cleared(struct char_data *holder)
+{
+  TEST_ASSERT_EQUAL_INT(Q_CLEAR, GET_QUEST(holder));
+  TEST_ASSERT_FALSE(is_complete(holder, Q_CLEAR));
+}
+
 void setUp(void)
 {
   logfile = stderr;
@@ -176,15 +216,30 @@ void setUp(void)
 
   memset(quests, 0, sizeof(quests));
   init_quest(&quests[0], Q_RESCUE, AQ_MOB_SAVE, 200);
+  init_quest(&quests[1], Q_CLEAR, AQ_ROOM_CLEAR, 3001);
   aquest_table = quests;
-  total_quests = 1;
+  total_quests = 2;
 
+  group_list = create_list();
   num_made = 0;
+  num_corpses = 0;
 }
 
 void tearDown(void)
 {
   int n;
+
+  for (n = 0; n < num_made; n++)
+    leave_group(made[n]);
+  free_list(group_list);
+
+  for (n = 0; n < num_corpses; n++) {
+    free(corpses[n]->name);
+    free(corpses[n]->description);
+    free(corpses[n]->short_description);
+    free(corpses[n]);
+  }
+  num_corpses = 0;
 
   for (n = 0; n < num_made; n++) {
     struct char_data *ch = made[n];
@@ -381,6 +436,178 @@ static void test_healing_a_captive_that_was_not_dying_finishes_nothing(void)
   assert_not_rescued(holder);
 }
 
+/* From here on the checks run where the game runs them: raw_kill(),
+ * mag_points() and do_bandage(). */
+
+static void test_a_pets_kill_completes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, pet);
+  assert_rescued(holder);
+}
+
+static void test_a_groupmates_kill_completes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  group_up(holder, mate);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, mate);
+  assert_rescued(holder);
+}
+
+static void test_a_groupmates_pets_kill_completes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *mate = new_player(HALL);  /* sent the pet in alone */
+  struct char_data *pet = new_pet(mate, CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  group_up(holder, mate);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, pet);
+  assert_rescued(holder);
+}
+
+static void test_a_pets_kill_clears_the_room(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  give_quest(holder, Q_CLEAR);
+  raw_kill(guard, pet);
+  assert_cleared(holder);
+}
+
+static void test_a_groupmates_kill_clears_the_room(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  group_up(holder, mate);
+  give_quest(holder, Q_CLEAR);
+  raw_kill(guard, mate);
+  assert_cleared(holder);
+}
+
+static void test_a_kill_in_another_room_does_not_count(void)
+{
+  struct char_data *holder = new_player(HALL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  new_mob(CAPTIVE, HALL);  /* alone with the holder, but nobody killed here */
+  group_up(holder, mate);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, mate);
+  assert_not_rescued(holder);
+}
+
+static void test_a_cell_someone_else_cleared_stays_open(void)
+{
+  struct char_data *holder = new_player(HALL);
+  struct char_data *stranger = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, stranger);
+  assert_not_rescued(holder);
+
+  move_to(holder, CELL);
+  assert_not_rescued(holder);
+}
+
+static void test_a_dead_groupmate_is_not_credited(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  group_up(holder, mate);
+  give_quest(holder, Q_CLEAR);
+  SET_BIT_AR(PLR_FLAGS(holder), PLR_NOTDEADYET);
+  raw_kill(guard, mate);
+  assert_not_cleared(holder);
+}
+
+static void test_a_pet_dying_of_its_wounds_credits_nobody(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  new_mob(CAPTIVE, CELL);  /* someone else killed the guards */
+  give_quest(holder, Q_RESCUE);
+  raw_kill(pet, pet);
+  assert_not_rescued(holder);
+}
+
+static void test_a_groupmates_heal_finishes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *cleric = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  group_up(holder, cleric);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, holder);
+  assert_not_rescued(holder);
+
+  mag_points(20, cleric, captive, SPELL_CURE_CRITIC, 0);
+  assert_rescued(holder);
+}
+
+static void test_a_groupmates_bandage_finishes_the_rescue(void)
+{
+  char arg[] = "captive";
+  struct char_data *holder = new_player(CELL);
+  struct char_data *medic = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+
+  new_dying_captive(CELL);
+  SET_SKILL(medic, SKILL_BANDAGE, 101);
+  group_up(holder, medic);
+  give_quest(holder, Q_RESCUE);
+  raw_kill(guard, holder);
+  assert_not_rescued(holder);
+
+  do_bandage(medic, arg, 0, 0);
+  assert_rescued(holder);
+}
+
+/* Group heal walks the group with simple_list() and heals each member in
+ * turn.  The rescue check that healing a dying member runs walks the same
+ * group, and must leave group heal's place in it alone. */
+static void test_a_group_heal_heals_a_dying_pet_once(void)
+{
+  struct char_data *cleric = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  GET_MAX_HIT(cleric) = GET_HIT(cleric) = 100;
+  GET_MAX_HIT(holder) = GET_HIT(holder) = 100;
+  GET_MAX_HIT(pet) = 1000;
+  GET_HIT(pet) = -4;
+  GET_POS(pet) = POS_INCAP;
+  group_up(cleric, holder);
+  group_up(cleric, pet);
+
+  mag_groups(30, cleric, SPELL_GROUP_HEAL, 0);
+  TEST_ASSERT_TRUE(GET_HIT(pet) <= -4 + 124);  /* one heal is 100 + 3d8 */
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -397,5 +624,17 @@ int main(void)
   RUN_TEST(test_healing_a_captive_left_dying_finishes_the_rescue);
   RUN_TEST(test_bandaging_a_captive_left_dying_finishes_the_rescue);
   RUN_TEST(test_healing_a_captive_that_was_not_dying_finishes_nothing);
+  RUN_TEST(test_a_pets_kill_completes_the_rescue);
+  RUN_TEST(test_a_groupmates_kill_completes_the_rescue);
+  RUN_TEST(test_a_groupmates_pets_kill_completes_the_rescue);
+  RUN_TEST(test_a_pets_kill_clears_the_room);
+  RUN_TEST(test_a_groupmates_kill_clears_the_room);
+  RUN_TEST(test_a_kill_in_another_room_does_not_count);
+  RUN_TEST(test_a_cell_someone_else_cleared_stays_open);
+  RUN_TEST(test_a_dead_groupmate_is_not_credited);
+  RUN_TEST(test_a_pet_dying_of_its_wounds_credits_nobody);
+  RUN_TEST(test_a_groupmates_heal_finishes_the_rescue);
+  RUN_TEST(test_a_groupmates_bandage_finishes_the_rescue);
+  RUN_TEST(test_a_group_heal_heals_a_dying_pet_once);
   return UNITY_END();
 }

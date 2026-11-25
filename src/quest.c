@@ -402,6 +402,38 @@ void generic_complete_quest(struct char_data *ch)
   save_char(ch);
 }
 
+/* A player's charmed pet is on the player's side, so it may stay with a mob
+ * to be rescued and in a room to be cleared. */
+static bool is_players_pet(struct char_data *ch)
+{
+  return AFF_FLAGGED(ch, AFF_CHARM) && ch->master && !IS_NPC(ch->master);
+}
+
+/* Save mob and Room clear quests are judged on one room, for the side of
+ * the character who acted there: a charmed ch's master stands in for it,
+ * and every member of the group who is alive and in room is checked.  The
+ * group gets its own iterator, since a group spell may be walking it with
+ * simple_list() already. */
+void autoquest_group_check(struct char_data *ch, struct char_data *vict,
+                           room_rnum room, int type)
+{
+  struct iterator_data iterator;
+  struct char_data *i;
+
+  if (IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master)
+    ch = ch->master;
+  if (!GROUP(ch)) {
+    if (IN_ROOM(ch) == room && !DEAD(ch))
+      autoquest_trigger_check(ch, vict, NULL, type);
+    return;
+  }
+  for (i = (struct char_data *) merge_iterator(&iterator, GROUP(ch)->members);
+       i; i = (struct char_data *) next_in_list(&iterator))
+    if (IN_ROOM(i) == room && !DEAD(i))
+      autoquest_trigger_check(i, vict, NULL, type);
+  remove_iterator(&iterator);
+}
+
 void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
                 struct obj_data *object, int type)
 {
@@ -454,9 +486,8 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
            * check again; a stunned one recovers by itself. */
           if (GET_POS(i) >= POS_STUNNED)
             found = TRUE;
-        } else if (!AFF_FLAGGED(i, AFF_CHARM) || !i->master ||
-                   IS_NPC(i->master))
-          return;  /* only players' charmed pets may stay */
+        } else if (!is_players_pet(i))
+          return;
       }
       if (found)
         generic_complete_quest(ch);
@@ -471,7 +502,8 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
     case AQ_ROOM_CLEAR:
       if (QST_TARGET(rnum) == world[IN_ROOM(ch)].number) {
         for (i = world[IN_ROOM(ch)].people; i && found; i = i->next_in_room)
-          if (i && IS_NPC(i) && !MOB_FLAGGED(i, MOB_NOTDEADYET))
+          if (i && IS_NPC(i) && !MOB_FLAGGED(i, MOB_NOTDEADYET) &&
+              !is_players_pet(i))
             found = FALSE;
         if (found)
    generic_complete_quest(ch);
