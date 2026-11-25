@@ -19,6 +19,7 @@
 #include "handler.h"
 #include "mail.h"
 #include "modify.h"
+#include "genolc.h"
 
 /* local (file scope) function prototypes */
 static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
@@ -310,7 +311,6 @@ char *read_delete(long recipient)
       log("Mail system - error writing temporary mail file");
       free_mail_record(record);
       record = NULL;
-      result = MAIL_READ_ERROR;
       break;
     }
 
@@ -318,7 +318,11 @@ char *read_delete(long recipient)
     record = NULL;
   }
 
-  if (result == MAIL_READ_ERROR) {
+  if (result != MAIL_READ_EOF) {
+    /* A read error means the spool cannot be read. A failed write can be
+     * retried, since it only affected the temporary file. */
+    if (result == MAIL_READ_ERROR)
+      no_mail = 1;
     if (record)
       free_mail_record(record);
     if (record_to_keep)
@@ -380,8 +384,11 @@ char *read_delete(long recipient)
 
   free_mail_record(record_to_keep);
 
-  remove(MAIL_FILE);
-  rename(MAIL_FILE_TMP, MAIL_FILE);
+  if (!genolc_install_file(MAIL_FILE_TMP, MAIL_FILE)) {
+    log("Mail system - could not replace the mail file: %s", strerror(errno));
+    remove(MAIL_FILE_TMP);
+    return NULL;
+  }
 
   return strdup(buf);
 }
@@ -499,7 +506,6 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
 
     if (obj->action_description == NULL) {
       extract_obj(obj);
-      no_mail = 1;
       act("$n tells you, 'The mail system encountered a problem. Please report it.'",
           FALSE, mailman, 0, ch, TO_VICT);
       break;
