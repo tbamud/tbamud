@@ -7423,16 +7423,20 @@ main menu, you will be shown a list to choose from:
                   Ends: When the target mobile dies, if the player lands the 
 				  killing blow.
 4) Save mob       - Player needs to protect or save a particular mobile.
-                  Ends: When the player kills the last other mobile in
-                  the room and the target is still there and stable.
-                  Players' charmed pets may stay with the target.
+                  Ends: When the player, their group or their pet kills
+                  the last other mobile while the player and the stable
+                  target are in the room. Players' charmed pets may stay.
+                  A one-target rescue also counts when the player enters
+                  a room that is already clear and the target is safe.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.
 				  When you select this quest type, you are automatically asked 
 				  for the mobile vnum to whom the object should be returned.
 6) Clear room     - Player needs to kill all mobiles in a particular room.
-                  Ends: When the last mobile in the target room dies.
+                  Ends: When you or your group kills the last mobile in
+                  the target room while you are alive and there.
+                  Pets also count as mobiles that must be gone.
 
 Enter Quest type :
 #31
