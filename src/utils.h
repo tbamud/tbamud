@@ -125,6 +125,7 @@ int MIN(int a, int b);
 char *CAP(char *txt);
 
 /* Followers */
+bool	is_player_pet(const struct char_data *ch);
 int	num_followers_charmed(struct char_data *ch);
 void	die_follower(struct char_data *ch);
 void	add_follower(struct char_data *ch, struct char_data *leader);

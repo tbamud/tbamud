@@ -7428,7 +7428,9 @@ main menu, you will be shown a list to choose from:
                   (incapacitated or mortally wounded). For a single-target
                   rescue, stabilizing the captive by healing or bandaging
                   also counts in an already-cleared room, even if someone
-                  else cleared it. Players' charmed pets may stay.
+                  else cleared it. Players' charmed pets may stay. Killing
+                  one gives no rescue credit, even if the attack breaks
+                  its charm.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

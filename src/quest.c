@@ -415,8 +415,7 @@ static bool rescue_room_is_clear(room_rnum room, int target,
     if (GET_MOB_VNUM(mob) == target) {
       if ((!patient || mob == patient) && GET_POS(mob) >= POS_STUNNED)
         captive_is_stable = TRUE;
-    } else if (!AFF_FLAGGED(mob, AFF_CHARM) || !mob->master ||
-               IS_NPC(mob->master)) {
+    } else if (!is_player_pet(mob)) {
       return FALSE;  /* Only players' charmed pets may stay. */
     }
   }

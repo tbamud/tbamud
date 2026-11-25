@@ -280,6 +280,9 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   struct char_data *i;
   const room_rnum death_room = IN_ROOM(ch);
   const bool killer_was_present = killer && IN_ROOM(killer) == death_room;
+  /* Removing affects below can strip a pet's charm before quest checks. */
+  const bool victim_was_player_pet = IS_NPC(ch) &&
+      (is_player_pet(ch) || ch->mob_specials.attacked_by_pet_owner);
 
   if (FIGHTING(ch))
     stop_fighting(ch);
@@ -316,7 +319,7 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
 
   if (killer) {
     /* Death scripts can move characters before quest credit is checked. */
-    if (killer_was_present && IN_ROOM(killer) == death_room)
+    if (killer_was_present && IN_ROOM(killer) == death_room && !victim_was_player_pet)
       autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
     autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
   }
@@ -620,6 +623,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   char local_buf[256];
   struct char_data *tmp_char;
   struct obj_data *corpse_obj;
+  bool attacking_own_pet;
 
   if (GET_POS(victim) <= POS_DEAD) {
     /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
@@ -655,10 +659,15 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
     dam = 0;
 
+  attacking_own_pet = victim->master == ch && is_player_pet(victim);
   dam = damage_mtrigger(ch, victim, dam, attacktype);
   if (dam == -1) {
   	return (0);
   }
+
+  /* Keep pet status when an attack breaks the bond before a later hit. */
+  if (attacking_own_pet)
+    victim->mob_specials.attacked_by_pet_owner = TRUE;
 
   if (victim != ch) {
     /* Start the attacker fighting the victim */
