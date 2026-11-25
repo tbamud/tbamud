@@ -18,7 +18,7 @@
 #include "dg_scripts.h"
 #include "comm.h"
 #include "interpreter.h"
-#include "genolc.h" /* for strip_cr */
+#include "genolc.h"
 #include "config.h" /* for pclean_criteria[] */
 #include "dg_scripts.h" /* To enable saving of player variables to disk */
 #include "quest.h"
@@ -163,29 +163,40 @@ static void remove_player_from_index(int pos)
   }
 }
 
-/* This function necessary to save a seperate ASCII player index */
+/* Save the ASCII player index without truncating the previous copy. */
 void save_player_index(void)
 {
-  int i;
-  char index_name[50], bits[64];
+  static const char index_name[] = LIB_PLRFILES INDEX_FILE;
+  static const char tempname[] = LIB_PLRFILES INDEX_FILE ".tmp";
+  int i, result = TRUE;
+  char bits[64];
   FILE *index_file;
 
-  sprintf(index_name, "%s%s", LIB_PLRFILES, INDEX_FILE);
-  if (!(index_file = fopen(index_name, "w"))) {
-    log("SYSERR: Could not write player index file");
+  if (!(index_file = fopen(tempname, "w"))) {
+    log("SYSERR: Could not open temporary player index %s: %s", tempname, strerror(errno));
     return;
   }
 
-  for (i = 0; i <= top_of_p_table; i++)
+  for (i = 0; result && i <= top_of_p_table; i++)
     if (*player_table[i].name) {
       sprintascii(bits, player_table[i].flags);
-      fprintf(index_file, "%ld %s %d %s %ld\n", player_table[i].id,
-	player_table[i].name, player_table[i].level, *bits ? bits : "0",
-        (long)player_table[i].last);
+      result = fprintf(index_file, "%ld %s %d %s %ld\n", player_table[i].id,
+        player_table[i].name, player_table[i].level, *bits ? bits : "0",
+        (long)player_table[i].last) >= 0;
     }
-  fprintf(index_file, "~\n");
-
-  fclose(index_file);
+  if (result && fputs("~\n", index_file) == EOF)
+    result = FALSE;
+  if (fclose(index_file) == EOF)
+    result = FALSE;
+  if (!result) {
+    log("SYSERR: Unable to write player index %s.", tempname);
+    remove(tempname);
+    return;
+  }
+  if (!genolc_install_file(tempname, index_name)) {
+    log("SYSERR: Unable to replace player index %s: %s", index_name, strerror(errno));
+    remove(tempname);
+  }
 }
 
 void free_player_index(void)
