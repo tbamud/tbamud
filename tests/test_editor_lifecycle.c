@@ -1828,6 +1828,111 @@ static void test_dc_on_olc_builder_and_menu_editor(void)
   free_test_char(bld);
 }
 
+
+static struct char_data *make_creation_char(const char *name,
+                                            struct descriptor_data *d,
+                                            int state)
+{
+  struct char_data *ch = calloc(1, sizeof(*ch));
+  TEST_ASSERT_NOT_NULL(ch);
+  ch->player_specials = calloc(1, sizeof(*ch->player_specials));
+  TEST_ASSERT_NOT_NULL(ch->player_specials);
+  ch->player.name = strdup(name);
+  IN_ROOM(ch) = NOWHERE;
+
+  memset(d, 0, sizeof(*d));
+  snprintf(d->host, sizeof(d->host), "localhost");
+  d->character = ch;
+  ch->desc = d;
+  STATE(d) = state;
+  d->next = descriptor_list;
+  descriptor_list = d;
+  return ch;
+}
+
+static void free_creation_char(struct char_data *ch)
+{
+  if (!ch)
+    return;
+  if (ch->player.name)
+    free(ch->player.name);
+  if (GET_HOST(ch))
+    free(GET_HOST(ch));
+  if (ch->player_specials && ch->player_specials != &dummy_mob)
+    free(ch->player_specials);
+  free(ch);
+}
+
+static void test_new_char_dupe_check_older_creation_and_ingame_collision(void)
+{
+  struct descriptor_data d_older, d_new1, d_trailing, d_ingame, d_new2;
+  struct char_data *ch_older, *ch_new1, *bystander, *builder, *ch_new2;
+  char arg[MAX_INPUT_LENGTH];
+
+  /* Case A: older connection is also in char creation -> boot older, proceed */
+  ch_older = make_creation_char("NewbieOne", &d_older, CON_NEWPASSWD);
+  ch_new1 = make_creation_char("NewbieOne", &d_new1, CON_NAME_CNFRM);
+
+  snprintf(arg, sizeof(arg), "Y");
+  nanny(&d_new1, arg);
+
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_older));
+  TEST_ASSERT_NULL(d_older.character);
+  TEST_ASSERT_NULL(ch_older->desc);
+  TEST_ASSERT_EQUAL_INT(CON_NEWPASSWD, STATE(&d_new1));
+  TEST_ASSERT_EQUAL_PTR(ch_new1, d_new1.character);
+
+  unlink_descriptor(&d_new1);
+  unlink_descriptor(&d_older);
+  free_creation_char(ch_older);
+  free_creation_char(ch_new1);
+
+  /* Case B: first connection is in-game (in CON_TEDIT) and a trailing
+   * descriptor follows it in descriptor_list -> close editors on k, close both
+   * k and d immediately without scanning trailing descriptors or prompting d */
+  memset(&d_trailing, 0, sizeof(d_trailing));
+  memset(&d_ingame, 0, sizeof(d_ingame));
+  bystander = make_test_char("Bystander", 10, 9601, &d_trailing);
+  builder = make_test_char("CollisionBuilder", LVL_IMPL, 9602, &d_ingame);
+  motd = strdup("MOTD before creation collision\r\n");
+
+  snprintf(arg, sizeof(arg), "motd");
+  do_tedit(builder, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(CON_TEDIT, STATE(&d_ingame));
+  send_editor_line(&d_ingame, "Unsaved collision draft");
+
+  ch_new2 = make_creation_char("CollisionBuilder", &d_new2, CON_NAME_CNFRM);
+  /* Verify list order: d_new2 -> d_ingame -> d_trailing */
+  TEST_ASSERT_EQUAL_PTR(&d_ingame, d_new2.next);
+  TEST_ASSERT_EQUAL_PTR(&d_trailing, d_ingame.next);
+
+  snprintf(arg, sizeof(arg), "Y");
+  nanny(&d_new2, arg);
+
+  TEST_ASSERT_NULL(d_ingame.olc);
+  TEST_ASSERT_NULL(d_ingame.str);
+  TEST_ASSERT_NULL(d_ingame.backstr);
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_ingame));
+  TEST_ASSERT_NULL(d_ingame.character);
+  TEST_ASSERT_NULL(builder->desc);
+  TEST_ASSERT_FALSE(PLR_FLAGGED(builder, PLR_WRITING));
+  TEST_ASSERT_EQUAL_STRING("MOTD before creation collision\r\n", motd);
+
+  TEST_ASSERT_EQUAL_INT(CON_CLOSE, STATE(&d_new2));
+  TEST_ASSERT_NULL(d_new2.character);
+  TEST_ASSERT_NULL(ch_new2->desc);
+
+  TEST_ASSERT_EQUAL_INT(CON_PLAYING, STATE(&d_trailing));
+  TEST_ASSERT_EQUAL_PTR(bystander, d_trailing.character);
+
+  unlink_descriptor(&d_new2);
+  unlink_descriptor(&d_ingame);
+  unlink_descriptor(&d_trailing);
+  free_creation_char(ch_new2);
+  free_test_char(builder);
+  free_test_char(bystander);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -1848,5 +1953,6 @@ int main(void)
   RUN_TEST(test_tedit_confirms_disk_write_and_rename_before_publishing);
   RUN_TEST(test_dupe_login_closes_editors_and_usurps_olc_builder);
   RUN_TEST(test_dc_on_olc_builder_and_menu_editor);
+  RUN_TEST(test_new_char_dupe_check_older_creation_and_ingame_collision);
   return UNITY_END();
 }

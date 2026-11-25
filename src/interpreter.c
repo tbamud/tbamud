@@ -1268,7 +1268,7 @@ static bool perform_new_char_dupe_check(struct descriptor_data *d)
 
         mudlog(NRM, LVL_GOD, TRUE, "SYSERR: Multiple logins with 1st in-game and the 2nd in char creation.");
 
-        found = TRUE;
+        return (TRUE);
       }
     }
   }
@@ -1509,6 +1509,8 @@ void nanny(struct descriptor_data *d, char *arg)
 	return;
       }
       perform_new_char_dupe_check(d);
+      if (STATE(d) == CON_CLOSE)
+	return;
       write_to_output(d, "New character.\r\nGive me a password for %s: ", GET_PC_NAME(d->character));
       echo_off(d);
       STATE(d) = CON_NEWPASSWD;

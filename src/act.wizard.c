@@ -1747,13 +1747,11 @@ ACMD(do_dc)
   else {
     /* Remember that we can disconnect people not in the game and that rather
      * confuses the code when it expected there to be a character context. */
-    if (IS_PLAYING(d)) {
-      close_descriptor_editors(d);
+    close_descriptor_editors(d);
+    if (IS_PLAYING(d))
       STATE(d) = CON_DISCONNECT;
-    } else {
-      close_descriptor_editors(d);
+    else
       STATE(d) = CON_CLOSE;
-    }
 
     send_to_char(ch, "Connection #%d closed.\r\n", num_to_dc);
     log("(GC) Connection closed by %s.", GET_NAME(ch));
