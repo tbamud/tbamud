@@ -575,4 +575,5 @@ ACMD(do_bandage)
   act("Someone bandages you, and you feel a bit better now.",
          FALSE, ch, 0, vict, TO_VICT);
   GET_HIT(vict) = 0;
+  update_pos(vict);
 }
