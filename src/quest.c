@@ -313,7 +313,7 @@ void generic_complete_quest(struct char_data *ch)
   qst_rnum rnum;
   qst_vnum vnum = GET_QUEST(ch);
   struct obj_data *new_obj;
-  int happy_qp, happy_gold, happy_exp;
+  int happy_qp, happy_gold;
 
   /* AQ_MOB_FIND calls this once per matching mob in the room, and the first
    * call clears the quest -- so a second copy of the target mob arrives
@@ -363,13 +363,16 @@ void generic_complete_quest(struct char_data *ch)
       }
     }
     if (QST_EXP(rnum)) {
-      if ((IS_HAPPYHOUR) && (IS_HAPPYEXP)) {
-        happy_exp = (int)(QST_EXP(rnum) * (((float)(100+HAPPY_EXP))/(float)100));
-        happy_exp = MAX(happy_exp, 0);
-        gain_exp(ch, happy_exp);
+      if (IS_HAPPYHOUR && IS_HAPPYEXP) {
+        int base_exp = MAX(QST_EXP(rnum), 0);
+        int award = apply_happy_hour_exp_bonus(base_exp);
+
+        if (base_exp > 0)
+          award = MIN(CONFIG_MAX_EXP_GAIN, award);
+        gain_exp(ch, base_exp);
         send_to_char(ch,
               "You have been awarded %d experience for your service.\r\n",
-              happy_exp);
+              award);
       } else {
         gain_exp(ch, QST_EXP(rnum));
         send_to_char(ch,
