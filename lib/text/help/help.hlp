@@ -7426,9 +7426,11 @@ main menu, you will be shown a list to choose from:
                   Ends: When the player or their group, pets included,
                   kills the last other mobile in the room while the
                   player is there, and the target is there and not dying
-                  (incapacitated or mortally wounded).  If it is dying,
-                  they can still finish by healing or bandaging it.
-                  Players' charmed pets may stay with the target.
+                  (incapacitated or mortally wounded).  For a single-target
+                  rescue, the player or their group healing or bandaging
+                  the captive back from dying also counts in an already
+                  cleared room, even if someone else cleared it.  Players'
+                  charmed pets may stay.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

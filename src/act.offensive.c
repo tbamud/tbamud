@@ -532,7 +532,7 @@ ACMD(do_bandage)
 {
   char arg[MAX_INPUT_LENGTH];
   struct char_data * vict;
-  int percent, prob, was_dying;
+  int percent, prob, old_position;
 
   if (!GET_SKILL(ch, SKILL_BANDAGE))
   {
@@ -575,13 +575,8 @@ ACMD(do_bandage)
     vict, TO_NOTVICT);
   act("Someone bandages you, and you feel a bit better now.",
          FALSE, ch, 0, vict, TO_VICT);
-  was_dying = GET_POS(vict) < POS_STUNNED;
+  old_position = GET_POS(vict);
   GET_HIT(vict) = 0;
   update_pos(vict);
-  /* The rescue check runs when a captor dies.  If the captive was dying
-   * then, bandaging it is what finishes the rescue, for the bandager's side
-   * as for the killer's; vict goes along so the check counts the bandage
-   * only if vict is the captive. */
-  if (was_dying && IS_NPC(vict))
-    autoquest_group_check(ch, vict, IN_ROOM(vict), AQ_MOB_SAVE);
+  check_rescue_on_recovery(ch, vict, old_position);
 }
