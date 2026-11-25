@@ -12,8 +12,6 @@
 
 cmake_minimum_required(VERSION 3.12)
 
-enable_testing()
-
 # ---------------------------------------------------------------------------
 # Common settings shared by all test targets
 # ---------------------------------------------------------------------------
@@ -180,6 +178,20 @@ add_mud_test(test_improved_edit
 # without the unrelated OLC editor functions. MSVC resolves those discarded
 # functions' dependencies before elimination, so it cannot link this target.
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
+    add_mud_test(test_trigger_save
+        ${MUD_SRCDIR}/utils.c
+        ${MUD_SRCDIR}/random.c
+        ${MUD_SRCDIR}/dg_olc.c
+        ${MUD_SRCDIR}/genolc.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_trigger_save.c
+    )
+    target_compile_options(test_trigger_save PRIVATE -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_trigger_save APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_trigger_save APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+
     add_executable(test_editor_lifecycle
         ${UNITY_SRC}
         ${STUBS_SRC}
