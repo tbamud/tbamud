@@ -277,7 +277,9 @@ void death_cry(struct char_data *ch)
 
 void raw_kill(struct char_data * ch, struct char_data * killer)
 {
-struct char_data *i;
+  struct char_data *i;
+  const room_rnum death_room = IN_ROOM(ch);
+  const bool killer_was_present = killer && IN_ROOM(killer) == death_room;
 
   if (FIGHTING(ch))
     stop_fighting(ch);
@@ -313,7 +315,9 @@ struct char_data *i;
   extract_char(ch);
 
   if (killer) {
-    autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
+    /* Death scripts can move characters before quest credit is checked. */
+    if (killer_was_present && IN_ROOM(killer) == death_room)
+      autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
     autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
   }
 }

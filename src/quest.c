@@ -481,8 +481,9 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
     case AQ_MOB_SAVE:
       if (DEAD(ch) || !VALID_ROOM_RNUM(IN_ROOM(ch)))
         break;
-      /* Killing a copy of the captive is no rescue. */
-      if (vict && IS_NPC(vict) && GET_MOB_VNUM(vict) == QST_TARGET(rnum))
+      /* A guard must die in the holder's room and the captive must survive. */
+      if (!vict || !IS_NPC(vict) || !DEAD(vict) ||
+          IN_ROOM(vict) != IN_ROOM(ch) || GET_MOB_VNUM(vict) == QST_TARGET(rnum))
         break;
       if (rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(rnum), NULL))
         generic_complete_quest(ch);
