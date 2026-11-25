@@ -407,17 +407,17 @@ static bool rescue_room_is_clear(room_rnum room, int target,
                                  const struct char_data *patient)
 {
   struct char_data *mob;
-  bool captive_is_stable = false;
+  bool captive_is_stable = FALSE;
 
   for (mob = world[room].people; mob; mob = mob->next_in_room) {
     if (!IS_NPC(mob) || MOB_FLAGGED(mob, MOB_NOTDEADYET))
       continue;
     if (GET_MOB_VNUM(mob) == target) {
       if ((!patient || mob == patient) && GET_POS(mob) >= POS_STUNNED)
-        captive_is_stable = true;
+        captive_is_stable = TRUE;
     } else if (!AFF_FLAGGED(mob, AFF_CHARM) || !mob->master ||
                IS_NPC(mob->master)) {
-      return false;  /* Only players' charmed pets may stay. */
+      return FALSE;  /* Only players' charmed pets may stay. */
     }
   }
   return captive_is_stable;
