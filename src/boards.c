@@ -39,6 +39,7 @@
 #include "handler.h"
 #include "improved-edit.h"
 #include "modify.h"
+#include "genolc.h"
 
 /* Board appearance order. */
 #define	NEWEST_AT_TOP	FALSE
@@ -468,48 +469,56 @@ int board_abort_write(int board_type, char **writeto)
 
 void board_save_board(int board_type)
 {
+  const char *filename = FILENAME(board_type);
+  char tempfile[sizeof(FILENAME(board_type)) + sizeof(".tmp")];
   FILE *fl;
-  int i, saved_msgs = 0;
-  char *tmp1, *tmp2 = NULL;
+  int i, saved_msgs = 0, result;
 
   for (i = 0; i < num_of_msgs[board_type]; i++)
     if (!board_msg_is_in_progress(MSG_SLOTNUM(board_type, i)))
       saved_msgs++;
 
   if (!saved_msgs) {
-    remove(FILENAME(board_type));
+    if (remove(filename) < 0 && errno != ENOENT)
+      log("SYSERR: Unable to remove empty board file %s: %s", filename, strerror(errno));
     return;
   }
-  if (!(fl = fopen(FILENAME(board_type), "wb"))) {
-    perror("SYSERR: Error writing board");
+  snprintf(tempfile, sizeof(tempfile), "%s.tmp", filename);
+  if (!(fl = fopen(tempfile, "wb"))) {
+    perror("SYSERR: Unable to open the temporary board file");
     return;
   }
-  fwrite(&saved_msgs, sizeof(int), 1, fl);
+  result = fwrite(&saved_msgs, sizeof(saved_msgs), 1, fl) == 1;
 
-  for (i = 0; i < num_of_msgs[board_type]; i++) {
-    if (board_msg_is_in_progress(MSG_SLOTNUM(board_type, i)))
+  for (i = 0; result && i < num_of_msgs[board_type]; i++) {
+    struct board_msginfo *message = &msg_index[board_type][i];
+    const char *heading = message->heading;
+    const char *body = NULL;
+
+    if (board_msg_is_in_progress(message->slot_num))
       continue;
 
-    if ((tmp1 = MSG_HEADING(board_type, i)) != NULL)
-      msg_index[board_type][i].heading_len = strlen(tmp1) + 1;
-    else
-      msg_index[board_type][i].heading_len = 0;
+    if (message->slot_num >= 0 && message->slot_num < INDEX_SIZE)
+      body = msg_storage[message->slot_num];
+    message->heading_len = heading ? strlen(heading) + 1 : 0;
+    message->message_len = body ? strlen(body) + 1 : 0;
 
-    if (MSG_SLOTNUM(board_type, i) < 0 ||
-	MSG_SLOTNUM(board_type, i) >= INDEX_SIZE ||
-	(!(tmp2 = msg_storage[MSG_SLOTNUM(board_type, i)])))
-      msg_index[board_type][i].message_len = 0;
-    else
-      msg_index[board_type][i].message_len = strlen(tmp2) + 1;
-
-    fwrite(&(msg_index[board_type][i]), sizeof(struct board_msginfo), 1, fl);
-    if (tmp1)
-      fwrite(tmp1, sizeof(char), msg_index[board_type][i].heading_len, fl);
-    if (tmp2)
-      fwrite(tmp2, sizeof(char), msg_index[board_type][i].message_len, fl);
+    result = fwrite(message, sizeof(*message), 1, fl) == 1 &&
+        (!heading || fwrite(heading, message->heading_len, 1, fl) == 1) &&
+        (!body || fwrite(body, message->message_len, 1, fl) == 1);
   }
 
-  fclose(fl);
+  if (fclose(fl) == EOF)
+    result = FALSE;
+  if (!result) {
+    log("SYSERR: Unable to write board file %s.", tempfile);
+    remove(tempfile);
+    return;
+  }
+  if (!genolc_install_file(tempfile, filename)) {
+    log("SYSERR: Unable to replace board file %s: %s", filename, strerror(errno));
+    remove(tempfile);
+  }
 }
 
 /* A board file that cannot be read through to the end cannot be trusted at
