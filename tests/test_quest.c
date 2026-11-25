@@ -349,6 +349,21 @@ static void test_healing_a_captive_left_dying_finishes_the_rescue(void)
   assert_rescued(holder);
 }
 
+static void test_a_heal_that_leaves_the_captive_dying_finishes_nothing(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  GET_HIT(captive) = -10;
+  update_pos(captive);
+  give_quest(holder, Q_RESCUE);
+  circle_srandom(3);  /* The first level-zero Cure Light restores 7 HP. */
+
+  mag_points(0, holder, captive, SPELL_CURE_LIGHT, 0);
+  TEST_ASSERT_EQUAL_INT(POS_INCAP, GET_POS(captive));
+  assert_not_rescued(holder);
+}
+
 static void test_bandaging_a_captive_left_dying_finishes_the_rescue(void)
 {
   char arg[] = "captive";
@@ -367,8 +382,7 @@ static void test_bandaging_a_captive_left_dying_finishes_the_rescue(void)
   assert_rescued(holder);
 }
 
-/* Healing only finishes a rescue the captive's dying held up; healing a
- * captive in a cell someone else cleared does not. */
+/* Treating minor injuries in a clear room leaves the quest open. */
 static void test_healing_a_captive_that_was_not_dying_finishes_nothing(void)
 {
   struct char_data *holder = new_player(CELL);
@@ -422,6 +436,134 @@ static void test_bandaging_a_dying_pet_finishes_nothing(void)
   assert_not_rescued(holder);
 }
 
+static struct char_data *new_pending_corpse(room_rnum room)
+{
+  static char name[] = "guard";
+  struct char_data *corpse = new_mob(GUARD, room);
+
+  corpse->player.name = name;
+  GET_MAX_HIT(corpse) = 20;
+  GET_HIT(corpse) = -11;
+  GET_POS(corpse) = POS_DEAD;
+  kill_mob(corpse);
+  return corpse;
+}
+
+static void test_healing_a_pending_corpse_finishes_nothing(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *corpse = new_pending_corpse(CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+
+  /* A healing spell can receive an NPC still in the room during extraction. */
+  mag_points(20, holder, corpse, SPELL_HEAL, 0);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_bandaging_a_pending_corpse_finishes_nothing(void)
+{
+  char arg[] = "guard";
+  struct char_data *holder = new_player(CELL);
+
+  new_mob(CAPTIVE, CELL);
+  new_pending_corpse(CELL);
+  SET_SKILL(holder, SKILL_BANDAGE, 101);
+  give_quest(holder, Q_RESCUE);
+
+  do_bandage(holder, arg, 0, 0);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void treat_the_same_captive_twice(struct char_data *holder,
+                                        struct char_data *captive)
+{
+  char arg[] = "captive";
+
+  GET_HIT(captive) = -4;
+  update_pos(captive);
+  mag_points(20, holder, captive, SPELL_CURE_CRITIC, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(captive));
+
+  GET_HIT(captive) = -4;
+  update_pos(captive);
+  SET_SKILL(holder, SKILL_BANDAGE, 101);
+  do_bandage(holder, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STUNNED, GET_POS(captive));
+}
+
+static void test_repeated_treatment_does_not_spend_multi_target_goals(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  QST_QUANTITY(0) = 2;
+  give_quest(holder, Q_RESCUE);
+
+  treat_the_same_captive_twice(holder, captive);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(2, GET_QUEST_COUNTER(holder));
+}
+
+static void test_treatment_does_not_finish_a_multi_target_quest_with_one_goal_left(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *guard = new_mob(GUARD, CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  GET_HIT(captive) = 5;
+  update_pos(captive);
+  QST_QUANTITY(0) = 2;
+  give_quest(holder, Q_RESCUE);
+  holder_sees_death(holder, guard);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+
+  treat_the_same_captive_twice(holder, captive);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_healing_the_captive_in_an_already_clear_room_completes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  give_quest(holder, Q_RESCUE);
+  mag_points(20, holder, captive, SPELL_CURE_CRITIC, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(captive));
+  assert_rescued(holder);
+}
+
+static void test_bandaging_the_captive_in_an_already_clear_room_completes_the_rescue(void)
+{
+  char arg[] = "captive";
+  struct char_data *holder = new_player(CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  SET_SKILL(holder, SKILL_BANDAGE, 101);
+  give_quest(holder, Q_RESCUE);
+  do_bandage(holder, arg, 0, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STUNNED, GET_POS(captive));
+  assert_rescued(holder);
+}
+
+static void test_healing_a_remote_copy_does_not_rescue_the_local_captive(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *remote_captive = new_dying_captive(HALL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+
+  mag_points(20, holder, remote_captive, SPELL_CURE_CRITIC, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(remote_captive));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -436,9 +578,17 @@ int main(void)
   RUN_TEST(test_a_captors_charmed_minion_blocks_the_rescue);
   RUN_TEST(test_a_dead_holder_is_not_rewarded);
   RUN_TEST(test_healing_a_captive_left_dying_finishes_the_rescue);
+  RUN_TEST(test_a_heal_that_leaves_the_captive_dying_finishes_nothing);
   RUN_TEST(test_bandaging_a_captive_left_dying_finishes_the_rescue);
   RUN_TEST(test_healing_a_captive_that_was_not_dying_finishes_nothing);
   RUN_TEST(test_healing_a_dying_pet_finishes_nothing);
   RUN_TEST(test_bandaging_a_dying_pet_finishes_nothing);
+  RUN_TEST(test_healing_a_pending_corpse_finishes_nothing);
+  RUN_TEST(test_bandaging_a_pending_corpse_finishes_nothing);
+  RUN_TEST(test_repeated_treatment_does_not_spend_multi_target_goals);
+  RUN_TEST(test_treatment_does_not_finish_a_multi_target_quest_with_one_goal_left);
+  RUN_TEST(test_healing_the_captive_in_an_already_clear_room_completes_the_rescue);
+  RUN_TEST(test_bandaging_the_captive_in_an_already_clear_room_completes_the_rescue);
+  RUN_TEST(test_healing_a_remote_copy_does_not_rescue_the_local_captive);
   return UNITY_END();
 }
