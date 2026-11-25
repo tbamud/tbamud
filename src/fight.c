@@ -275,9 +275,46 @@ void death_cry(struct char_data *ch)
       send_to_room(world[IN_ROOM(ch)].dir_option[door]->to_room, "Your blood freezes as you hear someone's death cry.\r\n");
 }
 
+static void check_kill_quest(struct char_data *player, struct char_data *victim,
+                             struct list_data **completed)
+{
+  qst_vnum quest;
+
+  if (IS_NPC(player))
+    return;
+
+  quest = GET_QUEST(player);
+  autoquest_trigger_check(player, victim, NULL, AQ_MOB_KILL);
+  /* A newly started quest should wait for another death. */
+  if (GET_QUEST(player) != quest) {
+    if (!*completed)
+      *completed = create_list();
+    add_to_list(player, *completed);
+  }
+}
+
+static void check_death_room_quest(struct char_data *player,
+                                   struct char_data *victim, room_rnum room,
+                                   struct list_data *completed)
+{
+  int type;
+
+  if (IN_ROOM(player) != room || IS_NPC(player) || DEAD(player) ||
+      GET_POS(player) <= POS_DEAD || GET_QUEST(player) == NOTHING ||
+      (completed && find_in_list(player, completed)))
+    return;
+
+  type = GET_QUEST_TYPE(player);
+  if (type == AQ_MOB_SAVE || type == AQ_ROOM_CLEAR)
+    autoquest_trigger_check(player, victim, NULL, type);
+}
+
 void raw_kill(struct char_data * ch, struct char_data * killer)
 {
-struct char_data *i;
+  struct char_data *i;
+  struct iterator_data iterator;
+  struct list_data *completed_kill_quests = NULL;
+  room_rnum death_room = IN_ROOM(ch);
 
   if (FIGHTING(ch))
     stop_fighting(ch);
@@ -294,13 +331,18 @@ struct char_data *i;
   } else
     death_cry(ch);
 
-  if (killer) {
-    if (killer->group) {
-      while ((i = (struct char_data *) simple_list(killer->group->members)) != NULL)
-        if(IN_ROOM(i) == IN_ROOM(ch)  || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
-          autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);      
-    } else
-        autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
+  if (killer && IS_NPC(ch)) {
+    if (GROUP(killer)) {
+      for (i = merge_iterator(&iterator, GROUP(killer)->members); i;
+           i = next_in_list(&iterator))
+        if (IN_ROOM(i) == IN_ROOM(ch) ||
+            (IN_ROOM(i) != NOWHERE && IN_ROOM(ch) != NOWHERE &&
+             world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
+          check_kill_quest(i, ch, &completed_kill_quests);
+      remove_iterator(&iterator);
+    } else {
+      check_kill_quest(killer, ch, &completed_kill_quests);
+    }
   }
 
   /* Alert Group if Applicable */
@@ -312,10 +354,22 @@ struct char_data *i;
   make_corpse(ch);
   extract_char(ch);
 
-  if (killer) {
-    autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
-    autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
+  if (killer && killer != ch && IS_NPC(ch) && death_room != NOWHERE) {
+    if (IS_NPC(killer) && AFF_FLAGGED(killer, AFF_CHARM) && killer->master &&
+        !IS_NPC(killer->master))
+      killer = killer->master;
+
+    /* The victim is still in the room list, with extraction pending. */
+    if (GROUP(killer)) {
+      for (i = merge_iterator(&iterator, GROUP(killer)->members); i;
+           i = next_in_list(&iterator))
+        check_death_room_quest(i, ch, death_room, completed_kill_quests);
+      remove_iterator(&iterator);
+    } else {
+      check_death_room_quest(killer, ch, death_room, completed_kill_quests);
+    }
   }
+  free_list(completed_kill_quests);
 }
 
 void die(struct char_data * ch, struct char_data * killer)
