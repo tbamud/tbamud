@@ -438,13 +438,17 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
             generic_complete_quest(ch);
       break;
     case AQ_MOB_SAVE:
-       if (ch == vict)
-        found = FALSE;
-      for (i = world[IN_ROOM(ch)].people; i && found; i = i->next_in_room)
-          if (i && IS_NPC(i) && !MOB_FLAGGED(i, MOB_NOTDEADYET))
-            if ((GET_MOB_VNUM(i) != QST_TARGET(rnum)) &&
-                !AFF_FLAGGED(i, AFF_CHARM))
-              found = FALSE;
+      if (ch == vict)
+        break;
+      found = FALSE;
+      for (i = world[IN_ROOM(ch)].people; i; i = i->next_in_room) {
+        if (!IS_NPC(i) || MOB_FLAGGED(i, MOB_NOTDEADYET))
+          continue;
+        if (GET_MOB_VNUM(i) == QST_TARGET(rnum))
+          found = TRUE;
+        else if (!AFF_FLAGGED(i, AFF_CHARM))
+          return;
+      }
       if (found)
         generic_complete_quest(ch);
       break;
