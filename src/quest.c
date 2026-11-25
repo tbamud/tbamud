@@ -315,11 +315,10 @@ void generic_complete_quest(struct char_data *ch)
   struct obj_data *new_obj;
   int happy_qp, happy_gold, happy_exp;
 
-  /* AQ_MOB_FIND calls this once per matching mob in the room and stops when
-   * the quest changes, but a caller that kept going after the first call
-   * cleared the quest would arrive here with GET_QUEST(ch) already NOTHING,
-   * and real_quest() answers NOTHING for it.  Every QST_ macro below is a
-   * bare aquest_table[rnum].
+  /* AQ_MOB_FIND calls this once per matching mob in the room, and the first
+   * call clears the quest -- so a second copy of the target mob arrives
+   * here with GET_QUEST(ch) already NOTHING, and real_quest() answers
+   * NOTHING for it.  Every QST_ macro below is a bare aquest_table[rnum].
    *
    * The test belongs above the decrement, not after it.  clear_quest()
    * leaves the counter at 0, so by the line below it has already gone to
@@ -408,7 +407,6 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
 {
   struct char_data *i;
   qst_rnum rnum;
-  qst_vnum vnum;
   int found = TRUE;
 
   if (IS_NPC(ch))
@@ -429,11 +427,7 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
         generic_complete_quest(ch);
       break;
     case AQ_MOB_FIND:
-      /* Each matching mob counts toward this quest only.  Stop once it is
-       * done, or the next copy would complete the next quest in a chain. */
-      vnum = GET_QUEST(ch);
-      for (i = world[IN_ROOM(ch)].people; i && GET_QUEST(ch) == vnum;
-           i = i->next_in_room)
+      for (i=world[IN_ROOM(ch)].people; i; i = i->next_in_room)
         if (IS_NPC(i))
           if (QST_TARGET(rnum) == GET_MOB_VNUM(i))
             generic_complete_quest(ch);

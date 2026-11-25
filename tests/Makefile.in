@@ -121,9 +121,8 @@ test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------
-# test_quest - covers the rescue and Find-mob checks in src/quest.c, with the
-# rescue check char_to_room() runs.  Section GC drops the quest commands,
-# which need the running game.
+# test_quest - covers rescue eligibility in src/quest.c.
+# Section GC drops the quest commands, which need the running game.
 # ---------------------------------------------------------------------------
 test_quest: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
             $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c \

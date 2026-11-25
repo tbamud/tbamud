@@ -7420,19 +7420,12 @@ main menu, you will be shown a list to choose from:
 2) Find mob       - Player needs to find a particular mobile.
                   Ends: When the player enters the same room as the target mob.
 3) Kill mob       - Player needs to kill a particular mobile.
-                  Ends: When the target mobile dies.
+                  Ends: When the target mobile dies, if the player lands the 
+				  killing blow.
 4) Save mob       - Player needs to protect or save a particular mobile.
-                  Ends: When every mobile in the same room as the target is 
-				  killed.  The target mobile should be the last mobile left 
-				  in the room, still there and not dying: the quest is
-				  checked when the player, their group or their pet kills
-				  a mobile in that room, and when the player walks in.
-				  Only players' charmed pets may stay with the target.  A
-				  script that moves or purges the target as the last guard
-				  dies leaves the quest open, so release it from a delayed
-				  trigger on the target itself.  The check is a snapshot:
-				  a target killed after the quest completes (say, later in
-				  the same area spell) does not undo it.
+                  Ends: When the player kills the last other mobile in
+                  the room and the target is still there and stable.
+                  Players' charmed pets may stay with the target.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

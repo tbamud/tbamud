@@ -1,10 +1,4 @@
-/* Rescue ("Save mob") quests complete only while the mob to be rescued is
- * alive in the holder's room with nothing but players' pets beside it, and a
- * Find-mob step completes only itself, never the next step of its chain.
- *
- * The checks are driven the way the game drives them: raw_kill() flags the
- * mob that died MOB_NOTDEADYET and passes it as vict, and char_to_room()
- * runs the rescue check when the holder walks in. */
+/* Rescue quests need a living, stable captive and a living player. */
 #include "unity.h"
 #include "conf.h"
 #include "sysdep.h"
@@ -33,15 +27,14 @@ void gain_exp(struct char_data *ch, int gain) { (void)ch; (void)gain; }
 int increase_gold(struct char_data *ch, int amt) { (void)ch; return amt; }
 
 enum { CELL, HALL };                   /* room rnums */
-enum { CAPTIVE, GUARD, BANDIT, PET };  /* mob rnums  */
+enum { CAPTIVE, GUARD, PET };          /* mob rnums */
 
 #define Q_RESCUE 10   /* save the captive */
-#define Q_FIND   20   /* find a bandit, then Q_RESCUE */
 
 static char empty[] = "";
 static struct room_data rooms[2];
-static struct index_data mobs[4];
-static struct aq_data quests[2];
+static struct index_data mobs[3];
+static struct aq_data quests[1];
 static struct char_data *made[16];
 static int num_made;
 
@@ -122,12 +115,6 @@ static void holder_sees_death(struct char_data *holder, struct char_data *mob)
   autoquest_trigger_check(holder, mob, NULL, AQ_MOB_SAVE);
 }
 
-static void move_to(struct char_data *ch, room_rnum room)
-{
-  char_from_room(ch);
-  char_to_room(ch, room);
-}
-
 static void assert_rescued(struct char_data *holder)
 {
   TEST_ASSERT_EQUAL_INT(NOTHING, GET_QUEST(holder));
@@ -153,17 +140,14 @@ void setUp(void)
   memset(mobs, 0, sizeof(mobs));
   mobs[CAPTIVE].vnum = 200;
   mobs[GUARD].vnum = 300;
-  mobs[BANDIT].vnum = 100;
   mobs[PET].vnum = 400;
   mob_index = mobs;
   top_of_mobt = PET;
 
   memset(quests, 0, sizeof(quests));
   init_quest(&quests[0], Q_RESCUE, AQ_MOB_SAVE, 200);
-  init_quest(&quests[1], Q_FIND, AQ_MOB_FIND, 100);
-  quests[1].next_quest = Q_RESCUE;
   aquest_table = quests;
-  total_quests = 2;
+  total_quests = 1;
 
   num_made = 0;
 }
@@ -219,6 +203,7 @@ static void test_rescue_needs_the_captive_in_the_room(void)
   struct char_data *holder = new_player(CELL);
   struct char_data *guard = new_mob(GUARD, CELL);
 
+  new_mob(CAPTIVE, HALL);
   give_quest(holder, Q_RESCUE);
   holder_sees_death(holder, guard);
   assert_not_rescued(holder);
@@ -304,36 +289,6 @@ static void test_a_dead_holder_is_not_rewarded(void)
   assert_not_rescued(holder);
 }
 
-static void test_walking_into_a_cleared_cell_completes_the_rescue(void)
-{
-  struct char_data *holder = new_player(HALL);
-  struct char_data *guard = new_mob(GUARD, CELL);
-
-  new_mob(CAPTIVE, CELL);
-  give_quest(holder, Q_RESCUE);
-
-  move_to(holder, CELL);       /* the guard is still there */
-  assert_not_rescued(holder);
-
-  move_to(holder, HALL);
-  char_from_room(guard);       /* it fled, and died somewhere else */
-  move_to(holder, CELL);
-  assert_rescued(holder);
-}
-
-static void test_a_find_step_does_not_complete_the_next_step(void)
-{
-  struct char_data *holder = new_player(CELL);
-
-  new_mob(BANDIT, CELL);
-  new_mob(BANDIT, CELL);
-  give_quest(holder, Q_FIND);
-  autoquest_trigger_check(holder, NULL, NULL, AQ_MOB_FIND);
-
-  TEST_ASSERT_TRUE(is_complete(holder, Q_FIND));
-  assert_not_rescued(holder);
-}
-
 int main(void)
 {
   UNITY_BEGIN();
@@ -347,7 +302,5 @@ int main(void)
   RUN_TEST(test_a_players_pet_may_stay_with_the_captive);
   RUN_TEST(test_a_captors_charmed_minion_blocks_the_rescue);
   RUN_TEST(test_a_dead_holder_is_not_rewarded);
-  RUN_TEST(test_walking_into_a_cleared_cell_completes_the_rescue);
-  RUN_TEST(test_a_find_step_does_not_complete_the_next_step);
   return UNITY_END();
 }

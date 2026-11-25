@@ -470,8 +470,6 @@ void char_to_room(struct char_data *ch, room_rnum room)
 
     autoquest_trigger_check(ch, 0, 0, AQ_ROOM_FIND);
     autoquest_trigger_check(ch, 0, 0, AQ_MOB_FIND);
-    /* Finishes a rescue whose room was cleared while ch was elsewhere. */
-    autoquest_trigger_check(ch, 0, 0, AQ_MOB_SAVE);
 
     if (GET_EQ(ch, WEAR_LIGHT))
       if (GET_OBJ_TYPE(GET_EQ(ch, WEAR_LIGHT)) == ITEM_LIGHT)

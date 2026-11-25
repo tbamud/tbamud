@@ -214,8 +214,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     endif()
     add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
 
-    # Rescue and Find-mob checks in quest.c, with the rescue check
-    # char_to_room() runs; section GC drops the quest commands.
+    # Rescue eligibility in quest.c; section GC drops the quest commands.
     add_executable(test_quest
         ${UNITY_SRC}
         ${STUBS_SRC}
