@@ -402,6 +402,47 @@ void generic_complete_quest(struct char_data *ch)
   save_char(ch);
 }
 
+/* A recovery must count the patient, even if another copy is in the room. */
+static bool rescue_room_is_clear(room_rnum room, int target,
+                                 const struct char_data *patient)
+{
+  struct char_data *mob;
+  bool captive_is_stable = false;
+
+  for (mob = world[room].people; mob; mob = mob->next_in_room) {
+    if (!IS_NPC(mob) || MOB_FLAGGED(mob, MOB_NOTDEADYET))
+      continue;
+    if (GET_MOB_VNUM(mob) == target) {
+      if ((!patient || mob == patient) && GET_POS(mob) >= POS_STUNNED)
+        captive_is_stable = true;
+    } else if (!AFF_FLAGGED(mob, AFF_CHARM) || !mob->master ||
+               IS_NPC(mob->master)) {
+      return false;  /* Only players' charmed pets may stay. */
+    }
+  }
+  return captive_is_stable;
+}
+
+void check_rescue_on_recovery(struct char_data *ch, struct char_data *patient,
+                              int old_position)
+{
+  qst_rnum quest;
+
+  if ((old_position != POS_INCAP && old_position != POS_MORTALLYW) ||
+      !patient || !IS_NPC(patient) || DEAD(patient) ||
+      GET_POS(patient) < POS_STUNNED || !ch || IS_NPC(ch) || DEAD(ch) ||
+      GET_POS(ch) <= POS_DEAD || GET_QUEST(ch) == NOTHING ||
+      !VALID_ROOM_RNUM(IN_ROOM(ch)) || IN_ROOM(ch) != IN_ROOM(patient))
+    return;
+
+  quest = real_quest(GET_QUEST(ch));
+  /* Repeated treatment of one captive cannot satisfy multiple goals. */
+  if (quest != NOTHING && QST_TYPE(quest) == AQ_MOB_SAVE &&
+      QST_QUANTITY(quest) == 1 &&
+      rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(quest), patient))
+    generic_complete_quest(ch);
+}
+
 void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
                 struct obj_data *object, int type)
 {
@@ -438,36 +479,12 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
             generic_complete_quest(ch);
       break;
     case AQ_MOB_SAVE:
-      /* A holder who has just died earns nothing. */
-      if (DEAD(ch))
+      if (DEAD(ch) || !VALID_ROOM_RNUM(IN_ROOM(ch)))
         break;
-      if (vict && IS_NPC(vict)) {
-        /* raw_kill() passes the mob that died.  Killing a copy of the mob
-         * to be rescued is no rescue, though another copy left in the room
-         * would count. */
-        if (DEAD(vict) && GET_MOB_VNUM(vict) == QST_TARGET(rnum))
-          break;
-        /* A heal or bandage passes the mob it brought back from dying.  Only
-         * the mob to be rescued counts: healing a pet, which may stay, would
-         * otherwise finish a rescue in a room someone else cleared. */
-        if (!DEAD(vict) && GET_MOB_VNUM(vict) != QST_TARGET(rnum))
-          break;
-      }
-      found = FALSE;
-      for (i = world[IN_ROOM(ch)].people; i; i = i->next_in_room) {
-        if (!IS_NPC(i) || MOB_FLAGGED(i, MOB_NOTDEADYET))
-          continue;
-        if (GET_MOB_VNUM(i) == QST_TARGET(rnum)) {
-          /* Incapacitated and mortally wounded mobs bleed to death in
-           * point_update() unless healed or bandaged, which runs this
-           * check again; a stunned one recovers by itself. */
-          if (GET_POS(i) >= POS_STUNNED)
-            found = TRUE;
-        } else if (!AFF_FLAGGED(i, AFF_CHARM) || !i->master ||
-                   IS_NPC(i->master))
-          return;  /* only players' charmed pets may stay */
-      }
-      if (found)
+      /* Killing a copy of the captive is no rescue. */
+      if (vict && IS_NPC(vict) && GET_MOB_VNUM(vict) == QST_TARGET(rnum))
+        break;
+      if (rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(rnum), NULL))
         generic_complete_quest(ch);
       break;
     case AQ_OBJ_RETURN:

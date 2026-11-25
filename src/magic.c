@@ -802,7 +802,7 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
 void mag_points(int level, struct char_data *ch, struct char_data *victim,
 		     int spellnum, int savetype)
 {
-  int healing = 0, move = 0, was_dying;
+  int healing = 0, move = 0, old_position;
 
   if (victim == NULL)
     return;
@@ -821,15 +821,12 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
     send_to_char(victim, "A warm feeling floods your body.\r\n");
     break;
   }
-  was_dying = GET_POS(victim) < POS_STUNNED;
+  old_position = GET_POS(victim);
   GET_HIT(victim) = MIN(GET_MAX_HIT(victim), GET_HIT(victim) + healing);
   GET_MOVE(victim) = MIN(GET_MAX_MOVE(victim), GET_MOVE(victim) + move);
   update_pos(victim);
-  /* The rescue check runs when a captor dies.  If the captive was dying
-   * then, healing it is what finishes the rescue; victim goes along so the
-   * check counts the heal only if victim is the captive. */
-  if (was_dying && IS_NPC(victim) && GET_POS(victim) >= POS_STUNNED)
-    autoquest_trigger_check(ch, victim, NULL, AQ_MOB_SAVE);
+  if (healing > 0)
+    check_rescue_on_recovery(ch, victim, old_position);
 }
 
 void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,
