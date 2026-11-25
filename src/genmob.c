@@ -30,6 +30,7 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
   if ((rnum = real_mobile(vnum)) != NOBODY) {
     /* Copy over the mobile and free() the old strings. */
     copy_mobile(&mob_proto[rnum], mob);
+    GET_MOB_RNUM(&mob_proto[rnum]) = rnum;
 
     /* Now re-point all existing mobile strings to here. */
     for (live_mob = character_list; live_mob; live_mob = live_mob->next)
