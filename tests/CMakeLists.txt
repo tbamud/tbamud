@@ -265,4 +265,21 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         set_property(TARGET test_genolc_savers APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
     endif()
     add_test(NAME test_genolc_savers COMMAND test_genolc_savers)
+
+    # Flag fields and check_bitvector_names() in db.c.  test_db.c includes
+    # db.c to reach its static helpers, so neither db.c nor the stubs are
+    # compiled on their own.  Section GC drops the rest of db.c.
+    add_executable(test_db
+        ${UNITY_SRC}
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_db.c
+    )
+    target_include_directories(test_db PRIVATE ${TEST_INCLUDES})
+    target_compile_options(test_db PRIVATE ${TEST_CFLAGS}
+        -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_db APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_db APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    add_test(NAME test_db COMMAND test_db)
 endif()
