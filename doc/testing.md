@@ -77,6 +77,7 @@ make clean
 | `test_interpreter` | `src/interpreter.c` | `test_interpreter.c` |
 | `test_class` | `src/class.c` | `test_class.c` |
 | `test_trigger_save` | Trigger deletion, deferred writes and `save_all` | `test_trigger_save.c` |
+| `test_db` | Flag fields and `check_bitvector_names()` in `src/db.c` | `test_db.c` |
 
 `test_trigger_save` injects failures in the mobile/object/room/reset savers
 while exercising the real trigger deletion, trigger-file writer and save-list
@@ -179,3 +180,17 @@ Run with `make test` as usual, or `make test_genolc_savers` followed by
 GCC/Clang. Linking requires section garbage collection to omit unrelated game
 functions. Native MSVC cannot link this isolated target and CMake skips it
 there; WSL/Linux execution is not a native Windows runtime check.
+
+## World file flag tests
+
+`test_db` checks how the loader reads a flag field: each letter
+`sprintascii()` writes ('a' to 'z', 'A' to 'F') comes back as its own bit,
+'F' as bit 31 alone, and a letter past those 32 bits is logged as a SYSERR
+and ignored. It checks the old-format affect reader, which shifts every
+letter one bit up. It also checks that `check_bitvector_names()` reports only
+the unknown bits in a flag word, including one with bit 31 set.
+
+`test_db.c` includes `src/db.c` to reach its static helpers, so it links
+neither `db.c` on its own nor `test_stubs.c`, and it captures `log()` output
+itself. Like `test_genolc_savers`, it relies on section garbage collection
+to drop the rest of `db.c`, and CMake builds it only for GCC/Clang.

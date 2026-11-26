@@ -133,7 +133,7 @@ struct happyhour happy_data = {0,0,0,0};
 static int converting = FALSE;
 
 /* Local (file scope) utility functions */
-static int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits);
+static int check_bitvector_names(unsigned int bits, size_t namecount, const char *whatami, const char *whatbits);
 static int check_object_spell_number(struct obj_data *obj, int val);
 static int check_object_level(struct obj_data *obj, int val);
 static int check_object(struct obj_data *);
@@ -1206,17 +1206,43 @@ static char fread_letter(FILE *fp)
   return c;
 }
 
-bitvector_t asciiflag_conv(char *flag)
+/* A flag field is a number, or letters that each name one bit: 'a' to 'z'
+ * are bits 0-25 and 'A' to 'F' bits 26-31, the 32 letters sprintascii() in
+ * genolc.c writes.  offset moves every letter up that many bits.
+ *
+ * A letter that lands past those 32 bits is reported and ignored.  OLC never
+ * writes 'G' to 'Z', so a field holding one was edited by hand or came from
+ * another codebase.  A field is one 32-bit word -- the 128-bit flags are four
+ * of them -- so a bit above 31 has nowhere to go: kept in an int it would
+ * vanish, and bitvector_t is 32 bits on Windows, so reading it as a high bit
+ * would load the same file differently there.
+ *
+ * The shift is on bitvector_t, not int, as in find_class_bitvector().
+ * `1 << 31` for 'F' is undefined; as compiled it came back negative, and a
+ * 64-bit bitvector_t took bits 32-63 along with it.  A count of 32 or more is
+ * undefined for any 32-bit type, and x86 wraps it, so 'G' quietly set the
+ * 'a' flag. */
+#define FLAG_FIELD_BITS 32
+
+static bitvector_t asciiflag_bits(char *flag, int offset)
 {
   bitvector_t flags = 0;
-  int is_num = TRUE;
+  int is_num = TRUE, bit;
   char *p;
 
   for (p = flag; *p; p++) {
     if (islower(*p))
-      flags |= 1 << (*p - 'a');
+      bit = *p - 'a' + offset;
     else if (isupper(*p))
-      flags |= 1 << (26 + (*p - 'A'));
+      bit = 26 + (*p - 'A') + offset;
+    else
+      bit = -1;
+
+    if (bit >= FLAG_FIELD_BITS)
+      log("SYSERR: Flag letter '%c' in \"%s\" would be bit %d, past the %d a flag field holds; ignoring it.",
+          *p, flag, bit, FLAG_FIELD_BITS);
+    else if (bit >= 0)
+      flags |= (bitvector_t)1 << bit;
 
     /* Allow the first character to be a minus sign */
     if (!isdigit(*p) && (*p != '-' || p != flag))
@@ -1229,27 +1255,17 @@ bitvector_t asciiflag_conv(char *flag)
   return (flags);
 }
 
+bitvector_t asciiflag_conv(char *flag)
+{
+  return (asciiflag_bits(flag, 0));
+}
+
+/* Affect flags in files from before AFF_DONTUSE took bit 0.  Each letter
+ * there names the bit one below tbaMUD's, so 'E' is bit 31 and 'F' would be
+ * bit 32. */
 static bitvector_t asciiflag_conv_aff(char *flag)
 {
-  bitvector_t flags = 0;
-  int is_num = TRUE;
-  char *p;
-
-  for (p = flag; *p; p++) {
-    if (islower(*p))
-      flags |= 1 << (*p - 'a' + 1);
-    else if (isupper(*p))
-      flags |= 1 << (26 + (*p - 'A' + 1));
-
-    /* Allow the first character to be a minus sign */
-    if (!isdigit(*p) && (*p != '-' || p != flag))
-      is_num = FALSE;
-  }
-
-  if (is_num)
-    flags = atol(flag);
-
-  return (flags);
+  return (asciiflag_bits(flag, 1));
 }
 
 /* Fix for crashes in the editor when formatting. E-descs are assumed to
@@ -4204,17 +4220,27 @@ static int check_object_level(struct obj_data *obj, int val)
   return (error);
 }
 
-static int check_bitvector_names(bitvector_t bits, size_t namecount, const char *whatami, const char *whatbits)
+/* bits is one word of a flag array -- every caller passes an int element of
+ * one -- so take it as the 32-bit unsigned word it is.  As a bitvector_t it
+ * was sign-extended on 64-bit builds: a word with bit 31 set arrived with
+ * bits 32-63 set too.  The loop's `1 << flagnum` was on an int, undefined
+ * from bit 31 up, and x86 wraps the count, so the log named bits 32-63
+ * mirroring the word's real ones: bit 63 for bit 31, bit 32 for bit 0.
+ *
+ * The early return used to shift by the width less namecount, a wrapped and
+ * undefined count once namecount passes the width.  A word with a name for
+ * every bit has no unknown ones. */
+static int check_bitvector_names(unsigned int bits, size_t namecount, const char *whatami, const char *whatbits)
 {
   unsigned int flagnum;
   bool error = FALSE;
 
   /* See if any bits are set above the ones we know about. */
-  if (bits <= (~(bitvector_t)0 >> (sizeof(bitvector_t) * 8 - namecount)))
+  if (namecount >= sizeof(bits) * 8 || !(bits >> namecount))
     return (FALSE);
 
-  for (flagnum = namecount; flagnum < sizeof(bitvector_t) * 8; flagnum++)
-    if ((1 << flagnum) & bits) {
+  for (flagnum = namecount; flagnum < sizeof(bits) * 8; flagnum++)
+    if ((1U << flagnum) & bits) {
       log("SYSERR: %s has unknown %s flag, bit %d (0 through %d known).", whatami, whatbits, flagnum, (int)namecount - 1);
       error = TRUE;
     }
