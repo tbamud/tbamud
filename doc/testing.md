@@ -47,7 +47,10 @@ make test
 `make test` performs the following steps for each test binary:
 
 1. Compiles the test binary (if not already up to date).
-2. Runs the binary and captures stdout/stderr to `test-results/<name>.out`.
+2. Runs the binary from inside `test-results/` and captures stdout/stderr to
+   `test-results/<name>.out`.  From `tests/`, the game's `../log/` topic
+   files would be the real `log/` directory beside `lib/`, and the suites'
+   deliberate SYSERRs would end up in `log/errors`.
 3. Measures wall-clock elapsed time.
 4. Converts the Unity output to JUnit XML via `unity_to_junit.py`, writing
    `test-results/<name>.xml`.
