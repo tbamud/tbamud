@@ -359,8 +359,9 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
 
   affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
   affect_total(ch);
-  /* A mob can be charmed after combat has already started. */
-  if (IS_SET_AR(af->bitvector, AFF_CHARM) && is_player_pet(ch) && has_combat_opponent(ch))
+  /* A mob can be charmed after combat has started or while downed. */
+  if (IS_SET_AR(af->bitvector, AFF_CHARM) && is_player_pet(ch) &&
+      (GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch)))
     ch->mob_specials.fought_as_player_pet = TRUE;
 }
 
@@ -370,6 +371,7 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
 void affect_remove(struct char_data *ch, struct affected_type *af)
 {
   struct affected_type *temp;
+  const bool was_player_pet = IS_SET_AR(af->bitvector, AFF_CHARM) && is_player_pet(ch);
 
   if (ch->affected == NULL) {
     core_dump();
@@ -380,6 +382,9 @@ void affect_remove(struct char_data *ch, struct affected_type *af)
   REMOVE_FROM_LIST(af, ch->affected, next);
   free(af);
   affect_total(ch);
+  if (was_player_pet && !is_player_pet(ch) &&
+      (GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch)))
+    ch->mob_specials.fought_as_player_pet = TRUE;
 }
 
 /* Call affect_remove with every affect from the spell "type" */
@@ -1206,6 +1211,7 @@ void extract_char(struct char_data *ch)
 void extract_pending_chars(void)
 {
   struct char_data *vict, *next_vict, *prev_vict;
+  bool extracted = FALSE;
 
   if (extractions_pending < 0)
     log("SYSERR: Negative (%d) extractions pending.", extractions_pending);
@@ -1224,6 +1230,7 @@ void extract_pending_chars(void)
     }
 
     extract_char_final(vict);
+    extracted = TRUE;
     extractions_pending--;
 
     if (prev_vict)
@@ -1236,6 +1243,11 @@ void extract_pending_chars(void)
     log("SYSERR: Couldn't find %d extractions as counted.", extractions_pending);
 
   extractions_pending = 0;
+
+  /* Finish clearing former pets whose sole attacker detached during raw_kill(). */
+  if (extracted)
+    for (vict = character_list; vict; vict = vict->next)
+      clear_pet_combat_if_idle(vict);
 }
 
 /* Here follows high-level versions of some earlier routines, ie functions

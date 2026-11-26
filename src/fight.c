@@ -60,7 +60,7 @@ static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
-static void clear_pet_combat_if_idle(struct char_data *ch);
+static void detach_from_combat(struct char_data *ch);
 /** @todo refactor this function name */
 static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
 static int compute_thaco(struct char_data *ch, struct char_data *vict);
@@ -99,14 +99,18 @@ void update_pos(struct char_data *victim)
     if (GET_POS(victim) <= POS_STUNNED)
       GET_POS(victim) = POS_STANDING;
     clear_pet_combat_if_idle(victim);
-  } else if (GET_HIT(victim) <= -11)
-    GET_POS(victim) = POS_DEAD;
-  else if (GET_HIT(victim) <= -6)
-    GET_POS(victim) = POS_MORTALLYW;
-  else if (GET_HIT(victim) <= -3)
-    GET_POS(victim) = POS_INCAP;
-  else
-    GET_POS(victim) = POS_STUNNED;
+  } else {
+    if (GET_HIT(victim) <= -11)
+      GET_POS(victim) = POS_DEAD;
+    else if (GET_HIT(victim) <= -6)
+      GET_POS(victim) = POS_MORTALLYW;
+    else if (GET_HIT(victim) <= -3)
+      GET_POS(victim) = POS_INCAP;
+    else
+      GET_POS(victim) = POS_STUNNED;
+    if (is_player_pet(victim))
+      victim->mob_specials.fought_as_player_pet = TRUE;
+  }
 }
 
 void check_killer(struct char_data *ch, struct char_data *vict)
@@ -173,19 +177,9 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
     vict->mob_specials.fought_as_player_pet = TRUE;
 }
 
-/* A former pet must recover and disengage before a later kill can count. */
-static void clear_pet_combat_if_idle(struct char_data *ch)
-{
-  if (ch && IS_NPC(ch) && ch->mob_specials.fought_as_player_pet &&
-      GET_POS(ch) > POS_STUNNED && !has_combat_opponent(ch))
-    ch->mob_specials.fought_as_player_pet = FALSE;
-}
-
-/* remove a char from the list of fighting chars */
-void stop_fighting(struct char_data *ch)
+static void detach_from_combat(struct char_data *ch)
 {
   struct char_data *temp;
-  struct char_data *opponent = FIGHTING(ch);
 
   if (ch == next_combat_list)
     next_combat_list = ch->next_fighting;
@@ -195,7 +189,18 @@ void stop_fighting(struct char_data *ch)
   FIGHTING(ch) = NULL;
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
-  clear_pet_combat_if_idle(opponent);
+}
+
+/* remove a char from the list of fighting chars */
+void stop_fighting(struct char_data *ch)
+{
+  struct char_data *opponent = FIGHTING(ch);
+
+  detach_from_combat(ch);
+  if (rescue_action_active())
+    defer_pet_combat_clear();
+  else
+    clear_pet_combat_if_idle(opponent);
 }
 
 static void make_corpse(struct char_data *ch)
@@ -299,8 +304,12 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
 
+  /* Detach ch without immediately clearing a former-pet opponent's combat
+   * flag: credit_kill_witnesses() and any enclosing area attack still need
+   * to see it as part of this fight, and extract_pending_chars() finishes
+   * the idle cleanup at the end of the pulse alongside FIGHTING(k) == ch. */
   if (FIGHTING(ch))
-    stop_fighting(ch);
+    detach_from_combat(ch);
 
   while (ch->affected)
     affect_remove(ch, ch->affected);
@@ -335,7 +344,7 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   extract_char(ch);
 
   /* A death script may move the victim or anyone on the killer's side. */
-  credit_kill_witnesses(witnesses, ch, death_room);
+  credit_kill_witnesses(witnesses, ch);
 }
 
 void die(struct char_data * ch, struct char_data * killer)
@@ -789,9 +798,14 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
   }
 
-  /* stop someone from fighting if they're stunned or worse */
-  if (GET_POS(victim) <= POS_STUNNED && FIGHTING(victim) != NULL)
-    stop_fighting(victim);
+  /* stop someone from fighting if they're stunned or worse; on death keep
+   * a former-pet opponent marked until extract_pending_chars() finishes. */
+  if (GET_POS(victim) <= POS_STUNNED && FIGHTING(victim) != NULL) {
+    if (GET_POS(victim) == POS_DEAD)
+      detach_from_combat(victim);
+    else
+      stop_fighting(victim);
+  }
 
   /* Uh oh.  Victim died. */
   if (GET_POS(victim) == POS_DEAD) {

@@ -409,6 +409,7 @@ static bool quest_room_is_clear(room_rnum room, qst_rnum quest)
  * the last guard's death can qualify, but the captive must survive the whole
  * action.  Death scripts can start another action before the first ends. */
 static unsigned int rescue_action_depth;
+static bool pending_pet_idle_clear;
 static const struct char_data *first_char_before_action;
 static struct pending_rescue {
   struct char_data *holder;
@@ -485,9 +486,20 @@ static bool alive_in_room(const struct char_data *ch, room_rnum room)
   return ch && IN_ROOM(ch) == room && !DEAD(ch) && GET_POS(ch) > POS_DEAD;
 }
 
+bool rescue_action_active(void)
+{
+  return rescue_action_depth > 0;
+}
+
+void defer_pet_combat_clear(void)
+{
+  pending_pet_idle_clear = TRUE;
+}
+
 void end_rescue_action(void)
 {
   struct pending_rescue *entry, *next;
+  struct char_data *vict;
 
   if (--rescue_action_depth)
     return;
@@ -509,6 +521,11 @@ void end_rescue_action(void)
         quest != NOTHING && QST_TYPE(quest) == AQ_MOB_SAVE)
       check_rescue_goal(ch, quest, entry->captive, entry->recovery);
     free(entry);
+  }
+  if (pending_pet_idle_clear) {
+    pending_pet_idle_clear = FALSE;
+    for (vict = character_list; vict; vict = vict->next)
+      clear_pet_combat_if_idle(vict);
   }
 }
 
@@ -560,6 +577,7 @@ static void for_side_in_room(struct char_data *ch, room_rnum room,
  * credit. */
 struct kill_witnesses {
   struct char_data *killer;
+  room_rnum death_room;
   struct char_data **who;
   int count;
   int size;
@@ -583,9 +601,17 @@ struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
 
   if (!VALID_ROOM_RNUM(death_room) || !alive_in_room(killer, death_room))
     return NULL;
+  if (IS_NPC(killer) && !is_player_pet(killer) && !GROUP(killer))
+    return NULL;
   CREATE(witnesses, struct kill_witnesses, 1);
   witnesses->killer = killer;
+  witnesses->death_room = death_room;
   for_side_in_room(killer, death_room, add_witness, witnesses);
+  if (witnesses->count == 0) {
+    free(witnesses->who);
+    free(witnesses);
+    return NULL;
+  }
   return witnesses;
 }
 
@@ -596,22 +622,24 @@ struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
  * death counts toward it.  A witness gets one check, so a finished rescue
  * does not go on to the stage after it. */
 void credit_kill_witnesses(struct kill_witnesses *witnesses,
-                           struct char_data *vict, room_rnum death_room)
+                           struct char_data *vict)
 {
   int n;
 
   if (!witnesses)
     return;
-  if (IS_NPC(vict) && !is_player_pet_kill(vict) && alive_in_room(witnesses->killer, death_room))
+  if (VALID_ROOM_RNUM(witnesses->death_room) && vict && IS_NPC(vict) &&
+      DEAD(vict) && !is_player_pet_kill(vict) &&
+      alive_in_room(witnesses->killer, witnesses->death_room))
     for (n = 0; n < witnesses->count; n++) {
       struct char_data *ch = witnesses->who[n];
       qst_rnum quest;
 
-      if (!alive_in_room(ch, death_room) || GET_QUEST(ch) == NOTHING ||
+      if (!alive_in_room(ch, witnesses->death_room) || GET_QUEST(ch) == NOTHING ||
           (quest = real_quest(GET_QUEST(ch))) == NOTHING)
         continue;
       if (QST_TYPE(quest) == AQ_MOB_SAVE)
-        check_rescue_on_kill(ch, vict, death_room);
+        check_rescue_on_kill(ch, vict, witnesses->death_room);
       else if (QST_TYPE(quest) == AQ_ROOM_CLEAR)
         autoquest_trigger_check(ch, NULL, NULL, AQ_ROOM_CLEAR);
     }

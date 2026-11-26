@@ -1676,7 +1676,7 @@ static void test_a_players_death_clears_no_room(void)
   give_room_clear_quest(holder, CELL);
   witnesses = note_kill_witnesses(holder, CELL);
   SET_BIT_AR(PLR_FLAGS(victim), PLR_NOTDEADYET);
-  credit_kill_witnesses(witnesses, victim, CELL);
+  credit_kill_witnesses(witnesses, victim);
   assert_not_cleared(holder);
 }
 
@@ -1861,6 +1861,267 @@ static void test_a_mob_charmed_during_an_existing_fight_clears_no_room(void)
   assert_not_cleared(holder);
 }
 
+static void test_killing_a_former_pets_sole_attacker_still_clears_the_room(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+  struct char_data *guard1 = new_guard(CELL);
+  struct char_data *guard2 = new_guard(CELL);
+
+  GET_HIT(guard1) = GET_MAX_HIT(guard1) = 10;
+  GET_HIT(guard2) = GET_MAX_HIT(guard2) = 10;
+  group_up(owner, mate);
+  give_room_clear_quest(owner, CELL);
+
+  /* Pet fights guard1 while guard2 also targets pet, then charm expires. */
+  TEST_ASSERT_EQUAL_INT(1, damage(pet, guard1, 1, TYPE_HIT));
+  TEST_ASSERT_EQUAL_INT(1, damage(guard2, pet, 1, TYPE_HIT));
+  pet->affected->duration = 0;
+  affect_update();
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+
+  /* Killing guard1 ends the first pulse with only guard2 targeting pet. */
+  TEST_ASSERT_EQUAL_INT(-1, damage(mate, guard1, 30, TYPE_HIT));
+  extract_pending_chars();
+  TEST_ASSERT_NULL(FIGHTING(pet));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(guard2));
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+  assert_not_cleared(owner);
+
+  /* Killing guard2 must still treat pet as part of this fight, then
+   * end-of-pulse extraction clears pet's flag once it is idle. */
+  TEST_ASSERT_EQUAL_INT(-1, damage(mate, guard2, 30, TYPE_HIT));
+  assert_cleared(owner);
+  extract_pending_chars();
+  TEST_ASSERT_FALSE(pet->mob_specials.fought_as_player_pet);
+  stop_follower(pet);
+}
+
+static void test_earthquake_killing_sole_attacker_and_former_pet_gives_no_credit(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *owner = new_player(CELL);
+  struct char_data *captive = earthquake_target(CAPTIVE, 100);
+  struct char_data *pet = new_combat_pet(owner);
+  struct char_data *attacker_pet = new_combat_pet(owner);
+
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(1, damage(attacker_pet, pet, 1, TYPE_HIT));
+  pet->affected->duration = 0;
+  attacker_pet->affected->duration = 0;
+  affect_update();
+  stop_fighting(pet);
+  TEST_ASSERT_NULL(FIGHTING(pet));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(attacker_pet));
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+
+  /* attacker_pet is ahead of pet in the room list, so earthquake kills it
+   * first; pet must stay marked as a former pet for the rest of the spell. */
+  GET_HIT(attacker_pet) = 1;
+  GET_HIT(pet) = 1;
+  mag_areas(30, holder, SPELL_EARTHQUAKE, 1);
+  TEST_ASSERT_TRUE(DEAD(attacker_pet));
+  TEST_ASSERT_TRUE(DEAD(pet));
+  TEST_ASSERT_TRUE(GET_HIT(captive) > 0);
+  assert_not_rescued(holder);
+}
+
+static void test_earthquake_sparing_a_former_pet_whose_sole_attacker_dies_completes_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *captive = earthquake_target(CAPTIVE, 100);
+  struct char_data *pet = new_combat_pet(holder);
+  struct char_data *guard = earthquake_target(GUARD, 10);
+
+  GET_HIT(pet) = GET_MAX_HIT(pet) = 100;
+  group_up(holder, mate);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(1, damage(guard, pet, 1, TYPE_HIT));
+  pet->affected->duration = 0;
+  affect_update();
+  stop_fighting(pet);
+  TEST_ASSERT_NULL(FIGHTING(pet));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(guard));
+
+  GET_HIT(guard) = 1;
+  mag_areas(30, mate, SPELL_EARTHQUAKE, 1);
+  TEST_ASSERT_TRUE(DEAD(guard));
+  TEST_ASSERT_TRUE(GET_HIT(pet) > 0);
+  TEST_ASSERT_TRUE(GET_HIT(captive) > 0);
+  assert_rescued(holder);
+  extract_pending_chars();
+  /* The earthquake also hit pet, so pet is now fighting mate until it disengages. */
+  TEST_ASSERT_EQUAL_PTR(mate, FIGHTING(pet));
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+  stop_fighting(pet);
+  if (FIGHTING(mate) == pet)
+    stop_fighting(mate);
+  TEST_ASSERT_FALSE(pet->mob_specials.fought_as_player_pet);
+  stop_follower(pet);
+}
+
+static void test_stunning_a_sole_attacker_mid_area_action_keeps_former_pet_marked(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *owner = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+  struct char_data *attacker_pet = new_combat_pet(owner);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(1, damage(attacker_pet, pet, 1, TYPE_HIT));
+  pet->affected->duration = 0;
+  attacker_pet->affected->duration = 0;
+  affect_update();
+  stop_fighting(pet);
+  TEST_ASSERT_NULL(FIGHTING(pet));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(attacker_pet));
+
+  /* Down attacker_pet to POS_INCAP mid-action: pet must stay marked through
+   * the rest of the area action, so killing pet next grants no rescue credit. */
+  begin_rescue_action();
+  TEST_ASSERT_EQUAL_INT(14, damage(holder, attacker_pet, 14, TYPE_HIT));
+  TEST_ASSERT_EQUAL_INT(POS_INCAP, GET_POS(attacker_pet));
+  TEST_ASSERT_NULL(FIGHTING(attacker_pet));
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  end_rescue_action();
+  assert_not_rescued(holder);
+  stop_follower(attacker_pet);
+}
+
+static void test_a_poisoned_downed_pet_losing_charm_clears_no_room(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+
+  give_room_clear_quest(holder, CELL);
+  /* Self-damage (like poison ticks in point_update) downs pet without combat. */
+  TEST_ASSERT_EQUAL_INT(14, damage(pet, pet, 14, SPELL_POISON));
+  TEST_ASSERT_EQUAL_INT(POS_INCAP, GET_POS(pet));
+  TEST_ASSERT_NULL(FIGHTING(pet));
+
+  pet->affected->duration = 0;
+  affect_update();
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+}
+
+static void test_a_downed_pet_whose_owner_leaves_clears_no_room(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+
+  give_room_clear_quest(holder, CELL);
+  /* Simulate script_damage() or non-combat downing, then owner quitting/dying. */
+  GET_HIT(pet) = -4;
+  GET_POS(pet) = POS_INCAP;
+  stop_follower(pet);
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+}
+
+static void test_a_downed_former_pet_counts_after_recovering_outside_combat(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+
+  give_room_clear_quest(holder, CELL);
+  GET_HIT(pet) = -4;
+  GET_POS(pet) = POS_INCAP;
+  stop_follower(pet);
+  TEST_ASSERT_TRUE(pet->mob_specials.fought_as_player_pet);
+
+  mag_points(20, holder, pet, SPELL_HEAL, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(pet));
+  TEST_ASSERT_FALSE(pet->mob_specials.fought_as_player_pet);
+
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_cleared(holder);
+}
+
+static void test_a_mob_charmed_while_downed_stays_a_pet_when_charm_expires(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *guard = new_guard(CELL);
+  struct affected_type charm;
+
+  give_room_clear_quest(holder, CELL);
+  GET_HIT(guard) = -4;
+  GET_POS(guard) = POS_INCAP;
+
+  add_follower(guard, owner);
+  new_affect(&charm);
+  charm.spell = SPELL_CHARM;
+  charm.duration = 0;
+  SET_BIT_AR(charm.bitvector, AFF_CHARM);
+  affect_to_char(guard, &charm);
+  TEST_ASSERT_TRUE(is_player_pet(guard));
+  TEST_ASSERT_TRUE(guard->mob_specials.fought_as_player_pet);
+
+  affect_update();
+  TEST_ASSERT_FALSE(is_player_pet(guard));
+  TEST_ASSERT_TRUE(guard->mob_specials.fought_as_player_pet);
+
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, guard, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+}
+
+static void test_credit_kill_witnesses_rejects_null_and_living_victims(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *stranger_mob = new_guard(CELL);
+  struct char_data *living_guard = new_guard(HALL);
+  struct kill_witnesses *witnesses;
+
+  /* An ungrouped, uncharmed mob has no player side to record. */
+  TEST_ASSERT_NULL(note_kill_witnesses(stranger_mob, CELL));
+  char_from_room(stranger_mob);
+  char_to_room(stranger_mob, HALL);
+
+  give_room_clear_quest(holder, CELL);
+  witnesses = note_kill_witnesses(holder, CELL);
+  TEST_ASSERT_NOT_NULL(witnesses);
+  credit_kill_witnesses(witnesses, NULL);
+  assert_not_cleared(holder);
+
+  witnesses = note_kill_witnesses(holder, CELL);
+  TEST_ASSERT_NOT_NULL(witnesses);
+  credit_kill_witnesses(witnesses, living_guard);
+  assert_not_cleared(holder);
+}
+
+static void test_a_large_group_credits_every_living_quest_holder_in_the_room(void)
+{
+  struct char_data *members[5];
+  struct char_data *guard = new_guard(CELL);
+  int n;
+
+  for (n = 0; n < 5; n++) {
+    members[n] = new_player(CELL);
+    if (n > 0)
+      group_up(members[0], members[n]);
+  }
+  for (n = 0; n < 4; n++)
+    give_room_clear_quest(members[n], CELL);
+
+  raw_kill(guard, members[4]);
+  for (n = 0; n < 4; n++)
+    assert_cleared(members[n]);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -1958,5 +2219,15 @@ int main(void)
   RUN_TEST(test_a_healer_in_dead_position_cannot_rescue_for_a_living_groupmate);
   RUN_TEST(test_a_group_heal_heals_a_dying_pet_once);
   RUN_TEST(test_a_mob_charmed_during_an_existing_fight_clears_no_room);
+  RUN_TEST(test_killing_a_former_pets_sole_attacker_still_clears_the_room);
+  RUN_TEST(test_earthquake_killing_sole_attacker_and_former_pet_gives_no_credit);
+  RUN_TEST(test_earthquake_sparing_a_former_pet_whose_sole_attacker_dies_completes_rescue);
+  RUN_TEST(test_stunning_a_sole_attacker_mid_area_action_keeps_former_pet_marked);
+  RUN_TEST(test_a_poisoned_downed_pet_losing_charm_clears_no_room);
+  RUN_TEST(test_a_downed_pet_whose_owner_leaves_clears_no_room);
+  RUN_TEST(test_a_downed_former_pet_counts_after_recovering_outside_combat);
+  RUN_TEST(test_a_mob_charmed_while_downed_stays_a_pet_when_charm_expires);
+  RUN_TEST(test_credit_kill_witnesses_rejects_null_and_living_victims);
+  RUN_TEST(test_a_large_group_credits_every_living_quest_holder_in_the_room);
   return UNITY_END();
 }

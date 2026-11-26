@@ -582,6 +582,14 @@ bool has_combat_opponent(const struct char_data *ch)
   return FALSE;
 }
 
+/* A former pet must recover and disengage before a later kill can count. */
+void clear_pet_combat_if_idle(struct char_data *ch)
+{
+  if (ch && IS_NPC(ch) && !DEAD(ch) && ch->mob_specials.fought_as_player_pet &&
+      GET_POS(ch) > POS_STUNNED && !has_combat_opponent(ch))
+    ch->mob_specials.fought_as_player_pet = FALSE;
+}
+
 bool is_player_pet(const struct char_data *ch)
 {
   return IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master &&
@@ -613,6 +621,10 @@ void stop_follower(struct char_data *ch)
     core_dump();
     return;
   }
+
+  /* A pet losing charm while downed or in combat stays marked until idle. */
+  if (is_player_pet(ch) && (GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch)))
+    ch->mob_specials.fought_as_player_pet = TRUE;
 
   if (AFF_FLAGGED(ch, AFF_CHARM)) {
     act("You realize that $N is a jerk!", FALSE, ch, 0, ch->master, TO_CHAR);
