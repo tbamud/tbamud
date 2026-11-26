@@ -501,6 +501,41 @@ void test_log_no_topic_file_for_unmatched_line(void)
     topic_leave();
 }
 
+/* =========================================================
+ * Bitarrays: the last flag in each 32-bit field
+ * ========================================================= */
+
+/* Flag 31 of a field is its sign bit.  A signed 1 << 31 is undefined; what
+ * gcc makes of it, INT_MIN, is negative and sign-extends when widened. */
+void test_q_bit_last_flag_is_positive(void)
+{
+    bitvector_t wide = Q_BIT(31);
+
+    TEST_ASSERT_TRUE(Q_BIT(31) > 0);
+    TEST_ASSERT_TRUE(wide == 0x80000000UL);
+    TEST_ASSERT_TRUE(Q_BIT(63) == Q_BIT(31));
+}
+
+void test_bitarray_last_flag_of_each_field(void)
+{
+    int flags[4] = { 0, 0, 0, 0 };
+    int bit;
+
+    for (bit = 31; bit < 128; bit += 32) {
+        SET_BIT_AR(flags, bit);
+        TEST_ASSERT_TRUE(IS_SET_AR(flags, bit));
+        TEST_ASSERT_FALSE(IS_SET_AR(flags, bit - 1));
+        if (bit + 1 < 128)
+            TEST_ASSERT_FALSE(IS_SET_AR(flags, bit + 1));
+        REMOVE_BIT_AR(flags, bit);
+        TEST_ASSERT_EQUAL_INT(0, flags[Q_FIELD(bit)]);
+        TOGGLE_BIT_AR(flags, bit);
+        TEST_ASSERT_TRUE(IS_SET_AR(flags, bit));
+        TOGGLE_BIT_AR(flags, bit);
+        TEST_ASSERT_EQUAL_INT(0, flags[Q_FIELD(bit)]);
+    }
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -585,6 +620,10 @@ int main(void)
     RUN_TEST(test_log_topic_file_gets_matching_line);
     RUN_TEST(test_log_topic_file_written_once_for_shared_patterns);
     RUN_TEST(test_log_no_topic_file_for_unmatched_line);
+
+    /* Bitarrays */
+    RUN_TEST(test_q_bit_last_flag_is_positive);
+    RUN_TEST(test_bitarray_last_flag_of_each_field);
 
     return UNITY_END();
 }
