@@ -632,6 +632,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
     break;
   }
 
+  begin_rescue_action();
   if (to_char != NULL)
     act(to_char, FALSE, ch, 0, 0, TO_CHAR);
   if (to_room != NULL)
@@ -662,6 +663,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
     /* Doesn't matter if they die here so we don't check. -gg 6/24/98 */
     mag_damage(level, ch, tch, spellnum, 1);
   }
+  end_rescue_action();
 }
 
 /*----------------------------------------------------------------------------*/

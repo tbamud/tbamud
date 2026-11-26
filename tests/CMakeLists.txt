@@ -214,11 +214,10 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     endif()
     add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
 
-    # Rescue eligibility in quest.c, raw_kill()'s quest credit in fight.c, and
-    # the healing spells and bandage that finish a rescue a dying captive held
-    # up.  interpreter.c supplies the real one_argument() for "bandage <name>".
-    # Section GC drops the quest commands and the rest of fight.c, magic.c,
-    # act.offensive.c and interpreter.c.
+    # Rescue eligibility in quest.c, combat in fight.c, and the treatments that
+    # finish a rescue a dying captive held up.  interpreter.c supplies the
+    # real one_argument() for "bandage <name>".  Section GC drops the quest
+    # commands and the rest of magic.c, act.offensive.c and interpreter.c.
     add_executable(test_quest
         ${UNITY_SRC}
         ${STUBS_SRC}
@@ -226,11 +225,13 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         ${MUD_SRCDIR}/random.c
         ${MUD_SRCDIR}/lists.c
         ${MUD_SRCDIR}/handler.c
-        ${MUD_SRCDIR}/fight.c
         ${MUD_SRCDIR}/quest.c
+        ${MUD_SRCDIR}/fight.c
+        ${MUD_SRCDIR}/constants.c
         ${MUD_SRCDIR}/magic.c
         ${MUD_SRCDIR}/act.offensive.c
         ${MUD_SRCDIR}/interpreter.c
+        ${MUD_SRCDIR}/dg_mobcmd.c
         ${CMAKE_CURRENT_SOURCE_DIR}/test_quest.c
     )
     target_include_directories(test_quest PRIVATE ${TEST_INCLUDES})
@@ -240,6 +241,9 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
     else()
         set_property(TARGET test_quest APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    if(CRYPT_LIBRARY)
+        target_link_libraries(test_quest PRIVATE ${CRYPT_LIBRARY})
     endif()
     add_test(NAME test_quest COMMAND test_quest)
 

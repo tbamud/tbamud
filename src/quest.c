@@ -315,25 +315,14 @@ void generic_complete_quest(struct char_data *ch)
   struct obj_data *new_obj;
   int happy_qp, happy_gold, happy_exp;
 
-  /* AQ_MOB_FIND calls this once per matching mob in the room, and the first
-   * call clears the quest -- so a second copy of the target mob arrives
-   * here with GET_QUEST(ch) already NOTHING, and real_quest() answers
-   * NOTHING for it.  Every QST_ macro below is a bare aquest_table[rnum].
-   *
-   * The test belongs above the decrement, not after it.  clear_quest()
-   * leaves the counter at 0, so by the line below it has already gone to
-   * -1, and returning from inside the block would leave it there: the
-   * only thing that puts it back is the clear_quest() at the far end of
-   * the same block.  There is nothing to complete, so nothing here should
-   * run at all -- not the decrement and not the save_char() below.
-   *
-   * A quest deleted while a player was on it lands here too, and is left
-   * alone rather than completed out of whatever aquest_table[65535] held.
-   * The player can still 'quest quit'. */
+  /* An earlier trigger may have completed this quest, or a builder may
+   * have deleted it while the player was on it. */
   if ((rnum = real_quest(vnum)) == NOTHING)
     return;
 
-  if (--GET_QUEST_COUNTER(ch) <= 0) {
+  /* Legacy quests with nonpositive counts finish on their first credit. */
+  GET_QUEST_COUNTER(ch) = MAX(1, GET_QUEST_COUNTER(ch)) - 1;
+  if (GET_QUEST_COUNTER(ch) == 0) {
     if (IS_HAPPYHOUR && IS_HAPPYQP) {
       happy_qp = (int)(QST_POINTS(rnum) * (((float)(100+HAPPY_QP))/(float)100));
       happy_qp = MAX(happy_qp, 0);
@@ -402,90 +391,228 @@ void generic_complete_quest(struct char_data *ch)
   save_char(ch);
 }
 
-/* A player's charmed pet is on the player's side, so it may stay with a mob
- * to be rescued and in a room to be cleared. */
-static bool is_players_pet(const struct char_data *ch)
-{
-  return AFF_FLAGGED(ch, AFF_CHARM) && ch->master && !IS_NPC(ch->master);
-}
-
-/* A recovery must count the patient, even if another copy is in the room. */
-static bool rescue_room_is_clear(room_rnum room, int target,
-                                 const struct char_data *patient)
+static bool rescue_room_is_clear(room_rnum room, int target)
 {
   struct char_data *mob;
-  bool captive_is_stable = FALSE;
 
   for (mob = world[room].people; mob; mob = mob->next_in_room) {
     if (!IS_NPC(mob) || MOB_FLAGGED(mob, MOB_NOTDEADYET))
       continue;
-    if (GET_MOB_VNUM(mob) == target) {
-      if ((!patient || mob == patient) && GET_POS(mob) >= POS_STUNNED)
-        captive_is_stable = TRUE;
-    } else if (!is_players_pet(mob)) {
-      return FALSE;
-    }
+    if (GET_MOB_VNUM(mob) != target && !is_player_pet(mob))
+      return FALSE;  /* Only players' charmed pets may stay. */
   }
-  return captive_is_stable;
+  return TRUE;
 }
 
-typedef void side_check_fn(struct char_data *ch, struct char_data *vict,
-                           int type);
+/* Area attacks and spells from a staff resolve one target at a time.  Only
+ * the last guard's death can qualify, but the captive must survive the whole
+ * action.  Death scripts can start another action before the first ends. */
+static unsigned int rescue_action_depth;
+static const struct char_data *first_char_before_action;
+static struct pending_rescue {
+  struct char_data *holder;
+  const struct char_data *captive;
+  bool recovery;
+  int goals_left;
+  qst_vnum quest;
+  room_rnum room;
+  struct pending_rescue *next;
+} *pending_rescues;
 
-/* Save mob and Room clear quests are judged on one room, for the side of
- * the character who acted there: a charmed ch's master stands in for it,
- * and every member of the group who is alive and in room is checked.  The
- * group gets its own iterator, since a group spell may be walking it with
- * simple_list() already. */
-static void check_side_in_room(struct char_data *ch, room_rnum room,
-                               side_check_fn *check, struct char_data *vict,
-                               int type)
+void begin_rescue_action(void)
+{
+  if (rescue_action_depth++ == 0)
+    first_char_before_action = character_list;
+}
+
+static void remember_rescue(struct char_data *ch, const struct char_data *captive,
+                            bool recovery)
+{
+  struct pending_rescue *entry;
+  struct char_data *mob;
+
+  /* read_mobile() prepends its result to character_list. Death scripts can
+   * load a replacement before the last guard dies. */
+  for (mob = character_list; mob && mob != first_char_before_action; mob = mob->next)
+    if (mob == captive)
+      return;
+  for (entry = pending_rescues; entry; entry = entry->next)
+    if (entry->holder == ch && entry->quest == GET_QUEST(ch) &&
+        entry->goals_left == GET_QUEST_COUNTER(ch) &&
+        entry->room == IN_ROOM(ch) && entry->captive == captive) {
+      if (!recovery)
+        entry->recovery = FALSE;
+      return;
+    }
+  CREATE(entry, struct pending_rescue, 1);
+  entry->holder = ch;
+  entry->captive = captive;
+  entry->recovery = recovery;
+  entry->quest = GET_QUEST(ch);
+  entry->goals_left = GET_QUEST_COUNTER(ch);
+  entry->room = IN_ROOM(ch);
+  entry->next = pending_rescues;
+  pending_rescues = entry;
+}
+
+static void check_rescue_goal(struct char_data *ch, qst_rnum quest,
+                              const struct char_data *captive, bool recovery)
+{
+  struct char_data *mob;
+
+  if (recovery && (QST_QUANTITY(quest) > 1 || GET_QUEST_COUNTER(ch) > 1))
+    return;
+  if (!rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(quest)))
+    return;
+
+  for (mob = world[IN_ROOM(ch)].people; mob; mob = mob->next_in_room) {
+    if ((captive && mob != captive) || !IS_NPC(mob) || DEAD(mob) ||
+        GET_POS(mob) < POS_STUNNED || GET_MOB_VNUM(mob) != QST_TARGET(quest))
+      continue;
+    if (rescue_action_depth) {
+      /* One of the captives that qualified now must survive the attack. */
+      remember_rescue(ch, mob, recovery);
+    } else {
+      generic_complete_quest(ch);
+      return;
+    }
+  }
+}
+
+void end_rescue_action(void)
+{
+  struct pending_rescue *entry, *next;
+
+  if (--rescue_action_depth)
+    return;
+  first_char_before_action = NULL;
+
+  /* Extraction is deferred until the end of the pulse. Finish these checks
+   * synchronously, while the combatants still exist. */
+  entry = pending_rescues;
+  pending_rescues = NULL;
+  for (; entry; entry = next) {
+    struct char_data *ch = entry->holder;
+    qst_rnum quest = real_quest(entry->quest);
+
+    next = entry->next;
+    /* Multiple surviving copies represent the same outstanding goal. */
+    if (!DEAD(ch) && GET_POS(ch) > POS_DEAD && IN_ROOM(ch) == entry->room &&
+        VALID_ROOM_RNUM(entry->room) && GET_QUEST(ch) == entry->quest &&
+        GET_QUEST_COUNTER(ch) == entry->goals_left &&
+        quest != NOTHING && QST_TYPE(quest) == AQ_MOB_SAVE)
+      check_rescue_goal(ch, quest, entry->captive, entry->recovery);
+    free(entry);
+  }
+}
+
+void check_rescue_on_kill(struct char_data *ch, struct char_data *vict,
+                          room_rnum death_room)
+{
+  qst_rnum quest;
+
+  if (!ch || IS_NPC(ch) || DEAD(ch) || GET_QUEST(ch) == NOTHING ||
+      !VALID_ROOM_RNUM(death_room) || IN_ROOM(ch) != death_room ||
+      !vict || !IS_NPC(vict) || !DEAD(vict) || is_player_pet_kill(vict))
+    return;
+
+  quest = real_quest(GET_QUEST(ch));
+  if (quest != NOTHING && QST_TYPE(quest) == AQ_MOB_SAVE &&
+      GET_MOB_VNUM(vict) != QST_TARGET(quest))
+    check_rescue_goal(ch, quest, NULL, FALSE);
+}
+
+typedef void side_check_fn(struct char_data *ch, void *data);
+
+/* Save mob and Room clear credit goes to the side of whoever acted: a
+ * player's charmed pet acts for its master, and a player for their group.
+ * check runs for each player on that side who is alive and in room.  The
+ * group gets its own iterator, since a group spell may already be walking it
+ * with simple_list(). */
+static void for_side_in_room(struct char_data *ch, room_rnum room,
+                             side_check_fn *check, void *data)
 {
   struct iterator_data iterator;
   struct char_data *i;
 
-  if (IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master)
+  if (is_player_pet(ch))
     ch = ch->master;
   if (!GROUP(ch)) {
-    if (IN_ROOM(ch) == room && !DEAD(ch))
-      check(ch, vict, type);
+    if (!IS_NPC(ch) && IN_ROOM(ch) == room && !DEAD(ch))
+      check(ch, data);
     return;
   }
   for (i = (struct char_data *) merge_iterator(&iterator, GROUP(ch)->members);
        i; i = (struct char_data *) next_in_list(&iterator))
-    if (IN_ROOM(i) == room && !DEAD(i))
-      check(i, vict, type);
+    if (!IS_NPC(i) && IN_ROOM(i) == room && !DEAD(i))
+      check(i, data);
   remove_iterator(&iterator);
 }
 
-static void trigger_check(struct char_data *ch, struct char_data *vict,
-                          int type)
+/* The players on a killer's side who were there when the victim died.  A
+ * death script can move people in or out before raw_kill() gives credit. */
+struct kill_witnesses {
+  struct char_data **who;
+  int count;
+  int size;
+};
+
+static void add_witness(struct char_data *ch, void *data)
 {
-  autoquest_trigger_check(ch, vict, NULL, type);
+  struct kill_witnesses *witnesses = data;
+
+  if (witnesses->count == witnesses->size) {
+    witnesses->size = witnesses->size ? 2 * witnesses->size : 4;
+    RECREATE(witnesses->who, struct char_data *, witnesses->size);
+  }
+  witnesses->who[witnesses->count++] = ch;
 }
 
-void autoquest_group_check(struct char_data *ch, struct char_data *vict,
-                           room_rnum room, int type)
+struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
+                                           room_rnum death_room)
 {
-  check_side_in_room(ch, room, trigger_check, vict, type);
+  struct kill_witnesses *witnesses;
+
+  CREATE(witnesses, struct kill_witnesses, 1);
+  for_side_in_room(killer, death_room, add_witness, witnesses);
+  return witnesses;
 }
 
-/* One member of the healer's side, in the patient's room. */
-static void rescue_on_recovery(struct char_data *ch, struct char_data *patient,
-                               int unused)
+/* Each witness still in the death room gets credit for vict's death and
+ * the list is freed.  A pet's or a player's death clears nothing. */
+void credit_kill_witnesses(struct kill_witnesses *witnesses,
+                           struct char_data *vict, room_rnum death_room)
 {
+  int n;
+
+  if (!witnesses)
+    return;
+  if (IS_NPC(vict) && !is_player_pet_kill(vict))
+    for (n = 0; n < witnesses->count; n++) {
+      struct char_data *ch = witnesses->who[n];
+
+      if (IN_ROOM(ch) != death_room || DEAD(ch))
+        continue;
+      check_rescue_on_kill(ch, vict, death_room);
+      autoquest_trigger_check(ch, NULL, NULL, AQ_ROOM_CLEAR);
+    }
+  free(witnesses->who);
+  free(witnesses);
+}
+
+/* One player on the healer's side, in the patient's room. */
+static void rescue_on_recovery(struct char_data *ch, void *data)
+{
+  struct char_data *patient = data;
   qst_rnum quest;
 
-  (void)unused;
-  if (IS_NPC(ch) || GET_POS(ch) <= POS_DEAD || GET_QUEST(ch) == NOTHING)
+  if (GET_POS(ch) <= POS_DEAD || GET_QUEST(ch) == NOTHING)
     return;
 
   quest = real_quest(GET_QUEST(ch));
-  /* Repeated treatment of one captive cannot satisfy multiple goals. */
   if (quest != NOTHING && QST_TYPE(quest) == AQ_MOB_SAVE &&
-      QST_QUANTITY(quest) == 1 &&
-      rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(quest), patient))
-    generic_complete_quest(ch);
+      GET_MOB_VNUM(patient) == QST_TARGET(quest))
+    check_rescue_goal(ch, quest, patient, TRUE);
 }
 
 /* Bringing the captive back from dying finishes a rescue for the healer's
@@ -495,11 +622,11 @@ void check_rescue_on_recovery(struct char_data *ch, struct char_data *patient,
 {
   if ((old_position != POS_INCAP && old_position != POS_MORTALLYW) ||
       !patient || !IS_NPC(patient) || DEAD(patient) ||
-      GET_POS(patient) < POS_STUNNED || !ch ||
-      !VALID_ROOM_RNUM(IN_ROOM(patient)))
+      GET_POS(patient) < POS_STUNNED || !ch || DEAD(ch) ||
+      !VALID_ROOM_RNUM(IN_ROOM(patient)) || IN_ROOM(ch) != IN_ROOM(patient))
     return;
 
-  check_side_in_room(ch, IN_ROOM(patient), rescue_on_recovery, patient, 0);
+  for_side_in_room(ch, IN_ROOM(patient), rescue_on_recovery, patient);
 }
 
 void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
@@ -538,13 +665,8 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
             generic_complete_quest(ch);
       break;
     case AQ_MOB_SAVE:
-      if (DEAD(ch) || !VALID_ROOM_RNUM(IN_ROOM(ch)))
-        break;
-      /* Killing a copy of the captive is no rescue. */
-      if (vict && IS_NPC(vict) && GET_MOB_VNUM(vict) == QST_TARGET(rnum))
-        break;
-      if (rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(rnum), NULL))
-        generic_complete_quest(ch);
+      if (vict)
+        check_rescue_on_kill(ch, vict, IN_ROOM(vict));
       break;
     case AQ_OBJ_RETURN:
       if (IS_NPC(vict) && (GET_MOB_VNUM(vict) == QST_RETURNMOB(rnum)))
@@ -557,7 +679,7 @@ void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
       if (QST_TARGET(rnum) == world[IN_ROOM(ch)].number) {
         for (i = world[IN_ROOM(ch)].people; i && found; i = i->next_in_room)
           if (i && IS_NPC(i) && !MOB_FLAGGED(i, MOB_NOTDEADYET) &&
-              !is_players_pet(i))
+              !is_player_pet(i))
             found = FALSE;
         if (found)
    generic_complete_quest(ch);

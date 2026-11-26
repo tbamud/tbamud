@@ -994,6 +994,7 @@ ACMD(do_mtransform)
     tmpmob.next_in_room = ch->next_in_room;
     tmpmob.next = ch->next;
     tmpmob.next_fighting = ch->next_fighting;
+    tmpmob.mob_specials.attacked_by_pet_owner = ch->mob_specials.attacked_by_pet_owner;
     tmpmob.followers = ch->followers;
     tmpmob.master = ch->master;
     tmpmob.group = ch->group;
