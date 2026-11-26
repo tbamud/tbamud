@@ -199,7 +199,13 @@ static void assert_not_rescued(struct char_data *holder)
 
 void setUp(void)
 {
-  logfile = stderr;
+  /* Log to stdout, not stderr.  make test sends both to one file, and
+   * stdout is buffered there while stderr is not, so a line logged to
+   * stderr (a player's death, say) can land in the middle of a Unity
+   * result line and drop that test from the JUnit report.  On stdout it
+   * comes out in order, and Unity prints a passing test's result line
+   * whole once the test is over. */
+  logfile = stdout;
   death_script_room = NOWHERE;
   death_script_killer_room = NOWHERE;
   death_script = NULL;
@@ -263,8 +269,6 @@ void tearDown(void)
   top_of_mobt = 0;
   aquest_table = NULL;
   total_quests = 0;
-  if (logfile && logfile != stderr)
-    fclose(logfile);
   logfile = NULL;
 }
 
@@ -2262,10 +2266,6 @@ static void test_a_dying_holder_cannot_share_a_guard_kill_triggered_by_their_dea
   give_room_clear_quest(mate, CELL);
   guard_attacking_holder = guard;
   death_script = groupmate_finishes_guard_during_holders_death;
-  /* Redirect PC death mudlog away from stderr so it cannot interleave with
-   * Unity's buffered stdout lines under make test. */
-  logfile = tmpfile();
-  TEST_ASSERT_NOT_NULL(logfile);
   TEST_ASSERT_EQUAL_INT(-1, damage(guard, holder, 30, TYPE_HIT));
   TEST_ASSERT_TRUE(DEAD(guard));
   TEST_ASSERT_TRUE(DEAD(holder));
