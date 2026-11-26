@@ -7434,9 +7434,9 @@ main menu, you will be shown a list to choose from:
                   room, even if someone else cleared it.
                   Players' charmed pets may stay. Killing one gives no
                   rescue credit. If a pet loses its charm or changes form
-                  during combat, it counts as a pet through the attack.
-                  Once conscious and out of combat, it counts as an
-                  ordinary mobile for the next attack.
+                  during combat, it still counts as a pet until it is
+                  conscious and out of combat and the current attack has
+                  finished. After that it is an ordinary mobile.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

@@ -2187,6 +2187,27 @@ static void test_an_idle_former_pet_counts_in_a_new_fight_before_the_next_heartb
   assert_cleared(holder);
 }
 
+/* Here the former pet is still attacking the guard when the guard dies.  Its
+ * only combat link is to a mob awaiting extraction, so the next attack treats
+ * it as an ordinary mobile without waiting for the heartbeat. */
+static void test_a_former_pet_attacking_a_dead_guard_counts_in_a_new_fight(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *stranger = new_player(CELL);
+  struct char_data *pet = new_combat_pet(holder);
+  struct char_data *guard = new_guard(CELL);
+
+  GET_HIT(guard) = GET_MAX_HIT(guard) = 10;
+  give_room_clear_quest(holder, CELL);
+  expire_charm_while_fighting(pet, guard);
+  TEST_ASSERT_EQUAL_INT(-1, damage(stranger, guard, 30, TYPE_HIT));
+  TEST_ASSERT_EQUAL_PTR(guard, FIGHTING(pet));  /* Unlinked at extraction. */
+  TEST_ASSERT_FALSE(pet->mob_specials.fought_as_player_pet);
+  assert_not_cleared(holder);
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_cleared(holder);
+}
+
 static void heal_former_pet(struct char_data *guard)
 {
   (void)guard;
@@ -2242,6 +2263,38 @@ static void test_a_dying_holder_cannot_share_a_guard_kill_triggered_by_their_dea
   TEST_ASSERT_TRUE(DEAD(holder));
   assert_cleared(mate);
   assert_not_cleared(holder);
+}
+
+/* The captive's death script has a groupmate kill the last guard.  The
+ * captive still stands in the room until extraction, but it is dying, so
+ * the rescue fails. */
+static struct char_data *guard_killing_captive, *mate_avenging_captive;
+
+static void groupmate_finishes_guard_during_captives_death(struct char_data *captive)
+{
+  (void)captive;
+  death_script = NULL;  /* The guard has no death script of its own. */
+  TEST_ASSERT_EQUAL_INT(-1, damage(mate_avenging_captive, guard_killing_captive, 30, TYPE_HIT));
+}
+
+static void test_a_dying_captive_is_not_rescued_by_a_kill_during_its_death(void)
+{
+  static char name[] = "captive";
+  struct char_data *holder = new_player(CELL);
+  struct char_data *captive = new_mob(CAPTIVE, CELL);
+
+  mate_avenging_captive = new_player(CELL);
+  guard_killing_captive = new_guard(CELL);
+  captive->player.name = captive->player.short_descr = name;
+  GET_HIT(captive) = GET_MAX_HIT(captive) = 10;
+  GET_HIT(guard_killing_captive) = GET_MAX_HIT(guard_killing_captive) = 10;
+  group_up(holder, mate_avenging_captive);
+  give_quest(holder, Q_RESCUE);
+  death_script = groupmate_finishes_guard_during_captives_death;
+  TEST_ASSERT_EQUAL_INT(-1, damage(guard_killing_captive, captive, 30, TYPE_HIT));
+  TEST_ASSERT_TRUE(DEAD(guard_killing_captive));
+  TEST_ASSERT_TRUE(DEAD(captive));
+  assert_not_rescued(holder);
 }
 
 int main(void)
@@ -2353,7 +2406,9 @@ int main(void)
   RUN_TEST(test_a_large_group_credits_every_living_quest_holder_in_the_room);
   RUN_TEST(test_an_earthquake_that_makes_a_guard_flee_cannot_count_the_former_pet_it_kills);
   RUN_TEST(test_an_idle_former_pet_counts_in_a_new_fight_before_the_next_heartbeat);
+  RUN_TEST(test_a_former_pet_attacking_a_dead_guard_counts_in_a_new_fight);
   RUN_TEST(test_a_death_script_healing_a_former_pet_preserves_the_current_kill_credit);
   RUN_TEST(test_a_dying_holder_cannot_share_a_guard_kill_triggered_by_their_death);
+  RUN_TEST(test_a_dying_captive_is_not_rescued_by_a_kill_during_its_death);
   return UNITY_END();
 }
