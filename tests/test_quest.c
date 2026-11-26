@@ -1,6 +1,8 @@
 /* Rescue quests need a living, stable captive and a living player.  A
  * captive left dying when the last guard falls can still be healed or
  * bandaged to finish the rescue. */
+#include <limits.h>
+
 #include "unity.h"
 #include "conf.h"
 #include "sysdep.h"
@@ -657,6 +659,23 @@ static void test_healing_the_captive_in_an_already_clear_room_completes_the_resc
   assert_rescued(holder);
 }
 
+static void test_healing_completes_a_rescue_with_a_nonpositive_quantity(void)
+{
+  const int quantities[] = {0, INT_MIN};
+  size_t i;
+
+  for (i = 0; i < sizeof(quantities) / sizeof(quantities[0]); i++) {
+    struct char_data *holder = new_player(CELL);
+    struct char_data *captive = new_dying_captive(CELL);
+
+    QST_QUANTITY(0) = quantities[i];
+    give_quest(holder, Q_RESCUE);
+    TEST_ASSERT_EQUAL_INT(quantities[i], GET_QUEST_COUNTER(holder));
+    mag_points(20, holder, captive, SPELL_CURE_CRITIC, 0);
+    assert_rescued(holder);
+  }
+}
+
 static void test_bandaging_the_captive_in_an_already_clear_room_completes_the_rescue(void)
 {
   char arg[] = "captive";
@@ -714,6 +733,7 @@ int main(void)
   RUN_TEST(test_repeated_treatment_does_not_spend_multi_target_goals);
   RUN_TEST(test_treatment_does_not_finish_a_multi_target_quest_with_one_goal_left);
   RUN_TEST(test_healing_the_captive_in_an_already_clear_room_completes_the_rescue);
+  RUN_TEST(test_healing_completes_a_rescue_with_a_nonpositive_quantity);
   RUN_TEST(test_bandaging_the_captive_in_an_already_clear_room_completes_the_rescue);
   RUN_TEST(test_healing_a_remote_copy_does_not_rescue_the_local_captive);
   return UNITY_END();

@@ -437,9 +437,13 @@ void check_rescue_on_recovery(struct char_data *ch, struct char_data *patient,
   quest = real_quest(GET_QUEST(ch));
   /* Repeated treatment of one captive cannot satisfy multiple goals. */
   if (quest != NOTHING && QST_TYPE(quest) == AQ_MOB_SAVE &&
-      QST_QUANTITY(quest) == 1 &&
-      rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(quest), patient))
+      QST_QUANTITY(quest) <= 1 &&
+      GET_MOB_VNUM(patient) == QST_TARGET(quest) &&
+      rescue_room_is_clear(IN_ROOM(ch), QST_TARGET(quest), patient)) {
+    /* Old quest files can start with a nonpositive counter. */
+    GET_QUEST_COUNTER(ch) = MAX(1, GET_QUEST_COUNTER(ch));
     generic_complete_quest(ch);
+  }
 }
 
 void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,
