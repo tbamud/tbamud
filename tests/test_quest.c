@@ -1330,22 +1330,51 @@ static void test_a_groupmates_kill_clears_the_room(void)
   assert_cleared(holder);
 }
 
-static void test_a_kill_does_not_also_complete_the_groups_next_quest(void)
+/* Killing the guard finishes Q_KILL, which unlocks the given stage. */
+static void chain_kill_stage(qst_vnum next, int type, int target)
+{
+  init_quest(&quests[0], Q_KILL, AQ_MOB_KILL, mobs[GUARD].vnum);
+  init_quest(&quests[1], next, type, target);
+  quests[0].next_quest = next;
+  total_quests = 2;
+}
+
+/* As on master, the death that finishes a kill stage also counts toward the
+ * stage it unlocks.  Otherwise killing the room's last mob would leave a
+ * Room clear or rescue that nothing could finish until the zone reset. */
+static void test_a_kill_also_clears_the_room_for_the_stage_it_unlocks(void)
+{
+  struct char_data *holder = new_player(CELL);
+
+  chain_kill_stage(Q_CLEAR, AQ_ROOM_CLEAR, rooms[CELL].number);
+  give_quest(holder, Q_KILL);
+  kill_cell_guard(holder);
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+  assert_cleared(holder);
+}
+
+static void test_a_kill_also_finishes_the_rescue_it_unlocks(void)
+{
+  struct char_data *holder = new_player(CELL);
+
+  new_mob(CAPTIVE, CELL);
+  chain_kill_stage(Q_RESCUE, AQ_MOB_SAVE, mobs[CAPTIVE].vnum);
+  give_quest(holder, Q_KILL);
+  kill_cell_guard(holder);
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+  assert_rescued(holder);
+}
+
+static void test_a_groupmates_kill_also_clears_the_room_for_the_stage_it_unlocks(void)
 {
   struct char_data *holder = new_player(CELL);
   struct char_data *mate = new_player(CELL);
 
-  init_quest(&quests[0], Q_KILL, AQ_MOB_KILL, mobs[GUARD].vnum);
-  init_quest(&quests[1], Q_CLEAR, AQ_ROOM_CLEAR, rooms[CELL].number);
-  quests[0].next_quest = Q_CLEAR;
-  total_quests = 2;
+  chain_kill_stage(Q_CLEAR, AQ_ROOM_CLEAR, rooms[CELL].number);
   group_up(holder, mate);
   give_quest(holder, Q_KILL);
-
   kill_cell_guard(mate);
   TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
-  assert_not_cleared(holder);
-  kill_cell_guard(mate);
   assert_cleared(holder);
 }
 
@@ -1896,7 +1925,9 @@ int main(void)
   RUN_TEST(test_a_groupmates_pets_kill_completes_the_rescue);
   RUN_TEST(test_a_pets_kill_clears_the_room);
   RUN_TEST(test_a_groupmates_kill_clears_the_room);
-  RUN_TEST(test_a_kill_does_not_also_complete_the_groups_next_quest);
+  RUN_TEST(test_a_kill_also_clears_the_room_for_the_stage_it_unlocks);
+  RUN_TEST(test_a_kill_also_finishes_the_rescue_it_unlocks);
+  RUN_TEST(test_a_groupmates_kill_also_clears_the_room_for_the_stage_it_unlocks);
   RUN_TEST(test_rescuing_a_charmed_captive_does_not_also_complete_the_next_room_clear);
   RUN_TEST(test_a_killer_moved_by_the_death_script_cannot_rescue_for_the_group);
   RUN_TEST(test_a_killing_pet_moved_by_the_death_script_cannot_clear_for_its_master);

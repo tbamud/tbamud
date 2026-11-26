@@ -555,17 +555,12 @@ static void for_side_in_room(struct char_data *ch, room_rnum room,
   remove_iterator(&iterator);
 }
 
-/* Death scripts can move combatants. Kill-mob credit can also assign the
- * next quest before raw_kill() checks rescues and room clears. */
-struct kill_witness {
-  struct char_data *player;
-  qst_vnum quest;
-  int type;
-};
-
+/* The killer and the players on their side who were there when the victim
+ * died.  A death script can move people in or out before raw_kill() gives
+ * credit. */
 struct kill_witnesses {
   struct char_data *killer;
-  struct kill_witness *players;
+  struct char_data **who;
   int count;
   int size;
 };
@@ -573,23 +568,12 @@ struct kill_witnesses {
 static void add_witness(struct char_data *ch, void *data)
 {
   struct kill_witnesses *witnesses = data;
-  struct kill_witness *witness;
-  qst_rnum quest;
-
-  if (GET_QUEST(ch) == NOTHING)
-    return;
-  quest = real_quest(GET_QUEST(ch));
-  if (quest == NOTHING || (QST_TYPE(quest) != AQ_MOB_SAVE && QST_TYPE(quest) != AQ_ROOM_CLEAR))
-    return;
 
   if (witnesses->count == witnesses->size) {
     witnesses->size = witnesses->size ? 2 * witnesses->size : 4;
-    RECREATE(witnesses->players, struct kill_witness, witnesses->size);
+    RECREATE(witnesses->who, struct char_data *, witnesses->size);
   }
-  witness = &witnesses->players[witnesses->count++];
-  witness->player = ch;
-  witness->quest = GET_QUEST(ch);
-  witness->type = QST_TYPE(quest);
+  witnesses->who[witnesses->count++] = ch;
 }
 
 struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
@@ -606,7 +590,11 @@ struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
 }
 
 /* Each witness still in the death room gets credit for vict's death and
- * the list is freed.  A pet's or a player's death clears nothing. */
+ * the list is freed.  A pet's or a player's death clears nothing.  The
+ * check is for the quest the witness holds now: a kill stage that this death
+ * finished may have handed them a Save mob or Room clear stage, and the same
+ * death counts toward it.  A witness gets one check, so a finished rescue
+ * does not go on to the stage after it. */
 void credit_kill_witnesses(struct kill_witnesses *witnesses,
                            struct char_data *vict, room_rnum death_room)
 {
@@ -616,17 +604,18 @@ void credit_kill_witnesses(struct kill_witnesses *witnesses,
     return;
   if (IS_NPC(vict) && !is_player_pet_kill(vict) && alive_in_room(witnesses->killer, death_room))
     for (n = 0; n < witnesses->count; n++) {
-      const struct kill_witness *witness = &witnesses->players[n];
-      struct char_data *ch = witness->player;
+      struct char_data *ch = witnesses->who[n];
+      qst_rnum quest;
 
-      if (!alive_in_room(ch, death_room) || GET_QUEST(ch) != witness->quest)
+      if (!alive_in_room(ch, death_room) || GET_QUEST(ch) == NOTHING ||
+          (quest = real_quest(GET_QUEST(ch))) == NOTHING)
         continue;
-      if (witness->type == AQ_MOB_SAVE)
+      if (QST_TYPE(quest) == AQ_MOB_SAVE)
         check_rescue_on_kill(ch, vict, death_room);
-      else
+      else if (QST_TYPE(quest) == AQ_ROOM_CLEAR)
         autoquest_trigger_check(ch, NULL, NULL, AQ_ROOM_CLEAR);
     }
-  free(witnesses->players);
+  free(witnesses->who);
   free(witnesses);
 }
 
