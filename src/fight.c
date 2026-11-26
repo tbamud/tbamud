@@ -60,7 +60,7 @@ static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
-static void clear_pet_attack_if_idle(struct char_data *ch);
+static void clear_pet_combat_if_idle(struct char_data *ch);
 /** @todo refactor this function name */
 static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
 static int compute_thaco(struct char_data *ch, struct char_data *vict);
@@ -98,7 +98,7 @@ void update_pos(struct char_data *victim)
   if (GET_HIT(victim) > 0) {
     if (GET_POS(victim) <= POS_STUNNED)
       GET_POS(victim) = POS_STANDING;
-    clear_pet_attack_if_idle(victim);
+    clear_pet_combat_if_idle(victim);
   } else if (GET_HIT(victim) <= -11)
     GET_POS(victim) = POS_DEAD;
   else if (GET_HIT(victim) <= -6)
@@ -167,23 +167,18 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
 
   FIGHTING(ch) = vict;
   GET_POS(ch) = POS_FIGHTING;
-
+  if (is_player_pet(ch))
+    ch->mob_specials.fought_as_player_pet = TRUE;
+  if (is_player_pet(vict))
+    vict->mob_specials.fought_as_player_pet = TRUE;
 }
 
 /* A former pet must recover and disengage before a later kill can count. */
-static void clear_pet_attack_if_idle(struct char_data *ch)
+static void clear_pet_combat_if_idle(struct char_data *ch)
 {
-  struct char_data *attacker;
-
-  if (!ch || !IS_NPC(ch) || !ch->mob_specials.attacked_by_pet_owner ||
-      FIGHTING(ch) || GET_POS(ch) <= POS_STUNNED)
-    return;
-
-  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
-    if (FIGHTING(attacker) == ch)
-      return;
-
-  ch->mob_specials.attacked_by_pet_owner = FALSE;
+  if (ch && IS_NPC(ch) && ch->mob_specials.fought_as_player_pet &&
+      GET_POS(ch) > POS_STUNNED && !has_combat_opponent(ch))
+    ch->mob_specials.fought_as_player_pet = FALSE;
 }
 
 /* remove a char from the list of fighting chars */
@@ -200,7 +195,7 @@ void stop_fighting(struct char_data *ch)
   FIGHTING(ch) = NULL;
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
-  clear_pet_attack_if_idle(opponent);
+  clear_pet_combat_if_idle(opponent);
 }
 
 static void make_corpse(struct char_data *ch)
@@ -300,8 +295,7 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   const room_rnum death_room = IN_ROOM(ch);
   /* Credit goes to the killer's side as it stood when ch died.  Dying of
    * one's own wounds, as poison and bleeding out do, has no killer's side. */
-  struct kill_witnesses *witnesses = killer && killer != ch &&
-      IN_ROOM(killer) == death_room ? note_kill_witnesses(killer, death_room) : NULL;
+  struct kill_witnesses *witnesses = killer != ch ? note_kill_witnesses(killer, death_room) : NULL;
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
 
@@ -642,7 +636,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   char local_buf[256];
   struct char_data *tmp_char;
   struct obj_data *corpse_obj;
-  bool attacking_own_pet;
+  bool attacker_was_pet, victim_was_pet;
 
   if (GET_POS(victim) <= POS_DEAD) {
     /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
@@ -678,15 +672,19 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
     dam = 0;
 
-  attacking_own_pet = victim->master == ch && is_player_pet(victim);
+  attacker_was_pet = ch != victim && is_player_pet(ch);
+  victim_was_pet = ch != victim && is_player_pet(victim);
   dam = damage_mtrigger(ch, victim, dam, attacktype);
   if (dam == -1) {
   	return (0);
   }
 
-  /* Keep pet status when an attack breaks the bond before a later hit. */
-  if (attacking_own_pet)
-    victim->mob_specials.attacked_by_pet_owner = TRUE;
+  /* A damage trigger may break charm before either side starts fighting.
+   * A downed target may never acquire a combat link at all. */
+  if (attacker_was_pet)
+    ch->mob_specials.fought_as_player_pet = TRUE;
+  if (victim_was_pet)
+    victim->mob_specials.fought_as_player_pet = TRUE;
 
   if (victim != ch) {
     /* Start the attacker fighting the victim */
@@ -845,8 +843,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
     return (-1);
   }
-  if (attacking_own_pet)
-    clear_pet_attack_if_idle(victim);
+  if (victim_was_pet)
+    clear_pet_combat_if_idle(victim);
   return (dam);
 }
 

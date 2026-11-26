@@ -359,6 +359,9 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
 
   affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
   affect_total(ch);
+  /* A mob can be charmed after combat has already started. */
+  if (IS_SET_AR(af->bitvector, AFF_CHARM) && is_player_pet(ch) && has_combat_opponent(ch))
+    ch->mob_specials.fought_as_player_pet = TRUE;
 }
 
 /* Remove an affected_type structure from a char (called when duration reaches

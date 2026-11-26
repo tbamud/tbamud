@@ -124,6 +124,8 @@ int MAX(int a, int b);
 int MIN(int a, int b);
 char *CAP(char *txt);
 
+bool	has_combat_opponent(const struct char_data *ch);
+
 /* Followers */
 bool	is_player_pet(const struct char_data *ch);
 bool	is_player_pet_kill(const struct char_data *victim);

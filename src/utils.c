@@ -20,6 +20,7 @@
 #include "screen.h"
 #include "spells.h"
 #include "handler.h"
+#include "fight.h"
 #include "interpreter.h"
 #include "class.h"
 
@@ -568,6 +569,19 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
+/* A stunned or rescued character can still be another combatant's target. */
+bool has_combat_opponent(const struct char_data *ch)
+{
+  const struct char_data *attacker;
+
+  if (FIGHTING(ch))
+    return TRUE;
+  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
+    if (FIGHTING(attacker) == ch)
+      return TRUE;
+  return FALSE;
+}
+
 bool is_player_pet(const struct char_data *ch)
 {
   return IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master &&
@@ -577,7 +591,7 @@ bool is_player_pet(const struct char_data *ch)
 bool is_player_pet_kill(const struct char_data *victim)
 {
   return IS_NPC(victim) &&
-         (is_player_pet(victim) || victim->mob_specials.attacked_by_pet_owner ||
+         (is_player_pet(victim) || victim->mob_specials.fought_as_player_pet ||
           victim->mob_specials.died_as_player_pet);
 }
 
