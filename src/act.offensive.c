@@ -381,14 +381,15 @@ ACMD(do_rescue)
   act("You are rescued by $N, you are confused!", FALSE, vict, 0, ch, TO_CHAR);
   act("$n heroically rescues $N!", FALSE, ch, 0, vict, TO_NOTVICT);
 
+  /* Engage the rescuer first so the opponent stays in the same fight. */
+  if (FIGHTING(ch))
+    stop_fighting(ch);
+  set_fighting(ch, tmp_ch);
+
   if (FIGHTING(vict) == tmp_ch)
     stop_fighting(vict);
   if (FIGHTING(tmp_ch))
     stop_fighting(tmp_ch);
-  if (FIGHTING(ch))
-    stop_fighting(ch);
-
-  set_fighting(ch, tmp_ch);
   set_fighting(tmp_ch, ch);
 
   WAIT_STATE(vict, 2 * PULSE_VIOLENCE);

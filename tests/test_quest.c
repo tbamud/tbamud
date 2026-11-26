@@ -554,6 +554,34 @@ static void test_a_former_pet_counts_in_a_later_fight(void)
   assert_rescued(holder);
 }
 
+static void test_rescuing_a_former_pets_owner_does_not_make_its_death_count(void)
+{
+  char argument[] = "owner";
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+  struct char_data *captive = new_mob(CAPTIVE, CELL);
+
+  owner->player.name = "owner";
+  holder->player.name = "ally";
+  captive->player.name = captive->player.short_descr = "captive";
+  GET_HIT(captive) = GET_MAX_HIT(captive) = 10;
+  SET_SKILL(holder, SKILL_RESCUE, 101);
+  give_quest(holder, Q_RESCUE);
+
+  TEST_ASSERT_EQUAL_INT(1, damage(owner, pet, 1, TYPE_HIT));
+  TEST_ASSERT_NULL(pet->master);
+  TEST_ASSERT_EQUAL_PTR(owner, FIGHTING(pet));
+  do_rescue(holder, argument, 0, 0);
+  TEST_ASSERT_NULL(FIGHTING(owner));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(holder));
+  TEST_ASSERT_EQUAL_PTR(holder, FIGHTING(pet));
+
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
 static void test_a_downed_former_pet_still_being_attacked_does_not_count(void)
 {
   struct char_data *holder = new_player(CELL);
@@ -1060,6 +1088,7 @@ int main(void)
   RUN_TEST(test_killing_another_players_charmed_pet_does_not_complete_the_rescue);
   RUN_TEST(test_killing_a_pet_after_the_owners_first_hit_does_not_complete_the_rescue);
   RUN_TEST(test_a_former_pet_counts_in_a_later_fight);
+  RUN_TEST(test_rescuing_a_former_pets_owner_does_not_make_its_death_count);
   RUN_TEST(test_a_downed_former_pet_still_being_attacked_does_not_count);
   RUN_TEST(test_a_former_pet_transformed_during_the_fight_does_not_count);
   RUN_TEST(test_a_dead_holder_is_not_rewarded);
