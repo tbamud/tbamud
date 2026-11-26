@@ -513,7 +513,7 @@ void check_rescue_on_kill(struct char_data *ch, struct char_data *vict,
 
   if (!ch || IS_NPC(ch) || DEAD(ch) || GET_QUEST(ch) == NOTHING ||
       !VALID_ROOM_RNUM(death_room) || IN_ROOM(ch) != death_room ||
-      !vict || !IS_NPC(vict) || !DEAD(vict))
+      !vict || !IS_NPC(vict) || !DEAD(vict) || is_player_pet_kill(vict))
     return;
 
   quest = real_quest(GET_QUEST(ch));

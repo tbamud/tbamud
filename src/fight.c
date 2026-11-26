@@ -300,8 +300,7 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   const room_rnum death_room = IN_ROOM(ch);
   const bool killer_was_present = killer && IN_ROOM(killer) == death_room;
   /* Removing affects below can strip a pet's charm before quest checks. */
-  const bool victim_was_player_pet = IS_NPC(ch) &&
-      (is_player_pet(ch) || ch->mob_specials.attacked_by_pet_owner);
+  const bool victim_was_player_pet = is_player_pet_kill(ch);
 
   if (FIGHTING(ch))
     stop_fighting(ch);
@@ -334,12 +333,13 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   update_pos(ch);
 
   make_corpse(ch);
+  if (victim_was_player_pet)
+    ch->mob_specials.died_as_player_pet = TRUE;
   extract_char(ch);
 
   /* A death script may move the killer, the victim, or both. */
   if (killer_was_present && IN_ROOM(killer) == death_room) {
-    if (!victim_was_player_pet)
-      check_rescue_on_kill(killer, ch, death_room);
+    check_rescue_on_kill(killer, ch, death_room);
     autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
   }
 }

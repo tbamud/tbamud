@@ -417,6 +417,38 @@ static void test_a_living_pet_does_not_complete_the_rescue(void)
   TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
 }
 
+static void test_rescue_kill_check_rejects_a_dead_charmed_pet(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+  struct char_data *captive = new_mob(CAPTIVE, CELL);
+
+  GET_HIT(captive) = GET_MAX_HIT(captive) = 10;
+  give_quest(holder, Q_RESCUE);
+  kill_mob(pet);
+  TEST_ASSERT_TRUE(is_player_pet(pet));
+  TEST_ASSERT_FALSE(pet->mob_specials.attacked_by_pet_owner);
+  check_rescue_on_kill(holder, pet, CELL);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_rescue_trigger_rejects_a_dead_former_pet(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *former_pet = new_mob(PET, CELL);
+  struct char_data *captive = new_mob(CAPTIVE, CELL);
+
+  GET_HIT(captive) = GET_MAX_HIT(captive) = 10;
+  give_quest(holder, Q_RESCUE);
+  former_pet->mob_specials.attacked_by_pet_owner = TRUE;
+  kill_mob(former_pet);
+  TEST_ASSERT_FALSE(is_player_pet(former_pet));
+  autoquest_trigger_check(holder, former_pet, NULL, AQ_MOB_SAVE);
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
 static void test_rescue_fails_when_the_captive_died_first(void)
 {
   struct char_data *holder = new_player(CELL);
@@ -513,6 +545,10 @@ static void test_killing_another_players_charmed_pet_does_not_complete_the_rescu
   give_quest(holder, Q_RESCUE);
   TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
   TEST_ASSERT_TRUE(DEAD(pet));
+  assert_not_rescued(holder);
+  /* Death removed the charm. The public trigger can still see the victim. */
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+  autoquest_trigger_check(holder, pet, NULL, AQ_MOB_SAVE);
   assert_not_rescued(holder);
   TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
 }
@@ -1193,6 +1229,8 @@ int main(void)
   RUN_TEST(test_moving_only_the_killer_to_an_empty_target_room_gives_no_clear);
   RUN_TEST(test_killer_brought_to_the_death_room_by_a_script_gets_no_clear);
   RUN_TEST(test_a_living_pet_does_not_complete_the_rescue);
+  RUN_TEST(test_rescue_kill_check_rejects_a_dead_charmed_pet);
+  RUN_TEST(test_rescue_trigger_rejects_a_dead_former_pet);
   RUN_TEST(test_rescue_fails_when_the_captive_died_first);
   RUN_TEST(test_killing_a_copy_of_the_captive_is_no_rescue);
   RUN_TEST(test_a_dying_captive_does_not_count);
