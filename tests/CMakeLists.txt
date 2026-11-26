@@ -229,6 +229,8 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         ${MUD_SRCDIR}/fight.c
         ${MUD_SRCDIR}/constants.c
         ${MUD_SRCDIR}/magic.c
+        ${MUD_SRCDIR}/spell_parser.c
+        ${MUD_SRCDIR}/dg_misc.c
         ${MUD_SRCDIR}/act.offensive.c
         ${MUD_SRCDIR}/interpreter.c
         ${MUD_SRCDIR}/dg_mobcmd.c

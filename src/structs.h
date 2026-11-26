@@ -933,6 +933,7 @@ struct char_special_data
   struct char_data *next_in_furniture; /**< Next person sitting, else NULL */
 
   byte position; /**< Standing, fighting, sleeping, etc. */
+  bool lethal_hit_pending; /**< A lethal hit is still running combat messages. */
   bool death_in_progress; /**< Death processing has started and extraction is still pending. */
 
   int carry_weight; /**< Carried weight */

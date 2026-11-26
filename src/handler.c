@@ -443,7 +443,8 @@ void affect_join(struct char_data *ch, struct affected_type *af,
 /* move a player out of a room */
 void char_from_room(struct char_data *ch)
 {
-  struct char_data *temp;
+  struct char_data *temp, *attacker;
+  room_rnum old_room;
 
   if (ch == NULL || IN_ROOM(ch) == NOWHERE) {
     log("SYSERR: NULL character or NOWHERE in %s, char_from_room", __FILE__);
@@ -460,9 +461,18 @@ void char_from_room(struct char_data *ch)
       if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2))	/* Light is ON */
 	world[IN_ROOM(ch)].light--;
 
-  REMOVE_FROM_LIST(ch, world[IN_ROOM(ch)].people, next_in_room);
+  old_room = IN_ROOM(ch);
+  REMOVE_FROM_LIST(ch, world[old_room].people, next_in_room);
   IN_ROOM(ch) = NOWHERE;
   ch->next_in_room = NULL;
+
+  /* stop_fighting() removed the mover's outgoing link. Characters left
+   * behind may still target the mover until the next combat pulse. */
+  clear_pet_combat_if_idle(ch);
+  if (combat_list)
+    for (attacker = world[old_room].people; attacker; attacker = attacker->next_in_room)
+      if (FIGHTING(attacker) == ch)
+        clear_pet_combat_if_idle(attacker);
 }
 
 /* place a character in a room */

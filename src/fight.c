@@ -284,18 +284,36 @@ void death_cry(struct char_data *ch)
       send_to_room(world[IN_ROOM(ch)].dir_option[door]->to_room, "Your blood freezes as you hear someone's death cry.\r\n");
 }
 
-void raw_kill(struct char_data * ch, struct char_data * killer)
+/* A healed character can take another hit in the same combat message. Death
+ * scripts, on the other hand, run standing while extraction is inevitable. */
+static bool death_already_started(const struct char_data *victim)
+{
+  return DEAD(victim) || victim->char_specials.death_in_progress ||
+         (victim->char_specials.lethal_hit_pending && GET_POS(victim) == POS_DEAD);
+}
+
+static struct kill_witnesses *witnesses_to_death(struct char_data *victim, struct char_data *killer)
+{
+  if (!IS_NPC(victim) || killer == victim)
+    return NULL;
+  return note_kill_witnesses(killer, IN_ROOM(victim));
+}
+
+static void finish_kill(struct char_data *ch, struct char_data *killer,
+                        struct kill_witnesses *witnesses, bool apply_death_penalty)
 {
   struct char_data *i;
-  const room_rnum death_room = IN_ROOM(ch);
-  /* Credit goes to the killer's side as it stood when ch died.  Dying of
-   * one's own wounds, as poison and bleeding out do, has no killer's side. */
-  struct kill_witnesses *witnesses = killer != ch ? note_kill_witnesses(killer, death_room) : NULL;
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
 
-  /* Death scripts run standing and may trigger another kill before extraction. */
   ch->char_specials.death_in_progress = TRUE;
+  if (apply_death_penalty) {
+    gain_exp(ch, -(GET_EXP(ch) / 2));
+    if (!IS_NPC(ch)) {
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
+    }
+  }
 
   begin_pet_combat_action();
   if (FIGHTING(ch))
@@ -339,14 +357,16 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   end_pet_combat_action();
 }
 
-void die(struct char_data * ch, struct char_data * killer)
+void raw_kill(struct char_data *ch, struct char_data *killer)
 {
-  gain_exp(ch, -(GET_EXP(ch) / 2));
-  if (!IS_NPC(ch)) {
-    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
-    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
-  }
-  raw_kill(ch, killer);
+  if (!death_already_started(ch))
+    finish_kill(ch, killer, witnesses_to_death(ch, killer), FALSE);
+}
+
+void die(struct char_data *ch, struct char_data *killer)
+{
+  if (!death_already_started(ch))
+    finish_kill(ch, killer, witnesses_to_death(ch, killer), TRUE);
 }
 
 static void perform_group_gain(struct char_data *ch, int base,
@@ -633,13 +653,14 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
   char local_buf[256];
   struct char_data *tmp_char;
   struct obj_data *corpse_obj;
-  bool attacker_was_pet, victim_was_pet;
+  struct kill_witnesses *witnesses = NULL;
+  bool attacker_was_pet, victim_was_pet, lethal_hit;
+
+  /* A combat or death message can trigger another hit on the same victim. */
+  if (death_already_started(victim))
+    return (-1);
 
   if (GET_POS(victim) <= POS_DEAD) {
-    /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
-    if (PLR_FLAGGED(victim, PLR_NOTDEADYET) || MOB_FLAGGED(victim, MOB_NOTDEADYET))
-      return (-1);
-
     log("SYSERR: Attempt to damage corpse '%s' in room #%d by '%s'.",
         GET_NAME(victim), GET_ROOM_VNUM(IN_ROOM(victim)), GET_NAME(ch));
     die(victim, ch);
@@ -675,6 +696,8 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
   if (dam == -1) {
   	return (0);
   }
+  if (DEAD(victim))
+    return (-1);
 
   /* A damage trigger may break charm before either side starts fighting.
    * A downed target may never acquire a combat link at all. */
@@ -711,12 +734,19 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
   /* Set the maximum damage per round and subtract the hit points */
   dam = MAX(MIN(dam, 100), 0);
   GET_HIT(victim) -= dam;
+  update_pos(victim);
+
+  /* The hit has landed. XP and combat messages may run scripts that move
+   * the victim, the killer or their group before death processing finishes. */
+  lethal_hit = GET_POS(victim) == POS_DEAD;
+  if (lethal_hit) {
+    victim->char_specials.lethal_hit_pending = TRUE;
+    witnesses = witnesses_to_death(victim, ch);
+  }
 
   /* Gain exp for the hit */
   if (ch != victim)
     gain_exp(ch, GET_LEVEL(victim) * dam);
-
-  update_pos(victim);
 
   /* skill_message sends a message from the messages file in lib/misc.
    * dam_message just sends a generic "You hit $n extremely hard.".
@@ -786,11 +816,22 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
     }
   }
 
+  /* A message script may have purged the victim or completed a nested kill. */
+  if (lethal_hit)
+    victim->char_specials.lethal_hit_pending = FALSE;
+  if (DEAD(victim)) {
+    free_kill_witnesses(witnesses);
+    return (-1);
+  }
+
   if (GET_POS(victim) <= POS_STUNNED && FIGHTING(victim) != NULL)
     stop_fighting(victim);
 
   /* Uh oh.  Victim died. */
   if (GET_POS(victim) == POS_DEAD) {
+    if (!lethal_hit)
+      witnesses = witnesses_to_death(victim, ch);
+    victim->char_specials.death_in_progress = TRUE;
     if (ch != victim && (IS_NPC(victim) || victim->desc)) {
       if (GROUP(ch))
 	group_gain(ch, victim);
@@ -818,7 +859,7 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
       sprintf(local_buf,"%ld", (long)local_gold);
     }
 
-    die(victim, ch);
+    finish_kill(victim, ch, witnesses, TRUE);
     if (GROUP(ch) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
       generic_find("last.corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
@@ -839,6 +880,8 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
     }
     return (-1);
   }
+  /* A message script may instead have healed the victim. */
+  free_kill_witnesses(witnesses);
   if (victim_was_pet)
     clear_pet_combat_if_idle(victim);
   return (dam);

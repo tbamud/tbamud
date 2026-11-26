@@ -569,15 +569,19 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
-/* A stunned or rescued character can still be another combatant's target. */
+/* A stunned or rescued character can still be another combatant's target.
+ * Combat links to someone who left the room may linger until the next pulse. */
 bool has_combat_opponent(const struct char_data *ch)
 {
   const struct char_data *attacker;
+  room_rnum room = IN_ROOM(ch);
 
-  if (FIGHTING(ch) && !DEAD(FIGHTING(ch)))
+  if (room == NOWHERE)
+    return FALSE;
+  if (FIGHTING(ch) && IN_ROOM(FIGHTING(ch)) == room && !DEAD(FIGHTING(ch)))
     return TRUE;
   for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
-    if (FIGHTING(attacker) == ch && !DEAD(attacker))
+    if (FIGHTING(attacker) == ch && IN_ROOM(attacker) == room && !DEAD(attacker))
       return TRUE;
   return FALSE;
 }

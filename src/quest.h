@@ -101,6 +101,7 @@ void check_rescue_on_kill(struct char_data *ch, struct char_data *vict, room_rnu
 void check_rescue_on_recovery(struct char_data *ch, struct char_data *patient, int old_position);
 struct kill_witnesses;
 struct kill_witnesses *note_kill_witnesses(struct char_data *killer, room_rnum death_room);
+void free_kill_witnesses(struct kill_witnesses *witnesses);
 void credit_kill_witnesses(struct kill_witnesses *witnesses, struct char_data *vict);
 void begin_rescue_action(void);
 void end_rescue_action(void);

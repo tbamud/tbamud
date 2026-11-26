@@ -595,11 +595,18 @@ struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
   witnesses->death_room = death_room;
   for_side_in_room(killer, death_room, add_witness, witnesses);
   if (witnesses->count == 0) {
-    free(witnesses->who);
-    free(witnesses);
+    free_kill_witnesses(witnesses);
     return NULL;
   }
   return witnesses;
+}
+
+void free_kill_witnesses(struct kill_witnesses *witnesses)
+{
+  if (witnesses) {
+    free(witnesses->who);
+    free(witnesses);
+  }
 }
 
 /* Each witness still in the death room gets credit for vict's death and
@@ -630,8 +637,7 @@ void credit_kill_witnesses(struct kill_witnesses *witnesses,
       else if (QST_TYPE(quest) == AQ_ROOM_CLEAR)
         autoquest_trigger_check(ch, NULL, NULL, AQ_ROOM_CLEAR);
     }
-  free(witnesses->who);
-  free(witnesses);
+  free_kill_witnesses(witnesses);
 }
 
 /* One player on the healer's side, in the patient's room. */
