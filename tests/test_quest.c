@@ -596,6 +596,88 @@ static void test_a_downed_former_pet_still_being_attacked_does_not_count(void)
   assert_not_rescued(holder);
 }
 
+static struct char_data *down_pet_while_fighting_another_mob(struct char_data *owner, int hit)
+{
+  struct char_data *pet = new_combat_pet(owner);
+  /* Another player's charmed pet can remain when the room is clear. */
+  struct char_data *opponent = new_pet(new_player(CELL), CELL);
+  opponent->player.name = opponent->player.short_descr = "opponent";
+  GET_HIT(opponent) = GET_MAX_HIT(opponent) = 10;
+
+  TEST_ASSERT_EQUAL_INT(1, damage(owner, opponent, 1, TYPE_HIT));
+  TEST_ASSERT_EQUAL_INT(hit, damage(owner, pet, hit, TYPE_HIT));
+  TEST_ASSERT_EQUAL_PTR(opponent, FIGHTING(owner));
+  TEST_ASSERT_TRUE(is_player_pet(opponent));
+  TEST_ASSERT_NULL(FIGHTING(pet));
+  TEST_ASSERT_NULL(pet->master);
+  return pet;
+}
+
+static void test_finishing_a_stunned_pet_while_fighting_another_mob_does_not_count(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet;
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  pet = down_pet_while_fighting_another_mob(holder, 11);
+  TEST_ASSERT_EQUAL_INT(POS_STUNNED, GET_POS(pet));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_returning_to_finish_an_incapacitated_pet_does_not_count(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(holder);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(14, damage(holder, pet, 14, TYPE_HIT));
+  char_from_room(holder);
+  char_to_room(holder, HALL);
+  char_from_room(holder);
+  char_to_room(holder, CELL);
+  TEST_ASSERT_EQUAL_INT(POS_INCAP, GET_POS(pet));
+  TEST_ASSERT_NULL(FIGHTING(holder));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(1, GET_QUEST_COUNTER(holder));
+}
+
+static void test_recovered_idle_former_pet_counts_in_a_new_fight(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *pet = down_pet_while_fighting_another_mob(owner, 14);
+  struct char_data *holder = new_player(CELL);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(POS_INCAP, GET_POS(pet));
+  mag_points(20, holder, pet, SPELL_HEAL, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(pet));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_rescued(holder);
+}
+
+static void test_healing_a_pet_with_an_active_attacker_preserves_the_fight(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *healer = new_player(CELL);
+  struct char_data *pet = new_combat_pet(holder);
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  TEST_ASSERT_EQUAL_INT(14, damage(holder, pet, 14, TYPE_HIT));
+  mag_points(20, healer, pet, SPELL_HEAL, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(pet));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(holder));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_rescued(holder);
+}
+
 /* mtransform loads a fresh prototype before copying the ongoing fight. */
 struct char_data *read_mobile(mob_vnum vnum, int type)
 {
@@ -632,6 +714,38 @@ static void test_a_former_pet_transformed_during_the_fight_does_not_count(void)
   assert_not_rescued(holder);
   free(pet->player.name);
   free(pet->player.short_descr);
+}
+
+static void test_a_bashed_pet_stays_stunned_until_it_recovers(void)
+{
+  char target[] = "pet";
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *opponent = new_pet(holder, CELL);
+  struct char_data *pet = new_combat_pet(owner);
+  struct obj_data *weapon = create_obj();
+
+  new_mob(CAPTIVE, CELL);
+  give_quest(holder, Q_RESCUE);
+  GET_HIT(pet) = 1;
+  set_fighting(owner, opponent);
+  IN_ROOM(weapon) = NOWHERE;
+  GET_OBJ_TYPE(weapon) = ITEM_WEAPON;
+  equip_char(owner, weapon, WEAR_WIELD);
+  SET_SKILL(owner, SKILL_BASH, 101);
+  do_bash(owner, target, 0, 0);
+  TEST_ASSERT_EQUAL_PTR(weapon, unequip_char(owner, WEAR_WIELD));
+
+  TEST_ASSERT_EQUAL_PTR(opponent, FIGHTING(owner));
+  TEST_ASSERT_NULL(FIGHTING(pet));
+  TEST_ASSERT_EQUAL_INT(0, GET_HIT(pet));
+  TEST_ASSERT_EQUAL_INT(POS_STUNNED, GET_POS(pet));
+  TEST_ASSERT_TRUE(pet->mob_specials.attacked_by_pet_owner);
+  mag_points(20, holder, pet, SPELL_HEAL, 0);
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(pet));
+  assert_not_rescued(holder);
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_rescued(holder);
 }
 
 static void test_a_dead_holder_is_not_rewarded(void)
@@ -1090,7 +1204,12 @@ int main(void)
   RUN_TEST(test_a_former_pet_counts_in_a_later_fight);
   RUN_TEST(test_rescuing_a_former_pets_owner_does_not_make_its_death_count);
   RUN_TEST(test_a_downed_former_pet_still_being_attacked_does_not_count);
+  RUN_TEST(test_finishing_a_stunned_pet_while_fighting_another_mob_does_not_count);
+  RUN_TEST(test_returning_to_finish_an_incapacitated_pet_does_not_count);
+  RUN_TEST(test_recovered_idle_former_pet_counts_in_a_new_fight);
+  RUN_TEST(test_healing_a_pet_with_an_active_attacker_preserves_the_fight);
   RUN_TEST(test_a_former_pet_transformed_during_the_fight_does_not_count);
+  RUN_TEST(test_a_bashed_pet_stays_stunned_until_it_recovers);
   RUN_TEST(test_a_dead_holder_is_not_rewarded);
   RUN_TEST(test_earthquake_kills_guard_before_captive);
   RUN_TEST(test_earthquake_kills_captive_before_guard);

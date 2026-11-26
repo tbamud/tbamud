@@ -60,6 +60,7 @@ static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
+static void clear_pet_attack_if_idle(struct char_data *ch);
 /** @todo refactor this function name */
 static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
 static int compute_thaco(struct char_data *ch, struct char_data *vict);
@@ -94,11 +95,11 @@ int compute_armor_class(struct char_data *ch)
 
 void update_pos(struct char_data *victim)
 {
-  if ((GET_HIT(victim) > 0) && (GET_POS(victim) > POS_STUNNED))
-    return;
-  else if (GET_HIT(victim) > 0)
-    GET_POS(victim) = POS_STANDING;
-  else if (GET_HIT(victim) <= -11)
+  if (GET_HIT(victim) > 0) {
+    if (GET_POS(victim) <= POS_STUNNED)
+      GET_POS(victim) = POS_STANDING;
+    clear_pet_attack_if_idle(victim);
+  } else if (GET_HIT(victim) <= -11)
     GET_POS(victim) = POS_DEAD;
   else if (GET_HIT(victim) <= -6)
     GET_POS(victim) = POS_MORTALLYW;
@@ -169,13 +170,13 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
 
 }
 
-/* A downed pet can stop fighting while its attackers are still fighting it. */
+/* A former pet must recover and disengage before a later kill can count. */
 static void clear_pet_attack_if_idle(struct char_data *ch)
 {
   struct char_data *attacker;
 
   if (!ch || !IS_NPC(ch) || !ch->mob_specials.attacked_by_pet_owner ||
-      FIGHTING(ch) || GET_POS(ch) == POS_DEAD)
+      FIGHTING(ch) || GET_POS(ch) <= POS_STUNNED)
     return;
 
   for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
@@ -199,7 +200,6 @@ void stop_fighting(struct char_data *ch)
   FIGHTING(ch) = NULL;
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
-  clear_pet_attack_if_idle(ch);
   clear_pet_attack_if_idle(opponent);
 }
 

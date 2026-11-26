@@ -992,7 +992,7 @@ struct mob_special_data
   byte default_pos;   /**< Default position (standing, sleeping, etc.) */
   byte damnodice;     /**< The number of dice to roll for damage */
   byte damsizedice;   /**< The size of each die rolled for damage. */
-  bool attacked_by_pet_owner; /**< Its owner attacked it while charmed in the current fight. */
+  bool attacked_by_pet_owner; /**< Its owner broke charm by attacking it. Cleared once conscious and out of combat. */
   int innate_aff[AF_ARRAY_MAX]; /**< AFF flags this mob was created with */
 };
 

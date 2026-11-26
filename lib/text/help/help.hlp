@@ -7432,6 +7432,8 @@ main menu, you will be shown a list to choose from:
                   even if someone else cleared it. Players' charmed pets
                   may stay. Killing a pet gives no rescue credit, even
                   if it loses its charm or changes form during that fight.
+                  The former pet must be conscious and out of combat
+                  before its death can count in a later fight.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

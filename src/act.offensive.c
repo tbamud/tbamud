@@ -323,7 +323,7 @@ ACMD(do_bash)
      */
     if (damage(ch, vict, 1, SKILL_BASH) > 0) {	/* -1 = dead, 0 = miss */
       WAIT_STATE(vict, PULSE_VIOLENCE);
-      if (IN_ROOM(ch) == IN_ROOM(vict))
+      if (IN_ROOM(ch) == IN_ROOM(vict) && GET_POS(vict) > POS_STUNNED)
         GET_POS(vict) = POS_SITTING;
     }
   }
