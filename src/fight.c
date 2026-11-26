@@ -169,10 +169,27 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
 
 }
 
+/* A downed pet can stop fighting while its attackers are still fighting it. */
+static void clear_pet_attack_if_idle(struct char_data *ch)
+{
+  struct char_data *attacker;
+
+  if (!ch || !IS_NPC(ch) || !ch->mob_specials.attacked_by_pet_owner ||
+      FIGHTING(ch) || GET_POS(ch) == POS_DEAD)
+    return;
+
+  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
+    if (FIGHTING(attacker) == ch)
+      return;
+
+  ch->mob_specials.attacked_by_pet_owner = FALSE;
+}
+
 /* remove a char from the list of fighting chars */
 void stop_fighting(struct char_data *ch)
 {
   struct char_data *temp;
+  struct char_data *opponent = FIGHTING(ch);
 
   if (ch == next_combat_list)
     next_combat_list = ch->next_fighting;
@@ -182,6 +199,8 @@ void stop_fighting(struct char_data *ch)
   FIGHTING(ch) = NULL;
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
+  clear_pet_attack_if_idle(ch);
+  clear_pet_attack_if_idle(opponent);
 }
 
 static void make_corpse(struct char_data *ch)
@@ -317,10 +336,10 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   make_corpse(ch);
   extract_char(ch);
 
-  if (killer) {
-    /* Death scripts can move characters before quest credit is checked. */
-    if (killer_was_present && IN_ROOM(killer) == death_room && !victim_was_player_pet)
-      autoquest_trigger_check(killer, ch, NULL, AQ_MOB_SAVE);
+  /* A death script may move the killer, the victim, or both. */
+  if (killer_was_present && IN_ROOM(killer) == death_room) {
+    if (!victim_was_player_pet)
+      check_rescue_on_kill(killer, ch, death_room);
     autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
   }
 }
@@ -826,6 +845,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
     return (-1);
   }
+  if (attacking_own_pet)
+    clear_pet_attack_if_idle(victim);
   return (dam);
 }
 

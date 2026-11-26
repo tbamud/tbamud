@@ -231,6 +231,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         ${MUD_SRCDIR}/magic.c
         ${MUD_SRCDIR}/act.offensive.c
         ${MUD_SRCDIR}/interpreter.c
+        ${MUD_SRCDIR}/dg_mobcmd.c
         ${CMAKE_CURRENT_SOURCE_DIR}/test_quest.c
     )
     target_include_directories(test_quest PRIVATE ${TEST_INCLUDES})

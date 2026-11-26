@@ -7424,13 +7424,14 @@ main menu, you will be shown a list to choose from:
 				  killing blow.
 4) Save mob       - Player needs to protect or save a particular mobile.
                   Ends: When the player kills the last other mobile in
-                  the room while the target is there and not dying
-                  (incapacitated or mortally wounded). For a single-target
-                  rescue, stabilizing the captive by healing or bandaging
-                  also counts in an already-cleared room, even if someone
-                  else cleared it. Players' charmed pets may stay. Killing
-                  one gives no rescue credit, even if the attack breaks
-                  its charm.
+                  the captive's room and the captive survives the entire
+                  attack in stable condition. For a single-target rescue,
+                  healing or bandaging an incapacitated or mortally
+                  wounded captive can also finish the quest. Treatment
+                  must stabilize the captive in an already-cleared room,
+                  even if someone else cleared it. Players' charmed pets
+                  may stay. Killing a pet gives no rescue credit, even
+                  if it loses its charm or changes form during that fight.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

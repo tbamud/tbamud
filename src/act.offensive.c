@@ -433,10 +433,12 @@ EVENTFUNC(event_whirlwind)
   send_to_char(ch, "\t[f313]You deliver a vicious \t[f014]\t[b451]WHIRLWIND!!!\tn\r\n");
   
   /* Lets grab some a random NPC from the list, and hit() them up */
+  begin_rescue_action();
   for (count = dice(1, 4); count > 0; count--) {
     tch = random_from_list(room_list);
     hit(ch, tch, TYPE_UNDEFINED);
   }
+  end_rescue_action();
   
   /* Now that our attack is done, let's free out list */
   free_list(room_list);

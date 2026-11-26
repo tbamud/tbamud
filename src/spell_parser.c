@@ -19,6 +19,7 @@
 #include "db.h"
 #include "dg_scripts.h"
 #include "fight.h"  /* for hit() */
+#include "quest.h"
 
 #define SINFO spell_info[spellnum]
 
@@ -338,6 +339,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
 
       /* Area/mass spells on staves can cause crashes. So we use special cases
        * for those spells spells here. */
+      begin_rescue_action();
       if (HAS_SPELL_ROUTINE(GET_OBJ_VAL(obj, 3), MAG_MASSES | MAG_AREAS)) {
         for (i = 0, tch = world[IN_ROOM(ch)].people; tch;
             tch = tch->next_in_room)
@@ -351,6 +353,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
             call_magic(ch, tch, NULL, GET_OBJ_VAL(obj, 3), k, CAST_STAFF);
         }
       }
+      end_rescue_action();
     }
     break;
   case ITEM_WAND:
@@ -412,10 +415,12 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
       act("$n recites $p.", FALSE, ch, obj, NULL, TO_ROOM);
 
     WAIT_STATE(ch, PULSE_VIOLENCE);
+    begin_rescue_action();
     for (i = 1; i <= 3; i++)
       if (call_magic(ch, tch, tobj, GET_OBJ_VAL(obj, i), GET_OBJ_VAL(obj, 0),
           CAST_SCROLL) <= 0)
         break;
+    end_rescue_action();
 
     if (obj != NULL)
       extract_obj(obj);
@@ -433,10 +438,12 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
       act("$n quaffs $p.", TRUE, ch, obj, NULL, TO_ROOM);
 
     WAIT_STATE(ch, PULSE_VIOLENCE);
+    begin_rescue_action();
     for (i = 1; i <= 3; i++)
       if (call_magic(ch, ch, NULL, GET_OBJ_VAL(obj, i), GET_OBJ_VAL(obj, 0),
           CAST_POTION) <= 0)
         break;
+    end_rescue_action();
 
     if (obj != NULL)
       extract_obj(obj);

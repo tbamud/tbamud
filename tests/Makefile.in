@@ -131,7 +131,7 @@ test_quest: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
             $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c \
             $(SRCDIR)/fight.c $(SRCDIR)/constants.c \
             $(SRCDIR)/magic.c $(SRCDIR)/act.offensive.c \
-            $(SRCDIR)/interpreter.c test_quest.c
+            $(SRCDIR)/interpreter.c $(SRCDIR)/dg_mobcmd.c test_quest.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 test_editor_lifecycle: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
