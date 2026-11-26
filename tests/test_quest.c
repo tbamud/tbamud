@@ -207,7 +207,9 @@ void setUp(void)
 
   memset(rooms, 0, sizeof(rooms));
   rooms[CELL].number = 3001;
+  rooms[CELL].name = "cell";
   rooms[HALL].number = 3002;
+  rooms[HALL].name = "hall";
   world = rooms;
   top_of_world = HALL;
 
@@ -261,6 +263,8 @@ void tearDown(void)
   top_of_mobt = 0;
   aquest_table = NULL;
   total_quests = 0;
+  if (logfile && logfile != stderr)
+    fclose(logfile);
   logfile = NULL;
 }
 
@@ -2258,6 +2262,10 @@ static void test_a_dying_holder_cannot_share_a_guard_kill_triggered_by_their_dea
   give_room_clear_quest(mate, CELL);
   guard_attacking_holder = guard;
   death_script = groupmate_finishes_guard_during_holders_death;
+  /* Redirect PC death mudlog away from stderr so it cannot interleave with
+   * Unity's buffered stdout lines under make test. */
+  logfile = tmpfile();
+  TEST_ASSERT_NOT_NULL(logfile);
   TEST_ASSERT_EQUAL_INT(-1, damage(guard, holder, 30, TYPE_HIT));
   TEST_ASSERT_TRUE(DEAD(guard));
   TEST_ASSERT_TRUE(DEAD(holder));
