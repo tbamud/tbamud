@@ -7423,9 +7423,17 @@ main menu, you will be shown a list to choose from:
                   Ends: When the target mobile dies, if the player lands the 
 				  killing blow.
 4) Save mob       - Player needs to protect or save a particular mobile.
-                  Ends: When every mobile in the same room as the target is 
-				  killed.  The target mobile should be the last mobile left 
-				  in the room.
+                  Ends: When the player kills the last other mobile in
+                  the captive's room and the captive survives the entire
+                  attack in stable condition. For a single-target rescue,
+                  healing or bandaging an incapacitated or mortally
+                  wounded captive can also finish the quest. Treatment
+                  must stabilize the captive in an already-cleared room,
+                  even if someone else cleared it. Players' charmed pets
+                  may stay. Killing a pet gives no rescue credit, even
+                  if it loses its charm or changes form during that fight.
+                  The former pet must be conscious and out of combat
+                  before its death can count in a later fight.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.

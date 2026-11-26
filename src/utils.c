@@ -568,6 +568,19 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
+bool is_player_pet(const struct char_data *ch)
+{
+  return IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master &&
+         !IS_NPC(ch->master);
+}
+
+bool is_player_pet_kill(const struct char_data *victim)
+{
+  return IS_NPC(victim) &&
+         (is_player_pet(victim) || victim->mob_specials.attacked_by_pet_owner ||
+          victim->mob_specials.died_as_player_pet);
+}
+
 /** Call on a character (NPC or PC) to stop them from following someone and
  * to break any charm affect.
  * @todo Make the messages returned from the broken charm affect more

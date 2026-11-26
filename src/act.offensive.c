@@ -20,6 +20,7 @@
 #include "act.h"
 #include "fight.h"
 #include "mud_event.h"
+#include "quest.h"
 
 ACMD(do_assist)
 {
@@ -322,7 +323,7 @@ ACMD(do_bash)
      */
     if (damage(ch, vict, 1, SKILL_BASH) > 0) {	/* -1 = dead, 0 = miss */
       WAIT_STATE(vict, PULSE_VIOLENCE);
-      if (IN_ROOM(ch) == IN_ROOM(vict))
+      if (IN_ROOM(ch) == IN_ROOM(vict) && GET_POS(vict) > POS_STUNNED)
         GET_POS(vict) = POS_SITTING;
     }
   }
@@ -380,14 +381,15 @@ ACMD(do_rescue)
   act("You are rescued by $N, you are confused!", FALSE, vict, 0, ch, TO_CHAR);
   act("$n heroically rescues $N!", FALSE, ch, 0, vict, TO_NOTVICT);
 
+  /* Engage the rescuer first so the opponent stays in the same fight. */
+  if (FIGHTING(ch))
+    stop_fighting(ch);
+  set_fighting(ch, tmp_ch);
+
   if (FIGHTING(vict) == tmp_ch)
     stop_fighting(vict);
   if (FIGHTING(tmp_ch))
     stop_fighting(tmp_ch);
-  if (FIGHTING(ch))
-    stop_fighting(ch);
-
-  set_fighting(ch, tmp_ch);
   set_fighting(tmp_ch, ch);
 
   WAIT_STATE(vict, 2 * PULSE_VIOLENCE);
@@ -432,10 +434,12 @@ EVENTFUNC(event_whirlwind)
   send_to_char(ch, "\t[f313]You deliver a vicious \t[f014]\t[b451]WHIRLWIND!!!\tn\r\n");
   
   /* Lets grab some a random NPC from the list, and hit() them up */
+  begin_rescue_action();
   for (count = dice(1, 4); count > 0; count--) {
     tch = random_from_list(room_list);
     hit(ch, tch, TYPE_UNDEFINED);
   }
+  end_rescue_action();
   
   /* Now that our attack is done, let's free out list */
   free_list(room_list);
@@ -531,7 +535,7 @@ ACMD(do_bandage)
 {
   char arg[MAX_INPUT_LENGTH];
   struct char_data * vict;
-  int percent, prob;
+  int percent, prob, old_position;
 
   if (!GET_SKILL(ch, SKILL_BANDAGE))
   {
@@ -574,6 +578,8 @@ ACMD(do_bandage)
     vict, TO_NOTVICT);
   act("Someone bandages you, and you feel a bit better now.",
          FALSE, ch, 0, vict, TO_VICT);
+  old_position = GET_POS(vict);
   GET_HIT(vict) = 0;
   update_pos(vict);
+  check_rescue_on_recovery(ch, vict, old_position);
 }
