@@ -409,7 +409,6 @@ static bool quest_room_is_clear(room_rnum room, qst_rnum quest)
  * the last guard's death can qualify, but the captive must survive the whole
  * action.  Death scripts can start another action before the first ends. */
 static unsigned int rescue_action_depth;
-static bool pending_pet_idle_clear;
 static const struct char_data *first_char_before_action;
 static struct pending_rescue {
   struct char_data *holder;
@@ -423,8 +422,10 @@ static struct pending_rescue {
 
 void begin_rescue_action(void)
 {
-  if (rescue_action_depth++ == 0)
+  if (rescue_action_depth++ == 0) {
     first_char_before_action = character_list;
+    begin_pet_combat_action();
+  }
 }
 
 static void remember_rescue(struct char_data *ch, const struct char_data *captive,
@@ -457,6 +458,12 @@ static void remember_rescue(struct char_data *ch, const struct char_data *captiv
   pending_rescues = entry;
 }
 
+static bool alive_in_room(const struct char_data *ch, room_rnum room)
+{
+  return ch && IN_ROOM(ch) == room && !ch->char_specials.death_in_progress &&
+         !DEAD(ch) && GET_POS(ch) > POS_DEAD;
+}
+
 static void check_rescue_goal(struct char_data *ch, qst_rnum quest,
                               const struct char_data *captive, bool recovery)
 {
@@ -468,7 +475,7 @@ static void check_rescue_goal(struct char_data *ch, qst_rnum quest,
     return;
 
   for (mob = world[IN_ROOM(ch)].people; mob; mob = mob->next_in_room) {
-    if ((captive && mob != captive) || !IS_NPC(mob) || DEAD(mob) ||
+    if ((captive && mob != captive) || !IS_NPC(mob) || !alive_in_room(mob, IN_ROOM(ch)) ||
         GET_POS(mob) < POS_STUNNED || GET_MOB_VNUM(mob) != QST_TARGET(quest))
       continue;
     if (rescue_action_depth) {
@@ -481,25 +488,9 @@ static void check_rescue_goal(struct char_data *ch, qst_rnum quest,
   }
 }
 
-static bool alive_in_room(const struct char_data *ch, room_rnum room)
-{
-  return ch && IN_ROOM(ch) == room && !DEAD(ch) && GET_POS(ch) > POS_DEAD;
-}
-
-bool rescue_action_active(void)
-{
-  return rescue_action_depth > 0;
-}
-
-void defer_pet_combat_clear(void)
-{
-  pending_pet_idle_clear = TRUE;
-}
-
 void end_rescue_action(void)
 {
   struct pending_rescue *entry, *next;
-  struct char_data *vict;
 
   if (--rescue_action_depth)
     return;
@@ -522,11 +513,7 @@ void end_rescue_action(void)
       check_rescue_goal(ch, quest, entry->captive, entry->recovery);
     free(entry);
   }
-  if (pending_pet_idle_clear) {
-    pending_pet_idle_clear = FALSE;
-    for (vict = character_list; vict; vict = vict->next)
-      clear_pet_combat_if_idle(vict);
-  }
+  end_pet_combat_action();
 }
 
 void check_rescue_on_kill(struct char_data *ch, struct char_data *vict,

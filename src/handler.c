@@ -1191,17 +1191,24 @@ void extract_char_final(struct char_data *ch)
  */
 void extract_char(struct char_data *ch)
 {
+  struct char_data *attacker;
+
   char_from_furniture(ch);
   clear_char_event_list(ch);
 
-  if (IS_NPC(ch) && !MOB_FLAGGED(ch, MOB_NOTDEADYET)) {
+  if (DEAD(ch))
+    return;
+  if (IS_NPC(ch))
     SET_BIT_AR(MOB_FLAGS(ch), MOB_NOTDEADYET);
-    ++extractions_pending;
-  }
-  else if (!IS_NPC(ch) && !PLR_FLAGGED(ch, PLR_NOTDEADYET)) {
+  else
     SET_BIT_AR(PLR_FLAGS(ch), PLR_NOTDEADYET);
-    ++extractions_pending;
-  }
+  ++extractions_pending;
+
+  /* The combat list can still point at ch until the end of the pulse. */
+  clear_pet_combat_if_idle(FIGHTING(ch));
+  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
+    if (FIGHTING(attacker) == ch)
+      clear_pet_combat_if_idle(attacker);
 }
 
 /* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped
@@ -1211,7 +1218,6 @@ void extract_char(struct char_data *ch)
 void extract_pending_chars(void)
 {
   struct char_data *vict, *next_vict, *prev_vict;
-  bool extracted = FALSE;
 
   if (extractions_pending < 0)
     log("SYSERR: Negative (%d) extractions pending.", extractions_pending);
@@ -1230,7 +1236,6 @@ void extract_pending_chars(void)
     }
 
     extract_char_final(vict);
-    extracted = TRUE;
     extractions_pending--;
 
     if (prev_vict)
@@ -1243,11 +1248,6 @@ void extract_pending_chars(void)
     log("SYSERR: Couldn't find %d extractions as counted.", extractions_pending);
 
   extractions_pending = 0;
-
-  /* Finish clearing former pets whose sole attacker detached during raw_kill(). */
-  if (extracted)
-    for (vict = character_list; vict; vict = vict->next)
-      clear_pet_combat_if_idle(vict);
 }
 
 /* Here follows high-level versions of some earlier routines, ie functions

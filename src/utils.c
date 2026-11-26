@@ -574,20 +574,60 @@ bool has_combat_opponent(const struct char_data *ch)
 {
   const struct char_data *attacker;
 
-  if (FIGHTING(ch))
+  if (FIGHTING(ch) && !DEAD(FIGHTING(ch)))
     return TRUE;
   for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
-    if (FIGHTING(attacker) == ch)
+    if (FIGHTING(attacker) == ch && !DEAD(attacker))
       return TRUE;
   return FALSE;
 }
 
-/* A former pet must recover and disengage before a later kill can count. */
+/* Extraction runs after the pulse, so these pointers stay valid through
+ * the attack, including any spells or deaths nested inside it. */
+static unsigned int pet_combat_action_depth;
+static struct pending_pet_clear {
+  struct char_data *pet;
+  struct pending_pet_clear *next;
+} *pending_pet_clears;
+
+void begin_pet_combat_action(void)
+{
+  ++pet_combat_action_depth;
+}
+
+/* Keep former pets identifiable until all targets and quest checks for
+ * this attack have resolved. Outside an attack a recovered pet clears now. */
 void clear_pet_combat_if_idle(struct char_data *ch)
 {
-  if (ch && IS_NPC(ch) && !DEAD(ch) && ch->mob_specials.fought_as_player_pet &&
-      GET_POS(ch) > POS_STUNNED && !has_combat_opponent(ch))
+  struct pending_pet_clear *entry;
+
+  if (!ch || !IS_NPC(ch) || DEAD(ch) || !ch->mob_specials.fought_as_player_pet ||
+      GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch))
+    return;
+  if (!pet_combat_action_depth) {
     ch->mob_specials.fought_as_player_pet = FALSE;
+    return;
+  }
+  for (entry = pending_pet_clears; entry; entry = entry->next)
+    if (entry->pet == ch)
+      return;
+  CREATE(entry, struct pending_pet_clear, 1);
+  entry->pet = ch;
+  entry->next = pending_pet_clears;
+  pending_pet_clears = entry;
+}
+
+void end_pet_combat_action(void)
+{
+  struct pending_pet_clear *entry;
+
+  if (--pet_combat_action_depth)
+    return;
+  while ((entry = pending_pet_clears) != NULL) {
+    pending_pet_clears = entry->next;
+    clear_pet_combat_if_idle(entry->pet);
+    free(entry);
+  }
 }
 
 bool is_player_pet(const struct char_data *ch)

@@ -60,7 +60,6 @@ static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
-static void detach_from_combat(struct char_data *ch);
 /** @todo refactor this function name */
 static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
 static int compute_thaco(struct char_data *ch, struct char_data *vict);
@@ -177,9 +176,11 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
     vict->mob_specials.fought_as_player_pet = TRUE;
 }
 
-static void detach_from_combat(struct char_data *ch)
+/* Remove a character's outgoing combat link and update both endpoints. */
+void stop_fighting(struct char_data *ch)
 {
   struct char_data *temp;
+  struct char_data *opponent = FIGHTING(ch);
 
   if (ch == next_combat_list)
     next_combat_list = ch->next_fighting;
@@ -189,18 +190,7 @@ static void detach_from_combat(struct char_data *ch)
   FIGHTING(ch) = NULL;
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
-}
-
-/* remove a char from the list of fighting chars */
-void stop_fighting(struct char_data *ch)
-{
-  struct char_data *opponent = FIGHTING(ch);
-
-  detach_from_combat(ch);
-  if (rescue_action_active())
-    defer_pet_combat_clear();
-  else
-    clear_pet_combat_if_idle(opponent);
+  clear_pet_combat_if_idle(opponent);
 }
 
 static void make_corpse(struct char_data *ch)
@@ -304,12 +294,12 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
 
-  /* Detach ch without immediately clearing a former-pet opponent's combat
-   * flag: credit_kill_witnesses() and any enclosing area attack still need
-   * to see it as part of this fight, and extract_pending_chars() finishes
-   * the idle cleanup at the end of the pulse alongside FIGHTING(k) == ch. */
+  /* Death scripts run standing and may trigger another kill before extraction. */
+  ch->char_specials.death_in_progress = TRUE;
+
+  begin_pet_combat_action();
   if (FIGHTING(ch))
-    detach_from_combat(ch);
+    stop_fighting(ch);
 
   while (ch->affected)
     affect_remove(ch, ch->affected);
@@ -342,9 +332,11 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   if (victim_was_player_pet)
     ch->mob_specials.died_as_player_pet = TRUE;
   extract_char(ch);
+  ch->char_specials.death_in_progress = FALSE;
 
   /* A death script may move the victim or anyone on the killer's side. */
   credit_kill_witnesses(witnesses, ch);
+  end_pet_combat_action();
 }
 
 void die(struct char_data * ch, struct char_data * killer)
@@ -635,11 +627,7 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
   return (0);
 }
 
-/* This function returns the following codes:
- *	< 0	Victim died.
- *	= 0	No damage.
- *	> 0	How much damage done. */
-int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+static int apply_damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
   long local_gold = 0, happy_gold = 0;
   char local_buf[256];
@@ -798,14 +786,8 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
   }
 
-  /* stop someone from fighting if they're stunned or worse; on death keep
-   * a former-pet opponent marked until extract_pending_chars() finishes. */
-  if (GET_POS(victim) <= POS_STUNNED && FIGHTING(victim) != NULL) {
-    if (GET_POS(victim) == POS_DEAD)
-      detach_from_combat(victim);
-    else
-      stop_fighting(victim);
-  }
+  if (GET_POS(victim) <= POS_STUNNED && FIGHTING(victim) != NULL)
+    stop_fighting(victim);
 
   /* Uh oh.  Victim died. */
   if (GET_POS(victim) == POS_DEAD) {
@@ -860,6 +842,18 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (victim_was_pet)
     clear_pet_combat_if_idle(victim);
   return (dam);
+}
+
+/* Return -1 for a kill, otherwise the damage dealt. A hit can trigger
+ * movement or another death before its quest checks have finished. */
+int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+{
+  int result;
+
+  begin_pet_combat_action();
+  result = apply_damage(ch, victim, dam, attacktype);
+  end_pet_combat_action();
+  return result;
 }
 
 /* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you

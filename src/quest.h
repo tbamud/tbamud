@@ -104,8 +104,6 @@ struct kill_witnesses *note_kill_witnesses(struct char_data *killer, room_rnum d
 void credit_kill_witnesses(struct kill_witnesses *witnesses, struct char_data *vict);
 void begin_rescue_action(void);
 void end_rescue_action(void);
-bool rescue_action_active(void);
-void defer_pet_combat_clear(void);
 qst_rnum real_quest(qst_vnum vnum);
 int is_complete(struct char_data *ch, qst_vnum vnum);
 qst_vnum find_quest_by_qmnum(struct char_data *ch, mob_rnum qm, int num);

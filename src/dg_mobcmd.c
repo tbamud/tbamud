@@ -1007,6 +1007,7 @@ ACMD(do_mtransform)
     }
     GET_GOLD(&tmpmob) = GET_GOLD(ch);
     GET_POS(&tmpmob) = GET_POS(ch);
+    tmpmob.char_specials.death_in_progress = ch->char_specials.death_in_progress;
     IS_CARRYING_W(&tmpmob) = IS_CARRYING_W(ch);
     IS_CARRYING_N(&tmpmob) = IS_CARRYING_N(ch);
     FIGHTING(&tmpmob) = FIGHTING(ch);
