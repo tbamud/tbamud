@@ -108,6 +108,7 @@ int enter_wtrigger(room_data *room, char_data *ch, int dir)
 void entry_memory_mtrigger(char_data *ch) {}
 int House_can_enter(struct char_data *ch, room_vnum house) { return TRUE; }
 int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg) { return -1; }
+bool can_equip_obj(struct obj_data *obj) { return FALSE; }
 
 struct obj_data *create_obj(void)
 {

@@ -100,6 +100,7 @@ tests/test_utils
 tests/test_random
 tests/test_interpreter
 tests/test_class
+tests/test_flight
 tests/test_lists
 tests/test_quest
 tests/test-results/
