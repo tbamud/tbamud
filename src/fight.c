@@ -877,6 +877,8 @@ static int apply_damage(struct char_data *ch, struct char_data *victim, int dam,
   }
   /* A message script may instead have healed the victim. */
   free_kill_witnesses(witnesses);
+  if (attacker_was_pet)
+    clear_pet_combat_if_idle(ch);
   if (victim_was_pet)
     clear_pet_combat_if_idle(victim);
   return (dam);

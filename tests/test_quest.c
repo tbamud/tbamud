@@ -85,6 +85,10 @@ static struct zone_data test_zones[2];
 struct zone_data *zone_table = test_zones;
 static struct char_data *fleeing_mob;
 static bool reject_entry;
+static struct char_data *recall_pet;
+static struct char_data *guard_killed_by_cast_trigger;
+static struct char_data *guard_attacked_by_caster;
+static struct char_data *guard_killed_by_consume_trigger;
 int leave_mtrigger(char_data *ch, int dir)
 {
   TEST_ASSERT_EQUAL_PTR_MESSAGE(fleeing_mob, ch, "unexpected movement during combat");
@@ -236,6 +240,11 @@ void setUp(void)
   death_announcement_script = NULL;
   fleeing_mob = NULL;
   reject_entry = FALSE;
+  recall_pet = NULL;
+  guard_killed_by_cast_trigger = NULL;
+  guard_attacked_by_caster = NULL;
+  guard_killed_by_consume_trigger = NULL;
+  memset(spell_info, 0, (TOP_SPELL_DEFINE + 1) * sizeof(*spell_info));
 
   memset(rooms, 0, sizeof(rooms));
   rooms[CELL].number = 3001;
@@ -1566,7 +1575,6 @@ static void test_joining_the_group_after_the_hit_gives_no_kill_stage(void)
   TEST_ASSERT_EQUAL_INT(Q_KILL, GET_QUEST(joining_player));
 }
 
-static struct char_data *recall_pet;
 static int recall_count;
 
 /* Model a recall arrival trigger ordering the ungrouped pet to kill a guard. */
@@ -2698,9 +2706,6 @@ void load_otrigger(obj_data *obj) {}
 struct mud_event_data *new_mud_event(event_id id, void *owner, char *vars) { return NULL; }
 void attach_mud_event(struct mud_event_data *event, long time) {}
 
-static struct char_data *guard_killed_by_cast_trigger;
-static struct char_data *guard_attacked_by_caster;
-
 int cast_wtrigger(char_data *caster, char_data *vict, obj_data *obj, int spellnum)
 {
   if (guard_attacked_by_caster) {
@@ -2718,7 +2723,6 @@ int cast_wtrigger(char_data *caster, char_data *vict, obj_data *obj, int spellnu
 int cast_otrigger(char_data *caster, obj_data *obj, int spellnum) { return 1; }
 int cast_mtrigger(char_data *caster, char_data *vict, int spellnum) { return 1; }
 
-static struct char_data *guard_killed_by_consume_trigger;
 int consume_otrigger(obj_data *obj, char_data *actor, int cmd)
 {
   if (guard_killed_by_consume_trigger) {
@@ -2802,6 +2806,93 @@ static void test_an_earthquake_potion_preserves_pet_status_from_its_consume_trig
   TEST_ASSERT_TRUE(DEAD(guard));
   TEST_ASSERT_TRUE(DEAD(pet));
   assert_not_cleared(holder);
+}
+
+static struct char_data *nested_actor, *nested_target;
+
+static void kill_remaining_guard_during_death(struct char_data *victim)
+{
+  (void)victim;
+  death_script = NULL;
+  TEST_ASSERT_EQUAL_INT(-1, damage(nested_actor, nested_target, 30, TYPE_HIT));
+}
+
+static void test_killing_the_last_guard_during_a_poison_death_clears_the_room(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *guard1 = new_guard(CELL);
+  struct char_data *guard2 = new_guard(CELL);
+
+  GET_HIT(guard1) = GET_MAX_HIT(guard1) = 10;
+  GET_HIT(guard2) = GET_MAX_HIT(guard2) = 10;
+  give_room_clear_quest(holder, CELL);
+  nested_actor = holder;
+  nested_target = guard2;
+  death_script = kill_remaining_guard_during_death;
+  TEST_ASSERT_EQUAL_INT(-1, damage(guard1, guard1, 30, SPELL_POISON));
+  TEST_ASSERT_TRUE(DEAD(guard1));
+  TEST_ASSERT_TRUE(DEAD(guard2));
+  assert_cleared(holder);
+}
+
+static void heal_captive_during_death(struct char_data *victim)
+{
+  (void)victim;
+  death_script = NULL;
+  mag_points(20, nested_actor, nested_target, SPELL_HEAL, 0);
+}
+
+static void test_healing_a_captive_during_a_guards_poison_death_finishes_the_rescue(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *healer = new_player(CELL);
+  struct char_data *guard = new_guard(CELL);
+  struct char_data *captive = new_dying_captive(CELL);
+
+  GET_HIT(guard) = GET_MAX_HIT(guard) = 10;
+  group_up(holder, healer);
+  give_quest(holder, Q_RESCUE);
+  nested_actor = healer;
+  nested_target = captive;
+  death_script = heal_captive_during_death;
+  TEST_ASSERT_EQUAL_INT(-1, damage(guard, guard, 30, SPELL_POISON));
+  TEST_ASSERT_TRUE(DEAD(guard));
+  TEST_ASSERT_EQUAL_INT(POS_STANDING, GET_POS(captive));
+  assert_rescued(holder);
+}
+
+static void test_a_pet_with_a_stale_combat_link_clears_pet_flag_after_nonlethal_hit(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+  struct char_data *guard1 = new_guard(CELL);
+  struct char_data *guard2 = new_guard(CELL);
+
+  GET_HIT(guard1) = GET_MAX_HIT(guard1) = 10;
+  GET_HIT(guard2) = GET_MAX_HIT(guard2) = 10;
+  give_room_clear_quest(holder, CELL);
+  /* pet fights guard1, then guard1 leaves the room (stale FIGHTING link). */
+  TEST_ASSERT_EQUAL_INT(1, damage(pet, guard1, 1, TYPE_HIT));
+  char_from_room(guard1);
+  char_to_room(guard1, HALL);
+  TEST_ASSERT_EQUAL_PTR(guard1, FIGHTING(pet));
+  TEST_ASSERT_FALSE(pet->mob_specials.fought_as_player_pet);
+
+  /* guard2 is already fighting owner, so pet's hit attaches no new links. */
+  TEST_ASSERT_EQUAL_INT(1, damage(owner, guard2, 1, TYPE_HIT));
+  TEST_ASSERT_EQUAL_INT(1, damage(pet, guard2, 1, TYPE_HIT));
+  TEST_ASSERT_FALSE(has_combat_opponent(pet));
+  TEST_ASSERT_FALSE(pet->mob_specials.fought_as_player_pet);
+
+  /* Once charm expires while idle, pet must be killed to clear the room. */
+  pet->affected->duration = 0;
+  affect_update();
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, guard2, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_cleared(holder);
 }
 
 int main(void)
@@ -2940,5 +3031,8 @@ int main(void)
   RUN_TEST(test_a_cast_trigger_guard_kill_counts_if_the_captive_survives);
   RUN_TEST(test_a_cast_trigger_guard_kill_cannot_rescue_a_captive_killed_by_the_spell);
   RUN_TEST(test_an_earthquake_potion_preserves_pet_status_from_its_consume_trigger);
+  RUN_TEST(test_killing_the_last_guard_during_a_poison_death_clears_the_room);
+  RUN_TEST(test_healing_a_captive_during_a_guards_poison_death_finishes_the_rescue);
+  RUN_TEST(test_a_pet_with_a_stale_combat_link_clears_pet_flag_after_nonlethal_hit);
   return UNITY_END();
 }

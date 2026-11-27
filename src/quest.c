@@ -396,8 +396,10 @@ static bool quest_room_is_clear(room_rnum room, qst_rnum quest)
   struct char_data *mob;
 
   for (mob = world[room].people; mob; mob = mob->next_in_room) {
-    /* A pet that loses its charm during this fight still counts as a pet. */
-    if (!IS_NPC(mob) || MOB_FLAGGED(mob, MOB_NOTDEADYET) || is_player_pet_kill(mob))
+    /* A pet that loses its charm during this fight still counts as a pet.
+     * A mob whose death script is running is already bound for extraction. */
+    if (!IS_NPC(mob) || MOB_FLAGGED(mob, MOB_NOTDEADYET) ||
+        mob->char_specials.death_in_progress || is_player_pet_kill(mob))
       continue;
     if (QST_TYPE(quest) != AQ_MOB_SAVE || GET_MOB_VNUM(mob) != QST_TARGET(quest))
       return FALSE;
