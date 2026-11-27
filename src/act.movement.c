@@ -73,12 +73,9 @@ static int has_flight(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
-  /* Flying items that cannot be equipped work from inventory.
-   * perform_wear requires TAKE for both the light and held slots. */
+  /* Flying items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && find_eq_pos(ch, obj, NULL) < 0 &&
-        !CAN_WEAR(obj, ITEM_WEAR_WIELD) &&
-        !(CAN_WEAR(obj, ITEM_WEAR_TAKE) && can_hold_obj(obj)))
+    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && !can_equip_obj(ch, obj))
       return (1);
 
   /* Any equipped objects with AFF_FLYING will do it too. */
@@ -101,9 +98,9 @@ static int has_scuba(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_SCUBA))
     return (1);
 
-  /* Non-wearable scuba items in inventory will do it. */
+  /* Scuba items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && (find_eq_pos(ch, obj, NULL) < 0))
+    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && !can_equip_obj(ch, obj))
       return (1);
 
   /* Any equipped objects with AFF_SCUBA will do it too. */

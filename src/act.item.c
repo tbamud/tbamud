@@ -44,6 +44,7 @@ static void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_d
 /* do_remove utility functions */
 static void perform_remove(struct char_data *ch, int pos);
 /* do_wear utility functions */
+static bool can_hold_obj(const struct obj_data *obj);
 static void perform_wear(struct char_data *ch, struct obj_data *obj, int where);
 static void wear_message(struct char_data *ch, struct obj_data *obj, int where);
 
@@ -1471,11 +1472,23 @@ ACMD(do_wield)
   }
 }
 
-bool can_hold_obj(const struct obj_data *obj)
+static bool can_hold_obj(const struct obj_data *obj)
 {
   return CAN_WEAR(obj, ITEM_WEAR_HOLD) || GET_OBJ_TYPE(obj) == ITEM_LIGHT ||
          GET_OBJ_TYPE(obj) == ITEM_WAND || GET_OBJ_TYPE(obj) == ITEM_STAFF ||
          GET_OBJ_TYPE(obj) == ITEM_SCROLL || GET_OBJ_TYPE(obj) == ITEM_POTION;
+}
+
+/* Whether wear, wield or grab could put obj in a slot.  Only the object's
+ * flags are checked, not the character's level, strength, class or
+ * alignment. */
+bool can_equip_obj(struct char_data *ch, struct obj_data *obj)
+{
+  if (find_eq_pos(ch, obj, NULL) >= 0 || CAN_WEAR(obj, ITEM_WEAR_WIELD))
+    return TRUE;
+
+  /* perform_wear requires TAKE for both the light and held slots. */
+  return CAN_WEAR(obj, ITEM_WEAR_TAKE) && can_hold_obj(obj);
 }
 
 ACMD(do_grab)
