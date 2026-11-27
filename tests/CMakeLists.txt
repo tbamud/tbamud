@@ -198,6 +198,27 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         target_link_libraries(test_flight PRIVATE ${CRYPT_LIBRARY})
     endif()
 
+    # test_shop.c includes shop.c to reach the private list and identify
+    # commands, with section GC to discard the rest of the shop code.
+    add_mud_test(test_shop
+        ${MUD_SRCDIR}/utils.c
+        ${MUD_SRCDIR}/random.c
+        ${MUD_SRCDIR}/handler.c
+        ${MUD_SRCDIR}/lists.c
+        ${MUD_SRCDIR}/interpreter.c
+        ${MUD_SRCDIR}/constants.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_shop.c
+    )
+    target_compile_options(test_shop PRIVATE -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_shop APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_shop APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    if(CRYPT_LIBRARY)
+        target_link_libraries(test_shop PRIVATE ${CRYPT_LIBRARY})
+    endif()
+
     add_executable(test_editor_lifecycle
         ${UNITY_SRC}
         ${STUBS_SRC}
