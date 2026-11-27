@@ -20,16 +20,21 @@
 #include "constants.h"
 #include "modify.h"
 #include "genolc.h"
+/* HOUSE_PATH_MAX leaves room for a symlinked house file's real path, which
+ * House_crashsave() resolves everywhere but Windows. */
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
 #include <fcntl.h>
 #include <io.h>
 #include <share.h>
 #include <sys/stat.h>
-#elif defined(__linux__)
-#include <sys/xattr.h>
-#elif defined(__APPLE__) && defined(__MACH__)
+#define HOUSE_PATH_MAX MAX_INPUT_LENGTH
+#else
 #include <fcntl.h>
 #include <sys/stat.h>
+#if defined(__linux__)
+#include <sys/xattr.h>
+#endif
+#define HOUSE_PATH_MAX PATH_MAX
 #endif
 
 /* local (file scope only) globals */
@@ -195,32 +200,30 @@ static int House_copy_access_acl(const char *filename, int fd)
   return result;
 }
 #elif defined(__APPLE__) && defined(__MACH__)
-static int House_copy_darwin_permissions(const char *filename, int fd)
+/* The caller has set the owner and group as far as it could and worked out
+ * the mode to go with them; this carries the ACL across with that mode. */
+static int House_copy_darwin_permissions(const char *filename, int fd, mode_t mode)
 {
   struct stat old;
   filesec_t security = filesec_init();
-  int has_acl, new_file = 0, result = -1, saved_errno;
-  mode_t mode;
+  int has_acl, result = -1, saved_errno;
 
   if (!security)
     return -1;
-  if (statx_np(filename, &old, security) != 0) {
-    if (errno != ENOENT || fstatx_np(fd, &old, security) != 0)
-      goto done;
-    new_file = 1;
-  }
-  if (filesec_get_property(security, FILESEC_MODE, &mode) != 0 ||
+  if (statx_np(filename, &old, security) != 0)
+    goto done;
+  /* Left set, these would have fchmodx_np() try the ownership change again
+   * and fail wherever the caller was refused. */
+  if (filesec_set_property(security, FILESEC_OWNER, _FILESEC_UNSET_PROPERTY) < 0 ||
+      filesec_set_property(security, FILESEC_GROUP, _FILESEC_UNSET_PROPERTY) < 0 ||
+      filesec_set_property(security, FILESEC_UUID, _FILESEC_UNSET_PROPERTY) < 0 ||
+      filesec_set_property(security, FILESEC_GRPUUID, _FILESEC_UNSET_PROPERTY) < 0 ||
       filesec_query_property(security, FILESEC_ACL, &has_acl) != 0)
     goto done;
-  if (new_file && !has_acl) {
-    result = 0;
-    goto done;
-  }
-  /* An inherited allow entry can grant access even to a 0600 file on Darwin. */
-  if ((new_file || !has_acl) &&
+  /* An inherited allow entry can grant access the old file's mode never did. */
+  if (!has_acl &&
       filesec_set_property(security, FILESEC_ACL, _FILESEC_REMOVE_ACL) < 0)
     goto done;
-  mode &= 0777;
   if (filesec_set_property(security, FILESEC_MODE, &mode) == 0)
     result = fchmodx_np(fd, security);
 done:
@@ -231,50 +234,95 @@ done:
 }
 #endif
 
+/* Give the scratch file what the old file had: owner, group, mode and, on
+ * Linux and macOS, its ACL.  Elsewhere -- the BSDs among others -- the ACL
+ * is not copied, so the new file starts with whatever its directory gives a
+ * new file, and an ACL set on the old file by hand is lost at the first save.
+ *
+ * Only root can give a file away, and anyone else can hand one only to a
+ * group they are in.  So ownership is best effort: a house file that root
+ * restored from a backup, or that has a group the game is not in, must
+ * still save.  Where the group could not be kept, the group bits are cut
+ * back to what everyone else had, so the game's own group gets nothing the
+ * old file did not give to all. */
 static int House_copy_permissions(const char *filename, int fd)
 {
   struct stat old, scratch;
-#if defined(__APPLE__) && defined(__MACH__)
-  /* Volumes without extended security accept only ordinary ownership and mode. */
-  long extended = fpathconf(fd, _PC_EXTENDED_SECURITY_NP);
-  if (extended < 0)
-    return -1;
-  if (extended)
-    return House_copy_darwin_permissions(filename, fd);
-#endif
+  mode_t mode;
 
+  /* A new house: the file was created just as fopen() creates one. */
   if (stat(filename, &old) < 0)
     return errno == ENOENT ? 0 : -1;
   if (fstat(fd, &scratch) < 0)
     return -1;
-  if ((scratch.st_uid != old.st_uid || scratch.st_gid != old.st_gid) &&
-      fchown(fd, old.st_uid, old.st_gid) < 0)
-    return -1;
-#if defined(__linux__)
+  if (scratch.st_uid != old.st_uid || scratch.st_gid != old.st_gid) {
+    if (fchown(fd, old.st_uid, old.st_gid) < 0 && scratch.st_gid != old.st_gid &&
+        fchown(fd, (uid_t)-1, old.st_gid) < 0 && errno != EPERM)
+      return -1;
+    if (fstat(fd, &scratch) < 0)
+      return -1;
+  }
+
+  mode = old.st_mode & 0777;
+  if (scratch.st_gid != old.st_gid)
+    mode = (mode & 0707) | (mode & ((mode & 0007) << 3));
+
+#if defined(__APPLE__) && defined(__MACH__)
+  {
+    /* Volumes without extended security take only ordinary ownership and mode. */
+    long extended = fpathconf(fd, _PC_EXTENDED_SECURITY_NP);
+    if (extended < 0)
+      return -1;
+    if (extended)
+      return House_copy_darwin_permissions(filename, fd, mode);
+  }
+#elif defined(__linux__)
   if (House_copy_access_acl(filename, fd) < 0)
     return -1;
 #endif
-  return fchmod(fd, old.st_mode & 0777);
+  return fchmod(fd, mode);
 }
 #endif
 
-/* Keep the file on the same filesystem as the destination. Both branches
- * create it exclusively and write through the descriptor they acquired. */
+/* Put a finished save on disk before it takes the old one's place.  Without
+ * this the rename can reach the disk ahead of the data, and a power cut in
+ * between leaves an empty house file where the last good one was. */
+static int House_sync(FILE *fp)
+{
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+  return _commit(_fileno(fp));
+#else
+  /* EINVAL and EROFS: the file cannot be synced, and there is nothing more to do. */
+  return fsync(fileno(fp)) < 0 && errno != EINVAL && errno != EROFS ? -1 : 0;
+#endif
+}
+
+/* Build the save beside the file it replaces, so the rename stays on one
+ * filesystem.  The scratch name is fixed, as the other savers' are, so a
+ * crash part-way through a save leaves at most one behind and the next save
+ * clears it.  Unlinking a name never touches a file another link points at,
+ * and the exclusive create means nothing found at the name is ever written
+ * through.  0666 is what fopen() asks for, so a new house's file gets the
+ * mode -- or the inherited ACL -- that it always did. */
 static FILE *House_open_temp(const char *filename, char *tempfile, size_t size)
 {
-  int fd, saved_errno;
+  int fd, length, saved_errno;
   FILE *fp;
 
-  snprintf(tempfile, size, "%s.XXXXXX", filename);
+  length = snprintf(tempfile, size, "%s.tmp", filename);
+  if (length < 0 || (size_t)length >= size) {
+    errno = ENAMETOOLONG;
+    return NULL;
+  }
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
-  if (_mktemp_s(tempfile, size) != 0 ||
-      _sopen_s(&fd, tempfile, _O_WRONLY | _O_CREAT | _O_EXCL | _O_BINARY | _O_NOINHERIT,
+  _unlink(tempfile);
+  if (_sopen_s(&fd, tempfile, _O_WRONLY | _O_CREAT | _O_EXCL | _O_BINARY | _O_NOINHERIT,
                _SH_DENYRW, _S_IREAD | _S_IWRITE) != 0)
     return NULL;
   fp = _fdopen(fd, "wb");
 #else
-  fd = mkstemp(tempfile);
-  if (fd < 0)
+  unlink(tempfile);
+  if ((fd = open(tempfile, O_WRONLY | O_CREAT | O_EXCL, 0666)) < 0)
     return NULL;
   fp = House_copy_permissions(filename, fd) == 0 ? fdopen(fd, "wb") : NULL;
 #endif
@@ -292,12 +340,20 @@ static FILE *House_open_temp(const char *filename, char *tempfile, size_t size)
   return NULL;
 }
 
-/* Save all objects in a house */
+/* Save all objects in a house.  The save is written under a scratch name and
+ * renamed over the old file only once it is whole and on disk, so a save
+ * that fails leaves the last good one in place.  A house file with a second
+ * hard link is parted from it by the rename; nothing in the game makes one. */
 void House_crashsave(room_vnum vnum)
 {
   int rnum, result;
-  char filename[MAX_INPUT_LENGTH], tempfile[MAX_INPUT_LENGTH + sizeof(".XXXXXX")];
+  char filename[MAX_INPUT_LENGTH], tempfile[HOUSE_PATH_MAX + sizeof(".tmp")];
+  const char *dest = filename;
   FILE *fp;
+#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
+  char target[PATH_MAX];
+  struct stat st;
+#endif
 
   if ((rnum = real_room(vnum)) == NOWHERE)
     return;
@@ -313,15 +369,22 @@ void House_crashsave(room_vnum vnum)
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
-  if (!(fp = House_open_temp(filename, tempfile, sizeof(tempfile)))) {
-    log("SYSERR: Unable to prepare a temporary save for %s: %s", filename, strerror(errno));
+#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
+  /* fopen() wrote a symlinked house file where the link pointed.  Save it
+   * there, beside its target, rather than put a plain file in the link's
+   * place and leave the target behind. */
+  if (lstat(filename, &st) == 0 && S_ISLNK(st.st_mode) && realpath(filename, target))
+    dest = target;
+#endif
+  if (!(fp = House_open_temp(dest, tempfile, sizeof(tempfile)))) {
+    log("SYSERR: Unable to start a new save of %s: %s", dest, strerror(errno));
     return;
   }
 
   result = House_save(world[rnum].contents, fp, 0);
   House_restore_weight(world[rnum].contents);
 
-  if (fflush(fp) == EOF || ferror(fp)) {
+  if (fflush(fp) == EOF || ferror(fp) || (result && House_sync(fp) < 0)) {
     log("SYSERR: Error finalizing house file %s.", tempfile);
     result = FALSE;
   }
@@ -334,8 +397,8 @@ void House_crashsave(room_vnum vnum)
     remove(tempfile);
     return;
   }
-  if (!genolc_install_file(tempfile, filename)) {
-    log("SYSERR: Unable to replace house file %s: %s", filename, strerror(errno));
+  if (!genolc_install_file(tempfile, dest)) {
+    log("SYSERR: Unable to replace house file %s: %s", dest, strerror(errno));
     remove(tempfile);
     return;
   }
@@ -347,10 +410,15 @@ void House_crashsave(room_vnum vnum)
 static void House_delete_file(room_vnum vnum)
 {
   char filename[MAX_INPUT_LENGTH], binname[MAX_INPUT_LENGTH + 8];
+  char tmpname[MAX_INPUT_LENGTH + sizeof(".tmp")];
   FILE *fl;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
+
+  /* A save that crashed part-way left its scratch file beside this one. */
+  snprintf(tmpname, sizeof(tmpname), "%s.tmp", filename);
+  remove(tmpname);
 
   /* CONVERSION code starts here -- see comment below. */
   /* A converted house left its binary original beside the new file.  With
