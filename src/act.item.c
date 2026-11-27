@@ -1181,6 +1181,7 @@ ACMD(do_pour)
 
   /* First same type liq. */
   DRINK_CON_TYPE(to_obj) = DRINK_CON_TYPE(from_obj);
+  DRINK_CON_POISON(to_obj) = (DRINK_CON_POISON(to_obj) || DRINK_CON_POISON(from_obj));
 
   /* Then how much to pour */
   if (LIMITED_DRINK_CONTAINER(from_obj)) {
@@ -1198,8 +1199,6 @@ ACMD(do_pour)
     amount = DRINK_CON_MAX(to_obj) - DRINK_CON_NOW(to_obj);
     DRINK_CON_NOW(to_obj) = DRINK_CON_MAX(to_obj);
   }
-  /* Poisoned? */
-  DRINK_CON_POISON(to_obj) = (DRINK_CON_POISON(to_obj) || DRINK_CON_POISON(from_obj));
   /* Weight change, except for unlimited. */
   if (LIMITED_DRINK_CONTAINER(from_obj)) {
     weight_change_object(from_obj, -amount);
