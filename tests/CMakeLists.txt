@@ -176,16 +176,27 @@ add_mud_test(test_improved_edit
     ${CMAKE_CURRENT_SOURCE_DIR}/test_improved_edit.c
 )
 
-# This fixture uses section garbage collection to link the real saver paths
-# without the unrelated OLC editor functions. MSVC resolves those discarded
-# functions' dependencies before elimination, so it cannot link this target.
+# These fixtures use section garbage collection to link only the paths under
+# test without unrelated game or OLC editor functions. MSVC resolves those
+# discarded functions' dependencies before elimination, so it cannot link
+# these targets.
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
+    # test_flight.c includes act.movement.c and links act.item.c + interpreter.c
+    # with section GC to discard unrelated command handlers.
     add_mud_test(test_flight
         ${MUD_SRCDIR}/act.item.c
         ${MUD_SRCDIR}/interpreter.c
         ${CMAKE_CURRENT_SOURCE_DIR}/test_flight.c
     )
     target_compile_options(test_flight PRIVATE -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_flight APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_flight APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    if(CRYPT_LIBRARY)
+        target_link_libraries(test_flight PRIVATE ${CRYPT_LIBRARY})
+    endif()
 
     add_executable(test_editor_lifecycle
         ${UNITY_SRC}
@@ -212,9 +223,9 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     target_compile_options(test_editor_lifecycle PRIVATE ${TEST_CFLAGS}
         -ffunction-sections -fdata-sections)
     if(APPLE)
-        set_property(TARGET test_editor_lifecycle test_flight APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+        set_property(TARGET test_editor_lifecycle APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
     else()
-        set_property(TARGET test_editor_lifecycle test_flight APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+        set_property(TARGET test_editor_lifecycle APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
     endif()
     if(CRYPT_LIBRARY)
         target_link_libraries(test_editor_lifecycle PRIVATE ${CRYPT_LIBRARY})

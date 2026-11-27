@@ -50,7 +50,7 @@ test_trigger_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                    $(SRCDIR)/dg_olc.c $(SRCDIR)/genolc.c test_trigger_save.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
-# test_flight.c includes act.movement.c to reach its private flight check.
+# test_flight.c includes act.movement.c to reach its private flight and scuba checks.
 test_flight: $(UNITY_SRC) $(STUBS_SRC) $(SRCDIR)/act.item.c $(SRCDIR)/interpreter.c \
              $(SRCDIR)/act.movement.c test_flight.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $(filter-out $(SRCDIR)/act.movement.c,$^) $(LIBS)

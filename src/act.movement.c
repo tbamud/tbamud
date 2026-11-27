@@ -48,7 +48,9 @@ static int has_boat(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_WATERWALK) || AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
-  /* non-wearable boats in inventory will do it */
+  /* Non-wearable boats in inventory will do it.  Keep find_eq_pos() rather
+   * than can_equip_obj(): several stock boats carry ITEM_WEAR_HOLD and are
+   * expected to work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
     if (GET_OBJ_TYPE(obj) == ITEM_BOAT && (find_eq_pos(ch, obj, NULL) < 0))
       return (1);
@@ -75,7 +77,7 @@ static int has_flight(struct char_data *ch)
 
   /* Flying items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && !can_equip_obj(ch, obj))
+    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && !can_equip_obj(obj))
       return (1);
 
   /* Any equipped objects with AFF_FLYING will do it too. */
@@ -100,7 +102,7 @@ static int has_scuba(struct char_data *ch)
 
   /* Scuba items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && !can_equip_obj(ch, obj))
+    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && !can_equip_obj(obj))
       return (1);
 
   /* Any equipped objects with AFF_SCUBA will do it too. */

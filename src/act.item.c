@@ -1480,11 +1480,11 @@ static bool can_hold_obj(const struct obj_data *obj)
 }
 
 /* Whether wear, wield or grab could put obj in a slot.  Only the object's
- * flags are checked, not the character's level, strength, class or
+ * flags are checked, not any character's level, strength, class or
  * alignment. */
-bool can_equip_obj(struct char_data *ch, struct obj_data *obj)
+bool can_equip_obj(struct obj_data *obj)
 {
-  if (find_eq_pos(ch, obj, NULL) >= 0 || CAN_WEAR(obj, ITEM_WEAR_WIELD))
+  if (find_eq_pos(NULL, obj, NULL) >= 0 || CAN_WEAR(obj, ITEM_WEAR_WIELD))
     return TRUE;
 
   /* perform_wear requires TAKE for both the light and held slots. */
