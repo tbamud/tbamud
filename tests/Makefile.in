@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle test_flight
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -49,6 +49,11 @@ endif
 test_trigger_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                    $(SRCDIR)/dg_olc.c $(SRCDIR)/genolc.c test_trigger_save.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
+
+# test_flight.c includes act.movement.c to reach its private flight check.
+test_flight: $(UNITY_SRC) $(STUBS_SRC) $(SRCDIR)/act.item.c $(SRCDIR)/interpreter.c \
+             $(SRCDIR)/act.movement.c test_flight.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $(filter-out $(SRCDIR)/act.movement.c,$^) $(LIBS)
 
 # ---------------------------------------------------------------------------
 # test_utils — covers src/utils.c

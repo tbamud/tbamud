@@ -72,10 +72,12 @@ static int has_flight(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
-  /* Flying items that cannot be equipped work from inventory. */
+  /* Flying items that cannot be equipped work from inventory.
+   * perform_wear requires TAKE for both the light and held slots. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
     if (OBJAFF_FLAGGED(obj, AFF_FLYING) && find_eq_pos(ch, obj, NULL) < 0 &&
-        !CAN_WEAR(obj, ITEM_WEAR_WIELD) && !can_hold_obj(obj))
+        !CAN_WEAR(obj, ITEM_WEAR_WIELD) &&
+        !(CAN_WEAR(obj, ITEM_WEAR_TAKE) && can_hold_obj(obj)))
       return (1);
 
   /* Any equipped objects with AFF_FLYING will do it too. */
