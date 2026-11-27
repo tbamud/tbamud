@@ -1403,6 +1403,85 @@ static void test_a_groupmates_kill_also_clears_the_room_for_the_stage_it_unlocks
   assert_cleared(holder);
 }
 
+/* A charmed pet kills for its master's side, so its kill also finishes a
+ * Kill mob stage for the master and their group in the victim's zone. */
+static void kill_stage_only(void)
+{
+  init_quest(&quests[0], Q_KILL, AQ_MOB_KILL, mobs[GUARD].vnum);
+}
+
+static void test_a_pets_kill_finishes_its_masters_kill_stage(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  kill_stage_only();
+  give_quest(holder, Q_KILL);
+  kill_cell_guard(pet);
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+}
+
+static void test_a_pets_kill_also_clears_the_room_for_the_stage_it_unlocks(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  chain_kill_stage(Q_CLEAR, AQ_ROOM_CLEAR, rooms[CELL].number);
+  give_quest(holder, Q_KILL);
+  kill_cell_guard(pet);
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+  assert_cleared(holder);  /* the pet is still in the room */
+}
+
+static void test_a_groupmates_pets_kill_finishes_the_holders_kill_stage(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *mate = new_player(HALL);  /* sent the pet in alone */
+  struct char_data *pet = new_pet(mate, CELL);
+
+  kill_stage_only();
+  group_up(holder, mate);
+  give_quest(holder, Q_KILL);
+  kill_cell_guard(pet);
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+}
+
+static void test_a_pets_kill_in_another_zone_finishes_no_kill_stage(void)
+{
+  struct char_data *holder = new_player(HALL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  rooms[HALL].zone = 1;
+  kill_stage_only();
+  give_quest(holder, Q_KILL);
+  kill_cell_guard(pet);
+  TEST_ASSERT_EQUAL_INT(Q_KILL, GET_QUEST(holder));
+  TEST_ASSERT_FALSE(is_complete(holder, Q_KILL));
+}
+
+/* A death script that breaks the killing pet's charm. */
+static struct char_data *script_frees;
+static void free_the_pet(struct char_data *victim)
+{
+  (void)victim;
+  REMOVE_BIT_AR(AFF_FLAGS(script_frees), AFF_CHARM);
+  script_frees->master = NULL;
+}
+
+static void test_a_pet_freed_by_the_death_script_still_finishes_its_masters_kill_stage(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_pet(holder, CELL);
+
+  kill_stage_only();
+  give_quest(holder, Q_KILL);
+  script_frees = pet;
+  death_script = free_the_pet;
+  kill_cell_guard(pet);
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+}
+
 static void test_rescuing_a_charmed_captive_does_not_also_complete_the_next_room_clear(void)
 {
   struct char_data *holder = new_player(CELL);
@@ -2562,6 +2641,11 @@ int main(void)
   RUN_TEST(test_a_kill_also_clears_the_room_for_the_stage_it_unlocks);
   RUN_TEST(test_a_kill_also_finishes_the_rescue_it_unlocks);
   RUN_TEST(test_a_groupmates_kill_also_clears_the_room_for_the_stage_it_unlocks);
+  RUN_TEST(test_a_pets_kill_finishes_its_masters_kill_stage);
+  RUN_TEST(test_a_pets_kill_also_clears_the_room_for_the_stage_it_unlocks);
+  RUN_TEST(test_a_groupmates_pets_kill_finishes_the_holders_kill_stage);
+  RUN_TEST(test_a_pets_kill_in_another_zone_finishes_no_kill_stage);
+  RUN_TEST(test_a_pet_freed_by_the_death_script_still_finishes_its_masters_kill_stage);
   RUN_TEST(test_rescuing_a_charmed_captive_does_not_also_complete_the_next_room_clear);
   RUN_TEST(test_a_killer_moved_by_the_death_script_cannot_rescue_for_the_group);
   RUN_TEST(test_a_killing_pet_moved_by_the_death_script_cannot_clear_for_its_master);

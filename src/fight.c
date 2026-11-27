@@ -299,12 +299,24 @@ static struct kill_witnesses *witnesses_to_death(struct char_data *victim, struc
   return note_kill_witnesses(killer, IN_ROOM(victim));
 }
 
+/* Kill mob credit reaches the killer's side anywhere in the victim's zone. */
+static bool in_kill_zone(const struct char_data *ch, const struct char_data *victim)
+{
+  return IN_ROOM(ch) != NOWHERE &&
+         (IN_ROOM(ch) == IN_ROOM(victim) ||
+          world[IN_ROOM(ch)].zone == world[IN_ROOM(victim)].zone);
+}
+
 static void finish_kill(struct char_data *ch, struct char_data *killer,
                         struct kill_witnesses *witnesses, bool apply_death_penalty)
 {
   struct char_data *i;
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
+  /* A player's charmed pet kills for its master's side.  The death script
+   * can break the charm, so settle that first. */
+  struct char_data *const kill_side =
+      killer && is_player_pet(killer) ? killer->master : killer;
 
   ch->char_specials.death_in_progress = TRUE;
   if (apply_death_penalty) {
@@ -331,13 +343,13 @@ static void finish_kill(struct char_data *ch, struct char_data *killer,
   } else
     death_cry(ch);
 
-  if (killer) {
-    if (killer->group) {
-      while ((i = (struct char_data *) simple_list(killer->group->members)) != NULL)
-        if(IN_ROOM(i) == IN_ROOM(ch)  || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
-          autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);      
-    } else
-        autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
+  if (kill_side) {
+    if (GROUP(kill_side)) {
+      while ((i = (struct char_data *) simple_list(GROUP(kill_side)->members)) != NULL)
+        if (in_kill_zone(i, ch))
+          autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);
+    } else if (kill_side == killer || in_kill_zone(kill_side, ch))
+      autoquest_trigger_check(kill_side, ch, NULL, AQ_MOB_KILL);
   }
 
   /* Alert Group if Applicable */
