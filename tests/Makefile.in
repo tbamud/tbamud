@@ -35,6 +35,7 @@ UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
 TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle
+TESTS += test_house_save
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -48,6 +49,11 @@ TRIGGER_GC_LDFLAGS = -Wl,--gc-sections
 endif
 test_trigger_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                    $(SRCDIR)/dg_olc.c $(SRCDIR)/genolc.c test_trigger_save.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
+
+test_house_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                 $(SRCDIR)/house.c $(SRCDIR)/genolc.c $(SRCDIR)/constants.c \
+                 $(SRCDIR)/interpreter.c test_house_save.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------

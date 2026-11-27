@@ -20,6 +20,17 @@
 #include "constants.h"
 #include "modify.h"
 #include "genolc.h"
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+#include <fcntl.h>
+#include <io.h>
+#include <share.h>
+#include <sys/stat.h>
+#elif defined(__linux__)
+#include <sys/xattr.h>
+#elif defined(__APPLE__) && defined(__MACH__)
+#include <fcntl.h>
+#include <sys/stat.h>
+#endif
 
 /* local (file scope only) globals */
 static struct house_control_rec house_control[MAX_HOUSES];
@@ -156,11 +167,136 @@ static void House_restore_weight(struct obj_data *obj)
   }
 }
 
+#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
+#if defined(__linux__)
+static int House_copy_access_acl(const char *filename, int fd)
+{
+  static const char name[] = "system.posix_acl_access";
+  ssize_t length = getxattr(filename, name, NULL, 0);
+  void *acl;
+  int result, saved_errno;
+
+  if (length < 0) {
+    if (errno != ENODATA && errno != ENOTSUP)
+      return -1;
+    /* The scratch file may have inherited named entries from its parent. */
+    if (fremovexattr(fd, name) < 0 && errno != ENODATA && errno != ENOTSUP)
+      return -1;
+    return 0;
+  }
+
+  if (!(acl = malloc((size_t)length)))
+    return -1;
+  length = getxattr(filename, name, acl, (size_t)length);
+  result = length < 0 ? -1 : fsetxattr(fd, name, acl, (size_t)length, 0);
+  saved_errno = errno;
+  free(acl);
+  errno = saved_errno;
+  return result;
+}
+#elif defined(__APPLE__) && defined(__MACH__)
+static int House_copy_darwin_permissions(const char *filename, int fd)
+{
+  struct stat old;
+  filesec_t security = filesec_init();
+  int has_acl, new_file = 0, result = -1, saved_errno;
+  mode_t mode;
+
+  if (!security)
+    return -1;
+  if (statx_np(filename, &old, security) != 0) {
+    if (errno != ENOENT || fstatx_np(fd, &old, security) != 0)
+      goto done;
+    new_file = 1;
+  }
+  if (filesec_get_property(security, FILESEC_MODE, &mode) != 0 ||
+      filesec_query_property(security, FILESEC_ACL, &has_acl) != 0)
+    goto done;
+  if (new_file && !has_acl) {
+    result = 0;
+    goto done;
+  }
+  /* An inherited allow entry can grant access even to a 0600 file on Darwin. */
+  if ((new_file || !has_acl) &&
+      filesec_set_property(security, FILESEC_ACL, _FILESEC_REMOVE_ACL) < 0)
+    goto done;
+  mode &= 0777;
+  if (filesec_set_property(security, FILESEC_MODE, &mode) == 0)
+    result = fchmodx_np(fd, security);
+done:
+  saved_errno = errno;
+  filesec_free(security);
+  errno = saved_errno;
+  return result;
+}
+#endif
+
+static int House_copy_permissions(const char *filename, int fd)
+{
+  struct stat old, scratch;
+#if defined(__APPLE__) && defined(__MACH__)
+  /* Volumes without extended security accept only ordinary ownership and mode. */
+  long extended = fpathconf(fd, _PC_EXTENDED_SECURITY_NP);
+  if (extended < 0)
+    return -1;
+  if (extended)
+    return House_copy_darwin_permissions(filename, fd);
+#endif
+
+  if (stat(filename, &old) < 0)
+    return errno == ENOENT ? 0 : -1;
+  if (fstat(fd, &scratch) < 0)
+    return -1;
+  if ((scratch.st_uid != old.st_uid || scratch.st_gid != old.st_gid) &&
+      fchown(fd, old.st_uid, old.st_gid) < 0)
+    return -1;
+#if defined(__linux__)
+  if (House_copy_access_acl(filename, fd) < 0)
+    return -1;
+#endif
+  return fchmod(fd, old.st_mode & 0777);
+}
+#endif
+
+/* Keep the file on the same filesystem as the destination. Both branches
+ * create it exclusively and write through the descriptor they acquired. */
+static FILE *House_open_temp(const char *filename, char *tempfile, size_t size)
+{
+  int fd, saved_errno;
+  FILE *fp;
+
+  snprintf(tempfile, size, "%s.XXXXXX", filename);
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+  if (_mktemp_s(tempfile, size) != 0 ||
+      _sopen_s(&fd, tempfile, _O_WRONLY | _O_CREAT | _O_EXCL | _O_BINARY | _O_NOINHERIT,
+               _SH_DENYRW, _S_IREAD | _S_IWRITE) != 0)
+    return NULL;
+  fp = _fdopen(fd, "wb");
+#else
+  fd = mkstemp(tempfile);
+  if (fd < 0)
+    return NULL;
+  fp = House_copy_permissions(filename, fd) == 0 ? fdopen(fd, "wb") : NULL;
+#endif
+  if (fp)
+    return fp;
+
+  saved_errno = errno;
+#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
+  _close(fd);
+#else
+  close(fd);
+#endif
+  remove(tempfile);
+  errno = saved_errno;
+  return NULL;
+}
+
 /* Save all objects in a house */
 void House_crashsave(room_vnum vnum)
 {
   int rnum, result;
-  char filename[MAX_STRING_LENGTH], tempfile[MAX_STRING_LENGTH + sizeof(".tmp")];
+  char filename[MAX_INPUT_LENGTH], tempfile[MAX_INPUT_LENGTH + sizeof(".XXXXXX")];
   FILE *fp;
 
   if ((rnum = real_room(vnum)) == NOWHERE)
@@ -177,9 +313,8 @@ void House_crashsave(room_vnum vnum)
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
-  snprintf(tempfile, sizeof(tempfile), "%s.tmp", filename);
-  if (!(fp = fopen(tempfile, "wb"))) {
-    perror("SYSERR: Unable to open the temporary house file");
+  if (!(fp = House_open_temp(filename, tempfile, sizeof(tempfile)))) {
+    log("SYSERR: Unable to prepare a temporary save for %s: %s", filename, strerror(errno));
     return;
   }
 
@@ -560,6 +695,7 @@ static void hcontrol_build_house(struct char_data *ch, char *arg)
   SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE);
   SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_PRIVATE);
   SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
+  SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE_CRASH);
   House_crashsave(virt_house);
 
   send_to_char(ch, "House built.  Mazel tov!\r\n");
