@@ -653,6 +653,7 @@ ACMD(do_alias)
     return;
 
   repl = any_one_arg(argument, arg);
+  skip_spaces(&repl);
 
   if (!*arg) {			/* no argument specified -- list currently defined aliases */
     send_to_char(ch, "Currently defined aliases:\r\n");
@@ -665,22 +666,24 @@ ACMD(do_alias)
       }
     }
   } else {			/* otherwise, add or remove aliases */
-    /* is this an alias we've already defined? */
-    if ((a = find_alias(GET_ALIASES(ch), arg)) != NULL) {
+    a = find_alias(GET_ALIASES(ch), arg);
+    if (!*repl && !a) {
+      send_to_char(ch, "No such alias.\r\n");
+      return;
+    }
+    if (*repl && !str_cmp(arg, "alias")) {
+      send_to_char(ch, "You can't alias 'alias'.\r\n");
+      return;
+    }
+
+    if (a) {
       REMOVE_FROM_LIST(a, GET_ALIASES(ch), next);
       free_alias(a);
     }
-    /* if no replacement string is specified, assume we want to delete */
     if (!*repl) {
-      if (a == NULL)
-	send_to_char(ch, "No such alias.\r\n");
-      else
-	send_to_char(ch, "Alias deleted.\r\n");
-    } else {			/* otherwise, either add or redefine an alias */
-      if (!str_cmp(arg, "alias")) {
-	send_to_char(ch, "You can't alias 'alias'.\r\n");
-	return;
-      }
+      save_char(ch);
+      send_to_char(ch, "Alias deleted.\r\n");
+    } else {
       CREATE(a, struct alias_data, 1);
       a->alias = strdup(arg);
       delete_doubledollar(repl);
