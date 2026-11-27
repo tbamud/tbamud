@@ -350,26 +350,28 @@ void redit_save_internally(struct descriptor_data *d)
       continue;
 
     if (STATE(dsc) == CON_ZEDIT) {
-      for (j = 0; OLC_ZONE(dsc)->cmd[j].command != 'S'; j++)
-        switch (OLC_ZONE(dsc)->cmd[j].command) {
+      struct reset_com *command;
+      for (command = OLC_ZONE(dsc)->cmd; command->command != 'S'; command++)
+        switch (command->command) {
           case 'O':
           case 'M':
           case 'T':
           case 'V':
-            OLC_ZONE(dsc)->cmd[j].arg3 += (OLC_ZONE(dsc)->cmd[j].arg3 >= room_num);
+            if (command->arg3 != NOWHERE && command->arg3 >= room_num)
+              command->arg3++;
             break;
           case 'D':
-            OLC_ZONE(dsc)->cmd[j].arg2 += (OLC_ZONE(dsc)->cmd[j].arg2 >= room_num);
-            /* Fall through */
           case 'R':
-            OLC_ZONE(dsc)->cmd[j].arg1 += (OLC_ZONE(dsc)->cmd[j].arg1 >= room_num);
+            if (command->arg1 != NOWHERE && command->arg1 >= room_num)
+              command->arg1++;
             break;
           }
     } else if (STATE(dsc) == CON_REDIT) {
-      for (j = 0; j < DIR_COUNT; j++)
-        if (OLC_ROOM(dsc)->dir_option[j])
-          if (OLC_ROOM(dsc)->dir_option[j]->to_room >= room_num)
-            OLC_ROOM(dsc)->dir_option[j]->to_room++;
+      for (j = 0; j < DIR_COUNT; j++) {
+        struct room_direction_data *exit = OLC_ROOM(dsc)->dir_option[j];
+        if (exit && exit->to_room != NOWHERE && exit->to_room >= room_num)
+          exit->to_room++;
+      }
     }
   }
 }
