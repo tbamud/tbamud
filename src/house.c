@@ -19,22 +19,16 @@
 #include "house.h"
 #include "constants.h"
 #include "modify.h"
-#include "genolc.h"
-/* HOUSE_PATH_MAX leaves room for a symlinked house file's real path, which
- * House_crashsave() resolves everywhere but Windows. */
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
-#include <fcntl.h>
-#include <io.h>
-#include <share.h>
-#include <sys/stat.h>
-#define HOUSE_PATH_MAX MAX_INPUT_LENGTH
+#include "house_win32.h"
 #else
 #include <fcntl.h>
 #include <sys/stat.h>
 #if defined(__linux__)
 #include <sys/xattr.h>
+#elif defined(__FreeBSD__)
+#include <sys/acl.h>
 #endif
-#define HOUSE_PATH_MAX PATH_MAX
 #endif
 
 /* local (file scope only) globals */
@@ -291,12 +285,66 @@ done:
   errno = saved_errno;
   return result;
 }
+#elif defined(__FreeBSD__)
+/* FreeBSD supports either POSIX.1e or NFSv4 ACLs, selected by the volume. */
+static int House_acl_supported(int fd, int option)
+{
+  long result;
+  errno = 0;
+  result = fpathconf(fd, option);
+  /* A filesystem may reject an unsupported pathconf selector. */
+  if (result < 0 && errno && errno != EINVAL && errno != EOPNOTSUPP)
+    return -1;
+  return result > 0;
+}
+
+static int House_copy_freebsd_acl(const char *filename, int fd, acl_type_t type,
+                                  const struct stat *old, const struct stat *scratch)
+{
+  acl_t acl = acl_get_file(filename, type);
+  acl_entry_t entry;
+  acl_tag_t tag;
+  acl_permset_t perms;
+  int next = ACL_FIRST_ENTRY, found, result = -1, saved_errno;
+
+  if (!acl)
+    return -1;
+  if (scratch->st_uid != old->st_uid || scratch->st_gid != old->st_gid) {
+    while ((found = acl_get_entry(acl, next, &entry)) == 1) {
+      next = ACL_NEXT_ENTRY;
+      if (acl_get_tag_type(entry, &tag) < 0)
+        goto done;
+      if (type == ACL_TYPE_NFS4) {
+        /* Keep each ordered allow/deny ACE attached to its original principal. */
+        if (tag == ACL_GROUP_OBJ && scratch->st_gid != old->st_gid &&
+            (acl_set_tag_type(entry, ACL_GROUP) < 0 || acl_set_qualifier(entry, &old->st_gid) < 0))
+          goto done;
+        if (tag == ACL_USER_OBJ && scratch->st_uid != old->st_uid &&
+            (acl_set_tag_type(entry, ACL_USER) < 0 || acl_set_qualifier(entry, &old->st_uid) < 0))
+          goto done;
+      } else if (tag == ACL_GROUP_OBJ && scratch->st_gid != old->st_gid) {
+        /* Limit the new owning group without narrowing the mask on named entries. */
+        if (acl_get_permset(entry, &perms) < 0 ||
+            (!(old->st_mode & S_IROTH) && acl_delete_perm(perms, ACL_READ) < 0) ||
+            (!(old->st_mode & S_IWOTH) && acl_delete_perm(perms, ACL_WRITE) < 0) ||
+            (!(old->st_mode & S_IXOTH) && acl_delete_perm(perms, ACL_EXECUTE) < 0) ||
+            acl_set_permset(entry, perms) < 0)
+          goto done;
+      }
+    }
+    if (found < 0)
+      goto done;
+  }
+  result = acl_set_fd_np(fd, acl, type);
+done:
+  saved_errno = errno;
+  acl_free(acl);
+  errno = saved_errno;
+  return result;
+}
 #endif
 
-/* Give the scratch file what the old file had: owner, group, mode and, on
- * Linux and macOS, its ACL.  Elsewhere -- the BSDs among others -- the ACL
- * is not copied, so the new file starts with whatever its directory gives a
- * new file, and an ACL set on the old file by hand is lost at the first save.
+/* Restore owner, group and mode, and the file ACL on Linux, macOS and FreeBSD.
  *
  * Only root can give a file away, and anyone else can hand one only to a
  * group they are in.  So ownership is best effort: a house file that root
@@ -348,8 +396,60 @@ static int House_copy_permissions(const char *filename, int fd)
     if (acl_result > 0)
       return 0;
   }
+#elif defined(__FreeBSD__)
+  {
+    int nfs4 = House_acl_supported(fd, _PC_ACL_NFS4), posix_acl;
+    if (nfs4 < 0)
+      return -1;
+    if (nfs4)
+      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_NFS4, &old, &scratch);
+    posix_acl = House_acl_supported(fd, _PC_ACL_EXTENDED);
+    if (posix_acl < 0)
+      return -1;
+    if (posix_acl)
+      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_ACCESS, &old, &scratch);
+  }
 #endif
   return fchmod(fd, mode);
+}
+
+/* Establish owner-only search access before creating any file inside. POSIX
+ * ACLs are already masked by mkdir's 0700, but Darwin and NFSv4 allow ACEs
+ * can grant search independently of those mode bits. */
+static int House_secure_stage(int dirfd)
+{
+#if defined(__FreeBSD__)
+  int nfs4 = House_acl_supported(dirfd, _PC_ACL_NFS4);
+  acl_t acl;
+  int result, saved_errno;
+  if (nfs4 <= 0)
+    return nfs4 < 0 ? -1 : fchmod(dirfd, 0700);
+  if (!(acl = acl_from_text("owner@:full_set::allow")))
+    return -1;
+  result = acl_set_fd_np(dirfd, acl, ACL_TYPE_NFS4);
+  saved_errno = errno;
+  acl_free(acl);
+  errno = saved_errno;
+  return result;
+#elif defined(__APPLE__) && defined(__MACH__)
+  long extended = fpathconf(dirfd, _PC_EXTENDED_SECURITY_NP);
+  filesec_t security;
+  mode_t mode = 0700;
+  int result = -1, saved_errno;
+  if (extended <= 0)
+    return extended < 0 ? -1 : fchmod(dirfd, 0700);
+  if (!(security = filesec_init()))
+    return -1;
+  if (filesec_set_property(security, FILESEC_MODE, &mode) == 0 &&
+      filesec_set_property(security, FILESEC_ACL, _FILESEC_REMOVE_ACL) == 0)
+    result = fchmodx_np(dirfd, security);
+  saved_errno = errno;
+  filesec_free(security);
+  errno = saved_errno;
+  return result;
+#else
+  return fchmod(dirfd, 0700);
+#endif
 }
 
 /* Resolve a symlinked house path to the destination where fopen() would write.
@@ -456,78 +556,154 @@ static int House_resolve_symlink(const char *path, char resolved[PATH_MAX])
   }
   return 1;
 }
+
+/* Each save owns one exclusive entry in the destination directory. An existing
+ * file can have a stricter ACL than its parent: keep its replacement inside a
+ * private directory until its permissions and contents are ready. First saves
+ * use the process umask and inherit directly from the target directory. */
+struct house_save {
+  char dest[PATH_MAX], entry[64];
+  const char *leaf, *scratch;
+  int parent_fd, stage_fd;
+  bool owns_dir;
+};
+
+static void House_remove_stage(struct house_save *save)
+{
+  if (!save->owns_dir)
+    return;
+  if (save->stage_fd >= 0)
+    close(save->stage_fd);
+  if (unlinkat(save->parent_fd, save->entry, AT_REMOVEDIR) < 0)
+    log("SYSERR: Cannot remove save directory %s for %s: %s",
+        save->entry, save->dest, strerror(errno));
+  save->owns_dir = FALSE;
+}
+
+static void House_discard_save(struct house_save *save)
+{
+  if (save->scratch && unlinkat(save->stage_fd, save->scratch, 0) < 0)
+    log("SYSERR: Cannot remove temporary save for %s: %s", save->dest, strerror(errno));
+  House_remove_stage(save);
+  if (save->parent_fd >= 0)
+    close(save->parent_fd);
+}
+
+static int House_create_scratch(struct house_save *save, bool replacing)
+{
+  static unsigned long sequence;
+  int fd, attempt;
+  const int dir_flags = O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC;
+
+  for (attempt = 0; attempt < 128; attempt++) {
+    snprintf(save->entry, sizeof(save->entry), ".tba-house-%ld-%lu",
+             (long)getpid(), sequence++);
+    if (!str_cmp(save->entry, save->leaf))
+      continue;
+    if (!replacing) {
+      save->stage_fd = save->parent_fd;
+      fd = openat(save->stage_fd, save->entry, O_WRONLY | O_CREAT | O_EXCL | O_CLOEXEC, 0666);
+      if (fd >= 0) {
+        save->scratch = save->entry;
+        return fd;
+      }
+    } else if (mkdirat(save->parent_fd, save->entry, 0700) == 0) {
+      save->owns_dir = TRUE;
+      save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
+      /* A umask or default ACL can even remove the creator's read access. */
+      if (save->stage_fd < 0 && errno == EACCES &&
+          fchmodat(save->parent_fd, save->entry, 0700, AT_SYMLINK_NOFOLLOW) == 0)
+        save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
+      if (save->stage_fd < 0 || House_secure_stage(save->stage_fd) < 0)
+        return -1;
+      fd = openat(save->stage_fd, "contents", O_WRONLY | O_CREAT | O_EXCL | O_CLOEXEC, 0600);
+      if (fd >= 0)
+        save->scratch = "contents";
+      return fd;
+    }
+    if (errno != EEXIST)
+      return -1;
+  }
+  errno = EEXIST;
+  return -1;
+}
+
+static FILE *House_open_save(const char *filename, struct house_save *save)
+{
+  char *slash;
+  struct stat st;
+  bool replacing;
+  int fd = -1, saved_errno, resolved;
+  FILE *fp;
+
+  save->parent_fd = save->stage_fd = -1;
+  resolved = House_resolve_symlink(filename, save->dest);
+  if (resolved < 0)
+    return NULL;
+  if (!resolved)
+    strlcpy(save->dest, filename, sizeof(save->dest));
+
+  slash = strrchr(save->dest, '/');
+  if (slash) {
+    save->leaf = slash + 1;
+    *slash = '\0';
+    save->parent_fd = open(*save->dest ? save->dest : "/", O_RDONLY | O_DIRECTORY | O_CLOEXEC);
+    *slash = '/';
+  } else {
+    save->leaf = save->dest;
+    save->parent_fd = open(".", O_RDONLY | O_DIRECTORY | O_CLOEXEC);
+  }
+  if (save->parent_fd < 0)
+    return NULL;
+
+  replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
+  if (!replacing && errno != ENOENT)
+    goto failed;
+  fd = House_create_scratch(save, replacing);
+  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd) < 0))
+    goto failed;
+  fp = fdopen(fd, "wb");
+  if (fp)
+    return fp;
+
+failed:
+  saved_errno = errno;
+  if (fd >= 0)
+    close(fd);
+  House_discard_save(save);
+  errno = saved_errno;
+  return NULL;
+}
+
+static int House_install_save(struct house_save *save)
+{
+  if (renameat(save->stage_fd, save->scratch, save->parent_fd, save->leaf) < 0)
+    return FALSE;
+  save->scratch = NULL;
+  House_remove_stage(save);
+  /* The file data is synced. The new directory entry must be durable too. */
+  return fsync(save->parent_fd) == 0;
+}
 #endif
 
-/* Put a finished save on disk before it takes the old one's place.  Without
- * this the rename can reach the disk ahead of the data, and a power cut in
- * between leaves an empty house file where the last good one was. */
+/* Sync the contents before publishing their directory entry. */
 static int House_sync(FILE *fp)
 {
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
   return _commit(_fileno(fp));
 #else
-  /* EINVAL and EROFS: the file cannot be synced, and there is nothing more to do. */
-  return fsync(fileno(fp)) < 0 && errno != EINVAL && errno != EROFS ? -1 : 0;
+  return fsync(fileno(fp));
 #endif
 }
 
-/* Build the save beside the file it replaces, so the rename stays on one
- * filesystem.  The scratch name is fixed, as the other savers' are, so a
- * crash part-way through a save leaves at most one behind and the next save
- * clears it.  Unlinking a name never touches a file another link points at,
- * and the exclusive create means nothing found at the name is ever written
- * through.  0666 is what fopen() asks for, so a new house's file gets the
- * mode -- or the inherited ACL -- that it always did. */
-static FILE *House_open_temp(const char *filename, char *tempfile, size_t size)
-{
-  int fd, length, saved_errno;
-  FILE *fp;
-
-  length = snprintf(tempfile, size, "%s.tmp", filename);
-  if (length < 0 || (size_t)length >= size) {
-    errno = ENAMETOOLONG;
-    return NULL;
-  }
-#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
-  _unlink(tempfile);
-  if (_sopen_s(&fd, tempfile, _O_WRONLY | _O_CREAT | _O_EXCL | _O_BINARY | _O_NOINHERIT,
-               _SH_DENYRW, _S_IREAD | _S_IWRITE) != 0)
-    return NULL;
-  fp = _fdopen(fd, "wb");
-#else
-  unlink(tempfile);
-  if ((fd = open(tempfile, O_WRONLY | O_CREAT | O_EXCL, 0666)) < 0)
-    return NULL;
-  fp = House_copy_permissions(filename, fd) == 0 ? fdopen(fd, "wb") : NULL;
-#endif
-  if (fp)
-    return fp;
-
-  saved_errno = errno;
-#if defined(CIRCLE_WINDOWS) || defined(_WIN32)
-  _close(fd);
-#else
-  close(fd);
-#endif
-  remove(tempfile);
-  errno = saved_errno;
-  return NULL;
-}
-
-/* Save all objects in a house.  The save is written under a scratch name and
- * renamed over the old file only once it is whole and on disk, so a save
- * that fails leaves the last good one in place.  A house file with a second
- * hard link is parted from it by the rename; nothing in the game makes one. */
+/* Serialization failures leave the last complete file in place. Keep the
+ * room dirty until installation and the directory sync have succeeded. */
 void House_crashsave(room_vnum vnum)
 {
   int rnum, result;
-  char filename[MAX_INPUT_LENGTH], tempfile[HOUSE_PATH_MAX + sizeof(".tmp")];
-  const char *dest = filename;
+  char filename[MAX_INPUT_LENGTH];
+  struct house_save save = {0};
   FILE *fp;
-#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
-  char target[PATH_MAX];
-  int resolved;
-#endif
 
   if ((rnum = real_room(vnum)) == NOWHERE)
     return;
@@ -543,20 +719,8 @@ void House_crashsave(room_vnum vnum)
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
-#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
-  /* fopen() wrote a symlinked house file where the link pointed.  Save it
-   * there, beside its target, rather than put a plain file in the link's
-   * place and leave the target behind. */
-  resolved = House_resolve_symlink(filename, target);
-  if (resolved < 0) {
-    log("SYSERR: Unable to resolve house file %s: %s", filename, strerror(errno));
-    return;
-  }
-  if (resolved > 0)
-    dest = target;
-#endif
-  if (!(fp = House_open_temp(dest, tempfile, sizeof(tempfile)))) {
-    log("SYSERR: Unable to start a new save of %s: %s", dest, strerror(errno));
+  if (!(fp = House_open_save(filename, &save))) {
+    log("SYSERR: Unable to start a new save of %s: %s", filename, strerror(errno));
     return;
   }
 
@@ -564,58 +728,37 @@ void House_crashsave(room_vnum vnum)
   House_restore_weight(world[rnum].contents);
 
   if (fflush(fp) == EOF) {
-    log("SYSERR: Error flushing house file %s: %s", tempfile, strerror(errno));
+    log("SYSERR: Error flushing house file %s: %s", filename, strerror(errno));
     result = FALSE;
   } else if (ferror(fp)) {
-    log("SYSERR: Error writing house file %s.", tempfile);
+    log("SYSERR: Error writing house file %s.", filename);
     result = FALSE;
   } else if (result && House_sync(fp) < 0) {
-    log("SYSERR: Error syncing house file %s: %s", tempfile, strerror(errno));
+    log("SYSERR: Error syncing house file %s: %s", filename, strerror(errno));
     result = FALSE;
   }
   if (fclose(fp) == EOF) {
-    log("SYSERR: Error closing house file %s: %s", tempfile, strerror(errno));
+    log("SYSERR: Error closing house file %s: %s", filename, strerror(errno));
     result = FALSE;
   }
 
-  if (!result) {
-    remove(tempfile);
-    return;
+  if (result && !House_install_save(&save)) {
+    log("SYSERR: Unable to commit house file %s: %s", filename, strerror(errno));
+    result = FALSE;
   }
-  if (!genolc_install_file(tempfile, dest)) {
-    log("SYSERR: Unable to replace house file %s: %s", dest, strerror(errno));
-    remove(tempfile);
-    return;
-  }
-
-  REMOVE_BIT_AR(ROOM_FLAGS(rnum), ROOM_HOUSE_CRASH);
+  House_discard_save(&save);
+  if (result)
+    REMOVE_BIT_AR(ROOM_FLAGS(rnum), ROOM_HOUSE_CRASH);
 }
 
 /* Delete a house save file */
 static void House_delete_file(room_vnum vnum)
 {
   char filename[MAX_INPUT_LENGTH], binname[MAX_INPUT_LENGTH + 8];
-  char tmpname[MAX_INPUT_LENGTH + sizeof(".tmp")];
   FILE *fl;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
-
-  /* A save that crashed part-way left its scratch file beside this one. */
-  snprintf(tmpname, sizeof(tmpname), "%s.tmp", filename);
-  remove(tmpname);
-#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
-  /* A symlinked house saved beside its target, so remove any scratch there too. */
-  {
-    char target[PATH_MAX], target_tmp[PATH_MAX + sizeof(".tmp")];
-    int len;
-    if (House_resolve_symlink(filename, target) > 0) {
-      len = snprintf(target_tmp, sizeof(target_tmp), "%s.tmp", target);
-      if (len >= 0 && (size_t)len < sizeof(target_tmp))
-        remove(target_tmp);
-    }
-  }
-#endif
 
   /* CONVERSION code starts here -- see comment below. */
   /* A converted house left its binary original beside the new file.  With

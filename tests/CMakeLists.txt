@@ -311,7 +311,6 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     if(UNIX)
         add_mud_test(test_house_save
             ${MUD_SRCDIR}/house.c
-            ${MUD_SRCDIR}/genolc.c
             ${MUD_SRCDIR}/constants.c
             ${MUD_SRCDIR}/interpreter.c
             ${MUD_SRCDIR}/utils.c
@@ -319,6 +318,10 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
             ${CMAKE_CURRENT_SOURCE_DIR}/test_house_save.c
         )
         target_compile_options(test_house_save PRIVATE -ffunction-sections -fdata-sections)
+        if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+            target_compile_definitions(test_house_save PRIVATE HOUSE_TEST_WRAP_IO)
+            set_property(TARGET test_house_save APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--wrap=fsync,--wrap=openat,--wrap=fchown")
+        endif()
         if(APPLE)
             set_property(TARGET test_house_save APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
         else()
@@ -328,4 +331,11 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
             target_link_libraries(test_house_save PRIVATE ${CRYPT_LIBRARY})
         endif()
     endif()
+endif()
+
+if(WIN32)
+    add_executable(test_house_save_win32 ${UNITY_SRC} test_house_save_win32.c)
+    target_include_directories(test_house_save_win32 PRIVATE ${TEST_INCLUDES})
+    target_link_libraries(test_house_save_win32 PRIVATE advapi32)
+    add_test(NAME test_house_save_win32 COMMAND test_house_save_win32)
 endif()
