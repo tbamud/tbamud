@@ -89,10 +89,42 @@ static void test_save_preserves_a_protected_custom_dacl(void)
   TEST_ASSERT_TRUE(same);
 }
 
+static void test_save_preserves_a_protected_dacl_without_write_dac(void)
+{
+  PSECURITY_DESCRIPTOR security = NULL;
+  TEST_ASSERT_TRUE(ConvertStringSecurityDescriptorToSecurityDescriptorW(
+      L"D:P(A;;FRFWSD;;;OW)", SDDL_REVISION_1, &security, NULL));
+  BOOL set = SetFileSecurityA(house, DACL_SECURITY_INFORMATION | PROTECTED_DACL_SECURITY_INFORMATION, security);
+  LocalFree(security);
+  TEST_ASSERT_TRUE(set);
+  char *before, *after;
+  read_dacl(&before);
+  save_house(house);
+  read_dacl(&after);
+  int same = strcmp(before, after) == 0;
+  LocalFree(after);
+  LocalFree(before);
+  TEST_ASSERT_TRUE(same);
+}
+
+static void test_save_preserves_an_inherited_dacl(void)
+{
+  char *before, *after;
+  read_dacl(&before);
+  save_house(house);
+  read_dacl(&after);
+  int same = strcmp(before, after) == 0;
+  LocalFree(after);
+  LocalFree(before);
+  TEST_ASSERT_TRUE(same);
+}
+
 int main(void)
 {
   UNITY_BEGIN();
   RUN_TEST(test_save_updates_the_target_of_a_file_symlink);
   RUN_TEST(test_save_preserves_a_protected_custom_dacl);
+  RUN_TEST(test_save_preserves_a_protected_dacl_without_write_dac);
+  RUN_TEST(test_save_preserves_an_inherited_dacl);
   return UNITY_END();
 }

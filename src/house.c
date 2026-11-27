@@ -310,20 +310,20 @@ static int House_copy_freebsd_acl(const char *filename, int fd, acl_type_t type,
 
   if (!acl)
     return -1;
-  if (scratch->st_uid != old->st_uid || scratch->st_gid != old->st_gid) {
+  if (scratch->st_gid != old->st_gid) {
     while ((found = acl_get_entry(acl, next, &entry)) == 1) {
       next = ACL_NEXT_ENTRY;
       if (acl_get_tag_type(entry, &tag) < 0)
         goto done;
       if (type == ACL_TYPE_NFS4) {
-        /* Keep each ordered allow/deny ACE attached to its original principal. */
-        if (tag == ACL_GROUP_OBJ && scratch->st_gid != old->st_gid &&
+        /* Keep group@ ACEs attached to the original group so the game's own
+         * group gains nothing.  Leave owner@ attached to the file's actual
+         * owner, matching the Linux/macOS/POSIX paths, so the game does not
+         * lock itself out of reading a house file restored with foreign uid. */
+        if (tag == ACL_GROUP_OBJ &&
             (acl_set_tag_type(entry, ACL_GROUP) < 0 || acl_set_qualifier(entry, &old->st_gid) < 0))
           goto done;
-        if (tag == ACL_USER_OBJ && scratch->st_uid != old->st_uid &&
-            (acl_set_tag_type(entry, ACL_USER) < 0 || acl_set_qualifier(entry, &old->st_uid) < 0))
-          goto done;
-      } else if (tag == ACL_GROUP_OBJ && scratch->st_gid != old->st_gid) {
+      } else if (tag == ACL_GROUP_OBJ) {
         /* Limit the new owning group without narrowing the mask on named entries. */
         if (acl_get_permset(entry, &perms) < 0 ||
             (!(old->st_mode & S_IROTH) && acl_delete_perm(perms, ACL_READ) < 0) ||
@@ -573,8 +573,10 @@ static void House_remove_stage(struct house_save *save)
 {
   if (!save->owns_dir)
     return;
-  if (save->stage_fd >= 0)
+  if (save->stage_fd >= 0) {
     close(save->stage_fd);
+    save->stage_fd = -1;
+  }
   if (unlinkat(save->parent_fd, save->entry, AT_REMOVEDIR) < 0)
     log("SYSERR: Cannot remove save directory %s for %s: %s",
         save->entry, save->dest, strerror(errno));
@@ -611,10 +613,19 @@ static int House_create_scratch(struct house_save *save, bool replacing)
     } else if (mkdirat(save->parent_fd, save->entry, 0700) == 0) {
       save->owns_dir = TRUE;
       save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
-      /* A umask or default ACL can even remove the creator's read access. */
-      if (save->stage_fd < 0 && errno == EACCES &&
-          fchmodat(save->parent_fd, save->entry, 0700, AT_SYMLINK_NOFOLLOW) == 0)
-        save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
+      /* A umask or default ACL can even remove the creator's read access.
+       * Older Linux kernels/glibc reject AT_SYMLINK_NOFOLLOW in fchmodat();
+       * fall back to flags=0 only after verifying the entry is a directory. */
+      if (save->stage_fd < 0 && errno == EACCES) {
+        struct stat stage_st;
+        int chmod_ok = fchmodat(save->parent_fd, save->entry, 0700, AT_SYMLINK_NOFOLLOW) == 0;
+        if (!chmod_ok && (errno == ENOTSUP || errno == EOPNOTSUPP) &&
+            fstatat(save->parent_fd, save->entry, &stage_st, AT_SYMLINK_NOFOLLOW) == 0 &&
+            S_ISDIR(stage_st.st_mode))
+          chmod_ok = fchmodat(save->parent_fd, save->entry, 0700, 0) == 0;
+        if (chmod_ok)
+          save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
+      }
       if (save->stage_fd < 0 || House_secure_stage(save->stage_fd) < 0)
         return -1;
       fd = openat(save->stage_fd, "contents", O_WRONLY | O_CREAT | O_EXCL | O_CLOEXEC, 0600);
@@ -676,6 +687,16 @@ failed:
   return NULL;
 }
 
+/* EINVAL, EROFS and ENOTSUP mean this filesystem cannot sync the descriptor,
+ * so there is nothing more to do; real I/O errors still fail and retry. */
+static int House_fsync_fd(int fd)
+{
+  if (fsync(fd) < 0 && errno != EINVAL && errno != EROFS &&
+      errno != ENOTSUP && errno != EOPNOTSUPP)
+    return -1;
+  return 0;
+}
+
 static int House_install_save(struct house_save *save)
 {
   if (renameat(save->stage_fd, save->scratch, save->parent_fd, save->leaf) < 0)
@@ -683,21 +704,26 @@ static int House_install_save(struct house_save *save)
   save->scratch = NULL;
   House_remove_stage(save);
   /* The file data is synced. The new directory entry must be durable too. */
-  return fsync(save->parent_fd) == 0;
+  return House_fsync_fd(save->parent_fd) == 0;
 }
 
 /* The pid in a stage name House_create_scratch() made, ".tba-house-<pid>-<n>",
  * or 0 if the name is not one of those. */
-static long House_stage_pid(const char *name)
+static pid_t House_stage_pid(const char *name)
 {
   static const char prefix[] = ".tba-house-";
   const char *p = name + sizeof(prefix) - 1;
   char *end;
-  long pid;
+  long raw;
+  pid_t pid;
 
   if (strncmp(name, prefix, sizeof(prefix) - 1) || !isdigit((unsigned char)*p))
     return 0;
-  pid = strtol(p, &end, 10);
+  errno = 0;
+  raw = strtol(p, &end, 10);
+  pid = (pid_t)raw;
+  if (errno == ERANGE || raw <= 0 || (long)pid != raw || pid <= 0)
+    return 0;
   if (*end != '-' || !isdigit((unsigned char)end[1]))
     return 0;
   for (p = end + 1; isdigit((unsigned char)*p); p++)
@@ -718,7 +744,7 @@ static void House_remove_stale_saves(void)
   DIR *dir;
   struct dirent *entry;
   struct stat st;
-  long pid;
+  pid_t pid;
   int dir_fd, stage_fd;
 
   if (!(dir = opendir(LIB_HOUSE))) {
@@ -730,7 +756,7 @@ static void House_remove_stale_saves(void)
   while ((entry = readdir(dir)) != NULL) {
     if (!(pid = House_stage_pid(entry->d_name)))
       continue;
-    if (pid != (long)getpid() && (kill((pid_t)pid, 0) == 0 || errno == EPERM))
+    if (pid != getpid() && (kill(pid, 0) == 0 || errno == EPERM))
       continue;
     if (fstatat(dir_fd, entry->d_name, &st, AT_SYMLINK_NOFOLLOW) < 0)
       continue;
@@ -767,7 +793,7 @@ static int House_sync(FILE *fp)
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
   return _commit(_fileno(fp));
 #else
-  return fsync(fileno(fp));
+  return House_fsync_fd(fileno(fp));
 #endif
 }
 

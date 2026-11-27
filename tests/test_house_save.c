@@ -30,7 +30,7 @@ static int fail_record, crash_record;
 /* Fail only the sync of the installed file's parent. File syncs and other
  * directories still use the filesystem normally. */
 static struct stat watched_parent;
-static int watch_sync, fail_parent_sync, parent_syncs;
+static int watch_sync, fail_parent_sync, parent_sync_errno, parent_syncs;
 int __real_fsync(int fd);
 static int watch_create, saw_private_create;
 int __real_openat(int dirfd, const char *name, int flags, ...);
@@ -72,7 +72,7 @@ int __wrap_fsync(int fd)
       st.st_ino == watched_parent.st_ino) {
     ++parent_syncs;
     if (fail_parent_sync) {
-      errno = EIO;
+      errno = parent_sync_errno ? parent_sync_errno : EIO;
       return -1;
     }
   }
@@ -124,8 +124,9 @@ void setUp(void)
 
 void tearDown(void)
 {
+  char running[64];
 #ifdef HOUSE_TEST_WRAP_IO
-  watch_sync = fail_parent_sync = parent_syncs = 0;
+  watch_sync = fail_parent_sync = parent_sync_errno = parent_syncs = 0;
   watch_create = saw_private_create = deny_chown = 0;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
@@ -140,7 +141,11 @@ void tearDown(void)
   remove(ELSEWHERE_FILE);
   remove(ELSEWHERE_FILE ".tmp");
   remove("bystander");
+  snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
+  remove(running);
   remove(LIB_HOUSE ".tba-house-notes");
+  remove(LIB_HOUSE ".tba-house-4294967296-0");
+  remove(LIB_HOUSE ".tba-house-99999999999999999999-0");
 #if defined(__linux__)
   removexattr("house", "system.posix_acl_default");
   remove(LIB_HOUSE "reference");
@@ -413,12 +418,15 @@ static void test_boot_removes_saves_a_crash_left_unfinished(void)
   snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
   write_file(running, "a running game's save");
   write_file(LIB_HOUSE ".tba-house-notes", "operator's copy");
+  write_file(LIB_HOUSE ".tba-house-4294967296-0", "out-of-range pid 1");
+  write_file(LIB_HOUSE ".tba-house-99999999999999999999-0", "out-of-range pid 2");
   House_boot();
-  TEST_ASSERT_EQUAL_INT(2, count_stages());
+  TEST_ASSERT_EQUAL_INT(4, count_stages());
   assert_file(running, "a running game's save");
   assert_file(LIB_HOUSE ".tba-house-notes", "operator's copy");
+  assert_file(LIB_HOUSE ".tba-house-4294967296-0", "out-of-range pid 1");
+  assert_file(LIB_HOUSE ".tba-house-99999999999999999999-0", "out-of-range pid 2");
   assert_file(HOUSE_FILE, "old contents");
-  TEST_ASSERT_EQUAL_INT(0, remove(running));
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
@@ -464,6 +472,18 @@ static void test_parent_sync_failure_keeps_house_queued_until_retry(void)
   item.name = "second update";
   House_save_all();
   assert_file(ELSEWHERE_FILE, "second update");
+  TEST_ASSERT_TRUE(parent_syncs > 0);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+
+  /* EINVAL means the filesystem does not support directory fsync; do not
+   * leave the house queued in an endless retry loop. */
+  fail_parent_sync = 1;
+  parent_sync_errno = EINVAL;
+  parent_syncs = 0;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  item.name = "third update";
+  House_save_all();
+  assert_file(ELSEWHERE_FILE, "third update");
   TEST_ASSERT_TRUE(parent_syncs > 0);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
 }
@@ -609,7 +629,9 @@ int main(void)
 #ifdef HOUSE_TEST_WRAP_IO
   RUN_TEST(test_replacement_starts_private_before_permissions_are_copied);
   RUN_TEST(test_parent_sync_failure_keeps_house_queued_until_retry);
+#if defined(__linux__)
   RUN_TEST(test_group_restore_denied_preserves_named_acl_access);
+#endif
 #endif
 #if defined(__linux__)
   RUN_TEST(test_linux_acl_preserved_and_inherited_default_acl_cleared);

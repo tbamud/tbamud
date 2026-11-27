@@ -188,7 +188,8 @@ static void House_discard_save(struct house_save *save)
   save->existing = FALSE;
 }
 
-static DWORD House_win_create_stage(struct house_save *save, PSECURITY_DESCRIPTOR security)
+static DWORD House_win_create_stage(struct house_save *save, PSECURITY_DESCRIPTOR security,
+                                    int need_write_dac)
 {
   static LONG sequence;
   wchar_t *name, *leaf = wcsrchr(save->dest, L'\\');
@@ -208,7 +209,7 @@ static DWORD House_win_create_stage(struct house_save *save, PSECURITY_DESCRIPTO
              (unsigned long)GetCurrentProcessId(), (unsigned long)InterlockedIncrement(&sequence));
     if (!_wcsicmp(name + prefix, leaf + 1))
       continue;
-    file = CreateFileW(name, GENERIC_WRITE | DELETE | (security ? WRITE_DAC : 0),
+    file = CreateFileW(name, GENERIC_WRITE | DELETE | (need_write_dac ? WRITE_DAC : 0),
                        0, &attrs, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
     if (file != INVALID_HANDLE_VALUE) {
       save->stage = file;
@@ -229,28 +230,35 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
   SECURITY_DESCRIPTOR_CONTROL control = 0;
   DWORD revision, error;
   HANDLE stream;
-  int fd;
+  int fd, restore_dacl_flags = 0;
   FILE *fp;
   FILE_DISPOSITION_INFO discard_on_close = { TRUE };
   save->dest = malloc(HOUSE_WIN_PATH * sizeof(*save->dest));
   if (!save->dest)
     return NULL;
   error = House_win_destination(filename, save, &security);
-  /* Protect the DACL during creation so no rule from the parent directory
-   * can grant access to the staged contents. Restore inheritance if needed
-   * before passing the stream to the record writer. */
-  if (!error && security &&
-      (!GetSecurityDescriptorControl(security, &control, &revision) ||
-       !SetSecurityDescriptorControl(security, SE_DACL_PROTECTED, SE_DACL_PROTECTED)))
-    error = GetLastError();
+  /* Protect an inherited DACL during creation so no rule from the parent
+   * directory can grant access to the staged contents, then restore its
+   * inheritance flags afterward.  An already-protected DACL needs neither
+   * WRITE_DAC nor a second security write. */
+  if (!error && security) {
+    if (!GetSecurityDescriptorControl(security, &control, &revision)) {
+      error = GetLastError();
+    } else if (!(control & SE_DACL_PROTECTED)) {
+      if (!SetSecurityDescriptorControl(security, SE_DACL_PROTECTED, SE_DACL_PROTECTED))
+        error = GetLastError();
+      else
+        restore_dacl_flags = 1;
+    }
+  }
   if (!error)
-    error = House_win_create_stage(save, security);
+    error = House_win_create_stage(save, security, restore_dacl_flags);
   if (!error && !SetFileInformationByHandle(save->stage, FileDispositionInfo, &discard_on_close,
                                              sizeof(discard_on_close)))
     error = GetLastError();
-  if (!error && security) {
+  if (!error && restore_dacl_flags) {
     SECURITY_DESCRIPTOR_CONTROL mask = SE_DACL_PROTECTED | SE_DACL_AUTO_INHERIT_REQ;
-    SECURITY_DESCRIPTOR_CONTROL flags = control & SE_DACL_PROTECTED;
+    SECURITY_DESCRIPTOR_CONTROL flags = 0;
     if (control & SE_DACL_AUTO_INHERITED)
       flags |= SE_DACL_AUTO_INHERIT_REQ;
     if (!SetSecurityDescriptorControl(security, mask, flags) ||
