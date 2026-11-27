@@ -367,22 +367,19 @@ void die(struct char_data *ch, struct char_data *killer)
 static void perform_group_gain(struct char_data *ch, int base,
 			     struct char_data *victim)
 {
-  int share, hap_share;
+  int share, award;
 
   share = MIN(CONFIG_MAX_EXP_GAIN, MAX(1, base));
+  award = apply_happy_hour_exp_bonus(share);
+  award = MIN(CONFIG_MAX_EXP_GAIN, award);
 
-  if ((IS_HAPPYHOUR) && (IS_HAPPYEXP))
-  {
-    /* This only reports the correct amount - the calc is done in gain_exp */
-    hap_share = share + (int)((float)share * ((float)HAPPY_EXP / (float)(100)));
-    share = MIN(CONFIG_MAX_EXP_GAIN, MAX(1, hap_share));
-  }
-  if (share > 1)
-    send_to_char(ch, "You receive your share of experience -- %d points.\r\n", share);
+  if (award > 1)
+    send_to_char(ch, "You receive your share of experience -- %d points.\r\n", award);
   else
     send_to_char(ch, "You receive your share of experience -- one measly little point!\r\n");
 
-  gain_exp(ch, share);
+  /* gain_exp applies the bonus for player characters. */
+  gain_exp(ch, IS_NPC(ch) ? award : share);
   change_alignment(ch, victim);
 }
 
@@ -414,7 +411,7 @@ static void group_gain(struct char_data *ch, struct char_data *victim)
 
 static void solo_gain(struct char_data *ch, struct char_data *victim)
 {
-  int exp, happy_exp;
+  int exp, award;
 
   exp = MIN(CONFIG_MAX_EXP_GAIN, GET_EXP(victim) / 3);
 
@@ -426,17 +423,16 @@ static void solo_gain(struct char_data *ch, struct char_data *victim)
 
   exp = MAX(exp, 1);
 
-  if (IS_HAPPYHOUR && IS_HAPPYEXP) {
-    happy_exp = exp + (int)((float)exp * ((float)HAPPY_EXP / (float)(100)));
-    exp = MAX(happy_exp, 1);
-  }
+  award = apply_happy_hour_exp_bonus(exp);
+  if (!IS_NPC(ch))
+    award = MIN(CONFIG_MAX_EXP_GAIN, award);
 
-  if (exp > 1)
-    send_to_char(ch, "You receive %d experience points.\r\n", exp);
+  if (award > 1)
+    send_to_char(ch, "You receive %d experience points.\r\n", award);
   else
     send_to_char(ch, "You receive one lousy experience point.\r\n");
 
-  gain_exp(ch, exp);
+  gain_exp(ch, IS_NPC(ch) ? award : exp);
   change_alignment(ch, victim);
 }
 

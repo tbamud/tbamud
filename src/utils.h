@@ -151,6 +151,7 @@ int	mana_gain(struct char_data *ch);
 int	hit_gain(struct char_data *ch);
 int	move_gain(struct char_data *ch);
 void	set_title(struct char_data *ch, char *title);
+int	apply_happy_hour_exp_bonus(int gain);
 void	gain_exp(struct char_data *ch, int gain);
 void	gain_exp_regardless(struct char_data *ch, int gain);
 void	gain_condition(struct char_data *ch, int condition, int value);
