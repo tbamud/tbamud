@@ -215,6 +215,7 @@ void tearDown(void)
   remove(ELSEWHERE_FILE);
   remove(ELSEWHERE_FILE ".tmp");
   remove("bystander");
+  remove("snapshot-guard");
   snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
   remove(running);
   remove(LIB_HOUSE STAGE_PREFIX "notes");
@@ -593,56 +594,94 @@ static int count_unlocked_stages(void)
   return count;
 }
 
-static void test_multiply_linked_lock_leaves_sibling_permissions_alone(void)
+/* A second name for the guard -- a cp -al snapshot of lib/, say -- leaves the
+ * lock working.  Its permissions are left alone until it is the only name. */
+static void test_a_second_link_to_the_guard_keeps_the_lock(void)
 {
-  const mode_t modes[] = {0640, 0000};
-  struct stat before, after;
-  TEST_ASSERT_FALSE(exists(LOCK_PATH));
-  write_file("bystander", "operator's copy");
-  TEST_ASSERT_EQUAL_INT(0, link("bystander", LOCK_PATH));
-  TEST_ASSERT_EQUAL_INT(0, stat("bystander", &before));
-  observe_stage = TRUE;
-
-  for (size_t i = 0; i < sizeof(modes) / sizeof(modes[0]); ++i) {
-    TEST_ASSERT_EQUAL_INT(0, chmod("bystander", modes[i]));
-    unlocked_during_record = -1;
-    House_boot();
-    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
-    House_crashsave(3000);
-    assert_file(HOUSE_FILE, item.name);
-    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-    TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
-    TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
-    TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_PATH, &after));
-    TEST_ASSERT_TRUE(after.st_dev == before.st_dev && after.st_ino == before.st_ino);
-    TEST_ASSERT_EQUAL_UINT(modes[i], after.st_mode & 0777);
-  }
-  TEST_ASSERT_EQUAL_INT(0, chmod("bystander", 0600));
-  assert_file("bystander", "operator's copy");
-  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_PATH));
-}
-
-#if defined(__linux__) || (defined(__FreeBSD__) && defined(O_PATH) && defined(AT_EMPTY_PATH) && defined(O_EMPTY_PATH))
-static void test_boot_repairs_an_inaccessible_legacy_lock_and_sweeps_its_stage(void)
-{
-  struct stat before, after;
-  write_file(LOCK_PATH, "legacy guard");
+  struct stat st;
   write_file(HOUSE_FILE, "old contents");
-  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &before));
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, link(LOCK_GUARD, "snapshot-guard"));
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0640));
   crash_in_the_middle_of_a_save();
   TEST_ASSERT_EQUAL_INT(1, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0000));
+  TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
 
   House_boot();
-
-  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &after));
-  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
-  TEST_ASSERT_EQUAL_UINT(0600, after.st_mode & 0777);
   TEST_ASSERT_EQUAL_INT(0, count_stages());
-  assert_file(LOCK_PATH, "legacy guard");
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
+  TEST_ASSERT_EQUAL_UINT(2, st.st_nlink);
+  TEST_ASSERT_EQUAL_UINT(0640, st.st_mode & 0777);
+
+  TEST_ASSERT_EQUAL_INT(0, unlink("snapshot-guard"));
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
+  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
   assert_file(HOUSE_FILE, "old contents");
 }
-#endif
+
+/* Publication always includes the guard, so a lock directory without one was
+ * emptied afterwards.  It is replaced instead of switching the lock off. */
+static void test_an_emptied_lock_directory_is_replaced(void)
+{
+  struct stat st;
+  write_file(HOUSE_FILE, "old contents");
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_GUARD));
+  crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(1, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &st));
+  TEST_ASSERT_TRUE(S_ISREG(st.st_mode));
+  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
+  assert_file(HOUSE_FILE, "old contents");
+}
+
+/* Anything else at the lock's name is not the game's: saves go ahead
+ * unlocked, and it stays as it was. */
+static void test_a_file_at_the_lock_name_is_left_alone(void)
+{
+  struct stat before, after;
+  write_file(LOCK_PATH, "operator's file");
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0644));
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &before));
+  write_file(HOUSE_FILE, "old contents");
+  observe_stage = TRUE;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &after));
+  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+  TEST_ASSERT_EQUAL_UINT(0644, after.st_mode & 0777);
+  assert_file(LOCK_PATH, "operator's file");
+}
+
+/* A crash while the lock was first being set up leaves the directory it was
+ * filling, with or without its guard.  Boot removes it once the lock exists. */
+static void test_boot_removes_an_unfinished_lock_setup(void)
+{
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LIB_HOUSE LOCK_NAME ".init-4242-0", 0700));
+  write_file(LIB_HOUSE LOCK_NAME ".init-4242-0/guard", "");
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LIB_HOUSE LOCK_NAME ".init-4242-1", 0000));
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LIB_HOUSE LOCK_NAME ".init-notes", 0700));
+  write_file(LIB_HOUSE LOCK_NAME ".init-4242-2", "operator's copy");
+
+  House_boot();
+  TEST_ASSERT_TRUE(exists(LOCK_GUARD));
+  TEST_ASSERT_FALSE(exists(LIB_HOUSE LOCK_NAME ".init-4242-0"));
+  TEST_ASSERT_FALSE(exists(LIB_HOUSE LOCK_NAME ".init-4242-1"));
+  TEST_ASSERT_TRUE(exists(LIB_HOUSE LOCK_NAME ".init-notes"));
+  assert_file(LIB_HOUSE LOCK_NAME ".init-4242-2", "operator's copy");
+  TEST_ASSERT_EQUAL_INT(0, rmdir(LIB_HOUSE LOCK_NAME ".init-notes"));
+  TEST_ASSERT_EQUAL_INT(0, unlink(LIB_HOUSE LOCK_NAME ".init-4242-2"));
+}
 
 #ifdef HOUSE_TEST_WRAP_IO
 static void test_lock_is_secured_before_publication_and_retries_after_failure(void)
@@ -717,13 +756,6 @@ static void test_a_held_lock_does_not_stop_a_save(void)
   check_save_with_exclusively_held_lock(LOCK_GUARD);
 }
 
-static void test_held_legacy_lock_preserves_its_inode_and_uses_unlocked_stage(void)
-{
-  write_file(LOCK_PATH, "legacy guard");
-  check_save_with_exclusively_held_lock(LOCK_PATH);
-  assert_file(LOCK_PATH, "legacy guard");
-}
-
 /* Other accounts cannot open the lock to hold it.  A lock created under a
  * restrictive umask or previously left non-0600 (0644 or 0400) goes back to
  * 0600 at the next save, even while it is held. */
@@ -759,21 +791,19 @@ static void test_the_lock_file_is_private(void)
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 }
 
-/* A lock file the game can only read -- one root left behind -- still lets
- * boot clear a crashed save. */
+/* A guard the game can only read -- as when another account made it -- still
+ * lets boot clear a crashed save.  Our own goes back to 0600 on the way. */
 static void test_boot_sweeps_with_a_lock_file_it_can_only_read(void)
 {
-  int stages;
-  /* Older versions kept the guard directly at the public name. */
-  write_file(LOCK_PATH, "");
+  struct stat st;
   write_file(HOUSE_FILE, "old contents");
   crash_in_the_middle_of_a_save();
   TEST_ASSERT_EQUAL_INT(1, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0400));
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0400));
   House_boot();
-  stages = count_stages();
-  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0600));
-  TEST_ASSERT_EQUAL_INT(0, stages);
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
+  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
   assert_file(HOUSE_FILE, "old contents");
 }
 
@@ -1095,12 +1125,11 @@ int main(void)
   RUN_TEST(test_boot_defers_cleanup_while_a_save_is_active);
   RUN_TEST(test_boot_keeps_noncanonical_stage_names);
   RUN_TEST(test_a_held_lock_does_not_stop_a_save);
-  RUN_TEST(test_held_legacy_lock_preserves_its_inode_and_uses_unlocked_stage);
   RUN_TEST(test_the_lock_file_is_private);
-  RUN_TEST(test_multiply_linked_lock_leaves_sibling_permissions_alone);
-#if defined(__linux__) || (defined(__FreeBSD__) && defined(O_PATH) && defined(AT_EMPTY_PATH) && defined(O_EMPTY_PATH))
-  RUN_TEST(test_boot_repairs_an_inaccessible_legacy_lock_and_sweeps_its_stage);
-#endif
+  RUN_TEST(test_a_second_link_to_the_guard_keeps_the_lock);
+  RUN_TEST(test_an_emptied_lock_directory_is_replaced);
+  RUN_TEST(test_a_file_at_the_lock_name_is_left_alone);
+  RUN_TEST(test_boot_removes_an_unfinished_lock_setup);
   RUN_TEST(test_boot_sweeps_with_a_lock_file_it_can_only_read);
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
