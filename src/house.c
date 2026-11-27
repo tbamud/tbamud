@@ -174,15 +174,69 @@ static void House_restore_weight(struct obj_data *obj)
 
 #if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
 #if defined(__linux__)
-static int House_copy_access_acl(const char *filename, int fd)
+/* Linux stores system.posix_acl_access as a little-endian v2 header followed
+ * by 8-byte (e_tag, e_perm, e_id) entries.  When an extended ACL has an
+ * ACL_MASK entry (0x10), st_mode's group bits map to ACL_MASK rather than
+ * ACL_GROUP_OBJ (0x04), so clamping the owning group via fchmod() would
+ * instead lower ACL_MASK and strip access from named ACL_USER/ACL_GROUP
+ * entries.  Clamp ACL_GROUP_OBJ in place before fsetxattr() and report
+ * whether ACL_MASK is present so the caller knows not to overwrite it. */
+static int House_clamp_posix_acl_group(unsigned char *acl, size_t length, int clamp_group)
+{
+  size_t count, i;
+  unsigned char *group_entry = NULL;
+  unsigned int other_perm = 0;
+  int has_mask = 0, has_other = 0;
+  unsigned long version;
+
+  if (length < 4 || (length - 4) % 8 != 0)
+    return 0;
+
+  version = (unsigned long)acl[0] |
+            ((unsigned long)acl[1] << 8) |
+            ((unsigned long)acl[2] << 16) |
+            ((unsigned long)acl[3] << 24);
+  if (version != 2)
+    return 0;
+
+  count = (length - 4) / 8;
+  for (i = 0; i < count; i++) {
+    unsigned char *entry = acl + 4 + i * 8;
+    unsigned int tag = (unsigned int)entry[0] | ((unsigned int)entry[1] << 8);
+    unsigned int perm = (unsigned int)entry[2] | ((unsigned int)entry[3] << 8);
+
+    if (tag == 0x04) /* ACL_GROUP_OBJ */
+      group_entry = entry;
+    else if (tag == 0x10) /* ACL_MASK */
+      has_mask = 1;
+    else if (tag == 0x20) { /* ACL_OTHER */
+      other_perm = perm;
+      has_other = 1;
+    }
+  }
+
+  if (clamp_group && group_entry && has_other) {
+    unsigned int gperm = (unsigned int)group_entry[2] | ((unsigned int)group_entry[3] << 8);
+    gperm &= other_perm;
+    group_entry[2] = (unsigned char)(gperm & 0xff);
+    group_entry[3] = (unsigned char)((gperm >> 8) & 0xff);
+  }
+
+  return has_mask;
+}
+
+/* Copy filename's POSIX access ACL onto fd.  Returns 1 if an extended ACL
+ * (with ACL_MASK, which already sets fd's 0777 mode bits) was installed, 0 if
+ * the caller should still apply mode via fchmod(), and -1 on error. */
+static int House_copy_access_acl(const char *filename, int fd, int clamp_group)
 {
   static const char name[] = "system.posix_acl_access";
   ssize_t length = getxattr(filename, name, NULL, 0);
-  void *acl;
-  int result, saved_errno;
+  unsigned char *acl;
+  int has_mask = 0, result, saved_errno;
 
-  if (length < 0) {
-    if (errno != ENODATA && errno != ENOTSUP)
+  if (length <= 0) {
+    if (length < 0 && errno != ENODATA && errno != ENOTSUP)
       return -1;
     /* The scratch file may have inherited named entries from its parent. */
     if (fremovexattr(fd, name) < 0 && errno != ENODATA && errno != ENOTSUP)
@@ -193,7 +247,12 @@ static int House_copy_access_acl(const char *filename, int fd)
   if (!(acl = malloc((size_t)length)))
     return -1;
   length = getxattr(filename, name, acl, (size_t)length);
-  result = length < 0 ? -1 : fsetxattr(fd, name, acl, (size_t)length, 0);
+  if (length <= 0) {
+    result = length < 0 ? -1 : 0;
+  } else {
+    has_mask = House_clamp_posix_acl_group(acl, (size_t)length, clamp_group);
+    result = fsetxattr(fd, name, acl, (size_t)length, 0) < 0 ? -1 : has_mask;
+  }
   saved_errno = errno;
   free(acl);
   errno = saved_errno;
@@ -256,9 +315,14 @@ static int House_copy_permissions(const char *filename, int fd)
   if (fstat(fd, &scratch) < 0)
     return -1;
   if (scratch.st_uid != old.st_uid || scratch.st_gid != old.st_gid) {
-    if (fchown(fd, old.st_uid, old.st_gid) < 0 && scratch.st_gid != old.st_gid &&
-        fchown(fd, (uid_t)-1, old.st_gid) < 0 && errno != EPERM)
-      return -1;
+    if (fchown(fd, old.st_uid, old.st_gid) < 0) {
+      if (errno != EPERM && errno != EINVAL)
+        return -1;
+      if (scratch.st_uid != old.st_uid && scratch.st_gid != old.st_gid &&
+          fchown(fd, (uid_t)-1, old.st_gid) < 0 &&
+          errno != EPERM && errno != EINVAL)
+        return -1;
+    }
     if (fstat(fd, &scratch) < 0)
       return -1;
   }
@@ -277,10 +341,120 @@ static int House_copy_permissions(const char *filename, int fd)
       return House_copy_darwin_permissions(filename, fd, mode);
   }
 #elif defined(__linux__)
-  if (House_copy_access_acl(filename, fd) < 0)
-    return -1;
+  {
+    int acl_result = House_copy_access_acl(filename, fd, scratch.st_gid != old.st_gid);
+    if (acl_result < 0)
+      return -1;
+    if (acl_result > 0)
+      return 0;
+  }
 #endif
   return fchmod(fd, mode);
+}
+
+/* Resolve a symlinked house path to the destination where fopen() would write.
+ * Returns 1 with resolved populated if path is a symlink, 0 if path is absent
+ * or not a symlink, and -1 (with errno set) if a symlink cannot be resolved --
+ * so a dangling or unreadable link is never silently replaced by a plain file. */
+static int House_resolve_symlink(const char *path, char resolved[PATH_MAX])
+{
+  char cur[PATH_MAX], linkbuf[PATH_MAX], next[PATH_MAX];
+  struct stat st;
+  int hops = 0;
+
+  if (lstat(path, &st) < 0)
+    return errno == ENOENT ? 0 : -1;
+  if (!S_ISLNK(st.st_mode))
+    return 0;
+
+  /* Fast path: target already exists. */
+  if (realpath(path, resolved))
+    return 1;
+  if (errno != ENOENT)
+    return -1;
+
+  /* Dangling symlink: follow the link chain until a non-existent path is
+   * reached, then canonicalize its existing parent directory and append the
+   * final component (matching fopen("wb"), which creates the target there). */
+  if (strlen(path) >= sizeof(cur)) {
+    errno = ENAMETOOLONG;
+    return -1;
+  }
+  strlcpy(cur, path, sizeof(cur));
+
+  for (;;) {
+    ssize_t n;
+    const char *slash;
+
+    if (lstat(cur, &st) < 0) {
+      if (errno != ENOENT)
+        return -1;
+      break;
+    }
+    if (!S_ISLNK(st.st_mode)) {
+      if (!realpath(cur, resolved))
+        return -1;
+      return 1;
+    }
+    if (++hops > 40) {
+      errno = ELOOP;
+      return -1;
+    }
+    n = readlink(cur, linkbuf, sizeof(linkbuf));
+    if (n < 0)
+      return -1;
+    if ((size_t)n >= sizeof(linkbuf)) {
+      errno = ENAMETOOLONG;
+      return -1;
+    }
+    linkbuf[n] = '\0';
+    if (linkbuf[0] == '/') {
+      strlcpy(next, linkbuf, sizeof(next));
+    } else if ((slash = strrchr(cur, '/')) != NULL) {
+      size_t dirlen = (size_t)(slash - cur) + 1;
+      int len = snprintf(next, sizeof(next), "%.*s%s", (int)dirlen, cur, linkbuf);
+      if (len < 0 || (size_t)len >= sizeof(next)) {
+        errno = ENAMETOOLONG;
+        return -1;
+      }
+    } else {
+      strlcpy(next, linkbuf, sizeof(next));
+    }
+    strlcpy(cur, next, sizeof(cur));
+  }
+
+  {
+    const char *slash = strrchr(cur, '/');
+    const char *base;
+    int len;
+
+    if (slash) {
+      size_t dirlen = slash == cur ? 1 : (size_t)(slash - cur);
+      if (dirlen >= sizeof(linkbuf)) {
+        errno = ENAMETOOLONG;
+        return -1;
+      }
+      memcpy(linkbuf, cur, dirlen);
+      linkbuf[dirlen] = '\0';
+      base = slash + 1;
+    } else {
+      strlcpy(linkbuf, ".", sizeof(linkbuf));
+      base = cur;
+    }
+    if (!*base || !strcmp(base, ".") || !strcmp(base, "..")) {
+      errno = EISDIR;
+      return -1;
+    }
+    if (!realpath(linkbuf, next))
+      return -1;
+    len = snprintf(resolved, PATH_MAX, "%s%s%s",
+                   next, strcmp(next, "/") == 0 ? "" : "/", base);
+    if (len < 0 || (size_t)len >= PATH_MAX) {
+      errno = ENAMETOOLONG;
+      return -1;
+    }
+  }
+  return 1;
 }
 #endif
 
@@ -352,7 +526,7 @@ void House_crashsave(room_vnum vnum)
   FILE *fp;
 #if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
   char target[PATH_MAX];
-  struct stat st;
+  int resolved;
 #endif
 
   if ((rnum = real_room(vnum)) == NOWHERE)
@@ -373,7 +547,12 @@ void House_crashsave(room_vnum vnum)
   /* fopen() wrote a symlinked house file where the link pointed.  Save it
    * there, beside its target, rather than put a plain file in the link's
    * place and leave the target behind. */
-  if (lstat(filename, &st) == 0 && S_ISLNK(st.st_mode) && realpath(filename, target))
+  resolved = House_resolve_symlink(filename, target);
+  if (resolved < 0) {
+    log("SYSERR: Unable to resolve house file %s: %s", filename, strerror(errno));
+    return;
+  }
+  if (resolved > 0)
     dest = target;
 #endif
   if (!(fp = House_open_temp(dest, tempfile, sizeof(tempfile)))) {
@@ -384,12 +563,18 @@ void House_crashsave(room_vnum vnum)
   result = House_save(world[rnum].contents, fp, 0);
   House_restore_weight(world[rnum].contents);
 
-  if (fflush(fp) == EOF || ferror(fp) || (result && House_sync(fp) < 0)) {
-    log("SYSERR: Error finalizing house file %s.", tempfile);
+  if (fflush(fp) == EOF) {
+    log("SYSERR: Error flushing house file %s: %s", tempfile, strerror(errno));
+    result = FALSE;
+  } else if (ferror(fp)) {
+    log("SYSERR: Error writing house file %s.", tempfile);
+    result = FALSE;
+  } else if (result && House_sync(fp) < 0) {
+    log("SYSERR: Error syncing house file %s: %s", tempfile, strerror(errno));
     result = FALSE;
   }
   if (fclose(fp) == EOF) {
-    log("SYSERR: Error closing house file %s.", tempfile);
+    log("SYSERR: Error closing house file %s: %s", tempfile, strerror(errno));
     result = FALSE;
   }
 
@@ -419,6 +604,18 @@ static void House_delete_file(room_vnum vnum)
   /* A save that crashed part-way left its scratch file beside this one. */
   snprintf(tmpname, sizeof(tmpname), "%s.tmp", filename);
   remove(tmpname);
+#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
+  /* A symlinked house saved beside its target, so remove any scratch there too. */
+  {
+    char target[PATH_MAX], target_tmp[PATH_MAX + sizeof(".tmp")];
+    int len;
+    if (House_resolve_symlink(filename, target) > 0) {
+      len = snprintf(target_tmp, sizeof(target_tmp), "%s.tmp", target);
+      if (len >= 0 && (size_t)len < sizeof(target_tmp))
+        remove(target_tmp);
+    }
+  }
+#endif
 
   /* CONVERSION code starts here -- see comment below. */
   /* A converted house left its binary original beside the new file.  With

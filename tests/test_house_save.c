@@ -11,6 +11,9 @@
 #include "house.h"
 
 #include <sys/stat.h>
+#if defined(__linux__)
+#include <sys/xattr.h>
+#endif
 
 #define HOUSE_FILE LIB_HOUSE "3000.house"
 #define ELSEWHERE_FILE "elsewhere/3000.house"
@@ -152,21 +155,35 @@ static void test_existing_house_keeps_its_permissions(void)
  * back -- a group it is not in -- takes root to set up, so it is not here. */
 static void test_existing_house_keeps_a_group_the_game_is_in(void)
 {
-  gid_t groups[64];
-  int count = getgroups(64, groups), i;
-  struct stat st;
+  gid_t *groups = NULL, chosen;
+  int count = getgroups(0, NULL), i;
+  struct stat dir_st, st;
 
-  for (i = 0; i < count && groups[i] == getegid(); i++)
+  TEST_ASSERT_TRUE(count >= 0);
+  TEST_ASSERT_EQUAL_INT(0, stat("house", &dir_st));
+  if (count > 0) {
+    groups = malloc((size_t)count * sizeof(*groups));
+    TEST_ASSERT_NOT_NULL(groups);
+    count = getgroups(count, groups);
+    TEST_ASSERT_TRUE(count >= 0);
+  }
+  /* Pick a group that differs from both our effective GID and house/'s GID,
+   * so BSD/macOS or setgid directory inheritance cannot satisfy it by chance. */
+  for (i = 0; i < count && (groups[i] == getegid() || groups[i] == dir_st.st_gid); i++)
     ;
-  if (i >= count)
-    TEST_IGNORE_MESSAGE("this user is in no group but its own");
+  if (i >= count) {
+    free(groups);
+    TEST_IGNORE_MESSAGE("this user has no alternate group distinct from house/");
+  }
+  chosen = groups[i];
+  free(groups);
   write_file(HOUSE_FILE, "old contents");
-  TEST_ASSERT_EQUAL_INT(0, chown(HOUSE_FILE, (uid_t)-1, groups[i]));
+  TEST_ASSERT_EQUAL_INT(0, chown(HOUSE_FILE, (uid_t)-1, chosen));
   TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0640));
   House_crashsave(3000);
   assert_file(HOUSE_FILE, item.name);
   TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &st));
-  TEST_ASSERT_EQUAL_UINT(groups[i], st.st_gid);
+  TEST_ASSERT_EQUAL_UINT(chosen, st.st_gid);
   TEST_ASSERT_EQUAL_UINT(0640, st.st_mode & 0777);
 }
 
@@ -218,6 +235,34 @@ static void test_symlinked_house_file_is_saved_where_it_points(void)
   TEST_ASSERT_FALSE(exists(ELSEWHERE_FILE ".tmp"));
 }
 
+static void test_dangling_symlink_house_file_creates_its_target(void)
+{
+  struct stat st;
+  TEST_ASSERT_EQUAL_INT(0, symlink("../" ELSEWHERE_FILE, HOUSE_FILE));
+  House_crashsave(3000);
+  TEST_ASSERT_EQUAL_INT(0, lstat(HOUSE_FILE, &st));
+  TEST_ASSERT_TRUE(S_ISLNK(st.st_mode));
+  assert_file(ELSEWHERE_FILE, item.name);
+  TEST_ASSERT_FALSE(exists(HOUSE_FILE ".tmp"));
+  TEST_ASSERT_FALSE(exists(ELSEWHERE_FILE ".tmp"));
+}
+
+static void test_broken_symlink_house_file_is_not_replaced(void)
+{
+  const char *targets[] = {"../missing/3000.house", "3000.house"};
+  struct stat st;
+  for (size_t i = 0; i < sizeof(targets) / sizeof(targets[0]); ++i) {
+    remove(HOUSE_FILE);
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    TEST_ASSERT_EQUAL_INT(0, symlink(targets[i], HOUSE_FILE));
+    House_crashsave(3000);
+    TEST_ASSERT_EQUAL_INT(0, lstat(HOUSE_FILE, &st));
+    TEST_ASSERT_TRUE(S_ISLNK(st.st_mode));
+    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_FALSE(exists(HOUSE_FILE ".tmp"));
+  }
+}
+
 static void test_destroying_a_house_removes_its_stale_scratch_file(void)
 {
   char build[] = "build 3000 north owner", destroy[] = "destroy 3000";
@@ -227,6 +272,60 @@ static void test_destroying_a_house_removes_its_stale_scratch_file(void)
   TEST_ASSERT_FALSE(exists(HOUSE_FILE));
   TEST_ASSERT_FALSE(exists(HOUSE_FILE ".tmp"));
 }
+
+static void test_destroying_a_symlinked_house_removes_targets_stale_scratch_file(void)
+{
+  char build[] = "build 3000 north owner", destroy[] = "destroy 3000";
+  do_hcontrol(NULL, build, 0, 0);
+  remove(HOUSE_FILE);
+  write_file(ELSEWHERE_FILE, "saved contents");
+  TEST_ASSERT_EQUAL_INT(0, symlink("../" ELSEWHERE_FILE, HOUSE_FILE));
+  write_file(ELSEWHERE_FILE ".tmp", "left by a crash");
+  do_hcontrol(NULL, destroy, 0, 0);
+  TEST_ASSERT_FALSE(exists(HOUSE_FILE));
+  TEST_ASSERT_FALSE(exists(ELSEWHERE_FILE ".tmp"));
+}
+
+#if defined(__linux__)
+static void test_linux_acl_preserved_and_inherited_default_acl_cleared(void)
+{
+  static const unsigned char acl[4 + 5 * 8] = {
+    2, 0, 0, 0,                             /* version = 2 */
+    0x01, 0, 6, 0, 0xff, 0xff, 0xff, 0xff,  /* ACL_USER_OBJ:  rw- */
+    0x02, 0, 6, 0, 0xfe, 0xff, 0x00, 0x00,  /* ACL_USER 65534: rw- */
+    0x04, 0, 4, 0, 0xff, 0xff, 0xff, 0xff,  /* ACL_GROUP_OBJ: r-- */
+    0x10, 0, 6, 0, 0xff, 0xff, 0xff, 0xff,  /* ACL_MASK:      rw- */
+    0x20, 0, 0, 0, 0xff, 0xff, 0xff, 0xff,  /* ACL_OTHER:     --- */
+  };
+  unsigned char saved[sizeof(acl)];
+  ssize_t n;
+
+  /* 1. An explicit POSIX ACL on an existing house file survives a save. */
+  write_file(HOUSE_FILE, "old contents");
+  if (setxattr(HOUSE_FILE, "system.posix_acl_access", acl, sizeof(acl), 0) < 0) {
+    if (errno == ENOTSUP)
+      TEST_IGNORE_MESSAGE("filesystem does not support POSIX ACLs");
+    TEST_FAIL_MESSAGE("setxattr failed unexpectedly");
+  }
+  House_crashsave(3000);
+  assert_file(HOUSE_FILE, item.name);
+  n = getxattr(HOUSE_FILE, "system.posix_acl_access", saved, sizeof(saved));
+  TEST_ASSERT_EQUAL_INT((int)sizeof(acl), (int)n);
+  TEST_ASSERT_EQUAL_MEMORY(acl, saved, sizeof(acl));
+
+  /* 2. A house file with no ACL does not pick up its parent's default ACL. */
+  remove(HOUSE_FILE);
+  write_file(HOUSE_FILE, "old contents");
+  TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0600));
+  TEST_ASSERT_EQUAL_INT(0, setxattr("house", "system.posix_acl_default", acl, sizeof(acl), 0));
+  House_crashsave(3000);
+  removexattr("house", "system.posix_acl_default");
+  assert_file(HOUSE_FILE, item.name);
+  n = getxattr(HOUSE_FILE, "system.posix_acl_access", saved, sizeof(saved));
+  TEST_ASSERT_EQUAL_INT(-1, (int)n);
+  TEST_ASSERT_EQUAL_INT(ENODATA, errno);
+}
+#endif
 
 int main(void)
 {
@@ -246,7 +345,13 @@ int main(void)
   RUN_TEST(test_stale_scratch_file_is_replaced);
   RUN_TEST(test_save_never_writes_through_the_scratch_name);
   RUN_TEST(test_symlinked_house_file_is_saved_where_it_points);
+  RUN_TEST(test_dangling_symlink_house_file_creates_its_target);
+  RUN_TEST(test_broken_symlink_house_file_is_not_replaced);
   RUN_TEST(test_destroying_a_house_removes_its_stale_scratch_file);
+  RUN_TEST(test_destroying_a_symlinked_house_removes_targets_stale_scratch_file);
+#if defined(__linux__)
+  RUN_TEST(test_linux_acl_preserved_and_inherited_default_acl_cleared);
+#endif
   result = UNITY_END();
   if (rmdir("house") || rmdir("etc") || rmdir("elsewhere") || chdir("/") || rmdir(scratch))
     return 1;
