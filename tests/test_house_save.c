@@ -511,14 +511,17 @@ static void test_a_held_lock_does_not_stop_a_save(void)
   TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
 }
 
-/* Other accounts cannot open the lock to hold it.  One made before the lock
- * was private goes back to 0600 at the next save, even while it is held. */
+/* Other accounts cannot open the lock to hold it.  A lock created under a
+ * restrictive umask or previously left non-0600 (0644 or 0400) goes back to
+ * 0600 at the next save, even while it is held. */
 static void test_the_lock_file_is_private(void)
 {
   struct stat st;
   int fd, held;
   remove(LIB_HOUSE ".tba-house.lock");
+  umask(0777);
   House_crashsave(3000);
+  umask(0022);
   TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 
@@ -530,6 +533,14 @@ static void test_the_lock_file_is_private(void)
   House_crashsave(3000);
   TEST_ASSERT_EQUAL_INT(0, close(fd));
   TEST_ASSERT_TRUE(held);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
+  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
+
+  /* An owner-owned lock left read-only (0400) is also restored to 0600. */
+  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0400));
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
   TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);

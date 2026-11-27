@@ -424,43 +424,49 @@ static int House_copy_permissions(const char *filename, int fd)
   return fchmod(fd, mode);
 }
 
-/* Establish owner-only search access before creating any file inside. POSIX
- * ACLs are already masked by mkdir's 0700, but Darwin and NFSv4 allow ACEs
- * can grant search independently of those mode bits. */
-static int House_secure_stage(int dirfd)
+/* Establish owner-only access on a private stage directory or lock file.
+ * POSIX ACLs are already masked by fchmod(), but Darwin and NFSv4 allow ACEs
+ * can grant access independently of those mode bits. */
+static int House_secure_private_fd(int fd, mode_t mode)
 {
 #if defined(__FreeBSD__)
-  int nfs4 = House_acl_supported(dirfd, _PC_ACL_NFS4);
+  int nfs4 = House_acl_supported(fd, _PC_ACL_NFS4);
   acl_t acl;
   int result, saved_errno;
+  const char *text = (mode & S_IXUSR) ? "owner@:full_set::allow"
+                                      : "owner@:read_set/write_set/delete/write_acl/write_owner/synchronize::allow";
   if (nfs4 <= 0)
-    return nfs4 < 0 ? -1 : fchmod(dirfd, 0700);
-  if (!(acl = acl_from_text("owner@:full_set::allow")))
+    return nfs4 < 0 ? -1 : fchmod(fd, mode);
+  if (!(acl = acl_from_text(text)))
     return -1;
-  result = acl_set_fd_np(dirfd, acl, ACL_TYPE_NFS4);
+  result = acl_set_fd_np(fd, acl, ACL_TYPE_NFS4);
   saved_errno = errno;
   acl_free(acl);
   errno = saved_errno;
   return result;
 #elif defined(__APPLE__) && defined(__MACH__)
-  long extended = fpathconf(dirfd, _PC_EXTENDED_SECURITY_NP);
+  long extended = fpathconf(fd, _PC_EXTENDED_SECURITY_NP);
   filesec_t security;
-  mode_t mode = 0700;
   int result = -1, saved_errno;
   if (extended <= 0)
-    return extended < 0 ? -1 : fchmod(dirfd, 0700);
+    return extended < 0 ? -1 : fchmod(fd, mode);
   if (!(security = filesec_init()))
     return -1;
   if (filesec_set_property(security, FILESEC_MODE, &mode) == 0 &&
       filesec_set_property(security, FILESEC_ACL, _FILESEC_REMOVE_ACL) == 0)
-    result = fchmodx_np(dirfd, security);
+    result = fchmodx_np(fd, security);
   saved_errno = errno;
   filesec_free(security);
   errno = saved_errno;
   return result;
 #else
-  return fchmod(dirfd, 0700);
+  return fchmod(fd, mode);
 #endif
+}
+
+static int House_secure_stage(int dirfd)
+{
+  return House_secure_private_fd(dirfd, 0700);
 }
 
 /* Resolve a symlinked house path to the destination where fopen() would write.
@@ -644,13 +650,22 @@ static int House_lock_stages(int parent_fd, bool cleanup)
     errno = EINVAL;
     goto failed;
   }
-  /* A restrictive umask must still let the creator reopen the lock later. */
-  if (created && (st.st_mode & 0777) != 0600 && fchmod(fd, 0600) < 0)
-    goto failed;
-  /* One made before the lock was private goes back to 0600 the next time its
-   * owner opens it, whether or not the lock itself is free. */
-  if (!created && st.st_uid == geteuid() && (st.st_mode & 0077))
-    (void)fchmod(fd, 0600);
+  /* A restrictive umask or inherited ACL must not leave the new lock unusable
+   * or open to other accounts. Unlink a freshly created lock if securing fails. */
+  if (created) {
+    if (House_secure_private_fd(fd, 0600) < 0) {
+      saved_errno = errno;
+      unlinkat(parent_fd, HOUSE_STAGE_LOCK, 0);
+      close(fd);
+      errno = saved_errno;
+      return -1;
+    }
+  } else if (st.st_uid == geteuid() && ((st.st_mode & 0777) != 0600 || cleanup)) {
+    /* One made before the lock was private (or left non-0600) goes back to
+     * 0600 with inherited ACLs stripped the next time its owner opens it,
+     * whether or not the lock itself is free. */
+    (void)House_secure_private_fd(fd, 0600);
+  }
   if (flock(fd, (cleanup ? LOCK_EX : LOCK_SH) | LOCK_NB) == 0)
     return fd;
 failed:
@@ -661,7 +676,7 @@ failed:
 }
 
 /* mkdir's mode is filtered by the umask and default ACL. Recover owner access
- * through a directory descriptor, including when the entry cannot yet be read. */
+ * without following symlinks when the entry cannot yet be read. */
 static int House_open_stage_dir(int parent_fd, const char *name)
 {
   const int flags = O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC;
@@ -690,8 +705,9 @@ static int House_open_stage_dir(int parent_fd, const char *name)
     close(path_fd);
     errno = saved_errno;
   }
-#elif defined(__APPLE__) && defined(O_EVTONLY)
-  fd = openat(parent_fd, name, O_EVTONLY | flags);
+#elif defined(AT_SYMLINK_NOFOLLOW)
+  if (fchmodat(parent_fd, name, 0700, AT_SYMLINK_NOFOLLOW) == 0)
+    fd = openat(parent_fd, name, O_RDONLY | flags);
 #endif
   return fd;
 }
@@ -854,7 +870,7 @@ static void House_remove_stale_saves(void)
       log("SYSERR: Cannot open %s%s: %s.  Unfinished house saves are not cleared; if "
           "another account made it, remove it and the game will make its own.",
           LIB_HOUSE, HOUSE_STAGE_LOCK, strerror(errno));
-    else if (errno != EWOULDBLOCK)
+    else if (errno != EWOULDBLOCK && errno != EAGAIN)
       log("SYSERR: Cannot lock %s for unfinished house save cleanup: %s", LIB_HOUSE, strerror(errno));
     closedir(dir);
     return;

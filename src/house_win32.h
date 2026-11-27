@@ -29,6 +29,7 @@ struct house_win_metadata {
   PSECURITY_DESCRIPTOR security;
   DWORD volume_flags;
   DWORD attributes;
+  int volume_flags_known;
 };
 
 /* NT paths are limited to 32,767 UTF-16 code units. Keep these buffers off
@@ -154,11 +155,17 @@ static DWORD House_win_destination(const char *filename, struct house_save *save
         error = GetLastError();
       if (!error)
         meta->attributes = info.dwFileAttributes;
-      if (!GetVolumeInformationByHandleW(file, NULL, 0, NULL, NULL, &meta->volume_flags, NULL, 0))
+      meta->volume_flags_known = GetVolumeInformationByHandleW(
+          file, NULL, 0, NULL, NULL, &meta->volume_flags, NULL, 0) != 0;
+      if (!meta->volume_flags_known)
         meta->volume_flags = FILE_PERSISTENT_ACLS | FILE_NAMED_STREAMS | FILE_FILE_COMPRESSION;
-      if (!error && (meta->volume_flags & FILE_PERSISTENT_ACLS))
+      if (!error && (meta->volume_flags & FILE_PERSISTENT_ACLS)) {
         error = GetSecurityInfo(file, SE_FILE_OBJECT, DACL_SECURITY_INFORMATION,
                                 NULL, NULL, NULL, NULL, &meta->security);
+        if (!meta->volume_flags_known &&
+            (error == ERROR_INVALID_FUNCTION || error == ERROR_NOT_SUPPORTED))
+          error = ERROR_SUCCESS;
+      }
       CloseHandle(file);
       save->existing = TRUE;
       break;
@@ -203,6 +210,68 @@ static void House_discard_save(struct house_save *save)
   save->existing = FALSE;
 }
 
+/* Temporarily restrict the empty stage file to the current user with full
+ * access before copying named streams, so private stream bytes are never
+ * exposed under a broader parent DACL and restrictive source DACLs cannot
+ * block creating the destination streams. */
+static DWORD House_win_set_owner_dacl(HANDLE stage)
+{
+  HANDLE token = NULL;
+  union {
+    TOKEN_USER user;
+    BYTE bytes[256];
+  } stack_buf;
+  TOKEN_USER *token_user = &stack_buf.user;
+  DWORD token_len = sizeof(stack_buf), error = ERROR_SUCCESS;
+  PSID sid;
+  DWORD acl_size;
+  PACL acl = NULL;
+  SECURITY_DESCRIPTOR sd;
+
+  if (!OpenThreadToken(GetCurrentThread(), TOKEN_QUERY, TRUE, &token)) {
+    error = GetLastError();
+    if (error != ERROR_NO_TOKEN || !OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &token))
+      return error == ERROR_NO_TOKEN ? GetLastError() : error;
+    error = ERROR_SUCCESS;
+  }
+  if (!GetTokenInformation(token, TokenUser, token_user, token_len, &token_len)) {
+    error = GetLastError();
+    if (error == ERROR_INSUFFICIENT_BUFFER) {
+      token_user = (TOKEN_USER *)malloc(token_len);
+      if (!token_user) {
+        error = ERROR_NOT_ENOUGH_MEMORY;
+      } else if (GetTokenInformation(token, TokenUser, token_user, token_len, &token_len)) {
+        error = ERROR_SUCCESS;
+      } else {
+        error = GetLastError();
+      }
+    }
+  }
+  CloseHandle(token);
+  if (error) {
+    if (token_user != &stack_buf.user)
+      free(token_user);
+    return error;
+  }
+  sid = token_user->User.Sid;
+  acl_size = sizeof(ACL) + sizeof(ACCESS_ALLOWED_ACE) - sizeof(DWORD) + GetLengthSid(sid);
+  acl = (PACL)malloc(acl_size);
+  if (!acl) {
+    error = ERROR_NOT_ENOUGH_MEMORY;
+  } else if (!InitializeAcl(acl, acl_size, ACL_REVISION) ||
+             !AddAccessAllowedAce(acl, ACL_REVISION, FILE_ALL_ACCESS, sid) ||
+             !InitializeSecurityDescriptor(&sd, SECURITY_DESCRIPTOR_REVISION) ||
+             !SetSecurityDescriptorDacl(&sd, TRUE, acl, FALSE) ||
+             !SetSecurityDescriptorControl(&sd, SE_DACL_PROTECTED, SE_DACL_PROTECTED) ||
+             !SetKernelObjectSecurity(stage, DACL_SECURITY_INFORMATION, &sd)) {
+    error = GetLastError();
+  }
+  free(acl);
+  if (token_user != &stack_buf.user)
+    free(token_user);
+  return error;
+}
+
 static DWORD House_win_copy_stream(const struct house_save *save, const wchar_t *stage, const wchar_t *stream)
 {
   const wchar_t *source = save->dest;
@@ -227,7 +296,8 @@ static DWORD House_win_copy_stream(const struct house_save *save, const wchar_t 
      * Restore automatic cleanup before copying any of the stream's bytes. */
     error = House_win_delete_on_close(save->stage, FALSE);
     if (!error) {
-      to = CreateFileW(path, GENERIC_WRITE, FILE_SHARE_DELETE, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
+      to = CreateFileW(path, FILE_WRITE_DATA | FILE_APPEND_DATA, FILE_SHARE_DELETE, NULL,
+                       CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
       if (to == INVALID_HANDLE_VALUE)
         error = GetLastError();
       DWORD cleanup_error = House_win_delete_on_close(save->stage, TRUE);
@@ -255,43 +325,6 @@ static DWORD House_win_copy_stream(const struct house_save *save, const wchar_t 
   return error;
 }
 
-static DWORD House_win_copy_streams(const struct house_save *save, const wchar_t *stage)
-{
-  WIN32_FIND_STREAM_DATA stream;
-  HANDLE list = FindFirstStreamW(save->dest, FindStreamInfoStandard, &stream, 0);
-  DWORD error;
-  if (list == INVALID_HANDLE_VALUE) {
-    error = GetLastError();
-    return error == ERROR_HANDLE_EOF ? ERROR_SUCCESS : error;
-  }
-  do {
-    /* The house serializer supplies the unnamed data stream. */
-    if (_wcsicmp(stream.cStreamName, L"::$DATA")) {
-      error = House_win_copy_stream(save, stage, stream.cStreamName);
-      if (error) {
-        FindClose(list);
-        return error;
-      }
-    }
-  } while (FindNextStreamW(list, &stream));
-  error = GetLastError();
-  FindClose(list);
-  return error == ERROR_HANDLE_EOF ? ERROR_SUCCESS : error;
-}
-
-static DWORD House_win_set_compression(HANDLE stage, DWORD source_attributes)
-{
-  BY_HANDLE_FILE_INFORMATION info;
-  USHORT format = (source_attributes & FILE_ATTRIBUTE_COMPRESSED) ? COMPRESSION_FORMAT_DEFAULT : COMPRESSION_FORMAT_NONE;
-  DWORD bytes;
-  if (!GetFileInformationByHandle(stage, &info))
-    return GetLastError();
-  if (((source_attributes ^ info.dwFileAttributes) & FILE_ATTRIBUTE_COMPRESSED) &&
-      !DeviceIoControl(stage, FSCTL_SET_COMPRESSION, &format, sizeof(format), NULL, 0, &bytes, NULL))
-    return GetLastError();
-  return ERROR_SUCCESS;
-}
-
 static int House_win_same_dacl(PSECURITY_DESCRIPTOR source, PSECURITY_DESCRIPTOR stage)
 {
   SECURITY_DESCRIPTOR_CONTROL source_flags, stage_flags;
@@ -317,6 +350,81 @@ static int House_win_same_dacl(PSECURITY_DESCRIPTOR source, PSECURITY_DESCRIPTOR
   return TRUE;
 }
 
+static DWORD House_win_copy_streams(const struct house_save *save, const wchar_t *stage,
+                                    const struct house_win_metadata *meta, int protect_before_write)
+{
+  WIN32_FIND_STREAM_DATA stream;
+  HANDLE list = FindFirstStreamW(save->dest, FindStreamInfoStandard, &stream, 0);
+  DWORD error;
+  if (list == INVALID_HANDLE_VALUE) {
+    error = GetLastError();
+    if (error == ERROR_HANDLE_EOF)
+      return ERROR_SUCCESS;
+    if (!meta->volume_flags_known &&
+        (error == ERROR_INVALID_FUNCTION || error == ERROR_NOT_SUPPORTED))
+      return ERROR_SUCCESS;
+    return error;
+  }
+  do {
+    /* The house serializer supplies the unnamed data stream. */
+    if (_wcsicmp(stream.cStreamName, L"::$DATA")) {
+      if (protect_before_write) {
+        error = House_win_set_owner_dacl(save->stage);
+        if (error == ERROR_ACCESS_DENIED && meta->security) {
+          PSECURITY_DESCRIPTOR actual = NULL;
+          if (GetSecurityInfo(save->stage, SE_FILE_OBJECT, DACL_SECURITY_INFORMATION,
+                              NULL, NULL, NULL, NULL, &actual) == ERROR_SUCCESS &&
+              House_win_same_dacl(meta->security, actual))
+            error = ERROR_SUCCESS;
+          LocalFree(actual);
+        }
+        if (error) {
+          FindClose(list);
+          return error;
+        }
+        protect_before_write = FALSE;
+      }
+      error = House_win_copy_stream(save, stage, stream.cStreamName);
+      if (error) {
+        FindClose(list);
+        return error;
+      }
+    }
+  } while (FindNextStreamW(list, &stream));
+  error = GetLastError();
+  FindClose(list);
+  return error == ERROR_HANDLE_EOF ? ERROR_SUCCESS : error;
+}
+
+static DWORD House_win_set_compression(HANDLE stage, DWORD source_attributes)
+{
+  BY_HANDLE_FILE_INFORMATION info;
+  USHORT format = (source_attributes & FILE_ATTRIBUTE_COMPRESSED) ? COMPRESSION_FORMAT_DEFAULT : COMPRESSION_FORMAT_NONE;
+  DWORD bytes;
+  if (!GetFileInformationByHandle(stage, &info))
+    return GetLastError();
+  if (((source_attributes ^ info.dwFileAttributes) & FILE_ATTRIBUTE_COMPRESSED) &&
+      !DeviceIoControl(stage, FSCTL_SET_COMPRESSION, &format, sizeof(format), NULL, 0, &bytes, NULL))
+    return GetLastError();
+  return ERROR_SUCCESS;
+}
+
+static DWORD House_win_set_attributes(HANDLE stage, DWORD source_attributes)
+{
+  const DWORD mask = FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_NOT_CONTENT_INDEXED;
+  FILE_BASIC_INFO info;
+  DWORD desired;
+  if (!GetFileInformationByHandleEx(stage, FileBasicInfo, &info, sizeof(info)))
+    return GetLastError();
+  desired = (info.FileAttributes & ~mask) | (source_attributes & mask);
+  if (desired == info.FileAttributes)
+    return ERROR_SUCCESS;
+  memset(&info, 0, sizeof(info));
+  info.FileAttributes = desired ? desired : FILE_ATTRIBUTE_NORMAL;
+  return SetFileInformationByHandle(stage, FileBasicInfo, &info, sizeof(info))
+         ? ERROR_SUCCESS : GetLastError();
+}
+
 /* Establish the original access rules on the empty, exclusively opened file
  * before any content is copied. A directory that grants only inherited
  * Modify access may refuse an ACL write even when the DACL already matches. */
@@ -340,6 +448,33 @@ static DWORD House_win_set_dacl(HANDLE stage, PSECURITY_DESCRIPTOR security)
   return error;
 }
 
+static HANDLE House_win_create_stage_file(const wchar_t *name, DWORD base_access,
+                                          DWORD opt_write_dac, DWORD opt_read_data,
+                                          DWORD attributes, int *have_write_dac)
+{
+  DWORD attempts[4];
+  int count = 0;
+  attempts[count++] = base_access | opt_write_dac | opt_read_data;
+  if (opt_write_dac)
+    attempts[count++] = base_access | opt_read_data;
+  if (opt_read_data) {
+    if (opt_write_dac)
+      attempts[count++] = base_access | opt_write_dac;
+    attempts[count++] = base_access;
+  }
+  for (int i = 0; i < count; ++i) {
+    HANDLE file = CreateFileW(name, attempts[i], 0, NULL, CREATE_NEW, attributes, NULL);
+    if (file != INVALID_HANDLE_VALUE) {
+      *have_write_dac = (attempts[i] & WRITE_DAC) != 0;
+      return file;
+    }
+    if (GetLastError() != ERROR_ACCESS_DENIED)
+      break;
+  }
+  *have_write_dac = FALSE;
+  return INVALID_HANDLE_VALUE;
+}
+
 static DWORD House_win_create_stage(struct house_save *save, const struct house_win_metadata *meta)
 {
   static LONG sequence;
@@ -347,24 +482,30 @@ static DWORD House_win_create_stage(struct house_save *save, const struct house_
   size_t prefix;
   DWORD error = ERROR_FILE_EXISTS;
   DWORD access = GENERIC_WRITE | DELETE;
-  DWORD attributes = (meta->attributes & FILE_ATTRIBUTE_ENCRYPTED) ? FILE_ATTRIBUTE_ENCRYPTED : FILE_ATTRIBUTE_NORMAL;
+  DWORD opt_write_dac = meta->security ? WRITE_DAC : 0;
+  DWORD opt_read_data = 0;
+  DWORD preserved = meta->attributes &
+      (FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_ENCRYPTED);
+  DWORD attributes = preserved ? preserved : FILE_ATTRIBUTE_NORMAL;
+  int have_write_dac = FALSE;
   if (!leaf)
     return ERROR_BAD_PATHNAME;
   prefix = (size_t)(leaf + 1 - save->dest);
   name = malloc((prefix + 40) * sizeof(*name));
   if (!name)
     return ERROR_NOT_ENOUGH_MEMORY;
-  if (meta->security)
-    access |= WRITE_DAC;
   memcpy(name, save->dest, prefix * sizeof(*name));
   if (save->existing) {
     access |= FILE_READ_ATTRIBUTES;
     if (meta->volume_flags & FILE_FILE_COMPRESSION) {
       /* A new file inherits directory compression. Ask for read-data access
-       * only when FSCTL_SET_COMPRESSION will need to change that setting. */
+       * when FSCTL_SET_COMPRESSION will need to change that setting, or as an
+       * optional right if the parent's attributes could not be inspected. */
       name[prefix] = L'\0';
       DWORD parent = GetFileAttributesW(name);
-      if (parent != INVALID_FILE_ATTRIBUTES && ((parent ^ meta->attributes) & FILE_ATTRIBUTE_COMPRESSED))
+      if (parent == INVALID_FILE_ATTRIBUTES)
+        opt_read_data = FILE_READ_DATA;
+      else if ((parent ^ meta->attributes) & FILE_ATTRIBUTE_COMPRESSED)
         access |= FILE_READ_DATA;
     }
   }
@@ -374,9 +515,8 @@ static DWORD House_win_create_stage(struct house_save *save, const struct house_
              (unsigned long)GetCurrentProcessId(), (unsigned long)InterlockedIncrement(&sequence));
     if (!_wcsicmp(name + prefix, leaf + 1))
       continue;
-    file = CreateFileW(name, access, 0, NULL, CREATE_NEW, attributes, NULL);
-    if (file == INVALID_HANDLE_VALUE && meta->security && GetLastError() == ERROR_ACCESS_DENIED)
-      file = CreateFileW(name, access & ~WRITE_DAC, 0, NULL, CREATE_NEW, attributes, NULL);
+    file = House_win_create_stage_file(name, access, opt_write_dac, opt_read_data,
+                                       attributes, &have_write_dac);
     if (file != INVALID_HANDLE_VALUE) {
       save->stage = file;
       error = ERROR_SUCCESS;
@@ -388,12 +528,16 @@ static DWORD House_win_create_stage(struct house_save *save, const struct house_
   }
   if (!error)
     error = House_win_delete_on_close(save->stage, TRUE);
-  if (!error && meta->security)
+  if (!error && meta->security && !have_write_dac)
     error = House_win_set_dacl(save->stage, meta->security);
   if (!error && save->existing)
+    error = House_win_set_attributes(save->stage, meta->attributes);
+  if (!error && save->existing)
     error = House_win_set_compression(save->stage, meta->attributes);
-  if (!error && (meta->volume_flags & FILE_NAMED_STREAMS))
-    error = House_win_copy_streams(save, name);
+  if (!error && save->existing && (meta->volume_flags & FILE_NAMED_STREAMS))
+    error = House_win_copy_streams(save, name, meta, have_write_dac && meta->security != NULL);
+  if (!error && meta->security && have_write_dac)
+    error = House_win_set_dacl(save->stage, meta->security);
   free(name);
   return error;
 }
