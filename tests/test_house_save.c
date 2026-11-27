@@ -13,11 +13,14 @@
 #include <dirent.h>
 #include <fcntl.h>
 #include <glob.h>
+#include <inttypes.h>
 #include <limits.h>
 #include <sys/file.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #if defined(__linux__)
+#include <linux/magic.h>
+#include <sys/vfs.h>
 #include <sys/xattr.h>
 #elif defined(__FreeBSD__)
 #include <sys/acl.h>
@@ -31,7 +34,8 @@
 #define STAGE_PREFIX ".tba-house-save-"
 static struct room_data rooms[2];
 static struct obj_data item;
-static int fail_record, crash_record, boot_during_record;
+static int fail_record, crash_record;
+static void (*during_record)(void);
 static int observe_stage, unlocked_during_record;
 static int count_unlocked_stages(void);
 
@@ -50,8 +54,35 @@ int __real_fchmodat(int dirfd, const char *name, mode_t mode, int flags);
 static int fail_lock_chmod, attempted_lock_chmod, visible_before_chmod;
 static int observe_publication, published_dir_mode, published_guard_mode;
 static int report_publication_enoent;
+static int boot_before_guard_create, candidate_was_removed;
+static int require_writable_lock, exclusive_access_mode;
+static unsigned int mock_smb_type;
 int __real_fchmod(int fd, mode_t mode);
 int __real_renameat(int from_fd, const char *from, int to_fd, const char *to);
+int __real_flock(int fd, int operation);
+int __real_fstatfs(int fd, struct statfs *out);
+
+int __wrap_fstatfs(int fd, struct statfs *out)
+{
+  struct stat dir;
+  int result = __real_fstatfs(fd, out);
+  if (result == 0 && mock_smb_type && fstat(fd, &dir) == 0 &&
+      dir.st_dev == watched_parent.st_dev && dir.st_ino == watched_parent.st_ino)
+    out->f_type = mock_smb_type;
+  return result;
+}
+
+int __wrap_flock(int fd, int operation)
+{
+  if (require_writable_lock && (operation & LOCK_EX)) {
+    exclusive_access_mode = fcntl(fd, F_GETFL) & O_ACCMODE;
+    if (exclusive_access_mode != O_RDWR) {
+      errno = EBADF;
+      return -1;
+    }
+  }
+  return __real_flock(fd, operation);
+}
 
 int __wrap_fchmod(int fd, mode_t mode)
 {
@@ -114,6 +145,11 @@ int __wrap_openat(int dirfd, const char *name, int flags, ...)
   va_start(ap, flags);
   mode = va_arg(ap, int);
   va_end(ap);
+  if (boot_before_guard_create && !strcmp(name, "guard")) {
+    boot_before_guard_create = FALSE;
+    House_boot();
+    candidate_was_removed = fstat(dirfd, &parent) == 0 && parent.st_nlink == 0;
+  }
   fd = __real_openat(dirfd, name, flags, mode);
   /* Inspect our own descriptor before the saver starts copying permissions. */
   if (watch_create && fd >= 0 && (flags & O_EXCL) && fstat(fd, &file) == 0 &&
@@ -162,9 +198,10 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int location)
     unlocked_during_record = count_unlocked_stages();
   if (crash_record)
     _exit(1);	/* die part-way through the save, as a crash would */
-  if (boot_during_record) {
-    boot_during_record = FALSE;
-    House_boot();  /* Opens the directory independently of the active save. */
+  if (during_record) {
+    void (*hook)(void) = during_record;
+    during_record = NULL;
+    hook();
   }
   return fputs(obj->name, fp) >= 0 && !fail_record;
 }
@@ -184,7 +221,7 @@ void setUp(void)
   rooms[0].contents = &item;
   item.name = "current contents";
   fail_record = FALSE;
-  boot_during_record = FALSE;
+  during_record = NULL;
   observe_stage = FALSE;
   unlocked_during_record = -1;
 }
@@ -199,6 +236,9 @@ void tearDown(void)
   fail_lock_chmod = attempted_lock_chmod = visible_before_chmod = 0;
   observe_publication = report_publication_enoent = 0;
   published_dir_mode = published_guard_mode = -1;
+  require_writable_lock = boot_before_guard_create = candidate_was_removed = FALSE;
+  exclusive_access_mode = -1;
+  mock_smb_type = 0;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
     char command[] = "destroy 3000";
@@ -219,8 +259,6 @@ void tearDown(void)
   snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
   remove(running);
   remove(LIB_HOUSE STAGE_PREFIX "notes");
-  remove(LIB_HOUSE STAGE_PREFIX "4294967296-0");
-  remove(LIB_HOUSE STAGE_PREFIX "99999999999999999999-0");
 #if defined(__linux__)
   removexattr("house", "system.posix_acl_default");
   remove(LIB_HOUSE "reference");
@@ -526,6 +564,14 @@ static int count_stages(void)
   return count;
 }
 
+static void current_stage_prefix(char *prefix, size_t size)
+{
+  struct stat st;
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
+  int length = snprintf(prefix, size, LIB_HOUSE STAGE_PREFIX "g%jx-", (uintmax_t)st.st_ino);
+  TEST_ASSERT_TRUE(length > 0 && (size_t)length < size);
+}
+
 /* The child dies part-way through writing the house, and its stage stays. */
 static pid_t crash_in_the_middle_of_a_save(void)
 {
@@ -549,7 +595,7 @@ static void test_boot_defers_cleanup_while_a_save_is_active(void)
   for (size_t i = 0; i < sizeof(updates) / sizeof(updates[0]); ++i) {
     item.name = updates[i];
     SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
-    boot_during_record = TRUE;
+    during_record = House_boot;
     House_crashsave(3000);
     assert_file(HOUSE_FILE, updates[i]);
     TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
@@ -562,14 +608,16 @@ static void test_boot_defers_cleanup_while_a_save_is_active(void)
 
 static void test_boot_keeps_noncanonical_stage_names(void)
 {
-  char paths[5][128];
+  char prefix[64], paths[6][128];
   int preserved = 0;
   long pid = (long)crash_in_the_middle_of_a_save();
-  snprintf(paths[0], sizeof(paths[0]), LIB_HOUSE STAGE_PREFIX "0%ld-1", pid);
-  snprintf(paths[1], sizeof(paths[1]), LIB_HOUSE STAGE_PREFIX "%ld-01", pid);
-  snprintf(paths[2], sizeof(paths[2]), LIB_HOUSE STAGE_PREFIX "%ld-%lu0", pid, ULONG_MAX);
+  current_stage_prefix(prefix, sizeof(prefix));
+  snprintf(paths[0], sizeof(paths[0]), "%s0%ld-1", prefix, pid);
+  snprintf(paths[1], sizeof(paths[1]), "%s%ld-01", prefix, pid);
+  snprintf(paths[2], sizeof(paths[2]), "%s%ld-%lu0", prefix, pid, ULONG_MAX);
   snprintf(paths[3], sizeof(paths[3]), LIB_HOUSE ".tba-house-%ld-0", pid);
   snprintf(paths[4], sizeof(paths[4]), LIB_HOUSE ".tba-house-unlocked-%ld-0", pid);
+  snprintf(paths[5], sizeof(paths[5]), LIB_HOUSE STAGE_PREFIX "%ld-0", pid);
   for (size_t i = 0; i < sizeof(paths) / sizeof(paths[0]); ++i)
     write_file(paths[i], "operator's copy");
 
@@ -578,7 +626,7 @@ static void test_boot_keeps_noncanonical_stage_names(void)
     preserved += exists(paths[i]);
     remove(paths[i]);
   }
-  TEST_ASSERT_EQUAL_INT(5, preserved);
+  TEST_ASSERT_EQUAL_INT(6, preserved);
   TEST_ASSERT_EQUAL_INT(0, count_stages());
 }
 
@@ -594,25 +642,85 @@ static int count_unlocked_stages(void)
   return count;
 }
 
+/* The first writer is paused inside its record writer while another process
+ * handles the lost guard and installs contents with the replacement guard. */
+static void boot_and_save_after_guard_loss(void)
+{
+  int status;
+  pid_t child = fork();
+  TEST_ASSERT_TRUE(child >= 0);
+  if (child == 0) {
+    if (unlink(LOCK_GUARD) != 0)
+      _exit(1);
+    House_boot();
+    item.name = "new writer";
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    observe_stage = TRUE;
+    House_crashsave(3000);
+    _exit(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH) || unlocked_during_record != 0);
+  }
+  TEST_ASSERT_EQUAL_INT(child, waitpid(child, &status, 0));
+  TEST_ASSERT_TRUE(WIFEXITED(status) && WEXITSTATUS(status) == 0);
+  assert_file(HOUSE_FILE, "new writer");
+}
+
+static void test_replacing_the_guard_preserves_the_previous_writers_stage(void)
+{
+  char prefix[64], pattern[128];
+  glob_t abandoned;
+  struct stat old_guard, new_guard;
+  long first = (long)crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &old_guard));
+  current_stage_prefix(prefix, sizeof(prefix));
+  snprintf(pattern, sizeof(pattern), "%s%ld-*", prefix, first);
+  TEST_ASSERT_EQUAL_INT(0, glob(pattern, 0, NULL, &abandoned));
+  TEST_ASSERT_EQUAL_UINT(1, abandoned.gl_pathc);
+
+  write_file(HOUSE_FILE, "previous contents");
+  during_record = boot_and_save_after_guard_loss;
+  item.name = "original writer";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &new_guard));
+  TEST_ASSERT_TRUE(old_guard.st_ino != new_guard.st_ino);
+
+  crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(2, count_stages());
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(1, count_stages());
+  assert_file(abandoned.gl_pathv[0], "");
+  TEST_ASSERT_EQUAL_INT(0, unlink(abandoned.gl_pathv[0]));
+  globfree(&abandoned);
+}
+
 /* A second name for the guard -- a cp -al snapshot of lib/, say -- leaves the
  * lock working.  Its permissions are left alone until it is the only name. */
 static void test_a_second_link_to_the_guard_keeps_the_lock(void)
 {
+  const mode_t modes[] = {0640, 0400};
   struct stat st;
   write_file(HOUSE_FILE, "old contents");
   House_boot();
   TEST_ASSERT_EQUAL_INT(0, link(LOCK_GUARD, "snapshot-guard"));
-  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0640));
-  crash_in_the_middle_of_a_save();
-  TEST_ASSERT_EQUAL_INT(1, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
-
+  for (size_t i = 0; i < sizeof(modes) / sizeof(modes[0]); ++i) {
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, modes[i]));
+    crash_in_the_middle_of_a_save();
+    TEST_ASSERT_EQUAL_INT(1, count_stages());
+    TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+    House_boot();
+    TEST_ASSERT_EQUAL_INT(0, count_stages());
+    TEST_ASSERT_EQUAL_INT(0, stat("snapshot-guard", &st));
+    TEST_ASSERT_EQUAL_UINT(2, st.st_nlink);
+    TEST_ASSERT_EQUAL_UINT(modes[i], st.st_mode & 0777);
+  }
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0000));
   House_boot();
-  TEST_ASSERT_EQUAL_INT(0, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
-  TEST_ASSERT_EQUAL_UINT(2, st.st_nlink);
-  TEST_ASSERT_EQUAL_UINT(0640, st.st_mode & 0777);
+  TEST_ASSERT_EQUAL_INT(0, stat("snapshot-guard", &st));
+  TEST_ASSERT_EQUAL_UINT(0000, st.st_mode & 0777);
 
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0400));
   TEST_ASSERT_EQUAL_INT(0, unlink("snapshot-guard"));
   House_boot();
   TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
@@ -684,6 +792,18 @@ static void test_boot_removes_an_unfinished_lock_setup(void)
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
+static void test_save_uses_winning_guard_after_its_initializer_was_removed(void)
+{
+  boot_before_guard_create = observe_stage = TRUE;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_TRUE(candidate_was_removed);
+  TEST_ASSERT_TRUE(exists(LOCK_GUARD));
+  TEST_ASSERT_EQUAL_INT(0, unlocked_during_record);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  assert_file(HOUSE_FILE, item.name);
+}
+
 static void test_lock_is_secured_before_publication_and_retries_after_failure(void)
 {
   struct stat st;
@@ -791,39 +911,44 @@ static void test_the_lock_file_is_private(void)
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 }
 
-/* A guard the game can only read -- as when another account made it -- still
- * lets boot clear a crashed save.  Our own goes back to 0600 on the way. */
-static void test_boot_sweeps_with_a_lock_file_it_can_only_read(void)
+static void test_boot_repairs_the_guard_and_sweeps_with_write_access(void)
 {
-  struct stat st;
+  const mode_t modes[] = {
+    0400,
+#if defined(__linux__) || (defined(__FreeBSD__) && defined(O_PATH) && defined(AT_EMPTY_PATH) && defined(O_EMPTY_PATH))
+    0000,
+#endif
+  };
+  struct stat before, after;
   write_file(HOUSE_FILE, "old contents");
-  crash_in_the_middle_of_a_save();
-  TEST_ASSERT_EQUAL_INT(1, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0400));
   House_boot();
-  TEST_ASSERT_EQUAL_INT(0, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
-  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &before));
+  for (size_t i = 0; i < sizeof(modes) / sizeof(modes[0]); ++i) {
+    crash_in_the_middle_of_a_save();
+    TEST_ASSERT_EQUAL_INT(1, count_stages());
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, modes[i]));
+#ifdef HOUSE_TEST_WRAP_IO
+    require_writable_lock = TRUE;  /* NFS requires O_RDWR for exclusive flock. */
+    exclusive_access_mode = -1;
+#endif
+    House_boot();
+#ifdef HOUSE_TEST_WRAP_IO
+    require_writable_lock = FALSE;
+    TEST_ASSERT_EQUAL_INT(O_RDWR, exclusive_access_mode);
+#endif
+    TEST_ASSERT_EQUAL_INT(0, count_stages());
+    TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &after));
+    TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+    TEST_ASSERT_EQUAL_UINT(0600, after.st_mode & 0777);
+  }
   assert_file(HOUSE_FILE, "old contents");
 }
 
-static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
+static void assert_boot_preserves_unlocked_stage(pid_t child)
 {
   char pattern[96], contents[256];
   glob_t paths;
-  pid_t child;
   int length;
-  TEST_ASSERT_EQUAL_INT(0, mkdir(LOCK_PATH, 0700));
-  write_file(LOCK_PATH "/marker", "operator's copy");
-  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
-  House_crashsave(3000);
-  assert_file(HOUSE_FILE, item.name);
-  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-
-  child = crash_in_the_middle_of_a_save();
-  assert_file(LOCK_PATH "/marker", "operator's copy");
-  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_PATH "/marker"));
-  TEST_ASSERT_EQUAL_INT(0, rmdir(LOCK_PATH));
   /* Locate this child's one abandoned replacement in the isolated fixture. */
   snprintf(pattern, sizeof(pattern), LIB_HOUSE ".tba-house-unlocked-%ld-*", (long)child);
   TEST_ASSERT_EQUAL_INT(0, glob(pattern, 0, NULL, &paths));
@@ -839,38 +964,97 @@ static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
   globfree(&paths);
 }
 
+static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
+{
+  pid_t child;
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LOCK_PATH, 0700));
+  write_file(LOCK_PATH "/marker", "operator's copy");
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+
+  child = crash_in_the_middle_of_a_save();
+  assert_file(LOCK_PATH "/marker", "operator's copy");
+  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_PATH "/marker"));
+  TEST_ASSERT_EQUAL_INT(0, rmdir(LOCK_PATH));
+  assert_boot_preserves_unlocked_stage(child);
+}
+
+#ifdef HOUSE_TEST_WRAP_IO
+static void test_smb_saves_without_inode_based_cleanup(void)
+{
+  const unsigned int types[] = {
+    SMB_SUPER_MAGIC,
+#ifdef CIFS_SUPER_MAGIC
+    CIFS_SUPER_MAGIC,
+#endif
+#ifdef SMB2_SUPER_MAGIC
+    SMB2_SUPER_MAGIC,
+#endif
+  };
+  TEST_ASSERT_EQUAL_INT(0, stat("house", &watched_parent));
+  write_file(HOUSE_FILE, "previous contents");
+  for (size_t i = 0; i < sizeof(types) / sizeof(types[0]); ++i) {
+    crash_in_the_middle_of_a_save();
+    TEST_ASSERT_EQUAL_INT(1, count_stages());
+    mock_smb_type = types[i];
+    observe_stage = TRUE;
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    assert_file(HOUSE_FILE, item.name);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+
+    pid_t child = crash_in_the_middle_of_a_save();
+    House_boot();
+    TEST_ASSERT_EQUAL_INT(1, count_stages());
+    TEST_ASSERT_EQUAL_INT(1, count_unlocked_stages());
+    mock_smb_type = 0;
+    assert_boot_preserves_unlocked_stage(child);
+    TEST_ASSERT_EQUAL_INT(0, count_stages());
+  }
+}
+#endif
+
 /* Boot clears a crashed first save and replacement, preserving legacy stages
  * and unrelated names. */
 static void test_boot_removes_saves_a_crash_left_unfinished(void)
 {
-  char running[64];
+  char prefix[64], running[64], large_pid[128], overflowing_pid[128];
   crash_in_the_middle_of_a_save();
   write_file(HOUSE_FILE, "old contents");
   crash_in_the_middle_of_a_save();
   TEST_ASSERT_EQUAL_INT(2, count_stages());
   assert_file(HOUSE_FILE, "old contents");
 
+  current_stage_prefix(prefix, sizeof(prefix));
+  snprintf(large_pid, sizeof(large_pid), "%s4294967296-0", prefix);
+  snprintf(overflowing_pid, sizeof(overflowing_pid), "%s99999999999999999999-0", prefix);
   snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
   write_file(running, "a running game's save");
   write_file(LIB_HOUSE STAGE_PREFIX "notes", "operator's copy");
-  write_file(LIB_HOUSE STAGE_PREFIX "4294967296-0", "out-of-range pid 1");
-  write_file(LIB_HOUSE STAGE_PREFIX "99999999999999999999-0", "out-of-range pid 2");
+  write_file(large_pid, "out-of-range pid 1");
+  write_file(overflowing_pid, "out-of-range pid 2");
   House_boot();
   TEST_ASSERT_EQUAL_INT(3, count_stages());
   assert_file(running, "a running game's save");
   assert_file(LIB_HOUSE STAGE_PREFIX "notes", "operator's copy");
-  assert_file(LIB_HOUSE STAGE_PREFIX "4294967296-0", "out-of-range pid 1");
-  assert_file(LIB_HOUSE STAGE_PREFIX "99999999999999999999-0", "out-of-range pid 2");
+  assert_file(large_pid, "out-of-range pid 1");
+  assert_file(overflowing_pid, "out-of-range pid 2");
+  TEST_ASSERT_EQUAL_INT(0, unlink(large_pid));
+  TEST_ASSERT_EQUAL_INT(0, unlink(overflowing_pid));
   assert_file(HOUSE_FILE, "old contents");
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
 static void test_boot_clears_an_empty_unreadable_stage_without_chmod(void)
 {
-  char empty[128];
+  char prefix[64], empty[128];
   long pid = (long)crash_in_the_middle_of_a_save();
   /* A crash between mkdirat() and permission setup leaves this empty. */
-  snprintf(empty, sizeof(empty), LIB_HOUSE STAGE_PREFIX "%ld-%lu", pid, ULONG_MAX);
+  current_stage_prefix(prefix, sizeof(prefix));
+  snprintf(empty, sizeof(empty), "%s%ld-%lu", prefix, pid, ULONG_MAX);
   TEST_ASSERT_EQUAL_INT(0, mkdir(empty, 0000));
   reject_named_chmod = 1;
   House_boot();
@@ -1128,11 +1312,14 @@ int main(void)
   RUN_TEST(test_the_lock_file_is_private);
   RUN_TEST(test_a_second_link_to_the_guard_keeps_the_lock);
   RUN_TEST(test_an_emptied_lock_directory_is_replaced);
+  RUN_TEST(test_replacing_the_guard_preserves_the_previous_writers_stage);
   RUN_TEST(test_a_file_at_the_lock_name_is_left_alone);
   RUN_TEST(test_boot_removes_an_unfinished_lock_setup);
-  RUN_TEST(test_boot_sweeps_with_a_lock_file_it_can_only_read);
+  RUN_TEST(test_boot_repairs_the_guard_and_sweeps_with_write_access);
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
+  RUN_TEST(test_smb_saves_without_inode_based_cleanup);
+  RUN_TEST(test_save_uses_winning_guard_after_its_initializer_was_removed);
   RUN_TEST(test_lock_is_secured_before_publication_and_retries_after_failure);
   RUN_TEST(test_boot_clears_an_empty_unreadable_stage_without_chmod);
   RUN_TEST(test_replacement_starts_private_before_permissions_are_copied);

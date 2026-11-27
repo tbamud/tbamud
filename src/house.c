@@ -27,12 +27,17 @@
 #else
 #include <dirent.h>
 #include <fcntl.h>
+#include <inttypes.h>
 #include <sys/file.h>
 #include <sys/stat.h>
 #if defined(__linux__)
+#include <sys/vfs.h>
 #include <sys/xattr.h>
 #elif defined(__FreeBSD__)
 #include <sys/acl.h>
+#endif
+#if defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
+#include <sys/mount.h>
 #endif
 #endif
 
@@ -578,8 +583,9 @@ static int House_resolve_symlink(const char *path, char resolved[PATH_MAX])
  * file can have a stricter ACL than its parent: keep its replacement inside a
  * private directory until its permissions and contents are ready. First saves
  * use the process umask and inherit directly from the target directory. */
+#define HOUSE_STAGE_NAME_SIZE 96
 struct house_save {
-  char dest[PATH_MAX], entry[64];
+  char dest[PATH_MAX], entry[HOUSE_STAGE_NAME_SIZE];
   const char *leaf, *scratch;
   int parent_fd, stage_fd, lock_fd;
   bool owns_dir;
@@ -612,9 +618,9 @@ static void House_discard_save(struct house_save *save)
 
 /* The lock is a private directory holding the guard, a regular file whose
  * inode stays in place across saves. Each writer holds a shared lock on the
- * guard from before stage creation through disposal. Only an exclusive holder
- * may sweep. A regular file permits exclusive locking on NFS with a writable
- * descriptor.
+ * guard from before stage creation through disposal. An exclusive holder may
+ * sweep stages named for that guard's inode. A regular file permits exclusive
+ * locking on NFS with a writable descriptor.
  *
  * Anyone who can open the guard can hold it, so it is made 0600: another
  * account that could hold it exclusively would hold up the sweep for as long
@@ -623,6 +629,7 @@ static void House_discard_save(struct house_save *save)
 #define HOUSE_LOCK_GUARD "guard"
 #define HOUSE_LOCK_INIT_PREFIX HOUSE_STAGE_LOCK ".init-"
 #define HOUSE_STAGE_PREFIX ".tba-house-save-"
+#define HOUSE_STAGE_PREFIX_SIZE (sizeof(HOUSE_STAGE_PREFIX "g-") + 2 * sizeof(uintmax_t))
 static int House_open_stage_dir(int parent_fd, const char *name);
 
 #if defined(O_PATH) && (defined(__linux__) || (defined(__FreeBSD__) && defined(AT_EMPTY_PATH)))
@@ -645,35 +652,71 @@ static int House_chmod_path_fd(int fd, mode_t mode)
 }
 #endif
 
+static int House_stat_guard(int fd, struct stat *st)
+{
+  if (fstat(fd, st) < 0)
+    return -1;
+  if (!S_ISREG(st->st_mode) || st->st_nlink == 0) {
+    errno = EINVAL;
+    return -1;
+  }
+  return 0;
+}
+
 static int House_open_guard(int lock_dir, bool cleanup)
 {
   const int flags = O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC;
-  struct stat st;
-  int saved_errno;
-  int fd = openat(lock_dir, HOUSE_LOCK_GUARD, (cleanup ? O_RDWR : O_RDONLY) | flags);
-  /* An exclusive flock() needs no write access on a local filesystem, so a
-   * guard another account left readable still lets the sweep run. */
-  if (fd < 0 && cleanup && errno == EACCES)
-    fd = openat(lock_dir, HOUSE_LOCK_GUARD, O_RDONLY | flags);
-  if (fd < 0)
-    return -1;
-  if (fstat(fd, &st) < 0)
+  int access = cleanup ? O_RDWR : O_RDONLY;
+  int fd = openat(lock_dir, HOUSE_LOCK_GUARD, access | flags);
+  int pinned = -1, saved_errno;
+  struct stat st, original;
+
+  if (fd < 0 && errno == EACCES) {
+    /* Pin the regular file before repairing it. O_PATH also works when a
+     * restored guard has lost all owner access. */
+#ifdef HOUSE_HAS_PATH_FD
+    pinned = openat(lock_dir, HOUSE_LOCK_GUARD, O_PATH | O_NOFOLLOW | O_CLOEXEC);
+#else
+    pinned = openat(lock_dir, HOUSE_LOCK_GUARD, O_RDONLY | flags);
+#endif
+    if (pinned < 0 || House_stat_guard(pinned, &original) < 0)
+      goto failed;
+    if (original.st_uid == geteuid() && original.st_nlink == 1) {
+#ifdef HOUSE_HAS_PATH_FD
+      if (House_chmod_path_fd(pinned, 0600) < 0)
+        goto failed;
+#else
+      if (House_secure_private_fd(pinned, 0600) < 0)
+        goto failed;
+#endif
+    } else {
+      /* Foreign and snapshot-linked guards keep their permissions. Local
+       * filesystems can still take an exclusive lock on a readable guard. */
+      access = O_RDONLY;
+    }
+    /* Exclusive flock on NFS needs a writable descriptor even after chmod. */
+    fd = openat(lock_dir, HOUSE_LOCK_GUARD, access | flags);
+  }
+  if (fd < 0 || House_stat_guard(fd, &st) < 0)
     goto failed;
-  if (!S_ISREG(st.st_mode)) {
+  if (pinned >= 0 && (st.st_dev != original.st_dev || st.st_ino != original.st_ino)) {
     errno = EINVAL;
     goto failed;
   }
-  /* Our guard goes back to 0600 with inherited ACLs stripped.  One with a
-   * second name (a cp -al snapshot of lib/, say) still locks, but its
-   * permissions are left to whoever made that name. */
   if (st.st_uid == geteuid() && st.st_nlink == 1 &&
-      ((st.st_mode & 0777) != 0600 || cleanup) && House_secure_private_fd(fd, 0600) < 0)
+      ((st.st_mode & 0777) != 0600 || cleanup || pinned >= 0) &&
+      House_secure_private_fd(fd, 0600) < 0)
     goto failed;
+  if (pinned >= 0)
+    close(pinned);
   return fd;
 
 failed:
   saved_errno = errno;
-  close(fd);
+  if (fd >= 0)
+    close(fd);
+  if (pinned >= 0)
+    close(pinned);
   errno = saved_errno;
   return -1;
 }
@@ -764,15 +807,53 @@ reopen:
   return 0;
 }
 
-static int House_lock_stages(int parent_fd, bool cleanup)
+static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAGE_PREFIX_SIZE])
 {
-  int saved_errno, fd = House_open_lock(parent_fd, cleanup);
-  if (fd < 0 && errno == ENOENT && House_publish_lock(parent_fd) == 0)
+  struct stat guard, parent;
+  int saved_errno, fd;
+#if defined(__linux__) || defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
+  struct statfs fs;
+  bool smb;
+  /* SMB clients can assign inode numbers independently. A cleaner on a
+   * different mount could otherwise match a live writer's stage. */
+  if (fstatfs(parent_fd, &fs) < 0)
+    return -1;
+#if defined(__linux__)
+  unsigned int type = (unsigned int)fs.f_type;
+  smb = type == 0x517b || type == 0xff534d42 || type == 0xfe534d42; /* SMB, CIFS, SMB2 */
+#else
+  smb = !strcmp(fs.f_fstypename, "smbfs");
+#endif
+  if (smb) {
+    errno = EOPNOTSUPP;
+    return -1;
+  }
+#endif
+  fd = House_open_lock(parent_fd, cleanup);
+  if (fd < 0 && errno == ENOENT) {
+    int published = House_publish_lock(parent_fd);
+    saved_errno = errno;
+    /* Another boot may already have published its guard and swept our setup. */
     fd = House_open_lock(parent_fd, cleanup);
+    if (fd < 0 && errno == ENOENT && published < 0)
+      errno = saved_errno;
+  }
   if (fd < 0)
     return -1;
-  if (flock(fd, (cleanup ? LOCK_EX : LOCK_SH) | LOCK_NB) == 0)
-    return fd;
+  if (flock(fd, (cleanup ? LOCK_EX : LOCK_SH) | LOCK_NB) < 0 ||
+      House_stat_guard(fd, &guard) < 0 || fstat(parent_fd, &parent) < 0)
+    goto failed;
+  /* An open guard pins its inode even if the lock directory is replaced.
+   * Restrict the inode namespace to the stage filesystem so the same names
+   * also work across clients that assign it different device numbers. */
+  if (guard.st_dev != parent.st_dev) {
+    errno = EXDEV;
+    goto failed;
+  }
+  snprintf(prefix, HOUSE_STAGE_PREFIX_SIZE, HOUSE_STAGE_PREFIX "g%" PRIxMAX "-", (uintmax_t)guard.st_ino);
+  return fd;
+
+failed:
   saved_errno = errno;
   close(fd);
   errno = saved_errno;
@@ -807,12 +888,10 @@ static int House_open_stage_dir(int parent_fd, const char *name)
   return fd;
 }
 
-static int House_create_scratch(struct house_save *save, bool replacing)
+static int House_create_scratch(struct house_save *save, bool replacing, const char *prefix)
 {
   static unsigned long sequence;
   int fd, attempt;
-  /* An older server or a cleaner without our lock must leave these alone. */
-  const char *prefix = save->lock_fd >= 0 ? HOUSE_STAGE_PREFIX : ".tba-house-unlocked-";
 
   for (attempt = 0; attempt < 128; attempt++) {
     snprintf(save->entry, sizeof(save->entry), "%s%ld-%lu", prefix, (long)getpid(), sequence++);
@@ -844,7 +923,7 @@ static int House_create_scratch(struct house_save *save, bool replacing)
 
 static FILE *House_open_save(const char *filename, struct house_save *save)
 {
-  char *slash;
+  char *slash, prefix[HOUSE_STAGE_PREFIX_SIZE];
   struct stat st;
   bool replacing;
   int fd = -1, saved_errno, resolved;
@@ -887,11 +966,11 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
    * never touches.  Waiting for it would let whoever holds it stop every
    * house save; going ahead costs only the automatic cleanup of this one
    * stage should the game crash before it is renamed into place. */
-  save->lock_fd = House_lock_stages(save->parent_fd, FALSE);
+  save->lock_fd = House_lock_stages(save->parent_fd, FALSE, prefix);
   replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
   if (!replacing && errno != ENOENT)
     goto failed;
-  fd = House_create_scratch(save, replacing);
+  fd = House_create_scratch(save, replacing, save->lock_fd >= 0 ? prefix : ".tba-house-unlocked-");
   if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd) < 0))
     goto failed;
   fp = fdopen(fd, "wb");
@@ -931,7 +1010,7 @@ static int House_install_save(struct house_save *save)
 static bool House_is_stage_name(const char *name, const char *prefix)
 {
   const char *p;
-  char *end, canonical[64];
+  char *end, canonical[HOUSE_STAGE_NAME_SIZE];
   long raw;
   unsigned long seq;
   size_t length = strlen(prefix);
@@ -951,20 +1030,18 @@ static bool House_is_stage_name(const char *name, const char *prefix)
   return !strcmp(canonical, name);
 }
 
-/* A save the game crashed in the middle of leaves its stage in LIB_HOUSE: a
- * file for a first save, or a private directory holding "contents" for a
- * replacement.  Windows deletes its stage when the process exits; here nothing
- * else ever would, and each one keeps a copy of the house, so boot clears
- * them before any house is saved. Legacy and unlocked stages cannot be proven
- * idle. A symlink target outside LIB_HOUSE is outside this scan.
+/* Boot clears interrupted saves in LIB_HOUSE only while holding their guard
+ * exclusively. An untagged stage or one from another guard may still have a
+ * live writer. A symlink target outside LIB_HOUSE is outside this scan.
  *
- * A crash while the lock was first being set up leaves the directory it was
- * filling; the lock exists by now, so that one is finished with too. */
+ * Boot can also discard unpublished lock directories. A competing
+ * initializer reopens the public guard if its setup disappears. */
 static void House_remove_stale_saves(void)
 {
   DIR *dir;
   struct dirent *entry;
   struct stat st;
+  char prefix[HOUSE_STAGE_PREFIX_SIZE];
   const char *inner, *what;
   bool lock_setup;
   int dir_fd, stage_fd, lock_fd;
@@ -975,7 +1052,7 @@ static void House_remove_stale_saves(void)
     return;
   }
   dir_fd = dirfd(dir);
-  lock_fd = House_lock_stages(dir_fd, TRUE);
+  lock_fd = House_lock_stages(dir_fd, TRUE, prefix);
   if (lock_fd < 0) {
     if (errno == EACCES)
       log("SYSERR: Cannot open %s%s: %s. Unfinished house saves remain. Stop all games "
@@ -997,7 +1074,7 @@ static void House_remove_stale_saves(void)
         LIB_HOUSE, HOUSE_STAGE_LOCK);
   while ((entry = readdir(dir)) != NULL) {
     lock_setup = House_is_stage_name(entry->d_name, HOUSE_LOCK_INIT_PREFIX);
-    if (!lock_setup && !House_is_stage_name(entry->d_name, HOUSE_STAGE_PREFIX))
+    if (!lock_setup && !House_is_stage_name(entry->d_name, prefix))
       continue;
     inner = lock_setup ? HOUSE_LOCK_GUARD : "contents";
     what = lock_setup ? "a house save lock setup" : "a house save";
