@@ -10,7 +10,9 @@
 #include "handler.h"
 #include "house.h"
 
+#include <dirent.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 #if defined(__linux__)
 #include <sys/xattr.h>
 #elif defined(__FreeBSD__)
@@ -21,7 +23,7 @@
 #define ELSEWHERE_FILE "elsewhere/3000.house"
 static struct room_data rooms[2];
 static struct obj_data item;
-static int fail_record;
+static int fail_record, crash_record;
 
 #ifdef HOUSE_TEST_WRAP_IO
 #include <fcntl.h>
@@ -88,12 +90,18 @@ long get_id_by_name(const char *name) { return !strcmp(name, "owner") ? 1 : -1; 
 /* The other hcontrol subcommands share the command handler. */
 char *get_name_by_id(long id) { return NULL; }
 obj_save_data *objsave_parse_objects(FILE *fp) { return NULL; }
+/* House_boot() loads the houses it finds; these tests give it none. */
+void objsave_reassemble(obj_save_data *loaded,
+                        void (*place)(struct obj_data *obj, void *dest), void *dest) {}
+void obj_to_room(struct obj_data *object, room_rnum room) {}
 void extract_obj(struct obj_data *obj) {}
 obj_rnum real_object(obj_vnum vnum) { return NOTHING; }
 struct obj_data *read_object(obj_vnum vnum, int type) { return NULL; }
 
 int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int location)
 {
+  if (crash_record)
+    _exit(1);	/* die part-way through the save, as a crash would */
   return fputs(obj->name, fp) >= 0 && !fail_record;
 }
 
@@ -132,6 +140,7 @@ void tearDown(void)
   remove(ELSEWHERE_FILE);
   remove(ELSEWHERE_FILE ".tmp");
   remove("bystander");
+  remove(LIB_HOUSE ".tba-house-notes");
 #if defined(__linux__)
   removexattr("house", "system.posix_acl_default");
   remove(LIB_HOUSE "reference");
@@ -362,6 +371,56 @@ static void test_destroying_a_symlinked_house_leaves_both_siblings_untouched(voi
   assert_file(ELSEWHERE_FILE ".tmp", "target sibling");
 }
 
+static int count_stages(void)
+{
+  DIR *dir = opendir("house");
+  struct dirent *entry;
+  int count = 0;
+  TEST_ASSERT_NOT_NULL(dir);
+  while ((entry = readdir(dir)) != NULL)
+    count += !strncmp(entry->d_name, ".tba-house-", 11);
+  closedir(dir);
+  return count;
+}
+
+/* The child dies part-way through writing the house, and its stage stays. */
+static void crash_in_the_middle_of_a_save(void)
+{
+  int status;
+  pid_t child = fork();
+  TEST_ASSERT_TRUE(child >= 0);
+  if (child == 0) {
+    crash_record = TRUE;
+    House_crashsave(3000);
+    _exit(0);
+  }
+  TEST_ASSERT_EQUAL_INT(child, waitpid(child, &status, 0));
+  TEST_ASSERT_TRUE(WIFEXITED(status) && WEXITSTATUS(status) == 1);
+}
+
+/* A first save leaves a stage file and a replacement a stage directory.
+ * Boot clears both, and leaves alone a look-alike name and the stage of a
+ * game that is still running. */
+static void test_boot_removes_saves_a_crash_left_unfinished(void)
+{
+  char running[64];
+  crash_in_the_middle_of_a_save();
+  write_file(HOUSE_FILE, "old contents");
+  crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(2, count_stages());
+  assert_file(HOUSE_FILE, "old contents");
+
+  snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
+  write_file(running, "a running game's save");
+  write_file(LIB_HOUSE ".tba-house-notes", "operator's copy");
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(2, count_stages());
+  assert_file(running, "a running game's save");
+  assert_file(LIB_HOUSE ".tba-house-notes", "operator's copy");
+  assert_file(HOUSE_FILE, "old contents");
+  TEST_ASSERT_EQUAL_INT(0, remove(running));
+}
+
 #ifdef HOUSE_TEST_WRAP_IO
 static void test_replacement_starts_private_before_permissions_are_copied(void)
 {
@@ -546,6 +605,7 @@ int main(void)
   RUN_TEST(test_broken_symlink_house_file_is_not_replaced);
   RUN_TEST(test_destroying_a_house_leaves_sibling_files_untouched);
   RUN_TEST(test_destroying_a_symlinked_house_leaves_both_siblings_untouched);
+  RUN_TEST(test_boot_removes_saves_a_crash_left_unfinished);
 #ifdef HOUSE_TEST_WRAP_IO
   RUN_TEST(test_replacement_starts_private_before_permissions_are_copied);
   RUN_TEST(test_parent_sync_failure_keeps_house_queued_until_retry);

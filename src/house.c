@@ -22,6 +22,7 @@
 #if defined(CIRCLE_WINDOWS) || defined(_WIN32)
 #include "house_win32.h"
 #else
+#include <dirent.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #if defined(__linux__)
@@ -684,6 +685,80 @@ static int House_install_save(struct house_save *save)
   /* The file data is synced. The new directory entry must be durable too. */
   return fsync(save->parent_fd) == 0;
 }
+
+/* The pid in a stage name House_create_scratch() made, ".tba-house-<pid>-<n>",
+ * or 0 if the name is not one of those. */
+static long House_stage_pid(const char *name)
+{
+  static const char prefix[] = ".tba-house-";
+  const char *p = name + sizeof(prefix) - 1;
+  char *end;
+  long pid;
+
+  if (strncmp(name, prefix, sizeof(prefix) - 1) || !isdigit((unsigned char)*p))
+    return 0;
+  pid = strtol(p, &end, 10);
+  if (*end != '-' || !isdigit((unsigned char)end[1]))
+    return 0;
+  for (p = end + 1; isdigit((unsigned char)*p); p++)
+    ;
+  return *p ? 0 : pid;
+}
+
+/* A save the game crashed in the middle of leaves its stage in LIB_HOUSE: a
+ * file for a first save, or a private directory holding "contents" for a
+ * replacement.  Windows deletes its stage when the process exits; here nothing
+ * else ever would, and each one keeps a copy of the house, so boot clears
+ * them before any house is saved.  Only names House_create_scratch() makes
+ * are touched, and a stage whose process is still running -- a second game
+ * sharing this directory -- is left alone.  A stage beside a symlinked house
+ * file's target outside LIB_HOUSE is not looked for. */
+static void House_remove_stale_saves(void)
+{
+  DIR *dir;
+  struct dirent *entry;
+  struct stat st;
+  long pid;
+  int dir_fd, stage_fd;
+
+  if (!(dir = opendir(LIB_HOUSE))) {
+    if (errno != ENOENT)
+      log("SYSERR: Cannot look for unfinished house saves in %s: %s", LIB_HOUSE, strerror(errno));
+    return;
+  }
+  dir_fd = dirfd(dir);
+  while ((entry = readdir(dir)) != NULL) {
+    if (!(pid = House_stage_pid(entry->d_name)))
+      continue;
+    if (pid != (long)getpid() && (kill((pid_t)pid, 0) == 0 || errno == EPERM))
+      continue;
+    if (fstatat(dir_fd, entry->d_name, &st, AT_SYMLINK_NOFOLLOW) < 0)
+      continue;
+    if (S_ISDIR(st.st_mode)) {
+      stage_fd = openat(dir_fd, entry->d_name, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+      /* Killed between mkdirat() and the fchmodat() that follows it. */
+      if (stage_fd < 0 && errno == EACCES && fchmodat(dir_fd, entry->d_name, 0700, 0) == 0)
+        stage_fd = openat(dir_fd, entry->d_name, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+      if (stage_fd >= 0) {
+        unlinkat(stage_fd, "contents", 0);
+        close(stage_fd);
+      }
+      if (unlinkat(dir_fd, entry->d_name, AT_REMOVEDIR) < 0) {
+        log("SYSERR: Cannot remove unfinished house save %s%s: %s",
+            LIB_HOUSE, entry->d_name, strerror(errno));
+        continue;
+      }
+    } else if (!S_ISREG(st.st_mode)) {
+      continue;
+    } else if (unlinkat(dir_fd, entry->d_name, 0) < 0) {
+      log("SYSERR: Cannot remove unfinished house save %s%s: %s",
+          LIB_HOUSE, entry->d_name, strerror(errno));
+      continue;
+    }
+    log("Removed %s%s, left by a house save that did not finish.", LIB_HOUSE, entry->d_name);
+  }
+  closedir(dir);
+}
 #endif
 
 /* Sync the contents before publishing their directory entry. */
@@ -896,6 +971,10 @@ void House_boot(void)
   FILE *fl;
 
   memset((char *)house_control,0,sizeof(struct house_control_rec)*MAX_HOUSES);
+
+#if !defined(CIRCLE_WINDOWS) && !defined(_WIN32)
+  House_remove_stale_saves();
+#endif
 
   if (!(fl = fopen(HCONTROL_FILE, "rb"))) {
     if (errno == ENOENT)
