@@ -25,10 +25,15 @@
 
 #define HOUSE_FILE LIB_HOUSE "3000.house"
 #define ELSEWHERE_FILE "elsewhere/3000.house"
+#define LOCK_NAME ".tba-house.lock"
+#define LOCK_PATH LIB_HOUSE LOCK_NAME
+#define LOCK_GUARD LOCK_PATH "/guard"
 #define STAGE_PREFIX ".tba-house-save-"
 static struct room_data rooms[2];
 static struct obj_data item;
 static int fail_record, crash_record, boot_during_record;
+static int observe_stage, unlocked_during_record;
+static int count_unlocked_stages(void);
 
 #ifdef HOUSE_TEST_WRAP_IO
 /* Fail only the sync of the installed file's parent. File syncs and other
@@ -42,6 +47,42 @@ static int deny_chown;
 int __real_fchown(int fd, uid_t owner, gid_t group);
 static int reject_named_chmod, following_chmods;
 int __real_fchmodat(int dirfd, const char *name, mode_t mode, int flags);
+static int fail_lock_chmod, attempted_lock_chmod, visible_before_chmod;
+static int observe_publication, published_dir_mode, published_guard_mode;
+static int report_publication_enoent;
+int __real_fchmod(int fd, mode_t mode);
+int __real_renameat(int from_fd, const char *from, int to_fd, const char *to);
+
+int __wrap_fchmod(int fd, mode_t mode)
+{
+  struct stat st;
+  if (fail_lock_chmod && mode == 0600 && fstat(fd, &st) == 0 && S_ISREG(st.st_mode)) {
+    attempted_lock_chmod = TRUE;
+    visible_before_chmod = lstat(LOCK_PATH, &st) == 0;
+    errno = EIO;
+    return -1;
+  }
+  return __real_fchmod(fd, mode);
+}
+
+int __wrap_renameat(int from_fd, const char *from, int to_fd, const char *to)
+{
+  int result = __real_renameat(from_fd, from, to_fd, to);
+  if (observe_publication && result == 0 && !strcmp(to, LOCK_NAME)) {
+    struct stat st;
+    if (fstatat(to_fd, to, &st, AT_SYMLINK_NOFOLLOW) == 0 && S_ISDIR(st.st_mode))
+      published_dir_mode = st.st_mode & 0777;
+    if (fstatat(to_fd, LOCK_NAME "/guard", &st, AT_SYMLINK_NOFOLLOW) == 0 && S_ISREG(st.st_mode))
+      published_guard_mode = st.st_mode & 0777;
+    if (report_publication_enoent) {
+      /* NFS may install the directory even though the caller sees ENOENT. */
+      report_publication_enoent = FALSE;
+      errno = ENOENT;
+      return -1;
+    }
+  }
+  return result;
+}
 
 int __wrap_fchmodat(int dirfd, const char *name, mode_t mode, int flags)
 {
@@ -117,6 +158,8 @@ struct obj_data *read_object(obj_vnum vnum, int type) { return NULL; }
 
 int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int location)
 {
+  if (observe_stage)
+    unlocked_during_record = count_unlocked_stages();
   if (crash_record)
     _exit(1);	/* die part-way through the save, as a crash would */
   if (boot_during_record) {
@@ -142,6 +185,8 @@ void setUp(void)
   item.name = "current contents";
   fail_record = FALSE;
   boot_during_record = FALSE;
+  observe_stage = FALSE;
+  unlocked_during_record = -1;
 }
 
 void tearDown(void)
@@ -151,6 +196,9 @@ void tearDown(void)
   watch_sync = fail_parent_sync = parent_sync_errno = parent_syncs = 0;
   watch_create = saw_private_create = deny_chown = 0;
   reject_named_chmod = following_chmods = 0;
+  fail_lock_chmod = attempted_lock_chmod = visible_before_chmod = 0;
+  observe_publication = report_publication_enoent = 0;
+  published_dir_mode = published_guard_mode = -1;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
     char command[] = "destroy 3000";
@@ -158,7 +206,9 @@ void tearDown(void)
   }
   umask(0022);
   chmod("house", 0700);
-  rmdir(LIB_HOUSE ".tba-house.lock");  /* Obstruction used by the unlocked-save test. */
+  remove(LOCK_PATH "/marker");  /* Only the unlocked-save fixture creates this. */
+  remove(LOCK_GUARD);
+  remove(LOCK_PATH);
   remove(HCONTROL_FILE);
   remove(HOUSE_FILE);
   remove(HOUSE_FILE ".tmp");
@@ -175,6 +225,7 @@ void tearDown(void)
   remove(LIB_HOUSE "reference");
 #elif defined(__FreeBSD__)
   remove("elsewhere/" HOUSE_FILE);
+  remove("elsewhere/house/.tba-house.lock/guard");
   remove("elsewhere/house/.tba-house.lock");
   rmdir("elsewhere/house");
   chmod("elsewhere", 0700);
@@ -259,6 +310,36 @@ static void test_existing_house_keeps_its_permissions(void)
     TEST_ASSERT_EQUAL_UINT(modes[i], st.st_mode & 0777);
   }
 }
+
+#if defined(__APPLE__) && defined(__MACH__)
+static void test_darwin_stage_recovery_under_restrictive_umask(void)
+{
+  if (geteuid() == 0)
+    TEST_IGNORE_MESSAGE("requires an unprivileged owner to exercise directory permissions");
+  write_file(HOUSE_FILE, "previous contents");
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  umask(0777);
+  House_crashsave(3000);
+  umask(0022);
+  if (ROOM_FLAGGED(0, ROOM_HOUSE_CRASH)) {
+    assert_file(HOUSE_FILE, "previous contents");
+    House_crashsave(3000);
+  }
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+
+#ifdef O_SEARCH
+  /* Owner search permission is enough to acquire a directory descriptor. */
+  item.name = "searchable stage";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  umask(0400);
+  House_crashsave(3000);
+  umask(0022);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+#endif
+}
+#endif
 
 static void set_alternate_house_group(gid_t *chosen)
 {
@@ -351,6 +432,32 @@ static void test_symlinked_house_file_is_saved_where_it_points(void)
   TEST_ASSERT_EQUAL_INT(0, stat(ELSEWHERE_FILE, &st));
   TEST_ASSERT_EQUAL_UINT(0640, st.st_mode & 0777);
   TEST_ASSERT_FALSE(exists(ELSEWHERE_FILE ".tmp"));
+}
+
+static void test_symlink_to_lock_guard_preserves_guard_and_pending_save(void)
+{
+  char build[] = "build 3000 north owner";
+  struct stat before, after, house_link;
+
+  do_hcontrol(NULL, build, 0, 0);
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &before));
+  TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+  TEST_ASSERT_EQUAL_INT(0, symlink(LOCK_NAME "/guard", HOUSE_FILE));
+  item.name = "pending contents";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_save_all();
+
+  TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, lstat(HOUSE_FILE, &house_link));
+  TEST_ASSERT_TRUE(S_ISLNK(house_link.st_mode));
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &after));
+  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+  assert_file(LOCK_GUARD, "");
+
+  TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+  House_save_all();
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
 }
 
 static void test_dangling_symlink_house_file_creates_its_target(void)
@@ -486,14 +593,104 @@ static int count_unlocked_stages(void)
   return count;
 }
 
+static void test_multiply_linked_lock_leaves_sibling_permissions_alone(void)
+{
+  const mode_t modes[] = {0640, 0000};
+  struct stat before, after;
+  TEST_ASSERT_FALSE(exists(LOCK_PATH));
+  write_file("bystander", "operator's copy");
+  TEST_ASSERT_EQUAL_INT(0, link("bystander", LOCK_PATH));
+  TEST_ASSERT_EQUAL_INT(0, stat("bystander", &before));
+  observe_stage = TRUE;
+
+  for (size_t i = 0; i < sizeof(modes) / sizeof(modes[0]); ++i) {
+    TEST_ASSERT_EQUAL_INT(0, chmod("bystander", modes[i]));
+    unlocked_during_record = -1;
+    House_boot();
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    assert_file(HOUSE_FILE, item.name);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+    TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+    TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_PATH, &after));
+    TEST_ASSERT_TRUE(after.st_dev == before.st_dev && after.st_ino == before.st_ino);
+    TEST_ASSERT_EQUAL_UINT(modes[i], after.st_mode & 0777);
+  }
+  TEST_ASSERT_EQUAL_INT(0, chmod("bystander", 0600));
+  assert_file("bystander", "operator's copy");
+  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_PATH));
+}
+
+#if defined(__linux__) || (defined(__FreeBSD__) && defined(O_PATH) && defined(AT_EMPTY_PATH) && defined(O_EMPTY_PATH))
+static void test_boot_repairs_an_inaccessible_legacy_lock_and_sweeps_its_stage(void)
+{
+  struct stat before, after;
+  write_file(LOCK_PATH, "legacy guard");
+  write_file(HOUSE_FILE, "old contents");
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &before));
+  crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(1, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0000));
+
+  House_boot();
+
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &after));
+  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+  TEST_ASSERT_EQUAL_UINT(0600, after.st_mode & 0777);
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+  assert_file(LOCK_PATH, "legacy guard");
+  assert_file(HOUSE_FILE, "old contents");
+}
+#endif
+
+#ifdef HOUSE_TEST_WRAP_IO
+static void test_lock_is_secured_before_publication_and_retries_after_failure(void)
+{
+  struct stat st;
+  TEST_ASSERT_FALSE(exists(LOCK_PATH));
+  fail_lock_chmod = TRUE;
+  observe_stage = TRUE;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  fail_lock_chmod = FALSE;
+  TEST_ASSERT_TRUE(attempted_lock_chmod);
+  TEST_ASSERT_FALSE(visible_before_chmod);
+  TEST_ASSERT_FALSE(exists(LOCK_PATH));
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+
+  observe_publication = TRUE;
+  report_publication_enoent = TRUE;
+  published_dir_mode = published_guard_mode = -1;
+  unlocked_during_record = -1;
+  item.name = "contents after retry";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  umask(0777);
+  House_crashsave(3000);
+  umask(0022);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0700, published_dir_mode);
+  TEST_ASSERT_EQUAL_INT(0600, published_guard_mode);
+  TEST_ASSERT_FALSE(report_publication_enoent);
+  TEST_ASSERT_EQUAL_INT(0, unlocked_during_record);
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
+  TEST_ASSERT_EQUAL_UINT(1, st.st_nlink);
+}
+#endif
+
 /* Read access is enough to hold the lock, so holding it must not stop a
  * save: the save goes ahead without it and leaves nothing behind. */
-static void test_a_held_lock_does_not_stop_a_save(void)
+static void check_save_with_exclusively_held_lock(const char *lock)
 {
   char build[] = "build 3000 north owner";
+  struct stat before, after;
   int fd, locked, saved;
   do_hcontrol(NULL, build, 0, 0);
-  fd = open(LIB_HOUSE ".tba-house.lock", O_RDONLY);
+  TEST_ASSERT_EQUAL_INT(0, stat(lock, &before));
+  fd = open(lock, O_RDONLY);
   TEST_ASSERT_TRUE(fd >= 0);
   locked = flock(fd, LOCK_EX | LOCK_NB);
   if (locked < 0) {
@@ -502,13 +699,29 @@ static void test_a_held_lock_does_not_stop_a_save(void)
   }
   item.name = "pending update";
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  observe_stage = TRUE;
   House_save_all();
   saved = !ROOM_FLAGGED(0, ROOM_HOUSE_CRASH);
   TEST_ASSERT_EQUAL_INT(0, close(fd));
   TEST_ASSERT_TRUE(saved);
   assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+  TEST_ASSERT_EQUAL_INT(0, stat(lock, &after));
+  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
   TEST_ASSERT_EQUAL_INT(0, count_stages());
   TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+}
+
+static void test_a_held_lock_does_not_stop_a_save(void)
+{
+  check_save_with_exclusively_held_lock(LOCK_GUARD);
+}
+
+static void test_held_legacy_lock_preserves_its_inode_and_uses_unlocked_stage(void)
+{
+  write_file(LOCK_PATH, "legacy guard");
+  check_save_with_exclusively_held_lock(LOCK_PATH);
+  assert_file(LOCK_PATH, "legacy guard");
 }
 
 /* Other accounts cannot open the lock to hold it.  A lock created under a
@@ -518,15 +731,15 @@ static void test_the_lock_file_is_private(void)
 {
   struct stat st;
   int fd, held;
-  remove(LIB_HOUSE ".tba-house.lock");
-  umask(0777);
+  TEST_ASSERT_FALSE(exists(LOCK_PATH));
+  umask(0077);
   House_crashsave(3000);
   umask(0022);
-  TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 
-  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0644));
-  fd = open(LIB_HOUSE ".tba-house.lock", O_RDONLY);
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0644));
+  fd = open(LOCK_GUARD, O_RDONLY);
   TEST_ASSERT_TRUE(fd >= 0);
   held = flock(fd, LOCK_EX | LOCK_NB) == 0;
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
@@ -534,15 +747,15 @@ static void test_the_lock_file_is_private(void)
   TEST_ASSERT_EQUAL_INT(0, close(fd));
   TEST_ASSERT_TRUE(held);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-  TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 
   /* An owner-owned lock left read-only (0400) is also restored to 0600. */
-  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0400));
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0400));
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
   House_crashsave(3000);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-  TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 }
 
@@ -551,13 +764,15 @@ static void test_the_lock_file_is_private(void)
 static void test_boot_sweeps_with_a_lock_file_it_can_only_read(void)
 {
   int stages;
+  /* Older versions kept the guard directly at the public name. */
+  write_file(LOCK_PATH, "");
   write_file(HOUSE_FILE, "old contents");
   crash_in_the_middle_of_a_save();
   TEST_ASSERT_EQUAL_INT(1, count_stages());
-  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0400));
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0400));
   House_boot();
   stages = count_stages();
-  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0600));
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0600));
   TEST_ASSERT_EQUAL_INT(0, stages);
   assert_file(HOUSE_FILE, "old contents");
 }
@@ -568,16 +783,17 @@ static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
   glob_t paths;
   pid_t child;
   int length;
-  if (unlink(LIB_HOUSE ".tba-house.lock") < 0)
-    TEST_ASSERT_EQUAL_INT(ENOENT, errno);
-  TEST_ASSERT_EQUAL_INT(0, mkdir(LIB_HOUSE ".tba-house.lock", 0700));
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LOCK_PATH, 0700));
+  write_file(LOCK_PATH "/marker", "operator's copy");
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
   House_crashsave(3000);
   assert_file(HOUSE_FILE, item.name);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
 
   child = crash_in_the_middle_of_a_save();
-  TEST_ASSERT_EQUAL_INT(0, rmdir(LIB_HOUSE ".tba-house.lock"));
+  assert_file(LOCK_PATH "/marker", "operator's copy");
+  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_PATH "/marker"));
+  TEST_ASSERT_EQUAL_INT(0, rmdir(LOCK_PATH));
   /* Locate this child's one abandoned replacement in the isolated fixture. */
   snprintf(pattern, sizeof(pattern), LIB_HOUSE ".tba-house-unlocked-%ld-*", (long)child);
   TEST_ASSERT_EQUAL_INT(0, glob(pattern, 0, NULL, &paths));
@@ -862,11 +1078,15 @@ int main(void)
   RUN_TEST(test_new_house_retries_after_its_first_save_fails);
   RUN_TEST(test_new_house_file_follows_the_umask);
   RUN_TEST(test_existing_house_keeps_its_permissions);
+#if defined(__APPLE__) && defined(__MACH__)
+  RUN_TEST(test_darwin_stage_recovery_under_restrictive_umask);
+#endif
   RUN_TEST(test_existing_house_keeps_a_group_the_game_is_in);
   RUN_TEST(test_partial_record_preserves_previous_save);
   RUN_TEST(test_saving_leaves_sibling_files_untouched);
   RUN_TEST(test_saving_leaves_sibling_links_untouched);
   RUN_TEST(test_symlinked_house_file_is_saved_where_it_points);
+  RUN_TEST(test_symlink_to_lock_guard_preserves_guard_and_pending_save);
   RUN_TEST(test_dangling_symlink_house_file_creates_its_target);
   RUN_TEST(test_broken_symlink_house_file_is_not_replaced);
   RUN_TEST(test_destroying_a_house_leaves_sibling_files_untouched);
@@ -875,10 +1095,16 @@ int main(void)
   RUN_TEST(test_boot_defers_cleanup_while_a_save_is_active);
   RUN_TEST(test_boot_keeps_noncanonical_stage_names);
   RUN_TEST(test_a_held_lock_does_not_stop_a_save);
+  RUN_TEST(test_held_legacy_lock_preserves_its_inode_and_uses_unlocked_stage);
   RUN_TEST(test_the_lock_file_is_private);
+  RUN_TEST(test_multiply_linked_lock_leaves_sibling_permissions_alone);
+#if defined(__linux__) || (defined(__FreeBSD__) && defined(O_PATH) && defined(AT_EMPTY_PATH) && defined(O_EMPTY_PATH))
+  RUN_TEST(test_boot_repairs_an_inaccessible_legacy_lock_and_sweeps_its_stage);
+#endif
   RUN_TEST(test_boot_sweeps_with_a_lock_file_it_can_only_read);
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
+  RUN_TEST(test_lock_is_secured_before_publication_and_retries_after_failure);
   RUN_TEST(test_boot_clears_an_empty_unreadable_stage_without_chmod);
   RUN_TEST(test_replacement_starts_private_before_permissions_are_copied);
   RUN_TEST(test_parent_sync_failure_keeps_house_queued_until_retry);
@@ -893,7 +1119,7 @@ int main(void)
   RUN_TEST(test_freebsd_old_owner_deny_preserves_game_read_access);
 #endif
   result = UNITY_END();
-  remove(LIB_HOUSE ".tba-house.lock");
+  remove("elsewhere/.tba-house.lock/guard");
   remove("elsewhere/.tba-house.lock");
   if (rmdir("house") || rmdir("etc") || rmdir("elsewhere") || chdir("/") || rmdir(scratch))
     return 1;

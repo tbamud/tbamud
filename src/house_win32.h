@@ -285,7 +285,7 @@ static DWORD House_win_copy_stream(const struct house_save *save, const wchar_t 
     return ERROR_NOT_ENOUGH_MEMORY;
   memcpy(path, source, source_length * sizeof(*path));
   wcscpy(path + source_length, stream);
-  from = CreateFileW(path, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_DELETE, NULL,
+  from = CreateFileW(path, FILE_READ_DATA, FILE_SHARE_READ | FILE_SHARE_DELETE, NULL,
                      OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
   if (from == INVALID_HANDLE_VALUE) {
     error = GetLastError();
@@ -296,7 +296,7 @@ static DWORD House_win_copy_stream(const struct house_save *save, const wchar_t 
      * Restore automatic cleanup before copying any of the stream's bytes. */
     error = House_win_delete_on_close(save->stage, FALSE);
     if (!error) {
-      to = CreateFileW(path, FILE_WRITE_DATA | FILE_APPEND_DATA, FILE_SHARE_DELETE, NULL,
+      to = CreateFileW(path, FILE_WRITE_DATA, FILE_SHARE_DELETE, NULL,
                        CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
       if (to == INVALID_HANDLE_VALUE)
         error = GetLastError();
@@ -360,8 +360,9 @@ static DWORD House_win_copy_streams(const struct house_save *save, const wchar_t
     error = GetLastError();
     if (error == ERROR_HANDLE_EOF)
       return ERROR_SUCCESS;
+    /* FindFirstStreamW reports ERROR_INVALID_PARAMETER on filesystems without streams. */
     if (!meta->volume_flags_known &&
-        (error == ERROR_INVALID_FUNCTION || error == ERROR_NOT_SUPPORTED))
+        (error == ERROR_INVALID_PARAMETER || error == ERROR_INVALID_FUNCTION || error == ERROR_NOT_SUPPORTED))
       return ERROR_SUCCESS;
     return error;
   }

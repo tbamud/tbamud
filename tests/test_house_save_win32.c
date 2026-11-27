@@ -1,6 +1,21 @@
 /* Native filesystem tests for the Windows backend used by House_crashsave. */
 #include "unity.h"
+#include <windows.h>
+
+/* Exercise errors returned by providers that cannot report volume flags. */
+static DWORD stream_probe_error;
+static HANDLE WINAPI test_find_first_stream(LPCWSTR path, STREAM_INFO_LEVELS level, LPVOID data, DWORD flags)
+{
+  if (stream_probe_error) {
+    SetLastError(stream_probe_error);
+    return INVALID_HANDLE_VALUE;
+  }
+  return FindFirstStreamW(path, level, data, flags);
+}
+
+#define FindFirstStreamW test_find_first_stream
 #include "house_win32.h"
+#undef FindFirstStreamW
 #include <sddl.h>
 
 static char house[MAX_PATH], link_name[MAX_PATH + sizeof(".link")];
@@ -19,6 +34,7 @@ void setUp(void)
 
 void tearDown(void)
 {
+  stream_probe_error = ERROR_SUCCESS;
   if (owns_link)
     DeleteFileA(link_name);
   if (owns_house) {
@@ -259,22 +275,26 @@ static void read_current_user_sid(char *buf, size_t cap)
 
 static void write_stream_text(const char *path, const char *text)
 {
-  FILE *fp = fopen(path, "wb");
-  TEST_ASSERT_NOT_NULL(fp);
-  int wrote = fputs(text, fp);
-  TEST_ASSERT_EQUAL_INT(0, fclose(fp));
-  TEST_ASSERT_TRUE(wrote >= 0);
+  HANDLE file = CreateFileA(path, FILE_WRITE_DATA, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+  DWORD count = 0;
+  TEST_ASSERT_TRUE(file != INVALID_HANDLE_VALUE);
+  BOOL wrote = WriteFile(file, text, (DWORD)strlen(text), &count, NULL);
+  CloseHandle(file);
+  TEST_ASSERT_TRUE(wrote);
+  TEST_ASSERT_EQUAL_UINT(strlen(text), count);
 }
 
 static void assert_stream_text(const char *path, const char *expected)
 {
-  char buf[64] = "";
-  FILE *fp = fopen(path, "rb");
-  TEST_ASSERT_NOT_NULL(fp);
-  size_t count = fread(buf, 1, sizeof(buf) - 1, fp);
-  fclose(fp);
+  char buf[64];
+  DWORD count = 0;
+  HANDLE file = CreateFileA(path, FILE_READ_DATA, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+  TEST_ASSERT_TRUE(file != INVALID_HANDLE_VALUE);
+  BOOL read = ReadFile(file, buf, sizeof(buf), &count, NULL);
+  CloseHandle(file);
+  TEST_ASSERT_TRUE(read);
   TEST_ASSERT_EQUAL_UINT(strlen(expected), count);
-  TEST_ASSERT_EQUAL_STRING(expected, buf);
+  TEST_ASSERT_EQUAL_MEMORY(expected, buf, count);
 }
 
 static void test_save_copies_named_streams_with_restrictive_and_inherited_dacls(void)
@@ -290,8 +310,8 @@ static void test_save_copies_named_streams_with_restrictive_and_inherited_dacls(
   check_dacl_after_save(house);
   assert_stream_text(stream, "inherited-stream");
 
-  /* 2. Write-data-only DACL (no WRITE_EA / WRITE_ATTRIBUTES) + named stream. */
-  snprintf(sddl, sizeof(sddl), "D:P(A;;0x13008b;;;%s)", sid);
+  /* 2. Data can be read and written without access to extended attributes. */
+  snprintf(sddl, sizeof(sddl), "D:P(A;;0x130083;;;%s)", sid);
   TEST_ASSERT_TRUE(ConvertStringSecurityDescriptorToSecurityDescriptorA(sddl, SDDL_REVISION_1, &security, NULL));
   BOOL set = SetFileSecurityA(house, DACL_SECURITY_INFORMATION | PROTECTED_DACL_SECURITY_INFORMATION, security);
   LocalFree(security);
@@ -308,19 +328,19 @@ static void test_save_copies_named_streams_with_restrictive_and_inherited_dacls(
   check_dacl_after_save(house);
   assert_stream_text(stream, "inherited-stream");
 
-  /* 4. Modify-only directory (no WRITE_DAC) + named stream. */
+  /* 4. The inherited DACL permits writes, but grants neither APPEND_DATA nor WRITE_DAC. */
   {
     PSECURITY_DESCRIPTOR dir_sd = NULL;
     char child_stream[sizeof(child) + 16];
     TEST_ASSERT_TRUE(ConvertStringSecurityDescriptorToSecurityDescriptorW(
-        L"D:P(A;;FA;;;OW)(A;OIIO;0x1301bf;;;OW)", SDDL_REVISION_1, &dir_sd, NULL));
+        L"D:P(A;;FA;;;OW)(A;OIIO;0x13008b;;;OW)", SDDL_REVISION_1, &dir_sd, NULL));
     SECURITY_ATTRIBUTES attrs = { sizeof(attrs), dir_sd, FALSE };
     snprintf(directory, sizeof(directory), "%s.dir", house);
     owns_directory = CreateDirectoryA(directory, &attrs);
     LocalFree(dir_sd);
     TEST_ASSERT_TRUE(owns_directory);
     snprintf(child, sizeof(child), "%s\\room.house", directory);
-    HANDLE file = CreateFileA(child, GENERIC_WRITE, 0, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
+    HANDLE file = CreateFileA(child, FILE_WRITE_DATA, 0, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
     TEST_ASSERT_TRUE(file != INVALID_HANDLE_VALUE);
     owns_child = 1;
     CloseHandle(file);
@@ -329,6 +349,20 @@ static void test_save_copies_named_streams_with_restrictive_and_inherited_dacls(
     check_dacl_after_save(child);
     assert_stream_text(child_stream, "modify-stream");
   }
+}
+
+static void test_stream_probe_without_volume_flags(void)
+{
+  struct house_save save = {0};
+  struct house_win_metadata meta = {0};
+  save.dest = L"provider-file";
+  stream_probe_error = ERROR_INVALID_PARAMETER;
+  TEST_ASSERT_EQUAL_UINT32(ERROR_SUCCESS, House_win_copy_streams(&save, NULL, &meta, FALSE));
+  meta.volume_flags_known = TRUE;
+  TEST_ASSERT_EQUAL_UINT32(ERROR_INVALID_PARAMETER, House_win_copy_streams(&save, NULL, &meta, FALSE));
+  meta.volume_flags_known = FALSE;
+  stream_probe_error = ERROR_ACCESS_DENIED;
+  TEST_ASSERT_EQUAL_UINT32(ERROR_ACCESS_DENIED, House_win_copy_streams(&save, NULL, &meta, FALSE));
 }
 
 static void test_save_preserves_hidden_and_not_indexed_attributes(void)
@@ -364,6 +398,7 @@ int main(void)
   RUN_TEST(test_save_with_only_inherited_modify_access);
   RUN_TEST(test_save_copies_named_and_empty_data_streams);
   RUN_TEST(test_save_copies_named_streams_with_restrictive_and_inherited_dacls);
+  RUN_TEST(test_stream_probe_without_volume_flags);
   RUN_TEST(test_save_keeps_ntfs_compression);
   RUN_TEST(test_save_preserves_hidden_and_not_indexed_attributes);
   RUN_TEST(test_locked_named_stream_leaves_the_previous_save_intact);
