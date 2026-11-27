@@ -21,7 +21,7 @@
 #include "class.h"
 #include "config.h"
 #include "modify.h"
-#include "genolc.h" /* for strip_cr and sprintascii */
+#include "genolc.h"
 
 /* these factors should be unique integers */
 #define RENT_FACTOR    1
@@ -545,12 +545,7 @@ static int objsave_commit_file(FILE *fp, const char *tmp, const char *path)
     return FALSE;
   }
 
-  if (rename(tmp, path) == 0)
-    return TRUE;
-
-  /* Windows will not rename over an existing file. */
-  remove(path);
-  if (rename(tmp, path) == 0)
+  if (genolc_install_file(tmp, path))
     return TRUE;
 
   log("SYSERR: Unable to rename %s to %s: %s", tmp, path, strerror(errno));
