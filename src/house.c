@@ -606,21 +606,35 @@ static void House_discard_save(struct house_save *save)
 
 /* Keep this inode in place across saves. Each writer holds a shared lock from
  * before stage creation through disposal. Only an exclusive holder may sweep.
- * A regular file permits exclusive locking on NFS with a writable descriptor. */
+ * A regular file permits exclusive locking on NFS with a writable descriptor.
+ *
+ * Anyone who can open the lock can hold it, so it is made 0600: another
+ * account that could hold it exclusively would hold up the sweep for as long
+ * as it liked.  A save never waits for it -- see House_open_save(). */
 #define HOUSE_STAGE_LOCK ".tba-house.lock"
 #define HOUSE_STAGE_PREFIX ".tba-house-save-"
+static int House_open_lock(int parent_fd, bool cleanup)
+{
+  const int flags = O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC;
+  int fd = openat(parent_fd, HOUSE_STAGE_LOCK, (cleanup ? O_RDWR : O_RDONLY) | flags);
+  /* An exclusive flock() needs no write access on a local filesystem, so a
+   * lock file root left behind still lets the sweep run. */
+  if (fd < 0 && cleanup && errno == EACCES)
+    fd = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDONLY | flags);
+  return fd;
+}
+
 static int House_lock_stages(int parent_fd, bool cleanup)
 {
   const int flags = O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC;
-  const int access_mode = cleanup ? O_RDWR : O_RDONLY;
   bool created = FALSE;
   struct stat st;
-  int saved_errno, fd = openat(parent_fd, HOUSE_STAGE_LOCK, access_mode | flags);
+  int saved_errno, fd = House_open_lock(parent_fd, cleanup);
   if (fd < 0 && errno == ENOENT) {
-    fd = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDWR | O_CREAT | O_EXCL | flags, 0666);
+    fd = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDWR | O_CREAT | O_EXCL | flags, 0600);
     created = fd >= 0;
     if (!created && errno == EEXIST)
-      fd = openat(parent_fd, HOUSE_STAGE_LOCK, access_mode | flags);
+      fd = House_open_lock(parent_fd, cleanup);
   }
   if (fd < 0)
     return -1;
@@ -631,8 +645,12 @@ static int House_lock_stages(int parent_fd, bool cleanup)
     goto failed;
   }
   /* A restrictive umask must still let the creator reopen the lock later. */
-  if (created && (st.st_mode & 0600) != 0600 && fchmod(fd, (st.st_mode & 0777) | 0600) < 0)
+  if (created && (st.st_mode & 0777) != 0600 && fchmod(fd, 0600) < 0)
     goto failed;
+  /* One made before the lock was private goes back to 0600 the next time its
+   * owner opens it, whether or not the lock itself is free. */
+  if (!created && st.st_uid == geteuid() && (st.st_mode & 0077))
+    (void)fchmod(fd, 0600);
   if (flock(fd, (cleanup ? LOCK_EX : LOCK_SH) | LOCK_NB) == 0)
     return fd;
 failed:
@@ -745,9 +763,11 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
     errno = EBUSY;
     goto failed;
   }
+  /* Without the lock the save still goes ahead, under a stage name the sweep
+   * never touches.  Waiting for it would let whoever holds it stop every
+   * house save; going ahead costs only the automatic cleanup of this one
+   * stage should the game crash before it is renamed into place. */
   save->lock_fd = House_lock_stages(save->parent_fd, FALSE);
-  if (save->lock_fd < 0 && errno == EWOULDBLOCK)
-    goto failed;
   replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
   if (!replacing && errno != ENOENT)
     goto failed;
@@ -830,11 +850,20 @@ static void House_remove_stale_saves(void)
   dir_fd = dirfd(dir);
   lock_fd = House_lock_stages(dir_fd, TRUE);
   if (lock_fd < 0) {
-    if (errno != EWOULDBLOCK)
+    if (errno == EACCES)
+      log("SYSERR: Cannot open %s%s: %s.  Unfinished house saves are not cleared; if "
+          "another account made it, remove it and the game will make its own.",
+          LIB_HOUSE, HOUSE_STAGE_LOCK, strerror(errno));
+    else if (errno != EWOULDBLOCK)
       log("SYSERR: Cannot lock %s for unfinished house save cleanup: %s", LIB_HOUSE, strerror(errno));
     closedir(dir);
     return;
   }
+  /* Still open to others after House_lock_stages(): another account made it. */
+  if (fstat(lock_fd, &st) == 0 && (st.st_mode & 0077))
+    log("SYSERR: %s%s belongs to another account and others can open it, which lets "
+        "them hold up the cleanup of unfinished house saves.  Remove it and the game "
+        "will make a private one.", LIB_HOUSE, HOUSE_STAGE_LOCK);
   while ((entry = readdir(dir)) != NULL) {
     if (!House_is_stage_name(entry->d_name))
       continue;

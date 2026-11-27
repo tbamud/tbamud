@@ -474,12 +474,26 @@ static void test_boot_keeps_noncanonical_stage_names(void)
   TEST_ASSERT_EQUAL_INT(0, count_stages());
 }
 
-static void test_save_retries_after_the_cleanup_lock_is_released(void)
+static int count_unlocked_stages(void)
+{
+  glob_t paths;
+  int count, result = glob(LIB_HOUSE ".tba-house-unlocked-*", 0, NULL, &paths);
+  if (result == GLOB_NOMATCH)
+    return 0;
+  TEST_ASSERT_EQUAL_INT(0, result);
+  count = (int)paths.gl_pathc;
+  globfree(&paths);
+  return count;
+}
+
+/* Read access is enough to hold the lock, so holding it must not stop a
+ * save: the save goes ahead without it and leaves nothing behind. */
+static void test_a_held_lock_does_not_stop_a_save(void)
 {
   char build[] = "build 3000 north owner";
   int fd, locked, saved;
   do_hcontrol(NULL, build, 0, 0);
-  fd = open(LIB_HOUSE ".tba-house.lock", O_RDWR);
+  fd = open(LIB_HOUSE ".tba-house.lock", O_RDONLY);
   TEST_ASSERT_TRUE(fd >= 0);
   locked = flock(fd, LOCK_EX | LOCK_NB);
   if (locked < 0) {
@@ -491,12 +505,50 @@ static void test_save_retries_after_the_cleanup_lock_is_released(void)
   House_save_all();
   saved = !ROOM_FLAGGED(0, ROOM_HOUSE_CRASH);
   TEST_ASSERT_EQUAL_INT(0, close(fd));
-  TEST_ASSERT_FALSE(saved);
-  assert_file(HOUSE_FILE, "current contents");
-
-  House_save_all();
+  TEST_ASSERT_TRUE(saved);
   assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+}
+
+/* Other accounts cannot open the lock to hold it.  One made before the lock
+ * was private goes back to 0600 at the next save, even while it is held. */
+static void test_the_lock_file_is_private(void)
+{
+  struct stat st;
+  int fd, held;
+  remove(LIB_HOUSE ".tba-house.lock");
+  House_crashsave(3000);
+  TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
+  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
+
+  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0644));
+  fd = open(LIB_HOUSE ".tba-house.lock", O_RDONLY);
+  TEST_ASSERT_TRUE(fd >= 0);
+  held = flock(fd, LOCK_EX | LOCK_NB) == 0;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_EQUAL_INT(0, close(fd));
+  TEST_ASSERT_TRUE(held);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, stat(LIB_HOUSE ".tba-house.lock", &st));
+  TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
+}
+
+/* A lock file the game can only read -- one root left behind -- still lets
+ * boot clear a crashed save. */
+static void test_boot_sweeps_with_a_lock_file_it_can_only_read(void)
+{
+  int stages;
+  write_file(HOUSE_FILE, "old contents");
+  crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(1, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0400));
+  House_boot();
+  stages = count_stages();
+  TEST_ASSERT_EQUAL_INT(0, chmod(LIB_HOUSE ".tba-house.lock", 0600));
+  TEST_ASSERT_EQUAL_INT(0, stages);
+  assert_file(HOUSE_FILE, "old contents");
 }
 
 static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
@@ -811,7 +863,9 @@ int main(void)
   RUN_TEST(test_boot_removes_saves_a_crash_left_unfinished);
   RUN_TEST(test_boot_defers_cleanup_while_a_save_is_active);
   RUN_TEST(test_boot_keeps_noncanonical_stage_names);
-  RUN_TEST(test_save_retries_after_the_cleanup_lock_is_released);
+  RUN_TEST(test_a_held_lock_does_not_stop_a_save);
+  RUN_TEST(test_the_lock_file_is_private);
+  RUN_TEST(test_boot_sweeps_with_a_lock_file_it_can_only_read);
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
   RUN_TEST(test_boot_clears_an_empty_unreadable_stage_without_chmod);
