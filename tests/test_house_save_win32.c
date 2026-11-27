@@ -4,23 +4,25 @@
 #include <sddl.h>
 
 static char house[MAX_PATH], link_name[MAX_PATH + sizeof(".link")];
+static int owns_house, owns_link;
 
 void setUp(void)
 {
   char temp[MAX_PATH];
   DWORD length = GetTempPathA(sizeof(temp), temp);
   TEST_ASSERT_TRUE(length > 0 && length < sizeof(temp));
-  TEST_ASSERT_TRUE(GetTempFileNameA(temp, "tba", 0, house));
+  owns_house = GetTempFileNameA(temp, "tba", 0, house) != 0;
+  TEST_ASSERT_TRUE(owns_house);
   snprintf(link_name, sizeof(link_name), "%s.link", house);
 }
 
 void tearDown(void)
 {
-  if (*link_name)
+  if (owns_link)
     DeleteFileA(link_name);
-  if (*house)
+  if (owns_house)
     DeleteFileA(house);
-  *house = *link_name = '\0';
+  owns_link = owns_house = 0;
 }
 
 static void save_house(const char *name)
@@ -41,6 +43,7 @@ static void test_save_updates_the_target_of_a_file_symlink(void)
   BOOLEAN created = CreateSymbolicLinkA(link_name, house, 0x2);
   if (!created && GetLastError() == ERROR_INVALID_PARAMETER)
     created = CreateSymbolicLinkA(link_name, house, 0);
+  owns_link = created;
   if (!created && GetLastError() == ERROR_PRIVILEGE_NOT_HELD)
     TEST_IGNORE_MESSAGE("Windows file symlink creation is unavailable to this user");
   TEST_ASSERT_TRUE(created);
