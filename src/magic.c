@@ -22,6 +22,7 @@
 #include "class.h"
 #include "fight.h"
 #include "mud_event.h"
+#include "quest.h"
 
 
 /* local file scope function prototypes */
@@ -575,6 +576,7 @@ static void perform_mag_groups(int level, struct char_data *ch,
  * Just add a new case to perform_mag_groups. */
 void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
 {
+  struct iterator_data iterator;
   struct char_data *tch;
 
   if (ch == NULL)
@@ -583,13 +585,14 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
   if (!GROUP(ch))
     return;
     
-  while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
+  for (tch = merge_iterator(&iterator, GROUP(ch)->members); tch; tch = next_in_list(&iterator)) {
     if (IN_ROOM(tch) != IN_ROOM(ch))
       continue;
     if (tch == ch)
       continue;
     perform_mag_groups(level, ch, tch, spellnum, savetype);
   }
+  remove_iterator(&iterator);
   perform_mag_groups(level, ch, ch, spellnum, savetype);
 }
 
@@ -631,6 +634,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
     break;
   }
 
+  begin_rescue_action();
   if (to_char != NULL)
     act(to_char, FALSE, ch, 0, 0, TO_CHAR);
   if (to_room != NULL)
@@ -661,6 +665,7 @@ void mag_areas(int level, struct char_data *ch, int spellnum, int savetype)
     /* Doesn't matter if they die here so we don't check. -gg 6/24/98 */
     mag_damage(level, ch, tch, spellnum, 1);
   }
+  end_rescue_action();
 }
 
 /*----------------------------------------------------------------------------*/
@@ -801,7 +806,7 @@ void mag_summons(int level, struct char_data *ch, struct obj_data *obj,
 void mag_points(int level, struct char_data *ch, struct char_data *victim,
 		     int spellnum, int savetype)
 {
-  int healing = 0, move = 0;
+  int healing = 0, move = 0, old_position;
 
   if (victim == NULL)
     return;
@@ -820,9 +825,12 @@ void mag_points(int level, struct char_data *ch, struct char_data *victim,
     send_to_char(victim, "A warm feeling floods your body.\r\n");
     break;
   }
+  old_position = GET_POS(victim);
   GET_HIT(victim) = MIN(GET_MAX_HIT(victim), GET_HIT(victim) + healing);
   GET_MOVE(victim) = MIN(GET_MAX_MOVE(victim), GET_MOVE(victim) + move);
   update_pos(victim);
+  if (healing > 0)
+    check_rescue_on_recovery(ch, victim, old_position);
 }
 
 void mag_unaffects(int level, struct char_data *ch, struct char_data *victim,

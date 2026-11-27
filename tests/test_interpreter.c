@@ -16,8 +16,20 @@
 
 extern FILE *logfile;
 
-void setUp(void)    { logfile = stderr; }
+static unsigned int save_calls;
+
+void setUp(void)
+{
+    logfile = stderr;
+    save_calls = 0;
+}
 void tearDown(void) { logfile = NULL; }
+
+void save_char(struct char_data *ch)
+{
+    (void)ch;
+    save_calls++;
+}
 
 /* =========================================================
  * write_to_q — real implementation for alias tests.
@@ -281,6 +293,47 @@ static void alias_env_init(struct descriptor_data     *d,
 /* =========================================================
  * perform_complex_alias — tested via the public perform_alias()
  * ========================================================= */
+
+static void test_do_alias_saves_deletion(void)
+{
+    struct descriptor_data d;
+    struct char_data ch;
+    struct player_special_data psd;
+    char arg[] = "greet";
+
+    alias_env_init(&d, &ch, &psd, make_test_alias("greet", "say hello"));
+    do_alias(&ch, arg, 0, 0);
+
+    TEST_ASSERT_NULL(psd.aliases);
+    TEST_ASSERT_EQUAL_UINT(1, save_calls);
+}
+
+static void test_do_alias_accepts_spaces_after_deleted_name(void)
+{
+    struct descriptor_data d;
+    struct char_data ch;
+    struct player_special_data psd;
+    char arg[] = "greet   ";
+
+    alias_env_init(&d, &ch, &psd, make_test_alias("greet", "say hello"));
+    do_alias(&ch, arg, 0, 0);
+
+    TEST_ASSERT_NULL(psd.aliases);
+}
+
+static void test_do_alias_ignores_missing_deletion(void)
+{
+    struct descriptor_data d;
+    struct char_data ch;
+    struct player_special_data psd;
+    char arg[] = "missing";
+
+    alias_env_init(&d, &ch, &psd, NULL);
+    do_alias(&ch, arg, 0, 0);
+
+    TEST_ASSERT_NULL(psd.aliases);
+    TEST_ASSERT_EQUAL_UINT(0, save_calls);
+}
 
 /* Literal replacement with no variable tokens. */
 void test_pca_literal(void)
@@ -552,6 +605,10 @@ int main(void)
     RUN_TEST(test_one_word_quoted_string);
     RUN_TEST(test_one_word_empty_quoted);
     RUN_TEST(test_one_word_leading_spaces_skipped);
+
+    RUN_TEST(test_do_alias_saves_deletion);
+    RUN_TEST(test_do_alias_accepts_spaces_after_deleted_name);
+    RUN_TEST(test_do_alias_ignores_missing_deletion);
 
     /* perform_complex_alias */
     RUN_TEST(test_pca_literal);
