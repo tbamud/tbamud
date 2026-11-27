@@ -122,21 +122,29 @@ static void test_holdable_gear_must_be_held(void)
  * provided perform_wear sees ITEM_WEAR_TAKE. */
 static void test_holdable_item_types_must_be_held_when_takeable(void)
 {
-  const int types[] = { ITEM_WAND, ITEM_STAFF, ITEM_SCROLL, ITEM_POTION };
+  const struct {
+    int type;
+    const char *name;
+  } types[] = {
+    { ITEM_WAND, "wand" },
+    { ITEM_STAFF, "staff" },
+    { ITEM_SCROLL, "scroll" },
+    { ITEM_POTION, "potion" }
+  };
   size_t i;
 
   for (i = 0; i < sizeof(types) / sizeof(types[0]); i++) {
     memset(&player, 0, sizeof(player));
     GET_LEVEL(&player) = 1;
 
-    carry_gear(types[i], AFF_FLYING);
-    TEST_ASSERT_TRUE(has_flight(&player));
+    carry_gear(types[i].type, AFF_FLYING);
+    TEST_ASSERT_TRUE_MESSAGE(has_flight(&player), types[i].name);
 
     SET_BIT_AR(GET_OBJ_WEAR(&gear), ITEM_WEAR_TAKE);
-    TEST_ASSERT_FALSE(has_flight(&player));
+    TEST_ASSERT_FALSE_MESSAGE(has_flight(&player), types[i].name);
 
     equip_gear(WEAR_HOLD);
-    TEST_ASSERT_TRUE(has_flight(&player));
+    TEST_ASSERT_TRUE_MESSAGE(has_flight(&player), types[i].name);
   }
 }
 
