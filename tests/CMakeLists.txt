@@ -14,6 +14,13 @@ cmake_minimum_required(VERSION 3.12)
 
 enable_testing()
 
+# Run every suite from test-results/ in the build tree, as make test does.
+# The game opens its log/ topic files as ../log/<name>, relative to lib/; from
+# the tests/ directory of an in-source build that is the game's own log/
+# directory, and the suites' deliberate SYSERRs would land in the real logs.
+set(TEST_RUN_DIR ${CMAKE_CURRENT_BINARY_DIR}/test-results)
+file(MAKE_DIRECTORY ${TEST_RUN_DIR})
+
 # ---------------------------------------------------------------------------
 # Common settings shared by all test targets
 # ---------------------------------------------------------------------------
@@ -53,7 +60,7 @@ macro(add_mud_test TEST_NAME)
     )
     target_include_directories(${TEST_NAME} PRIVATE ${TEST_INCLUDES})
     target_compile_options(${TEST_NAME} PRIVATE ${TEST_CFLAGS})
-    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME} WORKING_DIRECTORY ${TEST_RUN_DIR})
 endmacro()
 
 # ---------------------------------------------------------------------------
@@ -251,7 +258,8 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     if(CRYPT_LIBRARY)
         target_link_libraries(test_editor_lifecycle PRIVATE ${CRYPT_LIBRARY})
     endif()
-    add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle)
+    add_test(NAME test_editor_lifecycle COMMAND test_editor_lifecycle
+             WORKING_DIRECTORY ${TEST_RUN_DIR})
 
     # Rescue eligibility in quest.c, combat in fight.c, and the treatments that
     # finish a rescue a dying captive held up.  interpreter.c supplies the
@@ -287,7 +295,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     if(CRYPT_LIBRARY)
         target_link_libraries(test_quest PRIVATE ${CRYPT_LIBRARY})
     endif()
-    add_test(NAME test_quest COMMAND test_quest)
+    add_test(NAME test_quest COMMAND test_quest WORKING_DIRECTORY ${TEST_RUN_DIR})
 
     add_executable(test_genolc_savers
         ${UNITY_SRC}
@@ -306,5 +314,6 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     else()
         set_property(TARGET test_genolc_savers APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
     endif()
-    add_test(NAME test_genolc_savers COMMAND test_genolc_savers)
+    add_test(NAME test_genolc_savers COMMAND test_genolc_savers
+             WORKING_DIRECTORY ${TEST_RUN_DIR})
 endif()

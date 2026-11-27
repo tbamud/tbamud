@@ -161,6 +161,12 @@ test_editor_lifecycle: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 # ---------------------------------------------------------------------------
 # Run all tests and produce JUnit XML files in test-results/
 # ---------------------------------------------------------------------------
+# Each suite runs from inside test-results/.  The game opens its log/ topic
+# files (errors, rip, olc, ...) as ../log/<name>, relative to lib/, and from
+# tests/ that path is the game's own log/ directory: every run would add the
+# suites' deliberate SYSERRs and test deaths to the real logs.  From
+# test-results/ it names tests/log/, which does not exist, and the game skips
+# a topic file it cannot open.
 test: $(TESTS)
 	@echo "=========================================="
 	@echo "Running tbaMUD unit tests"
@@ -169,7 +175,7 @@ test: $(TESTS)
 	@status=0; \
 	for t in $(TESTS); do \
 		t_start=$$(date +%s%3N); \
-		./$$t > test-results/$$t.out 2>&1; \
+		(cd test-results && ../$$t) > test-results/$$t.out 2>&1; \
 		rc=$$?; \
 		t_end=$$(date +%s%3N); \
 		elapsed=$$(awk "BEGIN{printf \"%.3f\", ($$t_end - $$t_start)/1000}"); \
