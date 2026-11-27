@@ -630,8 +630,6 @@ ACMD(do_use)
 
 ACMD(do_display)
 {
-  size_t i;
-
   if (IS_NPC(ch)) {
     send_to_char(ch, "Monsters don't need displays.  Go away.\r\n");
     return;
@@ -658,26 +656,21 @@ ACMD(do_display)
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
   } else {
+    if (argument[strspn(argument, "hHmMvV")]) {
+      send_to_char(ch, "Usage: prompt { { H | M | V } | all | auto | none }\r\n");
+      return;
+    }
+
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
     REMOVE_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
 
-    for (i = 0; i < strlen(argument); i++) {
-      switch (LOWER(argument[i])) {
-      case 'h':
-        SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
-	break;
-      case 'm':
-        SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
-	break;
-      case 'v':
-        SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
-	break;
-      default:
-	send_to_char(ch, "Usage: prompt { { H | M | V } | all | auto | none }\r\n");
-	return;
-      }
-    }
+    if (strpbrk(argument, "hH"))
+      SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPHP);
+    if (strpbrk(argument, "mM"))
+      SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMANA);
+    if (strpbrk(argument, "vV"))
+      SET_BIT_AR(PRF_FLAGS(ch), PRF_DISPMOVE);
   }
 
   send_to_char(ch, "%s", CONFIG_OK);
