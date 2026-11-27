@@ -840,7 +840,7 @@ static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr,
   static char result[256];
   char	itemname[128],
 	quantity[16];	/* "Unlimited" or "%d" */
-  bool quest_item = OBJ_FLAGGED(obj, ITEM_QUEST);
+  bool quest_item = OBJ_FLAGGED(obj, ITEM_QUEST) != 0;
   int price = quest_item ? GET_OBJ_COST(obj) : buy_price(obj, shop_nr, keeper, ch);
 
   if (shop_producing(obj, shop_nr))
