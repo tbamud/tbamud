@@ -287,6 +287,44 @@ static void test_a_quest_item_at_the_end_of_the_list_gets_the_quest_point_note(v
   TEST_ASSERT_NOT_NULL_MESSAGE(strstr(shown, "Items flagged \"qp\" require quest points to purchase."), shown);
 }
 
+static void test_a_search_excluding_quest_items_omits_the_quest_point_note(void)
+{
+  stock_item(0, "staff gnarled", "a gnarled staff", 700, TRUE);
+  stock_item(1, "sword long", "a long sword", 100, FALSE);
+
+  list("sword");
+
+  TEST_ASSERT_NULL(listed(1));
+  assert_listed(2, "A long sword", " 150");
+  TEST_ASSERT_NULL_MESSAGE(strstr(shown, "quest points"), shown);
+}
+
+static void test_charisma_does_not_change_a_quest_items_price(void)
+{
+  struct char_data *ch = &buyer;   /* for QYEL and QNRM */
+  const char *sword_line;
+  char expected[64];
+
+  shop.profit_buy = 1.0;
+  buyer.aff_abils.cha = 18;
+  stock_item(0, "staff gnarled", "a gnarled staff", 700, TRUE);
+  stock_item(1, "sword long", "a long sword", 700, FALSE);
+
+  list("");
+
+  assert_listed(1, "A gnarled staff", " 700 qp");
+  sword_line = listed(2);
+  TEST_ASSERT_NOT_NULL(sword_line);
+  TEST_ASSERT_NULL_MESSAGE(strstr(sword_line, " 700"), sword_line);
+
+  memset(shown, 0, sizeof(shown));
+  snprintf(expected, sizeof(expected), "Cost to Buy: %s700%s qp\r\n", QYEL, QNRM);
+
+  identify("staff");
+
+  TEST_ASSERT_NOT_NULL_MESSAGE(strstr(shown, expected), shown);
+}
+
 static void test_a_list_longer_than_the_page_stops_when_the_page_is_full(void)
 {
   int i;
@@ -339,6 +377,8 @@ int main(void)
   RUN_TEST(test_gold_items_are_listed_with_the_shops_markup);
   RUN_TEST(test_quest_items_are_listed_at_their_quest_point_cost);
   RUN_TEST(test_a_quest_item_at_the_end_of_the_list_gets_the_quest_point_note);
+  RUN_TEST(test_a_search_excluding_quest_items_omits_the_quest_point_note);
+  RUN_TEST(test_charisma_does_not_change_a_quest_items_price);
   RUN_TEST(test_a_list_longer_than_the_page_stops_when_the_page_is_full);
   RUN_TEST(test_identify_prices_a_quest_item_in_quest_points);
   RUN_TEST(test_identify_prices_a_gold_item_with_the_shops_markup);
