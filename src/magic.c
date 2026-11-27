@@ -576,6 +576,7 @@ static void perform_mag_groups(int level, struct char_data *ch,
  * Just add a new case to perform_mag_groups. */
 void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
 {
+  struct iterator_data iterator;
   struct char_data *tch;
 
   if (ch == NULL)
@@ -584,13 +585,14 @@ void mag_groups(int level, struct char_data *ch, int spellnum, int savetype)
   if (!GROUP(ch))
     return;
     
-  while ((tch = (struct char_data *) simple_list(GROUP(ch)->members)) != NULL) {
+  for (tch = merge_iterator(&iterator, GROUP(ch)->members); tch; tch = next_in_list(&iterator)) {
     if (IN_ROOM(tch) != IN_ROOM(ch))
       continue;
     if (tch == ch)
       continue;
     perform_mag_groups(level, ch, tch, spellnum, savetype);
   }
+  remove_iterator(&iterator);
   perform_mag_groups(level, ch, ch, spellnum, savetype);
 }
 

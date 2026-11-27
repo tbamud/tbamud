@@ -587,7 +587,7 @@ bool has_combat_opponent(const struct char_data *ch)
 }
 
 /* Extraction runs after the pulse, so these pointers stay valid through
- * the attack, including any spells or deaths nested inside it. */
+ * movement triggers, attacks and any spells or deaths nested inside them. */
 static unsigned int pet_combat_action_depth;
 static struct pending_pet_clear {
   struct char_data *pet;
@@ -599,8 +599,8 @@ void begin_pet_combat_action(void)
   ++pet_combat_action_depth;
 }
 
-/* Keep former pets identifiable until all targets and quest checks for
- * this attack have resolved. Outside an attack a recovered pet clears now. */
+/* Keep former pets identifiable until an attack or movement finishes.
+ * Only then can we tell whether the encounter has ended. */
 void clear_pet_combat_if_idle(struct char_data *ch)
 {
   struct pending_pet_clear *entry;

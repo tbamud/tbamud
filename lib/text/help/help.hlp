@@ -7422,7 +7422,8 @@ main menu, you will be shown a list to choose from:
 3) Kill mob       - Player needs to kill a particular mobile.
                   Ends: When the player or their group, pets included,
                   lands the killing blow on the target mobile. Groupmates
-                  and a pet's master must be in the same zone.
+                  and a pet's master must be in the target's zone when
+                  that blow lands.
 4) Save mob       - Player needs to protect or save a particular mobile.
                   Ends: When the player or their group, pets included,
                   kills the last other mobile in the captive's room and

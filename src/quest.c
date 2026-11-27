@@ -532,15 +532,12 @@ void check_rescue_on_kill(struct char_data *ch, struct char_data *vict,
     check_rescue_goal(ch, quest, NULL, FALSE);
 }
 
-typedef void side_check_fn(struct char_data *ch, void *data);
+typedef void side_check_fn(struct char_data *ch, room_rnum room, void *data);
 
-/* Save mob and Room clear credit goes to the side of whoever acted: a
- * player's charmed pet acts for its master, and a player for their group.
- * check runs for each player on that side who is alive and in room.  The
- * group gets its own iterator, since a group spell may already be walking it
- * with simple_list(). */
-static void for_side_in_room(struct char_data *ch, room_rnum room,
-                             side_check_fn *check, void *data)
+/* A player's pet acts for its master and the master's group. A spell or
+ * trigger can already be iterating over that group. */
+static void for_players_on_side(struct char_data *ch, room_rnum room,
+                                side_check_fn *check, void *data)
 {
   struct iterator_data iterator;
   struct char_data *i;
@@ -548,37 +545,50 @@ static void for_side_in_room(struct char_data *ch, room_rnum room,
   if (is_player_pet(ch))
     ch = ch->master;
   if (!GROUP(ch)) {
-    if (!IS_NPC(ch) && alive_in_room(ch, room))
-      check(ch, data);
+    if (!IS_NPC(ch))
+      check(ch, room, data);
     return;
   }
   for (i = (struct char_data *) merge_iterator(&iterator, GROUP(ch)->members);
        i; i = (struct char_data *) next_in_list(&iterator))
-    if (!IS_NPC(i) && alive_in_room(i, room))
-      check(i, data);
+    if (!IS_NPC(i))
+      check(i, room, data);
   remove_iterator(&iterator);
 }
 
-/* The killer and the players on their side who were there when the victim
- * died.  A death script can move people in or out before raw_kill() gives
- * credit. */
+/* Kill mob reaches the killer's side in the original zone. Save mob and
+ * Room clear additionally require both the killer and the player in the
+ * original room before and after death scripts. */
+struct kill_witness {
+  struct char_data *player;
+  bool saw_kill;
+};
+
 struct kill_witnesses {
   struct char_data *killer;
   room_rnum death_room;
-  struct char_data **who;
+  struct kill_witness *who;
   int count;
   int size;
 };
 
-static void add_witness(struct char_data *ch, void *data)
+static void add_witness(struct char_data *ch, room_rnum room, void *data)
 {
   struct kill_witnesses *witnesses = data;
+  struct kill_witness *entry;
+
+  /* A solo player gets their own Kill mob credit even on a remote hit. */
+  if ((ch != witnesses->killer || GROUP(ch)) &&
+      (!VALID_ROOM_RNUM(IN_ROOM(ch)) || world[IN_ROOM(ch)].zone != world[room].zone))
+    return;
 
   if (witnesses->count == witnesses->size) {
     witnesses->size = witnesses->size ? 2 * witnesses->size : 4;
-    RECREATE(witnesses->who, struct char_data *, witnesses->size);
+    RECREATE(witnesses->who, struct kill_witness, witnesses->size);
   }
-  witnesses->who[witnesses->count++] = ch;
+  entry = &witnesses->who[witnesses->count++];
+  entry->player = ch;
+  entry->saw_kill = alive_in_room(ch, room) && alive_in_room(witnesses->killer, room);
 }
 
 struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
@@ -586,14 +596,14 @@ struct kill_witnesses *note_kill_witnesses(struct char_data *killer,
 {
   struct kill_witnesses *witnesses;
 
-  if (!VALID_ROOM_RNUM(death_room) || !alive_in_room(killer, death_room))
+  if (!killer || !VALID_ROOM_RNUM(death_room))
     return NULL;
   if (IS_NPC(killer) && !is_player_pet(killer) && !GROUP(killer))
     return NULL;
   CREATE(witnesses, struct kill_witnesses, 1);
   witnesses->killer = killer;
   witnesses->death_room = death_room;
-  for_side_in_room(killer, death_room, add_witness, witnesses);
+  for_players_on_side(killer, death_room, add_witness, witnesses);
   if (witnesses->count == 0) {
     free_kill_witnesses(witnesses);
     return NULL;
@@ -607,6 +617,15 @@ void free_kill_witnesses(struct kill_witnesses *witnesses)
     free(witnesses->who);
     free(witnesses);
   }
+}
+
+void credit_kill_mob_stage(const struct kill_witnesses *witnesses, struct char_data *vict)
+{
+  int n;
+
+  if (witnesses)
+    for (n = 0; n < witnesses->count; n++)
+      autoquest_trigger_check(witnesses->who[n].player, vict, NULL, AQ_MOB_KILL);
 }
 
 /* Each witness still in the death room gets credit for vict's death and
@@ -626,10 +645,11 @@ void credit_kill_witnesses(struct kill_witnesses *witnesses,
       DEAD(vict) && !is_player_pet_kill(vict) &&
       alive_in_room(witnesses->killer, witnesses->death_room))
     for (n = 0; n < witnesses->count; n++) {
-      struct char_data *ch = witnesses->who[n];
+      struct char_data *ch = witnesses->who[n].player;
       qst_rnum quest;
 
-      if (!alive_in_room(ch, witnesses->death_room) || GET_QUEST(ch) == NOTHING ||
+      if (!witnesses->who[n].saw_kill || !alive_in_room(ch, witnesses->death_room) ||
+          GET_QUEST(ch) == NOTHING ||
           (quest = real_quest(GET_QUEST(ch))) == NOTHING)
         continue;
       if (QST_TYPE(quest) == AQ_MOB_SAVE)
@@ -640,13 +660,13 @@ void credit_kill_witnesses(struct kill_witnesses *witnesses,
   free_kill_witnesses(witnesses);
 }
 
-/* One player on the healer's side, in the patient's room. */
-static void rescue_on_recovery(struct char_data *ch, void *data)
+/* One player on the healer's side, in the room where the patient recovered. */
+static void rescue_on_recovery(struct char_data *ch, room_rnum room, void *data)
 {
   struct char_data *patient = data;
   qst_rnum quest;
 
-  if (GET_QUEST(ch) == NOTHING)
+  if (!alive_in_room(ch, room) || GET_QUEST(ch) == NOTHING)
     return;
 
   quest = real_quest(GET_QUEST(ch));
@@ -666,7 +686,7 @@ void check_rescue_on_recovery(struct char_data *ch, struct char_data *patient,
       !alive_in_room(ch, IN_ROOM(patient)))
     return;
 
-  for_side_in_room(ch, IN_ROOM(patient), rescue_on_recovery, patient);
+  for_players_on_side(ch, IN_ROOM(patient), rescue_on_recovery, patient);
 }
 
 void autoquest_trigger_check(struct char_data *ch, struct char_data *vict,

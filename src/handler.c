@@ -443,8 +443,7 @@ void affect_join(struct char_data *ch, struct affected_type *af,
 /* move a player out of a room */
 void char_from_room(struct char_data *ch)
 {
-  struct char_data *temp, *attacker;
-  room_rnum old_room;
+  struct char_data *temp;
 
   if (ch == NULL || IN_ROOM(ch) == NOWHERE) {
     log("SYSERR: NULL character or NOWHERE in %s, char_from_room", __FILE__);
@@ -461,18 +460,20 @@ void char_from_room(struct char_data *ch)
       if (GET_OBJ_VAL(GET_EQ(ch, WEAR_LIGHT), 2))	/* Light is ON */
 	world[IN_ROOM(ch)].light--;
 
-  old_room = IN_ROOM(ch);
-  REMOVE_FROM_LIST(ch, world[old_room].people, next_in_room);
+  REMOVE_FROM_LIST(ch, world[IN_ROOM(ch)].people, next_in_room);
   IN_ROOM(ch) = NOWHERE;
   ch->next_in_room = NULL;
+}
 
-  /* stop_fighting() removed the mover's outgoing link. Characters left
-   * behind may still target the mover until the next combat pulse. */
-  clear_pet_combat_if_idle(ch);
-  if (combat_list)
-    for (attacker = world[old_room].people; attacker; attacker = attacker->next_in_room)
-      if (FIGHTING(attacker) == ch)
-        clear_pet_combat_if_idle(attacker);
+/* Incoming combat links can outlive movement or extraction until the next
+ * combat pulse. Recheck pets still pointing at this opponent. */
+static void clear_idle_attacking_pets(struct char_data *opponent)
+{
+  struct char_data *attacker;
+
+  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
+    if (FIGHTING(attacker) == opponent)
+      clear_pet_combat_if_idle(attacker);
 }
 
 /* place a character in a room */
@@ -485,6 +486,10 @@ void char_to_room(struct char_data *ch, room_rnum room)
     ch->next_in_room = world[room].people;
     world[room].people = ch;
     IN_ROOM(ch) = room;
+
+    /* A teleport can put ch back in the same room with its attacker. */
+    clear_pet_combat_if_idle(ch);
+    clear_idle_attacking_pets(ch);
 
     autoquest_trigger_check(ch, 0, 0, AQ_ROOM_FIND);
     autoquest_trigger_check(ch, 0, 0, AQ_MOB_FIND);
@@ -1201,8 +1206,6 @@ void extract_char_final(struct char_data *ch)
  */
 void extract_char(struct char_data *ch)
 {
-  struct char_data *attacker;
-
   char_from_furniture(ch);
   clear_char_event_list(ch);
 
@@ -1216,9 +1219,7 @@ void extract_char(struct char_data *ch)
 
   /* The combat list can still point at ch until the end of the pulse. */
   clear_pet_combat_if_idle(FIGHTING(ch));
-  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
-    if (FIGHTING(attacker) == ch)
-      clear_pet_combat_if_idle(attacker);
+  clear_idle_attacking_pets(ch);
 }
 
 /* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped

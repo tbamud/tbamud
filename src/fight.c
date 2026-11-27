@@ -110,6 +110,9 @@ void update_pos(struct char_data *victim)
     if (is_player_pet(victim))
       victim->mob_specials.fought_as_player_pet = TRUE;
   }
+  /* Healing during a lethal hit's messages lets a later hit cause a new death. */
+  if (GET_POS(victim) > POS_DEAD)
+    victim->char_specials.lethal_hit_pending = FALSE;
 }
 
 void check_killer(struct char_data *ch, struct char_data *vict)
@@ -299,24 +302,11 @@ static struct kill_witnesses *witnesses_to_death(struct char_data *victim, struc
   return note_kill_witnesses(killer, IN_ROOM(victim));
 }
 
-/* Kill mob credit reaches the killer's side anywhere in the victim's zone. */
-static bool in_kill_zone(const struct char_data *ch, const struct char_data *victim)
-{
-  return IN_ROOM(ch) != NOWHERE &&
-         (IN_ROOM(ch) == IN_ROOM(victim) ||
-          world[IN_ROOM(ch)].zone == world[IN_ROOM(victim)].zone);
-}
-
 static void finish_kill(struct char_data *ch, struct char_data *killer,
                         struct kill_witnesses *witnesses, bool apply_death_penalty)
 {
-  struct char_data *i;
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
-  /* A player's charmed pet kills for its master's side.  The death script
-   * can break the charm, so settle that first. */
-  struct char_data *const kill_side =
-      killer && is_player_pet(killer) ? killer->master : killer;
 
   ch->char_specials.death_in_progress = TRUE;
   if (apply_death_penalty) {
@@ -343,14 +333,7 @@ static void finish_kill(struct char_data *ch, struct char_data *killer,
   } else
     death_cry(ch);
 
-  if (kill_side) {
-    if (GROUP(kill_side)) {
-      while ((i = (struct char_data *) simple_list(GROUP(kill_side)->members)) != NULL)
-        if (in_kill_zone(i, ch))
-          autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);
-    } else if (kill_side == killer || in_kill_zone(kill_side, ch))
-      autoquest_trigger_check(kill_side, ch, NULL, AQ_MOB_KILL);
-  }
+  credit_kill_mob_stage(witnesses, ch);
 
   /* Alert Group if Applicable */
   if (GROUP(ch))

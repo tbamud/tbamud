@@ -79,18 +79,31 @@ int remove_otrigger(struct obj_data *obj, struct char_data *ch)
 void remember(struct char_data *ch, struct char_data *victim)
 { (void)ch; (void)victim; }
 
+/* The movement path is real. The fixture supplies ordinary rooms and lets
+ * an entry trigger reject a move after the character changes rooms. */
+static struct zone_data test_zones[2];
+struct zone_data *zone_table = test_zones;
 static struct char_data *fleeing_mob;
-int do_simple_move(struct char_data *ch, int dir, int following)
+static bool reject_entry;
+int leave_mtrigger(char_data *ch, int dir)
 {
-  room_rnum destination;
-
-  (void)following;
   TEST_ASSERT_EQUAL_PTR_MESSAGE(fleeing_mob, ch, "unexpected movement during combat");
-  destination = EXIT(ch, dir)->to_room;
-  char_from_room(ch);
-  char_to_room(ch, destination);
   return TRUE;
 }
+int leave_wtrigger(room_data *room, char_data *ch, int dir) { return TRUE; }
+int leave_otrigger(room_data *room, char_data *ch, int dir) { return TRUE; }
+int entry_mtrigger(char_data *ch) { return TRUE; }
+int enter_wtrigger(room_data *room, char_data *ch, int dir)
+{
+  if (reject_entry) {
+    reject_entry = FALSE;
+    return FALSE;
+  }
+  return TRUE;
+}
+void entry_memory_mtrigger(char_data *ch) {}
+int House_can_enter(struct char_data *ch, room_vnum house) { return TRUE; }
+int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg) { return -1; }
 
 struct obj_data *create_obj(void)
 {
@@ -222,6 +235,7 @@ void setUp(void)
   death_script = NULL;
   death_announcement_script = NULL;
   fleeing_mob = NULL;
+  reject_entry = FALSE;
 
   memset(rooms, 0, sizeof(rooms));
   rooms[CELL].number = 3001;
@@ -1482,6 +1496,111 @@ static void test_a_pet_freed_by_the_death_script_still_finishes_its_masters_kill
   TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
 }
 
+static void test_a_pet_bleeding_out_does_not_count_as_its_masters_kill(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(holder);
+
+  init_quest(&quests[0], Q_KILL, AQ_MOB_KILL, mobs[PET].vnum);
+  give_quest(holder, Q_KILL);
+  GET_HIT(pet) = -10;
+  update_pos(pet);
+  TEST_ASSERT_EQUAL_INT(-1, damage(pet, pet, 2, TYPE_SUFFERING));
+  TEST_ASSERT_TRUE(DEAD(pet));
+  TEST_ASSERT_EQUAL_INT(Q_KILL, GET_QUEST(holder));
+}
+
+static void master_hits_pet_during_announcement(struct char_data *victim)
+{
+  (void)victim;
+  TEST_ASSERT_EQUAL_INT(0, damage(script_frees->master, script_frees, 0, TYPE_HIT));
+}
+
+static void test_a_pet_freed_by_the_killing_blow_message_still_completes_the_kill_stage(void)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(holder);
+
+  kill_stage_only();
+  give_quest(holder, Q_KILL);
+  script_frees = pet;
+  death_announcement_script = master_hits_pet_during_announcement;
+  kill_cell_guard(pet);
+  TEST_ASSERT_FALSE(is_player_pet(pet));
+  TEST_ASSERT_TRUE(is_complete(holder, Q_KILL));
+}
+
+static void test_kill_stage_uses_the_zone_of_the_lethal_hit(void)
+{
+  struct char_data *owner = new_player(HALL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *pet = new_pet(owner, CELL);
+
+  rooms[HALL].zone = 1;
+  group_up(owner, mate);
+  kill_stage_only();
+  give_quest(owner, Q_KILL);
+  give_quest(mate, Q_KILL);
+  death_script_room = HALL;
+  kill_cell_guard(pet);
+  TEST_ASSERT_EQUAL_INT(Q_KILL, GET_QUEST(owner));
+  TEST_ASSERT_TRUE(is_complete(mate, Q_KILL));
+}
+
+static struct char_data *joining_player, *group_owner;
+static void join_group_after_kill(struct char_data *victim)
+{
+  (void)victim;
+  group_up(group_owner, joining_player);
+}
+
+static void test_joining_the_group_after_the_hit_gives_no_kill_stage(void)
+{
+  group_owner = new_player(CELL);
+  joining_player = new_player(CELL);
+  kill_stage_only();
+  give_quest(joining_player, Q_KILL);
+  death_script = join_group_after_kill;
+  kill_cell_guard(new_pet(group_owner, CELL));
+  TEST_ASSERT_EQUAL_PTR(GROUP(group_owner), GROUP(joining_player));
+  TEST_ASSERT_EQUAL_INT(Q_KILL, GET_QUEST(joining_player));
+}
+
+static struct char_data *recall_pet;
+static int recall_count;
+
+/* Model a recall arrival trigger ordering the ungrouped pet to kill a guard. */
+ASPELL(spell_recall)
+{
+  move_to(victim, HALL);
+  recall_count++;
+  if (recall_pet) {
+    kill_cell_guard(recall_pet);
+    recall_pet = NULL;
+  }
+}
+
+static void test_a_pets_kill_during_group_recall_credits_every_group_member(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *mate = new_player(CELL);
+  struct char_data *last = new_player(CELL);
+
+  group_up(owner, mate);
+  group_up(owner, last);
+  kill_stage_only();
+  give_quest(owner, Q_KILL);
+  give_quest(mate, Q_KILL);
+  give_quest(last, Q_KILL);
+  recall_pet = new_pet(owner, CELL);
+  recall_count = 0;
+  mag_groups(30, owner, SPELL_GROUP_RECALL, 0);
+  TEST_ASSERT_EQUAL_INT(3, recall_count);
+  TEST_ASSERT_TRUE(is_complete(owner, Q_KILL));
+  TEST_ASSERT_TRUE(is_complete(mate, Q_KILL));
+  TEST_ASSERT_TRUE(is_complete(last, Q_KILL));
+}
+
 static void test_rescuing_a_charmed_captive_does_not_also_complete_the_next_room_clear(void)
 {
   struct char_data *holder = new_player(CELL);
@@ -1684,6 +1803,27 @@ static void test_a_healed_victim_can_be_killed_during_the_same_announcement(void
   kill_cell_guard(first);
   assert_not_cleared(first);
   assert_cleared(second);
+}
+
+static void heal_then_script_damage_from_announcement(struct char_data *victim)
+{
+  death_announcement_script = NULL;
+  /* The original blow left the guard at -20 HP. Bring it back just above death. */
+  script_damage(victim, -11);
+  TEST_ASSERT_EQUAL_INT(POS_MORTALLYW, GET_POS(victim));
+  script_damage(victim, 1);
+  TEST_ASSERT_FALSE(DEAD(victim));
+  script_damage(victim, 1);
+}
+
+static void test_a_script_killing_a_revived_victim_gives_no_credit_for_the_first_hit(void)
+{
+  struct char_data *holder = new_player(CELL);
+
+  give_room_clear_quest(holder, CELL);
+  death_announcement_script = heal_then_script_damage_from_announcement;
+  kill_cell_guard(holder);
+  assert_not_cleared(holder);
 }
 
 static void test_a_reversed_lethal_hit_does_not_credit_a_later_strangers_kill(void)
@@ -2381,6 +2521,59 @@ static void test_a_teleported_former_pet_counts_in_a_new_fight(void)
   assert_cleared(holder);
 }
 
+static void test_a_same_room_teleport_keeps_a_former_pet_in_its_fight(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+
+  give_room_clear_quest(holder, CELL);
+  TEST_ASSERT_EQUAL_INT(1, damage(owner, pet, 1, TYPE_HIT));
+  char_from_room(pet);
+  char_to_room(pet, CELL);
+
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(owner));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+}
+
+static void test_a_rejected_move_keeps_a_former_pet_in_its_fight(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+  struct room_direction_data exit_to_hall = {0};
+
+  give_room_clear_quest(holder, CELL);
+  TEST_ASSERT_EQUAL_INT(1, damage(owner, pet, 1, TYPE_HIT));
+  exit_to_hall.to_room = HALL;
+  rooms[CELL].dir_option[NORTH] = &exit_to_hall;
+  fleeing_mob = pet;
+  reject_entry = TRUE;
+  TEST_ASSERT_EQUAL_INT(0, do_simple_move(pet, NORTH, FALSE));
+  TEST_ASSERT_FALSE(reject_entry);
+  TEST_ASSERT_EQUAL_INT(CELL, IN_ROOM(pet));
+  TEST_ASSERT_EQUAL_PTR(pet, FIGHTING(owner));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+}
+
+static void test_a_former_pet_keeps_fighting_an_opponent_teleported_in_place(void)
+{
+  struct char_data *owner = new_player(CELL);
+  struct char_data *holder = new_player(CELL);
+  struct char_data *pet = new_combat_pet(owner);
+
+  give_room_clear_quest(holder, CELL);
+  TEST_ASSERT_EQUAL_INT(1, damage(owner, pet, 1, TYPE_HIT));
+  char_from_room(owner);
+  char_to_room(owner, CELL);
+
+  TEST_ASSERT_EQUAL_PTR(owner, FIGHTING(pet));
+  TEST_ASSERT_EQUAL_INT(-1, damage(holder, pet, 30, TYPE_HIT));
+  assert_not_cleared(holder);
+}
+
 /* Here the former pet is still attacking the guard when the guard dies.  Its
  * only combat link is to a mob awaiting extraction, so the next attack treats
  * it as an ordinary mobile without waiting for the heartbeat. */
@@ -2498,7 +2691,6 @@ ASPELL(spell_detect_poison) {}
 ASPELL(spell_enchant_weapon) {}
 ASPELL(spell_identify) {}
 ASPELL(spell_locate_object) {}
-ASPELL(spell_recall) {}
 ASPELL(spell_summon) {}
 ASPELL(spell_teleport) {}
 void load_mtrigger(char_data *ch) {}
@@ -2507,9 +2699,15 @@ struct mud_event_data *new_mud_event(event_id id, void *owner, char *vars) { ret
 void attach_mud_event(struct mud_event_data *event, long time) {}
 
 static struct char_data *guard_killed_by_cast_trigger;
+static struct char_data *guard_attacked_by_caster;
 
 int cast_wtrigger(char_data *caster, char_data *vict, obj_data *obj, int spellnum)
 {
+  if (guard_attacked_by_caster) {
+    struct char_data *guard = guard_attacked_by_caster;
+    guard_attacked_by_caster = NULL;
+    damage(caster, guard, 30, TYPE_HIT);
+  }
   if (guard_killed_by_cast_trigger) {
     script_damage(guard_killed_by_cast_trigger, 100);
     guard_killed_by_cast_trigger = NULL;
@@ -2546,6 +2744,38 @@ static void test_a_cast_trigger_killing_the_last_opponent_preserves_pet_status_f
   TEST_ASSERT_TRUE(DEAD(guard));
   TEST_ASSERT_TRUE(DEAD(pet));
   assert_not_cleared(holder);
+}
+
+static void check_rescue_after_cast_trigger(bool captive_survives)
+{
+  struct char_data *holder = new_player(CELL);
+  struct char_data *caster = new_player(CELL);
+  struct char_data *captive = earthquake_target(CAPTIVE, captive_survives ? 100 : 1);
+  struct char_data *guard = earthquake_target(GUARD, 1);
+
+  group_up(holder, caster);
+  give_quest(holder, Q_RESCUE);
+  guard_attacked_by_caster = guard;
+  spell_info[SPELL_EARTHQUAKE].routines = MAG_AREAS;
+  TEST_ASSERT_EQUAL_INT(1, call_magic(caster, NULL, NULL, SPELL_EARTHQUAKE, 30, CAST_SPELL));
+  TEST_ASSERT_TRUE(DEAD(guard));
+  if (captive_survives) {
+    TEST_ASSERT_TRUE(GET_HIT(captive) > 0);
+    assert_rescued(holder);
+  } else {
+    TEST_ASSERT_TRUE(DEAD(captive));
+    assert_not_rescued(holder);
+  }
+}
+
+static void test_a_cast_trigger_guard_kill_counts_if_the_captive_survives(void)
+{
+  check_rescue_after_cast_trigger(TRUE);
+}
+
+static void test_a_cast_trigger_guard_kill_cannot_rescue_a_captive_killed_by_the_spell(void)
+{
+  check_rescue_after_cast_trigger(FALSE);
 }
 
 static void test_an_earthquake_potion_preserves_pet_status_from_its_consume_trigger(void)
@@ -2646,6 +2876,11 @@ int main(void)
   RUN_TEST(test_a_groupmates_pets_kill_finishes_the_holders_kill_stage);
   RUN_TEST(test_a_pets_kill_in_another_zone_finishes_no_kill_stage);
   RUN_TEST(test_a_pet_freed_by_the_death_script_still_finishes_its_masters_kill_stage);
+  RUN_TEST(test_a_pet_bleeding_out_does_not_count_as_its_masters_kill);
+  RUN_TEST(test_a_pet_freed_by_the_killing_blow_message_still_completes_the_kill_stage);
+  RUN_TEST(test_kill_stage_uses_the_zone_of_the_lethal_hit);
+  RUN_TEST(test_joining_the_group_after_the_hit_gives_no_kill_stage);
+  RUN_TEST(test_a_pets_kill_during_group_recall_credits_every_group_member);
   RUN_TEST(test_rescuing_a_charmed_captive_does_not_also_complete_the_next_room_clear);
   RUN_TEST(test_a_killer_moved_by_the_death_script_cannot_rescue_for_the_group);
   RUN_TEST(test_a_killing_pet_moved_by_the_death_script_cannot_clear_for_its_master);
@@ -2658,6 +2893,7 @@ int main(void)
   RUN_TEST(test_a_witness_in_dead_position_after_the_script_gets_no_credit);
   RUN_TEST(test_a_groupmate_brought_in_by_the_lethal_hit_message_gets_no_credit);
   RUN_TEST(test_a_healed_victim_can_be_killed_during_the_same_announcement);
+  RUN_TEST(test_a_script_killing_a_revived_victim_gives_no_credit_for_the_first_hit);
   RUN_TEST(test_a_reversed_lethal_hit_does_not_credit_a_later_strangers_kill);
   RUN_TEST(test_a_groupmate_a_death_script_brings_in_gets_no_credit);
   RUN_TEST(test_a_groupmate_a_death_script_takes_away_gets_no_credit);
@@ -2693,11 +2929,16 @@ int main(void)
   RUN_TEST(test_an_idle_former_pet_counts_in_a_new_fight_before_the_next_heartbeat);
   RUN_TEST(test_a_former_pet_blocks_a_clear_after_its_opponent_recalls);
   RUN_TEST(test_a_teleported_former_pet_counts_in_a_new_fight);
+  RUN_TEST(test_a_same_room_teleport_keeps_a_former_pet_in_its_fight);
+  RUN_TEST(test_a_rejected_move_keeps_a_former_pet_in_its_fight);
+  RUN_TEST(test_a_former_pet_keeps_fighting_an_opponent_teleported_in_place);
   RUN_TEST(test_a_former_pet_attacking_a_dead_guard_counts_in_a_new_fight);
   RUN_TEST(test_a_death_script_healing_a_former_pet_preserves_the_current_kill_credit);
   RUN_TEST(test_a_dying_holder_cannot_share_a_guard_kill_triggered_by_their_death);
   RUN_TEST(test_a_dying_captive_is_not_rescued_by_a_kill_during_its_death);
   RUN_TEST(test_a_cast_trigger_killing_the_last_opponent_preserves_pet_status_for_the_spell);
+  RUN_TEST(test_a_cast_trigger_guard_kill_counts_if_the_captive_survives);
+  RUN_TEST(test_a_cast_trigger_guard_kill_cannot_rescue_a_captive_killed_by_the_spell);
   RUN_TEST(test_an_earthquake_potion_preserves_pet_status_from_its_consume_trigger);
   return UNITY_END();
 }
