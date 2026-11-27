@@ -20,6 +20,7 @@
 #include "screen.h"
 #include "spells.h"
 #include "handler.h"
+#include "fight.h"
 #include "interpreter.h"
 #include "class.h"
 
@@ -568,6 +569,71 @@ bool circle_follow(struct char_data *ch, struct char_data *victim)
   return (FALSE);
 }
 
+/* A stunned or rescued character can still be another combatant's target.
+ * Combat links to someone who left the room may linger until the next pulse. */
+bool has_combat_opponent(const struct char_data *ch)
+{
+  const struct char_data *attacker;
+  room_rnum room = IN_ROOM(ch);
+
+  if (room == NOWHERE)
+    return FALSE;
+  if (FIGHTING(ch) && IN_ROOM(FIGHTING(ch)) == room && !DEAD(FIGHTING(ch)))
+    return TRUE;
+  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
+    if (FIGHTING(attacker) == ch && IN_ROOM(attacker) == room && !DEAD(attacker))
+      return TRUE;
+  return FALSE;
+}
+
+/* Extraction runs after the pulse, so these pointers stay valid through
+ * movement triggers, attacks and any spells or deaths nested inside them. */
+static unsigned int pet_combat_action_depth;
+static struct pending_pet_clear {
+  struct char_data *pet;
+  struct pending_pet_clear *next;
+} *pending_pet_clears;
+
+void begin_pet_combat_action(void)
+{
+  ++pet_combat_action_depth;
+}
+
+/* Keep former pets identifiable until an attack or movement finishes.
+ * Only then can we tell whether the encounter has ended. */
+void clear_pet_combat_if_idle(struct char_data *ch)
+{
+  struct pending_pet_clear *entry;
+
+  if (!ch || !IS_NPC(ch) || DEAD(ch) || !ch->mob_specials.fought_as_player_pet ||
+      GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch))
+    return;
+  if (!pet_combat_action_depth) {
+    ch->mob_specials.fought_as_player_pet = FALSE;
+    return;
+  }
+  for (entry = pending_pet_clears; entry; entry = entry->next)
+    if (entry->pet == ch)
+      return;
+  CREATE(entry, struct pending_pet_clear, 1);
+  entry->pet = ch;
+  entry->next = pending_pet_clears;
+  pending_pet_clears = entry;
+}
+
+void end_pet_combat_action(void)
+{
+  struct pending_pet_clear *entry;
+
+  if (--pet_combat_action_depth)
+    return;
+  while ((entry = pending_pet_clears) != NULL) {
+    pending_pet_clears = entry->next;
+    clear_pet_combat_if_idle(entry->pet);
+    free(entry);
+  }
+}
+
 bool is_player_pet(const struct char_data *ch)
 {
   return IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master &&
@@ -577,7 +643,7 @@ bool is_player_pet(const struct char_data *ch)
 bool is_player_pet_kill(const struct char_data *victim)
 {
   return IS_NPC(victim) &&
-         (is_player_pet(victim) || victim->mob_specials.attacked_by_pet_owner ||
+         (is_player_pet(victim) || victim->mob_specials.fought_as_player_pet ||
           victim->mob_specials.died_as_player_pet);
 }
 
@@ -599,6 +665,10 @@ void stop_follower(struct char_data *ch)
     core_dump();
     return;
   }
+
+  /* A pet losing charm while downed or in combat stays marked until idle. */
+  if (is_player_pet(ch) && (GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch)))
+    ch->mob_specials.fought_as_player_pet = TRUE;
 
   if (AFF_FLAGGED(ch, AFF_CHARM)) {
     act("You realize that $N is a jerk!", FALSE, ch, 0, ch->master, TO_CHAR);

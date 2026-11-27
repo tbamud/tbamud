@@ -60,7 +60,6 @@ static void make_corpse(struct char_data *ch);
 static void change_alignment(struct char_data *ch, struct char_data *victim);
 static void group_gain(struct char_data *ch, struct char_data *victim);
 static void solo_gain(struct char_data *ch, struct char_data *victim);
-static void clear_pet_attack_if_idle(struct char_data *ch);
 /** @todo refactor this function name */
 static char *replace_string(const char *str, const char *weapon_singular, const char *weapon_plural);
 static int compute_thaco(struct char_data *ch, struct char_data *vict);
@@ -98,15 +97,22 @@ void update_pos(struct char_data *victim)
   if (GET_HIT(victim) > 0) {
     if (GET_POS(victim) <= POS_STUNNED)
       GET_POS(victim) = POS_STANDING;
-    clear_pet_attack_if_idle(victim);
-  } else if (GET_HIT(victim) <= -11)
-    GET_POS(victim) = POS_DEAD;
-  else if (GET_HIT(victim) <= -6)
-    GET_POS(victim) = POS_MORTALLYW;
-  else if (GET_HIT(victim) <= -3)
-    GET_POS(victim) = POS_INCAP;
-  else
-    GET_POS(victim) = POS_STUNNED;
+    clear_pet_combat_if_idle(victim);
+  } else {
+    if (GET_HIT(victim) <= -11)
+      GET_POS(victim) = POS_DEAD;
+    else if (GET_HIT(victim) <= -6)
+      GET_POS(victim) = POS_MORTALLYW;
+    else if (GET_HIT(victim) <= -3)
+      GET_POS(victim) = POS_INCAP;
+    else
+      GET_POS(victim) = POS_STUNNED;
+    if (is_player_pet(victim))
+      victim->mob_specials.fought_as_player_pet = TRUE;
+  }
+  /* Healing during a lethal hit's messages lets a later hit cause a new death. */
+  if (GET_POS(victim) > POS_DEAD)
+    victim->char_specials.lethal_hit_pending = FALSE;
 }
 
 void check_killer(struct char_data *ch, struct char_data *vict)
@@ -167,26 +173,13 @@ void set_fighting(struct char_data *ch, struct char_data *vict)
 
   FIGHTING(ch) = vict;
   GET_POS(ch) = POS_FIGHTING;
-
+  if (is_player_pet(ch))
+    ch->mob_specials.fought_as_player_pet = TRUE;
+  if (is_player_pet(vict))
+    vict->mob_specials.fought_as_player_pet = TRUE;
 }
 
-/* A former pet must recover and disengage before a later kill can count. */
-static void clear_pet_attack_if_idle(struct char_data *ch)
-{
-  struct char_data *attacker;
-
-  if (!ch || !IS_NPC(ch) || !ch->mob_specials.attacked_by_pet_owner ||
-      FIGHTING(ch) || GET_POS(ch) <= POS_STUNNED)
-    return;
-
-  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
-    if (FIGHTING(attacker) == ch)
-      return;
-
-  ch->mob_specials.attacked_by_pet_owner = FALSE;
-}
-
-/* remove a char from the list of fighting chars */
+/* Remove a character's outgoing combat link and update both endpoints. */
 void stop_fighting(struct char_data *ch)
 {
   struct char_data *temp;
@@ -200,7 +193,7 @@ void stop_fighting(struct char_data *ch)
   FIGHTING(ch) = NULL;
   GET_POS(ch) = POS_STANDING;
   update_pos(ch);
-  clear_pet_attack_if_idle(opponent);
+  clear_pet_combat_if_idle(opponent);
 }
 
 static void make_corpse(struct char_data *ch)
@@ -294,14 +287,37 @@ void death_cry(struct char_data *ch)
       send_to_room(world[IN_ROOM(ch)].dir_option[door]->to_room, "Your blood freezes as you hear someone's death cry.\r\n");
 }
 
-void raw_kill(struct char_data * ch, struct char_data * killer)
+/* A healed character can take another hit in the same combat message. Death
+ * scripts, on the other hand, run standing while extraction is inevitable. */
+static bool death_already_started(const struct char_data *victim)
 {
-  struct char_data *i;
-  const room_rnum death_room = IN_ROOM(ch);
-  const bool killer_was_present = killer && IN_ROOM(killer) == death_room;
+  return DEAD(victim) || victim->char_specials.death_in_progress ||
+         (victim->char_specials.lethal_hit_pending && GET_POS(victim) == POS_DEAD);
+}
+
+static struct kill_witnesses *witnesses_to_death(struct char_data *victim, struct char_data *killer)
+{
+  if (!IS_NPC(victim) || killer == victim)
+    return NULL;
+  return note_kill_witnesses(killer, IN_ROOM(victim));
+}
+
+static void finish_kill(struct char_data *ch, struct char_data *killer,
+                        struct kill_witnesses *witnesses, bool apply_death_penalty)
+{
   /* Removing affects below can strip a pet's charm before quest checks. */
   const bool victim_was_player_pet = is_player_pet_kill(ch);
 
+  ch->char_specials.death_in_progress = TRUE;
+  if (apply_death_penalty) {
+    gain_exp(ch, -(GET_EXP(ch) / 2));
+    if (!IS_NPC(ch)) {
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
+      REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
+    }
+  }
+
+  begin_pet_combat_action();
   if (FIGHTING(ch))
     stop_fighting(ch);
 
@@ -317,14 +333,7 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   } else
     death_cry(ch);
 
-  if (killer) {
-    if (killer->group) {
-      while ((i = (struct char_data *) simple_list(killer->group->members)) != NULL)
-        if(IN_ROOM(i) == IN_ROOM(ch)  || (world[IN_ROOM(i)].zone == world[IN_ROOM(ch)].zone))
-          autoquest_trigger_check(i, ch, NULL, AQ_MOB_KILL);      
-    } else
-        autoquest_trigger_check(killer, ch, NULL, AQ_MOB_KILL);
-  }
+  credit_kill_mob_stage(witnesses, ch);
 
   /* Alert Group if Applicable */
   if (GROUP(ch))
@@ -336,22 +345,23 @@ void raw_kill(struct char_data * ch, struct char_data * killer)
   if (victim_was_player_pet)
     ch->mob_specials.died_as_player_pet = TRUE;
   extract_char(ch);
+  ch->char_specials.death_in_progress = FALSE;
 
-  /* A death script may move the killer, the victim, or both. */
-  if (killer_was_present && IN_ROOM(killer) == death_room) {
-    check_rescue_on_kill(killer, ch, death_room);
-    autoquest_trigger_check(killer, NULL, NULL, AQ_ROOM_CLEAR);
-  }
+  /* A death script may move the victim or anyone on the killer's side. */
+  credit_kill_witnesses(witnesses, ch);
+  end_pet_combat_action();
 }
 
-void die(struct char_data * ch, struct char_data * killer)
+void raw_kill(struct char_data *ch, struct char_data *killer)
 {
-  gain_exp(ch, -(GET_EXP(ch) / 2));
-  if (!IS_NPC(ch)) {
-    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_KILLER);
-    REMOVE_BIT_AR(PLR_FLAGS(ch), PLR_THIEF);
-  }
-  raw_kill(ch, killer);
+  if (!death_already_started(ch))
+    finish_kill(ch, killer, witnesses_to_death(ch, killer), FALSE);
+}
+
+void die(struct char_data *ch, struct char_data *killer)
+{
+  if (!death_already_started(ch))
+    finish_kill(ch, killer, witnesses_to_death(ch, killer), TRUE);
 }
 
 static void perform_group_gain(struct char_data *ch, int base,
@@ -632,23 +642,20 @@ int skill_message(int dam, struct char_data *ch, struct char_data *vict,
   return (0);
 }
 
-/* This function returns the following codes:
- *	< 0	Victim died.
- *	= 0	No damage.
- *	> 0	How much damage done. */
-int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+static int apply_damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
 {
   long local_gold = 0, happy_gold = 0;
   char local_buf[256];
   struct char_data *tmp_char;
   struct obj_data *corpse_obj;
-  bool attacking_own_pet;
+  struct kill_witnesses *witnesses = NULL;
+  bool attacker_was_pet, victim_was_pet, lethal_hit;
+
+  /* A combat or death message can trigger another hit on the same victim. */
+  if (death_already_started(victim))
+    return (-1);
 
   if (GET_POS(victim) <= POS_DEAD) {
-    /* This is "normal"-ish now with delayed extraction. -gg 3/15/2001 */
-    if (PLR_FLAGGED(victim, PLR_NOTDEADYET) || MOB_FLAGGED(victim, MOB_NOTDEADYET))
-      return (-1);
-
     log("SYSERR: Attempt to damage corpse '%s' in room #%d by '%s'.",
         GET_NAME(victim), GET_ROOM_VNUM(IN_ROOM(victim)), GET_NAME(ch));
     die(victim, ch);
@@ -678,15 +685,21 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   if (!IS_NPC(victim) && ((GET_LEVEL(victim) >= LVL_IMMORT) && PRF_FLAGGED(victim, PRF_NOHASSLE)))
     dam = 0;
 
-  attacking_own_pet = victim->master == ch && is_player_pet(victim);
+  attacker_was_pet = ch != victim && is_player_pet(ch);
+  victim_was_pet = ch != victim && is_player_pet(victim);
   dam = damage_mtrigger(ch, victim, dam, attacktype);
   if (dam == -1) {
   	return (0);
   }
+  if (DEAD(victim))
+    return (-1);
 
-  /* Keep pet status when an attack breaks the bond before a later hit. */
-  if (attacking_own_pet)
-    victim->mob_specials.attacked_by_pet_owner = TRUE;
+  /* A damage trigger may break charm before either side starts fighting.
+   * A downed target may never acquire a combat link at all. */
+  if (attacker_was_pet)
+    ch->mob_specials.fought_as_player_pet = TRUE;
+  if (victim_was_pet)
+    victim->mob_specials.fought_as_player_pet = TRUE;
 
   if (victim != ch) {
     /* Start the attacker fighting the victim */
@@ -716,12 +729,19 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
   /* Set the maximum damage per round and subtract the hit points */
   dam = MAX(MIN(dam, 100), 0);
   GET_HIT(victim) -= dam;
+  update_pos(victim);
+
+  /* The hit has landed. XP and combat messages may run scripts that move
+   * the victim, the killer or their group before death processing finishes. */
+  lethal_hit = GET_POS(victim) == POS_DEAD;
+  if (lethal_hit) {
+    victim->char_specials.lethal_hit_pending = TRUE;
+    witnesses = witnesses_to_death(victim, ch);
+  }
 
   /* Gain exp for the hit */
   if (ch != victim)
     gain_exp(ch, GET_LEVEL(victim) * dam);
-
-  update_pos(victim);
 
   /* skill_message sends a message from the messages file in lib/misc.
    * dam_message just sends a generic "You hit $n extremely hard.".
@@ -791,12 +811,22 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
   }
 
-  /* stop someone from fighting if they're stunned or worse */
+  /* A message script may have purged the victim or completed a nested kill. */
+  if (lethal_hit)
+    victim->char_specials.lethal_hit_pending = FALSE;
+  if (DEAD(victim)) {
+    free_kill_witnesses(witnesses);
+    return (-1);
+  }
+
   if (GET_POS(victim) <= POS_STUNNED && FIGHTING(victim) != NULL)
     stop_fighting(victim);
 
   /* Uh oh.  Victim died. */
   if (GET_POS(victim) == POS_DEAD) {
+    if (!lethal_hit)
+      witnesses = witnesses_to_death(victim, ch);
+    victim->char_specials.death_in_progress = TRUE;
     if (ch != victim && (IS_NPC(victim) || victim->desc)) {
       if (GROUP(ch))
 	group_gain(ch, victim);
@@ -824,7 +854,7 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
       sprintf(local_buf,"%ld", (long)local_gold);
     }
 
-    die(victim, ch);
+    finish_kill(victim, ch, witnesses, TRUE);
     if (GROUP(ch) && (local_gold > 0) && PRF_FLAGGED(ch, PRF_AUTOSPLIT) ) {
       generic_find("last.corpse", FIND_OBJ_ROOM, ch, &tmp_char, &corpse_obj);
       if (corpse_obj) {
@@ -845,9 +875,25 @@ int damage(struct char_data *ch, struct char_data *victim, int dam, int attackty
     }
     return (-1);
   }
-  if (attacking_own_pet)
-    clear_pet_attack_if_idle(victim);
+  /* A message script may instead have healed the victim. */
+  free_kill_witnesses(witnesses);
+  if (attacker_was_pet)
+    clear_pet_combat_if_idle(ch);
+  if (victim_was_pet)
+    clear_pet_combat_if_idle(victim);
   return (dam);
+}
+
+/* Return -1 for a kill, otherwise the damage dealt. A hit can trigger
+ * movement or another death before its quest checks have finished. */
+int damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype)
+{
+  int result;
+
+  begin_pet_combat_action();
+  result = apply_damage(ch, victim, dam, attacktype);
+  end_pet_combat_action();
+  return result;
 }
 
 /* Calculate the THAC0 of the attacker. 'victim' currently isn't used but you

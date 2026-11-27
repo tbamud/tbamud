@@ -130,7 +130,8 @@ test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 test_quest: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
             $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c \
             $(SRCDIR)/fight.c $(SRCDIR)/constants.c \
-            $(SRCDIR)/magic.c $(SRCDIR)/act.offensive.c \
+            $(SRCDIR)/magic.c $(SRCDIR)/spell_parser.c $(SRCDIR)/dg_misc.c \
+            $(SRCDIR)/act.movement.c $(SRCDIR)/act.offensive.c \
             $(SRCDIR)/interpreter.c $(SRCDIR)/dg_mobcmd.c test_quest.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 

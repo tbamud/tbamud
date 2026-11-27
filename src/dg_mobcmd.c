@@ -994,7 +994,7 @@ ACMD(do_mtransform)
     tmpmob.next_in_room = ch->next_in_room;
     tmpmob.next = ch->next;
     tmpmob.next_fighting = ch->next_fighting;
-    tmpmob.mob_specials.attacked_by_pet_owner = ch->mob_specials.attacked_by_pet_owner;
+    tmpmob.mob_specials.fought_as_player_pet = ch->mob_specials.fought_as_player_pet;
     tmpmob.followers = ch->followers;
     tmpmob.master = ch->master;
     tmpmob.group = ch->group;
@@ -1007,6 +1007,8 @@ ACMD(do_mtransform)
     }
     GET_GOLD(&tmpmob) = GET_GOLD(ch);
     GET_POS(&tmpmob) = GET_POS(ch);
+    tmpmob.char_specials.lethal_hit_pending = ch->char_specials.lethal_hit_pending;
+    tmpmob.char_specials.death_in_progress = ch->char_specials.death_in_progress;
     IS_CARRYING_W(&tmpmob) = IS_CARRYING_W(ch);
     IS_CARRYING_N(&tmpmob) = IS_CARRYING_N(ch);
     FIGHTING(&tmpmob) = FIGHTING(ch);

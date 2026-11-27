@@ -174,12 +174,7 @@ int find_skill_num(char *name) {
   return (-1);
 }
 
-/* This function is the very heart of the entire magic system.  All invocations
- * of all types of magic -- objects, spoken and unspoken PC and NPC spells, the
- * works -- all come through this function eventually. This is also the entry
- * point for non-spoken or unrestricted spells. Spellnum 0 is legal but silently
- * ignored here, to make callers simpler. */
-int call_magic(struct char_data *caster, struct char_data *cvict,
+static int apply_magic(struct char_data *caster, struct char_data *cvict,
     struct obj_data *ovict, int spellnum, int level, int casttype) {
   int savetype;
 
@@ -300,6 +295,19 @@ int call_magic(struct char_data *caster, struct char_data *cvict,
   return (1);
 }
 
+/* A cast trigger can kill the last guard before the spell hits the captive.
+ * Resolve pending rescues and former-pet status after all spell effects. */
+int call_magic(struct char_data *caster, struct char_data *cvict,
+    struct obj_data *ovict, int spellnum, int level, int casttype)
+{
+  int result;
+
+  begin_rescue_action();
+  result = apply_magic(caster, cvict, ovict, spellnum, level, casttype);
+  end_rescue_action();
+  return result;
+}
+
 /* mag_objectmagic: This is the entry-point for all magic items.  This should
  * only be called by the 'quaff', 'use', 'recite', etc. routines.
  * For reference, object values 0-3:
@@ -320,6 +328,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
   k = generic_find(arg, FIND_CHAR_ROOM | FIND_OBJ_INV | FIND_OBJ_ROOM |
   FIND_OBJ_EQUIP, ch, &tch, &tobj);
 
+  /* Activation messages and the consume trigger run before call_magic(). */
+  begin_rescue_action();
   switch (GET_OBJ_TYPE(obj)) {
   case ITEM_STAFF:
     act("You tap $p three times on the ground.", FALSE, ch, obj, 0, TO_CHAR);
@@ -339,7 +349,6 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
 
       /* Area/mass spells on staves can cause crashes. So we use special cases
        * for those spells spells here. */
-      begin_rescue_action();
       if (HAS_SPELL_ROUTINE(GET_OBJ_VAL(obj, 3), MAG_MASSES | MAG_AREAS)) {
         for (i = 0, tch = world[IN_ROOM(ch)].people; tch;
             tch = tch->next_in_room)
@@ -353,7 +362,6 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
             call_magic(ch, tch, NULL, GET_OBJ_VAL(obj, 3), k, CAST_STAFF);
         }
       }
-      end_rescue_action();
     }
     break;
   case ITEM_WAND:
@@ -381,13 +389,13 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
       act("$n points $p outward.", TRUE, ch, obj, NULL, TO_ROOM);
     } else {
       act("At what should $p be pointed?", FALSE, ch, obj, NULL, TO_CHAR);
-      return;
+      break;
     }
 
     if (GET_OBJ_VAL(obj, 2) <= 0) {
       send_to_char(ch, "It seems powerless.\r\n");
       act("Nothing seems to happen.", FALSE, ch, obj, 0, TO_ROOM);
-      return;
+      break;
     }
     GET_OBJ_VAL(obj, 2)--;
     WAIT_STATE(ch, PULSE_VIOLENCE);
@@ -403,7 +411,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
       if (!k) {
         act("There is nothing to here to affect with $p.", FALSE, ch, obj, NULL,
             TO_CHAR);
-        return;
+        break;
       }
     } else
       tch = ch;
@@ -415,12 +423,10 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
       act("$n recites $p.", FALSE, ch, obj, NULL, TO_ROOM);
 
     WAIT_STATE(ch, PULSE_VIOLENCE);
-    begin_rescue_action();
     for (i = 1; i <= 3; i++)
       if (call_magic(ch, tch, tobj, GET_OBJ_VAL(obj, i), GET_OBJ_VAL(obj, 0),
           CAST_SCROLL) <= 0)
         break;
-    end_rescue_action();
 
     if (obj != NULL)
       extract_obj(obj);
@@ -429,7 +435,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
     tch = ch;
 
     if (!consume_otrigger(obj, ch, OCMD_QUAFF)) /* check trigger */
-      return;
+      break;
 
     act("You quaff $p.", FALSE, ch, obj, NULL, TO_CHAR);
     if (obj->action_description)
@@ -438,12 +444,10 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
       act("$n quaffs $p.", TRUE, ch, obj, NULL, TO_ROOM);
 
     WAIT_STATE(ch, PULSE_VIOLENCE);
-    begin_rescue_action();
     for (i = 1; i <= 3; i++)
       if (call_magic(ch, ch, NULL, GET_OBJ_VAL(obj, i), GET_OBJ_VAL(obj, 0),
           CAST_POTION) <= 0)
         break;
-    end_rescue_action();
 
     if (obj != NULL)
       extract_obj(obj);
@@ -453,6 +457,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
         GET_OBJ_TYPE(obj));
     break;
   }
+  end_rescue_action();
 }
 
 /* cast_spell is used generically to cast any spoken spell, assuming we already
@@ -461,6 +466,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
  * for spells cast by NPCs via specprocs. */
 int cast_spell(struct char_data *ch, struct char_data *tch,
     struct obj_data *tobj, int spellnum) {
+  int result;
+
   if (spellnum < 0 || spellnum > TOP_SPELL_DEFINE) {
     log("SYSERR: cast_spell trying to call spellnum %d/%d.", spellnum,
     TOP_SPELL_DEFINE);
@@ -504,9 +511,12 @@ int cast_spell(struct char_data *ch, struct char_data *tch,
     return (0);
   }
   send_to_char(ch, "%s", CONFIG_OK);
+  /* The target can react to the spoken words through an act trigger. */
+  begin_rescue_action();
   say_spell(ch, spellnum, tch, tobj);
-
-  return (call_magic(ch, tch, tobj, spellnum, GET_LEVEL(ch), CAST_SPELL));
+  result = call_magic(ch, tch, tobj, spellnum, GET_LEVEL(ch), CAST_SPELL);
+  end_rescue_action();
+  return result;
 }
 
 /* do_cast is the entry point for PC-casted spells.  It parses the arguments,
