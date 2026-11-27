@@ -11,6 +11,10 @@
 #include "house.h"
 
 #include <dirent.h>
+#include <fcntl.h>
+#include <glob.h>
+#include <limits.h>
+#include <sys/file.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #if defined(__linux__)
@@ -21,12 +25,12 @@
 
 #define HOUSE_FILE LIB_HOUSE "3000.house"
 #define ELSEWHERE_FILE "elsewhere/3000.house"
+#define STAGE_PREFIX ".tba-house-save-"
 static struct room_data rooms[2];
 static struct obj_data item;
-static int fail_record, crash_record;
+static int fail_record, crash_record, boot_during_record;
 
 #ifdef HOUSE_TEST_WRAP_IO
-#include <fcntl.h>
 /* Fail only the sync of the installed file's parent. File syncs and other
  * directories still use the filesystem normally. */
 static struct stat watched_parent;
@@ -36,6 +40,19 @@ static int watch_create, saw_private_create;
 int __real_openat(int dirfd, const char *name, int flags, ...);
 static int deny_chown;
 int __real_fchown(int fd, uid_t owner, gid_t group);
+static int reject_named_chmod, following_chmods;
+int __real_fchmodat(int dirfd, const char *name, mode_t mode, int flags);
+
+int __wrap_fchmodat(int dirfd, const char *name, mode_t mode, int flags)
+{
+  if (reject_named_chmod && *name) {
+    if (!(flags & AT_SYMLINK_NOFOLLOW))
+      ++following_chmods;
+    errno = EOPNOTSUPP;
+    return -1;
+  }
+  return __real_fchmodat(dirfd, name, mode, flags);
+}
 
 int __wrap_fchown(int fd, uid_t owner, gid_t group)
 {
@@ -102,6 +119,10 @@ int objsave_save_obj_record(struct obj_data *obj, FILE *fp, int location)
 {
   if (crash_record)
     _exit(1);	/* die part-way through the save, as a crash would */
+  if (boot_during_record) {
+    boot_during_record = FALSE;
+    House_boot();  /* Opens the directory independently of the active save. */
+  }
   return fputs(obj->name, fp) >= 0 && !fail_record;
 }
 
@@ -120,6 +141,7 @@ void setUp(void)
   rooms[0].contents = &item;
   item.name = "current contents";
   fail_record = FALSE;
+  boot_during_record = FALSE;
 }
 
 void tearDown(void)
@@ -128,6 +150,7 @@ void tearDown(void)
 #ifdef HOUSE_TEST_WRAP_IO
   watch_sync = fail_parent_sync = parent_sync_errno = parent_syncs = 0;
   watch_create = saw_private_create = deny_chown = 0;
+  reject_named_chmod = following_chmods = 0;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
     char command[] = "destroy 3000";
@@ -135,6 +158,7 @@ void tearDown(void)
   }
   umask(0022);
   chmod("house", 0700);
+  rmdir(LIB_HOUSE ".tba-house.lock");  /* Obstruction used by the unlocked-save test. */
   remove(HCONTROL_FILE);
   remove(HOUSE_FILE);
   remove(HOUSE_FILE ".tmp");
@@ -143,12 +167,17 @@ void tearDown(void)
   remove("bystander");
   snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
   remove(running);
-  remove(LIB_HOUSE ".tba-house-notes");
-  remove(LIB_HOUSE ".tba-house-4294967296-0");
-  remove(LIB_HOUSE ".tba-house-99999999999999999999-0");
+  remove(LIB_HOUSE STAGE_PREFIX "notes");
+  remove(LIB_HOUSE STAGE_PREFIX "4294967296-0");
+  remove(LIB_HOUSE STAGE_PREFIX "99999999999999999999-0");
 #if defined(__linux__)
   removexattr("house", "system.posix_acl_default");
   remove(LIB_HOUSE "reference");
+#elif defined(__FreeBSD__)
+  remove("elsewhere/" HOUSE_FILE);
+  remove("elsewhere/house/.tba-house.lock");
+  rmdir("elsewhere/house");
+  chmod("elsewhere", 0700);
 #endif
 }
 
@@ -179,7 +208,8 @@ static void assert_file(const char *path, const char *expected)
   fclose(fp);
   TEST_ASSERT_EQUAL_INT(0, error);
   TEST_ASSERT_EQUAL_UINT(strlen(expected), length);
-  TEST_ASSERT_EQUAL_MEMORY(expected, bytes, length);
+  if (length > 0)
+    TEST_ASSERT_EQUAL_MEMORY(expected, bytes, length);
 }
 
 static void test_new_house_retries_after_its_first_save_fails(void)
@@ -383,13 +413,13 @@ static int count_stages(void)
   int count = 0;
   TEST_ASSERT_NOT_NULL(dir);
   while ((entry = readdir(dir)) != NULL)
-    count += !strncmp(entry->d_name, ".tba-house-", 11);
+    count += !strncmp(entry->d_name, STAGE_PREFIX, sizeof(STAGE_PREFIX) - 1);
   closedir(dir);
   return count;
 }
 
 /* The child dies part-way through writing the house, and its stage stays. */
-static void crash_in_the_middle_of_a_save(void)
+static pid_t crash_in_the_middle_of_a_save(void)
 {
   int status;
   pid_t child = fork();
@@ -401,11 +431,107 @@ static void crash_in_the_middle_of_a_save(void)
   }
   TEST_ASSERT_EQUAL_INT(child, waitpid(child, &status, 0));
   TEST_ASSERT_TRUE(WIFEXITED(status) && WEXITSTATUS(status) == 1);
+  return child;
 }
 
-/* A first save leaves a stage file and a replacement a stage directory.
- * Boot clears both, and leaves alone a look-alike name and the stage of a
- * game that is still running. */
+static void test_boot_defers_cleanup_while_a_save_is_active(void)
+{
+  char updates[][16] = {"first save", "replacement"};
+  crash_in_the_middle_of_a_save();
+  for (size_t i = 0; i < sizeof(updates) / sizeof(updates[0]); ++i) {
+    item.name = updates[i];
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    boot_during_record = TRUE;
+    House_crashsave(3000);
+    assert_file(HOUSE_FILE, updates[i]);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    /* Even the abandoned stage must wait until the writer releases its lock. */
+    TEST_ASSERT_EQUAL_INT(1, count_stages());
+  }
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+}
+
+static void test_boot_keeps_noncanonical_stage_names(void)
+{
+  char paths[5][128];
+  int preserved = 0;
+  long pid = (long)crash_in_the_middle_of_a_save();
+  snprintf(paths[0], sizeof(paths[0]), LIB_HOUSE STAGE_PREFIX "0%ld-1", pid);
+  snprintf(paths[1], sizeof(paths[1]), LIB_HOUSE STAGE_PREFIX "%ld-01", pid);
+  snprintf(paths[2], sizeof(paths[2]), LIB_HOUSE STAGE_PREFIX "%ld-%lu0", pid, ULONG_MAX);
+  snprintf(paths[3], sizeof(paths[3]), LIB_HOUSE ".tba-house-%ld-0", pid);
+  snprintf(paths[4], sizeof(paths[4]), LIB_HOUSE ".tba-house-unlocked-%ld-0", pid);
+  for (size_t i = 0; i < sizeof(paths) / sizeof(paths[0]); ++i)
+    write_file(paths[i], "operator's copy");
+
+  House_boot();
+  for (size_t i = 0; i < sizeof(paths) / sizeof(paths[0]); ++i) {
+    preserved += exists(paths[i]);
+    remove(paths[i]);
+  }
+  TEST_ASSERT_EQUAL_INT(5, preserved);
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+}
+
+static void test_save_retries_after_the_cleanup_lock_is_released(void)
+{
+  char build[] = "build 3000 north owner";
+  int fd, locked, saved;
+  do_hcontrol(NULL, build, 0, 0);
+  fd = open(LIB_HOUSE ".tba-house.lock", O_RDWR);
+  TEST_ASSERT_TRUE(fd >= 0);
+  locked = flock(fd, LOCK_EX | LOCK_NB);
+  if (locked < 0) {
+    close(fd);
+    TEST_FAIL_MESSAGE("unable to acquire the cleanup lock");
+  }
+  item.name = "pending update";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_save_all();
+  saved = !ROOM_FLAGGED(0, ROOM_HOUSE_CRASH);
+  TEST_ASSERT_EQUAL_INT(0, close(fd));
+  TEST_ASSERT_FALSE(saved);
+  assert_file(HOUSE_FILE, "current contents");
+
+  House_save_all();
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+}
+
+static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
+{
+  char pattern[96], contents[256];
+  glob_t paths;
+  pid_t child;
+  int length;
+  if (unlink(LIB_HOUSE ".tba-house.lock") < 0)
+    TEST_ASSERT_EQUAL_INT(ENOENT, errno);
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LIB_HOUSE ".tba-house.lock", 0700));
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+
+  child = crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(0, rmdir(LIB_HOUSE ".tba-house.lock"));
+  /* Locate this child's one abandoned replacement in the isolated fixture. */
+  snprintf(pattern, sizeof(pattern), LIB_HOUSE ".tba-house-unlocked-%ld-*", (long)child);
+  TEST_ASSERT_EQUAL_INT(0, glob(pattern, 0, NULL, &paths));
+  TEST_ASSERT_EQUAL_UINT(1, paths.gl_pathc);
+  length = snprintf(contents, sizeof(contents), "%s/contents", paths.gl_pathv[0]);
+  TEST_ASSERT_TRUE(length > 0 && (size_t)length < sizeof(contents));
+
+  House_boot();
+  assert_file(HOUSE_FILE, item.name);
+  assert_file(contents, "");
+  TEST_ASSERT_EQUAL_INT(0, unlink(contents));
+  TEST_ASSERT_EQUAL_INT(0, rmdir(paths.gl_pathv[0]));
+  globfree(&paths);
+}
+
+/* Boot clears a crashed first save and replacement, preserving legacy stages
+ * and unrelated names. */
 static void test_boot_removes_saves_a_crash_left_unfinished(void)
 {
   char running[64];
@@ -417,19 +543,33 @@ static void test_boot_removes_saves_a_crash_left_unfinished(void)
 
   snprintf(running, sizeof(running), LIB_HOUSE ".tba-house-%ld-0", (long)getppid());
   write_file(running, "a running game's save");
-  write_file(LIB_HOUSE ".tba-house-notes", "operator's copy");
-  write_file(LIB_HOUSE ".tba-house-4294967296-0", "out-of-range pid 1");
-  write_file(LIB_HOUSE ".tba-house-99999999999999999999-0", "out-of-range pid 2");
+  write_file(LIB_HOUSE STAGE_PREFIX "notes", "operator's copy");
+  write_file(LIB_HOUSE STAGE_PREFIX "4294967296-0", "out-of-range pid 1");
+  write_file(LIB_HOUSE STAGE_PREFIX "99999999999999999999-0", "out-of-range pid 2");
   House_boot();
-  TEST_ASSERT_EQUAL_INT(4, count_stages());
+  TEST_ASSERT_EQUAL_INT(3, count_stages());
   assert_file(running, "a running game's save");
-  assert_file(LIB_HOUSE ".tba-house-notes", "operator's copy");
-  assert_file(LIB_HOUSE ".tba-house-4294967296-0", "out-of-range pid 1");
-  assert_file(LIB_HOUSE ".tba-house-99999999999999999999-0", "out-of-range pid 2");
+  assert_file(LIB_HOUSE STAGE_PREFIX "notes", "operator's copy");
+  assert_file(LIB_HOUSE STAGE_PREFIX "4294967296-0", "out-of-range pid 1");
+  assert_file(LIB_HOUSE STAGE_PREFIX "99999999999999999999-0", "out-of-range pid 2");
   assert_file(HOUSE_FILE, "old contents");
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
+static void test_boot_clears_an_empty_unreadable_stage_without_chmod(void)
+{
+  char empty[128];
+  long pid = (long)crash_in_the_middle_of_a_save();
+  /* A crash between mkdirat() and permission setup leaves this empty. */
+  snprintf(empty, sizeof(empty), LIB_HOUSE STAGE_PREFIX "%ld-%lu", pid, ULONG_MAX);
+  TEST_ASSERT_EQUAL_INT(0, mkdir(empty, 0000));
+  reject_named_chmod = 1;
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, following_chmods);
+  TEST_ASSERT_FALSE(exists(empty));
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+}
+
 static void test_replacement_starts_private_before_permissions_are_copied(void)
 {
   const mode_t masks[] = {0000, 0777};
@@ -440,12 +580,14 @@ static void test_replacement_starts_private_before_permissions_are_copied(void)
     TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0640));
     SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
     umask(masks[i]);
+    reject_named_chmod = TRUE;
     watch_create = 1;
     saw_private_create = 0;
     House_crashsave(3000);
     umask(0022);
     assert_file(HOUSE_FILE, item.name);
     TEST_ASSERT_TRUE(saw_private_create);
+    TEST_ASSERT_EQUAL_INT(0, following_chmods);
     TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
     TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &st));
     TEST_ASSERT_EQUAL_UINT(0640, st.st_mode & 0777);
@@ -601,6 +743,47 @@ static void test_freebsd_keeps_an_existing_named_acl(void)
   assert_file(HOUSE_FILE, item.name);
   TEST_ASSERT_EQUAL_INT(0, different);
 }
+
+static void test_freebsd_old_owner_deny_preserves_game_read_access(void)
+{
+  const uid_t game = 65534;
+  const char *file = "elsewhere/" HOUSE_FILE;
+  acl_t acl;
+  pid_t child;
+  int status, result;
+
+  if (geteuid() != 0 || pathconf("elsewhere", _PC_ACL_NFS4) <= 0)
+    TEST_IGNORE_MESSAGE("requires root on a FreeBSD NFSv4 ACL filesystem");
+
+  /* The outer test directory stays private. The child can use this subtree
+   * as its working directory after dropping privileges. */
+  TEST_ASSERT_EQUAL_INT(0, mkdir("elsewhere/house", 0700));
+  TEST_ASSERT_EQUAL_INT(0, chown("elsewhere/house", game, (gid_t)-1));
+  TEST_ASSERT_EQUAL_INT(0, chmod("elsewhere", 0711));
+  write_file(file, "old contents");
+  acl = acl_from_text("owner@:r::deny,user:65534:full_set::allow,owner@:full_set::allow");
+  TEST_ASSERT_NOT_NULL(acl);
+  result = acl_set_file(file, ACL_TYPE_NFS4, acl);
+  acl_free(acl);
+  TEST_ASSERT_EQUAL_INT(0, result);
+
+  child = fork();
+  TEST_ASSERT_TRUE(child >= 0);
+  if (child == 0) {
+    FILE *fp;
+    if (chdir("elsewhere") < 0 || setuid(game) < 0 || access(HOUSE_FILE, R_OK) < 0)
+      _exit(1);
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    if (ROOM_FLAGGED(0, ROOM_HOUSE_CRASH) || !(fp = fopen(HOUSE_FILE, "rb")))
+      _exit(2);
+    _exit(fclose(fp) == 0 ? 0 : 3);
+  }
+  TEST_ASSERT_EQUAL_INT(child, waitpid(child, &status, 0));
+  TEST_ASSERT_TRUE(WIFEXITED(status));
+  TEST_ASSERT_EQUAL_INT(0, WEXITSTATUS(status));
+  assert_file(file, item.name);
+}
 #endif
 
 int main(void)
@@ -626,7 +809,12 @@ int main(void)
   RUN_TEST(test_destroying_a_house_leaves_sibling_files_untouched);
   RUN_TEST(test_destroying_a_symlinked_house_leaves_both_siblings_untouched);
   RUN_TEST(test_boot_removes_saves_a_crash_left_unfinished);
+  RUN_TEST(test_boot_defers_cleanup_while_a_save_is_active);
+  RUN_TEST(test_boot_keeps_noncanonical_stage_names);
+  RUN_TEST(test_save_retries_after_the_cleanup_lock_is_released);
+  RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
+  RUN_TEST(test_boot_clears_an_empty_unreadable_stage_without_chmod);
   RUN_TEST(test_replacement_starts_private_before_permissions_are_copied);
   RUN_TEST(test_parent_sync_failure_keeps_house_queued_until_retry);
 #if defined(__linux__)
@@ -637,8 +825,11 @@ int main(void)
   RUN_TEST(test_linux_acl_preserved_and_inherited_default_acl_cleared);
 #elif defined(__FreeBSD__)
   RUN_TEST(test_freebsd_keeps_an_existing_named_acl);
+  RUN_TEST(test_freebsd_old_owner_deny_preserves_game_read_access);
 #endif
   result = UNITY_END();
+  remove(LIB_HOUSE ".tba-house.lock");
+  remove("elsewhere/.tba-house.lock");
   if (rmdir("house") || rmdir("etc") || rmdir("elsewhere") || chdir("/") || rmdir(scratch))
     return 1;
   return result;

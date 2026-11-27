@@ -52,7 +52,7 @@ test_trigger_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 ifeq ($(shell uname -s),Linux)
-HOUSE_TEST_FLAGS = -DHOUSE_TEST_WRAP_IO -Wl,--wrap=fsync,--wrap=openat,--wrap=fchown
+HOUSE_TEST_FLAGS = -DHOUSE_TEST_WRAP_IO -Wl,--wrap=fsync,--wrap=openat,--wrap=fchown,--wrap=fchmodat
 endif
 test_house_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                  $(SRCDIR)/house.c $(SRCDIR)/constants.c \

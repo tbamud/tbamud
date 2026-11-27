@@ -8,6 +8,9 @@
 *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
 **************************************************************************/
 
+#if defined(__linux__) && !defined(_GNU_SOURCE)
+#define _GNU_SOURCE /* O_PATH */
+#endif
 #include "conf.h"
 #include "sysdep.h"
 #include "structs.h"
@@ -24,6 +27,7 @@
 #else
 #include <dirent.h>
 #include <fcntl.h>
+#include <sys/file.h>
 #include <sys/stat.h>
 #if defined(__linux__)
 #include <sys/xattr.h>
@@ -310,19 +314,25 @@ static int House_copy_freebsd_acl(const char *filename, int fd, acl_type_t type,
 
   if (!acl)
     return -1;
-  if (scratch->st_gid != old->st_gid) {
+  if (scratch->st_gid != old->st_gid || (type == ACL_TYPE_NFS4 && scratch->st_uid != old->st_uid)) {
     while ((found = acl_get_entry(acl, next, &entry)) == 1) {
       next = ACL_NEXT_ENTRY;
       if (acl_get_tag_type(entry, &tag) < 0)
         goto done;
       if (type == ACL_TYPE_NFS4) {
-        /* Keep group@ ACEs attached to the original group so the game's own
-         * group gains nothing.  Leave owner@ attached to the file's actual
-         * owner, matching the Linux/macOS/POSIX paths, so the game does not
-         * lock itself out of reading a house file restored with foreign uid. */
-        if (tag == ACL_GROUP_OBJ &&
+        /* Keep group@ ACEs attached to the original group. */
+        if (tag == ACL_GROUP_OBJ && scratch->st_gid != old->st_gid &&
             (acl_set_tag_type(entry, ACL_GROUP) < 0 || acl_set_qualifier(entry, &old->st_gid) < 0))
           goto done;
+        if (tag == ACL_USER_OBJ && scratch->st_uid != old->st_uid) {
+          acl_entry_type_t action;
+          /* Owner grants continue to apply to the game. A denial against
+           * the old owner must not override the game's own named grant. */
+          if (acl_get_entry_type_np(entry, &action) < 0 ||
+              (action == ACL_ENTRY_TYPE_DENY &&
+               (acl_set_tag_type(entry, ACL_USER) < 0 || acl_set_qualifier(entry, &old->st_uid) < 0)))
+            goto done;
+        }
       } else if (tag == ACL_GROUP_OBJ) {
         /* Limit the new owning group without narrowing the mask on named entries. */
         if (acl_get_permset(entry, &perms) < 0 ||
@@ -565,7 +575,7 @@ static int House_resolve_symlink(const char *path, char resolved[PATH_MAX])
 struct house_save {
   char dest[PATH_MAX], entry[64];
   const char *leaf, *scratch;
-  int parent_fd, stage_fd;
+  int parent_fd, stage_fd, lock_fd;
   bool owns_dir;
 };
 
@@ -588,19 +598,95 @@ static void House_discard_save(struct house_save *save)
   if (save->scratch && unlinkat(save->stage_fd, save->scratch, 0) < 0)
     log("SYSERR: Cannot remove temporary save for %s: %s", save->dest, strerror(errno));
   House_remove_stage(save);
+  if (save->lock_fd >= 0)
+    close(save->lock_fd);
   if (save->parent_fd >= 0)
     close(save->parent_fd);
+}
+
+/* Keep this inode in place across saves. Each writer holds a shared lock from
+ * before stage creation through disposal. Only an exclusive holder may sweep.
+ * A regular file permits exclusive locking on NFS with a writable descriptor. */
+#define HOUSE_STAGE_LOCK ".tba-house.lock"
+#define HOUSE_STAGE_PREFIX ".tba-house-save-"
+static int House_lock_stages(int parent_fd, bool cleanup)
+{
+  const int flags = O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC;
+  const int access_mode = cleanup ? O_RDWR : O_RDONLY;
+  bool created = FALSE;
+  struct stat st;
+  int saved_errno, fd = openat(parent_fd, HOUSE_STAGE_LOCK, access_mode | flags);
+  if (fd < 0 && errno == ENOENT) {
+    fd = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDWR | O_CREAT | O_EXCL | flags, 0666);
+    created = fd >= 0;
+    if (!created && errno == EEXIST)
+      fd = openat(parent_fd, HOUSE_STAGE_LOCK, access_mode | flags);
+  }
+  if (fd < 0)
+    return -1;
+  if (fstat(fd, &st) < 0)
+    goto failed;
+  if (!S_ISREG(st.st_mode)) {
+    errno = EINVAL;
+    goto failed;
+  }
+  /* A restrictive umask must still let the creator reopen the lock later. */
+  if (created && (st.st_mode & 0600) != 0600 && fchmod(fd, (st.st_mode & 0777) | 0600) < 0)
+    goto failed;
+  if (flock(fd, (cleanup ? LOCK_EX : LOCK_SH) | LOCK_NB) == 0)
+    return fd;
+failed:
+  saved_errno = errno;
+  close(fd);
+  errno = saved_errno;
+  return -1;
+}
+
+/* mkdir's mode is filtered by the umask and default ACL. Recover owner access
+ * through a directory descriptor, including when the entry cannot yet be read. */
+static int House_open_stage_dir(int parent_fd, const char *name)
+{
+  const int flags = O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC;
+  int fd = openat(parent_fd, name, O_RDONLY | flags);
+  if (fd >= 0 || errno != EACCES)
+    return fd;
+#if defined(O_PATH) && (defined(__linux__) || (defined(__FreeBSD__) && defined(AT_EMPTY_PATH)))
+  {
+    int result = -1, saved_errno;
+    int path_fd = openat(parent_fd, name, O_PATH | flags);
+    if (path_fd < 0)
+      return -1;
+#ifdef AT_EMPTY_PATH
+    result = fchmodat(path_fd, "", 0700, AT_EMPTY_PATH);
+#endif
+#if defined(__linux__)
+    if (result < 0) {
+      char proc_path[64];
+      snprintf(proc_path, sizeof(proc_path), "/proc/self/fd/%d", path_fd);
+      result = chmod(proc_path, 0700);
+    }
+#endif
+    if (result == 0)
+      fd = openat(path_fd, ".", O_RDONLY | flags);
+    saved_errno = errno;
+    close(path_fd);
+    errno = saved_errno;
+  }
+#elif defined(__APPLE__) && defined(O_EVTONLY)
+  fd = openat(parent_fd, name, O_EVTONLY | flags);
+#endif
+  return fd;
 }
 
 static int House_create_scratch(struct house_save *save, bool replacing)
 {
   static unsigned long sequence;
   int fd, attempt;
-  const int dir_flags = O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC;
+  /* An older server or a cleaner without our lock must leave these alone. */
+  const char *prefix = save->lock_fd >= 0 ? HOUSE_STAGE_PREFIX : ".tba-house-unlocked-";
 
   for (attempt = 0; attempt < 128; attempt++) {
-    snprintf(save->entry, sizeof(save->entry), ".tba-house-%ld-%lu",
-             (long)getpid(), sequence++);
+    snprintf(save->entry, sizeof(save->entry), "%s%ld-%lu", prefix, (long)getpid(), sequence++);
     if (!str_cmp(save->entry, save->leaf))
       continue;
     if (!replacing) {
@@ -612,20 +698,7 @@ static int House_create_scratch(struct house_save *save, bool replacing)
       }
     } else if (mkdirat(save->parent_fd, save->entry, 0700) == 0) {
       save->owns_dir = TRUE;
-      save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
-      /* A umask or default ACL can even remove the creator's read access.
-       * Older Linux kernels/glibc reject AT_SYMLINK_NOFOLLOW in fchmodat();
-       * fall back to flags=0 only after verifying the entry is a directory. */
-      if (save->stage_fd < 0 && errno == EACCES) {
-        struct stat stage_st;
-        int chmod_ok = fchmodat(save->parent_fd, save->entry, 0700, AT_SYMLINK_NOFOLLOW) == 0;
-        if (!chmod_ok && (errno == ENOTSUP || errno == EOPNOTSUPP) &&
-            fstatat(save->parent_fd, save->entry, &stage_st, AT_SYMLINK_NOFOLLOW) == 0 &&
-            S_ISDIR(stage_st.st_mode))
-          chmod_ok = fchmodat(save->parent_fd, save->entry, 0700, 0) == 0;
-        if (chmod_ok)
-          save->stage_fd = openat(save->parent_fd, save->entry, dir_flags);
-      }
+      save->stage_fd = House_open_stage_dir(save->parent_fd, save->entry);
       if (save->stage_fd < 0 || House_secure_stage(save->stage_fd) < 0)
         return -1;
       fd = openat(save->stage_fd, "contents", O_WRONLY | O_CREAT | O_EXCL | O_CLOEXEC, 0600);
@@ -648,7 +721,7 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
   int fd = -1, saved_errno, resolved;
   FILE *fp;
 
-  save->parent_fd = save->stage_fd = -1;
+  save->parent_fd = save->stage_fd = save->lock_fd = -1;
   resolved = House_resolve_symlink(filename, save->dest);
   if (resolved < 0)
     return NULL;
@@ -668,6 +741,13 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
   if (save->parent_fd < 0)
     return NULL;
 
+  if (!str_cmp(save->leaf, HOUSE_STAGE_LOCK)) {
+    errno = EBUSY;
+    goto failed;
+  }
+  save->lock_fd = House_lock_stages(save->parent_fd, FALSE);
+  if (save->lock_fd < 0 && errno == EWOULDBLOCK)
+    goto failed;
   replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
   if (!replacing && errno != ENOENT)
     goto failed;
@@ -707,45 +787,40 @@ static int House_install_save(struct house_save *save)
   return House_fsync_fd(save->parent_fd) == 0;
 }
 
-/* The pid in a stage name House_create_scratch() made, ".tba-house-<pid>-<n>",
- * or 0 if the name is not one of those. */
-static pid_t House_stage_pid(const char *name)
+static bool House_is_stage_name(const char *name)
 {
-  static const char prefix[] = ".tba-house-";
-  const char *p = name + sizeof(prefix) - 1;
-  char *end;
+  const char *p;
+  char *end, canonical[64];
   long raw;
-  pid_t pid;
+  unsigned long seq;
 
-  if (strncmp(name, prefix, sizeof(prefix) - 1) || !isdigit((unsigned char)*p))
-    return 0;
+  if (strncmp(name, HOUSE_STAGE_PREFIX, sizeof(HOUSE_STAGE_PREFIX) - 1))
+    return FALSE;
+  p = name + sizeof(HOUSE_STAGE_PREFIX) - 1;
   errno = 0;
   raw = strtol(p, &end, 10);
-  pid = (pid_t)raw;
-  if (errno == ERANGE || raw <= 0 || (long)pid != raw || pid <= 0)
-    return 0;
-  if (*end != '-' || !isdigit((unsigned char)end[1]))
-    return 0;
-  for (p = end + 1; isdigit((unsigned char)*p); p++)
-    ;
-  return *p ? 0 : pid;
+  if (errno == ERANGE || raw <= 0 || (long)(pid_t)raw != raw || *end != '-')
+    return FALSE;
+  p = end + 1;
+  seq = strtoul(p, &end, 10);
+  if (errno == ERANGE || end == p || *end)
+    return FALSE;
+  snprintf(canonical, sizeof(canonical), HOUSE_STAGE_PREFIX "%ld-%lu", raw, seq);
+  return !strcmp(canonical, name);
 }
 
 /* A save the game crashed in the middle of leaves its stage in LIB_HOUSE: a
  * file for a first save, or a private directory holding "contents" for a
  * replacement.  Windows deletes its stage when the process exits; here nothing
  * else ever would, and each one keeps a copy of the house, so boot clears
- * them before any house is saved.  Only names House_create_scratch() makes
- * are touched, and a stage whose process is still running -- a second game
- * sharing this directory -- is left alone.  A stage beside a symlinked house
- * file's target outside LIB_HOUSE is not looked for. */
+ * them before any house is saved. Legacy and unlocked stages cannot be proven
+ * idle. A symlink target outside LIB_HOUSE is outside this scan. */
 static void House_remove_stale_saves(void)
 {
   DIR *dir;
   struct dirent *entry;
   struct stat st;
-  pid_t pid;
-  int dir_fd, stage_fd;
+  int dir_fd, stage_fd, lock_fd;
 
   if (!(dir = opendir(LIB_HOUSE))) {
     if (errno != ENOENT)
@@ -753,18 +828,22 @@ static void House_remove_stale_saves(void)
     return;
   }
   dir_fd = dirfd(dir);
+  lock_fd = House_lock_stages(dir_fd, TRUE);
+  if (lock_fd < 0) {
+    if (errno != EWOULDBLOCK)
+      log("SYSERR: Cannot lock %s for unfinished house save cleanup: %s", LIB_HOUSE, strerror(errno));
+    closedir(dir);
+    return;
+  }
   while ((entry = readdir(dir)) != NULL) {
-    if (!(pid = House_stage_pid(entry->d_name)))
-      continue;
-    if (pid != getpid() && (kill(pid, 0) == 0 || errno == EPERM))
+    if (!House_is_stage_name(entry->d_name))
       continue;
     if (fstatat(dir_fd, entry->d_name, &st, AT_SYMLINK_NOFOLLOW) < 0)
       continue;
     if (S_ISDIR(st.st_mode)) {
       stage_fd = openat(dir_fd, entry->d_name, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
-      /* Killed between mkdirat() and the fchmodat() that follows it. */
-      if (stage_fd < 0 && errno == EACCES && fchmodat(dir_fd, entry->d_name, 0700, 0) == 0)
-        stage_fd = openat(dir_fd, entry->d_name, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+      /* A stage that crashed before it gained owner access is still empty
+       * and can be removed directly from its parent. */
       if (stage_fd >= 0) {
         unlinkat(stage_fd, "contents", 0);
         close(stage_fd);
@@ -783,6 +862,7 @@ static void House_remove_stale_saves(void)
     }
     log("Removed %s%s, left by a house save that did not finish.", LIB_HOUSE, entry->d_name);
   }
+  close(lock_fd);
   closedir(dir);
 }
 #endif
