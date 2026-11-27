@@ -933,6 +933,8 @@ struct char_special_data
   struct char_data *next_in_furniture; /**< Next person sitting, else NULL */
 
   byte position; /**< Standing, fighting, sleeping, etc. */
+  bool lethal_hit_pending; /**< A lethal hit is still running combat messages. */
+  bool death_in_progress; /**< Death processing has started and extraction is still pending. */
 
   int carry_weight; /**< Carried weight */
   byte carry_items; /**< Number of items carried */
@@ -992,6 +994,8 @@ struct mob_special_data
   byte default_pos;   /**< Default position (standing, sleeping, etc.) */
   byte damnodice;     /**< The number of dice to roll for damage */
   byte damsizedice;   /**< The size of each die rolled for damage. */
+  bool fought_as_player_pet;  /**< Was a player's pet in this fight. Cleared once conscious and out of combat. */
+  bool died_as_player_pet;    /**< Retains pet status until deferred extraction. */
   int innate_aff[AF_ARRAY_MAX]; /**< AFF flags this mob was created with */
 };
 

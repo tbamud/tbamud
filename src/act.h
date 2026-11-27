@@ -108,6 +108,7 @@ ACMD(do_whois);
  * Begin Functions and defines for act.item.c
  ****************************************************************************/
 /* Utility Functions */
+bool can_equip_obj(struct obj_data *obj);
 /** @todo Compare with needs of find_eq_pos_script. */
 int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg);
 void name_from_drinkcon(struct obj_data *obj);
