@@ -754,7 +754,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
     case 'x':
     case 'X':
       /* Delete the room, prompt first. */
-      write_to_output(d, "Are you sure you want to delete this room? ");
+      write_to_output(d, "Are you sure you want to delete room %d? ", OLC_NUM(d));
       OLC_MODE(d) = REDIT_DELETE;
       break;
 
@@ -985,7 +985,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
   
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_room(real_room(OLC_ROOM(d)->number))) {
+      if (delete_room(real_room(OLC_NUM(d)))) {
         write_to_output(d, "Room deleted.\r\n");
         /* Same toggle the save path honours.  save_all() writes the room
          * file and every zone file delete_room() just flagged -- and

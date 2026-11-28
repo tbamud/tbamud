@@ -672,7 +672,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
       return;
     case 'x':
     case 'X':
-      write_to_output(d, "Are you sure you want to delete this mobile? ");
+      write_to_output(d, "Are you sure you want to delete mobile %d? ", OLC_NUM(d));
       OLC_MODE(d) = MEDIT_DELETE;
       return;
     case 's':
@@ -1103,7 +1103,10 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_mobile(GET_MOB_RNUM(OLC_MOB(d))) != NOBODY) {
+      /* The working copy owns its strings. Deleting a mobile can change
+       * prototype indexes before cleanup frees the copy. */
+      GET_MOB_RNUM(OLC_MOB(d)) = NOBODY;
+      if (delete_mobile(real_mobile(OLC_NUM(d))) != NOBODY) {
         write_to_output(d, "Mobile deleted.\r\n");
         /* save_all() writes the mob file and every zone file the
          * delete just flagged -- and whatever else is on the save list,
