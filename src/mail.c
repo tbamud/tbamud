@@ -19,6 +19,7 @@
 #include "handler.h"
 #include "mail.h"
 #include "modify.h"
+#include "genolc.h"
 
 /* local (file scope) function prototypes */
 static void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
@@ -285,8 +286,8 @@ char *read_delete(long recipient)
 {
   FILE *mail_file, *new_file;
   struct mail_t *record = NULL, *record_to_keep = NULL;
-  char buf[MAX_STRING_LENGTH];
-  int result;
+  char buf[MAX_STRING_LENGTH], *mail_text;
+  int result, write_error = FALSE;
 
   if (!(mail_file = fopen(MAIL_FILE, "r"))) {
     perror("read_delete: Mail file not accessible.");
@@ -310,7 +311,7 @@ char *read_delete(long recipient)
       log("Mail system - error writing temporary mail file");
       free_mail_record(record);
       record = NULL;
-      result = MAIL_READ_ERROR;
+      write_error = TRUE;
       break;
     }
 
@@ -318,7 +319,11 @@ char *read_delete(long recipient)
     record = NULL;
   }
 
-  if (result == MAIL_READ_ERROR) {
+  if (write_error || result != MAIL_READ_EOF) {
+    /* A read error means the spool cannot be read. A failed write can be
+     * retried, since it only affected the temporary file. */
+    if (!write_error && result == MAIL_READ_ERROR)
+      no_mail = 1;
     if (record)
       free_mail_record(record);
     if (record_to_keep)
@@ -380,10 +385,21 @@ char *read_delete(long recipient)
 
   free_mail_record(record_to_keep);
 
-  remove(MAIL_FILE);
-  rename(MAIL_FILE_TMP, MAIL_FILE);
+  mail_text = strdup(buf);
+  if (mail_text == NULL) {
+    log("Mail system - could not allocate memory for mail message");
+    remove(MAIL_FILE_TMP);
+    return NULL;
+  }
 
-  return strdup(buf);
+  if (!genolc_install_file(MAIL_FILE_TMP, MAIL_FILE)) {
+    log("Mail system - could not replace the mail file: %s", strerror(errno));
+    free(mail_text);
+    remove(MAIL_FILE_TMP);
+    return NULL;
+  }
+
+  return mail_text;
 }
 
 /* spec_proc for a postmaster using the above routines.  By Jeremy Elson */
@@ -472,7 +488,7 @@ static void postmaster_check_mail(struct char_data *ch, struct char_data *mailma
 static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
 {
-  char buf[256];
+  char buf[256], *mail_text;
   struct obj_data *obj;
   int y;
 
@@ -482,6 +498,13 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
     return;
   }
   while (has_mail(GET_IDNUM(ch))) {
+    mail_text = read_delete(GET_IDNUM(ch));
+    if (mail_text == NULL) {
+      act("$n tells you, 'The mail system encountered a problem. Please report it.'",
+          FALSE, mailman, 0, ch, TO_VICT);
+      break;
+    }
+
     obj = create_obj(); 
     obj->item_number = 1; 
     obj->name = strdup("mail paper letter");
@@ -495,15 +518,7 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
     GET_OBJ_WEIGHT(obj) = 1;
     GET_OBJ_COST(obj) = 30;
     GET_OBJ_RENT(obj) = 10;
-    obj->action_description = read_delete(GET_IDNUM(ch));
-
-    if (obj->action_description == NULL) {
-      extract_obj(obj);
-      no_mail = 1;
-      act("$n tells you, 'The mail system encountered a problem. Please report it.'",
-          FALSE, mailman, 0, ch, TO_VICT);
-      break;
-    }
+    obj->action_description = mail_text;
 
     obj_to_char(obj, ch);
 
