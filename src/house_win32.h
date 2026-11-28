@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <aclapi.h>
+#include <winefs.h>
 #include <winioctl.h>
 #include <fcntl.h>
 #include <io.h>
@@ -198,6 +199,24 @@ static DWORD House_win_delete_on_close(HANDLE file, BOOLEAN enable)
          ? ERROR_SUCCESS : GetLastError();
 }
 
+static DWORD House_win_rename_file(HANDLE file, const wchar_t *dest, BOOLEAN replace)
+{
+  size_t bytes = wcslen(dest) * sizeof(WCHAR);
+  DWORD size = (DWORD)(sizeof(FILE_RENAME_INFO) + bytes);
+  FILE_RENAME_INFO *info = calloc(1, size);
+  DWORD error;
+  if (!info)
+    return ERROR_NOT_ENOUGH_MEMORY;
+  info->ReplaceIfExists = replace;
+  info->FileNameLength = (DWORD)bytes;
+  memcpy(info->FileName, dest, bytes);
+  error = House_win_delete_on_close(file, FALSE);
+  if (!error && !SetFileInformationByHandle(file, FileRenameInfo, info, size))
+    error = GetLastError();
+  free(info);
+  return error;
+}
+
 static void House_discard_save(struct house_save *save)
 {
   if (save->stage) {
@@ -214,7 +233,7 @@ static void House_discard_save(struct house_save *save)
  * access before copying named streams, so private stream bytes are never
  * exposed under a broader parent DACL and restrictive source DACLs cannot
  * block creating the destination streams. */
-static DWORD House_win_set_owner_dacl(HANDLE stage)
+static DWORD House_win_owner_security(SECURITY_DESCRIPTOR *sd, PACL *result_acl)
 {
   HANDLE token = NULL;
   union {
@@ -226,7 +245,7 @@ static DWORD House_win_set_owner_dacl(HANDLE stage)
   PSID sid;
   DWORD acl_size;
   PACL acl = NULL;
-  SECURITY_DESCRIPTOR sd;
+  ACCESS_ALLOWED_ACE *ace;
 
   if (!OpenThreadToken(GetCurrentThread(), TOKEN_QUERY, TRUE, &token)) {
     error = GetLastError();
@@ -260,15 +279,30 @@ static DWORD House_win_set_owner_dacl(HANDLE stage)
     error = ERROR_NOT_ENOUGH_MEMORY;
   } else if (!InitializeAcl(acl, acl_size, ACL_REVISION) ||
              !AddAccessAllowedAce(acl, ACL_REVISION, FILE_ALL_ACCESS, sid) ||
-             !InitializeSecurityDescriptor(&sd, SECURITY_DESCRIPTOR_REVISION) ||
-             !SetSecurityDescriptorDacl(&sd, TRUE, acl, FALSE) ||
-             !SetSecurityDescriptorControl(&sd, SE_DACL_PROTECTED, SE_DACL_PROTECTED) ||
-             !SetKernelObjectSecurity(stage, DACL_SECURITY_INFORMATION, &sd)) {
+             !GetAce(acl, 0, (void **)&ace) ||
+             !InitializeSecurityDescriptor(sd, SECURITY_DESCRIPTOR_REVISION) ||
+             !SetSecurityDescriptorOwner(sd, &ace->SidStart, FALSE) ||
+             !SetSecurityDescriptorDacl(sd, TRUE, acl, FALSE) ||
+             !SetSecurityDescriptorControl(sd, SE_DACL_PROTECTED, SE_DACL_PROTECTED)) {
     error = GetLastError();
   }
-  free(acl);
+  if (error)
+    free(acl);
+  else
+    *result_acl = acl;
   if (token_user != &stack_buf.user)
     free(token_user);
+  return error;
+}
+
+static DWORD House_win_set_owner_dacl(HANDLE stage)
+{
+  SECURITY_DESCRIPTOR security;
+  PACL acl = NULL;
+  DWORD error = House_win_owner_security(&security, &acl);
+  if (!error && !SetKernelObjectSecurity(stage, DACL_SECURITY_INFORMATION, &security))
+    error = GetLastError();
+  free(acl);
   return error;
 }
 
@@ -426,6 +460,152 @@ static DWORD House_win_set_attributes(HANDLE stage, DWORD source_attributes)
          ? ERROR_SUCCESS : GetLastError();
 }
 
+/* EFS grants decryption to certificate keys. User SIDs and display names
+ * are optional, and the order returned by EFS is immaterial. */
+static int House_win_contains_efs_keys(const ENCRYPTION_CERTIFICATE_HASH_LIST *haystack,
+                                       const ENCRYPTION_CERTIFICATE_HASH_LIST *needles)
+{
+  if ((needles->nCert_Hash && !needles->pUsers) || (haystack->nCert_Hash && !haystack->pUsers))
+    return FALSE;
+  for (DWORD i = 0; i < needles->nCert_Hash; ++i) {
+    const EFS_HASH_BLOB *key = needles->pUsers[i] ? needles->pUsers[i]->pHash : NULL;
+    DWORD j;
+    if (!key || !key->cbData || !key->pbData)
+      return FALSE;
+    for (j = 0; j < haystack->nCert_Hash; ++j) {
+      const EFS_HASH_BLOB *candidate = haystack->pUsers[j] ? haystack->pUsers[j]->pHash : NULL;
+      if (candidate && candidate->pbData && key->cbData == candidate->cbData &&
+          !memcmp(key->pbData, candidate->pbData, key->cbData))
+        break;
+    }
+    if (j == haystack->nCert_Hash)
+      return FALSE;
+  }
+  return TRUE;
+}
+
+static DWORD House_win_verify_efs_keys(const wchar_t *source, const wchar_t *stage,
+    DWORD (WINAPI *query)(LPCWSTR, PENCRYPTION_CERTIFICATE_HASH_LIST *))
+{
+  PENCRYPTION_CERTIFICATE_HASH_LIST old = NULL, fresh = NULL;
+  DWORD error = query(source, &old);
+  if (!error)
+    error = query(stage, &fresh);
+  if (!error && (!old || !fresh || !House_win_contains_efs_keys(old, fresh) ||
+                 !House_win_contains_efs_keys(fresh, old)))
+    error = ERROR_ENCRYPTION_FAILED;
+  if (old)
+    FreeEncryptionCertificateHashList(old);
+  if (fresh)
+    FreeEncryptionCertificateHashList(fresh);
+  return error;
+}
+
+static DWORD House_win_check_private_dir(HANDLE dir, SECURITY_DESCRIPTOR *expected)
+{
+  BY_HANDLE_FILE_INFORMATION info;
+  PSECURITY_DESCRIPTOR security = NULL;
+  PSID owner;
+  DWORD error;
+  if (!GetFileInformationByHandle(dir, &info))
+    return GetLastError();
+  if ((info.dwFileAttributes & (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)) != FILE_ATTRIBUTE_DIRECTORY)
+    return ERROR_ACCESS_DENIED;
+  error = GetSecurityInfo(dir, SE_FILE_OBJECT, OWNER_SECURITY_INFORMATION | DACL_SECURITY_INFORMATION,
+                          &owner, NULL, NULL, NULL, &security);
+  if (!error && (!EqualSid(owner, expected->Owner) || !House_win_same_dacl(expected, security)))
+    error = ERROR_ACCESS_DENIED;
+  LocalFree(security);
+  return error;
+}
+
+/* DuplicateEncryptionInfoFile takes paths and needs exclusive file access.
+ * Reserve a private directory for its CREATE_NEW output and deny rename of
+ * the directory while verifying and opening that output. Only the verified,
+ * still-empty file moves to the ordinary stage name. */
+static HANDLE House_win_create_efs_stage(const wchar_t *source, const wchar_t *name, DWORD access, DWORD attributes)
+{
+  static const wchar_t suffix[] = L".efs", child[] = L"\\stage";
+  size_t length = wcslen(name);
+  wchar_t *path = malloc(length * sizeof(*path) + sizeof(suffix) + sizeof(child));
+  HANDLE dir = INVALID_HANDLE_VALUE, file = INVALID_HANDLE_VALUE;
+  SECURITY_DESCRIPTOR sd;
+  SECURITY_ATTRIBUTES sa = {sizeof(sa), &sd, FALSE};
+  PACL acl = NULL;
+  int private_dir = FALSE, remove_child = FALSE;
+  DWORD error = ERROR_NOT_ENOUGH_MEMORY;
+  if (!path)
+    goto done;
+  wcscpy(path, name);
+  wcscat(path, suffix);
+  error = House_win_owner_security(&sd, &acl);
+  if (error)
+    goto done;
+  if (!CreateDirectoryW(path, &sa)) {
+    error = GetLastError();
+    goto done;
+  }
+  dir = CreateFileW(path, FILE_LIST_DIRECTORY | FILE_TRAVERSE | FILE_READ_ATTRIBUTES | READ_CONTROL | DELETE,
+                    FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING,
+                    FILE_FLAG_BACKUP_SEMANTICS | FILE_FLAG_OPEN_REPARSE_POINT, NULL);
+  if (dir == INVALID_HANDLE_VALUE) {
+    error = GetLastError();
+    goto done;
+  }
+  error = House_win_check_private_dir(dir, &sd);
+  if (error)
+    goto done;
+  private_dir = TRUE;
+  wcscat(path, child);
+  if (GetFileAttributesW(path) != INVALID_FILE_ATTRIBUTES) {
+    error = ERROR_FILE_EXISTS;
+    goto done;
+  }
+  if ((error = GetLastError()) != ERROR_FILE_NOT_FOUND)
+    goto done;
+  error = DuplicateEncryptionInfoFile(source, path, CREATE_NEW, attributes, &sa);
+  /* A provider can fail after creating a partial output. CREATE_NEW reports
+   * name collisions separately; leave any such entry alone. */
+  remove_child = error != ERROR_FILE_EXISTS && error != ERROR_ALREADY_EXISTS;
+  if (!error)
+    error = House_win_verify_efs_keys(source, path, QueryUsersOnEncryptedFile);
+  if (!error)
+    error = House_win_verify_efs_keys(source, path, QueryRecoveryAgentsOnEncryptedFile);
+  if (error) {
+    log("SYSERR: Cannot copy and verify EFS user and recovery certificates for the house save "
+        "(Windows error %lu). Check its EFS recipients and recovery policy before retrying.",
+        (unsigned long)error);
+    goto done;
+  }
+  file = CreateFileW(path, access | WRITE_DAC, 0, NULL, OPEN_EXISTING, FILE_FLAG_OPEN_REPARSE_POINT, NULL);
+  if (file == INVALID_HANDLE_VALUE) {
+    error = GetLastError();
+    goto done;
+  }
+  error = House_win_rename_file(file, name, FALSE);
+
+done:
+  if (error && file != INVALID_HANDLE_VALUE) {
+    House_win_delete_on_close(file, TRUE);
+    CloseHandle(file);
+    file = INVALID_HANDLE_VALUE;
+  } else if (error && remove_child) {
+    DeleteFileW(path);
+  }
+  if (private_dir) {
+    DWORD removal = House_win_delete_on_close(dir, TRUE);
+    if (removal)
+      log("SYSERR: Could not remove the EFS house staging directory (Windows error %lu).",
+          (unsigned long)removal);
+  }
+  if (dir != INVALID_HANDLE_VALUE)
+    CloseHandle(dir);
+  free(acl);
+  free(path);
+  SetLastError(error);
+  return file;
+}
+
 /* Establish the original access rules on the empty, exclusively opened file
  * before any content is copied. A directory that grants only inherited
  * Modify access may refuse an ACL write even when the DACL already matches. */
@@ -516,8 +696,13 @@ static DWORD House_win_create_stage(struct house_save *save, const struct house_
              (unsigned long)GetCurrentProcessId(), (unsigned long)InterlockedIncrement(&sequence));
     if (!_wcsicmp(name + prefix, leaf + 1))
       continue;
-    file = House_win_create_stage_file(name, access, opt_write_dac, opt_read_data,
-                                       attributes, &have_write_dac);
+    if (meta->attributes & FILE_ATTRIBUTE_ENCRYPTED) {
+      file = House_win_create_efs_stage(save->dest, name, access | opt_read_data, attributes);
+      have_write_dac = TRUE;
+    } else {
+      file = House_win_create_stage_file(name, access, opt_write_dac, opt_read_data,
+                                         attributes, &have_write_dac);
+    }
     if (file != INVALID_HANDLE_VALUE) {
       save->stage = file;
       error = ERROR_SUCCESS;
@@ -580,21 +765,9 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
 
 static int House_install_save(struct house_save *save)
 {
-  size_t bytes = wcslen(save->dest) * sizeof(WCHAR);
-  DWORD size = (DWORD)(sizeof(FILE_RENAME_INFO) + bytes);
-  FILE_RENAME_INFO *rename_info = calloc(1, size);
-  DWORD error = ERROR_SUCCESS;
-  if (!rename_info)
-    return FALSE;
-  rename_info->ReplaceIfExists = (BOOLEAN)save->existing;
-  rename_info->FileNameLength = (DWORD)bytes;
-  memcpy(rename_info->FileName, save->dest, bytes);
   /* Keep the unique stage delete-pending while it is being written, including
    * if the server exits. Clear this flag immediately before its rename. */
-  error = House_win_delete_on_close(save->stage, FALSE);
-  if (!error && !SetFileInformationByHandle(save->stage, FileRenameInfo, rename_info, size))
-    error = GetLastError();
-  free(rename_info);
+  DWORD error = House_win_rename_file(save->stage, save->dest, (BOOLEAN)save->existing);
   if (error) {
     House_win_errno(error);
     return FALSE;

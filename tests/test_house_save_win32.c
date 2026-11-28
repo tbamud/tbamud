@@ -1,6 +1,82 @@
 /* Native filesystem tests for the Windows backend used by House_crashsave. */
 #include "unity.h"
 #include <windows.h>
+#include <winefs.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <wchar.h>
+
+/* Exercise the transaction without enrolling an EFS key for the account
+ * running the tests. The optional native fixture below uses the real APIs. */
+static int simulate_efs;
+static PENCRYPTION_CERTIFICATE_HASH_LIST efs_users[2], efs_recovery[2];
+static DWORD efs_query_error, efs_copy_error;
+static unsigned int efs_copies;
+static char efs_log[256];
+static wchar_t efs_private_dir[MAX_PATH + 80];
+
+static int is_stage_path(LPCWSTR path)
+{
+  const wchar_t *leaf = wcsrchr(path, L'\\');
+  return leaf && !wcscmp(leaf + 1, L"stage");
+}
+
+static DWORD WINAPI test_query_users(LPCWSTR path, PENCRYPTION_CERTIFICATE_HASH_LIST *list)
+{
+  if (!simulate_efs)
+    return QueryUsersOnEncryptedFile(path, list);
+  if (is_stage_path(path) && efs_query_error)
+    return efs_query_error;
+  *list = efs_users[is_stage_path(path)];
+  return ERROR_SUCCESS;
+}
+
+static DWORD WINAPI test_query_recovery(LPCWSTR path, PENCRYPTION_CERTIFICATE_HASH_LIST *list)
+{
+  if (!simulate_efs)
+    return QueryRecoveryAgentsOnEncryptedFile(path, list);
+  *list = efs_recovery[is_stage_path(path)];
+  return ERROR_SUCCESS;
+}
+
+static void WINAPI test_free_efs_list(PENCRYPTION_CERTIFICATE_HASH_LIST list)
+{
+  if (!simulate_efs)
+    FreeEncryptionCertificateHashList(list);
+}
+
+static BOOL WINAPI test_get_file_information(HANDLE file, LPBY_HANDLE_FILE_INFORMATION info)
+{
+  BOOL ok = GetFileInformationByHandle(file, info);
+  if (ok && simulate_efs)
+    info->dwFileAttributes |= FILE_ATTRIBUTE_ENCRYPTED;
+  return ok;
+}
+
+static DWORD WINAPI test_duplicate_efs(LPCWSTR source, LPCWSTR path, DWORD disposition, DWORD attributes,
+                                       const LPSECURITY_ATTRIBUTES security)
+{
+  if (!simulate_efs)
+    return DuplicateEncryptionInfoFile(source, path, disposition, attributes, security);
+  ++efs_copies;
+  if (disposition != CREATE_NEW || wcslen(path) >= sizeof(efs_private_dir) / sizeof(*efs_private_dir))
+    return ERROR_INVALID_PARAMETER;
+  wcscpy(efs_private_dir, path);
+  *wcsrchr(efs_private_dir, L'\\') = L'\0';
+  HANDLE file = CreateFileW(path, GENERIC_WRITE, 0, security, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
+  if (file == INVALID_HANDLE_VALUE)
+    return GetLastError();
+  CloseHandle(file);
+  return efs_copy_error;  /* A failing EFS provider can leave partial output. */
+}
+
+static void test_log(const char *format, ...)
+{
+  va_list args;
+  va_start(args, format);
+  vsnprintf(efs_log, sizeof(efs_log), format, args);
+  va_end(args);
+}
 
 /* Exercise errors returned by providers that cannot report volume flags. */
 static DWORD stream_probe_error;
@@ -14,7 +90,19 @@ static HANDLE WINAPI test_find_first_stream(LPCWSTR path, STREAM_INFO_LEVELS lev
 }
 
 #define FindFirstStreamW test_find_first_stream
+#define QueryUsersOnEncryptedFile test_query_users
+#define QueryRecoveryAgentsOnEncryptedFile test_query_recovery
+#define FreeEncryptionCertificateHashList test_free_efs_list
+#define GetFileInformationByHandle test_get_file_information
+#define DuplicateEncryptionInfoFile test_duplicate_efs
+#define log test_log
 #include "house_win32.h"
+#undef log
+#undef DuplicateEncryptionInfoFile
+#undef GetFileInformationByHandle
+#undef FreeEncryptionCertificateHashList
+#undef QueryRecoveryAgentsOnEncryptedFile
+#undef QueryUsersOnEncryptedFile
 #undef FindFirstStreamW
 #include <sddl.h>
 
@@ -34,6 +122,11 @@ void setUp(void)
 
 void tearDown(void)
 {
+  simulate_efs = FALSE;
+  efs_query_error = efs_copy_error = ERROR_SUCCESS;
+  efs_copies = 0;
+  efs_log[0] = '\0';
+  efs_private_dir[0] = L'\0';
   stream_probe_error = ERROR_SUCCESS;
   if (owns_link)
     DeleteFileA(link_name);
@@ -388,6 +481,92 @@ static void test_save_preserves_hidden_and_not_indexed_attributes(void)
     assert_stream_text(stream, "hidden-stream");
 }
 
+static void expect_efs_refusal(void)
+{
+  struct house_save save = {0};
+  FILE *fp = House_open_save(house, &save);
+  if (fp)
+    fclose(fp);
+  House_discard_save(&save);
+  TEST_ASSERT_NULL(fp);
+  TEST_ASSERT_NOT_NULL(strstr(efs_log, "EFS user and recovery certificates"));
+  TEST_ASSERT_EQUAL_UINT(INVALID_FILE_ATTRIBUTES, GetFileAttributesW(efs_private_dir));
+  TEST_ASSERT_EQUAL_UINT(ERROR_FILE_NOT_FOUND, GetLastError());
+}
+
+static void test_efs_checks_users_and_recovery_before_replacing(void)
+{
+  BYTE a = 1, b = 2;
+  EFS_HASH_BLOB hash_a = {1, &a}, hash_b = {1, &b};
+  ENCRYPTION_CERTIFICATE_HASH cert_a = {sizeof(cert_a), NULL, &hash_a, NULL};
+  ENCRYPTION_CERTIFICATE_HASH cert_b = {sizeof(cert_b), NULL, &hash_b, NULL};
+  PENCRYPTION_CERTIFICATE_HASH ab[] = {&cert_a, &cert_b}, ba[] = {&cert_b, &cert_a};
+  ENCRYPTION_CERTIFICATE_HASH_LIST both = {2, ab}, reordered = {2, ba}, one = {1, ab}, none = {0, NULL};
+  char contents[4] = "";
+  FILE *fp = fopen(house, "wb");
+  TEST_ASSERT_NOT_NULL(fp);
+  TEST_ASSERT_TRUE(fputs("old", fp) >= 0);
+  TEST_ASSERT_EQUAL_INT(0, fclose(fp));
+
+  simulate_efs = TRUE;
+  efs_users[0] = &both;
+  efs_users[1] = &one;  /* An explicitly authorized reader is missing. */
+  efs_recovery[0] = efs_recovery[1] = &none;
+  expect_efs_refusal();
+  efs_users[1] = &reordered;
+  efs_recovery[1] = &one;  /* A new recovery agent would gain access. */
+  expect_efs_refusal();
+  efs_recovery[1] = &none;
+  efs_query_error = ERROR_SHARING_VIOLATION;
+  expect_efs_refusal();
+  efs_query_error = ERROR_SUCCESS;
+  efs_copy_error = ERROR_ACCESS_DENIED;
+  expect_efs_refusal();
+
+  fp = fopen(house, "rb");
+  TEST_ASSERT_NOT_NULL(fp);
+  TEST_ASSERT_EQUAL_UINT(3, fread(contents, 1, 3, fp));
+  TEST_ASSERT_EQUAL_INT(0, fclose(fp));
+  TEST_ASSERT_EQUAL_STRING("old", contents);
+  efs_copy_error = ERROR_SUCCESS;
+  save_house(house);  /* Identical key sets in different order. */
+  TEST_ASSERT_EQUAL_UINT(5, efs_copies);
+  TEST_ASSERT_EQUAL_UINT(INVALID_FILE_ATTRIBUTES, GetFileAttributesW(efs_private_dir));
+}
+
+static void test_efs_copy_collision_preserves_the_existing_entry(void)
+{
+  wchar_t name[MAX_PATH], occupied[MAX_PATH + 86];
+  TEST_ASSERT_TRUE(MultiByteToWideChar(CP_ACP, 0, house, -1, name, MAX_PATH) > 0);
+  simulate_efs = TRUE;
+  efs_copy_error = ERROR_FILE_EXISTS;
+  HANDLE file = House_win_create_efs_stage(name, name, GENERIC_WRITE | DELETE, FILE_ATTRIBUTE_ENCRYPTED);
+  DWORD error = GetLastError();
+  TEST_ASSERT_TRUE(file == INVALID_HANDLE_VALUE);
+  TEST_ASSERT_EQUAL_UINT(ERROR_FILE_EXISTS, error);
+  swprintf(occupied, sizeof(occupied) / sizeof(*occupied), L"%ls\\stage", efs_private_dir);
+  TEST_ASSERT_TRUE(DeleteFileW(occupied));
+  TEST_ASSERT_TRUE(RemoveDirectoryW(efs_private_dir));
+}
+
+/* An existing encrypted fixture can include other readers and recovery
+ * agents. Its key must be available to the account running this test. */
+static void test_native_efs_house_preserves_its_recipients(void)
+{
+  wchar_t source[MAX_PATH], fixture[MAX_PATH];
+  DWORD length = GetEnvironmentVariableW(L"TBA_TEST_EFS_FILE", source, MAX_PATH);
+  if (!length)
+    TEST_IGNORE_MESSAGE("Set TBA_TEST_EFS_FILE to an existing EFS file this account can decrypt");
+  TEST_ASSERT_TRUE(length < MAX_PATH);
+  TEST_ASSERT_TRUE(MultiByteToWideChar(CP_ACP, 0, house, -1, fixture, MAX_PATH) > 0);
+  TEST_ASSERT_TRUE(DeleteFileW(fixture));
+  TEST_ASSERT_EQUAL_UINT(ERROR_SUCCESS,
+      DuplicateEncryptionInfoFile(source, fixture, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL));
+  save_house(house);
+  TEST_ASSERT_EQUAL_UINT(ERROR_SUCCESS, House_win_verify_efs_keys(source, fixture, QueryUsersOnEncryptedFile));
+  TEST_ASSERT_EQUAL_UINT(ERROR_SUCCESS, House_win_verify_efs_keys(source, fixture, QueryRecoveryAgentsOnEncryptedFile));
+}
+
 int main(void)
 {
   UNITY_BEGIN();
@@ -402,5 +581,8 @@ int main(void)
   RUN_TEST(test_save_keeps_ntfs_compression);
   RUN_TEST(test_save_preserves_hidden_and_not_indexed_attributes);
   RUN_TEST(test_locked_named_stream_leaves_the_previous_save_intact);
+  RUN_TEST(test_efs_checks_users_and_recovery_before_replacing);
+  RUN_TEST(test_efs_copy_collision_preserves_the_existing_entry);
+  RUN_TEST(test_native_efs_house_preserves_its_recipients);
   return UNITY_END();
 }
