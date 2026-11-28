@@ -652,6 +652,18 @@ static int House_chmod_path_fd(int fd, mode_t mode)
 }
 #endif
 
+static int House_foreign_lock_errno(int err, bool expect_dir)
+{
+  if ((expect_dir && err == ENOTDIR) || (!expect_dir && err == EISDIR) ||
+      err == ELOOP || err == EMLINK
+#ifdef EFTYPE
+      || err == EFTYPE
+#endif
+     )
+    return EINVAL;
+  return err;
+}
+
 static int House_stat_guard(int fd, struct stat *st)
 {
   if (fstat(fd, st) < 0)
@@ -712,7 +724,7 @@ static int House_open_guard(int lock_dir, bool cleanup)
   return fd;
 
 failed:
-  saved_errno = errno;
+  saved_errno = House_foreign_lock_errno(errno, FALSE);
   if (fd >= 0)
     close(fd);
   if (pinned >= 0)
@@ -724,29 +736,63 @@ failed:
 /* EINVAL means something other than a lock this game made has the name. */
 static int House_open_lock(int parent_fd, bool cleanup)
 {
-  struct stat st;
-  int fd, saved_errno;
-  int dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
-  if (dir < 0) {
-    if (errno == ENOTDIR || errno == ELOOP || errno == EMLINK)
-      errno = EINVAL;
+  struct stat st, current;
+  int attempt;
+
+  for (attempt = 0; attempt < 2; ++attempt) {
+    int fd, saved_errno;
+    int dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+    if (dir < 0) {
+      errno = House_foreign_lock_errno(errno, TRUE);
+      return -1;
+    }
+    fd = House_open_guard(dir, cleanup);
+    saved_errno = errno;
+    if (fd >= 0) {
+      /* Keep an owner-owned lock directory private so other accounts cannot
+       * unlink or swap the guard inside it. */
+      if (fstat(dir, &st) == 0 && st.st_uid == geteuid() &&
+          ((st.st_mode & 0777) != 0700 || cleanup) &&
+          House_secure_stage(dir) < 0) {
+        saved_errno = errno;
+        close(fd);
+        fd = -1;
+      }
+      close(dir);
+      errno = saved_errno;
+      return fd;
+    }
+    if (saved_errno == ENOENT) {
+      /* Publication always includes the guard, so our directory without one was
+       * emptied after the fact.  Verify the path still names this directory
+       * before removing it; if another process already removed or replaced it,
+       * follow the concurrent winner rather than misreporting EINVAL. */
+      if (fstat(dir, &st) < 0) {
+        saved_errno = EINVAL;
+      } else if (fstatat(parent_fd, HOUSE_STAGE_LOCK, &current, AT_SYMLINK_NOFOLLOW) < 0) {
+        saved_errno = errno == ENOENT ? ENOENT : EINVAL;
+      } else if (current.st_dev != st.st_dev || current.st_ino != st.st_ino) {
+        close(dir);
+        continue;
+      } else if (st.st_uid != geteuid()) {
+        saved_errno = EINVAL;
+      } else if (unlinkat(parent_fd, HOUSE_STAGE_LOCK, AT_REMOVEDIR) == 0) {
+        saved_errno = ENOENT;
+      } else if (fstatat(parent_fd, HOUSE_STAGE_LOCK, &current, AT_SYMLINK_NOFOLLOW) < 0) {
+        saved_errno = errno == ENOENT ? ENOENT : EINVAL;
+      } else if (current.st_dev != st.st_dev || current.st_ino != st.st_ino) {
+        close(dir);
+        continue;
+      } else {
+        saved_errno = EINVAL;
+      }
+    }
+    close(dir);
+    errno = saved_errno;
     return -1;
   }
-  fd = House_open_guard(dir, cleanup);
-  saved_errno = errno;
-  if (fd < 0 && saved_errno == ENOENT) {
-    /* Publication always includes the guard, so our directory without one was
-     * emptied after the fact.  Remove it and publish a new lock; a directory
-     * holding anything else is left alone. */
-    if (fstat(dir, &st) == 0 && st.st_uid == geteuid() &&
-        unlinkat(parent_fd, HOUSE_STAGE_LOCK, AT_REMOVEDIR) == 0)
-      saved_errno = ENOENT;
-    else
-      saved_errno = EINVAL;
-  }
-  close(dir);
-  errno = saved_errno;
-  return fd;
+  errno = ENOENT;
+  return -1;
 }
 
 /* Publish a nonempty directory with a fully initialized regular guard.
@@ -1067,9 +1113,11 @@ static void House_remove_stale_saves(void)
     closedir(dir);
     return;
   }
-  /* Still open to others after House_lock_stages(): another account made it. */
-  if (fstat(lock_fd, &st) == 0 && st.st_uid != geteuid() && (st.st_mode & 0077))
-    log("SYSERR: Other accounts can open %s%s and delay cleanup of unfinished house "
+  /* Still open or writable to others after House_lock_stages(): another account made it. */
+  if ((fstat(lock_fd, &st) == 0 && st.st_uid != geteuid() && (st.st_mode & 0077)) ||
+      (fstatat(dir_fd, HOUSE_STAGE_LOCK, &st, AT_SYMLINK_NOFOLLOW) == 0 &&
+       st.st_uid != geteuid() && (st.st_mode & 0022)))
+    log("SYSERR: Other accounts can access %s%s and interfere with cleanup of unfinished house "
         "saves. Stop all games sharing this directory before repairing its permissions.",
         LIB_HOUSE, HOUSE_STAGE_LOCK);
   while ((entry = readdir(dir)) != NULL) {

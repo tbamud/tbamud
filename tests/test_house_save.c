@@ -55,6 +55,7 @@ static int fail_lock_chmod, attempted_lock_chmod, visible_before_chmod;
 static int observe_publication, published_dir_mode, published_guard_mode;
 static int report_publication_enoent;
 static int boot_before_guard_create, candidate_was_removed;
+static int replace_emptied_lock_on_guard_open;
 static int require_writable_lock, exclusive_access_mode;
 static unsigned int mock_smb_type;
 int __real_fchmod(int fd, mode_t mode);
@@ -140,8 +141,16 @@ int __wrap_openat(int dirfd, const char *name, int flags, ...)
   struct stat file, parent;
   va_list ap;
   int fd, mode;
-  if (!(flags & O_CREAT))
-    return __real_openat(dirfd, name, flags);
+  if (!(flags & O_CREAT)) {
+    fd = __real_openat(dirfd, name, flags);
+    if (replace_emptied_lock_on_guard_open && fd >= 0 && !strcmp(name, LOCK_NAME)) {
+      int mode_action = replace_emptied_lock_on_guard_open;
+      replace_emptied_lock_on_guard_open = 0;
+      if (rmdir(LOCK_PATH) == 0 && mode_action == 1)
+        House_boot();
+    }
+    return fd;
+  }
   va_start(ap, flags);
   mode = va_arg(ap, int);
   va_end(ap);
@@ -237,6 +246,7 @@ void tearDown(void)
   observe_publication = report_publication_enoent = 0;
   published_dir_mode = published_guard_mode = -1;
   require_writable_lock = boot_before_guard_create = candidate_was_removed = FALSE;
+  replace_emptied_lock_on_guard_open = 0;
   exclusive_access_mode = -1;
   mock_smb_type = 0;
 #endif
@@ -246,7 +256,9 @@ void tearDown(void)
   }
   umask(0022);
   chmod("house", 0700);
+  chmod(LOCK_PATH, 0700);
   remove(LOCK_PATH "/marker");  /* Only the unlocked-save fixture creates this. */
+  rmdir(LOCK_GUARD);
   remove(LOCK_GUARD);
   remove(LOCK_PATH);
   remove(HCONTROL_FILE);
@@ -771,6 +783,47 @@ static void test_a_file_at_the_lock_name_is_left_alone(void)
   assert_file(LOCK_PATH, "operator's file");
 }
 
+/* A subdirectory or symlink at the guard path is not a lock this game made:
+ * saves proceed unlocked and boot leaves it untouched. */
+static void test_a_foreign_guard_is_left_alone(void)
+{
+  struct stat before, after;
+  write_file(HOUSE_FILE, "old contents");
+
+  /* 1. Subdirectory at .tba-house.lock/guard (EISDIR on O_RDWR boot). */
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LOCK_PATH, 0700));
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LOCK_GUARD, 0700));
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &before));
+  observe_stage = TRUE;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &after));
+  TEST_ASSERT_TRUE(S_ISDIR(after.st_mode));
+  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+  TEST_ASSERT_EQUAL_INT(0, rmdir(LOCK_GUARD));
+
+  /* 2. Symlink at .tba-house.lock/guard (ELOOP/EMLINK/EFTYPE on O_NOFOLLOW). */
+  write_file("bystander", "bystander");
+  TEST_ASSERT_EQUAL_INT(0, symlink("../../bystander", LOCK_GUARD));
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &before));
+  item.name = "after symlink guard";
+  observe_stage = TRUE;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &after));
+  TEST_ASSERT_TRUE(S_ISLNK(after.st_mode));
+  TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+  assert_file("bystander", "bystander");
+}
+
 /* A crash while the lock was first being set up leaves the directory it was
  * filling, with or without its guard.  Boot removes it once the lock exists. */
 static void test_boot_removes_an_unfinished_lock_setup(void)
@@ -792,6 +845,41 @@ static void test_boot_removes_an_unfinished_lock_setup(void)
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
+static void test_concurrent_replacement_of_emptied_lock_does_not_fail_with_einval(void)
+{
+  struct stat st;
+
+  /* 1. Another process replaces the emptied lock directory with a live lock
+   * before our unlinkat() runs: follow the winning lock instead of dropping
+   * to unlocked saves. */
+  TEST_ASSERT_EQUAL_INT(0, mkdir(LOCK_PATH, 0700));
+  replace_emptied_lock_on_guard_open = 1;
+  observe_stage = TRUE;
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_EQUAL_INT(0, replace_emptied_lock_on_guard_open);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, unlocked_during_record);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &st));
+  TEST_ASSERT_TRUE(S_ISREG(st.st_mode));
+
+  /* 2. Another process removes the emptied lock directory and has not yet
+   * published a replacement: publish a fresh lock instead of misreporting EINVAL. */
+  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_GUARD));
+  replace_emptied_lock_on_guard_open = 2;
+  observe_stage = TRUE;
+  item.name = "republished lock";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  TEST_ASSERT_EQUAL_INT(0, replace_emptied_lock_on_guard_open);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, unlocked_during_record);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &st));
+  TEST_ASSERT_TRUE(S_ISREG(st.st_mode));
+}
+
 static void test_save_uses_winning_guard_after_its_initializer_was_removed(void)
 {
   boot_before_guard_create = observe_stage = TRUE;
@@ -902,13 +990,17 @@ static void test_the_lock_file_is_private(void)
   TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
 
-  /* An owner-owned lock left read-only (0400) is also restored to 0600. */
+  /* An owner-owned lock left read-only (0400) is also restored to 0600,
+   * and an overly open lock directory (0777) is tightened back to 0700. */
   TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_GUARD, 0400));
+  TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0777));
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
   House_crashsave(3000);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
   TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &st));
   TEST_ASSERT_EQUAL_UINT(0600, st.st_mode & 0777);
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &st));
+  TEST_ASSERT_EQUAL_UINT(0700, st.st_mode & 0777);
 }
 
 static void test_boot_repairs_the_guard_and_sweeps_with_write_access(void)
@@ -1314,11 +1406,13 @@ int main(void)
   RUN_TEST(test_an_emptied_lock_directory_is_replaced);
   RUN_TEST(test_replacing_the_guard_preserves_the_previous_writers_stage);
   RUN_TEST(test_a_file_at_the_lock_name_is_left_alone);
+  RUN_TEST(test_a_foreign_guard_is_left_alone);
   RUN_TEST(test_boot_removes_an_unfinished_lock_setup);
   RUN_TEST(test_boot_repairs_the_guard_and_sweeps_with_write_access);
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
   RUN_TEST(test_smb_saves_without_inode_based_cleanup);
+  RUN_TEST(test_concurrent_replacement_of_emptied_lock_does_not_fail_with_einval);
   RUN_TEST(test_save_uses_winning_guard_after_its_initializer_was_removed);
   RUN_TEST(test_lock_is_secured_before_publication_and_retries_after_failure);
   RUN_TEST(test_boot_clears_an_empty_unreadable_stage_without_chmod);
