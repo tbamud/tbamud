@@ -28,6 +28,12 @@ int add_mobile(struct char_data *mob, mob_vnum vnum)
   struct char_data *live_mob;
 
   if ((rnum = real_mobile(vnum)) != NOBODY) {
+    /* Keep the prototype's own rnum rather than copying whatever rnum the
+     * working copy brought along from W) Copy or an earlier table layout.
+     * Setting it before copy_mobile() also keeps check_mobile_strings()
+     * indexing the real prototype instead of a stale rnum or NOBODY. */
+    mob->nr = rnum;
+
     /* Copy over the mobile and free() the old strings. */
     copy_mobile(&mob_proto[rnum], mob);
 
@@ -293,8 +299,16 @@ int free_mobile(struct char_data *mob)
   if (mob == NULL)
     return FALSE;
 
-  /* Non-prototyped mobile.  Also known as new mobiles. */
-  if ((i = GET_MOB_RNUM(mob)) == NOBODY) {
+  /* Non-prototyped mobile, or one whose cached prototype rnum is no longer
+   * valid (for example after another editor deletes a mobile and shrinks
+   * mob_proto[]). */
+#if CIRCLE_UNSIGNED_INDEX
+  if ((i = GET_MOB_RNUM(mob)) == NOBODY || !mob_proto ||
+      top_of_mobt == NOBODY || i > top_of_mobt) {
+#else
+  if ((i = GET_MOB_RNUM(mob)) < 0 || !mob_proto ||
+      top_of_mobt < 0 || i > top_of_mobt) {
+#endif
     free_mobile_strings(mob);
     /* free script proto list */
     free_proto_script(mob, MOB_TRIGGER);

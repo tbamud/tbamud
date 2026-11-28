@@ -753,6 +753,11 @@ void redit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'x':
     case 'X':
+      if (real_room(OLC_NUM(d)) == NOWHERE) {
+        write_to_output(d, "That room has never been saved -- quit without saving instead.\r\n");
+        redit_disp_menu(d);
+        return;
+      }
       /* Delete the room, prompt first. */
       write_to_output(d, "Are you sure you want to delete room %d? ", OLC_NUM(d));
       OLC_MODE(d) = REDIT_DELETE;
@@ -985,7 +990,9 @@ void redit_parse(struct descriptor_data *d, char *arg)
   
   case REDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_room(real_room(OLC_NUM(d)))) {
+      room_rnum drnum = real_room(OLC_NUM(d));
+
+      if (drnum != NOWHERE && delete_room(drnum)) {
         write_to_output(d, "Room deleted.\r\n");
         /* Same toggle the save path honours.  save_all() writes the room
          * file and every zone file delete_room() just flagged -- and
@@ -994,10 +1001,17 @@ void redit_parse(struct descriptor_data *d, char *arg)
         if (CONFIG_OLC_SAVE && !save_all())
           write_to_output(d, "Not every world file that was waiting to be "
                              "saved could be written; see the syslog.\r\n");
-      } else
-        write_to_output(d, "Couldn't delete the room!.\r\n");
 
-      cleanup_olc(d, CLEANUP_ALL);
+        /* Free the editor's detached script list along with the working copy. */
+        OLC_ROOM(d)->proto_script = OLC_SCRIPT(d);
+        OLC_SCRIPT(d) = NULL;
+        cleanup_olc(d, CLEANUP_ALL);
+        return;
+      }
+      /* Nothing was deleted, so keep the session open rather than
+       * discarding the builder's unsaved work. */
+      write_to_output(d, "Couldn't delete the room!\r\n");
+      redit_disp_menu(d);
       return;
     } else if (*arg == 'n' || *arg == 'N') {
       redit_disp_menu(d);

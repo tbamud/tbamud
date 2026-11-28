@@ -672,6 +672,11 @@ void medit_parse(struct descriptor_data *d, char *arg)
       return;
     case 'x':
     case 'X':
+      if (real_mobile(OLC_NUM(d)) == NOBODY) {
+        write_to_output(d, "That mobile has never been saved -- quit without saving instead.\r\n");
+        medit_disp_menu(d);
+        return;
+      }
       write_to_output(d, "Are you sure you want to delete mobile %d? ", OLC_NUM(d));
       OLC_MODE(d) = MEDIT_DELETE;
       return;
@@ -1103,10 +1108,26 @@ void medit_parse(struct descriptor_data *d, char *arg)
 
   case MEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      /* The working copy owns its strings. Deleting a mobile can change
-       * prototype indexes before cleanup frees the copy. */
-      GET_MOB_RNUM(OLC_MOB(d)) = NOBODY;
-      if (delete_mobile(real_mobile(OLC_NUM(d))) != NOBODY) {
+      mob_rnum drnum = real_mobile(OLC_NUM(d));
+
+      if (drnum != NOBODY && delete_mobile(drnum) != NOBODY) {
+        struct descriptor_data *dsc;
+
+        /* The working copy owns its strings. Deleting a mobile shrinks
+         * mob_proto[], so clear this copy's cached rnum and keep any other
+         * open medit sessions' cached rnums aligned before cleanup frees
+         * them. */
+        GET_MOB_RNUM(OLC_MOB(d)) = NOBODY;
+        for (dsc = descriptor_list; dsc; dsc = dsc->next) {
+          if (dsc != d && STATE(dsc) == CON_MEDIT && dsc->olc && OLC_MOB(dsc)) {
+            mob_rnum mr = GET_MOB_RNUM(OLC_MOB(dsc));
+            if (mr == drnum)
+              GET_MOB_RNUM(OLC_MOB(dsc)) = NOBODY;
+            else if (mr != NOBODY && mr > drnum)
+              GET_MOB_RNUM(OLC_MOB(dsc))--;
+          }
+        }
+
         write_to_output(d, "Mobile deleted.\r\n");
         /* save_all() writes the mob file and every zone file the
          * delete just flagged -- and whatever else is on the save list,
@@ -1114,10 +1135,17 @@ void medit_parse(struct descriptor_data *d, char *arg)
         if (CONFIG_OLC_SAVE && !save_all())
           write_to_output(d, "Not every world file that was waiting to be "
                              "saved could be written; see the syslog.\r\n");
-      } else
-        write_to_output(d, "Couldn't delete the mobile!\r\n");
 
-      cleanup_olc(d, CLEANUP_ALL);
+        /* Free the editor's detached script list along with the working copy. */
+        OLC_MOB(d)->proto_script = OLC_SCRIPT(d);
+        OLC_SCRIPT(d) = NULL;
+        cleanup_olc(d, CLEANUP_ALL);
+        return;
+      }
+      /* Nothing was deleted, so keep the session open rather than
+       * discarding the builder's unsaved work. */
+      write_to_output(d, "Couldn't delete the mobile!\r\n");
+      medit_disp_menu(d);
       return;
     } else if (*arg == 'n' || *arg == 'N') {
       medit_disp_menu(d);

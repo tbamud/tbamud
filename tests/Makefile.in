@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle test_world_editor_delete
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -129,6 +129,16 @@ test_editor_lifecycle: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                        $(SRCDIR)/genobj.c $(SRCDIR)/oasis.c \
                        $(SRCDIR)/tedit.c $(SRCDIR)/prefedit.c \
                        test_editor_lifecycle.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
+
+test_world_editor_delete: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                          $(SRCDIR)/constants.c $(SRCDIR)/lists.c \
+                          $(SRCDIR)/genolc.c $(SRCDIR)/genmob.c \
+                          $(SRCDIR)/genobj.c $(SRCDIR)/genwld.c \
+                          $(SRCDIR)/genzon.c $(SRCDIR)/oasis.c \
+                          $(SRCDIR)/oasis_delete.c $(SRCDIR)/dg_handler.c \
+                          $(SRCDIR)/medit.c $(SRCDIR)/oedit.c \
+                          $(SRCDIR)/redit.c test_world_editor_delete.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 # ---------------------------------------------------------------------------

@@ -868,6 +868,11 @@ void oedit_parse(struct descriptor_data *d, char *arg)
       break;
     case 'x':
     case 'X':
+      if (real_object(OLC_NUM(d)) == NOTHING) {
+        write_to_output(d, "That object has never been saved -- quit without saving instead.\r\n");
+        oedit_disp_menu(d);
+        return;
+      }
       write_to_output(d, "Are you sure you want to delete object %d? ", OLC_NUM(d));
       OLC_MODE(d) = OEDIT_DELETE;
       break;
@@ -1221,7 +1226,9 @@ void oedit_parse(struct descriptor_data *d, char *arg)
 
   case OEDIT_DELETE:
     if (*arg == 'y' || *arg == 'Y') {
-      if (delete_object(real_object(OLC_NUM(d))) != NOTHING) {
+      obj_rnum drnum = real_object(OLC_NUM(d));
+
+      if (drnum != NOTHING && delete_object(drnum) != NOTHING) {
         write_to_output(d, "Object deleted.\r\n");
         /* save_all() writes the object file and every zone file the
          * delete just flagged -- and whatever else is on the save list,
@@ -1229,10 +1236,19 @@ void oedit_parse(struct descriptor_data *d, char *arg)
         if (CONFIG_OLC_SAVE && !save_all())
           write_to_output(d, "Not every world file that was waiting to be "
                              "saved could be written; see the syslog.\r\n");
-      } else
-        write_to_output(d, "Couldn't delete the object!\r\n");
 
-      cleanup_olc(d, CLEANUP_ALL);
+        /* Free the editor's detached script list before cleanup_olc(),
+         * which frees OLC_OBJ's strings but not its proto_script. */
+        OLC_OBJ(d)->proto_script = OLC_SCRIPT(d);
+        free_proto_script(OLC_OBJ(d), OBJ_TRIGGER);
+        OLC_SCRIPT(d) = NULL;
+        cleanup_olc(d, CLEANUP_ALL);
+      } else {
+        /* Nothing was deleted, so keep the session open rather than
+         * discarding the builder's unsaved work. */
+        write_to_output(d, "Couldn't delete the object!\r\n");
+        oedit_disp_menu(d);
+      }
     } else if (*arg == 'n' || *arg == 'N') {
       oedit_disp_menu(d);
       OLC_MODE(d) = OEDIT_MAIN_MENU;

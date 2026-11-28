@@ -232,4 +232,34 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         set_property(TARGET test_genolc_savers APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
     endif()
     add_test(NAME test_genolc_savers COMMAND test_genolc_savers)
+
+    add_executable(test_world_editor_delete
+        ${UNITY_SRC}
+        ${STUBS_SRC}
+        ${MUD_SRCDIR}/utils.c
+        ${MUD_SRCDIR}/random.c
+        ${MUD_SRCDIR}/constants.c
+        ${MUD_SRCDIR}/lists.c
+        ${MUD_SRCDIR}/genolc.c
+        ${MUD_SRCDIR}/genmob.c
+        ${MUD_SRCDIR}/genobj.c
+        ${MUD_SRCDIR}/genwld.c
+        ${MUD_SRCDIR}/genzon.c
+        ${MUD_SRCDIR}/oasis.c
+        ${MUD_SRCDIR}/oasis_delete.c
+        ${MUD_SRCDIR}/dg_handler.c
+        ${MUD_SRCDIR}/medit.c
+        ${MUD_SRCDIR}/oedit.c
+        ${MUD_SRCDIR}/redit.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_world_editor_delete.c
+    )
+    target_include_directories(test_world_editor_delete PRIVATE ${TEST_INCLUDES})
+    target_compile_options(test_world_editor_delete PRIVATE ${TEST_CFLAGS}
+        -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_world_editor_delete APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_world_editor_delete APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+    add_test(NAME test_world_editor_delete COMMAND test_world_editor_delete)
 endif()
