@@ -50,10 +50,12 @@ static int test_install_file(const char *scratch, const char *dest)
 #define BOB_ID   20L
 
 int no_mail = 0;
+struct command_info *complete_cmd_info = NULL;
 
 static struct index_data test_obj_index[2];
 static int create_obj_calls;
 static int extract_obj_calls;
+static int extracted_non_nothing;
 static char last_act_msg[MAX_STRING_LENGTH];
 static char alice_name[] = "Alice";
 static char bob_name[] = "Bob";
@@ -137,8 +139,11 @@ static void free_test_obj(struct obj_data *obj)
 void extract_obj(struct obj_data *obj)
 {
   extract_obj_calls++;
-  if (GET_OBJ_RNUM(obj) != NOTHING && obj_index != NULL)
-    obj_index[GET_OBJ_RNUM(obj)].number--;
+  if (GET_OBJ_RNUM(obj) != NOTHING) {
+    extracted_non_nothing++;
+    if (obj_index != NULL)
+      obj_index[GET_OBJ_RNUM(obj)].number--;
+  }
   free_test_obj(obj);
 }
 
@@ -195,6 +200,7 @@ void setUp(void)
   fail_install = FALSE;
   create_obj_calls = 0;
   extract_obj_calls = 0;
+  extracted_non_nothing = 0;
   last_act_msg[0] = '\0';
 
   memset(test_obj_index, 0, sizeof(test_obj_index));
@@ -346,6 +352,10 @@ static void test_temp_write_failure_preserves_mail_and_retries(void)
 
     memset(large_body, 'B', sizeof(large_body) - 1);
     large_body[sizeof(large_body) - 1] = '\0';
+    for (i = 63; i + 1 < (int)sizeof(large_body) - 1; i += 64) {
+      large_body[i] = '\r';
+      large_body[i + 1] = '\n';
+    }
 
     TEST_ASSERT_TRUE(store_mail(ALICE_ID, BOB_ID, "Hello Alice"));
     /* Write enough remaining mail to overflow stdio's buffer so write_mail_record()
@@ -396,7 +406,7 @@ static void test_corrupt_spool_after_target_disables_mail_and_preserves_file(voi
   TEST_ASSERT_EQUAL_STRING(before, after);
 }
 
-static void test_postmaster_receive_skips_obj_creation_on_failure_and_recovers(void)
+static void test_postmaster_receive_preserves_obj_count_on_failure_and_recovers(void)
 {
   struct char_data alice, mailman;
   char before[4096], after[4096];
@@ -411,13 +421,14 @@ static void test_postmaster_receive_skips_obj_creation_on_failure_and_recovers(v
   read_entire_file(MAIL_FILE, before, sizeof(before));
 
   /* Repeated transient failures must not disable mail, lose waiting mail,
-   * or create/extract throwaway objects (which would decrement obj_index[1]). */
+   * or extract a note whose item_number already points at obj_index[1]. */
   fail_install = TRUE;
   postmaster_receive_mail(&alice, &mailman, 0, "");
   postmaster_receive_mail(&alice, &mailman, 0, "");
 
-  TEST_ASSERT_EQUAL_INT(0, create_obj_calls);
-  TEST_ASSERT_EQUAL_INT(0, extract_obj_calls);
+  TEST_ASSERT_EQUAL_INT(2, create_obj_calls);
+  TEST_ASSERT_EQUAL_INT(2, extract_obj_calls);
+  TEST_ASSERT_EQUAL_INT(0, extracted_non_nothing);
   TEST_ASSERT_EQUAL_INT(5, test_obj_index[1].number);
   TEST_ASSERT_NULL(alice.carrying);
   TEST_ASSERT_EQUAL_INT(0, no_mail);
@@ -430,11 +441,13 @@ static void test_postmaster_receive_skips_obj_creation_on_failure_and_recovers(v
   fail_install = FALSE;
   postmaster_receive_mail(&alice, &mailman, 0, "");
 
-  TEST_ASSERT_EQUAL_INT(1, create_obj_calls);
-  TEST_ASSERT_EQUAL_INT(0, extract_obj_calls);
+  TEST_ASSERT_EQUAL_INT(3, create_obj_calls);
+  TEST_ASSERT_EQUAL_INT(2, extract_obj_calls);
+  TEST_ASSERT_EQUAL_INT(0, extracted_non_nothing);
   TEST_ASSERT_EQUAL_INT(5, test_obj_index[1].number);
   TEST_ASSERT_NOT_NULL(alice.carrying);
   TEST_ASSERT_NULL(alice.carrying->next_content);
+  TEST_ASSERT_EQUAL_INT(1, GET_OBJ_RNUM(alice.carrying));
   TEST_ASSERT_NOT_NULL(alice.carrying->action_description);
   TEST_ASSERT_NOT_NULL(strstr(alice.carrying->action_description, "Hello Alice"));
   TEST_ASSERT_FALSE(has_mail(ALICE_ID));
@@ -450,8 +463,9 @@ static void test_postmaster_receive_skips_obj_creation_on_failure_and_recovers(v
   read_entire_file(MAIL_FILE, before, sizeof(before));
 
   postmaster_receive_mail(&alice, &mailman, 0, "");
-  TEST_ASSERT_EQUAL_INT(1, create_obj_calls);
-  TEST_ASSERT_EQUAL_INT(0, extract_obj_calls);
+  TEST_ASSERT_EQUAL_INT(4, create_obj_calls);
+  TEST_ASSERT_EQUAL_INT(3, extract_obj_calls);
+  TEST_ASSERT_EQUAL_INT(0, extracted_non_nothing);
   TEST_ASSERT_EQUAL_INT(5, test_obj_index[1].number);
   TEST_ASSERT_NULL(alice.carrying);
   TEST_ASSERT_EQUAL_INT(1, no_mail);
@@ -490,7 +504,7 @@ int main(void)
   RUN_TEST(test_temp_open_failure_preserves_mail_and_retries);
   RUN_TEST(test_temp_write_failure_preserves_mail_and_retries);
   RUN_TEST(test_corrupt_spool_after_target_disables_mail_and_preserves_file);
-  RUN_TEST(test_postmaster_receive_skips_obj_creation_on_failure_and_recovers);
+  RUN_TEST(test_postmaster_receive_preserves_obj_count_on_failure_and_recovers);
   status = UNITY_END();
 
   if (test_rmdir("etc") || test_chdir(cwd) || test_rmdir(scratch))

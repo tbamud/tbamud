@@ -308,6 +308,21 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
     endif()
     add_test(NAME test_genolc_savers COMMAND test_genolc_savers)
 
+    # test_mail.c includes mail.c to reach postmaster_receive_mail() and wrap
+    # genolc_install_file(), with section GC to discard unrelated genolc code.
+    add_mud_test(test_mail
+        ${MUD_SRCDIR}/utils.c
+        ${MUD_SRCDIR}/random.c
+        ${MUD_SRCDIR}/genolc.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/test_mail.c
+    )
+    target_compile_options(test_mail PRIVATE -ffunction-sections -fdata-sections)
+    if(APPLE)
+        set_property(TARGET test_mail APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+    else()
+        set_property(TARGET test_mail APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+    endif()
+
     if(UNIX)
         add_mud_test(test_house_save
             ${MUD_SRCDIR}/utils.c
@@ -326,21 +341,6 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         endif()
         if(CRYPT_LIBRARY)
             target_link_libraries(test_house_save PRIVATE ${CRYPT_LIBRARY})
-        endif()
-
-        # test_mail.c includes mail.c to reach postmaster_receive_mail() and wrap
-        # genolc_install_file(), with section GC to discard unrelated genolc code.
-        add_mud_test(test_mail
-            ${MUD_SRCDIR}/utils.c
-            ${MUD_SRCDIR}/random.c
-            ${MUD_SRCDIR}/genolc.c
-            ${CMAKE_CURRENT_SOURCE_DIR}/test_mail.c
-        )
-        target_compile_options(test_mail PRIVATE -ffunction-sections -fdata-sections)
-        if(APPLE)
-            set_property(TARGET test_mail APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
-        else()
-            set_property(TARGET test_mail APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
         endif()
     endif()
 endif()

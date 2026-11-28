@@ -488,7 +488,7 @@ static void postmaster_check_mail(struct char_data *ch, struct char_data *mailma
 static void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman,
 			  int cmd, char *arg)
 {
-  char buf[256], *mail_text;
+  char buf[256];
   struct obj_data *obj;
   int y;
 
@@ -498,28 +498,41 @@ static void postmaster_receive_mail(struct char_data *ch, struct char_data *mail
     return;
   }
   while (has_mail(GET_IDNUM(ch))) {
-    mail_text = read_delete(GET_IDNUM(ch));
-    if (mail_text == NULL) {
-      act("$n tells you, 'The mail system encountered a problem. Please report it.'",
-          FALSE, mailman, 0, ch, TO_VICT);
-      break;
-    }
-
-    obj = create_obj(); 
-    obj->item_number = 1; 
+    /* Prepare the note before modifying the spool so an allocation failure
+     * cannot drop a letter after read_delete() removes it. Keep item_number
+     * at NOTHING until read_delete() succeeds so extract_obj() on failure
+     * does not decrement obj_index[1].number. */
+    obj = create_obj();
+    obj->item_number = NOTHING;
     obj->name = strdup("mail paper letter");
     obj->short_description = strdup("a piece of mail");
     obj->description = strdup("Someone has left a piece of mail here.");
 
     GET_OBJ_TYPE(obj) = ITEM_NOTE;
-    for(y = 0; y < TW_ARRAY_MAX; y++)
+    for (y = 0; y < TW_ARRAY_MAX; y++)
       obj->obj_flags.wear_flags[y] = 0;
     SET_BIT_AR(GET_OBJ_WEAR(obj), ITEM_WEAR_TAKE);
     GET_OBJ_WEIGHT(obj) = 1;
     GET_OBJ_COST(obj) = 30;
     GET_OBJ_RENT(obj) = 10;
-    obj->action_description = mail_text;
 
+    if (!obj->name || !obj->short_description || !obj->description) {
+      extract_obj(obj);
+      act("$n tells you, 'The mail system encountered a problem. Please report it.'",
+          FALSE, mailman, 0, ch, TO_VICT);
+      break;
+    }
+
+    obj->action_description = read_delete(GET_IDNUM(ch));
+
+    if (obj->action_description == NULL) {
+      extract_obj(obj);
+      act("$n tells you, 'The mail system encountered a problem. Please report it.'",
+          FALSE, mailman, 0, ch, TO_VICT);
+      break;
+    }
+
+    obj->item_number = 1;
     obj_to_char(obj, ch);
 
     act("$n gives you a piece of mail.", FALSE, mailman, 0, ch, TO_VICT);
