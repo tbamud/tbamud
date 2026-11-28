@@ -31,6 +31,8 @@
 #include <sys/file.h>
 #include <sys/stat.h>
 #if defined(__linux__)
+#include <sys/sysmacros.h>
+#include <sys/utsname.h>
 #include <sys/vfs.h>
 #include <sys/xattr.h>
 #elif defined(__FreeBSD__)
@@ -265,75 +267,29 @@ static int House_copy_access_acl(const char *filename, int fd, int clamp_group, 
   return result;
 }
 
-/* Linux exposes the server's NFSv4 ACEs in XDR form. The v4.1 DACL and
- * SACL carry inheritance flags that the older combined ACL cannot express.
- * Return 1 for a copied attribute, 0 when unsupported or skipped, or -1 on failure. */
-static int House_copy_nfs4_attr(const char *filename, int fd, const char *name,
-                                bool optional_sacl)
-{
-  static const unsigned char empty_sacl[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-  ssize_t length = getxattr(filename, name, NULL, 0);
-  unsigned char *acl;
-  int result = -1, saved_errno;
-
-  if (length < 0) {
-    if (errno == ENODATA || errno == ENOTSUP)
-      return 0;
-    if (optional_sacl && (errno == EACCES || errno == EPERM))
-      return 0;
-    return -1;
-  }
-  if (length == 0) {
-    if (optional_sacl)
-      return 0;
-    errno = EINVAL;
-    return -1;
-  }
-  if (!(acl = malloc((size_t)length)))
-    return -1;
-  length = getxattr(filename, name, acl, (size_t)length);
-  if (length < 0) {
-    if (optional_sacl && (errno == ENODATA || errno == ENOTSUP || errno == EACCES || errno == EPERM))
-      result = 0;
-  } else if (length == 0) {
-    if (optional_sacl)
-      result = 0;
-    else
-      errno = EINVAL;
-  } else if (optional_sacl && length == (ssize_t)sizeof(empty_sacl) &&
-             !memcmp(acl, empty_sacl, sizeof(empty_sacl))) {
-    /* An empty, unprotected SACL carries no audit rules or flags; avoid an
-     * unnecessary privileged SETATTR on servers that advertise FATTR4_SACL. */
-    result = 0;
-  } else if (fsetxattr(fd, name, acl, (size_t)length, 0) == 0) {
-    result = 1;
-  } else if (optional_sacl && (errno == EACCES || errno == EPERM)) {
-    result = 0;
-  }
-  saved_errno = errno;
-  free(acl);
-  errno = saved_errno;
-  return result;
-}
-
 /* Read a whole extended attribute.  NULL with errno set if it cannot be
  * read; ENODATA and ENOTSUP mean the file has none. */
 static unsigned char *House_read_xattr(const char *filename, const char *name, size_t *size)
 {
   ssize_t length = getxattr(filename, name, NULL, 0);
+  ssize_t actual;
   unsigned char *value;
   int saved_errno;
 
-  if (length < 0 || !(value = malloc(length ? (size_t)length : 1)))
+  if (length < 0)
     return NULL;
-  length = getxattr(filename, name, value, (size_t)length);
-  if (length < 0) {
-    saved_errno = errno;
+  /* A zero-sized getxattr is a size query. Always supply space to the read. */
+  if (!(value = malloc(length ? (size_t)length : 1)))
+    return NULL;
+  actual = getxattr(filename, name, value, length ? (size_t)length : 1);
+  if (actual < 0 || (length > 0 && actual == 0)) {
+    /* A value that vanished after the size probe is a changed source. */
+    saved_errno = actual == 0 || errno == ENODATA || errno == ENOTSUP ? EAGAIN : errno;
     free(value);
     errno = saved_errno;
     return NULL;
   }
-  *size = (size_t)length;
+  *size = (size_t)actual;
   return value;
 }
 
@@ -342,102 +298,227 @@ static uint32_t House_be32(const unsigned char *p)
   return ((uint32_t)p[0] << 24) | ((uint32_t)p[1] << 16) | ((uint32_t)p[2] << 8) | p[3];
 }
 
-/* Whether an NFSv4 ACL in XDR form names anyone but OWNER@, GROUP@ and
- * EVERYONE@.  A v4.1 DACL starts with a flags word, which offset skips.  An
- * ACL that cannot be parsed counts as naming others. */
-static bool House_nfs4_names_others(const unsigned char *acl, size_t length, size_t offset)
+enum { HOUSE_ACL_OWNER = 1, HOUSE_ACL_GROUP = 2, HOUSE_ACL_NAMED = 4, HOUSE_ACL_AUDIT = 8 };
+
+/* Summarize the principal references after validating the whole XDR array. */
+static int House_nfs4_principals(const unsigned char *acl, size_t length, size_t offset)
 {
-  static const char *const special[] = {"OWNER@", "GROUP@", "EVERYONE@"};
-  size_t p = offset, k;
-  uint32_t count, i, who;
+  size_t p = offset;
+  int principals = 0;
+  uint32_t count, i;
 
   if (length < offset + 4)
-    return TRUE;
+    goto invalid;
   count = House_be32(acl + p);
   p += 4;
   for (i = 0; i < count; ++i) {
+    uint32_t who, type;
+    size_t padding;
     if (length - p < 16)
-      return TRUE;
+      goto invalid;
+    type = House_be32(acl + p);
+    if (type > 3)
+      goto invalid;
+    if (type == 2 || type == 3)
+      principals |= HOUSE_ACL_AUDIT;
     who = House_be32(acl + p + 12);
     p += 16;
-    if (who > length - p)
-      return TRUE;
-    for (k = 0; k < sizeof(special) / sizeof(special[0]); ++k)
-      if (who == strlen(special[k]) && !memcmp(acl + p, special[k], who))
-        break;
-    if (k == sizeof(special) / sizeof(special[0]))
-      return TRUE;
-    p += who + (4 - who % 4) % 4;	/* XDR pads each name to four bytes. */
-    if (p > length)
-      p = length;
+    padding = (4 - who % 4) % 4;
+    if (!who || who > length - p || padding > length - p - who)
+      goto invalid;
+    if (who == 6 && !memcmp(acl + p, "OWNER@", 6))
+      principals |= HOUSE_ACL_OWNER;
+    else if (who == 6 && !memcmp(acl + p, "GROUP@", 6))
+      principals |= HOUSE_ACL_GROUP;
+    else if (who != 9 || memcmp(acl + p, "EVERYONE@", 9))
+      principals |= HOUSE_ACL_NAMED;
+    p += who;
+    while (padding--) {
+      if (acl[p++] != 0)
+        goto invalid;
+    }
   }
-  return FALSE;
+  if (p == length)
+    return principals;
+invalid:
+  errno = EINVAL;
+  return -1;
+}
+
+/* Return 1 for equal, 0 for different, or -1 if the comparison failed. */
+static int House_fd_acl_matches(int fd, const char *name, const unsigned char *acl, size_t length)
+{
+  unsigned char *staged = malloc(length);
+  ssize_t size;
+  int result, saved_errno;
+
+  if (!staged)
+    return -1;
+  size = fgetxattr(fd, name, staged, length);
+  saved_errno = errno;
+  if (size < 0)
+    result = saved_errno == ERANGE ? 0 : -1;
+  else
+    result = size == (ssize_t)length && !memcmp(staged, acl, length);
+  free(staged);
+  errno = saved_errno;
+  return result;
+}
+
+/* A server can restrict access to the separate NFSv4.1 audit policy. Once
+ * the source policy is known, preserve it or keep the old house for retry. */
+static int House_copy_nfs4_sacl(const char *filename, int fd, int changed)
+{
+  static const char name[] = "system.nfs4_sacl";
+  static const unsigned char empty_sacl[8] = {0};
+  size_t size;
+  unsigned char *acl = House_read_xattr(filename, name, &size);
+  int matches, result = -1, saved_errno;
+
+  if (!acl)
+    return errno == ENODATA || errno == ENOTSUP || errno == EACCES || errno == EPERM ? 0 : -1;
+  if (!size) {
+    result = 0;
+    goto done;
+  }
+  if (changed) {
+    int principals = House_nfs4_principals(acl, size, 4);
+    if (principals < 0)
+      goto done;
+    if (principals & changed) {
+      errno = EPERM;
+      goto done;
+    }
+  }
+  /* An empty, unprotected SACL also matches a stage without an audit ACL. */
+  matches = House_fd_acl_matches(fd, name, acl, size);
+  if (matches == 1 || (matches < 0 && errno == ENODATA && size == sizeof(empty_sacl) &&
+                       !memcmp(acl, empty_sacl, sizeof(empty_sacl))))
+    result = 0;
+  else
+    result = fsetxattr(fd, name, acl, size, 0);
+done:
+  saved_errno = errno;
+  free(acl);
+  errno = saved_errno;
+  return result;
+}
+
+static int House_set_nfs4_owner_acl(int fd, const char *name, mode_t mode);
+
+static int House_copy_rebound_acl(const char *filename, int fd, const char *name,
+                                  const unsigned char *acl, size_t size, int principals,
+                                  mode_t original_mode, mode_t mode)
+{
+  int matches;
+
+  /* A combined NFSv4.0 ACL also carries audit rules. Reducing the ACL would
+   * discard them or attach them to a different owner or group. */
+  if (principals & HOUSE_ACL_AUDIT) {
+    errno = EOPNOTSUPP;
+    return -1;
+  }
+  /* A rich ACE on EVERYONE@ can grant append without write, for example.
+   * Ask this server for the ACL it synthesizes from the original mode. */
+  if (fchmod(fd, original_mode) < 0)
+    return -1;
+  matches = House_fd_acl_matches(fd, name, acl, size);
+  if (matches < 0)
+    return -1;
+  if (!(mode & S_IRUSR)) {
+    int source = openat(AT_FDCWD, filename, O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);
+    if (source < 0)
+      return -1;
+    close(source);
+    mode |= S_IRUSR; /* The service could read via a group or named ACE. */
+  }
+  if (matches)
+    return original_mode == mode ? 0 : fchmod(fd, mode);
+  if (!(principals & HOUSE_ACL_NAMED)) {
+    errno = EOPNOTSUPP;
+    return -1;
+  }
+  /* The established fallback for named access rules keeps this save private.
+   * A plain chmod could leave other principals' non-mode rights in place. */
+  if (fchmod(fd, mode & 0700) < 0 || House_set_nfs4_owner_acl(fd, name, mode & 0700) < 0)
+    return -1;
+  log("SYSERR: %s belonged to another account and its NFSv4 ACL cannot be carried over, "
+      "so only the game can read the new save.  Restore any other access it needs by hand.", filename);
+  return 0;
 }
 
 static int House_copy_linux_acl(const char *filename, int fd, const struct stat *old,
-                                const struct stat *scratch, mode_t mode, bool owner_read)
+                                const struct stat *scratch, mode_t mode, bool *verify_read)
 {
-  int result;
+  bool owner_changed = old->st_uid != scratch->st_uid, group_changed = old->st_gid != scratch->st_gid;
+  int changed = (owner_changed ? HOUSE_ACL_OWNER : 0) | (group_changed ? HOUSE_ACL_GROUP : 0);
+  const char *name = "system.nfs4_dacl";
+  size_t offset = 4, size;
+  unsigned char *acl = House_read_xattr(filename, name, &size);
+  int principals, result, saved_errno;
 
-  if (old->st_uid != scratch->st_uid || old->st_gid != scratch->st_gid) {
-    /* OWNER@ and GROUP@ are relative to the file, so an NFSv4 ACL cannot be
-     * copied once the owner or group differs.  The mode bits say as much as
-     * one that names nobody else.  Otherwise the save goes ahead readable
-     * only by the game, rather than grant someone what the old ACL denied. */
-    size_t offset = 4, size = 0;
-    unsigned char *acl = House_read_xattr(filename, "system.nfs4_dacl", &size);
-    bool others;
-    if (!acl && (errno == ENODATA || errno == ENOTSUP)) {
-      offset = 0;
-      acl = House_read_xattr(filename, "system.nfs4_acl", &size);
-    }
-    if (!acl && (errno == ENODATA || errno == ENOTSUP))
-      return House_copy_access_acl(filename, fd, old->st_gid != scratch->st_gid, owner_read);
-    others = !acl || House_nfs4_names_others(acl, size, offset);
-    free(acl);
-    if (!others)
-      return 0;
-    log("SYSERR: %s belonged to another account and its NFSv4 ACL cannot be carried over, "
-        "so only the game can read the new save.  Restore any other access it needs by hand.",
-        filename);
-    return fchmod(fd, mode & 0700) < 0 ? -1 : 1;
+  if (!acl && (errno == ENODATA || errno == ENOTSUP)) {
+    name = "system.nfs4_acl";
+    offset = 0;
+    acl = House_read_xattr(filename, name, &size);
   }
-  result = House_copy_nfs4_attr(filename, fd, "system.nfs4_dacl", FALSE);
-  if (result > 0) {
-    if (House_copy_nfs4_attr(filename, fd, "system.nfs4_sacl", TRUE) < 0)
+  if (!acl) {
+    if (errno != ENODATA && errno != ENOTSUP)
       return -1;
-    return 1;
+    return House_copy_access_acl(filename, fd, group_changed, owner_changed && (mode & S_IRUSR));
   }
-  if (result == 0)
-    result = House_copy_nfs4_attr(filename, fd, "system.nfs4_acl", FALSE);
-  if (result != 0)
-    return result;
-  return House_copy_access_acl(filename, fd, FALSE, owner_read);
+
+  /* A rule that names the file's owner or group changes meaning only when
+   * that identity changes. All other rules can be copied verbatim. */
+  principals = changed ? House_nfs4_principals(acl, size, offset) : 0;
+  if (size == 0 || principals < 0) {
+    errno = EINVAL;
+    result = -1;
+  } else if (principals & changed) {
+    *verify_read = TRUE;
+    result = House_copy_rebound_acl(filename, fd, name, acl, size, principals, old->st_mode & 0777, mode);
+  } else
+    result = fsetxattr(fd, name, acl, size, 0);
+
+  saved_errno = errno;
+  free(acl);
+  errno = saved_errno;
+  if (result < 0 || (offset && House_copy_nfs4_sacl(filename, fd, changed) < 0))
+    return -1;
+  return 1; /* chmod after the native ACL is installed can rewrite its rules. */
 }
 
 /* chmod alone may retain a named allow ACE. Replace the entire access ACL
  * on a private stage/guard with a single non-inheritable OWNER@ allow. */
-static int House_secure_linux_fd(int fd, mode_t mode)
+static int House_set_nfs4_owner_acl(int fd, const char *name, mode_t mode)
 {
-  const char *name = "system.nfs4_dacl";
   unsigned char acl[] = {
     0,0,0,2,  /* protected DACL (omitted in the combined ACL format) */
     0,0,0,1,  /* one ACE */
     0,0,0,0, 0,0,0,0, 0,0x1f,0x01,0xff,  /* allow, no flags, full access */
     0,0,0,6, 'O','W','N','E','R','@',0,0
   };
-  size_t offset = 0;
+  size_t offset = !strcmp(name, "system.nfs4_dacl") ? 0 : 4;
+  if (!(mode & S_IRUSR))
+    acl[19] &= ~0x01;  /* read-data */
+  if (!(mode & S_IWUSR))
+    acl[19] &= ~(0x02 | 0x04); /* write-data and append-data */
+  if (!(mode & S_IXUSR))
+    acl[19] &= ~(0x20 | 0x40);  /* execute and delete-child */
+  return fsetxattr(fd, name, acl + offset, sizeof(acl) - offset, 0);
+}
+
+static int House_secure_linux_fd(int fd, mode_t mode)
+{
+  const char *name = "system.nfs4_dacl";
   if (fgetxattr(fd, name, NULL, 0) < 0) {
     if (errno != ENOTSUP && errno != ENODATA)
       return -1;
     name = "system.nfs4_acl";
-    offset = 4;
     if (fgetxattr(fd, name, NULL, 0) < 0)
       return errno == ENOTSUP || errno == ENODATA ? fchmod(fd, mode) : -1;
   }
-  if (!(mode & S_IXUSR))
-    acl[19] &= ~(0x20 | 0x40);  /* regular file: no execute or delete-child */
-  return fsetxattr(fd, name, acl + offset, sizeof(acl) - offset, 0);
+  return House_set_nfs4_owner_acl(fd, name, mode);
 }
 #elif defined(__APPLE__) && defined(__MACH__)
 /* The caller has set the owner and group as far as it could and worked out
@@ -549,7 +630,7 @@ done:
  * still save.  Where the group could not be kept, the group bits are cut
  * back to what everyone else had, so the game's own group gets nothing the
  * old file did not give to all. */
-static int House_copy_permissions(const char *filename, int fd, bool *owner_changed)
+static int House_copy_permissions(const char *filename, int fd, bool *verify_read)
 {
   struct stat old, scratch;
   mode_t mode;
@@ -573,8 +654,8 @@ static int House_copy_permissions(const char *filename, int fd, bool *owner_chan
   }
 
   mode = old.st_mode & 0777;
-  *owner_changed = scratch.st_uid != old.st_uid;
-  if (*owner_changed && !(mode & S_IRUSR)) {
+  *verify_read = scratch.st_uid != old.st_uid;
+  if (*verify_read && !(mode & S_IRUSR)) {
     /* The game might have read a restored house via its group or a named
      * grant. Its new owner class takes precedence over either on POSIX. */
     int old_fd = open(filename, O_RDONLY | O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC);
@@ -598,8 +679,7 @@ static int House_copy_permissions(const char *filename, int fd, bool *owner_chan
   }
 #elif defined(__linux__)
   {
-    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, mode,
-                                          *owner_changed && (mode & S_IRUSR));
+    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, mode, verify_read);
     if (acl_result != 0)
       return acl_result < 0 ? -1 : 0; /* chmod after setting a rich ACL can rewrite its ACEs. */
   }
@@ -614,7 +694,7 @@ static int House_copy_permissions(const char *filename, int fd, bool *owner_chan
     if (posix_acl < 0)
       return -1;
     if (posix_acl)
-      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_ACCESS, &old, &scratch, *owner_changed && (mode & S_IRUSR));
+      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_ACCESS, &old, &scratch, *verify_read && (mode & S_IRUSR));
   }
 #endif
   return fchmod(fd, mode);
@@ -1099,8 +1179,7 @@ static int House_publish_lock(int parent_fd)
   made_guard = fd >= 0;
   if (fd < 0 || House_secure_private_fd(fd, 0600) < 0 || fstat(dir, &staged) < 0)
     goto failed;
-  /* Windows-backed mounts (WSL's /mnt/c) refuse to rename a directory while
-   * a file inside it is open.  The guard is ready, so let it go first. */
+  /* Some filesystems refuse to rename a directory with an open child. */
   close(fd);
   fd = -1;
   if (renameat(parent_fd, name, parent_fd, HOUSE_STAGE_LOCK) == 0)
@@ -1133,7 +1212,96 @@ reopen:
   return 0;
 }
 
-static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAGE_PREFIX_SIZE])
+#if defined(__linux__)
+static bool House_is_uuid_tag(const char *tag)
+{
+  if (strlen(tag) != 36)
+    return FALSE;
+  for (size_t i = 0; i < 36; ++i) {
+    bool dash = i == 8 || i == 13 || i == 18 || i == 23;
+    if (dash ? tag[i] != '-' : !isxdigit((unsigned char)tag[i]))
+      return FALSE;
+  }
+  return TRUE;
+}
+
+/* mountinfo identifies the filesystem behind this descriptor, including bind
+ * mounts. WSL uses a native drvfs type, a 9p attachment, or a virtiofs tag. */
+static int House_is_drvfs(int fd, unsigned int magic)
+{
+  struct stat st;
+  FILE *mounts;
+  char *line = NULL;
+  size_t size = 0;
+  int result = -1, saved_errno = ENODEV;
+
+  if (magic != 0x53464846 && magic != 0x01021997 && magic != 0x65735546) /* WSL1, 9p, FUSE */
+    return 0;
+  if (fstat(fd, &st) < 0 || !(mounts = fopen("/proc/self/mountinfo", "r")))
+    return -1;
+  for (;;) {
+    unsigned int dev_major, dev_minor;
+    char *fields, *cursor, *source, *options, *type;
+    if (getline(&line, &size, mounts) < 0) {
+      if (!feof(mounts))
+        saved_errno = errno;
+      break;
+    }
+    if (sscanf(line, "%*u %*u %u:%u", &dev_major, &dev_minor) != 2 ||
+        dev_major != major(st.st_dev) || dev_minor != minor(st.st_dev) ||
+        !(fields = strstr(line, " - ")))
+      continue;
+    type = strtok_r(fields + 3, " \n", &cursor);
+    source = strtok_r(NULL, " \n", &cursor);
+    options = strtok_r(NULL, " \n", &cursor);
+    if (!type || !source || !options) {
+      saved_errno = EINVAL;
+      break;
+    }
+    result = !strcmp(type, "drvfs");
+    if (!strcmp(type, "9p")) {
+      char *option;
+      while ((option = strsep(&options, ",")) != NULL)
+        if (!strcmp(option, "aname=drvfs") || !strncmp(option, "aname=drvfs;", 12)) {
+          result = 1;
+          break;
+        }
+    } else if (!strcmp(type, "virtiofs")) {
+      result = !strcmp(source, "drvfs") || !strcmp(source, "drvfsa");
+      if (!result && House_is_uuid_tag(source)) {
+        /* WSL records individually tagged Windows volumes as symlinks here. */
+        char mapping[sizeof("/run/wsl/virtiofs/") + 36];
+        struct stat link;
+        snprintf(mapping, sizeof(mapping), "/run/wsl/virtiofs/%s", source);
+        if (lstat(mapping, &link) == 0)
+          result = S_ISLNK(link.st_mode);
+        else if (errno == ENOENT) {
+          /* A container on WSL can hide the tag mapping. The UUID alone
+           * cannot distinguish its Windows drive from a Linux virtiofs. */
+          struct utsname os;
+          if (uname(&os) < 0) {
+            saved_errno = errno;
+            result = -1;
+          } else if (strcasestr(os.release, "microsoft-standard") || strcasestr(os.release, "WSL2")) {
+            result = -1;
+          }
+        } else {
+          saved_errno = errno;
+          result = -1;
+        }
+      }
+    }
+    break;
+  }
+  free(line);
+  fclose(mounts);
+  if (result < 0)
+    errno = saved_errno;
+  return result;
+}
+#endif
+
+static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAGE_PREFIX_SIZE], bool *can_stage)
 {
   struct stat guard, parent;
   int saved_errno, fd;
@@ -1143,13 +1311,33 @@ static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAG
 #endif
 
   house_lock_unsupported = NULL;
+  *can_stage = TRUE;
 #if defined(__linux__) || defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
   /* SMB clients can assign inode numbers independently. A cleaner on a
    * different mount could otherwise match a live writer's stage. */
-  if (fstatfs(parent_fd, &fs) < 0)
+  if (fstatfs(parent_fd, &fs) < 0) {
+#if defined(__linux__)
+    saved_errno = errno;
+    log("SYSERR: Cannot identify the house filesystem before staging or cleanup: %s.", strerror(saved_errno));
+    *can_stage = FALSE;
+    errno = saved_errno;
+#endif
     return -1;
+  }
 #if defined(__linux__)
   unsigned int type = (unsigned int)fs.f_type;
+  int drvfs = House_is_drvfs(parent_fd, type);
+  if (drvfs != 0) {
+    saved_errno = drvfs < 0 ? errno : EOPNOTSUPP;
+    if (drvfs < 0)
+      log("SYSERR: Cannot identify the house filesystem to check Windows ACL support: %s.", strerror(saved_errno));
+    else
+      log("SYSERR: House saves on WSL Windows drives cannot preserve Windows ACLs. "
+          "Use a Linux filesystem for house saves or run the native Windows build.");
+    *can_stage = FALSE;
+    errno = saved_errno;
+    return -1;
+  }
   smb = type == 0x517b || type == 0xff534d42 || type == 0xfe534d42; /* SMB, CIFS, SMB2 */
 #else
   smb = !strcmp(fs.f_fstypename, "smbfs");
@@ -1258,7 +1446,7 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
   char *slash, prefix[HOUSE_STAGE_PREFIX_SIZE];
   const char *parent_path = ".";
   struct stat st;
-  bool replacing, owner_changed = FALSE;
+  bool replacing, verify_read = FALSE, can_stage;
   int access = O_RDONLY;
   int fd = -1, saved_errno, resolved;
   FILE *fp;
@@ -1315,14 +1503,16 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
    * never touches.  Waiting for it would let whoever holds it stop every
    * house save; going ahead costs only the automatic cleanup of this one
    * stage should the game crash before it is renamed into place. */
-  save->lock_fd = House_lock_stages(save->parent_fd, FALSE, prefix);
+  save->lock_fd = House_lock_stages(save->parent_fd, FALSE, prefix, &can_stage);
+  if (!can_stage)
+    goto failed;
   replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
   if (!replacing && errno != ENOENT)
     goto failed;
   fd = House_create_scratch(save, replacing, save->lock_fd >= 0 ? prefix : HOUSE_UNLOCKED_PREFIX);
-  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd, &owner_changed) < 0))
+  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd, &verify_read) < 0))
     goto failed;
-  if (owner_changed) {
+  if (verify_read) {
     /* Use the same effective credentials and access check as the next boot. */
     int read_fd = openat(save->stage_fd, save->scratch, O_RDONLY | O_NOFOLLOW | O_CLOEXEC);
     if (read_fd < 0)
@@ -1472,7 +1662,7 @@ static void House_remove_stale_saves(void)
   struct stat st;
   char prefix[HOUSE_STAGE_PREFIX_SIZE];
   const char *inner, *what;
-  bool lock_setup;
+  bool lock_setup, can_stage;
   int dir_fd, stage_fd, lock_fd;
 
   if (!(dir = opendir(LIB_HOUSE))) {
@@ -1481,7 +1671,11 @@ static void House_remove_stale_saves(void)
     return;
   }
   dir_fd = dirfd(dir);
-  lock_fd = House_lock_stages(dir_fd, TRUE, prefix);
+  lock_fd = House_lock_stages(dir_fd, TRUE, prefix, &can_stage);
+  if (!can_stage) {
+    closedir(dir);
+    return;
+  }
   if (lock_fd < 0) {
     int lock_errno = errno;
     /* Without a lock to open, the failure was in making one. */
