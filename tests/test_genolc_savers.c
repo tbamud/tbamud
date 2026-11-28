@@ -214,6 +214,22 @@ static void test_failed_install_preserves_existing_dest(void)
     TEST_ASSERT_EQUAL_STRING("preserved destination\n", result);
 }
 
+/* The savers pass sprintascii() int flag fields.  One with flag 31 set is
+ * negative and sign-extends into bitvector_t; only its 32 letters count. */
+static void test_sprintascii_writes_the_last_flag(void)
+{
+    char out[33];
+    int field[1] = { 0 };
+
+    sprintascii(out, 0x80000001UL);
+    TEST_ASSERT_EQUAL_STRING("aF", out);
+    SET_BIT_AR(field, 31);
+    sprintascii(out, field[0]);
+    TEST_ASSERT_EQUAL_STRING("F", out);
+    sprintascii(out, 0);
+    TEST_ASSERT_EQUAL_STRING("0", out);
+}
+
 int main(void)
 {
     char cwd[4096], temp[4096];
@@ -241,6 +257,7 @@ int main(void)
     RUN_TEST(test_objects_debug_scratch);
     RUN_TEST(test_mobiles_debug_scratch);
     RUN_TEST(test_failed_install_preserves_existing_dest);
+    RUN_TEST(test_sprintascii_writes_the_last_flag);
     status = UNITY_END();
     test_rmdir("world/wld");
     test_rmdir("world/obj");

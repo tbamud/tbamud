@@ -375,8 +375,9 @@ int sprintascii(char *out, bitvector_t bits)
   /* 32 bits, don't just add letters to try to get more unless your bitvector_t is also as large. */
   char *flags = "abcdefghijklmnopqrstuvwxyzABCDEF";
 
+  /* An unsigned 1: as an int, 1 << 31 (the 'F') is undefined. */
   for (i = 0; flags[i] != '\0'; i++)
-    if (bits & (1 << i))
+    if (bits & ((bitvector_t)1 << i))
       out[j++] = flags[i];
 
   if (j == 0) /* Didn't write anything. */
