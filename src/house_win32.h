@@ -505,15 +505,18 @@ static DWORD House_win_check_private_dir(HANDLE dir, SECURITY_DESCRIPTOR *expect
 {
   BY_HANDLE_FILE_INFORMATION info;
   PSECURITY_DESCRIPTOR security = NULL;
-  PSID owner;
+  PSID owner = NULL, expected_owner = NULL;
+  BOOL defaulted = FALSE;
   DWORD error;
   if (!GetFileInformationByHandle(dir, &info))
     return GetLastError();
   if ((info.dwFileAttributes & (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)) != FILE_ATTRIBUTE_DIRECTORY)
     return ERROR_ACCESS_DENIED;
+  if (!GetSecurityDescriptorOwner(expected, &expected_owner, &defaulted) || !expected_owner)
+    return GetLastError();
   error = GetSecurityInfo(dir, SE_FILE_OBJECT, OWNER_SECURITY_INFORMATION | DACL_SECURITY_INFORMATION,
                           &owner, NULL, NULL, NULL, &security);
-  if (!error && (!EqualSid(owner, expected->Owner) || !House_win_same_dacl(expected, security)))
+  if (!error && (!owner || !EqualSid(owner, expected_owner) || !House_win_same_dacl(expected, security)))
     error = ERROR_ACCESS_DENIED;
   LocalFree(security);
   return error;

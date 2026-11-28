@@ -267,28 +267,55 @@ static int House_copy_access_acl(const char *filename, int fd, int clamp_group, 
 
 /* Linux exposes the server's NFSv4 ACEs in XDR form. The v4.1 DACL and
  * SACL carry inheritance flags that the older combined ACL cannot express.
- * Return 1 for a copied attribute, 0 when unsupported, or -1 on failure. */
-static int House_copy_nfs4_attr(const char *filename, int fd, const char *name, bool same_ids)
+ * Return 1 for a copied attribute, 0 when unsupported or skipped, or -1 on failure. */
+static int House_copy_nfs4_attr(const char *filename, int fd, const char *name,
+                                bool same_ids, bool optional_sacl)
 {
+  static const unsigned char empty_sacl[8] = {0, 0, 0, 0, 0, 0, 0, 0};
   ssize_t length = getxattr(filename, name, NULL, 0);
   unsigned char *acl;
   int result = -1, saved_errno;
 
-  if (length < 0)
-    return errno == ENODATA || errno == ENOTSUP ? 0 : -1;
+  if (length < 0) {
+    if (errno == ENODATA || errno == ENOTSUP)
+      return 0;
+    if (optional_sacl && (errno == EACCES || errno == EPERM))
+      return 0;
+    return -1;
+  }
+  if (length == 0) {
+    if (optional_sacl)
+      return 0;
+    errno = EINVAL;
+    return -1;
+  }
   /* OWNER@ and GROUP@ are relative to the file. A byte-for-byte copy cannot
    * preserve those principals when ownership could not be restored. */
-  if (!same_ids || length == 0) {
-    errno = same_ids ? EINVAL : EPERM;
+  if (!same_ids) {
+    errno = EPERM;
     return -1;
   }
   if (!(acl = malloc((size_t)length)))
     return -1;
   length = getxattr(filename, name, acl, (size_t)length);
-  if (length == 0)
-    errno = EINVAL;
-  else if (length > 0 && fsetxattr(fd, name, acl, (size_t)length, 0) == 0)
+  if (length < 0) {
+    if (optional_sacl && (errno == ENODATA || errno == ENOTSUP || errno == EACCES || errno == EPERM))
+      result = 0;
+  } else if (length == 0) {
+    if (optional_sacl)
+      result = 0;
+    else
+      errno = EINVAL;
+  } else if (optional_sacl && length == (ssize_t)sizeof(empty_sacl) &&
+             !memcmp(acl, empty_sacl, sizeof(empty_sacl))) {
+    /* An empty, unprotected SACL carries no audit rules or flags; avoid an
+     * unnecessary privileged SETATTR on servers that advertise FATTR4_SACL. */
+    result = 0;
+  } else if (fsetxattr(fd, name, acl, (size_t)length, 0) == 0) {
     result = 1;
+  } else if (optional_sacl && (errno == EACCES || errno == EPERM)) {
+    result = 0;
+  }
   saved_errno = errno;
   free(acl);
   errno = saved_errno;
@@ -299,14 +326,14 @@ static int House_copy_linux_acl(const char *filename, int fd, const struct stat 
                                 const struct stat *scratch, bool owner_read)
 {
   bool same_ids = old->st_uid == scratch->st_uid && old->st_gid == scratch->st_gid;
-  int result = House_copy_nfs4_attr(filename, fd, "system.nfs4_dacl", same_ids);
+  int result = House_copy_nfs4_attr(filename, fd, "system.nfs4_dacl", same_ids, FALSE);
   if (result > 0) {
-    if (House_copy_nfs4_attr(filename, fd, "system.nfs4_sacl", same_ids) < 0)
+    if (House_copy_nfs4_attr(filename, fd, "system.nfs4_sacl", same_ids, TRUE) < 0)
       return -1;
     return 1;
   }
   if (result == 0)
-    result = House_copy_nfs4_attr(filename, fd, "system.nfs4_acl", same_ids);
+    result = House_copy_nfs4_attr(filename, fd, "system.nfs4_acl", same_ids, FALSE);
   if (result != 0)
     return result;
   return House_copy_access_acl(filename, fd, old->st_gid != scratch->st_gid, owner_read);
@@ -895,13 +922,15 @@ static int House_open_lock(int parent_fd, bool cleanup)
       dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_SEARCH | flags);
 #endif
     }
+#else
+    const bool search_only = FALSE;
 #endif
     if (dir < 0) {
       errno = House_foreign_lock_errno(errno, TRUE);
       return -1;
     }
     fd = House_open_guard(dir, cleanup);
-    if (fd < 0 && errno == EACCES && House_restore_lock_search(dir) == 0)
+    if (fd < 0 && errno == EACCES && !search_only && House_restore_lock_search(dir) == 0)
       fd = House_open_guard(dir, cleanup);
     saved_errno = errno;
     if (fd >= 0) {
@@ -909,9 +938,9 @@ static int House_open_lock(int parent_fd, bool cleanup)
        * unlink or swap the guard inside it. */
       int result = fstat(dir, &st);
       if (result == 0 && st.st_uid == geteuid() && ((st.st_mode & 0777) != 0700 || cleanup)) {
-#if defined(HOUSE_HAS_PATH_FD) || defined(O_SEARCH)
+#ifdef HOUSE_HAS_PATH_FD
         if (search_only) {
-          /* The guard is valid. Recover read access on its pinned directory. */
+          /* The guard is valid. Recover a regular descriptor on its pinned directory. */
           int accessible = House_open_stage_dir(dir, ".");
           saved_errno = errno;
           close(dir);

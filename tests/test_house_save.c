@@ -61,6 +61,7 @@ static int replace_emptied_lock_on_guard_open;
 static int require_writable_lock, exclusive_access_mode;
 static unsigned int mock_smb_type;
 static int mock_nfs4_version, fail_nfs4_copy, reject_stage_read;
+static int nfs4_sacl_get_errno, nfs4_sacl_set_errno, nfs4_sacl_sets;
 ssize_t __real_getxattr(const char *, const char *, void *, size_t);
 ssize_t __real_fgetxattr(int, const char *, void *, size_t);
 int __real_fsetxattr(int, const char *, const void *, size_t, int);
@@ -84,6 +85,10 @@ static const char *test_nfs4_attr(const char *name)
 ssize_t __wrap_getxattr(const char *path, const char *name, void *value, size_t size)
 {
   const char *mapped = test_nfs4_attr(name);
+  if (mapped && nfs4_sacl_get_errno && !strcmp(name, "system.nfs4_sacl")) {
+    errno = nfs4_sacl_get_errno;
+    return -1;
+  }
   return __real_getxattr(path, mapped ? mapped : name, value, size);
 }
 
@@ -98,6 +103,13 @@ ssize_t __wrap_fgetxattr(int fd, const char *name, void *value, size_t size)
 int __wrap_fsetxattr(int fd, const char *name, const void *value, size_t size, int flags)
 {
   const char *mapped = test_nfs4_attr(name);
+  if (mapped && !strcmp(name, "system.nfs4_sacl")) {
+    ++nfs4_sacl_sets;
+    if (nfs4_sacl_set_errno) {
+      errno = nfs4_sacl_set_errno;
+      return -1;
+    }
+  }
   if (mapped && fail_nfs4_copy && size > 32) {
     errno = EACCES;
     return -1;
@@ -311,6 +323,7 @@ void tearDown(void)
   exclusive_access_mode = -1;
   mock_smb_type = 0;
   mock_nfs4_version = fail_nfs4_copy = reject_stage_read = 0;
+  nfs4_sacl_get_errno = nfs4_sacl_set_errno = nfs4_sacl_sets = 0;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
     char command[] = "destroy 3000";
@@ -1196,6 +1209,19 @@ static void test_restrictive_lock_directory_preserves_guard_and_rejects_foreign_
     TEST_ASSERT_EQUAL_INT(0, rename("snapshot-guard", LOCK_GUARD));
     assert_file("bystander", "operator's copy");
   }
+  /* A 0000 lock directory cannot be inspected or repaired safely; boot must
+   * report EACCES rather than clobbering it with EBADF from fdopendir(O_PATH). */
+  if (geteuid() != 0) {
+    char log[4096];
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0000));
+    boot_and_capture_log(log, sizeof(log));
+    TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &after));
+    TEST_ASSERT_EQUAL_UINT(0000, after.st_mode & 0777);
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0700));
+    TEST_ASSERT_NOT_NULL(strstr(log, "Cannot open"));
+    TEST_ASSERT_NOT_NULL(strstr(log, strerror(EACCES)));
+    TEST_ASSERT_NULL(strstr(log, strerror(EBADF)));
+  }
 }
 #endif
 
@@ -1502,6 +1528,46 @@ static void test_linux_nfs4_access_rules_survive_replacement(void)
     TEST_ASSERT_EQUAL_INT(32 - offset, getxattr(LOCK_GUARD, name, saved, sizeof(saved)));
     TEST_ASSERT_EQUAL_INT(1, saved[7 - offset]);
     TEST_ASSERT_EQUAL_MEMORY("OWNER@", saved + 24 - offset, 6);
+    TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+  }
+
+  /* Unprivileged NFSv4.1 clients may be denied SACL access or receive an empty
+   * unprotected SACL; neither may block replacing a house whose DACL copied. */
+  {
+    const unsigned char empty_sacl[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+    mock_nfs4_version = 41;
+
+    write_file(HOUSE_FILE, "old contents");
+    TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_dacl", dacl, sizeof(dacl), 0));
+    nfs4_sacl_get_errno = EACCES;
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    nfs4_sacl_get_errno = 0;
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    assert_file(HOUSE_FILE, item.name);
+    TEST_ASSERT_EQUAL_INT(sizeof(dacl), getxattr(HOUSE_FILE, "user.tba_dacl", saved, sizeof(saved)));
+    TEST_ASSERT_EQUAL_MEMORY(dacl, saved, sizeof(dacl));
+
+    TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_sacl", empty_sacl, sizeof(empty_sacl), 0));
+    nfs4_sacl_sets = 0;
+    nfs4_sacl_set_errno = EPERM;
+    item.name = "empty sacl update";
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_EQUAL_INT(0, nfs4_sacl_sets);
+    assert_file(HOUSE_FILE, item.name);
+
+    TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_sacl", sacl, sizeof(sacl), 0));
+    item.name = "denied sacl set update";
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    nfs4_sacl_set_errno = 0;
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_EQUAL_INT(1, nfs4_sacl_sets);
+    assert_file(HOUSE_FILE, item.name);
+    TEST_ASSERT_EQUAL_INT(sizeof(dacl), getxattr(HOUSE_FILE, "user.tba_dacl", saved, sizeof(saved)));
+    TEST_ASSERT_EQUAL_MEMORY(dacl, saved, sizeof(dacl));
     TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
   }
 }
