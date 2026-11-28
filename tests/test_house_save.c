@@ -61,14 +61,14 @@ static int boot_before_guard_create, candidate_was_removed;
 static int replace_emptied_lock_on_guard_open;
 static int require_writable_lock, exclusive_access_mode;
 static unsigned int mock_fs_type;
-static int mock_statfs_errno;
+static int mock_statfs_errno, mock_mountinfo_errno;
 static const char *mock_mount_record;
 static int mock_nfs4_version, fail_nfs4_copy, reject_stage_read;
 static int nfs4_acl_read_errno, nfs4_readable_source = -1;
 static const unsigned char *nfs4_mode_acl;
 static size_t nfs4_mode_acl_size;
 static int nfs4_sacl_get_errno, nfs4_sacl_set_errno, nfs4_sacl_sets;
-static int inherit_audit_sacl;
+static int inherit_audit_sacl, inherit_zero_byte_sacl;
 /* Protected SACL recording successful reads by sam@lab. */
 static const unsigned char audit_sacl[] = {
   0,0,0,2, 0,0,0,1,
@@ -85,14 +85,20 @@ FILE *__real_fopen(const char *path, const char *mode);
 
 FILE *__wrap_fopen(const char *path, const char *mode)
 {
-  if (mock_mount_record && !strcmp(path, "/proc/self/mountinfo")) {
-    FILE *file = tmpfile();
-    if (file) {
-      fprintf(file, "7 1 %u:%u / /arbitrary/alias rw - %s\n",
-              major(watched_parent.st_dev), minor(watched_parent.st_dev), mock_mount_record);
-      rewind(file);
+  if (!strcmp(path, "/proc/self/mountinfo")) {
+    if (mock_mountinfo_errno) {
+      errno = mock_mountinfo_errno;
+      return NULL;
     }
-    return file;
+    if (mock_mount_record) {
+      FILE *file = tmpfile();
+      if (file) {
+        fprintf(file, "7 1 %u:%u / /arbitrary/alias rw - %s\n",
+                major(watched_parent.st_dev), minor(watched_parent.st_dev), mock_mount_record);
+        rewind(file);
+      }
+      return file;
+    }
   }
   return __real_fopen(path, mode);
 }
@@ -137,7 +143,7 @@ ssize_t __wrap_fgetxattr(int fd, const char *name, void *value, size_t size)
       memcpy(value, nfs4_mode_acl, nfs4_mode_acl_size);
     return (ssize_t)nfs4_mode_acl_size;
   }
-  if (mapped && !value) /* Even newly created objects have an access ACL. */
+  if (mapped && !value && strcmp(name, "system.nfs4_sacl")) /* Even newly created objects have an access ACL. */
     return 4;
   return __real_fgetxattr(fd, mapped ? mapped : name, value, size);
 }
@@ -311,6 +317,8 @@ int __wrap_openat(int dirfd, const char *name, int flags, ...)
   fd = __real_openat(dirfd, name, flags, mode);
   if (fd >= 0 && inherit_audit_sacl && !strcmp(name, "contents"))
     TEST_ASSERT_EQUAL_INT(0, __real_fsetxattr(fd, "user.tba_sacl", audit_sacl, sizeof(audit_sacl), 0));
+  else if (fd >= 0 && inherit_zero_byte_sacl && !strcmp(name, "contents"))
+    TEST_ASSERT_EQUAL_INT(0, __real_fsetxattr(fd, "user.tba_sacl", "", 0, 0));
   /* Inspect our own descriptor before the saver starts copying permissions. */
   if (watch_create && fd >= 0 && (flags & O_EXCL) && fstat(fd, &file) == 0 &&
       fstat(dirfd, &parent) == 0 && S_ISDIR(parent.st_mode))
@@ -411,7 +419,7 @@ void tearDown(void)
   replace_emptied_lock_on_guard_open = 0;
   exclusive_access_mode = -1;
   mock_fs_type = 0;
-  mock_statfs_errno = 0;
+  mock_statfs_errno = mock_mountinfo_errno = 0;
   mock_mount_record = NULL;
   mock_nfs4_version = fail_nfs4_copy = reject_stage_read = 0;
   nfs4_acl_read_errno = 0;
@@ -421,7 +429,7 @@ void tearDown(void)
     nfs4_readable_source = -1;
   }
   nfs4_sacl_get_errno = nfs4_sacl_set_errno = nfs4_sacl_sets = 0;
-  inherit_audit_sacl = FALSE;
+  inherit_audit_sacl = inherit_zero_byte_sacl = FALSE;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
     char command[] = "destroy 3000";
@@ -1424,7 +1432,7 @@ static void test_boot_leaves_an_interrupted_unlocked_save_untouched(void)
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
-static void test_drvfs_preserves_new_and_existing_houses(void)
+static void test_drvfs_warns_and_allows_houses(void)
 {
   static const struct {
     unsigned int magic;
@@ -1436,45 +1444,85 @@ static void test_drvfs_preserves_new_and_existing_houses(void)
     {0x65735546, "virtiofs drvfsa rw"},
     {0x53464846, "drvfs C: rw"}
   };
-  char messages[1024];
+  char messages[2048];
   TEST_ASSERT_EQUAL_INT(0, stat("house", &watched_parent));
+  windows_rename_rules = TRUE;
   for (size_t i = 0; i < sizeof(mounts) / sizeof(mounts[0]); ++i) {
     mock_fs_type = mounts[i].magic;
     mock_mount_record = mounts[i].record;
     SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
     House_crashsave(3000);
-    TEST_ASSERT_FALSE(exists(HOUSE_FILE));
-    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    assert_file(HOUSE_FILE, item.name);
     write_file(HOUSE_FILE, "old house");
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
     House_crashsave(3000);
-    assert_file(HOUSE_FILE, "old house");
-    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    assert_file(HOUSE_FILE, item.name);
     boot_and_capture_log(messages, sizeof(messages));
     TEST_ASSERT_NOT_NULL(strstr(messages, "Windows ACLs"));
-    TEST_ASSERT_FALSE(exists(LOCK_PATH));
-    TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+    TEST_ASSERT_TRUE(exists(LOCK_GUARD));
     TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+    TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_GUARD));
+    TEST_ASSERT_EQUAL_INT(0, rmdir(LOCK_PATH));
   }
+  windows_rename_rules = FALSE;
 
+  /* statfs failure skips locked cleanup without blocking saves. */
   mock_statfs_errno = EIO;
   boot_and_capture_log(messages, sizeof(messages));
-  TEST_ASSERT_NOT_NULL(strstr(messages, "Cannot identify the house filesystem"));
+  TEST_ASSERT_NOT_NULL(strstr(messages, "Cannot lock"));
   TEST_ASSERT_FALSE(exists(LOCK_PATH));
-  mock_statfs_errno = 0;
-
-  /* A regular Plan 9 export has the same magic as the Windows transport. */
-  mock_fs_type = 0x01021997;
-  mock_mount_record = "9p ordinary rw,aname=drvfs-similar,trans=virtio";
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
   House_crashsave(3000);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
   assert_file(HOUSE_FILE, item.name);
-  TEST_ASSERT_TRUE(exists(LOCK_GUARD));
+  TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+  mock_statfs_errno = 0;
+
+  /* A regular Plan 9 export, non-UUID virtiofs, and FUSE mount with an empty
+   * source name must not trigger DrvFS warnings. */
+  {
+    static const struct {
+      unsigned int magic;
+      const char *record;
+    } benign[] = {
+      {0x01021997, "9p ordinary rw,aname=drvfs-similar,trans=virtio"},
+      {0x65735546, "virtiofs aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa rw"},
+      {0x65735546, "fuse.sshfs  rw,nosuid,nodev"}
+    };
+    for (size_t i = 0; i < sizeof(benign) / sizeof(benign[0]); ++i) {
+      mock_fs_type = benign[i].magic;
+      mock_mount_record = benign[i].record;
+      boot_and_capture_log(messages, sizeof(messages));
+      TEST_ASSERT_NULL(strstr(messages, "Windows ACLs"));
+      TEST_ASSERT_NULL(strstr(messages, "Cannot identify"));
+      SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+      House_crashsave(3000);
+      TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      assert_file(HOUSE_FILE, item.name);
+      TEST_ASSERT_TRUE(exists(LOCK_GUARD));
+      TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+    }
+  }
+
+  /* Missing /run/wsl/virtiofs/<uuid> reports ENOENT on WSL2 (not ENODEV), and
+   * missing /proc/self/mountinfo on FUSE still lets houses save. */
   mock_fs_type = 0x65735546;
-  mock_mount_record = "virtiofs aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa rw";
+  mock_mount_record = "virtiofs 12345678-1234-1234-1234-123456789abc rw";
+  boot_and_capture_log(messages, sizeof(messages));
+  TEST_ASSERT_NULL(strstr(messages, strerror(ENODEV)));
+  if (strstr(messages, "Cannot identify"))
+    TEST_ASSERT_NOT_NULL(strstr(messages, strerror(ENOENT)));
+
+  mock_mount_record = NULL;
+  mock_mountinfo_errno = ENOENT;
+  boot_and_capture_log(messages, sizeof(messages));
+  TEST_ASSERT_NULL(strstr(messages, strerror(ENODEV)));
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
   House_crashsave(3000);
   TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  assert_file(HOUSE_FILE, item.name);
 }
 
 static void test_smb_saves_without_inode_based_cleanup(void)
@@ -1748,13 +1796,39 @@ static void test_linux_nfs4_audit_policy_survives_replacement(void)
   TEST_ASSERT_EQUAL_INT(0, nfs4_sacl_sets);
   assert_file(HOUSE_FILE, item.name);
 
+  /* A zero-byte stage SACL also matches an empty unprotected source SACL. */
+  TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_sacl", empty_sacl, sizeof(empty_sacl), 0));
+  inherit_zero_byte_sacl = TRUE;
+  item.name = "empty sacl on zero-byte stage";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  inherit_zero_byte_sacl = FALSE;
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, nfs4_sacl_sets);
+  assert_file(HOUSE_FILE, item.name);
+
+  /* A protected zero-ACE SACL does not wedge unprivileged saves when the
+   * stage carries no audit rules either. */
+  {
+    const unsigned char protected_empty_sacl[8] = {0, 0, 0, 2, 0, 0, 0, 0};
+    TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_sacl",
+                                      protected_empty_sacl, sizeof(protected_empty_sacl), 0));
+    item.name = "protected empty sacl update";
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_EQUAL_INT(1, nfs4_sacl_sets);
+    assert_file(HOUSE_FILE, item.name);
+    nfs4_sacl_sets = 0;
+  }
+
   TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_sacl", audit_sacl, sizeof(audit_sacl), 0));
   item.name = "updated inventory with audit rule";
   SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
   House_crashsave(3000);
   TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
   TEST_ASSERT_EQUAL_INT(1, nfs4_sacl_sets);
-  assert_file(HOUSE_FILE, "empty sacl update");
+  assert_file(HOUSE_FILE, "protected empty sacl update");
   TEST_ASSERT_EQUAL_INT(sizeof(audit_sacl), getxattr(HOUSE_FILE, "user.tba_sacl", saved, sizeof(saved)));
   TEST_ASSERT_EQUAL_MEMORY(audit_sacl, saved, sizeof(audit_sacl));
 
@@ -1864,7 +1938,8 @@ static void test_nfs4_house_of_another_account_still_saves(void)
     TEST_ASSERT_EQUAL_MEMORY(named + offset, saved, sizeof(named) - offset);
 
     /* The modeled server produces this ACL on chmod. An extra append-only
-     * grant to EVERYONE@ is invisible in mode and prevents that conversion. */
+     * grant to EVERYONE@ is invisible in mode, so fall back to the private
+     * owner-only ACL rather than widening to 0644 or failing permanently. */
     memcpy(acl, plain, sizeof(plain));
     nfs4_mode_acl = acl + offset;
     nfs4_mode_acl_size = sizeof(plain) - offset;
@@ -1873,20 +1948,60 @@ static void test_nfs4_house_of_another_account_still_saves(void)
     TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, name, saved + offset, sizeof(plain) - offset, 0));
     TEST_ASSERT_EQUAL_INT(0, chown(HOUSE_FILE, (uid_t)-1, old_group));
     TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0644));
-    TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &before));
-    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
-    House_crashsave(3000);
-    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-    TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
-    TEST_ASSERT_TRUE(before.st_ino == after.st_ino);
-    TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, name, nfs4_mode_acl, nfs4_mode_acl_size, 0));
-    House_crashsave(3000);
-    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-    TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
-    TEST_ASSERT_EQUAL_UINT(0644, after.st_mode & 0777);
+    {
+      char messages[1024];
+      start_log_capture();
+      SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+      House_crashsave(3000);
+      end_log_capture(messages, sizeof(messages));
+      TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      TEST_ASSERT_NOT_NULL(strstr(messages, "so only the game can read the new save"));
+      TEST_ASSERT_EQUAL_INT(sizeof(owner_only) - offset, getxattr(HOUSE_FILE, name, saved, sizeof(saved)));
+      TEST_ASSERT_EQUAL_MEMORY(owner_only + offset, saved, sizeof(owner_only) - offset);
+      TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
+      TEST_ASSERT_EQUAL_UINT(0600, after.st_mode & 0777);
+    }
+
+    /* A matching mode-only ACL keeps its mode bits without widening 0244 to 0644. */
+    {
+      FILE *readable_plain = tmpfile();
+      TEST_ASSERT_NOT_NULL(readable_plain);
+      nfs4_readable_source = dup(fileno(readable_plain));
+      TEST_ASSERT_EQUAL_INT(0, fclose(readable_plain));
+      TEST_ASSERT_TRUE(nfs4_readable_source >= 0);
+      TEST_ASSERT_EQUAL_INT(0, fsetxattr(nfs4_readable_source, name, nfs4_mode_acl, nfs4_mode_acl_size, 0));
+      TEST_ASSERT_EQUAL_INT(0, chown(HOUSE_FILE, (uid_t)-1, old_group));
+      TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0244));
+      SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+      House_crashsave(3000);
+      TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
+      TEST_ASSERT_EQUAL_UINT(0244, after.st_mode & 0777);
+      TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0644));
+      close(nfs4_readable_source);
+      nfs4_readable_source = -1;
+    }
+
+    /* A combined v4.0 ACL carrying an audit ACE must not be silently reduced. */
+    if (versions[v] == 4) {
+      static const unsigned char combined_audit[] = {
+        0,0,0,2,
+        0,0,0,2, 0,0,0,16, 0,0,0,1, 0,0,0,6, 'G','R','O','U','P','@',0,0,
+        0,0,0,0, 0,0,0,0, 0,0x1f,0x01,0x9f, 0,0,0,6, 'O','W','N','E','R','@',0,0
+      };
+      TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, name, combined_audit, sizeof(combined_audit), 0));
+      TEST_ASSERT_EQUAL_INT(0, chown(HOUSE_FILE, (uid_t)-1, old_group));
+      TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &before));
+      SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+      House_crashsave(3000);
+      TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
+      TEST_ASSERT_TRUE(before.st_ino == after.st_ino);
+    }
 
     /* A named rule and a rebound GROUP@ use the private fallback. NFSv4
-     * can grant read to the named game user without setting the owner bit. */
+     * can grant read to the named game user without setting the owner bit.
+     * The narrowed-ACL SYSERR must only fire once the replacement installs. */
     memcpy(saved, named, sizeof(named));
     memcpy(saved + 48, "GROUP@", 6);
     TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, name, saved + offset, sizeof(named) - offset, 0));
@@ -1902,14 +2017,24 @@ static void test_nfs4_house_of_another_account_still_saves(void)
     TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0200));
     TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &before));
     reject_stage_read = TRUE;
-    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
-    House_crashsave(3000);
-    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
-    TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
-    TEST_ASSERT_TRUE(before.st_ino == after.st_ino);
-    reject_stage_read = FALSE;
-    House_crashsave(3000);
-    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    {
+      char messages[1024];
+      start_log_capture();
+      SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+      House_crashsave(3000);
+      end_log_capture(messages, sizeof(messages));
+      TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      TEST_ASSERT_NULL(strstr(messages, "so only the game can read the new save"));
+      TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &after));
+      TEST_ASSERT_TRUE(before.st_ino == after.st_ino);
+      reject_stage_read = FALSE;
+      start_log_capture();
+      House_crashsave(3000);
+      end_log_capture(messages, sizeof(messages));
+      TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      TEST_ASSERT_NOT_NULL(strstr(messages, "belonged to another group"));
+      TEST_ASSERT_NOT_NULL(strstr(messages, "so only the game can read the new save"));
+    }
     assert_file(HOUSE_FILE, item.name);
     TEST_ASSERT_EQUAL_INT(sizeof(owner_only) - offset, getxattr(HOUSE_FILE, name, saved, sizeof(saved)));
     TEST_ASSERT_EQUAL_MEMORY(owner_only + offset, saved, sizeof(owner_only) - offset);
@@ -2145,7 +2270,7 @@ int main(void)
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
   RUN_TEST(test_smb_saves_without_inode_based_cleanup);
-  RUN_TEST(test_drvfs_preserves_new_and_existing_houses);
+  RUN_TEST(test_drvfs_warns_and_allows_houses);
   RUN_TEST(test_boot_explains_cleanup_is_off_on_smb);
   RUN_TEST(test_concurrent_replacement_of_emptied_lock_does_not_fail_with_einval);
   RUN_TEST(test_save_uses_winning_guard_after_its_initializer_was_removed);

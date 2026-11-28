@@ -365,6 +365,17 @@ static int House_fd_acl_matches(int fd, const char *name, const unsigned char *a
   return result;
 }
 
+/* Return TRUE if fd has no SACL or a zero-ACE SACL (i.e. no audit rules). */
+static bool House_fd_has_no_sacl_rules(int fd, const char *name)
+{
+  unsigned char staged[8];
+  ssize_t size = fgetxattr(fd, name, staged, sizeof(staged));
+
+  if (size < 0)
+    return errno == ENODATA || errno == ENOTSUP;
+  return size == 0 || (size == (ssize_t)sizeof(staged) && House_be32(staged + 4) == 0);
+}
+
 /* A server can restrict access to the separate NFSv4.1 audit policy. Once
  * the source policy is known, preserve it or keep the old house for retry. */
 static int House_copy_nfs4_sacl(const char *filename, int fd, int changed)
@@ -374,6 +385,7 @@ static int House_copy_nfs4_sacl(const char *filename, int fd, int changed)
   size_t size;
   unsigned char *acl = House_read_xattr(filename, name, &size);
   int matches, result = -1, saved_errno;
+  bool is_empty_unprotected, is_zero_ace;
 
   if (!acl)
     return errno == ENODATA || errno == ENOTSUP || errno == EACCES || errno == EPERM ? 0 : -1;
@@ -390,13 +402,28 @@ static int House_copy_nfs4_sacl(const char *filename, int fd, int changed)
       goto done;
     }
   }
-  /* An empty, unprotected SACL also matches a stage without an audit ACL. */
+  is_empty_unprotected = size == sizeof(empty_sacl) && !memcmp(acl, empty_sacl, sizeof(empty_sacl));
+  is_zero_ace = size == sizeof(empty_sacl) && House_be32(acl + 4) == 0;
+  /* An empty, unprotected SACL also matches a stage with no SACL. */
   matches = House_fd_acl_matches(fd, name, acl, size);
-  if (matches == 1 || (matches < 0 && errno == ENODATA && size == sizeof(empty_sacl) &&
-                       !memcmp(acl, empty_sacl, sizeof(empty_sacl))))
+  if (matches == 1) {
     result = 0;
-  else
+  } else if (is_empty_unprotected &&
+             ((matches < 0 && (errno == ENODATA || errno == ENOTSUP)) ||
+              (matches == 0 && fgetxattr(fd, name, (unsigned char[1]){0}, 1) == 0))) {
+    result = 0;
+  } else {
     result = fsetxattr(fd, name, acl, size, 0);
+    /* An unprivileged account cannot write FATTR4_SACL; if neither the source
+     * nor the stage carries any audit ACEs, do not block saving over it. */
+    if (result < 0 && (errno == EPERM || errno == EACCES) && is_zero_ace) {
+      int set_errno = errno;
+      if (House_fd_has_no_sacl_rules(fd, name))
+        result = 0;
+      else
+        errno = set_errno;
+    }
+  }
 done:
   saved_errno = errno;
   free(acl);
@@ -408,7 +435,9 @@ static int House_set_nfs4_owner_acl(int fd, const char *name, mode_t mode);
 
 static int House_copy_rebound_acl(const char *filename, int fd, const char *name,
                                   const unsigned char *acl, size_t size, int principals,
-                                  mode_t original_mode, mode_t mode)
+                                  bool owner_changed, bool group_changed,
+                                  mode_t original_mode, mode_t mode,
+                                  bool *verify_read, int *reduced_acl)
 {
   int matches;
 
@@ -425,6 +454,22 @@ static int House_copy_rebound_acl(const char *filename, int fd, const char *name
   matches = House_fd_acl_matches(fd, name, acl, size);
   if (matches < 0)
     return -1;
+  if (matches) {
+    bool lost_group_read = group_changed && (original_mode & S_IRGRP) && !(mode & S_IRGRP);
+    if ((owner_changed || lost_group_read) && !(mode & S_IRUSR)) {
+      int source = openat(AT_FDCWD, filename, O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);
+      if (source < 0)
+        return -1;
+      close(source);
+      mode |= S_IRUSR;
+    }
+    if (owner_changed || lost_group_read)
+      *verify_read = TRUE;
+    return original_mode == mode ? 0 : fchmod(fd, mode);
+  }
+  /* The ACL does not match a plain mode (named entries, extra rights, or
+   * flags/ACEs such as ACL4_PROTECTED). Keep this save private to the game so
+   * no principal gains access the old ACL denied, while keeping it readable. */
   if (!(mode & S_IRUSR)) {
     int source = openat(AT_FDCWD, filename, O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);
     if (source < 0)
@@ -432,23 +477,16 @@ static int House_copy_rebound_acl(const char *filename, int fd, const char *name
     close(source);
     mode |= S_IRUSR; /* The service could read via a group or named ACE. */
   }
-  if (matches)
-    return original_mode == mode ? 0 : fchmod(fd, mode);
-  if (!(principals & HOUSE_ACL_NAMED)) {
-    errno = EOPNOTSUPP;
-    return -1;
-  }
-  /* The established fallback for named access rules keeps this save private.
-   * A plain chmod could leave other principals' non-mode rights in place. */
+  *verify_read = TRUE;
   if (fchmod(fd, mode & 0700) < 0 || House_set_nfs4_owner_acl(fd, name, mode & 0700) < 0)
     return -1;
-  log("SYSERR: %s belonged to another account and its NFSv4 ACL cannot be carried over, "
-      "so only the game can read the new save.  Restore any other access it needs by hand.", filename);
+  *reduced_acl = owner_changed ? 1 : 2;
   return 0;
 }
 
 static int House_copy_linux_acl(const char *filename, int fd, const struct stat *old,
-                                const struct stat *scratch, mode_t mode, bool *verify_read)
+                                const struct stat *scratch, mode_t mode,
+                                bool *verify_read, int *reduced_acl)
 {
   bool owner_changed = old->st_uid != scratch->st_uid, group_changed = old->st_gid != scratch->st_gid;
   int changed = (owner_changed ? HOUSE_ACL_OWNER : 0) | (group_changed ? HOUSE_ACL_GROUP : 0);
@@ -475,8 +513,9 @@ static int House_copy_linux_acl(const char *filename, int fd, const struct stat 
     errno = EINVAL;
     result = -1;
   } else if (principals & changed) {
-    *verify_read = TRUE;
-    result = House_copy_rebound_acl(filename, fd, name, acl, size, principals, old->st_mode & 0777, mode);
+    result = House_copy_rebound_acl(filename, fd, name, acl, size, principals,
+                                    owner_changed, group_changed,
+                                    old->st_mode & 0777, mode, verify_read, reduced_acl);
   } else
     result = fsetxattr(fd, name, acl, size, 0);
 
@@ -630,11 +669,12 @@ done:
  * still save.  Where the group could not be kept, the group bits are cut
  * back to what everyone else had, so the game's own group gets nothing the
  * old file did not give to all. */
-static int House_copy_permissions(const char *filename, int fd, bool *verify_read)
+static int House_copy_permissions(const char *filename, int fd, bool *verify_read, int *reduced_acl)
 {
   struct stat old, scratch;
   mode_t mode;
 
+  *reduced_acl = 0;
   /* A new house: the file was created just as fopen() creates one. */
   if (stat(filename, &old) < 0)
     return errno == ENOENT ? 0 : -1;
@@ -679,7 +719,7 @@ static int House_copy_permissions(const char *filename, int fd, bool *verify_rea
   }
 #elif defined(__linux__)
   {
-    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, mode, verify_read);
+    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, mode, verify_read, reduced_acl);
     if (acl_result != 0)
       return acl_result < 0 ? -1 : 0; /* chmod after setting a rich ACL can rewrite its ACEs. */
   }
@@ -864,6 +904,7 @@ struct house_save {
 #if defined(__linux__)
   int volume_fd;
 #endif
+  int reduced_acl;
   bool owns_dir;
 };
 
@@ -1213,6 +1254,14 @@ reopen:
 }
 
 #if defined(__linux__)
+static bool House_is_wsl_kernel(void)
+{
+  struct utsname os;
+  if (uname(&os) < 0)
+    return TRUE;
+  return strcasestr(os.release, "microsoft") != NULL || strcasestr(os.release, "WSL") != NULL;
+}
+
 static bool House_is_uuid_tag(const char *tag)
 {
   if (strlen(tag) != 36)
@@ -1237,11 +1286,19 @@ static int House_is_drvfs(int fd, unsigned int magic)
 
   if (magic != 0x53464846 && magic != 0x01021997 && magic != 0x65735546) /* WSL1, 9p, FUSE */
     return 0;
-  if (fstat(fd, &st) < 0 || !(mounts = fopen("/proc/self/mountinfo", "r")))
+  if (fstat(fd, &st) < 0)
     return -1;
+  if (!(mounts = fopen("/proc/self/mountinfo", "r"))) {
+    saved_errno = errno;
+    /* A non-WSL chroot or container without /proc on FUSE/9p is not DrvFS. */
+    if (magic != 0x53464846 && !House_is_wsl_kernel())
+      return 0;
+    errno = saved_errno;
+    return -1;
+  }
   for (;;) {
     unsigned int dev_major, dev_minor;
-    char *fields, *cursor, *source, *options, *type;
+    char *fields, *newline, *source, *options, *type;
     if (getline(&line, &size, mounts) < 0) {
       if (!feof(mounts))
         saved_errno = errno;
@@ -1251,10 +1308,15 @@ static int House_is_drvfs(int fd, unsigned int magic)
         dev_major != major(st.st_dev) || dev_minor != minor(st.st_dev) ||
         !(fields = strstr(line, " - ")))
       continue;
-    type = strtok_r(fields + 3, " \n", &cursor);
-    source = strtok_r(NULL, " \n", &cursor);
-    options = strtok_r(NULL, " \n", &cursor);
-    if (!type || !source || !options) {
+    fields += 3;
+    if ((newline = strchr(fields, '\n')) != NULL)
+      *newline = '\0';
+    /* Use strsep so an empty mount source (two adjacent spaces) does not
+     * shift superblock options into source and leave options NULL. */
+    type = strsep(&fields, " ");
+    source = strsep(&fields, " ");
+    options = strsep(&fields, " ");
+    if (!type || !*type || !source || !options) {
       saved_errno = EINVAL;
       break;
     }
@@ -1283,6 +1345,7 @@ static int House_is_drvfs(int fd, unsigned int magic)
             saved_errno = errno;
             result = -1;
           } else if (strcasestr(os.release, "microsoft-standard") || strcasestr(os.release, "WSL2")) {
+            saved_errno = ENOENT;
             result = -1;
           }
         } else {
@@ -1295,13 +1358,35 @@ static int House_is_drvfs(int fd, unsigned int magic)
   }
   free(line);
   fclose(mounts);
+  if (result < 0 && saved_errno == ENODEV && magic != 0x53464846 && !House_is_wsl_kernel())
+    return 0;
   if (result < 0)
     errno = saved_errno;
   return result;
 }
+
+static void House_warn_drvfs(int parent_fd, int drvfs, int err, bool cleanup)
+{
+  static dev_t warned_dev;
+  static bool has_warned_dev;
+  struct stat st;
+
+  if (fstat(parent_fd, &st) == 0) {
+    if (!cleanup && has_warned_dev && warned_dev == st.st_dev)
+      return;
+    warned_dev = st.st_dev;
+    has_warned_dev = TRUE;
+  }
+  if (drvfs < 0)
+    log("SYSERR: Cannot identify whether the house filesystem is a WSL Windows drive: %s.",
+        strerror(err));
+  else
+    log("House directory is on a WSL Windows drive; Windows ACLs cannot be preserved by the "
+        "Linux build. Use a Linux filesystem or the native Windows build if Windows ACLs matter.");
+}
 #endif
 
-static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAGE_PREFIX_SIZE], bool *can_stage)
+static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAGE_PREFIX_SIZE])
 {
   struct stat guard, parent;
   int saved_errno, fd;
@@ -1311,33 +1396,16 @@ static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAG
 #endif
 
   house_lock_unsupported = NULL;
-  *can_stage = TRUE;
 #if defined(__linux__) || defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
   /* SMB clients can assign inode numbers independently. A cleaner on a
    * different mount could otherwise match a live writer's stage. */
-  if (fstatfs(parent_fd, &fs) < 0) {
-#if defined(__linux__)
-    saved_errno = errno;
-    log("SYSERR: Cannot identify the house filesystem before staging or cleanup: %s.", strerror(saved_errno));
-    *can_stage = FALSE;
-    errno = saved_errno;
-#endif
+  if (fstatfs(parent_fd, &fs) < 0)
     return -1;
-  }
 #if defined(__linux__)
   unsigned int type = (unsigned int)fs.f_type;
   int drvfs = House_is_drvfs(parent_fd, type);
-  if (drvfs != 0) {
-    saved_errno = drvfs < 0 ? errno : EOPNOTSUPP;
-    if (drvfs < 0)
-      log("SYSERR: Cannot identify the house filesystem to check Windows ACL support: %s.", strerror(saved_errno));
-    else
-      log("SYSERR: House saves on WSL Windows drives cannot preserve Windows ACLs. "
-          "Use a Linux filesystem for house saves or run the native Windows build.");
-    *can_stage = FALSE;
-    errno = saved_errno;
-    return -1;
-  }
+  if (drvfs != 0)
+    House_warn_drvfs(parent_fd, drvfs, errno, cleanup);
   smb = type == 0x517b || type == 0xff534d42 || type == 0xfe534d42; /* SMB, CIFS, SMB2 */
 #else
   smb = !strcmp(fs.f_fstypename, "smbfs");
@@ -1446,7 +1514,7 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
   char *slash, prefix[HOUSE_STAGE_PREFIX_SIZE];
   const char *parent_path = ".";
   struct stat st;
-  bool replacing, verify_read = FALSE, can_stage;
+  bool replacing, verify_read = FALSE;
   int access = O_RDONLY;
   int fd = -1, saved_errno, resolved;
   FILE *fp;
@@ -1455,6 +1523,7 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
 #if defined(__linux__)
   save->volume_fd = -1;
 #endif
+  save->reduced_acl = 0;
   resolved = House_resolve_symlink(filename, save->dest);
   if (resolved < 0)
     return NULL;
@@ -1503,14 +1572,12 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
    * never touches.  Waiting for it would let whoever holds it stop every
    * house save; going ahead costs only the automatic cleanup of this one
    * stage should the game crash before it is renamed into place. */
-  save->lock_fd = House_lock_stages(save->parent_fd, FALSE, prefix, &can_stage);
-  if (!can_stage)
-    goto failed;
+  save->lock_fd = House_lock_stages(save->parent_fd, FALSE, prefix);
   replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
   if (!replacing && errno != ENOENT)
     goto failed;
   fd = House_create_scratch(save, replacing, save->lock_fd >= 0 ? prefix : HOUSE_UNLOCKED_PREFIX);
-  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd, &verify_read) < 0))
+  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd, &verify_read, &save->reduced_acl) < 0))
     goto failed;
   if (verify_read) {
     /* Use the same effective credentials and access check as the next boot. */
@@ -1553,6 +1620,10 @@ static int House_install_save(struct house_save *save)
   if (renameat(save->stage_fd, save->scratch, save->parent_fd, save->leaf) < 0)
     return FALSE;
   save->scratch = NULL;
+  if (save->reduced_acl)
+    log("SYSERR: %s belonged to another %s and its NFSv4 ACL cannot be carried over, "
+        "so only the game can read the new save.  Restore any other access it needs by hand.",
+        save->dest, save->reduced_acl == 1 ? "account" : "group");
   House_remove_stage(save);
   /* The file data is synced. The new directory entry must be durable too. */
 #if defined(__linux__)
@@ -1662,7 +1733,7 @@ static void House_remove_stale_saves(void)
   struct stat st;
   char prefix[HOUSE_STAGE_PREFIX_SIZE];
   const char *inner, *what;
-  bool lock_setup, can_stage;
+  bool lock_setup;
   int dir_fd, stage_fd, lock_fd;
 
   if (!(dir = opendir(LIB_HOUSE))) {
@@ -1671,11 +1742,7 @@ static void House_remove_stale_saves(void)
     return;
   }
   dir_fd = dirfd(dir);
-  lock_fd = House_lock_stages(dir_fd, TRUE, prefix, &can_stage);
-  if (!can_stage) {
-    closedir(dir);
-    return;
-  }
+  lock_fd = House_lock_stages(dir_fd, TRUE, prefix);
   if (lock_fd < 0) {
     int lock_errno = errno;
     /* Without a lock to open, the failure was in making one. */
