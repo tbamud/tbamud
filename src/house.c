@@ -630,6 +630,8 @@ static void House_discard_save(struct house_save *save)
 #define HOUSE_LOCK_INIT_PREFIX HOUSE_STAGE_LOCK ".init-"
 #define HOUSE_STAGE_PREFIX ".tba-house-save-"
 #define HOUSE_STAGE_PREFIX_SIZE (sizeof(HOUSE_STAGE_PREFIX "g-") + 2 * sizeof(uintmax_t))
+/* Why House_lock_stages() last declined to coordinate on purpose, or NULL. */
+static const char *house_lock_unsupported;
 static int House_open_stage_dir(int parent_fd, const char *name);
 
 #if defined(O_PATH) && (defined(__linux__) || (defined(__FreeBSD__) && defined(AT_EMPTY_PATH)))
@@ -860,6 +862,10 @@ static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAG
 #if defined(__linux__) || defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
   struct statfs fs;
   bool smb;
+#endif
+
+  house_lock_unsupported = NULL;
+#if defined(__linux__) || defined(__FreeBSD__) || (defined(__APPLE__) && defined(__MACH__))
   /* SMB clients can assign inode numbers independently. A cleaner on a
    * different mount could otherwise match a live writer's stage. */
   if (fstatfs(parent_fd, &fs) < 0)
@@ -871,6 +877,7 @@ static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAG
   smb = !strcmp(fs.f_fstypename, "smbfs");
 #endif
   if (smb) {
+    house_lock_unsupported = "it is on an SMB mount";
     errno = EOPNOTSUPP;
     return -1;
   }
@@ -893,6 +900,7 @@ static int House_lock_stages(int parent_fd, bool cleanup, char prefix[HOUSE_STAG
    * Restrict the inode namespace to the stage filesystem so the same names
    * also work across clients that assign it different device numbers. */
   if (guard.st_dev != parent.st_dev) {
+    house_lock_unsupported = "its lock is on another filesystem";
     errno = EXDEV;
     goto failed;
   }
@@ -1076,6 +1084,24 @@ static bool House_is_stage_name(const char *name, const char *prefix)
   return !strcmp(canonical, name);
 }
 
+/* A stage named for a guard other than the one in own: the guard was replaced
+ * after it was made.  Its writer may still be running, so it is only reported. */
+static bool House_is_other_guard_stage(const char *name, const char *own)
+{
+  const size_t length = sizeof(HOUSE_STAGE_PREFIX "g") - 1;
+  char tag[HOUSE_STAGE_PREFIX_SIZE], *end;
+  uintmax_t inode;
+
+  if (strncmp(name, HOUSE_STAGE_PREFIX "g", length))
+    return FALSE;
+  errno = 0;
+  inode = strtoumax(name + length, &end, 16);
+  if (errno == ERANGE || end == name + length || *end != '-')
+    return FALSE;
+  snprintf(tag, sizeof(tag), HOUSE_STAGE_PREFIX "g%" PRIxMAX "-", inode);
+  return strcmp(tag, own) && House_is_stage_name(name, tag);
+}
+
 /* Boot clears interrupted saves in LIB_HOUSE only while holding their guard
  * exclusively. An untagged stage or one from another guard may still have a
  * live writer. A symlink target outside LIB_HOUSE is outside this scan.
@@ -1100,7 +1126,11 @@ static void House_remove_stale_saves(void)
   dir_fd = dirfd(dir);
   lock_fd = House_lock_stages(dir_fd, TRUE, prefix);
   if (lock_fd < 0) {
-    if (errno == EACCES)
+    if (house_lock_unsupported)
+      log("Unfinished house saves in %s are not cleared at boot: %s.  House saves still work; "
+          "after a crash, remove any %s.tba-house-unlocked-* while no game is running.",
+          LIB_HOUSE, house_lock_unsupported, LIB_HOUSE);
+    else if (errno == EACCES)
       log("SYSERR: Cannot open %s%s: %s. Unfinished house saves remain. Stop all games "
           "sharing this directory before repairing the lock's ownership or permissions.",
           LIB_HOUSE, HOUSE_STAGE_LOCK, strerror(errno));
@@ -1122,8 +1152,13 @@ static void House_remove_stale_saves(void)
         LIB_HOUSE, HOUSE_STAGE_LOCK);
   while ((entry = readdir(dir)) != NULL) {
     lock_setup = House_is_stage_name(entry->d_name, HOUSE_LOCK_INIT_PREFIX);
-    if (!lock_setup && !House_is_stage_name(entry->d_name, prefix))
+    if (!lock_setup && !House_is_stage_name(entry->d_name, prefix)) {
+      if (House_is_other_guard_stage(entry->d_name, prefix))
+        log("SYSERR: %s%s was left by a house save under an earlier lock, so it is not cleared "
+            "automatically.  Remove it if no other game is using %s.",
+            LIB_HOUSE, entry->d_name, LIB_HOUSE);
       continue;
+    }
     inner = lock_setup ? HOUSE_LOCK_GUARD : "contents";
     what = lock_setup ? "a house save lock setup" : "a house save";
     if (fstatat(dir_fd, entry->d_name, &st, AT_SYMLINK_NOFOLLOW) < 0)

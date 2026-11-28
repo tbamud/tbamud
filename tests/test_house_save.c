@@ -584,6 +584,21 @@ static void current_stage_prefix(char *prefix, size_t size)
   TEST_ASSERT_TRUE(length > 0 && (size_t)length < size);
 }
 
+/* Run House_boot() and keep what it logged. */
+static void boot_and_capture_log(char *out, size_t size)
+{
+  FILE *saved = logfile, *capture = tmpfile();
+  size_t length;
+  TEST_ASSERT_NOT_NULL(capture);
+  logfile = capture;
+  House_boot();
+  logfile = saved;
+  rewind(capture);
+  length = fread(out, 1, size - 1, capture);
+  out[length] = '\0';
+  fclose(capture);
+}
+
 /* The child dies part-way through writing the house, and its stage stays. */
 static pid_t crash_in_the_middle_of_a_save(void)
 {
@@ -705,6 +720,37 @@ static void test_replacing_the_guard_preserves_the_previous_writers_stage(void)
   assert_file(abandoned.gl_pathv[0], "");
   TEST_ASSERT_EQUAL_INT(0, unlink(abandoned.gl_pathv[0]));
   globfree(&abandoned);
+}
+
+/* A stage named for a guard that has since been replaced is never cleared
+ * automatically, so boot names it for the operator. */
+static void test_boot_reports_a_stage_left_under_an_earlier_guard(void)
+{
+  char prefix[64], pattern[128], log[4096], contents[256];
+  glob_t abandoned;
+  long child;
+  write_file(HOUSE_FILE, "old contents");
+  child = (long)crash_in_the_middle_of_a_save();
+  current_stage_prefix(prefix, sizeof(prefix));
+  snprintf(pattern, sizeof(pattern), "%s%ld-*", prefix, child);
+  TEST_ASSERT_EQUAL_INT(0, glob(pattern, 0, NULL, &abandoned));
+  TEST_ASSERT_EQUAL_UINT(1, abandoned.gl_pathc);
+  /* Keep the old guard's inode in use so the new guard gets another number. */
+  TEST_ASSERT_EQUAL_INT(0, link(LOCK_GUARD, "snapshot-guard"));
+  TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_GUARD));
+
+  boot_and_capture_log(log, sizeof(log));
+  TEST_ASSERT_TRUE(exists(abandoned.gl_pathv[0]));
+  TEST_ASSERT_NOT_NULL(strstr(log, abandoned.gl_pathv[0]));
+  TEST_ASSERT_NOT_NULL(strstr(log, "under an earlier lock"));
+
+  snprintf(contents, sizeof(contents), "%s/contents", abandoned.gl_pathv[0]);
+  TEST_ASSERT_EQUAL_INT(0, unlink(contents));
+  TEST_ASSERT_EQUAL_INT(0, rmdir(abandoned.gl_pathv[0]));
+  globfree(&abandoned);
+  boot_and_capture_log(log, sizeof(log));
+  TEST_ASSERT_NULL(strstr(log, "under an earlier lock"));
+  assert_file(HOUSE_FILE, "old contents");
 }
 
 /* A second name for the guard -- a cp -al snapshot of lib/, say -- leaves the
@@ -1107,6 +1153,18 @@ static void test_smb_saves_without_inode_based_cleanup(void)
     TEST_ASSERT_EQUAL_INT(0, count_stages());
   }
 }
+
+/* On SMB, boot says cleanup is off and why, rather than reporting a failure. */
+static void test_boot_explains_cleanup_is_off_on_smb(void)
+{
+  char log[4096];
+  TEST_ASSERT_EQUAL_INT(0, stat("house", &watched_parent));
+  mock_smb_type = SMB_SUPER_MAGIC;
+  boot_and_capture_log(log, sizeof(log));
+  mock_smb_type = 0;
+  TEST_ASSERT_NOT_NULL(strstr(log, "it is on an SMB mount"));
+  TEST_ASSERT_NULL(strstr(log, "Cannot lock"));
+}
 #endif
 
 /* Boot clears a crashed first save and replacement, preserving legacy stages
@@ -1405,6 +1463,7 @@ int main(void)
   RUN_TEST(test_a_second_link_to_the_guard_keeps_the_lock);
   RUN_TEST(test_an_emptied_lock_directory_is_replaced);
   RUN_TEST(test_replacing_the_guard_preserves_the_previous_writers_stage);
+  RUN_TEST(test_boot_reports_a_stage_left_under_an_earlier_guard);
   RUN_TEST(test_a_file_at_the_lock_name_is_left_alone);
   RUN_TEST(test_a_foreign_guard_is_left_alone);
   RUN_TEST(test_boot_removes_an_unfinished_lock_setup);
@@ -1412,6 +1471,7 @@ int main(void)
   RUN_TEST(test_boot_leaves_an_interrupted_unlocked_save_untouched);
 #ifdef HOUSE_TEST_WRAP_IO
   RUN_TEST(test_smb_saves_without_inode_based_cleanup);
+  RUN_TEST(test_boot_explains_cleanup_is_off_on_smb);
   RUN_TEST(test_concurrent_replacement_of_emptied_lock_does_not_fail_with_einval);
   RUN_TEST(test_save_uses_winning_guard_after_its_initializer_was_removed);
   RUN_TEST(test_lock_is_secured_before_publication_and_retries_after_failure);
