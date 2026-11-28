@@ -8,7 +8,7 @@
 
 /* Exercise the transaction without enrolling an EFS key for the account
  * running the tests. The optional native fixture below uses the real APIs. */
-static int simulate_efs;
+static int simulate_efs, efs_without_acls;
 static PENCRYPTION_CERTIFICATE_HASH_LIST efs_users[2], efs_recovery[2];
 static DWORD efs_query_error, efs_copy_error;
 static unsigned int efs_copies;
@@ -53,6 +53,17 @@ static BOOL WINAPI test_get_file_information(HANDLE file, LPBY_HANDLE_FILE_INFOR
   return ok;
 }
 
+static BOOL WINAPI test_get_volume_information(HANDLE file, LPWSTR volume, DWORD volume_size, LPDWORD serial,
+    LPDWORD component_size, LPDWORD flags, LPWSTR filesystem, DWORD filesystem_size)
+{
+  if (efs_without_acls) {
+    *flags = FILE_SUPPORTS_ENCRYPTION;
+    return TRUE;
+  }
+  return GetVolumeInformationByHandleW(file, volume, volume_size, serial, component_size,
+                                       flags, filesystem, filesystem_size);
+}
+
 static DWORD WINAPI test_duplicate_efs(LPCWSTR source, LPCWSTR path, DWORD disposition, DWORD attributes,
                                        const LPSECURITY_ATTRIBUTES security)
 {
@@ -94,12 +105,14 @@ static HANDLE WINAPI test_find_first_stream(LPCWSTR path, STREAM_INFO_LEVELS lev
 #define QueryRecoveryAgentsOnEncryptedFile test_query_recovery
 #define FreeEncryptionCertificateHashList test_free_efs_list
 #define GetFileInformationByHandle test_get_file_information
+#define GetVolumeInformationByHandleW test_get_volume_information
 #define DuplicateEncryptionInfoFile test_duplicate_efs
 #define log test_log
 #include "house_win32.h"
 #undef log
 #undef DuplicateEncryptionInfoFile
 #undef GetFileInformationByHandle
+#undef GetVolumeInformationByHandleW
 #undef FreeEncryptionCertificateHashList
 #undef QueryRecoveryAgentsOnEncryptedFile
 #undef QueryUsersOnEncryptedFile
@@ -123,6 +136,7 @@ void setUp(void)
 void tearDown(void)
 {
   simulate_efs = FALSE;
+  efs_without_acls = FALSE;
   efs_query_error = efs_copy_error = ERROR_SUCCESS;
   efs_copies = 0;
   efs_log[0] = '\0';
@@ -534,6 +548,29 @@ static void test_efs_checks_users_and_recovery_before_replacing(void)
   TEST_ASSERT_EQUAL_UINT(INVALID_FILE_ATTRIBUTES, GetFileAttributesW(efs_private_dir));
 }
 
+static void test_efs_without_a_source_dacl_preserves_the_house(void)
+{
+  struct house_save save = {0};
+  char contents[4] = "";
+  FILE *fp = fopen(house, "wb");
+  TEST_ASSERT_NOT_NULL(fp);
+  TEST_ASSERT_TRUE(fputs("old", fp) >= 0);
+  TEST_ASSERT_EQUAL_INT(0, fclose(fp));
+  simulate_efs = efs_without_acls = TRUE;
+  fp = House_open_save(house, &save);
+  if (fp)
+    fclose(fp);
+  House_discard_save(&save);
+  TEST_ASSERT_NULL(fp);
+  TEST_ASSERT_EQUAL_UINT(0, efs_copies);
+  TEST_ASSERT_NOT_NULL(strstr(efs_log, "DACL"));
+  fp = fopen(house, "rb");
+  TEST_ASSERT_NOT_NULL(fp);
+  TEST_ASSERT_EQUAL_UINT(3, fread(contents, 1, 3, fp));
+  TEST_ASSERT_EQUAL_INT(0, fclose(fp));
+  TEST_ASSERT_EQUAL_STRING("old", contents);
+}
+
 static void test_efs_copy_collision_preserves_the_existing_entry(void)
 {
   wchar_t name[MAX_PATH], occupied[MAX_PATH + 86];
@@ -582,6 +619,7 @@ int main(void)
   RUN_TEST(test_save_preserves_hidden_and_not_indexed_attributes);
   RUN_TEST(test_locked_named_stream_leaves_the_previous_save_intact);
   RUN_TEST(test_efs_checks_users_and_recovery_before_replacing);
+  RUN_TEST(test_efs_without_a_source_dacl_preserves_the_house);
   RUN_TEST(test_efs_copy_collision_preserves_the_existing_entry);
   RUN_TEST(test_native_efs_house_preserves_its_recipients);
   return UNITY_END();

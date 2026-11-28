@@ -669,6 +669,13 @@ static DWORD House_win_create_stage(struct house_save *save, const struct house_
       (FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_ENCRYPTED);
   DWORD attributes = preserved ? preserved : FILE_ATTRIBUTE_NORMAL;
   int have_write_dac = FALSE;
+  /* An EFS copy starts with the game's private DACL. Without the source
+   * descriptor its other authorized readers could lose filesystem access. */
+  if ((meta->attributes & FILE_ATTRIBUTE_ENCRYPTED) && !meta->security) {
+    log("SYSERR: Cannot read the encrypted house file's DACL from this filesystem. "
+        "The previous save was kept.");
+    return ERROR_NOT_SUPPORTED;
+  }
   if (!leaf)
     return ERROR_BAD_PATHNAME;
   prefix = (size_t)(leaf + 1 - save->dest);
