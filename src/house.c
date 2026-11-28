@@ -156,7 +156,10 @@ static void House_restore_weight(struct obj_data *obj)
   }
 }
 
-/* Save all objects in a house */
+/* Save all objects in a house. Write to a sibling .tmp file and replace the
+ * live file only after writes, flush, and close succeed, matching
+ * House_save_control(). Ownership and permissions follow the process umask,
+ * like the rest of the game's savers. */
 void House_crashsave(room_vnum vnum)
 {
   int rnum, result;
@@ -216,7 +219,7 @@ void House_crashsave(room_vnum vnum)
 /* Delete a house save file */
 static void House_delete_file(room_vnum vnum)
 {
-  char filename[MAX_INPUT_LENGTH], auxname[MAX_INPUT_LENGTH + 8];
+  char filename[MAX_INPUT_LENGTH], binname[MAX_INPUT_LENGTH + 8];
   FILE *fl;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
@@ -227,13 +230,10 @@ static void House_delete_file(room_vnum vnum)
    * the house gone that copy is orphaned, and it would make the converter
    * refuse a later house built on the same vnum as already converted --
    * which would also stay out of saving for the rest of the run. */
-  snprintf(auxname, sizeof(auxname), "%s.bin", filename);
-  remove(auxname);
+  snprintf(binname, sizeof(binname), "%s.bin", filename);
+  remove(binname);
   house_forget_conversion(vnum);
   /* CONVERSION code ends here -- see comment below. */
-
-  snprintf(auxname, sizeof(auxname), "%s.tmp", filename);
-  remove(auxname);
 
   if (!(fl = fopen(filename, "rb"))) {
     if (errno != ENOENT)
