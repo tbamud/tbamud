@@ -342,5 +342,18 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         else()
             set_property(TARGET test_mail APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
         endif()
+
+        add_mud_test(test_players
+            ${MUD_SRCDIR}/utils.c
+            ${MUD_SRCDIR}/random.c
+            ${MUD_SRCDIR}/players.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/test_players.c
+        )
+        target_compile_options(test_players PRIVATE -ffunction-sections -fdata-sections)
+        if(APPLE)
+            set_property(TARGET test_players APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+        else()
+            set_property(TARGET test_players APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+        endif()
     endif()
 endif()
