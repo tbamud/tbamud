@@ -359,6 +359,10 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
 
   affect_modify_ar(ch, af->location, af->modifier, af->bitvector, TRUE);
   affect_total(ch);
+  /* A mob can be charmed after combat has started or while downed. */
+  if (IS_SET_AR(af->bitvector, AFF_CHARM) && is_player_pet(ch) &&
+      (GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch)))
+    ch->mob_specials.fought_as_player_pet = TRUE;
 }
 
 /* Remove an affected_type structure from a char (called when duration reaches
@@ -367,6 +371,7 @@ void affect_to_char(struct char_data *ch, struct affected_type *af)
 void affect_remove(struct char_data *ch, struct affected_type *af)
 {
   struct affected_type *temp;
+  const bool was_player_pet = IS_SET_AR(af->bitvector, AFF_CHARM) && is_player_pet(ch);
 
   if (ch->affected == NULL) {
     core_dump();
@@ -377,6 +382,9 @@ void affect_remove(struct char_data *ch, struct affected_type *af)
   REMOVE_FROM_LIST(af, ch->affected, next);
   free(af);
   affect_total(ch);
+  if (was_player_pet && !is_player_pet(ch) &&
+      (GET_POS(ch) <= POS_STUNNED || has_combat_opponent(ch)))
+    ch->mob_specials.fought_as_player_pet = TRUE;
 }
 
 /* Call affect_remove with every affect from the spell "type" */
@@ -457,6 +465,17 @@ void char_from_room(struct char_data *ch)
   ch->next_in_room = NULL;
 }
 
+/* Incoming combat links can outlive movement or extraction until the next
+ * combat pulse. Recheck pets still pointing at this opponent. */
+static void clear_idle_attacking_pets(struct char_data *opponent)
+{
+  struct char_data *attacker;
+
+  for (attacker = combat_list; attacker; attacker = attacker->next_fighting)
+    if (FIGHTING(attacker) == opponent)
+      clear_pet_combat_if_idle(attacker);
+}
+
 /* place a character in a room */
 void char_to_room(struct char_data *ch, room_rnum room)
 {
@@ -467,6 +486,10 @@ void char_to_room(struct char_data *ch, room_rnum room)
     ch->next_in_room = world[room].people;
     world[room].people = ch;
     IN_ROOM(ch) = room;
+
+    /* A teleport can put ch back in the same room with its attacker. */
+    clear_pet_combat_if_idle(ch);
+    clear_idle_attacking_pets(ch);
 
     autoquest_trigger_check(ch, 0, 0, AQ_ROOM_FIND);
     autoquest_trigger_check(ch, 0, 0, AQ_MOB_FIND);
@@ -1186,14 +1209,17 @@ void extract_char(struct char_data *ch)
   char_from_furniture(ch);
   clear_char_event_list(ch);
 
-  if (IS_NPC(ch) && !MOB_FLAGGED(ch, MOB_NOTDEADYET)) {
+  if (DEAD(ch))
+    return;
+  if (IS_NPC(ch))
     SET_BIT_AR(MOB_FLAGS(ch), MOB_NOTDEADYET);
-    ++extractions_pending;
-  }
-  else if (!IS_NPC(ch) && !PLR_FLAGGED(ch, PLR_NOTDEADYET)) {
+  else
     SET_BIT_AR(PLR_FLAGS(ch), PLR_NOTDEADYET);
-    ++extractions_pending;
-  }
+  ++extractions_pending;
+
+  /* The combat list can still point at ch until the end of the pulse. */
+  clear_pet_combat_if_idle(FIGHTING(ch));
+  clear_idle_attacking_pets(ch);
 }
 
 /* I'm not particularly pleased with the MOB/PLR hoops that have to be jumped

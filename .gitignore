@@ -100,7 +100,11 @@ tests/test_utils
 tests/test_random
 tests/test_interpreter
 tests/test_class
+tests/test_flight
 tests/test_lists
+tests/test_quest
+tests/test_shop
+tests/test_mail
 tests/test-results/
 
 # autoconf leaves these behind when regenerating configure

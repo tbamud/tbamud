@@ -124,7 +124,14 @@ int MAX(int a, int b);
 int MIN(int a, int b);
 char *CAP(char *txt);
 
+bool	has_combat_opponent(const struct char_data *ch);
+void	begin_pet_combat_action(void);
+void	end_pet_combat_action(void);
+void	clear_pet_combat_if_idle(struct char_data *ch);
+
 /* Followers */
+bool	is_player_pet(const struct char_data *ch);
+bool	is_player_pet_kill(const struct char_data *victim);
 int	num_followers_charmed(struct char_data *ch);
 void	die_follower(struct char_data *ch);
 void	add_follower(struct char_data *ch, struct char_data *leader);

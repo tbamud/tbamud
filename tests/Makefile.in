@@ -34,7 +34,7 @@ STUBS_SRC  = test_stubs.c
 UTILS_SRC  = $(SRCDIR)/utils.c $(SRCDIR)/random.c
 
 # All test binaries
-TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle
+TESTS = test_utils test_random test_interpreter test_class test_lists test_mud_event test_handler_prefix test_improved_edit test_obj_walk test_trigger_save test_genolc_savers test_ibt test_editor_lifecycle test_quest test_flight test_shop test_house_save test_mail
 .PHONY: all test clean
 
 all: $(TESTS)
@@ -49,6 +49,28 @@ endif
 test_trigger_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                    $(SRCDIR)/dg_olc.c $(SRCDIR)/genolc.c test_trigger_save.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
+
+test_house_save: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+                 $(SRCDIR)/house.c $(SRCDIR)/genolc.c $(SRCDIR)/constants.c \
+                 $(SRCDIR)/interpreter.c test_house_save.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
+
+# test_mail.c includes mail.c to reach postmaster_receive_mail() and wrap genolc_install_file().
+test_mail: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+           $(SRCDIR)/genolc.c $(SRCDIR)/mail.c test_mail.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $(filter-out $(SRCDIR)/mail.c,$^) $(LIBS)
+
+# test_flight.c includes act.movement.c to reach its private flight and scuba checks.
+test_flight: $(UNITY_SRC) $(STUBS_SRC) $(SRCDIR)/act.item.c $(SRCDIR)/interpreter.c \
+             $(SRCDIR)/act.movement.c test_flight.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $(filter-out $(SRCDIR)/act.movement.c,$^) $(LIBS)
+
+# test_shop.c includes shop.c to reach the private list and identify commands.
+# Section GC drops the rest of the shop code, which needs the running game.
+test_shop: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+           $(SRCDIR)/handler.c $(SRCDIR)/lists.c $(SRCDIR)/interpreter.c \
+           $(SRCDIR)/constants.c $(SRCDIR)/shop.c test_shop.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $(filter-out $(SRCDIR)/shop.c,$^) $(LIBS)
 
 # ---------------------------------------------------------------------------
 # test_utils — covers src/utils.c
@@ -119,6 +141,21 @@ test_improved_edit: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 test_obj_walk: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                $(SRCDIR)/handler.c $(SRCDIR)/lists.c test_obj_walk.c
 	$(COMPILE) -o $@ $^ $(LIBS)
+
+# ---------------------------------------------------------------------------
+# test_quest - covers rescue eligibility in src/quest.c, combat in fight.c, and healing
+# spells and bandage that finish a rescue held up by a dying captive.
+# interpreter.c supplies the real one_argument() for "bandage <name>".
+# Section GC drops the quest commands and the rest of magic.c,
+# act.offensive.c and interpreter.c, which need the running game.
+# ---------------------------------------------------------------------------
+test_quest: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
+            $(SRCDIR)/quest.c $(SRCDIR)/handler.c $(SRCDIR)/lists.c \
+            $(SRCDIR)/fight.c $(SRCDIR)/constants.c \
+            $(SRCDIR)/magic.c $(SRCDIR)/spell_parser.c $(SRCDIR)/dg_misc.c \
+            $(SRCDIR)/act.movement.c $(SRCDIR)/act.offensive.c \
+            $(SRCDIR)/interpreter.c $(SRCDIR)/dg_mobcmd.c test_quest.c
+	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 test_editor_lifecycle: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
                        $(SRCDIR)/lists.c $(SRCDIR)/handler.c \

@@ -7420,19 +7420,36 @@ main menu, you will be shown a list to choose from:
 2) Find mob       - Player needs to find a particular mobile.
                   Ends: When the player enters the same room as the target mob.
 3) Kill mob       - Player needs to kill a particular mobile.
-                  Ends: When the target mobile dies, if the player lands the 
-				  killing blow.
+                  Ends: When the player or their group, pets included,
+                  lands the killing blow on the target mobile. Groupmates
+                  and a pet's master must be in the target's zone when
+                  that blow lands.
 4) Save mob       - Player needs to protect or save a particular mobile.
-                  Ends: When every mobile in the same room as the target is 
-				  killed.  The target mobile should be the last mobile left 
-				  in the room.
+                  Ends: When the player or their group, pets included,
+                  kills the last other mobile in the captive's room and
+                  the captive survives the entire attack in stable
+                  condition. The player and killer must both be alive in
+                  the room at the kill and after the death script. For a
+                  single-target rescue, the player or their group can also
+                  heal or bandage an incapacitated or mortally wounded captive.
+                  Treatment must stabilize the captive in an already-cleared
+                  room, even if someone else cleared it.
+                  Players' charmed pets may stay. Killing one gives no
+                  rescue credit. If a pet loses its charm or changes form
+                  during combat or while downed, it still counts as a pet
+                  until it is conscious and out of combat and the current
+                  attack has finished. After that it is an ordinary mobile.
 5) Return object  - Player needs to find a particular object, and return it to 
                     a particular mobile.
                   Ends: When the target object is given to the specified mob.
 				  When you select this quest type, you are automatically asked 
 				  for the mobile vnum to whom the object should be returned.
 6) Clear room     - Player needs to kill all mobiles in a particular room.
-                  Ends: When the last mobile in the target room dies.
+                  Ends: When the player or their group, pets included,
+                  kills the last mobile in the target room. The player
+                  and killer must both be alive in the room at the kill
+                  and after the death script. The pet rules for Save mob
+                  also apply here. Killing a player does not count.
 
 Enter Quest type :
 #31
