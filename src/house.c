@@ -269,7 +269,7 @@ static int House_copy_access_acl(const char *filename, int fd, int clamp_group, 
  * SACL carry inheritance flags that the older combined ACL cannot express.
  * Return 1 for a copied attribute, 0 when unsupported or skipped, or -1 on failure. */
 static int House_copy_nfs4_attr(const char *filename, int fd, const char *name,
-                                bool same_ids, bool optional_sacl)
+                                bool optional_sacl)
 {
   static const unsigned char empty_sacl[8] = {0, 0, 0, 0, 0, 0, 0, 0};
   ssize_t length = getxattr(filename, name, NULL, 0);
@@ -287,12 +287,6 @@ static int House_copy_nfs4_attr(const char *filename, int fd, const char *name,
     if (optional_sacl)
       return 0;
     errno = EINVAL;
-    return -1;
-  }
-  /* OWNER@ and GROUP@ are relative to the file. A byte-for-byte copy cannot
-   * preserve those principals when ownership could not be restored. */
-  if (!same_ids) {
-    errno = EPERM;
     return -1;
   }
   if (!(acl = malloc((size_t)length)))
@@ -322,21 +316,103 @@ static int House_copy_nfs4_attr(const char *filename, int fd, const char *name,
   return result;
 }
 
-static int House_copy_linux_acl(const char *filename, int fd, const struct stat *old,
-                                const struct stat *scratch, bool owner_read)
+/* Read a whole extended attribute.  NULL with errno set if it cannot be
+ * read; ENODATA and ENOTSUP mean the file has none. */
+static unsigned char *House_read_xattr(const char *filename, const char *name, size_t *size)
 {
-  bool same_ids = old->st_uid == scratch->st_uid && old->st_gid == scratch->st_gid;
-  int result = House_copy_nfs4_attr(filename, fd, "system.nfs4_dacl", same_ids, FALSE);
+  ssize_t length = getxattr(filename, name, NULL, 0);
+  unsigned char *value;
+  int saved_errno;
+
+  if (length < 0 || !(value = malloc(length ? (size_t)length : 1)))
+    return NULL;
+  length = getxattr(filename, name, value, (size_t)length);
+  if (length < 0) {
+    saved_errno = errno;
+    free(value);
+    errno = saved_errno;
+    return NULL;
+  }
+  *size = (size_t)length;
+  return value;
+}
+
+static uint32_t House_be32(const unsigned char *p)
+{
+  return ((uint32_t)p[0] << 24) | ((uint32_t)p[1] << 16) | ((uint32_t)p[2] << 8) | p[3];
+}
+
+/* Whether an NFSv4 ACL in XDR form names anyone but OWNER@, GROUP@ and
+ * EVERYONE@.  A v4.1 DACL starts with a flags word, which offset skips.  An
+ * ACL that cannot be parsed counts as naming others. */
+static bool House_nfs4_names_others(const unsigned char *acl, size_t length, size_t offset)
+{
+  static const char *const special[] = {"OWNER@", "GROUP@", "EVERYONE@"};
+  size_t p = offset, k;
+  uint32_t count, i, who;
+
+  if (length < offset + 4)
+    return TRUE;
+  count = House_be32(acl + p);
+  p += 4;
+  for (i = 0; i < count; ++i) {
+    if (length - p < 16)
+      return TRUE;
+    who = House_be32(acl + p + 12);
+    p += 16;
+    if (who > length - p)
+      return TRUE;
+    for (k = 0; k < sizeof(special) / sizeof(special[0]); ++k)
+      if (who == strlen(special[k]) && !memcmp(acl + p, special[k], who))
+        break;
+    if (k == sizeof(special) / sizeof(special[0]))
+      return TRUE;
+    p += who + (4 - who % 4) % 4;	/* XDR pads each name to four bytes. */
+    if (p > length)
+      p = length;
+  }
+  return FALSE;
+}
+
+static int House_copy_linux_acl(const char *filename, int fd, const struct stat *old,
+                                const struct stat *scratch, mode_t mode, bool owner_read)
+{
+  int result;
+
+  if (old->st_uid != scratch->st_uid || old->st_gid != scratch->st_gid) {
+    /* OWNER@ and GROUP@ are relative to the file, so an NFSv4 ACL cannot be
+     * copied once the owner or group differs.  The mode bits say as much as
+     * one that names nobody else.  Otherwise the save goes ahead readable
+     * only by the game, rather than grant someone what the old ACL denied. */
+    size_t offset = 4, size = 0;
+    unsigned char *acl = House_read_xattr(filename, "system.nfs4_dacl", &size);
+    bool others;
+    if (!acl && (errno == ENODATA || errno == ENOTSUP)) {
+      offset = 0;
+      acl = House_read_xattr(filename, "system.nfs4_acl", &size);
+    }
+    if (!acl && (errno == ENODATA || errno == ENOTSUP))
+      return House_copy_access_acl(filename, fd, old->st_gid != scratch->st_gid, owner_read);
+    others = !acl || House_nfs4_names_others(acl, size, offset);
+    free(acl);
+    if (!others)
+      return 0;
+    log("SYSERR: %s belonged to another account and its NFSv4 ACL cannot be carried over, "
+        "so only the game can read the new save.  Restore any other access it needs by hand.",
+        filename);
+    return fchmod(fd, mode & 0700) < 0 ? -1 : 1;
+  }
+  result = House_copy_nfs4_attr(filename, fd, "system.nfs4_dacl", FALSE);
   if (result > 0) {
-    if (House_copy_nfs4_attr(filename, fd, "system.nfs4_sacl", same_ids, TRUE) < 0)
+    if (House_copy_nfs4_attr(filename, fd, "system.nfs4_sacl", TRUE) < 0)
       return -1;
     return 1;
   }
   if (result == 0)
-    result = House_copy_nfs4_attr(filename, fd, "system.nfs4_acl", same_ids, FALSE);
+    result = House_copy_nfs4_attr(filename, fd, "system.nfs4_acl", FALSE);
   if (result != 0)
     return result;
-  return House_copy_access_acl(filename, fd, old->st_gid != scratch->st_gid, owner_read);
+  return House_copy_access_acl(filename, fd, FALSE, owner_read);
 }
 
 /* chmod alone may retain a named allow ACE. Replace the entire access ACL
@@ -522,7 +598,8 @@ static int House_copy_permissions(const char *filename, int fd, bool *owner_chan
   }
 #elif defined(__linux__)
   {
-    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, *owner_changed && (mode & S_IRUSR));
+    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, mode,
+                                          *owner_changed && (mode & S_IRUSR));
     if (acl_result != 0)
       return acl_result < 0 ? -1 : 0; /* chmod after setting a rich ACL can rewrite its ACEs. */
   }
@@ -1003,6 +1080,7 @@ static int House_publish_lock(int parent_fd)
   char name[80];
   struct stat staged, remaining;
   int attempt, dir = -1, fd = -1, saved_errno;
+  bool made_guard = FALSE;
 
   for (attempt = 0; attempt < 128; ++attempt) {
     snprintf(name, sizeof(name), HOUSE_LOCK_INIT_PREFIX "%ld-%lu", (long)getpid(), sequence++);
@@ -1018,8 +1096,13 @@ static int House_publish_lock(int parent_fd)
   if (dir < 0 || House_secure_stage(dir) < 0)
     goto failed;
   fd = openat(dir, HOUSE_LOCK_GUARD, O_RDWR | O_CREAT | O_EXCL | O_NOFOLLOW | O_CLOEXEC, 0600);
+  made_guard = fd >= 0;
   if (fd < 0 || House_secure_private_fd(fd, 0600) < 0 || fstat(dir, &staged) < 0)
     goto failed;
+  /* Windows-backed mounts (WSL's /mnt/c) refuse to rename a directory while
+   * a file inside it is open.  The guard is ready, so let it go first. */
+  close(fd);
+  fd = -1;
   if (renameat(parent_fd, name, parent_fd, HOUSE_STAGE_LOCK) == 0)
     goto reopen;
   saved_errno = errno;
@@ -1032,10 +1115,10 @@ static int House_publish_lock(int parent_fd)
 
 failed:
   saved_errno = errno;
-  if (fd >= 0) {
+  if (made_guard)
     unlinkat(dir, HOUSE_LOCK_GUARD, 0);
+  if (fd >= 0)
     close(fd);
-  }
   if (dir >= 0)
     close(dir);
   unlinkat(parent_fd, name, AT_REMOVEDIR);
@@ -1046,7 +1129,6 @@ failed:
   return -1;
 
 reopen:
-  close(fd);
   close(dir);
   return 0;
 }
@@ -1401,13 +1483,20 @@ static void House_remove_stale_saves(void)
   dir_fd = dirfd(dir);
   lock_fd = House_lock_stages(dir_fd, TRUE, prefix);
   if (lock_fd < 0) {
+    int lock_errno = errno;
+    /* Without a lock to open, the failure was in making one. */
+    bool lock_exists = fstatat(dir_fd, HOUSE_STAGE_LOCK, &st, AT_SYMLINK_NOFOLLOW) == 0;
+    errno = lock_errno;
     if (house_lock_unsupported) {
       log("Unfinished house saves in %s are not cleared at boot because %s. House saves still work.",
           LIB_HOUSE, house_lock_unsupported);
       while ((entry = readdir(dir)) != NULL)
         if (House_is_stage_name(entry->d_name, HOUSE_UNLOCKED_PREFIX))
           House_report_stage(dir_fd, entry->d_name, "made without a lock");
-    } else if (errno == EACCES)
+    } else if (errno == EACCES && !lock_exists)
+      log("SYSERR: Cannot create %s%s: %s. Unfinished house saves are not cleared until "
+          "the game can make it.", LIB_HOUSE, HOUSE_STAGE_LOCK, strerror(errno));
+    else if (errno == EACCES)
       log("SYSERR: Cannot open %s%s: %s. Unfinished house saves remain. Stop all games "
           "sharing this directory before repairing the lock's ownership or permissions.",
           LIB_HOUSE, HOUSE_STAGE_LOCK, strerror(errno));

@@ -151,9 +151,47 @@ int __wrap_fchmod(int fd, mode_t mode)
   return __real_fchmod(fd, mode);
 }
 
+/* Windows-backed mounts such as WSL's /mnt/c refuse to rename a directory
+ * while a file inside it is open.  Emulate that for this process's own files. */
+static int windows_rename_rules;
+static int has_open_child(int from_fd, const char *from)
+{
+  struct stat child, open_file;
+  struct dirent *entry, *slot;
+  DIR *dir, *fds;
+  int found = FALSE;
+  int dir_fd = openat(from_fd, from, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+  if (dir_fd < 0)
+    return FALSE;
+  if (!(dir = fdopendir(dir_fd))) {
+    close(dir_fd);
+    return FALSE;
+  }
+  while (!found && (entry = readdir(dir)) != NULL) {
+    if (!strcmp(entry->d_name, ".") || !strcmp(entry->d_name, "..") ||
+        fstatat(dir_fd, entry->d_name, &child, AT_SYMLINK_NOFOLLOW) < 0 ||
+        !(fds = opendir("/proc/self/fd")))
+      continue;
+    while (!found && (slot = readdir(fds)) != NULL) {
+      int n = atoi(slot->d_name);
+      found = slot->d_name[0] != '.' && n != dirfd(fds) && n != dir_fd &&
+              fstat(n, &open_file) == 0 && open_file.st_dev == child.st_dev &&
+              open_file.st_ino == child.st_ino;
+    }
+    closedir(fds);
+  }
+  closedir(dir);
+  return found;
+}
+
 int __wrap_renameat(int from_fd, const char *from, int to_fd, const char *to)
 {
-  int result = __real_renameat(from_fd, from, to_fd, to);
+  int result;
+  if (windows_rename_rules && has_open_child(from_fd, from)) {
+    errno = EACCES;
+    return -1;
+  }
+  result = __real_renameat(from_fd, from, to_fd, to);
   if (observe_publication && result == 0 && !strcmp(to, LOCK_NAME)) {
     struct stat st;
     if (fstatat(to_fd, to, &st, AT_SYMLINK_NOFOLLOW) == 0 && S_ISDIR(st.st_mode))
@@ -317,6 +355,7 @@ void tearDown(void)
   reject_named_chmod = following_chmods = 0;
   fail_lock_chmod = attempted_lock_chmod = visible_before_chmod = 0;
   observe_publication = report_publication_enoent = 0;
+  windows_rename_rules = 0;
   published_dir_mode = published_guard_mode = -1;
   require_writable_lock = boot_before_guard_create = candidate_was_removed = FALSE;
   replace_emptied_lock_on_guard_open = 0;
@@ -691,18 +730,33 @@ static void current_stage_prefix(char *prefix, size_t size)
 }
 
 /* Run House_boot() and keep what it logged. */
-static void boot_and_capture_log(char *out, size_t size)
+static FILE *log_before_capture;
+
+static void start_log_capture(void)
 {
-  FILE *saved = logfile, *capture = tmpfile();
-  size_t length;
+  FILE *capture = tmpfile();
   TEST_ASSERT_NOT_NULL(capture);
+  log_before_capture = logfile;
   logfile = capture;
-  House_boot();
-  logfile = saved;
+}
+
+/* Stop capturing and keep what was logged since start_log_capture(). */
+static void end_log_capture(char *out, size_t size)
+{
+  FILE *capture = logfile;
+  size_t length;
+  logfile = log_before_capture;
   rewind(capture);
   length = fread(out, 1, size - 1, capture);
   out[length] = '\0';
   fclose(capture);
+}
+
+static void boot_and_capture_log(char *out, size_t size)
+{
+  start_log_capture();
+  House_boot();
+  end_log_capture(out, size);
 }
 
 /* The child dies part-way through writing the house, and its stage stays. */
@@ -942,6 +996,21 @@ static void test_a_file_at_the_lock_name_is_left_alone(void)
   TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
   TEST_ASSERT_EQUAL_UINT(0644, after.st_mode & 0777);
   assert_file(LOCK_PATH, "operator's file");
+}
+
+/* With no lock yet and none possible, boot says it could not make one,
+ * not that it could not open one. */
+static void test_boot_says_when_it_cannot_create_the_lock(void)
+{
+  char log[4096];
+  if (geteuid() == 0)
+    TEST_IGNORE_MESSAGE("root can create the lock in a read-only directory");
+  TEST_ASSERT_FALSE(exists(LOCK_PATH));
+  TEST_ASSERT_EQUAL_INT(0, chmod("house", 0500));
+  boot_and_capture_log(log, sizeof(log));
+  TEST_ASSERT_EQUAL_INT(0, chmod("house", 0700));
+  TEST_ASSERT_NOT_NULL(strstr(log, "Cannot create " LOCK_PATH));
+  TEST_ASSERT_NULL(strstr(log, "Cannot open " LOCK_PATH));
 }
 
 /* A subdirectory or symlink at the guard path is not a lock this game made:
@@ -1572,6 +1641,86 @@ static void test_linux_nfs4_access_rules_survive_replacement(void)
   }
 }
 
+/* An NFSv4 ACL cannot follow a house whose owner or group the game could not
+ * restore.  The save still goes ahead: with the old mode when the ACL names
+ * nobody but OWNER@, GROUP@ and EVERYONE@, and for the game alone otherwise. */
+static void test_nfs4_house_of_another_account_still_saves(void)
+{
+  /* v4.1 DACLs: a flags word, then the ACE count where a v4.0 ACL starts. */
+  static const unsigned char plain[] = {
+    0,0,0,0, 0,0,0,2,
+    0,0,0,0, 0,0,0,0, 0,0x1f,0x01,0xff, 0,0,0,6, 'O','W','N','E','R','@',0,0,
+    0,0,0,0, 0,0,0,0, 0,0x12,0x00,0x81, 0,0,0,9, 'E','V','E','R','Y','O','N','E','@',0,0,0
+  };
+  static const unsigned char named[] = {
+    0,0,0,0, 0,0,0,2,
+    0,0,0,1, 0,0,0,0, 0,0,0,4, 0,0,0,7, 's','a','m','@','l','a','b',0,
+    0,0,0,0, 0,0,0,0, 0,0x1f,0x01,0xff, 0,0,0,6, 'O','W','N','E','R','@',0,0
+  };
+  static const struct {
+    const unsigned char *acl;
+    size_t size;
+    mode_t mode;
+    const char *log;
+  } cases[] = {
+    {plain, sizeof(plain), 0644, NULL},
+    {named, sizeof(named), 0600, "cannot be carried over"},
+  };
+  const int versions[] = {4, 41};
+  char log[4096];
+  gid_t old_group;
+  struct stat st;
+
+  for (size_t v = 0; v < sizeof(versions) / sizeof(versions[0]); ++v) {
+    for (size_t c = 0; c < sizeof(cases) / sizeof(cases[0]); ++c) {
+      size_t offset = versions[v] == 4 ? 4 : 0;
+      const char *name = versions[v] == 4 ? "user.tba_acl" : "user.tba_dacl";
+      write_file(HOUSE_FILE, "old contents");
+      TEST_ASSERT_EQUAL_INT(0, chmod(HOUSE_FILE, 0644));
+      set_alternate_house_group(&old_group);
+      TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, name, cases[c].acl + offset,
+                                        cases[c].size - offset, 0));
+      mock_nfs4_version = versions[v];
+      deny_chown = TRUE;
+      SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+      start_log_capture();
+      House_crashsave(3000);
+      end_log_capture(log, sizeof(log));
+      deny_chown = FALSE;
+      mock_nfs4_version = 0;
+
+      TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+      assert_file(HOUSE_FILE, item.name);
+      TEST_ASSERT_EQUAL_INT(0, stat(HOUSE_FILE, &st));
+      TEST_ASSERT_EQUAL_UINT(cases[c].mode, st.st_mode & 0777);
+      if (cases[c].log)
+        TEST_ASSERT_NOT_NULL(strstr(log, cases[c].log));
+      else
+        TEST_ASSERT_NULL(strstr(log, "SYSERR"));
+      TEST_ASSERT_TRUE(getxattr(HOUSE_FILE, name, NULL, 0) < 0 && errno == ENODATA);
+      TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+    }
+  }
+}
+
+/* Windows-backed mounts such as WSL's /mnt/c refuse to rename a directory
+ * while a file inside it is open, and that rename is how a lock is published. */
+static void test_lock_is_published_where_open_files_block_directory_renames(void)
+{
+  TEST_ASSERT_FALSE(exists(LOCK_PATH));
+  windows_rename_rules = TRUE;
+  House_boot();
+  TEST_ASSERT_TRUE(exists(LOCK_GUARD));
+  write_file(HOUSE_FILE, "old contents");
+  crash_in_the_middle_of_a_save();
+  TEST_ASSERT_EQUAL_INT(1, count_stages());
+  TEST_ASSERT_EQUAL_INT(0, count_unlocked_stages());
+  House_boot();
+  windows_rename_rules = FALSE;
+  TEST_ASSERT_EQUAL_INT(0, count_stages());
+  assert_file(HOUSE_FILE, "old contents");
+}
+
 static void test_group_restore_denied_preserves_named_acl_access(void)
 {
   unsigned char expected[sizeof(acl)], saved[sizeof(acl)];
@@ -1770,6 +1919,7 @@ int main(void)
   RUN_TEST(test_replacing_the_guard_preserves_the_previous_writers_stage);
   RUN_TEST(test_boot_reports_a_stage_left_under_an_earlier_guard);
   RUN_TEST(test_a_file_at_the_lock_name_is_left_alone);
+  RUN_TEST(test_boot_says_when_it_cannot_create_the_lock);
   RUN_TEST(test_a_foreign_guard_is_left_alone);
   RUN_TEST(test_boot_removes_an_unfinished_lock_setup);
   RUN_TEST(test_boot_repairs_the_guard_and_sweeps_with_write_access);
@@ -1786,6 +1936,8 @@ int main(void)
 #if defined(__linux__)
   RUN_TEST(test_group_restore_denied_preserves_named_acl_access);
   RUN_TEST(test_linux_nfs4_access_rules_survive_replacement);
+  RUN_TEST(test_nfs4_house_of_another_account_still_saves);
+  RUN_TEST(test_lock_is_published_where_open_files_block_directory_renames);
 #endif
 #endif
 #if defined(__linux__)
