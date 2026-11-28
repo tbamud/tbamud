@@ -940,9 +940,6 @@ void clean_pfiles(void)
 {
   int i, ci;
 
-  if (!player_table)
-    return;
-
   /* Removing an entry shifts the entries after it down. Scan backward so
    * every entry is still checked when several players are removed together. */
   for (i = top_of_p_table; i >= 0; i--) {

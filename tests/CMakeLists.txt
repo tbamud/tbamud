@@ -346,6 +346,7 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         add_mud_test(test_players
             ${MUD_SRCDIR}/utils.c
             ${MUD_SRCDIR}/random.c
+            ${MUD_SRCDIR}/genolc.c
             ${MUD_SRCDIR}/players.c
             ${CMAKE_CURRENT_SOURCE_DIR}/test_players.c
         )

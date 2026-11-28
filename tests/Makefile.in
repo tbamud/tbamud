@@ -61,7 +61,7 @@ test_mail: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $(filter-out $(SRCDIR)/mail.c,$^) $(LIBS)
 
 test_players: $(UNITY_SRC) $(STUBS_SRC) $(UTILS_SRC) \
-              $(SRCDIR)/players.c test_players.c
+              $(SRCDIR)/genolc.c $(SRCDIR)/players.c test_players.c
 	$(COMPILE) -ffunction-sections -fdata-sections $(TRIGGER_GC_LDFLAGS) -o $@ $^ $(LIBS)
 
 # test_flight.c includes act.movement.c to reach its private flight and scuba checks.
