@@ -45,6 +45,8 @@ static int count_unlocked_stages(void);
 static struct stat watched_parent;
 static int watch_sync, fail_parent_sync, parent_sync_errno, parent_syncs;
 int __real_fsync(int fd);
+static int fail_volume_sync;
+int __real_syncfs(int fd);
 static int watch_create, saw_private_create;
 int __real_openat(int dirfd, const char *name, int flags, ...);
 static int deny_chown;
@@ -58,10 +60,50 @@ static int boot_before_guard_create, candidate_was_removed;
 static int replace_emptied_lock_on_guard_open;
 static int require_writable_lock, exclusive_access_mode;
 static unsigned int mock_smb_type;
+static int mock_nfs4_version, fail_nfs4_copy, reject_stage_read;
+ssize_t __real_getxattr(const char *, const char *, void *, size_t);
+ssize_t __real_fgetxattr(int, const char *, void *, size_t);
+int __real_fsetxattr(int, const char *, const void *, size_t, int);
 int __real_fchmod(int fd, mode_t mode);
 int __real_renameat(int from_fd, const char *from, int to_fd, const char *to);
 int __real_flock(int fd, int operation);
 int __real_fstatfs(int fd, struct statfs *out);
+
+/* Exercise both Linux NFS wire formats using ordinary per-file xattrs. */
+static const char *test_nfs4_attr(const char *name)
+{
+  if (mock_nfs4_version == 4 && !strcmp(name, "system.nfs4_acl"))
+    return "user.tba_acl";
+  if (mock_nfs4_version == 41 && !strcmp(name, "system.nfs4_dacl"))
+    return "user.tba_dacl";
+  if (mock_nfs4_version == 41 && !strcmp(name, "system.nfs4_sacl"))
+    return "user.tba_sacl";
+  return NULL;
+}
+
+ssize_t __wrap_getxattr(const char *path, const char *name, void *value, size_t size)
+{
+  const char *mapped = test_nfs4_attr(name);
+  return __real_getxattr(path, mapped ? mapped : name, value, size);
+}
+
+ssize_t __wrap_fgetxattr(int fd, const char *name, void *value, size_t size)
+{
+  const char *mapped = test_nfs4_attr(name);
+  if (mapped && !value) /* Even newly created objects have an access ACL. */
+    return 4;
+  return __real_fgetxattr(fd, mapped ? mapped : name, value, size);
+}
+
+int __wrap_fsetxattr(int fd, const char *name, const void *value, size_t size, int flags)
+{
+  const char *mapped = test_nfs4_attr(name);
+  if (mapped && fail_nfs4_copy && size > 32) {
+    errno = EACCES;
+    return -1;
+  }
+  return __real_fsetxattr(fd, mapped ? mapped : name, value, size, flags);
+}
 
 int __wrap_fstatfs(int fd, struct statfs *out)
 {
@@ -142,12 +184,21 @@ int __wrap_openat(int dirfd, const char *name, int flags, ...)
   va_list ap;
   int fd, mode;
   if (!(flags & O_CREAT)) {
+    if (reject_stage_read && !strcmp(name, "contents") && (flags & O_ACCMODE) == O_RDONLY) {
+      errno = EACCES;
+      return -1;
+    }
     fd = __real_openat(dirfd, name, flags);
-    if (replace_emptied_lock_on_guard_open && fd >= 0 && !strcmp(name, LOCK_NAME)) {
+    if (replace_emptied_lock_on_guard_open > 0 && fd >= 0 && !strcmp(name, LOCK_NAME)) {
       int mode_action = replace_emptied_lock_on_guard_open;
       replace_emptied_lock_on_guard_open = 0;
-      if (rmdir(LOCK_PATH) == 0 && mode_action == 1)
+      if (rmdir(LOCK_PATH) < 0) {
+        replace_emptied_lock_on_guard_open = -1;
+      } else if (mode_action == 1) {
         House_boot();
+        if (lstat(LOCK_GUARD, &file) < 0 || !S_ISREG(file.st_mode))
+          replace_emptied_lock_on_guard_open = -1;
+      }
     }
     return fd;
   }
@@ -166,6 +217,15 @@ int __wrap_openat(int dirfd, const char *name, int flags, ...)
     saw_private_create = mode == 0600 && (file.st_mode & 0177) == 0 &&
                          (parent.st_mode & 0777) == 0700;
   return fd;
+}
+
+int __wrap_syncfs(int fd)
+{
+  if (fail_volume_sync) {
+    errno = EIO;
+    return -1;
+  }
+  return __real_syncfs(fd);
 }
 
 int __wrap_fsync(int fd)
@@ -240,6 +300,7 @@ void tearDown(void)
   char running[64];
 #ifdef HOUSE_TEST_WRAP_IO
   watch_sync = fail_parent_sync = parent_sync_errno = parent_syncs = 0;
+  fail_volume_sync = FALSE;
   watch_create = saw_private_create = deny_chown = 0;
   reject_named_chmod = following_chmods = 0;
   fail_lock_chmod = attempted_lock_chmod = visible_before_chmod = 0;
@@ -249,6 +310,7 @@ void tearDown(void)
   replace_emptied_lock_on_guard_open = 0;
   exclusive_access_mode = -1;
   mock_smb_type = 0;
+  mock_nfs4_version = fail_nfs4_copy = reject_stage_read = 0;
 #endif
   if (ROOM_FLAGGED(0, ROOM_HOUSE)) {
     char command[] = "destroy 3000";
@@ -274,7 +336,8 @@ void tearDown(void)
 #if defined(__linux__)
   removexattr("house", "system.posix_acl_default");
   remove(LIB_HOUSE "reference");
-#elif defined(__FreeBSD__)
+#endif
+#if defined(__FreeBSD__) || defined(__linux__)
   remove("elsewhere/" HOUSE_FILE);
   remove("elsewhere/house/.tba-house.lock/guard");
   remove("elsewhere/house/.tba-house.lock");
@@ -361,6 +424,36 @@ static void test_existing_house_keeps_its_permissions(void)
     TEST_ASSERT_EQUAL_UINT(modes[i], st.st_mode & 0777);
   }
 }
+
+#if defined(__linux__) || defined(O_SEARCH)
+static void test_saves_in_a_directory_with_only_write_and_search_access(void)
+{
+  struct stat st;
+  TEST_ASSERT_EQUAL_INT(0, chmod("house", 0300));
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+
+#ifdef HOUSE_TEST_WRAP_IO
+  if (geteuid() != 0) {
+    /* A failed post-rename sync on a search-only parent must still retry. */
+    fail_volume_sync = TRUE;
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    fail_volume_sync = FALSE;
+    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  }
+#endif
+  item.name = "updated contents";
+  SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+  House_crashsave(3000);
+  assert_file(HOUSE_FILE, item.name);
+  TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+  TEST_ASSERT_EQUAL_INT(0, stat("house", &st));
+  TEST_ASSERT_EQUAL_UINT(0300, st.st_mode & 0777);
+}
+#endif
 
 #if defined(__APPLE__) && defined(__MACH__)
 static void test_darwin_stage_recovery_under_restrictive_umask(void)
@@ -727,6 +820,7 @@ static void test_replacing_the_guard_preserves_the_previous_writers_stage(void)
 static void test_boot_reports_a_stage_left_under_an_earlier_guard(void)
 {
   char prefix[64], pattern[128], log[4096], contents[256];
+  char link_name[96], fifo_name[96];
   glob_t abandoned;
   long child;
   write_file(HOUSE_FILE, "old contents");
@@ -735,6 +829,10 @@ static void test_boot_reports_a_stage_left_under_an_earlier_guard(void)
   snprintf(pattern, sizeof(pattern), "%s%ld-*", prefix, child);
   TEST_ASSERT_EQUAL_INT(0, glob(pattern, 0, NULL, &abandoned));
   TEST_ASSERT_EQUAL_UINT(1, abandoned.gl_pathc);
+  snprintf(link_name, sizeof(link_name), "%s1-10", prefix);
+  snprintf(fifo_name, sizeof(fifo_name), "%s1-11", prefix);
+  TEST_ASSERT_EQUAL_INT(0, symlink("unrelated", link_name));
+  TEST_ASSERT_EQUAL_INT(0, mkfifo(fifo_name, 0600));
   /* Keep the old guard's inode in use so the new guard gets another number. */
   TEST_ASSERT_EQUAL_INT(0, link(LOCK_GUARD, "snapshot-guard"));
   TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_GUARD));
@@ -743,6 +841,10 @@ static void test_boot_reports_a_stage_left_under_an_earlier_guard(void)
   TEST_ASSERT_TRUE(exists(abandoned.gl_pathv[0]));
   TEST_ASSERT_NOT_NULL(strstr(log, abandoned.gl_pathv[0]));
   TEST_ASSERT_NOT_NULL(strstr(log, "under an earlier lock"));
+  TEST_ASSERT_NULL(strstr(log, link_name));
+  TEST_ASSERT_NULL(strstr(log, fifo_name));
+  TEST_ASSERT_EQUAL_INT(0, unlink(link_name));
+  TEST_ASSERT_EQUAL_INT(0, unlink(fifo_name));
 
   snprintf(contents, sizeof(contents), "%s/contents", abandoned.gl_pathv[0]);
   TEST_ASSERT_EQUAL_INT(0, unlink(contents));
@@ -1049,6 +1151,54 @@ static void test_the_lock_file_is_private(void)
   TEST_ASSERT_EQUAL_UINT(0700, st.st_mode & 0777);
 }
 
+#if defined(DT_REG) || defined(O_SEARCH) || (defined(O_PATH) && (defined(__linux__) || defined(__FreeBSD__)))
+static void test_restrictive_lock_directory_preserves_guard_and_rejects_foreign_entries(void)
+{
+  const mode_t modes[] = {
+#ifdef DT_REG
+    0600,
+#endif
+#if defined(O_SEARCH) || (defined(O_PATH) && (defined(__linux__) || defined(__FreeBSD__)))
+    0300,
+#endif
+  };
+  struct stat before, after;
+  write_file(HOUSE_FILE, "previous contents");
+  write_file("bystander", "operator's copy");
+  House_boot();
+  TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &before));
+  for (size_t i = 0; i < sizeof(modes) / sizeof(modes[0]); ++i) {
+    crash_in_the_middle_of_a_save();
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, modes[i]));
+    House_boot();
+    TEST_ASSERT_EQUAL_INT(0, count_stages());
+    TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &after));
+    TEST_ASSERT_EQUAL_UINT(0700, after.st_mode & 0777);
+    TEST_ASSERT_EQUAL_INT(0, stat(LOCK_GUARD, &after));
+    TEST_ASSERT_TRUE(before.st_dev == after.st_dev && before.st_ino == after.st_ino);
+
+    /* A symlink in the same layout must never authorize a permission repair. */
+    TEST_ASSERT_EQUAL_INT(0, rename(LOCK_GUARD, "snapshot-guard"));
+    TEST_ASSERT_EQUAL_INT(0, symlink("../../bystander", LOCK_GUARD));
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, modes[i]));
+    House_boot();
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    observe_stage = TRUE;
+    House_crashsave(3000);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    TEST_ASSERT_EQUAL_INT(1, unlocked_during_record);
+    TEST_ASSERT_EQUAL_INT(0, stat(LOCK_PATH, &after));
+    TEST_ASSERT_EQUAL_UINT(modes[i], after.st_mode & 0777);
+    TEST_ASSERT_EQUAL_INT(0, chmod(LOCK_PATH, 0700));
+    TEST_ASSERT_EQUAL_INT(0, lstat(LOCK_GUARD, &after));
+    TEST_ASSERT_TRUE(S_ISLNK(after.st_mode));
+    TEST_ASSERT_EQUAL_INT(0, unlink(LOCK_GUARD));
+    TEST_ASSERT_EQUAL_INT(0, rename("snapshot-guard", LOCK_GUARD));
+    assert_file("bystander", "operator's copy");
+  }
+}
+#endif
+
 static void test_boot_repairs_the_guard_and_sweeps_with_write_access(void)
 {
   const mode_t modes[] = {
@@ -1157,13 +1307,30 @@ static void test_smb_saves_without_inode_based_cleanup(void)
 /* On SMB, boot says cleanup is off and why, rather than reporting a failure. */
 static void test_boot_explains_cleanup_is_off_on_smb(void)
 {
+  const char *first = LIB_HOUSE ".tba-house-unlocked-1-0";
+  const char *notes = LIB_HOUSE ".tba-house-unlocked-notes";
+  const char *directory = LIB_HOUSE ".tba-house-unlocked-1-1";
+  const char *other_file = LIB_HOUSE ".tba-house-unlocked-1-1/notes";
   char log[4096];
+  write_file(first, "staged contents");
+  write_file(notes, "operator notes");
+  TEST_ASSERT_EQUAL_INT(0, mkdir(directory, 0700));
+  write_file(other_file, "operator notes");
   TEST_ASSERT_EQUAL_INT(0, stat("house", &watched_parent));
   mock_smb_type = SMB_SUPER_MAGIC;
   boot_and_capture_log(log, sizeof(log));
   mock_smb_type = 0;
   TEST_ASSERT_NOT_NULL(strstr(log, "it is on an SMB mount"));
   TEST_ASSERT_NULL(strstr(log, "Cannot lock"));
+  TEST_ASSERT_NOT_NULL(strstr(log, first));
+  TEST_ASSERT_NULL(strstr(log, notes));
+  TEST_ASSERT_NULL(strstr(log, directory));
+  TEST_ASSERT_NULL(strstr(log, ".tba-house-unlocked-*"));
+  assert_file(first, "staged contents");
+  TEST_ASSERT_EQUAL_INT(0, unlink(first));
+  TEST_ASSERT_EQUAL_INT(0, unlink(notes));
+  TEST_ASSERT_EQUAL_INT(0, unlink(other_file));
+  TEST_ASSERT_EQUAL_INT(0, rmdir(directory));
 }
 #endif
 
@@ -1294,6 +1461,51 @@ static void set_linux_acl(void)
 }
 
 #ifdef HOUSE_TEST_WRAP_IO
+static void test_linux_nfs4_access_rules_survive_replacement(void)
+{
+  /* A protected DACL with an explicit denial and an owner grant. The v4.0
+   * ACL starts at the ACE count. The separate SACL is empty and protected. */
+  const unsigned char dacl[] = {
+    0,0,0,2, 0,0,0,2,
+    0,0,0,1, 0,0,0,0, 0,0,0,2, 0,0,0,7, 's','a','m','@','l','a','b',0,
+    0,0,0,0, 0,0,0,0, 0,0,0,3, 0,0,0,6, 'O','W','N','E','R','@',0,0
+  };
+  const unsigned char sacl[] = {0,0,0,2, 0,0,0,0};
+  unsigned char saved[sizeof(dacl)];
+  const int versions[] = {4, 41};
+  for (size_t i = 0; i < sizeof(versions) / sizeof(versions[0]); ++i) {
+    size_t offset = versions[i] == 4 ? 4 : 0;
+    const char *name = versions[i] == 4 ? "user.tba_acl" : "user.tba_dacl";
+    write_file(HOUSE_FILE, "old contents");
+    TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, name, dacl + offset, sizeof(dacl) - offset, 0));
+    if (versions[i] == 41)
+      TEST_ASSERT_EQUAL_INT(0, setxattr(HOUSE_FILE, "user.tba_sacl", sacl, sizeof(sacl), 0));
+    mock_nfs4_version = versions[i];
+    fail_nfs4_copy = TRUE;
+    SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+    House_crashsave(3000);
+    TEST_ASSERT_TRUE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    assert_file(HOUSE_FILE, "old contents");
+
+    fail_nfs4_copy = FALSE;
+    House_crashsave(3000);
+    TEST_ASSERT_FALSE(ROOM_FLAGGED(0, ROOM_HOUSE_CRASH));
+    assert_file(HOUSE_FILE, item.name);
+    TEST_ASSERT_EQUAL_INT(sizeof(dacl) - offset, getxattr(HOUSE_FILE, name, saved, sizeof(saved)));
+    TEST_ASSERT_EQUAL_MEMORY(dacl + offset, saved, sizeof(dacl) - offset);
+    if (versions[i] == 41) {
+      TEST_ASSERT_EQUAL_INT(sizeof(sacl), getxattr(HOUSE_FILE, "user.tba_sacl", saved, sizeof(saved)));
+      TEST_ASSERT_EQUAL_MEMORY(sacl, saved, sizeof(sacl));
+    }
+    /* Boot secures the guard with one noninheritable OWNER@ ACE. */
+    House_boot();
+    TEST_ASSERT_EQUAL_INT(32 - offset, getxattr(LOCK_GUARD, name, saved, sizeof(saved)));
+    TEST_ASSERT_EQUAL_INT(1, saved[7 - offset]);
+    TEST_ASSERT_EQUAL_MEMORY("OWNER@", saved + 24 - offset, 6);
+    TEST_ASSERT_EQUAL_INT(0, unlink(HOUSE_FILE));
+  }
+}
+
 static void test_group_restore_denied_preserves_named_acl_access(void)
 {
   unsigned char expected[sizeof(acl)], saved[sizeof(acl)];
@@ -1387,16 +1599,21 @@ static void test_freebsd_keeps_an_existing_named_acl(void)
   TEST_ASSERT_EQUAL_INT(0, different);
 }
 
-static void test_freebsd_old_owner_deny_preserves_game_read_access(void)
+#endif
+#if defined(__FreeBSD__) || defined(__linux__)
+static void test_foreign_owned_house_remains_readable_to_game(void)
 {
   const uid_t game = 65534;
   const char *file = "elsewhere/" HOUSE_FILE;
-  acl_t acl;
   pid_t child;
-  int status, result;
+  int status;
 
-  if (geteuid() != 0 || pathconf("elsewhere", _PC_ACL_NFS4) <= 0)
-    TEST_IGNORE_MESSAGE("requires root on a FreeBSD NFSv4 ACL filesystem");
+  if (geteuid() != 0)
+    TEST_IGNORE_MESSAGE("requires root to create a foreign-owned house and run as its named reader");
+#if defined(__FreeBSD__)
+  if (pathconf("elsewhere", _PC_ACL_NFS4) <= 0)
+    TEST_IGNORE_MESSAGE("requires a FreeBSD NFSv4 ACL filesystem");
+#endif
 
   /* The outer test directory stays private. The child can use this subtree
    * as its working directory after dropping privileges. */
@@ -1404,11 +1621,18 @@ static void test_freebsd_old_owner_deny_preserves_game_read_access(void)
   TEST_ASSERT_EQUAL_INT(0, chown("elsewhere/house", game, (gid_t)-1));
   TEST_ASSERT_EQUAL_INT(0, chmod("elsewhere", 0711));
   write_file(file, "old contents");
-  acl = acl_from_text("owner@:r::deny,user:65534:full_set::allow,owner@:full_set::allow");
+#if defined(__linux__)
+  unsigned char source[sizeof(acl)];
+  memcpy(source, acl, sizeof(source));
+  source[6] = 2; /* Old owner: write-only. Named game user: read/write. */
+  TEST_ASSERT_EQUAL_INT(0, setxattr(file, "system.posix_acl_access", source, sizeof(source), 0));
+#else
+  acl_t acl = acl_from_text("owner@:r::deny,user:65534:full_set::allow,owner@:full_set::allow");
   TEST_ASSERT_NOT_NULL(acl);
-  result = acl_set_file(file, ACL_TYPE_NFS4, acl);
+  int result = acl_set_file(file, ACL_TYPE_NFS4, acl);
   acl_free(acl);
   TEST_ASSERT_EQUAL_INT(0, result);
+#endif
 
   child = fork();
   TEST_ASSERT_TRUE(child >= 0);
@@ -1417,6 +1641,15 @@ static void test_freebsd_old_owner_deny_preserves_game_read_access(void)
     if (chdir("elsewhere") < 0 || setuid(game) < 0 || access(HOUSE_FILE, R_OK) < 0)
       _exit(1);
     SET_BIT_AR(ROOM_FLAGS(0), ROOM_HOUSE_CRASH);
+#ifdef HOUSE_TEST_WRAP_IO
+    reject_stage_read = TRUE;
+    House_crashsave(3000);
+    if (!ROOM_FLAGGED(0, ROOM_HOUSE_CRASH) || !(fp = fopen(HOUSE_FILE, "rb")))
+      _exit(4);
+    if (fgetc(fp) != 'o' || fclose(fp) != 0)
+      _exit(5);
+    reject_stage_read = FALSE;
+#endif
     House_crashsave(3000);
     if (ROOM_FLAGGED(0, ROOM_HOUSE_CRASH) || !(fp = fopen(HOUSE_FILE, "rb")))
       _exit(2);
@@ -1442,6 +1675,9 @@ int main(void)
   RUN_TEST(test_new_house_retries_after_its_first_save_fails);
   RUN_TEST(test_new_house_file_follows_the_umask);
   RUN_TEST(test_existing_house_keeps_its_permissions);
+#if defined(__linux__) || defined(O_SEARCH)
+  RUN_TEST(test_saves_in_a_directory_with_only_write_and_search_access);
+#endif
 #if defined(__APPLE__) && defined(__MACH__)
   RUN_TEST(test_darwin_stage_recovery_under_restrictive_umask);
 #endif
@@ -1460,6 +1696,9 @@ int main(void)
   RUN_TEST(test_boot_keeps_noncanonical_stage_names);
   RUN_TEST(test_a_held_lock_does_not_stop_a_save);
   RUN_TEST(test_the_lock_file_is_private);
+#if defined(DT_REG) || defined(O_SEARCH) || (defined(O_PATH) && (defined(__linux__) || defined(__FreeBSD__)))
+  RUN_TEST(test_restrictive_lock_directory_preserves_guard_and_rejects_foreign_entries);
+#endif
   RUN_TEST(test_a_second_link_to_the_guard_keeps_the_lock);
   RUN_TEST(test_an_emptied_lock_directory_is_replaced);
   RUN_TEST(test_replacing_the_guard_preserves_the_previous_writers_stage);
@@ -1480,13 +1719,16 @@ int main(void)
   RUN_TEST(test_parent_sync_failure_keeps_house_queued_until_retry);
 #if defined(__linux__)
   RUN_TEST(test_group_restore_denied_preserves_named_acl_access);
+  RUN_TEST(test_linux_nfs4_access_rules_survive_replacement);
 #endif
 #endif
 #if defined(__linux__)
   RUN_TEST(test_linux_acl_preserved_and_inherited_default_acl_cleared);
 #elif defined(__FreeBSD__)
   RUN_TEST(test_freebsd_keeps_an_existing_named_acl);
-  RUN_TEST(test_freebsd_old_owner_deny_preserves_game_read_access);
+#endif
+#if defined(__FreeBSD__) || defined(__linux__)
+  RUN_TEST(test_foreign_owned_house_remains_readable_to_game);
 #endif
   result = UNITY_END();
   remove("elsewhere/.tba-house.lock/guard");

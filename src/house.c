@@ -185,7 +185,7 @@ static void House_restore_weight(struct obj_data *obj)
  * instead lower ACL_MASK and strip access from named ACL_USER/ACL_GROUP
  * entries.  Clamp ACL_GROUP_OBJ in place before fsetxattr() and report
  * whether ACL_MASK is present so the caller knows not to overwrite it. */
-static int House_clamp_posix_acl_group(unsigned char *acl, size_t length, int clamp_group)
+static int House_adjust_posix_acl(unsigned char *acl, size_t length, int clamp_group, bool owner_read)
 {
   size_t count, i;
   unsigned char *group_entry = NULL;
@@ -209,7 +209,9 @@ static int House_clamp_posix_acl_group(unsigned char *acl, size_t length, int cl
     unsigned int tag = (unsigned int)entry[0] | ((unsigned int)entry[1] << 8);
     unsigned int perm = (unsigned int)entry[2] | ((unsigned int)entry[3] << 8);
 
-    if (tag == 0x04) /* ACL_GROUP_OBJ */
+    if (tag == 0x01 && owner_read) /* ACL_USER_OBJ is selected before a named user. */
+      entry[2] |= 4;
+    else if (tag == 0x04) /* ACL_GROUP_OBJ */
       group_entry = entry;
     else if (tag == 0x10) /* ACL_MASK */
       has_mask = 1;
@@ -232,7 +234,7 @@ static int House_clamp_posix_acl_group(unsigned char *acl, size_t length, int cl
 /* Copy filename's POSIX access ACL onto fd.  Returns 1 if an extended ACL
  * (with ACL_MASK, which already sets fd's 0777 mode bits) was installed, 0 if
  * the caller should still apply mode via fchmod(), and -1 on error. */
-static int House_copy_access_acl(const char *filename, int fd, int clamp_group)
+static int House_copy_access_acl(const char *filename, int fd, int clamp_group, bool owner_read)
 {
   static const char name[] = "system.posix_acl_access";
   ssize_t length = getxattr(filename, name, NULL, 0);
@@ -254,13 +256,85 @@ static int House_copy_access_acl(const char *filename, int fd, int clamp_group)
   if (length <= 0) {
     result = length < 0 ? -1 : 0;
   } else {
-    has_mask = House_clamp_posix_acl_group(acl, (size_t)length, clamp_group);
+    has_mask = House_adjust_posix_acl(acl, (size_t)length, clamp_group, owner_read);
     result = fsetxattr(fd, name, acl, (size_t)length, 0) < 0 ? -1 : has_mask;
   }
   saved_errno = errno;
   free(acl);
   errno = saved_errno;
   return result;
+}
+
+/* Linux exposes the server's NFSv4 ACEs in XDR form. The v4.1 DACL and
+ * SACL carry inheritance flags that the older combined ACL cannot express.
+ * Return 1 for a copied attribute, 0 when unsupported, or -1 on failure. */
+static int House_copy_nfs4_attr(const char *filename, int fd, const char *name, bool same_ids)
+{
+  ssize_t length = getxattr(filename, name, NULL, 0);
+  unsigned char *acl;
+  int result = -1, saved_errno;
+
+  if (length < 0)
+    return errno == ENODATA || errno == ENOTSUP ? 0 : -1;
+  /* OWNER@ and GROUP@ are relative to the file. A byte-for-byte copy cannot
+   * preserve those principals when ownership could not be restored. */
+  if (!same_ids || length == 0) {
+    errno = same_ids ? EINVAL : EPERM;
+    return -1;
+  }
+  if (!(acl = malloc((size_t)length)))
+    return -1;
+  length = getxattr(filename, name, acl, (size_t)length);
+  if (length == 0)
+    errno = EINVAL;
+  else if (length > 0 && fsetxattr(fd, name, acl, (size_t)length, 0) == 0)
+    result = 1;
+  saved_errno = errno;
+  free(acl);
+  errno = saved_errno;
+  return result;
+}
+
+static int House_copy_linux_acl(const char *filename, int fd, const struct stat *old,
+                                const struct stat *scratch, bool owner_read)
+{
+  bool same_ids = old->st_uid == scratch->st_uid && old->st_gid == scratch->st_gid;
+  int result = House_copy_nfs4_attr(filename, fd, "system.nfs4_dacl", same_ids);
+  if (result > 0) {
+    if (House_copy_nfs4_attr(filename, fd, "system.nfs4_sacl", same_ids) < 0)
+      return -1;
+    return 1;
+  }
+  if (result == 0)
+    result = House_copy_nfs4_attr(filename, fd, "system.nfs4_acl", same_ids);
+  if (result != 0)
+    return result;
+  return House_copy_access_acl(filename, fd, old->st_gid != scratch->st_gid, owner_read);
+}
+
+/* chmod alone may retain a named allow ACE. Replace the entire access ACL
+ * on a private stage/guard with a single non-inheritable OWNER@ allow. */
+static int House_secure_linux_fd(int fd, mode_t mode)
+{
+  const char *name = "system.nfs4_dacl";
+  unsigned char acl[] = {
+    0,0,0,2,  /* protected DACL (omitted in the combined ACL format) */
+    0,0,0,1,  /* one ACE */
+    0,0,0,0, 0,0,0,0, 0,0x1f,0x01,0xff,  /* allow, no flags, full access */
+    0,0,0,6, 'O','W','N','E','R','@',0,0
+  };
+  size_t offset = 0;
+  if (fgetxattr(fd, name, NULL, 0) < 0) {
+    if (errno != ENOTSUP && errno != ENODATA)
+      return -1;
+    name = "system.nfs4_acl";
+    offset = 4;
+    if (fgetxattr(fd, name, NULL, 0) < 0)
+      return errno == ENOTSUP || errno == ENODATA ? fchmod(fd, mode) : -1;
+  }
+  if (!(mode & S_IXUSR))
+    acl[19] &= ~(0x20 | 0x40);  /* regular file: no execute or delete-child */
+  return fsetxattr(fd, name, acl + offset, sizeof(acl) - offset, 0);
 }
 #elif defined(__APPLE__) && defined(__MACH__)
 /* The caller has set the owner and group as far as it could and worked out
@@ -309,7 +383,7 @@ static int House_acl_supported(int fd, int option)
 }
 
 static int House_copy_freebsd_acl(const char *filename, int fd, acl_type_t type,
-                                  const struct stat *old, const struct stat *scratch)
+                                  const struct stat *old, const struct stat *scratch, bool owner_read)
 {
   acl_t acl = acl_get_file(filename, type);
   acl_entry_t entry;
@@ -319,7 +393,7 @@ static int House_copy_freebsd_acl(const char *filename, int fd, acl_type_t type,
 
   if (!acl)
     return -1;
-  if (scratch->st_gid != old->st_gid || (type == ACL_TYPE_NFS4 && scratch->st_uid != old->st_uid)) {
+  if (scratch->st_gid != old->st_gid || scratch->st_uid != old->st_uid) {
     while ((found = acl_get_entry(acl, next, &entry)) == 1) {
       next = ACL_NEXT_ENTRY;
       if (acl_get_tag_type(entry, &tag) < 0)
@@ -338,7 +412,11 @@ static int House_copy_freebsd_acl(const char *filename, int fd, acl_type_t type,
                (acl_set_tag_type(entry, ACL_USER) < 0 || acl_set_qualifier(entry, &old->st_uid) < 0)))
             goto done;
         }
-      } else if (tag == ACL_GROUP_OBJ) {
+      } else if (tag == ACL_USER_OBJ && owner_read) {
+        if (acl_get_permset(entry, &perms) < 0 || acl_add_perm(perms, ACL_READ) < 0 ||
+            acl_set_permset(entry, perms) < 0)
+          goto done;
+      } else if (tag == ACL_GROUP_OBJ && scratch->st_gid != old->st_gid) {
         /* Limit the new owning group without narrowing the mask on named entries. */
         if (acl_get_permset(entry, &perms) < 0 ||
             (!(old->st_mode & S_IROTH) && acl_delete_perm(perms, ACL_READ) < 0) ||
@@ -368,7 +446,7 @@ done:
  * still save.  Where the group could not be kept, the group bits are cut
  * back to what everyone else had, so the game's own group gets nothing the
  * old file did not give to all. */
-static int House_copy_permissions(const char *filename, int fd)
+static int House_copy_permissions(const char *filename, int fd, bool *owner_changed)
 {
   struct stat old, scratch;
   mode_t mode;
@@ -392,6 +470,17 @@ static int House_copy_permissions(const char *filename, int fd)
   }
 
   mode = old.st_mode & 0777;
+  *owner_changed = scratch.st_uid != old.st_uid;
+  if (*owner_changed && !(mode & S_IRUSR)) {
+    /* The game might have read a restored house via its group or a named
+     * grant. Its new owner class takes precedence over either on POSIX. */
+    int old_fd = open(filename, O_RDONLY | O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC);
+    if (old_fd >= 0) {
+      close(old_fd);
+      mode |= S_IRUSR;
+    } else if (errno != EACCES)
+      return -1;
+  }
   if (scratch.st_gid != old.st_gid)
     mode = (mode & 0707) | (mode & ((mode & 0007) << 3));
 
@@ -406,11 +495,9 @@ static int House_copy_permissions(const char *filename, int fd)
   }
 #elif defined(__linux__)
   {
-    int acl_result = House_copy_access_acl(filename, fd, scratch.st_gid != old.st_gid);
-    if (acl_result < 0)
-      return -1;
-    if (acl_result > 0)
-      return 0;
+    int acl_result = House_copy_linux_acl(filename, fd, &old, &scratch, *owner_changed && (mode & S_IRUSR));
+    if (acl_result != 0)
+      return acl_result < 0 ? -1 : 0; /* chmod after setting a rich ACL can rewrite its ACEs. */
   }
 #elif defined(__FreeBSD__)
   {
@@ -418,12 +505,12 @@ static int House_copy_permissions(const char *filename, int fd)
     if (nfs4 < 0)
       return -1;
     if (nfs4)
-      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_NFS4, &old, &scratch);
+      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_NFS4, &old, &scratch, FALSE);
     posix_acl = House_acl_supported(fd, _PC_ACL_EXTENDED);
     if (posix_acl < 0)
       return -1;
     if (posix_acl)
-      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_ACCESS, &old, &scratch);
+      return House_copy_freebsd_acl(filename, fd, ACL_TYPE_ACCESS, &old, &scratch, *owner_changed && (mode & S_IRUSR));
   }
 #endif
   return fchmod(fd, mode);
@@ -434,7 +521,9 @@ static int House_copy_permissions(const char *filename, int fd)
  * can grant access independently of those mode bits. */
 static int House_secure_private_fd(int fd, mode_t mode)
 {
-#if defined(__FreeBSD__)
+#if defined(__linux__)
+  return House_secure_linux_fd(fd, mode);
+#elif defined(__FreeBSD__)
   int nfs4 = House_acl_supported(fd, _PC_ACL_NFS4);
   acl_t acl;
   int result, saved_errno;
@@ -588,6 +677,9 @@ struct house_save {
   char dest[PATH_MAX], entry[HOUSE_STAGE_NAME_SIZE];
   const char *leaf, *scratch;
   int parent_fd, stage_fd, lock_fd;
+#if defined(__linux__)
+  int volume_fd;
+#endif
   bool owns_dir;
 };
 
@@ -610,6 +702,10 @@ static void House_discard_save(struct house_save *save)
   if (save->scratch && unlinkat(save->stage_fd, save->scratch, 0) < 0)
     log("SYSERR: Cannot remove temporary save for %s: %s", save->dest, strerror(errno));
   House_remove_stage(save);
+#if defined(__linux__)
+  if (save->volume_fd >= 0)
+    close(save->volume_fd);
+#endif
   if (save->lock_fd >= 0)
     close(save->lock_fd);
   if (save->parent_fd >= 0)
@@ -629,6 +725,7 @@ static void House_discard_save(struct house_save *save)
 #define HOUSE_LOCK_GUARD "guard"
 #define HOUSE_LOCK_INIT_PREFIX HOUSE_STAGE_LOCK ".init-"
 #define HOUSE_STAGE_PREFIX ".tba-house-save-"
+#define HOUSE_UNLOCKED_PREFIX ".tba-house-unlocked-"
 #define HOUSE_STAGE_PREFIX_SIZE (sizeof(HOUSE_STAGE_PREFIX "g-") + 2 * sizeof(uintmax_t))
 /* Why House_lock_stages() last declined to coordinate on purpose, or NULL. */
 static const char *house_lock_unsupported;
@@ -735,32 +832,102 @@ failed:
   return -1;
 }
 
+/* Without search permission fstatat() cannot inspect the guard. A readable
+ * directory can still identify a regular guard on filesystems that report
+ * entry types. Leave unrecognized entries and their permissions alone. */
+static int House_restore_lock_search(int dir)
+{
+#ifdef DT_REG
+  struct stat st;
+  struct dirent *entry;
+  DIR *listing;
+  int copy, result = -1, saved_errno = EACCES;
+  if (fstat(dir, &st) < 0)
+    return -1;
+  if (st.st_uid != geteuid() || (st.st_mode & S_IXUSR)) {
+    errno = EACCES;
+    return -1;
+  }
+  copy = dup(dir);
+  if (copy < 0)
+    return -1;
+  listing = fdopendir(copy);
+  if (!listing) {
+    saved_errno = errno;
+    close(copy);
+    errno = saved_errno;
+    return -1;
+  }
+  while ((entry = readdir(listing)) != NULL) {
+    if (strcmp(entry->d_name, HOUSE_LOCK_GUARD))
+      continue;
+    if (entry->d_type == DT_REG) {
+      result = House_secure_stage(dir);
+      saved_errno = errno;
+    }
+    break;
+  }
+  closedir(listing);
+  errno = saved_errno;
+  return result;
+#else
+  errno = EACCES;
+  return -1;
+#endif
+}
+
 /* EINVAL means something other than a lock this game made has the name. */
 static int House_open_lock(int parent_fd, bool cleanup)
 {
   struct stat st, current;
+  const int flags = O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC;
   int attempt;
 
   for (attempt = 0; attempt < 2; ++attempt) {
     int fd, saved_errno;
-    int dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+    int dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_RDONLY | flags);
+#if defined(HOUSE_HAS_PATH_FD) || defined(O_SEARCH)
+    bool search_only = dir < 0 && errno == EACCES;
+    if (search_only) {
+#ifdef HOUSE_HAS_PATH_FD
+      dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_PATH | flags);
+#else
+      dir = openat(parent_fd, HOUSE_STAGE_LOCK, O_SEARCH | flags);
+#endif
+    }
+#endif
     if (dir < 0) {
       errno = House_foreign_lock_errno(errno, TRUE);
       return -1;
     }
     fd = House_open_guard(dir, cleanup);
+    if (fd < 0 && errno == EACCES && House_restore_lock_search(dir) == 0)
+      fd = House_open_guard(dir, cleanup);
     saved_errno = errno;
     if (fd >= 0) {
       /* Keep an owner-owned lock directory private so other accounts cannot
        * unlink or swap the guard inside it. */
-      if (fstat(dir, &st) == 0 && st.st_uid == geteuid() &&
-          ((st.st_mode & 0777) != 0700 || cleanup) &&
-          House_secure_stage(dir) < 0) {
+      int result = fstat(dir, &st);
+      if (result == 0 && st.st_uid == geteuid() && ((st.st_mode & 0777) != 0700 || cleanup)) {
+#if defined(HOUSE_HAS_PATH_FD) || defined(O_SEARCH)
+        if (search_only) {
+          /* The guard is valid. Recover read access on its pinned directory. */
+          int accessible = House_open_stage_dir(dir, ".");
+          saved_errno = errno;
+          close(dir);
+          dir = accessible;
+          errno = saved_errno;
+        }
+#endif
+        result = dir < 0 ? -1 : House_secure_stage(dir);
+      }
+      if (result < 0) {
         saved_errno = errno;
         close(fd);
         fd = -1;
       }
-      close(dir);
+      if (dir >= 0)
+        close(dir);
       errno = saved_errno;
       return fd;
     }
@@ -978,12 +1145,17 @@ static int House_create_scratch(struct house_save *save, bool replacing, const c
 static FILE *House_open_save(const char *filename, struct house_save *save)
 {
   char *slash, prefix[HOUSE_STAGE_PREFIX_SIZE];
+  const char *parent_path = ".";
   struct stat st;
-  bool replacing;
+  bool replacing, owner_changed = FALSE;
+  int access = O_RDONLY;
   int fd = -1, saved_errno, resolved;
   FILE *fp;
 
   save->parent_fd = save->stage_fd = save->lock_fd = -1;
+#if defined(__linux__)
+  save->volume_fd = -1;
+#endif
   resolved = House_resolve_symlink(filename, save->dest);
   if (resolved < 0)
     return NULL;
@@ -1003,12 +1175,24 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
         return NULL;
       }
     }
-    save->parent_fd = open(*save->dest ? save->dest : "/", O_RDONLY | O_DIRECTORY | O_CLOEXEC);
-    *slash = '/';
+    parent_path = *save->dest ? save->dest : "/";
   } else {
     save->leaf = save->dest;
-    save->parent_fd = open(".", O_RDONLY | O_DIRECTORY | O_CLOEXEC);
   }
+  save->parent_fd = open(parent_path, access | O_DIRECTORY | O_CLOEXEC);
+#if defined(O_SEARCH) || (defined(__linux__) && defined(O_PATH))
+  if (save->parent_fd < 0 && errno == EACCES) {
+    /* Creating and renaming a known entry only needs write and search access. */
+#if defined(__linux__) && defined(O_PATH)
+    access = O_PATH;
+#else
+    access = O_SEARCH;
+#endif
+    save->parent_fd = open(parent_path, access | O_DIRECTORY | O_CLOEXEC);
+  }
+#endif
+  if (slash)
+    *slash = '/';
   if (save->parent_fd < 0)
     return NULL;
 
@@ -1024,9 +1208,22 @@ static FILE *House_open_save(const char *filename, struct house_save *save)
   replacing = fstatat(save->parent_fd, save->leaf, &st, 0) == 0;
   if (!replacing && errno != ENOENT)
     goto failed;
-  fd = House_create_scratch(save, replacing, save->lock_fd >= 0 ? prefix : ".tba-house-unlocked-");
-  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd) < 0))
+  fd = House_create_scratch(save, replacing, save->lock_fd >= 0 ? prefix : HOUSE_UNLOCKED_PREFIX);
+  if (fd < 0 || (replacing && House_copy_permissions(save->dest, fd, &owner_changed) < 0))
     goto failed;
+  if (owner_changed) {
+    /* Use the same effective credentials and access check as the next boot. */
+    int read_fd = openat(save->stage_fd, save->scratch, O_RDONLY | O_NOFOLLOW | O_CLOEXEC);
+    if (read_fd < 0)
+      goto failed;
+    close(read_fd);
+  }
+#if defined(__linux__)
+  /* Linux cannot fsync an O_PATH directory. Keep the ordinary staging file
+   * descriptor on this mount for syncfs after the rename. */
+  if (access != O_RDONLY && (save->volume_fd = fcntl(fd, F_DUPFD_CLOEXEC, 0)) < 0)
+    goto failed;
+#endif
   fp = fdopen(fd, "wb");
   if (fp)
     return fp;
@@ -1057,6 +1254,10 @@ static int House_install_save(struct house_save *save)
   save->scratch = NULL;
   House_remove_stage(save);
   /* The file data is synced. The new directory entry must be durable too. */
+#if defined(__linux__)
+  if (save->volume_fd >= 0)
+    return syncfs(save->volume_fd) == 0;
+#endif
   return House_fsync_fd(save->parent_fd) == 0;
 }
 
@@ -1102,6 +1303,51 @@ static bool House_is_other_guard_stage(const char *name, const char *own)
   return strcmp(tag, own) && House_is_stage_name(name, tag);
 }
 
+/* A first save creates a regular file. A replacement creates a directory
+ * that is either empty or contains only a regular file named "contents". */
+static bool House_has_stage_shape(int parent_fd, const char *name)
+{
+  struct stat st;
+  struct dirent *entry;
+  DIR *dir;
+  int fd;
+  bool matches = FALSE;
+
+  if (fstatat(parent_fd, name, &st, AT_SYMLINK_NOFOLLOW) < 0)
+    return FALSE;
+  if (!S_ISDIR(st.st_mode))
+    return S_ISREG(st.st_mode);
+  fd = openat(parent_fd, name, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC);
+  if (fd < 0)
+    return FALSE;
+  if (!(dir = fdopendir(fd))) {
+    close(fd);
+    return FALSE;
+  }
+  for (;;) {
+    errno = 0;
+    if (!(entry = readdir(dir))) {
+      matches = errno == 0;
+      break;
+    }
+    if (!strcmp(entry->d_name, ".") || !strcmp(entry->d_name, ".."))
+      continue;
+    if (strcmp(entry->d_name, "contents") ||
+        fstatat(fd, "contents", &st, AT_SYMLINK_NOFOLLOW) < 0 || !S_ISREG(st.st_mode))
+      break;
+  }
+  closedir(dir);
+  return matches;
+}
+
+static void House_report_stage(int parent_fd, const char *name, const char *origin)
+{
+  if (House_has_stage_shape(parent_fd, name))
+    log("%s%s matches a temporary house save %s. Once all games using %s have stopped, "
+        "verify that this entry is an abandoned save before removing it.",
+        LIB_HOUSE, name, origin, LIB_HOUSE);
+}
+
 /* Boot clears interrupted saves in LIB_HOUSE only while holding their guard
  * exclusively. An untagged stage or one from another guard may still have a
  * live writer. A symlink target outside LIB_HOUSE is outside this scan.
@@ -1126,11 +1372,13 @@ static void House_remove_stale_saves(void)
   dir_fd = dirfd(dir);
   lock_fd = House_lock_stages(dir_fd, TRUE, prefix);
   if (lock_fd < 0) {
-    if (house_lock_unsupported)
-      log("Unfinished house saves in %s are not cleared at boot: %s.  House saves still work; "
-          "after a crash, remove any %s.tba-house-unlocked-* while no game is running.",
-          LIB_HOUSE, house_lock_unsupported, LIB_HOUSE);
-    else if (errno == EACCES)
+    if (house_lock_unsupported) {
+      log("Unfinished house saves in %s are not cleared at boot because %s. House saves still work.",
+          LIB_HOUSE, house_lock_unsupported);
+      while ((entry = readdir(dir)) != NULL)
+        if (House_is_stage_name(entry->d_name, HOUSE_UNLOCKED_PREFIX))
+          House_report_stage(dir_fd, entry->d_name, "made without a lock");
+    } else if (errno == EACCES)
       log("SYSERR: Cannot open %s%s: %s. Unfinished house saves remain. Stop all games "
           "sharing this directory before repairing the lock's ownership or permissions.",
           LIB_HOUSE, HOUSE_STAGE_LOCK, strerror(errno));
@@ -1154,9 +1402,7 @@ static void House_remove_stale_saves(void)
     lock_setup = House_is_stage_name(entry->d_name, HOUSE_LOCK_INIT_PREFIX);
     if (!lock_setup && !House_is_stage_name(entry->d_name, prefix)) {
       if (House_is_other_guard_stage(entry->d_name, prefix))
-        log("SYSERR: %s%s was left by a house save under an earlier lock, so it is not cleared "
-            "automatically.  Remove it if no other game is using %s.",
-            LIB_HOUSE, entry->d_name, LIB_HOUSE);
+        House_report_stage(dir_fd, entry->d_name, "under an earlier lock");
       continue;
     }
     inner = lock_setup ? HOUSE_LOCK_GUARD : "contents";
