@@ -940,7 +940,9 @@ void clean_pfiles(void)
 {
   int i, ci;
 
-  for (i = 0; i <= top_of_p_table; i++) {
+  /* Removing an entry shifts the entries after it down. Scan backward so
+   * every entry is still checked when several players are removed together. */
+  for (i = top_of_p_table; i >= 0; i--) {
     /* We only want to go further if the player isn't protected from deletion
      * and hasn't already been deleted. */
     if (!IS_SET(player_table[i].flags, PINDEX_NODELETE) &&
@@ -964,8 +966,6 @@ void clean_pfiles(void)
       }
     }
   }
-  /* After everything is done, we should rebuild player_index and remove the
-   * entries of the players that were just deleted. */
 }
 
 /* load_affects function now handles both 32-bit and

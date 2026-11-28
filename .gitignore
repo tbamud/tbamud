@@ -105,6 +105,7 @@ tests/test_lists
 tests/test_quest
 tests/test_shop
 tests/test_mail
+tests/test_players
 tests/test-results/
 
 # autoconf leaves these behind when regenerating configure
