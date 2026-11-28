@@ -307,4 +307,25 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang" AND NOT MSVC)
         set_property(TARGET test_genolc_savers APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
     endif()
     add_test(NAME test_genolc_savers COMMAND test_genolc_savers)
+
+    if(UNIX)
+        add_mud_test(test_house_save
+            ${MUD_SRCDIR}/utils.c
+            ${MUD_SRCDIR}/random.c
+            ${MUD_SRCDIR}/house.c
+            ${MUD_SRCDIR}/genolc.c
+            ${MUD_SRCDIR}/constants.c
+            ${MUD_SRCDIR}/interpreter.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/test_house_save.c
+        )
+        target_compile_options(test_house_save PRIVATE -ffunction-sections -fdata-sections)
+        if(APPLE)
+            set_property(TARGET test_house_save APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-dead_strip")
+        else()
+            set_property(TARGET test_house_save APPEND_STRING PROPERTY LINK_FLAGS " -Wl,--gc-sections")
+        endif()
+        if(CRYPT_LIBRARY)
+            target_link_libraries(test_house_save PRIVATE ${CRYPT_LIBRARY})
+        endif()
+    endif()
 endif()

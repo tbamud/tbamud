@@ -19,6 +19,7 @@
 #include "house.h"
 #include "constants.h"
 #include "modify.h"
+#include "genolc.h"
 
 /* local (file scope only) globals */
 static struct house_control_rec house_control[MAX_HOUSES];
@@ -159,7 +160,7 @@ static void House_restore_weight(struct obj_data *obj)
 void House_crashsave(room_vnum vnum)
 {
   int rnum, result;
-  char buf[MAX_STRING_LENGTH];
+  char filename[MAX_STRING_LENGTH], tempfile[MAX_STRING_LENGTH + sizeof(".tmp")];
   FILE *fp;
 
   if ((rnum = real_room(vnum)) == NOWHERE)
@@ -174,9 +175,10 @@ void House_crashsave(room_vnum vnum)
     return;
   /* CONVERSION code ends here -- see comment below. */
 
-  if (!House_get_filename(vnum, buf, sizeof(buf)))
+  if (!House_get_filename(vnum, filename, sizeof(filename)))
     return;
-  if (!(fp = fopen(buf, "wb"))) {
+  snprintf(tempfile, sizeof(tempfile), "%s.tmp", filename);
+  if (!(fp = fopen(tempfile, "wb"))) {
     perror("SYSERR: Error saving house file");
     return;
   }
@@ -184,19 +186,27 @@ void House_crashsave(room_vnum vnum)
   result = House_save(world[rnum].contents, fp, 0);
   House_restore_weight(world[rnum].contents);
 
-  if (!result) {
-    fclose(fp);
-    return;
-  }
-
-  if (fflush(fp) == EOF || ferror(fp)) {
-    log("SYSERR: Error finalizing house file %s.", buf);
-    fclose(fp);
-    return;
+  if (fflush(fp) == EOF) {
+    log("SYSERR: Error flushing house file %s: %s", tempfile, strerror(errno));
+    result = FALSE;
+  } else if (ferror(fp)) {
+    log("SYSERR: Error writing house file %s.", tempfile);
+    result = FALSE;
   }
 
   if (fclose(fp) == EOF) {
-    log("SYSERR: Error closing house file %s.", buf);
+    log("SYSERR: Error closing house file %s: %s", tempfile, strerror(errno));
+    result = FALSE;
+  }
+
+  if (!result) {
+    remove(tempfile);
+    return;
+  }
+
+  if (!genolc_install_file(tempfile, filename)) {
+    log("SYSERR: Unable to replace house file %s: %s", filename, strerror(errno));
+    remove(tempfile);
     return;
   }
 
@@ -206,7 +216,7 @@ void House_crashsave(room_vnum vnum)
 /* Delete a house save file */
 static void House_delete_file(room_vnum vnum)
 {
-  char filename[MAX_INPUT_LENGTH], binname[MAX_INPUT_LENGTH + 8];
+  char filename[MAX_INPUT_LENGTH], auxname[MAX_INPUT_LENGTH + 8];
   FILE *fl;
 
   if (!House_get_filename(vnum, filename, sizeof(filename)))
@@ -217,10 +227,13 @@ static void House_delete_file(room_vnum vnum)
    * the house gone that copy is orphaned, and it would make the converter
    * refuse a later house built on the same vnum as already converted --
    * which would also stay out of saving for the rest of the run. */
-  snprintf(binname, sizeof(binname), "%s.bin", filename);
-  remove(binname);
+  snprintf(auxname, sizeof(auxname), "%s.bin", filename);
+  remove(auxname);
   house_forget_conversion(vnum);
   /* CONVERSION code ends here -- see comment below. */
+
+  snprintf(auxname, sizeof(auxname), "%s.tmp", filename);
+  remove(auxname);
 
   if (!(fl = fopen(filename, "rb"))) {
     if (errno != ENOENT)
@@ -554,6 +567,7 @@ static void hcontrol_build_house(struct char_data *ch, char *arg)
 
   SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE);
   SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_PRIVATE);
+  SET_BIT_AR(ROOM_FLAGS(real_house), ROOM_HOUSE_CRASH);
   SET_BIT_AR(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
   House_crashsave(virt_house);
 
