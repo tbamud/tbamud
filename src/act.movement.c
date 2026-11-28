@@ -28,6 +28,7 @@
 /* local only functions */
 /* do_simple_move utility functions */
 static int has_boat(struct char_data *ch);
+static int enter_room(struct char_data *ch, room_rnum was_in, room_rnum going_to, int dir);
 /* do_gen_door utility functions */
 static int find_door(struct char_data *ch, const char *type, char *dir, const char *cmdname);
 static int has_key(struct char_data *ch, obj_vnum key);
@@ -47,7 +48,9 @@ static int has_boat(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_WATERWALK) || AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
-  /* non-wearable boats in inventory will do it */
+  /* Non-wearable boats in inventory will do it.  Keep find_eq_pos() rather
+   * than can_equip_obj(): several stock boats carry ITEM_WEAR_HOLD and are
+   * expected to work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
     if (GET_OBJ_TYPE(obj) == ITEM_BOAT && (find_eq_pos(ch, obj, NULL) < 0))
       return (1);
@@ -72,9 +75,9 @@ static int has_flight(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_FLYING))
     return (1);
 
-  /* Non-wearable flying items in inventory will do it. */
+  /* Flying items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && OBJAFF_FLAGGED(obj, AFF_FLYING))
+    if (OBJAFF_FLAGGED(obj, AFF_FLYING) && !can_equip_obj(obj))
       return (1);
 
   /* Any equipped objects with AFF_FLYING will do it too. */
@@ -97,9 +100,9 @@ static int has_scuba(struct char_data *ch)
   if (AFF_FLAGGED(ch, AFF_SCUBA))
     return (1);
 
-  /* Non-wearable scuba items in inventory will do it. */
+  /* Scuba items that cannot be equipped work from inventory. */
   for (obj = ch->carrying; obj; obj = obj->next_content)
-    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && (find_eq_pos(ch, obj, NULL) < 0))
+    if (OBJAFF_FLAGGED(obj, AFF_SCUBA) && !can_equip_obj(obj))
       return (1);
 
   /* Any equipped objects with AFF_SCUBA will do it too. */
@@ -140,6 +143,7 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
   /* How many movement points are required to travel from was_in to going_to.
    * We redefine this later when we need it. */
   int need_movement = 0;
+  int moved;
   /* Contains the "leave" message to display to the was_in room. */
   char leave_message[SMALL_BUFSIZE];
   /*---------------------------------------------------------------------*/
@@ -280,6 +284,15 @@ int do_simple_move(struct char_data *ch, int dir, int need_specials_check)
     act(leave_message, TRUE, ch, 0, 0, TO_ROOM);
   }
 
+  /* An entry or greet trigger can send ch back to its original opponent. */
+  begin_pet_combat_action();
+  moved = enter_room(ch, was_in, going_to, dir);
+  end_pet_combat_action();
+  return moved;
+}
+
+static int enter_room(struct char_data *ch, room_rnum was_in, room_rnum going_to, int dir)
+{
   char_from_room(ch);
   char_to_room(ch, going_to);
   /*---------------------------------------------------------------------*/

@@ -551,6 +551,7 @@ struct obj_data           *object_list      = NULL;
 struct obj_data           *obj_proto        = NULL;
 
 /* ---------- fight.c ---------- */
+__attribute__((weak))
 struct char_data          *combat_list      = NULL;
 
 __attribute__((weak))

@@ -81,6 +81,7 @@ static int shop_producing(struct obj_data *item, int shop_nr);
 static int transaction_amt(char *arg);
 static char *times_message(struct obj_data *obj, char *name, int num);
 static int buy_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *buyer);
+static int shop_purchase_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *buyer);
 static int sell_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *seller);
 static int ok_shop_room(int shop_nr, room_vnum room);
 static int add_to_shop_list(struct shop_buy_data *list, int type, int *len, int *val);
@@ -459,6 +460,15 @@ static int buy_price(struct obj_data *obj, int shop_nr, struct char_data *keeper
 	* (1 + (GET_CHA(keeper) - GET_CHA(buyer)) / (float)70));
 }
 
+/* What the buyer pays: quest items cost their listed value in quest points,
+   everything else costs gold at buy_price(). */
+static int shop_purchase_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *buyer)
+{
+  if (OBJ_FLAGGED(obj, ITEM_QUEST))
+    return (GET_OBJ_COST(obj));
+  return (buy_price(obj, shop_nr, keeper, buyer));
+}
+
 /* When the shopkeeper is buying, we reverse the discount. Also make sure
    we don't buy for more than we sell for, to prevent infinite money-making. */
 static int sell_price(struct obj_data *obj, int shop_nr, struct char_data *keeper, struct char_data *seller)
@@ -503,7 +513,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
     return;
 
   if (OBJ_FLAGGED(obj, ITEM_QUEST)) {
-    if (GET_OBJ_COST(obj) > GET_QUESTPOINTS(ch) && !IS_GOD(ch)) {
+    if (shop_purchase_price(obj, shop_nr, keeper, ch) > GET_QUESTPOINTS(ch) && !IS_GOD(ch)) {
       char actbuf[MAX_INPUT_LENGTH];
       snprintf(actbuf, sizeof(actbuf),
         "%s You haven't earned enough quest points for such an item.",
@@ -512,7 +522,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
       return;
     }
   } else { /*has the player got enough gold? */
-  if (buy_price(obj, shop_nr, keeper, ch) > GET_GOLD(ch) && !IS_GOD(ch)) {
+  if (shop_purchase_price(obj, shop_nr, keeper, ch) > GET_GOLD(ch) && !IS_GOD(ch)) {
     char actbuf[MAX_INPUT_LENGTH];
 
     snprintf(actbuf, sizeof(actbuf), shop_index[shop_nr].missing_cash2, GET_NAME(ch));
@@ -544,10 +554,12 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
   
   if (OBJ_FLAGGED(obj, ITEM_QUEST)) {
     while (obj &&
-           (GET_QUESTPOINTS(ch) >= GET_OBJ_COST(obj) || IS_GOD(ch))
+           (GET_QUESTPOINTS(ch) >= shop_purchase_price(obj, shop_nr, keeper, ch) || IS_GOD(ch))
     && IS_CARRYING_N(ch) < CAN_CARRY_N(ch)
     && bought < buynum
     && IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj) <= CAN_CARRY_W(ch)) {
+      int charged;
+
       bought++;
       /* Test if producing shop ! */
       if (shop_producing(obj, shop_nr)) {
@@ -558,9 +570,10 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
       }
       obj_to_char(obj, ch);
 
-      goldamt += GET_OBJ_COST(obj);
+      charged = shop_purchase_price(obj, shop_nr, keeper, ch);
+      goldamt += charged;
       if (!IS_GOD(ch))
-        GET_QUESTPOINTS(ch) -= GET_OBJ_COST(obj);
+        GET_QUESTPOINTS(ch) -= charged;
 
       last_obj = obj;
       obj = get_purchase_obj(ch, arg, keeper, shop_nr, FALSE);
@@ -568,7 +581,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
         break;
     }
   } else {
-  while (obj && (GET_GOLD(ch) >= buy_price(obj, shop_nr, keeper, ch) || IS_GOD(ch))
+  while (obj && (GET_GOLD(ch) >= shop_purchase_price(obj, shop_nr, keeper, ch) || IS_GOD(ch))
 	 && IS_CARRYING_N(ch) < CAN_CARRY_N(ch) && bought < buynum
 	 && IS_CARRYING_W(ch) + GET_OBJ_WEIGHT(obj) <= CAN_CARRY_W(ch)) {
     int charged;
@@ -583,7 +596,7 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
     }
     obj_to_char(obj, ch);
 
-    charged = buy_price(obj, shop_nr, keeper, ch);
+    charged = shop_purchase_price(obj, shop_nr, keeper, ch);
     goldamt += charged;
     if (!IS_GOD(ch))
       decrease_gold(ch, charged);
@@ -600,10 +613,10 @@ static void shopping_buy(char *arg, struct char_data *ch, struct char_data *keep
     if (!obj || !same_obj(last_obj, obj))
       snprintf(buf, sizeof(buf), "%s I only have %d to sell you.", GET_NAME(ch), bought);
     else if (!OBJ_FLAGGED(obj, ITEM_QUEST) &&
-      GET_GOLD(ch) < buy_price(obj, shop_nr, keeper, ch))
+      GET_GOLD(ch) < shop_purchase_price(obj, shop_nr, keeper, ch))
       snprintf(buf, sizeof(buf), "%s You can only afford %d.", GET_NAME(ch), bought);
     else if (OBJ_FLAGGED(obj, ITEM_QUEST) &&
-      GET_QUESTPOINTS(ch) < GET_OBJ_COST(obj))
+      GET_QUESTPOINTS(ch) < shop_purchase_price(obj, shop_nr, keeper, ch))
       snprintf(buf, sizeof(buf), "%s You only had sufficient quest points for %d.",
         GET_NAME(ch), bought);
     else if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
@@ -873,7 +886,8 @@ static char *list_object(struct obj_data *obj, int cnt, int aindex, int shop_nr,
 
   snprintf(result, sizeof(result), " %2d)  %9s   %-*s %6d%s\r\n",
       aindex, quantity, count_color_chars(itemname)+48, itemname,
-      buy_price(obj, shop_nr, keeper, ch), OBJ_FLAGGED(obj, ITEM_QUEST) ? " qp" : "");
+      shop_purchase_price(obj, shop_nr, keeper, ch),
+      OBJ_FLAGGED(obj, ITEM_QUEST) ? " qp" : "");
 
   return (result);
 }
@@ -897,38 +911,38 @@ static void shopping_list(char *arg, struct char_data *ch, struct char_data *kee
 
   len = strlcpy(buf,   " ##   Available   Item                                               Cost\r\n"
       "----------------------------------------------------------------------------\r\n", sizeof(buf));
-  if (keeper->carrying)
-    for (obj = keeper->carrying; obj; obj = obj->next_content)
-      if (CAN_SEE_OBJ(ch, obj) && GET_OBJ_COST(obj) > 0) {
-	if (!last_obj) {
-	  last_obj = obj;
-	  cnt = 1;
-	} else if (same_obj(last_obj, obj))
-	  cnt++;
-	else {
-	  lindex++;
-	  if (!*name || isname(name, last_obj->name)) {
-	    strncat(buf, list_object(last_obj, cnt, lindex, shop_nr, keeper, ch), sizeof(buf) - len - 1);	/* strncat: OK */
-            len = strlen(buf);
-            if (len + 1 >= sizeof(buf))
-              break;
-            found = TRUE;
-            if (OBJ_FLAGGED(last_obj, ITEM_QUEST))
-              has_quest = TRUE;
-	  }
-	  cnt = 1;
-	  last_obj = obj;
-	}
+  /* Identical items are listed once, with a count.  A group is shown when the
+   * next different item, or the end of the inventory, closes it. */
+  for (obj = keeper->carrying; ; obj = obj->next_content) {
+    if (obj && (!CAN_SEE_OBJ(ch, obj) || GET_OBJ_COST(obj) <= 0))
+      continue;
+    if (obj && last_obj && same_obj(last_obj, obj)) {
+      cnt++;
+      continue;
+    }
+    if (last_obj) {
+      lindex++;
+      if (!*name || isname(name, last_obj->name)) {
+        strncat(buf, list_object(last_obj, cnt, lindex, shop_nr, keeper, ch), sizeof(buf) - len - 1);	/* strncat: OK */
+        len = strlen(buf);
+        found = TRUE;
+        if (OBJ_FLAGGED(last_obj, ITEM_QUEST))
+          has_quest = TRUE;
+        if (len + 1 >= sizeof(buf))
+          break;
       }
-  lindex++;
+    }
+    if (!obj)
+      break;
+    last_obj = obj;
+    cnt = 1;
+  }
+
   if (!last_obj)	/* we actually have nothing in our list for sale, period */
     send_to_char(ch, "Currently, there is nothing for sale.\r\n");
-  else if (*name && !found)	/* nothing the char was looking for was found */
+  else if (!found)
     send_to_char(ch, "Presently, none of those are for sale.\r\n");
   else {
-    if (!*name || isname(name, last_obj->name))	/* show last obj */
-      if (len < sizeof(buf))
-        strncat(buf, list_object(last_obj, cnt, lindex, shop_nr, keeper, ch), sizeof(buf) - len - 1);	/* strncat: OK */
     page_string(ch->desc, buf, TRUE);
     if (has_quest)
       send_to_char(ch, "Items flagged \"qp\" require quest points to purchase.\r\n");
@@ -1626,10 +1640,11 @@ bool shopping_identify(char *arg, struct char_data *ch, struct char_data *keeper
   send_to_char(ch, "Name: %s\r\n", (obj->short_description) ? obj->short_description : "<None>");
   sprinttype(GET_OBJ_TYPE(obj), item_types, buf, sizeof(buf));
   send_to_char(ch, "Type: %s\r\n", buf);
-  send_to_char(ch, "Weight: %d, Cost to Sell: %s%d%s, Cost to Buy: %s%d%s\r\n",
+  send_to_char(ch, "Weight: %d, Cost to Sell: %s%d%s, Cost to Buy: %s%d%s%s\r\n",
 		GET_OBJ_WEIGHT(obj),
 		QYEL, sell_price(obj, shop_nr, keeper, ch), QNRM,
-		QYEL, buy_price(obj, shop_nr, keeper, ch), QNRM);
+		QYEL, shop_purchase_price(obj, shop_nr, keeper, ch), QNRM,
+		OBJ_FLAGGED(obj, ITEM_QUEST) ? " qp" : "");
 		
   sprintbitarray(GET_OBJ_WEAR(obj), wear_bits, TW_ARRAY_MAX, buf);
   send_to_char(ch, "Can be worn on: %s\r\n", buf);
