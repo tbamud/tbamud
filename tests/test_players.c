@@ -48,6 +48,16 @@ bitvector_t asciiflag_conv(char *flag)
   return is_num ? (bitvector_t)atol(flag) : flags;
 }
 
+/* Callbacks referenced by genolc.c's save_types[] table (retained under ASan). */
+int save_mobiles(zone_rnum rznum) { (void)rznum; return FALSE; }
+int save_objects(zone_rnum vznum) { (void)vznum; return FALSE; }
+int save_shops(zone_rnum zone_num) { (void)zone_num; return FALSE; }
+int save_rooms(zone_rnum rnum) { (void)rnum; return FALSE; }
+int save_zone(zone_rnum zone_num) { (void)zone_num; return FALSE; }
+int save_config(IDXTYPE nowhere) { (void)nowhere; return FALSE; }
+int save_quests(zone_rnum zone_num) { (void)zone_num; return FALSE; }
+int save_triggers(zone_rnum zrnum) { (void)zrnum; return FALSE; }
+
 struct index_spec {
   long id;
   const char *name;
